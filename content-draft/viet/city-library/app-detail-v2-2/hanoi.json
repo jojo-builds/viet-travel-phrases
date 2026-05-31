@@ -99,7 +99,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-ba-dinh-district: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -210,7 +210,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-ba-dinh-square: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -314,16 +314,16 @@
           "catalogId": "viet-family-city-hanoi-place-banh-cuon-ba-hoanh",
           "label": "Bánh Cuốn Bà Hoành",
           "relationship": "dish-to-restaurant follow-through",
-          "displaySubtitle": "A MICHELIN Selected Hanoi breakfast table for classic steam, rolls, herbs, and dipping sauce.",
-          "reason": "Related because: A MICHELIN Selected Hanoi breakfast table for classic steam, rolls, herbs, and dipping sauce.",
+          "displaySubtitle": "A Hanoi breakfast table for classic steam, rolls, herbs, and dipping sauce.",
+          "reason": "Related because: A Hanoi breakfast table for classic steam, rolls, herbs, and dipping sauce.",
           "status": "render"
         },
         {
           "catalogId": "viet-family-city-hanoi-place-banh-cuon-ba-xuan",
           "label": "Bánh Cuốn Bà Xuân",
           "relationship": "dish-to-restaurant follow-through",
-          "displaySubtitle": "A MICHELIN Selected bánh cuốn stop when the egg, herbs, and condiments can lead.",
-          "reason": "Related because: A MICHELIN Selected bánh cuốn stop when the egg, herbs, and condiments can lead.",
+          "displaySubtitle": "A bánh cuốn stop when the egg, herbs, and condiments can lead.",
+          "reason": "Related because: A bánh cuốn stop when the egg, herbs, and condiments can lead.",
           "status": "render"
         }
       ],
@@ -337,7 +337,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-banh-cuon: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -348,7 +348,7 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Hanoi guide"
+        "Production intake source notes: guide Hanoi guide"
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -375,10 +375,10 @@
       "category": "Restaurant",
       "pronunciation": "banh cuon ba hoanh",
       "travelerMoment": "Choose Bánh Cuốn Bà Hoành for a Hanoi morning of soft steam: thin rice sheets, savory filling, fried shallot, herbs, and dipping sauce.",
-      "storySpine": "Bánh Cuốn Bà Hoành gives the existing Hanoi bánh cuốn habit a named MICHELIN Selected breakfast table, so the catalog has both the dish and a place worth remembering.",
+      "storySpine": "Bánh Cuốn Bà Hoành gives the existing Hanoi bánh cuốn habit a named breakfast table, so the catalog has both the dish and a place worth remembering.",
       "intro": {
-        "heading": "Selected For Morning Steam",
-        "body": "Bánh Cuốn Bà Hoành is a 2025 MICHELIN Selected Hanoi street-food stop for steamed rice rolls: thin sheets, savory filling, fried shallot, herbs, and dipping sauce."
+        "heading": "Morning Steam And Rice Rolls",
+        "body": "Bánh Cuốn Bà Hoành is a Hanoi street-food stop for steamed rice rolls: thin sheets, savory filling, fried shallot, herbs, and dipping sauce."
       },
       "usefulPhraseCards": [
         {
@@ -424,8 +424,8 @@
         },
         {
           "id": "recognition-supports-the-roll",
-          "heading": "Recognition Supports The Roll",
-          "body": "The 2025 MICHELIN Selected recognition supports the choice because the meal has a precise shape: steamed rice sheets, filling, fried shallot, herbs, and dipping sauce."
+          "heading": "Steam, Filling, Sauce",
+          "body": "The meal has a precise shape: steamed rice sheets, filling, fried shallot, herbs, and dipping sauce."
         }
       ],
       "mentionedHereCandidates": [
@@ -451,9 +451,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
           "label": "Phở Gia Truyền",
-          "relationship": "Bib Gourmand beef-phở shop",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Old Quarter phở bowl for steam, sliced beef, herbs, and room pace.",
-          "reason": "Related because: A 2025 MICHELIN Bib Gourmand Old Quarter phở bowl for steam, sliced beef, herbs, and room pace.",
+          "relationship": "beef-phở shop",
+          "displaySubtitle": "A Old Quarter phở bowl for steam, sliced beef, herbs, and room pace.",
+          "reason": "Related because: A Old Quarter phở bowl for steam, sliced beef, herbs, and room pace.",
           "status": "render"
         },
         {
@@ -475,18 +475,18 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Additive Hanoi 101-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
-          "Official 2025 MICHELIN PDF support checked locally: Bánh Cuốn Bà Hoành appears in the Hanoi MICHELIN Selected section as Street Food.",
+          "Official 2025 guide PDF support checked locally: Bánh Cuốn Bà Hoành appears in the Hanoi guide-noted section as Street Food.",
           "Visible copy stays dish-specific but avoids hours, address, booking, closure, and fragile operational claims."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Additive production pilot: Banh Cuon Ba Hoanh has bounded 2025 MICHELIN Selected recognition, a specific Hanoi breakfast save reason, mapped phrase cards, and useful breakfast comparisons."
+        "reason": "Additive production pilot: Banh Cuon Ba Hoanh has a specific Hanoi breakfast save reason, mapped phrase cards, and useful breakfast comparisons."
       },
       "sourceNotes": [
         "Added as the first additive Hanoi restaurant pilot after the 500-page hard reset; script assumptions now allow Hanoi 101.",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Bánh Cuốn Bà Hoành in the Hanoi MICHELIN Selected section as Street Food.",
+        "Official guide Guide Vietnam 2025 PDF lists Bánh Cuốn Bà Hoành in the Hanoi guide-noted section as Street Food.",
         "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
       ],
       "status": "FINAL_PASS",
@@ -496,7 +496,7 @@
         "voiceGateStatus": "passed_city_voice_gate",
         "v2_2GateStatus": "food_additive_pilot_passed",
         "v2_2GateSources": [
-          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md"
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/guide_2025_coverage_audit.md"
         ],
         "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
         "notes": [
@@ -519,7 +519,7 @@
       "storySpine": "Bánh Cuốn Bà Xuân makes the Hanoi breakfast table feel fuller: soft rice sheets, pork-and-black-fungus filling, herbs, sauce, and the option of egg beside the steam.",
       "intro": {
         "heading": "Egg In The Steam",
-        "body": "Bánh Cuốn Bà Xuân is a 2025 MICHELIN Selected Hanoi street-food stop for soft rice sheets, pork-and-black-fungus filling, herbs, dipping sauce, and the option of a poached egg."
+        "body": "Bánh Cuốn Bà Xuân is a Hanoi street-food stop for soft rice sheets, pork-and-black-fungus filling, herbs, dipping sauce, and the option of a poached egg."
       },
       "usefulPhraseCards": [
         {
@@ -585,7 +585,7 @@
           "catalogId": "viet-family-city-hanoi-place-banh-cuon-ba-hoanh",
           "label": "Bánh Cuốn Bà Hoành",
           "relationship": "same-dish restaurant comparison",
-          "displaySubtitle": "A MICHELIN Selected steam-table breakfast when the rice rolls should stay lighter and classic.",
+          "displaySubtitle": "A steam-table breakfast when the rice rolls should stay lighter and classic.",
           "reason": "Ba Hoanh gives Ba Xuan a same-dish comparison that clarifies why both pages can exist.",
           "status": "render"
         },
@@ -600,9 +600,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-pho-ga-nguyet",
           "label": "Phở Gà Nguyệt",
-          "relationship": "Bib Gourmand chicken-phở shop",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand chicken-phở shop when clear broth and herbs should feel lighter.",
-          "reason": "Related because: A 2025 MICHELIN Bib Gourmand chicken-phở shop when clear broth and herbs should feel lighter.",
+          "relationship": "chicken-phở shop",
+          "displaySubtitle": "A chicken-phở shop when clear broth and herbs should feel lighter.",
+          "reason": "Related because: A chicken-phở shop when clear broth and herbs should feel lighter.",
           "status": "render"
         }
       ],
@@ -616,18 +616,18 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Additive Hanoi 105-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
-          "Official 2025 MICHELIN PDF support checked on 2026-05-31: Bánh Cuốn Bà Xuân appears in the Hanoi MICHELIN Selected section as Street Food.",
+          "Official 2025 guide PDF support checked on 2026-05-31: Bánh Cuốn Bà Xuân appears in the Hanoi guide-noted section as Street Food.",
           "Visible copy uses stable source facts only: bánh cuốn, soft rice sheets, pork-and-black-fungus filling, poached egg option, sausage or meatloaf, herbs, chili, lime, garlic, and dipping sauce. It avoids hours, prices, address, booking, closure, and fragile operational claims."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Additive production pilot: Banh Cuon Ba Xuan has bounded 2025 MICHELIN Selected recognition, a distinct fuller bánh cuốn breakfast role, mapped phrase cards, and useful same-dish comparisons."
+        "reason": "Additive production pilot: Banh Cuon Ba Xuan has a distinct fuller bánh cuốn breakfast role, mapped phrase cards, and useful same-dish comparisons."
       },
       "sourceNotes": [
         "Added as the fifth additive Hanoi restaurant pilot after the 500-page hard reset; script assumptions now allow Hanoi 105.",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Bánh Cuốn Bà Xuân in the Hanoi MICHELIN Selected section as Street Food.",
+        "Official guide Guide Vietnam 2025 PDF lists Bánh Cuốn Bà Xuân in the Hanoi guide-noted section as Street Food.",
         "Food-detail evidence used for stable visible copy: soft rice sheets, minced pork and black fungus filling, poached egg option, sausage or meatloaf, herbs, chili, lime, garlic, and dipping sauce.",
         "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
       ],
@@ -638,7 +638,7 @@
         "voiceGateStatus": "passed_city_voice_gate",
         "v2_2GateStatus": "food_additive_pilot_passed",
         "v2_2GateSources": [
-          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md",
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/guide_2025_coverage_audit.md",
           "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/production_readiness_review.md"
         ],
         "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
@@ -733,7 +733,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bay-mau-lake: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -854,7 +854,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bia-hoi: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
@@ -962,7 +962,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-botanical-garden: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -1061,16 +1061,16 @@
           "catalogId": "viet-family-city-hanoi-place-bun-cha-dac-kim",
           "label": "Bún Chả Đắc Kim",
           "relationship": "dish-to-restaurant follow-through",
-          "displaySubtitle": "A MICHELIN Guide Hàng Mành table when the sauce, mango, and pork can lead lunch.",
-          "reason": "Related because: A MICHELIN Guide Hàng Mành table when the sauce, mango, and pork can lead lunch.",
+          "displaySubtitle": "A Hàng Mành table when the sauce, mango, and pork can lead lunch.",
+          "reason": "Related because: A Hàng Mành table when the sauce, mango, and pork can lead lunch.",
           "status": "render"
         },
         {
           "catalogId": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
           "label": "Tuyết Bún Chả 34",
           "relationship": "dish-to-restaurant follow-through",
-          "displaySubtitle": "A Bib Gourmand Hàng Than stall with chargrilled-to-order pork and spring-roll crunch at the center.",
-          "reason": "Related because: A Bib Gourmand Hàng Than stall with chargrilled-to-order pork and spring-roll crunch at the center.",
+          "displaySubtitle": "A Hàng Than stall with chargrilled-to-order pork and spring-roll crunch at the center.",
+          "reason": "Related because: A Hàng Than stall with chargrilled-to-order pork and spring-roll crunch at the center.",
           "status": "render"
         }
       ],
@@ -1084,7 +1084,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bun-cha: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -1095,7 +1095,7 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Vietnam Travel Hanoi; MICHELIN Hanoi guide"
+        "Production intake source notes: Vietnam Travel Hanoi; guide Hanoi guide"
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -1121,7 +1121,7 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "boon cha huong lien",
-      "travelerMoment": "Choose Hương Liên for bún chả a 2025 MICHELIN Selected Hanoi lunch: grilled pork, warm broth, herbs, vermicelli, quick service, and a name many visitors already know.",
+      "travelerMoment": "Choose Hương Liên for bún chả a Hanoi lunch: grilled pork, warm broth, herbs, vermicelli, quick service, and a name many visitors already know.",
       "storySpine": "Hương Liên earns its place by keeping a famous bún chả room tied to the actual table flow: smoke, broth, herbs, pork, and the quick lunch pace.",
       "intro": {
         "heading": "Grill Smoke, Broth, Herbs",
@@ -1171,8 +1171,8 @@
         },
         {
           "id": "fame-should-stay-smaller-than-lunch",
-          "heading": "Recognition, Then Lunch",
-          "body": "Let the recognition explain why the name is familiar, then eat while the pork, broth, and herbs are warm. The table rhythm matters more than the badge."
+          "heading": "Famous Room, Quick Lunch",
+          "body": "The name may be familiar, but the table is simple: eat while the pork, broth, and herbs are warm."
         }
       ],
       "mentionedHereCandidates": [
@@ -1191,7 +1191,7 @@
           "catalogId": "viet-family-city-hanoi-place-bun-cha-ta",
           "label": "Bún Chả Ta",
           "relationship": "same-dish restaurant comparison",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand bún chả room when the same dish needs a different table.",
+          "displaySubtitle": "A bún chả room when the same dish needs a different table.",
           "reason": "Bun Cha Ta is a useful same-dish room comparison for Huong Lien.",
           "status": "render"
         },
@@ -1207,7 +1207,7 @@
           "catalogId": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
           "label": "Tuyết Bún Chả 34",
           "relationship": "same-dish restaurant comparison",
-          "displaySubtitle": "A Bib Gourmand Hàng Than street-food stall when the meal should feel more direct and grill-led.",
+          "displaySubtitle": "A Hàng Than street-food stall when the meal should feel more direct and grill-led.",
           "reason": "Tuyet gives Huong Lien a more street-food, numbered-stall bún chả comparison.",
           "status": "render"
         }
@@ -1222,20 +1222,20 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bun-cha-huong-lien: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
-          "MICHELIN Selected recognition patch on 2026-05-31: official 2025 PDF support added while keeping the bún chả lunch reason primary."
+          "guide-noted recognition patch on 2026-05-31: official 2025 PDF support added while keeping the bún chả lunch reason primary."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production MICHELIN patch: Bún chả Hương Liên now carries bounded 2025 MICHELIN Selected context and a clear bún chả lunch reason."
+        "reason": "Production food patch: Bún chả Hương Liên now carries a clear bún chả lunch reason."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Hanoi guide",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Bún Chả Hương Liên (Hai Ba Trung) as MICHELIN Selected."
+        "Production intake source notes: guide Hanoi guide",
+        "Official guide Guide Vietnam 2025 PDF lists Bún Chả Hương Liên (Hai Ba Trung) as guide-noted."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -1261,11 +1261,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "bun cha ta",
-      "travelerMoment": "Choose Bún Chả Ta for a 2025 MICHELIN Bib Gourmand Old Quarter bún chả table: grilled pork, dipping broth, herbs, vermicelli, and close-room pace.",
-      "storySpine": "Bun Cha Ta gives the Old Quarter a recognized bún chả table: smoke, herbs, dipping broth, grilled pork, and a small room close to the lanes.",
+      "travelerMoment": "Choose Bún Chả Ta for an Old Quarter bún chả table: grilled pork, dipping broth, herbs, vermicelli, and a close room that slows the meal down.",
+      "storySpine": "Bun Cha Ta gives the Old Quarter a clear bún chả table: smoke, herbs, dipping broth, grilled pork, and a small room close to the lanes.",
       "intro": {
-        "heading": "A Bib Gourmand Bun Cha Table",
-        "body": "Bun Cha Ta is a 2025 MICHELIN Bib Gourmand bún chả stop in the Old Quarter: grilled pork, cool vermicelli, herbs, and a dipping bowl that slows the meal down."
+        "heading": "A Bun Cha Table",
+        "body": "Bun Cha Ta is a bún chả stop in the Old Quarter: grilled pork, cool vermicelli, herbs, and a dipping bowl that slows the meal down."
       },
       "usefulPhraseCards": [
         {
@@ -1306,8 +1306,8 @@
         },
         {
           "id": "a-focused-bun-cha-stop",
-          "heading": "Bib Gourmand, One Dish",
-          "body": "The Bib Gourmand recognition works because the table is direct. Let one dish carry the meal: smoke, broth, herbs, noodles, and pork."
+          "heading": "One Direct Dish",
+          "body": "The table is direct. Let one dish carry the meal: smoke, broth, herbs, noodles, and pork."
         },
         {
           "id": "the-bowl-carries-the-meal",
@@ -1331,7 +1331,7 @@
           "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
           "label": "Bún chả Hương Liên",
           "relationship": "bun cha table comparison",
-          "displaySubtitle": "A 2025 MICHELIN Selected bún chả room when fame, broth, herbs, and pork share the table.",
+          "displaySubtitle": "A bún chả room when fame, broth, herbs, and pork share the table.",
           "reason": "Huong Lien gives Bun Cha Ta a same-dish comparison for bun cha planning.",
           "status": "render"
         },
@@ -1347,8 +1347,8 @@
           "catalogId": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
           "label": "Tuyết Bún Chả 34",
           "relationship": "same-dish restaurant comparison",
-          "displaySubtitle": "A Hàng Than Bib Gourmand stall when grill smoke and spring-roll crunch matter more than a slower room.",
-          "reason": "Tuyet gives Bun Cha Ta a more direct street-food comparison inside Bib Gourmand bún chả.",
+          "displaySubtitle": "A Hàng Than stall when grill smoke and spring-roll crunch matter more than a slower room.",
+          "reason": "Tuyet gives Bun Cha Ta a more direct street-food comparison inside bún chả.",
           "status": "render"
         }
       ],
@@ -1362,20 +1362,20 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bun-cha-ta: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
-          "MICHELIN Bib Gourmand recognition patch on 2026-05-31: official 2025 PDF support added while keeping the Old Quarter bún chả reason primary."
+          "casual-value recognition patch on 2026-05-31: official 2025 PDF support added while keeping the Old Quarter bún chả reason primary."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production MICHELIN patch: Bún Chả Ta now carries bounded 2025 MICHELIN Bib Gourmand context, dish-level Mentioned Here, and a clear Old Quarter bún chả save reason."
+        "reason": "Production food patch: Bún Chả Ta now carries dish-level Mentioned Here, and a clear Old Quarter bún chả save reason."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Hanoi guide",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Bun Cha Ta (Nguyen Huu Huan Street) as Bib Gourmand."
+        "Production intake source notes: guide Hanoi guide",
+        "Official guide Guide Vietnam 2025 PDF lists Bun Cha Ta (Nguyen Huu Huan Street) as casual-value."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -1402,10 +1402,10 @@
       "category": "Restaurant",
       "pronunciation": "bun cha dac kim",
       "travelerMoment": "Choose Đắc Kim for the Hàng Mành bún chả lunch where the sauce matters: sweet fish sauce, pickled green mango, smoky pork, plump patties, noodles, and herbs all doing one focused job.",
-      "storySpine": "Đắc Kim gives Hanoi's bún chả story a sharper Old Quarter table: the MICHELIN Guide recognition supports the choice, but the real memory is the balance of smoke, sweetness, acidity, pork, and herbs.",
+      "storySpine": "Đắc Kim gives Hanoi's bún chả story a sharper Old Quarter table: smoke, sweetness, acidity, pork, and herbs.",
       "intro": {
         "heading": "Sauce, Smoke, Mango",
-        "body": "Bún Chả Đắc Kim is a MICHELIN Guide Hàng Mành bún chả stop for smoky pork, plump patties, vermicelli, herbs, and a sweet fish-sauce dip sharpened with pickled green mango."
+        "body": "Bún Chả Đắc Kim is a Hàng Mành bún chả stop for smoky pork, plump patties, vermicelli, herbs, and a sweet fish-sauce dip sharpened with pickled green mango."
       },
       "usefulPhraseCards": [
         {
@@ -1452,7 +1452,7 @@
         {
           "id": "where-it-sits-in-hanoi",
           "heading": "Where It Sits In Hanoi",
-          "body": "Hương Liên carries the famous-room reference. Bún Chả Ta carries a Bib Gourmand Old Quarter table. Đắc Kim is the Hàng Mành sauce-and-pork lunch."
+          "body": "Hương Liên carries the famous-room reference. Bún Chả Ta carries a Old Quarter table. Đắc Kim is the Hàng Mành sauce-and-pork lunch."
         }
       ],
       "mentionedHereCandidates": [
@@ -1471,7 +1471,7 @@
           "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
           "label": "Bún chả Hương Liên",
           "relationship": "same-dish restaurant comparison",
-          "displaySubtitle": "A famous MICHELIN Selected room when bún chả should feel quick and recognizable.",
+          "displaySubtitle": "A famous room when bún chả should feel quick and recognizable.",
           "reason": "Huong Lien gives Dac Kim a familiar same-dish comparison.",
           "status": "render"
         },
@@ -1479,7 +1479,7 @@
           "catalogId": "viet-family-city-hanoi-place-bun-cha-ta",
           "label": "Bún Chả Ta",
           "relationship": "same-dish restaurant comparison",
-          "displaySubtitle": "A Bib Gourmand Old Quarter table when the dipping bowl should stay central.",
+          "displaySubtitle": "A Old Quarter table when the dipping bowl should stay central.",
           "reason": "Bun Cha Ta gives Dac Kim another recognized bún chả comparison.",
           "status": "render"
         },
@@ -1495,7 +1495,7 @@
           "catalogId": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
           "label": "Tuyết Bún Chả 34",
           "relationship": "same-dish restaurant comparison",
-          "displaySubtitle": "A Bib Gourmand Hàng Than stall with chargrill and spring-roll crunch at the center instead of mango-lifted sauce.",
+          "displaySubtitle": "A Hàng Than stall with chargrill and spring-roll crunch at the center instead of mango-lifted sauce.",
           "reason": "Tuyet gives Dac Kim a grill-and-crunch comparison inside the same dish family.",
           "status": "render"
         }
@@ -1510,19 +1510,19 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Additive Hanoi 104-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
-          "Official MICHELIN venue page support checked on 2026-05-31: Bún Chả Đắc Kim appears as a Hanoi MICHELIN Guide restaurant on Hàng Mành Street.",
+          "Official guide venue page support checked on 2026-05-31: Bún Chả Đắc Kim appears as a Hanoi guide Guide restaurant on Hàng Mành Street.",
           "Visible copy uses stable source facts only: bún chả, sweet fish-sauce dip, pickled green mango, smoky pork, pork patties, vermicelli, and herbs. It avoids hours, prices, booking, closure, and fragile operational claims."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Additive production pilot: Bun Cha Dac Kim has MICHELIN Guide recognition, a distinct sauce-and-pork Hàng Mành lunch role, mapped phrase cards, and useful bún chả comparisons."
+        "reason": "Additive production pilot: Bun Cha Dac Kim has a distinct sauce-and-pork Hàng Mành lunch role, mapped phrase cards, and useful bún chả comparisons."
       },
       "sourceNotes": [
         "Added as the fourth additive Hanoi restaurant pilot after the 500-page hard reset; script assumptions now allow Hanoi 104.",
-        "Official MICHELIN Guide venue page lists Bún Chả Đắc Kim (Hang Manh Street), Hanoi, as a street-food restaurant in the MICHELIN Guide.",
-        "Official MICHELIN page evidence used for stable visible details: sweet fish-sauce nước chấm with finely sliced pickled green mango, vermicelli noodles, shredded smoky pork, plump pork patties, sweetness, and acidity.",
+        "Official guide Guide venue page lists Bún Chả Đắc Kim (Hang Manh Street), Hanoi, as a street-food restaurant in the guide Guide.",
+        "Official guide page evidence used for stable visible details: sweet fish-sauce nước chấm with finely sliced pickled green mango, vermicelli noodles, shredded smoky pork, plump pork patties, sweetness, and acidity.",
         "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
       ],
       "status": "FINAL_PASS",
@@ -1532,7 +1532,7 @@
         "voiceGateStatus": "passed_city_voice_gate",
         "v2_2GateStatus": "food_additive_pilot_passed",
         "v2_2GateSources": [
-          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md"
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/guide_2025_coverage_audit.md"
         ],
         "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
         "notes": [
@@ -1555,7 +1555,7 @@
       "storySpine": "Tuyết earns a fourth Hanoi bún chả slot by owning the numbered-stall version of the meal: grill smoke first, broth and noodles next, then an optional crunchy spring roll.",
       "intro": {
         "heading": "Grill Smoke, Then Crunch",
-        "body": "Tuyết Bún Chả 34 is a 2025 MICHELIN Bib Gourmand Hàng Than street-food stall for bún chả chargrilled to order: pork, rice noodles, herbs, broth, and an extra spring roll if the table needs crunch."
+        "body": "Tuyết Bún Chả 34 is a Hàng Than street-food stall for bún chả chargrilled to order: pork, rice noodles, herbs, broth, and an extra spring roll if the table needs crunch."
       },
       "usefulPhraseCards": [
         {
@@ -1592,7 +1592,7 @@
         {
           "id": "add-crunch-deliberately",
           "heading": "Crunch Changes The Bowl",
-          "body": "The MICHELIN note points to the extra spring roll for texture. It turns the meal from soft noodles and broth into a sharper street-food lunch."
+          "body": "The note points to the extra spring roll for texture. It turns the meal from soft noodles and broth into a sharper street-food lunch."
         },
         {
           "id": "one-numbered-stall",
@@ -1602,7 +1602,7 @@
         {
           "id": "where-it-sits",
           "heading": "Where It Sits In Hanoi",
-          "body": "Hương Liên is the famous room. Bún Chả Ta is the Old Quarter Bib Gourmand table. Đắc Kim is sauce and mango. Tuyết is grill, broth, noodles, crunch."
+          "body": "Hương Liên is the famous room. Bún Chả Ta is the Old Quarter table. Đắc Kim is sauce and mango. Tuyết is grill, broth, noodles, crunch."
         }
       ],
       "mentionedHereCandidates": [
@@ -1621,7 +1621,7 @@
           "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
           "label": "Bún chả Hương Liên",
           "relationship": "same-dish restaurant comparison",
-          "displaySubtitle": "A 2025 MICHELIN Selected bún chả room when fame and quick lunch pace matter more.",
+          "displaySubtitle": "A bún chả room when fame and quick lunch pace matter more.",
           "reason": "Huong Lien gives Tuyet the famous-room comparison inside Hanoi bún chả.",
           "status": "render"
         },
@@ -1629,8 +1629,8 @@
           "catalogId": "viet-family-city-hanoi-place-bun-cha-ta",
           "label": "Bún Chả Ta",
           "relationship": "same-dish restaurant comparison",
-          "displaySubtitle": "A Bib Gourmand Old Quarter table when the dipping bowl should feel slower and more seated.",
-          "reason": "Bun Cha Ta gives Tuyet a seated Old Quarter Bib Gourmand comparison.",
+          "displaySubtitle": "A Old Quarter table when the dipping bowl should feel slower and more seated.",
+          "reason": "Bun Cha Ta gives Tuyet a seated Old Quarter comparison.",
           "status": "render"
         },
         {
@@ -1652,20 +1652,20 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Additive Hanoi 106-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
-          "Official 2025 MICHELIN PDF support checked on 2026-05-31: Tuyết Bún Chả 34 appears in the Hanoi Bib Gourmand section as Street Food.",
-          "Current MICHELIN venue-page evidence checked on 2026-05-31 through the reader cache: Hàng Than address, Bib Gourmand, street food, bún chả chargrilled to order, noodles in broth, and optional extra spring roll for crunch.",
+          "Official 2025 guide PDF support checked on 2026-05-31: Tuyết Bún Chả 34 appears in the Hanoi casual-value section as Street Food.",
+          "Current guide venue-page evidence checked on 2026-05-31 through the reader cache: Hàng Than address, casual-value, street food, bún chả chargrilled to order, noodles in broth, and optional extra spring roll for crunch.",
           "Visible copy avoids hours, prices, booking, closure, and fragile operational claims."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Additive production pilot: Tuyet Bun Cha 34 has bounded 2025 MICHELIN Bib Gourmand recognition, a distinct numbered-stall bún chả role, mapped phrase cards, and useful same-dish comparisons."
+        "reason": "Additive production pilot: Tuyet Bun Cha 34 has a distinct numbered-stall bún chả role, mapped phrase cards, and useful same-dish comparisons."
       },
       "sourceNotes": [
         "Added as the sixth additive Hanoi restaurant pilot after the 500-page hard reset; script assumptions now allow Hanoi 106.",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Tuyết Bún Chả 34 in the Hanoi Bib Gourmand section as Street Food.",
-        "Current MICHELIN venue page supports stable visible details: 34 Hang Than Street, street-food stall, bún chả chargrilled to order, rice noodles, fresh herbs, pork, broth, and optional extra spring roll for crunch.",
+        "Official guide Guide Vietnam 2025 PDF lists Tuyết Bún Chả 34 in the Hanoi casual-value section as Street Food.",
+        "Current guide venue page supports stable visible details: 34 Hang Than Street, street-food stall, bún chả chargrilled to order, rice noodles, fresh herbs, pork, broth, and optional extra spring roll for crunch.",
         "No hours, prices, booking, closure, or fragile operational claims are bundled in visible copy."
       ],
       "status": "FINAL_PASS",
@@ -1765,7 +1765,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bun-thang: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -1877,7 +1877,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-ca-phe-sua-da: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -1989,7 +1989,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-cha-ca: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -2000,7 +2000,7 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Vietnam Travel Hanoi; MICHELIN Hanoi guide"
+        "Production intake source notes: Vietnam Travel Hanoi; guide Hanoi guide"
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -2026,11 +2026,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "cha ca thang long",
-      "travelerMoment": "Choose Thăng Long for a 2025 MICHELIN Bib Gourmand chả cá table: turmeric fish, dill, noodles, herbs, peanuts, and the sauce choice.",
+      "travelerMoment": "Choose Thăng Long for a hot-pan chả cá table: turmeric fish, dill, noodles, herbs, peanuts, and a sauce choice at the center of a slower Hanoi dinner.",
       "storySpine": "Thăng Long turns chả cá into a recognized Hanoi table ritual, with heat, dill, fish, noodles, sauce, and shared bite-building carrying the memory.",
       "intro": {
-        "heading": "A Bib Gourmand Hot Pan",
-        "body": "Cha Ca Thang Long is a 2025 MICHELIN Bib Gourmand hot-pan meal: turmeric fish, dill, scallions, noodles, herbs, peanuts, and sauce at the center of the table."
+        "heading": "A Hot Pan",
+        "body": "Cha Ca Thang Long is a hot-pan meal: turmeric fish, dill, scallions, noodles, herbs, peanuts, and sauce at the center of the table."
       },
       "usefulPhraseCards": [
         {
@@ -2071,8 +2071,8 @@
         },
         {
           "id": "a-planned-fish-dinner",
-          "heading": "Recognition Around One Pan",
-          "body": "The Bib Gourmand note points back to the one-dish rhythm. Arrive ready for the pan, the herbs, and the sauce decision."
+          "heading": "One Hot Pan",
+          "body": "The meal points back to the one-dish rhythm. Arrive ready for the pan, the herbs, and the sauce decision."
         },
         {
           "id": "the-pan-stays-central",
@@ -2096,7 +2096,7 @@
           "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
           "label": "Bún chả Hương Liên",
           "relationship": "signature-dish table comparison",
-          "displaySubtitle": "A 2025 MICHELIN Selected bún chả table when another famous Hanoi dish should carry lunch.",
+          "displaySubtitle": "A bún chả table when another famous Hanoi dish should carry lunch.",
           "reason": "Huong Lien is a useful food-route comparison for another one-dish Hanoi meal.",
           "status": "render"
         }
@@ -2111,21 +2111,21 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-cha-ca-thang-long: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
-          "MICHELIN Bib Gourmand recognition patch on 2026-05-31: official 2025 PDF support added while keeping the chả cá hot-pan reason primary."
+          "casual-value recognition patch on 2026-05-31: official 2025 PDF support added while keeping the chả cá hot-pan reason primary."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production MICHELIN patch: Cha Ca Thang Long now carries bounded 2025 MICHELIN Bib Gourmand context and a clearer hot-pan dinner save reason."
+        "reason": "Production food patch: Cha Ca Thang Long now carries a clearer hot-pan dinner save reason."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Hanoi guide",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Chả Cá Thăng Long (6B Duong Thanh Street) as Bib Gourmand."
+        "Production intake source notes: guide Hanoi guide",
+        "Official guide Guide Vietnam 2025 PDF lists Chả Cá Thăng Long (6B Duong Thanh Street) as casual-value."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -2226,7 +2226,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-cho-buoi-market: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -2338,7 +2338,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-coffee-hop: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -2449,7 +2449,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-cong-ca-phe-trieu-viet-vuong: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -2561,7 +2561,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-cyclo-old-quarter: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -2677,7 +2677,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-dinh-cafe: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -2789,7 +2789,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-dong-da: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -2900,7 +2900,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-dong-xuan: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -3012,7 +3012,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-egg-coffee: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -3124,7 +3124,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-ethnology-museum: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -3235,7 +3235,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-french-quarter: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -3341,7 +3341,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-french-quarter-walk: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -3377,11 +3377,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "gia",
-      "travelerMoment": "Plan Gia for Hanoi dinner a 2025 One MICHELIN Star evening, with a composed room and contemporary Vietnamese pacing rather than street-food speed.",
+      "travelerMoment": "Plan Gia when dinner is the evening: a composed room, contemporary Vietnamese pacing, and time away from street-food speed.",
       "storySpine": "Gia adds a refined Hanoi dinner option where Vietnamese ingredients and a quiet room make the meal the planned evening.",
       "intro": {
-        "heading": "A Michelin-Starred Hanoi Evening",
-        "body": "Gia is a 2025 One MICHELIN Star Hanoi dinner: a calmer room, contemporary Vietnamese pacing, and a night planned around the table rather than another quick stop."
+        "heading": "A Special-Occasion Hanoi Evening",
+        "body": "Gia is a special-occasion Hanoi dinner: a calmer room, contemporary Vietnamese pacing, and a night planned around the table rather than another quick stop."
       },
       "usefulPhraseCards": [
         {
@@ -3423,7 +3423,7 @@
         {
           "id": "ingredients-before-status",
           "heading": "Ingredients Before Status",
-          "body": "The star helps explain the booking, but the memory still has to come from the plates, pacing, and Vietnamese ingredients in front of you."
+          "body": "The booking only matters if the plates, pacing, and Vietnamese ingredients stay memorable in front of you."
         },
         {
           "id": "hanoi-has-two-registers",
@@ -3455,9 +3455,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-tam-vi",
           "label": "Tầm Vị",
-          "relationship": "2025 One MICHELIN Star northern dinner comparison",
-          "displaySubtitle": "A 2025 One MICHELIN Star northern table with wood, rice, and shared dishes.",
-          "reason": "Tam Vi is the relevant star-level Hanoi comparison for Gia.",
+          "relationship": "special-occasion northern dinner comparison",
+          "displaySubtitle": "A special-occasion northern table with wood, rice, and shared dishes.",
+          "reason": "Tam Vi is the relevant special-occasion Hanoi comparison for Gia.",
           "status": "render"
         }
       ],
@@ -3471,20 +3471,20 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-gia: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Gia now has bounded 2025 One MICHELIN Star positioning and a specific Hanoi dinner comparison."
+        "reason": "Production food pass: Gia now has a specific Hanoi dinner comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025; MICHELIN Hanoi guide",
-        "Official Michelin corporate 2025 release lists Gia among retaining One MICHELIN Star recipients for Vietnam."
+        "Production intake source notes: guide Vietnam 2025; guide Hanoi guide",
+        "Official guide corporate 2025 release lists Gia among retaining special-occasion recipients for Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -3585,7 +3585,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-gia-lam-station: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -3828,7 +3828,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-giap-bat-bus-station: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -3939,7 +3939,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-hang-bac-street: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4050,7 +4050,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-hang-da-market: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -4162,7 +4162,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-hang-gai-street: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4273,7 +4273,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-hanoi-flag-tower: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4384,7 +4384,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-hanoi-railway-station: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4420,11 +4420,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "hibana by koki",
-      "travelerMoment": "Plan Hibana by Koki for Hanoi dinner a 2025 One MICHELIN Star teppanyaki-style occasion, with counter attention, staff pacing, and a quieter evening built around the meal.",
+      "travelerMoment": "Plan Hibana by Koki when dinner can be the evening: counter seats, close-up cooking, staff pacing, and a quieter room built around the meal.",
       "storySpine": "Hibana adds a Japanese fine-dining register inside Hanoi, where the counter and pacing matter as much as the dishes.",
       "intro": {
-        "heading": "A Michelin-Starred Counter Night",
-        "body": "Hibana by Koki is a 2025 One MICHELIN Star counter-style dinner in Hanoi: slower pacing, close-up cooking, and an evening that should not be squeezed between too many plans."
+        "heading": "A Special-Occasion Counter Night",
+        "body": "Hibana by Koki is a special-occasion counter-style dinner in Hanoi: slower pacing, close-up cooking, and an evening that should not be squeezed between too many plans."
       },
       "usefulPhraseCards": [
         {
@@ -4481,7 +4481,7 @@
           "label": "Gia",
           "relationship": "2025 star dinner contrast",
           "displaySubtitle": "A contemporary Vietnamese dinner when a quieter room should become the evening.",
-          "reason": "Gia is the stronger Hanoi star-level contrast for Hibana by Koki.",
+          "reason": "Gia is the stronger composed Hanoi dinner comparison for Hibana by Koki.",
           "status": "render"
         }
       ],
@@ -4495,20 +4495,20 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-hibana-by-koki: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Hibana now has bounded 2025 One MICHELIN Star positioning and a specific star-level Hanoi comparison."
+        "reason": "Production food pass: Hibana now has a specific special-occasion Hanoi comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025",
-        "Official Michelin corporate 2025 release lists Hibana by Koki among retaining One MICHELIN Star recipients for Vietnam."
+        "Production intake source notes: guide Vietnam 2025",
+        "Official guide corporate 2025 release lists Hibana by Koki among retaining special-occasion recipients for Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -4609,7 +4609,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-ho-chi-minh-mausoleum: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4720,7 +4720,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-ho-chi-minh-museum: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4831,7 +4831,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-hoa-lo-prison: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4942,7 +4942,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-hoan-kiem: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5053,7 +5053,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-hom-market: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -5165,7 +5165,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-imperial-citadel: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5276,7 +5276,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-lam-cafe: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -5313,11 +5313,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "lamai garden",
-      "travelerMoment": "Choose Lamai Garden when Hanoi dinner should slow down around a 2025 MICHELIN Green Star table: garden calm, farm-minded ingredients, herbs, and warm light.",
-      "storySpine": "Lamai Garden's Green Star matters because the meal connects a garden-side room to farm-minded choices instead of treating sustainability as a label.",
+      "travelerMoment": "Choose Lamai Garden when Hanoi dinner should slow down around an ingredient-led table: garden calm, farm-minded ingredients, herbs, and warm light.",
+      "storySpine": "Lamai Garden's ingredient-led matters because the meal connects a garden-side room to farm-minded choices instead of treating sustainability as a label.",
       "intro": {
-        "heading": "A Green-Star Garden Dinner",
-        "body": "Lamai Garden is a 2025 MICHELIN Green Star dinner in Hanoi: garden-side calm, farm-minded ingredients, herbs, warm light, and a table that slows the night down."
+        "heading": "A Garden-Side Ingredient Dinner",
+        "body": "Lamai Garden is an ingredient-led dinner in Hanoi: garden-side calm, farm-minded ingredients, herbs, warm light, and a table that slows the night down."
       },
       "usefulPhraseCards": [
         {
@@ -5354,7 +5354,7 @@
         {
           "id": "ask-around-the-farm-minded-menu",
           "heading": "Ask Around The Farm-Minded Menu",
-          "body": "The Green Star is a reason to ask what is seasonal, local, or especially alive tonight. It makes the table feel more specific than a generic quiet dinner."
+          "body": "The ingredient-led is a reason to ask what is seasonal, local, or especially alive tonight. It makes the table feel more specific than a generic quiet dinner."
         },
         {
           "id": "the-evening-needs-space",
@@ -5372,8 +5372,8 @@
         {
           "catalogId": "viet-family-city-hanoi-place-tam-vi",
           "label": "Tầm Vị",
-          "relationship": "green-star to northern-table contrast",
-          "displaySubtitle": "A 2025 One MICHELIN Star northern table when dinner should feel more home-style.",
+          "relationship": "garden dinner to northern-table contrast",
+          "displaySubtitle": "A special-occasion northern table when dinner should feel more home-style.",
           "reason": "Tam Vi gives Lamai Garden a recognized-dinner comparison with a different food memory.",
           "status": "render"
         }
@@ -5388,21 +5388,21 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-lamai-garden: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
-          "Michelin food-desire continuation on 2026-05-30: visible copy now ties Green Star recognition to farm-minded ingredients and traveler ordering judgment."
+          "guide food-desire continuation on 2026-05-30: visible copy now ties ingredient-led recognition to farm-minded ingredients and traveler ordering judgment."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Lamai Garden now has bounded 2025 MICHELIN Green Star positioning, stronger farm-minded food desire, and a specific Hanoi dinner contrast."
+        "reason": "Production food pass: Lamai Garden now has stronger farm-minded food desire, and a specific Hanoi dinner contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025",
-        "Official Michelin corporate 2025 release lists Lamai Garden among Vietnam MICHELIN Green Star restaurants."
+        "Production intake source notes: guide Vietnam 2025",
+        "Official guide corporate 2025 release lists Lamai Garden among Vietnam guide ingredient-led restaurants."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -5503,7 +5503,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-lenin-park: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5614,7 +5614,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-literature-museum: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5720,7 +5720,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-loading-t-cafe: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -5836,7 +5836,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-long-bien-bridge: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5947,7 +5947,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-long-bien-market: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -6059,7 +6059,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-manzi-art-space: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6170,7 +6170,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-mien-luon: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -6181,7 +6181,7 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025"
+        "Production intake source notes: guide Vietnam 2025"
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -6207,11 +6207,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "mien luon chan cam",
-      "travelerMoment": "Choose Chân Cầm for Hanoi lunch one focused Bib Gourmand bowl: eel, glass noodles, herbs, steam, and a quick Old Quarter room.",
+      "travelerMoment": "Choose Chân Cầm for Hanoi lunch one focused bowl: eel, glass noodles, herbs, steam, and a quick Old Quarter room.",
       "storySpine": "Chân Cầm earns its place by making miến lươn feel specific: eel can be soft or crisp, the glass noodles stay light, and the shop pace keeps the meal sharp.",
       "intro": {
-        "heading": "A Bib Gourmand Eel-Noodle Bowl",
-        "body": "Mien Luon Chan Cam is a 2025 MICHELIN Bib Gourmand noodle stop for eel, glass noodles, herbs, steam, and a quick Old Quarter lunch that still feels worth remembering."
+        "heading": "A Eel-Noodle Bowl",
+        "body": "Mien Luon Chan Cam is a noodle stop for eel, glass noodles, herbs, steam, and a quick Old Quarter lunch that still feels worth remembering."
       },
       "usefulPhraseCards": [
         {
@@ -6276,9 +6276,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-pho-bo-lam",
           "label": "Phở Bò Lâm",
-          "relationship": "Bib Gourmand beef-cut phở",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand beef-phở bowl when tendon, broth, and chew can lead.",
-          "reason": "Related because: A 2025 MICHELIN Bib Gourmand beef-phở bowl when tendon, broth, and chew can lead.",
+          "relationship": "beef-cut phở",
+          "displaySubtitle": "A beef-phở bowl when tendon, broth, and chew can lead.",
+          "reason": "Related because: A beef-phở bowl when tendon, broth, and chew can lead.",
           "status": "render"
         }
       ],
@@ -6292,20 +6292,20 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-mien-luon-chan-cam: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
-          "Michelin food-desire continuation on 2026-05-30: visible copy now uses traveler-facing MICHELIN Bib Gourmand wording and stronger eel/glass-noodle detail."
+          "guide food-desire continuation on 2026-05-30: visible copy now uses traveler-facing casual-value wording and stronger eel/glass-noodle detail."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Mien Luon Chan Cam now has bounded 2025 MICHELIN Bib Gourmand positioning, specific eel-noodle desire, and a noodle-shop contrast."
+        "reason": "Production food pass: Mien Luon Chan Cam now has bounded 2025 casual-value positioning, specific eel-noodle desire, and a noodle-shop contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025",
-        "Michelin audit note: read-only reviewer found official 2025 Bib Gourmand support for Miến lươn Chân Cầm; keep claim bounded to the 2025 guide."
+        "Production intake source notes: guide Vietnam 2025",
+        "guide audit note: read-only reviewer found official 2025 casual-value support for Miến lươn Chân Cầm; keep claim bounded to the 2025 guide."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -6406,7 +6406,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-my-dinh-bus-station: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6517,7 +6517,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-nang-cafe: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -6629,7 +6629,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-national-museum-history: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6740,7 +6740,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-nem-cua-be: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -6751,7 +6751,7 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Hanoi guide"
+        "Production intake source notes: guide Hanoi guide"
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -6852,7 +6852,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-ngoc-son-temple: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6963,7 +6963,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-nguyen-huu-huan-street: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6973,7 +6973,7 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Hanoi guide"
+        "Production intake source notes: guide Hanoi guide"
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -7074,7 +7074,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-night-market-walk: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -7186,7 +7186,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-noi-bai-airport: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -7297,7 +7297,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-nuoc-ngam-bus-station: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -7408,7 +7408,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-old-quarter: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -7519,7 +7519,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-old-quarter-walking-tour: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -7630,7 +7630,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-one-pillar-pagoda: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -7741,7 +7741,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-opera-house: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -7852,7 +7852,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-phan-dinh-phung-street: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -7963,7 +7963,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-pho-bat-dan: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -8068,8 +8068,8 @@
           "catalogId": "viet-family-city-hanoi-place-pho-10-ly-quoc-su",
           "label": "Phở 10 Lý Quốc Sư",
           "relationship": "dish-to-recognizable-shop",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Hoan Kiem pho name for an easy first bowl.",
-          "reason": "The beef-pho dish page should surface the recognizable Hoan Kiem Bib Gourmand shop now that it exists as a first-class page.",
+          "displaySubtitle": "A Hoan Kiem pho name for an easy first bowl.",
+          "reason": "The beef-pho dish page should surface the recognizable Hoan Kiem shop now that it exists as a first-class page.",
           "status": "render"
         }
       ],
@@ -8083,7 +8083,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-pho-bo: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -8094,7 +8094,7 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Vietnam Travel Hanoi; MICHELIN Hanoi guide"
+        "Production intake source notes: Vietnam Travel Hanoi; guide Hanoi guide"
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -8123,8 +8123,8 @@
       "travelerMoment": "Phở Bò Lâm is for a deliberate Hanoi pho bowl built around beef cuts, chew, and broth together.",
       "storySpine": "Pho Bo Lam gets its specificity from beef texture, tendon, broth, herbs, and shop pace rather than guide-list status alone.",
       "intro": {
-        "heading": "A Bib Gourmand Pho Stop",
-        "body": "Pho Bo Lam is a 2025 MICHELIN Bib Gourmand beef-pho stop for broth, rice noodles, herbs, and the deeper chew of tendon or richer beef cuts."
+        "heading": "A Pho Stop",
+        "body": "Pho Bo Lam is a beef-pho stop for broth, rice noodles, herbs, and the deeper chew of tendon or richer beef cuts."
       },
       "usefulPhraseCards": [
         {
@@ -8205,21 +8205,21 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-pho-bo-lam: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
-          "Michelin food-desire continuation on 2026-05-30: visible copy now uses traveler-facing MICHELIN Bib Gourmand wording and stronger beef-cut/tendon detail."
+          "guide food-desire continuation on 2026-05-30: visible copy now uses traveler-facing casual-value wording and stronger beef-cut/tendon detail."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Pho Bo Lam now has bounded 2025 MICHELIN Bib Gourmand positioning, specific beef-pho desire, and a pho-shop comparison."
+        "reason": "Production food pass: Pho Bo Lam now has bounded 2025 casual-value positioning, specific beef-pho desire, and a pho-shop comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025; MICHELIN Hanoi guide",
-        "Michelin audit note: read-only reviewer found official 2025 Bib Gourmand support for Phở Bò Lâm; keep claim bounded to the 2025 guide."
+        "Production intake source notes: guide Vietnam 2025; guide Hanoi guide",
+        "guide audit note: read-only reviewer found official 2025 casual-value support for Phở Bò Lâm; keep claim bounded to the 2025 guide."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -8320,7 +8320,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-pho-ga: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -8358,10 +8358,10 @@
       "category": "Restaurant",
       "pronunciation": "pho ga nguyet",
       "travelerMoment": "Phở Gà Nguyệt gives Hanoi's pho map a lighter lane: clear chicken broth, rice noodles, tender chicken, herbs, lime, and a quick meal built around phở gà rather than beef.",
-      "storySpine": "Phở Gà Nguyệt matters because Hanoi pho is not only beef; this 2025 MICHELIN Bib Gourmand stop gives chicken pho its own named place in the city's pho set.",
+      "storySpine": "Phở Gà Nguyệt matters because Hanoi pho is not only beef; this stop gives chicken pho its own named place in the city's pho set.",
       "intro": {
         "heading": "Chicken Pho With Its Own Weight",
-        "body": "This 2025 MICHELIN Bib Gourmand shop keeps the meal focused on phở gà: clear broth, rice noodles, tender chicken, green herbs, and lime."
+        "body": "This shop keeps the meal focused on phở gà: clear broth, rice noodles, tender chicken, green herbs, and lime."
       },
       "usefulPhraseCards": [
         {
@@ -8427,7 +8427,7 @@
           "catalogId": "viet-family-city-hanoi-place-pho-bo-lam",
           "label": "Phở Bò Lâm",
           "relationship": "chicken-versus-beef pho comparison",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand beef-pho stop with richer cuts at the center.",
+          "displaySubtitle": "A beef-pho stop with richer cuts at the center.",
           "reason": "Pho Bo Lam is the strongest beef-pho contrast for a chicken-pho page.",
           "status": "render"
         },
@@ -8435,7 +8435,7 @@
           "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
           "label": "Phở Gia Truyền",
           "relationship": "pho-shop comparison",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Old Quarter beef-pho shop for broth and room pace.",
+          "displaySubtitle": "A Old Quarter beef-pho shop for broth and room pace.",
           "reason": "Pho Gia Truyen gives the named-pho shop comparison without duplicating the chicken-pho role.",
           "status": "render"
         }
@@ -8450,18 +8450,18 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Additive Hanoi 102-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
-          "Official 2025 MICHELIN PDF support checked locally: Phở Gà Nguyệt appears in the Hanoi Bib Gourmand section as Street Food.",
+          "Official 2025 guide PDF support checked locally: Phở Gà Nguyệt appears in the Hanoi casual-value section as Street Food.",
           "Mentioned Here intentionally links to the existing chicken-pho dish page so the named restaurant has dish-level context."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production Hanoi additive pilot: bounded 2025 MICHELIN Bib Gourmand context, distinct chicken-pho reason, mapped phrase cards, and renderable dish/pho comparisons."
+        "reason": "Production Hanoi additive pilot: distinct chicken-pho reason, mapped phrase cards, and renderable dish/pho comparisons."
       },
       "sourceNotes": [
         "Added as the second additive Hanoi restaurant pilot after the 500-page hard reset; script assumptions now allow Hanoi 102.",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Phở Gà Nguyệt in the Hanoi Bib Gourmand section as Street Food.",
+        "Official guide Guide Vietnam 2025 PDF lists Phở Gà Nguyệt in the Hanoi casual-value section as Street Food.",
         "Visible copy avoids hours, address, booking, closure, and narrow operational claims."
       ],
       "status": "FINAL_PASS",
@@ -8474,7 +8474,7 @@
         "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
         "notes": [
           "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only.",
-          "Additive food listing pass: source, phrase mapping, related-card intent, Mentioned Here, and MICHELIN support reviewed before projection."
+          "Additive food listing pass: source, phrase mapping, related-card intent, Mentioned Here, and guide support reviewed before projection."
         ],
         "finalPassDate": "2026-05-31"
       }
@@ -8489,11 +8489,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "pho muoi ly quoc su",
-      "travelerMoment": "Phở 10 Lý Quốc Sư gives Hanoi pho a highly recognizable Hoan Kiem name: a 2025 MICHELIN Bib Gourmand beef-pho stop for clear broth, rice noodles, sliced beef, herbs, lime, and a quick meal near the Old Quarter.",
+      "travelerMoment": "Phở 10 Lý Quốc Sư gives Hanoi pho a highly recognizable Hoan Kiem name: a beef-pho stop for clear broth, rice noodles, sliced beef, herbs, lime, and a quick meal near the Old Quarter.",
       "storySpine": "Many visitors already search the name before arrival, and the bowl is specific enough to remember beside other Hanoi pho shops rather than another loose pho mention.",
       "intro": {
         "heading": "The Recognizable Pho Name",
-        "body": "Phở 10 Lý Quốc Sư is the 2025 MICHELIN Bib Gourmand pho name many people already notice before Hanoi. The Hoan Kiem branch keeps the job clear: beef pho, hot broth, herbs, lime, and a quick bowl."
+        "body": "Phở 10 Lý Quốc Sư is the pho name many people already notice before Hanoi. The Hoan Kiem branch keeps the job clear: beef pho, hot broth, herbs, lime, and a quick bowl."
       },
       "usefulPhraseCards": [
         {
@@ -8559,7 +8559,7 @@
           "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
           "label": "Phở Gia Truyền",
           "relationship": "same-dish shop comparison",
-          "displaySubtitle": "Another 2025 MICHELIN Bib Gourmand Old Quarter pho shop for broth and room pace.",
+          "displaySubtitle": "Another Old Quarter pho shop for broth and room pace.",
           "reason": "Pho Gia Truyen is the closest same-dish shop comparison for a visitor choosing one or two Old Quarter pho names.",
           "status": "render"
         },
@@ -8567,7 +8567,7 @@
           "catalogId": "viet-family-city-hanoi-place-pho-bo-lam",
           "label": "Phở Bò Lâm",
           "relationship": "beef-pho comparison",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand beef-pho stop with richer cuts at the center.",
+          "displaySubtitle": "A beef-pho stop with richer cuts at the center.",
           "reason": "Pho Bo Lam gives the richer beef-cut comparison without making Phở 10 carry every Hanoi pho role.",
           "status": "render"
         }
@@ -8582,19 +8582,19 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Additive Hanoi 103-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
-          "Official MICHELIN support checked on 2026-05-31: the current MICHELIN venue page and official 2025 Vietnam PDF support Phở 10 Lý Quốc Sư as Bib Gourmand.",
+          "Official guide support checked on 2026-05-31: the current guide venue page and official 2025 Vietnam PDF support Phở 10 Lý Quốc Sư as casual-value.",
           "Mentioned Here intentionally links to the existing beef-pho dish page so the named restaurant has dish-level context."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production Hanoi additive pilot: bounded 2025 MICHELIN Bib Gourmand context, recognizable Hoan Kiem pho-save reason, mapped phrase cards, and renderable beef-pho comparisons."
+        "reason": "Production Hanoi additive pilot: recognizable Hoan Kiem pho-save reason, mapped phrase cards, and renderable beef-pho comparisons."
       },
       "sourceNotes": [
         "Added as the third additive Hanoi restaurant pilot after the 500-page hard reset; script assumptions now allow Hanoi 103.",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Phở 10 Lý Quốc Sư (Hoan Kiem) in the Hanoi Bib Gourmand section as Noodles.",
-        "Current MICHELIN venue page for Phở 10 Lý Quốc Sư carries Bib Gourmand status.",
+        "Official guide Guide Vietnam 2025 PDF lists Phở 10 Lý Quốc Sư (Hoan Kiem) in the Hanoi casual-value section as Noodles.",
+        "Current guide venue page for Phở 10 Lý Quốc Sư carries casual-value status.",
         "Visible copy avoids hours, address, booking, closure, and narrow operational claims."
       ],
       "status": "FINAL_PASS",
@@ -8607,7 +8607,7 @@
         "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
         "notes": [
           "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only.",
-          "Additive food listing pass: source, phrase mapping, related-card intent, Mentioned Here, and MICHELIN support reviewed before projection."
+          "Additive food listing pass: source, phrase mapping, related-card intent, Mentioned Here, and guide support reviewed before projection."
         ],
         "finalPassDate": "2026-05-31"
       }
@@ -8622,7 +8622,7 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "pho gia truyen",
-      "travelerMoment": "Phở Gia Truyền is the Old Quarter pho shop for a 2025 MICHELIN Bib Gourmand bowl: broth, steam, sliced beef, herbs, and quick room pace.",
+      "travelerMoment": "Phở Gia Truyền is an Old Quarter beef-phở shop for broth steam, sliced beef, herbs, quick ordering, and a room moving at breakfast or lunch pace.",
       "storySpine": "Phở Gia Truyền carries the recognized Hanoi pho-shop memory through broth, steam, beef, herbs, and a room moving quickly.",
       "intro": {
         "heading": "Old Quarter Steam And Beef",
@@ -8662,8 +8662,8 @@
         },
         {
           "id": "room-pace",
-          "heading": "Room Pace Before Award Talk",
-          "body": "The Bib Gourmand note supports the choice, but the memory is broth, beef, herbs, and the speed of a shop built around one bowl."
+          "heading": "Broth, Beef, Room Pace",
+          "body": "The memory is broth, beef, herbs, and the speed of a shop built around one bowl."
         },
         {
           "id": "pho-comparison",
@@ -8692,7 +8692,7 @@
           "catalogId": "viet-family-city-hanoi-place-pho-bo-lam",
           "label": "Phở Bò Lâm",
           "relationship": "same-dish shop comparison",
-          "displaySubtitle": "Another 2025 MICHELIN Bib Gourmand pho shop when broth, queue, and beef cuts are the comparison.",
+          "displaySubtitle": "Another pho shop when broth, queue, and beef cuts are the comparison.",
           "reason": "Pho Bo Lam is a same-dish comparison for Pho Gia Truyen.",
           "status": "render"
         }
@@ -8707,21 +8707,21 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-pho-gia-truyen: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
-          "MICHELIN Bib Gourmand recognition patch on 2026-05-31: official 2025 PDF support added while keeping the Old Quarter pho-shop reason primary.",
+          "casual-value recognition patch on 2026-05-31: official 2025 PDF support added while keeping the Old Quarter pho-shop reason primary.",
           "2026-05-31 U.S.-voice repair: removed explicit save wording and replaced broad counter phrasing in visible copy."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production MICHELIN patch: Phở Gia Truyền now carries bounded 2025 MICHELIN Bib Gourmand context and a clearer broth-shop reason."
+        "reason": "Production food patch: Phở Gia Truyền now carries a clearer broth-shop reason."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Hanoi guide",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Phở Gia Truyền (Hoan Kiem) as Bib Gourmand."
+        "Production intake source notes: guide Hanoi guide",
+        "Official guide Guide Vietnam 2025 PDF lists Phở Gia Truyền (Hoan Kiem) as casual-value."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -8822,7 +8822,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-quan-thanh-temple: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -8933,7 +8933,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-quang-ba-flower-market: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -9045,7 +9045,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-red-river: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -9156,7 +9156,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-st-joseph-cathedral: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -9267,7 +9267,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-street-food-walk: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -9277,7 +9277,7 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Vietnam Travel Hanoi; MICHELIN Hanoi guide"
+        "Production intake source notes: Vietnam Travel Hanoi; guide Hanoi guide"
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -9378,7 +9378,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-ta-hien: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -9414,11 +9414,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "tam vi",
-      "travelerMoment": "Choose Tam Vi when Hanoi dinner should feel rooted and recognized: a 2025 One MICHELIN Star northern table with shared dishes, rice, wood, and an unhurried room.",
+      "travelerMoment": "Choose Tam Vi when Hanoi dinner should feel rooted and recognized: a special-occasion northern table with shared dishes, rice, wood, and an unhurried room.",
       "storySpine": "Tam Vi carries Hanoi home-cooking memory into a restaurant room, where shared dishes and rice matter more than one showy plate.",
       "intro": {
-        "heading": "A Michelin-Starred Northern Table",
-        "body": "Tam Vi is a 2025 One MICHELIN Star northern meal in Hanoi: warm wood, shared dishes, rice at the center, and a room that feels chosen rather than squeezed between sights."
+        "heading": "A Special-Occasion Northern Table",
+        "body": "Tam Vi is a special-occasion northern meal in Hanoi: warm wood, shared dishes, rice at the center, and a room that feels chosen rather than squeezed between sights."
       },
       "usefulPhraseCards": [
         {
@@ -9460,7 +9460,7 @@
         {
           "id": "northern-home-table",
           "heading": "Northern Home-Table Mood",
-          "body": "The star gives it a reason to notice, but the memory is gentler: wood, rice, familiar northern dishes, and a table that rewards slowing down."
+          "body": "The memory is gentler: wood, rice, familiar northern dishes, and a table that rewards slowing down."
         },
         {
           "id": "one-meal-can-be-evening",
@@ -9483,9 +9483,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-gia",
           "label": "Gia",
-          "relationship": "2025 One MICHELIN Star dinner contrast",
+          "relationship": "special-occasion dinner contrast",
           "displaySubtitle": "A contemporary Hanoi dinner when a quieter room should become the plan.",
-          "reason": "Gia is the most relevant star-level Hanoi comparison for Tam Vi.",
+          "reason": "Gia is the most relevant special-occasion Hanoi comparison for Tam Vi.",
           "status": "render"
         }
       ],
@@ -9499,20 +9499,20 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-tam-vi: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Tam Vi now has bounded 2025 One MICHELIN Star positioning and a specific Hanoi dinner comparison."
+        "reason": "Production food pass: Tam Vi now has a specific Hanoi dinner comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025",
-        "Official Michelin corporate 2025 release lists Tầm Vị among retaining One MICHELIN Star recipients for Vietnam."
+        "Production intake source notes: guide Vietnam 2025",
+        "Official guide corporate 2025 release lists Tầm Vị among retaining special-occasion recipients for Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -9613,7 +9613,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-tay-ho: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -9724,7 +9724,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-temple-literature: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -9830,7 +9830,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset 12 gold-page calibration source/voice gate passed on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -9944,7 +9944,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-thong-nhat-park: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10055,7 +10055,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-train-street: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10166,7 +10166,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-tran-quoc-pagoda: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10277,7 +10277,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-trang-tien-plaza: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -10389,7 +10389,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-trang-tien-street: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10500,7 +10500,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-trieu-viet-vuong-coffee-street: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10611,7 +10611,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-truc-bach-lake: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10722,7 +10722,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-turtle-tower: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10759,10 +10759,10 @@
       "category": "Restaurant",
       "pronunciation": "uu dam",
       "travelerMoment": "Ưu Đàm gives Hanoi a calmer vegetarian lane, where herbs, mushrooms, tofu, rice, and warm bowls offer relief from meat-heavy street meals.",
-      "storySpine": "Uu Dam broadens Hanoi food coverage with a vegetarian restaurant moment that does not depend on a fixed dish list.",
+      "storySpine": "Ưu Đàm gives Hanoi a calmer vegetarian restaurant moment: herbs, mushrooms, tofu, rice, sauces, and a meal that does not depend on a fixed dish list.",
       "intro": {
         "heading": "A Recognized Vegetarian Table",
-        "body": "Uu Dam is a 2025 MICHELIN Bib Gourmand vegetarian table for herbs, mushrooms, tofu, rice, sauces, and a calmer Hanoi meal after street-heavy hours."
+        "body": "Uu Dam is a vegetarian table for herbs, mushrooms, tofu, rice, sauces, and a calmer Hanoi meal after street-heavy hours."
       },
       "usefulPhraseCards": [
         {
@@ -10827,8 +10827,8 @@
         {
           "catalogId": "viet-family-city-hanoi-place-lamai-garden",
           "label": "Lamai Garden",
-          "relationship": "vegetarian to green-star garden contrast",
-          "displaySubtitle": "A 2025 MICHELIN Green Star garden-side dinner with herbs and a calmer room.",
+          "relationship": "vegetarian to garden-side dinner contrast",
+          "displaySubtitle": "An ingredient-led garden-side dinner with herbs and a calmer room.",
           "reason": "Lamai Garden is a useful vegetarian-leaning recognized-dinner comparison for Uu Dam.",
           "status": "render"
         }
@@ -10843,21 +10843,21 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-udam: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
-          "Michelin food-desire continuation on 2026-05-30: visible copy now uses traveler-facing MICHELIN Bib Gourmand wording and stronger vegetarian table detail."
+          "guide food-desire continuation on 2026-05-30: visible copy now uses traveler-facing casual-value wording and stronger vegetarian table detail."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Uu Dam now has bounded 2025 MICHELIN Bib Gourmand positioning and a specific vegetarian dinner comparison."
+        "reason": "Production food pass: Uu Dam now has bounded 2025 casual-value positioning and a specific vegetarian dinner comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025",
-        "Michelin audit note: read-only reviewer found official 2025 Bib Gourmand support for Ưu Đàm; keep claim bounded to the 2025 guide."
+        "Production intake source notes: guide Vietnam 2025",
+        "guide audit note: read-only reviewer found official 2025 casual-value support for Ưu Đàm; keep claim bounded to the 2025 guide."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -10958,7 +10958,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-vietnam-art-gallery: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11064,7 +11064,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-vietnam-circus: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11175,7 +11175,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-vietnam-fine-arts-museum: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11286,7 +11286,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-vietnam-military-history-museum: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11397,7 +11397,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-vietnam-national-tuong-theatre: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11508,7 +11508,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-water-puppet-theatre: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11619,7 +11619,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-weekend-night-market: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -11731,7 +11731,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-west-lake: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11842,7 +11842,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-west-lake-loop: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11948,7 +11948,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-womens-museum: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11985,7 +11985,7 @@
       "category": "Dish",
       "pronunciation": "xoi xeo",
       "travelerMoment": "Xôi xéo is Hanoi's quick breakfast habit: yellow sticky rice, mung bean, fried shallots, and warmth folded into a small morning meal.",
-      "storySpine": "Xoi xeo gives Hanoi food coverage a handheld breakfast moment with warm rice, mung bean, fried shallots, and a clear ordering pace.",
+      "storySpine": "Xôi xéo gives Hanoi a handheld breakfast moment with warm rice, mung bean, fried shallots, and a clear ordering pace.",
       "intro": {
         "heading": "Breakfast In One Hand",
         "body": "Xoi xeo is yellow sticky rice folded into a quick Hanoi meal: soft mung bean, fried shallots, warm grains, and breakfast that can travel."
@@ -12059,7 +12059,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-xoi-xeo: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -12171,7 +12171,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-yen-so-park: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {

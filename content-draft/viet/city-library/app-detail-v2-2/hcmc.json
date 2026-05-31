@@ -100,8 +100,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -139,11 +139,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "akuna",
-      "travelerMoment": "Plan Akuna for a 2025 One MICHELIN Star Saigon dinner: Vietnamese ingredients, chef-counter attention, staff pacing, and a room that lowers the volume after daytime heat.",
+      "travelerMoment": "Plan Akuna for a special-occasion Saigon dinner: Vietnamese ingredients, chef-counter attention, staff pacing, and a room that lowers the volume after daytime heat.",
       "storySpine": "Akuna gives Saigon a contemporary fine-dining memory where Vietnamese ingredients carry the evening in a controlled room.",
       "intro": {
-        "heading": "A Michelin-Starred Saigon Counter",
-        "body": "Akuna is a 2025 One MICHELIN Star planned dinner in Saigon: Vietnamese ingredients, chef-counter detail, staff pacing, and a room that pulls the night away from street noise."
+        "heading": "A Special-Occasion Saigon Counter",
+        "body": "Akuna is a special-occasion planned dinner in Saigon: Vietnamese ingredients, chef-counter detail, staff pacing, and a room that pulls the night away from street noise."
       },
       "usefulPhraseCards": [
         {
@@ -184,8 +184,8 @@
         },
         {
           "id": "ingredients-before-star-chasing",
-          "heading": "Ingredients Before Star Chasing",
-          "body": "The Michelin star gives the booking a clear reason. The meal still needs to earn the night through Vietnamese ingredients, pacing, and attention at the table."
+          "heading": "Ingredients Before Status",
+          "body": "The booking should still earn its place. The meal still needs to earn the night through Vietnamese ingredients, pacing, and attention at the table."
         },
         {
           "id": "compare-the-dinner-registers",
@@ -208,9 +208,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-anan-saigon",
           "label": "Anăn Sài Gòn",
-          "relationship": "2025 One MICHELIN Star dinner comparison",
-          "displaySubtitle": "A market-side 2025 One MICHELIN Star dinner with contemporary Vietnamese cooking.",
-          "reason": "Anan is the direct star-level HCMC comparison for Akuna.",
+          "relationship": "special-occasion dinner comparison",
+          "displaySubtitle": "A market-side special-occasion dinner with contemporary Vietnamese cooking.",
+          "reason": "Anan is the direct special-occasion HCMC comparison for Akuna.",
           "status": "render"
         }
       ],
@@ -224,21 +224,21 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Akuna now has bounded 2025 One MICHELIN Star positioning and a specific Saigon dinner comparison."
+        "reason": "Production food pass: Akuna now has a specific Saigon dinner comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025; MICHELIN HCMC guide",
-        "Official Michelin corporate 2025 release lists Akuna among retaining One MICHELIN Star recipients for Vietnam."
+        "Production intake source notes: guide Vietnam 2025; guide HCMC guide",
+        "Official guide corporate 2025 release lists Akuna among retaining special-occasion recipients for Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -339,8 +339,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -377,11 +377,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "anan sai gon",
-      "travelerMoment": "Choose Anan Saigon for dinner the centerpiece: a 2025 One MICHELIN Star restaurant near central market streets, built for a planned contemporary Vietnamese meal.",
+      "travelerMoment": "Choose Anan Saigon for dinner the centerpiece: a special-occasion restaurant near central market streets, built for a planned contemporary Vietnamese meal.",
       "storySpine": "Anan gives the trip a modern Saigon food memory, where Vietnamese ingredients, small plates, drinks, and a polished room sit beside the city’s market energy.",
       "intro": {
-        "heading": "A Michelin-Starred Saigon Dinner",
-        "body": "Anan Saigon is the dinner to let one meal center the night: a 2025 One MICHELIN Star restaurant near central market streets, with contemporary Vietnamese cooking and a room paced for attention."
+        "heading": "A Special-Occasion Saigon Dinner",
+        "body": "Anan Saigon is the dinner to let one meal center the night: a special-occasion restaurant near central market streets, with contemporary Vietnamese cooking and a room paced for attention."
       },
       "usefulPhraseCards": [
         {
@@ -436,9 +436,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-akuna",
           "label": "Akuna",
-          "relationship": "2025 One MICHELIN Star dinner comparison",
+          "relationship": "special-occasion dinner comparison",
           "displaySubtitle": "Another Saigon planned dinner with Vietnamese ingredients and a slower room.",
-          "reason": "Akuna is another 2025 One MICHELIN Star HCMC restaurant for planned-dinner comparison.",
+          "reason": "Akuna is another special-occasion HCMC restaurant for planned-dinner comparison.",
           "status": "render"
         },
         {
@@ -460,9 +460,9 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Save-worthy food voice pass on 2026-05-30: added bounded 2025 One MICHELIN Star copy and clearer dinner-as-trip-center positioning.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "Save-worthy food voice pass on 2026-05-30: added bounded 2025 special-occasion copy and clearer dinner-as-trip-center positioning.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -473,8 +473,8 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: existing-city-library; MICHELIN Vietnam 2025",
-        "Official Michelin corporate 2025 release lists Ănăn Saigon among retaining One MICHELIN Star recipients for Vietnam."
+        "Production intake source notes: existing-city-library; guide Vietnam 2025",
+        "Official guide corporate 2025 release lists Ănăn Saigon among retaining special-occasion recipients for Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -575,8 +575,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -687,8 +687,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -799,8 +799,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -911,8 +911,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -1034,8 +1034,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
           "Saigon food-desire continuation on 2026-05-30: visible copy now treats Huỳnh Hoa as a named bánh mì shop with stronger sandwich and ordering detail.",
           "2026-05-31 U.S.-voice repair: removed explicit save wording and replaced broad counter phrasing in visible copy."
@@ -1149,8 +1149,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -1187,11 +1187,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "banh xeo 46a",
-      "travelerMoment": "Choose Bánh Xèo 46A when the meal should slow down around one hot pancake: crisp edges, herbs, lettuce, sauce, and everyone building the bite by hand.",
-      "storySpine": "The restaurant makes Saigon bánh xèo feel physical: the pancake arrives wide and hot, then the table turns it into smaller bites with greens, herbs, and dipping sauce.",
+      "travelerMoment": "Choose Bánh Xèo 46A when the meal can slow down around one hot pancake, a pile of greens, dipping sauce, and everyone building a bite by hand.",
+      "storySpine": "The restaurant makes Saigon bánh xèo feel hands-on: the pancake arrives wide and hot, then the table turns it into smaller bites with herbs, lettuce, and sauce.",
       "intro": {
-        "heading": "A Pancake Built At The Table",
-        "body": "Bánh Xèo 46A is a Bib Gourmand stop for the big restaurant version of bánh xèo: crisp pancake, herbs, lettuce, sauce, and a table that needs a few minutes to settle."
+        "heading": "A Big Pancake For The Table",
+        "body": "Bánh Xèo 46A is known for the larger restaurant version of bánh xèo. Expect a crisp hot pancake, fresh greens, lettuce, sauce, and a table that gets busy fast."
       },
       "usefulPhraseCards": [
         {
@@ -1222,23 +1222,23 @@
       "sections": [
         {
           "id": "give-the-pancake-room",
-          "heading": "Give The Pancake Room",
-          "body": "The plate arrives wide, hot, and a little messy. Make space before the herbs, lettuce, sauce, and trays start moving around the table."
+          "heading": "Make Space First",
+          "body": "The pancake arrives wide, hot, and a little messy. Clear a corner of the table before the herbs, lettuce, sauce, and trays start moving."
         },
         {
           "id": "build-one-good-bite",
-          "heading": "Build One Good Bite",
-          "body": "Break off a crisp piece, tuck in greens, and keep the sauce close. The meal makes more sense once the first bite holds together."
+          "heading": "Build One Bite Slowly",
+          "body": "Break off a crisp piece, tuck it into greens, and keep the sauce close. Once the first bite holds together, the meal feels easy."
         },
         {
           "id": "ask-if-fillings-matter",
-          "heading": "Ask If Fillings Matter",
-          "body": "Bánh xèo often includes shrimp or pork, even when the pancake looks simple. Ask early if someone is avoiding either one."
+          "heading": "Check The Filling",
+          "body": "Bánh xèo often includes shrimp or pork, even when it looks simple from the outside. Ask before ordering if either one is a problem."
         },
         {
           "id": "come-for-the-ritual",
-          "heading": "Come For The Ritual",
-          "body": "The Bib Gourmand note helps, but the memory is the table work: hot edges, fresh greens, dipping sauce, and the slow rhythm of wrapping each bite."
+          "heading": "Let The Table Slow Down",
+          "body": "The meal is mostly about the table: hot edges, fresh greens, dipping sauce, and a few unhurried minutes before the next bite."
         }
       ],
       "mentionedHereCandidates": [
@@ -1272,21 +1272,21 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
-          "Saigon MICHELIN food-desire continuation on 2026-05-30: visible copy now uses bounded 2025 MICHELIN Bib Gourmand wording and stronger pancake-table detail."
+          "Saigon guide food-desire continuation on 2026-05-30: visible copy now uses bounded 2025 casual-value wording and stronger pancake-table detail."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Banh Xeo 46A now has bounded 2025 MICHELIN Bib Gourmand positioning, stronger pancake-table desire, and a relevant casual-table contrast."
+        "reason": "Production food pass: Banh Xeo 46A now has bounded 2025 casual-value positioning, stronger pancake-table desire, and a relevant casual-table contrast."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
         "Production intake source notes: local named-restaurant source",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Bánh Xèo 46A as Bib Gourmand."
+        "Official guide Guide Vietnam 2025 PDF lists Bánh Xèo 46A as casual-value."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -1382,8 +1382,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -1495,8 +1495,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -1532,11 +1532,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "bep me in",
-      "travelerMoment": "Choose Bếp Mẹ Ỉn for central Saigon dinner a 2025 MICHELIN Bib Gourmand comfort table: shared Vietnamese dishes, clay-pot cues, herbs, and a calmer room after street walking.",
-      "storySpine": "The kitchen cue, shared plates, clay pots, and Bib Gourmand recognition give central Saigon a softer table meal near the market.",
+      "travelerMoment": "Choose Bếp Mẹ Ỉn for a central Saigon comfort table: shared Vietnamese dishes, clay-pot cues, herbs, and a calmer room after street walking.",
+      "storySpine": "Shared plates, clay pots, herbs, and a softer room give central Saigon a calmer table meal near the market.",
       "intro": {
-        "heading": "Bib Gourmand Comfort Table",
-        "body": "Bep Me In is a 2025 MICHELIN Bib Gourmand central Saigon table for Vietnamese comfort dishes, shared plates, clay-pot cues, herbs, and a calmer room than the street."
+        "heading": "Comfort Table",
+        "body": "Bep Me In is a central Saigon table for Vietnamese comfort dishes, shared plates, clay-pot cues, herbs, and a calmer room than the street."
       },
       "usefulPhraseCards": [
         {
@@ -1583,7 +1583,7 @@
         {
           "id": "shared-plates-fit-better",
           "heading": "Shared Plates Suit The Table",
-          "body": "A Bib Gourmand note supports the choice, but shared plates still decide the night. Order a few dishes and let the table settle."
+          "body": "Shared plates decide the night. Order a few dishes and let the table settle."
         }
       ],
       "mentionedHereCandidates": [
@@ -1617,21 +1617,21 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
-          "Saigon MICHELIN food-desire continuation on 2026-05-30: visible copy now uses bounded 2025 MICHELIN Bib Gourmand wording and stronger shared-table detail."
+          "Saigon guide food-desire continuation on 2026-05-30: visible copy now uses bounded 2025 casual-value wording and stronger shared-table detail."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Bep Me In now has bounded 2025 MICHELIN Bib Gourmand positioning, central market context, and a casual dish-specific comparison."
+        "reason": "Production food pass: Bep Me In now has bounded 2025 casual-value positioning, central market context, and a casual dish-specific comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
         "Production intake source notes: local named-restaurant source",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Bếp Mẹ Ỉn as Bib Gourmand."
+        "Official guide Guide Vietnam 2025 PDF lists Bếp Mẹ Ỉn as casual-value."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -1732,8 +1732,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -1845,8 +1845,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -1882,11 +1882,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "bo kho ganh",
-      "travelerMoment": "Choose Bò Kho Gánh for the Saigon meal where one bowl can lead: beef stew, bread or noodles nearby, sauces close, and a Bib Gourmand street-food stop that feels specific before the trip.",
+      "travelerMoment": "Choose Bò Kho Gánh for the Saigon meal where one bowl can lead: beef stew, bread or noodles nearby, sauces close, and a street-food stop that feels specific before the trip.",
       "storySpine": "Bò Kho Gánh turns Saigon bò kho into a specific lunch memory: rich broth, tender beef, herbs, sauce, and the choice between bread for dipping or noodles for a fuller bowl.",
       "intro": {
-        "heading": "A Bib Gourmand Beef-Stew Bowl",
-        "body": "Bò Kho Gánh is a 2025 MICHELIN Bib Gourmand Saigon street-food stop for bò kho: hot beef stew, bread or noodles nearby, herbs, sauce, and a bowl that can carry the meal."
+        "heading": "A Beef-Stew Bowl",
+        "body": "Bò Kho Gánh is a Saigon street-food stop for bò kho: hot beef stew, bread or noodles nearby, herbs, sauce, and a bowl that can carry the meal."
       },
       "usefulPhraseCards": [
         {
@@ -1928,7 +1928,7 @@
         {
           "id": "street-food-with-a-save-reason",
           "heading": "Street Food With A Clear Shape",
-          "body": "The Bib Gourmand note supports the stop, but the reason to go is concrete: a named bò kho bowl, bread or noodles, herbs, sauce, and a lunch that does not need a wide menu."
+          "body": "The note supports the stop, but the reason to go is concrete: a named bò kho bowl, bread or noodles, herbs, sauce, and a lunch that does not need a wide menu."
         },
         {
           "id": "sauce-changes-the-bowl",
@@ -1949,8 +1949,8 @@
         {
           "catalogId": "viet-family-city-hcmc-place-com-tam-ba-ghien",
           "label": "Cơm tấm Ba Ghiền",
-          "relationship": "Bib Gourmand street-food meal comparison",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand broken-rice plate for lunch direct and pork-chop led.",
+          "relationship": "street-food meal comparison",
+          "displaySubtitle": "A broken-rice plate for lunch direct and pork-chop led.",
           "reason": "Com Tam Ba Ghien gives Bo Kho Ganh another recognized Saigon street-food meal comparison.",
           "status": "render"
         }
@@ -1965,18 +1965,18 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Additive HCMC 102-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
-          "Official 2025 MICHELIN PDF support checked locally: Bò Kho Gánh appears in the Ho Chi Minh City Bib Gourmand section as Street Food.",
-          "The live MICHELIN restaurant page returned a CloudFront/WAF challenge in this environment, so visible copy avoids hours, address, booking, and fragile menu-detail claims."
+          "Official 2025 guide PDF support checked locally: Bò Kho Gánh appears in the Ho Chi Minh City casual-value section as Street Food.",
+          "The live guide restaurant page returned a CloudFront/WAF challenge in this environment, so visible copy avoids hours, address, booking, and fragile menu-detail claims."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Additive production pilot: Bo Kho Ganh has bounded 2025 MICHELIN Bib Gourmand recognition, a specific bò kho save reason, mapped phrase cards, and useful same-city street-food comparisons."
+        "reason": "Additive production pilot: Bo Kho Ganh has a specific bò kho save reason, mapped phrase cards, and useful same-city street-food comparisons."
       },
       "sourceNotes": [
         "Added as the second additive HCMC restaurant pilot after the 500-page hard reset; script assumptions now allow HCMC 102.",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Bò Kho Gánh in the Ho Chi Minh City Bib Gourmand section as Street Food.",
+        "Official guide Guide Vietnam 2025 PDF lists Bò Kho Gánh in the Ho Chi Minh City casual-value section as Street Food.",
         "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
       ],
       "status": "FINAL_PASS",
@@ -1986,7 +1986,7 @@
         "voiceGateStatus": "passed_city_voice_gate",
         "v2_2GateStatus": "food_additive_pilot_passed",
         "v2_2GateSources": [
-          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md"
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/guide_2025_coverage_audit.md"
         ],
         "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
         "notes": [
@@ -2080,8 +2080,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -2193,8 +2193,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -2301,8 +2301,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -2341,8 +2341,8 @@
       "travelerMoment": "Choose Bún Bò Huế 14B when Saigon lunch should still have a Hue-style pull: lemongrass broth, beef, tendon, herbs, chili, lime, and a bowl with real heat.",
       "storySpine": "The stop gives Saigon a specific Hue-style noodle memory, where the bowl feels deeper and spicier than everyday phở without needing the trip to reach Huế first.",
       "intro": {
-        "heading": "A Bib Gourmand Hue-Style Bowl",
-        "body": "Bún Bò Huế 14B is a 2025 MICHELIN Bib Gourmand Saigon street-food stop for the Hue-style bowl: lemongrass broth, beef, tendon, herbs, chili, lime, and round noodles."
+        "heading": "A Hue-Style Bowl",
+        "body": "Bún Bò Huế 14B is a Saigon street-food stop for the Hue-style bowl: lemongrass broth, beef, tendon, herbs, chili, lime, and round noodles."
       },
       "usefulPhraseCards": [
         {
@@ -2388,8 +2388,8 @@
         },
         {
           "id": "recognition-supports-the-bowl",
-          "heading": "Recognition Supports The Bowl",
-          "body": "The 2025 Bib Gourmand note supports the choice, but the pull is the bowl itself: spicy broth, beef cuts, herbs, and a named Saigon table for bún bò Huế."
+          "heading": "The Bowl Is The Point",
+          "body": "The pull is the bowl itself: spicy broth, beef cuts, herbs, and a named Saigon table for bún bò Huế."
         }
       ],
       "mentionedHereCandidates": [],
@@ -2405,9 +2405,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bo-kho-ganh",
           "label": "Bò Kho Gánh",
-          "relationship": "Bib Gourmand beef-stew bowl",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand bò kho stop for a rich broth lunch with bread or noodles.",
-          "reason": "Related because: A 2025 MICHELIN Bib Gourmand bò kho stop for a rich broth lunch with bread or noodles.",
+          "relationship": "beef-stew bowl",
+          "displaySubtitle": "A bò kho stop for a rich broth lunch with bread or noodles.",
+          "reason": "Related because: A bò kho stop for a rich broth lunch with bread or noodles.",
           "status": "render"
         }
       ],
@@ -2421,18 +2421,18 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Additive HCMC 103-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
-          "Official 2025 MICHELIN PDF support checked locally: Bún Bò Huế 14B appears in the Ho Chi Minh City Bib Gourmand section as Street Food.",
+          "Official 2025 guide PDF support checked locally: Bún Bò Huế 14B appears in the Ho Chi Minh City casual-value section as Street Food.",
           "Visible copy stays dish-specific but avoids hours, address, booking, closure, and fragile operational claims."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Additive production pilot: Bun Bo Hue 14B has bounded 2025 MICHELIN Bib Gourmand recognition, a specific spicy noodle-bowl save reason, mapped phrase cards, and useful Hue/Saigon bowl comparisons."
+        "reason": "Additive production pilot: Bun Bo Hue 14B has a specific spicy noodle-bowl save reason, mapped phrase cards, and useful Hue/Saigon bowl comparisons."
       },
       "sourceNotes": [
         "Added as the third additive HCMC restaurant pilot after the 500-page hard reset; script assumptions now allow HCMC 103.",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Bún Bò Huế 14B in the Ho Chi Minh City Bib Gourmand section as Street Food.",
+        "Official guide Guide Vietnam 2025 PDF lists Bún Bò Huế 14B in the Ho Chi Minh City casual-value section as Street Food.",
         "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
       ],
       "status": "FINAL_PASS",
@@ -2442,7 +2442,7 @@
         "voiceGateStatus": "passed_city_voice_gate",
         "v2_2GateStatus": "food_additive_pilot_passed",
         "v2_2GateSources": [
-          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md"
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/guide_2025_coverage_audit.md"
         ],
         "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
         "notes": [
@@ -2461,11 +2461,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "pho le",
-      "travelerMoment": "Choose Phở Lệ for the Saigon phở meal that should feel generous and specific: a 2025 Bib Gourmand District 5 noodle stop with broth, rice noodles, herbs, lime, and table sauces.",
-      "storySpine": "Phở Lệ gives Saigon a recognized phở choice outside the central Pasteur Street pattern, so the catalog has both a classic shop stop and a Bib Gourmand District 5 bowl.",
+      "travelerMoment": "Choose Phở Lệ for the Saigon phở meal that should feel generous and specific: a District 5 noodle stop with broth, rice noodles, herbs, lime, and table sauces.",
+      "storySpine": "Phở Lệ gives Saigon a fuller District 5 phở choice outside the central Pasteur Street pattern: broth, rice noodles, herbs, lime, and table sauce.",
       "intro": {
-        "heading": "A Bib Gourmand District 5 Bowl",
-        "body": "Phở Lệ is a 2025 MICHELIN Bib Gourmand District 5 noodle stop for southern-style phở: beef broth, rice noodles, herbs, bean sprouts, lime, and sauces at the table."
+        "heading": "A District 5 Bowl",
+        "body": "Phở Lệ is a District 5 noodle stop for southern-style phở: beef broth, rice noodles, herbs, bean sprouts, lime, and sauces at the table."
       },
       "usefulPhraseCards": [
         {
@@ -2507,12 +2507,12 @@
         {
           "id": "beside-pasteur-not-instead",
           "heading": "Compare It With Pasteur",
-          "body": "Phở Hòa Pasteur covers a classic central stop. Phở Lệ adds a recognized District 5 bowl, so the two pages do not have to do the same job."
+          "body": "Phở Hòa Pasteur covers a classic central stop. Phở Lệ adds a fuller District 5 bowl, so the two pages do not have to do the same job."
         },
         {
           "id": "recognition-supports-the-choice",
-          "heading": "Recognition Supports The Choice",
-          "body": "The 2025 Bib Gourmand recognition supports the choice because the meal has a clear shape: a named District 5 phở bowl with broth, herbs, lime, and table sauce."
+          "heading": "The Choice Is Clear",
+          "body": "The meal has a clear shape: a named District 5 phở bowl with broth, herbs, lime, and table sauce."
         }
       ],
       "mentionedHereCandidates": [
@@ -2539,24 +2539,24 @@
           "catalogId": "viet-family-city-hcmc-place-pho-minh",
           "label": "Phở Minh",
           "relationship": "old-alley phở room",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand alley phở room when breakfast should feel quieter and older.",
-          "reason": "Related because: A 2025 MICHELIN Bib Gourmand alley phở room when breakfast should feel quieter and older.",
+          "displaySubtitle": "An alley phở room when breakfast should feel quieter and older.",
+          "reason": "Related because: An alley phở room when breakfast should feel quieter and older.",
           "status": "render"
         },
         {
           "catalogId": "viet-family-city-hcmc-place-bun-bo-hue-14b",
           "label": "Bún Bò Huế 14B",
-          "relationship": "Bib Gourmand Hue-style bowl",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Hue-style bowl with lemongrass broth and heat at the center.",
-          "reason": "Related because: A 2025 MICHELIN Bib Gourmand Hue-style bowl with lemongrass broth and heat at the center.",
+          "relationship": "Hue-style bowl",
+          "displaySubtitle": "A Hue-style bowl with lemongrass broth and heat at the center.",
+          "reason": "Related because: A Hue-style bowl with lemongrass broth and heat at the center.",
           "status": "render"
         },
         {
           "catalogId": "viet-family-city-hcmc-place-pho-huong-binh",
           "label": "Phở Hương Bình",
-          "relationship": "Bib Gourmand chicken-or-beef phở",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand family shop when the table wants chicken and beef phở choices.",
-          "reason": "Related because: A 2025 MICHELIN Bib Gourmand family shop when the table wants chicken and beef phở choices.",
+          "relationship": "chicken-or-beef phở",
+          "displaySubtitle": "A family shop when the table wants chicken and beef phở choices.",
+          "reason": "Related because: A family shop when the table wants chicken and beef phở choices.",
           "status": "render"
         }
       ],
@@ -2570,18 +2570,18 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Additive HCMC 104-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
-          "Official 2025 MICHELIN PDF support checked locally: Phở Lệ (District 5) appears in the Ho Chi Minh City Bib Gourmand section as Noodles.",
+          "Official 2025 guide PDF support checked locally: Phở Lệ (District 5) appears in the Ho Chi Minh City casual-value section as Noodles.",
           "Visible copy stays dish-specific but avoids hours, address, booking, closure, and fragile operational claims."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Additive production pilot: Pho Le District 5 has bounded 2025 MICHELIN Bib Gourmand recognition, a specific southern-pho save reason, mapped phrase cards, and useful pho/noodle comparisons."
+        "reason": "Additive production pilot: Pho Le District 5 has a specific southern-pho save reason, mapped phrase cards, and useful pho/noodle comparisons."
       },
       "sourceNotes": [
         "Added as the fourth additive HCMC restaurant pilot after the 500-page hard reset; script assumptions now allow HCMC 104.",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Phở Lệ (District 5) in the Ho Chi Minh City Bib Gourmand section as Noodles.",
+        "Official guide Guide Vietnam 2025 PDF lists Phở Lệ (District 5) in the Ho Chi Minh City casual-value section as Noodles.",
         "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
       ],
       "status": "FINAL_PASS",
@@ -2591,7 +2591,7 @@
         "voiceGateStatus": "passed_city_voice_gate",
         "v2_2GateStatus": "food_additive_pilot_passed",
         "v2_2GateSources": [
-          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md"
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/guide_2025_coverage_audit.md"
         ],
         "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
         "notes": [
@@ -2614,7 +2614,7 @@
       "storySpine": "Phở Minh adds old-Saigon texture to the phở set: the shop dates to 1945, sits down a narrow alley off Pasteur Street, and turns breakfast into a quieter room rather than a famous-shop checklist.",
       "intro": {
         "heading": "An Alley Pho Breakfast",
-        "body": "Phở Minh is a 2025 MICHELIN Bib Gourmand phở shop tucked down a small Pasteur Street alley, serving beef phở in a room that feels older and calmer than the boulevard outside."
+        "body": "Phở Minh is a phở shop tucked down a small Pasteur Street alley, serving beef phở in a room that feels older and calmer than the boulevard outside."
       },
       "usefulPhraseCards": [
         {
@@ -2661,7 +2661,7 @@
         {
           "id": "three-saigon-pho-roles",
           "heading": "Three Saigon Pho Roles",
-          "body": "Phở Lệ is the District 5 Bib Gourmand bowl. Phở Hòa Pasteur is the classic central room. Phở Minh is the quieter old-alley breakfast."
+          "body": "Phở Lệ is the District 5 bowl. Phở Hòa Pasteur is the classic central room. Phở Minh is the quieter old-alley breakfast."
         }
       ],
       "mentionedHereCandidates": [
@@ -2688,9 +2688,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-pho-le-district-5",
           "label": "Phở Lệ",
-          "relationship": "Bib Gourmand District 5 phở",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand District 5 bowl when southern phở should feel fuller and busier.",
-          "reason": "Related because: A 2025 MICHELIN Bib Gourmand District 5 bowl when southern phở should feel fuller and busier.",
+          "relationship": "District 5 phở",
+          "displaySubtitle": "A District 5 bowl when southern phở should feel fuller and busier.",
+          "reason": "Related because: A District 5 bowl when southern phở should feel fuller and busier.",
           "status": "render"
         },
         {
@@ -2712,9 +2712,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-pho-huong-binh",
           "label": "Phở Hương Bình",
-          "relationship": "Bib Gourmand chicken-or-beef phở",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand family shop when the table wants chicken and beef phở choices.",
-          "reason": "Related because: A 2025 MICHELIN Bib Gourmand family shop when the table wants chicken and beef phở choices.",
+          "relationship": "chicken-or-beef phở",
+          "displaySubtitle": "A family shop when the table wants chicken and beef phở choices.",
+          "reason": "Related because: A family shop when the table wants chicken and beef phở choices.",
           "status": "render"
         }
       ],
@@ -2728,19 +2728,19 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Additive HCMC 105-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
-          "Official MICHELIN live guide support checked on 2026-05-31: Phở Minh appears as a Bib Gourmand Ho Chi Minh City phở restaurant.",
+          "Official guide live guide support checked on 2026-05-31: Phở Minh appears as a casual-value Ho Chi Minh City phở restaurant.",
           "Visible copy uses stable source facts only: 1945 origin, Pasteur-alley setting, beef phở, and pâté chaud. It avoids hours, prices, address, booking, closure, and fragile operational claims."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Additive production pilot: Pho Minh has bounded MICHELIN Bib Gourmand recognition, a distinct old-alley breakfast role, mapped phrase cards, and useful pho/Pasteur comparisons."
+        "reason": "Additive production pilot: Pho Minh has a distinct old-alley breakfast role, mapped phrase cards, and useful pho/Pasteur comparisons."
       },
       "sourceNotes": [
         "Added as the fifth additive HCMC restaurant pilot after the 500-page hard reset; script assumptions now allow HCMC 105.",
-        "Official MICHELIN Guide live venue page lists Phở Minh as Bib Gourmand, Ho Chi Minh City, Phở.",
-        "Official MICHELIN page evidence used for stable visible details: dating to 1945, narrow alley off Pasteur Street, beef pho, and pâté chaud.",
+        "Official guide Guide live venue page lists Phở Minh as casual-value, Ho Chi Minh City, Phở.",
+        "Official guide page evidence used for stable visible details: dating to 1945, narrow alley off Pasteur Street, beef pho, and pâté chaud.",
         "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
       ],
       "status": "FINAL_PASS",
@@ -2750,7 +2750,7 @@
         "voiceGateStatus": "passed_city_voice_gate",
         "v2_2GateStatus": "food_additive_pilot_passed",
         "v2_2GateSources": [
-          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md"
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/guide_2025_coverage_audit.md"
         ],
         "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
         "notes": [
@@ -2770,10 +2770,10 @@
       "category": "Restaurant",
       "pronunciation": "pho huong binh",
       "travelerMoment": "Choose Phở Hương Bình for the Saigon phở choice that is not only beef: a 1958 second-generation shop where chicken, beef, clear broth, herbs, chicken skin, egg yolk, brisket, and tendon can shape the bowl.",
-      "storySpine": "Phở Hương Bình gives the Saigon phở set a family-shop lane: long-running, Bib Gourmand-recognized, and practical when the table wants to choose between chicken and beef instead of repeating another Pasteur or District 5 bowl.",
+      "storySpine": "Phở Hương Bình gives the Saigon phở set a family-shop lane: long-running, long-running and practical when the table wants to choose between chicken and beef instead of repeating another Pasteur or District 5 bowl.",
       "intro": {
         "heading": "Chicken Or Beef, Same Room",
-        "body": "Phở Hương Bình is a 2025 MICHELIN Bib Gourmand Saigon noodle shop where phở gà and phở bò share the room: clear broth, herbs, and a bowl shaped by add-ons."
+        "body": "Phở Hương Bình is a Saigon noodle shop where phở gà and phở bò share the room: clear broth, herbs, and a bowl shaped by add-ons."
       },
       "usefulPhraseCards": [
         {
@@ -2819,8 +2819,8 @@
         },
         {
           "id": "recognition-supports-the-choice",
-          "heading": "Recognition Supports The Choice",
-          "body": "The 2025 Bib Gourmand recognition matters because the food decision is clear: one Saigon phở room, two main bowl paths, and enough toppings to make the meal specific."
+          "heading": "The Choice Is Clear",
+          "body": "The food decision is clear: one Saigon phở room, two main bowl paths, and enough toppings to make the meal specific."
         }
       ],
       "mentionedHereCandidates": [
@@ -2838,17 +2838,17 @@
         {
           "catalogId": "viet-family-city-hcmc-place-pho-le-district-5",
           "label": "Phở Lệ",
-          "relationship": "Bib Gourmand District 5 phở",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand District 5 bowl when southern phở should feel fuller and busier.",
-          "reason": "Related because: A 2025 MICHELIN Bib Gourmand District 5 bowl when southern phở should feel fuller and busier.",
+          "relationship": "District 5 phở",
+          "displaySubtitle": "A District 5 bowl when southern phở should feel fuller and busier.",
+          "reason": "Related because: A District 5 bowl when southern phở should feel fuller and busier.",
           "status": "render"
         },
         {
           "catalogId": "viet-family-city-hcmc-place-pho-minh",
           "label": "Phở Minh",
           "relationship": "old-alley phở room",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand alley phở room when breakfast should feel quieter and older.",
-          "reason": "Related because: A 2025 MICHELIN Bib Gourmand alley phở room when breakfast should feel quieter and older.",
+          "displaySubtitle": "An alley phở room when breakfast should feel quieter and older.",
+          "reason": "Related because: An alley phở room when breakfast should feel quieter and older.",
           "status": "render"
         },
         {
@@ -2870,19 +2870,19 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Additive HCMC 106-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
-          "Official 2025 MICHELIN PDF support checked on 2026-05-31: Phở Hương Bình appears in the Ho Chi Minh City Bib Gourmand section as Noodles.",
+          "Official 2025 guide PDF support checked on 2026-05-31: Phở Hương Bình appears in the Ho Chi Minh City casual-value section as Noodles.",
           "Visible copy uses stable source facts only: 1958 family-shop story, phở gà, phở bò, clear broth, chicken skin, egg yolk, brisket, tendon, herbs, and bowl add-ons. It avoids hours, prices, address, booking, closure, and fragile operational claims."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Additive production pilot: Pho Huong Binh has bounded 2025 MICHELIN Bib Gourmand recognition, a distinct chicken-or-beef Saigon phở role, mapped phrase cards, and useful same-city pho comparisons."
+        "reason": "Additive production pilot: Pho Huong Binh has a distinct chicken-or-beef Saigon phở role, mapped phrase cards, and useful same-city pho comparisons."
       },
       "sourceNotes": [
         "Added as the sixth additive HCMC restaurant pilot after the 500-page hard reset; script assumptions now allow HCMC 106.",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Phở Hương Bình in the Ho Chi Minh City Bib Gourmand section as Noodles.",
-        "Current MICHELIN venue-page evidence used for stable visible details: 1958 family/second-generation story, phở gà, phở bò, clear light broth, chicken skin, egg yolk, brisket, tendon, and bowl add-ons.",
+        "Official guide Guide Vietnam 2025 PDF lists Phở Hương Bình in the Ho Chi Minh City casual-value section as Noodles.",
+        "Current guide venue-page evidence used for stable visible details: 1958 family/second-generation story, phở gà, phở bò, clear light broth, chicken skin, egg yolk, brisket, tendon, and bowl add-ons.",
         "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
       ],
       "status": "FINAL_PASS",
@@ -2892,7 +2892,7 @@
         "voiceGateStatus": "passed_city_voice_gate",
         "v2_2GateStatus": "food_additive_pilot_passed",
         "v2_2GateSources": [
-          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md",
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/guide_2025_coverage_audit.md",
           "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/production_readiness_review.md"
         ],
         "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
@@ -2987,8 +2987,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -3100,8 +3100,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -3213,8 +3213,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -3326,8 +3326,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -3438,8 +3438,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -3551,8 +3551,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -3674,8 +3674,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
@@ -3782,8 +3782,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -3902,8 +3902,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -3939,11 +3939,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "ciel",
-      "travelerMoment": "Plan CieL for Saigon dinner a 2025 One MICHELIN Star newcomer: open kitchen, Vietnamese ingredients, staff pace, and an intimate room after daytime walking.",
+      "travelerMoment": "Plan CieL for a newer special-occasion Saigon dinner: open kitchen, Vietnamese ingredients, staff pace, and an intimate room after daytime walking.",
       "storySpine": "CieL gives Saigon a newer open-kitchen dining memory, where the room and Vietnamese ingredients matter beyond a generic nice dinner.",
       "intro": {
-        "heading": "A New Star In Saigon",
-        "body": "CieL is a 2025 One MICHELIN Star newcomer in Saigon: open kitchen, Vietnamese ingredients, careful pacing, and a slower table after markets or museums."
+        "heading": "A Newer Saigon Dinner",
+        "body": "CieL is a newer special-occasion dinner in Saigon: open kitchen, Vietnamese ingredients, careful pacing, and a slower table after markets or museums."
       },
       "usefulPhraseCards": [
         {
@@ -3998,8 +3998,8 @@
         {
           "catalogId": "viet-family-city-hcmc-place-coco-dining",
           "label": "Coco Dining",
-          "relationship": "2025 One MICHELIN Star dinner comparison",
-          "displaySubtitle": "A promoted 2025 One MICHELIN Star dinner with warm light and table pacing.",
+          "relationship": "special-occasion dinner comparison",
+          "displaySubtitle": "A warm special-occasion dinner with slower table pacing.",
           "reason": "Coco Dining is a relevant 2025 star comparison for CieL.",
           "status": "render"
         }
@@ -4014,21 +4014,21 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: CieL now has bounded 2025 One MICHELIN Star positioning and a specific 2025 star comparison."
+        "reason": "Production food pass: CieL now has a specific 2025 star comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025",
-        "Official Michelin corporate 2025 release names CieL as a new One MICHELIN Star recipient in Vietnam."
+        "Production intake source notes: guide Vietnam 2025",
+        "Official guide corporate 2025 release names CieL as a new special-occasion recipient in Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -4129,8 +4129,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4166,11 +4166,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "coco dining",
-      "travelerMoment": "Plan Coco Dining for Saigon dinner a 2025 One MICHELIN Star evening: Vietnamese cooking, fermentation details, warm light, drinks, and table pacing.",
+      "travelerMoment": "Plan Coco Dining when Saigon dinner should take the evening: Vietnamese cooking, fermentation details, warm light, drinks, and table pacing.",
       "storySpine": "Coco Dining gives Saigon a polished contemporary dinner memory, with fermentation detail and warm room light making the meal feel planned.",
       "intro": {
-        "heading": "A Promoted Star Dinner",
-        "body": "Coco Dining is a 2025 One MICHELIN Star dinner in Saigon: Vietnamese cooking, fermentation details, warm light, and a table paced to carry the evening."
+        "heading": "A Warm Planned Dinner",
+        "body": "Coco Dining is a special-occasion dinner in Saigon: Vietnamese cooking, fermentation details, warm light, and a table paced to carry the evening."
       },
       "usefulPhraseCards": [
         {
@@ -4211,8 +4211,8 @@
         },
         {
           "id": "star-signal",
-          "heading": "What The Star Signals",
-          "body": "The star gives the shortlist context. The reason to remember it is the warm room, Vietnamese cooking, and meal-length pacing."
+          "heading": "Why The Dinner Lasts",
+          "body": "Remember the warm room, Vietnamese cooking, and meal-length pacing."
         },
         {
           "id": "planned-meal-choice",
@@ -4225,9 +4225,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-ciel",
           "label": "CieL",
-          "relationship": "2025 One MICHELIN Star dinner comparison",
-          "displaySubtitle": "A 2025 One MICHELIN Star newcomer with open-kitchen intimacy.",
-          "reason": "CieL is the relevant new-star comparison for Coco Dining.",
+          "relationship": "special-occasion dinner comparison",
+          "displaySubtitle": "A newer special-occasion dinner with open-kitchen intimacy.",
+          "reason": "CieL is the relevant newer dinner comparison for Coco Dining.",
           "status": "render"
         }
       ],
@@ -4241,21 +4241,21 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Coco Dining now has bounded 2025 One MICHELIN Star positioning and a specific new-star comparison."
+        "reason": "Production food pass: Coco Dining now has a specific newer dinner comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025",
-        "Official Michelin corporate 2025 release names Coco Dining as promoted to One MICHELIN Star in Vietnam."
+        "Production intake source notes: guide Vietnam 2025",
+        "Official guide corporate 2025 release names Coco Dining as newer to special-occasion in Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -4356,8 +4356,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -4394,11 +4394,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "com tam ba ghien",
-      "travelerMoment": "Choose Ba Ghiền for Saigon cơm tấm one focused 2025 MICHELIN Bib Gourmand plate: grilled pork chop, broken rice, egg, pickles, fish sauce, and shop pace.",
+      "travelerMoment": "Choose Ba Ghiền for Saigon cơm tấm one focused plate: grilled pork chop, broken rice, egg, pickles, fish sauce, and shop pace.",
       "storySpine": "Ba Ghiền gives broken rice a named stop because the plate is direct: pork chop first, rice underneath, sauce and pickles doing the lift.",
       "intro": {
         "heading": "The Pork Chop is the draw",
-        "body": "Com Tam Ba Ghien is a 2025 MICHELIN Bib Gourmand broken-rice stop for a big grilled pork chop, egg, pickles, fish sauce, and a meal without a long menu debate."
+        "body": "Com Tam Ba Ghien is a broken-rice stop for a big grilled pork chop, egg, pickles, fish sauce, and a meal without a long menu debate."
       },
       "usefulPhraseCards": [
         {
@@ -4435,7 +4435,7 @@
         {
           "id": "lunch-with-momentum",
           "heading": "Lunch With Momentum",
-          "body": "The Bib Gourmand recognition belongs to a quick, satisfying plate rather than a formal dinner. Order, eat, and let the meal stay direct."
+          "body": "The meal belongs to a quick, satisfying plate rather than a formal dinner. Order, eat, and let the meal stay direct."
         },
         {
           "id": "add-ons-decided-early",
@@ -4479,22 +4479,22 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
-          "Saigon MICHELIN food-desire continuation on 2026-05-30: visible copy now uses bounded 2025 MICHELIN Bib Gourmand wording and stronger pork-chop plate detail."
+          "Saigon guide food-desire continuation on 2026-05-30: visible copy now uses bounded 2025 casual-value wording and stronger pork-chop plate detail."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Ba Ghien now has bounded 2025 MICHELIN Bib Gourmand positioning, specific pork-chop desire, and an everyday-meal comparison."
+        "reason": "Production food pass: Ba Ghien now has bounded 2025 casual-value positioning, specific pork-chop desire, and an everyday-meal comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
         "Production intake source notes: local named-restaurant source",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Cơm Tấm Ba Ghiền as Bib Gourmand."
+        "Official guide Guide Vietnam 2025 PDF lists Cơm Tấm Ba Ghiền as casual-value."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -4595,8 +4595,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -4717,8 +4717,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4829,8 +4829,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4866,11 +4866,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "cuc gach quan",
-      "travelerMoment": "Choose Cục Gạch Quán when Saigon dinner should slow down around a 2025 MICHELIN Bib Gourmand old-house table: shared dishes, tiled floors, vegetables, fish, soup, and room pace.",
+      "travelerMoment": "Choose Cục Gạch Quán when Saigon dinner should slow down around a old-house table: shared dishes, tiled floors, vegetables, fish, soup, and room pace.",
       "storySpine": "Cục Gạch Quán matters because the food and room move together: family-style Vietnamese dishes inside an old-house setting instead of another quick central meal.",
       "intro": {
         "heading": "Old House, Shared Table",
-        "body": "Cuc Gach Quan is a 2025 MICHELIN Bib Gourmand old-house restaurant for a slower Saigon table: shared Vietnamese dishes, tiled floors, vegetables, fish, soup, and a room set apart from traffic."
+        "body": "Cuc Gach Quan is a old-house restaurant for a slower Saigon table: shared Vietnamese dishes, tiled floors, vegetables, fish, soup, and a room set apart from traffic."
       },
       "usefulPhraseCards": [
         {
@@ -4917,7 +4917,7 @@
         {
           "id": "old-house-shared-pace",
           "heading": "Old House, Shared Pace",
-          "body": "Remember the old-house rooms, family-style meal, and softer dinner mood. The Bib Gourmand note supports the choice, but the table still has to fit the night."
+          "body": "Remember the old-house rooms, family-style meal, and softer dinner mood. The table still has to fit the night."
         }
       ],
       "mentionedHereCandidates": [],
@@ -4941,21 +4941,21 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
-          "Saigon MICHELIN food-desire continuation on 2026-05-30: visible copy now uses bounded 2025 MICHELIN Bib Gourmand wording and stronger old-house shared-table detail."
+          "Saigon guide food-desire continuation on 2026-05-30: visible copy now uses bounded 2025 casual-value wording and stronger old-house shared-table detail."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Cuc Gach Quan now has bounded 2025 MICHELIN Bib Gourmand positioning, old-house shared-table specificity, and a grounded home-style comparison."
+        "reason": "Production food pass: Cuc Gach Quan now has bounded 2025 casual-value positioning, old-house shared-table specificity, and a grounded home-style comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
         "Production intake source notes: Cuc Gach Quan named-restaurant source",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Cục Gạch Quán as Bib Gourmand."
+        "Official guide Guide Vietnam 2025 PDF lists Cục Gạch Quán as casual-value."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -5056,8 +5056,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5163,8 +5163,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5283,8 +5283,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5390,7 +5390,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset 12 gold-page calibration source/voice gate passed on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5503,8 +5503,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5615,8 +5615,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5727,8 +5727,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5839,8 +5839,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -5960,8 +5960,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6072,8 +6072,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6184,8 +6184,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6296,8 +6296,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -6409,8 +6409,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
@@ -6523,8 +6523,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6635,8 +6635,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6742,8 +6742,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6862,8 +6862,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6974,8 +6974,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -7086,8 +7086,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -7198,8 +7198,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -7236,11 +7236,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "long trieu",
-      "travelerMoment": "Plan Long Trieu for Saigon dinner a 2025 One MICHELIN Star Chinese meal: polished room, dim sum cues, staff pacing, and a formal table mood.",
+      "travelerMoment": "Plan Long Triều when Saigon dinner should feel more dressed-up: Chinese cooking, dim sum cues, staff pacing, and a polished room.",
       "storySpine": "Long Trieu adds a polished Chinese dining register to Saigon, a city where Vietnamese and Chinese-Vietnamese food habits sit close together.",
       "intro": {
-        "heading": "A Michelin-Starred Chinese Table",
-        "body": "Long Trieu is a 2025 One MICHELIN Star Chinese meal in Saigon: dim sum cues, staff pacing, and a polished room held apart from the street outside."
+        "heading": "A Special-Occasion Chinese Table",
+        "body": "Long Trieu is a special-occasion Chinese meal in Saigon: dim sum cues, staff pacing, and a polished room held apart from the street outside."
       },
       "usefulPhraseCards": [
         {
@@ -7311,21 +7311,21 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Long Trieu now has bounded 2025 One MICHELIN Star positioning and a specific star-level comparison."
+        "reason": "Production food pass: Long Trieu now has a specific special-occasion comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025; MICHELIN HCMC guide",
-        "Official Michelin corporate 2025 release lists Long Trieu among retaining One MICHELIN Star recipients for Vietnam."
+        "Production intake source notes: guide Vietnam 2025; guide HCMC guide",
+        "Official guide corporate 2025 release lists Long Trieu among retaining special-occasion recipients for Vietnam."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -7426,8 +7426,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -7465,10 +7465,10 @@
       "category": "Restaurant",
       "pronunciation": "man moi",
       "travelerMoment": "Choose Mặn Mòi for a Saigon dinner where the draw is a steady Vietnamese table: shared dishes, rice, sauces, attentive service, and a room that can hold the evening without turning formal.",
-      "storySpine": "Mặn Mòi gives Saigon a recognized Vietnamese-table dinner choice: 2025 MICHELIN Bib Gourmand, plus the 2025 Service Award cue, with the food and room still carrying the reason to go.",
+      "storySpine": "Mặn Mòi gives Saigon a calm Vietnamese-table dinner choice: attentive service, shared dishes, and a room that still lets the food lead.",
       "intro": {
         "heading": "A Service-Aware Vietnamese Table",
-        "body": "Mặn Mòi is a 2025 MICHELIN Bib Gourmand Saigon restaurant for a steadier Vietnamese dinner: shared dishes, rice on the table, sauces close by, and service that lets the room stay calm."
+        "body": "Mặn Mòi is a Saigon restaurant for a steadier Vietnamese dinner: shared dishes, rice on the table, sauces close by, and service that lets the room stay calm."
       },
       "usefulPhraseCards": [
         {
@@ -7510,12 +7510,12 @@
         {
           "id": "why-this-saigon-table-matters",
           "heading": "Why This Saigon Table Matters",
-          "body": "Saigon food coverage needs this middle lane: not street-food speed, not polished tasting-menu theater, but a Vietnamese restaurant dinner that is easy to picture before the trip."
+          "body": "This is the middle lane: slower than street-food speed and less formal than a tasting menu, with a Vietnamese restaurant dinner that is easy to picture before the trip."
         },
         {
           "id": "recognition-supports-the-save",
-          "heading": "Recognition Supports The Choice",
-          "body": "The 2025 Bib Gourmand and Service Award signals support the choice. The actual reason to go is still the table: dishes landing together, sauces within reach, and service that helps dinner settle."
+          "heading": "The Choice Is Clear",
+          "body": "The reason to go is still the table: dishes landing together, sauces within reach, and service that helps dinner settle."
         }
       ],
       "mentionedHereCandidates": [],
@@ -7531,9 +7531,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bep-me-in",
           "label": "Bếp Mẹ Ỉn",
-          "relationship": "central Bib Gourmand comfort-table comparison",
-          "displaySubtitle": "A central 2025 MICHELIN Bib Gourmand comfort table near Ben Thanh energy.",
-          "reason": "Bep Me In gives Man Moi a more casual central Bib Gourmand comparison.",
+          "relationship": "central comfort-table comparison",
+          "displaySubtitle": "A central comfort table near Ben Thanh energy.",
+          "reason": "Bep Me In gives Man Moi a more casual central comparison.",
           "status": "render"
         }
       ],
@@ -7547,18 +7547,18 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Additive HCMC 101-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
-          "Official 2025 MICHELIN PDF support checked locally: Mặn Mòi appears in the Bib Gourmand HCMC section, and the 2025 Service Award recipient is from Mặn Mòi.",
+          "Official 2025 guide PDF support checked locally: Mặn Mòi appears in the casual-value HCMC section, and the 2025 service note recipient is from Mặn Mòi.",
           "Phrase cards reuse existing bundled food audio; no one-off restaurant-name phrase is required for production readiness."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Additive production pilot: Man Moi has bounded 2025 MICHELIN recognition, a specific Vietnamese-table save reason, mapped phrase cards, and useful same-city dinner comparisons."
+        "reason": "Additive production pilot: Man Moi has a specific Vietnamese-table save reason, mapped phrase cards, and useful same-city dinner comparisons."
       },
       "sourceNotes": [
         "Added as the first additive HCMC restaurant pilot after the 500-page hard reset; prior fixed 100-per-city script assumptions were widened for HCMC 101.",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Mặn Mòi (Thu Duc City) as Bib Gourmand and names the 2025 Service Award recipient from Mặn Mòi.",
+        "Official guide Guide Vietnam 2025 PDF lists Mặn Mòi (Thu Duc City) as casual-value and names the 2025 service note recipient from Mặn Mòi.",
         "No hours, prices, booking, address, closure, or fragile menu-item claims are bundled in visible copy."
       ],
       "status": "FINAL_PASS",
@@ -7662,8 +7662,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -7774,8 +7774,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -7886,8 +7886,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -8006,8 +8006,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -8126,8 +8126,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -8163,11 +8163,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "nephele",
-      "travelerMoment": "Choose Nephele for Saigon dinner quieter and wine-led: a 2025 MICHELIN Selected Asian Contemporary room where menu pacing and staff guidance carry the night.",
-      "storySpine": "Nephele earns a support role through MICHELIN Selected modern dining and sommelier attention: wine, staff pacing, and a meal chosen for calm instead of street-food speed.",
+      "travelerMoment": "Choose Nephele for a quieter, wine-led Saigon dinner with staff guidance, slower pacing, and a menu that asks for attention instead of speed.",
+      "storySpine": "Nephele is for a calmer modern dinner: wine, staff pacing, and a meal chosen for quiet instead of street-food speed.",
       "intro": {
-        "heading": "A Selected Wine-Led Dinner",
-        "body": "Nephele is a 2025 MICHELIN Selected Saigon dinner for a quieter room, wine attention, Asian Contemporary pacing, and a menu you read slowly."
+        "heading": "A Quiet Wine-Led Dinner",
+        "body": "Nephele is a Saigon dinner for a quieter room, wine attention, slower pacing, and a menu you read slowly."
       },
       "usefulPhraseCards": [
         {
@@ -8199,12 +8199,12 @@
         {
           "id": "wine-is-the-clue",
           "heading": "Wine Leads The Pace",
-          "body": "The MICHELIN Selected recognition sits around the room's slower rhythm: drinks, staff guidance, and courses that need attention."
+          "body": "The room's slower rhythm is the point: drinks, staff guidance, and courses that need attention."
         },
         {
           "id": "support-not-first-pick",
           "heading": "A Calmer Dinner Room",
-          "body": "This is the calmer table after markets, museums, or traffic. Compare CieL, Coco Dining, or Akuna when the night calls for a One Star room."
+          "body": "This is the calmer table after markets, museums, or traffic. Compare CieL, Coco Dining, or Akuna when the night calls for a more formal room."
         },
         {
           "id": "make-it-the-evening",
@@ -8218,8 +8218,8 @@
           "catalogId": "viet-family-city-hcmc-place-coco-dining",
           "label": "Coco Dining",
           "relationship": "modern-dinner comparison",
-          "displaySubtitle": "A 2025 One MICHELIN Star dinner when the meal should feel more ingredient-led.",
-          "reason": "Coco Dining gives Nephele a clearer comparison for planned Saigon dining: One Star ingredient focus versus a quieter Selected wine-led room.",
+          "displaySubtitle": "A special-occasion dinner when the meal should feel more ingredient-led.",
+          "reason": "Coco Dining gives Nephele a clearer planned-dinner comparison: warmer Vietnamese cooking versus a quieter wine-led room.",
           "status": "render"
         }
       ],
@@ -8233,24 +8233,24 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
           "Food-desire review on 2026-05-30: downgraded to support/deemphasize for high-visibility placement until a clearer dish-level hook is sourced.",
-          "MICHELIN Selected recognition patch on 2026-05-31: visible copy now uses bounded 2025 MICHELIN Selected language while keeping Nephele as a support save."
+          "guide-noted recognition patch on 2026-05-31: visible copy now uses bounded 2025 guide-noted language while keeping Nephele as a support save."
         ]
       },
       "score": {
         "value": 27,
         "max": 30,
-        "reason": "Production MICHELIN patch: Nephele now carries bounded 2025 MICHELIN Selected context and stays a quieter wine-led support save."
+        "reason": "Production food patch: Nephele now carries stays a quieter wine-led support save."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: MICHELIN Vietnam 2025",
-        "2026-05-30 source refresh: 2025 MICHELIN Guide release lists Nephele as newly selected and names Paul Vo for the Sommelier Award; no star claim made.",
-        "Official MICHELIN Guide Vietnam 2025 PDF lists Nephele as MICHELIN Selected."
+        "Production intake source notes: guide Vietnam 2025",
+        "2026-05-30 source refresh: 2025 guide Guide release lists Nephele as newly selected and names Paul Vo for the wine staff Award; no star claim made.",
+        "Official guide Guide Vietnam 2025 PDF lists Nephele as guide-noted."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -8351,8 +8351,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -8463,8 +8463,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -8575,8 +8575,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -8687,8 +8687,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -8799,8 +8799,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -8920,8 +8920,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -9040,8 +9040,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -9133,7 +9133,7 @@
           "label": "Đường Đồng Khởi",
           "relationship": "curated route comparison",
           "displaySubtitle": "A polished District 1 street to compare after the doorway errand.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "reason": "This nearby page helps compare the same part of the city.",
           "status": "render"
         }
       ],
@@ -9147,8 +9147,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -9262,8 +9262,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -9375,8 +9375,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -9413,7 +9413,7 @@
       "category": "Restaurant",
       "pronunciation": "pho hoa pasteur",
       "travelerMoment": "Choose Phở Hòa Pasteur for a central, familiar Saigon phở shop: beef broth, herbs, bean sprouts, lime, sauces, a busy room, and Pasteur Street outside.",
-      "storySpine": "Phở Hòa Pasteur still matters as the central Pasteur Street phở stop, while Phở Lệ now carries the Bib Gourmand District 5 comparison for a more deliberate phở trip.",
+      "storySpine": "Phở Hòa Pasteur still matters as the central Pasteur Street phở stop, while Phở Lệ now carries the District 5 comparison for a more deliberate phở trip.",
       "intro": {
         "heading": "One Bowl On Pasteur",
         "body": "Phở Hòa Pasteur is the central Pasteur Street phở stop for a familiar southern-style bowl: beef broth, herbs, bean sprouts, lime, sauces, and the fast rhythm of a busy shop."
@@ -9458,7 +9458,7 @@
         {
           "id": "beside-the-district-5-bowl",
           "heading": "Compare It With Phở Lệ",
-          "body": "Phở Hòa is the easy central shop to recognize. Phở Lệ adds the 2025 Bib Gourmand District 5 bowl when the plan can stretch farther from the center."
+          "body": "Phở Hòa is the easy central shop to recognize. Phở Lệ adds the District 5 bowl when the plan can stretch farther from the center."
         },
         {
           "id": "southern-pho-expectations",
@@ -9481,16 +9481,16 @@
         {
           "catalogId": "viet-family-city-hcmc-place-pho-le-district-5",
           "label": "Phở Lệ",
-          "relationship": "Bib Gourmand District 5 phở",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand District 5 bowl when southern phở should feel fuller and busier.",
-          "reason": "Related because: A 2025 MICHELIN Bib Gourmand District 5 bowl when southern phở should feel fuller and busier.",
+          "relationship": "District 5 phở",
+          "displaySubtitle": "A District 5 bowl when southern phở should feel fuller and busier.",
+          "reason": "Related because: A District 5 bowl when southern phở should feel fuller and busier.",
           "status": "render"
         },
         {
           "catalogId": "viet-family-city-hcmc-place-pho-minh",
           "label": "Phở Minh",
           "relationship": "same-street pho comparison",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Pasteur-alley breakfast when phở should feel quieter and older.",
+          "displaySubtitle": "A Pasteur-alley breakfast when phở should feel quieter and older.",
           "reason": "Pho Minh gives Pho Hoa Pasteur a same-street comparison with an old-alley breakfast role.",
           "status": "render"
         },
@@ -9505,9 +9505,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-pho-huong-binh",
           "label": "Phở Hương Bình",
-          "relationship": "Bib Gourmand chicken-or-beef phở",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand family shop when the table wants chicken and beef phở choices.",
-          "reason": "Related because: A 2025 MICHELIN Bib Gourmand family shop when the table wants chicken and beef phở choices.",
+          "relationship": "chicken-or-beef phở",
+          "displaySubtitle": "A family shop when the table wants chicken and beef phở choices.",
+          "reason": "Related because: A family shop when the table wants chicken and beef phở choices.",
           "status": "render"
         }
       ],
@@ -9521,23 +9521,23 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
-          "Saigon food-desire continuation on 2026-05-30: visible copy now has stronger southern-phở table detail without adding unsupported current MICHELIN recognition.",
-          "Support demotion pass on 2026-05-31: Phở Hòa Pasteur remains the central Pasteur Street phở stop, but Phở Lệ now carries the Bib Gourmand District 5 food-led comparison."
+          "Saigon food-desire continuation on 2026-05-30: visible copy now has stronger southern-phở table detail without adding unsupported current guide recognition.",
+          "Support demotion pass on 2026-05-31: Phở Hòa Pasteur remains the central Pasteur Street phở stop, but Phở Lệ now carries the casual-value District 5 food-led comparison."
         ]
       },
       "score": {
         "value": 28,
         "max": 30,
-        "reason": "Support demotion: Pho Hoa Pasteur remains useful and dish-specific, but its central-shop role should sit below the MICHELIN-backed Phở Lệ phở save."
+        "reason": "Support demotion: Pho Hoa Pasteur remains useful and dish-specific, but its central-shop role should sit below the stronger Phở Lệ phở save."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
         "Production intake source notes: existing-city-library; Visit HCMC portal",
-        "2026-05-31 support cleanup: keep as a recognizable central southern-phở stop beside Phở Lệ, not as the MICHELIN phở answer."
+        "2026-05-31 support cleanup: keep as a recognizable central southern-phở stop beside Phở Lệ, not as the guide phở answer."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -9639,8 +9639,8 @@
           "catalogId": "viet-family-city-hcmc-place-pho-huong-binh",
           "label": "Phở Hương Bình",
           "relationship": "dish-to-restaurant follow-through",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand phở shop when chicken and beef both need to stay in play.",
-          "reason": "Related because: A 2025 MICHELIN Bib Gourmand phở shop when chicken and beef both need to stay in play.",
+          "displaySubtitle": "A phở shop when chicken and beef both need to stay in play.",
+          "reason": "Related because: A phở shop when chicken and beef both need to stay in play.",
           "status": "render"
         }
       ],
@@ -9654,8 +9654,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
         ]
       },
@@ -9767,8 +9767,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -9887,8 +9887,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -9999,8 +9999,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -10112,8 +10112,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10224,8 +10224,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10344,8 +10344,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10464,8 +10464,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10576,8 +10576,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -10689,8 +10689,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10809,8 +10809,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10921,8 +10921,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -11034,8 +11034,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11146,8 +11146,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11253,8 +11253,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11365,8 +11365,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11477,8 +11477,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11589,8 +11589,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11709,8 +11709,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11821,8 +11821,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
         ]
       },
@@ -11934,8 +11934,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -12046,8 +12046,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -12158,8 +12158,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
@@ -12271,8 +12271,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
-          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {

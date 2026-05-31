@@ -100,7 +100,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -212,7 +212,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -324,7 +324,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -436,7 +436,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -534,7 +534,7 @@
           "label": "Phố cổ Hội An",
           "relationship": "curated route comparison",
           "displaySubtitle": "The larger old-town walk after the ticket pause.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "reason": "This nearby page helps compare the same part of the city.",
           "status": "render"
         }
       ],
@@ -548,7 +548,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -659,7 +659,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -771,7 +771,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -897,8 +897,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset 12 gold-page calibration source/voice gate passed on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
@@ -1011,7 +1011,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -1132,7 +1132,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
           "2026-05-31 sandwich pass: Vietnam Travel names both Bánh Mì Phượng and Madam Khanh, so the dish guide now routes to two distinct counters instead of making Phượng the only named follow-through."
         ]
@@ -1258,7 +1258,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
           "2026-05-31 Phuong sandwich pass: Vietnam Travel names Bánh Mì Phượng under Hội An bánh mì, so the page now owns the famous fast-moving shop role while avoiding hours, prices, and one-best claims.",
           "2026-05-31 U.S.-voice repair: removed explicit save wording, clarified the Madam Khanh comparison, and replaced awkward stop/counter phrasing in visible copy.",
@@ -1375,7 +1375,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -1488,7 +1488,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -1600,7 +1600,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -1713,7 +1713,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -1825,7 +1825,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -1937,7 +1937,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -2049,7 +2049,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -2161,7 +2161,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -2273,7 +2273,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -2385,7 +2385,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -2497,7 +2497,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -2609,7 +2609,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -2729,7 +2729,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
           "2026-05-31 repair: replaced generic sightseeing phrase cards with mapped food-ordering phrase cards, then linked the dish guide to the new focused Cao Lầu Thanh listing."
         ]
@@ -2872,7 +2872,7 @@
         "notes": [
           "Additive Hội An 102-page pilot on 2026-05-31: authored directly under current V2.2 standard after audit found the cao lầu dish page had no focused named cao lầu stop.",
           "Source refresh on 2026-05-31: Vietnam Travel lists Quán Cao Lầu Thanh at 26 Thái Phiên; Quang Nam Tourism's 2026 cao-lau roundup supports Thanh as a recognized small cao lầu stop. Visible copy avoids hours, prices, rankings, and exact operating claims.",
-          "No MICHELIN claim is used because Hội An is outside the current MICHELIN Vietnam city coverage in the existing audit."
+          "No guide claim is used because Hội An is outside the current guide Vietnam city coverage in the existing audit."
         ]
       },
       "score": {
@@ -2991,9 +2991,9 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
-          "Food-desire review on 2026-05-30: strengthened as restaurant-and-patisserie support listing with river terrace and dessert role; not promoted above sharper Hội An food stops."
+          "Food-desire review on 2026-05-30: strengthened as restaurant-and-patisserie support listing with river terrace and dessert role; not newer above sharper Hội An food stops."
         ]
       },
       "score": {
@@ -3106,7 +3106,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -3218,7 +3218,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -3330,7 +3330,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -3443,7 +3443,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -3555,7 +3555,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -3686,7 +3686,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
@@ -3827,7 +3827,7 @@
         "notes": [
           "Additive Hội An 101-page pilot on 2026-05-31: authored directly under current V2.2 standard after audit found a dish page without a named chicken-rice place.",
           "Source refresh on 2026-05-31: Quang Nam Tourism page https://quangnamtourism.com.vn/ja/nhhacomgababuoi supports Bà Buội as a recognized Hội An chicken-rice stop; visible copy avoids rankings, hours, prices, branch claims, and exact operational claims.",
-          "No MICHELIN claim is used because Hội An is outside the current MICHELIN Vietnam city coverage in the existing audit."
+          "No guide claim is used because Hội An is outside the current guide Vietnam city coverage in the existing audit."
         ]
       },
       "score": {
@@ -3943,7 +3943,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4055,7 +4055,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4167,7 +4167,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4279,7 +4279,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4391,7 +4391,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4503,7 +4503,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4615,7 +4615,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -4723,7 +4723,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
           "Food-desire review on 2026-05-30: clarified as view-led support cafe, with Vietnamese coffee options added from current cafe-guide sources."
         ]
@@ -4838,7 +4838,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -4950,7 +4950,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5062,7 +5062,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5174,7 +5174,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5286,7 +5286,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5398,7 +5398,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5510,7 +5510,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5622,7 +5622,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5734,7 +5734,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5846,7 +5846,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -5958,7 +5958,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6070,7 +6070,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6182,7 +6182,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6220,7 +6220,7 @@
       "category": "Restaurant",
       "pronunciation": "madam khanh",
       "travelerMoment": "Madam Khanh is the famous Hội An sandwich shop behind the Bánh Mì Queen name: crisp roll, warm filling, herbs, sauce, chili, and a calmer bánh mì meal than Phượng.",
-      "storySpine": "The Bánh Mì Queen nickname gives Madam Khánh a reason to remember, but the meal still has to land as crisp bread, warm filling, herbs, sauce, and chili.",
+      "storySpine": "The Bánh Mì Queen nickname helps, but the meal still has to land as crisp bread, warm filling, herbs, sauce, and chili.",
       "intro": {
         "heading": "The Bánh Mì Queen Shop",
         "body": "Madam Khánh is the Bánh Mì Queen sandwich shop for a specific Hội An meal: crisp roll, warm filling, herbs, sauce, and chili chosen before the bread closes."
@@ -6299,7 +6299,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
           "2026-05-31 sandwich pass: strengthened around Vietnam Travel's source-supported Madam Khanh - The Banh Mi Queen listing while avoiding hours, prices, and ranking claims.",
           "2026-05-31 critique follow-up: made the Phượng comparison self-explanatory for a first-time U.S. reader."
@@ -6415,7 +6415,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -6528,7 +6528,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -6641,7 +6641,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -6754,7 +6754,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -6866,7 +6866,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -6979,7 +6979,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -7092,7 +7092,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -7314,7 +7314,7 @@
         {
           "id": "herbal-sweet-recognizable",
           "heading": "Herbal, Sweet, Recognizable",
-          "body": "Expect an iced herbal drink with lemongrass and lotus-leaf garnish. The draw is refreshment and recognition; keep it short."
+          "body": "Expect an iced herbal drink with lemongrass and lotus-leaf garnish. The draw is refreshment; keep it short."
         },
         {
           "id": "between-heat-and-dinner",
@@ -7353,7 +7353,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -7466,7 +7466,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -7578,7 +7578,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -7690,7 +7690,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -7803,7 +7803,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -7915,7 +7915,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -8027,7 +8027,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -8140,7 +8140,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -8253,7 +8253,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -8366,7 +8366,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -8478,7 +8478,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -8590,7 +8590,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -8702,7 +8702,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -8814,7 +8814,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -8926,7 +8926,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -9039,7 +9039,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -9151,7 +9151,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -9263,7 +9263,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -9376,7 +9376,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -9489,7 +9489,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -9602,7 +9602,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -9715,7 +9715,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -9828,7 +9828,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -9941,7 +9941,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10053,7 +10053,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10165,7 +10165,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -10278,7 +10278,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10390,7 +10390,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10502,7 +10502,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10614,7 +10614,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10726,7 +10726,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10838,7 +10838,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -10950,7 +10950,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
         ]
       },
       "score": {
@@ -11062,7 +11062,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -11203,7 +11203,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
         ]
       },
@@ -11316,7 +11316,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -11434,8 +11434,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, Michelin-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
         ]
       },
       "score": {
@@ -11547,7 +11547,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },
@@ -11660,7 +11660,7 @@
         "antiCynicismTest": "pass",
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
-          "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
         ]
       },

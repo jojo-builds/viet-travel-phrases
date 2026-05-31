@@ -346,15 +346,22 @@ final class CityAppDetailV22RenderProofUITests: XCTestCase {
             app.swipeUp()
             app.swipeUp()
             capture(name: "\(prefix)-middle.png")
+            app.terminate()
 
+            let bottomApp = XCUIApplication()
+            bottomApp.launchArguments = [
+                "--detail-page",
+                page.pageID,
+                "--validate-bottom-inset-scroll-to-bottom"
+            ]
+            bottomApp.launch()
             assertBottomSentinelClearsTabBar(
                 sentinelIDs(for: page.pageID),
-                in: app,
+                in: bottomApp,
                 routeName: page.pageID
             )
             capture(name: "\(prefix)-bottom.png")
-
-            app.terminate()
+            bottomApp.terminate()
         }
     }
 

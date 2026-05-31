@@ -41,6 +41,8 @@ The source copy is much closer, and the current regeneration/validation chain pa
 
 Validators and structural gates can pass while visible copy still reads like content architecture, inventory balancing, or generated routing. The user screenshot of `city-hcmc-place-banh-xeo-46a` confirmed this: the page was coherent but stiff, with phrases such as `A Dish-Specific Meal`, `recognition helps`, and `carry the stop`.
 
+Second screenshot review tightened the reader-assumption bar again: unexplained food-guide awards such as `Bib Gourmand`, `MICHELIN Selected`, or `One MICHELIN Star` cannot appear as insider shorthand. If visible copy uses one, it must explain the term in plain English at the point of use, and if the award is not essential to the traveler decision, omit it and lead with the food, room, table, route, or practical reason to care.
+
 ## Hard Blockers Found
 
 ### Food / Restaurant / Dish
@@ -54,6 +56,7 @@ Validators and structural gates can pass while visible copy still reads like con
 - `city-danang-place-fatfish`: copy undercut the restaurant as not really food-led.
 - `city-hanoi-place-bun-cha` and `city-hue-place-banh-bot-loc`: related-card subtitles exposed app mechanics.
 - `city-hcmc-place-banh-xeo-46a`: screenshot-confirmed stiff, architecture-like copy that needed humanization.
+- Award-language audit after the second screenshot found visible guide/award language on `58` V2.2 source pages: `52` Restaurant pages and `6` Dish pages. This is a human-readability blocker unless each line explains the award in ordinary traveler terms at the point of use. The production copy pass chose the safer traveler-first fix: remove award shorthand when the food, room, table, route, or practical choice already explains why the page matters.
 
 ### Mobility / Route
 
@@ -132,8 +135,15 @@ Regenerated and validated after the source repairs:
 
 Screenshot-driven humanization check:
 
-- `city-hcmc-place-banh-xeo-46a` now renders generated copy around concrete table behavior: wide hot pancake, herbs, lettuce, sauce, first bite, and ingredient checks. The previous screenshot phrases `The Plate Needs Space`, `A Dish-Specific Meal`, `table attention`, and `carry the stop` no longer appear in the generated native page.
+- `city-hcmc-place-banh-xeo-46a` now renders generated copy around concrete table behavior: wide hot pancake, herbs, lettuce, sauce, first bite, and ingredient checks. The previous screenshot phrases `The Plate Needs Space`, `A Dish-Specific Meal`, `table attention`, `Bib Gourmand`, and `carry the stop` no longer appear in the generated native page.
 - Follow-on voice cleanup removed the remaining validator/voice-audit catches: `it fits` on Cơm Gà Bà Buội, over-threshold `belongs`, top/best-style claims, and `good when` formula phrasing.
+
+Award/jargon readability cleanup:
+
+- Read-only follow-up slices reviewed the award-heavy restaurant/dish pages in Da Nang, Hanoi, and HCMC after the user flagged `Bib Gourmand` as unexplained insider language.
+- The visible copy scan was expanded beyond the first count and found `58` pages with hard award/guide or dining-insider language in visible fields.
+- Repaired the class across V2.2 source and projected layers: no visible `Bib Gourmand`, `MICHELIN`, `Green-Star`, `Service Award`, `promoted`, `sommelier`, `tasting-menu`, `Asian Contemporary`, `French Contemporary`, `support role`, or `source inventory` phrasing remains in the audited app-detail visible fields.
+- The scan result after repair is `0` visible award-or-hard-jargon pages. The intended authoring rule is now explicit: first-time travelers should not have to decode guide taxonomy before understanding the page.
 
 Rendered proof expansion after this batch:
 
@@ -142,11 +152,16 @@ Rendered proof expansion after this batch:
 - Ran a category-balanced proof batch on simulator `SpeakLocal City Listings`: `25` pages, `75` screenshots, `0` failures.
 - The batch covered all `20` top-level categories, the screenshot-feedback page `city-hcmc-place-banh-xeo-46a`, and one restaurant page in each non-Da Nang city.
 - Bánh Xèo 46A native proof now exists at `render-proof-2026-06-01-v2-2-global/screenshots-single-223/`.
+- Added award/jargon repair proof batches:
+  - `award-jargon-repair-results.jsonl`: `12` Da Nang pages, `36` screenshots, `0` failures.
+  - `award-jargon-cross-city-results.jsonl`: `10` cross-city restaurant/dish pages, `30` screenshots, `0` failures.
+  - Con Market was rerun after the bottom-proof relaunch patch and now passes with `3` screenshots.
+  - Combined unique rendered proof rows across the current result files: `52` pages, `156` screenshots, `0` current failures.
 - Multi-page-in-one-test runs are unstable on this simulator; single-page xcodebuild invocations are the reliable path for the remaining `495` pages.
 
 ## Remaining Work
 
 - Promote the rendered proof gate: either literal top/scrolled screenshots for all `520` V2.2 pages or an explicit amended receipt standard that accepts full source/runtime text review plus representative rendered proof.
-- Continue the reliable single-page render harness over the remaining `495` pages, or split by offset into resumable batches that launch one page per xcodebuild invocation.
+- Continue the reliable single-page render harness over the remaining `468` pages, or split by offset into resumable batches that launch one page per xcodebuild invocation.
 - Continue targeted rendered review for street `spine/line` repetition, high-traffic beach/nature phrase-card fit, performance page first-move copy, and remaining hub-biased related-card feel.
 - If rendered review finds copy that reads stiff on-device, repair it in `content-draft/viet/city-library/app-detail-v2-2/*.json`, then run the full regeneration/validation chain again.

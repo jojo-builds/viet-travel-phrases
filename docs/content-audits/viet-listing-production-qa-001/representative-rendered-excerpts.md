@@ -172,8 +172,8 @@ You do not need to turn the street into a long walk. One clear sign, cafe edge, 
 - Hero: Anăn Sài Gòn / Anan Saigon
 - Practice CTA: Practice ordering here
 
-### A Michelin-Starred Saigon Dinner
-Anan Saigon is the dinner to let one meal center the night: a 2025 One MICHELIN Star restaurant near central market streets, with contemporary Vietnamese cooking and a room paced for attention.
+### A Special-Occasion Saigon Dinner
+Anan Saigon is the dinner to let one meal center the night: a special-occasion restaurant near central market streets, with contemporary Vietnamese cooking and a room paced for attention.
 
 ### Useful Phrases
 - Có phải đợi bàn không? — Is there a wait for a table?
@@ -216,8 +216,8 @@ If extras appear, take a beat to understand the table. The main move stays clear
 ### Lunch With One Job
 Huong Lien is for a clear bun cha meal rather than a broad menu search. The bowl, herbs, and broth carry the stop.
 
-### Recognition, Then Lunch
-Let the recognition explain why the name is familiar, then eat while the pork, broth, and herbs are warm. The table rhythm matters more than the badge.
+### Famous Room, Quick Lunch
+The name may be familiar, but the table is simple: eat while the pork, broth, and herbs are warm.
 
 ## Phở Bát Đàn
 

@@ -27,12 +27,17 @@ Category-balanced batch:
 
 - Results: `category-balanced-results.jsonl`
 - Xcode logs: `xcodebuild-logs/proof-*.log`
-- Scope: `25` pages, `75` screenshots, `0` failures.
+- Scope: `43` current rows, `129` screenshots, `0` current failures.
 - Coverage: one page from each of the `20` top-level categories, plus `city-hcmc-place-banh-xeo-46a` and one restaurant page from Hanoi, HCMC, Hoi An, and Hue.
 - Bánh Xèo screenshot-feedback proof:
   - `screenshots-single-223/223-hcmc-restaurant-hcmc-place-banh-xeo-46a-top.png`
   - `screenshots-single-223/223-hcmc-restaurant-hcmc-place-banh-xeo-46a-middle.png`
   - `screenshots-single-223/223-hcmc-restaurant-hcmc-place-banh-xeo-46a-bottom.png`
+- Award/jargon repair proof:
+  - `award-jargon-repair-results.jsonl`: `12` Da Nang pages, `36` screenshots, `0` failures.
+  - `award-jargon-cross-city-results.jsonl`: `10` cross-city restaurant/dish pages, `30` screenshots, `0` failures.
+  - `con-market-after-bottom-relaunch-results.jsonl`: `1` rerun page, `3` screenshots, `0` failures.
+- Combined current proof across the maintained result files is `52` unique pages, `156` screenshots, and `0` current failures.
 
 This is a meaningful rendered proof expansion, not the final 520-page receipt. The final gate still needs either all `520` pages captured by this harness or an explicit approval-standard amendment accepting full source/runtime review plus category-balanced rendered proof.
 
