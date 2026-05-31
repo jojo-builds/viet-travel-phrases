@@ -4276,6 +4276,61 @@ This pass repairs the highest-count remaining city batch after Da Nang, but it d
 
 No subagents were spawned or closed in this continuation. This pass used local source, U.S.-voice, Michelin-claim preservation, food-desire, runtime, validator, render, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
 
+## Continuation: Pinned Audio Top-Chrome Shield
+
+Thirty-first pass date: 2026-05-31
+
+Commit before pass: `b972294cf Repair Hoian Hue listing save language`
+
+This continuation fixes the shared render blocker where page text could remain readable underneath the sticky top admin controls after the inline audio player scrolled away. The issue was not a content-resource problem; it was the top chrome readability shield ending too soon for the pinned audio speed control state.
+
+### Runtime Change
+
+- Strengthened `AppChromeLayout.topReadableShieldHeight` so the top admin hit-test/readability area extends below the pinned speed control.
+- Strengthened the non-menu `ChromeSeparationGradient` into an opaque white upper shield before fading into the page background.
+- Left the pinned audio control behavior itself unchanged: it still floats in the top admin layer rather than consuming scroll layout space.
+
+Changed file:
+
+- `native-ios/App/Design/NativeGlass.swift`
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-top-chrome-shield/`
+
+Representative pages captured:
+
+- `morning-glory-pinned-shield.jpg`: Hội An restaurant page after scrolling, with the pinned speed control on a clean top shield and no readable page text ghosting under the speed pill.
+- `song-huong-pinned-shield.jpg`: Huế restaurant/river page after scrolling, with top text fading underneath the admin band instead of sitting visibly inside the top controls.
+
+Native simulator proof:
+
+- Worktree: `/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-listings-production-ready`
+- Branch: `feature/city-listings-production-ready`
+- Simulator: `SpeakLocal City Listings`
+- Build/run launch hook: `--detail-page viet-family-city-hoian-place-morning-glory` PASS.
+- Scoped relaunch/screenshot hook: `--detail-page viet-family-city-hue-place-song-huong-floating-restaurant` PASS.
+
+Focused UI tests:
+
+```sh
+xcodebuild test -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,id=7C386DD3-4BF1-4A34-A918-768C43CD1258' -only-testing:SpeakLocalNativeUITests/AdminChromeUITests/testDetailPagePinsAudioSpeedControlAfterPlayerScrollsOffscreen -only-testing:SpeakLocalNativeUITests/AdminChromeUITests/testHomeUseNowPinsAudioSpeedControlAfterPlayerScrollsOffscreen -only-testing:SpeakLocalNativeUITests/AdminChromeUITests/testHomePinnedSpeedTopBandAllowsVerticalScrollGestures
+```
+
+Result: PASS, 3 tests, 0 failures.
+
+### Remaining Risk After Top-Chrome Shield
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass clears the shared sticky-audio readability blocker for representative city/listing pages without changing content inventory. The broader production-ready goal still needs the page-by-page restaurant significance audit: which smaller restaurants deserve their slot, which ones should be support cards or dropped/downranked, and where stronger food-specific or source-supported recognition copy is still needed.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local native render, UI-test, screenshot, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
+
 ## Continuation: Hội An And Huế U.S.-Voice Save-Language Repair
 
 Thirtieth pass date: 2026-05-31

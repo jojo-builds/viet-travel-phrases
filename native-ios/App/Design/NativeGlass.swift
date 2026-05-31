@@ -289,7 +289,7 @@ enum AppChromeLayout {
     static let pinnedAudioSpeedRevealY: CGFloat = 96
     static let pinnedAudioSpeedScrollClearance: CGFloat = 0
     static let topAdminHitTestEnvelopeHeight: CGFloat = 132
-    static let topReadableShieldHeight: CGFloat = max(topSeparationHeight, topAdminHitTestEnvelopeHeight)
+    static let topReadableShieldHeight: CGFloat = max(topSeparationHeight, topAdminHitTestEnvelopeHeight) + 64
     static let pinnedAudioSpeedBackdropHeight: CGFloat = topSeparationHeight
     static let bottomAdminHitTestEnvelopeHeight: CGFloat = 92
 
@@ -536,9 +536,10 @@ struct ChromeSeparationGradient: View {
 
         guard extendsBehindMenuSectionChrome else {
             return [
-                .init(color: Color(.systemBackground).opacity(0.96), location: 0),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.48), location: 0.42),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.12), location: 0.76),
+                .init(color: Color(.systemBackground), location: 0),
+                .init(color: Color(.systemBackground), location: 0.76),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.96), location: 0.88),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.58), location: 0.96),
                 .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
             ]
         }
