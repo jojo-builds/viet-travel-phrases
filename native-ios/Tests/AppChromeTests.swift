@@ -841,6 +841,24 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testKnownCatalogPageIDsBypassSQLiteCanonicalLookup() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        XCTAssertTrue(PhraseCatalog.allItems.contains { $0.pageID == "viet-phrase-phone-1" })
+        let lookupCountAfterCatalogWarmup = VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting
+
+        XCTAssertEqual(
+            PhraseCatalog.canonicalPageID(forOpenablePageID: "viet-phrase-phone-1"),
+            "viet-phrase-phone-1"
+        )
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            lookupCountAfterCatalogWarmup,
+            "Catalog rows already carry canonical page IDs, so rapid listing taps should not run a SQLite alias lookup before opening each known page."
+        )
+    }
+
     func testVietnameseMenuSectionJumpPolicyUsesImmediateScroll() {
         XCTAssertEqual(VietnameseMenuSectionJumpPolicy.delayNanoseconds, 0)
         XCTAssertFalse(VietnameseMenuSectionJumpPolicy.usesAnimatedScroll)

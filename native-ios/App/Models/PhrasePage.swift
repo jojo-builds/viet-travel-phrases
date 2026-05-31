@@ -670,6 +670,10 @@ enum PhraseCatalog {
             return menuCanonicalPageID
         }
 
+        if let catalogCanonicalPageID = loadedCatalogCanonicalPageID(for: pageID) {
+            return catalogCanonicalPageID
+        }
+
         if let sqliteCanonicalPageID = VietSQLitePhraseGraphRuntime.canonicalPageID(for: pageID) {
             return sqliteCanonicalPageID
         }
@@ -706,11 +710,37 @@ enum PhraseCatalog {
         return nil
     }
 
-    private static var cache = Cache()
+    private static let cacheLock = NSLock()
+    private static var loadedCache: Cache?
+    private static var cache: Cache {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        if let loadedCache {
+            return loadedCache
+        }
+
+        let cache = Cache()
+        loadedCache = cache
+        return cache
+    }
+
+    private static func loadedCatalogCanonicalPageID(for pageID: String) -> String? {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        guard let loadedCache, loadedCache.itemsByPageID[pageID] != nil else {
+            return nil
+        }
+
+        return pageID
+    }
 
 #if DEBUG
     static func resetCacheForTesting() {
-        cache = Cache()
+        cacheLock.lock()
+        loadedCache = nil
+        cacheLock.unlock()
     }
 #endif
 
