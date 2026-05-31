@@ -60,10 +60,29 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 44: Food/Drink menu rows still resolved exact item-name audio from `AudioAssetManifest` inside row rendering; `VietnameseMenuItem` now keeps a bounded playback-audio decision cache and menu rows/descriptors read the prepared item audio key
 - root cause 45: a new SQLite-backed listing detail load still canonicalized the same page ID twice inside the detail resolver: once to find the canonical page and again inside `loadPhraseDetailPage(pageID:)`; the runtime now reuses the already-canonical ID and loads the canonical page directly, so rapid new-page tapping removes one SQL alias lookup per uncached listing detail
 - root cause 46: each new SQLite-backed listing detail loaded sections with an N+1 query pattern: after the section list, it prepared one phrase-row query and one breakdown-row query per section, even for empty sections; section phrase rows and breakdown rows now load in two batched section-ID queries, reducing a representative new detail load from `15` prepared statements to at most `5`
+- root cause 47: catalog and browse rows already hand navigation canonical `viet-phrase-*` page IDs, but `PhraseCatalog.canonicalPageID(forOpenablePageID:)` still entered the SQLite alias resolver before checking the already-loaded in-memory catalog; after Browse/Home/Search have warmed the catalog, known catalog page IDs now return directly from `itemsByPageID`, removing one SQLite alias lookup from rapid listing taps without forcing cold launch to build the full catalog early
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
 
+- XcodeBuildMCP simulator focused known-catalog canonical fast-path test on iPhone 17 Pro
+  - failed before implementation because `testKnownCatalogPageIDsBypassSQLiteCanonicalLookup` observed `1` SQLite canonical lookup for a known catalog page ID after the catalog had already been loaded
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-00-22-137Z_pid15747_36e5465e.xcresult`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-01-55-173Z_pid15747_e4ad95e3.xcresult`
+- XcodeBuildMCP simulator focused route/canonical/detail regression set on iPhone 17 Pro
+  - passed: `9` tests, `0` failures
+  - covered known catalog page IDs bypassing SQLite canonical lookup, menu-owned canonical bypass, resolved detail-page reuse, recent-page canonical recording, generated-page preheat staying lightweight, designed Xin chào special-route caching, one-canonicalization detail loads, batched section item loading, and hero-image lookup staying lightweight
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-03-42-331Z_pid15747_e2ff36c4.xcresult`
+- local hygiene checks after the known-catalog canonical fast-path fix:
+  - `git diff --check -- native-ios/App/Models/PhrasePage.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `f2db535c3`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - Visual simulator proof for the current `feature/admin-photo-backdrop-polish` head `dc9157f57`
   - launched `SpeakLocalNative` on iPhone 17 Pro Simulator with `--detail-page viet-phrase-polite-1`
   - confirmed `Xin chào` renders with `BackdropPhraseGreetingCafeDoorway`, a lowered rounded content sheet, visible photo area, and normal bottom chrome backing instead of the old single static hero layer
