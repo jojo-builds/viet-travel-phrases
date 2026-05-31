@@ -158,7 +158,7 @@ Rendered proof expansion, 2026-06-01:
 - Added a full `520`-page manifest under `render-proof-2026-06-01-v2-2-global/`.
 - Proved `52` unique current pages with `156` screenshots and `0` current failures across the category-balanced, award-jargon repair, cross-city, and Con Market rerun result files. This includes the user-flagged `city-hcmc-place-banh-xeo-46a`.
 - Multi-page-in-one-test runs can kill the UI-test runner; use single-page xcodebuild invocations with `TEST_RUNNER_SPEAKLOCAL_V2_2_RENDER_PROOF_OFFSET=<n>` and `TEST_RUNNER_SPEAKLOCAL_V2_2_RENDER_PROOF_LIMIT=1` for reliable continuation.
-- Remaining global proof gap: `345` V2.2 pages still need rendered screenshots, unless Jojo explicitly amends the final gate to accept source/runtime validation plus category-balanced native proof.
+- Remaining global proof gap: `315` V2.2 pages still need rendered screenshots, unless Jojo explicitly amends the final gate to accept source/runtime validation plus category-balanced native proof.
 
 Eighth repair batch, 2026-06-01:
 
@@ -182,5 +182,8 @@ Eighth repair batch, 2026-06-01:
 - Added balanced culture/city rendered proof: `balanced-culture-city-proof-001-results.jsonl` covers `30` pages and `90` screenshots with `0` failures across five-city museum, cafe, neighborhood, attraction, landmark, and market coverage.
 - Text review after that render slice found phone-readable but still improvable copy: directive `Choose...` headings, duplicated `a few a few`, repeated `practical`, and one overly abstract cafe/museum mood line. Repaired those in authored V2.2 source, regenerated native resources, and reran validators.
 - Added current-text rerun proof `balanced-culture-city-humanized-rerun-001-results.jsonl`: `6` edited pages, `18` screenshots, `0` failures.
-- Combined latest-current rendered proof is now `175` unique pages, `525` screenshots, `0` current failures.
-- Global status remains not complete: `345` V2.2 pages still need current rendered proof unless the standard is amended, and repeated phrase-card clusters remain a follow-up class.
+- Added balanced food/city rendered proof: `balanced-food-city-proof-001-results.jsonl` covers `30` pages and `90` screenshots with `0` failures across restaurants, dish pages, cafes, markets, dessert/drink pages, and high-risk Da Nang mì Quảng comparison pages.
+- Text review after that render slice found food-copy issues that passed render but needed human cleanup: directive `Choose...` phrasing, a missing verb in the seafood price warning, `Not Street Food`, `Drink Before Room`, `Fast Moving Meal`, and a leftover `The draw is more concrete` line. Repaired those in authored V2.2 source, regenerated native resources, and reran validators.
+- Added current-text rerun proof `balanced-food-city-humanized-rerun-001-results.jsonl`: `7` edited pages, `21` screenshots, `0` failures.
+- Combined latest-current rendered proof is now `205` unique pages, `615` screenshots, `0` current failures.
+- Global status remains not complete: `315` V2.2 pages still need current rendered proof unless the standard is amended, and repeated phrase-card clusters remain a follow-up class.

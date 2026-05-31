@@ -63,7 +63,12 @@ Category-balanced batch:
   - Scope: one museum, cafe, neighborhood, attraction, landmark, and market page from each of Đà Nẵng, Hà Nội, Saigon, Hội An, and Huế.
   - Text review after this batch found phone-readable but still improvable copy: directive `Choose...` headings, duplicated `a few a few`, repeated `practical`, and one overly abstract cafe/museum mood line. Those were repaired in source.
   - `balanced-culture-city-humanized-rerun-001-results.jsonl`: `6` edited pages rerun after the copy repair, `18` screenshots, `0` failures.
-- Combined latest-current proof across the maintained result files is `175` unique pages, `525` screenshots, and `0` current failures. Total historical proof rows in this folder include `224` rows and `672` screenshots, but the current count uses the latest passing row for each page.
+- Balanced food/city proof:
+  - `balanced-food-city-proof-001-results.jsonl`: `30` pages, `90` screenshots, `0` failures.
+  - Scope: restaurants, dish pages, cafes, markets, dessert/drink pages, and high-risk Da Nang mì Quảng comparison pages across the five-city inventory.
+  - Text review after this batch found food-copy issues that passed render but needed human cleanup: directive `Choose...` phrasing, a missing verb in the seafood price warning, `Not Street Food`, `Drink Before Room`, `Fast Moving Meal`, and a leftover `The draw is more concrete` line. Those were repaired in source.
+  - `balanced-food-city-humanized-rerun-001-results.jsonl`: `7` edited pages rerun after the copy repair, `21` screenshots, `0` failures.
+- Combined latest-current proof across the maintained result files is `205` unique pages, `615` screenshots, and `0` current failures. Total historical proof rows in this folder include `261` rows and `783` screenshots, but the current count uses the latest passing row for each page.
 
 This is a meaningful rendered proof expansion, not the final 520-page receipt. The final gate still needs either all `520` pages captured by this harness or an explicit approval-standard amendment accepting full source/runtime review plus category-balanced rendered proof.
 
