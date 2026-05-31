@@ -83,9 +83,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-dong-da",
           "label": "Đống Đa",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "lived-in district contrast",
+          "displaySubtitle": "A hotel-and-food district for school-hour traffic, small errands, and Hanoi without a photo agenda.",
+          "reason": "Đống Đa now has an authored related-card role for Quận Ba Đình, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -194,9 +194,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-hanoi-flag-tower",
           "label": "Cột cờ Hà Nội",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "citadel-history marker",
+          "displaySubtitle": "A stone-and-courtyard landmark where Ba Đình history rises above the surrounding roofs.",
+          "reason": "Cột cờ Hà Nội now has an authored related-card role for Quảng trường Ba Đình, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -443,17 +443,17 @@
         {
           "catalogId": "viet-family-city-hanoi-place-xoi-xeo",
           "label": "Xôi xéo",
-          "relationship": "same-city breakfast contrast",
-          "displaySubtitle": "A sticky-rice breakfast when the morning should be warmer, denser, and handheld.",
-          "reason": "Xoi xeo gives Banh Cuon Ba Hoanh a real Hanoi breakfast contrast.",
+          "relationship": "sticky-rice breakfast",
+          "displaySubtitle": "A warm sticky-rice breakfast when the morning should be handheld, dense, and quick.",
+          "reason": "Xôi xéo now has an authored related-card role for Bánh Cuốn Bà Hoành, replacing generic same-city pacing copy.",
           "status": "render"
         },
         {
           "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
           "label": "Phở Gia Truyền",
-          "relationship": "same-city morning bowl comparison",
-          "displaySubtitle": "A named Hanoi phở stop when breakfast should be brothier and heavier.",
-          "reason": "Pho Gia Truyen gives Banh Cuon Ba Hoanh a different Hanoi morning-food choice.",
+          "relationship": "Bib Gourmand beef-phở shop",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Old Quarter phở bowl for steam, sliced beef, herbs, and room pace.",
+          "reason": "Phở Gia Truyền now has an authored related-card role for Bánh Cuốn Bà Hoành, replacing generic same-city pacing copy.",
           "status": "render"
         },
         {
@@ -592,17 +592,17 @@
         {
           "catalogId": "viet-family-city-hanoi-place-xoi-xeo",
           "label": "Xôi xéo",
-          "relationship": "same-city breakfast texture contrast",
-          "displaySubtitle": "A sticky-rice breakfast when the morning should be denser, warmer, and more handheld.",
-          "reason": "Xoi xeo gives Ba Xuan a real Hanoi breakfast contrast.",
+          "relationship": "sticky-rice breakfast",
+          "displaySubtitle": "A warm sticky-rice breakfast when the morning should be handheld, dense, and quick.",
+          "reason": "Xôi xéo now has an authored related-card role for Bánh Cuốn Bà Xuân, replacing generic same-city pacing copy.",
           "status": "render"
         },
         {
           "catalogId": "viet-family-city-hanoi-place-pho-ga-nguyet",
           "label": "Phở Gà Nguyệt",
-          "relationship": "same-city morning bowl comparison",
-          "displaySubtitle": "A chicken-phở shop when breakfast should be broth and noodles instead of soft rice rolls.",
-          "reason": "Pho Ga Nguyet gives Ba Xuan a different morning-food decision inside Hanoi.",
+          "relationship": "Bib Gourmand chicken-phở shop",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand chicken-phở shop when clear broth and herbs should feel lighter.",
+          "reason": "Phở Gà Nguyệt now has an authored related-card role for Bánh Cuốn Bà Xuân, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -717,9 +717,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-hoan-kiem",
           "label": "Hồ Hoàn Kiếm",
-          "relationship": "same-city nature comparison",
-          "displaySubtitle": "A nature in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-lake orientation",
+          "displaySubtitle": "The central lake loop for water, shade, Ngọc Sơn, Turtle Tower, and Old Quarter bearings.",
+          "reason": "Hồ Hoàn Kiếm now has an authored related-card role for Hồ Bảy Mẫu, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -946,9 +946,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-lenin-park",
           "label": "Công viên Lê Nin",
-          "relationship": "same-city park comparison",
-          "displaySubtitle": "A park in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "civic-side park break",
+          "displaySubtitle": "A small park pause near heavier history stops, with shade, paths, and evening local movement.",
+          "reason": "Công viên Lê Nin now has an authored related-card role for Vườn Bách Thảo Hà Nội, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2322,9 +2322,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-cyclo-old-quarter",
           "label": "Xích lô phố cổ",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "old-quarter slow loop",
+          "displaySubtitle": "A seat-height Old Quarter ride when shop signs, scooters, and doorways should pass slowly.",
+          "reason": "Xích lô phố cổ now has an authored related-card role for Đi cà phê Hà Nội, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2545,9 +2545,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-coffee-hop",
           "label": "Đi cà phê Hà Nội",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "coffee-walk route",
+          "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
+          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Xích lô phố cổ, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2773,9 +2773,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-district",
           "label": "Quận Ba Đình",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "civic-district contrast",
+          "displaySubtitle": "The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
+          "reason": "Quận Ba Đình now has an authored related-card role for Đống Đa, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3108,9 +3108,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ho-chi-minh-museum",
           "label": "Bảo tàng Hồ Chí Minh",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "indoor-civic context",
+          "displaySubtitle": "An indoor Ba Đình follow-up when the square needs objects, rooms, and interpretation.",
+          "reason": "Bảo tàng Hồ Chí Minh now has an authored related-card role for Bảo tàng Dân tộc học, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3219,9 +3219,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-district",
           "label": "Quận Ba Đình",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "civic-district contrast",
+          "displaySubtitle": "The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
+          "reason": "Quận Ba Đình now has an authored related-card role for Khu phố Pháp, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3325,9 +3325,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-coffee-hop",
           "label": "Đi cà phê Hà Nội",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "coffee-walk route",
+          "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
+          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Đi bộ khu phố Pháp, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3569,9 +3569,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-giap-bat-bus-station",
           "label": "Bến xe Giáp Bát",
-          "relationship": "same-city station comparison",
-          "displaySubtitle": "A station in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "southbound-bus handoff",
+          "displaySubtitle": "A practical bus edge for route boards, luggage, bays, and a visible pickup point.",
+          "reason": "Bến xe Giáp Bát now has an authored related-card role for Ga Gia Lâm, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3812,9 +3812,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-gia-lam-station",
           "label": "Ga Gia Lâm",
-          "relationship": "same-city station comparison",
-          "displaySubtitle": "A station in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "rail-edge handoff",
+          "displaySubtitle": "A smaller rail stop where bags, station signs, and onward streets need a plain transfer.",
+          "reason": "Ga Gia Lâm now has an authored related-card role for Bến xe Giáp Bát, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3923,9 +3923,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-hang-gai-street",
           "label": "Phố Hàng Gai",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "silk-street spine",
+          "displaySubtitle": "An Old Quarter silk-street walk with fabric windows, hotel foot traffic, and lake-to-lane bearings.",
+          "reason": "Phố Hàng Gai now has an authored related-card role for Phố Hàng Bạc, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4146,9 +4146,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-hang-bac-street",
           "label": "Phố Hàng Bạc",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "silver-street spine",
+          "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
+          "reason": "Phố Hàng Bạc now has an authored related-card role for Phố Hàng Gai, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4257,9 +4257,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-square",
           "label": "Quảng trường Ba Đình",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "ceremonial-capital space",
+          "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
+          "reason": "Quảng trường Ba Đình now has an authored related-card role for Cột cờ Hà Nội, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4368,9 +4368,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-gia-lam-station",
           "label": "Ga Gia Lâm",
-          "relationship": "same-city station comparison",
-          "displaySubtitle": "A station in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "rail-edge handoff",
+          "displaySubtitle": "A smaller rail stop where bags, station signs, and onward streets need a plain transfer.",
+          "reason": "Ga Gia Lâm now has an authored related-card role for Ga Hà Nội, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4593,9 +4593,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-square",
           "label": "Quảng trường Ba Đình",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "ceremonial-capital space",
+          "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
+          "reason": "Quảng trường Ba Đình now has an authored related-card role for Lăng Bác, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4704,9 +4704,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ethnology-museum",
           "label": "Bảo tàng Dân tộc học",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "culture-museum contrast",
+          "displaySubtitle": "A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
+          "reason": "Bảo tàng Dân tộc học now has an authored related-card role for Bảo tàng Hồ Chí Minh, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4815,9 +4815,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ethnology-museum",
           "label": "Bảo tàng Dân tộc học",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "culture-museum contrast",
+          "displaySubtitle": "A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
+          "reason": "Bảo tàng Dân tộc học now has an authored related-card role for Nhà tù Hỏa Lò, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4926,9 +4926,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-bay-mau-lake",
           "label": "Hồ Bảy Mẫu",
-          "relationship": "same-city nature comparison",
-          "displaySubtitle": "A nature in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "park-lake breather",
+          "displaySubtitle": "A Thống Nhất Park water edge for shade, walkers, families, and a central-Hanoi exhale.",
+          "reason": "Hồ Bảy Mẫu now has an authored related-card role for Hồ Hoàn Kiếm, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5149,9 +5149,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-square",
           "label": "Quảng trường Ba Đình",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "ceremonial-capital space",
+          "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
+          "reason": "Quảng trường Ba Đình now has an authored related-card role for Hoàng thành Thăng Long, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5487,9 +5487,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-botanical-garden",
           "label": "Vườn Bách Thảo Hà Nội",
-          "relationship": "same-city park comparison",
-          "displaySubtitle": "A park in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "ba-dinh-green break",
+          "displaySubtitle": "Old trees and benches near Ba Đình when monuments and museums need a softer outdoor pause.",
+          "reason": "Vườn Bách Thảo Hà Nội now has an authored related-card role for Công viên Lê Nin, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5598,9 +5598,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ethnology-museum",
           "label": "Bảo tàng Dân tộc học",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "culture-museum contrast",
+          "displaySubtitle": "A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
+          "reason": "Bảo tàng Dân tộc học now has an authored related-card role for Bảo tàng Văn học Việt Nam, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5820,9 +5820,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-square",
           "label": "Quảng trường Ba Đình",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "ceremonial-capital space",
+          "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
+          "reason": "Quảng trường Ba Đình now has an authored related-card role for Cầu Long Biên, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6043,9 +6043,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-coffee-hop",
           "label": "Đi cà phê Hà Nội",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "coffee-walk route",
+          "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
+          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Manzi, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6276,9 +6276,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-pho-bo-lam",
           "label": "Phở Bò Lâm",
-          "relationship": "same-city noodle-shop contrast",
-          "displaySubtitle": "A beef-phở shop when broth and cuts matter more than eel noodles.",
-          "reason": "Pho Bo Lam is a useful Bib-supported noodle-shop contrast.",
+          "relationship": "Bib Gourmand beef-cut phở",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand beef-phở bowl when tendon, broth, and chew should lead.",
+          "reason": "Phở Bò Lâm now has an authored related-card role for Miến lươn Chân Cầm, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6390,9 +6390,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-gia-lam-station",
           "label": "Ga Gia Lâm",
-          "relationship": "same-city station comparison",
-          "displaySubtitle": "A station in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "rail-edge handoff",
+          "displaySubtitle": "A smaller rail stop where bags, station signs, and onward streets need a plain transfer.",
+          "reason": "Ga Gia Lâm now has an authored related-card role for Bến xe Mỹ Đình, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6613,9 +6613,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ethnology-museum",
           "label": "Bảo tàng Dân tộc học",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "culture-museum contrast",
+          "displaySubtitle": "A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
+          "reason": "Bảo tàng Dân tộc học now has an authored related-card role for Bảo tàng Lịch sử Quốc gia, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6836,9 +6836,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-square",
           "label": "Quảng trường Ba Đình",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "ceremonial-capital space",
+          "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
+          "reason": "Quảng trường Ba Đình now has an authored related-card role for Đền Ngọc Sơn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6947,9 +6947,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-hang-bac-street",
           "label": "Phố Hàng Bạc",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "silver-street spine",
+          "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
+          "reason": "Phố Hàng Bạc now has an authored related-card role for Phố Nguyễn Hữu Huân, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7170,9 +7170,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-district",
           "label": "Quận Ba Đình",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "civic-district contrast",
+          "displaySubtitle": "The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
+          "reason": "Quận Ba Đình now has an authored related-card role for Sân bay Nội Bài, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7281,9 +7281,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-gia-lam-station",
           "label": "Ga Gia Lâm",
-          "relationship": "same-city station comparison",
-          "displaySubtitle": "A station in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "rail-edge handoff",
+          "displaySubtitle": "A smaller rail stop where bags, station signs, and onward streets need a plain transfer.",
+          "reason": "Ga Gia Lâm now has an authored related-card role for Bến xe Nước Ngầm, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7392,9 +7392,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-district",
           "label": "Quận Ba Đình",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "civic-district contrast",
+          "displaySubtitle": "The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
+          "reason": "Quận Ba Đình now has an authored related-card role for Phố cổ Hà Nội, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7503,9 +7503,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-coffee-hop",
           "label": "Đi cà phê Hà Nội",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "coffee-walk route",
+          "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
+          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Tuyến đi bộ Phố cổ, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7614,9 +7614,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-square",
           "label": "Quảng trường Ba Đình",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "ceremonial-capital space",
+          "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
+          "reason": "Quảng trường Ba Đình now has an authored related-card role for Chùa Một Cột, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7725,9 +7725,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-coffee-hop",
           "label": "Đi cà phê Hà Nội",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "coffee-walk route",
+          "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
+          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Nhà hát Lớn Hà Nội, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7836,9 +7836,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-hang-bac-street",
           "label": "Phố Hàng Bạc",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "silver-street spine",
+          "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
+          "reason": "Phố Hàng Bạc now has an authored related-card role for Phố Phan Đình Phùng, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8806,9 +8806,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-square",
           "label": "Quảng trường Ba Đình",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "ceremonial-capital space",
+          "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
+          "reason": "Quảng trường Ba Đình now has an authored related-card role for Đền Quán Thánh, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9029,9 +9029,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-district",
           "label": "Quận Ba Đình",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "civic-district contrast",
+          "displaySubtitle": "The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
+          "reason": "Quận Ba Đình now has an authored related-card role for Sông Hồng, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9140,9 +9140,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-square",
           "label": "Quảng trường Ba Đình",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "ceremonial-capital space",
+          "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
+          "reason": "Quảng trường Ba Đình now has an authored related-card role for Nhà thờ Lớn Hà Nội, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9251,9 +9251,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-coffee-hop",
           "label": "Đi cà phê Hà Nội",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "coffee-walk route",
+          "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
+          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Đi bộ ăn vặt Hà Nội, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9362,9 +9362,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-hang-bac-street",
           "label": "Phố Hàng Bạc",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "silver-street spine",
+          "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
+          "reason": "Phố Hàng Bạc now has an authored related-card role for Phố Tạ Hiện, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9597,9 +9597,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-district",
           "label": "Quận Ba Đình",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "civic-district contrast",
+          "displaySubtitle": "The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
+          "reason": "Quận Ba Đình now has an authored related-card role for Tây Hồ, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9708,9 +9708,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-square",
           "label": "Quảng trường Ba Đình",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "ceremonial-capital space",
+          "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
+          "reason": "Quảng trường Ba Đình now has an authored related-card role for Văn Miếu, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9928,9 +9928,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-botanical-garden",
           "label": "Vườn Bách Thảo Hà Nội",
-          "relationship": "same-city park comparison",
-          "displaySubtitle": "A park in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "ba-dinh-green break",
+          "displaySubtitle": "Old trees and benches near Ba Đình when monuments and museums need a softer outdoor pause.",
+          "reason": "Vườn Bách Thảo Hà Nội now has an authored related-card role for Công viên Thống Nhất, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10039,9 +10039,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-hang-bac-street",
           "label": "Phố Hàng Bạc",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "silver-street spine",
+          "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
+          "reason": "Phố Hàng Bạc now has an authored related-card role for Phố đường tàu Hà Nội, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10150,9 +10150,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-square",
           "label": "Quảng trường Ba Đình",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "ceremonial-capital space",
+          "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
+          "reason": "Quảng trường Ba Đình now has an authored related-card role for Chùa Trấn Quốc, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10373,9 +10373,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-hang-bac-street",
           "label": "Phố Hàng Bạc",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "silver-street spine",
+          "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
+          "reason": "Phố Hàng Bạc now has an authored related-card role for Phố Tràng Tiền, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10484,9 +10484,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-hang-bac-street",
           "label": "Phố Hàng Bạc",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "silver-street spine",
+          "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
+          "reason": "Phố Hàng Bạc now has an authored related-card role for Phố cà phê Triệu Việt Vương, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10595,9 +10595,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-bay-mau-lake",
           "label": "Hồ Bảy Mẫu",
-          "relationship": "same-city nature comparison",
-          "displaySubtitle": "A nature in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "park-lake breather",
+          "displaySubtitle": "A Thống Nhất Park water edge for shade, walkers, families, and a central-Hanoi exhale.",
+          "reason": "Hồ Bảy Mẫu now has an authored related-card role for Hồ Trúc Bạch, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10706,9 +10706,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ba-dinh-square",
           "label": "Quảng trường Ba Đình",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "ceremonial-capital space",
+          "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
+          "reason": "Quảng trường Ba Đình now has an authored related-card role for Tháp Rùa, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10942,9 +10942,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-coffee-hop",
           "label": "Đi cà phê Hà Nội",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "coffee-walk route",
+          "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
+          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Vietnam Art Gallery, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11048,9 +11048,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-coffee-hop",
           "label": "Đi cà phê Hà Nội",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "coffee-walk route",
+          "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
+          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Rạp Xiếc Trung ương, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11159,9 +11159,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ethnology-museum",
           "label": "Bảo tàng Dân tộc học",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "culture-museum contrast",
+          "displaySubtitle": "A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
+          "reason": "Bảo tàng Dân tộc học now has an authored related-card role for Bảo tàng Mỹ thuật Việt Nam, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11270,9 +11270,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ethnology-museum",
           "label": "Bảo tàng Dân tộc học",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "culture-museum contrast",
+          "displaySubtitle": "A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
+          "reason": "Bảo tàng Dân tộc học now has an authored related-card role for Bảo tàng Lịch sử Quân sự Việt Nam, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11381,9 +11381,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-coffee-hop",
           "label": "Đi cà phê Hà Nội",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "coffee-walk route",
+          "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
+          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Nhà hát Tuồng Việt Nam, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11492,9 +11492,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-coffee-hop",
           "label": "Đi cà phê Hà Nội",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "coffee-walk route",
+          "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
+          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Nhà hát Múa rối Thăng Long, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11715,9 +11715,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-bay-mau-lake",
           "label": "Hồ Bảy Mẫu",
-          "relationship": "same-city nature comparison",
-          "displaySubtitle": "A nature in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "park-lake breather",
+          "displaySubtitle": "A Thống Nhất Park water edge for shade, walkers, families, and a central-Hanoi exhale.",
+          "reason": "Hồ Bảy Mẫu now has an authored related-card role for Hồ Tây, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11826,9 +11826,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-bay-mau-lake",
           "label": "Hồ Bảy Mẫu",
-          "relationship": "same-city nature comparison",
-          "displaySubtitle": "A nature in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "park-lake breather",
+          "displaySubtitle": "A Thống Nhất Park water edge for shade, walkers, families, and a central-Hanoi exhale.",
+          "reason": "Hồ Bảy Mẫu now has an authored related-card role for Vòng Hồ Tây, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11932,9 +11932,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-ethnology-museum",
           "label": "Bảo tàng Dân tộc học",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "culture-museum contrast",
+          "displaySubtitle": "A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
+          "reason": "Bảo tàng Dân tộc học now has an authored related-card role for Bảo tàng Phụ nữ Việt Nam, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -12155,9 +12155,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-botanical-garden",
           "label": "Vườn Bách Thảo Hà Nội",
-          "relationship": "same-city park comparison",
-          "displaySubtitle": "A park in Hà Nội with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "ba-dinh-green break",
+          "displaySubtitle": "Old trees and benches near Ba Đình when monuments and museums need a softer outdoor pause.",
+          "reason": "Vườn Bách Thảo Hà Nội now has an authored related-card role for Công viên Yên Sở, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],

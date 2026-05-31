@@ -559,9 +559,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-fine-arts-museum",
           "label": "Bảo tàng Mỹ thuật",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "yellow-building art break",
+          "displaySubtitle": "A yellow-courtyard museum pause for tile floors, gallery rooms, and street noise left outside.",
+          "reason": "Bảo tàng Mỹ thuật now has an authored related-card role for Bảo tàng Áo Dài, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -671,9 +671,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-42-nguyen-hue-apartment",
           "label": "Chung cư 42 Nguyễn Huệ",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "cafe-apartment vertical stop",
+          "displaySubtitle": "The Cafe Apartment address for balconies, stairs, upstairs rooms, and a short Nguyễn Huệ detour.",
+          "reason": "Chung cư 42 Nguyễn Huệ now has an authored related-card role for Bến tàu thủy Bạch Đằng, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -783,9 +783,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bitexco-tower",
           "label": "Tòa nhà Bitexco",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "skyline-tower marker",
+          "displaySubtitle": "The District 1 tower marker when height, skyline orientation, or a riverward bearing matters.",
+          "reason": "Tòa nhà Bitexco now has an authored related-card role for Bến Bạch Đằng, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -1256,9 +1256,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bep-me-in",
           "label": "Bếp Mẹ Ỉn",
-          "relationship": "same-city casual-table contrast",
-          "displaySubtitle": "An easier central Vietnamese table when the group wants range instead of one pancake.",
-          "reason": "Bep Me In is a useful central-table contrast for Banh Xeo 46A.",
+          "relationship": "central-casual table",
+          "displaySubtitle": "An easy central Vietnamese table when the group wants range instead of one crisp pancake.",
+          "reason": "Bếp Mẹ Ỉn now has an authored related-card role for Bánh xèo 46A, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -1479,9 +1479,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-mien-dong-bus-station",
           "label": "Bến xe Miền Đông",
-          "relationship": "same-city station comparison",
-          "displaySubtitle": "A station in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "onward-bus handoff",
+          "displaySubtitle": "The eastern bus edge for luggage, route boards, bays, and leaving Saigon by road.",
+          "reason": "Bến xe Miền Đông now has an authored related-card role for Ga Bến Thành, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -1601,9 +1601,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-banh-xeo-46a",
           "label": "Bánh xèo 46A",
-          "relationship": "same-city dish-specific table contrast",
-          "displaySubtitle": "A named bánh xèo table when one crisp pancake should lead the meal.",
-          "reason": "Banh Xeo 46A is a better contrast than a fine-dining card for a casual Vietnamese table.",
+          "relationship": "named-pancake table",
+          "displaySubtitle": "A named bánh xèo table when one crisp pancake, herbs, and dipping sauce should lead dinner.",
+          "reason": "Bánh xèo 46A now has an authored related-card role for Bếp Mẹ Ỉn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -1829,9 +1829,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bach-dang-wharf",
           "label": "Bến Bạch Đằng",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-riverfront breather",
+          "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
+          "reason": "Bến Bạch Đằng now has an authored related-card role for Tòa nhà Bitexco, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2285,9 +2285,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-dong-khoi-street",
           "label": "Đường Đồng Khởi",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "district-1 landmark spine",
+          "displaySubtitle": "A compact walk linking the Post Office area, Opera House, old hotel facades, shops, and riverward movement.",
+          "reason": "Đường Đồng Khởi now has an authored related-card role for Phố Bùi Viện, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2405,9 +2405,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bo-kho-ganh",
           "label": "Bò Kho Gánh",
-          "relationship": "same-city Bib Gourmand bowl comparison",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand beef-stew bowl when Saigon lunch should be rich but less chile-led.",
-          "reason": "Bo Kho Ganh gives Bun Bo Hue 14B another recognized Saigon bowl comparison.",
+          "relationship": "Bib Gourmand beef-stew bowl",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand bò kho stop when bread or noodles and rich broth should lead lunch.",
+          "reason": "Bò Kho Gánh now has an authored related-card role for Bún Bò Huế 14B, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2530,33 +2530,33 @@
         {
           "catalogId": "viet-family-city-hcmc-place-pho-hoa-pasteur",
           "label": "Phở Hòa Pasteur",
-          "relationship": "same-city pho comparison",
-          "displaySubtitle": "A classic central Saigon phở stop when the plan is Pasteur Street rather than District 5.",
-          "reason": "Pho Hoa Pasteur is the current central Saigon pho comparison for Pho Le District 5.",
+          "relationship": "central-phở shop",
+          "displaySubtitle": "A busy Pasteur Street phở shop when the plan needs a familiar central bowl.",
+          "reason": "Phở Hòa Pasteur now has an authored related-card role for Phở Lệ, replacing generic same-city pacing copy.",
           "status": "render"
         },
         {
           "catalogId": "viet-family-city-hcmc-place-pho-minh",
           "label": "Phở Minh",
-          "relationship": "same-city pho comparison",
-          "displaySubtitle": "An old Pasteur-alley phở room when breakfast should feel quieter and more deliberate.",
-          "reason": "Pho Minh adds a different Saigon pho role from Pho Le: old alley, morning room, beef cuts, and pate chaud.",
+          "relationship": "old-alley phở room",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand alley phở room when breakfast should feel quieter and older.",
+          "reason": "Phở Minh now has an authored related-card role for Phở Lệ, replacing generic same-city pacing copy.",
           "status": "render"
         },
         {
           "catalogId": "viet-family-city-hcmc-place-bun-bo-hue-14b",
           "label": "Bún Bò Huế 14B",
-          "relationship": "same-city noodle bowl comparison",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Hue-style bowl when the noodle mood should be spicier.",
-          "reason": "Bun Bo Hue 14B gives Pho Le District 5 another recognized Saigon noodle-bowl comparison.",
+          "relationship": "Bib Gourmand Hue-style bowl",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Hue-style bowl when lemongrass broth and heat should lead.",
+          "reason": "Bún Bò Huế 14B now has an authored related-card role for Phở Lệ, replacing generic same-city pacing copy.",
           "status": "render"
         },
         {
           "catalogId": "viet-family-city-hcmc-place-pho-huong-binh",
           "label": "Phở Hương Bình",
-          "relationship": "same-city pho comparison",
-          "displaySubtitle": "A Bib Gourmand family-shop comparison when the group wants chicken or beef phở choices.",
-          "reason": "Pho Huong Binh gives Pho Le a different Bib Gourmand pho role: family shop and chicken-or-beef choice.",
+          "relationship": "Bib Gourmand chicken-or-beef phở",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand family shop when the table wants chicken and beef phở choices.",
+          "reason": "Phở Hương Bình now has an authored related-card role for Phở Lệ, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2688,9 +2688,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-pho-le-district-5",
           "label": "Phở Lệ",
-          "relationship": "same-city pho comparison",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand District 5 bowl when phở should feel fuller and busier.",
-          "reason": "Pho Le gives Pho Minh a deliberately different same-city pho comparison: District 5 and generous bowl versus Pasteur alley breakfast.",
+          "relationship": "Bib Gourmand District 5 phở",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand District 5 bowl when southern phở should feel fuller and busier.",
+          "reason": "Phở Lệ now has an authored related-card role for Phở Minh, replacing generic same-city pacing copy.",
           "status": "render"
         },
         {
@@ -2712,9 +2712,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-pho-huong-binh",
           "label": "Phở Hương Bình",
-          "relationship": "same-city pho comparison",
-          "displaySubtitle": "A Bib Gourmand phở room when chicken, beef, and add-ons matter more than the alley mood.",
-          "reason": "Pho Huong Binh gives Pho Minh a different same-city pho role: choice of bowl and toppings.",
+          "relationship": "Bib Gourmand chicken-or-beef phở",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand family shop when the table wants chicken and beef phở choices.",
+          "reason": "Phở Hương Bình now has an authored related-card role for Phở Minh, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2838,25 +2838,25 @@
         {
           "catalogId": "viet-family-city-hcmc-place-pho-le-district-5",
           "label": "Phở Lệ",
-          "relationship": "same-city pho comparison",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand District 5 bowl when phở should feel fuller and busier.",
-          "reason": "Pho Le gives Pho Huong Binh the fuller District 5 comparison.",
+          "relationship": "Bib Gourmand District 5 phở",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand District 5 bowl when southern phở should feel fuller and busier.",
+          "reason": "Phở Lệ now has an authored related-card role for Phở Hương Bình, replacing generic same-city pacing copy.",
           "status": "render"
         },
         {
           "catalogId": "viet-family-city-hcmc-place-pho-minh",
           "label": "Phở Minh",
-          "relationship": "same-city pho comparison",
-          "displaySubtitle": "An old Pasteur-alley phở room when breakfast should feel quieter and more tucked away.",
-          "reason": "Pho Minh gives Pho Huong Binh the old-alley breakfast comparison.",
+          "relationship": "old-alley phở room",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand alley phở room when breakfast should feel quieter and older.",
+          "reason": "Phở Minh now has an authored related-card role for Phở Hương Bình, replacing generic same-city pacing copy.",
           "status": "render"
         },
         {
           "catalogId": "viet-family-city-hcmc-place-pho-hoa-pasteur",
           "label": "Phở Hòa Pasteur",
-          "relationship": "same-city pho comparison",
-          "displaySubtitle": "A classic central Pasteur Street phở stop when the room should be easier to recognize.",
-          "reason": "Pho Hoa Pasteur gives Pho Huong Binh the familiar central-shop comparison.",
+          "relationship": "central-phở shop",
+          "displaySubtitle": "A busy Pasteur Street phở shop when the plan needs a familiar central bowl.",
+          "reason": "Phở Hòa Pasteur now has an authored related-card role for Phở Hương Bình, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3310,9 +3310,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cho-lon-walking-route",
           "label": "Đi bộ Chợ Lớn",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "market-temple walk",
+          "displaySubtitle": "A short Chợ Lớn route for Chinese-Vietnamese signs, market bags, temple gates, and smarter ride breaks.",
+          "reason": "Đi bộ Chợ Lớn now has an authored related-card role for Đi cà phê Nguyễn Huệ, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3658,9 +3658,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-workshop-coffee",
           "label": "The Workshop Coffee",
-          "relationship": "same-city coffee-register contrast",
-          "displaySubtitle": "A polished specialty-coffee room when espresso craft matters more than old-cafe ritual.",
-          "reason": "Workshop is a useful modern-coffee contrast for Cheo Leo.",
+          "relationship": "specialty-coffee room",
+          "displaySubtitle": "A polished specialty-coffee room when espresso, an old-building setting, and a slower seat matter.",
+          "reason": "The Workshop Coffee now has an authored related-card role for Cà phê Cheo Leo, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3766,9 +3766,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-district-1",
           "label": "Quận 1",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-base map",
+          "displaySubtitle": "The central Saigon base map for hotels, markets, older facades, cafes, and riverward walks.",
+          "reason": "Quận 1 now has an authored related-card role for Chợ Lớn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3878,9 +3878,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "vertical-cafe route",
+          "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
+          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Đi bộ Chợ Lớn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4105,9 +4105,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bach-dang-wharf",
           "label": "Bến Bạch Đằng",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-riverfront breather",
+          "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
+          "reason": "Bến Bạch Đằng now has an authored related-card role for Trụ sở UBND Thành phố, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4685,9 +4685,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "vertical-cafe route",
+          "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
+          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Đi Củ Chi trong ngày, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4797,9 +4797,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bach-dang-wharf",
           "label": "Bến Bạch Đằng",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-riverfront breather",
+          "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
+          "reason": "Bến Bạch Đằng now has an authored related-card role for Địa đạo Củ Chi, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5016,7 +5016,7 @@
         {
           "id": "busy-does-not-mean-simple",
           "heading": "Busy Does Not Mean Simple",
-          "body": "Quận 1 is central, but not uniform. Traffic, hotel blocks, shopping streets, and civic spaces each ask for a different pace."
+          "body": "Quận 1 is central, but not uniform. Traffic, hotel blocks, shopping streets, and civic spaces each ask for their own walking rhythm."
         }
       ],
       "mentionedHereCandidates": [],
@@ -5024,9 +5024,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cho-lon",
           "label": "Chợ Lớn",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "trade-district contrast",
+          "displaySubtitle": "Saigon’s Chinatown district for markets, temples, wholesale goods, incense, and trade-first streets.",
+          "reason": "Chợ Lớn now has an authored related-card role for Quận 1, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5131,9 +5131,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cho-lon",
           "label": "Chợ Lớn",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "trade-district contrast",
+          "displaySubtitle": "Saigon’s Chinatown district for markets, temples, wholesale goods, incense, and trade-first streets.",
+          "reason": "Chợ Lớn now has an authored related-card role for Quận 3, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5243,9 +5243,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "vertical-cafe route",
+          "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
+          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Đi bộ Đồng Khởi, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5350,9 +5350,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bui-vien-street",
           "label": "Phố Bùi Viện",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "nightlife-street contrast",
+          "displaySubtitle": "A loud backpacker-nightlife strip best read with one look-before-sitting pass.",
+          "reason": "Phố Bùi Viện now has an authored related-card role for Đường Đồng Khởi, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5405,7 +5405,7 @@
       "category": "Museum",
       "pronunciation": "bow tahng mee thuat",
       "travelerMoment": "The museum gives central Saigon a cultural stop: art, rooms, display cases, local memory, soft light, and an old building around it.",
-      "storySpine": "The museum changes the city’s pace: street noise outside, yellow walls and gallery rooms inside.",
+      "storySpine": "The museum changes the city’s tempo: street noise outside, yellow walls and gallery rooms inside.",
       "intro": {
         "heading": "An Indoor Art Room",
         "body": "Ho Chi Minh City Museum of Fine Arts is an indoor breather with yellow courtyards, tiled floors, gallery rooms, and a slower room of Saigon history."
@@ -5445,7 +5445,7 @@
         {
           "id": "rain-or-heat-shelter",
           "heading": "Rain Or Heat Shelter",
-          "body": "Outdoor plans can turn harsh; this museum offers shade, gallery rooms, and a different pace."
+          "body": "Outdoor plans can turn harsh; this museum offers shade, gallery rooms, and a calm indoor reset."
         },
         {
           "id": "a-few-rooms-are-enough",
@@ -5463,9 +5463,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-ao-dai-museum",
           "label": "Bảo tàng Áo Dài",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "dress-and-craft museum",
+          "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
+          "reason": "Bảo tàng Áo Dài now has an authored related-card role for Bảo tàng Mỹ thuật, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5575,9 +5575,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-ao-dai-museum",
           "label": "Bảo tàng Áo Dài",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "dress-and-craft museum",
+          "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
+          "reason": "Bảo tàng Áo Dài now has an authored related-card role for Bảo tàng Y học Cổ truyền Việt Nam, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5687,9 +5687,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-le-van-tam-park",
           "label": "Công viên Lê Văn Tám",
-          "relationship": "same-city park comparison",
-          "displaySubtitle": "A park in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-park breather",
+          "displaySubtitle": "An everyday central park break for shade, paths, families, and a pause between denser blocks.",
+          "reason": "Công viên Lê Văn Tám now has an authored related-card role for Công viên Gia Định, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5912,9 +5912,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "vertical-cafe route",
+          "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
+          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Nhà hát Múa rối nước Rồng Vàng, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6024,9 +6024,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-ao-dai-museum",
           "label": "Bảo tàng Áo Dài",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "dress-and-craft museum",
+          "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
+          "reason": "Bảo tàng Áo Dài now has an authored related-card role for Bảo tàng Lịch sử Thành phố Hồ Chí Minh, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6136,9 +6136,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-ao-dai-museum",
           "label": "Bảo tàng Áo Dài",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "dress-and-craft museum",
+          "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
+          "reason": "Bảo tàng Áo Dài now has an authored related-card role for Bảo tàng Thành phố Hồ Chí Minh, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6475,9 +6475,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bach-dang-wharf",
           "label": "Bến Bạch Đằng",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-riverfront breather",
+          "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
+          "reason": "Bến Bạch Đằng now has an authored related-card role for Dinh Độc Lập, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6587,9 +6587,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bach-dang-wharf",
           "label": "Bến Bạch Đằng",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-riverfront breather",
+          "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
+          "reason": "Bến Bạch Đằng now has an authored related-card role for Chùa Ngọc Hoàng, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6694,9 +6694,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cho-lon",
           "label": "Chợ Lớn",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "trade-district contrast",
+          "displaySubtitle": "Saigon’s Chinatown district for markets, temples, wholesale goods, incense, and trade-first streets.",
+          "reason": "Chợ Lớn now has an authored related-card role for Khu phố Nhật Lê Thánh Tôn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6806,9 +6806,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "vertical-cafe route",
+          "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
+          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Landmark 81, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6918,9 +6918,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bui-vien-street",
           "label": "Phố Bùi Viện",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "nightlife-street contrast",
+          "displaySubtitle": "A loud backpacker-nightlife strip best read with one look-before-sitting pass.",
+          "reason": "Phố Bùi Viện now has an authored related-card role for Đường Lê Thánh Tôn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7030,9 +7030,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-gia-dinh-park",
           "label": "Công viên Gia Định",
-          "relationship": "same-city park comparison",
-          "displaySubtitle": "A park in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "airport-side park breather",
+          "displaySubtitle": "An airport-side open-air pause for trees, walking paths, family time, and ordinary Saigon rhythm.",
+          "reason": "Công viên Gia Định now has an authored related-card role for Công viên Lê Văn Tám, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7606,9 +7606,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bach-dang-wharf",
           "label": "Bến Bạch Đằng",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-riverfront breather",
+          "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
+          "reason": "Bến Bạch Đằng now has an authored related-card role for Đền Mariamman, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7718,9 +7718,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-ben-thanh-metro-station",
           "label": "Ga Bến Thành",
-          "relationship": "same-city station comparison",
-          "displaySubtitle": "A station in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-station handoff",
+          "displaySubtitle": "The station landmark where exit choice decides Bến Thành, Nguyễn Huệ, ride pickup, or the next walk.",
+          "reason": "Ga Bến Thành now has an authored related-card role for Bến xe Miền Đông, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7830,9 +7830,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-ben-thanh-metro-station",
           "label": "Ga Bến Thành",
-          "relationship": "same-city station comparison",
-          "displaySubtitle": "A station in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-station handoff",
+          "displaySubtitle": "The station landmark where exit choice decides Bến Thành, Nguyễn Huệ, ride pickup, or the next walk.",
+          "reason": "Ga Bến Thành now has an authored related-card role for Bến xe Miền Tây, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7942,9 +7942,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "vertical-cafe route",
+          "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
+          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Tour ăn tối bằng xe máy, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8054,9 +8054,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "vertical-cafe route",
+          "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
+          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Công trường Lam Sơn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8279,9 +8279,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bui-vien-street",
           "label": "Phố Bùi Viện",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "nightlife-street contrast",
+          "displaySubtitle": "A loud backpacker-nightlife strip best read with one look-before-sitting pass.",
+          "reason": "Phố Bùi Viện now has an authored related-card role for Phố đi bộ Nguyễn Huệ, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8391,9 +8391,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bui-vien-street",
           "label": "Phố Bùi Viện",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "nightlife-street contrast",
+          "displaySubtitle": "A loud backpacker-nightlife strip best read with one look-before-sitting pass.",
+          "reason": "Phố Bùi Viện now has an authored related-card role for Đường Nguyễn Trãi, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8503,9 +8503,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-42-nguyen-hue-apartment",
           "label": "Chung cư 42 Nguyễn Huệ",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "cafe-apartment vertical stop",
+          "displaySubtitle": "The Cafe Apartment address for balconies, stairs, upstairs rooms, and a short Nguyễn Huệ detour.",
+          "reason": "Chung cư 42 Nguyễn Huệ now has an authored related-card role for Kênh Nhiêu Lộc - Thị Nghè, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8615,9 +8615,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bach-dang-wharf",
           "label": "Bến Bạch Đằng",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-riverfront breather",
+          "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
+          "reason": "Bến Bạch Đằng now has an authored related-card role for Nhà thờ Đức Bà Sài Gòn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8840,9 +8840,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "vertical-cafe route",
+          "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
+          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for À Ố Show, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8952,9 +8952,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "vertical-cafe route",
+          "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
+          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Nhà hát Thành phố, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9287,9 +9287,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bui-vien-street",
           "label": "Phố Bùi Viện",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "nightlife-street contrast",
+          "displaySubtitle": "A loud backpacker-nightlife strip best read with one look-before-sitting pass.",
+          "reason": "Phố Bùi Viện now has an authored related-card role for Phố Phạm Ngũ Lão, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9409,9 +9409,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-pho-le-district-5",
           "label": "Phở Lệ",
-          "relationship": "same-city pho comparison",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand District 5 bowl when phở should feel more deliberately chosen.",
-          "reason": "Pho Le now carries the MICHELIN-backed District 5 phở comparison beside Pho Hoa Pasteur's central shop role.",
+          "relationship": "Bib Gourmand District 5 phở",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand District 5 bowl when southern phở should feel fuller and busier.",
+          "reason": "Phở Lệ now has an authored related-card role for Phở Hòa Pasteur, replacing generic same-city pacing copy.",
           "status": "render"
         },
         {
@@ -9433,9 +9433,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-pho-huong-binh",
           "label": "Phở Hương Bình",
-          "relationship": "same-city pho comparison",
-          "displaySubtitle": "A Bib Gourmand phở shop when the comparison should be chicken, beef, and clear broth.",
-          "reason": "Pho Huong Binh gives Pho Hoa Pasteur a more recognition-backed chicken-or-beef comparison.",
+          "relationship": "Bib Gourmand chicken-or-beef phở",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand family shop when the table wants chicken and beef phở choices.",
+          "reason": "Phở Hương Bình now has an authored related-card role for Phở Hòa Pasteur, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9679,9 +9679,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bach-dang-wharf",
           "label": "Bến Bạch Đằng",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-riverfront breather",
+          "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
+          "reason": "Bến Bạch Đằng now has an authored related-card role for Bưu điện Thành phố, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9791,9 +9791,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "vertical-cafe route",
+          "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
+          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Sân thượng khách sạn Rex, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10016,9 +10016,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-ben-thanh-metro-station",
           "label": "Ga Bến Thành",
-          "relationship": "same-city station comparison",
-          "displaySubtitle": "A station in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-station handoff",
+          "displaySubtitle": "The station landmark where exit choice decides Bến Thành, Nguyễn Huệ, ride pickup, or the next walk.",
+          "reason": "Ga Bến Thành now has an authored related-card role for Ga Sài Gòn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10128,9 +10128,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-thu-thiem-riverfront",
           "label": "Bờ sông Thủ Thiêm",
-          "relationship": "same-city river comparison",
-          "displaySubtitle": "A river in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "skyline-across-river view",
+          "displaySubtitle": "A short river crossing payoff for skyline distance, dusk light, bridges, and open bank.",
+          "reason": "Bờ sông Thủ Thiêm now has an authored related-card role for Sông Sài Gòn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10240,9 +10240,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "vertical-cafe route",
+          "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
+          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Đi thuyền sông Sài Gòn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10352,9 +10352,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "vertical-cafe route",
+          "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
+          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Saigon Skydeck, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10577,9 +10577,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-ao-dai-museum",
           "label": "Bảo tàng Áo Dài",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "dress-and-craft museum",
+          "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
+          "reason": "Bảo tàng Áo Dài now has an authored related-card role for Bảo tàng Phụ nữ Nam Bộ, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10689,9 +10689,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "vertical-cafe route",
+          "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
+          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Ăn vặt Sài Gòn buổi tối, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10914,9 +10914,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-42-nguyen-hue-apartment",
           "label": "Chung cư 42 Nguyễn Huệ",
-          "relationship": "same-city cafe comparison",
-          "displaySubtitle": "A cafe in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "cafe-apartment vertical stop",
+          "displaySubtitle": "The Cafe Apartment address for balconies, stairs, upstairs rooms, and a short Nguyễn Huệ detour.",
+          "reason": "Chung cư 42 Nguyễn Huệ now has an authored related-card role for Sân bay Tân Sơn Nhất, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11026,9 +11026,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-gia-dinh-park",
           "label": "Công viên Gia Định",
-          "relationship": "same-city park comparison",
-          "displaySubtitle": "A park in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "airport-side park breather",
+          "displaySubtitle": "An airport-side open-air pause for trees, walking paths, family time, and ordinary Saigon rhythm.",
+          "reason": "Công viên Gia Định now has an authored related-card role for Công viên Tao Đàn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11133,9 +11133,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cho-lon",
           "label": "Chợ Lớn",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "trade-district contrast",
+          "displaySubtitle": "Saigon’s Chinatown district for markets, temples, wholesale goods, incense, and trade-first streets.",
+          "reason": "Chợ Lớn now has an authored related-card role for Thảo Điền, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11245,9 +11245,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-bach-dang-wharf",
           "label": "Bến Bạch Đằng",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-riverfront breather",
+          "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
+          "reason": "Bến Bạch Đằng now has an authored related-card role for Chùa Bà Thiên Hậu, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11357,9 +11357,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-saigon-river",
           "label": "Sông Sài Gòn",
-          "relationship": "same-city river comparison",
-          "displaySubtitle": "A river in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "city-waterline orientation",
+          "displaySubtitle": "The river spine for bridges, boats, banks, and skyline orientation without adding a ticketed plan.",
+          "reason": "Sông Sài Gòn now has an authored related-card role for Bờ sông Thủ Thiêm, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11469,9 +11469,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-ao-dai-museum",
           "label": "Bảo tàng Áo Dài",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "dress-and-craft museum",
+          "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
+          "reason": "Bảo tàng Áo Dài now has an authored related-card role for Bảo tàng Tôn Đức Thắng, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11581,9 +11581,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "vertical-cafe route",
+          "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
+          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Hồ Con Rùa, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11806,9 +11806,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-gia-dinh-park",
           "label": "Công viên Gia Định",
-          "relationship": "same-city park comparison",
-          "displaySubtitle": "A park in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "airport-side park breather",
+          "displaySubtitle": "An airport-side open-air pause for trees, walking paths, family time, and ordinary Saigon rhythm.",
+          "reason": "Công viên Gia Định now has an authored related-card role for Công viên Vinhomes Central Park, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11918,9 +11918,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-ao-dai-museum",
           "label": "Bảo tàng Áo Dài",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "dress-and-craft museum",
+          "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
+          "reason": "Bảo tàng Áo Dài now has an authored related-card role for Bảo tàng Chứng tích Chiến tranh, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -12030,9 +12030,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-cheo-leo-cafe",
           "label": "Cà phê Cheo Leo",
-          "relationship": "same-city coffee-register contrast",
-          "displaySubtitle": "An old-Saigon coffee room when metal-filter ritual matters more than specialty polish.",
-          "reason": "Cheo Leo is the right old-cafe contrast for Workshop Coffee.",
+          "relationship": "old-coffee ritual",
+          "displaySubtitle": "An old-Saigon coffee room for metal-filter ritual, iced sweetness, and a small seated reset.",
+          "reason": "Cà phê Cheo Leo now has an authored related-card role for The Workshop Coffee, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -12143,9 +12143,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-gia-dinh-park",
           "label": "Công viên Gia Định",
-          "relationship": "same-city park comparison",
-          "displaySubtitle": "A park in Saigon with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "airport-side park breather",
+          "displaySubtitle": "An airport-side open-air pause for trees, walking paths, family time, and ordinary Saigon rhythm.",
+          "reason": "Công viên Gia Định now has an authored related-card role for Thảo Cầm Viên Sài Gòn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],

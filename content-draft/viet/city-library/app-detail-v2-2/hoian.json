@@ -84,9 +84,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-cua-dai-beach",
           "label": "Biển Cửa Đại",
-          "relationship": "same-city beach comparison",
-          "displaySubtitle": "A beach in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "coastal-recovery contrast",
+          "displaySubtitle": "A quieter coast edge when Hội An’s old streets need salt air, sand, and a simpler beach plan.",
+          "reason": "Biển Cửa Đại now has an authored related-card role for Biển An Bàng, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -196,9 +196,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-cantonese-assembly-hall",
           "label": "Hội quán Quảng Đông",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "assembly-hall contrast",
+          "displaySubtitle": "A gate-and-courtyard stop for the Chinese community side of Hội An’s trading-port memory.",
+          "reason": "Hội quán Quảng Đông now has an authored related-card role for Cầu An Hội, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -308,9 +308,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-ancient-town",
           "label": "Phố cổ Hội An",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "old-town core",
+          "displaySubtitle": "The yellow-house, assembly-hall, river-walk core that gives Hội An its first mental picture.",
+          "reason": "Phố cổ Hội An now has an authored related-card role for Đảo An Hội, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -420,9 +420,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-island",
           "label": "Đảo An Hội",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "evening-island edge",
+          "displaySubtitle": "The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
+          "reason": "Đảo An Hội now has an authored related-card role for Phố cổ Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -643,9 +643,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-cua-dai-pier",
           "label": "Bến tàu Cửa Đại",
-          "relationship": "same-city port comparison",
-          "displaySubtitle": "A port in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "island-boat handoff",
+          "displaySubtitle": "The coastal boarding edge when the day turns from road to open water and island routes.",
+          "reason": "Bến tàu Cửa Đại now has an authored related-card role for Bến thuyền Bạch Đằng, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -755,9 +755,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-nguyen-phuc-chu-street",
           "label": "Phố Nguyễn Phúc Chu",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "an-hoi-night spine",
+          "displaySubtitle": "The An Hội night street for lantern-market movement, signs, river crossings, and meeting points.",
+          "reason": "Phố Nguyễn Phúc Chu now has an authored related-card role for Đường Bạch Đằng ở Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -1472,9 +1472,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-cham-islands",
           "label": "Cù Lao Chàm",
-          "relationship": "same-city nature comparison",
-          "displaySubtitle": "A nature in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "offshore-nature day",
+          "displaySubtitle": "A wider horizon beyond old streets: island hills, working boats, open water, and weather.",
+          "reason": "Cù Lao Chàm now has an authored related-card role for Rừng dừa Bảy Mẫu, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -1697,9 +1697,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-from-danang-railway-station",
           "label": "Ga Đà Nẵng đi Hội An",
-          "relationship": "same-city station comparison",
-          "displaySubtitle": "A station in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "train-arrival transfer",
+          "displaySubtitle": "The Da Nang station handoff when bags, platform doors, and the road into Hội An shape arrival.",
+          "reason": "Ga Đà Nẵng đi Hội An now has an authored related-card role for Bến xe Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -1809,9 +1809,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-island",
           "label": "Đảo An Hội",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "evening-island edge",
+          "displaySubtitle": "The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
+          "reason": "Đảo An Hội now has an authored related-card role for Cẩm Châu, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -1921,9 +1921,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-cam-thanh-coconut-village",
           "label": "Làng dừa Cẩm Thanh",
-          "relationship": "same-city village comparison",
-          "displaySubtitle": "A village in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "water-village context",
+          "displaySubtitle": "A coconut-waterway village for palms, docks, round boats, and slower routes behind the photo.",
+          "reason": "Làng dừa Cẩm Thanh now has an authored related-card role for Cẩm Kim, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2033,9 +2033,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-island",
           "label": "Đảo An Hội",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "evening-island edge",
+          "displaySubtitle": "The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
+          "reason": "Đảo An Hội now has an authored related-card role for Cẩm Nam, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2145,9 +2145,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-island",
           "label": "Đảo An Hội",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "evening-island edge",
+          "displaySubtitle": "The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
+          "reason": "Đảo An Hội now has an authored related-card role for Cẩm Phô, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2257,9 +2257,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-island",
           "label": "Đảo An Hội",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "evening-island edge",
+          "displaySubtitle": "The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
+          "reason": "Đảo An Hội now has an authored related-card role for Cẩm Thanh, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2369,9 +2369,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
           "label": "Quầy vé phố cổ Hội An",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "heritage-ticket threshold",
+          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Thuyền thúng Cẩm Thanh, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2481,9 +2481,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-cam-kim-island",
           "label": "Cẩm Kim",
-          "relationship": "same-city village comparison",
-          "displaySubtitle": "A village in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-village contrast",
+          "displaySubtitle": "A slower island road with fields, small homes, craft memory, and distance from the dense old streets.",
+          "reason": "Cẩm Kim now has an authored related-card role for Làng dừa Cẩm Thanh, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2593,9 +2593,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
           "label": "Cầu An Hội",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-crossing hinge",
+          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "reason": "Cầu An Hội now has an authored related-card role for Hội quán Quảng Đông, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3035,7 +3035,7 @@
       "storySpine": "Cham Islands gives the city a wider horizon: sea, hills, boats, and the break that comes after too many close streets.",
       "intro": {
         "heading": "Open Water After Old Streets",
-        "body": "Cham Islands moves Hội An out from old streets toward open water, green hills, fishing boats, and a different pace. It sits in the plan when the day needs air, weather, and a real break from lanes."
+        "body": "Cham Islands moves Hội An out from old streets toward open water, green hills, fishing boats, and salt air. It sits in the plan when the day needs weather, horizon, and a real break from lanes."
       },
       "usefulPhraseCards": [
         {
@@ -3090,9 +3090,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-bay-mau-coconut-forest",
           "label": "Rừng dừa Bảy Mẫu",
-          "relationship": "same-city nature comparison",
-          "displaySubtitle": "A nature in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "basket-boat wetland",
+          "displaySubtitle": "A green water-coconut route with palm shade, basket boats, channels, and village context.",
+          "reason": "Rừng dừa Bảy Mẫu now has an authored related-card role for Cù Lao Chàm, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3202,9 +3202,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
           "label": "Quầy vé phố cổ Hội An",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "heritage-ticket threshold",
+          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Tàu đi Cù Lao Chàm, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3427,9 +3427,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
           "label": "Cầu An Hội",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-crossing hinge",
+          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "reason": "Cầu An Hội now has an authored related-card role for Chùa Chúc Thánh, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3670,9 +3670,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-banh-mi-phuong",
           "label": "Bánh mì Phượng",
-          "relationship": "same-city quick-meal contrast",
-          "displaySubtitle": "A famous sandwich shop when the day wants bread, fillings, and chili instead of chicken rice.",
-          "reason": "Banh Mi Phuong is a useful quick-meal contrast for com ga.",
+          "relationship": "quick-sandwich shop",
+          "displaySubtitle": "The famous quick-service Hội An bánh mì shop when bread, fillings, and chili should lead.",
+          "reason": "Bánh mì Phượng now has an authored related-card role for Cơm gà Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3927,9 +3927,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
           "label": "Quầy vé phố cổ Hội An",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "heritage-ticket threshold",
+          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Lớp học nấu ăn Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4039,9 +4039,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
           "label": "Quầy vé phố cổ Hội An",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "heritage-ticket threshold",
+          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Đạp xe vùng quê Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4151,9 +4151,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-bang",
           "label": "Biển An Bàng",
-          "relationship": "same-city beach comparison",
-          "displaySubtitle": "A beach in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "beach-day contrast",
+          "displaySubtitle": "The coastal break for sand, basket boats, seafood shacks, and sea air after old-town crowds.",
+          "reason": "Biển An Bàng now has an authored related-card role for Biển Cửa Đại, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4263,9 +4263,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-bay-mau-coconut-forest",
           "label": "Rừng dừa Bảy Mẫu",
-          "relationship": "same-city nature comparison",
-          "displaySubtitle": "A nature in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "basket-boat wetland",
+          "displaySubtitle": "A green water-coconut route with palm shade, basket boats, channels, and village context.",
+          "reason": "Rừng dừa Bảy Mẫu now has an authored related-card role for Cửa Đại, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4375,9 +4375,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-bach-dang-boat-pier",
           "label": "Bến thuyền Bạch Đằng",
-          "relationship": "same-city port comparison",
-          "displaySubtitle": "A port in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-boat handoff",
+          "displaySubtitle": "The river steps where walking turns into boat direction, boarding choices, and water movement.",
+          "reason": "Bến thuyền Bạch Đằng now has an authored related-card role for Bến tàu Cửa Đại, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4487,9 +4487,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
           "label": "Cầu An Hội",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-crossing hinge",
+          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "reason": "Cầu An Hội now has an authored related-card role for Nhà cổ Đức An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4822,9 +4822,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-history-culture-museum",
           "label": "Bảo tàng Lịch sử - Văn hóa Hội An",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "port-history room",
+          "displaySubtitle": "A compact indoor stop for ceramics, trade memory, and context behind the yellow streets.",
+          "reason": "Bảo tàng Lịch sử - Văn hóa Hội An now has an authored related-card role for Bảo tàng Văn hóa Dân gian, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4934,9 +4934,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-bang",
           "label": "Biển An Bàng",
-          "relationship": "same-city beach comparison",
-          "displaySubtitle": "A beach in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "beach-day contrast",
+          "displaySubtitle": "The coastal break for sand, basket boats, seafood shacks, and sea air after old-town crowds.",
+          "reason": "Biển An Bàng now has an authored related-card role for Sân bay Đà Nẵng đi Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5046,9 +5046,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-bus-station",
           "label": "Bến xe Hội An",
-          "relationship": "same-city station comparison",
-          "displaySubtitle": "A station in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "onward-road handoff",
+          "displaySubtitle": "The practical edge where lantern streets turn into route names, luggage, pickups, and onward roads.",
+          "reason": "Bến xe Hội An now has an authored related-card role for Ga Đà Nẵng đi Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5158,9 +5158,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
           "label": "Cầu An Hội",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-crossing hinge",
+          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "reason": "Cầu An Hội now has an authored related-card role for Hội quán Phúc Kiến, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5270,9 +5270,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
           "label": "Cầu An Hội",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-crossing hinge",
+          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "reason": "Cầu An Hội now has an authored related-card role for Hội quán Hải Nam, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5382,9 +5382,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
           "label": "Quầy vé phố cổ Hội An",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "heritage-ticket threshold",
+          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Xưởng thủ công mỹ nghệ Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5494,9 +5494,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-folk-culture-museum",
           "label": "Bảo tàng Văn hóa Dân gian",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "craft-memory room",
+          "displaySubtitle": "An indoor old-town pause for lanterns, textiles, wood beams, and everyday craft memory.",
+          "reason": "Bảo tàng Văn hóa Dân gian now has an authored related-card role for Bảo tàng Lịch sử - Văn hóa Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5606,9 +5606,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-thu-bon-river",
           "label": "Sông Thu Bồn",
-          "relationship": "same-city river comparison",
-          "displaySubtitle": "A river in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "larger-water spine",
+          "displaySubtitle": "The broader river line behind Hội An’s port story, boats, bridges, reflections, and arrival.",
+          "reason": "Sông Thu Bồn now has an authored related-card role for Sông Hoài, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5718,9 +5718,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
           "label": "Cầu An Hội",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-crossing hinge",
+          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "reason": "Cầu An Hội now has an authored related-card role for Chùa Cầu, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5830,9 +5830,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-cam-kim-island",
           "label": "Cẩm Kim",
-          "relationship": "same-city village comparison",
-          "displaySubtitle": "A village in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-village contrast",
+          "displaySubtitle": "A slower island road with fields, small homes, craft memory, and distance from the dense old streets.",
+          "reason": "Cẩm Kim now has an authored related-card role for Làng mộc Kim Bồng, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5942,9 +5942,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
           "label": "Quầy vé phố cổ Hội An",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "heritage-ticket threshold",
+          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Thuyền hoa đăng Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6054,9 +6054,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
           "label": "Quầy vé phố cổ Hội An",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "heritage-ticket threshold",
+          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Lớp làm lồng đèn Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6166,9 +6166,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
           "label": "Quầy vé phố cổ Hội An",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "heritage-ticket threshold",
+          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Hoi An Lune Center, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6738,9 +6738,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
           "label": "Quầy vé phố cổ Hội An",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "heritage-ticket threshold",
+          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Đảo Ký ức Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7076,9 +7076,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-island",
           "label": "Đảo An Hội",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "evening-island edge",
+          "displaySubtitle": "The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
+          "reason": "Đảo An Hội now has an authored related-card role for Phường Minh An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7450,9 +7450,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-folk-culture-museum",
           "label": "Bảo tàng Văn hóa Dân gian",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "craft-memory room",
+          "displaySubtitle": "An indoor old-town pause for lanterns, textiles, wood beams, and everyday craft memory.",
+          "reason": "Bảo tàng Văn hóa Dân gian now has an authored related-card role for Bảo tàng Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7562,9 +7562,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
           "label": "Cầu An Hội",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-crossing hinge",
+          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "reason": "Cầu An Hội now has an authored related-card role for Thánh địa Mỹ Sơn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7787,9 +7787,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-bach-dang-street",
           "label": "Đường Bạch Đằng ở Hội An",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "riverfront-walking spine",
+          "displaySubtitle": "The named riverside walk for boats, yellow buildings, crossings, and blue-hour reflections.",
+          "reason": "Đường Bạch Đằng ở Hội An now has an authored related-card role for Phố Nguyễn Phúc Chu, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7899,9 +7899,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-bach-dang-street",
           "label": "Đường Bạch Đằng ở Hội An",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "riverfront-walking spine",
+          "displaySubtitle": "The named riverside walk for boats, yellow buildings, crossings, and blue-hour reflections.",
+          "reason": "Đường Bạch Đằng ở Hội An now has an authored related-card role for Phố Nguyễn Thái Học, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8350,9 +8350,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
           "label": "Cầu An Hội",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-crossing hinge",
+          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "reason": "Cầu An Hội now has an authored related-card role for Nhà cổ Phùng Hưng, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8462,9 +8462,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
           "label": "Quầy vé phố cổ Hội An",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "heritage-ticket threshold",
+          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Xưởng gốm Thanh Hà, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8574,9 +8574,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-folk-culture-museum",
           "label": "Bảo tàng Văn hóa Dân gian",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "craft-memory room",
+          "displaySubtitle": "An indoor old-town pause for lanterns, textiles, wood beams, and everyday craft memory.",
+          "reason": "Bảo tàng Văn hóa Dân gian now has an authored related-card role for Bảo tàng Di sản Vô giá, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8686,9 +8686,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
           "label": "Cầu An Hội",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-crossing hinge",
+          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "reason": "Cầu An Hội now has an authored related-card role for Miếu Quan Công, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8798,9 +8798,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
           "label": "Cầu An Hội",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-crossing hinge",
+          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "reason": "Cầu An Hội now has an authored related-card role for Nhà cổ Quân Thắng, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9023,9 +9023,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-bang",
           "label": "Biển An Bàng",
-          "relationship": "same-city beach comparison",
-          "displaySubtitle": "A beach in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "beach-day contrast",
+          "displaySubtitle": "The coastal break for sand, basket boats, seafood shacks, and sea air after old-town crowds.",
+          "reason": "Biển An Bàng now has an authored related-card role for Reaching Out Arts & Crafts, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9135,9 +9135,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-bay-mau-coconut-forest",
           "label": "Rừng dừa Bảy Mẫu",
-          "relationship": "same-city nature comparison",
-          "displaySubtitle": "A nature in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "basket-boat wetland",
+          "displaySubtitle": "A green water-coconut route with palm shade, basket boats, channels, and village context.",
+          "reason": "Rừng dừa Bảy Mẫu now has an authored related-card role for Cánh đồng Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9302,7 +9302,7 @@
       "category": "Cafe",
       "pronunciation": "rosies cafe",
       "travelerMoment": "Rosie's Cafe gives Hội An a softer morning chapter, with breakfast, coffee, leafy shade, and distance from the main old-town push.",
-      "storySpine": "Rosie’s gives the Hội An cafe list a gentler breakfast option, with courtyard energy that feels different from louder old-town counters.",
+      "storySpine": "Rosie’s gives the Hội An cafe list a gentler breakfast option, with courtyard energy that feels different from louder old-town cafes.",
       "intro": {
         "heading": "Breakfast With Breathing Room",
         "body": "Rosie’s Cafe is a softer Hội An breakfast-and-coffee room: leafy courtyard, iced coffee on the table, and distance from the main old-town push."
@@ -9473,9 +9473,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-folk-culture-museum",
           "label": "Bảo tàng Văn hóa Dân gian",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "craft-memory room",
+          "displaySubtitle": "An indoor old-town pause for lanterns, textiles, wood beams, and everyday craft memory.",
+          "reason": "Bảo tàng Văn hóa Dân gian now has an authored related-card role for Bảo tàng Văn hóa Sa Huỳnh, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9925,9 +9925,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
           "label": "Cầu An Hội",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-crossing hinge",
+          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "reason": "Cầu An Hội now has an authored related-card role for Nhà cổ Tấn Ký, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10037,9 +10037,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-cam-kim-island",
           "label": "Cẩm Kim",
-          "relationship": "same-city village comparison",
-          "displaySubtitle": "A village in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-village contrast",
+          "displaySubtitle": "A slower island road with fields, small homes, craft memory, and distance from the dense old streets.",
+          "reason": "Cẩm Kim now has an authored related-card role for Làng gốm Thanh Hà, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10091,7 +10091,7 @@
       "category": "Restaurant",
       "pronunciation": "the field hoi an",
       "travelerMoment": "The Field Hội An ties dinner to the lowland edge of town, where rice-field light, open air, and a slower table become part of the route.",
-      "storySpine": "Hội An’s food day reaches past old-town counters; a rice-field meal gives the itinerary a different pace.",
+      "storySpine": "Hội An’s food day reaches past old-town rooms; a rice-field meal pulls dinner into the landscape.",
       "intro": {
         "heading": "Dinner Beside The Fields",
         "body": "The Field Hội An makes the meal part of the route: open air, rice-field edges, sunset light, and a table chosen for the view as much as the food."
@@ -10262,9 +10262,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-hoai-river",
           "label": "Sông Hoài",
-          "relationship": "same-city river comparison",
-          "displaySubtitle": "A river in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "old-town waterline",
+          "displaySubtitle": "The lantern-waterline that organizes bridges, boat lights, reflections, and the evening route.",
+          "reason": "Sông Hoài now has an authored related-card role for Sông Thu Bồn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10374,9 +10374,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-cam-kim-island",
           "label": "Cẩm Kim",
-          "relationship": "same-city village comparison",
-          "displaySubtitle": "A village in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-village contrast",
+          "displaySubtitle": "A slower island road with fields, small homes, craft memory, and distance from the dense old streets.",
+          "reason": "Cẩm Kim now has an authored related-card role for Làng Trà Nhiêu, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10486,9 +10486,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-cam-kim-island",
           "label": "Cẩm Kim",
-          "relationship": "same-city village comparison",
-          "displaySubtitle": "A village in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-village contrast",
+          "displaySubtitle": "A slower island road with fields, small homes, craft memory, and distance from the dense old streets.",
+          "reason": "Cẩm Kim now has an authored related-card role for Làng rau Trà Quế, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10598,9 +10598,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-folk-culture-museum",
           "label": "Bảo tàng Văn hóa Dân gian",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "craft-memory room",
+          "displaySubtitle": "An indoor old-town pause for lanterns, textiles, wood beams, and everyday craft memory.",
+          "reason": "Bảo tàng Văn hóa Dân gian now has an authored related-card role for Bảo tàng Gốm sứ Mậu dịch, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10710,9 +10710,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
           "label": "Quầy vé phố cổ Hội An",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "heritage-ticket threshold",
+          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Nhà biểu diễn nghệ thuật cổ truyền Hội An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10822,9 +10822,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-bach-dang-street",
           "label": "Đường Bạch Đằng ở Hội An",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "riverfront-walking spine",
+          "displaySubtitle": "The named riverside walk for boats, yellow buildings, crossings, and blue-hour reflections.",
+          "reason": "Đường Bạch Đằng ở Hội An now has an authored related-card role for Phố Trần Phú, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10934,9 +10934,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
           "label": "Cầu An Hội",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Hội An with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-crossing hinge",
+          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "reason": "Cầu An Hội now has an authored related-card role for Hội quán Triều Châu, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
