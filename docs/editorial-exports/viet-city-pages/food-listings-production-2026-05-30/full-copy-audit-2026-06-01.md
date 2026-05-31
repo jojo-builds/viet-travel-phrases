@@ -230,3 +230,33 @@ git diff --check
 ```
 
 Final production-ready status remains blocked until repaired pages and representative rendered screens pass review.
+
+## Second Repair Batch - 2026-06-01
+
+Status: `IN_PROGRESS_NOT_PRODUCTION_READY`
+
+This batch used fresh read-only subagent audits against `a380fcf28` for food, non-food, and phrase-card surfaces. It repaired the highest-confidence current blockers they found:
+
+- removed the audited visible editor-language patterns from V2.2 app-detail source for `useful`, `signal`, `the point`, `counterpoint`, `day needs`, `should lead`, `should be`, and `do not build` where those phrases read like scaffolding rather than traveler copy;
+- retargeted fixed-price mall cards for `city-hanoi-place-trang-tien-plaza` and `city-hcmc-place-vincom-dong-khoi` to card/bag/bathroom instead of bargaining;
+- retargeted coffee-route cards for `city-hanoi-place-coffee-hop` and `city-hanoi-place-trieu-viet-vuong-coffee-street`;
+- retargeted class/craft/water-food cards for `city-hoian-place-cooking-class`, `city-hoian-place-handicraft-workshop`, and `city-hue-place-lagoon-seafood-boat`;
+- tightened non-food pages called out by subagents, including `city-hoian-place-cam-kim-island`, `city-hcmc-place-cafe-hop-nguyen-hue`, `city-danang-place-son-tra`, `city-danang-place-yen-retreat`, `city-hanoi-place-dong-da`, and `city-hue-place-tam-giang-lagoon`;
+- fixed the `v900-tran-where-can-i-buy-a-ticket` tap-through risk by mapping the singular transport ticket phrase to the existing authored ticket-buying page `viet-phrase-v500-sigh-acti-where-can-i-buy-tickets`, avoiding a duplicate canonical page for the same Vietnamese sentence.
+
+Validation after this batch:
+
+```sh
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-city-library.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/audit-viet-listing-production-qa.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+All commands above passed. `audit-viet-listing-production-qa.js` still reports `0` blockers, `0` majors, `1` duplicate hero section hidden at render time, and `500` missing-audio priority rows with no release-blocking missing-audio rows from SQLite validation.
+
+Remaining production-readiness work is still real: repeated generic phrase-card sets remain too broad at scale, generated phrase pages still need a thinness pass, and representative simulator-rendered review has not yet proven the full set.

@@ -69,11 +69,17 @@ Correction, 2026-06-01:
 
 The earlier `PASS_GLOBAL_PRODUCTION_READY` classification was revoked after a full copy audit. Current status is `NOT_PRODUCTION_READY`; continue from `full-copy-audit-2026-06-01.md`.
 
+Second repair batch, 2026-06-01:
+
+- Fresh read-only food, non-food, and phrase-card subagents audited the current lane.
+- The next blocker batch was repaired and projected: fixed-price mall phrase cards, coffee-route cards, cooking-class/craft/lagoon-seafood cards, the singular ticket-buying tap-through risk, and visible editor-language residue across V2.2 app-detail source.
+- Current validators pass after regeneration, but this still is not a final production-ready receipt. Continue from the `Second Repair Batch - 2026-06-01` section in `full-copy-audit-2026-06-01.md`.
+
 Highest-leverage next pass:
 
-1. Review the 63 static-QA minor issues and classify each as fix now, follow-up, or acceptable risk.
-2. Do a thin phrase-page pass, starting with pages that feel under-explained, such as `Cai nay bao nhieu?`.
-3. Do a food/restaurant desire pass over top restaurants, MICHELIN-supported restaurants, cafes, drinks, and local classics.
+1. Sample and repair the largest remaining repeated phrase-card sets, starting with the broad food menu/portion/not-spicy set.
+2. Do a thin phrase-page pass on high-use generated pages such as ticket buying, walking, less sugar, hot coffee, recommendations, and pack-for-travel.
+3. Do a food/restaurant desire pass over fine dining, MICHELIN-supported restaurants, cafes, drinks, desserts, and local classics that still feel credential- or support-role-led.
 4. Use simulator rendered review, not just JSON scans. Spot-check search and detail routes for restaurants, food, drinks, markets, city pages, and phrase pages.
 5. Keep generated resources in sync: project V2.2 to handwritten copy, import handwritten copy, generate authored listing pages, generate SQLite, then validate.
 

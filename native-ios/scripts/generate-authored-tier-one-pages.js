@@ -50,6 +50,7 @@ const designedFamilyPageIDs = {
   "v500-poli-basi-excuse-me": "viet-excuse-sorry",
   "polite-goodbye": "viet-goodbye",
   "social-how-are-you": "viet-how-are-you",
+  "v900-tran-where-can-i-buy-a-ticket": "viet-phrase-v500-sigh-acti-where-can-i-buy-tickets",
 };
 
 const manuallyAuthoredPageIDs = new Set();
