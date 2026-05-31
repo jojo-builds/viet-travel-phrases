@@ -162,6 +162,11 @@ Fresh command evidence from this pass:
   - passed: `9` tests, `0` failures
   - covered batched section item loading, one-canonicalization detail loads, hero-image lookup staying lightweight, SQLite search/detail/history routing, resolved-page reuse, bounded SQLite caches, generated-page preheat skipping hero lookup, and menu detail/canonical bypasses
   - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T02-31-13-030Z_pid15747_65ffce74.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `636b7ce40`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - XcodeBuildMCP simulator focused catalog-row audio cache set on iPhone 17 Pro
   - failed before implementation because `PhraseCatalogItem` had no playback-audio resolution cache reset seam and repeated row reads had no cache
   - passed after implementation: `1` test, `0` failures
