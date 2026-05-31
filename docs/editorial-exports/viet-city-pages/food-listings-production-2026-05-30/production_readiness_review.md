@@ -4021,8 +4021,8 @@ This continuation repairs an existing Hội An sandwich page rather than adding 
 
 ### Pages Repaired
 
-- `city-hoian-place-madam-khanh`: strengthened around the source-supported Bánh Mì Queen identity, with visible copy focused on crisp roll, warm filling, herbs, sauce, chili, and counter speed.
-- `city-hoian-place-banh-mi`: now compares two named counters, with Madam Khánh as the Bánh Mì Queen stop and Bánh mì Phượng as the faster glass-case comparison.
+- `city-hoian-place-madam-khanh`: strengthened around the source-supported Bánh Mì Queen identity, with visible copy focused on crisp roll, warm filling, herbs, sauce, chili, and shop rhythm.
+- `city-hoian-place-banh-mi`: now compares two named shops, with Madam Khánh as the Bánh Mì Queen stop and Bánh mì Phượng as the quick glass-case comparison.
 
 ### Runtime Shape
 
@@ -4524,6 +4524,116 @@ The MICHELIN-recognition invariant is now durable and passing, but broad product
 ### Agent Lifecycle Note
 
 No subagents were spawned or closed in this continuation. This pass used local source, MICHELIN-coverage, comparison-copy, validator, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
+
+## Continuation: Jojo Copy Critique Follow-Up
+
+Thirty-fifth pass date: 2026-05-31
+
+Commit before pass: `f0f9e73cf Add MICHELIN coverage gate`
+
+Jojo's simulator read exposed three copy problems to keep out of the current build:
+
+- visible save-mechanic language such as `counter to save`;
+- awkward stop/process language such as `the line is part of the stop`;
+- comparison labels that assume the reader already knows whether `Phượng` or `Madam Khánh` is a restaurant, dish, nickname, or phrase.
+
+### Copy Repair
+
+Changed source pages:
+
+- `city-hoian-place-banh-mi-phuong`
+- `city-hoian-place-madam-khanh`
+
+Visible repair:
+
+- Replaced the remaining insider comparison language with plain English shop differences.
+- `Bánh mì Phượng` now reads as the quick, famous Hội An bánh mì shop with visible fillings, chili chosen early, and a glass-case rhythm.
+- `Madam Khánh` now reads as the other famous Hội An bánh mì stop, anchored by the Bánh Mì Queen name and a calmer shop rhythm.
+- Related-card subtitles now explain the relationship without asking the reader to decode the Vietnamese name first.
+- Hidden summary copy was checked too: `Thành Cafe` and `Mỳ Quảng Bà Mua` no longer use internal `should sit` posture in generated search/listing summaries.
+
+Critique-pattern scan after regeneration:
+
+- `counter to save`: 0.
+- `part of the stop`: 0.
+- `Phượng Beside`: 0.
+- `line-driven`: 0.
+- `faster glass-case`: 0.
+- `should sit as`: 0.
+- `commoner identity`: 0.
+- `name counter`: 0.
+
+### Simulator Render Proof
+
+Simulator: `SpeakLocal City Listings`.
+
+Build/run result: `SUCCEEDED`.
+
+Rendered proof folder:
+
+- `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-jojo-copy-critique-follow-up/`
+
+Screenshots:
+
+- `banh-mi-phuong-top.jpg`
+- `banh-mi-phuong-sections.jpg`
+- `banh-mi-phuong-comparison.jpg`
+- `madam-khanh-top.jpg`
+- `madam-khanh-sections.jpg`
+- `madam-khanh-comparison.jpg`
+
+### Remaining Risk After Critique Follow-Up
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass fixes the specific copy smell Jojo saw on the Hội An bánh mì pages and confirms the runtime render. The broader food/cafe/support inventory still needs the remaining representative screenshot sweep before the whole batch can be called production-ready.
+
+## Continuation: Thành Cafe Support-Cafe Repair
+
+Thirty-fourth pass date: 2026-05-31
+
+Commit before pass: `f0f9e73cf Add MICHELIN coverage gate`
+
+This continuation applies the support/downrank logic to a smaller cafe page. `Thành Cafe` was structurally valid, but its visible copy still read like a generic cafe entry and carried a 30/30 headline posture.
+
+### Copy Repair
+
+Changed source page:
+
+- `city-hue-place-thanh-cafe`
+
+Visible repair:
+
+- Reframed the page around a source-backed design-cafe role: Nam Giao-side route context, wood and tile, porcelain-inlay detail, iced coffee, shade, and a quiet table.
+- Replaced generic `A calm Coffee Stop`, `Detail Over Drama`, and repeated cafe-stop phrasing with more observed mobile copy.
+- Kept the page useful as a support cafe, but demoted it from `30/30` to `28/30` so it does not compete with stronger food or destination-cafe pages.
+- Clarified the comparison with `Mandarin Coffee & Restaurant` as garden cafe-restaurant versus smaller design-led coffee pause.
+
+Source posture:
+
+- No MICHELIN claim was added.
+- Source note now records the Hue Discovery coffee-shop source for Nam Giao-side placement and mosaic / porcelain-inlay architectural detail.
+
+### Simulator Render Proof
+
+Simulator: `SpeakLocal City Listings`.
+
+Build/run result: `SUCCEEDED`.
+
+Rendered proof folder:
+
+- `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-thanh-cafe-support-repair/`
+
+Screenshots:
+
+- `thanh-cafe-top.jpg`
+- `thanh-cafe-sections.jpg`
+
+### Remaining Risk After Thành Cafe Support Repair
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass fixes one concrete support-cafe outlier. The broader catalog still needs the same rendered support/lead sweep across remaining cafes, markets, malls, and setting-led restaurants, plus high-visibility shelf logic that respects the support/downrank classification.
 
 ## Continuation: Hội An And Huế U.S.-Voice Save-Language Repair
 

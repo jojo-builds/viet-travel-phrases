@@ -1173,10 +1173,10 @@
       "city": "Hội An",
       "category": "Restaurant",
       "pronunciation": "bahn mee fuong",
-      "travelerMoment": "Bánh Mì Phượng is the famous fast-moving side of Hội An bánh mì: glass-case choices, a line that moves quickly, chili decided early, and a sandwich carried back toward the old streets.",
-      "storySpine": "Phượng works because the meal is simple and specific: crisp bread, visible fillings, sauce, heat, and a takeaway rhythm that turns bánh mì into part of an old-town walk.",
+      "travelerMoment": "Bánh Mì Phượng is the quick, famous Hội An bánh mì shop: visible fillings, chili chosen early, and a sandwich carried back toward the old streets.",
+      "storySpine": "Phượng works because the meal is simple and specific: crisp bread, visible fillings, sauce, heat, and a takeaway rhythm that folds into an old-town walk.",
       "intro": {
-        "heading": "The Famous Fast Bánh Mì Shop",
+        "heading": "The Quick Hội An Bánh Mì Shop",
         "body": "Bánh Mì Phượng is the well-known Hội An sandwich shop for quick bánh mì: crisp bread, visible fillings, herbs, sauce, chili, and a takeaway rhythm that fits an old-town walk."
       },
       "usefulPhraseCards": [
@@ -1208,18 +1208,18 @@
       "sections": [
         {
           "id": "order-before-the-line-moves",
-          "heading": "Order Before The Line Moves",
-          "body": "The line moves quickly. Pick the filling and chili level before you reach the glass case so the order stays easy."
+          "heading": "Know The Order Early",
+          "body": "The queue can move fast. Pick the filling and chili level before you reach the glass case so the order stays easy."
         },
         {
           "id": "glass-case-choices",
-          "heading": "Glass-Case Choices",
-          "body": "Watch the fillings before you order: meat or chicken, pâté, herbs, pickles, sauce, and heat. The moment is the bread closing around choices you made."
+          "heading": "Fillings In The Glass Case",
+          "body": "Look at the fillings before you order: meat or chicken, pâté, herbs, pickles, sauce, and heat. The sandwich is built around those choices."
         },
         {
-          "id": "compare-the-two-sandwich-shops",
-          "heading": "Compare The Two Sandwich Shops",
-          "body": "Bánh Mì Phượng is the faster, line-driven shop. Madam Khánh is the other famous Hội An bánh mì name, known for the Bánh Mì Queen identity and a calmer shop story."
+          "id": "how-it-differs-from-madam-khanh",
+          "heading": "How It Differs From Madam Khánh",
+          "body": "Choose Phượng for the quick glass-case rhythm. Choose Madam Khánh when you want the other famous Hội An name and the Bánh Mì Queen story."
         },
         {
           "id": "take-it-back-outside",
@@ -1243,7 +1243,7 @@
           "catalogId": "viet-family-city-hoian-place-madam-khanh",
           "label": "Madam Khánh",
           "relationship": "same-dish shop comparison",
-          "displaySubtitle": "The other famous Hội An bánh mì shop, known for the Bánh Mì Queen identity.",
+          "displaySubtitle": "The other famous Hội An bánh mì shop, known as the Bánh Mì Queen.",
           "reason": "Madam Khanh is the source-supported same-dish comparison for Banh Mi Phuong.",
           "status": "render"
         }
@@ -1261,13 +1261,14 @@
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
           "2026-05-31 Phuong sandwich pass: Vietnam Travel names Bánh Mì Phượng under Hội An bánh mì, so the page now owns the famous fast-moving shop role while avoiding hours, prices, and one-best claims.",
-          "2026-05-31 U.S.-voice repair: removed explicit save wording, clarified the Madam Khanh comparison, and replaced awkward stop/counter phrasing in visible copy."
+          "2026-05-31 U.S.-voice repair: removed explicit save wording, clarified the Madam Khanh comparison, and replaced awkward stop/counter phrasing in visible copy.",
+          "2026-05-31 critique follow-up: replaced insider comparison wording with plain English shop differences."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production sandwich pass: Banh Mi Phuong now has a source-supported famous-shop reason, food-specific glass-case detail, and a clear same-dish comparison with Madam Khanh."
+        "reason": "Production sandwich pass: Banh Mi Phuong now has a source-supported famous-shop reason, food-specific glass-case detail, and a plain-English same-dish comparison with Madam Khanh."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -6218,7 +6219,7 @@
       "city": "Hội An",
       "category": "Restaurant",
       "pronunciation": "madam khanh",
-      "travelerMoment": "Madam Khanh sits inside Hội An's bánh mì fame, but the real memory is still shop rhythm, filling choices, chili, and a quick meal carried back toward the old streets.",
+      "travelerMoment": "Madam Khanh is the other famous Hội An bánh mì stop: the Bánh Mì Queen name, a calmer shop rhythm, filling choices, chili, and a quick meal carried back toward the old streets.",
       "storySpine": "The Bánh Mì Queen nickname gives the stop a reason to remember, but the meal still has to land as crisp bread, warm filling, herbs, sauce, and chili.",
       "intro": {
         "heading": "The Bánh Mì Queen Stop",
@@ -6262,9 +6263,9 @@
           "body": "Before the line tightens, the shop feels lighter and the sandwich stays the point. That makes it easier to enjoy as a quick Ancient Town break."
         },
         {
-          "id": "different-job-than-phuong",
-          "heading": "Compare The Two Sandwich Shops",
-          "body": "Madam Khánh carries the Bánh Mì Queen identity. Bánh Mì Phượng is the faster glass-case shop, where the line and takeaway pace shape the visit."
+          "id": "how-it-differs-from-phuong",
+          "heading": "How It Differs From Phượng",
+          "body": "Madam Khánh carries the Bánh Mì Queen identity and a calmer shop rhythm. Phượng is the quicker glass-case stop when the sandwich itself is the whole point."
         }
       ],
       "mentionedHereCandidates": [
@@ -6283,7 +6284,7 @@
           "catalogId": "viet-family-city-hoian-place-banh-mi-phuong",
           "label": "Bánh mì Phượng",
           "relationship": "same-dish shop comparison",
-          "displaySubtitle": "Another famous Hội An bánh mì shop when the sandwich itself is the comparison.",
+          "displaySubtitle": "The quick glass-case bánh mì shop when the sandwich itself is the comparison.",
           "reason": "Banh Mi Phuong is the right same-dish comparison for Madam Khanh.",
           "status": "render"
         }
@@ -6300,13 +6301,14 @@
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
-          "2026-05-31 sandwich pass: strengthened around Vietnam Travel's source-supported Madam Khanh - The Banh Mi Queen listing while avoiding hours, prices, and ranking claims."
+          "2026-05-31 sandwich pass: strengthened around Vietnam Travel's source-supported Madam Khanh - The Banh Mi Queen listing while avoiding hours, prices, and ranking claims.",
+          "2026-05-31 critique follow-up: made the Phượng comparison self-explanatory for a first-time U.S. reader."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production sandwich pass: Madam Khanh now has a source-supported Bánh Mì Queen identity, dish linkage, and a clear shop comparison with Bánh Mì Phượng."
+        "reason": "Production sandwich pass: Madam Khanh now has a source-supported Bánh Mì Queen identity, dish linkage, and a self-explanatory shop comparison with Bánh Mì Phượng."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",

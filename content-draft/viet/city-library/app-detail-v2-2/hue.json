@@ -9326,11 +9326,11 @@
       "city": "Huế",
       "category": "Cafe",
       "pronunciation": "thanh cafe",
-      "travelerMoment": "Thanh Cafe holds a small Hue indoor memory, where iced coffee, tiled detail, porcelain-inlay touches, and a slow sit break up the walk.",
-      "storySpine": "Coffee, ice, tiled detail, and an indoor table can be enough when the day needs a calm break from walking.",
+      "travelerMoment": "Thanh Cafe is a quieter Hue design-cafe pause: iced coffee, tile-roof and wood detail, porcelain-inlay cues, and a Nam Giao-side break between heavier heritage stops.",
+      "storySpine": "Its reason to remember is design texture: ceramic-inlay detail, wood and tile, a glass of iced coffee, and a seat that can interrupt a monument-heavy Hue day.",
       "intro": {
-        "heading": "A calm Coffee Stop",
-        "body": "Thanh Cafe is a Hue cafe stop with iced coffee, tiled interior detail, porcelain-inlay touches, and a slower table between heat, walks, and meals."
+        "heading": "Porcelain Detail, Iced Coffee",
+        "body": "Thanh Cafe is a Nam Giao-side Hue cafe for iced coffee inside a wood-toned, tile-roof room with porcelain-inlay detail. Keep it for shade, texture, and a quiet table between heavier stops."
       },
       "usefulPhraseCards": [
         {
@@ -9361,23 +9361,23 @@
       "sections": [
         {
           "id": "detail-over-drama",
-          "heading": "Detail Over Drama",
-          "body": "Expect a cafe interior with porcelain-inlay touches and iced coffee, a modest cafe stop."
+          "heading": "Look At The Room",
+          "body": "The draw is the room as much as the drink: wood, roof tile, porcelain-inlay detail, and a slower table away from the street."
         },
         {
           "id": "between-walks-and-meals",
-          "heading": "Between Walks And Meals",
-          "body": "The cafe fits a break between market heat, riverside movement, or a longer heritage stop."
+          "heading": "Order Something Simple",
+          "body": "Start with cà phê sữa đá or another cold coffee. Let the drink and room carry the pause; plan the meal elsewhere."
         },
         {
           "id": "a-short-indoor-break",
-          "heading": "A Short Indoor Break",
-          "body": "Picture iced glasses, coffee counters, design details, and a slower table rather than a full work session."
+          "heading": "After Heat Or Temple Walks",
+          "body": "After heat, temple walks, or a route near Nam Giao, the room gives the day shade before the next move."
         },
         {
           "id": "small-place-memory",
-          "heading": "Small Place Memory",
-          "body": "Remember the cafe habit and interior detail: iced glasses, small tables, porcelain-inlay touches, and a short indoor stop."
+          "heading": "Compare It With Mandarin",
+          "body": "Mandarin leans garden and cafe-restaurant. Thành is smaller and more design-led, with the drink and room carrying the pause."
         }
       ],
       "mentionedHereCandidates": [],
@@ -9386,8 +9386,8 @@
           "catalogId": "viet-family-city-hue-place-mandarin-coffee-restaurant",
           "label": "Mandarin Coffee & Restaurant",
           "relationship": "simple coffee to photo-cafe contrast",
-          "displaySubtitle": "A cafe-restaurant stop when the pause should carry more local art and story.",
-          "reason": "Mandarin gives Thành Cafe a fuller coffee-and-room comparison.",
+          "displaySubtitle": "A garden cafe-restaurant when the break should feel fuller and more shaded.",
+          "reason": "Mandarin gives Thành Cafe a fuller garden-and-restaurant comparison.",
           "status": "render"
         }
       ],
@@ -9402,17 +9402,19 @@
         "notes": [
           "City voice gate passed on 2026-05-27 after source-level Hue review.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
+          "Support-cafe repair on 2026-05-31: visible copy now treats Thành Cafe as a design-led Hue coffee pause, not a headline food destination."
         ]
       },
       "score": {
-        "value": 30,
+        "value": 28,
         "max": 30,
-        "reason": "City voice gate: concrete Hue cafe scene, clear break or room cue, and mapped reusable phrase cards."
+        "reason": "Support-cafe pass: source-backed Nam Giao/design-cafe role, clearer room detail, and useful comparison without pretending to be a feature food anchor."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: References: Hue tourism portal coffee shops."
+        "Production intake source notes: References: Hue tourism portal coffee shops.",
+        "Hue Discovery coffee-shop source lists Thành Cafe at 328 Phan Boi Chau near Nam Giao Esplanade and describes mosaic / porcelain-inlay architectural style."
       ],
       "status": "FINAL_PASS",
       "review": {

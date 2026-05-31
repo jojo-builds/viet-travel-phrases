@@ -56,6 +56,9 @@ Visible critique-pattern scan after repairs:
 - `part of the stop`: 0.
 - `Name Counter`: 0.
 - `commoner identity`: 0.
+- `line-driven`: 0.
+- `faster glass-case`: 0.
+- `should sit as`: 0.
 - visible resource `save` / `saved` / `saving` / `route the user`: 0.
 
 ## Product Judgment
@@ -72,7 +75,7 @@ Support / downrank but keep:
 
 - These are useful as comparison cards, route fillers, calmer alternatives, or comfort stops.
 - They should not be marketed as "why you came to Vietnam" unless their copy has a stronger source-backed food hook.
-- Current support/downrank candidates: Fatfish, Boulevard Gelato & Coffee, Reply 1988 Cafe, Mỳ Quảng Bà Mua, Mỳ Quảng Dung, Nephele, Phở Hòa Pasteur, Cargo Club, Faifo Coffee, Ancient Space Restaurant, Đại Nam Restaurant, Les Jardins de la Carambole, Sông Hương Floating Restaurant.
+- Current support/downrank candidates: Fatfish, Boulevard Gelato & Coffee, Reply 1988 Cafe, Mỳ Quảng Bà Mua, Mỳ Quảng Dung, Nephele, Phở Hòa Pasteur, Cargo Club, Faifo Coffee, Ancient Space Restaurant, Đại Nam Restaurant, Les Jardins de la Carambole, Sông Hương Floating Restaurant, Thành Cafe.
 
 No immediate delete:
 
@@ -82,7 +85,7 @@ No immediate delete:
 
 ## Remaining Work
 
-The next production step is rendered proof for this exact copy batch on representative pages:
+The next production step is rendered proof for this exact copy batch on representative pages. Current follow-up proof now covers `Bánh mì Phượng`, `Madam Khánh`, and `Thành Cafe`; the remaining representative pages still need screenshot review:
 
 - Đà Nẵng: `city-danang-place-banh-mi`, `city-danang-place-bep-hen`, `city-danang-place-moc-quan-seafood`.
 - Hội An: `city-hoian-place-banh-mi`, `city-hoian-place-mot-herbal-drink`, `city-hoian-place-vys-market`.
