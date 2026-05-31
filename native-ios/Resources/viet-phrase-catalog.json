@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1783,
+    "phraseCount": 1784,
     "basePhraseCount": 935,
-    "cityPhraseCount": 824,
+    "cityPhraseCount": 825,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1765,
+    "familyCount": 1766,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -17927,6 +17927,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-hoian-place-com-ga"
+      ]
+    },
+    {
+      "id": "city-hoian-place-com-ga-ba-buoi",
+      "pageID": "viet-family-city-hoian-place-com-ga-ba-buoi",
+      "scenarioID": "city-guides",
+      "familyTitle": "Com Ga Ba Buoi pronunciation",
+      "summary": "Save Cơm Gà Bà Buội when Hội An chicken rice should become a named old-town lunch: yellow rice, shredded chicken, herbs, papaya, soup, and sauce on Phan Châu Trinh.",
+      "primaryPhraseID": "city-hoian-place-com-ga-ba-buoi",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-hoian-place-com-ga-ba-buoi"
       ]
     },
     {
@@ -81559,6 +81571,49 @@
       "cityLibraryPageKind": "dish",
       "placeKind": "dish",
       "contentRole": "dish",
+      "spokenChunks": 4,
+      "sourceIDs": [
+        "vt-hoian",
+        "vt-hoian-official"
+      ]
+    },
+    {
+      "id": "city-hoian-place-com-ga-ba-buoi",
+      "familyID": "city-hoian-place-com-ga-ba-buoi",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "Com Ga Ba Buoi",
+      "targetText": "Cơm Gà Bà Buội",
+      "canonicalTargetText": "Cơm Gà Bà Buội",
+      "pronunciation": "com ga ba buoi",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Save Cơm Gà Bà Buội when Hội An chicken rice should become a named old-town lunch: yellow rice, shredded chicken, herbs, papaya, soup, and sauce on Phan Châu Trinh.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Hoi An",
+        "Hội An",
+        "Com Ga Ba Buoi",
+        "Cơm Gà Bà Buội"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🏮",
+      "notes": "city-library-v1; city=hoian; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=everyday; place=hoian-com-ga-ba-buoi; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "hoian",
+      "cityName": "Hoi An",
+      "cityShortTitle": "Hoi An",
+      "cityVietnameseName": "Hội An",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "hoian-com-ga-ba-buoi",
+      "placeName": "Com Ga Ba Buoi",
+      "placeVietnameseName": "Cơm Gà Bà Buội",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "everyday",
       "spokenChunks": 4,
       "sourceIDs": [
         "vt-hoian",

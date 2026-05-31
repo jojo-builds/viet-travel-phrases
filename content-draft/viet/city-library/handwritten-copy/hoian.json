@@ -20,9 +20,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
-            "store-1"
+            "food-1",
+            "food-3",
+            "food-7"
           ]
         },
         {
@@ -550,9 +550,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
-            "store-1"
+            "food-1",
+            "food-3",
+            "food-7"
           ]
         },
         {
@@ -1379,6 +1379,51 @@
           "id": "good-to-know",
           "title": "Herbs And Sauce Matter",
           "body": "The herbs and sauce matter as much as the rice. They are part of the dish, not extras on the side."
+        }
+      ],
+      "sourceMode": "expanded-detail"
+    },
+    {
+      "pageID": "city-hoian-place-com-ga-ba-buoi",
+      "summary": "Save Cơm Gà Bà Buội when Hội An chicken rice should become a named old-town lunch: yellow rice, shredded chicken, herbs, papaya, soup, and sauce on Phan Châu Trinh.",
+      "context": "Save Cơm Gà Bà Buội when Hội An chicken rice should become a named old-town lunch: yellow rice, shredded chicken, herbs, papaya, soup, and sauce on Phan Châu Trinh.",
+      "tip": "Morning Glory teaches the wider menu. Bánh mì counters move fast. Bà Buội gives the chicken-rice page a named place to land.",
+      "rationale": "Bà Buội fills the chicken-rice gap because the current catalog had the dish without a named counter. It turns cơm gà from a general food word into a concrete Hội An lunch to remember.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Chicken Rice Gets A Name",
+          "body": "Cơm Gà Bà Buội is the Hội An chicken-rice save for yellow rice, shredded chicken, herbs, papaya, soup, and sauce at a simple old-town table."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phraseIDs": [
+            "food-1",
+            "food-3",
+            "food-7"
+          ]
+        },
+        {
+          "id": "place-brief",
+          "title": "Yellow Rice First",
+          "body": "The plate should read quickly: fragrant yellow rice, shredded chicken, herbs, papaya, and sauce. It is a clear lunch built around rice and chicken."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Sauce And Soup Carry It",
+          "body": "The lift comes from the sauce, herbs, and small soup beside the rice. Ask for less chili early if heat would distract from the plate."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Phan Châu Trinh Lunch",
+          "body": "Phan Châu Trinh keeps the stop close to tailor errands, old houses, and coffee breaks. Save it when chicken rice should be the planned meal."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Where It Sits In Hội An",
+          "body": "Morning Glory teaches the wider menu. Bánh mì counters move fast. Bà Buội gives the chicken-rice page a named place to land."
         }
       ],
       "sourceMode": "expanded-detail"

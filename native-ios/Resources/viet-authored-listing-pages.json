@@ -8,9 +8,9 @@
     "resourceMainPageCount": 145,
     "childPageCount": 13,
     "catalogPromotedPageCount": 770,
-    "cityLibraryPageCount": 824,
+    "cityLibraryPageCount": 825,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-31T03:33:47.213Z"
+    "generatedAt": "2026-05-31T03:47:49.003Z"
   },
   "pages": [
     {
@@ -271352,34 +271352,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "sight-2",
-              "vietnamese": "Bắt đầu ở đâu?",
-              "english": "Where do we start?",
-              "pronunciation": "bat dow uh dow",
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-sight-start",
-              "audioKey": "sight-2"
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
             },
             {
-              "id": "sight-5",
-              "vietnamese": "Điểm gặp ở đâu?",
-              "english": "Where is the meeting point?",
-              "pronunciation": "deeym gap uh dow",
+              "id": "food-3",
+              "vietnamese": "Không cay nhé",
+              "english": "Not spicy please",
+              "pronunciation": "khong kai nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-sight-meeting-point",
-              "audioKey": "sight-5"
+              "detailPageID": "viet-family-food-not-spicy",
+              "audioKey": "food-3"
             },
             {
-              "id": "store-1",
-              "vietnamese": "Cho tôi chai nước",
-              "english": "A bottle of water please",
-              "pronunciation": "cho toy chai nook",
+              "id": "food-7",
+              "vietnamese": "Gói mang về",
+              "english": "Pack it to go",
+              "pronunciation": "goy mang veh",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-service-water",
-              "audioKey": "store-1"
+              "detailPageID": "viet-family-food-pack-to-go",
+              "audioKey": "food-7"
             }
           ],
           "breakdown": [],
@@ -271443,21 +271443,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "sight-2"
+              "food-1"
             ],
             "supportPhraseIDs": [
-              "sight-5",
-              "store-1"
+              "food-3",
+              "food-7"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-an-bang",
-          "sight-2"
+          "food-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "sight-5",
-          "store-1"
+          "food-3",
+          "food-7"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-an-bang"
       }
@@ -273393,34 +273393,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "sight-2",
-              "vietnamese": "Bắt đầu ở đâu?",
-              "english": "Where do we start?",
-              "pronunciation": "bat dow uh dow",
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-sight-start",
-              "audioKey": "sight-2"
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
             },
             {
-              "id": "sight-5",
-              "vietnamese": "Điểm gặp ở đâu?",
-              "english": "Where is the meeting point?",
-              "pronunciation": "deeym gap uh dow",
+              "id": "food-3",
+              "vietnamese": "Không cay nhé",
+              "english": "Not spicy please",
+              "pronunciation": "khong kai nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-sight-meeting-point",
-              "audioKey": "sight-5"
+              "detailPageID": "viet-family-food-not-spicy",
+              "audioKey": "food-3"
             },
             {
-              "id": "store-1",
-              "vietnamese": "Cho tôi chai nước",
-              "english": "A bottle of water please",
-              "pronunciation": "cho toy chai nook",
+              "id": "food-7",
+              "vietnamese": "Gói mang về",
+              "english": "Pack it to go",
+              "pronunciation": "goy mang veh",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-service-water",
-              "audioKey": "store-1"
+              "detailPageID": "viet-family-food-pack-to-go",
+              "audioKey": "food-7"
             }
           ],
           "breakdown": [],
@@ -273484,21 +273484,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "sight-2"
+              "food-1"
             ],
             "supportPhraseIDs": [
-              "sight-5",
-              "store-1"
+              "food-3",
+              "food-7"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-bay-mau-coconut-forest",
-          "sight-2"
+          "food-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "sight-5",
-          "store-1"
+          "food-3",
+          "food-7"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-bay-mau-coconut-forest"
       }
@@ -276633,6 +276633,178 @@
           "store-1"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-com-ga"
+      }
+    },
+    {
+      "id": "viet-family-city-hoian-place-com-ga-ba-buoi",
+      "familyID": "city-hoian-place-com-ga-ba-buoi",
+      "phraseID": "city-hoian-place-com-ga-ba-buoi",
+      "tierRole": "city-v1",
+      "depth": "deep",
+      "title": "Cơm Gà Bà Buội",
+      "englishTitle": "Com Ga Ba Buoi",
+      "pronunciation": "com ga ba buoi",
+      "summary": "Save Cơm Gà Bà Buội when Hội An chicken rice should become a named old-town lunch: yellow rice, shredded chicken, herbs, papaya, soup, and sauce on Phan Châu Trinh.",
+      "heroImageName": "HeroCityHoianPlaceComGaBaBuoi",
+      "iconName": "fork.knife",
+      "tintName": "green",
+      "categoryIDs": [
+        "city-guides",
+        "hoian",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-everyday",
+        "restaurants"
+      ],
+      "audioKey": "audio-authored-com-ga-ba-buoi-2d4a58c908",
+      "cityMetadata": {
+        "cityID": "hoian",
+        "cityName": "Hoi An",
+        "subcategoryID": "food-coffee",
+        "difficulty": "beginner",
+        "kind": "place",
+        "pageKind": "restaurant",
+        "placeKind": "restaurant",
+        "contentRole": "everyday",
+        "derivedPlacePhrase": false,
+        "placeID": "hoian-com-ga-ba-buoi",
+        "placeName": "Com Ga Ba Buoi",
+        "sourceIDs": [
+          "vt-hoian",
+          "vt-hoian-official"
+        ],
+        "rationale": "Bà Buội fills the chicken-rice gap because the current catalog had the dish without a named counter. It turns cơm gà from a general food word into a concrete Hội An lunch to remember.",
+        "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
+        "editorialReviewStatus": "handwritten-reviewed",
+        "editorialSourceMode": "expanded-detail",
+        "editorialRuntimeOverrideKind": null,
+        "targetHeroImageName": "HeroCityHoianPlaceComGaBaBuoi"
+      },
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Chicken Rice Gets A Name",
+          "body": "Cơm Gà Bà Buội is the Hội An chicken-rice save for yellow rice, shredded chicken, herbs, papaya, soup, and sauce at a simple old-town table.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phrases": [
+            {
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
+            },
+            {
+              "id": "food-3",
+              "vietnamese": "Không cay nhé",
+              "english": "Not spicy please",
+              "pronunciation": "khong kai nhe",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-not-spicy",
+              "audioKey": "food-3"
+            },
+            {
+              "id": "food-7",
+              "vietnamese": "Gói mang về",
+              "english": "Pack it to go",
+              "pronunciation": "goy mang veh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-pack-to-go",
+              "audioKey": "food-7"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "place-brief",
+          "title": "Yellow Rice First",
+          "body": "The plate should read quickly: fragrant yellow rice, shredded chicken, herbs, papaya, and sauce. It is a clear lunch built around rice and chicken.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "use-it-with",
+          "title": "Sauce And Soup Carry It",
+          "body": "The lift comes from the sauce, herbs, and small soup beside the rice. Ask for less chili early if heat would distract from the plate.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "when-to-use",
+          "title": "Phan Châu Trinh Lunch",
+          "body": "Phan Châu Trinh keeps the stop close to tailor errands, old houses, and coffee breaks. Save it when chicken rice should be the planned meal.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Where It Sits In Hội An",
+          "body": "Morning Glory teaches the wider menu. Bánh mì counters move fast. Bà Buội gives the chicken-rice page a named place to land.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        }
+      ],
+      "examples": [
+        {
+          "id": "city-hoian-place-com-ga-ba-buoi",
+          "vietnamese": "Cơm Gà Bà Buội",
+          "english": "Com Ga Ba Buoi",
+          "pronunciation": "com ga ba buoi",
+          "symbolName": "text.bubble.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "audio-authored-com-ga-ba-buoi-2d4a58c908"
+        }
+      ],
+      "practiceMetadata": {
+        "integrationVersion": "listing-scenario-seed-v1",
+        "scenarioEligible": true,
+        "practiceKind": "restaurant_ordering_scenario",
+        "practiceCTALabel": "Practice ordering here",
+        "practiceSurfacePolicy": "recommended_when_relevant",
+        "scenarioSeedID": "scenario-seed-city-hoian-place-com-ga-ba-buoi",
+        "scenarioStepGroups": [
+          {
+            "stepID": "quick-say",
+            "title": "Useful Phrases",
+            "sourceSectionID": "quick-say",
+            "primaryPhraseIDs": [
+              "food-1"
+            ],
+            "supportPhraseIDs": [
+              "food-3",
+              "food-7"
+            ]
+          }
+        ],
+        "primaryPracticePhraseIDs": [
+          "city-hoian-place-com-ga-ba-buoi",
+          "food-1"
+        ],
+        "secondaryPracticePhraseIDs": [
+          "food-3",
+          "food-7"
+        ],
+        "practiceSourcePageID": "viet-family-city-hoian-place-com-ga-ba-buoi"
       }
     },
     {

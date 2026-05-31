@@ -20,20 +20,20 @@
   },
   "counts": {
     "cities": 5,
-    "entries": 518,
+    "entries": 519,
     "byCity": {
       "danang": 106,
       "hanoi": 106,
       "hcmc": 106,
-      "hoian": 100,
+      "hoian": 101,
       "hue": 100
     },
     "needsVoiceGate": 0,
-    "finalPass": 518,
-    "priorV2_2GateEvidence": 11,
+    "finalPass": 519,
+    "priorV2_2GateEvidence": 12,
     "legacyV2_2GateEvidence": 0,
-    "renderableRelatedPlaceCandidates": 518,
-    "renderableMentionedHereCandidates": 54,
+    "renderableRelatedPlaceCandidates": 519,
+    "renderableMentionedHereCandidates": 56,
     "verificationFlags": 1
   },
   "entries": [
@@ -2476,6 +2476,13 @@
     {
       "id": "viet-family-city-hoian-place-com-ga",
       "pageID": "city-hoian-place-com-ga",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-com-ga-ba-buoi",
+      "pageID": "city-hoian-place-com-ga-ba-buoi",
       "cityID": "hoian",
       "file": "hoian.json",
       "status": "FINAL_PASS"

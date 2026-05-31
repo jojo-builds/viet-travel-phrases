@@ -2364,6 +2364,116 @@ The additive path is now proven across seven stronger food pages, including the 
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
 
+## Continuation: Cơm Gà Bà Buội Additive Hội An Pilot
+
+Twenty-sixth pass date: 2026-05-31
+
+Commit before pass: `a32799a4e Add Tuyet Bun Cha 34 Hanoi food listing`
+
+This continuation moves beyond the MICHELIN-covered cities and fixes a specific Hội An food gap. The app already had a general `Cơm gà Hội An` dish page, but it did not give the traveler a named chicken-rice place to save. `Cơm Gà Bà Buội` becomes the first additive Hội An food pilot because the page can answer the user’s question directly: why this place, why Hội An, why save it before the trip?
+
+### Page Added
+
+- `city-hoian-place-com-ga-ba-buoi`: new first-class V2.2 Hội An restaurant page.
+
+Visible page direction:
+
+- The page frames Bà Buội as the named old-town chicken-rice lunch: yellow rice, shredded chicken, herbs, papaya, soup, and sauce on Phan Châu Trinh.
+- It links Mentioned Here to `Cơm gà Hội An`, so the named place and the dish guide reinforce each other.
+- It renders Morning Glory, Bánh mì Phượng, and the general Cơm gà dish page as Compare Nearby cards, so the page helps a traveler choose between a wider menu, a sandwich counter, and chicken rice.
+
+### Dish-Page Repair
+
+- `city-hoian-place-com-ga`: phrase cards changed from generic sight/water cards to food cards: one portion, not spicy, and pack to go.
+- The dish page now points to `Cơm Gà Bà Buội` as the named chicken-rice stop while keeping `Bánh mì Phượng` as a quick-meal contrast.
+
+### Add Decision
+
+Decision: add, and let it lead for Hội An chicken rice.
+
+This is intentionally not a MICHELIN add. Hội An remains outside the current MICHELIN Vietnam coverage used by the audit, so the production standard here is local significance, dish specificity, source restraint, and render proof. Visible copy avoids ranking, hours, prices, branch status, and operational claims.
+
+Source support:
+
+- Quang Nam Tourism source: `https://quangnamtourism.com.vn/ja/nhhacomgababuoi`
+
+### Runtime Shape
+
+- `docs/city-production/agent-inputs/hoian-nouns.md`: added `hoian-com-ga-ba-buoi`.
+- `content-draft/viet/city-library/app-detail-v2-2/hoian.json`: added the authored V2.2 source object and repaired the general chicken-rice dish page.
+- `content-draft/viet/city-library/app-detail-v2-2/_index.json`: current inventory is now 519 city noun/place pages.
+- `native-ios/scripts/import-city-noun-intake.js`, `native-ios/scripts/validate-viet-city-copy.js`, and `native-ios/scripts/build-viet-city-app-detail-v2-2.test.js`: city count expectations now allow HCMC 106, Hanoi 106, Da Nang 106, Hội An 101, Hue 100.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-com-ga-ba-buoi-additive/`
+
+Representative page captured:
+
+- `viet-family-city-hoian-place-com-ga-ba-buoi`
+  - `com-ga-ba-buoi-first-screen.jpg`: first viewport shows the wrapped title, pronunciation line, `Chicken Rice Gets A Name` intro, and Useful Phrases start.
+  - `com-ga-ba-buoi-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here plus Morning Glory, Bánh mì Phượng, and Cơm gà Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hoian-place-com-ga-ba-buoi`
+  - `--detail-page viet-family-city-hoian-place-com-ga-ba-buoi --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for the scoped build launch and the bottom-validation relaunch.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node native-ios/scripts/build-viet-city-app-detail-v2-2.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection: PASS, 519 entries by city: Da Nang 106, Hanoi 106, HCMC 106, Hội An 101, Hue 100.
+- city noun intake: PASS, 519 city place pages.
+- handwritten-copy import: PASS, 519 entries imported.
+- native resource generation: PASS, 1766 families, 1784 phrases.
+- authored listing generation: PASS, 825 city library pages.
+- SQLite fixture generation: PASS, integrity OK, 1777 pages.
+- strict V2.2 source validation: PASS, 519 entries, 519 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS after removing app-internal `anchor`/negation phrasing before final screenshots.
+- city-copy compatibility validation: PASS, 5 hubs, 519 city noun pages, 519 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 519 city places, 825 city phrase tags, 0 release-blocking missing audio rows, 9092 relations.
+- SQLite fixture test: PASS, 1 test.
+- deterministic V2.2 builder unit test: PASS after updating the count contract to 519.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Cơm Gà Bà Buội Add
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass proves the first non-MICHELIN Hội An additive pattern: when MICHELIN coverage is unavailable, a place can still earn a slot if it repairs a dish gap and makes a specific save more desirable. The next Hội An pass should compare named cao lầu candidates against the existing `Cao lầu ở Hội An` dish page before adding another restaurant.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
 ## Continuation: Tuyết Bún Chả 34 Additive Hanoi Pilot
 
 Pass date: 2026-05-31

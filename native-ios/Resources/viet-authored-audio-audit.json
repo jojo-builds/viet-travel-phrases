@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-31T03:33:47.213Z",
+    "generatedAt": "2026-05-31T03:47:49.003Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 824,
+    "cityLibraryPageCount": 825,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2266,
-    "missingAudioCount": 699
+    "requiredAudioCount": 2267,
+    "missingAudioCount": 700
   },
   "required": [
     {
@@ -16113,6 +16113,14 @@
       "resolved": true
     },
     {
+      "pageID": "viet-family-city-hoian-place-com-ga-ba-buoi",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-com-ga-ba-buoi-2d4a58c908",
+      "text": "Cơm Gà Bà Buội",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hoian-place-cooking-class",
       "sectionID": "hero",
       "kind": "hero",
@@ -22112,6 +22120,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-cocobox-1c558a54fc",
       "text": "Cocobox",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hoian-place-com-ga-ba-buoi",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-com-ga-ba-buoi-2d4a58c908",
+      "text": "Cơm Gà Bà Buội",
       "resolved": false
     },
     {

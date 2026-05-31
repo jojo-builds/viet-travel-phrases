@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-31T03:33:48.703Z",
+  "generatedAt": "2026-05-31T03:47:49.705Z",
   "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-listings-production-ready/content-draft/viet/breakdown-audit/pages",
   "summary": {
-    "pages": 1776,
+    "pages": 1777,
     "reviewed": 1407,
     "visualReviewed": 1407,
-    "missing": 369,
-    "generatedAt": "2026-05-31T03:33:48.703Z"
+    "missing": 370,
+    "generatedAt": "2026-05-31T03:47:49.705Z"
   },
   "pages": [
     {
@@ -112343,6 +112343,18 @@
       "pageID": "viet-family-city-hoian-place-com-ga",
       "phraseText": "Cơm gà Hội An",
       "englishTitle": "Hoi An chicken rice",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [],
+      "reviewedBreakdown": null
+    },
+    {
+      "pageID": "viet-family-city-hoian-place-com-ga-ba-buoi",
+      "phraseText": "Cơm Gà Bà Buội",
+      "englishTitle": "Com Ga Ba Buoi",
       "reviewStatus": "missing",
       "visualReview": {
         "status": "missing"

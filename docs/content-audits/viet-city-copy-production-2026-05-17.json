@@ -12208,6 +12208,38 @@
       }
     },
     {
+      "id": "city-hoian-place-com-ga-ba-buoi",
+      "cityID": "hoian",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "reviewer": "city-owner:hoian",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
+      "checklist": {
+        "voiceLengthPass": true,
+        "sectionCountPass": true,
+        "profileAudienceCuePass": true,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
+        "sourceNotesPresent": true,
+        "targetHeroPresent": true,
+        "durableReviewEvidencePresent": true,
+        "sectionBodiesDistinctEnough": true,
+        "runtimeOverrideExplicit": true,
+        "bannedMatches": [],
+        "sourceBannedMatches": []
+      },
+      "failures": [],
+      "evidence": {
+        "summaryExcerpt": "Save Cơm Gà Bà Buội when Hội An chicken rice should become a named old-town lunch: yellow rice, shredded chicken, herbs, papaya, soup, and sauce on Phan Châu Trinh.",
+        "aboutExcerpt": "Cơm Gà Bà Buội is the Hội An chicken-rice save for yellow rice, shredded chicken, herbs, papaya, soup, and sauce at a simple old-town table.",
+        "phrasebookExcerpt": "",
+        "belongingExcerpt": "The lift comes from the sauce, herbs, and small soup beside the rice. Ask for less chili early if heat would distract from the plate.",
+        "timingExcerpt": "Phan Châu Trinh keeps the stop close to tailor errands, old houses, and coffee breaks. Save it when chicken rice should be the planned meal.",
+        "goodToKnowExcerpt": "Morning Glory teaches the wider menu. Bánh mì counters move fast. Bà Buội gives the chicken-rice page a named place to land."
+      }
+    },
+    {
       "id": "city-hoian-place-cooking-class",
       "cityID": "hoian",
       "pageKind": "place",
