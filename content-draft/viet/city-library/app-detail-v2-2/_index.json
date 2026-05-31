@@ -20,20 +20,20 @@
   },
   "counts": {
     "cities": 5,
-    "entries": 517,
+    "entries": 518,
     "byCity": {
       "danang": 106,
-      "hanoi": 105,
+      "hanoi": 106,
       "hcmc": 106,
       "hoian": 100,
       "hue": 100
     },
     "needsVoiceGate": 0,
-    "finalPass": 517,
-    "priorV2_2GateEvidence": 10,
+    "finalPass": 518,
+    "priorV2_2GateEvidence": 11,
     "legacyV2_2GateEvidence": 0,
-    "renderableRelatedPlaceCandidates": 517,
-    "renderableMentionedHereCandidates": 53,
+    "renderableRelatedPlaceCandidates": 518,
+    "renderableMentionedHereCandidates": 54,
     "verificationFlags": 1
   },
   "entries": [
@@ -859,6 +859,13 @@
     {
       "id": "viet-family-city-hanoi-place-bun-cha-dac-kim",
       "pageID": "city-hanoi-place-bun-cha-dac-kim",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
+      "pageID": "city-hanoi-place-tuyet-bun-cha-34",
       "cityID": "hanoi",
       "file": "hanoi.json",
       "status": "FINAL_PASS"

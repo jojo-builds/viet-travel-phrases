@@ -8,9 +8,9 @@
     "resourceMainPageCount": 145,
     "childPageCount": 13,
     "catalogPromotedPageCount": 770,
-    "cityLibraryPageCount": 823,
+    "cityLibraryPageCount": 824,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-31T03:14:10.779Z"
+    "generatedAt": "2026-05-31T03:33:47.213Z"
   },
   "pages": [
     {
@@ -224916,6 +224916,179 @@
           "sight-3"
         ],
         "practiceSourcePageID": "viet-family-city-hanoi-place-turtle-tower"
+      }
+    },
+    {
+      "id": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
+      "familyID": "city-hanoi-place-tuyet-bun-cha-34",
+      "phraseID": "city-hanoi-place-tuyet-bun-cha-34",
+      "tierRole": "city-v1",
+      "depth": "deep",
+      "title": "Tuyết Bún Chả 34",
+      "englishTitle": "Tuyet Bun Cha 34",
+      "pronunciation": "tuyet bun cha 34",
+      "summary": "Save Tuyết Bún Chả 34 when bún chả should feel like a direct Hàng Than street-food stop: chargrilled-to-order pork, broth, rice noodles, herbs, and a spring roll for crunch.",
+      "heroImageName": "HeroCityHanoiPlaceTuyetBunCha34",
+      "iconName": "fork.knife",
+      "tintName": "green",
+      "categoryIDs": [
+        "city-guides",
+        "hanoi",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "audioKey": "audio-authored-tuyet-bun-cha-34-2d78219ef8",
+      "cityMetadata": {
+        "cityID": "hanoi",
+        "cityName": "Hanoi",
+        "subcategoryID": "food-coffee",
+        "difficulty": "beginner",
+        "kind": "place",
+        "pageKind": "restaurant",
+        "placeKind": "restaurant",
+        "contentRole": "fine-dining",
+        "derivedPlacePhrase": false,
+        "placeID": "hanoi-tuyet-bun-cha-34",
+        "placeName": "Tuyet Bun Cha 34",
+        "sourceIDs": [
+          "vt-hanoi",
+          "vt-hanoi-official",
+          "michelin-vietnam"
+        ],
+        "rationale": "Tuyết earns a fourth Hanoi bún chả slot by owning the numbered-stall version of the meal: grill smoke first, broth and noodles next, then an optional crunchy spring roll.",
+        "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
+        "editorialReviewStatus": "handwritten-reviewed",
+        "editorialSourceMode": "expanded-detail",
+        "editorialRuntimeOverrideKind": null,
+        "targetHeroImageName": "HeroCityHanoiPlaceTuyetBunCha34"
+      },
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Grill Smoke, Then Crunch",
+          "body": "Tuyết Bún Chả 34 is a 2025 MICHELIN Bib Gourmand Hàng Than street-food stall for bún chả chargrilled to order: pork, rice noodles, herbs, broth, and an extra spring roll if the table needs crunch.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phrases": [
+            {
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
+            },
+            {
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
+            },
+            {
+              "id": "food-4",
+              "vietnamese": "Cho thêm rau",
+              "english": "More herbs please",
+              "pronunciation": "cho them zow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-more-herbs",
+              "audioKey": "food-4"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "place-brief",
+          "title": "Grill Leads The First Bite",
+          "body": "Pork and broth set the first bite. Noodles, herbs, garlic, and chili come after the smoke is clear.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "use-it-with",
+          "title": "Crunch Changes The Bowl",
+          "body": "The MICHELIN note points to the extra spring roll for texture. It turns the meal from soft noodles and broth into a sharper street-food lunch.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "when-to-use",
+          "title": "One Numbered Stall",
+          "body": "The name carries the address memory. The stop stays simplest as bún chả first, spring roll if needed, then back into the Hàng Than lanes.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Where It Sits In Hanoi",
+          "body": "Hương Liên is the famous room. Bún Chả Ta is the Old Quarter Bib Gourmand table. Đắc Kim is sauce and mango. Tuyết is grill, broth, noodles, crunch.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        }
+      ],
+      "examples": [
+        {
+          "id": "city-hanoi-place-tuyet-bun-cha-34",
+          "vietnamese": "Tuyết Bún Chả 34",
+          "english": "Tuyet Bun Cha 34",
+          "pronunciation": "tuyet bun cha 34",
+          "symbolName": "text.bubble.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "audio-authored-tuyet-bun-cha-34-2d78219ef8"
+        }
+      ],
+      "practiceMetadata": {
+        "integrationVersion": "listing-scenario-seed-v1",
+        "scenarioEligible": true,
+        "practiceKind": "restaurant_ordering_scenario",
+        "practiceCTALabel": "Practice ordering here",
+        "practiceSurfacePolicy": "recommended_when_relevant",
+        "scenarioSeedID": "scenario-seed-city-hanoi-place-tuyet-bun-cha-34",
+        "scenarioStepGroups": [
+          {
+            "stepID": "quick-say",
+            "title": "Useful Phrases",
+            "sourceSectionID": "quick-say",
+            "primaryPhraseIDs": [
+              "food-menu"
+            ],
+            "supportPhraseIDs": [
+              "food-1",
+              "food-4"
+            ]
+          }
+        ],
+        "primaryPracticePhraseIDs": [
+          "city-hanoi-place-tuyet-bun-cha-34",
+          "food-menu"
+        ],
+        "secondaryPracticePhraseIDs": [
+          "food-1",
+          "food-4"
+        ],
+        "practiceSourcePageID": "viet-family-city-hanoi-place-tuyet-bun-cha-34"
       }
     },
     {

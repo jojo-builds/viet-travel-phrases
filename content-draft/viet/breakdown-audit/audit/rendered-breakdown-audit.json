@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-31T03:14:12.198Z",
+  "generatedAt": "2026-05-31T03:33:48.703Z",
   "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-listings-production-ready/content-draft/viet/breakdown-audit/pages",
   "summary": {
-    "pages": 1775,
+    "pages": 1776,
     "reviewed": 1407,
     "visualReviewed": 1407,
-    "missing": 368,
-    "generatedAt": "2026-05-31T03:14:12.198Z"
+    "missing": 369,
+    "generatedAt": "2026-05-31T03:33:48.703Z"
   },
   "pages": [
     {
@@ -99844,6 +99844,18 @@
       "pageID": "viet-family-city-hanoi-place-turtle-tower",
       "phraseText": "Tháp Rùa",
       "englishTitle": "Turtle Tower",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [],
+      "reviewedBreakdown": null
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
+      "phraseText": "Tuyết Bún Chả 34",
+      "englishTitle": "Tuyet Bun Cha 34",
       "reviewStatus": "missing",
       "visualReview": {
         "status": "missing"

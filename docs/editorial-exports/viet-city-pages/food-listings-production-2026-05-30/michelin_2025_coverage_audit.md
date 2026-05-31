@@ -36,6 +36,7 @@ The larger gap is not the top award tier. The gap is Bib Gourmand and MICHELIN S
 - Hanoi: `Phở Gà Nguyệt` — added as `city-hanoi-place-pho-ga-nguyet` after the second additive Hanoi food pass. The visible page uses 2025 MICHELIN Bib Gourmand language to support a named chicken-pho counterpoint to the existing beef-pho pages, with clear broth, tender chicken, rice noodles, herbs, lime, and counter-meal cues.
 - Hanoi: `Phở 10 Lý Quốc Sư` — added as `city-hanoi-place-pho-10-ly-quoc-su` after the third additive Hanoi food pass. The visible page uses 2025 MICHELIN Bib Gourmand language to support a recognizable Hoan Kiem beef-pho save, with clear broth, rice noodles, sliced beef, herbs, lime, and quick counter-meal cues.
 - Hanoi: `Bún Chả Đắc Kim` — added as `city-hanoi-place-bun-cha-dac-kim` after the fourth additive Hanoi food pass. The visible page uses MICHELIN Guide support to make a more food-specific Hàng Mành bún chả save, with sweet fish-sauce dip, pickled green mango, smoky pork, plump patties, noodles, and herbs.
+- Hanoi: `Tuyết Bún Chả 34` — added as `city-hanoi-place-tuyet-bun-cha-34` after the sixth additive Hanoi food pass. The visible page uses 2025 MICHELIN Bib Gourmand language to support a distinct Hàng Than numbered-stall bún chả save, with chargrilled-to-order pork, broth, rice noodles, herbs, and an optional spring roll for crunch.
 - Hanoi: `Bánh Cuốn Bà Xuân` — added as `city-hanoi-place-banh-cuon-ba-xuan` after the fifth additive Hanoi food pass. The visible page uses 2025 MICHELIN Selected language to support a fuller bánh cuốn save, with soft rice sheets, pork-and-black-fungus filling, poached egg option, sausage or meatloaf, herbs, chili, lime, garlic, and dipping sauce.
 - Da Nang: `Bánh Canh Yến` — added as `city-danang-place-banh-canh-yen` after the second additive Da Nang food pass. The visible page uses 2025 MICHELIN Selected language to support a thick-noodle soup save, with hot broth, slippery noodles, toppings, herbs, chili, and street-food texture cues.
 - Da Nang: `Mỳ Quảng Sứa Hồng Vân` — added as `city-danang-place-my-quang-sua-hong-van` after the third additive Da Nang food pass. The visible page uses 2025 MICHELIN Bib Gourmand language to support a more specific mì Quảng save, with orange-red shrimp broth, yellow noodles, herbs, rice cracker, toppings, and optional jellyfish texture.
@@ -43,7 +44,7 @@ The larger gap is not the top award tier. The gap is Bib Gourmand and MICHELIN S
 - Da Nang: `Bếp Hên` — added as `city-danang-place-bep-hen` after the fifth additive Da Nang food pass. The visible page uses 2025 MICHELIN Selected language to support a warmer home-style dinner save, with handwritten-menu energy, garlicky prawns, beef, greens, shared plates, and smaller-room contrast.
 - Da Nang: `MỘC Quán Seafood` — added as `city-danang-place-moc-quan-seafood` after the sixth additive Da Nang food pass. The visible page uses 2025 MICHELIN Selected language to support a guided seafood-table save, with tanks, shellfish help, lobster in garlic butter, and clearer comparison against Bé Mặn and Năm Đảnh.
 
-The city inventory contract is now 517 noun/place pages total: HCMC carries 106 rows, Hanoi carries 105 rows, Da Nang carries 106 rows, and Hội An and Hue remain at 100 rows each.
+The city inventory contract is now 518 noun/place pages total: HCMC carries 106 rows, Hanoi carries 106 rows, Da Nang carries 106 rows, and Hội An and Hue remain at 100 rows each.
 
 ## Current Pages That Should Stay But Not Always Lead
 
@@ -59,7 +60,7 @@ Some current food pages are useful even without MICHELIN recognition because the
 
 These are the strongest missing or under-covered MICHELIN-backed candidates to add next if the catalog expands.
 
-- Hanoi: `Tuyết Bún Chả 34` — remaining 2025 MICHELIN-backed bún chả candidate. Add only if the page can say something meaningfully different from Bún Chả Ta, Hương Liên, and Đắc Kim.
+- Hanoi: no remaining MICHELIN-backed bún chả add should be automatic. `Tuyết Bún Chả 34` was added only after the current MICHELIN venue page proved a different Hàng Than numbered-stall role: chargrilled-to-order bún chả plus optional spring-roll crunch.
 - Da Nang: no remaining MICHELIN-backed add candidate should be automatic. Add the next Da Nang restaurant only if it adds a new table role, dish emotion, or route-planning contrast beyond the current guide-backed set.
 
 ## Add / Drop Posture
@@ -75,11 +76,11 @@ Do add MICHELIN-backed places when they improve one of these jobs:
 
 Do not add every MICHELIN Selected restaurant as inventory. The app should feel curated, not like a copied guide list.
 
-The expansion packets widened the contract explicitly instead of adding loose extra JSON rows. Use `saveworthy_restaurant_add_path_2026-05-31.md` and `production_readiness_review.md` for the source, runtime, validation, and render gates that proved the Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, Phở Lệ, Phở Minh, Phở Hương Bình, Bánh Cuốn Bà Hoành, Bánh Cuốn Bà Xuân, Bún Chả Đắc Kim, Bún Riêu Cua 39, Phở Gà Nguyệt, Phở 10 Lý Quốc Sư, Bánh Canh Yến, Mỳ Quảng Sứa Hồng Vân, Bún Chả Cá 109, Bếp Hên, and MỘC Quán Seafood additive pilots.
+The expansion packets widened the contract explicitly instead of adding loose extra JSON rows. Use `saveworthy_restaurant_add_path_2026-05-31.md` and `production_readiness_review.md` for the source, runtime, validation, and render gates that proved the Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, Phở Lệ, Phở Minh, Phở Hương Bình, Bánh Cuốn Bà Hoành, Bánh Cuốn Bà Xuân, Bún Chả Đắc Kim, Tuyết Bún Chả 34, Bún Riêu Cua 39, Phở Gà Nguyệt, Phở 10 Lý Quốc Sư, Bánh Canh Yến, Mỳ Quảng Sứa Hồng Vân, Bún Chả Cá 109, Bếp Hên, and MỘC Quán Seafood additive pilots.
 
 ## Current Patch Note
 
-`city-hcmc-place-nephele` should remain a support save, but the visible copy should say the accurate 2025 MICHELIN Selected signal. It should not keep the vague `guide-listed` wording now that the official 2025 PDF gives the stronger category.
+`city-hcmc-place-nephele` remains a support save, and its visible copy now says the accurate 2025 MICHELIN Selected signal instead of vague `guide-listed` wording.
 
 `city-hcmc-place-man-moi` is no longer only a candidate. It is now part of the V2.2 source set and generated native runtime as the first additive Saigon restaurant pilot.
 
@@ -102,6 +103,8 @@ The expansion packets widened the contract explicitly instead of adding loose ex
 `city-hanoi-place-pho-10-ly-quoc-su` is no longer a candidate. It is now part of the V2.2 source set and generated native runtime as the third additive Hanoi food pilot.
 
 `city-hanoi-place-bun-cha-dac-kim` is no longer a candidate. It is now part of the V2.2 source set and generated native runtime as the fourth additive Hanoi food pilot.
+
+`city-hanoi-place-tuyet-bun-cha-34` is no longer a candidate. It is now part of the V2.2 source set and generated native runtime as the sixth additive Hanoi food pilot.
 
 `city-danang-place-banh-canh-yen` is no longer a candidate. It is now part of the V2.2 source set and generated native runtime as the second additive Da Nang food pilot.
 

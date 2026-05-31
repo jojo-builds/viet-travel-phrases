@@ -2364,6 +2364,112 @@ The additive path is now proven across seven stronger food pages, including the 
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
 
+## Continuation: Tuyết Bún Chả 34 Additive Hanoi Pilot
+
+Pass date: 2026-05-31
+
+Commit before pass: `d27e95065 Add Pho Huong Binh HCMC food listing`
+
+This continuation adds `Tuyết Bún Chả 34` only after the remaining bún chả candidate cleared the difference bar. The page does not flatten Hanoi into another generic grilled-pork listing. It gives the bún chả set a numbered Hàng Than street-food stall: pork chargrilled to order, noodles dipped in broth, herbs, and an optional spring roll for crunch.
+
+### Page Added
+
+- `city-hanoi-place-tuyet-bun-cha-34`: new first-class V2.2 Hanoi restaurant page.
+
+Visible page direction:
+
+- The first screen frames Tuyết as the grill-smoke-and-crunch bún chả save, not another famous room or sauce-led table.
+- Mentioned Here links to `Bún chả ở Hà Nội`, so the named stall sits behind the broader dish guide.
+- Compare Nearby renders `Bún chả Hương Liên`, `Bún Chả Ta`, and `Bún Chả Đắc Kim`, making the four bún chả roles clearer instead of flatter.
+- The dish-level bún chả page plus the current Hương Liên, Bún Chả Ta, and Đắc Kim pages now route toward Tuyết where that comparison helps.
+
+### Add Decision
+
+Decision: add, with a narrow role.
+
+Hương Liên remains the famous MICHELIN Selected room. Bún Chả Ta remains the seated Old Quarter Bib Gourmand table. Đắc Kim remains the Hàng Mành sauce, mango, and pork-patty lunch. Tuyết adds a different memory: a Hàng Than numbered street-food stall where chargrilled-to-order pork and spring-roll crunch carry the save.
+
+Source support:
+
+- Official MICHELIN Guide Vietnam 2025 PDF lists `Tuyết Bún Chả 34` in the Hanoi Bib Gourmand section as Street Food.
+- Current MICHELIN venue-page evidence supports the stable visible details used in copy: 34 Hang Than Street, street-food stall, bún chả chargrilled to order, rice noodles, fresh herbs, pork, broth, and optional extra spring roll for crunch.
+
+The page avoids hours, booking, closure, price, and fragile operating claims.
+
+### Runtime Shape
+
+- `docs/city-production/agent-inputs/hanoi-nouns.md`: added row `106`.
+- `content-draft/viet/city-library/app-detail-v2-2/hanoi.json`: added the authored V2.2 source object and comparison cards from the bún chả dish page plus Hương Liên, Bún Chả Ta, and Đắc Kim.
+- `content-draft/viet/city-library/app-detail-v2-2/_index.json`: current inventory is now 518 city noun/place pages.
+- `native-ios/scripts/import-city-noun-intake.js` and `native-ios/scripts/validate-viet-city-copy.js`: city count expectations now allow HCMC 106, Hanoi 106, Da Nang 106, Hội An 100, Hue 100.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-tuyet-bun-cha-34-additive/`
+
+Representative page captured:
+
+- `viet-family-city-hanoi-place-tuyet-bun-cha-34`
+  - `tuyet-bun-cha-34-first-screen.jpg`: first viewport shows the wrapped title, pronunciation line, `Grill Smoke, Then Crunch` intro, and playable Useful Phrases.
+  - `tuyet-bun-cha-34-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here plus Hương Liên, Bún Chả Ta, and Đắc Kim Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hanoi-place-tuyet-bun-cha-34`
+  - `--detail-page viet-family-city-hanoi-place-tuyet-bun-cha-34 --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for the scoped build launch and the bottom-validation relaunch.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 518 entries imported.
+- native resource generation: PASS, 1765 families, 1783 phrases, 1776 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 518 entries, 518 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS after replacing one `best` sentence before projection.
+- city-copy compatibility validation: PASS, 5 hubs, 518 city noun pages, 518 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 518 city places, 824 city phrase tags, 0 release-blocking missing audio rows, 9083 relations.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Tuyết Bún Chả 34 Add
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass resolves the remaining high-priority Hanoi bún chả add candidate. Future bún chả additions should be exceptional: a new candidate needs a different food job than Hương Liên, Bún Chả Ta, Đắc Kim, and Tuyết. The next work should shift back toward rendered proof and support/demotion checks for existing restaurant, cafe, drink, market, and non-MICHELIN food pages.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source-fit, food-desire, voice, graph/runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
 ## Continuation: Phở Hương Bình Additive HCMC Pilot
 
 Pass date: 2026-05-31
@@ -2463,7 +2569,7 @@ Results:
 
 Status remains below `GLOBAL_PRODUCTION_READY`.
 
-This pass resolves the remaining Saigon phở add candidate by giving it a narrow chicken-or-beef family-shop role. Remaining MICHELIN-backed adds should now focus outside Saigon phở unless a new candidate proves a genuinely different food job. `Tuyết Bún Chả 34` is still not automatic; it must prove a role beyond Hương Liên, Bún Chả Ta, and Đắc Kim.
+This pass resolves the remaining Saigon phở add candidate by giving it a narrow chicken-or-beef family-shop role. Remaining MICHELIN-backed adds should now focus outside Saigon phở unless a new candidate proves a genuinely different food job. `Tuyết Bún Chả 34` was later resolved by the additive Hanoi pilot once its Hàng Than numbered-stall role cleared the bar.
 
 ### Agent Lifecycle Note
 
@@ -2563,7 +2669,7 @@ Results:
 
 Status remains below `GLOBAL_PRODUCTION_READY`.
 
-This pass resolves the Bà Xuân candidate by making it a distinct fuller bánh cuốn save. Remaining MICHELIN-backed candidates should be harder to add now: `Tuyết Bún Chả 34` needs a meaningfully different role from Hương Liên, Bún Chả Ta, and Đắc Kim. `Phở Hương Bình` was later resolved by the additive HCMC pilot once its chicken-or-beef family-shop role cleared the bar.
+This pass resolves the Bà Xuân candidate by making it a distinct fuller bánh cuốn save. Remaining MICHELIN-backed candidates should be harder to add now. `Tuyết Bún Chả 34` was later resolved by the additive Hanoi pilot once its Hàng Than numbered-stall role cleared the bar, and `Phở Hương Bình` was later resolved by the additive HCMC pilot once its chicken-or-beef family-shop role cleared the bar.
 
 ### Agent Lifecycle Note
 

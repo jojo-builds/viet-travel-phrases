@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1782,
+    "phraseCount": 1783,
     "basePhraseCount": 935,
-    "cityPhraseCount": 823,
+    "cityPhraseCount": 824,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1764,
+    "familyCount": 1765,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -14495,6 +14495,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-hanoi-place-turtle-tower"
+      ]
+    },
+    {
+      "id": "city-hanoi-place-tuyet-bun-cha-34",
+      "pageID": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
+      "scenarioID": "city-guides",
+      "familyTitle": "Tuyet Bun Cha 34 pronunciation",
+      "summary": "Save Tuyết Bún Chả 34 when bún chả should feel like a direct Hàng Than street-food stop: chargrilled-to-order pork, broth, rice noodles, herbs, and a spring roll for crunch.",
+      "primaryPhraseID": "city-hanoi-place-tuyet-bun-cha-34",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-hanoi-place-tuyet-bun-cha-34"
       ]
     },
     {
@@ -68822,6 +68834,50 @@
       "sourceIDs": [
         "vt-hanoi",
         "vt-hanoi-official"
+      ]
+    },
+    {
+      "id": "city-hanoi-place-tuyet-bun-cha-34",
+      "familyID": "city-hanoi-place-tuyet-bun-cha-34",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "Tuyet Bun Cha 34",
+      "targetText": "Tuyết Bún Chả 34",
+      "canonicalTargetText": "Tuyết Bún Chả 34",
+      "pronunciation": "tuyet bun cha 34",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Save Tuyết Bún Chả 34 when bún chả should feel like a direct Hàng Than street-food stop: chargrilled-to-order pork, broth, rice noodles, herbs, and a spring roll for crunch.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Hanoi",
+        "Hà Nội",
+        "Tuyet Bun Cha 34",
+        "Tuyết Bún Chả 34"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🌿",
+      "notes": "city-library-v1; city=hanoi; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=fine-dining; place=hanoi-tuyet-bun-cha-34; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "hanoi",
+      "cityName": "Hanoi",
+      "cityShortTitle": "Hanoi",
+      "cityVietnameseName": "Hà Nội",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "hanoi-tuyet-bun-cha-34",
+      "placeName": "Tuyet Bun Cha 34",
+      "placeVietnameseName": "Tuyết Bún Chả 34",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "spokenChunks": 4,
+      "sourceIDs": [
+        "vt-hanoi",
+        "vt-hanoi-official",
+        "michelin-vietnam"
       ]
     },
     {

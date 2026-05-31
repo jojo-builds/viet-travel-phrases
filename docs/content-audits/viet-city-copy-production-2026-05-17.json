@@ -6944,6 +6944,38 @@
       }
     },
     {
+      "id": "city-hanoi-place-tuyet-bun-cha-34",
+      "cityID": "hanoi",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "reviewer": "city-owner:hanoi",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
+      "checklist": {
+        "voiceLengthPass": true,
+        "sectionCountPass": true,
+        "profileAudienceCuePass": true,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
+        "sourceNotesPresent": true,
+        "targetHeroPresent": true,
+        "durableReviewEvidencePresent": true,
+        "sectionBodiesDistinctEnough": true,
+        "runtimeOverrideExplicit": true,
+        "bannedMatches": [],
+        "sourceBannedMatches": []
+      },
+      "failures": [],
+      "evidence": {
+        "summaryExcerpt": "Save Tuyết Bún Chả 34 when bún chả should feel like a direct Hàng Than street-food stop: chargrilled-to-order pork, broth, rice noodles, herbs, and a spring roll for crunch.",
+        "aboutExcerpt": "Tuyết Bún Chả 34 is a 2025 MICHELIN Bib Gourmand Hàng Than street-food stall for bún chả chargrilled to order: pork, rice noodles, herbs, broth, and an extra spring roll if the table needs crunch.",
+        "phrasebookExcerpt": "",
+        "belongingExcerpt": "The MICHELIN note points to the extra spring roll for texture. It turns the meal from soft noodles and broth into a sharper street-food lunch.",
+        "timingExcerpt": "The name carries the address memory. The stop stays simplest as bún chả first, spring roll if needed, then back into the Hàng Than lanes.",
+        "goodToKnowExcerpt": "Hương Liên is the famous room. Bún Chả Ta is the Old Quarter Bib Gourmand table. Đắc Kim is sauce and mango. Tuyết is grill, broth, noodles, crunch."
+      }
+    },
+    {
       "id": "city-hanoi-place-udam",
       "cityID": "hanoi",
       "pageKind": "restaurant",

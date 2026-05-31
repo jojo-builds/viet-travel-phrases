@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-31T03:14:10.779Z",
+    "generatedAt": "2026-05-31T03:33:47.213Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 823,
+    "cityLibraryPageCount": 824,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2265,
-    "missingAudioCount": 698
+    "requiredAudioCount": 2266,
+    "missingAudioCount": 699
   },
   "required": [
     {
@@ -13689,6 +13689,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-tuyet-bun-cha-34-2d78219ef8",
+      "text": "Tuyết Bún Chả 34",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hanoi-place-udam",
       "sectionID": "hero",
       "kind": "hero",
@@ -20168,6 +20176,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-thap-rua-4d7d98dc57",
       "text": "Tháp Rùa",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-tuyet-bun-cha-34-2d78219ef8",
+      "text": "Tuyết Bún Chả 34",
       "resolved": false
     },
     {

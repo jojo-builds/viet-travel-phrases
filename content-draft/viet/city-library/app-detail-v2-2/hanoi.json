@@ -1064,6 +1064,14 @@
           "displaySubtitle": "A MICHELIN Guide Hàng Mành table when the sauce, mango, and pork should lead lunch.",
           "reason": "Dac Kim turns the dish page into a more food-specific Old Quarter lunch save.",
           "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
+          "label": "Tuyết Bún Chả 34",
+          "relationship": "dish-to-restaurant follow-through",
+          "displaySubtitle": "A Bib Gourmand Hàng Than stall when chargrilled-to-order pork and spring-roll crunch should lead.",
+          "reason": "Tuyet turns the dish page into a numbered-stall bún chả save.",
+          "status": "render"
         }
       ],
       "verificationFlags": [],
@@ -1193,6 +1201,14 @@
           "relationship": "same-dish restaurant comparison",
           "displaySubtitle": "A Hàng Mành bún chả stop where pickled green mango sharpens the sauce.",
           "reason": "Dac Kim gives Huong Lien a sharper sauce-and-pork comparison inside the same dish family.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
+          "label": "Tuyết Bún Chả 34",
+          "relationship": "same-dish restaurant comparison",
+          "displaySubtitle": "A Bib Gourmand Hàng Than street-food stall when the meal should feel more direct and grill-led.",
+          "reason": "Tuyet gives Huong Lien a more street-food, numbered-stall bún chả comparison.",
           "status": "render"
         }
       ],
@@ -1325,6 +1341,14 @@
           "relationship": "same-dish restaurant comparison",
           "displaySubtitle": "A Hàng Mành lunch when smoky pork, patties, and mango-lifted sauce should lead.",
           "reason": "Dac Kim gives Bun Cha Ta a more sauce-specific Old Quarter bún chả comparison.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
+          "label": "Tuyết Bún Chả 34",
+          "relationship": "same-dish restaurant comparison",
+          "displaySubtitle": "A Hàng Than Bib Gourmand stall when grill smoke and spring-roll crunch matter more than a slower room.",
+          "reason": "Tuyet gives Bun Cha Ta a more direct street-food comparison inside Bib Gourmand bún chả.",
           "status": "render"
         }
       ],
@@ -1466,6 +1490,14 @@
           "displaySubtitle": "An Old Quarter walk when lunch should sit inside a loose route.",
           "reason": "Dac Kim is useful for Old Quarter route-building without making fragile address claims.",
           "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
+          "label": "Tuyết Bún Chả 34",
+          "relationship": "same-dish restaurant comparison",
+          "displaySubtitle": "A Bib Gourmand Hàng Than stall when chargrill and spring-roll crunch should lead instead of mango-lifted sauce.",
+          "reason": "Tuyet gives Dac Kim a grill-and-crunch comparison inside the same dish family.",
+          "status": "render"
         }
       ],
       "verificationFlags": [],
@@ -1505,6 +1537,150 @@
         "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
         "notes": [
           "Approved as a hand-authored additive pilot; compatibility section IDs are projection-only."
+        ],
+        "finalPassDate": "2026-05-31"
+      }
+    },
+    {
+      "contentContract": "speaklocal.place.app-detail.v2.2",
+      "id": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
+      "pageID": "city-hanoi-place-tuyet-bun-cha-34",
+      "sourcePageID": "city-hanoi-place-tuyet-bun-cha-34",
+      "displayName": "Tuyết Bún Chả 34",
+      "englishName": "Tuyet Bun Cha 34",
+      "city": "Hà Nội",
+      "category": "Restaurant",
+      "pronunciation": "tuyet bun cha ba muoi bon",
+      "travelerMoment": "Save Tuyết Bún Chả 34 when bún chả should feel like a direct Hàng Than street-food stop: chargrilled-to-order pork, broth, rice noodles, herbs, and a spring roll for crunch.",
+      "storySpine": "Tuyết earns a fourth Hanoi bún chả slot by owning the numbered-stall version of the meal: grill smoke first, broth and noodles next, then an optional crunchy spring roll.",
+      "intro": {
+        "heading": "Grill Smoke, Then Crunch",
+        "body": "Tuyết Bún Chả 34 is a 2025 MICHELIN Bib Gourmand Hàng Than street-food stall for bún chả chargrilled to order: pork, rice noodles, herbs, broth, and an extra spring roll if the table needs crunch."
+      },
+      "usefulPhraseCards": [
+        {
+          "vi": "Cho tôi xem thực đơn được không?",
+          "en": "Can I see the menu?",
+          "intent": "food-menu",
+          "phraseId": "food-menu",
+          "audioId": "food-menu",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho tôi một phần",
+          "en": "One portion please",
+          "intent": "food-one-portion",
+          "phraseId": "food-1",
+          "audioId": "food-1",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho thêm rau",
+          "en": "Extra herbs please",
+          "intent": "food-extra-herbs",
+          "phraseId": "food-4",
+          "audioId": "food-4",
+          "status": "mapped"
+        }
+      ],
+      "sections": [
+        {
+          "id": "let-the-grill-lead",
+          "heading": "Grill Leads The First Bite",
+          "body": "Pork and broth set the first bite. Noodles, herbs, garlic, and chili come after the smoke is clear."
+        },
+        {
+          "id": "add-crunch-deliberately",
+          "heading": "Crunch Changes The Bowl",
+          "body": "The MICHELIN note points to the extra spring roll for texture. It turns the meal from soft noodles and broth into a sharper street-food lunch."
+        },
+        {
+          "id": "one-numbered-stall",
+          "heading": "One Numbered Stall",
+          "body": "The name carries the address memory. The stop stays simplest as bún chả first, spring roll if needed, then back into the Hàng Than lanes."
+        },
+        {
+          "id": "where-it-sits",
+          "heading": "Where It Sits In Hanoi",
+          "body": "Hương Liên is the famous room. Bún Chả Ta is the Old Quarter Bib Gourmand table. Đắc Kim is sauce and mango. Tuyết is grill, broth, noodles, crunch."
+        }
+      ],
+      "mentionedHereCandidates": [
+        {
+          "catalogId": "viet-family-city-hanoi-place-bun-cha",
+          "sourceText": "bún chả",
+          "displaySubtitle": "The smoky Hanoi dish behind the Tuyết street-food stall.",
+          "reason": "The page centers bún chả and should connect to the dish-level guide.",
+          "status": "render",
+          "label": "Bún chả ở Hà Nội",
+          "type": "dish"
+        }
+      ],
+      "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+          "label": "Bún chả Hương Liên",
+          "relationship": "same-dish restaurant comparison",
+          "displaySubtitle": "A 2025 MICHELIN Selected bún chả room when fame and quick lunch pace matter more.",
+          "reason": "Huong Lien gives Tuyet the famous-room comparison inside Hanoi bún chả.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-bun-cha-ta",
+          "label": "Bún Chả Ta",
+          "relationship": "same-dish restaurant comparison",
+          "displaySubtitle": "A Bib Gourmand Old Quarter table when the dipping bowl should feel slower and more seated.",
+          "reason": "Bun Cha Ta gives Tuyet a seated Old Quarter Bib Gourmand comparison.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-bun-cha-dac-kim",
+          "label": "Bún Chả Đắc Kim",
+          "relationship": "same-dish restaurant comparison",
+          "displaySubtitle": "A Hàng Mành stop when sweet fish sauce, mango, and pork patties should lead.",
+          "reason": "Dac Kim gives Tuyet the sauce-and-mango comparison inside the same dish family.",
+          "status": "render"
+        }
+      ],
+      "verificationFlags": [],
+      "qa": {
+        "replaceabilityTest": "pass",
+        "phraseCardTest": "pass",
+        "mentionedHereTest": "pass",
+        "catalogMentionScan": "pass",
+        "duplicateBodyTest": "pass",
+        "antiCynicismTest": "pass",
+        "notes": [
+          "Additive Hanoi 106-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
+          "Official 2025 MICHELIN PDF support checked on 2026-05-31: Tuyết Bún Chả 34 appears in the Hanoi Bib Gourmand section as Street Food.",
+          "Current MICHELIN venue-page evidence checked on 2026-05-31 through the reader cache: Hàng Than address, Bib Gourmand, street food, bún chả chargrilled to order, noodles in broth, and optional extra spring roll for crunch.",
+          "Visible copy avoids hours, prices, booking, closure, and fragile operational claims."
+        ]
+      },
+      "score": {
+        "value": 30,
+        "max": 30,
+        "reason": "Additive production pilot: Tuyet Bun Cha 34 has bounded 2025 MICHELIN Bib Gourmand recognition, a distinct numbered-stall bún chả role, mapped phrase cards, and useful same-dish comparisons."
+      },
+      "sourceNotes": [
+        "Added as the sixth additive Hanoi restaurant pilot after the 500-page hard reset; script assumptions now allow Hanoi 106.",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Tuyết Bún Chả 34 in the Hanoi Bib Gourmand section as Street Food.",
+        "Current MICHELIN venue page supports stable visible details: 34 Hang Than Street, street-food stall, bún chả chargrilled to order, rice noodles, fresh herbs, pork, broth, and optional extra spring roll for crunch.",
+        "No hours, prices, booking, closure, or fragile operational claims are bundled in visible copy."
+      ],
+      "status": "FINAL_PASS",
+      "review": {
+        "status": "FINAL_PASS",
+        "sourceReviewStatus": "handwritten-reviewed",
+        "voiceGateStatus": "passed_city_voice_gate",
+        "v2_2GateStatus": "additive_food_listing_gate_passed",
+        "v2_2GateSources": [
+          "docs/design/city-pages/CURRENT_CITY_PAGE_STANDARD.md",
+          "docs/design/city-pages/V2_2_PRODUCTION_REVIEW_GATE.md"
+        ],
+        "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
+        "notes": [
+          "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only."
         ],
         "finalPassDate": "2026-05-31"
       }
