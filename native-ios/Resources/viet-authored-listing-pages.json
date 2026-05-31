@@ -10,7 +10,7 @@
     "catalogPromotedPageCount": 770,
     "cityLibraryPageCount": 826,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-31T18:09:56.813Z"
+    "generatedAt": "2026-05-31T18:14:07.993Z"
   },
   "pages": [
     {
@@ -185213,34 +185213,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "food-need-table",
+              "vietnamese": "Cho tôi bàn cho hai người nhé",
+              "english": "A table for two, please",
+              "pronunciation": "cho toy ban cho hai ngwee nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-food-need-table",
+              "audioKey": "food-need-table"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "coffee-7",
+              "vietnamese": "Tính tiền giúp tôi",
+              "english": "Please let me pay",
+              "pronunciation": "ting tyen zoop toy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-food-pay-now",
+              "audioKey": "coffee-7"
             }
           ],
           "breakdown": [],
@@ -185304,21 +185304,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "food-need-table"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "coffee-7"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-co-chu-nho",
-          "food-menu"
+          "food-need-table"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "coffee-7"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-co-chu-nho"
       }
@@ -243659,34 +243659,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "food-need-table",
+              "vietnamese": "Cho tôi bàn cho hai người nhé",
+              "english": "A table for two, please",
+              "pronunciation": "cho toy ban cho hai ngwee nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-food-need-table",
+              "audioKey": "food-need-table"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-sauce-on-the-side-please",
+              "vietnamese": "Xin vui lòng cho nước sốt vào bên cạnh",
+              "english": "Sauce on the side, please",
+              "pronunciation": "Xin vui long cho nuoc sot vao ben canh",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-sauce-on-the-side-please",
+              "audioKey": "v900-food-drin-sauce-on-the-side-please"
             }
           ],
           "breakdown": [],
@@ -243718,8 +243718,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "The Pancake is the draw",
-          "body": "Remember the named Bib Gourmand pancake table: hot edges, greens, sauce, and the practical pause of building each bite.",
+          "title": "The Pancake Is The Draw",
+          "body": "Remember the named Bib Gourmand pancake table: hot edges, greens, sauce, and the slow practical rhythm of building each bite.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -243750,21 +243750,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "food-need-table"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-sauce-on-the-side-please"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-banh-xeo-46a",
-          "food-menu"
+          "food-need-table"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "v900-food-drin-sauce-on-the-side-please"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-banh-xeo-46a"
       }

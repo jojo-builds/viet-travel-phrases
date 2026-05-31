@@ -14562,9 +14562,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "food-menu",
-              "food-1",
-              "food-3"
+              "food-need-table",
+              "v900-food-drin-what-do-you-recommend",
+              "coffee-7"
             ]
           },
           {
@@ -39199,7 +39199,7 @@
       "englishText": "Banh Xeo 46A",
       "pronunciation": "banh xeo 46a",
       "context": "Choose Bánh Xèo 46A when Saigon bánh xèo should become a 2025 MICHELIN Bib Gourmand table: crisp pancake, greens, herbs, sauce, and enough room to wrap.",
-      "tip": "Remember the named Bib Gourmand pancake table: hot edges, greens, sauce, and the practical pause of building each bite.",
+      "tip": "Remember the named Bib Gourmand pancake table: hot edges, greens, sauce, and the slow practical rhythm of building each bite.",
       "rationale": "46A earns its place because it makes the southern pancake ritual physical: sizzle, fold, herbs, sauce, table space, and a Bib Gourmand recognition.",
       "chunks": [
         [
@@ -39243,9 +39243,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "food-menu",
-              "food-1",
-              "food-3"
+              "food-need-table",
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-sauce-on-the-side-please"
             ]
           },
           {
@@ -39265,8 +39265,8 @@
           },
           {
             "id": "good-to-know",
-            "title": "The Pancake is the draw",
-            "body": "Remember the named Bib Gourmand pancake table: hot edges, greens, sauce, and the practical pause of building each bite."
+            "title": "The Pancake Is The Draw",
+            "body": "Remember the named Bib Gourmand pancake table: hot edges, greens, sauce, and the slow practical rhythm of building each bite."
           }
         ],
         "targetHeroImageName": "HeroCityHcmcPlaceBanhXeo46a",

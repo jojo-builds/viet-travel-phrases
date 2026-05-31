@@ -197,7 +197,7 @@
           "label": "Nhà vườn An Hiên",
           "relationship": "garden-house contrast",
           "displaySubtitle": "A quieter house-and-garden visit for royal-era domestic detail instead of citadel scale.",
-          "reason": "Editorial relationship: A quieter house-and-garden visit for royal-era domestic detail instead of citadel scale.",
+          "reason": "Related because: A quieter house-and-garden visit for royal-era domestic detail instead of citadel scale.",
           "status": "render"
         }
       ],
@@ -308,7 +308,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -1220,7 +1220,7 @@
           "label": "Bánh bèo ở Huế",
           "relationship": "Hue snack contrast",
           "displaySubtitle": "A softer steamed-rice-cake table before the crunch of bánh khoái.",
-          "reason": "Editorial relationship: A softer steamed-rice-cake table before the crunch of bánh khoái.",
+          "reason": "Related because: A softer steamed-rice-cake table before the crunch of bánh khoái.",
           "status": "render"
         }
       ],
@@ -1445,7 +1445,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -1556,7 +1556,7 @@
           "label": "Gia Hội",
           "relationship": "river-neighborhood contrast",
           "displaySubtitle": "A lived-in neighborhood edge when Hue should feel closer to homes, shops, and the river.",
-          "reason": "Editorial relationship: A lived-in neighborhood edge when Hue should feel closer to homes, shops, and the river.",
+          "reason": "Related because: A lived-in neighborhood edge when Hue should feel closer to homes, shops, and the river.",
           "status": "render"
         }
       ],
@@ -1892,7 +1892,7 @@
           "catalogId": "viet-family-city-hue-place-dong-ba-bun-bo",
           "sourceText": "Bún bò Huế",
           "displaySubtitle": "A market-linked bowl when Dong Ba context matters.",
-          "reason": "The city dish page should route to the more place-specific Dong Ba bowl page.",
+          "reason": "Mentioned here because: A market-linked bowl when Dong Ba context matters.",
           "status": "render"
         }
       ],
@@ -2350,7 +2350,7 @@
           "label": "Đường Lê Lợi",
           "relationship": "central-street contrast",
           "displaySubtitle": "A central river-parallel street for hotels, cafes, and the practical shape of a Hue day.",
-          "reason": "Editorial relationship: A central river-parallel street for hotels, cafes, and the practical shape of a Hue day.",
+          "reason": "Related because: A central river-parallel street for hotels, cafes, and the practical shape of a Hue day.",
           "status": "render"
         }
       ],
@@ -2460,8 +2460,8 @@
           "catalogId": "viet-family-city-hue-place-bun-bo-city",
           "label": "Bún bò Huế",
           "relationship": "rice plate to signature bowl",
-          "displaySubtitle": "The city’s signature bowl when a rice-plate page should connect to a stronger first Huế meal.",
-          "reason": "Bun bo Hue gives com am phu a more recognizable food route for first-timers.",
+          "displaySubtitle": "The city’s signature bowl when a rice-plate page needs a stronger first Huế meal nearby.",
+          "reason": "Related because: The city’s signature bowl when a rice-plate page needs a stronger first Huế meal nearby.",
           "status": "render"
         }
       ],
@@ -2685,7 +2685,7 @@
           "label": "Duyệt Thị Đường",
           "relationship": "royal-performance contrast",
           "displaySubtitle": "A Citadel-side theater stop when court music and performance history matter more than another gate.",
-          "reason": "Editorial relationship: A Citadel-side theater stop when court music and performance history matter more than another gate.",
+          "reason": "Related because: A Citadel-side theater stop when court music and performance history matter more than another gate.",
           "status": "render"
         }
       ],
@@ -3017,7 +3017,7 @@
           "label": "Trung tâm Nghệ thuật Lê Bá Đảng",
           "relationship": "modern-art contrast",
           "displaySubtitle": "A compact art stop for a contemporary room between older royal sites.",
-          "reason": "Editorial relationship: A compact art stop for a contemporary room between older royal sites.",
+          "reason": "Related because: A compact art stop for a contemporary room between older royal sites.",
           "status": "render"
         }
       ],
@@ -3128,7 +3128,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -3370,7 +3370,7 @@
           "catalogId": "viet-family-city-hue-place-dong-ba",
           "sourceText": "Dong Ba Market",
           "displaySubtitle": "The market setting that makes this bowl specific.",
-          "reason": "The page centers bun bo at Dong Ba and should link to the market page.",
+          "reason": "Mentioned here because: The market setting that makes this bowl specific.",
           "status": "render"
         },
         {
@@ -3379,7 +3379,7 @@
           "catalogId": "viet-family-city-hue-place-bun-bo-city",
           "sourceText": "Bún bò",
           "displaySubtitle": "The broader Hue bowl guide behind the market version.",
-          "reason": "The page should connect the market bowl to the broader bun bo Hue dish guide.",
+          "reason": "Mentioned here because: The broader Hue bowl guide behind the market version.",
           "status": "render"
         }
       ],
@@ -3501,7 +3501,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -3613,7 +3613,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -3724,7 +3724,7 @@
           "label": "Xích lô quanh Kinh thành",
           "relationship": "slow city loop",
           "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
-          "reason": "Editorial relationship: A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "reason": "Related because: A low-speed way to read the Citadel edges when walking every gate would blur together.",
           "status": "render"
         }
       ],
@@ -3835,7 +3835,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -3946,7 +3946,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -4057,7 +4057,7 @@
           "label": "Phố cổ Bao Vinh",
           "relationship": "old-river-street contrast",
           "displaySubtitle": "A quieter old trading street when the city story should move toward the river.",
-          "reason": "Editorial relationship: A quieter old trading street when the city story should move toward the river.",
+          "reason": "Related because: A quieter old trading street when the city story should move toward the river.",
           "status": "render"
         }
       ],
@@ -4168,7 +4168,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -4279,7 +4279,7 @@
           "label": "Phố cổ Bao Vinh",
           "relationship": "old-river-street contrast",
           "displaySubtitle": "A quieter old trading street when the city story should move toward the river.",
-          "reason": "Editorial relationship: A quieter old trading street when the city story should move toward the river.",
+          "reason": "Related because: A quieter old trading street when the city story should move toward the river.",
           "status": "render"
         }
       ],
@@ -4390,7 +4390,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -4501,7 +4501,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -4612,7 +4612,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -4724,7 +4724,7 @@
           "label": "Xích lô quanh Kinh thành",
           "relationship": "slow city loop",
           "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
-          "reason": "Editorial relationship: A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "reason": "Related because: A low-speed way to read the Citadel edges when walking every gate would blur together.",
           "status": "render"
         }
       ],
@@ -4835,7 +4835,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -4945,8 +4945,8 @@
           "catalogId": "viet-family-city-hue-place-mandarin-coffee-restaurant",
           "label": "Mandarin Coffee & Restaurant",
           "relationship": "memory cafe to photo-cafe contrast",
-          "displaySubtitle": "A cafe-restaurant stop when old-Huế mood should connect to photos and a broader menu.",
-          "reason": "Mandarin gives Không Gian Hoài Cổ a practical cafe-and-food contrast.",
+          "displaySubtitle": "A cafe-restaurant stop for old-Huế mood, photos, and a broader menu.",
+          "reason": "Related because: A cafe-restaurant stop for old-Huế mood, photos, and a broader menu.",
           "status": "render"
         }
       ],
@@ -5058,7 +5058,7 @@
           "label": "Phố cổ Bao Vinh",
           "relationship": "old-river-street contrast",
           "displaySubtitle": "A quieter old trading street when the city story should move toward the river.",
-          "reason": "Editorial relationship: A quieter old trading street when the city story should move toward the river.",
+          "reason": "Related because: A quieter old trading street when the city story should move toward the river.",
           "status": "render"
         }
       ],
@@ -5281,7 +5281,7 @@
           "label": "Xích lô quanh Kinh thành",
           "relationship": "slow city loop",
           "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
-          "reason": "Editorial relationship: A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "reason": "Related because: A low-speed way to read the Citadel edges when walking every gate would blur together.",
           "status": "render"
         }
       ],
@@ -5499,7 +5499,7 @@
           "label": "Núi Ngự Bình",
           "relationship": "viewpoint contrast",
           "displaySubtitle": "A soft skyline reference for seeing Hue's mountain backdrop instead of staying at street level.",
-          "reason": "Editorial relationship: A soft skyline reference for seeing Hue's mountain backdrop instead of staying at street level.",
+          "reason": "Related because: A soft skyline reference for seeing Hue's mountain backdrop instead of staying at street level.",
           "status": "render"
         }
       ],
@@ -5610,7 +5610,7 @@
           "label": "Trung tâm Nghệ thuật Điềm Phùng Thị",
           "relationship": "art-room contrast",
           "displaySubtitle": "A small modern-art stop for sculpture, shade, and a quieter Hue room.",
-          "reason": "Editorial relationship: A small modern-art stop for sculpture, shade, and a quieter Hue room.",
+          "reason": "Related because: A small modern-art stop for sculpture, shade, and a quieter Hue room.",
           "status": "render"
         }
       ],
@@ -5721,7 +5721,7 @@
           "label": "Trung tâm Nghệ thuật Điềm Phùng Thị",
           "relationship": "art-room contrast",
           "displaySubtitle": "A small modern-art stop for sculpture, shade, and a quieter Hue room.",
-          "reason": "Editorial relationship: A small modern-art stop for sculpture, shade, and a quieter Hue room.",
+          "reason": "Related because: A small modern-art stop for sculpture, shade, and a quieter Hue room.",
           "status": "render"
         }
       ],
@@ -5832,7 +5832,7 @@
           "label": "Đường Chu Văn An",
           "relationship": "evening-street contrast",
           "displaySubtitle": "A practical food-and-drink street when the plan shifts from monuments to night movement.",
-          "reason": "Editorial relationship: A practical food-and-drink street when the plan shifts from monuments to night movement.",
+          "reason": "Related because: A practical food-and-drink street when the plan shifts from monuments to night movement.",
           "status": "render"
         }
       ],
@@ -6165,7 +6165,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -6388,7 +6388,7 @@
           "catalogId": "viet-family-city-hue-place-dong-ba",
           "sourceText": "gift",
           "displaySubtitle": "The central market context where sesame candy becomes a small gift stop.",
-          "reason": "Editorial relationship: The central market context where sesame candy becomes a small gift stop.",
+          "reason": "Mentioned here because: The central market context where sesame candy becomes a small gift stop.",
           "status": "render"
         }
       ],
@@ -6510,7 +6510,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -6621,7 +6621,7 @@
           "label": "Trung tâm Nghệ thuật Điềm Phùng Thị",
           "relationship": "art-room contrast",
           "displaySubtitle": "A small modern-art stop for sculpture, shade, and a quieter Hue room.",
-          "reason": "Editorial relationship: A small modern-art stop for sculpture, shade, and a quieter Hue room.",
+          "reason": "Related because: A small modern-art stop for sculpture, shade, and a quieter Hue room.",
           "status": "render"
         }
       ],
@@ -6732,7 +6732,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -6843,7 +6843,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -6954,7 +6954,7 @@
           "label": "Đầm Lập An",
           "relationship": "lagoon-day contrast",
           "displaySubtitle": "A wide-water escape outside Hue for mountain edges, seafood, and open air.",
-          "reason": "Editorial relationship: A wide-water escape outside Hue for mountain edges, seafood, and open air.",
+          "reason": "Related because: A wide-water escape outside Hue for mountain edges, seafood, and open air.",
           "status": "render"
         }
       ],
@@ -7065,7 +7065,7 @@
           "label": "Đường Chu Văn An",
           "relationship": "evening-street contrast",
           "displaySubtitle": "A practical food-and-drink street when the plan shifts from monuments to night movement.",
-          "reason": "Editorial relationship: A practical food-and-drink street when the plan shifts from monuments to night movement.",
+          "reason": "Related because: A practical food-and-drink street when the plan shifts from monuments to night movement.",
           "status": "render"
         }
       ],
@@ -7176,7 +7176,7 @@
           "label": "Xích lô quanh Kinh thành",
           "relationship": "slow city loop",
           "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
-          "reason": "Editorial relationship: A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "reason": "Related because: A low-speed way to read the Citadel edges when walking every gate would blur together.",
           "status": "render"
         }
       ],
@@ -7399,7 +7399,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -7510,7 +7510,7 @@
           "label": "Ga Huế",
           "relationship": "train-arrival handoff",
           "displaySubtitle": "The French-era rail stop for arrivals, departures, and the first practical edge of town.",
-          "reason": "Editorial relationship: The French-era rail stop for arrivals, departures, and the first practical edge of town.",
+          "reason": "Related because: The French-era rail stop for arrivals, departures, and the first practical edge of town.",
           "status": "render"
         }
       ],
@@ -7727,7 +7727,7 @@
           "label": "Xích lô quanh Kinh thành",
           "relationship": "slow city loop",
           "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
-          "reason": "Editorial relationship: A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "reason": "Related because: A low-speed way to read the Citadel edges when walking every gate would blur together.",
           "status": "render"
         }
       ],
@@ -7838,7 +7838,7 @@
           "label": "Đường Chu Văn An",
           "relationship": "evening-street contrast",
           "displaySubtitle": "A practical food-and-drink street when the plan shifts from monuments to night movement.",
-          "reason": "Editorial relationship: A practical food-and-drink street when the plan shifts from monuments to night movement.",
+          "reason": "Related because: A practical food-and-drink street when the plan shifts from monuments to night movement.",
           "status": "render"
         }
       ],
@@ -7949,7 +7949,7 @@
           "label": "Chợ An Cựu",
           "relationship": "local-market contrast",
           "displaySubtitle": "A neighborhood market for food, produce, and daily-life texture away from the bigger tourist loop.",
-          "reason": "Editorial relationship: A neighborhood market for food, produce, and daily-life texture away from the bigger tourist loop.",
+          "reason": "Related because: A neighborhood market for food, produce, and daily-life texture away from the bigger tourist loop.",
           "status": "render"
         }
       ],
@@ -8060,7 +8060,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -8283,7 +8283,7 @@
           "label": "Bến xe phía Bắc Huế",
           "relationship": "onward-transport handoff",
           "displaySubtitle": "The practical city-edge bus stop when Hue becomes the place you are leaving from.",
-          "reason": "Editorial relationship: The practical city-edge bus stop when Hue becomes the place you are leaving from.",
+          "reason": "Related because: The practical city-edge bus stop when Hue becomes the place you are leaving from.",
           "status": "render"
         }
       ],
@@ -8394,7 +8394,7 @@
           "label": "Trung tâm Nghệ thuật Điềm Phùng Thị",
           "relationship": "art-room contrast",
           "displaySubtitle": "A small modern-art stop for sculpture, shade, and a quieter Hue room.",
-          "reason": "Editorial relationship: A small modern-art stop for sculpture, shade, and a quieter Hue room.",
+          "reason": "Related because: A small modern-art stop for sculpture, shade, and a quieter Hue room.",
           "status": "render"
         }
       ],
@@ -8505,7 +8505,7 @@
           "label": "Xích lô quanh Kinh thành",
           "relationship": "slow city loop",
           "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
-          "reason": "Editorial relationship: A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "reason": "Related because: A low-speed way to read the Citadel edges when walking every gate would blur together.",
           "status": "render"
         }
       ],
@@ -8616,7 +8616,7 @@
           "label": "Đầm Lập An",
           "relationship": "lagoon-day contrast",
           "displaySubtitle": "A wide-water escape outside Hue for mountain edges, seafood, and open air.",
-          "reason": "Editorial relationship: A wide-water escape outside Hue for mountain edges, seafood, and open air.",
+          "reason": "Related because: A wide-water escape outside Hue for mountain edges, seafood, and open air.",
           "status": "render"
         }
       ],
@@ -8836,7 +8836,7 @@
           "label": "Trung tâm Nghệ thuật Điềm Phùng Thị",
           "relationship": "art-room contrast",
           "displaySubtitle": "A small modern-art stop for sculpture, shade, and a quieter Hue room.",
-          "reason": "Editorial relationship: A small modern-art stop for sculpture, shade, and a quieter Hue room.",
+          "reason": "Related because: A small modern-art stop for sculpture, shade, and a quieter Hue room.",
           "status": "render"
         }
       ],
@@ -8947,7 +8947,7 @@
           "label": "Bến xe phía Bắc Huế",
           "relationship": "onward-transport handoff",
           "displaySubtitle": "The practical city-edge bus stop when Hue becomes the place you are leaving from.",
-          "reason": "Editorial relationship: The practical city-edge bus stop when Hue becomes the place you are leaving from.",
+          "reason": "Related because: The practical city-edge bus stop when Hue becomes the place you are leaving from.",
           "status": "render"
         }
       ],
@@ -9053,7 +9053,7 @@
           "label": "Đầm Lập An",
           "relationship": "lagoon-day contrast",
           "displaySubtitle": "A wide-water escape outside Hue for mountain edges, seafood, and open air.",
-          "reason": "Editorial relationship: A wide-water escape outside Hue for mountain edges, seafood, and open air.",
+          "reason": "Related because: A wide-water escape outside Hue for mountain edges, seafood, and open air.",
           "status": "render"
         }
       ],
@@ -9276,7 +9276,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -9501,7 +9501,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -9612,7 +9612,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -9723,7 +9723,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -9834,7 +9834,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -9945,7 +9945,7 @@
           "label": "Làng hương Thủy Xuân",
           "relationship": "craft-village contrast",
           "displaySubtitle": "A color-and-craft village when incense, hands, and roadside workshops should carry the memory.",
-          "reason": "Editorial relationship: A color-and-craft village when incense, hands, and roadside workshops should carry the memory.",
+          "reason": "Related because: A color-and-craft village when incense, hands, and roadside workshops should carry the memory.",
           "status": "render"
         }
       ],
@@ -10051,7 +10051,7 @@
           "label": "Làng Thủy Biều",
           "relationship": "garden-village contrast",
           "displaySubtitle": "A pomelo-garden village when the Hue day should slow into lanes, houses, and river air.",
-          "reason": "Editorial relationship: A pomelo-garden village when the Hue day should slow into lanes, houses, and river air.",
+          "reason": "Related because: A pomelo-garden village when the Hue day should slow into lanes, houses, and river air.",
           "status": "render"
         }
       ],
@@ -10162,7 +10162,7 @@
           "label": "Nhà hàng chay Liên Hoa",
           "relationship": "Hue vegetarian table",
           "displaySubtitle": "A vegetarian chay meal rooted in Hue Buddhist food culture and a calmer lunch rhythm.",
-          "reason": "Editorial relationship: A vegetarian chay meal rooted in Hue Buddhist food culture and a calmer lunch rhythm.",
+          "reason": "Related because: A vegetarian chay meal rooted in Hue Buddhist food culture and a calmer lunch rhythm.",
           "status": "render"
         }
       ],
@@ -10385,7 +10385,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -10608,7 +10608,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -10719,7 +10719,7 @@
           "label": "Cung An Định",
           "relationship": "royal-palace contrast",
           "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
-          "reason": "Editorial relationship: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Related because: A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
           "status": "render"
         }
       ],
@@ -10825,7 +10825,7 @@
           "label": "Đầm Lập An",
           "relationship": "lagoon-day contrast",
           "displaySubtitle": "A wide-water escape outside Hue for mountain edges, seafood, and open air.",
-          "reason": "Editorial relationship: A wide-water escape outside Hue for mountain edges, seafood, and open air.",
+          "reason": "Related because: A wide-water escape outside Hue for mountain edges, seafood, and open air.",
           "status": "render"
         }
       ],
@@ -10936,7 +10936,7 @@
           "label": "Phố cổ Bao Vinh",
           "relationship": "old-river-street contrast",
           "displaySubtitle": "A quieter old trading street when the city story should move toward the river.",
-          "reason": "Editorial relationship: A quieter old trading street when the city story should move toward the river.",
+          "reason": "Related because: A quieter old trading street when the city story should move toward the river.",
           "status": "render"
         }
       ],
@@ -11047,7 +11047,7 @@
           "label": "Đường Chu Văn An",
           "relationship": "evening-street contrast",
           "displaySubtitle": "A practical food-and-drink street when the plan shifts from monuments to night movement.",
-          "reason": "Editorial relationship: A practical food-and-drink street when the plan shifts from monuments to night movement.",
+          "reason": "Related because: A practical food-and-drink street when the plan shifts from monuments to night movement.",
           "status": "render"
         }
       ],

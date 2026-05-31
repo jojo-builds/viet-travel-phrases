@@ -373,3 +373,45 @@ Rendered simulator spot-check after this batch:
 - checked `viet-family-city-hue-place-perfume-river`: river copy and first cards render cleanly.
 
 Remaining production-readiness work: continue broader rendered review across the remaining category spread, especially the `NEEDS_RENDER_REVIEW` restaurant rows and any pages with old generated relationship reasons that have not yet been manually inspected.
+
+## Fifth Repair Batch - 2026-06-01
+
+Status: `IN_PROGRESS_NOT_PRODUCTION_READY`
+
+This batch cleaned the relationship-card residue and closed the two restaurant rows that were still marked `NEEDS_RENDER_REVIEW` after the fourth batch.
+
+Repairs completed:
+
+- normalized `387` internal related/mentioned candidate `reason` fields that still carried process-language residue such as `Editorial relationship:` or old repair notes;
+- hand-rewrote the final `5` user-facing related-card subtitles that still said a page "should connect";
+- retargeted `city-danang-place-co-chu-nho` away from repeated generic food cards to table/recommendation/bill utilities;
+- retargeted `city-hcmc-place-banh-xeo-46a` away from repeated generic food cards to table/recommendation/sauce utilities;
+- tightened the visible Bánh Xèo 46A section id/heading/body so the page no longer carries the old "point" wording.
+
+Current residue and repeated-card state after the batch:
+
+- process/residue relationship strings in related/mentioned candidates: `0`;
+- exact repeated phrase-card sets across V2.2 app-detail source: `0`.
+
+Validation after this batch:
+
+```sh
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-city-library.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/audit-viet-listing-production-qa.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+All commands above passed. `audit-viet-listing-production-qa.js` reports `0` blockers, `0` majors, `1` duplicate hero section hidden at render time, and `500` missing-audio priority rows. SQLite validation reports `0` release-blocking missing-audio rows.
+
+Rendered simulator spot-check after this batch:
+
+- rebuilt and launched `SpeakLocalNative` on simulator `SpeakLocal City Listings`;
+- checked `viet-family-city-danang-place-co-chu-nho`: the repaired table/recommendation/bill card set is present and readable at the top of Useful Phrases;
+- checked `viet-family-city-hcmc-place-banh-xeo-46a`: the repaired table/recommendation/sauce card set is present and readable at the top of Useful Phrases.
+
+Remaining production-readiness work: complete the final requirement-by-requirement production receipt against the V2.2 gate, including broader category render proof. This batch removes the known residue/repeated-card blockers, but it is not by itself the global PASS receipt.

@@ -93,12 +93,20 @@ Fourth repair batch, 2026-06-01:
 - Current validators pass after regeneration; the repeated food-card set is now `46` pages: `33` Dish and `13` focused one-dish/snack Restaurant pages.
 - Rebuilt and spot-checked Bếp Cuốn, Trường Tiền Plaza, and Perfume River on simulator `SpeakLocal City Listings`.
 
+Fifth repair batch, 2026-06-01:
+
+- Cleaned remaining process-language residue in related/mentioned candidate metadata: `387` internal reason fields normalized, plus `5` visible related-card subtitles hand-rewritten.
+- Retargeted the two render-review restaurant rows: Cô Chủ Nhỏ and Bánh Xèo 46A now use distinct table/recommendation/payment or sauce utility cards instead of the old repeated generic food set.
+- Regenerated V2.2 handwritten copy, native authored listing pages, and SQLite.
+- Current validators pass after regeneration; process/residue relationship strings are now `0`, and exact repeated phrase-card sets across V2.2 source are now `0`.
+- Rebuilt and spot-checked Cô Chủ Nhỏ and Bánh Xèo 46A on simulator `SpeakLocal City Listings`.
+
 Highest-leverage next pass:
 
 1. Broaden simulator rendered review beyond the current spot-check set. Cover remaining category spread, especially the `NEEDS_RENDER_REVIEW` restaurant rows and pages called out as follow-up by subagents.
-2. Sample the remaining `46` repeated `food-menu | food-1 | food-3` pages in app. Most are dish or focused one-dish shops; keep them only if rendered cards fit the traveler action.
+2. Run the final requirement-by-requirement production receipt against the V2.2 gate now that the known residue and repeated-card blockers are repaired.
 3. Continue the food/restaurant desire pass over cafes, drinks, desserts, local classics, and any MICHELIN-supported pages that still feel credential- or support-role-led after render.
-4. Inspect older generated relationship reasons that still look like repair residue, even when `displaySubtitle` is renderable.
+4. Broaden category render proof across food, drink, market, route, nature/activity, and culture pages.
 5. Keep generated resources in sync: project V2.2 to handwritten copy, import handwritten copy, generate authored listing pages, generate SQLite, then validate.
 
 Good starter pages/searches for rendered review:
