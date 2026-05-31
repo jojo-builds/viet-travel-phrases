@@ -42,8 +42,49 @@ struct PhraseOption: Identifiable, Equatable {
     let tintName: AccentTint
     var detailPageID: String?
     var audioKey: String? = nil
+    private var resolvedPlaybackAudioKey: String? = nil
+    private var hasResolvedPlaybackAudioKey = false
+
+    init(
+        id: String,
+        vietnamese: String,
+        english: String,
+        pronunciation: String,
+        symbolName: String,
+        tintName: AccentTint,
+        detailPageID: String? = nil,
+        audioKey: String? = nil
+    ) {
+        self.id = id
+        self.vietnamese = vietnamese
+        self.english = english
+        self.pronunciation = pronunciation
+        self.symbolName = symbolName
+        self.tintName = tintName
+        self.detailPageID = detailPageID
+        self.audioKey = audioKey
+    }
 
     var playbackAudioKey: String? {
+        if hasResolvedPlaybackAudioKey {
+            return resolvedPlaybackAudioKey
+        }
+
+        return Self.resolvePlaybackAudioKey(id: id, vietnamese: vietnamese, audioKey: audioKey)
+    }
+
+    func resolvingPlaybackAudioKey() -> PhraseOption {
+        var resolved = self
+        resolved.resolvedPlaybackAudioKey = Self.resolvePlaybackAudioKey(
+            id: id,
+            vietnamese: vietnamese,
+            audioKey: audioKey
+        )
+        resolved.hasResolvedPlaybackAudioKey = true
+        return resolved
+    }
+
+    private static func resolvePlaybackAudioKey(id: String, vietnamese: String, audioKey: String?) -> String? {
         let manifest = AudioAssetManifest.main
 
         if manifest?.hasPlayableEntry(for: audioKey, matchingText: vietnamese) == true {
@@ -56,6 +97,17 @@ struct PhraseOption: Identifiable, Equatable {
 
         return manifest?.audioKey(forExactText: vietnamese)
     }
+
+    static func == (lhs: PhraseOption, rhs: PhraseOption) -> Bool {
+        lhs.id == rhs.id
+            && lhs.vietnamese == rhs.vietnamese
+            && lhs.english == rhs.english
+            && lhs.pronunciation == rhs.pronunciation
+            && lhs.symbolName == rhs.symbolName
+            && lhs.tintName == rhs.tintName
+            && lhs.detailPageID == rhs.detailPageID
+            && lhs.audioKey == rhs.audioKey
+    }
 }
 
 struct BreakdownToken: Identifiable, Equatable {
@@ -63,8 +115,35 @@ struct BreakdownToken: Identifiable, Equatable {
     let vietnamese: String
     let english: String
     var audioKey: String? = nil
+    private var resolvedPlaybackAudioKey: String? = nil
+    private var hasResolvedPlaybackAudioKey = false
+
+    init(id: String, vietnamese: String, english: String, audioKey: String? = nil) {
+        self.id = id
+        self.vietnamese = vietnamese
+        self.english = english
+        self.audioKey = audioKey
+    }
 
     var playbackAudioKey: String? {
+        if hasResolvedPlaybackAudioKey {
+            return resolvedPlaybackAudioKey
+        }
+
+        return Self.resolvePlaybackAudioKey(vietnamese: vietnamese, audioKey: audioKey)
+    }
+
+    func resolvingPlaybackAudioKey() -> BreakdownToken {
+        var resolved = self
+        resolved.resolvedPlaybackAudioKey = Self.resolvePlaybackAudioKey(
+            vietnamese: vietnamese,
+            audioKey: audioKey
+        )
+        resolved.hasResolvedPlaybackAudioKey = true
+        return resolved
+    }
+
+    private static func resolvePlaybackAudioKey(vietnamese: String, audioKey: String?) -> String? {
         let manifest = AudioAssetManifest.main
 
         if manifest?.hasPlayableEntry(for: audioKey, matchingText: vietnamese) == true {
@@ -72,6 +151,13 @@ struct BreakdownToken: Identifiable, Equatable {
         }
 
         return manifest?.audioKey(forExactText: vietnamese)
+    }
+
+    static func == (lhs: BreakdownToken, rhs: BreakdownToken) -> Bool {
+        lhs.id == rhs.id
+            && lhs.vietnamese == rhs.vietnamese
+            && lhs.english == rhs.english
+            && lhs.audioKey == rhs.audioKey
     }
 }
 
@@ -163,6 +249,65 @@ struct PhraseArticleSection: Identifiable, Equatable {
     var inlineDefinitions: [PhraseInlineDefinition] = []
     var chips: [String] = []
     let presentation: SectionPresentation
+}
+
+enum PhraseArticlePlaybackAudioResolver {
+#if DEBUG
+    private static let buildCountLock = NSLock()
+    private static var buildCount = 0
+
+    static var buildCountForTesting: Int {
+        buildCountLock.lock()
+        defer { buildCountLock.unlock() }
+        return buildCount
+    }
+
+    static func resetBuildCountForTesting() {
+        buildCountLock.lock()
+        buildCount = 0
+        buildCountLock.unlock()
+    }
+
+    private static func recordBuildForTesting() {
+        buildCountLock.lock()
+        buildCount += 1
+        buildCountLock.unlock()
+    }
+#endif
+
+    static func resolvedPage(for page: PhraseArticlePage) -> PhraseArticlePage {
+#if DEBUG
+        recordBuildForTesting()
+#endif
+        return PhraseArticlePage(
+            id: page.id,
+            destination: page.destination,
+            title: page.title,
+            englishTitle: page.englishTitle,
+            pronunciation: page.pronunciation,
+            summary: page.summary,
+            iconName: page.iconName,
+            tintName: page.tintName,
+            heroImageName: page.heroImageName,
+            playbackAudioKey: page.playbackAudioKey,
+            sections: page.sections.map(resolvedSection),
+            practiceCTALabel: page.practiceCTALabel,
+            showsCatalogExplore: page.showsCatalogExplore
+        )
+    }
+
+    private static func resolvedSection(_ section: PhraseArticleSection) -> PhraseArticleSection {
+        PhraseArticleSection(
+            id: section.id,
+            title: section.title,
+            body: section.body,
+            phrases: section.phrases.map { $0.resolvingPlaybackAudioKey() },
+            breakdown: section.breakdown.map { $0.resolvingPlaybackAudioKey() },
+            inlineDefinitions: section.inlineDefinitions,
+            chips: section.chips,
+            presentation: section.presentation
+        )
+    }
 }
 
 struct PhraseInlineDefinition: Identifiable, Equatable {

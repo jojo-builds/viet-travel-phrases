@@ -49,6 +49,7 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 33: `PhraseArticleTemplateView` still canonicalized a home-hero morph identity from detail render paths even when no home morph was active; morph identity now returns the raw page ID when both morph IDs are nil and resolves once per view only when morph state exists
 - root cause 34: inactive Home/root/admin photo-backdrop preview surfaces could still publish scroll-geometry state while mounted as navigation previews; those callbacks now require active and visible state, matching the existing delayed-task and listing/browse/menu scroll-geometry gates
 - root cause 35: city listing articles reused cached "Mentioned Here" and "Compare Nearby" pick arrays, but still asked the catalogs to refilter those arrays by section ID from the article render path; each article page now builds grouped menu/related pick buckets once per page instance and the body reads those buckets directly
+- root cause 36: phrase rows and breakdown cards resolved playable audio keys from SwiftUI row/card rendering, repeatedly entering `AudioAssetManifest` normalization and lookup work for deterministic phrase text during detail redraws; article pages now prepare row playback keys once per `PhraseArticleTemplateView` instance and rows read the prepared values
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -94,6 +95,7 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testPhraseArticleMorphPolicySkipsCanonicalLookupWhenNoHomeMorphIsActive`
   - `AppChromeTests/testAdminPhotoBackdropDelayedTaskRunsOnlyForActiveVisiblePages` was extended to cover inactive scroll-geometry gating
   - `AppChromeTests/testPhraseArticleTemplateGroupsLocationPicksOncePerPageInstance`
+  - `AppChromeTests/testPhraseArticleTemplatePreparesRowPlaybackAudioOncePerPageInstance`
 - local hygiene checks after the detail redraw and saved-membership fixes:
   - `git diff --check -- native-ios/App/Views/PhraseListingView.swift native-ios/App/Models/AppChrome.swift native-ios/Tests/AppChromeTests.swift` passed
   - `node scripts/guard-native-only.js` passed
@@ -103,6 +105,19 @@ Fresh command evidence from this pass:
 - local hygiene checks after the location-pick grouping fix:
   - `git diff --check -- native-ios/App/Views/PhraseListingView.swift native-ios/App/Models/VietnameseMenuCatalog.swift native-ios/Tests/AppChromeTests.swift` passed
   - `node scripts/guard-native-only.js` passed
+- local hygiene checks after the row playback-audio preparation fix:
+  - `git diff --check -- native-ios/App/Models/AudioAssetManifest.swift native-ios/App/Models/PhrasePage.swift native-ios/App/Views/PhraseListingView.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- XcodeBuildMCP simulator focused row playback-audio preparation set on iPhone 17 Pro
+  - failed before implementation because `AudioAssetManifest` had no lookup counter and `PhraseArticlePlaybackAudioResolver` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T23-58-41-166Z_pid15747_f43ff2af.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-04-55-130Z_pid15747_970f7c3e.xcresult`
+- XcodeBuildMCP simulator focused article/audio regression set on iPhone 17 Pro
+  - passed: `9` tests, `0` failures
+  - covered per-article row playback-audio preparation, visible-section derivation reuse, detail article-adapter reuse, location-pick grouping, Tier 1 visible audio keys, designed phrase exact-text audio fallback, `Xin chào` row audio reuse, all phrase option audio resolution, and bundled-file validation for resolved phrase option audio
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-06-11-757Z_pid15747_cbf2144b.xcresult`
 - XcodeBuildMCP simulator focused location-pick grouping set on iPhone 17 Pro
   - failed before implementation because `PhraseArticleLocationPickGroups` and catalog section-filter counters did not exist
   - passed after implementation: `1` test, `0` failures

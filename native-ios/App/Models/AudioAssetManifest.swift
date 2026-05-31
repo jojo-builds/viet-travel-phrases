@@ -13,6 +13,29 @@ struct AudioAssetManifest {
     private let playableURLs: [String: URL]
     private let audioKeysByNormalizedText: [String: [String]]
 
+#if DEBUG
+    private static let lookupCountLock = NSLock()
+    private static var playbackResolutionLookupCount = 0
+
+    static var playbackResolutionLookupCountForTesting: Int {
+        lookupCountLock.lock()
+        defer { lookupCountLock.unlock() }
+        return playbackResolutionLookupCount
+    }
+
+    static func resetLookupCountsForTesting() {
+        lookupCountLock.lock()
+        playbackResolutionLookupCount = 0
+        lookupCountLock.unlock()
+    }
+
+    private static func recordPlaybackResolutionLookupForTesting() {
+        lookupCountLock.lock()
+        playbackResolutionLookupCount += 1
+        lookupCountLock.unlock()
+    }
+#endif
+
     init(entries: [String: AudioAssetManifestEntry], bundle: Bundle = .main) {
         self.entries = entries
 
@@ -60,10 +83,16 @@ struct AudioAssetManifest {
     }
 
     func audioKey(forExactText text: String) -> String? {
-        audioKeysByNormalizedText[Self.normalizedAudioText(text)]?.first
+#if DEBUG
+        Self.recordPlaybackResolutionLookupForTesting()
+#endif
+        return audioKeysByNormalizedText[Self.normalizedAudioText(text)]?.first
     }
 
     func hasPlayableEntry(for audioKey: String?, matchingText text: String) -> Bool {
+#if DEBUG
+        Self.recordPlaybackResolutionLookupForTesting()
+#endif
         guard
             let audioKey,
             let entry = entry(for: audioKey),

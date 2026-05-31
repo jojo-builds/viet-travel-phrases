@@ -236,7 +236,9 @@ struct PhraseArticleTemplateView: View {
         onToggleSavedPage: @escaping (String) -> Void = { _ in },
         onDetailTapped: @escaping (String) -> Void = { _ in }
     ) {
-        self.page = page
+        let resolvedPage = PhraseArticlePlaybackAudioResolver.resolvedPage(for: page)
+
+        self.page = resolvedPage
         self.chromeRoute = chromeRoute
         self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
@@ -251,10 +253,10 @@ struct PhraseArticleTemplateView: View {
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.heroImageNameOverride = heroImageNameOverride
-        self.visibleSections = Self.visibleSections(for: page)
-        self.locationPickGroups = PhraseArticleLocationPickGroups(pageID: page.id)
+        self.visibleSections = Self.visibleSections(for: resolvedPage)
+        self.locationPickGroups = PhraseArticleLocationPickGroups(pageID: resolvedPage.id)
         self.morphPageID = PhraseArticleMorphPolicy.resolvedPageID(
-            pageID: page.id,
+            pageID: resolvedPage.id,
             heroMorphPageID: heroMorphPageID,
             heroMorphContentHoldPageID: heroMorphContentHoldPageID
         )

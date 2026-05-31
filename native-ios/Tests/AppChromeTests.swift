@@ -1189,6 +1189,52 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPhraseArticleTemplatePreparesRowPlaybackAudioOncePerPageInstance() throws {
+        let detailPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-phrase-phone-1"))
+        let articlePage = detailPage.articleTemplate
+
+        AudioAssetManifest.resetLookupCountsForTesting()
+        PhraseArticlePlaybackAudioResolver.resetBuildCountForTesting()
+
+        let resolvedPage = PhraseArticlePlaybackAudioResolver.resolvedPage(for: articlePage)
+
+        XCTAssertEqual(PhraseArticlePlaybackAudioResolver.buildCountForTesting, 1)
+        XCTAssertGreaterThan(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            0,
+            "The resolver should do the manifest work once while preparing the article page."
+        )
+
+        let lookupCountAfterResolve = AudioAssetManifest.playbackResolutionLookupCountForTesting
+
+        for section in resolvedPage.sections {
+            for phrase in section.phrases {
+                _ = phrase.playbackAudioKey
+            }
+            for token in section.breakdown {
+                _ = token.playbackAudioKey
+            }
+        }
+
+        XCTAssertEqual(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            lookupCountAfterResolve,
+            "Prepared phrase rows and breakdown cards should read already-resolved audio keys instead of re-entering AudioAssetManifest during SwiftUI row rendering."
+        )
+
+        PhraseArticlePlaybackAudioResolver.resetBuildCountForTesting()
+        _ = PhraseArticleTemplateView(
+            page: articlePage,
+            chromeRoute: .detailPage(detailPage.id)
+        )
+
+        XCTAssertEqual(
+            PhraseArticlePlaybackAudioResolver.buildCountForTesting,
+            1,
+            "PhraseArticleTemplateView should prepare row playback audio once per page instance."
+        )
+    }
+
     func testPhraseArticleMorphPolicySkipsCanonicalLookupWhenNoHomeMorphIsActive() {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
         defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
