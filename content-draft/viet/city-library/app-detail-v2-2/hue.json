@@ -195,9 +195,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-hien-garden-house",
           "label": "Nhà vườn An Hiên",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "garden-house contrast",
+          "displaySubtitle": "A quieter house-and-garden visit for royal-era domestic detail instead of citadel scale.",
+          "reason": "Nhà vườn An Hiên now has an authored related-card role for Cung An Định, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -306,9 +306,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Nhà vườn An Hiên, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -1218,9 +1218,9 @@
         {
           "catalogId": "viet-family-city-hue-place-banh-beo",
           "label": "Bánh bèo ở Huế",
-          "relationship": "same-city Hue snack contrast",
+          "relationship": "Hue snack contrast",
           "displaySubtitle": "A softer steamed-rice-cake table before the crunch of bánh khoái.",
-          "reason": "Banh beo is the useful texture contrast for banh khoai.",
+          "reason": "Bánh bèo ở Huế now has an authored related-card role for Bánh khoái ở Huế, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -1443,9 +1443,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Chùa Báo Quốc, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -1554,9 +1554,9 @@
         {
           "catalogId": "viet-family-city-hue-place-gia-hoi",
           "label": "Gia Hội",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "river-neighborhood contrast",
+          "displaySubtitle": "A lived-in neighborhood edge when Hue should feel closer to homes, shops, and the river.",
+          "reason": "Gia Hội now has an authored related-card role for Phố cổ Bao Vinh, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2348,9 +2348,9 @@
         {
           "catalogId": "viet-family-city-hue-place-le-loi-street",
           "label": "Đường Lê Lợi",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "central-street contrast",
+          "displaySubtitle": "A central river-parallel street for hotels, cafes, and the practical shape of a Hue day.",
+          "reason": "Đường Lê Lợi now has an authored related-card role for Đường Chu Văn An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -2683,9 +2683,9 @@
         {
           "catalogId": "viet-family-city-hue-place-duyet-thi-duong-theater",
           "label": "Duyệt Thị Đường",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-performance contrast",
+          "displaySubtitle": "A Citadel-side theater stop when court music and performance history matter more than another gate.",
+          "reason": "Duyệt Thị Đường now has an authored related-card role for Xích lô quanh Kinh thành, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3015,9 +3015,9 @@
         {
           "catalogId": "viet-family-city-hue-place-le-ba-dang-art-center",
           "label": "Trung tâm Nghệ thuật Lê Bá Đảng",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "modern-art contrast",
+          "displaySubtitle": "A compact art stop when the day needs a contemporary room between older royal sites.",
+          "reason": "Trung tâm Nghệ thuật Lê Bá Đảng now has an authored related-card role for Trung tâm Nghệ thuật Điềm Phùng Thị, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3126,9 +3126,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Cung Diên Thọ, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3499,9 +3499,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Lăng Đồng Khánh, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3611,9 +3611,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Lăng Dục Đức, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3722,9 +3722,9 @@
         {
           "catalogId": "viet-family-city-hue-place-cyclo-citadel-loop",
           "label": "Xích lô quanh Kinh thành",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "slow city loop",
+          "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "reason": "Xích lô quanh Kinh thành now has an authored related-card role for Duyệt Thị Đường, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3833,9 +3833,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Kỳ Đài Huế, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -3944,9 +3944,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Tử Cấm Thành, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4055,9 +4055,9 @@
         {
           "catalogId": "viet-family-city-hue-place-bao-vinh-ancient-town",
           "label": "Phố cổ Bao Vinh",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "old-river-street contrast",
+          "displaySubtitle": "A quieter old trading street when the city story should move toward the river.",
+          "reason": "Phố cổ Bao Vinh now has an authored related-card role for Gia Hội, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4166,9 +4166,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Lăng Gia Long, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4277,9 +4277,9 @@
         {
           "catalogId": "viet-family-city-hue-place-bao-vinh-ancient-town",
           "label": "Phố cổ Bao Vinh",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "old-river-street contrast",
+          "displaySubtitle": "A quieter old trading street when the city story should move toward the river.",
+          "reason": "Phố cổ Bao Vinh now has an authored related-card role for Cồn Hến, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4388,9 +4388,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Điện Hòn Chén, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4499,9 +4499,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Đền Huyền Trân, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4610,9 +4610,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Kinh thành Huế, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4722,9 +4722,9 @@
         {
           "catalogId": "viet-family-city-hue-place-cyclo-citadel-loop",
           "label": "Xích lô quanh Kinh thành",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "slow city loop",
+          "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "reason": "Xích lô quanh Kinh thành now has an authored related-card role for Trải nghiệm làm hương Thủy Xuân, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -4833,9 +4833,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Lăng Khải Định, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5056,9 +5056,9 @@
         {
           "catalogId": "viet-family-city-hue-place-bao-vinh-ancient-town",
           "label": "Phố cổ Bao Vinh",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "old-river-street contrast",
+          "displaySubtitle": "A quieter old trading street when the city story should move toward the river.",
+          "reason": "Phố cổ Bao Vinh now has an authored related-card role for Kim Long, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5279,9 +5279,9 @@
         {
           "catalogId": "viet-family-city-hue-place-cyclo-citadel-loop",
           "label": "Xích lô quanh Kinh thành",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "slow city loop",
+          "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "reason": "Xích lô quanh Kinh thành now has an authored related-card role for Thuyền hải sản phá Tam Giang, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5497,9 +5497,9 @@
         {
           "catalogId": "viet-family-city-hue-place-ngu-binh-mountain",
           "label": "Núi Ngự Bình",
-          "relationship": "same-city nature comparison",
-          "displaySubtitle": "A nature in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "viewpoint contrast",
+          "displaySubtitle": "A soft skyline reference for seeing Hue's mountain backdrop instead of staying at street level.",
+          "reason": "Núi Ngự Bình now has an authored related-card role for Đầm Lập An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5608,9 +5608,9 @@
         {
           "catalogId": "viet-family-city-hue-place-diem-phung-thi-art-center",
           "label": "Trung tâm Nghệ thuật Điềm Phùng Thị",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "art-room contrast",
+          "displaySubtitle": "A small modern-art stop when the Hue day needs sculpture, shade, and a quieter room.",
+          "reason": "Trung tâm Nghệ thuật Điềm Phùng Thị now has an authored related-card role for Trung tâm Nghệ thuật Lê Bá Đảng, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5719,9 +5719,9 @@
         {
           "catalogId": "viet-family-city-hue-place-diem-phung-thi-art-center",
           "label": "Trung tâm Nghệ thuật Điềm Phùng Thị",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "art-room contrast",
+          "displaySubtitle": "A small modern-art stop when the Hue day needs sculpture, shade, and a quieter room.",
+          "reason": "Trung tâm Nghệ thuật Điềm Phùng Thị now has an authored related-card role for Không gian lưu niệm Lê Bá Đảng, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -5830,9 +5830,9 @@
         {
           "catalogId": "viet-family-city-hue-place-chu-van-an-street",
           "label": "Đường Chu Văn An",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "evening-street contrast",
+          "displaySubtitle": "A practical food-and-drink street when the plan shifts from monuments to night movement.",
+          "reason": "Đường Chu Văn An now has an authored related-card role for Đường Lê Lợi, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6163,9 +6163,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Điện Long An, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6508,9 +6508,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Lăng Minh Mạng, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6619,9 +6619,9 @@
         {
           "catalogId": "viet-family-city-hue-place-diem-phung-thi-art-center",
           "label": "Trung tâm Nghệ thuật Điềm Phùng Thị",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "art-room contrast",
+          "displaySubtitle": "A small modern-art stop when the Hue day needs sculpture, shade, and a quieter room.",
+          "reason": "Trung tâm Nghệ thuật Điềm Phùng Thị now has an authored related-card role for Bảo tàng Đồ sứ ký kiểu thời Nguyễn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6730,9 +6730,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Đàn Nam Giao, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6841,9 +6841,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Ngọ Môn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -6952,9 +6952,9 @@
         {
           "catalogId": "viet-family-city-hue-place-lap-an-lagoon",
           "label": "Đầm Lập An",
-          "relationship": "same-city nature comparison",
-          "displaySubtitle": "A nature in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "lagoon-day contrast",
+          "displaySubtitle": "A wide-water escape outside Hue when the day needs mountain edges, seafood, and open air.",
+          "reason": "Đầm Lập An now has an authored related-card role for Núi Ngự Bình, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7063,9 +7063,9 @@
         {
           "catalogId": "viet-family-city-hue-place-chu-van-an-street",
           "label": "Đường Chu Văn An",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "evening-street contrast",
+          "displaySubtitle": "A practical food-and-drink street when the plan shifts from monuments to night movement.",
+          "reason": "Đường Chu Văn An now has an authored related-card role for Phố đi bộ Nguyễn Đình Chiểu, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7174,9 +7174,9 @@
         {
           "catalogId": "viet-family-city-hue-place-cyclo-citadel-loop",
           "label": "Xích lô quanh Kinh thành",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "slow city loop",
+          "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "reason": "Xích lô quanh Kinh thành now has an authored related-card role for Nhã nhạc cung đình Huế, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7397,9 +7397,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Cửu Đỉnh, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7508,9 +7508,9 @@
         {
           "catalogId": "viet-family-city-hue-place-railway-station",
           "label": "Ga Huế",
-          "relationship": "same-city station comparison",
-          "displaySubtitle": "A station in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "train-arrival handoff",
+          "displaySubtitle": "The French-era rail stop for arrivals, departures, and the first practical edge of town.",
+          "reason": "Ga Huế now has an authored related-card role for Bến xe phía Bắc Huế, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7614,9 +7614,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-cuu-market",
           "label": "Chợ An Cựu",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "local-market contrast",
+          "displaySubtitle": "A neighborhood market for food, produce, and daily-life texture away from the bigger tourist loop.",
+          "reason": "Chợ An Cựu now has an authored related-card role for Sông Hương, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7725,9 +7725,9 @@
         {
           "catalogId": "viet-family-city-hue-place-cyclo-citadel-loop",
           "label": "Xích lô quanh Kinh thành",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "slow city loop",
+          "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "reason": "Xích lô quanh Kinh thành now has an authored related-card role for Thuyền rồng sông Hương, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7836,9 +7836,9 @@
         {
           "catalogId": "viet-family-city-hue-place-chu-van-an-street",
           "label": "Đường Chu Văn An",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "evening-street contrast",
+          "displaySubtitle": "A practical food-and-drink street when the plan shifts from monuments to night movement.",
+          "reason": "Đường Chu Văn An now has an authored related-card role for Đường Phạm Ngũ Lão, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -7947,9 +7947,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-cuu-market",
           "label": "Chợ An Cựu",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "local-market contrast",
+          "displaySubtitle": "A neighborhood market for food, produce, and daily-life texture away from the bigger tourist loop.",
+          "reason": "Chợ An Cựu now has an authored related-card role for Sân bay Phú Bài, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8058,9 +8058,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Nhà thờ Phủ Cam, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8281,9 +8281,9 @@
         {
           "catalogId": "viet-family-city-hue-place-northern-bus-station",
           "label": "Bến xe phía Bắc Huế",
-          "relationship": "same-city station comparison",
-          "displaySubtitle": "A station in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "onward-transport handoff",
+          "displaySubtitle": "The practical city-edge bus stop when Hue becomes the place you are leaving from.",
+          "reason": "Bến xe phía Bắc Huế now has an authored related-card role for Ga Huế, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8392,9 +8392,9 @@
         {
           "catalogId": "viet-family-city-hue-place-diem-phung-thi-art-center",
           "label": "Trung tâm Nghệ thuật Điềm Phùng Thị",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "art-room contrast",
+          "displaySubtitle": "A small modern-art stop when the Hue day needs sculpture, shade, and a quieter room.",
+          "reason": "Trung tâm Nghệ thuật Điềm Phùng Thị now has an authored related-card role for Bảo tàng Cổ vật Cung đình Huế, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8503,9 +8503,9 @@
         {
           "catalogId": "viet-family-city-hue-place-cyclo-citadel-loop",
           "label": "Xích lô quanh Kinh thành",
-          "relationship": "same-city attraction comparison",
-          "displaySubtitle": "A attraction in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "slow city loop",
+          "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "reason": "Xích lô quanh Kinh thành now has an authored related-card role for Biểu diễn nhã nhạc cung đình, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8614,9 +8614,9 @@
         {
           "catalogId": "viet-family-city-hue-place-lap-an-lagoon",
           "label": "Đầm Lập An",
-          "relationship": "same-city nature comparison",
-          "displaySubtitle": "A nature in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "lagoon-day contrast",
+          "displaySubtitle": "A wide-water escape outside Hue when the day needs mountain edges, seafood, and open air.",
+          "reason": "Đầm Lập An now has an authored related-card role for Rú Chá, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8834,9 +8834,9 @@
         {
           "catalogId": "viet-family-city-hue-place-diem-phung-thi-art-center",
           "label": "Trung tâm Nghệ thuật Điềm Phùng Thị",
-          "relationship": "same-city museum comparison",
-          "displaySubtitle": "A museum in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "art-room contrast",
+          "displaySubtitle": "A small modern-art stop when the Hue day needs sculpture, shade, and a quieter room.",
+          "reason": "Trung tâm Nghệ thuật Điềm Phùng Thị now has an authored related-card role for Sống Platform - SốngLab, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -8945,9 +8945,9 @@
         {
           "catalogId": "viet-family-city-hue-place-northern-bus-station",
           "label": "Bến xe phía Bắc Huế",
-          "relationship": "same-city station comparison",
-          "displaySubtitle": "A station in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "onward-transport handoff",
+          "displaySubtitle": "The practical city-edge bus stop when Hue becomes the place you are leaving from.",
+          "reason": "Bến xe phía Bắc Huế now has an authored related-card role for Bến xe phía Nam Huế, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9051,9 +9051,9 @@
         {
           "catalogId": "viet-family-city-hue-place-lap-an-lagoon",
           "label": "Đầm Lập An",
-          "relationship": "same-city nature comparison",
-          "displaySubtitle": "A nature in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "lagoon-day contrast",
+          "displaySubtitle": "A wide-water escape outside Hue when the day needs mountain edges, seafood, and open air.",
+          "reason": "Đầm Lập An now has an authored related-card role for Phá Tam Giang, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9274,9 +9274,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Điện Thái Hòa, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9499,9 +9499,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Cầu ngói Thanh Toàn, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9610,9 +9610,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Thế Miếu, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9721,9 +9721,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Chùa Thiên Mụ, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9832,9 +9832,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Lăng Thiệu Trị, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -9943,9 +9943,9 @@
         {
           "catalogId": "viet-family-city-hue-place-thuy-xuan-incense-village",
           "label": "Làng hương Thủy Xuân",
-          "relationship": "same-city village comparison",
-          "displaySubtitle": "A village in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "craft-village contrast",
+          "displaySubtitle": "A color-and-craft village when incense, hands, and roadside workshops should carry the memory.",
+          "reason": "Làng hương Thủy Xuân now has an authored related-card role for Làng Thủy Biều, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10049,9 +10049,9 @@
         {
           "catalogId": "viet-family-city-hue-place-thuy-bieu-village",
           "label": "Làng Thủy Biều",
-          "relationship": "same-city village comparison",
-          "displaySubtitle": "A village in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "garden-village contrast",
+          "displaySubtitle": "A pomelo-garden village when the Hue day should slow into lanes, houses, and river air.",
+          "reason": "Làng Thủy Biều now has an authored related-card role for Làng hương Thủy Xuân, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10160,9 +10160,9 @@
         {
           "catalogId": "viet-family-city-hue-place-lien-hoa-vegetarian",
           "label": "Nhà hàng chay Liên Hoa",
-          "relationship": "same-city Hue dining contrast",
-          "displaySubtitle": "A chay meal rooted in Hue Buddhist food culture and a calmer lunch rhythm.",
-          "reason": "Lien Hoa gives a Hue-specific food-culture contrast to Tinh Gia Vien’s garden-house setting.",
+          "relationship": "Hue vegetarian table",
+          "displaySubtitle": "A vegetarian chay meal rooted in Hue Buddhist food culture and a calmer lunch rhythm.",
+          "reason": "Nhà hàng chay Liên Hoa now has an authored related-card role for Tịnh Gia Viên, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10272,9 +10272,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-cuu-market",
           "label": "Chợ An Cựu",
-          "relationship": "same-city market comparison",
-          "displaySubtitle": "A market in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "local-market contrast",
+          "displaySubtitle": "A neighborhood market for food, produce, and daily-life texture away from the bigger tourist loop.",
+          "reason": "Chợ An Cựu now has an authored related-card role for Bến thuyền Tòa Khâm, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10383,9 +10383,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Cầu Trường Tiền, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10606,9 +10606,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Lăng Tự Đức, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10717,9 +10717,9 @@
         {
           "catalogId": "viet-family-city-hue-place-an-dinh-palace",
           "label": "Cung An Định",
-          "relationship": "same-city landmark comparison",
-          "displaySubtitle": "A landmark in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "royal-palace contrast",
+          "displaySubtitle": "A painted palace room for Hue's later royal story, less citadel-scale and more interior detail.",
+          "reason": "Cung An Định now has an authored related-card role for Chùa Từ Hiếu, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10823,9 +10823,9 @@
         {
           "catalogId": "viet-family-city-hue-place-lap-an-lagoon",
           "label": "Đầm Lập An",
-          "relationship": "same-city nature comparison",
-          "displaySubtitle": "A nature in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "lagoon-day contrast",
+          "displaySubtitle": "A wide-water escape outside Hue when the day needs mountain edges, seafood, and open air.",
+          "reason": "Đầm Lập An now has an authored related-card role for Đồi Vọng Cảnh, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -10934,9 +10934,9 @@
         {
           "catalogId": "viet-family-city-hue-place-bao-vinh-ancient-town",
           "label": "Phố cổ Bao Vinh",
-          "relationship": "same-city neighborhood comparison",
-          "displaySubtitle": "A neighborhood in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "old-river-street contrast",
+          "displaySubtitle": "A quieter old trading street when the city story should move toward the river.",
+          "reason": "Phố cổ Bao Vinh now has an authored related-card role for Vỹ Dạ, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],
@@ -11045,9 +11045,9 @@
         {
           "catalogId": "viet-family-city-hue-place-chu-van-an-street",
           "label": "Đường Chu Văn An",
-          "relationship": "same-city street comparison",
-          "displaySubtitle": "A street in Huế with a different pace.",
-          "reason": "Selected from the approved v2.2 city-place source inventory; target page exists and is safe to open as a related place.",
+          "relationship": "evening-street contrast",
+          "displaySubtitle": "A practical food-and-drink street when the plan shifts from monuments to night movement.",
+          "reason": "Đường Chu Văn An now has an authored related-card role for Phố đi bộ Huế, replacing generic same-city pacing copy.",
           "status": "render"
         }
       ],

@@ -215,6 +215,25 @@ Render proof:
 - `render-proof-2026-05-31-banh-mi-phuong-us-voice-repair/banh-mi-phuong-related-cards.jpg`
 - `render-proof-2026-05-31-banh-mi-phuong-us-voice-repair/banh-mi-phuong-bottom-inset.jpg`
 
+## 2026-05-31 Huế Related-Card Repair Addendum
+
+Jojo's comparison-card critique also applied outside restaurants: some related modules still used generic source copy such as `A landmark in Huế with a different pace.` This pass fixes Huế first because it had 65 visible generic related-card rows, including 26 repeats pointing at `Cung An Định`.
+
+Focused repair applied:
+
+- Replaced all 65 Huế `same-city` / `different pace` related-card subtitles with authored role copy: palace contrast, garden-house contrast, old-river-street contrast, train-arrival handoff, craft-village contrast, and similar visible traveler logic.
+- Clarified the Bánh Mì Phượng / Madam Khánh comparison through the full runtime chain: V2.2 source, handwritten projection, city-library v1, bundled JSON, and SQLite.
+- Tightened `Cocobox` and `Faifo Coffee` cafe copy with small-table, drink-menu, terrace-setting, and coffee cues so the restaurant/cafe validator no longer sees them as thin.
+- Kept real subagent spawning off this pass because closing spawned agents had frozen the desktop thread; used local audit gates instead.
+
+Evidence:
+
+- Huế visible generic related-card count: `65 -> 0`.
+- Corpus visible generic related-card count: `329 -> 264`; remaining related-card cleanup is still Da Nang, Hanoi, Saigon, and Hội An.
+- Exact bad-pattern scan across V2.2 source, handwritten projection, city-library v1, and bundled runtime found `0` hits for `counter to save`, `part of the stop`, `Name Counter`, `commoner identity`, `fast/faster glass-case`, `Phượng Beside`, and `route the user`.
+- Production QA audit after regeneration: `1778` pages, `0` blockers, `0` majors.
+- City-library validator after the cafe cue repair: `826` pages OK.
+
 ## Validation Run
 
 Commands:

@@ -1219,7 +1219,7 @@
         {
           "id": "how-it-differs-from-madam-khanh",
           "heading": "How It Compares With Madam Khánh",
-          "body": "Bánh Mì Phượng is the fast glass-case sandwich shop: visible fillings, quick choices, takeaway rhythm. Madam Khánh is the other famous Hội An bánh mì shop, known for the Bánh Mì Queen name."
+          "body": "Bánh Mì Phượng is the famous quick-service sandwich shop nearby, with visible fillings and a takeaway rhythm. Madam Khánh is the other well-known Hội An bánh mì shop, built around the Bánh Mì Queen name and a calmer order."
         },
         {
           "id": "take-it-back-outside",
@@ -1242,9 +1242,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-madam-khanh",
           "label": "Madam Khánh",
-          "relationship": "same-dish shop comparison",
+          "relationship": "same-dish sandwich-shop comparison",
           "displaySubtitle": "The other famous Hội An bánh mì shop, known as the Bánh Mì Queen.",
-          "reason": "Madam Khanh is the source-supported same-dish comparison for Banh Mi Phuong.",
+          "reason": "Madam Khánh is the named shop comparison for Bánh Mì Phượng; visible copy now explains that relationship for first-time visitors.",
           "status": "render"
         }
       ],
@@ -3484,7 +3484,7 @@
       "storySpine": "Cocobox helps the day slow down without leaving the old-town flow.",
       "intro": {
         "heading": "A Cool Drink Break",
-        "body": "Cocobox brings a short cafe break: fruit, juice, coffee, design cues, and a little shade when the walking loop starts to blur between old-town errands."
+        "body": "Cocobox brings a short cafe break: fruit juices, coffee, small tables, design-shop shelves, and shade when the walking loop starts to blur between old-town errands."
       },
       "usefulPhraseCards": [
         {
@@ -3516,7 +3516,7 @@
         {
           "id": "fruit-coffee-counter",
           "heading": "Fruit, Coffee, Color",
-          "body": "The small room is tropical juice, coffee, fruit, and yellow-wall Hội An color. Keep the visit visual and drink-led."
+          "body": "Order from the drink menu, then keep the visit visual and short: tropical juice, coffee, fruit, small tables, and yellow-wall Hội An color."
         },
         {
           "id": "between-walks",
@@ -3526,7 +3526,7 @@
         {
           "id": "heat-break",
           "heading": "Heat Break",
-          "body": "The clearest moment is practical: one cold drink, a short seat, and a reset before the next old-town stretch."
+          "body": "The clearest moment is practical: one cold drink, a small table, and a reset before the next old-town stretch."
         },
         {
           "id": "cafe-not-landmark",
@@ -4657,7 +4657,7 @@
       "storySpine": "It earns its place because Hội An has few rooftop cafe views over the yellow roofline; the coffee supports the view, not the other way around.",
       "intro": {
         "heading": "Rooftop First, Coffee Second",
-        "body": "Faifo Coffee is a rooftop-view cafe first and a coffee stop second: climb for yellow rooflines, then choose coconut, egg, or classic Vietnamese coffee if the terrace is not crowded."
+        "body": "Faifo Coffee is a rooftop-view cafe first and a coffee stop second: terrace tables, yellow rooflines, and coconut, egg, or classic Vietnamese coffee if the terrace is not crowded."
       },
       "usefulPhraseCards": [
         {
@@ -4689,12 +4689,12 @@
         {
           "id": "rooftop-before-coffee",
           "heading": "Rooftop Before Coffee",
-          "body": "The reason is the roofline. If the terrace is crowded, the visit can shrink to one drink and a quick look."
+          "body": "The reason is the roofline and terrace setting. If the tables are crowded, the visit can shrink to one drink and a quick look."
         },
         {
           "id": "order-vietnamese",
           "heading": "Order Vietnamese",
-          "body": "Coconut coffee, egg coffee, or a plain milk coffee gives the stop more local shape than treating it as only a photo perch."
+          "body": "Coconut coffee, egg coffee, or a plain milk coffee gives the drink menu more local shape than treating it as only a photo perch."
         },
         {
           "id": "coffee-first-alternative",
@@ -6264,8 +6264,8 @@
         },
         {
           "id": "how-it-differs-from-phuong",
-          "heading": "How It Compares With Phượng",
-          "body": "Bánh Mì Phượng is the faster glass-case sandwich shop nearby. Madam Khánh leans on the Bánh Mì Queen name and a calmer order for the same Hội An bánh mì craving."
+          "heading": "How It Compares With Bánh Mì Phượng",
+          "body": "Bánh Mì Phượng is the famous quick-service sandwich shop nearby, with fillings visible before you order. Madam Khánh is the Bánh Mì Queen shop, a calmer same-dish choice for the same Hội An craving."
         }
       ],
       "mentionedHereCandidates": [
@@ -6283,9 +6283,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-banh-mi-phuong",
           "label": "Bánh mì Phượng",
-          "relationship": "same-dish shop comparison",
-          "displaySubtitle": "The quick glass-case bánh mì shop when the sandwich itself is the comparison.",
-          "reason": "Banh Mi Phuong is the right same-dish comparison for Madam Khanh.",
+          "relationship": "same-dish sandwich-shop comparison",
+          "displaySubtitle": "The famous Hội An bánh mì shop nearby, with visible fillings and a quicker takeaway rhythm.",
+          "reason": "Bánh Mì Phượng is the named shop comparison for Madam Khánh; visible copy now explains that relationship for first-time visitors.",
           "status": "render"
         }
       ],
