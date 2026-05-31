@@ -85,9 +85,8 @@ No immediate delete:
 
 ## Remaining Work
 
-The next production step is rendered proof for this exact copy batch on representative pages. Current follow-up proof now covers `Bánh mì Phượng`, `Madam Khánh`, and `Thành Cafe`; the remaining representative pages still need screenshot review:
+The next production step is rendered proof for this exact copy batch on representative pages. Current follow-up proof now covers `Bánh mì Phượng`, `Madam Khánh`, `Thành Cafe`, and the Da Nang representative trio. The remaining representative pages still need screenshot review:
 
-- Đà Nẵng: `city-danang-place-banh-mi`, `city-danang-place-bep-hen`, `city-danang-place-moc-quan-seafood`.
 - Hội An: `city-hoian-place-banh-mi`, `city-hoian-place-mot-herbal-drink`, `city-hoian-place-vys-market`.
 - Huế: `city-hue-place-ba-van-banh-loc`, `city-hue-place-banh-bot-loc`, `city-hue-place-che-hue`.
 

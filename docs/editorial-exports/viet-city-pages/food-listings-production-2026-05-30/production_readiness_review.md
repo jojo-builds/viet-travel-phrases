@@ -4525,6 +4525,62 @@ The MICHELIN-recognition invariant is now durable and passing, but broad product
 
 No subagents were spawned or closed in this continuation. This pass used local source, MICHELIN-coverage, comparison-copy, validator, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
 
+## Continuation: Da Nang Representative Render Proof
+
+Thirty-sixth pass date: 2026-05-31
+
+Commit before pass: `80c49e072 Repair listing copy critique follow-up`
+
+This continuation closes the Da Nang representative proof gap from the restaurant significance audit. The source copy had already been repaired; this pass performs a fresh render proof against the current branch after one small natural-language cleanup.
+
+### Copy Touch-Up
+
+Changed source pages:
+
+- `city-danang-place-banh-mi`
+- `city-danang-place-bep-hen`
+- `city-danang-place-moc-quan-seafood`
+
+Visible repair:
+
+- Removed remaining soft `should` phrasing from the representative Da Nang set where it sounded like editorial posture instead of traveler-facing copy.
+- Kept the MICHELIN claims date-bounded and source-supported.
+- Preserved the food-specific hooks: fast sandwich order, Bếp Hên house-dish intimacy, and MỘC seafood tank / garlic-butter lobster guidance.
+
+### Simulator Render Proof
+
+Simulator: `SpeakLocal City Listings`.
+
+Build/run result: `SUCCEEDED` for all scoped launches.
+
+Rendered proof folder:
+
+- `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-danang-representative-copy-render/`
+
+Screenshots:
+
+- `danang-banh-mi-top.jpg`
+- `danang-banh-mi-sections.jpg`
+- `danang-banh-mi-related.jpg`
+- `danang-bep-hen-top.jpg`
+- `danang-bep-hen-sections.jpg`
+- `danang-bep-hen-related.jpg`
+- `danang-moc-quan-top.jpg`
+- `danang-moc-quan-sections.jpg`
+- `danang-moc-quan-related.jpg`
+
+Render notes:
+
+- `Bếp Hên` renders the 2025 MICHELIN Selected intro, house-dish section copy, explicit Madame Lân comparison, related cards, and clear bottom spacing.
+- `MỘC Quán Seafood` renders the 2025 MICHELIN Selected intro, tank / shellfish guidance, seafood-guide Mentioned Here card, related seafood cards, and clear bottom spacing.
+- `Bánh mì ở Đà Nẵng` renders the intro and phrase cards cleanly. Its Compare Nearby card currently appears between section blocks rather than only at the very end; this is existing module ordering, not a copy blocker for this pass.
+
+### Remaining Risk After Da Nang Representative Proof
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass closes the Da Nang representative screenshot gap for the current critique batch. The remaining representative proof list is now Hội An (`city-hoian-place-banh-mi`, `city-hoian-place-mot-herbal-drink`, `city-hoian-place-vys-market`) and Huế (`city-hue-place-ba-van-banh-loc`, `city-hue-place-banh-bot-loc`, `city-hue-place-che-hue`).
+
 ## Continuation: Jojo Copy Critique Follow-Up
 
 Thirty-fifth pass date: 2026-05-31
