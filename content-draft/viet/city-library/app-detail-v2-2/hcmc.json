@@ -880,14 +880,14 @@
           "body": "It slides between bigger plans: quick as a snack, filling as lunch, and easy to eat without decoding a long menu."
         },
         {
-          "id": "fast-counter-meal",
-          "heading": "Fast Counter Meal",
+          "id": "fast-moving-meal",
+          "heading": "Fast Moving Meal",
           "body": "It suits a day that keeps moving: before a museum, after a market, or between rides."
         },
         {
           "id": "small-differences-matter",
           "heading": "Small Differences Matter",
-          "body": "Bread bite, filling, sauce, and chili vary by shop. Two bánh mì counters can taste completely different."
+          "body": "Bread bite, filling, sauce, and chili vary by shop. Two bánh mì shops can taste completely different."
         }
       ],
       "mentionedHereCandidates": [],
@@ -895,9 +895,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-banh-mi-huynh-hoa",
           "label": "Bánh mì Huỳnh Hoa",
-          "relationship": "dish-to-counter follow-through",
-          "displaySubtitle": "A named counter when the quick sandwich should become a specific stop.",
-          "reason": "The dish page should route to a concrete banh mi counter for saving.",
+          "relationship": "dish-to-shop follow-through",
+          "displaySubtitle": "A named sandwich shop when the quick bite should become a specific lunch plan.",
+          "reason": "The dish page should route to a concrete banh mi shop.",
           "status": "render"
         }
       ],
@@ -949,11 +949,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "banh mi huynh hoa",
-      "travelerMoment": "Choose Huỳnh Hoa when Saigon bánh mì should become a specific counter: crisp bread, stacked fillings, chili choices, takeaway pace, and a line that wants a quick order.",
-      "storySpine": "Huynh Hoa earns the save because it turns a common sandwich into a named Saigon stop: bread, richness, pickles, herbs, chili, and queue momentum.",
+      "travelerMoment": "Huỳnh Hoa is the named Saigon bánh mì shop for crisp bread, stacked fillings, chili choices, takeaway pace, and a line that wants a quick order.",
+      "storySpine": "Huynh Hoa turns a common sandwich into a specific Saigon lunch memory: bread, richness, pickles, herbs, chili, and queue momentum.",
       "intro": {
-        "heading": "A Named Sandwich Counter",
-        "body": "Banh Mi Huynh Hoa is the Saigon counter to save when bánh mì should feel specific: crusty bread, stacked fillings, herbs, chili, and a fast order that turns into lunch."
+        "heading": "A Named Sandwich Shop",
+        "body": "Banh Mi Huynh Hoa is the Saigon sandwich shop for a specific bánh mì craving: crusty bread, stacked fillings, herbs, chili, and a fast order that turns into lunch."
       },
       "usefulPhraseCards": [
         {
@@ -985,7 +985,7 @@
         {
           "id": "the-order-moves-fast",
           "heading": "The Order Moves Fast",
-          "body": "The pace is counter-quick and built for movement. Decide chili and takeaway before the sandwich starts moving."
+          "body": "The pace is quick and built for movement. Decide chili and takeaway before the sandwich starts moving."
         },
         {
           "id": "a-quick-meal-stop",
@@ -993,14 +993,14 @@
           "body": "One rich sandwich can cover lunch without turning the day into a restaurant hunt. Keep it as a focused stop, then keep walking."
         },
         {
-          "id": "counter-confidence-helps",
-          "heading": "Counter Confidence Helps",
-          "body": "Pointing works, but a simple phrase helps when the line is moving. Order one, set the chili level, and let the counter do the rest."
+          "id": "line-confidence-helps",
+          "heading": "Line Confidence Helps",
+          "body": "Pointing works, but a simple phrase helps when the line is moving. Order one, set the chili level, and let the staff do the rest."
         },
         {
           "id": "the-sandwich-stays-central",
           "heading": "The Sandwich Stays Central",
-          "body": "Remember it for the counter more than a long sit-down story: bread bite, filling, sauce, herbs, and the small pressure of ordering well."
+          "body": "Remember it for the sandwich more than a long sit-down story: bread bite, filling, sauce, herbs, and the small pressure of ordering well."
         }
       ],
       "mentionedHereCandidates": [
@@ -1009,8 +1009,8 @@
           "type": "dish",
           "catalogId": "viet-family-city-hcmc-place-banh-mi",
           "sourceText": "sandwich",
-          "displaySubtitle": "The Saigon sandwich guide behind this famous counter.",
-          "reason": "The page centers a named banh mi counter and should link to the dish-level guide.",
+          "displaySubtitle": "The Saigon sandwich guide behind this famous shop.",
+          "reason": "The page centers a named banh mi shop and should link to the dish-level guide.",
           "status": "render"
         }
       ],
@@ -1037,13 +1037,14 @@
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was promoted.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
-          "Saigon food-desire continuation on 2026-05-30: visible copy now treats Huỳnh Hoa as a named bánh mì counter with stronger sandwich and ordering detail."
+          "Saigon food-desire continuation on 2026-05-30: visible copy now treats Huỳnh Hoa as a named bánh mì shop with stronger sandwich and ordering detail.",
+          "2026-05-31 U.S.-voice repair: removed explicit save wording and replaced broad counter phrasing in visible copy."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Huynh Hoa now has a concrete named-counter reason, stronger bánh mì desire, and a dish-to-market trip-building path."
+        "reason": "Production food pass: Huynh Hoa now has a concrete named-shop reason, stronger bánh mì desire, and a dish-to-market trip-building path."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -4333,7 +4334,7 @@
           "label": "Cơm tấm Ba Ghiền",
           "relationship": "dish-to-restaurant follow-through",
           "displaySubtitle": "A focused broken-rice stop when the pork chop should be the meal plan.",
-          "reason": "The dish page should route to a concrete com tam place for saving.",
+          "reason": "The dish page should route to a concrete com tam place for a specific meal plan.",
           "status": "render"
         }
       ],

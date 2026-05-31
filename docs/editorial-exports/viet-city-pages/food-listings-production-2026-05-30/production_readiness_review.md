@@ -197,6 +197,24 @@ Keep these useful, but do not make them headline trip-building recommendations y
 5. Render-review the changed pages.
    A page is not production-ready until screenshots prove intro, phrase cards, Mentioned Here, related cards, and chrome spacing in the app.
 
+## 2026-05-31 U.S.-Voice Repair Addendum
+
+Jojo's simulator review found a real voice bug: some pages were making the product mechanic visible by saying things like `counter to save`, `the line is part of the stop`, or ambiguous comparison headings such as `Phượng Beside Madam`.
+
+Focused repair applied:
+
+- `city-hoian-place-banh-mi-phuong`: removed explicit save language, changed broad `counter` framing to sandwich-shop / glass-case / line language, and clarified that Madam Khánh is another famous Hội An bánh mì shop.
+- `city-hoian-place-madam-khanh`: repaired the reciprocal comparison so `Bánh mì Phượng` and `Madam Khánh` read as named shops, not unexplained Vietnamese words.
+- Related bánh mì, pho, cao lầu, cơm gà, and mì Quảng cards touched by the scan were adjusted where the same phrasing was obvious in visible copy.
+
+This does not clear the whole corpus. A source scan still shows many older `save-worthy` pass artifacts where visible copy literally says `save`, especially in Michelin/food-anchor pages. The new copy gate is: make the place feel worth saving without telling the user to save it.
+
+Render proof:
+
+- `render-proof-2026-05-31-banh-mi-phuong-us-voice-repair/banh-mi-phuong-first-screen.jpg`
+- `render-proof-2026-05-31-banh-mi-phuong-us-voice-repair/banh-mi-phuong-related-cards.jpg`
+- `render-proof-2026-05-31-banh-mi-phuong-us-voice-repair/banh-mi-phuong-bottom-inset.jpg`
+
 ## Validation Run
 
 Commands:

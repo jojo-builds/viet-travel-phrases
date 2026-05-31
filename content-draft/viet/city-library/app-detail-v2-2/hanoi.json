@@ -2415,7 +2415,7 @@
         {
           "id": "notice-the-room-then-move-on",
           "heading": "Notice The Room, Then Move On",
-          "body": "The design is part of the appeal, but keep the visit short. Sit, cool down, watch the counter pace, then continue."
+          "body": "The design is part of the appeal, but keep the visit short. Sit, cool down, watch the room rhythm, then continue."
         },
         {
           "id": "a-cooldown-table",
@@ -7939,7 +7939,7 @@
         {
           "id": "room-habits-change",
           "heading": "Room Habits Change",
-          "body": "Arrive ready to watch the room: counter pace, queue mood, broth steam, and the small decisions before ordering."
+          "body": "Arrive ready to watch the room: staff rhythm, queue mood, broth steam, and the small decisions before ordering."
         }
       ],
       "mentionedHereCandidates": [],
@@ -7947,8 +7947,8 @@
         {
           "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
           "label": "Phở Gia Truyền",
-          "relationship": "pho-counter comparison",
-          "displaySubtitle": "Another beef-pho counter when the choice is queue, broth, and room pace.",
+          "relationship": "pho-shop comparison",
+          "displaySubtitle": "Another beef-pho shop when the choice is queue, broth, and room pace.",
           "reason": "Pho Gia Truyen is the direct named-pho comparison for Pho Bat Dan.",
           "status": "render"
         }
@@ -8059,17 +8059,17 @@
         {
           "catalogId": "viet-family-city-hanoi-place-pho-bo-lam",
           "label": "Phở Bò Lâm",
-          "relationship": "dish-to-counter follow-through",
-          "displaySubtitle": "A named beef-pho counter when broth, cuts, and room pace should become specific.",
-          "reason": "The beef-pho dish page should route to a named beef-pho counter.",
+          "relationship": "dish-to-shop follow-through",
+          "displaySubtitle": "A named beef-pho shop when broth, cuts, and room pace should become specific.",
+          "reason": "The beef-pho dish page should route to a named beef-pho shop.",
           "status": "render"
         },
         {
           "catalogId": "viet-family-city-hanoi-place-pho-10-ly-quoc-su",
           "label": "Phở 10 Lý Quốc Sư",
-          "relationship": "dish-to-recognizable-counter",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Hoan Kiem pho name for an easy first save.",
-          "reason": "The beef-pho dish page should surface the recognizable Hoan Kiem Bib Gourmand counter now that it exists as a first-class page.",
+          "relationship": "dish-to-recognizable-shop",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Hoan Kiem pho name for an easy first bowl.",
+          "reason": "The beef-pho dish page should surface the recognizable Hoan Kiem Bib Gourmand shop now that it exists as a first-class page.",
           "status": "render"
         }
       ],
@@ -8120,8 +8120,8 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "pho bo lam",
-      "travelerMoment": "Choose Phở Bò Lâm when Hanoi pho should be about beef cuts, chew, and broth together: a Bib Gourmand counter for a deliberate bowl.",
-      "storySpine": "Pho Bo Lam gets its specificity from beef texture, tendon, broth, herbs, and counter pace rather than guide-list status alone.",
+      "travelerMoment": "Phở Bò Lâm is for a deliberate Hanoi pho bowl built around beef cuts, chew, and broth together.",
+      "storySpine": "Pho Bo Lam gets its specificity from beef texture, tendon, broth, herbs, and shop pace rather than guide-list status alone.",
       "intro": {
         "heading": "A Bib Gourmand Pho Stop",
         "body": "Pho Bo Lam is a 2025 MICHELIN Bib Gourmand beef-pho stop for broth, rice noodles, herbs, and the deeper chew of tendon or richer beef cuts."
@@ -8171,7 +8171,7 @@
         {
           "id": "shop-details-shift",
           "heading": "Shop Details Shift",
-          "body": "Check the signs, queue, and room before making the bowl the fixed plan. Beef pho needs a counter that feels alive."
+          "body": "Check the signs, queue, and room before making the bowl the fixed plan. Beef pho needs a shop that feels alive."
         }
       ],
       "mentionedHereCandidates": [
@@ -8180,7 +8180,7 @@
           "type": "dish",
           "catalogId": "viet-family-city-hanoi-place-pho-bo",
           "sourceText": "beef-pho",
-          "displaySubtitle": "The Hanoi beef-pho guide behind this named counter.",
+          "displaySubtitle": "The Hanoi beef-pho guide behind this named shop.",
           "reason": "The page centers beef pho and should link to the dish guide.",
           "status": "render"
         }
@@ -8189,8 +8189,8 @@
         {
           "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
           "label": "Phở Gia Truyền",
-          "relationship": "pho-counter comparison",
-          "displaySubtitle": "Another Hanoi pho counter when broth, queue, and room pace are the comparison.",
+          "relationship": "pho-shop comparison",
+          "displaySubtitle": "Another Hanoi pho shop when broth, queue, and room pace are the comparison.",
           "reason": "Pho Gia Truyen is the natural same-dish comparison for a named pho stop.",
           "status": "render"
         }
@@ -8214,7 +8214,7 @@
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Pho Bo Lam now has bounded 2025 MICHELIN Bib Gourmand positioning, specific beef-pho desire, and a pho-counter comparison."
+        "reason": "Production food pass: Pho Bo Lam now has bounded 2025 MICHELIN Bib Gourmand positioning, specific beef-pho desire, and a pho-shop comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -8357,11 +8357,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "pho ga nguyet",
-      "travelerMoment": "Phở Gà Nguyệt gives Hanoi's pho map a lighter counterpoint: clear chicken broth, rice noodles, tender chicken, herbs, lime, and a counter meal built around phở gà rather than beef.",
+      "travelerMoment": "Phở Gà Nguyệt gives Hanoi's pho map a lighter counterpoint: clear chicken broth, rice noodles, tender chicken, herbs, lime, and a quick meal built around phở gà rather than beef.",
       "storySpine": "Phở Gà Nguyệt matters because Hanoi pho is not only beef; this 2025 MICHELIN Bib Gourmand stop gives chicken pho its own named place in the city's pho set.",
       "intro": {
         "heading": "Chicken Pho With Its Own Weight",
-        "body": "This 2025 MICHELIN Bib Gourmand counter keeps the meal focused on phở gà: clear broth, rice noodles, tender chicken, green herbs, and lime."
+        "body": "This 2025 MICHELIN Bib Gourmand shop keeps the meal focused on phở gà: clear broth, rice noodles, tender chicken, green herbs, and lime."
       },
       "usefulPhraseCards": [
         {
@@ -8434,9 +8434,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
           "label": "Phở Gia Truyền",
-          "relationship": "pho-counter comparison",
-          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Old Quarter beef-pho counter for broth and room pace.",
-          "reason": "Pho Gia Truyen gives the named-pho counter comparison without duplicating the chicken-pho role.",
+          "relationship": "pho-shop comparison",
+          "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Old Quarter beef-pho shop for broth and room pace.",
+          "reason": "Pho Gia Truyen gives the named-pho shop comparison without duplicating the chicken-pho role.",
           "status": "render"
         }
       ],
@@ -8489,10 +8489,10 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "pho muoi ly quoc su",
-      "travelerMoment": "Phở 10 Lý Quốc Sư gives Hanoi pho a highly recognizable Hoan Kiem name: a 2025 MICHELIN Bib Gourmand beef-pho stop for clear broth, rice noodles, sliced beef, herbs, lime, and a fast counter meal near the Old Quarter.",
-      "storySpine": "Many visitors already search the name before arrival, and the bowl is specific enough to save beside other Hanoi pho counters rather than another loose pho mention.",
+      "travelerMoment": "Phở 10 Lý Quốc Sư gives Hanoi pho a highly recognizable Hoan Kiem name: a 2025 MICHELIN Bib Gourmand beef-pho stop for clear broth, rice noodles, sliced beef, herbs, lime, and a quick meal near the Old Quarter.",
+      "storySpine": "Many visitors already search the name before arrival, and the bowl is specific enough to remember beside other Hanoi pho shops rather than another loose pho mention.",
       "intro": {
-        "heading": "The Obvious Pho Save",
+        "heading": "The Recognizable Pho Name",
         "body": "Phở 10 Lý Quốc Sư is the 2025 MICHELIN Bib Gourmand pho name many people already notice before Hanoi. The Hoan Kiem branch keeps the job clear: beef pho, hot broth, herbs, lime, and a quick bowl."
       },
       "usefulPhraseCards": [
@@ -8549,8 +8549,8 @@
           "type": "dish",
           "catalogId": "viet-family-city-hanoi-place-pho-bo",
           "sourceText": "beef pho",
-          "displaySubtitle": "The Hanoi beef-pho baseline behind this recognizable counter.",
-          "reason": "The page centers a beef-pho counter and should link to the dish-level guide.",
+          "displaySubtitle": "The Hanoi beef-pho baseline behind this recognizable shop.",
+          "reason": "The page centers a beef-pho shop and should link to the dish-level guide.",
           "status": "render"
         }
       ],
@@ -8558,9 +8558,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
           "label": "Phở Gia Truyền",
-          "relationship": "same-dish counter comparison",
-          "displaySubtitle": "Another 2025 MICHELIN Bib Gourmand Old Quarter pho counter for broth and room pace.",
-          "reason": "Pho Gia Truyen is the closest same-dish counter comparison for a visitor choosing one or two Old Quarter pho saves.",
+          "relationship": "same-dish shop comparison",
+          "displaySubtitle": "Another 2025 MICHELIN Bib Gourmand Old Quarter pho shop for broth and room pace.",
+          "reason": "Pho Gia Truyen is the closest same-dish shop comparison for a visitor choosing one or two Old Quarter pho names.",
           "status": "render"
         },
         {
@@ -8622,10 +8622,10 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "pho gia truyen",
-      "travelerMoment": "Save Phở Gia Truyền when the Old Quarter bowl should be a 2025 MICHELIN Bib Gourmand counter stop: broth, steam, sliced beef, herbs, and quick room pace.",
-      "storySpine": "Phở Gia Truyền carries the recognized Hanoi counter-meal memory through broth, steam, beef, herbs, and a room moving quickly.",
+      "travelerMoment": "Phở Gia Truyền is the Old Quarter pho shop for a 2025 MICHELIN Bib Gourmand bowl: broth, steam, sliced beef, herbs, and quick room pace.",
+      "storySpine": "Phở Gia Truyền carries the recognized Hanoi pho-shop memory through broth, steam, beef, herbs, and a room moving quickly.",
       "intro": {
-        "heading": "A Bib Gourmand Pho Counter",
+        "heading": "A Bib Gourmand Pho Shop",
         "body": "Pho Gia Truyen is a 2025 MICHELIN Bib Gourmand Old Quarter bowl: broth steam, sliced beef, herbs, hot broth, and a room moving at meal speed."
       },
       "usefulPhraseCards": [
@@ -8658,11 +8658,11 @@
         {
           "id": "bowl-before-rush",
           "heading": "Bowl Before Rush",
-          "body": "A straightforward pho order steadies the first minute when the room, counter, and other diners begin moving."
+          "body": "A straightforward pho order steadies the first minute when the room, staff, and other diners begin moving."
         },
         {
-          "id": "counter-pace",
-          "heading": "Bib Gourmand, Counter Pace",
+          "id": "room-pace",
+          "heading": "Bib Gourmand, Room Pace",
           "body": "The recognition points to a bowl that still moves quickly. Keep the order direct and let broth, beef, herbs, and room pace carry the visit."
         },
         {
@@ -8671,9 +8671,9 @@
           "body": "Compare broth, beef bite, herbs, and room pace if trying several Hanoi pho stops."
         },
         {
-          "id": "counter-details-shift",
-          "heading": "Counter Details Shift",
-          "body": "Counter flow, menu board, broth steam, and queue mood tell you whether this is the bowl to commit to."
+          "id": "shop-details-shift",
+          "heading": "Shop Details Shift",
+          "body": "Menu board, broth steam, staff rhythm, and queue mood tell you whether this is the bowl to commit to."
         }
       ],
       "mentionedHereCandidates": [
@@ -8682,7 +8682,7 @@
           "type": "dish",
           "catalogId": "viet-family-city-hanoi-place-pho-bo",
           "sourceText": "Pho",
-          "displaySubtitle": "The Hanoi beef-pho baseline behind this counter bowl.",
+          "displaySubtitle": "The Hanoi beef-pho baseline behind this Old Quarter bowl.",
           "reason": "The page centers a beef-pho counter and should link to the dish-level guide.",
           "status": "render"
         }
@@ -8691,8 +8691,8 @@
         {
           "catalogId": "viet-family-city-hanoi-place-pho-bo-lam",
           "label": "Phở Bò Lâm",
-          "relationship": "same-dish counter comparison",
-          "displaySubtitle": "Another 2025 MICHELIN Bib Gourmand pho counter when broth, queue, and beef cuts are the comparison.",
+          "relationship": "same-dish shop comparison",
+          "displaySubtitle": "Another 2025 MICHELIN Bib Gourmand pho shop when broth, queue, and beef cuts are the comparison.",
           "reason": "Pho Bo Lam is a same-dish comparison for Pho Gia Truyen.",
           "status": "render"
         }
@@ -8709,13 +8709,14 @@
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-pho-gia-truyen: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
-          "MICHELIN Bib Gourmand recognition patch on 2026-05-31: official 2025 PDF support added while keeping the Old Quarter pho-counter reason primary."
+          "MICHELIN Bib Gourmand recognition patch on 2026-05-31: official 2025 PDF support added while keeping the Old Quarter pho-shop reason primary.",
+          "2026-05-31 U.S.-voice repair: removed explicit save wording and replaced broad counter phrasing in visible copy."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production MICHELIN patch: Phở Gia Truyền now carries bounded 2025 MICHELIN Bib Gourmand context and a clearer broth-counter save reason."
+        "reason": "Production MICHELIN patch: Phở Gia Truyền now carries bounded 2025 MICHELIN Bib Gourmand context and a clearer broth-shop reason."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
@@ -9116,7 +9117,7 @@
         {
           "id": "square-before-door",
           "heading": "Square Before Door",
-          "body": "The outside is part of the stop: facade, street movement, people waiting, and cafes around the edges."
+          "body": "Start with the square before the doorway: facade, street movement, people waiting, and cafes around the edges."
         },
         {
           "id": "worship-stays-clear",
