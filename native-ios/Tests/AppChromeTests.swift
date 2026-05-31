@@ -2109,6 +2109,40 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testHomeRecentlyViewedFeatureItemsTrustCanonicalRecentPageIDs() {
+        let recentPageIDs = [
+            "viet-phrase-phone-1",
+            "viet-phrase-hotel-1",
+            "viet-phrase-food-menu",
+            "viet-phrase-price-1",
+            "viet-phrase-airport-1",
+            "viet-phrase-taxi-1",
+        ]
+
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        HomeRecentlyViewedContent.resetFeatureItemCacheForTesting()
+        XCTAssertEqual(
+            HomeRecentlyViewedContent.featureItemPageIDsForTesting(fromCanonicalRecentPageIDs: recentPageIDs),
+            recentPageIDs
+        )
+
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer {
+            HomeRecentlyViewedContent.resetFeatureItemCacheForTesting()
+            VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        }
+
+        XCTAssertEqual(
+            HomeRecentlyViewedContent.featureItemPageIDsForTesting(fromCanonicalRecentPageIDs: recentPageIDs),
+            recentPageIDs
+        )
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            0,
+            "LocalUserIntentStore.recentPageIDs are already canonical, so a cached Recently viewed shelf should not re-enter canonical lookup work before reading cached feature items."
+        )
+    }
+
     func testHomepagePhraseCardsOpenBuiltOutListingPages() throws {
         let manifest = try XCTUnwrap(AudioAssetManifest.main)
         let issues = HomePageLinkRegistry.homepageListingPageIDs.compactMap {

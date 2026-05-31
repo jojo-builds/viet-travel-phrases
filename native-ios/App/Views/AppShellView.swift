@@ -4356,7 +4356,7 @@ struct HomeView: View {
     }
 
     private var recentlyViewedFeatureItems: [HomeFeaturePhraseItem] {
-        HomeRecentlyViewedContent.featureItems(from: intentStore.recentPageIDs)
+        HomeRecentlyViewedContent.featureItems(fromCanonicalRecentPageIDs: intentStore.recentPageIDs)
     }
 
     private var practiceScenariosShelf: some View {
@@ -5555,8 +5555,30 @@ enum HomeRecentlyViewedContent {
         return cardPageIDs
     }
 
-    fileprivate static func featureItems(from recentPageIDs: [String]) -> [HomeFeaturePhraseItem] {
+    fileprivate static func featureItems(fromCanonicalRecentPageIDs recentPageIDs: [String]) -> [HomeFeaturePhraseItem] {
+        cardPageIDs(fromCanonicalRecentPageIDs: recentPageIDs).compactMap(cachedFeatureItem(for:))
+    }
+
+    private static func featureItems(from recentPageIDs: [String]) -> [HomeFeaturePhraseItem] {
         cardPageIDs(from: recentPageIDs).compactMap(cachedFeatureItem(for:))
+    }
+
+    private static func cardPageIDs(fromCanonicalRecentPageIDs recentPageIDs: [String]) -> [String] {
+        var seen = Set<String>()
+        var cardPageIDs: [String] = []
+
+        for pageID in recentPageIDs {
+            guard seen.insert(pageID).inserted else {
+                continue
+            }
+
+            cardPageIDs.append(pageID)
+            if cardPageIDs.count == maximumFeatureCards {
+                break
+            }
+        }
+
+        return cardPageIDs
     }
 
     private static func cachedFeatureItem(for pageID: String) -> HomeFeaturePhraseItem? {
@@ -5612,6 +5634,10 @@ enum HomeRecentlyViewedContent {
 #if DEBUG
     static func featureItemPageIDsForTesting(from recentPageIDs: [String]) -> [String] {
         featureItems(from: recentPageIDs).map(\.pageID)
+    }
+
+    static func featureItemPageIDsForTesting(fromCanonicalRecentPageIDs recentPageIDs: [String]) -> [String] {
+        featureItems(fromCanonicalRecentPageIDs: recentPageIDs).map(\.pageID)
     }
 
     static func resetFeatureItemCacheForTesting() {
