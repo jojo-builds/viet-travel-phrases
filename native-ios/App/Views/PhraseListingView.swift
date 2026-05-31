@@ -505,7 +505,7 @@ struct PhraseArticleTemplateView: View {
                     return
                 }
 
-                AdminBackdropImagePreheater.preheat(
+                AdminBackdropImagePreheater.preheatFocused(
                     PhrasePhotoBackdropLayout.preheatImageNames(
                         pageID: page.id,
                         heroImageName: imageName

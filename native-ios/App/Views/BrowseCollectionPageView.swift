@@ -224,7 +224,7 @@ struct BrowseCollectionPageView: View {
                 return
             }
 
-            AdminBackdropImagePreheater.preheat(
+            AdminBackdropImagePreheater.preheatFocused(
                 BrowseCollectionPhotoBackdropPolicy.preheatImageNames(
                     hasCityHub: descriptor.cityHub != nil,
                     mastheadImageName: descriptor.mastheadImageName

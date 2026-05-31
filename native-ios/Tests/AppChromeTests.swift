@@ -107,6 +107,24 @@ final class AppChromeTests: XCTestCase {
         ])
     }
 
+    func testFocusedDetailBackdropPreheatDropsStaleQueuedHeroWork() {
+        let queuedNames = AdminBackdropImagePreheatPlan.focusedQueuedImageNames(
+            existingQueuedImageNames: [
+                "HeroCityHuePlacePerfumeRiver",
+                "HeroCityHanoiPlaceLongBienBridge",
+                "BackdropPhrasePhoneCafeCharging",
+            ],
+            incomingImageNames: [
+                "BackdropPhrasePhoneAirportCharging",
+            ],
+            maxQueuedImageCount: 4
+        )
+
+        XCTAssertEqual(queuedNames, [
+            "BackdropPhrasePhoneAirportCharging",
+        ])
+    }
+
     func testAdminBackdropPreheatPlanDrainsNewestQueuedWorkFirst() {
         let next = AdminBackdropImagePreheatPlan.nextQueuedImageName(
             from: [

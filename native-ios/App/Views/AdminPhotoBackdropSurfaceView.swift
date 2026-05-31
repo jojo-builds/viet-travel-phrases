@@ -150,6 +150,18 @@ enum AdminBackdropImagePreheatPlan {
         return Array(mergedImageNames.suffix(maxCount))
     }
 
+    static func focusedQueuedImageNames(
+        existingQueuedImageNames _: [String],
+        incomingImageNames: [String],
+        maxQueuedImageCount: Int
+    ) -> [String] {
+        return queuedImageNames(
+            existingQueuedImageNames: [],
+            incomingImageNames: incomingImageNames,
+            maxQueuedImageCount: maxQueuedImageCount
+        )
+    }
+
     static func nextQueuedImageName(from queuedImageNames: [String]) -> NextQueuedImage? {
         guard let imageName = queuedImageNames.last else {
             return nil
@@ -558,6 +570,11 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
 
 enum AdminBackdropImagePreheater {
     #if canImport(UIKit)
+    private enum QueueMode {
+        case retainingQueuedWork
+        case focusedOnCurrentRequest
+    }
+
     private static let maxPreheatedImageCount = AdminBackdropPreheatPolicy.maxRetainedPreparedImages
     private static let maxQueuedImageCount = AdminBackdropPreheatPolicy.maxRetainedPreparedImages
     private static let lock = NSLock()
@@ -568,27 +585,53 @@ enum AdminBackdropImagePreheater {
     private static var queueWorkerTask: Task<Void, Never>?
 
     static func preheat(_ imageNames: [String]) {
+        preheat(imageNames, queueMode: .retainingQueuedWork)
+    }
+
+    static func preheatFocused(_ imageNames: [String]) {
+        preheat(imageNames, queueMode: .focusedOnCurrentRequest)
+    }
+
+    private static func preheat(_ imageNames: [String], queueMode: QueueMode) {
         lock.lock()
         let pendingImageNames = AdminBackdropImagePreheatPlan.pendingImageNames(
             requestedImageNames: imageNames,
             reservedImageNames: preheatedImageNames
         )
-        guard !pendingImageNames.isEmpty else {
-            lock.unlock()
-            return
-        }
-
         pendingImageNames.forEach { preheatedImageNames.insert($0) }
         let previousQueuedImageNames = queuedImageNames
-        queuedImageNames = AdminBackdropImagePreheatPlan.queuedImageNames(
-            existingQueuedImageNames: queuedImageNames,
-            incomingImageNames: pendingImageNames,
-            maxQueuedImageCount: maxQueuedImageCount
-        )
+
+        switch queueMode {
+        case .retainingQueuedWork:
+            guard !pendingImageNames.isEmpty else {
+                lock.unlock()
+                return
+            }
+
+            queuedImageNames = AdminBackdropImagePreheatPlan.queuedImageNames(
+                existingQueuedImageNames: queuedImageNames,
+                incomingImageNames: pendingImageNames,
+                maxQueuedImageCount: maxQueuedImageCount
+            )
+        case .focusedOnCurrentRequest:
+            let requestedImageNames = Set(imageNames)
+            let retainedRequestedQueue = queuedImageNames.filter { requestedImageNames.contains($0) }
+            queuedImageNames = AdminBackdropImagePreheatPlan.focusedQueuedImageNames(
+                existingQueuedImageNames: queuedImageNames,
+                incomingImageNames: retainedRequestedQueue + pendingImageNames,
+                maxQueuedImageCount: maxQueuedImageCount
+            )
+        }
+
         releaseDroppedQueuedReservations(
             previousQueuedImageNames + pendingImageNames,
             retainedQueuedImageNames: queuedImageNames
         )
+
+        guard !queuedImageNames.isEmpty else {
+            lock.unlock()
+            return
+        }
 
         if queueWorkerTask == nil {
             queueWorkerTask = Task.detached(priority: .utility) {
@@ -657,6 +700,7 @@ enum AdminBackdropImagePreheater {
     }
     #else
     static func preheat(_ imageNames: [String]) {}
+    static func preheatFocused(_ imageNames: [String]) {}
     #endif
 }
 

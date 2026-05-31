@@ -51,6 +51,7 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 35: city listing articles reused cached "Mentioned Here" and "Compare Nearby" pick arrays, but still asked the catalogs to refilter those arrays by section ID from the article render path; each article page now builds grouped menu/related pick buckets once per page instance and the body reads those buckets directly
 - root cause 36: phrase rows and breakdown cards resolved playable audio keys from SwiftUI row/card rendering, repeatedly entering `AudioAssetManifest` normalization and lookup work for deterministic phrase text during detail redraws; article pages now prepare row playback keys once per `PhraseArticleTemplateView` instance and rows read the prepared values
 - root cause 37: location-card rows reused grouped pick buckets, but each row could still resolve linked-menu audio from `AudioAssetManifest` while rendering; the location-pick grouping step now prepares pick audio keys once per page instance so "Mentioned Here", "Compare Nearby", and trailing place/menu cards read stored keys
+- root cause 38: listing/category/menu photo-backdrop pages queued hero-image preparation work for pages the user had already left; root/home still keep their small lookahead queue, but single-current-page detail, browse collection, and menu backdrops now use focused preheat mode so rapid page taps drop stale queued full-screen hero decodes and keep the newest active hero work
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -98,6 +99,17 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testPhraseArticleTemplateGroupsLocationPicksOncePerPageInstance`
   - `AppChromeTests/testPhraseArticleTemplatePreparesRowPlaybackAudioOncePerPageInstance`
   - `AppChromeTests/testPhraseArticleLocationPickGroupsPrepareAudioKeysOncePerPageInstance`
+  - `AppChromeTests/testFocusedDetailBackdropPreheatDropsStaleQueuedHeroWork`
+- XcodeBuildMCP simulator focused detail-backdrop preheat set on iPhone 17 Pro
+  - failed before implementation because `AdminBackdropImagePreheatPlan.focusedQueuedImageNames(...)` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T00-38-27-020Z_pid15747_ec606b65.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-42-46-255Z_pid15747_d870356f.xcresult`
+- XcodeBuildMCP simulator focused photo-backdrop preheat regression set on iPhone 17 Pro
+  - passed: `8` tests, `0` failures
+  - covered stale focused detail queue replacement, root/home selected-plus-lookahead behavior, bounded latest-work behavior, newest-first queue draining, and phrase/browse/menu photo-backdrop preheat eligibility
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-43-31-173Z_pid15747_bd4eb3b9.xcresult`
 - local hygiene checks after the detail redraw and saved-membership fixes:
   - `git diff --check -- native-ios/App/Views/PhraseListingView.swift native-ios/App/Models/AppChrome.swift native-ios/Tests/AppChromeTests.swift` passed
   - `node scripts/guard-native-only.js` passed

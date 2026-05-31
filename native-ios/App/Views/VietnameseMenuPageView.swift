@@ -355,7 +355,7 @@ struct VietnameseMenuPageView: View {
                 return
             }
 
-            AdminBackdropImagePreheater.preheat(
+            AdminBackdropImagePreheater.preheatFocused(
                 VietnameseMenuPhotoBackdropPolicy.preheatImageNames(
                     photoBackdropImageName: photoBackdropImageName,
                     fallbackHeroImageName: kind.heroImageName

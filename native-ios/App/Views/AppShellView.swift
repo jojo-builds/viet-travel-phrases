@@ -1797,7 +1797,7 @@ struct AppShellView: View {
     }
 
     private func preheatDetailBackdrop(pageID: String, heroImageNameOverride: String? = nil) {
-        AdminBackdropImagePreheater.preheat(
+        AdminBackdropImagePreheater.preheatFocused(
             Self.detailBackdropPreheatImageNames(
                 pageID: pageID,
                 heroImageNameOverride: heroImageNameOverride
