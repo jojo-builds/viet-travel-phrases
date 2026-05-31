@@ -4098,3 +4098,92 @@ This pass fixes one sandwich hierarchy and one renderer ordering issue. It does 
 ### Agent Lifecycle Note
 
 No subagents were spawned or closed in this continuation. This pass used local source, food-desire, voice, runtime, validator, render, and receipt gates only after real-agent lifecycle attempts froze earlier.
+
+## Continuation: Da Nang U.S.-Voice Save-Language Repair
+
+Twenty-seventh pass date: 2026-05-31
+
+Commit before pass: `0874a6420 Repair Banh Mi Phuong listing voice`
+
+This continuation responds directly to Jojo's copy review: visible place copy should make a listing feel worth remembering without telling the user to "save" it, and comparison cards should read like clear nearby choices rather than insider shorthand.
+
+### Pages Repaired
+
+- Da Nang V2.2 source visible fields were swept for literal `save` / `saved` / `saving` language across traveler moments, story spines, intros, section headings/bodies, Mentioned Here subtitles, and related-card subtitles.
+- The previous inventory showed 23 Da Nang page hits / 43 visible-field hits. The post-repair visible-field scan is 0 page hits / 0 visible-field hits.
+- Representative repaired pages include `city-danang-place-han-market`, `city-danang-place-nen`, `city-danang-place-la-maison-1888`, `city-danang-place-banh-xeo-ba-duong`, `city-danang-place-bep-hen`, `city-danang-place-madame-lan`, `city-danang-place-nam-danh-seafood`, and the Da Nang mì Quảng support pages.
+
+### Runtime Shape
+
+- No inventory count change: total stays 520 city noun/place pages, with Da Nang at 106.
+- `content-draft/viet/city-library/app-detail-v2-2/danang.json` remains the source authority.
+- Native projections, authored listing resources, and SQLite fixture were regenerated from source.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-danang-us-voice-repair/`
+
+Representative pages captured:
+
+- `viet-family-city-danang-place-han-market`
+  - `han-market-first-screen.jpg`: first viewport shows `The Easy First Market` intro and Useful Phrases start without visible save-command language.
+  - `han-market-mentioned-here.jpg`: Mentioned Here cards render with food/item subtitles.
+  - `han-market-related-cards.jpg`: Compare Nearby renders `Chợ Cồn` as the stronger food-first market nearby.
+  - `han-market-bottom-inset.jpg`: bottom position leaves the final Compare Nearby card above the bottom chrome.
+- `viet-family-city-danang-place-nen`
+  - `nen-first-screen.jpg`: first viewport shows `A Green-Star Dinner` intro and Useful Phrases start without visible save-command language.
+  - `nen-mentioned-here.jpg`: sections and Mentioned Here render after the phrase cards.
+  - `nen-bottom-inset.jpg`: bottom position leaves Mentioned Here and Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-danang-place-han-market`
+  - `--detail-page viet-family-city-danang-place-nen`
+- Build/run: PASS for the scoped build launch; scoped relaunches and screenshots succeeded.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 520 entries imported.
+- native resource generation: PASS, 1767 families, 1785 phrases, 1778 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 520 entries, 520 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 520 city noun pages, 520 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 520 city places, 826 city phrase tags, 0 release-blocking missing audio rows, 9100 relations.
+- Da Nang visible save-language scan: PASS, 0 visible-field hits.
+- generated authored listing resource scan for Da Nang save-language: PASS, 0 hits.
+- whitespace check: PASS.
+
+### Remaining Risk After Da Nang U.S.-Voice Repair
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass repairs one high-visibility city batch, but it does not claim the same save-language cleanup across Hà Nội, Saigon, Hội An, or Huế. Render proof also found an existing chrome debt: while scrolling, the sticky audio controls can cover the very top line of page content. Bottom inset, Mentioned Here, and Compare Nearby rendering are good in the captured Da Nang pages, but sticky audio overlap should be fixed before calling the affected pages fully production-ready.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, U.S.-voice, food-desire, runtime, validator, render, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
