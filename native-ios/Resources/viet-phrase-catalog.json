@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1781,
+    "phraseCount": 1782,
     "basePhraseCount": 935,
-    "cityPhraseCount": 822,
+    "cityPhraseCount": 823,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1763,
+    "familyCount": 1764,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -16523,6 +16523,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-hcmc-place-pho-hoa-pasteur"
+      ]
+    },
+    {
+      "id": "city-hcmc-place-pho-huong-binh",
+      "pageID": "viet-family-city-hcmc-place-pho-huong-binh",
+      "scenarioID": "city-guides",
+      "familyTitle": "Pho Huong Binh pronunciation",
+      "summary": "Save Phở Hương Bình for the Saigon phở choice that is not only beef: a 1958 second-generation shop where chicken, beef, clear broth, herbs, chicken skin, egg yolk, brisket, and tendon can shape the bowl.",
+      "primaryPhraseID": "city-hcmc-place-pho-huong-binh",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-hcmc-place-pho-huong-binh"
       ]
     },
     {
@@ -76352,6 +76364,51 @@
       "sourceIDs": [
         "vt-hcmc",
         "vt-hcmc-official"
+      ]
+    },
+    {
+      "id": "city-hcmc-place-pho-huong-binh",
+      "familyID": "city-hcmc-place-pho-huong-binh",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "Pho Huong Binh",
+      "targetText": "Phở Hương Bình",
+      "canonicalTargetText": "Phở Hương Bình",
+      "pronunciation": "pho huong binh",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Save Phở Hương Bình for the Saigon phở choice that is not only beef: a 1958 second-generation shop where chicken, beef, clear broth, herbs, chicken skin, egg yolk, brisket, and tendon can shape the bowl.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Saigon / Ho Chi Minh City",
+        "Saigon",
+        "Thành phố Hồ Chí Minh",
+        "Pho Huong Binh",
+        "Phở Hương Bình"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🏙️",
+      "notes": "city-library-v1; city=hcmc; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=fine-dining; place=hcmc-pho-huong-binh; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "hcmc",
+      "cityName": "Saigon / Ho Chi Minh City",
+      "cityShortTitle": "Saigon",
+      "cityVietnameseName": "Thành phố Hồ Chí Minh",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "hcmc-pho-huong-binh",
+      "placeName": "Pho Huong Binh",
+      "placeVietnameseName": "Phở Hương Bình",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "fine-dining",
+      "spokenChunks": 3,
+      "sourceIDs": [
+        "vt-hcmc",
+        "vt-hcmc-official",
+        "michelin-vietnam"
       ]
     },
     {

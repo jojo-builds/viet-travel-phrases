@@ -2364,6 +2364,111 @@ The additive path is now proven across seven stronger food pages, including the 
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
 
+## Continuation: Phở Hương Bình Additive HCMC Pilot
+
+Pass date: 2026-05-31
+
+Commit before pass: `9f3cda275 Add Banh Cuon Ba Xuan Hanoi food listing`
+
+This continuation adds `Phở Hương Bình` because the remaining Saigon phở candidate finally clears the difference bar. It is not another generic southern-phở listing. The page owns the chicken-or-beef family-shop choice: phở gà or phở bò, clearer broth, herbs, chicken skin, egg yolk, brisket, tendon, and add-ons inside a long-running shop story.
+
+### Page Added
+
+- `city-hcmc-place-pho-huong-binh`: new first-class V2.2 HCMC restaurant page.
+
+Visible page direction:
+
+- The first screen frames Hương Bình as the chicken-or-beef Bib Gourmand phở comparison, not another Pasteur or District 5 bowl.
+- Mentioned Here links to `Phở Sài Gòn ở Thành phố Hồ Chí Minh` so the named shop has dish-level context.
+- Compare Nearby renders `Phở Lệ`, `Phở Minh`, and `Phở Hòa Pasteur`, making the Saigon phở hierarchy clearer rather than flatter.
+
+### Add Decision
+
+Decision: add, with a narrow role.
+
+The page earns the extra slot because it answers a different trip question than the current Saigon phở set. `Phở Lệ` is the fuller District 5 Bib Gourmand bowl. `Phở Minh` is the quieter Pasteur-alley breakfast. `Phở Hòa Pasteur` is the familiar central support shop. Hương Bình is the family-shop phở choice when chicken and beef both need to stay on the table.
+
+Source support:
+
+- Official MICHELIN Guide Vietnam 2025 PDF lists `Phở Hương Bình` in the Ho Chi Minh City Bib Gourmand section as noodles.
+- Current MICHELIN venue-page evidence supports the stable visible details used in copy: 1958 family/second-generation story, phở gà, phở bò, clear light broth, chicken skin, egg yolk, brisket, tendon, and bowl add-ons.
+
+The page avoids hours, address, booking, closure, price, or operating claims.
+
+### Runtime Shape
+
+- `docs/city-production/agent-inputs/hcmc-nouns.md`: added row `65`.
+- `content-draft/viet/city-library/app-detail-v2-2/hcmc.json`: added the authored V2.2 source object and comparison cards from the southern-phở dish page plus Phở Lệ, Phở Minh, and Phở Hòa Pasteur.
+- `content-draft/viet/city-library/app-detail-v2-2/_index.json`: current inventory is now 517 city noun/place pages.
+- `native-ios/scripts/import-city-noun-intake.js` and `native-ios/scripts/validate-viet-city-copy.js`: city count expectations now allow HCMC 106, Hanoi 105, Da Nang 106, Hội An 100, Hue 100.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-pho-huong-binh-additive/`
+
+Representative page captured:
+
+- `viet-family-city-hcmc-place-pho-huong-binh`
+  - `pho-huong-binh-first-screen.jpg`: first viewport shows the wrapped title, pronunciation line, `Chicken Or Beef, Same Room` intro, and playable Useful Phrases.
+  - `pho-huong-binh-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here plus `Phở Lệ`, `Phở Minh`, and `Phở Hòa Pasteur` Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hcmc-place-pho-huong-binh`
+  - `--detail-page viet-family-city-hcmc-place-pho-huong-binh --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for the scoped build launch and the bottom-validation relaunch.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 517 entries imported.
+- native resource generation: PASS, 1764 families, 1782 phrases, 1775 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 517 entries, 517 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS after removing one internal-sounding sentence before projection.
+- city-copy compatibility validation: PASS, 5 hubs, 517 city noun pages, 517 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 517 city places, 823 city phrase tags, 0 release-blocking missing audio rows, 9072 relations.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Phở Hương Bình Add
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass resolves the remaining Saigon phở add candidate by giving it a narrow chicken-or-beef family-shop role. Remaining MICHELIN-backed adds should now focus outside Saigon phở unless a new candidate proves a genuinely different food job. `Tuyết Bún Chả 34` is still not automatic; it must prove a role beyond Hương Liên, Bún Chả Ta, and Đắc Kim.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source-fit, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
 ## Continuation: Bánh Cuốn Bà Xuân Additive Hanoi Pilot
 
 Pass date: 2026-05-31
@@ -2458,7 +2563,7 @@ Results:
 
 Status remains below `GLOBAL_PRODUCTION_READY`.
 
-This pass resolves the Bà Xuân candidate by making it a distinct fuller bánh cuốn save. Remaining MICHELIN-backed candidates should be harder to add now: `Tuyết Bún Chả 34` needs a meaningfully different role from Hương Liên, Bún Chả Ta, and Đắc Kim; `Phở Hương Bình` needs a meaningfully different role from Phở Lệ, Phở Hòa Pasteur, and Phở Minh.
+This pass resolves the Bà Xuân candidate by making it a distinct fuller bánh cuốn save. Remaining MICHELIN-backed candidates should be harder to add now: `Tuyết Bún Chả 34` needs a meaningfully different role from Hương Liên, Bún Chả Ta, and Đắc Kim. `Phở Hương Bình` was later resolved by the additive HCMC pilot once its chicken-or-beef family-shop role cleared the bar.
 
 ### Agent Lifecycle Note
 
@@ -2665,7 +2770,7 @@ Results:
 
 Status remains below `GLOBAL_PRODUCTION_READY`.
 
-This pass strengthens Saigon phở coverage, but it also makes further Saigon phở additions harder to justify. `Phở Hương Bình` should not be added unless the source evidence can prove a different table role from Phở Lệ, Phở Hòa Pasteur, and Phở Minh.
+This pass strengthened Saigon phở coverage and made further Saigon phở additions harder to justify. `Phở Hương Bình` was later added only after the source evidence proved a different chicken-or-beef table role from Phở Lệ, Phở Hòa Pasteur, and Phở Minh.
 
 ### Agent Lifecycle Note
 

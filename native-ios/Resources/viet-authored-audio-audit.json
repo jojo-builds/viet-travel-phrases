@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-31T03:02:15.766Z",
+    "generatedAt": "2026-05-31T03:14:10.779Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 822,
+    "cityLibraryPageCount": 823,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2264,
-    "missingAudioCount": 697
+    "requiredAudioCount": 2265,
+    "missingAudioCount": 698
   },
   "required": [
     {
@@ -15089,6 +15089,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hcmc-place-pho-huong-binh",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-pho-huong-binh-95e00b6721",
+      "text": "Phở Hương Bình",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hcmc-place-pho-le-district-5",
       "sectionID": "hero",
       "kind": "hero",
@@ -21304,6 +21312,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-pha-lau-o-thanh-pho-ho-chi-minh-37a27e4ef6",
       "text": "Phá lấu ở Thành phố Hồ Chí Minh",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hcmc-place-pho-huong-binh",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-pho-huong-binh-95e00b6721",
+      "text": "Phở Hương Bình",
       "resolved": false
     },
     {

@@ -8,9 +8,9 @@
     "resourceMainPageCount": 145,
     "childPageCount": 13,
     "catalogPromotedPageCount": 770,
-    "cityLibraryPageCount": 822,
+    "cityLibraryPageCount": 823,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-31T03:02:15.766Z"
+    "generatedAt": "2026-05-31T03:14:10.779Z"
   },
   "pages": [
     {
@@ -255350,6 +255350,179 @@
           "food-3"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-pho-hoa-pasteur"
+      }
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pho-huong-binh",
+      "familyID": "city-hcmc-place-pho-huong-binh",
+      "phraseID": "city-hcmc-place-pho-huong-binh",
+      "tierRole": "city-v1",
+      "depth": "deep",
+      "title": "Phở Hương Bình",
+      "englishTitle": "Pho Huong Binh",
+      "pronunciation": "pho huong binh",
+      "summary": "Save Phở Hương Bình for the Saigon phở choice that is not only beef: a 1958 second-generation shop where chicken, beef, clear broth, herbs, chicken skin, egg yolk, brisket, and tendon can shape the bowl.",
+      "heroImageName": "HeroCityHcmcPlacePhoHuongBinh",
+      "iconName": "fork.knife",
+      "tintName": "green",
+      "categoryIDs": [
+        "city-guides",
+        "hcmc",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "audioKey": "audio-authored-pho-huong-binh-95e00b6721",
+      "cityMetadata": {
+        "cityID": "hcmc",
+        "cityName": "Saigon / Ho Chi Minh City",
+        "subcategoryID": "food-coffee",
+        "difficulty": "beginner",
+        "kind": "place",
+        "pageKind": "restaurant",
+        "placeKind": "restaurant",
+        "contentRole": "fine-dining",
+        "derivedPlacePhrase": false,
+        "placeID": "hcmc-pho-huong-binh",
+        "placeName": "Pho Huong Binh",
+        "sourceIDs": [
+          "vt-hcmc",
+          "vt-hcmc-official",
+          "michelin-vietnam"
+        ],
+        "rationale": "Phở Hương Bình gives the Saigon phở set a family-shop lane: long-running, Bib Gourmand-recognized, and useful when the table wants to choose between chicken and beef instead of repeating another Pasteur or District 5 bowl.",
+        "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
+        "editorialReviewStatus": "handwritten-reviewed",
+        "editorialSourceMode": "expanded-detail",
+        "editorialRuntimeOverrideKind": null,
+        "targetHeroImageName": "HeroCityHcmcPlacePhoHuongBinh"
+      },
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Chicken Or Beef, Same Room",
+          "body": "Phở Hương Bình is a 2025 MICHELIN Bib Gourmand Saigon noodle shop where phở gà and phở bò share the room: clear broth, herbs, and a bowl shaped by add-ons.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phrases": [
+            {
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
+            },
+            {
+              "id": "food-2",
+              "vietnamese": "Cho tôi tô này",
+              "english": "I’ll take this bowl",
+              "pronunciation": "cho toy toh nai",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-this-bowl",
+              "audioKey": "food-2"
+            },
+            {
+              "id": "food-4",
+              "vietnamese": "Cho thêm rau",
+              "english": "More herbs please",
+              "pronunciation": "cho them zow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-more-herbs",
+              "audioKey": "food-4"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "place-brief",
+          "title": "Choose The Bowl First",
+          "body": "Start with chicken or beef before chasing toppings. The useful decision is the base bowl, then chicken skin, egg yolk, brisket, or tendon if the table wants more texture.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "use-it-with",
+          "title": "Keep The Broth Clear",
+          "body": "Taste before adding sauce. Let the clearer broth stay visible before lime, herbs, or sauce shift the bowl.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "when-to-use",
+          "title": "The Chicken-Or-Beef Lane",
+          "body": "Phở Lệ is the fuller District 5 save. Phở Minh is the Pasteur-alley breakfast. Hương Bình is the chicken-or-beef family-shop comparison.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Recognition Supports The Choice",
+          "body": "The 2025 Bib Gourmand signal matters because the food decision is clear: one Saigon phở room, two main bowl paths, and enough toppings to make the meal specific.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        }
+      ],
+      "examples": [
+        {
+          "id": "city-hcmc-place-pho-huong-binh",
+          "vietnamese": "Phở Hương Bình",
+          "english": "Pho Huong Binh",
+          "pronunciation": "pho huong binh",
+          "symbolName": "text.bubble.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "audio-authored-pho-huong-binh-95e00b6721"
+        }
+      ],
+      "practiceMetadata": {
+        "integrationVersion": "listing-scenario-seed-v1",
+        "scenarioEligible": true,
+        "practiceKind": "restaurant_ordering_scenario",
+        "practiceCTALabel": "Practice ordering here",
+        "practiceSurfacePolicy": "recommended_when_relevant",
+        "scenarioSeedID": "scenario-seed-city-hcmc-place-pho-huong-binh",
+        "scenarioStepGroups": [
+          {
+            "stepID": "quick-say",
+            "title": "Useful Phrases",
+            "sourceSectionID": "quick-say",
+            "primaryPhraseIDs": [
+              "food-menu"
+            ],
+            "supportPhraseIDs": [
+              "food-2",
+              "food-4"
+            ]
+          }
+        ],
+        "primaryPracticePhraseIDs": [
+          "city-hcmc-place-pho-huong-binh",
+          "food-menu"
+        ],
+        "secondaryPracticePhraseIDs": [
+          "food-2",
+          "food-4"
+        ],
+        "practiceSourcePageID": "viet-family-city-hcmc-place-pho-huong-binh"
       }
     },
     {

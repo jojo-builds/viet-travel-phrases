@@ -10155,6 +10155,38 @@
       }
     },
     {
+      "id": "city-hcmc-place-pho-huong-binh",
+      "cityID": "hcmc",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "reviewer": "city-owner:hcmc",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
+      "checklist": {
+        "voiceLengthPass": true,
+        "sectionCountPass": true,
+        "profileAudienceCuePass": true,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
+        "sourceNotesPresent": true,
+        "targetHeroPresent": true,
+        "durableReviewEvidencePresent": true,
+        "sectionBodiesDistinctEnough": true,
+        "runtimeOverrideExplicit": true,
+        "bannedMatches": [],
+        "sourceBannedMatches": []
+      },
+      "failures": [],
+      "evidence": {
+        "summaryExcerpt": "Save Phở Hương Bình for the Saigon phở choice that is not only beef: a 1958 second-generation shop where chicken, beef, clear broth, herbs, chicken skin, egg yolk, brisket, and tendon can shape the bowl.",
+        "aboutExcerpt": "Phở Hương Bình is a 2025 MICHELIN Bib Gourmand Saigon noodle shop where phở gà and phở bò share the room: clear broth, herbs, and a bowl shaped by add-ons.",
+        "phrasebookExcerpt": "",
+        "belongingExcerpt": "Taste before adding sauce. Let the clearer broth stay visible before lime, herbs, or sauce shift the bowl.",
+        "timingExcerpt": "Phở Lệ is the fuller District 5 save. Phở Minh is the Pasteur-alley breakfast. Hương Bình is the chicken-or-beef family-shop comparison.",
+        "goodToKnowExcerpt": "The 2025 Bib Gourmand signal matters because the food decision is clear: one Saigon phở room, two main bowl paths, and enough toppings to make the meal specific."
+      }
+    },
+    {
       "id": "city-hcmc-place-pho-le-district-5",
       "cityID": "hcmc",
       "pageKind": "restaurant",

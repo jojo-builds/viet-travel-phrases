@@ -20,20 +20,20 @@
   },
   "counts": {
     "cities": 5,
-    "entries": 516,
+    "entries": 517,
     "byCity": {
       "danang": 106,
       "hanoi": 105,
-      "hcmc": 105,
+      "hcmc": 106,
       "hoian": 100,
       "hue": 100
     },
     "needsVoiceGate": 0,
-    "finalPass": 516,
+    "finalPass": 517,
     "priorV2_2GateEvidence": 10,
     "legacyV2_2GateEvidence": 0,
-    "renderableRelatedPlaceCandidates": 516,
-    "renderableMentionedHereCandidates": 52,
+    "renderableRelatedPlaceCandidates": 517,
+    "renderableMentionedHereCandidates": 53,
     "verificationFlags": 1
   },
   "entries": [
@@ -1671,6 +1671,13 @@
     {
       "id": "viet-family-city-hcmc-place-pho-minh",
       "pageID": "city-hcmc-place-pho-minh",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pho-huong-binh",
+      "pageID": "city-hcmc-place-pho-huong-binh",
       "cityID": "hcmc",
       "file": "hcmc.json",
       "status": "FINAL_PASS"

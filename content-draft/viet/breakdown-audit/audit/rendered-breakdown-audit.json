@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-31T03:02:18.911Z",
+  "generatedAt": "2026-05-31T03:14:12.198Z",
   "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-listings-production-ready/content-draft/viet/breakdown-audit/pages",
   "summary": {
-    "pages": 1774,
+    "pages": 1775,
     "reviewed": 1407,
     "visualReviewed": 1407,
-    "missing": 367,
-    "generatedAt": "2026-05-31T03:02:18.911Z"
+    "missing": 368,
+    "generatedAt": "2026-05-31T03:14:12.198Z"
   },
   "pages": [
     {
@@ -107057,6 +107057,18 @@
           "keepTogetherReason": "proper place name"
         }
       ]
+    },
+    {
+      "pageID": "viet-family-city-hcmc-place-pho-huong-binh",
+      "phraseText": "Phở Hương Bình",
+      "englishTitle": "Pho Huong Binh",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [],
+      "reviewedBreakdown": null
     },
     {
       "pageID": "viet-family-city-hcmc-place-pho-le-district-5",
