@@ -59,6 +59,7 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 43: category, city, and menu collection pages still requested their photo-backdrop preheat from page `.task`, after the route had already begun rendering; the app shell now preheats the collection backdrop before opening the route so first render is less likely to fall back to a cold full-screen image path
 - root cause 44: Food/Drink menu rows still resolved exact item-name audio from `AudioAssetManifest` inside row rendering; `VietnameseMenuItem` now keeps a bounded playback-audio decision cache and menu rows/descriptors read the prepared item audio key
 - root cause 45: a new SQLite-backed listing detail load still canonicalized the same page ID twice inside the detail resolver: once to find the canonical page and again inside `loadPhraseDetailPage(pageID:)`; the runtime now reuses the already-canonical ID and loads the canonical page directly, so rapid new-page tapping removes one SQL alias lookup per uncached listing detail
+- root cause 46: each new SQLite-backed listing detail loaded sections with an N+1 query pattern: after the section list, it prepared one phrase-row query and one breakdown-row query per section, even for empty sections; section phrase rows and breakdown rows now load in two batched section-ID queries, reducing a representative new detail load from `15` prepared statements to at most `5`
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -150,6 +151,17 @@ Fresh command evidence from this pass:
   - install passed
   - launch was blocked because the phone was locked
   - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused SQLite section-item batching set on iPhone 17 Pro
+  - failed before implementation because `testRuntimeDetailPageLoadBatchesSectionItemQueriesPerNewPage` observed `15` prepared statements for one new SQLite-backed detail load instead of the batched target of at most `5`
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log for missing prepared-statement counter seam: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T02-25-24-958Z_pid15747_4ce79046.log`
+    - red result bundle for N+1 section-item statements: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T02-26-37-202Z_pid15747_9591fe2e.xcresult`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T02-28-11-185Z_pid15747_9917e116.xcresult`
+- XcodeBuildMCP simulator focused SQLite/detail-loader regression set on iPhone 17 Pro
+  - passed: `9` tests, `0` failures
+  - covered batched section item loading, one-canonicalization detail loads, hero-image lookup staying lightweight, SQLite search/detail/history routing, resolved-page reuse, bounded SQLite caches, generated-page preheat skipping hero lookup, and menu detail/canonical bypasses
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T02-31-13-030Z_pid15747_65ffce74.xcresult`
 - XcodeBuildMCP simulator focused catalog-row audio cache set on iPhone 17 Pro
   - failed before implementation because `PhraseCatalogItem` had no playback-audio resolution cache reset seam and repeated row reads had no cache
   - passed after implementation: `1` test, `0` failures

@@ -166,6 +166,24 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         )
     }
 
+    func testRuntimeDetailPageLoadBatchesSectionItemQueriesPerNewPage() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        VietSQLiteLanguagePackRepository.resetPreparedStatementCountForTesting()
+        defer {
+            VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+            VietSQLiteLanguagePackRepository.resetPreparedStatementCountForTesting()
+        }
+
+        let page = try XCTUnwrap(VietSQLitePhraseGraphRuntime.detailPage(withID: "viet-phrase-phone-1"))
+
+        XCTAssertFalse(page.sections.isEmpty)
+        XCTAssertLessThanOrEqual(
+            VietSQLiteLanguagePackRepository.preparedStatementCountForTesting,
+            5,
+            "Opening a new SQLite-backed listing page should batch section phrase/breakdown item loading instead of preparing one phrase query and one breakdown query per section."
+        )
+    }
+
     func testDefaultRuntimeLoadsVietnameseMenuFromSQLiteWithoutJSONBundle() throws {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
 
