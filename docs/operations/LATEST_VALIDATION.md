@@ -64,6 +64,15 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 
 Fresh command evidence from this pass:
 
+- Visual simulator proof for the current `feature/admin-photo-backdrop-polish` head `dc9157f57`
+  - launched `SpeakLocalNative` on iPhone 17 Pro Simulator with `--detail-page viet-phrase-polite-1`
+  - confirmed `Xin chào` renders with `BackdropPhraseGreetingCafeDoorway`, a lowered rounded content sheet, visible photo area, and normal bottom chrome backing instead of the old single static hero layer
+  - screenshot: `/var/folders/z4/rl0d7cg94zvfy4b0_zytwc7c0000gn/T/screenshot_optimized_86deb15a-000f-419c-8ba3-e2e70468f280.jpg`
+- Physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish` commit `dc9157f57`
+  - build passed
+  - install passed
+  - launch passed after install
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - focused failing tests were added before the fixes and then passed after implementation:
   - `AppChromeTests/testRenderedDetailPagesDoNotScanEntireLongHistory`
   - `AppChromeTests/testMenuDetailNavigationBypassesSQLiteCanonicalLookup`
