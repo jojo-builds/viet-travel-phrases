@@ -2065,6 +2065,50 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testHomeRecentlyViewedFeatureItemsReuseResolvedCardsAcrossRapidDetailOpens() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        PhraseDetailPage.resetArticleTemplateBuildCountForTesting()
+        HomeRecentlyViewedContent.resetFeatureItemCacheForTesting()
+        defer {
+            HomeRecentlyViewedContent.resetFeatureItemCacheForTesting()
+            VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        }
+
+        let firstRecentPageIDs = [
+            "viet-phrase-phone-1",
+            "viet-phrase-hotel-1",
+            "viet-phrase-food-menu",
+            "viet-phrase-price-1",
+            "viet-phrase-airport-1",
+            "viet-phrase-taxi-1",
+        ]
+        let nextRecentPageIDs = [
+            "viet-phrase-bath-1",
+            "viet-phrase-phone-1",
+            "viet-phrase-hotel-1",
+            "viet-phrase-food-menu",
+            "viet-phrase-price-1",
+            "viet-phrase-airport-1",
+        ]
+
+        XCTAssertEqual(
+            HomeRecentlyViewedContent.featureItemPageIDsForTesting(from: firstRecentPageIDs),
+            firstRecentPageIDs
+        )
+        let buildsAfterFirstPass = PhraseDetailPage.articleTemplateBuildCountForTesting
+        XCTAssertEqual(buildsAfterFirstPass, firstRecentPageIDs.count)
+
+        XCTAssertEqual(
+            HomeRecentlyViewedContent.featureItemPageIDsForTesting(from: nextRecentPageIDs),
+            nextRecentPageIDs
+        )
+        XCTAssertEqual(
+            PhraseDetailPage.articleTemplateBuildCountForTesting,
+            buildsAfterFirstPass + 1,
+            "Rapid listing opens should add only the newest recent-card adapter; the five still-visible recent cards should reuse cached Home feature items instead of rebuilding article templates on every detail navigation."
+        )
+    }
+
     func testHomepagePhraseCardsOpenBuiltOutListingPages() throws {
         let manifest = try XCTUnwrap(AudioAssetManifest.main)
         let issues = HomePageLinkRegistry.homepageListingPageIDs.compactMap {

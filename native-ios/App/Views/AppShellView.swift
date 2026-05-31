@@ -4356,9 +4356,7 @@ struct HomeView: View {
     }
 
     private var recentlyViewedFeatureItems: [HomeFeaturePhraseItem] {
-        HomeRecentlyViewedContent
-            .cardPageIDs(from: intentStore.recentPageIDs)
-            .compactMap(HomeFeaturePhraseItem.resolve(pageID:))
+        HomeRecentlyViewedContent.featureItems(from: intentStore.recentPageIDs)
     }
 
     private var practiceScenariosShelf: some View {
@@ -5556,6 +5554,81 @@ enum HomeRecentlyViewedContent {
 
         return cardPageIDs
     }
+
+    fileprivate static func featureItems(from recentPageIDs: [String]) -> [HomeFeaturePhraseItem] {
+        cardPageIDs(from: recentPageIDs).compactMap(cachedFeatureItem(for:))
+    }
+
+    private static func cachedFeatureItem(for pageID: String) -> HomeFeaturePhraseItem? {
+        let cached = cachedFeatureItem(forKey: pageID)
+        if let cached {
+            return cached.item
+        }
+
+        let item = HomeFeaturePhraseItem.resolve(pageID: pageID)
+        storeCachedFeatureItem(item, for: pageID)
+        return item
+    }
+
+    private struct CachedFeatureItem {
+        let item: HomeFeaturePhraseItem?
+    }
+
+    private static let featureItemCacheLimit = 24
+    private static let featureItemCacheLock = NSLock()
+    private static var cachedFeatureItemsByPageID: [String: CachedFeatureItem] = [:]
+    private static var cachedFeatureItemPageIDs: [String] = []
+
+    private static func cachedFeatureItem(forKey pageID: String) -> CachedFeatureItem? {
+        featureItemCacheLock.lock()
+        defer { featureItemCacheLock.unlock() }
+
+        guard let cachedItem = cachedFeatureItemsByPageID[pageID] else {
+            return nil
+        }
+
+        touchCachedFeatureItem(pageID)
+        return cachedItem
+    }
+
+    private static func storeCachedFeatureItem(_ item: HomeFeaturePhraseItem?, for pageID: String) {
+        featureItemCacheLock.lock()
+        defer { featureItemCacheLock.unlock() }
+
+        cachedFeatureItemsByPageID[pageID] = CachedFeatureItem(item: item)
+        touchCachedFeatureItem(pageID)
+
+        while cachedFeatureItemPageIDs.count > featureItemCacheLimit {
+            let oldestPageID = cachedFeatureItemPageIDs.removeFirst()
+            cachedFeatureItemsByPageID.removeValue(forKey: oldestPageID)
+        }
+    }
+
+    private static func touchCachedFeatureItem(_ pageID: String) {
+        cachedFeatureItemPageIDs.removeAll { $0 == pageID }
+        cachedFeatureItemPageIDs.append(pageID)
+    }
+
+#if DEBUG
+    static func featureItemPageIDsForTesting(from recentPageIDs: [String]) -> [String] {
+        featureItems(from: recentPageIDs).map(\.pageID)
+    }
+
+    static func resetFeatureItemCacheForTesting() {
+        featureItemCacheLock.lock()
+        defer { featureItemCacheLock.unlock() }
+
+        cachedFeatureItemsByPageID.removeAll()
+        cachedFeatureItemPageIDs.removeAll()
+    }
+
+    static var cachedFeatureItemCountForTesting: Int {
+        featureItemCacheLock.lock()
+        defer { featureItemCacheLock.unlock() }
+
+        return cachedFeatureItemsByPageID.count
+    }
+#endif
 }
 
 enum HomeFirstDayShelfContent {
