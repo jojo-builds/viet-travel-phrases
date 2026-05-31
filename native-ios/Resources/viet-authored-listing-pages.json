@@ -8,9 +8,9 @@
     "resourceMainPageCount": 145,
     "childPageCount": 13,
     "catalogPromotedPageCount": 770,
-    "cityLibraryPageCount": 821,
+    "cityLibraryPageCount": 822,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-30T22:22:20.330Z"
+    "generatedAt": "2026-05-31T03:02:15.766Z"
   },
   "pages": [
     {
@@ -209755,6 +209755,179 @@
           "v900-food-drin-what-do-you-recommend"
         ],
         "practiceSourcePageID": "viet-family-city-hanoi-place-banh-cuon-ba-hoanh"
+      }
+    },
+    {
+      "id": "viet-family-city-hanoi-place-banh-cuon-ba-xuan",
+      "familyID": "city-hanoi-place-banh-cuon-ba-xuan",
+      "phraseID": "city-hanoi-place-banh-cuon-ba-xuan",
+      "tierRole": "city-v1",
+      "depth": "deep",
+      "title": "Bánh Cuốn Bà Xuân",
+      "englishTitle": "Banh Cuon Ba Xuan",
+      "pronunciation": "banh cuon ba xuan",
+      "summary": "Save Bánh Cuốn Bà Xuân for the bánh cuốn morning when the plate should feel fuller: soft rice rolls, minced pork and black fungus, a poached egg, sausage or meatloaf, herbs, chili, lime, garlic, and dipping sauce.",
+      "heroImageName": "HeroCityHanoiPlaceBanhCuonBaXuan",
+      "iconName": "fork.knife",
+      "tintName": "green",
+      "categoryIDs": [
+        "city-guides",
+        "hanoi",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "audioKey": "audio-authored-banh-cuon-ba-xuan-0c91e22b36",
+      "cityMetadata": {
+        "cityID": "hanoi",
+        "cityName": "Hanoi",
+        "subcategoryID": "food-coffee",
+        "difficulty": "beginner",
+        "kind": "place",
+        "pageKind": "restaurant",
+        "placeKind": "restaurant",
+        "contentRole": "fine-dining",
+        "derivedPlacePhrase": false,
+        "placeID": "hanoi-banh-cuon-ba-xuan",
+        "placeName": "Banh Cuon Ba Xuan",
+        "sourceIDs": [
+          "vt-hanoi",
+          "vt-hanoi-official",
+          "michelin-vietnam"
+        ],
+        "rationale": "Bánh Cuốn Bà Xuân gives Hanoi bánh cuốn coverage a second named MICHELIN Selected table, but the distinction is the fuller plate: egg, pork filling, herbs, condiments, and a comparison that makes Bà Hoành feel less alone.",
+        "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
+        "editorialReviewStatus": "handwritten-reviewed",
+        "editorialSourceMode": "expanded-detail",
+        "editorialRuntimeOverrideKind": null,
+        "targetHeroImageName": "HeroCityHanoiPlaceBanhCuonBaXuan"
+      },
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Egg In The Steam",
+          "body": "Bánh Cuốn Bà Xuân is a 2025 MICHELIN Selected Hanoi street-food stop for soft rice sheets, pork-and-black-fungus filling, herbs, dipping sauce, and the option of a poached egg.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phrases": [
+            {
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
+            },
+            {
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
+            },
+            {
+              "id": "food-4",
+              "vietnamese": "Cho thêm rau",
+              "english": "More herbs please",
+              "pronunciation": "cho them zow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-more-herbs",
+              "audioKey": "food-4"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "place-brief",
+          "title": "Ask About The Egg",
+          "body": "Order the rolls first, then decide if the egg or sausage makes sense. Bà Xuân works when the soft sheets stay central.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "use-it-with",
+          "title": "Keep Sauce In Reach",
+          "body": "The sauce should brighten the rice sheets, not bury them. Add chili, lime, or garlic slowly if you want sharper edges.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "when-to-use",
+          "title": "A Fuller Rice-Roll Stop",
+          "body": "This is still a quick street-food breakfast or snack. The difference from a plain plate is how egg, pork filling, herbs, and sauce make it feel complete.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "Compare It With Bà Hoành",
+          "body": "Bà Hoành is the classic named steam-table save. Bà Xuân is the fuller bánh cuốn comparison when egg and condiments are the reason to go.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        }
+      ],
+      "examples": [
+        {
+          "id": "city-hanoi-place-banh-cuon-ba-xuan",
+          "vietnamese": "Bánh Cuốn Bà Xuân",
+          "english": "Banh Cuon Ba Xuan",
+          "pronunciation": "banh cuon ba xuan",
+          "symbolName": "text.bubble.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "audio-authored-banh-cuon-ba-xuan-0c91e22b36"
+        }
+      ],
+      "practiceMetadata": {
+        "integrationVersion": "listing-scenario-seed-v1",
+        "scenarioEligible": true,
+        "practiceKind": "restaurant_ordering_scenario",
+        "practiceCTALabel": "Practice ordering here",
+        "practiceSurfacePolicy": "recommended_when_relevant",
+        "scenarioSeedID": "scenario-seed-city-hanoi-place-banh-cuon-ba-xuan",
+        "scenarioStepGroups": [
+          {
+            "stepID": "quick-say",
+            "title": "Useful Phrases",
+            "sourceSectionID": "quick-say",
+            "primaryPhraseIDs": [
+              "food-menu"
+            ],
+            "supportPhraseIDs": [
+              "food-1",
+              "food-4"
+            ]
+          }
+        ],
+        "primaryPracticePhraseIDs": [
+          "city-hanoi-place-banh-cuon-ba-xuan",
+          "food-menu"
+        ],
+        "secondaryPracticePhraseIDs": [
+          "food-1",
+          "food-4"
+        ],
+        "practiceSourcePageID": "viet-family-city-hanoi-place-banh-cuon-ba-xuan"
       }
     },
     {

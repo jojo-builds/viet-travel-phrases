@@ -20,20 +20,20 @@
   },
   "counts": {
     "cities": 5,
-    "entries": 515,
+    "entries": 516,
     "byCity": {
       "danang": 106,
-      "hanoi": 104,
+      "hanoi": 105,
       "hcmc": 105,
       "hoian": 100,
       "hue": 100
     },
     "needsVoiceGate": 0,
-    "finalPass": 515,
+    "finalPass": 516,
     "priorV2_2GateEvidence": 10,
     "legacyV2_2GateEvidence": 0,
-    "renderableRelatedPlaceCandidates": 515,
-    "renderableMentionedHereCandidates": 51,
+    "renderableRelatedPlaceCandidates": 516,
+    "renderableMentionedHereCandidates": 52,
     "verificationFlags": 1
   },
   "entries": [
@@ -803,6 +803,13 @@
     {
       "id": "viet-family-city-hanoi-place-banh-cuon-ba-hoanh",
       "pageID": "city-hanoi-place-banh-cuon-ba-hoanh",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-banh-cuon-ba-xuan",
+      "pageID": "city-hanoi-place-banh-cuon-ba-xuan",
       "cityID": "hanoi",
       "file": "hanoi.json",
       "status": "FINAL_PASS"

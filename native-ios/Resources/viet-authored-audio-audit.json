@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-30T22:22:20.330Z",
+    "generatedAt": "2026-05-31T03:02:15.766Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 821,
+    "cityLibraryPageCount": 822,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2263,
-    "missingAudioCount": 696
+    "requiredAudioCount": 2264,
+    "missingAudioCount": 697
   },
   "required": [
     {
@@ -13097,6 +13097,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hanoi-place-banh-cuon-ba-xuan",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-banh-cuon-ba-xuan-0c91e22b36",
+      "text": "Bánh Cuốn Bà Xuân",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hanoi-place-bay-mau-lake",
       "sectionID": "hero",
       "kind": "hero",
@@ -19656,6 +19664,14 @@
       "kind": "hero",
       "audioKey": "audio-authored-banh-cuon-ba-hoanh-7fd9c72f80",
       "text": "Bánh Cuốn Bà Hoành",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hanoi-place-banh-cuon-ba-xuan",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-banh-cuon-ba-xuan-0c91e22b36",
+      "text": "Bánh Cuốn Bà Xuân",
       "resolved": false
     },
     {

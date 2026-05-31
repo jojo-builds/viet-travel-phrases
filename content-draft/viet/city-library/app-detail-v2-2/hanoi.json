@@ -8,9 +8,9 @@
     "phraseCatalog": "native-ios/Resources/viet-phrase-catalog.json"
   },
   "counts": {
-    "entries": 103,
+    "entries": 105,
     "needsVoiceGate": 0,
-    "finalPass": 103,
+    "finalPass": 105,
     "priorV2_2GateEvidence": 0
   },
   "entries": [
@@ -309,6 +309,22 @@
           "displaySubtitle": "Another Hanoi breakfast bite when sticky rice and mung bean sound better than rice rolls.",
           "reason": "Xoi xeo gives the banh cuon page a real morning-food decision.",
           "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-banh-cuon-ba-hoanh",
+          "label": "Bánh Cuốn Bà Hoành",
+          "relationship": "dish-to-restaurant follow-through",
+          "displaySubtitle": "A MICHELIN Selected Hanoi breakfast table for classic steam, rolls, herbs, and dipping sauce.",
+          "reason": "Ba Hoanh turns the dish page into a named breakfast save.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-banh-cuon-ba-xuan",
+          "label": "Bánh Cuốn Bà Xuân",
+          "relationship": "dish-to-restaurant follow-through",
+          "displaySubtitle": "A MICHELIN Selected bánh cuốn stop when the egg, herbs, and condiments should lead.",
+          "reason": "Ba Xuan gives the dish page a fuller same-dish breakfast save.",
+          "status": "render"
         }
       ],
       "verificationFlags": [],
@@ -439,6 +455,14 @@
           "displaySubtitle": "A named Hanoi phở stop when breakfast should be brothier and heavier.",
           "reason": "Pho Gia Truyen gives Banh Cuon Ba Hoanh a different Hanoi morning-food choice.",
           "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-banh-cuon-ba-xuan",
+          "label": "Bánh Cuốn Bà Xuân",
+          "relationship": "same-dish restaurant comparison",
+          "displaySubtitle": "A fuller bánh cuốn comparison when a poached egg, herbs, and condiments should lead.",
+          "reason": "Ba Xuan gives Ba Hoanh a same-dish comparison with a different breakfast texture.",
+          "status": "render"
         }
       ],
       "verificationFlags": [],
@@ -473,6 +497,149 @@
         "v2_2GateStatus": "food_additive_pilot_passed",
         "v2_2GateSources": [
           "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md"
+        ],
+        "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
+        "notes": [
+          "Approved as a hand-authored additive pilot; compatibility section IDs are projection-only."
+        ],
+        "finalPassDate": "2026-05-31"
+      }
+    },
+    {
+      "contentContract": "speaklocal.place.app-detail.v2.2",
+      "id": "viet-family-city-hanoi-place-banh-cuon-ba-xuan",
+      "pageID": "city-hanoi-place-banh-cuon-ba-xuan",
+      "sourcePageID": "city-hanoi-place-banh-cuon-ba-xuan",
+      "displayName": "Bánh Cuốn Bà Xuân",
+      "englishName": "Banh Cuon Ba Xuan",
+      "city": "Hà Nội",
+      "category": "Restaurant",
+      "pronunciation": "banh cuon ba xuan",
+      "travelerMoment": "Save Bánh Cuốn Bà Xuân for the bánh cuốn morning when the plate should feel fuller: soft rice rolls, minced pork and black fungus, a poached egg, sausage or meatloaf, herbs, chili, lime, garlic, and dipping sauce.",
+      "storySpine": "Bánh Cuốn Bà Xuân gives Hanoi bánh cuốn coverage a second named MICHELIN Selected table, but the distinction is the fuller plate: egg, pork filling, herbs, condiments, and a comparison that makes Bà Hoành feel less alone.",
+      "intro": {
+        "heading": "Egg In The Steam",
+        "body": "Bánh Cuốn Bà Xuân is a 2025 MICHELIN Selected Hanoi street-food stop for soft rice sheets, pork-and-black-fungus filling, herbs, dipping sauce, and the option of a poached egg."
+      },
+      "usefulPhraseCards": [
+        {
+          "vi": "Cho tôi xem thực đơn được không?",
+          "en": "Can I see the menu?",
+          "intent": "food-menu",
+          "phraseId": "food-menu",
+          "audioId": "food-menu",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho tôi một phần",
+          "en": "One portion please",
+          "intent": "food-one-portion",
+          "phraseId": "food-1",
+          "audioId": "food-1",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho thêm rau",
+          "en": "More herbs please",
+          "intent": "food-more-herbs",
+          "phraseId": "food-4",
+          "audioId": "food-4",
+          "status": "mapped"
+        }
+      ],
+      "sections": [
+        {
+          "id": "ask-about-the-egg",
+          "heading": "Ask About The Egg",
+          "body": "Order the rolls first, then decide if the egg or sausage makes sense. Bà Xuân works when the soft sheets stay central."
+        },
+        {
+          "id": "keep-sauce-in-reach",
+          "heading": "Keep Sauce In Reach",
+          "body": "The sauce should brighten the rice sheets, not bury them. Add chili, lime, or garlic slowly if you want sharper edges."
+        },
+        {
+          "id": "a-fuller-rice-roll-stop",
+          "heading": "A Fuller Rice-Roll Stop",
+          "body": "This is still a quick street-food breakfast or snack. The difference from a plain plate is how egg, pork filling, herbs, and sauce make it feel complete."
+        },
+        {
+          "id": "compare-it-with-ba-hoanh",
+          "heading": "Compare It With Bà Hoành",
+          "body": "Bà Hoành is the classic named steam-table save. Bà Xuân is the fuller bánh cuốn comparison when egg and condiments are the reason to go."
+        }
+      ],
+      "mentionedHereCandidates": [
+        {
+          "label": "Bánh cuốn ở Hà Nội",
+          "type": "dish",
+          "catalogId": "viet-family-city-hanoi-place-banh-cuon",
+          "sourceText": "bánh cuốn",
+          "displaySubtitle": "The Hanoi breakfast dish behind Bà Xuân’s soft rice sheets and dipping sauce.",
+          "reason": "The page centers bánh cuốn and should connect to the dish-level guide.",
+          "status": "render"
+        }
+      ],
+      "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hanoi-place-banh-cuon-ba-hoanh",
+          "label": "Bánh Cuốn Bà Hoành",
+          "relationship": "same-dish restaurant comparison",
+          "displaySubtitle": "A MICHELIN Selected steam-table breakfast when the rice rolls should stay lighter and classic.",
+          "reason": "Ba Hoanh gives Ba Xuan a same-dish comparison that clarifies why both pages can exist.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-xoi-xeo",
+          "label": "Xôi xéo",
+          "relationship": "same-city breakfast texture contrast",
+          "displaySubtitle": "A sticky-rice breakfast when the morning should be denser, warmer, and more handheld.",
+          "reason": "Xoi xeo gives Ba Xuan a real Hanoi breakfast contrast.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hanoi-place-pho-ga-nguyet",
+          "label": "Phở Gà Nguyệt",
+          "relationship": "same-city morning bowl comparison",
+          "displaySubtitle": "A chicken-phở counter when breakfast should be broth and noodles instead of soft rice rolls.",
+          "reason": "Pho Ga Nguyet gives Ba Xuan a different morning-food decision inside Hanoi.",
+          "status": "render"
+        }
+      ],
+      "verificationFlags": [],
+      "qa": {
+        "replaceabilityTest": "pass",
+        "phraseCardTest": "pass",
+        "mentionedHereTest": "pass",
+        "catalogMentionScan": "pass",
+        "duplicateBodyTest": "pass",
+        "antiCynicismTest": "pass",
+        "notes": [
+          "Additive Hanoi 105-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
+          "Official 2025 MICHELIN PDF support checked on 2026-05-31: Bánh Cuốn Bà Xuân appears in the Hanoi MICHELIN Selected section as Street Food.",
+          "Visible copy uses stable source facts only: bánh cuốn, soft rice sheets, pork-and-black-fungus filling, poached egg option, sausage or meatloaf, herbs, chili, lime, garlic, and dipping sauce. It avoids hours, prices, address, booking, closure, and fragile operational claims."
+        ]
+      },
+      "score": {
+        "value": 30,
+        "max": 30,
+        "reason": "Additive production pilot: Banh Cuon Ba Xuan has bounded 2025 MICHELIN Selected recognition, a distinct fuller bánh cuốn breakfast role, mapped phrase cards, and useful same-dish comparisons."
+      },
+      "sourceNotes": [
+        "Added as the fifth additive Hanoi restaurant pilot after the 500-page hard reset; script assumptions now allow Hanoi 105.",
+        "Official MICHELIN Guide Vietnam 2025 PDF lists Bánh Cuốn Bà Xuân in the Hanoi MICHELIN Selected section as Street Food.",
+        "Food-detail evidence used for stable visible copy: soft rice sheets, minced pork and black fungus filling, poached egg option, sausage or meatloaf, herbs, chili, lime, garlic, and dipping sauce.",
+        "No hours, prices, booking, address, closure, or fragile operational claims are bundled in visible copy."
+      ],
+      "status": "FINAL_PASS",
+      "review": {
+        "status": "FINAL_PASS",
+        "sourceReviewStatus": "handwritten-reviewed",
+        "voiceGateStatus": "passed_city_voice_gate",
+        "v2_2GateStatus": "food_additive_pilot_passed",
+        "v2_2GateSources": [
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md",
+          "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/production_readiness_review.md"
         ],
         "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
         "notes": [

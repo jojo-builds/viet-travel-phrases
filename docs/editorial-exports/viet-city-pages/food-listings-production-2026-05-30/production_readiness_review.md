@@ -2364,6 +2364,106 @@ The additive path is now proven across seven stronger food pages, including the 
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
 
+## Continuation: Bánh Cuốn Bà Xuân Additive Hanoi Pilot
+
+Pass date: 2026-05-31
+
+Commit before pass: `ea1242ba8 Add Bun Cha Dac Kim Hanoi food listing`
+
+This continuation adds `Bánh Cuốn Bà Xuân` because it is not just another Hanoi breakfast row. The page gives bánh cuốn coverage a different food-specific reason to save: soft rice sheets, minced pork and black fungus filling, poached egg option, sausage or meatloaf, herbs, chili, lime, garlic, and dipping sauce. It sits beside Bà Hoành as a fuller same-dish comparison rather than replacing it.
+
+### Page Added
+
+- `city-hanoi-place-banh-cuon-ba-xuan`: new first-class V2.2 Hanoi restaurant page.
+
+Visible page direction:
+
+- The first screen frames Bà Xuân as the egg-and-condiment bánh cuốn save, not a generic steamed-roll listing.
+- Mentioned Here links to `Bánh cuốn ở Hà Nội` so the restaurant has dish-level context.
+- Compare Nearby renders `Bánh Cuốn Bà Hoành`, `Xôi xéo`, and `Phở Gà Nguyệt`, which turns the page into a real breakfast decision set.
+
+### Add Decision
+
+Decision: add, and keep the page food-specific.
+
+The current catalog already has Bà Hoành, so Bà Xuân only earns a slot if it teaches a difference. The official 2025 MICHELIN PDF lists `Bánh Cuốn Bà Xuân` in the Hanoi MICHELIN Selected section as street food, and the visible copy uses that recognition as support while staying focused on the plate.
+
+The page avoids hours, address, booking, closure, price, or operating claims. It keeps the bundled copy to stable food facts and source-supported MICHELIN recognition.
+
+### Runtime Shape
+
+- `docs/city-production/agent-inputs/hanoi-nouns.md`: added row `105`.
+- `content-draft/viet/city-library/app-detail-v2-2/hanoi.json`: added the authored V2.2 source object and updated related cards from the dish page and Bà Hoành.
+- `content-draft/viet/city-library/app-detail-v2-2/_index.json`: current inventory is now 516 city noun/place pages.
+- `native-ios/scripts/import-city-noun-intake.js` and `native-ios/scripts/validate-viet-city-copy.js`: city count expectations now allow HCMC 105, Hanoi 105, Da Nang 106, Hội An 100, Hue 100.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-banh-cuon-ba-xuan-additive/`
+
+Representative page captured:
+
+- `viet-family-city-hanoi-place-banh-cuon-ba-xuan`
+  - `banh-cuon-ba-xuan-first-screen.jpg`: first viewport shows the wrapped title, pronunciation line, `Egg In The Steam` intro, and the Useful Phrases start.
+  - `banh-cuon-ba-xuan-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here plus `Bánh Cuốn Bà Hoành`, `Xôi xéo`, and `Phở Gà Nguyệt` Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hanoi-place-banh-cuon-ba-xuan`
+  - `--detail-page viet-family-city-hanoi-place-banh-cuon-ba-xuan --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for the scoped build launch and the bottom-validation relaunch.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 516 entries imported.
+- native resource generation: PASS, 1763 families, 1781 phrases, 1774 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 516 entries, 516 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS after replacing one banned `strongest` sentence before projection.
+- city-copy compatibility validation: PASS, 5 hubs, 516 city noun pages, 516 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 516 city places, 822 city phrase tags, 0 release-blocking missing audio rows, 9061 relations.
+- SQLite fixture test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Bánh Cuốn Bà Xuân Add
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass resolves the Bà Xuân candidate by making it a distinct fuller bánh cuốn save. Remaining MICHELIN-backed candidates should be harder to add now: `Tuyết Bún Chả 34` needs a meaningfully different role from Hương Liên, Bún Chả Ta, and Đắc Kim; `Phở Hương Bình` needs a meaningfully different role from Phở Lệ, Phở Hòa Pasteur, and Phở Minh.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source-fit, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
 ## Continuation: Bún Chả Đắc Kim Additive Hanoi Pilot
 
 Thirtieth pass date: 2026-05-31

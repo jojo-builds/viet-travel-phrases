@@ -3876,6 +3876,38 @@
       }
     },
     {
+      "id": "city-hanoi-place-banh-cuon-ba-xuan",
+      "cityID": "hanoi",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "reviewer": "city-owner:hanoi",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
+      "checklist": {
+        "voiceLengthPass": true,
+        "sectionCountPass": true,
+        "profileAudienceCuePass": true,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
+        "sourceNotesPresent": true,
+        "targetHeroPresent": true,
+        "durableReviewEvidencePresent": true,
+        "sectionBodiesDistinctEnough": true,
+        "runtimeOverrideExplicit": true,
+        "bannedMatches": [],
+        "sourceBannedMatches": []
+      },
+      "failures": [],
+      "evidence": {
+        "summaryExcerpt": "Save Bánh Cuốn Bà Xuân for the bánh cuốn morning when the plate should feel fuller: soft rice rolls, minced pork and black fungus, a poached egg, sausage or meatloaf, herbs, chili, lime, garlic, and dipping sauce.",
+        "aboutExcerpt": "Bánh Cuốn Bà Xuân is a 2025 MICHELIN Selected Hanoi street-food stop for soft rice sheets, pork-and-black-fungus filling, herbs, dipping sauce, and the option of a poached egg.",
+        "phrasebookExcerpt": "",
+        "belongingExcerpt": "The sauce should brighten the rice sheets, not bury them. Add chili, lime, or garlic slowly if you want sharper edges.",
+        "timingExcerpt": "This is still a quick street-food breakfast or snack. The difference from a plain plate is how egg, pork filling, herbs, and sauce make it feel complete.",
+        "goodToKnowExcerpt": "Bà Hoành is the classic named steam-table save. Bà Xuân is the fuller bánh cuốn comparison when egg and condiments are the reason to go."
+      }
+    },
+    {
       "id": "city-hanoi-place-bay-mau-lake",
       "cityID": "hanoi",
       "pageKind": "place",
