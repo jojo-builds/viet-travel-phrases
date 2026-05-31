@@ -4275,3 +4275,93 @@ This pass repairs the highest-count remaining city batch after Da Nang, but it d
 ### Agent Lifecycle Note
 
 No subagents were spawned or closed in this continuation. This pass used local source, U.S.-voice, Michelin-claim preservation, food-desire, runtime, validator, render, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
+
+## Continuation: Hanoi U.S.-Voice Save-Language Repair
+
+Twenty-ninth pass date: 2026-05-31
+
+Commit before pass: `ff3591fbe Repair HCMC food listing save language`
+
+This continuation applies the same user-facing voice correction to Hanoi pages. Hanoi had the largest remaining visible `save` footprint after Da Nang and HCMC, and most hits were on Michelin-supported food pages where the food reason was good but the copy was too explicit about saving.
+
+### Pages Repaired
+
+- Hanoi V2.2 source visible fields were swept for literal `save` / `saved` / `saving` language across traveler moments, story spines, intros, section headings/bodies, Mentioned Here subtitles, and related-card subtitles.
+- The previous inventory showed 17 Hanoi page hits / 35 visible-field hits. The post-repair visible-field scan is 0 page hits / 0 visible-field hits.
+- Representative repaired pages include `city-hanoi-place-banh-cuon-ba-hoanh`, `city-hanoi-place-banh-cuon-ba-xuan`, `city-hanoi-place-bun-cha-huong-lien`, `city-hanoi-place-bun-cha-ta`, `city-hanoi-place-bun-cha-dac-kim`, `city-hanoi-place-tuyet-bun-cha-34`, `city-hanoi-place-cha-ca-thang-long`, `city-hanoi-place-gia`, `city-hanoi-place-giang-cafe`, `city-hanoi-place-hibana-by-koki`, `city-hanoi-place-lamai-garden`, `city-hanoi-place-mien-luon-chan-cam`, and `city-hanoi-place-tam-vi`.
+- Non-food utility pages caught by the same scan were also repaired where "save" meant prevent or note: `city-hanoi-place-noi-bai-airport` and `city-hanoi-place-yen-so-park`.
+- No new Michelin claims were added in this pass. Existing 2025 MICHELIN Star, Bib Gourmand, Selected, and Green Star references were preserved while the surrounding copy was changed from command language to natural planning/choice language.
+
+### Runtime Shape
+
+- No inventory count change: total stays 520 city noun/place pages, with Hanoi at 106.
+- `content-draft/viet/city-library/app-detail-v2-2/hanoi.json` remains the source authority.
+- Native projections, authored listing resources, and SQLite fixture were regenerated from source.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-hanoi-us-voice-repair/`
+
+Representative pages captured:
+
+- `viet-family-city-hanoi-place-gia`
+  - `gia-first-screen.jpg`: first viewport shows the 2025 One MICHELIN Star dinner intro without visible save-command language.
+  - `gia-mentioned-here.jpg`: middle sections and Mentioned Here cards render with repaired `booking`, `place`, and `pair` phrasing.
+  - `gia-bottom-inset.jpg`: Mentioned Here and Compare Nearby cards render above the bottom chrome.
+- `viet-family-city-hanoi-place-bun-cha-huong-lien`
+  - `bun-cha-huong-lien-first-screen.jpg`: first viewport shows the 2025 MICHELIN Selected bún chả intro and Useful Phrases start.
+  - `bun-cha-huong-lien-sections.jpg`: middle sections show the revised `choice` phrasing.
+  - `bun-cha-huong-lien-bottom-inset.jpg`: Mentioned Here and Compare Nearby bún chả cards render above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hanoi-place-gia`
+  - `--detail-page viet-family-city-hanoi-place-bun-cha-huong-lien`
+- Build/run: PASS for the scoped build launch; scoped relaunch and screenshots succeeded.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 520 entries imported.
+- native resource generation: PASS, 1767 families, 1785 phrases, 1778 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 520 entries, 520 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 520 city noun pages, 520 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 520 city places, 826 city phrase tags, 0 release-blocking missing audio rows, 9100 relations.
+- Hanoi visible save-language scan: PASS, 0 visible-field hits.
+- generated authored listing resource scan for Hanoi save-language: PASS, 0 hits.
+- whitespace check: PASS.
+
+### Remaining Risk After Hanoi U.S.-Voice Repair
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass repairs the highest-count remaining city batch after Da Nang and HCMC, but it does not claim the same save-language cleanup across Hội An or Huế. Current visible save-language counts after this pass are: Da Nang 0, HCMC 0, Hanoi 0, Hội An 16, Huế 16. The same shared render/chrome debt remains: while scrolling, the sticky audio controls can cover the very top line of page content. Bottom inset, Mentioned Here, and related-card rendering are good in the captured Hanoi pages, but sticky audio overlap should be fixed before calling the affected pages fully production-ready.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, U.S.-voice, Michelin-claim preservation, food-desire, runtime, validator, render, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
