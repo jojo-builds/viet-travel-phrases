@@ -1406,6 +1406,8 @@ struct LocationMenuPick: Identifiable, Equatable {
     let audioText: String?
     let linkedMenuItemID: String?
     let afterSectionID: String?
+    private var resolvedAudioKey: String?
+    private var hasResolvedAudioKey = false
 
     init(
         id: String,
@@ -1427,6 +1429,8 @@ struct LocationMenuPick: Identifiable, Equatable {
         self.audioText = audioText
         self.linkedMenuItemID = linkedMenuItemID
         self.afterSectionID = afterSectionID
+        self.resolvedAudioKey = nil
+        self.hasResolvedAudioKey = false
     }
 
     var linkedMenuItem: VietnameseMenuItem? {
@@ -1438,15 +1442,48 @@ struct LocationMenuPick: Identifiable, Equatable {
     }
 
     var audioKey: String? {
+        if hasResolvedAudioKey {
+            return resolvedAudioKey
+        }
+
+        return Self.resolveAudioKey(audioText: audioText, linkedMenuItemID: linkedMenuItemID)
+    }
+
+    func resolvingAudioKey() -> LocationMenuPick {
+        var resolved = self
+        resolved.resolvedAudioKey = Self.resolveAudioKey(
+            audioText: audioText,
+            linkedMenuItemID: linkedMenuItemID
+        )
+        resolved.hasResolvedAudioKey = true
+        return resolved
+    }
+
+    private static func resolveAudioKey(audioText: String?, linkedMenuItemID: String?) -> String? {
         if let audioText {
             return AudioAssetManifest.main?.audioKey(forExactText: audioText)
         }
 
-        guard let linkedMenuItem else {
+        guard
+            let linkedMenuItemID,
+            let linkedMenuItem = VietnameseMenuCatalog.item(withID: linkedMenuItemID)
+        else {
             return nil
         }
 
         return AudioAssetManifest.main?.audioKey(forExactText: linkedMenuItem.vietnameseItem)
+    }
+
+    static func == (lhs: LocationMenuPick, rhs: LocationMenuPick) -> Bool {
+        lhs.id == rhs.id
+            && lhs.title == rhs.title
+            && lhs.subtitle == rhs.subtitle
+            && lhs.proof == rhs.proof
+            && lhs.imageName == rhs.imageName
+            && lhs.detailPageID == rhs.detailPageID
+            && lhs.audioText == rhs.audioText
+            && lhs.linkedMenuItemID == rhs.linkedMenuItemID
+            && lhs.afterSectionID == rhs.afterSectionID
     }
 }
 

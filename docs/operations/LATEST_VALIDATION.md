@@ -50,6 +50,7 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 34: inactive Home/root/admin photo-backdrop preview surfaces could still publish scroll-geometry state while mounted as navigation previews; those callbacks now require active and visible state, matching the existing delayed-task and listing/browse/menu scroll-geometry gates
 - root cause 35: city listing articles reused cached "Mentioned Here" and "Compare Nearby" pick arrays, but still asked the catalogs to refilter those arrays by section ID from the article render path; each article page now builds grouped menu/related pick buckets once per page instance and the body reads those buckets directly
 - root cause 36: phrase rows and breakdown cards resolved playable audio keys from SwiftUI row/card rendering, repeatedly entering `AudioAssetManifest` normalization and lookup work for deterministic phrase text during detail redraws; article pages now prepare row playback keys once per `PhraseArticleTemplateView` instance and rows read the prepared values
+- root cause 37: location-card rows reused grouped pick buckets, but each row could still resolve linked-menu audio from `AudioAssetManifest` while rendering; the location-pick grouping step now prepares pick audio keys once per page instance so "Mentioned Here", "Compare Nearby", and trailing place/menu cards read stored keys
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -96,6 +97,7 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testAdminPhotoBackdropDelayedTaskRunsOnlyForActiveVisiblePages` was extended to cover inactive scroll-geometry gating
   - `AppChromeTests/testPhraseArticleTemplateGroupsLocationPicksOncePerPageInstance`
   - `AppChromeTests/testPhraseArticleTemplatePreparesRowPlaybackAudioOncePerPageInstance`
+  - `AppChromeTests/testPhraseArticleLocationPickGroupsPrepareAudioKeysOncePerPageInstance`
 - local hygiene checks after the detail redraw and saved-membership fixes:
   - `git diff --check -- native-ios/App/Views/PhraseListingView.swift native-ios/App/Models/AppChrome.swift native-ios/Tests/AppChromeTests.swift` passed
   - `node scripts/guard-native-only.js` passed
@@ -108,6 +110,19 @@ Fresh command evidence from this pass:
 - local hygiene checks after the row playback-audio preparation fix:
   - `git diff --check -- native-ios/App/Models/AudioAssetManifest.swift native-ios/App/Models/PhrasePage.swift native-ios/App/Views/PhraseListingView.swift native-ios/Tests/AppChromeTests.swift` passed
   - `node scripts/guard-native-only.js` passed
+- local hygiene checks after the location-pick audio preparation fix:
+  - `git diff --check -- native-ios/App/Views/PhraseListingView.swift native-ios/App/Models/VietnameseMenuCatalog.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- XcodeBuildMCP simulator focused location-pick audio preparation set on iPhone 17 Pro
+  - failed before implementation because `LocationMenuPick.resolvingAudioKey()` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T00-12-25-437Z_pid15747_a511370a.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-13-42-358Z_pid15747_dd0c798a.xcresult`
+- XcodeBuildMCP simulator focused location-card/audio regression set on iPhone 17 Pro
+  - passed: `8` tests, `0` failures
+  - covered location-pick audio preparation, grouped Mentioned/Related card reuse, article row audio preparation, calibrated city menu picks, menu/related pick canonical lookup caching, bounded rapid city-browsing caches, and Vietnamese menu name audio
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-14-15-608Z_pid15747_66c5804f.xcresult`
 - XcodeBuildMCP simulator focused row playback-audio preparation set on iPhone 17 Pro
   - failed before implementation because `AudioAssetManifest` had no lookup counter and `PhraseArticlePlaybackAudioResolver` did not exist
   - passed after implementation: `1` test, `0` failures

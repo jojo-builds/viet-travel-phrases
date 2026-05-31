@@ -1189,6 +1189,54 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPhraseArticleLocationPickGroupsPrepareAudioKeysOncePerPageInstance() throws {
+        LocationMenuPicksCatalog.resetCacheForTesting()
+        defer { LocationMenuPicksCatalog.resetCacheForTesting() }
+
+        let pageID = "viet-family-city-hcmc-place-lusine-thao-dien"
+        let rawPick = try XCTUnwrap(
+            LocationMenuPicksCatalog.picks(forPageID: pageID).first { $0.id == "lusine-premium-pho" }
+        )
+
+        AudioAssetManifest.resetLookupCountsForTesting()
+        let resolvedPick = rawPick.resolvingAudioKey()
+
+        XCTAssertGreaterThan(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            0,
+            "Resolving a linked menu pick should do its manifest lookup once during preparation."
+        )
+
+        let lookupCountAfterResolve = AudioAssetManifest.playbackResolutionLookupCountForTesting
+        XCTAssertNotNil(resolvedPick.audioKey)
+        XCTAssertEqual(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            lookupCountAfterResolve,
+            "Prepared location picks should read a stored audio key instead of resolving from the row body."
+        )
+
+        AudioAssetManifest.resetLookupCountsForTesting()
+        PhraseArticleLocationPickGroups.resetBuildCountForTesting()
+
+        let groups = PhraseArticleLocationPickGroups(pageID: pageID)
+
+        XCTAssertEqual(PhraseArticleLocationPickGroups.buildCountForTesting, 1)
+        XCTAssertGreaterThan(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            0,
+            "Location pick grouping should prepare card audio while it already groups the picks for the page."
+        )
+
+        let lookupCountAfterGroupBuild = AudioAssetManifest.playbackResolutionLookupCountForTesting
+        let groupedPick = try XCTUnwrap(groups.trailingPicks.first { $0.id == "lusine-premium-pho" })
+        XCTAssertNotNil(groupedPick.audioKey)
+        XCTAssertEqual(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            lookupCountAfterGroupBuild,
+            "Location pick rows should read prepared audio keys instead of re-entering AudioAssetManifest during SwiftUI row rendering."
+        )
+    }
+
     func testPhraseArticleTemplatePreparesRowPlaybackAudioOncePerPageInstance() throws {
         let detailPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-phrase-phone-1"))
         let articlePage = detailPage.articleTemplate

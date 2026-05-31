@@ -29,8 +29,12 @@ struct PhraseArticleLocationPickGroups {
 #if DEBUG
         Self.recordBuildForTesting()
 #endif
-        let menuGroups = Self.groupedPicks(LocationMenuPicksCatalog.picks(forPageID: pageID))
-        let relatedGroups = Self.groupedPicks(LocationRelatedPicksCatalog.picks(forPageID: pageID))
+        let menuGroups = Self.groupedPicks(
+            LocationMenuPicksCatalog.picks(forPageID: pageID).map { $0.resolvingAudioKey() }
+        )
+        let relatedGroups = Self.groupedPicks(
+            LocationRelatedPicksCatalog.picks(forPageID: pageID).map { $0.resolvingAudioKey() }
+        )
 
         self.menuPicksBySectionID = menuGroups.bySectionID
         self.trailingMenuPicks = menuGroups.trailing
