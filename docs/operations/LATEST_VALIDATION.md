@@ -128,6 +128,11 @@ Fresh command evidence from this pass:
   - passed: `11` tests, `0` failures
   - covered early collection-route backdrop preheat, Vietnamese menu-row audio caching, catalog row audio caching, stale in-flight focused backdrop rejection, focused queued-backdrop replacement, browse/menu photo-backdrop preheat policy, browse detail override policy/cache, and saved unsaved-miss caching
   - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-48-28-655Z_pid15747_c656195d.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `89fe3f545`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - XcodeBuildMCP simulator focused catalog-row audio cache set on iPhone 17 Pro
   - failed before implementation because `PhraseCatalogItem` had no playback-audio resolution cache reset seam and repeated row reads had no cache
   - passed after implementation: `1` test, `0` failures
