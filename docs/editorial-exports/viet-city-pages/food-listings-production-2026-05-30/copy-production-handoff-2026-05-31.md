@@ -65,6 +65,10 @@ Simulator proof:
 
 ## Remaining Work
 
+Update, 2026-06-01:
+
+The global V2.2 source set is now classified as `PASS_GLOBAL_PRODUCTION_READY` in `global-production-ready-receipt-2026-06-01.md`.
+
 Highest-leverage next pass:
 
 1. Review the 63 static-QA minor issues and classify each as fix now, follow-up, or acceptable risk.
