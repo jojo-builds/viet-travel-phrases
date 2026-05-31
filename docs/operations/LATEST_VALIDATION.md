@@ -110,6 +110,14 @@ Fresh command evidence from this pass:
   - passed: `8` tests, `0` failures
   - covered stale focused detail queue replacement, root/home selected-plus-lookahead behavior, bounded latest-work behavior, newest-first queue draining, and phrase/browse/menu photo-backdrop preheat eligibility
   - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-43-31-173Z_pid15747_bd4eb3b9.xcresult`
+- local hygiene checks after the focused listing-backdrop preheat fix:
+  - `git diff --check -- native-ios/App/Views/AdminPhotoBackdropSurfaceView.swift native-ios/App/Views/AppShellView.swift native-ios/App/Views/BrowseCollectionPageView.swift native-ios/App/Views/PhraseListingView.swift native-ios/App/Views/VietnameseMenuPageView.swift native-ios/Tests/AppChromeTests.swift docs/operations/LATEST_VALIDATION.md` passed
+  - `node scripts/guard-native-only.js` passed
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `ee876f443`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - local hygiene checks after the detail redraw and saved-membership fixes:
   - `git diff --check -- native-ios/App/Views/PhraseListingView.swift native-ios/App/Models/AppChrome.swift native-ios/Tests/AppChromeTests.swift` passed
   - `node scripts/guard-native-only.js` passed
