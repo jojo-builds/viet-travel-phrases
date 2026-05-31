@@ -10,7 +10,7 @@
     "catalogPromotedPageCount": 770,
     "cityLibraryPageCount": 826,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-31T17:49:37.407Z"
+    "generatedAt": "2026-05-31T18:03:20.893Z"
   },
   "pages": [
     {
@@ -44696,7 +44696,7 @@
         {
           "id": "good-to-know",
           "title": "Good to know",
-          "body": "Keep the phone, receipt, or booking visible so the answer stays short.",
+          "body": "A short distance on the map can still be a bad walk in heat, rain, or fast traffic.",
           "phrases": [],
           "presentation": "tip-callout",
           "breakdown": []
@@ -68686,7 +68686,7 @@
         {
           "id": "good-to-know",
           "title": "Good to know",
-          "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short.",
+          "body": "Đường means sugar here. It is a different word from đường as street in travel directions, so the food and drink context matters.",
           "phrases": [],
           "presentation": "tip-callout",
           "breakdown": []
@@ -69394,7 +69394,7 @@
         {
           "id": "good-to-know",
           "title": "Good to know",
-          "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short.",
+          "body": "Ly can mean cup or glass in this kind of order. The important contrast is nóng, hot, versus đá, iced.",
           "phrases": [],
           "presentation": "tip-callout",
           "breakdown": []
@@ -71566,7 +71566,7 @@
         {
           "id": "good-to-know",
           "title": "Good to know",
-          "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short.",
+          "body": "The Vietnamese here is understandable but formal. Keep your tone warm, and use the menu or display case to narrow the question so the answer can stay short.",
           "phrases": [],
           "presentation": "tip-callout",
           "breakdown": []
@@ -132409,7 +132409,7 @@
         {
           "id": "good-to-know",
           "title": "Good to know",
-          "body": "Keep the phone, receipt, or booking visible so the answer stays short.",
+          "body": "This phrasing is understandable, but the situation carries the meaning. Point to the item and show the kind of protection you want: wrap, box, tape, bag, or padding.",
           "phrases": [],
           "presentation": "tip-callout",
           "breakdown": []
@@ -136315,7 +136315,7 @@
         {
           "id": "good-to-know",
           "title": "Good to know",
-          "body": "Watch the gesture first; ask again if you need the street, floor, or entrance repeated.",
+          "body": "Some attractions separate the ticket counter from the actual entrance.",
           "phrases": [],
           "presentation": "tip-callout",
           "breakdown": []
@@ -183143,34 +183143,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "price-2",
+              "vietnamese": "Bao nhiêu một ký?",
+              "english": "How much per kilo?",
+              "pronunciation": "bao nyew mot kee",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-money-per-kilo",
+              "audioKey": "price-2"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "price-1",
+              "vietnamese": "Cái này bao nhiêu?",
+              "english": "How much is this?",
+              "pronunciation": "gai nai bao nyew",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-money-how-much",
+              "audioKey": "price-1"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "food-6",
+              "vietnamese": "Cho tôi muỗng với đũa",
+              "english": "A spoon and chopsticks please",
+              "pronunciation": "cho toy moong voy doo-ah",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-food-utensils",
+              "audioKey": "food-6"
             }
           ],
           "breakdown": [],
@@ -183234,21 +183234,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "price-2"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "price-1",
+              "food-6"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-be-man",
-          "food-menu"
+          "price-2"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "price-1",
+          "food-6"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-be-man"
       }
@@ -185040,16 +185040,6 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
-            },
-            {
               "id": "food-1",
               "vietnamese": "Cho tôi một phần",
               "english": "One portion please",
@@ -185060,14 +185050,24 @@
               "audioKey": "food-1"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-less-sugar-please",
+              "vietnamese": "Làm ơn bớt đường đi",
+              "english": "Less sugar, please",
+              "pronunciation": "Lam on bot duong di",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-less-sugar-please",
+              "audioKey": "v900-food-drin-less-sugar-please"
+            },
+            {
+              "id": "v900-food-drin-one-more-please",
+              "vietnamese": "Xin thêm một cái nữa",
+              "english": "One more, please",
+              "pronunciation": "Xin them mot cai nua",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-v900-food-drin-one-more-please",
+              "audioKey": "v900-food-drin-one-more-please"
             }
           ],
           "breakdown": [],
@@ -185131,21 +185131,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "food-1"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-less-sugar-please",
+              "v900-food-drin-one-more-please"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-che-xoa-xoa-hat-luu",
-          "food-menu"
+          "food-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-less-sugar-please",
+          "v900-food-drin-one-more-please"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-che-xoa-xoa-hat-luu"
       }
@@ -186560,34 +186560,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-can-we-sit-outside",
+              "vietnamese": "Chúng ta có thể ngồi bên ngoài được không?",
+              "english": "Can we sit outside?",
+              "pronunciation": "Chung ta co the ngoi ben ngoai duoc khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-can-we-sit-outside",
+              "audioKey": "v900-food-drin-can-we-sit-outside"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -186651,21 +186651,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-can-we-sit-outside"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-fatfish",
-          "food-menu"
+          "v900-food-drin-can-we-sit-outside"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-fatfish"
       }
@@ -187237,34 +187237,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "price-2",
+              "vietnamese": "Bao nhiêu một ký?",
+              "english": "How much per kilo?",
+              "pronunciation": "bao nyew mot kee",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-money-per-kilo",
+              "audioKey": "price-2"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "price-1",
+              "vietnamese": "Cái này bao nhiêu?",
+              "english": "How much is this?",
+              "pronunciation": "gai nai bao nyew",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-money-how-much",
+              "audioKey": "price-1"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "food-6",
+              "vietnamese": "Cho tôi muỗng với đũa",
+              "english": "A spoon and chopsticks please",
+              "pronunciation": "cho toy moong voy doo-ah",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-food-utensils",
+              "audioKey": "food-6"
             }
           ],
           "breakdown": [],
@@ -187274,7 +187274,18 @@
           "id": "place-brief",
           "title": "Fresh Tray, Clear Price",
           "body": "Pointing can work well, but weight pricing can surprise visitors. Price, size, and cooking style need to be clear before crab, shrimp, fish, clams, or snails leave the ice.",
-          "phrases": [],
+          "phrases": [
+            {
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
+            }
+          ],
           "breakdown": [],
           "presentation": "plain-text"
         },
@@ -187328,21 +187339,31 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "price-2"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "price-1",
+              "food-6"
             ]
+          },
+          {
+            "stepID": "place-brief",
+            "title": "Fresh Tray, Clear Price",
+            "sourceSectionID": "place-brief",
+            "primaryPhraseIDs": [
+              "food-1"
+            ],
+            "supportPhraseIDs": []
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-hai-san",
-          "food-menu"
+          "price-2",
+          "food-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "price-1",
+          "food-6"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-hai-san"
       }
@@ -188934,16 +188955,6 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
-            },
-            {
               "id": "food-1",
               "vietnamese": "Cho tôi một phần",
               "english": "One portion please",
@@ -188954,14 +188965,24 @@
               "audioKey": "food-1"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-less-sugar-please",
+              "vietnamese": "Làm ơn bớt đường đi",
+              "english": "Less sugar, please",
+              "pronunciation": "Lam on bot duong di",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-less-sugar-please",
+              "audioKey": "v900-food-drin-less-sugar-please"
+            },
+            {
+              "id": "food-7",
+              "vietnamese": "Gói mang về",
+              "english": "Pack it to go",
+              "pronunciation": "goy mang veh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-pack-to-go",
+              "audioKey": "food-7"
             }
           ],
           "breakdown": [],
@@ -189025,21 +189046,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "food-1"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-less-sugar-please",
+              "food-7"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-kem-bo",
-          "food-menu"
+          "food-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-less-sugar-please",
+          "food-7"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-kem-bo"
       }
@@ -189107,34 +189128,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-is-there-a-wait-for-a-table",
+              "vietnamese": "Có phải đợi bàn không?",
+              "english": "Is there a wait for a table?",
+              "pronunciation": "Co phai doi ban khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-is-there-a-wait-for-a-table",
+              "audioKey": "v900-food-drin-is-there-a-wait-for-a-table"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -189198,21 +189219,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-is-there-a-wait-for-a-table"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-la-maison-1888",
-          "food-menu"
+          "v900-food-drin-is-there-a-wait-for-a-table"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-la-maison-1888"
       }
@@ -190290,34 +190311,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "food-need-table",
+              "vietnamese": "Cho tôi bàn cho hai người nhé",
+              "english": "A table for two, please",
+              "pronunciation": "cho toy ban cho hai ngwee nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-food-need-table",
+              "audioKey": "food-need-table"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -190381,21 +190402,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "food-need-table"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-madame-lan",
-          "food-menu"
+          "food-need-table"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-madame-lan"
       }
@@ -191323,34 +191344,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "price-2",
+              "vietnamese": "Bao nhiêu một ký?",
+              "english": "How much per kilo?",
+              "pronunciation": "bao nyew mot kee",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-money-per-kilo",
+              "audioKey": "price-2"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "food-6",
+              "vietnamese": "Cho tôi muỗng với đũa",
+              "english": "A spoon and chopsticks please",
+              "pronunciation": "cho toy moong voy doo-ah",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-food-utensils",
+              "audioKey": "food-6"
             }
           ],
           "breakdown": [],
@@ -191414,21 +191435,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "price-2"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "food-6"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-moc-quan-seafood",
-          "food-menu"
+          "price-2"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "food-6"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-moc-quan-seafood"
       }
@@ -192859,34 +192880,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "price-2",
+              "vietnamese": "Bao nhiêu một ký?",
+              "english": "How much per kilo?",
+              "pronunciation": "bao nyew mot kee",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-money-per-kilo",
+              "audioKey": "price-2"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "price-8",
+              "vietnamese": "Tổng cộng bao nhiêu?",
+              "english": "How much altogether?",
+              "pronunciation": "tong kong bao nyew",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-money-total",
+              "audioKey": "price-8"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "food-6",
+              "vietnamese": "Cho tôi muỗng với đũa",
+              "english": "A spoon and chopsticks please",
+              "pronunciation": "cho toy moong voy doo-ah",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-food-utensils",
+              "audioKey": "food-6"
             }
           ],
           "breakdown": [],
@@ -192950,21 +192971,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "price-2"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "price-8",
+              "food-6"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-nam-danh-seafood",
-          "food-menu"
+          "price-2"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "price-8",
+          "food-6"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-nam-danh-seafood"
       }
@@ -193719,34 +193740,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-is-this-pork-beef-or-chicken",
+              "vietnamese": "Đây là thịt lợn, thịt bò hay thịt gà?",
+              "english": "Is this pork, beef, or chicken?",
+              "pronunciation": "Day la thit lon thit bo hay thit ga",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-is-this-pork-beef-or-chicken",
+              "audioKey": "v900-food-drin-is-this-pork-beef-or-chicken"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -193810,21 +193831,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-what-do-you-recommend"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-is-this-pork-beef-or-chicken",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-nen",
-          "food-menu"
+          "v900-food-drin-what-do-you-recommend"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-is-this-pork-beef-or-chicken",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-nen"
       }
@@ -196788,34 +196809,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-is-there-a-wait-for-a-table",
+              "vietnamese": "Có phải đợi bàn không?",
+              "english": "Is there a wait for a table?",
+              "pronunciation": "Co phai doi ban khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-is-there-a-wait-for-a-table",
+              "audioKey": "v900-food-drin-is-there-a-wait-for-a-table"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -196879,21 +196900,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-is-there-a-wait-for-a-table"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-the-temptation",
-          "food-menu"
+          "v900-food-drin-is-there-a-wait-for-a-table"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-the-temptation"
       }
@@ -242093,34 +242114,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-is-there-a-wait-for-a-table",
+              "vietnamese": "Có phải đợi bàn không?",
+              "english": "Is there a wait for a table?",
+              "pronunciation": "Co phai doi ban khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-is-there-a-wait-for-a-table",
+              "audioKey": "v900-food-drin-is-there-a-wait-for-a-table"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -242184,21 +242205,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-is-there-a-wait-for-a-table"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-akuna",
-          "food-menu"
+          "v900-food-drin-is-there-a-wait-for-a-table"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-akuna"
       }
@@ -242437,34 +242458,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-is-there-a-wait-for-a-table",
+              "vietnamese": "Có phải đợi bàn không?",
+              "english": "Is there a wait for a table?",
+              "pronunciation": "Co phai doi ban khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-is-there-a-wait-for-a-table",
+              "audioKey": "v900-food-drin-is-there-a-wait-for-a-table"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -242528,21 +242549,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-is-there-a-wait-for-a-table"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-anan-saigon",
-          "food-menu"
+          "v900-food-drin-is-there-a-wait-for-a-table"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-anan-saigon"
       }
@@ -244144,34 +244165,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-can-i-have-rice-with-this",
+              "vietnamese": "Tôi có thể ăn cơm với cái này không?",
+              "english": "Can I have rice with this?",
+              "pronunciation": "Toi co the an com voi cai nay khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-can-i-have-rice-with-this",
+              "audioKey": "v900-food-drin-can-i-have-rice-with-this"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -244235,21 +244256,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-what-do-you-recommend"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-can-i-have-rice-with-this",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-bep-me-in",
-          "food-menu"
+          "v900-food-drin-what-do-you-recommend"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-can-i-have-rice-with-this",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-bep-me-in"
       }
@@ -246392,16 +246413,6 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
-            },
-            {
               "id": "food-1",
               "vietnamese": "Cho tôi một phần",
               "english": "One portion please",
@@ -246412,14 +246423,24 @@
               "audioKey": "food-1"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-less-sugar-please",
+              "vietnamese": "Làm ơn bớt đường đi",
+              "english": "Less sugar, please",
+              "pronunciation": "Lam on bot duong di",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-less-sugar-please",
+              "audioKey": "v900-food-drin-less-sugar-please"
+            },
+            {
+              "id": "v900-food-drin-one-more-please",
+              "vietnamese": "Xin thêm một cái nữa",
+              "english": "One more, please",
+              "pronunciation": "Xin them mot cai nua",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-v900-food-drin-one-more-please",
+              "audioKey": "v900-food-drin-one-more-please"
             }
           ],
           "breakdown": [],
@@ -246483,21 +246504,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "food-1"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-less-sugar-please",
+              "v900-food-drin-one-more-please"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-che",
-          "food-menu"
+          "food-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-less-sugar-please",
+          "v900-food-drin-one-more-please"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-che"
       }
@@ -247072,34 +247093,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-can-we-sit-by-the-fan",
+              "vietnamese": "Chúng ta có thể ngồi cạnh quạt được không?",
+              "english": "Can we sit by the fan?",
+              "pronunciation": "Chung ta co the ngoi canh quat duoc khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-can-we-sit-by-the-fan",
+              "audioKey": "v900-food-drin-can-we-sit-by-the-fan"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -247163,21 +247184,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-what-do-you-recommend"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-can-we-sit-by-the-fan",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-ciel",
-          "food-menu"
+          "v900-food-drin-what-do-you-recommend"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-can-we-sit-by-the-fan",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-ciel"
       }
@@ -247416,34 +247437,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-can-we-sit-inside",
+              "vietnamese": "Chúng ta có thể ngồi bên trong được không?",
+              "english": "Can we sit inside?",
+              "pronunciation": "Chung ta co the ngoi ben trong duoc khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-can-we-sit-inside",
+              "audioKey": "v900-food-drin-can-we-sit-inside"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -247507,21 +247528,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-what-do-you-recommend"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-can-we-sit-inside",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-coco-dining",
-          "food-menu"
+          "v900-food-drin-what-do-you-recommend"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-can-we-sit-inside",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-coco-dining"
       }
@@ -248447,34 +248468,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-can-i-have-rice-with-this",
+              "vietnamese": "Tôi có thể ăn cơm với cái này không?",
+              "english": "Can I have rice with this?",
+              "pronunciation": "Toi co the an com voi cai nay khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-can-i-have-rice-with-this",
+              "audioKey": "v900-food-drin-can-i-have-rice-with-this"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -248538,21 +248559,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-what-do-you-recommend"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-can-i-have-rice-with-this",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-cuc-gach-quan",
-          "food-menu"
+          "v900-food-drin-what-do-you-recommend"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-can-i-have-rice-with-this",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-cuc-gach-quan"
       }
@@ -252020,34 +252041,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-is-this-pork-beef-or-chicken",
+              "vietnamese": "Đây là thịt lợn, thịt bò hay thịt gà?",
+              "english": "Is this pork, beef, or chicken?",
+              "pronunciation": "Day la thit lon thit bo hay thit ga",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-is-this-pork-beef-or-chicken",
+              "audioKey": "v900-food-drin-is-this-pork-beef-or-chicken"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -252111,21 +252132,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-what-do-you-recommend"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-is-this-pork-beef-or-chicken",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-long-trieu",
-          "food-menu"
+          "v900-food-drin-what-do-you-recommend"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-is-this-pork-beef-or-chicken",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-long-trieu"
       }
@@ -252365,34 +252386,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-that-was-very-good",
+              "vietnamese": "Điều đó rất tốt",
+              "english": "That was very good",
+              "pronunciation": "Dieu do rat tot",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-that-was-very-good",
+              "audioKey": "v900-food-drin-that-was-very-good"
             }
           ],
           "breakdown": [],
@@ -252456,21 +252477,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-what-do-you-recommend"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-can-i-pay-the-bill-by-card",
+              "v900-food-drin-that-was-very-good"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-man-moi",
-          "food-menu"
+          "v900-food-drin-what-do-you-recommend"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-can-i-pay-the-bill-by-card",
+          "v900-food-drin-that-was-very-good"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-man-moi"
       }
@@ -253394,34 +253415,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-can-we-sit-inside",
+              "vietnamese": "Chúng ta có thể ngồi bên trong được không?",
+              "english": "Can we sit inside?",
+              "pronunciation": "Chung ta co the ngoi ben trong duoc khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-can-we-sit-inside",
+              "audioKey": "v900-food-drin-can-we-sit-inside"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -253477,21 +253498,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-what-do-you-recommend"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-can-we-sit-inside",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-nephele",
-          "food-menu"
+          "v900-food-drin-what-do-you-recommend"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-can-we-sit-inside",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-nephele"
       }
@@ -275509,34 +275530,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-can-we-sit-outside",
+              "vietnamese": "Chúng ta có thể ngồi bên ngoài được không?",
+              "english": "Can we sit outside?",
+              "pronunciation": "Chung ta co the ngoi ben ngoai duoc khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-can-we-sit-outside",
+              "audioKey": "v900-food-drin-can-we-sit-outside"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -275592,21 +275613,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-can-we-sit-outside"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-cargo-club",
-          "food-menu"
+          "v900-food-drin-can-we-sit-outside"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-cargo-club"
       }
@@ -276016,16 +276037,6 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
-            },
-            {
               "id": "food-1",
               "vietnamese": "Cho tôi một phần",
               "english": "One portion please",
@@ -276036,14 +276047,24 @@
               "audioKey": "food-1"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-less-sugar-please",
+              "vietnamese": "Làm ơn bớt đường đi",
+              "english": "Less sugar, please",
+              "pronunciation": "Lam on bot duong di",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-less-sugar-please",
+              "audioKey": "v900-food-drin-less-sugar-please"
+            },
+            {
+              "id": "food-7",
+              "vietnamese": "Gói mang về",
+              "english": "Pack it to go",
+              "pronunciation": "goy mang veh",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-pack-to-go",
+              "audioKey": "food-7"
             }
           ],
           "breakdown": [],
@@ -276107,21 +276128,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "food-1"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-less-sugar-please",
+              "food-7"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-che-bap-cam-nam",
-          "food-menu"
+          "food-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-less-sugar-please",
+          "food-7"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-che-bap-cam-nam"
       }
@@ -280800,34 +280821,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-can-we-sit-outside",
+              "vietnamese": "Chúng ta có thể ngồi bên ngoài được không?",
+              "english": "Can we sit outside?",
+              "pronunciation": "Chung ta co the ngoi ben ngoai duoc khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-can-we-sit-outside",
+              "audioKey": "v900-food-drin-can-we-sit-outside"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -280891,21 +280912,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-can-we-sit-outside"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-mango-mango",
-          "food-menu"
+          "v900-food-drin-can-we-sit-outside"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-mango-mango"
       }
@@ -286306,34 +286327,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-can-we-sit-outside",
+              "vietnamese": "Chúng ta có thể ngồi bên ngoài được không?",
+              "english": "Can we sit outside?",
+              "pronunciation": "Chung ta co the ngoi ben ngoai duoc khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-can-we-sit-outside",
+              "audioKey": "v900-food-drin-can-we-sit-outside"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -286397,21 +286418,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-can-we-sit-outside"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-the-field",
-          "food-menu"
+          "v900-food-drin-can-we-sit-outside"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-the-field"
       }
@@ -301397,34 +301418,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-is-this-pork-beef-or-chicken",
+              "vietnamese": "Đây là thịt lợn, thịt bò hay thịt gà?",
+              "english": "Is this pork, beef, or chicken?",
+              "pronunciation": "Day la thit lon thit bo hay thit ga",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-is-this-pork-beef-or-chicken",
+              "audioKey": "v900-food-drin-is-this-pork-beef-or-chicken"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -301488,21 +301509,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-what-do-you-recommend"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-is-this-pork-beef-or-chicken",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hue-place-ancient-hue-gallery-cuisine",
-          "food-menu"
+          "v900-food-drin-what-do-you-recommend"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-is-this-pork-beef-or-chicken",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-ancient-hue-gallery-cuisine"
       }
@@ -301569,34 +301590,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-can-we-sit-outside",
+              "vietnamese": "Chúng ta có thể ngồi bên ngoài được không?",
+              "english": "Can we sit outside?",
+              "pronunciation": "Chung ta co the ngoi ben ngoai duoc khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-can-we-sit-outside",
+              "audioKey": "v900-food-drin-can-we-sit-outside"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -301660,21 +301681,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-what-do-you-recommend"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-can-we-sit-outside",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hue-place-ancient-hue-restaurant",
-          "food-menu"
+          "v900-food-drin-what-do-you-recommend"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-can-we-sit-outside",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-ancient-hue-restaurant"
       }
@@ -309820,34 +309841,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-can-we-sit-outside",
+              "vietnamese": "Chúng ta có thể ngồi bên ngoài được không?",
+              "english": "Can we sit outside?",
+              "pronunciation": "Chung ta co the ngoi ben ngoai duoc khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-can-we-sit-outside",
+              "audioKey": "v900-food-drin-can-we-sit-outside"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -309903,21 +309924,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-what-do-you-recommend"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-can-we-sit-outside",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hue-place-les-jardins",
-          "food-menu"
+          "v900-food-drin-what-do-you-recommend"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-can-we-sit-outside",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-les-jardins"
       }
@@ -309984,34 +310005,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "food-vegetarian",
+              "vietnamese": "Tôi ăn chay",
+              "english": "I am vegetarian",
+              "pronunciation": "toy an chai",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-food-vegetarian",
+              "audioKey": "food-vegetarian"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "food-premium-no-meat",
+              "vietnamese": "Làm ơn đừng có thịt.",
+              "english": "No meat, please.",
+              "pronunciation": "Lam on dung co thit",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-food-no-meat",
+              "audioKey": "food-premium-no-meat"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             }
           ],
           "breakdown": [],
@@ -310075,21 +310096,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "food-vegetarian"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "food-premium-no-meat",
+              "v900-food-drin-what-do-you-recommend"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hue-place-lien-hoa-vegetarian",
-          "food-menu"
+          "food-vegetarian"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "food-premium-no-meat",
+          "v900-food-drin-what-do-you-recommend"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-lien-hoa-vegetarian"
       }
@@ -314106,34 +314127,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-can-we-sit-outside",
+              "vietnamese": "Chúng ta có thể ngồi bên ngoài được không?",
+              "english": "Can we sit outside?",
+              "pronunciation": "Chung ta co the ngoi ben ngoai duoc khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-can-we-sit-outside",
+              "audioKey": "v900-food-drin-can-we-sit-outside"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-do-you-have-beer",
+              "vietnamese": "Bạn có bia không?",
+              "english": "Do you have beer?",
+              "pronunciation": "Ban co bia khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-do-you-have-beer",
+              "audioKey": "v900-food-drin-do-you-have-beer"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -314189,21 +314210,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-can-we-sit-outside"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-do-you-have-beer",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hue-place-song-huong-floating-restaurant",
-          "food-menu"
+          "v900-food-drin-can-we-sit-outside"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-do-you-have-beer",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-song-huong-floating-restaurant"
       }
@@ -316307,34 +316328,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-can-we-sit-outside",
+              "vietnamese": "Chúng ta có thể ngồi bên ngoài được không?",
+              "english": "Can we sit outside?",
+              "pronunciation": "Chung ta co the ngoi ben ngoai duoc khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-can-we-sit-outside",
+              "audioKey": "v900-food-drin-can-we-sit-outside"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -316398,21 +316419,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-what-do-you-recommend"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-can-we-sit-outside",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hue-place-tinh-gia-vien",
-          "food-menu"
+          "v900-food-drin-what-do-you-recommend"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-can-we-sit-outside",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-tinh-gia-vien"
       }
@@ -317839,34 +317860,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-can-we-sit-outside",
+              "vietnamese": "Chúng ta có thể ngồi bên ngoài được không?",
+              "english": "Can we sit outside?",
+              "pronunciation": "Chung ta co the ngoi ben ngoai duoc khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-can-we-sit-outside",
+              "audioKey": "v900-food-drin-can-we-sit-outside"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -317930,21 +317951,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "v900-food-drin-what-do-you-recommend"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-can-we-sit-outside",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hue-place-y-thao-garden",
-          "food-menu"
+          "v900-food-drin-what-do-you-recommend"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-can-we-sit-outside",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-y-thao-garden"
       }

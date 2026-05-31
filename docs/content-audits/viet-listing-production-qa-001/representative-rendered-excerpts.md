@@ -176,9 +176,9 @@ You do not need to turn the street into a long walk. One clear sign, cafe edge, 
 Anan Saigon is the dinner to let one meal center the night: a 2025 One MICHELIN Star restaurant near central market streets, with contemporary Vietnamese cooking and a room paced for attention.
 
 ### Useful Phrases
-- Cho tôi xem thực đơn được không? — Can I see the menu?
-- Cho tôi một phần — One portion please
-- Không cay nhé — Not spicy please
+- Có phải đợi bàn không? — Is there a wait for a table?
+- Bạn đề xuất món gì? — What do you recommend?
+- Tôi có thể thanh toán hóa đơn bằng thẻ không? — Can I pay the bill by card?
 
 ### Why This One
 The appeal is the contrast: market-side Saigon outside, then a polished room where Vietnamese ingredients, small plates, drinks, and service pace turn dinner into the main plan.

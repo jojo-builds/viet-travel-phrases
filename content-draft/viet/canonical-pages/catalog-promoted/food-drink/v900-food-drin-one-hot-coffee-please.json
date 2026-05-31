@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Làm ơn cho một ly cà phê nóng is a practical food or drink phrase for keeping one travel detail clear. Use it when One hot coffee, please is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use this when you want hot coffee instead of the much more common iced coffee rhythm. It helps at cafes, hotel counters, and quiet breakfast spots where the server may otherwise assume iced or ask a follow-up."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Làm ơn cho một ly cà phê nóng. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say Làm ơn cho một ly cà phê nóng, then be ready to choose black coffee, milk coffee, sugar, or condensed milk if the cafe asks. Pointing at the menu keeps the order grounded.",
       "phrases": [
         {
           "id": "v900-food-drin-one-hot-coffee-please",
@@ -52,12 +52,18 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cho một ly cà phê nóng",
-          "english": "hot coffee",
+          "vietnamese": "cho một ly",
+          "english": "give one cup/glass",
           "audioKey": null
         },
         {
           "id": "chunk-3",
+          "vietnamese": "cà phê nóng",
+          "english": "hot coffee",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
           "vietnamese": "Làm ơn cho một ly cà phê nóng",
           "english": "One hot coffee, please",
           "audioKey": null
@@ -104,12 +110,12 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real food or drink exchange when one hot coffee, please is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Use it before the drink is made, especially if the menu foregrounds iced coffee. If you want milk coffee, black coffee, less sugar, or no ice, add that detail before the order goes to the bar."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
+      "body": "Ly can mean cup or glass in this kind of order. The important contrast is nóng, hot, versus đá, iced."
     },
     {
       "id": "explore-next",

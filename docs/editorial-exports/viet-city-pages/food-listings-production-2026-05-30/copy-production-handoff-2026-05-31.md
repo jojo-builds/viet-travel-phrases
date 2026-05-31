@@ -75,13 +75,22 @@ Second repair batch, 2026-06-01:
 - The next blocker batch was repaired and projected: fixed-price mall phrase cards, coffee-route cards, cooking-class/craft/lagoon-seafood cards, the singular ticket-buying tap-through risk, and visible editor-language residue across V2.2 app-detail source.
 - Current validators pass after regeneration, but this still is not a final production-ready receipt. Continue from the `Second Repair Batch - 2026-06-01` section in `full-copy-audit-2026-06-01.md`.
 
+Third repair batch, 2026-06-01:
+
+- Read-only audits found two current risks: thin high-use generated phrase pages and `85` repeated `food-menu | food-1 | food-3` card sets.
+- Repaired source copy for ticket buying, walking, less sugar, hot coffee, recommendations, and pack-for-travel phrase pages.
+- Retargeted `32` high-risk food listings across fine dining, seafood-by-weight, dessert, vegetarian, and service-led restaurant pages.
+- Regenerated V2.2 handwritten copy, native authored listing pages, and SQLite.
+- Current validators pass after regeneration; the repeated food-card set is now `53` pages, mostly simple dish/stall pages.
+- Built and launched on simulator `SpeakLocal City Listings`; spot-checked Anan Saigon, Be Man Seafood, che xoa xoa hat luu, less-sugar phrase page, pack-for-travel phrase page, and Lien Hoa Vegetarian. Render review found one compact-card issue on Lien Hoa, fixed by switching to shorter ready phrase `food-premium-no-meat`, then rebuilt and rechecked successfully.
+- This is improved but still not a final production-ready receipt because rendered review needs broader category coverage.
+
 Highest-leverage next pass:
 
-1. Sample and repair the largest remaining repeated phrase-card sets, starting with the broad food menu/portion/not-spicy set.
-2. Do a thin phrase-page pass on high-use generated pages such as ticket buying, walking, less sugar, hot coffee, recommendations, and pack-for-travel.
-3. Do a food/restaurant desire pass over fine dining, MICHELIN-supported restaurants, cafes, drinks, desserts, and local classics that still feel credential- or support-role-led.
-4. Use simulator rendered review, not just JSON scans. Spot-check search and detail routes for restaurants, food, drinks, markets, city pages, and phrase pages.
-5. Keep generated resources in sync: project V2.2 to handwritten copy, import handwritten copy, generate authored listing pages, generate SQLite, then validate.
+1. Broaden simulator rendered review beyond the spot-check set. Cover revised restaurants, seafood, desserts, vegetarian pages, high-use phrase pages, and a sample of remaining simple dish/stall pages.
+2. Sample the remaining `53` repeated `food-menu | food-1 | food-3` pages in app. Keep obvious dish-order pages if the cards fit; retarget any remaining restaurant page that feels too generic.
+3. Continue the food/restaurant desire pass over cafes, drinks, desserts, local classics, and any MICHELIN-supported pages that still feel credential- or support-role-led after render.
+4. Keep generated resources in sync: project V2.2 to handwritten copy, import handwritten copy, generate authored listing pages, generate SQLite, then validate.
 
 Good starter pages/searches for rendered review:
 

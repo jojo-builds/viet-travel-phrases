@@ -366,27 +366,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho tôi xem thực đơn được không?",
-          "en": "Can I see the menu?",
-          "intent": "food-menu",
-          "phraseId": "food-menu",
-          "audioId": "food-menu",
+          "vi": "Bạn đề xuất món gì?",
+          "en": "What do you recommend?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-what-do-you-recommend",
+          "audioId": "v900-food-drin-what-do-you-recommend",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi một phần",
-          "en": "One portion please",
-          "intent": "food-one-portion",
-          "phraseId": "food-1",
-          "audioId": "food-1",
+          "vi": "Đây là thịt lợn, thịt bò hay thịt gà?",
+          "en": "Is this pork, beef, or chicken?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-is-this-pork-beef-or-chicken",
+          "audioId": "v900-food-drin-is-this-pork-beef-or-chicken",
           "status": "mapped"
         },
         {
-          "vi": "Không cay nhé",
-          "en": "Not spicy please",
-          "intent": "food-not-spicy",
-          "phraseId": "food-3",
-          "audioId": "food-3",
+          "vi": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+          "en": "Can I pay the bill by card?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-can-i-pay-the-bill-by-card",
+          "audioId": "v900-food-drin-can-i-pay-the-bill-by-card",
           "status": "mapped"
         }
       ],
@@ -478,27 +478,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho tôi xem thực đơn được không?",
-          "en": "Can I see the menu?",
-          "intent": "food-menu",
-          "phraseId": "food-menu",
-          "audioId": "food-menu",
+          "vi": "Bạn đề xuất món gì?",
+          "en": "What do you recommend?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-what-do-you-recommend",
+          "audioId": "v900-food-drin-what-do-you-recommend",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi một phần",
-          "en": "One portion please",
-          "intent": "food-one-portion",
-          "phraseId": "food-1",
-          "audioId": "food-1",
+          "vi": "Chúng ta có thể ngồi bên ngoài được không?",
+          "en": "Can we sit outside?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-can-we-sit-outside",
+          "audioId": "v900-food-drin-can-we-sit-outside",
           "status": "mapped"
         },
         {
-          "vi": "Không cay nhé",
-          "en": "Not spicy please",
-          "intent": "food-not-spicy",
-          "phraseId": "food-3",
-          "audioId": "food-3",
+          "vi": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+          "en": "Can I pay the bill by card?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-can-i-pay-the-bill-by-card",
+          "audioId": "v900-food-drin-can-i-pay-the-bill-by-card",
           "status": "mapped"
         }
       ],
@@ -5890,27 +5890,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho tôi xem thực đơn được không?",
-          "en": "Can I see the menu?",
-          "intent": "food-menu",
-          "phraseId": "food-menu",
-          "audioId": "food-menu",
+          "vi": "Bạn đề xuất món gì?",
+          "en": "What do you recommend?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-what-do-you-recommend",
+          "audioId": "v900-food-drin-what-do-you-recommend",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi một phần",
-          "en": "One portion please",
-          "intent": "food-one-portion",
-          "phraseId": "food-1",
-          "audioId": "food-1",
+          "vi": "Chúng ta có thể ngồi bên ngoài được không?",
+          "en": "Can we sit outside?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-can-we-sit-outside",
+          "audioId": "v900-food-drin-can-we-sit-outside",
           "status": "mapped"
         },
         {
-          "vi": "Không cay nhé",
-          "en": "Not spicy please",
-          "intent": "food-not-spicy",
-          "phraseId": "food-3",
-          "audioId": "food-3",
+          "vi": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+          "en": "Can I pay the bill by card?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-can-i-pay-the-bill-by-card",
+          "audioId": "v900-food-drin-can-i-pay-the-bill-by-card",
           "status": "mapped"
         }
       ],
@@ -5999,27 +5999,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho tôi xem thực đơn được không?",
-          "en": "Can I see the menu?",
-          "intent": "food-menu",
-          "phraseId": "food-menu",
-          "audioId": "food-menu",
+          "vi": "Tôi ăn chay",
+          "en": "I am vegetarian",
+          "intent": "food-drink",
+          "phraseId": "food-vegetarian",
+          "audioId": "food-vegetarian",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi một phần",
-          "en": "One portion please",
-          "intent": "food-one-portion",
-          "phraseId": "food-1",
-          "audioId": "food-1",
+          "vi": "Làm ơn đừng có thịt.",
+          "en": "No meat, please.",
+          "intent": "food-drink",
+          "phraseId": "food-premium-no-meat",
+          "audioId": "food-premium-no-meat",
           "status": "mapped"
         },
         {
-          "vi": "Không cay nhé",
-          "en": "Not spicy please",
-          "intent": "food-not-spicy",
-          "phraseId": "food-3",
-          "audioId": "food-3",
+          "vi": "Bạn đề xuất món gì?",
+          "en": "What do you recommend?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-what-do-you-recommend",
+          "audioId": "v900-food-drin-what-do-you-recommend",
           "status": "mapped"
         }
       ],
@@ -8674,27 +8674,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho tôi xem thực đơn được không?",
-          "en": "Can I see the menu?",
-          "intent": "food-menu",
-          "phraseId": "food-menu",
-          "audioId": "food-menu",
+          "vi": "Chúng ta có thể ngồi bên ngoài được không?",
+          "en": "Can we sit outside?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-can-we-sit-outside",
+          "audioId": "v900-food-drin-can-we-sit-outside",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi một phần",
-          "en": "One portion please",
-          "intent": "food-one-portion",
-          "phraseId": "food-1",
-          "audioId": "food-1",
+          "vi": "Bạn có bia không?",
+          "en": "Do you have beer?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-do-you-have-beer",
+          "audioId": "v900-food-drin-do-you-have-beer",
           "status": "mapped"
         },
         {
-          "vi": "Không cay nhé",
-          "en": "Not spicy please",
-          "intent": "food-not-spicy",
-          "phraseId": "food-3",
-          "audioId": "food-3",
+          "vi": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+          "en": "Can I pay the bill by card?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-can-i-pay-the-bill-by-card",
+          "audioId": "v900-food-drin-can-i-pay-the-bill-by-card",
           "status": "mapped"
         }
       ],
@@ -10109,27 +10109,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho tôi xem thực đơn được không?",
-          "en": "Can I see the menu?",
-          "intent": "food-menu",
-          "phraseId": "food-menu",
-          "audioId": "food-menu",
+          "vi": "Bạn đề xuất món gì?",
+          "en": "What do you recommend?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-what-do-you-recommend",
+          "audioId": "v900-food-drin-what-do-you-recommend",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi một phần",
-          "en": "One portion please",
-          "intent": "food-one-portion",
-          "phraseId": "food-1",
-          "audioId": "food-1",
+          "vi": "Chúng ta có thể ngồi bên ngoài được không?",
+          "en": "Can we sit outside?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-can-we-sit-outside",
+          "audioId": "v900-food-drin-can-we-sit-outside",
           "status": "mapped"
         },
         {
-          "vi": "Không cay nhé",
-          "en": "Not spicy please",
-          "intent": "food-not-spicy",
-          "phraseId": "food-3",
-          "audioId": "food-3",
+          "vi": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+          "en": "Can I pay the bill by card?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-can-i-pay-the-bill-by-card",
+          "audioId": "v900-food-drin-can-i-pay-the-bill-by-card",
           "status": "mapped"
         }
       ],
@@ -11105,27 +11105,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho tôi xem thực đơn được không?",
-          "en": "Can I see the menu?",
-          "intent": "food-menu",
-          "phraseId": "food-menu",
-          "audioId": "food-menu",
+          "vi": "Bạn đề xuất món gì?",
+          "en": "What do you recommend?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-what-do-you-recommend",
+          "audioId": "v900-food-drin-what-do-you-recommend",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi một phần",
-          "en": "One portion please",
-          "intent": "food-one-portion",
-          "phraseId": "food-1",
-          "audioId": "food-1",
+          "vi": "Chúng ta có thể ngồi bên ngoài được không?",
+          "en": "Can we sit outside?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-can-we-sit-outside",
+          "audioId": "v900-food-drin-can-we-sit-outside",
           "status": "mapped"
         },
         {
-          "vi": "Không cay nhé",
-          "en": "Not spicy please",
-          "intent": "food-not-spicy",
-          "phraseId": "food-3",
-          "audioId": "food-3",
+          "vi": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+          "en": "Can I pay the bill by card?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-can-i-pay-the-bill-by-card",
+          "audioId": "v900-food-drin-can-i-pay-the-bill-by-card",
           "status": "mapped"
         }
       ],

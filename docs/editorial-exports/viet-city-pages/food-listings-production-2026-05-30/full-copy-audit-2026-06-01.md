@@ -260,3 +260,59 @@ git diff --check
 All commands above passed. `audit-viet-listing-production-qa.js` still reports `0` blockers, `0` majors, `1` duplicate hero section hidden at render time, and `500` missing-audio priority rows with no release-blocking missing-audio rows from SQLite validation.
 
 Remaining production-readiness work is still real: repeated generic phrase-card sets remain too broad at scale, generated phrase pages still need a thinness pass, and representative simulator-rendered review has not yet proven the full set.
+
+## Third Repair Batch - 2026-06-01
+
+Status: `IN_PROGRESS_NOT_PRODUCTION_READY`
+
+This batch used two fresh read-only audits against `b14bdc008`:
+
+- high-use generated phrase pages: ticket buying, walking, less sugar, hot coffee, recommendations, and pack-for-travel;
+- the exact repeated food phrase-card set `food-menu | food-1 | food-3`.
+
+Repairs completed:
+
+- enriched the six high-use canonical phrase pages so their source copy teaches the actual traveler moment instead of generic catalog-promoted scaffolding;
+- corrected bad breakdown copy for `less sugar` and `pack it for travel`;
+- added explicit language-risk notes where the current phrase string is understandable but may deserve native-language/audio review before a final polish pass;
+- retargeted `32` high-risk food listings away from the generic menu/one-portion/not-spicy set:
+  - fine dining and MICHELIN-supported restaurants now use wait/table, recommendation, dish-content, seating, and bill/card phrases;
+  - seafood-by-weight pages now use per-kilo/price confirmation and table utility phrases;
+  - dessert pages now use less-sugar/one-more/to-go phrases instead of `not spicy`;
+  - `city-hue-place-lien-hoa-vegetarian` now foregrounds vegetarian/no-meat/recommendation phrases;
+  - service-led restaurants such as `city-danang-place-fatfish`, `city-danang-place-madame-lan`, `city-hoian-place-cargo-club`, `city-hoian-place-mango-mango`, `city-hoian-place-the-field`, and `city-hue-place-song-huong-floating-restaurant` now use seating/recommendation/bill phrases.
+
+Current repeated-set state after the batch:
+
+- exact `food-menu | food-1 | food-3` count is down from `85` to `53`;
+- remaining count by category: `33` Dish, `20` Restaurant, `0` Dessert;
+- remaining count by city: Đà Nẵng `17`, Saigon `15`, Hội An `8`, Huế `13`, Hà Nội `0`.
+
+The remaining repeated cards are mostly simple dish/stall pages where menu, one portion, and not spicy are production-safe as a temporary default, but they are still a good target for a later full phrase-card polish pass.
+
+Validation after this batch:
+
+```sh
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-city-library.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/audit-viet-listing-production-qa.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+All commands above passed. `audit-viet-listing-production-qa.js` reports `0` blockers, `0` majors, `1` duplicate hero section hidden at render time, and `500` missing-audio priority rows. SQLite validation reports `0` release-blocking missing-audio rows.
+
+Rendered simulator spot-check after this batch:
+
+- built and launched `SpeakLocalNative` on simulator `SpeakLocal City Listings`;
+- checked `viet-family-city-hcmc-place-anan-saigon`: revised table/recommendation/bill cards render and the intro/sections read cleanly;
+- checked `viet-family-city-danang-place-be-man`: seafood-by-weight price cards render in the first screen;
+- checked `viet-family-city-danang-place-che-xoa-xoa-hat-luu`: dessert page renders less-sugar instead of not-spicy;
+- checked `viet-phrase-v900-food-drin-less-sugar-please`: rendered page now explains `đường` as sugar, not street;
+- checked `viet-phrase-v900-shop-can-you-pack-it-for-travel`: long title renders without clipping;
+- checked `viet-family-city-hue-place-lien-hoa-vegetarian`: initial no-meat phrase was too long in the compact card, so it was retargeted from `v900-food-drin-can-i-order-this-without-meat` to shorter ready phrase `food-premium-no-meat`, rebuilt, and rechecked successfully.
+
+Remaining production-readiness work: broaden simulator-rendered review across more categories, and sample the remaining dish/stall repeated cards before a final production-ready receipt is restored.

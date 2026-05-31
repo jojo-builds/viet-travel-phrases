@@ -167,21 +167,21 @@
         "title": "Useful Phrases",
         "sourceSectionID": "quick-say",
         "primaryPhraseIDs": [
-          "food-menu"
+          "v900-food-drin-is-there-a-wait-for-a-table"
         ],
         "supportPhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ]
       }
     ],
     "primaryPracticePhraseIDs": [
       "city-hcmc-place-anan-saigon",
-      "food-menu"
+      "v900-food-drin-is-there-a-wait-for-a-table"
     ],
     "secondaryPracticePhraseIDs": [
-      "food-1",
-      "food-3"
+      "v900-food-drin-what-do-you-recommend",
+      "v900-food-drin-can-i-pay-the-bill-by-card"
     ],
     "practiceSourcePageID": "viet-family-city-hcmc-place-anan-saigon"
   },

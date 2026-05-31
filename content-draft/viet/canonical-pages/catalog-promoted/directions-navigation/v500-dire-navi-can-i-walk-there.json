@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể đi bộ tới đó được không? is for asking permission before you act. It is useful when walk there depends on local rules, staff approval, or the right way to use a space or service."
+      "body": "Use this when the map says a place is nearby but the street reality is unclear. It asks whether walking is practical, not just whether walking is allowed: distance, heat, traffic, sidewalks, and crossings all matter."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có thể đi bộ tới đó được không? once, then make the task visible with your map, address, ride screen, sign, or nearby landmark. The phrase is doing one job: getting a clear answer about walk there.",
+      "body": "Say Tôi có thể đi bộ tới đó được không? with your map open or the place name visible. Listen for đi bộ được, xa lắm, or a gesture toward a safer crossing, alley, bridge, or ride pickup point.",
       "phrases": [
         {
           "id": "v500-dire-navi-can-i-walk-there",
@@ -46,20 +46,20 @@
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể đi bộ",
-          "english": "go / move",
+          "vietnamese": "đi bộ",
+          "english": "walk",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "tới đó",
-          "english": "that one / that",
+          "english": "there",
           "audioKey": null
         },
         {
@@ -116,12 +116,12 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real directions exchange when walk there is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+      "body": "Use it before committing to a walk between neighborhoods, bridges, beach roads, old-town lanes, markets, or station areas. If the answer sounds hesitant, treat that as travel advice and ask for a taxi, Grab, or pickup point."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "A short distance on the map can still be a bad walk in heat, rain, or fast traffic. Locals may answer with a safer route rather than a direct yes."
     },
     {
       "id": "explore-next",
