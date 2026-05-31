@@ -64,10 +64,28 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 48: repeated listing page instances reused the same phrase rows and breakdown tokens, but row playback-audio decisions were only prepared per page instance; phrase options and breakdown tokens now keep bounded shared playback-audio decision caches so rapid page-to-page navigation reuses the same audio-manifest decisions without changing playback behavior
 - root cause 49: Home can remain mounted as the back-preview surface while the user rapidly opens listing pages from Home, and its Recently viewed shelf rebuilt feature-card article adapters for the same still-visible recent pages on each route change; Recently viewed now uses a bounded feature-item cache so a new listing open adds only the new recent card adapter while unchanged recent cards are reused
 - root cause 50: Home's Recently viewed shelf already receives canonical recent page IDs from `LocalUserIntentStore`, but it still used the alias-safe card helper and canonicalized each recent ID before reading cached feature cards; the Home-only recent-ID path now dedupes and limits store-owned canonical IDs directly while preserving the general alias-safe helper for external callers
+- root cause 51: Browse/Home/catalog rows already know their canonical `viet-phrase-*` page IDs, but the SQLite detail loader did not know that the catalog had already proved those IDs canonical; the catalog fast path now seeds the SQLite runtime canonical cache so the first detail load for a known canonical listing page skips the extra SQL alias lookup, while alias page IDs still canonicalize once
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
 
+- App-code commit `291461ca8` on `feature/admin-photo-backdrop-polish`
+  - root-cause 51 fix committed as `Seed canonical detail lookup cache`
+  - physical iPhone build/install was attempted after commit, but Xcode reported no connected or available paired iPhone; phone proof is still pending for this exact commit
+- XcodeBuildMCP simulator focused catalog-canonical detail-load regression on iPhone 17 Pro
+  - failed before implementation because a known canonical catalog page still performed `1` repository canonical lookup instead of `0`
+  - passed after implementation: `3` tests, `0` failures
+  - covered catalog-seeded canonical detail loading, alias detail loading still canonicalizing once, and known catalog page IDs bypassing SQLite canonical lookup
+  - result artifacts:
+    - red result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T04-26-34-710Z_pid15747_b82ffc9e.xcresult`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T04-27-55-317Z_pid15747_b1a7e173.xcresult`
+- XcodeBuildMCP simulator focused SQLite/detail routing thermal slice on iPhone 17 Pro
+  - passed: `9` tests, `0` failures
+  - covered catalog-seeded canonical detail loading, alias canonicalization, batched section item loading, hero-image lookup staying lightweight, generated/static photo-backdrop eligibility, canonical detail-page cache reuse, known catalog canonical bypass, and menu-owned canonical bypass
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T04-29-44-973Z_pid15747_421bfe15.xcresult`
+- local hygiene checks after root cause 51:
+  - `git diff --check -- native-ios/App/Models/PhrasePage.swift native-ios/App/Models/VietSQLiteLanguagePackRepository.swift native-ios/Tests/SQLiteLanguagePackRepositoryTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
 - Physical iPhone Debug build/install/launch from current `feature/admin-photo-backdrop-polish` head `0b5556336`
   - build passed
   - install passed
