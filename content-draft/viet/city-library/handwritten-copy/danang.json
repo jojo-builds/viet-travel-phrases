@@ -5,15 +5,15 @@
   "entries": [
     {
       "pageID": "city-danang-place-3d-art-in-paradise",
-      "summary": "Good for friends, families, or rainy afternoons for something playful without turning into a full museum visit. It gives the day a low-pressure laugh between outdoor plans, with enough structure to make group photos feel easy.",
-      "context": "Good for friends, families, or rainy afternoons for something playful without turning into a full museum visit.",
-      "tip": "Treat it as a bright indoor reset between bigger plans. Heat, rain, or tired legs can move the day inside for an hour.",
-      "rationale": "It gives the day a low-pressure laugh between outdoor plans, with enough structure to make group photos feel easy.",
+      "summary": "This is the moment when a group wants an indoor laugh, a phone full of staged photos, and a break from beach or bridge weather without turning the day serious.",
+      "context": "This is the moment when a group wants an indoor laugh, a phone full of staged photos, and a break from beach or bridge weather without turning the day serious.",
+      "tip": "Heat, rain, or tired legs can make one playful indoor hour sound better than another outdoor stop.",
+      "rationale": "The museum gives Da Nang a playful photo-room stop: painted illusions only work when people pose, adjust angles, and let the group become part of the scene.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "Photos Before Art",
-          "body": "A playful indoor break for optical-illusion rooms, group photos, and a cool hour when Da Nang's beach or bridge plan needs shade and laughter."
+          "title": "The Group Becomes The Picture",
+          "body": "3D Art in Paradise is an indoor photo-room stop where painted illusions need people, camera angles, and a little patience to work."
         },
         {
           "id": "quick-say",
@@ -32,13 +32,13 @@
         },
         {
           "id": "use-it-with",
-          "title": "Bring Company",
-          "body": "Solo visits can run thin here. Friends, patient camera people, and kids who like staged scenes give the rooms their point."
+          "title": "Let Someone Direct The Shot",
+          "body": "The clearest rooms need one person behind the camera and one person willing to pose. Small moves in feet, hands, and phone angle change the whole trick."
         },
         {
           "id": "when-to-use",
-          "title": "A Weather Break",
-          "body": "Treat it as a bright indoor reset between bigger plans. Heat, rain, or tired legs can move the day inside for an hour."
+          "title": "When The Day Moves Inside",
+          "body": "Heat, rain, or tired legs can make one playful indoor hour sound better than another outdoor stop."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -748,7 +748,7 @@
         {
           "id": "when-to-use",
           "title": "Guide Note, Simple Meal",
-          "body": "The MICHELIN note helps explain why it is worth remembering. The pleasure is still simple: clean herbs, salty dip, and a table that lets everyone learn the bite."
+          "body": "The MICHELIN note sits behind the choice, but the table is still about clean herbs, salty mắm nêm, soft wrappers, and the small skill of one good roll."
         },
         {
           "id": "good-to-know",
@@ -982,7 +982,7 @@
       "pageID": "city-danang-place-bun-cha-ca-hon",
       "summary": "Hờn is a Da Nang fish-cake noodle bowl moment: springy fish cake, coastal broth, noodles, herbs, and spice after tasting. Hờn gives the citywide fish-cake noodle dish a recognized breakfast table, where one bowl, broth, herbs, and the day's first meal do most of the work.",
       "context": "Hờn is a Da Nang fish-cake noodle bowl moment: springy fish cake, coastal broth, noodles, herbs, and spice after tasting.",
-      "tip": "The Bib Gourmand recognition belongs to the bowl and a short table rhythm. Keep the meal focused on fish cake, broth, herbs, and the first clean taste.",
+      "tip": "The Bib Gourmand note points back to the bowl and its short table rhythm. Keep the meal focused on fish cake, broth, herbs, and the first clean taste.",
       "rationale": "Hờn gives the citywide fish-cake noodle dish a recognized breakfast table, where one bowl, broth, herbs, and the day's first meal do most of the work.",
       "sections": [
         {
@@ -1018,7 +1018,7 @@
         {
           "id": "good-to-know",
           "title": "Recognition Around One Bowl",
-          "body": "The Bib Gourmand recognition belongs to the bowl and a short table rhythm. Keep the meal focused on fish cake, broth, herbs, and the first clean taste."
+          "body": "The Bib Gourmand note points back to the bowl and its short table rhythm. Keep the meal focused on fish cake, broth, herbs, and the first clean taste."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1435,9 +1435,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "airport-1",
             "airport-2",
-            "airport-3"
+            "airport-3",
+            "directions-8"
           ]
         },
         {
@@ -1635,15 +1635,15 @@
     },
     {
       "pageID": "city-danang-place-fatfish",
-      "summary": "Keep Fatfish for a slower Hàn River dinner when the group wants a calm table after bridge or riverside time, not a dish-first food mission.",
-      "context": "Keep Fatfish for a slower Hàn River dinner when the group wants a calm table after bridge or riverside time, not a dish-first food mission.",
-      "tip": "For a louder local seafood dinner, compare it with Bé Mặn. If the night should center on a dish, start with noodles, pancakes, or soup.",
-      "rationale": "Fatfish matters as a riverfront pacing choice in Da Nang: terrace light, drinks, and a named table near the Hàn River give the evening shape, while stronger food-led pages can lead foodie planning.",
+      "summary": "Keep Fatfish for a slower Hàn River dinner when the group wants terrace light, drinks, conversation, and a table that softens the bridge-and-river evening.",
+      "context": "Keep Fatfish for a slower Hàn River dinner when the group wants terrace light, drinks, conversation, and a table that softens the bridge-and-river evening.",
+      "tip": "For a louder local seafood dinner, compare it with Bé Mặn. Fatfish is the calmer river-table choice when drinks, setting, and a slower meal matter.",
+      "rationale": "Fatfish matters as a riverfront pacing choice in Da Nang: terrace light, drinks, and a named table near the Hàn River give the evening a calmer shape.",
       "sections": [
         {
           "id": "at-glance",
           "title": "A Slower River Table",
-          "body": "Fatfish is for a calm Da Nang dinner by the Hàn River: terrace light, drinks, and an easy table after a bridge walk. Choose it for pace and setting; leave the dish chase for noodles, pancakes, and soup."
+          "body": "Fatfish is for a calm Da Nang dinner by the Hàn River: terrace light, drinks, and an easy table after a bridge walk. Choose it when setting and conversation should lead."
         },
         {
           "id": "quick-say",
@@ -1668,12 +1668,12 @@
         {
           "id": "when-to-use",
           "title": "Pair It With A Walk",
-          "body": "Put Fatfish before or after a Hàn River walk when the plan needs a soft landing near the water. It is more route stop than destination meal."
+          "body": "Put Fatfish before or after a Hàn River walk when the plan needs a soft landing near the water. The room makes the most sense as part of the river evening."
         },
         {
           "id": "good-to-know",
-          "title": "When Food Leads",
-          "body": "For a louder local seafood dinner, compare it with Bé Mặn. If the night should center on a dish, start with noodles, pancakes, or soup."
+          "title": "When Seafood Leads",
+          "body": "For a louder local seafood dinner, compare it with Bé Mặn. Fatfish is the calmer river-table choice when drinks, setting, and a slower meal matter."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1767,7 +1767,7 @@
       "pageID": "city-danang-place-hai-chau-district",
       "summary": "The district is a base and orientation cue rather than a sightseeing quest to complete. Hải Châu turns a broad administrative name into a central-grid cue for hotels, errands, coffee, river walks, and nearby blocks.",
       "context": "The district is a base and orientation cue rather than a sightseeing quest to complete.",
-      "tip": "Administrative naming, business turnover, and walking comfort vary by block. The district help with orientation, then judge each street as you walk.",
+      "tip": "Administrative naming, business turnover, and walking comfort vary by block. Let the district help with orientation, then judge each street as you walk.",
       "rationale": "Hải Châu turns a broad administrative name into a central-grid cue for hotels, errands, coffee, river walks, and nearby blocks.",
       "sections": [
         {
@@ -1803,7 +1803,7 @@
         {
           "id": "good-to-know",
           "title": "Boundaries Need Care",
-          "body": "Administrative naming, business turnover, and walking comfort vary by block. The district help with orientation, then judge each street as you walk."
+          "body": "Administrative naming, business turnover, and walking comfort vary by block. Let the district help with orientation, then judge each street as you walk."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1947,7 +1947,7 @@
       "pageID": "city-danang-place-han-market",
       "summary": "Hàn Market is the easy first Da Nang market: one central lap for gifts, dried food, breakfast bowls, and price practice before deeper snack hunting.",
       "context": "Hàn Market is the easy first Da Nang market: one central lap for gifts, dried food, breakfast bowls, and price practice before deeper snack hunting.",
-      "tip": "This belongs on a first Da Nang morning, especially before gifts, beach plans, or a later Cồn Market food run. It gives the city a practical starting point.",
+      "tip": "Start here on a first Da Nang morning, especially before gifts, beach plans, or a later Cồn Market food run. It gives the city a practical starting point.",
       "rationale": "Hàn matters because it makes central Da Nang concrete in one stop: river-side errands, dried seafood, fabric, bargaining, and food counters close enough for a cautious first market meal.",
       "sections": [
         {
@@ -1983,7 +1983,7 @@
         {
           "id": "good-to-know",
           "title": "First Morning Fit",
-          "body": "This belongs on a first Da Nang morning, especially before gifts, beach plans, or a later Cồn Market food run. It gives the city a practical starting point."
+          "body": "Start here on a first Da Nang morning, especially before gifts, beach plans, or a later Cồn Market food run. It gives the city a practical starting point."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -3653,7 +3653,7 @@
         {
           "id": "place-brief",
           "title": "Sand Beside Stone",
-          "body": "The stop belongs with beach and limestone hills in the same half-day. Add Marble Mountains or Non Nuoc Stone Carving Village only if the day still has room."
+          "body": "Pair the beach with limestone hills in the same half-day. Add Marble Mountains or Non Nuoc Stone Carving Village only if the day still has room."
         },
         {
           "id": "use-it-with",

@@ -138,3 +138,13 @@ This desktop thread repeatedly hung when using real subagent spawn/close control
 - one reviews rendered simulator pages for visual/copy fit.
 
 Do not let subagents auto-edit the same files concurrently. Fold their findings back through the authored V2.2 source and regeneration chain.
+
+Seventh repair batch, 2026-06-01:
+
+- User screenshot review found `city-hcmc-place-banh-xeo-46a` still too hard to read on-device: stiff section language such as `A Dish-Specific Meal`, `table attention`, and `carry the stop`.
+- Ran a full taxonomy audit across all `520` V2.2 entries with read-only food, culture/attraction, mobility/route, and place-feel slices.
+- Repaired the screenshot page and first taxonomy hard-block batch in source: food pages with app-architecture language, transport phrase-card mismatches, wrong culture/attraction related cards, Cửa Đại Beach phrase cards, Kim Bồng/Trà Nhiêu wording leaks, and several visible grammar or voice issues.
+- Repaired related-card fallback clusters with page-specific route/comparison cards rather than suppressing all relationships.
+- Regenerated V2.2 handwritten copy, native authored listing pages, phrase catalog, and SQLite.
+- Current source/runtime validators pass: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Global status is still not final production-ready until the rendered proof gate is closed or explicitly amended. Continue from `full-taxonomy-copy-audit-2026-06-01.md`.

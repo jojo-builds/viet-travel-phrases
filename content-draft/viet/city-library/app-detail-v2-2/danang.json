@@ -24,11 +24,11 @@
       "city": "Đà Nẵng",
       "category": "Museum",
       "pronunciation": "bao tang 3d art in paradise da nang",
-      "travelerMoment": "Good for friends, families, or rainy afternoons for something playful without turning into a full museum visit.",
-      "storySpine": "It gives the day a low-pressure laugh between outdoor plans, with enough structure to make group photos feel easy.",
+      "travelerMoment": "This is the moment when a group wants an indoor laugh, a phone full of staged photos, and a break from beach or bridge weather without turning the day serious.",
+      "storySpine": "The museum gives Da Nang a playful photo-room stop: painted illusions only work when people pose, adjust angles, and let the group become part of the scene.",
       "intro": {
-        "heading": "Photos Before Art",
-        "body": "A playful indoor break for optical-illusion rooms, group photos, and a cool hour when Da Nang's beach or bridge plan needs shade and laughter."
+        "heading": "The Group Becomes The Picture",
+        "body": "3D Art in Paradise is an indoor photo-room stop where painted illusions need people, camera angles, and a little patience to work."
       },
       "usefulPhraseCards": [
         {
@@ -64,13 +64,13 @@
         },
         {
           "id": "better-with-company",
-          "heading": "Bring Company",
-          "body": "Solo visits can run thin here. Friends, patient camera people, and kids who like staged scenes give the rooms their point."
+          "heading": "Let Someone Direct The Shot",
+          "body": "The clearest rooms need one person behind the camera and one person willing to pose. Small moves in feet, hands, and phone angle change the whole trick."
         },
         {
           "id": "a-weather-break",
-          "heading": "A Weather Break",
-          "body": "Treat it as a bright indoor reset between bigger plans. Heat, rain, or tired legs can move the day inside for an hour."
+          "heading": "When The Day Moves Inside",
+          "body": "Heat, rain, or tired legs can make one playful indoor hour sound better than another outdoor stop."
         }
       ],
       "mentionedHereCandidates": [],
@@ -611,12 +611,12 @@
         {
           "id": "after-dark-energy",
           "heading": "After-Dark Energy",
-        "body": "Asia Park suits an evening that wants lights, movement, snacks, and a family-park mood. Let the entrance boards shape how much of the night goes to rides."
+          "body": "Asia Park suits an evening that wants lights, movement, snacks, and a family-park mood. Let the entrance boards shape how much of the night goes to rides."
         },
         {
           "id": "the-gate-sets-expectations",
           "heading": "The Gate Sets Expectations",
-        "body": "Make the entrance the first orientation point. If rides are the reason, read the boards together before the group drifts inside."
+          "body": "Make the entrance the first orientation point. If rides are the reason, read the boards together before the group drifts inside."
         },
         {
           "id": "lights-more-than-silence",
@@ -1183,11 +1183,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-hills",
-          "label": "Bà Nà Hills",
-          "relationship": "mountain-park day",
-          "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Related because: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
+          "catalogId": "viet-family-city-danang-place-son-tra",
+          "label": "Bán đảo Sơn Trà",
+          "relationship": "son-tra-view-route",
+          "displaySubtitle": "The wider Sơn Trà route when the hilltop view should connect to peninsula roads and coast light.",
+          "reason": "Related because: The wider Sơn Trà route when the hilltop view should connect to peninsula roads and coast light.",
           "status": "render"
         }
       ],
@@ -1876,7 +1876,7 @@
         {
           "id": "guide-note-not-the-whole-story",
           "heading": "Guide Note, Simple Meal",
-          "body": "The MICHELIN note helps explain why it is worth remembering. The pleasure is still simple: clean herbs, salty dip, and a table that lets everyone learn the bite."
+          "body": "The MICHELIN note sits behind the choice, but the table is still about clean herbs, salty mắm nêm, soft wrappers, and the small skill of one good roll."
         },
         {
           "id": "sauce-decides-the-bite",
@@ -2625,7 +2625,7 @@
         {
           "id": "before-crossing-town",
           "heading": "Recognition Around One Bowl",
-          "body": "The Bib Gourmand recognition belongs to the bowl and a short table rhythm. Keep the meal focused on fish cake, broth, herbs, and the first clean taste."
+          "body": "The Bib Gourmand note points back to the bowl and its short table rhythm. Keep the meal focused on fish cake, broth, herbs, and the first clean taste."
         }
       ],
       "mentionedHereCandidates": [
@@ -2999,11 +2999,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-hills",
-          "label": "Bà Nà Hills",
-          "relationship": "mountain-park day",
-          "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Related because: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
+          "catalogId": "viet-family-city-danang-place-han-market",
+          "label": "Chợ Hàn",
+          "relationship": "central-walk-pairing",
+          "displaySubtitle": "A central market stop nearby when the pink church visit should stay inside the city core.",
+          "reason": "Related because: A central market stop nearby when the pink church visit should stay inside the city core.",
           "status": "render"
         }
       ],
@@ -3756,14 +3756,6 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Nhập cảnh ở đâu?",
-          "en": "Where is immigration?",
-          "intent": "airport-immigration",
-          "phraseId": "airport-1",
-          "audioId": "airport-1",
-          "status": "mapped"
-        },
-        {
           "vi": "Lấy hành lý ở đâu?",
           "en": "Where is baggage claim?",
           "intent": "airport-baggage",
@@ -3777,6 +3769,14 @@
           "intent": "airport-sim",
           "phraseId": "airport-3",
           "audioId": "airport-3",
+          "status": "mapped"
+        },
+        {
+          "vi": "Điểm đón ở đâu?",
+          "en": "Where is the pickup point?",
+          "intent": "directions-pickup-point",
+          "phraseId": "directions-8",
+          "audioId": "directions-8",
           "status": "mapped"
         }
       ],
@@ -4020,11 +4020,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-hills",
-          "label": "Bà Nà Hills",
-          "relationship": "mountain-park day",
-          "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Related because: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
+          "catalogId": "viet-family-city-danang-place-dragon-bridge-fire-show",
+          "label": "Màn phun lửa Cầu Rồng",
+          "relationship": "same-bridge-timing",
+          "displaySubtitle": "The timed fire-and-water moment when the bridge becomes a night event, not just a crossing.",
+          "reason": "Related because: The timed fire-and-water moment when the bridge becomes a night event, not just a crossing.",
           "status": "render"
         }
       ],
@@ -4133,11 +4133,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-cable-car",
-          "label": "Cáp treo Bà Nà",
-          "relationship": "cable-car arrival",
-          "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Related because: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
+          "catalogId": "viet-family-city-danang-place-dragon-bridge",
+          "label": "Cầu Rồng",
+          "relationship": "same-bridge-context",
+          "displaySubtitle": "The bridge page for the landmark itself before the timed fire-and-water crowd forms.",
+          "reason": "Related because: The bridge page for the landmark itself before the timed fire-and-water crowd forms.",
           "status": "render"
         }
       ],
@@ -4238,17 +4238,17 @@
         {
           "id": "come-for-the-lines",
           "heading": "Come For The Form",
-        "body": "The steady reason to stop is the statue's form against the river and bridge lights. Treat water and lighting as a bonus around the main photo moment."
+          "body": "The steady reason to stop is the statue's form against the river and bridge lights. Treat water and lighting as a bonus around the main photo moment."
         }
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-hills",
-          "label": "Bà Nà Hills",
-          "relationship": "mountain-park day",
-          "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Related because: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
+          "catalogId": "viet-family-city-danang-place-love-bridge",
+          "label": "Cầu Tình Yêu",
+          "relationship": "riverfront-photo-pairing",
+          "displaySubtitle": "A nearby riverfront stop for locks, photos, and the same short evening walk.",
+          "reason": "Related because: A nearby riverfront stop for locks, photos, and the same short evening walk.",
           "status": "render"
         }
       ],
@@ -4298,11 +4298,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "fatfish",
-      "travelerMoment": "Keep Fatfish for a slower Hàn River dinner when the group wants a calm table after bridge or riverside time, not a dish-first food mission.",
-      "storySpine": "Fatfish matters as a riverfront pacing choice in Da Nang: terrace light, drinks, and a named table near the Hàn River give the evening shape, while stronger food-led pages can lead foodie planning.",
+      "travelerMoment": "Keep Fatfish for a slower Hàn River dinner when the group wants terrace light, drinks, conversation, and a table that softens the bridge-and-river evening.",
+      "storySpine": "Fatfish matters as a riverfront pacing choice in Da Nang: terrace light, drinks, and a named table near the Hàn River give the evening a calmer shape.",
       "intro": {
         "heading": "A Slower River Table",
-        "body": "Fatfish is for a calm Da Nang dinner by the Hàn River: terrace light, drinks, and an easy table after a bridge walk. Choose it for pace and setting; leave the dish chase for noodles, pancakes, and soup."
+        "body": "Fatfish is for a calm Da Nang dinner by the Hàn River: terrace light, drinks, and an easy table after a bridge walk. Choose it when setting and conversation should lead."
       },
       "usefulPhraseCards": [
         {
@@ -4344,12 +4344,12 @@
         {
           "id": "pair-it-with-a-walk",
           "heading": "Pair It With A Walk",
-          "body": "Put Fatfish before or after a Hàn River walk when the plan needs a soft landing near the water. It is more route stop than destination meal."
+          "body": "Put Fatfish before or after a Hàn River walk when the plan needs a soft landing near the water. The room makes the most sense as part of the river evening."
         },
         {
           "id": "when-food-leads",
-          "heading": "When Food Leads",
-          "body": "For a louder local seafood dinner, compare it with Bé Mặn. If the night should center on a dish, start with noodles, pancakes, or soup."
+          "heading": "When Seafood Leads",
+          "body": "For a louder local seafood dinner, compare it with Bé Mặn. Fatfish is the calmer river-table choice when drinks, setting, and a slower meal matter."
         }
       ],
       "mentionedHereCandidates": [],
@@ -4577,9 +4577,9 @@
         {
           "catalogId": "viet-family-city-danang-place-ba-na-hills",
           "label": "Bà Nà Hills",
-          "relationship": "mountain-park day",
-          "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Related because: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
+          "relationship": "same-mountain-context",
+          "displaySubtitle": "The larger Bà Nà mountain day around the bridge, cable car, weather, and crowds.",
+          "reason": "Related because: The larger Bà Nà mountain day around the bridge, cable car, weather, and crowds.",
           "status": "render"
         }
       ],
@@ -4680,7 +4680,7 @@
         {
           "id": "boundaries-need-care",
           "heading": "Boundaries Need Care",
-          "body": "Administrative naming, business turnover, and walking comfort vary by block. The district help with orientation, then judge each street as you walk."
+          "body": "Administrative naming, business turnover, and walking comfort vary by block. Let the district help with orientation, then judge each street as you walk."
         }
       ],
       "mentionedHereCandidates": [],
@@ -4917,11 +4917,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-hills",
-          "label": "Bà Nà Hills",
-          "relationship": "mountain-park day",
-          "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Related because: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
+          "catalogId": "viet-family-city-danang-place-hai-van-pass-ride",
+          "label": "Chuyến đi đèo Hải Vân",
+          "relationship": "same-route-action",
+          "displaySubtitle": "The ride-focused page when the pass is part of a road day, not just a viewpoint name.",
+          "reason": "Related because: The ride-focused page when the pass is part of a road day, not just a viewpoint name.",
           "status": "render"
         }
       ],
@@ -5028,11 +5028,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-cable-car",
-          "label": "Cáp treo Bà Nà",
-          "relationship": "cable-car arrival",
-          "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Related because: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
+          "catalogId": "viet-family-city-danang-place-hai-van-pass",
+          "label": "Đèo Hải Vân",
+          "relationship": "same-route-viewpoint",
+          "displaySubtitle": "The pass page when the road day needs the viewpoint name and mountain context.",
+          "reason": "Related because: The pass page when the road day needs the viewpoint name and mountain context.",
           "status": "render"
         }
       ],
@@ -5133,7 +5133,7 @@
         {
           "id": "first-morning-fit",
           "heading": "First Morning Fit",
-          "body": "This belongs on a first Da Nang morning, especially before gifts, beach plans, or a later Cồn Market food run. It gives the city a practical starting point."
+          "body": "Start here on a first Da Nang morning, especially before gifts, beach plans, or a later Cồn Market food run. It gives the city a practical starting point."
         }
       ],
       "mentionedHereCandidates": [
@@ -5391,11 +5391,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-cable-car",
-          "label": "Cáp treo Bà Nà",
-          "relationship": "cable-car arrival",
-          "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Related because: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
+          "catalogId": "viet-family-city-danang-place-han-river",
+          "label": "Sông Hàn",
+          "relationship": "river-context",
+          "displaySubtitle": "The river page when the cruise should sit inside Da Nang’s bridges, skyline, and waterline.",
+          "reason": "Related because: The river page when the cruise should sit inside Da Nang’s bridges, skyline, and waterline.",
           "status": "render"
         }
       ],
@@ -5609,11 +5609,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-cable-car",
-          "label": "Cáp treo Bà Nà",
-          "relationship": "cable-car arrival",
-          "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Related because: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
+          "catalogId": "viet-family-city-danang-place-hoa-trung-lake",
+          "label": "Hồ Hòa Trung",
+          "relationship": "outside-city-reset",
+          "displaySubtitle": "Another outside-city nature reset when Da Nang needs water, space, and a ride plan.",
+          "reason": "Related because: Another outside-city nature reset when Da Nang needs water, space, and a ride plan.",
           "status": "render"
         }
       ],
@@ -6167,11 +6167,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-hills",
-          "label": "Bà Nà Hills",
-          "relationship": "mountain-park day",
-          "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Related because: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
+          "catalogId": "viet-family-city-danang-place-linh-ung-pagoda",
+          "label": "Chùa Linh Ứng",
+          "relationship": "same-pagoda-context",
+          "displaySubtitle": "The pagoda context behind the statue, with courtyards, sea views, and Sơn Trà air.",
+          "reason": "Related because: The pagoda context behind the statue, with courtyards, sea views, and Sơn Trà air.",
           "status": "render"
         }
       ],
@@ -6390,11 +6390,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-hills",
-          "label": "Bà Nà Hills",
-          "relationship": "mountain-park day",
-          "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Related because: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
+          "catalogId": "viet-family-city-danang-place-lady-buddha",
+          "label": "Tượng Phật Bà",
+          "relationship": "same-pagoda-landmark",
+          "displaySubtitle": "The tall white statue that markers the pagoda visit from the coast road.",
+          "reason": "Related because: The tall white statue that markers the pagoda visit from the coast road.",
           "status": "render"
         }
       ],
@@ -6717,11 +6717,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-hills",
-          "label": "Bà Nà Hills",
-          "relationship": "mountain-park day",
-          "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Related because: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
+          "catalogId": "viet-family-city-danang-place-dragon-carp-statue",
+          "label": "Tượng Cá Chép Hóa Rồng",
+          "relationship": "nearby-riverfront-photo",
+          "displaySubtitle": "A nearby photo stop where the river, bridges, and evening lights stay in frame.",
+          "reason": "Related because: A nearby photo stop where the river, bridges, and evening lights stay in frame.",
           "status": "render"
         }
       ],
@@ -7071,11 +7071,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-cable-car",
-          "label": "Cáp treo Bà Nà",
-          "relationship": "cable-car arrival",
-          "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Related because: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
+          "catalogId": "viet-family-city-danang-place-marble-mountains",
+          "label": "Ngũ Hành Sơn",
+          "relationship": "same-site-context",
+          "displaySubtitle": "The main Marble Mountains page for the hills, shrines, stairs, and broader visit.",
+          "reason": "Related because: The main Marble Mountains page for the hills, shrines, stairs, and broader visit.",
           "status": "render"
         }
       ],
@@ -7182,11 +7182,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-hills",
-          "label": "Bà Nà Hills",
-          "relationship": "mountain-park day",
-          "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Related because: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
+          "catalogId": "viet-family-city-danang-place-marble-mountain-cave-walk",
+          "label": "Hang động Ngũ Hành Sơn",
+          "relationship": "same-site-action",
+          "displaySubtitle": "The cave-walk version when the marble hills become stairs, shade, shrines, and route choices.",
+          "reason": "Related because: The cave-walk version when the marble hills become stairs, shade, shrines, and route choices.",
           "status": "render"
         }
       ],
@@ -8715,11 +8715,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-cable-car",
-          "label": "Cáp treo Bà Nà",
-          "relationship": "cable-car arrival",
-          "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Related because: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
+          "catalogId": "viet-family-city-danang-place-nam-o-reef",
+          "label": "Rạn Nam Ô",
+          "relationship": "same-coastal-edge",
+          "displaySubtitle": "The rocky shoreline stop nearby when Nam Ô should feel like coast, tide, and village edge.",
+          "reason": "Related because: The rocky shoreline stop nearby when Nam Ô should feel like coast, tide, and village edge.",
           "status": "render"
         }
       ],
@@ -9283,11 +9283,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-cable-car",
-          "label": "Cáp treo Bà Nà",
-          "relationship": "cable-car arrival",
-          "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Related because: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
+          "catalogId": "viet-family-city-danang-place-trung-vuong-theatre",
+          "label": "Nhà hát Trưng Vương",
+          "relationship": "performance-comparison",
+          "displaySubtitle": "Another Da Nang performance venue when the night should be planned around a show.",
+          "reason": "Related because: Another Da Nang performance venue when the night should be planned around a show.",
           "status": "render"
         }
       ],
@@ -9484,7 +9484,7 @@
         {
           "id": "sand-beside-stone",
           "heading": "Sand Beside Stone",
-          "body": "The stop belongs with beach and limestone hills in the same half-day. Add Marble Mountains or Non Nuoc Stone Carving Village only if the day still has room."
+          "body": "Pair the beach with limestone hills in the same half-day. Add Marble Mountains or Non Nuoc Stone Carving Village only if the day still has room."
         },
         {
           "id": "open-space-over-a-list",
@@ -9950,11 +9950,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-hills",
-          "label": "Bà Nà Hills",
-          "relationship": "mountain-park day",
-          "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Related because: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
+          "catalogId": "viet-family-city-danang-place-cathedral",
+          "label": "Nhà thờ Con Gà Đà Nẵng",
+          "relationship": "central-worship-contrast",
+          "displaySubtitle": "A nearby central worship landmark with a different room, color, and street mood.",
+          "reason": "Related because: A nearby central worship landmark with a different room, color, and street mood.",
           "status": "render"
         }
       ],
@@ -10833,11 +10833,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-cable-car",
-          "label": "Cáp treo Bà Nà",
-          "relationship": "cable-car arrival",
-          "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Related because: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
+          "catalogId": "viet-family-city-danang-place-son-tra",
+          "label": "Bán đảo Sơn Trà",
+          "relationship": "same-peninsula-route",
+          "displaySubtitle": "The wider Sơn Trà page for peninsula roads, viewpoints, coast, and careful timing.",
+          "reason": "Related because: The wider Sơn Trà page for peninsula roads, viewpoints, coast, and careful timing.",
           "status": "render"
         }
       ],
@@ -11170,11 +11170,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-hills",
-          "label": "Bà Nà Hills",
-          "relationship": "mountain-park day",
-          "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Related because: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
+          "catalogId": "viet-family-city-danang-place-han-river",
+          "label": "Sông Hàn",
+          "relationship": "river-orientation",
+          "displaySubtitle": "The river page when the bridge should fit into Da Nang’s wider waterline and evening map.",
+          "reason": "Related because: The river page when the bridge should fit into Da Nang’s wider waterline and evening map.",
           "status": "render"
         }
       ],
@@ -11503,11 +11503,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-hills",
-          "label": "Bà Nà Hills",
-          "relationship": "mountain-park day",
-          "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Related because: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
+          "catalogId": "viet-family-city-danang-place-han-river",
+          "label": "Sông Hàn",
+          "relationship": "river-orientation",
+          "displaySubtitle": "The river page when bridge shapes, crossings, and evening light need one wider context.",
+          "reason": "Related because: The river page when bridge shapes, crossings, and evening light need one wider context.",
           "status": "render"
         }
       ],
@@ -11614,11 +11614,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-ba-na-cable-car",
-          "label": "Cáp treo Bà Nà",
-          "relationship": "cable-car arrival",
-          "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Related because: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
+          "catalogId": "viet-family-city-danang-place-nguyen-hien-dinh-tuong-theatre",
+          "label": "Nhà hát Tuồng Nguyễn Hiển Dĩnh",
+          "relationship": "performance-comparison",
+          "displaySubtitle": "A smaller traditional-theatre option when performance, tickets, and timing matter more than sightseeing.",
+          "reason": "Related because: A smaller traditional-theatre option when performance, tickets, and timing matter more than sightseeing.",
           "status": "render"
         }
       ],

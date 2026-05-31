@@ -190,7 +190,7 @@ Give it a night with space around the booking. It lands weaker as a last-minute 
 Recommendation, allergy, spice, and menu questions belong early. A planned meal is easier when the first exchange sets the table’s limits.
 
 ### Pair It With Market Energy
-This dinner belongs beside Bến Thành, a bánh mì shop, or a street-food walk so Saigon food feels broad: quick bites by day, one composed dinner by night.
+Place this dinner beside Bến Thành, a bánh mì shop, or a street-food walk so Saigon food feels broad: quick bites by day, one composed dinner by night.
 
 ## Bún chả Hương Liên
 

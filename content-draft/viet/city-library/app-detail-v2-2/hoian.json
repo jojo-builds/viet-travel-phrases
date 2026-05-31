@@ -514,7 +514,7 @@
         {
           "id": "one-first-direction-is-enough",
           "heading": "Choose One Direction",
-          "body": "The old town rewards wandering, but the opening minutes are easier with one place in mind: the river, an old house, an assembly hall, or a coffee counter."
+          "body": "The old town rewards wandering, but the opening minutes are easier with one place in mind: the river, an old house, an assembly hall, or a ticketed heritage room."
         },
         {
           "id": "morning-and-evening-feel-different",
@@ -3726,7 +3726,7 @@
       "category": "Restaurant",
       "pronunciation": "com ga ba buoi",
       "travelerMoment": "Cơm Gà Bà Buội turns Hội An chicken rice into a named old-town lunch: yellow rice, shredded chicken, herbs, papaya, soup, and sauce on Phan Châu Trinh.",
-      "storySpine": "Bà Buội fills the chicken-rice gap because the current catalog had the dish without a named shop. It turns cơm gà from a general food word into a concrete Hội An lunch to remember.",
+      "storySpine": "Bà Buội gives Hội An chicken rice a concrete old-town lunch memory: yellow rice, shredded chicken, herbs, papaya, sauce, and a table close to Phan Châu Trinh errands.",
       "intro": {
         "heading": "Chicken Rice Gets A Name",
         "body": "Cơm Gà Bà Buội is the Hội An chicken-rice name for yellow rice, shredded chicken, herbs, papaya, soup, and sauce at a simple old-town table."
@@ -3775,8 +3775,8 @@
         },
         {
           "id": "where-it-sits",
-          "heading": "Where It Sits In Hội An",
-          "body": "Morning Glory teaches the wider menu. Bánh mì counters move fast. Bà Buội gives the chicken-rice page a named place to land."
+          "heading": "How It Belongs In Hội An",
+          "body": "Bà Buội belongs in the day when chicken rice should be the meal, not just a dish name. Morning Glory is broader; Bà Buội keeps lunch focused on yellow rice, chicken, herbs, and sauce."
         }
       ],
       "mentionedHereCandidates": [
@@ -4092,35 +4092,35 @@
       "city": "Hội An",
       "category": "Beach",
       "pronunciation": "byen kuah dai",
-      "travelerMoment": "Cua Dai Beach carries Hội An to the coast, where river-town habits meet open light, boats, sand, and a sea breeze outside the old lanes.",
-      "storySpine": "Cua Dai Beach widens the Hội An plan toward the sea while staying distinct from river walks and island trips.",
+      "travelerMoment": "Cửa Đại Beach is the open-coast version of Hội An: wider sand, sea air, fishing-boat edges, and a quieter beach reset when old-town lanes feel tight.",
+      "storySpine": "Cửa Đại reminds visitors that Hội An is not only lantern streets; the town also opens toward working coast, river mouth, and beach light.",
       "intro": {
         "heading": "The Coastal Edge Of Hội An",
         "body": "Cua Dai Beach brings a coastal edge: low waves, boats, open light, and a beach break away from the old-town river."
       },
       "usefulPhraseCards": [
         {
-          "vi": "Bến thuyền ở đâu?",
-          "en": "Where is the boat pier?",
-          "intent": "v900-tran-where-is-the-boat-pier",
-          "phraseId": "v900-tran-where-is-the-boat-pier",
-          "audioId": "v900-tran-where-is-the-boat-pier",
+          "vi": "Mình bắt đầu từ đâu?",
+          "en": "Where do we start?",
+          "intent": "sight-start",
+          "phraseId": "sight-2",
+          "audioId": "sight-2",
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể mua vé ở đâu?",
-          "en": "Where can I buy a ticket?",
-          "intent": "v900-tran-where-can-i-buy-a-ticket",
-          "phraseId": "v900-tran-where-can-i-buy-a-ticket",
-          "audioId": "v900-tran-where-can-i-buy-a-ticket",
+          "vi": "Cho hỏi, đi tới đó thế nào?",
+          "en": "Excuse me, how do I get there?",
+          "intent": "directions-how-to-get",
+          "phraseId": "directions-1",
+          "audioId": "directions-1",
           "status": "mapped"
         },
         {
-          "vi": "Điểm đón ở đâu?",
-          "en": "Where is the pickup point?",
-          "intent": "directions-pickup-point",
-          "phraseId": "directions-8",
-          "audioId": "directions-8",
+          "vi": "Cho tôi một chai nước",
+          "en": "A bottle of water please",
+          "intent": "water-bottle",
+          "phraseId": "store-1",
+          "audioId": "store-1",
           "status": "mapped"
         }
       ],
@@ -4916,7 +4916,7 @@
         {
           "id": "pickup-and-transfer-pairing",
           "heading": "Pickup And Transfer Pairing",
-          "body": "Arrival planning, hotel pickup, and the car ride into town all meet here. Fare, pickup zone, and timing come up in the transfer exchange."
+          "body": "Arrival planning, hotel pickup, and the car ride into town all meet here. Pickup point, driver name, and next address are the practical pieces to settle."
         },
         {
           "id": "settle-the-ride-first",
@@ -5806,7 +5806,7 @@
       "sections": [
         {
           "id": "wood-becomes-shape",
-          "heading": "Wood Becomes practical",
+          "heading": "Wood Becomes Useful",
           "body": "The workshop image is woodworking, carved panels, and tools. Keep the craft process in view before finished souvenirs."
         },
         {
@@ -7170,7 +7170,7 @@
         {
           "id": "why-save-it",
           "heading": "Why It Works First",
-          "body": "The room fits groups, allergies, and anyone still learning the menu. Hội An dishes feel easier here before smaller specialty stops."
+          "body": "The room is easier for groups, allergies, and anyone still learning the menu. Hội An dishes feel calmer here before smaller specialty stops."
         },
         {
           "id": "beyond-first-dinner",
@@ -9021,11 +9021,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-an-bang",
-          "label": "Biển An Bàng",
-          "relationship": "beach-day contrast",
-          "displaySubtitle": "The coastal break for sand, basket boats, seafood shacks, and sea air after old-town crowds.",
-          "reason": "Related because: The coastal break for sand, basket boats, seafood shacks, and sea air after old-town crowds.",
+          "catalogId": "viet-family-city-hoian-place-thanh-ha",
+          "label": "Làng gốm Thanh Hà",
+          "relationship": "craft village comparison",
+          "displaySubtitle": "A pottery-village stop when handmade objects should connect to clay, kilns, and village lanes.",
+          "reason": "Related because: A pottery-village stop when handmade objects should connect to clay, kilns, and village lanes.",
           "status": "render"
         }
       ],
@@ -10366,7 +10366,7 @@
         {
           "id": "a-narrow-riverside-draw",
           "heading": "A Narrow Riverside Draw",
-          "body": "Remember the riverside village scene, pottery context, and craft route. The water sets a pace far from old-town walking."
+          "body": "Remember the riverside village scene, bamboo, fishing nets, boats, and the craft route. The water sets a pace far from old-town walking."
         }
       ],
       "mentionedHereCandidates": [],

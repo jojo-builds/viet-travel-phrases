@@ -23,13 +23,13 @@
       "displayName": "Chung cư 42 Nguyễn Huệ",
       "englishName": "42 Nguyen Hue apartment building",
       "city": "Saigon",
-      "category": "Cafe",
+      "category": "Landmark",
       "pronunciation": "chung cu 42 nguyen hue",
-      "travelerMoment": "The address points to a converted apartment block above Nguyen Hue Walking Street, now a vertical stack of cafes, boutiques, signs, and balcony stops.",
-      "storySpine": "One central building turns Nguyen Hue into an upstairs coffee-and-view decision, more than another storefront.",
+      "travelerMoment": "42 Nguyễn Huệ is the address landmark on the walking street: old apartment facade, stacked balconies, signs, stairwell, and the decision of whether to go upstairs.",
+      "storySpine": "The building turns Nguyễn Huệ from a flat promenade into a vertical landmark, where the facade itself explains the cafe-apartment idea before any one tenant does.",
       "intro": {
-        "heading": "Balconies Above Nguyen Hue",
-        "body": "42 Nguyen Hue is the old apartment block behind the Cafe Apartment facade on Nguyen Hue Walking Street, where the choice is balcony, stairwell, or a small upstairs room."
+        "heading": "The Address Behind The Facade",
+        "body": "42 Nguyễn Huệ is the old apartment block on the walking street: stacked balconies, signs, stairwell, and the address people mean when they point at the Cafe Apartment."
       },
       "usefulPhraseCards": [
         {
@@ -65,8 +65,8 @@
         },
         {
           "id": "a-central-short-detour",
-          "heading": "A Central Short Detour",
-          "body": "Pair it with a Nguyen Hue walk, Bitexco view, or District 1 coffee break when you want height and a small choice without leaving the center."
+          "heading": "The Address Is The Landmark",
+          "body": "Pair it with a Nguyễn Huệ walk, Bitexco view, or District 1 coffee break when the address needs to be clear before anyone chooses a room upstairs."
         },
         {
           "id": "apartment-facade-is-the-clue",
@@ -76,17 +76,17 @@
         {
           "id": "same-building-two-names",
           "heading": "Same Building, Two Names",
-          "body": "You may see it called 42 Nguyen Hue or the Cafe Apartment. The address helps with maps; Cafe Apartment helps you picture the floor-by-floor browse."
+          "body": "Cafe Apartment describes the upstairs crawl. 42 Nguyễn Huệ is the address that helps with maps, meetups, and finding the facade from the street."
         }
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-cafe-apartment-nguyen-hue",
-          "label": "Chung cư cà phê Nguyễn Huệ",
-          "relationship": "same-building cafe context",
-          "displaySubtitle": "The cafe-apartment guide when one address should explain the stacked-room idea.",
-          "reason": "The cafe-apartment page clarifies why 42 Nguyen Hue matters as a coffee stop.",
+          "catalogId": "viet-family-city-hcmc-place-nguyen-hue",
+          "label": "Phố đi bộ Nguyễn Huệ",
+          "relationship": "walking-street-context",
+          "displaySubtitle": "The walking-street page when the apartment facade should sit inside the wider Nguyễn Huệ evening route.",
+          "reason": "Related because: The walking-street page when the apartment facade should sit inside the wider Nguyễn Huệ evening route.",
           "status": "render"
         }
       ],
@@ -428,7 +428,7 @@
         {
           "id": "pair-with-a-market-day",
           "heading": "Pair It With Market Energy",
-          "body": "This dinner belongs beside Bến Thành, a bánh mì shop, or a street-food walk so Saigon food feels broad: quick bites by day, one composed dinner by night."
+          "body": "Place this dinner beside Bến Thành, a bánh mì shop, or a street-food walk so Saigon food feels broad: quick bites by day, one composed dinner by night."
         }
       ],
       "mentionedHereCandidates": [],
@@ -1187,11 +1187,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "banh xeo 46a",
-      "travelerMoment": "Choose Bánh Xèo 46A when Saigon bánh xèo should become a 2025 MICHELIN Bib Gourmand table: crisp pancake, greens, herbs, sauce, and enough room to wrap.",
-      "storySpine": "46A earns its place because it makes the southern pancake ritual physical: sizzle, fold, herbs, sauce, table space, and a Bib Gourmand recognition.",
+      "travelerMoment": "Choose Bánh Xèo 46A when the meal should slow down around one hot pancake: crisp edges, herbs, lettuce, sauce, and everyone building the bite by hand.",
+      "storySpine": "The restaurant makes Saigon bánh xèo feel physical: the pancake arrives wide and hot, then the table turns it into smaller bites with greens, herbs, and dipping sauce.",
       "intro": {
-        "heading": "Bib Gourmand Pancake Table",
-        "body": "Banh Xeo 46A is a 2025 MICHELIN Bib Gourmand table for the larger restaurant version of bánh xèo: crisp pancake, herbs, metal trays, sauce, and a wrapping ritual that slows down the meal."
+        "heading": "A Pancake Built At The Table",
+        "body": "Bánh Xèo 46A is a Bib Gourmand stop for the big restaurant version of bánh xèo: crisp pancake, herbs, lettuce, sauce, and a table that needs a few minutes to settle."
       },
       "usefulPhraseCards": [
         {
@@ -1221,24 +1221,24 @@
       ],
       "sections": [
         {
-          "id": "the-plate-needs-space",
-          "heading": "The Plate Needs Space",
-          "body": "Let the pancake take room. Herbs, dipping sauce, and metal trays need a few minutes of table attention."
+          "id": "give-the-pancake-room",
+          "heading": "Give The Pancake Room",
+          "body": "The plate arrives wide, hot, and a little messy. Make space before the herbs, lettuce, sauce, and trays start moving around the table."
         },
         {
-          "id": "a-dish-specific-meal",
-          "heading": "A Dish-Specific Meal",
-          "body": "Make bánh xèo what matters of the meal. The Bib Gourmand recognition helps, but the crisp edge and wrapping rhythm carry the stop."
+          "id": "build-one-good-bite",
+          "heading": "Build One Good Bite",
+          "body": "Break off a crisp piece, tuck in greens, and keep the sauce close. The meal makes more sense once the first bite holds together."
         },
         {
-          "id": "ingredient-checks-matter",
-          "heading": "Ingredient Checks Matter",
-          "body": "Shrimp, pork, and spice can matter here. Bánh xèo often looks simple but hides ingredients in the filling."
+          "id": "ask-if-fillings-matter",
+          "heading": "Ask If Fillings Matter",
+          "body": "Bánh xèo often includes shrimp or pork, even when the pancake looks simple. Ask early if someone is avoiding either one."
         },
         {
-          "id": "the-pancake-is-the-draw",
-          "heading": "The Pancake Is The Draw",
-          "body": "Remember the named Bib Gourmand pancake table: hot edges, greens, sauce, and the slow practical rhythm of building each bite."
+          "id": "come-for-the-ritual",
+          "heading": "Come For The Ritual",
+          "body": "The Bib Gourmand note helps, but the memory is the table work: hot edges, fresh greens, dipping sauce, and the slow rhythm of wrapping each bite."
         }
       ],
       "mentionedHereCandidates": [
@@ -1438,17 +1438,17 @@
         {
           "vi": "Tôi có thể mua vé ở đâu?",
           "en": "Where can I buy a ticket?",
-          "intent": "v900-tran-where-can-i-buy-a-ticket",
+          "intent": "transport-ticket",
           "phraseId": "v900-tran-where-can-i-buy-a-ticket",
           "audioId": "v900-tran-where-can-i-buy-a-ticket",
           "status": "mapped"
         },
         {
-          "vi": "Xe này có đi tới… không?",
-          "en": "Does this bus go to…?",
-          "intent": "transport-bus-goes",
-          "phraseId": "transport-2",
-          "audioId": "transport-2",
+          "vi": "Cho hỏi, đi tới đó thế nào?",
+          "en": "Excuse me, how do I get there?",
+          "intent": "directions-how-to-get",
+          "phraseId": "directions-1",
+          "audioId": "directions-1",
           "status": "mapped"
         }
       ],
@@ -1461,7 +1461,7 @@
         {
           "id": "a-transfer-point-not-a-hangout",
           "heading": "A Transfer Point With A Job",
-          "body": "It has airport-style logic inside the city: arrival, signs, exits, then the market, hotel, or meeting point."
+          "body": "It works like a city hinge: train doors, signs, exits, then the market, hotel, ride pickup, or next walk above ground."
         },
         {
           "id": "names-over-landmarks",
@@ -1471,7 +1471,7 @@
         {
           "id": "service-facts-are-separate",
           "heading": "Service Facts Are Separate",
-        "body": "The lasting value is the station name, exits, and central place. Let official signs and ticket gates handle the practical move; keep the page story simple."
+          "body": "The lasting value is the station name, exits, and central place. Let official signs and ticket gates handle the practical move; keep the page story simple."
         }
       ],
       "mentionedHereCandidates": [],
@@ -1883,7 +1883,7 @@
       "category": "Restaurant",
       "pronunciation": "bo kho ganh",
       "travelerMoment": "Choose Bò Kho Gánh for the Saigon meal where one bowl can lead: beef stew, bread or noodles nearby, sauces close, and a Bib Gourmand street-food stop that feels specific before the trip.",
-      "storySpine": "Bò Kho Gánh fills a missing Saigon bò kho lane with recognized street-food comfort: broth, beef, bread or noodles, and a dish name worth remembering instead of another broad restaurant listing.",
+      "storySpine": "Bò Kho Gánh turns Saigon bò kho into a specific lunch memory: rich broth, tender beef, herbs, sauce, and the choice between bread for dipping or noodles for a fuller bowl.",
       "intro": {
         "heading": "A Bib Gourmand Beef-Stew Bowl",
         "body": "Bò Kho Gánh is a 2025 MICHELIN Bib Gourmand Saigon street-food stop for bò kho: hot beef stew, bread or noodles nearby, herbs, sauce, and a bowl that can carry the meal."
@@ -1927,8 +1927,8 @@
         },
         {
           "id": "street-food-with-a-save-reason",
-          "heading": "Street Food With A Clear Reason",
-          "body": "The Bib Gourmand recognition supports the choice because this is a named bò kho stop rather than a broad street-food idea. It gives the dish a place to remember."
+          "heading": "Street Food With A Clear Shape",
+          "body": "The Bib Gourmand note supports the stop, but the reason to go is concrete: a named bò kho bowl, bread or noodles, herbs, sauce, and a lunch that does not need a wide menu."
         },
         {
           "id": "sauce-changes-the-bowl",
@@ -2338,8 +2338,8 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "bun bo hue muoi bon be",
-      "travelerMoment": "Choose Bún Bò Huế 14B for the Saigon meal where the bowl can be bold: lemongrass broth, beef, tendon, herbs, chili, lime, and a Bib Gourmand street-food stop with real heat.",
-      "storySpine": "Bún Bò Huế 14B gives Saigon a recognized bowl for a Hue-born dish, so the catalog has more than the Hue origin page: it has a named Saigon place where the broth, noodles, herbs, and chili become the plan.",
+      "travelerMoment": "Choose Bún Bò Huế 14B when Saigon lunch should still have a Hue-style pull: lemongrass broth, beef, tendon, herbs, chili, lime, and a bowl with real heat.",
+      "storySpine": "The stop gives Saigon a specific Hue-style noodle memory, where the bowl feels deeper and spicier than everyday phở without needing the trip to reach Huế first.",
       "intro": {
         "heading": "A Bib Gourmand Hue-Style Bowl",
         "body": "Bún Bò Huế 14B is a 2025 MICHELIN Bib Gourmand Saigon street-food stop for the Hue-style bowl: lemongrass broth, beef, tendon, herbs, chili, lime, and round noodles."
@@ -2383,13 +2383,13 @@
         },
         {
           "id": "saigon-save-for-a-hue-dish",
-          "heading": "A Saigon Table For A Hue Dish",
-          "body": "The Hue dish already has a home-city page in the app. Bún Bò Huế 14B gives the same bowl a recognized Saigon stop when the trip is staying south."
+          "heading": "Hue Flavor In Saigon",
+          "body": "The bowl carries Hue-style depth into a Saigon lunch: lemongrass, chili, beef, tendon, herbs, and lime. Order it when the day wants heat and broth, not another gentle noodle stop."
         },
         {
           "id": "recognition-supports-the-bowl",
           "heading": "Recognition Supports The Bowl",
-          "body": "The 2025 Bib Gourmand recognition supports the choice because the page has a dish-led reason: a named bún bò Huế bowl, not another vague noodle listing."
+          "body": "The 2025 Bib Gourmand note supports the choice, but the pull is the bowl itself: spicy broth, beef cuts, herbs, and a named Saigon table for bún bò Huế."
         }
       ],
       "mentionedHereCandidates": [],
@@ -3066,7 +3066,7 @@
         {
           "id": "a-midday-cold-break",
           "heading": "A Midday Cold Break",
-          "body": "It belongs in the gap between a market, museum, and ride pickup for cold caffeine and a chair."
+          "body": "It is right for the gap between a market, museum, and ride pickup: cold caffeine, a chair, and a few slower minutes."
         },
         {
           "id": "less-sweet-is-a-choice",
@@ -3195,11 +3195,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-42-nguyen-hue-apartment",
-          "label": "Chung cư 42 Nguyễn Huệ",
-          "relationship": "address-level cafe context",
-          "displaySubtitle": "The building page when the cafe stack needs a clearer Nguyễn Huệ landmark.",
-          "reason": "42 Nguyen Hue gives the cafe-apartment guide an exact place context.",
+          "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
+          "label": "Đi cà phê Nguyễn Huệ",
+          "relationship": "coffee-route-context",
+          "displaySubtitle": "The Nguyễn Huệ coffee route when one upstairs room should become part of a wider cafe plan.",
+          "reason": "Related because: The Nguyễn Huệ coffee route when one upstairs room should become part of a wider cafe plan.",
           "status": "render"
         }
       ],
@@ -3404,7 +3404,7 @@
         {
           "id": "an-older-coffee-stop",
           "heading": "An Older Coffee Ritual",
-          "body": "It belongs between walks, market browsing, or rain delays when an old-school coffee sit-down would steady the day."
+          "body": "Put it between walks, market browsing, or rain delays when an old-school coffee sit-down would steady the day."
         },
         {
           "id": "ritual-before-menu",
@@ -3875,6 +3875,14 @@
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hcmc-place-binh-tay-market",
+          "label": "Chợ Bình Tây",
+          "relationship": "cho-lon-marker",
+          "displaySubtitle": "A Chợ Lớn market marker when the walking route needs trade, halls, and neighborhood texture.",
+          "reason": "Related because: A Chợ Lớn market marker when the walking route needs trade, halls, and neighborhood texture.",
+          "status": "render"
+        },
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
@@ -4683,6 +4691,14 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
+          "catalogId": "viet-family-city-hcmc-place-war-remnants-museum",
+          "label": "Bảo tàng Chứng tích Chiến tranh",
+          "relationship": "war-history-context",
+          "displaySubtitle": "The central museum context when wartime history needs a city-based counterpart.",
+          "reason": "Related because: The central museum context when wartime history needs a city-based counterpart.",
+          "status": "render"
+        },
+        {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
@@ -5240,6 +5256,14 @@
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hcmc-place-opera-house",
+          "label": "Nhà hát Thành phố",
+          "relationship": "central-landmark-anchor",
+          "displaySubtitle": "A formal District 1 landmark when the Dong Khoi walk needs one clear architectural stop.",
+          "reason": "Related because: A formal District 1 landmark when the Dong Khoi walk needs one clear architectural stop.",
+          "status": "render"
+        },
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
@@ -5894,7 +5918,7 @@
         {
           "id": "timed-evening-plan",
           "heading": "Timed Evening Plan",
-        "body": "The theater belongs before or after a simple dinner. Build the evening around the performance rhythm rather than treating it like a walk-by landmark."
+          "body": "The theater belongs before or after a simple dinner. Build the evening around the performance rhythm rather than treating it like a walk-by landmark."
         },
         {
           "id": "performance-not-landmark",
@@ -5904,11 +5928,19 @@
         {
           "id": "showtime-shapes-the-evening",
           "heading": "Showtime Sets The Evening",
-        "body": "The reason to go is water-puppet music, staging, and a compact indoor show. Give the performance room in the evening instead of squeezing it between errands."
+          "body": "The reason to go is water-puppet music, staging, and a compact indoor show. Give the performance room in the evening instead of squeezing it between errands."
         }
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hcmc-place-opera-a-o-show",
+          "label": "À Ố Show",
+          "relationship": "performance-comparison",
+          "displaySubtitle": "Another staged evening option when music, tickets, and performance timing should lead.",
+          "reason": "Related because: Another staged evening option when music, tickets, and performance timing should lead.",
+          "status": "render"
+        },
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
@@ -6803,6 +6835,14 @@
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hcmc-place-saigon-skydeck",
+          "label": "Saigon Skydeck",
+          "relationship": "skyline-view-comparison",
+          "displaySubtitle": "A central tower-view comparison when the skyline should be seen from District 1.",
+          "reason": "Related because: A central tower-view comparison when the skyline should be seen from District 1.",
+          "status": "render"
+        },
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
@@ -7940,6 +7980,14 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
+          "catalogId": "viet-family-city-hcmc-place-street-food-evening",
+          "label": "Ăn vặt Sài Gòn buổi tối",
+          "relationship": "food-night-comparison",
+          "displaySubtitle": "A food-night page when snacks and evening movement matter without the motorbike commitment.",
+          "reason": "Related because: A food-night page when snacks and evening movement matter without the motorbike commitment.",
+          "status": "render"
+        },
+        {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
@@ -8051,6 +8099,14 @@
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hcmc-place-opera-house",
+          "label": "Nhà hát Thành phố",
+          "relationship": "same-square-anchor",
+          "displaySubtitle": "The Opera House page when the square should connect to the building, shows, and photos.",
+          "reason": "Related because: The Opera House page when the square should connect to the building, shows, and photos.",
+          "status": "render"
+        },
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
@@ -8838,6 +8894,14 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
+          "catalogId": "viet-family-city-hcmc-place-opera-house",
+          "label": "Nhà hát Thành phố",
+          "relationship": "same-venue-context",
+          "displaySubtitle": "The Opera House context around the show, facade, ticket timing, and District 1 night.",
+          "reason": "Related because: The Opera House context around the show, facade, ticket timing, and District 1 night.",
+          "status": "render"
+        },
+        {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
@@ -8949,6 +9013,14 @@
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hcmc-place-municipal-theatre-square",
+          "label": "Công trường Lam Sơn",
+          "relationship": "same-square-context",
+          "displaySubtitle": "The square page when the building should sit inside the wider District 1 evening scene.",
+          "reason": "Related because: The square page when the building should sit inside the wider District 1 evening scene.",
+          "status": "render"
+        },
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
@@ -9789,6 +9861,14 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
+          "catalogId": "viet-family-city-hcmc-place-nguyen-hue",
+          "label": "Phố đi bộ Nguyễn Huệ",
+          "relationship": "nearby-evening-walk",
+          "displaySubtitle": "The nearby promenade when rooftop drinks should stay connected to central evening movement.",
+          "reason": "Related because: The nearby promenade when rooftop drinks should stay connected to central evening movement.",
+          "status": "render"
+        },
+        {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
@@ -10238,6 +10318,14 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
+          "catalogId": "viet-family-city-hcmc-place-bach-dang-wharf",
+          "label": "Bến Bạch Đằng",
+          "relationship": "river-boarding-context",
+          "displaySubtitle": "The riverfront wharf page when the boat needs a clear boarding edge.",
+          "reason": "Related because: The riverfront wharf page when the boat needs a clear boarding edge.",
+          "status": "render"
+        },
+        {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
@@ -10349,6 +10437,14 @@
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hcmc-place-landmark-81",
+          "label": "Landmark 81",
+          "relationship": "skyline-view-comparison",
+          "displaySubtitle": "The taller skyline comparison when tower views should become the point of the stop.",
+          "reason": "Related because: The taller skyline comparison when tower views should become the point of the stop.",
+          "status": "render"
+        },
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
@@ -10686,6 +10782,14 @@
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hcmc-place-motorbike-food-tour",
+          "label": "Tour ăn tối bằng xe máy",
+          "relationship": "guided-food-night",
+          "displaySubtitle": "The guided version when the food night should move by motorbike instead of on foot.",
+          "reason": "Related because: The guided version when the food night should move by motorbike instead of on foot.",
+          "status": "render"
+        },
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",
@@ -11578,6 +11682,14 @@
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hcmc-place-district-3",
+          "label": "Quận 3",
+          "relationship": "neighborhood-context",
+          "displaySubtitle": "The District 3 context when the traffic circle should fit into cafes, streets, and evening snacks.",
+          "reason": "Related because: The District 3 context when the traffic circle should fit into cafes, streets, and evening snacks.",
+          "status": "render"
+        },
         {
           "catalogId": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
           "label": "Đi cà phê Nguyễn Huệ",

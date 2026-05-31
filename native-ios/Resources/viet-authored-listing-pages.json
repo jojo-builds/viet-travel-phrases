@@ -10,7 +10,7 @@
     "catalogPromotedPageCount": 770,
     "cityLibraryPageCount": 826,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-31T18:24:35.840Z"
+    "generatedAt": "2026-05-31T18:47:17.508Z"
   },
   "pages": [
     {
@@ -180123,7 +180123,7 @@
       "title": "Bảo tàng 3D Art in Paradise Đà Nẵng",
       "englishTitle": "3D Art in Paradise Da Nang",
       "pronunciation": "bao tang 3d art in paradise da nang",
-      "summary": "Good for friends, families, or rainy afternoons for something playful without turning into a full museum visit. It gives the day a low-pressure laugh between outdoor plans, with enough structure to make group photos feel easy.",
+      "summary": "This is the moment when a group wants an indoor laugh, a phone full of staged photos, and a break from beach or bridge weather without turning the day serious.",
       "heroImageName": "HeroCityDanangPlace3dArtInParadise",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -180153,7 +180153,7 @@
           "vt-danang",
           "vt-danang-official"
         ],
-        "rationale": "It gives the day a low-pressure laugh between outdoor plans, with enough structure to make group photos feel easy.",
+        "rationale": "The museum gives Da Nang a playful photo-room stop: painted illusions only work when people pose, adjust angles, and let the group become part of the scene.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -180163,8 +180163,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "Photos Before Art",
-          "body": "A playful indoor break for optical-illusion rooms, group photos, and a cool hour when Da Nang's beach or bridge plan needs shade and laughter.",
+          "title": "The Group Becomes The Picture",
+          "body": "3D Art in Paradise is an indoor photo-room stop where painted illusions need people, camera angles, and a little patience to work.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -180218,16 +180218,16 @@
         },
         {
           "id": "use-it-with",
-          "title": "Bring Company",
-          "body": "Solo visits can run thin here. Friends, patient camera people, and kids who like staged scenes give the rooms their point.",
+          "title": "Let Someone Direct The Shot",
+          "body": "The clearest rooms need one person behind the camera and one person willing to pose. Small moves in feet, hands, and phone angle change the whole trick.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "when-to-use",
-          "title": "A Weather Break",
-          "body": "Treat it as a bright indoor reset between bigger plans. Heat, rain, or tired legs can move the day inside for an hour.",
+          "title": "When The Day Moves Inside",
+          "body": "Heat, rain, or tired legs can make one playful indoor hour sound better than another outdoor stop.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -183367,7 +183367,7 @@
         {
           "id": "when-to-use",
           "title": "Guide Note, Simple Meal",
-          "body": "The MICHELIN note helps explain why it is worth remembering. The pleasure is still simple: clean herbs, salty dip, and a table that lets everyone learn the bite.",
+          "body": "The MICHELIN note sits behind the choice, but the table is still about clean herbs, salty mắm nêm, soft wrappers, and the small skill of one good roll.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -184250,7 +184250,7 @@
         {
           "id": "good-to-know",
           "title": "Recognition Around One Bowl",
-          "body": "The Bib Gourmand recognition belongs to the bowl and a short table rhythm. Keep the meal focused on fish cake, broth, herbs, and the first clean taste.",
+          "body": "The Bib Gourmand note points back to the bowl and its short table rhythm. Keep the meal focused on fish cake, broth, herbs, and the first clean taste.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -185719,16 +185719,6 @@
           "body": "",
           "phrases": [
             {
-              "id": "airport-1",
-              "vietnamese": "Nhập cảnh ở đâu?",
-              "english": "Where is immigration?",
-              "pronunciation": "nyup canh uh dow",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "teal",
-              "detailPageID": "viet-family-airport-immigration",
-              "audioKey": "airport-1"
-            },
-            {
               "id": "airport-2",
               "vietnamese": "Lấy hành lý ở đâu?",
               "english": "Where is baggage claim?",
@@ -185747,6 +185737,16 @@
               "tintName": "teal",
               "detailPageID": "viet-family-airport-sim",
               "audioKey": "airport-3"
+            },
+            {
+              "id": "directions-8",
+              "vietnamese": "Điểm đón ở đâu?",
+              "english": "Where is the pickup point?",
+              "pronunciation": "deeym don uh dow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-directions-pickup-point",
+              "audioKey": "directions-8"
             }
           ],
           "breakdown": [],
@@ -185810,21 +185810,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "airport-1"
+              "airport-2"
             ],
             "supportPhraseIDs": [
-              "airport-2",
-              "airport-3"
+              "airport-3",
+              "directions-8"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-domestic-terminal",
-          "airport-1"
+          "airport-2"
         ],
         "secondaryPracticePhraseIDs": [
-          "airport-2",
-          "airport-3"
+          "airport-3",
+          "directions-8"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-domestic-terminal"
       }
@@ -186507,7 +186507,7 @@
       "title": "Fatfish",
       "englishTitle": "Fatfish Restaurant & Lounge Bar",
       "pronunciation": "fatfish",
-      "summary": "Keep Fatfish for a slower Hàn River dinner when the group wants a calm table after bridge or riverside time, not a dish-first food mission.",
+      "summary": "Keep Fatfish for a slower Hàn River dinner when the group wants terrace light, drinks, conversation, and a table that softens the bridge-and-river evening.",
       "heroImageName": "HeroCityDanangPlaceFatfish",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -186538,7 +186538,7 @@
           "vt-danang",
           "vt-danang-official"
         ],
-        "rationale": "Fatfish matters as a riverfront pacing choice in Da Nang: terrace light, drinks, and a named table near the Hàn River give the evening shape, while stronger food-led pages can lead foodie planning.",
+        "rationale": "Fatfish matters as a riverfront pacing choice in Da Nang: terrace light, drinks, and a named table near the Hàn River give the evening a calmer shape.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -186549,7 +186549,7 @@
         {
           "id": "at-glance",
           "title": "A Slower River Table",
-          "body": "Fatfish is for a calm Da Nang dinner by the Hàn River: terrace light, drinks, and an easy table after a bridge walk. Choose it for pace and setting; leave the dish chase for noodles, pancakes, and soup.",
+          "body": "Fatfish is for a calm Da Nang dinner by the Hàn River: terrace light, drinks, and an easy table after a bridge walk. Choose it when setting and conversation should lead.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -186612,15 +186612,15 @@
         {
           "id": "when-to-use",
           "title": "Pair It With A Walk",
-          "body": "Put Fatfish before or after a Hàn River walk when the plan needs a soft landing near the water. It is more route stop than destination meal.",
+          "body": "Put Fatfish before or after a Hàn River walk when the plan needs a soft landing near the water. The room makes the most sense as part of the river evening.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
-          "title": "When Food Leads",
-          "body": "For a louder local seafood dinner, compare it with Bé Mặn. If the night should center on a dish, start with noodles, pancakes, or soup.",
+          "title": "When Seafood Leads",
+          "body": "For a louder local seafood dinner, compare it with Bé Mặn. Fatfish is the calmer river-table choice when drinks, setting, and a slower meal matter.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -187125,7 +187125,7 @@
         {
           "id": "good-to-know",
           "title": "Boundaries Need Care",
-          "body": "Administrative naming, business turnover, and walking comfort vary by block. The district help with orientation, then judge each street as you walk.",
+          "body": "Administrative naming, business turnover, and walking comfort vary by block. Let the district help with orientation, then judge each street as you walk.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -187832,7 +187832,7 @@
         {
           "id": "good-to-know",
           "title": "First Morning Fit",
-          "body": "This belongs on a first Da Nang morning, especially before gifts, beach plans, or a later Cồn Market food run. It gives the city a practical starting point.",
+          "body": "Start here on a first Da Nang morning, especially before gifts, beach plans, or a later Cồn Market food run. It gives the city a practical starting point.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -194460,7 +194460,7 @@
         {
           "id": "place-brief",
           "title": "Sand Beside Stone",
-          "body": "The stop belongs with beach and limestone hills in the same half-day. Add Marble Mountains or Non Nuoc Stone Carving Village only if the day still has room.",
+          "body": "Pair the beach with limestone hills in the same half-day. Add Marble Mountains or Non Nuoc Stone Carving Village only if the day still has room.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -209666,7 +209666,7 @@
           "vt-hanoi-official",
           "michelin-vietnam"
         ],
-        "rationale": "Bánh Cuốn Bà Xuân gives Hanoi bánh cuốn coverage a second named MICHELIN Selected table, but the distinction is the fuller plate: egg, pork filling, herbs, condiments, and a comparison that makes Bà Hoành feel less alone.",
+        "rationale": "Bánh Cuốn Bà Xuân makes the Hanoi breakfast table feel fuller: soft rice sheets, pork-and-black-fungus filling, herbs, sauce, and the option of egg beside the steam.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -209748,7 +209748,7 @@
         {
           "id": "good-to-know",
           "title": "Compare It With Bà Hoành",
-          "body": "Bà Hoành is the classic named steam-table breakfast. Bà Xuân is the fuller bánh cuốn comparison when egg and condiments are the reason to go.",
+          "body": "Bà Hoành is the classic steam-table breakfast. Bà Xuân is the fuller rice-roll stop when egg, pork filling, herbs, and condiments should carry the plate.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -211656,7 +211656,7 @@
         {
           "id": "when-to-use",
           "title": "Recognition Around One Pan",
-          "body": "The Bib Gourmand recognition belongs to the one-dish rhythm. Arrive ready for the pan, the herbs, and the sauce decision.",
+          "body": "The Bib Gourmand note points back to the one-dish rhythm. Arrive ready for the pan, the herbs, and the sauce decision.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -241888,7 +241888,7 @@
       "title": "Chung cư 42 Nguyễn Huệ",
       "englishTitle": "42 Nguyen Hue apartment building",
       "pronunciation": "chung cu 42 nguyen hue",
-      "summary": "The address points to a converted apartment block above Nguyen Hue Walking Street, now a vertical stack of cafes, boutiques, signs, and balcony stops.",
+      "summary": "42 Nguyễn Huệ is the address landmark on the walking street: old apartment facade, stacked balconies, signs, stairwell, and the decision of whether to go upstairs.",
       "heroImageName": "HeroCityHcmcPlace42NguyenHueApartment",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -241919,7 +241919,7 @@
           "vt-hcmc",
           "vt-hcmc-official"
         ],
-        "rationale": "One central building turns Nguyen Hue into an upstairs coffee-and-view decision, more than another storefront.",
+        "rationale": "The building turns Nguyễn Huệ from a flat promenade into a vertical landmark, where the facade itself explains the cafe-apartment idea before any one tenant does.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -241929,8 +241929,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "Balconies Above Nguyen Hue",
-          "body": "42 Nguyen Hue is the old apartment block behind the Cafe Apartment facade on Nguyen Hue Walking Street, where the choice is balcony, stairwell, or a small upstairs room.",
+          "title": "The Address Behind The Facade",
+          "body": "42 Nguyễn Huệ is the old apartment block on the walking street: stacked balconies, signs, stairwell, and the address people mean when they point at the Cafe Apartment.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -241984,8 +241984,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "A Central Short Detour",
-          "body": "Pair it with a Nguyen Hue walk, Bitexco view, or District 1 coffee break when you want height and a small choice without leaving the center.",
+          "title": "The Address Is The Landmark",
+          "body": "Pair it with a Nguyễn Huệ walk, Bitexco view, or District 1 coffee break when the address needs to be clear before anyone chooses a room upstairs.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -242001,7 +242001,7 @@
         {
           "id": "good-to-know",
           "title": "Same Building, Two Names",
-          "body": "You may see it called 42 Nguyen Hue or the Cafe Apartment. The address helps with maps; Cafe Apartment helps you picture the floor-by-floor browse.",
+          "body": "Cafe Apartment describes the upstairs crawl. 42 Nguyễn Huệ is the address that helps with maps, meetups, and finding the facade from the street.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -242518,7 +242518,7 @@
         {
           "id": "good-to-know",
           "title": "Pair It With Market Energy",
-          "body": "This dinner belongs beside Bến Thành, a bánh mì shop, or a street-food walk so Saigon food feels broad: quick bites by day, one composed dinner by night.",
+          "body": "Place this dinner beside Bến Thành, a bánh mì shop, or a street-food walk so Saigon food feels broad: quick bites by day, one composed dinner by night.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -243606,7 +243606,7 @@
       "title": "Bánh xèo 46A",
       "englishTitle": "Banh Xeo 46A",
       "pronunciation": "banh xeo 46a",
-      "summary": "Choose Bánh Xèo 46A when Saigon bánh xèo should become a 2025 MICHELIN Bib Gourmand table: crisp pancake, greens, herbs, sauce, and enough room to wrap.",
+      "summary": "Choose Bánh Xèo 46A when the meal should slow down around one hot pancake: crisp edges, herbs, lettuce, sauce, and everyone building the bite by hand.",
       "heroImageName": "HeroCityHcmcPlaceBanhXeo46a",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -243637,7 +243637,7 @@
           "vt-hcmc",
           "vt-hcmc-official"
         ],
-        "rationale": "46A earns its place because it makes the southern pancake ritual physical: sizzle, fold, herbs, sauce, table space, and a Bib Gourmand recognition.",
+        "rationale": "The restaurant makes Saigon bánh xèo feel physical: the pancake arrives wide and hot, then the table turns it into smaller bites with greens, herbs, and dipping sauce.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -243647,8 +243647,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "Bib Gourmand Pancake Table",
-          "body": "Banh Xeo 46A is a 2025 MICHELIN Bib Gourmand table for the larger restaurant version of bánh xèo: crisp pancake, herbs, metal trays, sauce, and a wrapping ritual that slows down the meal.",
+          "title": "A Pancake Built At The Table",
+          "body": "Bánh Xèo 46A is a Bib Gourmand stop for the big restaurant version of bánh xèo: crisp pancake, herbs, lettuce, sauce, and a table that needs a few minutes to settle.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -243694,32 +243694,32 @@
         },
         {
           "id": "place-brief",
-          "title": "The Plate Needs Space",
-          "body": "Let the pancake take room. Herbs, dipping sauce, and metal trays need a few minutes of table attention.",
+          "title": "Give The Pancake Room",
+          "body": "The plate arrives wide, hot, and a little messy. Make space before the herbs, lettuce, sauce, and trays start moving around the table.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "use-it-with",
-          "title": "A Dish-Specific Meal",
-          "body": "Make bánh xèo what matters of the meal. The Bib Gourmand recognition helps, but the crisp edge and wrapping rhythm carry the stop.",
+          "title": "Build One Good Bite",
+          "body": "Break off a crisp piece, tuck in greens, and keep the sauce close. The meal makes more sense once the first bite holds together.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "when-to-use",
-          "title": "Ingredient Checks Matter",
-          "body": "Shrimp, pork, and spice can matter here. Bánh xèo often looks simple but hides ingredients in the filling.",
+          "title": "Ask If Fillings Matter",
+          "body": "Bánh xèo often includes shrimp or pork, even when the pancake looks simple. Ask early if someone is avoiding either one.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
-          "title": "The Pancake Is The Draw",
-          "body": "Remember the named Bib Gourmand pancake table: hot edges, greens, sauce, and the slow practical rhythm of building each bite.",
+          "title": "Come For The Ritual",
+          "body": "The Bib Gourmand note helps, but the memory is the table work: hot edges, fresh greens, dipping sauce, and the slow rhythm of wrapping each bite.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -244013,14 +244013,14 @@
               "audioKey": "v900-tran-where-can-i-buy-a-ticket"
             },
             {
-              "id": "transport-2",
-              "vietnamese": "Xe này có đi tới… không?",
-              "english": "Does this bus go to…?",
-              "pronunciation": "seh nai koh dee toy khong",
+              "id": "directions-1",
+              "vietnamese": "Cho hỏi, đi tới đó thế nào?",
+              "english": "Excuse me, how do I get there?",
+              "pronunciation": "cho hoy dee toy doh theh nao",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-transport-bus-goes",
-              "audioKey": "transport-2"
+              "detailPageID": "viet-family-directions-how-to-get",
+              "audioKey": "directions-1"
             }
           ],
           "breakdown": [],
@@ -244037,7 +244037,7 @@
         {
           "id": "use-it-with",
           "title": "A Transfer Point With A Job",
-          "body": "It has airport-style logic inside the city: arrival, signs, exits, then the market, hotel, or meeting point.",
+          "body": "It works like a city hinge: train doors, signs, exits, then the market, hotel, ride pickup, or next walk above ground.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -244088,7 +244088,7 @@
             ],
             "supportPhraseIDs": [
               "v900-tran-where-can-i-buy-a-ticket",
-              "transport-2"
+              "directions-1"
             ]
           }
         ],
@@ -244098,7 +244098,7 @@
         ],
         "secondaryPracticePhraseIDs": [
           "v900-tran-where-can-i-buy-a-ticket",
-          "transport-2"
+          "directions-1"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-ben-thanh-metro-station"
       }
@@ -244658,7 +244658,7 @@
           "vt-hcmc-official",
           "michelin-vietnam"
         ],
-        "rationale": "Bò Kho Gánh fills a missing Saigon bò kho lane with recognized street-food comfort: broth, beef, bread or noodles, and a dish name worth remembering instead of another broad restaurant listing.",
+        "rationale": "Bò Kho Gánh turns Saigon bò kho into a specific lunch memory: rich broth, tender beef, herbs, sauce, and the choice between bread for dipping or noodles for a fuller bowl.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -244731,8 +244731,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Street Food With A Clear Reason",
-          "body": "The Bib Gourmand recognition supports the choice because this is a named bò kho stop rather than a broad street-food idea. It gives the dish a place to remember.",
+          "title": "Street Food With A Clear Shape",
+          "body": "The Bib Gourmand note supports the stop, but the reason to go is concrete: a named bò kho bowl, bread or noodles, herbs, sauce, and a lunch that does not need a wide menu.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -245306,7 +245306,7 @@
       "title": "Bún Bò Huế 14B",
       "englishTitle": "Bun Bo Hue 14B",
       "pronunciation": "bun bo hue 14b",
-      "summary": "Choose Bún Bò Huế 14B for the Saigon meal where the bowl can be bold: lemongrass broth, beef, tendon, herbs, chili, lime, and a Bib Gourmand street-food stop with real heat.",
+      "summary": "Choose Bún Bò Huế 14B when Saigon lunch should still have a Hue-style pull: lemongrass broth, beef, tendon, herbs, chili, lime, and a bowl with real heat.",
       "heroImageName": "HeroCityHcmcPlaceBunBoHue14b",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -245338,7 +245338,7 @@
           "vt-hcmc-official",
           "michelin-vietnam"
         ],
-        "rationale": "Bún Bò Huế 14B gives Saigon a recognized bowl for a Hue-born dish, so the catalog has more than the Hue origin page: it has a named Saigon place where the broth, noodles, herbs, and chili become the plan.",
+        "rationale": "The stop gives Saigon a specific Hue-style noodle memory, where the bowl feels deeper and spicier than everyday phở without needing the trip to reach Huế first.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -245411,8 +245411,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "A Saigon Table For A Hue Dish",
-          "body": "The Hue dish already has a home-city page in the app. Bún Bò Huế 14B gives the same bowl a recognized Saigon stop when the trip is staying south.",
+          "title": "Hue Flavor In Saigon",
+          "body": "The bowl carries Hue-style depth into a Saigon lunch: lemongrass, chili, beef, tendon, herbs, and lime. Order it when the day wants heat and broth, not another gentle noodle stop.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -245420,7 +245420,7 @@
         {
           "id": "good-to-know",
           "title": "Recognition Supports The Bowl",
-          "body": "The 2025 Bib Gourmand recognition supports the choice because the page has a dish-led reason: a named bún bò Huế bowl, not another vague noodle listing.",
+          "body": "The 2025 Bib Gourmand note supports the choice, but the pull is the bowl itself: spicy broth, beef cuts, herbs, and a named Saigon table for bún bò Huế.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -245767,7 +245767,7 @@
         {
           "id": "use-it-with",
           "title": "A Midday Cold Break",
-          "body": "It belongs in the gap between a market, museum, and ride pickup for cold caffeine and a chair.",
+          "body": "It is right for the gap between a market, museum, and ride pickup: cold caffeine, a chair, and a few slower minutes.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -246285,7 +246285,7 @@
         {
           "id": "use-it-with",
           "title": "An Older Coffee Ritual",
-          "body": "It belongs between walks, market browsing, or rain delays when an old-school coffee sit-down would steady the day.",
+          "body": "Put it between walks, market browsing, or rain delays when an old-school coffee sit-down would steady the day.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -271948,7 +271948,7 @@
         {
           "id": "use-it-with",
           "title": "Choose One Direction",
-          "body": "The old town rewards wandering, but the opening minutes are easier with one place in mind: the river, an old house, an assembly hall, or a coffee counter.",
+          "body": "The old town rewards wandering, but the opening minutes are easier with one place in mind: the river, an old house, an assembly hall, or a ticketed heritage room.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -276702,7 +276702,7 @@
           "vt-hoian",
           "vt-hoian-official"
         ],
-        "rationale": "Bà Buội fills the chicken-rice gap because the current catalog had the dish without a named shop. It turns cơm gà from a general food word into a concrete Hội An lunch to remember.",
+        "rationale": "Bà Buội gives Hội An chicken rice a concrete old-town lunch memory: yellow rice, shredded chicken, herbs, papaya, sauce, and a table close to Phan Châu Trinh errands.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -276783,8 +276783,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Where It Sits In Hội An",
-          "body": "Morning Glory teaches the wider menu. Bánh mì counters move fast. Bà Buội gives the chicken-rice page a named place to land.",
+          "title": "How It Belongs In Hội An",
+          "body": "Bà Buội belongs in the day when chicken rice should be the meal, not just a dish name. Morning Glory is broader; Bà Buội keeps lunch focused on yellow rice, chicken, herbs, and sauce.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -277187,7 +277187,7 @@
       "title": "Biển Cửa Đại",
       "englishTitle": "Cua Dai Beach",
       "pronunciation": "byen kuah dai",
-      "summary": "Cua Dai Beach carries Hội An to the coast, where river-town habits meet open light, boats, sand, and a sea breeze outside the old lanes.",
+      "summary": "Cửa Đại Beach is the open-coast version of Hội An: wider sand, sea air, fishing-boat edges, and a quieter beach reset when old-town lanes feel tight.",
       "heroImageName": "HeroCityHoianPlaceCuaDaiBeach",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -277217,7 +277217,7 @@
           "vt-hoian",
           "vt-hoian-official"
         ],
-        "rationale": "Cua Dai Beach widens the Hội An plan toward the sea while staying distinct from river walks and island trips.",
+        "rationale": "Cửa Đại reminds visitors that Hội An is not only lantern streets; the town also opens toward working coast, river mouth, and beach light.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -277239,34 +277239,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "v900-tran-where-is-the-boat-pier",
-              "vietnamese": "Bến thuyền ở đâu?",
-              "english": "Where is the boat pier?",
-              "pronunciation": "Ben thuyen o dau",
+              "id": "sight-2",
+              "vietnamese": "Bắt đầu ở đâu?",
+              "english": "Where do we start?",
+              "pronunciation": "bat dow uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-v900-tran-where-is-the-boat-pier",
-              "audioKey": "v900-tran-where-is-the-boat-pier"
+              "detailPageID": "viet-family-sight-start",
+              "audioKey": "sight-2"
             },
             {
-              "id": "v900-tran-where-can-i-buy-a-ticket",
-              "vietnamese": "Tôi có thể mua vé ở đâu?",
-              "english": "Where can I buy a ticket?",
-              "pronunciation": "Toi co the mua ve o dau",
+              "id": "directions-1",
+              "vietnamese": "Cho hỏi, đi tới đó thế nào?",
+              "english": "Excuse me, how do I get there?",
+              "pronunciation": "cho hoy dee toy doh theh nao",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-phrase-v500-sigh-acti-where-can-i-buy-tickets",
-              "audioKey": "v900-tran-where-can-i-buy-a-ticket"
+              "detailPageID": "viet-family-directions-how-to-get",
+              "audioKey": "directions-1"
             },
             {
-              "id": "directions-8",
-              "vietnamese": "Điểm đón ở đâu?",
-              "english": "Where is the pickup point?",
-              "pronunciation": "deeym don uh dow",
+              "id": "store-1",
+              "vietnamese": "Cho tôi chai nước",
+              "english": "A bottle of water please",
+              "pronunciation": "cho toy chai nook",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-directions-pickup-point",
-              "audioKey": "directions-8"
+              "detailPageID": "viet-family-service-water",
+              "audioKey": "store-1"
             }
           ],
           "breakdown": [],
@@ -277330,21 +277330,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "v900-tran-where-is-the-boat-pier"
+              "sight-2"
             ],
             "supportPhraseIDs": [
-              "v900-tran-where-can-i-buy-a-ticket",
-              "directions-8"
+              "directions-1",
+              "store-1"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-cua-dai-beach",
-          "v900-tran-where-is-the-boat-pier"
+          "sight-2"
         ],
         "secondaryPracticePhraseIDs": [
-          "v900-tran-where-can-i-buy-a-ticket",
-          "directions-8"
+          "directions-1",
+          "store-1"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-cua-dai-beach"
       }
@@ -278474,7 +278474,7 @@
         {
           "id": "use-it-with",
           "title": "Pickup And Transfer Pairing",
-          "body": "Arrival planning, hotel pickup, and the car ride into town all meet here. Fare, pickup zone, and timing come up in the transfer exchange.",
+          "body": "Arrival planning, hotel pickup, and the car ride into town all meet here. Pickup point, driver name, and next address are the practical pieces to settle.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -279833,7 +279833,7 @@
         },
         {
           "id": "place-brief",
-          "title": "Wood Becomes practical",
+          "title": "Wood Becomes Useful",
           "body": "The workshop image is woodworking, carved panels, and tools. Keep the craft process in view before finished souvenirs.",
           "phrases": [],
           "breakdown": [],
@@ -281894,7 +281894,7 @@
         {
           "id": "use-it-with",
           "title": "Why It Works First",
-          "body": "The room fits groups, allergies, and anyone still learning the menu. Hội An dishes feel easier here before smaller specialty stops.",
+          "body": "The room is easier for groups, allergies, and anyone still learning the menu. Hội An dishes feel calmer here before smaller specialty stops.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -286729,7 +286729,7 @@
         {
           "id": "good-to-know",
           "title": "A Narrow Riverside Draw",
-          "body": "Remember the riverside village scene, pottery context, and craft route. The water sets a pace far from old-town walking.",
+          "body": "Remember the riverside village scene, bamboo, fishing nets, boats, and the craft route. The water sets a pace far from old-town walking.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -312271,14 +312271,14 @@
               "audioKey": "directions-1"
             },
             {
-              "id": "airport-5",
-              "vietnamese": "Khu đón ở đâu?",
-              "english": "Where is the pickup area?",
-              "pronunciation": "khoo don uh dow",
+              "id": "directions-8",
+              "vietnamese": "Điểm đón ở đâu?",
+              "english": "Where is the pickup point?",
+              "pronunciation": "deeym don uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-airport-pickup",
-              "audioKey": "airport-5"
+              "detailPageID": "viet-family-directions-pickup-point",
+              "audioKey": "directions-8"
             }
           ],
           "breakdown": [],
@@ -312302,8 +312302,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Details Change Fast",
-          "body": "Ticket counters, bay signs, and pickup messages carry the immediate truth on the day; the memory is knowing this is the northern-side station.",
+          "title": "Read The Station In Front Of You",
+          "body": "Ticket counters, bay signs, and pickup messages should guide the move when you arrive. The memory is knowing this is the northern-side station.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -312346,7 +312346,7 @@
             ],
             "supportPhraseIDs": [
               "directions-1",
-              "airport-5"
+              "directions-8"
             ]
           }
         ],
@@ -312356,7 +312356,7 @@
         ],
         "secondaryPracticePhraseIDs": [
           "directions-1",
-          "airport-5"
+          "directions-8"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-northern-bus-station"
       }
@@ -313461,14 +313461,14 @@
               "audioKey": "directions-1"
             },
             {
-              "id": "airport-5",
-              "vietnamese": "Khu đón ở đâu?",
-              "english": "Where is the pickup area?",
-              "pronunciation": "khoo don uh dow",
+              "id": "directions-8",
+              "vietnamese": "Điểm đón ở đâu?",
+              "english": "Where is the pickup point?",
+              "pronunciation": "deeym don uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-airport-pickup",
-              "audioKey": "airport-5"
+              "detailPageID": "viet-family-directions-pickup-point",
+              "audioKey": "directions-8"
             }
           ],
           "breakdown": [],
@@ -313536,7 +313536,7 @@
             ],
             "supportPhraseIDs": [
               "directions-1",
-              "airport-5"
+              "directions-8"
             ]
           }
         ],
@@ -313546,7 +313546,7 @@
         ],
         "secondaryPracticePhraseIDs": [
           "directions-1",
-          "airport-5"
+          "directions-8"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-railway-station"
       }
@@ -314481,14 +314481,14 @@
               "audioKey": "directions-1"
             },
             {
-              "id": "airport-5",
-              "vietnamese": "Khu đón ở đâu?",
-              "english": "Where is the pickup area?",
-              "pronunciation": "khoo don uh dow",
+              "id": "directions-8",
+              "vietnamese": "Điểm đón ở đâu?",
+              "english": "Where is the pickup point?",
+              "pronunciation": "deeym don uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-airport-pickup",
-              "audioKey": "airport-5"
+              "detailPageID": "viet-family-directions-pickup-point",
+              "audioKey": "directions-8"
             }
           ],
           "breakdown": [],
@@ -314556,7 +314556,7 @@
             ],
             "supportPhraseIDs": [
               "directions-1",
-              "airport-5"
+              "directions-8"
             ]
           }
         ],
@@ -314566,7 +314566,7 @@
         ],
         "secondaryPracticePhraseIDs": [
           "directions-1",
-          "airport-5"
+          "directions-8"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-southern-bus-station"
       }

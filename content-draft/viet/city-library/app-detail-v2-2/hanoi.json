@@ -516,7 +516,7 @@
       "category": "Restaurant",
       "pronunciation": "banh cuon ba xuan",
       "travelerMoment": "Choose Bánh Cuốn Bà Xuân for the bánh cuốn morning when the plate should feel fuller: soft rice rolls, minced pork and black fungus, a poached egg, sausage or meatloaf, herbs, chili, lime, garlic, and dipping sauce.",
-      "storySpine": "Bánh Cuốn Bà Xuân gives Hanoi bánh cuốn coverage a second named MICHELIN Selected table, but the distinction is the fuller plate: egg, pork filling, herbs, condiments, and a comparison that makes Bà Hoành feel less alone.",
+      "storySpine": "Bánh Cuốn Bà Xuân makes the Hanoi breakfast table feel fuller: soft rice sheets, pork-and-black-fungus filling, herbs, sauce, and the option of egg beside the steam.",
       "intro": {
         "heading": "Egg In The Steam",
         "body": "Bánh Cuốn Bà Xuân is a 2025 MICHELIN Selected Hanoi street-food stop for soft rice sheets, pork-and-black-fungus filling, herbs, dipping sauce, and the option of a poached egg."
@@ -566,7 +566,7 @@
         {
           "id": "compare-it-with-ba-hoanh",
           "heading": "Compare It With Bà Hoành",
-          "body": "Bà Hoành is the classic named steam-table breakfast. Bà Xuân is the fuller bánh cuốn comparison when egg and condiments are the reason to go."
+          "body": "Bà Hoành is the classic steam-table breakfast. Bà Xuân is the fuller rice-roll stop when egg, pork filling, herbs, and condiments should carry the plate."
         }
       ],
       "mentionedHereCandidates": [
@@ -1053,8 +1053,8 @@
           "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
           "label": "Bún chả Hương Liên",
           "relationship": "named bun cha table",
-          "displaySubtitle": "A real address when the dish page needs a specific bowl-and-grill stop.",
-          "reason": "Huong Lien turns the bun cha guide into a saveable meal stop.",
+          "displaySubtitle": "A famous Hanoi bún chả table when smoke, broth, herbs, and a real address should carry lunch.",
+          "reason": "Related because: A famous Hanoi bún chả table when smoke, broth, herbs, and a real address should carry lunch.",
           "status": "render"
         },
         {
@@ -2072,7 +2072,7 @@
         {
           "id": "a-planned-fish-dinner",
           "heading": "Recognition Around One Pan",
-          "body": "The Bib Gourmand recognition belongs to the one-dish rhythm. Arrive ready for the pan, the herbs, and the sauce decision."
+          "body": "The Bib Gourmand note points back to the one-dish rhythm. Arrive ready for the pan, the herbs, and the sauce decision."
         },
         {
           "id": "the-pan-stays-central",
@@ -7161,8 +7161,8 @@
         },
         {
           "id": "airport-rules-change",
-        "heading": "Follow The Official Signs",
-        "body": "Official signs, staffed counters, and posted pickup zones should guide the move outside with bags."
+          "heading": "Follow The Official Signs",
+          "body": "Official signs, staffed counters, and posted pickup zones should guide the move outside with bags."
         }
       ],
       "mentionedHereCandidates": [],
@@ -8797,7 +8797,7 @@
         },
         {
           "id": "temple-rules-shift",
-        "heading": "Let The Gate Set The Pace",
+          "heading": "Let The Gate Set The Pace",
           "body": "Notice the gate and worship mood before stepping into the courtyard. Incense, careful movement, and lake proximity matter more than speed."
         }
       ],

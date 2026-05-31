@@ -5,15 +5,15 @@
   "entries": [
     {
       "pageID": "city-hcmc-place-42-nguyen-hue-apartment",
-      "summary": "The address points to a converted apartment block above Nguyen Hue Walking Street, now a vertical stack of cafes, boutiques, signs, and balcony stops.",
-      "context": "The address points to a converted apartment block above Nguyen Hue Walking Street, now a vertical stack of cafes, boutiques, signs, and balcony stops.",
-      "tip": "You may see it called 42 Nguyen Hue or the Cafe Apartment. The address helps with maps; Cafe Apartment helps you picture the floor-by-floor browse.",
-      "rationale": "One central building turns Nguyen Hue into an upstairs coffee-and-view decision, more than another storefront.",
+      "summary": "42 Nguyễn Huệ is the address landmark on the walking street: old apartment facade, stacked balconies, signs, stairwell, and the decision of whether to go upstairs.",
+      "context": "42 Nguyễn Huệ is the address landmark on the walking street: old apartment facade, stacked balconies, signs, stairwell, and the decision of whether to go upstairs.",
+      "tip": "Cafe Apartment describes the upstairs crawl. 42 Nguyễn Huệ is the address that helps with maps, meetups, and finding the facade from the street.",
+      "rationale": "The building turns Nguyễn Huệ from a flat promenade into a vertical landmark, where the facade itself explains the cafe-apartment idea before any one tenant does.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "Balconies Above Nguyen Hue",
-          "body": "42 Nguyen Hue is the old apartment block behind the Cafe Apartment facade on Nguyen Hue Walking Street, where the choice is balcony, stairwell, or a small upstairs room."
+          "title": "The Address Behind The Facade",
+          "body": "42 Nguyễn Huệ is the old apartment block on the walking street: stacked balconies, signs, stairwell, and the address people mean when they point at the Cafe Apartment."
         },
         {
           "id": "quick-say",
@@ -32,8 +32,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "A Central Short Detour",
-          "body": "Pair it with a Nguyen Hue walk, Bitexco view, or District 1 coffee break when you want height and a small choice without leaving the center."
+          "title": "The Address Is The Landmark",
+          "body": "Pair it with a Nguyễn Huệ walk, Bitexco view, or District 1 coffee break when the address needs to be clear before anyone chooses a room upstairs."
         },
         {
           "id": "when-to-use",
@@ -43,7 +43,7 @@
         {
           "id": "good-to-know",
           "title": "Same Building, Two Names",
-          "body": "You may see it called 42 Nguyen Hue or the Cafe Apartment. The address helps with maps; Cafe Apartment helps you picture the floor-by-floor browse."
+          "body": "Cafe Apartment describes the upstairs crawl. 42 Nguyễn Huệ is the address that helps with maps, meetups, and finding the facade from the street."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -142,7 +142,7 @@
       "pageID": "city-hcmc-place-anan-saigon",
       "summary": "Choose Anan Saigon for dinner the centerpiece: a 2025 One MICHELIN Star restaurant near central market streets, built for a planned contemporary Vietnamese meal.",
       "context": "Choose Anan Saigon for dinner the centerpiece: a 2025 One MICHELIN Star restaurant near central market streets, built for a planned contemporary Vietnamese meal.",
-      "tip": "This dinner belongs beside Bến Thành, a bánh mì shop, or a street-food walk so Saigon food feels broad: quick bites by day, one composed dinner by night.",
+      "tip": "Place this dinner beside Bến Thành, a bánh mì shop, or a street-food walk so Saigon food feels broad: quick bites by day, one composed dinner by night.",
       "rationale": "Anan gives the trip a modern Saigon food memory, where Vietnamese ingredients, small plates, drinks, and a polished room sit beside the city’s market energy.",
       "sections": [
         {
@@ -178,7 +178,7 @@
         {
           "id": "good-to-know",
           "title": "Pair It With Market Energy",
-          "body": "This dinner belongs beside Bến Thành, a bánh mì shop, or a street-food walk so Saigon food feels broad: quick bites by day, one composed dinner by night."
+          "body": "Place this dinner beside Bến Thành, a bánh mì shop, or a street-food walk so Saigon food feels broad: quick bites by day, one composed dinner by night."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -455,15 +455,15 @@
     },
     {
       "pageID": "city-hcmc-place-banh-xeo-46a",
-      "summary": "Choose Bánh Xèo 46A when Saigon bánh xèo should become a 2025 MICHELIN Bib Gourmand table: crisp pancake, greens, herbs, sauce, and enough room to wrap.",
-      "context": "Choose Bánh Xèo 46A when Saigon bánh xèo should become a 2025 MICHELIN Bib Gourmand table: crisp pancake, greens, herbs, sauce, and enough room to wrap.",
-      "tip": "Remember the named Bib Gourmand pancake table: hot edges, greens, sauce, and the slow practical rhythm of building each bite.",
-      "rationale": "46A earns its place because it makes the southern pancake ritual physical: sizzle, fold, herbs, sauce, table space, and a Bib Gourmand recognition.",
+      "summary": "Choose Bánh Xèo 46A when the meal should slow down around one hot pancake: crisp edges, herbs, lettuce, sauce, and everyone building the bite by hand.",
+      "context": "Choose Bánh Xèo 46A when the meal should slow down around one hot pancake: crisp edges, herbs, lettuce, sauce, and everyone building the bite by hand.",
+      "tip": "The Bib Gourmand note helps, but the memory is the table work: hot edges, fresh greens, dipping sauce, and the slow rhythm of wrapping each bite.",
+      "rationale": "The restaurant makes Saigon bánh xèo feel physical: the pancake arrives wide and hot, then the table turns it into smaller bites with greens, herbs, and dipping sauce.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "Bib Gourmand Pancake Table",
-          "body": "Banh Xeo 46A is a 2025 MICHELIN Bib Gourmand table for the larger restaurant version of bánh xèo: crisp pancake, herbs, metal trays, sauce, and a wrapping ritual that slows down the meal."
+          "title": "A Pancake Built At The Table",
+          "body": "Bánh Xèo 46A is a Bib Gourmand stop for the big restaurant version of bánh xèo: crisp pancake, herbs, lettuce, sauce, and a table that needs a few minutes to settle."
         },
         {
           "id": "quick-say",
@@ -477,23 +477,23 @@
         },
         {
           "id": "place-brief",
-          "title": "The Plate Needs Space",
-          "body": "Let the pancake take room. Herbs, dipping sauce, and metal trays need a few minutes of table attention."
+          "title": "Give The Pancake Room",
+          "body": "The plate arrives wide, hot, and a little messy. Make space before the herbs, lettuce, sauce, and trays start moving around the table."
         },
         {
           "id": "use-it-with",
-          "title": "A Dish-Specific Meal",
-          "body": "Make bánh xèo what matters of the meal. The Bib Gourmand recognition helps, but the crisp edge and wrapping rhythm carry the stop."
+          "title": "Build One Good Bite",
+          "body": "Break off a crisp piece, tuck in greens, and keep the sauce close. The meal makes more sense once the first bite holds together."
         },
         {
           "id": "when-to-use",
-          "title": "Ingredient Checks Matter",
-          "body": "Shrimp, pork, and spice can matter here. Bánh xèo often looks simple but hides ingredients in the filling."
+          "title": "Ask If Fillings Matter",
+          "body": "Bánh xèo often includes shrimp or pork, even when the pancake looks simple. Ask early if someone is avoiding either one."
         },
         {
           "id": "good-to-know",
-          "title": "The Pancake Is The Draw",
-          "body": "Remember the named Bib Gourmand pancake table: hot edges, greens, sauce, and the slow practical rhythm of building each bite."
+          "title": "Come For The Ritual",
+          "body": "The Bib Gourmand note helps, but the memory is the table work: hot edges, fresh greens, dipping sauce, and the slow rhythm of wrapping each bite."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -557,7 +557,7 @@
           "phraseIDs": [
             "directions-8",
             "v900-tran-where-can-i-buy-a-ticket",
-            "transport-2"
+            "directions-1"
           ]
         },
         {
@@ -568,7 +568,7 @@
         {
           "id": "use-it-with",
           "title": "A Transfer Point With A Job",
-          "body": "It has airport-style logic inside the city: arrival, signs, exits, then the market, hotel, or meeting point."
+          "body": "It works like a city hinge: train doors, signs, exits, then the market, hotel, ride pickup, or next walk above ground."
         },
         {
           "id": "when-to-use",
@@ -723,7 +723,7 @@
       "summary": "Choose Bò Kho Gánh for the Saigon meal where one bowl can lead: beef stew, bread or noodles nearby, sauces close, and a Bib Gourmand street-food stop that feels specific before the trip.",
       "context": "Choose Bò Kho Gánh for the Saigon meal where one bowl can lead: beef stew, bread or noodles nearby, sauces close, and a Bib Gourmand street-food stop that feels specific before the trip.",
       "tip": "Condiments can move the broth quickly. Taste first, then add heat or sauce in small moves.",
-      "rationale": "Bò Kho Gánh fills a missing Saigon bò kho lane with recognized street-food comfort: broth, beef, bread or noodles, and a dish name worth remembering instead of another broad restaurant listing.",
+      "rationale": "Bò Kho Gánh turns Saigon bò kho into a specific lunch memory: rich broth, tender beef, herbs, sauce, and the choice between bread for dipping or noodles for a fuller bowl.",
       "sections": [
         {
           "id": "at-glance",
@@ -752,8 +752,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Street Food With A Clear Reason",
-          "body": "The Bib Gourmand recognition supports the choice because this is a named bò kho stop rather than a broad street-food idea. It gives the dish a place to remember."
+          "title": "Street Food With A Clear Shape",
+          "body": "The Bib Gourmand note supports the stop, but the reason to go is concrete: a named bò kho bowl, bread or noodles, herbs, sauce, and a lunch that does not need a wide menu."
         },
         {
           "id": "good-to-know",
@@ -895,10 +895,10 @@
     },
     {
       "pageID": "city-hcmc-place-bun-bo-hue-14b",
-      "summary": "Choose Bún Bò Huế 14B for the Saigon meal where the bowl can be bold: lemongrass broth, beef, tendon, herbs, chili, lime, and a Bib Gourmand street-food stop with real heat.",
-      "context": "Choose Bún Bò Huế 14B for the Saigon meal where the bowl can be bold: lemongrass broth, beef, tendon, herbs, chili, lime, and a Bib Gourmand street-food stop with real heat.",
-      "tip": "The 2025 Bib Gourmand recognition supports the choice because the page has a dish-led reason: a named bún bò Huế bowl, not another vague noodle listing.",
-      "rationale": "Bún Bò Huế 14B gives Saigon a recognized bowl for a Hue-born dish, so the catalog has more than the Hue origin page: it has a named Saigon place where the broth, noodles, herbs, and chili become the plan.",
+      "summary": "Choose Bún Bò Huế 14B when Saigon lunch should still have a Hue-style pull: lemongrass broth, beef, tendon, herbs, chili, lime, and a bowl with real heat.",
+      "context": "Choose Bún Bò Huế 14B when Saigon lunch should still have a Hue-style pull: lemongrass broth, beef, tendon, herbs, chili, lime, and a bowl with real heat.",
+      "tip": "The 2025 Bib Gourmand note supports the choice, but the pull is the bowl itself: spicy broth, beef cuts, herbs, and a named Saigon table for bún bò Huế.",
+      "rationale": "The stop gives Saigon a specific Hue-style noodle memory, where the bowl feels deeper and spicier than everyday phở without needing the trip to reach Huế first.",
       "sections": [
         {
           "id": "at-glance",
@@ -927,13 +927,13 @@
         },
         {
           "id": "when-to-use",
-          "title": "A Saigon Table For A Hue Dish",
-          "body": "The Hue dish already has a home-city page in the app. Bún Bò Huế 14B gives the same bowl a recognized Saigon stop when the trip is staying south."
+          "title": "Hue Flavor In Saigon",
+          "body": "The bowl carries Hue-style depth into a Saigon lunch: lemongrass, chili, beef, tendon, herbs, and lime. Order it when the day wants heat and broth, not another gentle noodle stop."
         },
         {
           "id": "good-to-know",
           "title": "Recognition Supports The Bowl",
-          "body": "The 2025 Bib Gourmand recognition supports the choice because the page has a dish-led reason: a named bún bò Huế bowl, not another vague noodle listing."
+          "body": "The 2025 Bib Gourmand note supports the choice, but the pull is the bowl itself: spicy broth, beef cuts, herbs, and a named Saigon table for bún bò Huế."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1148,7 +1148,7 @@
         {
           "id": "use-it-with",
           "title": "A Midday Cold Break",
-          "body": "It belongs in the gap between a market, museum, and ride pickup for cold caffeine and a chair."
+          "body": "It is right for the gap between a market, museum, and ride pickup: cold caffeine, a chair, and a few slower minutes."
         },
         {
           "id": "when-to-use",
@@ -1283,7 +1283,7 @@
         {
           "id": "use-it-with",
           "title": "An Older Coffee Ritual",
-          "body": "It belongs between walks, market browsing, or rain delays when an old-school coffee sit-down would steady the day."
+          "body": "Put it between walks, market browsing, or rain delays when an old-school coffee sit-down would steady the day."
         },
         {
           "id": "when-to-use",
