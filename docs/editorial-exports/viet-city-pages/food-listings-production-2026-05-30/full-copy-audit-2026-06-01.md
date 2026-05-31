@@ -415,3 +415,44 @@ Rendered simulator spot-check after this batch:
 - checked `viet-family-city-hcmc-place-banh-xeo-46a`: the repaired table/recommendation/sauce card set is present and readable at the top of Useful Phrases.
 
 Remaining production-readiness work: complete the final requirement-by-requirement production receipt against the V2.2 gate, including broader category render proof. This batch removes the known residue/repeated-card blockers, but it is not by itself the global PASS receipt.
+
+## Sixth Repair Batch - 2026-06-01
+
+Status: `IN_PROGRESS_NOT_PRODUCTION_READY`
+
+This batch followed the final sidecar freshness/status audit after `b6111f326`.
+
+Repairs completed:
+
+- removed soft visible freshness/operations wording from `city-danang-place-asia-park`;
+- removed soft visible timing wording from `city-danang-place-dragon-carp-statue`;
+- removed soft status-rule headings from `city-hanoi-place-noi-bai-airport` and `city-hanoi-place-quan-thanh-temple`;
+- removed soft ticket/operations wording from `city-hcmc-place-ben-thanh-metro-station`;
+- removed soft schedule/timing wording from `city-hcmc-place-golden-dragon-water-puppet`.
+
+Freshness/status scan after this batch:
+
+- exact unstable money claims: `0`;
+- exact visible opening-hour claims: `0`;
+- visible app/process/status leakage: `0`;
+- targeted soft schedule/rules/open/timing phrases from the sidecar audit: `0`.
+
+Validation after this batch:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-city-library.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/audit-viet-listing-production-qa.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+All commands above passed. The final unresolved gate is not copy/source/runtime correctness; it is the V2.2 production gate's demand for global rendered screenshot proof, where current evidence remains representative rather than per-page.

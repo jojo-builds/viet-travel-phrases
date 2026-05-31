@@ -101,13 +101,20 @@ Fifth repair batch, 2026-06-01:
 - Current validators pass after regeneration; process/residue relationship strings are now `0`, and exact repeated phrase-card sets across V2.2 source are now `0`.
 - Rebuilt and spot-checked Cô Chủ Nhỏ and Bánh Xèo 46A on simulator `SpeakLocal City Listings`.
 
+Sixth repair batch, 2026-06-01:
+
+- Repaired the six visible soft freshness/status phrases found by the final sidecar audit: Asia Park, Dragon Carp Statue, Noi Bai Airport, Quan Thanh Temple, Ben Thanh Metro Station, and Golden Dragon Water Puppet Theater.
+- Regenerated V2.2 handwritten copy, native authored listing pages, and SQLite.
+- Current validators pass after regeneration; targeted soft schedule/rules/open/timing phrases are now `0`.
+- Final source-completeness sidecar: `PASS` for all `520` V2.2 source objects.
+- Final native/generated sidecar: structural native evidence passes, but global status remains `REVISE` until the rendered screenshot evidence is promoted from representative proof to a final global receipt.
+
 Highest-leverage next pass:
 
-1. Broaden simulator rendered review beyond the current spot-check set. Cover remaining category spread, especially the `NEEDS_RENDER_REVIEW` restaurant rows and pages called out as follow-up by subagents.
-2. Run the final requirement-by-requirement production receipt against the V2.2 gate now that the known residue and repeated-card blockers are repaired.
-3. Continue the food/restaurant desire pass over cafes, drinks, desserts, local classics, and any MICHELIN-supported pages that still feel credential- or support-role-led after render.
-4. Broaden category render proof across food, drink, market, route, nature/activity, and culture pages.
-5. Keep generated resources in sync: project V2.2 to handwritten copy, import handwritten copy, generate authored listing pages, generate SQLite, then validate.
+1. Decide whether to satisfy the V2.2 production gate literally with top/scrolled screenshot proof for all `520` V2.2 pages, or amend the receipt standard to accept full source/runtime text review plus representative rendered proof.
+2. If using the literal screenshot standard, build a repeatable UI-test harness that captures top and scrolled screenshots for all `520` `viet-family-city-*` pages into a dated proof folder.
+3. Run the final requirement-by-requirement production receipt against the V2.2 gate after that proof exists.
+4. Keep generated resources in sync: project V2.2 to handwritten copy, import handwritten copy, generate authored listing pages, generate SQLite, then validate.
 
 Good starter pages/searches for rendered review:
 
