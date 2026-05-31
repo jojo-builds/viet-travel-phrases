@@ -162,7 +162,7 @@ Rendered proof expansion after this batch:
 ## Remaining Work
 
 - Promote the rendered proof gate: either literal top/scrolled screenshots for all `520` V2.2 pages or an explicit amended receipt standard that accepts full source/runtime text review plus representative rendered proof.
-- Continue the reliable single-page render harness over the remaining `315` pages, or split by offset into resumable batches that launch one page per xcodebuild invocation.
+- Continue the reliable single-page render harness over the remaining `285` pages, or split by offset into resumable batches that launch one page per xcodebuild invocation.
 - Continue targeted rendered review for street `spine/line` repetition, high-traffic beach/nature phrase-card fit, performance page first-move copy, and remaining hub-biased related-card feel.
 - If rendered review finds copy that reads stiff on-device, repair it in `content-draft/viet/city-library/app-detail-v2-2/*.json`, then run the full regeneration/validation chain again.
 
@@ -240,10 +240,13 @@ Rendered proof after this repair batch:
 - Added `balanced-food-city-proof-001-results.jsonl`: `30` pages, `90` screenshots, `0` failures across restaurants, dish pages, cafes, markets, dessert/drink pages, and high-risk Da Nang mì Quảng comparison pages.
 - Text review after that render slice found food-copy issues that passed render but needed human cleanup: directive `Choose...` phrasing, a missing verb in the seafood price warning, `Not Street Food`, `Drink Before Room`, `Fast Moving Meal`, and a leftover `The draw is more concrete` line. Repaired those in authored V2.2 source, regenerated native resources, and reran validators.
 - Added current-text rerun proof `balanced-food-city-humanized-rerun-001-results.jsonl`: `7` edited pages, `21` fresh screenshots, `0` failures.
-- Combined latest-current proof across maintained result files is now `205` unique pages, `615` screenshots, and `0` current failures.
+- Added `balanced-mobility-landmark-proof-001-results.jsonl`: `30` pages, `90` screenshots, `0` failures across five-city landmarks, attractions, streets, stations, nature, parks, and neighborhoods.
+- Text review after that render slice found more validating-but-stiff phone copy: a sentence fragment on Hải Vân Pass, directive cyclo wording, `Ordinary Is Enough`, duplicated Đống Đa neighborhood guidance, and awkward Hội An bus-station grammar. Repaired those in authored V2.2 source, regenerated native resources, and reran validators.
+- Added current-text rerun proof `balanced-mobility-landmark-humanized-rerun-001-results.jsonl`: `5` edited pages, `15` fresh screenshots, `0` failures.
+- Combined latest-current proof across maintained result files is now `235` unique pages, `705` screenshots, and `0` current failures.
 
 Remaining honest risks:
 
-- The global V2.2 rendered proof gate is still open: `315` pages still need current screenshots unless the gate is explicitly amended.
+- The global V2.2 rendered proof gate is still open: `285` pages still need current screenshots unless the gate is explicitly amended.
 - The cross-taxonomy auditor found large repeated phrase-card sets by taxonomy. Some repetition is expected for common travel actions, but high-traffic pages still need human-rendered review for phrase-card fit.
 - Runtime taxonomy mismatches from the subagent hard-block list were repaired and rendered in the sample above. Related grouping should still be watched during the remaining screenshot pass, because older legacy metadata can still leak into shelves/search even when visible copy is strong.

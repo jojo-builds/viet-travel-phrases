@@ -185,5 +185,8 @@ Eighth repair batch, 2026-06-01:
 - Added balanced food/city rendered proof: `balanced-food-city-proof-001-results.jsonl` covers `30` pages and `90` screenshots with `0` failures across restaurants, dish pages, cafes, markets, dessert/drink pages, and high-risk Da Nang mì Quảng comparison pages.
 - Text review after that render slice found food-copy issues that passed render but needed human cleanup: directive `Choose...` phrasing, a missing verb in the seafood price warning, `Not Street Food`, `Drink Before Room`, `Fast Moving Meal`, and a leftover `The draw is more concrete` line. Repaired those in authored V2.2 source, regenerated native resources, and reran validators.
 - Added current-text rerun proof `balanced-food-city-humanized-rerun-001-results.jsonl`: `7` edited pages, `21` screenshots, `0` failures.
-- Combined latest-current rendered proof is now `205` unique pages, `615` screenshots, `0` current failures.
-- Global status remains not complete: `315` V2.2 pages still need current rendered proof unless the standard is amended, and repeated phrase-card clusters remain a follow-up class.
+- Added balanced mobility/landmark rendered proof: `balanced-mobility-landmark-proof-001-results.jsonl` covers `30` pages and `90` screenshots with `0` failures across landmarks, attractions, streets, stations, nature, parks, and neighborhoods in all five cities.
+- Text review after that render slice found more phone-readable-but-not-human-enough copy: a sentence fragment on Hải Vân Pass, directive cyclo wording, `Ordinary Is Enough`, duplicated Đống Đa neighborhood guidance, and awkward Hội An bus-station grammar. Repaired those in authored V2.2 source, regenerated native resources, and reran validators.
+- Added current-text rerun proof `balanced-mobility-landmark-humanized-rerun-001-results.jsonl`: `5` edited pages, `15` screenshots, `0` failures.
+- Combined latest-current rendered proof is now `235` unique pages, `705` screenshots, `0` current failures.
+- Global status remains not complete: `285` V2.2 pages still need current rendered proof unless the standard is amended, and repeated phrase-card clusters remain a follow-up class.
