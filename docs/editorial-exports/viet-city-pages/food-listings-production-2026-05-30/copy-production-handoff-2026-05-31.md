@@ -158,7 +158,7 @@ Rendered proof expansion, 2026-06-01:
 - Added a full `520`-page manifest under `render-proof-2026-06-01-v2-2-global/`.
 - Proved `52` unique current pages with `156` screenshots and `0` current failures across the category-balanced, award-jargon repair, cross-city, and Con Market rerun result files. This includes the user-flagged `city-hcmc-place-banh-xeo-46a`.
 - Multi-page-in-one-test runs can kill the UI-test runner; use single-page xcodebuild invocations with `TEST_RUNNER_SPEAKLOCAL_V2_2_RENDER_PROOF_OFFSET=<n>` and `TEST_RUNNER_SPEAKLOCAL_V2_2_RENDER_PROOF_LIMIT=1` for reliable continuation.
-- Remaining global proof gap: `468` V2.2 pages still need rendered screenshots, unless Jojo explicitly amends the final gate to accept source/runtime validation plus category-balanced native proof.
+- Remaining global proof gap: `375` V2.2 pages still need rendered screenshots, unless Jojo explicitly amends the final gate to accept source/runtime validation plus category-balanced native proof.
 
 Eighth repair batch, 2026-06-01:
 
@@ -176,5 +176,8 @@ Eighth repair batch, 2026-06-01:
 - Added under-covered cities proof `high-risk-taxonomy-proof-002-results.jsonl`: `30` pages, `90` screenshots, `0` failures across Hanoi, HCMC, Hội An, and Huế cafes, markets, museums, parks, streets, rivers, stations, ports, drinks, desserts, villages, and arrivals.
 - Text review after that render slice found more validating-but-stiff transport framing. Repaired repeated `threshold` language and one `Choose...` lead in authored V2.2 source, regenerated native resources, and reran validators.
 - Added current-text rerun proof `high-risk-humanized-rerun-002-results.jsonl`: `4` edited pages, `12` screenshots, `0` failures.
-- Combined latest-current rendered proof is now `117` unique pages, `351` screenshots, `0` current failures.
-- Global status remains not complete: `403` V2.2 pages still need current rendered proof unless the standard is amended, and repeated phrase-card clusters remain a follow-up class.
+- Added Hội An / Huế low-coverage rendered proof: `hoian-hue-low-coverage-proof-001-results.jsonl` covers `30` pages and `90` screenshots with `0` failures.
+- Text review after that render slice found validating-but-stiff copy on the phone: `spine` metaphors, directive `Choose...` leads, and duplicated summary clauses. Repaired those in authored V2.2 source, regenerated native resources, and reran validators.
+- Added current-text rerun proof `hoian-hue-humanized-rerun-001-results.jsonl`: `12` edited pages, `36` screenshots, `0` failures.
+- Combined latest-current rendered proof is now `145` unique pages, `435` screenshots, `0` current failures.
+- Global status remains not complete: `375` V2.2 pages still need current rendered proof unless the standard is amended, and repeated phrase-card clusters remain a follow-up class.

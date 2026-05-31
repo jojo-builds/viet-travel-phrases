@@ -53,7 +53,12 @@ Category-balanced batch:
   - Scope: Hanoi, HCMC, Hội An, and Huế cafes, markets, museums, parks, streets, rivers, stations, ports, drinks, desserts, villages, and arrivals.
   - Text review after this batch found more stiff transport framing (`threshold`) and one `Choose...` lead. Those were repaired in source.
   - `high-risk-humanized-rerun-002-results.jsonl`: `4` edited pages rerun after the copy repair, `12` screenshots, `0` failures.
-- Combined latest-current proof across the maintained result files is `117` unique pages, `351` screenshots, and `0` current failures. Total historical proof rows in this folder include `146` rows and `438` screenshots, but the current count uses the latest passing row for each page.
+- Hội An / Huế low-coverage proof:
+  - `hoian-hue-low-coverage-proof-001-results.jsonl`: `30` pages, `90` screenshots, `0` failures.
+  - Scope: Hội An and Huế beaches, rivers, museum/performance/street/assembly/cafe/restaurant/dish/shopping pages, plus Hue landmarks, restaurants, dishes, park, market, and cafe pages.
+  - Text review after this batch found more validating-but-stiff language: `spine` metaphors, directive `Choose...` leads, and duplicated summary clauses. Those were repaired in source.
+  - `hoian-hue-humanized-rerun-001-results.jsonl`: `12` edited pages rerun after the copy repair, `36` screenshots, `0` failures.
+- Combined latest-current proof across the maintained result files is `145` unique pages, `435` screenshots, and `0` current failures. Total historical proof rows in this folder include `188` rows and `564` screenshots, but the current count uses the latest passing row for each page.
 
 This is a meaningful rendered proof expansion, not the final 520-page receipt. The final gate still needs either all `520` pages captured by this harness or an explicit approval-standard amendment accepting full source/runtime review plus category-balanced rendered proof.
 

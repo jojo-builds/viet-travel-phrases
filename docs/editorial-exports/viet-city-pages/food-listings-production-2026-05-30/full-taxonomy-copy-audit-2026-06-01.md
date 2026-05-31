@@ -162,7 +162,7 @@ Rendered proof expansion after this batch:
 ## Remaining Work
 
 - Promote the rendered proof gate: either literal top/scrolled screenshots for all `520` V2.2 pages or an explicit amended receipt standard that accepts full source/runtime text review plus representative rendered proof.
-- Continue the reliable single-page render harness over the remaining `468` pages, or split by offset into resumable batches that launch one page per xcodebuild invocation.
+- Continue the reliable single-page render harness over the remaining `375` pages, or split by offset into resumable batches that launch one page per xcodebuild invocation.
 - Continue targeted rendered review for street `spine/line` repetition, high-traffic beach/nature phrase-card fit, performance page first-move copy, and remaining hub-biased related-card feel.
 - If rendered review finds copy that reads stiff on-device, repair it in `content-draft/viet/city-library/app-detail-v2-2/*.json`, then run the full regeneration/validation chain again.
 
@@ -231,10 +231,13 @@ Rendered proof after this repair batch:
 - Added `high-risk-taxonomy-proof-002-results.jsonl`: `30` under-covered city pages, `90` screenshots, `0` failures. The slice covered Hanoi, HCMC, Hội An, and Huế cafes, markets, museums, parks, streets, rivers, stations, ports, drinks, desserts, villages, and arrivals.
 - Text review after that render slice found and repaired more validating-but-stiff transport framing: repeated `threshold` language and one `Choose...` lead.
 - Added `high-risk-humanized-rerun-002-results.jsonl`: `4` edited pages, `12` fresh screenshots, `0` failures after the humanization patch.
-- Combined latest-current proof across maintained result files is now `117` unique pages, `351` screenshots, and `0` current failures.
+- Added `hoian-hue-low-coverage-proof-001-results.jsonl`: `30` pages, `90` screenshots, `0` failures across Hội An and Huế beaches, rivers, museum/performance/street/assembly/cafe/restaurant/dish/shopping pages, plus Hue landmarks, restaurants, dishes, park, market, and cafe pages.
+- Text review after that render slice found more validating-but-stiff copy. Repaired `spine` metaphors, directive `Choose...` leads, and duplicated summary clauses in authored V2.2 source, regenerated native resources, and reran validators.
+- Added current-text rerun proof `hoian-hue-humanized-rerun-001-results.jsonl`: `12` edited pages, `36` fresh screenshots, `0` failures.
+- Combined latest-current proof across maintained result files is now `145` unique pages, `435` screenshots, and `0` current failures.
 
 Remaining honest risks:
 
-- The global V2.2 rendered proof gate is still open: `403` pages still need current screenshots unless the gate is explicitly amended.
+- The global V2.2 rendered proof gate is still open: `375` pages still need current screenshots unless the gate is explicitly amended.
 - The cross-taxonomy auditor found large repeated phrase-card sets by taxonomy. Some repetition is expected for common travel actions, but high-traffic pages still need human-rendered review for phrase-card fit.
-- Runtime taxonomy mismatches from the subagent hard-block list were repaired and rendered in the sample above. Related grouping should still be watched during the remaining 453-page screenshot pass, because older legacy metadata can still leak into shelves/search even when visible copy is strong.
+- Runtime taxonomy mismatches from the subagent hard-block list were repaired and rendered in the sample above. Related grouping should still be watched during the remaining screenshot pass, because older legacy metadata can still leak into shelves/search even when visible copy is strong.
