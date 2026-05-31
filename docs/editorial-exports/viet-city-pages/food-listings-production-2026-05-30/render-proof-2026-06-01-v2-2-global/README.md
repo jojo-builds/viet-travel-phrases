@@ -76,7 +76,12 @@ Category-balanced batch:
 - Subagent hard-block / screenshot-feedback proof:
   - `subagent-hardblock-humanized-rerun-001-results.jsonl`: `33` repaired pages, `99` screenshots, `0` failures.
   - Scope: the user-flagged Bánh Xèo 46A page after `Bib Gourmand`/award-language removal, food glossary pages, culture/performance phrase-card repairs, mobility/arrival/station/river/street repairs, and the retargeted Hanoi street related-card cluster.
-- Combined latest-current proof across the maintained result files is `244` unique pages, `732` screenshots, and `0` current failures. Total historical proof rows in this folder include `330` rows and `990` screenshots, but the current count uses the latest passing row for each page.
+- Missing-pages proof 001:
+  - `missing-pages-proof-001-results.jsonl`: `40` previously unrendered pages, `120` screenshots, `0` failures.
+  - Scope: remaining Da Nang museum, landmark, attraction, arrival, beach, restaurant, cafe, dish, neighborhood, market, street, and nature pages, plus a small Hanoi food run covering bún chả, Bún Chả Hương Liên, Bún Chả Đắc Kim, Tuyết Bún Chả 34, bún thang, and chả cá.
+  - Text review after this batch found validating-but-stiff phone copy: `Choose it`, `carry the visit`, `support`, `stronger`, `are enough`, and a few abstract `draw` or `whether` lines. Those were repaired in authored V2.2 source and regenerated.
+  - `missing-pages-humanized-rerun-001-results.jsonl`: `15` edited pages rerun after the copy repair, `45` screenshots, `0` failures.
+- Combined latest-current proof across the maintained result files is `284` unique pages, `852` screenshots, and `0` current failures. Total historical proof rows in this folder include `385` rows and `1155` screenshots, but the current count uses the latest passing row for each page.
 
 This is a meaningful rendered proof expansion, not the final 520-page receipt. The final gate still needs either all `520` pages captured by this harness or an explicit approval-standard amendment accepting full source/runtime review plus category-balanced rendered proof.
 

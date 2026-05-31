@@ -204,3 +204,15 @@ Ninth repair batch, 2026-06-01:
 - Added current-text rendered proof `subagent-hardblock-humanized-rerun-001-results.jsonl`: `33` repaired pages, `99` screenshots, `0` failures. The batch includes the user-flagged Bánh Xèo 46A page plus food, culture/performance, mobility, and Hanoi related-card repairs.
 - Combined latest-current rendered proof is now `244` unique pages, `732` screenshots, `0` current failures.
 - Global status remains not complete: `276` V2.2 pages still need current rendered proof unless the standard is amended.
+
+Tenth proof / humanization batch, 2026-06-01:
+
+- Continued the literal V2.2 screenshot gate rather than narrowing the definition of production-ready.
+- Added rendered proof `missing-pages-proof-001-results.jsonl`: `40` previously unrendered pages, `120` screenshots, `0` failures. The slice finished a large set of remaining Đà Nẵng museum, landmark, attraction, arrival, beach, restaurant, cafe, dish, neighborhood, market, street, and nature pages, plus a small Hanoi food run.
+- Human-readability review after the render found source copy that passed screenshots but still read too mechanical on a phone: `Choose it`, `carry the visit`, `support`, `stronger`, `are enough`, and a few abstract `draw` or `whether` lines.
+- Repaired those lines in authored V2.2 source, including Hải Vân Pass, Hàn River Cruise, Lady Buddha, Linh Ứng Pagoda, Marble Mountain cave walk, Mỹ Khê, Nam House, Nam Ô fish sauce village, nem lụi, Phạm Văn Đồng Beach, Phước Mỹ, Reply 1988, The Temptation, Trần Thị Lý Bridge, and Vincom Plaza.
+- Regenerated V2.2 handwritten copy, native authored listing pages, phrase catalog, and SQLite.
+- Current validators pass again: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Added current-text rendered proof `missing-pages-humanized-rerun-001-results.jsonl`: `15` edited pages, `45` screenshots, `0` failures.
+- Combined latest-current rendered proof is now `284` unique pages, `852` screenshots, `0` current failures.
+- Global status remains not complete: `236` V2.2 pages still need current rendered proof unless the standard is amended.

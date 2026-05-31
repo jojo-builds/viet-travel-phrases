@@ -4388,7 +4388,7 @@
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
         "Production intake source notes: Venue and local map sources.",
-        "2026-05-31 support cleanup: keep as a riverfront dinner route stop below stronger food-led Da Nang saves."
+        "2026-05-31 cleanup: keep as a riverfront dinner-route stop below the main food-led Da Nang saves."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -4862,8 +4862,8 @@
       "city": "Đà Nẵng",
       "category": "Landmark",
       "pronunciation": "deo hai van",
-      "travelerMoment": "Choose the pass when the route itself matters. The key decision is scenic old road versus faster movement.",
-      "storySpine": "Its draw is simple: a northbound travel day can become a mountain-and-sea crossing instead of only transport.",
+      "travelerMoment": "The pass matters when the route itself becomes part of the day. The key decision is scenic old road versus faster movement.",
+      "storySpine": "A northbound travel day can become a mountain-and-sea crossing instead of only transport.",
       "intro": {
         "heading": "The Scenic Way Out Of Da Nang",
         "body": "Hải Vân Pass is the old mountain road between Da Nang and Hue, where sea bends, low clouds, green slopes, and short pull-offs turn transfer into memory."
@@ -4902,7 +4902,7 @@
         },
         {
           "id": "cloud-can-be-the-point",
-          "heading": "Cloud Can Be what matters",
+          "heading": "Cloud Changes The View",
           "body": "Clear weather gives sea and lagoon views. Mist changes the mood: guardrails, wet road, pale sky, and Vietnam shifting terrain."
         },
         {
@@ -4922,8 +4922,8 @@
           "catalogId": "viet-family-city-danang-place-hai-van-pass-ride",
           "label": "Chuyến đi đèo Hải Vân",
           "relationship": "same-route-action",
-          "displaySubtitle": "The ride-focused page when the pass is part of a road day, not just a viewpoint name.",
-          "reason": "Related because: The ride-focused page when the pass is part of a road day, not just a viewpoint name.",
+          "displaySubtitle": "The road-day version of Hải Vân Pass: curves, weather, photo stops, and the slower ride between cities.",
+          "reason": "Related because the pass is often remembered as a ride, not only a viewpoint name.",
           "status": "render"
         }
       ],
@@ -5389,7 +5389,7 @@
         {
           "id": "basics-before-boarding",
           "heading": "Basics Before Boarding",
-          "body": "The practical pieces stay simple: boarding point, start time, route, and return. Once those are clear, the lights can carry the ride."
+          "body": "The practical pieces stay simple: boarding point, start time, route, and return. Once those are clear, the river lights can do the rest."
         }
       ],
       "mentionedHereCandidates": [],
@@ -6150,7 +6150,7 @@
         {
           "id": "shade-before-the-view",
           "heading": "Temple Courtyard Before The View",
-          "body": "The statue is why most visitors come, but the grounds are not just a lookout. Move through the courtyard slowly and keep voices low."
+          "body": "The statue is why most visitors come, but the grounds ask for temple manners too. Move through the courtyard slowly and keep voices low."
         },
         {
           "id": "one-stop-two-readings",
@@ -6388,7 +6388,7 @@
         {
           "id": "son-tra-can-wait",
           "heading": "Son Tra Can Wait",
-          "body": "The pagoda pairs naturally with a Sơn Trà drive, but it does not need to become a rushed checklist. If weather, road, or group energy turns, the grounds and view can carry the visit."
+          "body": "The pagoda pairs naturally with a Sơn Trà drive, but it does not need to become a rushed checklist. If weather, road, or group energy changes, stay with the grounds and view."
         }
       ],
       "mentionedHereCandidates": [],
@@ -7064,12 +7064,12 @@
         {
           "id": "caves-over-checklist",
           "heading": "Caves Over Checklist",
-          "body": "Choose it for the cave-and-shrine pace rather than racing every viewpoint. Stairs, shade, and respectful movement carry the visit."
+          "body": "Let the cave-and-shrine pace lead instead of racing every viewpoint. Stairs, shade, and quiet movement are the visit."
         },
         {
           "id": "enough-without-every-viewpoint",
           "heading": "Skip The Full Viewpoint List",
-          "body": "A cave walk can carry the visit if the heat or stairs start to win. Pair it with a cafe break or a ride back toward the beach instead of stacking every viewpoint."
+          "body": "A cave walk is enough if the heat or stairs start to win. Pair it with a cafe break or a ride back toward the beach instead of stacking every viewpoint."
         }
       ],
       "mentionedHereCandidates": [],
@@ -8095,7 +8095,7 @@
         {
           "id": "morning-coastal-air",
           "heading": "Morning Coastal Air",
-          "body": "Choose it for open sand and sea air before heat builds. It can be a swim, a walk, or simply a beach morning with the city behind you."
+          "body": "Come for open sand and sea air before heat builds. It can be a swim, a walk, or simply a beach morning with the city behind you."
         },
         {
           "id": "weather-changes-the-mood",
@@ -8255,18 +8255,18 @@
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
-          "Mì Quảng support cleanup on 2026-05-31: demoted from headline food-save posture after Mì Quảng Sứa Hồng Vân added a stronger stronger mì Quảng page."
+          "Mì Quảng cleanup on 2026-05-31: moved away from headline food-save posture after Mì Quảng Sứa Hồng Vân became the more distinctive mì Quảng page."
         ]
       },
       "score": {
         "value": 28,
         "max": 30,
-        "reason": "Support-listing pass: Bà Mua remains useful as an easy branch-style mì Quảng table, but the stronger foodie saves now live with Mì Quảng 1A and Mỳ Quảng Sứa Hồng Vân."
+        "reason": "Listing pass: Bà Mua remains useful as an easy branch-style mì Quảng table, while the more distinctive food saves live with Mì Quảng 1A and Mỳ Quảng Sứa Hồng Vân."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
         "Production intake source notes: Venue and local food sources.",
-        "Support cleanup note: keep for browse, route, and low-friction ordering; do not treat as a headline foodie save while stronger stronger mì Quảng pages exist."
+        "Cleanup note: keep for browse, route, and low-friction ordering; do not treat as a headline food save while more distinctive mì Quảng pages exist."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -8388,18 +8388,18 @@
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
-          "Mì Quảng support cleanup on 2026-05-31: demoted from headline food-save posture after Mì Quảng Sứa Hồng Vân added a stronger stronger mì Quảng page."
+          "Mì Quảng cleanup on 2026-05-31: moved away from headline food-save posture after Mì Quảng Sứa Hồng Vân became the more distinctive mì Quảng page."
         ]
       },
       "score": {
         "value": 27,
         "max": 30,
-        "reason": "Support-listing pass: Dung remains useful for counter ordering and route flexibility, but should not lead over the stronger stronger mì Quảng pages."
+        "reason": "Listing pass: Dung remains useful for counter ordering and route flexibility, but should not lead over the more distinctive mì Quảng pages."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
         "Production intake source notes: Local food source.",
-        "Support cleanup note: keep for browse, route, and simple counter ordering; do not treat as a headline foodie save while stronger stronger mì Quảng pages exist."
+        "Cleanup note: keep for browse, route, and simple counter ordering; do not treat as a headline food save while more distinctive mì Quảng pages exist."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -8596,7 +8596,7 @@
         {
           "id": "room-led-coffee-break",
           "heading": "Room-Led Coffee Break",
-          "body": "Keep it to a short cafe break where the room matters as much as the drink. A simple order and a bright table can carry the visit."
+          "body": "Keep it to a short cafe break where the room matters as much as the drink. A simple order and a bright table do the job."
         },
         {
           "id": "keep-the-visit-light",
@@ -8662,7 +8662,7 @@
       "city": "Đà Nẵng",
       "category": "Attraction",
       "pronunciation": "lang nghe nuoc mam nam o",
-      "travelerMoment": "Nam O is more than a shopping stop. The draw is salty air, barrels, anchovies, and why Nam O is tied to fish sauce.",
+      "travelerMoment": "Nam O is more than a shopping stop: salty air, barrels, anchovies, and the coastal work behind fish sauce.",
       "storySpine": "Nam O fish sauce village connects Da Nang's coast, local craft, and a flavor that sits behind many Vietnamese meals.",
       "intro": {
         "heading": "Fish Sauce Starts On The Coast",
@@ -8698,7 +8698,7 @@
         {
           "id": "barrels-first-products-second",
           "heading": "Barrels First, Products Second",
-          "body": "Look for the making before the shopping. The draw is the slow change from fish and salt into sauce, and the village makes that transformation feel physical."
+          "body": "Look for the making before the shopping. The village makes the slow change from fish and salt into sauce feel physical."
         },
         {
           "id": "the-smell-is-part-of-the-visit",
@@ -8708,7 +8708,7 @@
         {
           "id": "craft-before-shopping",
           "heading": "Craft Before Shopping",
-          "body": "Choose it for fish sauce as a coastal craft. Notice barrels, salt, anchovies, and village lanes before thinking about bottles."
+          "body": "Read it as fish sauce made by the coast. Notice barrels, salt, anchovies, and village lanes before thinking about bottles."
         },
         {
           "id": "flavor-beside-shoreline",
@@ -8930,7 +8930,7 @@
         {
           "id": "wrap-slowly",
           "heading": "Wrap Slowly",
-          "body": "Choose it when the group can slow down and assemble the bite: skewer, herbs, rice paper, sauce, and heat. Peanut or pork questions should come early."
+          "body": "Order it when the group can slow down and assemble the bite: skewer, herbs, rice paper, sauce, and heat. Peanut or pork questions should come early."
         },
         {
           "id": "one-order-is-enough-to-learn",
@@ -9067,7 +9067,7 @@
           "label": "La Maison 1888",
           "relationship": "recognized dinner comparison",
           "displaySubtitle": "A special-occasion meal when dinner should become the night.",
-          "reason": "La Maison 1888 is the stronger high-end dinner comparison for Nen.",
+          "reason": "La Maison 1888 is the clearer high-end dinner comparison for Nen.",
           "status": "render"
         }
       ],
@@ -9832,7 +9832,7 @@
         {
           "id": "before-the-heat-hardens",
           "heading": "Before The Heat Hardens",
-          "body": "The beach is easiest early, when a short walk can carry the visit. Let the name mean light coastal time instead of a whole day on the sand."
+          "body": "The beach is easiest early, when a short walk may be all you need. Let the name mean light coastal time instead of a whole day on the sand."
         },
         {
           "id": "shade-is-part-of-the-plan",
@@ -10059,7 +10059,7 @@
         {
           "id": "loose-blocks-better-route",
           "heading": "Loose Blocks, Better Route",
-          "body": "One nearby cafe, beach access point, or dinner plan can carry the area. For a broader night out, another neighborhood may be clearer."
+          "body": "Start with one nearby cafe, beach access point, or dinner plan. For a broader night out, another neighborhood may be clearer."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10274,9 +10274,9 @@
           "body": "Egg coffee, salt coffee, tiramisu, or cheesecake gives the stop more texture than a generic iced drink."
         },
         {
-          "id": "support-not-headline",
-          "heading": "Support, Not Headline",
-          "body": "Keep it as a nice cafe break around downtown plans. Da Nang’s lead food paths still belong to mì Quảng, seafood, and local coffee rooms."
+          "id": "small-cafe-break",
+          "heading": "A Small Cafe Break",
+          "body": "Keep it as a gentle cafe stop around downtown plans. Da Nang’s deeper food memories still come from mì Quảng, seafood, and local coffee rooms."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10286,7 +10286,7 @@
           "label": "Cà phê Long",
           "relationship": "deemphasized cafe contrast",
           "displaySubtitle": "A local coffee counter with more Da Nang specificity than the retro-cafe mood.",
-          "reason": "Long Coffee is the more local coffee reference; Reply 1988 remains support/deemphasize.",
+          "reason": "Long Coffee gives Reply 1988 a more local Da Nang coffee contrast.",
           "status": "render"
         }
       ],
@@ -10399,7 +10399,7 @@
           "catalogId": "viet-family-city-danang-place-43-factory",
           "label": "43 Factory Coffee Roaster",
           "relationship": "specialty-cafe comparison",
-          "displaySubtitle": "A stronger specialty-coffee stop where the drink itself carries the visit.",
+          "displaySubtitle": "A specialty-coffee stop where the drink itself leads the visit.",
           "reason": "43 Factory is the clearer specialty-coffee reference for Six On Six.",
           "status": "render"
         }
@@ -11053,7 +11053,7 @@
         {
           "id": "pace-matters-more-than-speed",
           "heading": "Pace Matters More Than Speed",
-          "body": "The draw is pace: staff attention, table spacing, and a dinner that feels different from the beach-city default."
+          "body": "Come for a slower dinner: staff attention, table spacing, and a room that feels different from the beach-city default."
         }
       ],
       "mentionedHereCandidates": [],
@@ -11062,7 +11062,7 @@
           "catalogId": "viet-family-city-danang-place-nen",
           "label": "Nén Đà Nẵng",
           "relationship": "planned-dinner comparison",
-          "displaySubtitle": "An ingredient-led Vietnamese dinner when the evening should feel more ingredient-led.",
+          "displaySubtitle": "A Vietnamese dinner built around local ingredients when the evening should feel more rooted in Da Nang.",
           "reason": "Nen gives The Temptation a planned-dinner comparison: Vietnamese ingredient focus versus French-leaning pace.",
           "status": "render"
         }
@@ -11486,7 +11486,7 @@
         {
           "id": "angle-before-crossing",
           "heading": "Angle Before Crossing",
-          "body": "The bridge shows clearly from a river angle. Decide whether you want the silhouette, the traffic movement, or a quick crossing, then keep the visit simple."
+          "body": "The bridge shows clearly from a river angle. Pick the silhouette, the traffic movement, or a quick crossing, then keep the stop simple."
         },
         {
           "id": "late-light-on-the-lines",
@@ -11733,7 +11733,7 @@
           "label": "Lotte Mart Đà Nẵng",
           "relationship": "air-conditioned errand comparison",
           "displaySubtitle": "Another practical indoor stop when snacks, supplies, and cool air matter more than food culture.",
-          "reason": "Lotte Mart is a better support/logistics comparison for Vincom than a local wet market.",
+          "reason": "Lotte Mart is the clearer logistics comparison for Vincom than a local wet market.",
           "status": "render"
         }
       ],
@@ -11950,8 +11950,8 @@
           "catalogId": "viet-family-city-danang-place-43-factory",
           "label": "43 Factory Coffee Roaster",
           "relationship": "coffee-reference comparison",
-          "displaySubtitle": "A stronger coffee-first stop where the drink matters more than the room.",
-          "reason": "Related because: A stronger coffee-first stop where the drink matters more than the room.",
+          "displaySubtitle": "A coffee-first stop where the drink matters more than the room.",
+          "reason": "Related because 43 Factory is a coffee-first stop where the drink matters more than the room.",
           "status": "render"
         }
       ],

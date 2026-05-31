@@ -247,7 +247,7 @@ Rendered proof after this repair batch:
 
 Remaining honest risks:
 
-- The global V2.2 rendered proof gate is still open: `276` pages still need current screenshots unless the gate is explicitly amended.
+- The global V2.2 rendered proof gate is still open: `236` pages still need current screenshots unless the gate is explicitly amended.
 - The cross-taxonomy auditor found large repeated phrase-card sets by taxonomy. Some repetition is expected for common travel actions, but high-traffic pages still need human-rendered review for phrase-card fit.
 - Runtime taxonomy mismatches from the subagent hard-block list were repaired and rendered in the sample above. Related grouping should still be watched during the remaining screenshot pass, because older legacy metadata can still leak into shelves/search even when visible copy is strong.
 
@@ -293,3 +293,24 @@ Rendered proof after the ninth batch:
 - The sample includes the user-flagged `city-hcmc-place-banh-xeo-46a`, food glossary fixes, culture/performance phrase-card fixes, airport/rail/metro/river/street mobility fixes, and the retargeted Hanoi street related-card cluster.
 - Combined latest-current proof is now `244` unique pages, `732` latest screenshots, and `0` current failures across maintained result files.
 - Remaining global proof gap: `276` pages still need current rendered screenshots unless the gate is explicitly amended.
+
+## Tenth Proof / Humanization Batch, 2026-06-01
+
+This batch continued the literal rendered proof gate and treated passing screenshots as necessary but not sufficient.
+
+Rendered proof:
+
+- Added `missing-pages-proof-001-results.jsonl`: `40` previously unrendered pages, `120` screenshots, `0` failures.
+- Scope: remaining Đà Nẵng museum, landmark, attraction, arrival, beach, restaurant, cafe, dish, neighborhood, market, street, and nature pages, plus a small Hanoi food run.
+
+Human readability review:
+
+- The rendered pages passed structurally, but text review still found stiff source patterns: `Choose it`, `carry the visit`, `support`, `stronger`, `are enough`, and a few abstract `draw` or `whether` lines.
+- Repaired the affected authored V2.2 source pages, then regenerated handwritten copy, native resources, phrase catalog, and SQLite.
+- Current validators pass again: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Added `missing-pages-humanized-rerun-001-results.jsonl`: `15` edited pages, `45` screenshots, `0` failures.
+
+Updated proof state:
+
+- Combined latest-current proof is now `284` unique pages, `852` screenshots, and `0` current failures.
+- Remaining global proof gap: `236` pages still need current rendered screenshots unless the gate is explicitly amended.
