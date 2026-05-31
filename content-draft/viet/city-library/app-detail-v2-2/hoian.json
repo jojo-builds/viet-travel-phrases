@@ -86,7 +86,7 @@
           "label": "Biển Cửa Đại",
           "relationship": "coastal-recovery contrast",
           "displaySubtitle": "A quieter coast edge when Hội An’s old streets need salt air, sand, and a simpler beach plan.",
-          "reason": "Biển Cửa Đại now has an authored related-card role for Biển An Bàng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A quieter coast edge when Hội An’s old streets need salt air, sand, and a simpler beach plan.",
           "status": "render"
         }
       ],
@@ -198,7 +198,7 @@
           "label": "Hội quán Quảng Đông",
           "relationship": "assembly-hall contrast",
           "displaySubtitle": "A gate-and-courtyard stop for the Chinese community side of Hội An’s trading-port memory.",
-          "reason": "Hội quán Quảng Đông now has an authored related-card role for Cầu An Hội, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A gate-and-courtyard stop for the Chinese community side of Hội An’s trading-port memory.",
           "status": "render"
         }
       ],
@@ -310,7 +310,7 @@
           "label": "Phố cổ Hội An",
           "relationship": "old-town core",
           "displaySubtitle": "The yellow-house, assembly-hall, river-walk core that gives Hội An its first mental picture.",
-          "reason": "Phố cổ Hội An now has an authored related-card role for Đảo An Hội, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The yellow-house, assembly-hall, river-walk core that gives Hội An its first mental picture.",
           "status": "render"
         }
       ],
@@ -422,7 +422,7 @@
           "label": "Đảo An Hội",
           "relationship": "evening-island edge",
           "displaySubtitle": "The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
-          "reason": "Đảo An Hội now has an authored related-card role for Phố cổ Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
           "status": "render"
         }
       ],
@@ -645,7 +645,7 @@
           "label": "Bến tàu Cửa Đại",
           "relationship": "island-boat handoff",
           "displaySubtitle": "The coastal boarding edge when the day turns from road to open water and island routes.",
-          "reason": "Bến tàu Cửa Đại now has an authored related-card role for Bến thuyền Bạch Đằng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The coastal boarding edge when the day turns from road to open water and island routes.",
           "status": "render"
         }
       ],
@@ -757,7 +757,7 @@
           "label": "Phố Nguyễn Phúc Chu",
           "relationship": "an-hoi-night spine",
           "displaySubtitle": "The An Hội night street for lantern-market movement, signs, river crossings, and meeting points.",
-          "reason": "Phố Nguyễn Phúc Chu now has an authored related-card role for Đường Bạch Đằng ở Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The An Hội night street for lantern-market movement, signs, river crossings, and meeting points.",
           "status": "render"
         }
       ],
@@ -1177,7 +1177,7 @@
       "storySpine": "Phượng works because the meal is simple and specific: crisp bread, visible fillings, sauce, heat, and a takeaway rhythm that folds into an old-town walk.",
       "intro": {
         "heading": "The Quick Hội An Bánh Mì Shop",
-        "body": "Bánh Mì Phượng is the well-known Hội An sandwich shop for quick bánh mì: crisp bread, visible fillings, herbs, sauce, chili, and a takeaway rhythm that fits an old-town walk."
+        "body": "Bánh Mì Phượng is the famous Hội An sandwich shop for crisp bread, visible fillings, pâté, herbs, sauce, chili, and a takeaway rhythm that folds back into an old-town walk."
       },
       "usefulPhraseCards": [
         {
@@ -1474,7 +1474,7 @@
           "label": "Cù Lao Chàm",
           "relationship": "offshore-nature day",
           "displaySubtitle": "A wider horizon beyond old streets: island hills, working boats, open water, and weather.",
-          "reason": "Cù Lao Chàm now has an authored related-card role for Rừng dừa Bảy Mẫu, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A wider horizon beyond old streets: island hills, working boats, open water, and weather.",
           "status": "render"
         }
       ],
@@ -1699,7 +1699,7 @@
           "label": "Ga Đà Nẵng đi Hội An",
           "relationship": "train-arrival transfer",
           "displaySubtitle": "The Da Nang station handoff when bags, platform doors, and the road into Hội An shape arrival.",
-          "reason": "Ga Đà Nẵng đi Hội An now has an authored related-card role for Bến xe Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The Da Nang station handoff when bags, platform doors, and the road into Hội An shape arrival.",
           "status": "render"
         }
       ],
@@ -1811,7 +1811,7 @@
           "label": "Đảo An Hội",
           "relationship": "evening-island edge",
           "displaySubtitle": "The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
-          "reason": "Đảo An Hội now has an authored related-card role for Cẩm Châu, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
           "status": "render"
         }
       ],
@@ -1923,7 +1923,7 @@
           "label": "Làng dừa Cẩm Thanh",
           "relationship": "water-village context",
           "displaySubtitle": "A coconut-waterway village for palms, docks, round boats, and slower routes behind the photo.",
-          "reason": "Làng dừa Cẩm Thanh now has an authored related-card role for Cẩm Kim, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A coconut-waterway village for palms, docks, round boats, and slower routes behind the photo.",
           "status": "render"
         }
       ],
@@ -2035,7 +2035,7 @@
           "label": "Đảo An Hội",
           "relationship": "evening-island edge",
           "displaySubtitle": "The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
-          "reason": "Đảo An Hội now has an authored related-card role for Cẩm Nam, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
           "status": "render"
         }
       ],
@@ -2147,7 +2147,7 @@
           "label": "Đảo An Hội",
           "relationship": "evening-island edge",
           "displaySubtitle": "The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
-          "reason": "Đảo An Hội now has an authored related-card role for Cẩm Phô, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
           "status": "render"
         }
       ],
@@ -2259,7 +2259,7 @@
           "label": "Đảo An Hội",
           "relationship": "evening-island edge",
           "displaySubtitle": "The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
-          "reason": "Đảo An Hội now has an authored related-card role for Cẩm Thanh, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
           "status": "render"
         }
       ],
@@ -2371,7 +2371,7 @@
           "label": "Quầy vé phố cổ Hội An",
           "relationship": "heritage-ticket threshold",
           "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Thuyền thúng Cẩm Thanh, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
           "status": "render"
         }
       ],
@@ -2483,7 +2483,7 @@
           "label": "Cẩm Kim",
           "relationship": "river-village contrast",
           "displaySubtitle": "A slower island road with fields, small homes, craft memory, and distance from the dense old streets.",
-          "reason": "Cẩm Kim now has an authored related-card role for Làng dừa Cẩm Thanh, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A slower island road with fields, small homes, craft memory, and distance from the dense old streets.",
           "status": "render"
         }
       ],
@@ -2595,7 +2595,7 @@
           "label": "Cầu An Hội",
           "relationship": "river-crossing hinge",
           "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Cầu An Hội now has an authored related-card role for Hội quán Quảng Đông, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
           "status": "render"
         }
       ],
@@ -3092,7 +3092,7 @@
           "label": "Rừng dừa Bảy Mẫu",
           "relationship": "basket-boat wetland",
           "displaySubtitle": "A green water-coconut route with palm shade, basket boats, channels, and village context.",
-          "reason": "Rừng dừa Bảy Mẫu now has an authored related-card role for Cù Lao Chàm, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A green water-coconut route with palm shade, basket boats, channels, and village context.",
           "status": "render"
         }
       ],
@@ -3204,7 +3204,7 @@
           "label": "Quầy vé phố cổ Hội An",
           "relationship": "heritage-ticket threshold",
           "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Tàu đi Cù Lao Chàm, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
           "status": "render"
         }
       ],
@@ -3429,7 +3429,7 @@
           "label": "Cầu An Hội",
           "relationship": "river-crossing hinge",
           "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Cầu An Hội now has an authored related-card role for Chùa Chúc Thánh, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
           "status": "render"
         }
       ],
@@ -3664,7 +3664,7 @@
           "label": "Cơm Gà Bà Buội",
           "relationship": "dish-to-named chicken-rice counter",
           "displaySubtitle": "A Phan Châu Trinh chicken-rice stop for yellow rice, shredded chicken, herbs, papaya, soup, and sauce.",
-          "reason": "Ba Buoi makes the general com ga page actionable as a named Hoi An save.",
+          "reason": "Editorial relationship: A Phan Châu Trinh chicken-rice stop for yellow rice, shredded chicken, herbs, papaya, soup, and sauce.",
           "status": "render"
         },
         {
@@ -3672,7 +3672,7 @@
           "label": "Bánh mì Phượng",
           "relationship": "quick-sandwich shop",
           "displaySubtitle": "The famous quick-service Hội An bánh mì shop when bread, fillings, and chili should lead.",
-          "reason": "Bánh mì Phượng now has an authored related-card role for Cơm gà Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The famous quick-service Hội An bánh mì shop when bread, fillings, and chili should lead.",
           "status": "render"
         }
       ],
@@ -3929,7 +3929,7 @@
           "label": "Quầy vé phố cổ Hội An",
           "relationship": "heritage-ticket threshold",
           "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Lớp học nấu ăn Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
           "status": "render"
         }
       ],
@@ -4041,7 +4041,7 @@
           "label": "Quầy vé phố cổ Hội An",
           "relationship": "heritage-ticket threshold",
           "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Đạp xe vùng quê Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
           "status": "render"
         }
       ],
@@ -4153,7 +4153,7 @@
           "label": "Biển An Bàng",
           "relationship": "beach-day contrast",
           "displaySubtitle": "The coastal break for sand, basket boats, seafood shacks, and sea air after old-town crowds.",
-          "reason": "Biển An Bàng now has an authored related-card role for Biển Cửa Đại, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The coastal break for sand, basket boats, seafood shacks, and sea air after old-town crowds.",
           "status": "render"
         }
       ],
@@ -4265,7 +4265,7 @@
           "label": "Rừng dừa Bảy Mẫu",
           "relationship": "basket-boat wetland",
           "displaySubtitle": "A green water-coconut route with palm shade, basket boats, channels, and village context.",
-          "reason": "Rừng dừa Bảy Mẫu now has an authored related-card role for Cửa Đại, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A green water-coconut route with palm shade, basket boats, channels, and village context.",
           "status": "render"
         }
       ],
@@ -4377,7 +4377,7 @@
           "label": "Bến thuyền Bạch Đằng",
           "relationship": "river-boat handoff",
           "displaySubtitle": "The river steps where walking turns into boat direction, boarding choices, and water movement.",
-          "reason": "Bến thuyền Bạch Đằng now has an authored related-card role for Bến tàu Cửa Đại, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The river steps where walking turns into boat direction, boarding choices, and water movement.",
           "status": "render"
         }
       ],
@@ -4489,7 +4489,7 @@
           "label": "Cầu An Hội",
           "relationship": "river-crossing hinge",
           "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Cầu An Hội now has an authored related-card role for Nhà cổ Đức An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
           "status": "render"
         }
       ],
@@ -4548,27 +4548,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Điểm đón ở đâu?",
-          "en": "Where is the pickup point?",
-          "intent": "directions-pickup-point",
-          "phraseId": "directions-8",
-          "audioId": "directions-8",
+          "vi": "Cho tôi một cà phê sữa đá",
+          "en": "One iced milk coffee please",
+          "intent": "food-coffee-milk",
+          "phraseId": "coffee-1",
+          "audioId": "coffee-1",
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể mua vé ở đâu?",
-          "en": "Where can I buy a ticket?",
-          "intent": "v900-tran-where-can-i-buy-a-ticket",
-          "phraseId": "v900-tran-where-can-i-buy-a-ticket",
-          "audioId": "v900-tran-where-can-i-buy-a-ticket",
+          "vi": "Làm ơn bớt đường đi",
+          "en": "Less sugar, please",
+          "intent": "v900-food-drin-less-sugar-please",
+          "phraseId": "v900-food-drin-less-sugar-please",
+          "audioId": "v900-food-drin-less-sugar-please",
           "status": "mapped"
         },
         {
-          "vi": "Dừng ở đây được rồi",
-          "en": "You can stop here",
-          "intent": "transport-stop-here",
-          "phraseId": "taxi-3",
-          "audioId": "taxi-3",
+          "vi": "Nhà vệ sinh ở đâu?",
+          "en": "Where is the bathroom?",
+          "intent": "bathroom-where",
+          "phraseId": "bath-1",
+          "audioId": "bath-1",
           "status": "mapped"
         }
       ],
@@ -4824,7 +4824,7 @@
           "label": "Bảo tàng Lịch sử - Văn hóa Hội An",
           "relationship": "port-history room",
           "displaySubtitle": "A compact indoor stop for ceramics, trade memory, and context behind the yellow streets.",
-          "reason": "Bảo tàng Lịch sử - Văn hóa Hội An now has an authored related-card role for Bảo tàng Văn hóa Dân gian, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact indoor stop for ceramics, trade memory, and context behind the yellow streets.",
           "status": "render"
         }
       ],
@@ -4936,7 +4936,7 @@
           "label": "Biển An Bàng",
           "relationship": "beach-day contrast",
           "displaySubtitle": "The coastal break for sand, basket boats, seafood shacks, and sea air after old-town crowds.",
-          "reason": "Biển An Bàng now has an authored related-card role for Sân bay Đà Nẵng đi Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The coastal break for sand, basket boats, seafood shacks, and sea air after old-town crowds.",
           "status": "render"
         }
       ],
@@ -5048,7 +5048,7 @@
           "label": "Bến xe Hội An",
           "relationship": "onward-road handoff",
           "displaySubtitle": "The practical edge where lantern streets turn into route names, luggage, pickups, and onward roads.",
-          "reason": "Bến xe Hội An now has an authored related-card role for Ga Đà Nẵng đi Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The practical edge where lantern streets turn into route names, luggage, pickups, and onward roads.",
           "status": "render"
         }
       ],
@@ -5160,7 +5160,7 @@
           "label": "Cầu An Hội",
           "relationship": "river-crossing hinge",
           "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Cầu An Hội now has an authored related-card role for Hội quán Phúc Kiến, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
           "status": "render"
         }
       ],
@@ -5272,7 +5272,7 @@
           "label": "Cầu An Hội",
           "relationship": "river-crossing hinge",
           "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Cầu An Hội now has an authored related-card role for Hội quán Hải Nam, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
           "status": "render"
         }
       ],
@@ -5384,7 +5384,7 @@
           "label": "Quầy vé phố cổ Hội An",
           "relationship": "heritage-ticket threshold",
           "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Xưởng thủ công mỹ nghệ Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
           "status": "render"
         }
       ],
@@ -5496,7 +5496,7 @@
           "label": "Bảo tàng Văn hóa Dân gian",
           "relationship": "craft-memory room",
           "displaySubtitle": "An indoor old-town pause for lanterns, textiles, wood beams, and everyday craft memory.",
-          "reason": "Bảo tàng Văn hóa Dân gian now has an authored related-card role for Bảo tàng Lịch sử - Văn hóa Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An indoor old-town pause for lanterns, textiles, wood beams, and everyday craft memory.",
           "status": "render"
         }
       ],
@@ -5608,7 +5608,7 @@
           "label": "Sông Thu Bồn",
           "relationship": "larger-water spine",
           "displaySubtitle": "The broader river line behind Hội An’s port story, boats, bridges, reflections, and arrival.",
-          "reason": "Sông Thu Bồn now has an authored related-card role for Sông Hoài, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The broader river line behind Hội An’s port story, boats, bridges, reflections, and arrival.",
           "status": "render"
         }
       ],
@@ -5720,7 +5720,7 @@
           "label": "Cầu An Hội",
           "relationship": "river-crossing hinge",
           "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Cầu An Hội now has an authored related-card role for Chùa Cầu, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
           "status": "render"
         }
       ],
@@ -5832,7 +5832,7 @@
           "label": "Cẩm Kim",
           "relationship": "river-village contrast",
           "displaySubtitle": "A slower island road with fields, small homes, craft memory, and distance from the dense old streets.",
-          "reason": "Cẩm Kim now has an authored related-card role for Làng mộc Kim Bồng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A slower island road with fields, small homes, craft memory, and distance from the dense old streets.",
           "status": "render"
         }
       ],
@@ -5944,7 +5944,7 @@
           "label": "Quầy vé phố cổ Hội An",
           "relationship": "heritage-ticket threshold",
           "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Thuyền hoa đăng Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
           "status": "render"
         }
       ],
@@ -6056,7 +6056,7 @@
           "label": "Quầy vé phố cổ Hội An",
           "relationship": "heritage-ticket threshold",
           "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Lớp làm lồng đèn Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
           "status": "render"
         }
       ],
@@ -6168,7 +6168,7 @@
           "label": "Quầy vé phố cổ Hội An",
           "relationship": "heritage-ticket threshold",
           "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Hoi An Lune Center, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
           "status": "render"
         }
       ],
@@ -6740,7 +6740,7 @@
           "label": "Quầy vé phố cổ Hội An",
           "relationship": "heritage-ticket threshold",
           "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Đảo Ký ức Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
           "status": "render"
         }
       ],
@@ -7078,7 +7078,7 @@
           "label": "Đảo An Hội",
           "relationship": "evening-island edge",
           "displaySubtitle": "The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
-          "reason": "Đảo An Hội now has an authored related-card role for Phường Minh An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
           "status": "render"
         }
       ],
@@ -7133,7 +7133,7 @@
       "storySpine": "Morning Glory matters as an orientation restaurant inside the larger Hội An food story: it makes cao lầu, white rose dumplings, herbs, rice paper, and central-coast flavors easier to decode before smaller stops.",
       "intro": {
         "heading": "A First Dinner That Teaches The Menu",
-        "body": "Morning Glory Original is useful when Hội An food feels wide and the first dinner needs a clear table: cao lầu, white rose dumplings, bánh xèo, herbs, rice paper, and ingredient questions near the old streets."
+        "body": "Morning Glory Original is a first Hội An dinner table for clear central-coast dishes: cao lầu, white rose dumplings, bánh xèo, herbs, rice paper, and staff who can answer ingredient questions."
       },
       "usefulPhraseCards": [
         {
@@ -7170,7 +7170,7 @@
         {
           "id": "why-save-it",
           "heading": "Why It Works First",
-          "body": "This is the practical first-night table for groups, allergies, and first-timers who want central-coast dishes without decoding every small shop on arrival."
+          "body": "The room fits groups, allergies, and anyone still learning the menu. Hội An dishes feel easier here before smaller specialty stops."
         },
         {
           "id": "beyond-first-dinner",
@@ -7452,7 +7452,7 @@
           "label": "Bảo tàng Văn hóa Dân gian",
           "relationship": "craft-memory room",
           "displaySubtitle": "An indoor old-town pause for lanterns, textiles, wood beams, and everyday craft memory.",
-          "reason": "Bảo tàng Văn hóa Dân gian now has an authored related-card role for Bảo tàng Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An indoor old-town pause for lanterns, textiles, wood beams, and everyday craft memory.",
           "status": "render"
         }
       ],
@@ -7564,7 +7564,7 @@
           "label": "Cầu An Hội",
           "relationship": "river-crossing hinge",
           "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Cầu An Hội now has an authored related-card role for Thánh địa Mỹ Sơn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
           "status": "render"
         }
       ],
@@ -7789,7 +7789,7 @@
           "label": "Đường Bạch Đằng ở Hội An",
           "relationship": "riverfront-walking spine",
           "displaySubtitle": "The named riverside walk for boats, yellow buildings, crossings, and blue-hour reflections.",
-          "reason": "Đường Bạch Đằng ở Hội An now has an authored related-card role for Phố Nguyễn Phúc Chu, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The named riverside walk for boats, yellow buildings, crossings, and blue-hour reflections.",
           "status": "render"
         }
       ],
@@ -7901,7 +7901,7 @@
           "label": "Đường Bạch Đằng ở Hội An",
           "relationship": "riverfront-walking spine",
           "displaySubtitle": "The named riverside walk for boats, yellow buildings, crossings, and blue-hour reflections.",
-          "reason": "Đường Bạch Đằng ở Hội An now has an authored related-card role for Phố Nguyễn Thái Học, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The named riverside walk for boats, yellow buildings, crossings, and blue-hour reflections.",
           "status": "render"
         }
       ],
@@ -8352,7 +8352,7 @@
           "label": "Cầu An Hội",
           "relationship": "river-crossing hinge",
           "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Cầu An Hội now has an authored related-card role for Nhà cổ Phùng Hưng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
           "status": "render"
         }
       ],
@@ -8411,19 +8411,11 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cái này bao nhiêu?",
-          "en": "How much is this?",
-          "intent": "money-how-much",
-          "phraseId": "price-1",
-          "audioId": "price-1",
-          "status": "mapped"
-        },
-        {
-          "vi": "Bớt chút được không?",
-          "en": "Can you lower it a little?",
-          "intent": "money-lower-price",
-          "phraseId": "price-4",
-          "audioId": "price-4",
+          "vi": "Tôi chụp hình ở đây được không?",
+          "en": "Can I take photos here?",
+          "intent": "sight-photos",
+          "phraseId": "sight-3",
+          "audioId": "sight-3",
           "status": "mapped"
         },
         {
@@ -8432,6 +8424,14 @@
           "intent": "shopping-pay-where",
           "phraseId": "shop-5",
           "audioId": "shop-5",
+          "status": "mapped"
+        },
+        {
+          "vi": "Bạn có thể đóng gói nó để đi du lịch?",
+          "en": "Can you pack it for travel?",
+          "intent": "v900-shop-can-you-pack-it-for-travel",
+          "phraseId": "v900-shop-can-you-pack-it-for-travel",
+          "audioId": "v900-shop-can-you-pack-it-for-travel",
           "status": "mapped"
         }
       ],
@@ -8464,7 +8464,7 @@
           "label": "Quầy vé phố cổ Hội An",
           "relationship": "heritage-ticket threshold",
           "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Xưởng gốm Thanh Hà, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
           "status": "render"
         }
       ],
@@ -8576,7 +8576,7 @@
           "label": "Bảo tàng Văn hóa Dân gian",
           "relationship": "craft-memory room",
           "displaySubtitle": "An indoor old-town pause for lanterns, textiles, wood beams, and everyday craft memory.",
-          "reason": "Bảo tàng Văn hóa Dân gian now has an authored related-card role for Bảo tàng Di sản Vô giá, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An indoor old-town pause for lanterns, textiles, wood beams, and everyday craft memory.",
           "status": "render"
         }
       ],
@@ -8688,7 +8688,7 @@
           "label": "Cầu An Hội",
           "relationship": "river-crossing hinge",
           "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Cầu An Hội now has an authored related-card role for Miếu Quan Công, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
           "status": "render"
         }
       ],
@@ -8800,7 +8800,7 @@
           "label": "Cầu An Hội",
           "relationship": "river-crossing hinge",
           "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Cầu An Hội now has an authored related-card role for Nhà cổ Quân Thắng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
           "status": "render"
         }
       ],
@@ -9025,7 +9025,7 @@
           "label": "Biển An Bàng",
           "relationship": "beach-day contrast",
           "displaySubtitle": "The coastal break for sand, basket boats, seafood shacks, and sea air after old-town crowds.",
-          "reason": "Biển An Bàng now has an authored related-card role for Reaching Out Arts & Crafts, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The coastal break for sand, basket boats, seafood shacks, and sea air after old-town crowds.",
           "status": "render"
         }
       ],
@@ -9137,7 +9137,7 @@
           "label": "Rừng dừa Bảy Mẫu",
           "relationship": "basket-boat wetland",
           "displaySubtitle": "A green water-coconut route with palm shade, basket boats, channels, and village context.",
-          "reason": "Rừng dừa Bảy Mẫu now has an authored related-card role for Cánh đồng Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A green water-coconut route with palm shade, basket boats, channels, and village context.",
           "status": "render"
         }
       ],
@@ -9475,7 +9475,7 @@
           "label": "Bảo tàng Văn hóa Dân gian",
           "relationship": "craft-memory room",
           "displaySubtitle": "An indoor old-town pause for lanterns, textiles, wood beams, and everyday craft memory.",
-          "reason": "Bảo tàng Văn hóa Dân gian now has an authored related-card role for Bảo tàng Văn hóa Sa Huỳnh, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An indoor old-town pause for lanterns, textiles, wood beams, and everyday craft memory.",
           "status": "render"
         }
       ],
@@ -9535,19 +9535,19 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cái này bao nhiêu?",
-          "en": "How much is this?",
-          "intent": "money-how-much",
-          "phraseId": "price-1",
-          "audioId": "price-1",
+          "vi": "Tôi chụp hình ở đây được không?",
+          "en": "Can I take photos here?",
+          "intent": "sight-photos",
+          "phraseId": "sight-3",
+          "audioId": "sight-3",
           "status": "mapped"
         },
         {
-          "vi": "Bớt chút được không?",
-          "en": "Can you lower it a little?",
-          "intent": "money-lower-price",
-          "phraseId": "price-4",
-          "audioId": "price-4",
+          "vi": "Tôi chỉ xem thôi",
+          "en": "I’m just looking",
+          "intent": "shopping-just-looking",
+          "phraseId": "shop-4",
+          "audioId": "shop-4",
           "status": "mapped"
         },
         {
@@ -9761,27 +9761,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cái này bao nhiêu?",
-          "en": "How much is this?",
-          "intent": "money-how-much",
-          "phraseId": "price-1",
-          "audioId": "price-1",
+          "vi": "Tôi thử cái này được không?",
+          "en": "Can I try this on?",
+          "intent": "shopping-try-on",
+          "phraseId": "shop-3",
+          "audioId": "shop-3",
           "status": "mapped"
         },
         {
-          "vi": "Bớt chút được không?",
-          "en": "Can you lower it a little?",
-          "intent": "money-lower-price",
-          "phraseId": "price-4",
-          "audioId": "price-4",
+          "vi": "Bạn có kích thước nhỏ hơn không?",
+          "en": "Do you have a smaller size?",
+          "intent": "v900-shop-do-you-have-a-smaller-size",
+          "phraseId": "v900-shop-do-you-have-a-smaller-size",
+          "audioId": "v900-shop-do-you-have-a-smaller-size",
           "status": "mapped"
         },
         {
-          "vi": "Trả ở đâu?",
-          "en": "Where do I pay?",
-          "intent": "shopping-pay-where",
-          "phraseId": "shop-5",
-          "audioId": "shop-5",
+          "vi": "Bạn có kích thước lớn hơn không?",
+          "en": "Do you have a larger size?",
+          "intent": "v900-shop-do-you-have-a-larger-size",
+          "phraseId": "v900-shop-do-you-have-a-larger-size",
+          "audioId": "v900-shop-do-you-have-a-larger-size",
           "status": "mapped"
         }
       ],
@@ -9927,7 +9927,7 @@
           "label": "Cầu An Hội",
           "relationship": "river-crossing hinge",
           "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Cầu An Hội now has an authored related-card role for Nhà cổ Tấn Ký, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
           "status": "render"
         }
       ],
@@ -10039,7 +10039,7 @@
           "label": "Cẩm Kim",
           "relationship": "river-village contrast",
           "displaySubtitle": "A slower island road with fields, small homes, craft memory, and distance from the dense old streets.",
-          "reason": "Cẩm Kim now has an authored related-card role for Làng gốm Thanh Hà, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A slower island road with fields, small homes, craft memory, and distance from the dense old streets.",
           "status": "render"
         }
       ],
@@ -10141,7 +10141,7 @@
         {
           "id": "fieldside-setting-leads",
           "heading": "Fieldside View Leads",
-          "body": "Do not build the plan around one dish. Remember the field-side view, open air, and slower meal."
+          "body": "Build the evening around rice-field air, sunset light, open space, and a slower table after the old-town crush. The food supports the setting instead of carrying the whole plan alone."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10264,7 +10264,7 @@
           "label": "Sông Hoài",
           "relationship": "old-town waterline",
           "displaySubtitle": "The lantern-waterline that organizes bridges, boat lights, reflections, and the evening route.",
-          "reason": "Sông Hoài now has an authored related-card role for Sông Thu Bồn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The lantern-waterline that organizes bridges, boat lights, reflections, and the evening route.",
           "status": "render"
         }
       ],
@@ -10376,7 +10376,7 @@
           "label": "Cẩm Kim",
           "relationship": "river-village contrast",
           "displaySubtitle": "A slower island road with fields, small homes, craft memory, and distance from the dense old streets.",
-          "reason": "Cẩm Kim now has an authored related-card role for Làng Trà Nhiêu, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A slower island road with fields, small homes, craft memory, and distance from the dense old streets.",
           "status": "render"
         }
       ],
@@ -10488,7 +10488,7 @@
           "label": "Cẩm Kim",
           "relationship": "river-village contrast",
           "displaySubtitle": "A slower island road with fields, small homes, craft memory, and distance from the dense old streets.",
-          "reason": "Cẩm Kim now has an authored related-card role for Làng rau Trà Quế, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A slower island road with fields, small homes, craft memory, and distance from the dense old streets.",
           "status": "render"
         }
       ],
@@ -10547,27 +10547,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cái này bao nhiêu?",
-          "en": "How much is this?",
-          "intent": "money-how-much",
-          "phraseId": "price-1",
-          "audioId": "price-1",
+          "vi": "Vé bao nhiêu?",
+          "en": "How much is the ticket?",
+          "intent": "sight-ticket",
+          "phraseId": "sight-1",
+          "audioId": "sight-1",
           "status": "mapped"
         },
         {
-          "vi": "Bớt chút được không?",
-          "en": "Can you lower it a little?",
-          "intent": "money-lower-price",
-          "phraseId": "price-4",
-          "audioId": "price-4",
+          "vi": "Tôi chụp hình ở đây được không?",
+          "en": "Can I take photos here?",
+          "intent": "sight-photos",
+          "phraseId": "sight-3",
+          "audioId": "sight-3",
           "status": "mapped"
         },
         {
-          "vi": "Trả ở đâu?",
-          "en": "Where do I pay?",
-          "intent": "shopping-pay-where",
-          "phraseId": "shop-5",
-          "audioId": "shop-5",
+          "vi": "Bắt đầu ở đâu?",
+          "en": "Where do we start?",
+          "intent": "sight-start",
+          "phraseId": "sight-2",
+          "audioId": "sight-2",
           "status": "mapped"
         }
       ],
@@ -10600,7 +10600,7 @@
           "label": "Bảo tàng Văn hóa Dân gian",
           "relationship": "craft-memory room",
           "displaySubtitle": "An indoor old-town pause for lanterns, textiles, wood beams, and everyday craft memory.",
-          "reason": "Bảo tàng Văn hóa Dân gian now has an authored related-card role for Bảo tàng Gốm sứ Mậu dịch, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An indoor old-town pause for lanterns, textiles, wood beams, and everyday craft memory.",
           "status": "render"
         }
       ],
@@ -10712,7 +10712,7 @@
           "label": "Quầy vé phố cổ Hội An",
           "relationship": "heritage-ticket threshold",
           "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Quầy vé phố cổ Hội An now has an authored related-card role for Nhà biểu diễn nghệ thuật cổ truyền Hội An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
           "status": "render"
         }
       ],
@@ -10824,7 +10824,7 @@
           "label": "Đường Bạch Đằng ở Hội An",
           "relationship": "riverfront-walking spine",
           "displaySubtitle": "The named riverside walk for boats, yellow buildings, crossings, and blue-hour reflections.",
-          "reason": "Đường Bạch Đằng ở Hội An now has an authored related-card role for Phố Trần Phú, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The named riverside walk for boats, yellow buildings, crossings, and blue-hour reflections.",
           "status": "render"
         }
       ],
@@ -10936,7 +10936,7 @@
           "label": "Cầu An Hội",
           "relationship": "river-crossing hinge",
           "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Cầu An Hội now has an authored related-card role for Hội quán Triều Châu, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
           "status": "render"
         }
       ],
@@ -11100,11 +11100,11 @@
       "city": "Hội An",
       "category": "Restaurant",
       "pronunciation": "vys market restaurant",
-      "travelerMoment": "Vy's Market Restaurant turns Hội An food variety into an organized indoor food-hall scene, echoing market browsing without asking the whole group to chase every stall.",
+      "travelerMoment": "Vys Market Restaurant turns Hội An food variety into an organized indoor food-hall scene: food stations, steam, dumplings, cao lầu, herbs, bowls, and a table the whole group can read.",
       "storySpine": "Vy's Market gives visitors a lower-friction way to explore Hội An flavors without turning dinner into a full market crawl.",
       "intro": {
         "heading": "A Food Hall For First Bearings",
-        "body": "Vys Market Restaurant gives Hội An food a controlled first lap: food stations, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much."
+        "body": "Vys Market Restaurant turns Hội An food into an organized indoor browse: food stations, steam, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much."
       },
       "usefulPhraseCards": [
         {

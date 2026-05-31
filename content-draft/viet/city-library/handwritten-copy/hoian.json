@@ -458,7 +458,7 @@
         {
           "id": "at-glance",
           "title": "The Quick Hội An Bánh Mì Shop",
-          "body": "Bánh Mì Phượng is the well-known Hội An sandwich shop for quick bánh mì: crisp bread, visible fillings, herbs, sauce, chili, and a takeaway rhythm that fits an old-town walk."
+          "body": "Bánh Mì Phượng is the famous Hội An sandwich shop for crisp bread, visible fillings, pâté, herbs, sauce, chili, and a takeaway rhythm that folds back into an old-town walk."
         },
         {
           "id": "quick-say",
@@ -1765,9 +1765,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "directions-8",
-            "v900-tran-where-can-i-buy-a-ticket",
-            "taxi-3"
+            "coffee-1",
+            "v900-food-drin-less-sugar-please",
+            "bath-1"
           ]
         },
         {
@@ -2783,7 +2783,7 @@
         {
           "id": "at-glance",
           "title": "A First Dinner That Teaches The Menu",
-          "body": "Morning Glory Original is useful when Hội An food feels wide and the first dinner needs a clear table: cao lầu, white rose dumplings, bánh xèo, herbs, rice paper, and ingredient questions near the old streets."
+          "body": "Morning Glory Original is a first Hội An dinner table for clear central-coast dishes: cao lầu, white rose dumplings, bánh xèo, herbs, rice paper, and staff who can answer ingredient questions."
         },
         {
           "id": "quick-say",
@@ -2803,7 +2803,7 @@
         {
           "id": "use-it-with",
           "title": "Why It Works First",
-          "body": "This is the practical first-night table for groups, allergies, and first-timers who want central-coast dishes without decoding every small shop on arrival."
+          "body": "The room fits groups, allergies, and anyone still learning the menu. Hội An dishes feel easier here before smaller specialty stops."
         },
         {
           "id": "when-to-use",
@@ -3285,9 +3285,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "price-1",
-            "price-4",
-            "shop-5"
+            "sight-3",
+            "shop-5",
+            "v900-shop-can-you-pack-it-for-travel"
           ]
         },
         {
@@ -3735,8 +3735,8 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "price-1",
-            "price-4",
+            "sight-3",
+            "shop-4",
             "shop-5"
           ]
         },
@@ -3825,9 +3825,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "price-1",
-            "price-4",
-            "shop-5"
+            "shop-3",
+            "v900-shop-do-you-have-a-smaller-size",
+            "v900-shop-do-you-have-a-larger-size"
           ]
         },
         {
@@ -3947,7 +3947,7 @@
       "pageID": "city-hoian-place-the-field",
       "summary": "The Field Hội An ties dinner to the lowland edge of town, where rice-field light, open air, and a slower table become part of the route.",
       "context": "The Field Hội An ties dinner to the lowland edge of town, where rice-field light, open air, and a slower table become part of the route.",
-      "tip": "Do not build the plan around one dish. Remember the field-side view, open air, and slower meal.",
+      "tip": "Build the evening around rice-field air, sunset light, open space, and a slower table after the old-town crush. The food supports the setting instead of carrying the whole plan alone.",
       "rationale": "Hội An’s food day reaches past old-town rooms; a rice-field meal pulls dinner into the landscape.",
       "sections": [
         {
@@ -3983,7 +3983,7 @@
         {
           "id": "good-to-know",
           "title": "Fieldside View Leads",
-          "body": "Do not build the plan around one dish. Remember the field-side view, open air, and slower meal."
+          "body": "Build the evening around rice-field air, sunset light, open space, and a slower table after the old-town crush. The food supports the setting instead of carrying the whole plan alone."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -4140,9 +4140,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "price-1",
-            "price-4",
-            "shop-5"
+            "sight-1",
+            "sight-3",
+            "sight-2"
           ]
         },
         {
@@ -4350,15 +4350,15 @@
     },
     {
       "pageID": "city-hoian-place-vys-market",
-      "summary": "Vy's Market Restaurant turns Hội An food variety into an organized indoor food-hall scene, echoing market browsing without asking the whole group to chase every stall.",
-      "context": "Vy's Market Restaurant turns Hội An food variety into an organized indoor food-hall scene, echoing market browsing without asking the whole group to chase every stall.",
+      "summary": "Vys Market Restaurant turns Hội An food variety into an organized indoor food-hall scene: food stations, steam, dumplings, cao lầu, herbs, bowls, and a table the whole group can read.",
+      "context": "Vys Market Restaurant turns Hội An food variety into an organized indoor food-hall scene: food stations, steam, dumplings, cao lầu, herbs, bowls, and a table the whole group can read.",
       "tip": "Plan around the organized variety: bowls, herbs, seating, and one lap before the table decides what to order.",
       "rationale": "Vy's Market gives visitors a lower-friction way to explore Hội An flavors without turning dinner into a full market crawl.",
       "sections": [
         {
           "id": "at-glance",
           "title": "A Food Hall For First Bearings",
-          "body": "Vys Market Restaurant gives Hội An food a controlled first lap: food stations, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much."
+          "body": "Vys Market Restaurant turns Hội An food into an organized indoor browse: food stations, steam, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much."
         },
         {
           "id": "quick-say",

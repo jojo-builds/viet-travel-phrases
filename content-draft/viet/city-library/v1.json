@@ -12191,9 +12191,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "directions-1",
-              "sight-3",
-              "v500-dire-navi-can-i-walk-there"
+              "sight-1",
+              "sight-2",
+              "sight-5"
             ]
           },
           {
@@ -12751,7 +12751,7 @@
       "englishText": "Banh Canh Yen",
       "pronunciation": "banh canh yen",
       "context": "Bánh Canh Yến gives Da Nang a thick-noodle soup stop: hot broth, slippery noodles, toppings, herbs, chili, and a bowl that feels different from mì Quảng, bún riêu, or fish-cake soup.",
-      "tip": "The MICHELIN Selected signal supports the choice, but the reason to remember it is simpler: thick noodles, hot broth, toppings, and a short street-food meal.",
+      "tip": "Remember it for the street-food comfort: thick noodles, hot broth, toppings, herbs, and a short meal that feels different from mì Quảng or fish-cake soup.",
       "rationale": "Bánh Canh Yến matters because it adds a 2025 MICHELIN Selected street-food bowl to Da Nang's noodle map without repeating the city's existing mì Quảng and bún chả cá pages.",
       "chunks": [
         [
@@ -12820,7 +12820,7 @@
           {
             "id": "good-to-know",
             "title": "Let The Bowl Carry It",
-            "body": "The MICHELIN Selected signal supports the choice, but the reason to remember it is simpler: thick noodles, hot broth, toppings, and a short street-food meal."
+            "body": "Remember it for the street-food comfort: thick noodles, hot broth, toppings, herbs, and a short meal that feels different from mì Quảng or fish-cake soup."
           }
         ],
         "approvedAt": "2026-05-18T00:00:00+07:00",
@@ -13897,7 +13897,7 @@
       "targetText": "Bún Chả Cá Hờn",
       "englishText": "Bun Cha Ca Hon",
       "pronunciation": "bun cha ca hon",
-      "context": "Hờn is the 2025 MICHELIN Bib Gourmand Da Nang fish-cake noodle bowl: fish cake, broth, noodles, herbs, and spice after tasting.",
+      "context": "Hờn is a Da Nang fish-cake noodle bowl moment: springy fish cake, coastal broth, noodles, herbs, and spice after tasting.",
       "tip": "The Bib Gourmand signal belongs to the bowl and a short table rhythm. Keep the meal focused on fish cake, broth, herbs, and the first clean taste.",
       "rationale": "Hờn gives the citywide fish-cake noodle dish a recognized breakfast table, where one bowl, broth, herbs, and the day's first meal do most of the work.",
       "chunks": [
@@ -13928,14 +13928,14 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Hờn is the 2025 MICHELIN Bib Gourmand Da Nang fish-cake noodle bowl: fish cake, broth, noodles, herbs, and spice after tasting. Hờn gives the citywide fish-cake noodle dish a recognized breakfast table, where one bowl, broth, herbs, and the day's first meal do most of the work.",
+        "summary": "Hờn is a Da Nang fish-cake noodle bowl moment: springy fish cake, coastal broth, noodles, herbs, and spice after tasting. Hờn gives the citywide fish-cake noodle dish a recognized breakfast table, where one bowl, broth, herbs, and the day's first meal do most of the work.",
         "sourceNotes": "Local food source.",
         "imagePromptNote": "Photorealistic owned asset: steaming fish-cake noodle bowl on metal table, neighborhood shop background, no signage.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "A Bib Gourmand Fish-Cake Bowl",
-            "body": "Bun Cha Ca Hon is a 2025 MICHELIN Bib Gourmand Da Nang stop for fish-cake noodle soup: broth first, herbs after, and spice only once the bowl is clear."
+            "title": "Fish Cake In Coastal Broth",
+            "body": "Bún Chả Cá Hờn gives Da Nang fish-cake noodle soup a named table: springy fish cake, coastal broth, noodles, herbs, and chili only after the first clean taste."
           },
           {
             "id": "quick-say",
@@ -18215,8 +18215,8 @@
           },
           {
             "id": "when-to-use",
-            "title": "Selected For One Bowl",
-            "body": "The MICHELIN Selected signal is a memory hook here, not ceremony. Come for one focused bowl; mì Quảng comes first, and sides can wait."
+            "title": "One Bowl, Then Back Out",
+            "body": "Come for a focused mì Quảng lunch: yellow noodles, shallow broth, herbs, peanuts, rice cracker, and enough table rhythm to understand the dish without stretching the meal."
           },
           {
             "id": "good-to-know",
@@ -22252,9 +22252,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "price-1",
-              "price-4",
-              "food-1"
+              "shop-5",
+              "store-2",
+              "bath-1"
             ]
           },
           {
@@ -25547,7 +25547,7 @@
       "englishText": "Bun Cha Huong Lien",
       "pronunciation": "boon cha huong lien",
       "context": "Choose Hương Liên when bún chả should be a 2025 MICHELIN Selected Hanoi lunch: grilled pork, warm broth, herbs, vermicelli, quick service, and a name many visitors already know.",
-      "tip": "The MICHELIN Selected note helps explain the choice, but the room should still stay about lunch. Eat while the pork, broth, and herbs are warm.",
+      "tip": "Let the recognition explain why the name is familiar, then eat while the pork, broth, and herbs are warm. The table rhythm matters more than the badge.",
       "rationale": "Hương Liên earns its place by keeping a famous bún chả room tied to the actual table flow: smoke, broth, herbs, pork, and the quick lunch pace.",
       "chunks": [
         [
@@ -25614,8 +25614,8 @@
         "sections": [
           {
             "id": "at-glance",
-            "title": "Selected For The Bun Cha",
-            "body": "Bun Cha Huong Lien is a 2025 MICHELIN Selected Hanoi lunch stop for grilled pork, warm broth, vermicelli, herbs, and a table that moves quickly."
+            "title": "Grill Smoke, Broth, Herbs",
+            "body": "Bun Cha Huong Lien is a fast Hanoi lunch built around grilled pork, warm dipping broth, vermicelli, herbs, and a famous room that still moves like a working bún chả shop."
           },
           {
             "id": "quick-say",
@@ -25645,7 +25645,7 @@
           {
             "id": "good-to-know",
             "title": "Recognition, Then Lunch",
-            "body": "The MICHELIN Selected note helps explain the choice, but the room should still stay about lunch. Eat while the pork, broth, and herbs are warm."
+            "body": "Let the recognition explain why the name is familiar, then eat while the pork, broth, and herbs are warm. The table rhythm matters more than the badge."
           }
         ],
         "sourceNotes": "MICHELIN Hanoi guide",
@@ -28831,8 +28831,8 @@
             "body": "",
             "phraseIDs": [
               "price-1",
-              "food-1",
-              "price-8"
+              "price-8",
+              "shop-5"
             ]
           },
           {
@@ -31303,8 +31303,8 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "v500-sigh-acti-where-can-i-buy-tickets",
-              "sight-4",
+              "sight-1",
+              "v500-time-date-book-one-ticket-please",
               "sight-5"
             ]
           },
@@ -32174,8 +32174,8 @@
         "sections": [
           {
             "id": "at-glance",
-            "title": "A Bib Gourmand Pho Shop",
-            "body": "Pho Gia Truyen is a 2025 MICHELIN Bib Gourmand Old Quarter bowl: broth steam, sliced beef, herbs, hot broth, and a room moving at meal speed."
+            "title": "Old Quarter Steam And Beef",
+            "body": "Pho Gia Truyen is an Old Quarter beef-phở stop: broth steam, sliced beef, herbs, quick ordering, and a room that moves at breakfast or lunch speed."
           },
           {
             "id": "quick-say",
@@ -32194,8 +32194,8 @@
           },
           {
             "id": "use-it-with",
-            "title": "Bib Gourmand, Room Pace",
-            "body": "The recognition points to a bowl that still moves quickly. Keep the order direct and let broth, beef, herbs, and room pace carry the visit."
+            "title": "Room Pace Before Award Talk",
+            "body": "The Bib Gourmand note supports the choice, but the memory is broth, beef, herbs, and the speed of a shop built around one bowl."
           },
           {
             "id": "when-to-use",
@@ -40695,9 +40695,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "directions-1",
-              "directions-3",
-              "v500-dire-navi-can-i-walk-there"
+              "coffee-1",
+              "v900-food-drin-less-sugar-please",
+              "bath-1"
             ]
           },
           {
@@ -47797,9 +47797,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "price-1",
-              "price-4",
-              "shop-4"
+              "shop-5",
+              "store-2",
+              "bath-1"
             ]
           },
           {
@@ -52137,7 +52137,7 @@
           {
             "id": "at-glance",
             "title": "The Quick Hội An Bánh Mì Shop",
-            "body": "Bánh Mì Phượng is the well-known Hội An sandwich shop for quick bánh mì: crisp bread, visible fillings, herbs, sauce, chili, and a takeaway rhythm that fits an old-town walk."
+            "body": "Bánh Mì Phượng is the famous Hội An sandwich shop for crisp bread, visible fillings, pâté, herbs, sauce, chili, and a takeaway rhythm that folds back into an old-town walk."
           },
           {
             "id": "quick-say",
@@ -55126,9 +55126,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "directions-8",
-              "v900-tran-where-can-i-buy-a-ticket",
-              "taxi-3"
+              "coffee-1",
+              "v900-food-drin-less-sugar-please",
+              "bath-1"
             ]
           },
           {
@@ -57476,7 +57476,7 @@
           {
             "id": "at-glance",
             "title": "A First Dinner That Teaches The Menu",
-            "body": "Morning Glory Original is useful when Hội An food feels wide and the first dinner needs a clear table: cao lầu, white rose dumplings, bánh xèo, herbs, rice paper, and ingredient questions near the old streets."
+            "body": "Morning Glory Original is a first Hội An dinner table for clear central-coast dishes: cao lầu, white rose dumplings, bánh xèo, herbs, rice paper, and staff who can answer ingredient questions."
           },
           {
             "id": "quick-say",
@@ -57496,7 +57496,7 @@
           {
             "id": "use-it-with",
             "title": "Why It Works First",
-            "body": "This is the practical first-night table for groups, allergies, and first-timers who want central-coast dishes without decoding every small shop on arrival."
+            "body": "The room fits groups, allergies, and anyone still learning the menu. Hội An dishes feel easier here before smaller specialty stops."
           },
           {
             "id": "when-to-use",
@@ -58618,9 +58618,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "price-1",
-              "price-4",
-              "shop-5"
+              "sight-3",
+              "shop-5",
+              "v900-shop-can-you-pack-it-for-travel"
             ]
           },
           {
@@ -59648,8 +59648,8 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "price-1",
-              "price-4",
+              "sight-3",
+              "shop-4",
               "shop-5"
             ]
           },
@@ -59853,9 +59853,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "price-1",
-              "price-4",
-              "shop-5"
+              "shop-3",
+              "v900-shop-do-you-have-a-smaller-size",
+              "v900-shop-do-you-have-a-larger-size"
             ]
           },
           {
@@ -60121,7 +60121,7 @@
       "englishText": "The Field Hoi An",
       "pronunciation": "the field hoi an",
       "context": "The Field Hội An ties dinner to the lowland edge of town, where rice-field light, open air, and a slower table become part of the route.",
-      "tip": "Do not build the plan around one dish. Remember the field-side view, open air, and slower meal.",
+      "tip": "Build the evening around rice-field air, sunset light, open space, and a slower table after the old-town crush. The food supports the setting instead of carrying the whole plan alone.",
       "rationale": "Hội An’s food day reaches past old-town rooms; a rice-field meal pulls dinner into the landscape.",
       "chunks": [
         [
@@ -60188,7 +60188,7 @@
           {
             "id": "good-to-know",
             "title": "Fieldside View Leads",
-            "body": "Do not build the plan around one dish. Remember the field-side view, open air, and slower meal."
+            "body": "Build the evening around rice-field air, sunset light, open space, and a slower table after the old-town crush. The food supports the setting instead of carrying the whole plan alone."
           }
         ],
         "targetHeroImageName": "HeroCityHoianPlaceTheField",
@@ -60577,9 +60577,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "price-1",
-              "price-4",
-              "shop-5"
+              "sight-1",
+              "sight-3",
+              "sight-2"
             ]
           },
           {
@@ -61046,7 +61046,7 @@
       "targetText": "Vy's Market Restaurant",
       "englishText": "Vy's Market Restaurant",
       "pronunciation": "vys market restaurant",
-      "context": "Vy's Market Restaurant turns Hội An food variety into an organized indoor food-hall scene, echoing market browsing without asking the whole group to chase every stall.",
+      "context": "Vys Market Restaurant turns Hội An food variety into an organized indoor food-hall scene: food stations, steam, dumplings, cao lầu, herbs, bowls, and a table the whole group can read.",
       "tip": "Plan around the organized variety: bowls, herbs, seating, and one lap before the table decides what to order.",
       "rationale": "Vy's Market gives visitors a lower-friction way to explore Hội An flavors without turning dinner into a full market crawl.",
       "chunks": [
@@ -61077,14 +61077,14 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Vy's Market Restaurant turns Hội An food variety into an organized indoor food-hall scene, echoing market browsing without asking the whole group to chase every stall.",
+        "summary": "Vys Market Restaurant turns Hội An food variety into an organized indoor food-hall scene: food stations, steam, dumplings, cao lầu, herbs, bowls, and a table the whole group can read.",
         "sourceNotes": "Local food and venue references; no menu or quality claims.",
         "imagePromptNote": "Photorealistic owned asset: indoor Vietnamese food-hall counters with bowls and herbs, no exact branding.",
         "sections": [
           {
             "id": "at-glance",
             "title": "A Food Hall For First Bearings",
-            "body": "Vys Market Restaurant gives Hội An food a controlled first lap: food stations, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much."
+            "body": "Vys Market Restaurant turns Hội An food into an organized indoor browse: food stations, steam, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much."
           },
           {
             "id": "quick-say",
@@ -69597,8 +69597,8 @@
             "body": "",
             "phraseIDs": [
               "price-1",
-              "price-4",
-              "food-1"
+              "v900-shop-can-you-pack-it-for-travel",
+              "store-2"
             ]
           },
           {
@@ -71708,7 +71708,7 @@
       "englishText": "Song Huong Floating Restaurant",
       "pronunciation": "nha hang noi song huong",
       "context": "Choose Song Huong for the evening when the Perfume River should be part of dinner: floating table, Trường Tiền bridge light, simple seafood, and a calmer ride back after a long heritage day.",
-      "tip": "For a food-first Huế day, start with Đông Ba, bún bò, or bánh lọc. Song Hương makes more sense when the river setting matters more than dish hunting.",
+      "tip": "For a food-first Huế day, start with Đông Ba, bún bò, or bánh lọc. Song Hương makes the most sense when the river setting is part of dinner.",
       "rationale": "Hue’s river becomes part of the meal here: floating table, bridge light, seafood, and local dishes along the city-center waterline.",
       "chunks": [
         [
@@ -71760,7 +71760,7 @@
           {
             "id": "place-brief",
             "title": "River First, Menu Second",
-            "body": "This is a river-view dinner, not the hidden food find of the day. Choose it when eating on the Perfume River is the point and the order can stay simple."
+            "body": "Choose it for a floating table on the Perfume River: dusk water, Trường Tiền Bridge nearby, simple seafood or Hue dishes, and a calmer ride back after a heritage-heavy day."
           },
           {
             "id": "use-it-with",
@@ -71769,8 +71769,8 @@
           },
           {
             "id": "when-to-use",
-            "title": "Food-First, Start Elsewhere",
-            "body": "For a food-first Huế day, start with Đông Ba, bún bò, or bánh lọc. Song Hương makes more sense when the river setting matters more than dish hunting."
+            "title": "When Food Leads, Start Elsewhere",
+            "body": "For a food-first Huế day, start with Đông Ba, bún bò, or bánh lọc. Song Hương makes the most sense when the river setting is part of dinner."
           }
         ],
         "targetHeroImageName": "HeroCityHuePlaceSongHuongFloatingRestaurant",

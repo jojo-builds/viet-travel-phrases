@@ -85,7 +85,7 @@
           "label": "Đống Đa",
           "relationship": "lived-in district contrast",
           "displaySubtitle": "A hotel-and-food district for school-hour traffic, small errands, and Hanoi without a photo agenda.",
-          "reason": "Đống Đa now has an authored related-card role for Quận Ba Đình, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A hotel-and-food district for school-hour traffic, small errands, and Hanoi without a photo agenda.",
           "status": "render"
         }
       ],
@@ -196,7 +196,7 @@
           "label": "Cột cờ Hà Nội",
           "relationship": "citadel-history marker",
           "displaySubtitle": "A stone-and-courtyard landmark where Ba Đình history rises above the surrounding roofs.",
-          "reason": "Cột cờ Hà Nội now has an authored related-card role for Quảng trường Ba Đình, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A stone-and-courtyard landmark where Ba Đình history rises above the surrounding roofs.",
           "status": "render"
         }
       ],
@@ -315,7 +315,7 @@
           "label": "Bánh Cuốn Bà Hoành",
           "relationship": "dish-to-restaurant follow-through",
           "displaySubtitle": "A MICHELIN Selected Hanoi breakfast table for classic steam, rolls, herbs, and dipping sauce.",
-          "reason": "Ba Hoanh turns the dish page into a named breakfast save.",
+          "reason": "Editorial relationship: A MICHELIN Selected Hanoi breakfast table for classic steam, rolls, herbs, and dipping sauce.",
           "status": "render"
         },
         {
@@ -323,7 +323,7 @@
           "label": "Bánh Cuốn Bà Xuân",
           "relationship": "dish-to-restaurant follow-through",
           "displaySubtitle": "A MICHELIN Selected bánh cuốn stop when the egg, herbs, and condiments should lead.",
-          "reason": "Ba Xuan gives the dish page a fuller same-dish breakfast save.",
+          "reason": "Editorial relationship: A MICHELIN Selected bánh cuốn stop when the egg, herbs, and condiments should lead.",
           "status": "render"
         }
       ],
@@ -445,7 +445,7 @@
           "label": "Xôi xéo",
           "relationship": "sticky-rice breakfast",
           "displaySubtitle": "A warm sticky-rice breakfast when the morning should be handheld, dense, and quick.",
-          "reason": "Xôi xéo now has an authored related-card role for Bánh Cuốn Bà Hoành, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A warm sticky-rice breakfast when the morning should be handheld, dense, and quick.",
           "status": "render"
         },
         {
@@ -453,7 +453,7 @@
           "label": "Phở Gia Truyền",
           "relationship": "Bib Gourmand beef-phở shop",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Old Quarter phở bowl for steam, sliced beef, herbs, and room pace.",
-          "reason": "Phở Gia Truyền now has an authored related-card role for Bánh Cuốn Bà Hoành, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand Old Quarter phở bowl for steam, sliced beef, herbs, and room pace.",
           "status": "render"
         },
         {
@@ -594,7 +594,7 @@
           "label": "Xôi xéo",
           "relationship": "sticky-rice breakfast",
           "displaySubtitle": "A warm sticky-rice breakfast when the morning should be handheld, dense, and quick.",
-          "reason": "Xôi xéo now has an authored related-card role for Bánh Cuốn Bà Xuân, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A warm sticky-rice breakfast when the morning should be handheld, dense, and quick.",
           "status": "render"
         },
         {
@@ -602,7 +602,7 @@
           "label": "Phở Gà Nguyệt",
           "relationship": "Bib Gourmand chicken-phở shop",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand chicken-phở shop when clear broth and herbs should feel lighter.",
-          "reason": "Phở Gà Nguyệt now has an authored related-card role for Bánh Cuốn Bà Xuân, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand chicken-phở shop when clear broth and herbs should feel lighter.",
           "status": "render"
         }
       ],
@@ -719,7 +719,7 @@
           "label": "Hồ Hoàn Kiếm",
           "relationship": "central-lake orientation",
           "displaySubtitle": "The central lake loop for water, shade, Ngọc Sơn, Turtle Tower, and Old Quarter bearings.",
-          "reason": "Hồ Hoàn Kiếm now has an authored related-card role for Hồ Bảy Mẫu, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The central lake loop for water, shade, Ngọc Sơn, Turtle Tower, and Old Quarter bearings.",
           "status": "render"
         }
       ],
@@ -948,7 +948,7 @@
           "label": "Công viên Lê Nin",
           "relationship": "civic-side park break",
           "displaySubtitle": "A small park pause near heavier history stops, with shade, paths, and evening local movement.",
-          "reason": "Công viên Lê Nin now has an authored related-card role for Vườn Bách Thảo Hà Nội, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A small park pause near heavier history stops, with shade, paths, and evening local movement.",
           "status": "render"
         }
       ],
@@ -1062,7 +1062,7 @@
           "label": "Bún Chả Đắc Kim",
           "relationship": "dish-to-restaurant follow-through",
           "displaySubtitle": "A MICHELIN Guide Hàng Mành table when the sauce, mango, and pork should lead lunch.",
-          "reason": "Dac Kim turns the dish page into a more food-specific Old Quarter lunch save.",
+          "reason": "Editorial relationship: A MICHELIN Guide Hàng Mành table when the sauce, mango, and pork should lead lunch.",
           "status": "render"
         },
         {
@@ -1070,7 +1070,7 @@
           "label": "Tuyết Bún Chả 34",
           "relationship": "dish-to-restaurant follow-through",
           "displaySubtitle": "A Bib Gourmand Hàng Than stall when chargrilled-to-order pork and spring-roll crunch should lead.",
-          "reason": "Tuyet turns the dish page into a numbered-stall bún chả save.",
+          "reason": "Editorial relationship: A Bib Gourmand Hàng Than stall when chargrilled-to-order pork and spring-roll crunch should lead.",
           "status": "render"
         }
       ],
@@ -1124,8 +1124,8 @@
       "travelerMoment": "Choose Hương Liên when bún chả should be a 2025 MICHELIN Selected Hanoi lunch: grilled pork, warm broth, herbs, vermicelli, quick service, and a name many visitors already know.",
       "storySpine": "Hương Liên earns its place by keeping a famous bún chả room tied to the actual table flow: smoke, broth, herbs, pork, and the quick lunch pace.",
       "intro": {
-        "heading": "Selected For The Bun Cha",
-        "body": "Bun Cha Huong Lien is a 2025 MICHELIN Selected Hanoi lunch stop for grilled pork, warm broth, vermicelli, herbs, and a table that moves quickly."
+        "heading": "Grill Smoke, Broth, Herbs",
+        "body": "Bun Cha Huong Lien is a fast Hanoi lunch built around grilled pork, warm dipping broth, vermicelli, herbs, and a famous room that still moves like a working bún chả shop."
       },
       "usefulPhraseCards": [
         {
@@ -1172,7 +1172,7 @@
         {
           "id": "fame-should-stay-smaller-than-lunch",
           "heading": "Recognition, Then Lunch",
-          "body": "The MICHELIN Selected note helps explain the choice, but the room should still stay about lunch. Eat while the pork, broth, and herbs are warm."
+          "body": "Let the recognition explain why the name is familiar, then eat while the pork, broth, and herbs are warm. The table rhythm matters more than the badge."
         }
       ],
       "mentionedHereCandidates": [
@@ -2324,7 +2324,7 @@
           "label": "Xích lô phố cổ",
           "relationship": "old-quarter slow loop",
           "displaySubtitle": "A seat-height Old Quarter ride when shop signs, scooters, and doorways should pass slowly.",
-          "reason": "Xích lô phố cổ now has an authored related-card role for Đi cà phê Hà Nội, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A seat-height Old Quarter ride when shop signs, scooters, and doorways should pass slowly.",
           "status": "render"
         }
       ],
@@ -2547,7 +2547,7 @@
           "label": "Đi cà phê Hà Nội",
           "relationship": "coffee-walk route",
           "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
-          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Xích lô phố cổ, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
           "status": "render"
         }
       ],
@@ -2775,7 +2775,7 @@
           "label": "Quận Ba Đình",
           "relationship": "civic-district contrast",
           "displaySubtitle": "The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
-          "reason": "Quận Ba Đình now has an authored related-card role for Đống Đa, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
           "status": "render"
         }
       ],
@@ -3110,7 +3110,7 @@
           "label": "Bảo tàng Hồ Chí Minh",
           "relationship": "indoor-civic context",
           "displaySubtitle": "An indoor Ba Đình follow-up when the square needs objects, rooms, and interpretation.",
-          "reason": "Bảo tàng Hồ Chí Minh now has an authored related-card role for Bảo tàng Dân tộc học, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An indoor Ba Đình follow-up when the square needs objects, rooms, and interpretation.",
           "status": "render"
         }
       ],
@@ -3221,7 +3221,7 @@
           "label": "Quận Ba Đình",
           "relationship": "civic-district contrast",
           "displaySubtitle": "The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
-          "reason": "Quận Ba Đình now has an authored related-card role for Khu phố Pháp, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
           "status": "render"
         }
       ],
@@ -3327,7 +3327,7 @@
           "label": "Đi cà phê Hà Nội",
           "relationship": "coffee-walk route",
           "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
-          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Đi bộ khu phố Pháp, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
           "status": "render"
         }
       ],
@@ -3571,7 +3571,7 @@
           "label": "Bến xe Giáp Bát",
           "relationship": "southbound-bus handoff",
           "displaySubtitle": "A practical bus edge for route boards, luggage, bays, and a visible pickup point.",
-          "reason": "Bến xe Giáp Bát now has an authored related-card role for Ga Gia Lâm, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A practical bus edge for route boards, luggage, bays, and a visible pickup point.",
           "status": "render"
         }
       ],
@@ -3814,7 +3814,7 @@
           "label": "Ga Gia Lâm",
           "relationship": "rail-edge handoff",
           "displaySubtitle": "A smaller rail stop where bags, station signs, and onward streets need a plain transfer.",
-          "reason": "Ga Gia Lâm now has an authored related-card role for Bến xe Giáp Bát, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A smaller rail stop where bags, station signs, and onward streets need a plain transfer.",
           "status": "render"
         }
       ],
@@ -3925,7 +3925,7 @@
           "label": "Phố Hàng Gai",
           "relationship": "silk-street spine",
           "displaySubtitle": "An Old Quarter silk-street walk with fabric windows, hotel foot traffic, and lake-to-lane bearings.",
-          "reason": "Phố Hàng Gai now has an authored related-card role for Phố Hàng Bạc, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An Old Quarter silk-street walk with fabric windows, hotel foot traffic, and lake-to-lane bearings.",
           "status": "render"
         }
       ],
@@ -4148,7 +4148,7 @@
           "label": "Phố Hàng Bạc",
           "relationship": "silver-street spine",
           "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
-          "reason": "Phố Hàng Bạc now has an authored related-card role for Phố Hàng Gai, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
           "status": "render"
         }
       ],
@@ -4259,7 +4259,7 @@
           "label": "Quảng trường Ba Đình",
           "relationship": "ceremonial-capital space",
           "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
-          "reason": "Quảng trường Ba Đình now has an authored related-card role for Cột cờ Hà Nội, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
           "status": "render"
         }
       ],
@@ -4370,7 +4370,7 @@
           "label": "Ga Gia Lâm",
           "relationship": "rail-edge handoff",
           "displaySubtitle": "A smaller rail stop where bags, station signs, and onward streets need a plain transfer.",
-          "reason": "Ga Gia Lâm now has an authored related-card role for Ga Hà Nội, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A smaller rail stop where bags, station signs, and onward streets need a plain transfer.",
           "status": "render"
         }
       ],
@@ -4595,7 +4595,7 @@
           "label": "Quảng trường Ba Đình",
           "relationship": "ceremonial-capital space",
           "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
-          "reason": "Quảng trường Ba Đình now has an authored related-card role for Lăng Bác, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
           "status": "render"
         }
       ],
@@ -4706,7 +4706,7 @@
           "label": "Bảo tàng Dân tộc học",
           "relationship": "culture-museum contrast",
           "displaySubtitle": "A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
-          "reason": "Bảo tàng Dân tộc học now has an authored related-card role for Bảo tàng Hồ Chí Minh, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
           "status": "render"
         }
       ],
@@ -4817,7 +4817,7 @@
           "label": "Bảo tàng Dân tộc học",
           "relationship": "culture-museum contrast",
           "displaySubtitle": "A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
-          "reason": "Bảo tàng Dân tộc học now has an authored related-card role for Nhà tù Hỏa Lò, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
           "status": "render"
         }
       ],
@@ -4928,7 +4928,7 @@
           "label": "Hồ Bảy Mẫu",
           "relationship": "park-lake breather",
           "displaySubtitle": "A Thống Nhất Park water edge for shade, walkers, families, and a central-Hanoi exhale.",
-          "reason": "Hồ Bảy Mẫu now has an authored related-card role for Hồ Hoàn Kiếm, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A Thống Nhất Park water edge for shade, walkers, families, and a central-Hanoi exhale.",
           "status": "render"
         }
       ],
@@ -4994,19 +4994,19 @@
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi một phần",
-          "en": "One portion please",
-          "intent": "food-one-portion",
-          "phraseId": "food-1",
-          "audioId": "food-1",
-          "status": "mapped"
-        },
-        {
           "vi": "Tổng cộng bao nhiêu?",
           "en": "How much altogether?",
           "intent": "money-total",
           "phraseId": "price-8",
           "audioId": "price-8",
+          "status": "mapped"
+        },
+        {
+          "vi": "Trả ở đâu?",
+          "en": "Where do I pay?",
+          "intent": "shopping-pay-where",
+          "phraseId": "shop-5",
+          "audioId": "shop-5",
           "status": "mapped"
         }
       ],
@@ -5151,7 +5151,7 @@
           "label": "Quảng trường Ba Đình",
           "relationship": "ceremonial-capital space",
           "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
-          "reason": "Quảng trường Ba Đình now has an authored related-card role for Hoàng thành Thăng Long, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
           "status": "render"
         }
       ],
@@ -5489,7 +5489,7 @@
           "label": "Vườn Bách Thảo Hà Nội",
           "relationship": "ba-dinh-green break",
           "displaySubtitle": "Old trees and benches near Ba Đình when monuments and museums need a softer outdoor pause.",
-          "reason": "Vườn Bách Thảo Hà Nội now has an authored related-card role for Công viên Lê Nin, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: Old trees and benches near Ba Đình when monuments and museums need a softer outdoor pause.",
           "status": "render"
         }
       ],
@@ -5600,7 +5600,7 @@
           "label": "Bảo tàng Dân tộc học",
           "relationship": "culture-museum contrast",
           "displaySubtitle": "A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
-          "reason": "Bảo tàng Dân tộc học now has an authored related-card role for Bảo tàng Văn học Việt Nam, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
           "status": "render"
         }
       ],
@@ -5822,7 +5822,7 @@
           "label": "Quảng trường Ba Đình",
           "relationship": "ceremonial-capital space",
           "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
-          "reason": "Quảng trường Ba Đình now has an authored related-card role for Cầu Long Biên, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
           "status": "render"
         }
       ],
@@ -6045,7 +6045,7 @@
           "label": "Đi cà phê Hà Nội",
           "relationship": "coffee-walk route",
           "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
-          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Manzi, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
           "status": "render"
         }
       ],
@@ -6278,7 +6278,7 @@
           "label": "Phở Bò Lâm",
           "relationship": "Bib Gourmand beef-cut phở",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand beef-phở bowl when tendon, broth, and chew should lead.",
-          "reason": "Phở Bò Lâm now has an authored related-card role for Miến lươn Chân Cầm, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand beef-phở bowl when tendon, broth, and chew should lead.",
           "status": "render"
         }
       ],
@@ -6392,7 +6392,7 @@
           "label": "Ga Gia Lâm",
           "relationship": "rail-edge handoff",
           "displaySubtitle": "A smaller rail stop where bags, station signs, and onward streets need a plain transfer.",
-          "reason": "Ga Gia Lâm now has an authored related-card role for Bến xe Mỹ Đình, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A smaller rail stop where bags, station signs, and onward streets need a plain transfer.",
           "status": "render"
         }
       ],
@@ -6615,7 +6615,7 @@
           "label": "Bảo tàng Dân tộc học",
           "relationship": "culture-museum contrast",
           "displaySubtitle": "A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
-          "reason": "Bảo tàng Dân tộc học now has an authored related-card role for Bảo tàng Lịch sử Quốc gia, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
           "status": "render"
         }
       ],
@@ -6838,7 +6838,7 @@
           "label": "Quảng trường Ba Đình",
           "relationship": "ceremonial-capital space",
           "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
-          "reason": "Quảng trường Ba Đình now has an authored related-card role for Đền Ngọc Sơn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
           "status": "render"
         }
       ],
@@ -6949,7 +6949,7 @@
           "label": "Phố Hàng Bạc",
           "relationship": "silver-street spine",
           "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
-          "reason": "Phố Hàng Bạc now has an authored related-card role for Phố Nguyễn Hữu Huân, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
           "status": "render"
         }
       ],
@@ -7172,7 +7172,7 @@
           "label": "Quận Ba Đình",
           "relationship": "civic-district contrast",
           "displaySubtitle": "The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
-          "reason": "Quận Ba Đình now has an authored related-card role for Sân bay Nội Bài, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
           "status": "render"
         }
       ],
@@ -7283,7 +7283,7 @@
           "label": "Ga Gia Lâm",
           "relationship": "rail-edge handoff",
           "displaySubtitle": "A smaller rail stop where bags, station signs, and onward streets need a plain transfer.",
-          "reason": "Ga Gia Lâm now has an authored related-card role for Bến xe Nước Ngầm, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A smaller rail stop where bags, station signs, and onward streets need a plain transfer.",
           "status": "render"
         }
       ],
@@ -7394,7 +7394,7 @@
           "label": "Quận Ba Đình",
           "relationship": "civic-district contrast",
           "displaySubtitle": "The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
-          "reason": "Quận Ba Đình now has an authored related-card role for Phố cổ Hà Nội, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
           "status": "render"
         }
       ],
@@ -7505,7 +7505,7 @@
           "label": "Đi cà phê Hà Nội",
           "relationship": "coffee-walk route",
           "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
-          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Tuyến đi bộ Phố cổ, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
           "status": "render"
         }
       ],
@@ -7616,7 +7616,7 @@
           "label": "Quảng trường Ba Đình",
           "relationship": "ceremonial-capital space",
           "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
-          "reason": "Quảng trường Ba Đình now has an authored related-card role for Chùa Một Cột, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
           "status": "render"
         }
       ],
@@ -7674,19 +7674,19 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Tôi có thể mua vé ở đâu?",
-          "en": "Where can I buy tickets?",
-          "intent": "v500-sigh-acti-where-can-i-buy-tickets",
-          "phraseId": "v500-sigh-acti-where-can-i-buy-tickets",
-          "audioId": "v500-sigh-acti-where-can-i-buy-tickets",
+          "vi": "Vé bao nhiêu?",
+          "en": "How much is the ticket?",
+          "intent": "sight-ticket",
+          "phraseId": "sight-1",
+          "audioId": "sight-1",
           "status": "mapped"
         },
         {
-          "vi": "Mấy giờ đóng cửa?",
-          "en": "What time does it close?",
-          "intent": "sight-close",
-          "phraseId": "sight-4",
-          "audioId": "sight-4",
+          "vi": "Xin một vé",
+          "en": "One ticket, please",
+          "intent": "v500-time-date-book-one-ticket-please",
+          "phraseId": "v500-time-date-book-one-ticket-please",
+          "audioId": "v500-time-date-book-one-ticket-please",
           "status": "mapped"
         },
         {
@@ -7727,7 +7727,7 @@
           "label": "Đi cà phê Hà Nội",
           "relationship": "coffee-walk route",
           "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
-          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Nhà hát Lớn Hà Nội, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
           "status": "render"
         }
       ],
@@ -7838,7 +7838,7 @@
           "label": "Phố Hàng Bạc",
           "relationship": "silver-street spine",
           "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
-          "reason": "Phố Hàng Bạc now has an authored related-card role for Phố Phan Đình Phùng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
           "status": "render"
         }
       ],
@@ -8625,8 +8625,8 @@
       "travelerMoment": "Phở Gia Truyền is the Old Quarter pho shop for a 2025 MICHELIN Bib Gourmand bowl: broth, steam, sliced beef, herbs, and quick room pace.",
       "storySpine": "Phở Gia Truyền carries the recognized Hanoi pho-shop memory through broth, steam, beef, herbs, and a room moving quickly.",
       "intro": {
-        "heading": "A Bib Gourmand Pho Shop",
-        "body": "Pho Gia Truyen is a 2025 MICHELIN Bib Gourmand Old Quarter bowl: broth steam, sliced beef, herbs, hot broth, and a room moving at meal speed."
+        "heading": "Old Quarter Steam And Beef",
+        "body": "Pho Gia Truyen is an Old Quarter beef-phở stop: broth steam, sliced beef, herbs, quick ordering, and a room that moves at breakfast or lunch speed."
       },
       "usefulPhraseCards": [
         {
@@ -8662,8 +8662,8 @@
         },
         {
           "id": "room-pace",
-          "heading": "Bib Gourmand, Room Pace",
-          "body": "The recognition points to a bowl that still moves quickly. Keep the order direct and let broth, beef, herbs, and room pace carry the visit."
+          "heading": "Room Pace Before Award Talk",
+          "body": "The Bib Gourmand note supports the choice, but the memory is broth, beef, herbs, and the speed of a shop built around one bowl."
         },
         {
           "id": "pho-comparison",
@@ -8808,7 +8808,7 @@
           "label": "Quảng trường Ba Đình",
           "relationship": "ceremonial-capital space",
           "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
-          "reason": "Quảng trường Ba Đình now has an authored related-card role for Đền Quán Thánh, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
           "status": "render"
         }
       ],
@@ -9031,7 +9031,7 @@
           "label": "Quận Ba Đình",
           "relationship": "civic-district contrast",
           "displaySubtitle": "The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
-          "reason": "Quận Ba Đình now has an authored related-card role for Sông Hồng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
           "status": "render"
         }
       ],
@@ -9142,7 +9142,7 @@
           "label": "Quảng trường Ba Đình",
           "relationship": "ceremonial-capital space",
           "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
-          "reason": "Quảng trường Ba Đình now has an authored related-card role for Nhà thờ Lớn Hà Nội, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
           "status": "render"
         }
       ],
@@ -9253,7 +9253,7 @@
           "label": "Đi cà phê Hà Nội",
           "relationship": "coffee-walk route",
           "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
-          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Đi bộ ăn vặt Hà Nội, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
           "status": "render"
         }
       ],
@@ -9364,7 +9364,7 @@
           "label": "Phố Hàng Bạc",
           "relationship": "silver-street spine",
           "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
-          "reason": "Phố Hàng Bạc now has an authored related-card role for Phố Tạ Hiện, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
           "status": "render"
         }
       ],
@@ -9599,7 +9599,7 @@
           "label": "Quận Ba Đình",
           "relationship": "civic-district contrast",
           "displaySubtitle": "The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
-          "reason": "Quận Ba Đình now has an authored related-card role for Tây Hồ, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
           "status": "render"
         }
       ],
@@ -9710,7 +9710,7 @@
           "label": "Quảng trường Ba Đình",
           "relationship": "ceremonial-capital space",
           "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
-          "reason": "Quảng trường Ba Đình now has an authored related-card role for Văn Miếu, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
           "status": "render"
         }
       ],
@@ -9930,7 +9930,7 @@
           "label": "Vườn Bách Thảo Hà Nội",
           "relationship": "ba-dinh-green break",
           "displaySubtitle": "Old trees and benches near Ba Đình when monuments and museums need a softer outdoor pause.",
-          "reason": "Vườn Bách Thảo Hà Nội now has an authored related-card role for Công viên Thống Nhất, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: Old trees and benches near Ba Đình when monuments and museums need a softer outdoor pause.",
           "status": "render"
         }
       ],
@@ -10041,7 +10041,7 @@
           "label": "Phố Hàng Bạc",
           "relationship": "silver-street spine",
           "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
-          "reason": "Phố Hàng Bạc now has an authored related-card role for Phố đường tàu Hà Nội, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
           "status": "render"
         }
       ],
@@ -10152,7 +10152,7 @@
           "label": "Quảng trường Ba Đình",
           "relationship": "ceremonial-capital space",
           "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
-          "reason": "Quảng trường Ba Đình now has an authored related-card role for Chùa Trấn Quốc, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
           "status": "render"
         }
       ],
@@ -10375,7 +10375,7 @@
           "label": "Phố Hàng Bạc",
           "relationship": "silver-street spine",
           "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
-          "reason": "Phố Hàng Bạc now has an authored related-card role for Phố Tràng Tiền, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
           "status": "render"
         }
       ],
@@ -10486,7 +10486,7 @@
           "label": "Phố Hàng Bạc",
           "relationship": "silver-street spine",
           "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
-          "reason": "Phố Hàng Bạc now has an authored related-card role for Phố cà phê Triệu Việt Vương, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
           "status": "render"
         }
       ],
@@ -10597,7 +10597,7 @@
           "label": "Hồ Bảy Mẫu",
           "relationship": "park-lake breather",
           "displaySubtitle": "A Thống Nhất Park water edge for shade, walkers, families, and a central-Hanoi exhale.",
-          "reason": "Hồ Bảy Mẫu now has an authored related-card role for Hồ Trúc Bạch, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A Thống Nhất Park water edge for shade, walkers, families, and a central-Hanoi exhale.",
           "status": "render"
         }
       ],
@@ -10708,7 +10708,7 @@
           "label": "Quảng trường Ba Đình",
           "relationship": "ceremonial-capital space",
           "displaySubtitle": "The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
-          "reason": "Quảng trường Ba Đình now has an authored related-card role for Tháp Rùa, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The formal civic square where Hanoi feels like the capital, open pavement and red flags first.",
           "status": "render"
         }
       ],
@@ -10944,7 +10944,7 @@
           "label": "Đi cà phê Hà Nội",
           "relationship": "coffee-walk route",
           "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
-          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Vietnam Art Gallery, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
           "status": "render"
         }
       ],
@@ -11050,7 +11050,7 @@
           "label": "Đi cà phê Hà Nội",
           "relationship": "coffee-walk route",
           "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
-          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Rạp Xiếc Trung ương, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
           "status": "render"
         }
       ],
@@ -11161,7 +11161,7 @@
           "label": "Bảo tàng Dân tộc học",
           "relationship": "culture-museum contrast",
           "displaySubtitle": "A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
-          "reason": "Bảo tàng Dân tộc học now has an authored related-card role for Bảo tàng Mỹ thuật Việt Nam, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
           "status": "render"
         }
       ],
@@ -11272,7 +11272,7 @@
           "label": "Bảo tàng Dân tộc học",
           "relationship": "culture-museum contrast",
           "displaySubtitle": "A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
-          "reason": "Bảo tàng Dân tộc học now has an authored related-card role for Bảo tàng Lịch sử Quân sự Việt Nam, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
           "status": "render"
         }
       ],
@@ -11383,7 +11383,7 @@
           "label": "Đi cà phê Hà Nội",
           "relationship": "coffee-walk route",
           "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
-          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Nhà hát Tuồng Việt Nam, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
           "status": "render"
         }
       ],
@@ -11494,7 +11494,7 @@
           "label": "Đi cà phê Hà Nội",
           "relationship": "coffee-walk route",
           "displaySubtitle": "A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
-          "reason": "Đi cà phê Hà Nội now has an authored related-card role for Nhà hát Múa rối Thăng Long, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A short cup-to-cup Hanoi route where stairs, balconies, and narrow walks are part of the memory.",
           "status": "render"
         }
       ],
@@ -11717,7 +11717,7 @@
           "label": "Hồ Bảy Mẫu",
           "relationship": "park-lake breather",
           "displaySubtitle": "A Thống Nhất Park water edge for shade, walkers, families, and a central-Hanoi exhale.",
-          "reason": "Hồ Bảy Mẫu now has an authored related-card role for Hồ Tây, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A Thống Nhất Park water edge for shade, walkers, families, and a central-Hanoi exhale.",
           "status": "render"
         }
       ],
@@ -11828,7 +11828,7 @@
           "label": "Hồ Bảy Mẫu",
           "relationship": "park-lake breather",
           "displaySubtitle": "A Thống Nhất Park water edge for shade, walkers, families, and a central-Hanoi exhale.",
-          "reason": "Hồ Bảy Mẫu now has an authored related-card role for Vòng Hồ Tây, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A Thống Nhất Park water edge for shade, walkers, families, and a central-Hanoi exhale.",
           "status": "render"
         }
       ],
@@ -11934,7 +11934,7 @@
           "label": "Bảo tàng Dân tộc học",
           "relationship": "culture-museum contrast",
           "displaySubtitle": "A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
-          "reason": "Bảo tàng Dân tộc học now has an authored related-card role for Bảo tàng Phụ nữ Việt Nam, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A deeper museum stop for textiles, tools, stilt-house forms, and Vietnam beyond the capital.",
           "status": "render"
         }
       ],
@@ -12157,7 +12157,7 @@
           "label": "Vườn Bách Thảo Hà Nội",
           "relationship": "ba-dinh-green break",
           "displaySubtitle": "Old trees and benches near Ba Đình when monuments and museums need a softer outdoor pause.",
-          "reason": "Vườn Bách Thảo Hà Nội now has an authored related-card role for Công viên Yên Sở, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: Old trees and benches near Ba Đình when monuments and museums need a softer outdoor pause.",
           "status": "render"
         }
       ],

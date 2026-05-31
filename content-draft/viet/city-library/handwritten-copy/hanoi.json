@@ -402,13 +402,13 @@
       "pageID": "city-hanoi-place-bun-cha-huong-lien",
       "summary": "Choose Hương Liên when bún chả should be a 2025 MICHELIN Selected Hanoi lunch: grilled pork, warm broth, herbs, vermicelli, quick service, and a name many visitors already know.",
       "context": "Choose Hương Liên when bún chả should be a 2025 MICHELIN Selected Hanoi lunch: grilled pork, warm broth, herbs, vermicelli, quick service, and a name many visitors already know.",
-      "tip": "The MICHELIN Selected note helps explain the choice, but the room should still stay about lunch. Eat while the pork, broth, and herbs are warm.",
+      "tip": "Let the recognition explain why the name is familiar, then eat while the pork, broth, and herbs are warm. The table rhythm matters more than the badge.",
       "rationale": "Hương Liên earns its place by keeping a famous bún chả room tied to the actual table flow: smoke, broth, herbs, pork, and the quick lunch pace.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "Selected For The Bun Cha",
-          "body": "Bun Cha Huong Lien is a 2025 MICHELIN Selected Hanoi lunch stop for grilled pork, warm broth, vermicelli, herbs, and a table that moves quickly."
+          "title": "Grill Smoke, Broth, Herbs",
+          "body": "Bun Cha Huong Lien is a fast Hanoi lunch built around grilled pork, warm dipping broth, vermicelli, herbs, and a famous room that still moves like a working bún chả shop."
         },
         {
           "id": "quick-say",
@@ -438,7 +438,7 @@
         {
           "id": "good-to-know",
           "title": "Recognition, Then Lunch",
-          "body": "The MICHELIN Selected note helps explain the choice, but the room should still stay about lunch. Eat while the pork, broth, and herbs are warm."
+          "body": "Let the recognition explain why the name is familiar, then eat while the pork, broth, and herbs are warm. The table rhythm matters more than the badge."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1886,8 +1886,8 @@
           "body": "",
           "phraseIDs": [
             "price-1",
-            "food-1",
-            "price-8"
+            "price-8",
+            "shop-5"
           ]
         },
         {
@@ -2960,8 +2960,8 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "v500-sigh-acti-where-can-i-buy-tickets",
-            "sight-4",
+            "sight-1",
+            "v500-time-date-book-one-ticket-please",
             "sight-5"
           ]
         },
@@ -3312,8 +3312,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Bib Gourmand Pho Shop",
-          "body": "Pho Gia Truyen is a 2025 MICHELIN Bib Gourmand Old Quarter bowl: broth steam, sliced beef, herbs, hot broth, and a room moving at meal speed."
+          "title": "Old Quarter Steam And Beef",
+          "body": "Pho Gia Truyen is an Old Quarter beef-phở stop: broth steam, sliced beef, herbs, quick ordering, and a room that moves at breakfast or lunch speed."
         },
         {
           "id": "quick-say",
@@ -3332,8 +3332,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "Bib Gourmand, Room Pace",
-          "body": "The recognition points to a bowl that still moves quickly. Keep the order direct and let broth, beef, herbs, and room pace carry the visit."
+          "title": "Room Pace Before Award Talk",
+          "body": "The Bib Gourmand note supports the choice, but the memory is broth, beef, herbs, and the speed of a shop built around one bowl."
         },
         {
           "id": "when-to-use",

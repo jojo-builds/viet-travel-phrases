@@ -2521,8 +2521,8 @@
           "body": "",
           "phraseIDs": [
             "price-1",
-            "price-4",
-            "food-1"
+            "v900-shop-can-you-pack-it-for-travel",
+            "store-2"
           ]
         },
         {
@@ -3447,7 +3447,7 @@
       "pageID": "city-hue-place-song-huong-floating-restaurant",
       "summary": "Choose Song Huong for the evening when the Perfume River should be part of dinner: floating table, Trường Tiền bridge light, simple seafood, and a calmer ride back after a long heritage day.",
       "context": "Choose Song Huong for the evening when the Perfume River should be part of dinner: floating table, Trường Tiền bridge light, simple seafood, and a calmer ride back after a long heritage day.",
-      "tip": "For a food-first Huế day, start with Đông Ba, bún bò, or bánh lọc. Song Hương makes more sense when the river setting matters more than dish hunting.",
+      "tip": "For a food-first Huế day, start with Đông Ba, bún bò, or bánh lọc. Song Hương makes the most sense when the river setting is part of dinner.",
       "rationale": "Hue’s river becomes part of the meal here: floating table, bridge light, seafood, and local dishes along the city-center waterline.",
       "sections": [
         {
@@ -3468,7 +3468,7 @@
         {
           "id": "place-brief",
           "title": "River First, Menu Second",
-          "body": "This is a river-view dinner, not the hidden food find of the day. Choose it when eating on the Perfume River is the point and the order can stay simple."
+          "body": "Choose it for a floating table on the Perfume River: dusk water, Trường Tiền Bridge nearby, simple seafood or Hue dishes, and a calmer ride back after a heritage-heavy day."
         },
         {
           "id": "use-it-with",
@@ -3477,8 +3477,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Food-First, Start Elsewhere",
-          "body": "For a food-first Huế day, start with Đông Ba, bún bò, or bánh lọc. Song Hương makes more sense when the river setting matters more than dish hunting."
+          "title": "When Food Leads, Start Elsewhere",
+          "body": "For a food-first Huế day, start with Đông Ba, bún bò, or bánh lọc. Song Hương makes the most sense when the river setting is part of dinner."
         }
       ],
       "sourceMode": "expanded-detail"

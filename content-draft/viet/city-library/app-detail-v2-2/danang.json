@@ -80,7 +80,7 @@
           "label": "Bảo tàng Mỹ thuật Đà Nẵng",
           "relationship": "curated route comparison",
           "displaySubtitle": "A quieter gallery stop when camera play is not the mood.",
-          "reason": "Han Market gives Lotte Mart a true local-market contrast when the user needs food/gift texture instead of supermarket comfort.",
+          "reason": "Editorial relationship: A quieter gallery stop when camera play is not the mood.",
           "status": "render"
         }
       ],
@@ -303,7 +303,7 @@
           "label": "Nhà ga quốc nội Đà Nẵng",
           "relationship": "domestic-arrival handoff",
           "displaySubtitle": "The local-flight side when pickup, bags, and the first ride need one clear meeting point.",
-          "reason": "Nhà ga quốc nội Đà Nẵng now has an authored related-card role for Sân bay Đà Nẵng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The local-flight side when pickup, bags, and the first ride need one clear meeting point.",
           "status": "render"
         }
       ],
@@ -414,7 +414,7 @@
           "label": "Quận Hải Châu",
           "relationship": "central-base contrast",
           "displaySubtitle": "The practical center for hotel blocks, river walks, errands, and coffee between bigger Da Nang plans.",
-          "reason": "Quận Hải Châu now has an authored related-card role for Khu An Thượng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The practical center for hotel blocks, river walks, errands, and coffee between bigger Da Nang plans.",
           "status": "render"
         }
       ],
@@ -525,7 +525,7 @@
           "label": "Công viên Châu Á",
           "relationship": "after-dark park contrast",
           "displaySubtitle": "A lights-and-rides evening when the day needs family-park energy instead of another river walk.",
-          "reason": "Công viên Châu Á now has an authored related-card role for Công viên APEC, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A lights-and-rides evening when the day needs family-park energy instead of another river walk.",
           "status": "render"
         }
       ],
@@ -636,7 +636,7 @@
           "label": "Công viên APEC",
           "relationship": "riverside-breather contrast",
           "displaySubtitle": "A short open-air pause by the Hàn River, with the curved canopy as the meeting point.",
-          "reason": "Công viên APEC now has an authored related-card role for Công viên Châu Á, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A short open-air pause by the Hàn River, with the curved canopy as the meeting point.",
           "status": "render"
         }
       ],
@@ -694,27 +694,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho hỏi, đi tới đó thế nào?",
-          "en": "Excuse me, how do I get there?",
-          "intent": "directions-how-to-get",
-          "phraseId": "directions-1",
-          "audioId": "directions-1",
+          "vi": "Vé bao nhiêu?",
+          "en": "How much is the ticket?",
+          "intent": "sight-ticket",
+          "phraseId": "sight-1",
+          "audioId": "sight-1",
           "status": "mapped"
         },
         {
-          "vi": "Tôi chụp hình ở đây được không?",
-          "en": "Can I take photos here?",
-          "intent": "sight-photos",
-          "phraseId": "sight-3",
-          "audioId": "sight-3",
+          "vi": "Bắt đầu ở đâu?",
+          "en": "Where do we start?",
+          "intent": "sight-start",
+          "phraseId": "sight-2",
+          "audioId": "sight-2",
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể đi bộ tới đó được không?",
-          "en": "Can I walk there?",
-          "intent": "v500-dire-navi-can-i-walk-there",
-          "phraseId": "v500-dire-navi-can-i-walk-there",
-          "audioId": "v500-dire-navi-can-i-walk-there",
+          "vi": "Điểm gặp ở đâu?",
+          "en": "Where is the meeting point?",
+          "intent": "sight-meeting-point",
+          "phraseId": "sight-5",
+          "audioId": "sight-5",
           "status": "mapped"
         }
       ],
@@ -747,7 +747,7 @@
           "label": "Màn phun lửa Cầu Rồng",
           "relationship": "timed-river ritual",
           "displaySubtitle": "The timed crowd moment when the bridge becomes fire, spray, phones, and a fast exit plan.",
-          "reason": "Màn phun lửa Cầu Rồng now has an authored related-card role for Cáp treo Bà Nà, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The timed crowd moment when the bridge becomes fire, spray, phones, and a fast exit plan.",
           "status": "render"
         }
       ],
@@ -858,7 +858,7 @@
           "label": "Đỉnh Bàn Cờ",
           "relationship": "son-tra-viewpoint contrast",
           "displaySubtitle": "A weather-dependent Sơn Trà climb for coastline views, road curves, and a slower return from the mountain.",
-          "reason": "Đỉnh Bàn Cờ now has an authored related-card role for Bà Nà Hills, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A weather-dependent Sơn Trà climb for coastline views, road curves, and a slower return from the mountain.",
           "status": "render"
         }
       ],
@@ -1076,7 +1076,7 @@
           "label": "Đường Nguyễn Văn Linh",
           "relationship": "cross-town-avenue handoff",
           "displaySubtitle": "A broad airport-to-river avenue name for pickups, crossings, and first-day bearings.",
-          "reason": "Đường Nguyễn Văn Linh now has an authored related-card role for Đường Bạch Đằng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A broad airport-to-river avenue name for pickups, crossings, and first-day bearings.",
           "status": "render"
         }
       ],
@@ -1187,7 +1187,7 @@
           "label": "Bà Nà Hills",
           "relationship": "mountain-park day",
           "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Bà Nà Hills now has an authored related-card role for Đỉnh Bàn Cờ, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
           "status": "render"
         }
       ],
@@ -1653,7 +1653,7 @@
           "label": "Hải sản Bé Mặn",
           "relationship": "MICHELIN seafood table",
           "displaySubtitle": "A 2025 MICHELIN Selected seafood table where trays, prices, and cooking style shape dinner first.",
-          "reason": "Hải sản Bé Mặn now has an authored related-card role for Bánh xèo Bà Dưỡng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Selected seafood table where trays, prices, and cooking style shape dinner first.",
           "status": "render"
         }
       ],
@@ -1777,7 +1777,7 @@
           "label": "Bánh xèo Bà Dưỡng",
           "relationship": "MICHELIN pancake table",
           "displaySubtitle": "A 2025 MICHELIN Selected pancake shop for hot edges, herbs, wrappers, and sauce at the table.",
-          "reason": "Bánh xèo Bà Dưỡng now has an authored related-card role for Hải sản Bé Mặn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Selected pancake shop for hot edges, herbs, wrappers, and sauce at the table.",
           "status": "render"
         }
       ],
@@ -2574,11 +2574,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "bun cha ca hon",
-      "travelerMoment": "Hờn is the 2025 MICHELIN Bib Gourmand Da Nang fish-cake noodle bowl: fish cake, broth, noodles, herbs, and spice after tasting.",
+      "travelerMoment": "Hờn is a Da Nang fish-cake noodle bowl moment: springy fish cake, coastal broth, noodles, herbs, and spice after tasting.",
       "storySpine": "Hờn gives the citywide fish-cake noodle dish a recognized breakfast table, where one bowl, broth, herbs, and the day's first meal do most of the work.",
       "intro": {
-        "heading": "A Bib Gourmand Fish-Cake Bowl",
-        "body": "Bun Cha Ca Hon is a 2025 MICHELIN Bib Gourmand Da Nang stop for fish-cake noodle soup: broth first, herbs after, and spice only once the bowl is clear."
+        "heading": "Fish Cake In Coastal Broth",
+        "body": "Bún Chả Cá Hờn gives Da Nang fish-cake noodle soup a named table: springy fish cake, coastal broth, noodles, herbs, and chili only after the first clean taste."
       },
       "usefulPhraseCards": [
         {
@@ -2759,7 +2759,7 @@
           "label": "Bún Chả Cá Hờn",
           "relationship": "MICHELIN fish-cake bowl",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand fish-cake noodle bowl when broth and herbs should lead breakfast.",
-          "reason": "Bún Chả Cá Hờn now has an authored related-card role for Bún Riêu Cua 39, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand fish-cake noodle bowl when broth and herbs should lead breakfast.",
           "status": "render"
         },
         {
@@ -2871,7 +2871,7 @@
         {
           "id": "keep-the-claim-small",
           "heading": "Let The Bowl Carry It",
-          "body": "The MICHELIN Selected signal supports the choice, but the reason to remember it is simpler: thick noodles, hot broth, toppings, and a short street-food meal."
+          "body": "Remember it for the street-food comfort: thick noodles, hot broth, toppings, herbs, and a short meal that feels different from mì Quảng or fish-cake soup."
         }
       ],
       "mentionedHereCandidates": [],
@@ -2881,7 +2881,7 @@
           "label": "Bún Riêu Cua 39",
           "relationship": "MICHELIN crab-tomato bowl",
           "displaySubtitle": "A 2025 MICHELIN Selected crab-tomato noodle bowl when Da Nang needs a brighter soup lane.",
-          "reason": "Bún Riêu Cua 39 now has an authored related-card role for Bánh Canh Yến, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Selected crab-tomato noodle bowl when Da Nang needs a brighter soup lane.",
           "status": "render"
         },
         {
@@ -2889,7 +2889,7 @@
           "label": "Bún Chả Cá Hờn",
           "relationship": "MICHELIN fish-cake bowl",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand fish-cake noodle bowl when broth and herbs should lead breakfast.",
-          "reason": "Bún Chả Cá Hờn now has an authored related-card role for Bánh Canh Yến, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand fish-cake noodle bowl when broth and herbs should lead breakfast.",
           "status": "render"
         }
       ],
@@ -3003,7 +3003,7 @@
           "label": "Bà Nà Hills",
           "relationship": "mountain-park day",
           "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Bà Nà Hills now has an authored related-card role for Nhà thờ Con Gà Đà Nẵng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
           "status": "render"
         }
       ],
@@ -3114,7 +3114,7 @@
           "label": "Ga Đà Nẵng",
           "relationship": "train-day handoff",
           "displaySubtitle": "The rail stop for bags, route boards, curb pickups, and leaving Da Nang by train.",
-          "reason": "Ga Đà Nẵng now has an authored related-card role for Bến xe Trung tâm Đà Nẵng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The rail stop for bags, route boards, curb pickups, and leaving Da Nang by train.",
           "status": "render"
         }
       ],
@@ -3220,7 +3220,7 @@
           "label": "Bảo tàng 3D Art in Paradise Đà Nẵng",
           "relationship": "playful-indoor break",
           "displaySubtitle": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
-          "reason": "Bảo tàng 3D Art in Paradise Đà Nẵng now has an authored related-card role for Bảo tàng Điêu khắc Chăm, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
           "status": "render"
         }
       ],
@@ -3809,7 +3809,7 @@
           "label": "Sân bay Đà Nẵng",
           "relationship": "arrival-departure handoff",
           "displaySubtitle": "The practical first or last Da Nang threshold for bags, terminal signs, pickups, and warm air outside.",
-          "reason": "Sân bay Đà Nẵng now has an authored related-card role for Nhà ga quốc nội Đà Nẵng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The practical first or last Da Nang threshold for bags, terminal signs, pickups, and warm air outside.",
           "status": "render"
         }
       ],
@@ -4024,7 +4024,7 @@
           "label": "Bà Nà Hills",
           "relationship": "mountain-park day",
           "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Bà Nà Hills now has an authored related-card role for Cầu Rồng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
           "status": "render"
         }
       ],
@@ -4137,7 +4137,7 @@
           "label": "Cáp treo Bà Nà",
           "relationship": "cable-car arrival",
           "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Cáp treo Bà Nà now has an authored related-card role for Màn phun lửa Cầu Rồng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
           "status": "render"
         }
       ],
@@ -4248,7 +4248,7 @@
           "label": "Bà Nà Hills",
           "relationship": "mountain-park day",
           "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Bà Nà Hills now has an authored related-card role for Tượng Cá Chép Hóa Rồng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
           "status": "render"
         }
       ],
@@ -4468,7 +4468,7 @@
           "label": "Bảo tàng 3D Art in Paradise Đà Nẵng",
           "relationship": "playful-indoor break",
           "displaySubtitle": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
-          "reason": "Bảo tàng 3D Art in Paradise Đà Nẵng now has an authored related-card role for Bảo tàng Mỹ thuật Đà Nẵng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
           "status": "render"
         }
       ],
@@ -4579,7 +4579,7 @@
           "label": "Bà Nà Hills",
           "relationship": "mountain-park day",
           "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Bà Nà Hills now has an authored related-card role for Cầu Vàng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
           "status": "render"
         }
       ],
@@ -4690,7 +4690,7 @@
           "label": "Khu An Thượng",
           "relationship": "beachside-night pocket",
           "displaySubtitle": "A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
-          "reason": "Khu An Thượng now has an authored related-card role for Quận Hải Châu, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
           "status": "render"
         }
       ],
@@ -4921,7 +4921,7 @@
           "label": "Bà Nà Hills",
           "relationship": "mountain-park day",
           "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Bà Nà Hills now has an authored related-card role for Đèo Hải Vân, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
           "status": "render"
         }
       ],
@@ -5032,7 +5032,7 @@
           "label": "Cáp treo Bà Nà",
           "relationship": "cable-car arrival",
           "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Cáp treo Bà Nà now has an authored related-card role for Chuyến đi đèo Hải Vân, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
           "status": "render"
         }
       ],
@@ -5171,7 +5171,7 @@
           "label": "Chợ Cồn",
           "relationship": "food-market comparison",
           "displaySubtitle": "Da Nang’s louder snack-market choice for stools, steam, and dessert cups.",
-          "reason": "Hàn is the calmer first-market save; Cồn is the stronger food-market comparison for travelers building a food route.",
+          "reason": "Editorial relationship: Da Nang’s louder snack-market choice for stools, steam, and dessert cups.",
           "status": "render"
         }
       ],
@@ -5284,7 +5284,7 @@
           "label": "Bảo tàng 3D Art in Paradise Đà Nẵng",
           "relationship": "playful-indoor break",
           "displaySubtitle": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
-          "reason": "Bảo tàng 3D Art in Paradise Đà Nẵng now has an authored related-card role for Sông Hàn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
           "status": "render"
         }
       ],
@@ -5395,7 +5395,7 @@
           "label": "Cáp treo Bà Nà",
           "relationship": "cable-car arrival",
           "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Cáp treo Bà Nà now has an authored related-card role for Du thuyền sông Hàn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
           "status": "render"
         }
       ],
@@ -5613,7 +5613,7 @@
           "label": "Cáp treo Bà Nà",
           "relationship": "cable-car arrival",
           "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Cáp treo Bà Nà now has an authored related-card role for Khu du lịch Hòa Phú Thành, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
           "status": "render"
         }
       ],
@@ -5724,7 +5724,7 @@
           "label": "Rạn Nam Ô",
           "relationship": "working-coast nature",
           "displaySubtitle": "A tide-dependent rocky coast stop for pools, fishing edges, and a northern Da Nang shoreline feel.",
-          "reason": "Rạn Nam Ô now has an authored related-card role for Hồ Hòa Trung, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A tide-dependent rocky coast stop for pools, fishing edges, and a northern Da Nang shoreline feel.",
           "status": "render"
         }
       ],
@@ -6171,7 +6171,7 @@
           "label": "Bà Nà Hills",
           "relationship": "mountain-park day",
           "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Bà Nà Hills now has an authored related-card role for Tượng Phật Bà, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
           "status": "render"
         }
       ],
@@ -6394,7 +6394,7 @@
           "label": "Bà Nà Hills",
           "relationship": "mountain-park day",
           "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Bà Nà Hills now has an authored related-card role for Chùa Linh Ứng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
           "status": "render"
         }
       ],
@@ -6612,7 +6612,7 @@
           "label": "Chợ Hàn",
           "relationship": "curated route comparison",
           "displaySubtitle": "A central market contrast when texture matters more than air-conditioning.",
-          "reason": "Han Market gives Lotte Mart a true local-market contrast when the user needs food/gift texture instead of supermarket comfort.",
+          "reason": "Editorial relationship: A central market contrast when texture matters more than air-conditioning.",
           "status": "render"
         }
       ],
@@ -6721,7 +6721,7 @@
           "label": "Bà Nà Hills",
           "relationship": "mountain-park day",
           "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Bà Nà Hills now has an authored related-card role for Cầu Tình Yêu, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
           "status": "render"
         }
       ],
@@ -6964,7 +6964,7 @@
           "label": "Biển Mỹ An",
           "relationship": "soft-beach edge",
           "displaySubtitle": "A smaller Mỹ An beach edge for a quick swim, sand walk, or low-friction coast break.",
-          "reason": "Biển Mỹ An now has an authored related-card role for Biển Mân Thái, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A smaller Mỹ An beach edge for a quick swim, sand walk, or low-friction coast break.",
           "status": "render"
         }
       ],
@@ -7075,7 +7075,7 @@
           "label": "Cáp treo Bà Nà",
           "relationship": "cable-car arrival",
           "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Cáp treo Bà Nà now has an authored related-card role for Hang động Ngũ Hành Sơn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
           "status": "render"
         }
       ],
@@ -7186,7 +7186,7 @@
           "label": "Bà Nà Hills",
           "relationship": "mountain-park day",
           "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Bà Nà Hills now has an authored related-card role for Ngũ Hành Sơn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
           "status": "render"
         }
       ],
@@ -7393,8 +7393,8 @@
         },
         {
           "id": "noodle-stop-not-big-dinner",
-          "heading": "Selected For One Bowl",
-          "body": "The MICHELIN Selected signal is a memory hook here, not ceremony. Come for one focused bowl; mì Quảng comes first, and sides can wait."
+          "heading": "One Bowl, Then Back Out",
+          "body": "Come for a focused mì Quảng lunch: yellow noodles, shallow broth, herbs, peanuts, rice cracker, and enough table rhythm to understand the dish without stretching the meal."
         },
         {
           "id": "short-meal-clear-memory",
@@ -7551,7 +7551,7 @@
           "label": "Bánh Canh Yến",
           "relationship": "MICHELIN thick-noodle bowl",
           "displaySubtitle": "A 2025 MICHELIN Selected thick-noodle soup when texture, broth, and toppings should lead.",
-          "reason": "Bánh Canh Yến now has an authored related-card role for Mỳ Quảng Sứa Hồng Vân, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Selected thick-noodle soup when texture, broth, and toppings should lead.",
           "status": "render"
         }
       ],
@@ -7660,7 +7660,7 @@
           "label": "Bảo tàng 3D Art in Paradise Đà Nẵng",
           "relationship": "playful-indoor break",
           "displaySubtitle": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
-          "reason": "Bảo tàng 3D Art in Paradise Đà Nẵng now has an authored related-card role for Bảo tàng Đà Nẵng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
           "status": "render"
         }
       ],
@@ -7773,7 +7773,7 @@
           "label": "Bảo tàng 3D Art in Paradise Đà Nẵng",
           "relationship": "playful-indoor break",
           "displaySubtitle": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
-          "reason": "Bảo tàng 3D Art in Paradise Đà Nẵng now has an authored related-card role for Bảo tàng Đà Nẵng - Cơ sở 2, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
           "status": "render"
         }
       ],
@@ -7884,7 +7884,7 @@
           "label": "Khu An Thượng",
           "relationship": "beachside-night pocket",
           "displaySubtitle": "A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
-          "reason": "Khu An Thượng now has an authored related-card role for Mỹ An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
           "status": "render"
         }
       ],
@@ -7995,7 +7995,7 @@
           "label": "Biển Mân Thái",
           "relationship": "working-beach contrast",
           "displaySubtitle": "A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
-          "reason": "Biển Mân Thái now has an authored related-card role for Biển Mỹ An, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
           "status": "render"
         }
       ],
@@ -8106,7 +8106,7 @@
           "label": "Biển Mân Thái",
           "relationship": "working-beach contrast",
           "displaySubtitle": "A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
-          "reason": "Biển Mân Thái now has an authored related-card role for Biển Mỹ Khê, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
           "status": "render"
         }
       ],
@@ -8227,7 +8227,7 @@
           "label": "Mỳ Quảng Sứa Hồng Vân",
           "relationship": "same-dish restaurant comparison",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand mì Quảng stop with a sharper seafood-texture hook.",
-          "reason": "Sứa Hồng Vân is now the stronger save when the user wants a more distinctive mì Quảng bowl.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand mì Quảng stop with a sharper seafood-texture hook.",
           "status": "render"
         },
         {
@@ -8360,7 +8360,7 @@
           "label": "Mỳ Quảng Sứa Hồng Vân",
           "relationship": "same-dish restaurant comparison",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand mì Quảng stop when texture should lead.",
-          "reason": "Sứa Hồng Vân is the stronger same-dish save when users want a memorable bowl.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand mì Quảng stop when texture should lead.",
           "status": "render"
         },
         {
@@ -8719,7 +8719,7 @@
           "label": "Cáp treo Bà Nà",
           "relationship": "cable-car arrival",
           "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Cáp treo Bà Nà now has an authored related-card role for Làng nghề nước mắm Nam Ô, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
           "status": "render"
         }
       ],
@@ -8830,7 +8830,7 @@
           "label": "Hồ Hòa Trung",
           "relationship": "open-water escape",
           "displaySubtitle": "A soft lake-and-grass escape outside the core when the day needs space and low hills.",
-          "reason": "Hồ Hòa Trung now has an authored related-card role for Rạn Nam Ô, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A soft lake-and-grass escape outside the core when the day needs space and low hills.",
           "status": "render"
         }
       ],
@@ -9176,7 +9176,7 @@
           "label": "Khu An Thượng",
           "relationship": "beachside-night pocket",
           "displaySubtitle": "A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
-          "reason": "Khu An Thượng now has an authored related-card role for Quận Ngũ Hành Sơn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
           "status": "render"
         }
       ],
@@ -9287,7 +9287,7 @@
           "label": "Cáp treo Bà Nà",
           "relationship": "cable-car arrival",
           "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Cáp treo Bà Nà now has an authored related-card role for Nhà hát Tuồng Nguyễn Hiển Dĩnh, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
           "status": "render"
         }
       ],
@@ -9398,7 +9398,7 @@
           "label": "Đường Bạch Đằng",
           "relationship": "riverfront-walking spine",
           "displaySubtitle": "The Hàn River walking line for bridge views, cafes, lights, and central Da Nang bearings.",
-          "reason": "Đường Bạch Đằng now has an authored related-card role for Đường Nguyễn Văn Linh, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The Hàn River walking line for bridge views, cafes, lights, and central Da Nang bearings.",
           "status": "render"
         }
       ],
@@ -9509,7 +9509,7 @@
           "label": "Biển Mân Thái",
           "relationship": "working-beach contrast",
           "displaySubtitle": "A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
-          "reason": "Biển Mân Thái now has an authored related-card role for Biển Non Nước, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
           "status": "render"
         }
       ],
@@ -9620,7 +9620,7 @@
           "label": "Bảo tàng 3D Art in Paradise Đà Nẵng",
           "relationship": "playful-indoor break",
           "displaySubtitle": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
-          "reason": "Bảo tàng 3D Art in Paradise Đà Nẵng now has an authored related-card role for Làng đá Non Nước, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
           "status": "render"
         }
       ],
@@ -9843,7 +9843,7 @@
           "label": "Biển Mân Thái",
           "relationship": "working-beach contrast",
           "displaySubtitle": "A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
-          "reason": "Biển Mân Thái now has an authored related-card role for Biển Phạm Văn Đồng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
           "status": "render"
         }
       ],
@@ -9954,7 +9954,7 @@
           "label": "Bà Nà Hills",
           "relationship": "mountain-park day",
           "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Bà Nà Hills now has an authored related-card role for Chùa Pháp Lâm, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
           "status": "render"
         }
       ],
@@ -10065,7 +10065,7 @@
           "label": "Khu An Thượng",
           "relationship": "beachside-night pocket",
           "displaySubtitle": "A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
-          "reason": "Khu An Thượng now has an authored related-card role for Phước Mỹ, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
           "status": "render"
         }
       ],
@@ -10176,7 +10176,7 @@
           "label": "Bến xe Trung tâm Đà Nẵng",
           "relationship": "onward-bus handoff",
           "displaySubtitle": "The bus-station edge for route names, luggage, bays, and the road out of Da Nang.",
-          "reason": "Bến xe Trung tâm Đà Nẵng now has an authored related-card role for Ga Đà Nẵng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The bus-station edge for route names, luggage, bays, and the road out of Da Nang.",
           "status": "render"
         }
       ],
@@ -10508,7 +10508,7 @@
           "label": "Hồ Hòa Trung",
           "relationship": "open-water escape",
           "displaySubtitle": "A soft lake-and-grass escape outside the core when the day needs space and low hills.",
-          "reason": "Hồ Hòa Trung now has an authored related-card role for Bán đảo Sơn Trà, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A soft lake-and-grass escape outside the core when the day needs space and low hills.",
           "status": "render"
         }
       ],
@@ -10619,7 +10619,7 @@
           "label": "Khu An Thượng",
           "relationship": "beachside-night pocket",
           "displaySubtitle": "A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
-          "reason": "Khu An Thượng now has an authored related-card role for Quận Sơn Trà, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
           "status": "render"
         }
       ],
@@ -10837,7 +10837,7 @@
           "label": "Cáp treo Bà Nà",
           "relationship": "cable-car arrival",
           "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Cáp treo Bà Nà now has an authored related-card role for Chuyến đi Sơn Trà, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
           "status": "render"
         }
       ],
@@ -10948,7 +10948,7 @@
           "label": "Biển Mân Thái",
           "relationship": "working-beach contrast",
           "displaySubtitle": "A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
-          "reason": "Biển Mân Thái now has an authored related-card role for Biển Thanh Bình, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
           "status": "render"
         }
       ],
@@ -11174,7 +11174,7 @@
           "label": "Bà Nà Hills",
           "relationship": "mountain-park day",
           "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Bà Nà Hills now has an authored related-card role for Cầu Thuận Phước, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
           "status": "render"
         }
       ],
@@ -11285,7 +11285,7 @@
           "label": "Bảo tàng 3D Art in Paradise Đà Nẵng",
           "relationship": "playful-indoor break",
           "displaySubtitle": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
-          "reason": "Bảo tàng 3D Art in Paradise Đà Nẵng now has an authored related-card role for Cảng Tiên Sa, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
           "status": "render"
         }
       ],
@@ -11396,7 +11396,7 @@
           "label": "Đường Bạch Đằng",
           "relationship": "riverfront-walking spine",
           "displaySubtitle": "The Hàn River walking line for bridge views, cafes, lights, and central Da Nang bearings.",
-          "reason": "Đường Bạch Đằng now has an authored related-card role for Đường Trần Hưng Đạo, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The Hàn River walking line for bridge views, cafes, lights, and central Da Nang bearings.",
           "status": "render"
         }
       ],
@@ -11507,7 +11507,7 @@
           "label": "Bà Nà Hills",
           "relationship": "mountain-park day",
           "displaySubtitle": "A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
-          "reason": "Bà Nà Hills now has an authored related-card role for Cầu Trần Thị Lý, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A full mountain theme-park day with cable cars, Golden Bridge crowds, cooler air, and weather risk.",
           "status": "render"
         }
       ],
@@ -11618,7 +11618,7 @@
           "label": "Cáp treo Bà Nà",
           "relationship": "cable-car arrival",
           "displaySubtitle": "The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
-          "reason": "Cáp treo Bà Nà now has an authored related-card role for Nhà hát Trưng Vương, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The forest-and-mist climb that turns city heat into a Bà Nà mountain day.",
           "status": "render"
         }
       ],
@@ -11676,27 +11676,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cái này bao nhiêu?",
-          "en": "How much is this?",
-          "intent": "money-how-much",
-          "phraseId": "price-1",
-          "audioId": "price-1",
+          "vi": "Trả ở đâu?",
+          "en": "Where do I pay?",
+          "intent": "shopping-pay-where",
+          "phraseId": "shop-5",
+          "audioId": "shop-5",
           "status": "mapped"
         },
         {
-          "vi": "Bớt chút được không?",
-          "en": "Can you lower it a little?",
-          "intent": "money-lower-price",
-          "phraseId": "price-4",
-          "audioId": "price-4",
+          "vi": "Có túi không?",
+          "en": "Do you have a bag?",
+          "intent": "service-bag",
+          "phraseId": "store-2",
+          "audioId": "store-2",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi một phần",
-          "en": "One portion please",
-          "intent": "food-one-portion",
-          "phraseId": "food-1",
-          "audioId": "food-1",
+          "vi": "Nhà vệ sinh ở đâu?",
+          "en": "Where is the bathroom?",
+          "intent": "bathroom-where",
+          "phraseId": "bath-1",
+          "audioId": "bath-1",
           "status": "mapped"
         }
       ],
@@ -11841,7 +11841,7 @@
           "label": "Đường Bạch Đằng",
           "relationship": "riverfront-walking spine",
           "displaySubtitle": "The Hàn River walking line for bridge views, cafes, lights, and central Da Nang bearings.",
-          "reason": "Đường Bạch Đằng now has an authored related-card role for Đường Võ Nguyên Giáp, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The Hàn River walking line for bridge views, cafes, lights, and central Da Nang bearings.",
           "status": "render"
         }
       ],
@@ -11952,7 +11952,7 @@
           "label": "43 Factory Coffee Roaster",
           "relationship": "coffee-reference comparison",
           "displaySubtitle": "A stronger coffee-first stop when the drink should lead instead of the room.",
-          "reason": "43 Factory is a more save-worthy cafe reference than Wonderlust.",
+          "reason": "Editorial relationship: A stronger coffee-first stop when the drink should lead instead of the room.",
           "status": "render"
         }
       ],
@@ -12064,7 +12064,7 @@
           "label": "Hồ Hòa Trung",
           "relationship": "open-water escape",
           "displaySubtitle": "A soft lake-and-grass escape outside the core when the day needs space and low hills.",
-          "reason": "Hồ Hòa Trung now has an authored related-card role for Yên Retreat, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A soft lake-and-grass escape outside the core when the day needs space and low hills.",
           "status": "render"
         }
       ],

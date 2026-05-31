@@ -10,7 +10,7 @@
     "catalogPromotedPageCount": 770,
     "cityLibraryPageCount": 826,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-31T09:58:27.242Z"
+    "generatedAt": "2026-05-31T17:33:52.400Z"
   },
   "pages": [
     {
@@ -181195,34 +181195,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "directions-1",
-              "vietnamese": "Cho hỏi, đi tới đó thế nào?",
-              "english": "Excuse me, how do I get there?",
-              "pronunciation": "cho hoy dee toy doh theh nao",
+              "id": "sight-1",
+              "vietnamese": "Vé bao nhiêu?",
+              "english": "How much is the ticket?",
+              "pronunciation": "veh bao nyew",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-directions-how-to-get",
-              "audioKey": "directions-1"
+              "detailPageID": "viet-family-sight-ticket",
+              "audioKey": "sight-1"
             },
             {
-              "id": "sight-3",
-              "vietnamese": "Tôi chụp hình ở đây được không?",
-              "english": "Can I take photos here?",
-              "pronunciation": "toy choop hinh uh day dook khong",
+              "id": "sight-2",
+              "vietnamese": "Bắt đầu ở đâu?",
+              "english": "Where do we start?",
+              "pronunciation": "bat dow uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-sight-photos",
-              "audioKey": "sight-3"
+              "detailPageID": "viet-family-sight-start",
+              "audioKey": "sight-2"
             },
             {
-              "id": "v500-dire-navi-can-i-walk-there",
-              "vietnamese": "Tôi có thể đi bộ tới đó được không?",
-              "english": "Can I walk there?",
-              "pronunciation": "Toi co the di bo toi do duoc khong",
+              "id": "sight-5",
+              "vietnamese": "Điểm gặp ở đâu?",
+              "english": "Where is the meeting point?",
+              "pronunciation": "deeym gap uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-v500-dire-navi-can-i-walk-there",
-              "audioKey": "v500-dire-navi-can-i-walk-there"
+              "detailPageID": "viet-family-sight-meeting-point",
+              "audioKey": "sight-5"
             }
           ],
           "breakdown": [],
@@ -181286,21 +181286,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "directions-1"
+              "sight-1"
             ],
             "supportPhraseIDs": [
-              "sight-3",
-              "v500-dire-navi-can-i-walk-there"
+              "sight-2",
+              "sight-5"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-ba-na-cable-car",
-          "directions-1"
+          "sight-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "sight-3",
-          "v500-dire-navi-can-i-walk-there"
+          "sight-2",
+          "sight-5"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-ba-na-cable-car"
       }
@@ -182343,7 +182343,7 @@
         {
           "id": "good-to-know",
           "title": "Let The Bowl Carry It",
-          "body": "The MICHELIN Selected signal supports the choice, but the reason to remember it is simpler: thick noodles, hot broth, toppings, and a short street-food meal.",
+          "body": "Remember it for the street-food comfort: thick noodles, hot broth, toppings, herbs, and a short meal that feels different from mì Quảng or fish-cake soup.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -184137,7 +184137,7 @@
       "title": "Bún Chả Cá Hờn",
       "englishTitle": "Bun Cha Ca Hon",
       "pronunciation": "bun cha ca hon",
-      "summary": "Hờn is the 2025 MICHELIN Bib Gourmand Da Nang fish-cake noodle bowl: fish cake, broth, noodles, herbs, and spice after tasting. Hờn gives the citywide fish-cake noodle dish a recognized breakfast table, where one bowl, broth, herbs, and the day's first meal do most of the work.",
+      "summary": "Hờn is a Da Nang fish-cake noodle bowl moment: springy fish cake, coastal broth, noodles, herbs, and spice after tasting. Hờn gives the citywide fish-cake noodle dish a recognized breakfast table, where one bowl, broth, herbs, and the day's first meal do most of the work.",
       "heroImageName": "HeroCityDanangPlaceBunChaCaHon",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -184178,8 +184178,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Bib Gourmand Fish-Cake Bowl",
-          "body": "Bun Cha Ca Hon is a 2025 MICHELIN Bib Gourmand Da Nang stop for fish-cake noodle soup: broth first, herbs after, and spice only once the bowl is clear.",
+          "title": "Fish Cake In Coastal Broth",
+          "body": "Bún Chả Cá Hờn gives Da Nang fish-cake noodle soup a named table: springy fish cake, coastal broth, noodles, herbs, and chili only after the first clean taste.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -191201,8 +191201,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Selected For One Bowl",
-          "body": "The MICHELIN Selected signal is a memory hook here, not ceremony. Come for one focused bowl; mì Quảng comes first, and sides can wait.",
+          "title": "One Bowl, Then Back Out",
+          "body": "Come for a focused mì Quảng lunch: yellow noodles, shallow broth, herbs, peanuts, rice cracker, and enough table rhythm to understand the dish without stretching the meal.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -197814,34 +197814,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "price-1",
-              "vietnamese": "Cái này bao nhiêu?",
-              "english": "How much is this?",
-              "pronunciation": "gai nai bao nyew",
+              "id": "shop-5",
+              "vietnamese": "Trả ở đâu?",
+              "english": "Where do I pay?",
+              "pronunciation": "tra uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-how-much",
-              "audioKey": "price-1"
+              "detailPageID": "viet-family-shopping-pay-where",
+              "audioKey": "shop-5"
             },
             {
-              "id": "price-4",
-              "vietnamese": "Bớt chút được không?",
-              "english": "Can you lower it a little?",
-              "pronunciation": "but choot dook khong",
+              "id": "store-2",
+              "vietnamese": "Có túi không?",
+              "english": "Do you have a bag?",
+              "pronunciation": "koh too-ee khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-lower-price",
-              "audioKey": "price-4"
+              "detailPageID": "viet-family-service-bag",
+              "audioKey": "store-2"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "bath-1",
+              "vietnamese": "Nhà vệ sinh ở đâu?",
+              "english": "Where is the bathroom?",
+              "pronunciation": "nya veh sinh uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-bathroom-where",
+              "audioKey": "bath-1"
             }
           ],
           "breakdown": [],
@@ -197905,21 +197905,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "price-1"
+              "shop-5"
             ],
             "supportPhraseIDs": [
-              "price-4",
-              "food-1"
+              "store-2",
+              "bath-1"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-vincom-plaza",
-          "price-1"
+          "shop-5"
         ],
         "secondaryPracticePhraseIDs": [
-          "price-4",
-          "food-1"
+          "store-2",
+          "bath-1"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-vincom-plaza"
       }
@@ -210695,8 +210695,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "Selected For The Bun Cha",
-          "body": "Bun Cha Huong Lien is a 2025 MICHELIN Selected Hanoi lunch stop for grilled pork, warm broth, vermicelli, herbs, and a table that moves quickly.",
+          "title": "Grill Smoke, Broth, Herbs",
+          "body": "Bun Cha Huong Lien is a fast Hanoi lunch built around grilled pork, warm dipping broth, vermicelli, herbs, and a famous room that still moves like a working bún chả shop.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -210767,7 +210767,7 @@
         {
           "id": "good-to-know",
           "title": "Recognition, Then Lunch",
-          "body": "The MICHELIN Selected note helps explain the choice, but the room should still stay about lunch. Eat while the pork, broth, and herbs are warm.",
+          "body": "Let the recognition explain why the name is familiar, then eat while the pork, broth, and herbs are warm. The table rhythm matters more than the badge.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -216056,16 +216056,6 @@
               "audioKey": "price-1"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
-            },
-            {
               "id": "price-8",
               "vietnamese": "Tổng cộng bao nhiêu?",
               "english": "How much altogether?",
@@ -216074,6 +216064,16 @@
               "tintName": "teal",
               "detailPageID": "viet-family-money-total",
               "audioKey": "price-8"
+            },
+            {
+              "id": "shop-5",
+              "vietnamese": "Trả ở đâu?",
+              "english": "Where do I pay?",
+              "pronunciation": "tra uh dow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-shopping-pay-where",
+              "audioKey": "shop-5"
             }
           ],
           "breakdown": [],
@@ -216140,8 +216140,8 @@
               "price-1"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "price-8"
+              "price-8",
+              "shop-5"
             ]
           }
         ],
@@ -216150,8 +216150,8 @@
           "price-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "price-8"
+          "price-8",
+          "shop-5"
         ],
         "practiceSourcePageID": "viet-family-city-hanoi-place-hom-market"
       }
@@ -220156,24 +220156,24 @@
           "body": "",
           "phrases": [
             {
-              "id": "v500-sigh-acti-where-can-i-buy-tickets",
-              "vietnamese": "Tôi có thể mua vé ở đâu?",
-              "english": "Where can I buy tickets?",
-              "pronunciation": "Toi co the mua ve o dau",
+              "id": "sight-1",
+              "vietnamese": "Vé bao nhiêu?",
+              "english": "How much is the ticket?",
+              "pronunciation": "veh bao nyew",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-v500-sigh-acti-where-can-i-buy-tickets",
-              "audioKey": "v500-sigh-acti-where-can-i-buy-tickets"
+              "detailPageID": "viet-family-sight-ticket",
+              "audioKey": "sight-1"
             },
             {
-              "id": "sight-4",
-              "vietnamese": "Mấy giờ đóng cửa?",
-              "english": "What time does it close?",
-              "pronunciation": "may zyuh dong koo-ah",
+              "id": "v500-time-date-book-one-ticket-please",
+              "vietnamese": "Xin một vé",
+              "english": "One ticket, please",
+              "pronunciation": "Xin mot ve",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-sight-close",
-              "audioKey": "sight-4"
+              "detailPageID": "viet-family-v500-time-date-book-one-ticket-please",
+              "audioKey": "v500-time-date-book-one-ticket-please"
             },
             {
               "id": "sight-5",
@@ -220247,20 +220247,20 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "v500-sigh-acti-where-can-i-buy-tickets"
+              "sight-1"
             ],
             "supportPhraseIDs": [
-              "sight-4",
+              "v500-time-date-book-one-ticket-please",
               "sight-5"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hanoi-place-opera-house",
-          "v500-sigh-acti-where-can-i-buy-tickets"
+          "sight-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "sight-4",
+          "v500-time-date-book-one-ticket-please",
           "sight-5"
         ],
         "practiceSourcePageID": "viet-family-city-hanoi-place-opera-house"
@@ -221568,8 +221568,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Bib Gourmand Pho Shop",
-          "body": "Pho Gia Truyen is a 2025 MICHELIN Bib Gourmand Old Quarter bowl: broth steam, sliced beef, herbs, hot broth, and a room moving at meal speed.",
+          "title": "Old Quarter Steam And Beef",
+          "body": "Pho Gia Truyen is an Old Quarter beef-phở stop: broth steam, sliced beef, herbs, quick ordering, and a room that moves at breakfast or lunch speed.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -221623,8 +221623,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "Bib Gourmand, Room Pace",
-          "body": "The recognition points to a bowl that still moves quickly. Keep the order direct and let broth, beef, herbs, and room pace carry the visit.",
+          "title": "Room Pace Before Award Talk",
+          "body": "The Bib Gourmand note supports the choice, but the memory is broth, beef, herbs, and the speed of a shop built around one bowl.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -246048,34 +246048,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "directions-1",
-              "vietnamese": "Cho hỏi, đi tới đó thế nào?",
-              "english": "Excuse me, how do I get there?",
-              "pronunciation": "cho hoy dee toy doh theh nao",
+              "id": "coffee-1",
+              "vietnamese": "Cho tôi một cà phê sữa đá",
+              "english": "One iced milk coffee please",
+              "pronunciation": "cho toy mot ka feh sue-ah dah",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-directions-how-to-get",
-              "audioKey": "directions-1"
+              "detailPageID": "viet-family-food-coffee-milk",
+              "audioKey": "coffee-1"
             },
             {
-              "id": "directions-3",
-              "vietnamese": "Đi bộ mất bao lâu?",
-              "english": "How long does it take on foot?",
-              "pronunciation": "dee boh mut bao low",
+              "id": "v900-food-drin-less-sugar-please",
+              "vietnamese": "Làm ơn bớt đường đi",
+              "english": "Less sugar, please",
+              "pronunciation": "Lam on bot duong di",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-directions-how-long",
-              "audioKey": "directions-3"
+              "detailPageID": "viet-family-v900-food-drin-less-sugar-please",
+              "audioKey": "v900-food-drin-less-sugar-please"
             },
             {
-              "id": "v500-dire-navi-can-i-walk-there",
-              "vietnamese": "Tôi có thể đi bộ tới đó được không?",
-              "english": "Can I walk there?",
-              "pronunciation": "Toi co the di bo toi do duoc khong",
+              "id": "bath-1",
+              "vietnamese": "Nhà vệ sinh ở đâu?",
+              "english": "Where is the bathroom?",
+              "pronunciation": "nya veh sinh uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-v500-dire-navi-can-i-walk-there",
-              "audioKey": "v500-dire-navi-can-i-walk-there"
+              "detailPageID": "viet-family-bathroom-where",
+              "audioKey": "bath-1"
             }
           ],
           "breakdown": [],
@@ -246139,21 +246139,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "directions-1"
+              "coffee-1"
             ],
             "supportPhraseIDs": [
-              "directions-3",
-              "v500-dire-navi-can-i-walk-there"
+              "v900-food-drin-less-sugar-please",
+              "bath-1"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-cafe-hop-nguyen-hue",
-          "directions-1"
+          "coffee-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "directions-3",
-          "v500-dire-navi-can-i-walk-there"
+          "v900-food-drin-less-sugar-please",
+          "bath-1"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue"
       }
@@ -257857,34 +257857,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "price-1",
-              "vietnamese": "Cái này bao nhiêu?",
-              "english": "How much is this?",
-              "pronunciation": "gai nai bao nyew",
+              "id": "shop-5",
+              "vietnamese": "Trả ở đâu?",
+              "english": "Where do I pay?",
+              "pronunciation": "tra uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-how-much",
-              "audioKey": "price-1"
+              "detailPageID": "viet-family-shopping-pay-where",
+              "audioKey": "shop-5"
             },
             {
-              "id": "price-4",
-              "vietnamese": "Bớt chút được không?",
-              "english": "Can you lower it a little?",
-              "pronunciation": "but choot dook khong",
+              "id": "store-2",
+              "vietnamese": "Có túi không?",
+              "english": "Do you have a bag?",
+              "pronunciation": "koh too-ee khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-lower-price",
-              "audioKey": "price-4"
+              "detailPageID": "viet-family-service-bag",
+              "audioKey": "store-2"
             },
             {
-              "id": "shop-4",
-              "vietnamese": "Tôi chỉ xem thôi",
-              "english": "I’m just looking",
-              "pronunciation": "toy chee sem toy",
+              "id": "bath-1",
+              "vietnamese": "Nhà vệ sinh ở đâu?",
+              "english": "Where is the bathroom?",
+              "pronunciation": "nya veh sinh uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-shopping-just-looking",
-              "audioKey": "shop-4"
+              "detailPageID": "viet-family-bathroom-where",
+              "audioKey": "bath-1"
             }
           ],
           "breakdown": [],
@@ -257948,21 +257948,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "price-1"
+              "shop-5"
             ],
             "supportPhraseIDs": [
-              "price-4",
-              "shop-4"
+              "store-2",
+              "bath-1"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-takashimaya-saigon-centre",
-          "price-1"
+          "shop-5"
         ],
         "secondaryPracticePhraseIDs": [
-          "price-4",
-          "shop-4"
+          "store-2",
+          "bath-1"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-takashimaya-saigon-centre"
       }
@@ -272894,7 +272894,7 @@
         {
           "id": "at-glance",
           "title": "The Quick Hội An Bánh Mì Shop",
-          "body": "Bánh Mì Phượng is the well-known Hội An sandwich shop for quick bánh mì: crisp bread, visible fillings, herbs, sauce, chili, and a takeaway rhythm that fits an old-town walk.",
+          "body": "Bánh Mì Phượng is the famous Hội An sandwich shop for crisp bread, visible fillings, pâté, herbs, sauce, chili, and a takeaway rhythm that folds back into an old-town walk.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -277903,34 +277903,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "directions-8",
-              "vietnamese": "Điểm đón ở đâu?",
-              "english": "Where is the pickup point?",
-              "pronunciation": "deeym don uh dow",
+              "id": "coffee-1",
+              "vietnamese": "Cho tôi một cà phê sữa đá",
+              "english": "One iced milk coffee please",
+              "pronunciation": "cho toy mot ka feh sue-ah dah",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-directions-pickup-point",
-              "audioKey": "directions-8"
+              "detailPageID": "viet-family-food-coffee-milk",
+              "audioKey": "coffee-1"
             },
             {
-              "id": "v900-tran-where-can-i-buy-a-ticket",
-              "vietnamese": "Tôi có thể mua vé ở đâu?",
-              "english": "Where can I buy a ticket?",
-              "pronunciation": "Toi co the mua ve o dau",
+              "id": "v900-food-drin-less-sugar-please",
+              "vietnamese": "Làm ơn bớt đường đi",
+              "english": "Less sugar, please",
+              "pronunciation": "Lam on bot duong di",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-v900-tran-where-can-i-buy-a-ticket",
-              "audioKey": "v900-tran-where-can-i-buy-a-ticket"
+              "detailPageID": "viet-family-v900-food-drin-less-sugar-please",
+              "audioKey": "v900-food-drin-less-sugar-please"
             },
             {
-              "id": "taxi-3",
-              "vietnamese": "Dừng ở đây được rồi",
-              "english": "You can stop here",
-              "pronunciation": "zoong uh day dook roy",
+              "id": "bath-1",
+              "vietnamese": "Nhà vệ sinh ở đâu?",
+              "english": "Where is the bathroom?",
+              "pronunciation": "nya veh sinh uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-transport-stop-here",
-              "audioKey": "taxi-3"
+              "detailPageID": "viet-family-bathroom-where",
+              "audioKey": "bath-1"
             }
           ],
           "breakdown": [],
@@ -277994,21 +277994,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "directions-8"
+              "coffee-1"
             ],
             "supportPhraseIDs": [
-              "v900-tran-where-can-i-buy-a-ticket",
-              "taxi-3"
+              "v900-food-drin-less-sugar-please",
+              "bath-1"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-espresso-station",
-          "directions-8"
+          "coffee-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "v900-tran-where-can-i-buy-a-ticket",
-          "taxi-3"
+          "v900-food-drin-less-sugar-please",
+          "bath-1"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-espresso-station"
       }
@@ -281818,7 +281818,7 @@
         {
           "id": "at-glance",
           "title": "A First Dinner That Teaches The Menu",
-          "body": "Morning Glory Original is useful when Hội An food feels wide and the first dinner needs a clear table: cao lầu, white rose dumplings, bánh xèo, herbs, rice paper, and ingredient questions near the old streets.",
+          "body": "Morning Glory Original is a first Hội An dinner table for clear central-coast dishes: cao lầu, white rose dumplings, bánh xèo, herbs, rice paper, and staff who can answer ingredient questions.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -281873,7 +281873,7 @@
         {
           "id": "use-it-with",
           "title": "Why It Works First",
-          "body": "This is the practical first-night table for groups, allergies, and first-timers who want central-coast dishes without decoding every small shop on arrival.",
+          "body": "The room fits groups, allergies, and anyone still learning the menu. Hội An dishes feel easier here before smaller specialty stops.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -283735,24 +283735,14 @@
           "body": "",
           "phrases": [
             {
-              "id": "price-1",
-              "vietnamese": "Cái này bao nhiêu?",
-              "english": "How much is this?",
-              "pronunciation": "gai nai bao nyew",
+              "id": "sight-3",
+              "vietnamese": "Tôi chụp hình ở đây được không?",
+              "english": "Can I take photos here?",
+              "pronunciation": "toy choop hinh uh day dook khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-how-much",
-              "audioKey": "price-1"
-            },
-            {
-              "id": "price-4",
-              "vietnamese": "Bớt chút được không?",
-              "english": "Can you lower it a little?",
-              "pronunciation": "but choot dook khong",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "teal",
-              "detailPageID": "viet-family-money-lower-price",
-              "audioKey": "price-4"
+              "detailPageID": "viet-family-sight-photos",
+              "audioKey": "sight-3"
             },
             {
               "id": "shop-5",
@@ -283763,6 +283753,16 @@
               "tintName": "teal",
               "detailPageID": "viet-family-shopping-pay-where",
               "audioKey": "shop-5"
+            },
+            {
+              "id": "v900-shop-can-you-pack-it-for-travel",
+              "vietnamese": "Bạn có thể đóng gói nó để đi du lịch?",
+              "english": "Can you pack it for travel?",
+              "pronunciation": "Ban co the dong goi no de di du lich",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-v900-shop-can-you-pack-it-for-travel",
+              "audioKey": "v900-shop-can-you-pack-it-for-travel"
             }
           ],
           "breakdown": [],
@@ -283826,21 +283826,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "price-1"
+              "sight-3"
             ],
             "supportPhraseIDs": [
-              "price-4",
-              "shop-5"
+              "shop-5",
+              "v900-shop-can-you-pack-it-for-travel"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-pottery-workshop",
-          "price-1"
+          "sight-3"
         ],
         "secondaryPracticePhraseIDs": [
-          "price-4",
-          "shop-5"
+          "shop-5",
+          "v900-shop-can-you-pack-it-for-travel"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-pottery-workshop"
       }
@@ -285448,24 +285448,24 @@
           "body": "",
           "phrases": [
             {
-              "id": "price-1",
-              "vietnamese": "Cái này bao nhiêu?",
-              "english": "How much is this?",
-              "pronunciation": "gai nai bao nyew",
+              "id": "sight-3",
+              "vietnamese": "Tôi chụp hình ở đây được không?",
+              "english": "Can I take photos here?",
+              "pronunciation": "toy choop hinh uh day dook khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-how-much",
-              "audioKey": "price-1"
+              "detailPageID": "viet-family-sight-photos",
+              "audioKey": "sight-3"
             },
             {
-              "id": "price-4",
-              "vietnamese": "Bớt chút được không?",
-              "english": "Can you lower it a little?",
-              "pronunciation": "but choot dook khong",
+              "id": "shop-4",
+              "vietnamese": "Tôi chỉ xem thôi",
+              "english": "I’m just looking",
+              "pronunciation": "toy chee sem toy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-lower-price",
-              "audioKey": "price-4"
+              "detailPageID": "viet-family-shopping-just-looking",
+              "audioKey": "shop-4"
             },
             {
               "id": "shop-5",
@@ -285539,20 +285539,20 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "price-1"
+              "sight-3"
             ],
             "supportPhraseIDs": [
-              "price-4",
+              "shop-4",
               "shop-5"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-silk-village",
-          "price-1"
+          "sight-3"
         ],
         "secondaryPracticePhraseIDs": [
-          "price-4",
+          "shop-4",
           "shop-5"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-silk-village"
@@ -285792,34 +285792,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "price-1",
-              "vietnamese": "Cái này bao nhiêu?",
-              "english": "How much is this?",
-              "pronunciation": "gai nai bao nyew",
+              "id": "shop-3",
+              "vietnamese": "Tôi thử cái này được không?",
+              "english": "Can I try this on?",
+              "pronunciation": "toy thoo gai nai dook khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-how-much",
-              "audioKey": "price-1"
+              "detailPageID": "viet-family-shopping-try-on",
+              "audioKey": "shop-3"
             },
             {
-              "id": "price-4",
-              "vietnamese": "Bớt chút được không?",
-              "english": "Can you lower it a little?",
-              "pronunciation": "but choot dook khong",
+              "id": "v900-shop-do-you-have-a-smaller-size",
+              "vietnamese": "Bạn có kích thước nhỏ hơn không?",
+              "english": "Do you have a smaller size?",
+              "pronunciation": "Ban co kich thuoc nho hon khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-lower-price",
-              "audioKey": "price-4"
+              "detailPageID": "viet-family-v900-shop-do-you-have-a-smaller-size",
+              "audioKey": "v900-shop-do-you-have-a-smaller-size"
             },
             {
-              "id": "shop-5",
-              "vietnamese": "Trả ở đâu?",
-              "english": "Where do I pay?",
-              "pronunciation": "tra uh dow",
+              "id": "v900-shop-do-you-have-a-larger-size",
+              "vietnamese": "Bạn có kích thước lớn hơn không?",
+              "english": "Do you have a larger size?",
+              "pronunciation": "Ban co kich thuoc lon hon khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-shopping-pay-where",
-              "audioKey": "shop-5"
+              "detailPageID": "viet-family-v900-shop-do-you-have-a-larger-size",
+              "audioKey": "v900-shop-do-you-have-a-larger-size"
             }
           ],
           "breakdown": [],
@@ -285883,21 +285883,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "price-1"
+              "shop-3"
             ],
             "supportPhraseIDs": [
-              "price-4",
-              "shop-5"
+              "v900-shop-do-you-have-a-smaller-size",
+              "v900-shop-do-you-have-a-larger-size"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-tailor-fitting",
-          "price-1"
+          "shop-3"
         ],
         "secondaryPracticePhraseIDs": [
-          "price-4",
-          "shop-5"
+          "v900-shop-do-you-have-a-smaller-size",
+          "v900-shop-do-you-have-a-larger-size"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-tailor-fitting"
       }
@@ -286366,7 +286366,7 @@
         {
           "id": "good-to-know",
           "title": "Fieldside View Leads",
-          "body": "Do not build the plan around one dish. Remember the field-side view, open air, and slower meal.",
+          "body": "Build the evening around rice-field air, sunset light, open space, and a slower table after the old-town crush. The food supports the setting instead of carrying the whole plan alone.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -286990,34 +286990,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "price-1",
-              "vietnamese": "Cái này bao nhiêu?",
-              "english": "How much is this?",
-              "pronunciation": "gai nai bao nyew",
+              "id": "sight-1",
+              "vietnamese": "Vé bao nhiêu?",
+              "english": "How much is the ticket?",
+              "pronunciation": "veh bao nyew",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-how-much",
-              "audioKey": "price-1"
+              "detailPageID": "viet-family-sight-ticket",
+              "audioKey": "sight-1"
             },
             {
-              "id": "price-4",
-              "vietnamese": "Bớt chút được không?",
-              "english": "Can you lower it a little?",
-              "pronunciation": "but choot dook khong",
+              "id": "sight-3",
+              "vietnamese": "Tôi chụp hình ở đây được không?",
+              "english": "Can I take photos here?",
+              "pronunciation": "toy choop hinh uh day dook khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-lower-price",
-              "audioKey": "price-4"
+              "detailPageID": "viet-family-sight-photos",
+              "audioKey": "sight-3"
             },
             {
-              "id": "shop-5",
-              "vietnamese": "Trả ở đâu?",
-              "english": "Where do I pay?",
-              "pronunciation": "tra uh dow",
+              "id": "sight-2",
+              "vietnamese": "Bắt đầu ở đâu?",
+              "english": "Where do we start?",
+              "pronunciation": "bat dow uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-shopping-pay-where",
-              "audioKey": "shop-5"
+              "detailPageID": "viet-family-sight-start",
+              "audioKey": "sight-2"
             }
           ],
           "breakdown": [],
@@ -287081,21 +287081,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "price-1"
+              "sight-1"
             ],
             "supportPhraseIDs": [
-              "price-4",
-              "shop-5"
+              "sight-3",
+              "sight-2"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-trade-ceramics-museum",
-          "price-1"
+          "sight-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "price-4",
-          "shop-5"
+          "sight-3",
+          "sight-2"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-trade-ceramics-museum"
       }
@@ -287794,7 +287794,7 @@
       "title": "Vy's Market Restaurant",
       "englishTitle": "Vy's Market Restaurant",
       "pronunciation": "vys market restaurant",
-      "summary": "Vy's Market Restaurant turns Hội An food variety into an organized indoor food-hall scene, echoing market browsing without asking the whole group to chase every stall.",
+      "summary": "Vys Market Restaurant turns Hội An food variety into an organized indoor food-hall scene: food stations, steam, dumplings, cao lầu, herbs, bowls, and a table the whole group can read.",
       "heroImageName": "HeroCityHoianPlaceVysMarket",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -287836,7 +287836,7 @@
         {
           "id": "at-glance",
           "title": "A Food Hall For First Bearings",
-          "body": "Vys Market Restaurant gives Hội An food a controlled first lap: food stations, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much.",
+          "body": "Vys Market Restaurant turns Hội An food into an organized indoor browse: food stations, steam, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -310509,24 +310509,24 @@
               "audioKey": "price-1"
             },
             {
-              "id": "price-4",
-              "vietnamese": "Bớt chút được không?",
-              "english": "Can you lower it a little?",
-              "pronunciation": "but choot dook khong",
+              "id": "v900-shop-can-you-pack-it-for-travel",
+              "vietnamese": "Bạn có thể đóng gói nó để đi du lịch?",
+              "english": "Can you pack it for travel?",
+              "pronunciation": "Ban co the dong goi no de di du lich",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-lower-price",
-              "audioKey": "price-4"
+              "detailPageID": "viet-family-v900-shop-can-you-pack-it-for-travel",
+              "audioKey": "v900-shop-can-you-pack-it-for-travel"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "store-2",
+              "vietnamese": "Có túi không?",
+              "english": "Do you have a bag?",
+              "pronunciation": "koh too-ee khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-service-bag",
+              "audioKey": "store-2"
             }
           ],
           "breakdown": [],
@@ -310536,7 +310536,18 @@
           "id": "place-brief",
           "title": "Market Stall Sweetness",
           "body": "Wrapped pieces, cut squares, and gift boxes matter more than a sit-down dessert scene. The candy makes most sense beside tea or market browsing.",
-          "phrases": [],
+          "phrases": [
+            {
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "green",
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
+            }
+          ],
           "breakdown": [],
           "presentation": "plain-text"
         },
@@ -310593,18 +310604,28 @@
               "price-1"
             ],
             "supportPhraseIDs": [
-              "price-4",
-              "food-1"
+              "v900-shop-can-you-pack-it-for-travel",
+              "store-2"
             ]
+          },
+          {
+            "stepID": "place-brief",
+            "title": "Market Stall Sweetness",
+            "sourceSectionID": "place-brief",
+            "primaryPhraseIDs": [
+              "food-1"
+            ],
+            "supportPhraseIDs": []
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hue-place-me-xung",
-          "price-1"
+          "price-1",
+          "food-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "price-4",
-          "food-1"
+          "v900-shop-can-you-pack-it-for-travel",
+          "store-2"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-me-xung"
       }
@@ -314121,7 +314142,7 @@
         {
           "id": "place-brief",
           "title": "River First, Menu Second",
-          "body": "This is a river-view dinner, not the hidden food find of the day. Choose it when eating on the Perfume River is the point and the order can stay simple.",
+          "body": "Choose it for a floating table on the Perfume River: dusk water, Trường Tiền Bridge nearby, simple seafood or Hue dishes, and a calmer ride back after a heritage-heavy day.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -314136,8 +314157,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Food-First, Start Elsewhere",
-          "body": "For a food-first Huế day, start with Đông Ba, bún bò, or bánh lọc. Song Hương makes more sense when the river setting matters more than dish hunting.",
+          "title": "When Food Leads, Start Elsewhere",
+          "body": "For a food-first Huế day, start with Đông Ba, bún bò, or bánh lọc. Song Hương makes the most sense when the river setting is part of dinner.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"

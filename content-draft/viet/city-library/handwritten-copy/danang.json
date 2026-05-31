@@ -285,9 +285,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "directions-1",
-            "sight-3",
-            "v500-dire-navi-can-i-walk-there"
+            "sight-1",
+            "sight-2",
+            "sight-5"
           ]
         },
         {
@@ -980,15 +980,15 @@
     },
     {
       "pageID": "city-danang-place-bun-cha-ca-hon",
-      "summary": "Hờn is the 2025 MICHELIN Bib Gourmand Da Nang fish-cake noodle bowl: fish cake, broth, noodles, herbs, and spice after tasting. Hờn gives the citywide fish-cake noodle dish a recognized breakfast table, where one bowl, broth, herbs, and the day's first meal do most of the work.",
-      "context": "Hờn is the 2025 MICHELIN Bib Gourmand Da Nang fish-cake noodle bowl: fish cake, broth, noodles, herbs, and spice after tasting.",
+      "summary": "Hờn is a Da Nang fish-cake noodle bowl moment: springy fish cake, coastal broth, noodles, herbs, and spice after tasting. Hờn gives the citywide fish-cake noodle dish a recognized breakfast table, where one bowl, broth, herbs, and the day's first meal do most of the work.",
+      "context": "Hờn is a Da Nang fish-cake noodle bowl moment: springy fish cake, coastal broth, noodles, herbs, and spice after tasting.",
       "tip": "The Bib Gourmand signal belongs to the bowl and a short table rhythm. Keep the meal focused on fish cake, broth, herbs, and the first clean taste.",
       "rationale": "Hờn gives the citywide fish-cake noodle dish a recognized breakfast table, where one bowl, broth, herbs, and the day's first meal do most of the work.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Bib Gourmand Fish-Cake Bowl",
-          "body": "Bun Cha Ca Hon is a 2025 MICHELIN Bib Gourmand Da Nang stop for fish-cake noodle soup: broth first, herbs after, and spice only once the bowl is clear."
+          "title": "Fish Cake In Coastal Broth",
+          "body": "Bún Chả Cá Hờn gives Da Nang fish-cake noodle soup a named table: springy fish cake, coastal broth, noodles, herbs, and chili only after the first clean taste."
         },
         {
           "id": "quick-say",
@@ -1072,7 +1072,7 @@
       "pageID": "city-danang-place-banh-canh-yen",
       "summary": "Bánh Canh Yến gives Da Nang a thick-noodle soup stop: hot broth, slippery noodles, toppings, herbs, chili, and a bowl that feels different from mì Quảng, bún riêu, or fish-cake soup.",
       "context": "Bánh Canh Yến gives Da Nang a thick-noodle soup stop: hot broth, slippery noodles, toppings, herbs, chili, and a bowl that feels different from mì Quảng, bún riêu, or fish-cake soup.",
-      "tip": "The MICHELIN Selected signal supports the choice, but the reason to remember it is simpler: thick noodles, hot broth, toppings, and a short street-food meal.",
+      "tip": "Remember it for the street-food comfort: thick noodles, hot broth, toppings, herbs, and a short meal that feels different from mì Quảng or fish-cake soup.",
       "rationale": "Bánh Canh Yến matters because it adds a 2025 MICHELIN Selected street-food bowl to Da Nang's noodle map without repeating the city's existing mì Quảng and bún chả cá pages.",
       "sections": [
         {
@@ -1108,7 +1108,7 @@
         {
           "id": "good-to-know",
           "title": "Let The Bowl Carry It",
-          "body": "The MICHELIN Selected signal supports the choice, but the reason to remember it is simpler: thick noodles, hot broth, toppings, and a short street-food meal."
+          "body": "Remember it for the street-food comfort: thick noodles, hot broth, toppings, herbs, and a short meal that feels different from mì Quảng or fish-cake soup."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -2857,8 +2857,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Selected For One Bowl",
-          "body": "The MICHELIN Selected signal is a memory hook here, not ceremony. Come for one focused bowl; mì Quảng comes first, and sides can wait."
+          "title": "One Bowl, Then Back Out",
+          "body": "Come for a focused mì Quảng lunch: yellow noodles, shallow broth, herbs, peanuts, rice cracker, and enough table rhythm to understand the dish without stretching the meal."
         },
         {
           "id": "good-to-know",
@@ -4535,9 +4535,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "price-1",
-            "price-4",
-            "food-1"
+            "shop-5",
+            "store-2",
+            "bath-1"
           ]
         },
         {

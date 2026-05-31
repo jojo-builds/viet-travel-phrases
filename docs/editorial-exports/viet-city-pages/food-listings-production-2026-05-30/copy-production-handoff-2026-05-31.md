@@ -65,9 +65,9 @@ Simulator proof:
 
 ## Remaining Work
 
-Update, 2026-06-01:
+Correction, 2026-06-01:
 
-The global V2.2 source set is now classified as `PASS_GLOBAL_PRODUCTION_READY` in `global-production-ready-receipt-2026-06-01.md`.
+The earlier `PASS_GLOBAL_PRODUCTION_READY` classification was revoked after a full copy audit. Current status is `NOT_PRODUCTION_READY`; continue from `full-copy-audit-2026-06-01.md`.
 
 Highest-leverage next pass:
 

@@ -199,8 +199,8 @@ This dinner belongs beside Bến Thành, a bánh mì shop, or a street-food walk
 - Hero: Bún chả Hương Liên / Bun Cha Huong Lien
 - Practice CTA: Practice ordering here
 
-### Selected For The Bun Cha
-Bun Cha Huong Lien is a 2025 MICHELIN Selected Hanoi lunch stop for grilled pork, warm broth, vermicelli, herbs, and a table that moves quickly.
+### Grill Smoke, Broth, Herbs
+Bun Cha Huong Lien is a fast Hanoi lunch built around grilled pork, warm dipping broth, vermicelli, herbs, and a famous room that still moves like a working bún chả shop.
 
 ### Useful Phrases
 - Cho tôi xem thực đơn được không? — Can I see the menu?
@@ -217,7 +217,7 @@ If extras appear, take a beat to understand the table. The main move stays clear
 Huong Lien is for a clear bun cha meal rather than a broad menu search. The bowl, herbs, and broth carry the stop.
 
 ### Recognition, Then Lunch
-The MICHELIN Selected note helps explain the choice, but the room should still stay about lunch. Eat while the pork, broth, and herbs are warm.
+Let the recognition explain why the name is familiar, then eat while the pork, broth, and herbs are warm. The table rhythm matters more than the badge.
 
 ## Phở Bát Đàn
 

@@ -561,7 +561,7 @@
           "label": "Bảo tàng Mỹ thuật",
           "relationship": "yellow-building art break",
           "displaySubtitle": "A yellow-courtyard museum pause for tile floors, gallery rooms, and street noise left outside.",
-          "reason": "Bảo tàng Mỹ thuật now has an authored related-card role for Bảo tàng Áo Dài, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A yellow-courtyard museum pause for tile floors, gallery rooms, and street noise left outside.",
           "status": "render"
         }
       ],
@@ -673,7 +673,7 @@
           "label": "Chung cư 42 Nguyễn Huệ",
           "relationship": "cafe-apartment vertical stop",
           "displaySubtitle": "The Cafe Apartment address for balconies, stairs, upstairs rooms, and a short Nguyễn Huệ detour.",
-          "reason": "Chung cư 42 Nguyễn Huệ now has an authored related-card role for Bến tàu thủy Bạch Đằng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The Cafe Apartment address for balconies, stairs, upstairs rooms, and a short Nguyễn Huệ detour.",
           "status": "render"
         }
       ],
@@ -785,7 +785,7 @@
           "label": "Tòa nhà Bitexco",
           "relationship": "skyline-tower marker",
           "displaySubtitle": "The District 1 tower marker when height, skyline orientation, or a riverward bearing matters.",
-          "reason": "Tòa nhà Bitexco now has an authored related-card role for Bến Bạch Đằng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The District 1 tower marker when height, skyline orientation, or a riverward bearing matters.",
           "status": "render"
         }
       ],
@@ -1258,7 +1258,7 @@
           "label": "Bếp Mẹ Ỉn",
           "relationship": "central-casual table",
           "displaySubtitle": "An easy central Vietnamese table when the group wants range instead of one crisp pancake.",
-          "reason": "Bếp Mẹ Ỉn now has an authored related-card role for Bánh xèo 46A, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An easy central Vietnamese table when the group wants range instead of one crisp pancake.",
           "status": "render"
         }
       ],
@@ -1481,7 +1481,7 @@
           "label": "Bến xe Miền Đông",
           "relationship": "onward-bus handoff",
           "displaySubtitle": "The eastern bus edge for luggage, route boards, bays, and leaving Saigon by road.",
-          "reason": "Bến xe Miền Đông now has an authored related-card role for Ga Bến Thành, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The eastern bus edge for luggage, route boards, bays, and leaving Saigon by road.",
           "status": "render"
         }
       ],
@@ -1603,7 +1603,7 @@
           "label": "Bánh xèo 46A",
           "relationship": "named-pancake table",
           "displaySubtitle": "A named bánh xèo table when one crisp pancake, herbs, and dipping sauce should lead dinner.",
-          "reason": "Bánh xèo 46A now has an authored related-card role for Bếp Mẹ Ỉn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A named bánh xèo table when one crisp pancake, herbs, and dipping sauce should lead dinner.",
           "status": "render"
         }
       ],
@@ -1831,7 +1831,7 @@
           "label": "Bến Bạch Đằng",
           "relationship": "central-riverfront breather",
           "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
-          "reason": "Bến Bạch Đằng now has an authored related-card role for Tòa nhà Bitexco, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
           "status": "render"
         }
       ],
@@ -2287,7 +2287,7 @@
           "label": "Đường Đồng Khởi",
           "relationship": "district-1 landmark spine",
           "displaySubtitle": "A compact walk linking the Post Office area, Opera House, old hotel facades, shops, and riverward movement.",
-          "reason": "Đường Đồng Khởi now has an authored related-card role for Phố Bùi Viện, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact walk linking the Post Office area, Opera House, old hotel facades, shops, and riverward movement.",
           "status": "render"
         }
       ],
@@ -2399,7 +2399,7 @@
           "label": "Bún bò Huế",
           "relationship": "home-city dish comparison",
           "displaySubtitle": "The Hue version when you want the bowl in its home-city context first.",
-          "reason": "The Hue dish page explains the home-city bowl that Bun Bo Hue 14B brings into a Saigon save.",
+          "reason": "Editorial relationship: The Hue version when you want the bowl in its home-city context first.",
           "status": "render"
         },
         {
@@ -2407,7 +2407,7 @@
           "label": "Bò Kho Gánh",
           "relationship": "Bib Gourmand beef-stew bowl",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand bò kho stop when bread or noodles and rich broth should lead lunch.",
-          "reason": "Bò Kho Gánh now has an authored related-card role for Bún Bò Huế 14B, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand bò kho stop when bread or noodles and rich broth should lead lunch.",
           "status": "render"
         }
       ],
@@ -2532,7 +2532,7 @@
           "label": "Phở Hòa Pasteur",
           "relationship": "central-phở shop",
           "displaySubtitle": "A busy Pasteur Street phở shop when the plan needs a familiar central bowl.",
-          "reason": "Phở Hòa Pasteur now has an authored related-card role for Phở Lệ, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A busy Pasteur Street phở shop when the plan needs a familiar central bowl.",
           "status": "render"
         },
         {
@@ -2540,7 +2540,7 @@
           "label": "Phở Minh",
           "relationship": "old-alley phở room",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand alley phở room when breakfast should feel quieter and older.",
-          "reason": "Phở Minh now has an authored related-card role for Phở Lệ, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand alley phở room when breakfast should feel quieter and older.",
           "status": "render"
         },
         {
@@ -2548,7 +2548,7 @@
           "label": "Bún Bò Huế 14B",
           "relationship": "Bib Gourmand Hue-style bowl",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand Hue-style bowl when lemongrass broth and heat should lead.",
-          "reason": "Bún Bò Huế 14B now has an authored related-card role for Phở Lệ, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand Hue-style bowl when lemongrass broth and heat should lead.",
           "status": "render"
         },
         {
@@ -2556,7 +2556,7 @@
           "label": "Phở Hương Bình",
           "relationship": "Bib Gourmand chicken-or-beef phở",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand family shop when the table wants chicken and beef phở choices.",
-          "reason": "Phở Hương Bình now has an authored related-card role for Phở Lệ, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand family shop when the table wants chicken and beef phở choices.",
           "status": "render"
         }
       ],
@@ -2690,7 +2690,7 @@
           "label": "Phở Lệ",
           "relationship": "Bib Gourmand District 5 phở",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand District 5 bowl when southern phở should feel fuller and busier.",
-          "reason": "Phở Lệ now has an authored related-card role for Phở Minh, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand District 5 bowl when southern phở should feel fuller and busier.",
           "status": "render"
         },
         {
@@ -2706,7 +2706,7 @@
           "label": "Đường Pasteur",
           "relationship": "street orientation",
           "displaySubtitle": "The street to recognize before looking for the smaller alley entrance.",
-          "reason": "Pasteur Street is useful orientation for travelers using the Pho Minh save in the city.",
+          "reason": "Editorial relationship: The street to recognize before looking for the smaller alley entrance.",
           "status": "render"
         },
         {
@@ -2714,7 +2714,7 @@
           "label": "Phở Hương Bình",
           "relationship": "Bib Gourmand chicken-or-beef phở",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand family shop when the table wants chicken and beef phở choices.",
-          "reason": "Phở Hương Bình now has an authored related-card role for Phở Minh, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand family shop when the table wants chicken and beef phở choices.",
           "status": "render"
         }
       ],
@@ -2840,7 +2840,7 @@
           "label": "Phở Lệ",
           "relationship": "Bib Gourmand District 5 phở",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand District 5 bowl when southern phở should feel fuller and busier.",
-          "reason": "Phở Lệ now has an authored related-card role for Phở Hương Bình, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand District 5 bowl when southern phở should feel fuller and busier.",
           "status": "render"
         },
         {
@@ -2848,7 +2848,7 @@
           "label": "Phở Minh",
           "relationship": "old-alley phở room",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand alley phở room when breakfast should feel quieter and older.",
-          "reason": "Phở Minh now has an authored related-card role for Phở Hương Bình, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand alley phở room when breakfast should feel quieter and older.",
           "status": "render"
         },
         {
@@ -2856,7 +2856,7 @@
           "label": "Phở Hòa Pasteur",
           "relationship": "central-phở shop",
           "displaySubtitle": "A busy Pasteur Street phở shop when the plan needs a familiar central bowl.",
-          "reason": "Phở Hòa Pasteur now has an authored related-card role for Phở Hương Bình, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A busy Pasteur Street phở shop when the plan needs a familiar central bowl.",
           "status": "render"
         }
       ],
@@ -3259,27 +3259,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho hỏi, đi tới đó thế nào?",
-          "en": "Excuse me, how do I get there?",
-          "intent": "directions-how-to-get",
-          "phraseId": "directions-1",
-          "audioId": "directions-1",
+          "vi": "Cho tôi một cà phê sữa đá",
+          "en": "One iced milk coffee please",
+          "intent": "food-coffee-milk",
+          "phraseId": "coffee-1",
+          "audioId": "coffee-1",
           "status": "mapped"
         },
         {
-          "vi": "Đi bộ mất bao lâu?",
-          "en": "How long does it take on foot?",
-          "intent": "directions-how-long",
-          "phraseId": "directions-3",
-          "audioId": "directions-3",
+          "vi": "Làm ơn bớt đường đi",
+          "en": "Less sugar, please",
+          "intent": "v900-food-drin-less-sugar-please",
+          "phraseId": "v900-food-drin-less-sugar-please",
+          "audioId": "v900-food-drin-less-sugar-please",
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể đi bộ tới đó được không?",
-          "en": "Can I walk there?",
-          "intent": "v500-dire-navi-can-i-walk-there",
-          "phraseId": "v500-dire-navi-can-i-walk-there",
-          "audioId": "v500-dire-navi-can-i-walk-there",
+          "vi": "Nhà vệ sinh ở đâu?",
+          "en": "Where is the bathroom?",
+          "intent": "bathroom-where",
+          "phraseId": "bath-1",
+          "audioId": "bath-1",
           "status": "mapped"
         }
       ],
@@ -3312,7 +3312,7 @@
           "label": "Đi bộ Chợ Lớn",
           "relationship": "market-temple walk",
           "displaySubtitle": "A short Chợ Lớn route for Chinese-Vietnamese signs, market bags, temple gates, and smarter ride breaks.",
-          "reason": "Đi bộ Chợ Lớn now has an authored related-card role for Đi cà phê Nguyễn Huệ, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A short Chợ Lớn route for Chinese-Vietnamese signs, market bags, temple gates, and smarter ride breaks.",
           "status": "render"
         }
       ],
@@ -3660,7 +3660,7 @@
           "label": "The Workshop Coffee",
           "relationship": "specialty-coffee room",
           "displaySubtitle": "A polished specialty-coffee room when espresso, an old-building setting, and a slower seat matter.",
-          "reason": "The Workshop Coffee now has an authored related-card role for Cà phê Cheo Leo, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A polished specialty-coffee room when espresso, an old-building setting, and a slower seat matter.",
           "status": "render"
         }
       ],
@@ -3768,7 +3768,7 @@
           "label": "Quận 1",
           "relationship": "central-base map",
           "displaySubtitle": "The central Saigon base map for hotels, markets, older facades, cafes, and riverward walks.",
-          "reason": "Quận 1 now has an authored related-card role for Chợ Lớn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The central Saigon base map for hotels, markets, older facades, cafes, and riverward walks.",
           "status": "render"
         }
       ],
@@ -3880,7 +3880,7 @@
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
           "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
-          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Đi bộ Chợ Lớn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
           "status": "render"
         }
       ],
@@ -4107,7 +4107,7 @@
           "label": "Bến Bạch Đằng",
           "relationship": "central-riverfront breather",
           "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
-          "reason": "Bến Bạch Đằng now has an authored related-card role for Trụ sở UBND Thành phố, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
           "status": "render"
         }
       ],
@@ -4687,7 +4687,7 @@
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
           "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
-          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Đi Củ Chi trong ngày, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
           "status": "render"
         }
       ],
@@ -4799,7 +4799,7 @@
           "label": "Bến Bạch Đằng",
           "relationship": "central-riverfront breather",
           "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
-          "reason": "Bến Bạch Đằng now has an authored related-card role for Địa đạo Củ Chi, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
           "status": "render"
         }
       ],
@@ -5026,7 +5026,7 @@
           "label": "Chợ Lớn",
           "relationship": "trade-district contrast",
           "displaySubtitle": "Saigon’s Chinatown district for markets, temples, wholesale goods, incense, and trade-first streets.",
-          "reason": "Chợ Lớn now has an authored related-card role for Quận 1, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: Saigon’s Chinatown district for markets, temples, wholesale goods, incense, and trade-first streets.",
           "status": "render"
         }
       ],
@@ -5133,7 +5133,7 @@
           "label": "Chợ Lớn",
           "relationship": "trade-district contrast",
           "displaySubtitle": "Saigon’s Chinatown district for markets, temples, wholesale goods, incense, and trade-first streets.",
-          "reason": "Chợ Lớn now has an authored related-card role for Quận 3, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: Saigon’s Chinatown district for markets, temples, wholesale goods, incense, and trade-first streets.",
           "status": "render"
         }
       ],
@@ -5245,7 +5245,7 @@
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
           "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
-          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Đi bộ Đồng Khởi, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
           "status": "render"
         }
       ],
@@ -5352,7 +5352,7 @@
           "label": "Phố Bùi Viện",
           "relationship": "nightlife-street contrast",
           "displaySubtitle": "A loud backpacker-nightlife strip best read with one look-before-sitting pass.",
-          "reason": "Phố Bùi Viện now has an authored related-card role for Đường Đồng Khởi, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A loud backpacker-nightlife strip best read with one look-before-sitting pass.",
           "status": "render"
         }
       ],
@@ -5465,7 +5465,7 @@
           "label": "Bảo tàng Áo Dài",
           "relationship": "dress-and-craft museum",
           "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
-          "reason": "Bảo tàng Áo Dài now has an authored related-card role for Bảo tàng Mỹ thuật, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
           "status": "render"
         }
       ],
@@ -5577,7 +5577,7 @@
           "label": "Bảo tàng Áo Dài",
           "relationship": "dress-and-craft museum",
           "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
-          "reason": "Bảo tàng Áo Dài now has an authored related-card role for Bảo tàng Y học Cổ truyền Việt Nam, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
           "status": "render"
         }
       ],
@@ -5689,7 +5689,7 @@
           "label": "Công viên Lê Văn Tám",
           "relationship": "central-park breather",
           "displaySubtitle": "An everyday central park break for shade, paths, families, and a pause between denser blocks.",
-          "reason": "Công viên Lê Văn Tám now has an authored related-card role for Công viên Gia Định, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An everyday central park break for shade, paths, families, and a pause between denser blocks.",
           "status": "render"
         }
       ],
@@ -5914,7 +5914,7 @@
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
           "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
-          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Nhà hát Múa rối nước Rồng Vàng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
           "status": "render"
         }
       ],
@@ -6026,7 +6026,7 @@
           "label": "Bảo tàng Áo Dài",
           "relationship": "dress-and-craft museum",
           "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
-          "reason": "Bảo tàng Áo Dài now has an authored related-card role for Bảo tàng Lịch sử Thành phố Hồ Chí Minh, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
           "status": "render"
         }
       ],
@@ -6138,7 +6138,7 @@
           "label": "Bảo tàng Áo Dài",
           "relationship": "dress-and-craft museum",
           "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
-          "reason": "Bảo tàng Áo Dài now has an authored related-card role for Bảo tàng Thành phố Hồ Chí Minh, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
           "status": "render"
         }
       ],
@@ -6477,7 +6477,7 @@
           "label": "Bến Bạch Đằng",
           "relationship": "central-riverfront breather",
           "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
-          "reason": "Bến Bạch Đằng now has an authored related-card role for Dinh Độc Lập, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
           "status": "render"
         }
       ],
@@ -6589,7 +6589,7 @@
           "label": "Bến Bạch Đằng",
           "relationship": "central-riverfront breather",
           "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
-          "reason": "Bến Bạch Đằng now has an authored related-card role for Chùa Ngọc Hoàng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
           "status": "render"
         }
       ],
@@ -6696,7 +6696,7 @@
           "label": "Chợ Lớn",
           "relationship": "trade-district contrast",
           "displaySubtitle": "Saigon’s Chinatown district for markets, temples, wholesale goods, incense, and trade-first streets.",
-          "reason": "Chợ Lớn now has an authored related-card role for Khu phố Nhật Lê Thánh Tôn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: Saigon’s Chinatown district for markets, temples, wholesale goods, incense, and trade-first streets.",
           "status": "render"
         }
       ],
@@ -6808,7 +6808,7 @@
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
           "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
-          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Landmark 81, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
           "status": "render"
         }
       ],
@@ -6920,7 +6920,7 @@
           "label": "Phố Bùi Viện",
           "relationship": "nightlife-street contrast",
           "displaySubtitle": "A loud backpacker-nightlife strip best read with one look-before-sitting pass.",
-          "reason": "Phố Bùi Viện now has an authored related-card role for Đường Lê Thánh Tôn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A loud backpacker-nightlife strip best read with one look-before-sitting pass.",
           "status": "render"
         }
       ],
@@ -7032,7 +7032,7 @@
           "label": "Công viên Gia Định",
           "relationship": "airport-side park breather",
           "displaySubtitle": "An airport-side open-air pause for trees, walking paths, family time, and ordinary Saigon rhythm.",
-          "reason": "Công viên Gia Định now has an authored related-card role for Công viên Lê Văn Tám, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An airport-side open-air pause for trees, walking paths, family time, and ordinary Saigon rhythm.",
           "status": "render"
         }
       ],
@@ -7485,7 +7485,7 @@
           "label": "Cục Gạch Quán",
           "relationship": "shared Vietnamese table comparison",
           "displaySubtitle": "An old-house shared-table dinner when the room should feel slower and more domestic.",
-          "reason": "Cuc Gach Quan is the clearest same-city shared-table comparison for Man Moi.",
+          "reason": "Editorial relationship: An old-house shared-table dinner when the room should feel slower and more domestic.",
           "status": "render"
         },
         {
@@ -7608,7 +7608,7 @@
           "label": "Bến Bạch Đằng",
           "relationship": "central-riverfront breather",
           "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
-          "reason": "Bến Bạch Đằng now has an authored related-card role for Đền Mariamman, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
           "status": "render"
         }
       ],
@@ -7720,7 +7720,7 @@
           "label": "Ga Bến Thành",
           "relationship": "central-station handoff",
           "displaySubtitle": "The station landmark where exit choice decides Bến Thành, Nguyễn Huệ, ride pickup, or the next walk.",
-          "reason": "Ga Bến Thành now has an authored related-card role for Bến xe Miền Đông, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The station landmark where exit choice decides Bến Thành, Nguyễn Huệ, ride pickup, or the next walk.",
           "status": "render"
         }
       ],
@@ -7832,7 +7832,7 @@
           "label": "Ga Bến Thành",
           "relationship": "central-station handoff",
           "displaySubtitle": "The station landmark where exit choice decides Bến Thành, Nguyễn Huệ, ride pickup, or the next walk.",
-          "reason": "Ga Bến Thành now has an authored related-card role for Bến xe Miền Tây, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The station landmark where exit choice decides Bến Thành, Nguyễn Huệ, ride pickup, or the next walk.",
           "status": "render"
         }
       ],
@@ -7944,7 +7944,7 @@
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
           "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
-          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Tour ăn tối bằng xe máy, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
           "status": "render"
         }
       ],
@@ -8056,7 +8056,7 @@
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
           "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
-          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Công trường Lam Sơn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
           "status": "render"
         }
       ],
@@ -8281,7 +8281,7 @@
           "label": "Phố Bùi Viện",
           "relationship": "nightlife-street contrast",
           "displaySubtitle": "A loud backpacker-nightlife strip best read with one look-before-sitting pass.",
-          "reason": "Phố Bùi Viện now has an authored related-card role for Phố đi bộ Nguyễn Huệ, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A loud backpacker-nightlife strip best read with one look-before-sitting pass.",
           "status": "render"
         }
       ],
@@ -8393,7 +8393,7 @@
           "label": "Phố Bùi Viện",
           "relationship": "nightlife-street contrast",
           "displaySubtitle": "A loud backpacker-nightlife strip best read with one look-before-sitting pass.",
-          "reason": "Phố Bùi Viện now has an authored related-card role for Đường Nguyễn Trãi, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A loud backpacker-nightlife strip best read with one look-before-sitting pass.",
           "status": "render"
         }
       ],
@@ -8505,7 +8505,7 @@
           "label": "Chung cư 42 Nguyễn Huệ",
           "relationship": "cafe-apartment vertical stop",
           "displaySubtitle": "The Cafe Apartment address for balconies, stairs, upstairs rooms, and a short Nguyễn Huệ detour.",
-          "reason": "Chung cư 42 Nguyễn Huệ now has an authored related-card role for Kênh Nhiêu Lộc - Thị Nghè, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The Cafe Apartment address for balconies, stairs, upstairs rooms, and a short Nguyễn Huệ detour.",
           "status": "render"
         }
       ],
@@ -8617,7 +8617,7 @@
           "label": "Bến Bạch Đằng",
           "relationship": "central-riverfront breather",
           "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
-          "reason": "Bến Bạch Đằng now has an authored related-card role for Nhà thờ Đức Bà Sài Gòn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
           "status": "render"
         }
       ],
@@ -8842,7 +8842,7 @@
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
           "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
-          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for À Ố Show, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
           "status": "render"
         }
       ],
@@ -8954,7 +8954,7 @@
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
           "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
-          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Nhà hát Thành phố, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
           "status": "render"
         }
       ],
@@ -9289,7 +9289,7 @@
           "label": "Phố Bùi Viện",
           "relationship": "nightlife-street contrast",
           "displaySubtitle": "A loud backpacker-nightlife strip best read with one look-before-sitting pass.",
-          "reason": "Phố Bùi Viện now has an authored related-card role for Phố Phạm Ngũ Lão, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A loud backpacker-nightlife strip best read with one look-before-sitting pass.",
           "status": "render"
         }
       ],
@@ -9411,7 +9411,7 @@
           "label": "Phở Lệ",
           "relationship": "Bib Gourmand District 5 phở",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand District 5 bowl when southern phở should feel fuller and busier.",
-          "reason": "Phở Lệ now has an authored related-card role for Phở Hòa Pasteur, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand District 5 bowl when southern phở should feel fuller and busier.",
           "status": "render"
         },
         {
@@ -9435,7 +9435,7 @@
           "label": "Phở Hương Bình",
           "relationship": "Bib Gourmand chicken-or-beef phở",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand family shop when the table wants chicken and beef phở choices.",
-          "reason": "Phở Hương Bình now has an authored related-card role for Phở Hòa Pasteur, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand family shop when the table wants chicken and beef phở choices.",
           "status": "render"
         }
       ],
@@ -9560,7 +9560,7 @@
           "label": "Phở Minh",
           "relationship": "dish-to-restaurant follow-through",
           "displaySubtitle": "An older Pasteur-alley breakfast when southern phở should feel more tucked away.",
-          "reason": "Pho Minh turns the southern pho dish page into a second, more old-alley Saigon save.",
+          "reason": "Editorial relationship: An older Pasteur-alley breakfast when southern phở should feel more tucked away.",
           "status": "render"
         },
         {
@@ -9568,7 +9568,7 @@
           "label": "Phở Hương Bình",
           "relationship": "dish-to-restaurant follow-through",
           "displaySubtitle": "A 2025 MICHELIN Bib Gourmand phở shop when chicken and beef both need to stay in play.",
-          "reason": "Pho Huong Binh turns the southern-pho dish page into a chicken-or-beef named shop save.",
+          "reason": "Editorial relationship: A 2025 MICHELIN Bib Gourmand phở shop when chicken and beef both need to stay in play.",
           "status": "render"
         }
       ],
@@ -9681,7 +9681,7 @@
           "label": "Bến Bạch Đằng",
           "relationship": "central-riverfront breather",
           "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
-          "reason": "Bến Bạch Đằng now has an authored related-card role for Bưu điện Thành phố, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
           "status": "render"
         }
       ],
@@ -9793,7 +9793,7 @@
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
           "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
-          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Sân thượng khách sạn Rex, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
           "status": "render"
         }
       ],
@@ -10018,7 +10018,7 @@
           "label": "Ga Bến Thành",
           "relationship": "central-station handoff",
           "displaySubtitle": "The station landmark where exit choice decides Bến Thành, Nguyễn Huệ, ride pickup, or the next walk.",
-          "reason": "Ga Bến Thành now has an authored related-card role for Ga Sài Gòn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The station landmark where exit choice decides Bến Thành, Nguyễn Huệ, ride pickup, or the next walk.",
           "status": "render"
         }
       ],
@@ -10130,7 +10130,7 @@
           "label": "Bờ sông Thủ Thiêm",
           "relationship": "skyline-across-river view",
           "displaySubtitle": "A short river crossing payoff for skyline distance, dusk light, bridges, and open bank.",
-          "reason": "Bờ sông Thủ Thiêm now has an authored related-card role for Sông Sài Gòn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A short river crossing payoff for skyline distance, dusk light, bridges, and open bank.",
           "status": "render"
         }
       ],
@@ -10242,7 +10242,7 @@
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
           "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
-          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Đi thuyền sông Sài Gòn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
           "status": "render"
         }
       ],
@@ -10354,7 +10354,7 @@
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
           "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
-          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Saigon Skydeck, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
           "status": "render"
         }
       ],
@@ -10579,7 +10579,7 @@
           "label": "Bảo tàng Áo Dài",
           "relationship": "dress-and-craft museum",
           "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
-          "reason": "Bảo tàng Áo Dài now has an authored related-card role for Bảo tàng Phụ nữ Nam Bộ, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
           "status": "render"
         }
       ],
@@ -10691,7 +10691,7 @@
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
           "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
-          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Ăn vặt Sài Gòn buổi tối, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
           "status": "render"
         }
       ],
@@ -10750,27 +10750,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cái này bao nhiêu?",
-          "en": "How much is this?",
-          "intent": "money-how-much",
-          "phraseId": "price-1",
-          "audioId": "price-1",
+          "vi": "Trả ở đâu?",
+          "en": "Where do I pay?",
+          "intent": "shopping-pay-where",
+          "phraseId": "shop-5",
+          "audioId": "shop-5",
           "status": "mapped"
         },
         {
-          "vi": "Bớt chút được không?",
-          "en": "Can you lower it a little?",
-          "intent": "money-lower-price",
-          "phraseId": "price-4",
-          "audioId": "price-4",
+          "vi": "Có túi không?",
+          "en": "Do you have a bag?",
+          "intent": "service-bag",
+          "phraseId": "store-2",
+          "audioId": "store-2",
           "status": "mapped"
         },
         {
-          "vi": "Tôi chỉ xem thôi",
-          "en": "I’m just looking",
-          "intent": "shopping-just-looking",
-          "phraseId": "shop-4",
-          "audioId": "shop-4",
+          "vi": "Nhà vệ sinh ở đâu?",
+          "en": "Where is the bathroom?",
+          "intent": "bathroom-where",
+          "phraseId": "bath-1",
+          "audioId": "bath-1",
           "status": "mapped"
         }
       ],
@@ -10916,7 +10916,7 @@
           "label": "Chung cư 42 Nguyễn Huệ",
           "relationship": "cafe-apartment vertical stop",
           "displaySubtitle": "The Cafe Apartment address for balconies, stairs, upstairs rooms, and a short Nguyễn Huệ detour.",
-          "reason": "Chung cư 42 Nguyễn Huệ now has an authored related-card role for Sân bay Tân Sơn Nhất, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The Cafe Apartment address for balconies, stairs, upstairs rooms, and a short Nguyễn Huệ detour.",
           "status": "render"
         }
       ],
@@ -11028,7 +11028,7 @@
           "label": "Công viên Gia Định",
           "relationship": "airport-side park breather",
           "displaySubtitle": "An airport-side open-air pause for trees, walking paths, family time, and ordinary Saigon rhythm.",
-          "reason": "Công viên Gia Định now has an authored related-card role for Công viên Tao Đàn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An airport-side open-air pause for trees, walking paths, family time, and ordinary Saigon rhythm.",
           "status": "render"
         }
       ],
@@ -11135,7 +11135,7 @@
           "label": "Chợ Lớn",
           "relationship": "trade-district contrast",
           "displaySubtitle": "Saigon’s Chinatown district for markets, temples, wholesale goods, incense, and trade-first streets.",
-          "reason": "Chợ Lớn now has an authored related-card role for Thảo Điền, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: Saigon’s Chinatown district for markets, temples, wholesale goods, incense, and trade-first streets.",
           "status": "render"
         }
       ],
@@ -11247,7 +11247,7 @@
           "label": "Bến Bạch Đằng",
           "relationship": "central-riverfront breather",
           "displaySubtitle": "A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
-          "reason": "Bến Bạch Đằng now has an authored related-card role for Chùa Bà Thiên Hậu, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A District 1 water edge for boats, skyline views, river walks, and open air near Nguyễn Huệ.",
           "status": "render"
         }
       ],
@@ -11359,7 +11359,7 @@
           "label": "Sông Sài Gòn",
           "relationship": "city-waterline orientation",
           "displaySubtitle": "The river spine for bridges, boats, banks, and skyline orientation without adding a ticketed plan.",
-          "reason": "Sông Sài Gòn now has an authored related-card role for Bờ sông Thủ Thiêm, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: The river spine for bridges, boats, banks, and skyline orientation without adding a ticketed plan.",
           "status": "render"
         }
       ],
@@ -11471,7 +11471,7 @@
           "label": "Bảo tàng Áo Dài",
           "relationship": "dress-and-craft museum",
           "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
-          "reason": "Bảo tàng Áo Dài now has an authored related-card role for Bảo tàng Tôn Đức Thắng, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
           "status": "render"
         }
       ],
@@ -11583,7 +11583,7 @@
           "label": "Đi cà phê Nguyễn Huệ",
           "relationship": "vertical-cafe route",
           "displaySubtitle": "A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
-          "reason": "Đi cà phê Nguyễn Huệ now has an authored related-card role for Hồ Con Rùa, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A compact Nguyễn Huệ coffee route where choosing one upstairs room beats collecting every cafe.",
           "status": "render"
         }
       ],
@@ -11808,7 +11808,7 @@
           "label": "Công viên Gia Định",
           "relationship": "airport-side park breather",
           "displaySubtitle": "An airport-side open-air pause for trees, walking paths, family time, and ordinary Saigon rhythm.",
-          "reason": "Công viên Gia Định now has an authored related-card role for Công viên Vinhomes Central Park, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An airport-side open-air pause for trees, walking paths, family time, and ordinary Saigon rhythm.",
           "status": "render"
         }
       ],
@@ -11920,7 +11920,7 @@
           "label": "Bảo tàng Áo Dài",
           "relationship": "dress-and-craft museum",
           "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
-          "reason": "Bảo tàng Áo Dài now has an authored related-card role for Bảo tàng Chứng tích Chiến tranh, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
           "status": "render"
         }
       ],
@@ -12032,7 +12032,7 @@
           "label": "Cà phê Cheo Leo",
           "relationship": "old-coffee ritual",
           "displaySubtitle": "An old-Saigon coffee room for metal-filter ritual, iced sweetness, and a small seated reset.",
-          "reason": "Cà phê Cheo Leo now has an authored related-card role for The Workshop Coffee, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An old-Saigon coffee room for metal-filter ritual, iced sweetness, and a small seated reset.",
           "status": "render"
         }
       ],
@@ -12145,7 +12145,7 @@
           "label": "Công viên Gia Định",
           "relationship": "airport-side park breather",
           "displaySubtitle": "An airport-side open-air pause for trees, walking paths, family time, and ordinary Saigon rhythm.",
-          "reason": "Công viên Gia Định now has an authored related-card role for Thảo Cầm Viên Sài Gòn, replacing generic same-city pacing copy.",
+          "reason": "Editorial relationship: An airport-side open-air pause for trees, walking paths, family time, and ordinary Saigon rhythm.",
           "status": "render"
         }
       ],

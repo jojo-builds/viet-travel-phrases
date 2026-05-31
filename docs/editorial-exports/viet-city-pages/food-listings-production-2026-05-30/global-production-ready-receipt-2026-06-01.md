@@ -1,4 +1,4 @@
-# Global City Listings Production-Ready Receipt - 2026-06-01
+# Revoked Global City Listings Production-Ready Receipt - 2026-06-01
 
 Reviewer: Codex desktop
 
@@ -16,9 +16,17 @@ Scope:
 
 ## Decision
 
-Status: `PASS_GLOBAL_PRODUCTION_READY`
+Status: `REVOKED_NOT_PRODUCTION_READY`
 
-All current first-class Viet city/place app-detail source objects are production-ready by the V2.2 contract as of this receipt. The approval authority is the V2.2 source object set, not the legacy city-library projection or generated native runtime files.
+Revocation note, 2026-06-01:
+
+This receipt is retained as an error record. It over-trusted validator output and did not audit the copy deeply enough across categories, subcategories, phrase-card fit, generated phrase pages, and relationship-card source quality.
+
+Current status lives in `full-copy-audit-2026-06-01.md`: `NOT_PRODUCTION_READY`.
+
+The claim below is revoked:
+
+> All current first-class Viet city/place app-detail source objects are production-ready by the V2.2 contract as of this receipt.
 
 This supersedes the older `REVISE_BEFORE_GLOBAL_PRODUCTION` status in the 2026-05-30 review. The later 2026-05-31 repair passes removed the known visible save-mechanic leaks, generic related-card blockers, and voice drift patterns that were keeping the full set out of production approval.
 
