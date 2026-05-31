@@ -123,6 +123,11 @@ Fresh command evidence from this pass:
   - passed: `8` tests, `0` failures
   - covered location-pick audio preparation, grouped Mentioned/Related card reuse, article row audio preparation, calibrated city menu picks, menu/related pick canonical lookup caching, bounded rapid city-browsing caches, and Vietnamese menu name audio
   - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-14-15-608Z_pid15747_66c5804f.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `0d45202f4`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - XcodeBuildMCP simulator focused row playback-audio preparation set on iPhone 17 Pro
   - failed before implementation because `AudioAssetManifest` had no lookup counter and `PhraseArticlePlaybackAudioResolver` did not exist
   - passed after implementation: `1` test, `0` failures
