@@ -20,20 +20,20 @@
   },
   "counts": {
     "cities": 5,
-    "entries": 519,
+    "entries": 520,
     "byCity": {
       "danang": 106,
       "hanoi": 106,
       "hcmc": 106,
-      "hoian": 101,
+      "hoian": 102,
       "hue": 100
     },
     "needsVoiceGate": 0,
-    "finalPass": 519,
-    "priorV2_2GateEvidence": 12,
+    "finalPass": 520,
+    "priorV2_2GateEvidence": 13,
     "legacyV2_2GateEvidence": 0,
-    "renderableRelatedPlaceCandidates": 519,
-    "renderableMentionedHereCandidates": 56,
+    "renderableRelatedPlaceCandidates": 520,
+    "renderableMentionedHereCandidates": 57,
     "verificationFlags": 1
   },
   "entries": [
@@ -115,6 +115,13 @@
       "status": "FINAL_PASS"
     },
     {
+      "id": "viet-family-city-danang-place-banh-canh-yen",
+      "pageID": "city-danang-place-banh-canh-yen",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
       "id": "viet-family-city-danang-place-banh-mi",
       "pageID": "city-danang-place-banh-mi",
       "cityID": "danang",
@@ -164,13 +171,6 @@
       "status": "FINAL_PASS"
     },
     {
-      "id": "viet-family-city-danang-place-moc-quan-seafood",
-      "pageID": "city-danang-place-moc-quan-seafood",
-      "cityID": "danang",
-      "file": "danang.json",
-      "status": "FINAL_PASS"
-    },
-    {
       "id": "viet-family-city-danang-place-boulevard-gelato-coffee",
       "pageID": "city-danang-place-boulevard-gelato-coffee",
       "cityID": "danang",
@@ -201,13 +201,6 @@
     {
       "id": "viet-family-city-danang-place-bun-rieu-cua-39",
       "pageID": "city-danang-place-bun-rieu-cua-39",
-      "cityID": "danang",
-      "file": "danang.json",
-      "status": "FINAL_PASS"
-    },
-    {
-      "id": "viet-family-city-danang-place-banh-canh-yen",
-      "pageID": "city-danang-place-banh-canh-yen",
       "cityID": "danang",
       "file": "danang.json",
       "status": "FINAL_PASS"
@@ -493,8 +486,8 @@
       "status": "FINAL_PASS"
     },
     {
-      "id": "viet-family-city-danang-place-my-quang-sua-hong-van",
-      "pageID": "city-danang-place-my-quang-sua-hong-van",
+      "id": "viet-family-city-danang-place-moc-quan-seafood",
+      "pageID": "city-danang-place-moc-quan-seafood",
       "cityID": "danang",
       "file": "danang.json",
       "status": "FINAL_PASS"
@@ -544,6 +537,13 @@
     {
       "id": "viet-family-city-danang-place-my-quang-dung",
       "pageID": "city-danang-place-my-quang-dung",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-my-quang-sua-hong-van",
+      "pageID": "city-danang-place-my-quang-sua-hong-van",
       "cityID": "danang",
       "file": "danang.json",
       "status": "FINAL_PASS"
@@ -843,6 +843,13 @@
       "status": "FINAL_PASS"
     },
     {
+      "id": "viet-family-city-hanoi-place-bun-cha-dac-kim",
+      "pageID": "city-hanoi-place-bun-cha-dac-kim",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
       "id": "viet-family-city-hanoi-place-bun-cha-huong-lien",
       "pageID": "city-hanoi-place-bun-cha-huong-lien",
       "cityID": "hanoi",
@@ -852,20 +859,6 @@
     {
       "id": "viet-family-city-hanoi-place-bun-cha-ta",
       "pageID": "city-hanoi-place-bun-cha-ta",
-      "cityID": "hanoi",
-      "file": "hanoi.json",
-      "status": "FINAL_PASS"
-    },
-    {
-      "id": "viet-family-city-hanoi-place-bun-cha-dac-kim",
-      "pageID": "city-hanoi-place-bun-cha-dac-kim",
-      "cityID": "hanoi",
-      "file": "hanoi.json",
-      "status": "FINAL_PASS"
-    },
-    {
-      "id": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
-      "pageID": "city-hanoi-place-tuyet-bun-cha-34",
       "cityID": "hanoi",
       "file": "hanoi.json",
       "status": "FINAL_PASS"
@@ -1256,6 +1249,13 @@
       "status": "FINAL_PASS"
     },
     {
+      "id": "viet-family-city-hanoi-place-pho-10-ly-quoc-su",
+      "pageID": "city-hanoi-place-pho-10-ly-quoc-su",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
       "id": "viet-family-city-hanoi-place-pho-bat-dan",
       "pageID": "city-hanoi-place-pho-bat-dan",
       "cityID": "hanoi",
@@ -1286,13 +1286,6 @@
     {
       "id": "viet-family-city-hanoi-place-pho-ga-nguyet",
       "pageID": "city-hanoi-place-pho-ga-nguyet",
-      "cityID": "hanoi",
-      "file": "hanoi.json",
-      "status": "FINAL_PASS"
-    },
-    {
-      "id": "viet-family-city-hanoi-place-pho-10-ly-quoc-su",
-      "pageID": "city-hanoi-place-pho-10-ly-quoc-su",
       "cityID": "hanoi",
       "file": "hanoi.json",
       "status": "FINAL_PASS"
@@ -1426,6 +1419,13 @@
     {
       "id": "viet-family-city-hanoi-place-turtle-tower",
       "pageID": "city-hanoi-place-turtle-tower",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
+      "pageID": "city-hanoi-place-tuyet-bun-cha-34",
       "cityID": "hanoi",
       "file": "hanoi.json",
       "status": "FINAL_PASS"
@@ -1664,27 +1664,6 @@
     {
       "id": "viet-family-city-hcmc-place-bun-bo-hue-14b",
       "pageID": "city-hcmc-place-bun-bo-hue-14b",
-      "cityID": "hcmc",
-      "file": "hcmc.json",
-      "status": "FINAL_PASS"
-    },
-    {
-      "id": "viet-family-city-hcmc-place-pho-le-district-5",
-      "pageID": "city-hcmc-place-pho-le-district-5",
-      "cityID": "hcmc",
-      "file": "hcmc.json",
-      "status": "FINAL_PASS"
-    },
-    {
-      "id": "viet-family-city-hcmc-place-pho-minh",
-      "pageID": "city-hcmc-place-pho-minh",
-      "cityID": "hcmc",
-      "file": "hcmc.json",
-      "status": "FINAL_PASS"
-    },
-    {
-      "id": "viet-family-city-hcmc-place-pho-huong-binh",
-      "pageID": "city-hcmc-place-pho-huong-binh",
       "cityID": "hcmc",
       "file": "hcmc.json",
       "status": "FINAL_PASS"
@@ -2096,6 +2075,27 @@
       "status": "FINAL_PASS"
     },
     {
+      "id": "viet-family-city-hcmc-place-pho-huong-binh",
+      "pageID": "city-hcmc-place-pho-huong-binh",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pho-le-district-5",
+      "pageID": "city-hcmc-place-pho-le-district-5",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pho-minh",
+      "pageID": "city-hcmc-place-pho-minh",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
       "id": "viet-family-city-hcmc-place-pho-nam",
       "pageID": "city-hcmc-place-pho-nam",
       "cityID": "hcmc",
@@ -2427,6 +2427,13 @@
     {
       "id": "viet-family-city-hoian-place-cao-lau-city",
       "pageID": "city-hoian-place-cao-lau-city",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cao-lau-thanh",
+      "pageID": "city-hoian-place-cao-lau-thanh",
       "cityID": "hoian",
       "file": "hoian.json",
       "status": "FINAL_PASS"

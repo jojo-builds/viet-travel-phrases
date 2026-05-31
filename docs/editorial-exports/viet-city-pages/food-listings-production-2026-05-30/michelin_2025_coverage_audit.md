@@ -44,8 +44,9 @@ The larger gap is not the top award tier. The gap is Bib Gourmand and MICHELIN S
 - Da Nang: `Bếp Hên` — added as `city-danang-place-bep-hen` after the fifth additive Da Nang food pass. The visible page uses 2025 MICHELIN Selected language to support a warmer home-style dinner save, with handwritten-menu energy, garlicky prawns, beef, greens, shared plates, and smaller-room contrast.
 - Da Nang: `MỘC Quán Seafood` — added as `city-danang-place-moc-quan-seafood` after the sixth additive Da Nang food pass. The visible page uses 2025 MICHELIN Selected language to support a guided seafood-table save, with tanks, shellfish help, lobster in garlic butter, and clearer comparison against Bé Mặn and Năm Đảnh.
 - Hội An: `Cơm Gà Bà Buội` — added as `city-hoian-place-com-ga-ba-buoi` after the first additive Hội An food pass. This is intentionally not a MICHELIN claim; Hội An sits outside the current MICHELIN Vietnam city coverage in this audit. The visible page gives the existing chicken-rice dish page a named old-town lunch save: yellow rice, shredded chicken, herbs, papaya, soup, and sauce.
+- Hội An: `Cao Lầu Thanh` — added as `city-hoian-place-cao-lau-thanh` after the second additive Hội An food pass. This is intentionally not a MICHELIN claim; Hội An sits outside the current MICHELIN Vietnam city coverage in this audit. The visible page gives the existing cao lầu dish page a focused named bowl stop on Thái Phiên, with Vietnam Travel and Quang Nam Tourism source support.
 
-The city inventory contract is now 519 noun/place pages total: HCMC carries 106 rows, Hanoi carries 106 rows, Da Nang carries 106 rows, Hội An carries 101 rows, and Hue remains at 100 rows.
+The city inventory contract is now 520 noun/place pages total: HCMC carries 106 rows, Hanoi carries 106 rows, Da Nang carries 106 rows, Hội An carries 102 rows, and Hue remains at 100 rows.
 
 ## Current Pages That Should Stay But Not Always Lead
 
@@ -77,7 +78,7 @@ Do add MICHELIN-backed places when they improve one of these jobs:
 
 Do not add every MICHELIN Selected restaurant as inventory. The app should feel curated, not like a copied guide list.
 
-The expansion packets widened the contract explicitly instead of adding loose extra JSON rows. Use `saveworthy_restaurant_add_path_2026-05-31.md` and `production_readiness_review.md` for the source, runtime, validation, and render gates that proved the Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, Phở Lệ, Phở Minh, Phở Hương Bình, Bánh Cuốn Bà Hoành, Bánh Cuốn Bà Xuân, Bún Chả Đắc Kim, Tuyết Bún Chả 34, Bún Riêu Cua 39, Phở Gà Nguyệt, Phở 10 Lý Quốc Sư, Bánh Canh Yến, Mỳ Quảng Sứa Hồng Vân, Bún Chả Cá 109, Bếp Hên, MỘC Quán Seafood, and Cơm Gà Bà Buội additive pilots.
+The expansion packets widened the contract explicitly instead of adding loose extra JSON rows. Use `saveworthy_restaurant_add_path_2026-05-31.md` and `production_readiness_review.md` for the source, runtime, validation, and render gates that proved the Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, Phở Lệ, Phở Minh, Phở Hương Bình, Bánh Cuốn Bà Hoành, Bánh Cuốn Bà Xuân, Bún Chả Đắc Kim, Tuyết Bún Chả 34, Bún Riêu Cua 39, Phở Gà Nguyệt, Phở 10 Lý Quốc Sư, Bánh Canh Yến, Mỳ Quảng Sứa Hồng Vân, Bún Chả Cá 109, Bếp Hên, MỘC Quán Seafood, Cơm Gà Bà Buội, and Cao Lầu Thanh additive pilots.
 
 ## Current Patch Note
 
@@ -118,5 +119,7 @@ The expansion packets widened the contract explicitly instead of adding loose ex
 `city-danang-place-moc-quan-seafood` is no longer a candidate. It is now part of the V2.2 source set and generated native runtime as the sixth additive Da Nang food pilot.
 
 `city-hoian-place-com-ga-ba-buoi` is now part of the V2.2 source set and generated native runtime as the first additive Hội An food pilot. It is tracked here as a non-MICHELIN local-significance add, because the current MICHELIN Vietnam coverage used by this audit does not cover Hội An.
+
+`city-hoian-place-cao-lau-thanh` is now part of the V2.2 source set and generated native runtime as the second additive Hội An food pilot. It is tracked here as a non-MICHELIN local-significance add, because the current MICHELIN Vietnam coverage used by this audit does not cover Hội An.
 
 `city-danang-place-my-quang-ba-mua` and `city-danang-place-my-quang-dung` now have explicit support-listing posture. They should remain in browse/route inventory, but not lead a high-visibility foodie shelf while `city-danang-place-mi-quang-1a` and `city-danang-place-my-quang-sua-hong-van` carry the stronger mì Quảng saves.

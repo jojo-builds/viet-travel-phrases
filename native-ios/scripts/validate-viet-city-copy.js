@@ -15,7 +15,7 @@ const expectedPagesByCity = new Map(Object.entries({
   hcmc: 106,
   hanoi: 106,
   danang: 106,
-  hoian: 101,
+  hoian: 102,
   hue: 100,
 }));
 const expectedNounPageCount = [...expectedPagesByCity.values()].reduce((sum, count) => sum + count, 0);

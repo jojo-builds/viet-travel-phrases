@@ -58,17 +58,17 @@ test("builds deterministic v2.2 app-detail source files from handwritten city co
 
   assert.strictEqual(firstHash, secondHash, "output tree should be deterministic");
   assert.strictEqual(firstOutput, secondOutput, "command summary should be deterministic");
-  assert.match(firstOutput, /entries: 519/);
+  assert.match(firstOutput, /entries: 520/);
   assert.match(firstOutput, /cities: 5/);
 
   const index = JSON.parse(fs.readFileSync(path.join(outDir, "_index.json"), "utf8"));
   assert.strictEqual(index.contentContract, "speaklocal.place.app-detail.v2.2");
-  assert.strictEqual(index.counts.entries, 519);
+  assert.strictEqual(index.counts.entries, 520);
   assert.deepStrictEqual(index.counts.byCity, {
     danang: 106,
     hanoi: 106,
     hcmc: 106,
-    hoian: 101,
+    hoian: 102,
     hue: 100,
   });
 
@@ -90,6 +90,6 @@ test("builds deterministic v2.2 app-detail source files from handwritten city co
   assert.ok(firstEntry.sections.every((section) => section.heading && section.body));
   assert.strictEqual(firstEntry.status, "needs_voice_gate");
   assert.strictEqual(firstEntry.review.status, "needs_voice_gate");
-  assert.strictEqual(index.counts.needsVoiceGate, 519);
+  assert.strictEqual(index.counts.needsVoiceGate, 520);
   assert.ok(firstEntry.sourceNotes.some((note) => note.includes("handwritten-copy/danang.json")));
 });

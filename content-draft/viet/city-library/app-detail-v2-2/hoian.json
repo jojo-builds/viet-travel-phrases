@@ -8,9 +8,9 @@
     "phraseCatalog": "native-ios/Resources/viet-phrase-catalog.json"
   },
   "counts": {
-    "entries": 100,
+    "entries": 102,
     "needsVoiceGate": 0,
-    "finalPass": 100,
+    "finalPass": 102,
     "fail": 0,
     "priorV2_2GateEvidence": 0
   },
@@ -2633,27 +2633,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Bắt đầu ở đâu?",
-          "en": "Where do we start?",
-          "intent": "sight-start",
-          "phraseId": "sight-2",
-          "audioId": "sight-2",
+          "vi": "Cho tôi tô này",
+          "en": "I'll take this bowl",
+          "intent": "food-this-bowl",
+          "phraseId": "food-2",
+          "audioId": "food-2",
           "status": "mapped"
         },
         {
-          "vi": "Điểm gặp ở đâu?",
-          "en": "Where is the meeting point?",
-          "intent": "sight-meeting-point",
-          "phraseId": "sight-5",
-          "audioId": "sight-5",
+          "vi": "Cho thêm rau",
+          "en": "More herbs please",
+          "intent": "food-more-herbs",
+          "phraseId": "food-4",
+          "audioId": "food-4",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi chai nước",
-          "en": "A bottle of water please",
-          "intent": "service-water",
-          "phraseId": "store-1",
-          "audioId": "store-1",
+          "vi": "Không cay nhé",
+          "en": "Not spicy please",
+          "intent": "food-not-spicy",
+          "phraseId": "food-3",
+          "audioId": "food-3",
           "status": "mapped"
         }
       ],
@@ -2682,6 +2682,14 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
+          "catalogId": "viet-family-city-hoian-place-cao-lau-thanh",
+          "label": "Cao Lầu Thanh",
+          "relationship": "dish-to-focused restaurant link",
+          "displaySubtitle": "A focused Thái Phiên stop when cao lầu itself should be the meal.",
+          "reason": "Cao Lau Thanh gives the dish page a named place focused on the bowl itself.",
+          "status": "render"
+        },
+        {
           "catalogId": "viet-family-city-hoian-place-morning-glory",
           "label": "Morning Glory Hội An",
           "relationship": "dish-to-orientation restaurant link",
@@ -2701,17 +2709,20 @@
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
+          "2026-05-31 repair: replaced generic sightseeing phrase cards with mapped food-ordering phrase cards, then linked the dish guide to the new focused Cao Lầu Thanh listing."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Cao lau now routes to a place-level orientation table instead of a generic dish card."
+        "reason": "Production food pass: Cao lau now has food-ordering phrase cards and routes to both a focused named cao lau stop and a broader menu table."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Existing city-library; Vietnam Tourism Hoi An."
+        "Production intake source notes: Existing city-library; Vietnam Tourism Hoi An.",
+        "2026-05-31 source refresh: Vietnam Travel lists Quán Cao Lầu Thanh at 26 Thái Phiên; Quang Nam Tourism's 2026 cao-lau roundup supports Thanh as a focused cao lầu stop.",
+        "Visible copy avoids hours, prices, rankings, and exact operating claims."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -2724,8 +2735,151 @@
         "notes": [
           "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only."
         ],
-        "finalPassDate": "2026-05-27",
-        "phraseCardRepair": "replaced fallback place-name card with reusable ready-audio phrase set"
+        "finalPassDate": "2026-05-31",
+        "phraseCardRepair": "replaced generic sight/water cards with reusable ready-audio food-ordering cards"
+      }
+    },
+    {
+      "contentContract": "speaklocal.place.app-detail.v2.2",
+      "id": "viet-family-city-hoian-place-cao-lau-thanh",
+      "pageID": "city-hoian-place-cao-lau-thanh",
+      "sourcePageID": "city-hoian-place-cao-lau-thanh",
+      "displayName": "Cao Lầu Thanh",
+      "englishName": "Cao Lau Thanh",
+      "city": "Hội An",
+      "category": "Restaurant",
+      "pronunciation": "cao lau thanh",
+      "travelerMoment": "Save Cao Lầu Thanh when cao lầu should be the meal, not a menu curiosity: a small Thái Phiên stop for the chewy noodle bowl with pork, herbs, crisp pieces, and sauce.",
+      "storySpine": "The current Hội An set already had cao lầu as a dish. Thanh gives it a named counter, supported by Vietnam Travel and Quang Nam food guidance, so the bowl has somewhere concrete to land.",
+      "intro": {
+        "heading": "The Bowl Gets A Counter",
+        "body": "Cao Lầu Thanh is the focused Hội An save for the noodle bowl itself: thick cao lầu noodles, pork, herbs, crisp pieces, and sauce at a simple Thái Phiên table."
+      },
+      "usefulPhraseCards": [
+        {
+          "vi": "Cho tôi một phần",
+          "en": "One portion please",
+          "intent": "food-one-portion",
+          "phraseId": "food-1",
+          "audioId": "food-1",
+          "status": "mapped"
+        },
+        {
+          "vi": "Cho thêm rau",
+          "en": "More herbs please",
+          "intent": "food-more-herbs",
+          "phraseId": "food-4",
+          "audioId": "food-4",
+          "status": "mapped"
+        },
+        {
+          "vi": "Không cay nhé",
+          "en": "Not spicy please",
+          "intent": "food-not-spicy",
+          "phraseId": "food-3",
+          "audioId": "food-3",
+          "status": "mapped"
+        }
+      ],
+      "sections": [
+        {
+          "id": "order-the-bowl",
+          "heading": "Order The Bowl",
+          "body": "This is the save for cao lầu without turning the meal into a broad restaurant search. Keep the order simple and let the bowl lead."
+        },
+        {
+          "id": "chew-pork-herbs",
+          "heading": "Chew, Pork, Herbs",
+          "body": "The appeal is texture: thick noodles, savory pork, fresh greens, crisp pieces, and just enough sauce to coat the bowl."
+        },
+        {
+          "id": "thai-phien-stop",
+          "heading": "Thái Phiên Stop",
+          "body": "Thái Phiên keeps the stop close to old-town walks without making it a riverside linger. Come hungry, order the bowl, then keep walking."
+        },
+        {
+          "id": "how-it-differs",
+          "heading": "How It Differs",
+          "body": "Morning Glory is better for orientation across dishes. Cao Lầu Thanh is the tighter save when the craving is specifically cao lầu."
+        }
+      ],
+      "mentionedHereCandidates": [
+        {
+          "label": "Cao lầu ở Hội An",
+          "type": "dish",
+          "catalogId": "viet-family-city-hoian-place-cao-lau-city",
+          "sourceText": "cao lầu",
+          "displaySubtitle": "The dish guide behind this named Hội An noodle stop.",
+          "reason": "The page centers cao lau and should connect to the dish-level guide.",
+          "status": "render"
+        }
+      ],
+      "relatedPlaceCandidates": [
+        {
+          "catalogId": "viet-family-city-hoian-place-cao-lau-city",
+          "label": "Cao lầu ở Hội An",
+          "relationship": "named restaurant to dish guide",
+          "displaySubtitle": "The dish page for recognizing cao lầu before choosing a counter.",
+          "reason": "The dish guide should remain reachable from the named restaurant.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hoian-place-morning-glory",
+          "label": "Morning Glory Hội An",
+          "relationship": "focused-bowl to wider-menu contrast",
+          "displaySubtitle": "A broader first dinner table when the group wants more than one Hội An dish.",
+          "reason": "Morning Glory gives Cao Lau Thanh a wider-menu contrast.",
+          "status": "render"
+        },
+        {
+          "catalogId": "viet-family-city-hoian-place-com-ga-ba-buoi",
+          "label": "Cơm Gà Bà Buội",
+          "relationship": "old-town lunch contrast",
+          "displaySubtitle": "A named chicken-rice lunch when rice, herbs, soup, and sauce should lead instead.",
+          "reason": "Ba Buoi is the nearest role-equivalent named lunch stop after the previous additive pass.",
+          "status": "render"
+        }
+      ],
+      "verificationFlags": [],
+      "qa": {
+        "replaceabilityTest": "pass",
+        "phraseCardTest": "pass",
+        "mentionedHereTest": "pass",
+        "catalogMentionScan": "pass",
+        "duplicateBodyTest": "pass",
+        "antiCynicismTest": "pass",
+        "notes": [
+          "Additive Hội An 102-page pilot on 2026-05-31: authored directly under current V2.2 standard after audit found the cao lầu dish page had no focused named cao lầu stop.",
+          "Source refresh on 2026-05-31: Vietnam Travel lists Quán Cao Lầu Thanh at 26 Thái Phiên; Quang Nam Tourism's 2026 cao-lau roundup supports Thanh as a recognized small cao lầu stop. Visible copy avoids hours, prices, rankings, and exact operating claims.",
+          "No MICHELIN claim is used because Hội An is outside the current MICHELIN Vietnam city coverage in the existing audit."
+        ]
+      },
+      "score": {
+        "value": 30,
+        "max": 30,
+        "reason": "Additive production pilot: Cao Lau Thanh gives the signature cao lau dish a named, food-specific save with mapped phrase cards, dish linkage, and meaningful old-town meal comparisons."
+      },
+      "sourceNotes": [
+        "Added as the second additive Hội An food pilot after the 500-page hard reset; script assumptions now allow Hội An 102.",
+        "Vietnam Travel source: https://vietnam.travel/things-to-do/explore-food-hoi-an",
+        "Quang Nam Tourism source: https://quangnamtourism.com.vn/cao-lau-hoi-an/",
+        "Visible copy intentionally avoids hours, prices, ranking claims, and operational certainty."
+      ],
+      "status": "FINAL_PASS",
+      "review": {
+        "status": "FINAL_PASS",
+        "sourceReviewStatus": "handwritten-reviewed",
+        "voiceGateStatus": "passed_city_voice_gate",
+        "v2_2GateStatus": "additive_food_listing_gate_passed",
+        "v2_2GateSources": [
+          "docs/design/city-pages/CURRENT_CITY_PAGE_STANDARD.md",
+          "docs/design/city-pages/V2_2_PRODUCTION_REVIEW_GATE.md"
+        ],
+        "generatedFrom": "content-draft/viet/city-library/app-detail-v2-2",
+        "notes": [
+          "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only."
+        ],
+        "finalPassDate": "2026-05-31"
       }
     },
     {

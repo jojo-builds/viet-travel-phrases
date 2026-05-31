@@ -11963,6 +11963,38 @@
       }
     },
     {
+      "id": "city-hoian-place-cao-lau-thanh",
+      "cityID": "hoian",
+      "pageKind": "restaurant",
+      "placeKind": "restaurant",
+      "reviewer": "city-owner:hoian",
+      "status": "APPROVE",
+      "blockerLevel": "NONE",
+      "checklist": {
+        "voiceLengthPass": true,
+        "sectionCountPass": true,
+        "profileAudienceCuePass": true,
+        "noBannedVisibleTextPass": true,
+        "noBannedSourceInputPass": true,
+        "sourceNotesPresent": true,
+        "targetHeroPresent": true,
+        "durableReviewEvidencePresent": true,
+        "sectionBodiesDistinctEnough": true,
+        "runtimeOverrideExplicit": true,
+        "bannedMatches": [],
+        "sourceBannedMatches": []
+      },
+      "failures": [],
+      "evidence": {
+        "summaryExcerpt": "Save Cao Lầu Thanh when cao lầu should be the meal, not a menu curiosity: a small Thái Phiên stop for the chewy noodle bowl with pork, herbs, crisp pieces, and sauce.",
+        "aboutExcerpt": "Cao Lầu Thanh is the focused Hội An save for the noodle bowl itself: thick cao lầu noodles, pork, herbs, crisp pieces, and sauce at a simple Thái Phiên table.",
+        "phrasebookExcerpt": "",
+        "belongingExcerpt": "The appeal is texture: thick noodles, savory pork, fresh greens, crisp pieces, and just enough sauce to coat the bowl.",
+        "timingExcerpt": "Thái Phiên keeps the stop close to old-town walks without making it a riverside linger. Come hungry, order the bowl, then keep walking.",
+        "goodToKnowExcerpt": "Morning Glory is better for orientation across dishes. Cao Lầu Thanh is the tighter save when the craving is specifically cao lầu."
+      }
+    },
+    {
       "id": "city-hoian-place-cargo-club",
       "cityID": "hoian",
       "pageKind": "restaurant",

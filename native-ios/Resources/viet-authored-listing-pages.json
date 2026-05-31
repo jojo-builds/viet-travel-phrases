@@ -8,9 +8,9 @@
     "resourceMainPageCount": 145,
     "childPageCount": 13,
     "catalogPromotedPageCount": 770,
-    "cityLibraryPageCount": 825,
+    "cityLibraryPageCount": 826,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-31T03:47:49.003Z"
+    "generatedAt": "2026-05-31T04:14:59.399Z"
   },
   "pages": [
     {
@@ -271352,34 +271352,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "sight-2",
+              "vietnamese": "Bắt đầu ở đâu?",
+              "english": "Where do we start?",
+              "pronunciation": "bat dow uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-sight-start",
+              "audioKey": "sight-2"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "sight-5",
+              "vietnamese": "Điểm gặp ở đâu?",
+              "english": "Where is the meeting point?",
+              "pronunciation": "deeym gap uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-sight-meeting-point",
+              "audioKey": "sight-5"
             },
             {
-              "id": "food-7",
-              "vietnamese": "Gói mang về",
-              "english": "Pack it to go",
-              "pronunciation": "goy mang veh",
+              "id": "store-1",
+              "vietnamese": "Cho tôi chai nước",
+              "english": "A bottle of water please",
+              "pronunciation": "cho toy chai nook",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-pack-to-go",
-              "audioKey": "food-7"
+              "detailPageID": "viet-family-service-water",
+              "audioKey": "store-1"
             }
           ],
           "breakdown": [],
@@ -271443,21 +271443,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-1"
+              "sight-2"
             ],
             "supportPhraseIDs": [
-              "food-3",
-              "food-7"
+              "sight-5",
+              "store-1"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-an-bang",
-          "food-1"
+          "sight-2"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-3",
-          "food-7"
+          "sight-5",
+          "store-1"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-an-bang"
       }
@@ -273393,34 +273393,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "sight-2",
+              "vietnamese": "Bắt đầu ở đâu?",
+              "english": "Where do we start?",
+              "pronunciation": "bat dow uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-sight-start",
+              "audioKey": "sight-2"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "sight-5",
+              "vietnamese": "Điểm gặp ở đâu?",
+              "english": "Where is the meeting point?",
+              "pronunciation": "deeym gap uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-sight-meeting-point",
+              "audioKey": "sight-5"
             },
             {
-              "id": "food-7",
-              "vietnamese": "Gói mang về",
-              "english": "Pack it to go",
-              "pronunciation": "goy mang veh",
+              "id": "store-1",
+              "vietnamese": "Cho tôi chai nước",
+              "english": "A bottle of water please",
+              "pronunciation": "cho toy chai nook",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-pack-to-go",
-              "audioKey": "food-7"
+              "detailPageID": "viet-family-service-water",
+              "audioKey": "store-1"
             }
           ],
           "breakdown": [],
@@ -273484,21 +273484,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-1"
+              "sight-2"
             ],
             "supportPhraseIDs": [
-              "food-3",
-              "food-7"
+              "sight-5",
+              "store-1"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-bay-mau-coconut-forest",
-          "food-1"
+          "sight-2"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-3",
-          "food-7"
+          "sight-5",
+          "store-1"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-bay-mau-coconut-forest"
       }
@@ -275276,34 +275276,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "sight-2",
-              "vietnamese": "Bắt đầu ở đâu?",
-              "english": "Where do we start?",
-              "pronunciation": "bat dow uh dow",
+              "id": "food-2",
+              "vietnamese": "Cho tôi tô này",
+              "english": "I’ll take this bowl",
+              "pronunciation": "cho toy toh nai",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-sight-start",
-              "audioKey": "sight-2"
+              "detailPageID": "viet-family-food-this-bowl",
+              "audioKey": "food-2"
             },
             {
-              "id": "sight-5",
-              "vietnamese": "Điểm gặp ở đâu?",
-              "english": "Where is the meeting point?",
-              "pronunciation": "deeym gap uh dow",
+              "id": "food-4",
+              "vietnamese": "Cho thêm rau",
+              "english": "More herbs please",
+              "pronunciation": "cho them zow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-sight-meeting-point",
-              "audioKey": "sight-5"
+              "detailPageID": "viet-family-food-more-herbs",
+              "audioKey": "food-4"
             },
             {
-              "id": "store-1",
-              "vietnamese": "Cho tôi chai nước",
-              "english": "A bottle of water please",
-              "pronunciation": "cho toy chai nook",
+              "id": "food-3",
+              "vietnamese": "Không cay nhé",
+              "english": "Not spicy please",
+              "pronunciation": "khong kai nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-service-water",
-              "audioKey": "store-1"
+              "detailPageID": "viet-family-food-not-spicy",
+              "audioKey": "food-3"
             }
           ],
           "breakdown": [],
@@ -275388,11 +275388,11 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "sight-2"
+              "food-2"
             ],
             "supportPhraseIDs": [
-              "sight-5",
-              "store-1"
+              "food-4",
+              "food-3"
             ]
           },
           {
@@ -275409,15 +275409,187 @@
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-cao-lau-city",
-          "sight-2",
+          "food-2",
           "ves-order-cao-lau-portion"
         ],
         "secondaryPracticePhraseIDs": [
-          "sight-5",
-          "store-1",
+          "food-4",
+          "food-3",
           "food-1"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-cao-lau-city"
+      }
+    },
+    {
+      "id": "viet-family-city-hoian-place-cao-lau-thanh",
+      "familyID": "city-hoian-place-cao-lau-thanh",
+      "phraseID": "city-hoian-place-cao-lau-thanh",
+      "tierRole": "city-v1",
+      "depth": "deep",
+      "title": "Cao Lầu Thanh",
+      "englishTitle": "Cao Lau Thanh",
+      "pronunciation": "cao lau thanh",
+      "summary": "Save Cao Lầu Thanh when cao lầu should be the meal, not a menu curiosity: a small Thái Phiên stop for the chewy noodle bowl with pork, herbs, crisp pieces, and sauce.",
+      "heroImageName": "HeroCityHoianPlaceCaoLauThanh",
+      "iconName": "fork.knife",
+      "tintName": "green",
+      "categoryIDs": [
+        "city-guides",
+        "hoian",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-everyday",
+        "restaurants"
+      ],
+      "audioKey": "audio-authored-cao-lau-thanh-0bdbf4f4cd",
+      "cityMetadata": {
+        "cityID": "hoian",
+        "cityName": "Hoi An",
+        "subcategoryID": "food-coffee",
+        "difficulty": "beginner",
+        "kind": "place",
+        "pageKind": "restaurant",
+        "placeKind": "restaurant",
+        "contentRole": "everyday",
+        "derivedPlacePhrase": false,
+        "placeID": "hoian-cao-lau-thanh",
+        "placeName": "Cao Lau Thanh",
+        "sourceIDs": [
+          "vt-hoian",
+          "vt-hoian-official"
+        ],
+        "rationale": "The current Hội An set already had cao lầu as a dish. Thanh gives it a named counter, supported by Vietnam Travel and Quang Nam food guidance, so the bowl has somewhere concrete to land.",
+        "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
+        "editorialReviewStatus": "handwritten-reviewed",
+        "editorialSourceMode": "expanded-detail",
+        "editorialRuntimeOverrideKind": null,
+        "targetHeroImageName": "HeroCityHoianPlaceCaoLauThanh"
+      },
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "The Bowl Gets A Counter",
+          "body": "Cao Lầu Thanh is the focused Hội An save for the noodle bowl itself: thick cao lầu noodles, pork, herbs, crisp pieces, and sauce at a simple Thái Phiên table.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phrases": [
+            {
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
+            },
+            {
+              "id": "food-4",
+              "vietnamese": "Cho thêm rau",
+              "english": "More herbs please",
+              "pronunciation": "cho them zow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-more-herbs",
+              "audioKey": "food-4"
+            },
+            {
+              "id": "food-3",
+              "vietnamese": "Không cay nhé",
+              "english": "Not spicy please",
+              "pronunciation": "khong kai nhe",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-food-not-spicy",
+              "audioKey": "food-3"
+            }
+          ],
+          "breakdown": [],
+          "presentation": "phrase-list"
+        },
+        {
+          "id": "place-brief",
+          "title": "Order The Bowl",
+          "body": "This is the save for cao lầu without turning the meal into a broad restaurant search. Keep the order simple and let the bowl lead.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "use-it-with",
+          "title": "Chew, Pork, Herbs",
+          "body": "The appeal is texture: thick noodles, savory pork, fresh greens, crisp pieces, and just enough sauce to coat the bowl.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "when-to-use",
+          "title": "Thái Phiên Stop",
+          "body": "Thái Phiên keeps the stop close to old-town walks without making it a riverside linger. Come hungry, order the bowl, then keep walking.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        },
+        {
+          "id": "good-to-know",
+          "title": "How It Differs",
+          "body": "Morning Glory is better for orientation across dishes. Cao Lầu Thanh is the tighter save when the craving is specifically cao lầu.",
+          "phrases": [],
+          "breakdown": [],
+          "presentation": "plain-text"
+        }
+      ],
+      "examples": [
+        {
+          "id": "city-hoian-place-cao-lau-thanh",
+          "vietnamese": "Cao Lầu Thanh",
+          "english": "Cao Lau Thanh",
+          "pronunciation": "cao lau thanh",
+          "symbolName": "text.bubble.fill",
+          "tintName": "teal",
+          "detailPageID": null,
+          "audioKey": "audio-authored-cao-lau-thanh-0bdbf4f4cd"
+        }
+      ],
+      "practiceMetadata": {
+        "integrationVersion": "listing-scenario-seed-v1",
+        "scenarioEligible": true,
+        "practiceKind": "restaurant_ordering_scenario",
+        "practiceCTALabel": "Practice ordering here",
+        "practiceSurfacePolicy": "recommended_when_relevant",
+        "scenarioSeedID": "scenario-seed-city-hoian-place-cao-lau-thanh",
+        "scenarioStepGroups": [
+          {
+            "stepID": "quick-say",
+            "title": "Useful Phrases",
+            "sourceSectionID": "quick-say",
+            "primaryPhraseIDs": [
+              "food-1"
+            ],
+            "supportPhraseIDs": [
+              "food-4",
+              "food-3"
+            ]
+          }
+        ],
+        "primaryPracticePhraseIDs": [
+          "city-hoian-place-cao-lau-thanh",
+          "food-1"
+        ],
+        "secondaryPracticePhraseIDs": [
+          "food-4",
+          "food-3"
+        ],
+        "practiceSourcePageID": "viet-family-city-hoian-place-cao-lau-thanh"
       }
     },
     {
@@ -276504,34 +276676,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "sight-2",
-              "vietnamese": "Bắt đầu ở đâu?",
-              "english": "Where do we start?",
-              "pronunciation": "bat dow uh dow",
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-sight-start",
-              "audioKey": "sight-2"
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
             },
             {
-              "id": "sight-5",
-              "vietnamese": "Điểm gặp ở đâu?",
-              "english": "Where is the meeting point?",
-              "pronunciation": "deeym gap uh dow",
+              "id": "food-3",
+              "vietnamese": "Không cay nhé",
+              "english": "Not spicy please",
+              "pronunciation": "khong kai nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-sight-meeting-point",
-              "audioKey": "sight-5"
+              "detailPageID": "viet-family-food-not-spicy",
+              "audioKey": "food-3"
             },
             {
-              "id": "store-1",
-              "vietnamese": "Cho tôi chai nước",
-              "english": "A bottle of water please",
-              "pronunciation": "cho toy chai nook",
+              "id": "food-7",
+              "vietnamese": "Gói mang về",
+              "english": "Pack it to go",
+              "pronunciation": "goy mang veh",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-service-water",
-              "audioKey": "store-1"
+              "detailPageID": "viet-family-food-pack-to-go",
+              "audioKey": "food-7"
             }
           ],
           "breakdown": [],
@@ -276541,18 +276713,7 @@
           "id": "place-brief",
           "title": "Yellow Rice, Sharp Herbs",
           "body": "The plate is yellow chicken rice with shredded chicken, herbs, and sauce in daylight. The pleasure is direct: fragrant rice, chicken, and the sharp lift of herbs.",
-          "phrases": [
-            {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
-            }
-          ],
+          "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
@@ -276606,31 +276767,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "sight-2"
-            ],
-            "supportPhraseIDs": [
-              "sight-5",
-              "store-1"
-            ]
-          },
-          {
-            "stepID": "place-brief",
-            "title": "Yellow Rice, Sharp Herbs",
-            "sourceSectionID": "place-brief",
-            "primaryPhraseIDs": [
               "food-1"
             ],
-            "supportPhraseIDs": []
+            "supportPhraseIDs": [
+              "food-3",
+              "food-7"
+            ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-com-ga",
-          "sight-2",
           "food-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "sight-5",
-          "store-1"
+          "food-3",
+          "food-7"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-com-ga"
       }

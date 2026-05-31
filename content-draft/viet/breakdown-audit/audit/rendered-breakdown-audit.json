@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-31T03:47:49.705Z",
+  "generatedAt": "2026-05-31T04:15:00.286Z",
   "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-listings-production-ready/content-draft/viet/breakdown-audit/pages",
   "summary": {
-    "pages": 1777,
+    "pages": 1778,
     "reviewed": 1407,
     "visualReviewed": 1407,
-    "missing": 370,
-    "generatedAt": "2026-05-31T03:47:49.705Z"
+    "missing": 371,
+    "generatedAt": "2026-05-31T04:15:00.286Z"
   },
   "pages": [
     {
@@ -112248,6 +112248,18 @@
           "keepTogetherReason": "proper place name"
         }
       ]
+    },
+    {
+      "pageID": "viet-family-city-hoian-place-cao-lau-thanh",
+      "phraseText": "Cao Lầu Thanh",
+      "englishTitle": "Cao Lau Thanh",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [],
+      "reviewedBreakdown": null
     },
     {
       "pageID": "viet-family-city-hoian-place-cargo-club",

@@ -111,7 +111,7 @@ For future swap mode:
 
 Expansion mode was treated as a separate product/engineering task because it changes the 500-page contract, validator expectations, and possibly UI assumptions around city inventory size.
 
-Expansion mode has now been proven nineteen times for Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, Phở Lệ, Phở Minh, Phở Hương Bình, Bánh Cuốn Bà Hoành, Bánh Cuốn Bà Xuân, Bún Chả Đắc Kim, Tuyết Bún Chả 34, Bún Riêu Cua 39, Phở Gà Nguyệt, Phở 10 Lý Quốc Sư, Bánh Canh Yến, Mỳ Quảng Sứa Hồng Vân, Bún Chả Cá 109, Bếp Hên, MỘC Quán Seafood, and Cơm Gà Bà Buội. The implemented changes widened the importer and validators to expect HCMC 106 + Hanoi 106 + Da Nang 106 + Hội An 101 / total 519, added first-class V2.2 source objects, regenerated native resources, and recorded render proof under:
+Expansion mode has now been proven twenty times for Mặn Mòi, Bò Kho Gánh, Bún Bò Huế 14B, Phở Lệ, Phở Minh, Phở Hương Bình, Bánh Cuốn Bà Hoành, Bánh Cuốn Bà Xuân, Bún Chả Đắc Kim, Tuyết Bún Chả 34, Bún Riêu Cua 39, Phở Gà Nguyệt, Phở 10 Lý Quốc Sư, Bánh Canh Yến, Mỳ Quảng Sứa Hồng Vân, Bún Chả Cá 109, Bếp Hên, MỘC Quán Seafood, Cơm Gà Bà Buội, and Cao Lầu Thanh. The implemented changes widened the importer and validators to expect HCMC 106 + Hanoi 106 + Da Nang 106 + Hội An 102 / total 520, added first-class V2.2 source objects, regenerated native resources, and recorded render proof under:
 
 `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-man-moi-additive/`
 
@@ -150,6 +150,8 @@ Expansion mode has now been proven nineteen times for Mặn Mòi, Bò Kho Gánh,
 `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-moc-quan-seafood-additive/`
 
 `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-com-ga-ba-buoi-additive/`
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-cao-lau-thanh-additive/`
 
 The first explicit support-demotion proof pass for existing restaurants lives under:
 

@@ -20,9 +20,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "food-1",
-            "food-3",
-            "food-7"
+            "sight-2",
+            "sight-5",
+            "store-1"
           ]
         },
         {
@@ -550,9 +550,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "food-1",
-            "food-3",
-            "food-7"
+            "sight-2",
+            "sight-5",
+            "store-1"
           ]
         },
         {
@@ -1045,9 +1045,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
-            "store-1"
+            "food-2",
+            "food-4",
+            "food-3"
           ]
         },
         {
@@ -1069,6 +1069,51 @@
           "id": "good-to-know",
           "title": "Tone Marks Help",
           "body": "Menus may spell it with tone marks as Cao lầu. Recognizing the words helps even when restaurant names shift."
+        }
+      ],
+      "sourceMode": "expanded-detail"
+    },
+    {
+      "pageID": "city-hoian-place-cao-lau-thanh",
+      "summary": "Save Cao Lầu Thanh when cao lầu should be the meal, not a menu curiosity: a small Thái Phiên stop for the chewy noodle bowl with pork, herbs, crisp pieces, and sauce.",
+      "context": "Save Cao Lầu Thanh when cao lầu should be the meal, not a menu curiosity: a small Thái Phiên stop for the chewy noodle bowl with pork, herbs, crisp pieces, and sauce.",
+      "tip": "Morning Glory is better for orientation across dishes. Cao Lầu Thanh is the tighter save when the craving is specifically cao lầu.",
+      "rationale": "The current Hội An set already had cao lầu as a dish. Thanh gives it a named counter, supported by Vietnam Travel and Quang Nam food guidance, so the bowl has somewhere concrete to land.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "The Bowl Gets A Counter",
+          "body": "Cao Lầu Thanh is the focused Hội An save for the noodle bowl itself: thick cao lầu noodles, pork, herbs, crisp pieces, and sauce at a simple Thái Phiên table."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phraseIDs": [
+            "food-1",
+            "food-4",
+            "food-3"
+          ]
+        },
+        {
+          "id": "place-brief",
+          "title": "Order The Bowl",
+          "body": "This is the save for cao lầu without turning the meal into a broad restaurant search. Keep the order simple and let the bowl lead."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Chew, Pork, Herbs",
+          "body": "The appeal is texture: thick noodles, savory pork, fresh greens, crisp pieces, and just enough sauce to coat the bowl."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Thái Phiên Stop",
+          "body": "Thái Phiên keeps the stop close to old-town walks without making it a riverside linger. Come hungry, order the bowl, then keep walking."
+        },
+        {
+          "id": "good-to-know",
+          "title": "How It Differs",
+          "body": "Morning Glory is better for orientation across dishes. Cao Lầu Thanh is the tighter save when the craving is specifically cao lầu."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1355,9 +1400,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
-            "store-1"
+            "food-1",
+            "food-3",
+            "food-7"
           ]
         },
         {

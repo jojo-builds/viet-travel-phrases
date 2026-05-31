@@ -2364,6 +2364,111 @@ The additive path is now proven across seven stronger food pages, including the 
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
 
+## Continuation: Cao Lầu Thanh Additive Hội An Pilot
+
+Pass date: 2026-05-31
+
+Commit before pass: `2c0d9e75a Add Com Ga Ba Buoi Hoi An food listing`
+
+This continuation answers the open Hội An cao lầu question directly: the existing `Cao lầu ở Hội An` dish page was useful, but its phrase cards were too generic and it had no focused named cao lầu stop. `Cao Lầu Thanh` adds the save-worthy bowl destination while keeping `Morning Glory Hội An` as the broader-menu orientation table.
+
+### Page Added And Page Repaired
+
+- `city-hoian-place-cao-lau-thanh`: new first-class V2.2 Hội An restaurant page.
+- `city-hoian-place-cao-lau-city`: repaired with food-ordering phrase cards and a related card to the named Cao Lầu Thanh page.
+
+Visible page direction:
+
+- `Cao Lầu Thanh` is framed as the focused Thái Phiên save for cao lầu itself: thick noodles, pork, herbs, crisp pieces, and sauce.
+- Mentioned Here links back to `Cao lầu ở Hội An`, so the named restaurant and dish guide support each other.
+- Compare Nearby renders `Cao lầu ở Hội An`, `Morning Glory Hội An`, and `Cơm Gà Bà Buội`, giving the user a real food-planning choice rather than another isolated card.
+
+### Add Decision
+
+Decision: add, and let it lead as the focused cao lầu bowl save.
+
+Source support:
+
+- Vietnam Travel `Explore the food of Hoi An` lists `Quán Cao Lầu Thanh` at `26 Thái Phiên`.
+- Quang Nam Tourism's 2026 cao lầu roundup identifies Thanh as a small, recognized cao lầu stop.
+
+No MICHELIN claim is used. Hội An remains outside the current MICHELIN Vietnam city coverage tracked by this audit.
+
+### Runtime Shape
+
+- `docs/city-production/agent-inputs/hoian-nouns.md`: added row `hoian-cao-lau-thanh`.
+- `content-draft/viet/city-library/app-detail-v2-2/hoian.json`: added the authored V2.2 source object and repaired the dish-page phrase cards.
+- `content-draft/viet/city-library/app-detail-v2-2/_index.json`: current inventory is now 520 city noun/place pages.
+- `native-ios/scripts/import-city-noun-intake.js`, `native-ios/scripts/validate-viet-city-copy.js`, and `native-ios/scripts/build-viet-city-app-detail-v2-2.test.js`: city count expectations now allow HCMC 106, Hanoi 106, Da Nang 106, Hội An 102, Hue 100.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-cao-lau-thanh-additive/`
+
+Representative page captured:
+
+- `viet-family-city-hoian-place-cao-lau-thanh`
+  - `cao-lau-thanh-first-screen.jpg`: first viewport shows the wrapped title, pronunciation line, `The Bowl Gets A Counter` intro, and Useful Phrases start.
+  - `cao-lau-thanh-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here plus Compare Nearby cards above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hoian-place-cao-lau-thanh`
+  - `--detail-page viet-family-city-hoian-place-cao-lau-thanh --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for the scoped build launch and the bottom-validation relaunch.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node native-ios/scripts/build-viet-city-app-detail-v2-2.test.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 520 entries imported.
+- city noun intake: PASS, Saigon 106 places, Hanoi 106 places, Da Nang 106 places, Hội An 102 places, Hue 100 places.
+- native resource generation: PASS, 1767 families, 1785 phrases, 1778 pages.
+- SQLite fixture generation: PASS, integrity OK, 1778 pages.
+- strict V2.2 source validation: PASS, 520 entries, 520 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 520 city noun pages, 520 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS after rerunning generation and validation serially, 520 city places, 826 city phrase tags, 0 release-blocking missing audio rows, 9099 relations.
+- SQLite fixture test: PASS, 1 test.
+- deterministic V2.2 builder unit test: PASS, 1 test.
+- native-only guard: PASS.
+- whitespace check: PASS.
+
+### Remaining Risk After Cao Lầu Thanh Add
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass strengthens Hội An cao lầu coverage, but it does not settle every smaller Hội An restaurant. The next Hội An food pass should compare remaining named local candidates against the dish pages and ask whether each one creates a concrete save decision, not just another list entry.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only because prior real-agent lifecycle attempts froze.
+
 ## Continuation: Cơm Gà Bà Buội Additive Hội An Pilot
 
 Twenty-sixth pass date: 2026-05-31

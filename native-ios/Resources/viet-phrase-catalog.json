@@ -3,11 +3,11 @@
     "source": "../../content-draft/viet/phrase-source.csv",
     "cityLibrarySource": "../../content-draft/viet/city-library/v1.json",
     "editorialSupportSource": "../../content-draft/viet/editorial-model-support/TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
-    "phraseCount": 1784,
+    "phraseCount": 1785,
     "basePhraseCount": 935,
-    "cityPhraseCount": 825,
+    "cityPhraseCount": 826,
     "editorialSupportPhraseCount": 24,
-    "familyCount": 1766,
+    "familyCount": 1767,
     "scenarioCount": 19
   },
   "scenarios": [
@@ -17843,6 +17843,18 @@
       "accessTier": "premium",
       "phraseIDs": [
         "city-hoian-place-cao-lau-city"
+      ]
+    },
+    {
+      "id": "city-hoian-place-cao-lau-thanh",
+      "pageID": "viet-family-city-hoian-place-cao-lau-thanh",
+      "scenarioID": "city-guides",
+      "familyTitle": "Cao Lau Thanh pronunciation",
+      "summary": "Save Cao Lầu Thanh when cao lầu should be the meal, not a menu curiosity: a small Thái Phiên stop for the chewy noodle bowl with pork, herbs, crisp pieces, and sauce.",
+      "primaryPhraseID": "city-hoian-place-cao-lau-thanh",
+      "accessTier": "premium",
+      "phraseIDs": [
+        "city-hoian-place-cao-lau-thanh"
       ]
     },
     {
@@ -81273,6 +81285,49 @@
       "placeKind": "dish",
       "contentRole": "dish",
       "spokenChunks": 5,
+      "sourceIDs": [
+        "vt-hoian",
+        "vt-hoian-official"
+      ]
+    },
+    {
+      "id": "city-hoian-place-cao-lau-thanh",
+      "familyID": "city-hoian-place-cao-lau-thanh",
+      "scenarioID": "city-guides",
+      "audioKey": "",
+      "englishText": "Cao Lau Thanh",
+      "targetText": "Cao Lầu Thanh",
+      "canonicalTargetText": "Cao Lầu Thanh",
+      "pronunciation": "cao lau thanh",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "context": "Save Cao Lầu Thanh when cao lầu should be the meal, not a menu curiosity: a small Thái Phiên stop for the chewy noodle bowl with pork, herbs, crisp pieces, and sauce.",
+      "youMayHear": "",
+      "searchAliases": [
+        "Hoi An",
+        "Hội An",
+        "Cao Lau Thanh",
+        "Cao Lầu Thanh"
+      ],
+      "warningNoteType": "",
+      "audioStatus": "planned",
+      "emoji": "🏮",
+      "notes": "city-library-v1; city=hoian; subcategory=food-coffee; difficulty=beginner; kind=place; pageKind=restaurant; placeKind=restaurant; contentRole=everyday; place=hoian-cao-lau-thanh; editorialImport=viet-city-handwritten-copy-2026-05-18",
+      "cityID": "hoian",
+      "cityName": "Hoi An",
+      "cityShortTitle": "Hoi An",
+      "cityVietnameseName": "Hội An",
+      "citySubcategoryID": "food-coffee",
+      "citySubcategoryTitle": "Food and cafes",
+      "difficulty": "beginner",
+      "placeID": "hoian-cao-lau-thanh",
+      "placeName": "Cao Lau Thanh",
+      "placeVietnameseName": "Cao Lầu Thanh",
+      "cityLibraryKind": "place",
+      "cityLibraryPageKind": "restaurant",
+      "placeKind": "restaurant",
+      "contentRole": "everyday",
+      "spokenChunks": 3,
       "sourceIDs": [
         "vt-hoian",
         "vt-hoian-official"

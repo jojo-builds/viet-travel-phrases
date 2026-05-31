@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-31T03:47:49.003Z",
+    "generatedAt": "2026-05-31T04:14:59.399Z",
     "tierOneFamilyCount": 150,
-    "cityLibraryPageCount": 825,
+    "cityLibraryPageCount": 826,
     "editorialSupportPageCount": 24,
-    "requiredAudioCount": 2267,
-    "missingAudioCount": 700
+    "requiredAudioCount": 2268,
+    "missingAudioCount": 701
   },
   "required": [
     {
@@ -16057,6 +16057,14 @@
       "resolved": false
     },
     {
+      "pageID": "viet-family-city-hoian-place-cao-lau-thanh",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-cao-lau-thanh-0bdbf4f4cd",
+      "text": "Cao Lầu Thanh",
+      "resolved": false
+    },
+    {
       "pageID": "viet-family-city-hoian-place-cargo-club",
       "sectionID": "hero",
       "kind": "hero",
@@ -22080,6 +22088,14 @@
       "kind": "phrase",
       "audioKey": "audio-authored-da-cho-toi-mot-phan-cao-lau-71867ac448",
       "text": "Dạ, cho tôi một phần cao lầu.",
+      "resolved": false
+    },
+    {
+      "pageID": "viet-family-city-hoian-place-cao-lau-thanh",
+      "sectionID": "hero",
+      "kind": "hero",
+      "audioKey": "audio-authored-cao-lau-thanh-0bdbf4f4cd",
+      "text": "Cao Lầu Thanh",
       "resolved": false
     },
     {
