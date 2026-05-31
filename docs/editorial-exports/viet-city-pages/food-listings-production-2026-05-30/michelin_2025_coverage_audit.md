@@ -7,6 +7,33 @@ Scope: current V2.2 city/place source under `content-draft/viet/city-library/app
 Source checked:
 
 - Official MICHELIN Guide Vietnam 2025 PDF: `https://dgaddcosprod.blob.core.windows.net/cxf-corporate/attachments/c3pr870zifu1vnufz1fqsd6c-20250605-pr-michelin-guide-hanoi-ho-chi-minh-city-da-nang-2025.pdf`
+- Official MICHELIN Guide 2025 article: `https://guide.michelin.com/vn/en/article/michelin-guide-ceremony/michelin-guide-vietnam-2025`
+- Official MICHELIN Guide 2026 ceremony preview: `https://guide.michelin.com/vn/en/article/michelin-guide-ceremony/save-the-date-the-michelin-guide-vietnam-2026`
+
+Freshness check on 2026-05-31:
+
+- The official MICHELIN site still presents the 2025 Vietnam selection as the published Hanoi, Ho Chi Minh City, and Da Nang restaurant selection.
+- MICHELIN has announced the 2026 Hanoi, Ho Chi Minh City, and Da Nang restaurant ceremony for 2026-06-04, when the latest selection will be revealed.
+- No official 2026 Vietnam restaurant-selection article was found during this check. Keep app copy date-bounded to 2025 until the official 2026 restaurant selection is published after the ceremony.
+
+## Coverage Gate Added
+
+Durable script:
+
+```sh
+node native-ios/scripts/audit-viet-city-michelin-coverage.js
+```
+
+Current result:
+
+- Restaurant pages audited: 79.
+- Source-supported MICHELIN restaurant pages: 51.
+- Source-supported restaurant pages missing visible recognition: 0.
+- Unsupported restaurant pages making their own visible MICHELIN claim: 0.
+- Related-card MICHELIN recognition candidates: 59.
+- Related-card recognition problems: 0.
+
+The gate separates own-page recognition from related-card recognition. A non-MICHELIN support page may link to a MICHELIN-backed comparison card, but it should not make its own visible MICHELIN claim.
 
 ## Current In-Catalog Status
 

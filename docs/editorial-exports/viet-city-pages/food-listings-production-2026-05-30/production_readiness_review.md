@@ -4442,6 +4442,89 @@ This pass fixes the exact copy pattern Jojo called out and creates the first dur
 
 No subagents were spawned or closed in this continuation. This pass used local source, copy, product-role, runtime, validator, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
 
+## Continuation: Durable MICHELIN Coverage Gate
+
+Thirty-third pass date: 2026-05-31
+
+Commit before pass: `70113bc13 Repair food listing comparison voice`
+
+This continuation adds a durable check for the MICHELIN part of the product goal: if a restaurant page has source-supported MICHELIN recognition, the page should visibly say so; if a restaurant page is not source-supported, it should not make its own visible MICHELIN claim.
+
+### Source And Copy Repairs
+
+Added script:
+
+- `native-ios/scripts/audit-viet-city-michelin-coverage.js`
+
+Small support-page copy repairs:
+
+- `city-danang-place-my-quang-ba-mua`: changed the support-page comparison from broad `MICHELIN-backed mì Quảng stops` language to the named comparison places, `Sứa Hồng Vân` and `Mì Quảng 1A`.
+- `city-danang-place-my-quang-dung`: changed `recognized one-bowl stop` and app-internal `navigation, ordering` wording to plain lunch-choice language, leaving MICHELIN recognition to the related cards for the supported comparison pages.
+
+Updated audit artifact:
+
+- `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/michelin_2025_coverage_audit.md`
+
+Freshness posture:
+
+- App copy stays date-bounded to 2025 recognition.
+- Official MICHELIN 2026 ceremony copy exists, but the 2026 restaurant selection is still future-dated for 2026-06-04 from this 2026-05-31 pass.
+- No new MICHELIN claims were added.
+- Hội An and Huế remain judged by local significance, dish specificity, and render proof rather than MICHELIN coverage because current audited MICHELIN Vietnam coverage is Hanoi, Ho Chi Minh City, and Da Nang.
+
+### Coverage Gate Result
+
+Command:
+
+```sh
+node native-ios/scripts/audit-viet-city-michelin-coverage.js
+```
+
+Result:
+
+- Restaurant pages audited: 79.
+- Source-supported MICHELIN restaurant pages: 51.
+- Source-supported restaurant pages missing visible recognition: 0.
+- Unsupported restaurant pages making their own visible MICHELIN claim: 0.
+- Related-card MICHELIN recognition candidates: 59.
+- Related-card recognition problems: 0.
+- PASS.
+
+### Simulator Render Proof
+
+Simulator: `SpeakLocal City Listings`.
+
+Build/run result: `SUCCEEDED`.
+
+Rendered proof folder:
+
+- `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-michelin-coverage-gate/`
+
+Screenshots:
+
+- `my-quang-ba-mua-top.jpg`
+- `my-quang-ba-mua-comparison.jpg`
+- `my-quang-ba-mua-related.jpg`
+- `my-quang-dung-top.jpg`
+- `my-quang-dung-comparison.jpg`
+- `my-quang-dung-related.jpg`
+
+Visual check:
+
+- `Mỳ Quảng Bà Mua` now points readers to named comparison places instead of using broad MICHELIN-backed language on an unsupported support page.
+- `Mỳ Quảng Dung` now explains the page as a simple lunch choice in natural U.S.-market English and keeps MICHELIN recognition on the related comparison cards.
+- Both pages render related comparison cards for `Mỳ Quảng Sứa Hồng Vân` and `Mì Quảng 1A`, making the comparison module visible instead of requiring the reader to infer what the names mean.
+
+### Remaining Risk After MICHELIN Coverage Gate
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+The MICHELIN-recognition invariant is now durable and passing, but broad production readiness still needs wider rendered proof across the full food/place inventory and a fresh external source refresh before adding any 2026 or otherwise new recognition claims.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, MICHELIN-coverage, comparison-copy, validator, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
+
 ## Continuation: Hội An And Huế U.S.-Voice Save-Language Repair
 
 Thirtieth pass date: 2026-05-31
