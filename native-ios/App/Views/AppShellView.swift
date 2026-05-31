@@ -1279,6 +1279,24 @@ struct AppShellView: View {
         )
     }
 
+    static func browseCollectionBackdropPreheatImageNames(for route: BrowseCollectionRoute) -> [String] {
+        if let menuKind = VietnameseMenuCatalog.kind(for: route) {
+            return VietnameseMenuPhotoBackdropPolicy.preheatImageNames(
+                photoBackdropImageName: menuKind.photoBackdropImageName,
+                fallbackHeroImageName: menuKind.heroImageName
+            )
+        }
+
+        guard let descriptor = BrowseSearchDestinations.collectionDescriptor(for: route) else {
+            return []
+        }
+
+        return BrowseCollectionPhotoBackdropPolicy.preheatImageNames(
+            hasCityHub: descriptor.cityHub != nil,
+            mastheadImageName: descriptor.mastheadImageName
+        )
+    }
+
     private static let designedXinChaoCanonicalPageID = "viet-phrase-polite-1"
     private static let designedXinChaoDirectPageIDs: Set<String> = [
         PhrasePage.xinChao.id,
@@ -1813,6 +1831,7 @@ struct AppShellView: View {
         cancelInteractiveChromeState()
         cancelSearchFocus()
         clearPracticeThreadForwardRestore()
+        preheatBrowseCollectionBackdrop(route)
         withAnimation(BrowseCollectionNativeTransition.animation(for: route)) {
             navigation.openBrowseCollection(route)
         }
@@ -1822,6 +1841,7 @@ struct AppShellView: View {
         cancelInteractiveChromeState()
         cancelSearchFocus()
         clearPracticeThreadForwardRestore()
+        preheatBrowseCollectionBackdrop(route)
         withAnimation(BrowseCollectionNativeTransition.animation(for: route)) {
             navigation.openHomeBrowseCollection(route)
         }
@@ -1831,9 +1851,16 @@ struct AppShellView: View {
         cancelInteractiveChromeState()
         cancelSearchFocus()
         clearPracticeThreadForwardRestore()
+        preheatBrowseCollectionBackdrop(route)
         withAnimation(BrowseCollectionNativeTransition.animation(for: route)) {
             navigation.openBrowseCollectionFromSearch(route)
         }
+    }
+
+    private func preheatBrowseCollectionBackdrop(_ route: BrowseCollectionRoute) {
+        AdminBackdropImagePreheater.preheatFocused(
+            Self.browseCollectionBackdropPreheatImageNames(for: route)
+        )
     }
 
     private func openBrowseAll() {

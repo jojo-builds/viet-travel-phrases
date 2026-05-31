@@ -1428,6 +1428,34 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testVietnameseMenuItemsCachePlaybackAudioAcrossRepeatedRowRendering() throws {
+        VietnameseMenuItem.resetPlaybackAudioResolutionCacheForTesting()
+        defer { VietnameseMenuItem.resetPlaybackAudioResolutionCacheForTesting() }
+
+        let item = try XCTUnwrap(VietnameseMenuCatalog.item(withID: "food-pho-bo"))
+
+        AudioAssetManifest.resetLookupCountsForTesting()
+
+        XCTAssertNotNil(item.playbackAudioKey)
+        XCTAssertGreaterThan(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            0,
+            "The first menu row audio read may resolve through the manifest."
+        )
+
+        let lookupCountAfterFirstRead = AudioAssetManifest.playbackResolutionLookupCountForTesting
+
+        for _ in 0..<12 {
+            _ = item.playbackAudioKey
+        }
+
+        XCTAssertEqual(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            lookupCountAfterFirstRead,
+            "Food and drink menu rows should reuse cached playback audio decisions instead of re-entering AudioAssetManifest on every SwiftUI row render."
+        )
+    }
+
     func testPhraseArticleMorphPolicySkipsCanonicalLookupWhenNoHomeMorphIsActive() {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
         defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
@@ -1475,6 +1503,28 @@ final class AppChromeTests: XCTestCase {
                 source: .home,
                 browseHeroOverride: "HeroCategoryAirport"
             )
+        )
+    }
+
+    func testBrowseCollectionRoutePreheatWarmsBackdropBeforeNavigation() {
+        XCTAssertEqual(
+            AppShellView.browseCollectionBackdropPreheatImageNames(for: .category("airport")),
+            ["HeroCategoryAirport"],
+            "Category collection routes should enqueue their photo backdrop before the first page render."
+        )
+        XCTAssertEqual(
+            AppShellView.browseCollectionBackdropPreheatImageNames(for: .city("danang")),
+            ["HeroCityDanang"],
+            "City collection routes should enqueue their photo backdrop before the first page render."
+        )
+        XCTAssertEqual(
+            AppShellView.browseCollectionBackdropPreheatImageNames(for: .category(VietnameseMenuKind.food.routeID)),
+            ["BackdropVietnameseFoodMenu"],
+            "Menu collection routes should enqueue the actual menu photo backdrop, not just the fallback hero image."
+        )
+        XCTAssertTrue(
+            AppShellView.browseCollectionBackdropPreheatImageNames(for: .category("missing-route")).isEmpty,
+            "Unknown collection routes should not enqueue extra image work."
         )
     }
 

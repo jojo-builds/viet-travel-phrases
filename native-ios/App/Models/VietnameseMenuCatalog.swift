@@ -123,6 +123,17 @@ struct VietnameseMenuItem: Identifiable, Decodable {
         VietnameseMenuKind(rawValue: menuType)
     }
 
+    var playbackAudioKey: String? {
+        let cacheKey = PlaybackAudioCacheKey(itemID: itemID, vietnameseItem: vietnameseItem)
+        if let cachedAudioKey = Self.cachedPlaybackAudioKey(for: cacheKey) {
+            return cachedAudioKey.value
+        }
+
+        let audioKey = AudioAssetManifest.main?.audioKey(forExactText: vietnameseItem)
+        Self.storeCachedPlaybackAudioKey(CachedPlaybackAudioKey(audioKey), for: cacheKey)
+        return audioKey
+    }
+
     var displayPronunciation: String {
         soundOut.isEmpty ? romanizedNoTones : soundOut
     }
@@ -156,6 +167,63 @@ struct VietnameseMenuItem: Identifiable, Decodable {
         let line = guideOrderLine
         return "\(line.vietnamese)\n\(line.english)\n\(line.pronunciation)"
     }
+
+    private struct PlaybackAudioCacheKey: Hashable {
+        let itemID: String
+        let vietnameseItem: String
+    }
+
+    private struct CachedPlaybackAudioKey {
+        let value: String?
+
+        init(_ value: String?) {
+            self.value = value
+        }
+    }
+
+    private static let playbackAudioCacheLimit = 512
+    private static let playbackAudioCacheLock = NSLock()
+    private static var playbackAudioKeysByKey: [PlaybackAudioCacheKey: CachedPlaybackAudioKey] = [:]
+    private static var playbackAudioCacheKeys: [PlaybackAudioCacheKey] = []
+
+    private static func cachedPlaybackAudioKey(for key: PlaybackAudioCacheKey) -> CachedPlaybackAudioKey? {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        guard let cachedAudioKey = playbackAudioKeysByKey[key] else {
+            return nil
+        }
+
+        touchPlaybackAudioCacheKey(key)
+        return cachedAudioKey
+    }
+
+    private static func storeCachedPlaybackAudioKey(_ audioKey: CachedPlaybackAudioKey, for key: PlaybackAudioCacheKey) {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        playbackAudioKeysByKey[key] = audioKey
+        touchPlaybackAudioCacheKey(key)
+
+        while playbackAudioCacheKeys.count > playbackAudioCacheLimit {
+            let oldestKey = playbackAudioCacheKeys.removeFirst()
+            playbackAudioKeysByKey.removeValue(forKey: oldestKey)
+        }
+    }
+
+    private static func touchPlaybackAudioCacheKey(_ key: PlaybackAudioCacheKey) {
+        playbackAudioCacheKeys.removeAll { $0 == key }
+        playbackAudioCacheKeys.append(key)
+    }
+
+#if DEBUG
+    static func resetPlaybackAudioResolutionCacheForTesting() {
+        playbackAudioCacheLock.lock()
+        playbackAudioKeysByKey.removeAll()
+        playbackAudioCacheKeys.removeAll()
+        playbackAudioCacheLock.unlock()
+    }
+#endif
 }
 
 struct VietnameseMenuOrderLine: Decodable, Equatable {
@@ -1134,7 +1202,7 @@ enum VietnameseMenuCatalog {
             subtitle: item.englishTranslation,
             symbolName: item.kind?.symbolName ?? "fork.knife",
             tintName: item.kind?.tintName ?? .orange,
-            audioKey: AudioAssetManifest.main?.audioKey(forExactText: item.vietnameseItem)
+            audioKey: item.playbackAudioKey
         )
     }
 

@@ -56,6 +56,8 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 40: catalog and Explore rows still resolved playable audio from `PhraseCatalogItem.playbackAudioKey` during row rendering; catalog items now use a bounded playback-audio decision cache so repeated Browse/Home/Explore redraws reuse the same manifest result without re-entering `AudioAssetManifest`
 - root cause 41: focused photo-backdrop preheat dropped stale queued work, but an already-popped full-screen hero image could still finish preparing and commit after the user had opened a newer page; focused preheat now tags in-flight work with the current request generation and rejects stale completed images while still committing the newest active hero
 - root cause 42: saved/practice membership checks skipped empty lists and direct saved hits, but repeated unsaved misses with a non-empty saved list still canonicalized the same visible location/card page IDs on every redraw; `LocalUserIntentStore` now keeps bounded per-store membership caches and invalidates them when saved/practice IDs change
+- root cause 43: category, city, and menu collection pages still requested their photo-backdrop preheat from page `.task`, after the route had already begun rendering; the app shell now preheats the collection backdrop before opening the route so first render is less likely to fall back to a cold full-screen image path
+- root cause 44: Food/Drink menu rows still resolved exact item-name audio from `AudioAssetManifest` inside row rendering; `VietnameseMenuItem` now keeps a bounded playback-audio decision cache and menu rows/descriptors read the prepared item audio key
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -108,6 +110,24 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testPhraseCatalogItemsCachePlaybackAudioAcrossRepeatedRowRendering`
   - `AppChromeTests/testFocusedBackdropPreheaterRejectsStaleInFlightHeroWork`
   - `LocalUserIntentStoreTests/testSavedMembershipCachesRepeatedUnsavedMissesWhenSavedListIsNonEmpty`
+  - `AppChromeTests/testBrowseCollectionRoutePreheatWarmsBackdropBeforeNavigation`
+  - `AppChromeTests/testVietnameseMenuItemsCachePlaybackAudioAcrossRepeatedRowRendering`
+- XcodeBuildMCP simulator focused collection-route preheat set on iPhone 17 Pro
+  - failed before implementation because `AppShellView.browseCollectionBackdropPreheatImageNames(for:)` did not exist and collection routes could only preheat from page tasks
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T01-40-59-946Z_pid15747_1da1cf51.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-43-20-739Z_pid15747_c91c1dc4.xcresult`
+- XcodeBuildMCP simulator focused Vietnamese menu-row audio cache set on iPhone 17 Pro
+  - failed before implementation because `VietnameseMenuItem` had no playback-audio cache/reset seam and menu rows read the audio manifest directly
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T01-45-50-614Z_pid15747_91819910.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-47-29-255Z_pid15747_3a096ca0.xcresult`
+- XcodeBuildMCP simulator focused collection/menu thermal-regression set on iPhone 17 Pro
+  - passed: `11` tests, `0` failures
+  - covered early collection-route backdrop preheat, Vietnamese menu-row audio caching, catalog row audio caching, stale in-flight focused backdrop rejection, focused queued-backdrop replacement, browse/menu photo-backdrop preheat policy, browse detail override policy/cache, and saved unsaved-miss caching
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-48-28-655Z_pid15747_c656195d.xcresult`
 - XcodeBuildMCP simulator focused catalog-row audio cache set on iPhone 17 Pro
   - failed before implementation because `PhraseCatalogItem` had no playback-audio resolution cache reset seam and repeated row reads had no cache
   - passed after implementation: `1` test, `0` failures

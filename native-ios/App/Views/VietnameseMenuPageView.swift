@@ -1116,7 +1116,7 @@ private struct VietnameseMenuItemRow: View {
             .contentShape(Rectangle())
             .accessibilityIdentifier("VietnameseMenu.Row.\(item.itemID)")
 
-            if let audioKey = AudioAssetManifest.main?.audioKey(forExactText: item.vietnameseItem) {
+            if let audioKey = item.playbackAudioKey {
                 AudioSpeakerButton(
                     tint: item.kind?.tintName ?? .orange,
                     size: 44,
