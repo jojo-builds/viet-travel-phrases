@@ -246,6 +246,29 @@ enum VietnameseMenuCatalog {
     private static let itemsByDetailPageID = Dictionary(uniqueKeysWithValues: allItems.map { ($0.detailPageID, $0) })
     static var indexedItemCountForTesting: Int { itemsByID.count }
 
+#if DEBUG
+    private static let itemLookupCountLock = NSLock()
+    private static var itemLookupCount = 0
+
+    static var itemLookupCountForTesting: Int {
+        itemLookupCountLock.lock()
+        defer { itemLookupCountLock.unlock() }
+        return itemLookupCount
+    }
+
+    static func resetItemLookupCountForTesting() {
+        itemLookupCountLock.lock()
+        itemLookupCount = 0
+        itemLookupCountLock.unlock()
+    }
+
+    private static func recordItemLookupForTesting() {
+        itemLookupCountLock.lock()
+        itemLookupCount += 1
+        itemLookupCountLock.unlock()
+    }
+#endif
+
     static func kind(for route: BrowseCollectionRoute) -> VietnameseMenuKind? {
         guard case .category(let id) = route else {
             return nil
@@ -259,7 +282,10 @@ enum VietnameseMenuCatalog {
     }
 
     static func item(withID itemID: String) -> VietnameseMenuItem? {
-        itemsByID[itemID]
+#if DEBUG
+        recordItemLookupForTesting()
+#endif
+        return itemsByID[itemID]
     }
 
     static func categories(for kind: VietnameseMenuKind) -> [VietnameseMenuCategory] {
@@ -1408,6 +1434,8 @@ struct LocationMenuPick: Identifiable, Equatable {
     let afterSectionID: String?
     private var resolvedAudioKey: String?
     private var hasResolvedAudioKey = false
+    private var resolvedAudioTintName: AccentTint?
+    private var hasResolvedAudioTintName = false
 
     init(
         id: String,
@@ -1431,6 +1459,8 @@ struct LocationMenuPick: Identifiable, Equatable {
         self.afterSectionID = afterSectionID
         self.resolvedAudioKey = nil
         self.hasResolvedAudioKey = false
+        self.resolvedAudioTintName = nil
+        self.hasResolvedAudioTintName = false
     }
 
     var linkedMenuItem: VietnameseMenuItem? {
@@ -1449,29 +1479,52 @@ struct LocationMenuPick: Identifiable, Equatable {
         return Self.resolveAudioKey(audioText: audioText, linkedMenuItemID: linkedMenuItemID)
     }
 
+    var audioTintName: AccentTint {
+        if hasResolvedAudioTintName {
+            return resolvedAudioTintName ?? .orange
+        }
+
+        return Self.resolveAudioTintName(linkedMenuItemID: linkedMenuItemID)
+    }
+
     func resolvingAudioKey() -> LocationMenuPick {
+        let linkedMenuItem = linkedMenuItemID.flatMap(VietnameseMenuCatalog.item)
         var resolved = self
         resolved.resolvedAudioKey = Self.resolveAudioKey(
             audioText: audioText,
-            linkedMenuItemID: linkedMenuItemID
+            linkedMenuItem: linkedMenuItem
         )
         resolved.hasResolvedAudioKey = true
+        resolved.resolvedAudioTintName = Self.resolveAudioTintName(linkedMenuItem: linkedMenuItem)
+        resolved.hasResolvedAudioTintName = true
         return resolved
     }
 
     private static func resolveAudioKey(audioText: String?, linkedMenuItemID: String?) -> String? {
+        resolveAudioKey(
+            audioText: audioText,
+            linkedMenuItem: linkedMenuItemID.flatMap(VietnameseMenuCatalog.item)
+        )
+    }
+
+    private static func resolveAudioKey(audioText: String?, linkedMenuItem: VietnameseMenuItem?) -> String? {
         if let audioText {
             return AudioAssetManifest.main?.audioKey(forExactText: audioText)
         }
 
-        guard
-            let linkedMenuItemID,
-            let linkedMenuItem = VietnameseMenuCatalog.item(withID: linkedMenuItemID)
-        else {
+        guard let linkedMenuItem else {
             return nil
         }
 
         return AudioAssetManifest.main?.audioKey(forExactText: linkedMenuItem.vietnameseItem)
+    }
+
+    private static func resolveAudioTintName(linkedMenuItemID: String?) -> AccentTint {
+        resolveAudioTintName(linkedMenuItem: linkedMenuItemID.flatMap(VietnameseMenuCatalog.item))
+    }
+
+    private static func resolveAudioTintName(linkedMenuItem: VietnameseMenuItem?) -> AccentTint {
+        linkedMenuItem?.kind?.tintName ?? .orange
     }
 
     static func == (lhs: LocationMenuPick, rhs: LocationMenuPick) -> Bool {

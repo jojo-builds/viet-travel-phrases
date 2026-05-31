@@ -52,6 +52,7 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 36: phrase rows and breakdown cards resolved playable audio keys from SwiftUI row/card rendering, repeatedly entering `AudioAssetManifest` normalization and lookup work for deterministic phrase text during detail redraws; article pages now prepare row playback keys once per `PhraseArticleTemplateView` instance and rows read the prepared values
 - root cause 37: location-card rows reused grouped pick buckets, but each row could still resolve linked-menu audio from `AudioAssetManifest` while rendering; the location-pick grouping step now prepares pick audio keys once per page instance so "Mentioned Here", "Compare Nearby", and trailing place/menu cards read stored keys
 - root cause 38: listing/category/menu photo-backdrop pages queued hero-image preparation work for pages the user had already left; root/home still keep their small lookahead queue, but single-current-page detail, browse collection, and menu backdrops now use focused preheat mode so rapid page taps drop stale queued full-screen hero decodes and keep the newest active hero work
+- root cause 39: location-card rows prepared linked-menu audio keys, but still looked up the linked menu item from SwiftUI row rendering just to tint the speaker button; location-pick grouping now prepares the audio tint alongside the audio key, so rows read stored playback presentation metadata instead of re-entering the menu catalog
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -100,6 +101,20 @@ Fresh command evidence from this pass:
   - `AppChromeTests/testPhraseArticleTemplatePreparesRowPlaybackAudioOncePerPageInstance`
   - `AppChromeTests/testPhraseArticleLocationPickGroupsPrepareAudioKeysOncePerPageInstance`
   - `AppChromeTests/testFocusedDetailBackdropPreheatDropsStaleQueuedHeroWork`
+  - `AppChromeTests/testPhraseArticleLocationPickGroupsPrepareAudioTintOncePerPageInstance`
+- XcodeBuildMCP simulator focused location-pick audio-tint preparation set on iPhone 17 Pro
+  - failed before implementation because `VietnameseMenuCatalog` had no item lookup counter and `LocationMenuPick` had no prepared `audioTintName`
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T00-51-04-446Z_pid15747_8e6b17cd.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-52-33-300Z_pid15747_3c0a612c.xcresult`
+- XcodeBuildMCP simulator focused location-card playback regression set on iPhone 17 Pro
+  - passed: `7` tests, `0` failures
+  - covered prepared location-card tint, prepared location-card audio, per-page grouped Mentioned/Related picks, bounded pick caches, canonical city lookup caching, and existing Lusine saved-trip card behavior
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-53-15-433Z_pid15747_6515cfee.xcresult`
+- local hygiene checks after the location-pick audio-tint preparation fix:
+  - `git diff --check -- native-ios/App/Models/VietnameseMenuCatalog.swift native-ios/App/Views/PhraseListingView.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
 - XcodeBuildMCP simulator focused detail-backdrop preheat set on iPhone 17 Pro
   - failed before implementation because `AdminBackdropImagePreheatPlan.focusedQueuedImageNames(...)` did not exist
   - passed after implementation: `1` test, `0` failures

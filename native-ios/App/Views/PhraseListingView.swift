@@ -1893,7 +1893,7 @@ private struct LocationMenuPickRow: View {
 
             if let audioKey = pick.audioKey {
                 AudioSpeakerButton(
-                    tint: pick.linkedMenuItem?.kind?.tintName ?? .orange,
+                    tint: pick.audioTintName,
                     size: 44,
                     audioKey: audioKey,
                     accessibilityIdentifier: "LocationMenuPick.Audio.\(pick.id)"

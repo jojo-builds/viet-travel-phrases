@@ -1255,6 +1255,52 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPhraseArticleLocationPickGroupsPrepareAudioTintOncePerPageInstance() throws {
+        LocationMenuPicksCatalog.resetCacheForTesting()
+        defer { LocationMenuPicksCatalog.resetCacheForTesting() }
+
+        let pageID = "viet-family-city-hcmc-place-lusine-thao-dien"
+        let rawPick = try XCTUnwrap(
+            LocationMenuPicksCatalog.picks(forPageID: pageID).first { $0.id == "lusine-premium-pho" }
+        )
+
+        VietnameseMenuCatalog.resetItemLookupCountForTesting()
+        let resolvedPick = rawPick.resolvingAudioKey()
+
+        XCTAssertGreaterThan(
+            VietnameseMenuCatalog.itemLookupCountForTesting,
+            0,
+            "Resolving a linked menu pick should read the linked menu item once while preparing row playback metadata."
+        )
+
+        let lookupCountAfterResolve = VietnameseMenuCatalog.itemLookupCountForTesting
+        _ = resolvedPick.audioTintName
+        XCTAssertEqual(
+            VietnameseMenuCatalog.itemLookupCountForTesting,
+            lookupCountAfterResolve,
+            "Prepared location picks should read a stored audio tint instead of looking up the linked menu item from the row body."
+        )
+
+        VietnameseMenuCatalog.resetItemLookupCountForTesting()
+
+        let groups = PhraseArticleLocationPickGroups(pageID: pageID)
+
+        XCTAssertGreaterThan(
+            VietnameseMenuCatalog.itemLookupCountForTesting,
+            0,
+            "Location pick grouping should prepare row playback tint while it already prepares card audio."
+        )
+
+        let lookupCountAfterGroupBuild = VietnameseMenuCatalog.itemLookupCountForTesting
+        let groupedPick = try XCTUnwrap(groups.trailingPicks.first { $0.id == "lusine-premium-pho" })
+        _ = groupedPick.audioTintName
+        XCTAssertEqual(
+            VietnameseMenuCatalog.itemLookupCountForTesting,
+            lookupCountAfterGroupBuild,
+            "Location pick rows should read prepared tint names instead of re-entering the menu catalog during SwiftUI row rendering."
+        )
+    }
+
     func testPhraseArticleTemplatePreparesRowPlaybackAudioOncePerPageInstance() throws {
         let detailPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-phrase-phone-1"))
         let articlePage = detailPage.articleTemplate
