@@ -2593,11 +2593,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
-          "label": "Cầu An Hội",
-          "relationship": "river-crossing hinge",
-          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Related because: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "catalogId": "viet-family-city-hoian-place-fujian-assembly-hall",
+          "label": "Hội quán Phúc Kiến",
+          "relationship": "assembly-hall-comparison",
+          "displaySubtitle": "A larger red-and-gold assembly hall when the old-town heritage day needs a stronger ceremonial contrast.",
+          "reason": "Fujian Assembly Hall gives Cantonese Assembly Hall a better built-heritage comparison than an unrelated river bridge.",
           "status": "render"
         }
       ],
@@ -3427,11 +3427,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
-          "label": "Cầu An Hội",
-          "relationship": "river-crossing hinge",
-          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Related because: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "catalogId": "viet-family-city-hoian-place-cantonese-assembly-hall",
+          "label": "Hội quán Quảng Đông",
+          "relationship": "assembly-hall-comparison",
+          "displaySubtitle": "Another old-town assembly hall when you want gates, courtyards, and community history in a quieter register.",
+          "reason": "Cantonese Assembly Hall is the direct built-heritage comparison for Fujian Assembly Hall.",
           "status": "render"
         }
       ],
@@ -4487,11 +4487,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
-          "label": "Cầu An Hội",
-          "relationship": "river-crossing hinge",
-          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Related because: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "catalogId": "viet-family-city-hoian-place-fujian-assembly-hall",
+          "label": "Hội quán Phúc Kiến",
+          "relationship": "larger-assembly-hall-comparison",
+          "displaySubtitle": "The more vivid red-and-gold hall when you want to compare a smaller courtyard with Hội An's busiest assembly-hall stop.",
+          "reason": "Fujian Assembly Hall gives Hainan Assembly Hall a clear old-town hall contrast.",
           "status": "render"
         }
       ],
@@ -4811,7 +4811,7 @@
         {
           "id": "choose-a-few-objects",
           "heading": "Let A Few Objects Lead",
-          "body": "A few objects, one room at a time, can carry the stop. The draw is context, not every label."
+          "body": "Pick a few objects and give each room a little time. The point is context, not reading every label."
         },
         {
           "id": "labels-are-only-part-of-it",
@@ -5160,11 +5160,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
-          "label": "Cầu An Hội",
-          "relationship": "river-crossing hinge",
-          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Related because: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "catalogId": "viet-family-city-danang-place-cham-museum",
+          "label": "Bảo tàng Điêu khắc Chăm Đà Nẵng",
+          "relationship": "cham-history-pairing",
+          "displaySubtitle": "The Da Nang museum that helps decode Cham sculpture before or after the brick towers at Mỹ Sơn.",
+          "reason": "Cham Museum is a direct context pair for My Son Sanctuary.",
           "status": "render"
         }
       ],
@@ -8110,11 +8110,11 @@
         {
           "id": "a-quieter-dinner-choice",
           "heading": "A Smaller Dinner Choice",
-          "body": "Choose it on a night for Ancient Town is full and dinner more measured. The room matters because it keeps the meal close."
+          "body": "Go when Ancient Town feels full and dinner should be smaller, quieter, and more measured. The room matters because it keeps the meal close."
         },
         {
           "id": "a-few-plates-are-enough",
-          "heading": "A Few Plates Carry It",
+          "heading": "A Few Plates Are Plenty",
           "body": "The menu may tempt a broad order, but a small set of dishes gives the table more to notice."
         },
         {
@@ -8352,11 +8352,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
-          "label": "Cầu An Hội",
-          "relationship": "river-crossing hinge",
-          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Related because: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "catalogId": "viet-family-city-hoian-place-fujian-assembly-hall",
+          "label": "Hội quán Phúc Kiến",
+          "relationship": "assembly-hall-comparison",
+          "displaySubtitle": "A brighter, busier assembly hall when you want to compare courtyard scale, color, and ceremony.",
+          "reason": "Fujian Assembly Hall gives Trieu Chau Assembly Hall a direct assembly-hall comparison.",
           "status": "render"
         }
       ],
@@ -11138,9 +11138,9 @@
       ],
       "sections": [
         {
-          "id": "browse-before-ordering",
-          "heading": "Browse Before Ordering",
-          "body": "Start with a slow look at the food stations before choosing. Variety helps most after one calm lap."
+          "id": "food-stations-first",
+          "heading": "Food Stations First",
+          "body": "Start with the food stations before choosing. Seeing the steam, bowls, and dumplings makes the first order easier."
         },
         {
           "id": "try-one-local-center",
@@ -11153,9 +11153,9 @@
           "body": "This is a good night for local flavors with seating, lighting, and less stall pressure than an outdoor market."
         },
         {
-          "id": "organized-variety-leads",
-          "heading": "One Lap Before Ordering",
-          "body": "Plan around the organized variety: bowls, herbs, seating, and one lap before the table decides what to order."
+          "id": "first-order-stays-small",
+          "heading": "Keep The First Order Small",
+          "body": "Let one local dish lead before the table spreads out. Cao lầu, white rose dumplings, or a small pancake can set the first round."
         }
       ],
       "mentionedHereCandidates": [

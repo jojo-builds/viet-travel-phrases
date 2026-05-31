@@ -3722,27 +3722,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho hỏi, đi tới đó thế nào?",
-          "en": "Excuse me, how do I get there?",
-          "intent": "directions-how-to-get",
-          "phraseId": "directions-1",
-          "audioId": "directions-1",
+          "vi": "Xin một vé",
+          "en": "One ticket, please",
+          "intent": "ticket-one",
+          "phraseId": "v500-time-date-book-one-ticket-please",
+          "audioId": "v500-time-date-book-one-ticket-please",
           "status": "mapped"
         },
         {
-          "vi": "Đi bộ mất bao lâu?",
-          "en": "How long does it take on foot?",
-          "intent": "directions-how-long",
-          "phraseId": "directions-3",
-          "audioId": "directions-3",
+          "vi": "Nó bắt đầu lúc mấy giờ?",
+          "en": "What time does it start?",
+          "intent": "show-start-time",
+          "phraseId": "v900-time-date-book-what-time-does-it-start",
+          "audioId": "v900-time-date-book-what-time-does-it-start",
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể đi bộ tới đó được không?",
-          "en": "Can I walk there?",
-          "intent": "v500-dire-navi-can-i-walk-there",
-          "phraseId": "v500-dire-navi-can-i-walk-there",
-          "audioId": "v500-dire-navi-can-i-walk-there",
+          "vi": "Lối vào ở đâu?",
+          "en": "Where is the entrance?",
+          "intent": "v500-sigh-acti-where-is-the-entrance",
+          "phraseId": "v500-sigh-acti-where-is-the-entrance",
+          "audioId": "v500-sigh-acti-where-is-the-entrance",
           "status": "mapped"
         }
       ],
@@ -3886,11 +3886,11 @@
           "status": "render"
         },
         {
-          "catalogId": "viet-family-city-hcmc-place-opera-a-o-show",
-          "label": "À Ố Show",
-          "relationship": "performance-comparison",
-          "displaySubtitle": "Another staged evening option when music, tickets, and show timing should lead.",
-          "reason": "Another staged evening option when music, tickets, and show timing should lead.",
+          "catalogId": "viet-family-city-hcmc-place-thien-hau-temple",
+          "label": "Chùa Bà Thiên Hậu",
+          "relationship": "cho-lon-temple-stop",
+          "displaySubtitle": "A Chợ Lớn temple stop when the walk needs incense, gates, and a clearer cultural pause.",
+          "reason": "Chùa Bà Thiên Hậu gives the Chợ Lớn walk a stronger neighborhood stop than an unrelated evening show.",
           "status": "render"
         }
       ],
@@ -3977,7 +3977,7 @@
         {
           "id": "open-kitchen-measured-pace",
           "heading": "Open Kitchen, Measured Pace",
-          "body": "The detail is not just the menu. Kitchen pace, staff guidance, and the room carry the night."
+          "body": "The open kitchen gives the room its focus. Ask what the kitchen recommends, then let the staff pace the meal."
         },
         {
           "id": "after-a-dense-central-day",
@@ -4168,11 +4168,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "coco dining",
-      "travelerMoment": "Plan Coco Dining when Saigon dinner should take the evening: Vietnamese cooking, fermentation details, warm light, drinks, and table pacing.",
-      "storySpine": "Coco Dining gives Saigon a polished contemporary dinner memory, with fermentation detail and warm room light making the meal feel planned.",
+      "travelerMoment": "Plan Coco Dining when Saigon dinner should take the evening: Vietnamese cooking, sauces with depth, warm light, drinks, and table pacing.",
+      "storySpine": "Coco Dining gives Saigon a polished contemporary dinner memory, with deep sauces and warm room light making the meal feel planned.",
       "intro": {
         "heading": "A Warm Planned Dinner",
-        "body": "Coco Dining is a special-occasion dinner in Saigon: Vietnamese cooking, fermentation details, warm light, and a table paced to carry the evening."
+        "body": "Coco Dining is a special-occasion dinner in Saigon: Vietnamese cooking, deep sauces, warm light, drinks, and a table paced for the evening."
       },
       "usefulPhraseCards": [
         {
@@ -4202,9 +4202,9 @@
       ],
       "sections": [
         {
-          "id": "fermentation-and-warm-light",
-          "heading": "Fermentation And Warm Light",
-          "body": "The room is part of the desire: styled tables, drinks, fermentation detail, and a meal that should not feel like a rush between errands."
+          "id": "sauces-and-warm-light",
+          "heading": "Sauces And Warm Light",
+          "body": "The room is part of the desire: styled tables, drinks, sauces with depth, and a meal that should not feel like a rush between errands."
         },
         {
           "id": "evening-without-a-rush",
@@ -4677,7 +4677,7 @@
         {
           "id": "history-with-travel-time",
           "heading": "History With Travel Time",
-          "body": "Pair it with a lighter evening. The ride and guided portions already carry the day."
+          "body": "Pair it with a lighter evening. The ride and guided portions already take real energy."
         },
         {
           "id": "guide-stops-matter",
@@ -4701,11 +4701,11 @@
           "status": "render"
         },
         {
-          "catalogId": "viet-family-city-hcmc-place-golden-dragon-water-puppet",
-          "label": "Nhà hát Múa rối nước Rồng Vàng",
-          "relationship": "performance-comparison",
-          "displaySubtitle": "A different staged evening when music, tickets, and an indoor show should lead.",
-          "reason": "A different staged evening when music, tickets, and an indoor show should lead.",
+          "catalogId": "viet-family-city-hcmc-place-tao-dan-park",
+          "label": "Công viên Tao Đàn",
+          "relationship": "lighter-evening-decompression",
+          "displaySubtitle": "A central green pause when the group needs a softer evening after a heavy history outing.",
+          "reason": "Tao Dan Park gives the Cu Chi day trip a calmer city return instead of an unrelated ticketed show.",
           "status": "render"
         }
       ],
@@ -5915,7 +5915,7 @@
         {
           "id": "music-and-water-stage",
           "heading": "Music And Water Stage",
-          "body": "The live staging carries it: musicians, puppets, warm lights, water movement, and a show pace different from museums or monuments."
+          "body": "The live staging is the reason to go: musicians, puppets, warm lights, water movement, and a show pace different from museums or monuments."
         },
         {
           "id": "timed-evening-plan",
@@ -5941,14 +5941,6 @@
           "relationship": "performance-comparison",
           "displaySubtitle": "Another staged evening option when music, tickets, and performance timing should lead.",
           "reason": "Related because: Another staged evening option when music, tickets, and performance timing should lead.",
-          "status": "render"
-        },
-        {
-          "catalogId": "viet-family-city-hcmc-place-opera-a-o-show",
-          "label": "À Ố Show",
-          "relationship": "performance-comparison",
-          "displaySubtitle": "Another staged evening option when music, tickets, and show timing should lead.",
-          "reason": "Another staged evening option when music, tickets, and show timing should lead.",
           "status": "render"
         }
       ],
@@ -6684,27 +6676,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho hỏi, đi tới đó thế nào?",
-          "en": "Excuse me, how do I get there?",
-          "intent": "directions-how-to-get",
-          "phraseId": "directions-1",
-          "audioId": "directions-1",
+          "vi": "Xin một vé",
+          "en": "One ticket, please",
+          "intent": "ticket-one",
+          "phraseId": "v500-time-date-book-one-ticket-please",
+          "audioId": "v500-time-date-book-one-ticket-please",
           "status": "mapped"
         },
         {
-          "vi": "Đi bộ mất bao lâu?",
-          "en": "How long does it take on foot?",
-          "intent": "directions-how-long",
-          "phraseId": "directions-3",
-          "audioId": "directions-3",
+          "vi": "Nó bắt đầu lúc mấy giờ?",
+          "en": "What time does it start?",
+          "intent": "show-start-time",
+          "phraseId": "v900-time-date-book-what-time-does-it-start",
+          "audioId": "v900-time-date-book-what-time-does-it-start",
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể đi bộ tới đó được không?",
-          "en": "Can I walk there?",
-          "intent": "v500-dire-navi-can-i-walk-there",
-          "phraseId": "v500-dire-navi-can-i-walk-there",
-          "audioId": "v500-dire-navi-can-i-walk-there",
+          "vi": "Lối vào ở đâu?",
+          "en": "Where is the entrance?",
+          "intent": "v500-sigh-acti-where-is-the-entrance",
+          "phraseId": "v500-sigh-acti-where-is-the-entrance",
+          "audioId": "v500-sigh-acti-where-is-the-entrance",
           "status": "mapped"
         }
       ],
@@ -7241,7 +7233,7 @@
       "category": "Restaurant",
       "pronunciation": "long trieu",
       "travelerMoment": "Plan Long Triều when Saigon dinner should feel more dressed-up: Chinese cooking, dim sum cues, staff pacing, and a polished room.",
-      "storySpine": "Long Trieu adds a polished Chinese dining register to Saigon, a city where Vietnamese and Chinese-Vietnamese food habits sit close together.",
+      "storySpine": "Long Trieu adds a polished Chinese dining room to Saigon, a city where Vietnamese and Chinese-Vietnamese food habits sit close together.",
       "intro": {
         "heading": "A Special-Occasion Chinese Table",
         "body": "Long Trieu is a special-occasion Chinese meal in Saigon: dim sum cues, staff pacing, and a polished room held apart from the street outside."
@@ -7276,7 +7268,7 @@
         {
           "id": "polished-room-slower-pace",
           "heading": "Polished Room, Slower Pace",
-          "body": "The room changes the register: formal, table-focused, and slower than a quick street-food meal."
+          "body": "The room changes the night: formal, table-focused, and slower than a quick street-food meal."
         },
         {
           "id": "dinner-as-evening-plan",
@@ -7291,7 +7283,7 @@
         {
           "id": "formal-table-mood",
           "heading": "A Formal Table Mood",
-          "body": "This is a different register of Saigon eating: polished, seated, and slower. That contrast is the draw."
+          "body": "Come for a polished, seated Chinese meal in Saigon: dim sum cues, shared dishes, and a slower table than the street-food day outside."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10270,31 +10262,31 @@
       "storySpine": "A river boat creates a slower path across the water and makes the river feel like part of the city rather than scenery.",
       "intro": {
         "heading": "A Slower Route By Water",
-        "body": "A Saigon River boat ride turns the skyline into a slower route, with boarding points, bridges, riverbanks, and water light carrying the day. Movement matters more than photos."
+        "body": "A Saigon River boat ride turns the skyline into a slower route, with boarding points, bridges, riverbanks, and water light shaping the day. Movement matters more than photos."
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho hỏi, đi tới đó thế nào?",
-          "en": "Excuse me, how do I get there?",
-          "intent": "directions-how-to-get",
-          "phraseId": "directions-1",
-          "audioId": "directions-1",
+          "vi": "Mua vé ở đâu?",
+          "en": "Where can I buy a ticket?",
+          "intent": "v900-tran-where-can-i-buy-a-ticket",
+          "phraseId": "v900-tran-where-can-i-buy-a-ticket",
+          "audioId": "v900-tran-where-can-i-buy-a-ticket",
           "status": "mapped"
         },
         {
-          "vi": "Đi bộ mất bao lâu?",
-          "en": "How long does it take on foot?",
-          "intent": "directions-how-long",
-          "phraseId": "directions-3",
-          "audioId": "directions-3",
+          "vi": "Thuyền cuối về lúc mấy giờ?",
+          "en": "What time is the last boat back?",
+          "intent": "v900-tran-what-time-is-the-last-boat-back",
+          "phraseId": "v900-tran-what-time-is-the-last-boat-back",
+          "audioId": "v900-tran-what-time-is-the-last-boat-back",
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể đi bộ tới đó được không?",
-          "en": "Can I walk there?",
-          "intent": "v500-dire-navi-can-i-walk-there",
-          "phraseId": "v500-dire-navi-can-i-walk-there",
-          "audioId": "v500-dire-navi-can-i-walk-there",
+          "vi": "Điểm đón đúng ở đây phải không?",
+          "en": "Is this the correct pickup point?",
+          "intent": "v900-dire-navi-is-this-the-correct-pickup-point",
+          "phraseId": "v900-dire-navi-is-this-the-correct-pickup-point",
+          "audioId": "v900-dire-navi-is-this-the-correct-pickup-point",
           "status": "mapped"
         }
       ],

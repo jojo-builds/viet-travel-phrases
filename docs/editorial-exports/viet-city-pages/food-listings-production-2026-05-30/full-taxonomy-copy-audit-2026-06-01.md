@@ -314,3 +314,45 @@ Updated proof state:
 
 - Combined latest-current proof is now `284` unique pages, `852` screenshots, and `0` current failures.
 - Remaining global proof gap: `236` pages still need current rendered screenshots unless the gate is explicitly amended.
+
+## Eleventh Subagent Hard-Block Repair Batch, 2026-06-01
+
+This batch followed another first-time-traveler readability pass. The user specifically called out `Bib Gourmand` as unexplained insider language: a U.S. visitor may not know whether it is a dish, a place, an award, or a restaurant category. The authoring rule remains: explain unfamiliar terms immediately in plain English or remove them and lead with concrete food, table, route, or place utility.
+
+Fresh read-only subagent slices audited:
+
+- Food-led pages: `214` Restaurant, Dish, Market, Cafe, Dessert, and Drink entries.
+- Culture / attraction / landmark pages: `195` entries, with special attention to performance venues and wrong related-card links.
+- Mobility / outdoor / place-feel pages: river, street, transfer, beach, station, and route-style entries.
+
+Repaired source classes:
+
+- Food hard blockers: Nu Eatery grammar, Vy's Market duplicate section job, CieL open-kitchen copy, Coco Dining sauce/table pacing, Long Triều dining-room wording, plus a Danang food readability slice that removed stiff `draw`, `carry`, `Choose it`, and `are enough` phrasing.
+- Culture/performance hard blockers: Golden Dragon Water Puppet Theater, À Ố Show, Chợ Lớn walking route, Củ Chi day trip, Mỹ Sơn Sanctuary, and Hội An assembly hall related-card mismatches.
+- Mobility/outdoor hard blockers: Saigon River boat phrase cards and Danang river/arrival/street/port pages with more natural route wording.
+- Targeted residue cleanup: removed the remaining `carry the stop` phrase from a Hội An old-house page after a hard-block text sweep caught it in source and generated runtime.
+
+Validation after this repair batch:
+
+- `node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js`: wrote `520` entries across `5` cities.
+- `node native-ios/scripts/import-viet-city-handwritten-copy.js`: imported `520` handwritten city copy entries.
+- `node native-ios/scripts/generate-viet-catalog.js`: wrote `1767` families and `1785` phrases.
+- `node native-ios/scripts/generate-authored-tier-one-pages.js`: wrote native authored listing pages.
+- `node native-ios/scripts/generate-viet-sqlite-fixture.js`: SQLite `integrity_check: ok`.
+- `node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production`: `PASS` for all `520`.
+- `node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js`: `failures: []`.
+- `node native-ios/scripts/validate-viet-city-copy.js`: passed `5` hubs, `520` city noun pages, `520` unique target heroes.
+- `node native-ios/scripts/validate-viet-city-library.js`: passed `826` pages.
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js`: `ok: true`, `0` release-blocking missing-audio rows.
+- `node native-ios/scripts/audit-viet-listing-production-qa.js`: `0` blockers, `0` majors.
+- `node scripts/guard-native-only.js`: passed.
+- `git diff --check`: passed.
+- Targeted hard-block text sweep against source and generated runtime: `0` hits for `Bib Gourmand`, `MICHELIN`, dining-insider shorthand, old award terms, `restaurant version`, `recognition helps`, or `carry the stop`.
+
+Rendered proof after this repair batch:
+
+- Rebuilt `SpeakLocalNative` for testing on simulator `7C386DD3-4BF1-4A34-A918-768C43CD1258`.
+- Added `subagent-hardblock-repair-002-results.jsonl`: `58` passing rows, `174` screenshots, `0` failures. This includes the 57-page current repair set plus one accidental but passing Espresso Station row caused by the proof script skipping an already-passed offset in the same result file.
+- Added `subagent-hardblock-repair-003-results.jsonl`: `1` fresh rerun for `city-hoian-place-duc-an-old-house` after the final `carry the stop` cleanup, `3` screenshots, `0` failures.
+- Combined latest-current proof is now `293` unique pages, `879` screenshots, and `0` current failures.
+- Remaining global proof gap: `227` pages still need current rendered screenshots unless the gate is explicitly amended.

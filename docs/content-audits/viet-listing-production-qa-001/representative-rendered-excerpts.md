@@ -85,7 +85,7 @@ Morning is the least painful crowd strategy. Fog or rain can turn the famous vie
 The climb turns city heat into a mountain day: forest below, mist on the glass, cooler air at the upper level. Clear sky makes the scale feel cinematic.
 
 ### Bridge Before Wandering
-If the Golden Bridge is the draw, do it first. After that, decide how much of the wider park the group actually wants.
+If the Golden Bridge is the main reason, do it first. After that, decide how much of the wider park the group actually wants.
 
 ### Getting there
 - Cho tôi tới đây — Take me here

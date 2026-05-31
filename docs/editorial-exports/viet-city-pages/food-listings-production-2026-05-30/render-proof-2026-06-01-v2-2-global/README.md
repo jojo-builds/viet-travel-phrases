@@ -81,7 +81,12 @@ Category-balanced batch:
   - Scope: remaining Da Nang museum, landmark, attraction, arrival, beach, restaurant, cafe, dish, neighborhood, market, street, and nature pages, plus a small Hanoi food run covering bún chả, Bún Chả Hương Liên, Bún Chả Đắc Kim, Tuyết Bún Chả 34, bún thang, and chả cá.
   - Text review after this batch found validating-but-stiff phone copy: `Choose it`, `carry the visit`, `support`, `stronger`, `are enough`, and a few abstract `draw` or `whether` lines. Those were repaired in authored V2.2 source and regenerated.
   - `missing-pages-humanized-rerun-001-results.jsonl`: `15` edited pages rerun after the copy repair, `45` screenshots, `0` failures.
-- Combined latest-current proof across the maintained result files is `284` unique pages, `852` screenshots, and `0` current failures. Total historical proof rows in this folder include `385` rows and `1155` screenshots, but the current count uses the latest passing row for each page.
+- Subagent hard-block repair proof 002:
+  - `subagent-hardblock-repair-002-results.jsonl`: `58` passing rows, `174` screenshots, `0` failures.
+  - Scope: current repaired Danang food/cafe/arrival/river/market/street/port pages, HCMC show/river/restaurant/neighborhood pages, and Hội An assembly hall/old-house/restaurant pages.
+  - Note: this file includes one accidental but passing Espresso Station row because the proof runner skips offsets already passed in the same result file.
+  - `subagent-hardblock-repair-003-results.jsonl`: `1` edited old-house page rerun after final wording cleanup, `3` screenshots, `0` failures.
+- Combined latest-current proof across the maintained result files is `293` unique pages, `879` screenshots, and `0` current failures. Total historical proof rows in this folder include `444` rows and `1332` screenshots, but the current count uses the latest passing row for each page.
 
 This is a meaningful rendered proof expansion, not the final 520-page receipt. The final gate still needs either all `520` pages captured by this harness or an explicit approval-standard amendment accepting full source/runtime review plus category-balanced rendered proof.
 
@@ -107,3 +112,22 @@ Category coverage in manifest:
 - station: 16
 - street: 28
 - village: 9
+
+Remaining current proof gap after the latest recompute:
+
+- total missing: `227`
+- attraction: `28`
+- cafe: `16`
+- dish: `23`
+- drink: `1`
+- landmark: `45`
+- market: `19`
+- museum: `19`
+- nature: `10`
+- neighborhood: `13`
+- park: `4`
+- restaurant: `31`
+- river: `1`
+- station: `5`
+- street: `11`
+- village: `1`

@@ -1405,9 +1405,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "directions-1",
-            "directions-3",
-            "v500-dire-navi-can-i-walk-there"
+            "v500-time-date-book-one-ticket-please",
+            "v900-time-date-book-what-time-does-it-start",
+            "v500-sigh-acti-where-is-the-entrance"
           ]
         },
         {
@@ -1498,7 +1498,7 @@
         {
           "id": "place-brief",
           "title": "Open Kitchen, Measured Pace",
-          "body": "The detail is not just the menu. Kitchen pace, staff guidance, and the room carry the night."
+          "body": "The open kitchen gives the room its focus. Ask what the kitchen recommends, then let the staff pace the meal."
         },
         {
           "id": "use-it-with",
@@ -1565,15 +1565,15 @@
     },
     {
       "pageID": "city-hcmc-place-coco-dining",
-      "summary": "Plan Coco Dining when Saigon dinner should take the evening: Vietnamese cooking, fermentation details, warm light, drinks, and table pacing.",
-      "context": "Plan Coco Dining when Saigon dinner should take the evening: Vietnamese cooking, fermentation details, warm light, drinks, and table pacing.",
+      "summary": "Plan Coco Dining when Saigon dinner should take the evening: Vietnamese cooking, sauces with depth, warm light, drinks, and table pacing.",
+      "context": "Plan Coco Dining when Saigon dinner should take the evening: Vietnamese cooking, sauces with depth, warm light, drinks, and table pacing.",
       "tip": "Coco Dining is clearer as a planned dinner after heat, traffic, or sightseeing, not as a last-minute hunger fix.",
-      "rationale": "Coco Dining gives Saigon a polished contemporary dinner memory, with fermentation detail and warm room light making the meal feel planned.",
+      "rationale": "Coco Dining gives Saigon a polished contemporary dinner memory, with deep sauces and warm room light making the meal feel planned.",
       "sections": [
         {
           "id": "at-glance",
           "title": "A Warm Planned Dinner",
-          "body": "Coco Dining is a special-occasion dinner in Saigon: Vietnamese cooking, fermentation details, warm light, and a table paced to carry the evening."
+          "body": "Coco Dining is a special-occasion dinner in Saigon: Vietnamese cooking, deep sauces, warm light, drinks, and a table paced for the evening."
         },
         {
           "id": "quick-say",
@@ -1587,8 +1587,8 @@
         },
         {
           "id": "place-brief",
-          "title": "Fermentation And Warm Light",
-          "body": "The room is part of the desire: styled tables, drinks, fermentation detail, and a meal that should not feel like a rush between errands."
+          "title": "Sauces And Warm Light",
+          "body": "The room is part of the desire: styled tables, drinks, sauces with depth, and a meal that should not feel like a rush between errands."
         },
         {
           "id": "use-it-with",
@@ -1773,7 +1773,7 @@
         {
           "id": "use-it-with",
           "title": "History With Travel Time",
-          "body": "Pair it with a lighter evening. The ride and guided portions already carry the day."
+          "body": "Pair it with a lighter evening. The ride and guided portions already take real energy."
         },
         {
           "id": "when-to-use",
@@ -2253,7 +2253,7 @@
         {
           "id": "place-brief",
           "title": "Music And Water Stage",
-          "body": "The live staging carries it: musicians, puppets, warm lights, water movement, and a show pace different from museums or monuments."
+          "body": "The live staging is the reason to go: musicians, puppets, warm lights, water movement, and a show pace different from museums or monuments."
         },
         {
           "id": "use-it-with",
@@ -2560,9 +2560,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "directions-1",
-            "directions-3",
-            "v500-dire-navi-can-i-walk-there"
+            "v500-time-date-book-one-ticket-please",
+            "v900-time-date-book-what-time-does-it-start",
+            "v500-sigh-acti-where-is-the-entrance"
           ]
         },
         {
@@ -2765,10 +2765,10 @@
     },
     {
       "pageID": "city-hcmc-place-long-trieu",
-      "summary": "Plan Long Triều when Saigon dinner should feel more dressed-up: Chinese cooking, dim sum cues, staff pacing, and a polished room. Long Trieu adds a polished Chinese dining register to Saigon, a city where Vietnamese and Chinese-Vietnamese food habits sit close together.",
+      "summary": "Plan Long Triều when Saigon dinner should feel more dressed-up: Chinese cooking, dim sum cues, staff pacing, and a polished room. Long Trieu adds a polished Chinese dining room to Saigon, a city where Vietnamese and Chinese-Vietnamese food habits sit close together.",
       "context": "Plan Long Triều when Saigon dinner should feel more dressed-up: Chinese cooking, dim sum cues, staff pacing, and a polished room.",
-      "tip": "This is a different register of Saigon eating: polished, seated, and slower. That contrast is the draw.",
-      "rationale": "Long Trieu adds a polished Chinese dining register to Saigon, a city where Vietnamese and Chinese-Vietnamese food habits sit close together.",
+      "tip": "Come for a polished, seated Chinese meal in Saigon: dim sum cues, shared dishes, and a slower table than the street-food day outside.",
+      "rationale": "Long Trieu adds a polished Chinese dining room to Saigon, a city where Vietnamese and Chinese-Vietnamese food habits sit close together.",
       "sections": [
         {
           "id": "at-glance",
@@ -2788,7 +2788,7 @@
         {
           "id": "place-brief",
           "title": "Polished Room, Slower Pace",
-          "body": "The room changes the register: formal, table-focused, and slower than a quick street-food meal."
+          "body": "The room changes the night: formal, table-focused, and slower than a quick street-food meal."
         },
         {
           "id": "use-it-with",
@@ -2803,7 +2803,7 @@
         {
           "id": "good-to-know",
           "title": "A Formal Table Mood",
-          "body": "This is a different register of Saigon eating: polished, seated, and slower. That contrast is the draw."
+          "body": "Come for a polished, seated Chinese meal in Saigon: dim sum cues, shared dishes, and a slower table than the street-food day outside."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -3928,16 +3928,16 @@
         {
           "id": "at-glance",
           "title": "A Slower Route By Water",
-          "body": "A Saigon River boat ride turns the skyline into a slower route, with boarding points, bridges, riverbanks, and water light carrying the day. Movement matters more than photos."
+          "body": "A Saigon River boat ride turns the skyline into a slower route, with boarding points, bridges, riverbanks, and water light shaping the day. Movement matters more than photos."
         },
         {
           "id": "quick-say",
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "directions-1",
-            "directions-3",
-            "v500-dire-navi-can-i-walk-there"
+            "v900-tran-where-can-i-buy-a-ticket",
+            "v900-tran-what-time-is-the-last-boat-back",
+            "v900-dire-navi-is-this-the-correct-pickup-point"
           ]
         },
         {

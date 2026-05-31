@@ -216,3 +216,17 @@ Tenth proof / humanization batch, 2026-06-01:
 - Added current-text rendered proof `missing-pages-humanized-rerun-001-results.jsonl`: `15` edited pages, `45` screenshots, `0` failures.
 - Combined latest-current rendered proof is now `284` unique pages, `852` screenshots, `0` current failures.
 - Global status remains not complete: `236` V2.2 pages still need current rendered proof unless the standard is amended.
+
+Eleventh repair batch, 2026-06-01:
+
+- Fresh read-only subagents audited food, culture/attraction/landmark, and mobility/outdoor/place-feel slices after the first-time-traveler readability complaint.
+- Reconfirmed the `Bib Gourmand` rule: if a first-time U.S. traveler may not know whether a term is a dish, place, award, restaurant category, or local custom, explain it immediately or remove it and lead with concrete food/table/route/place utility.
+- Repaired current hard blockers in source: Nu Eatery grammar, Vy's Market duplicate section job, CieL/Coco Dining/Long Triều dining-room copy, Golden Dragon and À Ố Show phrase cards, Saigon River boat phrase cards, Chợ Lớn/Củ Chi/Mỹ Sơn/Hội An assembly hall related-card mismatches, plus a Danang readability slice.
+- Removed one remaining `carry the stop` residue from a Hội An old-house page after targeted source/runtime search caught it.
+- Regenerated V2.2 handwritten copy, native authored listing pages, phrase catalog, and SQLite.
+- Current validators pass again: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Targeted hard-block text sweep against source and generated runtime is now `0` for `Bib Gourmand`, `MICHELIN`, dining-insider shorthand, old award terms, `restaurant version`, `recognition helps`, and `carry the stop`.
+- Added rendered proof `subagent-hardblock-repair-002-results.jsonl`: `58` passing rows, `174` screenshots, `0` failures.
+- Added rendered proof `subagent-hardblock-repair-003-results.jsonl`: `1` old-house rerun, `3` screenshots, `0` failures.
+- Combined latest-current rendered proof is now `293` unique pages, `879` screenshots, `0` current failures.
+- Global status remains not complete: `227` V2.2 pages still need current rendered proof unless the standard is amended.
