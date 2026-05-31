@@ -62,10 +62,37 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 46: each new SQLite-backed listing detail loaded sections with an N+1 query pattern: after the section list, it prepared one phrase-row query and one breakdown-row query per section, even for empty sections; section phrase rows and breakdown rows now load in two batched section-ID queries, reducing a representative new detail load from `15` prepared statements to at most `5`
 - root cause 47: catalog and browse rows already hand navigation canonical `viet-phrase-*` page IDs, but `PhraseCatalog.canonicalPageID(forOpenablePageID:)` still entered the SQLite alias resolver before checking the already-loaded in-memory catalog; after Browse/Home/Search have warmed the catalog, known catalog page IDs now return directly from `itemsByPageID`, removing one SQLite alias lookup from rapid listing taps without forcing cold launch to build the full catalog early
 - root cause 48: repeated listing page instances reused the same phrase rows and breakdown tokens, but row playback-audio decisions were only prepared per page instance; phrase options and breakdown tokens now keep bounded shared playback-audio decision caches so rapid page-to-page navigation reuses the same audio-manifest decisions without changing playback behavior
+- root cause 49: Home can remain mounted as the back-preview surface while the user rapidly opens listing pages from Home, and its Recently viewed shelf rebuilt feature-card article adapters for the same still-visible recent pages on each route change; Recently viewed now uses a bounded feature-item cache so a new listing open adds only the new recent card adapter while unchanged recent cards are reused
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
 
+- Physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish` app-code commit `100e40bad`
+  - build passed
+  - install passed
+  - launch passed after install
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused Home recently-viewed adapter-cache test on iPhone 17 Pro
+  - failed before implementation because `HomeRecentlyViewedContent` had no cached feature-item resolution seam; the new regression proves the next rapid-listing open builds only `1` new article adapter instead of rebuilding the five unchanged recent cards
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T03-45-25-278Z_pid15747_95aac599.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-46-16-952Z_pid15747_a5309b2e.xcresult`
+- XcodeBuildMCP simulator focused Home/back-preview navigation set on iPhone 17 Pro
+  - passed: `6` tests, `0` failures
+  - covered recently-viewed feature-item caching, six-card recent ordering, duplicate/missing-page skipping, root-surface render gating, Xin chào root-surface gating, and long detail-history render slicing
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-47-18-736Z_pid15747_7b6c7cfa.xcresult`
+- XcodeBuildMCP simulator focused route/detail/audio thermal regression set on iPhone 17 Pro
+  - passed: `15` tests, `0` failures
+  - covered Home recent-card adapter caching, detail article-template reuse, visible-section reuse, location-pick grouping, row/breakdown audio caching, catalog/menu audio caches, known-catalog canonical bypass, generated-page preheat staying lightweight, focused backdrop stale-work rejection, and recent-page store invalidation/persist behavior
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-48-12-721Z_pid15747_fff35e4e.xcresult`
+- XcodeBuildMCP simulator focused SQLite/photo-backdrop regression set on iPhone 17 Pro
+  - passed: `4` tests, `0` failures
+  - covered one-canonicalization detail loads, batched section item loading, generated phrase backdrop eligibility, and static designed phrase-page backdrop eligibility
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-48-50-984Z_pid15747_2b5783da.xcresult`
+- local hygiene checks after the Home recent-card adapter cache fix:
+  - `git diff --check -- native-ios/App/Views/AppShellView.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
 - Physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish` app-code commit `a1929cbc5`, explicitly built from the feature worktree after verifying the default phone helper can otherwise target the main checkout
   - build passed
   - install passed
