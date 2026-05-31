@@ -10,7 +10,7 @@
     "catalogPromotedPageCount": 770,
     "cityLibraryPageCount": 826,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-31T22:05:58.418Z"
+    "generatedAt": "2026-05-31T22:34:00.430Z"
   },
   "pages": [
     {
@@ -181927,8 +181927,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "Walk The River Spine",
-          "body": "Da Nang's central riverfront spine, with bridge views, cafes, hotel fronts, scooter crossings, and the Han River keeping the city easy to place.",
+          "title": "Walk The Riverfront",
+          "body": "Bach Dang Street runs along Da Nang's central riverfront, with bridge views, cafes, hotel fronts, scooter crossings, and the Han River keeping the city easy to place.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -181990,8 +181990,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "A Line Between Stops",
-          "body": "Treat Bach Dang as the connector: market, bridge, coffee, hotel walk, or riverfront evening. One nearby stop keeps the walk from becoming aimless.",
+          "title": "Between Market, Bridge, And Coffee",
+          "body": "Bach Dang can be a short riverfront walk: market, bridge, coffee, hotel return, or evening air. One nearby stop keeps the walk from becoming aimless.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -183262,7 +183262,7 @@
       "title": "Bếp Cuốn Đà Nẵng",
       "englishTitle": "Bep Cuon Da Nang",
       "pronunciation": "bep cuon da nang",
-      "summary": "Choose it when Da Nang rolls sound good but the group wants a calmer table instead of a stall or seafood board. Bep Cuon turns banh trang cuon thit heo into a sit-down meal: herbs, pork, rice paper, mam nem, and one careful roll at a time.",
+      "summary": "Bếp Cuốn is the calmer table for Da Nang rolls when the group wants herbs, rice paper, and sauce instead of a stall or seafood board.",
       "heroImageName": "HeroCityDanangPlaceBepCuon",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -183293,7 +183293,7 @@
           "vt-danang",
           "vt-danang-official"
         ],
-        "rationale": "Bep Cuon turns banh trang cuon thit heo into a sit-down meal: herbs, pork, rice paper, mam nem, and one careful roll at a time.",
+        "rationale": "Bếp Cuốn turns bánh tráng cuốn thịt heo into a sit-down meal: pork, herbs, rice paper, mắm nêm dipping sauce, and one careful roll at a time.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -183304,7 +183304,7 @@
         {
           "id": "at-glance",
           "title": "A Calm Roll Table",
-          "body": "Bếp Cuốn turns Da Nang's pork-and-rice-paper roll habit into a calm sit-down meal: herbs, wrappers, mam nem, and a calm without the stall jostle.",
+          "body": "Bếp Cuốn turns Da Nang's pork-and-rice-paper roll habit into a calmer table meal: herbs, wrappers, and mắm nêm, the salty fermented dipping sauce that gives the roll its edge.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -183351,7 +183351,7 @@
         {
           "id": "place-brief",
           "title": "Build One Good Roll",
-          "body": "Start slowly: pork, herbs, cucumber, rice paper, then a careful touch of mam nem. The first roll teaches the table.",
+          "body": "Start slowly: pork, herbs, cucumber, rice paper, then a careful touch of mắm nêm. The first roll teaches the table.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -183367,7 +183367,7 @@
         {
           "id": "when-to-use",
           "title": "Guide Note, Simple Meal",
-          "body": "The table is still about clean herbs, salty mắm nêm, soft wrappers, and the small skill of one good roll.",
+          "body": "The table is still about clean herbs, soft wrappers, salty mắm nêm sauce, and the small skill of one good roll.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -185428,7 +185428,7 @@
         {
           "id": "use-it-with",
           "title": "Small Plates Beat A Checklist",
-          "body": "Bánh bèo, bánh bột lọc, bún mắm, and mì Quảng give the market its food pull. One or two small orders can carry the visit.",
+          "body": "Tiny steamed rice cakes, chewy tapioca dumplings, bún mắm noodle bowls, and mì Quảng give the market its food pull. One or two small orders can carry the visit.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -192482,7 +192482,7 @@
       "title": "Mỳ Quảng Dung",
       "englishTitle": "My Quang Dung",
       "pronunciation": "my quang dung",
-      "summary": "Mỳ Quảng Dung is a compact noodle-shop fallback for pointing, tasting, and getting a simple bowl without turning lunch into a destination plan.",
+      "summary": "Mỳ Quảng Dung is the small-shop version of a Da Nang noodle lunch: point, taste, and get a bowl without making the meal a project.",
       "heroImageName": "HeroCityDanangPlaceMyQuangDung",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -192513,7 +192513,7 @@
           "vt-danang",
           "vt-danang-official"
         ],
-        "rationale": "Dung keeps a small ordering-practice role inside the mì Quảng set, while the more memorable food desire comes from Mì Quảng 1A and Mỳ Quảng Sứa Hồng Vân.",
+        "rationale": "Dung keeps the mì Quảng set grounded in an ordinary noodle-shop table: yellow noodles, herbs, rice cracker, and a bowl that arrives without ceremony.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -192524,7 +192524,7 @@
         {
           "id": "at-glance",
           "title": "A Small Noodle Shop",
-          "body": "Mỳ Quảng Dung is a compact mì Quảng shop for pointing, tasting, and getting a simple bowl without turning lunch into a plan.",
+          "body": "Mỳ Quảng Dung is a compact mì Quảng shop for pointing, tasting, and getting a yellow-noodle bowl without turning lunch into a plan.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -192586,8 +192586,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Simple Bowl Logic",
-          "body": "Choose it for a simple mì Quảng bowl, an easy name for the ride, and lunch without much decision-making.",
+          "title": "Small-Shop Bowl",
+          "body": "This is the easy version of the meal: a known name, a quick bowl, herbs on the side, and enough flavor without a long restaurant decision.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -192595,7 +192595,7 @@
         {
           "id": "good-to-know",
           "title": "When To Choose Another One",
-          "body": "Choose Sứa Hồng Vân for a more memorable bowl. Choose 1A when you want a cleaner, single-bowl lunch.",
+          "body": "Sứa Hồng Vân is the pick when jellyfish texture is the draw. 1A suits a cleaner, more focused mì Quảng lunch.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -194030,7 +194030,7 @@
       "title": "Nhà hát Tuồng Nguyễn Hiển Dĩnh",
       "englishTitle": "Nguyen Hien Dinh Tuong Theatre",
       "pronunciation": "nha hat tuong nguyen hien dinh",
-      "summary": "A stage-night stop needs a real performance to build around. The program can lead, then the ride can serve the show. The theatre adds a living Da Nang performance-culture stop that contrasts with beaches, bridges, and static museums.",
+      "summary": "A stage-night stop needs a real performance to build around. The show time should lead, then the ride can serve the evening. The theatre adds a living Da Nang performance-culture stop that contrasts with beaches, bridges, and static museums.",
       "heroImageName": "HeroCityDanangPlaceNguyenHienDinhTuongTheatre",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -194071,7 +194071,7 @@
         {
           "id": "at-glance",
           "title": "A Stage Night With A Curtain Time",
-          "body": "Nguyen Hien Dinh Tuong Theatre is a Da Nang stage-night stop for painted faces, masks, drums, curtains, and traditional performance instead of another photo stop.",
+          "body": "Nguyen Hien Dinh Tuong Theatre is a Da Nang stage-night stop for tuồng, a traditional Vietnamese theatre form with painted faces, masks, drums, and formal movement.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -194082,14 +194082,14 @@
           "body": "",
           "phrases": [
             {
-              "id": "directions-1",
-              "vietnamese": "Cho hỏi, đi tới đó thế nào?",
-              "english": "Excuse me, how do I get there?",
-              "pronunciation": "cho hoy dee toy doh theh nao",
+              "id": "v500-time-date-book-one-ticket-please",
+              "vietnamese": "Xin một vé",
+              "english": "One ticket, please",
+              "pronunciation": "Xin mot ve",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-directions-how-to-get",
-              "audioKey": "directions-1"
+              "detailPageID": "viet-family-v500-time-date-book-one-ticket-please",
+              "audioKey": "v500-time-date-book-one-ticket-please"
             },
             {
               "id": "sight-3",
@@ -194102,14 +194102,14 @@
               "audioKey": "sight-3"
             },
             {
-              "id": "v500-dire-navi-can-i-walk-there",
-              "vietnamese": "Tôi có thể đi bộ tới đó được không?",
-              "english": "Can I walk there?",
-              "pronunciation": "Toi co the di bo toi do duoc khong",
+              "id": "v900-time-date-book-what-time-does-it-start",
+              "vietnamese": "Nó bắt đầu lúc mấy giờ?",
+              "english": "What time does it start?",
+              "pronunciation": "No bat dau luc may gio",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-v500-dire-navi-can-i-walk-there",
-              "audioKey": "v500-dire-navi-can-i-walk-there"
+              "detailPageID": "viet-family-v900-time-date-book-what-time-does-it-start",
+              "audioKey": "v900-time-date-book-what-time-does-it-start"
             }
           ],
           "breakdown": [],
@@ -194118,14 +194118,14 @@
         {
           "id": "place-brief",
           "title": "The Show Comes First",
-          "body": "Treat this as a theatre plan only when a performance is actually on. The evening's program decides whether to cross town.",
+          "body": "This needs a performance on the calendar. The evening's program decides whether to cross town.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "use-it-with",
-          "title": "Arrive Show Time Buffer",
+          "title": "Arrive Before The Drums",
           "body": "Give yourself enough time to find the doors, sit down, and settle into the room. Traditional theatre is easier when you are not sliding in late.",
           "phrases": [],
           "breakdown": [],
@@ -194133,8 +194133,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Program Before The Ride",
-          "body": "Choose it when the night already has a show in view. Build the ride around the curtain time, then arrive early enough to settle.",
+          "title": "Show Time Leads",
+          "body": "When the night already has a show in view, build the ride around the curtain time and arrive early enough to settle.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -194173,21 +194173,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "directions-1"
+              "v500-time-date-book-one-ticket-please"
             ],
             "supportPhraseIDs": [
               "sight-3",
-              "v500-dire-navi-can-i-walk-there"
+              "v900-time-date-book-what-time-does-it-start"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-nguyen-hien-dinh-tuong-theatre",
-          "directions-1"
+          "v500-time-date-book-one-ticket-please"
         ],
         "secondaryPracticePhraseIDs": [
           "sight-3",
-          "v500-dire-navi-can-i-walk-there"
+          "v900-time-date-book-what-time-does-it-start"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-nguyen-hien-dinh-tuong-theatre"
       }
@@ -197612,7 +197612,7 @@
       "title": "Nhà hát Trưng Vương",
       "englishTitle": "Trung Vuong Theatre",
       "pronunciation": "nha hat trung vuong",
-      "summary": "The theatre matters most when there is a specific show or event; without one, it stays as a central cultural marker. Trung Vuong Theatre serves as a central stage marker, with posters, scooters outside, and dinner or coffee close enough afterward.",
+      "summary": "The theatre matters most when there is a specific show or event; without one, it stays as a central cultural landmark. Trung Vuong Theatre serves as a central stage marker, with posters, scooters outside, and dinner or coffee close enough afterward.",
       "heroImageName": "HeroCityDanangPlaceTrungVuongTheatre",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -197664,14 +197664,14 @@
           "body": "",
           "phrases": [
             {
-              "id": "directions-1",
-              "vietnamese": "Cho hỏi, đi tới đó thế nào?",
-              "english": "Excuse me, how do I get there?",
-              "pronunciation": "cho hoy dee toy doh theh nao",
+              "id": "v500-time-date-book-one-ticket-please",
+              "vietnamese": "Xin một vé",
+              "english": "One ticket, please",
+              "pronunciation": "Xin mot ve",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-directions-how-to-get",
-              "audioKey": "directions-1"
+              "detailPageID": "viet-family-v500-time-date-book-one-ticket-please",
+              "audioKey": "v500-time-date-book-one-ticket-please"
             },
             {
               "id": "sight-3",
@@ -197684,14 +197684,14 @@
               "audioKey": "sight-3"
             },
             {
-              "id": "v500-dire-navi-can-i-walk-there",
-              "vietnamese": "Tôi có thể đi bộ tới đó được không?",
-              "english": "Can I walk there?",
-              "pronunciation": "Toi co the di bo toi do duoc khong",
+              "id": "v900-time-date-book-what-time-does-it-start",
+              "vietnamese": "Nó bắt đầu lúc mấy giờ?",
+              "english": "What time does it start?",
+              "pronunciation": "No bat dau luc may gio",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-v500-dire-navi-can-i-walk-there",
-              "audioKey": "v500-dire-navi-can-i-walk-there"
+              "detailPageID": "viet-family-v900-time-date-book-what-time-does-it-start",
+              "audioKey": "v900-time-date-book-what-time-does-it-start"
             }
           ],
           "breakdown": [],
@@ -197699,7 +197699,7 @@
         },
         {
           "id": "place-brief",
-          "title": "Program Before The Ride",
+          "title": "Show Before The Ride",
           "body": "The theatre matters most when there is a specific performance, concert, or event. Without that, it stays as a central name rather than a place to tour.",
           "phrases": [],
           "breakdown": [],
@@ -197755,21 +197755,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "directions-1"
+              "v500-time-date-book-one-ticket-please"
             ],
             "supportPhraseIDs": [
               "sight-3",
-              "v500-dire-navi-can-i-walk-there"
+              "v900-time-date-book-what-time-does-it-start"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-trung-vuong-theatre",
-          "directions-1"
+          "v500-time-date-book-one-ticket-please"
         ],
         "secondaryPracticePhraseIDs": [
           "sight-3",
-          "v500-dire-navi-can-i-walk-there"
+          "v900-time-date-book-what-time-does-it-start"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-trung-vuong-theatre"
       }
@@ -242784,14 +242784,14 @@
           "body": "",
           "phrases": [
             {
-              "id": "directions-1",
-              "vietnamese": "Cho hỏi, đi tới đó thế nào?",
-              "english": "Excuse me, how do I get there?",
-              "pronunciation": "cho hoy dee toy doh theh nao",
+              "id": "v500-time-date-book-one-ticket-please",
+              "vietnamese": "Xin một vé",
+              "english": "One ticket, please",
+              "pronunciation": "Xin mot ve",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-directions-how-to-get",
-              "audioKey": "directions-1"
+              "detailPageID": "viet-family-v500-time-date-book-one-ticket-please",
+              "audioKey": "v500-time-date-book-one-ticket-please"
             },
             {
               "id": "directions-8",
@@ -242875,7 +242875,7 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "directions-1"
+              "v500-time-date-book-one-ticket-please"
             ],
             "supportPhraseIDs": [
               "directions-8",
@@ -242885,7 +242885,7 @@
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-bach-dang-waterbus-station",
-          "directions-1"
+          "v500-time-date-book-one-ticket-please"
         ],
         "secondaryPracticePhraseIDs": [
           "directions-8",
@@ -243632,7 +243632,7 @@
         {
           "id": "at-glance",
           "title": "A Big Pancake For The Table",
-          "body": "Bánh Xèo 46A is known for the larger restaurant version of bánh xèo. Expect a crisp hot pancake, fresh greens, lettuce, sauce, and a table that gets busy fast.",
+          "body": "Bánh Xèo 46A turns bánh xèo into a full table meal. The pancake comes out hot and crisp, with herbs, lettuce, dipping sauce, and enough moving parts to slow everyone down.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -244036,8 +244036,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Service Facts Are Separate",
-          "body": "The lasting value is the station name, exits, and central place. Let official signs and ticket gates handle the practical move; keep the page story simple.",
+          "title": "Signs And Gates Handle The Details",
+          "body": "The name, exits, and above-ground landmarks are what to remember here. Let the current ticket gates and official signs handle the exact ride details.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -245189,24 +245189,24 @@
               "audioKey": "directions-1"
             },
             {
-              "id": "directions-3",
-              "vietnamese": "Đi bộ mất bao lâu?",
-              "english": "How long does it take on foot?",
-              "pronunciation": "dee boh mut bao low",
+              "id": "v900-time-date-book-what-time-does-it-start",
+              "vietnamese": "Nó bắt đầu lúc mấy giờ?",
+              "english": "What time does it start?",
+              "pronunciation": "No bat dau luc may gio",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-directions-how-long",
-              "audioKey": "directions-3"
+              "detailPageID": "viet-family-v900-time-date-book-what-time-does-it-start",
+              "audioKey": "v900-time-date-book-what-time-does-it-start"
             },
             {
-              "id": "v500-dire-navi-can-i-walk-there",
-              "vietnamese": "Tôi có thể đi bộ tới đó được không?",
-              "english": "Can I walk there?",
-              "pronunciation": "Toi co the di bo toi do duoc khong",
+              "id": "v500-sigh-acti-where-is-the-entrance",
+              "vietnamese": "Lối vào ở đâu?",
+              "english": "Where is the entrance?",
+              "pronunciation": "Loi vao o dau",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-v500-dire-navi-can-i-walk-there",
-              "audioKey": "v500-dire-navi-can-i-walk-there"
+              "detailPageID": "viet-family-v500-sigh-acti-where-is-the-entrance",
+              "audioKey": "v500-sigh-acti-where-is-the-entrance"
             }
           ],
           "breakdown": [],
@@ -245265,8 +245265,8 @@
               "directions-1"
             ],
             "supportPhraseIDs": [
-              "directions-3",
-              "v500-dire-navi-can-i-walk-there"
+              "v900-time-date-book-what-time-does-it-start",
+              "v500-sigh-acti-where-is-the-entrance"
             ]
           }
         ],
@@ -245275,8 +245275,8 @@
           "directions-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "directions-3",
-          "v500-dire-navi-can-i-walk-there"
+          "v900-time-date-book-what-time-does-it-start",
+          "v500-sigh-acti-where-is-the-entrance"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-bui-vien-street"
       }
@@ -247248,14 +247248,14 @@
           "body": "",
           "phrases": [
             {
-              "id": "directions-1",
-              "vietnamese": "Cho hỏi, đi tới đó thế nào?",
-              "english": "Excuse me, how do I get there?",
-              "pronunciation": "cho hoy dee toy doh theh nao",
+              "id": "v500-time-date-book-one-ticket-please",
+              "vietnamese": "Xin một vé",
+              "english": "One ticket, please",
+              "pronunciation": "Xin mot ve",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-directions-how-to-get",
-              "audioKey": "directions-1"
+              "detailPageID": "viet-family-v500-time-date-book-one-ticket-please",
+              "audioKey": "v500-time-date-book-one-ticket-please"
             },
             {
               "id": "v500-sigh-acti-where-is-the-entrance",
@@ -247339,7 +247339,7 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "directions-1"
+              "v500-time-date-book-one-ticket-please"
             ],
             "supportPhraseIDs": [
               "v500-sigh-acti-where-is-the-entrance",
@@ -247349,7 +247349,7 @@
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-city-hall",
-          "directions-1"
+          "v500-time-date-book-one-ticket-please"
         ],
         "secondaryPracticePhraseIDs": [
           "v500-sigh-acti-where-is-the-entrance",
@@ -248119,24 +248119,24 @@
               "audioKey": "directions-1"
             },
             {
-              "id": "directions-3",
-              "vietnamese": "Đi bộ mất bao lâu?",
-              "english": "How long does it take on foot?",
-              "pronunciation": "dee boh mut bao low",
+              "id": "v900-time-date-book-what-time-does-it-start",
+              "vietnamese": "Nó bắt đầu lúc mấy giờ?",
+              "english": "What time does it start?",
+              "pronunciation": "No bat dau luc may gio",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-directions-how-long",
-              "audioKey": "directions-3"
+              "detailPageID": "viet-family-v900-time-date-book-what-time-does-it-start",
+              "audioKey": "v900-time-date-book-what-time-does-it-start"
             },
             {
-              "id": "v500-dire-navi-can-i-walk-there",
-              "vietnamese": "Tôi có thể đi bộ tới đó được không?",
-              "english": "Can I walk there?",
-              "pronunciation": "Toi co the di bo toi do duoc khong",
+              "id": "v500-sigh-acti-where-is-the-entrance",
+              "vietnamese": "Lối vào ở đâu?",
+              "english": "Where is the entrance?",
+              "pronunciation": "Loi vao o dau",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-v500-dire-navi-can-i-walk-there",
-              "audioKey": "v500-dire-navi-can-i-walk-there"
+              "detailPageID": "viet-family-v500-sigh-acti-where-is-the-entrance",
+              "audioKey": "v500-sigh-acti-where-is-the-entrance"
             }
           ],
           "breakdown": [],
@@ -248203,8 +248203,8 @@
               "directions-1"
             ],
             "supportPhraseIDs": [
-              "directions-3",
-              "v500-dire-navi-can-i-walk-there"
+              "v900-time-date-book-what-time-does-it-start",
+              "v500-sigh-acti-where-is-the-entrance"
             ]
           }
         ],
@@ -248213,8 +248213,8 @@
           "directions-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "directions-3",
-          "v500-dire-navi-can-i-walk-there"
+          "v900-time-date-book-what-time-does-it-start",
+          "v500-sigh-acti-where-is-the-entrance"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-cu-chi-day-trip"
       }
@@ -256675,14 +256675,14 @@
               "audioKey": "v900-tran-where-can-i-buy-a-ticket"
             },
             {
-              "id": "transport-2",
-              "vietnamese": "Xe này có đi tới… không?",
-              "english": "Does this bus go to…?",
-              "pronunciation": "seh nai koh dee toy khong",
+              "id": "time-7",
+              "vietnamese": "Mấy giờ bắt đầu lên máy bay?",
+              "english": "What time does boarding start?",
+              "pronunciation": "may zyuh bat dow len mai bai",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-transport-bus-goes",
-              "audioKey": "transport-2"
+              "detailPageID": "viet-family-time-boarding",
+              "audioKey": "time-7"
             }
           ],
           "breakdown": [],
@@ -256750,7 +256750,7 @@
             ],
             "supportPhraseIDs": [
               "v900-tran-where-can-i-buy-a-ticket",
-              "transport-2"
+              "time-7"
             ]
           }
         ],
@@ -256760,7 +256760,7 @@
         ],
         "secondaryPracticePhraseIDs": [
           "v900-tran-where-can-i-buy-a-ticket",
-          "transport-2"
+          "time-7"
         ],
         "practiceSourcePageID": "viet-family-city-hcmc-place-saigon-railway-station"
       }
@@ -271538,34 +271538,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "v900-tran-where-is-the-boat-pier",
-              "vietnamese": "Bến thuyền ở đâu?",
-              "english": "Where is the boat pier?",
-              "pronunciation": "Ben thuyen o dau",
+              "id": "directions-1",
+              "vietnamese": "Cho hỏi, đi tới đó thế nào?",
+              "english": "Excuse me, how do I get there?",
+              "pronunciation": "cho hoy dee toy doh theh nao",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-v900-tran-where-is-the-boat-pier",
-              "audioKey": "v900-tran-where-is-the-boat-pier"
+              "detailPageID": "viet-family-directions-how-to-get",
+              "audioKey": "directions-1"
             },
             {
-              "id": "v900-tran-where-can-i-buy-a-ticket",
-              "vietnamese": "Tôi có thể mua vé ở đâu?",
-              "english": "Where can I buy a ticket?",
-              "pronunciation": "Toi co the mua ve o dau",
+              "id": "directions-2",
+              "vietnamese": "Ở gần đây không?",
+              "english": "Is it near here?",
+              "pronunciation": "uh gun day khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-phrase-v500-sigh-acti-where-can-i-buy-tickets",
-              "audioKey": "v900-tran-where-can-i-buy-a-ticket"
+              "detailPageID": "viet-family-directions-near",
+              "audioKey": "directions-2"
             },
             {
-              "id": "directions-8",
-              "vietnamese": "Điểm đón ở đâu?",
-              "english": "Where is the pickup point?",
-              "pronunciation": "deeym don uh dow",
+              "id": "v900-tran-pick-me-up-at-this-entrance",
+              "vietnamese": "Hãy đón tôi ở lối vào này",
+              "english": "Please pick me up at this entrance",
+              "pronunciation": "Hay don toi o loi vao nay",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-directions-pickup-point",
-              "audioKey": "directions-8"
+              "detailPageID": "viet-family-v900-tran-pick-me-up-at-this-entrance",
+              "audioKey": "v900-tran-pick-me-up-at-this-entrance"
             }
           ],
           "breakdown": [],
@@ -271629,21 +271629,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "v900-tran-where-is-the-boat-pier"
+              "directions-1"
             ],
             "supportPhraseIDs": [
-              "v900-tran-where-can-i-buy-a-ticket",
-              "directions-8"
+              "directions-2",
+              "v900-tran-pick-me-up-at-this-entrance"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-an-hoi-island",
-          "v900-tran-where-is-the-boat-pier"
+          "directions-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "v900-tran-where-can-i-buy-a-ticket",
-          "directions-8"
+          "directions-2",
+          "v900-tran-pick-me-up-at-this-entrance"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-an-hoi-island"
       }
@@ -277943,8 +277943,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "Cafe Contrast",
-          "body": "Choose it when Faifo is too view-focused or a full cafe sit is too long. This is the tighter coffee break in the old-town flow.",
+          "title": "A Tighter Coffee Break",
+          "body": "Faifo is the view stop. Espresso Station is the smaller coffee break in the old-town flow.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -277959,8 +277959,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Coffee Before The View",
-          "body": "This does not need to carry the rooftop coffee role. Its strength is the smaller bar and the lane around it.",
+          "title": "Lane Before View",
+          "body": "The strength is the smaller bar and the lane around it: coffee first, rooflines somewhere else.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -278416,24 +278416,24 @@
               "audioKey": "directions-8"
             },
             {
-              "id": "v900-tran-where-can-i-buy-a-ticket",
-              "vietnamese": "Tôi có thể mua vé ở đâu?",
-              "english": "Where can I buy a ticket?",
-              "pronunciation": "Toi co the mua ve o dau",
+              "id": "v900-dire-navi-please-write-the-address-for-me",
+              "vietnamese": "Hãy viết địa chỉ cho tôi",
+              "english": "Please write the address for me",
+              "pronunciation": "Hay viet dia chi cho toi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-phrase-v500-sigh-acti-where-can-i-buy-tickets",
-              "audioKey": "v900-tran-where-can-i-buy-a-ticket"
+              "detailPageID": "viet-family-v900-dire-navi-please-write-the-address-for-me",
+              "audioKey": "v900-dire-navi-please-write-the-address-for-me"
             },
             {
-              "id": "taxi-3",
-              "vietnamese": "Dừng ở đây được rồi",
-              "english": "You can stop here",
-              "pronunciation": "zoong uh day dook roy",
+              "id": "v900-tran-pick-me-up-at-this-entrance",
+              "vietnamese": "Hãy đón tôi ở lối vào này",
+              "english": "Please pick me up at this entrance",
+              "pronunciation": "Hay don toi o loi vao nay",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-transport-stop-here",
-              "audioKey": "taxi-3"
+              "detailPageID": "viet-family-v900-tran-pick-me-up-at-this-entrance",
+              "audioKey": "v900-tran-pick-me-up-at-this-entrance"
             }
           ],
           "breakdown": [],
@@ -278465,8 +278465,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Route Language Helps",
-          "body": "Treat this as transfer language, not sightseeing. The key move is knowing the wording clearly before the ride.",
+          "title": "Transfer, Not Sightseeing",
+          "body": "This is arrival language for the transfer. The key move is knowing the pickup point, driver name, and Hội An address before the ride.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -278500,8 +278500,8 @@
               "directions-8"
             ],
             "supportPhraseIDs": [
-              "v900-tran-where-can-i-buy-a-ticket",
-              "taxi-3"
+              "v900-dire-navi-please-write-the-address-for-me",
+              "v900-tran-pick-me-up-at-this-entrance"
             ]
           }
         ],
@@ -278510,8 +278510,8 @@
           "directions-8"
         ],
         "secondaryPracticePhraseIDs": [
-          "v900-tran-where-can-i-buy-a-ticket",
-          "taxi-3"
+          "v900-dire-navi-please-write-the-address-for-me",
+          "v900-tran-pick-me-up-at-this-entrance"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-from-danang-airport"
       }
@@ -279825,8 +279825,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Watch Wood Turn practical",
-          "body": "Notice how wood turns practical: tools, hands, panels, and the unhurried pace of work.",
+          "title": "Watch Wood Take Shape",
+          "body": "Notice the tools, hands, panels, and unhurried pace of work before the finished souvenirs.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -285163,7 +285163,7 @@
         {
           "id": "good-to-know",
           "title": "Cafe, Not Landmark",
-          "body": "Do not make it carry the whole itinerary. Its role is a shaded table before Hội An becomes busy again.",
+          "body": "It is a shaded breakfast table before Hội An becomes busy again, with enough room to keep the rest of the day loose.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -301685,7 +301685,7 @@
       "title": "Không gian xưa",
       "englishTitle": "Ancient Space Restaurant",
       "pronunciation": "khong gian xua",
-      "summary": "Ancient Space Restaurant is a ruong-house, cơm niêu, and Hue-dishes support choice: garden paths and timber first, then a traditional table built for groups.",
+      "summary": "Ancient Space Restaurant is the dinner to remember when the group wants a traditional Hue room: garden paths and timber first, then a shared table.",
       "heroImageName": "HeroCityHuePlaceAncientSpaceRestaurant",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -301716,7 +301716,7 @@
           "vt-hue",
           "vt-hue-official"
         ],
-        "rationale": "The reason is old-house dining in Hue: ruong architecture, courtyard scale, and a menu that gathers rice-pot, Hue, and court-style cues in one place.",
+        "rationale": "The reason is old-house dining in Hue: nhà rường timber-house architecture, courtyard scale, clay-pot rice, and local dishes gathered in one place.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -301726,8 +301726,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "Ruong House, Shared Table",
-          "body": "Ancient Space Restaurant is a Hue dinner for ruong-house architecture, cơm niêu, local dishes, and a traditional table when the group wants one settled meal.",
+          "title": "Timber House, Shared Table",
+          "body": "Ancient Space Restaurant is a Hue dinner for nhà rường timber-house architecture, cơm niêu clay-pot rice, local dishes, and one settled shared table.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -301789,8 +301789,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Heritage Dinner Role",
-          "body": "Treat it as a heritage-dinner option, not the sharpest Hue food chase. The house, courtyard, and shared table carry most of the reason.",
+          "title": "Dinner Inside The House",
+          "body": "The house, courtyard, and shared table are the reason to come. Save sharper snack hunting for lighter street-food pages.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -305751,8 +305751,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Central Market Role",
-          "body": "Dong Ba is one of Hue's easiest places to connect food, gifts, and everyday shopping without adding a separate market trip.",
+          "title": "Food, Gifts, Daily Shopping",
+          "body": "Dong Ba connects snacks, gifts, sesame candy, and everyday shopping in one central stop, without adding a separate market trip.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -309632,8 +309632,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A River-Side Spine",
-          "body": "Le Loi Street is a simple Hue spine to recognize before you walk: trees, river proximity, scooters, hotel edges, and crossings that help the city feel less abstract.",
+          "title": "Trees Beside The River",
+          "body": "Le Loi Street is a Hue street to recognize before you walk: trees, river proximity, scooters, hotel edges, and crossings that make the center easier to place.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -309679,8 +309679,8 @@
         },
         {
           "id": "place-brief",
-          "title": "Le Loi For Bearings",
-          "body": "The street name is the practical part. When it appears on a hotel address, taxi screen, or corner sign, the river-side center feels easier to place.",
+          "title": "Le Loi On The Sign",
+          "body": "When the name appears on a hotel address, taxi screen, or corner sign, the riverside center feels easier to place.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -309695,8 +309695,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "A Street Between Stops",
-          "body": "The street is a line between stops, a practical street name. Its job is to make nearby river walks, cafés, and hotel returns easier to place.",
+          "title": "Between River Stops",
+          "body": "The street is useful between cafes, hotel blocks, bridges, and river walks. It helps the center feel less abstract without becoming a sight by itself.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -311703,7 +311703,7 @@
         {
           "id": "at-glance",
           "title": "Court Culture Heard Live",
-          "body": "Hue Royal Court Music turns the old capital into a listening stop: traditional instruments, stage light, costumes, and a performance side beyond gates and tombs.",
+          "body": "Nhã nhạc is Hue's royal court music: traditional instruments, formal pacing, costumes, and a listening experience beyond gates and tombs.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -311750,7 +311750,7 @@
         {
           "id": "place-brief",
           "title": "Performance After Museum Silence",
-          "body": "This staged cultural experience gives the old capital sound as well as silhouette. Hearing court tradition in Hue gives the old capital a sound, more than a silhouette.",
+          "body": "This staged cultural experience gives Hue sound as well as architecture: instruments, voices, costumes, and the slower formality of court tradition.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -311766,15 +311766,15 @@
         {
           "id": "when-to-use",
           "title": "Court Music As The Evening",
-          "body": "The evening is cultural rather than casual: royal court sound, formal pacing, and a performance setting that sits to Hue's imperial story.",
+          "body": "The evening is cultural rather than casual: royal court sound, formal pacing, and a performance setting tied to Hue's imperial story.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
-          "title": "Formality is the draw",
-          "body": "The music may feel formal compared with casual nightlife. That restraint is part of the court tradition, part of its restrained energy.",
+          "title": "Formality Is The Draw",
+          "body": "The music may feel formal compared with casual nightlife. That restraint is part of the court tradition, and it is the point.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"

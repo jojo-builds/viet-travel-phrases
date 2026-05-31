@@ -1018,8 +1018,8 @@
       "travelerMoment": "Good for a late-afternoon walk, a route between central stops, or a slower way to understand the river side of Da Nang.",
       "storySpine": "Bach Dang turns the riverfront from scenery into orientation, especially for visitors still learning how central Da Nang fits together.",
       "intro": {
-        "heading": "Walk The River Spine",
-        "body": "Da Nang's central riverfront spine, with bridge views, cafes, hotel fronts, scooter crossings, and the Han River keeping the city easy to place."
+        "heading": "Walk The Riverfront",
+        "body": "Bach Dang Street runs along Da Nang's central riverfront, with bridge views, cafes, hotel fronts, scooter crossings, and the Han River keeping the city easy to place."
       },
       "usefulPhraseCards": [
         {
@@ -1060,8 +1060,8 @@
         },
         {
           "id": "a-line-between-stops",
-          "heading": "A Line Between Stops",
-          "body": "Treat Bach Dang as the connector: market, bridge, coffee, hotel walk, or riverfront evening. One nearby stop keeps the walk from becoming aimless."
+          "heading": "Between Market, Bridge, And Coffee",
+          "body": "Bach Dang can be a short riverfront walk: market, bridge, coffee, hotel return, or evening air. One nearby stop keeps the walk from becoming aimless."
         },
         {
           "id": "traffic-still-leads",
@@ -1080,7 +1080,9 @@
           "status": "render"
         }
       ],
-      "verificationFlags": [],
+      "verificationFlags": [
+        "Freshness risk: riverfront construction, event crowding, bridge access, and crossing conditions can change; visible copy avoids exact schedules and prices."
+      ],
       "qa": {
         "replaceabilityTest": "pass",
         "phraseCardTest": "pass",
@@ -1830,11 +1832,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "bep cuon da nang",
-      "travelerMoment": "Choose it when Da Nang rolls sound good but the group wants a calmer table instead of a stall or seafood board.",
-      "storySpine": "Bep Cuon turns banh trang cuon thit heo into a sit-down meal: herbs, pork, rice paper, mam nem, and one careful roll at a time.",
+      "travelerMoment": "Bếp Cuốn is the calmer table for Da Nang rolls when the group wants herbs, rice paper, and sauce instead of a stall or seafood board.",
+      "storySpine": "Bếp Cuốn turns bánh tráng cuốn thịt heo into a sit-down meal: pork, herbs, rice paper, mắm nêm dipping sauce, and one careful roll at a time.",
       "intro": {
         "heading": "A Calm Roll Table",
-        "body": "Bếp Cuốn turns Da Nang's pork-and-rice-paper roll habit into a calm sit-down meal: herbs, wrappers, mam nem, and a calm without the stall jostle."
+        "body": "Bếp Cuốn turns Da Nang's pork-and-rice-paper roll habit into a calmer table meal: herbs, wrappers, and mắm nêm, the salty fermented dipping sauce that gives the roll its edge."
       },
       "usefulPhraseCards": [
         {
@@ -1866,7 +1868,7 @@
         {
           "id": "build-one-good-roll",
           "heading": "Build One Good Roll",
-          "body": "Start slowly: pork, herbs, cucumber, rice paper, then a careful touch of mam nem. The first roll teaches the table."
+          "body": "Start slowly: pork, herbs, cucumber, rice paper, then a careful touch of mắm nêm. The first roll teaches the table."
         },
         {
           "id": "check-before-rolling",
@@ -1876,7 +1878,7 @@
         {
           "id": "guide-note-not-the-whole-story",
           "heading": "Guide Note, Simple Meal",
-          "body": "The table is still about clean herbs, salty mắm nêm, soft wrappers, and the small skill of one good roll."
+          "body": "The table is still about clean herbs, soft wrappers, salty mắm nêm sauce, and the small skill of one good roll."
         },
         {
           "id": "sauce-decides-the-bite",
@@ -3444,7 +3446,7 @@
           "catalogId": "viet-family-city-danang-place-bep-cuon",
           "label": "Bếp Cuốn Đà Nẵng",
           "relationship": "casual meal contrast",
-          "displaySubtitle": "A roll table when pork, herbs, rice paper, and mam nem can lead.",
+          "displaySubtitle": "A roll table when pork, herbs, rice paper, and mắm nêm sauce leads the bite.",
           "reason": "Bếp Cuốn is the useful casual-guide contrast: roll-and-dip instead of duck porridge, salad, and sliced duck.",
           "status": "render"
         }
@@ -3540,7 +3542,7 @@
         {
           "id": "small-plates-beat-a-checklist",
           "heading": "Small Plates Beat A Checklist",
-          "body": "Bánh bèo, bánh bột lọc, bún mắm, and mì Quảng give the market its food pull. One or two small orders can carry the visit."
+          "body": "Tiny steamed rice cakes, chewy tapioca dumplings, bún mắm noodle bowls, and mì Quảng give the market its food pull. One or two small orders can carry the visit."
         },
         {
           "id": "a-different-feel-than-han",
@@ -5280,15 +5282,17 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-3d-art-in-paradise",
-          "label": "Bảo tàng 3D Art in Paradise Đà Nẵng",
-          "relationship": "playful-indoor break",
-          "displaySubtitle": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
-          "reason": "Related because: A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
+          "catalogId": "viet-family-city-danang-place-bach-dang-street",
+          "label": "Đường Bạch Đằng",
+          "relationship": "riverfront-walk context",
+          "displaySubtitle": "The central riverfront street for bridge views, cafes, hotel edges, and an easy evening walk.",
+          "reason": "The central riverfront street for bridge views, cafes, hotel edges, and an easy evening walk.",
           "status": "render"
         }
       ],
-      "verificationFlags": [],
+      "verificationFlags": [
+        "Freshness risk: promenade work, events, bridge crowding, and riverfront access can change; visible copy stays general."
+      ],
       "qa": {
         "replaceabilityTest": "pass",
         "phraseCardTest": "pass",
@@ -8289,11 +8293,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "my quang dung",
-      "travelerMoment": "Mỳ Quảng Dung is a compact noodle-shop fallback for pointing, tasting, and getting a simple bowl without turning lunch into a destination plan.",
-      "storySpine": "Dung keeps a small ordering-practice role inside the mì Quảng set, while the more memorable food desire comes from Mì Quảng 1A and Mỳ Quảng Sứa Hồng Vân.",
+      "travelerMoment": "Mỳ Quảng Dung is the small-shop version of a Da Nang noodle lunch: point, taste, and get a bowl without making the meal a project.",
+      "storySpine": "Dung keeps the mì Quảng set grounded in an ordinary noodle-shop table: yellow noodles, herbs, rice cracker, and a bowl that arrives without ceremony.",
       "intro": {
         "heading": "A Small Noodle Shop",
-        "body": "Mỳ Quảng Dung is a compact mì Quảng shop for pointing, tasting, and getting a simple bowl without turning lunch into a plan."
+        "body": "Mỳ Quảng Dung is a compact mì Quảng shop for pointing, tasting, and getting a yellow-noodle bowl without turning lunch into a plan."
       },
       "usefulPhraseCards": [
         {
@@ -8333,14 +8337,14 @@
           "body": "Mì Quảng can carry spice, peanuts, and sharp lime at once. Taste before adding chili, then adjust the bowl slowly."
         },
         {
-          "id": "why-it-stays-in-the-catalog",
-          "heading": "Simple Bowl Logic",
-          "body": "Choose it for a simple mì Quảng bowl, an easy name for the ride, and lunch without much decision-making."
+          "id": "small-shop-bowl",
+          "heading": "Small-Shop Bowl",
+          "body": "This is the easy version of the meal: a known name, a quick bowl, herbs on the side, and enough flavor without a long restaurant decision."
         },
         {
           "id": "when-to-choose-another-one",
           "heading": "When To Choose Another One",
-          "body": "Choose Sứa Hồng Vân for a more memorable bowl. Choose 1A when you want a cleaner, single-bowl lunch."
+          "body": "Sứa Hồng Vân is the pick when jellyfish texture is the draw. 1A suits a cleaner, more focused mì Quảng lunch."
         }
       ],
       "mentionedHereCandidates": [
@@ -9226,19 +9230,19 @@
       "city": "Đà Nẵng",
       "category": "Attraction",
       "pronunciation": "nha hat tuong nguyen hien dinh",
-      "travelerMoment": "A stage-night stop needs a real performance to build around. The program can lead, then the ride can serve the show.",
+      "travelerMoment": "A stage-night stop needs a real performance to build around. The show time should lead, then the ride can serve the evening.",
       "storySpine": "The theatre adds a living Da Nang performance-culture stop that contrasts with beaches, bridges, and static museums.",
       "intro": {
         "heading": "A Stage Night With A Curtain Time",
-        "body": "Nguyen Hien Dinh Tuong Theatre is a Da Nang stage-night stop for painted faces, masks, drums, curtains, and traditional performance instead of another photo stop."
+        "body": "Nguyen Hien Dinh Tuong Theatre is a Da Nang stage-night stop for tuồng, a traditional Vietnamese theatre form with painted faces, masks, drums, and formal movement."
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho hỏi, đi tới đó thế nào?",
-          "en": "Excuse me, how do I get there?",
-          "intent": "directions-how-to-get",
-          "phraseId": "directions-1",
-          "audioId": "directions-1",
+          "vi": "Xin một vé",
+          "en": "One ticket, please",
+          "intent": "ticket-one",
+          "phraseId": "v500-time-date-book-one-ticket-please",
+          "audioId": "v500-time-date-book-one-ticket-please",
           "status": "mapped"
         },
         {
@@ -9250,11 +9254,11 @@
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể đi bộ tới đó được không?",
-          "en": "Can I walk there?",
-          "intent": "v500-dire-navi-can-i-walk-there",
-          "phraseId": "v500-dire-navi-can-i-walk-there",
-          "audioId": "v500-dire-navi-can-i-walk-there",
+          "vi": "Nó bắt đầu lúc mấy giờ?",
+          "en": "What time does it start?",
+          "intent": "show-start-time",
+          "phraseId": "v900-time-date-book-what-time-does-it-start",
+          "audioId": "v900-time-date-book-what-time-does-it-start",
           "status": "mapped"
         }
       ],
@@ -9262,17 +9266,17 @@
         {
           "id": "the-show-comes-first",
           "heading": "The Show Comes First",
-          "body": "Treat this as a theatre plan only when a performance is actually on. The evening's program decides whether to cross town."
+          "body": "This needs a performance on the calendar. The evening's program decides whether to cross town."
         },
         {
           "id": "arrive-show-time-buffer",
-          "heading": "Arrive Show Time Buffer",
+          "heading": "Arrive Before The Drums",
           "body": "Give yourself enough time to find the doors, sit down, and settle into the room. Traditional theatre is easier when you are not sliding in late."
         },
         {
           "id": "program-before-the-ride",
-          "heading": "Program Before The Ride",
-          "body": "Choose it when the night already has a show in view. Build the ride around the curtain time, then arrive early enough to settle."
+          "heading": "Show Time Leads",
+          "body": "When the night already has a show in view, build the ride around the curtain time and arrive early enough to settle."
         },
         {
           "id": "watch-the-timing",
@@ -11557,7 +11561,7 @@
       "city": "Đà Nẵng",
       "category": "Attraction",
       "pronunciation": "nha hat trung vuong",
-      "travelerMoment": "The theatre matters most when there is a specific show or event; without one, it stays as a central cultural marker.",
+      "travelerMoment": "The theatre matters most when there is a specific show or event; without one, it stays as a central cultural landmark.",
       "storySpine": "Trung Vuong Theatre serves as a central stage marker, with posters, scooters outside, and dinner or coffee close enough afterward.",
       "intro": {
         "heading": "City Night At The Doors",
@@ -11565,11 +11569,11 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho hỏi, đi tới đó thế nào?",
-          "en": "Excuse me, how do I get there?",
-          "intent": "directions-how-to-get",
-          "phraseId": "directions-1",
-          "audioId": "directions-1",
+          "vi": "Xin một vé",
+          "en": "One ticket, please",
+          "intent": "ticket-one",
+          "phraseId": "v500-time-date-book-one-ticket-please",
+          "audioId": "v500-time-date-book-one-ticket-please",
           "status": "mapped"
         },
         {
@@ -11581,18 +11585,18 @@
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể đi bộ tới đó được không?",
-          "en": "Can I walk there?",
-          "intent": "v500-dire-navi-can-i-walk-there",
-          "phraseId": "v500-dire-navi-can-i-walk-there",
-          "audioId": "v500-dire-navi-can-i-walk-there",
+          "vi": "Nó bắt đầu lúc mấy giờ?",
+          "en": "What time does it start?",
+          "intent": "show-start-time",
+          "phraseId": "v900-time-date-book-what-time-does-it-start",
+          "audioId": "v900-time-date-book-what-time-does-it-start",
           "status": "mapped"
         }
       ],
       "sections": [
         {
-          "id": "program-before-the-ride",
-          "heading": "Program Before The Ride",
+          "id": "show-before-the-ride",
+          "heading": "Show Before The Ride",
           "body": "The theatre matters most when there is a specific performance, concert, or event. Without that, it stays as a central name rather than a place to tour."
         },
         {

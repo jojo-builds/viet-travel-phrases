@@ -245,7 +245,7 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "directions-1",
+            "v500-time-date-book-one-ticket-please",
             "directions-8",
             "v900-tran-where-can-i-buy-a-ticket"
           ]
@@ -463,7 +463,7 @@
         {
           "id": "at-glance",
           "title": "A Big Pancake For The Table",
-          "body": "Bánh Xèo 46A is known for the larger restaurant version of bánh xèo. Expect a crisp hot pancake, fresh greens, lettuce, sauce, and a table that gets busy fast."
+          "body": "Bánh Xèo 46A turns bánh xèo into a full table meal. The pancake comes out hot and crisp, with herbs, lettuce, dipping sauce, and enough moving parts to slow everyone down."
         },
         {
           "id": "quick-say",
@@ -542,7 +542,7 @@
       "pageID": "city-hcmc-place-ben-thanh-metro-station",
       "summary": "Ben Thanh Metro Station is about arrival and onward movement: train entrances, route names, street exits, and the handoff back into central Saigon.",
       "context": "Ben Thanh Metro Station is about arrival and onward movement: train entrances, route names, street exits, and the handoff back into central Saigon.",
-      "tip": "The lasting value is the station name, exits, and central place. Let official signs and ticket gates handle the practical move; keep the page story simple.",
+      "tip": "The name, exits, and above-ground landmarks are what to remember here. Let the current ticket gates and official signs handle the exact ride details.",
       "rationale": "Ben Thanh Metro Station is a transport orientation point near a major market name, practical for signs, meetups, and handoffs.",
       "sections": [
         {
@@ -577,8 +577,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Service Facts Are Separate",
-          "body": "The lasting value is the station name, exits, and central place. Let official signs and ticket gates handle the practical move; keep the page story simple."
+          "title": "Signs And Gates Handle The Details",
+          "body": "The name, exits, and above-ground landmarks are what to remember here. Let the current ticket gates and official signs handle the exact ride details."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -871,8 +871,8 @@
           "body": "",
           "phraseIDs": [
             "directions-1",
-            "directions-3",
-            "v500-dire-navi-can-i-walk-there"
+            "v900-time-date-book-what-time-does-it-start",
+            "v500-sigh-acti-where-is-the-entrance"
           ]
         },
         {
@@ -1535,7 +1535,7 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "directions-1",
+            "v500-time-date-book-one-ticket-please",
             "v500-sigh-acti-where-is-the-entrance",
             "sight-3"
           ]
@@ -1761,8 +1761,8 @@
           "body": "",
           "phraseIDs": [
             "directions-1",
-            "directions-3",
-            "v500-dire-navi-can-i-walk-there"
+            "v900-time-date-book-what-time-does-it-start",
+            "v500-sigh-acti-where-is-the-entrance"
           ]
         },
         {
@@ -3847,7 +3847,7 @@
           "phraseIDs": [
             "directions-8",
             "v900-tran-where-can-i-buy-a-ticket",
-            "transport-2"
+            "time-7"
           ]
         },
         {

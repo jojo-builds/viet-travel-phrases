@@ -257,27 +257,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Bến thuyền ở đâu?",
-          "en": "Where is the boat pier?",
-          "intent": "v900-tran-where-is-the-boat-pier",
-          "phraseId": "v900-tran-where-is-the-boat-pier",
-          "audioId": "v900-tran-where-is-the-boat-pier",
+          "vi": "Cho hỏi, đi tới đó thế nào?",
+          "en": "Excuse me, how do I get there?",
+          "intent": "directions-how-to-get",
+          "phraseId": "directions-1",
+          "audioId": "directions-1",
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể mua vé ở đâu?",
-          "en": "Where can I buy a ticket?",
-          "intent": "v900-tran-where-can-i-buy-a-ticket",
-          "phraseId": "v900-tran-where-can-i-buy-a-ticket",
-          "audioId": "v900-tran-where-can-i-buy-a-ticket",
+          "vi": "Có gần đây không?",
+          "en": "Is it near here?",
+          "intent": "directions-near",
+          "phraseId": "directions-2",
+          "audioId": "directions-2",
           "status": "mapped"
         },
         {
-          "vi": "Điểm đón ở đâu?",
-          "en": "Where is the pickup point?",
-          "intent": "directions-pickup-point",
-          "phraseId": "directions-8",
-          "audioId": "directions-8",
+          "vi": "Hãy đón tôi ở lối vào này",
+          "en": "Please pick me up at this entrance",
+          "intent": "pickup-entrance",
+          "phraseId": "v900-tran-pick-me-up-at-this-entrance",
+          "audioId": "v900-tran-pick-me-up-at-this-entrance",
           "status": "mapped"
         }
       ],
@@ -314,7 +314,9 @@
           "status": "render"
         }
       ],
-      "verificationFlags": [],
+      "verificationFlags": [
+        "Freshness risk: evening crowding, boat activity, and riverfront access can shift by season and event; visible copy avoids schedule claims."
+      ],
       "qa": {
         "replaceabilityTest": "pass",
         "phraseCardTest": "pass",
@@ -2367,11 +2369,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
-          "label": "Quầy vé phố cổ Hội An",
-          "relationship": "heritage-ticket threshold",
-          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Related because: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "catalogId": "viet-family-city-hoian-place-cam-thanh-coconut-village",
+          "label": "Rừng dừa Cẩm Thanh",
+          "relationship": "same-water landscape",
+          "displaySubtitle": "The wider coconut-channel setting behind the round boat ride.",
+          "reason": "The wider coconut-channel setting behind the round boat ride.",
           "status": "render"
         }
       ],
@@ -3200,11 +3202,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
-          "label": "Quầy vé phố cổ Hội An",
-          "relationship": "heritage-ticket threshold",
-          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Related because: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "catalogId": "viet-family-city-hoian-place-cham-islands",
+          "label": "Cù Lao Chàm",
+          "relationship": "island-day context",
+          "displaySubtitle": "The island day itself when the boat ride needs a beach, water, and weather frame.",
+          "reason": "The island day itself when the boat ride needs a beach, water, and weather frame.",
           "status": "render"
         }
       ],
@@ -3925,11 +3927,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
-          "label": "Quầy vé phố cổ Hội An",
-          "relationship": "heritage-ticket threshold",
-          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Related because: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "catalogId": "viet-family-city-hoian-place-hoi-an-market",
+          "label": "Chợ Hội An",
+          "relationship": "market-to-class context",
+          "displaySubtitle": "The market side of a cooking day, where ingredients and the first food decisions happen.",
+          "reason": "The market side of a cooking day, where ingredients and the first food decisions happen.",
           "status": "render"
         }
       ],
@@ -4037,11 +4039,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
-          "label": "Quầy vé phố cổ Hội An",
-          "relationship": "heritage-ticket threshold",
-          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Related because: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "catalogId": "viet-family-city-hoian-place-cam-kim-island",
+          "label": "Cẩm Kim",
+          "relationship": "countryside-route context",
+          "displaySubtitle": "A slower island road when the bicycle loop should feel like fields, homes, and craft memory.",
+          "reason": "A slower island road when the bicycle loop should feel like fields, homes, and craft memory.",
           "status": "render"
         }
       ],
@@ -4580,8 +4582,8 @@
         },
         {
           "id": "cafe-contrast",
-          "heading": "Cafe Contrast",
-          "body": "Choose it when Faifo is too view-focused or a full cafe sit is too long. This is the tighter coffee break in the old-town flow."
+          "heading": "A Tighter Coffee Break",
+          "body": "Faifo is the view stop. Espresso Station is the smaller coffee break in the old-town flow."
         },
         {
           "id": "one-drink-then-back-out",
@@ -4589,9 +4591,9 @@
           "body": "The right move is one drink, a moment out of the lane traffic, then back into the day."
         },
         {
-          "id": "not-a-view-stop",
-          "heading": "Coffee Before The View",
-          "body": "This does not need to carry the rooftop coffee role. Its strength is the smaller bar and the lane around it."
+          "id": "lane-before-view",
+          "heading": "Lane Before View",
+          "body": "The strength is the smaller bar and the lane around it: coffee first, rooflines somewhere else."
         }
       ],
       "mentionedHereCandidates": [],
@@ -4891,19 +4893,19 @@
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể mua vé ở đâu?",
-          "en": "Where can I buy a ticket?",
-          "intent": "v900-tran-where-can-i-buy-a-ticket",
-          "phraseId": "v900-tran-where-can-i-buy-a-ticket",
-          "audioId": "v900-tran-where-can-i-buy-a-ticket",
+          "vi": "Vui lòng viết địa chỉ giúp tôi",
+          "en": "Please write the address for me",
+          "intent": "address-write",
+          "phraseId": "v900-dire-navi-please-write-the-address-for-me",
+          "audioId": "v900-dire-navi-please-write-the-address-for-me",
           "status": "mapped"
         },
         {
-          "vi": "Dừng ở đây được rồi",
-          "en": "You can stop here",
-          "intent": "transport-stop-here",
-          "phraseId": "taxi-3",
-          "audioId": "taxi-3",
+          "vi": "Hãy đón tôi ở lối vào này",
+          "en": "Please pick me up at this entrance",
+          "intent": "pickup-entrance",
+          "phraseId": "v900-tran-pick-me-up-at-this-entrance",
+          "audioId": "v900-tran-pick-me-up-at-this-entrance",
           "status": "mapped"
         }
       ],
@@ -4924,9 +4926,9 @@
           "body": "The phrase belongs at the handoff moment: bags collected, driver or car found, and Hội An becoming a road destination."
         },
         {
-          "id": "route-not-attraction",
-          "heading": "Route Language Helps",
-          "body": "Treat this as transfer language, not sightseeing. The key move is knowing the wording clearly before the ride."
+          "id": "transfer-not-sightseeing",
+          "heading": "Transfer, Not Sightseeing",
+          "body": "This is arrival language for the transfer. The key move is knowing the pickup point, driver name, and Hội An address before the ride."
         }
       ],
       "mentionedHereCandidates": [],
@@ -4940,7 +4942,9 @@
           "status": "render"
         }
       ],
-      "verificationFlags": [],
+      "verificationFlags": [
+        "Freshness risk: airport pickup points, transfer prices, driver meeting rules, and road timing can change; visible copy avoids exact fares and pickup zones."
+      ],
       "qa": {
         "replaceabilityTest": "pass",
         "phraseCardTest": "pass",
@@ -5380,11 +5384,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
-          "label": "Quầy vé phố cổ Hội An",
-          "relationship": "heritage-ticket threshold",
-          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Related because: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "catalogId": "viet-family-city-hoian-place-reaching-out-arts-crafts",
+          "label": "Reaching Out Arts & Crafts",
+          "relationship": "craft-stop comparison",
+          "displaySubtitle": "A quieter craft stop when the day wants handmade objects without a full workshop plan.",
+          "reason": "A quieter craft stop when the day wants handmade objects without a full workshop plan.",
           "status": "render"
         }
       ],
@@ -5816,8 +5820,8 @@
         },
         {
           "id": "watch-wood-take-shape",
-          "heading": "Watch Wood Turn practical",
-          "body": "Notice how wood turns practical: tools, hands, panels, and the unhurried pace of work."
+          "heading": "Watch Wood Take Shape",
+          "body": "Notice the tools, hands, panels, and unhurried pace of work before the finished souvenirs."
         },
         {
           "id": "workshop-pace-comes-first",
@@ -5940,11 +5944,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
-          "label": "Quầy vé phố cổ Hội An",
-          "relationship": "heritage-ticket threshold",
-          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Related because: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "catalogId": "viet-family-city-hoian-place-bach-dang-boat-pier",
+          "label": "Bến thuyền Bạch Đằng",
+          "relationship": "river-boarding context",
+          "displaySubtitle": "The river boarding edge when the lantern boat needs a clear place to start.",
+          "reason": "The river boarding edge when the lantern boat needs a clear place to start.",
           "status": "render"
         }
       ],
@@ -6052,11 +6056,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
-          "label": "Quầy vé phố cổ Hội An",
-          "relationship": "heritage-ticket threshold",
-          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Related because: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "catalogId": "viet-family-city-hoian-place-handicraft-workshop",
+          "label": "Xưởng thủ công Hội An",
+          "relationship": "hands-on craft comparison",
+          "displaySubtitle": "Another hands-on craft stop when making something matters more than browsing.",
+          "reason": "Another hands-on craft stop when making something matters more than browsing.",
           "status": "render"
         }
       ],
@@ -6164,11 +6168,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
-          "label": "Quầy vé phố cổ Hội An",
-          "relationship": "heritage-ticket threshold",
-          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Related because: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "catalogId": "viet-family-city-hoian-place-traditional-art-performance-house",
+          "label": "Nhà biểu diễn nghệ thuật cổ truyền Hội An",
+          "relationship": "performance comparison",
+          "displaySubtitle": "A more traditional performance stop when the evening should stay cultural and seated.",
+          "reason": "A more traditional performance stop when the evening should stay cultural and seated.",
           "status": "render"
         }
       ],
@@ -6736,11 +6740,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
-          "label": "Quầy vé phố cổ Hội An",
-          "relationship": "heritage-ticket threshold",
-          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Related because: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "catalogId": "viet-family-city-hoian-place-lune-center",
+          "label": "Lune Center Hội An",
+          "relationship": "evening-show comparison",
+          "displaySubtitle": "A smaller staged evening when the plan wants performance without the larger show-park setting.",
+          "reason": "A smaller staged evening when the plan wants performance without the larger show-park setting.",
           "status": "render"
         }
       ],
@@ -8460,11 +8464,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
-          "label": "Quầy vé phố cổ Hội An",
-          "relationship": "heritage-ticket threshold",
-          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Related because: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "catalogId": "viet-family-city-hoian-place-thanh-ha",
+          "label": "Làng gốm Thanh Hà",
+          "relationship": "craft-village context",
+          "displaySubtitle": "The pottery village context behind the workshop, with clay, kilns, and a short craft detour.",
+          "reason": "The pottery village context behind the workshop, with clay, kilns, and a short craft detour.",
           "status": "render"
         }
       ],
@@ -9352,7 +9356,7 @@
         {
           "id": "cafe-not-landmark",
           "heading": "Cafe, Not Landmark",
-          "body": "Do not make it carry the whole itinerary. Its role is a shaded table before Hội An becomes busy again."
+          "body": "It is a shaded breakfast table before Hội An becomes busy again, with enough room to keep the rest of the day loose."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10708,11 +10712,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-ancient-town-ticket-booth",
-          "label": "Quầy vé phố cổ Hội An",
-          "relationship": "heritage-ticket threshold",
-          "displaySubtitle": "The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
-          "reason": "Related because: The small old-town threshold where wandering turns into tickets, houses, halls, and a clearer route.",
+          "catalogId": "viet-family-city-hoian-place-lune-center",
+          "label": "Lune Center Hội An",
+          "relationship": "performance comparison",
+          "displaySubtitle": "A more contemporary staged evening when the group wants performance with a bigger theatre feel.",
+          "reason": "A more contemporary staged evening when the group wants performance with a bigger theatre feel.",
           "status": "render"
         }
       ],

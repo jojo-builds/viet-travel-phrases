@@ -73,7 +73,10 @@ Category-balanced batch:
   - Scope: landmarks, attractions, streets, stations, nature, parks, and neighborhoods across Đà Nẵng, Hà Nội, Saigon, Hội An, and Huế.
   - Text review after this batch found copy that validated but still needed a more human phone read: a sentence fragment on Hải Vân Pass, directive cyclo wording, the formula-risk heading `Ordinary Is Enough`, duplicated Đống Đa neighborhood guidance, and awkward Hội An bus-station grammar. Those were repaired in source.
   - `balanced-mobility-landmark-humanized-rerun-001-results.jsonl`: `5` edited pages rerun after the copy repair, `15` screenshots, `0` failures.
-- Combined latest-current proof across the maintained result files is `235` unique pages, `705` screenshots, and `0` current failures. Total historical proof rows in this folder include `296` rows and `888` screenshots, but the current count uses the latest passing row for each page.
+- Subagent hard-block / screenshot-feedback proof:
+  - `subagent-hardblock-humanized-rerun-001-results.jsonl`: `33` repaired pages, `99` screenshots, `0` failures.
+  - Scope: the user-flagged Bánh Xèo 46A page after `Bib Gourmand`/award-language removal, food glossary pages, culture/performance phrase-card repairs, mobility/arrival/station/river/street repairs, and the retargeted Hanoi street related-card cluster.
+- Combined latest-current proof across the maintained result files is `244` unique pages, `732` screenshots, and `0` current failures. Total historical proof rows in this folder include `330` rows and `990` screenshots, but the current count uses the latest passing row for each page.
 
 This is a meaningful rendered proof expansion, not the final 520-page receipt. The final gate still needs either all `520` pages captured by this harness or an explicit approval-standard amendment accepting full source/runtime review plus category-balanced rendered proof.
 

@@ -452,8 +452,8 @@
           "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
           "label": "Phở Gia Truyền",
           "relationship": "beef-phở shop",
-          "displaySubtitle": "A Old Quarter phở bowl for steam, sliced beef, herbs, and room pace.",
-          "reason": "Related because: A Old Quarter phở bowl for steam, sliced beef, herbs, and room pace.",
+          "displaySubtitle": "An Old Quarter phở bowl for steam, sliced beef, herbs, and room pace.",
+          "reason": "Related because: An Old Quarter phở bowl for steam, sliced beef, herbs, and room pace.",
           "status": "render"
         },
         {
@@ -1479,7 +1479,7 @@
           "catalogId": "viet-family-city-hanoi-place-bun-cha-ta",
           "label": "Bún Chả Ta",
           "relationship": "same-dish restaurant comparison",
-          "displaySubtitle": "A Old Quarter table when the dipping bowl should stay central.",
+          "displaySubtitle": "An Old Quarter table when the dipping bowl should stay central.",
           "reason": "Bun Cha Ta gives Dac Kim another recognized bún chả comparison.",
           "status": "render"
         },
@@ -1629,7 +1629,7 @@
           "catalogId": "viet-family-city-hanoi-place-bun-cha-ta",
           "label": "Bún Chả Ta",
           "relationship": "same-dish restaurant comparison",
-          "displaySubtitle": "A Old Quarter table when the dipping bowl should feel slower and more seated.",
+          "displaySubtitle": "An Old Quarter table when the dipping bowl should feel slower and more seated.",
           "reason": "Bun Cha Ta gives Tuyet a seated Old Quarter comparison.",
           "status": "render"
         },
@@ -4144,11 +4144,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-hang-bac-street",
-          "label": "Phố Hàng Bạc",
-          "relationship": "silver-street spine",
-          "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
-          "reason": "Related because: An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
+          "catalogId": "viet-family-city-hanoi-place-old-quarter",
+          "label": "Phố cổ Hà Nội",
+          "relationship": "street within the Old Quarter",
+          "displaySubtitle": "The tight old-lane area around silk signs, scooters, hotel doors, coffee rooms, and trade streets.",
+          "reason": "Related because Hang Gai makes more sense as one thread inside the wider Old Quarter walk.",
           "status": "render"
         }
       ],
@@ -6945,11 +6945,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-hang-bac-street",
-          "label": "Phố Hàng Bạc",
-          "relationship": "silver-street spine",
-          "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
-          "reason": "Related because: An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
+          "catalogId": "viet-family-city-hanoi-place-egg-coffee",
+          "label": "Cà phê trứng ở Hà Nội",
+          "relationship": "coffee street to signature cup",
+          "displaySubtitle": "Hanoi's creamy small-cup coffee, usually a slower sit above or beside the street.",
+          "reason": "Related because Nguyen Huu Huan is a coffee street, and egg coffee is one of the clearest reasons to stop there.",
           "status": "render"
         }
       ],
@@ -7834,15 +7834,17 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-hang-bac-street",
-          "label": "Phố Hàng Bạc",
-          "relationship": "silver-street spine",
-          "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
-          "reason": "Related because: An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
+          "catalogId": "viet-family-city-hanoi-place-ba-dinh-district",
+          "label": "Quận Ba Đình",
+          "relationship": "leafy-district context",
+          "displaySubtitle": "The broader Ba Đình area when the walk should feel like shade, villas, official buildings, and calmer streets.",
+          "reason": "The broader Ba Đình area when the walk should feel like shade, villas, official buildings, and calmer streets.",
           "status": "render"
         }
       ],
-      "verificationFlags": [],
+      "verificationFlags": [
+        "Freshness risk: sidewalk access, traffic, and photo comfort can vary by block; visible copy avoids fixed route promises."
+      ],
       "qa": {
         "replaceabilityTest": "pass",
         "phraseCardTest": "pass",
@@ -8435,7 +8437,7 @@
           "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
           "label": "Phở Gia Truyền",
           "relationship": "pho-shop comparison",
-          "displaySubtitle": "A Old Quarter beef-pho shop for broth and room pace.",
+          "displaySubtitle": "An Old Quarter beef-pho shop for broth and room pace.",
           "reason": "Pho Gia Truyen gives the named-pho shop comparison without duplicating the chicken-pho role.",
           "status": "render"
         }
@@ -9360,11 +9362,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-hang-bac-street",
-          "label": "Phố Hàng Bạc",
-          "relationship": "silver-street spine",
-          "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
-          "reason": "Related because: An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
+          "catalogId": "viet-family-city-hanoi-place-bia-hoi",
+          "label": "Bia hơi Hà Nội",
+          "relationship": "evening street to sidewalk beer",
+          "displaySubtitle": "Light fresh beer, low stools, quick pours, and a short social pause on a Hanoi corner.",
+          "reason": "Related because Ta Hien is an evening street, and bia hoi is the useful drink cue for that scene.",
           "status": "render"
         }
       ],
@@ -10032,15 +10034,17 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-hang-bac-street",
-          "label": "Phố Hàng Bạc",
-          "relationship": "silver-street spine",
-          "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
-          "reason": "Related because: An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
+          "catalogId": "viet-family-city-hanoi-place-hanoi-railway-station",
+          "label": "Ga Hà Nội",
+          "relationship": "rail-context",
+          "displaySubtitle": "The working station context behind the train-street idea: platforms, route boards, bags, and real rail movement.",
+          "reason": "The working station context behind the train-street idea: platforms, route boards, bags, and real rail movement.",
           "status": "render"
         }
       ],
-      "verificationFlags": [],
+      "verificationFlags": [
+        "Freshness risk: Train Street access rules and enforcement can change; visible copy defers to local signs, staff, and safety boundaries."
+      ],
       "qa": {
         "replaceabilityTest": "pass",
         "phraseCardTest": "pass",
@@ -10366,11 +10370,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-hang-bac-street",
-          "label": "Phố Hàng Bạc",
-          "relationship": "silver-street spine",
-          "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
-          "reason": "Related because: An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
+          "catalogId": "viet-family-city-hanoi-place-french-quarter",
+          "label": "Khu phố Pháp",
+          "relationship": "street within the French Quarter",
+          "displaySubtitle": "Wider boulevards, colonial-era facades, hotel edges, trees, and calmer central walks.",
+          "reason": "Related because Trang Tien belongs to the French Quarter side of central Hanoi, not the Old Quarter jewelry lanes.",
           "status": "render"
         }
       ],
@@ -10477,11 +10481,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-hang-bac-street",
-          "label": "Phố Hàng Bạc",
-          "relationship": "silver-street spine",
-          "displaySubtitle": "An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
-          "reason": "Related because: An Old Quarter jewelry lane where silver windows, scooters, and narrow shopfronts carry the walk.",
+          "catalogId": "viet-family-city-hanoi-place-cong-ca-phe-trieu-viet-vuong",
+          "label": "Cộng Cà Phê",
+          "relationship": "coffee street to named cafe",
+          "displaySubtitle": "A recognizable cafe stop on Triệu Việt Vương, with retro design cues and cold drinks.",
+          "reason": "Related because the coffee street needs a concrete cafe anchor rather than an unrelated Old Quarter lane.",
           "status": "render"
         }
       ],

@@ -247,6 +247,49 @@ Rendered proof after this repair batch:
 
 Remaining honest risks:
 
-- The global V2.2 rendered proof gate is still open: `285` pages still need current screenshots unless the gate is explicitly amended.
+- The global V2.2 rendered proof gate is still open: `276` pages still need current screenshots unless the gate is explicitly amended.
 - The cross-taxonomy auditor found large repeated phrase-card sets by taxonomy. Some repetition is expected for common travel actions, but high-traffic pages still need human-rendered review for phrase-card fit.
 - Runtime taxonomy mismatches from the subagent hard-block list were repaired and rendered in the sample above. Related grouping should still be watched during the remaining screenshot pass, because older legacy metadata can still leak into shelves/search even when visible copy is strong.
+
+## Ninth Repair Batch, 2026-06-01
+
+This continuation followed the user screenshot feedback that unexplained terms such as `Bib Gourmand` are not acceptable for first-time U.S. travelers. The rule applied in source review: if a reader might not know whether a term is a dish, place, award, restaurant category, or local custom, explain it immediately or remove it and lead with concrete food, table, route, or place utility.
+
+Read-only audit scope:
+
+- Food: `214` pages across Restaurant, Dish, Market, Cafe, Dessert, and Drink.
+- Culture / attraction: `191` pages across Landmark, Attraction, Museum, Park, Village, Shopping, and craft/shopping edge pages.
+- Mobility / outdoor / place-feel: `118` pages across Arrival, Station, Street, Port, River, Beach, Nature, and Neighborhood.
+- Local runtime inventory checked all `520` V2.2 pages and the generated `viet-authored-listing-pages.json` taxonomy groupings.
+
+Repaired source classes:
+
+- Screenshot-specific readability: `city-hcmc-place-banh-xeo-46a` no longer uses `Bib Gourmand`, award shorthand, or `restaurant version` language. The intro now explains the table experience in plain food terms.
+- Food hard blockers: explained `mắm nêm`, `nhà rường`, and `cơm niêu`; removed `support choice`, `Heritage Dinner Role`, `Central Market Role`, `Simple Bowl Logic`, and similar app-architecture copy; softened cafe and restaurant role-language on Hội An and Huế pages.
+- Culture/performance hard blockers: explained `tuồng` and `Nhã nhạc` as performance forms; swapped walking/direction phrases on theater/show pages to ticket, entrance, photo, and start-time phrases.
+- Related-card mismatches: retargeted HCMC, Hội An, Huế, Đà Nẵng, and Hanoi fallback clusters where old cafe, ticket-booth, cyclo, airport-market, river, or jewelry-lane cards were rendering on unrelated pages.
+- Mobility hard blockers: fixed airport, railway, metro, canal, river, street, and transfer pages with more fitting phrase cards, fresher verification flags, and less schematic `spine/service facts` language.
+
+Validation after the ninth batch:
+
+- `node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js`: wrote `520` entries across `5` cities.
+- `node native-ios/scripts/import-viet-city-handwritten-copy.js`: imported `520` handwritten city copy entries.
+- `node native-ios/scripts/generate-viet-catalog.js`: wrote `1767` families and `1785` phrases.
+- `node native-ios/scripts/generate-authored-tier-one-pages.js`: wrote native authored listing pages.
+- `node native-ios/scripts/generate-viet-sqlite-fixture.js`: SQLite `integrity_check: ok`.
+- `node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production`: `PASS` for all `520`.
+- `node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js`: `failures: []`.
+- `node native-ios/scripts/validate-viet-city-copy.js`: passed `5` hubs, `520` city noun pages, `520` unique target heroes.
+- `node native-ios/scripts/validate-viet-city-library.js`: passed `826` pages.
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js`: `ok: true`, `0` release-blocking missing-audio rows.
+- `node native-ios/scripts/audit-viet-listing-production-qa.js`: `0` blockers, `0` majors.
+- `node scripts/guard-native-only.js`: passed.
+- `git diff --check`: passed.
+- Targeted hard-block text sweep against source and generated runtime: `0` hits for `Bib Gourmand`, `MICHELIN`, dining-insider shorthand, old schema headings, and the listed process-language phrases.
+
+Rendered proof after the ninth batch:
+
+- Added `subagent-hardblock-humanized-rerun-001-results.jsonl`: `33` repaired pages, `99` screenshots, `0` failures.
+- The sample includes the user-flagged `city-hcmc-place-banh-xeo-46a`, food glossary fixes, culture/performance phrase-card fixes, airport/rail/metro/river/street mobility fixes, and the retargeted Hanoi street related-card cluster.
+- Combined latest-current proof is now `244` unique pages, `732` latest screenshots, and `0` current failures across maintained result files.
+- Remaining global proof gap: `276` pages still need current rendered screenshots unless the gate is explicitly amended.

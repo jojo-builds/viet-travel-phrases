@@ -582,11 +582,11 @@
       "city": "Huế",
       "category": "Restaurant",
       "pronunciation": "khong gian xua",
-      "travelerMoment": "Ancient Space Restaurant is a ruong-house, cơm niêu, and Hue-dishes support choice: garden paths and timber first, then a traditional table built for groups.",
-      "storySpine": "The reason is old-house dining in Hue: ruong architecture, courtyard scale, and a menu that gathers rice-pot, Hue, and court-style cues in one place.",
+      "travelerMoment": "Ancient Space Restaurant is the dinner to remember when the group wants a traditional Hue room: garden paths and timber first, then a shared table.",
+      "storySpine": "The reason is old-house dining in Hue: nhà rường timber-house architecture, courtyard scale, clay-pot rice, and local dishes gathered in one place.",
       "intro": {
-        "heading": "Ruong House, Shared Table",
-        "body": "Ancient Space Restaurant is a Hue dinner for ruong-house architecture, cơm niêu, local dishes, and a traditional table when the group wants one settled meal."
+        "heading": "Timber House, Shared Table",
+        "body": "Ancient Space Restaurant is a Hue dinner for nhà rường timber-house architecture, cơm niêu clay-pot rice, local dishes, and one settled shared table."
       },
       "usefulPhraseCards": [
         {
@@ -626,9 +626,9 @@
           "body": "The group can get a traditional menu in one place. Let lighter street-food pages carry the sharper snack hunt."
         },
         {
-          "id": "support-listing",
-          "heading": "Heritage Dinner Role",
-          "body": "Treat it as a heritage-dinner option, not the sharpest Hue food chase. The house, courtyard, and shared table carry most of the reason."
+          "id": "heritage-dinner",
+          "heading": "Dinner Inside The House",
+          "body": "The house, courtyard, and shared table are the reason to come. Save sharper snack hunting for lighter street-food pages."
         }
       ],
       "mentionedHereCandidates": [],
@@ -3227,9 +3227,9 @@
           "body": "A short visit does the job. The market is easier when the goal is tasting, browsing, or recognizing Hue's daily shopping rhythm."
         },
         {
-          "id": "central-market-role",
-          "heading": "Central Market Role",
-          "body": "Dong Ba is one of Hue's easiest places to connect food, gifts, and everyday shopping without adding a separate market trip."
+          "id": "food-gifts-daily-shopping",
+          "heading": "Food, Gifts, Daily Shopping",
+          "body": "Dong Ba connects snacks, gifts, sesame candy, and everyday shopping in one central stop, without adding a separate market trip."
         }
       ],
       "mentionedHereCandidates": [
@@ -3723,8 +3723,8 @@
           "catalogId": "viet-family-city-hue-place-cyclo-citadel-loop",
           "label": "Xích lô quanh Kinh thành",
           "relationship": "slow city loop",
-          "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
-          "reason": "Related because: A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "displaySubtitle": "A slow cyclo loop around the Citadel edges when the gates start to blur together.",
+          "reason": "Related because the theater sits inside the Citadel world, and the cyclo loop keeps those outer gates easy to understand.",
           "status": "render"
         }
       ],
@@ -4720,11 +4720,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-cyclo-citadel-loop",
-          "label": "Xích lô quanh Kinh thành",
-          "relationship": "slow city loop",
-          "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
-          "reason": "Related because: A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "catalogId": "viet-family-city-hue-place-incense-village",
+          "label": "Làng hương Thủy Xuân",
+          "relationship": "village-craft context",
+          "displaySubtitle": "The wider incense-village stop behind the workshop colors, bundles, and photo corners.",
+          "reason": "The wider incense-village stop behind the workshop colors, bundles, and photo corners.",
           "status": "render"
         }
       ],
@@ -5277,11 +5277,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-cyclo-citadel-loop",
-          "label": "Xích lô quanh Kinh thành",
-          "relationship": "slow city loop",
-          "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
-          "reason": "Related because: A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "catalogId": "viet-family-city-hue-place-tam-giang-lagoon",
+          "label": "Đầm phá Tam Giang",
+          "relationship": "lagoon-context",
+          "displaySubtitle": "The lagoon landscape behind the seafood boat: water, light, and a route outside central Hue.",
+          "reason": "The lagoon landscape behind the seafood boat: water, light, and a route outside central Hue.",
           "status": "render"
         }
       ],
@@ -5774,8 +5774,8 @@
       "travelerMoment": "Le Loi is part of Hue's river-city layout, linking station, hotels, trees, crossings, cafes, and central walks into one clear line.",
       "storySpine": "A named street can lower the first-day confusion, especially in Hue where river, station, hotels, and citadel routes sit close even when the map is not obvious.",
       "intro": {
-        "heading": "A River-Side Spine",
-        "body": "Le Loi Street is a simple Hue spine to recognize before you walk: trees, river proximity, scooters, hotel edges, and crossings that help the city feel less abstract."
+        "heading": "Trees Beside The River",
+        "body": "Le Loi Street is a Hue street to recognize before you walk: trees, river proximity, scooters, hotel edges, and crossings that make the center easier to place."
       },
       "usefulPhraseCards": [
         {
@@ -5806,8 +5806,8 @@
       "sections": [
         {
           "id": "le-loi-for-bearings",
-          "heading": "Le Loi For Bearings",
-          "body": "The street name is the practical part. When it appears on a hotel address, taxi screen, or corner sign, the river-side center feels easier to place."
+          "heading": "Le Loi On The Sign",
+          "body": "When the name appears on a hotel address, taxi screen, or corner sign, the riverside center feels easier to place."
         },
         {
           "id": "first-river-walk",
@@ -5816,8 +5816,8 @@
         },
         {
           "id": "not-a-sight-by-itself",
-          "heading": "A Street Between Stops",
-          "body": "The street is a line between stops, a practical street name. Its job is to make nearby river walks, cafés, and hotel returns easier to place."
+          "heading": "Between River Stops",
+          "body": "The street is useful between cafes, hotel blocks, bridges, and river walks. It helps the center feel less abstract without becoming a sight by itself."
         },
         {
           "id": "crossings-need-patience",
@@ -5836,7 +5836,9 @@
           "status": "render"
         }
       ],
-      "verificationFlags": [],
+      "verificationFlags": [
+        "Freshness risk: sidewalks, crossings, traffic, and riverfront access can change by block; visible copy avoids fixed walking promises."
+      ],
       "qa": {
         "replaceabilityTest": "pass",
         "phraseCardTest": "pass",
@@ -7119,7 +7121,7 @@
       "storySpine": "The stop matters because it shows Hue's royal culture as sound and ceremony alongside architecture and display cases.",
       "intro": {
         "heading": "Court Culture Heard Live",
-        "body": "Hue Royal Court Music turns the old capital into a listening stop: traditional instruments, stage light, costumes, and a performance side beyond gates and tombs."
+        "body": "Nhã nhạc is Hue's royal court music: traditional instruments, formal pacing, costumes, and a listening experience beyond gates and tombs."
       },
       "usefulPhraseCards": [
         {
@@ -7151,7 +7153,7 @@
         {
           "id": "performance-not-museum-silence",
           "heading": "Performance After Museum Silence",
-          "body": "This staged cultural experience gives the old capital sound as well as silhouette. Hearing court tradition in Hue gives the old capital a sound, more than a silhouette."
+          "body": "This staged cultural experience gives Hue sound as well as architecture: instruments, voices, costumes, and the slower formality of court tradition."
         },
         {
           "id": "an-evening-culture-slot",
@@ -7161,22 +7163,22 @@
         {
           "id": "court-music-as-the-evening",
           "heading": "Court Music As The Evening",
-          "body": "The evening is cultural rather than casual: royal court sound, formal pacing, and a performance setting that sits to Hue's imperial story."
+          "body": "The evening is cultural rather than casual: royal court sound, formal pacing, and a performance setting tied to Hue's imperial story."
         },
         {
           "id": "formality-is-the-point",
-          "heading": "Formality is the draw",
-          "body": "The music may feel formal compared with casual nightlife. That restraint is part of the court tradition, part of its restrained energy."
+          "heading": "Formality Is The Draw",
+          "body": "The music may feel formal compared with casual nightlife. That restraint is part of the court tradition, and it is the point."
         }
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-cyclo-citadel-loop",
-          "label": "Xích lô quanh Kinh thành",
-          "relationship": "slow city loop",
-          "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
-          "reason": "Related because: A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "catalogId": "viet-family-city-hue-place-duyet-thi-duong-theater",
+          "label": "Nhà hát Duyệt Thị Đường",
+          "relationship": "royal-performance-context",
+          "displaySubtitle": "The royal-theater setting when Hue's court performance needs a more physical place to attach to.",
+          "reason": "The royal-theater setting when Hue's court performance needs a more physical place to attach to.",
           "status": "render"
         }
       ],
@@ -7723,11 +7725,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-cyclo-citadel-loop",
-          "label": "Xích lô quanh Kinh thành",
-          "relationship": "slow city loop",
-          "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
-          "reason": "Related because: A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "catalogId": "viet-family-city-hue-place-toa-kham-boat-station",
+          "label": "Bến thuyền Tòa Khâm",
+          "relationship": "river-boarding context",
+          "displaySubtitle": "The practical river boarding point when the dragon boat needs a place to start.",
+          "reason": "The practical river boarding point when the dragon boat needs a place to start.",
           "status": "render"
         }
       ],
@@ -7945,15 +7947,17 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-an-cuu-market",
-          "label": "Chợ An Cựu",
-          "relationship": "local-market contrast",
-          "displaySubtitle": "A neighborhood market for food, produce, and daily-life texture away from the bigger tourist loop.",
-          "reason": "Related because: A neighborhood market for food, produce, and daily-life texture away from the bigger tourist loop.",
+          "catalogId": "viet-family-city-hue-place-le-loi-street",
+          "label": "Đường Lê Lợi",
+          "relationship": "arrival-to-center handoff",
+          "displaySubtitle": "A riverside central street to recognize after the airport ride, with hotels, crossings, and first Hue bearings.",
+          "reason": "A riverside central street to recognize after the airport ride, with hotels, crossings, and first Hue bearings.",
           "status": "render"
         }
       ],
-      "verificationFlags": [],
+      "verificationFlags": [
+        "Freshness risk: airport pickup zones, transfer options, counters, and road timing can change; visible copy avoids exact fares and pickup doors."
+      ],
       "qa": {
         "replaceabilityTest": "pass",
         "phraseCardTest": "pass",
@@ -8501,11 +8505,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-cyclo-citadel-loop",
-          "label": "Xích lô quanh Kinh thành",
-          "relationship": "slow city loop",
-          "displaySubtitle": "A low-speed way to read the Citadel edges when walking every gate would blur together.",
-          "reason": "Related because: A low-speed way to read the Citadel edges when walking every gate would blur together.",
+          "catalogId": "viet-family-city-hue-place-nha-nhac-royal-court-music",
+          "label": "Nhã nhạc cung đình Huế",
+          "relationship": "same-performance context",
+          "displaySubtitle": "The court-music page that explains the sound, formality, and royal-culture reason behind the show.",
+          "reason": "The court-music page that explains the sound, formality, and royal-culture reason behind the show.",
           "status": "render"
         }
       ],

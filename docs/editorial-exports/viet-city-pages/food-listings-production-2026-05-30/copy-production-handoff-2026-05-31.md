@@ -190,3 +190,17 @@ Eighth repair batch, 2026-06-01:
 - Added current-text rerun proof `balanced-mobility-landmark-humanized-rerun-001-results.jsonl`: `5` edited pages, `15` screenshots, `0` failures.
 - Combined latest-current rendered proof is now `235` unique pages, `705` screenshots, `0` current failures.
 - Global status remains not complete: `285` V2.2 pages still need current rendered proof unless the standard is amended, and repeated phrase-card clusters remain a follow-up class.
+
+Ninth repair batch, 2026-06-01:
+
+- Continued from the user screenshot objection that `Bib Gourmand` and similar terms are confusing if left unexplained for first-time U.S. travelers.
+- Applied the editorial rule: explain unfamiliar awards, cuisines, performance forms, ingredients, transport terms, or local labels at the point of use, or omit them and lead with concrete food/table/place utility.
+- Re-audited hard-block slices with read-only agents: Food `214` pages, Culture/Attraction `191`, Mobility/Outdoor/Place-feel `118`, plus local runtime/taxonomy checks across all `520`.
+- Repaired the screenshot page `city-hcmc-place-banh-xeo-46a`: no visible `Bib Gourmand`, `MICHELIN`, or `restaurant version` phrasing remains; the intro now describes the hot pancake, herbs, sauce, and table experience in plain language.
+- Repaired source hard blockers from the subagent slices: food glossary gaps (`mắm nêm`, `nhà rường`, `cơm niêu`), performance-form explanations (`tuồng`, `Nhã nhạc`), theater/show phrase cards, airport/rail/metro/transfer phrase cards, river/street schematic wording, and related-card fallback clusters in HCMC, Hội An, Huế, Đà Nẵng, and Hanoi.
+- Regenerated V2.2 handwritten copy, native authored listing pages, phrase catalog, and SQLite.
+- Current source/runtime validators pass: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Targeted hard-block text sweep against authored V2.2 source and generated runtime is clean for `Bib Gourmand`, `MICHELIN`, old award/dining shorthand, schema headings, and the listed process-language residue.
+- Added current-text rendered proof `subagent-hardblock-humanized-rerun-001-results.jsonl`: `33` repaired pages, `99` screenshots, `0` failures. The batch includes the user-flagged Bánh Xèo 46A page plus food, culture/performance, mobility, and Hanoi related-card repairs.
+- Combined latest-current rendered proof is now `244` unique pages, `732` screenshots, `0` current failures.
+- Global status remains not complete: `276` V2.2 pages still need current rendered proof unless the standard is amended.
