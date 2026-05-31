@@ -10,7 +10,7 @@
     "catalogPromotedPageCount": 770,
     "cityLibraryPageCount": 826,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-31T18:03:20.893Z"
+    "generatedAt": "2026-05-31T18:09:56.813Z"
   },
   "pages": [
     {
@@ -183315,34 +183315,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "food-need-table",
+              "vietnamese": "Cho tôi bàn cho hai người nhé",
+              "english": "A table for two, please",
+              "pronunciation": "cho toy ban cho hai ngwee nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-food-need-table",
+              "audioKey": "food-need-table"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-sauce-on-the-side-please",
+              "vietnamese": "Xin vui lòng cho nước sốt vào bên cạnh",
+              "english": "Sauce on the side, please",
+              "pronunciation": "Xin vui long cho nuoc sot vao ben canh",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-sauce-on-the-side-please",
+              "audioKey": "v900-food-drin-sauce-on-the-side-please"
             }
           ],
           "breakdown": [],
@@ -183406,21 +183406,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "food-need-table"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-sauce-on-the-side-please"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-bep-cuon",
-          "food-menu"
+          "food-need-table"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "v900-food-drin-sauce-on-the-side-please"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-bep-cuon"
       }
@@ -183488,34 +183488,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "food-need-table",
+              "vietnamese": "Cho tôi bàn cho hai người nhé",
+              "english": "A table for two, please",
+              "pronunciation": "cho toy ban cho hai ngwee nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-food-need-table",
+              "audioKey": "food-need-table"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "coffee-7",
+              "vietnamese": "Tính tiền giúp tôi",
+              "english": "Please let me pay",
+              "pronunciation": "ting tyen zoop toy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-food-pay-now",
+              "audioKey": "coffee-7"
             }
           ],
           "breakdown": [],
@@ -183579,21 +183579,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "food-need-table"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "coffee-7"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-bep-hen",
-          "food-menu"
+          "food-need-table"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "coffee-7"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-bep-hen"
       }
@@ -183695,16 +183695,16 @@
         },
         {
           "id": "place-brief",
-          "title": "Keep It Small",
-          "body": "One gelato cup or coffee can carry the stop. Do not make it compete with Da Nang seafood, mì Quảng, or a real dinner plan.",
+          "title": "Let The Cold Cup Do The Work",
+          "body": "One gelato cup or iced coffee can carry the stop: sweetness, cool air, and a few quiet minutes before the group steps back into heat.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "use-it-with",
-          "title": "Heat-Break Role",
-          "body": "The group may only need something cold, familiar, and easy before moving again. The role is modest: a support pause, not the food pilgrimage.",
+          "title": "A Sweet Heat Break",
+          "body": "The room is useful when the group wants cold, familiar, and easy: gelato for kids, coffee for adults, and a reset before seafood, markets, or the beach.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -188449,34 +188449,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "directions-1",
-              "vietnamese": "Cho hỏi, đi tới đó thế nào?",
-              "english": "Excuse me, how do I get there?",
-              "pronunciation": "cho hoy dee toy doh theh nao",
+              "id": "sight-1",
+              "vietnamese": "Vé bao nhiêu?",
+              "english": "How much is the ticket?",
+              "pronunciation": "veh bao nyew",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-directions-how-to-get",
-              "audioKey": "directions-1"
+              "detailPageID": "viet-family-sight-ticket",
+              "audioKey": "sight-1"
             },
             {
-              "id": "sight-3",
-              "vietnamese": "Tôi chụp hình ở đây được không?",
-              "english": "Can I take photos here?",
-              "pronunciation": "toy choop hinh uh day dook khong",
+              "id": "sight-5",
+              "vietnamese": "Điểm gặp ở đâu?",
+              "english": "Where is the meeting point?",
+              "pronunciation": "deeym gap uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-sight-photos",
-              "audioKey": "sight-3"
+              "detailPageID": "viet-family-sight-meeting-point",
+              "audioKey": "sight-5"
             },
             {
-              "id": "v500-dire-navi-can-i-walk-there",
-              "vietnamese": "Tôi có thể đi bộ tới đó được không?",
-              "english": "Can I walk there?",
-              "pronunciation": "Toi co the di bo toi do duoc khong",
+              "id": "directions-8",
+              "vietnamese": "Điểm đón ở đâu?",
+              "english": "Where is the pickup point?",
+              "pronunciation": "deeym don uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-v500-dire-navi-can-i-walk-there",
-              "audioKey": "v500-dire-navi-can-i-walk-there"
+              "detailPageID": "viet-family-directions-pickup-point",
+              "audioKey": "directions-8"
             }
           ],
           "breakdown": [],
@@ -188500,8 +188500,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Do Not Crowd The Evening",
-          "body": "The ride out and back matters. Leave space after the trip instead of stacking it with a tight dinner, bridge show, or airport transfer.",
+          "title": "Keep The Return Clear",
+          "body": "The ride out and back matters. Confirm the meeting point and return plan before the wet part, then leave space before dinner, a bridge show, or an airport transfer.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -188540,21 +188540,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "directions-1"
+              "sight-1"
             ],
             "supportPhraseIDs": [
-              "sight-3",
-              "v500-dire-navi-can-i-walk-there"
+              "sight-5",
+              "directions-8"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-hoa-phu-thanh",
-          "directions-1"
+          "sight-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "sight-3",
-          "v500-dire-navi-can-i-walk-there"
+          "sight-5",
+          "directions-8"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-hoa-phu-thanh"
       }
@@ -188609,7 +188609,7 @@
         {
           "id": "at-glance",
           "title": "Slow Lake Before The Day Gets Loud",
-          "body": "Hòa Trung Lake is Da Nang's softer water stop: broad lake, grass, low hills, morning light, and an unhurried visit that should stay small.",
+          "body": "Hòa Trung Lake is Da Nang's open-air lake pause: low hills, grass, morning light, and a quiet edge when the group wants space beyond beach traffic.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -188620,14 +188620,24 @@
           "body": "",
           "phrases": [
             {
-              "id": "sight-2",
-              "vietnamese": "Bắt đầu ở đâu?",
-              "english": "Where do we start?",
-              "pronunciation": "bat dow uh dow",
+              "id": "directions-8",
+              "vietnamese": "Điểm đón ở đâu?",
+              "english": "Where is the pickup point?",
+              "pronunciation": "deeym don uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-sight-start",
-              "audioKey": "sight-2"
+              "detailPageID": "viet-family-directions-pickup-point",
+              "audioKey": "directions-8"
+            },
+            {
+              "id": "directions-3",
+              "vietnamese": "Đi bộ mất bao lâu?",
+              "english": "How long does it take on foot?",
+              "pronunciation": "dee boh mut bao low",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-directions-how-long",
+              "audioKey": "directions-3"
             },
             {
               "id": "sight-5",
@@ -188638,16 +188648,6 @@
               "tintName": "teal",
               "detailPageID": "viet-family-sight-meeting-point",
               "audioKey": "sight-5"
-            },
-            {
-              "id": "store-1",
-              "vietnamese": "Cho tôi chai nước",
-              "english": "A bottle of water please",
-              "pronunciation": "cho toy chai nook",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "teal",
-              "detailPageID": "viet-family-service-water",
-              "audioKey": "store-1"
             }
           ],
           "breakdown": [],
@@ -188663,8 +188663,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "A Small Stop Holds Better",
-          "body": "Keep this from becoming a forced full outing. Take the view, walk only as far as conditions feel easy, and leave before it overasks.",
+          "title": "Let It Stay Open-Air",
+          "body": "Go for light, water, and a short unhurried walk. The lake works when it stays simple: a clear pickup point, a little shade, and no pressure to fill half the day.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -188711,21 +188711,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "sight-2"
+              "directions-8"
             ],
             "supportPhraseIDs": [
-              "sight-5",
-              "store-1"
+              "directions-3",
+              "sight-5"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-hoa-trung-lake",
-          "sight-2"
+          "directions-8"
         ],
         "secondaryPracticePhraseIDs": [
-          "sight-5",
-          "store-1"
+          "directions-3",
+          "sight-5"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-hoa-trung-lake"
       }
@@ -189521,16 +189521,16 @@
         },
         {
           "id": "when-to-use",
-          "title": "Small Scale is the draw",
-          "body": "The stop can feel thin if you expect a full food crawl. Treat it as one pocket of night color before the hotel.",
+          "title": "Small Scale Is The Draw",
+          "body": "The stop can feel thin if you expect a full food crawl. Treat it as one pocket of night color: racks, snacks, small gifts, and a simple loop before the hotel.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
-          "title": "Small Market, Light Expectations",
-          "body": "Treat it as a compact browse rather than a guaranteed food night. A short loop, flexible expectations, and an easy exit the stop pleasant.",
+          "title": "Leave While It Still Feels Easy",
+          "body": "A short loop, a small buy, and a clear exit keep the stop pleasant. If the lane feels quiet, use it as a quick browse rather than forcing a full night-market plan.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -198239,8 +198239,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "The Cool-Down Is Enough",
-          "body": "You do not need to translate the name or build a route around it. The value is a clean, cool stop for one.",
+          "title": "One Clean Counter Moment",
+          "body": "The value is simple: order cold, choose sweetness early, sit at a bright table, and let the room cool the day before dinner or another walk.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -198351,14 +198351,24 @@
           "body": "",
           "phrases": [
             {
-              "id": "sight-2",
-              "vietnamese": "Bắt đầu ở đâu?",
-              "english": "Where do we start?",
-              "pronunciation": "bat dow uh dow",
+              "id": "directions-8",
+              "vietnamese": "Điểm đón ở đâu?",
+              "english": "Where is the pickup point?",
+              "pronunciation": "deeym don uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-sight-start",
-              "audioKey": "sight-2"
+              "detailPageID": "viet-family-directions-pickup-point",
+              "audioKey": "directions-8"
+            },
+            {
+              "id": "directions-3",
+              "vietnamese": "Đi bộ mất bao lâu?",
+              "english": "How long does it take on foot?",
+              "pronunciation": "dee boh mut bao low",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-directions-how-long",
+              "audioKey": "directions-3"
             },
             {
               "id": "sight-5",
@@ -198369,16 +198379,6 @@
               "tintName": "teal",
               "detailPageID": "viet-family-sight-meeting-point",
               "audioKey": "sight-5"
-            },
-            {
-              "id": "store-1",
-              "vietnamese": "Cho tôi chai nước",
-              "english": "A bottle of water please",
-              "pronunciation": "cho toy chai nook",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "teal",
-              "detailPageID": "viet-family-service-water",
-              "audioKey": "store-1"
             }
           ],
           "breakdown": [],
@@ -198394,8 +198394,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "Uncrowded Outdoor Time",
-          "body": "Treat it as simple outdoor time instead of a checklist: walk a little, sit in the shade, notice the water and mountain line, then leave before it feels forced.",
+          "title": "Grass, River, Mountain Line",
+          "body": "Treat it as simple outdoor time: walk a little, sit where the river and mountains open up, then leave while the weather and ride plan still feel easy.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -198442,21 +198442,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "sight-2"
+              "directions-8"
             ],
             "supportPhraseIDs": [
-              "sight-5",
-              "store-1"
+              "directions-3",
+              "sight-5"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-danang-place-yen-retreat",
-          "sight-2"
+          "directions-8"
         ],
         "secondaryPracticePhraseIDs": [
-          "sight-5",
-          "store-1"
+          "directions-3",
+          "sight-5"
         ],
         "practiceSourcePageID": "viet-family-city-danang-place-yen-retreat"
       }
@@ -272418,34 +272418,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "food-need-table",
+              "vietnamese": "Cho tôi bàn cho hai người nhé",
+              "english": "A table for two, please",
+              "pronunciation": "cho toy ban cho hai ngwee nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-food-need-table",
+              "audioKey": "food-need-table"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "v900-food-drin-one-more-please",
+              "vietnamese": "Xin thêm một cái nữa",
+              "english": "One more, please",
+              "pronunciation": "Xin them mot cai nua",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-v900-food-drin-one-more-please",
+              "audioKey": "v900-food-drin-one-more-please"
             }
           ],
           "breakdown": [],
@@ -272501,21 +272501,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "food-need-table"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-one-more-please"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-bale-well",
-          "food-menu"
+          "food-need-table"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "v900-food-drin-one-more-please"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-bale-well"
       }
@@ -280649,34 +280649,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "food-need-table",
+              "vietnamese": "Cho tôi bàn cho hai người nhé",
+              "english": "A table for two, please",
+              "pronunciation": "cho toy ban cho hai ngwee nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-food-need-table",
+              "audioKey": "food-need-table"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "coffee-7",
+              "vietnamese": "Tính tiền giúp tôi",
+              "english": "Please let me pay",
+              "pronunciation": "ting tyen zoop toy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-food-pay-now",
+              "audioKey": "coffee-7"
             }
           ],
           "breakdown": [],
@@ -280740,21 +280740,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "food-need-table"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "coffee-7"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-mai-fish",
-          "food-menu"
+          "food-need-table"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "coffee-7"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-mai-fish"
       }
@@ -283241,34 +283241,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "food-need-table",
+              "vietnamese": "Cho tôi bàn cho hai người nhé",
+              "english": "A table for two, please",
+              "pronunciation": "cho toy ban cho hai ngwee nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-food-need-table",
+              "audioKey": "food-need-table"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "coffee-7",
+              "vietnamese": "Tính tiền giúp tôi",
+              "english": "Please let me pay",
+              "pronunciation": "ting tyen zoop toy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-food-pay-now",
+              "audioKey": "coffee-7"
             }
           ],
           "breakdown": [],
@@ -283332,21 +283332,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "food-need-table"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "coffee-7"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-nu-eatery",
-          "food-menu"
+          "food-need-table"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "coffee-7"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-nu-eatery"
       }
@@ -301762,34 +301762,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "food-need-table",
+              "vietnamese": "Cho tôi bàn cho hai người nhé",
+              "english": "A table for two, please",
+              "pronunciation": "cho toy ban cho hai ngwee nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-food-need-table",
+              "audioKey": "food-need-table"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "coffee-7",
+              "vietnamese": "Tính tiền giúp tôi",
+              "english": "Please let me pay",
+              "pronunciation": "ting tyen zoop toy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-food-pay-now",
+              "audioKey": "coffee-7"
             }
           ],
           "breakdown": [],
@@ -301845,21 +301845,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "food-need-table"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "coffee-7"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hue-place-ancient-space-restaurant",
-          "food-menu"
+          "food-need-table"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "coffee-7"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-ancient-space-restaurant"
       }
@@ -305039,34 +305039,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "food-menu",
-              "vietnamese": "Cho tôi xem thực đơn được không?",
-              "english": "Can I see the menu?",
-              "pronunciation": "cho toy sem thook dun dook khong",
+              "id": "food-need-table",
+              "vietnamese": "Cho tôi bàn cho hai người nhé",
+              "english": "A table for two, please",
+              "pronunciation": "cho toy ban cho hai ngwee nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-menu",
-              "audioKey": "food-menu"
+              "detailPageID": "viet-family-food-need-table",
+              "audioKey": "food-need-table"
             },
             {
-              "id": "food-1",
-              "vietnamese": "Cho tôi một phần",
-              "english": "One portion please",
-              "pronunciation": "cho toy mot fun",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-one-portion",
-              "audioKey": "food-1"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "food-3",
-              "vietnamese": "Không cay nhé",
-              "english": "Not spicy please",
-              "pronunciation": "khong kai nhe",
+              "id": "coffee-7",
+              "vietnamese": "Tính tiền giúp tôi",
+              "english": "Please let me pay",
+              "pronunciation": "ting tyen zoop toy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-not-spicy",
-              "audioKey": "food-3"
+              "detailPageID": "viet-family-food-pay-now",
+              "audioKey": "coffee-7"
             }
           ],
           "breakdown": [],
@@ -305122,21 +305122,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "food-menu"
+              "food-need-table"
             ],
             "supportPhraseIDs": [
-              "food-1",
-              "food-3"
+              "v900-food-drin-what-do-you-recommend",
+              "coffee-7"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hue-place-dai-nam-restaurant",
-          "food-menu"
+          "food-need-table"
         ],
         "secondaryPracticePhraseIDs": [
-          "food-1",
-          "food-3"
+          "v900-food-drin-what-do-you-recommend",
+          "coffee-7"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-dai-nam-restaurant"
       }
@@ -310337,7 +310337,7 @@
         {
           "id": "at-glance",
           "title": "A Cafe Break With Shade",
-          "body": "Mandarin Coffee & Restaurant is a shaded break between heavier stops: coffee, iced glasses, garden tables, and enough shade before the next walk.",
+          "body": "Mandarin Coffee & Restaurant is a garden-table pause in Hue: iced coffee, shaded seating, simple food, and a calmer room before a river walk, market stop, or tomb route.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -310383,8 +310383,8 @@
         },
         {
           "id": "place-brief",
-          "title": "Between Meals And Sights",
-          "body": "It is a break rather than a must-do stop. The setting lets a market, river walk, or tomb route breathe before the next move.",
+          "title": "Garden Table Between Sights",
+          "body": "The day gets a real seat here: a shaded table, a cold glass, and enough menu range to steady the group without turning the pause into a formal meal.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -310399,8 +310399,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "One Drink Before Moving On",
-          "body": "One drink and a slow seat can be enough. The cafe is a shaded break before the next walk.",
+          "title": "One Drink, Then The Next Stop",
+          "body": "One coffee or juice can be enough. The garden-table reset matters before the next Hue sight; it does not need to become a long cafe session.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -315993,14 +315993,14 @@
           "body": "",
           "phrases": [
             {
-              "id": "directions-1",
-              "vietnamese": "Cho hỏi, đi tới đó thế nào?",
-              "english": "Excuse me, how do I get there?",
-              "pronunciation": "cho hoy dee toy doh theh nao",
+              "id": "directions-8",
+              "vietnamese": "Điểm đón ở đâu?",
+              "english": "Where is the pickup point?",
+              "pronunciation": "deeym don uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-directions-how-to-get",
-              "audioKey": "directions-1"
+              "detailPageID": "viet-family-directions-pickup-point",
+              "audioKey": "directions-8"
             },
             {
               "id": "directions-3",
@@ -316013,14 +316013,14 @@
               "audioKey": "directions-3"
             },
             {
-              "id": "v500-dire-navi-can-i-walk-there",
-              "vietnamese": "Tôi có thể đi bộ tới đó được không?",
-              "english": "Can I walk there?",
-              "pronunciation": "Toi co the di bo toi do duoc khong",
+              "id": "v500-dire-navi-how-far-is-it",
+              "vietnamese": "Nó cách đây bao xa?",
+              "english": "How far is it?",
+              "pronunciation": "No cach day bao xa",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-v500-dire-navi-can-i-walk-there",
-              "audioKey": "v500-dire-navi-can-i-walk-there"
+              "detailPageID": "viet-family-v500-dire-navi-how-far-is-it",
+              "audioKey": "v500-dire-navi-how-far-is-it"
             }
           ],
           "breakdown": [],
@@ -316028,8 +316028,8 @@
         },
         {
           "id": "place-brief",
-          "title": "Slower Than The Tomb Route",
-          "body": "Expect local pace and garden-house texture rather than a single headline monument. The details are lanes, shade, markets, and river edges.",
+          "title": "Pomelo Lanes And Garden Houses",
+          "body": "Expect garden-house texture rather than one headline sight: pomelo trees, leafy lanes, low walls, bikes, and small stops near the Perfume River.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -316052,8 +316052,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Local Pace Near The River",
-          "body": "The village is easier to appreciate when approached as a slower area, clearer as a loose village area than a checklist.",
+          "title": "Choose A Simple Route In And Out",
+          "body": "The village is easier with a loose route: where to start, how long to walk or ride, and where the pickup happens before the group drifts too far into the lanes.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -316084,21 +316084,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "directions-1"
+              "directions-8"
             ],
             "supportPhraseIDs": [
               "directions-3",
-              "v500-dire-navi-can-i-walk-there"
+              "v500-dire-navi-how-far-is-it"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hue-place-thuy-bieu-village",
-          "directions-1"
+          "directions-8"
         ],
         "secondaryPracticePhraseIDs": [
           "directions-3",
-          "v500-dire-navi-can-i-walk-there"
+          "v500-dire-navi-how-far-is-it"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-thuy-bieu-village"
       }
@@ -316841,34 +316841,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "price-1",
-              "vietnamese": "Cái này bao nhiêu?",
-              "english": "How much is this?",
-              "pronunciation": "gai nai bao nyew",
+              "id": "store-6",
+              "vietnamese": "Tôi quẹt thẻ được không?",
+              "english": "Can I pay by card?",
+              "pronunciation": "toy quet teh dook khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-how-much",
-              "audioKey": "price-1"
+              "detailPageID": "viet-family-service-card",
+              "audioKey": "store-6"
             },
             {
-              "id": "price-7",
-              "vietnamese": "Tôi lấy cái này",
-              "english": "I’ll take this one",
-              "pronunciation": "toy lay gai nai",
+              "id": "store-2",
+              "vietnamese": "Có túi không?",
+              "english": "Do you have a bag?",
+              "pronunciation": "koh too-ee khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-take-this",
-              "audioKey": "price-7"
+              "detailPageID": "viet-family-service-bag",
+              "audioKey": "store-2"
             },
             {
-              "id": "shop-4",
-              "vietnamese": "Tôi chỉ xem thôi",
-              "english": "I’m just looking",
-              "pronunciation": "toy chee sem toy",
+              "id": "bath-1",
+              "vietnamese": "Nhà vệ sinh ở đâu?",
+              "english": "Where is the bathroom?",
+              "pronunciation": "nya veh sinh uh dow",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-shopping-just-looking",
-              "audioKey": "shop-4"
+              "detailPageID": "viet-family-bathroom-where",
+              "audioKey": "bath-1"
             }
           ],
           "breakdown": [],
@@ -316932,21 +316932,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "price-1"
+              "store-6"
             ],
             "supportPhraseIDs": [
-              "price-7",
-              "shop-4"
+              "store-2",
+              "bath-1"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hue-place-truong-tien-plaza",
-          "price-1"
+          "store-6"
         ],
         "secondaryPracticePhraseIDs": [
-          "price-7",
-          "shop-4"
+          "store-2",
+          "bath-1"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-truong-tien-plaza"
       }

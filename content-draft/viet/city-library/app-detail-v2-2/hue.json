@@ -590,27 +590,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho tôi xem thực đơn được không?",
-          "en": "Can I see the menu?",
-          "intent": "food-menu",
-          "phraseId": "food-menu",
-          "audioId": "food-menu",
+          "vi": "Cho tôi bàn cho hai người nhé",
+          "en": "A table for two, please",
+          "intent": "food-drink",
+          "phraseId": "food-need-table",
+          "audioId": "food-need-table",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi một phần",
-          "en": "One portion please",
-          "intent": "food-one-portion",
-          "phraseId": "food-1",
-          "audioId": "food-1",
+          "vi": "Bạn đề xuất món gì?",
+          "en": "What do you recommend?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-what-do-you-recommend",
+          "audioId": "v900-food-drin-what-do-you-recommend",
           "status": "mapped"
         },
         {
-          "vi": "Không cay nhé",
-          "en": "Not spicy please",
-          "intent": "food-not-spicy",
-          "phraseId": "food-3",
-          "audioId": "food-3",
+          "vi": "Tính tiền giúp tôi",
+          "en": "Please let me pay",
+          "intent": "food-drink",
+          "phraseId": "coffee-7",
+          "audioId": "coffee-7",
           "status": "mapped"
         }
       ],
@@ -2743,27 +2743,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho tôi xem thực đơn được không?",
-          "en": "Can I see the menu?",
-          "intent": "food-menu",
-          "phraseId": "food-menu",
-          "audioId": "food-menu",
+          "vi": "Cho tôi bàn cho hai người nhé",
+          "en": "A table for two, please",
+          "intent": "food-drink",
+          "phraseId": "food-need-table",
+          "audioId": "food-need-table",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi một phần",
-          "en": "One portion please",
-          "intent": "food-one-portion",
-          "phraseId": "food-1",
-          "audioId": "food-1",
+          "vi": "Bạn đề xuất món gì?",
+          "en": "What do you recommend?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-what-do-you-recommend",
+          "audioId": "v900-food-drin-what-do-you-recommend",
           "status": "mapped"
         },
         {
-          "vi": "Không cay nhé",
-          "en": "Not spicy please",
-          "intent": "food-not-spicy",
-          "phraseId": "food-3",
-          "audioId": "food-3",
+          "vi": "Tính tiền giúp tôi",
+          "en": "Please let me pay",
+          "intent": "food-drink",
+          "phraseId": "coffee-7",
+          "audioId": "coffee-7",
           "status": "mapped"
         }
       ],
@@ -6219,7 +6219,7 @@
       "storySpine": "Hue days can become a run of monuments; a cafe like this gives the itinerary a gentler middle without needing a major sight.",
       "intro": {
         "heading": "A Cafe Break With Shade",
-        "body": "Mandarin Coffee & Restaurant is a shaded break between heavier stops: coffee, iced glasses, garden tables, and enough shade before the next walk."
+        "body": "Mandarin Coffee & Restaurant is a garden-table pause in Hue: iced coffee, shaded seating, simple food, and a calmer room before a river walk, market stop, or tomb route."
       },
       "usefulPhraseCards": [
         {
@@ -6250,8 +6250,8 @@
       "sections": [
         {
           "id": "between-meals-and-sights",
-          "heading": "Between Meals And Sights",
-          "body": "It is a break rather than a must-do stop. The setting lets a market, river walk, or tomb route breathe before the next move."
+          "heading": "Garden Table Between Sights",
+          "body": "The day gets a real seat here: a shaded table, a cold glass, and enough menu range to steady the group without turning the pause into a formal meal."
         },
         {
           "id": "heat-rain-or-a-long-gap",
@@ -6260,8 +6260,8 @@
         },
         {
           "id": "one-drink-before-moving-on",
-          "heading": "One Drink Before Moving On",
-          "body": "One drink and a slow seat can be enough. The cafe is a shaded break before the next walk."
+          "heading": "One Drink, Then The Next Stop",
+          "body": "One coffee or juice can be enough. The garden-table reset matters before the next Hue sight; it does not need to become a long cafe session."
         },
         {
           "id": "menus-shift",
@@ -7612,11 +7612,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-an-cuu-market",
-          "label": "Chợ An Cựu",
-          "relationship": "local-market contrast",
-          "displaySubtitle": "A neighborhood market for food, produce, and daily-life texture away from the bigger tourist loop.",
-          "reason": "Editorial relationship: A neighborhood market for food, produce, and daily-life texture away from the bigger tourist loop.",
+          "catalogId": "viet-family-city-hue-place-perfume-river-dragon-boat",
+          "label": "Thuyền rồng sông Hương",
+          "relationship": "river-ride next step",
+          "displaySubtitle": "The boat version of the river when the plan needs boarding, route, timing, and a clearer return.",
+          "reason": "The dragon-boat page is the visible traveler action attached to the Perfume River.",
           "status": "render"
         }
       ],
@@ -9892,35 +9892,35 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho hỏi, đi tới đó thế nào?",
-          "en": "Excuse me, how do I get there?",
-          "intent": "directions-how-to-get",
-          "phraseId": "directions-1",
-          "audioId": "directions-1",
+          "vi": "Điểm đón ở đâu?",
+          "en": "Where is the pickup point?",
+          "intent": "directions-navigation",
+          "phraseId": "directions-8",
+          "audioId": "directions-8",
           "status": "mapped"
         },
         {
           "vi": "Đi bộ mất bao lâu?",
           "en": "How long does it take on foot?",
-          "intent": "directions-how-long",
+          "intent": "directions-navigation",
           "phraseId": "directions-3",
           "audioId": "directions-3",
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể đi bộ tới đó được không?",
-          "en": "Can I walk there?",
-          "intent": "v500-dire-navi-can-i-walk-there",
-          "phraseId": "v500-dire-navi-can-i-walk-there",
-          "audioId": "v500-dire-navi-can-i-walk-there",
+          "vi": "Nó cách đây bao xa?",
+          "en": "How far is it?",
+          "intent": "directions-navigation",
+          "phraseId": "v500-dire-navi-how-far-is-it",
+          "audioId": "v500-dire-navi-how-far-is-it",
           "status": "mapped"
         }
       ],
       "sections": [
         {
           "id": "slower-than-the-tomb-route",
-          "heading": "Slower Than The Tomb Route",
-          "body": "Expect local pace and garden-house texture rather than a single headline monument. The details are lanes, shade, markets, and river edges."
+          "heading": "Pomelo Lanes And Garden Houses",
+          "body": "Expect garden-house texture rather than one headline sight: pomelo trees, leafy lanes, low walls, bikes, and small stops near the Perfume River."
         },
         {
           "id": "a-soft-break-from-formal-hue",
@@ -9934,8 +9934,8 @@
         },
         {
           "id": "local-pace-near-the-river",
-          "heading": "Local Pace Near The River",
-          "body": "The village is easier to appreciate when approached as a slower area, clearer as a loose village area than a checklist."
+          "heading": "Choose A Simple Route In And Out",
+          "body": "The village is easier with a loose route: where to start, how long to walk or ride, and where the pickup happens before the group drifts too far into the lanes."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10270,11 +10270,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-an-cuu-market",
-          "label": "Chợ An Cựu",
-          "relationship": "local-market contrast",
-          "displaySubtitle": "A neighborhood market for food, produce, and daily-life texture away from the bigger tourist loop.",
-          "reason": "Editorial relationship: A neighborhood market for food, produce, and daily-life texture away from the bigger tourist loop.",
+          "catalogId": "viet-family-city-hue-place-perfume-river",
+          "label": "Sông Hương",
+          "relationship": "boarding-point to river route",
+          "displaySubtitle": "The wider river context behind the boat steps, bridge views, and return-plan questions.",
+          "reason": "Perfume River is the correct context for Toa Kham Boat Station, unlike an unrelated market.",
           "status": "render"
         }
       ],
@@ -10443,27 +10443,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cái này bao nhiêu?",
-          "en": "How much is this?",
-          "intent": "money-how-much",
-          "phraseId": "price-1",
-          "audioId": "price-1",
+          "vi": "Tôi quẹt thẻ được không?",
+          "en": "Can I pay by card?",
+          "intent": "local-services-everyday-tasks",
+          "phraseId": "store-6",
+          "audioId": "store-6",
           "status": "mapped"
         },
         {
-          "vi": "Tôi lấy cái này",
-          "en": "I'll take this one",
-          "intent": "money-take-this",
-          "phraseId": "price-7",
-          "audioId": "price-7",
+          "vi": "Có túi không?",
+          "en": "Do you have a bag?",
+          "intent": "local-services-everyday-tasks",
+          "phraseId": "store-2",
+          "audioId": "store-2",
           "status": "mapped"
         },
         {
-          "vi": "Tôi chỉ xem thôi",
-          "en": "I'm just looking",
-          "intent": "shopping-just-looking",
-          "phraseId": "shop-4",
-          "audioId": "shop-4",
+          "vi": "Nhà vệ sinh ở đâu?",
+          "en": "Where is the bathroom?",
+          "intent": "bathroom-personal-needs",
+          "phraseId": "bath-1",
+          "audioId": "bath-1",
           "status": "mapped"
         }
       ],

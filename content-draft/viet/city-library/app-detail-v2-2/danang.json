@@ -1838,27 +1838,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho tôi xem thực đơn được không?",
-          "en": "Can I see the menu?",
-          "intent": "food-menu",
-          "phraseId": "food-menu",
-          "audioId": "food-menu",
+          "vi": "Cho tôi bàn cho hai người nhé",
+          "en": "A table for two, please",
+          "intent": "food-drink",
+          "phraseId": "food-need-table",
+          "audioId": "food-need-table",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi một phần",
-          "en": "One portion please",
-          "intent": "food-one-portion",
-          "phraseId": "food-1",
-          "audioId": "food-1",
+          "vi": "Bạn đề xuất món gì?",
+          "en": "What do you recommend?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-what-do-you-recommend",
+          "audioId": "v900-food-drin-what-do-you-recommend",
           "status": "mapped"
         },
         {
-          "vi": "Không cay nhé",
-          "en": "Not spicy please",
-          "intent": "food-not-spicy",
-          "phraseId": "food-3",
-          "audioId": "food-3",
+          "vi": "Xin vui lòng cho nước sốt vào bên cạnh",
+          "en": "Sauce on the side, please",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-sauce-on-the-side-please",
+          "audioId": "v900-food-drin-sauce-on-the-side-please",
           "status": "mapped"
         }
       ],
@@ -1960,27 +1960,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho tôi xem thực đơn được không?",
-          "en": "Can I see the menu?",
-          "intent": "food-menu",
-          "phraseId": "food-menu",
-          "audioId": "food-menu",
+          "vi": "Cho tôi bàn cho hai người nhé",
+          "en": "A table for two, please",
+          "intent": "food-drink",
+          "phraseId": "food-need-table",
+          "audioId": "food-need-table",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi một phần",
-          "en": "One portion please",
-          "intent": "food-one-portion",
-          "phraseId": "food-1",
-          "audioId": "food-1",
+          "vi": "Bạn đề xuất món gì?",
+          "en": "What do you recommend?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-what-do-you-recommend",
+          "audioId": "v900-food-drin-what-do-you-recommend",
           "status": "mapped"
         },
         {
-          "vi": "Không cay nhé",
-          "en": "Not spicy please",
-          "intent": "food-not-spicy",
-          "phraseId": "food-3",
-          "audioId": "food-3",
+          "vi": "Tính tiền giúp tôi",
+          "en": "Please let me pay",
+          "intent": "food-drink",
+          "phraseId": "coffee-7",
+          "audioId": "coffee-7",
           "status": "mapped"
         }
       ],
@@ -2241,13 +2241,13 @@
       "sections": [
         {
           "id": "keep-it-small",
-          "heading": "Keep It Small",
-          "body": "One gelato cup or coffee can carry the stop. Do not make it compete with Da Nang seafood, mì Quảng, or a real dinner plan."
+          "heading": "Let The Cold Cup Do The Work",
+          "body": "One gelato cup or iced coffee can carry the stop: sweetness, cool air, and a few quiet minutes before the group steps back into heat."
         },
         {
           "id": "heat-break-role",
-          "heading": "Heat-Break Role",
-          "body": "The group may only need something cold, familiar, and easy before moving again. The role is modest: a support pause, not the food pilgrimage."
+          "heading": "A Sweet Heat Break",
+          "body": "The room is useful when the group wants cold, familiar, and easy: gelato for kids, coffee for adults, and a reset before seafood, markets, or the beach."
         },
         {
           "id": "coffee-is-secondary",
@@ -5560,27 +5560,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho hỏi, đi tới đó thế nào?",
-          "en": "Excuse me, how do I get there?",
-          "intent": "directions-how-to-get",
-          "phraseId": "directions-1",
-          "audioId": "directions-1",
+          "vi": "Vé bao nhiêu?",
+          "en": "How much is the ticket?",
+          "intent": "sightseeing-activities",
+          "phraseId": "sight-1",
+          "audioId": "sight-1",
           "status": "mapped"
         },
         {
-          "vi": "Tôi chụp hình ở đây được không?",
-          "en": "Can I take photos here?",
-          "intent": "sight-photos",
-          "phraseId": "sight-3",
-          "audioId": "sight-3",
+          "vi": "Điểm gặp ở đâu?",
+          "en": "Where is the meeting point?",
+          "intent": "sightseeing-activities",
+          "phraseId": "sight-5",
+          "audioId": "sight-5",
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể đi bộ tới đó được không?",
-          "en": "Can I walk there?",
-          "intent": "v500-dire-navi-can-i-walk-there",
-          "phraseId": "v500-dire-navi-can-i-walk-there",
-          "audioId": "v500-dire-navi-can-i-walk-there",
+          "vi": "Điểm đón ở đâu?",
+          "en": "Where is the pickup point?",
+          "intent": "directions-navigation",
+          "phraseId": "directions-8",
+          "audioId": "directions-8",
           "status": "mapped"
         }
       ],
@@ -5597,8 +5597,8 @@
         },
         {
           "id": "do-not-crowd-the-evening",
-          "heading": "Do Not Crowd The Evening",
-          "body": "The ride out and back matters. Leave space after the trip instead of stacking it with a tight dinner, bridge show, or airport transfer."
+          "heading": "Keep The Return Clear",
+          "body": "The ride out and back matters. Confirm the meeting point and return plan before the wet part, then leave space before dinner, a bridge show, or an airport transfer."
         },
         {
           "id": "activities-set-the-day",
@@ -5667,31 +5667,31 @@
       "storySpine": "The lake is a small outing built around soft light, broad water, low hills, and a clear ride back.",
       "intro": {
         "heading": "Slow Lake Before The Day Gets Loud",
-        "body": "Hòa Trung Lake is Da Nang's softer water stop: broad lake, grass, low hills, morning light, and an unhurried visit that should stay small."
+        "body": "Hòa Trung Lake is Da Nang's open-air lake pause: low hills, grass, morning light, and a quiet edge when the group wants space beyond beach traffic."
       },
       "usefulPhraseCards": [
         {
-          "vi": "Bắt đầu ở đâu?",
-          "en": "Where do we start?",
-          "intent": "sight-start",
-          "phraseId": "sight-2",
-          "audioId": "sight-2",
+          "vi": "Điểm đón ở đâu?",
+          "en": "Where is the pickup point?",
+          "intent": "directions-navigation",
+          "phraseId": "directions-8",
+          "audioId": "directions-8",
+          "status": "mapped"
+        },
+        {
+          "vi": "Đi bộ mất bao lâu?",
+          "en": "How long does it take on foot?",
+          "intent": "directions-navigation",
+          "phraseId": "directions-3",
+          "audioId": "directions-3",
           "status": "mapped"
         },
         {
           "vi": "Điểm gặp ở đâu?",
           "en": "Where is the meeting point?",
-          "intent": "sight-meeting-point",
+          "intent": "sightseeing-activities",
           "phraseId": "sight-5",
           "audioId": "sight-5",
-          "status": "mapped"
-        },
-        {
-          "vi": "Cho tôi chai nước",
-          "en": "A bottle of water please",
-          "intent": "service-water",
-          "phraseId": "store-1",
-          "audioId": "store-1",
           "status": "mapped"
         }
       ],
@@ -5703,8 +5703,8 @@
         },
         {
           "id": "a-small-stop-holds-better",
-          "heading": "A Small Stop Holds Better",
-          "body": "Keep this from becoming a forced full outing. Take the view, walk only as far as conditions feel easy, and leave before it overasks."
+          "heading": "Let It Stay Open-Air",
+          "body": "Go for light, water, and a short unhurried walk. The lake works when it stays simple: a clear pickup point, a little shade, and no pressure to fill half the day."
         },
         {
           "id": "pin-the-ride-back",
@@ -6266,13 +6266,13 @@
         },
         {
           "id": "small-scale-is-the-point",
-          "heading": "Small Scale is the draw",
-          "body": "The stop can feel thin if you expect a full food crawl. Treat it as one pocket of night color before the hotel."
+          "heading": "Small Scale Is The Draw",
+          "body": "The stop can feel thin if you expect a full food crawl. Treat it as one pocket of night color: racks, snacks, small gifts, and a simple loop before the hotel."
         },
         {
           "id": "small-market-light-expectations",
-          "heading": "Small Market, Light Expectations",
-          "body": "Treat it as a compact browse rather than a guaranteed food night. A short loop, flexible expectations, and an easy exit the stop pleasant."
+          "heading": "Leave While It Still Feels Easy",
+          "body": "A short loop, a small buy, and a clear exit keep the stop pleasant. If the lane feels quiet, use it as a quick browse rather than forcing a full night-market plan."
         }
       ],
       "mentionedHereCandidates": [],
@@ -11281,11 +11281,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-danang-place-3d-art-in-paradise",
-          "label": "Bảo tàng 3D Art in Paradise Đà Nẵng",
-          "relationship": "playful-indoor break",
-          "displaySubtitle": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
-          "reason": "Editorial relationship: A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
+          "catalogId": "viet-family-city-danang-place-son-tra",
+          "label": "Bán đảo Sơn Trà",
+          "relationship": "port-to-peninsula route",
+          "displaySubtitle": "The nearby peninsula route when a port arrival turns toward sea roads, viewpoints, or the northeast edge of Da Nang.",
+          "reason": "Son Tra is the practical next geography for Tien Sa Port: sea roads, pickup points, and the peninsula edge instead of an unrelated indoor museum.",
           "status": "render"
         }
       ],
@@ -11941,8 +11941,8 @@
         },
         {
           "id": "the-cool-down-is-enough",
-          "heading": "The Cool-Down Is Enough",
-          "body": "You do not need to translate the name or build a route around it. The value is a clean, cool stop for one."
+          "heading": "One Clean Counter Moment",
+          "body": "The value is simple: order cold, choose sweetness early, sit at a bright table, and let the room cool the day before dinner or another walk."
         }
       ],
       "mentionedHereCandidates": [],
@@ -12011,27 +12011,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Bắt đầu ở đâu?",
-          "en": "Where do we start?",
-          "intent": "sight-start",
-          "phraseId": "sight-2",
-          "audioId": "sight-2",
+          "vi": "Điểm đón ở đâu?",
+          "en": "Where is the pickup point?",
+          "intent": "directions-navigation",
+          "phraseId": "directions-8",
+          "audioId": "directions-8",
+          "status": "mapped"
+        },
+        {
+          "vi": "Đi bộ mất bao lâu?",
+          "en": "How long does it take on foot?",
+          "intent": "directions-navigation",
+          "phraseId": "directions-3",
+          "audioId": "directions-3",
           "status": "mapped"
         },
         {
           "vi": "Điểm gặp ở đâu?",
           "en": "Where is the meeting point?",
-          "intent": "sight-meeting-point",
+          "intent": "sightseeing-activities",
           "phraseId": "sight-5",
           "audioId": "sight-5",
-          "status": "mapped"
-        },
-        {
-          "vi": "Cho tôi chai nước",
-          "en": "A bottle of water please",
-          "intent": "service-water",
-          "phraseId": "store-1",
-          "audioId": "store-1",
           "status": "mapped"
         }
       ],
@@ -12043,8 +12043,8 @@
         },
         {
           "id": "uncrowded-outdoor-time",
-          "heading": "Uncrowded Outdoor Time",
-          "body": "Treat it as simple outdoor time instead of a checklist: walk a little, sit in the shade, notice the water and mountain line, then leave before it feels forced."
+          "heading": "Grass, River, Mountain Line",
+          "body": "Treat it as simple outdoor time: walk a little, sit where the river and mountains open up, then leave while the weather and ride plan still feel easy."
         },
         {
           "id": "weather-and-ride-margin",

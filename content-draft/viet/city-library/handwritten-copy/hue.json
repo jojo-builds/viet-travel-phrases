@@ -245,9 +245,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "food-menu",
-            "food-1",
-            "food-3"
+            "food-need-table",
+            "v900-food-drin-what-do-you-recommend",
+            "coffee-7"
           ]
         },
         {
@@ -1095,9 +1095,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "food-menu",
-            "food-1",
-            "food-3"
+            "food-need-table",
+            "v900-food-drin-what-do-you-recommend",
+            "coffee-7"
           ]
         },
         {
@@ -2468,7 +2468,7 @@
         {
           "id": "at-glance",
           "title": "A Cafe Break With Shade",
-          "body": "Mandarin Coffee & Restaurant is a shaded break between heavier stops: coffee, iced glasses, garden tables, and enough shade before the next walk."
+          "body": "Mandarin Coffee & Restaurant is a garden-table pause in Hue: iced coffee, shaded seating, simple food, and a calmer room before a river walk, market stop, or tomb route."
         },
         {
           "id": "quick-say",
@@ -2482,8 +2482,8 @@
         },
         {
           "id": "place-brief",
-          "title": "Between Meals And Sights",
-          "body": "It is a break rather than a must-do stop. The setting lets a market, river walk, or tomb route breathe before the next move."
+          "title": "Garden Table Between Sights",
+          "body": "The day gets a real seat here: a shaded table, a cold glass, and enough menu range to steady the group without turning the pause into a formal meal."
         },
         {
           "id": "use-it-with",
@@ -2492,8 +2492,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "One Drink Before Moving On",
-          "body": "One drink and a slow seat can be enough. The cafe is a shaded break before the next walk."
+          "title": "One Drink, Then The Next Stop",
+          "body": "One coffee or juice can be enough. The garden-table reset matters before the next Hue sight; it does not need to become a long cafe session."
         },
         {
           "id": "good-to-know",
@@ -3932,7 +3932,7 @@
       "pageID": "city-hue-place-thuy-bieu-village",
       "summary": "Thuy Bieu carries Hue's river-village garden story, with pomelo lanes, garden houses, markets, and slower life near the Perfume River.",
       "context": "Thuy Bieu carries Hue's river-village garden story, with pomelo lanes, garden houses, markets, and slower life near the Perfume River.",
-      "tip": "The village is easier to appreciate when approached as a slower area, clearer as a loose village area than a checklist.",
+      "tip": "The village is easier with a loose route: where to start, how long to walk or ride, and where the pickup happens before the group drifts too far into the lanes.",
       "rationale": "The stop matters as a slower daily-life scene, with pomelo lanes, garden houses, markets, and river proximity shaping the visit.",
       "sections": [
         {
@@ -3945,15 +3945,15 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "directions-1",
+            "directions-8",
             "directions-3",
-            "v500-dire-navi-can-i-walk-there"
+            "v500-dire-navi-how-far-is-it"
           ]
         },
         {
           "id": "place-brief",
-          "title": "Slower Than The Tomb Route",
-          "body": "Expect local pace and garden-house texture rather than a single headline monument. The details are lanes, shade, markets, and river edges."
+          "title": "Pomelo Lanes And Garden Houses",
+          "body": "Expect garden-house texture rather than one headline sight: pomelo trees, leafy lanes, low walls, bikes, and small stops near the Perfume River."
         },
         {
           "id": "use-it-with",
@@ -3967,8 +3967,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Local Pace Near The River",
-          "body": "The village is easier to appreciate when approached as a slower area, clearer as a loose village area than a checklist."
+          "title": "Choose A Simple Route In And Out",
+          "body": "The village is easier with a loose route: where to start, how long to walk or ride, and where the pickup happens before the group drifts too far into the lanes."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -4165,9 +4165,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "price-1",
-            "price-7",
-            "shop-4"
+            "store-6",
+            "store-2",
+            "bath-1"
           ]
         },
         {

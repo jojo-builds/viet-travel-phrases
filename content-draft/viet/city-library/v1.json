@@ -13426,9 +13426,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "food-menu",
-              "food-1",
-              "food-3"
+              "food-need-table",
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-sauce-on-the-side-please"
             ]
           },
           {
@@ -13531,9 +13531,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "food-menu",
-              "food-1",
-              "food-3"
+              "food-need-table",
+              "v900-food-drin-what-do-you-recommend",
+              "coffee-7"
             ]
           },
           {
@@ -13640,13 +13640,13 @@
           },
           {
             "id": "place-brief",
-            "title": "Keep It Small",
-            "body": "One gelato cup or coffee can carry the stop. Do not make it compete with Da Nang seafood, mì Quảng, or a real dinner plan."
+            "title": "Let The Cold Cup Do The Work",
+            "body": "One gelato cup or iced coffee can carry the stop: sweetness, cool air, and a few quiet minutes before the group steps back into heat."
           },
           {
             "id": "use-it-with",
-            "title": "Heat-Break Role",
-            "body": "The group may only need something cold, familiar, and easy before moving again. The role is modest: a support pause, not the food pilgrimage."
+            "title": "A Sweet Heat Break",
+            "body": "The room is useful when the group wants cold, familiar, and easy: gelato for kids, coffee for adults, and a reset before seafood, markets, or the beach."
           },
           {
             "id": "when-to-use",
@@ -16512,9 +16512,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "directions-1",
-              "sight-3",
-              "v500-dire-navi-can-i-walk-there"
+              "sight-1",
+              "sight-5",
+              "directions-8"
             ]
           },
           {
@@ -16529,8 +16529,8 @@
           },
           {
             "id": "when-to-use",
-            "title": "Do Not Crowd The Evening",
-            "body": "The ride out and back matters. Leave space after the trip instead of stacking it with a tight dinner, bridge show, or airport transfer."
+            "title": "Keep The Return Clear",
+            "body": "The ride out and back matters. Confirm the meeting point and return plan before the wet part, then leave space before dinner, a bridge show, or an airport transfer."
           },
           {
             "id": "good-to-know",
@@ -16607,16 +16607,16 @@
           {
             "id": "at-glance",
             "title": "Slow Lake Before The Day Gets Loud",
-            "body": "Hòa Trung Lake is Da Nang's softer water stop: broad lake, grass, low hills, morning light, and an unhurried visit that should stay small."
+            "body": "Hòa Trung Lake is Da Nang's open-air lake pause: low hills, grass, morning light, and a quiet edge when the group wants space beyond beach traffic."
           },
           {
             "id": "quick-say",
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "sight-2",
-              "sight-5",
-              "store-1"
+              "directions-8",
+              "directions-3",
+              "sight-5"
             ]
           },
           {
@@ -16626,8 +16626,8 @@
           },
           {
             "id": "use-it-with",
-            "title": "A Small Stop Holds Better",
-            "body": "Keep this from becoming a forced full outing. Take the view, walk only as far as conditions feel easy, and leave before it overasks."
+            "title": "Let It Stay Open-Air",
+            "body": "Go for light, water, and a short unhurried walk. The lake works when it stays simple: a clear pickup point, a little shade, and no pressure to fill half the day."
           },
           {
             "id": "when-to-use",
@@ -17083,7 +17083,7 @@
       "englishText": "Le Duan Night Market",
       "pronunciation": "cho dem le duan",
       "context": "This is a short browse rather than a full food crawl or a night that has to compete with larger markets.",
-      "tip": "Treat it as a compact browse rather than a guaranteed food night. A short loop, flexible expectations, and an easy exit the stop pleasant.",
+      "tip": "A short loop, a small buy, and a clear exit keep the stop pleasant. If the lane feels quiet, use it as a quick browse rather than forcing a full night-market plan.",
       "rationale": "The market works at modest scale: a short browse, light bargaining, flexible expectations, and a quick check before heading over.",
       "chunks": [
         [
@@ -17143,13 +17143,13 @@
           },
           {
             "id": "when-to-use",
-            "title": "Small Scale is the draw",
-            "body": "The stop can feel thin if you expect a full food crawl. Treat it as one pocket of night color before the hotel."
+            "title": "Small Scale Is The Draw",
+            "body": "The stop can feel thin if you expect a full food crawl. Treat it as one pocket of night color: racks, snacks, small gifts, and a simple loop before the hotel."
           },
           {
             "id": "good-to-know",
-            "title": "Small Market, Light Expectations",
-            "body": "Treat it as a compact browse rather than a guaranteed food night. A short loop, flexible expectations, and an easy exit the stop pleasant."
+            "title": "Leave While It Still Feels Easy",
+            "body": "A short loop, a small buy, and a clear exit keep the stop pleasant. If the lane feels quiet, use it as a quick browse rather than forcing a full night-market plan."
           }
         ],
         "targetHeroImageName": "HeroCityDanangPlaceLeDuanNightMarket",
@@ -22453,7 +22453,7 @@
       "englishText": "Wonderlust",
       "pronunciation": "wonderlust",
       "context": "The cafe is a drink-and-sit moment: bright counter, iced glass, clean table, and a short cool-down before the next Da Nang plan.",
-      "tip": "You do not need to translate the name or build a route around it. The value is a clean, cool stop for one.",
+      "tip": "The value is simple: order cold, choose sweetness early, sit at a bright table, and let the room cool the day before dinner or another walk.",
       "rationale": "Wonderlust gives the cafe set a bright cool-down for walks, markets, beach time, and dinner gaps.",
       "chunks": [
         [
@@ -22515,8 +22515,8 @@
           },
           {
             "id": "good-to-know",
-            "title": "The Cool-Down Is Enough",
-            "body": "You do not need to translate the name or build a route around it. The value is a clean, cool stop for one."
+            "title": "One Clean Counter Moment",
+            "body": "The value is simple: order cold, choose sweetness early, sit at a bright table, and let the room cool the day before dinner or another walk."
           }
         ],
         "targetHeroImageName": "HeroCityDanangPlaceWonderlust",
@@ -22595,9 +22595,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "sight-2",
-              "sight-5",
-              "store-1"
+              "directions-8",
+              "directions-3",
+              "sight-5"
             ]
           },
           {
@@ -22607,8 +22607,8 @@
           },
           {
             "id": "use-it-with",
-            "title": "Uncrowded Outdoor Time",
-            "body": "Treat it as simple outdoor time instead of a checklist: walk a little, sit in the shade, notice the water and mountain line, then leave before it feels forced."
+            "title": "Grass, River, Mountain Line",
+            "body": "Treat it as simple outdoor time: walk a little, sit where the river and mountains open up, then leave while the weather and ride plan still feel easy."
           },
           {
             "id": "when-to-use",
@@ -51834,9 +51834,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "food-menu",
-              "food-1",
-              "food-3"
+              "food-need-table",
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-one-more-please"
             ]
           },
           {
@@ -56763,9 +56763,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "food-menu",
-              "food-1",
-              "food-3"
+              "food-need-table",
+              "v900-food-drin-what-do-you-recommend",
+              "coffee-7"
             ]
           },
           {
@@ -58311,9 +58311,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "food-menu",
-              "food-1",
-              "food-3"
+              "food-need-table",
+              "v900-food-drin-what-do-you-recommend",
+              "coffee-7"
             ]
           },
           {
@@ -64287,9 +64287,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "food-menu",
-              "food-1",
-              "food-3"
+              "food-need-table",
+              "v900-food-drin-what-do-you-recommend",
+              "coffee-7"
             ]
           },
           {
@@ -66309,9 +66309,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "food-menu",
-              "food-1",
-              "food-3"
+              "food-need-table",
+              "v900-food-drin-what-do-you-recommend",
+              "coffee-7"
             ]
           },
           {
@@ -69482,7 +69482,7 @@
           {
             "id": "at-glance",
             "title": "A Cafe Break With Shade",
-            "body": "Mandarin Coffee & Restaurant is a shaded break between heavier stops: coffee, iced glasses, garden tables, and enough shade before the next walk."
+            "body": "Mandarin Coffee & Restaurant is a garden-table pause in Hue: iced coffee, shaded seating, simple food, and a calmer room before a river walk, market stop, or tomb route."
           },
           {
             "id": "quick-say",
@@ -69496,8 +69496,8 @@
           },
           {
             "id": "place-brief",
-            "title": "Between Meals And Sights",
-            "body": "It is a break rather than a must-do stop. The setting lets a market, river walk, or tomb route breathe before the next move."
+            "title": "Garden Table Between Sights",
+            "body": "The day gets a real seat here: a shaded table, a cold glass, and enough menu range to steady the group without turning the pause into a formal meal."
           },
           {
             "id": "use-it-with",
@@ -69506,8 +69506,8 @@
           },
           {
             "id": "when-to-use",
-            "title": "One Drink Before Moving On",
-            "body": "One drink and a slow seat can be enough. The cafe is a shaded break before the next walk."
+            "title": "One Drink, Then The Next Stop",
+            "body": "One coffee or juice can be enough. The garden-table reset matters before the next Hue sight; it does not need to become a long cafe session."
           },
           {
             "id": "good-to-know",
@@ -72826,7 +72826,7 @@
       "englishText": "Thuy Bieu Village",
       "pronunciation": "lang thuy bieu",
       "context": "Thuy Bieu carries Hue's river-village garden story, with pomelo lanes, garden houses, markets, and slower life near the Perfume River.",
-      "tip": "The village is easier to appreciate when approached as a slower area, clearer as a loose village area than a checklist.",
+      "tip": "The village is easier with a loose route: where to start, how long to walk or ride, and where the pickup happens before the group drifts too far into the lanes.",
       "rationale": "The stop matters as a slower daily-life scene, with pomelo lanes, garden houses, markets, and river proximity shaping the visit.",
       "chunks": [
         [
@@ -72869,15 +72869,15 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "directions-1",
+              "directions-8",
               "directions-3",
-              "v500-dire-navi-can-i-walk-there"
+              "v500-dire-navi-how-far-is-it"
             ]
           },
           {
             "id": "place-brief",
-            "title": "Slower Than The Tomb Route",
-            "body": "Expect local pace and garden-house texture rather than a single headline monument. The details are lanes, shade, markets, and river edges."
+            "title": "Pomelo Lanes And Garden Houses",
+            "body": "Expect garden-house texture rather than one headline sight: pomelo trees, leafy lanes, low walls, bikes, and small stops near the Perfume River."
           },
           {
             "id": "use-it-with",
@@ -72891,8 +72891,8 @@
           },
           {
             "id": "good-to-know",
-            "title": "Local Pace Near The River",
-            "body": "The village is easier to appreciate when approached as a slower area, clearer as a loose village area than a checklist."
+            "title": "Choose A Simple Route In And Out",
+            "body": "The village is easier with a loose route: where to start, how long to walk or ride, and where the pickup happens before the group drifts too far into the lanes."
           }
         ],
         "targetHeroImageName": "HeroCityHuePlaceThuyBieuVillage",
@@ -73379,9 +73379,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "price-1",
-              "price-7",
-              "shop-4"
+              "store-6",
+              "store-2",
+              "bath-1"
             ]
           },
           {

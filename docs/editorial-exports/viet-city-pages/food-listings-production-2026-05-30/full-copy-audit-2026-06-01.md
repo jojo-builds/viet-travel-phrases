@@ -316,3 +316,60 @@ Rendered simulator spot-check after this batch:
 - checked `viet-family-city-hue-place-lien-hoa-vegetarian`: initial no-meat phrase was too long in the compact card, so it was retargeted from `v900-food-drin-can-i-order-this-without-meat` to shorter ready phrase `food-premium-no-meat`, rebuilt, and rechecked successfully.
 
 Remaining production-readiness work: broaden simulator-rendered review across more categories, and sample the remaining dish/stall repeated cards before a final production-ready receipt is restored.
+
+## Fourth Repair Batch - 2026-06-01
+
+Status: `IN_PROGRESS_NOT_PRODUCTION_READY`
+
+This batch used two more read-only audits against `03a0e0c81`:
+
+- remaining repeated `food-menu | food-1 | food-3` pages;
+- non-food plus cafe/market rendered-risk coverage from V2.2 source and generated native resources.
+
+Repairs completed:
+
+- retargeted the `7` remaining restaurant hard blockers from the repeated food-card set:
+  - `city-danang-place-bep-cuon`
+  - `city-danang-place-bep-hen`
+  - `city-hue-place-ancient-space-restaurant`
+  - `city-hue-place-dai-nam-restaurant`
+  - `city-hoian-place-bale-well`
+  - `city-hoian-place-mai-fish`
+  - `city-hoian-place-nu-eatery`
+- fixed hard-block related-card mismatches:
+  - `city-danang-place-tien-sa-port` now relates to Sơn Trà instead of `3D Art in Paradise`;
+  - `city-hue-place-perfume-river` now relates to the Perfume River dragon boat instead of An Cựu Market;
+  - `city-hue-place-toa-kham-boat-station` now relates to Perfume River instead of An Cựu Market;
+- retargeted `city-hue-place-truong-tien-plaza` from market/bargain-ish cards to card/bag/bathroom mall utilities;
+- retargeted nature/activity pages away from weak bottle-water or walking cards where the real traveler move is pickup, timing, ticket, meeting point, or distance;
+- repaired visible scaffold or awkward copy on Lê Duẩn Night Market, Boulevard Gelato & Coffee, Wonderlust, Mandarin Coffee & Restaurant, Hòa Phú Thành, Hòa Trung Lake, Yên Retreat, and Thủy Biều Village.
+
+Current repeated-set state after the batch:
+
+- exact `food-menu | food-1 | food-3` count is down from `53` to `46`;
+- remaining count by category: `33` Dish, `13` Restaurant;
+- remaining restaurant rows are focused one-dish or snack shops that the read-only audit classified as production-safe or render-review-only, not hard blockers.
+
+Validation after this batch:
+
+```sh
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-city-library.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/audit-viet-listing-production-qa.js
+node scripts/guard-native-only.js
+git diff --check
+```
+
+All commands above passed. `audit-viet-listing-production-qa.js` reports `0` blockers, `0` majors, `1` duplicate hero section hidden at render time, and `500` missing-audio priority rows. SQLite validation reports `0` release-blocking missing-audio rows.
+
+Rendered simulator spot-check after this batch:
+
+- rebuilt and launched `SpeakLocalNative` on simulator `SpeakLocal City Listings`;
+- checked `viet-family-city-danang-place-bep-cuon`: shared-table phrase cards render in the first viewport;
+- checked `viet-family-city-hue-place-truong-tien-plaza`: fixed-price mall utility cards render in the first viewport;
+- checked `viet-family-city-hue-place-perfume-river`: river copy and first cards render cleanly.
+
+Remaining production-readiness work: continue broader rendered review across the remaining category spread, especially the `NEEDS_RENDER_REVIEW` restaurant rows and any pages with old generated relationship reasons that have not yet been manually inspected.

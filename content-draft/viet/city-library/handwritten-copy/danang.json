@@ -730,9 +730,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "food-menu",
-            "food-1",
-            "food-3"
+            "food-need-table",
+            "v900-food-drin-what-do-you-recommend",
+            "v900-food-drin-sauce-on-the-side-please"
           ]
         },
         {
@@ -775,9 +775,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "food-menu",
-            "food-1",
-            "food-3"
+            "food-need-table",
+            "v900-food-drin-what-do-you-recommend",
+            "coffee-7"
           ]
         },
         {
@@ -872,13 +872,13 @@
         },
         {
           "id": "place-brief",
-          "title": "Keep It Small",
-          "body": "One gelato cup or coffee can carry the stop. Do not make it compete with Da Nang seafood, mì Quảng, or a real dinner plan."
+          "title": "Let The Cold Cup Do The Work",
+          "body": "One gelato cup or iced coffee can carry the stop: sweetness, cool air, and a few quiet minutes before the group steps back into heat."
         },
         {
           "id": "use-it-with",
-          "title": "Heat-Break Role",
-          "body": "The group may only need something cold, familiar, and easy before moving again. The role is modest: a support pause, not the food pilgrimage."
+          "title": "A Sweet Heat Break",
+          "body": "The room is useful when the group wants cold, familiar, and easy: gelato for kids, coffee for adults, and a reset before seafood, markets, or the beach."
         },
         {
           "id": "when-to-use",
@@ -2135,9 +2135,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "directions-1",
-            "sight-3",
-            "v500-dire-navi-can-i-walk-there"
+            "sight-1",
+            "sight-5",
+            "directions-8"
           ]
         },
         {
@@ -2152,8 +2152,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Do Not Crowd The Evening",
-          "body": "The ride out and back matters. Leave space after the trip instead of stacking it with a tight dinner, bridge show, or airport transfer."
+          "title": "Keep The Return Clear",
+          "body": "The ride out and back matters. Confirm the meeting point and return plan before the wet part, then leave space before dinner, a bridge show, or an airport transfer."
         },
         {
           "id": "good-to-know",
@@ -2173,16 +2173,16 @@
         {
           "id": "at-glance",
           "title": "Slow Lake Before The Day Gets Loud",
-          "body": "Hòa Trung Lake is Da Nang's softer water stop: broad lake, grass, low hills, morning light, and an unhurried visit that should stay small."
+          "body": "Hòa Trung Lake is Da Nang's open-air lake pause: low hills, grass, morning light, and a quiet edge when the group wants space beyond beach traffic."
         },
         {
           "id": "quick-say",
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
-            "store-1"
+            "directions-8",
+            "directions-3",
+            "sight-5"
           ]
         },
         {
@@ -2192,8 +2192,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "A Small Stop Holds Better",
-          "body": "Keep this from becoming a forced full outing. Take the view, walk only as far as conditions feel easy, and leave before it overasks."
+          "title": "Let It Stay Open-Air",
+          "body": "Go for light, water, and a short unhurried walk. The lake works when it stays simple: a clear pickup point, a little shade, and no pressure to fill half the day."
         },
         {
           "id": "when-to-use",
@@ -2387,7 +2387,7 @@
       "pageID": "city-danang-place-le-duan-night-market",
       "summary": "This is a short browse rather than a full food crawl or a night that has to compete with larger markets. The market works at modest scale: a short browse, light bargaining, flexible expectations, and a quick check before heading over.",
       "context": "This is a short browse rather than a full food crawl or a night that has to compete with larger markets.",
-      "tip": "Treat it as a compact browse rather than a guaranteed food night. A short loop, flexible expectations, and an easy exit the stop pleasant.",
+      "tip": "A short loop, a small buy, and a clear exit keep the stop pleasant. If the lane feels quiet, use it as a quick browse rather than forcing a full night-market plan.",
       "rationale": "The market works at modest scale: a short browse, light bargaining, flexible expectations, and a quick check before heading over.",
       "sections": [
         {
@@ -2417,13 +2417,13 @@
         },
         {
           "id": "when-to-use",
-          "title": "Small Scale is the draw",
-          "body": "The stop can feel thin if you expect a full food crawl. Treat it as one pocket of night color before the hotel."
+          "title": "Small Scale Is The Draw",
+          "body": "The stop can feel thin if you expect a full food crawl. Treat it as one pocket of night color: racks, snacks, small gifts, and a simple loop before the hotel."
         },
         {
           "id": "good-to-know",
-          "title": "Small Market, Light Expectations",
-          "body": "Treat it as a compact browse rather than a guaranteed food night. A short loop, flexible expectations, and an easy exit the stop pleasant."
+          "title": "Leave While It Still Feels Easy",
+          "body": "A short loop, a small buy, and a clear exit keep the stop pleasant. If the lane feels quiet, use it as a quick browse rather than forcing a full night-market plan."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -4612,7 +4612,7 @@
       "pageID": "city-danang-place-wonderlust",
       "summary": "The cafe is a drink-and-sit moment: bright counter, iced glass, clean table, and a short cool-down before the next Da Nang plan. Wonderlust gives the cafe set a bright cool-down for walks, markets, beach time, and dinner gaps.",
       "context": "The cafe is a drink-and-sit moment: bright counter, iced glass, clean table, and a short cool-down before the next Da Nang plan.",
-      "tip": "You do not need to translate the name or build a route around it. The value is a clean, cool stop for one.",
+      "tip": "The value is simple: order cold, choose sweetness early, sit at a bright table, and let the room cool the day before dinner or another walk.",
       "rationale": "Wonderlust gives the cafe set a bright cool-down for walks, markets, beach time, and dinner gaps.",
       "sections": [
         {
@@ -4647,8 +4647,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "The Cool-Down Is Enough",
-          "body": "You do not need to translate the name or build a route around it. The value is a clean, cool stop for one."
+          "title": "One Clean Counter Moment",
+          "body": "The value is simple: order cold, choose sweetness early, sit at a bright table, and let the room cool the day before dinner or another walk."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -4670,9 +4670,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
-            "store-1"
+            "directions-8",
+            "directions-3",
+            "sight-5"
           ]
         },
         {
@@ -4682,8 +4682,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "Uncrowded Outdoor Time",
-          "body": "Treat it as simple outdoor time instead of a checklist: walk a little, sit in the shade, notice the water and mountain line, then leave before it feels forced."
+          "title": "Grass, River, Mountain Line",
+          "body": "Treat it as simple outdoor time: walk a little, sit where the river and mountains open up, then leave while the weather and ride plan still feel easy."
         },
         {
           "id": "when-to-use",

@@ -85,12 +85,21 @@ Third repair batch, 2026-06-01:
 - Built and launched on simulator `SpeakLocal City Listings`; spot-checked Anan Saigon, Be Man Seafood, che xoa xoa hat luu, less-sugar phrase page, pack-for-travel phrase page, and Lien Hoa Vegetarian. Render review found one compact-card issue on Lien Hoa, fixed by switching to shorter ready phrase `food-premium-no-meat`, then rebuilt and rechecked successfully.
 - This is improved but still not a final production-ready receipt because rendered review needs broader category coverage.
 
+Fourth repair batch, 2026-06-01:
+
+- Read-only audits found `7` remaining hard-block restaurant retargets in the repeated food-card set and `3` hard-block related-card mismatches in non-food/native projection.
+- Retargeted those restaurant pages, repaired Tiên Sa Port / Perfume River / Tòa Khâm Boat Station related links, retargeted Trường Tiền Plaza mall cards, and repaired a small safe-fix set across cafes, nature/activity pages, and Thủy Biều Village.
+- Regenerated V2.2 handwritten copy, native authored listing pages, and SQLite.
+- Current validators pass after regeneration; the repeated food-card set is now `46` pages: `33` Dish and `13` focused one-dish/snack Restaurant pages.
+- Rebuilt and spot-checked Bếp Cuốn, Trường Tiền Plaza, and Perfume River on simulator `SpeakLocal City Listings`.
+
 Highest-leverage next pass:
 
-1. Broaden simulator rendered review beyond the spot-check set. Cover revised restaurants, seafood, desserts, vegetarian pages, high-use phrase pages, and a sample of remaining simple dish/stall pages.
-2. Sample the remaining `53` repeated `food-menu | food-1 | food-3` pages in app. Keep obvious dish-order pages if the cards fit; retarget any remaining restaurant page that feels too generic.
+1. Broaden simulator rendered review beyond the current spot-check set. Cover remaining category spread, especially the `NEEDS_RENDER_REVIEW` restaurant rows and pages called out as follow-up by subagents.
+2. Sample the remaining `46` repeated `food-menu | food-1 | food-3` pages in app. Most are dish or focused one-dish shops; keep them only if rendered cards fit the traveler action.
 3. Continue the food/restaurant desire pass over cafes, drinks, desserts, local classics, and any MICHELIN-supported pages that still feel credential- or support-role-led after render.
-4. Keep generated resources in sync: project V2.2 to handwritten copy, import handwritten copy, generate authored listing pages, generate SQLite, then validate.
+4. Inspect older generated relationship reasons that still look like repair residue, even when `displaySubtitle` is renderable.
+5. Keep generated resources in sync: project V2.2 to handwritten copy, import handwritten copy, generate authored listing pages, generate SQLite, then validate.
 
 Good starter pages/searches for rendered review:
 
