@@ -11850,7 +11850,7 @@
       "pageID": "viet-family-city-danang-place-domestic-terminal",
       "scenarioID": "city-guides",
       "familyTitle": "Da Nang Domestic Terminal pronunciation",
-      "summary": "Keep the terminal as an ordered first step. Find the exit, match the pickup point, then let the ride begin. The domestic terminal turns the first few minutes into a clear sequence: bags, signs, pickup choice, and the ride into Da Nang.",
+      "summary": "The domestic terminal gives the first Da Nang minutes a simple order: bags, exit signs, pickup point, and the ride into town. The domestic terminal turns the first few minutes into a clear sequence: bags, signs, pickup choice, and the ride into Da Nang.",
       "primaryPhraseID": "city-danang-place-domestic-terminal",
       "accessTier": "premium",
       "phraseIDs": [
@@ -11874,7 +11874,7 @@
       "pageID": "viet-family-city-danang-place-dragon-bridge",
       "scenarioID": "city-guides",
       "familyTitle": "Dragon Bridge pronunciation",
-      "summary": "Treat the bridge as a short riverfront decision. The timed fire show is a separate plan. The bridge makes Da Nang's center-to-beach layout visible in one bright riverfront scene, especially once the standing spot is chosen.",
+      "summary": "Dragon Bridge gives visitors a quick riverfront orientation point, while the fire show deserves its own timing plan. Dragon Bridge makes Da Nang's center-to-beach layout visible in one bright riverfront scene.",
       "primaryPhraseID": "city-danang-place-dragon-bridge",
       "accessTier": "premium",
       "phraseIDs": [
@@ -12666,7 +12666,7 @@
       "pageID": "viet-family-city-danang-place-tran-hung-dao-street",
       "scenarioID": "city-guides",
       "familyTitle": "Tran Hung Dao Street pronunciation",
-      "summary": "The street is a river line for orientation rather than a block-by-block sightseeing list. The street-spine role keeps the focus on orientation, bridge angles, evening light, and manageable movement along the river.",
+      "summary": "Tran Hung Dao Street is the east-bank river walk: bridge views, scooter flow, hotel fronts, and an easy way to decide where to cross or stop.",
       "primaryPhraseID": "city-danang-place-tran-hung-dao-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -13818,7 +13818,7 @@
       "pageID": "viet-family-city-hanoi-place-hanoi-railway-station",
       "scenarioID": "city-guides",
       "familyTitle": "Hanoi Railway Station pronunciation",
-      "summary": "Hanoi Railway Station is a capital threshold: a French-era facade, route boards, bags, and the feeling of the city opening onto longer journeys.",
+      "summary": "Hanoi Railway Station matters when the trip moves from the capital into a longer route: route boards, bags, platform timing, and the old facade.",
       "primaryPhraseID": "city-hanoi-place-hanoi-railway-station",
       "accessTier": "premium",
       "phraseIDs": [
@@ -14118,7 +14118,7 @@
       "pageID": "viet-family-city-hanoi-place-noi-bai-airport",
       "scenarioID": "city-guides",
       "familyTitle": "Noi Bai International Airport pronunciation",
-      "summary": "Nội Bài is Hanoi's arrival threshold, where glass doors, waiting families, SIM cards, bags, and the first ride turn Vietnam from plan into place.",
+      "summary": "Noi Bai begins the Hanoi handoff: bags, arrival doors, phone setup, pickup signs, and the ride toward the city. Noi Bai turns the planned Hanoi trip into a real arrival sequence.",
       "primaryPhraseID": "city-hanoi-place-noi-bai-airport",
       "accessTier": "premium",
       "phraseIDs": [
@@ -16722,7 +16722,7 @@
       "pageID": "viet-family-city-hcmc-place-tan-son-nhat-airport",
       "scenarioID": "city-guides",
       "familyTitle": "Tan Son Nhat International Airport pronunciation",
-      "summary": "The airport is an arrival threshold: names, doors, bags, rides, and the first look at Saigon traffic. It turns arrival from a blur into a sequence: land, collect bags, find the ride, and meet the city.",
+      "summary": "Tan Son Nhat begins the Saigon handoff: arrival doors, bags, ride signs, warm air, and the first look at city traffic. Tan Son Nhat turns the planned Saigon day into a real arrival sequence.",
       "primaryPhraseID": "city-hcmc-place-tan-son-nhat-airport",
       "accessTier": "premium",
       "phraseIDs": [
@@ -16746,7 +16746,7 @@
       "pageID": "viet-family-city-hcmc-place-thao-dien",
       "scenarioID": "city-guides",
       "familyTitle": "Thao Dien pronunciation",
-      "summary": "Thảo Điền is a decompression neighborhood beside the river, practical as contrast to District 1, Chợ Lớn, markets, and old landmarks.",
+      "summary": "Thao Dien gives the trip a slower river-side neighborhood: cafes, side streets, dinner plans, and a softer break from District 1. Thao Dien gives Saigon a quieter river-side pause after central streets and markets.",
       "primaryPhraseID": "city-hcmc-place-thao-dien",
       "accessTier": "premium",
       "phraseIDs": [
@@ -18006,7 +18006,7 @@
       "pageID": "viet-family-city-hoian-place-cua-dai-pier",
       "scenarioID": "city-guides",
       "familyTitle": "Cua Dai Pier pronunciation",
-      "summary": "Cua Dai Pier is the coastal boarding edge of Hội An: open water, island routes, and name confusion resolved by boats rather than beach time.",
+      "summary": "Cua Dai Pier matters when the day involves boats from the Hội An coast: island routes, pickup timing, water, and departure signs. Cua Dai Pier is the coastal boarding point for boat plans outside the old-town lanes.",
       "primaryPhraseID": "city-hoian-place-cua-dai-pier",
       "accessTier": "premium",
       "phraseIDs": [
@@ -59249,7 +59249,7 @@
       "pronunciation": "nha ga quoc noi da nang",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Keep the terminal as an ordered first step. Find the exit, match the pickup point, then let the ride begin. The domestic terminal turns the first few minutes into a clear sequence: bags, signs, pickup choice, and the ride into Da Nang.",
+      "context": "The domestic terminal gives the first Da Nang minutes a simple order: bags, exit signs, pickup point, and the ride into town. The domestic terminal turns the first few minutes into a clear sequence: bags, signs, pickup choice, and the ride into Da Nang.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -59335,7 +59335,7 @@
       "pronunciation": "cow zong",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Treat the bridge as a short riverfront decision. The timed fire show is a separate plan. The bridge makes Da Nang's center-to-beach layout visible in one bright riverfront scene, especially once the standing spot is chosen.",
+      "context": "Dragon Bridge gives visitors a quick riverfront orientation point, while the fire show deserves its own timing plan. Dragon Bridge makes Da Nang's center-to-beach layout visible in one bright riverfront scene.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -62173,7 +62173,7 @@
       "pronunciation": "duong tran hung dao",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "The street is a river line for orientation rather than a block-by-block sightseeing list. The street-spine role keeps the focus on orientation, bridge angles, evening light, and manageable movement along the river.",
+      "context": "Tran Hung Dao Street is the east-bank river walk: bridge views, scooter flow, hotel fronts, and an easy way to decide where to cross or stop.",
       "youMayHear": "",
       "searchAliases": [
         "Da Nang",
@@ -66411,7 +66411,7 @@
       "pronunciation": "ga ha noi",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Hanoi Railway Station is a capital threshold: a French-era facade, route boards, bags, and the feeling of the city opening onto longer journeys.",
+      "context": "Hanoi Railway Station matters when the trip moves from the capital into a longer route: route boards, bags, platform timing, and the old facade.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -67489,7 +67489,7 @@
       "pronunciation": "sun bay noy bai",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Nội Bài is Hanoi's arrival threshold, where glass doors, waiting families, SIM cards, bags, and the first ride turn Vietnam from plan into place.",
+      "context": "Noi Bai begins the Hanoi handoff: bags, arrival doors, phone setup, pickup signs, and the ride toward the city. Noi Bai turns the planned Hanoi trip into a real arrival sequence.",
       "youMayHear": "",
       "searchAliases": [
         "Hanoi",
@@ -77118,7 +77118,7 @@
       "pronunciation": "sun bay tan son nyut",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "The airport is an arrival threshold: names, doors, bags, rides, and the first look at Saigon traffic. It turns arrival from a blur into a sequence: land, collect bags, find the ride, and meet the city.",
+      "context": "Tan Son Nhat begins the Saigon handoff: arrival doors, bags, ride signs, warm air, and the first look at city traffic. Tan Son Nhat turns the planned Saigon day into a real arrival sequence.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -77206,7 +77206,7 @@
       "pronunciation": "thao dien",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Thảo Điền is a decompression neighborhood beside the river, practical as contrast to District 1, Chợ Lớn, markets, and old landmarks.",
+      "context": "Thao Dien gives the trip a slower river-side neighborhood: cafes, side streets, dinner plans, and a softer break from District 1. Thao Dien gives Saigon a quieter river-side pause after central streets and markets.",
       "youMayHear": "",
       "searchAliases": [
         "Saigon / Ho Chi Minh City",
@@ -81858,7 +81858,7 @@
       "pronunciation": "ben tau cua dai",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Cua Dai Pier is the coastal boarding edge of Hội An: open water, island routes, and name confusion resolved by boats rather than beach time.",
+      "context": "Cua Dai Pier matters when the day involves boats from the Hội An coast: island routes, pickup timing, water, and departure signs. Cua Dai Pier is the coastal boarding point for boat plans outside the old-town lanes.",
       "youMayHear": "",
       "searchAliases": [
         "Hoi An",

@@ -225,10 +225,13 @@ Rendered proof after this repair batch:
 - Repaired pages rendered in this sample: Boulevard Gelato & Coffee, Wonderlust, Mặn Mòi, Phá lấu, Hội An wonton, Đại Nam Restaurant, Hanoi Train Street, Bến Thành Metro Station, War Remnants Museum, and Perfume River.
 - Added `taxonomy-runtime-repair-results.jsonl`: `8` taxonomy-repaired pages, `24` screenshots, `0` failures.
 - Runtime-taxonomy pages rendered in this sample: Nguyễn Hiển Dĩnh Tuồng Theatre, Vietnam Central Circus, Vietnam National Tuồng Theatre, Golden Dragon Water Puppet Theater, À Ố Show, Duyệt Thị Đường Royal Theater, 42 Nguyễn Huệ apartment building, and Reaching Out Arts & Crafts.
-- Combined current proof across maintained result files is now `67` unique pages, `252` screenshots, and `0` current failures.
+- Added `high-risk-taxonomy-proof-001-results.jsonl`: `20` high-risk pages, `60` screenshots, `0` failures. The slice covered arrivals, stations, markets, streets, beach, nature, museums, river, neighborhood, villages, port, dessert, and Hue landmarks.
+- Text review after that render slice found and repaired several lines that still validated but read stiff on a phone: `street-spine role`, repeated `threshold`, and `name confusion resolved by boats`.
+- Added `high-risk-humanized-rerun-results.jsonl`: `8` edited pages, `24` fresh screenshots, `0` failures after the humanization patch.
+- Combined latest-current proof across maintained result files is now `87` unique pages, `261` screenshots, and `0` current failures.
 
 Remaining honest risks:
 
-- The global V2.2 rendered proof gate is still open: `453` pages still need current screenshots unless the gate is explicitly amended.
+- The global V2.2 rendered proof gate is still open: `433` pages still need current screenshots unless the gate is explicitly amended.
 - The cross-taxonomy auditor found large repeated phrase-card sets by taxonomy. Some repetition is expected for common travel actions, but high-traffic pages still need human-rendered review for phrase-card fit.
 - Runtime taxonomy mismatches from the subagent hard-block list were repaired and rendered in the sample above. Related grouping should still be watched during the remaining 453-page screenshot pass, because older legacy metadata can still leak into shelves/search even when visible copy is strong.

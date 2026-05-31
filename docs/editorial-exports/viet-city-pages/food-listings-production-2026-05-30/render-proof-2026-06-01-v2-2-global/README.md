@@ -43,7 +43,12 @@ Category-balanced batch:
 - Runtime taxonomy repair proof:
   - `taxonomy-runtime-repair-results.jsonl`: `8` repaired pages, `24` screenshots, `0` failures.
   - Scope: Nguyễn Hiển Dĩnh Tuồng Theatre, Vietnam Central Circus, Vietnam National Tuồng Theatre, Golden Dragon Water Puppet Theater, À Ố Show, Duyệt Thị Đường Royal Theater, 42 Nguyễn Huệ apartment building, and Reaching Out Arts & Crafts.
-- Combined current proof across the maintained result files is `67` unique pages, `252` screenshots, and `0` current failures.
+- High-risk taxonomy proof:
+  - `high-risk-taxonomy-proof-001-results.jsonl`: `20` high-risk pages, `60` screenshots, `0` failures.
+  - Scope: arrivals, stations, markets, streets, beach, nature, museums, river, neighborhood, villages, port, dessert, and Hue landmarks.
+  - Text review after this batch found a few stiff but validating lines (`street-spine role`, repeated `threshold`, and `name confusion resolved by boats`). Those were repaired in source.
+  - `high-risk-humanized-rerun-results.jsonl`: `8` edited pages rerun after the copy repair, `24` screenshots, `0` failures.
+- Combined latest-current proof across the maintained result files is `87` unique pages, `261` screenshots, and `0` current failures. Total historical proof rows in this folder include `112` rows and `336` screenshots, but the current count uses the latest passing row for each page.
 
 This is a meaningful rendered proof expansion, not the final 520-page receipt. The final gate still needs either all `520` pages captured by this harness or an explicit approval-standard amendment accepting full source/runtime review plus category-balanced rendered proof.
 

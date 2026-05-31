@@ -170,5 +170,8 @@ Eighth repair batch, 2026-06-01:
 - Added rendered proof `taxonomy-hardblock-repair-results.jsonl`: `10` repaired pages, `30` screenshots, `0` failures.
 - Repaired runtime taxonomy metadata for performance/show/craft/apartment pages that were projecting as museum or market-like groups: Nguyễn Hiển Dĩnh Tuồng Theatre, Vietnam Central Circus, Vietnam National Tuồng Theatre, Golden Dragon Water Puppet Theater, À Ố Show, Duyệt Thị Đường Royal Theater, 42 Nguyễn Huệ apartment building, and Reaching Out Arts & Crafts.
 - Added rendered proof `taxonomy-runtime-repair-results.jsonl`: `8` repaired pages, `24` screenshots, `0` failures.
-- Combined current rendered proof is now `67` unique pages, `252` screenshots, `0` current failures.
-- Global status remains not complete: `453` V2.2 pages still need current rendered proof unless the standard is amended, and repeated phrase-card clusters remain a follow-up class.
+- Added high-risk taxonomy proof `high-risk-taxonomy-proof-001-results.jsonl`: `20` pages, `60` screenshots, `0` failures across arrivals, stations, markets, streets, beach, nature, museums, river, neighborhood, villages, port, dessert, and Hue landmarks.
+- Text review after that render slice found validating-but-stiff copy on a few pages. Repaired `street-spine role`, repeated `threshold`, and `name confusion resolved by boats` style language in authored V2.2 source, regenerated native resources, and reran validators.
+- Added current-text rerun proof `high-risk-humanized-rerun-results.jsonl`: `8` edited pages, `24` screenshots, `0` failures.
+- Combined latest-current rendered proof is now `87` unique pages, `261` screenshots, `0` current failures.
+- Global status remains not complete: `433` V2.2 pages still need current rendered proof unless the standard is amended, and repeated phrase-card clusters remain a follow-up class.

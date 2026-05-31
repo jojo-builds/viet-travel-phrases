@@ -122,7 +122,7 @@ Travel time, tickets, cable cars, walking, and crowd flow all take space. Pair i
 - Practice CTA: Practice this place
 
 ### Dry View Or Close Crowd
-Dragon Bridge is the Da Nang river landmark with one real choice: stand close for crowd energy and spray, or stay back for the cleaner dragon view.
+Dragon Bridge is the landmark most visitors notice first: a dragon-shaped span over the Han River, bright at night, and useful for understanding how Da Nang's center connects toward the beach.
 
 ### Useful Phrases
 - Cho hỏi, đi tới đó thế nào? — Excuse me, how do I get there?
