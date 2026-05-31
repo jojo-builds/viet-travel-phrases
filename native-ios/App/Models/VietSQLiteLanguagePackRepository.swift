@@ -2039,6 +2039,10 @@ enum VietSQLitePhraseGraphRuntime {
         return canonicalPageID
     }
 
+    static func seedKnownCanonicalPageID(_ pageID: String) {
+        storeCachedCanonicalPageID(pageID, for: pageID)
+    }
+
     static func search(_ query: String, limit: Int = 8) -> [PhraseSearchResult]? {
         let cacheKey = searchCacheKey(query: query, limit: limit)
         if let cachedResults = cachedSearchResults(for: cacheKey) {

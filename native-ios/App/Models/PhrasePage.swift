@@ -848,12 +848,14 @@ enum PhraseCatalog {
 
     private static func loadedCatalogCanonicalPageID(for pageID: String) -> String? {
         cacheLock.lock()
-        defer { cacheLock.unlock() }
+        let isKnownCanonicalPageID = loadedCache?.itemsByPageID[pageID] != nil
+        cacheLock.unlock()
 
-        guard let loadedCache, loadedCache.itemsByPageID[pageID] != nil else {
+        guard isKnownCanonicalPageID else {
             return nil
         }
 
+        VietSQLitePhraseGraphRuntime.seedKnownCanonicalPageID(pageID)
         return pageID
     }
 

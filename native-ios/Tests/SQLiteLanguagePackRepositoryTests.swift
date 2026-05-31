@@ -148,7 +148,7 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertEqual(VietSQLitePhraseGraphRuntime.cachedDetailPageCountForTesting, 0)
     }
 
-    func testRuntimeDetailPageLoadCanonicalizesOnlyOncePerNewPage() throws {
+    func testRuntimeDetailPageLoadReusesCatalogCanonicalSeedForKnownPageID() throws {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
         VietSQLiteLanguagePackRepository.resetCanonicalPageIDLookupCountForTesting()
         defer {
@@ -156,13 +156,35 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
             VietSQLiteLanguagePackRepository.resetCanonicalPageIDLookupCountForTesting()
         }
 
+        XCTAssertTrue(PhraseCatalog.allItems.contains { $0.pageID == "viet-phrase-phone-1" })
+        XCTAssertEqual(PhraseCatalog.canonicalPageID(forOpenablePageID: "viet-phrase-phone-1"), "viet-phrase-phone-1")
+        VietSQLiteLanguagePackRepository.resetCanonicalPageIDLookupCountForTesting()
+
         let page = try XCTUnwrap(VietSQLitePhraseGraphRuntime.detailPage(withID: "viet-phrase-phone-1"))
 
         XCTAssertEqual(page.id, "viet-phrase-phone-1")
         XCTAssertEqual(
             VietSQLiteLanguagePackRepository.canonicalPageIDLookupCountForTesting,
+            0,
+            "Catalog/Home/Browse already know canonical listing page IDs, so the detail loader should reuse that seed instead of spending one SQL alias lookup per rapid new-page open."
+        )
+    }
+
+    func testRuntimeDetailPageLoadCanonicalizesAliasOnlyOncePerNewPage() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        VietSQLiteLanguagePackRepository.resetCanonicalPageIDLookupCountForTesting()
+        defer {
+            VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+            VietSQLiteLanguagePackRepository.resetCanonicalPageIDLookupCountForTesting()
+        }
+
+        let page = try XCTUnwrap(VietSQLitePhraseGraphRuntime.detailPage(withID: "viet-family-phone-wifi-password"))
+
+        XCTAssertEqual(page.id, "viet-phrase-phone-1")
+        XCTAssertEqual(
+            VietSQLiteLanguagePackRepository.canonicalPageIDLookupCountForTesting,
             1,
-            "Opening a new SQLite-backed listing page should canonicalize once, then load the canonical page directly instead of repeating the same SQL alias lookup."
+            "Alias listing page IDs still need one SQL alias lookup before loading the canonical page."
         )
     }
 
