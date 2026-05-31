@@ -669,11 +669,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-42-nguyen-hue-apartment",
-          "label": "Chung cư 42 Nguyễn Huệ",
-          "relationship": "cafe-apartment vertical stop",
-          "displaySubtitle": "The Cafe Apartment address for balconies, stairs, upstairs rooms, and a short Nguyễn Huệ detour.",
-          "reason": "Related because: The Cafe Apartment address for balconies, stairs, upstairs rooms, and a short Nguyễn Huệ detour.",
+          "catalogId": "viet-family-city-hcmc-place-saigon-river-boat",
+          "label": "Đi thuyền sông Sài Gòn",
+          "relationship": "river-ride next step",
+          "displaySubtitle": "The boat version of the river when the plan needs boarding, tickets, and a return point.",
+          "reason": "The Saigon River boat page is the action-oriented next step from the waterbus station.",
           "status": "render"
         }
       ],
@@ -1477,11 +1477,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-mien-dong-bus-station",
-          "label": "Bến xe Miền Đông",
-          "relationship": "onward-bus handoff",
-          "displaySubtitle": "The eastern bus edge for luggage, route boards, bays, and leaving Saigon by road.",
-          "reason": "Related because: The eastern bus edge for luggage, route boards, bays, and leaving Saigon by road.",
+          "catalogId": "viet-family-city-hcmc-place-ben-thanh-market",
+          "label": "Chợ Bến Thành",
+          "relationship": "central-market handoff",
+          "displaySubtitle": "The market name just above ground, useful for exits, meeting points, and the first District 1 walk.",
+          "reason": "Ben Thanh Market is the clearest above-ground handoff from the central station name.",
           "status": "render"
         }
       ],
@@ -4679,8 +4679,8 @@
         },
         {
           "id": "guide-stops-matter",
-          "heading": "Guide Context Matters",
-          "body": "The site is easier when someone explains what you are seeing. Earth paths and preserved spaces need context, not just photos."
+          "heading": "Context Before Photos",
+          "body": "The site is easier when someone explains what you are seeing. Earth paths and preserved spaces need a little background, not just photos."
         },
         {
           "id": "return-energy-counts",
@@ -4794,8 +4794,8 @@
         },
         {
           "id": "guide-explanation-first",
-          "heading": "Guide Context Before Photos",
-          "body": "A guide or clear explanation matters here. Without it, the site can flatten into objects, paths, and photos."
+          "heading": "Explanation Before Photos",
+          "body": "A guide or clear background helps here. Without it, the visit can flatten into objects, paths, and photos."
         },
         {
           "id": "a-serious-stop",
@@ -5487,9 +5487,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-ao-dai-museum",
           "label": "Bảo tàng Áo Dài",
-          "relationship": "dress-and-craft museum",
-          "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
-          "reason": "Related because: A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
+          "relationship": "visual-culture contrast",
+          "displaySubtitle": "A dress-and-craft museum when color, silk, and áo dài memory should be the focus.",
+          "reason": "Ao Dai Museum is a softer visual-culture contrast to the Fine Arts Museum.",
           "status": "render"
         }
       ],
@@ -5597,11 +5597,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-ao-dai-museum",
-          "label": "Bảo tàng Áo Dài",
-          "relationship": "dress-and-craft museum",
-          "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
-          "reason": "Related because: A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
+          "catalogId": "viet-family-city-hcmc-place-history-museum",
+          "label": "Bảo tàng Lịch sử Thành phố Hồ Chí Minh",
+          "relationship": "artifact-history contrast",
+          "displaySubtitle": "A broader artifact museum when medicine history should widen into older Vietnamese history.",
+          "reason": "The History Museum is a better broad-history comparison for FITO than the Ao Dai Museum.",
           "status": "render"
         }
       ],
@@ -6054,11 +6054,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-ao-dai-museum",
-          "label": "Bảo tàng Áo Dài",
-          "relationship": "dress-and-craft museum",
-          "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
-          "reason": "Related because: A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
+          "catalogId": "viet-family-city-hcmc-place-ho-chi-minh-city-museum",
+          "label": "Bảo tàng Thành phố Hồ Chí Minh",
+          "relationship": "city-history comparison",
+          "displaySubtitle": "A District 1 city-history stop in an old building when the visit should stay central.",
+          "reason": "Ho Chi Minh City Museum gives the History Museum a central city-history comparison.",
           "status": "render"
         }
       ],
@@ -6166,11 +6166,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-ao-dai-museum",
-          "label": "Bảo tàng Áo Dài",
-          "relationship": "dress-and-craft museum",
-          "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
-          "reason": "Related because: A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
+          "catalogId": "viet-family-city-hcmc-place-history-museum",
+          "label": "Bảo tàng Lịch sử Thành phố Hồ Chí Minh",
+          "relationship": "broader-history comparison",
+          "displaySubtitle": "A garden-side museum when city history should widen into older artifacts and regional history.",
+          "reason": "The History Museum is the broader-history comparison for Ho Chi Minh City Museum.",
           "status": "render"
         }
       ],
@@ -7464,11 +7464,11 @@
       "city": "Saigon",
       "category": "Restaurant",
       "pronunciation": "man moi",
-      "travelerMoment": "Choose Mặn Mòi for a Saigon dinner where the draw is a steady Vietnamese table: shared dishes, rice, sauces, attentive service, and a room that can hold the evening without turning formal.",
-      "storySpine": "Mặn Mòi gives Saigon a calm Vietnamese-table dinner choice: attentive service, shared dishes, and a room that still lets the food lead.",
+      "travelerMoment": "Choose Mặn Mòi for a calmer Saigon dinner built around shared Vietnamese dishes, rice, sauces, and staff guidance without making the night formal.",
+      "storySpine": "Mặn Mòi gives Saigon a composed Vietnamese-table dinner: shared dishes, attentive service, and a room where the food can lead.",
       "intro": {
-        "heading": "A Service-Aware Vietnamese Table",
-        "body": "Mặn Mòi is a Saigon restaurant for a steadier Vietnamese dinner: shared dishes, rice on the table, sauces close by, and service that lets the room stay calm."
+        "heading": "A Calm Shared Vietnamese Table",
+        "body": "Mặn Mòi is a Saigon restaurant for a steadier Vietnamese dinner: shared dishes, rice on the table, sauces close by, and staff guidance when the menu needs a little help."
       },
       "usefulPhraseCards": [
         {
@@ -7500,22 +7500,22 @@
         {
           "id": "let-dinner-slow-down",
           "heading": "Let Dinner Slow Down",
-          "body": "Choose it for a night when the group wants to sit, pass dishes, and let the meal become the plan. It should feel calmer than a snack stop and less ceremonial than a tasting menu."
+          "body": "Choose it for a night when the group wants to sit, pass dishes, and let the meal become the plan without turning formal."
         },
         {
           "id": "order-around-the-table",
           "heading": "Order Around The Table",
-          "body": "Ask what the table should share, then let rice, vegetables, soup, and sauced dishes build the meal. A simple menu question keeps the first move easy if the room is busy."
+          "body": "Ask what the table should share, then let rice, vegetables, soup, and sauced dishes build the meal."
         },
         {
-          "id": "why-this-saigon-table-matters",
-          "heading": "Why This Saigon Table Matters",
-          "body": "This is the middle lane: slower than street-food speed and less formal than a tasting menu, with a Vietnamese restaurant dinner that is easy to picture before the trip."
+          "id": "service-helps-the-first-move",
+          "heading": "Staff Guidance Helps",
+          "body": "The first move is simple: ask for a recommendation, then build a shared table instead of ordering one plate per person."
         },
         {
-          "id": "recognition-supports-the-save",
-          "heading": "The Choice Is Clear",
-          "body": "The reason to go is still the table: dishes landing together, sauces within reach, and service that helps dinner settle."
+          "id": "the-table-is-the-reason",
+          "heading": "The Table Is The Reason",
+          "body": "The reason to go is dishes landing together, sauces within reach, and a room that lets dinner settle."
         }
       ],
       "mentionedHereCandidates": [],
@@ -8658,7 +8658,7 @@
         {
           "id": "exterior-and-square-first",
           "heading": "Exterior And Square",
-          "body": "The visit often starts outside: brick facade, square, and the way the cathedral orients the block. Restoration barriers may change how close visitors can get."
+          "body": "The visit often starts outside: brick facade, square, and the way the cathedral orients the block. Let the exterior view be enough if access feels limited."
         },
         {
           "id": "photos-are-not-the-whole-stop",
@@ -9187,11 +9187,11 @@
       "city": "Saigon",
       "category": "Dish",
       "pronunciation": "pha lau",
-      "travelerMoment": "The dish is a focused food memory: one bowl, one dipping motion, and enough flavor to make a sidewalk table feel specific.",
-      "storySpine": "Phá lấu is a clear food stop with a bowl, bread, sauce, steam, richness, and a practical ordering moment.",
+      "travelerMoment": "Phá lấu is the moment for deciding whether a rich Saigon offal stew sounds exciting: a small bowl, bread for dipping, sauce, steam, and a sidewalk pace.",
+      "storySpine": "The dish sits in Saigon snack culture because it turns inexpensive cuts, coconut-spiced broth, bread, and dipping sauce into a focused street-side bowl.",
       "intro": {
-        "heading": "A Bowl With Bread",
-        "body": "Pha lau is a small Saigon bowl with rich stew, bread on the side, sauce, steam, and bite doing more work than the English name can."
+        "heading": "A Rich Stew With Bread",
+        "body": "Phá lấu is a rich Saigon stew often made with pork or beef offal, served in a small bowl with bread for dipping, sauce, and plenty of steam."
       },
       "usefulPhraseCards": [
         {
@@ -9211,34 +9211,29 @@
           "status": "mapped"
         },
         {
-          "vi": "Không cay nhé",
-          "en": "Not spicy please",
-          "intent": "food-not-spicy",
-          "phraseId": "food-3",
-          "audioId": "food-3",
+          "vi": "Tôi bị dị ứng với động vật có vỏ",
+          "en": "I am allergic to shellfish",
+          "intent": "food-shellfish-allergy",
+          "phraseId": "v500-food-drin-i-am-allergic-to-shellfish",
+          "audioId": "v500-food-drin-i-am-allergic-to-shellfish",
           "status": "mapped"
         }
       ],
       "sections": [
         {
-          "id": "rich-small-specific",
-          "heading": "Rich, Small, Specific",
-          "body": "This is a focused stew bowl where sauce, bread, and richness carry the experience."
+          "id": "know-the-bowl-first",
+          "heading": "Know The Bowl First",
+          "body": "Know the bowl before you order: this is a rich, seasoned stew where the texture of the meat is part of the point."
         },
         {
-          "id": "a-snack-meal-gap",
-          "heading": "A Snack-Meal Gap",
-          "body": "It belongs between lunch and dinner when you want something more filling than coffee but smaller than a full restaurant meal."
+          "id": "bread-does-real-work",
+          "heading": "Bread Does Real Work",
+          "body": "The bread matters because it catches the broth and sauce. It cuts the richness and turns the bowl into a street-side snack-meal."
         },
         {
-          "id": "small-bowl-first",
-          "heading": "Small Opening Bowl",
-          "body": "The flavor can be rich, and the bite may be new for some visitors. A smaller opening bowl keeps the choice low-pressure."
-        },
-        {
-          "id": "sauce-carries-the-memory",
-          "heading": "Sauce Carries The Memory",
-          "body": "The bread is not decoration. It carries the sauce, cuts the richness, and turns the bowl into a street-side snack."
+          "id": "start-small",
+          "heading": "Start Small",
+          "body": "If offal is new to you, keep the first order small. The flavor can be warm and generous, but the texture is the decision."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10673,9 +10668,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-ao-dai-museum",
           "label": "Bảo tàng Áo Dài",
-          "relationship": "dress-and-craft museum",
-          "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
-          "reason": "Related because: A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
+          "relationship": "women-craft-culture contrast",
+          "displaySubtitle": "A dress-and-craft museum when women’s history leads toward silk, clothing, and design.",
+          "reason": "Ao Dai Museum is a relevant craft-and-clothing contrast for the Southern Women Museum.",
           "status": "render"
         }
       ],
@@ -11571,11 +11566,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-ao-dai-museum",
-          "label": "Bảo tàng Áo Dài",
-          "relationship": "dress-and-craft museum",
-          "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
-          "reason": "Related because: A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
+          "catalogId": "viet-family-city-hcmc-place-ho-chi-minh-city-museum",
+          "label": "Bảo tàng Thành phố Hồ Chí Minh",
+          "relationship": "local-history comparison",
+          "displaySubtitle": "A larger city-history museum when the smaller waterfront stop should widen into central Saigon memory.",
+          "reason": "Ho Chi Minh City Museum is a better local-history comparison for Ton Duc Thang Museum.",
           "status": "render"
         }
       ],
@@ -12028,11 +12023,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hcmc-place-ao-dai-museum",
-          "label": "Bảo tàng Áo Dài",
-          "relationship": "dress-and-craft museum",
-          "displaySubtitle": "A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
-          "reason": "Related because: A softer cultural stop for áo dài garments, color, garden-like grounds, and slower looking.",
+          "catalogId": "viet-family-city-hcmc-place-cu-chi-tunnels",
+          "label": "Địa đạo Củ Chi",
+          "relationship": "war-history site contrast",
+          "displaySubtitle": "The outside-the-city historic site when wartime history needs earth paths, tunnels, and more time.",
+          "reason": "Cu Chi Tunnels is the more relevant war-history continuation from War Remnants Museum.",
           "status": "render"
         }
       ],

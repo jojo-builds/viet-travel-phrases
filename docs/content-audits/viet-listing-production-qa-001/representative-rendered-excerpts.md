@@ -214,7 +214,7 @@ Do not dump everything together at once. Dip noodles, add herbs, take pork, and 
 If extras appear, take a beat to understand the table. The main move stays clear: bun cha first.
 
 ### Lunch With One Job
-Huong Lien is for a clear bun cha meal rather than a broad menu search. The bowl, herbs, and broth carry the stop.
+Huong Lien is for a clear bun cha meal rather than a broad menu search. The bowl, herbs, and broth are the point.
 
 ### Famous Room, Quick Lunch
 The name may be familiar, but the table is simple: eat while the pork, broth, and herbs are warm.

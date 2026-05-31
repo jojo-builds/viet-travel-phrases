@@ -159,3 +159,14 @@ Rendered proof expansion, 2026-06-01:
 - Proved `52` unique current pages with `156` screenshots and `0` current failures across the category-balanced, award-jargon repair, cross-city, and Con Market rerun result files. This includes the user-flagged `city-hcmc-place-banh-xeo-46a`.
 - Multi-page-in-one-test runs can kill the UI-test runner; use single-page xcodebuild invocations with `TEST_RUNNER_SPEAKLOCAL_V2_2_RENDER_PROOF_OFFSET=<n>` and `TEST_RUNNER_SPEAKLOCAL_V2_2_RENDER_PROOF_LIMIT=1` for reliable continuation.
 - Remaining global proof gap: `468` V2.2 pages still need rendered screenshots, unless Jojo explicitly amends the final gate to accept source/runtime validation plus category-balanced native proof.
+
+Eighth repair batch, 2026-06-01:
+
+- Jojo rejected the award-jargon checkpoint as too narrow. A new full taxonomy re-audit used four read-only subagents plus a local inventory pass.
+- Audited slices covered Food `214` pages, Culture/Attraction `216`, Mobility/Route/Outdoor `90`, and cross-taxonomy repetition/card/mobile-readability across all `520`.
+- Repaired hard blockers from the independent audits: food support-language pages, HCMC museum related-card mismatch cluster, Train Street rules wording, Bạch Đằng Waterbus and Bến Thành Metro related cards, Hue nature fallback cards, beach/nature phrase-card fit, Cửa Đại Estuary first move, and Perfume River timing copy.
+- Regenerated V2.2 handwritten copy, native authored listing pages, phrase catalog, and SQLite.
+- Current source/runtime validators pass: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Added rendered proof `taxonomy-hardblock-repair-results.jsonl`: `10` repaired pages, `30` screenshots, `0` failures.
+- Combined current rendered proof is now `60` unique pages, `180` screenshots, `0` current failures.
+- Global status remains not complete: `460` V2.2 pages still need current rendered proof unless the standard is amended, and runtime taxonomy mismatch/repeated phrase-card clusters remain follow-up classes.

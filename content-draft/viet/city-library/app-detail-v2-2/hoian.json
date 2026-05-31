@@ -854,7 +854,7 @@
         {
           "id": "close-to-the-old-core",
           "heading": "Close To The Old Core",
-          "body": "The restaurant sits close to the Ancient Town walk. Think food detour, not slow tasting menu."
+          "body": "The restaurant sits close to the Ancient Town walk. Think hands-on food detour rather than a long formal dinner."
         }
       ],
       "mentionedHereCandidates": [
@@ -1421,27 +1421,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Bắt đầu ở đâu?",
-          "en": "Where do we start?",
-          "intent": "sight-start",
-          "phraseId": "sight-2",
-          "audioId": "sight-2",
+          "vi": "Bến thuyền ở đâu?",
+          "en": "Where is the boat pier?",
+          "intent": "boat-pier",
+          "phraseId": "v900-tran-where-is-the-boat-pier",
+          "audioId": "v900-tran-where-is-the-boat-pier",
           "status": "mapped"
         },
         {
-          "vi": "Điểm gặp ở đâu?",
-          "en": "Where is the meeting point?",
-          "intent": "sight-meeting-point",
-          "phraseId": "sight-5",
-          "audioId": "sight-5",
+          "vi": "Tôi có thể mua vé ở đâu?",
+          "en": "Where can I buy a ticket?",
+          "intent": "ticket",
+          "phraseId": "v900-tran-where-can-i-buy-a-ticket",
+          "audioId": "v900-tran-where-can-i-buy-a-ticket",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi chai nước",
-          "en": "A bottle of water please",
-          "intent": "service-water",
-          "phraseId": "store-1",
-          "audioId": "store-1",
+          "vi": "Điểm đón ở đâu?",
+          "en": "Where is the pickup point?",
+          "intent": "pickup-point",
+          "phraseId": "directions-8",
+          "audioId": "directions-8",
           "status": "mapped"
         }
       ],
@@ -4100,27 +4100,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Mình bắt đầu từ đâu?",
-          "en": "Where do we start?",
-          "intent": "sight-start",
-          "phraseId": "sight-2",
-          "audioId": "sight-2",
+          "vi": "Điểm đón ở đâu?",
+          "en": "Where is the pickup point?",
+          "intent": "pickup-point",
+          "phraseId": "directions-8",
+          "audioId": "directions-8",
           "status": "mapped"
         },
         {
-          "vi": "Cho hỏi, đi tới đó thế nào?",
-          "en": "Excuse me, how do I get there?",
-          "intent": "directions-how-to-get",
-          "phraseId": "directions-1",
-          "audioId": "directions-1",
+          "vi": "Tôi chụp hình ở đây được không?",
+          "en": "Can I take photos here?",
+          "intent": "sight-photos",
+          "phraseId": "sight-3",
+          "audioId": "sight-3",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi một chai nước",
-          "en": "A bottle of water please",
-          "intent": "water-bottle",
-          "phraseId": "store-1",
-          "audioId": "store-1",
+          "vi": "Tôi có thể mua nước ở đâu?",
+          "en": "Where can I buy water?",
+          "intent": "buy-water",
+          "phraseId": "v500-loca-serv-ever-task-where-can-i-buy-water",
+          "audioId": "v500-loca-serv-ever-task-where-can-i-buy-water",
           "status": "mapped"
         }
       ],
@@ -4212,25 +4212,25 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Bến thuyền ở đâu?",
-          "en": "Where is the boat pier?",
-          "intent": "v900-tran-where-is-the-boat-pier",
-          "phraseId": "v900-tran-where-is-the-boat-pier",
-          "audioId": "v900-tran-where-is-the-boat-pier",
+          "vi": "Tôi chụp hình ở đây được không?",
+          "en": "Can I take photos here?",
+          "intent": "sight-photos",
+          "phraseId": "sight-3",
+          "audioId": "sight-3",
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể mua vé ở đâu?",
-          "en": "Where can I buy a ticket?",
-          "intent": "v900-tran-where-can-i-buy-a-ticket",
-          "phraseId": "v900-tran-where-can-i-buy-a-ticket",
-          "audioId": "v900-tran-where-can-i-buy-a-ticket",
+          "vi": "Nó cách đây bao xa?",
+          "en": "How far is it?",
+          "intent": "distance",
+          "phraseId": "v500-dire-navi-how-far-is-it",
+          "audioId": "v500-dire-navi-how-far-is-it",
           "status": "mapped"
         },
         {
           "vi": "Điểm đón ở đâu?",
           "en": "Where is the pickup point?",
-          "intent": "directions-pickup-point",
+          "intent": "pickup-point",
           "phraseId": "directions-8",
           "audioId": "directions-8",
           "status": "mapped"
@@ -4244,8 +4244,8 @@
         },
         {
           "id": "nature-without-a-long-trip",
-          "heading": "Nature Without A Long Trip",
-          "body": "Let it explain Hội An's water geography without committing to an island day. The value is the edge, not filling hours."
+          "heading": "Read The Edge, Then Move On",
+          "body": "Treat it as a short water-edge stop: river, sea, boats, sandbars, and a clearer sense of how Hội An opens outward."
         },
         {
           "id": "read-the-waterline",
@@ -8101,7 +8101,7 @@
         {
           "id": "courtyard-scale-shared-plates",
           "heading": "Courtyard Scale, Shared Plates",
-          "body": "Expect a smaller restaurant room before you compare it with a riverside production. Order a few plates and let the table set the pace."
+          "body": "Expect a smaller restaurant room before you compare it with a riverside dinner. Order a few plates and let the table set the pace."
         },
         {
           "id": "a-quieter-dinner-choice",
@@ -9527,8 +9527,8 @@
       "city": "Hội An",
       "category": "Market",
       "pronunciation": "lang lua hoi an",
-      "travelerMoment": "Hội An Silk Village puts the tailor town back at the fabric source, where looms, yarn, silk rooms, and touch explain what happens before a fitting.",
-      "storySpine": "Hội An is known for clothing and tailoring, and the village visit lets fabric feel like a process before it becomes a garment.",
+      "travelerMoment": "Hội An Silk Village puts the tailor town back at the fabric stage, where looms, yarn, silk rooms, and touch explain what happens before a fitting.",
+      "storySpine": "Hội An is known for clothing and tailoring, and the village visit lets fabric feel like a craft before it becomes a garment.",
       "intro": {
         "heading": "Before The Tailor Mirror",
         "body": "Hội An Silk Village puts tailoring culture back at the fabric stage: looms, yarn spools, silk rooms, and a slower look at what sits behind the old-town tailor appointment."
@@ -11244,7 +11244,7 @@
       "travelerMoment": "White rose dumplings are tied closely to Hội An's food memory: thin wrappers, delicate filling, fried shallots, sauce, and a plate people remember by sight.",
       "storySpine": "The dish is one of Hội An’s clearest local food markers, easy to recognize before the visitor reaches a menu.",
       "intro": {
-        "heading": "A Small Dish With A Big cue",
+        "heading": "A Small Dish With A Big Cue",
         "body": "White rose dumplings give Hội An a small, specific food memory: pale wrappers, delicate filling, fried shallot crunch, dipping sauce, and a dish tied closely to the town."
       },
       "usefulPhraseCards": [
@@ -11300,8 +11300,8 @@
         {
           "catalogId": "viet-family-city-hoian-place-white-rose-restaurant",
           "label": "Nhà hàng White Rose",
-          "relationship": "dish-to-source restaurant",
-          "displaySubtitle": "The source restaurant when white rose dumplings should become one specific stop.",
+          "relationship": "dish-to-restaurant route",
+          "displaySubtitle": "The focused restaurant stop when white rose dumplings should be the plan.",
           "reason": "White Rose Restaurant is the concrete place route for the dumpling dish page.",
           "status": "render"
         }
@@ -11354,10 +11354,10 @@
       "city": "Hội An",
       "category": "Restaurant",
       "pronunciation": "nha hang white rose",
-      "travelerMoment": "White Rose Restaurant gives that Hội An dumpling memory a focused source, where bánh bao bánh vạc, crisp topping, and dipping sauce lead the stop.",
+      "travelerMoment": "White Rose Restaurant gives that Hội An dumpling memory a focused place, where bánh bao bánh vạc, crisp topping, and dipping sauce lead the stop.",
       "storySpine": "The restaurant is still worth it because the dish feels tied to one place: pale wrappers, pleated dumplings, sauce, and a family-kitchen reputation around Hội An.",
       "intro": {
-        "heading": "The Dumpling Source",
+        "heading": "The Dumpling Stop",
         "body": "White Rose Restaurant is the focused Hội An room for bánh bao bánh vạc: thin dumplings, shrimp or pork filling, crisp topping, dipping sauce, and a short detour from Ancient Town."
       },
       "usefulPhraseCards": [
@@ -11522,8 +11522,8 @@
         },
         {
           "id": "not-every-version-matches",
-          "heading": "Not Every Version Matches",
-          "body": "Some plates lean crisp, some softer, and sauces vary. Remember the dish category more than one fixed presentation."
+          "heading": "Crisp Or Soft Changes The Plate",
+          "body": "Some versions lean crisp, some softer, and sauces vary by shop. Let the plate in front of you decide the memory."
         }
       ],
       "mentionedHereCandidates": [],

@@ -12184,7 +12184,7 @@
           {
             "id": "at-glance",
             "title": "The Climb Is The Moment",
-            "body": "The cable-car climb from Da Nang heat into forest, mist, cooler air, and the much larger Ba Na Hills production above the city on the mountain."
+            "body": "The cable-car climb carries you from Da Nang heat into forest, mist, cooler air, and the larger Ba Na Hills complex above the city."
           },
           {
             "id": "quick-say",
@@ -13588,9 +13588,9 @@
       "targetText": "Boulevard Gelato & Coffee",
       "englishText": "Boulevard Gelato & Coffee",
       "pronunciation": "boulevard gelato coffee",
-      "context": "Boulevard Gelato & Coffee is a small reset for gelato, coffee, cool air, and an easy seat between bigger Da Nang food decisions.",
-      "tip": "If coffee craft is the goal, 43 Factory is sharper. Boulevard is better for sweetness, cool air, and a short reset.",
-      "rationale": "Its job is not to define Da Nang food; it gives the app a modest cold-sweet pause between heat, markets, beach plans, and dinner.",
+      "context": "Boulevard Gelato & Coffee is a small cold-sweet pause for gelato, iced coffee, and an easy seat between hotter Da Nang plans.",
+      "tip": "For espresso and roastery detail, 43 Factory is sharper. Boulevard gives you sweetness, cool air, and a short seat.",
+      "rationale": "It gives the food set a modest heat break: a cup or scoop when the group needs cold, familiar, and easy.",
       "chunks": [
         [
           "Boulevard",
@@ -13619,14 +13619,14 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Boulevard Gelato & Coffee is a small reset for gelato, coffee, cool air, and an easy seat between bigger Da Nang food decisions. Its job is not to define Da Nang food; it gives the app a modest cold-sweet pause between heat, markets, beach plans, and dinner.",
+        "summary": "Boulevard Gelato & Coffee is a small cold-sweet pause for gelato, iced coffee, and an easy seat between hotter Da Nang plans. It gives the food set a modest heat break: a cup or scoop when the group needs cold, familiar, and easy.",
         "sourceNotes": "Local cafe source.",
         "imagePromptNote": "Photorealistic owned asset: gelato-and-coffee counter with pastel cups, bright daylight, no logos.",
         "sections": [
           {
             "id": "at-glance",
             "title": "Gelato Between Bigger Plans",
-            "body": "Boulevard Gelato & Coffee is a small Da Nang reset: gelato, coffee, and cool air between market heat, beach plans, and a bigger dinner."
+            "body": "Boulevard Gelato & Coffee is a small Da Nang pause for gelato, iced coffee, cool air, and a seat before markets, seafood, or the beach."
           },
           {
             "id": "quick-say",
@@ -13640,18 +13640,18 @@
           },
           {
             "id": "place-brief",
-            "title": "Let The Cold Cup Do The Work",
-            "body": "One gelato cup or iced coffee can carry the stop: sweetness, cool air, and a few quiet minutes before the group steps back into heat."
+            "title": "Start With The Scoop",
+            "body": "The clearest reason to stop is simple: a cold scoop, an iced drink, and a few minutes out of the heat."
           },
           {
             "id": "use-it-with",
-            "title": "A Sweet Heat Break",
-            "body": "The room is useful when the group wants cold, familiar, and easy: gelato for kids, coffee for adults, and a reset before seafood, markets, or the beach."
+            "title": "Good For Mixed Groups",
+            "body": "Gelato keeps kids happy, coffee gives adults a quick reset, and nobody has to commit to a full cafe plan."
           },
           {
             "id": "when-to-use",
             "title": "Coffee Is Secondary",
-            "body": "If coffee craft is the goal, 43 Factory is sharper. Boulevard is better for sweetness, cool air, and a short reset."
+            "body": "For espresso and roastery detail, 43 Factory is sharper. Boulevard gives you sweetness, cool air, and a short seat."
           }
         ],
         "targetHeroImageName": "HeroCityDanangPlaceBoulevardGelatoCoffee",
@@ -15542,7 +15542,7 @@
       "pronunciation": "cow vang",
       "context": "Golden Bridge sits inside Ba Na Hills and the cable-car day. Think mountain-park photo stop rather than standalone downtown landmark.",
       "tip": "Put cable-car timing, ticketing, and weather ahead of the photo plan. Fog or crowding can make the bridge feel very different.",
-      "rationale": "The iconic image needs clear expectations: bridge first, park second, weather always part of the tradeoff.",
+      "rationale": "The bridge image needs clear expectations: bridge first, park second, weather always part of the tradeoff.",
       "chunks": [
         [
           "Cầu",
@@ -17736,8 +17736,8 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "sight-2",
-              "sight-5",
+              "sight-3",
+              "directions-8",
               "store-1"
             ]
           },
@@ -18810,8 +18810,8 @@
             "body": "",
             "phraseIDs": [
               "sight-2",
-              "sight-5",
-              "store-1"
+              "directions-8",
+              "v500-loca-serv-ever-task-where-can-i-buy-water"
             ]
           },
           {
@@ -20162,8 +20162,8 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "sight-2",
-              "sight-5",
+              "v500-dire-navi-how-far-is-it",
+              "directions-8",
               "store-1"
             ]
           },
@@ -21441,8 +21441,8 @@
           },
           {
             "id": "use-it-with",
-            "title": "Wildlife Stays Unscheduled",
-            "body": "If you see animals, stay back and keep the road slow. Feeding, crowding, or chasing the moment turns the drive into the wrong kind of attention."
+            "title": "Wildlife Is Never Guaranteed",
+            "body": "The drive is still worthwhile without an animal sighting. Forest shade, sea views, and quiet road edges are part of the experience."
           },
           {
             "id": "when-to-use",
@@ -22452,9 +22452,9 @@
       "targetText": "Wonderlust",
       "englishText": "Wonderlust",
       "pronunciation": "wonderlust",
-      "context": "The cafe is a drink-and-sit moment: bright counter, iced glass, clean table, and a short cool-down before the next Da Nang plan.",
-      "tip": "The value is simple: order cold, choose sweetness early, sit at a bright table, and let the room cool the day before dinner or another walk.",
-      "rationale": "Wonderlust gives the cafe set a bright cool-down for walks, markets, beach time, and dinner gaps.",
+      "context": "Wonderlust is a bright cafe pause for an iced drink, a simple table, and a short break before the next Da Nang meal or walk.",
+      "tip": "The draw is the bright room and easy table more than a complicated coffee ritual.",
+      "rationale": "It belongs in the cafe set as a light modern room: clean lines, cold drinks, and a practical pause between heat, errands, and dinner.",
       "chunks": [
         [
           "Wonderlust",
@@ -22479,14 +22479,14 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "The cafe is a drink-and-sit moment: bright counter, iced glass, clean table, and a short cool-down before the next Da Nang plan. Wonderlust gives the cafe set a bright cool-down for walks, markets, beach time, and dinner gaps.",
+        "summary": "Wonderlust is a bright cafe pause for an iced drink, a simple table, and a short break before the next Da Nang meal or walk. It belongs in the cafe set as a light modern room: clean lines, cold drinks, and a practical pause between heat, errands, and dinner.",
         "sourceNotes": "Local cafe source.",
         "imagePromptNote": "Photorealistic owned asset: bright minimalist cafe table with iced coffee and laptop-free counter, no logo.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "A Bright Break Before Dinner",
-            "body": "Wonderlust is a bright cafe cool-down: clean counter, iced glass, minimalist table, and a short break between heat, walking, markets, beach time, or dinner."
+            "title": "A Bright Iced-Coffee Pause",
+            "body": "Wonderlust is a bright Da Nang cafe for an iced drink, a simple table, and a short pause between heat, walking, markets, beach time, or dinner."
           },
           {
             "id": "quick-say",
@@ -22500,23 +22500,18 @@
           },
           {
             "id": "place-brief",
-            "title": "Order Cold, Decide Sweetness Early",
-            "body": "Iced coffee gives you the classic sweet pull; black iced coffee keeps the order cleaner. If sugar or ice matters, say it before the drink is made."
+            "title": "Decide Sweetness Early",
+            "body": "Iced milk coffee brings the classic sweet pull; black iced coffee keeps it sharper. If sugar or ice matters, say it before the drink is made."
           },
           {
             "id": "use-it-with",
-            "title": "A Short Table Beats A Long Session",
-            "body": "The draw is the short sit: bright table, iced coffee, counter, and design detail. It can cool the day between walks, markets, beach time, or dinner."
+            "title": "Keep The Stop Light",
+            "body": "Keep the visit light: order cold, sit long enough to cool down, then let the day keep moving."
           },
           {
             "id": "when-to-use",
-            "title": "Clean Cafe Break",
-            "body": "Wonderlust suits a day that needs a bright table more than a destination cafe. Order simply, sit long enough to cool down, then move on."
-          },
-          {
-            "id": "good-to-know",
-            "title": "One Clean Counter Moment",
-            "body": "The value is simple: order cold, choose sweetness early, sit at a bright table, and let the room cool the day before dinner or another walk."
+            "title": "Room Over Ritual",
+            "body": "The draw is the bright room and easy table more than a complicated coffee ritual."
           }
         ],
         "targetHeroImageName": "HeroCityDanangPlaceWonderlust",
@@ -25640,7 +25635,7 @@
           {
             "id": "when-to-use",
             "title": "Lunch With One Job",
-            "body": "Huong Lien is for a clear bun cha meal rather than a broad menu search. The bowl, herbs, and broth carry the stop."
+            "body": "Huong Lien is for a clear bun cha meal rather than a broad menu search. The bowl, herbs, and broth are the point."
           },
           {
             "id": "good-to-know",
@@ -33428,20 +33423,15 @@
           {
             "id": "place-brief",
             "title": "Safety Stays Non-Negotiable",
-            "body": "Barriers, staff, and local instructions matter more than a planned photo. A permitted edge protects the corridor."
+            "body": "Local instructions matter more than a planned photo. Stay at the edge, keep the track clear, and let staff or signs set the boundary."
           },
           {
             "id": "use-it-with",
-            "title": "Cafes Set The Boundary",
-            "body": "When a permitted cafe seat is available, the narrowness tells the story without blocking movement."
+            "title": "Cafes Frame The View",
+            "body": "A cafe edge can give the narrow-street feeling without blocking movement. The point is the closeness, not standing on the rails."
           },
           {
             "id": "when-to-use",
-            "title": "Safety Before The Photo",
-            "body": "If a permitted cafe or staff direction is not clear, the memory can stay at a safe edge. The photo is never worth crowding the track."
-          },
-          {
-            "id": "good-to-know",
             "title": "A Brief Photo Is Enough",
             "body": "A quick photo from a safe edge carries the memory. Crowding the track area makes the street worse for residents and staff."
           }
@@ -41949,8 +41939,8 @@
           },
           {
             "id": "when-to-use",
-            "title": "Guide Context Matters",
-            "body": "The site is easier when someone explains what you are seeing. Earth paths and preserved spaces need context, not just photos."
+            "title": "Context Before Photos",
+            "body": "The site is easier when someone explains what you are seeing. Earth paths and preserved spaces need a little background, not just photos."
           },
           {
             "id": "good-to-know",
@@ -42047,8 +42037,8 @@
           },
           {
             "id": "use-it-with",
-            "title": "Guide Context Before Photos",
-            "body": "A guide or clear explanation matters here. Without it, the site can flatten into objects, paths, and photos."
+            "title": "Explanation Before Photos",
+            "body": "A guide or clear background helps here. Without it, the visit can flatten into objects, paths, and photos."
           },
           {
             "id": "when-to-use",
@@ -44456,9 +44446,9 @@
       "targetText": "Mặn Mòi",
       "englishText": "Man Moi",
       "pronunciation": "man moi",
-      "context": "Choose Mặn Mòi for a Saigon dinner where the draw is a steady Vietnamese table: shared dishes, rice, sauces, attentive service, and a room that can hold the evening without turning formal.",
-      "tip": "The reason to go is still the table: dishes landing together, sauces within reach, and service that helps dinner settle.",
-      "rationale": "Mặn Mòi gives Saigon a calm Vietnamese-table dinner choice: attentive service, shared dishes, and a room that still lets the food lead.",
+      "context": "Choose Mặn Mòi for a calmer Saigon dinner built around shared Vietnamese dishes, rice, sauces, and staff guidance without making the night formal.",
+      "tip": "The reason to go is dishes landing together, sauces within reach, and a room that lets dinner settle.",
+      "rationale": "Mặn Mòi gives Saigon a composed Vietnamese-table dinner: shared dishes, attentive service, and a room where the food can lead.",
       "chunks": [
         [
           "Mặn",
@@ -44488,15 +44478,15 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Choose Mặn Mòi for a Saigon dinner where the draw is a steady Vietnamese table: shared dishes, rice, sauces, attentive service, and a room that can hold the evening without turning formal.",
+        "summary": "Choose Mặn Mòi for a calmer Saigon dinner built around shared Vietnamese dishes, rice, sauces, and staff guidance without making the night formal.",
         "sourceNotes": "guide Vietnam 2025; official 2025 PDF lists Mặn Mòi as casual-value and names the service note recipient from Mặn Mòi",
         "imagePromptNote": "Warm Vietnamese shared-table dinner with rice, clay dishes, herbs, sauces, and no readable signage or logos, realistic app-owned photo.",
         "targetHeroImageName": "HeroCityHcmcPlaceManMoi",
         "sections": [
           {
             "id": "at-glance",
-            "title": "A Service-Aware Vietnamese Table",
-            "body": "Mặn Mòi is a Saigon restaurant for a steadier Vietnamese dinner: shared dishes, rice on the table, sauces close by, and service that lets the room stay calm."
+            "title": "A Calm Shared Vietnamese Table",
+            "body": "Mặn Mòi is a Saigon restaurant for a steadier Vietnamese dinner: shared dishes, rice on the table, sauces close by, and staff guidance when the menu needs a little help."
           },
           {
             "id": "quick-say",
@@ -44511,22 +44501,22 @@
           {
             "id": "place-brief",
             "title": "Let Dinner Slow Down",
-            "body": "Choose it for a night when the group wants to sit, pass dishes, and let the meal become the plan. It should feel calmer than a snack stop and less ceremonial than a tasting menu."
+            "body": "Choose it for a night when the group wants to sit, pass dishes, and let the meal become the plan without turning formal."
           },
           {
             "id": "use-it-with",
             "title": "Order Around The Table",
-            "body": "Ask what the table should share, then let rice, vegetables, soup, and sauced dishes build the meal. A simple menu question keeps the first move easy if the room is busy."
+            "body": "Ask what the table should share, then let rice, vegetables, soup, and sauced dishes build the meal."
           },
           {
             "id": "when-to-use",
-            "title": "Why This Saigon Table Matters",
-            "body": "This is the middle lane: slower than street-food speed and less formal than a tasting menu, with a Vietnamese restaurant dinner that is easy to picture before the trip."
+            "title": "Staff Guidance Helps",
+            "body": "The first move is simple: ask for a recommendation, then build a shared table instead of ordering one plate per person."
           },
           {
             "id": "good-to-know",
-            "title": "The Choice Is Clear",
-            "body": "The reason to go is still the table: dishes landing together, sauces within reach, and service that helps dinner settle."
+            "title": "The Table Is The Reason",
+            "body": "The reason to go is dishes landing together, sauces within reach, and a room that lets dinner settle."
           }
         ],
         "approvedAt": "2026-05-18T00:00:00+07:00",
@@ -45540,7 +45530,7 @@
           {
             "id": "when-to-use",
             "title": "Exterior And Square",
-            "body": "The visit often starts outside: brick facade, square, and the way the cathedral orients the block. Restoration barriers may change how close visitors can get."
+            "body": "The visit often starts outside: brick facade, square, and the way the cathedral orients the block. Let the exterior view be enough if access feels limited."
           },
           {
             "id": "good-to-know",
@@ -45992,9 +45982,9 @@
       "targetText": "Phá lấu ở Thành phố Hồ Chí Minh",
       "englishText": "Pha lau",
       "pronunciation": "pha lau",
-      "context": "The dish is a focused food memory: one bowl, one dipping motion, and enough flavor to make a sidewalk table feel specific.",
-      "tip": "The bread is not decoration. It carries the sauce, cuts the richness, and turns the bowl into a street-side snack.",
-      "rationale": "Phá lấu is a clear food stop with a bowl, bread, sauce, steam, richness, and a practical ordering moment.",
+      "context": "Phá lấu is the moment for deciding whether a rich Saigon offal stew sounds exciting: a small bowl, bread for dipping, sauce, steam, and a sidewalk pace.",
+      "tip": "If offal is new to you, keep the first order small. The flavor can be warm and generous, but the texture is the decision.",
+      "rationale": "The dish sits in Saigon snack culture because it turns inexpensive cuts, coconut-spiced broth, bread, and dipping sauce into a focused street-side bowl.",
       "chunks": [
         [
           "Phá lấu",
@@ -46026,14 +46016,14 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "The dish is a focused food memory: one bowl, one dipping motion, and enough flavor to make a sidewalk table feel specific. Phá lấu is a clear food stop with a bowl, bread, sauce, steam, richness, and a practical ordering moment.",
+        "summary": "Phá lấu is the moment for deciding whether a rich Saigon offal stew sounds exciting: a small bowl, bread for dipping, sauce, steam, and a sidewalk pace.",
         "sourceNotes": "local dish source",
         "imagePromptNote": "Bowl of phá lấu stew with bread on Saigon sidewalk table, realistic photo.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "A Bowl With Bread",
-            "body": "Pha lau is a small Saigon bowl with rich stew, bread on the side, sauce, steam, and bite doing more work than the English name can."
+            "title": "A Rich Stew With Bread",
+            "body": "Phá lấu is a rich Saigon stew often made with pork or beef offal, served in a small bowl with bread for dipping, sauce, and plenty of steam."
           },
           {
             "id": "quick-say",
@@ -46042,28 +46032,23 @@
             "phraseIDs": [
               "food-menu",
               "food-1",
-              "food-3"
+              "v500-food-drin-i-am-allergic-to-shellfish"
             ]
           },
           {
             "id": "place-brief",
-            "title": "Rich, Small, Specific",
-            "body": "This is a focused stew bowl where sauce, bread, and richness carry the experience."
+            "title": "Know The Bowl First",
+            "body": "Know the bowl before you order: this is a rich, seasoned stew where the texture of the meat is part of the point."
           },
           {
             "id": "use-it-with",
-            "title": "A Snack-Meal Gap",
-            "body": "It belongs between lunch and dinner when you want something more filling than coffee but smaller than a full restaurant meal."
+            "title": "Bread Does Real Work",
+            "body": "The bread matters because it catches the broth and sauce. It cuts the richness and turns the bowl into a street-side snack-meal."
           },
           {
             "id": "when-to-use",
-            "title": "Small Opening Bowl",
-            "body": "The flavor can be rich, and the bite may be new for some visitors. A smaller opening bowl keeps the choice low-pressure."
-          },
-          {
-            "id": "good-to-know",
-            "title": "Sauce Carries The Memory",
-            "body": "The bread is not decoration. It carries the sauce, cuts the richness, and turns the bowl into a street-side snack."
+            "title": "Start Small",
+            "body": "If offal is new to you, keep the first order small. The flavor can be warm and generous, but the texture is the decision."
           }
         ],
         "targetHeroImageName": "HeroCityHcmcPlacePhaLau",
@@ -51790,7 +51775,7 @@
       "englishText": "Bale Well",
       "pronunciation": "ba le well bale well",
       "context": "Bale Well is part of Hội An's hands-on table culture: pork, herbs, rice paper, and sauce arriving as a shared set. The staff-guided first roll is part of the meal.",
-      "tip": "The restaurant sits close to the Ancient Town walk. Think food detour, not slow tasting menu.",
+      "tip": "The restaurant sits close to the Ancient Town walk. Think hands-on food detour rather than a long formal dinner.",
       "rationale": "Once the set, price, and first roll are clear, the friction becomes part of a lively table rather than an awkward surprise.",
       "chunks": [
         [
@@ -51852,7 +51837,7 @@
           {
             "id": "when-to-use",
             "title": "Close To The Old Core",
-            "body": "The restaurant sits close to the Ancient Town walk. Think food detour, not slow tasting menu."
+            "body": "The restaurant sits close to the Ancient Town walk. Think hands-on food detour rather than a long formal dinner."
           }
         ],
         "targetHeroImageName": "HeroCityHoianPlaceBaleWell",
@@ -52351,9 +52336,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "sight-2",
-              "sight-5",
-              "store-1"
+              "v900-tran-where-is-the-boat-pier",
+              "v900-tran-where-can-i-buy-a-ticket",
+              "directions-8"
             ]
           },
           {
@@ -54717,9 +54702,9 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "sight-2",
-              "directions-1",
-              "store-1"
+              "directions-8",
+              "sight-3",
+              "v500-loca-serv-ever-task-where-can-i-buy-water"
             ]
           },
           {
@@ -54819,8 +54804,8 @@
             "title": "Useful Phrases",
             "body": "",
             "phraseIDs": [
-              "v900-tran-where-is-the-boat-pier",
-              "v900-tran-where-can-i-buy-a-ticket",
+              "sight-3",
+              "v500-dire-navi-how-far-is-it",
               "directions-8"
             ]
           },
@@ -54831,8 +54816,8 @@
           },
           {
             "id": "use-it-with",
-            "title": "Nature Without A Long Trip",
-            "body": "Let it explain Hội An's water geography without committing to an island day. The value is the edge, not filling hours."
+            "title": "Read The Edge, Then Move On",
+            "body": "Treat it as a short water-edge stop: river, sea, boats, sandbars, and a clearer sense of how Hội An opens outward."
           },
           {
             "id": "when-to-use",
@@ -58319,7 +58304,7 @@
           {
             "id": "place-brief",
             "title": "Courtyard Scale, Shared Plates",
-            "body": "Expect a smaller restaurant room before you compare it with a riverside production. Order a few plates and let the table set the pace."
+            "body": "Expect a smaller restaurant room before you compare it with a riverside dinner. Order a few plates and let the table set the pace."
           },
           {
             "id": "use-it-with",
@@ -59604,9 +59589,9 @@
       "targetText": "Làng lụa Hội An",
       "englishText": "Hoi An Silk Village",
       "pronunciation": "lang lua hoi an",
-      "context": "Hội An Silk Village puts the tailor town back at the fabric source, where looms, yarn, silk rooms, and touch explain what happens before a fitting.",
+      "context": "Hội An Silk Village puts the tailor town back at the fabric stage, where looms, yarn, silk rooms, and touch explain what happens before a fitting.",
       "tip": "Look, touch, and compare before treating any fabric label as final. The cloth itself needs attention.",
-      "rationale": "Hội An is known for clothing and tailoring, and the village visit lets fabric feel like a process before it becomes a garment.",
+      "rationale": "Hội An is known for clothing and tailoring, and the village visit lets fabric feel like a craft before it becomes a garment.",
       "chunks": [
         [
           "Làng",
@@ -59634,7 +59619,7 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Hội An Silk Village puts the tailor town back at the fabric source, where looms, yarn, silk rooms, and touch explain what happens before a fitting.",
+        "summary": "Hội An Silk Village puts the tailor town back at the fabric stage, where looms, yarn, silk rooms, and touch explain what happens before a fitting.",
         "sourceNotes": "Hoi An tourism and craft references.",
         "imagePromptNote": "Photorealistic owned asset: silk-weaving room with looms and thread spools, warm daylight, no brand marks.",
         "sections": [
@@ -61190,7 +61175,7 @@
         "sections": [
           {
             "id": "at-glance",
-            "title": "A Small Dish With A Big cue",
+            "title": "A Small Dish With A Big Cue",
             "body": "White rose dumplings give Hội An a small, specific food memory: pale wrappers, delicate filling, fried shallot crunch, dipping sauce, and a dish tied closely to the town."
           },
           {
@@ -61256,7 +61241,7 @@
       "targetText": "Nhà hàng White Rose",
       "englishText": "White Rose Restaurant",
       "pronunciation": "nha hang white rose",
-      "context": "White Rose Restaurant gives that Hội An dumpling memory a focused source, where bánh bao bánh vạc, crisp topping, and dipping sauce lead the stop.",
+      "context": "White Rose Restaurant gives that Hội An dumpling memory a focused place, where bánh bao bánh vạc, crisp topping, and dipping sauce lead the stop.",
       "tip": "The restaurant sits outside the densest lantern-street loop. Choose it for a focused dish break rather than a full evening plan.",
       "rationale": "The restaurant is still worth it because the dish feels tied to one place: pale wrappers, pleated dumplings, sauce, and a family-kitchen reputation around Hội An.",
       "chunks": [
@@ -61287,13 +61272,13 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "White Rose Restaurant gives that Hội An dumpling memory a focused source, where bánh bao bánh vạc, crisp topping, and dipping sauce lead the stop.",
+        "summary": "White Rose Restaurant gives that Hội An dumpling memory a focused place, where bánh bao bánh vạc, crisp topping, and dipping sauce lead the stop.",
         "sourceNotes": "Local food and venue references; no exclusivity claims.",
         "imagePromptNote": "Photorealistic owned asset: plate of white rose dumplings on ceramic table, soft window light, no logo.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "The Dumpling Source",
+            "title": "The Dumpling Stop",
             "body": "White Rose Restaurant is the focused Hội An room for bánh bao bánh vạc: thin dumplings, shrimp or pork filling, crisp topping, dipping sauce, and a short detour from Ancient Town."
           },
           {
@@ -61355,7 +61340,7 @@
       "englishText": "Hoi An wonton",
       "pronunciation": "hoanh thanh hoi an",
       "context": "Hội An wonton carries the town's small-plate side: crisp or soft wrappers, tomato-rich sauce, herbs, and a bite apart from noodle bowls.",
-      "tip": "Some plates lean crisp, some softer, and sauces vary. Remember the dish category more than one fixed presentation.",
+      "tip": "Some versions lean crisp, some softer, and sauces vary by shop. Let the plate in front of you decide the memory.",
       "rationale": "Wonton sits in the Hội An food set because it gives visitors another local plate between dumplings, noodles, and bánh mì.",
       "chunks": [
         [
@@ -61421,8 +61406,8 @@
           },
           {
             "id": "good-to-know",
-            "title": "Not Every Version Matches",
-            "body": "Some plates lean crisp, some softer, and sauces vary. Remember the dish category more than one fixed presentation."
+            "title": "Crisp Or Soft Changes The Plate",
+            "body": "Some versions lean crisp, some softer, and sauces vary by shop. Let the plate in front of you decide the memory."
           }
         ],
         "targetHeroImageName": "HeroCityHoianPlaceWonton",
@@ -64280,7 +64265,7 @@
           {
             "id": "at-glance",
             "title": "Ruong House, Shared Table",
-            "body": "Ancient Space Restaurant is a Hue support stop for ruong-house architecture, cơm niêu, local dishes, and a traditional table when the group wants one settled dinner."
+            "body": "Ancient Space Restaurant is a Hue dinner for ruong-house architecture, cơm niêu, local dishes, and a traditional table when the group wants one settled meal."
           },
           {
             "id": "quick-say",
@@ -66264,9 +66249,9 @@
       "targetText": "Nhà hàng Đại Nam",
       "englishText": "Dai Nam Restaurant",
       "pronunciation": "nha hang dai nam",
-      "context": "Dai Nam is a Citadel-side meal choice when the route needs Hue cakes, royal-cuisine cues, and a nearby wooden room after the Imperial City.",
-      "tip": "Lead the foodie day with Đông Ba, bún bò, bánh lọc, or Tịnh Gia Viên. Dai Nam supports the route.",
-      "rationale": "It belongs to the old-city route because the menu points toward traditional Hue cakes and a heritage-side table rather than a random tourist stop.",
+      "context": "Dai Nam is a Citadel-side meal choice when the group wants Hue cakes, a wooden dining room, and a nearby table after the Imperial City.",
+      "tip": "For a more composed garden meal, go to Tịnh Gia Viên. For a nearby Citadel-side table with cakes and familiar dishes, Dai Nam is the simpler move.",
+      "rationale": "The old-city day gives the meal its shape: Hue cakes, courtly cooking habits, and a wooden room close to the Citadel.",
       "chunks": [
         [
           "Nhà",
@@ -66295,14 +66280,14 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Dai Nam is a Citadel-side meal choice when the route needs Hue cakes, royal-cuisine cues, and a nearby wooden room after the Imperial City.",
+        "summary": "Dai Nam is a Citadel-side meal choice when the group wants Hue cakes, a wooden dining room, and a nearby table after the Imperial City.",
         "sourceNotes": "References: Hue tourism portal restaurants.",
         "imagePromptNote": "Photorealistic classic Hue restaurant entrance near citadel walls, wooden interior glimpsed through doors.",
         "sections": [
           {
             "id": "at-glance",
             "title": "Hue Cakes Near The Citadel",
-            "body": "Dai Nam Restaurant is the Citadel-side Hue-cakes and royal-cuisine support stop: a classic wooden room, easy wallside location, and familiar Hue specialties."
+            "body": "Dai Nam Restaurant is a Citadel-side table for Hue cakes, familiar local specialties, and a wooden dining room after the Imperial City."
           },
           {
             "id": "quick-say",
@@ -66317,17 +66302,17 @@
           {
             "id": "place-brief",
             "title": "Hue Cakes Matter",
-            "body": "Traditional Hue cakes give the table a local reason to stop here. Choose it when the group needs a nearby, grounded meal after the walls."
+            "body": "Order around the small plates: bánh bèo, bánh nậm, bánh lọc, or whatever the table recommends first."
           },
           {
             "id": "use-it-with",
             "title": "After The Walls",
-            "body": "Its value is practical: near the Imperial City after a heavy heritage block, with enough local shape to avoid a random tourist meal."
+            "body": "It suits the hour after a heavy heritage block, when the group needs a close meal with enough Hue shape to feel intentional."
           },
           {
             "id": "when-to-use",
-            "title": "Route Support",
-            "body": "Lead the foodie day with Đông Ba, bún bò, bánh lọc, or Tịnh Gia Viên. Dai Nam supports the route."
+            "title": "Choose A Clear Hue Table",
+            "body": "For a more composed garden meal, go to Tịnh Gia Viên. For a nearby Citadel-side table with cakes and familiar dishes, Dai Nam is the simpler move."
           }
         ],
         "targetHeroImageName": "HeroCityHuePlaceDaiNamRestaurant",
@@ -67147,8 +67132,8 @@
           },
           {
             "id": "when-to-use",
-            "title": "Schedule Stays Flexible",
-            "body": "The theater-space memory leads: old royal room, stage atmosphere, and a reason to slow down inside the Citadel."
+            "title": "Confirm The Performance First",
+            "body": "Confirm the performance first, then build the visit around the show time rather than assuming the room is always active."
           },
           {
             "id": "good-to-know",
@@ -68882,7 +68867,7 @@
           {
             "id": "place-brief",
             "title": "Gallery Light Near The Street",
-            "body": "Expect a compact art-center feel rather than a major museum day. Rooms, works, soft light, and outdoor heat relief carry the stop."
+            "body": "Expect a compact art-center feel rather than a major museum day. Rooms, works, soft light, and a cooler indoor pause are the reasons to go."
           },
           {
             "id": "use-it-with",
@@ -70738,8 +70723,8 @@
           },
           {
             "id": "use-it-with",
-            "title": "Late Afternoon, Not Too Late",
-            "body": "Late afternoon can bring softer light and less heat without making the return feel uncertain. Evening folk music is a performance choice, more than transport."
+            "title": "Light Matters More Than A Schedule",
+            "body": "Softer light can make the river easier to read, but the route matters most: pier, destination, return plan, and enough time before the day gets tired."
           },
           {
             "id": "when-to-use",

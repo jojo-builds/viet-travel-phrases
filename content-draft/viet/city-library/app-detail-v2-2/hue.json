@@ -586,7 +586,7 @@
       "storySpine": "The reason is old-house dining in Hue: ruong architecture, courtyard scale, and a menu that gathers rice-pot, Hue, and court-style cues in one place.",
       "intro": {
         "heading": "Ruong House, Shared Table",
-        "body": "Ancient Space Restaurant is a Hue support stop for ruong-house architecture, cơm niêu, local dishes, and a traditional table when the group wants one settled dinner."
+        "body": "Ancient Space Restaurant is a Hue dinner for ruong-house architecture, cơm niêu, local dishes, and a traditional table when the group wants one settled meal."
       },
       "usefulPhraseCards": [
         {
@@ -2735,11 +2735,11 @@
       "city": "Huế",
       "category": "Restaurant",
       "pronunciation": "nha hang dai nam",
-      "travelerMoment": "Dai Nam is a Citadel-side meal choice when the route needs Hue cakes, royal-cuisine cues, and a nearby wooden room after the Imperial City.",
-      "storySpine": "It belongs to the old-city route because the menu points toward traditional Hue cakes and a heritage-side table rather than a random tourist stop.",
+      "travelerMoment": "Dai Nam is a Citadel-side meal choice when the group wants Hue cakes, a wooden dining room, and a nearby table after the Imperial City.",
+      "storySpine": "The old-city day gives the meal its shape: Hue cakes, courtly cooking habits, and a wooden room close to the Citadel.",
       "intro": {
         "heading": "Hue Cakes Near The Citadel",
-        "body": "Dai Nam Restaurant is the Citadel-side Hue-cakes and royal-cuisine support stop: a classic wooden room, easy wallside location, and familiar Hue specialties."
+        "body": "Dai Nam Restaurant is a Citadel-side table for Hue cakes, familiar local specialties, and a wooden dining room after the Imperial City."
       },
       "usefulPhraseCards": [
         {
@@ -2771,17 +2771,17 @@
         {
           "id": "hue-cakes-matter",
           "heading": "Hue Cakes Matter",
-          "body": "Traditional Hue cakes give the table a local reason to stop here. Choose it when the group needs a nearby, grounded meal after the walls."
+          "body": "Order around the small plates: bánh bèo, bánh nậm, bánh lọc, or whatever the table recommends first."
         },
         {
           "id": "after-the-walls",
           "heading": "After The Walls",
-          "body": "Its value is practical: near the Imperial City after a heavy heritage block, with enough local shape to avoid a random tourist meal."
+          "body": "It suits the hour after a heavy heritage block, when the group needs a close meal with enough Hue shape to feel intentional."
         },
         {
-          "id": "route-support",
-          "heading": "Route Support",
-          "body": "Lead the foodie day with Đông Ba, bún bò, bánh lọc, or Tịnh Gia Viên. Dai Nam supports the route."
+          "id": "choose-a-clear-hue-table",
+          "heading": "Choose A Clear Hue Table",
+          "body": "For a more composed garden meal, go to Tịnh Gia Viên. For a nearby Citadel-side table with cakes and familiar dishes, Dai Nam is the simpler move."
         }
       ],
       "mentionedHereCandidates": [],
@@ -3708,8 +3708,8 @@
         },
         {
           "id": "schedule-stays-flexible",
-          "heading": "Schedule Stays Flexible",
-          "body": "The theater-space memory leads: old royal room, stage atmosphere, and a reason to slow down inside the Citadel."
+          "heading": "Confirm The Performance First",
+          "body": "Confirm the performance first, then build the visit around the show time rather than assuming the room is always active."
         },
         {
           "id": "room-before-show",
@@ -5585,7 +5585,7 @@
         {
           "id": "gallery-light-near-the-street",
           "heading": "Gallery Light Near The Street",
-          "body": "Expect a compact art-center feel rather than a major museum day. Rooms, works, soft light, and outdoor heat relief carry the stop."
+          "body": "Expect a compact art-center feel rather than a major museum day. Rooms, works, soft light, and a cooler indoor pause are the reasons to go."
         },
         {
           "id": "indoor-culture-stop",
@@ -6950,11 +6950,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-lap-an-lagoon",
-          "label": "Đầm Lập An",
-          "relationship": "lagoon-day contrast",
-          "displaySubtitle": "A wide-water escape outside Hue for mountain edges, seafood, and open air.",
-          "reason": "Related because: A wide-water escape outside Hue for mountain edges, seafood, and open air.",
+          "catalogId": "viet-family-city-hue-place-vong-canh-hill",
+          "label": "Đồi Vọng Cảnh",
+          "relationship": "viewpoint comparison",
+          "displaySubtitle": "A small tomb-route viewpoint when you want river bends, pine shade, and a clearer place to stand.",
+          "reason": "Vong Canh Hill is a more practical landscape-view comparison for Ngu Binh Mountain.",
           "status": "render"
         }
       ],
@@ -7600,8 +7600,8 @@
         },
         {
           "id": "late-afternoon-not-too-late",
-          "heading": "Late Afternoon, Not Too Late",
-          "body": "Late afternoon can bring softer light and less heat without making the return feel uncertain. Evening folk music is a performance choice, more than transport."
+          "heading": "Light Matters More Than A Schedule",
+          "body": "Softer light can make the river easier to read, but the route matters most: pier, destination, return plan, and enough time before the day gets tired."
         },
         {
           "id": "the-city-s-middle-line",
@@ -8612,11 +8612,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-lap-an-lagoon",
-          "label": "Đầm Lập An",
-          "relationship": "lagoon-day contrast",
-          "displaySubtitle": "A wide-water escape outside Hue for mountain edges, seafood, and open air.",
-          "reason": "Related because: A wide-water escape outside Hue for mountain edges, seafood, and open air.",
+          "catalogId": "viet-family-city-hue-place-tam-giang-lagoon",
+          "label": "Phá Tam Giang",
+          "relationship": "working-water contrast",
+          "displaySubtitle": "A wider lagoon outing when roots and shade should open into fish traps, low boats, and sunset water.",
+          "reason": "Tam Giang Lagoon is the larger working-water contrast to the compact Ru Cha mangrove stop.",
           "status": "render"
         }
       ],
@@ -9049,11 +9049,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-lap-an-lagoon",
-          "label": "Đầm Lập An",
-          "relationship": "lagoon-day contrast",
-          "displaySubtitle": "A wide-water escape outside Hue for mountain edges, seafood, and open air.",
-          "reason": "Related because: A wide-water escape outside Hue for mountain edges, seafood, and open air.",
+          "catalogId": "viet-family-city-hue-place-lagoon-seafood-boat",
+          "label": "Thuyền hải sản phá Tam Giang",
+          "relationship": "lagoon meal next step",
+          "displaySubtitle": "The food-focused lagoon version when shallow water, seafood, and a boat table should be the plan.",
+          "reason": "The lagoon seafood boat is a more specific action next step for Tam Giang than a generic lagoon contrast.",
           "status": "render"
         }
       ],
@@ -10821,11 +10821,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-lap-an-lagoon",
-          "label": "Đầm Lập An",
-          "relationship": "lagoon-day contrast",
-          "displaySubtitle": "A wide-water escape outside Hue for mountain edges, seafood, and open air.",
-          "reason": "Related because: A wide-water escape outside Hue for mountain edges, seafood, and open air.",
+          "catalogId": "viet-family-city-hue-place-perfume-river",
+          "label": "Sông Hương",
+          "relationship": "river-landscape anchor",
+          "displaySubtitle": "The river line below the viewpoint, useful for tying tomb routes, boats, bridges, and soft light together.",
+          "reason": "The Perfume River is the landscape anchor that makes Vong Canh Hill easier to place.",
           "status": "render"
         }
       ],

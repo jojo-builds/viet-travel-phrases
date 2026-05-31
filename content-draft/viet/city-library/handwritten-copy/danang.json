@@ -278,7 +278,7 @@
         {
           "id": "at-glance",
           "title": "The Climb Is The Moment",
-          "body": "The cable-car climb from Da Nang heat into forest, mist, cooler air, and the much larger Ba Na Hills production above the city on the mountain."
+          "body": "The cable-car climb carries you from Da Nang heat into forest, mist, cooler air, and the larger Ba Na Hills complex above the city."
         },
         {
           "id": "quick-say",
@@ -850,15 +850,15 @@
     },
     {
       "pageID": "city-danang-place-boulevard-gelato-coffee",
-      "summary": "Boulevard Gelato & Coffee is a small reset for gelato, coffee, cool air, and an easy seat between bigger Da Nang food decisions. Its job is not to define Da Nang food; it gives the app a modest cold-sweet pause between heat, markets, beach plans, and dinner.",
-      "context": "Boulevard Gelato & Coffee is a small reset for gelato, coffee, cool air, and an easy seat between bigger Da Nang food decisions.",
-      "tip": "If coffee craft is the goal, 43 Factory is sharper. Boulevard is better for sweetness, cool air, and a short reset.",
-      "rationale": "Its job is not to define Da Nang food; it gives the app a modest cold-sweet pause between heat, markets, beach plans, and dinner.",
+      "summary": "Boulevard Gelato & Coffee is a small cold-sweet pause for gelato, iced coffee, and an easy seat between hotter Da Nang plans. It gives the food set a modest heat break: a cup or scoop when the group needs cold, familiar, and easy.",
+      "context": "Boulevard Gelato & Coffee is a small cold-sweet pause for gelato, iced coffee, and an easy seat between hotter Da Nang plans.",
+      "tip": "For espresso and roastery detail, 43 Factory is sharper. Boulevard gives you sweetness, cool air, and a short seat.",
+      "rationale": "It gives the food set a modest heat break: a cup or scoop when the group needs cold, familiar, and easy.",
       "sections": [
         {
           "id": "at-glance",
           "title": "Gelato Between Bigger Plans",
-          "body": "Boulevard Gelato & Coffee is a small Da Nang reset: gelato, coffee, and cool air between market heat, beach plans, and a bigger dinner."
+          "body": "Boulevard Gelato & Coffee is a small Da Nang pause for gelato, iced coffee, cool air, and a seat before markets, seafood, or the beach."
         },
         {
           "id": "quick-say",
@@ -872,18 +872,18 @@
         },
         {
           "id": "place-brief",
-          "title": "Let The Cold Cup Do The Work",
-          "body": "One gelato cup or iced coffee can carry the stop: sweetness, cool air, and a few quiet minutes before the group steps back into heat."
+          "title": "Start With The Scoop",
+          "body": "The clearest reason to stop is simple: a cold scoop, an iced drink, and a few minutes out of the heat."
         },
         {
           "id": "use-it-with",
-          "title": "A Sweet Heat Break",
-          "body": "The room is useful when the group wants cold, familiar, and easy: gelato for kids, coffee for adults, and a reset before seafood, markets, or the beach."
+          "title": "Good For Mixed Groups",
+          "body": "Gelato keeps kids happy, coffee gives adults a quick reset, and nobody has to commit to a full cafe plan."
         },
         {
           "id": "when-to-use",
           "title": "Coffee Is Secondary",
-          "body": "If coffee craft is the goal, 43 Factory is sharper. Boulevard is better for sweetness, cool air, and a short reset."
+          "body": "For espresso and roastery detail, 43 Factory is sharper. Boulevard gives you sweetness, cool air, and a short seat."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1723,7 +1723,7 @@
       "summary": "Golden Bridge sits inside Ba Na Hills and the cable-car day. Think mountain-park photo stop rather than standalone downtown landmark.",
       "context": "Golden Bridge sits inside Ba Na Hills and the cable-car day. Think mountain-park photo stop rather than standalone downtown landmark.",
       "tip": "Put cable-car timing, ticketing, and weather ahead of the photo plan. Fog or crowding can make the bridge feel very different.",
-      "rationale": "The iconic image needs clear expectations: bridge first, park second, weather always part of the tradeoff.",
+      "rationale": "The bridge image needs clear expectations: bridge first, park second, weather always part of the tradeoff.",
       "sections": [
         {
           "id": "at-glance",
@@ -2660,8 +2660,8 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
+            "sight-3",
+            "directions-8",
             "store-1"
           ]
         },
@@ -3106,8 +3106,8 @@
           "body": "",
           "phraseIDs": [
             "sight-2",
-            "sight-5",
-            "store-1"
+            "directions-8",
+            "v500-loca-serv-ever-task-where-can-i-buy-water"
           ]
         },
         {
@@ -3645,8 +3645,8 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
+            "v500-dire-navi-how-far-is-it",
+            "directions-8",
             "store-1"
           ]
         },
@@ -4187,8 +4187,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "Wildlife Stays Unscheduled",
-          "body": "If you see animals, stay back and keep the road slow. Feeding, crowding, or chasing the moment turns the drive into the wrong kind of attention."
+          "title": "Wildlife Is Never Guaranteed",
+          "body": "The drive is still worthwhile without an animal sighting. Forest shade, sea views, and quiet road edges are part of the experience."
         },
         {
           "id": "when-to-use",
@@ -4610,15 +4610,15 @@
     },
     {
       "pageID": "city-danang-place-wonderlust",
-      "summary": "The cafe is a drink-and-sit moment: bright counter, iced glass, clean table, and a short cool-down before the next Da Nang plan. Wonderlust gives the cafe set a bright cool-down for walks, markets, beach time, and dinner gaps.",
-      "context": "The cafe is a drink-and-sit moment: bright counter, iced glass, clean table, and a short cool-down before the next Da Nang plan.",
-      "tip": "The value is simple: order cold, choose sweetness early, sit at a bright table, and let the room cool the day before dinner or another walk.",
-      "rationale": "Wonderlust gives the cafe set a bright cool-down for walks, markets, beach time, and dinner gaps.",
+      "summary": "Wonderlust is a bright cafe pause for an iced drink, a simple table, and a short break before the next Da Nang meal or walk. It belongs in the cafe set as a light modern room: clean lines, cold drinks, and a practical pause between heat, errands, and dinner.",
+      "context": "Wonderlust is a bright cafe pause for an iced drink, a simple table, and a short break before the next Da Nang meal or walk.",
+      "tip": "The draw is the bright room and easy table more than a complicated coffee ritual.",
+      "rationale": "It belongs in the cafe set as a light modern room: clean lines, cold drinks, and a practical pause between heat, errands, and dinner.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Bright Break Before Dinner",
-          "body": "Wonderlust is a bright cafe cool-down: clean counter, iced glass, minimalist table, and a short break between heat, walking, markets, beach time, or dinner."
+          "title": "A Bright Iced-Coffee Pause",
+          "body": "Wonderlust is a bright Da Nang cafe for an iced drink, a simple table, and a short pause between heat, walking, markets, beach time, or dinner."
         },
         {
           "id": "quick-say",
@@ -4632,23 +4632,18 @@
         },
         {
           "id": "place-brief",
-          "title": "Order Cold, Decide Sweetness Early",
-          "body": "Iced coffee gives you the classic sweet pull; black iced coffee keeps the order cleaner. If sugar or ice matters, say it before the drink is made."
+          "title": "Decide Sweetness Early",
+          "body": "Iced milk coffee brings the classic sweet pull; black iced coffee keeps it sharper. If sugar or ice matters, say it before the drink is made."
         },
         {
           "id": "use-it-with",
-          "title": "A Short Table Beats A Long Session",
-          "body": "The draw is the short sit: bright table, iced coffee, counter, and design detail. It can cool the day between walks, markets, beach time, or dinner."
+          "title": "Keep The Stop Light",
+          "body": "Keep the visit light: order cold, sit long enough to cool down, then let the day keep moving."
         },
         {
           "id": "when-to-use",
-          "title": "Clean Cafe Break",
-          "body": "Wonderlust suits a day that needs a bright table more than a destination cafe. Order simply, sit long enough to cool down, then move on."
-        },
-        {
-          "id": "good-to-know",
-          "title": "One Clean Counter Moment",
-          "body": "The value is simple: order cold, choose sweetness early, sit at a bright table, and let the room cool the day before dinner or another walk."
+          "title": "Room Over Ritual",
+          "body": "The draw is the bright room and easy table more than a complicated coffee ritual."
         }
       ],
       "sourceMode": "expanded-detail"

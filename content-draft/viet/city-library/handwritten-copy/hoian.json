@@ -322,7 +322,7 @@
       "pageID": "city-hoian-place-bale-well",
       "summary": "Bale Well is part of Hội An's hands-on table culture: pork, herbs, rice paper, and sauce arriving as a shared set. The staff-guided first roll is part of the meal.",
       "context": "Bale Well is part of Hội An's hands-on table culture: pork, herbs, rice paper, and sauce arriving as a shared set. The staff-guided first roll is part of the meal.",
-      "tip": "The restaurant sits close to the Ancient Town walk. Think food detour, not slow tasting menu.",
+      "tip": "The restaurant sits close to the Ancient Town walk. Think hands-on food detour rather than a long formal dinner.",
       "rationale": "Once the set, price, and first roll are clear, the friction becomes part of a lively table rather than an awkward surprise.",
       "sections": [
         {
@@ -353,7 +353,7 @@
         {
           "id": "when-to-use",
           "title": "Close To The Old Core",
-          "body": "The restaurant sits close to the Ancient Town walk. Think food detour, not slow tasting menu."
+          "body": "The restaurant sits close to the Ancient Town walk. Think hands-on food detour rather than a long formal dinner."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -555,9 +555,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
-            "store-1"
+            "v900-tran-where-is-the-boat-pier",
+            "v900-tran-where-can-i-buy-a-ticket",
+            "directions-8"
           ]
         },
         {
@@ -1585,9 +1585,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "directions-1",
-            "store-1"
+            "directions-8",
+            "sight-3",
+            "v500-loca-serv-ever-task-where-can-i-buy-water"
           ]
         },
         {
@@ -1630,8 +1630,8 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "v900-tran-where-is-the-boat-pier",
-            "v900-tran-where-can-i-buy-a-ticket",
+            "sight-3",
+            "v500-dire-navi-how-far-is-it",
             "directions-8"
           ]
         },
@@ -1642,8 +1642,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "Nature Without A Long Trip",
-          "body": "Let it explain Hội An's water geography without committing to an island day. The value is the edge, not filling hours."
+          "title": "Read The Edge, Then Move On",
+          "body": "Treat it as a short water-edge stop: river, sea, boats, sandbars, and a clearer sense of how Hội An opens outward."
         },
         {
           "id": "when-to-use",
@@ -3158,7 +3158,7 @@
         {
           "id": "place-brief",
           "title": "Courtyard Scale, Shared Plates",
-          "body": "Expect a smaller restaurant room before you compare it with a riverside production. Order a few plates and let the table set the pace."
+          "body": "Expect a smaller restaurant room before you compare it with a riverside dinner. Order a few plates and let the table set the pace."
         },
         {
           "id": "use-it-with",
@@ -3720,10 +3720,10 @@
     },
     {
       "pageID": "city-hoian-place-silk-village",
-      "summary": "Hội An Silk Village puts the tailor town back at the fabric source, where looms, yarn, silk rooms, and touch explain what happens before a fitting.",
-      "context": "Hội An Silk Village puts the tailor town back at the fabric source, where looms, yarn, silk rooms, and touch explain what happens before a fitting.",
+      "summary": "Hội An Silk Village puts the tailor town back at the fabric stage, where looms, yarn, silk rooms, and touch explain what happens before a fitting.",
+      "context": "Hội An Silk Village puts the tailor town back at the fabric stage, where looms, yarn, silk rooms, and touch explain what happens before a fitting.",
       "tip": "Look, touch, and compare before treating any fabric label as final. The cloth itself needs attention.",
-      "rationale": "Hội An is known for clothing and tailoring, and the village visit lets fabric feel like a process before it becomes a garment.",
+      "rationale": "Hội An is known for clothing and tailoring, and the village visit lets fabric feel like a craft before it becomes a garment.",
       "sections": [
         {
           "id": "at-glance",
@@ -4402,7 +4402,7 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Small Dish With A Big cue",
+          "title": "A Small Dish With A Big Cue",
           "body": "White rose dumplings give Hội An a small, specific food memory: pale wrappers, delicate filling, fried shallot crunch, dipping sauce, and a dish tied closely to the town."
         },
         {
@@ -4440,14 +4440,14 @@
     },
     {
       "pageID": "city-hoian-place-white-rose-restaurant",
-      "summary": "White Rose Restaurant gives that Hội An dumpling memory a focused source, where bánh bao bánh vạc, crisp topping, and dipping sauce lead the stop.",
-      "context": "White Rose Restaurant gives that Hội An dumpling memory a focused source, where bánh bao bánh vạc, crisp topping, and dipping sauce lead the stop.",
+      "summary": "White Rose Restaurant gives that Hội An dumpling memory a focused place, where bánh bao bánh vạc, crisp topping, and dipping sauce lead the stop.",
+      "context": "White Rose Restaurant gives that Hội An dumpling memory a focused place, where bánh bao bánh vạc, crisp topping, and dipping sauce lead the stop.",
       "tip": "The restaurant sits outside the densest lantern-street loop. Choose it for a focused dish break rather than a full evening plan.",
       "rationale": "The restaurant is still worth it because the dish feels tied to one place: pale wrappers, pleated dumplings, sauce, and a family-kitchen reputation around Hội An.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "The Dumpling Source",
+          "title": "The Dumpling Stop",
           "body": "White Rose Restaurant is the focused Hội An room for bánh bao bánh vạc: thin dumplings, shrimp or pork filling, crisp topping, dipping sauce, and a short detour from Ancient Town."
         },
         {
@@ -4482,7 +4482,7 @@
       "pageID": "city-hoian-place-wonton",
       "summary": "Hội An wonton carries the town's small-plate side: crisp or soft wrappers, tomato-rich sauce, herbs, and a bite apart from noodle bowls.",
       "context": "Hội An wonton carries the town's small-plate side: crisp or soft wrappers, tomato-rich sauce, herbs, and a bite apart from noodle bowls.",
-      "tip": "Some plates lean crisp, some softer, and sauces vary. Remember the dish category more than one fixed presentation.",
+      "tip": "Some versions lean crisp, some softer, and sauces vary by shop. Let the plate in front of you decide the memory.",
       "rationale": "Wonton sits in the Hội An food set because it gives visitors another local plate between dumplings, noodles, and bánh mì.",
       "sections": [
         {
@@ -4517,8 +4517,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Not Every Version Matches",
-          "body": "Some plates lean crisp, some softer, and sauces vary. Remember the dish category more than one fixed presentation."
+          "title": "Crisp Or Soft Changes The Plate",
+          "body": "Some versions lean crisp, some softer, and sauces vary by shop. Let the plate in front of you decide the memory."
         }
       ],
       "sourceMode": "expanded-detail"

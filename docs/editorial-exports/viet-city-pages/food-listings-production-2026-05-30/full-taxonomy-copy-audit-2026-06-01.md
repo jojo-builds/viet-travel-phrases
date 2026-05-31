@@ -165,3 +165,67 @@ Rendered proof expansion after this batch:
 - Continue the reliable single-page render harness over the remaining `468` pages, or split by offset into resumable batches that launch one page per xcodebuild invocation.
 - Continue targeted rendered review for street `spine/line` repetition, high-traffic beach/nature phrase-card fit, performance page first-move copy, and remaining hub-biased related-card feel.
 - If rendered review finds copy that reads stiff on-device, repair it in `content-draft/viet/city-library/app-detail-v2-2/*.json`, then run the full regeneration/validation chain again.
+
+## Full Taxonomy Re-Audit And Hard-Block Repair - 2026-06-01
+
+Status after this pass: `SOURCE_RUNTIME_VALIDATED_RENDER_PROOF_EXPANDED_GLOBAL_PROOF_STILL_OPEN`.
+
+Jojo rejected the narrower award-jargon checkpoint as insufficient. The re-audit therefore treated V2.2 production readiness as a taxonomy-wide copy problem, not a single-term cleanup.
+
+Independent read-only subagents audited:
+
+- Food: `214` pages across Restaurant `79`, Dish `46`, Market `40`, Cafe `38`, Dessert `6`, Drink `5`.
+- Culture / attraction: `216` pages across Landmark `77`, Attraction `55`, Museum `34`, Neighborhood `28`, Park `12`, Village `9`, Shopping `1`.
+- Mobility / route / outdoor: `90` pages across Arrival `7`, Station `16`, Street `28`, Port `5`, River `7`, Beach `8`, Nature `19`.
+- Cross-taxonomy repetition / mobile readability / card-copy scan: all `520` V2.2 source entries and `1,778` generated runtime pages.
+
+Runtime subcategory coverage checked during the local inventory pass:
+
+- `food-coffee`: `174`
+- `landmarks-attractions`: `223`
+- `neighborhoods-streets`: `56`
+- `shopping-markets`: `39`
+- `arrivals-routes`: `28`
+
+Hard-block classes found:
+
+- Food copy that still read like support architecture or dining-insider notes: Dai Nam Restaurant, Hội An wonton, Boulevard Gelato & Coffee, Wonderlust, Phá lấu, and Mặn Mòi.
+- Culture/attraction related-card mismatch: seven HCMC museum pages were pointing to the same Áo Dài Museum subtitle even when the page was medicine history, war history, or city history.
+- Mobility/outdoor mismatch and freshness risk: Train Street access wording, Bạch Đằng Waterbus and Bến Thành Metro related cards, Hue nature pages using the same Lập An Lagoon fallback, beach/nature phrase-card fit, Cửa Đại Estuary first move, and Perfume River timing/performance wording.
+- Cross-taxonomy systematic issues: repeated phrase-card sets by taxonomy, reason-like internal card fields, near-duplicate page pairs, and mobile readability risks. These are not all fixed globally yet, but the hard-block examples from the independent slices were repaired.
+
+Repaired source pages in this batch:
+
+- Food hard blockers: `city-hue-place-dai-nam-restaurant`, `city-hoian-place-wonton`, `city-danang-place-boulevard-gelato-coffee`, `city-danang-place-wonderlust`, `city-hcmc-place-pha-lau`, `city-hcmc-place-man-moi`.
+- HCMC museum related-card cluster: `city-hcmc-place-fine-arts-museum`, `city-hcmc-place-fito-museum`, `city-hcmc-place-history-museum`, `city-hcmc-place-ho-chi-minh-city-museum`, `city-hcmc-place-ton-duc-thang-museum`, `city-hcmc-place-war-remnants-museum`, `city-hcmc-place-southern-women-museum`.
+- Mobility/outdoor hard blockers and high-risk pages: `city-hanoi-place-train-street`, `city-hcmc-place-bach-dang-waterbus-station`, `city-hcmc-place-ben-thanh-metro-station`, `city-hue-place-ngu-binh-mountain`, `city-hue-place-ru-cha-mangrove`, `city-hue-place-tam-giang-lagoon`, `city-hue-place-vong-canh-hill`, `city-danang-place-man-thai-beach`, `city-danang-place-my-khe`, `city-danang-place-non-nuoc-beach`, `city-hoian-place-cua-dai-beach`, `city-hoian-place-bay-mau-coconut-forest`, `city-hoian-place-cua-dai-estuary`, `city-hue-place-perfume-river`.
+- Local scan residue fixes: `city-danang-place-ba-na-cable-car`, `city-hcmc-place-cu-chi-day-trip`, `city-hcmc-place-cu-chi-tunnels`, `city-hoian-place-nu-eatery`, `city-hoian-place-silk-village`, `city-hoian-place-white-rose-dumplings`, `city-hoian-place-white-rose-restaurant`, plus visible voice-audit cleanup on `city-danang-place-golden-bridge`, `city-danang-place-son-tra-wildlife-drive`, `city-hanoi-place-bun-cha-huong-lien`, `city-hcmc-place-notre-dame`, `city-hoian-place-bale-well`, `city-hue-place-ancient-space-restaurant`, `city-hue-place-duyet-thi-duong-theater`, and `city-hue-place-le-ba-dang-art-center`.
+
+Validation after this repair batch:
+
+- `node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js`: wrote `520` entries across `5` cities.
+- `node native-ios/scripts/import-viet-city-handwritten-copy.js`: imported `520` handwritten city copy entries.
+- `node native-ios/scripts/generate-viet-catalog.js`: wrote `1767` families and `1785` phrases.
+- `node native-ios/scripts/generate-authored-tier-one-pages.js`: wrote native authored listing pages.
+- `node native-ios/scripts/generate-viet-sqlite-fixture.js`: SQLite `integrity_check: ok`.
+- `node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production`: `PASS` for all `520`.
+- `node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js`: `failures: []`.
+- `node native-ios/scripts/validate-viet-city-copy.js`: passed `5` hubs, `520` city noun pages, `520` unique target heroes.
+- `node native-ios/scripts/validate-viet-city-library.js`: passed `826` pages.
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js`: `ok: true`, `0` release-blocking missing-audio rows.
+- `node native-ios/scripts/audit-viet-listing-production-qa.js`: `0` blockers, `0` majors.
+- `node scripts/guard-native-only.js`: passed.
+- `git diff --check`: passed.
+
+Rendered proof after this repair batch:
+
+- Rebuilt `SpeakLocalNative` for testing on simulator `7C386DD3-4BF1-4A34-A918-768C43CD1258`.
+- Added `taxonomy-hardblock-repair-results.jsonl`: `10` repaired pages, `30` screenshots, `0` failures.
+- Repaired pages rendered in this sample: Boulevard Gelato & Coffee, Wonderlust, Mặn Mòi, Phá lấu, Hội An wonton, Đại Nam Restaurant, Hanoi Train Street, Bến Thành Metro Station, War Remnants Museum, and Perfume River.
+- Combined current proof across maintained result files is now `60` unique pages, `180` screenshots, and `0` current failures.
+
+Remaining honest risks:
+
+- The global V2.2 rendered proof gate is still open: `460` pages still need current screenshots unless the gate is explicitly amended.
+- The cross-taxonomy auditor found large repeated phrase-card sets by taxonomy. Some repetition is expected for common travel actions, but high-traffic pages still need human-rendered review for phrase-card fit.
+- Runtime taxonomy mismatches remain a follow-up class: several performance/show pages still project as `place-kind-museum`, `42 Nguyễn Huệ` projects confusingly, and Reaching Out Arts & Crafts still projects market-like. This affects shelves/search more than visible copy, but it is part of deeper taxonomy readiness.

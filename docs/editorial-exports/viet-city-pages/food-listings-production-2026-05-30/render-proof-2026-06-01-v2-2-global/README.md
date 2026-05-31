@@ -37,7 +37,10 @@ Category-balanced batch:
   - `award-jargon-repair-results.jsonl`: `12` Da Nang pages, `36` screenshots, `0` failures.
   - `award-jargon-cross-city-results.jsonl`: `10` cross-city restaurant/dish pages, `30` screenshots, `0` failures.
   - `con-market-after-bottom-relaunch-results.jsonl`: `1` rerun page, `3` screenshots, `0` failures.
-- Combined current proof across the maintained result files is `52` unique pages, `156` screenshots, and `0` current failures.
+- Taxonomy hard-block repair proof:
+  - `taxonomy-hardblock-repair-results.jsonl`: `10` repaired pages, `30` screenshots, `0` failures.
+  - Scope: Boulevard Gelato & Coffee, Wonderlust, Mặn Mòi, Phá lấu, Hội An wonton, Đại Nam Restaurant, Hanoi Train Street, Bến Thành Metro Station, War Remnants Museum, and Perfume River.
+- Combined current proof across the maintained result files is `60` unique pages, `180` screenshots, and `0` current failures.
 
 This is a meaningful rendered proof expansion, not the final 520-page receipt. The final gate still needs either all `520` pages captured by this harness or an explicit approval-standard amendment accepting full source/runtime review plus category-balanced rendered proof.
 
