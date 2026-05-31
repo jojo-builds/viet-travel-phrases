@@ -16,7 +16,7 @@ Inventory checked:
 
 - total V2.2 entries: `520`
 - cities: Da Nang `106`, Hanoi `106`, Saigon `106`, Hoi An `102`, Hue `100`
-- top-level categories: Arrival `7`, Attraction `55`, Beach `8`, Cafe `39`, Dessert `6`, Dish `46`, Drink `5`, Landmark `76`, Market `40`, Museum `34`, Nature `19`, Neighborhood `28`, Park `12`, Port `5`, Restaurant `79`, River `7`, Shopping `1`, Station `16`, Street `28`, Village `9`
+- top-level categories: Arrival `7`, Attraction `55`, Beach `8`, Cafe `38`, Dessert `6`, Dish `46`, Drink `5`, Landmark `77`, Market `40`, Museum `34`, Nature `19`, Neighborhood `28`, Park `12`, Port `5`, Restaurant `79`, River `7`, Shopping `1`, Station `16`, Street `28`, Village `9`
 
 Subcategory context was cross-checked through generated runtime fields in:
 
@@ -135,8 +135,18 @@ Screenshot-driven humanization check:
 - `city-hcmc-place-banh-xeo-46a` now renders generated copy around concrete table behavior: wide hot pancake, herbs, lettuce, sauce, first bite, and ingredient checks. The previous screenshot phrases `The Plate Needs Space`, `A Dish-Specific Meal`, `table attention`, and `carry the stop` no longer appear in the generated native page.
 - Follow-on voice cleanup removed the remaining validator/voice-audit catches: `it fits` on Cơm Gà Bà Buội, over-threshold `belongs`, top/best-style claims, and `good when` formula phrasing.
 
+Rendered proof expansion after this batch:
+
+- Added an environment-driven native UI-test harness: `CityAppDetailV22RenderProofUITests/testCaptureCityAppDetailV22RenderProofBatch`.
+- Added a `520`-page manifest at `render-proof-2026-06-01-v2-2-global/v2-2-render-proof-manifest.json`.
+- Ran a category-balanced proof batch on simulator `SpeakLocal City Listings`: `25` pages, `75` screenshots, `0` failures.
+- The batch covered all `20` top-level categories, the screenshot-feedback page `city-hcmc-place-banh-xeo-46a`, and one restaurant page in each non-Da Nang city.
+- Bánh Xèo 46A native proof now exists at `render-proof-2026-06-01-v2-2-global/screenshots-single-223/`.
+- Multi-page-in-one-test runs are unstable on this simulator; single-page xcodebuild invocations are the reliable path for the remaining `495` pages.
+
 ## Remaining Work
 
 - Promote the rendered proof gate: either literal top/scrolled screenshots for all `520` V2.2 pages or an explicit amended receipt standard that accepts full source/runtime text review plus representative rendered proof.
+- Continue the reliable single-page render harness over the remaining `495` pages, or split by offset into resumable batches that launch one page per xcodebuild invocation.
 - Continue targeted rendered review for street `spine/line` repetition, high-traffic beach/nature phrase-card fit, performance page first-move copy, and remaining hub-biased related-card feel.
 - If rendered review finds copy that reads stiff on-device, repair it in `content-draft/viet/city-library/app-detail-v2-2/*.json`, then run the full regeneration/validation chain again.

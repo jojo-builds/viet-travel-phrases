@@ -148,3 +148,11 @@ Seventh repair batch, 2026-06-01:
 - Regenerated V2.2 handwritten copy, native authored listing pages, phrase catalog, and SQLite.
 - Current source/runtime validators pass: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
 - Global status is still not final production-ready until the rendered proof gate is closed or explicitly amended. Continue from `full-taxonomy-copy-audit-2026-06-01.md`.
+
+Rendered proof expansion, 2026-06-01:
+
+- Added a resumable native UI-test harness for the V2.2 screenshot gate: `CityAppDetailV22RenderProofUITests/testCaptureCityAppDetailV22RenderProofBatch`.
+- Added a full `520`-page manifest under `render-proof-2026-06-01-v2-2-global/`.
+- Proved `25` category-balanced pages with `75` screenshots and `0` failures, including the user-flagged `city-hcmc-place-banh-xeo-46a`.
+- Multi-page-in-one-test runs can kill the UI-test runner; use single-page xcodebuild invocations with `TEST_RUNNER_SPEAKLOCAL_V2_2_RENDER_PROOF_OFFSET=<n>` and `TEST_RUNNER_SPEAKLOCAL_V2_2_RENDER_PROOF_LIMIT=1` for reliable continuation.
+- Remaining global proof gap: `495` V2.2 pages still need rendered screenshots, unless Jojo explicitly amends the final gate to accept source/runtime validation plus category-balanced native proof.
