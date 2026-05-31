@@ -115,6 +115,11 @@ Fresh command evidence from this pass:
 - local hygiene checks after the location-pick audio-tint preparation fix:
   - `git diff --check -- native-ios/App/Models/VietnameseMenuCatalog.swift native-ios/App/Views/PhraseListingView.swift native-ios/Tests/AppChromeTests.swift` passed
   - `node scripts/guard-native-only.js` passed
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `ca166a859`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - XcodeBuildMCP simulator focused detail-backdrop preheat set on iPhone 17 Pro
   - failed before implementation because `AdminBackdropImagePreheatPlan.focusedQueuedImageNames(...)` did not exist
   - passed after implementation: `1` test, `0` failures
