@@ -695,7 +695,7 @@
       "storySpine": "Ba Van Banh Loc keeps the food stop small and specific, with banana-leaf parcels doing more for memory than a long menu would.",
       "intro": {
         "heading": "Dumplings Before Dinner",
-        "body": "Ba Van Banh Loc is a focused Hue dumpling counter: banana-leaf parcels, dipping sauce, soft chew, and a small order instead of a full meal."
+        "body": "Ba Van Banh Loc is a focused Hue dumpling shop: banana-leaf parcels, dipping sauce, soft chew, and a small order instead of a full meal."
       },
       "usefulPhraseCards": [
         {
@@ -1067,8 +1067,8 @@
           "body": "You may see it in banana leaf or already unwrapped. Either way, the dumpling stays compact, chewy, and sauce-led."
         },
         {
-          "id": "a-counter-snack-moment",
-          "heading": "A Counter Snack Moment",
+          "id": "a-small-dumpling-order",
+          "heading": "A Small Dumpling Order",
           "body": "It pairs well when you want one Hue snack without sitting down for a full bowl."
         },
         {
@@ -1088,7 +1088,7 @@
           "catalogId": "viet-family-city-hue-place-ba-van-banh-loc",
           "label": "Bánh lọc Bà Vân",
           "relationship": "dish-to-named-parcel shop",
-          "displaySubtitle": "A named bánh lọc stop when the dish page needs a real counter.",
+          "displaySubtitle": "A named bánh lọc shop when the dish page needs one real place.",
           "reason": "Bà Vân turns the bánh bột lọc guide into a saveable place.",
           "status": "render"
         }
@@ -2177,7 +2177,7 @@
       "city": "Huế",
       "category": "Dessert",
       "pronunciation": "che hue",
-      "travelerMoment": "Chè Huế is the city's dessert-counter habit in a bowl or glass: beans, jelly, lotus seed, coconut milk, ice, and color cooling the day.",
+      "travelerMoment": "Chè Huế is the city's small-dessert habit in a bowl or glass: beans, jelly, lotus seed, coconut milk, ice, and color cooling the day.",
       "storySpine": "Hue sweet soup gives the day a cool, colorful reset, especially when heat or long sightseeing makes a small dessert feel necessary.",
       "intro": {
         "heading": "A Cool Glass Between Plans",
@@ -6327,7 +6327,7 @@
       "city": "Huế",
       "category": "Dessert",
       "pronunciation": "me xung",
-      "travelerMoment": "Mè xửng carries Hue's tea-table and gift habit in one portable sweet: sesame, peanut, malt chew, and market-counter memory.",
+      "travelerMoment": "Mè xửng carries Hue's tea-table and gift habit in one portable sweet: sesame, peanut, malt chew, and market-stall memory.",
       "storySpine": "A small candy can make Hue feel specific: sesame chew, gift buying, and tea-table memory in one portable sweet.",
       "intro": {
         "heading": "Chewy, Sweet, Portable",
@@ -6361,8 +6361,8 @@
       ],
       "sections": [
         {
-          "id": "market-counter-sweetness",
-          "heading": "Market Counter Sweetness",
+          "id": "market-stall-sweetness",
+          "heading": "Market Stall Sweetness",
           "body": "Wrapped pieces, cut squares, and gift boxes matter more than a sit-down dessert scene. The candy makes most sense beside tea or market browsing."
         },
         {
@@ -9377,7 +9377,7 @@
         {
           "id": "small-place-memory",
           "heading": "Small Place Memory",
-          "body": "Remember the cafe habit and interior detail: iced glasses, coffee counters, porcelain-inlay touches, and a short indoor stop."
+          "body": "Remember the cafe habit and interior detail: iced glasses, small tables, porcelain-inlay touches, and a short indoor stop."
         }
       ],
       "mentionedHereCandidates": [],

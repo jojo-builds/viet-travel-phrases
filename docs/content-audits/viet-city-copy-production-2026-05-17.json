@@ -491,9 +491,9 @@
       "failures": [],
       "evidence": {
         "summaryExcerpt": "Good for breakfast, a light lunch, or a hand-held stop before seafood, sightseeing, or a longer sit-down meal. Banh mi gives the trip a quick flavor memory without forcing lunch to become a full stop.",
-        "aboutExcerpt": "A fast Da Nang bite of crisp bread, herbs, pickles, sauce, chili if allowed, and counter decisions that move quickly at lunch hour.",
+        "aboutExcerpt": "A fast Da Nang bite of crisp bread, herbs, pickles, sauce, chili if allowed, and filling choices that move quickly at lunch hour.",
         "phrasebookExcerpt": "",
-        "belongingExcerpt": "Pick the big choices: pork, chicken, egg, pate, grilled meat, chili, and sauce. A clear order makes the counter easier.",
+        "belongingExcerpt": "Pick the big choices: pork, chicken, egg, pate, grilled meat, chili, and sauce. A clear order keeps the sandwich moment easy.",
         "timingExcerpt": "It fills the gap before later seafood plans, when something small is the point. Eat soon if the crisp bread is part of the pleasure.",
         "goodToKnowExcerpt": "Bánh mì thịt or bánh mì đặc biệt gives the familiar fuller mix. Chicken or fried egg can be gentler when the order needs to stay simple."
       }
@@ -702,7 +702,7 @@
         "phrasebookExcerpt": "",
         "belongingExcerpt": "Garlicky prawns give the page a real food reason beyond the guide signal. Let that kind of flavor lead the order, then add quieter plates around it.",
         "timingExcerpt": "The room should feel personal before it feels formal. Choose it when Da Nang needs a dinner memory that is smaller, warmer, and away from big group-venue energy.",
-        "goodToKnowExcerpt": "Madame Lân is the broader courtyard table. Bếp Hên is the more intimate choice when the night should lean into house dishes and shared plates."
+        "goodToKnowExcerpt": "Madame Lân is the broader courtyard restaurant. Bếp Hên is the more intimate choice when the night should lean into house dishes and shared plates."
       }
     },
     {
@@ -771,7 +771,7 @@
         "aboutExcerpt": "A Da Nang fish-cake noodle soup with clear broth, tomato, herbs, springy chả cá, and a coastal morning-market pull.",
         "phrasebookExcerpt": "",
         "belongingExcerpt": "The springy chả cá carries the bowl. Taste broth and fish cake before adding too much chili or lime.",
-        "timingExcerpt": "Breakfast, lunch, or an easy dinner can all carry this bowl. Use it when seafood plans sound too large and one hot bowl is plenty.",
+        "timingExcerpt": "Breakfast, lunch, or an easy dinner can all carry this bowl. One hot bowl is enough when seafood plans sound too large.",
         "goodToKnowExcerpt": "Broth, herbs, tomato, spice, and fish-cake bounce vary by shop. Expect a dish style, not one exact bowl repeated everywhere."
       }
     },
@@ -804,7 +804,7 @@
         "phrasebookExcerpt": "",
         "belongingExcerpt": "Pineapple and tomato keep the broth bright while tuna, mackerel, and crab give it depth. Taste before adding chili.",
         "timingExcerpt": "This focused noodle-shop meal keeps seafood in one bowl. Let fish cake, broth, herbs, and noodles carry the table.",
-        "goodToKnowExcerpt": "Put 109 beside Hờn if Da Nang turns into a fish-cake soup comparison. Hờn keeps the bowl clean; 109 leans harder into house-made fish-cake texture."
+        "goodToKnowExcerpt": "Bún Chả Cá Hờn is the cleaner fish-cake soup comparison. 109 leans harder into house-made fish-cake texture and a fuller bowl."
       }
     },
     {
@@ -838,7 +838,7 @@
         "aboutExcerpt": "Bun Cha Ca Hon is a 2025 MICHELIN Bib Gourmand Da Nang stop for fish-cake noodle soup: broth first, herbs after, and spice only once the bowl is clear.",
         "phrasebookExcerpt": "",
         "belongingExcerpt": "Try the broth before changing the bowl. Chili, herbs, and condiments can pull it in a different direction fast.",
-        "timingExcerpt": "Place this named shop beside the broader bun cha ca guide. The dish explains the food; Hon gives a concrete table to try it.",
+        "timingExcerpt": "The broader bún chả cá guide explains the food. Hờn gives that bowl one concrete Da Nang table.",
         "goodToKnowExcerpt": "The Bib Gourmand signal belongs to the bowl and a short table rhythm. Keep the meal focused on fish cake, broth, herbs, and the first clean taste."
       }
     },
@@ -2301,9 +2301,9 @@
         "summaryExcerpt": "MỘC is the guided Da Nang seafood meal: tanks nearby, shellfish help at the table, lobster in garlic butter, and a room built for choosing well.",
         "aboutExcerpt": "MỘC Quán Seafood is a 2025 MICHELIN Selected Da Nang table for choosing seafood from tanks, getting help with shellfish, and letting lobster in garlic butter carry the meal.",
         "phrasebookExcerpt": "",
-        "belongingExcerpt": "Lobster in garlic butter gives MỘC a richer food cue than plain grilled seafood. Use it as the centerpiece, then keep the rest of the order cleaner.",
+        "belongingExcerpt": "Lobster in garlic butter gives MỘC a richer food cue than plain grilled seafood. Let it be the centerpiece, then keep the rest of the order cleaner.",
         "timingExcerpt": "Choose this when seafood feels exciting and slightly technical. If staff help with shells, let that make the meal calmer instead of rushing through the order.",
-        "goodToKnowExcerpt": "Bé Mặn is louder and more display-driven. MỘC is the clearer choice when the group wants seafood, guidance, and a slightly more composed table."
+        "goodToKnowExcerpt": "Bé Mặn is the louder seafood-display restaurant. MỘC is the clearer choice when the group wants seafood, guidance, and a slightly more composed table."
       }
     },
     {
@@ -2543,8 +2543,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Mỳ Quảng Dung should stay as a compact counter fallback: useful for pointing, tasting, and getting a simple bowl when the day does not need a destination lunch.",
-        "aboutExcerpt": "Mỳ Quảng Dung is a compact mì Quảng counter for pointing, tasting, and getting a simple bowl without turning lunch into a plan.",
+        "summaryExcerpt": "Mỳ Quảng Dung should stay as a compact noodle-shop fallback: useful for pointing, tasting, and getting a simple bowl when the day does not need a destination lunch.",
+        "aboutExcerpt": "Mỳ Quảng Dung is a compact mì Quảng shop for pointing, tasting, and getting a simple bowl without turning lunch into a plan.",
         "phrasebookExcerpt": "",
         "belongingExcerpt": "Mì Quảng can carry spice, peanuts, and sharp lime at once. Taste before adding chili, then adjust the bowl slowly.",
         "timingExcerpt": "Choose it when the day needs a simple mì Quảng bowl and a name to show. The value is navigation, ordering, and a quick lunch.",
@@ -6275,7 +6275,7 @@
         "phrasebookExcerpt": "",
         "belongingExcerpt": "The bowl is lighter than beef pho without feeling minor. Chicken, rice noodles, green onion, and herbs do the work.",
         "timingExcerpt": "Phở gà names the dish cleanly, so the first order can stay simple. Add-ins can wait until the bowl is in front of you.",
-        "goodToKnowExcerpt": "Put it beside a beef-pho counter if Hanoi is turning into a noodle map. The difference is broth clarity, chicken texture, herbs, and room pace."
+        "goodToKnowExcerpt": "Put it beside a beef-phở shop if Hanoi is turning into a noodle map. The difference is broth clarity, chicken texture, herbs, and room pace."
       }
     },
     {
@@ -7567,7 +7567,7 @@
         "phrasebookExcerpt": "",
         "belongingExcerpt": "Give it a night with space around the booking. It lands weaker as a last-minute hunger fix between bars, markets, and one more ride.",
         "timingExcerpt": "Recommendation, allergy, spice, and menu questions belong early. A planned meal is easier when the first exchange sets the table’s limits.",
-        "goodToKnowExcerpt": "This dinner belongs beside Bến Thành, a bánh mì counter, or a street-food walk so Saigon food feels broad: quick counters by day, one composed dinner by night."
+        "goodToKnowExcerpt": "This dinner belongs beside Bến Thành, a bánh mì shop, or a street-food walk so Saigon food feels broad: quick bites by day, one composed dinner by night."
       }
     },
     {
@@ -7703,7 +7703,7 @@
       "failures": [],
       "evidence": {
         "summaryExcerpt": "Bánh mì is portable, common, and easy to order. The first choice is usually filling, chili, and whether you eat now or carry it. It gives HCMC one of its simplest food wins: recognizable, quick, stacked, and easy to compare from shop to shop.",
-        "aboutExcerpt": "Banh mi in Saigon is a fast street-food decision: crisp bread, pâté or meat, herbs, pickles, chili, and a counter speed that puts lunch in motion before the bite.",
+        "aboutExcerpt": "Banh mi in Saigon is a fast street-food decision: crisp bread, pâté or meat, herbs, pickles, chili, and an ordering pace that puts lunch in motion before the bite.",
         "phrasebookExcerpt": "",
         "belongingExcerpt": "It slides between bigger plans: quick as a snack, filling as lunch, and easy to eat without decoding a long menu.",
         "timingExcerpt": "It suits a day that keeps moving: before a museum, after a market, or between rides.",
@@ -8361,7 +8361,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Chè has many versions. The stable idea is sweetness, cold or warm cups, jelly, beans, fruit, and a snack-counter moment. Chè is the city's dessert moment of variety, not one fixed recipe or a single shop.",
+        "summaryExcerpt": "Chè has many versions. The stable idea is sweetness, cold or warm cups, jelly, beans, fruit, and a small dessert-stall moment. Chè is the city's dessert moment of variety, not one fixed recipe or a single shop.",
         "aboutExcerpt": "Chè in Saigon is the sweet dessert break: coconut milk, jelly, beans, fruit, shaved ice, and colorful cups that work when the day needs a small cool-down.",
         "phrasebookExcerpt": "",
         "belongingExcerpt": "It belongs after a market, dinner, or humid walk when a cold cup beats one more coffee.",
@@ -8645,7 +8645,7 @@
         "aboutExcerpt": "Com Tam Ba Ghien is a 2025 MICHELIN Bib Gourmand broken-rice stop for a big grilled pork chop, egg, pickles, fish sauce, and a meal without a long menu debate.",
         "phrasebookExcerpt": "",
         "belongingExcerpt": "The Bib Gourmand signal belongs to a quick, satisfying plate rather than a formal dinner. Order, eat, and let the meal stay direct.",
-        "timingExcerpt": "Pick the pork chop, then decide egg or extra pieces. A quick choice keeps the order from becoming a counter-side puzzle.",
+        "timingExcerpt": "Pick the pork chop, then decide egg or extra pieces. A quick choice keeps the order from becoming an order-line puzzle.",
         "goodToKnowExcerpt": "Fish sauce brings the plate together, but pour gradually. The pork, rice, pickles, and egg already carry plenty of flavor."
       }
     },
@@ -9587,7 +9587,7 @@
         "aboutExcerpt": "Mặn Mòi is a 2025 MICHELIN Bib Gourmand Saigon restaurant for a steadier Vietnamese dinner: shared dishes, rice on the table, sauces close by, and service that lets the room stay calm.",
         "phrasebookExcerpt": "",
         "belongingExcerpt": "Ask what the table should share, then let rice, vegetables, soup, and sauced dishes build the meal. A simple menu question keeps the first move easy if the room is busy.",
-        "timingExcerpt": "Saigon food coverage needs this middle lane: not street-food speed, not polished counter theatre, but a Vietnamese restaurant dinner that is easy to picture before the trip.",
+        "timingExcerpt": "Saigon food coverage needs this middle lane: not street-food speed, not polished tasting-menu theater, but a Vietnamese restaurant dinner that is easy to picture before the trip.",
         "goodToKnowExcerpt": "The 2025 Bib Gourmand and Service Award signals support the choice. The actual reason to go is still the table: dishes landing together, sauces within reach, and service that helps dinner settle."
       }
     },
@@ -11464,12 +11464,12 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Hội An bánh mì carries the city's quick counter-food memory: French-era bread, local herbs, sauce, chili choices, and a stop that can happen between old-town errands.",
-        "aboutExcerpt": "Bánh mì Hội An is the quick sandwich move to know: crisp bread, herbs, sauce, filling, heat, and a counter order that happens fast.",
+        "summaryExcerpt": "Hội An bánh mì carries the city's quick sandwich-shop memory: French-era bread, local herbs, sauce, chili choices, and a stop that can happen between old-town errands.",
+        "aboutExcerpt": "Bánh mì Hội An is the quick sandwich move to know: crisp bread, herbs, sauce, filling, heat, and an order that happens fast.",
         "phrasebookExcerpt": "",
         "belongingExcerpt": "This is a short meal for a moving day. Decide filling and chili early, then let the sandwich stay simple.",
         "timingExcerpt": "Heat is easier to manage before the roll is assembled. If spice worries you, say little chili or no chili at the start.",
-        "goodToKnowExcerpt": "The specific counter may shift, but bánh mì is the word to keep. It travels well across Hội An’s food map."
+        "goodToKnowExcerpt": "The exact shop may shift, but bánh mì is the word to keep. It travels well across Hội An’s food map."
       }
     },
     {
@@ -12024,7 +12024,7 @@
         "summaryExcerpt": "Cargo Club is the old-town riverfront restaurant-and-patisserie moment: terrace, cakes, coffee, Vietnamese and Western plates, and a table that solves group dinner without leaving the walk.",
         "aboutExcerpt": "Cargo Club is a Hội An riverfront restaurant-and-patisserie pause: terrace tables, Vietnamese and Western plates, cakes, and a Thu Bon view when the Ancient Town walk needs a real break.",
         "phrasebookExcerpt": "",
-        "belongingExcerpt": "Cargo sits near the same old-town restaurant world as Morning Glory and Vy’s Market. Use it when a broader table matters more than chasing one dish.",
+        "belongingExcerpt": "Cargo sits near the same old-town restaurant world as Morning Glory and Vy’s Market. Choose it for a broader table rather than one narrow dish chase.",
         "timingExcerpt": "For a food-focused choice, Morning Glory or White Rose is sharper. Choose Cargo when the group needs terrace, dessert, and fewer arguments about the menu.",
         "goodToKnowExcerpt": ""
       }
@@ -13138,8 +13138,8 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Hội An Market keeps the old town connected to daily buying: produce colors, food counters, small goods, and morning bargaining under yellow awnings.",
-        "aboutExcerpt": "Hội An Market gives the old town its working edge: produce colors, food counters, small goods, bargaining, and morning buying under yellow awnings.",
+        "summaryExcerpt": "Hội An Market keeps the old town connected to daily buying: produce colors, food stalls, small goods, and morning bargaining under yellow awnings.",
+        "aboutExcerpt": "Hội An Market gives the old town its working edge: produce colors, food stalls, small goods, bargaining, and morning buying under yellow awnings.",
         "phrasebookExcerpt": "",
         "belongingExcerpt": "Food and produce give the market its working pulse early. Gift browsing can come after you understand the aisles and the pace of buying.",
         "timingExcerpt": "The market suits a light browse, a snack, or one practical purchase. It gets harder when treated like a full shopping mission.",
@@ -13313,11 +13313,11 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Choose Morning Glory when the first Hội An meal needs to teach the table: local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a counter crawl.",
+        "summaryExcerpt": "Choose Morning Glory when the first Hội An meal needs to teach the table: local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a stall crawl.",
         "aboutExcerpt": "Morning Glory Original is useful when Hội An food feels wide and the first dinner needs a clear table: cao lầu, white rose dumplings, bánh xèo, herbs, rice paper, and ingredient questions near the old streets.",
         "phrasebookExcerpt": "",
-        "belongingExcerpt": "This is the practical first-night table for groups, allergies, and first-timers who want central-coast dishes without decoding every counter on arrival.",
-        "timingExcerpt": "Let it be orientation, then keep Bale Well, White Rose, bánh mì, or a market counter for a more focused second stop. Hội An food opens up once the first dinner points you toward more doors.",
+        "belongingExcerpt": "This is the practical first-night table for groups, allergies, and first-timers who want central-coast dishes without decoding every small shop on arrival.",
+        "timingExcerpt": "Let it be orientation, then keep Bale Well, White Rose, bánh mì, or a market stall for a more focused second stop. Hội An food opens up once the first dinner points you toward more doors.",
         "goodToKnowExcerpt": "After one calmer table, the smaller specialty places make more sense: rice paper, herbs, shrimp, sauce, and noodle names stop feeling like a wall of options."
       }
     },
@@ -13352,7 +13352,7 @@
         "aboutExcerpt": "Mot herbal drink is a cold old-town refresher: herbal sweetness, lemongrass, lotus-leaf garnish, iced glass, and a short cool-down between walks.",
         "phrasebookExcerpt": "",
         "belongingExcerpt": "The drink belongs between market browsing, river walking, and dinner. It gives the day a cooler middle without taking much time.",
-        "timingExcerpt": "This is a small counter moment; it is a quick counter moment. Drink it, notice the flavor, and keep the old-town route moving.",
+        "timingExcerpt": "This is a small old-town drink stop. Try the herbal sweetness, notice the garnish, and keep the route moving.",
         "goodToKnowExcerpt": "Do not expect a plain tea. The memory is the herbal sweetness, cold glass, and street-side scene around it."
       }
     },
@@ -13948,7 +13948,7 @@
         "phrasebookExcerpt": "",
         "belongingExcerpt": "Place it between a museum, old house, tailor visit, or river walk when the body needs shade more than sightseeing.",
         "timingExcerpt": "A short drink is easier than settling in for hours. The old town will keep pulling the day forward.",
-        "goodToKnowExcerpt": "Remember it for the counter, a short seat, and shade before the walk resumes."
+        "goodToKnowExcerpt": "Remember it for the coffee, a short seat, and shade before the walk resumes."
       }
     },
     {
@@ -14538,7 +14538,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Vy's Market Restaurant turns Hội An food variety into an organized indoor counter scene, echoing market browsing without asking the whole group to chase every stall.",
+        "summaryExcerpt": "Vy's Market Restaurant turns Hội An food variety into an organized indoor food-hall scene, echoing market browsing without asking the whole group to chase every stall.",
         "aboutExcerpt": "Vys Market Restaurant gives Hội An food a controlled first lap: counters, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much.",
         "phrasebookExcerpt": "",
         "belongingExcerpt": "Let cao lầu, white rose dumplings, or a small bánh xèo lead the first round. One local center makes the rest easier to read.",
@@ -14924,7 +14924,7 @@
       "failures": [],
       "evidence": {
         "summaryExcerpt": "Bánh lọc is one of Hue's small royal-city snacks, where banana leaf, chewy tapioca, shrimp, and sauce make a brief stop memorable.",
-        "aboutExcerpt": "Ba Van Banh Loc is a focused Hue dumpling counter: banana-leaf parcels, dipping sauce, soft chew, and a small order instead of a full meal.",
+        "aboutExcerpt": "Ba Van Banh Loc is a focused Hue dumpling shop: banana-leaf parcels, dipping sauce, soft chew, and a small order instead of a full meal.",
         "phrasebookExcerpt": "",
         "belongingExcerpt": "Slip it between sightseeing and a later dinner, when one Hue snack sounds lighter than a heavy meal.",
         "timingExcerpt": "The glossy dumpling and banana-leaf parcel carry the visit. One clear dish can say more than a broad menu here.",
@@ -15378,7 +15378,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Chè Huế is the city's dessert-counter habit in a bowl or glass: beans, jelly, lotus seed, coconut milk, ice, and color cooling the day.",
+        "summaryExcerpt": "Chè Huế is the city's small-dessert habit in a bowl or glass: beans, jelly, lotus seed, coconut milk, ice, and color cooling the day.",
         "aboutExcerpt": "Chè Huế is the city’s dessert-glass break: beans, jelly, lotus seed, coconut milk, crushed ice, color, and sweetness between bigger plans.",
         "phrasebookExcerpt": "",
         "belongingExcerpt": "Chè suits a spicy bowl, market walk, or hot tomb route when cold sweetness sounds more refreshing than coffee.",
@@ -16673,7 +16673,7 @@
       },
       "failures": [],
       "evidence": {
-        "summaryExcerpt": "Mè xửng carries Hue's tea-table and gift habit in one portable sweet: sesame, peanut, malt chew, and market-counter memory. A small candy can make Hue feel specific: sesame chew, gift buying, and tea-table memory in one portable sweet.",
+        "summaryExcerpt": "Mè xửng carries Hue's tea-table and gift habit in one portable sweet: sesame, peanut, malt chew, and market-stall memory. A small candy can make Hue feel specific: sesame chew, gift buying, and tea-table memory in one portable sweet.",
         "aboutExcerpt": "Mè xửng is Hue's small sweet stop: chewy sesame candy, peanut and malt sweetness, tea nearby, and an easy gift or break between larger plans without making dessert complicated.",
         "phrasebookExcerpt": "",
         "belongingExcerpt": "Choose it for a small purchase after Đông Ba Market, a tea break, or a hotel-room snack. The pleasure is chew and memory, not fullness.",
@@ -17623,7 +17623,7 @@
         "phrasebookExcerpt": "",
         "belongingExcerpt": "The cafe fits a break between market heat, riverside movement, or a longer heritage stop.",
         "timingExcerpt": "Picture iced glasses, coffee counters, design details, and a slower table rather than a full work session.",
-        "goodToKnowExcerpt": "Remember the cafe habit and interior detail: iced glasses, coffee counters, porcelain-inlay touches, and a short indoor stop."
+        "goodToKnowExcerpt": "Remember the cafe habit and interior detail: iced glasses, small tables, porcelain-inlay touches, and a short indoor stop."
       }
     },
     {

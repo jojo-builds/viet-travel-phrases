@@ -1240,8 +1240,8 @@
       "travelerMoment": "Good for breakfast, a light lunch, or a hand-held stop before seafood, sightseeing, or a longer sit-down meal.",
       "storySpine": "Banh mi gives the trip a quick flavor memory without forcing lunch to become a full stop.",
       "intro": {
-        "heading": "Fast Counter, Clear Choice",
-        "body": "A fast Da Nang bite of crisp bread, herbs, pickles, sauce, chili if allowed, and counter decisions that move quickly at lunch hour."
+        "heading": "Fast Sandwich, Clear Choice",
+        "body": "A fast Da Nang bite of crisp bread, herbs, pickles, sauce, chili if allowed, and filling choices that move quickly at lunch hour."
       },
       "usefulPhraseCards": [
         {
@@ -1272,13 +1272,13 @@
       "sections": [
         {
           "id": "counter-decision",
-          "heading": "Counter Decision",
-          "body": "This is the fast-bite moment: crisp bread, herbs, sauce, chili choices, and a counter that moves quickly. Decide the main filling before reaching the front."
+          "heading": "Choose The Filling",
+          "body": "This is the fast-bite moment: crisp bread, herbs, sauce, chili choices, and a line that moves quickly. Decide the main filling before reaching the front."
         },
         {
           "id": "filling-before-sauce",
           "heading": "Filling Before Sauce",
-          "body": "Pick the big choices: pork, chicken, egg, pate, grilled meat, chili, and sauce. A clear order makes the counter easier."
+          "body": "Pick the big choices: pork, chicken, egg, pate, grilled meat, chili, and sauce. A clear order keeps the sandwich moment easy."
         },
         {
           "id": "breakfast-or-fast-lunch",
@@ -2002,8 +2002,8 @@
         },
         {
           "id": "beside-madame-lan",
-          "heading": "Beside Madame Lân",
-          "body": "Madame Lân is the broader courtyard table. Bếp Hên is the more intimate choice when the night should lean into house dishes and shared plates."
+          "heading": "Compare It With Madame Lân",
+          "body": "Madame Lân is the broader courtyard restaurant. Bếp Hên is the more intimate choice when the night should lean into house dishes and shared plates."
         }
       ],
       "mentionedHereCandidates": [],
@@ -2115,7 +2115,7 @@
         {
           "id": "garlic-butter-has-a-job",
           "heading": "Garlic Butter Has A Job",
-          "body": "Lobster in garlic butter gives MỘC a richer food cue than plain grilled seafood. Use it as the centerpiece, then keep the rest of the order cleaner."
+          "body": "Lobster in garlic butter gives MỘC a richer food cue than plain grilled seafood. Let it be the centerpiece, then keep the rest of the order cleaner."
         },
         {
           "id": "help-with-shellfish",
@@ -2124,8 +2124,8 @@
         },
         {
           "id": "beside-be-man",
-          "heading": "Beside Bé Mặn",
-          "body": "Bé Mặn is louder and more display-driven. MỘC is the clearer choice when the group wants seafood, guidance, and a slightly more composed table."
+          "heading": "Compare It With Bé Mặn",
+          "body": "Bé Mặn is the louder seafood-display restaurant. MỘC is the clearer choice when the group wants seafood, guidance, and a slightly more composed table."
         }
       ],
       "mentionedHereCandidates": [
@@ -2367,7 +2367,7 @@
         {
           "id": "a-simple-meal-window",
           "heading": "A Simple Meal Window",
-          "body": "Breakfast, lunch, or an easy dinner can all carry this bowl. Use it when seafood plans sound too large and one hot bowl is plenty."
+          "body": "Breakfast, lunch, or an easy dinner can all carry this bowl. One hot bowl is enough when seafood plans sound too large."
         },
         {
           "id": "variation-is-normal",
@@ -2491,8 +2491,8 @@
         },
         {
           "id": "beside-hon",
-          "heading": "Beside Hờn",
-          "body": "Put 109 beside Hờn if Da Nang turns into a fish-cake soup comparison. Hờn keeps the bowl clean; 109 leans harder into house-made fish-cake texture."
+          "heading": "Compare It With Hờn",
+          "body": "Bún Chả Cá Hờn is the cleaner fish-cake soup comparison. 109 leans harder into house-made fish-cake texture and a fuller bowl."
         }
       ],
       "mentionedHereCandidates": [
@@ -2619,8 +2619,8 @@
         },
         {
           "id": "beside-the-broader-dish",
-          "heading": "Beside The Broader Dish",
-          "body": "Place this named shop beside the broader bun cha ca guide. The dish explains the food; Hon gives a concrete table to try it."
+          "heading": "Compare It With The Dish Guide",
+          "body": "The broader bún chả cá guide explains the food. Hờn gives that bowl one concrete Da Nang table."
         },
         {
           "id": "before-crossing-town",
@@ -5935,7 +5935,7 @@
         },
         {
           "id": "every-counter-is-different",
-          "heading": "Every Counter Is Different",
+          "heading": "Every Stall Is Different",
           "body": "Shop availability, toppings, sweetness, pricing, and cup wording vary. Treat the first cup as the test before ordering more."
         }
       ],
@@ -8289,11 +8289,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "my quang dung",
-      "travelerMoment": "Mỳ Quảng Dung should stay as a compact counter fallback: useful for pointing, tasting, and getting a simple bowl when the day does not need a destination lunch.",
+      "travelerMoment": "Mỳ Quảng Dung should stay as a compact noodle-shop fallback: useful for pointing, tasting, and getting a simple bowl when the day does not need a destination lunch.",
       "storySpine": "Dung keeps a small ordering-practice role inside the mì Quảng set, while the more memorable food desire comes from Mì Quảng 1A and Mỳ Quảng Sứa Hồng Vân.",
       "intro": {
-        "heading": "A Small Counter Bowl",
-        "body": "Mỳ Quảng Dung is a compact mì Quảng counter for pointing, tasting, and getting a simple bowl without turning lunch into a plan."
+        "heading": "A Small Noodle Shop",
+        "body": "Mỳ Quảng Dung is a compact mì Quảng shop for pointing, tasting, and getting a simple bowl without turning lunch into a plan."
       },
       "usefulPhraseCards": [
         {

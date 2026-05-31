@@ -872,7 +872,7 @@
           "type": "place",
           "catalogId": "viet-family-city-hoian-place-banh-mi-phuong",
           "sourceText": "Old Core",
-          "displaySubtitle": "A fast counter contrast when Hội An food should be quick instead of hands-on.",
+          "displaySubtitle": "A fast sandwich-shop contrast when Hội An food should be quick instead of hands-on.",
           "reason": "Banh Mi Phuong is a nearby food contrast for Bale Well.",
           "status": "render"
         }
@@ -1049,11 +1049,11 @@
       "city": "Hội An",
       "category": "Dish",
       "pronunciation": "banh mi hoi an",
-      "travelerMoment": "Hội An bánh mì carries the city's quick counter-food memory: French-era bread, local herbs, sauce, chili choices, and a stop that can happen between old-town errands.",
+      "travelerMoment": "Hội An bánh mì carries the city's quick sandwich-shop memory: French-era bread, local herbs, sauce, chili choices, and a stop that can happen between old-town errands.",
       "storySpine": "Banh mi brings a fast, portable food memory: crisp bread, herbs, sauce, heat, and one confident order before the day keeps moving.",
       "intro": {
         "heading": "A Quick Roll With Hội An Bite",
-        "body": "Bánh mì Hội An is the quick sandwich move to know: crisp bread, herbs, sauce, filling, heat, and a counter order that happens fast."
+        "body": "Bánh mì Hội An is the quick sandwich move to know: crisp bread, herbs, sauce, filling, heat, and an order that happens fast."
       },
       "usefulPhraseCards": [
         {
@@ -1100,7 +1100,7 @@
         {
           "id": "many-shops-same-sandwich-word",
           "heading": "Many Shops, Same Sandwich Word",
-          "body": "The specific counter may shift, but bánh mì is the word to keep. It travels well across Hội An’s food map."
+          "body": "The exact shop may shift, but bánh mì is the word to keep. It travels well across Hội An’s food map."
         }
       ],
       "mentionedHereCandidates": [],
@@ -2839,7 +2839,7 @@
           "catalogId": "viet-family-city-hoian-place-cao-lau-city",
           "label": "Cao lầu ở Hội An",
           "relationship": "named restaurant to dish guide",
-          "displaySubtitle": "The dish page for recognizing cao lầu before choosing a counter.",
+          "displaySubtitle": "The dish page for recognizing cao lầu before choosing a shop.",
           "reason": "The dish guide should remain reachable from the named restaurant.",
           "status": "render"
         },
@@ -2953,7 +2953,7 @@
         {
           "id": "ms-vy-orbit",
           "heading": "In The Ms Vy Orbit",
-          "body": "Cargo sits near the same old-town restaurant world as Morning Glory and Vy’s Market. Use it when a broader table matters more than chasing one dish."
+          "body": "Cargo sits near the same old-town restaurant world as Morning Glory and Vy’s Market. Choose it for a broader table rather than one narrow dish chase."
         },
         {
           "id": "not-the-food-quest",
@@ -3514,8 +3514,8 @@
       "sections": [
         {
           "id": "fruit-coffee-counter",
-          "heading": "Fruit, Coffee, Counter",
-          "body": "The counter is tropical juice, coffee, fruit, and yellow-wall Hội An color. Keep the visit small, visual, and drink-led."
+          "heading": "Fruit, Coffee, Color",
+          "body": "The small room is tropical juice, coffee, fruit, and yellow-wall Hội An color. Keep the visit visual and drink-led."
         },
         {
           "id": "between-walks",
@@ -3652,7 +3652,7 @@
           "type": "place",
           "catalogId": "viet-family-city-hoian-place-com-ga-ba-buoi",
           "sourceText": "chicken rice",
-          "displaySubtitle": "The named old-town counter when Hội An chicken rice should become a real stop.",
+          "displaySubtitle": "The named old-town chicken-rice shop when the dish should become a real stop.",
           "reason": "The dish page needs a first-class named chicken-rice place instead of pointing only to an unrelated quick-meal contrast.",
           "status": "render"
         }
@@ -3670,7 +3670,7 @@
           "catalogId": "viet-family-city-hoian-place-banh-mi-phuong",
           "label": "Bánh mì Phượng",
           "relationship": "same-city quick-meal contrast",
-          "displaySubtitle": "A famous counter when the day wants bread, fillings, and chili instead of chicken rice.",
+          "displaySubtitle": "A famous sandwich shop when the day wants bread, fillings, and chili instead of chicken rice.",
           "reason": "Banh Mi Phuong is a useful quick-meal contrast for com ga.",
           "status": "render"
         }
@@ -3802,7 +3802,7 @@
           "catalogId": "viet-family-city-hoian-place-banh-mi-phuong",
           "label": "Bánh mì Phượng",
           "relationship": "same-neighborhood quick-meal contrast",
-          "displaySubtitle": "A fast bánh mì counter when bread, fillings, and chili should lead instead of chicken rice.",
+          "displaySubtitle": "A fast bánh mì shop when bread, fillings, and chili should lead instead of chicken rice.",
           "reason": "Banh Mi Phuong gives Ba Buoi a quick-lunch comparison inside the old-town food set.",
           "status": "render"
         },
@@ -3810,7 +3810,7 @@
           "catalogId": "viet-family-city-hoian-place-com-ga",
           "label": "Cơm gà Hội An",
           "relationship": "named place to dish guide",
-          "displaySubtitle": "The dish page for understanding Hội An chicken rice before choosing a counter.",
+          "displaySubtitle": "The dish page for understanding Hội An chicken rice before choosing a shop.",
           "reason": "The dish guide should remain reachable from the named restaurant.",
           "status": "render"
         }
@@ -6564,11 +6564,11 @@
       "city": "Hội An",
       "category": "Market",
       "pronunciation": "chuh hoy an",
-      "travelerMoment": "Hội An Market keeps the old town connected to daily buying: produce colors, food counters, small goods, and morning bargaining under yellow awnings.",
+      "travelerMoment": "Hội An Market keeps the old town connected to daily buying: produce colors, food stalls, small goods, and morning bargaining under yellow awnings.",
       "storySpine": "Hội An Market keeps daily buying close to the tourist streets, giving visitors a practical sense of food, goods, and local exchange.",
       "intro": {
         "heading": "A Market Opening Lap",
-        "body": "Hội An Market gives the old town its working edge: produce colors, food counters, small goods, bargaining, and morning buying under yellow awnings."
+        "body": "Hội An Market gives the old town its working edge: produce colors, food stalls, small goods, bargaining, and morning buying under yellow awnings."
       },
       "usefulPhraseCards": [
         {
@@ -7127,7 +7127,7 @@
       "city": "Hội An",
       "category": "Restaurant",
       "pronunciation": "morning glory hoy an",
-      "travelerMoment": "Choose Morning Glory when the first Hội An meal needs to teach the table: local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a counter crawl.",
+      "travelerMoment": "Choose Morning Glory when the first Hội An meal needs to teach the table: local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a stall crawl.",
       "storySpine": "Morning Glory matters as an orientation restaurant inside the larger Hội An food story: it makes cao lầu, white rose dumplings, herbs, rice paper, and central-coast flavors easier to decode before smaller stops.",
       "intro": {
         "heading": "A First Dinner That Teaches The Menu",
@@ -7168,12 +7168,12 @@
         {
           "id": "why-save-it",
           "heading": "Why It Works First",
-          "body": "This is the practical first-night table for groups, allergies, and first-timers who want central-coast dishes without decoding every counter on arrival."
+          "body": "This is the practical first-night table for groups, allergies, and first-timers who want central-coast dishes without decoding every small shop on arrival."
         },
         {
           "id": "beyond-first-dinner",
           "heading": "Beyond First Dinner",
-          "body": "Let it be orientation, then keep Bale Well, White Rose, bánh mì, or a market counter for a more focused second stop. Hội An food opens up once the first dinner points you toward more doors."
+          "body": "Let it be orientation, then keep Bale Well, White Rose, bánh mì, or a market stall for a more focused second stop. Hội An food opens up once the first dinner points you toward more doors."
         },
         {
           "id": "after-this-meal",
@@ -7321,8 +7321,8 @@
         },
         {
           "id": "a-short-counter-moment",
-          "heading": "A Short Counter Moment",
-          "body": "This is a small counter moment; it is a quick counter moment. Drink it, notice the flavor, and keep the old-town route moving."
+          "heading": "A Quick Herbal Drink",
+          "body": "This is a small old-town drink stop. Try the herbal sweetness, notice the garnish, and keep the route moving."
         },
         {
           "id": "sweetness-can-be-the-point",
@@ -9237,7 +9237,7 @@
         {
           "id": "coffee-comes-first",
           "heading": "Coffee Leads",
-          "body": "Remember it for the counter, a short seat, and shade before the walk resumes."
+          "body": "Remember it for the coffee, a short seat, and shade before the walk resumes."
         }
       ],
       "mentionedHereCandidates": [],
@@ -11098,7 +11098,7 @@
       "city": "Hội An",
       "category": "Restaurant",
       "pronunciation": "vys market restaurant",
-      "travelerMoment": "Vy's Market Restaurant turns Hội An food variety into an organized indoor counter scene, echoing market browsing without asking the whole group to chase every stall.",
+      "travelerMoment": "Vy's Market Restaurant turns Hội An food variety into an organized indoor food-hall scene, echoing market browsing without asking the whole group to chase every stall.",
       "storySpine": "Vy's Market gives visitors a lower-friction way to explore Hội An flavors without turning dinner into a full market crawl.",
       "intro": {
         "heading": "A Food Hall For First Bearings",

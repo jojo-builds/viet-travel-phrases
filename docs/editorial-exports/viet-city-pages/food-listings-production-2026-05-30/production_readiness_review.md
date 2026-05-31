@@ -4331,6 +4331,117 @@ This pass clears the shared sticky-audio readability blocker for representative 
 
 No subagents were spawned or closed in this continuation. This pass used local native render, UI-test, screenshot, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
 
+## Continuation: Food Copy U.S.-Voice And Significance Audit
+
+Thirty-second pass date: 2026-05-31
+
+Commit before pass: `1b332bf12 Fix pinned audio top shield`
+
+This continuation responds directly to Jojo's simulator-copy critique: the app should not expose the save mechanic, should not use `counter` as a vague content crutch, and should not compare Vietnamese-named places in a way that assumes the reader already knows what each name is.
+
+### Source And Runtime Repairs
+
+Changed V2.2 source files:
+
+- `content-draft/viet/city-library/app-detail-v2-2/danang.json`
+- `content-draft/viet/city-library/app-detail-v2-2/hanoi.json`
+- `content-draft/viet/city-library/app-detail-v2-2/hcmc.json`
+- `content-draft/viet/city-library/app-detail-v2-2/hoian.json`
+- `content-draft/viet/city-library/app-detail-v2-2/hue.json`
+
+Primary visible-copy repairs:
+
+- Replaced broad `counter` language with more natural U.S.-market words where the copy meant a sandwich shop, noodle shop, dessert stall, food hall, line, order, table, or room.
+- Replaced ambiguous comparison headings such as `Beside Madame Lân`, `Beside Bé Mặn`, and `Beside Hờn` with explicit comparison headings and body copy that identifies the role of each place.
+- Removed visible `Use it...` / `Use this...` command phrasing from the scoped food pages where it made the copy feel like app instructions.
+- Preserved chef-counter / coffee-counter language where it is literal and useful, such as fine-dining counter seats or coffee preparation.
+
+Generated/runtime files were regenerated from source through the normal native pipeline, including handwritten city copy, legacy compatibility city library, authored listing pages, phrase catalog, audio audit, SQLite fixture, and production audit outputs.
+
+### Significance Audit Artifact
+
+Added:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/restaurant_inventory_significance_audit_2026-05-31.md`
+
+The audit records:
+
+- 175 food-ish pages in current V2.2 source: 79 restaurants, 39 cafes, 46 dishes, 6 desserts, 5 drinks.
+- By city: Đà Nẵng 38, Hà Nội 37, Saigon 39, Hội An 32, Huế 29.
+- Every food-ish page currently has at least one renderable Mentioned Here or Related card, so the food graph supports trip-building rather than dead-end reading.
+- Support/downrank-but-keep candidates include Fatfish, Boulevard Gelato & Coffee, Reply 1988 Cafe, Mỳ Quảng Bà Mua, Mỳ Quảng Dung, Nephele, Phở Hòa Pasteur, Cargo Club, Faifo Coffee, Ancient Space Restaurant, Đại Nam Restaurant, Les Jardins de la Carambole, and Sông Hương Floating Restaurant.
+- Recommendation: do not delete these support pages yet; control placement. Lead pages belong in high-visibility food routes, while support pages belong in related cards, neighborhood context, browse/search, and lower-intent shelves.
+
+No new MICHELIN claims were added in this pass. Existing recognition copy remains date-bounded to 2025 where current source notes already support it.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection: PASS, 5 cities, 520 entries.
+- city noun intake/import: PASS, 520 imported entries.
+- native phrase catalog generation: PASS, 1767 families, 1785 phrases.
+- authored listing generation: PASS, 1778 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 validation: PASS, 520 entries, 520 `FINAL_PASS`.
+- V2.2 voice audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 520 city noun pages, 520 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 520 city places, 826 city phrase tags, 0 release-blocking missing audio rows, 9100 relations.
+- visible critique-pattern source scan: 0 food/page hits for `counter to save`, `part of the stop`, `Name Counter`, `commoner identity`, visible `save`, visible `saved`, visible `saving`, visible `Use it`, and visible `Use this`.
+- generated authored listing resource scan: 0 hits for `counter to save`, `part of the stop`, `Name Counter`, `commoner identity`, and visible save-language.
+- whitespace check: PASS.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-food-voice-significance-repair/`
+
+Representative pages captured:
+
+- `bep-hen-top.jpg`: first viewport shows the warmer home-style Bếp Hên intro and Useful Phrases.
+- `bep-hen-comparison.jpg`: scrolled proof shows `Compare It With Madame Lân` and explains Madame Lân as the broader courtyard restaurant before the related cards render.
+- `mot-herbal-drink-top.jpg`: first viewport shows the Hội An herbal drink page with the revised source bundled into the app.
+- `mot-herbal-drink-sections.jpg`: scrolled proof shows `A Quick Herbal Drink` instead of the previous repeated `counter moment` language.
+- `ba-van-banh-loc-top.jpg`: first viewport shows `dumpling shop` language instead of `dumpling counter`.
+- `ba-van-banh-loc-sections.jpg`: scrolled proof shows Hue dumpling sections and the related dish card above bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Build/run launch hook: `--detail-page viet-family-city-danang-place-bep-hen` PASS.
+- Scoped relaunch/screenshot hooks:
+  - `--detail-page viet-family-city-hoian-place-mot-herbal-drink` PASS.
+  - `--detail-page viet-family-city-hue-place-ba-van-banh-loc` PASS.
+
+### Remaining Risk After U.S.-Voice Food Copy Pass
+
+Status remains below `GLOBAL_PRODUCTION_READY`, but the specific U.S.-voice critique batch now has source, generated-resource, validation, and representative render proof.
+
+This pass fixes the exact copy pattern Jojo called out and creates the first durable restaurant significance audit. It does not prove every one of the 175 food-ish pages with screenshots, and it does not refresh external sources for every restaurant. Broader `GLOBAL_PRODUCTION_READY` still requires wider page-by-page render proof plus a current source refresh before any new or changed recognition claims are added.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, copy, product-role, runtime, validator, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
+
 ## Continuation: Hội An And Huế U.S.-Voice Save-Language Repair
 
 Thirtieth pass date: 2026-05-31

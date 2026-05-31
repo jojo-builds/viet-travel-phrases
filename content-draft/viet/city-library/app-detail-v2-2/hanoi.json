@@ -601,7 +601,7 @@
           "catalogId": "viet-family-city-hanoi-place-pho-ga-nguyet",
           "label": "Phở Gà Nguyệt",
           "relationship": "same-city morning bowl comparison",
-          "displaySubtitle": "A chicken-phở counter when breakfast should be broth and noodles instead of soft rice rolls.",
+          "displaySubtitle": "A chicken-phở shop when breakfast should be broth and noodles instead of soft rice rolls.",
           "reason": "Pho Ga Nguyet gives Ba Xuan a different morning-food decision inside Hanoi.",
           "status": "render"
         }
@@ -6277,7 +6277,7 @@
           "catalogId": "viet-family-city-hanoi-place-pho-bo-lam",
           "label": "Phở Bò Lâm",
           "relationship": "same-city noodle-shop contrast",
-          "displaySubtitle": "A beef-pho counter when broth and cuts matter more than eel noodles.",
+          "displaySubtitle": "A beef-phở shop when broth and cuts matter more than eel noodles.",
           "reason": "Pho Bo Lam is a useful Bib-supported noodle-shop contrast.",
           "status": "render"
         }
@@ -8408,7 +8408,7 @@
         {
           "id": "compare-across-pho",
           "heading": "Compare Across Pho",
-          "body": "Put it beside a beef-pho counter if Hanoi is turning into a noodle map. The difference is broth clarity, chicken texture, herbs, and room pace."
+          "body": "Put it beside a beef-phở shop if Hanoi is turning into a noodle map. The difference is broth clarity, chicken texture, herbs, and room pace."
         }
       ],
       "mentionedHereCandidates": [
