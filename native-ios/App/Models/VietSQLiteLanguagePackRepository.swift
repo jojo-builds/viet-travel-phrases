@@ -854,6 +854,10 @@ final class VietSQLiteLanguagePackRepository {
     }
 
     func canonicalPageID(forPageIDOrAlias pageIDOrAlias: String) throws -> String {
+#if DEBUG
+        Self.recordCanonicalPageIDLookupForTesting()
+#endif
+
         let sql = """
         SELECT id
         FROM phrase_page
@@ -974,6 +978,14 @@ final class VietSQLiteLanguagePackRepository {
 
     func loadPhraseDetailPage(pageID: String) throws -> PhraseDetailPage {
         let canonicalPageID = try canonicalPageID(forPageIDOrAlias: pageID)
+        return try loadPhraseDetailPage(canonicalPageID: canonicalPageID, requestedPageID: pageID)
+    }
+
+    func loadCanonicalPhraseDetailPage(pageID canonicalPageID: String) throws -> PhraseDetailPage {
+        try loadPhraseDetailPage(canonicalPageID: canonicalPageID, requestedPageID: canonicalPageID)
+    }
+
+    private func loadPhraseDetailPage(canonicalPageID: String, requestedPageID: String) throws -> PhraseDetailPage {
         let sql = """
         SELECT
           pp.id,
@@ -1005,7 +1017,7 @@ final class VietSQLiteLanguagePackRepository {
             try self.bindText(canonicalPageID, to: 1, in: statement, sql: sql)
 
             guard sqlite3_step(statement) == SQLITE_ROW else {
-                throw VietSQLiteLanguagePackRepositoryError.missingCanonicalPage(id: pageID)
+                throw VietSQLiteLanguagePackRepositoryError.missingCanonicalPage(id: requestedPageID)
             }
 
             let pageID = Self.stringColumn(statement, index: 0)
@@ -1871,6 +1883,29 @@ final class VietSQLiteLanguagePackRepository {
 
         return variants
     }
+
+#if DEBUG
+    private static let canonicalPageIDLookupCountLock = NSLock()
+    private static var canonicalPageIDLookupCount = 0
+
+    static var canonicalPageIDLookupCountForTesting: Int {
+        canonicalPageIDLookupCountLock.lock()
+        defer { canonicalPageIDLookupCountLock.unlock() }
+        return canonicalPageIDLookupCount
+    }
+
+    static func resetCanonicalPageIDLookupCountForTesting() {
+        canonicalPageIDLookupCountLock.lock()
+        canonicalPageIDLookupCount = 0
+        canonicalPageIDLookupCountLock.unlock()
+    }
+
+    private static func recordCanonicalPageIDLookupForTesting() {
+        canonicalPageIDLookupCountLock.lock()
+        canonicalPageIDLookupCount += 1
+        canonicalPageIDLookupCountLock.unlock()
+    }
+#endif
 }
 
 enum VietSQLitePhraseGraphRuntime {
@@ -1980,14 +2015,16 @@ enum VietSQLitePhraseGraphRuntime {
             return nil
         }
 
-        if
-            let canonicalPageID = try? repository.canonicalPageID(forPageIDOrAlias: pageID),
-            let cachedPage = cachedDetailPage(for: canonicalPageID) {
+        guard let canonicalPageID = canonicalPageID(for: pageID) else {
+            return nil
+        }
+
+        if let cachedPage = cachedDetailPage(for: canonicalPageID) {
             storeCachedDetailPage(cachedPage, for: pageID)
             return cachedPage
         }
 
-        guard let page = try? repository.loadPhraseDetailPage(pageID: pageID) else {
+        guard let page = try? repository.loadCanonicalPhraseDetailPage(pageID: canonicalPageID) else {
             return nil
         }
 

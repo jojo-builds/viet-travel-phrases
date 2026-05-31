@@ -148,6 +148,24 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertEqual(VietSQLitePhraseGraphRuntime.cachedDetailPageCountForTesting, 0)
     }
 
+    func testRuntimeDetailPageLoadCanonicalizesOnlyOncePerNewPage() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        VietSQLiteLanguagePackRepository.resetCanonicalPageIDLookupCountForTesting()
+        defer {
+            VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+            VietSQLiteLanguagePackRepository.resetCanonicalPageIDLookupCountForTesting()
+        }
+
+        let page = try XCTUnwrap(VietSQLitePhraseGraphRuntime.detailPage(withID: "viet-phrase-phone-1"))
+
+        XCTAssertEqual(page.id, "viet-phrase-phone-1")
+        XCTAssertEqual(
+            VietSQLiteLanguagePackRepository.canonicalPageIDLookupCountForTesting,
+            1,
+            "Opening a new SQLite-backed listing page should canonicalize once, then load the canonical page directly instead of repeating the same SQL alias lookup."
+        )
+    }
+
     func testDefaultRuntimeLoadsVietnameseMenuFromSQLiteWithoutJSONBundle() throws {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
 

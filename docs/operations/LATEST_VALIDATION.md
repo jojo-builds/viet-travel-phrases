@@ -58,6 +58,7 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 42: saved/practice membership checks skipped empty lists and direct saved hits, but repeated unsaved misses with a non-empty saved list still canonicalized the same visible location/card page IDs on every redraw; `LocalUserIntentStore` now keeps bounded per-store membership caches and invalidates them when saved/practice IDs change
 - root cause 43: category, city, and menu collection pages still requested their photo-backdrop preheat from page `.task`, after the route had already begun rendering; the app shell now preheats the collection backdrop before opening the route so first render is less likely to fall back to a cold full-screen image path
 - root cause 44: Food/Drink menu rows still resolved exact item-name audio from `AudioAssetManifest` inside row rendering; `VietnameseMenuItem` now keeps a bounded playback-audio decision cache and menu rows/descriptors read the prepared item audio key
+- root cause 45: a new SQLite-backed listing detail load still canonicalized the same page ID twice inside the detail resolver: once to find the canonical page and again inside `loadPhraseDetailPage(pageID:)`; the runtime now reuses the already-canonical ID and loads the canonical page directly, so rapid new-page tapping removes one SQL alias lookup per uncached listing detail
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
@@ -133,6 +134,17 @@ Fresh command evidence from this pass:
   - install passed
   - launch was blocked because the phone was locked
   - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused SQLite detail-load canonicalization set on iPhone 17 Pro
+  - failed before implementation because `testRuntimeDetailPageLoadCanonicalizesOnlyOncePerNewPage` observed `2` repository canonical lookups for one new SQLite-backed detail load instead of `1`
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log for missing counter seam: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T02-11-01-142Z_pid15747_c9aa6548.log`
+    - red result bundle for duplicate canonicalization: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T02-12-33-144Z_pid15747_d77df48e.xcresult`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T02-14-26-013Z_pid15747_176a6171.xcresult`
+- XcodeBuildMCP simulator focused SQLite/detail-navigation regression set on iPhone 17 Pro
+  - passed: `8` tests, `0` failures
+  - covered one-canonicalization detail loads, hero-image lookup staying lightweight, SQLite search/detail/history routing, resolved-page reuse, bounded SQLite caches, generated-page preheat skipping hero lookup, and menu detail/canonical bypasses
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T02-16-37-237Z_pid15747_409271eb.xcresult`
 - XcodeBuildMCP simulator focused catalog-row audio cache set on iPhone 17 Pro
   - failed before implementation because `PhraseCatalogItem` had no playback-audio resolution cache reset seam and repeated row reads had no cache
   - passed after implementation: `1` test, `0` failures
