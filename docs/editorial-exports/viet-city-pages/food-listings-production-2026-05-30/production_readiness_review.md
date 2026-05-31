@@ -4276,6 +4276,103 @@ This pass repairs the highest-count remaining city batch after Da Nang, but it d
 
 No subagents were spawned or closed in this continuation. This pass used local source, U.S.-voice, Michelin-claim preservation, food-desire, runtime, validator, render, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
 
+## Continuation: Hội An And Huế U.S.-Voice Save-Language Repair
+
+Thirtieth pass date: 2026-05-31
+
+Commit before pass: `fc6424971 Repair Hanoi food listing save language`
+
+This continuation repairs the final two visible city batches after Da Nang, HCMC, and Hanoi. It also folds in the direct phrase-page critique for `Cái này bao nhiêu?`, replacing visible "save this" wording with plain use-context wording.
+
+### Pages Repaired
+
+- Hội An V2.2 visible fields now scan at 0 `save` / `saved` / `saves` hits and 0 visible `user` hits.
+- Huế V2.2 visible fields now scan at 0 `save` / `saved` / `saves` hits and 0 visible `user` hits.
+- Representative Hội An repairs include `city-hoian-place-cao-lau-thanh`, `city-hoian-place-cargo-club`, `city-hoian-place-com-ga`, `city-hoian-place-com-ga-ba-buoi`, `city-hoian-place-faifo-coffee`, and `city-hoian-place-morning-glory`.
+- Representative Huế repairs include `city-hue-place-ancient-space-restaurant`, `city-hue-place-bao-vinh-ancient-town`, `city-hue-place-dai-nam-restaurant`, `city-hue-place-dong-ba`, `city-hue-place-phu-bai-airport`, `city-hue-place-railway-station`, and `city-hue-place-song-huong-floating-restaurant`.
+- The rendered Huế proof caught one app-internal leak, "route the user", on `city-hue-place-song-huong-floating-restaurant`; source was revised to "Food-First, Start Elsewhere" with natural trip-choice copy.
+- `viet-family-money-how-much` / `Cái này bao nhiêu?` no longer says "Save this for..." or "next saves"; the source and generator constant now use "Use this..." and "next phrases."
+- `support-pages.json` meeting-point guidance now says "Pin the location on your map" instead of "Save the location on your map."
+
+### Runtime Shape
+
+- No city inventory count change: total stays 520 city noun/place pages.
+- City split remains Đà Nẵng 106, Hà Nội 106, Saigon 106, Hội An 102, Huế 100.
+- Total generated resource shape remains 1767 families, 1785 phrases, 1778 authored pages.
+- `content-draft/viet/city-library/app-detail-v2-2/hoian.json` and `content-draft/viet/city-library/app-detail-v2-2/hue.json` remain the city source authority.
+- `content-draft/viet/canonical-pages/tier-one/money-numbers-prices/money-how-much.json` and `native-ios/scripts/generate-authored-tier-one-pages.js` now agree on the selected phrase-page copy.
+- Native projections, authored listing resources, phrase catalog, and SQLite fixture were regenerated from source.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-hoian-hue-us-voice-repair/`
+
+Representative pages captured:
+
+- `viet-family-money-how-much`
+  - `price-how-much-first-screen.jpg`: first viewport shows the selected phrase page with no visible "save this" summary language.
+- `viet-family-city-hoian-place-morning-glory`
+  - `morning-glory-first-screen.jpg`: first viewport shows the orientation-restaurant intro and phrase cards.
+  - `morning-glory-sections.jpg`: Mentioned Here and Compare Nearby cards render with repaired subtitles.
+  - `morning-glory-bottom-inset.jpg`: bottom section/card area renders above the bottom chrome.
+- `viet-family-city-hue-place-song-huong-floating-restaurant`
+  - `song-huong-first-screen.jpg`: first viewport shows the river-dinner intro and useful phrases.
+  - `song-huong-sections.jpg`: middle sections show "Food-First, Start Elsewhere" instead of app-internal "route the user" language.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Build/run: PASS on `SpeakLocalNative`
+- Launch hooks:
+  - `--detail-page viet-family-money-how-much`
+  - `--detail-page viet-family-city-hoian-place-morning-glory`
+  - `--detail-page viet-family-city-hue-place-song-huong-floating-restaurant`
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+git diff --check
+```
+
+Results:
+
+- V2.2 projection and handwritten-copy import: PASS, 520 entries imported.
+- native resource generation: PASS, 1767 families, 1785 phrases, 1778 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 520 entries, 520 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 520 city noun pages, 520 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 520 city places, 826 city phrase tags, 0 release-blocking missing audio rows, 9100 relations.
+- all-city visible save/user scan: PASS, Da Nang 0, Hanoi 0, HCMC 0, Hội An 0, Huế 0.
+- generated authored listing resource visible save scan: PASS, 0 hits.
+- whitespace check: PASS.
+
+### Remaining Risk After Hội An And Huế U.S.-Voice Repair
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+The explicit visible save-language cleanup is now complete across all five V2.2 city source files and the generated authored listing resource scan. This does not complete the broader product-quality goal: the render proof still shows sticky audio controls overlapping top content during scroll, and the larger food/place production-readiness question still needs deeper page-by-page judgment about whether every smaller restaurant or place truly earns a trip-planning slot.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, U.S.-voice, food-desire, phrase-page, runtime, validator, render, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
+
 ## Continuation: Hanoi U.S.-Voice Save-Language Repair
 
 Twenty-ninth pass date: 2026-05-31

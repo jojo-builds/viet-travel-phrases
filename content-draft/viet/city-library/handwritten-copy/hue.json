@@ -230,15 +230,15 @@
     },
     {
       "pageID": "city-hue-place-ancient-space-restaurant",
-      "summary": "Ancient Space Restaurant is a ruong-house, cơm niêu, and Hue-dishes support save: garden paths and timber first, then a traditional table built for groups.",
-      "context": "Ancient Space Restaurant is a ruong-house, cơm niêu, and Hue-dishes support save: garden paths and timber first, then a traditional table built for groups.",
+      "summary": "Ancient Space Restaurant is a ruong-house, cơm niêu, and Hue-dishes support choice: garden paths and timber first, then a traditional table built for groups.",
+      "context": "Ancient Space Restaurant is a ruong-house, cơm niêu, and Hue-dishes support choice: garden paths and timber first, then a traditional table built for groups.",
       "tip": "Treat it as a heritage-dinner option, not the sharpest Hue food chase. The house, courtyard, and shared table carry most of the reason.",
       "rationale": "The reason is old-house dining in Hue: ruong architecture, courtyard scale, and a menu that gathers rice-pot, Hue, and court-style cues in one place.",
       "sections": [
         {
           "id": "at-glance",
           "title": "Ruong House, Shared Table",
-          "body": "Ancient Space Restaurant is a Hue support save for ruong-house architecture, cơm niêu, local dishes, and a traditional table when the group wants one settled dinner."
+          "body": "Ancient Space Restaurant is a Hue support stop for ruong-house architecture, cơm niêu, local dishes, and a traditional table when the group wants one settled dinner."
         },
         {
           "id": "quick-say",
@@ -618,7 +618,7 @@
         {
           "id": "when-to-use",
           "title": "After Formal Sights",
-          "body": "Save Bao Vinh for a day when palaces and tombs have made the route too official and you want an ordinary Hue street scene."
+          "body": "Choose Bao Vinh for a day when palaces and tombs have made the route too official and you want an ordinary Hue street scene."
         },
         {
           "id": "good-to-know",
@@ -1080,15 +1080,15 @@
     },
     {
       "pageID": "city-hue-place-dai-nam-restaurant",
-      "summary": "Dai Nam is a Citadel-side meal save when the route needs Hue cakes, royal-cuisine cues, and a nearby wooden room after the Imperial City.",
-      "context": "Dai Nam is a Citadel-side meal save when the route needs Hue cakes, royal-cuisine cues, and a nearby wooden room after the Imperial City.",
+      "summary": "Dai Nam is a Citadel-side meal choice when the route needs Hue cakes, royal-cuisine cues, and a nearby wooden room after the Imperial City.",
+      "context": "Dai Nam is a Citadel-side meal choice when the route needs Hue cakes, royal-cuisine cues, and a nearby wooden room after the Imperial City.",
       "tip": "Lead the foodie day with Đông Ba, bún bò, bánh lọc, or Tịnh Gia Viên. Dai Nam supports the route.",
       "rationale": "It belongs to the old-city route because the menu points toward traditional Hue cakes and a heritage-side table rather than a random tourist stop.",
       "sections": [
         {
           "id": "at-glance",
           "title": "Hue Cakes Near The Citadel",
-          "body": "Dai Nam Restaurant is the Citadel-side Hue-cakes and royal-cuisine support save: a classic wooden room, easy wallside location, and familiar Hue specialties."
+          "body": "Dai Nam Restaurant is the Citadel-side Hue-cakes and royal-cuisine support stop: a classic wooden room, easy wallside location, and familiar Hue specialties."
         },
         {
           "id": "quick-say",
@@ -1103,7 +1103,7 @@
         {
           "id": "place-brief",
           "title": "Hue Cakes Matter",
-          "body": "Traditional Hue cakes give the table a local reason to stop here. Save it when the group needs a nearby, grounded meal after the walls."
+          "body": "Traditional Hue cakes give the table a local reason to stop here. Choose it when the group needs a nearby, grounded meal after the walls."
         },
         {
           "id": "use-it-with",
@@ -1238,7 +1238,7 @@
         {
           "id": "use-it-with",
           "title": "Citadel Route Pairing",
-          "body": "It save it for a slower Citadel route, especially after grand gates or halls. The shift from public ceremony to residence is the point."
+          "body": "Keep it for a slower Citadel route, especially after grand gates or halls. The shift from public ceremony to residence is the point."
         },
         {
           "id": "when-to-use",
@@ -1617,7 +1617,7 @@
       "pageID": "city-hue-place-gia-long-tomb",
       "summary": "Gia Long widens the imperial story into hills and water, where distance, guardians, and a softer landscape make the route deliberate.",
       "context": "Gia Long widens the imperial story into hills and water, where distance, guardians, and a softer landscape make the route deliberate.",
-      "tip": "The far location makes the ride plan part of the visit. Save the tomb for a day with return time instead of a rushed Citadel add-on.",
+      "tip": "The far location makes the ride plan part of the visit. Keep the tomb for a day with return time instead of a rushed Citadel add-on.",
       "rationale": "The tomb widens Hue's imperial story beyond city walls into hills, water, guardians, and a softer royal landscape.",
       "sections": [
         {
@@ -1653,7 +1653,7 @@
         {
           "id": "good-to-know",
           "title": "Transport Leads",
-          "body": "The far location makes the ride plan part of the visit. Save the tomb for a day with return time instead of a rushed Citadel add-on."
+          "body": "The far location makes the ride plan part of the visit. Keep the tomb for a day with return time instead of a rushed Citadel add-on."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -2957,7 +2957,7 @@
       "pageID": "city-hue-place-northern-bus-station",
       "summary": "The northern station marks Hue's highway edge, where route boards, benches, local signs, and pickup plans turn travel back into city streets.",
       "context": "The northern station marks Hue's highway edge, where route boards, benches, local signs, and pickup plans turn travel back into city streets.",
-      "tip": "A saved Vietnamese name and hotel address can prevent confusion after a long ride, especially if the station is only a transfer point.",
+      "tip": "A written Vietnamese name and hotel address can prevent confusion after a long ride, especially if the station is only a transfer point.",
       "rationale": "Knowing the station name reduces arrival stress, especially when a bus leg ends before the old capital feels visible.",
       "sections": [
         {
@@ -2992,8 +2992,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Saved Names Help",
-          "body": "A saved Vietnamese name and hotel address can prevent confusion after a long ride, especially if the station is only a transfer point."
+          "title": "Written Names Help",
+          "body": "A written Vietnamese name and hotel address can prevent confusion after a long ride, especially if the station is only a transfer point."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -3163,7 +3163,7 @@
         {
           "id": "when-to-use",
           "title": "Airport Pickup Reality",
-          "body": "Taxi counters, ride pickup points, and shuttle options sit in arrival signs and staff. The saved phrase simply keeps the airport clear in ride conversations."
+          "body": "Taxi counters, ride pickup points, and shuttle options sit in arrival signs and staff. The Vietnamese phrase simply keeps the airport clear in ride conversations."
         },
         {
           "id": "good-to-know",
@@ -3293,7 +3293,7 @@
         {
           "id": "use-it-with",
           "title": "Train Days And Pickups",
-          "body": "It helps with train arrivals, hotel pickups, and early departures. A saved Vietnamese name helps if the driver is meeting you outside."
+          "body": "It helps with train arrivals, hotel pickups, and early departures. A written Vietnamese name helps if the driver is meeting you outside."
         },
         {
           "id": "when-to-use",
@@ -3445,15 +3445,15 @@
     },
     {
       "pageID": "city-hue-place-song-huong-floating-restaurant",
-      "summary": "Save Song Huong for the evening when the Perfume River should be part of dinner: floating table, Trường Tiền bridge light, simple seafood, and a calmer ride back after a long heritage day.",
-      "context": "Save Song Huong for the evening when the Perfume River should be part of dinner: floating table, Trường Tiền bridge light, simple seafood, and a calmer ride back after a long heritage day.",
-      "tip": "For a Hue food day, route the user to Đông Ba, bún bò, or bánh lọc first. The meal stays setting-led.",
+      "summary": "Choose Song Huong for the evening when the Perfume River should be part of dinner: floating table, Trường Tiền bridge light, simple seafood, and a calmer ride back after a long heritage day.",
+      "context": "Choose Song Huong for the evening when the Perfume River should be part of dinner: floating table, Trường Tiền bridge light, simple seafood, and a calmer ride back after a long heritage day.",
+      "tip": "For a food-first Huế day, start with Đông Ba, bún bò, or bánh lọc. Song Hương makes more sense when the river setting matters more than dish hunting.",
       "rationale": "Hue’s river becomes part of the meal here: floating table, bridge light, seafood, and local dishes along the city-center waterline.",
       "sections": [
         {
           "id": "at-glance",
           "title": "Dinner On The Perfume River",
-          "body": "Song Huong Floating Restaurant is the Perfume River dinner save: a floating room near Trường Tiền Bridge, seafood and Hue-style dishes, and dusk water carrying the reason to go."
+          "body": "Song Huong Floating Restaurant is a Perfume River dinner choice: a floating room near Trường Tiền Bridge, seafood and Hue-style dishes, and dusk water carrying the reason to go."
         },
         {
           "id": "quick-say",
@@ -3468,7 +3468,7 @@
         {
           "id": "place-brief",
           "title": "River First, Menu Second",
-          "body": "This is a river-view dinner rather than a hidden foodie counter. Save it when eating on the river is the point and let the order stay simple."
+          "body": "This is a river-view dinner, not the hidden food find of the day. Choose it when eating on the Perfume River is the point and the order can stay simple."
         },
         {
           "id": "use-it-with",
@@ -3477,8 +3477,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Deemphasize For Foodies",
-          "body": "For a Hue food day, route the user to Đông Ba, bún bò, or bánh lọc first. The meal stays setting-led."
+          "title": "Food-First, Start Elsewhere",
+          "body": "For a food-first Huế day, start with Đông Ba, bún bò, or bánh lọc. Song Hương makes more sense when the river setting matters more than dish hunting."
         }
       ],
       "sourceMode": "expanded-detail"

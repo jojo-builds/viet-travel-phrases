@@ -118,7 +118,7 @@ const familyCopyOverrides = {
     exploreNext: "Use these when slower speech is still not enough and you need writing, meaning, repetition, or English help.",
   },
   "money-how-much": {
-    summary: "Save this for markets, seafood trays, taxis, and any cash moment where the price needs to be visible before you commit.",
+    summary: "Use this at markets, seafood trays, taxis, and any cash moment where the price needs to be visible before you commit.",
     atGlance: "Cái này bao nhiêu? is the pointing phrase for one visible thing: a mango, shirt, coffee, seafood tray, menu photo, or ride add-on. The phrase is small, but it protects the moment before money gets awkward.",
     standard: "Point first, say Cái này bao nhiêu?, then wait for the number to be spoken, typed, or shown on a calculator. Keep the item visible until the price is clear.",
     when: "Markets, snack stalls, small shops, beach seafood, laundry counters, and informal rides are where this earns its place. For several items, move to a total-price phrase before paying.",
@@ -128,7 +128,7 @@ const familyCopyOverrides = {
     travelerInsight: "The answer may be spoken fast, typed into a phone, shown on a calculator, or answered with a gesture. If the number matters, ask them to type it.",
     variation: "Use these when the price question needs a softer tone, a total, or a clearer object. The pointing still does most of the work.",
     youMayHear: "A vendor may answer with a fast number, a typed amount, or a short cash-only note. Pause until the amount is visible before you pay.",
-    exploreNext: "These are the next saves when the price turns into a total, a bargain, a cash/card question, or a number you need repeated.",
+    exploreNext: "These are the next phrases when the price turns into a total, a bargain, a cash/card question, or a number you need repeated.",
   },
   "repair-write-down": {
     summary: "Written text often rescues numbers, names, room numbers, and addresses faster than more speech.",

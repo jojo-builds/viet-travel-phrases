@@ -7,7 +7,7 @@
   "title": "Cái này bao nhiêu?",
   "englishTitle": "How much is this?",
   "pronunciation": "gai nai bao nyew",
-  "summary": "Save this for markets, seafood trays, taxis, and any cash moment where the price needs to be visible before you commit.",
+  "summary": "Use this at markets, seafood trays, taxis, and any cash moment where the price needs to be visible before you commit.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -214,7 +214,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "These are the next saves when the price turns into a total, a bargain, a cash/card question, or a number you need repeated.",
+      "body": "These are the next phrases when the price turns into a total, a bargain, a cash/card question, or a number you need repeated.",
       "phrases": [
         {
           "id": "price-2",
