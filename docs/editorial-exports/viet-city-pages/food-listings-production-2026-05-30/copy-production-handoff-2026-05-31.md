@@ -168,5 +168,7 @@ Eighth repair batch, 2026-06-01:
 - Regenerated V2.2 handwritten copy, native authored listing pages, phrase catalog, and SQLite.
 - Current source/runtime validators pass: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
 - Added rendered proof `taxonomy-hardblock-repair-results.jsonl`: `10` repaired pages, `30` screenshots, `0` failures.
-- Combined current rendered proof is now `60` unique pages, `180` screenshots, `0` current failures.
-- Global status remains not complete: `460` V2.2 pages still need current rendered proof unless the standard is amended, and runtime taxonomy mismatch/repeated phrase-card clusters remain follow-up classes.
+- Repaired runtime taxonomy metadata for performance/show/craft/apartment pages that were projecting as museum or market-like groups: Nguyễn Hiển Dĩnh Tuồng Theatre, Vietnam Central Circus, Vietnam National Tuồng Theatre, Golden Dragon Water Puppet Theater, À Ố Show, Duyệt Thị Đường Royal Theater, 42 Nguyễn Huệ apartment building, and Reaching Out Arts & Crafts.
+- Added rendered proof `taxonomy-runtime-repair-results.jsonl`: `8` repaired pages, `24` screenshots, `0` failures.
+- Combined current rendered proof is now `67` unique pages, `252` screenshots, `0` current failures.
+- Global status remains not complete: `453` V2.2 pages still need current rendered proof unless the standard is amended, and repeated phrase-card clusters remain a follow-up class.

@@ -200,6 +200,7 @@ Repaired source pages in this batch:
 - HCMC museum related-card cluster: `city-hcmc-place-fine-arts-museum`, `city-hcmc-place-fito-museum`, `city-hcmc-place-history-museum`, `city-hcmc-place-ho-chi-minh-city-museum`, `city-hcmc-place-ton-duc-thang-museum`, `city-hcmc-place-war-remnants-museum`, `city-hcmc-place-southern-women-museum`.
 - Mobility/outdoor hard blockers and high-risk pages: `city-hanoi-place-train-street`, `city-hcmc-place-bach-dang-waterbus-station`, `city-hcmc-place-ben-thanh-metro-station`, `city-hue-place-ngu-binh-mountain`, `city-hue-place-ru-cha-mangrove`, `city-hue-place-tam-giang-lagoon`, `city-hue-place-vong-canh-hill`, `city-danang-place-man-thai-beach`, `city-danang-place-my-khe`, `city-danang-place-non-nuoc-beach`, `city-hoian-place-cua-dai-beach`, `city-hoian-place-bay-mau-coconut-forest`, `city-hoian-place-cua-dai-estuary`, `city-hue-place-perfume-river`.
 - Local scan residue fixes: `city-danang-place-ba-na-cable-car`, `city-hcmc-place-cu-chi-day-trip`, `city-hcmc-place-cu-chi-tunnels`, `city-hoian-place-nu-eatery`, `city-hoian-place-silk-village`, `city-hoian-place-white-rose-dumplings`, `city-hoian-place-white-rose-restaurant`, plus visible voice-audit cleanup on `city-danang-place-golden-bridge`, `city-danang-place-son-tra-wildlife-drive`, `city-hanoi-place-bun-cha-huong-lien`, `city-hcmc-place-notre-dame`, `city-hoian-place-bale-well`, `city-hue-place-ancient-space-restaurant`, `city-hue-place-duyet-thi-duong-theater`, and `city-hue-place-le-ba-dang-art-center`.
+- Runtime taxonomy repair: corrected generated grouping metadata for `city-danang-place-nguyen-hien-dinh-tuong-theatre`, `city-hanoi-place-vietnam-circus`, `city-hanoi-place-vietnam-national-tuong-theatre`, `city-hcmc-place-golden-dragon-water-puppet`, `city-hcmc-place-opera-a-o-show`, `city-hue-place-duyet-thi-duong-theater`, `city-hcmc-place-42-nguyen-hue-apartment`, and `city-hoian-place-reaching-out-arts-crafts`. These no longer project as museum/market-like pages from legacy runtime metadata.
 
 Validation after this repair batch:
 
@@ -222,10 +223,12 @@ Rendered proof after this repair batch:
 - Rebuilt `SpeakLocalNative` for testing on simulator `7C386DD3-4BF1-4A34-A918-768C43CD1258`.
 - Added `taxonomy-hardblock-repair-results.jsonl`: `10` repaired pages, `30` screenshots, `0` failures.
 - Repaired pages rendered in this sample: Boulevard Gelato & Coffee, Wonderlust, Mặn Mòi, Phá lấu, Hội An wonton, Đại Nam Restaurant, Hanoi Train Street, Bến Thành Metro Station, War Remnants Museum, and Perfume River.
-- Combined current proof across maintained result files is now `60` unique pages, `180` screenshots, and `0` current failures.
+- Added `taxonomy-runtime-repair-results.jsonl`: `8` taxonomy-repaired pages, `24` screenshots, `0` failures.
+- Runtime-taxonomy pages rendered in this sample: Nguyễn Hiển Dĩnh Tuồng Theatre, Vietnam Central Circus, Vietnam National Tuồng Theatre, Golden Dragon Water Puppet Theater, À Ố Show, Duyệt Thị Đường Royal Theater, 42 Nguyễn Huệ apartment building, and Reaching Out Arts & Crafts.
+- Combined current proof across maintained result files is now `67` unique pages, `252` screenshots, and `0` current failures.
 
 Remaining honest risks:
 
-- The global V2.2 rendered proof gate is still open: `460` pages still need current screenshots unless the gate is explicitly amended.
+- The global V2.2 rendered proof gate is still open: `453` pages still need current screenshots unless the gate is explicitly amended.
 - The cross-taxonomy auditor found large repeated phrase-card sets by taxonomy. Some repetition is expected for common travel actions, but high-traffic pages still need human-rendered review for phrase-card fit.
-- Runtime taxonomy mismatches remain a follow-up class: several performance/show pages still project as `place-kind-museum`, `42 Nguyễn Huệ` projects confusingly, and Reaching Out Arts & Crafts still projects market-like. This affects shelves/search more than visible copy, but it is part of deeper taxonomy readiness.
+- Runtime taxonomy mismatches from the subagent hard-block list were repaired and rendered in the sample above. Related grouping should still be watched during the remaining 453-page screenshot pass, because older legacy metadata can still leak into shelves/search even when visible copy is strong.
