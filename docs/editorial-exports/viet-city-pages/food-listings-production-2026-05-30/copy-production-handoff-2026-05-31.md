@@ -173,5 +173,8 @@ Eighth repair batch, 2026-06-01:
 - Added high-risk taxonomy proof `high-risk-taxonomy-proof-001-results.jsonl`: `20` pages, `60` screenshots, `0` failures across arrivals, stations, markets, streets, beach, nature, museums, river, neighborhood, villages, port, dessert, and Hue landmarks.
 - Text review after that render slice found validating-but-stiff copy on a few pages. Repaired `street-spine role`, repeated `threshold`, and `name confusion resolved by boats` style language in authored V2.2 source, regenerated native resources, and reran validators.
 - Added current-text rerun proof `high-risk-humanized-rerun-results.jsonl`: `8` edited pages, `24` screenshots, `0` failures.
-- Combined latest-current rendered proof is now `87` unique pages, `261` screenshots, `0` current failures.
-- Global status remains not complete: `433` V2.2 pages still need current rendered proof unless the standard is amended, and repeated phrase-card clusters remain a follow-up class.
+- Added under-covered cities proof `high-risk-taxonomy-proof-002-results.jsonl`: `30` pages, `90` screenshots, `0` failures across Hanoi, HCMC, Hội An, and Huế cafes, markets, museums, parks, streets, rivers, stations, ports, drinks, desserts, villages, and arrivals.
+- Text review after that render slice found more validating-but-stiff transport framing. Repaired repeated `threshold` language and one `Choose...` lead in authored V2.2 source, regenerated native resources, and reran validators.
+- Added current-text rerun proof `high-risk-humanized-rerun-002-results.jsonl`: `4` edited pages, `12` screenshots, `0` failures.
+- Combined latest-current rendered proof is now `117` unique pages, `351` screenshots, `0` current failures.
+- Global status remains not complete: `403` V2.2 pages still need current rendered proof unless the standard is amended, and repeated phrase-card clusters remain a follow-up class.

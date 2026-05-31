@@ -27549,9 +27549,9 @@
       "targetText": "Cà phê Giảng",
       "englishText": "Cafe Giang",
       "pronunciation": "kah feh giang",
-      "context": "Choose Giảng when Hanoi coffee should feel like a ritual, not just caffeine: the original egg-coffee stop, a narrow Old Quarter entrance, and one hot cup worth slowing down for.",
+      "context": "Giảng is the Hanoi coffee ritual with roots: the original egg-coffee stop, a narrow Old Quarter entrance, and one hot cup worth slowing down for.",
       "tip": "This is a short, specific stop: one cup, a little sweetness, and a Hanoi coffee story you can actually taste before moving back into the Old Quarter.",
-      "rationale": "Giảng matters because egg coffee becomes physical here: the entrance, tight room, hot cup, sweet foam, bitter coffee, and origin story all point to the same Hanoi habit.",
+      "rationale": "Giang makes egg coffee feel tied to an old room and a specific Old Quarter approach.",
       "chunks": [
         [
           "Cà",
@@ -27583,7 +27583,7 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Choose Giảng when Hanoi coffee should feel like a ritual, not just caffeine: the original egg-coffee stop, a narrow Old Quarter entrance, and one hot cup worth slowing down for.",
+        "summary": "Giảng is the Hanoi coffee ritual with roots: the original egg-coffee stop, a narrow Old Quarter entrance, and one hot cup worth slowing down for.",
         "sourceNotes": "Cafe Giang official site",
         "imagePromptNote": "Egg coffee cup in a compact Hanoi cafe, warm yellow light, realistic no-logo photo.",
         "sections": [
@@ -47028,9 +47028,9 @@
       "targetText": "Ga Sài Gòn",
       "englishText": "Saigon Railway Station",
       "pronunciation": "ga sai gon",
-      "context": "The station is a handoff point: bags, tickets, waiting, local signs, and the first step back into Saigon traffic.",
+      "context": "Saigon Railway Station is the handoff between city streets and an onward train: route boards, waiting areas, station doors, and traffic outside.",
       "tip": "On return, the station drops you straight back into Saigon movement. Have the next address ready before stepping into the traffic flow.",
-      "rationale": "It gives the city a clear travel-day marker, turning transport into something less vague and less rushed.",
+      "rationale": "The station turns a travel day into a clear sequence of bags, signs, platforms, and the city outside.",
       "chunks": [
         [
           "Ga",
@@ -47058,14 +47058,14 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "The station is a handoff point: bags, tickets, waiting, local signs, and the first step back into Saigon traffic. It gives the city a clear travel-day marker, turning transport into something less vague and less rushed.",
+        "summary": "Saigon Railway Station is the handoff between city streets and an onward train: route boards, waiting areas, station doors, and traffic outside.",
         "sourceNotes": "Vietnam Travel HCMC",
         "imagePromptNote": "Saigon Railway Station facade with taxis and tracks signage, realistic photo.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "A Travel-Day Threshold",
-            "body": "Saigon Railway Station is the place to recognize when the day shifts from city streets to an onward train. Route boards, waiting areas, station doors, and the city outside all matter."
+            "title": "A Travel-Day Station",
+            "body": "Saigon Railway Station is the place to recognize when the day shifts from city streets to an onward train: route boards, waiting areas, station doors, and traffic outside."
           },
           {
             "id": "quick-say",
@@ -47079,7 +47079,7 @@
           },
           {
             "id": "place-brief",
-            "title": "The City At The Doors",
+            "title": "When The Train Day Starts",
             "body": "Expect a station sequence rather than a sightseeing visit: route boards, platform questions, local signs, and traffic waiting just outside."
           },
           {
@@ -70977,9 +70977,9 @@
       "targetText": "Sân bay Phú Bài",
       "englishText": "Phu Bai Airport",
       "pronunciation": "sun bay foo bai",
-      "context": "Phu Bai is Hue's first threshold, where warm air, local signs, low doors, and the road toward river and Citadel begin the old-capital trip.",
+      "context": "Phu Bai begins Hue with warm air, local signs, low doors, and the road toward the Perfume River and Citadel.",
       "tip": "The first view may be practical rather than grand. Hue usually opens up on the road in, through signs, air, river direction, and slower traffic.",
-      "rationale": "Naming the airport helps the trip begin calmly, especially when the old capital still sits a drive away from the arrival hall.",
+      "rationale": "Phu Bai turns flight logistics into the first road toward Hue.",
       "chunks": [
         [
           "Sân bay",
@@ -71009,14 +71009,14 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Phu Bai is Hue's first threshold, where warm air, local signs, low doors, and the road toward river and Citadel begin the old-capital trip.",
+        "summary": "Phu Bai begins Hue with warm air, local signs, low doors, and the road toward the Perfume River and Citadel. Phu Bai turns flight logistics into the first road toward Hue.",
         "sourceNotes": "References: existing city library; Airports Corporation of Vietnam.",
         "imagePromptNote": "Photorealistic airport curb at Phu Bai with muted signage, luggage, and central Vietnam daylight.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "The First Hue Threshold",
-            "body": "Phu Bai Airport is Hue's arrival edge: warm air, low doors, local signs, and the first road toward the Perfume River, citadel, and tomb routes."
+            "title": "First Hue Steps",
+            "body": "Phu Bai Airport is Hue’s arrival edge: warm air, low doors, local signs, and the first road toward the Perfume River, citadel, and tomb routes."
           },
           {
             "id": "quick-say",
@@ -73122,9 +73122,9 @@
       "targetText": "Bến thuyền Tòa Khâm",
       "englishText": "Toa Kham Boat Station",
       "pronunciation": "ben thuyen toa kham",
-      "context": "Toa Kham is the street-to-water threshold, where steps, boat noses, bridge views, and boarding points make the river route concrete.",
+      "context": "Toa Kham is the place where Hue streets meet the Perfume River: steps, boat noses, bridge views, and boarding points.",
       "tip": "Boat names, pickup points, and routes can blur along the river. Match the Vietnamese name and location before boarding.",
-      "rationale": "The stop helps the city make sense by water: river steps, boats, bridge views, and the moment a route leaves the street.",
+      "rationale": "Toa Kham makes the river route concrete before the boat leaves.",
       "chunks": [
         [
           "Bến",
@@ -73152,14 +73152,14 @@
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
-        "summary": "Toa Kham is the street-to-water threshold, where steps, boat noses, bridge views, and boarding points make the river route concrete.",
+        "summary": "Toa Kham is the place where Hue streets meet the Perfume River: steps, boat noses, bridge views, and boarding points. Toa Kham makes the river route concrete before the boat leaves.",
         "sourceNotes": "References: Hue tourism portal river-boat materials; local map references.",
         "imagePromptNote": "Photorealistic central Hue boat landing on the Perfume River, dragon boats, small ticket kiosk, bridge in distance.",
         "sections": [
           {
             "id": "at-glance",
             "title": "The River Boarding Point",
-            "body": "Toa Kham Boat Station is the river-route threshold in Hue: steps, boat noses, boarding points, bridges, and the shift from street to water."
+            "body": "Toa Kham Boat Station is where Hue streets meet the Perfume River: steps, boat noses, boarding points, bridges, and the shift from traffic to water."
           },
           {
             "id": "quick-say",

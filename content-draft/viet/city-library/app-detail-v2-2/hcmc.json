@@ -10032,11 +10032,11 @@
       "city": "Saigon",
       "category": "Station",
       "pronunciation": "ga sai gon",
-      "travelerMoment": "The station is a handoff point: bags, tickets, waiting, local signs, and the first step back into Saigon traffic.",
-      "storySpine": "It gives the city a clear travel-day marker, turning transport into something less vague and less rushed.",
+      "travelerMoment": "Saigon Railway Station is the handoff between city streets and an onward train: route boards, waiting areas, station doors, and traffic outside.",
+      "storySpine": "The station turns a travel day into a clear sequence of bags, signs, platforms, and the city outside.",
       "intro": {
-        "heading": "A Travel-Day Threshold",
-        "body": "Saigon Railway Station is the place to recognize when the day shifts from city streets to an onward train. Route boards, waiting areas, station doors, and the city outside all matter."
+        "heading": "A Travel-Day Station",
+        "body": "Saigon Railway Station is the place to recognize when the day shifts from city streets to an onward train: route boards, waiting areas, station doors, and traffic outside."
       },
       "usefulPhraseCards": [
         {
@@ -10066,8 +10066,8 @@
       ],
       "sections": [
         {
-          "id": "the-city-at-the-doors",
-          "heading": "The City At The Doors",
+          "id": "train-day-starts",
+          "heading": "When The Train Day Starts",
           "body": "Expect a station sequence rather than a sightseeing visit: route boards, platform questions, local signs, and traffic waiting just outside."
         },
         {

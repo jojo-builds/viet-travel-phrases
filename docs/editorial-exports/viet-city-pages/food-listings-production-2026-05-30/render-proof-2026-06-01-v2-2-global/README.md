@@ -48,7 +48,12 @@ Category-balanced batch:
   - Scope: arrivals, stations, markets, streets, beach, nature, museums, river, neighborhood, villages, port, dessert, and Hue landmarks.
   - Text review after this batch found a few stiff but validating lines (`street-spine role`, repeated `threshold`, and `name confusion resolved by boats`). Those were repaired in source.
   - `high-risk-humanized-rerun-results.jsonl`: `8` edited pages rerun after the copy repair, `24` screenshots, `0` failures.
-- Combined latest-current proof across the maintained result files is `87` unique pages, `261` screenshots, and `0` current failures. Total historical proof rows in this folder include `112` rows and `336` screenshots, but the current count uses the latest passing row for each page.
+- Under-covered cities proof:
+  - `high-risk-taxonomy-proof-002-results.jsonl`: `30` pages, `90` screenshots, `0` failures.
+  - Scope: Hanoi, HCMC, Hội An, and Huế cafes, markets, museums, parks, streets, rivers, stations, ports, drinks, desserts, villages, and arrivals.
+  - Text review after this batch found more stiff transport framing (`threshold`) and one `Choose...` lead. Those were repaired in source.
+  - `high-risk-humanized-rerun-002-results.jsonl`: `4` edited pages rerun after the copy repair, `12` screenshots, `0` failures.
+- Combined latest-current proof across the maintained result files is `117` unique pages, `351` screenshots, and `0` current failures. Total historical proof rows in this folder include `146` rows and `438` screenshots, but the current count uses the latest passing row for each page.
 
 This is a meaningful rendered proof expansion, not the final 520-page receipt. The final gate still needs either all `520` pages captured by this harness or an explicit approval-standard amendment accepting full source/runtime review plus category-balanced rendered proof.
 
