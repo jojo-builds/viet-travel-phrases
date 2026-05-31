@@ -63,10 +63,20 @@ Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listi
 - root cause 47: catalog and browse rows already hand navigation canonical `viet-phrase-*` page IDs, but `PhraseCatalog.canonicalPageID(forOpenablePageID:)` still entered the SQLite alias resolver before checking the already-loaded in-memory catalog; after Browse/Home/Search have warmed the catalog, known catalog page IDs now return directly from `itemsByPageID`, removing one SQLite alias lookup from rapid listing taps without forcing cold launch to build the full catalog early
 - root cause 48: repeated listing page instances reused the same phrase rows and breakdown tokens, but row playback-audio decisions were only prepared per page instance; phrase options and breakdown tokens now keep bounded shared playback-audio decision caches so rapid page-to-page navigation reuses the same audio-manifest decisions without changing playback behavior
 - root cause 49: Home can remain mounted as the back-preview surface while the user rapidly opens listing pages from Home, and its Recently viewed shelf rebuilt feature-card article adapters for the same still-visible recent pages on each route change; Recently viewed now uses a bounded feature-item cache so a new listing open adds only the new recent card adapter while unchanged recent cards are reused
+- root cause 50: Home's Recently viewed shelf already receives canonical recent page IDs from `LocalUserIntentStore`, but it still used the alias-safe card helper and canonicalized each recent ID before reading cached feature cards; the Home-only recent-ID path now dedupes and limits store-owned canonical IDs directly while preserving the general alias-safe helper for external callers
 - preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
 
 Fresh command evidence from this pass:
 
+- Physical iPhone Debug build/install/launch from current `feature/admin-photo-backdrop-polish` head `0b5556336`
+  - build passed
+  - install passed
+  - launch passed after install
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused `Xin chào`/photo-backdrop proof on iPhone 17 Pro
+  - passed: `2` tests, `0` failures
+  - covered static designed phrase pages resolving to photo-backdrop assets and listing photo-backdrop preheat eligibility
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T04-09-03-982Z_pid15747_e856b57c.xcresult`
 - Physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish` app-code commit `100e40bad`
   - build passed
   - install passed
