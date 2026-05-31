@@ -48,7 +48,7 @@ Primary repairs:
 - `city-hanoi-place-banh-cuon-ba-xuan`, `city-hanoi-place-mien-luon-chan-cam`, `city-hanoi-place-pho-ga-nguyet`: changed generic pho-counter references to phở shop references where the page means a place, not a chef counter.
 - `city-hcmc-place-anan-saigon`, `city-hcmc-place-banh-mi`, `city-hcmc-place-che`, `city-hcmc-place-com-tam-ba-ghien`, `city-hcmc-place-cuc-gach-quan`, `city-hcmc-place-man-moi`: removed counter-as-crutch language in favor of shop, ordering pace, display, order line, quick bite, or tasting-menu contrast.
 - `city-hoian-place-banh-mi`, `city-hoian-place-bale-well`, `city-hoian-place-cao-lau-thanh`, `city-hoian-place-com-ga`, `city-hoian-place-com-ga-ba-buoi`, `city-hoian-place-cocobox`, `city-hoian-place-morning-glory`, `city-hoian-place-mot-herbal-drink`, `city-hoian-place-roastery`, `city-hoian-place-vys-market`: repaired sandwich-shop, market-stall, drink-stop, and food-hall language.
-- `city-hue-place-ba-van-banh-loc`, `city-hue-place-banh-bot-loc`, `city-hue-place-che-hue`, `city-hue-place-me-xung`, `city-hue-place-thanh-cafe`: changed dumpling counter / dessert counter / market counter language to shop, order, stall, or table language.
+- `city-hue-place-ba-van-banh-loc`, `city-hue-place-banh-bot-loc`, `city-hue-place-che-hue`, `city-hue-place-me-xung`, `city-hue-place-thanh-cafe`: changed dumpling counter / dessert counter / market counter language to shop, order, stall, or table language, and replaced a dessert-page bargaining phrase with a cold-dessert phrase.
 
 Visible critique-pattern scan after repairs:
 
@@ -85,9 +85,8 @@ No immediate delete:
 
 ## Remaining Work
 
-The next production step is rendered proof for this exact copy batch on representative pages. Current follow-up proof now covers `Bánh mì Phượng`, `Madam Khánh`, `Thành Cafe`, and the Da Nang representative trio. The remaining representative pages still need screenshot review:
+The next production step is rendered proof for this exact copy batch on representative pages. Current follow-up proof now covers `Bánh mì Phượng`, `Madam Khánh`, `Thành Cafe`, the Da Nang representative trio, and the Hội An representative trio.
 
-- Hội An: `city-hoian-place-banh-mi`, `city-hoian-place-mot-herbal-drink`, `city-hoian-place-vys-market`.
 - Huế: `city-hue-place-ba-van-banh-loc`, `city-hue-place-banh-bot-loc`, `city-hue-place-che-hue`.
 
 After those render checks, the branch can claim this specific critique batch as productionized. It still should not claim all 175 food pages are globally perfect without broader screenshots and source freshness review.

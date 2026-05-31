@@ -1109,7 +1109,7 @@
           "catalogId": "viet-family-city-hoian-place-madam-khanh",
           "label": "Madam Khánh",
           "relationship": "dish-to-shop follow-through",
-          "displaySubtitle": "The Bánh Mì Queen sandwich shop when the choice should be filling, heat, bread, and a quick old-town break.",
+          "displaySubtitle": "The Bánh Mì Queen sandwich shop for filling, heat, bread, and a quick old-town break.",
           "reason": "Madam Khanh gives the dish page a second source-supported named shop instead of routing all banh mi desire to Phuong.",
           "status": "render"
         },
@@ -1117,7 +1117,7 @@
           "catalogId": "viet-family-city-hoian-place-banh-mi-phuong",
           "label": "Bánh mì Phượng",
           "relationship": "dish-to-shop follow-through",
-          "displaySubtitle": "The famous fast-moving sandwich shop when the line, glass case, and takeaway pace are part of the plan.",
+          "displaySubtitle": "The quick famous sandwich shop for visible fillings, chili choices, and takeaway pace.",
           "reason": "Banh Mi Phuong gives the dish page a concrete shop route.",
           "status": "render"
         }
@@ -7286,11 +7286,11 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho tôi một cà phê sữa đá",
-          "en": "One iced milk coffee please",
-          "intent": "food-coffee-milk",
-          "phraseId": "coffee-1",
-          "audioId": "coffee-1",
+          "vi": "Cái này bao nhiêu?",
+          "en": "How much is this?",
+          "intent": "money-how-much",
+          "phraseId": "price-1",
+          "audioId": "price-1",
           "status": "mapped"
         },
         {
@@ -7338,7 +7338,7 @@
           "catalogId": "viet-family-city-hoian-place-night-market",
           "label": "Chợ đêm Hội An",
           "relationship": "drink-to-evening-walk route",
-          "displaySubtitle": "An evening market walk when the herbal drink should become part of the old-town flow.",
+          "displaySubtitle": "An evening market walk where the herbal drink fits the old-town flow.",
           "reason": "Hoi An Night Market is a better route continuation for Mot than An Bang Beach.",
           "status": "render"
         }
@@ -8859,27 +8859,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho tôi một cà phê sữa đá",
-          "en": "One iced milk coffee please",
-          "intent": "food-coffee-milk",
-          "phraseId": "coffee-1",
-          "audioId": "coffee-1",
+          "vi": "Cho tôi xem thực đơn được không?",
+          "en": "Can I see the menu?",
+          "intent": "food-menu",
+          "phraseId": "food-menu",
+          "audioId": "food-menu",
           "status": "mapped"
         },
         {
-          "vi": "Ít đá thôi",
-          "en": "Just a little ice",
-          "intent": "food-less-ice",
-          "phraseId": "coffee-4",
-          "audioId": "coffee-4",
+          "vi": "Không đường nhé",
+          "en": "No sugar please",
+          "intent": "food-no-sugar",
+          "phraseId": "coffee-5",
+          "audioId": "coffee-5",
           "status": "mapped"
         },
         {
-          "vi": "Mang đi",
-          "en": "To go",
-          "intent": "food-to-go",
-          "phraseId": "coffee-6",
-          "audioId": "coffee-6",
+          "vi": "Tính tiền giúp tôi",
+          "en": "Please let me pay",
+          "intent": "food-pay-now",
+          "phraseId": "coffee-7",
+          "audioId": "coffee-7",
           "status": "mapped"
         }
       ],
@@ -11104,23 +11104,23 @@
       "storySpine": "Vy's Market gives visitors a lower-friction way to explore Hội An flavors without turning dinner into a full market crawl.",
       "intro": {
         "heading": "A Food Hall For First Bearings",
-        "body": "Vys Market Restaurant gives Hội An food a controlled first lap: counters, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much."
+        "body": "Vys Market Restaurant gives Hội An food a controlled first lap: food stations, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much."
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cái này bao nhiêu?",
-          "en": "How much is this?",
-          "intent": "money-how-much",
-          "phraseId": "price-1",
-          "audioId": "price-1",
+          "vi": "Cho tôi xem thực đơn được không?",
+          "en": "Can I see the menu?",
+          "intent": "food-menu",
+          "phraseId": "food-menu",
+          "audioId": "food-menu",
           "status": "mapped"
         },
         {
-          "vi": "Bớt chút được không?",
-          "en": "Can you lower it a little?",
-          "intent": "money-lower-price",
-          "phraseId": "price-4",
-          "audioId": "price-4",
+          "vi": "Cho tôi một phần",
+          "en": "One portion please",
+          "intent": "food-one-portion",
+          "phraseId": "food-1",
+          "audioId": "food-1",
           "status": "mapped"
         },
         {
@@ -11136,7 +11136,7 @@
         {
           "id": "browse-before-ordering",
           "heading": "Browse Before Ordering",
-          "body": "Start with a slow look at the counters before choosing. Variety is helpful only if it does not become panic."
+          "body": "Start with a slow look at the food stations before choosing. Variety helps most after one calm lap."
         },
         {
           "id": "try-one-local-center",
@@ -11150,8 +11150,8 @@
         },
         {
           "id": "organized-variety-leads",
-          "heading": "Organized Variety Leads",
-          "body": "Plan around the organized variety: counters, bowls, herbs, seating, and one lap before the table decides what to order."
+          "heading": "One Lap Before Ordering",
+          "body": "Plan around the organized variety: bowls, herbs, seating, and one lap before the table decides what to order."
         }
       ],
       "mentionedHereCandidates": [

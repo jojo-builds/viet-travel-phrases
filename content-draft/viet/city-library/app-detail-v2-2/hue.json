@@ -2193,11 +2193,11 @@
           "status": "mapped"
         },
         {
-          "vi": "Bớt chút được không?",
-          "en": "Can you lower it a little?",
-          "intent": "money-lower-price",
-          "phraseId": "price-4",
-          "audioId": "price-4",
+          "vi": "Ít đá thôi",
+          "en": "Just a little ice",
+          "intent": "food-less-ice",
+          "phraseId": "coffee-4",
+          "audioId": "coffee-4",
           "status": "mapped"
         },
         {

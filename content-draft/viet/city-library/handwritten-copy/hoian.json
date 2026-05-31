@@ -2835,7 +2835,7 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "coffee-1",
+            "price-1",
             "coffee-4",
             "coffee-6"
           ]
@@ -3465,9 +3465,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "coffee-1",
-            "coffee-4",
-            "coffee-6"
+            "food-menu",
+            "coffee-5",
+            "coffee-7"
           ]
         },
         {
@@ -4352,28 +4352,28 @@
       "pageID": "city-hoian-place-vys-market",
       "summary": "Vy's Market Restaurant turns Hội An food variety into an organized indoor food-hall scene, echoing market browsing without asking the whole group to chase every stall.",
       "context": "Vy's Market Restaurant turns Hội An food variety into an organized indoor food-hall scene, echoing market browsing without asking the whole group to chase every stall.",
-      "tip": "Plan around the organized variety: counters, bowls, herbs, seating, and one lap before the table decides what to order.",
+      "tip": "Plan around the organized variety: bowls, herbs, seating, and one lap before the table decides what to order.",
       "rationale": "Vy's Market gives visitors a lower-friction way to explore Hội An flavors without turning dinner into a full market crawl.",
       "sections": [
         {
           "id": "at-glance",
           "title": "A Food Hall For First Bearings",
-          "body": "Vys Market Restaurant gives Hội An food a controlled first lap: counters, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much."
+          "body": "Vys Market Restaurant gives Hội An food a controlled first lap: food stations, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much."
         },
         {
           "id": "quick-say",
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "price-1",
-            "price-4",
+            "food-menu",
+            "food-1",
             "shop-5"
           ]
         },
         {
           "id": "place-brief",
           "title": "Browse Before Ordering",
-          "body": "Start with a slow look at the counters before choosing. Variety is helpful only if it does not become panic."
+          "body": "Start with a slow look at the food stations before choosing. Variety helps most after one calm lap."
         },
         {
           "id": "use-it-with",
@@ -4387,8 +4387,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Organized Variety Leads",
-          "body": "Plan around the organized variety: counters, bowls, herbs, seating, and one lap before the table decides what to order."
+          "title": "One Lap Before Ordering",
+          "body": "Plan around the organized variety: bowls, herbs, seating, and one lap before the table decides what to order."
         }
       ],
       "sourceMode": "expanded-detail"

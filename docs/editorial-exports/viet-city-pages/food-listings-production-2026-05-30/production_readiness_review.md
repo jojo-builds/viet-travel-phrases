@@ -4276,6 +4276,82 @@ This pass repairs the highest-count remaining city batch after Da Nang, but it d
 
 No subagents were spawned or closed in this continuation. This pass used local source, U.S.-voice, Michelin-claim preservation, food-desire, runtime, validator, render, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
 
+## Continuation: Hội An Representative Food Render Proof
+
+Thirtieth pass date: 2026-05-31
+
+Commit before pass: `d83db9cbe Render proof Da Nang listing repairs`
+
+This continuation closes the Hội An representative proof gap for the current food/listing critique batch.
+
+### Pages Repaired And Rendered
+
+- `city-hoian-place-banh-mi`: related-card language now explains the sandwich-shop comparisons in plain English instead of assuming the reader knows the local names.
+- `city-hoian-place-mot-herbal-drink`: render proof caught an inherited coffee phrase card. The page now uses ready-audio drink-counter phrases: `How much is this?`, `Just a little ice`, and `To go`.
+- `city-hoian-place-reach-out-tea-house`: corrected the same inherited coffee phrase bundle on the nearby tea-house contrast page, using menu, no-sugar, and pay phrases with existing ready audio.
+- `city-hoian-place-vys-market`: visible copy now says `food stations` and `one lap before ordering`; render proof caught and removed a bargaining phrase from the restaurant/food-hall phrase cards.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-hoian-representative-copy-render/`
+
+Representative pages captured:
+
+- `viet-family-city-hoian-place-banh-mi`
+  - `hoian-banh-mi-top.jpg`
+  - `hoian-banh-mi-sections.jpg`
+  - `hoian-banh-mi-related.jpg`
+- `viet-family-city-hoian-place-mot-herbal-drink`
+  - `hoian-mot-top.jpg`
+  - `hoian-mot-sections.jpg`
+  - `hoian-mot-related.jpg`
+- `viet-family-city-hoian-place-vys-market`
+  - `hoian-vys-market-top.jpg`
+  - `hoian-vys-market-sections.jpg`
+  - `hoian-vys-market-related.jpg`
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Build/run: PASS after resource regeneration.
+- Launch hooks:
+  - `--detail-page viet-family-city-hoian-place-mot-herbal-drink`
+  - `--detail-page viet-family-city-hoian-place-vys-market`
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/audit-viet-city-michelin-coverage.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+git diff --check
+```
+
+Results:
+
+- strict V2.2 source validation: PASS, 520 entries, 520 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 520 city noun pages, 520 unique target heroes.
+- MICHELIN coverage audit: PASS.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 0 release-blocking missing audio rows, 9100 relations.
+- critique-pattern scan: PASS, 0 hits for the user-reported wording family.
+- phrase-context scan: PASS, 0 coffee-card misfits and 0 bargaining-card food misfits.
+- whitespace check: PASS.
+
+### Remaining Risk After Hội An Representative Proof
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+Hội An is now covered for this representative critique batch, including phrase-card context, food-desire copy, Mentioned Here, and Compare Nearby rendering. The same runtime ordering note remains: dish/place pages can render `Compare Nearby` between practical sections. That ordering is visible in screenshots and should be treated as a runtime layout follow-up, not a copy blocker for this pass.
+
 ## Continuation: Pinned Audio Top-Chrome Shield
 
 Thirty-first pass date: 2026-05-31

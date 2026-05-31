@@ -10,7 +10,7 @@
     "catalogPromotedPageCount": 770,
     "cityLibraryPageCount": 826,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-31T08:23:42.758Z"
+    "generatedAt": "2026-05-31T08:53:00.678Z"
   },
   "pages": [
     {
@@ -282154,14 +282154,14 @@
           "body": "",
           "phrases": [
             {
-              "id": "coffee-1",
-              "vietnamese": "Cho tôi một cà phê sữa đá",
-              "english": "One iced milk coffee please",
-              "pronunciation": "cho toy mot ka feh sue-ah dah",
+              "id": "price-1",
+              "vietnamese": "Cái này bao nhiêu?",
+              "english": "How much is this?",
+              "pronunciation": "gai nai bao nyew",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-coffee-milk",
-              "audioKey": "coffee-1"
+              "detailPageID": "viet-family-money-how-much",
+              "audioKey": "price-1"
             },
             {
               "id": "coffee-4",
@@ -282256,7 +282256,7 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "coffee-1"
+              "price-1"
             ],
             "supportPhraseIDs": [
               "coffee-4",
@@ -282275,7 +282275,7 @@
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-mot-herbal-drink",
-          "coffee-1",
+          "price-1",
           "food-1"
         ],
         "secondaryPracticePhraseIDs": [
@@ -284573,34 +284573,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "coffee-1",
-              "vietnamese": "Cho tôi một cà phê sữa đá",
-              "english": "One iced milk coffee please",
-              "pronunciation": "cho toy mot ka feh sue-ah dah",
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-coffee-milk",
-              "audioKey": "coffee-1"
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
             },
             {
-              "id": "coffee-4",
-              "vietnamese": "Ít đá thôi",
-              "english": "Just a little ice",
-              "pronunciation": "eet dah toy",
+              "id": "coffee-5",
+              "vietnamese": "Không đường nhé",
+              "english": "No sugar please",
+              "pronunciation": "khong doong nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-less-ice",
-              "audioKey": "coffee-4"
+              "detailPageID": "viet-family-food-no-sugar",
+              "audioKey": "coffee-5"
             },
             {
-              "id": "coffee-6",
-              "vietnamese": "Mang đi",
-              "english": "To go",
-              "pronunciation": "mang dee",
+              "id": "coffee-7",
+              "vietnamese": "Tính tiền giúp tôi",
+              "english": "Please let me pay",
+              "pronunciation": "ting tyen zoop toy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-to-go",
-              "audioKey": "coffee-6"
+              "detailPageID": "viet-family-food-pay-now",
+              "audioKey": "coffee-7"
             }
           ],
           "breakdown": [],
@@ -284664,21 +284664,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "coffee-1"
+              "food-menu"
             ],
             "supportPhraseIDs": [
-              "coffee-4",
-              "coffee-6"
+              "coffee-5",
+              "coffee-7"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-reach-out-tea-house",
-          "coffee-1"
+          "food-menu"
         ],
         "secondaryPracticePhraseIDs": [
-          "coffee-4",
-          "coffee-6"
+          "coffee-5",
+          "coffee-7"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-reach-out-tea-house"
       }
@@ -287989,7 +287989,7 @@
         {
           "id": "at-glance",
           "title": "A Food Hall For First Bearings",
-          "body": "Vys Market Restaurant gives Hội An food a controlled first lap: counters, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much.",
+          "body": "Vys Market Restaurant gives Hội An food a controlled first lap: food stations, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -288000,24 +288000,24 @@
           "body": "",
           "phrases": [
             {
-              "id": "price-1",
-              "vietnamese": "Cái này bao nhiêu?",
-              "english": "How much is this?",
-              "pronunciation": "gai nai bao nyew",
+              "id": "food-menu",
+              "vietnamese": "Cho tôi xem thực đơn được không?",
+              "english": "Can I see the menu?",
+              "pronunciation": "cho toy sem thook dun dook khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-how-much",
-              "audioKey": "price-1"
+              "detailPageID": "viet-family-food-menu",
+              "audioKey": "food-menu"
             },
             {
-              "id": "price-4",
-              "vietnamese": "Bớt chút được không?",
-              "english": "Can you lower it a little?",
-              "pronunciation": "but choot dook khong",
+              "id": "food-1",
+              "vietnamese": "Cho tôi một phần",
+              "english": "One portion please",
+              "pronunciation": "cho toy mot fun",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-lower-price",
-              "audioKey": "price-4"
+              "detailPageID": "viet-family-food-one-portion",
+              "audioKey": "food-1"
             },
             {
               "id": "shop-5",
@@ -288036,7 +288036,7 @@
         {
           "id": "place-brief",
           "title": "Browse Before Ordering",
-          "body": "Start with a slow look at the counters before choosing. Variety is helpful only if it does not become panic.",
+          "body": "Start with a slow look at the food stations before choosing. Variety helps most after one calm lap.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -288059,8 +288059,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Organized Variety Leads",
-          "body": "Plan around the organized variety: counters, bowls, herbs, seating, and one lap before the table decides what to order.",
+          "title": "One Lap Before Ordering",
+          "body": "Plan around the organized variety: bowls, herbs, seating, and one lap before the table decides what to order.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -288091,20 +288091,20 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "price-1"
+              "food-menu"
             ],
             "supportPhraseIDs": [
-              "price-4",
+              "food-1",
               "shop-5"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-vys-market",
-          "price-1"
+          "food-menu"
         ],
         "secondaryPracticePhraseIDs": [
-          "price-4",
+          "food-1",
           "shop-5"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-vys-market"
@@ -304322,14 +304322,14 @@
               "audioKey": "price-1"
             },
             {
-              "id": "price-4",
-              "vietnamese": "Bớt chút được không?",
-              "english": "Can you lower it a little?",
-              "pronunciation": "but choot dook khong",
+              "id": "coffee-4",
+              "vietnamese": "Ít đá thôi",
+              "english": "Just a little ice",
+              "pronunciation": "eet dah toy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-money-lower-price",
-              "audioKey": "price-4"
+              "detailPageID": "viet-family-food-less-ice",
+              "audioKey": "coffee-4"
             },
             {
               "id": "food-1",
@@ -304406,7 +304406,7 @@
               "price-1"
             ],
             "supportPhraseIDs": [
-              "price-4",
+              "coffee-4",
               "food-1"
             ]
           }
@@ -304416,7 +304416,7 @@
           "price-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "price-4",
+          "coffee-4",
           "food-1"
         ],
         "practiceSourcePageID": "viet-family-city-hue-place-che-hue"
