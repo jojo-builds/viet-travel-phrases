@@ -7643,7 +7643,7 @@
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "originalPlaceKind": "restaurant",
-        "sourceNotes": "Local food and venue references; no ranking claims.",
+        "sourceNotes": "Vietnam Travel source: https://vietnam.travel/things-to-do/explore-food-hoi-an; no hours, prices, ranking, or operating claims in visible app copy.",
         "imagePromptNote": "Photorealistic owned asset: sandwich shop counter with baguettes and fresh herbs, neutral signage, daylight.",
         "targetHeroImageName": "HeroCityHoianPlaceMadamKhanh"
       }
@@ -56616,8 +56616,8 @@
       "englishText": "Madam Khanh",
       "pronunciation": "madam khanh",
       "context": "Madam Khanh sits inside Hội An's bánh mì fame, but the real memory is still counter speed, filling choices, chili, and a sandwich carried back toward the old streets.",
-      "tip": "Madam Khanh is a heat-and-filling choice. Bánh Mì Phượng is more about moving through a faster glass-case counter.",
-      "rationale": "The stop stays clear when the visitor treats it as a quick heat-and-filling decision rather than a test of sandwich fame.",
+      "tip": "Madam Khánh carries the Bánh Mì Queen identity. Bánh Mì Phượng is the faster glass-case comparison, where the line and takeaway pace are part of the stop.",
+      "rationale": "The Bánh Mì Queen nickname gives the stop a reason to remember, but the meal still has to land as crisp bread, warm filling, herbs, sauce, and chili.",
       "chunks": [
         [
           "Madam",
@@ -56640,20 +56640,20 @@
       "productionIntake": {
         "sourceFile": "hoian-nouns.md",
         "intakeVietnameseName": "Madam Khánh",
-        "sourceNotes": "Local food and venue references; no ranking claims.",
+        "sourceNotes": "Vietnam Travel source: https://vietnam.travel/things-to-do/explore-food-hoi-an; no hours, prices, ranking, or operating claims in visible app copy.",
         "imagePromptNote": "Photorealistic owned asset: sandwich shop counter with baguettes and fresh herbs, neutral signage, daylight.",
         "targetHeroImageName": "HeroCityHoianPlaceMadamKhanh"
       },
       "editorialImport": {
         "patchID": "viet-city-handwritten-copy-2026-05-18",
         "summary": "Madam Khanh sits inside Hội An's bánh mì fame, but the real memory is still counter speed, filling choices, chili, and a sandwich carried back toward the old streets.",
-        "sourceNotes": "Local food and venue references; no ranking claims.",
+        "sourceNotes": "Vietnam Travel source: https://vietnam.travel/things-to-do/explore-food-hoi-an; no hours, prices, ranking, or operating claims in visible app copy.",
         "imagePromptNote": "Photorealistic owned asset: sandwich shop counter with baguettes and fresh herbs, neutral signage, daylight.",
         "sections": [
           {
             "id": "at-glance",
-            "title": "Filling, Heat, Bread",
-            "body": "Madam Khanh is a fast Hội An bánh mì counter where filling choice and chili level matter before the roll is built, then the sandwich carries you back toward the old streets."
+            "title": "The Bánh Mì Queen Stop",
+            "body": "Madam Khánh is the Bánh Mì Queen counter to save when the Hội An sandwich craving should feel specific: crisp roll, warm filling, herbs, sauce, and chili chosen before the bread closes."
           },
           {
             "id": "quick-say",
@@ -56668,7 +56668,7 @@
           {
             "id": "place-brief",
             "title": "Fame Stays Small",
-            "body": "The sandwich follows the Hội An pattern: crisp roll, warm filling, herbs, pickles, sauce, and heat. It does not need to carry the whole meal plan."
+            "body": "The nickname is useful, but the sandwich is still a small counter meal. Watch for crisp bread, warm filling, herbs, pickles, sauce, and heat."
           },
           {
             "id": "use-it-with",
@@ -56678,7 +56678,7 @@
           {
             "id": "when-to-use",
             "title": "Different Job Than Phượng",
-            "body": "Madam Khanh is a heat-and-filling choice. Bánh Mì Phượng is more about moving through a faster glass-case counter."
+            "body": "Madam Khánh carries the Bánh Mì Queen identity. Bánh Mì Phượng is the faster glass-case comparison, where the line and takeaway pace are part of the stop."
           }
         ],
         "targetHeroImageName": "HeroCityHoianPlaceMadamKhanh",

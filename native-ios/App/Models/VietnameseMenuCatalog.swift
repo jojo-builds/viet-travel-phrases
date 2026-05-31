@@ -1462,7 +1462,7 @@ enum LocationMenuPicksCatalog {
         let staticPicks: [LocationMenuPick]
         switch pageID {
         case "viet-family-city-danang-place-bac-my-an-market":
-            staticPicks = menuItemPicks(["food-kem-bo"], after: "at-glance")
+            staticPicks = menuItemPicks(["food-kem-bo"], after: "quick-say")
         case "viet-family-city-danang-place-con-market":
             staticPicks = menuItemPicks(["food-che-ba-mau", "food-banh-beo", "food-banh-xeo", "food-mi-quang-ga"], after: "place-brief")
         case "viet-family-city-danang-place-han-market":
@@ -1474,17 +1474,17 @@ enum LocationMenuPicksCatalog {
         case "viet-family-city-hanoi-place-dinh-cafe":
             staticPicks = menuItemPicks(["drink-ca-phe-phin", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"], after: "place-brief")
         case "viet-family-city-hanoi-place-giang-cafe":
-            staticPicks = menuItemPicks(["drink-ca-phe-trung", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"], after: "at-glance")
+            staticPicks = menuItemPicks(["drink-ca-phe-trung", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"], after: "quick-say")
         case "viet-family-city-hanoi-place-the-note-coffee":
-            staticPicks = menuItemPicks(["drink-ca-phe-sua-da", "drink-ca-phe-phin", "drink-ca-phe-trung"], after: "at-glance")
+            staticPicks = menuItemPicks(["drink-ca-phe-sua-da", "drink-ca-phe-phin", "drink-ca-phe-trung"], after: "quick-say")
         case "viet-family-city-hoian-place-bale-well":
-            staticPicks = menuItemPicks(["food-banh-xeo", "food-nem-nuong-cuon", "food-goi-cuon", "food-cha-gio-tom-thit"], after: "at-glance")
+            staticPicks = menuItemPicks(["food-banh-xeo", "food-nem-nuong-cuon", "food-goi-cuon", "food-cha-gio-tom-thit"], after: "quick-say")
         case "viet-family-city-hoian-place-banh-mi-phuong":
-            staticPicks = menuItemPicks(["food-banh-mi-dac-biet", "food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate"], after: "at-glance")
+            staticPicks = menuItemPicks(["food-banh-mi-dac-biet", "food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate"], after: "quick-say")
         case "viet-family-city-hoian-place-madam-khanh":
-            staticPicks = menuItemPicks(["food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate", "food-banh-mi-dac-biet"], after: "at-glance")
+            staticPicks = menuItemPicks(["food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate", "food-banh-mi-dac-biet"], after: "quick-say")
         case "viet-family-city-hoian-place-morning-glory":
-            staticPicks = menuItemPicks(["food-cao-lau", "food-mi-quang-ga", "food-banh-xeo", "food-banh-bot-loc"], after: "at-glance")
+            staticPicks = menuItemPicks(["food-cao-lau", "food-mi-quang-ga", "food-banh-xeo", "food-banh-bot-loc"], after: "quick-say")
         case "viet-family-city-hue-place-tam-giang-lagoon":
             staticPicks = menuItemPicks(["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-ngheu-xao-bo-toi"], after: "place-brief")
         case "viet-family-city-hcmc-place-lusine-thao-dien",

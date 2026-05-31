@@ -3992,3 +3992,91 @@ This pass strengthens Hanoi phở coverage, but it does not settle every Hanoi r
 ### Agent Lifecycle Note
 
 No subagents were spawned or closed in this continuation. This pass used local source, voice, runtime, validator, and render gates only after prior real-agent lifecycle attempts froze.
+
+## Continuation: Madam Khánh Sandwich Support Pass
+
+Twenty-sixth pass date: 2026-05-31
+
+Commit before pass: `f729d4159 Add Cao Lau Thanh Hoi An food listing`
+
+This continuation repairs an existing Hội An sandwich page rather than adding count. Vietnam Travel's Hội An food guide names both `Bánh Mì Phượng` and `Madam Khanh - The Banh Mi Queen`, so the app should not make the bánh mì dish page route only to Phượng.
+
+### Pages Repaired
+
+- `city-hoian-place-madam-khanh`: strengthened around the source-supported Bánh Mì Queen identity, with visible copy focused on crisp roll, warm filling, herbs, sauce, chili, and counter speed.
+- `city-hoian-place-banh-mi`: now compares two named counters, with Madam Khánh as the Bánh Mì Queen stop and Bánh mì Phượng as the faster glass-case comparison.
+
+### Runtime Shape
+
+- No inventory count change: total stays 520 city noun/place pages, with Hội An at 102.
+- `docs/city-production/agent-inputs/hoian-nouns.md` now records the source-backed Madam Khánh role.
+- Native projections, authored listing resources, and SQLite fixture were regenerated from source.
+- Static food/menu picks that previously inserted after `at-glance` now insert after `quick-say` for the affected menu-pick pages. This keeps V2.2 phrase cards immediately after the intro before Mentioned Here/menu content.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-madam-khanh-sandwich-pass/`
+
+Representative page captured:
+
+- `viet-family-city-hoian-place-madam-khanh`
+  - `madam-khanh-first-screen.jpg`: first viewport shows the title, pronunciation line, `The Bánh Mì Queen Stop` intro, and Useful Phrases before any Mentioned Here content.
+  - `madam-khanh-bottom-inset.jpg`: bottom-validation launch shows Mentioned Here, Compare Nearby, and the final section above the bottom chrome.
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Launch hooks:
+  - `--detail-page viet-family-city-hoian-place-madam-khanh`
+  - `--detail-page viet-family-city-hoian-place-madam-khanh --validate-bottom-inset-scroll-to-bottom`
+- Build/run: PASS for the scoped build launch and the bottom-validation relaunch.
+
+### Validation Status
+
+Commands:
+
+```sh
+node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js
+node native-ios/scripts/import-city-noun-intake.js
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-viet-catalog.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-tier-one-listing-pages.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/generate-viet-sqlite-fixture.test.js
+node native-ios/scripts/build-viet-city-app-detail-v2-2.test.js
+node scripts/guard-native-only.js
+xcodebuild test -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,id=7C386DD3-4BF1-4A34-A918-768C43CD1258' -only-testing:SpeakLocalNativeTests/AppChromeTests/testCalibratedCityMenuPicksResolveInlineAndStayCapped -derivedDataPath /Users/jojolim/Library/Developer/Xcode/DerivedData/SpeakLocalCityListings
+git diff --check
+```
+
+Results:
+
+- native resource generation: PASS, 1767 families, 1785 phrases, 1778 pages.
+- SQLite fixture generation: PASS, integrity OK.
+- strict V2.2 source validation: PASS, 520 entries, 520 `FINAL_PASS`.
+- V2.2 voice drift audit: PASS.
+- city-copy compatibility validation: PASS, 5 hubs, 520 city noun pages, 520 unique target heroes.
+- tier-one listing validation: PASS, 150 strong / 0 needs-work.
+- SQLite fixture validation: PASS, 520 city places, 826 city phrase tags, 0 release-blocking missing audio rows, 9100 relations.
+- SQLite fixture test: PASS, 1 test.
+- V2.2 builder test: PASS, 1 test.
+- native-only guard: PASS.
+- focused AppChrome placement test: PASS, 1 test.
+- whitespace check: PASS.
+
+### Remaining Risk After Madam Khánh Sandwich Pass
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+This pass fixes one sandwich hierarchy and one renderer ordering issue. It does not audit every remaining Hội An restaurant for save-worthiness, but it removes a concrete drift where a source-supported counter existed without enough visible reason to save it.
+
+### Agent Lifecycle Note
+
+No subagents were spawned or closed in this continuation. This pass used local source, food-desire, voice, runtime, validator, render, and receipt gates only after real-agent lifecycle attempts froze earlier.

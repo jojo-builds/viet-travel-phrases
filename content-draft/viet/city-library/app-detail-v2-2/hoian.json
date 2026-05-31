@@ -1106,10 +1106,18 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
+          "catalogId": "viet-family-city-hoian-place-madam-khanh",
+          "label": "Madam Khánh",
+          "relationship": "dish-to-counter follow-through",
+          "displaySubtitle": "The Bánh Mì Queen counter when the sandwich choice should be filling, heat, bread, and a quick old-town break.",
+          "reason": "Madam Khanh gives the dish page a second source-supported named counter instead of routing all banh mi desire to Phuong.",
+          "status": "render"
+        },
+        {
           "catalogId": "viet-family-city-hoian-place-banh-mi-phuong",
           "label": "Bánh mì Phượng",
           "relationship": "dish-to-counter follow-through",
-          "displaySubtitle": "A named counter when Hội An bánh mì should become one specific stop.",
+          "displaySubtitle": "The famous fast-counter comparison when the line, glass case, and takeaway pace are part of the plan.",
           "reason": "Banh Mi Phuong gives the dish page a concrete counter route.",
           "status": "render"
         }
@@ -1125,17 +1133,20 @@
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
+          "2026-05-31 sandwich pass: Vietnam Travel names both Bánh Mì Phượng and Madam Khanh, so the dish guide now routes to two distinct counters instead of making Phượng the only named follow-through."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Hoian v2.2 city voice gate: concrete scene, local story spine, and first useful move pass."
+        "reason": "Production sandwich pass: Banh mi now routes to both a Bánh Mì Queen counter and a famous fast-counter comparison."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Vietnam food and Hoi An local references."
+        "Production intake source notes: Vietnam food and Hoi An local references.",
+        "Vietnam Travel source: https://vietnam.travel/things-to-do/explore-food-hoi-an",
+        "Visible copy avoids hours, prices, operational certainty, and one-best sandwich claims."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -1148,7 +1159,7 @@
         "notes": [
           "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only."
         ],
-        "finalPassDate": "2026-05-27",
+        "finalPassDate": "2026-05-31",
         "phraseCardRepair": "replaced fallback place-name card with reusable ready-audio phrase set"
       }
     },
@@ -6199,10 +6210,10 @@
       "category": "Restaurant",
       "pronunciation": "madam khanh",
       "travelerMoment": "Madam Khanh sits inside Hội An's bánh mì fame, but the real memory is still counter speed, filling choices, chili, and a sandwich carried back toward the old streets.",
-      "storySpine": "The stop stays clear when the visitor treats it as a quick heat-and-filling decision rather than a test of sandwich fame.",
+      "storySpine": "The Bánh Mì Queen nickname gives the stop a reason to remember, but the meal still has to land as crisp bread, warm filling, herbs, sauce, and chili.",
       "intro": {
-        "heading": "Filling, Heat, Bread",
-        "body": "Madam Khanh is a fast Hội An bánh mì counter where filling choice and chili level matter before the roll is built, then the sandwich carries you back toward the old streets."
+        "heading": "The Bánh Mì Queen Stop",
+        "body": "Madam Khánh is the Bánh Mì Queen counter to save when the Hội An sandwich craving should feel specific: crisp roll, warm filling, herbs, sauce, and chili chosen before the bread closes."
       },
       "usefulPhraseCards": [
         {
@@ -6234,7 +6245,7 @@
         {
           "id": "a-famous-stop-that-stays-small",
           "heading": "Fame Stays Small",
-          "body": "The sandwich follows the Hội An pattern: crisp roll, warm filling, herbs, pickles, sauce, and heat. It does not need to carry the whole meal plan."
+          "body": "The nickname is useful, but the sandwich is still a small counter meal. Watch for crisp bread, warm filling, herbs, pickles, sauce, and heat."
         },
         {
           "id": "earlier-than-the-rush",
@@ -6244,7 +6255,7 @@
         {
           "id": "different-job-than-phuong",
           "heading": "Different Job Than Phượng",
-          "body": "Madam Khanh is a heat-and-filling choice. Bánh Mì Phượng is more about moving through a faster glass-case counter."
+          "body": "Madam Khánh carries the Bánh Mì Queen identity. Bánh Mì Phượng is the faster glass-case comparison, where the line and takeaway pace are part of the stop."
         }
       ],
       "mentionedHereCandidates": [
@@ -6279,17 +6290,20 @@
         "notes": [
           "Hard-reset city voice gate passed for Hoian source on 2026-05-27.",
           "Renderable related-place candidate verified against the approved v2.2 source inventory during the hard-reset final gate.",
-          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
+          "2026-05-31 sandwich pass: strengthened around Vietnam Travel's source-supported Madam Khanh - The Banh Mi Queen listing while avoiding hours, prices, and ranking claims."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Hoian v2.2 city voice gate: concrete scene, local story spine, and first useful move pass."
+        "reason": "Production sandwich pass: Madam Khanh now has a source-supported Bánh Mì Queen identity, dish linkage, and a clear counter comparison with Bánh Mì Phượng."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-        "Production intake source notes: Local food and venue references; no ranking claims."
+        "Production intake source notes: Local food and venue references; no ranking claims.",
+        "Vietnam Travel source: https://vietnam.travel/things-to-do/explore-food-hoi-an",
+        "Visible copy intentionally avoids hours, prices, exact operating claims, and one-best sandwich language."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -6302,7 +6316,7 @@
         "notes": [
           "Approved from first-class v2.2 source fields; compatibility section IDs are projection-only."
         ],
-        "finalPassDate": "2026-05-27"
+        "finalPassDate": "2026-05-31"
       }
     },
     {

@@ -2827,18 +2827,18 @@ final class AppChromeTests: XCTestCase {
 
     func testCalibratedCityMenuPicksResolveInlineAndStayCapped() throws {
         let expected: [String: (sectionID: String, itemIDs: [String])] = [
-            "viet-family-city-danang-place-bac-my-an-market": ("at-glance", ["food-kem-bo"]),
+            "viet-family-city-danang-place-bac-my-an-market": ("quick-say", ["food-kem-bo"]),
             "viet-family-city-danang-place-con-market": ("place-brief", ["food-che-ba-mau", "food-banh-beo", "food-banh-xeo", "food-mi-quang-ga"]),
             "viet-family-city-danang-place-han-market": ("place-brief", ["food-mi-quang-ga", "food-mi-quang-tom-thit", "food-banh-beo", "food-banh-xeo"]),
             "viet-family-city-danang-place-helio-night-market": ("use-it-with", ["food-tom-nuong-muoi-ot", "food-lau-hai-san", "food-cha-gio", "food-che-ba-mau"]),
             "viet-family-city-danang-place-son-tra-night-market": ("place-brief", ["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-lau-hai-san", "food-cha-gio"]),
             "viet-family-city-hanoi-place-dinh-cafe": ("place-brief", ["drink-ca-phe-phin", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"]),
-            "viet-family-city-hanoi-place-giang-cafe": ("at-glance", ["drink-ca-phe-trung", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"]),
-            "viet-family-city-hanoi-place-the-note-coffee": ("at-glance", ["drink-ca-phe-sua-da", "drink-ca-phe-phin", "drink-ca-phe-trung"]),
-            "viet-family-city-hoian-place-bale-well": ("at-glance", ["food-banh-xeo", "food-nem-nuong-cuon", "food-goi-cuon", "food-cha-gio-tom-thit"]),
-            "viet-family-city-hoian-place-banh-mi-phuong": ("at-glance", ["food-banh-mi-dac-biet", "food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate"]),
-            "viet-family-city-hoian-place-madam-khanh": ("at-glance", ["food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate", "food-banh-mi-dac-biet"]),
-            "viet-family-city-hoian-place-morning-glory": ("at-glance", ["food-cao-lau", "food-mi-quang-ga", "food-banh-xeo", "food-banh-bot-loc"]),
+            "viet-family-city-hanoi-place-giang-cafe": ("quick-say", ["drink-ca-phe-trung", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"]),
+            "viet-family-city-hanoi-place-the-note-coffee": ("quick-say", ["drink-ca-phe-sua-da", "drink-ca-phe-phin", "drink-ca-phe-trung"]),
+            "viet-family-city-hoian-place-bale-well": ("quick-say", ["food-banh-xeo", "food-nem-nuong-cuon", "food-goi-cuon", "food-cha-gio-tom-thit"]),
+            "viet-family-city-hoian-place-banh-mi-phuong": ("quick-say", ["food-banh-mi-dac-biet", "food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate"]),
+            "viet-family-city-hoian-place-madam-khanh": ("quick-say", ["food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate", "food-banh-mi-dac-biet"]),
+            "viet-family-city-hoian-place-morning-glory": ("quick-say", ["food-cao-lau", "food-mi-quang-ga", "food-banh-xeo", "food-banh-bot-loc"]),
             "viet-family-city-hue-place-tam-giang-lagoon": ("place-brief", ["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-ngheu-xao-bo-toi"]),
         ]
 
