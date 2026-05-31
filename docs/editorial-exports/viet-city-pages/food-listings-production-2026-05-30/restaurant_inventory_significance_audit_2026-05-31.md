@@ -83,10 +83,10 @@ No immediate delete:
 - The better product move is placement control: lead pages in city food routes; support pages in related cards, neighborhood route context, browse/search, and lower-intent shelves.
 - A true drop/delete decision should wait until we see usage data or identify source claims that cannot be supported.
 
-## Remaining Work
+## Representative Proof Status
 
-The next production step is rendered proof for this exact copy batch on representative pages. Current follow-up proof now covers `Bánh mì Phượng`, `Madam Khánh`, `Thành Cafe`, the Da Nang representative trio, and the Hội An representative trio.
+Rendered proof for this exact copy batch now covers `Bánh mì Phượng`, `Madam Khánh`, `Thành Cafe`, the Da Nang representative trio, the Hội An representative trio, and the Huế representative trio:
 
 - Huế: `city-hue-place-ba-van-banh-loc`, `city-hue-place-banh-bot-loc`, `city-hue-place-che-hue`.
 
-After those render checks, the branch can claim this specific critique batch as productionized. It still should not claim all 175 food pages are globally perfect without broader screenshots and source freshness review.
+The branch can now claim this specific critique batch as representative-proofed. It still should not claim all 175 food pages are globally perfect without broader screenshots and source freshness review.

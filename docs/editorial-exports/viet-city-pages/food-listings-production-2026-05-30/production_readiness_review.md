@@ -4352,6 +4352,56 @@ Status remains below `GLOBAL_PRODUCTION_READY`.
 
 Hội An is now covered for this representative critique batch, including phrase-card context, food-desire copy, Mentioned Here, and Compare Nearby rendering. The same runtime ordering note remains: dish/place pages can render `Compare Nearby` between practical sections. That ordering is visible in screenshots and should be treated as a runtime layout follow-up, not a copy blocker for this pass.
 
+## Continuation: Huế Representative Food Render Proof
+
+Thirty-first pass date: 2026-05-31
+
+Commit before pass: `f36d99d2e Render proof Hoi An listing repairs`
+
+This continuation closes the remaining Huế representative proof gap for the current food/listing critique batch.
+
+### Pages Rendered
+
+- `city-hue-place-ba-van-banh-loc`: named dumpling shop page renders with focused shop copy, ready food-order phrase cards, and a clear dish-guide comparison card.
+- `city-hue-place-banh-bot-loc`: dish page renders with texture-led dumpling copy and the named Bà Vân comparison card.
+- `city-hue-place-che-hue`: dessert page renders with the corrected cold-dessert phrase card (`Just a little ice`) instead of a bargaining phrase.
+
+### Render Proof
+
+Screenshot folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-05-31-hue-representative-copy-render/`
+
+Representative pages captured:
+
+- `viet-family-city-hue-place-ba-van-banh-loc`
+  - `hue-ba-van-top.jpg`
+  - `hue-ba-van-sections.jpg`
+  - `hue-ba-van-related.jpg`
+- `viet-family-city-hue-place-banh-bot-loc`
+  - `hue-banh-bot-loc-top.jpg`
+  - `hue-banh-bot-loc-sections.jpg`
+  - `hue-banh-bot-loc-related.jpg`
+- `viet-family-city-hue-place-che-hue`
+  - `hue-che-top.jpg`
+  - `hue-che-sections.jpg`
+  - `hue-che-related.jpg`
+
+Native simulator proof:
+
+- Simulator: `SpeakLocal City Listings`
+- Build/run: PASS on `viet-family-city-hue-place-ba-van-banh-loc`; scoped launches and screenshots passed for the other two pages.
+- Launch hooks:
+  - `--detail-page viet-family-city-hue-place-ba-van-banh-loc`
+  - `--detail-page viet-family-city-hue-place-banh-bot-loc`
+  - `--detail-page viet-family-city-hue-place-che-hue`
+
+### Remaining Risk After Huế Representative Proof
+
+Status remains below `GLOBAL_PRODUCTION_READY`.
+
+The explicit representative proof list for this critique batch is now covered: initial Hội An shop proof, Thành Cafe support repair, the Da Nang trio, the Hội An trio, and the Huế trio. This does not mean every one of the 175 food-ish pages has been independently screenshot-reviewed; it means the named critique batch now has source repair, generated-resource repair, validation, and representative render proof.
+
 ## Continuation: Pinned Audio Top-Chrome Shield
 
 Thirty-first pass date: 2026-05-31
