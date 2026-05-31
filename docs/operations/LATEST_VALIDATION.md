@@ -130,6 +130,11 @@ Fresh command evidence from this pass:
   - passed: `10` tests, `0` failures
   - covered catalog row audio caching, article row audio preparation, stale in-flight focused backdrop rejection, focused queued-backdrop replacement, bounded/latest/newest-first preheat policy, saved direct fast path, saved unsaved-miss caching, saved publish behavior, and saved menu-item persistence
   - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-27-44-484Z_pid15747_bc3d3df8.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `2b52b7c89`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - XcodeBuildMCP simulator focused location-pick audio-tint preparation set on iPhone 17 Pro
   - failed before implementation because `VietnameseMenuCatalog` had no item lookup counter and `LocationMenuPick` had no prepared `audioTintName`
   - passed after implementation: `1` test, `0` failures
