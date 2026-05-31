@@ -58,10 +58,10 @@
     },
     "renderedSections": [
       "About",
-      "Say it locally",
-      "What you'll get",
-      "Worth it if",
-      "Before you go",
+      "Useful Phrases",
+      "Early, With Weather Checked",
+      "Cable Car Arrival",
+      "Bridge Before Wandering",
       "Getting there",
       "Tickets",
       "Cable car",
@@ -70,7 +70,7 @@
       "Good to know",
       "Food & cash"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Cầu Rồng",
@@ -86,12 +86,11 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "Say it locally",
-      "What you'll get",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "Dry View Or Close Crowd",
+      "Useful Phrases",
+      "The Riverbank Shows The Dragon",
+      "Close Has A Different Energy",
+      "A Short Riverfront Loop"
     ],
     "status": "PASS"
   },
@@ -109,14 +108,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "What you'll get",
-      "Say it locally",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "Avenue As Orientation",
+      "Useful Phrases",
+      "Crossings Set The Pace",
+      "Pickup And Drop-Off Point",
+      "Cross-Town Ride",
+      "One Block Can Orient You"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Anăn Sài Gòn",
@@ -132,14 +131,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "What you'll get",
-      "Say it locally",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "A Michelin-Starred Saigon Dinner",
+      "Useful Phrases",
+      "Why This One",
+      "Dinner Is The Event",
+      "Ask Before Ordering",
+      "Pair It With Market Energy"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Bún chả Hương Liên",
@@ -155,14 +154,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "What you'll get",
-      "Say it locally",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "Selected For The Bun Cha",
+      "Useful Phrases",
+      "Build The Bite Slowly",
+      "Add-Ons Stay Secondary",
+      "Lunch With One Job",
+      "Recognition, Then Lunch"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Phở Bát Đàn",
@@ -178,14 +177,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "What you'll get",
-      "Say it locally",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "Steam At The Table",
+      "Useful Phrases",
+      "Bowl Before Table",
+      "Broth First",
+      "Short Meal",
+      "Room Habits Change"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Bún bò Huế",
@@ -201,14 +200,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "What you'll get",
-      "Say it locally",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "Hue In One Bowl",
+      "Useful Phrases",
+      "Aromatic And Deep",
+      "Famous Beyond Hue",
+      "Morning Heritage Fuel",
+      "Chili After The Opening Sip"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Cao lầu",
@@ -224,14 +223,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "What you'll get",
-      "Say it locally",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "Hội An In One Bowl",
+      "Useful Phrases",
+      "Chewy, Dry, Herb-Heavy",
+      "Tone Marks Help",
+      "Lunch Between Walks",
+      "Know The Noodle Style"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Bưu điện Thành phố",
@@ -247,14 +246,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "What you'll get",
-      "Say it locally",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "A Short Architectural Visit",
+      "Useful Phrases",
+      "Facade, Hall, Street",
+      "Close By, Short Visit",
+      "Inside Then Out",
+      "Crowd Expectations"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Hotel check-in",

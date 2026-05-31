@@ -242,7 +242,7 @@ function isTaxiRideHelpPage(page) {
     page.title,
     page.englishTitle,
   ].filter(Boolean).join(" "));
-  return /taxi|ride share|pickup point|drop me off|call a taxi|goi taxi|goi xe cong nghe/.test(text);
+  return /ride share|pickup point|drop me off|call a taxi|goi taxi|goi xe cong nghe/.test(text);
 }
 
 function isDoctorComingPage(page) {

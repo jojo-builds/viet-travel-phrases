@@ -130,6 +130,20 @@ const familyCopyOverrides = {
     youMayHear: "A vendor may answer with a fast number, a typed amount, or a short cash-only note. Pause until the amount is visible before you pay.",
     exploreNext: "These are the next phrases when the price turns into a total, a bargain, a cash/card question, or a number you need repeated.",
   },
+  "transport-cash": {
+    summary: "Use this near the end of a ride when the amount is already clear and the driver needs to know you are paying in cash.",
+    atGlance: "Say Tôi trả bằng tiền mặt when the ride is turning into a payment moment. It belongs with fare, meter, change, card, and receipt questions, after the route is settled.",
+    standard: "Use Tôi trả bằng tiền mặt after the fare is visible or agreed. Say it once, keep the cash or ride screen visible, then wait for a nod, a number, or a payment instruction.",
+    when: "Use it when the ride is ending, the fare is settled, or the driver asks how you are paying. If the price is not clear yet, ask the fare first.",
+    why: "Cash can be the cleanest way to finish a ride, but only after the amount is understood. This line sets the payment method before money changes hands.",
+    watch: "Do not lead with a large bill unless the amount is clear. Let the fare be visible first, then hand over cash.",
+    tip: "If the reply is fast, point to the meter, app price, calculator, or bill. A visible number is easier than repeating the phrase louder.",
+    travelerInsight: "The next exchange is usually about amount, meter, card, receipt, or change. Keep the payment question narrow so the driver does not think you are changing the route.",
+    exploreNext: "Use these when the cash line turns into a fare, meter, card, receipt, or change question.",
+    teachingPhraseFamilyIDs: ["transport-fare", "transport-meter", "service-card"],
+    nearbyPhraseFamilyIDs: ["transport-fare", "transport-meter", "service-card", "service-receipt"],
+    explorePhraseFamilyIDs: ["transport-fare", "transport-meter", "service-card", "service-receipt", "money-small-bills"],
+  },
   "repair-write-down": {
     summary: "Written text often rescues numbers, names, room numbers, and addresses faster than more speech.",
     atGlance: "Written text often rescues numbers, names, room numbers, and addresses faster than more speech. Use this when you need the other person to give you something you can read, save, or show again.",
@@ -1580,6 +1594,11 @@ function nearbyPhraseSection(family, excludingPageIDs) {
 }
 
 function teachingPhraseOptions(family, sections, currentPageID, primaryPhrase, limit = 3) {
+  const overrideOptions = overrideFamilyOptions(family, "teachingPhraseFamilyIDs", limit);
+  if (overrideOptions.length > 0) {
+    return overrideOptions;
+  }
+
   const exclusions = linkedPageIDs(sections);
   if (currentPageID) {
     exclusions.add(currentPageID);
@@ -1594,6 +1613,11 @@ function teachingPhraseOptions(family, sections, currentPageID, primaryPhrase, l
 }
 
 function exploreNextPhraseOptions(family, sections, currentPageID, primaryPhrase, limit = 8) {
+  const overrideOptions = overrideFamilyOptions(family, "explorePhraseFamilyIDs", limit);
+  if (overrideOptions.length > 0) {
+    return overrideOptions;
+  }
+
   const excludedOptions = exploreOptions(family, limit, linkedPageIDs(sections));
   if (excludedOptions.length > 0) {
     return excludedOptions;
@@ -1638,6 +1662,33 @@ function exploreOptions(family, limit = 8, excludingPageIDs = new Set()) {
     const phrase = phraseByID.get(candidate.primaryPhraseID);
     return phraseOption(phrase, canonicalPageID(candidate), tintForScenario(candidate.scenarioID));
   });
+}
+
+function explicitFamilyOptions(familyIDs, limit = 8, excludingPageIDs = new Set()) {
+  if (!Array.isArray(familyIDs) || familyIDs.length === 0) return [];
+
+  const options = [];
+  for (const familyID of familyIDs) {
+    const candidate = familyByID.get(familyID);
+    if (!candidate) {
+      throw new Error(`Missing explicit family option ${familyID}`);
+    }
+    const pageID = canonicalPageID(candidate);
+    if (excludingPageIDs.has(pageID)) continue;
+    const phrase = phraseByID.get(candidate.primaryPhraseID);
+    if (!phrase) {
+      throw new Error(`Missing primary phrase ${candidate.primaryPhraseID} for explicit family option ${familyID}`);
+    }
+    options.push(phraseOption(phrase, pageID, tintForScenario(candidate.scenarioID)));
+    if (options.length >= limit) break;
+  }
+  return options;
+}
+
+function overrideFamilyOptions(family, key, limit = 8) {
+  const override = familyOverride(family);
+  const currentPageID = canonicalPageID(family);
+  return explicitFamilyOptions(override[key], limit, new Set([currentPageID]));
 }
 
 function xinChaoFlagshipPage(family, primaryPhrase) {
@@ -1953,7 +2004,15 @@ function pageForFamily(family, childPageIDsByPhraseID) {
   });
 
   if (depth === "deep" && variantOptions.length === 0) {
-    const nearbySection = nearbyPhraseSection(family, linkedPageIDs(sections));
+    const overrideNearbyOptions = overrideFamilyOptions(family, "nearbyPhraseFamilyIDs", 4);
+    const nearbySection = overrideNearbyOptions.length > 0
+      ? {
+          id: "nearby-phrases",
+          title: "Useful nearby phrases",
+          body: familyOverride(family).exploreNext ?? "These are the next phrases a traveler is likely to need when this moment keeps moving.",
+          phrases: overrideNearbyOptions,
+        }
+      : nearbyPhraseSection(family, linkedPageIDs(sections));
     if (nearbySection) {
       sections.push(nearbySection);
     }
@@ -4112,7 +4171,7 @@ function isTaxiRideHelpPage(page) {
     page.title,
     page.englishTitle,
   ].filter(Boolean).join(" "));
-  return /(goi taxi|call a taxi|goi xe cong nghe|ride share|pickup point|diem don|drop me off|taxi)/i.test(text);
+  return /(goi taxi|call a taxi|goi xe cong nghe|ride share|pickup point|diem don|drop me off)/i.test(text);
 }
 
 function isDoctorComingPage(page) {

@@ -10,7 +10,7 @@
     "catalogPromotedPageCount": 770,
     "cityLibraryPageCount": 826,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-05-31T08:53:00.678Z"
+    "generatedAt": "2026-05-31T09:25:51.673Z"
   },
   "pages": [
     {
@@ -2981,68 +2981,58 @@
         },
         {
           "id": "explore-next",
-          "title": "More ride phrases",
+          "title": "Next phrases",
           "body": "",
           "phrases": [
             {
-              "id": "ves-call-taxi-for-me",
-              "vietnamese": "Gọi giúp tôi taxi được không?",
-              "english": "Can you call me a taxi?",
-              "pronunciation": "goy zoop toy tak see duoc khong",
-              "symbolName": "text.bubble.fill",
+              "id": "taxi-5",
+              "vietnamese": "Mở máy lạnh giúp tôi",
+              "english": "Please turn on the air conditioning",
+              "pronunciation": "muh mai lanh zoop toy",
+              "symbolName": "speaker.wave.2.fill",
               "tintName": "orange",
-              "detailPageID": "viet-family-ves-call-taxi-for-me",
-              "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
+              "detailPageID": "viet-family-transport-aircon",
+              "audioKey": "taxi-5"
             },
             {
-              "id": "v900-tran-please-take-me-to-this-address",
-              "vietnamese": "Hãy đưa tôi đến địa chỉ này",
-              "english": "Please take me to this address",
-              "pronunciation": "Hay dua toi den dia chi nay",
+              "id": "taxi-6",
+              "vietnamese": "Chờ tôi năm phút",
+              "english": "Wait for me five minutes",
+              "pronunciation": "cho toy nam foot",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-tran-please-take-me-to-this-address",
-              "audioKey": "v900-tran-please-take-me-to-this-address"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-wait",
+              "audioKey": "taxi-6"
             },
             {
-              "id": "directions-8",
-              "vietnamese": "Điểm đón ở đâu?",
-              "english": "Where is the pickup point?",
-              "pronunciation": "deeym don uh dow",
+              "id": "taxi-7",
+              "vietnamese": "Tôi trả bằng tiền mặt",
+              "english": "I’ll pay cash",
+              "pronunciation": "toy tra bang tyen mat",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-directions-8",
-              "audioKey": "directions-8"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-cash",
+              "audioKey": "taxi-7"
             },
             {
-              "id": "v900-dire-navi-is-this-the-correct-pickup-point",
-              "vietnamese": "Đây có phải là điểm đón chính xác không?",
-              "english": "Is this the correct pickup point?",
-              "pronunciation": "Day co phai la diem don chinh xac khong",
+              "id": "transport-fare",
+              "vietnamese": "Tiền xe bao nhiêu?",
+              "english": "How much is the fare?",
+              "pronunciation": "tyen seh bao nyew",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-dire-navi-is-this-the-correct-pickup-point",
-              "audioKey": "v900-dire-navi-is-this-the-correct-pickup-point"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-fare",
+              "audioKey": "transport-fare"
             },
             {
-              "id": "ves-drop-me-off-here",
-              "vietnamese": "Cho tôi xuống ở đây được không?",
-              "english": "Can you drop me off here?",
-              "pronunciation": "cho toy zoong uh day duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "green",
-              "detailPageID": "viet-family-ves-drop-me-off-here",
-              "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
-            },
-            {
-              "id": "v500-tran-please-call-the-driver",
-              "vietnamese": "Vui lòng gọi tài xế",
-              "english": "Please call the driver",
-              "pronunciation": "Vui long goi tai xe",
+              "id": "transport-meter",
+              "vietnamese": "Làm ơn bật đồng hồ giúp tôi",
+              "english": "Please use the meter",
+              "pronunciation": "lahm uhn but dong ho zoop toy",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
-              "audioKey": "v500-tran-please-call-the-driver"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-meter",
+              "audioKey": "transport-meter"
             }
           ],
           "presentation": "phrase-list",
@@ -3083,31 +3073,31 @@
           },
           {
             "stepID": "explore-next",
-            "title": "More ride phrases",
+            "title": "Next phrases",
             "sourceSectionID": "explore-next",
             "primaryPhraseIDs": [
-              "ves-call-taxi-for-me"
+              "taxi-5"
             ],
             "supportPhraseIDs": [
-              "v900-tran-please-take-me-to-this-address",
-              "directions-8",
-              "v900-dire-navi-is-this-the-correct-pickup-point",
-              "ves-drop-me-off-here"
+              "taxi-6",
+              "taxi-7",
+              "transport-fare",
+              "transport-meter"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "taxi-1",
           "taxi-2",
-          "ves-call-taxi-for-me"
+          "taxi-5"
         ],
         "secondaryPracticePhraseIDs": [
           "taxi-3",
           "taxi-4",
-          "v900-tran-please-take-me-to-this-address",
-          "directions-8",
-          "v900-dire-navi-is-this-the-correct-pickup-point",
-          "ves-drop-me-off-here"
+          "taxi-6",
+          "taxi-7",
+          "transport-fare",
+          "transport-meter"
         ],
         "practiceSourcePageID": "viet-family-transport-destination"
       }
@@ -3205,68 +3195,58 @@
         },
         {
           "id": "explore-next",
-          "title": "More ride phrases",
+          "title": "Next phrases",
           "body": "",
           "phrases": [
             {
-              "id": "ves-call-taxi-for-me",
-              "vietnamese": "Gọi giúp tôi taxi được không?",
-              "english": "Can you call me a taxi?",
-              "pronunciation": "goy zoop toy tak see duoc khong",
-              "symbolName": "text.bubble.fill",
+              "id": "taxi-5",
+              "vietnamese": "Mở máy lạnh giúp tôi",
+              "english": "Please turn on the air conditioning",
+              "pronunciation": "muh mai lanh zoop toy",
+              "symbolName": "speaker.wave.2.fill",
               "tintName": "orange",
-              "detailPageID": "viet-family-ves-call-taxi-for-me",
-              "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
+              "detailPageID": "viet-family-transport-aircon",
+              "audioKey": "taxi-5"
             },
             {
-              "id": "v900-tran-please-take-me-to-this-address",
-              "vietnamese": "Hãy đưa tôi đến địa chỉ này",
-              "english": "Please take me to this address",
-              "pronunciation": "Hay dua toi den dia chi nay",
+              "id": "taxi-6",
+              "vietnamese": "Chờ tôi năm phút",
+              "english": "Wait for me five minutes",
+              "pronunciation": "cho toy nam foot",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-tran-please-take-me-to-this-address",
-              "audioKey": "v900-tran-please-take-me-to-this-address"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-wait",
+              "audioKey": "taxi-6"
             },
             {
-              "id": "directions-8",
-              "vietnamese": "Điểm đón ở đâu?",
-              "english": "Where is the pickup point?",
-              "pronunciation": "deeym don uh dow",
+              "id": "taxi-7",
+              "vietnamese": "Tôi trả bằng tiền mặt",
+              "english": "I’ll pay cash",
+              "pronunciation": "toy tra bang tyen mat",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-directions-8",
-              "audioKey": "directions-8"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-cash",
+              "audioKey": "taxi-7"
             },
             {
-              "id": "v900-dire-navi-is-this-the-correct-pickup-point",
-              "vietnamese": "Đây có phải là điểm đón chính xác không?",
-              "english": "Is this the correct pickup point?",
-              "pronunciation": "Day co phai la diem don chinh xac khong",
+              "id": "transport-fare",
+              "vietnamese": "Tiền xe bao nhiêu?",
+              "english": "How much is the fare?",
+              "pronunciation": "tyen seh bao nyew",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-dire-navi-is-this-the-correct-pickup-point",
-              "audioKey": "v900-dire-navi-is-this-the-correct-pickup-point"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-fare",
+              "audioKey": "transport-fare"
             },
             {
-              "id": "ves-drop-me-off-here",
-              "vietnamese": "Cho tôi xuống ở đây được không?",
-              "english": "Can you drop me off here?",
-              "pronunciation": "cho toy zoong uh day duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "green",
-              "detailPageID": "viet-family-ves-drop-me-off-here",
-              "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
-            },
-            {
-              "id": "v500-tran-please-call-the-driver",
-              "vietnamese": "Vui lòng gọi tài xế",
-              "english": "Please call the driver",
-              "pronunciation": "Vui long goi tai xe",
+              "id": "transport-meter",
+              "vietnamese": "Làm ơn bật đồng hồ giúp tôi",
+              "english": "Please use the meter",
+              "pronunciation": "lahm uhn but dong ho zoop toy",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
-              "audioKey": "v500-tran-please-call-the-driver"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-meter",
+              "audioKey": "transport-meter"
             }
           ],
           "presentation": "phrase-list",
@@ -3307,31 +3287,31 @@
           },
           {
             "stepID": "explore-next",
-            "title": "More ride phrases",
+            "title": "Next phrases",
             "sourceSectionID": "explore-next",
             "primaryPhraseIDs": [
-              "ves-call-taxi-for-me"
+              "taxi-5"
             ],
             "supportPhraseIDs": [
-              "v900-tran-please-take-me-to-this-address",
-              "directions-8",
-              "v900-dire-navi-is-this-the-correct-pickup-point",
-              "ves-drop-me-off-here"
+              "taxi-6",
+              "taxi-7",
+              "transport-fare",
+              "transport-meter"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "taxi-2",
           "taxi-1",
-          "ves-call-taxi-for-me"
+          "taxi-5"
         ],
         "secondaryPracticePhraseIDs": [
           "taxi-3",
           "taxi-4",
-          "v900-tran-please-take-me-to-this-address",
-          "directions-8",
-          "v900-dire-navi-is-this-the-correct-pickup-point",
-          "ves-drop-me-off-here"
+          "taxi-6",
+          "taxi-7",
+          "transport-fare",
+          "transport-meter"
         ],
         "practiceSourcePageID": "viet-family-transport-main-destination"
       }
@@ -3460,68 +3440,58 @@
         },
         {
           "id": "explore-next",
-          "title": "More ride phrases",
+          "title": "Next phrases",
           "body": "",
           "phrases": [
             {
-              "id": "ves-call-taxi-for-me",
-              "vietnamese": "Gọi giúp tôi taxi được không?",
-              "english": "Can you call me a taxi?",
-              "pronunciation": "goy zoop toy tak see duoc khong",
-              "symbolName": "text.bubble.fill",
+              "id": "taxi-5",
+              "vietnamese": "Mở máy lạnh giúp tôi",
+              "english": "Please turn on the air conditioning",
+              "pronunciation": "muh mai lanh zoop toy",
+              "symbolName": "speaker.wave.2.fill",
               "tintName": "orange",
-              "detailPageID": "viet-family-ves-call-taxi-for-me",
-              "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
+              "detailPageID": "viet-family-transport-aircon",
+              "audioKey": "taxi-5"
             },
             {
-              "id": "v900-tran-please-take-me-to-this-address",
-              "vietnamese": "Hãy đưa tôi đến địa chỉ này",
-              "english": "Please take me to this address",
-              "pronunciation": "Hay dua toi den dia chi nay",
+              "id": "taxi-6",
+              "vietnamese": "Chờ tôi năm phút",
+              "english": "Wait for me five minutes",
+              "pronunciation": "cho toy nam foot",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-tran-please-take-me-to-this-address",
-              "audioKey": "v900-tran-please-take-me-to-this-address"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-wait",
+              "audioKey": "taxi-6"
             },
             {
-              "id": "directions-8",
-              "vietnamese": "Điểm đón ở đâu?",
-              "english": "Where is the pickup point?",
-              "pronunciation": "deeym don uh dow",
+              "id": "taxi-7",
+              "vietnamese": "Tôi trả bằng tiền mặt",
+              "english": "I’ll pay cash",
+              "pronunciation": "toy tra bang tyen mat",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-directions-8",
-              "audioKey": "directions-8"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-cash",
+              "audioKey": "taxi-7"
             },
             {
-              "id": "v900-dire-navi-is-this-the-correct-pickup-point",
-              "vietnamese": "Đây có phải là điểm đón chính xác không?",
-              "english": "Is this the correct pickup point?",
-              "pronunciation": "Day co phai la diem don chinh xac khong",
+              "id": "transport-fare",
+              "vietnamese": "Tiền xe bao nhiêu?",
+              "english": "How much is the fare?",
+              "pronunciation": "tyen seh bao nyew",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-dire-navi-is-this-the-correct-pickup-point",
-              "audioKey": "v900-dire-navi-is-this-the-correct-pickup-point"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-fare",
+              "audioKey": "transport-fare"
             },
             {
-              "id": "ves-drop-me-off-here",
-              "vietnamese": "Cho tôi xuống ở đây được không?",
-              "english": "Can you drop me off here?",
-              "pronunciation": "cho toy zoong uh day duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "green",
-              "detailPageID": "viet-family-ves-drop-me-off-here",
-              "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
-            },
-            {
-              "id": "v500-tran-please-call-the-driver",
-              "vietnamese": "Vui lòng gọi tài xế",
-              "english": "Please call the driver",
-              "pronunciation": "Vui long goi tai xe",
+              "id": "transport-meter",
+              "vietnamese": "Làm ơn bật đồng hồ giúp tôi",
+              "english": "Please use the meter",
+              "pronunciation": "lahm uhn but dong ho zoop toy",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
-              "audioKey": "v500-tran-please-call-the-driver"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-meter",
+              "audioKey": "transport-meter"
             }
           ],
           "presentation": "phrase-list",
@@ -3571,16 +3541,16 @@
           },
           {
             "stepID": "explore-next",
-            "title": "More ride phrases",
+            "title": "Next phrases",
             "sourceSectionID": "explore-next",
             "primaryPhraseIDs": [
-              "ves-call-taxi-for-me"
+              "taxi-5"
             ],
             "supportPhraseIDs": [
-              "v900-tran-please-take-me-to-this-address",
-              "directions-8",
-              "v900-dire-navi-is-this-the-correct-pickup-point",
-              "ves-drop-me-off-here"
+              "taxi-6",
+              "taxi-7",
+              "transport-fare",
+              "transport-meter"
             ]
           }
         ],
@@ -3588,15 +3558,15 @@
           "taxi-3",
           "transport-stop-here-clearer",
           "taxi-1",
-          "ves-call-taxi-for-me"
+          "taxi-5"
         ],
         "secondaryPracticePhraseIDs": [
           "taxi-2",
           "taxi-4",
-          "v900-tran-please-take-me-to-this-address",
-          "directions-8",
-          "v900-dire-navi-is-this-the-correct-pickup-point",
-          "ves-drop-me-off-here"
+          "taxi-6",
+          "taxi-7",
+          "transport-fare",
+          "transport-meter"
         ],
         "practiceSourcePageID": "viet-family-transport-stop-here"
       }
@@ -3706,68 +3676,58 @@
         },
         {
           "id": "explore-next",
-          "title": "More ride phrases",
+          "title": "Next phrases",
           "body": "",
           "phrases": [
             {
-              "id": "ves-call-taxi-for-me",
-              "vietnamese": "Gọi giúp tôi taxi được không?",
-              "english": "Can you call me a taxi?",
-              "pronunciation": "goy zoop toy tak see duoc khong",
-              "symbolName": "text.bubble.fill",
+              "id": "taxi-5",
+              "vietnamese": "Mở máy lạnh giúp tôi",
+              "english": "Please turn on the air conditioning",
+              "pronunciation": "muh mai lanh zoop toy",
+              "symbolName": "speaker.wave.2.fill",
               "tintName": "orange",
-              "detailPageID": "viet-family-ves-call-taxi-for-me",
-              "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
+              "detailPageID": "viet-family-transport-aircon",
+              "audioKey": "taxi-5"
             },
             {
-              "id": "v900-tran-please-take-me-to-this-address",
-              "vietnamese": "Hãy đưa tôi đến địa chỉ này",
-              "english": "Please take me to this address",
-              "pronunciation": "Hay dua toi den dia chi nay",
+              "id": "taxi-6",
+              "vietnamese": "Chờ tôi năm phút",
+              "english": "Wait for me five minutes",
+              "pronunciation": "cho toy nam foot",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-tran-please-take-me-to-this-address",
-              "audioKey": "v900-tran-please-take-me-to-this-address"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-wait",
+              "audioKey": "taxi-6"
             },
             {
-              "id": "directions-8",
-              "vietnamese": "Điểm đón ở đâu?",
-              "english": "Where is the pickup point?",
-              "pronunciation": "deeym don uh dow",
+              "id": "taxi-7",
+              "vietnamese": "Tôi trả bằng tiền mặt",
+              "english": "I’ll pay cash",
+              "pronunciation": "toy tra bang tyen mat",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-directions-8",
-              "audioKey": "directions-8"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-cash",
+              "audioKey": "taxi-7"
             },
             {
-              "id": "v900-dire-navi-is-this-the-correct-pickup-point",
-              "vietnamese": "Đây có phải là điểm đón chính xác không?",
-              "english": "Is this the correct pickup point?",
-              "pronunciation": "Day co phai la diem don chinh xac khong",
+              "id": "transport-fare",
+              "vietnamese": "Tiền xe bao nhiêu?",
+              "english": "How much is the fare?",
+              "pronunciation": "tyen seh bao nyew",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-dire-navi-is-this-the-correct-pickup-point",
-              "audioKey": "v900-dire-navi-is-this-the-correct-pickup-point"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-fare",
+              "audioKey": "transport-fare"
             },
             {
-              "id": "ves-drop-me-off-here",
-              "vietnamese": "Cho tôi xuống ở đây được không?",
-              "english": "Can you drop me off here?",
-              "pronunciation": "cho toy zoong uh day duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "green",
-              "detailPageID": "viet-family-ves-drop-me-off-here",
-              "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
-            },
-            {
-              "id": "v500-tran-please-call-the-driver",
-              "vietnamese": "Vui lòng gọi tài xế",
-              "english": "Please call the driver",
-              "pronunciation": "Vui long goi tai xe",
+              "id": "transport-meter",
+              "vietnamese": "Làm ơn bật đồng hồ giúp tôi",
+              "english": "Please use the meter",
+              "pronunciation": "lahm uhn but dong ho zoop toy",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
-              "audioKey": "v500-tran-please-call-the-driver"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-meter",
+              "audioKey": "transport-meter"
             }
           ],
           "presentation": "phrase-list",
@@ -3808,31 +3768,31 @@
           },
           {
             "stepID": "explore-next",
-            "title": "More ride phrases",
+            "title": "Next phrases",
             "sourceSectionID": "explore-next",
             "primaryPhraseIDs": [
-              "ves-call-taxi-for-me"
+              "taxi-5"
             ],
             "supportPhraseIDs": [
-              "v900-tran-please-take-me-to-this-address",
-              "directions-8",
-              "v900-dire-navi-is-this-the-correct-pickup-point",
-              "ves-drop-me-off-here"
+              "taxi-6",
+              "taxi-7",
+              "transport-fare",
+              "transport-meter"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "taxi-4",
           "taxi-1",
-          "ves-call-taxi-for-me"
+          "taxi-5"
         ],
         "secondaryPracticePhraseIDs": [
           "taxi-2",
           "taxi-3",
-          "v900-tran-please-take-me-to-this-address",
-          "directions-8",
-          "v900-dire-navi-is-this-the-correct-pickup-point",
-          "ves-drop-me-off-here"
+          "taxi-6",
+          "taxi-7",
+          "transport-fare",
+          "transport-meter"
         ],
         "practiceSourcePageID": "viet-family-transport-route"
       }
@@ -3942,68 +3902,58 @@
         },
         {
           "id": "explore-next",
-          "title": "More ride phrases",
+          "title": "Next phrases",
           "body": "",
           "phrases": [
             {
-              "id": "ves-call-taxi-for-me",
-              "vietnamese": "Gọi giúp tôi taxi được không?",
-              "english": "Can you call me a taxi?",
-              "pronunciation": "goy zoop toy tak see duoc khong",
-              "symbolName": "text.bubble.fill",
+              "id": "taxi-4",
+              "vietnamese": "Đi đường này đi",
+              "english": "Go this way",
+              "pronunciation": "dee doong nai dee",
+              "symbolName": "speaker.wave.2.fill",
               "tintName": "orange",
-              "detailPageID": "viet-family-ves-call-taxi-for-me",
-              "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
+              "detailPageID": "viet-family-transport-route",
+              "audioKey": "taxi-4"
             },
             {
-              "id": "v900-tran-please-take-me-to-this-address",
-              "vietnamese": "Hãy đưa tôi đến địa chỉ này",
-              "english": "Please take me to this address",
-              "pronunciation": "Hay dua toi den dia chi nay",
+              "id": "taxi-6",
+              "vietnamese": "Chờ tôi năm phút",
+              "english": "Wait for me five minutes",
+              "pronunciation": "cho toy nam foot",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-tran-please-take-me-to-this-address",
-              "audioKey": "v900-tran-please-take-me-to-this-address"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-wait",
+              "audioKey": "taxi-6"
             },
             {
-              "id": "directions-8",
-              "vietnamese": "Điểm đón ở đâu?",
-              "english": "Where is the pickup point?",
-              "pronunciation": "deeym don uh dow",
+              "id": "taxi-7",
+              "vietnamese": "Tôi trả bằng tiền mặt",
+              "english": "I’ll pay cash",
+              "pronunciation": "toy tra bang tyen mat",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-directions-8",
-              "audioKey": "directions-8"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-cash",
+              "audioKey": "taxi-7"
             },
             {
-              "id": "v900-dire-navi-is-this-the-correct-pickup-point",
-              "vietnamese": "Đây có phải là điểm đón chính xác không?",
-              "english": "Is this the correct pickup point?",
-              "pronunciation": "Day co phai la diem don chinh xac khong",
+              "id": "transport-fare",
+              "vietnamese": "Tiền xe bao nhiêu?",
+              "english": "How much is the fare?",
+              "pronunciation": "tyen seh bao nyew",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-dire-navi-is-this-the-correct-pickup-point",
-              "audioKey": "v900-dire-navi-is-this-the-correct-pickup-point"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-fare",
+              "audioKey": "transport-fare"
             },
             {
-              "id": "ves-drop-me-off-here",
-              "vietnamese": "Cho tôi xuống ở đây được không?",
-              "english": "Can you drop me off here?",
-              "pronunciation": "cho toy zoong uh day duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "green",
-              "detailPageID": "viet-family-ves-drop-me-off-here",
-              "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
-            },
-            {
-              "id": "v500-tran-please-call-the-driver",
-              "vietnamese": "Vui lòng gọi tài xế",
-              "english": "Please call the driver",
-              "pronunciation": "Vui long goi tai xe",
+              "id": "transport-meter",
+              "vietnamese": "Làm ơn bật đồng hồ giúp tôi",
+              "english": "Please use the meter",
+              "pronunciation": "lahm uhn but dong ho zoop toy",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
-              "audioKey": "v500-tran-please-call-the-driver"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-meter",
+              "audioKey": "transport-meter"
             }
           ],
           "presentation": "phrase-list",
@@ -4044,31 +3994,31 @@
           },
           {
             "stepID": "explore-next",
-            "title": "More ride phrases",
+            "title": "Next phrases",
             "sourceSectionID": "explore-next",
             "primaryPhraseIDs": [
-              "ves-call-taxi-for-me"
+              "taxi-4"
             ],
             "supportPhraseIDs": [
-              "v900-tran-please-take-me-to-this-address",
-              "directions-8",
-              "v900-dire-navi-is-this-the-correct-pickup-point",
-              "ves-drop-me-off-here"
+              "taxi-6",
+              "taxi-7",
+              "transport-fare",
+              "transport-meter"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "taxi-5",
           "taxi-1",
-          "ves-call-taxi-for-me"
+          "taxi-4"
         ],
         "secondaryPracticePhraseIDs": [
           "taxi-2",
           "taxi-3",
-          "v900-tran-please-take-me-to-this-address",
-          "directions-8",
-          "v900-dire-navi-is-this-the-correct-pickup-point",
-          "ves-drop-me-off-here"
+          "taxi-6",
+          "taxi-7",
+          "transport-fare",
+          "transport-meter"
         ],
         "practiceSourcePageID": "viet-family-transport-aircon"
       }
@@ -4178,68 +4128,58 @@
         },
         {
           "id": "explore-next",
-          "title": "More ride phrases",
+          "title": "Next phrases",
           "body": "",
           "phrases": [
             {
-              "id": "ves-call-taxi-for-me",
-              "vietnamese": "Gọi giúp tôi taxi được không?",
-              "english": "Can you call me a taxi?",
-              "pronunciation": "goy zoop toy tak see duoc khong",
-              "symbolName": "text.bubble.fill",
+              "id": "taxi-4",
+              "vietnamese": "Đi đường này đi",
+              "english": "Go this way",
+              "pronunciation": "dee doong nai dee",
+              "symbolName": "speaker.wave.2.fill",
               "tintName": "orange",
-              "detailPageID": "viet-family-ves-call-taxi-for-me",
-              "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
+              "detailPageID": "viet-family-transport-route",
+              "audioKey": "taxi-4"
             },
             {
-              "id": "v900-tran-please-take-me-to-this-address",
-              "vietnamese": "Hãy đưa tôi đến địa chỉ này",
-              "english": "Please take me to this address",
-              "pronunciation": "Hay dua toi den dia chi nay",
+              "id": "taxi-5",
+              "vietnamese": "Mở máy lạnh giúp tôi",
+              "english": "Please turn on the air conditioning",
+              "pronunciation": "muh mai lanh zoop toy",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-tran-please-take-me-to-this-address",
-              "audioKey": "v900-tran-please-take-me-to-this-address"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-aircon",
+              "audioKey": "taxi-5"
             },
             {
-              "id": "directions-8",
-              "vietnamese": "Điểm đón ở đâu?",
-              "english": "Where is the pickup point?",
-              "pronunciation": "deeym don uh dow",
+              "id": "taxi-7",
+              "vietnamese": "Tôi trả bằng tiền mặt",
+              "english": "I’ll pay cash",
+              "pronunciation": "toy tra bang tyen mat",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-directions-8",
-              "audioKey": "directions-8"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-cash",
+              "audioKey": "taxi-7"
             },
             {
-              "id": "v900-dire-navi-is-this-the-correct-pickup-point",
-              "vietnamese": "Đây có phải là điểm đón chính xác không?",
-              "english": "Is this the correct pickup point?",
-              "pronunciation": "Day co phai la diem don chinh xac khong",
+              "id": "transport-fare",
+              "vietnamese": "Tiền xe bao nhiêu?",
+              "english": "How much is the fare?",
+              "pronunciation": "tyen seh bao nyew",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-dire-navi-is-this-the-correct-pickup-point",
-              "audioKey": "v900-dire-navi-is-this-the-correct-pickup-point"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-fare",
+              "audioKey": "transport-fare"
             },
             {
-              "id": "ves-drop-me-off-here",
-              "vietnamese": "Cho tôi xuống ở đây được không?",
-              "english": "Can you drop me off here?",
-              "pronunciation": "cho toy zoong uh day duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "green",
-              "detailPageID": "viet-family-ves-drop-me-off-here",
-              "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
-            },
-            {
-              "id": "v500-tran-please-call-the-driver",
-              "vietnamese": "Vui lòng gọi tài xế",
-              "english": "Please call the driver",
-              "pronunciation": "Vui long goi tai xe",
+              "id": "transport-meter",
+              "vietnamese": "Làm ơn bật đồng hồ giúp tôi",
+              "english": "Please use the meter",
+              "pronunciation": "lahm uhn but dong ho zoop toy",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
-              "audioKey": "v500-tran-please-call-the-driver"
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-meter",
+              "audioKey": "transport-meter"
             }
           ],
           "presentation": "phrase-list",
@@ -4280,31 +4220,31 @@
           },
           {
             "stepID": "explore-next",
-            "title": "More ride phrases",
+            "title": "Next phrases",
             "sourceSectionID": "explore-next",
             "primaryPhraseIDs": [
-              "ves-call-taxi-for-me"
+              "taxi-4"
             ],
             "supportPhraseIDs": [
-              "v900-tran-please-take-me-to-this-address",
-              "directions-8",
-              "v900-dire-navi-is-this-the-correct-pickup-point",
-              "ves-drop-me-off-here"
+              "taxi-5",
+              "taxi-7",
+              "transport-fare",
+              "transport-meter"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "taxi-6",
           "taxi-1",
-          "ves-call-taxi-for-me"
+          "taxi-4"
         ],
         "secondaryPracticePhraseIDs": [
           "taxi-2",
           "taxi-3",
-          "v900-tran-please-take-me-to-this-address",
-          "directions-8",
-          "v900-dire-navi-is-this-the-correct-pickup-point",
-          "ves-drop-me-off-here"
+          "taxi-5",
+          "taxi-7",
+          "transport-fare",
+          "transport-meter"
         ],
         "practiceSourcePageID": "viet-family-transport-wait"
       }
@@ -4318,7 +4258,7 @@
       "title": "Tôi trả bằng tiền mặt",
       "englishTitle": "I’ll pay cash",
       "pronunciation": "toy tra bang tyen mat",
-      "summary": "Tôi trả bằng tiền mặt means “I’ll pay cash”.",
+      "summary": "Use this near the end of a ride when the amount is already clear and the driver needs to know you are paying in cash.",
       "iconName": "car.fill",
       "tintName": "orange",
       "categoryIDs": [
@@ -4326,6 +4266,14 @@
       ],
       "audioKey": "taxi-7",
       "sections": [
+        {
+          "id": "at-glance",
+          "title": "Meaning",
+          "body": "Use this near the end of a ride when the amount is already clear and the driver needs to know you are paying in cash.",
+          "presentation": "plain-text",
+          "phrases": [],
+          "breakdown": []
+        },
         {
           "id": "breakdown",
           "title": "Break it down",
@@ -4371,34 +4319,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "taxi-1",
-              "vietnamese": "Cho tôi tới đây",
-              "english": "Take me here",
-              "pronunciation": "cho toy toy day",
+              "id": "transport-fare",
+              "vietnamese": "Tiền xe bao nhiêu?",
+              "english": "How much is the fare?",
+              "pronunciation": "tyen seh bao nyew",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "orange",
-              "detailPageID": "viet-family-transport-destination",
-              "audioKey": "taxi-1"
+              "detailPageID": "viet-family-transport-fare",
+              "audioKey": "transport-fare"
             },
             {
-              "id": "taxi-2",
-              "vietnamese": "Đi quận 1",
-              "english": "Go to District 1",
-              "pronunciation": "dee gwan mot",
+              "id": "transport-meter",
+              "vietnamese": "Làm ơn bật đồng hồ giúp tôi",
+              "english": "Please use the meter",
+              "pronunciation": "lahm uhn but dong ho zoop toy",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "orange",
-              "detailPageID": "viet-family-transport-main-destination",
-              "audioKey": "taxi-2"
+              "detailPageID": "viet-family-transport-meter",
+              "audioKey": "transport-meter"
             },
             {
-              "id": "taxi-3",
-              "vietnamese": "Dừng ở đây được rồi",
-              "english": "You can stop here",
-              "pronunciation": "zoong uh day dook roy",
+              "id": "store-6",
+              "vietnamese": "Tôi quẹt thẻ được không?",
+              "english": "Can I pay by card?",
+              "pronunciation": "toy quet teh dook khong",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "orange",
-              "detailPageID": "viet-family-transport-stop-here",
-              "audioKey": "taxi-3"
+              "tintName": "teal",
+              "detailPageID": "viet-family-service-card",
+              "audioKey": "store-6"
             }
           ],
           "presentation": "phrase-list",
@@ -4407,78 +4355,38 @@
         {
           "id": "good-to-know",
           "title": "Good to know",
-          "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
+          "body": "Do not lead with a large bill unless the amount is clear. Let the fare be visible first, then hand over cash.",
           "presentation": "tip-callout",
           "phrases": [],
           "breakdown": []
         },
         {
-          "id": "explore-next",
-          "title": "More ride phrases",
+          "id": "nearby-phrases",
+          "title": "Next phrases",
           "body": "",
           "phrases": [
             {
-              "id": "ves-call-taxi-for-me",
-              "vietnamese": "Gọi giúp tôi taxi được không?",
-              "english": "Can you call me a taxi?",
-              "pronunciation": "goy zoop toy tak see duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "orange",
-              "detailPageID": "viet-family-ves-call-taxi-for-me",
-              "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
+              "id": "store-7",
+              "vietnamese": "Cho tôi hóa đơn",
+              "english": "Please give me the receipt",
+              "pronunciation": "cho toy hwa dun",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-service-receipt",
+              "audioKey": "store-7"
             },
             {
-              "id": "v900-tran-please-take-me-to-this-address",
-              "vietnamese": "Hãy đưa tôi đến địa chỉ này",
-              "english": "Please take me to this address",
-              "pronunciation": "Hay dua toi den dia chi nay",
+              "id": "price-9",
+              "vietnamese": "Có tiền lẻ không?",
+              "english": "Do you have smaller bills?",
+              "pronunciation": "koh tyen leh khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "green",
-              "detailPageID": "viet-phrase-v900-tran-please-take-me-to-this-address",
-              "audioKey": "v900-tran-please-take-me-to-this-address"
-            },
-            {
-              "id": "directions-8",
-              "vietnamese": "Điểm đón ở đâu?",
-              "english": "Where is the pickup point?",
-              "pronunciation": "deeym don uh dow",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-directions-8",
-              "audioKey": "directions-8"
-            },
-            {
-              "id": "v900-dire-navi-is-this-the-correct-pickup-point",
-              "vietnamese": "Đây có phải là điểm đón chính xác không?",
-              "english": "Is this the correct pickup point?",
-              "pronunciation": "Day co phai la diem don chinh xac khong",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-dire-navi-is-this-the-correct-pickup-point",
-              "audioKey": "v900-dire-navi-is-this-the-correct-pickup-point"
-            },
-            {
-              "id": "ves-drop-me-off-here",
-              "vietnamese": "Cho tôi xuống ở đây được không?",
-              "english": "Can you drop me off here?",
-              "pronunciation": "cho toy zoong uh day duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "green",
-              "detailPageID": "viet-family-ves-drop-me-off-here",
-              "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
-            },
-            {
-              "id": "v500-tran-please-call-the-driver",
-              "vietnamese": "Vui lòng gọi tài xế",
-              "english": "Please call the driver",
-              "pronunciation": "Vui long goi tai xe",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
-              "audioKey": "v500-tran-please-call-the-driver"
+              "detailPageID": "viet-phrase-price-9",
+              "audioKey": "price-9"
             }
           ],
-          "presentation": "phrase-list",
+          "presentation": "horizontal-phrase-cards",
           "breakdown": []
         }
       ],
@@ -4507,40 +4415,34 @@
             "title": "Common follow-ups",
             "sourceSectionID": "traveler-insight",
             "primaryPhraseIDs": [
-              "taxi-1"
+              "transport-fare"
             ],
             "supportPhraseIDs": [
-              "taxi-2",
-              "taxi-3"
+              "transport-meter",
+              "store-6"
             ]
           },
           {
-            "stepID": "explore-next",
-            "title": "More ride phrases",
-            "sourceSectionID": "explore-next",
+            "stepID": "nearby-phrases",
+            "title": "Next phrases",
+            "sourceSectionID": "nearby-phrases",
             "primaryPhraseIDs": [
-              "ves-call-taxi-for-me"
+              "store-7"
             ],
             "supportPhraseIDs": [
-              "v900-tran-please-take-me-to-this-address",
-              "directions-8",
-              "v900-dire-navi-is-this-the-correct-pickup-point",
-              "ves-drop-me-off-here"
+              "price-9"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "taxi-7",
-          "taxi-1",
-          "ves-call-taxi-for-me"
+          "transport-fare",
+          "store-7"
         ],
         "secondaryPracticePhraseIDs": [
-          "taxi-2",
-          "taxi-3",
-          "v900-tran-please-take-me-to-this-address",
-          "directions-8",
-          "v900-dire-navi-is-this-the-correct-pickup-point",
-          "ves-drop-me-off-here"
+          "transport-meter",
+          "store-6",
+          "price-9"
         ],
         "practiceSourcePageID": "viet-family-transport-cash"
       }
@@ -38272,68 +38174,53 @@
         },
         {
           "id": "explore-next",
-          "title": "More ride phrases",
+          "title": "Next phrases",
           "body": "",
           "phrases": [
             {
-              "id": "ves-call-taxi-for-me",
-              "vietnamese": "Gọi giúp tôi taxi được không?",
-              "english": "Can you call me a taxi?",
-              "pronunciation": "goy zoop toy tak see duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "orange",
-              "detailPageID": "viet-family-ves-call-taxi-for-me",
-              "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
+              "id": "airport-5",
+              "vietnamese": "Khu đón ở đâu?",
+              "english": "Where is the pickup area?",
+              "pronunciation": "khoo don uh dow",
+              "detailPageID": "viet-family-airport-pickup",
+              "audioKey": "airport-5",
+              "symbolName": "speaker.wave.2.fill"
             },
             {
-              "id": "v900-tran-please-take-me-to-this-address",
-              "vietnamese": "Hãy đưa tôi đến địa chỉ này",
-              "english": "Please take me to this address",
-              "pronunciation": "Hay dua toi den dia chi nay",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-tran-please-take-me-to-this-address",
-              "audioKey": "v900-tran-please-take-me-to-this-address"
+              "id": "airport-pickup-clearer",
+              "vietnamese": "Tôi gặp tài xế ở đâu?",
+              "english": "Where do I meet the driver?",
+              "pronunciation": "toy gap tai seh uh dow",
+              "detailPageID": "viet-phrase-airport-pickup-clearer",
+              "audioKey": "airport-pickup-clearer",
+              "symbolName": "speaker.wave.2.fill"
             },
             {
-              "id": "directions-8",
-              "vietnamese": "Điểm đón ở đâu?",
-              "english": "Where is the pickup point?",
-              "pronunciation": "deeym don uh dow",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-directions-8",
-              "audioKey": "directions-8"
+              "id": "airport-6",
+              "vietnamese": "Hành lý của tôi chưa tới",
+              "english": "My bag did not arrive",
+              "pronunciation": "han lee koo-ah toy choo toy",
+              "detailPageID": "viet-family-airport-bag-missing",
+              "audioKey": "airport-6",
+              "symbolName": "speaker.wave.2.fill"
             },
             {
-              "id": "v900-dire-navi-is-this-the-correct-pickup-point",
-              "vietnamese": "Đây có phải là điểm đón chính xác không?",
-              "english": "Is this the correct pickup point?",
-              "pronunciation": "Day co phai la diem don chinh xac khong",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-dire-navi-is-this-the-correct-pickup-point",
-              "audioKey": "v900-dire-navi-is-this-the-correct-pickup-point"
+              "id": "airport-7",
+              "vietnamese": "Nhà ga nội địa ở đâu?",
+              "english": "Where is the domestic terminal?",
+              "pronunciation": "nya ga noy dee-ah uh dow",
+              "detailPageID": "viet-phrase-airport-7",
+              "audioKey": "airport-7",
+              "symbolName": "speaker.wave.2.fill"
             },
             {
-              "id": "ves-drop-me-off-here",
-              "vietnamese": "Cho tôi xuống ở đây được không?",
-              "english": "Can you drop me off here?",
-              "pronunciation": "cho toy zoong uh day duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "green",
-              "detailPageID": "viet-family-ves-drop-me-off-here",
-              "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
-            },
-            {
-              "id": "v500-tran-please-call-the-driver",
-              "vietnamese": "Vui lòng gọi tài xế",
-              "english": "Please call the driver",
-              "pronunciation": "Vui long goi tai xe",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
-              "audioKey": "v500-tran-please-call-the-driver"
+              "id": "v500-airp-bord-arri-here-is-my-visa",
+              "vietnamese": "Đây là thị thực của tôi",
+              "english": "Here is my visa",
+              "pronunciation": "Day la thi thuc cua toi",
+              "detailPageID": "viet-family-v500-airp-bord-arri-here-is-my-visa",
+              "audioKey": "v500-airp-bord-arri-here-is-my-visa",
+              "symbolName": "speaker.wave.2.fill"
             }
           ],
           "presentation": "phrase-list",
@@ -38371,28 +38258,28 @@
         "scenarioStepGroups": [
           {
             "stepID": "explore-next",
-            "title": "More ride phrases",
+            "title": "Next phrases",
             "sourceSectionID": "explore-next",
             "primaryPhraseIDs": [
-              "ves-call-taxi-for-me"
+              "airport-5"
             ],
             "supportPhraseIDs": [
-              "v900-tran-please-take-me-to-this-address",
-              "directions-8",
-              "v900-dire-navi-is-this-the-correct-pickup-point",
-              "ves-drop-me-off-here"
+              "airport-pickup-clearer",
+              "airport-6",
+              "airport-7",
+              "v500-airp-bord-arri-here-is-my-visa"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "v500-airp-bord-arri-where-is-the-taxi-counter",
-          "ves-call-taxi-for-me"
+          "airport-5"
         ],
         "secondaryPracticePhraseIDs": [
-          "v900-tran-please-take-me-to-this-address",
-          "directions-8",
-          "v900-dire-navi-is-this-the-correct-pickup-point",
-          "ves-drop-me-off-here"
+          "airport-pickup-clearer",
+          "airport-6",
+          "airport-7",
+          "v500-airp-bord-arri-here-is-my-visa"
         ],
         "practiceSourcePageID": "viet-phrase-v500-airp-bord-arri-where-is-the-taxi-counter"
       }
@@ -38687,68 +38574,58 @@
         },
         {
           "id": "explore-next",
-          "title": "More ride phrases",
+          "title": "Next phrases",
           "body": "",
           "phrases": [
             {
-              "id": "ves-call-taxi-for-me",
-              "vietnamese": "Gọi giúp tôi taxi được không?",
-              "english": "Can you call me a taxi?",
-              "pronunciation": "goy zoop toy tak see duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "orange",
-              "detailPageID": "viet-family-ves-call-taxi-for-me",
-              "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
-            },
-            {
-              "id": "v900-tran-please-take-me-to-this-address",
-              "vietnamese": "Hãy đưa tôi đến địa chỉ này",
-              "english": "Please take me to this address",
-              "pronunciation": "Hay dua toi den dia chi nay",
+              "id": "airport-5",
+              "vietnamese": "Khu đón ở đâu?",
+              "english": "Where is the pickup area?",
+              "pronunciation": "khoo don uh dow",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-tran-please-take-me-to-this-address",
-              "audioKey": "v900-tran-please-take-me-to-this-address"
+              "tintName": "blue",
+              "detailPageID": "viet-phrase-airport-5",
+              "audioKey": "airport-5"
             },
             {
-              "id": "directions-8",
-              "vietnamese": "Điểm đón ở đâu?",
-              "english": "Where is the pickup point?",
-              "pronunciation": "deeym don uh dow",
+              "id": "airport-pickup-clearer",
+              "vietnamese": "Tôi gặp tài xế ở đâu?",
+              "english": "Where do I meet the driver?",
+              "pronunciation": "toy gap tai seh uh dow",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-directions-8",
-              "audioKey": "directions-8"
+              "tintName": "blue",
+              "detailPageID": "viet-phrase-airport-pickup-clearer",
+              "audioKey": "airport-pickup-clearer"
             },
             {
-              "id": "v900-dire-navi-is-this-the-correct-pickup-point",
-              "vietnamese": "Đây có phải là điểm đón chính xác không?",
-              "english": "Is this the correct pickup point?",
-              "pronunciation": "Day co phai la diem don chinh xac khong",
+              "id": "airport-6",
+              "vietnamese": "Hành lý của tôi chưa tới",
+              "english": "My bag did not arrive",
+              "pronunciation": "han lee koo-ah toy choo toy",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-dire-navi-is-this-the-correct-pickup-point",
-              "audioKey": "v900-dire-navi-is-this-the-correct-pickup-point"
+              "tintName": "blue",
+              "detailPageID": "viet-phrase-airport-6",
+              "audioKey": "airport-6"
             },
             {
-              "id": "ves-drop-me-off-here",
-              "vietnamese": "Cho tôi xuống ở đây được không?",
-              "english": "Can you drop me off here?",
-              "pronunciation": "cho toy zoong uh day duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "green",
-              "detailPageID": "viet-family-ves-drop-me-off-here",
-              "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
-            },
-            {
-              "id": "v500-tran-please-call-the-driver",
-              "vietnamese": "Vui lòng gọi tài xế",
-              "english": "Please call the driver",
-              "pronunciation": "Vui long goi tai xe",
+              "id": "airport-7",
+              "vietnamese": "Nhà ga nội địa ở đâu?",
+              "english": "Where is the domestic terminal?",
+              "pronunciation": "nya ga noy dee-ah uh dow",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
-              "audioKey": "v500-tran-please-call-the-driver"
+              "tintName": "blue",
+              "detailPageID": "viet-phrase-airport-7",
+              "audioKey": "airport-7"
+            },
+            {
+              "id": "v500-airp-bord-arri-here-is-my-visa",
+              "vietnamese": "Đây là thị thực của tôi",
+              "english": "Here is my visa",
+              "pronunciation": "Day la thi thuc cua toi",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-phrase-v500-airp-bord-arri-here-is-my-visa",
+              "audioKey": "v500-airp-bord-arri-here-is-my-visa"
             }
           ],
           "presentation": "phrase-list",
@@ -38777,28 +38654,28 @@
         "scenarioStepGroups": [
           {
             "stepID": "explore-next",
-            "title": "More ride phrases",
+            "title": "Next phrases",
             "sourceSectionID": "explore-next",
             "primaryPhraseIDs": [
-              "ves-call-taxi-for-me"
+              "airport-5"
             ],
             "supportPhraseIDs": [
-              "v900-tran-please-take-me-to-this-address",
-              "directions-8",
-              "v900-dire-navi-is-this-the-correct-pickup-point",
-              "ves-drop-me-off-here"
+              "airport-pickup-clearer",
+              "airport-6",
+              "airport-7",
+              "v500-airp-bord-arri-here-is-my-visa"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "v900-airp-bord-arri-can-you-help-me-book-a-taxi",
-          "ves-call-taxi-for-me"
+          "airport-5"
         ],
         "secondaryPracticePhraseIDs": [
-          "v900-tran-please-take-me-to-this-address",
-          "directions-8",
-          "v900-dire-navi-is-this-the-correct-pickup-point",
-          "ves-drop-me-off-here"
+          "airport-pickup-clearer",
+          "airport-6",
+          "airport-7",
+          "v500-airp-bord-arri-here-is-my-visa"
         ],
         "practiceSourcePageID": "viet-phrase-v900-airp-bord-arri-can-you-help-me-book-a-taxi"
       }
@@ -40389,68 +40266,58 @@
         },
         {
           "id": "explore-next",
-          "title": "More ride phrases",
+          "title": "Next phrases",
           "body": "",
           "phrases": [
             {
-              "id": "ves-call-taxi-for-me",
-              "vietnamese": "Gọi giúp tôi taxi được không?",
-              "english": "Can you call me a taxi?",
-              "pronunciation": "goy zoop toy tak see duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "orange",
-              "detailPageID": "viet-family-ves-call-taxi-for-me",
-              "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
-            },
-            {
-              "id": "v900-tran-please-take-me-to-this-address",
-              "vietnamese": "Hãy đưa tôi đến địa chỉ này",
-              "english": "Please take me to this address",
-              "pronunciation": "Hay dua toi den dia chi nay",
+              "id": "airport-5",
+              "vietnamese": "Khu đón ở đâu?",
+              "english": "Where is the pickup area?",
+              "pronunciation": "khoo don uh dow",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-tran-please-take-me-to-this-address",
-              "audioKey": "v900-tran-please-take-me-to-this-address"
+              "tintName": "blue",
+              "detailPageID": "viet-phrase-airport-5",
+              "audioKey": "airport-5"
             },
             {
-              "id": "directions-8",
-              "vietnamese": "Điểm đón ở đâu?",
-              "english": "Where is the pickup point?",
-              "pronunciation": "deeym don uh dow",
+              "id": "airport-pickup-clearer",
+              "vietnamese": "Tôi gặp tài xế ở đâu?",
+              "english": "Where do I meet the driver?",
+              "pronunciation": "toy gap tai seh uh dow",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-directions-8",
-              "audioKey": "directions-8"
+              "tintName": "blue",
+              "detailPageID": "viet-phrase-airport-pickup-clearer",
+              "audioKey": "airport-pickup-clearer"
             },
             {
-              "id": "v900-dire-navi-is-this-the-correct-pickup-point",
-              "vietnamese": "Đây có phải là điểm đón chính xác không?",
-              "english": "Is this the correct pickup point?",
-              "pronunciation": "Day co phai la diem don chinh xac khong",
+              "id": "airport-6",
+              "vietnamese": "Hành lý của tôi chưa tới",
+              "english": "My bag did not arrive",
+              "pronunciation": "han lee koo-ah toy choo toy",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-dire-navi-is-this-the-correct-pickup-point",
-              "audioKey": "v900-dire-navi-is-this-the-correct-pickup-point"
+              "tintName": "blue",
+              "detailPageID": "viet-phrase-airport-6",
+              "audioKey": "airport-6"
             },
             {
-              "id": "ves-drop-me-off-here",
-              "vietnamese": "Cho tôi xuống ở đây được không?",
-              "english": "Can you drop me off here?",
-              "pronunciation": "cho toy zoong uh day duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "green",
-              "detailPageID": "viet-family-ves-drop-me-off-here",
-              "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
-            },
-            {
-              "id": "v500-tran-please-call-the-driver",
-              "vietnamese": "Vui lòng gọi tài xế",
-              "english": "Please call the driver",
-              "pronunciation": "Vui long goi tai xe",
+              "id": "airport-7",
+              "vietnamese": "Nhà ga nội địa ở đâu?",
+              "english": "Where is the domestic terminal?",
+              "pronunciation": "nya ga noy dee-ah uh dow",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
-              "audioKey": "v500-tran-please-call-the-driver"
+              "tintName": "blue",
+              "detailPageID": "viet-phrase-airport-7",
+              "audioKey": "airport-7"
+            },
+            {
+              "id": "v500-airp-bord-arri-here-is-my-visa",
+              "vietnamese": "Đây là thị thực của tôi",
+              "english": "Here is my visa",
+              "pronunciation": "Day la thi thuc cua toi",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-phrase-v500-airp-bord-arri-here-is-my-visa",
+              "audioKey": "v500-airp-bord-arri-here-is-my-visa"
             }
           ],
           "presentation": "phrase-list",
@@ -40479,28 +40346,28 @@
         "scenarioStepGroups": [
           {
             "stepID": "explore-next",
-            "title": "More ride phrases",
+            "title": "Next phrases",
             "sourceSectionID": "explore-next",
             "primaryPhraseIDs": [
-              "ves-call-taxi-for-me"
+              "airport-5"
             ],
             "supportPhraseIDs": [
-              "v900-tran-please-take-me-to-this-address",
-              "directions-8",
-              "v900-dire-navi-is-this-the-correct-pickup-point",
-              "ves-drop-me-off-here"
+              "airport-pickup-clearer",
+              "airport-6",
+              "airport-7",
+              "v500-airp-bord-arri-here-is-my-visa"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "v900-airp-bord-arri-is-this-the-official-taxi-line",
-          "ves-call-taxi-for-me"
+          "airport-5"
         ],
         "secondaryPracticePhraseIDs": [
-          "v900-tran-please-take-me-to-this-address",
-          "directions-8",
-          "v900-dire-navi-is-this-the-correct-pickup-point",
-          "ves-drop-me-off-here"
+          "airport-pickup-clearer",
+          "airport-6",
+          "airport-7",
+          "v500-airp-bord-arri-here-is-my-visa"
         ],
         "practiceSourcePageID": "viet-phrase-v900-airp-bord-arri-is-this-the-official-taxi-line"
       }
@@ -48262,28 +48129,48 @@
         },
         {
           "id": "explore-next",
-          "title": "More ride phrases",
+          "title": "Next phrases",
           "body": "",
           "phrases": [
             {
-              "id": "ves-call-taxi-for-me",
-              "vietnamese": "Gọi giúp tôi taxi được không?",
-              "english": "Can you call me a taxi?",
-              "pronunciation": "goy zoop toy tak see duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "orange",
-              "detailPageID": "viet-family-ves-call-taxi-for-me",
-              "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
+              "id": "directions-4",
+              "vietnamese": "Rẽ trái ở đâu?",
+              "english": "Where do I turn left?",
+              "pronunciation": "reh chai uh dow",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-phrase-directions-4",
+              "audioKey": "directions-4"
             },
             {
-              "id": "v900-tran-please-take-me-to-this-address",
-              "vietnamese": "Hãy đưa tôi đến địa chỉ này",
-              "english": "Please take me to this address",
-              "pronunciation": "Hay dua toi den dia chi nay",
+              "id": "directions-5",
+              "vietnamese": "Tôi rẽ phải đúng không?",
+              "english": "Should I turn right?",
+              "pronunciation": "toy reh fai zoong khong",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-tran-please-take-me-to-this-address",
-              "audioKey": "v900-tran-please-take-me-to-this-address"
+              "tintName": "blue",
+              "detailPageID": "viet-phrase-directions-5",
+              "audioKey": "directions-5"
+            },
+            {
+              "id": "directions-6",
+              "vietnamese": "Tôi đi thẳng phải không?",
+              "english": "Should I go straight?",
+              "pronunciation": "toy dee thang fai khong",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-phrase-directions-6",
+              "audioKey": "directions-6"
+            },
+            {
+              "id": "directions-7",
+              "vietnamese": "Cảm ơn, tôi hiểu rồi",
+              "english": "Thanks, I understand now",
+              "pronunciation": "kahm uhn toy hyew roy",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "blue",
+              "detailPageID": "viet-phrase-directions-7",
+              "audioKey": "directions-7"
             },
             {
               "id": "directions-8",
@@ -48291,39 +48178,9 @@
               "english": "Where is the pickup point?",
               "pronunciation": "deeym don uh dow",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
+              "tintName": "blue",
               "detailPageID": "viet-phrase-directions-8",
               "audioKey": "directions-8"
-            },
-            {
-              "id": "v900-dire-navi-is-this-the-correct-pickup-point",
-              "vietnamese": "Đây có phải là điểm đón chính xác không?",
-              "english": "Is this the correct pickup point?",
-              "pronunciation": "Day co phai la diem don chinh xac khong",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-dire-navi-is-this-the-correct-pickup-point",
-              "audioKey": "v900-dire-navi-is-this-the-correct-pickup-point"
-            },
-            {
-              "id": "ves-drop-me-off-here",
-              "vietnamese": "Cho tôi xuống ở đây được không?",
-              "english": "Can you drop me off here?",
-              "pronunciation": "cho toy zoong uh day duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "green",
-              "detailPageID": "viet-family-ves-drop-me-off-here",
-              "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
-            },
-            {
-              "id": "v500-tran-please-call-the-driver",
-              "vietnamese": "Vui lòng gọi tài xế",
-              "english": "Please call the driver",
-              "pronunciation": "Vui long goi tai xe",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
-              "audioKey": "v500-tran-please-call-the-driver"
             }
           ],
           "presentation": "phrase-list",
@@ -48352,28 +48209,28 @@
         "scenarioStepGroups": [
           {
             "stepID": "explore-next",
-            "title": "More ride phrases",
+            "title": "Next phrases",
             "sourceSectionID": "explore-next",
             "primaryPhraseIDs": [
-              "ves-call-taxi-for-me"
+              "directions-4"
             ],
             "supportPhraseIDs": [
-              "v900-tran-please-take-me-to-this-address",
-              "directions-8",
-              "v900-dire-navi-is-this-the-correct-pickup-point",
-              "ves-drop-me-off-here"
+              "directions-5",
+              "directions-6",
+              "directions-7",
+              "directions-8"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "v900-dire-navi-how-long-does-it-take-by-taxi",
-          "ves-call-taxi-for-me"
+          "directions-4"
         ],
         "secondaryPracticePhraseIDs": [
-          "v900-tran-please-take-me-to-this-address",
-          "directions-8",
-          "v900-dire-navi-is-this-the-correct-pickup-point",
-          "ves-drop-me-off-here"
+          "directions-5",
+          "directions-6",
+          "directions-7",
+          "directions-8"
         ],
         "practiceSourcePageID": "viet-phrase-v900-dire-navi-how-long-does-it-take-by-taxi"
       }
@@ -89863,68 +89720,58 @@
         },
         {
           "id": "explore-next",
-          "title": "More ride phrases",
+          "title": "Next phrases",
           "body": "",
           "phrases": [
             {
-              "id": "ves-call-taxi-for-me",
-              "vietnamese": "Gọi giúp tôi taxi được không?",
-              "english": "Can you call me a taxi?",
-              "pronunciation": "goy zoop toy tak see duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "orange",
-              "detailPageID": "viet-family-ves-call-taxi-for-me",
-              "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
-            },
-            {
-              "id": "v900-tran-please-take-me-to-this-address",
-              "vietnamese": "Hãy đưa tôi đến địa chỉ này",
-              "english": "Please take me to this address",
-              "pronunciation": "Hay dua toi den dia chi nay",
+              "id": "hotel-3",
+              "vietnamese": "Mấy giờ trả phòng?",
+              "english": "What time is check-out?",
+              "pronunciation": "may zyuh tra fong",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-tran-please-take-me-to-this-address",
-              "audioKey": "v900-tran-please-take-me-to-this-address"
+              "tintName": "purple",
+              "detailPageID": "viet-phrase-hotel-3",
+              "audioKey": "hotel-3"
             },
             {
-              "id": "directions-8",
-              "vietnamese": "Điểm đón ở đâu?",
-              "english": "Where is the pickup point?",
-              "pronunciation": "deeym don uh dow",
+              "id": "hotel-quiet-room",
+              "vietnamese": "Cho tôi phòng yên tĩnh được không?",
+              "english": "Can I have a quiet room?",
+              "pronunciation": "cho toy fong yen tinh dook khong",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-directions-8",
-              "audioKey": "directions-8"
+              "tintName": "purple",
+              "detailPageID": "viet-phrase-hotel-quiet-room",
+              "audioKey": "hotel-quiet-room"
             },
             {
-              "id": "v900-dire-navi-is-this-the-correct-pickup-point",
-              "vietnamese": "Đây có phải là điểm đón chính xác không?",
-              "english": "Is this the correct pickup point?",
-              "pronunciation": "Day co phai la diem don chinh xac khong",
+              "id": "hotel-checkout",
+              "vietnamese": "Cho tôi trả phòng",
+              "english": "I’d like to check out",
+              "pronunciation": "cho toy tra fong",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-dire-navi-is-this-the-correct-pickup-point",
-              "audioKey": "v900-dire-navi-is-this-the-correct-pickup-point"
+              "tintName": "purple",
+              "detailPageID": "viet-phrase-hotel-checkout",
+              "audioKey": "hotel-checkout"
             },
             {
-              "id": "ves-drop-me-off-here",
-              "vietnamese": "Cho tôi xuống ở đây được không?",
-              "english": "Can you drop me off here?",
-              "pronunciation": "cho toy zoong uh day duoc khong",
-              "symbolName": "text.bubble.fill",
-              "tintName": "green",
-              "detailPageID": "viet-family-ves-drop-me-off-here",
-              "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
-            },
-            {
-              "id": "v500-tran-please-call-the-driver",
-              "vietnamese": "Vui lòng gọi tài xế",
-              "english": "Please call the driver",
-              "pronunciation": "Vui long goi tai xe",
+              "id": "hotel-4",
+              "vietnamese": "Phòng này nóng quá",
+              "english": "This room is too hot",
+              "pronunciation": "fong nai nong gwah",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
-              "audioKey": "v500-tran-please-call-the-driver"
+              "tintName": "purple",
+              "detailPageID": "viet-phrase-hotel-4",
+              "audioKey": "hotel-4"
+            },
+            {
+              "id": "hotel-5",
+              "vietnamese": "Máy lạnh không chạy",
+              "english": "The air conditioner isn’t working",
+              "pronunciation": "mai lanh khong chai",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "purple",
+              "detailPageID": "viet-phrase-hotel-5",
+              "audioKey": "hotel-5"
             }
           ],
           "presentation": "phrase-list",
@@ -89953,28 +89800,28 @@
         "scenarioStepGroups": [
           {
             "stepID": "explore-next",
-            "title": "More ride phrases",
+            "title": "Next phrases",
             "sourceSectionID": "explore-next",
             "primaryPhraseIDs": [
-              "ves-call-taxi-for-me"
+              "hotel-3"
             ],
             "supportPhraseIDs": [
-              "v900-tran-please-take-me-to-this-address",
-              "directions-8",
-              "v900-dire-navi-is-this-the-correct-pickup-point",
-              "ves-drop-me-off-here"
+              "hotel-quiet-room",
+              "hotel-checkout",
+              "hotel-4",
+              "hotel-5"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "v900-hote-acco-can-you-arrange-a-taxi-for-me",
-          "ves-call-taxi-for-me"
+          "hotel-3"
         ],
         "secondaryPracticePhraseIDs": [
-          "v900-tran-please-take-me-to-this-address",
-          "directions-8",
-          "v900-dire-navi-is-this-the-correct-pickup-point",
-          "ves-drop-me-off-here"
+          "hotel-quiet-room",
+          "hotel-checkout",
+          "hotel-4",
+          "hotel-5"
         ],
         "practiceSourcePageID": "viet-phrase-v900-hote-acco-can-you-arrange-a-taxi-for-me"
       }
@@ -272833,7 +272680,7 @@
       "title": "Bánh mì Hội An",
       "englishTitle": "Banh mi in Hoi An",
       "pronunciation": "banh mi hoi an",
-      "summary": "Hội An bánh mì carries the city's quick sandwich-shop memory: French-era bread, local herbs, sauce, chili choices, and a stop that can happen between old-town errands.",
+      "summary": "Hội An bánh mì carries the city's quick sandwich-shop memory: crisp French-era bread, local herbs, sauce, chili choices, and a handheld meal that fits between old-town walks.",
       "heroImageName": "HeroCityHoianPlaceBanhMi",
       "iconName": "takeoutbag.and.cup.and.straw.fill",
       "tintName": "orange",
@@ -273110,7 +272957,7 @@
         {
           "id": "when-to-use",
           "title": "How It Differs From Madam Khánh",
-          "body": "Choose Phượng for the quick glass-case rhythm. Choose Madam Khánh when you want the other famous Hội An name and the Bánh Mì Queen story.",
+          "body": "Bánh Mì Phượng is the fast glass-case sandwich shop: visible fillings, quick choices, takeaway rhythm. Madam Khánh is the other famous Hội An bánh mì shop, known for the Bánh Mì Queen name.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -280564,7 +280411,7 @@
       "title": "Madam Khánh",
       "englishTitle": "Madam Khanh",
       "pronunciation": "madam khanh",
-      "summary": "Madam Khanh is the other famous Hội An bánh mì stop: the Bánh Mì Queen name, a calmer shop rhythm, filling choices, chili, and a quick meal carried back toward the old streets.",
+      "summary": "Madam Khanh is the famous Hội An sandwich shop behind the Bánh Mì Queen name: crisp roll, warm filling, herbs, sauce, chili, and a calmer bánh mì meal than Phượng.",
       "heroImageName": "HeroCityHoianPlaceMadamKhanh",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -280595,7 +280442,7 @@
           "vt-hoian",
           "vt-hoian-official"
         ],
-        "rationale": "The Bánh Mì Queen nickname gives the stop a reason to remember, but the meal still has to land as crisp bread, warm filling, herbs, sauce, and chili.",
+        "rationale": "The Bánh Mì Queen nickname gives Madam Khánh a reason to remember, but the meal still has to land as crisp bread, warm filling, herbs, sauce, and chili.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -280605,8 +280452,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "The Bánh Mì Queen Stop",
-          "body": "Madam Khánh is the Bánh Mì Queen sandwich shop for a specific Hội An craving: crisp roll, warm filling, herbs, sauce, and chili chosen before the bread closes.",
+          "title": "The Bánh Mì Queen Shop",
+          "body": "Madam Khánh is the Bánh Mì Queen sandwich shop for a specific Hội An meal: crisp roll, warm filling, herbs, sauce, and chili chosen before the bread closes.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -280661,15 +280508,15 @@
         {
           "id": "use-it-with",
           "title": "Earlier Than The Rush",
-          "body": "Before the line tightens, the shop feels lighter and the sandwich stays the point. That makes it easier to enjoy as a quick Ancient Town break.",
+          "body": "Go earlier if you can. The line feels less like the whole visit, and the sandwich stays the point.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "when-to-use",
-          "title": "How It Differs From Phượng",
-          "body": "Madam Khánh carries the Bánh Mì Queen identity and a calmer shop rhythm. Phượng is the quicker glass-case stop when the sandwich itself is the whole point.",
+          "title": "How It Compares With Phượng",
+          "body": "Bánh Mì Phượng is the faster glass-case sandwich shop nearby. Madam Khánh leans on the Bánh Mì Queen name and a calmer order for the same Hội An bánh mì craving.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -323175,38 +323022,18 @@
         },
         {
           "id": "explore-next",
-          "title": "More ride phrases",
+          "title": "Next phrases",
           "body": "",
           "phrases": [
             {
-              "id": "v900-tran-please-take-me-to-this-address",
-              "vietnamese": "Hãy đưa tôi đến địa chỉ này",
-              "english": "Please take me to this address",
-              "pronunciation": "Hay dua toi den dia chi nay",
+              "id": "taxi-1",
+              "vietnamese": "Cho tôi tới đây",
+              "english": "Take me here",
+              "pronunciation": "cho toy toy day",
               "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-tran-please-take-me-to-this-address",
-              "audioKey": "v900-tran-please-take-me-to-this-address"
-            },
-            {
-              "id": "directions-8",
-              "vietnamese": "Điểm đón ở đâu?",
-              "english": "Where is the pickup point?",
-              "pronunciation": "deeym don uh dow",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-directions-8",
-              "audioKey": "directions-8"
-            },
-            {
-              "id": "v900-dire-navi-is-this-the-correct-pickup-point",
-              "vietnamese": "Đây có phải là điểm đón chính xác không?",
-              "english": "Is this the correct pickup point?",
-              "pronunciation": "Day co phai la diem don chinh xac khong",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v900-dire-navi-is-this-the-correct-pickup-point",
-              "audioKey": "v900-dire-navi-is-this-the-correct-pickup-point"
+              "tintName": "orange",
+              "detailPageID": "viet-family-taxi-1",
+              "audioKey": "taxi-1"
             },
             {
               "id": "ves-drop-me-off-here",
@@ -323214,29 +323041,29 @@
               "english": "Can you drop me off here?",
               "pronunciation": "cho toy zoong uh day duoc khong",
               "symbolName": "text.bubble.fill",
-              "tintName": "green",
+              "tintName": "orange",
               "detailPageID": "viet-family-ves-drop-me-off-here",
               "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
             },
             {
-              "id": "v500-tran-please-call-the-driver",
-              "vietnamese": "Vui lòng gọi tài xế",
-              "english": "Please call the driver",
-              "pronunciation": "Vui long goi tai xe",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "green",
-              "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
-              "audioKey": "v500-tran-please-call-the-driver"
-            },
-            {
-              "id": "v900-phon-inte-powe-can-you-help-me-book-a-grab",
-              "vietnamese": "Bạn có thể giúp tôi đặt xe Grab được không?",
-              "english": "Can you help me book a Grab?",
-              "pronunciation": "Ban co the giup toi dat xe Grab duoc khong",
+              "id": "taxi-7",
+              "vietnamese": "Tôi trả bằng tiền mặt",
+              "english": "I’ll pay cash",
+              "pronunciation": "toy tra bang tyen mat",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "orange",
-              "detailPageID": "viet-phrase-v900-phon-inte-powe-can-you-help-me-book-a-grab",
-              "audioKey": "v900-phon-inte-powe-can-you-help-me-book-a-grab"
+              "detailPageID": "viet-family-taxi-7",
+              "audioKey": "taxi-7"
+            },
+            {
+              "id": "transport-fare",
+              "vietnamese": "Tiền xe bao nhiêu?",
+              "english": "How much is the fare?",
+              "pronunciation": "tyen seh bao nyew",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "orange",
+              "detailPageID": "viet-family-transport-fare",
+              "audioKey": "transport-fare"
             }
           ],
           "presentation": "phrase-list",
@@ -323265,28 +323092,26 @@
         "scenarioStepGroups": [
           {
             "stepID": "explore-next",
-            "title": "More ride phrases",
+            "title": "Next phrases",
             "sourceSectionID": "explore-next",
             "primaryPhraseIDs": [
-              "v900-tran-please-take-me-to-this-address"
+              "taxi-1"
             ],
             "supportPhraseIDs": [
-              "directions-8",
-              "v900-dire-navi-is-this-the-correct-pickup-point",
               "ves-drop-me-off-here",
-              "v500-tran-please-call-the-driver"
+              "taxi-7",
+              "transport-fare"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "ves-call-taxi-for-me",
-          "v900-tran-please-take-me-to-this-address"
+          "taxi-1"
         ],
         "secondaryPracticePhraseIDs": [
-          "directions-8",
-          "v900-dire-navi-is-this-the-correct-pickup-point",
           "ves-drop-me-off-here",
-          "v500-tran-please-call-the-driver"
+          "taxi-7",
+          "transport-fare"
         ],
         "practiceSourcePageID": "viet-family-ves-call-taxi-for-me"
       }
