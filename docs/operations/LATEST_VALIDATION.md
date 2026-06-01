@@ -61,10 +61,30 @@ Current `feature/menu-section` evidence from the 2026-05-29 Vietnamese menu top-
 - smoothness fix: pinned, scroll-derived section-title crossings are coalesced before publishing to the top glass label, while direct dropdown/rail jumps still update immediately
 - direct-jump stability fix: explicit top-picker selections now keep ownership of the pill label through the short lazy-stack settle window so scroll geometry cannot relabel the pill to a neighboring section while the jump lands
 - second-layer smoothness fix: unnecessary deep `Equatable` conformance was removed from large Vietnamese menu payload/section/item structs after a scroll CPU sample showed AttributeGraph comparing whole section/item arrays during section-boundary updates
+- five-whys lag/thermal root cause: the top picker repeatedly read `VietnameseMenuCatalog.sections(for:)`, which rebuilt the grouped Food Menu sections on every access, and each section block used an inner eager row stack, so jumping through the dropdown one by one could materialize every row in a large section such as `Grilled & braised meats`
+- lag/thermal fix: menu items, categories, popular items, and sections are now cached per menu kind, and each section's rows render through a nested lazy stack so selector jumps preserve the same dropdown/rail/menu functionality without rebuilding the full section model or eagerly constructing every row in the landed section
+- break-test coverage: simulator UI now walks every real Food Menu top-picker section after `Popular dishes` in sequence and asserts the chosen section title and first visible row appear for each jump
 - preserved UX: the existing top glass dropdown surface, in-page rail, audio speed chrome, and menu rows remain in place; the food inventory still exposes 269 unique rows
 
 Fresh command evidence from this pass:
 
+- XcodeBuildMCP simulator cache regression before the cache fix
+  - failed as expected: `AppChromeTests/testVietnameseMenuSectionsAreCachedForRepeatedSelectorAccess` saw 20 grouped-section builds from 20 repeated selector-style reads
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/menu-section-25e9f9157f08/result-bundles/test_sim_2026-05-29T15-41-57-738Z_pid11523_d7629bfa.xcresult`
+- XcodeBuildMCP simulator menu cache/performance guard after the fix
+  - passed: `testVietnameseMenuSectionsAreCachedForRepeatedSelectorAccess`, `testVietnameseMenuSectionsExposeFullVerticalInventory`, and `testVietnameseMenuLargeModelsAvoidDeepEquatableComparisons`, `3` tests, `0` failures
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/menu-section-25e9f9157f08/result-bundles/test_sim_2026-05-29T15-43-33-376Z_pid11523_239c45a5.xcresult`
+- XcodeBuildMCP simulator sequential Food Menu top-picker break test
+  - passed: `BrowseSearchUITests/testVietnameseMenuTopSectionPillSurvivesSequentialBreakTest`, `1` test, `0` failures
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/menu-section-25e9f9157f08/result-bundles/test_sim_2026-05-29T15-44-40-678Z_pid11523_5cc930ee.xcresult`
+- XcodeBuildMCP simulator current top-picker focused UI set after the lag/thermal fix
+  - passed: `testVietnameseMenuTopSectionPillJumpsToMatchingFoodSections`, `testVietnameseMenuTopSectionPillJumpsToSeafood`, and `testVietnameseMenuFastSectionBoundaryScrollKeepsTopPickerResponsive`, `3` tests, `0` failures
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/menu-section-25e9f9157f08/result-bundles/test_sim_2026-05-29T15-46-10-758Z_pid11523_edf7587b.xcresult`
+- Physical iPhone Debug build/install/launch from `feature/menu-section` after the lag/thermal fix
+  - build passed
+  - install passed
+  - launch passed
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
 - XcodeBuildMCP simulator `AppChromeTests` menu inventory/taxonomy set
   - passed: `testVietnameseMenuCollectionsUseCsvBackedInventory`, `testVietnameseMenuSectionsExposeFullVerticalInventory`, `testVietnameseMenuSectionTrackingCoordinatorPublishesOnlyMeaningfulChanges`, and `testVietnameseMenuSectionTrackingDefersPinnedScrollBoundaryChanges`, `4` tests, `0` failures
   - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/menu-section-25e9f9157f08/result-bundles/test_sim_2026-05-29T12-50-59-636Z_pid11523_ca9b3100.xcresult`
