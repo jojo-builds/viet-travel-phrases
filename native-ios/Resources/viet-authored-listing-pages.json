@@ -10,7 +10,7 @@
     "catalogPromotedPageCount": 770,
     "cityLibraryPageCount": 826,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-06-01T00:56:29.260Z"
+    "generatedAt": "2026-06-01T01:34:13.367Z"
   },
   "pages": [
     {
@@ -275557,8 +275557,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Not The Food Quest",
-          "body": "For a food-focused choice, Morning Glory or White Rose is sharper. Choose Cargo when the group needs terrace, dessert, and fewer arguments about the menu.",
+          "title": "Terrace Over Food Quest",
+          "body": "Morning Glory or White Rose makes more sense when the group wants one focused Hội An dish. Cargo helps when the night needs terrace seats, dessert, coffee, and a menu with room for everyone.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -275893,7 +275893,7 @@
         {
           "id": "when-to-use",
           "title": "Boarding To Return",
-          "body": "The boat phrase names the whole sequence: boarding, crossing, swimming, drying off, and coming back to Hội An.",
+          "body": "The boat phrase names the whole sequence: pier, boarding, open water, reef stop, drying off, and the return to Hội An.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -276587,8 +276587,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Choose Heat Early",
-          "body": "The moment is choosing heat, sauce, or portion calmly before the plate arrives. A simple order keeps the meal from becoming stressful.",
+          "title": "Settle Heat Early",
+          "body": "Ask for spice, sauce, or portion size before the plate lands. The meal stays easy when the rice, chicken, herbs, and soup arrive together.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -278019,7 +278019,7 @@
       "title": "Faifo Coffee",
       "englishTitle": "Faifo Coffee",
       "pronunciation": "faifo coffee",
-      "summary": "Faifo Coffee is the rooftop-view cafe moment: climb above the old town, choose one Vietnamese coffee, and decide whether the roofline is worth the crowd.",
+      "summary": "Faifo Coffee is the rooftop-view cafe moment: climb above the old town, order one Vietnamese coffee, and decide if the yellow roofline is worth the crowd.",
       "heroImageName": "HeroCityHoianPlaceFaifoCoffee",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -279296,8 +279296,8 @@
         },
         {
           "id": "place-brief",
-          "title": "Ceramics And Older Cases",
-          "body": "The gallery is small, with route material, ceramics, warm light, and older display cases. Keep the loop short and focused.",
+          "title": "Ceramics And Compact Rooms",
+          "body": "The gallery is small, with ceramics, trade-era objects, warm light, and older display cases. Keep the loop short and focused.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -281139,14 +281139,24 @@
           "body": "",
           "phrases": [
             {
-              "id": "v500-sigh-acti-where-is-the-entrance",
-              "vietnamese": "Lối vào ở đâu?",
-              "english": "Where is the entrance?",
-              "pronunciation": "Loi vao o dau",
+              "id": "v500-sigh-acti-where-can-i-buy-tickets",
+              "vietnamese": "Tôi có thể mua vé ở đâu?",
+              "english": "Where can I buy tickets?",
+              "pronunciation": "Toi co the mua ve o dau",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-v500-sigh-acti-where-is-the-entrance",
-              "audioKey": "v500-sigh-acti-where-is-the-entrance"
+              "detailPageID": "viet-family-v500-sigh-acti-where-can-i-buy-tickets",
+              "audioKey": "v500-sigh-acti-where-can-i-buy-tickets"
+            },
+            {
+              "id": "v900-time-date-book-what-time-does-it-start",
+              "vietnamese": "Nó bắt đầu lúc mấy giờ?",
+              "english": "What time does it start?",
+              "pronunciation": "No bat dau luc may gio",
+              "symbolName": "speaker.wave.2.fill",
+              "tintName": "teal",
+              "detailPageID": "viet-family-v900-time-date-book-what-time-does-it-start",
+              "audioKey": "v900-time-date-book-what-time-does-it-start"
             },
             {
               "id": "sight-5",
@@ -281157,16 +281167,6 @@
               "tintName": "teal",
               "detailPageID": "viet-family-sight-meeting-point",
               "audioKey": "sight-5"
-            },
-            {
-              "id": "store-1",
-              "vietnamese": "Cho tôi chai nước",
-              "english": "A bottle of water please",
-              "pronunciation": "cho toy chai nook",
-              "symbolName": "speaker.wave.2.fill",
-              "tintName": "teal",
-              "detailPageID": "viet-family-service-water",
-              "audioKey": "store-1"
             }
           ],
           "breakdown": [],
@@ -281230,21 +281230,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "v500-sigh-acti-where-is-the-entrance"
+              "v500-sigh-acti-where-can-i-buy-tickets"
             ],
             "supportPhraseIDs": [
-              "sight-5",
-              "store-1"
+              "v900-time-date-book-what-time-does-it-start",
+              "sight-5"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-memories-land",
-          "v500-sigh-acti-where-is-the-entrance"
+          "v500-sigh-acti-where-can-i-buy-tickets"
         ],
         "secondaryPracticePhraseIDs": [
-          "sight-5",
-          "store-1"
+          "v900-time-date-book-what-time-does-it-start",
+          "sight-5"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-memories-land"
       }
@@ -281772,7 +281772,7 @@
       "title": "Morning Glory Hội An",
       "englishTitle": "Morning Glory Hoi An",
       "pronunciation": "morning glory hoy an",
-      "summary": "Choose Morning Glory when the first Hội An meal needs to teach the table: local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a stall crawl.",
+      "summary": "Morning Glory is a first Hội An meal for tables that need local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a stall crawl.",
       "heroImageName": "HeroCityHoianPlaceMorningGlory",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -282242,7 +282242,7 @@
         {
           "id": "when-to-use",
           "title": "Short Visits Are Fine",
-          "body": "Choose a few displays, then leave before museum fatigue sets in. The old-town story stays sharper that way.",
+          "body": "Pick a few displays, then leave before museum fatigue sets in. The old-town story stays sharper that way.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -282651,7 +282651,7 @@
       "title": "Phố Nguyễn Phúc Chu",
       "englishTitle": "Nguyen Phuc Chu Street",
       "pronunciation": "pho nguyen phuc chu",
-      "summary": "Nguyen Phuc Chu Street is An Hội's night-side line, tying river crossings, market stalls, signs, and lantern-lit shopfronts into one walkable route.",
+      "summary": "Nguyen Phuc Chu Street is An Hội's night-side walk, tying river crossings, market stalls, signs, and lantern-lit shopfronts into one named route.",
       "heroImageName": "HeroCityHoianPlaceNguyenPhucChuStreet",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -282754,8 +282754,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Route Rather Than Attraction",
-          "body": "The street is the line that helps you move through stalls, drinks, crossings, and river edges.",
+          "title": "A Line Through The Night",
+          "body": "The street name helps you move between stalls, drinks, crossings, and river edges without letting the lanterns blur together.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -282918,15 +282918,15 @@
         {
           "id": "use-it-with",
           "title": "Old Houses And Cafes",
-          "body": "The street can connect heritage houses, browsing, and coffee without turning the walk into a checklist. One reference point can guide the next turn.",
+          "body": "The street can connect heritage houses, browsing, and coffee without turning the walk into a checklist. Pick one doorway, cafe, or corner to guide the next turn.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "when-to-use",
-          "title": "A Bearing Before Photos",
-          "body": "Remember the street as orientation. The lanterns and balconies make more sense when they sit on a route.",
+          "title": "Orientation Before Photos",
+          "body": "Remember the street as a way through the old town. The lanterns and balconies make more sense when they sit on a named walk.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -283954,8 +283954,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Choose A Small Focus",
-          "body": "Choose a small focus: portraits, textiles, or regional dress. The visit can stay short and still hold meaning.",
+          "title": "Pick A Small Focus",
+          "body": "Start with portraits, textiles, or regional dress instead of trying to absorb every room. The visit can stay short and still leave a clear memory.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -285617,34 +285617,34 @@
           "body": "",
           "phrases": [
             {
-              "id": "coffee-1",
-              "vietnamese": "Cho tôi một cà phê sữa đá",
-              "english": "One iced milk coffee please",
-              "pronunciation": "cho toy mot ka feh sue-ah dah",
+              "id": "food-need-table",
+              "vietnamese": "Cho tôi bàn cho hai người nhé",
+              "english": "A table for two, please",
+              "pronunciation": "cho toy ban cho hai ngwee nhe",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-coffee-milk",
-              "audioKey": "coffee-1"
+              "detailPageID": "viet-family-food-need-table",
+              "audioKey": "food-need-table"
             },
             {
-              "id": "coffee-4",
-              "vietnamese": "Ít đá thôi",
-              "english": "Just a little ice",
-              "pronunciation": "eet dah toy",
+              "id": "v900-food-drin-what-do-you-recommend",
+              "vietnamese": "Bạn đề xuất món gì?",
+              "english": "What do you recommend?",
+              "pronunciation": "Ban de xuat mon gi",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-less-ice",
-              "audioKey": "coffee-4"
+              "detailPageID": "viet-family-v900-food-drin-what-do-you-recommend",
+              "audioKey": "v900-food-drin-what-do-you-recommend"
             },
             {
-              "id": "coffee-6",
-              "vietnamese": "Mang đi",
-              "english": "To go",
-              "pronunciation": "mang dee",
+              "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+              "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+              "english": "Can I pay the bill by card?",
+              "pronunciation": "Toi co the thanh toan hoa don bang the khong",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-food-to-go",
-              "audioKey": "coffee-6"
+              "detailPageID": "viet-family-v900-food-drin-can-i-pay-the-bill-by-card",
+              "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
             }
           ],
           "breakdown": [],
@@ -285708,21 +285708,21 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "coffee-1"
+              "food-need-table"
             ],
             "supportPhraseIDs": [
-              "coffee-4",
-              "coffee-6"
+              "v900-food-drin-what-do-you-recommend",
+              "v900-food-drin-can-i-pay-the-bill-by-card"
             ]
           }
         ],
         "primaryPracticePhraseIDs": [
           "city-hoian-place-streets-restaurant-cafe",
-          "coffee-1"
+          "food-need-table"
         ],
         "secondaryPracticePhraseIDs": [
-          "coffee-4",
-          "coffee-6"
+          "v900-food-drin-what-do-you-recommend",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ],
         "practiceSourcePageID": "viet-family-city-hoian-place-streets-restaurant-cafe"
       }
@@ -307543,7 +307543,7 @@
       "title": "Đền Huyền Trân",
       "englishTitle": "Huyen Tran Princess Temple",
       "pronunciation": "den huyen tran",
-      "summary": "Huyen Tran adds wooded royal memory to Hue, with hillside courtyards, incense, red pillars, and a softer sacred register. The temple adds a sacred wooded stop to Hue through incense, courtyards, red pillars, shade, and local memory.",
+      "summary": "Huyen Tran adds wooded royal memory to Hue, with hillside courtyards, incense, red pillars, and a quieter sacred stop. The temple adds a sacred wooded stop to Hue through incense, courtyards, red pillars, shade, and local memory.",
       "heroImageName": "HeroCityHuePlaceHuyenTranTemple",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -307801,7 +307801,7 @@
         },
         {
           "id": "place-brief",
-          "title": "Long Walks, Many Thresholds",
+          "title": "Long Walks, Gates, Courtyards",
           "body": "Expect a large walled complex with restored halls, red-and-gold details, temple spaces, and shaded corners. It rewards choosing a few details instead of trying to absorb everything.",
           "phrases": [],
           "breakdown": [],
@@ -309012,7 +309012,7 @@
         {
           "id": "use-it-with",
           "title": "After A Garden-House Walk",
-          "body": "Choose it for a Kim Long wander, a river-side route, or any day that needs shade and a table before returning to bigger sights.",
+          "body": "Come after a Kim Long wander, a river-side route, or any day that needs shade and a table before returning to bigger sights.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -309027,8 +309027,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Location Carries The Mood",
-          "body": "The cafe and Kim Long context work together. Without the leafier neighborhood, the stop would feel much less specific.",
+          "title": "Kim Long Shapes The Mood",
+          "body": "The cafe and Kim Long context work together. The leafier neighborhood is what makes the stop feel specific.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -309346,7 +309346,7 @@
         {
           "id": "use-it-with",
           "title": "Indoor Culture Stop",
-          "body": "Place it after a river walk or ahead of outdoor heat, when art and air-conditioning give the day a different register.",
+          "body": "Place it after a river walk or ahead of outdoor heat, when gallery rooms, one artist's work, and cooler air reset the day.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -309362,7 +309362,7 @@
         {
           "id": "good-to-know",
           "title": "Artist-Centered Context",
-          "body": "This is different from a general Hue history museum. The draw is an artist-focused side that makes the city feel less one-note.",
+          "body": "This is different from a general Hue history museum. One artist's rooms, street trees, and a short indoor pause give the city another side.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -310807,7 +310807,7 @@
       "title": "Bảo tàng Đồ sứ ký kiểu thời Nguyễn",
       "englishTitle": "Museum of Nguyen Dynasty Commissioned Porcelains",
       "pronunciation": "bao tang do su ky kieu thoi nguyen",
-      "summary": "The porcelain museum shifts royal memory from walls to objects, letting bowls, blue-and-white decoration, cases, and gallery light carry the story.",
+      "summary": "The porcelain museum shifts royal memory from walls to objects, letting bowls, blue-and-white decoration, cases, and gallery light tell the story up close.",
       "heroImageName": "HeroCityHuePlaceMuseumCommissionedPorcelains",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -313536,7 +313536,7 @@
       "title": "Bảo tàng Cổ vật Cung đình Huế",
       "englishTitle": "Hue Museum of Royal Antiquities",
       "pronunciation": "bow tahng co vat cung dinh hweh",
-      "summary": "The museum carries royal life through objects, shifting Hue from gates and processions to furniture, ceramics, textiles, and display cases.",
+      "summary": "The museum brings royal life into close view, shifting Hue from gates and processions to furniture, ceramics, textiles, and display cases.",
       "heroImageName": "HeroCityHuePlaceRoyalAntiquitiesMuseum",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -314473,7 +314473,7 @@
         {
           "id": "place-brief",
           "title": "Practical Rather Than Scenic",
-          "body": "Expect a transport stop. Signs, benches, station doors, and the next road into town carry the scene.",
+          "body": "Expect a transport stop: signs, benches, station doors, luggage movement, and the next road into town.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -315336,8 +315336,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Small Scale is the draw",
-          "body": "Picture the covered bridge over a narrow canal, a small covered crossing. The slower scale is the charm.",
+          "title": "Small Village Scale",
+          "body": "The village scale is the point: a covered bridge over a narrow canal, houses nearby, and bicycles moving slowly through the scene.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -316806,7 +316806,7 @@
         {
           "id": "at-glance",
           "title": "Indoor Reset Near The River",
-          "body": "Trang Tien Plaza Hue gives the city a polished indoor break: cool air, storefronts, food counters, easy meetups, and shelter from heat or rain.",
+          "body": "Trường Tiền Plaza gives central Hue a polished indoor break: cool air, storefronts, food counters, easy meetups, and shelter from heat or rain.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -316853,7 +316853,7 @@
         {
           "id": "place-brief",
           "title": "Shopping Center, Simple Job",
-          "body": "Expect a modern shopping-center facade, subdued signs, scooters outside, and the practical relief of being indoors.",
+          "body": "Expect a modern shopping-center facade, subdued signs, scooters outside, and the practical relief of being indoors for a mall reset.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"

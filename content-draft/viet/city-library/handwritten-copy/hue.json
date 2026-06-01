@@ -1750,8 +1750,8 @@
     },
     {
       "pageID": "city-hue-place-huyen-tran-temple",
-      "summary": "Huyen Tran adds wooded royal memory to Hue, with hillside courtyards, incense, red pillars, and a softer sacred register. The temple adds a sacred wooded stop to Hue through incense, courtyards, red pillars, shade, and local memory.",
-      "context": "Huyen Tran adds wooded royal memory to Hue, with hillside courtyards, incense, red pillars, and a softer sacred register.",
+      "summary": "Huyen Tran adds wooded royal memory to Hue, with hillside courtyards, incense, red pillars, and a quieter sacred stop. The temple adds a sacred wooded stop to Hue through incense, courtyards, red pillars, shade, and local memory.",
+      "context": "Huyen Tran adds wooded royal memory to Hue, with hillside courtyards, incense, red pillars, and a quieter sacred stop.",
       "tip": "Dress and behavior should match a temple visit. The red pillars and incense are part of worship, more than a photo backdrop.",
       "rationale": "The temple adds a sacred wooded stop to Hue through incense, courtyards, red pillars, shade, and local memory.",
       "sections": [
@@ -1817,7 +1817,7 @@
         },
         {
           "id": "place-brief",
-          "title": "Long Walks, Many Thresholds",
+          "title": "Long Walks, Gates, Courtyards",
           "body": "Expect a large walled complex with restored halls, red-and-gold details, temple spaces, and shaded corners. It rewards choosing a few details instead of trying to absorb everything."
         },
         {
@@ -2112,7 +2112,7 @@
       "pageID": "city-hue-place-lang-thang-coffee",
       "summary": "Lang Thang sits inside Kim Long's garden-lane mood, where low tables, iced glasses, trees, and shaded streets slow the route. The cafe makes a softer Hue moment: trees, low tables, a shaded lane, iced glasses, and time between larger sights.",
       "context": "Lang Thang sits inside Kim Long's garden-lane mood, where low tables, iced glasses, trees, and shaded streets slow the route.",
-      "tip": "The cafe and Kim Long context work together. Without the leafier neighborhood, the stop would feel much less specific.",
+      "tip": "The cafe and Kim Long context work together. The leafier neighborhood is what makes the stop feel specific.",
       "rationale": "The cafe makes a softer Hue moment: trees, low tables, a shaded lane, iced glasses, and time between larger sights.",
       "sections": [
         {
@@ -2138,7 +2138,7 @@
         {
           "id": "use-it-with",
           "title": "After A Garden-House Walk",
-          "body": "Choose it for a Kim Long wander, a river-side route, or any day that needs shade and a table before returning to bigger sights."
+          "body": "Come after a Kim Long wander, a river-side route, or any day that needs shade and a table before returning to bigger sights."
         },
         {
           "id": "when-to-use",
@@ -2147,8 +2147,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Location Carries The Mood",
-          "body": "The cafe and Kim Long context work together. Without the leafier neighborhood, the stop would feel much less specific."
+          "title": "Kim Long Shapes The Mood",
+          "body": "The cafe and Kim Long context work together. The leafier neighborhood is what makes the stop feel specific."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -2197,7 +2197,7 @@
       "pageID": "city-hue-place-le-ba-dang-art-center",
       "summary": "The art center gives Hue an artist-led indoor stop, trading monument scale for gallery light, display rooms, street trees, and unhurried looking.",
       "context": "The art center gives Hue an artist-led indoor stop, trading monument scale for gallery light, display rooms, street trees, and unhurried looking.",
-      "tip": "This is different from a general Hue history museum. The draw is an artist-focused side that makes the city feel less one-note.",
+      "tip": "This is different from a general Hue history museum. One artist's rooms, street trees, and a short indoor pause give the city another side.",
       "rationale": "The center adds an artist-focused Hue stop through gallery rooms, soft light, display cases, and a short indoor reset.",
       "sections": [
         {
@@ -2223,7 +2223,7 @@
         {
           "id": "use-it-with",
           "title": "Indoor Culture Stop",
-          "body": "Place it after a river walk or ahead of outdoor heat, when art and air-conditioning give the day a different register."
+          "body": "Place it after a river walk or ahead of outdoor heat, when gallery rooms, one artist's work, and cooler air reset the day."
         },
         {
           "id": "when-to-use",
@@ -2233,7 +2233,7 @@
         {
           "id": "good-to-know",
           "title": "Artist-Centered Context",
-          "body": "This is different from a general Hue history museum. The draw is an artist-focused side that makes the city feel less one-note."
+          "body": "This is different from a general Hue history museum. One artist's rooms, street trees, and a short indoor pause give the city another side."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -2595,8 +2595,8 @@
     },
     {
       "pageID": "city-hue-place-museum-commissioned-porcelains",
-      "summary": "The porcelain museum shifts royal memory from walls to objects, letting bowls, blue-and-white decoration, cases, and gallery light carry the story.",
-      "context": "The porcelain museum shifts royal memory from walls to objects, letting bowls, blue-and-white decoration, cases, and gallery light carry the story.",
+      "summary": "The porcelain museum shifts royal memory from walls to objects, letting bowls, blue-and-white decoration, cases, and gallery light tell the story up close.",
+      "context": "The porcelain museum shifts royal memory from walls to objects, letting bowls, blue-and-white decoration, cases, and gallery light tell the story up close.",
       "tip": "Nguyen-period porcelain rewards close range: blue-and-white bowls, display cases, and a small-object view of Hue's royal world.",
       "rationale": "The museum makes royal history feel domestic and tactile, shifting attention from gates and tombs to bowls, decoration, and display cases.",
       "sections": [
@@ -3310,8 +3310,8 @@
     },
     {
       "pageID": "city-hue-place-royal-antiquities-museum",
-      "summary": "The museum carries royal life through objects, shifting Hue from gates and processions to furniture, ceramics, textiles, and display cases.",
-      "context": "The museum carries royal life through objects, shifting Hue from gates and processions to furniture, ceramics, textiles, and display cases.",
+      "summary": "The museum brings royal life into close view, shifting Hue from gates and processions to furniture, ceramics, textiles, and display cases.",
+      "context": "The museum brings royal life into close view, shifting Hue from gates and processions to furniture, ceramics, textiles, and display cases.",
       "tip": "The reason to go is Hue's royal material culture gathered indoors: ceramics, textiles, objects, and calmer rooms after open-air sites.",
       "rationale": "The museum shifts Hue from gates and processions to objects, letting royal life appear through furniture, ceramics, textiles, and display cases.",
       "sections": [
@@ -3553,7 +3553,7 @@
         {
           "id": "place-brief",
           "title": "Practical Rather Than Scenic",
-          "body": "Expect a transport stop. Signs, benches, station doors, and the next road into town carry the scene."
+          "body": "Expect a transport stop: signs, benches, station doors, luggage movement, and the next road into town."
         },
         {
           "id": "use-it-with",
@@ -3782,8 +3782,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Small Scale is the draw",
-          "body": "Picture the covered bridge over a narrow canal, a small covered crossing. The slower scale is the charm."
+          "title": "Small Village Scale",
+          "body": "The village scale is the point: a covered bridge over a narrow canal, houses nearby, and bicycles moving slowly through the scene."
         },
         {
           "id": "good-to-know",
@@ -4158,7 +4158,7 @@
         {
           "id": "at-glance",
           "title": "Indoor Reset Near The River",
-          "body": "Trang Tien Plaza Hue gives the city a polished indoor break: cool air, storefronts, food counters, easy meetups, and shelter from heat or rain."
+          "body": "Trường Tiền Plaza gives central Hue a polished indoor break: cool air, storefronts, food counters, easy meetups, and shelter from heat or rain."
         },
         {
           "id": "quick-say",
@@ -4173,7 +4173,7 @@
         {
           "id": "place-brief",
           "title": "Shopping Center, Simple Job",
-          "body": "Expect a modern shopping-center facade, subdued signs, scooters outside, and the practical relief of being indoors."
+          "body": "Expect a modern shopping-center facade, subdued signs, scooters outside, and the practical relief of being indoors for a mall reset."
         },
         {
           "id": "use-it-with",

@@ -4440,7 +4440,7 @@
       "city": "Huế",
       "category": "Landmark",
       "pronunciation": "den huyen tran",
-      "travelerMoment": "Huyen Tran adds wooded royal memory to Hue, with hillside courtyards, incense, red pillars, and a softer sacred register.",
+      "travelerMoment": "Huyen Tran adds wooded royal memory to Hue, with hillside courtyards, incense, red pillars, and a quieter sacred stop.",
       "storySpine": "The temple adds a sacred wooded stop to Hue through incense, courtyards, red pillars, shade, and local memory.",
       "intro": {
         "heading": "Hillside Temple Break",
@@ -4585,8 +4585,8 @@
       ],
       "sections": [
         {
-          "id": "long-walks-many-thresholds",
-          "heading": "Long Walks, Many Thresholds",
+          "id": "long-walks-gates-courtyards",
+          "heading": "Long Walks, Gates, Courtyards",
           "body": "Expect a large walled complex with restored halls, red-and-gold details, temple spaces, and shaded corners. It rewards choosing a few details instead of trying to absorb everything."
         },
         {
@@ -5372,7 +5372,7 @@
         {
           "id": "after-a-garden-house-walk",
           "heading": "After A Garden-House Walk",
-          "body": "Choose it for a Kim Long wander, a river-side route, or any day that needs shade and a table before returning to bigger sights."
+          "body": "Come after a Kim Long wander, a river-side route, or any day that needs shade and a table before returning to bigger sights."
         },
         {
           "id": "drink-then-move-on",
@@ -5380,9 +5380,9 @@
           "body": "A short drink can be enough. The lane, the trees, and the shade matter more than a long cafe agenda."
         },
         {
-          "id": "location-carries-the-mood",
-          "heading": "Location Carries The Mood",
-          "body": "The cafe and Kim Long context work together. Without the leafier neighborhood, the stop would feel much less specific."
+          "id": "kim-long-shapes-the-mood",
+          "heading": "Kim Long Shapes The Mood",
+          "body": "The cafe and Kim Long context work together. The leafier neighborhood is what makes the stop feel specific."
         }
       ],
       "mentionedHereCandidates": [],
@@ -5590,7 +5590,7 @@
         {
           "id": "indoor-culture-stop",
           "heading": "Indoor Culture Stop",
-          "body": "Place it after a river walk or ahead of outdoor heat, when art and air-conditioning give the day a different register."
+          "body": "Place it after a river walk or ahead of outdoor heat, when gallery rooms, one artist's work, and cooler air reset the day."
         },
         {
           "id": "short-and-focused",
@@ -5600,7 +5600,7 @@
         {
           "id": "artist-centered-context",
           "heading": "Artist-Centered Context",
-          "body": "This is different from a general Hue history museum. The draw is an artist-focused side that makes the city feel less one-note."
+          "body": "This is different from a general Hue history museum. One artist's rooms, street trees, and a short indoor pause give the city another side."
         }
       ],
       "mentionedHereCandidates": [],
@@ -6562,7 +6562,7 @@
       "city": "Huế",
       "category": "Museum",
       "pronunciation": "bao tang do su ky kieu thoi nguyen",
-      "travelerMoment": "The porcelain museum shifts royal memory from walls to objects, letting bowls, blue-and-white decoration, cases, and gallery light carry the story.",
+      "travelerMoment": "The porcelain museum shifts royal memory from walls to objects, letting bowls, blue-and-white decoration, cases, and gallery light tell the story up close.",
       "storySpine": "The museum makes royal history feel domestic and tactile, shifting attention from gates and tombs to bowls, decoration, and display cases.",
       "intro": {
         "heading": "Royal History In Porcelain",
@@ -6619,11 +6619,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-diem-phung-thi-art-center",
-          "label": "Trung tâm Nghệ thuật Điềm Phùng Thị",
-          "relationship": "art-room contrast",
-          "displaySubtitle": "A small modern-art stop for sculpture, shade, and a quieter Hue room.",
-          "reason": "Related because: A small modern-art stop for sculpture, shade, and a quieter Hue room.",
+          "catalogId": "viet-family-city-hue-place-royal-antiquities-museum",
+          "label": "Bảo tàng Cổ vật Cung đình Huế",
+          "relationship": "royal-object museum comparison",
+          "displaySubtitle": "A broader royal-object museum when porcelain should sit beside furniture, ceramics, textiles, and palace material culture.",
+          "reason": "The Royal Antiquities Museum is the clearest royal-object comparison for the porcelain museum.",
           "status": "render"
         }
       ],
@@ -8060,11 +8060,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-truong-tien",
-          "label": "Cầu Trường Tiền",
-          "relationship": "city-landmark-contrast",
-          "displaySubtitle": "A central Hue landmark contrast when modern church lines should sit beside bridge-and-river memory.",
-          "reason": "Related because: A central Hue landmark contrast when modern church lines should sit beside bridge-and-river memory.",
+          "catalogId": "viet-family-city-hue-place-huyen-tran-temple",
+          "label": "Đền Huyền Trân",
+          "relationship": "sacred-site contrast",
+          "displaySubtitle": "A quieter hillside temple stop when Hue’s sacred map should include incense, shade, and red pillars as well as church architecture.",
+          "reason": "Huyen Tran Temple gives Phu Cam Church a more relevant sacred-site contrast than a bridge card.",
           "status": "render"
         }
       ],
@@ -8337,7 +8337,7 @@
       "city": "Huế",
       "category": "Museum",
       "pronunciation": "bow tahng co vat cung dinh hweh",
-      "travelerMoment": "The museum carries royal life through objects, shifting Hue from gates and processions to furniture, ceramics, textiles, and display cases.",
+      "travelerMoment": "The museum brings royal life into close view, shifting Hue from gates and processions to furniture, ceramics, textiles, and display cases.",
       "storySpine": "The museum shifts Hue from gates and processions to objects, letting royal life appear through furniture, ceramics, textiles, and display cases.",
       "intro": {
         "heading": "Royal Objects Up Close",
@@ -8394,11 +8394,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-diem-phung-thi-art-center",
-          "label": "Trung tâm Nghệ thuật Điềm Phùng Thị",
-          "relationship": "art-room contrast",
-          "displaySubtitle": "A small modern-art stop for sculpture, shade, and a quieter Hue room.",
-          "reason": "Related because: A small modern-art stop for sculpture, shade, and a quieter Hue room.",
+          "catalogId": "viet-family-city-hue-place-long-an-palace",
+          "label": "Điện Long An",
+          "relationship": "palace setting context",
+          "displaySubtitle": "The palace setting that helps the royal objects feel connected to timber halls, courtyards, and imperial architecture.",
+          "reason": "Long An Palace gives the royal antiquities page a nearby palace-context comparison.",
           "status": "render"
         }
       ],
@@ -8926,7 +8926,7 @@
         {
           "id": "practical-rather-than-scenic",
           "heading": "Practical Rather Than Scenic",
-          "body": "Expect a transport stop. Signs, benches, station doors, and the next road into town carry the scene."
+          "body": "Expect a transport stop: signs, benches, station doors, luggage movement, and the next road into town."
         },
         {
           "id": "arrival-and-transfer-days",
@@ -8947,11 +8947,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-northern-bus-station",
-          "label": "Bến xe phía Bắc Huế",
-          "relationship": "onward-transport handoff",
-          "displaySubtitle": "The practical city-edge bus stop when Hue becomes the place you are leaving from.",
-          "reason": "Related because: The practical city-edge bus stop when Hue becomes the place you are leaving from.",
+          "catalogId": "viet-family-city-hue-place-railway-station",
+          "label": "Ga Huế",
+          "relationship": "transport-arrival comparison",
+          "displaySubtitle": "The central rail arrival point when luggage, pickup, and the first road into Hue need a clearer city-center reference.",
+          "reason": "Hue Railway Station is a safer transport comparison than sending users toward the opposite bus station.",
           "status": "render"
         }
       ],
@@ -9489,8 +9489,8 @@
         },
         {
           "id": "small-scale-is-the-point",
-          "heading": "Small Scale is the draw",
-          "body": "Picture the covered bridge over a narrow canal, a small covered crossing. The slower scale is the charm."
+          "heading": "Small Village Scale",
+          "body": "The village scale is the point: a covered bridge over a narrow canal, houses nearby, and bicycles moving slowly through the scene."
         },
         {
           "id": "brief-stop-clear-image",
@@ -10443,7 +10443,7 @@
       "storySpine": "The plaza earns its place when weather, heat, or meetup logistics matter more than sightseeing: cool air, stores, counters, and a central place to regroup.",
       "intro": {
         "heading": "Indoor Reset Near The River",
-        "body": "Trang Tien Plaza Hue gives the city a polished indoor break: cool air, storefronts, food counters, easy meetups, and shelter from heat or rain."
+        "body": "Trường Tiền Plaza gives central Hue a polished indoor break: cool air, storefronts, food counters, easy meetups, and shelter from heat or rain."
       },
       "usefulPhraseCards": [
         {
@@ -10475,7 +10475,7 @@
         {
           "id": "shopping-center-simple-job",
           "heading": "Shopping Center, Simple Job",
-          "body": "Expect a modern shopping-center facade, subdued signs, scooters outside, and the practical relief of being indoors."
+          "body": "Expect a modern shopping-center facade, subdued signs, scooters outside, and the practical relief of being indoors for a mall reset."
         },
         {
           "id": "heat-rain-or-meetups",

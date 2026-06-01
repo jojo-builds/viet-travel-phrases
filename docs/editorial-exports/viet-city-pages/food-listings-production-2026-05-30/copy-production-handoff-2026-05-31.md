@@ -269,3 +269,16 @@ Fourteenth proof / subagent cleanup batch, 2026-06-01:
 - Added rendered proof `missing-pages-proof-004-results.jsonl`: `40` previously unrendered pages, `120` screenshots, `0` failures. The slice completed the remaining Saigon proof gap and started the Hội An band.
 - Combined latest-current rendered proof is now `413` unique pages, `1239` latest-current screenshots, `0` current failures.
 - Global status remains not complete: `107` V2.2 pages still need current rendered proof unless the standard is amended. Remaining pages are in Hội An (`51`) and Huế (`56`).
+
+Fifteenth proof / Hội An render and Huế preflight batch, 2026-06-01:
+
+- Continued the literal screenshot gate with the next `40` missing pages, all in the Hội An band.
+- Used two read-only subagents before/while rendering: one audited the remaining Hội An pages and caught wrong related cards/weak phrase-card fit; one audited the remaining Huế pages and caught Huế blockers to fix before the next render band.
+- Repaired Hội An source before render: Cam Thanh now relates to the Bay Mau coconut-waterway context, Hainan Assembly Hall now relates to a real assembly-hall comparison, STREETS Restaurant Cafe now uses table/menu/bill phrases, Memories Land uses ticket/start/meeting phrases, and stiff `Choose` / `route` / `reference point` wording was softened.
+- Added rendered proof `missing-pages-proof-005-results.jsonl`: `40` previously unrendered Hội An pages, `120` screenshots, `0` failures.
+- Repaired Huế source preflight from the second subagent: Trường Tiền Plaza naming, royal-object museum related cards, southern bus station related routing, Imperial City threshold wording, Huyen Tran `register`, Lang Thang directive phrasing, Le Ba Dang `draw/register`, Thanh Toan bridge casing, and Phu Cam Church related-card fit.
+- Regenerated V2.2 handwritten copy, native authored listing pages, phrase catalog, and SQLite after both Hội An and Huế repairs.
+- Current validators pass again: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Built `SpeakLocalNative` for testing on the `SpeakLocal City Listings` simulator before render: `TEST BUILD SUCCEEDED`.
+- Combined latest-current rendered proof is now `453` unique pages, `1359` latest-current screenshots, `0` current failures.
+- Global status remains not complete: `67` V2.2 pages still need current rendered proof unless the standard is amended. Remaining pages are Hội An (`11`) and Huế (`56`).

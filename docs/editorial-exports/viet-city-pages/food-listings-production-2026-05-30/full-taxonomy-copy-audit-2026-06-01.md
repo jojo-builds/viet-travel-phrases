@@ -425,3 +425,27 @@ Updated proof state:
 - Remaining global proof gap: `107` pages still need current rendered screenshots unless the gate is explicitly amended.
 - Remaining by city: Hội An `51`, Huế `56`.
 - Remaining by category: Neighborhood `7`, Dish `7`, Restaurant `12`, Nature `7`, Attraction `12`, Cafe `9`, Station `3`, Landmark `27`, Museum `9`, Market `8`, Street `5`, Village `1`.
+
+## Fifteenth Missing-Page Proof / Hội An Render And Huế Preflight, 2026-06-01
+
+This batch continued the literal rendered proof gate with the next `40` missing pages, while using fresh read-only agents to avoid proving pages that still had obvious first-time-traveler copy issues.
+
+Rendered proof:
+
+- Added `missing-pages-proof-005-results.jsonl`: `40` previously unrendered Hội An pages, `120` screenshots, `0` failures.
+- Scope covered Hội An neighborhoods, dishes, restaurants, Cham Islands / boat pages, cooking/bicycle/lantern attractions, assembly hall / bridge / temple landmarks, museums, markets, streets, cafes, and workshop pages.
+
+Human readability review:
+
+- Hội An source was repaired before render: Cam Thanh no longer routes to the An Hội night-island card, Hainan Assembly Hall no longer carries stray Mỹ Sơn/Cham day-trip related copy, STREETS Restaurant Cafe uses restaurant phrases instead of coffee phrases, and Memories Land now uses ticket/start/meeting phrases.
+- Additional Hội An cleanup removed directive `Choose...` phrasing, `Route Rather Than Attraction`, `reference point`, and abstract museum/boat wording from the rendered slice.
+- Huế source was repaired before its upcoming render band: Trường Tiền Plaza naming, wrong royal-object museum related cards, southern bus station related routing, Imperial City `thresholds`, Huyen Tran `register`, Lang Thang directive phrasing, Le Ba Dang `draw/register`, Thanh Toan bridge casing, and Phu Cam Church related-card fit.
+- Current validators pass again: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Simulator build proof passed before render: `xcodebuild build-for-testing` for `SpeakLocalNative` on `SpeakLocal City Listings` returned `TEST BUILD SUCCEEDED`.
+
+Updated proof state:
+
+- Combined latest-current proof is now `453` unique pages, `1359` latest-current screenshots, and `0` current failures.
+- Remaining global proof gap: `67` pages still need current rendered screenshots unless the gate is explicitly amended.
+- Remaining by city: Hội An `11`, Huế `56`.
+- Remaining by category: Landmark `23`, Cafe `7`, Nature `5`, Museum `6`, Market `5`, Restaurant `5`, Village `1`, Dish `4`, Neighborhood `3`, Attraction `3`, Street `3`, Station `2`.

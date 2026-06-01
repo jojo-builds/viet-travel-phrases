@@ -1127,7 +1127,7 @@
       "pageID": "city-hoian-place-cargo-club",
       "summary": "Cargo Club is the old-town riverfront restaurant-and-patisserie moment: terrace, cakes, coffee, Vietnamese and Western plates, and a table that solves group dinner without leaving the walk.",
       "context": "Cargo Club is the old-town riverfront restaurant-and-patisserie moment: terrace, cakes, coffee, Vietnamese and Western plates, and a table that solves group dinner without leaving the walk.",
-      "tip": "For a food-focused choice, Morning Glory or White Rose is sharper. Choose Cargo when the group needs terrace, dessert, and fewer arguments about the menu.",
+      "tip": "Morning Glory or White Rose makes more sense when the group wants one focused Hội An dish. Cargo helps when the night needs terrace seats, dessert, coffee, and a menu with room for everyone.",
       "rationale": "It belongs to Hội An’s trading-street restaurant pattern: an old-town shophouse, Thu Bon river view, bakery counter, and broad menu in the same orbit as Ms Vy food stops.",
       "sections": [
         {
@@ -1157,8 +1157,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Not The Food Quest",
-          "body": "For a food-focused choice, Morning Glory or White Rose is sharper. Choose Cargo when the group needs terrace, dessert, and fewer arguments about the menu."
+          "title": "Terrace Over Food Quest",
+          "body": "Morning Glory or White Rose makes more sense when the group wants one focused Hội An dish. Cargo helps when the night needs terrace seats, dessert, coffee, and a menu with room for everyone."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1243,7 +1243,7 @@
         {
           "id": "when-to-use",
           "title": "Boarding To Return",
-          "body": "The boat phrase names the whole sequence: boarding, crossing, swimming, drying off, and coming back to Hội An."
+          "body": "The boat phrase names the whole sequence: pier, boarding, open water, reef stop, drying off, and the return to Hội An."
         },
         {
           "id": "good-to-know",
@@ -1422,8 +1422,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Choose Heat Early",
-          "body": "The moment is choosing heat, sauce, or portion calmly before the plate arrives. A simple order keeps the meal from becoming stressful."
+          "title": "Settle Heat Early",
+          "body": "Ask for spice, sauce, or portion size before the plate lands. The meal stays easy when the rice, chicken, herbs, and soup arrive together."
         },
         {
           "id": "good-to-know",
@@ -1795,8 +1795,8 @@
     },
     {
       "pageID": "city-hoian-place-faifo-coffee",
-      "summary": "Faifo Coffee is the rooftop-view cafe moment: climb above the old town, choose one Vietnamese coffee, and decide whether the roofline is worth the crowd.",
-      "context": "Faifo Coffee is the rooftop-view cafe moment: climb above the old town, choose one Vietnamese coffee, and decide whether the roofline is worth the crowd.",
+      "summary": "Faifo Coffee is the rooftop-view cafe moment: climb above the old town, order one Vietnamese coffee, and decide if the yellow roofline is worth the crowd.",
+      "context": "Faifo Coffee is the rooftop-view cafe moment: climb above the old town, order one Vietnamese coffee, and decide if the yellow roofline is worth the crowd.",
       "tip": "If the drink matters more than the view, The Espresso Station is the better related cafe.",
       "rationale": "It earns its place because Hội An has few rooftop cafe views over the yellow roofline; the coffee supports the view, not the other way around.",
       "sections": [
@@ -2127,8 +2127,8 @@
         },
         {
           "id": "place-brief",
-          "title": "Ceramics And Older Cases",
-          "body": "The gallery is small, with route material, ceramics, warm light, and older display cases. Keep the loop short and focused."
+          "title": "Ceramics And Compact Rooms",
+          "body": "The gallery is small, with ceramics, trade-era objects, warm light, and older display cases. Keep the loop short and focused."
         },
         {
           "id": "use-it-with",
@@ -2610,9 +2610,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "v500-sigh-acti-where-is-the-entrance",
-            "sight-5",
-            "store-1"
+            "v500-sigh-acti-where-can-i-buy-tickets",
+            "v900-time-date-book-what-time-does-it-start",
+            "sight-5"
           ]
         },
         {
@@ -2775,8 +2775,8 @@
     },
     {
       "pageID": "city-hoian-place-morning-glory",
-      "summary": "Choose Morning Glory when the first Hội An meal needs to teach the table: local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a stall crawl.",
-      "context": "Choose Morning Glory when the first Hội An meal needs to teach the table: local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a stall crawl.",
+      "summary": "Morning Glory is a first Hội An meal for tables that need local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a stall crawl.",
+      "context": "Morning Glory is a first Hội An meal for tables that need local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a stall crawl.",
       "tip": "After one calmer table, the smaller specialty places make more sense: rice paper, herbs, shrimp, sauce, and noodle names stop feeling like a wall of options.",
       "rationale": "Morning Glory matters as an orientation restaurant inside the larger Hội An food story: it makes cao lầu, white rose dumplings, herbs, rice paper, and central-coast flavors easier to decode before smaller stops.",
       "sections": [
@@ -2898,7 +2898,7 @@
         {
           "id": "when-to-use",
           "title": "Short Visits Are Fine",
-          "body": "Choose a few displays, then leave before museum fatigue sets in. The old-town story stays sharper that way."
+          "body": "Pick a few displays, then leave before museum fatigue sets in. The old-town story stays sharper that way."
         },
         {
           "id": "good-to-know",
@@ -3000,8 +3000,8 @@
     },
     {
       "pageID": "city-hoian-place-nguyen-phuc-chu-street",
-      "summary": "Nguyen Phuc Chu Street is An Hội's night-side line, tying river crossings, market stalls, signs, and lantern-lit shopfronts into one walkable route.",
-      "context": "Nguyen Phuc Chu Street is An Hội's night-side line, tying river crossings, market stalls, signs, and lantern-lit shopfronts into one walkable route.",
+      "summary": "Nguyen Phuc Chu Street is An Hội's night-side walk, tying river crossings, market stalls, signs, and lantern-lit shopfronts into one named route.",
+      "context": "Nguyen Phuc Chu Street is An Hội's night-side walk, tying river crossings, market stalls, signs, and lantern-lit shopfronts into one named route.",
       "tip": "A named street keeps the evening legible when the lights start looking similar. A bridge, river edge, or market lap can hold it.",
       "rationale": "Nguyen Phuc Chu Street helps visitors place the An Hội evening on the map instead of drifting through unnamed lights.",
       "sections": [
@@ -3032,8 +3032,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Route Rather Than Attraction",
-          "body": "The street is the line that helps you move through stalls, drinks, crossings, and river edges."
+          "title": "A Line Through The Night",
+          "body": "The street name helps you move between stalls, drinks, crossings, and river edges without letting the lanterns blur together."
         },
         {
           "id": "good-to-know",
@@ -3073,12 +3073,12 @@
         {
           "id": "use-it-with",
           "title": "Old Houses And Cafes",
-          "body": "The street can connect heritage houses, browsing, and coffee without turning the walk into a checklist. One reference point can guide the next turn."
+          "body": "The street can connect heritage houses, browsing, and coffee without turning the walk into a checklist. Pick one doorway, cafe, or corner to guide the next turn."
         },
         {
           "id": "when-to-use",
-          "title": "A Bearing Before Photos",
-          "body": "Remember the street as orientation. The lanterns and balconies make more sense when they sit on a route."
+          "title": "Orientation Before Photos",
+          "body": "Remember the street as a way through the old town. The lanterns and balconies make more sense when they sit on a named walk."
         },
         {
           "id": "good-to-know",
@@ -3347,8 +3347,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Choose A Small Focus",
-          "body": "Choose a small focus: portraits, textiles, or regional dress. The visit can stay short and still hold meaning."
+          "title": "Pick A Small Focus",
+          "body": "Start with portraits, textiles, or regional dress instead of trying to absorb every room. The visit can stay short and still leave a clear memory."
         },
         {
           "id": "good-to-know",
@@ -3780,9 +3780,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "coffee-1",
-            "coffee-4",
-            "coffee-6"
+            "food-need-table",
+            "v900-food-drin-what-do-you-recommend",
+            "v900-food-drin-can-i-pay-the-bill-by-card"
           ]
         },
         {

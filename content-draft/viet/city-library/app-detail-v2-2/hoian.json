@@ -2257,11 +2257,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-an-hoi-island",
-          "label": "Đảo An Hội",
-          "relationship": "evening-island edge",
-          "displaySubtitle": "The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
-          "reason": "Related because: The softer night side after the bridge, with riverside lanes, cafes, small stays, and the walk home.",
+          "catalogId": "viet-family-city-hoian-place-bay-mau-coconut-forest",
+          "label": "Rừng dừa Bảy Mẫu",
+          "relationship": "water-coconut context",
+          "displaySubtitle": "The coconut-waterway stop when Cam Thanh needs basket boats, palms, and shaded channels.",
+          "reason": "Bay Mau Coconut Forest keeps the Cam Thanh card tied to water-coconut routes instead of the An Hoi night side.",
           "status": "render"
         }
       ],
@@ -2708,8 +2708,8 @@
           "catalogId": "viet-family-city-hoian-place-cao-lau-thanh",
           "label": "Cao Lầu Thanh",
           "relationship": "dish-to-focused restaurant link",
-          "displaySubtitle": "A focused Thái Phiên stop for cao lầu itself the meal.",
-          "reason": "Cao Lau Thanh gives the dish page a named place focused on the bowl itself.",
+          "displaySubtitle": "A focused Thái Phiên shop for the cao lầu bowl itself.",
+          "reason": "Cao Lau Thanh gives the dish page a named shop focused on the bowl itself.",
           "status": "render"
         },
         {
@@ -2960,8 +2960,8 @@
         },
         {
           "id": "not-the-food-quest",
-          "heading": "Not The Food Quest",
-          "body": "For a food-focused choice, Morning Glory or White Rose is sharper. Choose Cargo when the group needs terrace, dessert, and fewer arguments about the menu."
+          "heading": "Terrace Over Food Quest",
+          "body": "Morning Glory or White Rose makes more sense when the group wants one focused Hội An dish. Cargo helps when the night needs terrace seats, dessert, coffee, and a menu with room for everyone."
         }
       ],
       "mentionedHereCandidates": [],
@@ -3191,7 +3191,7 @@
         {
           "id": "boarding-to-return",
           "heading": "Boarding To Return",
-          "body": "The boat phrase names the whole sequence: boarding, crossing, swimming, drying off, and coming back to Hội An."
+          "body": "The boat phrase names the whole sequence: pier, boarding, open water, reef stop, drying off, and the return to Hội An."
         },
         {
           "id": "weather-matters",
@@ -3639,9 +3639,9 @@
           "body": "It sits neatly between old houses, tailor errands, or river walks. The dish gives a real meal without slowing the whole afternoon."
         },
         {
-          "id": "choose-heat-early",
-          "heading": "Choose Heat Early",
-          "body": "The moment is choosing heat, sauce, or portion calmly before the plate arrives. A simple order keeps the meal from becoming stressful."
+          "id": "settle-heat-early",
+          "heading": "Settle Heat Early",
+          "body": "Ask for spice, sauce, or portion size before the plate lands. The meal stays easy when the rice, chicken, herbs, and soup arrive together."
         },
         {
           "id": "herbs-and-sauce-matter",
@@ -4655,7 +4655,7 @@
       "city": "Hội An",
       "category": "Cafe",
       "pronunciation": "faifo coffee",
-      "travelerMoment": "Faifo Coffee is the rooftop-view cafe moment: climb above the old town, choose one Vietnamese coffee, and decide whether the roofline is worth the crowd.",
+      "travelerMoment": "Faifo Coffee is the rooftop-view cafe moment: climb above the old town, order one Vietnamese coffee, and decide if the yellow roofline is worth the crowd.",
       "storySpine": "It earns its place because Hội An has few rooftop cafe views over the yellow roofline; the coffee supports the view, not the other way around.",
       "intro": {
         "heading": "Rooftop First, Coffee Second",
@@ -5272,11 +5272,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
-          "label": "Cầu An Hội",
-          "relationship": "old-town base",
-          "displaySubtitle": "The old-town base before a longer Cham sanctuary day trip outside Hội An.",
-          "reason": "Related because: The old-town base before a longer Cham sanctuary day trip outside Hội An.",
+          "catalogId": "viet-family-city-hoian-place-fujian-assembly-hall",
+          "label": "Hội quán Phúc Kiến",
+          "relationship": "assembly-hall comparison",
+          "displaySubtitle": "The larger old-town assembly hall when incense coils, courtyard color, and Chinese-community history should stay in one walk.",
+          "reason": "Fujian Assembly Hall is the clearer nearby heritage comparison for Hainan Assembly Hall.",
           "status": "render"
         }
       ],
@@ -5474,8 +5474,8 @@
       "sections": [
         {
           "id": "ceramics-and-older-cases",
-          "heading": "Ceramics And Older Cases",
-          "body": "The gallery is small, with route material, ceramics, warm light, and older display cases. Keep the loop short and focused."
+          "heading": "Ceramics And Compact Rooms",
+          "body": "The gallery is small, with ceramics, trade-era objects, warm light, and older display cases. Keep the loop short and focused."
         },
         {
           "id": "rain-or-heritage-pairing",
@@ -6691,11 +6691,19 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Lối vào ở đâu?",
-          "en": "Where is the entrance?",
-          "intent": "v500-sigh-acti-where-is-the-entrance",
-          "phraseId": "v500-sigh-acti-where-is-the-entrance",
-          "audioId": "v500-sigh-acti-where-is-the-entrance",
+          "vi": "Tôi có thể mua vé ở đâu?",
+          "en": "Where can I buy tickets?",
+          "intent": "v500-sigh-acti-where-can-i-buy-tickets",
+          "phraseId": "v500-sigh-acti-where-can-i-buy-tickets",
+          "audioId": "v500-sigh-acti-where-can-i-buy-tickets",
+          "status": "mapped"
+        },
+        {
+          "vi": "Nó bắt đầu lúc mấy giờ?",
+          "en": "What time does it start?",
+          "intent": "show-start-time",
+          "phraseId": "v900-time-date-book-what-time-does-it-start",
+          "audioId": "v900-time-date-book-what-time-does-it-start",
           "status": "mapped"
         },
         {
@@ -6704,14 +6712,6 @@
           "intent": "sight-meeting-point",
           "phraseId": "sight-5",
           "audioId": "sight-5",
-          "status": "mapped"
-        },
-        {
-          "vi": "Cho tôi chai nước",
-          "en": "A bottle of water please",
-          "intent": "service-water",
-          "phraseId": "store-1",
-          "audioId": "store-1",
           "status": "mapped"
         }
       ],
@@ -7133,7 +7133,7 @@
       "city": "Hội An",
       "category": "Restaurant",
       "pronunciation": "morning glory hoy an",
-      "travelerMoment": "Choose Morning Glory when the first Hội An meal needs to teach the table: local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a stall crawl.",
+      "travelerMoment": "Morning Glory is a first Hội An meal for tables that need local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a stall crawl.",
       "storySpine": "Morning Glory matters as an orientation restaurant inside the larger Hội An food story: it makes cao lầu, white rose dumplings, herbs, rice paper, and central-coast flavors easier to decode before smaller stops.",
       "intro": {
         "heading": "A First Dinner That Teaches The Menu",
@@ -7441,7 +7441,7 @@
         {
           "id": "short-visits-are-fine",
           "heading": "Short Visits Are Fine",
-          "body": "Choose a few displays, then leave before museum fatigue sets in. The old-town story stays sharper that way."
+          "body": "Pick a few displays, then leave before museum fatigue sets in. The old-town story stays sharper that way."
         },
         {
           "id": "quiet-cool-air-a-few-objects",
@@ -7732,7 +7732,7 @@
       "city": "Hội An",
       "category": "Street",
       "pronunciation": "pho nguyen phuc chu",
-      "travelerMoment": "Nguyen Phuc Chu Street is An Hội's night-side line, tying river crossings, market stalls, signs, and lantern-lit shopfronts into one walkable route.",
+      "travelerMoment": "Nguyen Phuc Chu Street is An Hội's night-side walk, tying river crossings, market stalls, signs, and lantern-lit shopfronts into one named route.",
       "storySpine": "Nguyen Phuc Chu Street helps visitors place the An Hội evening on the map instead of drifting through unnamed lights.",
       "intro": {
         "heading": "An Hội’s Evening Walk",
@@ -7776,9 +7776,9 @@
           "body": "The name helps when friends split up, a driver asks for a pickup point, or the night market starts to blur."
         },
         {
-          "id": "route-rather-than-attraction",
-          "heading": "Route Rather Than Attraction",
-          "body": "The street is the line that helps you move through stalls, drinks, crossings, and river edges."
+          "id": "a-line-through-the-night",
+          "heading": "A Line Through The Night",
+          "body": "The street name helps you move between stalls, drinks, crossings, and river edges without letting the lanterns blur together."
         },
         {
           "id": "lantern-energy-can-be-repetitive",
@@ -7885,12 +7885,12 @@
         {
           "id": "old-houses-and-cafes",
           "heading": "Old Houses And Cafes",
-          "body": "The street can connect heritage houses, browsing, and coffee without turning the walk into a checklist. One reference point can guide the next turn."
+          "body": "The street can connect heritage houses, browsing, and coffee without turning the walk into a checklist. Pick one doorway, cafe, or corner to guide the next turn."
         },
         {
-          "id": "a-bearing-not-a-photo-label",
-          "heading": "A Bearing Before Photos",
-          "body": "Remember the street as orientation. The lanterns and balconies make more sense when they sit on a route."
+          "id": "orientation-before-photos",
+          "heading": "Orientation Before Photos",
+          "body": "Remember the street as a way through the old town. The lanterns and balconies make more sense when they sit on a named walk."
         },
         {
           "id": "small-detours-are-the-point",
@@ -8563,9 +8563,9 @@
           "body": "The museum pairs well with heat, rain, or a slower afternoon. It gives cultural depth without sending you far from the old-town circuit."
         },
         {
-          "id": "a-few-rooms-are-enough",
-          "heading": "Choose A Small Focus",
-          "body": "Choose a small focus: portraits, textiles, or regional dress. The visit can stay short and still hold meaning."
+          "id": "pick-a-small-focus",
+          "heading": "Pick A Small Focus",
+          "body": "Start with portraits, textiles, or regional dress instead of trying to absorb every room. The visit can stay short and still leave a clear memory."
         },
         {
           "id": "respect-the-room",
@@ -9652,27 +9652,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Cho tôi một cà phê sữa đá",
-          "en": "One iced milk coffee please",
-          "intent": "food-coffee-milk",
-          "phraseId": "coffee-1",
-          "audioId": "coffee-1",
+          "vi": "Cho tôi bàn cho hai người nhé",
+          "en": "A table for two, please",
+          "intent": "food-drink",
+          "phraseId": "food-need-table",
+          "audioId": "food-need-table",
           "status": "mapped"
         },
         {
-          "vi": "Ít đá thôi",
-          "en": "Just a little ice",
-          "intent": "food-less-ice",
-          "phraseId": "coffee-4",
-          "audioId": "coffee-4",
+          "vi": "Bạn đề xuất món gì?",
+          "en": "What do you recommend?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-what-do-you-recommend",
+          "audioId": "v900-food-drin-what-do-you-recommend",
           "status": "mapped"
         },
         {
-          "vi": "Mang đi",
-          "en": "To go",
-          "intent": "food-to-go",
-          "phraseId": "coffee-6",
-          "audioId": "coffee-6",
+          "vi": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+          "en": "Can I pay the bill by card?",
+          "intent": "food-drink",
+          "phraseId": "v900-food-drin-can-i-pay-the-bill-by-card",
+          "audioId": "v900-food-drin-can-i-pay-the-bill-by-card",
           "status": "mapped"
         }
       ],
