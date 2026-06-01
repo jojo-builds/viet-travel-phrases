@@ -20370,7 +20370,7 @@
       "pageID": "viet-family-city-hue-place-pham-ngu-lao-street",
       "scenarioID": "city-guides",
       "familyTitle": "Pham Ngu Lao Street pronunciation",
-      "summary": "Pham Ngu Lao gathers Hue's hotel-area pattern into a compact strip: guesthouses, cafes, scooters, dinner walks, and pickups. The street helps visitors understand a practical Hue base, especially when arranging pickups, dinner walks, or a return after dark.",
+      "summary": "Pham Ngu Lao Street is a hotel and backpacker-area street where restaurants, pickup points, late returns, and short walks make the evening easier.",
       "primaryPhraseID": "city-hue-place-pham-ngu-lao-street",
       "accessTier": "premium",
       "phraseIDs": [
@@ -20478,7 +20478,7 @@
       "pageID": "viet-family-city-hue-place-songlab",
       "scenarioID": "city-guides",
       "familyTitle": "Sống Platform - SốngLab pronunciation",
-      "summary": "SốngLab shows Hue as current, not frozen, bringing digital light, local motifs, and contemporary creative work beside imperial memory.",
+      "summary": "SốngLab shows Hue as current, bringing digital light, local motifs, and contemporary creative work beside older royal history. The stop shows Hue as current as well as historic, with digital art and local motifs adding a different room to the day.",
       "primaryPhraseID": "city-hue-place-songlab",
       "accessTier": "premium",
       "phraseIDs": [
@@ -20562,7 +20562,7 @@
       "pageID": "viet-family-city-hue-place-the-mieu-temple",
       "scenarioID": "city-guides",
       "familyTitle": "The Mieu Temple pronunciation",
-      "summary": "The Mieu keeps worship, imperial memory, bronze urns, red lacquer, and courtyard architecture together inside the Citadel. The place asks for a slower pace because worship, architecture, incense, and memory all share the same courtyard space.",
+      "summary": "The Mieu keeps ancestor worship, royal history, bronze urns, red lacquer, and courtyard architecture together inside the Citadel. The place asks for a slower pace because worship, architecture, incense, and memory all share the same courtyard space.",
       "primaryPhraseID": "city-hue-place-the-mieu-temple",
       "accessTier": "premium",
       "phraseIDs": [
@@ -20586,7 +20586,7 @@
       "pageID": "viet-family-city-hue-place-thieu-tri-tomb",
       "scenarioID": "city-guides",
       "familyTitle": "Tomb of Thieu Tri pronunciation",
-      "summary": "Thieu Tri spreads royal memory into countryside space, where walls, gates, open ground, stone paths, and distant mountains make the visit slower.",
+      "summary": "Thieu Tri spreads royal history into countryside space, where walls, gates, open ground, stone paths, and distant mountains make the visit slower.",
       "primaryPhraseID": "city-hue-place-thieu-tri-tomb",
       "accessTier": "premium",
       "phraseIDs": [
@@ -20622,7 +20622,7 @@
       "pageID": "viet-family-city-hue-place-tinh-gia-vien",
       "scenarioID": "city-guides",
       "familyTitle": "Tinh Gia Vien Restaurant pronunciation",
-      "summary": "Tinh Gia Vien draws on Hue's garden-house dining memory, where courtyard, carved wood, foliage, small dishes, and composed pacing carry the meal.",
+      "summary": "Tinh Gia Vien is a Hue garden-house meal, where courtyard, carved wood, foliage, small dishes, and composed pacing shape the table.",
       "primaryPhraseID": "city-hue-place-tinh-gia-vien",
       "accessTier": "premium",
       "phraseIDs": [
@@ -20670,7 +20670,7 @@
       "pageID": "viet-family-city-hue-place-tu-duc-tomb",
       "scenarioID": "city-guides",
       "familyTitle": "Tomb of Tu Duc pronunciation",
-      "summary": "Tu Duc makes imperial memory inward and mossy, with lake edge, pine canopy, old walls, courtyards, and landscape holding the mood.",
+      "summary": "Tu Duc makes royal history feel inward and mossy, with lake edge, pine canopy, old walls, courtyards, and landscape holding the mood.",
       "primaryPhraseID": "city-hue-place-tu-duc-tomb",
       "accessTier": "premium",
       "phraseIDs": [
@@ -20682,7 +20682,7 @@
       "pageID": "viet-family-city-hue-place-tu-hieu-pagoda",
       "scenarioID": "city-guides",
       "familyTitle": "Tu Hieu Pagoda pronunciation",
-      "summary": "Tu Hieu carries Hue's shaded monastery rhythm, where moss, trees, temple gates, incense, courtyards, and west-side hush slow the day.",
+      "summary": "Tu Hieu shows Hue's shaded monastery rhythm, where moss, trees, temple gates, incense, courtyards, and west-side hush slow the day.",
       "primaryPhraseID": "city-hue-place-tu-hieu-pagoda",
       "accessTier": "premium",
       "phraseIDs": [
@@ -20730,7 +20730,7 @@
       "pageID": "viet-family-city-hue-place-y-thao-garden",
       "scenarioID": "city-guides",
       "familyTitle": "Y Thao Garden pronunciation",
-      "summary": "Y Thao draws on Hue's old-house garden dining memory, where leafy courtyard, lanterns, woven mats, and house dishes set the pace. The place is memorable when the room and meal work together: old Hue house, leafy courtyard, lanterns, woven mats, and an unhurried table.",
+      "summary": "Y Thao is a Hue old-house garden meal, where leafy courtyard, lanterns, woven mats, and house dishes set the pace. The place is memorable when the room and meal work together: old Hue house, leafy courtyard, lanterns, woven mats, and an unhurried table.",
       "primaryPhraseID": "city-hue-place-y-thao-garden",
       "accessTier": "premium",
       "phraseIDs": [
@@ -90424,7 +90424,7 @@
       "pronunciation": "duong pham ngu lao",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Pham Ngu Lao gathers Hue's hotel-area pattern into a compact strip: guesthouses, cafes, scooters, dinner walks, and pickups. The street helps visitors understand a practical Hue base, especially when arranging pickups, dinner walks, or a return after dark.",
+      "context": "Pham Ngu Lao Street is a hotel and backpacker-area street where restaurants, pickup points, late returns, and short walks make the evening easier.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -90811,7 +90811,7 @@
       "pronunciation": "song platform - songlab",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "SốngLab shows Hue as current, not frozen, bringing digital light, local motifs, and contemporary creative work beside imperial memory.",
+      "context": "SốngLab shows Hue as current, bringing digital light, local motifs, and contemporary creative work beside older royal history. The stop shows Hue as current as well as historic, with digital art and local motifs adding a different room to the day.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -91111,7 +91111,7 @@
       "pronunciation": "the mieu",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "The Mieu keeps worship, imperial memory, bronze urns, red lacquer, and courtyard architecture together inside the Citadel. The place asks for a slower pace because worship, architecture, incense, and memory all share the same courtyard space.",
+      "context": "The Mieu keeps ancestor worship, royal history, bronze urns, red lacquer, and courtyard architecture together inside the Citadel. The place asks for a slower pace because worship, architecture, incense, and memory all share the same courtyard space.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -91197,7 +91197,7 @@
       "pronunciation": "lang thieu tri",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Thieu Tri spreads royal memory into countryside space, where walls, gates, open ground, stone paths, and distant mountains make the visit slower.",
+      "context": "Thieu Tri spreads royal history into countryside space, where walls, gates, open ground, stone paths, and distant mountains make the visit slower.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -91326,7 +91326,7 @@
       "pronunciation": "tinh gia vien",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Tinh Gia Vien draws on Hue's garden-house dining memory, where courtyard, carved wood, foliage, small dishes, and composed pacing carry the meal.",
+      "context": "Tinh Gia Vien is a Hue garden-house meal, where courtyard, carved wood, foliage, small dishes, and composed pacing shape the table.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -91498,7 +91498,7 @@
       "pronunciation": "lang tuh duk",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Tu Duc makes imperial memory inward and mossy, with lake edge, pine canopy, old walls, courtyards, and landscape holding the mood.",
+      "context": "Tu Duc makes royal history feel inward and mossy, with lake edge, pine canopy, old walls, courtyards, and landscape holding the mood.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -91541,7 +91541,7 @@
       "pronunciation": "choo-ah tuh hieu",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Tu Hieu carries Hue's shaded monastery rhythm, where moss, trees, temple gates, incense, courtyards, and west-side hush slow the day.",
+      "context": "Tu Hieu shows Hue's shaded monastery rhythm, where moss, trees, temple gates, incense, courtyards, and west-side hush slow the day.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",
@@ -91713,7 +91713,7 @@
       "pronunciation": "y thao garden",
       "accessTier": "premium",
       "variantRole": "say-first",
-      "context": "Y Thao draws on Hue's old-house garden dining memory, where leafy courtyard, lanterns, woven mats, and house dishes set the pace. The place is memorable when the room and meal work together: old Hue house, leafy courtyard, lanterns, woven mats, and an unhurried table.",
+      "context": "Y Thao is a Hue old-house garden meal, where leafy courtyard, lanterns, woven mats, and house dishes set the pace. The place is memorable when the room and meal work together: old Hue house, leafy courtyard, lanterns, woven mats, and an unhurried table.",
       "youMayHear": "",
       "searchAliases": [
         "Hue",

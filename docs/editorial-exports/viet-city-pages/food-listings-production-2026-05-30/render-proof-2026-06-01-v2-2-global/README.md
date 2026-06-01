@@ -110,9 +110,13 @@ Category-balanced batch:
   - `missing-pages-proof-006-results.jsonl`: `40` previously unrendered pages, `120` screenshots, `0` failures.
   - Scope: the final `11` Hội An proof-gap pages plus the first `29` Huế pages, including old houses, tea/coffee/farm pages, Huế dishes, tombs, Citadel landmarks, art spaces, chay dining, royal-object museums, and river/night-walk pages.
   - Text review before render followed the first-time U.S. traveler rule: unfamiliar terms must be explained immediately or replaced by concrete food/place utility. This batch added plain glosses for `Sa Huynh`, `Cơm âm phủ`, `Cơm hến`, `Forbidden Purple City`, `Princess Huyền Trân`, `chay`, `Nguyễn Dynasty`, `Nam Giao`, and `Nine Dynastic Urns`, and removed route/page-ish related-card copy.
-- Combined latest-current proof across the maintained result files is `493` unique pages, `1479` latest-current screenshots, and `0` current failures. Total historical proof rows in this folder include `685` rows and `2055` screenshots, but the current count uses the latest passing row for each page.
+- Missing-pages proof 007:
+  - `missing-pages-proof-007-results.jsonl`: `27` previously unrendered Huế pages, `81` screenshots, `0` failures.
+  - Scope: the final Huế proof gap, including river boats, streets, church, markets, stations, royal museums/music, mangrove/lagoon nature, floating restaurant, SốngLab, palaces, cafes, bridge, temples, tombs, neighborhoods, walking street, and garden restaurants.
+  - Text review before render added or tightened first-time-reader explanations for dragon boats, Phạm Ngũ Lão as a hotel/backpacker-area street, Phủ Cam as a modern Catholic cathedral, royal antiquities, nhã nhạc, mangroves, SốngLab as a contemporary digital/art space, Tam Giang as a shallow coastal lagoon, Thái Hòa Palace as the main audience hall, Thế Miếu as a Citadel temple honoring Nguyễn emperors, Từ Hiếu as a Buddhist pagoda and monastery, and Vọng Cảnh Hill as a viewpoint near royal tombs.
+- Combined latest-current proof across the maintained result files is `520` unique pages, `1560` latest-current screenshots, and `0` current failures. Total historical proof rows in this folder include `712` rows and `2136` screenshots, but the current count uses the latest passing row for each page.
 
-This is a meaningful rendered proof expansion, not the final 520-page receipt. The final gate still needs either all `520` pages captured by this harness or an explicit approval-standard amendment accepting full source/runtime review plus category-balanced rendered proof.
+This folder now contains the final 520-page rendered proof receipt for the current V2.2 city/place inventory.
 
 Category coverage in manifest:
 
@@ -139,15 +143,4 @@ Category coverage in manifest:
 
 Remaining current proof gap after the latest recompute:
 
-- total missing: `27`
-- by city: Huế `27`
-- attraction: `2`
-- cafe: `1`
-- landmark: `8`
-- market: `3`
-- museum: `2`
-- nature: `3`
-- neighborhood: `1`
-- restaurant: `3`
-- station: `2`
-- street: `2`
+- total missing: `0`

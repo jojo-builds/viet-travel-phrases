@@ -295,3 +295,15 @@ Sixteenth proof / final Hội An and Huế glossary-readability batch, 2026-06-0
 - Added rendered proof `missing-pages-proof-006-results.jsonl`: `40` previously unrendered pages, `120` screenshots, `0` failures.
 - Combined latest-current rendered proof is now `493` unique pages, `1479` latest-current screenshots, `0` current failures.
 - Global status remains not complete: `27` V2.2 pages still need current rendered proof unless the standard is amended. Remaining pages are all Huế.
+
+Seventeenth proof / final Huế render and production receipt, 2026-06-01:
+
+- Completed the literal V2.2 screenshot gate with the final `27` missing Huế pages.
+- Used a final read-only subagent on the remaining Huế proof gap before render. Findings focused on first-time-reader explanations for dragon boat, Phạm Ngũ Lão, Phủ Cam Church, royal antiquities, nhã nhạc, mangrove, lagoon, Thái Hòa Palace, Thế Miếu, Từ Đức/Từ Hiếu, Vọng Cảnh Hill, and garden-restaurant copy.
+- Repaired authored V2.2 source in `hue.json`, regenerated handwritten copy, native authored listing pages, phrase catalog, and SQLite.
+- Current validators pass: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Targeted source/runtime scan is clean for `Bib Gourmand`, `MICHELIN`, and `Gourmand`.
+- Built `SpeakLocalNative` for testing on the `SpeakLocal City Listings` simulator: `TEST BUILD SUCCEEDED`.
+- Added rendered proof `missing-pages-proof-007-results.jsonl`: `27` previously unrendered pages, `81` screenshots, `0` failures.
+- Final latest-current rendered proof is now `520` unique pages, `1560` latest-current screenshots, and `0` current failures.
+- Global V2.2 city/place proof gap is now `0`.

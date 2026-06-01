@@ -475,3 +475,27 @@ Updated proof state:
 - Remaining global proof gap: `27` pages still need current rendered screenshots unless the gate is explicitly amended.
 - Remaining by city: Huế `27`.
 - Remaining by category: Landmark `8`, Market `3`, Nature `3`, Restaurant `3`, Attraction `2`, Station `2`, Museum `2`, Street `2`, Cafe `1`, Neighborhood `1`.
+
+## Seventeenth Missing-Page Proof / Final Huế Render And Production Receipt, 2026-06-01
+
+This batch completed the literal V2.2 rendered proof gate for the full current city/place inventory.
+
+Rendered proof:
+
+- Added `missing-pages-proof-007-results.jsonl`: `27` previously unrendered Huế pages, `81` screenshots, `0` failures.
+- Scope covered the final Huế gap: Perfume River dragon boat, Phạm Ngũ Lão Street, Phủ Cam Church, Phú Hậu Market, Huế Railway Station, Royal Antiquities Museum, royal court music show, Rú Chá, Sông Hương floating restaurant, SốngLab, Southern Bus Station, Tam Giang Lagoon, Tây Lộc Market, Thái Hòa Palace, Thành Cafe, Thanh Toàn Bridge, Thế Miếu, Thiệu Trị Tomb, Tịnh Gia Viên, Trường Tiền Bridge/Plaza, Tự Đức Tomb, Từ Hiếu Pagoda, Vọng Cảnh Hill, Vỹ Dạ, Huế walking street, and Ý Thảo Garden.
+
+Human readability review:
+
+- A final read-only subagent audited the exact remaining Huế pages before render.
+- Repairs added plain-English first-time-reader explanations for a dragon boat as a decorated river cruise boat, Phạm Ngũ Lão as a hotel/backpacker-area street, Phủ Cam as a modern Catholic cathedral, royal antiquities as furniture/ceramics/textiles/clothing/display cases, nhã nhạc as traditional Nguyễn-dynasty court music, Rú Chá as a saltwater-edge mangrove forest, Tam Giang as a shallow coastal lagoon, Thái Hòa Palace as the main audience hall for emperors, Thế Miếu as a Citadel temple honoring Nguyễn emperors, Từ Hiếu as a Buddhist pagoda and monastery, and Vọng Cảnh Hill as a viewpoint near several royal tombs.
+- Additional cleanup removed final `carry`, `draw`, `imperial memory`, route/page, and weak related-card wording from the rendered slice.
+- Current validators pass: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Targeted source/runtime scan is clean for `Bib Gourmand`, `MICHELIN`, and `Gourmand`.
+- Simulator build proof passed before render: `xcodebuild build-for-testing` for `SpeakLocalNative` on `SpeakLocal City Listings` returned `TEST BUILD SUCCEEDED`.
+
+Final proof state:
+
+- Combined latest-current proof is now `520` unique pages, `1560` latest-current screenshots, and `0` current failures.
+- Remaining global proof gap: `0`.
+- The current Viet V2.2 city/place listing inventory is production-ready under the literal rendered-proof gate used in this handoff.
