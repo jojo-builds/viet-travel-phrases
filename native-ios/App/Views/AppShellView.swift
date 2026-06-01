@@ -1886,6 +1886,7 @@ struct AppShellView: View {
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
+        refreshSearchReturnFocusAfterReturningToSearch(from: previousRoute)
         activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
@@ -1953,6 +1954,33 @@ struct AppShellView: View {
         )
     }
 
+    private func refreshSearchReturnFocusAfterReturningToSearch(from previousRoute: AppRoute) {
+        guard
+            previousRoute != .search,
+            navigation.currentRoute == .search,
+            let request = searchReturnFocusRequest
+        else {
+            return
+        }
+
+        let scrollID = request.scrollID
+        searchReturnFocusRequest = nil
+
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 180_000_000)
+
+            guard navigation.currentRoute == .search else {
+                return
+            }
+
+            searchReturnFocusRequestID += 1
+            searchReturnFocusRequest = SearchReturnFocusRequest(
+                id: searchReturnFocusRequestID,
+                scrollID: scrollID
+            )
+        }
+    }
+
     private func closeSearch() {
         let previousRoute = navigation.currentRoute
         cancelSearchFocus()
@@ -1965,7 +1993,9 @@ struct AppShellView: View {
 
     private func dismissSearchFieldFocus() {
         searchFocusRequestID += 1
-        isSearchPresentationActive = false
+        if searchQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            isSearchPresentationActive = false
+        }
         isSearchFieldFocused = false
         #if canImport(UIKit)
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)

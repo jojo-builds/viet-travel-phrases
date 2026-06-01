@@ -507,6 +507,21 @@ final class BrowseSearchUITests: XCTestCase {
         )
     }
 
+    func testPhrasePlaceAndFoodTextCanBeCopiedFromVisibleText() {
+        assertVisibleTextOffersCopy(
+            title: "Chào anh",
+            launchArguments: ["--detail-page", "viet-phrase-hello-chao-anh"]
+        )
+        assertVisibleTextOffersCopy(
+            title: "Cầu Rồng",
+            launchArguments: ["--detail-page", "viet-phrase-city-danang-place-dragon-bridge"]
+        )
+        assertVisibleTextOffersCopy(
+            title: "Phở bò",
+            launchArguments: ["--detail-page", "viet-menu-food-pho-bo"]
+        )
+    }
+
     func testCityNounDetailPhotoBackdropImageTapTogglesImmersiveFromInitialPosition() {
         let pageID = "viet-phrase-city-danang-place-dragon-bridge"
         let app = launchApp(arguments: ["--detail-page", pageID])
@@ -1033,6 +1048,16 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertEqual(app.keyboards.count, 0)
     }
 
+    func testSearchQueryLaunchPrioritizesExactMenuDrinkResult() {
+        let app = launchApp(arguments: ["--search-query", "Cà phê sữa đá"])
+        let resultRows = searchResultRows(in: app)
+        let firstResult = resultRows.firstMatch
+
+        XCTAssertTrue(app.staticTexts["Results for Cà phê sữa đá"].waitForExistence(timeout: 4))
+        XCTAssertTrue(firstResult.waitForExistence(timeout: 3))
+        XCTAssertEqual(firstResult.identifier, "SearchResult.viet-menu-drink-ca-phe-sua-da")
+    }
+
     func testSearchNeverFramesNoMatchAsExactPhraseSearch() {
         let app = launchApp(arguments: ["--search-query", "zzzzzz"])
 
@@ -1054,9 +1079,33 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["No exact phrase yet"].exists)
     }
 
+    func testSearchResultInteractionKeepsQueryVisibleInField() {
+        let app = launchApp()
+        openSearch(in: app)
+
+        let field = searchField(in: app)
+        XCTAssertTrue(field.waitForExistence(timeout: 4))
+        field.tap()
+        field.typeText("hotel")
+
+        XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 4))
+        XCTAssertEqual(searchFieldValue(in: app), "hotel")
+
+        app.staticTexts["Results for hotel"]
+            .coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+            .tap()
+
+        XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 3))
+        XCTAssertEqual(
+            searchFieldValue(in: app),
+            "hotel",
+            "Interacting with search results should dismiss typing focus without clearing or hiding the visible query."
+        )
+    }
+
     func testBackFromSearchResultRestoresResultScrollPosition() {
         let app = launchApp(arguments: ["--search-query", "hotel"])
-        let resultRows = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "SearchResult."))
+        let resultRows = searchResultRows(in: app)
         let targetResult = resultRows.element(boundBy: 8)
 
         XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 4))
@@ -1068,11 +1117,14 @@ final class BrowseSearchUITests: XCTestCase {
         tapWhenVisible(app.buttons["TopAdmin.BackButton"], app: app)
 
         XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 3))
-        let restoredResult = app.buttons[targetIdentifier]
-        XCTAssertTrue(restoredResult.waitForExistence(timeout: 3))
         XCTAssertTrue(
-            restoredResult.isHittable,
+            waitUntilAnyButtonHittable(identifier: targetIdentifier, in: app, timeout: 4),
             "Back from a Search result should restore the Search results near the row that opened the detail page."
+        )
+        XCTAssertEqual(
+            searchFieldValue(in: app),
+            "hotel",
+            "Back from a real Search result should preserve the visible query in the search field."
         )
     }
 
@@ -1261,6 +1313,20 @@ final class BrowseSearchUITests: XCTestCase {
         app.searchFields["Search Vietnamese phrases"]
     }
 
+    private func searchFieldValue(in app: XCUIApplication) -> String {
+        String(describing: searchField(in: app).value ?? "")
+    }
+
+    private func searchResultRows(in app: XCUIApplication) -> XCUIElementQuery {
+        app.buttons.matching(
+            NSPredicate(
+                format: "identifier BEGINSWITH %@ AND NOT identifier BEGINSWITH %@",
+                "SearchResult.",
+                "SearchResult.Audio."
+            )
+        )
+    }
+
     private func waitForKeyboardDismissal(in app: XCUIApplication, timeout: TimeInterval = 2) -> Bool {
         let deadline = Date().addingTimeInterval(timeout)
         while Date() < deadline {
@@ -1365,6 +1431,37 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(tabBar.isHittable, "Swiping upward should restore the bottom admin bar.", file: file, line: line)
 
         app.terminate()
+    }
+
+    private func assertVisibleTextOffersCopy(
+        title: String,
+        launchArguments: [String],
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        let app = launchApp(arguments: launchArguments)
+        let text = app.staticTexts[title].firstMatch
+
+        XCTAssertTrue(text.waitForExistence(timeout: 5), "\(title) should render before checking copy affordance.", file: file, line: line)
+        text.press(forDuration: 1.1)
+
+        XCTAssertTrue(
+            copyMenuItem(in: app).waitForExistence(timeout: 2),
+            "Long-pressing \(title) should show the system Copy action.",
+            file: file,
+            line: line
+        )
+
+        app.terminate()
+    }
+
+    private func copyMenuItem(in app: XCUIApplication) -> XCUIElement {
+        let menuItem = app.menuItems["Copy"]
+        if menuItem.exists {
+            return menuItem
+        }
+
+        return app.buttons["Copy"]
     }
 
     private func tapCityNounHeroMasthead(_ app: XCUIApplication) {
@@ -1519,6 +1616,21 @@ final class BrowseSearchUITests: XCTestCase {
         }
 
         return element.exists && element.isHittable
+    }
+
+    private func waitUntilAnyButtonHittable(identifier: String, in app: XCUIApplication, timeout: TimeInterval) -> Bool {
+        let deadline = Date().addingTimeInterval(timeout)
+        let matches = app.buttons.matching(NSPredicate(format: "identifier == %@", identifier))
+
+        while Date() < deadline {
+            if matches.allElementsBoundByIndex.contains(where: { $0.exists && $0.isHittable }) {
+                return true
+            }
+
+            RunLoop.current.run(until: Date().addingTimeInterval(0.1))
+        }
+
+        return matches.allElementsBoundByIndex.contains(where: { $0.exists && $0.isHittable })
     }
 
     private func scrollUntilComfortablyVisible(_ element: XCUIElement, app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {

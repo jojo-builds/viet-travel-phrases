@@ -105,6 +105,31 @@ for (const [phraseID, override] of Object.entries(phraseOverrides)) {
 }
 
 const familyCopyOverrides = {
+  "repair-slower": {
+    summary: "Ask someone to slow down without making the exchange feel tense.",
+    atGlance: "Use Nói chậm chút được không? when Vietnamese is coming too quickly and repeating the same speed will not help. It keeps the exchange cooperative while asking for a slower second pass.",
+    standard: "Say Nói chậm chút được không? once, then pause. Watch for a slower repeat, a gesture toward the object, or a move to writing on paper or a phone.",
+    when: "Use this at counters, rides, hotel desks, markets, or anywhere the answer matters but the speed is too fast. Ask early, while the moment still feels friendly.",
+    why: "A slower repeat is often more useful than another full-speed answer. This phrase gives the other person a clear repair path: slow down, point, write, or show the detail.",
+    watch: "Tone matters here. Curious and calm sounds like a request; sharp or repeated too many times can sound like a challenge.",
+    tip: "If the slower repeat still misses, point, write, or show the exact word. The goal is clarity, not winning the spoken exchange.",
+    travelerInsight: "The reply may come as slower Vietnamese, one important word, a pointed explanation, or writing. If speech still does not land, move quickly to showing the word or number on your phone.",
+    variation: "These versions change the pressure of the request. Pick the softer one for service counters and the shorter one when the person already understands what you need.",
+    exploreNext: "Use these when slower speech is still not enough and you need writing, meaning, repetition, or English help.",
+  },
+  "money-how-much": {
+    summary: "Save this for markets, seafood trays, taxis, and any cash moment where the price needs to be visible before you commit.",
+    atGlance: "Cái này bao nhiêu? is the pointing phrase for one visible thing: a mango, shirt, coffee, seafood tray, menu photo, or ride add-on. The phrase is small, but it protects the moment before money gets awkward.",
+    standard: "Point first, say Cái này bao nhiêu?, then wait for the number to be spoken, typed, or shown on a calculator. Keep the item visible until the price is clear.",
+    when: "Markets, snack stalls, small shops, beach seafood, laundry counters, and informal rides are where this earns its place. For several items, move to a total-price phrase before paying.",
+    why: "The useful part is timing. Ask before the bag is packed, the plate is weighed, or the ride has started, then repeat or show the number back so both sides see the same price.",
+    watch: "Confirm the final price before handing over cash or card, especially when several items, bags, or add-ons are involved.",
+    tip: "If the answer comes too fast, hand over your phone calculator or point to theirs. Numbers are easier to trust when both people can see them.",
+    travelerInsight: "The answer may be spoken fast, typed into a phone, shown on a calculator, or answered with a gesture. If the number matters, ask them to type it.",
+    variation: "Use these when the price question needs a softer tone, a total, or a clearer object. The pointing still does most of the work.",
+    youMayHear: "A vendor may answer with a fast number, a typed amount, or a short cash-only note. Pause until the amount is visible before you pay.",
+    exploreNext: "These are the next saves when the price turns into a total, a bargain, a cash/card question, or a number you need repeated.",
+  },
   "repair-write-down": {
     summary: "Written text often rescues numbers, names, room numbers, and addresses faster than more speech.",
     atGlance: "Written text often rescues numbers, names, room numbers, and addresses faster than more speech. Use this when you need the other person to give you something you can read, save, or show again.",
@@ -975,6 +1000,9 @@ function whyItMattersText(family, primaryPhrase) {
 }
 
 function travelerInsightText(family, primaryPhrase) {
+  const override = familyOverride(family);
+  if (override.travelerInsight) return override.travelerInsight;
+
   const teaching = intentTeaching(primaryPhrase);
   const scenario = scenarioByID.get(family.scenarioID);
   const categoryName = scenario?.title ?? "this situation";
@@ -1624,7 +1652,7 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
     title: "Xin chào",
     englishTitle: "Hello",
     pronunciation: "sin chow",
-    summary: "Hello (universal greeting)",
+    summary: "A safe first hello for shops, hotels, tours, and any moment where the relationship word is not obvious yet.",
     iconName: "star.fill",
     tintName: "red",
     categoryIDs: categoryIDsForPage(pageID, family),
@@ -1632,13 +1660,13 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
     sections: withSectionPresentations([
       {
         id: "at-glance",
-        title: "At a glance",
-        body: "Use Xin chào as the safe first hello in shops, hotels, tours, and simple requests. It lets you start warmly without guessing a relationship word.",
+        title: "Start Safe, Then Warm Up",
+        body: "Xin chào is the clean first hello when you walk into a shop, hotel, tour desk, or small request. It buys you a polite opening before you decide whether anh, chị, cô, chú, or a simpler chào fits better.",
       },
       {
         id: "quick-say",
-        title: "Quick say",
-        body: "Use Xin chào when you want one safe greeting. Use Chào in relaxed moments, especially with someone you already know or when you add a relationship word.",
+        title: "The First Hello",
+        body: "Start with Xin chào when the relationship is unclear. Drop to Chào when the moment is relaxed, or add the right relationship word when the person in front of you is obvious.",
         phrases: [
           phraseOption(primaryPhrase, null, "red"),
           manualPhraseOption("xin-chao-casual-chao", "Chào", "Hi / hello (casual)", "chow", "orange"),
@@ -1647,7 +1675,7 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
       {
         id: "breakdown",
         title: "Break it down",
-        body: "Xin gives the greeting a polite shape, chào carries the hello, and the full phrase is the safest default when you do not know the relationship word yet.",
+        body: "Xin gives the greeting its polite shape. Chào carries the hello. Together they keep the opening respectful without forcing you to guess age, role, or closeness too early.",
         breakdown: [
           { id: "xin", vietnamese: "Xin", english: "polite opening", audioKey: authoredBreakdownAudioKey("Xin") },
           { id: "chao", vietnamese: "chào", english: "greet / hello", audioKey: authoredBreakdownAudioKey("chào") },
@@ -1656,14 +1684,14 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
       },
       {
         id: "when-to-use",
-        title: "Where it helps",
-        body: "Use Xin chào for first contact: a shop, front desk, guide, or polite request. In warmer moments, Chào plus the right relationship word sounds more local.",
+        title: "Where It Helps",
+        body: "Use it at first contact: front desk, shop counter, guide pickup, cafe order, or polite question. If the exchange becomes warmer, the next phrase can carry the relationship word.",
         presentation: "plain-text",
       },
       {
         id: "situational-greetings",
-        title: "Situational greetings",
-        body: "Use these when the setting is more specific: a friend, a respectful adult, a phone call, or a time-of-day greeting.",
+        title: "When The Room Gives You More",
+        body: "These greetings fit once the setting is clearer: a familiar person, a respectful older adult, a phone call, or a time-of-day exchange.",
         presentation: "horizontal-phrase-cards",
         phrases: [
           manualPhraseOption("xin-chao-friend", "Chào bạn", "Hi, friend", "chow ban", "orange"),
@@ -1675,8 +1703,8 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
       },
       {
         id: "local-greetings",
-        title: "How locals actually greet",
-        body: "Pick the relationship word when the person's role is clear; stay with Xin chào when unsure. These words show age, respect, and social distance.",
+        title: "Relationship Words Matter",
+        body: "Vietnamese greetings often show age, respect, and social distance. Stay with Xin chào when unsure; choose anh, chị, em, cô, chú, ông, or bà only when the role feels clear enough.",
         phrases: [
           manualPhraseOption("xin-chao-anh", "Chào anh", "Hello, older brother / slightly older man", "chow anh", "blue"),
           manualPhraseOption("xin-chao-chi", "Chào chị", "Hello, older sister / slightly older woman", "chow chee", "red"),
@@ -1689,8 +1717,8 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
       },
       {
         id: "common-follow-ups",
-        title: "Common follow-ups",
-        body: "After hello, small talk often checks health, movement, or the social moment. Use these when the exchange has room to continue.",
+        title: "If The Hello Continues",
+        body: "After hello, the next beat is usually practical or social: checking in, asking where to go, or moving into the actual request.",
         phrases: [
           catalogPhraseOption("smalltalk-7", "viet-how-are-you", "red"),
           manualPhraseOption("xin-chao-where-going", "Đi đâu đấy?", "Where are you going?", "dee dow day", "red"),
@@ -1699,20 +1727,20 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
       },
       {
         id: "cultural-note",
-        title: "Cultural note",
-        body: "You do not need to guess perfectly. A calm Xin chào works almost everywhere; adding anh, chị, em, cô, chú, ông, or bà can sound warmer.",
+        title: "You Do Not Need The Perfect Word",
+        body: "A calm Xin chào is better than freezing while you calculate the perfect relationship term. Smile, keep the greeting simple, then let the next phrase do the work.",
         presentation: "tip-callout",
       },
       {
         id: "good-to-know",
-        title: "Good to know",
-        body: "If you are unsure, do not freeze. Start with Xin chào, smile, and let the rest of the sentence carry the practical need.",
+        title: "Good To Know",
+        body: "If someone answers with a warmer chào plus a relationship word, you can mirror the energy without copying every word exactly.",
         presentation: "tip-callout",
       },
       {
         id: "explore-next",
-        title: "Explore next",
-        body: "Use these next when the conversation moves one step forward.",
+        title: "Keep The Exchange Moving",
+        body: "Use these when the hello has opened the door and you need the next small move.",
         phrases: [
           catalogPhraseOption("polite-2", "viet-thank-you", "green"),
           catalogPhraseOption("polite-5", "viet-excuse-sorry", "blue"),
@@ -1871,6 +1899,10 @@ function pageForFamily(family, childPageIDsByPhraseID) {
 
   const variationsSection = naturalVariationSection(family, variantOptions);
   if (variationsSection) {
+    const override = familyOverride(family);
+    if (override.variation) {
+      variationsSection.body = override.variation;
+    }
     sections.push(variationsSection);
   }
 
@@ -1928,17 +1960,19 @@ function pageForFamily(family, childPageIDsByPhraseID) {
   }
 
   if (primaryPhrase.youMayHear) {
+    const override = familyOverride(family);
     sections.push({
       id: "you-may-hear",
-      title: "You may hear",
-      body: `A local may answer with: ${primaryPhrase.youMayHear}`,
+      title: "You May Hear",
+      body: override.youMayHear ?? `A local may answer with: ${primaryPhrase.youMayHear}`,
     });
   }
 
+  const override = familyOverride(family);
   sections.push({
     id: "explore-next",
-    title: "Explore next",
-    body: "Use these next when the conversation moves one step forward.",
+    title: override.exploreNextTitle ?? "Explore next",
+    body: override.exploreNext ?? "Use these next when the conversation moves one step forward.",
     phrases: exploreNextPhraseOptions(family, sections, pageID, primaryPhrase, 8),
   });
 
@@ -1951,7 +1985,7 @@ function pageForFamily(family, childPageIDsByPhraseID) {
     title: primaryPhrase.targetText,
     englishTitle: primaryPhrase.englishText,
     pronunciation: primaryPhrase.pronunciation,
-    summary: travelerFacingSummary(primaryPhrase),
+    summary: familyOverride(family).summary ?? travelerFacingSummary(primaryPhrase),
     iconName: scenario?.symbolName ?? "text.bubble.fill",
     tintName: tintForScenario(family.scenarioID),
     categoryIDs: categoryIDsForPage(pageID, family),
@@ -3546,6 +3580,15 @@ function preservesHandwrittenCityEditorial(page) {
     && page.cityMetadata?.editorialReviewStatus === "handwritten-reviewed";
 }
 
+const preservedPhraseEditorialFamilyIDs = new Set([
+  "money-how-much",
+]);
+
+function preservesHandwrittenPhraseEditorial(page) {
+  return page.tierRole === "tier1"
+    && preservedPhraseEditorialFamilyIDs.has(page.familyID);
+}
+
 function authoredCitySectionBody(page, sectionID) {
   const body = cleanTravelerBody((page.sections || []).find((section) => section.id === sectionID)?.body || "");
   if (!body) return "";
@@ -4245,6 +4288,25 @@ function shouldKeepSectionForProfile(section, profile, page = null, phraseRole =
     return (keepByProfile[profile] || keepByProfile.place).has(section.id);
   }
 
+  if (profile === "phrase" && phraseRole === "traveler_says" && preservesHandwrittenPhraseEditorial(page)) {
+    const keepIDs = new Set([
+      "at-glance",
+      "standard-way",
+      "breakdown",
+      "natural-variations",
+      "why-it-matters",
+      "traveler-insight",
+      "when-to-use",
+      "good-to-know",
+      "local-tip",
+      "you-may-hear",
+      "explore-next",
+    ]);
+    if (!keepIDs.has(section.id)) return false;
+    if (section.id === "breakdown") return hasBreakdown;
+    return hasRows || String(section.body ?? "").trim().length > 0;
+  }
+
   if (profile === "phrase" && phraseRole === "traveler_says" && isHeroRepeatSectionForGeneratedPage(section, page)) {
     return false;
   }
@@ -4295,7 +4357,7 @@ const sectionOrderByProfile = {
   restaurant: ["at-glance", "place-brief", "use-it-with", "when-to-use", "inside-the-place", "good-to-know", "quick-say", "table-menu", "before-you-go", "menu-dietary", "breakdown"],
   dish: ["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"],
   "derived-place-phrase": ["breakdown", "related-phrases", "good-to-know"],
-  phrase: ["at-glance", "quick-say", "standard-way", "breakdown", "natural-variations", "traveler-insight", "what-happens-next", "you-may-hear", "practice-pairs", "good-to-know", "nearby-phrases", "explore-next"],
+  phrase: ["at-glance", "quick-say", "standard-way", "breakdown", "natural-variations", "why-it-matters", "traveler-insight", "when-to-use", "local-tip", "what-happens-next", "you-may-hear", "practice-pairs", "good-to-know", "nearby-phrases", "explore-next"],
 };
 
 function phraseDedupKey(option) {
@@ -4649,12 +4711,13 @@ function sanitizeAuthoredPage(page) {
   const phraseRole = phraseRoleForPage(page, profile);
   const sections = (page.sections || []).filter((section) => shouldKeepSectionForProfile(section, profile, page, phraseRole));
   const preserveCityEditorial = preservesHandwrittenCityEditorial(page);
+  const preservePhraseEditorial = preservesHandwrittenPhraseEditorial(page);
   const sanitizedSections = rewriteBaNaHillsJourneySections(page, normalizeTravelerSections(page, sections.map((section) => ({
     ...section,
-    title: preserveCityEditorial
+    title: preserveCityEditorial || preservePhraseEditorial
       ? cleanFinalPunctuation(section.title || "")
       : cleanTravelerSectionTitle(section.title, { ...page, __currentSectionID: section.id, __phraseRole: phraseRole }),
-    body: preserveCityEditorial
+    body: preserveCityEditorial || preservePhraseEditorial
       ? cleanFinalPunctuation(section.body || "")
       : isNameBasedProfile(profile) ? shortenBodyForMobile(adultNameSectionBody(page, section, profile)) : shortenBodyForMobile(phraseSectionBody(page, section, phraseRole)),
     phrases: curatedSectionPhrases(page, section, profile, phraseRole).map((phrase) => ({
@@ -4683,7 +4746,7 @@ function sanitizeAuthoredPage(page) {
 
   return {
     ...page,
-    summary: preserveCityEditorial
+    summary: preserveCityEditorial || preservePhraseEditorial
       ? cleanFinalPunctuation(page.summary || "")
       : profile === "derived-place-phrase"
       ? cleanFinalPunctuation(page.englishTitle || page.summary || "")

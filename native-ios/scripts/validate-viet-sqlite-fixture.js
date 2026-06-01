@@ -934,7 +934,7 @@ function main() {
   );
   assertEqual(
     sqliteValue("SELECT summary FROM phrase_page WHERE id = 'viet-phrase-polite-1';"),
-    "Hello (universal greeting)",
+    "A safe first hello for shops, hotels, tours, and any moment where the relationship word is not obvious yet.",
     "Xin chào flagship summary"
   );
   for (const [aliasID, canonicalPageID] of requiredLegacyNativePageAliases) {
