@@ -341,7 +341,7 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertEqual(page.id, "viet-phrase-polite-1")
         XCTAssertEqual(page.title, "Xin chào")
         XCTAssertEqual(page.englishTitle, "Hello")
-        XCTAssertEqual(page.summary, "Hello (universal greeting)")
+        XCTAssertEqual(page.summary, "A safe first hello for shops, hotels, tours, and any moment where the relationship word is not obvious yet.")
         XCTAssertEqual(page.sections.map(\.id), [
             "at-glance",
             "breakdown",
