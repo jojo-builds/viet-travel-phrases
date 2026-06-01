@@ -15,7 +15,6 @@ enum SearchReturnFocusPolicy {
 }
 
 struct SearchPageView: View {
-    @Environment(\.dismissSearch) private var dismissSystemSearch
     @Binding private var query: String
     @State private var selectedFilter: SearchResultFilter = .all
     @State private var searchResults: SearchPageResults
@@ -259,7 +258,6 @@ struct SearchPageView: View {
 
     private func dismissSearchFromContent() {
         onDismissSearchFocus()
-        dismissSystemSearch()
     }
 
     private static func phraseResultScrollID(for pageID: String) -> String {
