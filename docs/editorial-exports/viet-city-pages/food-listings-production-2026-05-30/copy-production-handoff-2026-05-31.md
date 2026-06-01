@@ -230,3 +230,15 @@ Eleventh repair batch, 2026-06-01:
 - Added rendered proof `subagent-hardblock-repair-003-results.jsonl`: `1` old-house rerun, `3` screenshots, `0` failures.
 - Combined latest-current rendered proof is now `293` unique pages, `879` screenshots, `0` current failures.
 - Global status remains not complete: `227` V2.2 pages still need current rendered proof unless the standard is amended.
+
+Twelfth proof / humanization batch, 2026-06-01:
+
+- Continued the literal V2.2 screenshot gate with the next `40` unproved manifest pages, all in the Hanoi band.
+- Added rendered proof `missing-pages-proof-002-results.jsonl`: `40` previously unrendered Hanoi pages, `120` screenshots, `0` failures.
+- Human-read the rendered slice and repaired validating-but-stiff copy in authored V2.2 source: `carry the visit`, `draw`, `register`, `spine`, plus the grammar error `A Eel-Noodle Bowl`.
+- Repaired pages included the Hanoi phở cluster, French Quarter, Old Quarter, Long Biên bridge/market, Năng Cafe, One Pillar Pagoda, Temple of Literature, Chả Cá Thăng Long, egg coffee, and related Ba Đình/landmark pages.
+- Regenerated V2.2 handwritten copy, native authored listing pages, phrase catalog, and SQLite.
+- Current validators pass again: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Added current-text rendered proof `missing-pages-humanized-rerun-002-results.jsonl`: `18` edited Hanoi pages, `54` screenshots, `0` failures.
+- Combined latest-current rendered proof is now `333` unique pages, `999` screenshots, `0` current failures.
+- Global status remains not complete: `187` V2.2 pages still need current rendered proof unless the standard is amended.

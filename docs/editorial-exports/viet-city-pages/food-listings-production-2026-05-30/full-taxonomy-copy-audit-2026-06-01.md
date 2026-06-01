@@ -356,3 +356,24 @@ Rendered proof after this repair batch:
 - Added `subagent-hardblock-repair-003-results.jsonl`: `1` fresh rerun for `city-hoian-place-duc-an-old-house` after the final `carry the stop` cleanup, `3` screenshots, `0` failures.
 - Combined latest-current proof is now `293` unique pages, `879` screenshots, and `0` current failures.
 - Remaining global proof gap: `227` pages still need current rendered screenshots unless the gate is explicitly amended.
+
+## Twelfth Missing-Page Proof / Hanoi Humanization Batch, 2026-06-01
+
+This batch continued the literal rendered proof gate by taking the next `40` unproved pages from the manifest, rather than cherry-picking easier pages. The slice was entirely Hanoi because Hanoi was the first remaining city band in manifest order.
+
+Rendered proof:
+
+- Added `missing-pages-proof-002-results.jsonl`: `40` previously unrendered Hanoi pages, `120` screenshots, `0` failures.
+- Scope included restaurant, drink, neighborhood, attraction, station, landmark, nature, market, dish, cafe, museum, and park pages. The slice covered the Hanoi phở cluster, French Quarter, Old Quarter, Ba Đình/temple landmarks, coffee pages, transit pages, and museum/market pages.
+
+Human readability review:
+
+- The rendered pages passed structurally, but text review still found validating-but-stiff language: `carry the visit`, `draw`, `register`, `spine`, plus the grammar error `A Eel-Noodle Bowl`.
+- Repaired the affected authored V2.2 source pages in `hanoi.json`, then regenerated handwritten copy, native authored listing pages, phrase catalog, and SQLite.
+- Current validators pass again: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Added `missing-pages-humanized-rerun-002-results.jsonl`: `18` edited Hanoi pages, `54` screenshots, `0` failures.
+
+Updated proof state:
+
+- Combined latest-current proof is now `333` unique pages, `999` screenshots, and `0` current failures.
+- Remaining global proof gap: `187` pages still need current rendered screenshots unless the gate is explicitly amended.

@@ -86,7 +86,12 @@ Category-balanced batch:
   - Scope: current repaired Danang food/cafe/arrival/river/market/street/port pages, HCMC show/river/restaurant/neighborhood pages, and Hội An assembly hall/old-house/restaurant pages.
   - Note: this file includes one accidental but passing Espresso Station row because the proof runner skips offsets already passed in the same result file.
   - `subagent-hardblock-repair-003-results.jsonl`: `1` edited old-house page rerun after final wording cleanup, `3` screenshots, `0` failures.
-- Combined latest-current proof across the maintained result files is `293` unique pages, `879` screenshots, and `0` current failures. Total historical proof rows in this folder include `444` rows and `1332` screenshots, but the current count uses the latest passing row for each page.
+- Missing-pages proof 002:
+  - `missing-pages-proof-002-results.jsonl`: `40` previously unrendered Hanoi pages, `120` screenshots, `0` failures.
+  - Scope: Hanoi restaurants, drink, neighborhoods, attractions, stations, landmarks, nature, markets, dishes, cafes, museum, and park pages, including the phở cluster, French Quarter, Old Quarter, coffee pages, and Ba Đình/temple landmarks.
+  - Text review after this batch found validating-but-stiff copy: `carry the visit`, `draw`, `register`, `spine`, and the grammar error `A Eel-Noodle Bowl`. Those were repaired in authored V2.2 source and regenerated.
+  - `missing-pages-humanized-rerun-002-results.jsonl`: `18` edited Hanoi pages rerun after copy repair, `54` screenshots, `0` failures.
+- Combined latest-current proof across the maintained result files is `333` unique pages, `999` screenshots, and `0` current failures. Total historical proof rows in this folder include `502` rows and `1506` screenshots, but the current count uses the latest passing row for each page.
 
 This is a meaningful rendered proof expansion, not the final 520-page receipt. The final gate still needs either all `520` pages captured by this harness or an explicit approval-standard amendment accepting full source/runtime review plus category-balanced rendered proof.
 
@@ -115,19 +120,19 @@ Category coverage in manifest:
 
 Remaining current proof gap after the latest recompute:
 
-- total missing: `227`
-- attraction: `28`
-- cafe: `16`
-- dish: `23`
+- total missing: `187`
+- attraction: `23`
+- cafe: `14`
+- dish: `19`
 - drink: `1`
-- landmark: `45`
-- market: `19`
-- museum: `19`
-- nature: `10`
-- neighborhood: `13`
+- landmark: `37`
+- market: `16`
+- museum: `18`
+- nature: `9`
+- neighborhood: `10`
 - park: `4`
-- restaurant: `31`
+- restaurant: `21`
 - river: `1`
-- station: `5`
+- station: `3`
 - street: `11`
 - village: `1`
