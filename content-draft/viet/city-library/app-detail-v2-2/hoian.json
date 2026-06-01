@@ -8743,8 +8743,8 @@
       "city": "Hội An",
       "category": "Landmark",
       "pronunciation": "nha co quan thang",
-      "travelerMoment": "Quan Thang Old House turns Hội An's heritage-house story toward carved wood, doorway detail, side light, and rooms that reward close looking.",
-      "storySpine": "Quan Thang Old House makes Hội An architecture specific through an interior-and-doorway memory, distinct from broader street wandering.",
+      "travelerMoment": "Quan Thang Old House is one of Hội An's preserved old merchant houses, where carved wood, doorway detail, side light, and small rooms reward close looking.",
+      "storySpine": "It helps visitors notice the old merchant-house details they might miss from the street.",
       "intro": {
         "heading": "Carved Wood In Focus",
         "body": "Quan Thang Old House brings Hội An’s heritage houses into carved-wood focus: old yellow walls, doorway detail, soft side light, rooms, and street-level detail."
@@ -8789,7 +8789,7 @@
         {
           "id": "doorway-before-checklist",
           "heading": "Doorway Before Checklist",
-          "body": "Give the carved wood attention before the next errand pulls you away. Doorway carvings and inner rooms matter more than a checklist."
+          "body": "Pause at the carved wood before the next errand pulls you away. Doorway carvings and inner rooms give the house its clearest close-up details."
         },
         {
           "id": "carved-wood-is-the-memory",
@@ -8800,11 +8800,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
-          "label": "Cầu An Hội",
-          "relationship": "river-crossing hinge",
-          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Related because: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "catalogId": "viet-family-city-hoian-place-tan-ky-old-house",
+          "label": "Nhà cổ Tấn Ký",
+          "relationship": "old-house comparison",
+          "displaySubtitle": "Another preserved old merchant house for beams, narrow rooms, and trade-era interiors.",
+          "reason": "Tan Ky is a stronger old-house comparison than a bridge for Quan Thang.",
           "status": "render"
         }
       ],
@@ -8855,8 +8855,8 @@
       "city": "Hội An",
       "category": "Cafe",
       "pronunciation": "reaching out tea house",
-      "travelerMoment": "Reaching Out Tea House connects Hội An's old-house hush with a social-enterprise welcome, where tea, handmade cups, notes, and soft gestures guide the visit.",
-      "storySpine": "It sits in Hội An because the old-town hush is specific: silent service, handmade teaware, and a social purpose that changes the usual cafe rhythm.",
+      "travelerMoment": "Reaching Out Tea House connects Hội An's old-house hush with a quiet teahouse that has a social mission, where tea, handmade cups, notes, and soft gestures guide the visit.",
+      "storySpine": "It sits in Hội An because the old-town hush is specific: orders are handled with notes and gestures, so the room stays calm.",
       "intro": {
         "heading": "Hush, Then Tea",
         "body": "Reaching Out Tea House is a social-enterprise teahouse in Hội An, where tea, handmade cups, table notes, and gentle gestures turn a drink break into a real hush."
@@ -8915,7 +8915,7 @@
           "catalogId": "viet-family-city-hoian-place-mot-herbal-drink",
           "label": "Nước Mót ở Hội An",
           "relationship": "quiet-drink contrast",
-          "displaySubtitle": "A street-side herbal drink for the pause quicker and more public.",
+          "displaySubtitle": "A quicker, more public street-side herbal drink stop.",
           "reason": "Mot gives Reaching Out a useful drink-ritual contrast.",
           "status": "render"
         }
@@ -9116,7 +9116,7 @@
         {
           "id": "a-ride-more-than-a-stop",
           "heading": "A Ride Through The Fields",
-          "body": "The fields work as movement: a bike path, a slow detour, a sunrise edge, or an open view between town and village."
+          "body": "The fields make most sense while moving: by bike, on a slow detour, or from an open view between town and village."
         },
         {
           "id": "between-town-and-village",
@@ -9131,7 +9131,7 @@
         {
           "id": "respect-working-land",
           "heading": "Respect Working Land",
-          "body": "Paths and edges are part of daily work, working land before scenery. Stay on clear routes and keep photos considerate."
+          "body": "These are working fields, not just scenery. Stay on clear paths and keep photos considerate."
         }
       ],
       "mentionedHereCandidates": [],
@@ -9252,7 +9252,7 @@
           "catalogId": "viet-family-city-hoian-place-espresso-station",
           "label": "The Espresso Station",
           "relationship": "coffee-quality comparison",
-          "displaySubtitle": "A smaller coffee-first room when the drink should matter more than the chain footprint.",
+          "displaySubtitle": "A smaller coffee-focused stop when you care more about the drink than a quick break.",
           "reason": "Espresso Station is the independent coffee comparison for Hoi An Roastery.",
           "status": "render"
         }
@@ -9418,11 +9418,11 @@
       "city": "Hội An",
       "category": "Museum",
       "pronunciation": "bao tang van hoa sa huynh",
-      "travelerMoment": "The Sa Huynh Culture Museum reaches beneath Hội An's lantern image to older central-Vietnam history: pottery, burial pieces, artifacts, and small cases.",
+      "travelerMoment": "The Sa Huynh Culture Museum reaches beneath Hội An's lantern image to an ancient central-Vietnam culture, with pottery, burial objects, artifacts, and small cases.",
       "storySpine": "Hội An needs more than exterior charm, and this museum points toward older cultures behind the town’s later trading identity.",
       "intro": {
         "heading": "Older Than The Street Scene",
-        "body": "Museum of Sa Huynh Culture is a compact way to add older depth to Hội An: pottery, artifacts, and small cases that pull the town beyond lanterns and shopfronts."
+        "body": "Museum of Sa Huynh Culture adds older depth to Hội An. Sa Huynh refers to an ancient culture from central Vietnam, and the small rooms focus on pottery, burial objects, and everyday artifacts."
       },
       "usefulPhraseCards": [
         {
@@ -9535,7 +9535,7 @@
       "storySpine": "Hội An is known for clothing and tailoring, and the village visit lets fabric feel like a craft before it becomes a garment.",
       "intro": {
         "heading": "Before The Tailor Mirror",
-        "body": "Hội An Silk Village puts tailoring culture back at the fabric stage: looms, yarn spools, silk rooms, and a slower look at what sits behind the old-town tailor appointment."
+        "body": "Hội An Silk Village shows what comes before a tailor fitting: silk thread, looms, fabric texture, and how cloth becomes clothing."
       },
       "usefulPhraseCards": [
         {
@@ -9591,8 +9591,8 @@
           "catalogId": "viet-family-city-hoian-place-tailor-fitting",
           "label": "Thử đồ may đo Hội An",
           "relationship": "silk-to-tailoring workflow",
-          "displaySubtitle": "The fitting-step page for turning silk history into an actual made-to-measure plan.",
-          "reason": "Related because: The fitting-step page for turning silk history into an actual made-to-measure plan.",
+          "displaySubtitle": "A practical stop for measurements, alterations, and pickup timing after you choose fabric.",
+          "reason": "Tailor fitting is the practical next step after learning how silk becomes cloth.",
           "status": "render"
         }
       ],
@@ -9644,11 +9644,11 @@
       "city": "Hội An",
       "category": "Cafe",
       "pronunciation": "streets restaurant cafe",
-      "travelerMoment": "STREETS Restaurant Cafe gives Hội An a training-restaurant meal, where the room, staff rhythm, and purpose behind the table matter alongside the food.",
+      "travelerMoment": "STREETS Restaurant Cafe gives Hội An a restaurant with a social-training mission, where the room, staff rhythm, and purpose behind the table matter alongside the food.",
       "storySpine": "Hội An has many food choices, and this one gives the restaurant list a social-training story without needing promotional language.",
       "intro": {
         "heading": "A Meal With A Purposeful Room",
-        "body": "STREETS Restaurant Cafe gives Hội An a meal with a training-restaurant angle: simple tables, a settled dining room, and a purpose beyond a random cafe break."
+        "body": "STREETS Restaurant Cafe gives Hội An a seated meal where the restaurant's training mission is part of the experience: simple tables, a settled dining room, and a clear purpose behind the room."
       },
       "usefulPhraseCards": [
         {
@@ -9758,7 +9758,7 @@
       "category": "Market",
       "pronunciation": "thu do may do hoi an",
       "travelerMoment": "A Hội An tailor fitting is the practical middle of the city's clothing story: measurements checked, hems adjusted, fabric reconsidered, and pickup time becoming real.",
-      "storySpine": "Tailoring is one of Hội An’s durable visitor rituals, and the fitting is the moment that prevents a rushed final pickup.",
+      "storySpine": "Hội An is known for custom clothes, and the fitting is where small changes make the final piece work.",
       "intro": {
         "heading": "Where Custom Becomes Real",
         "body": "A Hội An tailor appointment is where custom clothing becomes practical: fabric on the table, measurements checked, small adjustments, and a clearer deadline before pickup."
@@ -9817,7 +9817,7 @@
           "catalogId": "viet-family-city-hoian-place-bebe-tailor",
           "label": "BeBe Tailor",
           "relationship": "tailor workflow shop",
-          "displaySubtitle": "A named tailor when the fitting-step needs a concrete shop context.",
+          "displaySubtitle": "A named tailor option when you want a real shop for measurements, alterations, and pickup.",
           "reason": "BeBe Tailor gives the tailor-fitting page a concrete shop context.",
           "status": "render"
         }
@@ -9906,7 +9906,7 @@
         {
           "id": "wood-depth-and-memory",
           "heading": "Wood, Depth, And Memory",
-          "body": "The visit is about close looking. Notice beams, thresholds, inner rooms, and how a narrow house creates depth."
+          "body": "The visit is about close looking. Notice beams, door frames, inner rooms, and how a narrow house creates depth."
         },
         {
           "id": "part-of-a-heritage-walk",
@@ -9927,11 +9927,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
-          "label": "Cầu An Hội",
-          "relationship": "river-crossing hinge",
-          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Related because: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "catalogId": "viet-family-city-hoian-place-quan-thang-old-house",
+          "label": "Nhà cổ Quân Thắng",
+          "relationship": "old-house comparison",
+          "displaySubtitle": "Another preserved old merchant house for carved wood, doorways, and close interior detail.",
+          "reason": "Quan Thang is a stronger old-house comparison than a bridge for Tan Ky.",
           "status": "render"
         }
       ],
@@ -10098,7 +10098,7 @@
       "storySpine": "Hội An’s food day reaches past old-town rooms; a rice-field meal pulls dinner into the landscape.",
       "intro": {
         "heading": "Dinner Beside The Fields",
-        "body": "The Field Hội An makes the meal part of the route: open air, rice-field edges, sunset light, and a table chosen for the view as much as the food."
+        "body": "The Field Hội An makes dinner feel connected to the countryside: open air, rice-field edges, sunset light, and a table chosen for the view as much as the food."
       },
       "usefulPhraseCards": [
         {
@@ -10130,7 +10130,7 @@
         {
           "id": "setting-first-menu-second",
           "heading": "View Before Menu",
-          "body": "Expect the setting to shape the memory. The field-side break is the reason to go, with the order chosen once you sit down."
+          "body": "Expect the setting to shape the memory. The field-side break is why this table stands out, with the order chosen once you sit down."
         },
         {
           "id": "a-slower-evening-meal",
@@ -10154,7 +10154,7 @@
           "catalogId": "viet-family-city-hoian-place-tra-que-village",
           "label": "Làng rau Trà Quế",
           "relationship": "field-to-farm route",
-          "displaySubtitle": "A herb-village route that connects dinner back to Hội An’s garden landscape.",
+          "displaySubtitle": "A nearby vegetable village that connects the meal back to Hội An's gardens and farm landscape.",
           "reason": "Related because: A herb-village route that connects dinner back to Hội An’s garden landscape.",
           "status": "render"
         }
@@ -10435,7 +10435,7 @@
       "storySpine": "Tra Que connects Hội An’s meals to a nearby working landscape, not just to restaurant counters and market bowls.",
       "intro": {
         "heading": "Herbs Before The Meal",
-        "body": "Tra Que Vegetable Village gives Hội An a working green visit: herb beds, irrigation channels, village homes, and morning work far from the old streets."
+        "body": "Tra Que Vegetable Village is a working farm village with herb beds, irrigation channels, homes, and morning field work far from the old streets."
       },
       "usefulPhraseCards": [
         {
@@ -10472,7 +10472,7 @@
         {
           "id": "before-lunch-or-after-a-ride",
           "heading": "Before Lunch Or After A Ride",
-          "body": "Pair it with a countryside ride, cooking-class day, or meal plan where herbs and greens are part of the story."
+          "body": "Pair it with a countryside ride, cooking class, or meal where you want to understand where the herbs and vegetables come from."
         },
         {
           "id": "morning-makes-it-clearer",

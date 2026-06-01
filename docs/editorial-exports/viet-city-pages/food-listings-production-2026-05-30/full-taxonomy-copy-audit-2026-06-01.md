@@ -449,3 +449,29 @@ Updated proof state:
 - Remaining global proof gap: `67` pages still need current rendered screenshots unless the gate is explicitly amended.
 - Remaining by city: Hội An `11`, Huế `56`.
 - Remaining by category: Landmark `23`, Cafe `7`, Nature `5`, Museum `6`, Market `5`, Restaurant `5`, Village `1`, Dish `4`, Neighborhood `3`, Attraction `3`, Street `3`, Station `2`.
+
+## Sixteenth Missing-Page Proof / Final Hội An And Huế Glossary-Readability Batch, 2026-06-01
+
+This batch continued the literal rendered proof gate and folded in the explicit first-time U.S. traveler rule from Jojo's `Bib Gourmand` feedback: if a term may be unfamiliar, the copy must explain it immediately in plain English or remove it and lead with concrete food/place utility.
+
+Rendered proof:
+
+- Added `missing-pages-proof-006-results.jsonl`: `40` previously unrendered pages, `120` screenshots, `0` failures.
+- Scope covered the final `11` Hội An proof-gap pages and the first `29` Huế proof-gap pages: old houses, tea/coffee/farm pages, silk/tailor pages, Huế dishes, tombs, Citadel landmarks, art spaces, chay dining, royal-object museums, river/night-walk pages, and the Nine Dynastic Urns.
+
+Human readability review:
+
+- Two read-only subagents audited the exact batch before render.
+- Hội An repairs explained or clarified `Sa Huynh`, social-mission teahouse language, training-restaurant language, preserved old merchant houses, and tailor-fitting flow. Old-house pages now relate to old houses instead of An Hội Bridge, and related-card subtitles no longer expose page/workflow wording.
+- Huế repairs explained or clarified `Cơm âm phủ`, `Cơm hến`, the former private palace area of the Forbidden Purple City, Princess Huyền Trân, `chay` as Vietnam's Buddhist vegetarian food tradition, Nguyễn as Vietnam's last royal dynasty, Nam Giao as an open-air royal ceremony site, and the Nine Dynastic Urns as bronze urns honoring Nguyễn emperors.
+- Additional cleanup removed `carry`, `draw`, `works as`, `reference point`, `route pairing`, `map point`, `axis/axial`, `not a`, and `works well` residues from the rendered slice.
+- Current validators pass again: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Targeted source/runtime scan is clean for `Bib Gourmand`, `MICHELIN`, and `Gourmand`.
+- Simulator build proof passed before render: `xcodebuild build-for-testing` for `SpeakLocalNative` on `SpeakLocal City Listings` returned `TEST BUILD SUCCEEDED`.
+
+Updated proof state:
+
+- Combined latest-current proof is now `493` unique pages, `1479` latest-current screenshots, and `0` current failures.
+- Remaining global proof gap: `27` pages still need current rendered screenshots unless the gate is explicitly amended.
+- Remaining by city: Huế `27`.
+- Remaining by category: Landmark `8`, Market `3`, Nature `3`, Restaurant `3`, Attraction `2`, Station `2`, Museum `2`, Street `2`, Cafe `1`, Neighborhood `1`.

@@ -282,3 +282,16 @@ Fifteenth proof / Hội An render and Huế preflight batch, 2026-06-01:
 - Built `SpeakLocalNative` for testing on the `SpeakLocal City Listings` simulator before render: `TEST BUILD SUCCEEDED`.
 - Combined latest-current rendered proof is now `453` unique pages, `1359` latest-current screenshots, `0` current failures.
 - Global status remains not complete: `67` V2.2 pages still need current rendered proof unless the standard is amended. Remaining pages are Hội An (`11`) and Huế (`56`).
+
+Sixteenth proof / final Hội An and Huế glossary-readability batch, 2026-06-01:
+
+- Continued the literal screenshot gate with the next `40` missing pages: the final `11` Hội An proof-gap pages plus the first `29` Huế pages.
+- Treated Jojo's `Bib Gourmand` screenshot feedback as a general production rule: a first-time U.S. visitor must not meet an unexplained award, local culture term, dish name, royal-history term, performance form, or app-internal route label.
+- Used two read-only subagents on the exact batch before render. The Hội An reviewer caught unexplained `Sa Huynh`, `social enterprise`, and `training restaurant` wording, wrong old-house related cards, and internal `fitting-step` / `route` subtitles. The Huế reviewer caught unexplained `Cơm âm phủ`, `Cơm hến`, `Forbidden Purple City`, `Huyền Trân`, `chay`, `Nguyễn Dynasty`, `Nam Giao`, and `Nine Dynastic Urns`, plus route/page-ish headings.
+- Repaired authored V2.2 source in `hoian.json` and `hue.json`, regenerated handwritten copy, native authored listing pages, phrase catalog, and SQLite.
+- Current validators pass again: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Targeted source/runtime scan is clean for `Bib Gourmand`, `MICHELIN`, and `Gourmand`.
+- Built `SpeakLocalNative` for testing on the `SpeakLocal City Listings` simulator: `TEST BUILD SUCCEEDED`.
+- Added rendered proof `missing-pages-proof-006-results.jsonl`: `40` previously unrendered pages, `120` screenshots, `0` failures.
+- Combined latest-current rendered proof is now `493` unique pages, `1479` latest-current screenshots, `0` current failures.
+- Global status remains not complete: `27` V2.2 pages still need current rendered proof unless the standard is amended. Remaining pages are all Huế.

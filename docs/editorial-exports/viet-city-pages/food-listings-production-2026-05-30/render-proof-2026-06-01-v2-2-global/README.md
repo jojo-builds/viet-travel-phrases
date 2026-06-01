@@ -106,7 +106,11 @@ Category-balanced batch:
   - Scope: Hội An neighborhoods, dishes, restaurants, Cham Islands / boat pages, cooking/bicycle/lantern attractions, assembly hall / bridge / temple landmarks, museums, markets, streets, cafes, and workshop pages.
   - Text review before render fixed wrong related cards, weak phrase-card fit, directive `Choose...` phrasing, `Route Rather Than Attraction`, `reference point`, and abstract museum/boat wording.
   - Huế source was also preflight-cleaned before the next render band, but those Huế pages still need screenshots.
-- Combined latest-current proof across the maintained result files is `453` unique pages, `1359` latest-current screenshots, and `0` current failures. Total historical proof rows in this folder include `645` rows and `1935` screenshots, but the current count uses the latest passing row for each page.
+- Missing-pages proof 006:
+  - `missing-pages-proof-006-results.jsonl`: `40` previously unrendered pages, `120` screenshots, `0` failures.
+  - Scope: the final `11` Hội An proof-gap pages plus the first `29` Huế pages, including old houses, tea/coffee/farm pages, Huế dishes, tombs, Citadel landmarks, art spaces, chay dining, royal-object museums, and river/night-walk pages.
+  - Text review before render followed the first-time U.S. traveler rule: unfamiliar terms must be explained immediately or replaced by concrete food/place utility. This batch added plain glosses for `Sa Huynh`, `Cơm âm phủ`, `Cơm hến`, `Forbidden Purple City`, `Princess Huyền Trân`, `chay`, `Nguyễn Dynasty`, `Nam Giao`, and `Nine Dynastic Urns`, and removed route/page-ish related-card copy.
+- Combined latest-current proof across the maintained result files is `493` unique pages, `1479` latest-current screenshots, and `0` current failures. Total historical proof rows in this folder include `685` rows and `2055` screenshots, but the current count uses the latest passing row for each page.
 
 This is a meaningful rendered proof expansion, not the final 520-page receipt. The final gate still needs either all `520` pages captured by this harness or an explicit approval-standard amendment accepting full source/runtime review plus category-balanced rendered proof.
 
@@ -135,17 +139,15 @@ Category coverage in manifest:
 
 Remaining current proof gap after the latest recompute:
 
-- total missing: `67`
-- by city: Hội An `11`, Huế `56`
-- attraction: `3`
-- cafe: `7`
-- dish: `4`
-- landmark: `23`
-- market: `5`
-- museum: `6`
-- nature: `5`
-- neighborhood: `3`
-- restaurant: `5`
+- total missing: `27`
+- by city: Huế `27`
+- attraction: `2`
+- cafe: `1`
+- landmark: `8`
+- market: `3`
+- museum: `2`
+- nature: `3`
+- neighborhood: `1`
+- restaurant: `3`
 - station: `2`
-- street: `3`
-- village: `1`
+- street: `2`

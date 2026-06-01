@@ -10,7 +10,7 @@
     "catalogPromotedPageCount": 770,
     "cityLibraryPageCount": 826,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-06-01T01:34:13.367Z"
+    "generatedAt": "2026-06-01T01:49:28.615Z"
   },
   "pages": [
     {
@@ -284193,7 +284193,7 @@
       "title": "Nhà cổ Quân Thắng",
       "englishTitle": "Quan Thang Old House",
       "pronunciation": "nha co quan thang",
-      "summary": "Quan Thang Old House turns Hội An's heritage-house story toward carved wood, doorway detail, side light, and rooms that reward close looking.",
+      "summary": "Quan Thang Old House is one of Hội An's preserved old merchant houses, where carved wood, doorway detail, side light, and small rooms reward close looking.",
       "heroImageName": "HeroCityHoianPlaceQuanThangOldHouse",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -284223,7 +284223,7 @@
           "vt-hoian",
           "vt-hoian-official"
         ],
-        "rationale": "Quan Thang Old House makes Hội An architecture specific through an interior-and-doorway memory, distinct from broader street wandering.",
+        "rationale": "It helps visitors notice the old merchant-house details they might miss from the street.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -284297,7 +284297,7 @@
         {
           "id": "when-to-use",
           "title": "Doorway Before Checklist",
-          "body": "Give the carved wood attention before the next errand pulls you away. Doorway carvings and inner rooms matter more than a checklist.",
+          "body": "Pause at the carved wood before the next errand pulls you away. Doorway carvings and inner rooms give the house its clearest close-up details.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -284364,7 +284364,7 @@
       "title": "Reaching Out Tea House",
       "englishTitle": "Reaching Out Tea House",
       "pronunciation": "reaching out tea house",
-      "summary": "Reaching Out Tea House connects Hội An's old-house hush with a social-enterprise welcome, where tea, handmade cups, notes, and soft gestures guide the visit.",
+      "summary": "Reaching Out Tea House connects Hội An's old-house hush with a quiet teahouse that has a social mission, where tea, handmade cups, notes, and soft gestures guide the visit.",
       "heroImageName": "HeroCityHoianPlaceReachOutTeaHouse",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -284395,7 +284395,7 @@
           "vt-hoian",
           "vt-hoian-official"
         ],
-        "rationale": "It sits in Hội An because the old-town hush is specific: silent service, handmade teaware, and a social purpose that changes the usual cafe rhythm.",
+        "rationale": "It sits in Hội An because the old-town hush is specific: orders are handled with notes and gestures, so the room stays calm.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -284795,7 +284795,7 @@
         {
           "id": "place-brief",
           "title": "A Ride Through The Fields",
-          "body": "The fields work as movement: a bike path, a slow detour, a sunrise edge, or an open view between town and village.",
+          "body": "The fields make most sense while moving: by bike, on a slow detour, or from an open view between town and village.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -284819,7 +284819,7 @@
         {
           "id": "good-to-know",
           "title": "Respect Working Land",
-          "body": "Paths and edges are part of daily work, working land before scenery. Stay on clear routes and keep photos considerate.",
+          "body": "These are working fields, not just scenery. Stay on clear paths and keep photos considerate.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -285222,7 +285222,7 @@
       "title": "Bảo tàng Văn hóa Sa Huỳnh",
       "englishTitle": "Museum of Sa Huynh Culture",
       "pronunciation": "bao tang van hoa sa huynh",
-      "summary": "The Sa Huynh Culture Museum reaches beneath Hội An's lantern image to older central-Vietnam history: pottery, burial pieces, artifacts, and small cases.",
+      "summary": "The Sa Huynh Culture Museum reaches beneath Hội An's lantern image to an ancient central-Vietnam culture, with pottery, burial objects, artifacts, and small cases.",
       "heroImageName": "HeroCityHoianPlaceSaHuynhCultureMuseum",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -285263,7 +285263,7 @@
         {
           "id": "at-glance",
           "title": "Older Than The Street Scene",
-          "body": "Museum of Sa Huynh Culture is a compact way to add older depth to Hội An: pottery, artifacts, and small cases that pull the town beyond lanterns and shopfronts.",
+          "body": "Museum of Sa Huynh Culture adds older depth to Hội An. Sa Huynh refers to an ancient culture from central Vietnam, and the small rooms focus on pottery, burial objects, and everyday artifacts.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -285434,7 +285434,7 @@
         {
           "id": "at-glance",
           "title": "Before The Tailor Mirror",
-          "body": "Hội An Silk Village puts tailoring culture back at the fabric stage: looms, yarn spools, silk rooms, and a slower look at what sits behind the old-town tailor appointment.",
+          "body": "Hội An Silk Village shows what comes before a tailor fitting: silk thread, looms, fabric texture, and how cloth becomes clothing.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -285564,7 +285564,7 @@
       "title": "STREETS Restaurant Cafe",
       "englishTitle": "STREETS Restaurant Cafe",
       "pronunciation": "streets restaurant cafe",
-      "summary": "STREETS Restaurant Cafe gives Hội An a training-restaurant meal, where the room, staff rhythm, and purpose behind the table matter alongside the food.",
+      "summary": "STREETS Restaurant Cafe gives Hội An a restaurant with a social-training mission, where the room, staff rhythm, and purpose behind the table matter alongside the food.",
       "heroImageName": "HeroCityHoianPlaceStreetsRestaurantCafe",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -285606,7 +285606,7 @@
         {
           "id": "at-glance",
           "title": "A Meal With A Purposeful Room",
-          "body": "STREETS Restaurant Cafe gives Hội An a meal with a training-restaurant angle: simple tables, a settled dining room, and a purpose beyond a random cafe break.",
+          "body": "STREETS Restaurant Cafe gives Hội An a seated meal where the restaurant's training mission is part of the experience: simple tables, a settled dining room, and a clear purpose behind the room.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -285767,7 +285767,7 @@
           "vt-hoian",
           "vt-hoian-official"
         ],
-        "rationale": "Tailoring is one of Hội An’s durable visitor rituals, and the fitting is the moment that prevents a rushed final pickup.",
+        "rationale": "Hội An is known for custom clothes, and the fitting is where small changes make the final piece work.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -285996,7 +285996,7 @@
         {
           "id": "place-brief",
           "title": "Wood, Depth, And Memory",
-          "body": "The visit is about close looking. Notice beams, thresholds, inner rooms, and how a narrow house creates depth.",
+          "body": "The visit is about close looking. Notice beams, door frames, inner rooms, and how a narrow house creates depth.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -286292,7 +286292,7 @@
         {
           "id": "at-glance",
           "title": "Dinner Beside The Fields",
-          "body": "The Field Hội An makes the meal part of the route: open air, rice-field edges, sunset light, and a table chosen for the view as much as the food.",
+          "body": "The Field Hội An makes dinner feel connected to the countryside: open air, rice-field edges, sunset light, and a table chosen for the view as much as the food.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -286339,7 +286339,7 @@
         {
           "id": "place-brief",
           "title": "View Before Menu",
-          "body": "Expect the setting to shape the memory. The field-side break is the reason to go, with the order chosen once you sit down.",
+          "body": "Expect the setting to shape the memory. The field-side break is why this table stands out, with the order chosen once you sit down.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -286805,7 +286805,7 @@
         {
           "id": "at-glance",
           "title": "Herbs Before The Meal",
-          "body": "Tra Que Vegetable Village gives Hội An a working green visit: herb beds, irrigation channels, village homes, and morning work far from the old streets.",
+          "body": "Tra Que Vegetable Village is a working farm village with herb beds, irrigation channels, homes, and morning field work far from the old streets.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -286860,7 +286860,7 @@
         {
           "id": "use-it-with",
           "title": "Before Lunch Or After A Ride",
-          "body": "Pair it with a countryside ride, cooking-class day, or meal plan where herbs and greens are part of the story.",
+          "body": "Pair it with a countryside ride, cooking class, or meal where you want to understand where the herbs and vegetables come from.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -304446,7 +304446,7 @@
       "title": "Cơm âm phủ ở Huế",
       "englishTitle": "Com am phu",
       "pronunciation": "com am phu",
-      "summary": "Cơm âm phủ brings Hue a playful rice-plate memory, with arranged egg, pork, herbs, vegetables, and sauce mixed from a dramatic name.",
+      "summary": "Cơm âm phủ brings Hue a playful rice-plate memory. The name is often translated as hell rice, but the plate itself is arranged egg, pork, herbs, vegetables, and sauce.",
       "heroImageName": "HeroCityHuePlaceComAmPhu",
       "iconName": "takeoutbag.and.cup.and.straw.fill",
       "tintName": "orange",
@@ -304487,8 +304487,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Rice Plate With Arrangement",
-          "body": "Com am phu is a Hue rice plate with sliced egg, pork, herbs, vegetables, and sauce arranged like a small puzzle before the opening bite.",
+          "title": "Hue's Arranged Rice Plate",
+          "body": "Com am phu is a Hue rice plate with a dramatic name often translated as hell rice. On the table it is approachable: sliced egg, pork, herbs, vegetables, and sauce arranged around rice.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -304618,7 +304618,7 @@
       "title": "Cơm hến ở Huế",
       "englishTitle": "Com hen",
       "pronunciation": "com hen",
-      "summary": "Cơm hến comes from Hue's river-food lineage, where tiny clams, rice, herbs, crunch, and chili make a compact city bowl. Cơm hến is a sharper rice-based Hue food memory than a plain lunch plate, with clams and crunchy toppings carrying the identity.",
+      "summary": "Cơm hến is a tiny-clam rice bowl tied to Hen Island and the Perfume River, with herbs, crunch, and chili packed into a compact Hue meal.",
       "heroImageName": "HeroCityHuePlaceComHen",
       "iconName": "takeoutbag.and.cup.and.straw.fill",
       "tintName": "orange",
@@ -304649,7 +304649,7 @@
           "vt-hue",
           "vt-hue-official"
         ],
-        "rationale": "Cơm hến is a sharper rice-based Hue food memory than a plain lunch plate, with clams and crunchy toppings carrying the identity.",
+        "rationale": "Cơm hến is a sharper rice-based Hue food memory than a plain lunch plate, with tiny clams, herbs, and crispy toppings giving the bowl its identity.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -305919,7 +305919,7 @@
         {
           "id": "good-to-know",
           "title": "Dish Before The Sights",
-          "body": "The market matters. Without the stalls around it, the phrase loses the part that makes the bowl specific to Hue.",
+          "body": "The market setting is what makes this bowl different from a regular bowl of bún bò. Steam, herbs, stools, and aisles stay part of the memory.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -306270,8 +306270,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "Heritage Route Breather",
-          "body": "It sits between heavier tomb or citadel visits when the day needs less visual pressure and a slower route feel.",
+          "title": "A Quieter Tomb Stop",
+          "body": "Place it between bigger tomb or Citadel visits when the day needs a calmer stop with trees, walls, and time to breathe.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -306517,7 +306517,7 @@
       "title": "Kỳ Đài Huế",
       "englishTitle": "Hue Flag Tower",
       "pronunciation": "ky dai hue",
-      "summary": "The Flag Tower gives Hue's royal enclosure its public face, with ramparts, plaza, river axis, and flag marking the Citadel approach.",
+      "summary": "The Flag Tower gives the walled Citadel a simple outdoor marker: flag, ramparts, open plaza, and the river nearby. The tower turns Hue's royal enclosure into a visible approach: flag, ramparts, plaza, stone, and open air before the gates.",
       "heroImageName": "HeroCityHuePlaceFlagTower",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -306558,7 +306558,7 @@
         {
           "id": "at-glance",
           "title": "The Citadel's Opening Marker",
-          "body": "Hue Flag Tower gives the Citadel approach a clear landmark: a tall flag above ramparts, a broad stone plaza, old walls, and the river-city axis nearby.",
+          "body": "Hue Flag Tower gives the Citadel approach a clear landmark: a tall flag above ramparts, a broad stone plaza, old walls, and the river nearby.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -306688,7 +306688,7 @@
       "title": "Tử Cấm Thành",
       "englishTitle": "Forbidden Purple City",
       "pronunciation": "tu cam thanh",
-      "summary": "The Forbidden Purple City carries Hue's story of presence and loss, where ruins, restored corridors, and garden hush leave gaps to notice.",
+      "summary": "The Forbidden Purple City shows Hue's story of presence and loss, where ruins, restored corridors, and garden hush leave gaps to notice.",
       "heroImageName": "HeroCityHuePlaceForbiddenPurpleCity",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -306729,7 +306729,7 @@
         {
           "id": "at-glance",
           "title": "Inner Royal Side",
-          "body": "Forbidden Purple City is the Citadel's inner royal side: palace ruins, restored corridors, garden shade, and visible gaps that show how much history has vanished.",
+          "body": "The Forbidden Purple City is the former private palace area inside Hue’s Citadel, now partly ruins and partly restored walkways, with gardens and empty spaces that make absence visible.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -306792,7 +306792,7 @@
         {
           "id": "when-to-use",
           "title": "Absence Counts Here",
-          "body": "The clearest look comes when you notice what remains and what is gone. Restored corridors, shaded gardens, and empty spaces all carry the story.",
+          "body": "The clearest look comes when you notice what remains and what is gone. Restored corridors, shaded gardens, and empty spaces all tell the story.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -307030,7 +307030,7 @@
       "title": "Lăng Gia Long",
       "englishTitle": "Tomb of Gia Long",
       "pronunciation": "lang gia long",
-      "summary": "Gia Long widens the imperial story into hills and water, where distance, guardians, and a softer landscape make the route deliberate.",
+      "summary": "Gia Long Tomb is a farther royal tomb set among hills, water, stone guardian figures, and broad grounds that need transport and time.",
       "heroImageName": "HeroCityHuePlaceGiaLongTomb",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -307060,7 +307060,7 @@
           "vt-hue",
           "vt-hue-official"
         ],
-        "rationale": "The tomb widens Hue's imperial story beyond city walls into hills, water, guardians, and a softer royal landscape.",
+        "rationale": "The tomb makes Hue feel wider than the central Citadel, with hills, water, stone guardians, and distance shaping the visit.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -307071,7 +307071,7 @@
         {
           "id": "at-glance",
           "title": "A Remote Royal Landscape",
-          "body": "Tomb of Gia Long is a more remote imperial landscape: low hills, reflective water, worn stone guardians, old paths, and a route that needs intention.",
+          "body": "Gia Long Tomb is a farther royal tomb set among hills, water, stone guardians, and broad grounds. It makes sense when you have transport, time, and appetite for a quieter landscape.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -307118,7 +307118,7 @@
         {
           "id": "place-brief",
           "title": "Water, Hills, Stone Guardians",
-          "body": "Expect a broader landscape than a quick gate visit. The grounds carry much of the meaning, so the route matters.",
+          "body": "Expect a broader landscape than a quick gate visit. The grounds hold much of the meaning, so the walking route matters.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -307231,7 +307231,7 @@
           "vt-hue",
           "vt-hue-official"
         ],
-        "rationale": "Hen Island carries a smaller river-side Hue identity: lanes, low houses, food traces, and morning light away from palace scale.",
+        "rationale": "Hen Island shows a smaller riverside Hue identity: lanes, low houses, food traces, and morning light away from palace scale.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -307312,8 +307312,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Lived-In, Not Staged",
-          "body": "The draw is ordinary scale. Houses, lanes, and water proximity carry more truth here than any single landmark.",
+          "title": "Everyday Island Scale",
+          "body": "The point is everyday island life: small lanes, houses, river edges, and the food history around tiny clams.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -307467,8 +307467,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "Boat-Route Pairing",
-          "body": "It pairs easily with Perfume River planning or nearby tomb routes, especially when the day can handle a slower sacred visit.",
+          "title": "Go With A River Boat Plan",
+          "body": "Come when a river boat is already part of the outing, so the temple, water, and arrival feel connected.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -307543,7 +307543,7 @@
       "title": "Đền Huyền Trân",
       "englishTitle": "Huyen Tran Princess Temple",
       "pronunciation": "den huyen tran",
-      "summary": "Huyen Tran adds wooded royal memory to Hue, with hillside courtyards, incense, red pillars, and a quieter sacred stop. The temple adds a sacred wooded stop to Hue through incense, courtyards, red pillars, shade, and local memory.",
+      "summary": "Huyen Tran Temple is a wooded hillside temple tied to Princess Huyền Trân, with courtyards, incense, shade, and a quieter sacred stop outside the center.",
       "heroImageName": "HeroCityHuePlaceHuyenTranTemple",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -307584,7 +307584,7 @@
         {
           "id": "at-glance",
           "title": "Hillside Temple Break",
-          "body": "Huyen Tran Princess Temple is a slower sacred visit on Hue's hillside edge: red pillars, incense smoke, courtyards, trees, and royal-memory atmosphere.",
+          "body": "Huyen Tran Temple is a wooded hillside temple tied to Princess Huyền Trân, a royal figure remembered in Hue. Expect courtyards, incense, shade, and a quieter sacred stop outside the center.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -307714,7 +307714,7 @@
       "title": "Kinh thành Huế",
       "englishTitle": "Hue Imperial City",
       "pronunciation": "king tahn hweh",
-      "summary": "The Imperial City is Hue's capital story made walkable: walls, gates, courtyards, palaces, temples, and the scale of Nguyen rule. The Imperial City gives Hue its main historical center: gates, palace grounds, dynastic memory, and the scale of a former capital.",
+      "summary": "The Imperial City is Hue's capital story made walkable: walls, gates, courtyards, palaces, temples, and the scale of Nguyen rule. It turns Hue’s former royal capital area into walls, gates, tiled roofs, gardens, and long walks inside the Citadel.",
       "heroImageName": "HeroCityHuePlaceImperialCity",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -307744,7 +307744,7 @@
           "vt-hue",
           "vt-hue-official"
         ],
-        "rationale": "The Imperial City gives Hue its main historical center: gates, palace grounds, dynastic memory, and the scale of a former capital.",
+        "rationale": "It turns Hue’s former royal capital area into walls, gates, tiled roofs, gardens, and long walks inside the Citadel.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -307825,7 +307825,7 @@
         },
         {
           "id": "good-to-know",
-          "title": "Citadel Language",
+          "title": "Imperial City, Citadel, Or Kinh Thành?",
           "body": "English names can overlap: Imperial City, Citadel, and royal city can be used loosely. Kinh thành Huế keeps the larger enclosure clearer.",
           "phrases": [],
           "breakdown": [],
@@ -308098,7 +308098,7 @@
         {
           "id": "at-glance",
           "title": "Stairs Before The Tomb",
-          "body": "Tomb of Khai Dinh gives Hue's tomb route a dramatic uphill image: stone stairs, a dark imperial facade, hillside weather, and ceremonial detail packed tightly.",
+          "body": "The Tomb of Khai Dinh gives Hue a darker, steeper royal-tomb stop: dark stone front, steep stairs, ornate royal decoration, and a hillside climb that feels very different from greener tomb grounds.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -308400,7 +308400,7 @@
       "title": "Kim Long",
       "englishTitle": "Kim Long",
       "pronunciation": "kim long",
-      "summary": "Kim Long carries Hue's garden-house neighborhood story, with leafy lanes, old gates, river nearness, walls, and morning hush. The area makes Hue feel lived-in and green through lanes, old gates, walls, cafes, and morning light.",
+      "summary": "Kim Long shows Hue's garden-house neighborhood story, with leafy lanes, old gates, river nearness, walls, and morning hush. The area makes Hue feel lived-in and green through lanes, old gates, walls, cafes, and morning light.",
       "heroImageName": "HeroCityHuePlaceKimLong",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -308487,7 +308487,7 @@
         },
         {
           "id": "place-brief",
-          "title": "Leafy Lane Rhythm",
+          "title": "Leafy Lanes Near The River",
           "body": "Expect an area identity, not one sight. The interest comes from walls, gates, cafes, lanes, and the softer pace near the river.",
           "phrases": [],
           "breakdown": [],
@@ -308504,7 +308504,7 @@
         {
           "id": "when-to-use",
           "title": "Small-Scale Expectations",
-          "body": "The area is easiest when treated as a neighborhood, clearer as a loose village area than a checklist. A lane, gate, wall, or coffee break may be the whole point.",
+          "body": "Treat Kim Long as a quiet neighborhood rather than a checklist sight. The smaller scale is what makes the garden-house lanes feel different from central Hue.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -308839,7 +308839,7 @@
         },
         {
           "id": "use-it-with",
-          "title": "Lagoon Route Pairing",
+          "title": "When Tam Giang Is Already In The Plan",
           "body": "This works when Tam Giang or the coastal lagoon is already the plan and there is enough time for transfer, boarding, eating, and return.",
           "phrases": [],
           "breakdown": [],
@@ -309338,7 +309338,7 @@
         {
           "id": "place-brief",
           "title": "Gallery Light Near The Street",
-          "body": "Expect a compact art-center feel rather than a major museum day. Rooms, works, soft light, and a cooler indoor pause are the reasons to go.",
+          "body": "Expect a compact art-center feel rather than a major museum day. Small galleries, the artist's pieces, soft light, and a cooler indoor pause are the reasons to go.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -309421,7 +309421,7 @@
       "title": "Không gian lưu niệm Lê Bá Đảng",
       "englishTitle": "Le Ba Dang Memory Space",
       "pronunciation": "khong gian luu niem le ba dang",
-      "summary": "The memory space carries Le Ba Dang's personal art story into a modern Hue setting of concrete, glass, greenery, and reflective space.",
+      "summary": "Le Ba Dang Memory Space puts the artist's personal story in a modern Hue setting of concrete, glass, greenery, and quiet rooms. The stop shifts Hue from outdoor royal sites to art, light, and personal memory inside a designed space.",
       "heroImageName": "HeroCityHuePlaceLeBaDangMemorySpace",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -309462,7 +309462,7 @@
         {
           "id": "at-glance",
           "title": "A Calm Art Break",
-          "body": "Le Ba Dang Memory Space is an indoor interlude after tombs and river roads: contemporary art, clean concrete, glass, greenery, and a calmer way to sit with memory.",
+          "body": "Le Ba Dang Memory Space is a museum-like art space dedicated to artist Lê Bá Đảng. It gives Hue an indoor interlude after tombs and river roads: contemporary art, clean concrete, glass, greenery, and quiet rooms.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -309509,7 +309509,7 @@
         {
           "id": "place-brief",
           "title": "Concrete, Glass, Greenery",
-          "body": "The building carries part of the visit: concrete, glass, greenery, and art held in a calm memory-space mood.",
+          "body": "The building is part of the visit: concrete, glass, greenery, and art held in a calm room-by-room setting.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -309533,7 +309533,7 @@
         {
           "id": "good-to-know",
           "title": "Art, Architecture, Greenery",
-          "body": "The reason to go is the Le Ba Dang setting itself: contemporary art, clean concrete, glass, greenery, and a calm stop after river roads.",
+          "body": "Go for the Le Ba Dang setting itself: contemporary art, clean concrete, glass, greenery, and a calm stop after river roads.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -309928,7 +309928,7 @@
       "title": "Nhà hàng chay Liên Hoa",
       "englishTitle": "Lien Hoa Vegetarian Restaurant",
       "pronunciation": "nha hang chay lien hoa",
-      "summary": "Lien Hoa draws on Hue's chay food culture, where Buddhist influence, vegetables, tofu, herbs, and gentle meals sit close to temple days.",
+      "summary": "Lien Hoa sits inside Hue's chay food culture, Vietnam's Buddhist vegetarian food tradition, where vegetables, tofu, herbs, and gentle meals stay close to temple days.",
       "heroImageName": "HeroCityHuePlaceLienHoaVegetarian",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -310211,7 +310211,7 @@
         },
         {
           "id": "good-to-know",
-          "title": "Palace Hall Context",
+          "title": "Why The Hall Matters",
           "body": "The safer memory is the palace hall itself: wood, royal objects, and the way Hue's material culture gathers indoors.",
           "phrases": [],
           "breakdown": [],
@@ -310368,7 +310368,7 @@
         {
           "id": "use-it-with",
           "title": "Heat, Rain, Or A Long Gap",
-          "body": "Choose the middle of the day, especially when lunch is too early, dinner is too far away, or rain makes one more outdoor stop feel unwise.",
+          "body": "The middle of the day is the clean slot here, especially when lunch is too early, dinner is too far away, or rain makes one more outdoor stop feel unwise.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -310636,7 +310636,7 @@
       "title": "Lăng Minh Mạng",
       "englishTitle": "Tomb of Minh Mang",
       "pronunciation": "lang ming mang",
-      "summary": "Minh Mang turns imperial order into landscape, where lakes, gates, axial paths, roofs, and formal calm guide the walk. The tomb turns dynasty history into walking distance, with architecture, water, and sequence doing more than any single plaque.",
+      "summary": "Minh Mang turns royal order into landscape, where lakes, gates, straight ceremonial paths, roofs, and formal calm guide the walk. The tomb turns dynasty history into walking distance, with architecture, water, and sequence doing more than any single plaque.",
       "heroImageName": "HeroCityHuePlaceMinhMangTomb",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -310676,8 +310676,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Formal Tomb Sequence",
-          "body": "The Tomb of Minh Mang rewards a slower tomb-gate moment: axial paths, lakes, red gates, tiled roofs, and the formal calm of Hue's royal landscape.",
+          "title": "Lakes, Gates, And Straight Paths",
+          "body": "The Tomb of Minh Mang rewards a slower royal-tomb walk: straight ceremonial paths, lakes, red gates, tiled roofs, and the formal calm of Hue’s royal landscape.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -310723,16 +310723,16 @@
         },
         {
           "id": "place-brief",
-          "title": "Lakes, Gates, Axis",
-          "body": "This is an arranged royal landscape rather than a single building. The route carries you through symmetry, shade, and water reflections before the history fully lands.",
+          "title": "Lakes, Gates, Straight Paths",
+          "body": "This is an arranged royal landscape rather than a single building. The walk moves through symmetry, shade, and water reflections before the history fully lands.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "use-it-with",
-          "title": "Royal Tomb Route Pairing",
-          "body": "It pairs naturally with another tomb or a Perfume River plan, but the visit needs enough time to walk the grounds without rushing the sequence.",
+          "title": "Pair With Another Tomb",
+          "body": "It pairs naturally with another tomb or a Perfume River plan, but the visit needs enough time to walk the grounds without rushing.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -310848,7 +310848,7 @@
         {
           "id": "at-glance",
           "title": "Royal History In Porcelain",
-          "body": "The Museum of Nguyen Dynasty Commissioned Porcelains is a calmer object-focused stop in Hue: blue-and-white bowls, display cases, gallery light, and royal taste at close range.",
+          "body": "The Museum of Nguyen Dynasty Commissioned Porcelains focuses on porcelain pieces ordered for the Nguyễn royal court. Nguyễn was Vietnam’s last royal dynasty, and the bowls, cases, and blue-and-white decoration make that history feel close.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -310978,7 +310978,7 @@
       "title": "Đàn Nam Giao",
       "englishTitle": "Nam Giao Esplanade",
       "pronunciation": "dan nam giao",
-      "summary": "Nam Giao preserves Hue's ritual landscape, where open terraces, brick, trees, and ceremony matter more than ornate rooms. It adds another kind of royal Hue, less about objects and more about ceremony, open air, and how a court arranged sacred space.",
+      "summary": "Nam Giao preserves Hue's ritual landscape, where open terraces, brick, trees, and ceremony matter more than ornate rooms. It adds another kind of royal Hue: an open-air ceremony site where emperors once made formal offerings.",
       "heroImageName": "HeroCityHuePlaceNamGiaoEsplanade",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -311008,7 +311008,7 @@
           "vt-hue",
           "vt-hue-official"
         ],
-        "rationale": "It adds another kind of royal Hue, less about objects and more about ceremony, open air, and how a court arranged sacred space.",
+        "rationale": "It adds another kind of royal Hue: an open-air ceremony site where emperors once made formal offerings.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -311019,7 +311019,7 @@
         {
           "id": "at-glance",
           "title": "Royal Space In The Open",
-          "body": "Nam Giao Esplanade is Hue in ritual geometry: open terraces, old brick, trees, and the rare feeling of a royal ceremony site without a crowded room.",
+          "body": "Nam Giao Esplanade is an open-air royal ceremony site where emperors once made formal offerings. Think open terraces, old brick, trees, and court ritual without a crowded room.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -311066,7 +311066,7 @@
         {
           "id": "place-brief",
           "title": "Subtle Rather Than Ornate",
-          "body": "Heavy decoration is beside what matters here. The site speaks through scale, alignment, and emptiness, which can feel subtle after the Imperial City.",
+          "body": "Heavy decoration sits in the background here. The site speaks through open terraces, alignment, trees, and emptiness, which can feel subtle after the Imperial City.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -311082,15 +311082,15 @@
         {
           "id": "when-to-use",
           "title": "Subtle Stop, Strong Context",
-          "body": "This is a subtle visit with strong context. It helps when you already care about how Hue's royal world arranged ritual, hierarchy, and space.",
+          "body": "This is a subtle visit with strong context. It helps when you already care about how Hue’s royal world used outdoor space for ceremony.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "good-to-know",
-          "title": "Ceremonial Terrace",
-          "body": "The site's strength is its ceremonial role and open terrace form. See it as royal ritual landscape rather than park filler.",
+          "title": "Open Ceremony Terraces",
+          "body": "The site’s strength is its open terrace form and ceremony history. See it as royal ritual space rather than park filler.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -311149,7 +311149,7 @@
       "title": "Ngọ Môn",
       "englishTitle": "Ngo Mon Gate",
       "pronunciation": "ngo mon",
-      "summary": "Ngọ Môn is Hue's main citadel gate, changing the day from street movement to flags, rooflines, stone, and royal courtyards. The gate gives Hue's royal center a main entrance, turning arrival from a map point into a physical crossing.",
+      "summary": "Ngọ Môn is Hue's main citadel gate, changing the day from street movement to flags, rooflines, stone, and royal courtyards. The gate gives Hue's royal center a main entrance, turning arrival from a map label into a physical crossing.",
       "heroImageName": "HeroCityHuePlaceNgoMonGate",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -311179,7 +311179,7 @@
           "vt-hue",
           "vt-hue-official"
         ],
-        "rationale": "The gate gives Hue's royal center a main entrance, turning arrival from a map point into a physical crossing.",
+        "rationale": "The gate gives Hue's royal center a main entrance, turning arrival from a map label into a physical crossing.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -311260,8 +311260,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Main Ceremonial Front",
-          "body": "Ngo Mon is the Imperial City's main ceremonial front. Ticket signs and route signs sit in arrival, before the inner grounds take over.",
+          "title": "The Main Front Gate",
+          "body": "Ngo Mon is the Imperial City’s main ceremonial front. Ticket and route signs appear before you enter the inner grounds.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -311361,7 +311361,7 @@
         {
           "id": "at-glance",
           "title": "A Mountain In The Background",
-          "body": "Ngu Binh Mountain is a distant natural reference point for Hue: a muted backdrop behind rooftops and river, more about orientation and atmosphere than a major hike.",
+          "body": "Ngu Binh Mountain is a mountain backdrop locals associate with Hue: a muted form behind rooftops and river, more about atmosphere than a major hike.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -311423,7 +311423,7 @@
         },
         {
           "id": "when-to-use",
-          "title": "A Light Background Marker",
+          "title": "A Backdrop More Than A Hike",
           "body": "For most visitors, this is a name to recognize and a form to notice. Bigger energy sits to tombs, pagodas, or a true nature day.",
           "phrases": [],
           "breakdown": [],
@@ -311491,7 +311491,7 @@
       "title": "Phố đi bộ Nguyễn Đình Chiểu",
       "englishTitle": "Nguyen Dinh Chieu Walking Street",
       "pronunciation": "foh dee bo ngween dinh chieu",
-      "summary": "Nguyen Dinh Chieu is Hue's evening river-walk habit made easy, with bridge lights, lanterns, food stalls, and a named stretch lowering the pressure.",
+      "summary": "Nguyen Dinh Chieu is an easy evening walking street by the river, with bridge lights, lanterns, food stalls, and a simple first wander.",
       "heroImageName": "HeroCityHuePlaceNguyenDinhChieuStreet",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -311532,7 +311532,7 @@
         {
           "id": "at-glance",
           "title": "A Simple River Walk",
-          "body": "Nguyen Dinh Chieu Walking Street sets up Hue's evening river-walk rhythm: bridge lights, lanterns, food stalls, and a named stretch for an easy first wander.",
+          "body": "Nguyen Dinh Chieu Walking Street gives Hue an easy evening walk by the river: bridge lights, lanterns, food stalls, and a simple first wander without committing to a bigger night out.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -312004,7 +312004,7 @@
       "title": "Cửu Đỉnh",
       "englishTitle": "Nine Dynastic Urns",
       "pronunciation": "cuu dinh",
-      "summary": "The urns make imperial symbolism physical, giving the courtyard bronze weight, carved detail, dynastic order, and a reason to slow down.",
+      "summary": "The Nine Dynastic Urns are nine large bronze urns honoring Nguyễn emperors, with carved images, courtyard weight, and details that reward a slow look.",
       "heroImageName": "HeroCityHuePlaceNineDynasticUrns",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -312045,7 +312045,7 @@
         {
           "id": "at-glance",
           "title": "Bronze In The Courtyard",
-          "body": "The Nine Dynastic Urns give Hue's Imperial City a heavy bronze break: royal symbolism, courtyard order, carved relief detail, and history held in objects you circle slowly.",
+          "body": "The Nine Dynastic Urns give Hue’s Imperial City nine large bronze objects honoring Nguyễn emperors. Their carved images, courtyard order, and heavy scale reward a slow circle.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -312092,7 +312092,7 @@
         {
           "id": "place-brief",
           "title": "Objects With Authority",
-          "body": "These are not decorative props. Their scale and placement carry dynasty symbolism, so a slow circle can reveal more than a quick photo line.",
+          "body": "These are not decorative props. Their scale and placement show dynasty symbolism, so a slow circle can reveal more than a quick photo line.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -312116,7 +312116,7 @@
         {
           "id": "good-to-know",
           "title": "Bronze Memory",
-          "body": "The lasting detail is the bronze group and its role in imperial memory. Nearby restoration or route flow should stay secondary to that image.",
+          "body": "The lasting detail is the bronze group and its role in imperial memory. Nearby restoration work or walking-route logistics should stay secondary to that image.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
