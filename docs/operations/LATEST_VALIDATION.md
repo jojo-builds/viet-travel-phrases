@@ -1,6 +1,6 @@
 # Latest Validation
 
-Last updated: 2026-05-29
+Last updated: 2026-05-31
 Authority lane: latest durable native iOS validation evidence
 
 ## Use This Doc For
@@ -9,6 +9,818 @@ Authority lane: latest durable native iOS validation evidence
 - what still needs proof after the native-only cleanup
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
+
+## Current Back Navigation Fix Evidence
+
+Current `feature/admin-photo-backdrop-polish` working-tree evidence from the 2026-05-31 back-navigation bug hunt, based on head `76f9a433b`:
+
+- root cause 1: collection back navigation could restore an older explicit detail-page snapshot immediately after popping a Home/Browse collection. This made flows like listing -> Home -> Da Nang -> Back land on the older listing instead of the visible Home/Browse parent.
+- root cause 2: button-driven back navigation reused the default trailing slide transition. Because hidden detail/collection pages are intentionally unmounted for thermal reasons until a swipe-back preview is active, the previous page was inserted as a new page from the right.
+- fix: collection pop now honors the visible parent route first; older explicit history remains behind that route instead of being restored immediately.
+- fix: button back/forward now sets a short-lived route transition direction so button back uses reverse slide edges while normal forward/default navigation keeps the existing trailing slide behavior.
+- preserved performance intent: the hidden back detail/collection pages still stay unmounted unless the back-swipe preview path asks for them.
+
+Fresh command evidence from this pass:
+
+- XcodeBuildMCP simulator focused stale-history red tests on iPhone 17 Pro
+  - failed before implementation: Home/Browse collection back landed on prior detail pages (`viet-phrase-airport-1`, `viet-phrase-airport-2`)
+  - passed after implementation: `2` tests, `0` failures
+- XcodeBuildMCP simulator focused transition policy red/green on iPhone 17 Pro
+  - failed before implementation because there was no explicit route-transition policy
+  - passed after implementation: `1` test, `0` failures
+- XcodeBuildMCP simulator focused navigation/transition sweep on iPhone 17 Pro
+  - passed: `15` tests, `0` failures
+  - covered Home/Browse collection back chains, search-backed collection history, forward-stack restoration, back-preview routing, hidden page render gating, long-history slicing, button back transition edges, and swipe presentation layers
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T05-59-19-735Z_pid15747_0a8ed0fb.xcresult`
+- broader XcodeBuildMCP `AppChromeTests` sweep
+  - not clean: `226` passed, `4` failed
+  - failures are content/copy audit expectations outside the touched navigation files (`testEntityDetailPagesHideGeneratedPlaceTemplateRows`, `testV22CityPagesExposeProductionHeadingsAndPhraseCards`, `testVietnameseMenuDetailPagesUseHandwrittenSourceCopy`, `testVietnameseMenuGuideCopyAuditFindsNoMissingOrGenericGuideFields`)
+- local hygiene checks
+  - `git diff --check -- native-ios/App/Views/AppShellView.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+  - signing scan found no repo-visible personal team/provisioning settings in `native-ios/project.yml` or `native-ios/SpeakLocalNative.xcodeproj/project.pbxproj`
+- Physical iPhone Debug build/install from current `feature/admin-photo-backdrop-polish` working tree
+  - build passed
+  - install passed
+  - launch was blocked because iOS reported the phone was locked
+  - post-build signing scan stayed clean; personal signing remained local and was not written to repo files
+
+## Current Admin Photo Backdrop Thermal Evidence
+
+Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listing-navigation thermal pass:
+
+- root cause 1: opening each new listing recorded recent-page history through a broad `@Published` field on `LocalUserIntentStore`, invalidating offscreen Home/Browse/Saved surfaces while the user was only navigating detail pages
+- root cause 2: listing photo backdrops used the plain SwiftUI asset image path, so newly generated portrait backdrops could decode/prepare on the render path instead of sharing the bounded prepared-image cache used by root photo backdrops
+- root cause 3: city listing sheets recomputed "Mentioned Here" and "Compare Nearby" pick arrays repeatedly inside section rendering, including alias normalization and menu-item scans for page bodies that can be re-evaluated during navigation/scrolling
+- root cause 4: Home stayed fully mounted behind deeper detail navigation even when it was not the current/back/forward route surface, so its large shelf tree could rebuild while the user was tapping through listing pages
+- root cause 5: the previous detail page stayed mounted at opacity `0` between back-swipe gestures, so tapping through new listing pages could still keep one full offscreen listing sheet alive just to be ready for a possible back preview
+- root cause 6: the root `Xin chào` article surface stayed mounted in the shell even when it was no longer current or the immediate back/forward preview route
+- root cause 7: browse/category/menu collection pages stayed mounted at opacity `0` behind listing detail pages even when they were not visible and not needed for the current back-swipe preview; those collection pages include large section trees, photo backdrops, scroll geometry, and menu section tracking
+- root cause 8: category/city/menu photo backdrop pages still rendered their large static backdrop through plain SwiftUI `Image(...)` instead of the prepared-image cache used by root and listing backdrops, so opening those collection pages could still decode/prepare large assets on the render path
+- root cause 9: the shared backdrop preheater retained only a few prepared images, but the preparation work itself was unbounded; rapid listing taps could enqueue many large-image `preparingForDisplay()` jobs in parallel for pages the user had already left
+- root cause 10: recent-page tracking stopped publishing broad SwiftUI invalidations, but still JSON-encoded and wrote the recent-page array to `UserDefaults` immediately on every detail tap; rapid listing browsing now updates the in-memory shelf immediately and batches the disk write until the burst settles or the app leaves the active scene phase
+- root cause 11: the shared backdrop preheater kept the latest queued image names but drained them oldest-first, so rapid listing taps could still spend image-preparation work on stale pages before the newest visible page; the queue now drains newest-first while preserving the bounded latest-work policy
+- root cause 12: opening a detail page canonicalized the same page ID once for navigation and again for recently viewed tracking; detail navigation now returns the already-resolved canonical phrase ID so recent-page recording can reuse it instead of repeating the lookup/cache path on every rapid listing tap
+- root cause 13: Vietnamese menu detail pages resolved `viet-menu-*` IDs by repeatedly scanning the full menu item array across navigation, backdrop preheat, detail-page construction, and linked location menu rows; menu items are now indexed by item ID and detail page ID so rapid menu-listing taps reuse constant-time lookups without removing any menu/page functionality
+- root cause 14: the generic detail-page resolver asked the SQLite phrase graph to resolve `viet-menu-*` pages before falling back to the menu and location-menu catalogs; rapid menu-listing taps now route menu-owned detail pages directly through the menu/location-menu catalogs and bypass the extra SQLite phrase-detail lookup
+- root cause 15: menu-owned `viet-menu-*` routes still asked the SQLite phrase graph to canonicalize page IDs during navigation before the app recognized those pages as Vietnamese menu or location-menu pages; menu-owned route IDs now canonicalize through the menu catalogs first, eliminating SQLite canonical misses for rapid menu-listing taps
+- root cause 16: related phrase rows/cards checked whether a destination was a self-link by canonicalizing both the destination and current page from SwiftUI body-derived properties; repeated sheet redraws could re-enter the SQLite canonical path for the same pair, so row navigation now uses a bounded pair-decision cache while preserving self-link suppression and related-page navigation
+- root cause 17: the app-shell check for whether a detail route should render the special designed `Xin chào` article canonicalized the current page ID from the render path for every normal listing; the shell now answers direct/canonical `Xin chào` IDs cheaply and caches fallback alias decisions, so normal listing redraws do not repeatedly enter the SQLite canonical resolver just to reject the special route
+- root cause 18: SwiftUI detail redraws resolved the same canonical `PhraseDetailPage` by re-entering `VietSQLitePhraseGraphRuntime.detailPage(withID:)` every time; the runtime cache avoided full reloads, but the shell still paid the resolver/lock path repeatedly, so `PhraseDetailPage.page(withID:)` now keeps a bounded resolved-page cache above the SQLite runtime while preserving generated, menu, location-menu, and static fallback behavior
+- root cause 19: the detail-page render stack kept only the active page, or the active plus immediate back-preview page, but computed that small render set by filtering the entire detail history on every SwiftUI refresh; rapid listing taps can leave a long browser-style history, so render selection now slices only the visible suffix while preserving back/forward navigation history
+- root cause 20: city listing "Mentioned Here" and "Compare Nearby" catalogs cached empty pick arrays for every eligible city page ID, so rapidly tapping through many city-backed listing pages could grow both static caches for pages with no cards; both catalogs now keep a bounded recent-page cache while preserving alias sharing and all existing cards
+- root cause 21: inactive standard phrase article pages could still run their startup scroll/bottom-inset `.task` while mounted for hidden navigation states; the task is now gated by active-route state so inactive detail pages do not run delayed scroll work during rapid listing navigation
+- root cause 22: browse category/card taps preheated category hero backdrops in `openDetailFromBrowse` and then immediately reached the generic detail preheat path with the same browse hero override; category masthead browse opens now keep the hero override but skip that duplicate generic shell preheat, while non-category browse opens and all non-browse detail opens keep their existing fallback preheat behavior
+- root cause 23: browse category/card taps stored contextual hero image overrides in an unbounded app-shell `@State` dictionary; rapidly opening many category listing pages could retain one override per distinct page even though rendering is limited to the active/immediate preview pages, so the shell now keeps those overrides in a bounded recent-page cache while preserving category masthead overrides for recent back/forward navigation
+- root cause 24: inactive but visible root/admin photo-backdrop preview surfaces could still run delayed startup scroll and bottom-inset validation work while mounted for navigation previews; that delayed work now requires the surface to be both active and visible, while immediate visual positioning for visible previews is preserved
+- root cause 25: browse city/category thumbnail rendering still asked UIKit for image dimensions from the SwiftUI body for every focused thumbnail image, even though only two assets need custom crop focus; normal thumbnails now skip that `UIImage(named:)` size probe and render directly, preserving the two custom crops while avoiding extra asset lookup/decode pressure during rapid browsing
+- root cause 26: browse city/category thumbnail selection still asked UIKit whether generated bundled hero/backdrop image names existed before SwiftUI rendered them; generated `Hero*` and `Backdrop*` browse assets now render directly while unknown/manual image names keep the old fallback existence check, avoiding extra `UIImage(named:)` probes during rapid page browsing
+- root cause 27: inactive menu and standard browse collection pages could still run delayed section-tracking, section-jump settle, focus-restore, or bottom-inset tasks while mounted for hidden/back-preview navigation states; those deferred collection tasks now require active-route state, while active collection pages keep their scroll, focus, and section-jump behavior
+- root cause 28: inactive listing, browse collection, and menu photo-backdrop pages could still publish scroll-geometry state, and inactive menu pages could still process section-frame/rail preferences while mounted only as hidden/back-preview surfaces; scroll-geometry and menu section preference tracking now require active-route state, preserving active page behavior while preventing extra state churn during rapid navigation
+- root cause 29: generic detail navigation synchronously asked the SQLite phrase graph for a generated page's hero image name just to preheat a backdrop before the actual detail page loaded, duplicating database work on every new SQLite-backed listing tap; navigation preheat now uses only already-known cheap image names such as static authored backdrops, menu backdrops, or browse category overrides, while generated pages still preheat from the active page after its already-loaded detail model supplies the hero image
+- root cause 30: `PhraseDetailView` rebuilt each detail page's `PhraseArticlePage` adapter from `body`, remapping sections and playback metadata on SwiftUI refreshes for the same page; the view now builds that adapter once during initialization and reuses it across redraws, preserving article layout while removing repeated per-refresh transformation work
+- root cause 31: `PhraseArticleTemplateView` still derived visible article sections from `body`, re-filtering sections and re-running duplicate-hero text normalization during repeated SwiftUI redraws for the same page; the view now derives the visible section list once per page instance and reuses it across redraws
+- root cause 32: saved/practice membership checks canonicalized page IDs even when their ID lists were empty or when the caller already supplied the exact canonical ID; those render-path checks now use empty/direct-ID fast paths before entering the SQLite canonical resolver, preserving alias support while avoiding unnecessary lookup work during detail redraws
+- root cause 33: `PhraseArticleTemplateView` still canonicalized a home-hero morph identity from detail render paths even when no home morph was active; morph identity now returns the raw page ID when both morph IDs are nil and resolves once per view only when morph state exists
+- root cause 34: inactive Home/root/admin photo-backdrop preview surfaces could still publish scroll-geometry state while mounted as navigation previews; those callbacks now require active and visible state, matching the existing delayed-task and listing/browse/menu scroll-geometry gates
+- root cause 35: city listing articles reused cached "Mentioned Here" and "Compare Nearby" pick arrays, but still asked the catalogs to refilter those arrays by section ID from the article render path; each article page now builds grouped menu/related pick buckets once per page instance and the body reads those buckets directly
+- root cause 36: phrase rows and breakdown cards resolved playable audio keys from SwiftUI row/card rendering, repeatedly entering `AudioAssetManifest` normalization and lookup work for deterministic phrase text during detail redraws; article pages now prepare row playback keys once per `PhraseArticleTemplateView` instance and rows read the prepared values
+- root cause 37: location-card rows reused grouped pick buckets, but each row could still resolve linked-menu audio from `AudioAssetManifest` while rendering; the location-pick grouping step now prepares pick audio keys once per page instance so "Mentioned Here", "Compare Nearby", and trailing place/menu cards read stored keys
+- root cause 38: listing/category/menu photo-backdrop pages queued hero-image preparation work for pages the user had already left; root/home still keep their small lookahead queue, but single-current-page detail, browse collection, and menu backdrops now use focused preheat mode so rapid page taps drop stale queued full-screen hero decodes and keep the newest active hero work
+- root cause 39: location-card rows prepared linked-menu audio keys, but still looked up the linked menu item from SwiftUI row rendering just to tint the speaker button; location-pick grouping now prepares the audio tint alongside the audio key, so rows read stored playback presentation metadata instead of re-entering the menu catalog
+- root cause 40: catalog and Explore rows still resolved playable audio from `PhraseCatalogItem.playbackAudioKey` during row rendering; catalog items now use a bounded playback-audio decision cache so repeated Browse/Home/Explore redraws reuse the same manifest result without re-entering `AudioAssetManifest`
+- root cause 41: focused photo-backdrop preheat dropped stale queued work, but an already-popped full-screen hero image could still finish preparing and commit after the user had opened a newer page; focused preheat now tags in-flight work with the current request generation and rejects stale completed images while still committing the newest active hero
+- root cause 42: saved/practice membership checks skipped empty lists and direct saved hits, but repeated unsaved misses with a non-empty saved list still canonicalized the same visible location/card page IDs on every redraw; `LocalUserIntentStore` now keeps bounded per-store membership caches and invalidates them when saved/practice IDs change
+- root cause 43: category, city, and menu collection pages still requested their photo-backdrop preheat from page `.task`, after the route had already begun rendering; the app shell now preheats the collection backdrop before opening the route so first render is less likely to fall back to a cold full-screen image path
+- root cause 44: Food/Drink menu rows still resolved exact item-name audio from `AudioAssetManifest` inside row rendering; `VietnameseMenuItem` now keeps a bounded playback-audio decision cache and menu rows/descriptors read the prepared item audio key
+- root cause 45: a new SQLite-backed listing detail load still canonicalized the same page ID twice inside the detail resolver: once to find the canonical page and again inside `loadPhraseDetailPage(pageID:)`; the runtime now reuses the already-canonical ID and loads the canonical page directly, so rapid new-page tapping removes one SQL alias lookup per uncached listing detail
+- root cause 46: each new SQLite-backed listing detail loaded sections with an N+1 query pattern: after the section list, it prepared one phrase-row query and one breakdown-row query per section, even for empty sections; section phrase rows and breakdown rows now load in two batched section-ID queries, reducing a representative new detail load from `15` prepared statements to at most `5`
+- root cause 47: catalog and browse rows already hand navigation canonical `viet-phrase-*` page IDs, but `PhraseCatalog.canonicalPageID(forOpenablePageID:)` still entered the SQLite alias resolver before checking the already-loaded in-memory catalog; after Browse/Home/Search have warmed the catalog, known catalog page IDs now return directly from `itemsByPageID`, removing one SQLite alias lookup from rapid listing taps without forcing cold launch to build the full catalog early
+- root cause 48: repeated listing page instances reused the same phrase rows and breakdown tokens, but row playback-audio decisions were only prepared per page instance; phrase options and breakdown tokens now keep bounded shared playback-audio decision caches so rapid page-to-page navigation reuses the same audio-manifest decisions without changing playback behavior
+- root cause 49: Home can remain mounted as the back-preview surface while the user rapidly opens listing pages from Home, and its Recently viewed shelf rebuilt feature-card article adapters for the same still-visible recent pages on each route change; Recently viewed now uses a bounded feature-item cache so a new listing open adds only the new recent card adapter while unchanged recent cards are reused
+- root cause 50: Home's Recently viewed shelf already receives canonical recent page IDs from `LocalUserIntentStore`, but it still used the alias-safe card helper and canonicalized each recent ID before reading cached feature cards; the Home-only recent-ID path now dedupes and limits store-owned canonical IDs directly while preserving the general alias-safe helper for external callers
+- root cause 51: Browse/Home/catalog rows already know their canonical `viet-phrase-*` page IDs, but the SQLite detail loader did not know that the catalog had already proved those IDs canonical; the catalog fast path now seeds the SQLite runtime canonical cache so the first detail load for a known canonical listing page skips the extra SQL alias lookup, while alias page IDs still canonicalize once
+- preserved UX: listing pages still use the static full-screen photo, pull-down sheet, tap-to-immersive reveal, bottom chrome backing, saved/practice state, and city/menu related cards
+
+Fresh command evidence from this pass:
+
+- App-code commit `291461ca8` on `feature/admin-photo-backdrop-polish`
+  - root-cause 51 fix committed as `Seed canonical detail lookup cache`
+  - physical iPhone build/install was attempted after commit, but Xcode reported no connected or available paired iPhone; phone proof is still pending for this exact commit
+- XcodeBuildMCP simulator focused catalog-canonical detail-load regression on iPhone 17 Pro
+  - failed before implementation because a known canonical catalog page still performed `1` repository canonical lookup instead of `0`
+  - passed after implementation: `3` tests, `0` failures
+  - covered catalog-seeded canonical detail loading, alias detail loading still canonicalizing once, and known catalog page IDs bypassing SQLite canonical lookup
+  - result artifacts:
+    - red result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T04-26-34-710Z_pid15747_b82ffc9e.xcresult`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T04-27-55-317Z_pid15747_b1a7e173.xcresult`
+- XcodeBuildMCP simulator focused SQLite/detail routing thermal slice on iPhone 17 Pro
+  - passed: `9` tests, `0` failures
+  - covered catalog-seeded canonical detail loading, alias canonicalization, batched section item loading, hero-image lookup staying lightweight, generated/static photo-backdrop eligibility, canonical detail-page cache reuse, known catalog canonical bypass, and menu-owned canonical bypass
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T04-29-44-973Z_pid15747_421bfe15.xcresult`
+- local hygiene checks after root cause 51:
+  - `git diff --check -- native-ios/App/Models/PhrasePage.swift native-ios/App/Models/VietSQLiteLanguagePackRepository.swift native-ios/Tests/SQLiteLanguagePackRepositoryTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- Physical iPhone Debug build/install/launch from current `feature/admin-photo-backdrop-polish` head `0b5556336`
+  - build passed
+  - install passed
+  - launch passed after install
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused `Xin chào`/photo-backdrop proof on iPhone 17 Pro
+  - passed: `2` tests, `0` failures
+  - covered static designed phrase pages resolving to photo-backdrop assets and listing photo-backdrop preheat eligibility
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T04-09-03-982Z_pid15747_e856b57c.xcresult`
+- Physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish` app-code commit `100e40bad`
+  - build passed
+  - install passed
+  - launch passed after install
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused Home recently-viewed adapter-cache test on iPhone 17 Pro
+  - failed before implementation because `HomeRecentlyViewedContent` had no cached feature-item resolution seam; the new regression proves the next rapid-listing open builds only `1` new article adapter instead of rebuilding the five unchanged recent cards
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T03-45-25-278Z_pid15747_95aac599.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-46-16-952Z_pid15747_a5309b2e.xcresult`
+- XcodeBuildMCP simulator focused Home/back-preview navigation set on iPhone 17 Pro
+  - passed: `6` tests, `0` failures
+  - covered recently-viewed feature-item caching, six-card recent ordering, duplicate/missing-page skipping, root-surface render gating, Xin chào root-surface gating, and long detail-history render slicing
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-47-18-736Z_pid15747_7b6c7cfa.xcresult`
+- XcodeBuildMCP simulator focused route/detail/audio thermal regression set on iPhone 17 Pro
+  - passed: `15` tests, `0` failures
+  - covered Home recent-card adapter caching, detail article-template reuse, visible-section reuse, location-pick grouping, row/breakdown audio caching, catalog/menu audio caches, known-catalog canonical bypass, generated-page preheat staying lightweight, focused backdrop stale-work rejection, and recent-page store invalidation/persist behavior
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-48-12-721Z_pid15747_fff35e4e.xcresult`
+- XcodeBuildMCP simulator focused SQLite/photo-backdrop regression set on iPhone 17 Pro
+  - passed: `4` tests, `0` failures
+  - covered one-canonicalization detail loads, batched section item loading, generated phrase backdrop eligibility, and static designed phrase-page backdrop eligibility
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-48-50-984Z_pid15747_2b5783da.xcresult`
+- local hygiene checks after the Home recent-card adapter cache fix:
+  - `git diff --check -- native-ios/App/Views/AppShellView.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- Physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish` app-code commit `a1929cbc5`, explicitly built from the feature worktree after verifying the default phone helper can otherwise target the main checkout
+  - build passed
+  - install passed
+  - launch passed after install
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused phrase-row audio cache test on iPhone 17 Pro
+  - failed before implementation because `testPhraseRowPlaybackAudioResolutionCachesAcrossPageInstances` observed `65` audio-manifest lookups after repeated fresh row/token resolutions instead of retaining the first-page decision count of `5`
+  - passed after implementation with real bundled audio examples: `1` test, `0` failures
+  - result artifacts:
+    - red result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-14-20-565Z_pid15747_3a69040f.xcresult`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-20-39-075Z_pid15747_ffdace87.xcresult`
+- XcodeBuildMCP simulator focused route/detail/audio thermal regression set on iPhone 17 Pro
+  - passed: `17` tests, `0` failures
+  - covered shared phrase-row audio caching, per-page row audio preparation, location-pick audio preparation, catalog/menu audio caches, known-catalog canonical bypass, one-canonicalization detail loads, batched section item loading, lightweight hero-image lookup, and generated-page preheat staying lightweight
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-22-24-861Z_pid15747_fdbdb4c5.xcresult`
+- local hygiene checks after the shared phrase-row audio cache fix:
+  - `git diff --check -- native-ios/App/Models/PhrasePage.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- XcodeBuildMCP simulator focused known-catalog canonical fast-path test on iPhone 17 Pro
+  - failed before implementation because `testKnownCatalogPageIDsBypassSQLiteCanonicalLookup` observed `1` SQLite canonical lookup for a known catalog page ID after the catalog had already been loaded
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-00-22-137Z_pid15747_36e5465e.xcresult`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-01-55-173Z_pid15747_e4ad95e3.xcresult`
+- XcodeBuildMCP simulator focused route/canonical/detail regression set on iPhone 17 Pro
+  - passed: `9` tests, `0` failures
+  - covered known catalog page IDs bypassing SQLite canonical lookup, menu-owned canonical bypass, resolved detail-page reuse, recent-page canonical recording, generated-page preheat staying lightweight, designed Xin chào special-route caching, one-canonicalization detail loads, batched section item loading, and hero-image lookup staying lightweight
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T03-03-42-331Z_pid15747_e2ff36c4.xcresult`
+- local hygiene checks after the known-catalog canonical fast-path fix:
+  - `git diff --check -- native-ios/App/Models/PhrasePage.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `f2db535c3`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- Visual simulator proof for the current `feature/admin-photo-backdrop-polish` head `dc9157f57`
+  - launched `SpeakLocalNative` on iPhone 17 Pro Simulator with `--detail-page viet-phrase-polite-1`
+  - confirmed `Xin chào` renders with `BackdropPhraseGreetingCafeDoorway`, a lowered rounded content sheet, visible photo area, and normal bottom chrome backing instead of the old single static hero layer
+  - screenshot: `/var/folders/z4/rl0d7cg94zvfy4b0_zytwc7c0000gn/T/screenshot_optimized_86deb15a-000f-419c-8ba3-e2e70468f280.jpg`
+- Physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish` commit `dc9157f57`
+  - build passed
+  - install passed
+  - launch passed after install
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- focused failing tests were added before the fixes and then passed after implementation:
+  - `AppChromeTests/testRenderedDetailPagesDoNotScanEntireLongHistory`
+  - `AppChromeTests/testMenuDetailNavigationBypassesSQLiteCanonicalLookup`
+  - `AppChromeTests/testPhraseRowNavigationCachesRepeatedCanonicalPairChecks`
+  - `AppChromeTests/testMenuDetailPagesBypassSQLitePhraseGraphLookup`
+  - `AppChromeTests/testVietnameseMenuDetailLookupsUseIndexedItems`
+  - `AppChromeTests/testForwardDetailNavigationReturnsCanonicalIDForRecentRecording`
+  - `LocalUserIntentStoreTests/testRecentPagesCanRecordAlreadyCanonicalPageID`
+  - `LocalUserIntentStoreTests/testRecentPagesPersistAfterExplicitFlushInsteadOfEveryTap`
+  - `AppChromeTests/testAdminBackdropPreheatPlanKeepsLatestQueuedWorkBounded`
+  - `AppChromeTests/testAdminBackdropPreheatPlanDrainsNewestQueuedWorkFirst`
+  - `LocalUserIntentStoreTests/testRecordingRecentPageDoesNotPublishStoreWideInvalidation`
+  - `LocalUserIntentStoreTests/testSavedPageToggleStillPublishesStoreChanges`
+  - `AppChromeTests/testPhrasePhotoBackdropPreheatPolicyOnlyWarmsEligibleListingHero`
+  - `AppChromeTests/testLocationMenuPicksCacheCanonicalCityLookups`
+  - `AppChromeTests/testLocationRelatedPicksCacheCanonicalCityLookups`
+  - `AppChromeTests/testLocationPickCachesStayBoundedDuringRapidCityBrowsing`
+  - `AppChromeTests/testRootSurfacesRenderOnlyWhenCurrentBackOrForwardRouteNeedsThem`
+  - `AppChromeTests/testRootXinChaoSurfaceRendersOnlyWhenCurrentBackOrForwardRouteNeedsIt`
+  - `AppChromeTests/testHiddenBackDetailPageCanStayUnmountedUntilBackSwipePreview`
+  - `AppChromeTests/testHiddenBackBrowseCollectionCanStayUnmountedUntilBackSwipePreview`
+  - `AppChromeTests/testBrowseCollectionsKeepOnlyVisibleRouteUntilBackSwipePreview`
+  - `AppChromeTests/testBrowseCollectionPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops`
+  - `AppChromeTests/testVietnameseMenuPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops`
+  - `SQLiteLanguagePackRepositoryTests/testRuntimeHeroImageLookupDoesNotLoadFullDetailPage`
+  - `AppChromeTests/testPhraseArticleStandardScrollTaskRunsOnlyForActivePages`
+  - `AppChromeTests/testBrowseDetailHeroImageOverrideKeepsOnlyCategoryMastheads`
+  - `AppChromeTests/testBrowseDetailGenericPreheatSkipsOnlyAfterCategoryOverride`
+  - `AppChromeTests/testBrowseDetailHeroOverrideCacheStaysBoundedDuringRapidCategoryBrowsing`
+  - `AppChromeTests/testAdminPhotoBackdropDelayedTaskRunsOnlyForActiveVisiblePages`
+  - `AppChromeTests/testBrowseFocusedAssetImagesReadSizesOnlyForCustomFocusAssets`
+  - `AppChromeTests/testBrowseImageAssetPolicyTrustsGeneratedAssetsWithoutExistenceProbe`
+  - `AppChromeTests/testInactiveCollectionPagesSkipDeferredScrollTasks`
+  - `AppChromeTests/testInactivePagesSkipScrollGeometryAndPreferenceTracking`
+  - `AppChromeTests/testDetailNavigationPreheatSkipsSQLiteHeroLookupForGeneratedPages`
+  - `AppChromeTests/testPhraseDetailViewBuildsArticleTemplateOncePerPageInstance`
+  - `AppChromeTests/testPhraseArticleTemplateBuildsVisibleSectionsOncePerPageInstance`
+  - `LocalUserIntentStoreTests/testSavedMembershipSkipsCanonicalLookupForEmptyAndDirectCanonicalIDs`
+  - `AppChromeTests/testPhraseArticleMorphPolicySkipsCanonicalLookupWhenNoHomeMorphIsActive`
+  - `AppChromeTests/testAdminPhotoBackdropDelayedTaskRunsOnlyForActiveVisiblePages` was extended to cover inactive scroll-geometry gating
+  - `AppChromeTests/testPhraseArticleTemplateGroupsLocationPicksOncePerPageInstance`
+  - `AppChromeTests/testPhraseArticleTemplatePreparesRowPlaybackAudioOncePerPageInstance`
+  - `AppChromeTests/testPhraseArticleLocationPickGroupsPrepareAudioKeysOncePerPageInstance`
+  - `AppChromeTests/testFocusedDetailBackdropPreheatDropsStaleQueuedHeroWork`
+  - `AppChromeTests/testPhraseArticleLocationPickGroupsPrepareAudioTintOncePerPageInstance`
+  - `AppChromeTests/testPhraseCatalogItemsCachePlaybackAudioAcrossRepeatedRowRendering`
+  - `AppChromeTests/testFocusedBackdropPreheaterRejectsStaleInFlightHeroWork`
+  - `LocalUserIntentStoreTests/testSavedMembershipCachesRepeatedUnsavedMissesWhenSavedListIsNonEmpty`
+  - `AppChromeTests/testBrowseCollectionRoutePreheatWarmsBackdropBeforeNavigation`
+  - `AppChromeTests/testVietnameseMenuItemsCachePlaybackAudioAcrossRepeatedRowRendering`
+- XcodeBuildMCP simulator focused collection-route preheat set on iPhone 17 Pro
+  - failed before implementation because `AppShellView.browseCollectionBackdropPreheatImageNames(for:)` did not exist and collection routes could only preheat from page tasks
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T01-40-59-946Z_pid15747_1da1cf51.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-43-20-739Z_pid15747_c91c1dc4.xcresult`
+- XcodeBuildMCP simulator focused Vietnamese menu-row audio cache set on iPhone 17 Pro
+  - failed before implementation because `VietnameseMenuItem` had no playback-audio cache/reset seam and menu rows read the audio manifest directly
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T01-45-50-614Z_pid15747_91819910.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-47-29-255Z_pid15747_3a096ca0.xcresult`
+- XcodeBuildMCP simulator focused collection/menu thermal-regression set on iPhone 17 Pro
+  - passed: `11` tests, `0` failures
+  - covered early collection-route backdrop preheat, Vietnamese menu-row audio caching, catalog row audio caching, stale in-flight focused backdrop rejection, focused queued-backdrop replacement, browse/menu photo-backdrop preheat policy, browse detail override policy/cache, and saved unsaved-miss caching
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-48-28-655Z_pid15747_c656195d.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `89fe3f545`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused SQLite detail-load canonicalization set on iPhone 17 Pro
+  - failed before implementation because `testRuntimeDetailPageLoadCanonicalizesOnlyOncePerNewPage` observed `2` repository canonical lookups for one new SQLite-backed detail load instead of `1`
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log for missing counter seam: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T02-11-01-142Z_pid15747_c9aa6548.log`
+    - red result bundle for duplicate canonicalization: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T02-12-33-144Z_pid15747_d77df48e.xcresult`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T02-14-26-013Z_pid15747_176a6171.xcresult`
+- XcodeBuildMCP simulator focused SQLite/detail-navigation regression set on iPhone 17 Pro
+  - passed: `8` tests, `0` failures
+  - covered one-canonicalization detail loads, hero-image lookup staying lightweight, SQLite search/detail/history routing, resolved-page reuse, bounded SQLite caches, generated-page preheat skipping hero lookup, and menu detail/canonical bypasses
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T02-16-37-237Z_pid15747_409271eb.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `b29fd26c1`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused SQLite section-item batching set on iPhone 17 Pro
+  - failed before implementation because `testRuntimeDetailPageLoadBatchesSectionItemQueriesPerNewPage` observed `15` prepared statements for one new SQLite-backed detail load instead of the batched target of at most `5`
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log for missing prepared-statement counter seam: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T02-25-24-958Z_pid15747_4ce79046.log`
+    - red result bundle for N+1 section-item statements: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T02-26-37-202Z_pid15747_9591fe2e.xcresult`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T02-28-11-185Z_pid15747_9917e116.xcresult`
+- XcodeBuildMCP simulator focused SQLite/detail-loader regression set on iPhone 17 Pro
+  - passed: `9` tests, `0` failures
+  - covered batched section item loading, one-canonicalization detail loads, hero-image lookup staying lightweight, SQLite search/detail/history routing, resolved-page reuse, bounded SQLite caches, generated-page preheat skipping hero lookup, and menu detail/canonical bypasses
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T02-31-13-030Z_pid15747_65ffce74.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `636b7ce40`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused catalog-row audio cache set on iPhone 17 Pro
+  - failed before implementation because `PhraseCatalogItem` had no playback-audio resolution cache reset seam and repeated row reads had no cache
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T01-14-33-491Z_pid15747_ff4552d3.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-15-32-220Z_pid15747_b1be77e4.xcresult`
+- XcodeBuildMCP simulator focused in-flight backdrop preheat set on iPhone 17 Pro
+  - failed before implementation because `AdminBackdropImagePreheater` had no reset/injected-preparer test seam and no stale in-flight focused-work rejection
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T01-19-08-177Z_pid15747_e122555d.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-21-38-490Z_pid15747_262eaa93.xcresult`
+- XcodeBuildMCP simulator focused saved-membership miss cache set on iPhone 17 Pro
+  - failed before implementation because two visible unsaved related-card IDs caused `20` canonical lookups over ten redraw-style saved-state passes
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-24-06-049Z_pid15747_240fbfc5.xcresult`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-26-50-631Z_pid15747_cafb31ac.xcresult`
+- XcodeBuildMCP simulator focused thermal-regression set on iPhone 17 Pro
+  - passed: `10` tests, `0` failures
+  - covered catalog row audio caching, article row audio preparation, stale in-flight focused backdrop rejection, focused queued-backdrop replacement, bounded/latest/newest-first preheat policy, saved direct fast path, saved unsaved-miss caching, saved publish behavior, and saved menu-item persistence
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T01-27-44-484Z_pid15747_bc3d3df8.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `2b52b7c89`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused location-pick audio-tint preparation set on iPhone 17 Pro
+  - failed before implementation because `VietnameseMenuCatalog` had no item lookup counter and `LocationMenuPick` had no prepared `audioTintName`
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T00-51-04-446Z_pid15747_8e6b17cd.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-52-33-300Z_pid15747_3c0a612c.xcresult`
+- XcodeBuildMCP simulator focused location-card playback regression set on iPhone 17 Pro
+  - passed: `7` tests, `0` failures
+  - covered prepared location-card tint, prepared location-card audio, per-page grouped Mentioned/Related picks, bounded pick caches, canonical city lookup caching, and existing Lusine saved-trip card behavior
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-53-15-433Z_pid15747_6515cfee.xcresult`
+- local hygiene checks after the location-pick audio-tint preparation fix:
+  - `git diff --check -- native-ios/App/Models/VietnameseMenuCatalog.swift native-ios/App/Views/PhraseListingView.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `ca166a859`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused detail-backdrop preheat set on iPhone 17 Pro
+  - failed before implementation because `AdminBackdropImagePreheatPlan.focusedQueuedImageNames(...)` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T00-38-27-020Z_pid15747_ec606b65.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-42-46-255Z_pid15747_d870356f.xcresult`
+- XcodeBuildMCP simulator focused photo-backdrop preheat regression set on iPhone 17 Pro
+  - passed: `8` tests, `0` failures
+  - covered stale focused detail queue replacement, root/home selected-plus-lookahead behavior, bounded latest-work behavior, newest-first queue draining, and phrase/browse/menu photo-backdrop preheat eligibility
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-43-31-173Z_pid15747_bd4eb3b9.xcresult`
+- local hygiene checks after the focused listing-backdrop preheat fix:
+  - `git diff --check -- native-ios/App/Views/AdminPhotoBackdropSurfaceView.swift native-ios/App/Views/AppShellView.swift native-ios/App/Views/BrowseCollectionPageView.swift native-ios/App/Views/PhraseListingView.swift native-ios/App/Views/VietnameseMenuPageView.swift native-ios/Tests/AppChromeTests.swift docs/operations/LATEST_VALIDATION.md` passed
+  - `node scripts/guard-native-only.js` passed
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `ee876f443`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- local hygiene checks after the detail redraw and saved-membership fixes:
+  - `git diff --check -- native-ios/App/Views/PhraseListingView.swift native-ios/App/Models/AppChrome.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- local hygiene checks after the inactive root backdrop redraw fixes:
+  - `git diff --check -- native-ios/App/Views/PhraseListingView.swift native-ios/App/Views/AppShellView.swift native-ios/App/Views/AdminPhotoBackdropSurfaceView.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- local hygiene checks after the location-pick grouping fix:
+  - `git diff --check -- native-ios/App/Views/PhraseListingView.swift native-ios/App/Models/VietnameseMenuCatalog.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- local hygiene checks after the row playback-audio preparation fix:
+  - `git diff --check -- native-ios/App/Models/AudioAssetManifest.swift native-ios/App/Models/PhrasePage.swift native-ios/App/Views/PhraseListingView.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- local hygiene checks after the location-pick audio preparation fix:
+  - `git diff --check -- native-ios/App/Views/PhraseListingView.swift native-ios/App/Models/VietnameseMenuCatalog.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- XcodeBuildMCP simulator focused location-pick audio preparation set on iPhone 17 Pro
+  - failed before implementation because `LocationMenuPick.resolvingAudioKey()` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-31T00-12-25-437Z_pid15747_a511370a.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-13-42-358Z_pid15747_dd0c798a.xcresult`
+- XcodeBuildMCP simulator focused location-card/audio regression set on iPhone 17 Pro
+  - passed: `8` tests, `0` failures
+  - covered location-pick audio preparation, grouped Mentioned/Related card reuse, article row audio preparation, calibrated city menu picks, menu/related pick canonical lookup caching, bounded rapid city-browsing caches, and Vietnamese menu name audio
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-14-15-608Z_pid15747_66c5804f.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `0d45202f4`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused row playback-audio preparation set on iPhone 17 Pro
+  - failed before implementation because `AudioAssetManifest` had no lookup counter and `PhraseArticlePlaybackAudioResolver` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T23-58-41-166Z_pid15747_f43ff2af.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-04-55-130Z_pid15747_970f7c3e.xcresult`
+- XcodeBuildMCP simulator focused article/audio regression set on iPhone 17 Pro
+  - passed: `9` tests, `0` failures
+  - covered per-article row playback-audio preparation, visible-section derivation reuse, detail article-adapter reuse, location-pick grouping, Tier 1 visible audio keys, designed phrase exact-text audio fallback, `Xin chào` row audio reuse, all phrase option audio resolution, and bundled-file validation for resolved phrase option audio
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T00-06-11-757Z_pid15747_cbf2144b.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `6dd111d13`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused location-pick grouping set on iPhone 17 Pro
+  - failed before implementation because `PhraseArticleLocationPickGroups` and catalog section-filter counters did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T23-36-16-052Z_pid15747_ba70322e.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T23-38-48-359Z_pid15747_106470a1.xcresult`
+- XcodeBuildMCP simulator focused location-card/redraw regression set on iPhone 17 Pro
+  - passed: `8` tests, `0` failures
+  - covered per-page grouping for Mentioned/Related cards, visible-section derivation reuse, detail article-adapter reuse, menu/related pick cache canonicalization, bounded rapid city-browsing caches, Han Market related-card routing, and V2.2 related-place card exposure
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T23-39-42-358Z_pid15747_02d47361.xcresult`
+- Corrected physical iPhone Debug build/install explicitly from worktree root `/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/admin-photo-backdrop-polish` at branch HEAD `3ea7487f0` with app-code commit `7a7f0dcbe`
+  - this corrected the phone-build root after Jojo observed the old static `Xin chào` screen; the phone helper defaults to the canonical app-family checkout unless `SPEAKLOCAL_REPO_ROOT` is set
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `7a7f0dcbe`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused morph-policy set on iPhone 17 Pro
+  - failed before implementation because `PhraseArticleMorphPolicy` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T23-09-52-706Z_pid15747_f442da87.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T23-10-55-774Z_pid15747_5e8cce2a.xcresult`
+- XcodeBuildMCP simulator focused inactive root/admin scroll-geometry set on iPhone 17 Pro
+  - failed before implementation because `AdminPhotoBackdropTaskPolicy.shouldApplyScrollGeometry` and `HomePhotoBackdropTaskPolicy` did not exist
+  - passed after implementation as part of the focused regression set below
+  - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T23-13-25-315Z_pid15747_06d3d2e7.log`
+- XcodeBuildMCP simulator focused inactive root backdrop redraw regression set on iPhone 17 Pro
+  - passed: `7` tests, `0` failures
+  - covered inactive admin/root backdrop delayed-task and scroll-geometry gating, no-morph detail identity fast path, visible-section derivation reuse, article-adapter reuse, generated detail preheat SQLite bypass, phrase photo-backdrop preheat eligibility, inactive listing/browse/menu scroll-geometry gating, and Home backdrop activation behavior
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T23-17-12-997Z_pid15747_d0a9e12f.xcresult`
+- XcodeBuildMCP simulator visual build/run for `Xin chào` on iPhone 17 Pro from app-code commit `6bc2f3bcc`
+  - build passed
+  - launch passed with `--detail-page viet-polite-hello`
+  - screenshot confirmed the current branch opens `Xin chào` with the rounded pull-down content sheet over the photo backdrop
+  - build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/build_run_sim_2026-05-30T23-24-11-471Z_pid15747_8e5815bc.log`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `6bc2f3bcc`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - a follow-up force-launch with existing-process termination was also blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused visible-section derivation set on iPhone 17 Pro
+  - failed before implementation because `PhraseArticleTemplateView.resetVisibleSectionsBuildCountForTesting` and `PhraseArticleTemplateView.visibleSectionsBuildCountForTesting` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T22-53-27-063Z_pid15747_85228af8.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T22-56-07-091Z_pid15747_12de26f1.xcresult`
+- XcodeBuildMCP simulator focused saved-membership canonical-lookup set on iPhone 17 Pro
+  - failed before implementation: `LocalUserIntentStoreTests/testSavedMembershipSkipsCanonicalLookupForEmptyAndDirectCanonicalIDs` observed one SQLite canonical lookup for an empty Saved list and one for an already-canonical saved ID
+  - passed after implementation as part of the focused regression set below
+  - red result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T22-59-31-334Z_pid15747_1f513330.xcresult`
+- XcodeBuildMCP simulator focused detail redraw/saved-membership regression set on iPhone 17 Pro
+  - passed: `8` tests, `0` failures
+  - covered visible-section derivation reuse, article-adapter reuse, generated detail preheat SQLite bypass, phrase photo-backdrop preheat eligibility, saved-membership empty/direct-canonical lookup fast paths, saved toggle invalidation, saved/practice persistence, and saved menu-item behavior
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T23-01-34-500Z_pid15747_2b4c72b0.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `c4e597907`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- local hygiene checks after the detail article-adapter fix:
+  - `git diff --check -- native-ios/App/Models/PhrasePage.swift native-ios/App/Views/PhraseDetailView.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+- XcodeBuildMCP simulator focused detail article-adapter set on iPhone 17 Pro
+  - failed before implementation because `PhraseDetailPage.resetArticleTemplateBuildCountForTesting` and `PhraseDetailPage.articleTemplateBuildCountForTesting` did not exist
+  - passed after implementation as part of the focused performance/backdrop set below
+  - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T22-33-39-105Z_pid15747_28b1eae4.log`
+- XcodeBuildMCP simulator focused performance/backdrop set with article-adapter reuse on iPhone 17 Pro
+  - passed: `4` tests, `0` failures
+  - covered generated detail navigation skipping SQLite hero-name lookup for preheat, inactive standard article task gating, phrase photo-backdrop preheat eligibility, and detail article-adapter reuse across repeated body refreshes
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T22-40-52-245Z_pid15747_d6976ca6.xcresult`
+- XcodeBuildMCP broader `AppChromeTests` sweep on iPhone 17 Pro
+  - not clean: `208` tests passed and `4` tests failed
+  - failures are content/fixture expectation drift unrelated to the detail article-adapter code path: entity template row hiding, V2.2 production heading/phrase-card expectations, handwritten menu source copy expectations, and one generic menu guide-copy audit row
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T22-40-24-498Z_pid15747_8a700f42.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `39fcfe557`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused detail-navigation hero-preheat set on iPhone 17 Pro
+  - failed before implementation because `AppShellView.detailBackdropPreheatImageNames(pageID:heroImageNameOverride:)` and `VietSQLitePhraseGraphRuntime.heroImageNameLookupCountForTesting` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T22-22-19-924Z_pid15747_dc3d7592.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T22-24-47-367Z_pid15747_7d06b02b.xcresult`
+- XcodeBuildMCP simulator focused thermal/navigation set with detail-navigation hero-preheat SQLite bypass on iPhone 17 Pro
+  - passed: `17` tests, `0` failures
+  - covered generated detail navigation skipping SQLite hero-name lookup for preheat, static authored preheat preservation, phrase/category/menu backdrop preheat policies, bounded SQLite/search/detail caches, inactive listing/browse/menu scroll-geometry gating, inactive collection deferred-task gating, generated browse asset probe bypasses, and static designed `Xin chào` photo-backdrop eligibility
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T22-25-25-867Z_pid15747_7ad03d56.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `1a6248f58`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused inactive scroll-geometry/preference-tracking set on iPhone 17 Pro
+  - failed before implementation because `PhraseArticleTaskPolicy`, `BrowseCollectionTaskPolicy`, and `VietnameseMenuTaskPolicy` had no policy seam for inactive scroll-geometry or menu section-preference callbacks
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T22-02-09-403Z_pid15747_f17c2e77.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T22-03-35-668Z_pid15747_3765bbfa.xcresult`
+- XcodeBuildMCP simulator focused thermal/navigation set with inactive scroll-geometry/preference gating on iPhone 17 Pro
+  - passed: `14` tests, `0` failures
+  - covered inactive listing/browse/menu photo-backdrop scroll-geometry gating, inactive menu section-preference gating, inactive collection deferred-task gating, active+visible admin/root backdrop delayed-task gating, inactive standard article task gating, generated browse hero/backdrop image names skipping UIKit existence probes, normal browse thumbnails skipping UIKit image-size reads, visible-only browse collection mounting, bounded category browse hero overrides, bounded city pick caches, phrase/category backdrop eligibility, and static designed `Xin chào` photo-backdrop eligibility
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T22-04-23-090Z_pid15747_89c97878.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `71c706b4b`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused inactive collection deferred-task set on iPhone 17 Pro
+  - failed before implementation because `VietnameseMenuTaskPolicy` and `BrowseCollectionTaskPolicy` did not exist, and the affected tasks were keyed without an active-route gate
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T21-51-57-118Z_pid15747_0abb7eb3.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T21-53-15-492Z_pid15747_ea811de1.xcresult`
+- XcodeBuildMCP simulator focused thermal/navigation set with inactive collection task gating on iPhone 17 Pro
+  - passed: `13` tests, `0` failures
+  - covered inactive menu/standard browse collection task gating, active+visible admin/root backdrop delayed-task gating, inactive standard article task gating, generated browse hero/backdrop image names skipping UIKit existence probes, normal browse thumbnails skipping UIKit image-size reads, visible-only browse collection mounting, bounded category browse hero overrides, bounded city pick caches, phrase/category backdrop eligibility, and static designed `Xin chào` photo-backdrop eligibility
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T21-54-16-872Z_pid15747_3099a719.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `67bf033f7`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- XcodeBuildMCP simulator focused browse generated-image existence-probe set on iPhone 17 Pro
+  - failed before implementation because `BrowseImageAssetPolicy` did not exist and browse rows always had to call through the `BrowseImageAssetCache.exists` seam for generated image names
+  - passed after implementation: `1` test, `0` failures
+  - result artifacts:
+    - red build log: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/logs/test_sim_2026-05-30T21-36-42-474Z_pid15747_f7147d4e.log`
+    - green result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T21-38-35-307Z_pid15747_24f0e6e0.xcresult`
+- XcodeBuildMCP simulator focused thermal/navigation set with generated-image existence-probe bypass on iPhone 17 Pro
+  - passed: `11` tests, `0` failures
+  - covered generated browse hero/backdrop image names skipping UIKit existence probes, normal browse thumbnails skipping UIKit image-size reads, active+visible admin/root backdrop delayed-task gating, bounded category browse hero overrides, duplicate browse category preheat avoidance, bounded city pick caches, listing photo-backdrop preheat policy, phrase/category backdrop eligibility, and static designed `Xin chào` photo-backdrop eligibility
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T21-39-44-450Z_pid15747_796c827f.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `950ffc04b`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- xcodebuild simulator focused browse thumbnail size-probe set on iPhone 17 Pro
+  - failed before implementation because `BrowseFocusedAssetImagePolicy` did not exist and normal thumbnails had no policy seam to skip UIKit size reads
+  - passed after implementation: `1` test, `0` failures
+  - result bundles:
+    - red: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_04-16-41-+0700.xcresult`
+    - green: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_04-17-53-+0700.xcresult`
+- xcodebuild simulator focused thermal/navigation set with browse thumbnail size-probe gating on iPhone 17 Pro
+  - passed: `26` tests, `0` failures
+  - covered normal browse thumbnails skipping UIKit image-size reads, active+visible admin/root backdrop delayed-task gating, bounded category browse hero overrides, inactive standard article task gating, browse detail category hero override/preheat policy, bounded city pick caches, long-history render suffixing, current-only detail/collection mounting, resolved canonical detail-page reuse, menu-owned detail/canonical SQLite bypasses, designed `Xin chào` route checks, phrase-row canonical pair caching, root `Xin chào` surface gating, listing photo-backdrop layout/preheat policy, static designed `Xin chào` photo-backdrop eligibility, SQLite hero-image lightweight lookup, and default SQLite runtime behavior
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_04-18-54-+0700.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `01682364a`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- xcodebuild simulator focused admin/root photo-backdrop delayed-task set on iPhone 17 Pro
+  - failed before implementation because `AdminPhotoBackdropTaskPolicy` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result bundles:
+    - red: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_03-53-39-+0700.xcresult`
+    - green: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_04-01-54-+0700.xcresult`
+- xcodebuild simulator focused thermal/navigation set with active+visible root photo-backdrop task gating on iPhone 17 Pro
+  - passed: `25` tests, `0` failures
+  - covered active+visible admin/root backdrop delayed-task gating, bounded category browse hero overrides, inactive standard article task gating, browse detail category hero override/preheat policy, bounded city pick caches, long-history render suffixing, current-only detail/collection mounting, resolved canonical detail-page reuse, menu-owned detail/canonical SQLite bypasses, designed `Xin chào` route checks, phrase-row canonical pair caching, root `Xin chào` surface gating, listing photo-backdrop layout/preheat policy, static designed `Xin chào` photo-backdrop eligibility, SQLite hero-image lightweight lookup, and default SQLite runtime behavior
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_04-02-38-+0700.xcresult`
+- Physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` app-code commit `1889ce305`
+  - build passed
+  - install passed
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- xcodebuild simulator focused inactive phrase-article task set on iPhone 17 Pro
+  - failed before implementation because `PhraseArticleTaskPolicy` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result bundles:
+    - red: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_03-12-54-+0700.xcresult`
+    - green: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_03-13-42-+0700.xcresult`
+- xcodebuild simulator focused browse detail preheat policy set on iPhone 17 Pro
+  - failed before implementation because `AppShellView` had no browse hero override or generic-preheat policy seam
+  - passed after implementation: `2` tests, `0` failures
+  - result bundles:
+    - red: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_03-35-41-+0700.xcresult`
+    - green: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_03-36-57-+0700.xcresult`
+- xcodebuild simulator focused thermal/navigation set with inactive-task gating and duplicate browse-preheat avoidance on iPhone 17 Pro
+  - passed: `27` tests, `0` failures
+  - covered inactive standard article task gating, browse detail category hero override/preheat policy, bounded city pick caches, V2.2 Mentioned Here/related cards, long-history render suffixing, current-only detail/collection mounting, resolved canonical detail-page reuse, menu-owned detail/canonical SQLite bypasses, designed `Xin chào` route checks, phrase-row canonical pair caching, root `Xin chào` surface gating, listing photo-backdrop layout/preheat policy, SQLite hero-image lightweight lookup, and default SQLite runtime behavior
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_03-37-56-+0700.xcresult`
+- xcodebuild simulator focused browse hero override cache-growth set on iPhone 17 Pro
+  - failed before implementation because `AppShellBrowseDetailHeroOverrideCache` did not exist
+  - passed after implementation: `1` test, `0` failures
+  - result bundles:
+    - red: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_03-45-10-+0700.xcresult`
+    - green: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_03-46-45-+0700.xcresult`
+- xcodebuild simulator focused thermal/navigation set with bounded browse hero overrides on iPhone 17 Pro
+  - passed: `24` tests, `0` failures
+  - covered bounded category browse hero overrides, inactive standard article task gating, browse detail category hero override/preheat policy, bounded city pick caches, long-history render suffixing, current-only detail/collection mounting, resolved canonical detail-page reuse, menu-owned detail/canonical SQLite bypasses, designed `Xin chào` route checks, phrase-row canonical pair caching, root `Xin chào` surface gating, listing photo-backdrop layout/preheat policy, SQLite hero-image lightweight lookup, and default SQLite runtime behavior
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_03-47-51-+0700.xcresult`
+- xcodebuild simulator focused canonical recent-page reuse set on iPhone 17 Pro
+  - passed: `2` tests, `0` failures
+  - covered returning the canonical detail ID from navigation and recording an already-canonical recent page without re-running the page canonicalization path
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.30_23-12-44-+0700.xcresult`
+- xcodebuild simulator focused thermal set with canonical recent-page reuse on iPhone 17 Pro
+  - passed: `20` tests, `0` failures
+  - covered canonical recent-page reuse, newest-first queued backdrop preheat work, bounded/latest queued backdrop preheat work, category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, batched recent-page disk persistence, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.30_23-13-36-+0700.xcresult`
+- xcodebuild simulator focused Vietnamese menu indexed lookup set on iPhone 17 Pro
+  - failed before implementation because `VietnameseMenuCatalog` had no indexed item lookup/testing surface
+  - passed after implementation: `1` test, `0` failures
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.30_23-33-47-+0700.xcresult`
+- xcodebuild simulator focused thermal set with Vietnamese menu indexed lookups on iPhone 17 Pro
+  - passed: `22` tests, `0` failures
+  - covered indexed menu item/detail-page lookup, large menu model non-Equatable guard, canonical recent-page reuse, newest-first queued backdrop preheat work, bounded/latest queued backdrop preheat work, category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, batched recent-page disk persistence, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.30_23-34-41-+0700.xcresult`
+- xcodebuild simulator focused menu-detail SQLite-bypass set on iPhone 17 Pro
+  - failed before implementation: `AppChromeTests/testMenuDetailPagesBypassSQLitePhraseGraphLookup` counted `2` SQLite detail-page resolver calls for two menu-owned pages
+  - passed after implementation: `1` test, `0` failures
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.30_23-48-05-+0700.xcresult`
+- xcodebuild simulator focused thermal set with menu-detail SQLite bypass on iPhone 17 Pro
+  - passed: `23` tests, `0` failures
+  - covered menu-owned detail pages bypassing the SQLite phrase-detail resolver, indexed menu item/detail-page lookup, large menu model non-Equatable guard, canonical recent-page reuse, newest-first queued backdrop preheat work, bounded/latest queued backdrop preheat work, category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, batched recent-page disk persistence, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.30_23-48-55-+0700.xcresult`
+- xcodebuild simulator focused menu-route SQLite-canonical bypass set on iPhone 17 Pro
+  - failed before implementation: `AppChromeTests/testMenuDetailNavigationBypassesSQLiteCanonicalLookup` counted `4` SQLite canonical resolver calls while opening two menu-owned pages
+  - passed after implementation: `1` test, `0` failures
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.31_00-38-19-+0700.xcresult`
+- xcodebuild simulator focused thermal set with menu-route SQLite-canonical bypass on iPhone 17 Pro
+  - passed: `24` tests, `0` failures
+  - covered menu-owned route navigation bypassing the SQLite canonical resolver, menu-owned detail pages bypassing the SQLite phrase-detail resolver, indexed menu item/detail-page lookup, large menu model non-Equatable guard, canonical recent-page reuse, newest-first queued backdrop preheat work, bounded/latest queued backdrop preheat work, category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, batched recent-page disk persistence, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.31_00-39-38-+0700.xcresult`
+- xcodebuild simulator focused phrase-row navigation cache set on iPhone 17 Pro
+  - failed before implementation: `AppChromeTests/testPhraseRowNavigationCachesRepeatedCanonicalPairChecks` showed repeated row body checks pushed SQLite canonical lookup count from `2` to `26`
+  - passed after implementation: `1` test, `0` failures
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.31_01-08-55-+0700.xcresult`
+- XcodeBuildMCP simulator focused designed-`Xin chào` route set on iPhone 17 Pro
+  - failed before implementation: `AppChromeTests/testDesignedXinChaoCheckAvoidsRepeatedCanonicalLookupForNormalListings` showed repeated normal-listing checks pushed SQLite canonical lookup count from `2` to `26`
+  - passed after implementation: `4` tests, `0` failures
+  - covered the designed `Xin chào` direct/canonical route check, normal listing rejection without repeated canonical resolver calls, static designed phrase pages using photo-backdrop layout, and listing backdrop preheat eligibility
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T18-31-40-871Z_pid15747_4c6eec00.xcresult`
+- XcodeBuildMCP simulator focused canonical detail-page resolved-cache set on iPhone 17 Pro
+  - failed before implementation: `AppChromeTests/testCanonicalDetailPagesReuseResolvedPageWithoutRepeatedSQLiteLookup` showed repeated same-page resolution pushed SQLite detail resolver count from `1` to `13`
+  - passed after implementation: `1` test, `0` failures
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T18-52-47-725Z_pid15747_abfc4edf.xcresult`
+- xcodebuild simulator focused long detail-history render set on iPhone 17 Pro
+  - failed before implementation: `AppChromeTests/testRenderedDetailPagesDoNotScanEntireLongHistory` showed the detail renderer inspecting all `7` history entries to render only `1` active page or `2` active/back-preview pages
+  - passed after implementation: `1` test, `0` failures; active-page rendering now checks `1` candidate and back-preview rendering checks `2`
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_02-28-00-+0700.xcresult`
+- xcodebuild simulator focused thermal/navigation set with long-history suffix rendering on iPhone 17 Pro
+  - passed: `17` tests, `0` failures
+  - covered long-history detail render suffixing, current-only detail/collection mounting, resolved canonical detail-page reuse, menu-owned detail/canonical SQLite bypasses, designed `Xin chào` route checks, phrase-row canonical pair caching, root `Xin chào` surface gating, listing photo-backdrop layout/preheat policy, SQLite hero-image lightweight lookup, and default SQLite runtime behavior
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_02-29-52-+0700.xcresult`
+- xcodebuild simulator focused city-pick cache-growth set on iPhone 17 Pro
+  - failed before implementation: `AppChromeTests/testLocationPickCachesStayBoundedDuringRapidCityBrowsing` showed both city pick caches growing to `108` entries while the intended cap was `96`
+  - passed after implementation: `6` tests, `0` failures
+  - covered bounded city menu/related pick caches, canonical city alias sharing, existing V2.2 Mentioned Here cards, and existing V2.2 Compare Nearby cards
+  - failed result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_02-52-12-+0700.xcresult`
+  - passed result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_02-53-55-+0700.xcresult`
+- xcodebuild simulator focused thermal/navigation set with bounded city-pick caches on iPhone 17 Pro
+  - passed: `22` tests, `0` failures
+  - covered bounded city pick caches, city-card alias behavior, long-history detail render suffixing, current-only detail/collection mounting, resolved canonical detail-page reuse, menu-owned detail/canonical SQLite bypasses, designed `Xin chào` route checks, phrase-row canonical pair caching, root `Xin chào` surface gating, listing photo-backdrop layout/preheat policy, SQLite hero-image lightweight lookup, and default SQLite runtime behavior
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-admin-photo-backdrop-polish/Logs/Test/Test-SpeakLocalNative-2026.05.31_02-54-54-+0700.xcresult`
+- repo hygiene after bounded city-pick cache fix
+  - `git diff --check`: passed
+  - `node scripts/guard-native-only.js`: passed
+  - signing scan found no repo-visible personal signing values; only generic project `CODE_SIGN_IDENTITY = "iPhone Developer"` entries remain
+- XcodeBuildMCP simulator focused thermal set with resolved detail-page cache on iPhone 17 Pro
+  - passed: `23` tests, `0` failures
+  - covered resolved canonical detail-page reuse, menu-owned detail lookup bypass, menu route canonical bypass, designed `Xin chào` route check, phrase-row canonical pair caching, hidden detail/collection mounting, root-surface gating, listing/category/menu backdrop preheat policies, bounded/newest-first image preheat work, indexed menu item lookup, SQLite hero-image lightweight lookup, default SQLite runtime behavior, and legacy ID canonicalization
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T18-53-51-679Z_pid15747_ee0f3668.xcresult`
+- XcodeBuildMCP simulator local-intent thermal set on iPhone 17 Pro
+  - passed: `4` tests, `0` failures
+  - covered batched recent-page disk persistence, recording already-canonical recent pages, suppressing broad invalidation while recording recents, and preserving saved-page invalidation
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T18-54-16-891Z_pid15747_72f59336.xcresult`
+- XcodeBuildMCP simulator fixture/runtime compatibility set on iPhone 17 Pro
+  - passed: `4` tests, `0` failures
+  - covered SQLite-disabled static authored pages, default SQLite runtime detail resolution, and legacy-home-ID canonicalization after adding the resolved-page cache
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T18-55-05-780Z_pid15747_ec4e8893.xcresult`
+- XcodeBuildMCP simulator build/run smoke on iPhone 17 Pro
+  - current `Xin chào` deep-link smoke passed for `--detail-page viet-phrase-polite-1`
+  - current Home featured `Xin chào` tap smoke passed from the Home card
+  - current branch shows the pull-down content sheet over `BackdropPhraseGreetingCafeDoorway`, not the old static Ha Long masthead layout
+- xcodebuild simulator focused thermal set with phrase-row navigation cache on iPhone 17 Pro
+  - passed: `22` tests, `0` failures
+  - covered repeated phrase-row canonical pair caching, phrase-row self-link suppression, menu-owned route navigation bypassing the SQLite canonical resolver, menu-owned detail pages bypassing the SQLite phrase-detail resolver, indexed menu item/detail-page lookup, large menu model non-Equatable guard, canonical recent-page reuse, newest-first queued backdrop preheat work, bounded/latest queued backdrop preheat work, category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.31_01-10-06-+0700.xcresult`
+- xcodebuild simulator focused local-intent thermal set on iPhone 17 Pro
+  - passed: `4` tests, `0` failures
+  - covered batched recent-page disk persistence, recording already-canonical recent pages, suppressing broad invalidation while recording recents, and preserving saved-page invalidation
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.31_01-11-09-+0700.xcresult`
+- XcodeBuildMCP simulator focused recent-page batched-persist thermal set on iPhone 17 Pro
+  - passed: `17` tests, `0` failures
+  - covered batched recent-page disk persistence, bounded/latest queued backdrop preheat work, category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T14-49-34-348Z_pid15747_b555ea44.xcresult`
+- xcodebuild simulator focused newest-first preheat thermal set on iPhone 17 Pro
+  - passed: `18` tests, `0` failures
+  - covered newest-first queued backdrop preheat work, bounded/latest queued backdrop preheat work, category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, batched recent-page disk persistence, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/Xcode/DerivedData/SpeakLocalNative-fbepxxxydckfxhhkxqoxsbhddgek/Logs/Test/Test-SpeakLocalNative-2026.05.30_22-11-13-+0700.xcresult`
+- XcodeBuildMCP simulator focused serialized-preheat thermal set on iPhone 17 Pro
+  - passed: `16` tests, `0` failures
+  - covered bounded/latest queued backdrop preheat work, category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T14-23-54-799Z_pid15747_11f74f08.xcresult`
+- XcodeBuildMCP simulator focused collection/menu prepared-image thermal set on iPhone 17 Pro
+  - passed: `14` tests, `0` failures
+  - covered category/city/menu photo backdrop preheat policy, current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T14-09-15-196Z_pid15747_321127fc.xcresult`
+- XcodeBuildMCP simulator focused browse-collection hidden-work thermal set on iPhone 17 Pro
+  - passed: `12` tests, `0` failures
+  - covered current-only browse/category/menu collection mounting between gestures, current-only detail mounting between gestures, back/forward presentation behavior, root `Xin chào` surface gating, inactive Home render gating, listing backdrop preheat policy, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T13-59-55-976Z_pid15747_c6bc3e88.xcresult`
+- XcodeBuildMCP simulator focused root-surface thermal set on iPhone 17 Pro
+  - passed: `10` tests, `0` failures
+  - covered root `Xin chào` surface gating, inactive Home render gating, current-only detail mounting between gestures, back/forward presentation behavior, listing backdrop preheat policy, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T13-37-41-947Z_pid15747_633dcb71.xcresult`
+- XcodeBuildMCP simulator focused hidden-detail thermal set on iPhone 17 Pro
+  - passed: `10` tests, `0` failures
+  - covered current-only detail mounting between gestures, back/forward presentation behavior, inactive Home render gating, listing backdrop preheat policy, local-intent invalidation, saved-page invalidation, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T13-26-40-467Z_pid15747_c28f5fef.xcresult`
+- XcodeBuildMCP simulator focused second-layer thermal set on iPhone 17 Pro
+  - passed: `10` tests, `0` failures
+  - covered inactive Home render gating, local-intent invalidation, listing backdrop preheat policy, city menu/related pick caching, Home recently-viewed canonicalization, static `Xin chào` photo-card layout, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T13-12-53-413Z_pid15747_3411df8e.xcresult`
+- XcodeBuildMCP simulator focused thermal/content set on iPhone 17 Pro
+  - passed: `17` tests, `0` failures
+  - covered local-intent invalidation, listing backdrop preheat policy, city menu/related pick caching, V2.2 mentioned/related cards, and lightweight SQLite hero lookup
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-30T12-44-09-205Z_pid15747_1987ab03.xcresult`
+- XcodeBuildMCP simulator build/run smoke on iPhone 17 Pro
+  - current `Xin chào` card-over-photo smoke passed for `--detail-page viet-polite-hello`
+  - phrase backdrop smoke passed for `--detail-page viet-phrase-phone-1`
+  - city/listing backdrop smoke passed for `--detail-page viet-family-city-danang-place-international-terminal`
+  - screenshots captured at:
+    - `docs/task-results/listing-thermal-audit-2026-05-30/xin-chao-current-card-smoke.jpg`
+    - `docs/task-results/listing-thermal-audit-2026-05-30/phrase-phone-backdrop-smoke.jpg`
+    - `docs/task-results/listing-thermal-audit-2026-05-30/city-terminal-backdrop-smoke.jpg`
+- `git diff --check`
+  - passed
+- `node scripts/guard-native-only.js`
+  - passed: no active Expo/React Native app surface found
+- broader XcodeBuildMCP simulator `AppChromeTests` + `SQLiteLanguagePackRepositoryTests`
+  - compiled and ran `208` tests
+  - passed: `203`
+  - failed: `5` pre-existing content-expectation/copy-audit tests outside the thermal files, including V2.2 city copy expectation drift and Vietnamese menu guide-copy audit drift
+- Physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish`
+  - build passed
+  - install passed for bundle id `app.speaklocal.vietnam.native`
+  - launch passed
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+- Latest physical iPhone launch readiness check from `feature/admin-photo-backdrop-polish` commit `c8093ca3d`
+  - simulator focused thermal/navigation set passed with bounded city menu/related pick caches; both caches now stay at or below `96` entries during a synthetic rapid city-listing browsing burst
+  - physical phone launch readiness check reported the phone was locked, so build/install/launch proof for this exact commit remains pending
+  - remaining proof gap: unlock the phone, keep it awake, rerun the corrected worktree installer, then continue the hands-on thermal retest while rapidly opening listing pages
+- Latest physical iPhone launch check from `feature/admin-photo-backdrop-polish` commit `719783c1a`
+  - simulator focused thermal/navigation set passed with long-history detail render suffixing; rendering now inspects only the active page, or active plus immediate back-preview page, instead of filtering the full detail history
+  - physical phone launch check reported the phone was locked, so build/install/launch proof for this exact commit remains pending
+  - remaining proof gap: unlock the phone, keep it awake, rerun the corrected worktree installer, then continue the hands-on thermal retest while rapidly opening listing pages
+- Latest physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `b5cff54fd`
+  - simulator focused thermal set passed with the resolved detail-page cache; repeated same-page resolution now stays at `1` SQLite detail resolver entry instead of rising to `13`
+  - build passed from the feature worktree
+  - install passed for bundle id `app.speaklocal.vietnam.native`
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean before and after the build; personal signing remained local and was not written to repo files
+  - remaining proof gap: unlock the phone, launch the installed build, then continue the hands-on thermal retest while rapidly opening listing pages
+- Latest physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `28e259f22`
+  - simulator build/run smoke passed for `--detail-page viet-phrase-polite-1` and for tapping the Home featured `Xin chào` card; current branch shows the pull-down sheet over `BackdropPhraseGreetingCafeDoorway`, not the old static Ha Long masthead layout
+  - build passed from the feature worktree
+  - install passed for bundle id `app.speaklocal.vietnam.native`
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean before and after the build; personal signing remained local and was not written to repo files
+  - remaining proof gap: unlock the phone, launch the installed build, then confirm the on-phone `Xin chào` screen and continue the hands-on thermal retest while rapidly opening listing pages
+- Latest physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish` commit `48e664d74`
+  - build passed from the feature worktree
+  - install passed for bundle id `app.speaklocal.vietnam.native`
+  - launch passed
+  - signing scan stayed clean before and after the build; personal signing remained local and was not written to repo files
+  - remaining proof gap: hands-on thermal retest while rapidly opening listing pages on the physical iPhone
+- Latest physical iPhone Debug build/install/launch from `feature/admin-photo-backdrop-polish` commit `ae598fb8a`
+  - simulator build/run smoke passed for `--detail-page viet-polite-hello`; current branch shows the `Xin chào` pull-down sheet over the `BackdropPhraseGreetingCafeDoorway` image instead of the old static Ha Long masthead layout
+  - build passed from the feature worktree
+  - install passed for bundle id `app.speaklocal.vietnam.native`
+  - launch passed
+  - signing scan stayed clean before and after the build; personal signing remained local and was not written to repo files
+  - remaining proof gap: hands-on thermal retest while rapidly opening listing pages on the physical iPhone
+- Latest physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `53a586239`
+  - build passed
+  - install passed for bundle id `app.speaklocal.vietnam.native`
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+  - remaining proof gap: unlock the phone, launch the installed build, then do the hands-on thermal retest while rapidly opening listing pages on the physical iPhone
+- Latest physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `a88d8063f`
+  - build passed from a dedicated `Debug-iphoneos` product
+  - install passed for bundle id `app.speaklocal.vietnam.native`
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+  - remaining proof gap: unlock the phone, launch the installed build, then do the hands-on thermal retest while rapidly opening listing pages on the physical iPhone
+- Latest physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `8ce390df0`
+  - build passed from a dedicated `Debug-iphoneos` product
+  - install passed for bundle id `app.speaklocal.vietnam.native`
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean; personal signing remained local and was not written to repo files
+  - remaining proof gap: unlock the phone, launch the installed build, then do the hands-on thermal retest while rapidly opening listing pages on the physical iPhone
+- Latest physical iPhone Debug build/install from `feature/admin-photo-backdrop-polish` commit `1d665972b`
+  - simulator build/run smoke passed for `--detail-page viet-polite-hello`; current branch shows the `Xin chào` pull-down sheet over the `BackdropPhraseGreetingCafeDoorway` image instead of the old static Ha Long masthead layout
+  - build passed from the feature worktree
+  - install passed for bundle id `app.speaklocal.vietnam.native`
+  - launch was blocked because the phone was locked
+  - signing scan stayed clean before the build; personal signing remained local and was not written to repo files
+  - remaining proof gap: unlock the phone, launch the installed build, then do the hands-on thermal retest while rapidly opening listing pages on the physical iPhone
 
 ## Current Main Non-Paywall Merge Sweep Evidence
 

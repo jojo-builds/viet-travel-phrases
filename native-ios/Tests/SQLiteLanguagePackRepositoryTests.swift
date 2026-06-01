@@ -74,6 +74,138 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
         XCTAssertTrue(phoBo.helperPhraseIDs?.contains("menu-not-spicy") == true)
     }
 
+    func testSQLiteBackdropsGiveNeedsBackdropPhrasePagesPhotoBackdropLayout() throws {
+        let repository = try VietSQLiteLanguagePackRepository.bundled()
+        let expectations = [
+            ("viet-phrase-polite-1", "BackdropPhraseHelpQuietServiceDesk"),
+            ("viet-phrase-taxi-1", "BackdropPhraseTransportAirportCurb"),
+            ("viet-phrase-problems-6", "BackdropPhraseHelpHotelDesk"),
+            ("viet-phrase-airport-1", "BackdropPhrasePhoneAirportCharging"),
+            ("viet-phrase-bath-1", "BackdropPhraseEssentialsWaterCounter"),
+            ("viet-phrase-sight-1", "BackdropPhraseSightTicketBooth"),
+            ("viet-phrase-phone-1", "BackdropPhrasePhoneCafeCharging"),
+            ("viet-phrase-food-menu", "BackdropPhraseFoodOrderCounter"),
+            ("viet-phrase-price-1", "BackdropPhraseMarketPayment"),
+            ("viet-phrase-hotel-1", "BackdropPhraseHelpHotelDesk"),
+        ]
+
+        for (pageID, expectedHeroImageName) in expectations {
+            let page = try repository.loadPhraseDetailPage(pageID: pageID)
+
+            XCTAssertEqual(page.heroImageName, expectedHeroImageName, pageID)
+            XCTAssertTrue(
+                PhrasePhotoBackdropLayout.supportsListingPage(pageID: page.id, heroImageName: page.heroImageName),
+                "\(pageID) should use the shared photo-backdrop sheet interaction"
+            )
+        }
+
+        XCTAssertGreaterThanOrEqual(
+            PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+                for: CGSize(width: 393, height: 852),
+                pageID: "viet-phrase-phone-1",
+                heroImageName: "BackdropPhrasePhoneSimSetup"
+            ),
+            180,
+            "low tabletop phrase photos should shift the subject band into the visible resting area"
+        )
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+                for: CGSize(width: 393, height: 852),
+                pageID: "viet-phrase-airport-1",
+                heroImageName: "HeroCategoryAirport"
+            ),
+            0,
+            "existing category mastheads keep their original crop"
+        )
+    }
+
+    func testStaticDesignedPhrasePagesUsePhotoBackdropLayout() throws {
+        let staticDetailPagesByID = Dictionary(uniqueKeysWithValues: PhraseDetailPage.all.map { ($0.id, $0) })
+        let expectations = [
+            (PhrasePage.xinChao.articleTemplate, "BackdropPhraseGreetingCafeDoorway"),
+            (try XCTUnwrap(staticDetailPagesByID["viet-respectful-hello"]).articleTemplate, "BackdropPhraseGreetingCafeDoorway"),
+            (try XCTUnwrap(staticDetailPagesByID["viet-phone-hello"]).articleTemplate, "BackdropPhrasePhoneCafeCharging"),
+            (try XCTUnwrap(staticDetailPagesByID["viet-thank-you"]).articleTemplate, "BackdropPhraseHelpQuietServiceDesk"),
+        ]
+
+        for (page, expectedHeroImageName) in expectations {
+            XCTAssertEqual(page.heroImageName, expectedHeroImageName, page.id)
+            XCTAssertTrue(
+                PhrasePhotoBackdropLayout.supportsListingPage(pageID: page.id, heroImageName: page.heroImageName),
+                "\(page.id) should use the shared photo-backdrop sheet interaction"
+            )
+        }
+    }
+
+    func testRuntimeHeroImageLookupDoesNotLoadFullDetailPage() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.heroImageName(for: "viet-phrase-phone-1"),
+            "BackdropPhrasePhoneCafeCharging"
+        )
+        XCTAssertEqual(VietSQLitePhraseGraphRuntime.cachedDetailPageCountForTesting, 0)
+    }
+
+    func testRuntimeDetailPageLoadReusesCatalogCanonicalSeedForKnownPageID() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        VietSQLiteLanguagePackRepository.resetCanonicalPageIDLookupCountForTesting()
+        defer {
+            VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+            VietSQLiteLanguagePackRepository.resetCanonicalPageIDLookupCountForTesting()
+        }
+
+        XCTAssertTrue(PhraseCatalog.allItems.contains { $0.pageID == "viet-phrase-phone-1" })
+        XCTAssertEqual(PhraseCatalog.canonicalPageID(forOpenablePageID: "viet-phrase-phone-1"), "viet-phrase-phone-1")
+        VietSQLiteLanguagePackRepository.resetCanonicalPageIDLookupCountForTesting()
+
+        let page = try XCTUnwrap(VietSQLitePhraseGraphRuntime.detailPage(withID: "viet-phrase-phone-1"))
+
+        XCTAssertEqual(page.id, "viet-phrase-phone-1")
+        XCTAssertEqual(
+            VietSQLiteLanguagePackRepository.canonicalPageIDLookupCountForTesting,
+            0,
+            "Catalog/Home/Browse already know canonical listing page IDs, so the detail loader should reuse that seed instead of spending one SQL alias lookup per rapid new-page open."
+        )
+    }
+
+    func testRuntimeDetailPageLoadCanonicalizesAliasOnlyOncePerNewPage() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        VietSQLiteLanguagePackRepository.resetCanonicalPageIDLookupCountForTesting()
+        defer {
+            VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+            VietSQLiteLanguagePackRepository.resetCanonicalPageIDLookupCountForTesting()
+        }
+
+        let page = try XCTUnwrap(VietSQLitePhraseGraphRuntime.detailPage(withID: "viet-family-phone-wifi-password"))
+
+        XCTAssertEqual(page.id, "viet-phrase-phone-1")
+        XCTAssertEqual(
+            VietSQLiteLanguagePackRepository.canonicalPageIDLookupCountForTesting,
+            1,
+            "Alias listing page IDs still need one SQL alias lookup before loading the canonical page."
+        )
+    }
+
+    func testRuntimeDetailPageLoadBatchesSectionItemQueriesPerNewPage() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        VietSQLiteLanguagePackRepository.resetPreparedStatementCountForTesting()
+        defer {
+            VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+            VietSQLiteLanguagePackRepository.resetPreparedStatementCountForTesting()
+        }
+
+        let page = try XCTUnwrap(VietSQLitePhraseGraphRuntime.detailPage(withID: "viet-phrase-phone-1"))
+
+        XCTAssertFalse(page.sections.isEmpty)
+        XCTAssertLessThanOrEqual(
+            VietSQLiteLanguagePackRepository.preparedStatementCountForTesting,
+            5,
+            "Opening a new SQLite-backed listing page should batch section phrase/breakdown item loading instead of preparing one phrase query and one breakdown query per section."
+        )
+    }
+
     func testDefaultRuntimeLoadsVietnameseMenuFromSQLiteWithoutJSONBundle() throws {
         VietSQLitePhraseGraphRuntime.resetTestingOverrides()
 

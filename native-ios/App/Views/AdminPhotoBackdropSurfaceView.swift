@@ -120,6 +120,11 @@ enum HomeBackdropPreheatPolicy {
 }
 
 enum AdminBackdropImagePreheatPlan {
+    struct NextQueuedImage: Equatable {
+        let imageName: String
+        let remainingQueuedImageNames: [String]
+    }
+
     static func pendingImageNames(
         requestedImageNames: [String],
         reservedImageNames: Set<String>
@@ -130,11 +135,64 @@ enum AdminBackdropImagePreheatPlan {
             seenImageNames.insert(imageName).inserted && !reservedImageNames.contains(imageName)
         }
     }
+
+    static func queuedImageNames(
+        existingQueuedImageNames: [String],
+        incomingImageNames: [String],
+        maxQueuedImageCount: Int
+    ) -> [String] {
+        let maxCount = max(maxQueuedImageCount, 0)
+        guard maxCount > 0 else {
+            return []
+        }
+
+        let mergedImageNames = existingQueuedImageNames + incomingImageNames
+        return Array(mergedImageNames.suffix(maxCount))
+    }
+
+    static func focusedQueuedImageNames(
+        existingQueuedImageNames _: [String],
+        incomingImageNames: [String],
+        maxQueuedImageCount: Int
+    ) -> [String] {
+        return queuedImageNames(
+            existingQueuedImageNames: [],
+            incomingImageNames: incomingImageNames,
+            maxQueuedImageCount: maxQueuedImageCount
+        )
+    }
+
+    static func nextQueuedImageName(from queuedImageNames: [String]) -> NextQueuedImage? {
+        guard let imageName = queuedImageNames.last else {
+            return nil
+        }
+
+        return NextQueuedImage(
+            imageName: imageName,
+            remainingQueuedImageNames: Array(queuedImageNames.dropLast())
+        )
+    }
 }
 
 enum AdminPhotoBackdropSurfaceLayout {
     static func sheetTop(scrollOffset: CGFloat, metrics: PhrasePhotoBackdropLayout.Metrics) -> CGFloat {
         max(metrics.collapsedContentTop - scrollOffset, 0)
+    }
+}
+
+enum AdminPhotoBackdropTaskPolicy {
+    static func shouldRunInitialPositionTask(
+        isActive: Bool,
+        isVisible: Bool
+    ) -> Bool {
+        isActive && isVisible
+    }
+
+    static func shouldApplyScrollGeometry(
+        isActive: Bool,
+        isVisible: Bool
+    ) -> Bool {
+        isActive && isVisible
     }
 }
 
@@ -237,6 +295,13 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
                                     metrics: metrics
                                 )
                             }) { _, scrollState in
+                                guard AdminPhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                                    isActive: isActive,
+                                    isVisible: isVisible
+                                ) else {
+                                    return
+                                }
+
                                 if scrollOffset != scrollState.displayOffset {
                                     scrollOffset = scrollState.displayOffset
                                 }
@@ -266,8 +331,14 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
                                 isImmersive = false
                                 scrollProxy.scrollTo(topAnchorID, anchor: .top)
                             }
-                            .task(id: isVisible) {
-                                guard isVisible else {
+                            .task(id: AdminPhotoBackdropTaskPolicy.shouldRunInitialPositionTask(
+                                isActive: isActive,
+                                isVisible: isVisible
+                            )) {
+                                guard AdminPhotoBackdropTaskPolicy.shouldRunInitialPositionTask(
+                                    isActive: isActive,
+                                    isVisible: isVisible
+                                ) else {
                                     return
                                 }
 
@@ -459,7 +530,7 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
         }
 
         try? await Task.sleep(nanoseconds: 80_000_000)
-        guard !Task.isCancelled, isVisible else {
+        guard !Task.isCancelled, isActive, isVisible else {
             return
         }
 
@@ -499,42 +570,89 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
 
 enum AdminBackdropImagePreheater {
     #if canImport(UIKit)
+    private enum QueueMode {
+        case retainingQueuedWork
+        case focusedOnCurrentRequest
+    }
+
+    typealias ImagePreparer = (String) -> UIImage?
+
     private static let maxPreheatedImageCount = AdminBackdropPreheatPolicy.maxRetainedPreparedImages
+    private static let maxQueuedImageCount = AdminBackdropPreheatPolicy.maxRetainedPreparedImages
     private static let lock = NSLock()
+    private static let defaultImagePreparer: ImagePreparer = { imageName in
+        UIImage(named: imageName)?.preparingForDisplay()
+    }
     private static var preheatedImageNames = Set<String>()
     private static var preheatedImages = [String: UIImage]()
     private static var preheatedImageOrder = [String]()
+    private static var queuedImageNames = [String]()
+    private static var focusedPreheatGeneration = 0
+    private static var focusedRequestImageNames = Set<String>()
+    private static var focusedGenerationByImageName = [String: Int]()
+    private static var imagePreparer: ImagePreparer = defaultImagePreparer
+    private static var queueWorkerTask: Task<Void, Never>?
 
     static func preheat(_ imageNames: [String]) {
+        preheat(imageNames, queueMode: .retainingQueuedWork)
+    }
+
+    static func preheatFocused(_ imageNames: [String]) {
+        preheat(imageNames, queueMode: .focusedOnCurrentRequest)
+    }
+
+    private static func preheat(_ imageNames: [String], queueMode: QueueMode) {
         lock.lock()
         let pendingImageNames = AdminBackdropImagePreheatPlan.pendingImageNames(
             requestedImageNames: imageNames,
             reservedImageNames: preheatedImageNames
         )
-        guard !pendingImageNames.isEmpty else {
+        pendingImageNames.forEach { preheatedImageNames.insert($0) }
+        let previousQueuedImageNames = queuedImageNames
+
+        switch queueMode {
+        case .retainingQueuedWork:
+            guard !pendingImageNames.isEmpty else {
+                lock.unlock()
+                return
+            }
+
+            queuedImageNames = AdminBackdropImagePreheatPlan.queuedImageNames(
+                existingQueuedImageNames: queuedImageNames,
+                incomingImageNames: pendingImageNames,
+                maxQueuedImageCount: maxQueuedImageCount
+            )
+        case .focusedOnCurrentRequest:
+            focusedPreheatGeneration += 1
+            let requestedImageNames = Set(imageNames)
+            focusedRequestImageNames = requestedImageNames
+            let retainedRequestedQueue = queuedImageNames.filter { requestedImageNames.contains($0) }
+            queuedImageNames = AdminBackdropImagePreheatPlan.focusedQueuedImageNames(
+                existingQueuedImageNames: queuedImageNames,
+                incomingImageNames: retainedRequestedQueue + pendingImageNames,
+                maxQueuedImageCount: maxQueuedImageCount
+            )
+            for imageName in queuedImageNames where requestedImageNames.contains(imageName) {
+                focusedGenerationByImageName[imageName] = focusedPreheatGeneration
+            }
+        }
+
+        releaseDroppedQueuedReservations(
+            previousQueuedImageNames + pendingImageNames,
+            retainedQueuedImageNames: queuedImageNames
+        )
+
+        guard !queuedImageNames.isEmpty else {
             lock.unlock()
             return
         }
 
-        pendingImageNames.forEach { preheatedImageNames.insert($0) }
-        lock.unlock()
-
-        Task.detached(priority: .utility) {
-            for imageName in pendingImageNames {
-                autoreleasepool {
-                    let preparedImage = UIImage(named: imageName)?.preparingForDisplay()
-                    lock.lock()
-                    if let preparedImage {
-                        preheatedImages[imageName] = preparedImage
-                        preheatedImageOrder.append(imageName)
-                        trimPreheatedImagesIfNeeded()
-                    } else {
-                        releasePendingReservation(imageName)
-                    }
-                    lock.unlock()
-                }
+        if queueWorkerTask == nil {
+            queueWorkerTask = Task.detached(priority: .utility) {
+                drainPreheatQueue()
             }
         }
+        lock.unlock()
     }
 
     static func preparedImage(named imageName: String) -> UIImage? {
@@ -543,9 +661,60 @@ enum AdminBackdropImagePreheater {
         return preheatedImages[imageName]
     }
 
+    private static func drainPreheatQueue() {
+        while true {
+            lock.lock()
+            guard let nextQueuedImage = AdminBackdropImagePreheatPlan.nextQueuedImageName(from: queuedImageNames) else {
+                queueWorkerTask = nil
+                lock.unlock()
+                return
+            }
+            queuedImageNames = nextQueuedImage.remainingQueuedImageNames
+            let imageName = nextQueuedImage.imageName
+            let focusedGeneration = focusedGenerationByImageName[imageName]
+            let imagePreparer = imagePreparer
+            lock.unlock()
+
+            autoreleasepool {
+                let preparedImage = imagePreparer(imageName)
+                lock.lock()
+                if let preparedImage,
+                   shouldCommitPreparedImage(imageName, focusedGeneration: focusedGeneration) {
+                    preheatedImages[imageName] = preparedImage
+                    preheatedImageOrder.append(imageName)
+                    trimPreheatedImagesIfNeeded()
+                } else {
+                    releasePendingReservation(imageName)
+                }
+                lock.unlock()
+            }
+        }
+    }
+
+    private static func releaseDroppedQueuedReservations(
+        _ candidateImageNames: [String],
+        retainedQueuedImageNames: [String]
+    ) {
+        let retainedQueuedImageNames = Set(retainedQueuedImageNames)
+
+        for imageName in candidateImageNames where !retainedQueuedImageNames.contains(imageName) {
+            releasePendingReservation(imageName)
+        }
+    }
+
+    private static func shouldCommitPreparedImage(_ imageName: String, focusedGeneration: Int?) -> Bool {
+        guard let focusedGeneration else {
+            return true
+        }
+
+        return focusedGeneration == focusedPreheatGeneration
+            || focusedRequestImageNames.contains(imageName)
+    }
+
     private static func releasePendingReservation(_ imageName: String) {
         if preheatedImages[imageName] == nil {
             preheatedImageNames.remove(imageName)
+            focusedGenerationByImageName.removeValue(forKey: imageName)
         }
     }
 
@@ -554,10 +723,29 @@ enum AdminBackdropImagePreheater {
             let evictedImageName = preheatedImageOrder.removeFirst()
             preheatedImages[evictedImageName] = nil
             preheatedImageNames.remove(evictedImageName)
+            focusedGenerationByImageName.removeValue(forKey: evictedImageName)
         }
     }
+
+#if DEBUG
+    static func resetForTesting(imagePreparer: ImagePreparer? = nil) {
+        lock.lock()
+        queueWorkerTask?.cancel()
+        queueWorkerTask = nil
+        preheatedImageNames.removeAll()
+        preheatedImages.removeAll()
+        preheatedImageOrder.removeAll()
+        queuedImageNames.removeAll()
+        focusedPreheatGeneration = 0
+        focusedRequestImageNames.removeAll()
+        focusedGenerationByImageName.removeAll()
+        Self.imagePreparer = imagePreparer ?? defaultImagePreparer
+        lock.unlock()
+    }
+#endif
     #else
     static func preheat(_ imageNames: [String]) {}
+    static func preheatFocused(_ imageNames: [String]) {}
     #endif
 }
 

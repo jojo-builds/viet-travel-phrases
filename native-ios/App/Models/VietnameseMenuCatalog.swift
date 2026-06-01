@@ -123,6 +123,17 @@ struct VietnameseMenuItem: Identifiable, Decodable {
         VietnameseMenuKind(rawValue: menuType)
     }
 
+    var playbackAudioKey: String? {
+        let cacheKey = PlaybackAudioCacheKey(itemID: itemID, vietnameseItem: vietnameseItem)
+        if let cachedAudioKey = Self.cachedPlaybackAudioKey(for: cacheKey) {
+            return cachedAudioKey.value
+        }
+
+        let audioKey = AudioAssetManifest.main?.audioKey(forExactText: vietnameseItem)
+        Self.storeCachedPlaybackAudioKey(CachedPlaybackAudioKey(audioKey), for: cacheKey)
+        return audioKey
+    }
+
     var displayPronunciation: String {
         soundOut.isEmpty ? romanizedNoTones : soundOut
     }
@@ -156,6 +167,63 @@ struct VietnameseMenuItem: Identifiable, Decodable {
         let line = guideOrderLine
         return "\(line.vietnamese)\n\(line.english)\n\(line.pronunciation)"
     }
+
+    private struct PlaybackAudioCacheKey: Hashable {
+        let itemID: String
+        let vietnameseItem: String
+    }
+
+    private struct CachedPlaybackAudioKey {
+        let value: String?
+
+        init(_ value: String?) {
+            self.value = value
+        }
+    }
+
+    private static let playbackAudioCacheLimit = 512
+    private static let playbackAudioCacheLock = NSLock()
+    private static var playbackAudioKeysByKey: [PlaybackAudioCacheKey: CachedPlaybackAudioKey] = [:]
+    private static var playbackAudioCacheKeys: [PlaybackAudioCacheKey] = []
+
+    private static func cachedPlaybackAudioKey(for key: PlaybackAudioCacheKey) -> CachedPlaybackAudioKey? {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        guard let cachedAudioKey = playbackAudioKeysByKey[key] else {
+            return nil
+        }
+
+        touchPlaybackAudioCacheKey(key)
+        return cachedAudioKey
+    }
+
+    private static func storeCachedPlaybackAudioKey(_ audioKey: CachedPlaybackAudioKey, for key: PlaybackAudioCacheKey) {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        playbackAudioKeysByKey[key] = audioKey
+        touchPlaybackAudioCacheKey(key)
+
+        while playbackAudioCacheKeys.count > playbackAudioCacheLimit {
+            let oldestKey = playbackAudioCacheKeys.removeFirst()
+            playbackAudioKeysByKey.removeValue(forKey: oldestKey)
+        }
+    }
+
+    private static func touchPlaybackAudioCacheKey(_ key: PlaybackAudioCacheKey) {
+        playbackAudioCacheKeys.removeAll { $0 == key }
+        playbackAudioCacheKeys.append(key)
+    }
+
+#if DEBUG
+    static func resetPlaybackAudioResolutionCacheForTesting() {
+        playbackAudioCacheLock.lock()
+        playbackAudioKeysByKey.removeAll()
+        playbackAudioCacheKeys.removeAll()
+        playbackAudioCacheLock.unlock()
+    }
+#endif
 }
 
 struct VietnameseMenuOrderLine: Decodable, Equatable {
@@ -242,6 +310,8 @@ enum VietnameseMenuCatalog {
     static let allItems: [VietnameseMenuItem] = payload.items
     static let helperPhrases: [VietnameseMenuHelperPhraseDefinition] = payload.helperPhrases ?? []
     private static let helperPhrasesByID = Dictionary(uniqueKeysWithValues: helperPhrases.map { ($0.id, $0) })
+    private static let itemsByID = Dictionary(uniqueKeysWithValues: allItems.map { ($0.itemID, $0) })
+    private static let itemsByDetailPageID = Dictionary(uniqueKeysWithValues: allItems.map { ($0.detailPageID, $0) })
     private static let itemsByKind: [VietnameseMenuKind: [VietnameseMenuItem]] = Dictionary(
         uniqueKeysWithValues: VietnameseMenuKind.allCases.map { kind in
             (kind, allItems.filter { $0.kind == kind })
@@ -262,9 +332,30 @@ enum VietnameseMenuCatalog {
             (kind, buildSections(for: kind))
         }
     )
+    static var indexedItemCountForTesting: Int { itemsByID.count }
 
 #if DEBUG
+    private static let itemLookupCountLock = NSLock()
+    private static var itemLookupCount = 0
     private static var sectionBuildCountsForTesting: [VietnameseMenuKind: Int] = [:]
+
+    static var itemLookupCountForTesting: Int {
+        itemLookupCountLock.lock()
+        defer { itemLookupCountLock.unlock() }
+        return itemLookupCount
+    }
+
+    static func resetItemLookupCountForTesting() {
+        itemLookupCountLock.lock()
+        itemLookupCount = 0
+        itemLookupCountLock.unlock()
+    }
+
+    private static func recordItemLookupForTesting() {
+        itemLookupCountLock.lock()
+        itemLookupCount += 1
+        itemLookupCountLock.unlock()
+    }
 
     static func resetSectionBuildCountsForTesting() {
         sectionBuildCountsForTesting = [:]
@@ -289,6 +380,13 @@ enum VietnameseMenuCatalog {
 
     static func items(for kind: VietnameseMenuKind) -> [VietnameseMenuItem] {
         itemsByKind[kind] ?? []
+    }
+
+    static func item(withID itemID: String) -> VietnameseMenuItem? {
+#if DEBUG
+        recordItemLookupForTesting()
+#endif
+        return itemsByID[itemID]
     }
 
     static func categories(for kind: VietnameseMenuKind) -> [VietnameseMenuCategory] {
@@ -374,8 +472,7 @@ enum VietnameseMenuCatalog {
             return nil
         }
 
-        let itemID = String(pageID.dropFirst("viet-menu-".count))
-        return allItems.first { $0.itemID == itemID }
+        return itemsByDetailPageID[pageID]
     }
 
     static func detailPage(withID pageID: String) -> PhraseDetailPage? {
@@ -1151,7 +1248,7 @@ enum VietnameseMenuCatalog {
             subtitle: item.englishTranslation,
             symbolName: item.kind?.symbolName ?? "fork.knife",
             tintName: item.kind?.tintName ?? .orange,
-            audioKey: AudioAssetManifest.main?.audioKey(forExactText: item.vietnameseItem)
+            audioKey: item.playbackAudioKey
         )
     }
 
@@ -1449,6 +1546,10 @@ struct LocationMenuPick: Identifiable, Equatable {
     let audioText: String?
     let linkedMenuItemID: String?
     let afterSectionID: String?
+    private var resolvedAudioKey: String?
+    private var hasResolvedAudioKey = false
+    private var resolvedAudioTintName: AccentTint?
+    private var hasResolvedAudioTintName = false
 
     init(
         id: String,
@@ -1470,6 +1571,10 @@ struct LocationMenuPick: Identifiable, Equatable {
         self.audioText = audioText
         self.linkedMenuItemID = linkedMenuItemID
         self.afterSectionID = afterSectionID
+        self.resolvedAudioKey = nil
+        self.hasResolvedAudioKey = false
+        self.resolvedAudioTintName = nil
+        self.hasResolvedAudioTintName = false
     }
 
     var linkedMenuItem: VietnameseMenuItem? {
@@ -1477,10 +1582,46 @@ struct LocationMenuPick: Identifiable, Equatable {
             return nil
         }
 
-        return VietnameseMenuCatalog.allItems.first { $0.itemID == linkedMenuItemID }
+        return VietnameseMenuCatalog.item(withID: linkedMenuItemID)
     }
 
     var audioKey: String? {
+        if hasResolvedAudioKey {
+            return resolvedAudioKey
+        }
+
+        return Self.resolveAudioKey(audioText: audioText, linkedMenuItemID: linkedMenuItemID)
+    }
+
+    var audioTintName: AccentTint {
+        if hasResolvedAudioTintName {
+            return resolvedAudioTintName ?? .orange
+        }
+
+        return Self.resolveAudioTintName(linkedMenuItemID: linkedMenuItemID)
+    }
+
+    func resolvingAudioKey() -> LocationMenuPick {
+        let linkedMenuItem = linkedMenuItemID.flatMap(VietnameseMenuCatalog.item)
+        var resolved = self
+        resolved.resolvedAudioKey = Self.resolveAudioKey(
+            audioText: audioText,
+            linkedMenuItem: linkedMenuItem
+        )
+        resolved.hasResolvedAudioKey = true
+        resolved.resolvedAudioTintName = Self.resolveAudioTintName(linkedMenuItem: linkedMenuItem)
+        resolved.hasResolvedAudioTintName = true
+        return resolved
+    }
+
+    private static func resolveAudioKey(audioText: String?, linkedMenuItemID: String?) -> String? {
+        resolveAudioKey(
+            audioText: audioText,
+            linkedMenuItem: linkedMenuItemID.flatMap(VietnameseMenuCatalog.item)
+        )
+    }
+
+    private static func resolveAudioKey(audioText: String?, linkedMenuItem: VietnameseMenuItem?) -> String? {
         if let audioText {
             return AudioAssetManifest.main?.audioKey(forExactText: audioText)
         }
@@ -1491,15 +1632,129 @@ struct LocationMenuPick: Identifiable, Equatable {
 
         return AudioAssetManifest.main?.audioKey(forExactText: linkedMenuItem.vietnameseItem)
     }
+
+    private static func resolveAudioTintName(linkedMenuItemID: String?) -> AccentTint {
+        resolveAudioTintName(linkedMenuItem: linkedMenuItemID.flatMap(VietnameseMenuCatalog.item))
+    }
+
+    private static func resolveAudioTintName(linkedMenuItem: VietnameseMenuItem?) -> AccentTint {
+        linkedMenuItem?.kind?.tintName ?? .orange
+    }
+
+    static func == (lhs: LocationMenuPick, rhs: LocationMenuPick) -> Bool {
+        lhs.id == rhs.id
+            && lhs.title == rhs.title
+            && lhs.subtitle == rhs.subtitle
+            && lhs.proof == rhs.proof
+            && lhs.imageName == rhs.imageName
+            && lhs.detailPageID == rhs.detailPageID
+            && lhs.audioText == rhs.audioText
+            && lhs.linkedMenuItemID == rhs.linkedMenuItemID
+            && lhs.afterSectionID == rhs.afterSectionID
+    }
 }
 
 enum LocationMenuPicksCatalog {
+    private static let cacheLimit = 96
+    private static let cacheLock = NSLock()
+    private static var cachedPicksByPageID: [String: [LocationMenuPick]] = [:]
+    private static var cachedPageIDs: [String] = []
+
+#if DEBUG
+    private static var buildCountsByPageID: [String: Int] = [:]
+    private static var sectionFilterCount = 0
+
+    static func resetCacheForTesting() {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        cachedPicksByPageID.removeAll()
+        cachedPageIDs.removeAll()
+        buildCountsByPageID.removeAll()
+        sectionFilterCount = 0
+    }
+
+    static var cacheLimitForTesting: Int {
+        cacheLimit
+    }
+
+    static var cachedPageCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return cachedPicksByPageID.count
+    }
+
+    static func buildCountForTesting(pageID: String) -> Int {
+        let lookupPageID = canonicalLookupPageID(for: pageID)
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return buildCountsByPageID[lookupPageID] ?? 0
+    }
+
+    static var sectionFilterCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return sectionFilterCount
+    }
+#endif
+
     static func picks(forPageID pageID: String) -> [LocationMenuPick] {
-        if pageID.hasPrefix("viet-phrase-city-") {
-            let familyPageID = "viet-family-city-" + String(pageID.dropFirst("viet-phrase-city-".count))
-            return picks(forPageID: familyPageID)
+        guard mayHavePicks(for: pageID) else {
+            return []
         }
 
+        let lookupPageID = canonicalLookupPageID(for: pageID)
+
+        cacheLock.lock()
+        if let cachedPicks = cachedPicksByPageID[lookupPageID] {
+            touchCachedPageID(lookupPageID)
+            cacheLock.unlock()
+            return cachedPicks
+        }
+        cacheLock.unlock()
+
+        let picks = uncachedPicks(forPageID: lookupPageID)
+
+        cacheLock.lock()
+        storeCachedPicks(picks, for: lookupPageID)
+#if DEBUG
+        buildCountsByPageID[lookupPageID, default: 0] += 1
+#endif
+        cacheLock.unlock()
+
+        return picks
+    }
+
+    private static func storeCachedPicks(_ picks: [LocationMenuPick], for pageID: String) {
+        cachedPicksByPageID[pageID] = picks
+        touchCachedPageID(pageID)
+
+        while cachedPageIDs.count > cacheLimit {
+            let oldestPageID = cachedPageIDs.removeFirst()
+            cachedPicksByPageID.removeValue(forKey: oldestPageID)
+#if DEBUG
+            buildCountsByPageID.removeValue(forKey: oldestPageID)
+#endif
+        }
+    }
+
+    private static func touchCachedPageID(_ pageID: String) {
+        cachedPageIDs.removeAll { $0 == pageID }
+        cachedPageIDs.append(pageID)
+    }
+
+    private static func canonicalLookupPageID(for pageID: String) -> String {
+        if pageID.hasPrefix("viet-phrase-city-") {
+            return "viet-family-city-" + String(pageID.dropFirst("viet-phrase-city-".count))
+        }
+
+        return pageID
+    }
+
+    private static func mayHavePicks(for pageID: String) -> Bool {
+        pageID.hasPrefix("viet-family-city-") || pageID.hasPrefix("viet-phrase-city-")
+    }
+
+    private static func uncachedPicks(forPageID pageID: String) -> [LocationMenuPick] {
         switch pageID {
         case "viet-family-city-danang-place-bac-my-an-market":
             return menuItemPicks(["food-kem-bo"], after: "at-glance")
@@ -1546,15 +1801,33 @@ enum LocationMenuPicksCatalog {
     }
 
     static func picks(forPageID pageID: String, afterSectionID sectionID: String) -> [LocationMenuPick] {
-        picks(forPageID: pageID).filter { $0.afterSectionID == sectionID }
+#if DEBUG
+        cacheLock.lock()
+        sectionFilterCount += 1
+        cacheLock.unlock()
+#endif
+        return picks(forPageID: pageID).filter { $0.afterSectionID == sectionID }
     }
 
     static func trailingPicks(forPageID pageID: String) -> [LocationMenuPick] {
-        picks(forPageID: pageID).filter { $0.afterSectionID == nil }
+#if DEBUG
+        cacheLock.lock()
+        sectionFilterCount += 1
+        cacheLock.unlock()
+#endif
+        return picks(forPageID: pageID).filter { $0.afterSectionID == nil }
     }
 
     static func pick(withDetailPageID pageID: String) -> LocationMenuPick? {
         allPicks.first { $0.detailPageID == pageID }
+    }
+
+    static func hasDetailPage(withID pageID: String) -> Bool {
+        guard let pick = pick(withDetailPageID: pageID) else {
+            return false
+        }
+
+        return pick.linkedMenuItemID == nil
     }
 
     static func detailPage(withID pageID: String) -> PhraseDetailPage? {
@@ -1588,7 +1861,7 @@ enum LocationMenuPicksCatalog {
     }
 
     private static func menuItemPick(itemID: String, after sectionID: String) -> LocationMenuPick? {
-        guard let item = VietnameseMenuCatalog.allItems.first(where: { $0.itemID == itemID }) else {
+        guard let item = VietnameseMenuCatalog.item(withID: itemID) else {
             return nil
         }
 
@@ -1847,12 +2120,106 @@ enum LocationMenuPicksCatalog {
 }
 
 enum LocationRelatedPicksCatalog {
+    private static let cacheLimit = 96
+    private static let cacheLock = NSLock()
+    private static var cachedPicksByPageID: [String: [LocationMenuPick]] = [:]
+    private static var cachedPageIDs: [String] = []
+
+#if DEBUG
+    private static var buildCountsByPageID: [String: Int] = [:]
+    private static var sectionFilterCount = 0
+
+    static func resetCacheForTesting() {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        cachedPicksByPageID.removeAll()
+        cachedPageIDs.removeAll()
+        buildCountsByPageID.removeAll()
+        sectionFilterCount = 0
+    }
+
+    static var cacheLimitForTesting: Int {
+        cacheLimit
+    }
+
+    static var cachedPageCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return cachedPicksByPageID.count
+    }
+
+    static func buildCountForTesting(pageID: String) -> Int {
+        let lookupPageID = canonicalLookupPageID(for: pageID)
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return buildCountsByPageID[lookupPageID] ?? 0
+    }
+
+    static var sectionFilterCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return sectionFilterCount
+    }
+#endif
+
     static func picks(forPageID pageID: String) -> [LocationMenuPick] {
-        if pageID.hasPrefix("viet-phrase-city-") {
-            let familyPageID = "viet-family-city-" + String(pageID.dropFirst("viet-phrase-city-".count))
-            return picks(forPageID: familyPageID)
+        guard mayHavePicks(for: pageID) else {
+            return []
         }
 
+        let lookupPageID = canonicalLookupPageID(for: pageID)
+
+        cacheLock.lock()
+        if let cachedPicks = cachedPicksByPageID[lookupPageID] {
+            touchCachedPageID(lookupPageID)
+            cacheLock.unlock()
+            return cachedPicks
+        }
+        cacheLock.unlock()
+
+        let picks = uncachedPicks(forPageID: lookupPageID)
+
+        cacheLock.lock()
+        storeCachedPicks(picks, for: lookupPageID)
+#if DEBUG
+        buildCountsByPageID[lookupPageID, default: 0] += 1
+#endif
+        cacheLock.unlock()
+
+        return picks
+    }
+
+    private static func storeCachedPicks(_ picks: [LocationMenuPick], for pageID: String) {
+        cachedPicksByPageID[pageID] = picks
+        touchCachedPageID(pageID)
+
+        while cachedPageIDs.count > cacheLimit {
+            let oldestPageID = cachedPageIDs.removeFirst()
+            cachedPicksByPageID.removeValue(forKey: oldestPageID)
+#if DEBUG
+            buildCountsByPageID.removeValue(forKey: oldestPageID)
+#endif
+        }
+    }
+
+    private static func touchCachedPageID(_ pageID: String) {
+        cachedPageIDs.removeAll { $0 == pageID }
+        cachedPageIDs.append(pageID)
+    }
+
+    private static func canonicalLookupPageID(for pageID: String) -> String {
+        if pageID.hasPrefix("viet-phrase-city-") {
+            return "viet-family-city-" + String(pageID.dropFirst("viet-phrase-city-".count))
+        }
+
+        return pageID
+    }
+
+    private static func mayHavePicks(for pageID: String) -> Bool {
+        pageID.hasPrefix("viet-family-city-") || pageID.hasPrefix("viet-phrase-city-")
+    }
+
+    private static func uncachedPicks(forPageID pageID: String) -> [LocationMenuPick] {
         switch pageID {
         case "viet-family-city-danang-place-international-terminal":
             return [
@@ -2058,7 +2425,12 @@ enum LocationRelatedPicksCatalog {
     }
 
     static func picks(forPageID pageID: String, afterSectionID sectionID: String) -> [LocationMenuPick] {
-        picks(forPageID: pageID).filter { $0.afterSectionID == sectionID }
+#if DEBUG
+        cacheLock.lock()
+        sectionFilterCount += 1
+        cacheLock.unlock()
+#endif
+        return picks(forPageID: pageID).filter { $0.afterSectionID == sectionID }
     }
 
     private static func relatedPlacePick(

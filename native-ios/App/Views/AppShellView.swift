@@ -46,6 +46,15 @@ private struct HomePhotoBackdropScrollState: Equatable {
     }
 }
 
+enum HomePhotoBackdropTaskPolicy {
+    static func shouldApplyScrollGeometry(
+        isActive: Bool,
+        isVisible: Bool
+    ) -> Bool {
+        isActive && isVisible
+    }
+}
+
 enum HomeBackdropActivationPolicy {
     static func shouldAdvanceBackdrop(previousRoute: AppRoute, currentRoute: AppRoute) -> Bool {
         AdminRootPhotoBackdropActivationPolicy.targetSurface(
@@ -113,10 +122,57 @@ enum AppShellPracticeOverlayChromePolicy {
     }
 }
 
+struct AppShellBrowseDetailHeroOverrideCache: Equatable {
+    private static let cacheLimit = 96
+    private var overridesByPageID: [String: String] = [:]
+    private var pageIDs: [String] = []
+
+    subscript(pageID: String) -> String? {
+        overridesByPageID[pageID]
+    }
+
+    mutating func set(_ heroImageName: String?, for pageID: String) {
+        guard let heroImageName else {
+            remove(for: pageID)
+            return
+        }
+
+        overridesByPageID[pageID] = heroImageName
+        touch(pageID)
+
+        while pageIDs.count > Self.cacheLimit {
+            let oldestPageID = pageIDs.removeFirst()
+            overridesByPageID.removeValue(forKey: oldestPageID)
+        }
+    }
+
+    mutating func remove(for pageID: String) {
+        overridesByPageID.removeValue(forKey: pageID)
+        pageIDs.removeAll { $0 == pageID }
+    }
+
+    private mutating func touch(_ pageID: String) {
+        pageIDs.removeAll { $0 == pageID }
+        pageIDs.append(pageID)
+    }
+
+#if DEBUG
+    static var cacheLimitForTesting: Int {
+        cacheLimit
+    }
+
+    var countForTesting: Int {
+        overridesByPageID.count
+    }
+#endif
+}
+
 struct AppShellView: View {
     @State private var navigation: AppShellNavigationState
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
     @State private var interactiveDragResolutionID = 0
+    @State private var routeTransitionDirection: AppRouteTransitionDirection?
+    @State private var routeTransitionResetID = 0
     @State private var searchQuery: String
     @State private var isSearchPresentationActive = false
     @State private var searchFocusRequestID = 0
@@ -147,7 +203,7 @@ struct AppShellView: View {
     @State private var homePhraseHeroMorphPageID: String?
     @State private var homePhraseHeroContentHoldPageID: String?
     @State private var homePhraseHeroMorphResetID = 0
-    @State private var browseDetailHeroImageOverrides: [String: String] = [:]
+    @State private var browseDetailHeroImageOverrides = AppShellBrowseDetailHeroOverrideCache()
     @State private var homeCurrentScrollTarget: HomeScrollTarget? = .top
     @State private var homeCurrentScrollOffsetY: CGFloat = 0
     @State private var homeScrollRestorationTarget: HomeScrollRestorationTarget?
@@ -161,6 +217,7 @@ struct AppShellView: View {
     @State private var savedTripSectionJumpRequest: SavedTripSectionJumpRequest?
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.scenePhase) private var scenePhase
     @FocusState private var isSearchFieldFocused: Bool
     @Namespace private var chromeNamespace
     private let launchPracticeMode: PracticeMode?
@@ -261,6 +318,7 @@ struct AppShellView: View {
         .overlay {
             if hidesPhotoBackdropChrome, let photoBackdropImmersiveImageContext {
                 PhotoBackdropImmersiveImageCover(context: photoBackdropImmersiveImageContext)
+                    .ignoresSafeArea()
             }
         }
         .overlay(alignment: .bottom) {
@@ -270,6 +328,11 @@ struct AppShellView: View {
                     onSelect: handleBottomAdminTabTap
                 )
                 .zIndex(AppChromeLayout.bottomAdminHitTestLayerZIndex)
+            }
+        }
+        .onChange(of: scenePhase) { _, phase in
+            if phase != .active {
+                intentStore.flushRecentPages()
             }
         }
     }
@@ -368,6 +431,7 @@ struct AppShellView: View {
                     backdropActivationToken: homeBackdropState.activationToken,
                     scrollToTopTrigger: navigation.homeScrollToTopTrigger,
                     isActive: navigation.currentRoute == .home,
+                    isVisible: navigation.shouldRenderRootSurface(.home),
                     isSearchActive: navigation.isSearchPresented,
                     currentScrollTarget: $homeCurrentScrollTarget,
                     currentScrollOffsetY: $homeCurrentScrollOffsetY,
@@ -475,34 +539,39 @@ struct AppShellView: View {
                     width: pageWidth
                 )
 
-                PhraseListingView(
-                    page: .xinChao,
-                    scrollToTopTrigger: navigation.rootScrollToTopTrigger,
-                    chromeNamespace: chromeNamespace,
-                    isSearchActive: navigation.isSearchPresented,
-                    isActive: navigation.currentRoute == .phrasePage,
-                    showsChrome: false,
-                    topChromeContentClearance: pinnedAudioSpeedScrollClearance,
-                    isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
-                    isPageSaved: { intentStore.isPageSaved($0) },
-                    heroMorphPageID: homePhraseHeroMorphPageID,
-                    heroMorphContentHoldPageID: homePhraseHeroContentHoldPageID,
-                    onBackTapped: {},
-                    onSearchTapped: openSearch,
-                    onToggleSaved: { intentStore.toggleSavedPage(PhrasePage.xinChao.id) },
-                    onToggleSavedPage: { intentStore.toggleSavedPage($0) },
-                    onDetailTapped: openDetail
-                )
-                .allowsHitTesting(navigation.currentRoute == .phrasePage && allowsBasePageHitTesting)
-                .accessibilityHidden(navigation.currentRoute != .phrasePage)
-                .navigationPageMotion(
-                    route: .phrasePage,
-                    currentRoute: navigation.currentRoute,
-                    backPreviewRoute: navigation.backPreviewRoute,
-                    forwardPreviewRoute: navigation.forwardPreviewRoute,
-                    drag: interactiveDrag,
-                    width: pageWidth
-                )
+                if navigation.shouldRenderRootSurface(.phrasePage) {
+                    PhraseListingView(
+                        page: .xinChao,
+                        scrollToTopTrigger: navigation.rootScrollToTopTrigger,
+                        chromeNamespace: chromeNamespace,
+                        isSearchActive: navigation.isSearchPresented,
+                        isActive: navigation.currentRoute == .phrasePage,
+                        showsChrome: false,
+                        topChromeContentClearance: pinnedAudioSpeedScrollClearance,
+                        isSaved: intentStore.isPageSaved(PhrasePage.xinChao.id),
+                        isPageSaved: { intentStore.isPageSaved($0) },
+                        heroMorphPageID: homePhraseHeroMorphPageID,
+                        heroMorphContentHoldPageID: homePhraseHeroContentHoldPageID,
+                        onBackTapped: {},
+                        onSearchTapped: openSearch,
+                        onToggleSaved: { intentStore.toggleSavedPage(PhrasePage.xinChao.id) },
+                        onToggleSavedPage: { intentStore.toggleSavedPage($0) },
+                        onDetailTapped: openDetail
+                    )
+                    .allowsHitTesting(navigation.currentRoute == .phrasePage && allowsBasePageHitTesting)
+                    .accessibilityHidden(navigation.currentRoute != .phrasePage)
+                    .navigationPageMotion(
+                        route: .phrasePage,
+                        currentRoute: navigation.currentRoute,
+                        backPreviewRoute: navigation.backPreviewRoute,
+                        forwardPreviewRoute: navigation.forwardPreviewRoute,
+                        drag: interactiveDrag,
+                        width: pageWidth
+                    )
+                } else {
+                    Color.clear
+                        .accessibilityHidden(true)
+                }
 
                 browseCollectionPageStack(width: pageWidth)
 
@@ -689,7 +758,12 @@ struct AppShellView: View {
 
     @ViewBuilder
     private func browseCollectionPageStack(width: CGFloat) -> some View {
-        ForEach(Array(navigation.renderedBrowseCollections.enumerated()), id: \.element.id) { index, renderedCollection in
+        let includeBackPreview = interactiveDrag?.direction == .back
+
+        ForEach(
+            Array(navigation.renderedBrowseCollections(includeBackPreview: includeBackPreview).enumerated()),
+            id: \.element.id
+        ) { index, renderedCollection in
             let route = AppRoute.browseCollection(renderedCollection.route)
             let isActive = route == navigation.currentRoute
 
@@ -706,7 +780,7 @@ struct AppShellView: View {
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && allowsBasePageHitTesting)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
-                .transition(AppPageTransition.slideFromTrailing)
+                .transition(browseCollectionTransition(for: renderedCollection.route))
                 .zIndex(Double(index + 6))
                 .navigationPageMotion(
                     route: route,
@@ -733,7 +807,7 @@ struct AppShellView: View {
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && allowsBasePageHitTesting)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
-                .transition(AppPageTransition.slideFromTrailing)
+                .transition(browseCollectionTransition(for: renderedCollection.route))
                 .zIndex(Double(index + 6))
                 .navigationPageMotion(
                     route: route,
@@ -851,7 +925,12 @@ struct AppShellView: View {
 
     @ViewBuilder
     private func detailPageStack(width: CGFloat) -> some View {
-        ForEach(Array(navigation.renderedDetailPages.enumerated()), id: \.element.id) { index, renderedPage in
+        let includeBackPreview = interactiveDrag?.direction == .back
+
+        ForEach(
+            Array(navigation.renderedDetailPages(includeBackPreview: includeBackPreview).enumerated()),
+            id: \.element.id
+        ) { index, renderedPage in
             let route = AppRoute.detailPage(renderedPage.pageID)
             let isActive = route == navigation.currentRoute
 
@@ -917,13 +996,13 @@ struct AppShellView: View {
     private func detailTransition(for pageID: String) -> AnyTransition {
         isHomePhraseHeroRouteActive(for: pageID)
             ? AppPageTransition.phraseHeroMorph
-            : AppPageTransition.slideFromTrailing
+            : AppPageTransition.slide(for: routeTransitionDirection)
     }
 
     private func browseCollectionTransition(for route: BrowseCollectionRoute) -> AnyTransition {
-        BrowseCollectionNativeTransition.usesCityDissolve(for: route)
+        routeTransitionDirection == nil && BrowseCollectionNativeTransition.usesCityDissolve(for: route)
             ? AppPageTransition.browseCityDissolve
-            : AppPageTransition.slideFromTrailing
+            : AppPageTransition.slide(for: routeTransitionDirection)
     }
 
     private func isHomePhraseHeroRouteActive(for pageID: String) -> Bool {
@@ -964,6 +1043,7 @@ struct AppShellView: View {
                 backdropActivationToken: homeBackdropState.activationToken,
                 scrollToTopTrigger: 0,
                 isActive: false,
+                isVisible: true,
                 isSearchActive: navigation.isSearchPresented,
                 currentScrollTarget: .constant(nil),
                 currentScrollOffsetY: .constant(0),
@@ -1154,10 +1234,103 @@ struct AppShellView: View {
     }
 
     static func shouldRenderDesignedXinChaoPage(for pageID: String) -> Bool {
-        let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) ?? pageID
-        let canonicalXinChaoID = PhraseCatalog.canonicalPageID(forOpenablePageID: PhrasePage.xinChao.id) ?? PhrasePage.xinChao.id
+        if designedXinChaoDirectPageIDs.contains(pageID) {
+            return true
+        }
 
-        return pageID == PhrasePage.xinChao.id || canonicalPageID == canonicalXinChaoID
+        if pageID.hasPrefix("viet-phrase-") || pageID.hasPrefix("viet-menu-") {
+            return false
+        }
+
+        if let cachedDecision = designedXinChaoDecision(for: pageID) {
+            return cachedDecision
+        }
+
+        let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) ?? pageID
+        let shouldRender = canonicalPageID == designedXinChaoCanonicalPageID
+        storeDesignedXinChaoDecision(shouldRender, for: pageID)
+        return shouldRender
+    }
+
+    static func browseDetailHeroImageOverride(for heroImageName: String?) -> String? {
+        guard let heroImageName, heroImageName.hasPrefix("HeroCategory") else {
+            return nil
+        }
+
+        return heroImageName
+    }
+
+    static func shouldPreheatGenericDetailBackdrop(
+        source: UserIntentSource,
+        browseHeroOverride: String?
+    ) -> Bool {
+        !(source == .browse && browseHeroOverride != nil)
+    }
+
+    static func detailBackdropPreheatImageNames(
+        pageID: String,
+        heroImageNameOverride: String? = nil
+    ) -> [String] {
+        let heroImageName = heroImageNameOverride
+            ?? StaticPhraseBackdropImagePolicy.heroImageName(for: pageID)
+            ?? VietnameseMenuCatalog.detailItem(withPageID: pageID)?.menuBackdropImageName
+
+        return PhrasePhotoBackdropLayout.preheatImageNames(
+            pageID: pageID,
+            heroImageName: heroImageName
+        )
+    }
+
+    static func browseCollectionBackdropPreheatImageNames(for route: BrowseCollectionRoute) -> [String] {
+        if let menuKind = VietnameseMenuCatalog.kind(for: route) {
+            return VietnameseMenuPhotoBackdropPolicy.preheatImageNames(
+                photoBackdropImageName: menuKind.photoBackdropImageName,
+                fallbackHeroImageName: menuKind.heroImageName
+            )
+        }
+
+        guard let descriptor = BrowseSearchDestinations.collectionDescriptor(for: route) else {
+            return []
+        }
+
+        return BrowseCollectionPhotoBackdropPolicy.preheatImageNames(
+            hasCityHub: descriptor.cityHub != nil,
+            mastheadImageName: descriptor.mastheadImageName
+        )
+    }
+
+    private static let designedXinChaoCanonicalPageID = "viet-phrase-polite-1"
+    private static let designedXinChaoDirectPageIDs: Set<String> = [
+        PhrasePage.xinChao.id,
+        designedXinChaoCanonicalPageID,
+    ]
+    private static let designedXinChaoDecisionCacheLimit = 128
+    private static let designedXinChaoDecisionCacheLock = NSLock()
+    private static var designedXinChaoDecisionsByPageID: [String: Bool] = [:]
+    private static var designedXinChaoDecisionPageIDs: [String] = []
+
+    private static func designedXinChaoDecision(for pageID: String) -> Bool? {
+        designedXinChaoDecisionCacheLock.lock()
+        defer { designedXinChaoDecisionCacheLock.unlock() }
+
+        return designedXinChaoDecisionsByPageID[pageID]
+    }
+
+    private static func storeDesignedXinChaoDecision(_ shouldRender: Bool, for pageID: String) {
+        designedXinChaoDecisionCacheLock.lock()
+        defer { designedXinChaoDecisionCacheLock.unlock() }
+
+        guard designedXinChaoDecisionsByPageID[pageID] == nil else {
+            return
+        }
+
+        designedXinChaoDecisionsByPageID[pageID] = shouldRender
+        designedXinChaoDecisionPageIDs.append(pageID)
+
+        while designedXinChaoDecisionPageIDs.count > designedXinChaoDecisionCacheLimit {
+            let oldestPageID = designedXinChaoDecisionPageIDs.removeFirst()
+            designedXinChaoDecisionsByPageID.removeValue(forKey: oldestPageID)
+        }
     }
 
     private var isPreviewingForwardPage: Bool {
@@ -1569,10 +1742,14 @@ struct AppShellView: View {
             homePhraseHeroContentHoldPageID = morphPageID
         }
 
-        withAnimation(HomePhraseHeroMorphTiming.navigationAnimation) {
+        preheatDetailBackdrop(pageID: id)
+
+        let recentPageID = withAnimation(HomePhraseHeroMorphTiming.navigationAnimation) {
             navigation.openDetail(id)
         }
-        intentStore.recordOpenedPage(id, source: .home)
+        if let recentPageID {
+            intentStore.recordOpenedCanonicalPage(recentPageID, source: .home)
+        }
         revealHomePhraseHeroContent(after: resetID)
         clearHomePhraseHeroLaunch(after: resetID)
     }
@@ -1605,12 +1782,10 @@ struct AppShellView: View {
     }
 
     private func openDetailFromBrowse(_ id: String, heroImageName: String? = nil) {
-        if let heroImageName, heroImageName.hasPrefix("HeroCategory") {
-            browseDetailHeroImageOverrides[id] = heroImageName
-        } else {
-            browseDetailHeroImageOverrides[id] = nil
-        }
+        let heroImageOverride = Self.browseDetailHeroImageOverride(for: heroImageName)
+        browseDetailHeroImageOverrides.set(heroImageOverride, for: id)
 
+        preheatDetailBackdrop(pageID: id, heroImageNameOverride: heroImageName)
         openDetail(id, source: .browse)
     }
 
@@ -1624,15 +1799,30 @@ struct AppShellView: View {
 
     private func openDetail(_ id: String, source: UserIntentSource) {
         if source != .browse {
-            browseDetailHeroImageOverrides[id] = nil
+            browseDetailHeroImageOverrides.remove(for: id)
         }
 
+        let browseHeroOverride = browseDetailHeroImageOverrides[id]
+        if Self.shouldPreheatGenericDetailBackdrop(source: source, browseHeroOverride: browseHeroOverride) {
+            preheatDetailBackdrop(pageID: id, heroImageNameOverride: browseHeroOverride)
+        }
         cancelInteractiveChromeState()
         clearPracticeThreadForwardRestore()
-        withAnimation(.snappy(duration: 0.34)) {
+        let recentPageID = withAnimation(.snappy(duration: 0.34)) {
             navigation.openDetail(id)
         }
-        intentStore.recordOpenedPage(id, source: source)
+        if let recentPageID {
+            intentStore.recordOpenedCanonicalPage(recentPageID, source: source)
+        }
+    }
+
+    private func preheatDetailBackdrop(pageID: String, heroImageNameOverride: String? = nil) {
+        AdminBackdropImagePreheater.preheatFocused(
+            Self.detailBackdropPreheatImageNames(
+                pageID: pageID,
+                heroImageNameOverride: heroImageNameOverride
+            )
+        )
     }
 
     private func openDetailFromSearch(_ id: String) {
@@ -1643,6 +1833,7 @@ struct AppShellView: View {
         cancelInteractiveChromeState()
         cancelSearchFocus()
         clearPracticeThreadForwardRestore()
+        preheatBrowseCollectionBackdrop(route)
         withAnimation(BrowseCollectionNativeTransition.animation(for: route)) {
             navigation.openBrowseCollection(route)
         }
@@ -1652,6 +1843,7 @@ struct AppShellView: View {
         cancelInteractiveChromeState()
         cancelSearchFocus()
         clearPracticeThreadForwardRestore()
+        preheatBrowseCollectionBackdrop(route)
         withAnimation(BrowseCollectionNativeTransition.animation(for: route)) {
             navigation.openHomeBrowseCollection(route)
         }
@@ -1661,9 +1853,16 @@ struct AppShellView: View {
         cancelInteractiveChromeState()
         cancelSearchFocus()
         clearPracticeThreadForwardRestore()
+        preheatBrowseCollectionBackdrop(route)
         withAnimation(BrowseCollectionNativeTransition.animation(for: route)) {
             navigation.openBrowseCollectionFromSearch(route)
         }
+    }
+
+    private func preheatBrowseCollectionBackdrop(_ route: BrowseCollectionRoute) {
+        AdminBackdropImagePreheater.preheatFocused(
+            Self.browseCollectionBackdropPreheatImageNames(for: route)
+        )
     }
 
     private func openBrowseAll() {
@@ -1792,9 +1991,11 @@ struct AppShellView: View {
         }
         cancelInteractiveChromeState()
         prepareBrowseCollectionFocusRestoreIfNeeded(focusRequest)
+        let transitionResetID = beginRouteTransition(.back)
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
+        clearRouteTransition(after: transitionResetID)
         activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
@@ -1811,9 +2012,11 @@ struct AppShellView: View {
             return
         }
 
+        let transitionResetID = beginRouteTransition(.back)
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
+        clearRouteTransition(after: transitionResetID)
         activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
@@ -1883,9 +2086,11 @@ struct AppShellView: View {
         let previousRoute = navigation.currentRoute
         cancelInteractiveChromeState()
         preparePracticeMatchFocusRestoreIfNeeded()
+        let transitionResetID = beginRouteTransition(.back)
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
+        clearRouteTransition(after: transitionResetID)
         refreshSearchReturnFocusAfterReturningToSearch(from: previousRoute)
         activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
@@ -1902,9 +2107,11 @@ struct AppShellView: View {
         let previousRoute = navigation.currentRoute
         cancelInteractiveChromeState()
         let shouldFocusSearch = navigation.forwardPreviewRoute == .search
+        let transitionResetID = beginRouteTransition(.forward)
         withAnimation(.snappy(duration: 0.34)) {
             navigateForwardInState()
         }
+        clearRouteTransition(after: transitionResetID)
         activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
         if shouldFocusSearch {
             focusSearchField()
@@ -1985,9 +2192,11 @@ struct AppShellView: View {
         let previousRoute = navigation.currentRoute
         cancelSearchFocus()
         cancelInteractiveChromeState()
+        let transitionResetID = beginRouteTransition(.back)
         withAnimation(.snappy(duration: AppChromeLayout.searchMorphDuration)) {
             navigation.goBack()
         }
+        clearRouteTransition(after: transitionResetID)
         activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
@@ -2044,11 +2253,32 @@ struct AppShellView: View {
 
     private func cancelInteractiveChromeState() {
         interactiveDragResolutionID += 1
+        routeTransitionResetID += 1
         homePhraseHeroMorphResetID += 1
         homePhraseHeroRoutePageID = nil
         homePhraseHeroMorphPageID = nil
         homePhraseHeroContentHoldPageID = nil
         interactiveDrag = nil
+        routeTransitionDirection = nil
+    }
+
+    private func beginRouteTransition(_ direction: AppRouteTransitionDirection) -> Int {
+        routeTransitionResetID += 1
+        routeTransitionDirection = direction
+        return routeTransitionResetID
+    }
+
+    private func clearRouteTransition(after resetID: Int) {
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: AppRouteTransitionPolicy.cleanupDelayNanoseconds)
+            guard resetID == routeTransitionResetID else {
+                return
+            }
+
+            withoutRouteAnimation {
+                routeTransitionDirection = nil
+            }
+        }
     }
 
     private func clearPracticeStartRequest() {
@@ -2353,6 +2583,18 @@ struct AppShellNavigationState: Equatable {
     var detailScrollToTopTrigger = 0
     var detailScrollToTopRoute: AppRoute?
 
+#if DEBUG
+    private(set) static var renderedDetailPageCandidateChecksForTesting = 0
+
+    static func resetRenderedDetailPageCandidateChecksForTesting() {
+        renderedDetailPageCandidateChecksForTesting = 0
+    }
+
+    private static func recordRenderedDetailPageCandidateCheckForTesting() {
+        renderedDetailPageCandidateChecksForTesting += 1
+    }
+#endif
+
     init(initialRoute: AppRoute = .home) {
         rootRoute = .home
         browseCollectionPath = []
@@ -2522,12 +2764,24 @@ struct AppShellNavigationState: Equatable {
     }
 
     var renderedDetailPages: [RenderedDetailPage] {
-        let lowerBound = max(detailPath.count - 2, 0)
+        renderedDetailPages(includeBackPreview: true)
+    }
 
-        return detailPath.enumerated()
-            .filter { offset, _ in offset >= lowerBound }
-            .map { offset, pageID in
-                RenderedDetailPage(stackIndex: offset, pageID: pageID)
+    func renderedDetailPages(includeBackPreview: Bool) -> [RenderedDetailPage] {
+        let retainedCount = includeBackPreview ? 2 : 1
+        let lowerBound = max(detailPath.count - retainedCount, 0)
+
+        guard lowerBound < detailPath.endIndex else {
+            return []
+        }
+
+        return detailPath[lowerBound..<detailPath.endIndex]
+            .enumerated()
+            .map { relativeOffset, pageID in
+#if DEBUG
+                Self.recordRenderedDetailPageCandidateCheckForTesting()
+#endif
+                return RenderedDetailPage(stackIndex: lowerBound + relativeOffset, pageID: pageID)
             }
     }
 
@@ -2535,14 +2789,40 @@ struct AppShellNavigationState: Equatable {
         renderedDetailPages.map(\.pageID)
     }
 
+    func renderedDetailPageIDs(includeBackPreview: Bool) -> [String] {
+        renderedDetailPages(includeBackPreview: includeBackPreview).map(\.pageID)
+    }
+
+    func shouldRenderRootSurface(_ route: AppRoute) -> Bool {
+        [currentRoute, backPreviewRoute, forwardPreviewRoute]
+            .compactMap { $0 }
+            .contains(route)
+    }
+
     var renderedBrowseCollections: [RenderedBrowseCollection] {
-        let lowerBound = max(browseCollectionPath.count - 2, 0)
+        renderedBrowseCollections(includeBackPreview: true)
+    }
+
+    func renderedBrowseCollections(includeBackPreview: Bool) -> [RenderedBrowseCollection] {
+        var routesToRender = Set<BrowseCollectionRoute>()
+
+        if case .browseCollection(let route) = currentRoute {
+            routesToRender.insert(route)
+        }
+
+        if includeBackPreview, case .browseCollection(let route)? = backPreviewRoute {
+            routesToRender.insert(route)
+        }
 
         return browseCollectionPath.enumerated()
-            .filter { offset, _ in offset >= lowerBound }
+            .filter { _, route in routesToRender.contains(route) }
             .map { offset, route in
                 RenderedBrowseCollection(stackIndex: offset, route: route)
             }
+    }
+
+    func renderedBrowseCollectionRoutes(includeBackPreview: Bool) -> [BrowseCollectionRoute] {
+        renderedBrowseCollections(includeBackPreview: includeBackPreview).map(\.route)
     }
 
     var canNavigateBackWithSwipe: Bool {
@@ -2598,14 +2878,16 @@ struct AppShellNavigationState: Equatable {
         isSearchPresented = snapshot.isSearchPresented
     }
 
-    mutating func openDetail(_ id: String) {
-        let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: id)
+    @discardableResult
+    mutating func openDetail(_ id: String) -> String? {
+        let phraseCatalogCanonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: id)
+        let canonicalPageID = phraseCatalogCanonicalPageID
             ?? (VietnameseMenuCatalog.detailItem(withPageID: id) == nil ? nil : id)
 
         if id == PhrasePage.xinChao.id && canonicalPageID == PhrasePage.xinChao.id {
             guard currentRoute != .phrasePage else {
                 rootScrollToTopTrigger += 1
-                return
+                return phraseCatalogCanonicalPageID
             }
 
             recordSearchRouteForBackHistoryIfNeeded()
@@ -2615,11 +2897,11 @@ struct AppShellNavigationState: Equatable {
             rootRoute = .phrasePage
             forwardStack.removeAll()
             rootScrollToTopTrigger += 1
-            return
+            return phraseCatalogCanonicalPageID
         }
 
         guard let canonicalPageID else {
-            return
+            return nil
         }
 
         guard detailPath.last != canonicalPageID else {
@@ -2629,7 +2911,7 @@ struct AppShellNavigationState: Equatable {
                 detailScrollToTopRoute = .detailPage(canonicalPageID)
                 detailScrollToTopTrigger += 1
             }
-            return
+            return phraseCatalogCanonicalPageID
         }
 
         recordSearchRouteForBackHistoryIfNeeded()
@@ -2638,6 +2920,7 @@ struct AppShellNavigationState: Equatable {
         detailPath.append(canonicalPageID)
         detailScrollToTopRoute = .detailPage(canonicalPageID)
         detailScrollToTopTrigger += 1
+        return phraseCatalogCanonicalPageID
     }
 
     mutating func openHome() {
@@ -2795,7 +3078,6 @@ struct AppShellNavigationState: Equatable {
             if let currentCollection = browseCollectionPath.popLast() {
                 forwardStack.append(.browseCollection(currentCollection))
                 restoreSearchBackStackAfterPoppingCollectionIfNeeded()
-                restoreExplicitBackStackAfterPoppingCollectionIfNeeded()
                 return
             }
 
@@ -2866,19 +3148,6 @@ struct AppShellNavigationState: Equatable {
            detailPath.isEmpty,
            !previousSnapshot.detailPath.isEmpty {
             restore(backStack.removeLast())
-        }
-    }
-
-    private mutating func restoreExplicitBackStackAfterPoppingCollectionIfNeeded() {
-        guard browseCollectionPath.isEmpty, let previousSnapshot = backStack.last else {
-            return
-        }
-
-        switch previousSnapshot.currentRoute {
-        case .detailPage, .phrasePage, .saved, .practice:
-            restore(backStack.removeLast())
-        case .home, .browse, .browseCollection, .search:
-            return
         }
     }
 
@@ -3138,6 +3407,33 @@ enum AppInteractiveNavigationDirection {
     case forward
 }
 
+enum AppRouteTransitionDirection {
+    case back
+    case forward
+}
+
+enum AppRouteTransitionPhase {
+    case insertion
+    case removal
+}
+
+enum AppRouteTransitionPolicy {
+    static let cleanupDelayNanoseconds: UInt64 = 420_000_000
+
+    static func edge(for direction: AppRouteTransitionDirection?, phase: AppRouteTransitionPhase) -> Edge {
+        switch (direction, phase) {
+        case (.back, .insertion):
+            return .leading
+        case (.back, .removal):
+            return .trailing
+        case (.forward, .insertion), (.none, .insertion):
+            return .trailing
+        case (.forward, .removal), (.none, .removal):
+            return .trailing
+        }
+    }
+}
+
 struct AppInteractiveNavigationDrag: Equatable {
     let direction: AppInteractiveNavigationDirection
     let translation: CGFloat
@@ -3256,10 +3552,14 @@ struct AppInteractiveNavigationPresentation: Equatable {
 }
 
 enum AppPageTransition {
-    static let slideFromTrailing = AnyTransition.asymmetric(
-        insertion: .move(edge: .trailing).combined(with: .opacity),
-        removal: .move(edge: .trailing).combined(with: .opacity)
-    )
+    static let slideFromTrailing = slide(for: nil)
+
+    static func slide(for direction: AppRouteTransitionDirection?) -> AnyTransition {
+        AnyTransition.asymmetric(
+            insertion: .move(edge: AppRouteTransitionPolicy.edge(for: direction, phase: .insertion)).combined(with: .opacity),
+            removal: .move(edge: AppRouteTransitionPolicy.edge(for: direction, phase: .removal)).combined(with: .opacity)
+        )
+    }
 
     static let searchMorph = AnyTransition.asymmetric(
         insertion: .opacity.combined(with: .scale(scale: 0.985, anchor: .bottom)),
@@ -3406,7 +3706,10 @@ private struct PhotoBackdropImmersiveImageCover: View {
     var body: some View {
         GeometryReader { geometry in
             let viewportSize = context.viewportSize
-            let frameHeight = max(context.imageFrameHeight, geometry.size.height)
+            let frameHeight = max(
+                context.imageFrameHeight,
+                geometry.size.height + context.verticalFocusOffset
+            )
 
             Image(context.imageName)
                 .resizable()
@@ -3726,6 +4029,7 @@ struct HomeView: View {
     let backdropActivationToken: Int
     let scrollToTopTrigger: Int
     let isActive: Bool
+    let isVisible: Bool
     let isSearchActive: Bool
     var onSearchTapped: () -> Void
     var onOpenDetail: (String, HomeScrollTarget) -> Void
@@ -3740,6 +4044,7 @@ struct HomeView: View {
         backdropActivationToken: Int = 0,
         scrollToTopTrigger: Int = 0,
         isActive: Bool = true,
+        isVisible: Bool = true,
         isSearchActive: Bool = false,
         currentScrollTarget: Binding<HomeScrollTarget?>,
         currentScrollOffsetY: Binding<CGFloat>,
@@ -3759,6 +4064,7 @@ struct HomeView: View {
         self._scrollRestorationTarget = scrollRestorationTarget
         self.scrollToTopTrigger = scrollToTopTrigger
         self.isActive = isActive
+        self.isVisible = isVisible
         self.isSearchActive = isSearchActive
         self.onSearchTapped = onSearchTapped
         self.onOpenDetail = onOpenDetail
@@ -3769,142 +4075,161 @@ struct HomeView: View {
     }
 
     var body: some View {
-        GeometryReader { geometry in
-            let metrics = PhrasePhotoBackdropLayout.metrics(for: geometry.size)
-            let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
-            let topChromeStyle = PhrasePhotoBackdropLayout.topChromeStyle(
-                sheetTop: sheetTop,
-                safeAreaTop: geometry.safeAreaInsets.top,
-                topChromeBackdropHeight: AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false)
-            )
+        Group {
+            if isVisible {
+                GeometryReader { geometry in
+                    let metrics = PhrasePhotoBackdropLayout.metrics(for: geometry.size)
+                    let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
+                    let topChromeStyle = PhrasePhotoBackdropLayout.topChromeStyle(
+                        sheetTop: sheetTop,
+                        safeAreaTop: geometry.safeAreaInsets.top,
+                        topChromeBackdropHeight: AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false)
+                    )
 
-            ZStack(alignment: .top) {
-                photoBackdropImage(geometry: geometry)
+                    ZStack(alignment: .top) {
+                        photoBackdropImage(geometry: geometry)
 
-                photoBackdropBottomChromeBackdrop(geometry: geometry, metrics: metrics)
+                        photoBackdropBottomChromeBackdrop(geometry: geometry, metrics: metrics)
 
-                ScrollViewReader { scrollProxy in
-                    ScrollView(.vertical, showsIndicators: false) {
-                        VStack(spacing: 0) {
-                            Color.clear
-                                .frame(height: metrics.initialAnchorOffset)
-                                .accessibilityHidden(true)
+                        ScrollViewReader { scrollProxy in
+                            ScrollView(.vertical, showsIndicators: false) {
+                                VStack(spacing: 0) {
+                                    Color.clear
+                                        .frame(height: metrics.initialAnchorOffset)
+                                        .accessibilityHidden(true)
 
-                            Color.clear
-                                .frame(height: 1)
-                                .id(HomeScrollTarget.top)
-                                .accessibilityHidden(true)
+                                    Color.clear
+                                        .frame(height: 1)
+                                        .id(HomeScrollTarget.top)
+                                        .accessibilityHidden(true)
 
-                            Color.clear
-                                .frame(height: max(metrics.initialContentTop - 1, 0))
-                                .accessibilityHidden(true)
+                                    Color.clear
+                                        .frame(height: max(metrics.initialContentTop - 1, 0))
+                                        .accessibilityHidden(true)
 
-                            homeContentSheet
-                        }
-                    }
-                    .scrollPosition($scrollPosition)
-                    .onScrollGeometryChange(for: HomePhotoBackdropScrollState.self, of: { scrollGeometry in
-                        HomePhotoBackdropScrollState(
-                            rawOffset: max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0),
-                            metrics: metrics
-                        )
-                    }) { _, scrollState in
-                        if currentScrollOffsetY != scrollState.restorationOffset {
-                            currentScrollOffsetY = scrollState.restorationOffset
-                        }
+                                    homeContentSheet
+                                }
+                            }
+                            .scrollPosition($scrollPosition)
+                            .onScrollGeometryChange(for: HomePhotoBackdropScrollState.self, of: { scrollGeometry in
+                                HomePhotoBackdropScrollState(
+                                    rawOffset: max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0),
+                                    metrics: metrics
+                                )
+                            }) { _, scrollState in
+                                guard HomePhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                                    isActive: isActive,
+                                    isVisible: isVisible
+                                ) else {
+                                    return
+                                }
 
-                        if photoBackdropScrollOffset != scrollState.displayOffset {
-                            photoBackdropScrollOffset = scrollState.displayOffset
-                        }
+                                if currentScrollOffsetY != scrollState.restorationOffset {
+                                    currentScrollOffsetY = scrollState.restorationOffset
+                                }
 
-                        if isPhotoBackdropImmersive, scrollState.hasPassedRevealThreshold {
-                            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                                if photoBackdropScrollOffset != scrollState.displayOffset {
+                                    photoBackdropScrollOffset = scrollState.displayOffset
+                                }
+
+                                if isPhotoBackdropImmersive, scrollState.hasPassedRevealThreshold {
+                                    withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                                        isPhotoBackdropImmersive = false
+                                    }
+                                }
+                            }
+                            .onAppear {
+                                guard isActive else { return }
+                                restoreScrollTargetIfNeeded(scrollProxy: scrollProxy, metrics: metrics)
+                            }
+                            .onChange(of: isActive) { _, isActive in
+                                if isActive {
+                                    restoreScrollTargetIfNeeded(scrollProxy: scrollProxy, metrics: metrics)
+                                } else if isPhotoBackdropImmersive {
+                                    isPhotoBackdropImmersive = false
+                                }
+                            }
+                            .onChange(of: scrollToTopTrigger) { _, _ in
+                                scrollRestorationTarget = nil
+                                currentScrollTarget = .top
                                 isPhotoBackdropImmersive = false
+                                scrollProxy.scrollTo(HomeScrollTarget.top, anchor: .top)
+                            }
+                            .task(id: isActive) {
+                                guard isActive, isVisible, scrollRestorationTarget == nil else {
+                                    return
+                                }
+
+                                await applyPhotoBackdropInitialPositionIfNeeded(scrollProxy)
+                                await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: "Home.BottomSentinel")
                             }
                         }
+                        .ignoresSafeArea(edges: .top)
                     }
-                    .onAppear {
-                        guard isActive else { return }
-                        restoreScrollTargetIfNeeded(scrollProxy: scrollProxy, metrics: metrics)
-                    }
-                    .onChange(of: isActive) { _, isActive in
-                        if isActive {
-                            restoreScrollTargetIfNeeded(scrollProxy: scrollProxy, metrics: metrics)
-                        } else if isPhotoBackdropImmersive {
-                            isPhotoBackdropImmersive = false
+                    .contentShape(Rectangle())
+                    .simultaneousGesture(
+                        SpatialTapGesture().onEnded { value in
+                            togglePhotoBackdropImmersive(at: value.location, metrics: metrics)
                         }
-                    }
-                    .onChange(of: scrollToTopTrigger) { _, _ in
-                        scrollRestorationTarget = nil
-                        currentScrollTarget = .top
-                        isPhotoBackdropImmersive = false
-                        scrollProxy.scrollTo(HomeScrollTarget.top, anchor: .top)
-                    }
-                    .task(id: isActive) {
-                        guard isActive, scrollRestorationTarget == nil else {
-                            return
-                        }
-
-                        await applyPhotoBackdropInitialPositionIfNeeded(scrollProxy)
-                        await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: "Home.BottomSentinel")
-                    }
-                }
-                .ignoresSafeArea(edges: .top)
-            }
-            .contentShape(Rectangle())
-            .simultaneousGesture(
-                SpatialTapGesture().onEnded { value in
-                    togglePhotoBackdropImmersive(at: value.location, metrics: metrics)
-                }
-            )
-            .preference(
-                key: PhrasePhotoBackdropImmersiveImagePreferenceKey.self,
-                value: isActive && isPhotoBackdropImmersive
-                    ? PhrasePhotoBackdropImmersiveImageContext(
-                        pageID: "home",
-                        imageName: backdropImageName,
-                        viewportSize: geometry.size,
-                        safeAreaTop: geometry.safeAreaInsets.top,
-                        safeAreaBottom: geometry.safeAreaInsets.bottom,
-                        imageFrameHeight: PhrasePhotoBackdropLayout.backdropFrameHeight(
-                            for: geometry.size,
-                            safeAreaInsets: geometry.safeAreaInsets,
-                            pageID: "home",
-                            heroImageName: backdropImageName
-                        ),
-                        verticalFocusOffset: PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
-                            for: geometry.size,
-                            pageID: "home",
-                            heroImageName: backdropImageName
-                        )
                     )
-                    : nil
-            )
-            .preference(
-                key: PhrasePhotoBackdropTopChromeStylePreferenceKey.self,
-                value: isActive && !isPhotoBackdropImmersive ? topChromeStyle : .light
-            )
+                    .preference(
+                        key: PhrasePhotoBackdropImmersiveImagePreferenceKey.self,
+                        value: isActive && isVisible && isPhotoBackdropImmersive
+                            ? PhrasePhotoBackdropImmersiveImageContext(
+                                pageID: "home",
+                                imageName: backdropImageName,
+                                viewportSize: geometry.size,
+                                safeAreaTop: geometry.safeAreaInsets.top,
+                                safeAreaBottom: geometry.safeAreaInsets.bottom,
+                                imageFrameHeight: PhrasePhotoBackdropLayout.backdropFrameHeight(
+                                    for: geometry.size,
+                                    safeAreaInsets: geometry.safeAreaInsets,
+                                    pageID: "home",
+                                    heroImageName: backdropImageName
+                                ),
+                                verticalFocusOffset: PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+                                    for: geometry.size,
+                                    pageID: "home",
+                                    heroImageName: backdropImageName
+                                )
+                            )
+                            : nil
+                    )
+                    .preference(
+                        key: PhrasePhotoBackdropTopChromeStylePreferenceKey.self,
+                        value: isActive && isVisible && !isPhotoBackdropImmersive ? topChromeStyle : .light
+                    )
+                }
+            } else {
+                Color.clear
+                    .accessibilityHidden(true)
+            }
         }
         .ignoresSafeArea(edges: .bottom)
-        .statusBarHidden(isActive && isPhotoBackdropImmersive)
-        .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
+        .statusBarHidden(isActive && isVisible && isPhotoBackdropImmersive)
+        .persistentSystemOverlays(isActive && isVisible && isPhotoBackdropImmersive ? .hidden : .automatic)
         .preference(
             key: PhrasePhotoBackdropImmersiveChromePreferenceKey.self,
-            value: isActive && isPhotoBackdropImmersive
+            value: isActive && isVisible && isPhotoBackdropImmersive
         )
         .preference(
             key: PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self,
-            value: isActive && !isPhotoBackdropImmersive
+            value: isActive && isVisible && !isPhotoBackdropImmersive
         )
         .accessibilityIdentifier("HomeView")
         .task(id: backdropActivationToken) {
-            guard isActive else {
+            guard isActive, isVisible else {
                 return
             }
 
             AdminBackdropImagePreheater.preheat(
                 HomeBackdropPreheatPolicy.imageNames(backdropImageName: backdropImageName)
             )
+        }
+        .onChange(of: isVisible) { _, visible in
+            if !visible {
+                isPhotoBackdropImmersive = false
+            }
         }
     }
 
@@ -4111,9 +4436,7 @@ struct HomeView: View {
     }
 
     private var recentlyViewedFeatureItems: [HomeFeaturePhraseItem] {
-        HomeRecentlyViewedContent
-            .cardPageIDs(from: intentStore.recentPageIDs)
-            .compactMap(HomeFeaturePhraseItem.resolve(pageID:))
+        HomeRecentlyViewedContent.featureItems(fromCanonicalRecentPageIDs: intentStore.recentPageIDs)
     }
 
     private var practiceScenariosShelf: some View {
@@ -5311,6 +5634,107 @@ enum HomeRecentlyViewedContent {
 
         return cardPageIDs
     }
+
+    fileprivate static func featureItems(fromCanonicalRecentPageIDs recentPageIDs: [String]) -> [HomeFeaturePhraseItem] {
+        cardPageIDs(fromCanonicalRecentPageIDs: recentPageIDs).compactMap(cachedFeatureItem(for:))
+    }
+
+    private static func featureItems(from recentPageIDs: [String]) -> [HomeFeaturePhraseItem] {
+        cardPageIDs(from: recentPageIDs).compactMap(cachedFeatureItem(for:))
+    }
+
+    private static func cardPageIDs(fromCanonicalRecentPageIDs recentPageIDs: [String]) -> [String] {
+        var seen = Set<String>()
+        var cardPageIDs: [String] = []
+
+        for pageID in recentPageIDs {
+            guard seen.insert(pageID).inserted else {
+                continue
+            }
+
+            cardPageIDs.append(pageID)
+            if cardPageIDs.count == maximumFeatureCards {
+                break
+            }
+        }
+
+        return cardPageIDs
+    }
+
+    private static func cachedFeatureItem(for pageID: String) -> HomeFeaturePhraseItem? {
+        let cached = cachedFeatureItem(forKey: pageID)
+        if let cached {
+            return cached.item
+        }
+
+        let item = HomeFeaturePhraseItem.resolve(pageID: pageID)
+        storeCachedFeatureItem(item, for: pageID)
+        return item
+    }
+
+    private struct CachedFeatureItem {
+        let item: HomeFeaturePhraseItem?
+    }
+
+    private static let featureItemCacheLimit = 24
+    private static let featureItemCacheLock = NSLock()
+    private static var cachedFeatureItemsByPageID: [String: CachedFeatureItem] = [:]
+    private static var cachedFeatureItemPageIDs: [String] = []
+
+    private static func cachedFeatureItem(forKey pageID: String) -> CachedFeatureItem? {
+        featureItemCacheLock.lock()
+        defer { featureItemCacheLock.unlock() }
+
+        guard let cachedItem = cachedFeatureItemsByPageID[pageID] else {
+            return nil
+        }
+
+        touchCachedFeatureItem(pageID)
+        return cachedItem
+    }
+
+    private static func storeCachedFeatureItem(_ item: HomeFeaturePhraseItem?, for pageID: String) {
+        featureItemCacheLock.lock()
+        defer { featureItemCacheLock.unlock() }
+
+        cachedFeatureItemsByPageID[pageID] = CachedFeatureItem(item: item)
+        touchCachedFeatureItem(pageID)
+
+        while cachedFeatureItemPageIDs.count > featureItemCacheLimit {
+            let oldestPageID = cachedFeatureItemPageIDs.removeFirst()
+            cachedFeatureItemsByPageID.removeValue(forKey: oldestPageID)
+        }
+    }
+
+    private static func touchCachedFeatureItem(_ pageID: String) {
+        cachedFeatureItemPageIDs.removeAll { $0 == pageID }
+        cachedFeatureItemPageIDs.append(pageID)
+    }
+
+#if DEBUG
+    static func featureItemPageIDsForTesting(from recentPageIDs: [String]) -> [String] {
+        featureItems(from: recentPageIDs).map(\.pageID)
+    }
+
+    static func featureItemPageIDsForTesting(fromCanonicalRecentPageIDs recentPageIDs: [String]) -> [String] {
+        featureItems(fromCanonicalRecentPageIDs: recentPageIDs).map(\.pageID)
+    }
+
+    static func resetFeatureItemCacheForTesting() {
+        featureItemCacheLock.lock()
+        defer { featureItemCacheLock.unlock() }
+
+        cachedFeatureItemsByPageID.removeAll()
+        cachedFeatureItemPageIDs.removeAll()
+    }
+
+    static var cachedFeatureItemCountForTesting: Int {
+        featureItemCacheLock.lock()
+        defer { featureItemCacheLock.unlock() }
+
+        return cachedFeatureItemsByPageID.count
+    }
+#endif
 }
 
 enum HomeFirstDayShelfContent {
