@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể đóng gói nó để đi du lịch? asks someone to do one helpful action for you. Use it for pack it for travel when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Use this after buying something fragile, boxed, oily, sharp-edged, or gift-worthy and you need it wrapped better for a suitcase or flight. Point to the item and show the bag, box, or luggage gesture so the request is concrete."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể đóng gói nó để đi du lịch? once, then make the task visible with your item, shelf, photo, size, color, price tag, or calculator. The phrase is doing one job: getting a clear answer about pack it for travel.",
+      "body": "Say Bạn có thể đóng gói nó để đi du lịch? after the seller knows which item you mean. Then point to bubble wrap, an extra bag, tape, or the box; the gesture turns a broad travel request into a simple packing task.",
       "phrases": [
         {
           "id": "v900-shop-can-you-pack-it-for-travel",
@@ -53,23 +53,18 @@
         {
           "id": "chunk-2",
           "vietnamese": "đóng gói nó",
-          "english": "call",
+          "english": "pack it",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "để đi du",
-          "english": "go / move",
+          "vietnamese": "để đi du lịch",
+          "english": "for travel",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "lịch",
-          "english": "pack it for travel",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
+          "id": "chunk-4",
           "vietnamese": "Bạn có thể đóng gói nó để đi du lịch?",
           "english": "Can you pack it for travel",
           "audioKey": null
@@ -116,12 +111,12 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real shopping exchange when pack it for travel is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it for ceramics, coffee, sauces, lanterns, tailored clothing, gifts, or anything that needs more protection than the default shop bag. It is less useful for ordinary souvenirs that already come boxed."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "This phrasing is understandable, but the situation carries the meaning. Point to the item and show the kind of protection you want: wrap, box, tape, bag, or padding."
     },
     {
       "id": "explore-next",

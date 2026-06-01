@@ -308,6 +308,154 @@ final class ListingLatestFeedbackProofUITests: XCTestCase {
     }
 }
 
+final class CityAppDetailV22RenderProofUITests: XCTestCase {
+    private struct Page: Decodable {
+        let label: String
+        let pageID: String
+        let title: String
+        let city: String
+        let category: String
+    }
+
+    private let environment = ProcessInfo.processInfo.environment
+
+    func testCaptureCityAppDetailV22RenderProofBatch() throws {
+        let pages = try loadPages()
+        let offset = Int(environment["SPEAKLOCAL_V2_2_RENDER_PROOF_OFFSET"] ?? "0") ?? 0
+        let limit = Int(environment["SPEAKLOCAL_V2_2_RENDER_PROOF_LIMIT"] ?? "\(pages.count)") ?? pages.count
+        let selectedPages = Array(pages.dropFirst(offset).prefix(limit))
+
+        XCTAssertFalse(selectedPages.isEmpty, "No V2.2 render-proof pages selected.")
+        try FileManager.default.createDirectory(at: proofDirectory, withIntermediateDirectories: true)
+
+        for (index, page) in selectedPages.enumerated() {
+            let globalIndex = offset + index + 1
+            let prefix = String(format: "%03d-%@-%@-%@", globalIndex, page.city, page.category, page.label)
+                .replacingOccurrences(of: "[^A-Za-z0-9._-]", with: "-", options: .regularExpression)
+
+            let app = XCUIApplication()
+            app.launchArguments = ["--detail-page", page.pageID]
+            app.launch()
+
+            XCTAssertTrue(
+                matchingStaticText(app: app, text: page.title).waitForExistence(timeout: 8),
+                "\(page.pageID) title \(page.title) did not appear."
+            )
+            capture(name: "\(prefix)-top.png")
+
+            app.swipeUp()
+            app.swipeUp()
+            capture(name: "\(prefix)-middle.png")
+            app.terminate()
+
+            let bottomApp = XCUIApplication()
+            bottomApp.launchArguments = [
+                "--detail-page",
+                page.pageID,
+                "--validate-bottom-inset-scroll-to-bottom"
+            ]
+            bottomApp.launch()
+            assertBottomSentinelClearsTabBar(
+                sentinelIDs(for: page.pageID),
+                in: bottomApp,
+                routeName: page.pageID
+            )
+            capture(name: "\(prefix)-bottom.png")
+            bottomApp.terminate()
+        }
+    }
+
+    private var proofDirectory: URL {
+        URL(
+            fileURLWithPath: environment["SPEAKLOCAL_V2_2_RENDER_PROOF_DIR"]
+                ?? "/Users/jojolim/Developer/products/speaklocal/app-family/native-ios/artifacts/CITY_APP_DETAIL_V2_2_RENDER_PROOF",
+            isDirectory: true
+        )
+    }
+
+    private func loadPages() throws -> [Page] {
+        guard let manifestPath = environment["SPEAKLOCAL_V2_2_RENDER_PROOF_MANIFEST"] else {
+            XCTFail("SPEAKLOCAL_V2_2_RENDER_PROOF_MANIFEST is required.")
+            return []
+        }
+
+        let data = try Data(contentsOf: URL(fileURLWithPath: manifestPath))
+        return try JSONDecoder().decode([Page].self, from: data)
+    }
+
+    private func capture(name: String) {
+        try? XCUIScreen.main.screenshot().pngRepresentation.write(to: proofDirectory.appendingPathComponent(name))
+    }
+
+    private func matchingStaticText(app: XCUIApplication, text: String) -> XCUIElement {
+        let exact = app.staticTexts[text]
+        if exact.exists {
+            return exact
+        }
+        let predicate = NSPredicate(format: "label CONTAINS[c] %@", text)
+        return app.staticTexts.matching(predicate).firstMatch
+    }
+
+    private func sentinelIDs(for pageID: String) -> [String] {
+        var ids = ["PhraseArticle.BottomSentinel.\(pageID)"]
+        if pageID.hasPrefix("viet-family-city-") {
+            ids.append("PhraseArticle.BottomSentinel.\(pageID.replacingOccurrences(of: "viet-family-city-", with: "viet-phrase-city-"))")
+        }
+        return ids
+    }
+
+    private func assertBottomSentinelClearsTabBar(
+        _ sentinelIDs: [String],
+        in app: XCUIApplication,
+        routeName: String,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        let tabBar = app.tabBars.firstMatch
+        XCTAssertTrue(tabBar.waitForExistence(timeout: 4), "\(routeName) tab bar missing", file: file, line: line)
+
+        for _ in 0..<18 {
+            if let sentinel = firstExistingElement(sentinelIDs, in: app),
+               frameClearsTabBar(sentinel.frame, app: app, tabBar: tabBar) {
+                return
+            }
+            app.swipeUp()
+        }
+
+        guard let sentinel = firstExistingElement(sentinelIDs, in: app) else {
+            XCTFail("\(routeName) missing bottom sentinel from \(sentinelIDs.joined(separator: ", "))", file: file, line: line)
+            return
+        }
+
+        XCTAssertTrue(
+            frameClearsTabBar(sentinel.frame, app: app, tabBar: tabBar),
+            "\(routeName) bottom sentinel frame \(sentinel.frame) should sit above tab bar frame \(tabBar.frame)",
+            file: file,
+            line: line
+        )
+    }
+
+    private func firstExistingElement(_ identifiers: [String], in app: XCUIApplication) -> XCUIElement? {
+        for identifier in identifiers {
+            let element = app.otherElements[identifier]
+            if element.exists {
+                return element
+            }
+        }
+        return nil
+    }
+
+    private func frameClearsTabBar(_ frame: CGRect, app: XCUIApplication, tabBar: XCUIElement) -> Bool {
+        guard !frame.isEmpty else {
+            return false
+        }
+
+        let tabBarTop = tabBar.exists ? tabBar.frame.minY : app.frame.maxY
+        let comfortableBottom = tabBarTop - 10
+        return frame.minY >= app.frame.minY && frame.maxY <= comfortableBottom
+    }
+}
+
 final class ListingHubRandomLoopProofUITests: XCTestCase {
     private let proofDirectory = URL(
         fileURLWithPath: ProcessInfo.processInfo.environment["SPEAKLOCAL_LISTING_HUB_RANDOM_LOOP_PROOF_DIR"]

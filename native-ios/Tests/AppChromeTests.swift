@@ -327,6 +327,15 @@ final class AppChromeTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(AppChromeLayout.bottomAdminHitTestEnvelopeHeight, 88)
     }
 
+    func testBottomInsetValidationUsesPostClearanceScrollTarget() {
+        let sentinelID = "PhraseArticle.BottomSentinel.viet-phrase-city-danang-place-dragon-bridge"
+
+        XCTAssertEqual(
+            AppBottomInsetValidation.scrollTargetID(for: sentinelID),
+            "\(sentinelID).ScrollTarget"
+        )
+    }
+
     func testTopAdminControlsUseCompactAlignedMetrics() {
         XCTAssertEqual(AppChromeLayout.topAdminControlSize, 47)
         XCTAssertLessThanOrEqual(AppChromeLayout.topAdminControlSize, 48)
@@ -4016,23 +4025,24 @@ final class AppChromeTests: XCTestCase {
         defer { LocationMenuPicksCatalog.resetCacheForTesting() }
 
         let expected: [String: (sectionID: String, itemIDs: [String])] = [
-            "viet-family-city-danang-place-bac-my-an-market": ("at-glance", ["food-kem-bo"]),
+            "viet-family-city-danang-place-bac-my-an-market": ("quick-say", ["food-kem-bo"]),
             "viet-family-city-danang-place-con-market": ("place-brief", ["food-che-ba-mau", "food-banh-beo", "food-banh-xeo", "food-mi-quang-ga"]),
             "viet-family-city-danang-place-han-market": ("place-brief", ["food-mi-quang-ga", "food-mi-quang-tom-thit", "food-banh-beo", "food-banh-xeo"]),
             "viet-family-city-danang-place-helio-night-market": ("use-it-with", ["food-tom-nuong-muoi-ot", "food-lau-hai-san", "food-cha-gio", "food-che-ba-mau"]),
             "viet-family-city-danang-place-son-tra-night-market": ("place-brief", ["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-lau-hai-san", "food-cha-gio"]),
             "viet-family-city-hanoi-place-dinh-cafe": ("place-brief", ["drink-ca-phe-phin", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"]),
-            "viet-family-city-hanoi-place-giang-cafe": ("at-glance", ["drink-ca-phe-trung", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"]),
-            "viet-family-city-hanoi-place-the-note-coffee": ("at-glance", ["drink-ca-phe-sua-da", "drink-ca-phe-phin", "drink-ca-phe-trung"]),
-            "viet-family-city-hoian-place-bale-well": ("at-glance", ["food-banh-xeo", "food-nem-nuong-cuon", "food-goi-cuon", "food-cha-gio-tom-thit"]),
-            "viet-family-city-hoian-place-banh-mi-phuong": ("at-glance", ["food-banh-mi-dac-biet", "food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate"]),
-            "viet-family-city-hoian-place-madam-khanh": ("at-glance", ["food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate", "food-banh-mi-dac-biet"]),
-            "viet-family-city-hoian-place-morning-glory": ("at-glance", ["food-cao-lau", "food-mi-quang-ga", "food-banh-xeo", "food-banh-bot-loc"]),
+            "viet-family-city-hanoi-place-giang-cafe": ("quick-say", ["drink-ca-phe-trung", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"]),
+            "viet-family-city-hanoi-place-the-note-coffee": ("quick-say", ["drink-ca-phe-sua-da", "drink-ca-phe-phin", "drink-ca-phe-trung"]),
+            "viet-family-city-hoian-place-bale-well": ("quick-say", ["food-banh-xeo", "food-nem-nuong-cuon", "food-goi-cuon", "food-cha-gio-tom-thit"]),
+            "viet-family-city-hoian-place-banh-mi-phuong": ("quick-say", ["food-banh-mi-dac-biet", "food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate"]),
+            "viet-family-city-hoian-place-madam-khanh": ("quick-say", ["food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate", "food-banh-mi-dac-biet"]),
+            "viet-family-city-hoian-place-morning-glory": ("quick-say", ["food-cao-lau", "food-mi-quang-ga", "food-banh-xeo", "food-banh-bot-loc"]),
             "viet-family-city-hue-place-tam-giang-lagoon": ("place-brief", ["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-ngheu-xao-bo-toi"]),
         ]
 
         for (pageID, expectation) in expected {
             let picks = LocationMenuPicksCatalog.picks(forPageID: pageID)
+            let menuPicks = picks.filter { $0.linkedMenuItemID != nil }
             let aliasPageID = pageID.replacingOccurrences(of: "viet-family-city-", with: "viet-phrase-city-")
 
             XCTAssertEqual(
@@ -4040,16 +4050,18 @@ final class AppChromeTests: XCTestCase {
                 picks.map(\.id),
                 "\(aliasPageID) should share the same menu bridge as its family page"
             )
-            XCTAssertLessThanOrEqual(picks.count, 4, "\(pageID) should keep the food bridge compact")
-            XCTAssertEqual(picks.map(\.linkedMenuItemID), expectation.itemIDs.map(Optional.some))
+            XCTAssertLessThanOrEqual(menuPicks.count, 4, "\(pageID) should keep the food bridge compact")
+            XCTAssertEqual(menuPicks.map(\.linkedMenuItemID), expectation.itemIDs.map(Optional.some))
             XCTAssertEqual(
-                LocationMenuPicksCatalog.picks(forPageID: pageID, afterSectionID: expectation.sectionID).map(\.id),
-                picks.map(\.id),
+                LocationMenuPicksCatalog.picks(forPageID: pageID, afterSectionID: expectation.sectionID)
+                    .filter { $0.linkedMenuItemID != nil }
+                    .map(\.id),
+                menuPicks.map(\.id),
                 "\(pageID) should render the menu bridge directly after the food-related section"
             )
             XCTAssertTrue(LocationMenuPicksCatalog.trailingPicks(forPageID: pageID).isEmpty)
 
-            for pick in picks {
+            for pick in menuPicks {
                 let linkedMenuItemID = try XCTUnwrap(pick.linkedMenuItemID)
                 let item = try XCTUnwrap(VietnameseMenuCatalog.allItems.first { $0.itemID == linkedMenuItemID })
                 XCTAssertEqual(pick.title, item.vietnameseItem)
@@ -4156,62 +4168,62 @@ final class AppChromeTests: XCTestCase {
         let expected: [(pageID: String, heading: String, bodySnippet: String, phraseIDs: [String])] = [
             (
                 "viet-family-city-danang-place-international-terminal",
-                "Land, Then Solve The Ride",
-                "short practical sequence",
-                ["airport-1", "airport-2", "airport-3", "airport-5"]
+                "Land, Then Find The Ride",
+                "first practical hour",
+                ["airport-1", "airport-2", "airport-3"]
             ),
             (
                 "viet-family-city-danang-place-dong-dinh-museum",
                 "A Small Museum Under Trees",
-                "stone paths",
-                ["sight-1", "sight-3", "sight-4", "hotel-9"]
+                "paths under trees",
+                ["sight-1", "sight-3", "sight-4"]
             ),
             (
                 "viet-family-city-hcmc-place-pasteur-street",
-                "One Doorway First",
-                "next blocks readable",
-                ["directions-2", "directions-3", "repair-show-me", "taxi-3"]
+                "One Doorway To Begin",
+                "one real doorway",
+                ["directions-1", "directions-3", "v500-dire-navi-can-i-walk-there"]
             ),
             (
                 "viet-family-city-hanoi-place-loading-t-cafe",
                 "Find The Upstairs Room",
                 "cinnamon-leaning egg coffee",
-                ["coffee-1", "v500-dire-navi-do-i-go-upstairs", "coffee-4", "coffee-7"]
+                ["coffee-1", "v900-food-drin-one-hot-coffee-please", "v900-food-drin-less-sugar-please"]
             ),
             (
                 "viet-family-city-danang-place-lotte-mart",
-                "A Cool-Aisle Reset",
-                "backup shirt matter",
-                ["price-1", "shop-5", "store-2", "store-7"]
+                "Cool Aisles, Easy Errands",
+                "cool indoor errand stop",
+                ["price-1", "shop-5", "store-2"]
             ),
             (
                 "viet-family-city-danang-place-3d-art-in-paradise",
                 "Photos Before Art",
-                "forced perspective",
+                "optical-illusion rooms",
                 ["sight-3", "time-5", "bath-1"]
             ),
             (
                 "viet-family-city-hanoi-place-bun-cha",
                 "Smoke First, Then The Table",
-                "pork over charcoal",
-                ["food-menu", "food-3", "coffee-7"]
+                "charcoal pork",
+                ["food-menu", "food-1", "v900-food-drin-what-do-you-recommend"]
             ),
             (
                 "viet-family-city-hcmc-place-ben-thanh-market",
-                "The Clock Tower First",
-                "practiced sales rhythm",
-                ["price-1", "price-8", "coffee-7"]
+                "Start With The Clock Tower",
+                "snack stalls",
+                ["price-1", "price-4", "shop-4"]
             ),
             (
                 "viet-family-city-hue-place-bach-ma-national-park",
-                "Mountain Weather Comes First",
-                "rain or fog",
+                "Mountain Weather Leads",
+                "weather that can rewrite",
                 ["sight-2", "sight-5", "store-1"]
             ),
             (
                 "viet-family-city-hoian-place-ancient-town-ticket-booth",
-                "A Small Pause Before Old Town",
-                "yellow walls",
+                "The Ticket Threshold",
+                "wandering turns into tickets",
                 ["sight-1", "sight-2", "sight-3"]
             ),
         ]
@@ -4274,9 +4286,14 @@ final class AppChromeTests: XCTestCase {
             let picks = LocationMenuPicksCatalog.picks(forPageID: pageID)
 
             XCTAssertEqual(LocationMenuPicksCatalog.picks(forPageID: aliasPageID).map(\.id), picks.map(\.id), pageID)
-            XCTAssertEqual(picks.map(\.id), expectation.cardIDs, pageID)
-            XCTAssertEqual(picks.map(\.detailPageID), expectation.detailPageIDs, pageID)
-            XCTAssertEqual(LocationMenuPicksCatalog.picks(forPageID: pageID, afterSectionID: expectation.sectionID).map(\.id), expectation.cardIDs, pageID)
+            XCTAssertTrue(Set(expectation.cardIDs).isSubset(of: Set(picks.map(\.id))), pageID)
+            XCTAssertTrue(Set(expectation.detailPageIDs).isSubset(of: Set(picks.map(\.detailPageID))), pageID)
+            XCTAssertTrue(
+                Set(expectation.cardIDs).isSubset(
+                    of: Set(LocationMenuPicksCatalog.picks(forPageID: pageID, afterSectionID: expectation.sectionID).map(\.id))
+                ),
+                pageID
+            )
             XCTAssertTrue(LocationMenuPicksCatalog.trailingPicks(forPageID: pageID).isEmpty, pageID)
             XCTAssertFalse(picks.contains { $0.detailPageID.localizedCaseInsensitiveContains("hoi-an") }, pageID)
             XCTAssertFalse(picks.contains { $0.title.localizedCaseInsensitiveContains("Food court") }, pageID)
@@ -4323,6 +4340,21 @@ final class AppChromeTests: XCTestCase {
                 ["lotte-mart-related-han-market", "lotte-mart-related-vincom-plaza"],
                 ["viet-family-city-danang-place-han-market", "viet-family-city-danang-place-vincom-plaza"]
             ),
+            "viet-family-city-danang-place-bep-cuon": (
+                "good-to-know",
+                ["bep-cuon-related-banh-xeo-ba-duong"],
+                ["viet-family-city-danang-place-banh-xeo-ba-duong"]
+            ),
+            "viet-family-city-danang-place-co-chu-nho": (
+                "good-to-know",
+                ["co-chu-nho-related-bep-cuon"],
+                ["viet-family-city-danang-place-bep-cuon"]
+            ),
+            "viet-family-city-danang-place-the-temptation": (
+                "good-to-know",
+                ["the-temptation-related-nen"],
+                ["viet-family-city-danang-place-nen"]
+            ),
             "viet-family-city-danang-place-3d-art-in-paradise": (
                 "good-to-know",
                 ["3d-art-related-fine-arts"],
@@ -4355,15 +4387,98 @@ final class AppChromeTests: XCTestCase {
             let picks = LocationRelatedPicksCatalog.picks(forPageID: pageID)
 
             XCTAssertEqual(LocationRelatedPicksCatalog.picks(forPageID: aliasPageID).map(\.id), picks.map(\.id), pageID)
-            XCTAssertEqual(picks.map(\.id), expectation.cardIDs, pageID)
-            XCTAssertEqual(picks.map(\.detailPageID), expectation.detailPageIDs, pageID)
-            XCTAssertEqual(LocationRelatedPicksCatalog.picks(forPageID: pageID, afterSectionID: expectation.sectionID).map(\.id), expectation.cardIDs, pageID)
+            XCTAssertTrue(Set(expectation.cardIDs).isSubset(of: Set(picks.map(\.id))), pageID)
+            XCTAssertTrue(Set(expectation.detailPageIDs).isSubset(of: Set(picks.map(\.detailPageID))), pageID)
+            XCTAssertTrue(
+                Set(expectation.cardIDs).isSubset(
+                    of: Set(LocationRelatedPicksCatalog.picks(forPageID: pageID, afterSectionID: expectation.sectionID).map(\.id))
+                ),
+                pageID
+            )
 
             for pick in picks {
                 XCTAssertNil(pick.linkedMenuItemID, "\(pick.id) should link to a place page, not a menu item row")
                 XCTAssertTrue(PhraseCatalog.isOpenablePageID(pick.detailPageID), pick.id)
                 XCTAssertNotNil(PhraseDetailPage.page(withID: pick.detailPageID), pick.id)
                 XCTAssertNotNil(UIImage(named: pick.imageName), "Missing related card image for \(pick.id): \(pick.imageName)")
+                XCTAssertFalse(pick.proof.localizedCaseInsensitiveContains("reason"), pick.id)
+            }
+        }
+    }
+
+    func testV22CityPagesRenderSQLiteRelatedCandidates() throws {
+        let expected: [String: (targetPageID: String, proofSnippet: String)] = [
+            "viet-family-city-danang-place-banh-xeo-ba-duong": (
+                "viet-phrase-city-danang-place-be-man",
+                "Beach-side seafood"
+            ),
+            "viet-family-city-danang-place-con-market": (
+                "viet-phrase-city-danang-place-han-market",
+                "easier first market"
+            ),
+            "viet-family-city-hanoi-place-gia": (
+                "viet-phrase-city-hanoi-place-tam-vi",
+                "One MICHELIN Star northern table"
+            ),
+            "viet-family-city-hcmc-place-akuna": (
+                "viet-phrase-city-hcmc-place-anan-saigon",
+                "market-side 2025 One MICHELIN Star"
+            ),
+            "viet-family-city-hoian-place-white-rose-restaurant": (
+                "viet-phrase-city-hoian-place-bale-well",
+                "shared set meal"
+            ),
+            "viet-family-city-hue-place-dong-ba": (
+                "viet-phrase-city-hue-place-bun-bo-city",
+                "city bowl"
+            ),
+        ]
+
+        for (pageID, expectation) in expected {
+            let picks = LocationRelatedPicksCatalog.picks(forPageID: pageID)
+            let pick = try XCTUnwrap(
+                picks.first { $0.detailPageID == expectation.targetPageID },
+                "\(pageID) should render its V2.2 related-place candidate"
+            )
+
+            XCTAssertTrue(pick.proof.localizedCaseInsensitiveContains(expectation.proofSnippet), pageID)
+            XCTAssertNotNil(pick.afterSectionID, pageID)
+            XCTAssertTrue(PhraseCatalog.isOpenablePageID(pick.detailPageID), pick.id)
+            XCTAssertNotNil(PhraseDetailPage.page(withID: pick.detailPageID), pick.id)
+            XCTAssertNotNil(UIImage(named: pick.imageName), "Missing related card image for \(pick.id): \(pick.imageName)")
+        }
+    }
+
+    func testV22CityPagesRenderSQLiteMentionedHereCandidates() throws {
+        let expected: [String: [String]] = [
+            "viet-family-city-danang-place-banh-xeo-ba-duong": [
+                "viet-phrase-city-danang-place-banh-xeo",
+                "viet-phrase-city-danang-place-nem-lui",
+            ],
+            "viet-family-city-danang-place-bep-cuon": [
+                "viet-phrase-city-danang-place-banh-trang-cuon-thit-heo",
+            ],
+            "viet-family-city-hanoi-place-cha-ca-thang-long": [
+                "viet-phrase-city-hanoi-place-cha-ca",
+            ],
+            "viet-family-city-hue-place-dong-ba": [
+                "viet-phrase-city-hue-place-bun-bo-city",
+            ],
+        ]
+
+        for (pageID, targetPageIDs) in expected {
+            let picks = LocationMenuPicksCatalog.picks(forPageID: pageID)
+                .filter { $0.linkedMenuItemID == nil }
+            let detailPageIDs = Set(picks.map(\.detailPageID))
+
+            for targetPageID in targetPageIDs {
+                XCTAssertTrue(detailPageIDs.contains(targetPageID), "\(pageID) should render \(targetPageID)")
+            }
+
+            for pick in picks {
+                XCTAssertTrue(PhraseCatalog.isOpenablePageID(pick.detailPageID), pick.id)
+                XCTAssertNotNil(PhraseDetailPage.page(withID: pick.detailPageID), pick.id)
+                XCTAssertNotNil(UIImage(named: pick.imageName), "Missing mentioned card image for \(pick.id): \(pick.imageName)")
                 XCTAssertFalse(pick.proof.localizedCaseInsensitiveContains("reason"), pick.id)
             }
         }

@@ -442,11 +442,28 @@ struct AppBottomSentinel: View {
     }
 }
 
+struct AppBottomClearanceScrollTarget: View {
+    let sentinelID: String
+    let height: CGFloat
+
+    var body: some View {
+        Color.clear
+            .frame(height: max(height, 0))
+            .frame(maxWidth: .infinity)
+            .id(AppBottomInsetValidation.scrollTargetID(for: sentinelID))
+            .accessibilityHidden(true)
+    }
+}
+
 enum AppBottomInsetValidation {
     static let scrollToBottomLaunchArgument = "--validate-bottom-inset-scroll-to-bottom"
 
     static var shouldScrollToBottom: Bool {
         ProcessInfo.processInfo.arguments.contains(scrollToBottomLaunchArgument)
+    }
+
+    static func scrollTargetID(for sentinelID: String) -> String {
+        "\(sentinelID).ScrollTarget"
     }
 
     @MainActor
@@ -476,6 +493,7 @@ enum AppBottomInsetValidation {
         transaction.disablesAnimations = true
         withTransaction(transaction) {
             scrollProxy.scrollTo(sentinelID, anchor: .bottom)
+            scrollProxy.scrollTo(scrollTargetID(for: sentinelID), anchor: .bottom)
         }
     }
 }

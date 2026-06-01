@@ -1654,6 +1654,14 @@ struct LocationMenuPick: Identifiable, Equatable {
     }
 }
 
+private func mergedLocationPicks(staticPicks: [LocationMenuPick], runtimePicks: [LocationMenuPick]) -> [LocationMenuPick] {
+    var seenDetailPageIDs = Set<String>()
+    return (staticPicks + runtimePicks).filter { pick in
+        let canonicalID = VietSQLitePhraseGraphRuntime.canonicalPageID(for: pick.detailPageID) ?? pick.detailPageID
+        return seenDetailPageIDs.insert(canonicalID).inserted
+    }
+}
+
 enum LocationMenuPicksCatalog {
     private static let cacheLimit = 96
     private static let cacheLock = NSLock()
@@ -1755,49 +1763,59 @@ enum LocationMenuPicksCatalog {
     }
 
     private static func uncachedPicks(forPageID pageID: String) -> [LocationMenuPick] {
+        let staticPicks: [LocationMenuPick]
+
         switch pageID {
         case "viet-family-city-danang-place-bac-my-an-market":
-            return menuItemPicks(["food-kem-bo"], after: "at-glance")
+            staticPicks = menuItemPicks(["food-kem-bo"], after: "quick-say")
         case "viet-family-city-danang-place-con-market":
-            return menuItemPicks(["food-che-ba-mau", "food-banh-beo", "food-banh-xeo", "food-mi-quang-ga"], after: "place-brief")
+            staticPicks = menuItemPicks(["food-che-ba-mau", "food-banh-beo", "food-banh-xeo", "food-mi-quang-ga"], after: "place-brief")
         case "viet-family-city-danang-place-han-market":
-            return menuItemPicks(["food-mi-quang-ga", "food-mi-quang-tom-thit", "food-banh-beo", "food-banh-xeo"], after: "place-brief")
+            staticPicks = menuItemPicks(["food-mi-quang-ga", "food-mi-quang-tom-thit", "food-banh-beo", "food-banh-xeo"], after: "place-brief")
         case "viet-family-city-danang-place-helio-night-market":
-            return menuItemPicks(["food-tom-nuong-muoi-ot", "food-lau-hai-san", "food-cha-gio", "food-che-ba-mau"], after: "use-it-with")
+            staticPicks = menuItemPicks(["food-tom-nuong-muoi-ot", "food-lau-hai-san", "food-cha-gio", "food-che-ba-mau"], after: "use-it-with")
         case "viet-family-city-danang-place-son-tra-night-market":
-            return menuItemPicks(["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-lau-hai-san", "food-cha-gio"], after: "place-brief")
+            staticPicks = menuItemPicks(["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-lau-hai-san", "food-cha-gio"], after: "place-brief")
         case "viet-family-city-hanoi-place-dinh-cafe":
-            return menuItemPicks(["drink-ca-phe-phin", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"], after: "place-brief")
+            staticPicks = menuItemPicks(["drink-ca-phe-phin", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"], after: "place-brief")
         case "viet-family-city-hanoi-place-giang-cafe":
-            return menuItemPicks(["drink-ca-phe-trung", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"], after: "at-glance")
+            staticPicks = menuItemPicks(["drink-ca-phe-trung", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"], after: "quick-say")
         case "viet-family-city-hanoi-place-the-note-coffee":
-            return menuItemPicks(["drink-ca-phe-sua-da", "drink-ca-phe-phin", "drink-ca-phe-trung"], after: "at-glance")
+            staticPicks = menuItemPicks(["drink-ca-phe-sua-da", "drink-ca-phe-phin", "drink-ca-phe-trung"], after: "quick-say")
         case "viet-family-city-hoian-place-bale-well":
-            return menuItemPicks(["food-banh-xeo", "food-nem-nuong-cuon", "food-goi-cuon", "food-cha-gio-tom-thit"], after: "at-glance")
+            staticPicks = menuItemPicks(["food-banh-xeo", "food-nem-nuong-cuon", "food-goi-cuon", "food-cha-gio-tom-thit"], after: "quick-say")
         case "viet-family-city-hoian-place-banh-mi-phuong":
-            return menuItemPicks(["food-banh-mi-dac-biet", "food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate"], after: "at-glance")
+            staticPicks = menuItemPicks(["food-banh-mi-dac-biet", "food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate"], after: "quick-say")
         case "viet-family-city-hoian-place-madam-khanh":
-            return menuItemPicks(["food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate", "food-banh-mi-dac-biet"], after: "at-glance")
+            staticPicks = menuItemPicks(["food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate", "food-banh-mi-dac-biet"], after: "quick-say")
         case "viet-family-city-hoian-place-morning-glory":
-            return menuItemPicks(["food-cao-lau", "food-mi-quang-ga", "food-banh-xeo", "food-banh-bot-loc"], after: "at-glance")
+            staticPicks = menuItemPicks(["food-cao-lau", "food-mi-quang-ga", "food-banh-xeo", "food-banh-bot-loc"], after: "quick-say")
         case "viet-family-city-hue-place-tam-giang-lagoon":
-            return menuItemPicks(["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-ngheu-xao-bo-toi"], after: "place-brief")
+            staticPicks = menuItemPicks(["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-ngheu-xao-bo-toi"], after: "place-brief")
         case "viet-family-city-hcmc-place-lusine-thao-dien",
              "viet-phrase-city-hcmc-place-lusine-thao-dien":
-            return lusineThaoDienPicks
+            staticPicks = lusineThaoDienPicks
         case "viet-family-city-danang-place-international-terminal":
-            return danangInternationalTerminalMentionedPicks
+            staticPicks = danangInternationalTerminalMentionedPicks
         case "viet-family-city-danang-place-dong-dinh-museum":
-            return dongDinhMuseumMentionedPicks
+            staticPicks = dongDinhMuseumMentionedPicks
         case "viet-family-city-hcmc-place-pasteur-street":
-            return pasteurStreetMentionedPicks
+            staticPicks = pasteurStreetMentionedPicks
         case "viet-family-city-hanoi-place-loading-t-cafe":
-            return loadingTCafeMentionedPicks
+            staticPicks = loadingTCafeMentionedPicks
         case "viet-family-city-danang-place-lotte-mart":
-            return lotteMartDanangMentionedPicks
+            staticPicks = lotteMartDanangMentionedPicks
         default:
-            return []
+            staticPicks = []
         }
+
+        return mergedLocationPicks(
+            staticPicks: staticPicks,
+            runtimePicks: VietSQLitePhraseGraphRuntime.locationRelationPicks(
+                forPageID: pageID,
+                relationType: "mentioned-here"
+            )
+        )
     }
 
     static func picks(forPageID pageID: String, afterSectionID sectionID: String) -> [LocationMenuPick] {
@@ -2220,9 +2238,11 @@ enum LocationRelatedPicksCatalog {
     }
 
     private static func uncachedPicks(forPageID pageID: String) -> [LocationMenuPick] {
+        let staticPicks: [LocationMenuPick]
+
         switch pageID {
         case "viet-family-city-danang-place-international-terminal":
-            return [
+            staticPicks = [
                 relatedPlacePick(
                     id: "terminal-related-airport",
                     title: "Sân bay Đà Nẵng",
@@ -2243,7 +2263,7 @@ enum LocationRelatedPicksCatalog {
                 ),
             ]
         case "viet-family-city-danang-place-dong-dinh-museum":
-            return [
+            staticPicks = [
                 relatedPlacePick(
                     id: "dong-dinh-related-linh-ung",
                     title: "Chùa Linh Ứng",
@@ -2264,7 +2284,7 @@ enum LocationRelatedPicksCatalog {
                 ),
             ]
         case "viet-family-city-hcmc-place-pasteur-street":
-            return [
+            staticPicks = [
                 relatedPlacePick(
                     id: "pasteur-related-dong-khoi",
                     title: "Đường Đồng Khởi",
@@ -2285,7 +2305,7 @@ enum LocationRelatedPicksCatalog {
                 ),
             ]
         case "viet-family-city-hanoi-place-loading-t-cafe":
-            return [
+            staticPicks = [
                 relatedPlacePick(
                     id: "loading-t-related-dinh-cafe",
                     title: "Cà phê Đinh",
@@ -2306,7 +2326,7 @@ enum LocationRelatedPicksCatalog {
                 ),
             ]
         case "viet-family-city-danang-place-lotte-mart":
-            return [
+            staticPicks = [
                 relatedPlacePick(
                     id: "lotte-mart-related-han-market",
                     title: "Chợ Hàn",
@@ -2327,7 +2347,7 @@ enum LocationRelatedPicksCatalog {
                 ),
             ]
         case "viet-family-city-danang-place-3d-art-in-paradise":
-            return [
+            staticPicks = [
                 relatedPlacePick(
                     id: "3d-art-related-fine-arts",
                     title: "Bảo tàng Mỹ thuật Đà Nẵng",
@@ -2338,7 +2358,7 @@ enum LocationRelatedPicksCatalog {
                 ),
             ]
         case "viet-family-city-hanoi-place-bun-cha":
-            return [
+            staticPicks = [
                 relatedPlacePick(
                     id: "bun-cha-related-huong-lien",
                     title: "Bún chả Hương Liên",
@@ -2357,7 +2377,7 @@ enum LocationRelatedPicksCatalog {
                 ),
             ]
         case "viet-family-city-hcmc-place-ben-thanh-market":
-            return [
+            staticPicks = [
                 relatedPlacePick(
                     id: "ben-thanh-related-an-dong",
                     title: "Chợ An Đông",
@@ -2376,7 +2396,7 @@ enum LocationRelatedPicksCatalog {
                 ),
             ]
         case "viet-family-city-hoian-place-ancient-town-ticket-booth":
-            return [
+            staticPicks = [
                 relatedPlacePick(
                     id: "ticket-booth-related-ancient-town",
                     title: "Phố cổ Hội An",
@@ -2387,7 +2407,7 @@ enum LocationRelatedPicksCatalog {
                 ),
             ]
         case "viet-family-city-hue-place-bach-ma-national-park":
-            return [
+            staticPicks = [
                 relatedPlacePick(
                     id: "bach-ma-related-lap-an",
                     title: "Đầm Lập An",
@@ -2406,7 +2426,7 @@ enum LocationRelatedPicksCatalog {
                 ),
             ]
         case "viet-family-city-danang-place-han-market":
-            return [
+            staticPicks = [
                 LocationMenuPick(
                     id: "han-market-related-con-market",
                     title: "Chợ Cồn",
@@ -2419,9 +2439,53 @@ enum LocationRelatedPicksCatalog {
                     afterSectionID: "good-to-know"
                 ),
             ]
+        case "viet-family-city-danang-place-bep-cuon":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "bep-cuon-related-banh-xeo-ba-duong",
+                    title: "Bánh xèo Bà Dưỡng",
+                    subtitle: "Banh Xeo Ba Duong",
+                    proof: "A louder hands-on Da Nang table when crisp pancakes and sauce should lead.",
+                    imageName: "HeroCityDanangPlaceBanhXeoBaDuong",
+                    detailPageID: "viet-family-city-danang-place-banh-xeo-ba-duong",
+                    audioText: "Bánh xèo Bà Dưỡng"
+                ),
+            ]
+        case "viet-family-city-danang-place-co-chu-nho":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "co-chu-nho-related-bep-cuon",
+                    title: "Bếp Cuốn Đà Nẵng",
+                    subtitle: "Bep Cuon Da Nang",
+                    proof: "A 2025 MICHELIN Selected roll table when pork, herbs, rice paper, and mam nem should lead.",
+                    imageName: "HeroCityDanangPlaceBepCuon",
+                    detailPageID: "viet-family-city-danang-place-bep-cuon",
+                    audioText: "Bếp Cuốn Đà Nẵng"
+                ),
+            ]
+        case "viet-family-city-danang-place-the-temptation":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "the-temptation-related-nen",
+                    title: "Nén Đà Nẵng",
+                    subtitle: "Nen Da Nang",
+                    proof: "A Vietnamese fine-dining destination when the evening should feel bigger than quiet French dinner.",
+                    imageName: "HeroCityDanangPlaceNen",
+                    detailPageID: "viet-family-city-danang-place-nen",
+                    audioText: "Nén Đà Nẵng"
+                ),
+            ]
         default:
-            return []
+            staticPicks = []
         }
+
+        return mergedLocationPicks(
+            staticPicks: staticPicks,
+            runtimePicks: VietSQLitePhraseGraphRuntime.locationRelationPicks(
+                forPageID: pageID,
+                relationType: "compare-nearby"
+            )
+        )
     }
 
     static func picks(forPageID pageID: String, afterSectionID sectionID: String) -> [LocationMenuPick] {

@@ -1,0 +1,70 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test-without-building -project /Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-listings-production-ready/native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination "platform=iOS Simulator,id=7C386DD3-4BF1-4A34-A918-768C43CD1258" -derivedDataPath /Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/orchestrator-309442864093/DerivedData/SpeakLocalNative-8f3e721625a0 "-only-testing:SpeakLocalNativeUITests/CityAppDetailV22RenderProofUITests/testCaptureCityAppDetailV22RenderProofBatch"
+
+2026-06-01 09:17:46.682914+0700 SpeakLocalNativeUITests-Runner[68300:8672526] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-06-01 09:17:47.050.
+Test Suite 'SpeakLocalNativeUITests.xctest' started at 2026-06-01 09:17:47.051.
+Test Suite 'CityAppDetailV22RenderProofUITests' started at 2026-06-01 09:17:47.051.
+Test Case '-[SpeakLocalNativeUITests.CityAppDetailV22RenderProofUITests testCaptureCityAppDetailV22RenderProofBatch]' started.
+    t =     0.00s Start Test at 2026-06-01 09:17:47.051
+    t =     0.02s Set Up
+    t =     0.02s Open app.speaklocal.vietnam.native
+    t =     0.02s     Launch app.speaklocal.vietnam.native
+objc[68300]: Class UIAccessibilityLoaderWebShared is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x109e88310) and /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x109bc4398). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =     1.91s         Setting up automation session
+    t =     2.37s         Wait for app.speaklocal.vietnam.native to idle
+    t =     3.85s Checking existence of `"Ý Thảo Garden" StaticText`
+    t =     3.98s Waiting 8.0s for "Ý Thảo Garden" StaticText to exist
+    t =     5.03s     Checking `Expect predicate `existsNoRetry == 1` for object "Ý Thảo Garden" StaticText`
+    t =     5.03s         Checking existence of `"Ý Thảo Garden" StaticText`
+    t =     5.19s Swipe up Target Application 'app.speaklocal.vietnam.native'
+    t =     5.19s     Wait for app.speaklocal.vietnam.native to idle
+    t =     5.19s     Find the Target Application 'app.speaklocal.vietnam.native'
+    t =     5.21s     Check for interrupting elements affecting "SpeakLocal Vietnam" Application
+    t =     5.23s     Synthesize event
+    t =     5.65s     Wait for app.speaklocal.vietnam.native to idle
+    t =     7.82s Swipe up Target Application 'app.speaklocal.vietnam.native'
+    t =     7.82s     Wait for app.speaklocal.vietnam.native to idle
+    t =     7.83s     Find the Target Application 'app.speaklocal.vietnam.native'
+    t =     7.84s     Check for interrupting elements affecting "SpeakLocal Vietnam" Application
+    t =     7.87s     Synthesize event
+    t =     8.29s     Wait for app.speaklocal.vietnam.native to idle
+    t =     8.97s Terminate app.speaklocal.vietnam.native:68312
+    t =    10.02s Open app.speaklocal.vietnam.native
+    t =    10.02s     Launch app.speaklocal.vietnam.native
+    t =    10.24s         Setting up automation session
+    t =    10.72s         Wait for app.speaklocal.vietnam.native to idle
+    t =    12.22s Waiting 4.0s for TabBar (First Match) to exist
+    t =    13.27s     Checking `Expect predicate `existsNoRetry == 1` for object TabBar (First Match)`
+    t =    13.27s         Checking existence of `TabBar (First Match)`
+    t =    13.33s Checking existence of `"PhraseArticle.BottomSentinel.viet-family-city-hue-place-y-thao-garden" Other`
+    t =    13.41s Checking existence of `"PhraseArticle.BottomSentinel.viet-phrase-city-hue-place-y-thao-garden" Other`
+    t =    13.43s Find the "PhraseArticle.BottomSentinel.viet-phrase-city-hue-place-y-thao-garden" Other
+    t =    13.46s Checking existence of `TabBar (First Match)`
+    t =    13.46s Find the TabBar (First Match)
+    t =    13.47s Find the Target Application 'app.speaklocal.vietnam.native'
+    t =    13.56s Terminate app.speaklocal.vietnam.native:68367
+    t =    14.62s Tear Down
+Test Case '-[SpeakLocalNativeUITests.CityAppDetailV22RenderProofUITests testCaptureCityAppDetailV22RenderProofBatch]' passed (14.715 seconds).
+Test Suite 'CityAppDetailV22RenderProofUITests' passed at 2026-06-01 09:18:01.766.
+	 Executed 1 test, with 0 failures (0 unexpected) in 14.715 (14.716) seconds
+Test Suite 'SpeakLocalNativeUITests.xctest' passed at 2026-06-01 09:18:01.767.
+	 Executed 1 test, with 0 failures (0 unexpected) in 14.715 (14.717) seconds
+Test Suite 'Selected tests' passed at 2026-06-01 09:18:01.768.
+	 Executed 1 test, with 0 failures (0 unexpected) in 14.715 (14.718) seconds
+
+Test session results, code coverage, and logs:
+	/Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/orchestrator-309442864093/DerivedData/SpeakLocalNative-8f3e721625a0/Logs/Test/Test-SpeakLocalNative-2026.06.01_09-17-45-+0700.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started
+
+2026-06-01 09:17:47.116 xcodebuild[68298:8672354] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-06-01 09:17:47.116 xcodebuild[68298:8672354] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-06-01 09:17:57.077 xcodebuild[68298:8672354] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-06-01 09:17:57.077 xcodebuild[68298:8672354] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-06-01 09:18:02.068 xcodebuild[68298:8672354] [MT] IDETestOperationsObserverDebug: 16.193 elapsed -- Testing started completed.
+2026-06-01 09:18:02.068 xcodebuild[68298:8672354] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-06-01 09:18:02.068 xcodebuild[68298:8672354] [MT] IDETestOperationsObserverDebug: 16.193 sec, +16.193 sec -- end

@@ -1,13 +1,13 @@
 {
   "byIntent": {
-    "simple_phrase": 730,
+    "simple_phrase": 719,
     "practical_flow": 233,
     "derived_place_phrase": 306,
-    "landmark_micro_place": 315,
-    "restaurant": 98,
+    "landmark_micro_place": 316,
+    "restaurant": 117,
     "macro_attraction_journey": 2,
     "street": 28,
-    "dish": 46
+    "dish": 57
   },
   "pagesWithGenericBrowseTitleRisk": [
     {
@@ -20,8 +20,9 @@
         "polite-basics"
       ],
       "renderedSections": [
+        "Meaning",
         "Break it down",
-        "Good to know",
+        "Good To Know",
         "Next phrases"
       ]
     },
@@ -115,6 +116,7 @@
         "understanding-repair"
       ],
       "renderedSections": [
+        "Meaning",
         "Break it down",
         "Other ways",
         "Common follow-ups",
@@ -146,6 +148,7 @@
         "understanding-repair"
       ],
       "renderedSections": [
+        "Meaning",
         "Break it down",
         "Common follow-ups",
         "Good to know",
@@ -211,7 +214,7 @@
         "Break it down",
         "Common follow-ups",
         "Good to know",
-        "More ride phrases"
+        "Next phrases"
       ]
     },
     {
@@ -226,7 +229,7 @@
         "Break it down",
         "Common follow-ups",
         "Good to know",
-        "More ride phrases"
+        "Next phrases"
       ]
     },
     {
@@ -242,7 +245,7 @@
         "Other ways",
         "Common follow-ups",
         "Good to know",
-        "More ride phrases"
+        "Next phrases"
       ]
     },
     {
@@ -257,7 +260,7 @@
         "Break it down",
         "Common follow-ups",
         "Good to know",
-        "More ride phrases"
+        "Next phrases"
       ]
     },
     {
@@ -272,7 +275,7 @@
         "Break it down",
         "Common follow-ups",
         "Good to know",
-        "More ride phrases"
+        "Next phrases"
       ]
     },
     {
@@ -287,7 +290,7 @@
         "Break it down",
         "Common follow-ups",
         "Good to know",
-        "More ride phrases"
+        "Next phrases"
       ]
     },
     {
@@ -299,10 +302,11 @@
         "transport"
       ],
       "renderedSections": [
+        "Meaning",
         "Break it down",
         "Common follow-ups",
         "Good to know",
-        "More ride phrases"
+        "Next phrases"
       ]
     },
     {
@@ -754,11 +758,16 @@
         "money-numbers-prices"
       ],
       "renderedSections": [
+        "At a glance",
+        "The standard way",
         "Break it down",
-        "Other ways",
-        "Common follow-ups",
-        "Good to know",
-        "Next phrases"
+        "Natural variations",
+        "Why it matters",
+        "Traveler insight",
+        "When to use it",
+        "Local tip",
+        "You May Hear",
+        "Good to know"
       ]
     },
     {
@@ -800,6 +809,7 @@
         "money-numbers-prices"
       ],
       "renderedSections": [
+        "Meaning",
         "Break it down",
         "Common follow-ups",
         "Good to know",

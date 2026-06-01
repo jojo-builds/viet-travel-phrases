@@ -50,6 +50,7 @@ const designedFamilyPageIDs = {
   "v500-poli-basi-excuse-me": "viet-excuse-sorry",
   "polite-goodbye": "viet-goodbye",
   "social-how-are-you": "viet-how-are-you",
+  "v900-tran-where-can-i-buy-a-ticket": "viet-phrase-v500-sigh-acti-where-can-i-buy-tickets",
 };
 
 const manuallyAuthoredPageIDs = new Set();
@@ -118,7 +119,7 @@ const familyCopyOverrides = {
     exploreNext: "Use these when slower speech is still not enough and you need writing, meaning, repetition, or English help.",
   },
   "money-how-much": {
-    summary: "Save this for markets, seafood trays, taxis, and any cash moment where the price needs to be visible before you commit.",
+    summary: "Use this at markets, seafood trays, taxis, and any cash moment where the price needs to be visible before you commit.",
     atGlance: "Cái này bao nhiêu? is the pointing phrase for one visible thing: a mango, shirt, coffee, seafood tray, menu photo, or ride add-on. The phrase is small, but it protects the moment before money gets awkward.",
     standard: "Point first, say Cái này bao nhiêu?, then wait for the number to be spoken, typed, or shown on a calculator. Keep the item visible until the price is clear.",
     when: "Markets, snack stalls, small shops, beach seafood, laundry counters, and informal rides are where this earns its place. For several items, move to a total-price phrase before paying.",
@@ -128,7 +129,21 @@ const familyCopyOverrides = {
     travelerInsight: "The answer may be spoken fast, typed into a phone, shown on a calculator, or answered with a gesture. If the number matters, ask them to type it.",
     variation: "Use these when the price question needs a softer tone, a total, or a clearer object. The pointing still does most of the work.",
     youMayHear: "A vendor may answer with a fast number, a typed amount, or a short cash-only note. Pause until the amount is visible before you pay.",
-    exploreNext: "These are the next saves when the price turns into a total, a bargain, a cash/card question, or a number you need repeated.",
+    exploreNext: "These are the next phrases when the price turns into a total, a bargain, a cash/card question, or a number you need repeated.",
+  },
+  "transport-cash": {
+    summary: "Use this near the end of a ride when the amount is already clear and the driver needs to know you are paying in cash.",
+    atGlance: "Say Tôi trả bằng tiền mặt when the ride is turning into a payment moment. It belongs with fare, meter, change, card, and receipt questions, after the route is settled.",
+    standard: "Use Tôi trả bằng tiền mặt after the fare is visible or agreed. Say it once, keep the cash or ride screen visible, then wait for a nod, a number, or a payment instruction.",
+    when: "Use it when the ride is ending, the fare is settled, or the driver asks how you are paying. If the price is not clear yet, ask the fare first.",
+    why: "Cash can be the cleanest way to finish a ride, but only after the amount is understood. This line sets the payment method before money changes hands.",
+    watch: "Do not lead with a large bill unless the amount is clear. Let the fare be visible first, then hand over cash.",
+    tip: "If the reply is fast, point to the meter, app price, calculator, or bill. A visible number is easier than repeating the phrase louder.",
+    travelerInsight: "The next exchange is usually about amount, meter, card, receipt, or change. Keep the payment question narrow so the driver does not think you are changing the route.",
+    exploreNext: "Use these when the cash line turns into a fare, meter, card, receipt, or change question.",
+    teachingPhraseFamilyIDs: ["transport-fare", "transport-meter", "service-card"],
+    nearbyPhraseFamilyIDs: ["transport-fare", "transport-meter", "service-card", "service-receipt"],
+    explorePhraseFamilyIDs: ["transport-fare", "transport-meter", "service-card", "service-receipt", "money-small-bills"],
   },
   "repair-write-down": {
     summary: "Written text often rescues numbers, names, room numbers, and addresses faster than more speech.",
@@ -1580,6 +1595,11 @@ function nearbyPhraseSection(family, excludingPageIDs) {
 }
 
 function teachingPhraseOptions(family, sections, currentPageID, primaryPhrase, limit = 3) {
+  const overrideOptions = overrideFamilyOptions(family, "teachingPhraseFamilyIDs", limit);
+  if (overrideOptions.length > 0) {
+    return overrideOptions;
+  }
+
   const exclusions = linkedPageIDs(sections);
   if (currentPageID) {
     exclusions.add(currentPageID);
@@ -1594,6 +1614,11 @@ function teachingPhraseOptions(family, sections, currentPageID, primaryPhrase, l
 }
 
 function exploreNextPhraseOptions(family, sections, currentPageID, primaryPhrase, limit = 8) {
+  const overrideOptions = overrideFamilyOptions(family, "explorePhraseFamilyIDs", limit);
+  if (overrideOptions.length > 0) {
+    return overrideOptions;
+  }
+
   const excludedOptions = exploreOptions(family, limit, linkedPageIDs(sections));
   if (excludedOptions.length > 0) {
     return excludedOptions;
@@ -1638,6 +1663,33 @@ function exploreOptions(family, limit = 8, excludingPageIDs = new Set()) {
     const phrase = phraseByID.get(candidate.primaryPhraseID);
     return phraseOption(phrase, canonicalPageID(candidate), tintForScenario(candidate.scenarioID));
   });
+}
+
+function explicitFamilyOptions(familyIDs, limit = 8, excludingPageIDs = new Set()) {
+  if (!Array.isArray(familyIDs) || familyIDs.length === 0) return [];
+
+  const options = [];
+  for (const familyID of familyIDs) {
+    const candidate = familyByID.get(familyID);
+    if (!candidate) {
+      throw new Error(`Missing explicit family option ${familyID}`);
+    }
+    const pageID = canonicalPageID(candidate);
+    if (excludingPageIDs.has(pageID)) continue;
+    const phrase = phraseByID.get(candidate.primaryPhraseID);
+    if (!phrase) {
+      throw new Error(`Missing primary phrase ${candidate.primaryPhraseID} for explicit family option ${familyID}`);
+    }
+    options.push(phraseOption(phrase, pageID, tintForScenario(candidate.scenarioID)));
+    if (options.length >= limit) break;
+  }
+  return options;
+}
+
+function overrideFamilyOptions(family, key, limit = 8) {
+  const override = familyOverride(family);
+  const currentPageID = canonicalPageID(family);
+  return explicitFamilyOptions(override[key], limit, new Set([currentPageID]));
 }
 
 function xinChaoFlagshipPage(family, primaryPhrase) {
@@ -1953,7 +2005,15 @@ function pageForFamily(family, childPageIDsByPhraseID) {
   });
 
   if (depth === "deep" && variantOptions.length === 0) {
-    const nearbySection = nearbyPhraseSection(family, linkedPageIDs(sections));
+    const overrideNearbyOptions = overrideFamilyOptions(family, "nearbyPhraseFamilyIDs", 4);
+    const nearbySection = overrideNearbyOptions.length > 0
+      ? {
+          id: "nearby-phrases",
+          title: "Useful nearby phrases",
+          body: familyOverride(family).exploreNext ?? "These are the next phrases a traveler is likely to need when this moment keeps moving.",
+          phrases: overrideNearbyOptions,
+        }
+      : nearbyPhraseSection(family, linkedPageIDs(sections));
     if (nearbySection) {
       sections.push(nearbySection);
     }
@@ -3846,6 +3906,9 @@ function curatedNameSectionPhrases(page, section, profile) {
     const self = selfPhraseOptionForPage(page);
     return self ? [self] : existing.slice(0, 1);
   }
+  if (profile === "restaurant" && preservesHandwrittenCityEditorial(page)) {
+    return compactPhraseOptions(existing, 6);
+  }
   if (/bà nà hills/i.test(`${page.title || ""} ${page.englishTitle || ""}`) && section.id === "journey-flow") {
     return [];
   }
@@ -4109,7 +4172,7 @@ function isTaxiRideHelpPage(page) {
     page.title,
     page.englishTitle,
   ].filter(Boolean).join(" "));
-  return /(goi taxi|call a taxi|goi xe cong nghe|ride share|pickup point|diem don|drop me off|taxi)/i.test(text);
+  return /(goi taxi|call a taxi|goi xe cong nghe|ride share|pickup point|diem don|drop me off)/i.test(text);
 }
 
 function isDoctorComingPage(page) {
@@ -4354,7 +4417,7 @@ function shouldKeepSectionForProfile(section, profile, page = null, phraseRole =
 const sectionOrderByProfile = {
   place: ["at-glance", "quick-say", "journey-flow", "key-phrases", "place-brief", "use-it-with", "when-to-use", "getting-there", "tickets", "cable-car", "photos", "getting-back", "food-cash", "at-the-bridge", "pickup-nearby", "breakdown", "good-to-know", "explore-next"],
   street: ["at-glance", "quick-say", "show-driver", "place-brief", "confirm", "use-it-with", "wrong-place", "when-to-use", "breakdown", "good-to-know", "explore-next"],
-  restaurant: ["at-glance", "place-brief", "use-it-with", "when-to-use", "inside-the-place", "good-to-know", "quick-say", "table-menu", "before-you-go", "menu-dietary", "breakdown"],
+  restaurant: ["at-glance", "quick-say", "place-brief", "use-it-with", "when-to-use", "inside-the-place", "good-to-know", "table-menu", "before-you-go", "menu-dietary", "breakdown"],
   dish: ["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"],
   "derived-place-phrase": ["breakdown", "related-phrases", "good-to-know"],
   phrase: ["at-glance", "quick-say", "standard-way", "breakdown", "natural-variations", "why-it-matters", "traveler-insight", "when-to-use", "local-tip", "what-happens-next", "you-may-hear", "practice-pairs", "good-to-know", "nearby-phrases", "explore-next"],

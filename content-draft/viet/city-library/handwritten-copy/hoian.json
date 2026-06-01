@@ -7,7 +7,7 @@
       "pageID": "city-hoian-place-an-bang",
       "summary": "An Bang carries Hội An's split personality: preserved old streets inland, working beach life at the coast. The shift from yellow walls to basket boats gives the day a true sea-air chapter.",
       "context": "An Bang carries Hội An's split personality: preserved old streets inland, working beach life at the coast. The shift from yellow walls to basket boats gives the day a true sea-air chapter.",
-      "tip": "An Bang is not the riverside old town with lanterns. That contrast is the point: the beach name tells you when the day is moving toward open water.",
+      "tip": "An Bang is not the riverside old town with lanterns. That contrast is the draw: the beach name tells you when the day is moving toward open water.",
       "rationale": "An Bang brings a coastal rhythm: morning swims, open light, basket boats, and a softer break outside the old streets.",
       "sections": [
         {
@@ -20,9 +20,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
-            "store-1"
+            "v500-sigh-acti-where-is-the-entrance",
+            "v500-sigh-acti-where-can-i-buy-tickets",
+            "sight-3"
           ]
         },
         {
@@ -43,7 +43,7 @@
         {
           "id": "good-to-know",
           "title": "Different From The River",
-          "body": "An Bang is not the riverside old town with lanterns. That contrast is the point: the beach name tells you when the day is moving toward open water."
+          "body": "An Bang is not the riverside old town with lanterns. That contrast is the draw: the beach name tells you when the day is moving toward open water."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -110,9 +110,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "v900-tran-where-is-the-boat-pier",
-            "v900-tran-where-can-i-buy-a-ticket",
-            "directions-8"
+            "directions-1",
+            "directions-2",
+            "v900-tran-pick-me-up-at-this-entrance"
           ]
         },
         {
@@ -140,8 +140,8 @@
     },
     {
       "pageID": "city-hoian-place-ancient-town",
-      "summary": "Ancient Town carries Hội An's port memory on foot: merchant houses, assembly halls, shopfronts, and the Thu Bon River keeping the old streets oriented toward trade and water.",
-      "context": "Ancient Town carries Hội An's port memory on foot: merchant houses, assembly halls, shopfronts, and the Thu Bon River keeping the old streets oriented toward trade and water.",
+      "summary": "Ancient Town keeps Hội An's port memory visible on foot: merchant houses, assembly halls, shopfronts, and the Thu Bon River orienting the old streets toward trade and water.",
+      "context": "Ancient Town keeps Hội An's port memory visible on foot: merchant houses, assembly halls, shopfronts, and the Thu Bon River orienting the old streets toward trade and water.",
       "tip": "The name covers the heritage area, not one exact doorway. It helps when tickets, hotels, signs, or drivers point you toward the old core.",
       "rationale": "The Ancient Town should make Hội An feel visible before arrival: architecture, lanterns, river movement, and the reason people slow down there.",
       "sections": [
@@ -156,8 +156,8 @@
           "body": "",
           "phraseIDs": [
             "directions-1",
-            "directions-3",
-            "v500-dire-navi-can-i-walk-there"
+            "sight-5",
+            "store-1"
           ]
         },
         {
@@ -173,7 +173,7 @@
         {
           "id": "when-to-use",
           "title": "Pretty Hours Bring People",
-          "body": "The most beautiful hours also draw the most bodies. Early mornings and side streets give the walls, roofs, and signs more room to breathe."
+          "body": "The prettiest hours also bring the thickest crowds. Early mornings and side streets give the walls, roofs, and signs more room to breathe."
         },
         {
           "id": "good-to-know",
@@ -213,7 +213,7 @@
         {
           "id": "use-it-with",
           "title": "Choose One Direction",
-          "body": "The old town rewards wandering, but the opening minutes are easier with one place in mind: the river, an old house, an assembly hall, or a coffee counter."
+          "body": "The old town rewards wandering, but the opening minutes are easier with one place in mind: the river, an old house, an assembly hall, or a ticketed heritage room."
         },
         {
           "id": "when-to-use",
@@ -322,7 +322,7 @@
       "pageID": "city-hoian-place-bale-well",
       "summary": "Bale Well is part of Hội An's hands-on table culture: pork, herbs, rice paper, and sauce arriving as a shared set. The staff-guided first roll is part of the meal.",
       "context": "Bale Well is part of Hội An's hands-on table culture: pork, herbs, rice paper, and sauce arriving as a shared set. The staff-guided first roll is part of the meal.",
-      "tip": "The restaurant sits close to the Ancient Town walk. Think food detour, not slow tasting menu.",
+      "tip": "The restaurant sits close to the Ancient Town walk. Think hands-on food detour rather than a long formal dinner.",
       "rationale": "Once the set, price, and first roll are clear, the friction becomes part of a lively table rather than an awkward surprise.",
       "sections": [
         {
@@ -335,9 +335,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "food-menu",
-            "food-1",
-            "food-3"
+            "food-need-table",
+            "v900-food-drin-what-do-you-recommend",
+            "v900-food-drin-one-more-please"
           ]
         },
         {
@@ -353,7 +353,7 @@
         {
           "id": "when-to-use",
           "title": "Close To The Old Core",
-          "body": "The restaurant sits close to the Ancient Town walk. Think food detour, not slow tasting menu."
+          "body": "The restaurant sits close to the Ancient Town walk. Think hands-on food detour rather than a long formal dinner."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -405,15 +405,15 @@
     },
     {
       "pageID": "city-hoian-place-banh-mi",
-      "summary": "Hội An bánh mì carries the city's quick counter-food memory: French-era bread, local herbs, sauce, chili choices, and a stop that can happen between old-town errands.",
-      "context": "Hội An bánh mì carries the city's quick counter-food memory: French-era bread, local herbs, sauce, chili choices, and a stop that can happen between old-town errands.",
-      "tip": "The specific counter may shift, but bánh mì is the word to keep. It travels well across Hội An’s food map.",
+      "summary": "Hội An bánh mì gives the city a quick sandwich-shop memory: crisp French-era bread, local herbs, sauce, chili choices, and a handheld meal between old-town walks.",
+      "context": "Hội An bánh mì gives the city a quick sandwich-shop memory: crisp French-era bread, local herbs, sauce, chili choices, and a handheld meal between old-town walks.",
+      "tip": "The exact shop may shift, but bánh mì is the word to keep. It travels well across Hội An’s food map.",
       "rationale": "Banh mi brings a fast, portable food memory: crisp bread, herbs, sauce, heat, and one confident order before the day keeps moving.",
       "sections": [
         {
           "id": "at-glance",
           "title": "A Quick Roll With Hội An Bite",
-          "body": "Bánh mì Hội An is the quick sandwich move to know: crisp bread, herbs, sauce, filling, heat, and a counter order that happens fast."
+          "body": "Bánh mì Hội An is the quick sandwich move to know: crisp bread, herbs, sauce, filling, heat, and an order that happens fast."
         },
         {
           "id": "quick-say",
@@ -432,7 +432,7 @@
         },
         {
           "id": "use-it-with",
-          "title": "Counter Meal, Not Ceremony",
+          "title": "Quick Sandwich, Not Ceremony",
           "body": "This is a short meal for a moving day. Decide filling and chili early, then let the sandwich stay simple."
         },
         {
@@ -443,22 +443,22 @@
         {
           "id": "good-to-know",
           "title": "Many Shops, Same Sandwich Word",
-          "body": "The specific counter may shift, but bánh mì is the word to keep. It travels well across Hội An’s food map."
+          "body": "The exact shop may shift, but bánh mì is the word to keep. It travels well across Hội An’s food map."
         }
       ],
       "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hoian-place-banh-mi-phuong",
-      "summary": "Bánh Mì Phượng sits inside Hội An's famous-counter rush, but the story is still bread, filling, chili, and fast hands behind glass. The line should not swallow the sandwich.",
-      "context": "Bánh Mì Phượng sits inside Hội An's famous-counter rush, but the story is still bread, filling, chili, and fast hands behind glass. The line should not swallow the sandwich.",
-      "tip": "Phan Châu Trinh is close to the Ancient Town walk. Order, eat nearby, and move on rather than making the fame the whole plan.",
-      "rationale": "A crisp, well-built bánh mì can carry herbs, pickles, pâté, sauce, and heat in one quick Hội An meal.",
+      "summary": "Bánh Mì Phượng is the quick, famous Hội An bánh mì shop: visible fillings, chili chosen early, and a sandwich carried back toward the old streets.",
+      "context": "Bánh Mì Phượng is the quick, famous Hội An bánh mì shop: visible fillings, chili chosen early, and a sandwich carried back toward the old streets.",
+      "tip": "Treat it as portable lunch rather than a long meal. Eat nearby, carry it toward the old streets, then keep the day moving.",
+      "rationale": "Phượng works because the meal is simple and specific: crisp bread, visible fillings, sauce, heat, and a takeaway rhythm that folds into an old-town walk.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "The Counter Moves Fast",
-          "body": "Bánh Mì Phượng is a fast Hội An sandwich counter where filling, chili, sauce, and takeaway choices matter before the line reaches the glass case."
+          "title": "The Quick Hội An Bánh Mì Shop",
+          "body": "Bánh Mì Phượng is the famous Hội An sandwich shop for crisp bread, visible fillings, pâté, herbs, sauce, chili, and a takeaway rhythm that folds back into an old-town walk."
         },
         {
           "id": "quick-say",
@@ -472,18 +472,23 @@
         },
         {
           "id": "place-brief",
-          "title": "Fast Bread, Many Hands",
-          "body": "Expect crisp rolls, pâté, herbs, pickles, meat or chicken, sauce, and heat built quickly behind the glass. A clear order keeps the meal and counter flow easy."
+          "title": "Know The Order Early",
+          "body": "The queue can move fast. Pick the filling and chili level before you reach the glass case so the order stays easy."
         },
         {
           "id": "use-it-with",
-          "title": "Earlier Keeps It Human",
-          "body": "Before the queue becomes the story, the sandwich matters more than the fame. A quick, confident order keeps the bread in focus."
+          "title": "Fillings In The Glass Case",
+          "body": "Look at the fillings before you order: meat or chicken, pâté, herbs, pickles, sauce, and heat. The sandwich is built around those choices."
         },
         {
           "id": "when-to-use",
-          "title": "A Quick Old Town Detour",
-          "body": "Phan Châu Trinh is close to the Ancient Town walk. Order, eat nearby, and move on rather than making the fame the whole plan."
+          "title": "How It Compares With Madam Khánh",
+          "body": "Bánh Mì Phượng is the famous quick-service sandwich shop nearby, with visible fillings and a takeaway rhythm. Madam Khánh is the other well-known Hội An bánh mì shop, built around the Bánh Mì Queen name and a calmer order."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Take It Back Outside",
+          "body": "Treat it as portable lunch rather than a long meal. Eat nearby, carry it toward the old streets, then keep the day moving."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -522,7 +527,7 @@
         },
         {
           "id": "when-to-use",
-          "title": "Sauce Carries The Bite",
+          "title": "Sauce Finishes The Bite",
           "body": "Do not rush past the dipping sauce and herbs. The pancake is crisp, but the full bite comes together at the table."
         },
         {
@@ -550,9 +555,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
-            "store-1"
+            "v900-tran-where-is-the-boat-pier",
+            "v900-tran-where-can-i-buy-a-ticket",
+            "directions-8"
           ]
         },
         {
@@ -627,7 +632,7 @@
       "pageID": "city-hoian-place-bus-station",
       "summary": "The bus station is the plain travel-day side of Hội An: bags, route names, local signs, and onward roads after the old-town mood has done its work.",
       "context": "The bus station is the plain travel-day side of Hội An: bags, route names, local signs, and onward roads after the old-town mood has done its work.",
-      "tip": "The station is part of Hội An, but not to its postcard side. That difference keeps expectations clean on a moving day.",
+      "tip": "The station is part of Hội An, but it belongs to the travel-day side, not the postcard side. That difference keeps expectations clean on a moving day.",
       "rationale": "Hội An Bus Station gives the city a practical edge: the place where the old-town mood turns into routes, pickups, and onward roads.",
       "sections": [
         {
@@ -663,7 +668,7 @@
         {
           "id": "good-to-know",
           "title": "Not The Old Town Mood",
-          "body": "The station is part of Hội An, but not to its postcard side. That difference keeps expectations clean on a moving day."
+          "body": "The station is part of Hội An, but it belongs to the travel-day side, not the postcard side. That difference keeps expectations clean on a moving day."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -715,15 +720,15 @@
     },
     {
       "pageID": "city-hoian-place-cam-kim-island",
-      "summary": "Cam Kim sits across the river as a village counterpoint to Hội An's dense old streets. Fields, island roads, and craft memory give the crossing a slower reason.",
-      "context": "Cam Kim sits across the river as a village counterpoint to Hội An's dense old streets. Fields, island roads, and craft memory give the crossing a slower reason.",
+      "summary": "Cam Kim sits across the river from Hội An, with fields, island roads, small homes, and craft memory giving the crossing a quieter village reason.",
+      "context": "Cam Kim sits across the river from Hội An, with fields, island roads, small homes, and craft memory giving the crossing a quieter village reason.",
       "tip": "The island earns its place through contrast with the yellow-wall core. Picture river crossing, village road, and open space.",
-      "rationale": "Cam Kim Island brings a rural counterpoint: small roads, fields, river views, homes, and craft life beyond the old streets.",
+      "rationale": "Cam Kim Island brings low roads, river views, homes, fields, and craft life beyond the old streets.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "An Island Pace Across The River",
-          "body": "Cam Kim Island slows Hội An down across the river with low-key island roads, fields, small homes, village routes, and local craft memory."
+          "title": "Fields Across The River",
+          "body": "Cam Kim Island slows Hội An down across the river with low island roads, fields, small homes, craft stops, and open space after the yellow-wall core."
         },
         {
           "id": "quick-say",
@@ -738,12 +743,12 @@
         {
           "id": "place-brief",
           "title": "Fields, Roads, Small Homes",
-          "body": "Expect an island road with river, fields, and small homes. The scene is low-key, so the value comes from pace rather than spectacle."
+          "body": "Expect an island road with river, fields, and small homes. The scene is low-key; let the crossing, open space, and craft stops carry the visit."
         },
         {
           "id": "use-it-with",
-          "title": "Craft Gives The Route A Point",
-          "body": "Local craft gives Cam Kim more purpose than a vague ride. A simple route lets the village pace carry it."
+          "title": "Craft Gives The Visit Shape",
+          "body": "Local craft gives Cam Kim more purpose than a vague ride. Keep the plan simple so village roads and workshop details have room to register."
         },
         {
           "id": "when-to-use",
@@ -1033,7 +1038,7 @@
       "summary": "Cao lầu is one of Hội An's clearest food signatures, tied to the town by thick noodles, herbs, pork, crackers, and a dry-sauced bowl that does not travel as easily as a label.",
       "context": "Cao lầu is one of Hội An's clearest food signatures, tied to the town by thick noodles, herbs, pork, crackers, and a dry-sauced bowl that does not travel as easily as a label.",
       "tip": "Menus may spell it with tone marks as Cao lầu. Recognizing the words helps even when restaurant names shift.",
-      "rationale": "Cao lau carries a food memory that is specific, easy to picture, and clearly different from pho or bun.",
+      "rationale": "Cao lầu gives Hội An a food memory that is specific, easy to picture, and clearly different from phở or bún.",
       "sections": [
         {
           "id": "at-glance",
@@ -1045,9 +1050,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
-            "store-1"
+            "food-2",
+            "food-4",
+            "food-3"
           ]
         },
         {
@@ -1074,46 +1079,86 @@
       "sourceMode": "expanded-detail"
     },
     {
-      "pageID": "city-hoian-place-cargo-club",
-      "summary": "Cargo Club is part of the old-town river-meal pattern: terrace light, yellow walls, menu decisions, and a table that keeps dinner attached to the waterfront walk.",
-      "context": "Cargo Club is part of the old-town river-meal pattern: terrace light, yellow walls, menu decisions, and a table that keeps dinner attached to the waterfront walk.",
-      "tip": "Cargo Club makes sense as a meal woven into the Ancient Town evening, rather than standalone sightseeing.",
-      "rationale": "Cargo Club brings a restaurant moment set by table pace, river light, yellow walls, lanterns, and the decision to slow down.",
+      "pageID": "city-hoian-place-cao-lau-thanh",
+      "summary": "Cao Lầu Thanh is the small Thái Phiên stop for cao lầu the meal itself: chewy noodles, pork, herbs, crisp pieces, and sauce. The current Hội An set already had cao lầu as a dish. Thanh gives it a named shop, supported by Vietnam Travel and Quang Nam food guidance, so the bowl has somewhere concrete to land.",
+      "context": "Cao Lầu Thanh is the small Thái Phiên stop for cao lầu the meal itself: chewy noodles, pork, herbs, crisp pieces, and sauce.",
+      "tip": "Morning Glory is better for orientation across dishes. Cao Lầu Thanh is the tighter choice when the craving is specifically cao lầu.",
+      "rationale": "The current Hội An set already had cao lầu as a dish. Thanh gives it a named shop, supported by Vietnam Travel and Quang Nam food guidance, so the bowl has somewhere concrete to land.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Meal With River Edges",
-          "body": "Cargo Club gives an old-town river meal a clearer plan: terrace energy, yellow walls, lantern light, menu choices, and a steadier table."
+          "title": "The Bowl Gets A Place",
+          "body": "Cao Lầu Thanh is the focused Hội An stop for the noodle bowl itself: thick cao lầu noodles, pork, herbs, crisp pieces, and sauce at a simple Thái Phiên table."
         },
         {
           "id": "quick-say",
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "food-menu",
             "food-1",
+            "food-4",
             "food-3"
           ]
         },
         {
           "id": "place-brief",
-          "title": "Terrace Holds The Meal",
-          "body": "Expect the meal to matter because the river is beside it. The old-town waterline is part of why it registers."
+          "title": "Order The Bowl",
+          "body": "This is the focused cao lầu bowl without turning the meal into a broad restaurant search. Keep the order simple and let the bowl lead."
         },
         {
           "id": "use-it-with",
-          "title": "Dinner With Less Guesswork",
-          "body": "Choose it for a night when you want a manageable table after walking the old core. A simple meal plan keeps attention on what you see."
+          "title": "Chew, Pork, Herbs",
+          "body": "The appeal is texture: thick noodles, savory pork, fresh greens, crisp pieces, and just enough sauce to coat the bowl."
         },
         {
           "id": "when-to-use",
-          "title": "Terrace Before Menu",
-          "body": "The river is the reason to sit here. Notice the menu at the table, then decide how much of the evening belongs by the water."
+          "title": "Thái Phiên Stop",
+          "body": "Thái Phiên keeps the stop close to old-town walks without making it a riverside linger. Come hungry, order the bowl, then keep walking."
         },
         {
           "id": "good-to-know",
-          "title": "Old Town Meal With River Edges",
-          "body": "Cargo Club makes sense as a meal woven into the Ancient Town evening, rather than standalone sightseeing."
+          "title": "How It Differs",
+          "body": "Morning Glory is better for orientation across dishes. Cao Lầu Thanh is the tighter choice when the craving is specifically cao lầu."
+        }
+      ],
+      "sourceMode": "expanded-detail"
+    },
+    {
+      "pageID": "city-hoian-place-cargo-club",
+      "summary": "Cargo Club is the old-town riverfront restaurant-and-patisserie moment: terrace, cakes, coffee, Vietnamese and Western plates, and a table that solves group dinner without leaving the walk.",
+      "context": "Cargo Club is the old-town riverfront restaurant-and-patisserie moment: terrace, cakes, coffee, Vietnamese and Western plates, and a table that solves group dinner without leaving the walk.",
+      "tip": "Morning Glory or White Rose makes more sense when the group wants one focused Hội An dish. Cargo helps when the night needs terrace seats, dessert, coffee, and a menu with room for everyone.",
+      "rationale": "It belongs to Hội An’s trading-street restaurant pattern: an old-town shophouse, Thu Bon river view, bakery counter, and broad menu in the same orbit as Ms Vy food stops.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "River Terrace, Cakes, Dinner",
+          "body": "Cargo Club is a Hội An riverfront restaurant-and-patisserie pause: terrace tables, Vietnamese and Western plates, cakes, and a Thu Bon view when the Ancient Town walk needs a real break."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phraseIDs": [
+            "v900-food-drin-can-we-sit-outside",
+            "v900-food-drin-what-do-you-recommend",
+            "v900-food-drin-can-i-pay-the-bill-by-card"
+          ]
+        },
+        {
+          "id": "place-brief",
+          "title": "Terrace, Then Dessert",
+          "body": "The reason is not one rare dish. It is the mix of river terrace, bakery case, coffee or cake, and an easy meal beside Nguyễn Thái Học."
+        },
+        {
+          "id": "use-it-with",
+          "title": "In The Ms Vy Orbit",
+          "body": "Cargo sits near the same old-town restaurant world as Morning Glory and Vy’s Market. Use it for a broader table rather than one narrow dish chase."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Terrace Over Food Quest",
+          "body": "Morning Glory or White Rose makes more sense when the group wants one focused Hội An dish. Cargo helps when the night needs terrace seats, dessert, coffee, and a menu with room for everyone."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1128,7 +1173,7 @@
         {
           "id": "at-glance",
           "title": "Open Water After Old Streets",
-          "body": "Cham Islands moves Hội An out from old streets toward open water, green hills, fishing boats, and a different pace. It sits in the plan when the day needs air, weather, and a real break from lanes."
+          "body": "Cham Islands moves Hội An out from old streets toward open water, green hills, fishing boats, and salt air. It sits in the plan for weather, horizon, and a real break from lanes."
         },
         {
           "id": "quick-say",
@@ -1148,7 +1193,7 @@
         {
           "id": "use-it-with",
           "title": "Island Day Pairing",
-          "body": "Treat it as the bigger nature break after markets, houses, cafes, or tailor errands. The commitment is water-based, so weather should lead the decision."
+          "body": "Treat it as the bigger nature break after markets, houses, cafes, or tailor errands. The commitment is water-based, so weather can lead the decision."
         },
         {
           "id": "when-to-use",
@@ -1165,8 +1210,8 @@
     },
     {
       "pageID": "city-hoian-place-cham-islands-snorkel-boat",
-      "summary": "The snorkel boat carries Hội An's water-travel side: dock timing, sea light, green islands, and the crossing from shore to reef-side day.",
-      "context": "The snorkel boat carries Hội An's water-travel side: dock timing, sea light, green islands, and the crossing from shore to reef-side day.",
+      "summary": "The snorkel boat opens Hội An's water-travel side: dock timing, sea light, green islands, and the crossing from shore to reef-side day.",
+      "context": "The snorkel boat opens Hội An's water-travel side: dock timing, sea light, green islands, and the crossing from shore to reef-side day.",
       "tip": "Water clarity, comfort, and timing depend on weather. A flexible plan is safer than treating the boat as a fixed old-town errand.",
       "rationale": "The boat gives Cham Islands a physical sequence: boarding, crossing, snorkeling, and returning, not just a dot offshore.",
       "sections": [
@@ -1193,12 +1238,12 @@
         {
           "id": "use-it-with",
           "title": "Give The Water Time",
-          "body": "Choose it for a day that can handle a longer water outing. A lighter old-town plan makes the return cleaner."
+          "body": "Plan it for a day that can handle a longer water outing. A lighter old-town plan makes the return cleaner."
         },
         {
           "id": "when-to-use",
           "title": "Boarding To Return",
-          "body": "The snorkel boat phrase carries the whole sequence: boarding, crossing, swimming, drying off, and coming back to Hội An."
+          "body": "The boat phrase names the whole sequence: pier, boarding, open water, reef stop, drying off, and the return to Hội An."
         },
         {
           "id": "good-to-know",
@@ -1225,9 +1270,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "food-menu",
             "food-1",
-            "food-3"
+            "v900-food-drin-less-sugar-please",
+            "food-7"
           ]
         },
         {
@@ -1308,7 +1353,7 @@
         {
           "id": "at-glance",
           "title": "A Cool Drink Break",
-          "body": "Cocobox brings a short cafe break: fruit, juice, coffee, design cues, and a little shade when the walking loop starts to blur between old-town errands."
+          "body": "Cocobox brings a short cafe break: fruit juices, coffee, small tables, design-shop shelves, and shade when the walking loop starts to blur between old-town errands."
         },
         {
           "id": "quick-say",
@@ -1322,18 +1367,18 @@
         },
         {
           "id": "place-brief",
-          "title": "Fruit, Coffee, Counter",
-          "body": "The counter is tropical juice, coffee, fruit, and yellow-wall Hội An color. Keep the visit small, visual, and drink-led."
+          "title": "Fruit, Coffee, Color",
+          "body": "Order from the drink menu, then keep the visit visual and short: tropical juice, coffee, fruit, small tables, and yellow-wall Hội An color."
         },
         {
           "id": "use-it-with",
           "title": "Between Walks",
-          "body": "Put it between shops, old houses, river time, or a lunch plan. The point is a clean break rather than a long cafe session."
+          "body": "Put it between shops, old houses, river time, or a lunch plan. The draw is a clean break rather than a long cafe session."
         },
         {
           "id": "when-to-use",
           "title": "Heat Break",
-          "body": "The clearest moment is practical: one cold drink, a short seat, and a reset before the next old-town stretch."
+          "body": "The clearest moment is practical: one cold drink, a small table, and a reset before the next old-town stretch."
         },
         {
           "id": "good-to-know",
@@ -1360,9 +1405,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
-            "store-1"
+            "food-1",
+            "food-3",
+            "food-7"
           ]
         },
         {
@@ -1377,13 +1422,58 @@
         },
         {
           "id": "when-to-use",
-          "title": "Choose Heat Early",
-          "body": "The moment is choosing heat, sauce, or portion calmly before the plate arrives. A simple order keeps the meal from becoming stressful."
+          "title": "Settle Heat Early",
+          "body": "Ask for spice, sauce, or portion size before the plate lands. The meal stays easy when the rice, chicken, herbs, and soup arrive together."
         },
         {
           "id": "good-to-know",
           "title": "Herbs And Sauce Matter",
           "body": "The herbs and sauce matter as much as the rice. They are part of the dish, not extras on the side."
+        }
+      ],
+      "sourceMode": "expanded-detail"
+    },
+    {
+      "pageID": "city-hoian-place-com-ga-ba-buoi",
+      "summary": "Cơm Gà Bà Buội turns Hội An chicken rice into a named old-town lunch: yellow rice, shredded chicken, herbs, papaya, soup, and sauce on Phan Châu Trinh.",
+      "context": "Cơm Gà Bà Buội turns Hội An chicken rice into a named old-town lunch: yellow rice, shredded chicken, herbs, papaya, soup, and sauce on Phan Châu Trinh.",
+      "tip": "Bà Buội belongs in the day when chicken rice should be the meal, not just a dish name. Morning Glory is broader; Bà Buội keeps lunch focused on yellow rice, chicken, herbs, and sauce.",
+      "rationale": "Bà Buội gives Hội An chicken rice a concrete old-town lunch memory: yellow rice, shredded chicken, herbs, papaya, sauce, and a table close to Phan Châu Trinh errands.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Chicken Rice Gets A Name",
+          "body": "Cơm Gà Bà Buội is the Hội An chicken-rice name for yellow rice, shredded chicken, herbs, papaya, soup, and sauce at a simple old-town table."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phraseIDs": [
+            "food-1",
+            "food-3",
+            "food-7"
+          ]
+        },
+        {
+          "id": "place-brief",
+          "title": "Yellow Rice First",
+          "body": "The plate should read quickly: fragrant yellow rice, shredded chicken, herbs, papaya, and sauce. It is a clear lunch built around rice and chicken."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Sauce And Soup Finish It",
+          "body": "The lift comes from the sauce, herbs, and small soup beside the rice. Ask for less chili early if heat would distract from the plate."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Phan Châu Trinh Lunch",
+          "body": "Phan Châu Trinh keeps the stop close to tailor errands, old houses, and coffee breaks. Let chicken rice be the planned meal."
+        },
+        {
+          "id": "good-to-know",
+          "title": "How It Belongs In Hội An",
+          "body": "Bà Buội belongs in the day when chicken rice should be the meal, not just a dish name. Morning Glory is broader; Bà Buội keeps lunch focused on yellow rice, chicken, herbs, and sauce."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1405,9 +1495,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "food-menu",
-            "food-1",
-            "food-3"
+            "v900-sigh-acti-what-time-does-the-tour-start",
+            "sight-5",
+            "food-peanut-allergy"
           ]
         },
         {
@@ -1451,14 +1541,14 @@
           "body": "",
           "phraseIDs": [
             "directions-1",
-            "directions-3",
-            "v500-dire-navi-can-i-walk-there"
+            "sight-5",
+            "store-1"
           ]
         },
         {
           "id": "place-brief",
           "title": "Fields Between Places",
-          "body": "The route is a bicycle path through fields and gardens in morning light. The point is the movement between places, not one single sight."
+          "body": "The route is a bicycle path through fields and gardens in morning light. The movement between places matters more than one single sight."
         },
         {
           "id": "use-it-with",
@@ -1480,10 +1570,10 @@
     },
     {
       "pageID": "city-hoian-place-cua-dai-beach",
-      "summary": "Cua Dai Beach carries Hội An to the coast, where river-town habits meet open light, boats, sand, and a sea breeze outside the old lanes.",
-      "context": "Cua Dai Beach carries Hội An to the coast, where river-town habits meet open light, boats, sand, and a sea breeze outside the old lanes.",
+      "summary": "Cửa Đại Beach is the open-coast version of Hội An: wider sand, sea air, fishing-boat edges, and a quieter beach reset when old-town lanes feel tight.",
+      "context": "Cửa Đại Beach is the open-coast version of Hội An: wider sand, sea air, fishing-boat edges, and a quieter beach reset when old-town lanes feel tight.",
       "tip": "Weather, season, and the shoreline itself decide how long you stay. Hold sand, swimming, and facilities lightly until you see the beach.",
-      "rationale": "Cua Dai Beach widens the Hội An plan toward the sea while staying distinct from river walks and island trips.",
+      "rationale": "Cửa Đại reminds visitors that Hội An is not only lantern streets; the town also opens toward working coast, river mouth, and beach light.",
       "sections": [
         {
           "id": "at-glance",
@@ -1495,9 +1585,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "v900-tran-where-is-the-boat-pier",
-            "v900-tran-where-can-i-buy-a-ticket",
-            "directions-8"
+            "directions-8",
+            "sight-3",
+            "v500-loca-serv-ever-task-where-can-i-buy-water"
           ]
         },
         {
@@ -1513,7 +1603,7 @@
         {
           "id": "when-to-use",
           "title": "River Versus Sea",
-          "body": "The useful comparison is river versus sea. Cua Dai brings a shoreline mood, while the Hoai River keeps the focus inside town."
+          "body": "The practical comparison is river versus sea. Cua Dai brings a shoreline mood, while the Hoai River keeps the focus inside town."
         },
         {
           "id": "good-to-know",
@@ -1540,8 +1630,8 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "v900-tran-where-is-the-boat-pier",
-            "v900-tran-where-can-i-buy-a-ticket",
+            "sight-3",
+            "v500-dire-navi-how-far-is-it",
             "directions-8"
           ]
         },
@@ -1552,8 +1642,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "Nature Without A Long Trip",
-          "body": "Let it explain Hội An's water geography without committing to an island day. The value is the edge, not filling hours."
+          "title": "Read The Edge, Then Move On",
+          "body": "Treat it as a short water-edge stop: river, sea, boats, sandbars, and a clearer sense of how Hội An opens outward."
         },
         {
           "id": "when-to-use",
@@ -1570,15 +1660,15 @@
     },
     {
       "pageID": "city-hoian-place-cua-dai-pier",
-      "summary": "Cua Dai Pier is the coastal boarding edge of Hội An: open water, island routes, and name confusion resolved by boats rather than beach time.",
-      "context": "Cua Dai Pier is the coastal boarding edge of Hội An: open water, island routes, and name confusion resolved by boats rather than beach time.",
+      "summary": "Cua Dai Pier matters when the day involves boats from the Hội An coast: island routes, pickup timing, water, and departure signs. Cua Dai Pier is the coastal boarding point for boat plans outside the old-town lanes.",
+      "context": "Cua Dai Pier matters when the day involves boats from the Hội An coast: island routes, pickup timing, water, and departure signs.",
       "tip": "Cửa Đại appears in beach, estuary, and pier phrases. The words bến tàu are the clue that this one is about boats.",
-      "rationale": "The pier makes Hội An's water travel practical: a place to picture before a crossing, not just a coastal label.",
+      "rationale": "Cua Dai Pier is the coastal boarding point for boat plans outside the old-town lanes.",
       "sections": [
         {
           "id": "at-glance",
           "title": "Where The Day Boards",
-          "body": "Cua Dai Pier is the Hội An edge that turns a beach-side road into boats, crossings, and island plans. It is more about boarding and direction than lingering by the water."
+          "body": "Cua Dai Pier is the Hội An coast turning into a boarding point: open water, island routes, departure signs, and people checking which boat is theirs."
         },
         {
           "id": "quick-say",
@@ -1592,8 +1682,8 @@
         },
         {
           "id": "place-brief",
-          "title": "Boat Sounds, Coast Nearby",
-          "body": "The edge is a pier or ferry point with boat sounds and the Cửa Đại coast nearby. The place is functional, not scenic in the old-town sense."
+          "title": "Boats, Not Beach Time",
+          "body": "This is a pier or ferry point near the Cửa Đại coast. Come for departure, pickup, and island-route clarity more than a slow beach sit."
         },
         {
           "id": "use-it-with",
@@ -1617,7 +1707,7 @@
       "pageID": "city-hoian-place-duc-an-old-house",
       "summary": "Duc An Old House brings Hội An's heritage indoors, where wood shelves, family rooms, and warm light make old-town history feel domestic rather than distant.",
       "context": "Duc An Old House brings Hội An's heritage indoors, where wood shelves, family rooms, and warm light make old-town history feel domestic rather than distant.",
-      "tip": "The scale is part of the point. This compact heritage house is closer to a preserved room than a large museum or full historical route.",
+      "tip": "The scale is part of what matters. This compact heritage house is closer to a preserved room than a large museum or full historical route.",
       "rationale": "The house turns Hội An heritage into wood, rooms, and lived detail instead of another exterior walk.",
       "sections": [
         {
@@ -1653,7 +1743,7 @@
         {
           "id": "good-to-know",
           "title": "Small Scale Matters",
-          "body": "The scale is part of the point. This compact heritage house is closer to a preserved room than a large museum or full historical route."
+          "body": "The scale is part of what matters. This compact heritage house is closer to a preserved room than a large museum or full historical route."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1662,7 +1752,7 @@
       "pageID": "city-hoian-place-espresso-station",
       "summary": "The Espresso Station is part of Hội An's narrow-lane cafe side: a small bar, shade, and coffee interrupting the heritage walk without becoming the whole afternoon.",
       "context": "The Espresso Station is part of Hội An's narrow-lane cafe side: a small bar, shade, and coffee interrupting the heritage walk without becoming the whole afternoon.",
-      "tip": "This does not need to carry the rooftop coffee role. Its strength is the smaller bar and the lane around it.",
+      "tip": "The strength is the smaller bar and the lane around it: coffee first, rooflines somewhere else.",
       "rationale": "The Espresso Station keeps the cafe moment compact, which helps it feel different from rooftop or view-first coffee stops.",
       "sections": [
         {
@@ -1675,9 +1765,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "directions-8",
-            "v900-tran-where-can-i-buy-a-ticket",
-            "taxi-3"
+            "coffee-1",
+            "v900-food-drin-less-sugar-please",
+            "bath-1"
           ]
         },
         {
@@ -1687,8 +1777,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "Cafe Contrast",
-          "body": "Choose it when Faifo is too view-focused or a full cafe sit is too long. This is the tighter coffee break in the old-town flow."
+          "title": "A Tighter Coffee Break",
+          "body": "Faifo is the view stop. Espresso Station is the smaller coffee break in the old-town flow."
         },
         {
           "id": "when-to-use",
@@ -1697,23 +1787,23 @@
         },
         {
           "id": "good-to-know",
-          "title": "Coffee Before The View",
-          "body": "This does not need to carry the rooftop coffee role. Its strength is the smaller bar and the lane around it."
+          "title": "Lane Before View",
+          "body": "The strength is the smaller bar and the lane around it: coffee first, rooflines somewhere else."
         }
       ],
       "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hoian-place-faifo-coffee",
-      "summary": "Faifo Coffee turns Hội An's roofline into the point: a drink, stairs, yellow walls below, and the old port town seen from above rather than inside the crowd.",
-      "context": "Faifo Coffee turns Hội An's roofline into the point: a drink, stairs, yellow walls below, and the old port town seen from above rather than inside the crowd.",
-      "tip": "The rooftop is the hook. The coffee shares the climb with the view.",
-      "rationale": "Faifo Coffee turns a cafe break into a quick way to see Hội An's roofline without leaving the Ancient Town.",
+      "summary": "Faifo Coffee is the rooftop-view cafe moment: climb above the old town, order one Vietnamese coffee, and decide if the yellow roofline is worth the crowd.",
+      "context": "Faifo Coffee is the rooftop-view cafe moment: climb above the old town, order one Vietnamese coffee, and decide if the yellow roofline is worth the crowd.",
+      "tip": "If the drink matters more than the view, The Espresso Station is the better related cafe.",
+      "rationale": "It earns its place because Hội An has few rooftop cafe views over the yellow roofline; the coffee supports the view, not the other way around.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "Coffee With A Roofline",
-          "body": "Faifo Coffee is the Hội An cafe to remember when the drink is tied to a rooftop view over yellow roofs, lantern streets, and the old town from above."
+          "title": "Rooftop First, Coffee Second",
+          "body": "Faifo Coffee is a rooftop-view cafe first and a coffee stop second: terrace tables, yellow rooflines, and coconut, egg, or classic Vietnamese coffee if the terrace is not crowded."
         },
         {
           "id": "quick-say",
@@ -1727,23 +1817,18 @@
         },
         {
           "id": "place-brief",
-          "title": "Stairs, Drink, Roofs",
-          "body": "The view is a narrow old-town cafe, stairs upward, a drink in hand, and a brief look across weathered roofs rather than a long sit-down meal."
+          "title": "Rooftop Before Coffee",
+          "body": "The reason is the roofline and terrace setting. If the tables are crowded, the visit can shrink to one drink and a quick look."
         },
         {
           "id": "use-it-with",
-          "title": "Above The Walking Streets",
-          "body": "Go after a dense old-town stretch, especially when a quick view from above matters more than settling in to work."
+          "title": "Order Vietnamese",
+          "body": "Coconut coffee, egg coffee, or a plain milk coffee gives the drink menu more local shape than treating it as only a photo perch."
         },
         {
           "id": "when-to-use",
-          "title": "Go For The Roof",
-          "body": "The visit makes sense when the view is the reason. If the roof is crowded, it may become shorter than a normal coffee break."
-        },
-        {
-          "id": "good-to-know",
-          "title": "Start With The Roof",
-          "body": "The rooftop is the hook. The coffee shares the climb with the view."
+          "title": "Coffee-First Alternative",
+          "body": "If the drink matters more than the view, The Espresso Station is the better related cafe."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1782,8 +1867,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Choose A Few Objects",
-          "body": "Choose a few objects, one room at a time. The point is context, not every label."
+          "title": "Let A Few Objects Lead",
+          "body": "Pick a few objects and give each room a little time. The point is context, not reading every label."
         },
         {
           "id": "good-to-know",
@@ -1797,7 +1882,7 @@
       "pageID": "city-hoian-place-from-danang-airport",
       "summary": "The airport route is the first handoff into Hội An: luggage, pickup doors, coastal road light, and the shift from Da Nang's airport scale toward the old town.",
       "context": "The airport route is the first handoff into Hội An: luggage, pickup doors, coastal road light, and the shift from Da Nang's airport scale toward the old town.",
-      "tip": "Treat this as transfer language, not sightseeing. The key move is knowing the wording clearly before the ride.",
+      "tip": "This is arrival language for the transfer. The key move is knowing the pickup point, driver name, and Hội An address before the ride.",
       "rationale": "The airport route matters because Hội An often begins before town: with luggage, a car, and the road out of Da Nang.",
       "sections": [
         {
@@ -1811,8 +1896,8 @@
           "body": "",
           "phraseIDs": [
             "directions-8",
-            "v900-tran-where-can-i-buy-a-ticket",
-            "taxi-3"
+            "v900-dire-navi-please-write-the-address-for-me",
+            "v900-tran-pick-me-up-at-this-entrance"
           ]
         },
         {
@@ -1823,7 +1908,7 @@
         {
           "id": "use-it-with",
           "title": "Pickup And Transfer Pairing",
-          "body": "Arrival planning, hotel pickup, and the car ride into town all meet here. Fare, pickup zone, and timing come up in the transfer exchange."
+          "body": "Arrival planning, hotel pickup, and the car ride into town all meet here. Pickup point, driver name, and next address are the practical pieces to settle."
         },
         {
           "id": "when-to-use",
@@ -1832,8 +1917,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Route Language Helps",
-          "body": "Treat this as transfer language, not sightseeing. The key move is knowing the wording clearly before the ride."
+          "title": "Transfer, Not Sightseeing",
+          "body": "This is arrival language for the transfer. The key move is knowing the pickup point, driver name, and Hội An address before the ride."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1932,7 +2017,7 @@
       "pageID": "city-hoian-place-hainan-assembly-hall",
       "summary": "Hainan Assembly Hall keeps another piece of Hội An's trading-community history in view, less crowded than the famous halls but still set by incense, gate, and courtyard.",
       "context": "Hainan Assembly Hall keeps another piece of Hội An's trading-community history in view, less crowded than the famous halls but still set by incense, gate, and courtyard.",
-      "tip": "The building can look like a heritage sight, but it still carries worship and community memory. Respectful behavior matters.",
+      "tip": "The building can look like a heritage sight, but it still holds worship and community memory. Respectful behavior matters.",
       "rationale": "The hall adds a smaller assembly-hall side, giving Hội An heritage more than one color and pace.",
       "sections": [
         {
@@ -1968,7 +2053,7 @@
         {
           "id": "good-to-know",
           "title": "Respect The Room",
-          "body": "The building can look like a heritage sight, but it still carries worship and community memory. Respectful behavior matters."
+          "body": "The building can look like a heritage sight, but it still holds worship and community memory. Respectful behavior matters."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1990,9 +2075,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "price-1",
-            "price-4",
-            "shop-5"
+            "sight-3",
+            "shop-4",
+            "v900-shop-can-you-pack-it-for-travel"
           ]
         },
         {
@@ -2042,8 +2127,8 @@
         },
         {
           "id": "place-brief",
-          "title": "Ceramics And Older Cases",
-          "body": "The gallery is small, with route material, ceramics, warm light, and older display cases. Keep the loop short and focused."
+          "title": "Ceramics And Compact Rooms",
+          "body": "The gallery is small, with ceramics, trade-era objects, warm light, and older display cases. Keep the loop short and focused."
         },
         {
           "id": "use-it-with",
@@ -2068,7 +2153,7 @@
       "summary": "The Hoai River is the old-town waterline where Hội An makes sense at night: bridges, boat lights, reflections, and streets bending toward the bank.",
       "context": "The Hoai River is the old-town waterline where Hội An makes sense at night: bridges, boat lights, reflections, and streets bending toward the bank.",
       "tip": "The river can become a photo habit quickly. A few minutes as geography keeps it from becoming only a lantern scene.",
-      "rationale": "The river gives Hội An its walking rhythm and evening focus without needing a separate attraction label.",
+      "rationale": "The Hoai River gathers Hội An around bridges, boats, reflections, and evening walking routes.",
       "sections": [
         {
           "id": "at-glance",
@@ -2080,9 +2165,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
-            "store-1"
+            "v500-sigh-acti-where-is-the-entrance",
+            "v500-sigh-acti-where-can-i-buy-tickets",
+            "sight-3"
           ]
         },
         {
@@ -2093,7 +2178,7 @@
         {
           "id": "use-it-with",
           "title": "Evening Route Pairing",
-          "body": "Pair it with a lantern walk, Japanese Covered Bridge, or a short old-town loop. The river is the spine that keeps the route from scattering."
+          "body": "Pair it with a lantern walk, Japanese Covered Bridge, or a short old-town loop. The river keeps the route easy to follow when the streets get busy."
         },
         {
           "id": "when-to-use",
@@ -2137,8 +2222,8 @@
         },
         {
           "id": "use-it-with",
-          "title": "Old-Town Reference Point",
-          "body": "The bridge is a bearing point during an Ancient Town walk, especially when nearby streets begin to blur."
+          "title": "A Crossing To Remember",
+          "body": "The bridge helps when nearby old-town streets start to blur: roof overhead, water below, and familiar lanes on both sides."
         },
         {
           "id": "when-to-use",
@@ -2187,8 +2272,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Watch Wood Turn Useful",
-          "body": "Notice how wood turns useful: tools, hands, panels, and the unhurried pace of work."
+          "title": "Watch Wood Take Shape",
+          "body": "Notice the tools, hands, panels, and unhurried pace of work before the finished souvenirs."
         },
         {
           "id": "good-to-know",
@@ -2278,7 +2363,7 @@
         {
           "id": "when-to-use",
           "title": "A Small Making Moment",
-          "body": "This is one patient hour with bamboo ribs, hands, and a finished object. It does not need to carry every craft expectation in Hội An."
+          "body": "This is one patient hour with bamboo ribs, colored material, instruction, and a finished lantern you handled yourself."
         },
         {
           "id": "good-to-know",
@@ -2335,15 +2420,15 @@
     },
     {
       "pageID": "city-hoian-place-madam-khanh",
-      "summary": "Madam Khanh sits inside Hội An's bánh mì fame, but the real memory is still counter speed, filling choices, chili, and a sandwich carried back toward the old streets.",
-      "context": "Madam Khanh sits inside Hội An's bánh mì fame, but the real memory is still counter speed, filling choices, chili, and a sandwich carried back toward the old streets.",
-      "tip": "Madam Khanh is a heat-and-filling choice. Bánh Mì Phượng is more about moving through a faster glass-case counter.",
-      "rationale": "The stop stays clear when the visitor treats it as a quick heat-and-filling decision rather than a test of sandwich fame.",
+      "summary": "Madam Khanh is the famous Hội An sandwich shop behind the Bánh Mì Queen name: crisp roll, warm filling, herbs, sauce, chili, and a calmer bánh mì meal than Phượng.",
+      "context": "Madam Khanh is the famous Hội An sandwich shop behind the Bánh Mì Queen name: crisp roll, warm filling, herbs, sauce, chili, and a calmer bánh mì meal than Phượng.",
+      "tip": "Bánh Mì Phượng is the famous quick-service sandwich shop nearby, with fillings visible before you order. Madam Khánh is the Bánh Mì Queen shop, a calmer same-dish choice for the same Hội An craving.",
+      "rationale": "The Bánh Mì Queen nickname helps, but the meal still has to land as crisp bread, warm filling, herbs, sauce, and chili.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "Filling, Heat, Bread",
-          "body": "Madam Khanh is a fast Hội An bánh mì counter where filling choice and chili level matter before the roll is built, then the sandwich carries you back toward the old streets."
+          "title": "The Bánh Mì Queen Shop",
+          "body": "Madam Khánh is the Bánh Mì Queen sandwich shop for a specific Hội An meal: crisp roll, warm filling, herbs, sauce, and chili chosen before the bread closes."
         },
         {
           "id": "quick-say",
@@ -2358,17 +2443,17 @@
         {
           "id": "place-brief",
           "title": "Fame Stays Small",
-          "body": "The sandwich follows the Hội An pattern: crisp roll, warm filling, herbs, pickles, sauce, and heat. It does not need to carry the whole meal plan."
+          "body": "The nickname is practical, but the sandwich is still small and direct. Watch for crisp bread, warm filling, herbs, pickles, sauce, and heat."
         },
         {
           "id": "use-it-with",
           "title": "Earlier Than The Rush",
-          "body": "Before the line tightens, the counter is lighter and the sandwich stays the point. That makes it easier to enjoy as a quick Ancient Town break."
+          "body": "Go earlier if you can. The line feels less like the whole visit, and the sandwich stays what matters."
         },
         {
           "id": "when-to-use",
-          "title": "Different Job Than Phượng",
-          "body": "Madam Khanh is a heat-and-filling choice. Bánh Mì Phượng is more about moving through a faster glass-case counter."
+          "title": "How It Compares With Bánh Mì Phượng",
+          "body": "Bánh Mì Phượng is the famous quick-service sandwich shop nearby, with fillings visible before you order. Madam Khánh is the Bánh Mì Queen shop, a calmer same-dish choice for the same Hội An craving."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -2383,16 +2468,16 @@
         {
           "id": "at-glance",
           "title": "Dinner With A Real Break",
-          "body": "Mai Fish suits the night when dinner should be settled, not improvised: a Vietnamese dining room, fish and herbs on the table, warm light, and attentive service."
+          "body": "Mai Fish suits the night for dinner settled, not improvised: a Vietnamese dining room, fish and herbs on the table, warm light, and attentive service."
         },
         {
           "id": "quick-say",
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "food-menu",
-            "food-1",
-            "food-3"
+            "food-need-table",
+            "v900-food-drin-what-do-you-recommend",
+            "coffee-7"
           ]
         },
         {
@@ -2428,16 +2513,16 @@
         {
           "id": "at-glance",
           "title": "Riverside Dinner With Color",
-          "body": "Mango Mango is a riverside dinner choice for the night when color, plates, drinks, and lantern glow should be part of the meal rather than background."
+          "body": "Mango Mango is a riverside dinner choice for the night when color, plates, drinks, and lantern glow can be part of the meal rather than background."
         },
         {
           "id": "quick-say",
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "food-menu",
-            "food-1",
-            "food-3"
+            "v900-food-drin-can-we-sit-outside",
+            "v900-food-drin-what-do-you-recommend",
+            "v900-food-drin-can-i-pay-the-bill-by-card"
           ]
         },
         {
@@ -2453,7 +2538,7 @@
         {
           "id": "when-to-use",
           "title": "The River Counts Here",
-          "body": "The plate is only part of the choice. The draw is dinner near the water, lights, and evening foot traffic."
+          "body": "The plate is only part of the choice. The point is dinner near the water, lights, and evening foot traffic."
         },
         {
           "id": "good-to-know",
@@ -2465,15 +2550,15 @@
     },
     {
       "pageID": "city-hoian-place-market",
-      "summary": "Hội An Market keeps the old town connected to daily buying: produce colors, food counters, small goods, and morning bargaining under yellow awnings.",
-      "context": "Hội An Market keeps the old town connected to daily buying: produce colors, food counters, small goods, and morning bargaining under yellow awnings.",
+      "summary": "Hội An Market keeps the old town connected to daily buying: produce colors, food stalls, small goods, and morning bargaining under yellow awnings.",
+      "context": "Hội An Market keeps the old town connected to daily buying: produce colors, food stalls, small goods, and morning bargaining under yellow awnings.",
       "tip": "Prices are easier when the exchange stays small. A polite question matters more here than trying to win every dong.",
       "rationale": "Hội An Market keeps daily buying close to the tourist streets, giving visitors a practical sense of food, goods, and local exchange.",
       "sections": [
         {
           "id": "at-glance",
           "title": "A Market Opening Lap",
-          "body": "Hội An Market gives the old town its working edge: produce colors, food counters, small goods, bargaining, and morning buying under yellow awnings."
+          "body": "Hội An Market gives the old town its working edge: produce colors, food stalls, small goods, bargaining, and morning buying under yellow awnings."
         },
         {
           "id": "quick-say",
@@ -2512,7 +2597,7 @@
       "pageID": "city-hoian-place-memories-land",
       "summary": "Hội An Memories Land makes the river evening bigger and more staged: show posters, island approach, lantern glow, and a performance plan beyond wandering.",
       "context": "Hội An Memories Land makes the river evening bigger and more staged: show posters, island approach, lantern glow, and a performance plan beyond wandering.",
-      "tip": "The lasting image is riverside arrival and a staged Hội An show. A spacious evening helps that shift register.",
+      "tip": "The lasting image is riverside arrival and a staged Hội An show. A spacious evening helps that shift land.",
       "rationale": "Hội An Memories Land gives the river side of town a staged evening role, distinct from casual old-town wandering.",
       "sections": [
         {
@@ -2525,9 +2610,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
-            "store-1"
+            "v500-sigh-acti-where-can-i-buy-tickets",
+            "v900-time-date-book-what-time-does-it-start",
+            "sight-5"
           ]
         },
         {
@@ -2548,7 +2633,7 @@
         {
           "id": "good-to-know",
           "title": "Riverside Arrival Matters",
-          "body": "The lasting image is riverside arrival and a staged Hội An show. A spacious evening helps that shift register."
+          "body": "The lasting image is riverside arrival and a staged Hội An show. A spacious evening helps that shift land."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -2571,7 +2656,7 @@
           "body": "",
           "phraseIDs": [
             "price-1",
-            "price-4",
+            "shop-4",
             "shop-5"
           ]
         },
@@ -2583,7 +2668,7 @@
         {
           "id": "use-it-with",
           "title": "A Cooler Shopping Pause",
-          "body": "It can break up old-town walking, especially when the day needs an indoor pause. The visit can stay small and focused."
+          "body": "It can break up old-town walking, especially for an indoor pause. The visit can stay small and focused."
         },
         {
           "id": "when-to-use",
@@ -2690,15 +2775,15 @@
     },
     {
       "pageID": "city-hoian-place-morning-glory",
-      "summary": "Save Morning Glory when the first Hội An meal needs to teach the table: local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a counter crawl.",
-      "context": "Save Morning Glory when the first Hội An meal needs to teach the table: local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a counter crawl.",
+      "summary": "Morning Glory is a first Hội An meal for tables that need local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a stall crawl.",
+      "context": "Morning Glory is a first Hội An meal for tables that need local dishes, ingredient questions, and old-town proximity in a room that is easier to read than a stall crawl.",
       "tip": "After one calmer table, the smaller specialty places make more sense: rice paper, herbs, shrimp, sauce, and noodle names stop feeling like a wall of options.",
       "rationale": "Morning Glory matters as an orientation restaurant inside the larger Hội An food story: it makes cao lầu, white rose dumplings, herbs, rice paper, and central-coast flavors easier to decode before smaller stops.",
       "sections": [
         {
           "id": "at-glance",
           "title": "A First Dinner That Teaches The Menu",
-          "body": "Morning Glory Original is worth saving when Hội An food feels wide and the first dinner needs a clear table: cao lầu, white rose dumplings, bánh xèo, herbs, rice paper, and ingredient questions near the old streets."
+          "body": "Morning Glory Original is a first Hội An dinner table for clear central-coast dishes: cao lầu, white rose dumplings, bánh xèo, herbs, rice paper, and staff who can answer ingredient questions."
         },
         {
           "id": "quick-say",
@@ -2717,13 +2802,13 @@
         },
         {
           "id": "use-it-with",
-          "title": "Why Save It",
-          "body": "This is the practical first-night save for groups, allergies, and first-timers who want central-coast dishes without decoding every counter on arrival."
+          "title": "Why It Works First",
+          "body": "The room is easier for groups, allergies, and anyone still learning the menu. Hội An dishes feel calmer here before smaller specialty stops."
         },
         {
           "id": "when-to-use",
           "title": "Beyond First Dinner",
-          "body": "Let it be orientation, then save Bale Well, White Rose, bánh mì, or a market counter for a more focused second stop. Hội An food opens up once the first dinner points you toward more doors."
+          "body": "Let it be orientation, then keep Bale Well, White Rose, bánh mì, or a market stall for a more focused second stop. Hội An food opens up once the first dinner points you toward more doors."
         },
         {
           "id": "good-to-know",
@@ -2750,7 +2835,7 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "coffee-1",
+            "price-1",
             "coffee-4",
             "coffee-6"
           ]
@@ -2758,7 +2843,7 @@
         {
           "id": "place-brief",
           "title": "Herbal, Sweet, Recognizable",
-          "body": "Expect an iced herbal drink with lemongrass and lotus-leaf garnish. The point is refreshment and recognition; keep it short."
+          "body": "Expect an iced herbal drink with lemongrass and lotus-leaf garnish. The draw is refreshment; keep it short."
         },
         {
           "id": "use-it-with",
@@ -2767,12 +2852,12 @@
         },
         {
           "id": "when-to-use",
-          "title": "A Short Counter Moment",
-          "body": "This is a small counter moment; it is a quick counter moment. Drink it, notice the flavor, and keep the old-town route moving."
+          "title": "A Quick Herbal Drink",
+          "body": "This is a small old-town drink stop. Try the herbal sweetness, notice the garnish, and keep the route moving."
         },
         {
           "id": "good-to-know",
-          "title": "Sweetness Can Be The Point",
+          "title": "Sweetness Can Be what matters",
           "body": "Do not expect a plain tea. The memory is the herbal sweetness, cold glass, and street-side scene around it."
         }
       ],
@@ -2782,7 +2867,7 @@
       "pageID": "city-hoian-place-museum",
       "summary": "Hội An Museum adds a small civic side to the old town, with artifacts, rooms, and local history behind the yellow-wall street scene.",
       "context": "Hội An Museum adds a small civic side to the old town, with artifacts, rooms, and local history behind the yellow-wall street scene.",
-      "tip": "A few objects can carry the visit before museum fatigue sets in. The steadier reason to go is shade, cooler air, and a short indoor break.",
+      "tip": "A few objects can be enough before museum fatigue sets in. The steadier reason to go is shade, cooler air, and a short indoor break.",
       "rationale": "Hội An Museum adds depth to the streets outside, especially when the visit needs shade, cooler air, and a few details to hold onto.",
       "sections": [
         {
@@ -2813,12 +2898,12 @@
         {
           "id": "when-to-use",
           "title": "Short Visits Are Fine",
-          "body": "Choose a few displays, then leave before museum fatigue sets in. The old-town story stays sharper that way."
+          "body": "Pick a few displays, then leave before museum fatigue sets in. The old-town story stays sharper that way."
         },
         {
           "id": "good-to-know",
           "title": "Cool Air, A Few Objects",
-          "body": "A few objects can carry the visit before museum fatigue sets in. The steadier reason to go is shade, cooler air, and a short indoor break."
+          "body": "A few objects can be enough before museum fatigue sets in. The steadier reason to go is shade, cooler air, and a short indoor break."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -2915,15 +3000,15 @@
     },
     {
       "pageID": "city-hoian-place-nguyen-phuc-chu-street",
-      "summary": "Nguyen Phuc Chu Street is the spine of An Hội's night side, tying river crossings, market stalls, signs, and lantern-lit shopfronts into one walkable line.",
-      "context": "Nguyen Phuc Chu Street is the spine of An Hội's night side, tying river crossings, market stalls, signs, and lantern-lit shopfronts into one walkable line.",
+      "summary": "Nguyen Phuc Chu Street is An Hội's night-side walk, tying river crossings, market stalls, signs, and lantern-lit shopfronts into one named route.",
+      "context": "Nguyen Phuc Chu Street is An Hội's night-side walk, tying river crossings, market stalls, signs, and lantern-lit shopfronts into one named route.",
       "tip": "A named street keeps the evening legible when the lights start looking similar. A bridge, river edge, or market lap can hold it.",
       "rationale": "Nguyen Phuc Chu Street helps visitors place the An Hội evening on the map instead of drifting through unnamed lights.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "An Hội’s Evening Spine",
-          "body": "Nguyen Phuc Chu Street gives An Hội’s night side a walkable spine: lantern-market energy, signs, shopfronts, crossings, and warm light near the river."
+          "title": "An Hội’s Evening Walk",
+          "body": "Nguyen Phuc Chu Street gives An Hội’s night side a walkable route: lantern-market energy, signs, shopfronts, crossings, and warm light near the river."
         },
         {
           "id": "quick-say",
@@ -2947,8 +3032,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Route Rather Than Attraction",
-          "body": "The street is the line that helps you move through stalls, drinks, crossings, and river edges."
+          "title": "A Line Through The Night",
+          "body": "The street name helps you move between stalls, drinks, crossings, and river edges without letting the lanterns blur together."
         },
         {
           "id": "good-to-know",
@@ -2988,16 +3073,16 @@
         {
           "id": "use-it-with",
           "title": "Old Houses And Cafes",
-          "body": "The street can connect heritage houses, browsing, and coffee without turning the walk into a checklist. One reference point can guide the next turn."
+          "body": "The street can connect heritage houses, browsing, and coffee without turning the walk into a checklist. Pick one doorway, cafe, or corner to guide the next turn."
         },
         {
           "id": "when-to-use",
-          "title": "A Bearing Before Photos",
-          "body": "Remember the street as orientation. The lanterns and balconies make more sense when they sit on a route."
+          "title": "Orientation Before Photos",
+          "body": "Remember the street as a way through the old town. The lanterns and balconies make more sense when they sit on a named walk."
         },
         {
           "id": "good-to-know",
-          "title": "Small Detours Are The Point",
+          "title": "Small Detours Matter",
           "body": "Nearby lanes can pull you off the street. That is fine; the name gives you a way back into the old-town grid."
         }
       ],
@@ -3065,24 +3150,24 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "food-menu",
-            "food-1",
-            "food-3"
+            "food-need-table",
+            "v900-food-drin-what-do-you-recommend",
+            "coffee-7"
           ]
         },
         {
           "id": "place-brief",
           "title": "Courtyard Scale, Shared Plates",
-          "body": "Expect a smaller restaurant room before you compare it with a riverside production. Order a few plates and let the table set the pace."
+          "body": "Expect a smaller restaurant room before you compare it with a riverside dinner. Order a few plates and let the table set the pace."
         },
         {
           "id": "use-it-with",
           "title": "A Smaller Dinner Choice",
-          "body": "Choose it on a night when Ancient Town is full and dinner should be more measured. The room matters because it keeps the meal close."
+          "body": "Go when Ancient Town feels full and dinner should be smaller, quieter, and more measured. The room matters because it keeps the meal close."
         },
         {
           "id": "when-to-use",
-          "title": "A Few Plates Carry It",
+          "title": "A Few Plates Are Plenty",
           "body": "The menu may tempt a broad order, but a small set of dishes gives the table more to notice."
         },
         {
@@ -3095,8 +3180,8 @@
     },
     {
       "pageID": "city-hoian-place-phin-coffee",
-      "summary": "Phin Coffee carries Vietnam's slow-drip coffee habit into Hội An's walking day: filter, glass, ice or sweetness, and time paced by the cup.",
-      "context": "Phin Coffee carries Vietnam's slow-drip coffee habit into Hội An's walking day: filter, glass, ice or sweetness, and time paced by the cup.",
+      "summary": "Phin Coffee brings Vietnam's slow-drip coffee habit into Hội An's walking day: filter, glass, ice or sweetness, and time paced by the cup.",
+      "context": "Phin Coffee brings Vietnam's slow-drip coffee habit into Hội An's walking day: filter, glass, ice or sweetness, and time paced by the cup.",
       "tip": "Vietnamese coffee can lean strong and sweet. A simple less-sweet request helps, then the phin does its work.",
       "rationale": "Phin Coffee gives the day a compact coffee ritual when heat, walking, or shopping needs a seated middle.",
       "sections": [
@@ -3127,7 +3212,7 @@
         },
         {
           "id": "when-to-use",
-          "title": "Slow Coffee Is The Point",
+          "title": "Slow Coffee Sets The Pace",
           "body": "Do not rush the drip. If the day is packed, the sit-down may be exactly why this cafe matters."
         },
         {
@@ -3200,9 +3285,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "price-1",
-            "price-4",
-            "shop-5"
+            "sight-3",
+            "shop-5",
+            "v900-shop-can-you-pack-it-for-travel"
           ]
         },
         {
@@ -3218,7 +3303,7 @@
         {
           "id": "when-to-use",
           "title": "Hands Make The Memory",
-          "body": "Watching or trying the making process matters. A small object carries more after you have seen how the clay moves."
+          "body": "Watching or trying the making process matters. A small object means more after you have seen how the clay moves."
         },
         {
           "id": "good-to-know",
@@ -3262,8 +3347,8 @@
         },
         {
           "id": "when-to-use",
-          "title": "Choose A Small Focus",
-          "body": "Choose a small focus: portraits, textiles, or regional dress. The visit can stay short and still hold meaning."
+          "title": "Pick A Small Focus",
+          "body": "Start with portraits, textiles, or regional dress instead of trying to absorb every room. The visit can stay short and still leave a clear memory."
         },
         {
           "id": "good-to-know",
@@ -3290,9 +3375,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "sight-2",
-            "sight-5",
-            "store-1"
+            "v500-sigh-acti-where-is-the-entrance",
+            "v500-sigh-acti-where-can-i-buy-tickets",
+            "sight-3"
           ]
         },
         {
@@ -3320,10 +3405,10 @@
     },
     {
       "pageID": "city-hoian-place-quan-thang-old-house",
-      "summary": "Quan Thang Old House turns Hội An's heritage-house story toward carved wood, doorway detail, side light, and rooms that reward close looking.",
-      "context": "Quan Thang Old House turns Hội An's heritage-house story toward carved wood, doorway detail, side light, and rooms that reward close looking.",
+      "summary": "Quan Thang Old House is one of Hội An's preserved old merchant houses, where carved wood, doorway detail, side light, and small rooms reward close looking.",
+      "context": "Quan Thang Old House is one of Hội An's preserved old merchant houses, where carved wood, doorway detail, side light, and small rooms reward close looking.",
       "tip": "Remember it for carved wood, doorway detail, and old-house surfaces rather than a long list of rooms.",
-      "rationale": "Quan Thang Old House makes Hội An architecture specific through an interior-and-doorway memory, distinct from broader street wandering.",
+      "rationale": "It helps visitors notice the old merchant-house details they might miss from the street.",
       "sections": [
         {
           "id": "at-glance",
@@ -3343,7 +3428,7 @@
         {
           "id": "place-brief",
           "title": "Old House, Close Range",
-          "body": "Expect an old Hội An house with woodwork, threshold details, rooms, and a sheltered interior after the street outside."
+          "body": "Expect an old Hội An house with carved wood, doorway details, inner rooms, and a sheltered interior after the street outside."
         },
         {
           "id": "use-it-with",
@@ -3353,11 +3438,11 @@
         {
           "id": "when-to-use",
           "title": "Doorway Before Checklist",
-          "body": "Give the carved wood attention before the next errand pulls you away. Details carry the house more than a checklist."
+          "body": "Pause at the carved wood before the next errand pulls you away. Doorway carvings and inner rooms give the house its clearest close-up details."
         },
         {
           "id": "good-to-know",
-          "title": "Carved Wood Carries It",
+          "title": "Carved Wood Is The Memory",
           "body": "Remember it for carved wood, doorway detail, and old-house surfaces rather than a long list of rooms."
         }
       ],
@@ -3365,10 +3450,10 @@
     },
     {
       "pageID": "city-hoian-place-reach-out-tea-house",
-      "summary": "Reaching Out Tea House connects Hội An's old-house hush with a social-enterprise welcome, where tea, handmade cups, notes, and soft gestures guide the visit.",
-      "context": "Reaching Out Tea House connects Hội An's old-house hush with a social-enterprise welcome, where tea, handmade cups, notes, and soft gestures guide the visit.",
+      "summary": "Reaching Out Tea House connects Hội An's old-house hush with a quiet teahouse that has a social mission, where tea, handmade cups, notes, and soft gestures guide the visit.",
+      "context": "Reaching Out Tea House connects Hội An's old-house hush with a quiet teahouse that has a social mission, where tea, handmade cups, notes, and soft gestures guide the visit.",
       "tip": "The silence is part of the welcome. Look over the small table notes so the service reads as graceful instead of confusing.",
-      "rationale": "It sits in Hội An because the old-town hush is specific: silent service, handmade teaware, and a social purpose that changes the usual cafe rhythm.",
+      "rationale": "It sits in Hội An because the old-town hush is specific: orders are handled with notes and gestures, so the room stays calm.",
       "sections": [
         {
           "id": "at-glance",
@@ -3380,9 +3465,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "coffee-1",
-            "coffee-4",
-            "coffee-6"
+            "food-menu",
+            "coffee-5",
+            "coffee-7"
           ]
         },
         {
@@ -3398,7 +3483,7 @@
         {
           "id": "when-to-use",
           "title": "A Hushed Tea Room",
-          "body": "Come ready for gesture-led communication. A rushed group, a loud catch-up, or a fast caffeine run will miss the point of the room."
+          "body": "Come ready for gesture-led communication. A rushed group, a loud catch-up, or a fast caffeine run will miss what matters of the room."
         },
         {
           "id": "good-to-know",
@@ -3426,8 +3511,8 @@
           "body": "",
           "phraseIDs": [
             "price-1",
-            "price-4",
-            "shop-5"
+            "shop-4",
+            "v900-shop-can-you-pack-it-for-travel"
           ]
         },
         {
@@ -3457,7 +3542,7 @@
       "pageID": "city-hoian-place-rice-fields",
       "summary": "Hội An's rice fields show the lowland landscape around town: green beds, irrigation water, narrow paths, and village routes that keep the old core from feeling isolated.",
       "context": "Hội An's rice fields show the lowland landscape around town: green beds, irrigation water, narrow paths, and village routes that keep the old core from feeling isolated.",
-      "tip": "Paths and edges are part of daily work, working land before scenery. Stay on clear routes and keep photos considerate.",
+      "tip": "These are working fields, not just scenery. Stay on clear paths and keep photos considerate.",
       "rationale": "The fields matter in Hội An because they explain the space between Ancient Town, villages, and waterways better than another street stop can.",
       "sections": [
         {
@@ -3478,12 +3563,12 @@
         {
           "id": "place-brief",
           "title": "A Ride Through The Fields",
-          "body": "The fields work as movement: a bike path, a slow detour, a sunrise edge, or an open view between town and village."
+          "body": "The fields make most sense while moving: by bike, on a slow detour, or from an open view between town and village."
         },
         {
           "id": "use-it-with",
           "title": "Between Town And Village",
-          "body": "The fields sit naturally with Tra Que, Cam Thanh, or a countryside ride, especially when the day needs space between denser places."
+          "body": "The fields sit naturally with Tra Que, Cam Thanh, or a countryside ride, especially for space between denser places."
         },
         {
           "id": "when-to-use",
@@ -3493,7 +3578,7 @@
         {
           "id": "good-to-know",
           "title": "Respect Working Land",
-          "body": "Paths and edges are part of daily work, working land before scenery. Stay on clear routes and keep photos considerate."
+          "body": "These are working fields, not just scenery. Stay on clear paths and keep photos considerate."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -3502,7 +3587,7 @@
       "pageID": "city-hoian-place-roastery",
       "summary": "Hoi An Roastery is part of the old-town coffee stop: counter, iced glass, street view, and enough shade before the heritage walk keeps going.",
       "context": "Hoi An Roastery is part of the old-town coffee stop: counter, iced glass, street view, and enough shade before the heritage walk keeps going.",
-      "tip": "Remember it for the counter, a short seat, and shade before the walk resumes.",
+      "tip": "Remember it for the coffee, a short seat, and shade before the walk resumes.",
       "rationale": "Coffee is part of Hội An’s walking day, especially when heat, crowds, or rain make a short seated break matter.",
       "sections": [
         {
@@ -3538,7 +3623,7 @@
         {
           "id": "good-to-know",
           "title": "Coffee Leads",
-          "body": "Remember it for the counter, a short seat, and shade before the walk resumes."
+          "body": "Remember it for the coffee, a short seat, and shade before the walk resumes."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -3547,8 +3632,8 @@
       "pageID": "city-hoian-place-rosies-cafe",
       "summary": "Rosie's Cafe gives Hội An a softer morning chapter, with breakfast, coffee, leafy shade, and distance from the main old-town push.",
       "context": "Rosie's Cafe gives Hội An a softer morning chapter, with breakfast, coffee, leafy shade, and distance from the main old-town push.",
-      "tip": "Do not make it carry the whole itinerary. Its role is a shaded table before Hội An becomes busy again.",
-      "rationale": "Rosie’s gives the Hội An cafe list a gentler breakfast option, with courtyard energy that feels different from louder old-town counters.",
+      "tip": "It is a shaded breakfast table before Hội An becomes busy again, with enough room to keep the rest of the day loose.",
+      "rationale": "Rosie’s gives the Hội An cafe list a gentler breakfast option, with courtyard energy that feels different from louder old-town cafes.",
       "sections": [
         {
           "id": "at-glance",
@@ -3583,22 +3668,22 @@
         {
           "id": "good-to-know",
           "title": "Cafe, Not Landmark",
-          "body": "Do not make it carry the whole itinerary. Its role is a shaded table before Hội An becomes busy again."
+          "body": "It is a shaded breakfast table before Hội An becomes busy again, with enough room to keep the rest of the day loose."
         }
       ],
       "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hoian-place-sa-huynh-culture-museum",
-      "summary": "The Sa Huynh Culture Museum reaches beneath Hội An's lantern image to older central-Vietnam history: pottery, burial pieces, artifacts, and small cases.",
-      "context": "The Sa Huynh Culture Museum reaches beneath Hội An's lantern image to older central-Vietnam history: pottery, burial pieces, artifacts, and small cases.",
+      "summary": "The Sa Huynh Culture Museum reaches beneath Hội An's lantern image to an ancient central-Vietnam culture, with pottery, burial objects, artifacts, and small cases.",
+      "context": "The Sa Huynh Culture Museum reaches beneath Hội An's lantern image to an ancient central-Vietnam culture, with pottery, burial objects, artifacts, and small cases.",
       "tip": "The museum is one doorway into the older story. A few pottery forms can make that past visible.",
       "rationale": "Hội An needs more than exterior charm, and this museum points toward older cultures behind the town’s later trading identity.",
       "sections": [
         {
           "id": "at-glance",
           "title": "Older Than The Street Scene",
-          "body": "Museum of Sa Huynh Culture is a compact way to add older depth to Hội An: pottery, artifacts, and small cases that pull the town beyond lanterns and shopfronts."
+          "body": "Museum of Sa Huynh Culture adds older depth to Hội An. Sa Huynh refers to an ancient culture from central Vietnam, and the small rooms focus on pottery, burial objects, and everyday artifacts."
         },
         {
           "id": "quick-say",
@@ -3618,7 +3703,7 @@
         {
           "id": "use-it-with",
           "title": "A Short Indoor Room",
-          "body": "Pair it with an old-house or assembly-hall walk when the day needs older evidence rather than exterior photos."
+          "body": "Pair it with an old-house or assembly-hall walk for older evidence rather than exterior photos."
         },
         {
           "id": "when-to-use",
@@ -3627,7 +3712,7 @@
         },
         {
           "id": "good-to-know",
-          "title": "Objects Carry The Context",
+          "title": "Objects Show The Context",
           "body": "The museum is one doorway into the older story. A few pottery forms can make that past visible."
         }
       ],
@@ -3635,23 +3720,23 @@
     },
     {
       "pageID": "city-hoian-place-silk-village",
-      "summary": "Hội An Silk Village puts the tailor town back at the fabric source, where looms, yarn, silk rooms, and touch explain what happens before a fitting.",
-      "context": "Hội An Silk Village puts the tailor town back at the fabric source, where looms, yarn, silk rooms, and touch explain what happens before a fitting.",
+      "summary": "Hội An Silk Village puts the tailor town back at the fabric stage, where looms, yarn, silk rooms, and touch explain what happens before a fitting.",
+      "context": "Hội An Silk Village puts the tailor town back at the fabric stage, where looms, yarn, silk rooms, and touch explain what happens before a fitting.",
       "tip": "Look, touch, and compare before treating any fabric label as final. The cloth itself needs attention.",
-      "rationale": "Hội An is known for clothing and tailoring, and the village visit lets fabric feel like a process before it becomes a garment.",
+      "rationale": "Hội An is known for clothing and tailoring, and the village visit lets fabric feel like a craft before it becomes a garment.",
       "sections": [
         {
           "id": "at-glance",
           "title": "Before The Tailor Mirror",
-          "body": "Hội An Silk Village puts tailoring culture back at the fabric stage: looms, yarn spools, silk rooms, and a slower look at what sits behind the old-town tailor appointment."
+          "body": "Hội An Silk Village shows what comes before a tailor fitting: silk thread, looms, fabric texture, and how cloth becomes clothing."
         },
         {
           "id": "quick-say",
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "price-1",
-            "price-4",
+            "sight-3",
+            "shop-4",
             "shop-5"
           ]
         },
@@ -3680,24 +3765,24 @@
     },
     {
       "pageID": "city-hoian-place-streets-restaurant-cafe",
-      "summary": "STREETS Restaurant Cafe gives Hội An a training-restaurant meal, where the room, staff rhythm, and purpose behind the table matter alongside the food.",
-      "context": "STREETS Restaurant Cafe gives Hội An a training-restaurant meal, where the room, staff rhythm, and purpose behind the table matter alongside the food.",
+      "summary": "STREETS Restaurant Cafe gives Hội An a restaurant with a social-training mission, where the room, staff rhythm, and purpose behind the table matter alongside the food.",
+      "context": "STREETS Restaurant Cafe gives Hội An a restaurant with a social-training mission, where the room, staff rhythm, and purpose behind the table matter alongside the food.",
       "tip": "The social-training angle is part of the identity, but the meal should stay respectful, manageable, and rooted in the room.",
       "rationale": "Hội An has many food choices, and this one gives the restaurant list a social-training story without needing promotional language.",
       "sections": [
         {
           "id": "at-glance",
           "title": "A Meal With A Purposeful Room",
-          "body": "STREETS Restaurant Cafe gives Hội An a meal with a training-restaurant angle: simple tables, a settled dining room, and a purpose beyond a random cafe break."
+          "body": "STREETS Restaurant Cafe gives Hội An a seated meal where the restaurant's training mission is part of the experience: simple tables, a settled dining room, and a clear purpose behind the room."
         },
         {
           "id": "quick-say",
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "coffee-1",
-            "coffee-4",
-            "coffee-6"
+            "food-need-table",
+            "v900-food-drin-what-do-you-recommend",
+            "v900-food-drin-can-i-pay-the-bill-by-card"
           ]
         },
         {
@@ -3728,7 +3813,7 @@
       "summary": "A Hội An tailor fitting is the practical middle of the city's clothing story: measurements checked, hems adjusted, fabric reconsidered, and pickup time becoming real.",
       "context": "A Hội An tailor fitting is the practical middle of the city's clothing story: measurements checked, hems adjusted, fabric reconsidered, and pickup time becoming real.",
       "tip": "Fast tailoring sounds tempting, but the finished garment is the real souvenir. Speak up while changes are still easy.",
-      "rationale": "Tailoring is one of Hội An’s durable visitor rituals, and the fitting is the moment that prevents a rushed final pickup.",
+      "rationale": "Hội An is known for custom clothes, and the fitting is where small changes make the final piece work.",
       "sections": [
         {
           "id": "at-glance",
@@ -3740,9 +3825,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "price-1",
-            "price-4",
-            "shop-5"
+            "shop-3",
+            "v900-shop-do-you-have-a-smaller-size",
+            "v900-shop-do-you-have-a-larger-size"
           ]
         },
         {
@@ -3793,7 +3878,7 @@
         {
           "id": "place-brief",
           "title": "Wood, Depth, And Memory",
-          "body": "The visit is about close looking. Notice beams, thresholds, inner rooms, and how a narrow house creates depth."
+          "body": "The visit is about close looking. Notice beams, door frames, inner rooms, and how a narrow house creates depth."
         },
         {
           "id": "use-it-with",
@@ -3803,7 +3888,7 @@
         {
           "id": "when-to-use",
           "title": "Short, Attentive Visit",
-          "body": "The house rewards a slower look more than a long stay. A few details can carry the memory."
+          "body": "The house rewards a slower look more than a long stay. A few details can make the memory."
         },
         {
           "id": "good-to-know",
@@ -3862,28 +3947,28 @@
       "pageID": "city-hoian-place-the-field",
       "summary": "The Field Hội An ties dinner to the lowland edge of town, where rice-field light, open air, and a slower table become part of the route.",
       "context": "The Field Hội An ties dinner to the lowland edge of town, where rice-field light, open air, and a slower table become part of the route.",
-      "tip": "Do not build the plan around one dish. Remember the field-side view, open air, and slower meal.",
-      "rationale": "Hội An’s food day reaches past old-town counters; a rice-field meal gives the itinerary a different pace.",
+      "tip": "Build the evening around rice-field air, sunset light, open space, and a slower table after the old-town crush. The food belongs to the setting instead of defining the whole plan alone.",
+      "rationale": "Hội An’s food day reaches past old-town rooms; a rice-field meal pulls dinner into the landscape.",
       "sections": [
         {
           "id": "at-glance",
           "title": "Dinner Beside The Fields",
-          "body": "The Field Hội An makes the meal part of the route: open air, rice-field edges, sunset light, and a table chosen for the view as much as the food."
+          "body": "The Field Hội An makes dinner feel connected to the countryside: open air, rice-field edges, sunset light, and a table chosen for the view as much as the food."
         },
         {
           "id": "quick-say",
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "food-menu",
-            "food-1",
-            "food-3"
+            "v900-food-drin-can-we-sit-outside",
+            "v900-food-drin-what-do-you-recommend",
+            "v900-food-drin-can-i-pay-the-bill-by-card"
           ]
         },
         {
           "id": "place-brief",
           "title": "View Before Menu",
-          "body": "Expect the location to carry much of the memory. The field-side break is the reason to go, with the order chosen once you sit down."
+          "body": "Expect the setting to shape the memory. The field-side break is why this table stands out, with the order chosen once you sit down."
         },
         {
           "id": "use-it-with",
@@ -3893,27 +3978,27 @@
         {
           "id": "when-to-use",
           "title": "Light Changes The View",
-          "body": "Late-day light can carry the view. Rain or darkness may shift the meal back toward the table itself."
+          "body": "Late-day light helps the view. Rain or darkness may shift the meal back toward the table itself."
         },
         {
           "id": "good-to-know",
           "title": "Fieldside View Leads",
-          "body": "Do not build the plan around one dish. Remember the field-side view, open air, and slower meal."
+          "body": "Build the evening around rice-field air, sunset light, open space, and a slower table after the old-town crush. The food belongs to the setting instead of defining the whole plan alone."
         }
       ],
       "sourceMode": "expanded-detail"
     },
     {
       "pageID": "city-hoian-place-thu-bon-river",
-      "summary": "The Thu Bon River is the larger water spine behind Hội An's old port story, organizing boats, bridges, reflections, and the town's turn toward trade and water.",
-      "context": "The Thu Bon River is the larger water spine behind Hội An's old port story, organizing boats, bridges, reflections, and the town's turn toward trade and water.",
+      "summary": "The Thu Bon River is the wider water story behind Hội An: boats, bridges, reflections, and the town turning toward trade and water.",
+      "context": "The Thu Bon River is the wider water story behind Hội An: boats, bridges, reflections, and the town turning toward trade and water.",
       "tip": "Boats and river edges are part of daily movement. Room for people working, docking, or moving goods keeps the water from becoming just scenery.",
-      "rationale": "Thu Bon River matters because water steers Hội An’s routes, trade memory, evening walks, and sense of arrival.",
+      "rationale": "The Thu Bon River gives Hội An its wider old-port feeling beyond the inner walking streets.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "The City’s Water Spine",
-          "body": "Thu Bon River is the line that clarifies Hội An on foot: boats, bridges, reflections, waterline walks, and evening light pulling Ancient Town toward the banks."
+          "title": "The City Turns Toward Water",
+          "body": "Thu Bon River is the waterline that clarifies Hội An on foot: boats, bridges, reflections, evening light, and Ancient Town leaning toward the banks."
         },
         {
           "id": "quick-say",
@@ -3952,7 +4037,7 @@
       "pageID": "city-hoian-place-tra-nhieu-village",
       "summary": "Tra Nhieu Village gives the Hội An area a slower river-village memory: bamboo, fishing nets, small boats, and lanes away from the tight old-town loop.",
       "context": "Tra Nhieu Village gives the Hội An area a slower river-village memory: bamboo, fishing nets, small boats, and lanes away from the tight old-town loop.",
-      "tip": "Remember the riverside village scene, pottery context, and craft route. The water sets a pace far from old-town walking.",
+      "tip": "Remember the riverside village scene, bamboo, fishing nets, boats, and the craft route. The water sets a pace far from old-town walking.",
       "rationale": "Tra Nhieu gives the Hội An map a village route set by water, boats, bamboo, and slower movement.",
       "sections": [
         {
@@ -3988,7 +4073,7 @@
         {
           "id": "good-to-know",
           "title": "A Narrow Riverside Draw",
-          "body": "Remember the riverside village scene, pottery context, and craft route. The water sets a pace far from old-town walking."
+          "body": "Remember the riverside village scene, bamboo, fishing nets, boats, and the craft route. The water sets a pace far from old-town walking."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -4003,7 +4088,7 @@
         {
           "id": "at-glance",
           "title": "Herbs Before The Meal",
-          "body": "Tra Que Vegetable Village gives Hội An a working green visit: herb beds, irrigation channels, village homes, and morning work far from the old streets."
+          "body": "Tra Que Vegetable Village is a working farm village with herb beds, irrigation channels, homes, and morning field work far from the old streets."
         },
         {
           "id": "quick-say",
@@ -4023,7 +4108,7 @@
         {
           "id": "use-it-with",
           "title": "Before Lunch Or After A Ride",
-          "body": "Pair it with a countryside ride, cooking-class day, or meal plan where herbs and greens are part of the story."
+          "body": "Pair it with a countryside ride, cooking class, or meal where you want to understand where the herbs and vegetables come from."
         },
         {
           "id": "when-to-use",
@@ -4055,9 +4140,9 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "price-1",
-            "price-4",
-            "shop-5"
+            "sight-1",
+            "sight-3",
+            "sight-2"
           ]
         },
         {
@@ -4117,7 +4202,7 @@
         },
         {
           "id": "when-to-use",
-          "title": "Timing Matters Here",
+          "title": "Go When The Stage Is Active",
           "body": "The place needs an actual performance rather than a pass by the door. The stage, music, and room justify the visit."
         },
         {
@@ -4130,15 +4215,15 @@
     },
     {
       "pageID": "city-hoian-place-tran-phu-street",
-      "summary": "Tran Phu Street is a named spine through the preserved old town, tying yellow walls, shopfronts, assembly halls, and riverward turns into one manageable line.",
-      "context": "Tran Phu Street is a named spine through the preserved old town, tying yellow walls, shopfronts, assembly halls, and riverward turns into one manageable line.",
+      "summary": "Tran Phu Street gives the old-town walk one named line, tying yellow walls, shopfronts, assembly halls, and riverward turns into a manageable route.",
+      "context": "Tran Phu Street gives the old-town walk one named line, tying yellow walls, shopfronts, assembly halls, and riverward turns into a manageable route.",
       "tip": "Even in heritage streets, scooters and crossings still affect the walk. Slow down at corners instead of staring only at lanterns.",
-      "rationale": "Tran Phu turns a named street into a mental map, making Hội An easier to picture before arrival.",
+      "rationale": "Tran Phu Street makes the old town easier to read through one steady walking line.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Street Spine With Bearings",
-          "body": "Tran Phu Street is a named spine through Hội An’s old-town walk: yellow walls, shopfronts, lanterns, crossings, and landmarks that make the town easier to read."
+          "title": "A Named Old-Town Line",
+          "body": "Tran Phu Street runs through Hội An’s old-town walk: yellow walls, shopfronts, lanterns, crossings, and landmarks that make the town easier to read."
         },
         {
           "id": "quick-say",
@@ -4265,45 +4350,45 @@
     },
     {
       "pageID": "city-hoian-place-vys-market",
-      "summary": "Vy's Market Restaurant turns Hội An food variety into an organized indoor counter scene, echoing market browsing without asking the whole group to chase every stall.",
-      "context": "Vy's Market Restaurant turns Hội An food variety into an organized indoor counter scene, echoing market browsing without asking the whole group to chase every stall.",
-      "tip": "Plan around the organized variety: counters, bowls, herbs, seating, and one lap before the table decides what to order.",
+      "summary": "Vys Market Restaurant turns Hội An food variety into an organized indoor food-hall scene: food stations, steam, dumplings, cao lầu, herbs, bowls, and a table the whole group can read.",
+      "context": "Vys Market Restaurant turns Hội An food variety into an organized indoor food-hall scene: food stations, steam, dumplings, cao lầu, herbs, bowls, and a table the whole group can read.",
+      "tip": "Let one local dish lead before the table spreads out. Cao lầu, white rose dumplings, or a small pancake can set the first round.",
       "rationale": "Vy's Market gives visitors a lower-friction way to explore Hội An flavors without turning dinner into a full market crawl.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "Food-Hall Variety Indoors",
-          "body": "Vy's Market Restaurant turns a Hội An meal into an indoor food-hall style room: counters, bowls, herbs, and variety without chasing every specialty outside."
+          "title": "A Food Hall For First Bearings",
+          "body": "Vys Market Restaurant turns Hội An food into an organized indoor browse: food stations, steam, cao lầu, white rose dumplings, bánh xèo, herbs, bowls, and seating when outdoor stalls feel like too much."
         },
         {
           "id": "quick-say",
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "price-1",
-            "price-4",
+            "food-menu",
+            "food-1",
             "shop-5"
           ]
         },
         {
           "id": "place-brief",
-          "title": "Browse Before Ordering",
-          "body": "Start with a slow look at the counters before choosing. Variety is helpful only if it does not become panic."
+          "title": "Food Stations First",
+          "body": "Start with the food stations before choosing. Seeing the steam, bowls, and dumplings makes the first order easier."
         },
         {
           "id": "use-it-with",
-          "title": "When A Market Is Too Much",
-          "body": "Choose it on a night when you want local flavors with seating, lighting, and less stall pressure than an outdoor market."
+          "title": "Try One Local Center",
+          "body": "Let cao lầu, white rose dumplings, or a small bánh xèo lead the first round. One local center makes the rest easier to read."
         },
         {
           "id": "when-to-use",
-          "title": "One Round To Start",
-          "body": "Start with one small dish. Add more once the portions and flavors are clear."
+          "title": "When A Market Is Too Much",
+          "body": "This is a good night for local flavors with seating, lighting, and less stall pressure than an outdoor market."
         },
         {
           "id": "good-to-know",
-          "title": "Organized Variety Leads",
-          "body": "Plan around the organized variety: counters, bowls, herbs, seating, and one lap before the table decides what to order."
+          "title": "Keep The First Order Small",
+          "body": "Let one local dish lead before the table spreads out. Cao lầu, white rose dumplings, or a small pancake can set the first round."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -4317,7 +4402,7 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Small Dish With A Big Signal",
+          "title": "A Small Dish With A Big Cue",
           "body": "White rose dumplings give Hội An a small, specific food memory: pale wrappers, delicate filling, fried shallot crunch, dipping sauce, and a dish tied closely to the town."
         },
         {
@@ -4355,14 +4440,14 @@
     },
     {
       "pageID": "city-hoian-place-white-rose-restaurant",
-      "summary": "White Rose Restaurant gives that Hội An dumpling memory a focused source, where bánh bao bánh vạc, crisp topping, and dipping sauce lead the stop.",
-      "context": "White Rose Restaurant gives that Hội An dumpling memory a focused source, where bánh bao bánh vạc, crisp topping, and dipping sauce lead the stop.",
-      "tip": "The restaurant sits outside the densest lantern-street loop. Choose it for a focused dish break rather than a full evening plan.",
+      "summary": "White Rose Restaurant gives that Hội An dumpling memory a focused place, where bánh bao bánh vạc, crisp topping, and dipping sauce lead the stop.",
+      "context": "White Rose Restaurant gives that Hội An dumpling memory a focused place, where bánh bao bánh vạc, crisp topping, and dipping sauce lead the stop.",
+      "tip": "The restaurant sits outside the densest lantern-street loop. Treat it as a focused dish break rather than a full evening plan.",
       "rationale": "The restaurant is still worth it because the dish feels tied to one place: pale wrappers, pleated dumplings, sauce, and a family-kitchen reputation around Hội An.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "The Dumpling Source",
+          "title": "The Dumpling Stop",
           "body": "White Rose Restaurant is the focused Hội An room for bánh bao bánh vạc: thin dumplings, shrimp or pork filling, crisp topping, dipping sauce, and a short detour from Ancient Town."
         },
         {
@@ -4388,7 +4473,7 @@
         {
           "id": "when-to-use",
           "title": "Short Detour From The Loop",
-          "body": "The restaurant sits outside the densest lantern-street loop. Choose it for a focused dish break rather than a full evening plan."
+          "body": "The restaurant sits outside the densest lantern-street loop. Treat it as a focused dish break rather than a full evening plan."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -4397,7 +4482,7 @@
       "pageID": "city-hoian-place-wonton",
       "summary": "Hội An wonton carries the town's small-plate side: crisp or soft wrappers, tomato-rich sauce, herbs, and a bite apart from noodle bowls.",
       "context": "Hội An wonton carries the town's small-plate side: crisp or soft wrappers, tomato-rich sauce, herbs, and a bite apart from noodle bowls.",
-      "tip": "Some plates lean crisp, some softer, and sauces vary. Remember the dish category more than one fixed presentation.",
+      "tip": "Some versions lean crisp, some softer, and sauces vary by shop. Let the plate in front of you decide the memory.",
       "rationale": "Wonton sits in the Hội An food set because it gives visitors another local plate between dumplings, noodles, and bánh mì.",
       "sections": [
         {
@@ -4432,8 +4517,8 @@
         },
         {
           "id": "good-to-know",
-          "title": "Not Every Version Matches",
-          "body": "Some plates lean crisp, some softer, and sauces vary. Remember the dish category more than one fixed presentation."
+          "title": "Crisp Or Soft Changes The Plate",
+          "body": "Some versions lean crisp, some softer, and sauces vary by shop. Let the plate in front of you decide the memory."
         }
       ],
       "sourceMode": "expanded-detail"
