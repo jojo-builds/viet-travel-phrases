@@ -1,5 +1,30 @@
 import SwiftUI
 
+enum VietnameseMenuPhotoBackdropPolicy {
+    static func imageName(
+        photoBackdropImageName: String?,
+        fallbackHeroImageName: String
+    ) -> String {
+        photoBackdropImageName ?? fallbackHeroImageName
+    }
+
+    static func preheatImageNames(
+        photoBackdropImageName: String?,
+        fallbackHeroImageName: String
+    ) -> [String] {
+        guard let photoBackdropImageName else {
+            return []
+        }
+
+        return [
+            imageName(
+                photoBackdropImageName: photoBackdropImageName,
+                fallbackHeroImageName: fallbackHeroImageName
+            ),
+        ]
+    }
+}
+
 struct VietnameseMenuPageView: View {
     let kind: VietnameseMenuKind
     let scrollToTopTrigger: Int
@@ -76,10 +101,18 @@ struct VietnameseMenuPageView: View {
             key: PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self,
             value: isActive && usesPhotoBackdropLayout && !isPhotoBackdropImmersive
         )
-        .task(id: pendingScrollSectionUpdate) {
+        .task(id: "\(isActive)-\(pendingScrollSectionUpdate.map { "\($0.sectionID)-\($0.revision)" } ?? "none")") {
+            guard VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive) else {
+                return
+            }
+
             await commitPendingScrollSectionUpdateIfNeeded()
         }
-        .task(id: sectionJumpSettleID) {
+        .task(id: "\(isActive)-\(sectionJumpSettleID)") {
+            guard VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive) else {
+                return
+            }
+
             await clearProgrammaticSectionJumpSettleIfNeeded()
         }
         .accessibilityIdentifier("VietnameseMenu.\(kind.routeID)")
@@ -109,6 +142,10 @@ struct VietnameseMenuPageView: View {
                     updateCurrentSection(from: frames)
                 }
                 .onPreferenceChange(VietnameseMenuRailFramePreferenceKey.self) { frame in
+                    guard VietnameseMenuTaskPolicy.shouldApplySectionPreferenceTracking(isActive: isActive) else {
+                        return
+                    }
+
                     sectionTracker.applyRailFrame(frame, revealY: VietnameseMenuLayout.glassRailRevealY)
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
@@ -125,7 +162,11 @@ struct VietnameseMenuPageView: View {
 
                     jumpToSection(sectionJumpRequest.sectionID)
                 }
-                .task(id: pendingSectionJumpID) {
+                .task(id: "\(isActive)-\(pendingSectionJumpID)") {
+                    guard VietnameseMenuTaskPolicy.shouldRunStandardScrollTask(isActive: isActive) else {
+                        return
+                    }
+
                     if AppBottomInsetValidation.shouldScrollToBottom {
                         await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
                         return
@@ -223,6 +264,10 @@ struct VietnameseMenuPageView: View {
                             metrics: metrics
                         )
                     }) { _, scrollState in
+                        guard VietnameseMenuTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: isActive) else {
+                            return
+                        }
+
                         let hasPassedRevealThreshold = photoBackdropScrollCoordinator.apply(scrollState)
 
                         if isPhotoBackdropImmersive, hasPassedRevealThreshold {
@@ -235,6 +280,10 @@ struct VietnameseMenuPageView: View {
                         updateCurrentSection(from: frames)
                     }
                     .onPreferenceChange(VietnameseMenuRailFramePreferenceKey.self) { frame in
+                        guard VietnameseMenuTaskPolicy.shouldApplySectionPreferenceTracking(isActive: isActive) else {
+                            return
+                        }
+
                         sectionTracker.applyRailFrame(frame, revealY: VietnameseMenuLayout.glassRailRevealY)
                     }
                     .onChange(of: scrollToTopTrigger) { _, _ in
@@ -279,7 +328,7 @@ struct VietnameseMenuPageView: View {
                 value: isActive && usesPhotoBackdropLayout && isPhotoBackdropImmersive
                     ? PhrasePhotoBackdropImmersiveImageContext(
                         pageID: route.id,
-                        imageName: photoBackdropImageName ?? kind.heroImageName,
+                        imageName: activePhotoBackdropImageName,
                         viewportSize: geometry.size,
                         safeAreaTop: geometry.safeAreaInsets.top,
                         safeAreaBottom: geometry.safeAreaInsets.bottom,
@@ -301,6 +350,18 @@ struct VietnameseMenuPageView: View {
         .ignoresSafeArea(edges: .bottom)
         .statusBarHidden(isActive && isPhotoBackdropImmersive)
         .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
+        .task(id: isActive ? activePhotoBackdropImageName : "") {
+            guard isActive else {
+                return
+            }
+
+            AdminBackdropImagePreheater.preheatFocused(
+                VietnameseMenuPhotoBackdropPolicy.preheatImageNames(
+                    photoBackdropImageName: photoBackdropImageName,
+                    fallbackHeroImageName: kind.heroImageName
+                )
+            )
+        }
     }
 
     private func photoBackdropContentSheet(scrollProxy: ScrollViewProxy) -> some View {
@@ -348,8 +409,7 @@ struct VietnameseMenuPageView: View {
     }
 
     private func photoBackdropImage(geometry: GeometryProxy) -> some View {
-        Image(photoBackdropImageName ?? kind.heroImageName)
-            .resizable()
+        AdminBackdropPreparedImage(name: activePhotoBackdropImageName)
             .scaledToFill()
             .frame(
                 width: geometry.size.width,
@@ -478,6 +538,13 @@ struct VietnameseMenuPageView: View {
         kind.photoBackdropImageName
     }
 
+    private var activePhotoBackdropImageName: String {
+        VietnameseMenuPhotoBackdropPolicy.imageName(
+            photoBackdropImageName: photoBackdropImageName,
+            fallbackHeroImageName: kind.heroImageName
+        )
+    }
+
     private var usesPhotoBackdropLayout: Bool {
         photoBackdropImageName != nil
     }
@@ -528,7 +595,9 @@ struct VietnameseMenuPageView: View {
     }
 
     private func updateCurrentSection(from frames: [VietnameseMenuSectionFrame]) {
-        guard !isResolvingSectionJump, !isSettlingProgrammaticSectionJump else {
+        guard VietnameseMenuTaskPolicy.shouldApplySectionPreferenceTracking(isActive: isActive),
+              !isResolvingSectionJump,
+              !isSettlingProgrammaticSectionJump else {
             return
         }
 
@@ -544,12 +613,15 @@ struct VietnameseMenuPageView: View {
 
     @MainActor
     private func clearProgrammaticSectionJumpSettleIfNeeded() async {
-        guard sectionJumpSettleID > 0, isSettlingProgrammaticSectionJump else {
+        guard VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive),
+              sectionJumpSettleID > 0,
+              isSettlingProgrammaticSectionJump else {
             return
         }
 
         try? await Task.sleep(nanoseconds: VietnameseMenuSectionJumpPolicy.settleNanoseconds)
-        guard !Task.isCancelled else {
+        guard !Task.isCancelled,
+              VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive) else {
             return
         }
 
@@ -558,12 +630,15 @@ struct VietnameseMenuPageView: View {
 
     @MainActor
     private func commitPendingScrollSectionUpdateIfNeeded() async {
-        guard let pendingScrollSectionUpdate else {
+        guard VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive),
+              let pendingScrollSectionUpdate else {
             return
         }
 
         try? await Task.sleep(nanoseconds: VietnameseMenuSectionTrackingPolicy.pinnedScrollUpdateDelayNanoseconds)
-        guard !Task.isCancelled, !isResolvingSectionJump else {
+        guard !Task.isCancelled,
+              VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive),
+              !isResolvingSectionJump else {
             return
         }
 
@@ -864,6 +939,24 @@ enum VietnameseMenuSectionTrackingPolicy {
     static let pinnedScrollUpdateDelayNanoseconds: UInt64 = 120_000_000
 }
 
+enum VietnameseMenuTaskPolicy {
+    static func shouldRunDeferredSectionTask(isActive: Bool) -> Bool {
+        isActive
+    }
+
+    static func shouldRunStandardScrollTask(isActive: Bool) -> Bool {
+        isActive
+    }
+
+    static func shouldApplyPhotoBackdropScrollGeometry(isActive: Bool) -> Bool {
+        isActive
+    }
+
+    static func shouldApplySectionPreferenceTracking(isActive: Bool) -> Bool {
+        isActive
+    }
+}
+
 enum VietnameseMenuLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 20
@@ -958,7 +1051,7 @@ private struct VietnameseMenuSectionBlock: View {
                 }
             }
 
-            VStack(spacing: 0) {
+            LazyVStack(spacing: 0) {
                 ForEach(section.items) { item in
                     VietnameseMenuItemRow(
                         item: item,
@@ -1023,7 +1116,7 @@ private struct VietnameseMenuItemRow: View {
             .contentShape(Rectangle())
             .accessibilityIdentifier("VietnameseMenu.Row.\(item.itemID)")
 
-            if let audioKey = AudioAssetManifest.main?.audioKey(forExactText: item.vietnameseItem) {
+            if let audioKey = item.playbackAudioKey {
                 AudioSpeakerButton(
                     tint: item.kind?.tintName ?? .orange,
                     size: 44,

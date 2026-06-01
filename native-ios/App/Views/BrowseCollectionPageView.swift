@@ -3,6 +3,26 @@ import SwiftUI
 import UIKit
 #endif
 
+enum BrowseCollectionPhotoBackdropPolicy {
+    static func usesPhotoBackdrop(
+        hasCityHub: Bool,
+        mastheadImageName: String
+    ) -> Bool {
+        hasCityHub || mastheadImageName.hasPrefix("HeroCategory")
+    }
+
+    static func preheatImageNames(
+        hasCityHub: Bool,
+        mastheadImageName: String
+    ) -> [String] {
+        guard usesPhotoBackdrop(hasCityHub: hasCityHub, mastheadImageName: mastheadImageName) else {
+            return []
+        }
+
+        return [mastheadImageName]
+    }
+}
+
 struct BrowseCollectionPageView: View {
     let descriptor: BrowseCollectionDescriptor
     let scrollToTopTrigger: Int
@@ -76,7 +96,11 @@ struct BrowseCollectionPageView: View {
 
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
-                .task(id: focusRequest?.id) {
+                .task(id: "\(isActive)-\(focusRequest.map { String($0.id) } ?? "none")") {
+                    guard BrowseCollectionTaskPolicy.shouldRunStandardFocusTask(isActive: isActive) else {
+                        return
+                    }
+
                     if AppBottomInsetValidation.shouldScrollToBottom {
                         await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
                         return
@@ -124,6 +148,10 @@ struct BrowseCollectionPageView: View {
                             metrics: metrics
                         )
                     }) { _, scrollState in
+                        guard BrowseCollectionTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: isActive) else {
+                            return
+                        }
+
                         if photoBackdropScrollOffset != scrollState.displayOffset {
                             photoBackdropScrollOffset = scrollState.displayOffset
                         }
@@ -191,6 +219,18 @@ struct BrowseCollectionPageView: View {
         .ignoresSafeArea(edges: .bottom)
         .statusBarHidden(isActive && isPhotoBackdropImmersive)
         .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
+        .task(id: isActive ? descriptor.mastheadImageName : "") {
+            guard isActive else {
+                return
+            }
+
+            AdminBackdropImagePreheater.preheatFocused(
+                BrowseCollectionPhotoBackdropPolicy.preheatImageNames(
+                    hasCityHub: descriptor.cityHub != nil,
+                    mastheadImageName: descriptor.mastheadImageName
+                )
+            )
+        }
     }
 
     @ViewBuilder
@@ -327,8 +367,7 @@ struct BrowseCollectionPageView: View {
     }
 
     private func photoBackdropImage(geometry: GeometryProxy) -> some View {
-        Image(descriptor.mastheadImageName)
-            .resizable()
+        AdminBackdropPreparedImage(name: descriptor.mastheadImageName)
             .scaledToFill()
             .frame(
                 width: geometry.size.width,
@@ -382,7 +421,10 @@ struct BrowseCollectionPageView: View {
     private static let photoBackdropInitialID = "BrowseCollectionPhotoBackdropInitial"
 
     private var usesPhotoBackdropLayout: Bool {
-        descriptor.cityHub != nil || descriptor.mastheadImageName.hasPrefix("HeroCategory")
+        BrowseCollectionPhotoBackdropPolicy.usesPhotoBackdrop(
+            hasCityHub: descriptor.cityHub != nil,
+            mastheadImageName: descriptor.mastheadImageName
+        )
     }
 
     @MainActor
@@ -519,12 +561,42 @@ private enum BrowseCategorySubcategoryScrollID {
 
 private extension BrowseSearchPhraseItem {
     var resolvedImageName: String? {
-        guard let imageName, BrowseImageAssetCache.exists(imageName) else {
+        BrowseImageAssetPolicy.resolvedImageName(imageName, exists: BrowseImageAssetCache.exists)
+    }
+}
+
+enum BrowseImageAssetPolicy {
+    static func resolvedImageName(_ imageName: String?, exists: (String) -> Bool) -> String? {
+        guard let imageName else {
             return nil
         }
 
-        return imageName
+        if trustsBundledGeneratedAssetName(imageName) {
+            return imageName
+        }
+
+        return exists(imageName) ? imageName : nil
     }
+
+    private static func trustsBundledGeneratedAssetName(_ imageName: String) -> Bool {
+        trustedGeneratedAssetPrefixes.contains { imageName.hasPrefix($0) }
+            || trustedGeneratedAssetNames.contains(imageName)
+    }
+
+    private static let trustedGeneratedAssetPrefixes = [
+        "HeroCategory",
+        "HeroCity",
+        "HeroMenu",
+        "HeroVietnam",
+        "BackdropMenu",
+        "BackdropPhrase",
+        "BackdropVietnamese",
+    ]
+
+    private static let trustedGeneratedAssetNames: Set<String> = [
+        "HeroCompactPhraseMasthead",
+        "HeroXinChao",
+    ]
 }
 
 private enum BrowseImageAssetCache {
@@ -694,7 +766,7 @@ private struct BrowseCollectionSubcategoryCard: View {
 
     private var imageName: String? {
         subcategory.imageName
-            ?? subcategory.items.first(where: { $0.resolvedImageName != nil })?.resolvedImageName
+            ?? subcategory.items.lazy.compactMap(\.resolvedImageName).first
             ?? fallbackImageName
     }
 
@@ -952,12 +1024,14 @@ private struct BrowseCityFilterSection: View {
     }
 
     private func filterImageName(_ filter: BrowseCollectionSubcategory) -> String? {
-        if let preferredImageName = Self.preferredFilterImageNames[filter.id],
-           BrowseImageAssetCache.exists(preferredImageName) {
+        if let preferredImageName = BrowseImageAssetPolicy.resolvedImageName(
+            Self.preferredFilterImageNames[filter.id],
+            exists: BrowseImageAssetCache.exists
+        ) {
             return preferredImageName
         }
 
-        return filter.items.first(where: { $0.resolvedImageName != nil })?.resolvedImageName
+        return filter.items.lazy.compactMap(\.resolvedImageName).first
     }
 
     private static func filterScrollID(_ filterID: String) -> String {
@@ -1173,6 +1247,31 @@ private struct BrowseCityNounRow: View {
     }
 }
 
+enum BrowseFocusedAssetImagePolicy {
+    static func shouldReadImageSize(for imageName: String) -> Bool {
+        focusedImages[imageName] != nil
+    }
+
+    static func focusPoint(for imageName: String) -> UnitPoint {
+        focusedImages[imageName] ?? .center
+    }
+
+    private static let focusedImages: [String: UnitPoint] = [
+        "HeroCityDanangPlaceBaNaHills": UnitPoint(x: 0.5, y: 0.25),
+        "HeroCityDanangPlaceBanhXeoBaDuong": UnitPoint(x: 0.5, y: 0.68),
+    ]
+}
+
+enum BrowseCollectionTaskPolicy {
+    static func shouldRunStandardFocusTask(isActive: Bool) -> Bool {
+        isActive
+    }
+
+    static func shouldApplyPhotoBackdropScrollGeometry(isActive: Bool) -> Bool {
+        isActive
+    }
+}
+
 private struct BrowseFocusedAssetImage: View {
     let imageName: String
 
@@ -1180,7 +1279,9 @@ private struct BrowseFocusedAssetImage: View {
         GeometryReader { proxy in
             let containerSize = proxy.size
 
-            if let imageSize = BrowseImageAssetCache.size(for: imageName) {
+            if
+                BrowseFocusedAssetImagePolicy.shouldReadImageSize(for: imageName),
+                let imageSize = BrowseImageAssetCache.size(for: imageName) {
                 let scale = max(
                     containerSize.width / imageSize.width,
                     containerSize.height / imageSize.height
@@ -1190,7 +1291,7 @@ private struct BrowseFocusedAssetImage: View {
                     height: imageSize.height * scale
                 )
                 let offset = Self.offset(
-                    focus: Self.focusPoint(for: imageName),
+                    focus: BrowseFocusedAssetImagePolicy.focusPoint(for: imageName),
                     scaledSize: scaledSize,
                     containerSize: containerSize
                 )
@@ -1227,15 +1328,6 @@ private struct BrowseFocusedAssetImage: View {
             height: min(max(rawY, -maxY), maxY)
         )
     }
-
-    private static func focusPoint(for imageName: String) -> UnitPoint {
-        focusedImages[imageName] ?? .center
-    }
-
-    private static let focusedImages: [String: UnitPoint] = [
-        "HeroCityDanangPlaceBaNaHills": UnitPoint(x: 0.5, y: 0.25),
-        "HeroCityDanangPlaceBanhXeoBaDuong": UnitPoint(x: 0.5, y: 0.68),
-    ]
 }
 
 private struct BrowseCityFilterPill: View {

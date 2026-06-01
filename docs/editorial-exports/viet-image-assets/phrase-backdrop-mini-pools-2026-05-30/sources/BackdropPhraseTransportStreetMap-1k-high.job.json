@@ -1,0 +1,21 @@
+[
+  {
+    "id": "52fbae09-6936-4fa8-acb2-be92792da932",
+    "status": "completed",
+    "display_name": "GPT Image 2",
+    "job_set_type": "imagegen_2_0",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38ecHrKXVn9clw0Nl9IQC7UnMcD/hf_20260530_072940_52fbae09-6936-4fa8-acb2-be92792da932.png",
+    "created_at": 1780126180.806732,
+    "params": {
+      "width": 752,
+      "height": 1344,
+      "prompt": "Scene: traveler navigation still life on a cafe or hotel table: phone face-down, folded blank map shape, pen, coffee, and motorbike street blur outside. Composition: close table crop with the phone, folded map, pen, and coffee sitting clearly in the upper-middle safe zone so the navigation objects remain visible behind a lowered app sheet. No readable map labels or phone UI; make directions and getting-around feel obvious through objects. Photorealistic vertical 9:16 editorial travel photograph for SpeakLocal, a premium native iPhone phrasebook for travelers in Vietnam. The image will sit behind a white scrollable app sheet. Place the primary visual subject in the upper-middle safe zone, roughly 18% to 48% down from the top of the frame, so it remains visible when the content card is pulled down. Do not leave the top quarter as empty ceiling, blank wall, or plain sky. Keep the lower third calmer because it may sit behind the content card. Natural daylight or believable warm ambient light, real camera feel, premium travel-documentary style, not CGI, not illustration, not glossy stock. Vietnam-forward but not tourist-cliche; use practical traveler context, local material texture, tile, wood, glass, street light, greenery, luggage, tableware, or counters as appropriate. Strictly avoid readable text, signage, labels, logos, brand marks, license plates, watermarks, fake app UI, fake menus, distorted hands, distorted faces, extra fingers, injury, blood, panic, or emergency drama.",
+      "medias": [],
+      "aspect_ratio": "9:16",
+      "quality": "high",
+      "resolution": "1k",
+      "model": "videotape-alpha",
+      "reference_elements": []
+    }
+  }
+]

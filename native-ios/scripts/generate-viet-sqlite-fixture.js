@@ -16,6 +16,7 @@ const schemaPath = path.join(__dirname, "sqlite", "001_initial.sql");
 const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
 const cityAppDetailV22Dir = path.join(repoRoot, "content-draft", "viet", "city-library", "app-detail-v2-2");
 const searchOnlySurfacingPath = path.join(repoRoot, "content-draft", "viet", "search-only-surfacing-v1.json");
+const phraseBackdropsPath = path.join(repoRoot, "content-draft", "viet", "phrase-backdrops-v1.json");
 const plannedMissingAudioQueuePath = path.join(repoRoot, "docs", "audio-queues", "viet-planned-missing-audio.csv");
 const outputDir = path.join(nativeRoot, "Resources", "LanguagePacks", "viet");
 const databasePath = path.join(outputDir, "speaklocal-viet.sqlite");
@@ -73,6 +74,7 @@ const sourcePaths = {
   schema: schemaPath,
   cityLibrary: cityLibraryPath,
   searchOnlySurfacing: searchOnlySurfacingPath,
+  phraseBackdrops: phraseBackdropsPath,
 };
 
 function readJSON(filePath) {
@@ -260,11 +262,12 @@ function main() {
   const cityLibrary = fs.existsSync(cityLibraryPath) ? readJSON(cityLibraryPath) : null;
   const cityAppDetailV22Sources = readCityAppDetailV22Sources();
   const searchOnlySurfacing = readJSON(searchOnlySurfacingPath);
+  const phraseBackdrops = readJSON(phraseBackdropsPath);
   const xcodeProject = fs.readFileSync(xcodeProjectPath, "utf8");
   const schema = fs.readFileSync(schemaPath, "utf8");
   const cityAppDetailV22InputPaths = cityAppDetailV22Sources.map((source) => source.filePath);
   const inputHash = sha256(
-    [catalogPath, authoredPagesPath, audioManifestPath, menuCopyPath, schemaPath, searchOnlySurfacingPath, ...(cityLibrary ? [cityLibraryPath] : []), ...cityAppDetailV22InputPaths]
+    [catalogPath, authoredPagesPath, audioManifestPath, menuCopyPath, schemaPath, searchOnlySurfacingPath, phraseBackdropsPath, ...(cityLibrary ? [cityLibraryPath] : []), ...cityAppDetailV22InputPaths]
       .map((filePath) => `${relative(filePath)}\n${sha256(fs.readFileSync(filePath))}`)
       .join("\n")
   );
@@ -508,12 +511,16 @@ function main() {
   });
 
   const canonicalPhrases = catalog.phrases.filter((phrase) => canonicalPhraseIDs.has(phrase.id));
+  const fallbackBackdropByPageID = new Map(
+    (phraseBackdrops.placements ?? []).map((placement) => [placement.pageID, placement.assetName])
+  );
   const pageRows = canonicalPhrases.map((phrase) => {
     const authoredPage = authoredPageByPhraseID.get(phrase.id);
     const family = familyByID.get(phrase.familyID);
     const scenario = scenarioByID.get(phrase.scenarioID);
+    const pageID = canonicalPageIDForPhrase(phrase.id);
     return {
-      id: canonicalPageIDForPhrase(phrase.id),
+      id: pageID,
       language_pack_id: languagePackID,
       phrase_id: phrase.id,
       title: authoredPage?.title ?? phrase.targetText,
@@ -521,7 +528,7 @@ function main() {
       summary: pageSummaryForPhrase(phrase, authoredPage, family),
       icon_name: authoredPage?.iconName ?? scenario?.symbolName ?? "text.bubble.fill",
       tint_name: authoredPage?.tintName ?? scenario?.tintName ?? "gray",
-      hero_image_name: authoredPage?.heroImageName ?? null,
+      hero_image_name: authoredPage?.heroImageName ?? fallbackBackdropByPageID.get(pageID) ?? null,
       page_renderer: "article-listing",
       completeness_status: "deep",
       is_authored: authoredPage ? 1 : 0,

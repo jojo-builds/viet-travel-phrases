@@ -6,6 +6,92 @@ enum PhraseArticleInitialScrollTarget: String {
     case catalogExplore = "catalog-explore"
 }
 
+enum PhraseArticleMorphPolicy {
+    static func resolvedPageID(
+        pageID: String,
+        heroMorphPageID: String?,
+        heroMorphContentHoldPageID: String?
+    ) -> String {
+        guard heroMorphPageID != nil || heroMorphContentHoldPageID != nil else {
+            return pageID
+        }
+
+        return PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) ?? pageID
+    }
+}
+
+struct PhraseArticleLocationPickGroups {
+    private let menuPicksBySectionID: [String: [LocationMenuPick]]
+    private let trailingMenuPicks: [LocationMenuPick]
+    private let relatedPicksBySectionID: [String: [LocationMenuPick]]
+
+    init(pageID: String) {
+#if DEBUG
+        Self.recordBuildForTesting()
+#endif
+        let menuGroups = Self.groupedPicks(
+            LocationMenuPicksCatalog.picks(forPageID: pageID).map { $0.resolvingAudioKey() }
+        )
+        let relatedGroups = Self.groupedPicks(
+            LocationRelatedPicksCatalog.picks(forPageID: pageID).map { $0.resolvingAudioKey() }
+        )
+
+        self.menuPicksBySectionID = menuGroups.bySectionID
+        self.trailingMenuPicks = menuGroups.trailing
+        self.relatedPicksBySectionID = relatedGroups.bySectionID
+    }
+
+    func menuPicks(after sectionID: String) -> [LocationMenuPick] {
+        menuPicksBySectionID[sectionID] ?? []
+    }
+
+    func relatedPicks(after sectionID: String) -> [LocationMenuPick] {
+        relatedPicksBySectionID[sectionID] ?? []
+    }
+
+    var trailingPicks: [LocationMenuPick] {
+        trailingMenuPicks
+    }
+
+    private static func groupedPicks(_ picks: [LocationMenuPick]) -> (bySectionID: [String: [LocationMenuPick]], trailing: [LocationMenuPick]) {
+        var bySectionID: [String: [LocationMenuPick]] = [:]
+        var trailing: [LocationMenuPick] = []
+
+        for pick in picks {
+            if let sectionID = pick.afterSectionID {
+                bySectionID[sectionID, default: []].append(pick)
+            } else {
+                trailing.append(pick)
+            }
+        }
+
+        return (bySectionID, trailing)
+    }
+
+#if DEBUG
+    private static let buildCountLock = NSLock()
+    private static var buildCount = 0
+
+    static var buildCountForTesting: Int {
+        buildCountLock.lock()
+        defer { buildCountLock.unlock() }
+        return buildCount
+    }
+
+    static func resetBuildCountForTesting() {
+        buildCountLock.lock()
+        buildCount = 0
+        buildCountLock.unlock()
+    }
+
+    private static func recordBuildForTesting() {
+        buildCountLock.lock()
+        buildCount += 1
+        buildCountLock.unlock()
+    }
+#endif
+}
+
 struct PhraseListingView: View {
     let page: PhrasePage
     let chromeRoute: AppRoute
@@ -114,6 +200,9 @@ struct PhraseArticleTemplateView: View {
     let heroMorphPageID: String?
     let heroMorphContentHoldPageID: String?
     let heroImageNameOverride: String?
+    private let visibleSections: [PhraseArticleSection]
+    private let locationPickGroups: PhraseArticleLocationPickGroups
+    private let morphPageID: String
     var onBackTapped: () -> Void = {}
     var onSearchTapped: () -> Void = {}
     var onToggleSaved: (() -> Void)? = nil
@@ -151,7 +240,9 @@ struct PhraseArticleTemplateView: View {
         onToggleSavedPage: @escaping (String) -> Void = { _ in },
         onDetailTapped: @escaping (String) -> Void = { _ in }
     ) {
-        self.page = page
+        let resolvedPage = PhraseArticlePlaybackAudioResolver.resolvedPage(for: page)
+
+        self.page = resolvedPage
         self.chromeRoute = chromeRoute
         self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
@@ -166,6 +257,13 @@ struct PhraseArticleTemplateView: View {
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.heroImageNameOverride = heroImageNameOverride
+        self.visibleSections = Self.visibleSections(for: resolvedPage)
+        self.locationPickGroups = PhraseArticleLocationPickGroups(pageID: resolvedPage.id)
+        self.morphPageID = PhraseArticleMorphPolicy.resolvedPageID(
+            pageID: resolvedPage.id,
+            heroMorphPageID: heroMorphPageID,
+            heroMorphContentHoldPageID: heroMorphContentHoldPageID
+        )
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
@@ -195,6 +293,9 @@ struct PhraseArticleTemplateView: View {
 
                         LazyVStack(alignment: .leading, spacing: PhrasePageStyle.sectionSpacing) {
                             ForEach(visibleSections) { section in
+                                let mentionedPicks = locationMenuPicks(after: section.id)
+                                let relatedPicks = locationRelatedPicks(after: section.id)
+
                                 ArticleSectionView(
                                     section: section,
                                     currentPageID: page.id,
@@ -202,22 +303,22 @@ struct PhraseArticleTemplateView: View {
                                 )
                                 .id(section.id)
 
-                                if !locationMenuPicks(after: section.id).isEmpty {
+                                if !mentionedPicks.isEmpty {
                                     LocationMenuPicksSection(
                                         title: "Mentioned Here",
                                         leadIn: nil,
-                                        picks: locationMenuPicks(after: section.id),
+                                        picks: mentionedPicks,
                                         isPageSaved: isPageSaved,
                                         onToggleSavedPage: onToggleSavedPage,
                                         onOpenDetail: onDetailTapped
                                     )
                                 }
 
-                                if !locationRelatedPicks(after: section.id).isEmpty {
+                                if !relatedPicks.isEmpty {
                                     LocationMenuPicksSection(
                                         title: "Compare Nearby",
                                         leadIn: nil,
-                                        picks: locationRelatedPicks(after: section.id),
+                                        picks: relatedPicks,
                                         isPageSaved: isPageSaved,
                                         onToggleSavedPage: onToggleSavedPage,
                                         onOpenDetail: onDetailTapped
@@ -265,7 +366,11 @@ struct PhraseArticleTemplateView: View {
 
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
-                .task {
+                .task(id: isActive) {
+                    guard PhraseArticleTaskPolicy.shouldRunStandardScrollTask(isActive: isActive) else {
+                        return
+                    }
+
                     await applyInitialScrollTargetIfNeeded(scrollProxy)
                     await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
                 }
@@ -322,6 +427,10 @@ struct PhraseArticleTemplateView: View {
                             metrics: metrics
                         )
                     }) { _, scrollState in
+                        guard PhraseArticleTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: isActive) else {
+                            return
+                        }
+
                         if photoBackdropScrollOffset != scrollState.displayOffset {
                             photoBackdropScrollOffset = scrollState.displayOffset
                         }
@@ -394,6 +503,18 @@ struct PhraseArticleTemplateView: View {
                     )
                     : nil
             )
+            .task(id: isActive ? imageName : "") {
+                guard isActive else {
+                    return
+                }
+
+                AdminBackdropImagePreheater.preheatFocused(
+                    PhrasePhotoBackdropLayout.preheatImageNames(
+                        pageID: page.id,
+                        heroImageName: imageName
+                    )
+                )
+            }
         }
         .ignoresSafeArea(edges: .bottom)
         .statusBarHidden(isActive && isPhotoBackdropImmersive)
@@ -422,8 +543,7 @@ struct PhraseArticleTemplateView: View {
             heroImageName: imageName
         )
 
-        return Image(imageName)
-            .resizable()
+        return AdminBackdropPreparedImage(name: imageName)
             .scaledToFill()
             .frame(
                 width: geometry.size.width,
@@ -521,6 +641,9 @@ struct PhraseArticleTemplateView: View {
 
             LazyVStack(alignment: .leading, spacing: PhrasePageStyle.sectionSpacing) {
                 ForEach(visibleSections) { section in
+                    let mentionedPicks = locationMenuPicks(after: section.id)
+                    let relatedPicks = locationRelatedPicks(after: section.id)
+
                     ArticleSectionView(
                         section: section,
                         currentPageID: page.id,
@@ -528,22 +651,22 @@ struct PhraseArticleTemplateView: View {
                     )
                     .id(section.id)
 
-                    if !locationMenuPicks(after: section.id).isEmpty {
+                    if !mentionedPicks.isEmpty {
                         LocationMenuPicksSection(
                             title: "Mentioned Here",
                             leadIn: nil,
-                            picks: locationMenuPicks(after: section.id),
+                            picks: mentionedPicks,
                             isPageSaved: isPageSaved,
                             onToggleSavedPage: onToggleSavedPage,
                             onOpenDetail: onDetailTapped
                         )
                     }
 
-                    if !locationRelatedPicks(after: section.id).isEmpty {
+                    if !relatedPicks.isEmpty {
                         LocationMenuPicksSection(
                             title: "Compare Nearby",
                             leadIn: nil,
-                            picks: locationRelatedPicks(after: section.id),
+                            picks: relatedPicks,
                             isPageSaved: isPageSaved,
                             onToggleSavedPage: onToggleSavedPage,
                             onOpenDetail: onDetailTapped
@@ -703,15 +826,15 @@ struct PhraseArticleTemplateView: View {
     }
 
     private var trailingLocationMenuPicks: [LocationMenuPick] {
-        LocationMenuPicksCatalog.trailingPicks(forPageID: page.id)
+        locationPickGroups.trailingPicks
     }
 
     private func locationMenuPicks(after sectionID: String) -> [LocationMenuPick] {
-        LocationMenuPicksCatalog.picks(forPageID: page.id, afterSectionID: sectionID)
+        locationPickGroups.menuPicks(after: sectionID)
     }
 
     private func locationRelatedPicks(after sectionID: String) -> [LocationMenuPick] {
-        LocationRelatedPicksCatalog.picks(forPageID: page.id, afterSectionID: sectionID)
+        locationPickGroups.relatedPicks(after: sectionID)
     }
 
     private var usesCompactPhraseHero: Bool {
@@ -791,25 +914,43 @@ struct PhraseArticleTemplateView: View {
         heroMorphContentHoldPageID == morphPageID
     }
 
-    private var morphPageID: String {
-        PhraseCatalog.canonicalPageID(forOpenablePageID: page.id) ?? page.id
-    }
-
     private static let scrollTopID = "PhraseArticleTemplateViewTop"
     private static let catalogExploreID = "PhraseArticleTemplateViewCatalogExplore"
     private static let photoBackdropInitialID = "PhraseArticleTemplateViewPhotoBackdropInitial"
     private static let photoBackdropContentID = "PhraseArticleTemplateViewPhotoBackdropContent"
 
-    private var visibleSections: [PhraseArticleSection] {
-        Self.visibleSections(for: page)
-    }
-
     static func visibleSections(for page: PhraseArticlePage) -> [PhraseArticleSection] {
-        page.sections.filter { section in
+#if DEBUG
+        recordVisibleSectionsBuildForTesting()
+#endif
+        return page.sections.filter { section in
             guard !isHeroRepeatSection(section, page: page) else { return false }
             return !section.body.isEmpty || !section.phrases.isEmpty || !section.breakdown.isEmpty || !section.chips.isEmpty
         }
     }
+
+#if DEBUG
+    private static let visibleSectionsBuildCountLock = NSLock()
+    private static var visibleSectionsBuildCount = 0
+
+    static var visibleSectionsBuildCountForTesting: Int {
+        visibleSectionsBuildCountLock.lock()
+        defer { visibleSectionsBuildCountLock.unlock() }
+        return visibleSectionsBuildCount
+    }
+
+    static func resetVisibleSectionsBuildCountForTesting() {
+        visibleSectionsBuildCountLock.lock()
+        visibleSectionsBuildCount = 0
+        visibleSectionsBuildCountLock.unlock()
+    }
+
+    private static func recordVisibleSectionsBuildForTesting() {
+        visibleSectionsBuildCountLock.lock()
+        visibleSectionsBuildCount += 1
+        visibleSectionsBuildCountLock.unlock()
+    }
+#endif
 
     private static func isHeroRepeatSection(_ section: PhraseArticleSection, page: PhraseArticlePage) -> Bool {
         isSelfOnlyHeroPhraseRepeat(section, page: page)
@@ -1054,6 +1195,14 @@ enum PhrasePhotoBackdropLayout {
     static let topChromeContentThresholdPadding: CGFloat = 12
     static let scrollGeometryUpdateStride: CGFloat = 16
     private static let standardBackdropVerticalOverscan: CGFloat = 160
+    private static let phraseBackdropDefaultFocusFraction: CGFloat = 0.14
+    private static let phraseBackdropFocusFractions: [String: CGFloat] = [
+        "BackdropPhrasePhoneCafeCharging": 0.22,
+        "BackdropPhrasePhoneSimSetup": 0.22,
+        "BackdropPhrasePhoneAccessoryCounter": 0.20,
+        "BackdropPhrasePhoneAirportCharging": 0.22,
+        "BackdropPhraseTransportStreetMap": 0.20,
+    ]
 
     static func bottomReadingClearance(pageID: String, heroImageName: String?) -> CGFloat {
         if supportsCityListingPage(pageID: pageID, heroImageName: heroImageName) {
@@ -1086,13 +1235,22 @@ enum PhrasePhotoBackdropLayout {
             return false
         }
 
-        return !pageID.hasPrefix("viet-menu-") && heroImageName.hasPrefix("HeroCategory")
+        return !pageID.hasPrefix("viet-menu-")
+            && (heroImageName.hasPrefix("HeroCategory") || heroImageName.hasPrefix("BackdropPhrase"))
     }
 
     static func supportsListingPage(pageID: String, heroImageName: String?) -> Bool {
         supportsCityListingPage(pageID: pageID, heroImageName: heroImageName)
             || supportsMenuListingPage(pageID: pageID, heroImageName: heroImageName)
             || supportsCategoryListingPage(pageID: pageID, heroImageName: heroImageName)
+    }
+
+    static func preheatImageNames(pageID: String, heroImageName: String?) -> [String] {
+        guard let heroImageName, supportsListingPage(pageID: pageID, heroImageName: heroImageName) else {
+            return []
+        }
+
+        return [heroImageName]
     }
 
     static func backdropFrameHeight(
@@ -1115,7 +1273,13 @@ enum PhrasePhotoBackdropLayout {
         pageID: String,
         heroImageName: String?
     ) -> CGFloat {
-        0
+        guard let heroImageName, heroImageName.hasPrefix("BackdropPhrase") else {
+            return 0
+        }
+
+        let height = max(size.height, 1)
+        let focusFraction = phraseBackdropFocusFractions[heroImageName] ?? phraseBackdropDefaultFocusFraction
+        return min(max(height * focusFraction, 120), 260)
     }
 
     struct Metrics {
@@ -1204,6 +1368,16 @@ enum PhrasePhotoBackdropLayout {
         sheetTop: CGFloat
     ) -> CGFloat {
         max(bottomChromeBackingFrameHeight(viewportHeight: viewportHeight, safeAreaBottom: safeAreaBottom) - sheetTop, 0)
+    }
+}
+
+enum PhraseArticleTaskPolicy {
+    static func shouldRunStandardScrollTask(isActive: Bool) -> Bool {
+        isActive
+    }
+
+    static func shouldApplyPhotoBackdropScrollGeometry(isActive: Bool) -> Bool {
+        isActive
     }
 }
 
@@ -1725,7 +1899,7 @@ private struct LocationMenuPickRow: View {
 
             if let audioKey = pick.audioKey {
                 AudioSpeakerButton(
-                    tint: pick.linkedMenuItem?.kind?.tintName ?? .orange,
+                    tint: pick.audioTintName,
                     size: 44,
                     audioKey: audioKey,
                     accessibilityIdentifier: "LocationMenuPick.Audio.\(pick.id)"
@@ -2785,9 +2959,54 @@ enum PhraseRowNavigation {
             return nil
         }
 
+        let cacheKey = CacheKey(detailPageID: detailPageID, currentPageID: currentPageID)
+        if let cachedDestination = cachedDestination(for: cacheKey) {
+            return cachedDestination.value
+        }
+
         let canonicalDestination = PhraseCatalog.canonicalPageID(forOpenablePageID: detailPageID) ?? detailPageID
         let canonicalCurrent = PhraseCatalog.canonicalPageID(forOpenablePageID: currentPageID) ?? currentPageID
-        return canonicalDestination == canonicalCurrent ? nil : detailPageID
+        let destination = canonicalDestination == canonicalCurrent ? nil : detailPageID
+        storeCachedDestination(CachedDestination(value: destination), for: cacheKey)
+        return destination
+    }
+
+    private struct CacheKey: Hashable {
+        let detailPageID: String
+        let currentPageID: String
+    }
+
+    private struct CachedDestination {
+        let value: String?
+    }
+
+    private static let cacheLimit = 256
+    private static let cacheLock = NSLock()
+    private static var cachedDestinationsByKey: [CacheKey: CachedDestination] = [:]
+    private static var cachedDestinationKeys: [CacheKey] = []
+
+    private static func cachedDestination(for key: CacheKey) -> CachedDestination? {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        return cachedDestinationsByKey[key]
+    }
+
+    private static func storeCachedDestination(_ destination: CachedDestination, for key: CacheKey) {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        guard cachedDestinationsByKey[key] == nil else {
+            return
+        }
+
+        cachedDestinationsByKey[key] = destination
+        cachedDestinationKeys.append(key)
+
+        while cachedDestinationKeys.count > cacheLimit {
+            let oldestKey = cachedDestinationKeys.removeFirst()
+            cachedDestinationsByKey.removeValue(forKey: oldestKey)
+        }
     }
 }
 

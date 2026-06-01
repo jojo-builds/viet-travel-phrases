@@ -1,0 +1,21 @@
+[
+  {
+    "id": "7b07c90c-7a26-4b74-991a-c6a5a8eb8b24",
+    "status": "completed",
+    "display_name": "GPT Image 2",
+    "job_set_type": "imagegen_2_0",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38ecHrKXVn9clw0Nl9IQC7UnMcD/hf_20260530_061954_7b07c90c-7a26-4b74-991a-c6a5a8eb8b24.png",
+    "created_at": 1780121994.394754,
+    "params": {
+      "width": 752,
+      "height": 1344,
+      "prompt": "Scene: Vietnam taxi pickup curb with generic taxi shapes, carry-on luggage, shaded sidewalk, and warm late-afternoon city light. No readable license plates, no company logos, no road signs; traveler movement should be clear. Photorealistic vertical 9:16 editorial travel photograph for SpeakLocal, a premium native iPhone phrasebook for travelers in Vietnam. The image will sit behind a white scrollable app sheet, so keep the useful subject in the upper-middle half with calm lower-frame texture. Natural daylight or believable warm ambient light, real camera feel, premium travel-documentary style, not CGI, not illustration, not glossy stock. Vietnam-forward but not tourist-cliche; use practical traveler context, local material texture, tile, wood, glass, street light, greenery, luggage, tableware, or counters as appropriate. Strictly avoid readable text, signage, labels, logos, brand marks, license plates, watermarks, fake app UI, fake menus, distorted hands, distorted faces, extra fingers, injury, blood, panic, or emergency drama.",
+      "medias": [],
+      "aspect_ratio": "9:16",
+      "quality": "high",
+      "resolution": "1k",
+      "model": "videotape-alpha",
+      "reference_elements": []
+    }
+  }
+]
