@@ -255,3 +255,17 @@ Thirteenth proof / humanization batch, 2026-06-01:
 - Added current-text rendered proof `missing-pages-humanized-rerun-003-results.jsonl`: `23` edited pages, `69` screenshots, `0` failures.
 - Combined latest-current rendered proof is now `373` unique pages, `1119` latest-current screenshots, `0` current failures.
 - Global status remains not complete: `147` V2.2 pages still need current rendered proof unless the standard is amended.
+
+Fourteenth proof / subagent cleanup batch, 2026-06-01:
+
+- Treated the user screenshot feedback as a production copy rule: first-time U.S. travelers must not meet unexplained award, guide, cuisine, transit, performance, or local-label jargon. If a term like `Bib Gourmand` appears, the copy must immediately say what it means, or the page should lead with concrete food/place utility instead.
+- Used three read-only subagent audits on the remaining HCMC, Hội An, and Huế proof gaps. Findings focused on stiff `carry` / `draw` / `spine` / `threshold` wording, directive `Choose it` phrasing, wrong related-card routes, and phrase cards that did not match the page moment.
+- Repaired authored V2.2 source in `hcmc.json`, `hoian.json`, and `hue.json`: HCMC food/shopping/cafe pages, Hội An old-town/assembly/food/cycling pages, and Huế tomb/gate/river/restaurant/street pages now use more concrete first-visit language.
+- Kept researched restaurant signals where the QA gate requires them, but made them readable: for example, L'Usine Thảo Điền now frames eggs Benedict, squid ink crab pasta, premium pho, and salt caramel coffee as menu items rather than unexplained insider shorthand.
+- Removed the last source slug containing `bib-gourmand`; targeted source/runtime scan is now `0` for `Bib Gourmand`, `MICHELIN`, and `Gourmand`.
+- Regenerated V2.2 handwritten copy, native authored listing pages, phrase catalog, and SQLite.
+- Current validators pass again: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Built `SpeakLocalNative` for testing on the `SpeakLocal City Listings` simulator: `TEST BUILD SUCCEEDED`.
+- Added rendered proof `missing-pages-proof-004-results.jsonl`: `40` previously unrendered pages, `120` screenshots, `0` failures. The slice completed the remaining Saigon proof gap and started the Hội An band.
+- Combined latest-current rendered proof is now `413` unique pages, `1239` latest-current screenshots, `0` current failures.
+- Global status remains not complete: `107` V2.2 pages still need current rendered proof unless the standard is amended. Remaining pages are in Hội An (`51`) and Huế (`56`).

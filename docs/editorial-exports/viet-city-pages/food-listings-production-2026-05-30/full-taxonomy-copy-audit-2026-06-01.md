@@ -399,3 +399,29 @@ Updated proof state:
 
 - Combined latest-current proof is now `373` unique pages, `1119` latest-current screenshots, and `0` current failures.
 - Remaining global proof gap: `147` pages still need current rendered screenshots unless the gate is explicitly amended.
+
+## Fourteenth Missing-Page Proof / HCMC-Hội An-Huế Subagent Cleanup, 2026-06-01
+
+This batch continued the literal rendered proof gate and folded in three read-only subagent audits focused on the remaining HCMC, Hội An, and Huế proof gaps. The editorial lens was the user screenshot objection: first-time U.S. travelers should never have to decode whether a term is an award, dish, place, transport mode, performance form, or app-internal label.
+
+Rendered proof:
+
+- Added `missing-pages-proof-004-results.jsonl`: `40` previously unrendered pages, `120` screenshots, `0` failures.
+- Scope completed the remaining Saigon proof gap and started the Hội An band: HCMC flower/food/cafe/market/street/landmark/shopping/park pages, then Hội An Ancient Town, bánh mì, bánh xèo, and Cẩm Châu.
+
+Human readability review:
+
+- HCMC repairs removed or softened `carry`, `draw`, `spine`, `support role`, and directive `Choose it` phrasing across Ho Thi Ky, hủ tiếu, L'Usine Thảo Điền, Phở Hòa Pasteur, Russian Market, Takashimaya/Saigon Centre, Vincom Đồng Khởi, The Workshop Coffee, and other rendered HCMC pages.
+- Hội An repairs fixed wrong or weak related-card routes, old-house wording such as `threshold details`, generic phrase cards on Quan Cong Temple and countryside bicycle pages, and repeated `carry` language on food, craft, museum, and restaurant pages.
+- Huế repairs fixed hard-block source wording such as `register`, `threshold`, and `visitor-quarter spine`, plus phrase-card mismatches and stiff `Choose it` lines on tomb, gate, river, bridge, vegetarian, lagoon, and street pages.
+- Restaurant copy kept required researched menu signals while making them readable in context. L'Usine Thảo Điền now names eggs Benedict, squid ink crab pasta, a premium pho bowl, and salt caramel coffee as menu items.
+- Targeted source/runtime scan is clean for `Bib Gourmand`, `MICHELIN`, and `Gourmand`.
+- Current validators pass again: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Simulator build proof passed: `xcodebuild build-for-testing` for `SpeakLocalNative` on `SpeakLocal City Listings` returned `TEST BUILD SUCCEEDED`.
+
+Updated proof state:
+
+- Combined latest-current proof is now `413` unique pages, `1239` latest-current screenshots, and `0` current failures.
+- Remaining global proof gap: `107` pages still need current rendered screenshots unless the gate is explicitly amended.
+- Remaining by city: Hội An `51`, Huế `56`.
+- Remaining by category: Neighborhood `7`, Dish `7`, Restaurant `12`, Nature `7`, Attraction `12`, Cafe `9`, Station `3`, Landmark `27`, Museum `9`, Market `8`, Street `5`, Village `1`.

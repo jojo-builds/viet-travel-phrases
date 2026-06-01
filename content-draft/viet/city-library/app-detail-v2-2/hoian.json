@@ -33,27 +33,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Bắt đầu ở đâu?",
-          "en": "Where do we start?",
-          "intent": "sight-start",
-          "phraseId": "sight-2",
-          "audioId": "sight-2",
+          "vi": "Lối vào ở đâu?",
+          "en": "Where is the entrance?",
+          "intent": "v500-sigh-acti-where-is-the-entrance",
+          "phraseId": "v500-sigh-acti-where-is-the-entrance",
+          "audioId": "v500-sigh-acti-where-is-the-entrance",
           "status": "mapped"
         },
         {
-          "vi": "Điểm gặp ở đâu?",
-          "en": "Where is the meeting point?",
-          "intent": "sight-meeting-point",
-          "phraseId": "sight-5",
-          "audioId": "sight-5",
+          "vi": "Tôi có thể mua vé ở đâu?",
+          "en": "Where can I buy tickets?",
+          "intent": "v500-sigh-acti-where-can-i-buy-tickets",
+          "phraseId": "v500-sigh-acti-where-can-i-buy-tickets",
+          "audioId": "v500-sigh-acti-where-can-i-buy-tickets",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi chai nước",
-          "en": "A bottle of water please",
-          "intent": "service-water",
-          "phraseId": "store-1",
-          "audioId": "store-1",
+          "vi": "Tôi chụp hình ở đây được không?",
+          "en": "Can I take photos here?",
+          "intent": "sight-photos",
+          "phraseId": "sight-3",
+          "audioId": "sight-3",
           "status": "mapped"
         }
       ],
@@ -363,7 +363,7 @@
       "city": "Hội An",
       "category": "Neighborhood",
       "pronunciation": "foh koh hoy an",
-      "travelerMoment": "Ancient Town carries Hội An's port memory on foot: merchant houses, assembly halls, shopfronts, and the Thu Bon River keeping the old streets oriented toward trade and water.",
+      "travelerMoment": "Ancient Town keeps Hội An's port memory visible on foot: merchant houses, assembly halls, shopfronts, and the Thu Bon River orienting the old streets toward trade and water.",
       "storySpine": "The Ancient Town should make Hội An feel visible before arrival: architecture, lanterns, river movement, and the reason people slow down there.",
       "intro": {
         "heading": "The Old Core In One Walk",
@@ -379,19 +379,19 @@
           "status": "mapped"
         },
         {
-          "vi": "Đi bộ mất bao lâu?",
-          "en": "How long does it take on foot?",
-          "intent": "directions-how-long",
-          "phraseId": "directions-3",
-          "audioId": "directions-3",
+          "vi": "Điểm gặp ở đâu?",
+          "en": "Where is the meeting point?",
+          "intent": "sight-meeting-point",
+          "phraseId": "sight-5",
+          "audioId": "sight-5",
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể đi bộ tới đó được không?",
-          "en": "Can I walk there?",
-          "intent": "v500-dire-navi-can-i-walk-there",
-          "phraseId": "v500-dire-navi-can-i-walk-there",
-          "audioId": "v500-dire-navi-can-i-walk-there",
+          "vi": "Cho tôi chai nước",
+          "en": "A bottle of water please",
+          "intent": "service-water",
+          "phraseId": "store-1",
+          "audioId": "store-1",
           "status": "mapped"
         }
       ],
@@ -409,7 +409,7 @@
         {
           "id": "pretty-hours-bring-people",
           "heading": "Pretty Hours Bring People",
-          "body": "The most beautiful hours also draw the most bodies. Early mornings and side streets give the walls, roofs, and signs more room to breathe."
+          "body": "The prettiest hours also bring the thickest crowds. Early mornings and side streets give the walls, roofs, and signs more room to breathe."
         },
         {
           "id": "a-district-not-one-building",
@@ -1051,7 +1051,7 @@
       "city": "Hội An",
       "category": "Dish",
       "pronunciation": "banh mi hoi an",
-      "travelerMoment": "Hội An bánh mì carries the city's quick sandwich-shop memory: crisp French-era bread, local herbs, sauce, chili choices, and a handheld meal that fits between old-town walks.",
+      "travelerMoment": "Hội An bánh mì gives the city a quick sandwich-shop memory: crisp French-era bread, local herbs, sauce, chili choices, and a handheld meal between old-town walks.",
       "storySpine": "Banh mi brings a fast, portable food memory: crisp bread, herbs, sauce, heat, and one confident order before the day keeps moving.",
       "intro": {
         "heading": "A Quick Roll With Hội An Bite",
@@ -1346,8 +1346,8 @@
           "body": "Start with a small order. If the table wants more, add slowly instead of turning the snack into an accidental feast."
         },
         {
-          "id": "sauce-carries-the-bite",
-          "heading": "Sauce Carries The Bite",
+          "id": "sauce-finishes-the-bite",
+          "heading": "Sauce Finishes The Bite",
           "body": "Do not rush past the dipping sauce and herbs. The pancake is crisp, but the full bite comes together at the table."
         },
         {
@@ -2649,7 +2649,7 @@
       "category": "Dish",
       "pronunciation": "cao lau uh hoy an",
       "travelerMoment": "Cao lầu is one of Hội An's clearest food signatures, tied to the town by thick noodles, herbs, pork, crackers, and a dry-sauced bowl that does not travel as easily as a label.",
-      "storySpine": "Cao lau carries a food memory that is specific, easy to picture, and clearly different from pho or bun.",
+      "storySpine": "Cao lầu gives Hội An a food memory that is specific, easy to picture, and clearly different from phở or bún.",
       "intro": {
         "heading": "Hội An In One Bowl",
         "body": "Cao lau is the Hội An noodle bowl to know: thick chewy noodles, pork, greens, herbs, crisp crackers, and a shallow coat of sauce."
@@ -2956,7 +2956,7 @@
         {
           "id": "ms-vy-orbit",
           "heading": "In The Ms Vy Orbit",
-          "body": "Cargo sits near the same old-town restaurant world as Morning Glory and Vy’s Market. Choose it for a broader table rather than one narrow dish chase."
+          "body": "Cargo sits near the same old-town restaurant world as Morning Glory and Vy’s Market. Use it for a broader table rather than one narrow dish chase."
         },
         {
           "id": "not-the-food-quest",
@@ -2970,7 +2970,7 @@
           "catalogId": "viet-family-city-hoian-place-morning-glory",
           "label": "Morning Glory Hội An",
           "relationship": "Hội An food comparison",
-          "displaySubtitle": "A sharper Central Vietnamese table where the food itself carries the meal.",
+          "displaySubtitle": "A sharper Central Vietnamese table when the group wants the food itself to lead the meal.",
           "reason": "Morning Glory is the clearer food-first comparison for Cargo Club.",
           "status": "render"
         },
@@ -3145,7 +3145,7 @@
       "city": "Hội An",
       "category": "Attraction",
       "pronunciation": "tau di cu lao cham",
-      "travelerMoment": "The snorkel boat carries Hội An's water-travel side: dock timing, sea light, green islands, and the crossing from shore to reef-side day.",
+      "travelerMoment": "The snorkel boat opens Hội An's water-travel side: dock timing, sea light, green islands, and the crossing from shore to reef-side day.",
       "storySpine": "The boat gives Cham Islands a physical sequence: boarding, crossing, snorkeling, and returning, not just a dot offshore.",
       "intro": {
         "heading": "A Crossing, Not Just Transport",
@@ -3186,12 +3186,12 @@
         {
           "id": "give-the-water-time",
           "heading": "Give The Water Time",
-          "body": "Choose it for a day that can handle a longer water outing. A lighter old-town plan makes the return cleaner."
+          "body": "Plan it for a day that can handle a longer water outing. A lighter old-town plan makes the return cleaner."
         },
         {
           "id": "boarding-to-return",
           "heading": "Boarding To Return",
-          "body": "The snorkel boat phrase carries the whole sequence: boarding, crossing, swimming, drying off, and coming back to Hội An."
+          "body": "The boat phrase names the whole sequence: boarding, crossing, swimming, drying off, and coming back to Hội An."
         },
         {
           "id": "weather-matters",
@@ -3766,14 +3766,14 @@
           "body": "The plate should read quickly: fragrant yellow rice, shredded chicken, herbs, papaya, and sauce. It is a clear lunch built around rice and chicken."
         },
         {
-          "id": "sauce-and-soup-carry-it",
-          "heading": "Sauce And Soup Carry It",
+          "id": "sauce-and-soup-finish-it",
+          "heading": "Sauce And Soup Finish It",
           "body": "The lift comes from the sauce, herbs, and small soup beside the rice. Ask for less chili early if heat would distract from the plate."
         },
         {
           "id": "phan-chau-trinh-lunch",
           "heading": "Phan Châu Trinh Lunch",
-          "body": "Phan Châu Trinh keeps the stop close to tailor errands, old houses, and coffee breaks. Choose it for chicken rice the planned meal."
+          "body": "Phan Châu Trinh keeps the stop close to tailor errands, old houses, and coffee breaks. Let chicken rice be the planned meal."
         },
         {
           "id": "where-it-sits",
@@ -3916,7 +3916,7 @@
         {
           "id": "join-the-table",
           "heading": "Join The Table",
-          "body": "The draw goes beyond a flawless dish. It is hearing instructions, touching ingredients, and leaving with one earned food memory."
+          "body": "The point goes beyond a flawless dish. It is hearing instructions, touching ingredients, and leaving with one earned food memory."
         },
         {
           "id": "class-shape-comes-from-the-host",
@@ -3998,19 +3998,19 @@
           "status": "mapped"
         },
         {
-          "vi": "Đi bộ mất bao lâu?",
-          "en": "How long does it take on foot?",
-          "intent": "directions-how-long",
-          "phraseId": "directions-3",
-          "audioId": "directions-3",
+          "vi": "Điểm gặp ở đâu?",
+          "en": "Where is the meeting point?",
+          "intent": "sight-meeting-point",
+          "phraseId": "sight-5",
+          "audioId": "sight-5",
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể đi bộ tới đó được không?",
-          "en": "Can I walk there?",
-          "intent": "v500-dire-navi-can-i-walk-there",
-          "phraseId": "v500-dire-navi-can-i-walk-there",
-          "audioId": "v500-dire-navi-can-i-walk-there",
+          "vi": "Cho tôi chai nước",
+          "en": "A bottle of water please",
+          "intent": "service-water",
+          "phraseId": "store-1",
+          "audioId": "store-1",
           "status": "mapped"
         }
       ],
@@ -4018,7 +4018,7 @@
         {
           "id": "fields-between-stops",
           "heading": "Fields Between Places",
-          "body": "The route is a bicycle path through fields and gardens in morning light. The draw is the movement between places, not one single sight."
+          "body": "The route is a bicycle path through fields and gardens in morning light. The movement between places matters more than one single sight."
         },
         {
           "id": "soft-route-pairing",
@@ -5266,7 +5266,7 @@
         {
           "id": "respect-the-room",
           "heading": "Respect The Room",
-          "body": "The building can look like a heritage sight, but it still carries worship and community memory. Respectful behavior matters."
+          "body": "The building can look like a heritage sight, but it still holds worship and community memory. Respectful behavior matters."
         }
       ],
       "mentionedHereCandidates": [],
@@ -5274,9 +5274,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
           "label": "Cầu An Hội",
-          "relationship": "river-crossing hinge",
-          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Related because: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "relationship": "old-town base",
+          "displaySubtitle": "The old-town base before a longer Cham sanctuary day trip outside Hội An.",
+          "reason": "Related because: The old-town base before a longer Cham sanctuary day trip outside Hội An.",
           "status": "render"
         }
       ],
@@ -5559,27 +5559,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Bắt đầu ở đâu?",
-          "en": "Where do we start?",
-          "intent": "sight-start",
-          "phraseId": "sight-2",
-          "audioId": "sight-2",
+          "vi": "Lối vào ở đâu?",
+          "en": "Where is the entrance?",
+          "intent": "v500-sigh-acti-where-is-the-entrance",
+          "phraseId": "v500-sigh-acti-where-is-the-entrance",
+          "audioId": "v500-sigh-acti-where-is-the-entrance",
           "status": "mapped"
         },
         {
-          "vi": "Điểm gặp ở đâu?",
-          "en": "Where is the meeting point?",
-          "intent": "sight-meeting-point",
-          "phraseId": "sight-5",
-          "audioId": "sight-5",
+          "vi": "Tôi có thể mua vé ở đâu?",
+          "en": "Where can I buy tickets?",
+          "intent": "v500-sigh-acti-where-can-i-buy-tickets",
+          "phraseId": "v500-sigh-acti-where-can-i-buy-tickets",
+          "audioId": "v500-sigh-acti-where-can-i-buy-tickets",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi chai nước",
-          "en": "A bottle of water please",
-          "intent": "service-water",
-          "phraseId": "store-1",
-          "audioId": "store-1",
+          "vi": "Tôi chụp hình ở đây được không?",
+          "en": "Can I take photos here?",
+          "intent": "sight-photos",
+          "phraseId": "sight-3",
+          "audioId": "sight-3",
           "status": "mapped"
         }
       ],
@@ -5703,8 +5703,8 @@
         },
         {
           "id": "old-town-reference-point",
-          "heading": "Old-Town Reference Point",
-          "body": "The bridge is a bearing point during an Ancient Town walk, especially when nearby streets begin to blur."
+          "heading": "A Crossing To Remember",
+          "body": "The bridge helps when nearby old-town streets start to blur: roof overhead, water below, and familiar lanes on both sides."
         },
         {
           "id": "remember-the-crossing",
@@ -5720,11 +5720,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
-          "label": "Cầu An Hội",
-          "relationship": "river-crossing hinge",
-          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Related because: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "catalogId": "viet-family-city-hoian-place-ancient-town",
+          "label": "Phố cổ Hội An",
+          "relationship": "old-town walking context",
+          "displaySubtitle": "The surrounding old-town walk when the bridge should fit into yellow houses, lanes, and river movement.",
+          "reason": "Related because: The surrounding old-town walk when the bridge should fit into yellow houses, lanes, and river movement.",
           "status": "render"
         }
       ],
@@ -6045,7 +6045,7 @@
         {
           "id": "a-small-making-moment",
           "heading": "A Small Making Moment",
-          "body": "This is one patient hour with bamboo ribs, hands, and a finished object. It does not need to carry every craft expectation in Hội An."
+          "body": "This is one patient hour with bamboo ribs, colored material, instruction, and a finished lantern you handled yourself."
         },
         {
           "id": "the-finished-piece-matters",
@@ -6404,7 +6404,7 @@
           "catalogId": "viet-family-city-hoian-place-morning-glory",
           "label": "Morning Glory Hội An",
           "relationship": "central Vietnamese table comparison",
-          "displaySubtitle": "A stronger central Vietnamese table where local dishes carry the meal.",
+          "displaySubtitle": "A broader central Vietnamese table when the group wants more range than a fish-led dinner.",
           "reason": "Morning Glory is a more useful food comparison for Mai Fish than Bale Well.",
           "status": "render"
         }
@@ -6503,7 +6503,7 @@
         {
           "id": "setting-counts-here",
           "heading": "The River Counts Here",
-          "body": "The plate is only part of the choice. The draw is dinner near the water, lights, and evening foot traffic."
+          "body": "The plate is only part of the choice. The point is dinner near the water, lights, and evening foot traffic."
         },
         {
           "id": "riverside-frame-leads",
@@ -6691,11 +6691,11 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Bắt đầu ở đâu?",
-          "en": "Where do we start?",
-          "intent": "sight-start",
-          "phraseId": "sight-2",
-          "audioId": "sight-2",
+          "vi": "Lối vào ở đâu?",
+          "en": "Where is the entrance?",
+          "intent": "v500-sigh-acti-where-is-the-entrance",
+          "phraseId": "v500-sigh-acti-where-is-the-entrance",
+          "audioId": "v500-sigh-acti-where-is-the-entrance",
           "status": "mapped"
         },
         {
@@ -6734,7 +6734,7 @@
         {
           "id": "riverside-arrival-matters",
           "heading": "Riverside Arrival Matters",
-          "body": "The lasting image is riverside arrival and a staged Hội An show. A spacious evening helps that shift register."
+          "body": "The lasting image is riverside arrival and a staged Hội An show. A spacious evening helps that shift land."
         }
       ],
       "mentionedHereCandidates": [],
@@ -7222,7 +7222,7 @@
           "label": "Giếng Bà Lễ",
           "relationship": "hands-on Hội An meal comparison",
           "displaySubtitle": "Pork skewers, bánh xèo, herbs, rice paper, and sauce as a shared set meal.",
-          "reason": "Bale Well is a stronger hands-on food contrast after Morning Glory’s orientation meal.",
+          "reason": "Bale Well is a hands-on food contrast after Morning Glory’s orientation meal.",
           "status": "render"
         },
         {
@@ -7446,7 +7446,7 @@
         {
           "id": "quiet-cool-air-a-few-objects",
           "heading": "Cool Air, A Few Objects",
-          "body": "A few objects can carry the visit before museum fatigue sets in. The steadier reason to go is shade, cooler air, and a short indoor break."
+          "body": "A few objects can be enough before museum fatigue sets in. The steadier reason to go is shade, cooler air, and a short indoor break."
         }
       ],
       "mentionedHereCandidates": [],
@@ -7564,11 +7564,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
-          "label": "Cầu An Hội",
-          "relationship": "river-crossing hinge",
-          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Related because: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "catalogId": "viet-family-city-hoian-place-ancient-town",
+          "label": "Phố cổ Hội An",
+          "relationship": "old-town base",
+          "displaySubtitle": "The old-town base before a longer Cham sanctuary day trip outside Hội An.",
+          "reason": "Related because: The old-town base before a longer Cham sanctuary day trip outside Hội An.",
           "status": "render"
         }
       ],
@@ -7732,11 +7732,11 @@
       "city": "Hội An",
       "category": "Street",
       "pronunciation": "pho nguyen phuc chu",
-      "travelerMoment": "Nguyen Phuc Chu Street is the spine of An Hội's night side, tying river crossings, market stalls, signs, and lantern-lit shopfronts into one walkable line.",
+      "travelerMoment": "Nguyen Phuc Chu Street is An Hội's night-side line, tying river crossings, market stalls, signs, and lantern-lit shopfronts into one walkable route.",
       "storySpine": "Nguyen Phuc Chu Street helps visitors place the An Hội evening on the map instead of drifting through unnamed lights.",
       "intro": {
-        "heading": "An Hội’s Evening Spine",
-        "body": "Nguyen Phuc Chu Street gives An Hội’s night side a walkable spine: lantern-market energy, signs, shopfronts, crossings, and warm light near the river."
+        "heading": "An Hội’s Evening Walk",
+        "body": "Nguyen Phuc Chu Street gives An Hội’s night side a walkable route: lantern-market energy, signs, shopfronts, crossings, and warm light near the river."
       },
       "usefulPhraseCards": [
         {
@@ -7791,7 +7791,7 @@
         {
           "catalogId": "viet-family-city-hoian-place-bach-dang-street",
           "label": "Đường Bạch Đằng ở Hội An",
-          "relationship": "riverfront-walking spine",
+          "relationship": "riverfront walking route",
           "displaySubtitle": "The named riverside walk for boats, yellow buildings, crossings, and blue-hour reflections.",
           "reason": "Related because: The named riverside walk for boats, yellow buildings, crossings, and blue-hour reflections.",
           "status": "render"
@@ -7894,7 +7894,7 @@
         },
         {
           "id": "small-detours-are-the-point",
-          "heading": "Small Detours are the draw",
+          "heading": "Small Detours Matter",
           "body": "Nearby lanes can pull you off the street. That is fine; the name gives you a way back into the old-town grid."
         }
       ],
@@ -7903,7 +7903,7 @@
         {
           "catalogId": "viet-family-city-hoian-place-bach-dang-street",
           "label": "Đường Bạch Đằng ở Hội An",
-          "relationship": "riverfront-walking spine",
+          "relationship": "riverfront walking route",
           "displaySubtitle": "The named riverside walk for boats, yellow buildings, crossings, and blue-hour reflections.",
           "reason": "Related because: The named riverside walk for boats, yellow buildings, crossings, and blue-hour reflections.",
           "status": "render"
@@ -8182,7 +8182,7 @@
       "city": "Hội An",
       "category": "Cafe",
       "pronunciation": "phin coffee",
-      "travelerMoment": "Phin Coffee carries Vietnam's slow-drip coffee habit into Hội An's walking day: filter, glass, ice or sweetness, and time paced by the cup.",
+      "travelerMoment": "Phin Coffee brings Vietnam's slow-drip coffee habit into Hội An's walking day: filter, glass, ice or sweetness, and time paced by the cup.",
       "storySpine": "Phin Coffee gives the day a compact coffee ritual when heat, walking, or shopping needs a seated middle.",
       "intro": {
         "heading": "The Drip Sets The Pace",
@@ -8227,7 +8227,7 @@
         },
         {
           "id": "slow-coffee-is-the-point",
-          "heading": "Slow Coffee is the draw",
+          "heading": "Slow Coffee Sets The Pace",
           "body": "Do not rush the drip. If the day is packed, the sit-down may be exactly why this cafe matters."
         },
         {
@@ -8241,9 +8241,9 @@
         {
           "catalogId": "viet-family-city-hoian-place-espresso-station",
           "label": "The Espresso Station",
-          "relationship": "coffee-register contrast",
+          "relationship": "coffee-style contrast",
           "displaySubtitle": "A more espresso-focused room for the caffeine stop about the cup.",
-          "reason": "Espresso Station gives Phin Coffee a clear coffee-register contrast.",
+          "reason": "Espresso Station gives Phin Coffee a clear coffee-style contrast.",
           "status": "render"
         }
       ],
@@ -8453,7 +8453,7 @@
         {
           "id": "hands-make-the-memory",
           "heading": "Hands Make The Memory",
-          "body": "Watching or trying the making process matters. A small object carries more after you have seen how the clay moves."
+          "body": "Watching or trying the making process matters. A small object means more after you have seen how the clay moves."
         },
         {
           "id": "clay-process-leads",
@@ -8639,27 +8639,27 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Bắt đầu ở đâu?",
-          "en": "Where do we start?",
-          "intent": "sight-start",
-          "phraseId": "sight-2",
-          "audioId": "sight-2",
+          "vi": "Lối vào ở đâu?",
+          "en": "Where is the entrance?",
+          "intent": "v500-sigh-acti-where-is-the-entrance",
+          "phraseId": "v500-sigh-acti-where-is-the-entrance",
+          "audioId": "v500-sigh-acti-where-is-the-entrance",
           "status": "mapped"
         },
         {
-          "vi": "Điểm gặp ở đâu?",
-          "en": "Where is the meeting point?",
-          "intent": "sight-meeting-point",
-          "phraseId": "sight-5",
-          "audioId": "sight-5",
+          "vi": "Tôi có thể mua vé ở đâu?",
+          "en": "Where can I buy tickets?",
+          "intent": "v500-sigh-acti-where-can-i-buy-tickets",
+          "phraseId": "v500-sigh-acti-where-can-i-buy-tickets",
+          "audioId": "v500-sigh-acti-where-can-i-buy-tickets",
           "status": "mapped"
         },
         {
-          "vi": "Cho tôi chai nước",
-          "en": "A bottle of water please",
-          "intent": "service-water",
-          "phraseId": "store-1",
-          "audioId": "store-1",
+          "vi": "Tôi chụp hình ở đây được không?",
+          "en": "Can I take photos here?",
+          "intent": "sight-photos",
+          "phraseId": "sight-3",
+          "audioId": "sight-3",
           "status": "mapped"
         }
       ],
@@ -8688,11 +8688,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-an-hoi-bridge",
-          "label": "Cầu An Hội",
-          "relationship": "river-crossing hinge",
-          "displaySubtitle": "The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
-          "reason": "Related because: The short bridge that shifts the evening between Ancient Town, An Hội, lanterns, and water.",
+          "catalogId": "viet-family-city-hoian-place-japanese-bridge",
+          "label": "Chùa Cầu",
+          "relationship": "nearby heritage landmark",
+          "displaySubtitle": "A nearby old-town landmark when temple, bridge, and heritage stops should stay in one walk.",
+          "reason": "Related because: A nearby old-town landmark when temple, bridge, and heritage stops should stay in one walk.",
           "status": "render"
         }
       ],
@@ -8779,7 +8779,7 @@
         {
           "id": "old-house-close-range",
           "heading": "Old House, Close Range",
-          "body": "Expect an old Hội An house with woodwork, threshold details, rooms, and a sheltered interior after the street outside."
+          "body": "Expect an old Hội An house with carved wood, doorway details, inner rooms, and a sheltered interior after the street outside."
         },
         {
           "id": "between-streets-and-houses",
@@ -8789,11 +8789,11 @@
         {
           "id": "doorway-before-checklist",
           "heading": "Doorway Before Checklist",
-          "body": "Give the carved wood attention before the next errand pulls you away. Details carry the house more than a checklist."
+          "body": "Give the carved wood attention before the next errand pulls you away. Doorway carvings and inner rooms matter more than a checklist."
         },
         {
-          "id": "carved-wood-carries-it",
-          "heading": "Carved Wood Carries It",
+          "id": "carved-wood-is-the-memory",
+          "heading": "Carved Wood Is The Memory",
           "body": "Remember it for carved wood, doorway detail, and old-house surfaces rather than a long list of rooms."
         }
       ],
@@ -9253,7 +9253,7 @@
           "label": "The Espresso Station",
           "relationship": "coffee-quality comparison",
           "displaySubtitle": "A smaller coffee-first room when the drink should matter more than the chain footprint.",
-          "reason": "Espresso Station is the stronger independent coffee comparison for Hoi An Roastery.",
+          "reason": "Espresso Station is the independent coffee comparison for Hoi An Roastery.",
           "status": "render"
         }
       ],
@@ -9467,8 +9467,8 @@
           "body": "This is a compact museum. A focused half hour beats forcing a long visit from thin labels or tired attention."
         },
         {
-          "id": "objects-carry-the-context",
-          "heading": "Objects Carry The Context",
+          "id": "objects-show-the-context",
+          "heading": "Objects Show The Context",
           "body": "The museum is one doorway into the older story. A few pottery forms can make that past visible."
         }
       ],
@@ -9916,7 +9916,7 @@
         {
           "id": "short-attentive-visit",
           "heading": "Short, Attentive Visit",
-          "body": "The house rewards a slower look more than a long stay. A few details can carry the memory."
+          "body": "The house rewards a slower look more than a long stay. A few details can make the memory."
         },
         {
           "id": "crowds-change-the-feel",
@@ -10130,7 +10130,7 @@
         {
           "id": "setting-first-menu-second",
           "heading": "View Before Menu",
-          "body": "Expect the location to carry much of the memory. The field-side break is the reason to go, with the order chosen once you sit down."
+          "body": "Expect the setting to shape the memory. The field-side break is the reason to go, with the order chosen once you sit down."
         },
         {
           "id": "a-slower-evening-meal",
@@ -10140,12 +10140,12 @@
         {
           "id": "light-changes-the-stop",
           "heading": "Light Changes The View",
-          "body": "Late-day light can carry the view. Rain or darkness may shift the meal back toward the table itself."
+          "body": "Late-day light helps the view. Rain or darkness may shift the meal back toward the table itself."
         },
         {
           "id": "fieldside-setting-leads",
           "heading": "Fieldside View Leads",
-          "body": "Build the evening around rice-field air, sunset light, open space, and a slower table after the old-town crush. The food supports the setting instead of carrying the whole plan alone."
+          "body": "Build the evening around rice-field air, sunset light, open space, and a slower table after the old-town crush. The food belongs to the setting instead of defining the whole plan alone."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10154,8 +10154,8 @@
           "catalogId": "viet-family-city-hoian-place-tra-que-village",
           "label": "Làng rau Trà Quế",
           "relationship": "field-to-farm route",
-          "displaySubtitle": "A herb-village route that carries the meal back into Hội An’s garden landscape.",
-          "reason": "Related because: A herb-village route that carries the meal back into Hội An’s garden landscape.",
+          "displaySubtitle": "A herb-village route that connects dinner back to Hội An’s garden landscape.",
+          "reason": "Related because: A herb-village route that connects dinner back to Hội An’s garden landscape.",
           "status": "render"
         }
       ],
