@@ -1527,6 +1527,29 @@ final class PhrasePageFixtureTests: XCTestCase {
         }
     }
 
+    func testBrowseSearchPrioritizesExactVietnameseMenuDrinkMatch() throws {
+        enableSQLiteRuntimeForTesting()
+
+        let expectedPageID = "viet-menu-drink-ca-phe-sua-da"
+        let expectedMenuItem = try XCTUnwrap(VietnameseMenuCatalog.detailItem(withPageID: expectedPageID))
+        let expectedAudioKey = try XCTUnwrap(VietnameseMenuCatalog.phraseItem(for: expectedMenuItem).audioKey)
+        let exactResults = BrowseSearchDestinations.searchResults(for: "Cà phê sữa đá", limit: 8)
+        let foldedResults = BrowseSearchDestinations.searchResults(for: "ca phe sua da", limit: 8)
+
+        XCTAssertEqual(
+            exactResults.first?.pageID,
+            expectedPageID,
+            "Exact Vietnamese drink searches should open the generated menu drink page before cafe/place rows: \(exactResults.map { "\($0.pageID): \($0.title) / \($0.subtitle)" })"
+        )
+        XCTAssertEqual(exactResults.first?.title, "Cà phê sữa đá")
+        XCTAssertEqual(exactResults.first?.audioKey, expectedAudioKey)
+        XCTAssertEqual(
+            foldedResults.first?.pageID,
+            expectedPageID,
+            "Tone-free drink searches should also rank the generated menu drink page first: \(foldedResults.map { "\($0.pageID): \($0.title) / \($0.subtitle)" })"
+        )
+    }
+
     func testSearchIndexRanksActionSpecificMatchesAheadOfSharedNounNoise() {
         enableSQLiteRuntimeForTesting()
 
