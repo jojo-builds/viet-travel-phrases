@@ -171,6 +171,8 @@ struct AppShellView: View {
     @State private var navigation: AppShellNavigationState
     @State private var interactiveDrag: AppInteractiveNavigationDrag?
     @State private var interactiveDragResolutionID = 0
+    @State private var routeTransitionDirection: AppRouteTransitionDirection?
+    @State private var routeTransitionResetID = 0
     @State private var searchQuery: String
     @State private var isSearchPresentationActive = false
     @State private var searchFocusRequestID = 0
@@ -778,7 +780,7 @@ struct AppShellView: View {
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && allowsBasePageHitTesting)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
-                .transition(AppPageTransition.slideFromTrailing)
+                .transition(browseCollectionTransition(for: renderedCollection.route))
                 .zIndex(Double(index + 6))
                 .navigationPageMotion(
                     route: route,
@@ -805,7 +807,7 @@ struct AppShellView: View {
                 )
                 .allowsHitTesting(isActive && !navigation.isSearchPresented && allowsBasePageHitTesting)
                 .accessibilityHidden(!isActive || navigation.isSearchPresented)
-                .transition(AppPageTransition.slideFromTrailing)
+                .transition(browseCollectionTransition(for: renderedCollection.route))
                 .zIndex(Double(index + 6))
                 .navigationPageMotion(
                     route: route,
@@ -994,13 +996,13 @@ struct AppShellView: View {
     private func detailTransition(for pageID: String) -> AnyTransition {
         isHomePhraseHeroRouteActive(for: pageID)
             ? AppPageTransition.phraseHeroMorph
-            : AppPageTransition.slideFromTrailing
+            : AppPageTransition.slide(for: routeTransitionDirection)
     }
 
     private func browseCollectionTransition(for route: BrowseCollectionRoute) -> AnyTransition {
-        BrowseCollectionNativeTransition.usesCityDissolve(for: route)
+        routeTransitionDirection == nil && BrowseCollectionNativeTransition.usesCityDissolve(for: route)
             ? AppPageTransition.browseCityDissolve
-            : AppPageTransition.slideFromTrailing
+            : AppPageTransition.slide(for: routeTransitionDirection)
     }
 
     private func isHomePhraseHeroRouteActive(for pageID: String) -> Bool {
@@ -1989,9 +1991,11 @@ struct AppShellView: View {
         }
         cancelInteractiveChromeState()
         prepareBrowseCollectionFocusRestoreIfNeeded(focusRequest)
+        let transitionResetID = beginRouteTransition(.back)
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
+        clearRouteTransition(after: transitionResetID)
         activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
@@ -2008,9 +2012,11 @@ struct AppShellView: View {
             return
         }
 
+        let transitionResetID = beginRouteTransition(.back)
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
+        clearRouteTransition(after: transitionResetID)
         activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
@@ -2080,9 +2086,11 @@ struct AppShellView: View {
         let previousRoute = navigation.currentRoute
         cancelInteractiveChromeState()
         preparePracticeMatchFocusRestoreIfNeeded()
+        let transitionResetID = beginRouteTransition(.back)
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
         }
+        clearRouteTransition(after: transitionResetID)
         activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
@@ -2098,9 +2106,11 @@ struct AppShellView: View {
         let previousRoute = navigation.currentRoute
         cancelInteractiveChromeState()
         let shouldFocusSearch = navigation.forwardPreviewRoute == .search
+        let transitionResetID = beginRouteTransition(.forward)
         withAnimation(.snappy(duration: 0.34)) {
             navigateForwardInState()
         }
+        clearRouteTransition(after: transitionResetID)
         activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
         if shouldFocusSearch {
             focusSearchField()
@@ -2154,9 +2164,11 @@ struct AppShellView: View {
         let previousRoute = navigation.currentRoute
         cancelSearchFocus()
         cancelInteractiveChromeState()
+        let transitionResetID = beginRouteTransition(.back)
         withAnimation(.snappy(duration: AppChromeLayout.searchMorphDuration)) {
             navigation.goBack()
         }
+        clearRouteTransition(after: transitionResetID)
         activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
     }
 
@@ -2211,11 +2223,32 @@ struct AppShellView: View {
 
     private func cancelInteractiveChromeState() {
         interactiveDragResolutionID += 1
+        routeTransitionResetID += 1
         homePhraseHeroMorphResetID += 1
         homePhraseHeroRoutePageID = nil
         homePhraseHeroMorphPageID = nil
         homePhraseHeroContentHoldPageID = nil
         interactiveDrag = nil
+        routeTransitionDirection = nil
+    }
+
+    private func beginRouteTransition(_ direction: AppRouteTransitionDirection) -> Int {
+        routeTransitionResetID += 1
+        routeTransitionDirection = direction
+        return routeTransitionResetID
+    }
+
+    private func clearRouteTransition(after resetID: Int) {
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: AppRouteTransitionPolicy.cleanupDelayNanoseconds)
+            guard resetID == routeTransitionResetID else {
+                return
+            }
+
+            withoutRouteAnimation {
+                routeTransitionDirection = nil
+            }
+        }
     }
 
     private func clearPracticeStartRequest() {
@@ -3015,7 +3048,6 @@ struct AppShellNavigationState: Equatable {
             if let currentCollection = browseCollectionPath.popLast() {
                 forwardStack.append(.browseCollection(currentCollection))
                 restoreSearchBackStackAfterPoppingCollectionIfNeeded()
-                restoreExplicitBackStackAfterPoppingCollectionIfNeeded()
                 return
             }
 
@@ -3086,19 +3118,6 @@ struct AppShellNavigationState: Equatable {
            detailPath.isEmpty,
            !previousSnapshot.detailPath.isEmpty {
             restore(backStack.removeLast())
-        }
-    }
-
-    private mutating func restoreExplicitBackStackAfterPoppingCollectionIfNeeded() {
-        guard browseCollectionPath.isEmpty, let previousSnapshot = backStack.last else {
-            return
-        }
-
-        switch previousSnapshot.currentRoute {
-        case .detailPage, .phrasePage, .saved, .practice:
-            restore(backStack.removeLast())
-        case .home, .browse, .browseCollection, .search:
-            return
         }
     }
 
@@ -3358,6 +3377,33 @@ enum AppInteractiveNavigationDirection {
     case forward
 }
 
+enum AppRouteTransitionDirection {
+    case back
+    case forward
+}
+
+enum AppRouteTransitionPhase {
+    case insertion
+    case removal
+}
+
+enum AppRouteTransitionPolicy {
+    static let cleanupDelayNanoseconds: UInt64 = 420_000_000
+
+    static func edge(for direction: AppRouteTransitionDirection?, phase: AppRouteTransitionPhase) -> Edge {
+        switch (direction, phase) {
+        case (.back, .insertion):
+            return .leading
+        case (.back, .removal):
+            return .trailing
+        case (.forward, .insertion), (.none, .insertion):
+            return .trailing
+        case (.forward, .removal), (.none, .removal):
+            return .trailing
+        }
+    }
+}
+
 struct AppInteractiveNavigationDrag: Equatable {
     let direction: AppInteractiveNavigationDirection
     let translation: CGFloat
@@ -3476,10 +3522,14 @@ struct AppInteractiveNavigationPresentation: Equatable {
 }
 
 enum AppPageTransition {
-    static let slideFromTrailing = AnyTransition.asymmetric(
-        insertion: .move(edge: .trailing).combined(with: .opacity),
-        removal: .move(edge: .trailing).combined(with: .opacity)
-    )
+    static let slideFromTrailing = slide(for: nil)
+
+    static func slide(for direction: AppRouteTransitionDirection?) -> AnyTransition {
+        AnyTransition.asymmetric(
+            insertion: .move(edge: AppRouteTransitionPolicy.edge(for: direction, phase: .insertion)).combined(with: .opacity),
+            removal: .move(edge: AppRouteTransitionPolicy.edge(for: direction, phase: .removal)).combined(with: .opacity)
+        )
+    }
 
     static let searchMorph = AnyTransition.asymmetric(
         insertion: .opacity.combined(with: .scale(scale: 0.985, anchor: .bottom)),

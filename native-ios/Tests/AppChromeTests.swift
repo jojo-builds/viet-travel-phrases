@@ -2225,6 +2225,15 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(BrowseCollectionNativeTransition.cityDissolveDuration, 0.24)
     }
 
+    func testButtonBackRouteTransitionsUseReverseSlideEdges() {
+        XCTAssertEqual(AppRouteTransitionPolicy.edge(for: nil, phase: .insertion), .trailing)
+        XCTAssertEqual(AppRouteTransitionPolicy.edge(for: nil, phase: .removal), .trailing)
+        XCTAssertEqual(AppRouteTransitionPolicy.edge(for: .forward, phase: .insertion), .trailing)
+        XCTAssertEqual(AppRouteTransitionPolicy.edge(for: .forward, phase: .removal), .trailing)
+        XCTAssertEqual(AppRouteTransitionPolicy.edge(for: .back, phase: .insertion), .leading)
+        XCTAssertEqual(AppRouteTransitionPolicy.edge(for: .back, phase: .removal), .trailing)
+    }
+
     func testBrowseCityHeroCardKeepsImageAndCopyAreasStable() {
         XCTAssertEqual(
             BrowsePageLayout.cityHeroImageHeight + BrowsePageLayout.cityHeroCopyAreaHeight,
@@ -2804,6 +2813,22 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(navigation.showsStaticBackButton)
     }
 
+    func testHomeCollectionBackAfterHomeTabReturnsHomeBeforeOlderDetailHistory() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openDetail("viet-family-airport-immigration")
+        navigation.openHome()
+        navigation.openHomeBrowseCollection(.city("danang"))
+
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.city("danang")))
+        XCTAssertEqual(navigation.backPreviewRoute, .home)
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .home)
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.city("danang"))])
+    }
+
     func testBrowseCollectionBackChainStillReturnsToBrowse() {
         var navigation = AppShellNavigationState()
 
@@ -2816,6 +2841,22 @@ final class AppChromeTests: XCTestCase {
         navigation.goBack()
         XCTAssertEqual(navigation.currentRoute, .browse)
         XCTAssertEqual(navigation.forwardStack, [.browseCollection(.city("danang"))])
+    }
+
+    func testBrowseCollectionBackAfterBrowseTabReturnsBrowseBeforeOlderDetailHistory() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openDetail("viet-family-airport-baggage")
+        navigation.openBrowse()
+        navigation.openBrowseCollection(.category("airport"))
+
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("airport")))
+        XCTAssertEqual(navigation.backPreviewRoute, .browse)
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .browse)
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("airport"))])
     }
 
     func testSavedDetourFromBrowseCollectionReturnsToCollection() {

@@ -10,6 +10,41 @@ Authority lane: latest durable native iOS validation evidence
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
 
+## Current Back Navigation Fix Evidence
+
+Current `feature/admin-photo-backdrop-polish` working-tree evidence from the 2026-05-31 back-navigation bug hunt, based on head `76f9a433b`:
+
+- root cause 1: collection back navigation could restore an older explicit detail-page snapshot immediately after popping a Home/Browse collection. This made flows like listing -> Home -> Da Nang -> Back land on the older listing instead of the visible Home/Browse parent.
+- root cause 2: button-driven back navigation reused the default trailing slide transition. Because hidden detail/collection pages are intentionally unmounted for thermal reasons until a swipe-back preview is active, the previous page was inserted as a new page from the right.
+- fix: collection pop now honors the visible parent route first; older explicit history remains behind that route instead of being restored immediately.
+- fix: button back/forward now sets a short-lived route transition direction so button back uses reverse slide edges while normal forward/default navigation keeps the existing trailing slide behavior.
+- preserved performance intent: the hidden back detail/collection pages still stay unmounted unless the back-swipe preview path asks for them.
+
+Fresh command evidence from this pass:
+
+- XcodeBuildMCP simulator focused stale-history red tests on iPhone 17 Pro
+  - failed before implementation: Home/Browse collection back landed on prior detail pages (`viet-phrase-airport-1`, `viet-phrase-airport-2`)
+  - passed after implementation: `2` tests, `0` failures
+- XcodeBuildMCP simulator focused transition policy red/green on iPhone 17 Pro
+  - failed before implementation because there was no explicit route-transition policy
+  - passed after implementation: `1` test, `0` failures
+- XcodeBuildMCP simulator focused navigation/transition sweep on iPhone 17 Pro
+  - passed: `15` tests, `0` failures
+  - covered Home/Browse collection back chains, search-backed collection history, forward-stack restoration, back-preview routing, hidden page render gating, long-history slicing, button back transition edges, and swipe presentation layers
+  - result bundle: `~/Library/Developer/XcodeBuildMCP/workspaces/admin-photo-backdrop-polish-345f0f53dadb/result-bundles/test_sim_2026-05-31T05-59-19-735Z_pid15747_0a8ed0fb.xcresult`
+- broader XcodeBuildMCP `AppChromeTests` sweep
+  - not clean: `226` passed, `4` failed
+  - failures are content/copy audit expectations outside the touched navigation files (`testEntityDetailPagesHideGeneratedPlaceTemplateRows`, `testV22CityPagesExposeProductionHeadingsAndPhraseCards`, `testVietnameseMenuDetailPagesUseHandwrittenSourceCopy`, `testVietnameseMenuGuideCopyAuditFindsNoMissingOrGenericGuideFields`)
+- local hygiene checks
+  - `git diff --check -- native-ios/App/Views/AppShellView.swift native-ios/Tests/AppChromeTests.swift` passed
+  - `node scripts/guard-native-only.js` passed
+  - signing scan found no repo-visible personal team/provisioning settings in `native-ios/project.yml` or `native-ios/SpeakLocalNative.xcodeproj/project.pbxproj`
+- Physical iPhone Debug build/install from current `feature/admin-photo-backdrop-polish` working tree
+  - build passed
+  - install passed
+  - launch was blocked because iOS reported the phone was locked
+  - post-build signing scan stayed clean; personal signing remained local and was not written to repo files
+
 ## Current Admin Photo Backdrop Thermal Evidence
 
 Current `feature/admin-photo-backdrop-polish` evidence from the 2026-05-30 listing-navigation thermal pass:
