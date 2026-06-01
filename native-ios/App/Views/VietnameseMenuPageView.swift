@@ -1051,7 +1051,7 @@ private struct VietnameseMenuSectionBlock: View {
                 }
             }
 
-            VStack(spacing: 0) {
+            LazyVStack(spacing: 0) {
                 ForEach(section.items) { item in
                     VietnameseMenuItemRow(
                         item: item,

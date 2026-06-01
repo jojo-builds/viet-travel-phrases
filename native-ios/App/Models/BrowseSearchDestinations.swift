@@ -882,16 +882,29 @@ enum BrowseSearchDestinations {
     }
 
     static func searchResults(for query: String, limit: Int) -> [BrowseSearchPhraseItem] {
+        guard limit > 0 else {
+            return []
+        }
+
         let rawResults = PhraseSearchIndex.search(query, limit: max(limit * 3, limit))
         let allowsDerivedPlacePhrases = allowsDerivedPlacePhraseSearchResults(for: query)
         let filteredResults = rawResults.filter { result in
             allowsDerivedPlacePhrases || !isDerivedPlacePhrase(pageID: result.pageID)
         }
         let results = filteredResults.isEmpty ? rawResults : filteredResults
-
-        return results
+        let phraseItems = results
             .prefix(limit)
             .map(BrowseSearchPhraseItem.fromSearchResult)
+
+        let menuCandidates = menuSearchCandidates(for: query, limit: max(limit * 2, limit))
+        let promotedMenuItems = menuCandidates
+            .filter { $0.score >= promotedMenuSearchScore }
+            .map(\.phraseItem)
+        let secondaryMenuItems = menuCandidates
+            .filter { $0.score < promotedMenuSearchScore }
+            .map(\.phraseItem)
+
+        return uniqueSearchItems(promotedMenuItems + phraseItems + secondaryMenuItems, limit: limit)
     }
 
     static func collectionDescriptor(for route: BrowseCollectionRoute) -> BrowseCollectionDescriptor? {
@@ -989,6 +1002,181 @@ enum BrowseSearchDestinations {
             .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
             .lowercased()
             .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private struct MenuSearchCandidate {
+        let item: VietnameseMenuItem
+        let kind: VietnameseMenuKind
+        let score: Int
+
+        var phraseItem: BrowseSearchPhraseItem {
+            var phraseItem = VietnameseMenuCatalog.phraseItem(for: item)
+            phraseItem.imageName = item.menuImageName
+            return phraseItem
+        }
+    }
+
+    private static let promotedMenuSearchScore = 800
+
+    private static func menuSearchCandidates(for query: String, limit: Int) -> [MenuSearchCandidate] {
+        let normalizedQuery = searchNormalized(query)
+        guard !normalizedQuery.isEmpty else {
+            return []
+        }
+
+        let tokens = searchTokens(in: normalizedQuery)
+        guard !tokens.isEmpty else {
+            return []
+        }
+
+        return VietnameseMenuCatalog.allItems
+            .compactMap { item -> MenuSearchCandidate? in
+                guard let kind = item.kind else {
+                    return nil
+                }
+
+                let score = menuSearchScore(item: item, normalizedQuery: normalizedQuery, tokens: tokens)
+                guard score > 0 else {
+                    return nil
+                }
+
+                return MenuSearchCandidate(item: item, kind: kind, score: score)
+            }
+            .sorted(by: menuSearchSort)
+            .prefix(limit)
+            .map { $0 }
+    }
+
+    private static func menuSearchScore(
+        item: VietnameseMenuItem,
+        normalizedQuery: String,
+        tokens: [String]
+    ) -> Int {
+        let title = searchNormalized(item.vietnameseItem)
+        let romanized = searchNormalized(item.romanizedNoTones)
+        let english = searchNormalized(item.englishTranslation)
+        let pronunciation = searchNormalized(item.soundOut)
+        let identityHaystack = [title, romanized, english, pronunciation]
+            .filter { !$0.isEmpty }
+            .joined(separator: " ")
+        let fullHaystack = searchNormalized(
+            [
+                item.vietnameseItem,
+                item.englishTranslation,
+                item.romanizedNoTones,
+                item.soundOut,
+                item.category,
+                item.subcategory,
+                item.notes,
+                item.atAGlance,
+                item.whatItIs ?? "",
+                item.goodToKnow,
+                item.quickSayVietnamese,
+                item.quickSayEnglish,
+                item.commonOptions.joined(separator: " "),
+                item.usuallyIncludes.joined(separator: " "),
+            ].joined(separator: " ")
+        )
+
+        var score = 0
+
+        if title == normalizedQuery {
+            score = max(score, 1_000)
+        }
+        if romanized == normalizedQuery {
+            score = max(score, 980)
+        }
+        if english == normalizedQuery {
+            score = max(score, 940)
+        }
+        if pronunciation == normalizedQuery {
+            score = max(score, 920)
+        }
+
+        if title.hasPrefix(normalizedQuery) {
+            score = max(score, 900)
+        }
+        if romanized.hasPrefix(normalizedQuery) {
+            score = max(score, 880)
+        }
+        if english.hasPrefix(normalizedQuery) {
+            score = max(score, tokens.count > 1 ? 850 : 560)
+        }
+
+        if title.contains(normalizedQuery) {
+            score = max(score, 860)
+        }
+        if romanized.contains(normalizedQuery) {
+            score = max(score, 840)
+        }
+        if english.contains(normalizedQuery) {
+            score = max(score, tokens.count > 1 ? 820 : 520)
+        }
+
+        if tokens.count > 1, SearchTextMatcher.matchesAllTokens(tokens, in: identityHaystack) {
+            score = max(score, 780)
+        }
+        if SearchTextMatcher.matchesAllTokens(tokens, in: fullHaystack) {
+            score = max(score, tokens.count > 1 ? 520 : 180)
+        }
+
+        return score
+    }
+
+    private static func menuSearchSort(_ lhs: MenuSearchCandidate, _ rhs: MenuSearchCandidate) -> Bool {
+        if lhs.score != rhs.score {
+            return lhs.score > rhs.score
+        }
+
+        if lhs.item.popular != rhs.item.popular {
+            return lhs.item.popular && !rhs.item.popular
+        }
+
+        if lhs.kind != rhs.kind {
+            return lhs.kind == .drink
+        }
+
+        let titleComparison = lhs.item.vietnameseItem.localizedCaseInsensitiveCompare(rhs.item.vietnameseItem)
+        if titleComparison != .orderedSame {
+            return titleComparison == .orderedAscending
+        }
+
+        return lhs.item.detailPageID < rhs.item.detailPageID
+    }
+
+    private static func uniqueSearchItems(_ items: [BrowseSearchPhraseItem], limit: Int) -> [BrowseSearchPhraseItem] {
+        var seen = Set<String>()
+        var uniqueItems: [BrowseSearchPhraseItem] = []
+
+        for item in items {
+            guard seen.insert(item.pageID).inserted else {
+                continue
+            }
+
+            uniqueItems.append(item)
+            if uniqueItems.count >= limit {
+                return uniqueItems
+            }
+        }
+
+        return uniqueItems
+    }
+
+    private static func searchNormalized(_ text: String) -> String {
+        let folded = text
+            .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+            .lowercased()
+        let searchable = folded.unicodeScalars
+            .map { CharacterSet.alphanumerics.contains($0) ? String($0) : " " }
+            .joined()
+
+        return searchTokens(in: searchable).joined(separator: " ")
+    }
+
+    private static func searchTokens(in text: String) -> [String] {
+        text
+            .split(separator: " ")
+            .map(String.init)
     }
 
     private static var collectionDescriptorCache: [BrowseCollectionRoute: BrowseCollectionDescriptor] = [:]

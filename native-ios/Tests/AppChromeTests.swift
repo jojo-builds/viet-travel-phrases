@@ -859,6 +859,20 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testVietnameseMenuSectionsAreCachedForRepeatedSelectorAccess() {
+        VietnameseMenuCatalog.resetSectionBuildCountsForTesting()
+
+        for _ in 0..<20 {
+            XCTAssertFalse(VietnameseMenuCatalog.sections(for: .food).isEmpty)
+        }
+
+        XCTAssertLessThanOrEqual(
+            VietnameseMenuCatalog.sectionBuildCountForTesting(.food),
+            1,
+            "Top selector updates should not rebuild the grouped Food Menu sections on every access."
+        )
+    }
+
     func testVietnameseMenuSectionJumpPolicyUsesImmediateScroll() {
         XCTAssertEqual(VietnameseMenuSectionJumpPolicy.delayNanoseconds, 0)
         XCTAssertFalse(VietnameseMenuSectionJumpPolicy.usesAnimatedScroll)

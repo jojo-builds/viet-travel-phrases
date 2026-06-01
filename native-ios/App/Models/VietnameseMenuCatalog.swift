@@ -312,11 +312,32 @@ enum VietnameseMenuCatalog {
     private static let helperPhrasesByID = Dictionary(uniqueKeysWithValues: helperPhrases.map { ($0.id, $0) })
     private static let itemsByID = Dictionary(uniqueKeysWithValues: allItems.map { ($0.itemID, $0) })
     private static let itemsByDetailPageID = Dictionary(uniqueKeysWithValues: allItems.map { ($0.detailPageID, $0) })
+    private static let itemsByKind: [VietnameseMenuKind: [VietnameseMenuItem]] = Dictionary(
+        uniqueKeysWithValues: VietnameseMenuKind.allCases.map { kind in
+            (kind, allItems.filter { $0.kind == kind })
+        }
+    )
+    private static let categoriesByKind: [VietnameseMenuKind: [VietnameseMenuCategory]] = Dictionary(
+        uniqueKeysWithValues: VietnameseMenuKind.allCases.map { kind in
+            (kind, buildCategories(for: kind))
+        }
+    )
+    private static let popularItemsByKind: [VietnameseMenuKind: [VietnameseMenuItem]] = Dictionary(
+        uniqueKeysWithValues: VietnameseMenuKind.allCases.map { kind in
+            (kind, (itemsByKind[kind] ?? []).filter(\.popular))
+        }
+    )
+    private static let sectionsByKind: [VietnameseMenuKind: [VietnameseMenuSection]] = Dictionary(
+        uniqueKeysWithValues: VietnameseMenuKind.allCases.map { kind in
+            (kind, buildSections(for: kind))
+        }
+    )
     static var indexedItemCountForTesting: Int { itemsByID.count }
 
 #if DEBUG
     private static let itemLookupCountLock = NSLock()
     private static var itemLookupCount = 0
+    private static var sectionBuildCountsForTesting: [VietnameseMenuKind: Int] = [:]
 
     static var itemLookupCountForTesting: Int {
         itemLookupCountLock.lock()
@@ -335,6 +356,18 @@ enum VietnameseMenuCatalog {
         itemLookupCount += 1
         itemLookupCountLock.unlock()
     }
+
+    static func resetSectionBuildCountsForTesting() {
+        sectionBuildCountsForTesting = [:]
+    }
+
+    static func sectionBuildCountForTesting(_ kind: VietnameseMenuKind) -> Int {
+        sectionBuildCountsForTesting[kind, default: 0]
+    }
+
+    private static func recordSectionBuildForTesting(_ kind: VietnameseMenuKind) {
+        sectionBuildCountsForTesting[kind, default: 0] += 1
+    }
 #endif
 
     static func kind(for route: BrowseCollectionRoute) -> VietnameseMenuKind? {
@@ -346,7 +379,7 @@ enum VietnameseMenuCatalog {
     }
 
     static func items(for kind: VietnameseMenuKind) -> [VietnameseMenuItem] {
-        allItems.filter { $0.kind == kind }
+        itemsByKind[kind] ?? []
     }
 
     static func item(withID itemID: String) -> VietnameseMenuItem? {
@@ -357,6 +390,10 @@ enum VietnameseMenuCatalog {
     }
 
     static func categories(for kind: VietnameseMenuKind) -> [VietnameseMenuCategory] {
+        categoriesByKind[kind] ?? []
+    }
+
+    private static func buildCategories(for kind: VietnameseMenuKind) -> [VietnameseMenuCategory] {
         let rowsByCategory = Dictionary(grouping: items(for: kind)) { item in
             presentationCategoryTitle(for: item, kind: kind)
         }
@@ -390,18 +427,27 @@ enum VietnameseMenuCatalog {
     }
 
     static func popularItems(for kind: VietnameseMenuKind, limit: Int = 5) -> [VietnameseMenuItem] {
-        Array(items(for: kind).filter(\.popular).prefix(limit))
+        Array((popularItemsByKind[kind] ?? []).prefix(limit))
     }
 
     static func sections(for kind: VietnameseMenuKind) -> [VietnameseMenuSection] {
+        sectionsByKind[kind] ?? []
+    }
+
+    private static func buildSections(for kind: VietnameseMenuKind) -> [VietnameseMenuSection] {
+#if DEBUG
+        recordSectionBuildForTesting(kind)
+#endif
+
+        let popularItems = popularItems(for: kind, limit: 5)
         let popular = VietnameseMenuSection(
             id: "popular",
             title: kind.popularTitle,
             subtitle: "Traveler favorites",
             symbolName: "star.fill",
             tintName: .orange,
-            featuredImageName: popularItems(for: kind, limit: 1).first?.menuImageName ?? kind.heroImageName,
-            items: popularItems(for: kind, limit: 5),
+            featuredImageName: popularItems.first?.menuImageName ?? kind.heroImageName,
+            items: popularItems,
             isPopular: true
         )
 
