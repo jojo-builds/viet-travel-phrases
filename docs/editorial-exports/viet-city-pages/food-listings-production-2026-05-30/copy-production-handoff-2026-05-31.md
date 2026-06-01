@@ -242,3 +242,16 @@ Twelfth proof / humanization batch, 2026-06-01:
 - Added current-text rendered proof `missing-pages-humanized-rerun-002-results.jsonl`: `18` edited Hanoi pages, `54` screenshots, `0` failures.
 - Combined latest-current rendered proof is now `333` unique pages, `999` screenshots, `0` current failures.
 - Global status remains not complete: `187` V2.2 pages still need current rendered proof unless the standard is amended.
+
+Thirteenth proof / humanization batch, 2026-06-01:
+
+- Continued the literal V2.2 screenshot gate with the next `40` unproved manifest pages: the final Hanoi proof gap plus the opening Saigon band.
+- Added rendered proof `missing-pages-proof-003-results.jsonl`: `40` previously unrendered pages, `120` screenshots, `0` failures.
+- Human-read the rendered slice against the first-time U.S. traveler rule from the screenshot feedback: no unexplained award/guide jargon, no insider shorthand, no abstract `carry` / `draw` / `spine` copy where concrete food, route, or room language is clearer.
+- Repaired authored V2.2 source in `hanoi.json` and `hcmc.json`, including Thống Nhất Park, Trúc Bạch Lake, Turtle Tower, Ưu Đàm, Vietnam Art Gallery, Vietnam Fine Arts Museum, Military History Museum, Water Puppet Theatre, Yên Sở Park, Bò Kho Gánh, bò lá lốt, Bún Bò Huế 14B, bún thịt nướng, City Hall, Cơm Tấm Ba Ghiền, Cộng Cà Phê Đồng Khởi, Cục Gạch Quán, Đồng Khởi walk/street, Fine Arts Museum, History Museum, and Ho Chi Minh City Museum.
+- Repaired phrase-card fit in the same slice: Water Puppet Theatre now uses `What time does it start?` instead of closing time, and City Hall now uses directions instead of `One ticket, please`.
+- Regenerated V2.2 handwritten copy, native authored listing pages, phrase catalog, and SQLite.
+- Current validators pass again: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Added current-text rendered proof `missing-pages-humanized-rerun-003-results.jsonl`: `23` edited pages, `69` screenshots, `0` failures.
+- Combined latest-current rendered proof is now `373` unique pages, `1119` latest-current screenshots, `0` current failures.
+- Global status remains not complete: `147` V2.2 pages still need current rendered proof unless the standard is amended.

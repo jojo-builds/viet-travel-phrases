@@ -91,7 +91,12 @@ Category-balanced batch:
   - Scope: Hanoi restaurants, drink, neighborhoods, attractions, stations, landmarks, nature, markets, dishes, cafes, museum, and park pages, including the phở cluster, French Quarter, Old Quarter, coffee pages, and Ba Đình/temple landmarks.
   - Text review after this batch found validating-but-stiff copy: `carry the visit`, `draw`, `register`, `spine`, and the grammar error `A Eel-Noodle Bowl`. Those were repaired in authored V2.2 source and regenerated.
   - `missing-pages-humanized-rerun-002-results.jsonl`: `18` edited Hanoi pages rerun after copy repair, `54` screenshots, `0` failures.
-- Combined latest-current proof across the maintained result files is `333` unique pages, `999` screenshots, and `0` current failures. Total historical proof rows in this folder include `502` rows and `1506` screenshots, but the current count uses the latest passing row for each page.
+- Missing-pages proof 003:
+  - `missing-pages-proof-003-results.jsonl`: `40` previously unrendered pages, `120` screenshots, `0` failures.
+  - Scope: the final Hanoi proof gap plus the opening Saigon missing-page band, including Hanoi park, pagoda, lake, landmark, gallery, museum, theatre, market, street, and dish pages; then Saigon restaurant, market, dish, cafe, landmark, tunnel, museum, street, and central walk pages.
+  - Text review after this batch found phone-readable but still too internal wording: `carry`, `draw`, `spine`, stiff casing, and two mismatched phrase cards. Those were repaired in authored V2.2 source and regenerated.
+  - `missing-pages-humanized-rerun-003-results.jsonl`: `23` edited pages rerun after copy repair, `69` screenshots, `0` failures.
+- Combined latest-current proof across the maintained result files is `373` unique pages, `1119` latest-current screenshots, and `0` current failures. Total historical proof rows in this folder include `565` rows and `1695` screenshots, but the current count uses the latest passing row for each page.
 
 This is a meaningful rendered proof expansion, not the final 520-page receipt. The final gate still needs either all `520` pages captured by this harness or an explicit approval-standard amendment accepting full source/runtime review plus category-balanced rendered proof.
 
@@ -120,19 +125,18 @@ Category coverage in manifest:
 
 Remaining current proof gap after the latest recompute:
 
-- total missing: `187`
-- attraction: `23`
-- cafe: `14`
-- dish: `19`
-- drink: `1`
-- landmark: `37`
-- market: `16`
-- museum: `18`
-- nature: `9`
-- neighborhood: `10`
-- park: `4`
-- restaurant: `21`
+- total missing: `147`
+- attraction: `20`
+- cafe: `12`
+- dish: `12`
+- landmark: `33`
+- market: `13`
+- museum: `11`
+- nature: `7`
+- neighborhood: `9`
+- park: `2`
+- restaurant: `13`
 - river: `1`
 - station: `3`
-- street: `11`
+- street: `10`
 - village: `1`

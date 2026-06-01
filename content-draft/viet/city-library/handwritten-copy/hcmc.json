@@ -245,7 +245,7 @@
           "title": "Useful Phrases",
           "body": "",
           "phraseIDs": [
-            "v500-time-date-book-one-ticket-please",
+            "directions-1",
             "directions-8",
             "v900-tran-where-can-i-buy-a-ticket"
           ]
@@ -728,7 +728,7 @@
         {
           "id": "at-glance",
           "title": "A Beef-Stew Bowl",
-          "body": "Bò Kho Gánh is a Saigon street-food stop for bò kho: hot beef stew, bread or noodles nearby, herbs, sauce, and a bowl that can carry the meal."
+          "body": "Bò Kho Gánh is a Saigon street-food stop for bò kho: hot beef stew, bread or noodles nearby, herbs, sauce, and one bowl as the meal."
         },
         {
           "id": "quick-say",
@@ -928,7 +928,7 @@
         {
           "id": "when-to-use",
           "title": "Hue Flavor In Saigon",
-          "body": "The bowl carries Hue-style depth into a Saigon lunch: lemongrass, chili, beef, tendon, herbs, and lime. Order it when the day wants heat and broth, not another gentle noodle stop."
+          "body": "The bowl brings Hue-style depth into a Saigon lunch: lemongrass, chili, beef, tendon, herbs, and lime. Order it when the day wants heat and broth, not another gentle noodle stop."
         },
         {
           "id": "good-to-know",
@@ -1075,10 +1075,10 @@
     },
     {
       "pageID": "city-hcmc-place-bun-thit-nuong",
-      "summary": "The dish is a good first bowl: noodles, pork, herbs, peanuts, pickles or vegetables, and sauce added to taste. This bowl carries a casual Saigon lunch memory: sweetness, smoke, herbs, sauce, and a low-pressure ordering moment.",
+      "summary": "The dish is a good first bowl: noodles, pork, herbs, peanuts, pickles or vegetables, and sauce added to taste. This bowl gives Saigon lunch a casual memory: sweetness, smoke, herbs, sauce, and a low-pressure ordering moment.",
       "context": "The dish is a good first bowl: noodles, pork, herbs, peanuts, pickles or vegetables, and sauce added to taste.",
       "tip": "The English name can sound broad, but the classic bowl usually centers grilled pork. Pork-free eating needs a check before ordering.",
-      "rationale": "This bowl carries a casual Saigon lunch memory: sweetness, smoke, herbs, sauce, and a low-pressure ordering moment.",
+      "rationale": "This bowl gives Saigon lunch a casual memory: sweetness, smoke, herbs, sauce, and a low-pressure ordering moment.",
       "sections": [
         {
           "id": "at-glance",
@@ -1098,7 +1098,7 @@
         {
           "id": "place-brief",
           "title": "Smoke Over Cool Noodles",
-          "body": "The contrast is the draw: warm grilled pork over cool noodles, fresh herbs against sweet-savory sauce, peanuts for crunch."
+          "body": "The pleasure is the contrast: warm grilled pork over cool noodles, fresh herbs against sweet-savory sauce, peanuts for crunch."
         },
         {
           "id": "use-it-with",
@@ -1657,12 +1657,12 @@
       "pageID": "city-hcmc-place-com-tam-ba-ghien",
       "summary": "Choose Ba Ghiền for Saigon cơm tấm one focused plate: grilled pork chop, broken rice, egg, pickles, fish sauce, and shop pace. Ba Ghiền gives broken rice a named stop because the plate is direct: pork chop first, rice underneath, sauce and pickles doing the lift.",
       "context": "Choose Ba Ghiền for Saigon cơm tấm one focused plate: grilled pork chop, broken rice, egg, pickles, fish sauce, and shop pace.",
-      "tip": "Fish sauce brings the plate together, but pour gradually. The pork, rice, pickles, and egg already carry plenty of flavor.",
+      "tip": "Fish sauce brings the plate together, but pour gradually. The pork, rice, pickles, and egg already bring plenty of flavor.",
       "rationale": "Ba Ghiền gives broken rice a named stop because the plate is direct: pork chop first, rice underneath, sauce and pickles doing the lift.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "The Pork Chop is the draw",
+          "title": "The Pork Chop Leads",
           "body": "Com Tam Ba Ghien is a broken-rice stop for a big grilled pork chop, egg, pickles, fish sauce, and a meal without a long menu debate."
         },
         {
@@ -1693,7 +1693,7 @@
         {
           "id": "good-to-know",
           "title": "Sauce On Your Terms",
-          "body": "Fish sauce brings the plate together, but pour gradually. The pork, rice, pickles, and egg already carry plenty of flavor."
+          "body": "Fish sauce brings the plate together, but pour gradually. The pork, rice, pickles, and egg already bring plenty of flavor."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1702,7 +1702,7 @@
       "pageID": "city-hcmc-place-cong-ca-phe-dong-khoi",
       "summary": "The branch fits as a District 1 cool-down: iced coffee, design details, cafe views, and a break between river, shops, and landmarks.",
       "context": "The branch fits as a District 1 cool-down: iced coffee, design details, cafe views, and a break between river, shops, and landmarks.",
-      "tip": "Convenience and a recognizable room on Dong Khoi are the draw. It does not need to pretend to be hidden or rare.",
+      "tip": "The point is convenience: a recognizable room on Dong Khoi when you want a cool, familiar coffee break.",
       "rationale": "Retro styling, coconut coffee, and the Dong Khoi location give this branch a clearer memory than a generic cafe stop.",
       "sections": [
         {
@@ -1738,7 +1738,7 @@
         {
           "id": "good-to-know",
           "title": "A Familiar Branch",
-          "body": "Convenience and a recognizable room on Dong Khoi are the draw. It does not need to pretend to be hidden or rare."
+          "body": "The point is convenience: a recognizable room on Dong Khoi when you want a cool, familiar coffee break."
         }
       ],
       "sourceMode": "expanded-detail"
@@ -1835,15 +1835,15 @@
     },
     {
       "pageID": "city-hcmc-place-cuc-gach-quan",
-      "summary": "Choose Cục Gạch Quán when Saigon dinner should slow down around a old-house table: shared dishes, tiled floors, vegetables, fish, soup, and room pace.",
-      "context": "Choose Cục Gạch Quán when Saigon dinner should slow down around a old-house table: shared dishes, tiled floors, vegetables, fish, soup, and room pace.",
+      "summary": "Choose Cục Gạch Quán when Saigon dinner should slow down around an old-house table: shared dishes, tiled floors, vegetables, fish, soup, and room pace.",
+      "context": "Choose Cục Gạch Quán when Saigon dinner should slow down around an old-house table: shared dishes, tiled floors, vegetables, fish, soup, and room pace.",
       "tip": "Remember the old-house rooms, family-style meal, and softer dinner mood. The table still has to fit the night.",
       "rationale": "Cục Gạch Quán matters because the food and room move together: family-style Vietnamese dishes inside an old-house setting instead of another quick central meal.",
       "sections": [
         {
           "id": "at-glance",
           "title": "Old House, Shared Table",
-          "body": "Cuc Gach Quan is a old-house restaurant for a slower Saigon table: shared Vietnamese dishes, tiled floors, vegetables, fish, soup, and a room set apart from traffic."
+          "body": "Cuc Gach Quan is an old-house restaurant for a slower Saigon table: shared Vietnamese dishes, tiled floors, vegetables, fish, soup, and a room set apart from traffic."
         },
         {
           "id": "quick-say",
@@ -1857,7 +1857,7 @@
         },
         {
           "id": "place-brief",
-          "title": "The Room Carries The Meal",
+          "title": "The Room Shapes The Meal",
           "body": "The old house matters here. Shared dishes, worn details, and an unhurried table make the meal land differently from a quick central bite."
         },
         {
@@ -1972,8 +1972,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Landmark Spine",
-          "body": "The Dong Khoi landmark walk gives District 1 a simple line: cathedral and post office area, Opera House, old hotel facades, shops, and the river edge."
+          "title": "A Simple Landmark Walk",
+          "body": "The Dong Khoi landmark walk gives District 1 a simple line to follow: cathedral and post office area, Opera House, old hotel facades, shops, and the river edge."
         },
         {
           "id": "quick-say",
@@ -2010,15 +2010,15 @@
     },
     {
       "pageID": "city-hcmc-place-dong-khoi-street",
-      "summary": "Đồng Khởi helps District 1 feel clear when you walk it as a short landmark spine with traffic, shops, hotels, and riverward movement.",
-      "context": "Đồng Khởi helps District 1 feel clear when you walk it as a short landmark spine with traffic, shops, hotels, and riverward movement.",
+      "summary": "Đồng Khởi helps District 1 feel clear when you walk it as a short landmark route with traffic, shops, hotels, and riverward movement.",
+      "context": "Đồng Khởi helps District 1 feel clear when you walk it as a short landmark route with traffic, shops, hotels, and riverward movement.",
       "tip": "Morning helps if buildings matter more than shopping. Later heat and traffic can make the street read like one more central corridor.",
       "rationale": "The street connects several first Saigon landmarks in one mental map: post office, cathedral area, Opera House, hotel facades, shops, and river edge.",
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Short Spine Toward The River",
-          "body": "Đồng Khởi is the compact District 1 spine from the cathedral and post office area toward the Opera House, old hotel facades, shops, traffic, and river."
+          "title": "A Short Walk Toward The River",
+          "body": "Đồng Khởi is the compact District 1 route from the cathedral and post office area toward the Opera House, old hotel facades, shops, traffic, and river."
         },
         {
           "id": "quick-say",
@@ -2082,7 +2082,7 @@
         },
         {
           "id": "when-to-use",
-          "title": "A Few Rooms Can Carry It",
+          "title": "Choose A Few Rooms",
           "body": "Do not pressure the visit into a full art survey. A courtyard rest and a few rooms can still make the visit worthwhile."
         },
         {
@@ -2298,7 +2298,7 @@
         {
           "id": "place-brief",
           "title": "Objects Before Exhaustion",
-          "body": "A few strong rooms can carry the visit. Let repeated objects, materials, and timelines guide the visit without studying every label."
+          "body": "A few strong rooms can be enough. Let repeated objects, materials, and timelines guide the visit without studying every label."
         },
         {
           "id": "use-it-with",
@@ -2322,7 +2322,7 @@
       "pageID": "city-hcmc-place-ho-chi-minh-city-museum",
       "summary": "The museum adds a city-history room to central Saigon: old building, garden grounds, artifacts, gallery rooms, and a break from street movement.",
       "context": "The museum adds a city-history room to central Saigon: old building, garden grounds, artifacts, gallery rooms, and a break from street movement.",
-      "tip": "The old building, garden edges, and city-history rooms carry the visit even when the visit stays short.",
+      "tip": "The old building, garden edges, and city-history rooms still make the visit feel complete when it stays short.",
       "rationale": "The museum matters because the old building, garden, and displays make central Saigon feel older without leaving District 1.",
       "sections": [
         {
@@ -2358,7 +2358,7 @@
         {
           "id": "good-to-know",
           "title": "Old Building, City Context",
-          "body": "The old building, garden edges, and city-history rooms carry the visit even when the visit stays short."
+          "body": "The old building, garden edges, and city-history rooms still make the visit feel complete when it stays short."
         }
       ],
       "sourceMode": "expanded-detail"

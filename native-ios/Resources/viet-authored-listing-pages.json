@@ -10,7 +10,7 @@
     "catalogPromotedPageCount": 770,
     "cityLibraryPageCount": 826,
     "editorialSupportPageCount": 24,
-    "generatedAt": "2026-06-01T00:05:12.672Z"
+    "generatedAt": "2026-06-01T00:32:08.612Z"
   },
   "pages": [
     {
@@ -223514,7 +223514,7 @@
         },
         {
           "id": "use-it-with",
-          "title": "A Short Lap Can Carry It",
+          "title": "A Short Lap Is Enough",
           "body": "Pick a path and make one loop or partial loop. Use the park as breathing room rather than a long mission.",
           "phrases": [],
           "breakdown": [],
@@ -223753,7 +223753,7 @@
       "title": "Chùa Trấn Quốc",
       "englishTitle": "Tran Quoc Pagoda",
       "pronunciation": "choo-ah tran quoc",
-      "summary": "Trấn Quốc Pagoda carries old Buddhist memory on the West Lake edge, with water, road noise, temple gates, and a red tower held in one view.",
+      "summary": "Trấn Quốc Pagoda holds old Buddhist memory on the West Lake edge, with water, road noise, temple gates, and a red tower in one view.",
       "heroImageName": "HeroCityHanoiPlaceTranQuocPagoda",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -224525,14 +224525,14 @@
         {
           "id": "place-brief",
           "title": "A Short Edge Is Enough",
-          "body": "A short lake-edge walk can carry the mood: water, shade, scooters, small tables, and the city softening around the view.",
+          "body": "A short lake-edge walk is the point: water, shade, scooters, small tables, and the city softening around the view.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
         },
         {
           "id": "use-it-with",
-          "title": "Cafes sit in The Scene",
+          "title": "Cafes Sit In The Scene",
           "body": "A lakeside cafe is part of the place: traffic, water, and small tables sitting close together here.",
           "phrases": [],
           "breakdown": [],
@@ -224541,7 +224541,7 @@
         {
           "id": "when-to-use",
           "title": "A Smaller Water Edge",
-          "body": "Truc Bach fits days when West Lake feels too broad. A short edge, a cafe table, and water close to the curb can carry the whole stop.",
+          "body": "Truc Bach fits days when West Lake feels too broad. A short edge, a cafe table, and water close to the curb can be the whole stop.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -224608,7 +224608,7 @@
       "title": "Tháp Rùa",
       "englishTitle": "Turtle Tower",
       "pronunciation": "thap rua",
-      "summary": "Turtle Tower carries Hoàn Kiếm's legend in miniature, centering the lake from a distance while walkers, trees, and reflections move around it.",
+      "summary": "Turtle Tower gives Hoàn Kiếm's legend a small silhouette, centering the lake from a distance while walkers, trees, and reflections move around it.",
       "heroImageName": "HeroCityHanoiPlaceTurtleTower",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -224704,7 +224704,7 @@
         {
           "id": "use-it-with",
           "title": "Legend Without A Lecture",
-          "body": "The full story can wait. Tower, lake, reflections, trees, and old streets already carry enough memory for a first look.",
+          "body": "The full story can wait. Start with the tower, lake, reflections, trees, and old streets before reading deeper.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -224712,7 +224712,7 @@
         {
           "id": "when-to-use",
           "title": "From The Shore",
-          "body": "The tower is a looking moment rather than a place to enter. Reflections, trees, and the chosen lake edge carry it.",
+          "body": "The tower is a looking moment rather than a place to enter. Choose the lake edge for the angle you want.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -225050,7 +225050,7 @@
         {
           "id": "use-it-with",
           "title": "Vegetarian Still Has Weight",
-          "body": "The table can be generous without meat: tofu, mushrooms, rice, herbs, and warm sauces carry the weight. Check spice before assuming gentleness.",
+          "body": "The table can be generous without meat: tofu, mushrooms, rice, herbs, and warm sauces doing the work. Check spice before assuming gentleness.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -225221,7 +225221,7 @@
         {
           "id": "use-it-with",
           "title": "Materials And Light",
-          "body": "Keep it lighter than a museum block. A cafe nearby or a short walk can carry the city back in.",
+          "body": "Keep it lighter than a museum block. A cafe nearby or a short walk brings the city back in.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -225358,14 +225358,14 @@
               "audioKey": "v500-sigh-acti-where-can-i-buy-tickets"
             },
             {
-              "id": "sight-4",
-              "vietnamese": "Mấy giờ đóng cửa?",
-              "english": "What time does it close?",
-              "pronunciation": "may zyuh dong koo-ah",
+              "id": "v900-time-date-book-what-time-does-it-start",
+              "vietnamese": "Nó bắt đầu lúc mấy giờ?",
+              "english": "What time does it start?",
+              "pronunciation": "No bat dau luc may gio",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-sight-close",
-              "audioKey": "sight-4"
+              "detailPageID": "viet-family-v900-time-date-book-what-time-does-it-start",
+              "audioKey": "v900-time-date-book-what-time-does-it-start"
             },
             {
               "id": "sight-5",
@@ -225434,7 +225434,7 @@
               "v500-sigh-acti-where-can-i-buy-tickets"
             ],
             "supportPhraseIDs": [
-              "sight-4",
+              "v900-time-date-book-what-time-does-it-start",
               "sight-5"
             ]
           }
@@ -225444,7 +225444,7 @@
           "v500-sigh-acti-where-can-i-buy-tickets"
         ],
         "secondaryPracticePhraseIDs": [
-          "sight-4",
+          "v900-time-date-book-what-time-does-it-start",
           "sight-5"
         ],
         "practiceSourcePageID": "viet-family-city-hanoi-place-vietnam-circus"
@@ -225459,7 +225459,7 @@
       "title": "Bảo tàng Mỹ thuật Việt Nam",
       "englishTitle": "Vietnam Fine Arts Museum",
       "pronunciation": "bao tang my thuat viet nam",
-      "summary": "The Fine Arts Museum carries Vietnam's visual history inside a yellow Hanoi building, with courtyards and galleries that reward a slower route.",
+      "summary": "The Fine Arts Museum puts Vietnam's visual history inside a yellow Hanoi building, with courtyards and galleries that reward a slower route.",
       "heroImageName": "HeroCityHanoiPlaceVietnamFineArtsMuseum",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -225671,7 +225671,7 @@
         {
           "id": "at-glance",
           "title": "Outdoor Scale, Then Galleries",
-          "body": "Start with the outdoor display: heavy objects in open air, the Flag Tower behind them, then interior rooms carrying harder context.",
+          "body": "Start with the outdoor display: heavy objects in open air, the Flag Tower behind them, then interior rooms with harder context.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -225718,7 +225718,7 @@
         {
           "id": "place-brief",
           "title": "Outdoor Scale Sets The Visit",
-          "body": "The Flag Tower and outdoor display give the history physical scale before smaller displays. Let that view register before the indoor rooms.",
+          "body": "The Flag Tower and outdoor display give the history physical scale before smaller displays. Take in that view before the indoor rooms.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -225726,7 +225726,7 @@
         {
           "id": "use-it-with",
           "title": "Inside Needs A Slower Pace",
-          "body": "The rooms carry more weight than the exterior suggests. Choose one period or theme rather than forcing a complete history lesson.",
+          "body": "The rooms feel heavier than the exterior suggests. Choose one period or theme rather than forcing a complete history lesson.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -226067,7 +226067,7 @@
         },
         {
           "id": "use-it-with",
-          "title": "Music Carries The Pulse",
+          "title": "Music Sets The Pulse",
           "body": "The puppets are the image people remember, but drums, voices, and water sounds give the show its pulse.",
           "phrases": [],
           "breakdown": [],
@@ -226084,7 +226084,7 @@
         {
           "id": "good-to-know",
           "title": "Photos Can Wait",
-          "body": "A phone screen breaks the room quickly. Puppets, drums, voices, and water sounds should carry the memory.",
+          "body": "A phone screen breaks the room quickly. Let the puppets, drums, voices, and water sounds stay in front of you.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -227080,7 +227080,7 @@
         {
           "id": "place-brief",
           "title": "Space Over Landmark",
-          "body": "The draw is room to breathe: grass, paths, water, and everyday movement around you. The park does not need to perform.",
+          "body": "Come for room to breathe: grass, paths, water, and everyday movement around you. The park does not need to perform.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -242784,14 +242784,14 @@
           "body": "",
           "phrases": [
             {
-              "id": "v500-time-date-book-one-ticket-please",
-              "vietnamese": "Xin một vé",
-              "english": "One ticket, please",
-              "pronunciation": "Xin mot ve",
+              "id": "directions-1",
+              "vietnamese": "Cho hỏi, đi tới đó thế nào?",
+              "english": "Excuse me, how do I get there?",
+              "pronunciation": "cho hoy dee toy doh theh nao",
               "symbolName": "speaker.wave.2.fill",
               "tintName": "teal",
-              "detailPageID": "viet-family-v500-time-date-book-one-ticket-please",
-              "audioKey": "v500-time-date-book-one-ticket-please"
+              "detailPageID": "viet-family-directions-how-to-get",
+              "audioKey": "directions-1"
             },
             {
               "id": "directions-8",
@@ -242875,7 +242875,7 @@
             "title": "Useful Phrases",
             "sourceSectionID": "quick-say",
             "primaryPhraseIDs": [
-              "v500-time-date-book-one-ticket-please"
+              "directions-1"
             ],
             "supportPhraseIDs": [
               "directions-8",
@@ -242885,7 +242885,7 @@
         ],
         "primaryPracticePhraseIDs": [
           "city-hcmc-place-bach-dang-waterbus-station",
-          "v500-time-date-book-one-ticket-please"
+          "directions-1"
         ],
         "secondaryPracticePhraseIDs": [
           "directions-8",
@@ -244653,7 +244653,7 @@
         {
           "id": "at-glance",
           "title": "A Beef-Stew Bowl",
-          "body": "Bò Kho Gánh is a Saigon street-food stop for bò kho: hot beef stew, bread or noodles nearby, herbs, sauce, and a bowl that can carry the meal.",
+          "body": "Bò Kho Gánh is a Saigon street-food stop for bò kho: hot beef stew, bread or noodles nearby, herbs, sauce, and one bowl as the meal.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -245396,7 +245396,7 @@
         {
           "id": "when-to-use",
           "title": "Hue Flavor In Saigon",
-          "body": "The bowl carries Hue-style depth into a Saigon lunch: lemongrass, chili, beef, tendon, herbs, and lime. Order it when the day wants heat and broth, not another gentle noodle stop.",
+          "body": "The bowl brings Hue-style depth into a Saigon lunch: lemongrass, chili, beef, tendon, herbs, and lime. Order it when the day wants heat and broth, not another gentle noodle stop.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -245463,7 +245463,7 @@
       "title": "Bún thịt nướng ở Thành phố Hồ Chí Minh",
       "englishTitle": "Grilled pork vermicelli",
       "pronunciation": "bun thit nuong",
-      "summary": "The dish is a good first bowl: noodles, pork, herbs, peanuts, pickles or vegetables, and sauce added to taste. This bowl carries a casual Saigon lunch memory: sweetness, smoke, herbs, sauce, and a low-pressure ordering moment.",
+      "summary": "The dish is a good first bowl: noodles, pork, herbs, peanuts, pickles or vegetables, and sauce added to taste. This bowl gives Saigon lunch a casual memory: sweetness, smoke, herbs, sauce, and a low-pressure ordering moment.",
       "heroImageName": "HeroCityHcmcPlaceBunThitNuong",
       "iconName": "takeoutbag.and.cup.and.straw.fill",
       "tintName": "orange",
@@ -245494,7 +245494,7 @@
           "vt-hcmc",
           "vt-hcmc-official"
         ],
-        "rationale": "This bowl carries a casual Saigon lunch memory: sweetness, smoke, herbs, sauce, and a low-pressure ordering moment.",
+        "rationale": "This bowl gives Saigon lunch a casual memory: sweetness, smoke, herbs, sauce, and a low-pressure ordering moment.",
         "editorialImportPatchID": "viet-city-handwritten-copy-2026-05-18",
         "editorialReviewStatus": "handwritten-reviewed",
         "editorialSourceMode": "expanded-detail",
@@ -245552,7 +245552,7 @@
         {
           "id": "place-brief",
           "title": "Smoke Over Cool Noodles",
-          "body": "The contrast is the draw: warm grilled pork over cool noodles, fresh herbs against sweet-savory sauce, peanuts for crunch.",
+          "body": "The pleasure is the contrast: warm grilled pork over cool noodles, fresh herbs against sweet-savory sauce, peanuts for crunch.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -247753,7 +247753,7 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "The Pork Chop is the draw",
+          "title": "The Pork Chop Leads",
           "body": "Com Tam Ba Ghien is a broken-rice stop for a big grilled pork chop, egg, pickles, fish sauce, and a meal without a long menu debate.",
           "phrases": [],
           "breakdown": [],
@@ -247825,7 +247825,7 @@
         {
           "id": "good-to-know",
           "title": "Sauce On Your Terms",
-          "body": "Fish sauce brings the plate together, but pour gradually. The pork, rice, pickles, and egg already carry plenty of flavor.",
+          "body": "Fish sauce brings the plate together, but pour gradually. The pork, rice, pickles, and egg already bring plenty of flavor.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -247997,7 +247997,7 @@
         {
           "id": "good-to-know",
           "title": "A Familiar Branch",
-          "body": "Convenience and a recognizable room on Dong Khoi are the draw. It does not need to pretend to be hidden or rare.",
+          "body": "The point is convenience: a recognizable room on Dong Khoi when you want a cool, familiar coffee break.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -248399,7 +248399,7 @@
       "title": "Cục Gạch Quán",
       "englishTitle": "Cuc Gach Quan",
       "pronunciation": "cuc gach quan",
-      "summary": "Choose Cục Gạch Quán when Saigon dinner should slow down around a old-house table: shared dishes, tiled floors, vegetables, fish, soup, and room pace.",
+      "summary": "Choose Cục Gạch Quán when Saigon dinner should slow down around an old-house table: shared dishes, tiled floors, vegetables, fish, soup, and room pace.",
       "heroImageName": "HeroCityHcmcPlaceCucGachQuan",
       "iconName": "fork.knife",
       "tintName": "green",
@@ -248441,7 +248441,7 @@
         {
           "id": "at-glance",
           "title": "Old House, Shared Table",
-          "body": "Cuc Gach Quan is a old-house restaurant for a slower Saigon table: shared Vietnamese dishes, tiled floors, vegetables, fish, soup, and a room set apart from traffic.",
+          "body": "Cuc Gach Quan is an old-house restaurant for a slower Saigon table: shared Vietnamese dishes, tiled floors, vegetables, fish, soup, and a room set apart from traffic.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -248487,7 +248487,7 @@
         },
         {
           "id": "place-brief",
-          "title": "The Room Carries The Meal",
+          "title": "The Room Shapes The Meal",
           "body": "The old house matters here. Shared dishes, worn details, and an unhurried table make the meal land differently from a quick central bite.",
           "phrases": [],
           "breakdown": [],
@@ -248946,8 +248946,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Landmark Spine",
-          "body": "The Dong Khoi landmark walk gives District 1 a simple line: cathedral and post office area, Opera House, old hotel facades, shops, and the river edge.",
+          "title": "A Simple Landmark Walk",
+          "body": "The Dong Khoi landmark walk gives District 1 a simple line to follow: cathedral and post office area, Opera House, old hotel facades, shops, and the river edge.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -249077,7 +249077,7 @@
       "title": "Đường Đồng Khởi",
       "englishTitle": "Dong Khoi Street",
       "pronunciation": "duong dong khoi",
-      "summary": "Đồng Khởi helps District 1 feel clear when you walk it as a short landmark spine with traffic, shops, hotels, and riverward movement.",
+      "summary": "Đồng Khởi helps District 1 feel clear when you walk it as a short landmark route with traffic, shops, hotels, and riverward movement.",
       "heroImageName": "HeroCityHcmcPlaceDongKhoiStreet",
       "iconName": "mappin.and.ellipse",
       "tintName": "teal",
@@ -249117,8 +249117,8 @@
       "sections": [
         {
           "id": "at-glance",
-          "title": "A Short Spine Toward The River",
-          "body": "Đồng Khởi is the compact District 1 spine from the cathedral and post office area toward the Opera House, old hotel facades, shops, traffic, and river.",
+          "title": "A Short Walk Toward The River",
+          "body": "Đồng Khởi is the compact District 1 route from the cathedral and post office area toward the Opera House, old hotel facades, shops, traffic, and river.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -249343,7 +249343,7 @@
         },
         {
           "id": "when-to-use",
-          "title": "A Few Rooms Can Carry It",
+          "title": "Choose A Few Rooms",
           "body": "Do not pressure the visit into a full art survey. A courtyard rest and a few rooms can still make the visit worthwhile.",
           "phrases": [],
           "breakdown": [],
@@ -250184,7 +250184,7 @@
         {
           "id": "place-brief",
           "title": "Objects Before Exhaustion",
-          "body": "A few strong rooms can carry the visit. Let repeated objects, materials, and timelines guide the visit without studying every label.",
+          "body": "A few strong rooms can be enough. Let repeated objects, materials, and timelines guide the visit without studying every label.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"
@@ -250379,7 +250379,7 @@
         {
           "id": "good-to-know",
           "title": "Old Building, City Context",
-          "body": "The old building, garden edges, and city-history rooms carry the visit even when the visit stays short.",
+          "body": "The old building, garden edges, and city-history rooms still make the visit feel complete when it stays short.",
           "phrases": [],
           "breakdown": [],
           "presentation": "plain-text"

@@ -377,3 +377,25 @@ Updated proof state:
 
 - Combined latest-current proof is now `333` unique pages, `999` screenshots, and `0` current failures.
 - Remaining global proof gap: `187` pages still need current rendered screenshots unless the gate is explicitly amended.
+
+## Thirteenth Missing-Page Proof / Hanoi-HCMC Humanization Batch, 2026-06-01
+
+This batch continued the literal rendered proof gate with the next `40` unproved manifest pages. It completed the remaining Hanoi proof gap and moved into the first Saigon missing-page band.
+
+Rendered proof:
+
+- Added `missing-pages-proof-003-results.jsonl`: `40` previously unrendered pages, `120` screenshots, `0` failures.
+- Scope included Hanoi park, pagoda, lake, landmark, vegetarian restaurant, gallery, museums, theatre, market, street, dish, and park pages, then Saigon restaurant, market, dish, cafe, landmark, tunnel, museum, street, and central walk pages.
+
+Human readability review:
+
+- The rendered pages passed structurally, but text review still found copy that read like internal editorial shorthand on a phone: `carry`, `draw`, `spine`, stiff casing, and phrase cards that did not match the page moment.
+- Repaired the affected authored V2.2 source in `hanoi.json` and `hcmc.json`, replacing abstract terms with concrete place, food, route, and room language.
+- Repaired two phrase-card fit issues: Water Puppet Theatre now asks `What time does it start?`, and City Hall now uses directions instead of `One ticket, please`.
+- Current validators pass again: strict V2.2 `PASS` for all `520`, voice audit `failures: []`, city copy/library/SQLite/production QA/native-only/diff-check all pass.
+- Added `missing-pages-humanized-rerun-003-results.jsonl`: `23` edited pages, `69` screenshots, `0` failures.
+
+Updated proof state:
+
+- Combined latest-current proof is now `373` unique pages, `1119` latest-current screenshots, and `0` current failures.
+- Remaining global proof gap: `147` pages still need current rendered screenshots unless the gate is explicitly amended.
