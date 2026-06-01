@@ -464,6 +464,21 @@ final class BrowseSearchUITests: XCTestCase {
         )
     }
 
+    func testPhrasePlaceAndFoodTextCanBeCopiedFromVisibleText() {
+        assertVisibleTextOffersCopy(
+            title: "Chào anh",
+            launchArguments: ["--detail-page", "viet-phrase-hello-chao-anh"]
+        )
+        assertVisibleTextOffersCopy(
+            title: "Cầu Rồng",
+            launchArguments: ["--detail-page", "viet-phrase-city-danang-place-dragon-bridge"]
+        )
+        assertVisibleTextOffersCopy(
+            title: "Phở bò",
+            launchArguments: ["--detail-page", "viet-menu-food-pho-bo"]
+        )
+    }
+
     func testCityNounDetailPhotoBackdropImageTapTogglesImmersiveFromInitialPosition() {
         let pageID = "viet-phrase-city-danang-place-dragon-bridge"
         let app = launchApp(arguments: ["--detail-page", pageID])
@@ -1322,6 +1337,37 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(tabBar.isHittable, "Swiping upward should restore the bottom admin bar.", file: file, line: line)
 
         app.terminate()
+    }
+
+    private func assertVisibleTextOffersCopy(
+        title: String,
+        launchArguments: [String],
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        let app = launchApp(arguments: launchArguments)
+        let text = app.staticTexts[title].firstMatch
+
+        XCTAssertTrue(text.waitForExistence(timeout: 5), "\(title) should render before checking copy affordance.", file: file, line: line)
+        text.press(forDuration: 1.1)
+
+        XCTAssertTrue(
+            copyMenuItem(in: app).waitForExistence(timeout: 2),
+            "Long-pressing \(title) should show the system Copy action.",
+            file: file,
+            line: line
+        )
+
+        app.terminate()
+    }
+
+    private func copyMenuItem(in app: XCUIApplication) -> XCUIElement {
+        let menuItem = app.menuItems["Copy"]
+        if menuItem.exists {
+            return menuItem
+        }
+
+        return app.buttons["Copy"]
     }
 
     private func tapCityNounHeroMasthead(_ app: XCUIApplication) {
