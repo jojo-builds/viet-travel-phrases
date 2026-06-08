@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I need cold medicine to another pharmacy or health need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when cold medicine is the detail you need resolved. The likely reply is a point, option, yes/no answer, or next step, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is i need cold medicine. Show the symptom, medicine, location, or helper contact if you can."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi cần thuốc cảm.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "health-2",

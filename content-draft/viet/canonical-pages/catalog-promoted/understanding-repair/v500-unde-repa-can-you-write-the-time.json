@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể viết thời gian được không? once, then make the task visible with your phone, note, map, translation screen, number, or written address. The phrase is doing one job: getting a clear answer about write the time.",
+      "body": "Keep Bạn có thể viết thời gian được không? together as one sentence before adding details. Start with Bạn có thể viết thời gian được không?",
       "phrases": [
         {
           "id": "v500-unde-repa-can-you-write-the-time",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you write the time? to another understanding check need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
       "phrases": [
         {
           "id": "problems-2",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real understanding check exchange when write the time is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is can you write the time. If it is still unclear, show, write, or point to the exact word."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể viết thời gian được không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "repair-1",

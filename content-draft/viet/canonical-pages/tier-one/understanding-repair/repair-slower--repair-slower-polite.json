@@ -7,7 +7,7 @@
   "title": "Nói chậm giúp tôi được không?",
   "englishTitle": "Could you speak a little slower, please?",
   "pronunciation": "noy chuhm zoop toy dook khong",
-  "summary": "A focused guide to when Nói chậm giúp tôi được không? sounds more natural than Nói chậm chút được không?.",
+  "summary": "A softer slow-down request for counters, rides, and helpful strangers.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -18,51 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Nói chậm giúp tôi được không? is useful when \"Could you speak a little slower, please?\" needs a slightly different tone or setting. Use this when you need the same request to sound softer.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "breakdown",
-      "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
-      "breakdown": [
-        {
-          "id": "repair-slower-polite-piece-1",
-          "vietnamese": "Nói",
-          "english": "speak / say",
-          "audioKey": "breakdown-problems-3-first"
-        },
-        {
-          "id": "repair-slower-polite-piece-2",
-          "vietnamese": "chậm",
-          "english": "slow",
-          "audioKey": "breakdown-repair-slower-polite-piece-5"
-        },
-        {
-          "id": "repair-slower-polite-piece-3",
-          "vietnamese": "giúp tôi",
-          "english": "help me",
-          "audioKey": "breakdown-authored-giup-toi-38e527ca39"
-        },
-        {
-          "id": "repair-slower-polite-piece-4",
-          "vietnamese": "được không?",
-          "english": "is it possible?",
-          "audioKey": "breakdown-authored-duoc-khong-cc7ef288f9"
-        },
-        {
-          "id": "repair-slower-polite-full",
-          "vietnamese": "Nói chậm giúp tôi được không?",
-          "english": "Could you speak a little slower, please?",
-          "audioKey": "repair-slower-polite"
-        }
-      ],
-      "presentation": "breakdown-strip"
+      "body": "Use this when someone is willing to help but the pace is too fast to follow.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Nói chậm giúp tôi được không? when \"Could you speak a little slower, please?\" is the exact tone or situation you want.",
+      "body": "Say this when you want them to slow down, not repeat the whole conversation.",
       "phrases": [
         {
           "id": "repair-slower-polite",
@@ -75,18 +39,52 @@
           "audioKey": "repair-slower-polite"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "This is for when you need the same request to sound softer. Use Nói chậm chút được không? when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
-      "presentation": "plain-text"
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "breakdown": [
+        {
+          "id": "viet-phrase-repair-slower-polite-breakdown-piece-1",
+          "vietnamese": "Nói chậm",
+          "english": "speak slowly",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "giúp",
+          "english": "help",
+          "audioKey": "breakdown-help-need-help-direct-first"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "audioKey": "breakdown-authored-duoc-khong-cc7ef288f9"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Nói chậm giúp tôi được không?",
+          "english": "Could you speak a little slower, please?",
+          "audioKey": "repair-slower-polite"
+        }
+      ],
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may come as slower Vietnamese, one important word, a pointed explanation, or writing. If speech still does not land, move quickly to showing the word or number on your phone.",
+      "body": "Giúp tôi được không? makes the request gentler than a bare command. It works well when you still want to keep trying in Vietnamese.",
       "phrases": [
         {
           "id": "problems-3",
@@ -119,18 +117,29 @@
           "audioKey": "repair-1"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Best with staff, drivers, hosts, and counters where a polite slower version keeps the exchange friendly.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Tone matters here. Curious and calm sounds like a request; sharp or repeated too many times can sound like a challenge.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Nearby phrases keep the conversation moving after this one.",
+      "body": "Follow with repeat, write-it-down, English, or translation-app phrases if slower speech still is not enough.",
       "phrases": [
         {
           "id": "problems-3",
@@ -193,7 +202,8 @@
           "audioKey": "repair-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

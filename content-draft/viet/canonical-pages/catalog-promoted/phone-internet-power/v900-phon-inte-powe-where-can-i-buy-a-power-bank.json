@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể mua sạc dự phòng ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names buy a power bank in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Tôi có thể mua sạc dự phòng ở đâu? keeps the direction question short. Keep the phone screen or error message visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Tôi có thể mua sạc dự phòng ở đâu?. Show your phone screen, charger, SIM card, Wi-Fi screen, or outlet, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Keep Tôi có thể mua sạc dự phòng ở đâu? together as one sentence before adding details. Say Tôi có thể mua sạc dự phòng ở đâu?",
       "phrases": [
         {
           "id": "v900-phon-inte-powe-where-can-i-buy-a-power-bank",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where can I buy a power bank? to another phone, internet, or power need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another phone, internet, or power need.",
       "phrases": [
         {
           "id": "phone-1",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể mua sạc dự phòng ở đâu?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "phone-3",

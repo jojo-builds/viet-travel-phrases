@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể trả lại nó ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names return it in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Tôi có thể trả lại nó ở đâu? keeps the direction question short. Keep the map, address, or destination visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Tôi có thể trả lại nó ở đâu?. Show your map, destination, ride screen, ticket, vehicle, or pickup point, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Keep Tôi có thể trả lại nó ở đâu? together as one sentence before adding details. Say Tôi có thể trả lại nó ở đâu?",
       "phrases": [
         {
           "id": "v500-tran-where-do-i-return-it",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where do I return it? to another transport need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể trả lại nó ở đâu?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

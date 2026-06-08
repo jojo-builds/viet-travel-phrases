@@ -7,7 +7,7 @@
   "title": "Món này có trứng hay đậu phộng không?",
   "englishTitle": "Does this have egg or peanuts?",
   "pronunciation": "mon nai koh choong hai dow fohng khong",
-  "summary": "A focused guide to when Món này có trứng hay đậu phộng không? sounds more natural than Tôi bị dị ứng đậu phộng.",
+  "summary": "Ask about egg or peanuts when the exact ingredient matters before you eat.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -18,75 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Món này có trứng hay đậu phộng không? is useful when \"Does this have egg or peanuts?\" needs a slightly different tone or setting. Use this after the allergy warning when you need to check the ingredients directly.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "breakdown",
-      "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
-      "breakdown": [
-        {
-          "id": "food-15-piece-1",
-          "vietnamese": "Món",
-          "english": "dish",
-          "audioKey": "breakdown-food-premium-too-spicy-now-first"
-        },
-        {
-          "id": "food-15-piece-2",
-          "vietnamese": "này",
-          "english": "this",
-          "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2"
-        },
-        {
-          "id": "food-15-piece-3",
-          "vietnamese": "có",
-          "english": "have / yes",
-          "audioKey": "breakdown-food-5-first"
-        },
-        {
-          "id": "food-15-piece-4",
-          "vietnamese": "trứng",
-          "english": "egg",
-          "audioKey": "breakdown-authored-trung-7e4461a3f9"
-        },
-        {
-          "id": "food-15-piece-5",
-          "vietnamese": "hay",
-          "english": "or",
-          "audioKey": "breakdown-authored-hay-ebddd6b268"
-        },
-        {
-          "id": "food-15-piece-6",
-          "vietnamese": "đậu",
-          "english": "bean / peanut",
-          "audioKey": "breakdown-authored-dau-9b24b3d631"
-        },
-        {
-          "id": "food-15-piece-7",
-          "vietnamese": "phộng",
-          "english": "peanut",
-          "audioKey": "breakdown-authored-phong-a47787ffce"
-        },
-        {
-          "id": "food-15-piece-8",
-          "vietnamese": "không?",
-          "english": "asks yes or no",
-          "audioKey": "breakdown-bath-6-piece-6"
-        },
-        {
-          "id": "food-15-full",
-          "vietnamese": "Món này có trứng hay đậu phộng không?",
-          "english": "Does this have egg or peanuts?",
-          "audioKey": "food-15"
-        }
-      ],
-      "presentation": "breakdown-strip"
+      "body": "Use this before ordering or eating when egg or peanuts would change the decision.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Món này có trứng hay đậu phộng không? when \"Does this have egg or peanuts?\" is the exact tone or situation you want.",
+      "body": "Say this while pointing at a dish, menu photo, or tray.",
       "phrases": [
         {
           "id": "food-15",
@@ -99,18 +39,70 @@
           "audioKey": "food-15"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "Use this after the allergy warning when you need to check the ingredients directly. Use Tôi bị dị ứng đậu phộng when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
-      "presentation": "plain-text"
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Món",
+          "english": "dish",
+          "audioKey": "breakdown-food-premium-too-spicy-now-first"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "này",
+          "english": "this",
+          "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "có",
+          "english": "have / yes",
+          "audioKey": "breakdown-food-5-first"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "trứng",
+          "english": "egg",
+          "audioKey": "breakdown-authored-trung-7e4461a3f9"
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "hay",
+          "english": "or",
+          "audioKey": "breakdown-authored-hay-ebddd6b268"
+        },
+        {
+          "id": "chunk-6",
+          "vietnamese": "đậu phộng",
+          "english": "peanuts",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-8",
+          "vietnamese": "không?",
+          "english": "not? / yes-no ending",
+          "audioKey": "breakdown-bath-6-piece-6"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Món này có trứng hay đậu phộng không?",
+          "english": "Does this have egg or peanuts?",
+          "audioKey": "food-15"
+        }
+      ],
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Food & Drink, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Món này có trứng hay đậu phộng không? once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "For serious allergies, keep the allergy phrase visible too. This line is an ingredient check, not a full medical warning.",
       "phrases": [
         {
           "id": "food-peanut-allergy",
@@ -143,18 +135,29 @@
           "audioKey": "coffee-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Best when the ingredient matters and you need a yes/no answer before choosing.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Nearby phrases keep the conversation moving after this one.",
+      "body": "Keep allergy, vegetarian, not-spicy, and bill phrases nearby for the rest of the meal.",
       "phrases": [
         {
           "id": "food-peanut-allergy",
@@ -217,7 +220,8 @@
           "audioKey": "coffee-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

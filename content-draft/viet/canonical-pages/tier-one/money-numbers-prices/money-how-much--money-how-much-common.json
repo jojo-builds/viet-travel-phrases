@@ -7,7 +7,7 @@
   "title": "Cái này nhiêu tiền?",
   "englishTitle": "How much is this?",
   "pronunciation": "gai nai nyew tyen",
-  "summary": "A focused guide to when Cái này nhiêu tiền? sounds more natural than Cái này bao nhiêu?.",
+  "summary": "A more local-feeling price question for markets, counters, and visible items.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -18,51 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cái này nhiêu tiền? is useful when \"How much is this?\" needs a slightly different tone or setting. Use this as a common spoken alternative when you hear price asked more casually.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "breakdown",
-      "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
-      "breakdown": [
-        {
-          "id": "money-how-much-common-piece-1",
-          "vietnamese": "Cái",
-          "english": "item / classifier",
-          "audioKey": "breakdown-repair-3-first"
-        },
-        {
-          "id": "money-how-much-common-piece-2",
-          "vietnamese": "này",
-          "english": "this",
-          "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2"
-        },
-        {
-          "id": "money-how-much-common-piece-3",
-          "vietnamese": "nhiêu",
-          "english": "many / much",
-          "audioKey": "breakdown-price-2-piece-2"
-        },
-        {
-          "id": "money-how-much-common-piece-4",
-          "vietnamese": "tiền",
-          "english": "money / price",
-          "audioKey": "breakdown-transport-fare-first"
-        },
-        {
-          "id": "money-how-much-common-full",
-          "vietnamese": "Cái này nhiêu tiền?",
-          "english": "How much is this?",
-          "audioKey": "money-how-much-common"
-        }
-      ],
-      "presentation": "breakdown-strip"
+      "body": "Use this while pointing at one item in a market, shop, or food counter.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Cái này nhiêu tiền? when \"How much is this?\" is the exact tone or situation you want.",
+      "body": "Say this when the item is visible and the context already makes the price question clear.",
       "phrases": [
         {
           "id": "money-how-much-common",
@@ -75,18 +39,52 @@
           "audioKey": "money-how-much-common"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "Use this as a common spoken alternative when you hear price asked more casually. Use Cái này bao nhiêu? when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
-      "presentation": "plain-text"
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Play each piece, then the full phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Cái",
+          "english": "item / classifier",
+          "audioKey": "breakdown-repair-3-first"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "này",
+          "english": "this",
+          "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "nhiêu",
+          "english": "much / many",
+          "audioKey": "breakdown-price-2-piece-2"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "tiền?",
+          "english": "money",
+          "audioKey": null
+        },
+        {
+          "id": "full",
+          "vietnamese": "Cái này nhiêu tiền?",
+          "english": "How much is this?",
+          "audioKey": "money-how-much-common"
+        }
+      ],
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The answer may be spoken fast, typed into a phone, shown on a calculator, or answered with a gesture. If the number matters, ask them to type it.",
+      "body": "Nhiêu tiền is casual and common. If the moment feels more formal, Cái này bao nhiêu? stays a safe default.",
       "phrases": [
         {
           "id": "price-1",
@@ -119,18 +117,29 @@
           "audioKey": "price-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Best for quick stalls and counters where a short spoken price is normal.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Confirm the final price before handing over cash or card, especially when several items, bags, or add-ons are involved.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Nearby phrases keep the conversation moving after this one.",
+      "body": "Follow with card-fee, final-total, discount, receipt, or quantity phrases if the price conversation continues.",
       "phrases": [
         {
           "id": "price-1",
@@ -193,7 +202,8 @@
           "audioKey": "price-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

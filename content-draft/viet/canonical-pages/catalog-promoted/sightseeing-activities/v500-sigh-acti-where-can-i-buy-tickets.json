@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể mua vé ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names buy tickets in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Tôi có thể mua vé ở đâu? keeps the direction question short. Keep the relevant place, item, or screen visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Tôi có thể mua vé ở đâu?. Show your ticket, map, attraction name, booking screen, or meeting point sign, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Keep Tôi có thể mua vé ở đâu? together as one sentence before adding details. Say Tôi có thể mua vé ở đâu?",
       "phrases": [
         {
           "id": "v500-sigh-acti-where-can-i-buy-tickets",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where can I buy tickets? to another sightseeing or activities need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another sightseeing or activities need.",
       "phrases": [
         {
           "id": "sight-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already near the attraction but do not know whether tickets come from a counter, QR code, tour desk, entrance gate, or separate booking window. Show the place name or booking screen so the answer can be a point, floor, or counter."
+      "body": "Use this near an attraction when the ticket process is not obvious. Show the attraction or booking screen so staff can point to the counter, QR code, or entrance gate."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể mua vé ở đâu?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "sight-4",

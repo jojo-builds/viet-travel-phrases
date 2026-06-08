@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể làm nó mà không cần thành phần này? once, then make the task visible with your menu line, food photo, counter item, or order screen. The phrase is doing one job: getting a clear answer about make it without this ingredient.",
+      "body": "Keep Bạn có thể làm nó mà không cần thành phần này? together as one sentence before adding details. Start with Bạn có thể làm nó mà không cần thành phần này?",
       "phrases": [
         {
           "id": "food-premium-without-this-ingredient",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you make it without this ingredient? to another food or drink need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another food or drink need.",
       "phrases": [
         {
           "id": "coffee-1",
@@ -116,7 +116,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real food or drink exchange when make it without this ingredient is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is can you make it without this ingredient. Point to the item, menu line, receipt, size, or photo."
     },
     {
       "id": "good-to-know",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể làm nó mà không cần thành phần này?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "coffee-4",

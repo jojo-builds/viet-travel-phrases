@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Chuyến tàu cuối cùng về lúc mấy giờ? is for confirming the time or date before you commit. It helps turn What time is the last boat back into one clear answer you can check against a ticket, booking, calendar, or meeting point."
+      "body": "Ask this before you commit to the return trip. Keep the ticket, pier sign, or schedule visible so the answer is a time you can check."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Chuyến tàu cuối cùng về lúc mấy giờ? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Keep Chuyến tàu cuối cùng về lúc mấy giờ? together as one sentence before adding details. Start with Chuyến tàu cuối cùng về lúc mấy giờ?",
       "phrases": [
         {
           "id": "v900-tran-what-time-is-the-last-boat-back",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from What time is the last boat back? to another transport need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when what time is the last boat back is the detail you need resolved. The likely reply is a time, date, or schedule detail, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is what time is the last boat back. Keep the map, address, or destination visible."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Chuyến tàu cuối cùng về lúc mấy giờ?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

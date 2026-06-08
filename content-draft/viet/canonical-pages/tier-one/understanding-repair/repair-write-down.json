@@ -19,12 +19,14 @@
       "id": "at-glance",
       "title": "At a glance",
       "body": "Written text often rescues numbers, names, room numbers, and addresses faster than more speech. Use this when you need the other person to give you something you can read, save, or show again.",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "repair-2-piece-1",
@@ -45,7 +47,8 @@
           "audioKey": "repair-2"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
@@ -63,18 +66,21 @@
           "audioKey": "repair-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping. For \"Please write it down\", Viết xuống giúp tôi makes the next step easier to answer. Pause after the phrase so the person can confirm before you add more words.",
-      "presentation": "plain-text"
+      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping. If it is still unclear, show, write, or point to the exact word.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In When You Don't Understand, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Viết xuống giúp tôi once, pause, and watch for the reply. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
+      "body": "If it is still unclear, show, write, or point to the exact word.",
       "phrases": [
         {
           "id": "problems-2",
@@ -107,7 +113,8 @@
           "audioKey": "repair-1"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
@@ -145,13 +152,16 @@
           "audioKey": "repair-english-help"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Frame it as a cooperative request. A calm tone keeps the other person with you, especially if they already repeated themselves once.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -169,13 +179,16 @@
           "audioKey": "v500-unde-repa-please-say-it-slowly"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "you-may-hear",
       "title": "You May Hear",
       "body": "A local may answer with: I will write it here.",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -253,7 +266,8 @@
           "audioKey": "v500-unde-repa-please-say-it-slowly"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

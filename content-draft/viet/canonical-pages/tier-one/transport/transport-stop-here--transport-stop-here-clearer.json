@@ -7,7 +7,7 @@
   "title": "Cho tôi xuống ngay đây",
   "englishTitle": "Please stop right here",
   "pronunciation": "cho toy zoong ngay day",
-  "summary": "A focused guide to when Cho tôi xuống ngay đây sounds more natural than Dừng ở đây được rồi.",
+  "summary": "A direct stop-right-here line for rides that are about to pass the spot.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,51 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cho tôi xuống ngay đây is useful when \"Please stop right here\" needs a slightly different tone or setting. Use this when the driver seems likely to roll past the stop.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "breakdown",
-      "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
-      "breakdown": [
-        {
-          "id": "transport-stop-here-clearer-piece-1",
-          "vietnamese": "Cho tôi",
-          "english": "can I have",
-          "audioKey": "breakdown-authored-cho-toi-18c6fe1018"
-        },
-        {
-          "id": "transport-stop-here-clearer-piece-2",
-          "vietnamese": "xuống",
-          "english": "down",
-          "audioKey": "breakdown-authored-xuong-8272d5a25c"
-        },
-        {
-          "id": "transport-stop-here-clearer-piece-3",
-          "vietnamese": "ngay",
-          "english": "right away",
-          "audioKey": "breakdown-authored-ngay-27a5da243f"
-        },
-        {
-          "id": "transport-stop-here-clearer-piece-4",
-          "vietnamese": "đây",
-          "english": "here / this",
-          "audioKey": "breakdown-transport-1-first"
-        },
-        {
-          "id": "transport-stop-here-clearer-full",
-          "vietnamese": "Cho tôi xuống ngay đây",
-          "english": "Please stop right here",
-          "audioKey": "transport-stop-here-clearer"
-        }
-      ],
-      "presentation": "breakdown-strip"
+      "body": "Use this in a taxi, Grab, motorbike, or shuttle when the right stop is immediate.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Cho tôi xuống ngay đây when \"Please stop right here\" is the exact tone or situation you want.",
+      "body": "Say this when you need the vehicle to stop now, not at the next convenient landmark.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",
@@ -75,18 +39,58 @@
           "audioKey": "transport-stop-here-clearer"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "This is for when the driver seems likely to roll past the stop. Use Dừng ở đây được rồi when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
-      "presentation": "plain-text"
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Play each piece, then the full phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "cho",
+          "english": "to / for",
+          "audioKey": "breakdown-taxi-1-first"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "xuống",
+          "english": "down / get off",
+          "audioKey": "breakdown-authored-xuong-8272d5a25c"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "ngay",
+          "english": "right away / right",
+          "audioKey": "breakdown-authored-ngay-27a5da243f"
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "đây",
+          "english": "here / this",
+          "audioKey": "breakdown-transport-1-first"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Cho tôi xuống ngay đây",
+          "english": "Please stop right here",
+          "audioKey": "transport-stop-here-clearer"
+        }
+      ],
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Transport, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Cho tôi xuống ngay đây once, pause, and watch for the reply. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Ngay đây adds urgency and precision. Say it early enough for the driver to stop safely.",
       "phrases": [
         {
           "id": "taxi-3",
@@ -119,18 +123,29 @@
           "audioKey": "taxi-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Best as you approach the entrance, hotel, pier, or corner and the driver may keep going.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Nearby phrases keep the conversation moving after this one.",
+      "body": "Follow with address, wrong place, entrance, keep-the-change, or receipt phrases if the ride still needs sorting.",
       "phrases": [
         {
           "id": "taxi-3",
@@ -193,7 +208,8 @@
           "audioKey": "taxi-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

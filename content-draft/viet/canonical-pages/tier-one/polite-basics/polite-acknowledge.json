@@ -7,7 +7,7 @@
   "title": "Dạ",
   "englishTitle": "Yes / polite acknowledgment",
   "pronunciation": "yah",
-  "summary": "Dạ is a common way to say “Yes / polite acknowledgment” in Vietnamese.",
+  "summary": "This helps you respond respectfully even before you know the full answer.",
   "iconName": "hand.wave.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Dạ when you need \"Yes / polite acknowledgment\". Use this as a soft respectful acknowledgment when someone speaks to you first. This helps you respond respectfully even before you know the full answer. Listen for a short reply, a smile, a time, or a light follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Dạ keeps the social move simple and polite. Use this as a soft respectful acknowledgment when someone speaks to you first. This helps you respond respectfully even before you know the full answer.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "polite-3-full",
@@ -33,12 +35,13 @@
           "audioKey": "polite-3"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Dạ as your first sentence for \"Yes / polite acknowledgment\". Use this as a soft respectful acknowledgment when someone speaks to you first. Pause after the phrase and listen for a short reply, a smile, a time, or a light follow-up question. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
+      "body": "Keep Dạ together as one sentence before adding details. Keep the tone warm and leave room for a short reply.",
       "phrases": [
         {
           "id": "polite-3",
@@ -51,18 +54,21 @@
           "audioKey": "polite-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Polite Vietnamese often works by softening the start or end of an interaction before the main request. For \"Yes / polite acknowledgment\", Dạ makes the next step easier to answer. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
-      "presentation": "plain-text"
+      "body": "Polite Vietnamese often works by softening the start or end of an interaction before the main request. Keep the tone warm and leave room for a short reply.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Polite Basics, the reply often comes as a short reply, a smile, a time, or a light follow-up question. Say Dạ once, pause, and watch for the reply. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
+      "body": "The reply may be a smile, a time, or light follow-up question. Keep the tone warm and leave room for a short reply.",
       "phrases": [
         {
           "id": "polite-1",
@@ -95,12 +101,13 @@
           "audioKey": "polite-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as a soft respectful acknowledgment when someone speaks to you first. It fits small service and first-contact moments, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
+      "body": "Use this as a soft respectful acknowledgment when someone speaks to you first. The reply may be a smile, a time, or light follow-up question.",
       "phrases": [
         {
           "id": "polite-5",
@@ -133,13 +140,16 @@
           "audioKey": "polite-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Keep quick service phrases clear, polite, and short. A calm short sentence usually works better than a long one said nervously.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -177,7 +187,8 @@
           "audioKey": "audio-phrase-chao-ban"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "nearby-phrases",
@@ -225,7 +236,8 @@
           "audioKey": "audio-phrase-chao-buoi-chieu"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -313,7 +325,8 @@
           "audioKey": "breakdown-food-5-first"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

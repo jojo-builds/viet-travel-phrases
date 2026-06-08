@@ -7,7 +7,7 @@
   "title": "Giúp tôi với",
   "englishTitle": "I need help",
   "pronunciation": "zoop toy voy",
-  "summary": "Giúp tôi với means “I need help”.",
+  "summary": "When the trip is messy, start with the help you need in plain words.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Giúp tôi với when you need \"I need help\". This is for when you need immediate practical help and want the shortest direct version. When the trip is messy, start with the help you need in plain words. Listen for a confirmation, a handoff, a price, or a follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Giúp tôi với names the need before the details start piling up. Reach for it when you need immediate practical help and want the shortest direct version. When the trip is messy, start with the help you need in plain words.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "help-need-help-direct-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "help-need-help-direct"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Giúp tôi với as your first sentence for \"I need help\". This is for when you need immediate practical help and want the shortest direct version. Pause after the phrase and listen for a confirmation, a handoff, a price, or a follow-up question. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
+      "body": "Keep Giúp tôi với together as one sentence before adding details.",
       "phrases": [
         {
           "id": "help-need-help-direct",
@@ -63,18 +66,21 @@
           "audioKey": "help-need-help-direct"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Help phrases work when they name the problem and the next person or action you need. For \"I need help\", Giúp tôi với makes the next step easier to answer. Pause after the phrase so the person can confirm before you add more words.",
-      "presentation": "plain-text"
+      "body": "Help phrases work when they name the problem and the next person or action you need. Keep the relevant place, item, or screen visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Problems & Help, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Giúp tôi với once, pause, and watch for the reply. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
+      "body": "Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
       "phrases": [
         {
           "id": "problems-1",
@@ -107,12 +113,13 @@
           "audioKey": "help-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when you need immediate practical help and want the shortest direct version. It fits lost items, help, managers, and recovery moments, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "Reach for it when you need immediate practical help and want the shortest direct version. Keep the relevant place, item, or screen visible.",
       "phrases": [
         {
           "id": "help-3",
@@ -135,13 +142,16 @@
           "audioKey": "v500-prob-help-i-need-help-now"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "If you feel unsafe or stuck, move to a stronger help phrase instead of trying to sound perfectly polite.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -159,7 +169,8 @@
           "audioKey": "help-need-help-direct"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -217,7 +228,8 @@
           "audioKey": "v500-prob-help-i-need-help-now"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

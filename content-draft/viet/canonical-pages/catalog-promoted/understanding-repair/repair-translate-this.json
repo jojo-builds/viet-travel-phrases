@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Dịch giúp tôi cái này được không? once, then make the task visible with your phone, note, map, translation screen, number, or written address. The phrase is doing one job: getting a clear answer about translate this for me.",
+      "body": "Keep Dịch giúp tôi cái này được không? together as one sentence before adding details. Start with Dịch giúp tôi cái này được không?",
       "phrases": [
         {
           "id": "repair-translate-this",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you translate this for me? to another understanding check need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
       "phrases": [
         {
           "id": "problems-2",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real understanding check exchange when translate this for me is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is can you translate this for me. If it is still unclear, show, write, or point to the exact word."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Dịch giúp tôi cái này được không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "repair-1",

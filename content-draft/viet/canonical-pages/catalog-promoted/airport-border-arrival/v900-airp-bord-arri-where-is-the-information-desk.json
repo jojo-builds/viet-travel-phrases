@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bàn thông tin ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names information desk in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Bàn thông tin ở đâu? keeps the direction question short. Keep the passport, baggage tag, pickup screen, or flight detail visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Bàn thông tin ở đâu?. Show your passport, booking, baggage tag, map, or pickup screen, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Keep Bàn thông tin ở đâu? together as one sentence before adding details. Say Bàn thông tin ở đâu?",
       "phrases": [
         {
           "id": "v900-airp-bord-arri-where-is-the-information-desk",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where is the information desk? to another airport arrival need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
       "phrases": [
         {
           "id": "airport-1",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bàn thông tin ở đâu?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "airport-5",

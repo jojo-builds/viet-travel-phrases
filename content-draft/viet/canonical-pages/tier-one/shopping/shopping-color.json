@@ -7,7 +7,7 @@
   "title": "Có màu khác không?",
   "englishTitle": "Do you have another color?",
   "pronunciation": "koh mau khak khong",
-  "summary": "Có màu khác không? means “Do you have another color?”",
+  "summary": "This is the simplest comparison phrase for clothing and small goods.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -18,8 +18,10 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Có màu khác không? when you need \"Do you have another color\". This is for when the item is right but the color is wrong. This is the simplest comparison phrase for clothing and small goods. Listen for a yes/no answer, a gesture toward the item, or a short alternative; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Có màu khác không? keeps the question easy to answer. Reach for it when the item is right but the color is wrong. This is the simplest comparison phrase for clothing and small goods.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
@@ -47,7 +49,7 @@
         {
           "id": "shop-2-piece-4",
           "vietnamese": "không?",
-          "english": "asks yes or no",
+          "english": "not? / yes-no ending",
           "audioKey": "breakdown-bath-6-piece-6"
         },
         {
@@ -57,12 +59,13 @@
           "audioKey": "shop-2"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Có màu khác không? as your first sentence for \"Do you have another color\". This is for when the item is right but the color is wrong. Pause after the phrase and listen for a yes/no answer, a gesture toward the item, or a short alternative. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Use the full phrase before adding details. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "shop-2",
@@ -75,18 +78,21 @@
           "audioKey": "shop-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. For \"Do you have another color\", Có màu khác không? makes the next step easier to answer. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
-      "presentation": "plain-text"
+      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. The reply may be unclear.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Shopping, the reply often comes as a yes/no answer, a gesture toward the item, or a short alternative. Say Có màu khác không? once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "The reply may be a yes/no answer, a gesture toward the item, or short alternative. Say Có màu khác không?",
       "phrases": [
         {
           "id": "shop-1",
@@ -119,12 +125,13 @@
           "audioKey": "shop-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when the item is right but the color is wrong. It fits sizes, colors, trying things on, and payment, especially when the next step is a yes/no answer, a gesture toward the item, or a short alternative. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
+      "body": "Reach for it when the item is right but the color is wrong. The reply may be a yes/no answer, a gesture toward the item, or short alternative.",
       "phrases": [
         {
           "id": "shop-5",
@@ -157,13 +164,16 @@
           "audioKey": "audio-authored-giam-gia-chut-duoc-khong-a718a9e74f"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "In markets, price talk can feel playful. Keep your tone light when asking for a lower price.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -181,7 +191,8 @@
           "audioKey": "shop-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -249,7 +260,8 @@
           "audioKey": "audio-authored-giam-gia-chut-duoc-khong-a718a9e74f"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

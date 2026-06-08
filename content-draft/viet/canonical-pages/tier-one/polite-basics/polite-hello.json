@@ -20,7 +20,9 @@
       "id": "at-glance",
       "title": "Start Safe, Then Warm Up",
       "body": "Xin chào is the clean first hello when you walk into a shop, hotel, tour desk, or small request. It buys you a polite opening before you decide whether anh, chị, cô, chú, or a simpler chào fits better.",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "quick-say",
@@ -48,7 +50,8 @@
           "audioKey": "breakdown-polite-1-rest"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
@@ -74,13 +77,16 @@
           "audioKey": "polite-1"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "when-to-use",
       "title": "Where It Helps",
       "body": "Use it at first contact: front desk, shop counter, guide pickup, cafe order, or polite question. If the exchange becomes warmer, the next phrase can carry the relationship word.",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "situational-greetings",
@@ -138,7 +144,8 @@
           "detailPageID": null,
           "audioKey": "audio-phrase-chao-buoi-chieu"
         }
-      ]
+      ],
+      "breakdown": []
     },
     {
       "id": "local-greetings",
@@ -216,7 +223,8 @@
           "audioKey": "breakdown-viet-hello-co-full"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "common-follow-ups",
@@ -254,19 +262,24 @@
           "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "cultural-note",
       "title": "You Do Not Need The Perfect Word",
       "body": "A calm Xin chào is better than freezing while you calculate the perfect relationship term. Smile, keep the greeting simple, then let the next phrase do the work.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good To Know",
       "body": "If someone answers with a warmer chào plus a relationship word, you can mirror the energy without copying every word exactly.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -304,7 +317,8 @@
           "audioKey": "polite-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

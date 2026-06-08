@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi nên sử dụng lối vào nào? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Keep Tôi nên sử dụng lối vào nào? together as one sentence before adding details. Start with Tôi nên sử dụng lối vào nào?",
       "phrases": [
         {
           "id": "v900-dire-navi-which-entrance-should-i-use",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Which entrance should I use? to another directions need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another directions need.",
       "phrases": [
         {
           "id": "directions-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real directions exchange when which entrance should I use is the detail you need resolved. The likely reply is a choice, counter, gate, line, or direction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is which entrance should I use. Keep the map, address, or destination visible."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi nên sử dụng lối vào nào?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "directions-4",

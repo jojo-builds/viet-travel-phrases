@@ -223,12 +223,37 @@ function main() {
     assert(row.patchPageID === patch.page_id, `${row.patchID} pageID mismatch`);
     assert(row.phraseID === patch.phrase_id, `${row.patchID} phraseID mismatch`);
 
-    const currentPhrase = catalogByPhraseID.get(patch.phrase_id);
-    assert(currentPhrase, `${row.patchID} current canonical phrase missing from catalog: ${patch.phrase_id}`);
-    assert(
-      normalize(currentPhrase.targetText) === normalize(patch.current_vietnamese),
-      `${row.patchID} canonical Vietnamese title changed from pilot current value`
-    );
+    const currentCanonicalPhraseID = row.currentCanonicalPhraseID ?? patch.phrase_id;
+    if (row.currentCanonicalPhraseID) {
+      assert(
+        row.readiness === "ready_with_title_preserving_import",
+        `${row.patchID} currentCanonicalPhraseID is only allowed for title-preserving rows`
+      );
+      assert(
+        row.currentCanonicalPhraseID !== patch.phrase_id,
+        `${row.patchID} currentCanonicalPhraseID must name the replacement canonical phrase`
+      );
+    }
+    const currentPhrase = catalogByPhraseID.get(currentCanonicalPhraseID);
+    if (!currentPhrase) {
+      assert(
+        row.readiness === "blocked_title_identity" && row.missingCurrentCanonicalPhrase === true,
+        `${row.patchID} current canonical phrase missing from catalog: ${currentCanonicalPhraseID}`
+      );
+    } else {
+      assert(
+        normalize(currentPhrase.targetText) === normalize(patch.current_vietnamese),
+        `${row.patchID} canonical Vietnamese title changed from pilot current value`
+      );
+      const currentAuthoredPage = authoredByPhraseID.get(currentCanonicalPhraseID);
+      assert(currentAuthoredPage, `${row.patchID} current canonical phrase missing authored page: ${currentCanonicalPhraseID}`);
+      if (row.currentCanonicalDetailPageID) {
+        assert(
+          currentAuthoredPage.id === row.currentCanonicalDetailPageID,
+          `${row.patchID} current canonical detail page mismatch`
+        );
+      }
+    }
 
     const titleChanges = normalize(patch.current_vietnamese) !== normalize(patch.proposed_vietnamese);
     if (titleChanges) {

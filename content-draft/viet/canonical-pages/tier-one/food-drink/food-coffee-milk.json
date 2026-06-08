@@ -7,7 +7,7 @@
   "title": "Cho tôi một cà phê sữa đá",
   "englishTitle": "One iced milk coffee please",
   "pronunciation": "cho toy mot ka feh sue-ah dah",
-  "summary": "Cho tôi một cà phê sữa đá means “One iced milk coffee please”.",
+  "summary": "Start with the base drink before you add any small changes.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Cho tôi một cà phê sữa đá when you need \"One iced milk coffee please\". This is for a café when you want the classic Vietnamese coffee order. Start with the base drink before you add any small changes. Listen for a confirmation, a handoff, a price, or a follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Cho tôi một cà phê sữa đá keeps the travel moment short and clear. This is for a café when you want the classic Vietnamese coffee order. Start with the base drink before you add any small changes.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "coffee-1-piece-1",
@@ -57,12 +59,13 @@
           "audioKey": "coffee-1"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Cho tôi một cà phê sữa đá as your first sentence for \"One iced milk coffee please\". This is for a café when you want the classic Vietnamese coffee order. Pause after the phrase and listen for a confirmation, a handoff, a price, or a follow-up question. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Keep Cho tôi một cà phê sữa đá together as one sentence before adding details. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "coffee-1",
@@ -75,18 +78,21 @@
           "audioKey": "coffee-1"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. For \"One iced milk coffee please\", Cho tôi một cà phê sữa đá makes the next step easier to answer. Pause after the phrase so the person can confirm before you add more words.",
-      "presentation": "plain-text"
+      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. Point to the item, menu line, receipt, size, or photo.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Food & Drink, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Cho tôi một cà phê sữa đá once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "coffee-2",
@@ -119,12 +125,13 @@
           "audioKey": "coffee-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for a café when you want the classic Vietnamese coffee order. It fits ordering, adjusting dishes, and checking ingredients, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "This is for a café when you want the classic Vietnamese coffee order. Point to the item, menu line, receipt, size, or photo.",
       "phrases": [
         {
           "id": "coffee-5",
@@ -157,13 +164,16 @@
           "audioKey": "coffee-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -201,7 +211,8 @@
           "audioKey": "food-1"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "nearby-phrases",
@@ -249,7 +260,8 @@
           "audioKey": "food-5"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -297,7 +309,8 @@
           "audioKey": "food-peanut-allergy"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

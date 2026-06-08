@@ -7,7 +7,7 @@
   "title": "Có nước suối không?",
   "englishTitle": "Do you have bottled water?",
   "pronunciation": "koh nook soy khong",
-  "summary": "Có nước suối không? means “Do you have bottled water?”",
+  "summary": "Use this when you want bottled water instead of tap water.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -18,8 +18,10 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Có nước suối không? when you need \"Do you have bottled water\". This is for when you want bottled water with your meal. Listen for a yes/no answer, a gesture toward the item, or a short alternative; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Có nước suối không? keeps the question easy to answer. Ask when you want bottled water with your meal.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
@@ -41,7 +43,7 @@
         {
           "id": "food-5-piece-3",
           "vietnamese": "không?",
-          "english": "asks yes or no",
+          "english": "not? / yes-no ending",
           "audioKey": "breakdown-bath-6-piece-6"
         },
         {
@@ -51,12 +53,13 @@
           "audioKey": "food-5"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Có nước suối không? as your first sentence for \"Do you have bottled water\". This is for when you want bottled water with your meal. Pause after the phrase and listen for a yes/no answer, a gesture toward the item, or a short alternative. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Use the full phrase before adding details. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "food-5",
@@ -69,18 +72,21 @@
           "audioKey": "food-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. For \"Do you have bottled water\", Có nước suối không? makes the next step easier to answer. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
-      "presentation": "plain-text"
+      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. The reply may be unclear.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Food & Drink, the reply often comes as a yes/no answer, a gesture toward the item, or a short alternative. Say Có nước suối không? once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "The reply may be a yes/no answer, a gesture toward the item, or short alternative. Say Có nước suối không?",
       "phrases": [
         {
           "id": "coffee-1",
@@ -113,12 +119,13 @@
           "audioKey": "coffee-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when you want bottled water with your meal. It fits ordering, adjusting dishes, and checking ingredients, especially when the next step is a yes/no answer, a gesture toward the item, or a short alternative. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
+      "body": "Ask when you want bottled water with your meal. The reply may be a yes/no answer, a gesture toward the item, or short alternative.",
       "phrases": [
         {
           "id": "coffee-4",
@@ -151,13 +158,16 @@
           "audioKey": "coffee-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -195,7 +205,8 @@
           "audioKey": "food-menu"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "nearby-phrases",
@@ -243,7 +254,8 @@
           "audioKey": "food-4"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -291,7 +303,8 @@
           "audioKey": "food-peanut-allergy"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

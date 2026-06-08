@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể rửa tay ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names wash my hands in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Tôi có thể rửa tay ở đâu? keeps the direction question short. Keep the relevant place, item, or screen visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Tôi có thể rửa tay ở đâu?. Show your sign, shelf, photo, or the place you are already standing near, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Keep Tôi có thể rửa tay ở đâu? together as one sentence before adding details. Say Tôi có thể rửa tay ở đâu?",
       "phrases": [
         {
           "id": "v500-bath-pers-need-where-can-i-wash-my-hands",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where can I wash my hands? to another bathroom or personal-needs need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another bathroom or personal-needs need.",
       "phrases": [
         {
           "id": "bath-1",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể rửa tay ở đâu?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "bath-3",

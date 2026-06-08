@@ -7,7 +7,7 @@
   "title": "Ít cay thôi",
   "englishTitle": "Less spicy, please",
   "pronunciation": "eet kai thoy",
-  "summary": "A focused guide to when Ít cay thôi sounds more natural than Không cay nhé.",
+  "summary": "A softer food-stall request when no chili is unrealistic but less heat matters.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -18,39 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Ít cay thôi is useful when \"Less spicy, please\" needs a slightly different tone or setting. Use this when fully not spicy is unrealistic but you still need the dish milder.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "breakdown",
-      "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
-      "breakdown": [
-        {
-          "id": "food-not-spicy-clearer-piece-1",
-          "vietnamese": "Ít cay",
-          "english": "less spicy",
-          "audioKey": "breakdown-authored-it-cay-df4790e281"
-        },
-        {
-          "id": "food-not-spicy-clearer-piece-2",
-          "vietnamese": "thôi",
-          "english": "only / just",
-          "audioKey": "breakdown-v500-mone-numb-pric-i-only-have-this-much-piece-6"
-        },
-        {
-          "id": "food-not-spicy-clearer-full",
-          "vietnamese": "Ít cay thôi",
-          "english": "Less spicy, please",
-          "audioKey": "audio-authored-it-cay-thoi-05b8e258a2"
-        }
-      ],
-      "presentation": "breakdown-strip"
+      "body": "Use this at a food stall or restaurant when you still want the dish, just with less chili.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Ít cay thôi when \"Less spicy, please\" is the exact tone or situation you want.",
+      "body": "Say this before the order is cooked or assembled.",
       "phrases": [
         {
           "id": "food-not-spicy-clearer",
@@ -63,18 +39,40 @@
           "audioKey": "audio-authored-it-cay-thoi-05b8e258a2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "This is for when fully not spicy is unrealistic but you still need the dish milder. Use Không cay nhé when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
-      "presentation": "plain-text"
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Play each piece, then the full phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Ít cay",
+          "english": "less spicy",
+          "audioKey": "breakdown-authored-it-cay-df4790e281"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "thôi",
+          "english": "just / only",
+          "audioKey": "breakdown-v500-mone-numb-pric-i-only-have-this-much-piece-6"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Ít cay thôi",
+          "english": "Less spicy, please",
+          "audioKey": "audio-authored-it-cay-thoi-05b8e258a2"
+        }
+      ],
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Food & Drink, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Ít cay thôi once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Không cay nhé asks for no spice, which can be hard with dishes where chili is already part of the prep. Ít cay thôi is softer and often more practical.",
       "phrases": [
         {
           "id": "food-3",
@@ -107,18 +105,29 @@
           "audioKey": "coffee-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Best for soups, noodles, sauces, and dipping chili where less heat is realistic.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Nearby phrases keep the conversation moving after this one.",
+      "body": "Pair it with allergy, no-meat, bill, or recommendation phrases as the meal continues.",
       "phrases": [
         {
           "id": "food-3",
@@ -181,7 +190,8 @@
           "audioKey": "coffee-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

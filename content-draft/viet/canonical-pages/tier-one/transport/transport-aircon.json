@@ -7,7 +7,7 @@
   "title": "Mở máy lạnh giúp tôi",
   "englishTitle": "Please turn on the air conditioning",
   "pronunciation": "muh mai lanh zoop toy",
-  "summary": "Mở máy lạnh giúp tôi means “Please turn on the air conditioning”.",
+  "summary": "This is a small comfort phrase, but it matters on long hot rides.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Mở máy lạnh giúp tôi when you need \"Please turn on the air conditioning\". Use this on a hot ride if the air conditioning is off. This is a small comfort phrase, but it matters on long hot rides. Listen for a confirmation, a handoff, a price, or a follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Mở máy lạnh giúp tôi makes the request direct without adding extra explanation. Use this on a hot ride if the air conditioning is off. This is a small comfort phrase, but it matters on long hot rides.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "taxi-5-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "taxi-5"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Mở máy lạnh giúp tôi as your first sentence for \"Please turn on the air conditioning\". Use this on a hot ride if the air conditioning is off. Pause after the phrase and listen for a confirmation, a handoff, a price, or a follow-up question. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Keep Mở máy lạnh giúp tôi together as one sentence before adding details. Keep the map, address, or destination visible.",
       "phrases": [
         {
           "id": "taxi-5",
@@ -69,18 +72,21 @@
           "audioKey": "taxi-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"Please turn on the air conditioning\", Mở máy lạnh giúp tôi makes the next step easier to answer. Pause after the phrase so the person can confirm before you add more words.",
-      "presentation": "plain-text"
+      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. Keep the map, address, or destination visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Transport, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Mở máy lạnh giúp tôi once, pause, and watch for the reply. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Keep the map, address, or destination visible.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -113,12 +119,13 @@
           "audioKey": "taxi-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this on a hot ride if the air conditioning is off. It fits rides, routes, pickup points, and stops, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "Use this on a hot ride if the air conditioning is off. Keep the map, address, or destination visible.",
       "phrases": [
         {
           "id": "taxi-4",
@@ -151,13 +158,16 @@
           "audioKey": "taxi-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -195,7 +205,8 @@
           "audioKey": "transport-lost"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -283,7 +294,8 @@
           "audioKey": "transport-meter"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

@@ -20,7 +20,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cái này có mới không? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Is this new is right."
+      "body": "Cái này có mới không? keeps the question easy to answer. Point to the item, menu line, receipt, size, or photo."
     },
     {
       "id": "quick-say",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is this new? to another shopping need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another shopping need.",
       "phrases": [
         {
           "id": "shop-1",
@@ -115,12 +115,12 @@
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "In shops and markets, the object is the anchor. Point clearly, then listen for the number or option."
+      "body": "In shops and markets, the object is the reference point. Point to the item, menu line, receipt, size, or photo."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Cái này có mới không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "shop-4",

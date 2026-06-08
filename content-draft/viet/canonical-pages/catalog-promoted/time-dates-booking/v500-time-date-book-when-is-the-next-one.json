@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Lần tiếp theo là khi nào? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Keep Lần tiếp theo là khi nào? together as one sentence before adding details. Start with Lần tiếp theo là khi nào?",
       "phrases": [
         {
           "id": "v500-time-date-book-when-is-the-next-one",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from When is the next one? to another time, date, or booking need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
       "phrases": [
         {
           "id": "time-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when when is the next one is the detail you need resolved. The likely reply is a time, date, or schedule detail, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is when is the next one. Keep the booking, room number, date, or address visible."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Lần tiếp theo là khi nào?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "time-4",

@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Khi nào tôi nên tìm kiếm sự giúp đỡ khẩn cấp? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Keep Khi nào tôi nên tìm kiếm sự giúp đỡ khẩn cấp? together as one sentence before adding details. Start with Khi nào tôi nên tìm kiếm sự giúp đỡ khẩn cấp?",
       "phrases": [
         {
           "id": "v900-heal-phar-when-should-i-seek-emergency-help",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from When should I seek emergency help? to another pharmacy or health need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
       "phrases": [
         {
           "id": "problems-6",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when when should I seek emergency help is the detail you need resolved. The likely reply is a time, date, or schedule detail, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is when should I seek emergency help. Show the symptom, medicine, location, or helper contact if you can."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Khi nào tôi nên tìm kiếm sự giúp đỡ khẩn cấp?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "health-2",

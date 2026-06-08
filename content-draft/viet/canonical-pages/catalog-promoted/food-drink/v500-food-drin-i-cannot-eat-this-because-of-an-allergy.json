@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I cannot eat this because of an allergy to another food or drink need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another food or drink need.",
       "phrases": [
         {
           "id": "coffee-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real food or drink exchange when i cannot eat this because of an allergy is the detail you need resolved. The likely reply is a simpler option, help, or a follow-up question, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is i cannot eat this because of an allergy. Point to the item, menu line, receipt, size, or photo."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi không thể ăn món này vì bị dị ứng.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "coffee-4",

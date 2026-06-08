@@ -20,7 +20,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bây giờ nó có mở không? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Is it open now is right."
+      "body": "Bây giờ nó có mở không? keeps the question easy to answer. Keep the map, address, or destination visible."
     },
     {
       "id": "quick-say",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is it open now? to another directions need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another directions need.",
       "phrases": [
         {
           "id": "directions-1",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bây giờ nó có mở không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "directions-4",

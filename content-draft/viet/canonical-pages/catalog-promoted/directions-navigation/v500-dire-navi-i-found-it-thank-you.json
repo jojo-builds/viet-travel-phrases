@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi đã tìm thấy nó, cảm ơn bạn. Keep the situation visible, pause after the phrase, and let the other person answer with a smile, acknowledgment, or short reply.",
+      "body": "Keep Tôi đã tìm thấy nó, cảm ơn bạn together as one sentence before adding details. Keep the map, address, or destination visible.",
       "phrases": [
         {
           "id": "v500-dire-navi-i-found-it-thank-you",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I found it, thank you to another directions need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another directions need.",
       "phrases": [
         {
           "id": "directions-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real directions exchange when i found it, thank you is the detail you need resolved. The likely reply is a smile, acknowledgment, or short reply, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is i found it, thank you. Keep the map, address, or destination visible."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi đã tìm thấy nó, cảm ơn bạn.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "directions-4",

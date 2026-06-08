@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Mấy giờ thì xong? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Keep Mấy giờ thì xong? together as one sentence before adding details. Start with Mấy giờ thì xong?",
       "phrases": [
         {
           "id": "v900-time-date-book-what-time-does-it-finish",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from What time does it finish? to another time, date, or booking need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
       "phrases": [
         {
           "id": "time-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when what time does it finish is the detail you need resolved. The likely reply is a time, date, or schedule detail, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is what time does it finish. Keep the booking, room number, date, or address visible."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Mấy giờ thì xong?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "time-4",

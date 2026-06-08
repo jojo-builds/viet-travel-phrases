@@ -7,7 +7,7 @@
   "title": "Tôi bị dị ứng đậu phộng",
   "englishTitle": "I am allergic to peanuts",
   "pronunciation": "toy bee zee oong dow fohng",
-  "summary": "Tôi bị dị ứng đậu phộng means “I am allergic to peanuts”.",
+  "summary": "Lead with the allergy warning, then ask about ingredients if needed.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi bị dị ứng đậu phộng when you need \"I am allergic to peanuts\". This comes before you order when peanuts are the main food risk. Lead with the allergy warning, then ask about ingredients if needed. Use the rows below to pick the warmer, safer, or more direct version.",
-      "presentation": "plain-text"
+      "body": "Tôi bị dị ứng đậu phộng names the need before the details start piling up. This comes before you order when peanuts are the main food risk. Lead with the allergy warning, then ask about ingredients if needed.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "food-peanut-allergy-piece-1",
@@ -63,12 +65,13 @@
           "audioKey": "food-peanut-allergy"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi bị dị ứng đậu phộng as your first sentence for \"I am allergic to peanuts\". This comes before you order when peanuts are the main food risk. Pause after the phrase and listen for a confirmation, a substitute, or a question about what is allowed. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Keep Tôi bị dị ứng đậu phộng together as one sentence before adding details. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "food-peanut-allergy",
@@ -81,7 +84,8 @@
           "audioKey": "food-peanut-allergy"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "natural-variations",
@@ -99,18 +103,21 @@
           "audioKey": "food-15"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. For \"I am allergic to peanuts\", Tôi bị dị ứng đậu phộng makes the next step easier to answer. Confirm visually when the detail affects safety, health, or the final order.",
-      "presentation": "plain-text"
+      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. Point to the item, menu line, receipt, size, or photo.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Food & Drink, the reply often comes as a confirmation, a substitute, or a question about what is allowed. Say Tôi bị dị ứng đậu phộng once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "The reply may be a confirmation, a substitute, or question about what is allowed. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "coffee-1",
@@ -143,12 +150,13 @@
           "audioKey": "coffee-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This comes before you order when peanuts are the main food risk. It fits ordering, adjusting dishes, and checking ingredients, especially when the next step is a confirmation, a substitute, or a question about what is allowed. Confirm visually when the detail affects safety, health, or the final order.",
+      "body": "This comes before you order when peanuts are the main food risk. The reply may be a confirmation, a substitute, or question about what is allowed.",
       "phrases": [
         {
           "id": "coffee-4",
@@ -181,13 +189,16 @@
           "audioKey": "coffee-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -225,7 +236,8 @@
           "audioKey": "food-menu"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -313,7 +325,8 @@
           "audioKey": "food-vegetarian"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

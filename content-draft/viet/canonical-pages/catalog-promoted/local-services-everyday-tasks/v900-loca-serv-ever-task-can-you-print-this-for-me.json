@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể in cái này cho tôi được không? asks someone to do one helpful action for you. Use it for print this for me when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Use this at a print shop, hotel desk, or service counter. Show the file or phone screen so the task is clear."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể in cái này cho tôi được không? once, then make the task visible with your item, receipt, photo, address, or phone screen. The phrase is doing one job: getting a clear answer about print this for me.",
+      "body": "Keep Bạn có thể in cái này cho tôi được không? together as one sentence before adding details. Start with Bạn có thể in cái này cho tôi được không?",
       "phrases": [
         {
           "id": "v900-loca-serv-ever-task-can-you-print-this-for-me",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you print this for me? to another local service need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another local service need.",
       "phrases": [
         {
           "id": "store-1",
@@ -116,7 +116,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real local service exchange when print this for me is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is can you print this for me. Point to the item, menu line, receipt, size, or photo."
     },
     {
       "id": "good-to-know",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể in cái này cho tôi được không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "store-4",

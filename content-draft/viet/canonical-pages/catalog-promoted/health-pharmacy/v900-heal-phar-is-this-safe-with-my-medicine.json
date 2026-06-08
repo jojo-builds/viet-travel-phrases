@@ -20,7 +20,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Điều này có an toàn với thuốc của tôi không? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Is this safe with my medicine is right."
+      "body": "Điều này có an toàn với thuốc của tôi không? keeps the question easy to answer. Show the symptom, medicine, location, or helper contact if you can."
     },
     {
       "id": "quick-say",
@@ -59,7 +59,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "không?",
-          "english": "question marker",
+          "english": "yes/no?",
           "audioKey": "breakdown-bath-6-piece-6"
         },
         {
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is this safe with my medicine? to another pharmacy or health need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
       "phrases": [
         {
           "id": "problems-6",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Điều này có an toàn với thuốc của tôi không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "health-2",

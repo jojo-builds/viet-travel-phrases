@@ -7,7 +7,7 @@
   "title": "Không cay nhé",
   "englishTitle": "Not spicy please",
   "pronunciation": "khong kai nhe",
-  "summary": "Không cay nhé means “Not spicy please”.",
+  "summary": "This is one of the most practical restaurant safety phrases.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Không cay nhé when you need \"Not spicy please\". This comes before the dish is prepared if you want mild food. This is one of the most practical restaurant safety phrases. Use the rows below to pick the warmer, safer, or more direct version.",
-      "presentation": "plain-text"
+      "body": "Không cay nhé keeps the travel moment short and clear. This comes before the dish is prepared if you want mild food. This is one of the most practical restaurant safety phrases.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "food-3-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "food-3"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Không cay nhé as your first sentence for \"Not spicy please\". This comes before the dish is prepared if you want mild food. Pause after the phrase and listen for a confirmation, a substitute, or a question about what is allowed. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Keep Không cay nhé together as one sentence before adding details. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "food-3",
@@ -69,7 +72,8 @@
           "audioKey": "food-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "natural-variations",
@@ -87,18 +91,21 @@
           "audioKey": "audio-authored-it-cay-thoi-05b8e258a2"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. For \"Not spicy please\", Không cay nhé makes the next step easier to answer. Confirm visually when the detail affects safety, health, or the final order.",
-      "presentation": "plain-text"
+      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. Point to the item, menu line, receipt, size, or photo.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Food & Drink, the reply often comes as a confirmation, a substitute, or a question about what is allowed. Say Không cay nhé once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "The reply may be a confirmation, a substitute, or question about what is allowed. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "coffee-1",
@@ -131,12 +138,13 @@
           "audioKey": "coffee-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This comes before the dish is prepared if you want mild food. It fits ordering, adjusting dishes, and checking ingredients, especially when the next step is a confirmation, a substitute, or a question about what is allowed. Confirm visually when the detail affects safety, health, or the final order.",
+      "body": "This comes before the dish is prepared if you want mild food. The reply may be a confirmation, a substitute, or question about what is allowed.",
       "phrases": [
         {
           "id": "coffee-4",
@@ -169,13 +177,16 @@
           "audioKey": "coffee-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -213,7 +224,8 @@
           "audioKey": "food-menu"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -301,7 +313,8 @@
           "audioKey": "food-peanut-allergy"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

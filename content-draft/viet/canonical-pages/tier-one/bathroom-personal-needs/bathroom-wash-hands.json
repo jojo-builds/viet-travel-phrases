@@ -7,7 +7,7 @@
   "title": "Tôi rửa tay ở đây được không?",
   "englishTitle": "Can I wash my hands here?",
   "pronunciation": "toy zoo-ah tai uh day dook khong",
-  "summary": "Tôi rửa tay ở đây được không? means “Can I wash my hands here?”",
+  "summary": "Useful in markets, food areas, and roadside stops.",
   "iconName": "person.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -18,8 +18,10 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi rửa tay ở đây được không? when you need \"Can I wash my hands here\". This is for when you only need a sink or hand-washing spot. Useful in markets, food areas, and roadside stops. Listen for a yes/no answer, a gesture toward the item, or a short alternative; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Tôi rửa tay ở đây được không? keeps the question easy to answer. Reach for it when you only need a sink or hand-washing spot. Useful in markets, food areas, and roadside stops.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
@@ -69,12 +71,13 @@
           "audioKey": "bath-4"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi rửa tay ở đây được không? as your first sentence for \"Can I wash my hands here\". This is for when you only need a sink or hand-washing spot. Pause after the phrase and listen for a yes/no answer, a gesture toward the item, or a short alternative. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
+      "body": "Use the full phrase before adding details. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
       "phrases": [
         {
           "id": "bath-4",
@@ -87,18 +90,21 @@
           "audioKey": "bath-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "These phrases are practical and often need a quick answer, not a long conversation. For \"Can I wash my hands here\", Tôi rửa tay ở đây được không? makes the next step easier to answer. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
-      "presentation": "plain-text"
+      "body": "These phrases are practical and often need a quick answer, not a long conversation. The reply may be unclear.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Bathroom & Personal Needs, the reply often comes as a yes/no answer, a gesture toward the item, or a short alternative. Say Tôi rửa tay ở đây được không? once, pause, and watch for the reply. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
+      "body": "The reply may be a yes/no answer, a gesture toward the item, or short alternative. Say Tôi rửa tay ở đây được không?",
       "phrases": [
         {
           "id": "bath-1",
@@ -131,12 +137,13 @@
           "audioKey": "bathroom-use"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when you only need a sink or hand-washing spot. It fits bathrooms, soap, paper, water, and basic personal needs, especially when the next step is a yes/no answer, a gesture toward the item, or a short alternative. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
+      "body": "Reach for it when you only need a sink or hand-washing spot. The reply may be a yes/no answer, a gesture toward the item, or short alternative.",
       "phrases": [
         {
           "id": "bath-3",
@@ -159,13 +166,16 @@
           "audioKey": "bath-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Some places may not have paper or soap available. Asking early avoids an awkward surprise.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -183,7 +193,8 @@
           "audioKey": "bath-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -241,7 +252,8 @@
           "audioKey": "bath-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

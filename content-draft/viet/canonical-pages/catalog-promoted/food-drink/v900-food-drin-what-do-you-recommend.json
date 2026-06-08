@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from What do you recommend? to another food or drink need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another food or drink need.",
       "phrases": [
         {
           "id": "coffee-1",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn đề xuất món gì?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "coffee-4",

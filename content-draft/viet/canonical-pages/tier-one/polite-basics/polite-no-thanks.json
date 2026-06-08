@@ -7,7 +7,7 @@
   "title": "Không, cảm ơn",
   "englishTitle": "No, thank you",
   "pronunciation": "khong kahm uhn",
-  "summary": "Không, cảm ơn is a common way to say “No, thank you” in Vietnamese.",
+  "summary": "Short refusal plus thanks is safer than just saying no.",
   "iconName": "hand.wave.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Không, cảm ơn when you need \"No, thank you\". This helps you decline offers from vendors or service staff politely. Short refusal plus thanks is safer than just saying no. Listen for a confirmation, a substitute, or a question about what is allowed; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Không, cảm ơn keeps the social move simple and polite. This helps you decline offers from vendors or service staff politely. Short refusal plus thanks is safer than just saying no.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "polite-4-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "polite-4"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Không, cảm ơn as your first sentence for \"No, thank you\". This helps you decline offers from vendors or service staff politely. Pause after the phrase and listen for a confirmation, a substitute, or a question about what is allowed. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
+      "body": "Keep Không, cảm ơn together as one sentence before adding details. Keep the tone warm and leave room for a short reply.",
       "phrases": [
         {
           "id": "polite-4",
@@ -63,18 +66,21 @@
           "audioKey": "polite-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Polite Vietnamese often works by softening the start or end of an interaction before the main request. For \"No, thank you\", Không, cảm ơn makes the next step easier to answer. Confirm visually when the detail affects safety, health, or the final order.",
-      "presentation": "plain-text"
+      "body": "Polite Vietnamese often works by softening the start or end of an interaction before the main request. Keep the tone warm and leave room for a short reply.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Polite Basics, the reply often comes as a confirmation, a substitute, or a question about what is allowed. Say Không, cảm ơn once, pause, and watch for the reply. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
+      "body": "The reply may be a confirmation, a substitute, or question about what is allowed. Keep the tone warm and leave room for a short reply.",
       "phrases": [
         {
           "id": "polite-1",
@@ -107,12 +113,13 @@
           "audioKey": "polite-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This helps you decline offers from vendors or service staff politely. It fits small service and first-contact moments, especially when the next step is a confirmation, a substitute, or a question about what is allowed. Confirm visually when the detail affects safety, health, or the final order.",
+      "body": "This helps you decline offers from vendors or service staff politely. The reply may be a confirmation, a substitute, or question about what is allowed.",
       "phrases": [
         {
           "id": "polite-5",
@@ -145,13 +152,16 @@
           "audioKey": "polite-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Keep quick service phrases clear, polite, and short. A calm short sentence usually works better than a long one said nervously.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -189,7 +199,8 @@
           "audioKey": "audio-phrase-chao-ban"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "nearby-phrases",
@@ -237,7 +248,8 @@
           "audioKey": "audio-phrase-chao-buoi-chieu"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -325,7 +337,8 @@
           "audioKey": "breakdown-food-5-first"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

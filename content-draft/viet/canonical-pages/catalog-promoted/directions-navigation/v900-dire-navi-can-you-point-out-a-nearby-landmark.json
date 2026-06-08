@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể chỉ ra một điểm mốc gần đó không? once, then make the task visible with your map, address, ride screen, sign, or nearby landmark. The phrase is doing one job: getting a clear answer about point out a nearby landmark.",
+      "body": "Keep Bạn có thể chỉ ra một điểm mốc gần đó không? together as one sentence before adding details. Start with Bạn có thể chỉ ra một điểm mốc gần đó không?",
       "phrases": [
         {
           "id": "v900-dire-navi-can-you-point-out-a-nearby-landmark",
@@ -85,7 +85,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you point out a nearby landmark? to another directions need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another directions need.",
       "phrases": [
         {
           "id": "directions-1",
@@ -122,7 +122,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real directions exchange when point out a nearby landmark is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is can you point out a nearby landmark. Keep the map, address, or destination visible."
     },
     {
       "id": "good-to-know",
@@ -132,7 +132,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể chỉ ra một điểm mốc gần đó không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "directions-4",

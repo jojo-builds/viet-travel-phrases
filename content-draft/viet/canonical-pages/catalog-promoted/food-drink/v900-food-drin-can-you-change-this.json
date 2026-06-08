@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể thay đổi điều này? once, then make the task visible with your menu line, food photo, counter item, or order screen. The phrase is doing one job: getting a clear answer about change this.",
+      "body": "Keep Bạn có thể thay đổi điều này? together as one sentence before adding details. Start with Bạn có thể thay đổi điều này?",
       "phrases": [
         {
           "id": "v900-food-drin-can-you-change-this",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you change this? to another food or drink need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another food or drink need.",
       "phrases": [
         {
           "id": "coffee-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real food or drink exchange when change this is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is can you change this. Point to the item, menu line, receipt, size, or photo."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể thay đổi điều này?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "coffee-4",

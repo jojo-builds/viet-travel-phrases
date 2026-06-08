@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Khi nào nó sẽ sẵn sàng? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Keep Khi nào nó sẽ sẵn sàng? together as one sentence before adding details. Start with Khi nào nó sẽ sẵn sàng?",
       "phrases": [
         {
           "id": "v900-loca-serv-ever-task-when-will-it-be-ready",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from When will it be ready? to another local service need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another local service need.",
       "phrases": [
         {
           "id": "store-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real local service exchange when when will it be ready is the detail you need resolved. The likely reply is a time, date, or schedule detail, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is when will it be ready. Point to the item, menu line, receipt, size, or photo."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Khi nào nó sẽ sẵn sàng?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "store-4",

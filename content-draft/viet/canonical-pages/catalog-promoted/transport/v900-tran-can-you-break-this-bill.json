@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể phá vỡ hóa đơn này? once, then make the task visible with your map, destination, ride screen, ticket, vehicle, or pickup point. The phrase is doing one job: getting a clear answer about break this bill.",
+      "body": "Keep Bạn có thể phá vỡ hóa đơn này? together as one sentence before adding details. Start with Bạn có thể phá vỡ hóa đơn này?",
       "phrases": [
         {
           "id": "v900-tran-can-you-break-this-bill",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you break this bill? to another transport need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when break this bill is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is can you break this bill. Keep the map, address, or destination visible."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể phá vỡ hóa đơn này?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

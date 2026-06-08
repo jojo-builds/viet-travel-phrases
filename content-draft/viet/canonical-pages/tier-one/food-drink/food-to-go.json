@@ -7,7 +7,7 @@
   "title": "Mang đi",
   "englishTitle": "To go",
   "pronunciation": "mang dee",
-  "summary": "Mang đi means “To go”.",
+  "summary": "This keeps the order atomic and easy to recognize.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Mang đi when you need \"To go\". Say this when you want takeaway instead of staying. This keeps the order atomic and easy to recognize. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Mang đi keeps the travel moment short and clear. Say this when you want takeaway instead of staying. This keeps the order atomic and easy to recognize.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "coffee-6-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "coffee-6"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Mang đi as your first sentence for \"To go\". Say this when you want takeaway instead of staying. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Keep Mang đi together as one sentence before adding details. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "coffee-6",
@@ -63,18 +66,21 @@
           "audioKey": "coffee-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. For \"To go\", Mang đi makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. Point to the item, menu line, receipt, size, or photo.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Food & Drink, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Mang đi once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "coffee-1",
@@ -107,12 +113,13 @@
           "audioKey": "coffee-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Say this when you want takeaway instead of staying. It fits ordering, adjusting dishes, and checking ingredients, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "body": "Say this when you want takeaway instead of staying. The reply may be a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "coffee-4",
@@ -145,13 +152,16 @@
           "audioKey": "coffee-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -189,7 +199,8 @@
           "audioKey": "food-1"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "nearby-phrases",
@@ -237,7 +248,8 @@
           "audioKey": "food-5"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -285,7 +297,8 @@
           "audioKey": "food-peanut-allergy"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể gọi bác sĩ được không? once, then make the task visible with your symptom note, medicine box, body area, photo, or translated note. The phrase is doing one job: getting a clear answer about call a doctor.",
+      "body": "Keep Bạn có thể gọi bác sĩ được không? together as one sentence before adding details. Start with Bạn có thể gọi bác sĩ được không?",
       "phrases": [
         {
           "id": "v500-heal-phar-can-you-call-a-doctor",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you call a doctor? to another pharmacy or health need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
       "phrases": [
         {
           "id": "problems-6",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when call a doctor is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is can you call a doctor. Show the symptom, medicine, location, or helper contact if you can."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể gọi bác sĩ được không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "health-2",

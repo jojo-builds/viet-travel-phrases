@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Khi nào có chuyến xe buýt tiếp theo? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Keep Khi nào có chuyến xe buýt tiếp theo? together as one sentence before adding details. Start with Khi nào có chuyến xe buýt tiếp theo?",
       "phrases": [
         {
           "id": "v500-tran-when-is-the-next-bus",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from When is the next bus? to another transport need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when when is the next bus is the detail you need resolved. The likely reply is a time, date, or schedule detail, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is when is the next bus. Keep the map, address, or destination visible."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Khi nào có chuyến xe buýt tiếp theo?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể cho tôi một mức giá tốt hơn? is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on Can you give me a better price, so the answer can be a number, calculator screen, or typed price."
+      "body": "Use this for a polite bargain when the first price feels flexible. Keep the item in view and be ready to accept a simple yes/no or counteroffer."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Ask Bạn có thể cho tôi một mức giá tốt hơn? before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "body": "Say Bạn có thể cho tôi một mức giá tốt hơn?, then wait. If they type a new number, confirm it before adding more items.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-can-you-give-me-a-better-price",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you give me a better price? to another money or price need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
       "phrases": [
         {
           "id": "price-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+      "body": "Use it at markets, small shops, or service counters where prices may move. Skip it when the price is clearly fixed."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "A friendly tone matters here; the phrase is a request, not a demand."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể cho tôi một mức giá tốt hơn?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "price-3",

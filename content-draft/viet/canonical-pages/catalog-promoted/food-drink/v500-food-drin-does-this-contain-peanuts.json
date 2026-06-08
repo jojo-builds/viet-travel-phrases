@@ -20,7 +20,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cái này có chứa đậu phộng không? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Does this contain peanuts is right."
+      "body": "Cái này có chứa đậu phộng không? keeps the question easy to answer. Point to the item, menu line, receipt, size, or photo."
     },
     {
       "id": "quick-say",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Does this contain peanuts? to another food or drink need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another food or drink need.",
       "phrases": [
         {
           "id": "coffee-1",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Cái này có chứa đậu phộng không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "coffee-4",

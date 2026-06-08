@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Ý anh/chị là cái nào? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Keep Ý anh/chị là cái nào? together as one sentence before adding details. Start with Ý anh/chị là cái nào?",
       "phrases": [
         {
           "id": "repair-4",
@@ -65,7 +65,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Which one do you mean? to another understanding check need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
       "phrases": [
         {
           "id": "problems-2",
@@ -102,7 +102,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real understanding check exchange when which one do you mean is the detail you need resolved. The likely reply is a choice, counter, gate, line, or direction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is which one do you mean. If it is still unclear, show, write, or point to the exact word."
     },
     {
       "id": "good-to-know",
@@ -112,7 +112,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Ý anh/chị là cái nào?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "repair-1",

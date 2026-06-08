@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Cảm ơn bạn, tôi hiểu hướng dẫn. Keep the situation visible, pause after the phrase, and let the other person answer with a smile, acknowledgment, or short reply.",
+      "body": "Keep Cảm ơn bạn, tôi hiểu hướng dẫn together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
       "phrases": [
         {
           "id": "v900-heal-phar-thank-you-i-understand-the-instructions",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Thank you, I understand the instructions to another pharmacy or health need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when thank you, I understand the instructions is the detail you need resolved. The likely reply is a smile, acknowledgment, or short reply, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is thank you, I understand the instructions. Show the symptom, medicine, location, or helper contact if you can."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Cảm ơn bạn, tôi hiểu hướng dẫn.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "health-2",

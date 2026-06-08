@@ -7,7 +7,7 @@
   "title": "Giá cuối bao nhiêu?",
   "englishTitle": "What’s your final price?",
   "pronunciation": "za gooy bao nyew",
-  "summary": "Giá cuối bao nhiêu? means “What’s your final price?”",
+  "summary": "This helps you move from browsing to decision.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Giá cuối bao nhiêu? when you need \"What's your final price\". Ask this before making a final decision. This helps you move from browsing to decision. Listen for a number, typed amount, calculator screen, or direct yes/no about payment; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Giá cuối bao nhiêu? keeps the travel moment short and clear. Ask this before making a final decision. This helps you move from browsing to decision.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "price-5-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "price-5"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Giá cuối bao nhiêu? as your first sentence for \"What's your final price\". Ask this before making a final decision. Pause after the phrase and listen for a number, typed amount, calculator screen, or direct yes/no about payment. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "Use the full phrase before adding details. Keep the relevant place, object, or screen visible while you speak.",
       "phrases": [
         {
           "id": "price-5",
@@ -69,18 +72,21 @@
           "audioKey": "price-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. For \"What's your final price\", Giá cuối bao nhiêu? makes the next step easier to answer. Repeat or show the number before paying if the amount matters.",
-      "presentation": "plain-text"
+      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. Keep the relevant place, item, or screen visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Payment & numbers, the reply often comes as a number, typed amount, calculator screen, or direct yes/no about payment. Say Giá cuối bao nhiêu? once, pause, and watch for the reply. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "The reply may be a number, typed amount, calculator screen, or direct yes/no about payment. Say Giá cuối bao nhiêu?",
       "phrases": [
         {
           "id": "price-1",
@@ -113,12 +119,13 @@
           "audioKey": "price-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Ask this before making a final decision. It fits prices, quantities, payment, and ATM moments, especially when the next step is a number, typed amount, calculator screen, or direct yes/no about payment. Repeat or show the number before paying if the amount matters.",
+      "body": "Ask this before making a final decision. The reply may be a number, typed amount, calculator screen, or direct yes/no about payment.",
       "phrases": [
         {
           "id": "price-4",
@@ -151,13 +158,16 @@
           "audioKey": "price-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Confirm the final price before handing over cash or card, especially in markets and taxi moments.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -185,7 +195,8 @@
           "audioKey": "v500-mone-numb-pric-the-atm-kept-my-card"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -273,7 +284,8 @@
           "audioKey": "v500-mone-numb-pric-the-atm-kept-my-card"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

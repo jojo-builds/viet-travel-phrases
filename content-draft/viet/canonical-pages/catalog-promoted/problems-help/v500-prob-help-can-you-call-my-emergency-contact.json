@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể gọi cho người liên lạc khẩn cấp của tôi được không? once, then make the task visible with your phone screen, receipt, item, photo, or the place where the issue is happening. The phrase is doing one job: getting a clear answer about call my emergency contact.",
+      "body": "Keep Bạn có thể gọi cho người liên lạc khẩn cấp của tôi được không? together as one sentence before adding details. Start with Bạn có thể gọi cho người liên lạc khẩn cấp của tôi được không?",
       "phrases": [
         {
           "id": "v500-prob-help-can-you-call-my-emergency-contact",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you call my emergency contact? to another problem-solving need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another problem-solving need.",
       "phrases": [
         {
           "id": "problems-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real problem-solving exchange when call my emergency contact is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is can you call my emergency contact. Keep the relevant place, item, or screen visible."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể gọi cho người liên lạc khẩn cấp của tôi được không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "help-need-help-direct",

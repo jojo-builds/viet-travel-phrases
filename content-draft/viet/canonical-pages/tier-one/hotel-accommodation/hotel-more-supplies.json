@@ -7,7 +7,7 @@
   "title": "Cho tôi thêm khăn",
   "englishTitle": "More towels please",
   "pronunciation": "cho toy them khan",
-  "summary": "Cho tôi thêm khăn means “More towels please”.",
+  "summary": "Use this when you need more basics for the room.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Cho tôi thêm khăn when you need \"More towels please\". Use this for a straightforward front-desk request for more room supplies. Use the rows below to pick the warmer, safer, or more direct version.",
-      "presentation": "plain-text"
+      "body": "Cho tôi thêm khăn keeps the travel moment short and clear. Use this for a straightforward front-desk request for more room supplies.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "hotel-6-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "hotel-6"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Cho tôi thêm khăn as your first sentence for \"More towels please\". Use this for a straightforward front-desk request for more room supplies. Pause after the phrase and listen for a confirmation, a handoff, a price, or a follow-up question. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Keep Cho tôi thêm khăn together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "hotel-6",
@@ -69,7 +72,8 @@
           "audioKey": "hotel-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "natural-variations",
@@ -87,18 +91,21 @@
           "audioKey": "hotel-more-supplies-paper"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. For \"More towels please\", Cho tôi thêm khăn makes the next step easier to answer. Pause after the phrase so the person can confirm before you add more words.",
-      "presentation": "plain-text"
+      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. Keep the booking, room number, date, or address visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Hotel Accommodation, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Cho tôi thêm khăn once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -131,12 +138,13 @@
           "audioKey": "hotel-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this for a straightforward front-desk request for more room supplies. It fits front desk, room, check-in, and hotel-service moments, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "Use this for a straightforward front-desk request for more room supplies. Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "hotel-checkout",
@@ -169,13 +177,16 @@
           "audioKey": "hotel-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -203,7 +214,8 @@
           "audioKey": "v500-hote-acco-the-door-does-not-lock"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -291,7 +303,8 @@
           "audioKey": "v500-hote-acco-the-door-does-not-lock"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

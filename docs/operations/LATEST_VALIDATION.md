@@ -10,6 +10,54 @@ Authority lane: latest durable native iOS validation evidence
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
 
+## Branch-Local Phrase Copy Production Gate
+
+Current branch-local evidence for `codex/phrase-copy-production-gate`, based on base `0a503335c`:
+
+- isolated worktree: `/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/phrase-copy-production-gate`
+- `main` was not edited by this pass
+- phrase copy recommendation: `PASS`
+- branch merge recommendation: `PASS_WITH_RISKS`
+- material improvement: the generated native payload preserves rich authored phrase editorial for `tier1`, `child`, `catalog-promoted`, and `editorial-model-support` pages instead of thinning most phrase listings into a `Vietnamese means English` shell
+- generated scope after regeneration: `1782` phrase families, `1800` phrases, `1793` authored listing pages
+- production QA verdict: `NO_BLOCKER_OR_MAJOR_ISSUES_IN_STATIC_RENDER_MODEL`
+- production QA result: `0` blockers, `0` majors, `98` minors, `3` info
+- final formula/internal rendered-copy scan: `0` blocker-pattern hits; the only remaining `nearby pages` phrase is a safe non-formula good-to-know sentence
+- post-polish nearby-language cleanup: `733` repeated `Use these nearby pages when...` bodies replaced with nearby-phrase language
+- anti-thinning/card graph check: `935` source pages and `6884` sections checked against base, `0` phrase-card drops, `0` same-count target swaps
+- anti-thinning ledgers: `2608` total JSONL rows across formula repair, rendered backfill, nearby-language cleanup, card restoration, and targeted phrase-source cleanup ledgers
+- deferred support truth: `17` deferred editorial-pilot rows checked, `13` ready for Jojo approval, `2` ready with title-preserving import, `2` blocked title identity, `39` support pages
+- read-only review gate: visible copy reviewer `019ea83f-75ad-70e2-9400-8fa8354221e3` returned final post-polish `PASS`; graph/audio/support reviewer `019ea83f-9e07-7a73-8fdb-1ccf424b0e6e` returned `PASS_WITH_RISKS`
+- physical iPhone proof: not run from this feature branch
+
+Fresh command evidence from this branch:
+
+- `node native-ios/scripts/generate-viet-catalog.js` passed: `1782` families, `1800` phrases
+- `node native-ios/scripts/generate-authored-tier-one-pages.js` passed: `145` main tier-one pages, `13` child pages, `770` catalog-promoted pages, `826` city library pages, `39` editorial model support pages
+- `node native-ios/scripts/generate-viet-sqlite-fixture.js` passed: SQLite integrity OK, `19` scenarios, `1782` clusters, `1800` phrases, `1793` pages
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed: `0` release-blocking missing-audio rows, `717` planned missing-audio rows
+- `node native-ios/scripts/validate-viet-editorial-model-support.js` passed
+- `node native-ios/scripts/validate-viet-catalog-promoted-authoring.js` passed: `770` authored pages
+- `node native-ios/scripts/validate-tier-one-listing-pages.js` passed: `150` strong, `0` needs work
+- `node native-ios/scripts/validate-viet-phrase-backdrops.js` passed: `952` placements
+- `node native-ios/scripts/validate-viet-search-only-surfacing.js` passed: `315` generated relations
+- `node native-ios/scripts/validate-viet-breakdown-audit.js --write-export` passed
+- `node native-ios/scripts/audit-viet-listing-production-qa.js` passed static production QA: `1793` pages, `0` blockers, `0` majors, `98` minors, verdict `NO_BLOCKER_OR_MAJOR_ISSUES_IN_STATIC_RENDER_MODEL`
+- `git diff --check` passed
+- `node scripts/guard-native-only.js` passed
+
+Remaining non-copy risks:
+
+- `500` missing-audio priority rows remain in production QA.
+- `717` planned missing-audio rows remain in SQLite validation, with `0` release-blocking rows.
+- `native-ios/Resources/viet-authored-audio-audit.json` reports `718` missing rows because of a pre-existing nonblocking JSON-only `viet-family-food-to-go` breakdown audio row for `Mang di`.
+- `775` duplicate `sayThis` hero sections are hidden at render time.
+- `98` production QA minors remain.
+
+Branch-local receipt:
+
+- `docs/content-audits/phrase-copy-production-gate-2026-06-08/README.md`
+
 ## Current City Copy Production Gate Main Evidence
 
 Current `main` evidence after merging `codex/city-copy-final-production-gate`, based on head `43ce9503b` before the phone-build receipt:

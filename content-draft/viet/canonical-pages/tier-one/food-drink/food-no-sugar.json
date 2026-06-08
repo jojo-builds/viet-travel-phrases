@@ -7,7 +7,7 @@
   "title": "Không đường nhé",
   "englishTitle": "No sugar please",
   "pronunciation": "khong doong nhe",
-  "summary": "Không đường nhé is a common way to say “No sugar please” in Vietnamese.",
+  "summary": "This is one of the most useful café follow-ups for travelers.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Không đường nhé when you need \"No sugar please\". This helps you keep your drink less sweet. This is one of the most useful café follow-ups for travelers. Listen for a confirmation, a substitute, or a question about what is allowed; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Không đường nhé keeps the social move simple and polite. This helps you keep your drink less sweet. This is one of the most useful café follow-ups for travelers.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "coffee-5-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "coffee-5"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Không đường nhé as your first sentence for \"No sugar please\". This helps you keep your drink less sweet. Pause after the phrase and listen for a confirmation, a substitute, or a question about what is allowed. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Keep Không đường nhé together as one sentence before adding details. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "coffee-5",
@@ -63,18 +66,21 @@
           "audioKey": "coffee-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. For \"No sugar please\", Không đường nhé makes the next step easier to answer. Confirm visually when the detail affects safety, health, or the final order.",
-      "presentation": "plain-text"
+      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. Point to the item, menu line, receipt, size, or photo.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Food & Drink, the reply often comes as a confirmation, a substitute, or a question about what is allowed. Say Không đường nhé once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "The reply may be a confirmation, a substitute, or question about what is allowed. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "coffee-1",
@@ -107,12 +113,13 @@
           "audioKey": "coffee-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This helps you keep your drink less sweet. It fits ordering, adjusting dishes, and checking ingredients, especially when the next step is a confirmation, a substitute, or a question about what is allowed. Confirm visually when the detail affects safety, health, or the final order.",
+      "body": "This helps you keep your drink less sweet. The reply may be a confirmation, a substitute, or question about what is allowed.",
       "phrases": [
         {
           "id": "coffee-4",
@@ -145,13 +152,16 @@
           "audioKey": "coffee-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -189,7 +199,8 @@
           "audioKey": "food-1"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "nearby-phrases",
@@ -237,7 +248,8 @@
           "audioKey": "food-5"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -285,7 +297,8 @@
           "audioKey": "food-peanut-allergy"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

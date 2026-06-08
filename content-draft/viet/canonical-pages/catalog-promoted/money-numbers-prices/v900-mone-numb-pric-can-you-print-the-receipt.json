@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể in biên lai được không? once, then make the task visible with your item, menu line, bill, calculator, ticket, or ride screen. The phrase is doing one job: getting a clear answer about print the receipt.",
+      "body": "Keep Bạn có thể in biên lai được không? together as one sentence before adding details. Start with Bạn có thể in biên lai được không?",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-can-you-print-the-receipt",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you print the receipt? to another money or price need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
       "phrases": [
         {
           "id": "price-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when print the receipt is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is can you print the receipt. Keep the relevant place, item, or screen visible."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể in biên lai được không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "price-3",

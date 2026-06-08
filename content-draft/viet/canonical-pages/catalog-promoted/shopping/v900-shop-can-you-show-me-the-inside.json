@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể cho tôi xem bên trong được không? once, then make the task visible with your item, shelf, photo, size, color, price tag, or calculator. The phrase is doing one job: getting a clear answer about show me the inside.",
+      "body": "Keep Bạn có thể cho tôi xem bên trong được không? together as one sentence before adding details. Start with Bạn có thể cho tôi xem bên trong được không?",
       "phrases": [
         {
           "id": "v900-shop-can-you-show-me-the-inside",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you show me the inside? to another shopping need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another shopping need.",
       "phrases": [
         {
           "id": "shop-1",
@@ -116,7 +116,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real shopping exchange when show me the inside is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is can you show me the inside. Point to the item, menu line, receipt, size, or photo."
     },
     {
       "id": "good-to-know",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể cho tôi xem bên trong được không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "shop-4",

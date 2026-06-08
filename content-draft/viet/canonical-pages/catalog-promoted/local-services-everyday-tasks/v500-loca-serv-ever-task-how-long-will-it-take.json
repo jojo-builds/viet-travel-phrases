@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Sẽ mất bao lâu? helps you decide whether the next move is worth the time. Use it when How long will it take affects a taxi, walk, booking, tour, or connection and you need a practical estimate."
+      "body": "Sẽ mất bao lâu? keeps the travel moment short and clear. Point to the item, menu line, receipt, size, or photo."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Sẽ mất bao lâu? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Keep Sẽ mất bao lâu? together as one sentence before adding details. Start with Sẽ mất bao lâu?",
       "phrases": [
         {
           "id": "v500-loca-serv-ever-task-how-long-will-it-take",
@@ -65,7 +65,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How long will it take? to another local service need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another local service need.",
       "phrases": [
         {
           "id": "store-1",
@@ -102,7 +102,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real local service exchange when how long will it take is the detail you need resolved. The likely reply is a time estimate or route choice, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is how long will it take. Point to the item, menu line, receipt, size, or photo."
     },
     {
       "id": "good-to-know",
@@ -112,7 +112,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Sẽ mất bao lâu?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "store-4",

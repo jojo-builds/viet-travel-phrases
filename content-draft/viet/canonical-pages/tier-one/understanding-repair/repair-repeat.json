@@ -7,7 +7,7 @@
   "title": "Làm ơn nói lại",
   "englishTitle": "Please say that again",
   "pronunciation": "lahm uhn noy lie",
-  "summary": "Làm ơn nói lại means “Please say that again”.",
+  "summary": "Use this when you missed the sentence and want the same words again.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Làm ơn nói lại when you need \"Please say that again\". This is for when you missed the last sentence and need it repeated. Listen for a confirmation, a handoff, a price, or a follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Làm ơn nói lại makes the request direct without adding extra explanation. Reach for it when you missed the last sentence and need it repeated.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "repair-1-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "repair-1"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Làm ơn nói lại as your first sentence for \"Please say that again\". This is for when you missed the last sentence and need it repeated. Pause after the phrase and listen for a confirmation, a handoff, a price, or a follow-up question. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
+      "body": "Keep Làm ơn nói lại together as one sentence before adding details. If it is still unclear, show, write, or point to the exact word.",
       "phrases": [
         {
           "id": "repair-1",
@@ -63,18 +66,21 @@
           "audioKey": "repair-1"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping. For \"Please say that again\", Làm ơn nói lại makes the next step easier to answer. Pause after the phrase so the person can confirm before you add more words.",
-      "presentation": "plain-text"
+      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping. If it is still unclear, show, write, or point to the exact word.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In When You Don't Understand, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Làm ơn nói lại once, pause, and watch for the reply. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
+      "body": "If it is still unclear, show, write, or point to the exact word.",
       "phrases": [
         {
           "id": "problems-2",
@@ -107,12 +113,13 @@
           "audioKey": "repair-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when you missed the last sentence and need it repeated. It fits moments when Vietnamese stops making sense, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "Reach for it when you missed the last sentence and need it repeated. If it is still unclear, show, write, or point to the exact word.",
       "phrases": [
         {
           "id": "repair-3",
@@ -145,13 +152,16 @@
           "audioKey": "repair-english-help"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -169,7 +179,8 @@
           "audioKey": "v500-unde-repa-please-say-it-slowly"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -247,7 +258,8 @@
           "audioKey": "v500-unde-repa-please-say-it-slowly"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

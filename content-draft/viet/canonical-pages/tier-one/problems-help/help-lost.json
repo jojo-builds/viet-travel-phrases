@@ -7,7 +7,7 @@
   "title": "Tôi bị lạc đường",
   "englishTitle": "I’m lost",
   "pronunciation": "toy bee lahk doong",
-  "summary": "Tôi bị lạc đường means “I’m lost”.",
+  "summary": "This is the simplest first sentence when navigation has already failed.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi bị lạc đường when you need \"I'm lost\". This is for when you need immediate help finding your way back. This is the simplest first sentence when navigation has already failed. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Tôi bị lạc đường names the need before the details start piling up. Reach for it when you need immediate help finding your way back. This is the simplest first sentence when navigation has already failed.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "problems-1-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "problems-1"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi bị lạc đường as your first sentence for \"I'm lost\". This is for when you need immediate help finding your way back. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
+      "body": "Keep Tôi bị lạc đường together as one sentence before adding details.",
       "phrases": [
         {
           "id": "problems-1",
@@ -63,18 +66,21 @@
           "audioKey": "problems-1"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Help phrases work when they name the problem and the next person or action you need. For \"I'm lost\", Tôi bị lạc đường makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Help phrases work when they name the problem and the next person or action you need. Keep the relevant place, item, or screen visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Problems & Help, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Tôi bị lạc đường once, pause, and watch for the reply. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
+      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
       "phrases": [
         {
           "id": "problems-4",
@@ -107,12 +113,13 @@
           "audioKey": "help-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when you need immediate help finding your way back. It fits lost items, help, managers, and recovery moments, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "body": "Reach for it when you need immediate help finding your way back. The reply may be a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "help-3",
@@ -135,13 +142,16 @@
           "audioKey": "v500-prob-help-i-need-help-now"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "If you feel unsafe or stuck, move to a stronger help phrase instead of trying to sound perfectly polite.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -159,7 +169,8 @@
           "audioKey": "problems-1"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -217,7 +228,8 @@
           "audioKey": "v500-prob-help-i-need-help-now"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

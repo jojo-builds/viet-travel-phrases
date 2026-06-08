@@ -7,7 +7,7 @@
   "title": "Mặt hàng này giá bao nhiêu?",
   "englishTitle": "How much is this item?",
   "pronunciation": "Mat hang nay gia bao nhieu",
-  "summary": "Mặt hàng này giá bao nhiêu? means “How much is this item?”",
+  "summary": "Ask this when you need how much is this item.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Mặt hàng này giá bao nhiêu? when you need \"How much is this item\". Use this while comparing items, checking fit, or fixing a purchase problem at the counter. Listen for a number, typed amount, calculator screen, or direct yes/no about payment; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Mặt hàng này giá bao nhiêu? puts the practical detail first. Use this while comparing items, checking fit, or fixing a purchase problem at the counter.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "v500-shop-how-much-is-this-item-piece-1",
@@ -57,12 +59,13 @@
           "audioKey": "v500-shop-how-much-is-this-item"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Mặt hàng này giá bao nhiêu? as your first sentence for \"How much is this item\". Use this while comparing items, checking fit, or fixing a purchase problem at the counter. Pause after the phrase and listen for a number, typed amount, calculator screen, or direct yes/no about payment. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Use the full phrase before adding details. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "v500-shop-how-much-is-this-item",
@@ -75,18 +78,21 @@
           "audioKey": "v500-shop-how-much-is-this-item"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. For \"How much is this item\", Mặt hàng này giá bao nhiêu? makes the next step easier to answer. Repeat or show the number before paying if the amount matters.",
-      "presentation": "plain-text"
+      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. Point to the item, menu line, receipt, size, or photo.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Shopping, the reply often comes as a number, typed amount, calculator screen, or direct yes/no about payment. Say Mặt hàng này giá bao nhiêu? once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "The reply may be a number, typed amount, calculator screen, or direct yes/no about payment. Say Mặt hàng này giá bao nhiêu?",
       "phrases": [
         {
           "id": "shop-1",
@@ -119,12 +125,13 @@
           "audioKey": "shop-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this while comparing items, checking fit, or fixing a purchase problem at the counter. It fits sizes, colors, trying things on, and payment, especially when the next step is a number, typed amount, calculator screen, or direct yes/no about payment. Repeat or show the number before paying if the amount matters.",
+      "body": "Use this while comparing items, checking fit, or fixing a purchase problem at the counter. The reply may be a number, typed amount, calculator screen, or direct yes/no about payment.",
       "phrases": [
         {
           "id": "shop-4",
@@ -157,13 +164,16 @@
           "audioKey": "audio-authored-giam-gia-chut-duoc-khong-a718a9e74f"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "In markets, price talk can feel playful. Keep your tone light when asking for a lower price.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -181,7 +191,8 @@
           "audioKey": "v500-shop-how-much-is-this-item"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -249,7 +260,8 @@
           "audioKey": "audio-authored-giam-gia-chut-duoc-khong-a718a9e74f"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

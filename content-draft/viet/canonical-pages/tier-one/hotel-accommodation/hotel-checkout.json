@@ -7,7 +7,7 @@
   "title": "Cho tôi trả phòng",
   "englishTitle": "I’d like to check out",
   "pronunciation": "cho toy tra fong",
-  "summary": "Cho tôi trả phòng means “I’d like to check out”.",
+  "summary": "Use this when you are ready to finish the stay, not just ask about the time.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Cho tôi trả phòng when you need \"I'd like to check out\". This is for the desk when you are ready to end the stay. Listen for a confirmation, a handoff, a price, or a follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Cho tôi trả phòng keeps the travel moment short and clear. This is for the desk when you are ready to end the stay.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "hotel-checkout-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "hotel-checkout"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Cho tôi trả phòng as your first sentence for \"I'd like to check out\". This is for the desk when you are ready to end the stay. Pause after the phrase and listen for a confirmation, a handoff, a price, or a follow-up question. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Keep Cho tôi trả phòng together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "hotel-checkout",
@@ -63,18 +66,21 @@
           "audioKey": "hotel-checkout"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. For \"I'd like to check out\", Cho tôi trả phòng makes the next step easier to answer. Pause after the phrase so the person can confirm before you add more words.",
-      "presentation": "plain-text"
+      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. Keep the booking, room number, date, or address visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Hotel Accommodation, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Cho tôi trả phòng once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -107,12 +113,13 @@
           "audioKey": "hotel-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for the desk when you are ready to end the stay. It fits front desk, room, check-in, and hotel-service moments, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "This is for the desk when you are ready to end the stay. Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "hotel-4",
@@ -145,13 +152,16 @@
           "audioKey": "hotel-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -179,7 +189,8 @@
           "audioKey": "v500-hote-acco-the-door-does-not-lock"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -267,7 +278,8 @@
           "audioKey": "v500-hote-acco-the-door-does-not-lock"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

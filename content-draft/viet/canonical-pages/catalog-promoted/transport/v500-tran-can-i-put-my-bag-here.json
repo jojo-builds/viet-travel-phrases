@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể đặt túi của tôi ở đây được không? is for asking permission before you act. It is useful when put my bag here depends on local rules, staff approval, or the right way to use a space or service."
+      "body": "Tôi có thể đặt túi của tôi ở đây được không? keeps the question easy to answer. Keep the map, address, or destination visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có thể đặt túi của tôi ở đây được không? once, then make the task visible with your map, destination, ride screen, ticket, vehicle, or pickup point. The phrase is doing one job: getting a clear answer about put my bag here.",
+      "body": "Keep Tôi có thể đặt túi của tôi ở đây được không? together as one sentence before adding details. Start with Tôi có thể đặt túi của tôi ở đây được không?",
       "phrases": [
         {
           "id": "v500-tran-can-i-put-my-bag-here",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can I put my bag here? to another transport need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -116,7 +116,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when put my bag here is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is can I put my bag here. Keep the map, address, or destination visible."
     },
     {
       "id": "good-to-know",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể đặt túi của tôi ở đây được không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

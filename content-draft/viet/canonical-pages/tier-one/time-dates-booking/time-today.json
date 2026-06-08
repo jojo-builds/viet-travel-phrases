@@ -7,7 +7,7 @@
   "title": "Hôm nay",
   "englishTitle": "Today",
   "pronunciation": "hom nai",
-  "summary": "Hôm nay means “Today”.",
+  "summary": "This helps when you need to confirm whether something is today or not.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Hôm nay when you need \"Today\". Use this as a short anchor phrase when confirming a schedule. Listen for a short reply, a smile, a time, or a light follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Hôm nay keeps the travel moment short and clear. Use this as a short reference point phrase when confirming a schedule.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "time-2-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "time-2"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Hôm nay as your first sentence for \"Today\". Use this as a short anchor phrase when confirming a schedule. Pause after the phrase and listen for a short reply, a smile, a time, or a light follow-up question. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Keep Hôm nay together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "time-2",
@@ -63,18 +66,21 @@
           "audioKey": "time-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Time phrases prevent missed pickups, bookings, and closing times. For \"Today\", Hôm nay makes the next step easier to answer. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
-      "presentation": "plain-text"
+      "body": "Time phrases prevent missed pickups, bookings, and closing times. Keep the booking, room number, date, or address visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Time, Dates & Booking, the reply often comes as a short reply, a smile, a time, or a light follow-up question. Say Hôm nay once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "The reply may be a smile, a time, or light follow-up question. Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "time-1",
@@ -107,12 +113,13 @@
           "audioKey": "time-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as a short anchor phrase when confirming a schedule. It fits times, dates, tickets, waits, and bookings, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
+      "body": "Use this as a short reference point phrase when confirming a schedule. The reply may be a smile, a time, or light follow-up question.",
       "phrases": [
         {
           "id": "time-5",
@@ -145,13 +152,16 @@
           "audioKey": "v500-time-date-book-one-ticket-please"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Morning, afternoon, and tomorrow can be easy to mix up. Repeat the date or show it if the booking matters.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -169,7 +179,8 @@
           "audioKey": "time-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -237,7 +248,8 @@
           "audioKey": "v500-time-date-book-one-ticket-please"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

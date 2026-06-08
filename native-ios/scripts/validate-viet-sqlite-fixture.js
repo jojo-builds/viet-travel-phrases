@@ -148,6 +148,7 @@ const reviewedCompoundPhrasePageIDs = [
   "viet-phrase-v900-tran-please-turn-left-at-the-next-street",
   "viet-phrase-v900-mone-numb-pric-is-there-an-atm-nearby",
   "viet-phrase-repair-show-me",
+  "viet-phrase-ves-show-me-anh-chi",
   "viet-phrase-v900-dire-navi-can-you-call-this-place-and-ask-for-directions",
   "viet-phrase-v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
   "viet-phrase-v900-loca-serv-ever-task-please-print-it-in-black-and-white",

@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể viết giá được không? is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on Can you write the price, so the answer can be a number, calculator screen, or typed price."
+      "body": "Use this when a spoken price is too fast or you need proof before agreeing. Offer your phone or paper so the number becomes clear."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Ask Bạn có thể viết giá được không? before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "body": "Say Bạn có thể viết giá được không?, then hand over the phone, paper, or receipt. The goal is one readable number.",
       "phrases": [
         {
           "id": "v500-unde-repa-can-you-write-the-price",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you write the price? to another understanding check need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
       "phrases": [
         {
           "id": "problems-2",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+      "body": "Use it after a fast spoken price, especially with large numbers or several zeros. It is for clarification, not bargaining."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "A written number lets you check zeros and currency before you answer."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể viết giá được không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "repair-1",

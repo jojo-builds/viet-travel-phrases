@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đó có phải là tổng giá không? is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on Is that the total price, so the answer can be a number, calculator screen, or typed price."
+      "body": "Use this before paying when fees, add-ons, luggage, tolls, or deposits may be separate. Point to the full bill so the total is confirmed."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Ask Đó có phải là tổng giá không? before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "body": "Say Đó có phải là tổng giá không?, then point to the bill, app screen, or ticket. Wait for the all-in number.",
       "phrases": [
         {
           "id": "v900-tran-is-that-the-total-price",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is that the total price? to another transport need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+      "body": "Ask before cash changes hands. It is especially useful when several small charges were mentioned quickly."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "If the answer is not a clear yes, ask them to write the total."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Đó có phải là tổng giá không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

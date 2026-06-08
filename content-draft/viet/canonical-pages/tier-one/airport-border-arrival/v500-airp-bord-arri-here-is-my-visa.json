@@ -19,7 +19,9 @@
       "id": "at-glance",
       "title": "At a glance",
       "body": "Use this when you are handing over a printed visa, e-visa, phone screenshot, or document folder. It tells staff exactly what the document is and that it belongs to you.",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
@@ -57,7 +59,8 @@
           "audioKey": "v500-airp-bord-arri-here-is-my-visa"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
@@ -75,18 +78,21 @@
           "audioKey": "v500-airp-bord-arri-here-is-my-visa"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Airport phrases help staff route you to the next counter or service without a long explanation. For \"Here is my visa\", Đây là thị thực của tôi makes the next step easier to answer. Keep the document open to the photo page or relevant line while staff check it.",
-      "presentation": "plain-text"
+      "body": "Airport phrases help staff route you to the next counter or service without a long explanation. Keep the passport, baggage tag, pickup screen, or flight detail visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Airport Border Arrival, the reply often comes as a quick check, a stamp, a counter direction, or a request for one more document. Say Đây là thị thực của tôi once, pause, and watch for the reply. Keep your passport, visa, baggage tag, pickup message, or SIM details visible when staff need to match the phrase to a real item.",
+      "body": "The reply may be a quick check, a stamp, a counter direction, or request for one more document. Keep the passport, baggage tag, pickup screen, or flight detail visible.",
       "phrases": [
         {
           "id": "airport-1",
@@ -119,7 +125,8 @@
           "audioKey": "airport-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
@@ -157,13 +164,16 @@
           "audioKey": "v500-airp-bord-arri-where-is-the-atm"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "If the visa is on your phone, make sure the screen is bright and unlocked before you start. Staff may need the passport and visa together.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -181,7 +191,8 @@
           "audioKey": "v500-airp-bord-arri-here-is-my-passport"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -259,7 +270,8 @@
           "audioKey": "v500-airp-bord-arri-here-is-my-passport"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

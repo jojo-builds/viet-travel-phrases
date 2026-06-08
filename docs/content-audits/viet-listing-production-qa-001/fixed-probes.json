@@ -13,11 +13,15 @@
       "scenarioEligible": false
     },
     "renderedSections": [
-      "Meaning",
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Common follow-ups",
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
       "Good to know",
-      "Next phrases"
+      "Explore next"
     ],
     "status": "PASS"
   },
@@ -35,11 +39,16 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Other ways",
-      "Common follow-ups",
+      "Natural variations",
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
       "Good to know",
-      "Next phrases"
+      "Explore next"
     ],
     "status": "PASS"
   },
@@ -269,11 +278,16 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Other ways",
-      "Common follow-ups",
+      "Natural variations",
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
       "Good to know",
-      "Next phrases"
+      "Explore next"
     ],
     "status": "PASS"
   },
@@ -291,10 +305,15 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Common follow-ups",
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
       "Good to know",
-      "Next phrases"
+      "Explore next"
     ],
     "status": "PASS"
   },
@@ -312,11 +331,17 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Other ways",
-      "Common follow-ups",
+      "Natural variations",
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "You May Hear",
       "Good to know",
-      "Next phrases"
+      "Explore next"
     ],
     "status": "PASS"
   },

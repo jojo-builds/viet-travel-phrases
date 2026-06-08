@@ -7,7 +7,7 @@
   "title": "Xin một vé",
   "englishTitle": "One ticket, please",
   "pronunciation": "Xin mot ve",
-  "summary": "Xin một vé means “One ticket, please”.",
+  "summary": "Use this when you need to say one ticket, please.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Xin một vé when you need \"One ticket, please\". This is for when you need the exact time, date, booking detail, or schedule change to be clear. Listen for a confirmation, a handoff, a price, or a follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Xin một vé keeps the travel moment short and clear. Reach for it when you need the exact time, date, booking detail, or schedule change to be clear.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "v500-time-date-book-one-ticket-please-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "v500-time-date-book-one-ticket-please"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Xin một vé as your first sentence for \"One ticket, please\". This is for when you need the exact time, date, booking detail, or schedule change to be clear. Pause after the phrase and listen for a confirmation, a handoff, a price, or a follow-up question. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Keep Xin một vé together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "v500-time-date-book-one-ticket-please",
@@ -69,18 +72,21 @@
           "audioKey": "v500-time-date-book-one-ticket-please"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Time phrases prevent missed pickups, bookings, and closing times. For \"One ticket, please\", Xin một vé makes the next step easier to answer. Pause after the phrase so the person can confirm before you add more words.",
-      "presentation": "plain-text"
+      "body": "Time phrases prevent missed pickups, bookings, and closing times. Keep the booking, room number, date, or address visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Time, Dates & Booking, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Xin một vé once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "time-1",
@@ -113,12 +119,13 @@
           "audioKey": "time-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when you need the exact time, date, booking detail, or schedule change to be clear. It fits times, dates, tickets, waits, and bookings, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "Reach for it when you need the exact time, date, booking detail, or schedule change to be clear. Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "time-4",
@@ -151,13 +158,16 @@
           "audioKey": "v500-time-date-book-is-there-a-wait"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Morning, afternoon, and tomorrow can be easy to mix up. Repeat the date or show it if the booking matters.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -175,7 +185,8 @@
           "audioKey": "v500-time-date-book-one-ticket-please"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -243,7 +254,8 @@
           "audioKey": "v500-time-date-book-is-there-a-wait"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

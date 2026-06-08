@@ -7,7 +7,7 @@
   "title": "Trả ở đâu?",
   "englishTitle": "Where do I pay?",
   "pronunciation": "tra uh dow",
-  "summary": "Trả ở đâu? means “Where do I pay?”",
+  "summary": "This is the travel version of checkout phrasing.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -18,8 +18,10 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Trả ở đâu? when you need \"Where do I pay\". This is for when you have the item and need the payment point. This is the travel version of checkout phrasing. Listen for a point, short direction, nearby option, or counter name; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Trả ở đâu? keeps the direction question short. Reach for it when you have the item and need the payment point. This is the travel version of checkout phrasing.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
@@ -45,12 +47,13 @@
           "audioKey": "shop-5"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Trả ở đâu? as your first sentence for \"Where do I pay\". This is for when you have the item and need the payment point. Pause after the phrase and listen for a point, short direction, nearby option, or counter name. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Use the full phrase before adding details. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "shop-5",
@@ -63,18 +66,21 @@
           "audioKey": "shop-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. For \"Where do I pay\", Trả ở đâu? makes the next step easier to answer. If the answer is longer than a point or nearby stop, ask them to show it on your phone.",
-      "presentation": "plain-text"
+      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. Point to the item, menu line, receipt, size, or photo.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Shopping, the reply often comes as a point, short direction, nearby option, or counter name. Say Trả ở đâu? once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "The reply may be a point, short direction, nearby option, or counter name. Say Trả ở đâu?",
       "phrases": [
         {
           "id": "shop-1",
@@ -107,12 +113,13 @@
           "audioKey": "shop-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when you have the item and need the payment point. It fits sizes, colors, trying things on, and payment, especially when the next step is a point, short direction, nearby option, or counter name. If the answer is longer than a point or nearby stop, ask them to show it on your phone.",
+      "body": "Reach for it when you have the item and need the payment point. The reply may be a point, short direction, nearby option, or counter name.",
       "phrases": [
         {
           "id": "shop-4",
@@ -145,13 +152,16 @@
           "audioKey": "audio-authored-giam-gia-chut-duoc-khong-a718a9e74f"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "In markets, price talk can feel playful. Keep your tone light when asking for a lower price.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -169,7 +179,8 @@
           "audioKey": "shop-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -237,7 +248,8 @@
           "audioKey": "audio-authored-giam-gia-chut-duoc-khong-a718a9e74f"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

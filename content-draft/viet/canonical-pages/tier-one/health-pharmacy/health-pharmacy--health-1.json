@@ -7,7 +7,7 @@
   "title": "Nhà thuốc ở đâu?",
   "englishTitle": "Where is the pharmacy?",
   "pronunciation": "nya thoo-ok uh dow",
-  "summary": "A focused guide to when Nhà thuốc ở đâu? sounds more natural than Nhà thuốc gần nhất ở đâu?.",
+  "summary": "A short pharmacy question for when you need the nearest counter or shop.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,39 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Nhà thuốc ở đâu? is useful when \"Where is the pharmacy?\" needs a slightly different tone or setting. Use this when you need a pharmacy and a simple direct wording is enough.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "breakdown",
-      "title": "Break it down",
-      "body": "This pattern asks where a place or service is. Swap the first part to ask about another nearby stop.",
-      "breakdown": [
-        {
-          "id": "health-1-piece-1",
-          "vietnamese": "Nhà thuốc",
-          "english": "pharmacy",
-          "audioKey": "breakdown-authored-nha-thuoc-0ff922e96f"
-        },
-        {
-          "id": "health-1-piece-2",
-          "vietnamese": "ở đâu?",
-          "english": "where?",
-          "audioKey": "breakdown-where"
-        },
-        {
-          "id": "health-1-full",
-          "vietnamese": "Nhà thuốc ở đâu?",
-          "english": "Where is the pharmacy?",
-          "audioKey": "health-1"
-        }
-      ],
-      "presentation": "breakdown-strip"
+      "body": "Use this on the street, at a hotel desk, or in a clinic area when you need to find a pharmacy quickly.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Nhà thuốc ở đâu? when \"Where is the pharmacy?\" is the exact tone or situation you want.",
+      "body": "Say this when you want the nearest pharmacy, not a specific medicine yet.",
       "phrases": [
         {
           "id": "health-1",
@@ -63,18 +39,40 @@
           "audioKey": "health-1"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "This is for when you need a pharmacy and a simple direct wording is enough. Use Nhà thuốc gần nhất ở đâu? when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
-      "presentation": "plain-text"
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "This pattern asks where a place or service is. Swap the first part to ask about another nearby stop.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Nhà thuốc",
+          "english": "pharmacy",
+          "audioKey": "breakdown-authored-nha-thuoc-0ff922e96f"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "ở đâu?",
+          "english": "where",
+          "audioKey": "breakdown-where"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Nhà thuốc ở đâu?",
+          "english": "Where is the pharmacy?",
+          "audioKey": "health-1"
+        }
+      ],
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Health & Pharmacy, the reply often comes as a point, short direction, nearby option, or counter name. Say Nhà thuốc ở đâu? once, pause, and watch for the reply. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Nhà thuốc is the useful word to recognize on signs. The answer may be a direction, a shop name, or someone pointing across the street.",
       "phrases": [
         {
           "id": "health-pharmacy-clearer",
@@ -107,18 +105,29 @@
           "audioKey": "health-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Best before asking about medicine, dizziness, stomach trouble, or whether something is safe with your current medicine.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Keep urgent medical needs clear and direct. A short sentence gives helpers something they can act on quickly.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Nearby phrases keep the conversation moving after this one.",
+      "body": "Follow with medicine, dizzy, stomach, safe-with-medicine, or clinic phrases if the pharmacy question leads to treatment.",
       "phrases": [
         {
           "id": "health-pharmacy-clearer",
@@ -181,7 +190,8 @@
           "audioKey": "health-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

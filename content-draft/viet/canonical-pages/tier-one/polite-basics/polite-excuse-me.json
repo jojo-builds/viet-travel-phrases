@@ -7,7 +7,7 @@
   "title": "Xin lỗi",
   "englishTitle": "Excuse me / sorry",
   "pronunciation": "sin loy",
-  "summary": "Xin lỗi is a common way to say “Excuse me / sorry” in Vietnamese.",
+  "summary": "This is the safe all-purpose phrase for passing by, starting a question, or apologizing lightly.",
   "iconName": "hand.wave.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Xin lỗi when you need \"Excuse me / sorry\". This helps you get attention, pass by someone, or apologize for a small mistake. This is the safe all-purpose phrase for passing by, starting a question, or apologizing lightly. Listen for a slower repeat, a pointed explanation, or a switch to writing; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Xin lỗi keeps the social move simple and polite. This helps you get attention, pass by someone, or apologize for a small mistake. This is the safe all-purpose phrase for passing by, starting a question, or apologizing lightly.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "polite-5-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "polite-5"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Xin lỗi as your first sentence for \"Excuse me / sorry\". This helps you get attention, pass by someone, or apologize for a small mistake. Pause after the phrase and listen for a slower repeat, a pointed explanation, or a switch to writing. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
+      "body": "Keep Xin lỗi together as one sentence before adding details. Keep the relevant place, item, or screen visible.",
       "phrases": [
         {
           "id": "polite-5",
@@ -63,18 +66,21 @@
           "audioKey": "polite-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Polite Vietnamese often works by softening the start or end of an interaction before the main request. For \"Excuse me / sorry\", Xin lỗi makes the next step easier to answer. If the first reply is still unclear, move to showing, writing, or pointing.",
-      "presentation": "plain-text"
+      "body": "Polite Vietnamese often works by softening the start or end of an interaction before the main request. Keep the relevant place, item, or screen visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Polite Basics, the reply often comes as a slower repeat, a pointed explanation, or a switch to writing. Say Xin lỗi once, pause, and watch for the reply. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
+      "body": "The reply may be a slower repeat, a pointed explanation, or switch to writing. Keep the relevant place, item, or screen visible.",
       "phrases": [
         {
           "id": "polite-1",
@@ -107,12 +113,13 @@
           "audioKey": "polite-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This helps you get attention, pass by someone, or apologize for a small mistake. It fits small service and first-contact moments, especially when the next step is a slower repeat, a pointed explanation, or a switch to writing. If the first reply is still unclear, move to showing, writing, or pointing.",
+      "body": "This helps you get attention, pass by someone, or apologize for a small mistake. The reply may be a slower repeat, a pointed explanation, or switch to writing.",
       "phrases": [
         {
           "id": "polite-4",
@@ -145,13 +152,16 @@
           "audioKey": "polite-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Keep quick service phrases clear, polite, and short. A calm short sentence usually works better than a long one said nervously.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -189,7 +199,8 @@
           "audioKey": "audio-phrase-chao-ban"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "nearby-phrases",
@@ -237,7 +248,8 @@
           "audioKey": "audio-phrase-chao-buoi-chieu"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -325,7 +337,8 @@
           "audioKey": "breakdown-food-5-first"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

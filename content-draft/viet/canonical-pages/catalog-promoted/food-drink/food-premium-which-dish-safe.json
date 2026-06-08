@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Món ăn nào an toàn nhất cho người bị dị ứng này? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Keep Món ăn nào an toàn nhất cho người bị dị ứng này? together as one sentence before adding details. Start with Món ăn nào an toàn nhất cho người bị dị ứng này?",
       "phrases": [
         {
           "id": "food-premium-which-dish-safe",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Which dish is safest for this allergy? to another food or drink need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another food or drink need.",
       "phrases": [
         {
           "id": "coffee-1",
@@ -116,7 +116,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real food or drink exchange when which dish is safest for this allergy is the detail you need resolved. The likely reply is a choice, counter, gate, line, or direction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is which dish is safest for this allergy. Point to the item, menu line, receipt, size, or photo."
     },
     {
       "id": "good-to-know",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Món ăn nào an toàn nhất cho người bị dị ứng này?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "coffee-4",

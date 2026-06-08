@@ -19,7 +19,9 @@
       "id": "at-glance",
       "title": "At a glance",
       "body": "Use Nói chậm chút được không? when Vietnamese is coming too quickly and repeating the same speed will not help. It keeps the exchange cooperative while asking for a slower second pass.",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
@@ -57,7 +59,8 @@
           "audioKey": "problems-3"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
@@ -75,7 +78,8 @@
           "audioKey": "problems-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "natural-variations",
@@ -93,18 +97,21 @@
           "audioKey": "repair-slower-polite"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
       "body": "A slower repeat is often more useful than another full-speed answer. This phrase gives the other person a clear repair path: slow down, point, write, or show the detail.",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may come as slower Vietnamese, one important word, a pointed explanation, or writing. If speech still does not land, move quickly to showing the word or number on your phone.",
+      "body": "The reply may come as slower Vietnamese, one important word, a pointed explanation, or writing.",
       "phrases": [
         {
           "id": "problems-2",
@@ -137,7 +144,8 @@
           "audioKey": "repair-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
@@ -175,13 +183,16 @@
           "audioKey": "repair-english-help"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Tone matters here. Curious and calm sounds like a request; sharp or repeated too many times can sound like a challenge.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -199,7 +210,8 @@
           "audioKey": "v500-unde-repa-please-say-it-slowly"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -277,7 +289,8 @@
           "audioKey": "v500-unde-repa-please-say-it-slowly"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đây có phải là mức giá tương tự cho trẻ em? is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on Is this the same price for children, so the answer can be a number, calculator screen, or typed price."
+      "body": "Use this before buying tickets or booking a ride with kids. Keep the child count visible so staff can answer with the right age or price rule."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Ask Đây có phải là mức giá tương tự cho trẻ em? before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "body": "Say Đây có phải là mức giá tương tự cho trẻ em?, then show the child count or ticket screen. The answer may include an age cutoff.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-is-this-the-same-price-for-children",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is this the same price for children? to another money or price need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
       "phrases": [
         {
           "id": "price-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+      "body": "Ask before the tickets are issued. It is easier to confirm the child rule than to correct a printed ticket later."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "Some places answer with an age, height, or ticket category instead of a full sentence."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Đây có phải là mức giá tương tự cho trẻ em?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "price-3",

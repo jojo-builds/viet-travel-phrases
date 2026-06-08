@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Sao bây giờ giá lại khác thế? is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on Why is the price different now, so the answer can be a number, calculator screen, or typed price."
+      "body": "Use this when the price no longer matches the first quote, menu, sign, booking, or app screen. Keep the earlier price visible so the question stays concrete."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Ask Sao bây giờ giá lại khác thế? before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "body": "Say Sao bây giờ giá lại khác thế?, then point to the earlier price. The goal is a calm explanation, not a long dispute.",
       "phrases": [
         {
           "id": "money-premium-price-changed",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Why is the price different now? to another money or price need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
       "phrases": [
         {
           "id": "price-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+      "body": "Use it as soon as the number changes. If the answer is unclear, ask them to show the new total."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "Screenshots, menus, and receipts make this question much easier to answer."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Sao bây giờ giá lại khác thế?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "price-3",

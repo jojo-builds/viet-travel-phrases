@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng sử dụng giá trên ứng dụng Grab. is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on use the price in the Grab app, so the answer can be a number, calculator screen, or typed price."
+      "body": "Use this when a driver asks for a different amount from the app. Keep the Grab fare on screen so the request stays tied to the displayed price."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Ask Vui lòng sử dụng giá trên ứng dụng Grab. before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "body": "Say Vui lòng sử dụng giá trên ứng dụng Grab., then show the fare screen. Keep your tone calm and the phone visible.",
       "phrases": [
         {
           "id": "v900-tran-please-use-the-price-in-the-grab-app",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please use the price in the Grab app. to another transport need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+      "body": "Use it before the ride starts or before paying at the end. If the driver points to tolls or fees, ask for that amount separately."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "The app screen is the clearest evidence; do not bury it while explaining."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Vui lòng sử dụng giá trên ứng dụng Grab..",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

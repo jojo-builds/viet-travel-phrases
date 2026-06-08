@@ -7,7 +7,7 @@
   "title": "Tôi cần bác sĩ",
   "englishTitle": "I need a doctor",
   "pronunciation": "toy gun bak see",
-  "summary": "Tôi cần bác sĩ means “I need a doctor”.",
+  "summary": "Use this when you need medical help right away.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi cần bác sĩ when you need \"I need a doctor\". This helps if you feel sick and need medical help quickly. Listen for a confirmation, a handoff, a price, or a follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Tôi cần bác sĩ names the need before the details start piling up. This helps if you feel sick and need medical help quickly.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "problems-6-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "problems-6"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi cần bác sĩ as your first sentence for \"I need a doctor\". This helps if you feel sick and need medical help quickly. Pause after the phrase and listen for a confirmation, a handoff, a price, or a follow-up question. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Keep Tôi cần bác sĩ together as one sentence before adding details.",
       "phrases": [
         {
           "id": "problems-6",
@@ -63,18 +66,21 @@
           "audioKey": "problems-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up. For \"I need a doctor\", Tôi cần bác sĩ makes the next step easier to answer. Pause after the phrase so the person can confirm before you add more words.",
-      "presentation": "plain-text"
+      "body": "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up. Show the symptom, medicine, location, or helper contact if you can.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Health & Pharmacy, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Tôi cần bác sĩ once, pause, and watch for the reply. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
       "phrases": [
         {
           "id": "health-pharmacy-clearer",
@@ -107,12 +113,13 @@
           "audioKey": "health-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This helps if you feel sick and need medical help quickly. It fits doctors, pharmacies, symptoms, and medication, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "This helps if you feel sick and need medical help quickly. Show the symptom, medicine, location, or helper contact if you can.",
       "phrases": [
         {
           "id": "health-4",
@@ -145,13 +152,16 @@
           "audioKey": "health-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Keep urgent medical needs clear and direct. A short sentence gives helpers something they can act on quickly.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -169,7 +179,8 @@
           "audioKey": "v500-heal-phar-i-feel-dizzy"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -247,7 +258,8 @@
           "audioKey": "v500-heal-phar-i-feel-dizzy"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

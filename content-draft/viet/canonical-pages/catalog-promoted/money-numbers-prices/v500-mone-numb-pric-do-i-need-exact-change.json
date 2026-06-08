@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có cần thay đổi chính xác không? once, then make the task visible with your item, menu line, bill, calculator, ticket, or ride screen. The phrase is doing one job: getting a clear answer about exact change.",
+      "body": "Keep Tôi có cần thay đổi chính xác không? together as one sentence before adding details. Start with Tôi có cần thay đổi chính xác không?",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-do-i-need-exact-change",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Do I need exact change? to another money or price need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
       "phrases": [
         {
           "id": "price-1",
@@ -116,7 +116,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when exact change is the detail you need resolved. The likely reply is yes/no, a form, a document, or the next step, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is do I need exact change. Keep the relevant place, item, or screen visible."
     },
     {
       "id": "good-to-know",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có cần thay đổi chính xác không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "price-3",

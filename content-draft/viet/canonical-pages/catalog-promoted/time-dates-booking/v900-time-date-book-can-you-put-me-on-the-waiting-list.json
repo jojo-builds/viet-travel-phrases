@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể đưa tôi vào danh sách chờ được không? once, then make the task visible with your booking screen, ticket, calendar, time, line, or confirmation message. The phrase is doing one job: getting a clear answer about put me on the waiting list.",
+      "body": "Keep Bạn có thể đưa tôi vào danh sách chờ được không? together as one sentence before adding details. Start with Bạn có thể đưa tôi vào danh sách chờ được không?",
       "phrases": [
         {
           "id": "v900-time-date-book-can-you-put-me-on-the-waiting-list",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you put me on the waiting list? to another time, date, or booking need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when put me on the waiting list is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is can you put me on the waiting list. Keep the booking, room number, date, or address visible."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể đưa tôi vào danh sách chờ được không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "time-4",

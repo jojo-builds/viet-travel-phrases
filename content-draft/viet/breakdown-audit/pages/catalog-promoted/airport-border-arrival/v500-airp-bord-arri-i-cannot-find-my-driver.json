@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-airp-bord-arri-i-cannot-find-my-driver",
-  "phraseText": "Tôi không thể tìm thấy trình điều khiển của mình",
+  "phraseText": "Tôi không tìm thấy tài xế của mình",
   "englishTitle": "I cannot find my driver",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,42 +20,26 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi không tìm thấy",
+      "english": "I cannot find",
+      "keepTogetherReason": "negative verb phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "thể",
-      "english": "can / able to"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "tìm thấy",
-      "english": "find",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "trình điều khiển",
+      "vietnamese": "tài xế",
       "english": "driver",
       "keepTogetherReason": "compound noun"
     },
     {
-      "id": "chunk-6",
+      "id": "chunk-3",
       "vietnamese": "của mình",
       "english": "my / mine",
       "keepTogetherReason": "possessive phrase"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi không thể tìm thấy trình điều khiển của mình",
-      "english": "I cannot find my driver",
-      "audioKey": "v500-airp-bord-arri-i-cannot-find-my-driver"
+      "vietnamese": "Tôi không tìm thấy tài xế của mình",
+      "english": "I cannot find my driver"
     }
   ]
 }

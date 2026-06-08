@@ -7,7 +7,7 @@
   "title": "Tôi cảm thấy không an toàn",
   "englishTitle": "I feel unsafe",
   "pronunciation": "toy kahm thai khong an toan",
-  "summary": "Tôi cảm thấy không an toàn means “I feel unsafe”.",
+  "summary": "This is a short high-signal safety phrase for stressful moments.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,8 +18,10 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi cảm thấy không an toàn when you need \"I feel unsafe\". This is for when the situation feels unsafe and you need help quickly. This is a short high-signal safety phrase for stressful moments. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Tôi cảm thấy không an toàn keeps the travel moment short and clear. Reach for it when the situation feels unsafe and you need help quickly. This is a short high-signal safety phrase for stressful moments.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
@@ -51,12 +53,13 @@
           "audioKey": "emergency-4"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi cảm thấy không an toàn as your first sentence for \"I feel unsafe\". This is for when the situation feels unsafe and you need help quickly. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Keep Tôi cảm thấy không an toàn together as one sentence before adding details.",
       "phrases": [
         {
           "id": "emergency-4",
@@ -69,18 +72,21 @@
           "audioKey": "emergency-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Emergency phrases put the urgent need first so help can move faster. For \"I feel unsafe\", Tôi cảm thấy không an toàn makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Emergency phrases put the urgent need first so help can move faster. Show the symptom, medicine, location, or helper contact if you can.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Emergency & Safety, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Tôi cảm thấy không an toàn once, pause, and watch for the reply. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -113,12 +119,13 @@
           "audioKey": "emergency-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when the situation feels unsafe and you need help quickly. It fits police, ambulance, hospitals, passports, and immediate safety, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "body": "Reach for it when the situation feels unsafe and you need help quickly. The reply may be a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "emergency-emergency",
@@ -151,13 +158,16 @@
           "audioKey": "v500-emer-safe-i-am-injured"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "In safety moments, clarity matters more than sounding polished. Repeat the phrase if needed.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -185,7 +195,8 @@
           "audioKey": "v500-emer-safe-do-not-touch-me"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -273,7 +284,8 @@
           "audioKey": "v500-emer-safe-do-not-touch-me"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

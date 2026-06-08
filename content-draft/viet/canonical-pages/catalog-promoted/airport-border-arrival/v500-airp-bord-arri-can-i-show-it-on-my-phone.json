@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể hiển thị nó trên điện thoại của tôi không? is for asking permission before you act. It is useful when show it on my phone depends on local rules, staff approval, or the right way to use a space or service."
+      "body": "Tôi có thể hiển thị nó trên điện thoại của tôi không? keeps the question easy to answer. Keep the passport, baggage tag, pickup screen, or flight detail visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có thể hiển thị nó trên điện thoại của tôi không? once, then make the task visible with your passport, booking, baggage tag, map, or pickup screen. The phrase is doing one job: getting a clear answer about show it on my phone.",
+      "body": "Keep Tôi có thể hiển thị nó trên điện thoại của tôi không? together as one sentence before adding details. Start with Tôi có thể hiển thị nó trên điện thoại của tôi không?",
       "phrases": [
         {
           "id": "v500-airp-bord-arri-can-i-show-it-on-my-phone",
@@ -65,7 +65,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "không?",
-          "english": "question marker",
+          "english": "yes/no?",
           "audioKey": "breakdown-bath-6-piece-6"
         },
         {
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can I show it on my phone? to another airport arrival need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
       "phrases": [
         {
           "id": "airport-1",
@@ -116,7 +116,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real airport arrival exchange when show it on my phone is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is can I show it on my phone. Keep the passport, baggage tag, pickup screen, or flight detail visible."
     },
     {
       "id": "good-to-know",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể hiển thị nó trên điện thoại của tôi không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "airport-5",

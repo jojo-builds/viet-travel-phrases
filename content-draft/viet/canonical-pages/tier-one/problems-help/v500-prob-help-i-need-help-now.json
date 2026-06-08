@@ -7,7 +7,7 @@
   "title": "Tôi cần giúp đỡ bây giờ",
   "englishTitle": "I need help now",
   "pronunciation": "Toi can giup do bay gio",
-  "summary": "Tôi cần giúp đỡ bây giờ means “I need help now”.",
+  "summary": "Use this when you need to explain that i need help now.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi cần giúp đỡ bây giờ when you need \"I need help now\". This is for when the trip is off track and you need another person to help solve the practical problem. Listen for a confirmation, a handoff, a price, or a follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Tôi cần giúp đỡ bây giờ names the need before the details start piling up. Reach for it when the trip is off track and you need another person to help solve the practical problem.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "v500-prob-help-i-need-help-now-piece-1",
@@ -63,12 +65,13 @@
           "audioKey": "v500-prob-help-i-need-help-now"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi cần giúp đỡ bây giờ as your first sentence for \"I need help now\". This is for when the trip is off track and you need another person to help solve the practical problem. Pause after the phrase and listen for a confirmation, a handoff, a price, or a follow-up question. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
+      "body": "Keep Tôi cần giúp đỡ bây giờ together as one sentence before adding details.",
       "phrases": [
         {
           "id": "v500-prob-help-i-need-help-now",
@@ -81,18 +84,21 @@
           "audioKey": "v500-prob-help-i-need-help-now"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Help phrases work when they name the problem and the next person or action you need. For \"I need help now\", Tôi cần giúp đỡ bây giờ makes the next step easier to answer. Pause after the phrase so the person can confirm before you add more words.",
-      "presentation": "plain-text"
+      "body": "Help phrases work when they name the problem and the next person or action you need. Keep the relevant place, item, or screen visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Problems & Help, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Tôi cần giúp đỡ bây giờ once, pause, and watch for the reply. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
+      "body": "Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
       "phrases": [
         {
           "id": "problems-1",
@@ -125,12 +131,13 @@
           "audioKey": "help-need-help-direct"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when the trip is off track and you need another person to help solve the practical problem. It fits lost items, help, managers, and recovery moments, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "Reach for it when the trip is off track and you need another person to help solve the practical problem. Keep the relevant place, item, or screen visible.",
       "phrases": [
         {
           "id": "help-2",
@@ -153,13 +160,16 @@
           "audioKey": "help-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "If you feel unsafe or stuck, move to a stronger help phrase instead of trying to sound perfectly polite.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -177,7 +187,8 @@
           "audioKey": "v500-prob-help-i-need-help-now"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -235,7 +246,8 @@
           "audioKey": "help-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

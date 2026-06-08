@@ -7,7 +7,7 @@
   "title": "Cho tôi khăn giấy",
   "englishTitle": "Tissues please",
   "pronunciation": "cho toy khan zai",
-  "summary": "Cho tôi khăn giấy means “Tissues please”.",
+  "summary": "This stays practical and day-to-day, not fancy.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Cho tôi khăn giấy when you need \"Tissues please\". This is for when you need tissues at a store or counter. This stays practical and day-to-day, not fancy. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Cho tôi khăn giấy keeps the travel moment short and clear. Reach for it when you need tissues at a store or counter. This stays practical and day-to-day, not fancy.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "store-3-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "store-3"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Cho tôi khăn giấy as your first sentence for \"Tissues please\". This is for when you need tissues at a store or counter. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Keep Cho tôi khăn giấy together as one sentence before adding details. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "store-3",
@@ -63,18 +66,21 @@
           "audioKey": "store-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Everyday service phrases keep quick errands smooth without needing a full conversation. For \"Tissues please\", Cho tôi khăn giấy makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Everyday service phrases keep quick errands smooth without needing a full conversation. Point to the item, menu line, receipt, size, or photo.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Local Services & Everyday Tasks, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Cho tôi khăn giấy once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "store-1",
@@ -107,12 +113,13 @@
           "audioKey": "store-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when you need tissues at a store or counter. It fits buying small items, receipts, bags, and everyday errands, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "body": "Reach for it when you need tissues at a store or counter. The reply may be a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "store-5",
@@ -145,13 +152,16 @@
           "audioKey": "store-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "If the item is not available, ask for a nearby alternative instead of repeating the same phrase.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -169,7 +179,8 @@
           "audioKey": "v500-loca-serv-ever-task-where-can-i-buy-water"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -247,7 +258,8 @@
           "audioKey": "v500-loca-serv-ever-task-where-can-i-buy-water"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

@@ -7,7 +7,7 @@
   "title": "Mấy giờ mở cửa?",
   "englishTitle": "What time does it open?",
   "pronunciation": "may zyuh muh koo-ah",
-  "summary": "Mấy giờ mở cửa? means “What time does it open?”",
+  "summary": "This is one of the highest-value time questions for everyday travel.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Mấy giờ mở cửa? when you need \"What time does it open\". Use this for museums, cafés, counters, or services you plan to return to. This is one of the highest-value time questions for everyday travel. Listen for a short reply, a smile, a time, or a light follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Mấy giờ mở cửa? puts the practical detail first. Use this for museums, cafés, counters, or services you plan to return to. This is one of the highest-value time questions for everyday travel.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "time-5-piece-1",
@@ -57,12 +59,13 @@
           "audioKey": "time-5"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Mấy giờ mở cửa? as your first sentence for \"What time does it open\". Use this for museums, cafés, counters, or services you plan to return to. Pause after the phrase and listen for a short reply, a smile, a time, or a light follow-up question. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Use the full phrase before adding details. Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "time-5",
@@ -75,18 +78,21 @@
           "audioKey": "time-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Time phrases prevent missed pickups, bookings, and closing times. For \"What time does it open\", Mấy giờ mở cửa? makes the next step easier to answer. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
-      "presentation": "plain-text"
+      "body": "Time phrases prevent missed pickups, bookings, and closing times. Keep the booking, room number, date, or address visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Time, Dates & Booking, the reply often comes as a short reply, a smile, a time, or a light follow-up question. Say Mấy giờ mở cửa? once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "The reply may be a smile, a time, or light follow-up question. Say Mấy giờ mở cửa?",
       "phrases": [
         {
           "id": "time-1",
@@ -119,12 +125,13 @@
           "audioKey": "time-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this for museums, cafés, counters, or services you plan to return to. It fits times, dates, tickets, waits, and bookings, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
+      "body": "Use this for museums, cafés, counters, or services you plan to return to. The reply may be a smile, a time, or light follow-up question.",
       "phrases": [
         {
           "id": "time-4",
@@ -157,13 +164,16 @@
           "audioKey": "v500-time-date-book-one-ticket-please"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Morning, afternoon, and tomorrow can be easy to mix up. Repeat the date or show it if the booking matters.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -181,7 +191,8 @@
           "audioKey": "time-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -249,7 +260,8 @@
           "audioKey": "v500-time-date-book-one-ticket-please"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

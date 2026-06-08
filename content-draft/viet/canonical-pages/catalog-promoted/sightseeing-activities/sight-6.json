@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần đặt trước không? once, then make the task visible with your ticket, map, attraction name, booking screen, or meeting point sign. The phrase is doing one job: getting a clear answer about book in advance.",
+      "body": "Keep Tôi cần đặt trước không? together as one sentence before adding details. Start with Tôi cần đặt trước không?",
       "phrases": [
         {
           "id": "sight-6",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Do I need to book in advance? to another sightseeing or activities need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another sightseeing or activities need.",
       "phrases": [
         {
           "id": "sight-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real sightseeing or activities exchange when book in advance is the detail you need resolved. The likely reply is yes/no, a form, a document, or the next step, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is do I need to book in advance. Keep the relevant place, item, or screen visible."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi cần đặt trước không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "sight-4",

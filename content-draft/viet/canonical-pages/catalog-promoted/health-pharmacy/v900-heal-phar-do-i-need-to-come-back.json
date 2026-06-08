@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có cần quay lại không? once, then make the task visible with your symptom note, medicine box, body area, photo, or translated note. The phrase is doing one job: getting a clear answer about come back.",
+      "body": "Keep Tôi có cần quay lại không? together as one sentence before adding details. Start with Tôi có cần quay lại không?",
       "phrases": [
         {
           "id": "v900-heal-phar-do-i-need-to-come-back",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Do I need to come back? to another pharmacy or health need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
       "phrases": [
         {
           "id": "problems-6",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when come back is the detail you need resolved. The likely reply is yes/no, a form, a document, or the next step, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is do I need to come back. Show the symptom, medicine, location, or helper contact if you can."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có cần quay lại không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "health-2",

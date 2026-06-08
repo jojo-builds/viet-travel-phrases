@@ -7,7 +7,7 @@
   "title": "Tôi nghĩ chúng ta bị lạc rồi",
   "englishTitle": "I think we are lost",
   "pronunciation": "toy ngee choong ta bee lahk roy",
-  "summary": "Tôi nghĩ chúng ta bị lạc rồi means “I think we are lost”.",
+  "summary": "Use this when the driver and route no longer look right.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi nghĩ chúng ta bị lạc rồi when you need \"I think we are lost\". This is for when the route feels wrong and you need to reset the ride. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Tôi nghĩ chúng ta bị lạc rồi keeps the travel moment short and clear. Reach for it when the route feels wrong and you need to reset the ride.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "transport-lost-piece-1",
@@ -75,12 +77,13 @@
           "audioKey": "transport-lost"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi nghĩ chúng ta bị lạc rồi as your first sentence for \"I think we are lost\". This is for when the route feels wrong and you need to reset the ride. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Keep Tôi nghĩ chúng ta bị lạc rồi together as one sentence before adding details. Keep the map, address, or destination visible.",
       "phrases": [
         {
           "id": "transport-lost",
@@ -93,18 +96,21 @@
           "audioKey": "transport-lost"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"I think we are lost\", Tôi nghĩ chúng ta bị lạc rồi makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. Keep the map, address, or destination visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Transport, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Tôi nghĩ chúng ta bị lạc rồi once, pause, and watch for the reply. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Keep the map, address, or destination visible.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -137,12 +143,13 @@
           "audioKey": "taxi-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when the route feels wrong and you need to reset the ride. It fits rides, routes, pickup points, and stops, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "body": "Reach for it when the route feels wrong and you need to reset the ride. The reply may be a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "taxi-4",
@@ -175,13 +182,16 @@
           "audioKey": "taxi-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -219,7 +229,8 @@
           "audioKey": "transport-meter"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -307,7 +318,8 @@
           "audioKey": "transport-fare"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

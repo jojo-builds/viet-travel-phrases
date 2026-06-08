@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I want to exchange this to another shopping need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another shopping need.",
       "phrases": [
         {
           "id": "shop-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real shopping exchange when exchange this is the detail you need resolved. The likely reply is an option, price, yes/no answer, or next step, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is i want to exchange this. Point to the item, menu line, receipt, size, or photo."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "In shops and markets, the object is the anchor. Point clearly, then listen for the number or option."
+      "body": "In shops and markets, the object is the reference point. Point to the item, menu line, receipt, size, or photo."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi muốn đổi cái này.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "shop-4",

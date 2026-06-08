@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể nhận hành lý của mình ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names pick up my luggage in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Tôi có thể nhận hành lý của mình ở đâu? keeps the direction question short. Keep the booking, room number, date, or address visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Tôi có thể nhận hành lý của mình ở đâu?. Show your booking screen, room key, address, room number, or photo of the issue, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Keep Tôi có thể nhận hành lý của mình ở đâu? together as one sentence before adding details. Say Tôi có thể nhận hành lý của mình ở đâu?",
       "phrases": [
         {
           "id": "v900-hote-acco-where-can-i-pick-up-my-luggage",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where can I pick up my luggage? to another hotel or stay need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể nhận hành lý của mình ở đâu?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "hotel-3",

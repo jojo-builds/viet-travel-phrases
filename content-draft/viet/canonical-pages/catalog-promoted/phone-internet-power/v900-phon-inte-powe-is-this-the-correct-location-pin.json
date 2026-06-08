@@ -20,7 +20,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đây có phải là pin vị trí chính xác không? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Is this the correct location pin is right."
+      "body": "Đây có phải là pin vị trí chính xác không? keeps the question easy to answer. Keep the phone screen or error message visible."
     },
     {
       "id": "quick-say",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is this the correct location pin? to another phone, internet, or power need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another phone, internet, or power need.",
       "phrases": [
         {
           "id": "phone-1",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Đây có phải là pin vị trí chính xác không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "phone-3",

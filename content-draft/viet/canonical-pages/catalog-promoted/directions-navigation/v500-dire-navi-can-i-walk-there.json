@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có thể đi bộ tới đó được không? with your map open or the place name visible. Listen for đi bộ được, xa lắm, or a gesture toward a safer crossing, alley, bridge, or ride pickup point.",
+      "body": "Keep Tôi có thể đi bộ tới đó được không? together as one sentence before adding details. Start with Tôi có thể đi bộ tới đó được không?",
       "phrases": [
         {
           "id": "v500-dire-navi-can-i-walk-there",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can I walk there? to another directions need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another directions need.",
       "phrases": [
         {
           "id": "directions-1",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể đi bộ tới đó được không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "directions-4",

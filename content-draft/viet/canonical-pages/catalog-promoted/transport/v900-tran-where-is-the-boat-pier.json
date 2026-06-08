@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bến thuyền ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names boat pier in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Bến thuyền ở đâu? keeps the direction question short. Keep the map, address, or destination visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Bến thuyền ở đâu?. Show your map, destination, ride screen, ticket, vehicle, or pickup point, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Keep Bến thuyền ở đâu? together as one sentence before adding details. Say Bến thuyền ở đâu?",
       "phrases": [
         {
           "id": "v900-tran-where-is-the-boat-pier",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where is the boat pier? to another transport need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bến thuyền ở đâu?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

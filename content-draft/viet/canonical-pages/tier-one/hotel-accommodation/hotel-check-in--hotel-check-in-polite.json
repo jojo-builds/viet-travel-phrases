@@ -7,7 +7,7 @@
   "title": "Cho tôi nhận phòng nhé",
   "englishTitle": "I’d like to check in, please",
   "pronunciation": "cho toy nyun fong nhe",
-  "summary": "A focused guide to when Cho tôi nhận phòng nhé sounds more natural than Cho tôi nhận phòng.",
+  "summary": "A softer check-in line for the front desk.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -18,45 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cho tôi nhận phòng nhé is useful when \"I’d like to check in, please\" needs a slightly different tone or setting. Use this when you want the request to sound softer at the desk.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "breakdown",
-      "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
-      "breakdown": [
-        {
-          "id": "hotel-check-in-polite-piece-1",
-          "vietnamese": "Cho tôi",
-          "english": "can I have",
-          "audioKey": "breakdown-authored-cho-toi-18c6fe1018"
-        },
-        {
-          "id": "hotel-check-in-polite-piece-2",
-          "vietnamese": "nhận phòng",
-          "english": "check in",
-          "audioKey": "breakdown-authored-nhan-phong-2c8d3eb3c0"
-        },
-        {
-          "id": "hotel-check-in-polite-piece-3",
-          "vietnamese": "nhé",
-          "english": "soft polite ending",
-          "audioKey": "breakdown-food-need-table-piece-7"
-        },
-        {
-          "id": "hotel-check-in-polite-full",
-          "vietnamese": "Cho tôi nhận phòng nhé",
-          "english": "I’d like to check in, please",
-          "audioKey": "hotel-check-in-polite"
-        }
-      ],
-      "presentation": "breakdown-strip"
+      "body": "Use this at a hotel, guesthouse, or homestay desk when you want a polite, simple check-in request.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Cho tôi nhận phòng nhé when \"I’d like to check in, please\" is the exact tone or situation you want.",
+      "body": "Say this when you are ready to check in and want the request to sound warm.",
       "phrases": [
         {
           "id": "hotel-check-in-polite",
@@ -69,18 +39,52 @@
           "audioKey": "hotel-check-in-polite"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "This is for when you want the request to sound softer at the desk. Use Cho tôi nhận phòng when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
-      "presentation": "plain-text"
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Play each piece, then the full phrase.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "cho",
+          "english": "to / for",
+          "audioKey": "breakdown-taxi-1-first"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "nhận phòng",
+          "english": "check in",
+          "audioKey": "breakdown-authored-nhan-phong-2c8d3eb3c0"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "nhé",
+          "english": "soft polite ending",
+          "audioKey": "breakdown-food-need-table-piece-7"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Cho tôi nhận phòng nhé",
+          "english": "I’d like to check in, please",
+          "audioKey": "hotel-check-in-polite"
+        }
+      ],
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Hotel Accommodation, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Cho tôi nhận phòng nhé once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Nhé softens the request. It keeps the phrase friendly without making it formal or long.",
       "phrases": [
         {
           "id": "hotel-2",
@@ -113,18 +117,29 @@
           "audioKey": "hotel-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Best with your booking visible, especially if the desk is busy or the staff asks what you need.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Nearby phrases keep the conversation moving after this one.",
+      "body": "Follow with reservation, passport, checkout time, room problem, or luggage-storage phrases.",
       "phrases": [
         {
           "id": "hotel-2",
@@ -187,7 +202,8 @@
           "audioKey": "hotel-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

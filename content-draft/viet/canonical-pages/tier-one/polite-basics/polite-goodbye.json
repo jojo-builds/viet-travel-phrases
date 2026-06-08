@@ -7,7 +7,7 @@
   "title": "Tạm biệt",
   "englishTitle": "Goodbye",
   "pronunciation": "tahm bee-et",
-  "summary": "Tạm biệt is a common way to say “Goodbye” in Vietnamese.",
+  "summary": "A quick goodbye finishes the moment politely without extra talk.",
   "iconName": "hand.wave.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tạm biệt when you need \"Goodbye\". This is for when leaving a shop, café, or hotel desk. A quick goodbye finishes the moment politely without extra talk. Listen for a short reply, a smile, a time, or a light follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Tạm biệt keeps the social move simple and polite. Reach for it when leaving a shop, café, or hotel desk. A quick goodbye finishes the moment politely without extra talk.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "polite-7-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "polite-7"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tạm biệt as your first sentence for \"Goodbye\". This is for when leaving a shop, café, or hotel desk. Pause after the phrase and listen for a short reply, a smile, a time, or a light follow-up question. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
+      "body": "Keep Tạm biệt together as one sentence before adding details. Keep the relevant place, item, or screen visible.",
       "phrases": [
         {
           "id": "polite-7",
@@ -63,18 +66,21 @@
           "audioKey": "polite-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Polite Vietnamese often works by softening the start or end of an interaction before the main request. For \"Goodbye\", Tạm biệt makes the next step easier to answer. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
-      "presentation": "plain-text"
+      "body": "Polite Vietnamese often works by softening the start or end of an interaction before the main request. Keep the relevant place, item, or screen visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Polite Basics, the reply often comes as a short reply, a smile, a time, or a light follow-up question. Say Tạm biệt once, pause, and watch for the reply. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
+      "body": "The reply may be a smile, a time, or light follow-up question. Keep the relevant place, item, or screen visible.",
       "phrases": [
         {
           "id": "polite-1",
@@ -107,12 +113,13 @@
           "audioKey": "polite-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when leaving a shop, café, or hotel desk. It fits small service and first-contact moments, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
+      "body": "Reach for it when leaving a shop, café, or hotel desk. The reply may be a smile, a time, or light follow-up question.",
       "phrases": [
         {
           "id": "polite-4",
@@ -145,13 +152,16 @@
           "audioKey": "polite-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Keep quick service phrases clear, polite, and short. A calm short sentence usually works better than a long one said nervously.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -189,7 +199,8 @@
           "audioKey": "audio-phrase-chao-ban"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "nearby-phrases",
@@ -237,7 +248,8 @@
           "audioKey": "audio-phrase-chao-buoi-chieu"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -325,7 +337,8 @@
           "audioKey": "breakdown-food-5-first"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

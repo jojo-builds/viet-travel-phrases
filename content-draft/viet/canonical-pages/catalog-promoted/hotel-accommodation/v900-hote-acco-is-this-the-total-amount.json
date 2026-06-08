@@ -20,7 +20,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đây có phải là tổng số tiền? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Is this the total amount is right."
+      "body": "Đây có phải là tổng số tiền? keeps the question easy to answer. Keep the booking, room number, date, or address visible."
     },
     {
       "id": "quick-say",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is this the total amount? to another hotel or stay need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Đây có phải là tổng số tiền?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "hotel-3",

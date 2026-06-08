@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-06-08T12:30:13.157Z",
-  "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/content-draft/viet/breakdown-audit/pages",
+  "generatedAt": "2026-06-08T18:14:44.283Z",
+  "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/phrase-copy-production-gate/content-draft/viet/breakdown-audit/pages",
   "summary": {
-    "pages": 1778,
+    "pages": 1793,
     "reviewed": 1407,
     "visualReviewed": 1407,
-    "missing": 371,
-    "generatedAt": "2026-06-08T12:30:13.157Z"
+    "missing": 386,
+    "generatedAt": "2026-06-08T18:14:44.283Z"
   },
   "pages": [
     {
@@ -12778,7 +12778,7 @@
     },
     {
       "pageID": "viet-phrase-v500-airp-bord-arri-i-cannot-find-my-driver",
-      "phraseText": "Tôi không thể tìm thấy trình điều khiển của mình",
+      "phraseText": "Tôi không tìm thấy tài xế của mình",
       "englishTitle": "I cannot find my driver",
       "reviewStatus": "reviewed",
       "visualReview": {
@@ -12798,82 +12798,46 @@
       "runtimeBreakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi",
-          "english": "I / me",
-          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
-        },
-        {
-          "id": "chunk-2",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": "breakdown-polite-6-first"
-        },
-        {
-          "id": "chunk-3",
-          "vietnamese": "thể",
-          "english": "can / able to",
-          "audioKey": "breakdown-hotel-premium-late-checkout-piece-3"
-        },
-        {
-          "id": "chunk-4",
-          "vietnamese": "tìm thấy",
-          "english": "find",
+          "vietnamese": "Tôi không tìm thấy",
+          "english": "I cannot find",
           "audioKey": null
         },
         {
-          "id": "chunk-5",
-          "vietnamese": "trình điều khiển",
+          "id": "chunk-2",
+          "vietnamese": "tài xế",
           "english": "driver",
           "audioKey": null
         },
         {
-          "id": "chunk-6",
+          "id": "chunk-3",
           "vietnamese": "của mình",
           "english": "my / mine",
           "audioKey": null
         },
         {
           "id": "full",
-          "vietnamese": "Tôi không thể tìm thấy trình điều khiển của mình",
+          "vietnamese": "Tôi không tìm thấy tài xế của mình",
           "english": "I cannot find my driver",
-          "audioKey": "v500-airp-bord-arri-i-cannot-find-my-driver"
+          "audioKey": "audio-authored-toi-khong-tim-thay-tai-xe-cua-minh-6a054e30bf"
         }
       ],
       "reviewedBreakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi",
-          "english": "I / me",
-          "audioKey": null
+          "vietnamese": "Tôi không tìm thấy",
+          "english": "I cannot find",
+          "audioKey": null,
+          "keepTogetherReason": "negative verb phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-3",
-          "vietnamese": "thể",
-          "english": "can / able to",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
-          "vietnamese": "tìm thấy",
-          "english": "find",
-          "audioKey": null,
-          "keepTogetherReason": "compound verb"
-        },
-        {
-          "id": "chunk-5",
-          "vietnamese": "trình điều khiển",
+          "vietnamese": "tài xế",
           "english": "driver",
           "audioKey": null,
           "keepTogetherReason": "compound noun"
         },
         {
-          "id": "chunk-6",
+          "id": "chunk-3",
           "vietnamese": "của mình",
           "english": "my / mine",
           "audioKey": null,
@@ -12881,9 +12845,9 @@
         },
         {
           "id": "full",
-          "vietnamese": "Tôi không thể tìm thấy trình điều khiển của mình",
+          "vietnamese": "Tôi không tìm thấy tài xế của mình",
           "english": "I cannot find my driver",
-          "audioKey": "v500-airp-bord-arri-i-cannot-find-my-driver"
+          "audioKey": null
         }
       ]
     },
@@ -58043,7 +58007,7 @@
     },
     {
       "pageID": "viet-phrase-v900-phon-inte-powe-the-app-says-my-driver-is-here-but-i-cant-find-t",
-      "phraseText": "Ứng dụng cho biết trình điều khiển của tôi có ở đây nhưng tôi không thể tìm thấy chúng.",
+      "phraseText": "Ứng dụng báo tài xế đã đến, nhưng tôi chưa thấy tài xế.",
       "englishTitle": "The app says my driver is here, but I can't find them.",
       "reviewStatus": "reviewed",
       "visualReview": {
@@ -58063,155 +58027,56 @@
       "runtimeBreakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Ứng dụng",
-          "english": "app",
+          "vietnamese": "Ứng dụng báo",
+          "english": "the app says",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cho biết",
-          "english": "says / tells",
+          "vietnamese": "tài xế đã đến,",
+          "english": "the driver has arrived",
           "audioKey": null
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "trình điều khiển",
-          "english": "driver",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
-          "vietnamese": "của tôi",
-          "english": "my / mine",
-          "audioKey": "breakdown-smalltalk-3-piece-4"
-        },
-        {
-          "id": "chunk-6",
-          "vietnamese": "có ở đây",
-          "english": "is here",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-9",
-          "vietnamese": "nhưng",
-          "english": "but",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-10",
-          "vietnamese": "tôi",
-          "english": "I / me",
-          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
-        },
-        {
-          "id": "chunk-11",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": "breakdown-polite-6-first"
-        },
-        {
-          "id": "chunk-12",
-          "vietnamese": "thể",
-          "english": "can / able to",
-          "audioKey": "breakdown-hotel-premium-late-checkout-piece-3"
-        },
-        {
-          "id": "chunk-13",
-          "vietnamese": "tìm thấy",
-          "english": "find",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-14",
-          "vietnamese": "chúng.",
-          "english": "we",
+          "id": "chunk-3",
+          "vietnamese": "nhưng tôi chưa thấy tài xế.",
+          "english": "but I do not see the driver yet",
           "audioKey": null
         },
         {
           "id": "full",
-          "vietnamese": "Ứng dụng cho biết trình điều khiển của tôi có ở đây nhưng tôi không thể tìm thấy chúng.",
+          "vietnamese": "Ứng dụng báo tài xế đã đến, nhưng tôi chưa thấy tài xế.",
           "english": "The app says my driver is here, but I can't find them.",
-          "audioKey": "v900-phon-inte-powe-the-app-says-my-driver-is-here-but-i-cant-find-t"
+          "audioKey": "audio-authored-ung-dung-bao-tai-xe-da-den-nhung-toi-chua-thay-tai-xe-e9f03e6de4"
         }
       ],
       "reviewedBreakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Ứng dụng",
-          "english": "app",
+          "vietnamese": "Ứng dụng báo",
+          "english": "the app says",
           "audioKey": null,
-          "keepTogetherReason": "compound noun"
+          "keepTogetherReason": "reporting phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cho biết",
-          "english": "says / tells",
+          "vietnamese": "tài xế đã đến,",
+          "english": "the driver has arrived",
           "audioKey": null,
-          "keepTogetherReason": "compound reporting verb"
+          "keepTogetherReason": "arrival status phrase"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "trình điều khiển",
-          "english": "driver",
+          "id": "chunk-3",
+          "vietnamese": "nhưng tôi chưa thấy tài xế.",
+          "english": "but I do not see the driver yet",
           "audioKey": null,
-          "keepTogetherReason": "compound noun"
-        },
-        {
-          "id": "chunk-5",
-          "vietnamese": "của tôi",
-          "english": "my / mine",
-          "audioKey": null,
-          "keepTogetherReason": "possessive phrase"
-        },
-        {
-          "id": "chunk-6",
-          "vietnamese": "có ở đây",
-          "english": "is here",
-          "audioKey": null,
-          "keepTogetherReason": "fixed location phrase"
-        },
-        {
-          "id": "chunk-9",
-          "vietnamese": "nhưng",
-          "english": "but",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-10",
-          "vietnamese": "tôi",
-          "english": "I / me",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-11",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-12",
-          "vietnamese": "thể",
-          "english": "can / able to",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-13",
-          "vietnamese": "tìm thấy",
-          "english": "find",
-          "audioKey": null,
-          "keepTogetherReason": "compound verb"
-        },
-        {
-          "id": "chunk-14",
-          "vietnamese": "chúng.",
-          "english": "we",
-          "audioKey": null
+          "keepTogetherReason": "contrast phrase"
         },
         {
           "id": "full",
-          "vietnamese": "Ứng dụng cho biết trình điều khiển của tôi có ở đây nhưng tôi không thể tìm thấy chúng.",
+          "vietnamese": "Ứng dụng báo tài xế đã đến, nhưng tôi chưa thấy tài xế.",
           "english": "The app says my driver is here, but I can't find them.",
-          "audioKey": "v900-phon-inte-powe-the-app-says-my-driver-is-here-but-i-cant-find-t"
+          "audioKey": null
         }
       ]
     },
@@ -121807,6 +121672,68 @@
       ]
     },
     {
+      "pageID": "viet-family-city-danang-go-ba-na-hills",
+      "phraseText": "Đi Bà Nà Hills",
+      "englishTitle": "Go to Ba Na Hills",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [
+        {
+          "id": "city-danang-go-ba-na-hills-chunk-1",
+          "vietnamese": "Đi",
+          "english": "go",
+          "audioKey": "breakdown-coffee-6-rest"
+        },
+        {
+          "id": "city-danang-go-ba-na-hills-chunk-2",
+          "vietnamese": "Bà Nà Hills",
+          "english": "Ba Na Hills",
+          "audioKey": "audio-authored-ba-na-hills-c5674a9b64"
+        },
+        {
+          "id": "city-danang-go-ba-na-hills-chunk-3",
+          "vietnamese": "Đi Bà Nà Hills",
+          "english": "Go to Ba Na Hills",
+          "audioKey": null
+        }
+      ],
+      "reviewedBreakdown": null
+    },
+    {
+      "pageID": "viet-family-city-danang-where-ba-na-hills",
+      "phraseText": "Bà Nà Hills ở đâu?",
+      "englishTitle": "Where is Ba Na Hills?",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [
+        {
+          "id": "city-danang-where-ba-na-hills-chunk-1",
+          "vietnamese": "Bà Nà Hills",
+          "english": "Ba Na Hills",
+          "audioKey": "audio-authored-ba-na-hills-c5674a9b64"
+        },
+        {
+          "id": "city-danang-where-ba-na-hills-chunk-2",
+          "vietnamese": "ở đâu?",
+          "english": "where is it?",
+          "audioKey": "breakdown-where"
+        },
+        {
+          "id": "city-danang-where-ba-na-hills-chunk-3",
+          "vietnamese": "Bà Nà Hills ở đâu?",
+          "english": "Where is Ba Na Hills?",
+          "audioKey": null
+        }
+      ],
+      "reviewedBreakdown": null
+    },
+    {
       "pageID": "viet-family-ves-call-taxi-for-me",
       "phraseText": "Gọi giúp tôi taxi được không?",
       "englishTitle": "Can you call me a taxi?",
@@ -122013,6 +121940,43 @@
       ]
     },
     {
+      "pageID": "viet-family-ves-do-you-speak-english-anh",
+      "phraseText": "Anh nói tiếng Anh không?",
+      "englishTitle": "Do you speak English?",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [
+        {
+          "id": "ves-do-you-speak-english-anh-chunk-1",
+          "vietnamese": "Anh",
+          "english": "you, older man",
+          "audioKey": "breakdown-viet-hello-anh-relationship"
+        },
+        {
+          "id": "ves-do-you-speak-english-anh-chunk-2",
+          "vietnamese": "nói tiếng Anh",
+          "english": "speak English",
+          "audioKey": null
+        },
+        {
+          "id": "ves-do-you-speak-english-anh-chunk-3",
+          "vietnamese": "không?",
+          "english": "not? / yes-no ending",
+          "audioKey": "breakdown-bath-6-piece-6"
+        },
+        {
+          "id": "ves-do-you-speak-english-anh-chunk-4",
+          "vietnamese": "Anh nói tiếng Anh không?",
+          "english": "Do you speak English?",
+          "audioKey": null
+        }
+      ],
+      "reviewedBreakdown": null
+    },
+    {
       "pageID": "viet-family-ves-drop-me-off-here",
       "phraseText": "Cho tôi xuống ở đây được không?",
       "englishTitle": "Can you drop me off here?",
@@ -122109,6 +122073,105 @@
           "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
         }
       ]
+    },
+    {
+      "pageID": "viet-family-ves-drop-near-dragon-bridge",
+      "phraseText": "Cho tôi xuống gần Cầu Rồng.",
+      "englishTitle": "Drop me off near Dragon Bridge.",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [
+        {
+          "id": "ves-drop-near-dragon-bridge-chunk-1",
+          "vietnamese": "Cho tôi xuống",
+          "english": "let me get off",
+          "audioKey": null
+        },
+        {
+          "id": "ves-drop-near-dragon-bridge-chunk-2",
+          "vietnamese": "gần",
+          "english": "near",
+          "audioKey": "breakdown-v500-bath-pers-need-is-there-a-public-bathroom-nearby-piece-7"
+        },
+        {
+          "id": "ves-drop-near-dragon-bridge-chunk-3",
+          "vietnamese": "Cầu Rồng",
+          "english": "Dragon Bridge",
+          "audioKey": "audio-authored-cau-rong-90dc128d4b"
+        },
+        {
+          "id": "ves-drop-near-dragon-bridge-chunk-4",
+          "vietnamese": "Cho tôi xuống gần Cầu Rồng.",
+          "english": "Drop me off near Dragon Bridge.",
+          "audioKey": null
+        }
+      ],
+      "reviewedBreakdown": null
+    },
+    {
+      "pageID": "viet-family-ves-go-son-tra-peninsula",
+      "phraseText": "Đi bán đảo Sơn Trà.",
+      "englishTitle": "Go to Son Tra Peninsula.",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [
+        {
+          "id": "ves-go-son-tra-peninsula-chunk-1",
+          "vietnamese": "Đi",
+          "english": "go",
+          "audioKey": "breakdown-coffee-6-rest"
+        },
+        {
+          "id": "ves-go-son-tra-peninsula-chunk-2",
+          "vietnamese": "bán đảo Sơn Trà",
+          "english": "Son Tra Peninsula",
+          "audioKey": "audio-authored-ban-dao-son-tra-2364c7b9ad"
+        },
+        {
+          "id": "ves-go-son-tra-peninsula-chunk-3",
+          "vietnamese": "Đi bán đảo Sơn Trà.",
+          "english": "Go to Son Tra Peninsula.",
+          "audioKey": null
+        }
+      ],
+      "reviewedBreakdown": null
+    },
+    {
+      "pageID": "viet-family-ves-iced-tea-please",
+      "phraseText": "Cho tôi trà đá.",
+      "englishTitle": "Iced tea, please.",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [
+        {
+          "id": "ves-iced-tea-please-chunk-1",
+          "vietnamese": "Cho tôi",
+          "english": "give me / for me",
+          "audioKey": "breakdown-authored-cho-toi-18c6fe1018"
+        },
+        {
+          "id": "ves-iced-tea-please-chunk-2",
+          "vietnamese": "trà đá",
+          "english": "iced tea",
+          "audioKey": "menu-name-tra-da-77b0392224"
+        },
+        {
+          "id": "ves-iced-tea-please-chunk-3",
+          "vietnamese": "Cho tôi trà đá.",
+          "english": "Iced tea, please",
+          "audioKey": null
+        }
+      ],
+      "reviewedBreakdown": null
     },
     {
       "pageID": "viet-family-ves-im-on-vo-nguyen-giap-street",
@@ -122719,6 +122782,74 @@
       ]
     },
     {
+      "pageID": "viet-family-ves-one-ticket-marble-mountains",
+      "phraseText": "Một vé vào Ngũ Hành Sơn.",
+      "englishTitle": "One ticket to Marble Mountains.",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [
+        {
+          "id": "ves-one-ticket-marble-mountains-chunk-1",
+          "vietnamese": "Một vé",
+          "english": "one ticket",
+          "audioKey": "breakdown-v500-time-date-book-one-ticket-please-rest"
+        },
+        {
+          "id": "ves-one-ticket-marble-mountains-chunk-2",
+          "vietnamese": "vào Ngũ Hành Sơn",
+          "english": "into Marble Mountains",
+          "audioKey": null
+        },
+        {
+          "id": "ves-one-ticket-marble-mountains-chunk-3",
+          "vietnamese": "Một vé vào Ngũ Hành Sơn.",
+          "english": "One ticket to Marble Mountains.",
+          "audioKey": null
+        }
+      ],
+      "reviewedBreakdown": null
+    },
+    {
+      "pageID": "viet-family-ves-one-ticket-marble-mountains-polite",
+      "phraseText": "Dạ, cho tôi một vé vào Ngũ Hành Sơn.",
+      "englishTitle": "One ticket to Marble Mountains, please.",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [
+        {
+          "id": "ves-one-ticket-marble-mountains-polite-chunk-1",
+          "vietnamese": "Dạ, cho tôi",
+          "english": "please give me",
+          "audioKey": null
+        },
+        {
+          "id": "ves-one-ticket-marble-mountains-polite-chunk-2",
+          "vietnamese": "một vé",
+          "english": "one ticket",
+          "audioKey": "breakdown-v500-time-date-book-one-ticket-please-rest"
+        },
+        {
+          "id": "ves-one-ticket-marble-mountains-polite-chunk-3",
+          "vietnamese": "vào Ngũ Hành Sơn",
+          "english": "into Marble Mountains",
+          "audioKey": null
+        },
+        {
+          "id": "ves-one-ticket-marble-mountains-polite-chunk-4",
+          "vietnamese": "Dạ, cho tôi một vé vào Ngũ Hành Sơn.",
+          "english": "One ticket to Marble Mountains, please.",
+          "audioKey": null
+        }
+      ],
+      "reviewedBreakdown": null
+    },
+    {
       "pageID": "viet-family-ves-order-bun-bo-hue-bowl",
       "phraseText": "Dạ, cho tôi một tô bún bò Huế.",
       "englishTitle": "One bowl of bun bo Hue, please.",
@@ -123115,6 +123246,105 @@
       ]
     },
     {
+      "pageID": "viet-family-ves-show-me-anh-chi",
+      "phraseText": "Anh/chị chỉ giúp tôi được không?",
+      "englishTitle": "Can you show me?",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [
+        {
+          "id": "ves-show-me-anh-chi-chunk-1",
+          "vietnamese": "Anh/chị",
+          "english": "you, respectfully",
+          "audioKey": "breakdown-repair-english-help-first"
+        },
+        {
+          "id": "ves-show-me-anh-chi-chunk-2",
+          "vietnamese": "chỉ giúp tôi",
+          "english": "show / point for me",
+          "audioKey": null
+        },
+        {
+          "id": "ves-show-me-anh-chi-chunk-3",
+          "vietnamese": "được không?",
+          "english": "is it okay?",
+          "audioKey": "breakdown-authored-duoc-khong-cc7ef288f9"
+        },
+        {
+          "id": "ves-show-me-anh-chi-chunk-4",
+          "vietnamese": "Anh/chị chỉ giúp tôi được không?",
+          "english": "Can you show me?",
+          "audioKey": null
+        }
+      ],
+      "reviewedBreakdown": null
+    },
+    {
+      "pageID": "viet-family-ves-take-me-to-ba-na-hills",
+      "phraseText": "Cho tôi đi Bà Nà Hills.",
+      "englishTitle": "Please take me to Ba Na Hills.",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [
+        {
+          "id": "ves-take-me-to-ba-na-hills-chunk-1",
+          "vietnamese": "Cho tôi đi",
+          "english": "take me / let me go",
+          "audioKey": null
+        },
+        {
+          "id": "ves-take-me-to-ba-na-hills-chunk-2",
+          "vietnamese": "Bà Nà Hills",
+          "english": "Ba Na Hills",
+          "audioKey": "audio-authored-ba-na-hills-c5674a9b64"
+        },
+        {
+          "id": "ves-take-me-to-ba-na-hills-chunk-3",
+          "vietnamese": "Cho tôi đi Bà Nà Hills.",
+          "english": "Please take me to Ba Na Hills.",
+          "audioKey": null
+        }
+      ],
+      "reviewedBreakdown": null
+    },
+    {
+      "pageID": "viet-family-ves-take-me-to-dragon-bridge",
+      "phraseText": "Cho tôi đi Cầu Rồng.",
+      "englishTitle": "Please take me to Dragon Bridge.",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [
+        {
+          "id": "ves-take-me-to-dragon-bridge-chunk-1",
+          "vietnamese": "Cho tôi đi",
+          "english": "take me / let me go",
+          "audioKey": null
+        },
+        {
+          "id": "ves-take-me-to-dragon-bridge-chunk-2",
+          "vietnamese": "Cầu Rồng",
+          "english": "Dragon Bridge",
+          "audioKey": "audio-authored-cau-rong-90dc128d4b"
+        },
+        {
+          "id": "ves-take-me-to-dragon-bridge-chunk-3",
+          "vietnamese": "Cho tôi đi Cầu Rồng.",
+          "english": "Please take me to Dragon Bridge.",
+          "audioKey": null
+        }
+      ],
+      "reviewedBreakdown": null
+    },
+    {
       "pageID": "viet-family-ves-take-photo-for-me",
       "phraseText": "Bạn chụp giúp tôi được không?",
       "englishTitle": "Can you take a photo for me?",
@@ -123467,6 +123697,74 @@
       ]
     },
     {
+      "pageID": "viet-family-ves-two-tickets-ba-na-hills",
+      "phraseText": "Dạ, cho tôi hai vé lên Bà Nà Hills.",
+      "englishTitle": "Two tickets to Ba Na Hills, please.",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [
+        {
+          "id": "ves-two-tickets-ba-na-hills-chunk-1",
+          "vietnamese": "Dạ, cho tôi",
+          "english": "please give me",
+          "audioKey": null
+        },
+        {
+          "id": "ves-two-tickets-ba-na-hills-chunk-2",
+          "vietnamese": "hai vé",
+          "english": "two tickets",
+          "audioKey": null
+        },
+        {
+          "id": "ves-two-tickets-ba-na-hills-chunk-3",
+          "vietnamese": "lên Bà Nà Hills",
+          "english": "up to Ba Na Hills",
+          "audioKey": null
+        },
+        {
+          "id": "ves-two-tickets-ba-na-hills-chunk-4",
+          "vietnamese": "Dạ, cho tôi hai vé lên Bà Nà Hills.",
+          "english": "Two tickets to Ba Na Hills, please.",
+          "audioKey": null
+        }
+      ],
+      "reviewedBreakdown": null
+    },
+    {
+      "pageID": "viet-family-ves-two-tickets-marble-mountains",
+      "phraseText": "Hai vé vào Ngũ Hành Sơn.",
+      "englishTitle": "Two tickets to Marble Mountains.",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [
+        {
+          "id": "ves-two-tickets-marble-mountains-chunk-1",
+          "vietnamese": "Hai vé",
+          "english": "two tickets",
+          "audioKey": null
+        },
+        {
+          "id": "ves-two-tickets-marble-mountains-chunk-2",
+          "vietnamese": "vào Ngũ Hành Sơn",
+          "english": "into Marble Mountains",
+          "audioKey": null
+        },
+        {
+          "id": "ves-two-tickets-marble-mountains-chunk-3",
+          "vietnamese": "Hai vé vào Ngũ Hành Sơn.",
+          "english": "Two tickets to Marble Mountains.",
+          "audioKey": null
+        }
+      ],
+      "reviewedBreakdown": null
+    },
+    {
       "pageID": "viet-family-ves-what-time-come-back",
       "phraseText": "Mấy giờ quay lại?",
       "englishTitle": "What time do we come back?",
@@ -123675,6 +123973,37 @@
       ]
     },
     {
+      "pageID": "viet-family-ves-where-dragon-bridge",
+      "phraseText": "Cầu Rồng ở đâu?",
+      "englishTitle": "Where is Dragon Bridge?",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [
+        {
+          "id": "ves-where-dragon-bridge-chunk-1",
+          "vietnamese": "Cầu Rồng",
+          "english": "Dragon Bridge",
+          "audioKey": "audio-authored-cau-rong-90dc128d4b"
+        },
+        {
+          "id": "ves-where-dragon-bridge-chunk-2",
+          "vietnamese": "ở đâu?",
+          "english": "where is it?",
+          "audioKey": "breakdown-where"
+        },
+        {
+          "id": "ves-where-dragon-bridge-chunk-3",
+          "vietnamese": "Cầu Rồng ở đâu?",
+          "english": "Where is Dragon Bridge?",
+          "audioKey": null
+        }
+      ],
+      "reviewedBreakdown": null
+    },
+    {
       "pageID": "viet-family-ves-where-driver-waits",
       "phraseText": "Tài xế chờ ở đâu?",
       "englishTitle": "Where does the driver wait?",
@@ -123833,6 +124162,37 @@
           "audioKey": "audio-authored-o-dau-co-cao-lau-ngon-36dffccaf0"
         }
       ]
+    },
+    {
+      "pageID": "viet-family-ves-where-linh-ung-pagoda",
+      "phraseText": "Chùa Linh Ứng ở đâu?",
+      "englishTitle": "Where is Linh Ung Pagoda?",
+      "reviewStatus": "missing",
+      "visualReview": {
+        "status": "missing"
+      },
+      "notes": [],
+      "runtimeBreakdown": [
+        {
+          "id": "ves-where-linh-ung-pagoda-chunk-1",
+          "vietnamese": "Chùa Linh Ứng",
+          "english": "Linh Ung Pagoda",
+          "audioKey": "audio-authored-chua-linh-ung-703e8f3b92"
+        },
+        {
+          "id": "ves-where-linh-ung-pagoda-chunk-2",
+          "vietnamese": "ở đâu?",
+          "english": "where is it?",
+          "audioKey": "breakdown-where"
+        },
+        {
+          "id": "ves-where-linh-ung-pagoda-chunk-3",
+          "vietnamese": "Chùa Linh Ứng ở đâu?",
+          "english": "Where is Linh Ung Pagoda?",
+          "audioKey": null
+        }
+      ],
+      "reviewedBreakdown": null
     }
   ]
 }

@@ -7,7 +7,7 @@
   "title": "Tôi bị dị ứng cái này",
   "englishTitle": "I am allergic to this",
   "pronunciation": "toy bee zee oong gai nai",
-  "summary": "Tôi bị dị ứng cái này means “I am allergic to this”.",
+  "summary": "Use this when you need to warn someone about an allergy.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi bị dị ứng cái này when you need \"I am allergic to this\". This is for when an ingredient, medicine, or product may trigger an allergy. Listen for a confirmation, a substitute, or a question about what is allowed; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Tôi bị dị ứng cái này names the need before the details start piling up. Reach for it when an ingredient, medicine, or product may trigger an allergy.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "health-5-piece-1",
@@ -63,12 +65,13 @@
           "audioKey": "health-5"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi bị dị ứng cái này as your first sentence for \"I am allergic to this\". This is for when an ingredient, medicine, or product may trigger an allergy. Pause after the phrase and listen for a confirmation, a substitute, or a question about what is allowed. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Keep Tôi bị dị ứng cái này together as one sentence before adding details.",
       "phrases": [
         {
           "id": "health-5",
@@ -81,18 +84,21 @@
           "audioKey": "health-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up. For \"I am allergic to this\", Tôi bị dị ứng cái này makes the next step easier to answer. Confirm visually when the detail affects safety, health, or the final order.",
-      "presentation": "plain-text"
+      "body": "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up. Show the symptom, medicine, location, or helper contact if you can.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Health & Pharmacy, the reply often comes as a confirmation, a substitute, or a question about what is allowed. Say Tôi bị dị ứng cái này once, pause, and watch for the reply. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "The reply may be a confirmation, a substitute, or question about what is allowed. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
       "phrases": [
         {
           "id": "problems-6",
@@ -125,12 +131,13 @@
           "audioKey": "health-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when an ingredient, medicine, or product may trigger an allergy. It fits doctors, pharmacies, symptoms, and medication, especially when the next step is a confirmation, a substitute, or a question about what is allowed. Confirm visually when the detail affects safety, health, or the final order.",
+      "body": "Reach for it when an ingredient, medicine, or product may trigger an allergy. The reply may be a confirmation, a substitute, or question about what is allowed.",
       "phrases": [
         {
           "id": "health-3",
@@ -163,13 +170,16 @@
           "audioKey": "health-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Keep urgent medical needs clear and direct. A short sentence gives helpers something they can act on quickly.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -187,7 +197,8 @@
           "audioKey": "v500-heal-phar-i-feel-dizzy"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -265,7 +276,8 @@
           "audioKey": "v500-heal-phar-i-feel-dizzy"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

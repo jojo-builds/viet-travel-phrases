@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bao nhiêu một cái? is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on for one, so the answer can be a number, calculator screen, or typed price."
+      "body": "Use this when the price depends on a single item, ticket, portion, or piece. Point to one item so the answer is not for the whole group."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Ask Bao nhiêu một cái? before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "body": "Say Bao nhiêu một cái?, then point to one item. Keep your hand on the single piece until the price is clear.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-how-much-for-one",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How much for one? to another money or price need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
       "phrases": [
         {
           "id": "price-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+      "body": "Ask before comparing colors, sizes, or quantities. It keeps the first number tied to one piece."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "Once one item is clear, two items and totals are easier to negotiate."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bao nhiêu một cái?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "price-3",

@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có cần mang theo hộ chiếu không? once, then make the task visible with your booking screen, ticket, calendar, time, line, or confirmation message. The phrase is doing one job: getting a clear answer about bring my passport.",
+      "body": "Keep Tôi có cần mang theo hộ chiếu không? together as one sentence before adding details. Start with Tôi có cần mang theo hộ chiếu không?",
       "phrases": [
         {
           "id": "v900-time-date-book-do-i-need-to-bring-my-passport",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Do I need to bring my passport? to another time, date, or booking need.",
+      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
       "phrases": [
         {
           "id": "time-1",
@@ -116,7 +116,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when bring my passport is the detail you need resolved. The likely reply is yes/no, a form, a document, or the next step, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the next move is do I need to bring my passport. Keep the booking, room number, date, or address visible."
     },
     {
       "id": "good-to-know",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có cần mang theo hộ chiếu không?.",
+      "body": "Use these if the answer changes the next step.",
       "phrases": [
         {
           "id": "time-4",

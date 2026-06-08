@@ -7,7 +7,7 @@
   "title": "Tôi có đặt chỗ",
   "englishTitle": "I have a booking",
   "pronunciation": "toy koh dat choh",
-  "summary": "Tôi có đặt chỗ means “I have a booking”.",
+  "summary": "Start with the booking before you ask about timing changes.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi có đặt chỗ when you need \"I have a booking\". This is for when the booking exists and you need staff to find it first. Start with the booking before you ask about timing changes. Listen for a name check, booking-code request, counter direction, or short wait; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Tôi có đặt chỗ names the need before the details start piling up. Reach for it when the booking exists and you need staff to find it first. Start with the booking before you ask about timing changes.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Play each piece, then the full phrase.",
       "breakdown": [
         {
           "id": "time-4-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "time-4"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi có đặt chỗ as your first sentence for \"I have a booking\". This is for when the booking exists and you need staff to find it first. Pause after the phrase and listen for a name check, booking-code request, counter direction, or short wait. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Keep Tôi có đặt chỗ together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "time-4",
@@ -69,18 +72,21 @@
           "audioKey": "time-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Time phrases prevent missed pickups, bookings, and closing times. For \"I have a booking\", Tôi có đặt chỗ makes the next step easier to answer. Keep the booking name, code, room number, or ticket visible until staff find the record.",
-      "presentation": "plain-text"
+      "body": "Time phrases prevent missed pickups, bookings, and closing times. Keep the booking, room number, date, or address visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Time, Dates & Booking, the reply often comes as a name check, booking-code request, counter direction, or short wait. Say Tôi có đặt chỗ once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "The reply may be a name check, booking-code request, counter direction, or short wait. Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "time-1",
@@ -113,12 +119,13 @@
           "audioKey": "time-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when the booking exists and you need staff to find it first. It fits times, dates, tickets, waits, and bookings, especially when the next step is a name check, booking-code request, counter direction, or short wait. Keep the booking name, code, room number, or ticket visible until staff find the record.",
+      "body": "Reach for it when the booking exists and you need staff to find it first. The reply may be a name check, booking-code request, counter direction, or short wait.",
       "phrases": [
         {
           "id": "time-5",
@@ -151,13 +158,16 @@
           "audioKey": "v500-time-date-book-one-ticket-please"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Morning, afternoon, and tomorrow can be easy to mix up. Repeat the date or show it if the booking matters.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -175,7 +185,8 @@
           "audioKey": "time-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -243,7 +254,8 @@
           "audioKey": "v500-time-date-book-one-ticket-please"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

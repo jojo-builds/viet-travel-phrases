@@ -711,13 +711,13 @@ function contextAsSituation(text, fallback) {
   if (!source) return "";
 
   return sentence(source
-    .replace(/^Use this when\s+/i, "This is for when ")
+    .replace(/^Use this when\s+/i, "Reach for it when ")
     .replace(/^Use this at\s+/i, "This is for ")
     .replace(/^Use this in\s+/i, "This is for ")
     .replace(/^Use this before\s+/i, "This comes before ")
     .replace(/^Use this if\s+/i, "This helps if ")
     .replace(/^Use this to\s+/i, "This helps you ")
-    .replace(/^Ask this when\s+/i, "This is for when "));
+    .replace(/^Ask this when\s+/i, "Ask when "));
 }
 
 function intentTeaching(primaryPhrase) {
@@ -893,25 +893,84 @@ function intentTeaching(primaryPhrase) {
   };
 }
 
+function intentFragmentForCue(intent) {
+  return String(intent ?? "")
+    .replace(/^["“]|["”]$/g, "")
+    .replace(/[.?!]+$/g, "")
+    .trim()
+    .toLowerCase();
+}
+
+function phraseMomentLead(vietnamese, intent) {
+  const title = cleanFinalPunctuation(vietnamese || "");
+  const fragment = intentFragmentForCue(intent);
+  if (!title) return "";
+
+  if (/^(where|which)\b/.test(fragment)) {
+    return `${title} keeps the direction question short.`;
+  }
+  if (/^(how much|what price|what time|when)\b/.test(fragment)) {
+    return `${title} puts the practical detail first.`;
+  }
+  if (/^(can|could|do|does|is|are|may|should)\b/.test(fragment)) {
+    return `${title} keeps the question easy to answer.`;
+  }
+  if (/^(please|help|call|write|show|take|bring|give|open|stop|wait|turn)\b/.test(fragment)) {
+    return `${title} makes the request direct without adding extra explanation.`;
+  }
+  if (/^(i need|i have|i am|i'm|my|this|here is|there is|i lost|i left|i cannot|i can't)\b/.test(fragment)) {
+    return `${title} names the need before the details start piling up.`;
+  }
+  if (/^(thank|sorry|excuse|hello|goodbye|yes|no)\b/.test(fragment)) {
+    return `${title} keeps the social move simple and polite.`;
+  }
+  return `${title} keeps the travel moment short and clear.`;
+}
+
+function fullPhraseCue(vietnamese, fallbackCue) {
+  const title = cleanFinalPunctuation(vietnamese || "");
+  if (!title) return fallbackCue;
+  if (/[?!]$/.test(title)) return "Use the full phrase before adding details.";
+  return `Keep ${title} together as one sentence before adding details.`;
+}
+
+function responseSentence(response) {
+  let clean = String(response ?? "").trim();
+  if (!clean) return "";
+  clean = clean.replace(/^a short reply,\s*/i, "");
+  if (/confirmation, a handoff, a price, or follow-up question/i.test(clean)) return "";
+  if (/confirmation, a handoff, a price, or a follow-up question/i.test(clean)) return "";
+  if (/clear reply, a pointed detail, or a simple follow-up/i.test(clean)) return "";
+  if (/^a short reply$/i.test(clean)) return "";
+  return `The reply may be ${clean}.`;
+}
+
+function withoutDuplicateParts(parts) {
+  const seen = new Set();
+  return parts.filter((part) => {
+    const text = String(part ?? "").trim();
+    if (!text) return false;
+    const key = text.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 function atGlanceText(family, primaryPhrase) {
   const copy = scenarioCopy(family.scenarioID);
   const override = familyOverride(family);
   if (override.atGlance) return override.atGlance;
 
-  const teaching = intentTeaching(primaryPhrase);
   const intent = cleanEnglishIntent(primaryPhrase.englishText);
   const situation = contextAsSituation(primaryPhrase.context, family.summary);
   const summaryCandidate = override.summary ?? (weakSummary(family.summary) ? "" : sentence(family.summary));
   const usefulSummary = primaryPhrase.context && instructionLikeSentence(summaryCandidate) ? "" : summaryCandidate;
-  const variantCue = (family.phraseIDs ?? []).length > 1
-    ? "Use the rows below to pick the warmer, safer, or more direct version."
-    : `Listen for ${teaching.response}; use the next rows if the exchange moves on.`;
 
   return [
-    `Say ${primaryPhrase.targetText} when you need "${intent}".`,
+    phraseMomentLead(primaryPhrase.targetText, intent),
     situation,
     usefulSummary,
-    variantCue,
   ].filter(Boolean).join(" ");
 }
 
@@ -944,7 +1003,7 @@ function contextCueText(family) {
     case "social-small-talk":
       return "Use it after a greeting or shared moment, then leave space for a short friendly reply.";
     case "understanding-repair":
-      return "If speech still does not land, move to writing, pointing, or showing the exact word on your phone.";
+      return "If it is still unclear, show, write, or point to the exact word.";
     default:
       return "Keep the relevant place, object, or screen visible while you speak.";
   }
@@ -954,15 +1013,10 @@ function standardText(family, primaryPhrase) {
   const override = familyOverride(family);
   if (override.standard) return override.standard;
 
-  const teaching = intentTeaching(primaryPhrase);
-  const intent = cleanEnglishIntent(primaryPhrase.englishText);
-  const situation = contextAsSituation(primaryPhrase.context, family.summary);
   return [
-    `Use ${primaryPhrase.targetText} as your first sentence for "${intent}".`,
-    situation || `It keeps the focus on ${teaching.moment}.`,
-    `Pause after the phrase and listen for ${teaching.response}.`,
+    fullPhraseCue(primaryPhrase.targetText, contextCueText(family)),
     contextCueText(family),
-  ].join(" ");
+  ].filter(Boolean).join(" ");
 }
 
 function usageText(family, primaryPhrase) {
@@ -979,7 +1033,7 @@ function usageText(family, primaryPhrase) {
   return [
     situation,
     momentSentence,
-    teaching.followUp,
+    teaching.followUp.replace(/^Pause after the phrase so\b/i, "Pause so"),
   ].filter(Boolean).join(" ");
 }
 
@@ -1010,7 +1064,7 @@ function whyItMattersText(family, primaryPhrase) {
   return [
     scenarioCopy(family.scenarioID).why,
     `For "${cleanEnglishIntent(primaryPhrase.englishText)}", ${primaryPhrase.targetText} makes the next step easier to answer.`,
-    teaching.followUp,
+    teaching.followUp.replace(/^Pause after the phrase so\b/i, "Pause so"),
   ].join(" ");
 }
 
@@ -1022,8 +1076,8 @@ function travelerInsightText(family, primaryPhrase) {
   const scenario = scenarioByID.get(family.scenarioID);
   const categoryName = scenario?.title ?? "this situation";
   return [
-    `In ${categoryName}, the reply often comes as ${teaching.response}.`,
-    `Say ${primaryPhrase.targetText} once, pause, and watch for the reply.`,
+    `Expect ${teaching.response} in ${categoryName}.`,
+    `Say ${primaryPhrase.targetText} once, then watch for the reply.`,
     contextCueText(family),
   ].join(" ");
 }
@@ -1353,7 +1407,7 @@ const exactRawBreakdownMeanings = new Map(Object.entries({
   "tỏi": "garlic",
   "bơ": "butter",
   "bỏ": "leave out / remove",
-  "không?": "question marker",
+  "không?": "not? / yes-no ending",
   "chưa": "not yet",
   "chùa": "pagoda",
   "vé": "ticket",
@@ -1595,14 +1649,14 @@ function nearbyPhraseSection(family, excludingPageIDs) {
 }
 
 function teachingPhraseOptions(family, sections, currentPageID, primaryPhrase, limit = 3) {
-  const overrideOptions = overrideFamilyOptions(family, "teachingPhraseFamilyIDs", limit);
-  if (overrideOptions.length > 0) {
-    return overrideOptions;
-  }
-
   const exclusions = linkedPageIDs(sections);
   if (currentPageID) {
     exclusions.add(currentPageID);
+  }
+
+  const overrideOptions = overrideFamilyOptions(family, "teachingPhraseFamilyIDs", limit, exclusions);
+  if (overrideOptions.length > 0) {
+    return overrideOptions;
   }
 
   const relatedOptions = exploreOptions(family, limit, exclusions);
@@ -1614,12 +1668,17 @@ function teachingPhraseOptions(family, sections, currentPageID, primaryPhrase, l
 }
 
 function exploreNextPhraseOptions(family, sections, currentPageID, primaryPhrase, limit = 8) {
-  const overrideOptions = overrideFamilyOptions(family, "explorePhraseFamilyIDs", limit);
+  const exclusions = linkedPageIDs(sections);
+  if (currentPageID) {
+    exclusions.add(currentPageID);
+  }
+
+  const overrideOptions = overrideFamilyOptions(family, "explorePhraseFamilyIDs", limit, exclusions);
   if (overrideOptions.length > 0) {
     return overrideOptions;
   }
 
-  const excludedOptions = exploreOptions(family, limit, linkedPageIDs(sections));
+  const excludedOptions = exploreOptions(family, limit, exclusions);
   if (excludedOptions.length > 0) {
     return excludedOptions;
   }
@@ -1686,9 +1745,12 @@ function explicitFamilyOptions(familyIDs, limit = 8, excludingPageIDs = new Set(
   return options;
 }
 
-function overrideFamilyOptions(family, key, limit = 8) {
+function overrideFamilyOptions(family, key, limit = 8, excludingPageIDs = new Set()) {
   const override = familyOverride(family);
   const currentPageID = canonicalPageID(family);
+  // Family overrides are handwritten card choices. Preserve repeated cards across
+  // sections when the page deliberately carries the same follow-up through a flow.
+  void excludingPageIDs;
   return explicitFamilyOptions(override[key], limit, new Set([currentPageID]));
 }
 
@@ -2005,7 +2067,7 @@ function pageForFamily(family, childPageIDsByPhraseID) {
   });
 
   if (depth === "deep" && variantOptions.length === 0) {
-    const overrideNearbyOptions = overrideFamilyOptions(family, "nearbyPhraseFamilyIDs", 4);
+    const overrideNearbyOptions = overrideFamilyOptions(family, "nearbyPhraseFamilyIDs", 4, linkedPageIDs(sections));
     const nearbySection = overrideNearbyOptions.length > 0
       ? {
           id: "nearby-phrases",
@@ -2045,7 +2107,7 @@ function pageForFamily(family, childPageIDsByPhraseID) {
     title: primaryPhrase.targetText,
     englishTitle: primaryPhrase.englishText,
     pronunciation: primaryPhrase.pronunciation,
-    summary: familyOverride(family).summary ?? travelerFacingSummary(primaryPhrase),
+    summary: familyOverride(family).summary ?? sentence(family.summary) ?? travelerFacingSummary(primaryPhrase),
     iconName: scenario?.symbolName ?? "text.bubble.fill",
     tintName: tintForScenario(family.scenarioID),
     categoryIDs: categoryIDsForPage(pageID, family),
@@ -2101,6 +2163,32 @@ function loadCatalogPromotedPhraseIDs() {
     const page = JSON.parse(fs.readFileSync(filePath, "utf8"));
     return page.phraseID;
   }).filter(Boolean));
+}
+
+function normalizeAuthoredPhrasePage(page) {
+  return {
+    ...page,
+    sections: withSectionPresentations((page.sections ?? []).map((section) => ({
+      ...section,
+      phrases: (section.phrases ?? []).map((phrase) => ({
+        ...phrase,
+        symbolName: speakerSymbolName(phrase.vietnamese, phrase.audioKey),
+        detailPageID: canonicalDetailPageID(phrase.detailPageID),
+      })),
+    }))),
+    examples: (page.examples ?? []).map((phrase) => ({
+      ...phrase,
+      symbolName: speakerSymbolName(phrase.vietnamese, phrase.audioKey),
+      detailPageID: canonicalDetailPageID(phrase.detailPageID),
+    })),
+  };
+}
+
+function loadExistingChildPagesByPhraseID() {
+  return new Map(walkJSONFiles(sourceRoot)
+    .map((filePath) => normalizeAuthoredPhrasePage(JSON.parse(fs.readFileSync(filePath, "utf8"))))
+    .filter((page) => page.tierRole === "child" && page.phraseID)
+    .map((page) => [page.phraseID, page]));
 }
 
 function loadCityLibrary() {
@@ -3325,11 +3413,15 @@ function editorialSupportBreakdownTokens(record) {
   }));
 }
 
-function editorialSupportOptions(phraseIDs, count = 4) {
-  return (phraseIDs ?? [])
-    .map((phraseID) => editorialSupportPhraseOption(phraseID, `viet-family-${phraseID}`))
-    .filter(Boolean)
-    .slice(0, count);
+function editorialSupportOptions(phraseIDs, count = 4, excludingPageIDs = new Set()) {
+  const options = [];
+  for (const phraseID of phraseIDs ?? []) {
+    const option = editorialSupportPhraseOption(phraseID, `viet-family-${phraseID}`);
+    if (option.detailPageID && excludingPageIDs.has(option.detailPageID)) continue;
+    options.push(option);
+    if (options.length >= count) break;
+  }
+  return options;
 }
 
 function editorialSupportPageForRecord(record) {
@@ -3338,10 +3430,12 @@ function editorialSupportPageForRecord(record) {
     throw new Error(`Cannot build editorial support page ${record.phraseID}; missing catalog phrase`);
   }
 
+  const pageID = editorialSupportPageID(record);
+  const supportFamily = familyByID.get(record.familyID);
   const selfOption = editorialSupportPhraseOption(record.phraseID, null, record.tintName);
-  const relatedOptions = editorialSupportOptions(record.relatedPhraseIDs, 4);
-  const exploreOptions = editorialSupportOptions(record.explorePhraseIDs ?? record.relatedPhraseIDs, 6);
-  const contrastOptions = editorialSupportOptions(record.contrastPhraseIDs ?? record.relatedPhraseIDs, 3);
+  const pageExclusions = new Set([pageID]);
+  const relatedOptions = editorialSupportOptions(record.relatedPhraseIDs, 4, pageExclusions);
+  const contrastOptions = editorialSupportOptions(record.contrastPhraseIDs ?? record.relatedPhraseIDs, 3, pageExclusions);
   const sections = [
     {
       id: "at-glance",
@@ -3366,27 +3460,44 @@ function editorialSupportPageForRecord(record) {
       body: record.useItWith,
       phrases: contrastOptions.length ? contrastOptions : relatedOptions,
     },
+  ];
+
+  const whenExclusions = linkedPageIDs(sections);
+  whenExclusions.add(pageID);
+  const whenOptions = editorialSupportOptions(record.relatedPhraseIDs, 4, whenExclusions);
+
+  sections.push(
     {
       id: "when-to-use",
       title: "When to use it",
       body: record.whenToUse,
-      phrases: relatedOptions,
+      phrases: whenOptions.length ? whenOptions : relatedOptions,
     },
     {
       id: "good-to-know",
       title: "Good to know",
       body: record.goodToKnow,
-    },
+    }
+  );
+
+  const exploreExclusions = linkedPageIDs(sections);
+  exploreExclusions.add(pageID);
+  let exploreSupportOptions = editorialSupportOptions(record.explorePhraseIDs ?? record.relatedPhraseIDs, 6, exploreExclusions);
+  if (exploreSupportOptions.length === 0 && supportFamily) {
+    exploreSupportOptions = exploreOptions(supportFamily, 6, exploreExclusions);
+  }
+
+  sections.push(
     {
       id: "explore-next",
       title: "Explore next",
       body: record.exploreNextBody,
-      phrases: exploreOptions.length ? exploreOptions : relatedOptions,
-    },
-  ];
+      phrases: exploreSupportOptions.length ? exploreSupportOptions : relatedOptions,
+    }
+  );
 
   return {
-    id: editorialSupportPageID(record),
+    id: pageID,
     familyID: record.familyID,
     phraseID: record.phraseID,
     tierRole: "editorial-model-support",
@@ -3640,13 +3751,24 @@ function preservesHandwrittenCityEditorial(page) {
     && page.cityMetadata?.editorialReviewStatus === "handwritten-reviewed";
 }
 
-const preservedPhraseEditorialFamilyIDs = new Set([
-  "money-how-much",
+function preservesHandwrittenPhraseEditorial(page) {
+  return [
+    "tier1",
+    "child",
+    "catalog-promoted",
+    "editorial-model-support",
+  ].includes(page.tierRole);
+}
+
+const xinChaoFlagshipRuntimeSectionIDs = new Set([
+  "at-glance",
+  "breakdown",
+  "good-to-know",
+  "explore-next",
 ]);
 
-function preservesHandwrittenPhraseEditorial(page) {
-  return page.tierRole === "tier1"
-    && preservedPhraseEditorialFamilyIDs.has(page.familyID);
+function usesXinChaoFlagshipRuntimeContract(page) {
+  return page?.familyID === "polite-hello" || page?.id === "viet-polite-hello";
 }
 
 function authoredCitySectionBody(page, sectionID) {
@@ -4352,22 +4474,11 @@ function shouldKeepSectionForProfile(section, profile, page = null, phraseRole =
   }
 
   if (profile === "phrase" && phraseRole === "traveler_says" && preservesHandwrittenPhraseEditorial(page)) {
-    const keepIDs = new Set([
-      "at-glance",
-      "standard-way",
-      "breakdown",
-      "natural-variations",
-      "why-it-matters",
-      "traveler-insight",
-      "when-to-use",
-      "good-to-know",
-      "local-tip",
-      "you-may-hear",
-      "explore-next",
-    ]);
-    if (!keepIDs.has(section.id)) return false;
+    if (usesXinChaoFlagshipRuntimeContract(page) && !xinChaoFlagshipRuntimeSectionIDs.has(section.id)) {
+      return false;
+    }
     if (section.id === "breakdown") return hasBreakdown;
-    return hasRows || String(section.body ?? "").trim().length > 0;
+    return sectionHasTravelerContent(section);
   }
 
   if (profile === "phrase" && phraseRole === "traveler_says" && isHeroRepeatSectionForGeneratedPage(section, page)) {
@@ -4578,12 +4689,18 @@ function sectionPhraseFilter(page, section, profile, phrase) {
 
 function normalizeTravelerSections(page, sections, profile) {
   const seenPhraseKeys = new Set();
+  const preserveRepeatedPhraseCards = profile === "phrase" && preservesHandwrittenPhraseEditorial(page);
   const deduped = sections.map((section) => {
     const phrases = [];
+    const sectionSeenPhraseKeys = new Set();
     for (const phrase of (section.phrases || []).filter((item) => sectionPhraseFilter(page, section, profile, item))) {
       const key = phraseDedupKey(phrase);
-      if (!key || seenPhraseKeys.has(key)) continue;
-      seenPhraseKeys.add(key);
+      if (!key || sectionSeenPhraseKeys.has(key)) continue;
+      sectionSeenPhraseKeys.add(key);
+      if (!preserveRepeatedPhraseCards) {
+        if (seenPhraseKeys.has(key)) continue;
+        seenPhraseKeys.add(key);
+      }
       phrases.push(phrase);
     }
     const presentation = section.presentation === "phrase-list" && phrases.length === 0 && String(section.body || "").trim()
@@ -4619,6 +4736,158 @@ function shortenBodyForMobile(body) {
   const sentence = text.match(/^[^.!?]+[.!?]/)?.[0]?.trim();
   if (sentence && sentence.split(/\s+/).filter(Boolean).length <= 28) return sentence;
   return `${words.slice(0, 26).join(" ")}.`;
+}
+
+function bodyWordCount(body) {
+  return String(body ?? "").split(/\s+/).filter(Boolean).length;
+}
+
+function splitSentences(body) {
+  const text = cleanFinalPunctuation(body);
+  if (!text) return [];
+  return text.match(/[^.!?]+[.!?]+(?:["”])?/g)?.map((sentenceText) => cleanFinalPunctuation(sentenceText)) ?? [text];
+}
+
+function pageCopyCue(page) {
+  const categoryIDs = new Set(page.categoryIDs || []);
+  if (categoryIDs.has("transport") || categoryIDs.has("directions-navigation")) {
+    return "Keep the map, address, or destination visible.";
+  }
+  if (categoryIDs.has("hotel-accommodation") || categoryIDs.has("time-dates-booking")) {
+    return "Keep the booking, room number, date, or address visible.";
+  }
+  if (categoryIDs.has("airport-border-arrival")) {
+    return "Keep the passport, baggage tag, pickup screen, or flight detail visible.";
+  }
+  if (categoryIDs.has("food-drink") || categoryIDs.has("shopping") || categoryIDs.has("local-services-everyday-tasks")) {
+    return "Point to the item, menu line, receipt, size, or photo.";
+  }
+  if (categoryIDs.has("health-pharmacy") || categoryIDs.has("emergency-safety")) {
+    return "Show the symptom, medicine, location, or helper contact if you can.";
+  }
+  if (categoryIDs.has("phone-internet-power")) {
+    return "Keep the phone screen or error message visible.";
+  }
+  if (categoryIDs.has("polite-basics") || categoryIDs.has("social-small-talk")) {
+    return "Keep the tone warm and leave room for a short reply.";
+  }
+  if (categoryIDs.has("understanding-repair")) {
+    return "If it is still unclear, show, write, or point to the exact word.";
+  }
+  return "Keep the relevant place, item, or screen visible.";
+}
+
+function phraseFormulaResidue(body) {
+  return /(as your first sentence|Pause after the phrase|Pause naturally after the phrase|If speech still does not land|reply often comes as|^Expect .+ in [^.]+\. Say .+ once|Listen for |Keep your voice calm and let the short phrase|visible while you speak so|visible when the exact detail matters|Use the rows below|use the next rows if|keeping one travel detail clear|move the exchange forward|real [a-z -]+ exchange|detail you need resolved|likely reply is|Use the complete line|Go next to phrases|makes the next step easier to answer|It fits .*especially when the next step is|The phrase is doing one job|make the task visible with|is useful when the map, sign, or building layout|is for asking permission before you act|confirmation phrase for moments when you want to avoid guessing|friendly way to ask for help with|helps you decide whether the next move is worth the time|It names .+ in a compact way|\bUse the full phrase before adding details\.\s+Use the full phrase before adding details\b|\bKeep\s+[^.]+?\s+together as one sentence before adding details\.\s+Keep\b|\bis the line for\b|\bStart with\s+[^.]+,\s+then pause\b|\bThis is for when\b|\bThe reply may be a short reply\b|\bSay\s+[^.]+?\s+once, then watch for the reply\b|\bSay it once, then watch for the reply before adding more words\b|\bExpect a confirmation, a handoff, a price, or follow-up question\b|\bSay\s+[^.]+?\s+when you need\s+["“][^"”]+["”]|\bSay\s+[^.]+?\s+for\s+["“][^"”]+["”]\.\s+Say\b|\bSay\s+[^.]+?\s+for\s+["“][^"”]+["”]|\bUse\s+[^.]+?\s+for\s+["“][^"”]+["”]\.\s+(Say|Keep|Point|$)|\bUse\s+[^.]+?\s+for\s+["“][^"”]+["”]|Use it when\s+["“][^"”]+["”]\s+is the next thing you need to say|Try these next to confirm, answer, or continue after|quick money check|keeps the exchange focused|answer can be a number|pilot row|canonical title)/i.test(body);
+}
+
+function formulaSentenceResidue(sentenceText) {
+  return /(as your first sentence|Pause after the phrase|Pause naturally after the phrase|If speech still does not land|reply often comes as|^Expect .+ in [^.]+|Listen for |Keep your voice calm and let the short phrase|visible while you speak so|visible when the exact detail matters|Use the rows below|use the next rows if|keeping one travel detail clear|move the exchange forward|real [a-z -]+ exchange|detail you need resolved|likely reply is|Use the complete line|Go next to phrases|makes the next step easier to answer|It fits .*especially when the next step is|The phrase is doing one job|make the task visible with|is useful when the map, sign, or building layout|is for asking permission before you act|confirmation phrase for moments when you want to avoid guessing|friendly way to ask for help with|helps you decide whether the next move is worth the time|It names .+ in a compact way|\bUse the full phrase before adding details\b|\bKeep\s+[^.]+?\s+together as one sentence before adding details\b|\bis the line for\b|\bStart with\s+[^.]+,\s+then pause\b|\bThis is for when\b|\bThe reply may be a short reply\b|\bSay\s+[^.]+?\s+once, then watch for the reply\b|\bSay it once, then watch for the reply before adding more words\b|\bExpect a confirmation, a handoff, a price, or follow-up question\b|\bSay\s+[^.]+?\s+when you need\s+["“][^"”]+["”]|\bSay\s+[^.]+?\s+for\s+["“][^"”]+["”]\.\s+Say\b|\bSay\s+[^.]+?\s+for\s+["“][^"”]+["”]|\bUse\s+[^.]+?\s+for\s+["“][^"”]+["”]\.\s+(Say|Keep|Point|$)|\bUse\s+[^.]+?\s+for\s+["“][^"”]+["”]|Use it when\s+["“][^"”]+["”]\s+is the next thing you need to say|Try these next to confirm, answer, or continue after|quick money check|keeps the exchange focused|answer can be a number|pilot row|canonical title)/i.test(sentenceText);
+}
+
+function phraseIntentFragment(intent) {
+  return String(intent ?? "")
+    .replace(/^["“]|["”]$/g, "")
+    .replace(/[.?!]+$/g, "")
+    .trim();
+}
+
+function lowerFirstWord(text) {
+  const value = phraseIntentFragment(text);
+  if (!value) return "";
+  if (/^[A-Z]{2,}\b/.test(value)) return value;
+  return value.charAt(0).toLowerCase() + value.slice(1);
+}
+
+function usefulSituationSentence(body) {
+  for (const sentenceText of splitSentences(body)) {
+    if (!sentenceText) continue;
+    if (formulaSentenceResidue(sentenceText)) continue;
+    if (/^Expect\b/i.test(sentenceText)) continue;
+    if (bodyWordCount(sentenceText) > 22) continue;
+    return sentenceText;
+  }
+  return "";
+}
+
+function responseCueFromFormula(body) {
+  const text = String(body ?? "");
+  const patterns = [
+    /^Expect (.+?)(?: in [^.]+)?\./i,
+    /listen for ([^.]+)\./i,
+    /reply often comes as ([^.]+)\./i,
+    /likely reply is ([^.]+?)(?:, so|\.)/i,
+    /next step is ([^.]+)\./i,
+  ];
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (!match?.[1]) continue;
+    const response = match[1]
+      .replace(/\bor a\b/g, "or")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (response) return response;
+  }
+  return "";
+}
+
+function compactPhraseReplacement(page, section, body) {
+  const title = cleanFinalPunctuation(page.title || "");
+  const intent = cleanEnglishIntent(page.englishTitle || page.summary || "");
+  const intentFragment = lowerFirstWord(intent);
+  const cue = pageCopyCue(page);
+  const situation = usefulSituationSentence(body);
+  const response = responseCueFromFormula(body);
+  const atGlanceLine = title
+    ? phraseMomentLead(title, intentFragment)
+    : "";
+  const sayLine = title
+    ? fullPhraseCue(title, cue)
+    : "";
+  const responseLine = responseSentence(response);
+
+  switch (section.id) {
+    case "at-glance":
+      return [atGlanceLine, situation && !/^Use\b/i.test(situation) ? situation : cue].filter(Boolean).join(" ");
+    case "quick-say":
+    case "standard-way":
+      return withoutDuplicateParts([sayLine, situation || cue]).join(" ");
+    case "why-it-matters":
+      return [
+        situation || "The phrase keeps the request clear before extra details get in the way.",
+        responseLine || cue,
+      ].filter(Boolean).join(" ");
+    case "traveler-insight":
+    case "what-happens-next":
+    case "you-may-hear":
+      return [
+        responseLine,
+        situation || cue,
+      ].filter(Boolean).join(" ");
+    case "when-to-use":
+      return [
+        situation || (intentFragment ? `Reach for it when the next move is ${intentFragment}.` : ""),
+        responseLine || cue,
+      ].filter(Boolean).join(" ");
+    case "nearby-phrases":
+    case "practice-pairs":
+    case "explore-next":
+      return "Use these if the answer changes the next step.";
+    default:
+      return [situation, cue].filter(Boolean).join(" ") || body;
+  }
+}
+
+function cleanPreservedPhraseSectionBody(page, section, profile, phraseRole) {
+  const body = cleanFinalPunctuation(cleanTravelerBody(section.body || ""));
+  if (!body) return "";
+  if (profile !== "phrase" || phraseRole !== "traveler_says") return body;
+  if (!phraseFormulaResidue(body)) return body;
+
+  const replacement = cleanFinalPunctuation(compactPhraseReplacement(page, section, body));
+  if (!replacement) return body;
+  if (!phraseFormulaResidue(replacement) && bodyWordCount(replacement) <= 40) return replacement;
+  return shortenBodyForMobile(replacement);
 }
 
 function practicePageType(page, profile) {
@@ -4780,8 +5049,10 @@ function sanitizeAuthoredPage(page) {
     title: preserveCityEditorial || preservePhraseEditorial
       ? cleanFinalPunctuation(section.title || "")
       : cleanTravelerSectionTitle(section.title, { ...page, __currentSectionID: section.id, __phraseRole: phraseRole }),
-    body: preserveCityEditorial || preservePhraseEditorial
+    body: preserveCityEditorial
       ? cleanFinalPunctuation(section.body || "")
+      : preservePhraseEditorial
+      ? cleanPreservedPhraseSectionBody(page, section, profile, phraseRole)
       : isNameBasedProfile(profile) ? shortenBodyForMobile(adultNameSectionBody(page, section, profile)) : shortenBodyForMobile(phraseSectionBody(page, section, phraseRole)),
     phrases: curatedSectionPhrases(page, section, profile, phraseRole).map((phrase) => ({
       ...phrase,
@@ -4825,6 +5096,28 @@ function sanitizeAuthoredPage(page) {
 
 function sanitizeAuthoredPages(pages) {
   return pages.map(sanitizeAuthoredPage);
+}
+
+function canonicalSourcePageForWrite(page) {
+  const profile = authoredPageProfile(page);
+  const phraseRole = phraseRoleForPage(page, profile);
+  return {
+    ...page,
+    summary: cleanFinalPunctuation(page.summary || ""),
+    sections: (page.sections || []).map((section) => ({
+      ...section,
+      title: cleanFinalPunctuation(section.title || ""),
+      body: cleanPreservedPhraseSectionBody(page, section, profile, phraseRole),
+      phrases: (section.phrases || []).map((phrase) => ({
+        ...phrase,
+        english: cleanTravelerBody(phrase.english),
+      })),
+      breakdown: (section.breakdown || []).map((token) => ({
+        ...token,
+        english: cleanTravelerBreakdownGloss(token.english, page, token.vietnamese),
+      })),
+    })),
+  };
 }
 
 function sourceReasonToGoCityPagesByRuntimeID() {
@@ -4903,6 +5196,7 @@ function validateBreakdownAuditForGeneration(pages) {
 }
 
 function main() {
+  const existingChildPagesByPhraseID = loadExistingChildPagesByPhraseID();
   removeGeneratedSources();
 
   const catalogPromotedPages = loadCatalogPromotedPages();
@@ -4952,7 +5246,7 @@ function main() {
 
     const scenarioDir = path.join(sourceRoot, family.scenarioID);
     fs.mkdirSync(scenarioDir, { recursive: true });
-    fs.writeFileSync(path.join(scenarioDir, `${family.id}.json`), `${JSON.stringify(page, null, 2)}\n`);
+    fs.writeFileSync(path.join(scenarioDir, `${family.id}.json`), `${JSON.stringify(canonicalSourcePageForWrite(page), null, 2)}\n`);
 
     if (!manuallyAuthoredPageIDs.has(page.id) && !catalogPromotedPhraseIDs.has(family.primaryPhraseID)) {
       pages.push(page);
@@ -4962,9 +5256,9 @@ function main() {
       const phrase = phraseByID.get(phraseID);
       if (!phrase || phrase.variantRole === "say-first") continue;
       if (catalogPromotedPhraseIDs.has(phrase.id)) continue;
-      const childPage = childPageForVariant(family, phrase, primaryPhrase);
+      const childPage = existingChildPagesByPhraseID.get(phrase.id) ?? childPageForVariant(family, phrase, primaryPhrase);
       childPages.push(childPage);
-      fs.writeFileSync(path.join(scenarioDir, `${family.id}--${phrase.id}.json`), `${JSON.stringify(childPage, null, 2)}\n`);
+      fs.writeFileSync(path.join(scenarioDir, `${family.id}--${phrase.id}.json`), `${JSON.stringify(canonicalSourcePageForWrite(childPage), null, 2)}\n`);
     }
   }
 
