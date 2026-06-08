@@ -10,6 +10,38 @@ Authority lane: latest durable native iOS validation evidence
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
 
+## Current City Copy Production Gate Main Evidence
+
+Current `main` evidence after merging `codex/city-copy-final-production-gate`, based on head `43ce9503b` before the phone-build receipt:
+
+- merged `codex/city-copy-final-production-gate` into `main` with merge commit `43ce9503b`
+- target copy checkpoint commit included in `main`: `420ef8aeb` (`Finalize city copy production gate`)
+- paywall remained excluded; `git cherry -v main feature/paywall` still shows the paywall setup/skeleton commits as unmerged
+- regenerated native/content projections on merged `main`: V2.2 handwritten projection, handwritten import, phrase catalog, authored listing pages, and Viet SQLite fixture
+- copy-production result remains `PASS`: `520 / 520` cold-audited pages pass, `0` hard blocks, `0` safe-fix items, `0` accepted temporary copy risks
+- anti-thinning gate remains clean: phrase cards were preserved, no useful card targets were removed, and `12 / 12` duplicate-card demotions still leave the same target rendered once on the same page
+- render proof receipts remain current: `520 / 520` current pages pass, `1560` screenshots, `0` current failures, and Bà Nà clean-pass proof has `3 / 3` screenshots
+
+Fresh command evidence from merged `main`:
+
+- `git diff --check` passed
+- `node native-ios/scripts/project-viet-city-app-detail-v2-2-to-handwritten-copy.js` passed: `5` cities, `520` entries projected
+- `node native-ios/scripts/import-viet-city-handwritten-copy.js` passed: `520` handwritten city copy entries imported
+- `node native-ios/scripts/generate-viet-catalog.js` passed: `1767` families, `1785` phrases
+- `node native-ios/scripts/generate-authored-tier-one-pages.js` passed: `826` city library pages
+- `node native-ios/scripts/generate-viet-sqlite-fixture.js` passed: SQLite integrity OK, `1778` pages
+- `node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production` passed: `520` pass, `0` revise, `0` fail
+- `node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js` passed with no failures
+- `node native-ios/scripts/audit-viet-city-listing-what-why.js` passed: `520` entries, `0` findings, `0` hard-review pages
+- `node native-ios/scripts/validate-viet-city-copy.js` passed: `5` hubs, `520` city noun pages, `520` unique target heroes
+- `node native-ios/scripts/validate-viet-city-library.js` passed: `826` pages
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed: SQLite fixture OK, `1778` canonical pages, `0` release-blocking missing-audio rows
+- `node native-ios/scripts/audit-viet-listing-production-qa.js` passed: `1778` pages, `0` blockers, `0` majors
+- `node native-ios/scripts/validate-viet-ba-na-hills-journey-patch.js` passed: Bà Nà Hills V2.2 journey validation passed
+- `node scripts/guard-native-only.js` passed
+
+Phone result for this merged copy gate is pending in this subsection until the next physical-device build/install/launch run completes.
+
 ## Branch-Local City Copy Final Production Gate
 
 Current branch-local evidence for `codex/city-copy-final-production-gate`, based on base `083c87301`:
