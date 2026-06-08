@@ -307,3 +307,27 @@ Seventeenth proof / final Huế render and production receipt, 2026-06-01:
 - Added rendered proof `missing-pages-proof-007-results.jsonl`: `27` previously unrendered pages, `81` screenshots, `0` failures.
 - Final latest-current rendered proof is now `520` unique pages, `1560` latest-current screenshots, and `0` current failures.
 - Global V2.2 city/place proof gap is now `0`.
+
+Eighteenth repair batch started, 2026-06-01:
+
+- Jojo reviewed the live phone page for `city-hanoi-place-hibana-by-koki` and rejected the production-ready classification: the copy did not plainly explain that the restaurant is Japanese teppanyaki / hibachi-style grill dining, did not make the listing save-worthy, and used vague U.S.-reader-unfriendly phrases such as `counter dinner`.
+- Treated this as a new global production-copy rule, not a one-page taste note: first-time U.S. travelers need unfamiliar restaurant formats, cuisine labels, awards, local customs, performance forms, and transit/place types explained in plain English at the point of use, or omitted in favor of concrete food/place utility.
+- Repaired Hibana in first-class V2.2 source: the visible copy now identifies Japanese teppanyaki, bridges the American hibachi-style mental model, names the Capella Hanoi chef-led grill format, and explains the right use case without unexplained award or `counter dinner` shorthand.
+- Regenerated V2.2 handwritten copy, native authored listing pages, and SQLite.
+- Current validators pass after the Hibana repair: strict V2.2, voice audit, city copy, city library, SQLite fixture, listing production QA, and `git diff --check`.
+- Local heuristic inventory still flags a follow-up candidate set of roughly `45` visible food-adjacent / place-feel rows for human review. Many are false positives from allowed words, but the high-priority cluster is polished restaurant copy using `special-occasion`, `register`, `draw`, `carry`, or other abstract decision language where the listing should instead answer: what is this place, what happens there, why would a U.S.-based visitor remember it, and when should they choose it over nearby alternatives.
+- Do not mark the full goal complete from this batch alone. Continue with the remaining candidate set, then run focused rendered proof for edited pages.
+- Repaired the first polished-restaurant cluster in authored V2.2 source: La Maison 1888, Nén Đà Nẵng, Gia, Lamai Garden, Tầm Vị, Akuna, Anăn Sài Gòn, CieL, Coco Dining, Long Triều, and Nephele now use plainer U.S.-traveler framing for cuisine, room format, trip role, and comparison value instead of unexplained `special-occasion`, `register`, or `fine-dining` shorthand in visible copy.
+- Regenerated V2.2 handwritten copy, native authored listing pages, and SQLite again.
+- Current validators pass after the restaurant-cluster repair: strict V2.2, voice audit, city copy, city library, SQLite fixture, listing production QA, and `git diff --check`.
+- Fresh simulator build-for-testing passed on `SpeakLocal City Listings`.
+- Added targeted rendered proof for the `12` edited restaurant pages: `us-traveler-restaurant-repair-001-results.jsonl`, `12/12` PASS, `36` screenshots, `0` failures. The first multi-page run hung after page 1, so the remaining pages were captured with the known reliable single-page offset pattern.
+- Quick visual read of the repaired Hibana screenshots confirms the first screen now says `Japanese teppanyaki`, explains the chef cooking at a hot grill in front of a small counter, and compares it to a refined hibachi-style experience.
+- Continued the same U.S.-traveler readability repair beyond restaurants: removed visible `counter dinner` / `carry` / `draw` / `register` / `threshold` / `special-occasion` / `fine-dining` / `counterpart` style shorthand from the authored V2.2 listing fields where the copy should instead say what the place is, what happens there, why to choose it, and what to picture.
+- Repaired the Thảo Điền duplicate-heading regression found during projection (`place-brief` missing at runtime) by separating the intro heading from the first section heading.
+- Targeted heuristic scan after the cleanup is now `0` rows for the flagged shorthand set in visible authored V2.2 fields.
+- Regenerated V2.2 handwritten copy, native authored listing pages, and SQLite after the broader cleanup.
+- Current validators pass after the broader cleanup: strict V2.2, voice audit, city copy, city library, SQLite fixture, listing production QA, and `git diff --check`.
+- Fresh simulator build-for-testing passed on `SpeakLocal City Listings`.
+- Added rendered proof for the `87` edited language-cleanup pages: `us-traveler-language-cleanup-002-results.jsonl`, `87/87` PASS, `261` screenshots, `0` failures. The first batch hit the 15-minute guard after `50` passes, then resumed from offset `50` and completed the remaining `37`.
+- Representative visual reads after this pass confirm the copy is more concrete on the actual phone-sized screen: Gia now opens as `A Calm Vietnamese Dinner`, and Ancient Hue Gallery Cuisine now says it is a composed Hue dinner with a refined room, court-style plating, dark timber, and slow table pacing.

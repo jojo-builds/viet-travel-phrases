@@ -64,6 +64,7 @@ Design rules Jojo has locked in:
 
 - Native iOS feel is the product direction.
 - Back/search/bottom chrome should be glassy and visually static while content moves beneath it.
+- Do not make the light top chrome gradient an opaque white shield. If text is readable under fixed controls, fix scroll layout, capture offset, or control policy instead of strengthening `ChromeSeparationGradient`.
 - Search should feel like the bottom search island morphing into the search field.
 - Swipe back and swipe forward should feel like browser history; forward history clears after opening a new route.
 - The bottom toolbar and search island should stay compact and close enough to feel like one native control area without touching the device edge.
@@ -88,3 +89,4 @@ Verification expectations:
   - `xcodegen generate`
   - `xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' build`
 - For content/resource changes, regenerate the relevant resource and inspect the diff before committing.
+- After native chrome changes, run `node native-ios/scripts/guard-native-chrome.js`.

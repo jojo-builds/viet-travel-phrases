@@ -18,7 +18,7 @@ Operational handoff lives in `docs/editorial-exports/viet-city-pages/chatgpt-pro
 
 Captured ChatGPT drafts must pass a productionizer review before Jojo voice review. The productionizer pass is still pre-import: it cleans visible-copy leaks, repeated heading cadence, repeated phrase-card sets, and thin-source filler, then labels each page `ready_for_jojo_voice_review`, `revise_before_review`, or `blocked_missing_source`. None of those labels means production-ready.
 
-Bulk city-library cleanup note: the 2026-05-26 `humanizer-gate-500` pass imported all 500 Viet city-library listings into the current native runtime after ChatGPT-assisted drafting, local worker repair, independent integrity review, strict chunk validation, source import, native resource regeneration, and content/runtime validators. Its receipt lives at `docs/editorial-exports/viet-city-pages/humanizer-gate-500-2026-05-26/reports/humanizer_gate_500_final_review_2026-05-26.md`. That production-ready label was revoked after phone review exposed unacceptable copy voice and top-chrome overlap.
+Bulk city-library cleanup note: the 2026-05-26 `humanizer-gate-500` pass imported all 500 Viet city-library listings into the current native runtime after ChatGPT-assisted drafting, local worker repair, independent integrity review, strict chunk validation, source import, native resource regeneration, and content/runtime validators. Its receipt lives at `docs/editorial-exports/viet-city-pages/humanizer-gate-500-2026-05-26/reports/humanizer_gate_500_final_review_2026-05-26.md`. That production-ready label was revoked after phone review exposed unacceptable copy voice and real chrome/readability problems. Normal native scroll-under glass behavior is not itself a blocker.
 
 Hard-reset status: earlier 500-listing story-pass and humanizer-gate production labels are revoked. The current approval route is first-class `speaklocal.place.app-detail.v2.2` source in `content-draft/viet/city-library/app-detail-v2-2/`, strict validation, voice/render proof, runtime projection, and the four final gates recorded in `docs/editorial-exports/viet-city-pages/hard-reset-v2-2-2026-05-27/HARD_RESET_V2_2_FINAL_RECEIPT.md`. Legacy-compatible city-library/runtime files are projection evidence only, not approval authority. The old `humanizer-gate-500-2026-05-26` scripts are historical/revoked by default and must not be used as current city-page approval gates unless explicitly run in legacy mode.
 
@@ -62,8 +62,9 @@ A page is not V2.2-complete until it proves five things:
    - no duplicate body or duplicate section
    - Mentioned Here / related modules render when status is render
    - Mentioned Here / related modules render user-facing `displaySubtitle`, not internal QA `reason`
-   - bottom chrome does not cover content
-   - sticky audio controls do not hide text
+   - bottom chrome does not prevent reaching final content after normal scrolling
+   - sticky audio controls do not hide active reading or tap targets
+   - normal native scroll-under glass behavior is acceptable; do not make the top chrome opaque to eliminate faint behind-glass content
    - long phrase rows wrap or use shorter canonical phrases
 
 5. Screenshot and production review gates passed or explicitly marked revise

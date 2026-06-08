@@ -1,0 +1,611 @@
+[
+  {
+    "label": "danang-place-apec-park",
+    "pageID": "viet-family-city-danang-place-apec-park",
+    "title": "Công viên APEC",
+    "city": "danang",
+    "category": "park"
+  },
+  {
+    "label": "danang-place-ba-na-cable-car",
+    "pageID": "viet-family-city-danang-place-ba-na-cable-car",
+    "title": "Cáp treo Bà Nà",
+    "city": "danang",
+    "category": "attraction"
+  },
+  {
+    "label": "danang-place-banh-xeo-ba-duong",
+    "pageID": "viet-family-city-danang-place-banh-xeo-ba-duong",
+    "title": "Bánh xèo Bà Dưỡng",
+    "city": "danang",
+    "category": "restaurant"
+  },
+  {
+    "label": "danang-place-boulevard-gelato-coffee",
+    "pageID": "viet-family-city-danang-place-boulevard-gelato-coffee",
+    "title": "Boulevard Gelato & Coffee",
+    "city": "danang",
+    "category": "cafe"
+  },
+  {
+    "label": "danang-place-bun-cha-ca",
+    "pageID": "viet-family-city-danang-place-bun-cha-ca",
+    "title": "Bún chả cá ở Đà Nẵng",
+    "city": "danang",
+    "category": "dish"
+  },
+  {
+    "label": "danang-place-banh-canh-yen",
+    "pageID": "viet-family-city-danang-place-banh-canh-yen",
+    "title": "Bánh Canh Yến",
+    "city": "danang",
+    "category": "restaurant"
+  },
+  {
+    "label": "danang-place-cong-caphe-bach-dang",
+    "pageID": "viet-family-city-danang-place-cong-caphe-bach-dang",
+    "title": "Cộng Cà Phê Bạch Đằng",
+    "city": "danang",
+    "category": "cafe"
+  },
+  {
+    "label": "danang-place-lady-buddha",
+    "pageID": "viet-family-city-danang-place-lady-buddha",
+    "title": "Tượng Phật Bà",
+    "city": "danang",
+    "category": "landmark"
+  },
+  {
+    "label": "danang-place-le-duan-night-market",
+    "pageID": "viet-family-city-danang-place-le-duan-night-market",
+    "title": "Chợ đêm Lê Duẩn",
+    "city": "danang",
+    "category": "market"
+  },
+  {
+    "label": "danang-place-my-an-beach",
+    "pageID": "viet-family-city-danang-place-my-an-beach",
+    "title": "Biển Mỹ An",
+    "city": "danang",
+    "category": "beach"
+  },
+  {
+    "label": "danang-place-my-quang-dung",
+    "pageID": "viet-family-city-danang-place-my-quang-dung",
+    "title": "Mỳ Quảng Dung",
+    "city": "danang",
+    "category": "restaurant"
+  },
+  {
+    "label": "danang-place-nam-danh-seafood",
+    "pageID": "viet-family-city-danang-place-nam-danh-seafood",
+    "title": "Hải sản Năm Đảnh",
+    "city": "danang",
+    "category": "restaurant"
+  },
+  {
+    "label": "danang-place-nam-house",
+    "pageID": "viet-family-city-danang-place-nam-house",
+    "title": "Nam House Cafe",
+    "city": "danang",
+    "category": "cafe"
+  },
+  {
+    "label": "danang-place-non-nuoc-stone-village",
+    "pageID": "viet-family-city-danang-place-non-nuoc-stone-village",
+    "title": "Làng đá Non Nước",
+    "city": "danang",
+    "category": "village"
+  },
+  {
+    "label": "danang-place-phap-lam-pagoda",
+    "pageID": "viet-family-city-danang-place-phap-lam-pagoda",
+    "title": "Chùa Pháp Lâm",
+    "city": "danang",
+    "category": "landmark"
+  },
+  {
+    "label": "hanoi-place-ba-dinh-district",
+    "pageID": "viet-family-city-hanoi-place-ba-dinh-district",
+    "title": "Quận Ba Đình",
+    "city": "hanoi",
+    "category": "neighborhood"
+  },
+  {
+    "label": "hanoi-place-ba-dinh-square",
+    "pageID": "viet-family-city-hanoi-place-ba-dinh-square",
+    "title": "Quảng trường Ba Đình",
+    "city": "hanoi",
+    "category": "landmark"
+  },
+  {
+    "label": "hanoi-place-bay-mau-lake",
+    "pageID": "viet-family-city-hanoi-place-bay-mau-lake",
+    "title": "Hồ Bảy Mẫu",
+    "city": "hanoi",
+    "category": "nature"
+  },
+  {
+    "label": "hanoi-place-bun-cha",
+    "pageID": "viet-family-city-hanoi-place-bun-cha",
+    "title": "Bún chả ở Hà Nội",
+    "city": "hanoi",
+    "category": "dish"
+  },
+  {
+    "label": "hanoi-place-bun-cha-dac-kim",
+    "pageID": "viet-family-city-hanoi-place-bun-cha-dac-kim",
+    "title": "Bún Chả Đắc Kim",
+    "city": "hanoi",
+    "category": "restaurant"
+  },
+  {
+    "label": "hanoi-place-tuyet-bun-cha-34",
+    "pageID": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
+    "title": "Tuyết Bún Chả 34",
+    "city": "hanoi",
+    "category": "restaurant"
+  },
+  {
+    "label": "hanoi-place-bun-thang",
+    "pageID": "viet-family-city-hanoi-place-bun-thang",
+    "title": "Bún thang ở Hà Nội",
+    "city": "hanoi",
+    "category": "dish"
+  },
+  {
+    "label": "hanoi-place-cong-ca-phe-trieu-viet-vuong",
+    "pageID": "viet-family-city-hanoi-place-cong-ca-phe-trieu-viet-vuong",
+    "title": "Cộng Cà Phê",
+    "city": "hanoi",
+    "category": "cafe"
+  },
+  {
+    "label": "hanoi-place-gia",
+    "pageID": "viet-family-city-hanoi-place-gia",
+    "title": "Gia",
+    "city": "hanoi",
+    "category": "restaurant"
+  },
+  {
+    "label": "hanoi-place-gia-lam-station",
+    "pageID": "viet-family-city-hanoi-place-gia-lam-station",
+    "title": "Ga Gia Lâm",
+    "city": "hanoi",
+    "category": "station"
+  },
+  {
+    "label": "hanoi-place-hang-gai-street",
+    "pageID": "viet-family-city-hanoi-place-hang-gai-street",
+    "title": "Phố Hàng Gai",
+    "city": "hanoi",
+    "category": "street"
+  },
+  {
+    "label": "hanoi-place-hanoi-flag-tower",
+    "pageID": "viet-family-city-hanoi-place-hanoi-flag-tower",
+    "title": "Cột cờ Hà Nội",
+    "city": "hanoi",
+    "category": "landmark"
+  },
+  {
+    "label": "hanoi-place-hanoi-railway-station",
+    "pageID": "viet-family-city-hanoi-place-hanoi-railway-station",
+    "title": "Ga Hà Nội",
+    "city": "hanoi",
+    "category": "station"
+  },
+  {
+    "label": "hanoi-place-hoa-lo-prison",
+    "pageID": "viet-family-city-hanoi-place-hoa-lo-prison",
+    "title": "Nhà tù Hỏa Lò",
+    "city": "hanoi",
+    "category": "museum"
+  },
+  {
+    "label": "hanoi-place-hom-market",
+    "pageID": "viet-family-city-hanoi-place-hom-market",
+    "title": "Chợ Hôm",
+    "city": "hanoi",
+    "category": "market"
+  },
+  {
+    "label": "hanoi-place-lam-cafe",
+    "pageID": "viet-family-city-hanoi-place-lam-cafe",
+    "title": "Cà phê Lâm",
+    "city": "hanoi",
+    "category": "cafe"
+  },
+  {
+    "label": "hanoi-place-lenin-park",
+    "pageID": "viet-family-city-hanoi-place-lenin-park",
+    "title": "Công viên Lê Nin",
+    "city": "hanoi",
+    "category": "park"
+  },
+  {
+    "label": "hanoi-place-literature-museum",
+    "pageID": "viet-family-city-hanoi-place-literature-museum",
+    "title": "Bảo tàng Văn học Việt Nam",
+    "city": "hanoi",
+    "category": "museum"
+  },
+  {
+    "label": "hanoi-place-nguyen-huu-huan-street",
+    "pageID": "viet-family-city-hanoi-place-nguyen-huu-huan-street",
+    "title": "Phố Nguyễn Hữu Huân",
+    "city": "hanoi",
+    "category": "street"
+  },
+  {
+    "label": "hanoi-place-nuoc-ngam-bus-station",
+    "pageID": "viet-family-city-hanoi-place-nuoc-ngam-bus-station",
+    "title": "Bến xe Nước Ngầm",
+    "city": "hanoi",
+    "category": "station"
+  },
+  {
+    "label": "hanoi-place-phan-dinh-phung-street",
+    "pageID": "viet-family-city-hanoi-place-phan-dinh-phung-street",
+    "title": "Phố Phan Đình Phùng",
+    "city": "hanoi",
+    "category": "street"
+  },
+  {
+    "label": "hanoi-place-quang-ba-flower-market",
+    "pageID": "viet-family-city-hanoi-place-quang-ba-flower-market",
+    "title": "Chợ hoa Quảng Bá",
+    "city": "hanoi",
+    "category": "market"
+  },
+  {
+    "label": "hanoi-place-tam-vi",
+    "pageID": "viet-family-city-hanoi-place-tam-vi",
+    "title": "Tầm Vị",
+    "city": "hanoi",
+    "category": "restaurant"
+  },
+  {
+    "label": "hanoi-place-train-street",
+    "pageID": "viet-family-city-hanoi-place-train-street",
+    "title": "Phố đường tàu Hà Nội",
+    "city": "hanoi",
+    "category": "street"
+  },
+  {
+    "label": "hanoi-place-trang-tien-street",
+    "pageID": "viet-family-city-hanoi-place-trang-tien-street",
+    "title": "Phố Tràng Tiền",
+    "city": "hanoi",
+    "category": "street"
+  },
+  {
+    "label": "hanoi-place-west-lake",
+    "pageID": "viet-family-city-hanoi-place-west-lake",
+    "title": "Hồ Tây",
+    "city": "hanoi",
+    "category": "nature"
+  },
+  {
+    "label": "hcmc-place-akuna",
+    "pageID": "viet-family-city-hcmc-place-akuna",
+    "title": "Akuna",
+    "city": "hcmc",
+    "category": "restaurant"
+  },
+  {
+    "label": "hcmc-place-anan-saigon",
+    "pageID": "viet-family-city-hcmc-place-anan-saigon",
+    "title": "Anăn Sài Gòn",
+    "city": "hcmc",
+    "category": "restaurant"
+  },
+  {
+    "label": "hcmc-place-ao-dai-museum",
+    "pageID": "viet-family-city-hcmc-place-ao-dai-museum",
+    "title": "Bảo tàng Áo Dài",
+    "city": "hcmc",
+    "category": "museum"
+  },
+  {
+    "label": "hcmc-place-banh-mi",
+    "pageID": "viet-family-city-hcmc-place-banh-mi",
+    "title": "Bánh mì ở Thành phố Hồ Chí Minh",
+    "city": "hcmc",
+    "category": "dish"
+  },
+  {
+    "label": "hcmc-place-banh-mi-huynh-hoa",
+    "pageID": "viet-family-city-hcmc-place-banh-mi-huynh-hoa",
+    "title": "Bánh mì Huỳnh Hoa",
+    "city": "hcmc",
+    "category": "restaurant"
+  },
+  {
+    "label": "hcmc-place-ca-phe-sua-da",
+    "pageID": "viet-family-city-hcmc-place-ca-phe-sua-da",
+    "title": "Cà phê sữa đá Sài Gòn ở Thành phố Hồ Chí Minh",
+    "city": "hcmc",
+    "category": "drink"
+  },
+  {
+    "label": "hcmc-place-cho-lon-walking-route",
+    "pageID": "viet-family-city-hcmc-place-cho-lon-walking-route",
+    "title": "Đi bộ Chợ Lớn",
+    "city": "hcmc",
+    "category": "attraction"
+  },
+  {
+    "label": "hcmc-place-cu-chi-day-trip",
+    "pageID": "viet-family-city-hcmc-place-cu-chi-day-trip",
+    "title": "Đi Củ Chi trong ngày",
+    "city": "hcmc",
+    "category": "attraction"
+  },
+  {
+    "label": "hcmc-place-district-1",
+    "pageID": "viet-family-city-hcmc-place-district-1",
+    "title": "Quận 1",
+    "city": "hcmc",
+    "category": "neighborhood"
+  },
+  {
+    "label": "hcmc-place-gia-dinh-park",
+    "pageID": "viet-family-city-hcmc-place-gia-dinh-park",
+    "title": "Công viên Gia Định",
+    "city": "hcmc",
+    "category": "park"
+  },
+  {
+    "label": "hoian-place-an-bang",
+    "pageID": "viet-family-city-hoian-place-an-bang",
+    "title": "Biển An Bàng",
+    "city": "hoian",
+    "category": "beach"
+  },
+  {
+    "label": "hoian-place-bach-dang-boat-pier",
+    "pageID": "viet-family-city-hoian-place-bach-dang-boat-pier",
+    "title": "Bến thuyền Bạch Đằng",
+    "city": "hoian",
+    "category": "port"
+  },
+  {
+    "label": "hoian-place-bach-dang-street",
+    "pageID": "viet-family-city-hoian-place-bach-dang-street",
+    "title": "Đường Bạch Đằng ở Hội An",
+    "city": "hoian",
+    "category": "street"
+  },
+  {
+    "label": "hoian-place-banh-mi",
+    "pageID": "viet-family-city-hoian-place-banh-mi",
+    "title": "Bánh mì Hội An",
+    "city": "hoian",
+    "category": "dish"
+  },
+  {
+    "label": "hoian-place-banh-mi-phuong",
+    "pageID": "viet-family-city-hoian-place-banh-mi-phuong",
+    "title": "Bánh mì Phượng",
+    "city": "hoian",
+    "category": "restaurant"
+  },
+  {
+    "label": "hoian-place-cam-kim-island",
+    "pageID": "viet-family-city-hoian-place-cam-kim-island",
+    "title": "Cẩm Kim",
+    "city": "hoian",
+    "category": "village"
+  },
+  {
+    "label": "hoian-place-cantonese-assembly-hall",
+    "pageID": "viet-family-city-hoian-place-cantonese-assembly-hall",
+    "title": "Hội quán Quảng Đông",
+    "city": "hoian",
+    "category": "landmark"
+  },
+  {
+    "label": "hoian-place-cao-lau-thanh",
+    "pageID": "viet-family-city-hoian-place-cao-lau-thanh",
+    "title": "Cao Lầu Thanh",
+    "city": "hoian",
+    "category": "restaurant"
+  },
+  {
+    "label": "hoian-place-che-bap-cam-nam",
+    "pageID": "viet-family-city-hoian-place-che-bap-cam-nam",
+    "title": "Chè bắp Cẩm Nam ở Hội An",
+    "city": "hoian",
+    "category": "dessert"
+  },
+  {
+    "label": "hoian-place-chuc-thanh-pagoda",
+    "pageID": "viet-family-city-hoian-place-chuc-thanh-pagoda",
+    "title": "Chùa Chúc Thánh",
+    "city": "hoian",
+    "category": "landmark"
+  },
+  {
+    "label": "hoian-place-cocobox",
+    "pageID": "viet-family-city-hoian-place-cocobox",
+    "title": "Cocobox",
+    "city": "hoian",
+    "category": "cafe"
+  },
+  {
+    "label": "hoian-place-fujian-assembly-hall",
+    "pageID": "viet-family-city-hoian-place-fujian-assembly-hall",
+    "title": "Hội quán Phúc Kiến",
+    "city": "hoian",
+    "category": "landmark"
+  },
+  {
+    "label": "hoian-place-kim-bong-carpentry-village",
+    "pageID": "viet-family-city-hoian-place-kim-bong-carpentry-village",
+    "title": "Làng mộc Kim Bồng",
+    "city": "hoian",
+    "category": "village"
+  },
+  {
+    "label": "hoian-place-morning-glory",
+    "pageID": "viet-family-city-hoian-place-morning-glory",
+    "title": "Morning Glory Hội An",
+    "city": "hoian",
+    "category": "restaurant"
+  },
+  {
+    "label": "hoian-place-thanh-ha",
+    "pageID": "viet-family-city-hoian-place-thanh-ha",
+    "title": "Làng gốm Thanh Hà",
+    "city": "hoian",
+    "category": "village"
+  },
+  {
+    "label": "hoian-place-thu-bon-river",
+    "pageID": "viet-family-city-hoian-place-thu-bon-river",
+    "title": "Sông Thu Bồn",
+    "city": "hoian",
+    "category": "river"
+  },
+  {
+    "label": "hoian-place-tra-nhieu-village",
+    "pageID": "viet-family-city-hoian-place-tra-nhieu-village",
+    "title": "Làng Trà Nhiêu",
+    "city": "hoian",
+    "category": "village"
+  },
+  {
+    "label": "hoian-place-trade-ceramics-museum",
+    "pageID": "viet-family-city-hoian-place-trade-ceramics-museum",
+    "title": "Bảo tàng Gốm sứ Mậu dịch",
+    "city": "hoian",
+    "category": "museum"
+  },
+  {
+    "label": "hoian-place-trieu-chau-assembly-hall",
+    "pageID": "viet-family-city-hoian-place-trieu-chau-assembly-hall",
+    "title": "Hội quán Triều Châu",
+    "city": "hoian",
+    "category": "landmark"
+  },
+  {
+    "label": "hoian-place-wonton",
+    "pageID": "viet-family-city-hoian-place-wonton",
+    "title": "Hoành thánh Hội An",
+    "city": "hoian",
+    "category": "dish"
+  },
+  {
+    "label": "hue-place-an-dinh-palace",
+    "pageID": "viet-family-city-hue-place-an-dinh-palace",
+    "title": "Cung An Định",
+    "city": "hue",
+    "category": "landmark"
+  },
+  {
+    "label": "hue-place-an-hien-garden-house",
+    "pageID": "viet-family-city-hue-place-an-hien-garden-house",
+    "title": "Nhà vườn An Hiên",
+    "city": "hue",
+    "category": "landmark"
+  },
+  {
+    "label": "hue-place-ancient-hue-gallery-cuisine",
+    "pageID": "viet-family-city-hue-place-ancient-hue-gallery-cuisine",
+    "title": "Ancient Hue Gallery Cuisine",
+    "city": "hue",
+    "category": "restaurant"
+  },
+  {
+    "label": "hue-place-bach-ma-national-park",
+    "pageID": "viet-family-city-hue-place-bach-ma-national-park",
+    "title": "Vườn quốc gia Bạch Mã",
+    "city": "hue",
+    "category": "park"
+  },
+  {
+    "label": "hue-place-banh-beo",
+    "pageID": "viet-family-city-hue-place-banh-beo",
+    "title": "Bánh bèo ở Huế",
+    "city": "hue",
+    "category": "dish"
+  },
+  {
+    "label": "hue-place-banh-bot-loc",
+    "pageID": "viet-family-city-hue-place-banh-bot-loc",
+    "title": "Bánh bột lọc ở Huế",
+    "city": "hue",
+    "category": "dish"
+  },
+  {
+    "label": "hue-place-bao-quoc-pagoda",
+    "pageID": "viet-family-city-hue-place-bao-quoc-pagoda",
+    "title": "Chùa Báo Quốc",
+    "city": "hue",
+    "category": "landmark"
+  },
+  {
+    "label": "hue-place-bun-bo-city",
+    "pageID": "viet-family-city-hue-place-bun-bo-city",
+    "title": "Bún bò Huế",
+    "city": "hue",
+    "category": "dish"
+  },
+  {
+    "label": "hue-place-bun-hen",
+    "pageID": "viet-family-city-hue-place-bun-hen",
+    "title": "Bún hến ở Huế",
+    "city": "hue",
+    "category": "dish"
+  },
+  {
+    "label": "hue-place-dien-tho-palace",
+    "pageID": "viet-family-city-hue-place-dien-tho-palace",
+    "title": "Cung Diên Thọ",
+    "city": "hue",
+    "category": "landmark"
+  },
+  {
+    "label": "hue-place-dong-ba",
+    "pageID": "viet-family-city-hue-place-dong-ba",
+    "title": "Chợ Đông Ba",
+    "city": "hue",
+    "category": "market"
+  },
+  {
+    "label": "hue-place-dong-khanh-tomb",
+    "pageID": "viet-family-city-hue-place-dong-khanh-tomb",
+    "title": "Lăng Đồng Khánh",
+    "city": "hue",
+    "category": "landmark"
+  },
+  {
+    "label": "hue-place-duyet-thi-duong-theater",
+    "pageID": "viet-family-city-hue-place-duyet-thi-duong-theater",
+    "title": "Duyệt Thị Đường",
+    "city": "hue",
+    "category": "attraction"
+  },
+  {
+    "label": "hue-place-lap-an-lagoon",
+    "pageID": "viet-family-city-hue-place-lap-an-lagoon",
+    "title": "Đầm Lập An",
+    "city": "hue",
+    "category": "nature"
+  },
+  {
+    "label": "hue-place-me-xung",
+    "pageID": "viet-family-city-hue-place-me-xung",
+    "title": "Mè xửng ở Huế",
+    "city": "hue",
+    "category": "dessert"
+  },
+  {
+    "label": "hue-place-thuy-bieu-village",
+    "pageID": "viet-family-city-hue-place-thuy-bieu-village",
+    "title": "Làng Thủy Biều",
+    "city": "hue",
+    "category": "village"
+  }
+]

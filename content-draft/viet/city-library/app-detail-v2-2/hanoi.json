@@ -24,7 +24,7 @@
       "city": "Hà Nội",
       "category": "Neighborhood",
       "pronunciation": "quan ba dinh",
-      "travelerMoment": "Ba Đình carries Hanoi's civic memory, but its softer streets keep the district from becoming only ceremony. The contrast is the draw: state buildings close to everyday coffee, shade, and errands.",
+      "travelerMoment": "Ba Đình holds Hanoi civic history, but its softer streets keep the district from becoming only ceremony. State buildings sit close to everyday coffee, shade, and errands.",
       "storySpine": "Ba Dinh matters because it shows how Hanoi shifts from national symbols to ordinary blocks within a short ride or walk.",
       "intro": {
         "heading": "Formal Core, Softer Streets",
@@ -99,7 +99,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-ba-dinh-district: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "2026-06-01 U.S.-traveler repair: removed abstract draw phrasing from district traveler moment."
         ]
       },
       "score": {
@@ -135,10 +136,10 @@
       "city": "Hà Nội",
       "category": "Landmark",
       "pronunciation": "quang chuong ba dinh",
-      "travelerMoment": "The square carries Vietnam's national story, so the open space asks for slower attention than a normal photo stop. Its scale makes nearby streets feel smaller afterward.",
+      "travelerMoment": "The square is tied to Vietnam's national story, so the open space asks for slower attention than a normal photo stop. Its scale makes nearby streets feel smaller afterward.",
       "storySpine": "Ba Dinh Square marks the capital's ceremonial center without needing heavy explanation or tourist drama.",
       "intro": {
-        "heading": "Open Space Changes The Pace",
+        "heading": "Hanoi's Formal Square",
         "body": "Ba Dinh Square is Hanoi in a formal public mood: open pavement, red flags, official facades, and a restrained sense of national memory."
       },
       "usefulPhraseCards": [
@@ -170,8 +171,8 @@
       "sections": [
         {
           "id": "scale-is-the-point",
-          "heading": "Scale is the draw",
-          "body": "The square can make Hanoi feel like a capital beyond old streets and coffee rooms. Its restraint is the draw."
+        "heading": "Open Pavement And Flags",
+          "body": "The square can make Hanoi feel like a capital beyond old streets and coffee rooms. Open pavement, flags, and official facades do most of the work."
         },
         {
           "id": "nearby-stops-need-space",
@@ -186,7 +187,7 @@
         {
           "id": "the-simple-memory",
           "heading": "The Simple Memory",
-          "body": "Red flags, broad paving, and formal Ba Dinh facades do the work. Keep the plan simple and let the scale register."
+          "body": "Red flags, broad paving, and formal Ba Đình facades do the work. Keep the plan simple and let the scale settle."
         }
       ],
       "mentionedHereCandidates": [],
@@ -210,7 +211,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-ba-dinh-square: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "2026-06-01 U.S.-traveler repair: removed draw/register phrasing from civic landmark copy."
         ]
       },
       "score": {
@@ -374,11 +376,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "banh cuon ba hoanh",
-      "travelerMoment": "Choose Bánh Cuốn Bà Hoành for a Hanoi morning of soft steam: thin rice sheets, savory filling, fried shallot, herbs, and dipping sauce.",
-      "storySpine": "Bánh Cuốn Bà Hoành gives the existing Hanoi bánh cuốn habit a named breakfast table, so the catalog has both the dish and a place worth remembering.",
+      "travelerMoment": "Choose Bánh Cuốn Bà Hoành for a classic Hanoi bánh cuốn breakfast: thin steamed rice sheets rolled around savory filling, fried shallots, herbs, and a light fish-sauce dip.",
+      "storySpine": "Bánh cuốn is a soft morning food in Hanoi, and Bà Hoành gives that everyday steam-table habit a specific place to picture before a first trip.",
       "intro": {
-        "heading": "Morning Steam And Rice Rolls",
-        "body": "Bánh Cuốn Bà Hoành is a Hanoi street-food stop for steamed rice rolls: thin sheets, savory filling, fried shallot, herbs, and dipping sauce."
+        "heading": "Classic Hanoi Rice Rolls",
+        "body": "Bánh cuốn is steamed rice rolls, softer than a spring roll and eaten with fish-sauce dip. Bà Hoành is the classic Hanoi breakfast version: thin sheets, savory filling, fried shallots, and herbs."
       },
       "usefulPhraseCards": [
         {
@@ -409,23 +411,23 @@
       "sections": [
         {
           "id": "steam-first",
-          "heading": "Steam First",
-          "body": "Look for warm sheets and a quick plate rhythm. The dish is gentle, but fresh steam is the pull."
+          "heading": "Soft, Not Crispy",
+          "body": "Expect a gentle breakfast plate rather than crunch. The rice sheets should feel soft, warm, and light against the fried shallots."
         },
         {
           "id": "let-sauce-stay-bright",
-          "heading": "Let Sauce Stay Bright",
-          "body": "Dipping sauce should wake the rolls, not flood them. Herbs, fried shallot, and a light spoonful keep the plate clean."
+          "heading": "Sauce Stays Light",
+          "body": "The dipping sauce wakes up the rice sheets. Add a little at a time so the filling, herbs, and fried shallots still come through."
         },
         {
           "id": "a-named-breakfast-table",
-          "heading": "A Named Breakfast Table",
-          "body": "Bánh cuốn is a city-wide breakfast habit. Bà Hoành gives it a named morning table when the plan needs something soft and fast before coffee."
+          "heading": "A Morning Food Stop",
+          "body": "Bánh cuốn belongs early in the day: light, quick, and still a real Hanoi meal before coffee or sightseeing."
         },
         {
           "id": "recognition-supports-the-roll",
-          "heading": "Steam, Filling, Sauce",
-          "body": "The meal has a precise shape: steamed rice sheets, filling, fried shallot, herbs, and dipping sauce."
+          "heading": "Compare It With Bà Xuân",
+          "body": "Bà Hoành is the lighter classic plate. Bà Xuân is the fuller version when egg, sausage, or extra condiments should be part of breakfast."
         }
       ],
       "mentionedHereCandidates": [
@@ -515,11 +517,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "banh cuon ba xuan",
-      "travelerMoment": "Choose Bánh Cuốn Bà Xuân for the bánh cuốn morning when the plate should feel fuller: soft rice rolls, minced pork and black fungus, a poached egg, sausage or meatloaf, herbs, chili, lime, garlic, and dipping sauce.",
-      "storySpine": "Bánh Cuốn Bà Xuân makes the Hanoi breakfast table feel fuller: soft rice sheets, pork-and-black-fungus filling, herbs, sauce, and the option of egg beside the steam.",
+      "travelerMoment": "Choose Bánh Cuốn Bà Xuân for a fuller bánh cuốn breakfast: soft steamed rice rolls with pork-and-mushroom filling, herbs, dipping sauce, and the option of egg or sausage.",
+      "storySpine": "Bà Xuân shows how a light Hanoi rice-roll breakfast can become more filling without losing the soft steam, herbs, and dipping-sauce rhythm of bánh cuốn.",
       "intro": {
-        "heading": "Egg In The Steam",
-        "body": "Bánh Cuốn Bà Xuân is a Hanoi street-food stop for soft rice sheets, pork-and-black-fungus filling, herbs, dipping sauce, and the option of a poached egg."
+        "heading": "A Fuller Bánh Cuốn Plate",
+        "body": "Bánh cuốn is steamed rice rolls with a soft, almost silky texture. Bà Xuân makes the plate fuller with pork-and-mushroom filling, herbs, dipping sauce, and the option of egg or sausage."
       },
       "usefulPhraseCards": [
         {
@@ -550,8 +552,8 @@
       "sections": [
         {
           "id": "ask-about-the-egg",
-          "heading": "Ask About The Egg",
-          "body": "Order the rolls first, then decide if the egg or sausage makes sense. Bà Xuân works when the soft sheets stay central."
+          "heading": "Decide On The Extras",
+          "body": "Start with the rice rolls, then decide if egg or sausage belongs on the plate. The extras should make breakfast fuller, not bury the soft sheets."
         },
         {
           "id": "keep-sauce-in-reach",
@@ -560,13 +562,13 @@
         },
         {
           "id": "a-fuller-rice-roll-stop",
-          "heading": "A Fuller Rice-Roll Stop",
-          "body": "This is still a quick street-food breakfast or snack. The difference from a plain plate is how egg, pork filling, herbs, and sauce make it feel complete."
+          "heading": "Still A Quick Breakfast",
+          "body": "Even with extras, this should still feel like a Hanoi breakfast plate rather than a heavy restaurant meal. Soft rolls, herbs, and sauce stay in charge."
         },
         {
           "id": "compare-it-with-ba-hoanh",
           "heading": "Compare It With Bà Hoành",
-          "body": "Bà Hoành is the classic steam-table breakfast. Bà Xuân is the fuller rice-roll stop when egg, pork filling, herbs, and condiments should carry the plate."
+          "body": "Bà Hoành is the classic steam-table breakfast. Bà Xuân is the fuller rice-roll stop when egg, pork filling, herbs, and condiments should shape the plate."
         }
       ],
       "mentionedHereCandidates": [
@@ -617,7 +619,8 @@
         "notes": [
           "Additive Hanoi 105-page pilot on 2026-05-31: source object authored directly under current V2.2 standard instead of generated from a template.",
           "Official 2025 guide PDF support checked on 2026-05-31: Bánh Cuốn Bà Xuân appears in the Hanoi guide-noted section as Street Food.",
-          "Visible copy uses stable source facts only: bánh cuốn, soft rice sheets, pork-and-black-fungus filling, poached egg option, sausage or meatloaf, herbs, chili, lime, garlic, and dipping sauce. It avoids hours, prices, address, booking, closure, and fragile operational claims."
+          "Visible copy uses stable source facts only: bánh cuốn, soft rice sheets, pork-and-black-fungus filling, poached egg option, sausage or meatloaf, herbs, chili, lime, garlic, and dipping sauce. It avoids hours, prices, address, booking, closure, and fragile operational claims.",
+          "2026-06-01 U.S.-traveler repair: removed carry wording from bánh cuốn comparison."
         ]
       },
       "score": {
@@ -704,7 +707,7 @@
         {
           "id": "a-short-breather",
           "heading": "A Short Breather",
-          "body": "Bay Mau Lake helps when heat, traffic, or museum time has tightened the day. One shaded loop or bench sit can carry it."
+          "body": "Bay Mau Lake helps when heat, traffic, or museum time has tightened the day. One shaded loop or bench sit can be enough."
         },
         {
           "id": "do-not-inflate-it",
@@ -809,7 +812,7 @@
         },
         {
           "id": "snacks-carry-the-table",
-          "heading": "Snacks Carry The Table",
+          "heading": "Snacks Settle The Table",
           "body": "The glass makes more sense with something small on the table. Peanuts, grilled snacks, or a simple plate let the corner scene settle."
         },
         {
@@ -817,11 +820,11 @@
           "heading": "Tạ Hiện Is Louder",
           "body": "Tạ Hiện is the easier name to recognize, but a quieter corner can make the ritual feel less like nightlife and more like Hanoi street life."
         },
-        {
-          "id": "one-glass-can-be-enough",
-          "heading": "One Glass Can Be Enough",
-          "body": "Bia hoi is light, but it is still alcohol. One cold glass can give you the scene without bending the whole day around it."
-        }
+      {
+        "id": "one-glass-can-be-enough",
+        "heading": "One Glass Can Be Enough",
+        "body": "Bia hoi is light, but it is still alcohol. One cold glass can be plenty for the stool, snack, and sidewalk pause."
+      }
       ],
       "mentionedHereCandidates": [
         {
@@ -856,7 +859,8 @@
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bia-hoi: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
-          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
+          "2026-06-01 U.S.-traveler repair: removed carry wording from beer-corner copy."
         ]
       },
       "score": {
@@ -927,7 +931,7 @@
       "sections": [
         {
           "id": "shade-beats-checklist",
-          "heading": "Shade Beats Checklist",
+        "heading": "Shade, Paths, Benches",
           "body": "The garden does not need to become a task. A little shade, a short walk, and a bench can cool the day."
         },
         {
@@ -1053,8 +1057,8 @@
           "catalogId": "viet-family-city-hanoi-place-bun-cha-huong-lien",
           "label": "Bún chả Hương Liên",
           "relationship": "named bun cha table",
-          "displaySubtitle": "A famous Hanoi bún chả table when smoke, broth, herbs, and a real address should carry lunch.",
-          "reason": "Related because: A famous Hanoi bún chả table when smoke, broth, herbs, and a real address should carry lunch.",
+          "displaySubtitle": "A famous Hanoi bún chả table when smoke, broth, herbs, and a real address should define lunch.",
+          "reason": "Related because: A famous Hanoi bún chả table when smoke, broth, herbs, and a real address should define lunch.",
           "status": "render"
         },
         {
@@ -1121,11 +1125,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "boon cha huong lien",
-      "travelerMoment": "Choose Hương Liên for bún chả a Hanoi lunch: grilled pork, warm broth, herbs, vermicelli, quick service, and a name many visitors already know.",
-      "storySpine": "Hương Liên earns its place by keeping a famous bún chả room tied to the actual table flow: smoke, broth, herbs, pork, and the quick lunch pace.",
+      "travelerMoment": "Choose Hương Liên for the famous Hanoi bún chả lunch: grilled pork patties and slices served with rice noodles, herbs, warm dipping broth, quick service, and a room many American visitors know from Obama and Anthony Bourdain.",
+      "storySpine": "Hương Liên earns its place by keeping a globally famous bún chả story tied to the real table flow: smoke, broth, herbs, pork, noodles, and quick Hanoi lunch pace.",
       "intro": {
-        "heading": "Grill Smoke, Broth, Herbs",
-        "body": "Bun Cha Huong Lien is a fast Hanoi lunch built around grilled pork, warm dipping broth, vermicelli, herbs, and a famous room that still moves like a working bún chả shop."
+        "heading": "The Famous Bún Chả Lunch",
+        "body": "Bún chả is Hanoi grilled pork served with rice noodles, herbs, and warm dipping broth. Hương Liên is the famous room many American visitors know from the Obama and Anthony Bourdain meal."
       },
       "usefulPhraseCards": [
         {
@@ -1157,22 +1161,22 @@
         {
           "id": "build-the-bite-slowly",
           "heading": "Build The Bite Slowly",
-          "body": "Do not dump everything together at once. Dip noodles, add herbs, take pork, and learn the balance before changing the bowl."
+          "body": "Bún chả is assembled bite by bite. Dip noodles, add herbs, take pork from the broth, and let smoky, sweet, sharp, and cool pieces meet slowly."
         },
         {
           "id": "add-ons-stay-secondary",
-          "heading": "Add-Ons Stay Secondary",
-          "body": "If extras appear, take a beat to understand the table. The main move stays clear: bun cha first."
+        "heading": "Obama Table, Grill Smoke",
+          "body": "The Obama-Bourdain story explains why the place is known. It should not replace the real reason to go: a clear Hanoi lunch with pork, broth, herbs, and noodles."
         },
         {
           "id": "lunch-with-one-job",
           "heading": "Lunch With One Job",
-          "body": "Huong Lien is for a clear bun cha meal rather than a broad menu search. The bowl, herbs, and broth are the point."
+          "body": "Bún chả is the reason to sit down here. Order the dish, settle the table, and learn the rhythm before adding anything extra."
         },
         {
           "id": "fame-should-stay-smaller-than-lunch",
-          "heading": "Famous Room, Quick Lunch",
-          "body": "The name may be familiar, but the table is simple: eat while the pork, broth, and herbs are warm."
+          "heading": "Eat While It Is Warm",
+          "body": "The pork and broth should still be warm when you start eating. Take the photo if you want, then let the meal stay practical."
         }
       ],
       "mentionedHereCandidates": [
@@ -1224,7 +1228,8 @@
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bun-cha-huong-lien: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
-          "guide-noted recognition patch on 2026-05-31: official 2025 PDF support added while keeping the bún chả lunch reason primary."
+          "guide-noted recognition patch on 2026-05-31: official 2025 PDF support added while keeping the bún chả lunch reason primary.",
+          "2026-06-02 batch 005 recovery: first mention now defines bún chả and explains the Obama/Bourdain familiarity without letting fame replace the food."
         ]
       },
       "score": {
@@ -1235,7 +1240,8 @@
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
         "Production intake source notes: guide Hanoi guide",
-        "Official guide Guide Vietnam 2025 PDF lists Bún Chả Hương Liên (Hai Ba Trung) as guide-noted."
+        "Official guide Guide Vietnam 2025 PDF lists Bún Chả Hương Liên (Hai Ba Trung) as guide-noted.",
+        "Public source check on 2026-06-02: Time coverage confirms Obama and Anthony Bourdain ate at Bún Chả Hương Liên in 2016; VOV describes bún chả as rice noodles with grilled pork and meatballs."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -1261,11 +1267,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "bun cha ta",
-      "travelerMoment": "Choose Bún Chả Ta for an Old Quarter bún chả table: grilled pork, dipping broth, herbs, vermicelli, and a close room that slows the meal down.",
-      "storySpine": "Bun Cha Ta gives the Old Quarter a clear bún chả table: smoke, herbs, dipping broth, grilled pork, and a small room close to the lanes.",
+      "travelerMoment": "Choose Bún Chả Ta for an Old Quarter bún chả table: Hanoi grilled pork with rice noodles, herbs, pickles, warm dipping broth, and a smaller room near the old lanes.",
+      "storySpine": "Bún Chả Ta gives the Old Quarter a practical bún chả role: a seated table near the old lanes where smoke, broth, pork, herbs, and noodles can slow lunch down.",
       "intro": {
-        "heading": "A Bun Cha Table",
-        "body": "Bun Cha Ta is a bún chả stop in the Old Quarter: grilled pork, cool vermicelli, herbs, and a dipping bowl that slows the meal down."
+        "heading": "An Old Quarter Bún Chả Table",
+        "body": "Bún chả is Hanoi grilled pork served with rice noodles, herbs, and warm dipping broth. Bún Chả Ta gives that dish a seated Old Quarter table close to the old lanes."
       },
       "usefulPhraseCards": [
         {
@@ -1297,22 +1303,22 @@
         {
           "id": "build-the-bite-slowly",
           "heading": "Build The Bite Slowly",
-          "body": "Pork and broth set the first bite; noodles and herbs come in once the balance is clear. The bowl should move between smoky, sharp, sweet, and cool."
+          "body": "Start with the pork and broth, then bring in noodles and herbs. The bite should move between smoky, sweet, sharp, and cool instead of becoming one mixed pile."
         },
         {
           "id": "casual-not-careless",
-          "heading": "Casual, Not Careless",
-          "body": "The room can feel quick, but the meal rewards patience. A menu minute lets the table settle before the first plate."
+          "heading": "Why Pick This One",
+          "body": "Hương Liên has the famous Obama-Bourdain story. Bún Chả Ta is useful when you want the same dish in the Old Quarter without building the whole meal around fame."
         },
         {
           "id": "a-focused-bun-cha-stop",
-          "heading": "One Direct Dish",
-          "body": "The table is direct. Let one dish carry the meal: smoke, broth, herbs, noodles, and pork."
+          "heading": "Let The Dish Lead",
+          "body": "The meal is not complicated, but it is specific. Smoke, pork, broth, herbs, noodles, and pickles should do the work."
         },
         {
           "id": "the-bowl-carries-the-meal",
-          "heading": "The Bowl Carries The Meal",
-          "body": "The dipping bowl is not sauce on the side. It is where grilled pork, pickles, herbs, and noodles turn into bun cha."
+          "heading": "The Bowl Carries The Dish",
+          "body": "The dipping broth is where grilled pork, pickles, herbs, and noodles become bún chả. Treat it as the center of the meal, not extra sauce."
         }
       ],
       "mentionedHereCandidates": [
@@ -1364,7 +1370,9 @@
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-bun-cha-ta: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
-          "casual-value recognition patch on 2026-05-31: official 2025 PDF support added while keeping the Old Quarter bún chả reason primary."
+          "casual-value recognition patch on 2026-05-31: official 2025 PDF support added while keeping the Old Quarter bún chả reason primary.",
+          "2026-06-01 U.S.-traveler repair: removed carry wording from bún chả sections.",
+          "2026-06-02 batch 005 recovery: first mention now defines bún chả and clarifies Bún Chả Ta's Old Quarter role against Hương Liên."
         ]
       },
       "score": {
@@ -1401,11 +1409,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "bun cha dac kim",
-      "travelerMoment": "Choose Đắc Kim for the Hàng Mành bún chả lunch where the sauce matters: sweet fish sauce, pickled green mango, smoky pork, plump patties, noodles, and herbs all doing one focused job.",
-      "storySpine": "Đắc Kim gives Hanoi's bún chả story a sharper Old Quarter table: smoke, sweetness, acidity, pork, and herbs.",
+      "travelerMoment": "Choose Đắc Kim for the Hàng Mành bún chả lunch where grilled pork, rice noodles, herbs, sweet fish-sauce dip, pickled green mango, and pork patties shape the meal.",
+      "storySpine": "Đắc Kim gives Hanoi's bún chả story a sharper Old Quarter version: smoky pork, sweet dipping sauce, pickled mango acidity, herbs, and noodles working together.",
       "intro": {
-        "heading": "Sauce, Smoke, Mango",
-        "body": "Bún Chả Đắc Kim is a Hàng Mành bún chả stop for smoky pork, plump patties, vermicelli, herbs, and a sweet fish-sauce dip sharpened with pickled green mango."
+        "heading": "Mango Bite In The Sauce",
+        "body": "Bún chả is Hanoi grilled pork with rice noodles, herbs, and warm dipping broth. Đắc Kim's version leans into smoky slices, pork patties, sweet fish-sauce dip, and pickled green mango."
       },
       "usefulPhraseCards": [
         {
@@ -1437,12 +1445,12 @@
         {
           "id": "let-the-dip-lead",
           "heading": "Let The Dip Lead",
-          "body": "The nước chấm is not background sauce. It pulls sweetness, acidity, mango, pork, noodles, and herbs into the same bite."
+          "body": "Nước chấm means dipping sauce, and here it is part of the meal. It pulls sweetness, acidity, mango, pork, noodles, and herbs into the same bite."
         },
         {
           "id": "patties-and-shreds",
           "heading": "Patties And Shreds",
-          "body": "Look for both textures: smoky shredded pork and rounder patties. The contrast is the reason this table feels more specific than a generic bún chả stop."
+          "body": "Look for both textures: smoky sliced pork and rounder patties. That contrast makes the meal easier to remember than a plain one-note pork bowl."
         },
         {
           "id": "build-one-bowl-slowly",
@@ -1452,7 +1460,7 @@
         {
           "id": "where-it-sits-in-hanoi",
           "heading": "Where It Sits In Hanoi",
-          "body": "Hương Liên carries the famous-room reference. Bún Chả Ta carries a Old Quarter table. Đắc Kim is the Hàng Mành sauce-and-pork lunch."
+          "body": "Hương Liên is the famous-room reference. Bún Chả Ta is an Old Quarter table. Đắc Kim is the Hàng Mành sauce-and-pork lunch."
         }
       ],
       "mentionedHereCandidates": [
@@ -1597,7 +1605,7 @@
         {
           "id": "one-numbered-stall",
           "heading": "One Numbered Stall",
-          "body": "The name carries the address memory. The stop stays simplest as bún chả first, spring roll if needed, then back into the Hàng Than lanes."
+        "body": "The address is part of the memory. Keep the meal centered on bún chả first, spring roll if needed, then back into the Hàng Than lanes."
         },
         {
           "id": "where-it-sits",
@@ -1695,7 +1703,7 @@
       "city": "Hà Nội",
       "category": "Dish",
       "pronunciation": "bun thang",
-      "travelerMoment": "Bún thang carries an older Hanoi idea of balance, with delicate toppings and clear broth doing the fine work. It is refinement in bowl form.",
+      "travelerMoment": "Bún thang shows an older Hanoi idea of balance, with delicate toppings and clear broth doing the fine work. It is refinement in bowl form.",
       "storySpine": "Bun thang shows Hanoi detail through restraint, thin strips, and broth instead of a loud signature flavor.",
       "intro": {
         "heading": "A Lighter Bowl Between Bigger Meals",
@@ -2266,7 +2274,7 @@
       "travelerMoment": "A Hanoi coffee hop draws from the city's many small coffee rooms rather than one single cafe ritual. The short walks between cups become part of the memory.",
       "storySpine": "Coffee hopping turns Hanoi cafe culture into a walkable pace without needing a famous table every time.",
       "intro": {
-        "heading": "Three Cups Is Already A Route",
+        "heading": "Hanoi Coffee Hop Route",
         "body": "A Hanoi coffee hop gathers the city in small cups: iced coffee, a richer cup, and short walks between corners near the old streets."
       },
       "usefulPhraseCards": [
@@ -2409,7 +2417,7 @@
       "sections": [
         {
           "id": "cold-coffee-carries-the-stop",
-          "heading": "Cold Coffee Carries It",
+          "heading": "Cold Coffee Is The Point",
           "body": "One clear drink beats a tasting flight here. A cold coffee order keeps the visit clean."
         },
         {
@@ -2424,7 +2432,7 @@
         },
         {
           "id": "coffee-street-can-carry-the-next-move",
-          "heading": "Coffee Street Carries The Next Move",
+          "heading": "Coffee Street Sets Up The Next Move",
           "body": "Triệu Việt Vương adds context around the visit. Cộng can be an early table, with a different Hanoi coffee memory still nearby."
         }
       ],
@@ -2643,7 +2651,7 @@
         {
           "id": "a-full-room-changes-the-mood",
           "heading": "A Full Room Changes The Mood",
-          "body": "Keep it as a short sit and avoid a long wait. If the room is packed, nearby coffee corners can carry the day forward."
+          "body": "Keep it as a short sit and avoid a long wait. If the room is packed, nearby coffee corners can keep the day moving."
         }
       ],
       "mentionedHereCandidates": [
@@ -2678,7 +2686,8 @@
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-dinh-cafe: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
-          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching."
+          "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
+          "2026-06-01 U.S.-traveler repair: removed carry wording from fallback cafe line."
         ]
       },
       "score": {
@@ -2755,7 +2764,7 @@
         {
           "id": "evening-shows-the-district",
           "heading": "Evening Shows The District",
-          "body": "The area can feel clearest when people are coming home, buying dinner, or filling small cafes. That everyday movement is the draw."
+          "body": "The area can feel clearest when people are coming home, buying dinner, or filling small cafes. That everyday movement is the reason to notice it."
         },
         {
           "id": "nearby-neighborhood-cue",
@@ -2771,11 +2780,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-ba-dinh-district",
-          "label": "Quận Ba Đình",
-          "relationship": "civic-district contrast",
-          "displaySubtitle": "The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
-          "reason": "Related because: The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
+          "catalogId": "viet-family-city-hanoi-place-long-bien-bridge",
+          "label": "Cầu Long Biên",
+          "relationship": "clearest-river-vantage",
+          "displaySubtitle": "The steel bridge view that makes the Red River, market edge, banks, and city distance easier to place.",
+          "reason": "Long Bien Bridge is the clearest river vantage named in the page and the natural next card for the Red River.",
           "status": "render"
         }
       ],
@@ -2789,7 +2798,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-dong-da: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "2026-06-01 U.S.-traveler repair: replaced abstract draw phrasing with concrete neighborhood value."
         ]
       },
       "score": {
@@ -3089,7 +3099,7 @@
         },
         {
           "id": "more-than-another-outdoor-stop",
-          "heading": "Cultural Context In The Courtyard",
+        "heading": "Stilt Houses, Textiles, Courtyard",
           "body": "Come for cultural context, not just open-air structures. The museum brings communities from across Vietnam into a Hanoi day."
         },
         {
@@ -3201,7 +3211,7 @@
         {
           "id": "good-between-indoor-stops",
           "heading": "Good Between Indoor Stops",
-          "body": "The area pairs well with a cafe, gallery, hotel pickup, or a short walk before dinner. It is a scale shift rather than a checklist."
+        "body": "The area pairs well with a cafe, gallery, hotel pickup, or a short walk before dinner. Wider streets and older facades change the pace after tight lanes."
         },
         {
           "id": "a-change-of-city-scale",
@@ -3377,11 +3387,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "gia",
-      "travelerMoment": "Plan Gia when dinner is the evening: a composed room, contemporary Vietnamese pacing, and time away from street-food speed.",
-      "storySpine": "Gia adds a refined Hanoi dinner option where Vietnamese ingredients and a quiet room make the meal the planned evening.",
+      "travelerMoment": "Plan Gia when Hanoi dinner should be one calm contemporary Vietnamese meal: a quiet room, staff pacing, and enough time to notice ingredients after street-food days.",
+      "storySpine": "Gia adds a composed Hanoi dinner option where Vietnamese ingredients and a quiet room make the meal feel planned rather than rushed.",
       "intro": {
-        "heading": "A Special-Occasion Hanoi Evening",
-        "body": "Gia is a special-occasion Hanoi dinner: a calmer room, contemporary Vietnamese pacing, and a night planned around the table rather than another quick stop."
+        "heading": "A Calm Vietnamese Dinner",
+        "body": "Gia is a contemporary Vietnamese dinner in Hanoi: a quieter room, staff-paced courses, and a night planned around the table instead of another quick stop."
       },
       "usefulPhraseCards": [
         {
@@ -3411,24 +3421,24 @@
       ],
       "sections": [
         {
-          "id": "room-settles-first",
+          "id": "the-room-settles-first",
           "heading": "The Room Settles First",
           "body": "The muted interior and staff pacing are part of the meal. Arrive ready to slow down instead of treating dinner like fuel between sights."
         },
         {
-          "id": "book-around-the-room",
-          "heading": "Leave Space Around Dinner",
-          "body": "Fine dining needs room around it. Keep the rest of the evening simple so the table has enough attention."
+          "id": "space-around-dinner",
+          "heading": "Space Around Dinner",
+          "body": "The table needs attention. Keep the rest of the evening simple so the meal has room to land."
         },
         {
           "id": "ingredients-before-status",
           "heading": "Ingredients Before Status",
-          "body": "The booking only matters if the plates, pacing, and Vietnamese ingredients stay memorable in front of you."
+          "body": "The booking only matters if the plates, pacing, and Vietnamese ingredients stay memorable in front of you. Let the food, not the award language, make the night worthwhile."
         },
         {
-          "id": "hanoi-has-two-registers",
-          "heading": "Hanoi Has Two Registers",
-          "body": "Place this beside bún chả, egg coffee, or chả cá so the trip keeps both sides of Hanoi: street-level classics and one composed dinner."
+          "id": "balance-the-hanoi-food-plan",
+          "heading": "Balance The Hanoi Food Plan",
+          "body": "Put Gia beside bún chả, egg coffee, or chả cá so the trip has both street-level classics and one composed dinner."
         }
       ],
       "mentionedHereCandidates": [
@@ -3446,8 +3456,8 @@
           "type": "dish",
           "catalogId": "viet-family-city-hanoi-place-cha-ca",
           "sourceText": "cha ca",
-          "displaySubtitle": "The fish-and-dill Hanoi specialty for a different dinner register.",
-          "reason": "The Gia copy names cha ca as a food-register contrast.",
+          "displaySubtitle": "The fish-and-dill Hanoi specialty for a more casual dinner plan.",
+          "reason": "The Gia copy names cha ca as a more casual Hanoi food contrast.",
           "status": "render"
         }
       ],
@@ -3456,8 +3466,8 @@
           "catalogId": "viet-family-city-hanoi-place-tam-vi",
           "label": "Tầm Vị",
           "relationship": "special-occasion northern dinner comparison",
-          "displaySubtitle": "A special-occasion northern table with wood, rice, and shared dishes.",
-          "reason": "Tam Vi is the relevant special-occasion Hanoi comparison for Gia.",
+          "displaySubtitle": "A northern Vietnamese table with wood, rice, and shared dishes when the splurge should feel more home-style.",
+          "reason": "Tam Vi is the relevant Hanoi comparison when you want a Vietnamese meal in a quieter, older-house setting.",
           "status": "render"
         }
       ],
@@ -3473,7 +3483,8 @@
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-gia: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
-          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
+          "2026-06-01 U.S.-traveler repair: removed special-occasion/fine-dining/register wording from visible copy and made the restaurant type and trip role concrete."
         ]
       },
       "score": {
@@ -3511,10 +3522,10 @@
       "category": "Station",
       "pronunciation": "ga gia lam",
       "travelerMoment": "Gia Lâm is a rail-edge memory of Hanoi, where older station scale and onward routes make the city feel connected to places beyond the center.",
-      "storySpine": "Gia Lam matters as a practical name-recognition stop, with bags, station signs, and onward streets in view.",
+      "storySpine": "Gia Lam matters as a practical station-name stop, with bags, station signs, and onward streets in view.",
       "intro": {
         "heading": "A Smaller Rail Edge",
-        "body": "Gia Lam Railway Station is a smaller rail edge of Hanoi: signs, benches, bags, and the stop before the city resumes outside the gate."
+      "body": "Gia Lam Railway Station is a smaller rail edge of Hanoi: signs, benches, bags, and station doors before the city resumes outside the gate."
       },
       "usefulPhraseCards": [
         {
@@ -3975,11 +3986,11 @@
       "city": "Hà Nội",
       "category": "Market",
       "pronunciation": "cho hang da",
-      "travelerMoment": "Hàng Da keeps central Hanoi's practical market life close: small goods, daily shopping, scooters, and errands tucked near hotels and walking routes.",
-      "storySpine": "Hang Da is a compact central browse where the first lap lowers the pressure.",
+      "travelerMoment": "Hàng Da is a central Hanoi market stop for small goods, bags, clothing, quick price questions, and the everyday buying rhythm tucked close to Old Quarter walking routes.",
+      "storySpine": "Hàng Da matters because it keeps ordinary Hanoi shopping near the tourist core. It is smaller than Đồng Xuân, easier to sample, and useful when the day needs one practical browse.",
       "intro": {
-        "heading": "Browse Once Before Prices",
-        "body": "Hang Da Market is a compact central market browse: outside shops, scooters, small goods, bags, and practical buying pace near the Old Quarter."
+        "heading": "Compact Hanoi Market Browse",
+        "body": "Hang Da Market is a compact central Hanoi market for small goods, bags, clothing, scooters at the edge, and one practical browse near the Old Quarter."
       },
       "usefulPhraseCards": [
         {
@@ -4010,23 +4021,23 @@
       "sections": [
         {
           "id": "one-lap-calms-the-room",
-          "heading": "One Lap Calms The Room",
-          "body": "A first lap helps. Active buying spots and small-item counters are easier to understand before any price question."
+          "heading": "Walk Before Bargaining",
+          "body": "Take one lap before asking prices. The market is easier once you know which counters are active and which items actually interest you."
         },
         {
           "id": "small-price-questions",
           "heading": "Small Price Questions",
-          "body": "A small discount question is enough. If the answer is no, smile, thank them, and move on."
+          "body": "A small discount question is normal enough here. If the answer is no, smile, thank them, and move on without making the market feel tense."
         },
         {
           "id": "snacks-stay-secondary",
-          "heading": "Snacks Stay Secondary",
-          "body": "Treat food or drink here as a small stop. The steadier pull is everyday browsing."
+          "heading": "Why This Over Đồng Xuân",
+          "body": "Hàng Da is less of a big-market event than Đồng Xuân. The visit stays lighter when you want the market feeling without giving the whole afternoon to it."
         },
         {
           "id": "simple-visit-small-buy",
-          "heading": "Simple Visit, Small Buy",
-          "body": "If the market feels busy, the visit can stay simple: one lap, one question, one small buy."
+          "heading": "Leave With One Thing",
+          "body": "A successful visit can be modest: one useful phrase, one price check, one small buy, then back into the lanes."
         }
       ],
       "mentionedHereCandidates": [],
@@ -4035,7 +4046,7 @@
           "catalogId": "viet-family-city-hanoi-place-dong-xuan",
           "label": "Chợ Đồng Xuân",
           "relationship": "Old Quarter market scale contrast",
-          "displaySubtitle": "A bigger Old Quarter market when the stop should include crowd flow, food, and goods.",
+        "displaySubtitle": "A bigger Old Quarter market with crowd flow, food, and goods.",
           "reason": "Dong Xuan gives Hang Da a clear scale comparison inside the same central area.",
           "status": "render"
         }
@@ -4087,11 +4098,11 @@
       "city": "Hà Nội",
       "category": "Street",
       "pronunciation": "foh hang gai",
-      "travelerMoment": "Hàng Gai carries the Old Quarter's silk-street identity, where fabric windows, hotel foot traffic, and old trade names share the same narrow route.",
-      "storySpine": "Hang Gai earns its place through silk windows, hotel-side foot traffic, and a simple walking link between lake and lanes.",
+      "travelerMoment": "Hàng Gai shows the Old Quarter's silk-street identity, where fabric windows, hotel foot traffic, and old trade names share the same narrow route.",
+      "storySpine": "Hàng Gai earns its place through silk windows, hotel-side foot traffic, and a simple walking link between lake and lanes.",
       "intro": {
         "heading": "Silk Windows Set The Tone",
-        "body": "Hang Gai is an Old Quarter walking spine where silk signs, fabric displays, polished windows, scooters, and hotel-side foot traffic make the street legible."
+        "body": "Hàng Gai is an Old Quarter walking street where silk signs, fabric displays, polished windows, scooters, and hotel-side foot traffic make the route legible."
       },
       "usefulPhraseCards": [
         {
@@ -4127,7 +4138,7 @@
         },
         {
           "id": "a-short-stretch-carries-it",
-          "heading": "A Short Stretch Carries It",
+          "heading": "A Short Stretch Is Enough",
           "body": "A short section is enough. Hàng Gai sits well between lake-side walking, Old Quarter lanes, and a coffee break."
         },
         {
@@ -4162,7 +4173,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-hang-gai-street: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "2026-06-01 U.S.-traveler repair: replaced spine phrasing with walking-street language."
         ]
       },
       "score": {
@@ -4234,7 +4246,7 @@
         {
           "id": "base-before-flag",
           "heading": "Base Before Flag",
-          "body": "The flag is the obvious image, but the older stone, gates, and ground-level proportions carry more of the mood."
+          "body": "The flag is the obvious image, but the older stone, gates, and ground-level proportions create more of the mood."
         },
         {
           "id": "ba-dinh-stays-nearby",
@@ -4249,7 +4261,7 @@
         {
           "id": "compact-landmark-stop",
           "heading": "Compact Landmark Stop",
-          "body": "Courtyard, stone, and flagline need a slower eye. Give the old military scale room to register."
+          "body": "Courtyard, stone, and flagline need a slower eye. Give the old military scale time to sink in."
         }
       ],
       "mentionedHereCandidates": [],
@@ -4313,7 +4325,7 @@
       "storySpine": "The station connects Hanoi street life with longer train journeys.",
       "intro": {
         "heading": "The Capital Arrives In Yellow",
-        "body": "Hanoi Railway Station is a classic capital threshold: yellow facade, route boards, bags, shaded platforms, and streets leading back into old Hanoi."
+        "body": "Hanoi Railway Station is a classic arrival-and-departure stop: yellow facade, route boards, bags, shaded platforms, and streets leading back into old Hanoi."
       },
       "usefulPhraseCards": [
         {
@@ -4420,11 +4432,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "hibana by koki",
-      "travelerMoment": "Plan Hibana by Koki when dinner can be the evening: counter seats, close-up cooking, staff pacing, and a quieter room built around the meal.",
-      "storySpine": "Hibana adds a Japanese counter-dinner rhythm inside Hanoi, where the cooking view and pacing matter as much as the dishes.",
+      "travelerMoment": "Hibana by Koki is Hanoi's polished Japanese teppanyaki dinner: a small grill counter inside Capella Hanoi, a chef cooking in front of you, and one slow restaurant night built around the performance of the meal.",
+      "storySpine": "For U.S. readers, the mental model is refined hibachi-style dining: the chef works at the hot grill in front of the counter, but the mood is quieter, pricier, and more controlled.",
       "intro": {
-        "heading": "A Special-Occasion Counter Night",
-        "body": "Hibana by Koki is a special-occasion counter-style dinner in Hanoi: slower pacing, close-up cooking, and an evening that should not be squeezed between too many plans."
+        "heading": "A Japanese Teppanyaki Night",
+        "body": "Hibana by Koki is Japanese teppanyaki in Hanoi: the chef cooks at a hot grill in front of a small counter, like a refined hibachi-style dinner inside Capella Hanoi."
       },
       "usefulPhraseCards": [
         {
@@ -4454,24 +4466,24 @@
       ],
       "sections": [
         {
-          "id": "the-grill-is-the-view",
-          "heading": "The Grill Is The View",
-          "body": "The teppanyaki counter changes the room. You watch timing, heat, and hands at work before the plates arrive."
+          "id": "the-format-is-the-point",
+          "heading": "Know The Format",
+          "body": "Teppanyaki means the cooking happens on an iron grill in front of you. Here, that format becomes a controlled hotel-restaurant experience."
         },
         {
-          "id": "give-the-pace-room",
-          "heading": "Give The Pace Room",
-          "body": "The first minutes reveal whether the room, service pace, and menu style fit the evening."
+          "id": "the-splurge-case",
+          "heading": "Choose The Right Night",
+          "body": "Choose it for a date dinner, a celebration, or one theatrical restaurant experience in Hanoi after days of markets, phở, coffee, and street food."
         },
         {
-          "id": "the-night-should-stay-light",
-          "heading": "The Night Should Stay Light",
-          "body": "Plan something simple afterward: a short ride back, a low-key drink, or a short walk if the weather is kind."
+          "id": "the-right-night",
+          "heading": "Know The Tradeoff",
+          "body": "This is Japanese fine dining in Hanoi rather than a Vietnamese food stop. If the night needs local dishes or speed, choose a different listing."
         },
         {
-          "id": "counter-time-needs-room",
-          "heading": "Counter Time Needs Room",
-          "body": "If the evening already has too much in it, keep the counter dinner for a night with room around it."
+          "id": "questions-belong-early",
+          "heading": "Questions Belong Early",
+          "body": "Ask menu and recommendation questions early, especially about courses, allergies, alcohol, or budget comfort. A chef-led meal is easier when the table is clear from the start."
         }
       ],
       "mentionedHereCandidates": [],
@@ -4479,9 +4491,9 @@
         {
           "catalogId": "viet-family-city-hanoi-place-gia",
           "label": "Gia",
-          "relationship": "2025 star dinner contrast",
-          "displaySubtitle": "A contemporary Vietnamese dinner when a quieter room should become the evening.",
-          "reason": "Gia is a composed Hanoi dinner comparison for Hibana by Koki.",
+          "relationship": "Vietnamese fine-dining alternative",
+          "displaySubtitle": "A Vietnamese contemporary dinner when you want the splurge to stay rooted in Hanoi flavors.",
+          "reason": "Gia is the clearer comparison for travelers choosing between a Japanese teppanyaki splurge and a Vietnamese contemporary dinner in Hanoi.",
           "status": "render"
         }
       ],
@@ -4497,18 +4509,20 @@
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-hibana-by-koki: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
-          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
+          "2026-06-01 U.S.-traveler production repair: rewrote vague counter-dinner copy to explain Japanese teppanyaki in plain terms, bridge the American hibachi-style mental model, and state why/when to save the listing."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-        "reason": "Production food pass: Hibana now has a specific special-occasion Hanoi comparison."
+        "reason": "U.S.-traveler production repair: Hibana now explains teppanyaki format, save-worthy use case, and Vietnam-trip tradeoff in visible copy."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
         "Production intake source notes: guide Vietnam 2025",
-        "Official guide corporate 2025 release lists Hibana by Koki among retaining special-occasion recipients for Vietnam."
+        "Official guide corporate 2025 release lists Hibana by Koki among retaining special-occasion recipients for Vietnam.",
+        "2026-06-01 fact check: Michelin describes Hibana by Koki as teppanyaki, and ViaMichelin/guide material describes the small counter and chef-led cooking experience at Capella Hanoi."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -4537,7 +4551,7 @@
       "travelerMoment": "The mausoleum sits at the center of Vietnam's national memory, so the slow line, flags, and stone plaza change the mood of the whole Ba Đình visit.",
       "storySpine": "The mausoleum holds Ba Đình's formal public-memory center and changes the pace of the morning.",
       "intro": {
-        "heading": "A Formal Line On Ba Đình Square",
+        "heading": "Ho Chi Minh Mausoleum Line",
         "body": "Ho Chi Minh Mausoleum pulls Hanoi into a formal public mood: broad paving, flags, pale stone, and a slower line than the streets around it."
       },
       "usefulPhraseCards": [
@@ -4580,7 +4594,7 @@
         {
           "id": "the-exterior-still-counts",
           "heading": "The Exterior Still Counts",
-          "body": "A full interior visit may not fit every day. The square, guards, flags, and stone face still give the stop weight."
+        "body": "A full interior visit may not fit every day. The square, guards, flags, and stone face still make the place feel formal."
         },
         {
           "id": "formal-space-simple-plan",
@@ -4756,7 +4770,7 @@
       "city": "Hà Nội",
       "category": "Museum",
       "pronunciation": "nyah tu hoa lo",
-      "travelerMoment": "Hỏa Lò carries a heavy Hanoi memory inside a street wall. The yellow facade hides a much darker colonial and wartime story.",
+      "travelerMoment": "Hỏa Lò holds a heavy Hanoi memory inside a street wall. The yellow facade hides a much darker colonial and wartime story.",
       "storySpine": "Hoa Lo needs a careful voice because the building turns a central street into a difficult memory stop.",
       "intro": {
         "heading": "Heavy Rooms Behind Yellow",
@@ -4978,11 +4992,11 @@
       "city": "Hà Nội",
       "category": "Market",
       "pronunciation": "cho hom",
-      "travelerMoment": "Chợ Hôm keeps Hanoi's fabric-and-household market life visible, where bolts of cloth and tight aisles matter more than a polished shopping scene.",
-      "storySpine": "Hom Market is more specific when fabric, fluorescent light, tight aisles, and practical buying pace lead.",
+      "travelerMoment": "Chợ Hôm is Hanoi shopping at fabric-counter scale: bolts of cloth, tight aisles, household goods, quick price questions, and a market rhythm that feels more local than souvenir-focused.",
+      "storySpine": "Hom Market earns its place as a practical fabric-and-household browse for everyday buying inside central Hanoi, not polished souvenir shopping.",
       "intro": {
-        "heading": "Fabric First, Then Aisles",
-        "body": "Chợ Hôm feels practical before scenic: bolts of cloth, fluorescent light, bags moving through tight aisles, and shoppers who know what they came for."
+        "heading": "Fabric Counters, Real Errands",
+        "body": "Chợ Hôm is a central Hanoi market for fabric, clothing, household goods, and small price questions: fluorescent light, tight aisles, bolts of cloth, and shoppers who know what they came for."
       },
       "usefulPhraseCards": [
         {
@@ -5013,23 +5027,23 @@
       "sections": [
         {
           "id": "walk-before-pointing",
-          "heading": "Walk Before Pointing",
-          "body": "Do one slow pass before asking prices. The fabric area is easier once you see where people browse, cut, carry, and pay."
+          "heading": "Read The Fabric Floor",
+          "body": "Take one slow pass before asking prices. The fabric area makes more sense once you see where people browse, measure, cut, pick up purchases, and pay."
         },
         {
           "id": "small-purchases-fit-the-market",
-          "heading": "Small Purchases Fit The Market",
-          "body": "This is a good place for small practical buys or fabric curiosity, with no need to turn it into a pressure test."
+          "heading": "Keep The Ask Modest",
+          "body": "A small buy, a fabric question, or a quick price check is enough. The market is better as a real browse than a souvenir mission."
         },
         {
           "id": "cloth-not-checklist",
-          "heading": "Cloth, Not Checklist",
-          "body": "The clearest cue is the market flow: cloth, counters, fluorescent light, movement, and everyday shopping."
+          "heading": "Cloth Before Souvenirs",
+          "body": "Let cloth lead the visit before souvenirs. Counters, fluorescent light, movement, and everyday Hanoi shopping are the real cues."
         },
         {
           "id": "market-flow-first",
-          "heading": "Market Flow First",
-          "body": "Fabric stalls, food corners, and household errands set the visit. One practical browse is enough."
+          "heading": "Step Aside To Decide",
+          "body": "Aisles can tighten quickly. Step aside before checking photos, money, or translation so the buying flow can keep moving around you."
         }
       ],
       "mentionedHereCandidates": [],
@@ -5201,11 +5215,11 @@
       "city": "Hà Nội",
       "category": "Cafe",
       "pronunciation": "ca phe lam",
-      "travelerMoment": "Cà phê Lâm keeps Hanoi's older coffee-room culture close, where paintings, dark cups, and worn tables make the room feel collected over time.",
-      "storySpine": "Lam Cafe is a short old-café stop where plain coffee lets the room carry the memory.",
+      "travelerMoment": "Cà phê Lâm is an old Hanoi coffee room where dark cups, worn tables, wall paintings, and street noise at the door make the visit feel collected over time.",
+      "storySpine": "Lâm matters because the room holds Hanoi's older cafe culture: art on the walls, plain coffee, small tables, and a slower way to sit inside the Old Quarter day.",
       "intro": {
-        "heading": "Old Hanoi In A Coffee Room",
-        "body": "Cà phê Lâm is an old Hanoi coffee room: wall paintings, dark coffee, old tables, and a slow break from the street outside the door."
+        "heading": "Old Hanoi Coffee Room",
+        "body": "Cà phê Lâm is an old Hanoi coffee room with wall paintings, dark coffee, worn tables, and a street-door feeling that makes the city feel older for a few minutes."
       },
       "usefulPhraseCards": [
         {
@@ -5236,23 +5250,23 @@
       "sections": [
         {
           "id": "order-plain",
-          "heading": "Order Plain",
-          "body": "A simple black coffee or milk coffee fits the old-café pace. Sit long enough to notice the walls and tables."
+          "heading": "Keep The Coffee Classic",
+          "body": "A black coffee or milk coffee fits the room better than a complicated order. Let the cup be simple so the walls and tables can do more of the work."
         },
         {
           "id": "a-short-sit-not-work",
-          "heading": "A Short Sit, Not Work",
-          "body": "This is more satisfying as a short Hanoi breather than a long laptop stop. Twenty unhurried minutes between streets may be enough."
+          "heading": "Look At The Walls",
+          "body": "The paintings are part of why Lâm is memorable. Give the room a real look before treating it as just another coffee break."
         },
         {
           "id": "coffee-links-the-walk",
-          "heading": "Coffee Links The Walk",
-          "body": "Pair it with a nearby walk, gallery stop, or lake-side stretch if the day calls for a gentler middle."
+          "heading": "Between Old Quarter Streets",
+          "body": "Lâm makes sense between Old Quarter walking, a lake-side stretch, or a small gallery stop. It gives the day a quieter middle without turning into a long plan."
         },
         {
           "id": "the-room-leads",
-          "heading": "The Room Leads",
-          "body": "A simple drink is enough because the room carries the visit: paintings, worn tables, darker coffee, and a little distance from the street."
+          "heading": "Leave The Laptop Out",
+          "body": "Come for atmosphere and keep the work session elsewhere. Twenty unhurried minutes can be enough if you notice the room instead of rushing the cup."
         }
       ],
       "mentionedHereCandidates": [],
@@ -5277,7 +5291,8 @@
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-lam-cafe: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
-          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
+          "2026-06-01 U.S.-traveler repair: removed carry wording from old-cafe fallback line."
         ]
       },
       "score": {
@@ -5313,11 +5328,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "lamai garden",
-      "travelerMoment": "Choose Lamai Garden when Hanoi dinner should slow down around an ingredient-led table: garden calm, farm-minded ingredients, herbs, and warm light.",
-      "storySpine": "Lamai Garden's ingredient-led matters because the meal connects a garden-side room to farm-minded choices instead of treating sustainability as a label.",
+      "travelerMoment": "Choose Lamai Garden when Hanoi dinner should slow down around a garden-side Vietnamese table: farm-minded ingredients, herbs, warm light, and a calmer room.",
+      "storySpine": "Lamai Garden matters because the meal connects a garden-side room to farm-minded choices instead of treating sustainability as a label.",
       "intro": {
         "heading": "A Garden-Side Ingredient Dinner",
-        "body": "Lamai Garden is an ingredient-led dinner in Hanoi: garden-side calm, farm-minded ingredients, herbs, warm light, and a table that slows the night down."
+        "body": "Lamai Garden is a Vietnamese dinner in Hanoi with garden-side calm, farm-minded ingredients, herbs, warm light, and a table that slows the night down."
       },
       "usefulPhraseCards": [
         {
@@ -5347,19 +5362,19 @@
       ],
       "sections": [
         {
-          "id": "arrive-ready-to-slow-down",
+          "id": "arrive-without-rushing",
           "heading": "Arrive Without Rushing",
           "body": "The garden-side room starts the meal gently. Let the first minute settle before turning the night into menu decisions."
         },
         {
-          "id": "ask-around-the-farm-minded-menu",
-          "heading": "Ask Around The Farm-Minded Menu",
-          "body": "The ingredient-led is a reason to ask what is seasonal, local, or especially alive tonight. It makes the table feel more specific than a generic quiet dinner."
+          "id": "ask-around-the-menu",
+          "heading": "Ask Around The Menu",
+          "body": "Seasonal, local, or especially fresh dishes are worth asking about here. Those details make the table feel more specific than a generic quiet dinner."
         },
         {
           "id": "the-evening-needs-space",
           "heading": "The Evening Needs Space",
-          "body": "This dinner wants space around it. Avoid stacking too many plans afterward unless they are close and light."
+          "body": "This dinner wants space around it. Keep anything afterward close, light, and easy."
         },
         {
           "id": "slow-arrival-simple-plan",
@@ -5373,7 +5388,7 @@
           "catalogId": "viet-family-city-hanoi-place-tam-vi",
           "label": "Tầm Vị",
           "relationship": "garden dinner to northern-table contrast",
-          "displaySubtitle": "A special-occasion northern table when dinner should feel more home-style.",
+          "displaySubtitle": "A northern Vietnamese table when dinner should feel more home-style and rice-centered.",
           "reason": "Tam Vi gives Lamai Garden a recognized-dinner comparison with a different food memory.",
           "status": "render"
         }
@@ -5391,7 +5406,8 @@
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level food desire, support-vs-feature role, Mentioned Here, and related-card usefulness reviewed against V2.2.",
           "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
-          "guide food-desire continuation on 2026-05-30: visible copy now ties ingredient-led recognition to farm-minded ingredients and traveler ordering judgment."
+          "guide food-desire continuation on 2026-05-30: visible copy now ties ingredient-led recognition to farm-minded ingredients and traveler ordering judgment.",
+          "2026-06-01 U.S.-traveler repair: clarified ingredient-led/farm-minded language and removed abstract special-occasion shorthand from visible copy."
         ]
       },
       "score": {
@@ -5479,7 +5495,7 @@
         {
           "id": "short-stop-open-air",
           "heading": "Open Air, Then Onward",
-          "body": "This does not need a long visit. Shade, paths, and a few minutes of everyday city life are the draw."
+          "body": "This does not need a long visit. Shade, paths, and a few minutes of everyday city life are the reason to stop."
         }
       ],
       "mentionedHereCandidates": [],
@@ -5574,8 +5590,8 @@
       "sections": [
         {
           "id": "three-rooms-are-enough",
-          "heading": "A Few Rooms Can Carry It",
-          "body": "This kind of museum can reward a short visit. A few rooms and small details can carry more weight than a timeline."
+          "heading": "A Few Rooms Can Be Enough",
+          "body": "This kind of museum can reward a short visit. A few rooms and small details can matter more than a full timeline."
         },
         {
           "id": "names-before-dates",
@@ -5585,7 +5601,7 @@
         {
           "id": "between-louder-stops",
           "heading": "Between Louder Stops",
-          "body": "Pair it with a café, bookstore mood, or museum-heavy day instead of a rushed checklist."
+        "body": "A cafe, bookstore mood, or museum-heavy day gives the literary rooms a calmer place in the afternoon."
         },
         {
           "id": "carry-the-hush-forward",
@@ -5987,7 +6003,7 @@
       "travelerMoment": "Manzi is one of Hanoi's small creative rooms, where art, conversation, and a cafe table can sit inside one calmer address.",
       "storySpine": "Manzi feels right when the room leads and the coffee stays secondary.",
       "intro": {
-        "heading": "Art Before Coffee",
+        "heading": "Hanoi Art-Space Cafe",
         "body": "Manzi is a compact creative pause where artwork, still rooms, and a cafe table can sit in the same visit between louder streets."
       },
       "usefulPhraseCards": [
@@ -6442,11 +6458,11 @@
       "city": "Hà Nội",
       "category": "Cafe",
       "pronunciation": "ca phe nang",
-      "travelerMoment": "Năng Cafe keeps Hanoi's older coffee habit simple: small tables, strong cups, ice, sweetness, and a short stop that does not need decoration.",
-      "storySpine": "Ca phe Nang is a concrete Hanoi coffee break through strong cups, small tables, and a room that does not need decoration.",
+      "travelerMoment": "Năng Cafe is an old-Hanoi coffee sit for strong phin coffee, condensed milk, ice, small tables, and the quick street noise that makes the cup feel rooted in the city.",
+      "storySpine": "Năng adds an older, less-designed coffee room to the cafe list: the value is the cup, the table, and the ordinary Hanoi pace around it.",
       "intro": {
-        "heading": "Coffee As A Short Sit",
-        "body": "Nang Cafe keeps Hanoi's older coffee habit simple: small tables, strong cups, ice, sweetness, and a short sit that should stay light."
+        "heading": "Old-Hanoi Coffee Sit",
+        "body": "Năng Cafe is for a strong phin coffee in an older Hanoi room: small tables, condensed milk, ice, quick service, and street noise close enough to stay part of the cup."
       },
       "usefulPhraseCards": [
         {
@@ -6477,23 +6493,23 @@
       "sections": [
         {
           "id": "classic-glass-first",
-          "heading": "Classic Glass First",
-          "body": "Iced milk coffee brings the sweeter Hanoi cafe feel. Iced black coffee keeps the roast sharper and the stop cleaner."
+          "heading": "Choose The Coffee Mood",
+          "body": "Cà phê sữa đá brings the sweeter condensed-milk pull. Cà phê đen đá keeps the roast sharper when the day already has enough sugar."
         },
         {
           "id": "a-short-cool-down",
-          "heading": "A Short Cool-Down",
-          "body": "Pair it with Old Quarter walking, coffee streets, or a hot afternoon break. The stop gives more when it leaves the day a little air."
+          "heading": "Sit Long Enough To Notice",
+          "body": "Keep the cafe session short. Sit long enough for the ice, table, and nearby street noise to make the break feel like Hanoi rather than just caffeine."
         },
         {
           "id": "full-room-light-plan",
-          "heading": "Full Room, Light Plan",
-          "body": "If seating looks tight, do not force the visit. The coffee break matters more than winning a specific chair."
+          "heading": "When Seats Are Tight",
+          "body": "If the room is full, keep the plan loose. Hanoi has enough good coffee nearby that the break should not become a seating battle."
         },
         {
           "id": "classic-coffee-stop",
-          "heading": "Classic Coffee Stop",
-          "body": "Treat this as a classic Hanoi coffee pause. A simple drink, a small table, and nearby street noise do the work."
+          "heading": "Compare It With Egg Coffee",
+          "body": "After a sweeter egg-coffee stop, Năng pulls the focus back to a plainer glass, darker roast, and the cafe habit itself."
         }
       ],
       "mentionedHereCandidates": [],
@@ -6502,7 +6518,7 @@
           "catalogId": "viet-family-city-hanoi-place-lam-cafe",
           "label": "Cà phê Lâm",
           "relationship": "old Hanoi coffee-room comparison",
-          "displaySubtitle": "Another compact old cafe room when the stop is about coffee rhythm, not views.",
+        "displaySubtitle": "Another compact old cafe room centered on coffee rhythm rather than views.",
           "reason": "Lam is a closer old-cafe comparison for Năng than a themed coffee chain.",
           "status": "render"
         }
@@ -6594,7 +6610,7 @@
         },
         {
           "id": "a-measured-cultural-pairing",
-          "heading": "A Measured Cultural Pairing",
+        "heading": "Museum Rooms, Temple Courtyards",
           "body": "Pair it with the French Quarter, the Opera House area, or a coffee afterward when the day calls for an indoor stop."
         },
         {
@@ -6716,7 +6732,7 @@
         {
           "id": "shop-styles-vary",
           "heading": "Shop Styles Vary",
-          "body": "The dish name is the steady part. The specific shop, table, and frying pace decide the stop."
+        "body": "The dish name is the steady part. The specific shop, table, and frying pace shape the plate."
         }
       ],
       "mentionedHereCandidates": [],
@@ -6924,7 +6940,7 @@
         {
           "id": "look-up-at-doorways",
           "heading": "Look Up At Doorways",
-          "body": "Look twice before picking a cafe. A doorway, stairwell, or small upstairs room may carry more of the stop than the sidewalk sign."
+          "body": "Look twice before picking a cafe. A doorway, stairwell, or small upstairs room may matter more than the sidewalk sign."
         },
         {
           "id": "one-famous-cup-more-rooms",
@@ -7114,8 +7130,8 @@
       "travelerMoment": "Noi Bai begins the Hanoi handoff: bags, arrival doors, phone setup, pickup signs, and the ride toward the city.",
       "storySpine": "Noi Bai turns the planned Hanoi trip into a real arrival sequence.",
       "intro": {
-        "heading": "First Hanoi Steps",
-        "body": "Noi Bai is where Hanoi starts for most visitors: glass doors, waiting families, SIM cards, bags, and the first ride toward the city."
+        "heading": "Hanoi's Main Airport Arrival",
+        "body": "Noi Bai International Airport is where Hanoi starts for most visitors: glass doors, waiting families, SIM cards, bags, and the first ride toward the city."
       },
       "usefulPhraseCards": [
         {
@@ -7223,7 +7239,7 @@
       "category": "Station",
       "pronunciation": "ben xe nuoc ngam",
       "travelerMoment": "Nước Ngầm sits on Hanoi's southbound road edge, where counters, route boards, benches, and motorbike noise make travel logistics feel immediate.",
-      "storySpine": "Bến xe Nước Ngầm marks a travel-day handoff south of the center, with name recognition and station behavior doing most of the work.",
+      "storySpine": "Bến xe Nước Ngầm marks a travel-day handoff south of the center, where the station name, bags, tickets, and pickup points do most of the work.",
       "intro": {
         "heading": "A Practical Handoff",
         "body": "Nuoc Ngam Bus Station is a practical Hanoi travel handoff: route boards, counters, benches, motorbike noise, and the scramble before an onward bus."
@@ -7379,7 +7395,7 @@
         {
           "id": "coffee-stop",
           "heading": "Coffee Stop",
-          "body": "A short cafe stop can turn the neighborhood from noise into detail. Sit briefly, then return before the route gets ambitious."
+          "body": "A short cafe stop can turn the neighborhood from noise into detail. It gives the walk a softer pause before the route gets ambitious."
         },
         {
           "id": "street-detail-changes-fast",
@@ -7447,7 +7463,7 @@
       "travelerMoment": "A walking route works here because the Old Quarter was built from trade streets and short distances. The story appears between corners, not in one monument.",
       "storySpine": "Tuyến đi bộ Phố cổ should guide walking judgment without pretending to be a live itinerary or fixed route.",
       "intro": {
-        "heading": "One Route Over A Checklist",
+        "heading": "Old Quarter Walking Route",
         "body": "An Old Quarter walk is clearest as a loose line rather than a list: lake edge, street corner, coffee table, snack break, then a clean exit."
       },
       "usefulPhraseCards": [
@@ -7600,7 +7616,7 @@
         },
         {
           "id": "ba-dinh-pairing",
-          "heading": "Ba Đình Pairing",
+        "heading": "Ba Dinh, Then The Small Pagoda",
           "body": "The pagoda pairs naturally with nearby Ba Đình history places when the day still has patience for slower sacred ground."
         },
         {
@@ -7777,7 +7793,7 @@
       "city": "Hà Nội",
       "category": "Street",
       "pronunciation": "foh phan dinh phung",
-      "travelerMoment": "Phan Đình Phùng carries Hanoi's villa-and-tree-lined street memory, giving the city a long shaded breath beyond the Old Quarter lanes.",
+      "travelerMoment": "Phan Đình Phùng shows Hanoi's villa-and-tree-lined street memory, giving the city a long shaded breath beyond the Old Quarter lanes.",
       "storySpine": "Phố Phan Đình Phùng is a leafy Hanoi walk with yellow facades, shade, bicycles, and photo manners that stay gentle.",
       "intro": {
         "heading": "A Leafier Walk",
@@ -7812,7 +7828,7 @@
       "sections": [
         {
           "id": "shade-carries-it",
-          "heading": "Shade Carries It",
+          "heading": "Shade Is The Point",
           "body": "The trees are the reason to slow down. This walk is calmer than the Old Quarter and does not need to become another packed route."
         },
         {
@@ -7890,11 +7906,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "pho bat dan",
-      "travelerMoment": "Phở Bát Đàn comes from the Old Quarter broth-counter tradition: steam, beef, plain tables, and a room moving faster than a leisurely cafe.",
-      "storySpine": "Phở Bát Đàn is a specific pho stop centered on broth, steam, herbs, and a quick Old Quarter meal.",
+      "travelerMoment": "Phở Bát Đàn is an Old Quarter phở stop for a direct Hanoi beef noodle soup meal: broth steam, rice noodles, sliced beef, herbs, and a quick room rhythm.",
+      "storySpine": "Phở Bát Đàn gives Hanoi phở a plain Old Quarter shape: broth first, beef and noodles second, then the street again without making the meal complicated.",
       "intro": {
-        "heading": "Steam At The Table",
-        "body": "Pho Bat Dan is a focused Old Quarter bowl: steam over beef broth, herbs at the side, a plain table, and a meal kept short before the street pulls you back out."
+        "heading": "An Old Quarter Phở Bowl",
+        "body": "Phở is Vietnamese noodle soup; phở bò is the beef version. Phở Bát Đàn is an Old Quarter bowl built around broth steam, rice noodles, sliced beef, herbs, and a quick meal rhythm."
       },
       "usefulPhraseCards": [
         {
@@ -7925,8 +7941,8 @@
       "sections": [
         {
           "id": "bowl-before-table",
-          "heading": "Bowl Before Table",
-          "body": "Know the main move before sitting: beef pho, herbs, broth, then the short stop of eating it well."
+          "heading": "Know The Bowl First",
+          "body": "Start with the basic decision: beef phở, herbs, broth, and how much heat or lime you want. The meal gets easier once that is clear."
         },
         {
           "id": "broth-first",
@@ -7936,15 +7952,25 @@
         {
           "id": "short-meal",
           "heading": "Short Meal",
-          "body": "Steam, broth, and the street outside are the memory. A quick bowl can stay quick without feeling careless."
+          "body": "Steam, broth, and the street outside are the memory. A quick bowl can still feel complete when the broth is the point."
         },
         {
           "id": "room-habits-change",
-          "heading": "Room Habits Change",
-          "body": "Arrive ready to watch the room: staff rhythm, queue mood, broth steam, and the small decisions before ordering."
+          "heading": "Compare It With Gia Truyền",
+          "body": "Phở Gia Truyền is the clearer first baseline for many visitors. Bát Đàn is the plainer Old Quarter counter-feeling bowl to compare against it."
         }
       ],
-      "mentionedHereCandidates": [],
+      "mentionedHereCandidates": [
+        {
+          "label": "Phở bò ở Hà Nội",
+          "type": "dish",
+          "catalogId": "viet-family-city-hanoi-place-pho-bo",
+          "sourceText": "pho",
+          "displaySubtitle": "The Hanoi beef-noodle soup guide behind this Old Quarter bowl.",
+          "reason": "Mentioned here because: The Hanoi beef-noodle soup guide behind this Old Quarter bowl.",
+          "status": "render"
+        }
+      ],
       "relatedPlaceCandidates": [
         {
           "catalogId": "viet-family-city-hanoi-place-pho-gia-truyen",
@@ -8250,7 +8276,7 @@
       "travelerMoment": "Chicken phở keeps Hanoi's noodle-broth comfort but shifts it lighter, with shredded chicken, herbs, lime, and a cleaner break after richer meals.",
       "storySpine": "Pho ga is Hanoi's lighter noodle-broth memory, practical when chicken, steam, herbs, and lime sound better than beef.",
       "intro": {
-        "heading": "A Lighter Pho Bowl",
+        "heading": "Hanoi Chicken Pho Bowl",
         "body": "Chicken pho keeps the comfort of Hanoi pho but lands lighter: broth, rice noodles, shredded chicken, herbs, and lime without beef's heavier pull."
       },
       "usefulPhraseCards": [
@@ -8537,7 +8563,7 @@
         {
           "id": "beef-pho-baseline",
           "heading": "Beef Pho Baseline",
-          "body": "This is a straightforward beef-pho comparison, not the final word on Hanoi pho. Broth clarity, sliced beef, herbs, and room rhythm shape the stop."
+        "body": "This is a straightforward beef-pho comparison, not the final word on Hanoi pho. Broth clarity, sliced beef, herbs, and room rhythm shape the bowl."
         },
         {
           "id": "compare-without-chasing",
@@ -8624,11 +8650,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "pho gia truyen",
-      "travelerMoment": "Phở Gia Truyền is an Old Quarter beef-phở shop for broth steam, sliced beef, herbs, quick ordering, and a room moving at breakfast or lunch pace.",
-      "storySpine": "Phở Gia Truyền keeps the recognized Hanoi pho-shop memory in broth, steam, beef, herbs, and a room moving quickly.",
+      "travelerMoment": "Phở Gia Truyền is a well-known Old Quarter phở bò shop for a first Hanoi beef noodle soup baseline: clear broth, rice noodles, sliced beef, herbs, and a moving line.",
+      "storySpine": "Phở Gia Truyền gives first-time visitors a clear Hanoi phở reference point: beef broth, rice noodles, sliced beef, herbs, and a room built around one bowl.",
       "intro": {
-        "heading": "Old Quarter Steam And Beef",
-        "body": "Pho Gia Truyen is an Old Quarter beef-phở stop: broth steam, sliced beef, herbs, quick ordering, and a room that moves at breakfast or lunch speed."
+        "heading": "A First Hanoi Phở Baseline",
+        "body": "Phở bò is beef noodle soup, and Phở Gia Truyền is an easy Hanoi reference point: clear broth, rice noodles, sliced beef, herbs, and a room built around ordering one bowl."
       },
       "usefulPhraseCards": [
         {
@@ -8659,23 +8685,23 @@
       "sections": [
         {
           "id": "bowl-before-rush",
-          "heading": "Bowl Before Rush",
-          "body": "A straightforward pho order steadies the first minute when the room, staff, and other diners begin moving."
+          "heading": "Know The Beef Choices",
+          "body": "Start with phở bò: beef broth, rice noodles, herbs, and sliced beef. If options appear, they usually mean beef cut or cooking style."
         },
         {
           "id": "room-pace",
-          "heading": "Broth, Beef, Room Pace",
-          "body": "The memory is broth, beef, herbs, and the speed of a shop built around one bowl."
+          "heading": "Order With The Room",
+          "body": "The room may move quickly because the meal is focused. Choose the bowl, step with the line, and let the broth do the work."
         },
         {
           "id": "pho-comparison",
-          "heading": "Pho Comparison",
-          "body": "Compare broth, beef bite, herbs, and room pace if trying several Hanoi pho stops."
+          "heading": "Compare It With Bát Đàn",
+          "body": "Gia Truyền is the clearer first baseline. Bát Đàn is the plainer Old Quarter counter-feeling bowl when the comparison itself sounds interesting."
         },
         {
           "id": "shop-details-shift",
-          "heading": "Shop Details Shift",
-          "body": "Menu board, broth steam, staff rhythm, and queue mood tell you whether this is the bowl to commit to."
+          "heading": "Keep The Meal Focused",
+          "body": "This is a purposeful bowl rather than a long linger. Eat while the broth is hot, then keep the Old Quarter walk moving."
         }
       ],
       "mentionedHereCandidates": [
@@ -8712,7 +8738,8 @@
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for save-worthy trip-building instead of generic same-city matching.",
           "casual-value recognition patch on 2026-05-31: official 2025 PDF support added while keeping the Old Quarter pho-shop reason primary.",
-          "2026-05-31 U.S.-voice repair: removed explicit save wording and replaced broad counter phrasing in visible copy."
+          "2026-05-31 U.S.-voice repair: removed explicit save wording and replaced broad counter phrasing in visible copy.",
+          "2026-06-02 batch 006 recovery: strengthened first-time traveler baseline, comparison with Phở Bát Đàn, and concrete phở bò definition."
         ]
       },
       "score": {
@@ -8794,7 +8821,7 @@
         },
         {
           "id": "lake-pairing",
-          "heading": "Lake Pairing",
+        "heading": "Temple, Gate, Lake Edge",
           "body": "The temple sits well with a West Lake or Trúc Bạch walk, especially for a restorative stop."
         },
         {
@@ -8908,11 +8935,11 @@
           "heading": "Lake Morning",
           "body": "The market pairs naturally with a West Lake-side morning, coffee afterward, or a slow ride back into the city."
         },
-        {
-          "id": "morning-flow-changes",
-          "heading": "Morning Flow Changes",
-          "body": "Early hours, light browsing, and a working-market pace fit the scene: flowers moving, scooters passing, wet pavement underfoot."
-        }
+      {
+        "id": "morning-flow-changes",
+        "heading": "Morning Flow Changes",
+        "body": "Early hours bring flowers moving, scooters passing, wet pavement underfoot, and a working-market pace before breakfast."
+      }
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
@@ -8920,7 +8947,7 @@
           "catalogId": "viet-family-city-hanoi-place-long-bien-market",
           "label": "Chợ Long Biên",
           "relationship": "pre-dawn market counterpart",
-          "displaySubtitle": "The produce-market counterpart when the city is moving before breakfast.",
+          "displaySubtitle": "The produce-market comparison when the city is moving before breakfast.",
           "reason": "Long Bien keeps Quang Ba in the early-hours working-market route.",
           "status": "render"
         }
@@ -9086,8 +9113,8 @@
       "travelerMoment": "St. Joseph's Cathedral sets the old-lane city around Hoàn Kiếm in motion, where a Gothic facade, cafe tables, scooters, and church bells share one square.",
       "storySpine": "Nhà thờ Lớn Hà Nội is a specific sacred landmark, where services, square life, and old lanes affect how you visit.",
       "intro": {
-        "heading": "Old Lanes, Big Facade",
-        "body": "St. Joseph's Cathedral sits where old lanes, scooters, cafe umbrellas, and a tall stone facade press into one central square near Hoan Kiem."
+        "heading": "St. Joseph's Cathedral Square",
+        "body": "Saint Joseph's Cathedral square sits where old lanes, scooters, cafe umbrellas, and a tall stone facade press into one central opening near Hoan Kiem."
       },
       "usefulPhraseCards": [
         {
@@ -9197,7 +9224,7 @@
       "travelerMoment": "A street-food walk makes sense in Hanoi because meals often unfold across small stops: steam here, herbs there, low stools, then a sweet finish.",
       "storySpine": "Đi bộ ăn vặt Hà Nội guides food-walk behavior through small orders, short distances, and a route loose enough to follow the evening.",
       "intro": {
-        "heading": "A Meal Across Stops",
+        "heading": "Hanoi Street-Food Walk",
         "body": "A Hanoi street-food walk is a meal across short stops: steam from a pot, herbs on a tray, low stools, and a grill before the next corner."
       },
       "usefulPhraseCards": [
@@ -9309,7 +9336,7 @@
       "storySpine": "Ta Hien captures the Old Quarter evening lane through low stools, beer glasses, food smoke, and the moment to leave before compression turns tiring.",
       "intro": {
         "heading": "One Lap Before A Stool",
-        "body": "Ta Hien is the Old Quarter at evening volume: low stools, warm signs, food smoke, bia hơi, and groups deciding how long the night should go."
+        "body": "Tạ Hiện is the Old Quarter's beer street at evening volume: low stools, warm signs, food smoke, bia hơi, and groups deciding how long the night should go."
       },
       "usefulPhraseCards": [
         {
@@ -9416,11 +9443,11 @@
       "city": "Hà Nội",
       "category": "Restaurant",
       "pronunciation": "tam vi",
-      "travelerMoment": "Choose Tam Vi when Hanoi dinner should feel rooted and recognized: a special-occasion northern table with shared dishes, rice, wood, and an unhurried room.",
-      "storySpine": "Tam Vi brings Hanoi home-cooking memory into a restaurant room, where shared dishes and rice matter more than one showy plate.",
+      "travelerMoment": "Choose Tầm Vị when Hanoi dinner should feel rooted in northern Vietnamese home-style cooking: shared dishes, rice, warm wood, and an unhurried room.",
+      "storySpine": "Tầm Vị brings Hanoi home-cooking memory into a restaurant room, where shared dishes and rice matter more than one showy plate.",
       "intro": {
-        "heading": "A Special-Occasion Northern Table",
-        "body": "Tam Vi is a special-occasion northern meal in Hanoi: warm wood, shared dishes, rice at the center, and a room that feels chosen rather than squeezed between sights."
+        "heading": "A Northern Vietnamese Table",
+        "body": "Tầm Vị is a northern Vietnamese meal in Hanoi: warm wood, shared dishes, rice at the center, and a room that feels chosen rather than squeezed between sights."
       },
       "usefulPhraseCards": [
         {
@@ -9457,15 +9484,15 @@
         {
           "id": "questions-before-dishes",
           "heading": "Questions Before Dishes",
-          "body": "Settle pork, shellfish, spice, table size, and booking questions before the first dish arrives. After that, the meal can stay relaxed."
+          "body": "Pork, shellfish, spice, table size, and booking questions belong before the first dish arrives. After that, the meal can stay relaxed."
         },
         {
-          "id": "northern-home-table",
+          "id": "northern-home-table-mood",
           "heading": "Northern Home-Table Mood",
           "body": "The memory is gentler: wood, rice, familiar northern dishes, and a table that rewards slowing down."
         },
         {
-          "id": "one-meal-can-be-evening",
+          "id": "one-meal-can-be-the-evening",
           "heading": "One Meal Can Be The Evening",
           "body": "Do not rush in for the famous name alone. Give the meal enough space, then keep the rest of the night simple."
         }
@@ -9486,8 +9513,8 @@
           "catalogId": "viet-family-city-hanoi-place-gia",
           "label": "Gia",
           "relationship": "special-occasion dinner contrast",
-          "displaySubtitle": "A contemporary Hanoi dinner when a quieter room should become the plan.",
-          "reason": "Gia is the most relevant special-occasion Hanoi comparison for Tam Vi.",
+          "displaySubtitle": "A contemporary Vietnamese dinner when the Hanoi splurge should feel quieter and more composed.",
+          "reason": "Gia is the relevant Hanoi comparison when you want a more polished contemporary Vietnamese dinner.",
           "status": "render"
         }
       ],
@@ -9503,7 +9530,8 @@
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-tam-vi: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
           "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
-          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic."
+          "Food graph continuation on 2026-05-30: related-card language reviewed for specific trip-building logic.",
+          "2026-06-01 U.S.-traveler repair: replaced special-occasion shorthand with northern Vietnamese shared-table framing."
         ]
       },
       "score": {
@@ -9808,7 +9836,7 @@
         {
           "id": "one-drink-near-the-lake",
           "heading": "One Drink Near The Lake",
-          "body": "Egg coffee or coconut coffee fits the stop, but the bigger point is the small break near Hoan Kiem. One drink is plenty."
+        "body": "Egg coffee or coconut coffee fits here, but the bigger point is the small break near Hoan Kiem. One drink is plenty."
         }
       ],
       "mentionedHereCandidates": [],
@@ -9917,7 +9945,7 @@
         {
           "id": "a-simple-park-break",
           "heading": "A Simple Park Break",
-          "body": "Come here for trees, lake paths, and everyday Hanoi movement instead of more checklist time. A shaded lap can be the whole visit."
+        "body": "Come here for trees, lake paths, and everyday Hanoi movement. A shaded lap can be the whole visit."
         },
         {
           "id": "shade-is-the-reward",
@@ -10028,7 +10056,7 @@
         {
           "id": "a-brief-photo-is-enough",
           "heading": "A Brief Photo Is Enough",
-          "body": "A quick photo from a safe edge carries the memory. Crowding the track area makes the street worse for residents and staff."
+          "body": "A quick photo from a safe edge is enough for the memory. Crowding the track area makes the street worse for residents and staff."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10140,7 +10168,7 @@
         },
         {
           "id": "west-lake-pairing",
-          "heading": "West Lake Pairing",
+        "heading": "Pagoda Beside West Lake",
           "body": "The pagoda pairs naturally with a West Lake or Truc Bach outing. A short stop can still feel complete."
         }
       ],
@@ -10313,7 +10341,7 @@
       "city": "Hà Nội",
       "category": "Street",
       "pronunciation": "pho trang tien",
-      "travelerMoment": "Tràng Tiền Street carries the French Quarter's boulevard-and-shopfront pattern, linking books, crossings, plaza corners, and the lake-side edge.",
+      "travelerMoment": "Tràng Tiền Street shows the French Quarter's boulevard-and-shopfront pattern, linking books, crossings, plaza corners, and the lake-side edge.",
       "storySpine": "Trang Tien Street makes nearby landmarks feel connected instead of scattered, especially around Hoan Kiem and the Opera House side.",
       "intro": {
         "heading": "One French Quarter Line",
@@ -10363,7 +10391,7 @@
         },
         {
           "id": "lake-side-pairing",
-          "heading": "Lake-Side Pairing",
+        "heading": "Lake Side, Shopfronts, Trees",
           "body": "Place the street before or after Hoan Kiem, the Opera House side, or a short French Quarter walk."
         }
       ],
@@ -10573,11 +10601,11 @@
           "heading": "A Short Edge Is Enough",
           "body": "A short lake-edge walk is the point: water, shade, scooters, small tables, and the city softening around the view."
         },
-        {
-          "id": "cafes-belong-to-the-scene",
-          "heading": "Cafes Sit In The Scene",
-          "body": "A lakeside cafe is part of the place: traffic, water, and small tables sitting close together here."
-        },
+      {
+        "id": "cafes-belong-to-the-scene",
+        "heading": "Cafes At The Water Edge",
+        "body": "A lakeside cafe puts traffic, water, and small tables close together, with West Lake's larger edge nearby."
+      },
         {
           "id": "a-smaller-water-edge",
           "heading": "A Smaller Water Edge",
@@ -10882,11 +10910,11 @@
       "city": "Hà Nội",
       "category": "Attraction",
       "pronunciation": "vietnam art gallery",
-      "travelerMoment": "Vietnam Art Gallery offers a small Hanoi art-room stop, where a few works can slow the day without becoming a full museum plan.",
-      "storySpine": "Vietnam Art Gallery adds a small art stop to the day, with wall work, white space, gentler light, and a calmer room before traffic returns.",
+      "travelerMoment": "Vietnam Art Gallery is a small Hanoi art stop for visitors who want a quieter interior, a few works to notice, and a reset from traffic without committing to a full museum block.",
+      "storySpine": "The gallery gives the day a light cultural pause: enough art to change the texture, small enough to pair with coffee, lake walking, or a larger museum later.",
       "intro": {
-        "heading": "A Gallery Stop Between Streets",
-        "body": "Vietnam Art Gallery is a small interior in a Hanoi day: white walls, artwork, gentler light, and a slower room before traffic returns."
+        "heading": "Small Hanoi Art Stop",
+        "body": "Vietnam Art Gallery is a small Hanoi art stop: white walls, a few works to notice, gentler light, and a quiet interior before the street takes over again."
       },
       "usefulPhraseCards": [
         {
@@ -10918,22 +10946,22 @@
         {
           "id": "a-few-works-not-every-wall",
           "heading": "A Few Works, Not Every Wall",
-          "body": "A small gallery visit needs a limit. Pick a few pieces to really see, then leave while the room is still calm."
+          "body": "Do not try to turn a small gallery into a museum afternoon. Pick a few pieces, slow down around them, then leave while the room still feels calm."
         },
         {
           "id": "materials-and-light",
-          "heading": "Materials And Light",
-          "body": "Keep it lighter than a museum block. A cafe nearby or a short walk brings the city back in."
+          "heading": "Ask Before Photos",
+          "body": "Ask first before taking photos, especially in a smaller room where staff, wall labels, and other visitors are close."
         },
         {
           "id": "a-short-interior-stop",
-          "heading": "A Short Interior Stop",
-          "body": "This can be a small art stop between louder streets. A few works, surfaces, and light can be enough before returning outside."
+          "heading": "Pair It With Coffee",
+          "body": "Pair the gallery with a cafe, lake walk, or Fine Arts Museum plan. It gives the day a cultural pause without asking for the whole afternoon."
         },
         {
           "id": "a-light-stop",
-          "heading": "A Light Stop",
-          "body": "Let the visit stay small. Pair it with a cafe nearby or a short walk, then return to the city."
+          "heading": "Small Is The Advantage",
+          "body": "The scale is the point. You can add a little art to a street-heavy Hanoi day without losing the rest of the route."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10996,7 +11024,7 @@
       "travelerMoment": "Vietnam Central Circus gives Hanoi a family-night pace, where theatre doors, stage light, and street traffic outside make the evening shift feel clear.",
       "storySpine": "Vietnam Central Circus brings a live-night switch to Hanoi: families at the door, stage light inside, and street noise waiting outside.",
       "intro": {
-        "heading": "A Live Night",
+        "heading": "Vietnam Central Circus Night",
         "body": "Vietnam Central Circus is an evening switch: theatre doors, stage light, families arriving, and Hanoi street activity outside the venue."
       },
       "usefulPhraseCards": [
@@ -11325,7 +11353,7 @@
       "storySpine": "The theatre introduces a traditional stage form through masks, music, red curtain, and expectation-setting rather than generic nightlife.",
       "intro": {
         "heading": "A Traditional Stage Night",
-        "body": "Vietnam National Tuong Theatre opens a different Hanoi evening register: masks, red curtain, music, stage light, and a performance form that may seem unfamiliar before it clicks."
+        "body": "Vietnam National Tuồng Theatre opens a different Hanoi evening: masks, red curtain, music, stage light, and a stylized performance form that may feel unfamiliar before it clicks."
       },
       "usefulPhraseCards": [
         {
@@ -11356,7 +11384,7 @@
       "sections": [
         {
           "id": "stylized-is-the-point",
-          "heading": "Stylized is the draw",
+          "heading": "Stylized Is The Point",
           "body": "Tuồng can seem formal, loud, and symbolic. Watch masks, gestures, music, and movement before worrying about every plot detail."
         },
         {
@@ -11371,7 +11399,7 @@
         },
         {
           "id": "a-quieter-pairing",
-          "heading": "A Softer Pairing",
+        "heading": "Stage Night After A Cafe",
           "body": "An early dinner, the show, and a calm ride back give the performance room to stay strange and specific."
         }
       ],
@@ -11396,7 +11424,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate FINAL_PASS on 2026-05-27 for city-hanoi-place-vietnam-national-tuong-theatre: scene, story spine, first move, phrase mapping, and duplicate-body scan passed.",
-          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "2026-06-01 U.S.-traveler repair: replaced register/draw wording with plain performance-form explanation."
         ]
       },
       "score": {
@@ -11695,12 +11724,12 @@
         },
         {
           "id": "cafes-frame-the-stop",
-          "heading": "Cafes Hold The Stop",
+        "heading": "Cafes At The Water Edge",
           "body": "A drink gives the view somewhere to settle. Sit near the water, watch the scooters and walkers, then decide what comes next."
         },
         {
           "id": "one-shoreline-is-enough",
-          "heading": "One Shoreline Can Carry It",
+          "heading": "One Shoreline Can Be Enough",
           "body": "West Lake suits a day that needs water and distance. One edge, one drink, or one temple pairing can hold the visit."
         },
         {

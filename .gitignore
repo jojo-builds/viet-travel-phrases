@@ -35,6 +35,13 @@
 # Local orchestrator generated artifacts
 /orchestrator/artifacts/
 
+# Local city render-proof scratch captures. The durable proof screenshots live
+# in tracked screenshots-single-* folders; these rerun folders can be recreated.
+/docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-06-01-v2-2-global/*-screenshots/
+/docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-06-01-v2-2-global/*-test-screenshots/
+/docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-06-01-v2-2-global/*-derived-data/
+/docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-06-01-v2-2-global/xcodebuild-logs/*/
+
 # Local parallel feature worktrees
 /.worktrees/
 

@@ -368,7 +368,7 @@ enum PinnedAudioSpeedChromePolicy {
             return false
         }
 
-        return route == .home || hasStaticBackButton
+        return route == .home
     }
 
     static func state(
