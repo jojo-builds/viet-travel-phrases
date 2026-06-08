@@ -551,7 +551,7 @@
         {
           "id": "a-calm-museum-visit",
           "heading": "A Quieter Trip Outside District 1",
-        "body": "The museum sits farther out than the central District 1 stops. Give it a slower ride, a quieter hour, and space to look at garments instead of rushing between landmarks."
+          "body": "The museum sits farther out than the central District 1 stops. Give it a slower ride, a quieter hour, and space to look at garments instead of rushing between landmarks."
         },
         {
           "id": "a-break-from-street-heat",
@@ -664,7 +664,7 @@
         {
           "id": "boarding-before-skyline",
           "heading": "Boarding Comes First",
-        "body": "Boarding changes the river moment. Route, return point, and timing matter more here than the view alone."
+          "body": "Boarding changes the river moment. Route, return point, and timing matter more here than the view alone."
         },
         {
           "id": "a-boat-instead-of-a-car",
@@ -2669,7 +2669,7 @@
       "storySpine": "The shop adds old-Saigon texture to the phở set through more than the bowl: finding the alley, sitting in a room that has outlasted the boulevard noise, and knowing why the pastry side appears.",
       "intro": {
         "heading": "An Alley Pho Shop",
-          "body": "Phở Minh is a beef-phở shop tucked down a narrow Pasteur Street alley. The 1945 shop keeps breakfast close to old Saigon: small tables, broth, herbs, beef cuts, and an entrance you have to notice."
+        "body": "Phở Minh is a beef-phở shop tucked down a narrow Pasteur Street alley. The 1945 shop keeps breakfast close to old Saigon: small tables, broth, herbs, beef cuts, and an entrance you have to notice."
       },
       "usefulPhraseCards": [
         {
@@ -2736,7 +2736,7 @@
           "sourceText": "Pasteur Street",
           "displaySubtitle": "The street name that gets you close before the alley does the rest.",
           "reason": "Đường Pasteur gives Phở Minh the street name to know before the alley entrance.",
-          "status": "render"
+          "status": "do_not_render"
         }
       ],
       "relatedPlaceCandidates": [
@@ -3467,16 +3467,16 @@
         }
       ],
       "sections": [
-      {
-        "id": "the-pour-is-the-memory",
-        "heading": "Cloth Filter, Pot, Glass",
-        "body": "The room is small: cloth filter, pot, counter, glass, ice, sweetness, and a brewing method older than many newer cafe rooms around the city."
-      },
-      {
-        "id": "older-cafe-habit",
-        "heading": "An Older Cafe Habit",
-        "body": "Vợt coffee comes from the city's older cafe habits: strong, compact, and more about method than interior design."
-      },
+        {
+          "id": "the-pour-is-the-memory",
+          "heading": "Cloth Filter, Pot, Glass",
+          "body": "The room is small: cloth filter, pot, counter, glass, ice, sweetness, and a brewing method older than many newer cafe rooms around the city."
+        },
+        {
+          "id": "older-cafe-habit",
+          "heading": "An Older Cafe Habit",
+          "body": "Vợt coffee comes from the city's older cafe habits: strong, compact, and more about method than interior design."
+        },
         {
           "id": "ritual-before-menu",
           "heading": "Hot, Iced, Or Milk Coffee",
@@ -3965,7 +3965,7 @@
           "status": "render"
         },
         {
-          "catalogId": "viet-family-city-hcmc-place-thien-hau-temple",
+          "catalogId": "viet-family-city-hcmc-place-thien-hau-pagoda",
           "label": "Chùa Bà Thiên Hậu",
           "relationship": "cho-lon-temple-stop",
           "displaySubtitle": "A Chinese-Vietnamese temple in Chợ Lớn, with incense, gates, and a calmer stop after the market.",
@@ -4671,7 +4671,7 @@
           "catalogId": "viet-family-city-hcmc-place-cheo-leo-cafe",
           "label": "Cà phê Cheo Leo",
           "relationship": "older coffee room",
-        "displaySubtitle": "An older Saigon coffee room with cloth-filter ritual, a compact table, and a less branded mood.",
+          "displaySubtitle": "An older Saigon coffee room with cloth-filter ritual, a compact table, and a less branded mood.",
           "reason": "Links the branded Cộng branch to an older coffee-room stop with cloth-filter ritual.",
           "status": "render"
         }
@@ -4888,8 +4888,8 @@
         },
         {
           "id": "guide-explanation-first",
-          "heading": "Context Before Photos",
-          "body": "A few minutes of explanation can change the visit. The guide connects the ground, the trees, and the underground spaces to wartime daily life."
+          "heading": "Guide First, Photos Later",
+          "body": "Let the guide set the ground first. The dirt paths, trees, and tunnel openings read differently once the wartime daily-life pieces connect."
         },
         {
           "id": "a-serious-stop",
@@ -4898,8 +4898,8 @@
         },
         {
           "id": "outside-the-central-day",
-          "heading": "A Real Slot In The Day",
-          "body": "Địa đạo Củ Chi is outside central Saigon, so it usually takes a real slot in the day. Tours and cars should confirm which site they are visiting."
+          "heading": "Outside Central Saigon",
+          "body": "Địa đạo Củ Chi sits outside central Saigon, so tours and cars should confirm which site they are visiting before the day leaves the city."
         }
       ],
       "mentionedHereCandidates": [],
@@ -6362,11 +6362,11 @@
           "heading": "Snacks Sit Nearby",
           "body": "The nearby food streets are part of the memory here. After the flower lane, small snacks turn the visit toward a neighborhood evening rather than a quick photo stop."
         },
-      {
-        "id": "timing-changes-the-scene",
-        "heading": "Flowers, Rain, Delivery Hour",
-        "body": "Stock, rain, delivery timing, and the hour of the day all change what you see in the working flower lane."
-      }
+        {
+          "id": "timing-changes-the-scene",
+          "heading": "Flowers, Rain, Delivery Hour",
+          "body": "Stock, rain, delivery timing, and the hour of the day all change what you see in the working flower lane."
+        }
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
@@ -6577,7 +6577,6 @@
       ],
       "sections": [
         {
-          "id": "inside-the-formal-shell",
           "id": "inside-official-rooms",
           "heading": "Inside The Official Rooms",
           "body": "Reception halls, meeting spaces, command areas, and lower corridors make the building less like a facade photo and more like a former state site."
@@ -6690,7 +6689,6 @@
       ],
       "sections": [
         {
-          "id": "incense-before-detail",
           "id": "incense-and-altars",
           "heading": "Incense Before Photos",
           "body": "The first impression is usually incense, low voices, and people praying. Look first, then decide where photos are respectful."
@@ -7386,7 +7384,7 @@
         },
         {
           "id": "a-formal-table-mood",
-        "heading": "Chợ Lớn Around The Table",
+          "heading": "Chợ Lớn Around The Table",
           "body": "Chợ Lớn is the neighborhood around shops, temples, streets, and everyday Chinese-Vietnamese eating. Long Triều is the polished hotel-table version."
         }
       ],
@@ -7495,12 +7493,12 @@
         {
           "id": "popular-orders",
           "heading": "Cafe, Shop, Brunch",
-        "body": "The menu can move from eggs Benedict and brunch boards to squid ink crab pasta, premium pho, and salt caramel coffee. That range can turn a coffee break into a real meal."
+          "body": "The menu can move from eggs Benedict and brunch boards to squid ink crab pasta, premium pho, and salt caramel coffee. That range can turn a coffee break into a real meal."
         },
         {
           "id": "morning-room-easiest",
           "heading": "Morning Gives It Room",
-        "body": "The room is easiest before the day gets too full. Coffee and brunch can start a Thao Dien morning before design shops, errands, or a slower ride back."
+          "body": "The room is easiest before the day gets too full. Coffee and brunch can start a Thao Dien morning before design shops, errands, or a slower ride back."
         },
         {
           "id": "a-branch-not-a-one-off",
@@ -7696,7 +7694,7 @@
       "storySpine": "The temple adds a Tamil Hindu thread to central Saigon, different from the nearby churches, pagodas, markets, and hotel streets.",
       "intro": {
         "heading": "A Hindu Temple Near Ben Thanh",
-          "body": "Mariamman Hindu Temple is a colorful Hindu temple tucked into central Saigon street life. Traffic sits at the doorway; incense, worship, and a lower-lit room wait inside."
+        "body": "Mariamman Hindu Temple is a colorful Hindu temple tucked into central Saigon street life. Traffic sits at the doorway; incense, worship, and a lower-lit room wait inside."
       },
       "usefulPhraseCards": [
         {
@@ -7728,7 +7726,7 @@
         {
           "id": "color-before-worship",
           "heading": "Mariamman And The Tamil Thread",
-        "body": "The temple is dedicated to Mariamman, a goddess worshipped in South India. That Tamil Hindu thread separates it from nearby pagodas and churches."
+          "body": "The temple is dedicated to Mariamman, a goddess worshipped in South India. That Tamil Hindu thread separates it from nearby pagodas and churches."
         },
         {
           "id": "a-short-central-stop",
@@ -8079,11 +8077,11 @@
           "heading": "Helmet, Pickup, Rain Plan",
           "body": "Seat comfort, pickup point, rain plan, diet limits, and helmet size set the tone because the motorbike is part of the meal."
         },
-      {
-        "id": "small-bites-add-up",
-        "heading": "Small Bites Add Up",
-        "body": "The night usually builds through several tastes rather than one large plate. Motorbike hops between tables keep traffic, alleys, and food in the same Saigon rhythm."
-      }
+        {
+          "id": "small-bites-add-up",
+          "heading": "Small Bites Add Up",
+          "body": "The night usually builds through several tastes rather than one large plate. Motorbike hops between tables keep traffic, alleys, and food in the same Saigon rhythm."
+        }
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
@@ -8924,8 +8922,8 @@
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
         "Production intake source notes: local dish source",
         "2026-06-02 source note: treated as a city food-style page rather than a named venue; visible copy avoids fake restaurant history.",
-    "Vietnam Coracle and Saigon street-food sources describe ốc as a social night-out/shellfish style in Saigon, with shellfish plates, beer/cold drinks, and streets such as Vĩnh Khánh associated with the format.",
-    "2026-06-03 Batch 032 recovery: clarified that ốc can mean a broader shellfish/snail night-table style in Saigon, added Vĩnh Khánh as a known quán ốc street reference, and replaced the spice card with bundled allergy audio."
+        "Vietnam Coracle and Saigon street-food sources describe ốc as a social night-out/shellfish style in Saigon, with shellfish plates, beer/cold drinks, and streets such as Vĩnh Khánh associated with the format.",
+        "2026-06-03 Batch 032 recovery: clarified that ốc can mean a broader shellfish/snail night-table style in Saigon, added Vĩnh Khánh as a known quán ốc street reference, and replaced the spice card with bundled allergy audio."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -9047,8 +9045,8 @@
       },
       "sourceNotes": [
         "V2.2 app-detail record created during the hard reset; older city-library material stayed as background evidence.",
-    "A O Show named-performance evidence reviewed for the ticketed bamboo-circus page.",
-    "2026-06-03 Batch 032 recovery: replaced walking phrase cards with ticket, meeting-point, and entrance cards, and clarified the Lune / bamboo-circus framing without fixed schedule or price claims."
+        "A O Show named-performance evidence reviewed for the ticketed bamboo-circus page.",
+        "2026-06-03 Batch 032 recovery: replaced walking phrase cards with ticket, meeting-point, and entrance cards, and clarified the Lune / bamboo-circus framing without fixed schedule or price claims."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -9114,7 +9112,7 @@
         },
         {
           "id": "lam-son-square-cluster",
-        "heading": "Lam Son Square Around It",
+          "heading": "Lam Son Square Around It",
           "body": "The square, Đồng Khởi, Nguyễn Huệ, and old hotel fronts all sit close together here. The Opera House gives that cluster a clear center."
         },
         {
@@ -9198,7 +9196,7 @@
       "storySpine": "Pasteur is a long central street with Pasteur Institute history, food rooms, office doorways, shaded crossings, and address-level navigation.",
       "intro": {
         "heading": "A Street Of Doorways",
-      "body": "Pasteur Street is clearest when you have a real address, with the street name as only one part of the route. Your doorway might be a phở room, cafe, office, or the Pasteur Institute area between District 1 and District 3."
+        "body": "Pasteur Street is clearest when you have a real address, with the street name as only one part of the route. Your doorway might be a phở room, cafe, office, or the Pasteur Institute area between District 1 and District 3."
       },
       "usefulPhraseCards": [
         {
@@ -9234,13 +9232,13 @@
         },
         {
           "id": "a-name-with-older-city-details",
-        "heading": "Pasteur Institute On The Street",
+          "heading": "Pasteur Institute On The Street",
           "body": "The Pasteur Institute gives the street a name beyond one cafe or restaurant. The street is more address corridor than sightseeing boulevard."
         },
         {
           "id": "slow-down-before-crossing",
           "heading": "Food, Offices, Small Entrances",
-        "body": "Pasteur is the kind of street where the address may be a famous phở room, a small cafe, or an office entrance. The right doorway matters more than walking the whole street."
+          "body": "Pasteur is the kind of street where the address may be a famous phở room, a small cafe, or an office entrance. The right doorway matters more than walking the whole street."
         },
         {
           "id": "crossings-and-shade",
@@ -9281,8 +9279,8 @@
       "sourceNotes": [
         "V2.2 app-detail record created during the hard reset; older city-library material stayed as background evidence.",
         "Visit HCMC portal and prior city-library evidence reviewed for the Pasteur Street address page.",
-    "Historical v2.2 pilot evidence from docs/design/city-pages/V2_2_RENDER_PILOT_REDO_APP_DETAILS.json was used only as background.",
-    "2026-06-03 Batch 032 recovery: sharpened Pasteur as an address street, added District 1 / District 3 corridor detail, and replaced broad navigation cards with address/map-oriented cards."
+        "Historical v2.2 pilot evidence from docs/design/city-pages/V2_2_RENDER_PILOT_REDO_APP_DETAILS.json was used only as background.",
+        "2026-06-03 Batch 032 recovery: sharpened Pasteur as an address street, added District 1 / District 3 corridor detail, and replaced broad navigation cards with address/map-oriented cards."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -9398,7 +9396,7 @@
       "sourceNotes": [
         "V2.2 app-detail record created during the hard reset; older city-library material stayed as background evidence.",
         "Local dish evidence reviewed for the Saigon phá lấu page.",
-    "2026-06-03 Batch 032 recovery: kept offal warning plain for U.S. readers, softened broth generality, and added common organ-cut examples without exoticizing the dish."
+        "2026-06-03 Batch 032 recovery: kept offal warning plain for U.S. readers, softened broth generality, and added common organ-cut examples without exoticizing the dish."
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -9871,7 +9869,7 @@
         },
         {
           "id": "arches-before-photos",
-        "heading": "Arches Before Photos",
+          "heading": "Arches Before Photos",
           "body": "The hall can fill quickly. The arches and old maps are worth noticing even when a perfectly empty photo is not possible."
         }
       ],
@@ -10097,7 +10095,7 @@
         },
         {
           "id": "small-buy-expectations",
-        "heading": "Jackets, Bags, Small Gifts",
+          "heading": "Jackets, Bags, Small Gifts",
           "body": "A jacket, bag, textile, or small gift can make sense after a few quick price, size, and material questions."
         }
       ],
@@ -10393,7 +10391,7 @@
       "storySpine": "A river boat creates a slower path across the water, while public WaterBus rides, sightseeing loops, dinner cruises, and private tours can all use different piers and return rules.",
       "intro": {
         "heading": "A Slower Route By Water",
-          "body": "A Saigon River boat ride slows the center down: boarding pier, bridge line, riverbank, skyline, and the return point all matter before the boat pulls away."
+        "body": "A Saigon River boat ride slows the center down: boarding pier, bridge line, riverbank, skyline, and the return point all matter before the boat pulls away."
       },
       "usefulPhraseCards": [
         {
@@ -10516,7 +10514,7 @@
       "storySpine": "Saigon Skydeck is a vertical map, connecting river, rooftops, streets, and towers in one quick glance.",
       "intro": {
         "heading": "Saigon Observation Deck",
-          "body": "Saigon Skydeck is the indoor observation-deck version of the city: glass, rooftops, the river bend, tiny traffic, and central streets laid out below."
+        "body": "Saigon Skydeck is the indoor observation-deck version of the city: glass, rooftops, the river bend, tiny traffic, and central streets laid out below."
       },
       "usefulPhraseCards": [
         {
@@ -10756,7 +10754,7 @@
       "storySpine": "It adds a women-led social-history stop to Saigon through clothing, wartime stories, family objects, and regional life instead of another outdoor landmark.",
       "intro": {
         "heading": "Southern Women’s History Indoors",
-          "body": "Southern Women's Museum is a quieter Saigon museum about southern Vietnamese women: family life, wartime roles, clothing, photographs, textiles, and everyday objects."
+        "body": "Southern Women's Museum is a quieter Saigon museum about southern Vietnamese women: family life, wartime roles, clothing, photographs, textiles, and everyday objects."
       },
       "usefulPhraseCards": [
         {
@@ -10869,7 +10867,7 @@
       "storySpine": "Saigon's street-food energy often moves as a route, with several small stops carrying the night instead of one restaurant table.",
       "intro": {
         "heading": "Saigon Street-Food Evening",
-          "body": "A Saigon street-food evening is small tables, steam, herbs, scooters, and quick bites, with the next seat or smell always a few steps away."
+        "body": "A Saigon street-food evening is small tables, steam, herbs, scooters, and quick bites, with the next seat or smell always a few steps away."
       },
       "usefulPhraseCards": [
         {
@@ -10990,7 +10988,7 @@
       "storySpine": "The mall gives modern central Saigon an indoor refuge without pretending to be an old-market or heritage stop.",
       "intro": {
         "heading": "Saigon Centre Indoor Break",
-          "body": "Takashimaya Saigon Centre is the central mall breather: cool air, food counters, clean bathrooms, storefronts, and an easy place to meet before going back outside."
+        "body": "Takashimaya Saigon Centre is the central mall breather: cool air, food counters, clean bathrooms, storefronts, and an easy place to meet before going back outside."
       },
       "usefulPhraseCards": [
         {
@@ -11031,7 +11029,7 @@
         },
         {
           "id": "bathrooms-snacks-cool-air",
-        "heading": "Bathrooms, Snacks, Cool Air",
+          "heading": "Bathrooms, Snacks, Cool Air",
           "body": "Bathrooms, snacks, card-friendly counters, and predictable exits can reset the day before the group steps back into traffic."
         },
         {
@@ -11046,7 +11044,7 @@
           "catalogId": "viet-family-city-hcmc-place-vincom-dong-khoi",
           "label": "Vincom Đồng Khởi",
           "relationship": "downtown-mall-comfort",
-        "displaySubtitle": "Another polished District 1 mall for air-con, restrooms, and easy regrouping.",
+          "displaySubtitle": "Another polished District 1 mall for air-con, restrooms, and easy regrouping.",
           "reason": "Vincom is another downtown mall for air-con, restrooms, and regrouping near the District 1 shopping loop.",
           "status": "render"
         }
@@ -11103,7 +11101,7 @@
       "storySpine": "Tan Son Nhat turns Saigon from itinerary into arrival doors, bags, ride signs, warm air, and traffic.",
       "intro": {
         "heading": "First Saigon Steps",
-          "body": "Tan Son Nhat is where Saigon often starts: immigration, bags, signs, warm air, pickup points, and the first ride into city traffic."
+        "body": "Tan Son Nhat is where Saigon often starts: immigration, bags, signs, warm air, pickup points, and the first ride into city traffic."
       },
       "usefulPhraseCards": [
         {
@@ -11218,7 +11216,7 @@
       "storySpine": "Tao Dan keeps central Saigon leafy and public, with ordinary park life still audible beside the surrounding streets.",
       "intro": {
         "heading": "Green Shade In The Center",
-          "body": "Tao Dan Park gives central Saigon real shade: tree canopy, walkers, benches, morning movement, and traffic still humming outside the green edge."
+        "body": "Tao Dan Park gives central Saigon real shade: tree canopy, walkers, benches, morning movement, and traffic still humming outside the green edge."
       },
       "usefulPhraseCards": [
         {
@@ -11330,7 +11328,7 @@
       "storySpine": "Thao Dien gives Saigon a quieter riverside neighborhood after central streets and markets.",
       "intro": {
         "heading": "A River-Side Saigon Break",
-          "body": "Thảo Điền sits across the river with cafes, restaurants, side streets, galleries, and a softer pace than the District 1 hotel core."
+        "body": "Thảo Điền sits across the river with cafes, restaurants, side streets, galleries, and a softer pace than the District 1 hotel core."
       },
       "usefulPhraseCards": [
         {
@@ -11479,7 +11477,7 @@
         },
         {
           "id": "cho-lon-pairing",
-        "heading": "Chợ Lớn Streets Nearby",
+          "heading": "Chợ Lớn Streets Nearby",
           "body": "Outside the gate, Chợ Lớn keeps going with Chinese characters, medicine shops, markets, and trade-first streets. District 1 sits close on the map but moves to a different rhythm."
         },
         {
@@ -11706,7 +11704,7 @@
         },
         {
           "id": "waterfront-pairing",
-        "heading": "Museum Rooms Near The River",
+          "heading": "Museum Rooms Near The River",
           "body": "After the museum rooms, the nearby waterfront brings the day back outside. It is an easy pairing before walking toward coffee, shopping, or the hotel."
         },
         {
@@ -11780,7 +11778,7 @@
       "storySpine": "It gives District 3 a recognizable social marker and a softer way to sit inside Saigon movement.",
       "intro": {
         "heading": "A Roundabout That Became A Meeting Spot",
-      "body": "Turtle Lake is a District 3 traffic-circle landmark where fountain edges, snack stalls, scooter noise, and evening meetups blur together. Most visits are a short evening sit with fountain light, street food, and movement on every side."
+        "body": "Turtle Lake is a District 3 traffic-circle landmark where fountain edges, snack stalls, scooter noise, and evening meetups blur together. Most visits are a short evening sit with fountain light, street food, and movement on every side."
       },
       "usefulPhraseCards": [
         {
@@ -11817,12 +11815,12 @@
         {
           "id": "evening-is-the-point",
           "heading": "After Dark At The Fountain",
-      "body": "After dark, the fountain, lights, and snack stalls give the traffic circle a softer edge. In plain daylight, the road noise can take over the visit."
+          "body": "After dark, the fountain, lights, and snack stalls give the traffic circle a softer edge. In plain daylight, the road noise can take over the visit."
         },
         {
           "id": "a-short-sit-then-onward",
           "heading": "A Short Sit, Then Onward",
-      "body": "A few minutes at the fountain can turn into a District 3 waypoint: sit, snack, then move toward coffee, dinner, or another short walk nearby."
+          "body": "A few minutes at the fountain can turn into a District 3 waypoint: sit, snack, then move toward coffee, dinner, or another short walk nearby."
         },
         {
           "id": "traffic-stays-close",
@@ -11835,9 +11833,9 @@
         {
           "catalogId": "viet-family-city-hcmc-place-district-3",
           "label": "Quận 3",
-      "relationship": "district-3-nearby-streets",
-      "displaySubtitle": "The District 3 neighborhood around the traffic circle, with cafes, side streets, and evening snacks within a short walk.",
-      "reason": "District 3 surrounds Turtle Lake with cafes, side streets, and evening snack paths.",
+          "relationship": "district-3-nearby-streets",
+          "displaySubtitle": "The District 3 neighborhood around the traffic circle, with cafes, side streets, and evening snacks within a short walk.",
+          "reason": "District 3 surrounds Turtle Lake with cafes, side streets, and evening snack paths.",
           "status": "render"
         }
       ],
@@ -11862,7 +11860,7 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-      "Source intake notes: existing-city-library; Visit HCMC portal"
+        "Source intake notes: existing-city-library; Visit HCMC portal"
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -11889,10 +11887,10 @@
       "category": "Shopping",
       "pronunciation": "vincom dong khoi",
       "travelerMoment": "The mall enters the city-center day through indoor food counters, storefronts, cool air, nearby traffic, and simple meetups.",
-  "storySpine": "The mall gives Đồng Khởi a modern indoor reset without competing with the street, river, or older landmarks.",
+      "storySpine": "The mall gives Đồng Khởi a modern indoor reset without competing with the street, river, or older landmarks.",
       "intro": {
         "heading": "Indoor Shelter On Đồng Khởi",
-      "body": "Vincom Center Dong Khoi is a central District 1 mall where cool air, storefronts, food counters, bathrooms, and meetup points sit just off the street. It is the indoor reset between heat, rain, and sidewalk-heavy plans."
+        "body": "Vincom Center Dong Khoi is a central District 1 mall where cool air, storefronts, food counters, bathrooms, and meetup points sit just off the street. It is the indoor reset between heat, rain, and sidewalk-heavy plans."
       },
       "usefulPhraseCards": [
         {
@@ -11932,14 +11930,14 @@
           "body": "Rain, heat, tired feet, and bathroom needs can decide the next hour. A quick snack or card-friendly errand here keeps the group from drifting across town."
         },
         {
-      "id": "mall-air-market-energy",
-        "heading": "Mall Air, Market Energy",
+          "id": "mall-air-market-energy",
+          "heading": "Mall Air, Market Energy",
           "body": "Air-conditioning, bathrooms, snacks, card-friendly shopping, and easy meetups can reset the street plan without sending the group across town."
         },
         {
           "id": "back-to-the-center",
           "heading": "Back To The Center",
-        "body": "The mall keeps the reset close to the original District 1 plan. When everyone is ready, Dong Khoi, the Opera House area, and the river side of the center are still right outside."
+          "body": "The mall keeps the reset close to the original District 1 plan. When everyone is ready, Dong Khoi, the Opera House area, and the river side of the center are still right outside."
         }
       ],
       "mentionedHereCandidates": [],
@@ -11949,7 +11947,7 @@
           "label": "Saigon Centre",
           "relationship": "downtown-mall-reset",
           "displaySubtitle": "A nearby mall option when food court, department-store browsing, and regrouping matter.",
-      "reason": "Saigon Centre pairs with Vincom for central food courts, browsing, and regrouping.",
+          "reason": "Saigon Centre pairs with Vincom for central food courts, browsing, and regrouping.",
           "status": "render"
         }
       ],
@@ -11965,7 +11963,7 @@
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
-      "Food graph continuation on 2026-05-30: related-card language checked against the actual downtown errand and regrouping moment."
+          "Food graph continuation on 2026-05-30: related-card language checked against the actual downtown errand and regrouping moment."
         ]
       },
       "score": {
@@ -11975,7 +11973,7 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-      "Source intake notes: Vincom Dong Khoi named-place source"
+        "Source intake notes: Vincom Dong Khoi named-place source"
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -12045,7 +12043,7 @@
           "body": "The tower rises above the lawns, so photos and directions often orbit around it. Look back from the paths and the park reads as Bình Thạnh skyline, not market-street Saigon."
         },
         {
-      "id": "evening-by-the-river",
+          "id": "evening-by-the-river",
           "heading": "Evening By The River",
           "body": "At dusk, the lawns fill with families, walkers, cooler air, and tower light. The river edge gives the evening a little room after traffic and indoor time."
         },
@@ -12087,7 +12085,7 @@
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",
-      "Source intake notes: Vinhomes Central Park named-place source"
+        "Source intake notes: Vinhomes Central Park named-place source"
       ],
       "status": "FINAL_PASS",
       "review": {
@@ -12302,14 +12300,14 @@
           "HCMC hard-reset v2.2 city voice gate passed on 2026-05-27.",
           "Phrase cards use existing audio-backed catalog phrases; no one-off place-name phrase was newer.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
-        "Food pass on 2026-05-30: item-level coffee desire, upstairs setting, Mentioned Here, and related-card trip value checked against V2.2.",
-        "2026-06-02 specificity repair: clarified specialty-coffee reason, upstairs setting, and difference from quick street coffee."
+          "Food pass on 2026-05-30: item-level coffee desire, upstairs setting, Mentioned Here, and related-card trip value checked against V2.2.",
+          "2026-06-02 specificity repair: clarified specialty-coffee reason, upstairs setting, and difference from quick street coffee."
         ]
       },
       "score": {
         "value": 30,
         "max": 30,
-      "reason": "Workshop Coffee now has an older Saigon coffee-room pairing instead of a generic related cafe."
+        "reason": "Workshop Coffee now has an older Saigon coffee-room pairing instead of a generic related cafe."
       },
       "sourceNotes": [
         "Hard-reset v2.2 source object; prior city-library material was intake evidence only, not approval authority.",

@@ -69,8 +69,8 @@
         },
         {
           "id": "a-district-name-with-a-plan",
-          "heading": "A District Name With A Plan",
-          "body": "On a mixed Ba Dinh day, the formal landmark can sit beside a garden, lake edge, cafe, or hotel-side walk. That contrast is the district."
+          "heading": "Civic Avenues, Softer Corners",
+          "body": "On a mixed Ba Dinh day, a formal landmark can sit beside a garden, lake edge, cafe, or hotel-side walk. That contrast is the district."
         },
         {
           "id": "evening-changes-the-street",
@@ -171,7 +171,7 @@
       "sections": [
         {
           "id": "scale-is-the-point",
-        "heading": "Open Pavement And Flags",
+          "heading": "Open Pavement And Flags",
           "body": "The square can make Hanoi feel like a capital beyond old streets and coffee rooms. Open pavement, flags, and official facades do most of the work."
         },
         {
@@ -820,11 +820,11 @@
           "heading": "Tạ Hiện Is Louder",
           "body": "Tạ Hiện is the easier name to recognize, but a quieter corner can make the ritual feel less like nightlife and more like Hanoi street life."
         },
-      {
-        "id": "one-glass-can-be-enough",
-        "heading": "One Glass Can Be Enough",
-        "body": "Bia hoi is light, but it is still alcohol. One cold glass can be plenty for the stool, snack, and sidewalk pause."
-      }
+        {
+          "id": "one-glass-can-be-enough",
+          "heading": "One Glass Can Be Enough",
+          "body": "Bia hoi is light, but it is still alcohol. One cold glass can be plenty for the stool, snack, and sidewalk pause."
+        }
       ],
       "mentionedHereCandidates": [
         {
@@ -834,7 +834,7 @@
           "sourceText": "Tạ Hiện",
           "displaySubtitle": "The louder Old Quarter beer-street version of the same social ritual.",
           "reason": "The bia hơi copy names Tạ Hiện as the recognizable louder version.",
-          "status": "render"
+          "status": "do_not_render"
         }
       ],
       "relatedPlaceCandidates": [
@@ -931,7 +931,7 @@
       "sections": [
         {
           "id": "shade-beats-checklist",
-        "heading": "Shade, Paths, Benches",
+          "heading": "Shade, Paths, Benches",
           "body": "The garden does not need to become a task. A little shade, a short walk, and a bench can cool the day."
         },
         {
@@ -1165,7 +1165,7 @@
         },
         {
           "id": "add-ons-stay-secondary",
-        "heading": "Obama Table, Grill Smoke",
+          "heading": "Obama Table, Grill Smoke",
           "body": "The Obama-Bourdain story explains why the place is known. It should not replace the real reason to go: a clear Hanoi lunch with pork, broth, herbs, and noodles."
         },
         {
@@ -1605,7 +1605,7 @@
         {
           "id": "one-numbered-stall",
           "heading": "One Numbered Stall",
-        "body": "The address is part of the memory. Keep the meal centered on bún chả first, spring roll if needed, then back into the Hàng Than lanes."
+          "body": "The address is part of the memory. Keep the meal centered on bún chả first, spring roll if needed, then back into the Hàng Than lanes."
         },
         {
           "id": "where-it-sits",
@@ -3099,7 +3099,7 @@
         },
         {
           "id": "more-than-another-outdoor-stop",
-        "heading": "Stilt Houses, Textiles, Courtyard",
+          "heading": "Stilt Houses, Textiles, Courtyard",
           "body": "Come for cultural context, not just open-air structures. The museum brings communities from across Vietnam into a Hanoi day."
         },
         {
@@ -3211,7 +3211,7 @@
         {
           "id": "good-between-indoor-stops",
           "heading": "Good Between Indoor Stops",
-        "body": "The area pairs well with a cafe, gallery, hotel pickup, or a short walk before dinner. Wider streets and older facades change the pace after tight lanes."
+          "body": "The area pairs well with a cafe, gallery, hotel pickup, or a short walk before dinner. Wider streets and older facades change the pace after tight lanes."
         },
         {
           "id": "a-change-of-city-scale",
@@ -3525,7 +3525,7 @@
       "storySpine": "Gia Lam matters as a practical station-name stop, with bags, station signs, and onward streets in view.",
       "intro": {
         "heading": "A Smaller Rail Edge",
-      "body": "Gia Lam Railway Station is a smaller rail edge of Hanoi: signs, benches, bags, and station doors before the city resumes outside the gate."
+        "body": "Gia Lam Railway Station is a smaller rail edge of Hanoi: signs, benches, bags, and station doors before the city resumes outside the gate."
       },
       "usefulPhraseCards": [
         {
@@ -4046,7 +4046,7 @@
           "catalogId": "viet-family-city-hanoi-place-dong-xuan",
           "label": "Chợ Đồng Xuân",
           "relationship": "Old Quarter market scale contrast",
-        "displaySubtitle": "A bigger Old Quarter market with crowd flow, food, and goods.",
+          "displaySubtitle": "A bigger Old Quarter market with crowd flow, food, and goods.",
           "reason": "Dong Xuan gives Hang Da a clear scale comparison inside the same central area.",
           "status": "render"
         }
@@ -4594,7 +4594,7 @@
         {
           "id": "the-exterior-still-counts",
           "heading": "The Exterior Still Counts",
-        "body": "A full interior visit may not fit every day. The square, guards, flags, and stone face still make the place feel formal."
+          "body": "A full interior visit may not fit every day. The square, guards, flags, and stone face still make the place feel formal."
         },
         {
           "id": "formal-space-simple-plan",
@@ -5601,7 +5601,7 @@
         {
           "id": "between-louder-stops",
           "heading": "Between Louder Stops",
-        "body": "A cafe, bookstore mood, or museum-heavy day gives the literary rooms a calmer place in the afternoon."
+          "body": "A cafe, bookstore mood, or museum-heavy day gives the literary rooms a calmer place in the afternoon."
         },
         {
           "id": "carry-the-hush-forward",
@@ -6161,8 +6161,8 @@
         },
         {
           "id": "dish-variation",
-          "heading": "Dish Variation",
-          "body": "Different shops can lean crisp, brothy, or saucy. The name starts the bowl rather than explaining all of it."
+          "heading": "Crisp, Brothy, Or Saucy",
+          "body": "The opening decision is texture. Ask what style the shop serves, then let glass noodles, eel, herbs, broth, or sauce set the bowl."
         }
       ],
       "mentionedHereCandidates": [],
@@ -6518,7 +6518,7 @@
           "catalogId": "viet-family-city-hanoi-place-lam-cafe",
           "label": "Cà phê Lâm",
           "relationship": "old Hanoi coffee-room comparison",
-        "displaySubtitle": "Another compact old cafe room centered on coffee rhythm rather than views.",
+          "displaySubtitle": "Another compact old cafe room centered on coffee rhythm rather than views.",
           "reason": "Lam is a closer old-cafe comparison for Năng than a themed coffee chain.",
           "status": "render"
         }
@@ -6606,11 +6606,11 @@
         {
           "id": "one-lane-is-enough",
           "heading": "One Lane Is Enough",
-          "body": "Pick ancient objects, architecture, or historical context before entering deeply. A focused visit is easier than trying to absorb every case."
+          "body": "Choose one thread before the rooms open up: ancient objects, the ochre building, or the galleries that show Vietnam before the street pulls you back outside."
         },
         {
           "id": "a-measured-cultural-pairing",
-        "heading": "Museum Rooms, Temple Courtyards",
+          "heading": "Museum Rooms, Temple Courtyards",
           "body": "Pair it with the French Quarter, the Opera House area, or a coffee afterward when the day calls for an indoor stop."
         },
         {
@@ -6732,7 +6732,7 @@
         {
           "id": "shop-styles-vary",
           "heading": "Shop Styles Vary",
-        "body": "The dish name is the steady part. The specific shop, table, and frying pace shape the plate."
+          "body": "The dish name is the steady part. The specific shop, table, and frying pace shape the plate."
         }
       ],
       "mentionedHereCandidates": [],
@@ -7184,11 +7184,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-ba-dinh-district",
-          "label": "Quận Ba Đình",
-          "relationship": "civic-district contrast",
-          "displaySubtitle": "The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
-          "reason": "Related because: The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
+          "catalogId": "viet-family-city-hanoi-place-long-bien-bridge",
+          "label": "Cầu Long Biên",
+          "relationship": "working-river vantage",
+          "displaySubtitle": "The steel bridge view for Red River haze, market traffic, motorbikes, and old metal above the water.",
+          "reason": "Long Bien Bridge is the clearest river vantage named in the Red River copy and gives the page a concrete next card.",
           "status": "render"
         }
       ],
@@ -7616,7 +7616,7 @@
         },
         {
           "id": "ba-dinh-pairing",
-        "heading": "Ba Dinh, Then The Small Pagoda",
+          "heading": "Ba Dinh, Then The Small Pagoda",
           "body": "The pagoda pairs naturally with nearby Ba Đình history places when the day still has patience for slower sacred ground."
         },
         {
@@ -8151,8 +8151,8 @@
       "travelerMoment": "Phở Bò Lâm is for a deliberate Hanoi pho bowl built around beef cuts, chew, and broth together.",
       "storySpine": "Pho Bo Lam gets its specificity from beef texture, tendon, broth, herbs, and shop pace rather than guide-list status alone.",
       "intro": {
-        "heading": "A Pho Stop",
-        "body": "Pho Bo Lam is a beef-pho stop for broth, rice noodles, herbs, and the deeper chew of tendon or richer beef cuts."
+        "heading": "Beef Cuts, Broth, Shop Pace",
+        "body": "Pho Bo Lam is a Hanoi beef-pho stop for broth, rice noodles, herbs, and the deeper chew of tendon or richer beef cuts at a room-paced table."
       },
       "usefulPhraseCards": [
         {
@@ -8193,13 +8193,13 @@
         },
         {
           "id": "pho-comparison",
-          "heading": "Pho Comparison",
-          "body": "If trying more than one pho stop, compare broth, beef cuts, herbs, and room pace without turning lunch into homework."
+          "heading": "Broth, Beef, Room Pace",
+          "body": "If trying more than one pho stop, compare broth, beef cuts, herbs, and the way the room moves without turning lunch into homework."
         },
         {
           "id": "shop-details-shift",
-          "heading": "Shop Details Shift",
-          "body": "Check the signs, queue, and room before making the bowl the fixed plan. Beef pho needs a shop that feels alive."
+          "heading": "Look For A Lively Room",
+          "body": "Check the signs, queue, and tables before making the bowl the fixed plan. Beef pho needs a room that feels alive."
         }
       ],
       "mentionedHereCandidates": [
@@ -8563,7 +8563,7 @@
         {
           "id": "beef-pho-baseline",
           "heading": "Beef Pho Baseline",
-        "body": "This is a straightforward beef-pho comparison, not the final word on Hanoi pho. Broth clarity, sliced beef, herbs, and room rhythm shape the bowl."
+          "body": "This is a straightforward beef-pho comparison, not the final word on Hanoi pho. Broth clarity, sliced beef, herbs, and room rhythm shape the bowl."
         },
         {
           "id": "compare-without-chasing",
@@ -8821,7 +8821,7 @@
         },
         {
           "id": "lake-pairing",
-        "heading": "Temple, Gate, Lake Edge",
+          "heading": "Temple, Gate, Lake Edge",
           "body": "The temple sits well with a West Lake or Trúc Bạch walk, especially for a restorative stop."
         },
         {
@@ -8935,11 +8935,11 @@
           "heading": "Lake Morning",
           "body": "The market pairs naturally with a West Lake-side morning, coffee afterward, or a slow ride back into the city."
         },
-      {
-        "id": "morning-flow-changes",
-        "heading": "Morning Flow Changes",
-        "body": "Early hours bring flowers moving, scooters passing, wet pavement underfoot, and a working-market pace before breakfast."
-      }
+        {
+          "id": "morning-flow-changes",
+          "heading": "Morning Flow Changes",
+          "body": "Early hours bring flowers moving, scooters passing, wet pavement underfoot, and a working-market pace before breakfast."
+        }
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
@@ -9056,11 +9056,11 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hanoi-place-ba-dinh-district",
-          "label": "Quận Ba Đình",
-          "relationship": "civic-district contrast",
-          "displaySubtitle": "The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
-          "reason": "Related because: The district where formal avenues soften into cafes, hotels, shade, and everyday blocks.",
+          "catalogId": "viet-family-city-hanoi-place-long-bien-bridge",
+          "label": "Cầu Long Biên",
+          "relationship": "working-river vantage",
+          "displaySubtitle": "The steel bridge view for Red River haze, market traffic, motorbikes, and old metal above the water.",
+          "reason": "Long Bien Bridge is the clearest river vantage named in the Red River copy and gives the page a concrete next card.",
           "status": "render"
         }
       ],
@@ -9836,7 +9836,7 @@
         {
           "id": "one-drink-near-the-lake",
           "heading": "One Drink Near The Lake",
-        "body": "Egg coffee or coconut coffee fits here, but the bigger point is the small break near Hoan Kiem. One drink is plenty."
+          "body": "Egg coffee or coconut coffee fits here, but the bigger point is the small break near Hoan Kiem. One drink is plenty."
         }
       ],
       "mentionedHereCandidates": [],
@@ -9945,7 +9945,7 @@
         {
           "id": "a-simple-park-break",
           "heading": "A Simple Park Break",
-        "body": "Come here for trees, lake paths, and everyday Hanoi movement. A shaded lap can be the whole visit."
+          "body": "Come here for trees, lake paths, and everyday Hanoi movement. A shaded lap can be the whole visit."
         },
         {
           "id": "shade-is-the-reward",
@@ -10168,7 +10168,7 @@
         },
         {
           "id": "west-lake-pairing",
-        "heading": "Pagoda Beside West Lake",
+          "heading": "Pagoda Beside West Lake",
           "body": "The pagoda pairs naturally with a West Lake or Truc Bach outing. A short stop can still feel complete."
         }
       ],
@@ -10391,7 +10391,7 @@
         },
         {
           "id": "lake-side-pairing",
-        "heading": "Lake Side, Shopfronts, Trees",
+          "heading": "Lake Side, Shopfronts, Trees",
           "body": "Place the street before or after Hoan Kiem, the Opera House side, or a short French Quarter walk."
         }
       ],
@@ -10601,11 +10601,11 @@
           "heading": "A Short Edge Is Enough",
           "body": "A short lake-edge walk is the point: water, shade, scooters, small tables, and the city softening around the view."
         },
-      {
-        "id": "cafes-belong-to-the-scene",
-        "heading": "Cafes At The Water Edge",
-        "body": "A lakeside cafe puts traffic, water, and small tables close together, with West Lake's larger edge nearby."
-      },
+        {
+          "id": "cafes-belong-to-the-scene",
+          "heading": "Cafes At The Water Edge",
+          "body": "A lakeside cafe puts traffic, water, and small tables close together, with West Lake's larger edge nearby."
+        },
         {
           "id": "a-smaller-water-edge",
           "heading": "A Smaller Water Edge",
@@ -10945,8 +10945,8 @@
       "sections": [
         {
           "id": "a-few-works-not-every-wall",
-          "heading": "A Few Works, Not Every Wall",
-          "body": "Do not try to turn a small gallery into a museum afternoon. Pick a few pieces, slow down around them, then leave while the room still feels calm."
+          "heading": "One Wall At A Time",
+          "body": "Let one painting or small group hold attention before moving on. In a compact gallery, color, paper, canvas, and wall labels do more work than a long route."
         },
         {
           "id": "materials-and-light",
@@ -10960,8 +10960,8 @@
         },
         {
           "id": "a-light-stop",
-          "heading": "Small Is The Advantage",
-          "body": "The scale is the point. You can add a little art to a street-heavy Hanoi day without losing the rest of the route."
+          "heading": "A Short Art Pause",
+          "body": "The room adds a calm art note to a street-heavy Hanoi day: compact walls, a photo-permission question, then the city outside again."
         }
       ],
       "mentionedHereCandidates": [],
@@ -11399,7 +11399,7 @@
         },
         {
           "id": "a-quieter-pairing",
-        "heading": "Stage Night After A Cafe",
+          "heading": "Stage Night After A Cafe",
           "body": "An early dinner, the show, and a calm ride back give the performance room to stay strange and specific."
         }
       ],
@@ -11724,7 +11724,7 @@
         },
         {
           "id": "cafes-frame-the-stop",
-        "heading": "Cafes At The Water Edge",
+          "heading": "Cafes At The Water Edge",
           "body": "A drink gives the view somewhere to settle. Sit near the water, watch the scooters and walkers, then decide what comes next."
         },
         {

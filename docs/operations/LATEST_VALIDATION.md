@@ -10,6 +10,45 @@ Authority lane: latest durable native iOS validation evidence
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
 
+## Branch-Local City Copy Final Production Gate
+
+Current branch-local evidence for `codex/city-copy-final-production-gate`, based on base `083c87301`:
+
+- isolated worktree: `/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-copy-final-production-gate`
+- `main` was not edited by this pass
+- cold visible-copy audit: `520 / 520` PASS, `0` HARD_BLOCK, `0` SAFE_FIX_NOW
+- edited V2.2 source pages: `31`
+- anti-thinning result: phrase cards preserved exactly on edited pages; duplicate rendered cards were hidden with `do_not_render`; wrong related targets were retargeted instead of deleted
+- edited-page render proof: `31 / 31` PASS, `93 / 93` top/middle/bottom screenshots
+- combined current render proof remains `520 / 520` current pages PASS, `1560` current screenshots, `0` current failures, `0` missing manifest pages
+- final read-only subagent review: `PASS_WITH_RISKS`
+
+Fresh command evidence from this branch:
+
+- `jq empty content-draft/viet/city-library/app-detail-v2-2/*.json` passed
+- `node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production` passed: `520` pass, `0` revise, `0` fail
+- `node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js` passed with no failures
+- `node native-ios/scripts/audit-viet-city-listing-what-why.js` passed: `520` entries, `0` findings, `0` hard-review pages
+- `node native-ios/scripts/validate-viet-city-copy.js` passed: `5` hubs, `520` city noun pages, `520` unique target heroes
+- `node native-ios/scripts/validate-viet-city-library.js` passed: `826` pages
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed: SQLite fixture OK, `1778` canonical pages, `0` release-blocking missing-audio rows
+- `node native-ios/scripts/audit-viet-listing-production-qa.js` passed: `1778` pages, `0` blockers, `0` majors
+- `git diff --check` passed
+- `xcodebuild build-for-testing -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,id=7C386DD3-4BF1-4A34-A918-768C43CD1258' -derivedDataPath /Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/city-copy-final-production-gate/DerivedData/SpeakLocalNative CODE_SIGNING_ALLOWED=NO` passed with `** TEST BUILD SUCCEEDED **`
+
+Branch-local receipt files:
+
+- `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/final-copy-production-gate-2026-06-08/final-copy-production-gate-receipt-2026-06-08.md`
+- `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/final-copy-production-gate-2026-06-08/anti-thinning-ledger-2026-06-08.md`
+- `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/final-copy-production-gate-2026-06-08/cold-visible-copy-audit-2026-06-08.jsonl`
+- `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-06-08-city-copy-final-gate/README.md`
+
+Accepted risks:
+
+- `viet-family-city-danang-place-ba-na-hills` still renders through the existing special/native projection labels `About` and `Good to know`, even though the V2.2 source copy has stronger headings and validates cleanly.
+- source candidate `reason` fields still include inherited `Related because` / `Mentioned here because` prefixes in some entries, but generated/native rendered resources strip those prefixes and no literal prefix appears in `native-ios/Resources/viet-authored-listing-pages.json`.
+- existing non-copy risks remain: `500` missing-audio priority rows, `700` planned missing-audio rows with `0` release-blocking missing-audio rows, and `1` duplicate hero section hidden at render time.
+
 ## Current City Listings V2.2 Main Evidence
 
 Current `main` evidence after fast-forwarding `feature/city-listings-production-ready`, based on head `2b92f4a9c`:

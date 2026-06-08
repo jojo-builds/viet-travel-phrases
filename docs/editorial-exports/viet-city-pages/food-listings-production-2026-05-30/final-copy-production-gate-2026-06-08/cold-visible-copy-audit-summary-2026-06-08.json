@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-06-08T07:16:18.655Z",
+  "branch": "codex/city-copy-final-production-gate",
+  "baseCommit": "083c87301e7bf235a99d68cdc4ec2e8eb39340e1",
+  "auditedPages": 520,
+  "classifications": {
+    "PASS": 520
+  },
+  "hardBlocks": 0,
+  "safeFixNow": 0,
+  "acceptedTemporaryRisk": 1,
+  "acceptedTemporaryRiskNote": "Inherited source candidate reasons still use Related because / Mentioned here because prefixes in 160 visible source candidates across 147 pages, but generated/native rendered resources strip those prefixes; no literal prefix appears in native-ios/Resources/viet-authored-listing-pages.json.",
+  "inheritedSourceRationalePrefixes": {
+    "relatedBecause": 136,
+    "mentionedHereBecause": 24,
+    "pages": 147
+  },
+  "changedPages": 31,
+  "editedRenderManifestPages": 31,
+  "missingEditedManifestIDs": []
+}

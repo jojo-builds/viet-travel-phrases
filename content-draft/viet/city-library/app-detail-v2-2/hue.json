@@ -1224,7 +1224,7 @@
           "relationship": "Hue snack contrast",
           "displaySubtitle": "A softer steamed-rice-cake table before the crunch of bánh khoái.",
           "reason": "Banh beo gives banh khoai a softer steamed-rice-cake contrast before the crunchier pancake table.",
-          "status": "render"
+          "status": "do_not_render"
         }
       ],
       "verificationFlags": [],
@@ -1433,7 +1433,7 @@
         },
         {
           "id": "slow-shoes-low-voice",
-        "heading": "Courtyard Pace",
+          "heading": "Courtyard Pace",
           "body": "Move gently through gates and courtyards. The easiest cue is the pace of people already worshipping or passing through."
         },
         {
@@ -1907,7 +1907,7 @@
           "relationship": "city-bowl to market-bowl link",
           "displaySubtitle": "A Dong Ba-linked version when the bowl should sit inside a market day.",
           "reason": "Dong Ba bun bo is the natural named/contextual follow-on for the broader dish page.",
-          "status": "render"
+          "status": "do_not_render"
         }
       ],
       "verificationFlags": [],
@@ -2007,7 +2007,7 @@
         },
         {
           "id": "river-food-context",
-        "heading": "Clams, Herbs, River Edge",
+          "heading": "Clams, Herbs, River Edge",
           "body": "Clam dishes connect Hue eating to the rivers and lagoons around the city, so the bowl is tied to local water and everyday food."
         }
       ],
@@ -2328,7 +2328,7 @@
       "sections": [
         {
           "id": "street-not-attraction",
-        "heading": "Food, Cafes, Pickup Points",
+          "heading": "Food, Cafes, Pickup Points",
           "body": "This practical street name helps when food, cafes, crossings, and pickup points start blending together."
         },
         {
@@ -2970,7 +2970,7 @@
       "storySpine": "The center adds scale to Hue's culture: not royal architecture, but rooms, objects, light, and one artist's memory.",
       "intro": {
         "heading": "A Hue Sculptor's Rooms",
-          "body": "Diem Phung Thi Art Center is a small Hue art stop for the sculptor's donated work, quiet gallery rooms, and a break from monument-heavy streets."
+        "body": "Diem Phung Thi Art Center is a small Hue art stop for the sculptor's donated work, quiet gallery rooms, and a break from monument-heavy streets."
       },
       "usefulPhraseCards": [
         {
@@ -3011,8 +3011,8 @@
         },
         {
           "id": "a-short-visit-is-enough",
-          "heading": "A Short Visit Works",
-          "body": "A few rooms do the job: look closely at the forms, then step back into the city with a different Hue memory."
+          "heading": "Forms Change As You Look",
+          "body": "The rooms are compact, so stay with the repeated shapes long enough to see them turn into figures, symbols, and quiet rhythm before stepping back outside."
         },
         {
           "id": "artist-before-landmark",
@@ -3269,7 +3269,7 @@
           "relationship": "market-to-city-bowl link",
           "displaySubtitle": "The city bowl to choose when the market lap turns into a meal.",
           "reason": "Bun bo Hue is a stronger food-route link for Dong Ba than a generic market comparison.",
-          "status": "render"
+          "status": "do_not_render"
         }
       ],
       "verificationFlags": [],
@@ -3401,7 +3401,7 @@
           "relationship": "market setting context",
           "displaySubtitle": "The market setting that turns this bowl into a Dong Ba food memory.",
           "reason": "Dong Ba is the setting context for this bun bo page.",
-          "status": "render"
+          "status": "do_not_render"
         }
       ],
       "verificationFlags": [],
@@ -3604,7 +3604,7 @@
         {
           "id": "heritage-route-breather",
           "heading": "Between The Bigger Tombs",
-          "body": "Place it between Tu Duc, Khai Dinh, or Citadel visits when the day needs trees, walls, and less spectacle."
+          "body": "Place it between Tu Duc, Khai Dinh, or Citadel visits when trees, walls, and a quieter royal site would give the day more breathing room."
         },
         {
           "id": "slow-enough-to-notice",
@@ -4040,16 +4040,16 @@
         }
       ],
       "sections": [
-      {
-        "id": "lanes-and-hotel-edges",
-        "heading": "Chi Lang Street Fronts",
-        "body": "Chi Lăng is the name to recognize here. The street carries older Hue commerce, narrow fronts, small cafes, and daily traffic close to the Citadel wall."
-      },
-      {
-        "id": "evening-walk-frame",
-        "heading": "Life Beside The Royal Walls",
-        "body": "Gia Hội shows the city that kept living beside the royal walls: houses, schools, shops, coffee, and errands instead of another ticket window."
-      },
+        {
+          "id": "lanes-and-hotel-edges",
+          "heading": "Chi Lang Street Fronts",
+          "body": "Chi Lăng is the name to recognize here. The street carries older Hue commerce, narrow fronts, small cafes, and daily traffic close to the Citadel wall."
+        },
+        {
+          "id": "evening-walk-frame",
+          "heading": "Life Beside The Royal Walls",
+          "body": "Gia Hội shows the city that kept living beside the royal walls: houses, schools, shops, coffee, and errands instead of another ticket window."
+        },
         {
           "id": "not-one-attraction",
           "heading": "Better As A Nearby Walk",
@@ -4375,7 +4375,7 @@
       "sections": [
         {
           "id": "riverside-green-reverent",
-        "heading": "River Shrine, Mother Goddess",
+          "heading": "River Shrine, Mother Goddess",
           "body": "This is an active river temple tied to Vietnam's Mother Goddess tradition, with a devotional mood rather than an imperial one."
         },
         {
@@ -4724,14 +4724,14 @@
         },
         {
           "id": "photo-etiquette",
-        "heading": "Color, Sticks, Making",
+          "heading": "Color, Sticks, Making",
           "body": "The bright incense fans are beautiful, but they matter more when tied to materials and labor. Look for bamboo, paste, drying racks, and finished bundles together."
         }
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hue-place-incense-village",
+          "catalogId": "viet-family-city-hue-place-thuy-xuan-incense-village",
           "label": "Làng hương Thủy Xuân",
           "relationship": "village-craft context",
           "displaySubtitle": "The wider incense-village stop behind the workshop colors, bundles, and photo corners.",
@@ -5123,8 +5123,8 @@
       "travelerMoment": "KODO gives Hue a green Kim Long cafe break: greenery, coffee, indoor or outdoor seating, and a cooler stretch between outdoor sightseeing blocks.",
       "storySpine": "The cafe gives the west-side route coffee, shade, plants, and a calmer place to regroup before the route continues.",
       "intro": {
-    "heading": "A Green Kim Long Cafe Break",
-    "body": "KODO Cafe gives Hue a garden-style coffee stop when the day has been all tombs, markets, or river heat. Think greenery, coffee, indoor or outdoor seating, and a table where the group can reset before moving again."
+        "heading": "A Green Kim Long Cafe Break",
+        "body": "KODO Cafe gives Hue a garden-style coffee stop when the day has been all tombs, markets, or river heat. Think greenery, coffee, indoor or outdoor seating, and a table where the group can reset before moving again."
       },
       "usefulPhraseCards": [
         {
@@ -5235,8 +5235,8 @@
       "travelerMoment": "A Tam Giang seafood boat turns the lagoon into a meal setting: water, rafts, nets, fresh seafood, pier timing, and late-day light outside central Hue.",
       "storySpine": "The boat gives Hue's lagoon country a concrete reason to go: a meal close to the water, with working boats and seafood farms around the table.",
       "intro": {
-    "heading": "Seafood On Tam Giang Lagoon",
-    "body": "This is a lagoon meal outside central Hue, usually tied to Tam Giang's working water: boats, rafts, seafood farms, nets, bowls, and low evening light. It is closer to a local water-and-food outing than a polished cruise."
+        "heading": "Seafood On Tam Giang Lagoon",
+        "body": "This is a lagoon meal outside central Hue, usually tied to Tam Giang's working water: boats, rafts, seafood farms, nets, bowls, and low evening light. It is closer to a local water-and-food outing than a polished cruise."
       },
       "usefulPhraseCards": [
         {
@@ -5346,7 +5346,7 @@
       "travelerMoment": "Lang Thang Coffee gives Kim Long a slow neighborhood cafe stop, with garden shade, coffee, and time on Hue's leafier west side.",
       "storySpine": "The cafe makes Kim Long easier to use: a drink, shade, a nearby lane, and a break before or after west-side sights.",
       "intro": {
-    "heading": "Coffee In Kim Long's Garden Side",
+        "heading": "Coffee In Kim Long's Garden Side",
         "body": "Lang Thang Coffee makes sense when Kim Long is already part of the day. It gives the neighborhood a simple cafe stop: coffee, shade, garden-side quiet, and a break before returning to bigger Hue sights."
       },
       "usefulPhraseCards": [
@@ -5458,8 +5458,8 @@
       "travelerMoment": "Lap An Lagoon is the Hue-to-Lang Co road view where tide, oyster farms, sandbars, boats, and the Bach Ma mountains can turn a transfer into a real stop.",
       "storySpine": "The lagoon is strongest when timing helps: low water, mountain backdrop, oyster farms, boats, and a short road-trip break outside the city.",
       "intro": {
-    "heading": "A Lagoon Stop On The Lang Co Road",
-    "body": "Lập An Lagoon sits near Lăng Cô on the road between Hue and Đà Nẵng. Low water, oyster farms, boats, sandbars, and the Bạch Mã mountains can make it more than a pretty roadside view."
+        "heading": "A Lagoon Stop On The Lang Co Road",
+        "body": "Lập An Lagoon sits near Lăng Cô on the road between Hue and Đà Nẵng. Low water, oyster farms, boats, sandbars, and the Bạch Mã mountains can make it more than a pretty roadside view."
       },
       "usefulPhraseCards": [
         {
@@ -5564,8 +5564,8 @@
       "travelerMoment": "Le Ba Dang Art Center gives Hue a modern-art visit around a Quang Tri-born Vietnamese artist who lived and worked in France, with paintings, sculpture, and gallery rooms away from royal sites.",
       "storySpine": "The center adds an artist-led side to Hue's imperial-history day: Le Ba Dang's life, modern forms, mixed media, and a compact indoor gallery visit.",
       "intro": {
-    "heading": "A Quang Tri-Born Modern Artist",
-    "body": "Lê Bá Đảng was born in Quảng Trị, near Huế, and built much of his career in France. His Huế art center gives the city a compact modern-art stop: paintings, sculpture, mixed-media work, and a change of pace from citadel walls, pagodas, and royal tombs."
+        "heading": "A Quang Tri-Born Modern Artist",
+        "body": "Lê Bá Đảng was born in Quảng Trị, near Huế, and built much of his career in France. His Huế art center gives the city a compact modern-art stop: paintings, sculpture, mixed-media work, and a change of pace from citadel walls, pagodas, and royal tombs."
       },
       "usefulPhraseCards": [
         {
@@ -5713,7 +5713,7 @@
         {
           "id": "after-a-heavy-heritage-morning",
           "heading": "After Tombs Or River Roads",
-          "body": "It pairs well after a tomb, pagoda, or river road when the day needs indoor art and shade. The visit keeps the Hue focus but changes the pace."
+          "body": "After a tomb, pagoda, or river road, the galleries give the Hue day indoor art, shade, and one artist's life instead of another royal monument."
         },
         {
           "id": "a-better-mental-picture",
@@ -5722,7 +5722,7 @@
         },
         {
           "id": "art-architecture-greenery",
-          "heading": "Why This One",
+          "heading": "A Hue Artist Comes Back",
           "body": "Choose this stop when you want Hue to feel wider than palaces and tombs. It shows how a local-born Vietnamese artist carried his roots into an international career, then brings that story back into a calm place you can actually visit."
         }
       ],
@@ -7939,7 +7939,7 @@
         },
         {
           "id": "airport-pickup-reality",
-          "heading": "Read The Arrival Signs",
+          "heading": "Signs Before The Ride",
           "body": "Counters, pickup points, and transfer options can change, so follow the signs in front of you. Ask about the pickup point before leaving the arrival area."
         },
         {
@@ -8158,7 +8158,7 @@
         },
         {
           "id": "nearby-not-cross-town",
-        "heading": "Local Errands, Market Lanes",
+          "heading": "Local Errands, Market Lanes",
           "body": "This is where Hue's supply side is easier to see: early produce movement, quick buying, and goods heading toward smaller counters. Dong Ba Market is easier for a first Hue market browse."
         },
         {
@@ -9300,7 +9300,7 @@
           "label": "Kinh thành Huế",
           "relationship": "citadel-context",
           "displaySubtitle": "The wider citadel page for the gate, courtyards, and royal walk around the palace.",
-      "reason": "The wider citadel page gives Thai Hoa its gate, courtyard, and royal-walk context.",
+          "reason": "The wider citadel page gives Thai Hoa its gate, courtyard, and royal-walk context.",
           "status": "render"
         }
       ],
@@ -9509,7 +9509,7 @@
         {
           "id": "a-countryside-add-on",
           "heading": "Beyond Imperial Hue",
-          "body": "Come when the day needs village lanes and slower water after tombs or Citadel walls. The bridge shifts Hue into houses, bicycles, and canal life."
+          "body": "Come after tombs or Citadel walls when village lanes, slower water, houses, bicycles, and canal life would show a softer side of Hue."
         },
         {
           "id": "small-scale-is-the-point",
@@ -9752,8 +9752,8 @@
           "catalogId": "viet-family-city-hue-place-perfume-river-dragon-boat",
           "label": "Thuyền rồng sông Hương",
           "relationship": "river-pagoda-route",
-      "displaySubtitle": "The river-boat route when you want the pagoda to arrive from the Perfume River.",
-      "reason": "A dragon boat gives Thien Mu a river approach instead of only a road arrival.",
+          "displaySubtitle": "The river-boat route when you want the pagoda to arrive from the Perfume River.",
+          "reason": "A dragon boat gives Thien Mu a river approach instead of only a road arrival.",
           "status": "render"
         }
       ],
@@ -9864,7 +9864,7 @@
           "label": "Lăng Minh Mạng",
           "relationship": "tomb-route-comparison",
           "displaySubtitle": "A stronger tomb landscape comparison for gates, water, shade, and imperial sequence.",
-      "reason": "Minh Mang gives Thieu Tri a fuller tomb-landscape comparison, with gates, water, shade, and a more formal imperial approach.",
+          "reason": "Minh Mang gives Thieu Tri a fuller tomb-landscape comparison, with gates, water, shade, and a more formal imperial approach.",
           "status": "render"
         }
       ],
@@ -9975,7 +9975,7 @@
           "label": "Làng hương Thủy Xuân",
           "relationship": "craft-village contrast",
           "displaySubtitle": "A color-and-craft village when incense, hands, and roadside workshops should be the memory.",
-      "reason": "Thuy Xuan gives Thuy Bieu a craft-village contrast, with incense color, workshop hands, and roadside displays.",
+          "reason": "Thuy Xuan gives Thuy Bieu a craft-village contrast, with incense color, workshop hands, and roadside displays.",
           "status": "render"
         }
       ],
@@ -10081,7 +10081,7 @@
           "label": "Làng Thủy Biều",
           "relationship": "garden-village contrast",
           "displaySubtitle": "A pomelo-garden village when the Hue day should slow into lanes, houses, and river air.",
-      "reason": "Thuy Bieu gives Thuy Xuan a quieter garden-village contrast, with pomelo lanes, houses, and river air.",
+          "reason": "Thuy Bieu gives Thuy Xuan a quieter garden-village contrast, with pomelo lanes, houses, and river air.",
           "status": "render"
         }
       ],
@@ -10191,8 +10191,8 @@
           "catalogId": "viet-family-city-hue-place-lien-hoa-vegetarian",
           "label": "Nhà hàng chay Liên Hoa",
           "relationship": "Hue vegetarian table",
-      "displaySubtitle": "A Hue vegetarian meal rooted in Buddhist food tradition.",
-      "reason": "Lien Hoa gives Tinh Gia Vien a useful Hue food contrast: Buddhist vegetarian cooking instead of imperial-style garden dining.",
+          "displaySubtitle": "A Hue vegetarian meal rooted in Buddhist food tradition.",
+          "reason": "Lien Hoa gives Tinh Gia Vien a useful Hue food contrast: Buddhist vegetarian cooking instead of imperial-style garden dining.",
           "status": "render"
         }
       ],
@@ -10519,7 +10519,7 @@
         },
         {
           "id": "indoor-break-in-the-center",
-        "heading": "Mall Air, Market Food",
+          "heading": "Mall Air, Market Food",
           "body": "Dong Ba Market gives central Hue texture and food browsing. Truong Tien Plaza gives the cleaner indoor reset when the group needs convenience, bathrooms, and easy meeting instructions."
         }
       ],
@@ -10644,7 +10644,7 @@
           "label": "Lăng Minh Mạng",
           "relationship": "tomb-route-comparison",
           "displaySubtitle": "Another major tomb landscape when pavilions, water, and sequence should be compared.",
-      "reason": "Minh Mang is the natural tomb comparison when you want another major landscape of pavilions, water, gates, and imperial sequence.",
+          "reason": "Minh Mang is the natural tomb comparison when you want another major landscape of pavilions, water, gates, and imperial sequence.",
           "status": "render"
         }
       ],
@@ -10840,11 +10840,11 @@
         }
       ],
       "sections": [
-      {
-        "id": "pines-river-low-effort",
-        "heading": "Pines Above The River",
-        "body": "The hill is low, but the view opens around pines, the Perfume River below, and tomb-route landscape beyond the city center."
-      },
+        {
+          "id": "pines-river-low-effort",
+          "heading": "Pines Above The River",
+          "body": "The hill is low, but the view opens around pines, the Perfume River below, and tomb-route landscape beyond the city center."
+        },
         {
           "id": "soft-light-helps",
           "heading": "Soft Light Helps",
@@ -10966,8 +10966,8 @@
         {
           "id": "neighborhood-bearings",
           "heading": "Good For A Softer Evening",
-        "body": "After Citadel gates or tomb routes, Vy Da can make Hue feel softer and more residential. Let it be a neighborhood walk, a dinner area, or an easier route back."
-      }
+          "body": "After Citadel gates or tomb routes, Vy Da can make Hue feel softer and more residential. Let it be a neighborhood walk, a dinner area, or an easier route back."
+        }
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
@@ -10976,7 +10976,7 @@
           "label": "Phố cổ Bao Vinh",
           "relationship": "old-river-street contrast",
           "displaySubtitle": "An old trading street when the city story should move toward the river.",
-      "reason": "Bao Vinh gives Vy Da a river-neighborhood comparison, with older trading-street texture instead of residential cafe and homestay edges.",
+          "reason": "Bao Vinh gives Vy Da a river-neighborhood comparison, with older trading-street texture instead of residential cafe and homestay edges.",
           "status": "render"
         }
       ],
@@ -11089,7 +11089,7 @@
           "label": "Đường Chu Văn An",
           "relationship": "evening-street contrast",
           "displaySubtitle": "A practical food-and-drink street when the plan shifts from monuments to night movement.",
-      "reason": "Chu Van An Street gives Hue Walking Street a food-and-drink comparison for a night plan after monuments.",
+          "reason": "Chu Van An Street gives Hue Walking Street a food-and-drink comparison for a night plan after monuments.",
           "status": "render"
         }
       ],

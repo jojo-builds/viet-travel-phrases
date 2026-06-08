@@ -165,14 +165,14 @@
       "sections": [
         {
           "id": "coffee-as-the-stop",
-        "heading": "Coffee, Plants, Bright Counters",
+          "heading": "Coffee, Plants, Bright Counters",
           "body": "Come for a careful coffee break rather than a grab-and-go cup. The room, plants, counters, and precise drinks are the reason to sit down."
         },
-      {
-        "id": "not-a-beach-snack",
-        "heading": "Beyond Beach Snacks",
-        "body": "Inside, clean lines, careful drinks, plants, and cooler air give the beach-side day a slower coffee room."
-      },
+        {
+          "id": "not-a-beach-snack",
+          "heading": "Beyond Beach Snacks",
+          "body": "Inside, clean lines, careful drinks, plants, and cooler air give the beach-side day a slower coffee room."
+        },
         {
           "id": "between-louder-plans",
           "heading": "Between Louder Plans",
@@ -615,7 +615,7 @@
         },
         {
           "id": "the-gate-sets-expectations",
-        "heading": "Gate, Wheel, Evening Lights",
+          "heading": "Gate, Wheel, Evening Lights",
           "body": "Make the entrance the first orientation point. If rides are the reason, read the boards together before the group drifts inside."
         },
         {
@@ -848,7 +848,7 @@
         {
           "id": "give-it-room",
           "heading": "Give It Room",
-        "body": "Travel time, tickets, cable cars, walking, and crowd flow all take space. A lighter city day leaves room for the mountain weather and the long ride back."
+          "body": "Travel time, tickets, cable cars, walking, and crowd flow all take space. A lighter city day leaves room for the mountain weather and the long ride back."
         }
       ],
       "mentionedHereCandidates": [],
@@ -1877,8 +1877,8 @@
         },
         {
           "id": "guide-note-not-the-whole-story",
-          "heading": "Guide Note, Simple Meal",
-          "body": "The table is still about clean herbs, soft wrappers, salty mắm nêm sauce, and the small skill of one good roll."
+          "heading": "Herbs, Wrappers, Mắm Nêm",
+          "body": "The table is still about clean herbs, soft wrappers, salty mắm nêm, and the small hand skill of building one balanced roll."
         },
         {
           "id": "sauce-decides-the-bite",
@@ -2612,8 +2612,8 @@
       "sections": [
         {
           "id": "named-bowl-stop",
-          "heading": "Named Bowl Stop",
-          "body": "Hờn gives the citywide dish a specific place to sit down with it. Start with the first bowl; chili, herbs, or extras can wait until after tasting."
+          "heading": "Hờn Gives The Bowl A Table",
+          "body": "Hờn turns the citywide fish-cake soup into one place to sit with springy chả cá, clear broth, noodles, herbs, and chili waiting until after the opening taste."
         },
         {
           "id": "taste-before-adjusting",
@@ -2622,13 +2622,13 @@
         },
         {
           "id": "beside-the-broader-dish",
-          "heading": "Compare It With The Dish Guide",
-          "body": "The broader bún chả cá guide explains the food. Hờn gives that bowl one concrete Da Nang table."
+          "heading": "Fish Cake, Broth, Herbs",
+          "body": "The dish guide explains the broader style; this shop makes it concrete through a short table, a warm bowl, and a fish-cake chew you can compare later."
         },
         {
           "id": "before-crossing-town",
-          "heading": "One Bowl, Clear Reason",
-          "body": "The meal points back to the bowl and its short table rhythm. Keep the meal focused on fish cake, broth, herbs, and the first clean taste."
+          "heading": "Keep The Bowl Focused",
+          "body": "Let fish cake, broth, herbs, and the clean opening taste carry the meal before turning the day toward another Da Nang stop."
         }
       ],
       "mentionedHereCandidates": [
@@ -3542,7 +3542,7 @@
         },
         {
           "id": "small-plates-beat-a-checklist",
-        "heading": "Small Plates Before More Browsing",
+          "heading": "Small Plates Before More Browsing",
           "body": "Tiny steamed rice cakes, chewy tapioca dumplings, bún mắm noodle bowls, and mì Quảng give the market its food pull. One or two small orders make a good first pass."
         },
         {
@@ -3577,7 +3577,7 @@
           "sourceText": "Hàn",
           "displaySubtitle": "The calmer first market for bearings, gifts, and an easier lap.",
           "reason": "The page explicitly contrasts Cồn with Hàn, and Hàn has a renderable V2.2 page.",
-          "status": "render"
+          "status": "do_not_render"
         }
       ],
       "relatedPlaceCandidates": [
@@ -4009,11 +4009,11 @@
           "heading": "The Riverbank Shows The Dragon",
           "body": "The bridge itself is movement: scooters, lanes, walkers, and phones at the rail. The riverbank gives enough distance to see the dragon."
         },
-      {
-        "id": "close-has-a-different-energy",
-        "heading": "Close Has A Different Energy",
-        "body": "Near the bridge, spray and crowd noise hit first. Farther back, the river gives the dragon, lights, and skyline more room in the photo."
-      },
+        {
+          "id": "close-has-a-different-energy",
+          "heading": "Close Has A Different Energy",
+          "body": "Near the bridge, spray and crowd noise hit first. Farther back, the river gives the dragon, lights, and skyline more room in the photo."
+        },
         {
           "id": "a-short-riverfront-loop",
           "heading": "A Short Riverfront Loop",
@@ -4117,11 +4117,11 @@
           "heading": "Close Means Noise And Spray",
           "body": "Near the bridge, the show feels less like a performance and more like a crowd reaction. Expect shoulder-to-shoulder watching and quick phones."
         },
-      {
-        "id": "farther-back-holds-the-view",
-        "heading": "Dragon, River, Crowd Lights",
-        "body": "From the promenade, the burst feels farther away, but the dragon head, river, lights, and crowd silhouettes fit into one view."
-      },
+        {
+          "id": "farther-back-holds-the-view",
+          "heading": "Dragon, River, Crowd Lights",
+          "body": "From the promenade, the burst feels farther away, but the dragon head, river, lights, and crowd silhouettes fit into one view."
+        },
         {
           "id": "move-after-the-burst",
           "heading": "Move After The Burst",
@@ -5166,7 +5166,7 @@
           "sourceText": "Cồn",
           "displaySubtitle": "The louder Da Nang market when snacks matter more than easy browsing.",
           "reason": "The page explicitly compares Hàn and Cồn; the related food-market page exists.",
-          "status": "render"
+          "status": "do_not_render"
         }
       ],
       "relatedPlaceCandidates": [
@@ -5343,7 +5343,7 @@
       "travelerMoment": "The cruise is about the boat sequence: boarding point, start time, route, and return before stepping on.",
       "storySpine": "The cruise feels easier when boarding point, start time, route, and return are clear before the lights take over.",
       "intro": {
-      "heading": "Board For The River Lights",
+        "heading": "Board For The River Lights",
         "body": "A Hàn River cruise is a simple night move: small boat, bridge lights, dark water, boarding clarity, and a slower look at Da Nang from below the skyline."
       },
       "usefulPhraseCards": [
@@ -6274,7 +6274,7 @@
         {
           "id": "small-scale-is-the-point",
           "heading": "Expect A Short Loop",
-        "body": "Think of it as a pocket of night color rather than a full food crawl. Racks, snacks, small gifts, and a short loop give the evening its shape."
+          "body": "Think of it as a pocket of night color rather than a full food crawl. Racks, snacks, small gifts, and a short loop give the evening its shape."
         },
         {
           "id": "small-market-light-expectations",
@@ -6392,7 +6392,7 @@
         {
           "id": "son-tra-can-wait",
           "heading": "Son Tra Can Wait",
-        "body": "The pagoda pairs naturally with a Sơn Trà drive. If weather, road, or group energy changes, the courtyards, sea view, and statue can carry the visit."
+          "body": "The pagoda pairs naturally with a Sơn Trà drive. If weather, road, or group energy changes, the courtyards, sea view, and statue can carry the visit."
         }
       ],
       "mentionedHereCandidates": [],
@@ -7067,7 +7067,7 @@
         },
         {
           "id": "caves-over-checklist",
-        "heading": "Caves, Steps, Stone Light",
+          "heading": "Caves, Steps, Stone Light",
           "body": "Let the cave-and-shrine pace lead instead of racing every viewpoint. Stairs, shade, and quiet movement are the visit."
         },
         {
@@ -7988,7 +7988,7 @@
         {
           "id": "beach-time-with-conditions",
           "heading": "Beach Time With Conditions",
-        "body": "A short sit, swim decision, or sand walk near the My An area can be plenty. Weather and water decide how long the beach holds you."
+          "body": "A short sit, swim decision, or sand walk near the My An area can be plenty. Weather and water decide how long the beach holds you."
         },
         {
           "id": "sea-air-before-seafood",
@@ -8614,7 +8614,7 @@
           "catalogId": "viet-family-city-danang-place-long-coffee",
           "label": "Cà phê Long",
           "relationship": "Da Nang cafe mood contrast",
-        "displaySubtitle": "A local coffee counter with a less styled cafe pause.",
+          "displaySubtitle": "A local coffee counter with a less styled cafe pause.",
           "reason": "Long Coffee gives Nam House a more useful local coffee contrast.",
           "status": "render"
         }
@@ -9498,12 +9498,12 @@
         {
           "id": "open-space-over-a-list",
           "heading": "Open Space Over A List",
-        "body": "Walking, sea air, cloudy light, and resort-road calm give this beach its own slower edge."
+          "body": "Walking, sea air, cloudy light, and resort-road calm give this beach its own slower edge."
         },
         {
           "id": "marble-mountains-half-day",
           "heading": "Marble Mountains Half-Day",
-        "body": "The beach sits naturally with the southern side of Da Nang. Sand, stone, and an easy return ride keep the outing connected."
+          "body": "The beach sits naturally with the southern side of Da Nang. Sand, stone, and an easy return ride keep the outing connected."
         },
         {
           "id": "weather-sets-the-mood",
@@ -9609,7 +9609,7 @@
         {
           "id": "beside-the-mountains",
           "heading": "Beside The Mountains",
-        "body": "Before or after Marble Mountains, the cliff stone and workshop stone start to feel connected."
+          "body": "Before or after Marble Mountains, the cliff stone and workshop stone start to feel connected."
         },
         {
           "id": "making-before-shopping",
@@ -9952,7 +9952,7 @@
         },
         {
           "id": "a-small-counterpoint",
-        "heading": "Courtyard Shade, Busy Streets",
+          "heading": "Courtyard Shade, Busy Streets",
           "body": "Come between beach, bridge, market, or museum time when you want Da Nang to feel less waterfront-only. It stays compact and respectful."
         }
       ],
@@ -10276,13 +10276,13 @@
         {
           "id": "pick-one-sweet-thing",
           "heading": "Order For The Table",
-        "body": "Salt coffee, egg coffee, tiramisu, or cheesecake makes the break more specific than another iced drink. Share if the group only needs a quick reset."
+          "body": "Salt coffee, egg coffee, tiramisu, or cheesecake makes the break more specific than another iced drink. Share if the group only needs a quick reset."
         },
-      {
-        "id": "small-cafe-break",
-        "heading": "Photo Room, Then Onward",
-        "body": "The retro room gives you the photo, the cool-down, and a simple pause before the next Da Nang plan."
-      }
+        {
+          "id": "small-cafe-break",
+          "heading": "Photo Room, Then Onward",
+          "body": "The retro room gives you the photo, the cool-down, and a simple pause before the next Da Nang plan."
+        }
       ],
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
@@ -10507,7 +10507,7 @@
         {
           "id": "green-beside-the-city",
           "heading": "Green Beside The City",
-        "body": "Sơn Trà pairs naturally with My Khe Beach, Linh Ung Pagoda, Lady Buddha, or a Hàn River evening. One nearby pairing keeps the peninsula day from feeling rushed."
+          "body": "Sơn Trà pairs naturally with My Khe Beach, Linh Ung Pagoda, Lady Buddha, or a Hàn River evening. One nearby pairing keeps the peninsula day from feeling rushed."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10826,7 +10826,7 @@
         {
           "id": "wildlife-stays-unscheduled",
           "heading": "Wildlife Is Never Guaranteed",
-        "body": "The drive is still worthwhile without an animal sighting. Forest shade, sea views, and shaded road edges are part of the experience."
+          "body": "The drive is still worthwhile without an animal sighting. Forest shade, sea views, and shaded road edges are part of the experience."
         },
         {
           "id": "return-plan-before-wildlife",
@@ -11162,7 +11162,7 @@
         },
         {
           "id": "wind-changes-the-stop",
-        "heading": "Wind On The Crossing",
+          "heading": "Wind On The Crossing",
           "body": "This is exposed coastal infrastructure rather than a sheltered promenade. Wind, rain, harsh sun, or traffic can turn a quick look into a less comfortable stop."
         },
         {
@@ -11491,7 +11491,7 @@
         {
           "id": "angle-before-crossing",
           "heading": "Angle Before Crossing",
-        "body": "The bridge shows clearly from a river angle. The silhouette, traffic movement, or a quick crossing can be the whole view."
+          "body": "The bridge shows clearly from a river angle. The silhouette, traffic movement, or a quick crossing can be the whole view."
         },
         {
           "id": "late-light-on-the-lines",
