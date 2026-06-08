@@ -70,7 +70,7 @@ Stay calm and specific. A direct phrase plus the room number is usually more eff
 - Hero: Bà Nà Hills / Ba Na Hills
 - Practice CTA: Practice this trip
 
-### About
+### More Park Than Viewpoint
 A mountain theme park above Da Nang: cable cars, cooler air, the Golden Bridge, gardens, replica streets, crowds, and weather risk.
 
 ### Useful Phrases
@@ -107,7 +107,7 @@ If the Golden Bridge is the main reason, do it first. After that, decide how muc
 ### Getting back
 - Gọi giúp tôi taxi được không? — Can you call me a taxi?
 
-### Good to know
+### Give It Room
 Travel time, tickets, cable cars, walking, and crowd flow all take space. A lighter city day leaves room for the mountain weather and the long ride back.
 
 ### Food & cash

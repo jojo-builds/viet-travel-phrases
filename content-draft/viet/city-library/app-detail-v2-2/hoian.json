@@ -2846,7 +2846,7 @@
           "relationship": "named restaurant to dish guide",
           "displaySubtitle": "The dish page for reading cao lầu before a named Hội An shop.",
           "reason": "The dish page defines cao lầu before the named-shop decision.",
-          "status": "render"
+          "status": "do_not_render"
         },
         {
           "catalogId": "viet-family-city-hoian-place-morning-glory",
@@ -3670,7 +3670,7 @@
           "relationship": "dish-to-named chicken-rice counter",
           "displaySubtitle": "A Phan Châu Trinh chicken-rice shop for yellow rice, shredded chicken, herbs, papaya, soup, and sauce.",
           "reason": "Cơm Gà Bà Buội is the Phan Châu Trinh chicken-rice shop for yellow rice, shredded chicken, herbs, papaya, soup, and sauce.",
-          "status": "render"
+          "status": "do_not_render"
         },
         {
           "catalogId": "viet-family-city-hoian-place-banh-mi-phuong",
@@ -3818,7 +3818,7 @@
           "relationship": "named place to dish guide",
           "displaySubtitle": "The dish guide for reading the yellow rice, shredded chicken, papaya, soup, and sauce.",
           "reason": "The dish guide gives plate detail for the named-shop meal.",
-          "status": "render"
+          "status": "do_not_render"
         }
       ],
       "verificationFlags": [],
@@ -3930,7 +3930,7 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-hoi-an-market",
+          "catalogId": "viet-family-city-hoian-place-market",
           "label": "Chợ Hội An",
           "relationship": "market-to-class ingredient link",
           "displaySubtitle": "Market stalls, herbs, produce, and food decisions before the kitchen table.",
@@ -7214,7 +7214,7 @@
           "relationship": "hands-on-hoian-meal-pair",
           "displaySubtitle": "Pork skewers, bánh xèo, herbs, rice paper, and sauce as a shared set meal.",
           "reason": "Bale Well moves the meal from a broad dinner table to a hands-on set of pork skewers, bánh xèo, herbs, rice paper, and sauce.",
-          "status": "render"
+          "status": "do_not_render"
         },
         {
           "catalogId": "viet-family-city-hoian-place-white-rose-restaurant",
@@ -10145,7 +10145,7 @@
       "mentionedHereCandidates": [],
       "relatedPlaceCandidates": [
         {
-          "catalogId": "viet-family-city-hoian-place-tra-que-village",
+          "catalogId": "viet-family-city-hoian-place-tra-que",
           "label": "Làng rau Trà Quế",
           "relationship": "field-to-farm route",
           "displaySubtitle": "A nearby vegetable village that connects the meal back to Hội An's gardens and farm landscape.",
@@ -11408,7 +11408,7 @@
           "catalogId": "viet-family-city-hoian-place-white-rose-dumplings",
           "sourceText": "bánh bao bánh vạc",
           "displaySubtitle": "The delicate Hội An dumpling behind this focused restaurant stop.",
-          "reason": "Mentioned here because: The delicate Hội An dumpling behind this focused restaurant stop.",
+          "reason": "The delicate Hội An dumpling behind this focused restaurant stop.",
           "status": "render"
         }
       ],

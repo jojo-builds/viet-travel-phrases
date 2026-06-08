@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-06-08T07:39:43.531Z",
+  "manifestPages": 520,
+  "resultFilesIncluded": 66,
+  "historicalRows": 1049,
+  "historicalScreenshots": 3147,
+  "currentUniquePages": 520,
+  "currentPass": 520,
+  "currentFailures": 0,
+  "currentScreenshots": 1560,
+  "missingManifestPages": 0,
+  "extraResultPages": 0,
+  "parseErrors": 0,
+  "editedPageProof": {
+    "resultFile": "docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-06-08-city-copy-final-gate/edited-page-results.jsonl",
+    "rows": 31,
+    "pass": 31,
+    "failures": 0,
+    "screenshots": 93
+  }
+}

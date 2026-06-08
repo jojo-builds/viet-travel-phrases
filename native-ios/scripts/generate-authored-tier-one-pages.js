@@ -4520,7 +4520,7 @@ function rewriteBaNaHillsJourneySections(page, sections) {
   const goodToKnow = existingByID.get("good-to-know");
 
   return [
-    about ? { ...about, id: "at-glance", title: "About" } : null,
+    about ? { ...about, id: "at-glance", title: about.title || "About" } : null,
     hearName ? baNaJourneySection(existingByID, "quick-say", "Useful Phrases", [
       "sight-1",
       "sight-3",
@@ -4553,7 +4553,7 @@ function rewriteBaNaHillsJourneySections(page, sections) {
       "ves-is-this-address-correct",
       "ves-call-taxi-for-me",
     ], "orange"),
-    goodToKnow ? { ...goodToKnow, id: "good-to-know", title: "Good to know" } : null,
+    goodToKnow ? { ...goodToKnow, id: "good-to-know", title: goodToKnow.title || "Good to know" } : null,
     baNaJourneySection(existingByID, "food-cash", "Food & cash", [
       "store-1",
       "airport-4",
