@@ -565,7 +565,23 @@ function inspectPage(page, expectedIntent, issues, source) {
   }
 
   if (detectedIntent === "macro_attraction_journey") {
-    assertSectionOrder(page, rendered, issues, source, ["About", "Visit flow", "Getting there", "Tickets", "Cable car", "Photos", "Getting back", "Good to know", "Food & cash"], "macro_attraction_section_order");
+    const expectedMacroSections = page.id === "viet-family-city-danang-place-ba-na-hills"
+      ? [
+        "More Park Than Viewpoint",
+        "Useful Phrases",
+        "Early, With Weather Checked",
+        "Cable Car Arrival",
+        "Bridge Before Wandering",
+        "Getting there",
+        "Tickets",
+        "Cable car",
+        "Photos",
+        "Getting back",
+        "Give It Room",
+        "Food & cash",
+      ]
+      : ["About", "Visit flow", "Getting there", "Tickets", "Cable car", "Photos", "Getting back", "Good to know", "Food & cash"];
+    assertSectionOrder(page, rendered, issues, source, expectedMacroSections, "macro_attraction_section_order");
     if (/Nearby needs/i.test(allRenderedText)) {
       addIssue(issues, {
         severity: "MAJOR",

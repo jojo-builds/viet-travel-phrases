@@ -16,12 +16,17 @@ Current branch-local evidence for `codex/city-copy-final-production-gate`, based
 
 - isolated worktree: `/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/city-copy-final-production-gate`
 - `main` was not edited by this pass
-- cold visible-copy audit: `520 / 520` PASS, `0` HARD_BLOCK, `0` SAFE_FIX_NOW
-- edited V2.2 source pages: `31`
-- anti-thinning result: phrase cards preserved exactly on edited pages; duplicate rendered cards were hidden with `do_not_render`; wrong related targets were retargeted instead of deleted
-- edited-page render proof: `31 / 31` PASS, `93 / 93` top/middle/bottom screenshots
+- final copy gate recommendation: `PASS`
+- cold visible-copy audit: `520 / 520` PASS, `0` HARD_BLOCK, `0` SAFE_FIX_NOW, `0` ACCEPTED_TEMPORARY_RISK
+- edited V2.2 source pages in earlier final gate: `31`
+- clean-pass source cleanup: `160` stale `Related because:` / `Mentioned here because:` source reason prefixes normalized across `147` first-class V2.2 pages, without changing rendered card subtitles or removing copy
+- Bà Nà Hills native projection fix: rendered section labels now preserve authored V2.2 headings `More Park Than Viewpoint` and `Give It Room`
+- anti-thinning result: phrase cards preserved exactly; no phrase cards were removed; no Mentioned Here or Related cards were removed, hidden, or retargeted in the clean pass
+- duplicate-card adjudication: `12 / 12` full-branch `render` -> `do_not_render` demotions versus `main` still render the same target once on the same page in the other visible card module, so they are accepted as duplicate cleanup rather than copy thinning
+- prior edited-page render proof: `31 / 31` PASS, `93 / 93` top/middle/bottom screenshots
+- clean-pass render proof: `1 / 1` PASS, `3 / 3` screenshots for `viet-family-city-danang-place-ba-na-hills`
 - combined current render proof remains `520 / 520` current pages PASS, `1560` current screenshots, `0` current failures, `0` missing manifest pages
-- final read-only subagent review: `PASS_WITH_RISKS`
+- final read-only subagent reviews: visible copy/projection `PASS`; anti-thinning/card graph `PASS`
 
 Fresh command evidence from this branch:
 
@@ -33,6 +38,7 @@ Fresh command evidence from this branch:
 - `node native-ios/scripts/validate-viet-city-library.js` passed: `826` pages
 - `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed: SQLite fixture OK, `1778` canonical pages, `0` release-blocking missing-audio rows
 - `node native-ios/scripts/audit-viet-listing-production-qa.js` passed: `1778` pages, `0` blockers, `0` majors
+- `node native-ios/scripts/validate-viet-ba-na-hills-journey-patch.js` passed: Bà Nà Hills V2.2 journey validation passed
 - `git diff --check` passed
 - `xcodebuild build-for-testing -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,id=7C386DD3-4BF1-4A34-A918-768C43CD1258' -derivedDataPath /Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/city-copy-final-production-gate/DerivedData/SpeakLocalNative CODE_SIGNING_ALLOWED=NO` passed with `** TEST BUILD SUCCEEDED **`
 
@@ -40,14 +46,17 @@ Branch-local receipt files:
 
 - `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/final-copy-production-gate-2026-06-08/final-copy-production-gate-receipt-2026-06-08.md`
 - `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/final-copy-production-gate-2026-06-08/anti-thinning-ledger-2026-06-08.md`
+- `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/final-copy-production-gate-2026-06-08/anti-thinning-clean-pass-addendum-2026-06-08.md`
+- `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/final-copy-production-gate-2026-06-08/duplicate-card-demotion-adjudication-2026-06-08.md`
 - `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/final-copy-production-gate-2026-06-08/cold-visible-copy-audit-2026-06-08.jsonl`
 - `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-06-08-city-copy-final-gate/README.md`
+- `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-06-08-city-copy-clean-pass/README.md`
 
-Accepted risks:
+Remaining non-copy risks:
 
-- `viet-family-city-danang-place-ba-na-hills` still renders through the existing special/native projection labels `About` and `Good to know`, even though the V2.2 source copy has stronger headings and validates cleanly.
-- source candidate `reason` fields still include inherited `Related because` / `Mentioned here because` prefixes in some entries, but generated/native rendered resources strip those prefixes and no literal prefix appears in `native-ios/Resources/viet-authored-listing-pages.json`.
-- existing non-copy risks remain: `500` missing-audio priority rows, `700` planned missing-audio rows with `0` release-blocking missing-audio rows, and `1` duplicate hero section hidden at render time.
+- `500` missing-audio priority rows.
+- `700` planned missing-audio rows with `0` release-blocking missing-audio rows.
+- `1` duplicate hero section hidden at render time.
 
 ## Current City Listings V2.2 Main Evidence
 
