@@ -6,7 +6,7 @@ Branch: `feature/city-listings-production-ready`
 
 Base commit: `6649991c8`
 
-Status: final audit repairs passed validation and targeted render proof. This is a checkpoint-ready, merge-candidate receipt for the dirty feature worktree; it is not a `main` merge receipt.
+Status: final audit repairs passed validation, targeted render proof, and post-`main`-sync validation. This is a merge-candidate receipt for the feature worktree; it is not a `main` merge receipt.
 
 ## Final Audit Repairs
 
@@ -101,6 +101,6 @@ These are not current production-copy blockers:
 - `500` missing-audio priority rows remain in the production QA output.
 - `700` planned missing-audio rows remain, with `0` release-blocking missing-audio rows.
 - `1` duplicate hero section is hidden at render time.
-- The feature lane still needs a curated checkpoint commit, then current `main` synced into the lane and revalidated before merge.
+- The feature lane now has a curated checkpoint commit, current local `main` has been merged into the lane, and focused post-sync validation passed. It still needs the orchestrator merge into `main`, then final `main` validation and phone build if app code changes land.
 
 No phrase cards, related cards, Mentioned Here cards, or useful copy substance were deleted to pass the final scan.
