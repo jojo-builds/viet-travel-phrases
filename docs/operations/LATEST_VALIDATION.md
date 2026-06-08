@@ -1,6 +1,6 @@
 # Latest Validation
 
-Last updated: 2026-06-01
+Last updated: 2026-06-08
 Authority lane: latest durable native iOS validation evidence
 
 ## Use This Doc For
@@ -9,6 +9,43 @@ Authority lane: latest durable native iOS validation evidence
 - what still needs proof after the native-only cleanup
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
+
+## Current City Listings V2.2 Main Evidence
+
+Current `main` evidence after fast-forwarding `feature/city-listings-production-ready`, based on head `2b92f4a9c`:
+
+- merged `feature/city-listings-production-ready` into `main` by fast-forward after the feature lane had already merged current local `main`
+- preserved the fuller V2.2 city/place listing structure; final repairs fixed copy/schema/related-card issues instead of thinning pages
+- committed final receipts:
+  - `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/final-closeout-receipt-2026-06-08.md`
+  - `docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-06-01-v2-2-global/README.md`
+- rendered proof recompute: `520` current unique pages, `520` current pass, `1560` current screenshots, `0` current failures, `0` missing manifest pages
+- latest proof result file: `final-orchestrator-repair-2026-06-08-results.jsonl`, `11 / 11` final repair pages passed with `33 / 33` screenshots
+
+Fresh command evidence from this pass:
+
+- `node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production` passed: `520` pass, `0` revise, `0` fail
+- `node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js` passed with no failures
+- `node native-ios/scripts/audit-viet-city-listing-what-why.js` passed on the synced feature lane before merge: `520` entries, `0` findings, `0` hard-review pages
+- `node native-ios/scripts/validate-viet-city-copy.js` passed: `5` hubs, `520` city noun pages, `520` unique target heroes
+- `node native-ios/scripts/validate-viet-city-library.js` passed: `826` pages
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed: SQLite fixture OK, `1778` canonical pages, `0` release-blocking missing-audio rows
+- `node native-ios/scripts/audit-viet-listing-production-qa.js` passed on the synced feature lane before merge: `1778` pages, `0` blockers, `0` majors
+- `node native-ios/scripts/validate-vietnamese-menu-copy.js` passed: `355` handwritten Vietnamese menu item pages
+- `node native-ios/scripts/validate-viet-phrase-backdrops.js` passed: `952` required backdrop placements
+- `node scripts/guard-native-only.js` passed
+- `node native-ios/scripts/guard-native-chrome.js` passed
+- `git diff --check` passed
+- Physical iPhone Debug build from `main` passed with local-only signing overrides
+- Physical iPhone install did not complete: device install failed with `CoreDeviceError 3002` / `IXRemoteErrorDomain 6` connection interrupted before launch
+- Phone launch was not attempted because install failed
+- post-build signing hygiene stayed clean: `native-ios/project.yml` and `native-ios/SpeakLocalNative.xcodeproj/project.pbxproj` were unchanged; signing scan found no repo-visible personal team/provisioning values
+
+Known non-blocking risks remain:
+
+- `500` missing-audio priority rows in production QA
+- `700` planned missing-audio rows, with `0` release-blocking missing-audio rows
+- `1` duplicate hero section hidden at render time
 
 ## Current Main Merge Sweep Evidence
 
