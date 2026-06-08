@@ -1,6 +1,6 @@
 # Latest Validation
 
-Last updated: 2026-05-31
+Last updated: 2026-06-01
 Authority lane: latest durable native iOS validation evidence
 
 ## Use This Doc For
@@ -9,6 +9,31 @@ Authority lane: latest durable native iOS validation evidence
 - what still needs proof after the native-only cleanup
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
+
+## Current Main Merge Sweep Evidence
+
+Current `main` evidence from the 2026-06-01 lane merge sweep, based on head `6649991c8` before this documentation receipt:
+
+- merged completed non-excluded lanes into `main`: `feature/browse-page`, `feature/search-page`, `feature/menu-section`, `feature/admin-photo-backdrop-polish`, and `feature/city-listings-production-ready`
+- intentionally skipped `feature/messages-section` and `feature/paywall`
+- resolved merge conflicts by preserving both feature intents, including city/listing runtime cache work, menu-section cache work, search focus-return behavior, and admin photo-backdrop navigation fixes
+- regenerated the Viet SQLite fixture after merged source/runtime changes; SQLite integrity check passed
+- post-merge fix: canonical menu/location relation lookups now resolve aliases through the SQLite canonical page map before relation lookup
+- post-merge fix: Vietnamese menu copy audit no longer flags `drink-ca-phe-sua-da` generic template wording
+- post-merge fix: SQLite repository summary expectation now matches the current production copy for `viet-phrase-polite-1`
+
+Fresh command evidence from this pass:
+
+- `git diff --check` passed
+- `node scripts/guard-native-only.js` passed
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed
+- `node native-ios/scripts/validate-viet-phrase-backdrops.js` passed
+- `node native-ios/scripts/validate-vietnamese-menu-copy.js` passed
+- iPhone 17 Pro simulator Debug build passed with `xcodebuild`
+- focused post-merge tests found real drift first; after fixes, a retry was blocked by Simulator app-launch preflight/busy state rather than a clean test pass
+- Physical iPhone Debug build/install from `main` passed
+- phone launch was blocked because iOS reported the phone was locked
+- post-build signing scan stayed clean; personal signing remained local and was not written to repo files
 
 ## Current Back Navigation Fix Evidence
 
