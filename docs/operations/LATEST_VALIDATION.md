@@ -40,7 +40,13 @@ Fresh command evidence from merged `main`:
 - `node native-ios/scripts/validate-viet-ba-na-hills-journey-patch.js` passed: Bà Nà Hills V2.2 journey validation passed
 - `node scripts/guard-native-only.js` passed
 
-Phone result for this merged copy gate is pending in this subsection until the next physical-device build/install/launch run completes.
+Physical iPhone proof from this merged copy gate:
+
+- build from `main` commit `18cb1d77a` passed with local-only signing overrides
+- install to the connected physical iPhone passed for bundle `app.speaklocal.vietnam.native`
+- launch passed: `Launched application with app.speaklocal.vietnam.native bundle identifier.`
+- post-build signing scan passed; repo signing files stayed clean
+- `git status --short native-ios/project.yml native-ios/SpeakLocalNative.xcodeproj/project.pbxproj` returned no changes before the build, and the phone helper reported no signing pollution after the build
 
 ## Branch-Local City Copy Final Production Gate
 
