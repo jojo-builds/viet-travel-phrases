@@ -358,18 +358,17 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(minimumDockWidth, usableCardWidth)
     }
 
-    func testMenuSectionChromeFitsBelowTopAdminRow() {
-        let stackedChromeHeight = AppChromeLayout.topAdminTopPadding
-            + AppChromeLayout.topAdminControlSize
-            + AppChromeLayout.menuSectionChromeRowSpacing
-            + AppChromeLayout.menuSectionChromeHeight
+    func testMenuSectionChromeSharesTopAdminRow() {
+        let compactChromeHeight = AppChromeLayout.topAdminTopPadding
+            + max(AppChromeLayout.topAdminControlSize, AppChromeLayout.menuSectionChromeHeight)
 
-        XCTAssertLessThanOrEqual(stackedChromeHeight, AppChromeLayout.topAdminHitTestEnvelopeHeight)
+        XCTAssertEqual(AppChromeLayout.menuSectionChromeRowSpacing, 0)
+        XCTAssertLessThanOrEqual(compactChromeHeight, AppChromeLayout.topAdminHitTestEnvelopeHeight)
         XCTAssertLessThanOrEqual(
-            stackedChromeHeight,
+            compactChromeHeight,
             AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: true)
         )
-        XCTAssertGreaterThan(AppChromeLayout.menuSectionJumpClearance, stackedChromeHeight)
+        XCTAssertGreaterThan(AppChromeLayout.menuSectionJumpClearance, compactChromeHeight)
         XCTAssertEqual(AppChromeLayout.menuSectionJumpViewportAnchorY, 0.19, accuracy: 0.001)
         XCTAssertEqual(
             BrowseCollectionLayout.sectionJumpViewportAnchorY,
@@ -378,24 +377,36 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
-    func testMenuSectionChromeExtendsSharedTopBackdropBehindContent() {
-        let sectionRowY = AppChromeLayout.topAdminTopPadding
-            + AppChromeLayout.topAdminControlSize
-            + AppChromeLayout.menuSectionChromeRowSpacing
-        let sectionRowBottomY = sectionRowY + AppChromeLayout.menuSectionChromeHeight
+    func testMenuSectionChromeUsesSingleRowSharedTopBackdrop() {
         let menuBackdropHeight = AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: true)
 
-        XCTAssertEqual(AppChromeLayout.menuSectionBackdropTopOffset, sectionRowY)
+        XCTAssertEqual(AppChromeLayout.menuSectionBackdropTopOffset, AppChromeLayout.topAdminTopPadding)
         XCTAssertEqual(
             menuBackdropHeight,
-            AppChromeLayout.menuSectionBackdropTopOffset + AppChromeLayout.menuSectionBackdropHeight
+            AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false)
         )
-        XCTAssertGreaterThan(menuBackdropHeight, AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false))
         XCTAssertGreaterThan(
             menuBackdropHeight,
-            sectionRowBottomY + 32
+            AppChromeLayout.topAdminTopPadding + AppChromeLayout.topAdminControlSize
         )
         XCTAssertFalse(AppChromeLayout.chromeSeparationAllowsHitTesting)
+    }
+
+    func testTopAdminMoreMenuInventoryIsGoLiveOnly() {
+        let items = TopAdminMoreMenuItem.goLiveItems
+        let titles = items.map(\.title)
+        let urls = items.map(\.url.absoluteString)
+
+        XCTAssertEqual(
+            titles,
+            ["Send Feedback", "Contact Support", "Privacy Policy", "Terms of Use"]
+        )
+        XCTAssertEqual(urls[0], "mailto:feedback@jayopsai.com")
+        XCTAssertEqual(urls[1], "https://speaklocal.app/feedback/")
+        XCTAssertEqual(urls[2], "https://speaklocal.app/privacy/")
+        XCTAssertEqual(urls[3], "https://speaklocal.app/terms/")
+        XCTAssertFalse(titles.contains { $0.localizedCaseInsensitiveContains("about") })
+        XCTAssertFalse(titles.contains { $0.localizedCaseInsensitiveContains("grab") })
     }
 
     func testPhotoBackdropChromeUsesOneSharedDissolveTiming() {
@@ -2309,6 +2320,13 @@ final class AppChromeTests: XCTestCase {
             PinnedAudioSpeedChromePolicy.canShowPinnedControl(
                 on: .browse,
                 hasStaticBackButton: false,
+                isSearchPresented: false
+            )
+        )
+        XCTAssertTrue(
+            PinnedAudioSpeedChromePolicy.canShowPinnedControl(
+                on: .detailPage("viet-phrase-polite-1"),
+                hasStaticBackButton: true,
                 isSearchPresented: false
             )
         )

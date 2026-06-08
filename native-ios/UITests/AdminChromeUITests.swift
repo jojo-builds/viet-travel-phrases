@@ -134,25 +134,28 @@ final class AdminChromeUITests: XCTestCase {
     func testDetailPagePinsAudioSpeedControlAfterPlayerScrollsOffscreen() {
         let app = launchApp(arguments: ["--detail-page", "viet-phrase-polite-1"])
         XCTAssertTrue(app.staticTexts["Xin chào"].waitForExistence(timeout: 5))
-        XCTAssertFalse(app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists)
+        XCTAssertFalse(app.descendants(matching: .any)["TopAdmin.SpeedChip"].exists)
         capturePinnedAudioProofIfRequested(app: app, name: "player-visible.png")
 
-        for _ in 0..<4 where !app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists {
+        for _ in 0..<4 where !app.descendants(matching: .any)["TopAdmin.SpeedChip"].exists {
             app.swipeUp()
         }
 
-        let pinnedSpeedControl = app.descendants(matching: .any)["PinnedAudioSpeedControl"]
-        XCTAssertTrue(
-            pinnedSpeedControl.waitForExistence(timeout: 2),
-            "Pinned speed control should appear once the main player scrolls above the top chrome."
-        )
+        let speedChip = app.descendants(matching: .any)["TopAdmin.SpeedChip"]
+        XCTAssertTrue(speedChip.waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["Go back"].exists, "Back button should remain in the top admin area.")
-        XCTAssertTrue(app.descendants(matching: .any)["0.5x"].exists)
-        XCTAssertTrue(app.descendants(matching: .any)["0.75x"].exists)
-        XCTAssertTrue(app.descendants(matching: .any)["1.0x"].exists)
-        assertPinnedSpeedControlFloatsInTopAdmin(pinnedSpeedControl: pinnedSpeedControl)
-        assertTopAdminControlsShareRow(app: app, pinnedSpeedControl: pinnedSpeedControl)
+        XCTAssertFalse(app.descendants(matching: .any)["TopAdmin.MorePanel"].exists)
+        XCTAssertTrue(app.buttons["TopAdmin.MoreButton"].exists)
+        assertPinnedSpeedControlFloatsInTopAdmin(pinnedSpeedControl: speedChip)
+        assertTopAdminControlsShareRow(app: app, pinnedSpeedControl: speedChip)
         capturePinnedAudioProofIfRequested(app: app, name: "pinned-speed-control.png")
+
+        openTopAdminMoreMenu(in: app)
+        let morePanel = app.descendants(matching: .any)["TopAdmin.MorePanel"]
+        XCTAssertTrue(morePanel.waitForExistence(timeout: 2))
+        XCTAssertTrue(morePanel.buttons["AudioSpeedOption.0.5x"].exists)
+        XCTAssertTrue(morePanel.buttons["AudioSpeedOption.0.75x"].exists)
+        XCTAssertTrue(morePanel.buttons["AudioSpeedOption.1.0x"].exists)
     }
 
     func testHomeUseNowPinsAudioSpeedControlAfterPlayerScrollsOffscreen() {
@@ -160,22 +163,21 @@ final class AdminChromeUITests: XCTestCase {
         assertHomeVisible(in: app)
         XCTAssertTrue(app.staticTexts["Essentials"].waitForExistence(timeout: 3))
         XCTAssertTrue(app.descendants(matching: .any)["HomeFeaturedPhrase.viet-polite-hello"].waitForExistence(timeout: 3))
-        XCTAssertFalse(app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists)
+        XCTAssertFalse(app.descendants(matching: .any)["TopAdmin.SpeedChip"].exists)
         capturePinnedAudioProofIfRequested(app: app, name: "home-use-now-player-visible.png")
 
-        for _ in 0..<4 where !app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists {
+        for _ in 0..<4 where !app.descendants(matching: .any)["TopAdmin.SpeedChip"].exists {
             app.swipeUp()
         }
 
-        let pinnedSpeedControl = app.descendants(matching: .any)["PinnedAudioSpeedControl"]
+        let pinnedSpeedControl = app.descendants(matching: .any)["TopAdmin.SpeedChip"]
         XCTAssertTrue(
             pinnedSpeedControl.waitForExistence(timeout: 2),
-            "Pinned speed control should appear once the Home Use Now player scrolls above the top chrome."
+            "Pinned speed chip should appear once the Home Use Now player scrolls above the top chrome."
         )
         XCTAssertFalse(app.buttons["TopAdmin.BackButton"].exists, "Home should show the speed pill without adding a Back button.")
-        XCTAssertTrue(app.descendants(matching: .any)["0.5x"].exists)
-        XCTAssertTrue(app.descendants(matching: .any)["0.75x"].exists)
-        XCTAssertTrue(app.descendants(matching: .any)["1.0x"].exists)
+        XCTAssertFalse(app.descendants(matching: .any)["TopAdmin.MorePanel"].exists)
+        XCTAssertTrue(app.buttons["TopAdmin.MoreButton"].exists)
         assertPinnedSpeedControlFloatsInTopAdmin(pinnedSpeedControl: pinnedSpeedControl)
         XCTAssertLessThanOrEqual(
             pinnedSpeedControl.frame.height,
@@ -184,14 +186,14 @@ final class AdminChromeUITests: XCTestCase {
         )
         capturePinnedAudioProofIfRequested(app: app, name: "home-use-now-pinned-speed-control.png")
 
-        for _ in 0..<5 where app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists {
+        for _ in 0..<5 where app.descendants(matching: .any)["TopAdmin.SpeedChip"].exists {
             app.swipeDown()
         }
 
         XCTAssertTrue(app.descendants(matching: .any)["HomeFeaturedPhrase.viet-polite-hello"].waitForExistence(timeout: 3))
         XCTAssertFalse(
-            app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists,
-            "Pinned speed control should go away once the Home Use Now player returns into view."
+            app.descendants(matching: .any)["TopAdmin.SpeedChip"].exists,
+            "Pinned speed chip should go away once the Home Use Now player returns into view."
         )
     }
 
@@ -200,14 +202,14 @@ final class AdminChromeUITests: XCTestCase {
         assertHomeVisible(in: app)
         XCTAssertTrue(app.descendants(matching: .any)["HomeFeaturedPhrase.viet-polite-hello"].waitForExistence(timeout: 3))
 
-        for _ in 0..<4 where !app.descendants(matching: .any)["PinnedAudioSpeedControl"].exists {
+        for _ in 0..<4 where !app.descendants(matching: .any)["TopAdmin.SpeedChip"].exists {
             app.swipeUp()
         }
 
-        let pinnedSpeedControl = app.descendants(matching: .any)["PinnedAudioSpeedControl"]
+        let pinnedSpeedControl = app.descendants(matching: .any)["TopAdmin.SpeedChip"]
         XCTAssertTrue(
             pinnedSpeedControl.waitForExistence(timeout: 2),
-            "Pinned speed control should be visible before testing the top-band scroll gesture."
+            "Pinned speed chip should be visible before testing the top-band scroll gesture."
         )
 
         let topBandStart = app.coordinate(withNormalizedOffset: CGVector(dx: 0.18, dy: 0.13))
@@ -221,6 +223,66 @@ final class AdminChromeUITests: XCTestCase {
             pinnedSpeedControl.exists,
             "Vertical drags that start in the empty top chrome band should continue scrolling Home."
         )
+    }
+
+    func testTopAdminMoreMenuShowsSpeedSelectorAndGoLiveLinks() {
+        let app = launchApp(arguments: ["--detail-page", "viet-phrase-polite-1"])
+        XCTAssertTrue(app.staticTexts["Xin chào"].waitForExistence(timeout: 5))
+        for _ in 0..<4 where !app.descendants(matching: .any)["TopAdmin.SpeedChip"].exists {
+            app.swipeUp()
+        }
+        XCTAssertTrue(app.descendants(matching: .any)["TopAdmin.SpeedChip"].waitForExistence(timeout: 2))
+
+        openTopAdminMoreMenu(in: app)
+        let morePanel = app.descendants(matching: .any)["TopAdmin.MorePanel"]
+        XCTAssertTrue(morePanel.waitForExistence(timeout: 2))
+        XCTAssertTrue(morePanel.buttons["AudioSpeedOption.0.5x"].exists)
+        XCTAssertTrue(morePanel.buttons["AudioSpeedOption.0.75x"].exists)
+        XCTAssertTrue(morePanel.buttons["AudioSpeedOption.1.0x"].exists)
+        XCTAssertTrue(morePanel.buttons["TopAdmin.More.Send Feedback"].exists)
+        XCTAssertTrue(morePanel.buttons["TopAdmin.More.Contact Support"].exists)
+        XCTAssertTrue(morePanel.buttons["TopAdmin.More.Privacy Policy"].exists)
+        XCTAssertTrue(morePanel.buttons["TopAdmin.More.Terms of Use"].exists)
+        XCTAssertFalse(morePanel.buttons["TopAdmin.More.About"].exists)
+        XCTAssertFalse(app.staticTexts["About Grab"].exists)
+
+        morePanel.buttons["AudioSpeedOption.0.75x"].tap()
+        XCTAssertTrue(app.descendants(matching: .any)["TopAdmin.SpeedChip"].waitForExistence(timeout: 2))
+        XCTAssertEqual(app.descendants(matching: .any)["TopAdmin.SpeedChip"].label, "0.75x")
+
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.08, dy: 0.34)).tap()
+        XCTAssertFalse(
+            morePanel.waitForExistence(timeout: 1),
+            "Tapping outside the More popover should close it."
+        )
+    }
+
+    func testTopAdminMoreButtonPlacementTracksForwardButton() {
+        let app = launchApp(arguments: ["--detail-page", "viet-phrase-polite-1"])
+        XCTAssertTrue(app.staticTexts["Xin chào"].waitForExistence(timeout: 5))
+
+        let moreWithoutForward = app.buttons["TopAdmin.MoreButton"]
+        XCTAssertTrue(moreWithoutForward.waitForExistence(timeout: 2))
+        XCTAssertFalse(app.buttons["TopAdmin.ForwardButton"].exists)
+        XCTAssertLessThan(
+            app.frame.maxX - moreWithoutForward.frame.maxX,
+            36,
+            "Without forward history, More should be the far-right top-admin control."
+        )
+
+        app.buttons["TopAdmin.BackButton"].tap()
+        assertHomeVisible(in: app)
+
+        let moreWithForward = app.buttons["TopAdmin.MoreButton"]
+        let forwardButton = app.buttons["TopAdmin.ForwardButton"]
+        XCTAssertTrue(moreWithForward.waitForExistence(timeout: 2))
+        XCTAssertTrue(forwardButton.waitForExistence(timeout: 2))
+        XCTAssertLessThan(
+            moreWithForward.frame.maxX,
+            forwardButton.frame.minX,
+            "When forward history exists, More should sit immediately left of the forward button."
+        )
+        XCTAssertEqual(moreWithForward.frame.midY, forwardButton.frame.midY, accuracy: 2)
     }
 
     func testHomePhotoBackdropHidesAndRestoresContent() {
@@ -741,6 +803,12 @@ final class AdminChromeUITests: XCTestCase {
                 "Top admin forward button and speed control should share the same row."
             )
         }
+    }
+
+    private func openTopAdminMoreMenu(in app: XCUIApplication) {
+        let moreButton = app.buttons["TopAdmin.MoreButton"]
+        XCTAssertTrue(moreButton.waitForExistence(timeout: 2))
+        moreButton.tap()
     }
 
     private func scrollToHomePracticeRail(in app: XCUIApplication) {
