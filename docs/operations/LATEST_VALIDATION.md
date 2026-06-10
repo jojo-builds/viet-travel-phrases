@@ -1,6 +1,6 @@
 # Latest Validation
 
-Last updated: 2026-06-10
+Last updated: 2026-06-11
 Authority lane: latest durable native iOS validation evidence
 
 ## Use This Doc For
@@ -9,6 +9,39 @@ Authority lane: latest durable native iOS validation evidence
 - what still needs proof after the native-only cleanup
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
+
+## Current Phrase Copy Production Gate Main Evidence
+
+Current `main` evidence after merging `codex/phrase-copy-production-gate`, based on merge commit `e06b28c0b`:
+
+- merged `codex/phrase-copy-production-gate` into `main` with merge commit `e06b28c0b`
+- target checkpoint commit included in `main`: `1176231b7` (`Finalize phrase copy production gate`)
+- paywall remained excluded; `git cherry -v main feature/paywall` still shows the paywall setup/skeleton commits as unmerged
+- visible copy recommendation: `PASS`
+- merge/release recommendation: `PASS_WITH_ACCEPTED_RISKS`
+- premium visible-copy audit on merged `main`: `1793` pages, `0` `HARD_REVIEW`, `0` `WEAK_REVIEW`, `0` `WATCH`, `1793` `PASS`
+- subagent review gates: Euclid returned focused copy `PASS`; Noether returned `MERGE_OK_ACCEPT_RISK` for source/render card parity
+- accepted source/render parity risk on merged `main`: `319` mismatch rows, `201` page mismatches, `57` unique source-card missing rows, `262` section layout diff rows, `0` hard-block rows, recommendation `REVISE_BEFORE_PRODUCTION`; accepted as runtime/source-card curation bookkeeping, not visible-copy failure
+- anti-thinning evidence remains branch-local: `882` ledger rows across `613` unique edited page IDs, including `20` Batch 48 rows and `4` Batch 49 rows
+- production QA remains `0` blockers / `0` majors; remaining non-copy follow-ups are missing-audio priority rows and hidden duplicate `sayThis` hero sections
+
+Fresh command evidence from merged `main`:
+
+- `node native-ios/scripts/audit-viet-premium-listing-copy.js` passed: `1793` pages, `0` hard, `0` weak, `0` watch, `1793` pass
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed: SQLite OK, `1793` canonical pages, `11728` relations, `0` release-blocking missing-audio rows, `778` planned missing-audio rows
+- `node native-ios/scripts/audit-viet-listing-production-qa.js` passed: `1793` pages, `0` blockers, `0` majors, `775` duplicate hero sections hidden at render time, `500` missing-audio priority rows
+- `node native-ios/scripts/validate-tier-one-listing-pages.js` passed: `150 / 150` strong
+- `node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production` passed: `520` pass, `0` revise, `0` fail
+- `node native-ios/scripts/validate-viet-city-copy.js` passed: `5` hubs, `520` city noun pages, `520` unique target heroes
+- `node native-ios/scripts/validate-viet-city-library.js` passed: `826` pages
+- `node native-ios/scripts/validate-vietnamese-menu-copy.js` passed: `355` handwritten Vietnamese menu item pages, `15` ready helper phrases
+- `node native-ios/scripts/audit-viet-source-render-card-parity.js` completed with `0` hard-block rows and accepted `REVISE_BEFORE_PRODUCTION` bookkeeping recommendation
+- `node scripts/guard-native-only.js` passed
+- `git diff --check` passed
+
+Physical iPhone proof from this merged copy gate:
+
+- pending after this validation receipt
 
 ## Branch-Local Phrase Copy Production Gate
 
