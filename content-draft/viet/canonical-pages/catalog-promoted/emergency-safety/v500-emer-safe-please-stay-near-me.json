@@ -7,7 +7,7 @@
   "title": "Xin hãy ở gần tôi",
   "englishTitle": "Please stay near me",
   "pronunciation": "Xin hay o gan toi",
-  "summary": "Please stay near me",
+  "summary": "For asking a trusted person, staffer, or helper to stay close while you feel unsafe or unwell.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Xin hãy ở gần tôi makes the request direct without adding extra explanation. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Say it to someone already helping you, then move toward light, staff, a desk, or a public place.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Xin hãy ở gần tôi together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Keep it simple and direct. Point to where you want to stand or walk if the person does not understand.",
       "phrases": [
         {
           "id": "v500-emer-safe-please-stay-near-me",
@@ -42,32 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Xin hãy means please; ở gần tôi means stay near me.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Xin hãy ở",
-          "english": "please / ask",
-          "audioKey": null
+          "vietnamese": "Xin hãy",
+          "english": "please",
+          "keepTogetherReason": "polite request frame"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "gần tôi",
-          "english": "near",
-          "audioKey": null
+          "vietnamese": "ở gần tôi",
+          "english": "stay near me",
+          "keepTogetherReason": "stay-near-me phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Xin hãy ở gần tôi",
           "english": "Please stay near me",
-          "audioKey": null
+          "audioKey": "v500-emer-safe-please-stay-near-me"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another safety or urgent-help need.",
+      "body": "Police, ambulance, and passport cards help if the situation needs outside help.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -104,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please stay near me. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at hotels, stations, clinics, police desks, late-night pickups, or crowded moments where you do not want to be alone.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "If the person near you is the problem, use stop-following, police, or help phrases instead.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Unsafe, emergency, help, hospital, and passport cards cover more urgent safety paths.",
       "phrases": [
         {
           "id": "emergency-4",

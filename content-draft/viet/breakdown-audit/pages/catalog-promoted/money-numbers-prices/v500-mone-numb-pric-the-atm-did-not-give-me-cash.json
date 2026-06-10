@@ -21,33 +21,26 @@
     {
       "id": "chunk-1",
       "vietnamese": "ATM",
-      "english": "an ATM"
+      "english": "cash machine",
+      "keepTogetherReason": "ATM noun"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "không",
-      "english": "no / not"
+      "vietnamese": "không đưa",
+      "english": "did not give",
+      "keepTogetherReason": "did-not-give phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đưa",
-      "english": "give / take"
+      "vietnamese": "tiền mặt",
+      "english": "cash",
+      "keepTogetherReason": "cash phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "tiền mặt",
-      "english": "cash",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "tôi",
-      "english": "me"
+      "vietnamese": "cho tôi",
+      "english": "to me",
+      "keepTogetherReason": "to-me phrase"
     },
     {
       "id": "full",

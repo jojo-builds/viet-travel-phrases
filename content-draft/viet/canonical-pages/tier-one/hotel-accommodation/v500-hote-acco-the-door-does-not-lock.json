@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cửa không khóa keeps the travel moment short and clear. This is for the front desk or in the room when you need the hotel to fix the next step.",
+      "body": "This is for the front desk or in the room when you need the hotel to fix the next step.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Hear Cửa + không as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "v500-hote-acco-the-door-does-not-lock-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Cửa không khóa together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Start with Cửa không khóa; keep the booking, room number, address, or key card ready if the reply needs proof.",
       "phrases": [
         {
           "id": "v500-hote-acco-the-door-does-not-lock",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. Keep the booking, room number, date, or address visible.",
+      "body": "Door-lock problems are safety problems, not comfort complaints. This phrase should move staff toward checking the room immediately.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a room-number check, maintenance visit, new key, or room-change option. Keep the booking, room number, date, or address visible.",
+      "body": "Expect a staff visit, new key card, repair, or room change.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for the front desk or in the room when you need the hotel to fix the next step. The reply may be a room-number check, maintenance visit, new key, or room-change option.",
+      "body": "Use it as soon as the door, balcony, or room lock fails to secure.",
       "phrases": [
         {
           "id": "hotel-checkout",
@@ -201,7 +201,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a front desk or guesthouse counter, the next useful language is usually I have a reservation; I’d like to check in; what time is check-out?",
       "phrases": [
         {
           "id": "hotel-1",

@@ -7,7 +7,7 @@
   "title": "Tôi có thể thử thẻ khác được không?",
   "englishTitle": "Can I try another card?",
   "pronunciation": "Toi co the thu the khac duoc khong",
-  "summary": "Can I try another card?",
+  "summary": "For asking to use a different card after one payment attempt fails or is declined.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể thử thẻ khác được không? keeps the question easy to answer. Keep the relevant place, item, or screen visible."
+      "body": "Ask before the cashier cancels the transaction, retries the same card, or switches you to cash.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể thử thẻ khác được không? together as one sentence before adding details. Start with Tôi có thể thử thẻ khác được không?",
+      "body": "Keep the terminal, failed receipt, and new card visible. A nod or reset may be all the cashier needs.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-can-i-try-another-card",
@@ -42,44 +43,39 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể thử asks can I try; thẻ khác means another card; được không asks is that possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể thử",
+          "english": "can I try",
+          "keepTogetherReason": "can-I-try phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể thử thẻ",
-          "english": "try another card",
-          "audioKey": null
+          "vietnamese": "thẻ khác",
+          "english": "another card",
+          "keepTogetherReason": "another-card phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "khác",
-          "english": "different / another",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite possibility ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Tôi có thể thử thẻ khác được không?",
-          "english": "Can I try another card",
-          "audioKey": null
+          "english": "Can I try another card?",
+          "audioKey": "v500-mone-numb-pric-can-i-try-another-card"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
+      "body": "How-much and per-kilo cards help if the payment problem starts with price confusion.",
       "phrases": [
         {
           "id": "price-1",
@@ -116,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I try another card. Keep the relevant place, item, or screen visible."
+      "body": "Good at card readers, ticket counters, hotels, restaurants, ATMs, and shops when the first card does not work.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "If the first card may have charged, check the terminal or app before tapping a second card.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Too-expensive, lower-price, final-price, another-one, and take-this cards cover nearby payment and price follow-ups.",
       "phrases": [
         {
           "id": "price-3",

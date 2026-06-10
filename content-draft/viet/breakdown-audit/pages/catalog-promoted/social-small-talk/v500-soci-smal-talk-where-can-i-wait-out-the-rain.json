@@ -20,30 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể",
+      "english": "can I",
+      "keepTogetherReason": "can-I question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "chờ mưa",
+      "english": "wait out the rain",
+      "keepTogetherReason": "rain-waiting phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "chờ",
-      "english": "wait"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "mưa",
-      "english": "rain"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "ở đâu?",
-      "english": "where",
-      "keepTogetherReason": "fixed place question"
+      "english": "where?",
+      "keepTogetherReason": "where question"
     },
     {
       "id": "full",

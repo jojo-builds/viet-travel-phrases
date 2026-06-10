@@ -20,39 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi nghĩ",
+      "english": "I think",
+      "keepTogetherReason": "I-think phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "nghĩ",
-      "english": "think"
+      "vietnamese": "đây là",
+      "english": "this is",
+      "keepTogetherReason": "this-is phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đây",
-      "english": "here / this"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "trò",
-      "english": "trick / game"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "lừa đảo",
-      "english": "scam",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "một trò lừa đảo",
+      "english": "a scam",
+      "keepTogetherReason": "scam phrase"
     },
     {
       "id": "full",

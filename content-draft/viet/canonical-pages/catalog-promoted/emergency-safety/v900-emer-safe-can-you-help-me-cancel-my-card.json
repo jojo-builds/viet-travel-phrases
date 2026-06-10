@@ -7,7 +7,7 @@
   "title": "Bạn có thể giúp tôi hủy thẻ được không?",
   "englishTitle": "Can you help me cancel my card?",
   "pronunciation": "Ban co the giup toi huy the duoc khong",
-  "summary": "Can you help me cancel my card?",
+  "summary": "For asking for help freezing or cancelling a bank card after loss, theft, or a bad charge.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể giúp tôi hủy thẻ được không? keeps the question easy to answer. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Use it when the card problem needs action now, not a long story first."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể giúp tôi hủy thẻ được không? together as one sentence before adding details. Start with Bạn có thể giúp tôi hủy thẻ được không?",
+      "body": "Show the banking app, card photo, receipt, or emergency number if it is safe to do so.",
       "phrases": [
         {
           "id": "v900-emer-safe-can-you-help-me-cancel-my-card",
@@ -42,44 +42,48 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; giúp tôi means help me; hủy thẻ means cancel the card; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
+          "keepTogetherReason": "can-you request frame",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "giúp tôi hủy",
+          "vietnamese": "giúp tôi",
           "english": "help me",
+          "keepTogetherReason": "help-me phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "thẻ",
-          "english": "card",
+          "vietnamese": "hủy thẻ",
+          "english": "cancel the card",
+          "keepTogetherReason": "cancel-card phrase",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending",
           "audioKey": null
         },
         {
           "id": "chunk-5",
           "vietnamese": "Bạn có thể giúp tôi hủy thẻ được không?",
-          "english": "Can you help me cancel my card",
-          "audioKey": null
+          "english": "Can you help me cancel my card?",
+          "audioKey": "v900-emer-safe-can-you-help-me-cancel-my-card"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another safety or urgent-help need.",
+      "body": "If the problem is theft, move to police, report, hotel call, charged twice, or emergency-contact follow-ups.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -116,17 +120,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you help me cancel my card. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at hotel desks, bank counters, police desks, shops, or with someone helping you make a call."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Protect private numbers. Show only the screen or contact detail needed for the next action."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use police, report, charged-twice, hotel-call, emergency-contact, or contact-embassy cards if the card problem leads to another step.",
       "phrases": [
         {
           "id": "emergency-4",

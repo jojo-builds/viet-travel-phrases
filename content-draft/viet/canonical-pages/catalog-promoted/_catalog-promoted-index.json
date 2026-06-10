@@ -1152,21 +1152,30 @@
       "phraseID": "v900-food-drin-can-we-sit-by-the-fan",
       "sourcePageID": "viet-phrase-v900-food-drin-can-we-sit-by-the-fan",
       "sourcePhraseID": "v900-food-drin-can-we-sit-by-the-fan",
-      "status": "ai_authored_read_designed_written"
+      "status": "ai_authored_read_designed_written",
+      "title": "Chúng tôi có thể ngồi cạnh quạt được không?",
+      "pronunciation": "Chung toi co the ngoi canh quat duoc khong",
+      "audioKey": null
     },
     {
       "pageID": "viet-phrase-v900-food-drin-can-we-sit-inside",
       "phraseID": "v900-food-drin-can-we-sit-inside",
       "sourcePageID": "viet-phrase-v900-food-drin-can-we-sit-inside",
       "sourcePhraseID": "v900-food-drin-can-we-sit-inside",
-      "status": "ai_authored_read_designed_written"
+      "status": "ai_authored_read_designed_written",
+      "title": "Chúng tôi có thể ngồi bên trong được không?",
+      "pronunciation": "Chung toi co the ngoi ben trong duoc khong",
+      "audioKey": null
     },
     {
       "pageID": "viet-phrase-v900-food-drin-can-we-sit-outside",
       "phraseID": "v900-food-drin-can-we-sit-outside",
       "sourcePageID": "viet-phrase-v900-food-drin-can-we-sit-outside",
       "sourcePhraseID": "v900-food-drin-can-we-sit-outside",
-      "status": "ai_authored_read_designed_written"
+      "status": "ai_authored_read_designed_written",
+      "title": "Chúng tôi có thể ngồi bên ngoài được không?",
+      "pronunciation": "Chung toi co the ngoi ben ngoai duoc khong",
+      "audioKey": null
     },
     {
       "pageID": "viet-phrase-v900-food-drin-can-you-change-this",
@@ -2412,14 +2421,20 @@
       "phraseID": "v900-loca-serv-ever-task-can-we-sit-somewhere-cooler",
       "sourcePageID": "viet-phrase-v900-loca-serv-ever-task-can-we-sit-somewhere-cooler",
       "sourcePhraseID": "v900-loca-serv-ever-task-can-we-sit-somewhere-cooler",
-      "status": "ai_authored_read_designed_written"
+      "status": "ai_authored_read_designed_written",
+      "title": "Chúng tôi có thể ngồi chỗ nào mát hơn được không?",
+      "pronunciation": "Chung toi co the ngoi cho nao mat hon duoc khong",
+      "audioKey": null
     },
     {
       "pageID": "viet-phrase-v900-loca-serv-ever-task-can-we-sit-somewhere-quieter",
       "phraseID": "v900-loca-serv-ever-task-can-we-sit-somewhere-quieter",
       "sourcePageID": "viet-phrase-v900-loca-serv-ever-task-can-we-sit-somewhere-quieter",
       "sourcePhraseID": "v900-loca-serv-ever-task-can-we-sit-somewhere-quieter",
-      "status": "ai_authored_read_designed_written"
+      "status": "ai_authored_read_designed_written",
+      "title": "Chúng tôi có thể ngồi chỗ nào yên tĩnh hơn được không?",
+      "pronunciation": "Chung toi co the ngoi cho nao yen tinh hon duoc khong",
+      "audioKey": null
     },
     {
       "pageID": "viet-phrase-v900-loca-serv-ever-task-can-you-copy-this-document",
@@ -5397,5 +5412,9 @@
       "status": "ai_authored_read_designed_written"
     }
   ],
-  "canonicalContentRepairAddedPages": 744
+  "canonicalContentRepairAddedPages": 744,
+  "title": "Tôi cần tiền mệnh giá nhỏ hơn",
+  "englishTitle": "I need smaller bills",
+  "summary": "I need smaller bills",
+  "pronunciation": "Toi can tien menh gia nho hon"
 }

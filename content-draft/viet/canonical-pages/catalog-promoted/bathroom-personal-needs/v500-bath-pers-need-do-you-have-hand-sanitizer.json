@@ -7,7 +7,7 @@
   "title": "Bạn có nước rửa tay khô không?",
   "englishTitle": "Do you have hand sanitizer?",
   "pronunciation": "Ban co nuoc rua tay kho khong",
-  "summary": "Do you have hand sanitizer?",
+  "summary": "For asking a counter, cafe, or restroom attendant for hand sanitizer.",
   "iconName": "person.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có nước rửa tay khô không? keeps the question easy to answer. Keep the relevant place, item, or screen visible."
+      "body": "Ask when soap, a sink, or a sanitizer bottle is not visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có nước rửa tay khô không? together as one sentence before adding details. Say Bạn có nước rửa tay khô không?",
+      "body": "Hold up your hands or point to the counter. A small gesture keeps the ask quick.",
       "phrases": [
         {
           "id": "v500-bath-pers-need-do-you-have-hand-sanitizer",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có asks do you have; nước rửa tay khô means hand sanitizer; không? makes it yes/no.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bạn có nước",
+          "vietnamese": "Bạn có",
           "english": "do you have",
-          "audioKey": null
+          "keepTogetherReason": "do-you-have phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "rửa tay khô",
+          "vietnamese": "nước rửa tay khô",
           "english": "hand sanitizer",
-          "audioKey": null
+          "keepTogetherReason": "hand-sanitizer noun"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Bạn có nước rửa tay khô không?",
-          "english": "Do you have hand sanitizer",
-          "audioKey": null
+          "english": "Do you have hand sanitizer?",
+          "audioKey": "v500-bath-pers-need-do-you-have-hand-sanitizer"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another bathroom or personal-needs need.",
+      "body": "Bathroom, toilet-paper, and restroom phrases cover the same personal-needs moment.",
       "phrases": [
         {
           "id": "bath-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is do you have hand sanitizer. Keep the relevant place, item, or screen visible."
+      "body": "Good at cafes, stations, hotel desks, shops, and public bathrooms after a ride, meal, or market stop."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Short, calm wording works well for personal needs. Pointing or showing a photo can make the request feel normal and easy to answer."
+      "body": "A counter may point to a pump instead of answering aloud. Watch for the gesture."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Soap, hand-washing, water, shower, and toilet follow-ups cover nearby personal-care needs.",
       "phrases": [
         {
           "id": "bath-3",

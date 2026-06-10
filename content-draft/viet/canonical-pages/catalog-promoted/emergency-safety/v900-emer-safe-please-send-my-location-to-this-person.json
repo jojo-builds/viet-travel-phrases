@@ -7,7 +7,7 @@
   "title": "Vui lòng gửi vị trí của tôi cho người này",
   "englishTitle": "Please send my location to this person",
   "pronunciation": "Vui long gui vi tri cua toi cho nguoi nay",
-  "summary": "Please send my location to this person",
+  "summary": "For asking someone to send your location to a trusted contact when you need help being found.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng gửi vị trí của tôi cho người này makes the request direct without adding extra explanation. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Show the contact, chat, map, or phone screen so the helper knows exactly who should receive it.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Vui lòng gửi vị trí của tôi cho người này together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Keep your phone unlocked only if it feels safe. Point to the contact instead of handing over more than needed.",
       "phrases": [
         {
           "id": "v900-emer-safe-please-send-my-location-to-this-person",
@@ -42,38 +43,39 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Vui lòng gửi means please send; vị trí của tôi means my location; cho người này means to this person.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Vui lòng gửi",
-          "english": "please",
-          "audioKey": null
+          "english": "please send",
+          "keepTogetherReason": "please-send phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "vị trí của tôi cho người",
-          "english": "my location to this person",
-          "audioKey": null
+          "vietnamese": "vị trí của tôi",
+          "english": "my location",
+          "keepTogetherReason": "my-location phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "này",
-          "english": "this one / this",
-          "audioKey": null
+          "vietnamese": "cho người này",
+          "english": "to this person",
+          "keepTogetherReason": "to-this-person phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Vui lòng gửi vị trí của tôi cho người này",
           "english": "Please send my location to this person",
-          "audioKey": null
+          "audioKey": "v900-emer-safe-please-send-my-location-to-this-person"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another safety or urgent-help need.",
+      "body": "Police, ambulance, and passport cards help when location sharing is part of a larger emergency.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -110,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please send my location to this person. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at hotels, police desks, clinics, ride pickups, stations, or late-night help moments when someone needs your location.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "If you cannot share your phone, ask them to write the address or send the location from their own device.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Unsafe, emergency, help, hospital, and passport cards cover more urgent safety paths.",
       "phrases": [
         {
           "id": "emergency-4",

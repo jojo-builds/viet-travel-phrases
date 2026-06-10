@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cảm ơn, tôi hiểu rồi keeps the travel moment short and clear. Reach for it when the directions finally make sense and you are ready to move. This is useful when the other person kept helping and you want to end the exchange cleanly.",
+      "body": "Reach for it when the directions finally make sense and you are ready to move.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Start with Cảm ơn, + tôi; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "directions-7-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Cảm ơn, tôi hiểu rồi together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Say Cảm ơn, tôi hiểu rồi clearly; show the map location, address, station name, or sign only if the reply needs detail.",
       "phrases": [
         {
           "id": "directions-7",
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Keep the map, address, or destination visible.",
+      "body": "Watch for a clear reply, a pointed detail, or simple follow-up. Move to the follow-up card that matches distance, direction, or transit choice.",
       "phrases": [
         {
           "id": "directions-1",
@@ -131,7 +131,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when the directions finally make sense and you are ready to move. The reply may be a clear reply, a pointed detail, or simple follow-up.",
+      "body": "Reach for it when the directions finally make sense and you are ready to move. Watch for a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "directions-4",
@@ -197,7 +197,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Keep the conversation close to excuse me, how do I get there?; is it near here?; how long does it take on foot?",
       "phrases": [
         {
           "id": "directions-1",

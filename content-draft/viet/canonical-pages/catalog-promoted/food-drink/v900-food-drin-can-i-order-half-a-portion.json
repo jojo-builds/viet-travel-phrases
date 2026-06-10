@@ -7,7 +7,7 @@
   "title": "Tôi có thể gọi một nửa phần được không?",
   "englishTitle": "Can I order half a portion?",
   "pronunciation": "Toi co the goi mot nua phan duoc khong",
-  "summary": "Can I order half a portion?",
+  "summary": "For asking whether a restaurant can serve a smaller half portion before you order.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể gọi một nửa phần được không? keeps the question easy to answer. Point to the item, menu line, receipt, size, or photo."
+      "body": "Ask before the dish is made. Staff may say yes, no, small size, or point to a different item.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể gọi một nửa phần được không? together as one sentence before adding details. Start with Tôi có thể gọi một nửa phần được không?",
+      "body": "Point to the dish on the menu first. If there is already a small size, use that instead of repeating half portion.",
       "phrases": [
         {
           "id": "v900-food-drin-can-i-order-half-a-portion",
@@ -37,148 +40,182 @@
           "detailPageID": null,
           "audioKey": "v900-food-drin-can-i-order-half-a-portion"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể asks can I; gọi means order; một nửa phần means half a portion; được không softens the question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể gọi một",
-          "english": "call",
-          "audioKey": null
+          "vietnamese": "gọi",
+          "english": "order",
+          "keepTogetherReason": "order verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "nửa phần",
+          "vietnamese": "một nửa phần",
           "english": "half a portion",
-          "audioKey": null
+          "keepTogetherReason": "half-portion phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Tôi có thể gọi một nửa phần được không?",
-          "english": "Can I order half a portion",
-          "audioKey": null
+          "english": "Can I order half a portion?",
+          "audioKey": "v900-food-drin-can-i-order-half-a-portion"
         }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
-        }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I order half a portion. Point to the item, menu line, receipt, size, or photo."
+      "body": "Good at restaurants, cafes, noodle shops, food courts, and family-style tables when portions look large.",
+      "phrases": [
+        {
+          "id": "food-4",
+          "vietnamese": "Cho thêm rau",
+          "english": "More herbs please",
+          "pronunciation": "cho them zow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-more-herbs",
+          "audioKey": "food-4"
+        },
+        {
+          "id": "food-6",
+          "vietnamese": "Cho tôi muỗng với đũa",
+          "english": "A spoon and chopsticks please",
+          "pronunciation": "cho toy moong voy doo-ah",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-utensils",
+          "audioKey": "food-6"
+        },
+        {
+          "id": "v900-food-drin-can-i-have-rice-with-this",
+          "vietnamese": "Cho tôi cơm ăn kèm được không?",
+          "english": "Can I have rice with this?",
+          "pronunciation": "Cho toi com an kem duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-have-rice-with-this",
+          "audioKey": null
+        },
+        {
+          "id": "v900-food-drin-can-i-have-soup-on-the-side",
+          "vietnamese": "Cho tôi xin chén súp riêng được không?",
+          "english": "Can I have soup on the side?",
+          "pronunciation": "Cho toi xin chen sup rieng duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-have-soup-on-the-side",
+          "audioKey": "audio-authored-cho-toi-xin-chen-sup-rieng-duoc-khong-aa044927f5"
+        },
+        {
+          "id": "v900-food-drin-sauce-on-the-side-please",
+          "vietnamese": "Xin vui lòng cho nước sốt vào bên cạnh",
+          "english": "Sauce on the side, please",
+          "pronunciation": "Xin vui long cho nuoc sot vao ben canh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-sauce-on-the-side-please",
+          "audioKey": "v900-food-drin-sauce-on-the-side-please"
+        }
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Some kitchens cannot halve a dish, but they may offer a smaller bowl, side dish, or shared plate.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to chili sauce, napkins, one portion, two of these, or one more cards if the order changes.",
       "phrases": [
         {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
+          "id": "v900-food-drin-can-i-have-chili-sauce",
+          "vietnamese": "Tôi có thể dùng tương ớt được không?",
+          "english": "Can I have chili sauce?",
+          "pronunciation": "Toi co the dung tuong ot duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
-          "audioKey": "coffee-4"
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-have-chili-sauce",
+          "audioKey": "v900-food-drin-can-i-have-chili-sauce"
         },
         {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-food-drin-can-i-have-napkins",
+          "vietnamese": "Cho tôi xin khăn giấy được không?",
+          "english": "Can I have napkins?",
+          "pronunciation": "Cho toi xin khan giay duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
-          "audioKey": "coffee-5"
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-have-napkins",
+          "audioKey": "audio-authored-cho-toi-xin-khan-giay-duoc-khong-7718394956"
         },
         {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
+          "id": "v900-food-drin-two-of-these-please",
+          "vietnamese": "Xin vui lòng cho hai trong số này",
+          "english": "Two of these, please",
+          "pronunciation": "Xin vui long cho hai trong so nay",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
-          "audioKey": "coffee-6"
+          "detailPageID": "viet-phrase-v900-food-drin-two-of-these-please",
+          "audioKey": "v900-food-drin-two-of-these-please"
         },
         {
-          "id": "coffee-7",
-          "vietnamese": "Tính tiền giúp tôi",
-          "english": "Please let me pay",
-          "pronunciation": "ting tyen zoop toy",
+          "id": "v900-food-drin-one-more-please",
+          "vietnamese": "Xin thêm một cái nữa",
+          "english": "One more, please",
+          "pronunciation": "Xin them mot cai nua",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
-          "audioKey": "coffee-7"
+          "detailPageID": "viet-phrase-v900-food-drin-one-more-please",
+          "audioKey": "v900-food-drin-one-more-please"
         },
         {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
+          "id": "food-1",
+          "vietnamese": "Cho tôi một phần",
+          "english": "One portion please",
+          "pronunciation": "cho toy mot fun",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
-          "audioKey": "food-need-table"
+          "detailPageID": "viet-family-food-one-portion",
+          "audioKey": "food-1"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Chili sauce, napkins, one-portion, two-of-these, and one-more cards cover the order-size choices around it.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [

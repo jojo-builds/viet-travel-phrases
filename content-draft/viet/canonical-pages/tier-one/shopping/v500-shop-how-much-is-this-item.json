@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Start with Mặt hàng + này; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "v500-shop-how-much-is-this-item-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Ask with the item, size, receipt, price tag, or photo visible, then wait for yes, no, or a correction.",
       "phrases": [
         {
           "id": "v500-shop-how-much-is-this-item",
@@ -84,7 +84,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. Point to the item, menu line, receipt, size, or photo.",
+      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. Keep the item, size, receipt, price tag, or photo ready so the other person can act on the same detail.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a number, typed amount, calculator screen, or direct yes/no about payment. Say Mặt hàng này giá bao nhiêu?",
+      "body": "Watch for a number, typed amount, calculator screen, or direct yes/no about payment. Say Mặt hàng này giá bao nhiêu?",
       "phrases": [
         {
           "id": "shop-1",
@@ -131,7 +131,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this while comparing items, checking fit, or fixing a purchase problem at the counter. The reply may be a number, typed amount, calculator screen, or direct yes/no about payment.",
+      "body": "Use this while comparing items, checking fit, or fixing a purchase problem at the counter. Watch for a number, typed amount, calculator screen, or direct yes/no about payment.",
       "phrases": [
         {
           "id": "shop-4",
@@ -197,7 +197,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover I want this size; do you have another color?; can I try this on?",
       "phrases": [
         {
           "id": "shop-1",

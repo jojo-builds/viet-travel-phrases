@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Phòng này nóng quá names the need before the details start piling up. Reach for it when the room temperature is the main problem. Lead with the room problem before asking for the fix.",
+      "body": "Reach for it when the room temperature is the main problem.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Phòng + này carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "hotel-4-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Phòng này nóng quá together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Say Phòng này nóng quá first; let the booking, room number, address, or key card support the reply.",
       "phrases": [
         {
           "id": "hotel-4",
@@ -84,7 +84,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. Keep the booking, room number, date, or address visible.",
+      "body": "A hot room can mean air conditioning, fan, window, or room-change help. Start with the condition, then let staff choose the fix.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a room-number check, maintenance visit, new key, or room-change option. Keep the booking, room number, date, or address visible.",
+      "body": "Expect a remote check, fan, maintenance visit, or another room if the problem persists.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -131,7 +131,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when the room temperature is the main problem. The reply may be a room-number check, maintenance visit, new key, or room-change option.",
+      "body": "Best when the room stays hot after you have tried the obvious controls.",
       "phrases": [
         {
           "id": "hotel-checkout",
@@ -170,7 +170,7 @@
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
+      "body": "If the room still does not cool, move to air-conditioner-broken or room-change language.",
       "presentation": "tip-callout",
       "phrases": [],
       "breakdown": []
@@ -178,7 +178,7 @@
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Pair the phrase with a booking screen, key card, room number, or photo of the problem.",
+      "body": "Show the thermostat, remote, or warm room before adding a long explanation.",
       "phrases": [
         {
           "id": "hotel-7",
@@ -207,7 +207,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Keep the conversation close to I have a reservation; I’d like to check in; what time is check-out?",
       "phrases": [
         {
           "id": "hotel-1",

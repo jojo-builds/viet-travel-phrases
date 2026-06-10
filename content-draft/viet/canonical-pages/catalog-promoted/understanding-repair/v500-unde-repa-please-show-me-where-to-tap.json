@@ -7,7 +7,7 @@
   "title": "Vui lòng chỉ cho tôi nơi để nhấn",
   "englishTitle": "Please show me where to tap",
   "pronunciation": "Vui long chi cho toi noi de nhan",
-  "summary": "Please show me where to tap",
+  "summary": "For asking someone to point out the right button on a phone, kiosk, or payment screen.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng chỉ cho tôi nơi để nhấn makes the request direct without adding extra explanation. If it is still unclear, show, write, or point to the exact word."
+      "body": "Use it when an app, ATM, QR screen, ticket machine, or card reader is asking for the next tap."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Vui lòng chỉ cho tôi nơi để nhấn together as one sentence before adding details. If it is still unclear, show, write, or point to the exact word.",
+      "body": "Hold the screen where they can see it and let them point instead of taking the phone.",
       "phrases": [
         {
           "id": "v500-unde-repa-please-show-me-where-to-tap",
@@ -42,85 +42,79 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Vui lòng chỉ cho tôi means please show me; nơi để nhấn means where to tap.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Vui lòng chỉ",
-          "english": "please",
-          "audioKey": null
+          "vietnamese": "Vui lòng chỉ cho tôi",
+          "english": "please show me",
+          "keepTogetherReason": "please-show-me phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cho tôi nơi",
-          "english": "for me / please",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-3",
-          "vietnamese": "để nhấn",
+          "vietnamese": "nơi để nhấn",
           "english": "where to tap",
-          "audioKey": null
+          "keepTogetherReason": "where-to-tap phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Vui lòng chỉ cho tôi nơi để nhấn",
           "english": "Please show me where to tap",
-          "audioKey": null
+          "audioKey": "v500-unde-repa-please-show-me-where-to-tap"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
+      "body": "Do not tap again, point to it, and write the price phrases help when the screen is part of a payment or form.",
       "phrases": [
         {
-          "id": "problems-2",
-          "vietnamese": "Tôi không hiểu",
-          "english": "I don’t understand",
-          "pronunciation": "toy khong hyew",
+          "id": "v900-mone-numb-pric-please-do-not-tap-again",
+          "vietnamese": "Làm ơn đừng gõ nữa",
+          "english": "Please do not tap again",
+          "pronunciation": "Lam on dung go nua",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-problems-2",
-          "audioKey": "problems-2"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-please-do-not-tap-again",
+          "audioKey": "v900-mone-numb-pric-please-do-not-tap-again"
         },
         {
-          "id": "problems-3",
-          "vietnamese": "Nói chậm chút được không?",
-          "english": "Can you speak a little slower?",
-          "pronunciation": "noy chuhm choot dook khong",
+          "id": "v500-unde-repa-please-point-to-it",
+          "vietnamese": "Hãy chỉ vào nó",
+          "english": "Please point to it",
+          "pronunciation": "Hay chi vao no",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-problems-3",
-          "audioKey": "problems-3"
+          "detailPageID": "viet-phrase-v500-unde-repa-please-point-to-it",
+          "audioKey": "v500-unde-repa-please-point-to-it"
         },
         {
-          "id": "repair-slower-polite",
-          "vietnamese": "Nói chậm giúp tôi được không?",
-          "english": "Could you speak a little slower, please?",
-          "pronunciation": "noy chuhm zoop toy dook khong",
+          "id": "v500-unde-repa-can-you-write-the-price",
+          "vietnamese": "Bạn có thể viết giá được không?",
+          "english": "Can you write the price?",
+          "pronunciation": "Ban co the viet gia duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-repair-slower-polite",
-          "audioKey": "repair-slower-polite"
+          "detailPageID": "viet-phrase-v500-unde-repa-can-you-write-the-price",
+          "audioKey": "v500-unde-repa-can-you-write-the-price"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please show me where to tap. If it is still unclear, show, write, or point to the exact word."
+      "body": "Good at payment terminals, ticket kiosks, SIM counters, hotel desks, ATMs, and delivery apps."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "These phrases keep the exchange friendly when Vietnamese moves too fast. Ask for one specific next step: repeat, write, show, or point."
+      "body": "If money is involved, keep the phone in your hand and ask them to point. That protects the screen and the payment."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Repeat, write it down, meaning, which one, and show me phrases cover nearby repair moves.",
       "phrases": [
         {
           "id": "repair-1",

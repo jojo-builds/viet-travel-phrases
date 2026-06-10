@@ -19,25 +19,22 @@
   ],
   "tokens": [
     {
+      "id": "chunk-1",
       "vietnamese": "Giặt đồ",
-      "english": "laundry / wash clothes",
-      "keepTogetherReason": "compound laundry phrase"
+      "english": "laundry / washing clothes",
+      "keepTogetherReason": "laundry phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "bao nhiêu",
+      "english": "how much",
+      "keepTogetherReason": "how-much phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "bao nhiêu",
-      "english": "how much / how many",
-      "keepTogetherReason": "fixed amount question"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "kg?",
-      "english": "kg"
+      "vietnamese": "một kg?",
+      "english": "per kilo?",
+      "keepTogetherReason": "per-kilo phrase"
     },
     {
       "id": "full",

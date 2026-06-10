@@ -7,7 +7,7 @@
   "title": "Tôi trả bằng tiền mặt",
   "englishTitle": "I’ll pay cash",
   "pronunciation": "toy tra bang tyen mat",
-  "summary": "Use this near the end of a ride when the amount is already clear and the driver needs to know you are paying in cash.",
+  "summary": "This prevents confusion before the ride ends.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi trả bằng tiền mặt when the ride is turning into a payment moment. It belongs with fare, meter, change, card, and receipt questions, after the route is settled.",
+      "body": "Reach for it when payment method needs to be clear.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Start with Tôi trả + bằng; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "taxi-7-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi trả bằng tiền mặt after the fare is visible or agreed. Say it once, keep the cash or ride screen visible, then wait for a nod, a number, or a payment instruction.",
+      "body": "Say Tôi trả bằng tiền mặt first; let the destination, fare, or ride screen support the reply.",
       "phrases": [
         {
           "id": "taxi-7",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Cash can be the cleanest way to finish a ride, but only after the amount is understood. This line sets the payment method before money changes hands.",
+      "body": "Cash payment is a ride-ending detail, not a route request. Say it after the fare is understood so the driver knows how you plan to settle.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,37 +86,37 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The next exchange is usually about amount, meter, card, receipt, or change. Keep the payment question narrow so the driver does not think you are changing the route.",
+      "body": "Expect a nod, a request for smaller bills, a card/QR correction, or a fare check. Keep the visible amount close until payment is done.",
       "phrases": [
         {
-          "id": "transport-fare",
-          "vietnamese": "Tiền xe bao nhiêu?",
-          "english": "How much is the fare?",
-          "pronunciation": "tyen seh bao nyew",
+          "id": "taxi-1",
+          "vietnamese": "Cho tôi tới đây",
+          "english": "Take me here",
+          "pronunciation": "cho toy toy day",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-family-transport-fare",
-          "audioKey": "transport-fare"
+          "detailPageID": "viet-family-transport-destination",
+          "audioKey": "taxi-1"
         },
         {
-          "id": "transport-meter",
-          "vietnamese": "Làm ơn bật đồng hồ giúp tôi",
-          "english": "Please use the meter",
-          "pronunciation": "lahm uhn but dong ho zoop toy",
+          "id": "taxi-2",
+          "vietnamese": "Đi quận 1",
+          "english": "Go to District 1",
+          "pronunciation": "dee gwan mot",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-family-transport-meter",
-          "audioKey": "transport-meter"
+          "detailPageID": "viet-family-transport-main-destination",
+          "audioKey": "taxi-2"
         },
         {
-          "id": "store-6",
-          "vietnamese": "Tôi quẹt thẻ được không?",
-          "english": "Can I pay by card?",
-          "pronunciation": "toy quet teh dook khong",
+          "id": "taxi-3",
+          "vietnamese": "Dừng ở đây được rồi",
+          "english": "You can stop here",
+          "pronunciation": "zoong uh day dook roy",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-family-service-card",
-          "audioKey": "store-6"
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-stop-here",
+          "audioKey": "taxi-3"
         }
       ],
       "presentation": "phrase-list",
@@ -125,37 +125,37 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the ride is ending, the fare is settled, or the driver asks how you are paying. If the price is not clear yet, ask the fare first.",
+      "body": "Best near the end of a ride, after the fare is visible or the driver asks how you are paying.",
       "phrases": [
         {
-          "id": "transport-fare",
-          "vietnamese": "Tiền xe bao nhiêu?",
-          "english": "How much is the fare?",
-          "pronunciation": "tyen seh bao nyew",
+          "id": "taxi-4",
+          "vietnamese": "Đi đường này đi",
+          "english": "Go this way",
+          "pronunciation": "dee doong nai dee",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-family-transport-fare",
-          "audioKey": "transport-fare"
+          "detailPageID": "viet-family-transport-route",
+          "audioKey": "taxi-4"
         },
         {
-          "id": "transport-meter",
-          "vietnamese": "Làm ơn bật đồng hồ giúp tôi",
-          "english": "Please use the meter",
-          "pronunciation": "lahm uhn but dong ho zoop toy",
+          "id": "taxi-5",
+          "vietnamese": "Mở máy lạnh giúp tôi",
+          "english": "Please turn on the air conditioning",
+          "pronunciation": "muh mai lanh zoop toy",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-family-transport-meter",
-          "audioKey": "transport-meter"
+          "detailPageID": "viet-family-transport-aircon",
+          "audioKey": "taxi-5"
         },
         {
-          "id": "store-6",
-          "vietnamese": "Tôi quẹt thẻ được không?",
-          "english": "Can I pay by card?",
-          "pronunciation": "toy quet teh dook khong",
+          "id": "taxi-6",
+          "vietnamese": "Chờ tôi năm phút",
+          "english": "Wait for me five minutes",
+          "pronunciation": "cho toy nam foot",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-family-service-card",
-          "audioKey": "store-6"
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-wait",
+          "audioKey": "taxi-6"
         }
       ],
       "presentation": "phrase-list",
@@ -164,7 +164,7 @@
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Do not lead with a large bill unless the amount is clear. Let the fare be visible first, then hand over cash.",
+      "body": "Large bills can make the handoff harder. Confirm the fare before offering cash or asking for change.",
       "presentation": "tip-callout",
       "phrases": [],
       "breakdown": []
@@ -172,7 +172,7 @@
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "If the reply is fast, point to the meter, app price, calculator, or bill. A visible number is easier than repeating the phrase louder.",
+      "body": "Show the fare, meter, or app price first. Cash is clearer when the amount is already shared.",
       "phrases": [
         {
           "id": "transport-fare",
@@ -195,73 +195,84 @@
           "audioKey": "transport-meter"
         },
         {
-          "id": "store-6",
-          "vietnamese": "Tôi quẹt thẻ được không?",
-          "english": "Can I pay by card?",
-          "pronunciation": "toy quet teh dook khong",
+          "id": "transport-lost",
+          "vietnamese": "Tôi nghĩ chúng ta bị lạc rồi",
+          "english": "I think we are lost",
+          "pronunciation": "toy ngee choong ta bee lahk roy",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-family-service-card",
-          "audioKey": "store-6"
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-lost",
+          "audioKey": "transport-lost"
         }
       ],
       "presentation": "phrase-list",
       "breakdown": []
     },
     {
-      "id": "nearby-phrases",
-      "title": "Useful nearby phrases",
-      "body": "Use these when the cash line turns into a fare, meter, card, receipt, or change question.",
-      "phrases": [
-        {
-          "id": "transport-fare",
-          "vietnamese": "Tiền xe bao nhiêu?",
-          "english": "How much is the fare?",
-          "pronunciation": "tyen seh bao nyew",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-family-transport-fare",
-          "audioKey": "transport-fare"
-        },
-        {
-          "id": "transport-meter",
-          "vietnamese": "Làm ơn bật đồng hồ giúp tôi",
-          "english": "Please use the meter",
-          "pronunciation": "lahm uhn but dong ho zoop toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-family-transport-meter",
-          "audioKey": "transport-meter"
-        },
-        {
-          "id": "store-6",
-          "vietnamese": "Tôi quẹt thẻ được không?",
-          "english": "Can I pay by card?",
-          "pronunciation": "toy quet teh dook khong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-family-service-card",
-          "audioKey": "store-6"
-        },
-        {
-          "id": "store-7",
-          "vietnamese": "Cho tôi hóa đơn",
-          "english": "Please give me the receipt",
-          "pronunciation": "cho toy hwa dun",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-family-service-receipt",
-          "audioKey": "store-7"
-        }
-      ],
-      "presentation": "horizontal-phrase-cards",
-      "breakdown": []
-    },
-    {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these when the cash line turns into a fare, meter, card, receipt, or change question.",
+      "body": "After cash is clear, move to change, receipt, card, fare, or small-bill phrases if the payment still needs work.",
       "phrases": [
+        {
+          "id": "taxi-1",
+          "vietnamese": "Cho tôi tới đây",
+          "english": "Take me here",
+          "pronunciation": "cho toy toy day",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-destination",
+          "audioKey": "taxi-1"
+        },
+        {
+          "id": "taxi-2",
+          "vietnamese": "Đi quận 1",
+          "english": "Go to District 1",
+          "pronunciation": "dee gwan mot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-main-destination",
+          "audioKey": "taxi-2"
+        },
+        {
+          "id": "taxi-3",
+          "vietnamese": "Dừng ở đây được rồi",
+          "english": "You can stop here",
+          "pronunciation": "zoong uh day dook roy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-stop-here",
+          "audioKey": "taxi-3"
+        },
+        {
+          "id": "taxi-4",
+          "vietnamese": "Đi đường này đi",
+          "english": "Go this way",
+          "pronunciation": "dee doong nai dee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-route",
+          "audioKey": "taxi-4"
+        },
+        {
+          "id": "taxi-5",
+          "vietnamese": "Mở máy lạnh giúp tôi",
+          "english": "Please turn on the air conditioning",
+          "pronunciation": "muh mai lanh zoop toy",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-aircon",
+          "audioKey": "taxi-5"
+        },
+        {
+          "id": "taxi-6",
+          "vietnamese": "Chờ tôi năm phút",
+          "english": "Wait for me five minutes",
+          "pronunciation": "cho toy nam foot",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-wait",
+          "audioKey": "taxi-6"
+        },
         {
           "id": "transport-fare",
           "vietnamese": "Tiền xe bao nhiêu?",
@@ -281,36 +292,6 @@
           "tintName": "orange",
           "detailPageID": "viet-family-transport-meter",
           "audioKey": "transport-meter"
-        },
-        {
-          "id": "store-6",
-          "vietnamese": "Tôi quẹt thẻ được không?",
-          "english": "Can I pay by card?",
-          "pronunciation": "toy quet teh dook khong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-family-service-card",
-          "audioKey": "store-6"
-        },
-        {
-          "id": "store-7",
-          "vietnamese": "Cho tôi hóa đơn",
-          "english": "Please give me the receipt",
-          "pronunciation": "cho toy hwa dun",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-family-service-receipt",
-          "audioKey": "store-7"
-        },
-        {
-          "id": "price-9",
-          "vietnamese": "Có tiền lẻ không?",
-          "english": "Do you have smaller bills?",
-          "pronunciation": "koh tyen leh khong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-price-9",
-          "audioKey": "price-9"
         }
       ],
       "presentation": "phrase-list",

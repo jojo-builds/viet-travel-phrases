@@ -4,10 +4,10 @@
   "phraseID": "v900-poli-basi-may-i",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Tôi có thể không?",
-  "englishTitle": "May I?",
-  "pronunciation": "Toi co the khong",
-  "summary": "May I?",
+  "title": "Tôi có thể làm vậy được không?",
+  "englishTitle": "May I do that?",
+  "pronunciation": "Toi co the lam vay duoc khong",
+  "summary": "For asking permission with a gesture toward the seat, item, doorway, or action you mean.",
   "iconName": "hand.wave.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -15,65 +15,67 @@
     "v900-poli-basi-may-i",
     "premium"
   ],
-  "audioKey": "v900-poli-basi-may-i",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể không? keeps the question easy to answer. Keep the tone warm and leave room for a short reply."
+      "body": "Best when the action is obvious from your gesture, not when the other person has to guess.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể không? together as one sentence before adding details. Start with Tôi có thể không?",
+      "body": "Point or gesture first, then ask. The phrase works like a polite permission check for a small action.",
       "phrases": [
         {
           "id": "v900-poli-basi-may-i",
-          "vietnamese": "Tôi có thể không?",
-          "english": "May I?",
-          "pronunciation": "Toi co the khong",
-          "symbolName": "speaker.wave.2.fill",
+          "vietnamese": "Tôi có thể làm vậy được không?",
+          "english": "May I do that?",
+          "pronunciation": "Toi co the lam vay duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
           "detailPageID": null,
-          "audioKey": "v900-poli-basi-may-i"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể asks can I; làm vậy means do that; được không softens the permission question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể",
-          "english": "can / able to",
-          "audioKey": null
+          "vietnamese": "làm vậy",
+          "english": "do that",
+          "keepTogetherReason": "do-that phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that okay?",
+          "keepTogetherReason": "permission ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "Tôi có thể không?",
-          "english": "May I",
+          "id": "full",
+          "vietnamese": "Tôi có thể làm vậy được không?",
+          "english": "May I do that?",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another polite basics need.",
+      "body": "Hello, thank-you, and excuse-me cards cover the polite frame around the permission ask.",
       "phrases": [
         {
           "id": "polite-1",
@@ -110,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is may I. Keep the tone warm and leave room for a short reply."
+      "body": "Good before sitting, entering, touching an item, taking a photo, moving something, or trying a small action.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "The gesture matters. Without the action in view, this phrase is too vague to carry the whole request.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to yes, no-thank-you, excuse-me, it's-okay, or goodbye cards when the exchange becomes basic politeness.",
       "phrases": [
         {
           "id": "polite-3",
@@ -178,13 +182,13 @@
   "examples": [
     {
       "id": "v900-poli-basi-may-i",
-      "vietnamese": "Tôi có thể không?",
-      "english": "May I?",
-      "pronunciation": "Toi co the khong",
-      "symbolName": "speaker.wave.2.fill",
+      "vietnamese": "Tôi có thể làm vậy được không?",
+      "english": "May I do that?",
+      "pronunciation": "Toi co the lam vay duoc khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "red",
       "detailPageID": null,
-      "audioKey": "v900-poli-basi-may-i"
+      "audioKey": null
     }
   ]
 }

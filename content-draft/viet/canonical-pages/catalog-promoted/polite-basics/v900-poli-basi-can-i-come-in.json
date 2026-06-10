@@ -7,7 +7,7 @@
   "title": "Tôi có thể vào được không?",
   "englishTitle": "Can I come in?",
   "pronunciation": "Toi co the vao duoc khong",
-  "summary": "Can I come in?",
+  "summary": "For asking permission before entering a room, office, clinic space, staff area, home, temple room, or small shop interior.",
   "iconName": "hand.wave.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể vào được không? keeps the question easy to answer. Keep the tone warm and leave room for a short reply."
+      "body": "Pause at the doorway and ask before stepping in. A nod, hand wave, or shoe-removal gesture may be the answer."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể vào được không? together as one sentence before adding details. Start with Tôi có thể vào được không?",
+      "body": "Keep your body outside the threshold until they answer. The phrase works best with a small pause.",
       "phrases": [
         {
           "id": "v900-poli-basi-can-i-come-in",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể means can I; vào means come in or enter; được không softens the question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể vào",
-          "english": "come in",
-          "audioKey": null
+          "vietnamese": "vào",
+          "english": "come in / enter",
+          "keepTogetherReason": "enter verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi có thể vào được không?",
-          "english": "Can I come in",
-          "audioKey": null
+          "english": "Can I come in?",
+          "audioKey": "v900-poli-basi-can-i-come-in"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another polite basics need.",
+      "body": "May-I, excuse-me, thank-you, and wait-here cards cover the polite doorway flow around this question.",
       "phrases": [
         {
           "id": "polite-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I come in. Keep the tone warm and leave room for a short reply."
+      "body": "Good at homestays, clinics, salons, small offices, temples, staff rooms, and shops where the entrance is not clearly public."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Doorway etiquette is often visual. Watch for shoes, a curtain, a raised hand, or a point to another entrance."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to excuse-me, may-I, wait-here, where-is-the-entrance, or thank-you cards once permission is clear.",
       "phrases": [
         {
           "id": "polite-3",

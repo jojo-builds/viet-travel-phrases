@@ -7,7 +7,7 @@
   "title": "Tôi bị dị ứng với penicillin",
   "englishTitle": "I am allergic to penicillin",
   "pronunciation": "Toi bi di ung voi penicillin",
-  "summary": "I am allergic to penicillin",
+  "summary": "For warning a pharmacist or clinician before they choose medicine for you.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi bị dị ứng với penicillin names the need before the details start piling up. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Say it before accepting pills, injections, or antibiotic advice."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi bị dị ứng với penicillin together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Show the medicine name or allergy note if you have it, then let staff check alternatives.",
       "phrases": [
         {
           "id": "v900-heal-phar-i-am-allergic-to-penicillin",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi bị dị ứng với means I am allergic to; penicillin is the medicine name.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi bị",
-          "english": "I have / got",
-          "audioKey": null
+          "english": "I am / I have",
+          "keepTogetherReason": "I-have condition frame"
         },
         {
           "id": "chunk-2",
           "vietnamese": "dị ứng với penicillin",
-          "english": "go",
-          "audioKey": null
+          "english": "allergic to penicillin",
+          "keepTogetherReason": "drug-allergy phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi bị dị ứng với penicillin",
           "english": "I am allergic to penicillin",
-          "audioKey": null
+          "audioKey": "v900-heal-phar-i-am-allergic-to-penicillin"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Doctor, pharmacy, and nearest-pharmacy pages help if the allergy changes where you need to go.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,67 +104,67 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i am allergic to penicillin. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at pharmacies, clinics, hospitals, hotel desks, and travel insurance calls."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "For drug allergies, short and serious is better than a long story. Point to the written name if possible."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "If staff need to check the medicine, ask about availability, interactions, alcohol, sleepiness, or whether it is safe with your regular medicine.",
       "phrases": [
         {
-          "id": "health-2",
-          "vietnamese": "Tôi bị đau đầu",
-          "english": "I have a headache",
-          "pronunciation": "toy bee dow dow",
+          "id": "v900-heal-phar-do-you-have-this-medicine",
+          "vietnamese": "Bạn có thuốc này không?",
+          "english": "Do you have this medicine?",
+          "pronunciation": "Ban co thuoc nay khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-2",
-          "audioKey": "health-2"
+          "detailPageID": "viet-phrase-v900-heal-phar-do-you-have-this-medicine",
+          "audioKey": "v900-heal-phar-do-you-have-this-medicine"
         },
         {
-          "id": "health-3",
-          "vietnamese": "Tôi đau bụng",
-          "english": "My stomach hurts",
-          "pronunciation": "toy dow boong",
+          "id": "v900-heal-phar-please-check-for-drug-interactions",
+          "vietnamese": "Vui lòng kiểm tra tương tác thuốc",
+          "english": "Please check for drug interactions",
+          "pronunciation": "Vui long kiem tra tuong tac thuoc",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-3",
-          "audioKey": "health-3"
+          "detailPageID": "viet-phrase-v900-heal-phar-please-check-for-drug-interactions",
+          "audioKey": "v900-heal-phar-please-check-for-drug-interactions"
         },
         {
-          "id": "health-4",
-          "vietnamese": "Có thuốc say xe không?",
-          "english": "Do you have motion sickness medicine?",
-          "pronunciation": "koh thoo-ok sai seh khong",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-heal-phar-can-i-drink-alcohol-with-this",
+          "vietnamese": "Tôi có thể uống rượu khi dùng thuốc này không?",
+          "english": "Can I drink alcohol with this?",
+          "pronunciation": "Toi co the uong ruou khi dung thuoc nay khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-4",
-          "audioKey": "health-4"
+          "detailPageID": "viet-phrase-v900-heal-phar-can-i-drink-alcohol-with-this",
+          "audioKey": null
         },
         {
-          "id": "health-5",
-          "vietnamese": "Tôi bị dị ứng cái này",
-          "english": "I am allergic to this",
-          "pronunciation": "toy bee zee oong gai nai",
+          "id": "v900-heal-phar-will-this-make-me-sleepy",
+          "vietnamese": "Điều này có làm tôi buồn ngủ không?",
+          "english": "Will this make me sleepy?",
+          "pronunciation": "Dieu nay co lam toi buon ngu khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-5",
-          "audioKey": "health-5"
+          "detailPageID": "viet-phrase-v900-heal-phar-will-this-make-me-sleepy",
+          "audioKey": "v900-heal-phar-will-this-make-me-sleepy"
         },
         {
-          "id": "health-6",
-          "vietnamese": "Tôi cần thuốc tiêu chảy",
-          "english": "I need something for diarrhea",
-          "pronunciation": "toy gun thoo-ok tyew chai",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-heal-phar-is-this-safe-with-my-medicine",
+          "vietnamese": "Dùng cái này cùng thuốc của tôi có an toàn không?",
+          "english": "Is this safe with my medicine?",
+          "pronunciation": "Dung cai nay cung thuoc cua toi co an toan khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-6",
-          "audioKey": "health-6"
+          "detailPageID": "viet-phrase-v900-heal-phar-is-this-safe-with-my-medicine",
+          "audioKey": null
         }
       ]
     }

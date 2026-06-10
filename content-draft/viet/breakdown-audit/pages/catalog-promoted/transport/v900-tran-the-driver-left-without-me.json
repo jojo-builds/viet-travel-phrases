@@ -24,34 +24,16 @@
       "keepTogetherReason": "compound driver noun"
     },
     {
-      "id": "chunk-4",
-      "vietnamese": "rời",
-      "english": "leave"
+      "id": "chunk-2",
+      "vietnamese": "rời đi",
+      "english": "left",
+      "keepTogetherReason": "compound leave phrase"
     },
     {
-      "id": "chunk-5",
-      "vietnamese": "đi",
-      "english": "go"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "mà",
-      "english": "that / but"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-9",
-      "vietnamese": "tôi",
-      "english": "I / me"
+      "id": "chunk-3",
+      "vietnamese": "mà không có tôi",
+      "english": "without me",
+      "keepTogetherReason": "keeps the without-me phrase together"
     },
     {
       "id": "full",

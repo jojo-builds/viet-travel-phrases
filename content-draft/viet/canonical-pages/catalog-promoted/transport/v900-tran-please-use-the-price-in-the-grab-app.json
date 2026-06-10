@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when a driver asks for a different amount from the app. Keep the Grab fare on screen so the request stays tied to the displayed price."
+      "body": "Keep the Grab fare on screen so the request stays tied to the displayed price."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Vui lòng sử dụng giá trên ứng dụng Grab., then show the fare screen. Keep your tone calm and the phone visible.",
+      "body": "Say Vui lòng sử dụng giá trên ứng dụng Grab. in one clean pass; the destination, fare, or ride screen can carry the detail.",
       "phrases": [
         {
           "id": "v900-tran-please-use-the-price-in-the-grab-app",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Start with Vui lòng sử + dụng giá trên; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "Nearby follow-ups: Take me here, Go to District 1, and You can stop here.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use these when the exchange shifts toward please stop right here, go this way, and please turn on the air conditioning.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

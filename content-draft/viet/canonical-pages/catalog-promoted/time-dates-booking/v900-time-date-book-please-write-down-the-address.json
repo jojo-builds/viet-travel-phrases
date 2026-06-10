@@ -7,7 +7,7 @@
   "title": "Hãy ghi lại địa chỉ",
   "englishTitle": "Please write down the address",
   "pronunciation": "Hay ghi lai dia chi",
-  "summary": "Please write down the address",
+  "summary": "Ask someone to write the address so you can show it to a driver, hotel desk, or map search.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy ghi lại địa chỉ makes the request direct without adding extra explanation. Keep the booking, room number, date, or address visible."
+      "body": "Good when pronunciation is difficult or the place name has several similar versions."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Hãy ghi lại địa chỉ together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Hand over your phone, paper, or booking screen so they can write the exact address.",
       "phrases": [
         {
           "id": "v900-time-date-book-please-write-down-the-address",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Ghi lại địa chỉ is the write-down-the-address core.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "Time, today, and tomorrow cards help if the address is tied to an appointment or pickup.",
       "phrases": [
         {
           "id": "time-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please write down the address. Keep the booking, room number, date, or address visible."
+      "body": "Best before leaving a counter, hotel, restaurant, or tour desk."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "A written address travels better than a half-heard name in a noisy street."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Booking, opening-time, and move-it-later cards help if the address belongs to a reservation.",
       "phrases": [
         {
           "id": "time-4",

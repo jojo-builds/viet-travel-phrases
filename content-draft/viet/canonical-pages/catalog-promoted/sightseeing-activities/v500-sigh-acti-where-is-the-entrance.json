@@ -7,7 +7,7 @@
   "title": "Lối vào ở đâu?",
   "englishTitle": "Where is the entrance?",
   "pronunciation": "Loi vao o dau",
-  "summary": "Where is the entrance?",
+  "summary": "For finding the entrance to an attraction, museum, temple, station, market, or event space.",
   "iconName": "camera.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Lối vào ở đâu? keeps the direction question short. Keep the relevant place, item, or screen visible."
+      "body": "Ask near the ticket desk, gate, sidewalk, or crowd flow. The answer may be a point rather than a sentence."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Lối vào ở đâu? together as one sentence before adding details. Say Lối vào ở đâu?",
+      "body": "Show the ticket, booking, map, or attraction name only if the first answer is not enough.",
       "phrases": [
         {
           "id": "v500-sigh-acti-where-is-the-entrance",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Lối vào means entrance; ở đâu asks where.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Lối vào",
           "english": "the entrance",
-          "audioKey": null
+          "keepTogetherReason": "entrance phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "ở đâu",
+          "vietnamese": "ở đâu?",
           "english": "where?",
-          "audioKey": null
+          "keepTogetherReason": "where question"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Lối vào ở đâu?",
-          "english": "Where is the entrance",
-          "audioKey": null
+          "english": "Where is the entrance?",
+          "audioKey": "v500-sigh-acti-where-is-the-entrance"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another sightseeing or activities need.",
+      "body": "Ticket, start-point, and photo-rule cards cover the attraction questions that often sit nearby.",
       "phrases": [
         {
           "id": "sight-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits museum, tour desk, attraction entrance, ticket counter, or meeting point, especially when entrance can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Good at museums, temples, markets, stations, parks, event spaces, and tour stops with more than one gate."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+      "body": "Entrances can be around the side or through a parking area. Follow the gesture first, then ask again if needed."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to closing-time, meeting-point, book-in-advance, tour-booking, or ticket-buying cards if you need the next logistics detail.",
       "phrases": [
         {
           "id": "sight-4",

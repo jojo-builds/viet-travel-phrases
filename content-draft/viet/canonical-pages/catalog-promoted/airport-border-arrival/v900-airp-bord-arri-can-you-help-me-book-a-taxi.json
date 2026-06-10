@@ -7,7 +7,7 @@
   "title": "Bạn có thể giúp tôi đặt một chiếc taxi được không?",
   "englishTitle": "Can you help me book a taxi?",
   "pronunciation": "Ban co the giup toi dat mot chiec taxi duoc khong",
-  "summary": "Can you help me book a taxi?",
+  "summary": "For asking airport staff or a counter helper to help book a taxi when the ride setup is not simple.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể giúp tôi đặt một chiếc taxi được không? keeps the question easy to answer. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "The hotel address, pickup app, baggage, or arrival crowd makes booking awkward."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể giúp tôi đặt một chiếc taxi được không? together as one sentence before adding details. Start with Bạn có thể giúp tôi đặt một chiếc taxi được không?",
+      "body": "Show the hotel address or booking screen while you ask. That keeps the ride request practical.",
       "phrases": [
         {
           "id": "v900-airp-bord-arri-can-you-help-me-book-a-taxi",
@@ -42,91 +42,91 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; giúp tôi đặt means help me book; một chiếc taxi means a taxi; được không asks if possible.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you question frame"
         },
         {
           "id": "chunk-2",
           "vietnamese": "giúp tôi đặt",
-          "english": "help me",
-          "audioKey": null
+          "english": "help me book",
+          "keepTogetherReason": "help-me-book phrase"
         },
         {
           "id": "chunk-3",
           "vietnamese": "một chiếc taxi",
-          "english": "book a taxi",
-          "audioKey": null
+          "english": "a taxi",
+          "keepTogetherReason": "taxi noun phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Bạn có thể giúp tôi đặt một chiếc taxi được không?",
-          "english": "Can you help me book a taxi",
-          "audioKey": null
+          "english": "Can you help me book a taxi?",
+          "audioKey": "v900-airp-bord-arri-can-you-help-me-book-a-taxi"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
+      "body": "Taxi counter, official taxi line, and Grab pickup phrases help if the answer points you somewhere else.",
       "phrases": [
         {
-          "id": "airport-1",
-          "vietnamese": "Nhập cảnh ở đâu?",
-          "english": "Where is immigration?",
-          "pronunciation": "nyup canh uh dow",
+          "id": "v500-airp-bord-arri-where-is-the-taxi-counter",
+          "vietnamese": "Quầy taxi ở đâu?",
+          "english": "Where is the taxi counter?",
+          "pronunciation": "Quay taxi o dau",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-1",
-          "audioKey": "airport-1"
+          "detailPageID": "viet-phrase-v500-airp-bord-arri-where-is-the-taxi-counter",
+          "audioKey": "v500-airp-bord-arri-where-is-the-taxi-counter"
         },
         {
-          "id": "airport-2",
-          "vietnamese": "Lấy hành lý ở đâu?",
-          "english": "Where is baggage claim?",
-          "pronunciation": "lay han lee uh dow",
+          "id": "v900-airp-bord-arri-is-this-the-official-taxi-line",
+          "vietnamese": "Đây có phải là tuyến taxi chính thức?",
+          "english": "Is this the official taxi line?",
+          "pronunciation": "Day co phai la tuyen taxi chinh thuc",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-2",
-          "audioKey": "airport-2"
+          "detailPageID": "viet-phrase-v900-airp-bord-arri-is-this-the-official-taxi-line",
+          "audioKey": "v900-airp-bord-arri-is-this-the-official-taxi-line"
         },
         {
-          "id": "airport-3",
-          "vietnamese": "Mua SIM ở đâu?",
-          "english": "Where can I buy a SIM card?",
-          "pronunciation": "moo-ah sim uh dow",
+          "id": "v900-airp-bord-arri-where-is-the-grab-pickup-point",
+          "vietnamese": "Điểm đón Grab ở đâu?",
+          "english": "Where is the Grab pickup point?",
+          "pronunciation": "Diem don Grab o dau",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-3",
-          "audioKey": "airport-3"
+          "detailPageID": "viet-phrase-v900-airp-bord-arri-where-is-the-grab-pickup-point",
+          "audioKey": "v900-airp-bord-arri-where-is-the-grab-pickup-point"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you help me book a taxi. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Good at airport counters, hotel-transfer desks, baggage areas, and pickup zones after arrival."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Confirm the destination and payment before leaving the counter. The right ride matters more than the fastest one."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Pickup area, meet driver, cannot-find-driver, driver-card-payment, and hotel-address phrases cover the ride handoff.",
       "phrases": [
         {
           "id": "airport-5",
@@ -135,7 +135,7 @@
           "pronunciation": "khoo don uh dow",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-5",
+          "detailPageID": "viet-family-airport-pickup",
           "audioKey": "airport-5"
         },
         {
@@ -149,34 +149,34 @@
           "audioKey": "airport-pickup-clearer"
         },
         {
-          "id": "airport-6",
-          "vietnamese": "Hành lý của tôi chưa tới",
-          "english": "My bag did not arrive",
-          "pronunciation": "han lee koo-ah toy choo toy",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v500-airp-bord-arri-i-cannot-find-my-driver",
+          "vietnamese": "Tôi không tìm thấy tài xế của mình",
+          "english": "I cannot find my driver",
+          "pronunciation": "Toi khong tim thay tai xe cua minh",
+          "symbolName": "text.bubble.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-6",
-          "audioKey": "airport-6"
+          "detailPageID": "viet-phrase-v500-airp-bord-arri-i-cannot-find-my-driver",
+          "audioKey": "audio-authored-toi-khong-tim-thay-tai-xe-cua-minh-6a054e30bf"
         },
         {
-          "id": "airport-7",
-          "vietnamese": "Nhà ga nội địa ở đâu?",
-          "english": "Where is the domestic terminal?",
-          "pronunciation": "nya ga noy dee-ah uh dow",
+          "id": "v900-airp-bord-arri-can-i-pay-the-driver-by-card",
+          "vietnamese": "Tôi có thể thanh toán cho tài xế bằng thẻ không?",
+          "english": "Can I pay the driver by card?",
+          "pronunciation": "Toi co the thanh toan cho tai xe bang the khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-7",
-          "audioKey": "airport-7"
+          "detailPageID": "viet-phrase-v900-airp-bord-arri-can-i-pay-the-driver-by-card",
+          "audioKey": "v900-airp-bord-arri-can-i-pay-the-driver-by-card"
         },
         {
-          "id": "v500-airp-bord-arri-here-is-my-visa",
-          "vietnamese": "Đây là thị thực của tôi",
-          "english": "Here is my visa",
-          "pronunciation": "Day la thi thuc cua toi",
+          "id": "v500-airp-bord-arri-i-am-staying-at-this-hotel",
+          "vietnamese": "Tôi đang ở khách sạn này",
+          "english": "I am staying at this hotel",
+          "pronunciation": "Toi dang o khach san nay",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-v500-airp-bord-arri-here-is-my-visa",
-          "audioKey": "v500-airp-bord-arri-here-is-my-visa"
+          "detailPageID": "viet-phrase-v500-airp-bord-arri-i-am-staying-at-this-hotel",
+          "audioKey": "v500-airp-bord-arri-i-am-staying-at-this-hotel"
         }
       ]
     }

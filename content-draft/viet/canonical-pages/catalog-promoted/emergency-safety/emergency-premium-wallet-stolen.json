@@ -7,7 +7,7 @@
   "title": "Ví của tôi đã bị đánh cắp.",
   "englishTitle": "My wallet was stolen.",
   "pronunciation": "Vi cua toi da bi danh cap",
-  "summary": "My wallet was stolen.",
+  "summary": "For telling staff or police that your wallet was stolen and you need help taking the next step.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Ví của tôi đã bị đánh cắp. names the problem so staff or a helpful local can act on it. Use it when My wallet was stolen is the clearest way to explain what changed, went missing, or needs attention."
+      "body": "You are safe enough to name the theft clearly and ask for help."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Ví của tôi đã bị đánh cắp. calmly and show the proof if you have it: phone screen, address, document, visible problem, or nearby staff member. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Say the phrase, then show a bag, card alert, ID photo, police desk, or hotel contact if it helps.",
       "phrases": [
         {
           "id": "emergency-premium-wallet-stolen",
@@ -42,24 +42,24 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Ví của tôi means my wallet; đã bị đánh cắp means was stolen.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Ví của tôi",
           "english": "my wallet",
-          "audioKey": null
+          "keepTogetherReason": "my-wallet phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đã bị đánh cắp",
-          "english": "was stolen",
-          "audioKey": null
+          "vietnamese": "đã bị đánh cắp.",
+          "english": "was stolen.",
+          "keepTogetherReason": "was-stolen phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Ví của tôi đã bị đánh cắp.",
-          "english": "My wallet was stolen",
+          "english": "My wallet was stolen.",
           "audioKey": "emergency-premium-wallet-stolen"
         }
       ]
@@ -67,104 +67,104 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another safety or urgent-help need.",
+      "body": "Call police, lost credit card, and cancel my card phrases cover the urgent financial steps.",
       "phrases": [
         {
-          "id": "emergency-1",
-          "vietnamese": "Gọi công an",
-          "english": "Call the police",
-          "pronunciation": "goy kong an",
+          "id": "v500-emer-safe-please-call-the-police",
+          "vietnamese": "Hãy gọi cảnh sát",
+          "english": "Please call the police",
+          "pronunciation": "Hay goi canh sat",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-1",
-          "audioKey": "emergency-1"
+          "detailPageID": "viet-phrase-v500-emer-safe-please-call-the-police",
+          "audioKey": "v500-emer-safe-please-call-the-police"
         },
         {
-          "id": "emergency-2",
-          "vietnamese": "Gọi xe cứu thương",
-          "english": "Call an ambulance",
-          "pronunciation": "goy seh koo-ah thu-ong",
+          "id": "v500-emer-safe-i-lost-my-credit-card",
+          "vietnamese": "Tôi bị mất thẻ tín dụng",
+          "english": "I lost my credit card",
+          "pronunciation": "Toi bi mat the tin dung",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-2",
-          "audioKey": "emergency-2"
+          "detailPageID": "viet-phrase-v500-emer-safe-i-lost-my-credit-card",
+          "audioKey": "v500-emer-safe-i-lost-my-credit-card"
         },
         {
-          "id": "emergency-3",
-          "vietnamese": "Tôi mất hộ chiếu",
-          "english": "I lost my passport",
-          "pronunciation": "toy mut hoh chee-u",
+          "id": "v900-emer-safe-can-you-help-me-cancel-my-card",
+          "vietnamese": "Bạn có thể giúp tôi hủy thẻ được không?",
+          "english": "Can you help me cancel my card?",
+          "pronunciation": "Ban co the giup toi huy the duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-3",
-          "audioKey": "emergency-3"
+          "detailPageID": "viet-phrase-v900-emer-safe-can-you-help-me-cancel-my-card",
+          "audioKey": "v900-emer-safe-can-you-help-me-cancel-my-card"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as soon as the problem is clear enough to name. It is especially useful at a counter or desk where someone can look at the photo, receipt, bag, booking, or phone screen with you."
+      "body": "Good at hotel desks, police stations, transport counters, shops, and any safe staffed place after the theft."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "Start with safety, then cards, ID, and reports. Do not turn the first sentence into the whole story."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Police station, passport report, write what happened, send my location, and temporary travel document phrases cover the recovery path.",
       "phrases": [
         {
-          "id": "emergency-4",
-          "vietnamese": "Tôi cảm thấy không an toàn",
-          "english": "I feel unsafe",
-          "pronunciation": "toy kahm thai khong an toan",
+          "id": "emergency-premium-police-station",
+          "vietnamese": "Làm ơn đưa tôi đến đồn cảnh sát.",
+          "english": "Please take me to the police station.",
+          "pronunciation": "Lam on dua toi den don canh sat",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-4",
-          "audioKey": "emergency-4"
+          "detailPageID": "viet-phrase-emergency-premium-police-station",
+          "audioKey": "emergency-premium-police-station"
         },
         {
-          "id": "emergency-emergency",
-          "vietnamese": "Đây là trường hợp khẩn cấp",
-          "english": "This is an emergency",
-          "pronunciation": "day la troong hop khun kup",
+          "id": "emergency-premium-passport-report",
+          "vietnamese": "Tôi cần một báo cáo về hộ chiếu bị mất của tôi.",
+          "english": "I need a report for my lost passport.",
+          "pronunciation": "Toi can mot bao cao ve ho chieu bi mat cua toi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-emergency",
-          "audioKey": "emergency-emergency"
+          "detailPageID": "viet-phrase-emergency-premium-passport-report",
+          "audioKey": "emergency-premium-passport-report"
         },
         {
-          "id": "emergency-5",
-          "vietnamese": "Cứu tôi với!",
-          "english": "Help!",
-          "pronunciation": "koo toy voy",
+          "id": "v900-emer-safe-please-write-down-what-happened",
+          "vietnamese": "Hãy viết ra điều gì đã xảy ra",
+          "english": "Please write down what happened",
+          "pronunciation": "Hay viet ra dieu gi da xay ra",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-5",
-          "audioKey": "emergency-5"
+          "detailPageID": "viet-phrase-v900-emer-safe-please-write-down-what-happened",
+          "audioKey": "v900-emer-safe-please-write-down-what-happened"
         },
         {
-          "id": "emergency-hospital",
-          "vietnamese": "Bệnh viện gần nhất ở đâu?",
-          "english": "Where is the nearest hospital?",
-          "pronunciation": "beng vyen gun nyut uh dow",
+          "id": "v900-emer-safe-please-send-my-location-to-this-person",
+          "vietnamese": "Vui lòng gửi vị trí của tôi cho người này",
+          "english": "Please send my location to this person",
+          "pronunciation": "Vui long gui vi tri cua toi cho nguoi nay",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-hospital",
-          "audioKey": "emergency-hospital"
+          "detailPageID": "viet-phrase-v900-emer-safe-please-send-my-location-to-this-person",
+          "audioKey": "v900-emer-safe-please-send-my-location-to-this-person"
         },
         {
-          "id": "emergency-6",
-          "vietnamese": "Túi của tôi bị lấy mất",
-          "english": "My bag was stolen",
-          "pronunciation": "too-ee koo-ah toy bee lay mut",
+          "id": "v900-emer-safe-i-need-a-temporary-travel-document",
+          "vietnamese": "Tôi cần giấy thông hành tạm thời",
+          "english": "I need a temporary travel document",
+          "pronunciation": "Toi can giay thong hanh tam thoi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-6",
-          "audioKey": "emergency-6"
+          "detailPageID": "viet-phrase-v900-emer-safe-i-need-a-temporary-travel-document",
+          "audioKey": "v900-emer-safe-i-need-a-temporary-travel-document"
         }
       ]
     }

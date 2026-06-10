@@ -7,7 +7,7 @@
   "title": "Cái gì không quá cay?",
   "englishTitle": "What is not too spicy?",
   "pronunciation": "Cai gi khong qua cay",
-  "summary": "What is not too spicy?",
+  "summary": "For asking staff to steer you toward a milder dish before ordering from a menu or counter.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cái gì không quá cay? keeps the travel moment short and clear. Point to the item, menu line, receipt, size, or photo."
+      "body": "Use it while looking at the menu, pointing at the case, or choosing between dishes.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Cái gì không quá cay? together as one sentence before adding details. Say Cái gì không quá cay?",
+      "body": "Let the question invite a recommendation. A photo or menu line can help, but the answer may be a different dish.",
       "phrases": [
         {
           "id": "v900-food-drin-what-is-not-too-spicy",
@@ -37,136 +40,170 @@
           "detailPageID": null,
           "audioKey": "v900-food-drin-what-is-not-too-spicy"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Cái gì asks what; không quá cay means not too spicy.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Cái gì không",
-          "english": "yes/no question",
-          "audioKey": null
+          "vietnamese": "Cái gì",
+          "english": "what",
+          "keepTogetherReason": "what question"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "quá cay",
-          "english": "too spicy",
-          "audioKey": null
+          "vietnamese": "không quá cay?",
+          "english": "is not too spicy?",
+          "keepTogetherReason": "not-too-spicy phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Cái gì không quá cay?",
-          "english": "What is not too spicy",
-          "audioKey": null
+          "english": "What is not too spicy?",
+          "audioKey": "v900-food-drin-what-is-not-too-spicy"
         }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
-        }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is what is not too spicy. Point to the item, menu line, receipt, size, or photo."
+      "body": "Good at street stalls, cafes, noodle shops, seafood restaurants, and counters where spice level is not obvious.",
+      "phrases": [
+        {
+          "id": "food-1",
+          "vietnamese": "Cho tôi một phần",
+          "english": "One portion please",
+          "pronunciation": "cho toy mot fun",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-one-portion",
+          "audioKey": "food-1"
+        },
+        {
+          "id": "food-2",
+          "vietnamese": "Cho tôi tô này",
+          "english": "I’ll take this bowl",
+          "pronunciation": "cho toy toh nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-this-bowl",
+          "audioKey": "food-2"
+        },
+        {
+          "id": "food-3",
+          "vietnamese": "Không cay nhé",
+          "english": "Not spicy please",
+          "pronunciation": "khong kai nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-not-spicy",
+          "audioKey": "food-3"
+        },
+        {
+          "id": "food-vegetarian",
+          "vietnamese": "Tôi ăn chay",
+          "english": "I am vegetarian",
+          "pronunciation": "toy an chai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-vegetarian",
+          "audioKey": "food-vegetarian"
+        },
+        {
+          "id": "food-peanut-allergy",
+          "vietnamese": "Tôi bị dị ứng đậu phộng",
+          "english": "I am allergic to peanuts",
+          "pronunciation": "toy bee zee oong dow fohng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-peanut-allergy",
+          "audioKey": "food-peanut-allergy"
+        }
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
+      "body": "Mild in Vietnam can still mean some chili. If you need very mild food, follow with the not-spicy card.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to beer, iced-tea, what-they-have, two-of-these, or not-spicy cards if ordering continues.",
       "phrases": [
         {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
+          "id": "v900-food-drin-one-iced-tea-please",
+          "vietnamese": "Làm ơn cho một ly trà đá",
+          "english": "One iced tea, please",
+          "pronunciation": "Lam on cho mot ly tra da",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
-          "audioKey": "coffee-4"
+          "detailPageID": "viet-phrase-v900-food-drin-one-iced-tea-please",
+          "audioKey": "v900-food-drin-one-iced-tea-please"
         },
         {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
+          "id": "v900-food-drin-ill-have-what-they-are-having",
+          "vietnamese": "Tôi sẽ có những gì họ đang có",
+          "english": "I’ll have what they are having",
+          "pronunciation": "Toi se co nhung gi ho dang co",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
-          "audioKey": "coffee-5"
+          "detailPageID": "viet-phrase-v900-food-drin-ill-have-what-they-are-having",
+          "audioKey": "v900-food-drin-ill-have-what-they-are-having"
         },
         {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
+          "id": "v900-food-drin-two-of-these-please",
+          "vietnamese": "Xin vui lòng cho hai trong số này",
+          "english": "Two of these, please",
+          "pronunciation": "Xin vui long cho hai trong so nay",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
-          "audioKey": "coffee-6"
+          "detailPageID": "viet-phrase-v900-food-drin-two-of-these-please",
+          "audioKey": "v900-food-drin-two-of-these-please"
         },
         {
-          "id": "coffee-7",
-          "vietnamese": "Tính tiền giúp tôi",
-          "english": "Please let me pay",
-          "pronunciation": "ting tyen zoop toy",
+          "id": "v900-food-drin-one-more-please",
+          "vietnamese": "Xin thêm một cái nữa",
+          "english": "One more, please",
+          "pronunciation": "Xin them mot cai nua",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
-          "audioKey": "coffee-7"
+          "detailPageID": "viet-phrase-v900-food-drin-one-more-please",
+          "audioKey": "v900-food-drin-one-more-please"
         },
         {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
+          "id": "food-menu",
+          "vietnamese": "Cho tôi xem thực đơn được không?",
+          "english": "Can I see the menu?",
+          "pronunciation": "cho toy sem thook dun dook khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
-          "audioKey": "food-need-table"
+          "detailPageID": "viet-family-food-menu",
+          "audioKey": "food-menu"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Portion, bowl, vegetarian, peanut-allergy, and not-spicy cards cover the food choices that usually follow.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [

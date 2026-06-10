@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Start with Ở đâu + có; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "store-4-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Show the item, document, bag, receipt, photo, or address first, ask once, and leave room for the answer.",
       "phrases": [
         {
           "id": "store-4",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Everyday service phrases keep quick errands smooth without needing a full conversation. Point to the item, menu line, receipt, size, or photo.",
+      "body": "Everyday service phrases keep quick errands smooth without needing a full conversation. Keep the item, document, bag, receipt, photo, or address ready so the other person can act on the same detail.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a point, short direction, nearby option, or counter name. Say Ở đâu có kem chống nắng?",
+      "body": "Watch for a point, short direction, nearby option, or counter name. Say Ở đâu có kem chống nắng?",
       "phrases": [
         {
           "id": "store-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when you need the exact aisle or shelf, not general help. The reply may be a point, short direction, nearby option, or counter name.",
+      "body": "Reach for it when you need the exact aisle or shelf, not general help. Watch for a point, short direction, nearby option, or counter name.",
       "phrases": [
         {
           "id": "store-5",
@@ -191,7 +191,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Use these for a bottle of water please; do you have a bag?; tissues please if the moment moves past the first line.",
       "phrases": [
         {
           "id": "store-1",

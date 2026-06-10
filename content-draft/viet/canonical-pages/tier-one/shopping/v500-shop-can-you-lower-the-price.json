@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Let Giảm giá stay connected so the final không? sounds like one clear question.",
       "breakdown": [
         {
           "id": "v500-shop-can-you-lower-the-price-piece-1",
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a number, typed amount, calculator screen, or direct yes/no about payment. Say Giảm giá chút được không?",
+      "body": "Watch for a number, typed amount, calculator screen, or direct yes/no about payment. Say Giảm giá chút được không?",
       "phrases": [
         {
           "id": "shop-1",
@@ -191,7 +191,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a market stall or small shop, the next useful language is usually I want this size; do you have another color?; can I try this on?",
       "phrases": [
         {
           "id": "shop-1",

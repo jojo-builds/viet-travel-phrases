@@ -7,7 +7,7 @@
   "title": "Bây giờ thì ổn rồi, cảm ơn bạn",
   "englishTitle": "It is okay now, thank you",
   "pronunciation": "Bay gio thi on roi cam on ban",
-  "summary": "It is okay now, thank you",
+  "summary": "Keeps the food or drink request clear in a stall, cafe, or busy counter.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bây giờ thì ổn rồi, cảm ơn bạn closes a helpful exchange warmly. It is short enough for a beginner and works after directions, service help, a purchase, or a small kindness."
+      "body": "Bây giờ thì ổn rồi, cảm ơn bạn closes a helpful exchange warmly. It is short enough for a beginner and works after directions, service help, a purchase, or a small kindness.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bây giờ thì ổn rồi, cảm ơn bạn together as one sentence before adding details. Point to the item, menu line, receipt, size, or photo.",
+      "body": "Say Bây giờ thì ổn rồi, cảm ơn bạn as one clean sentence; the menu line, dish photo, bill, or ingredient can carry the exact detail. Point to the item, menu line, receipt, size, or photo.",
       "phrases": [
         {
           "id": "v900-food-drin-it-is-okay-now-thank-you",
@@ -37,104 +40,95 @@
           "detailPageID": null,
           "audioKey": "v900-food-drin-it-is-okay-now-thank-you"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bây giờ thì + ổn rồi, cảm ơn bạn carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bây giờ thì",
-          "english": "now it is",
+          "vietnamese": "Bây giờ",
+          "english": "now",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "ổn rồi, cảm ơn bạn",
-          "english": "okay now, thank you",
-          "audioKey": null
+          "vietnamese": "thì",
+          "english": "then / topic marker",
+          "audioKey": "breakdown-v900-food-drin-it-is-okay-now-thank-you-piece-3"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "ổn",
+          "english": "okay / stable",
+          "audioKey": "breakdown-v900-food-drin-it-is-okay-now-thank-you-piece-4"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "rồi,",
+          "english": "already / done",
+          "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-piece-2"
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "cảm ơn",
+          "english": "thank you",
+          "audioKey": "polite-2"
+        },
+        {
+          "id": "chunk-6",
+          "vietnamese": "bạn",
+          "english": "you",
+          "audioKey": "breakdown-smalltalk-7-first"
+        },
+        {
+          "id": "full",
           "vietnamese": "Bây giờ thì ổn rồi, cảm ơn bạn",
           "english": "It is okay now, thank you",
-          "audioKey": null
+          "audioKey": "v900-food-drin-it-is-okay-now-thank-you"
         }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
-        }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is it is okay now, thank you. Point to the item, menu line, receipt, size, or photo."
-    },
-    {
-      "id": "good-to-know",
-      "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use it at a stall, cafe, or busy counter before adding the menu line, dish photo, table item, or bill as supporting detail.",
       "phrases": [
         {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
+          "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+          "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+          "english": "Can I pay the bill by card?",
+          "pronunciation": "Toi co the thanh toan hoa don bang the khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
-          "audioKey": "coffee-4"
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-pay-the-bill-by-card",
+          "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
         },
         {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
+          "id": "food-17",
+          "vietnamese": "Trả riêng được không?",
+          "english": "Can we pay separately?",
+          "pronunciation": "tra ryeng dook khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
-          "audioKey": "coffee-5"
+          "detailPageID": "viet-phrase-food-17",
+          "audioKey": "food-17"
+        },
+        {
+          "id": "food-7",
+          "vietnamese": "Gói mang về",
+          "english": "Pack it to go",
+          "pronunciation": "goy mang veh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-pack-to-go",
+          "audioKey": "food-7"
         },
         {
           "id": "coffee-6",
@@ -143,7 +137,7 @@
           "pronunciation": "mang dee",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
+          "detailPageID": "viet-family-food-to-go",
           "audioKey": "coffee-6"
         },
         {
@@ -153,20 +147,47 @@
           "pronunciation": "ting tyen zoop toy",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
+          "detailPageID": "viet-family-food-pay-now",
           "audioKey": "coffee-7"
-        },
+        }
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Keep the receipt phrase nearby if the counter asks whether you need a printed bill.",
+      "phrases": [
         {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
+          "id": "store-7",
+          "vietnamese": "Cho tôi hóa đơn",
+          "english": "Please give me the receipt",
+          "pronunciation": "cho toy hwa dun",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
-          "audioKey": "food-need-table"
+          "detailPageID": "viet-family-service-receipt",
+          "audioKey": "store-7"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Once they answer, listen for whether can I pay the bill by card?; can we pay separately?; pack it to go fits the next step.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [

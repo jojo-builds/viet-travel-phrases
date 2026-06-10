@@ -20,43 +20,20 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi sẽ",
+      "english": "I will",
+      "keepTogetherReason": "I-will phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "sẽ",
-      "english": "will"
+      "vietnamese": "có",
+      "english": "have"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "những",
-      "english": "those / plural marker"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "gì",
-      "english": "what"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "họ",
-      "english": "they"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "đang",
-      "english": "currently / am"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "có",
-      "english": "having / has"
+      "vietnamese": "những gì họ đang có",
+      "english": "what they are having",
+      "keepTogetherReason": "what-they-have phrase"
     },
     {
       "id": "full",

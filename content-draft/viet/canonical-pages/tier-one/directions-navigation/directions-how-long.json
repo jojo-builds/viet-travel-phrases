@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đi bộ mất bao lâu? keeps the travel moment short and clear. Reach for it when you need walking time, not just direction words. This keeps the answer concrete instead of vague.",
+      "body": "Đi bộ mất bao lâu? belongs with a map, at a street corner, or at a ticket counter when the map location, address, station name, or sign is already part of the exchange.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Hear Đi bộ + mất as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "directions-3-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Keep the map, address, or destination visible.",
+      "body": "Ask while the map location, address, station name, or sign is still visible, then pause before adding more words.",
       "phrases": [
         {
           "id": "directions-3",
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Say Đi bộ mất bao lâu?",
+      "body": "Watch for a clear reply, a pointed detail, or simple follow-up. Say Đi bộ mất bao lâu?",
       "phrases": [
         {
           "id": "directions-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when you need walking time, not just direction words. The reply may be a clear reply, a pointed detail, or simple follow-up.",
+      "body": "Reach for it when you need walking time, not just direction words. Watch for a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "directions-5",
@@ -191,7 +191,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Keep the conversation close to excuse me, how do I get there?; is it near here?; where do I turn left?",
       "phrases": [
         {
           "id": "directions-1",

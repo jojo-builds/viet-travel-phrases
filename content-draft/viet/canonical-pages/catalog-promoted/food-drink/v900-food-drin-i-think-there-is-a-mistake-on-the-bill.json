@@ -7,7 +7,7 @@
   "title": "Tôi nghĩ có sai sót trên hóa đơn",
   "englishTitle": "I think there is a mistake on the bill",
   "pronunciation": "Toi nghi co sai sot tren hoa don",
-  "summary": "I think there is a mistake on the bill",
+  "summary": "For calmly pointing out that the bill may be wrong.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi nghĩ có sai sót trên hóa đơn keeps the travel moment short and clear. Point to the item, menu line, receipt, size, or photo."
+      "body": "Keep the receipt, menu price, or order screen visible so the check stays factual.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi nghĩ có sai sót trên hóa đơn together as one sentence before adding details. Point to the item, menu line, receipt, size, or photo.",
+      "body": "Point to the line item first, then say the phrase.",
       "phrases": [
         {
           "id": "v900-food-drin-i-think-there-is-a-mistake-on-the-bill",
@@ -37,120 +40,144 @@
           "detailPageID": null,
           "audioKey": "v900-food-drin-i-think-there-is-a-mistake-on-the-bill"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi nghĩ means I think; có sai sót means there is a mistake; trên hóa đơn means on the bill.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi nghĩ có",
+          "vietnamese": "Tôi nghĩ",
           "english": "I think",
-          "audioKey": null
+          "keepTogetherReason": "I-think phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "sai sót trên",
-          "english": "i think there is a mistake on the",
-          "audioKey": null
+          "vietnamese": "có sai sót",
+          "english": "there is a mistake",
+          "keepTogetherReason": "mistake phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "hóa đơn",
-          "english": "bill / receipt",
-          "audioKey": null
+          "vietnamese": "trên hóa đơn",
+          "english": "on the bill",
+          "keepTogetherReason": "on-the-bill phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi nghĩ có sai sót trên hóa đơn",
           "english": "I think there is a mistake on the bill",
-          "audioKey": null
+          "audioKey": "v900-food-drin-i-think-there-is-a-mistake-on-the-bill"
         }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
-        }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i think there is a mistake on the bill. Point to the item, menu line, receipt, size, or photo."
+      "body": "Good at cafe counters, restaurant tables, hotel desks, and cashier stands when the total or item looks off.",
+      "phrases": [
+        {
+          "id": "store-7",
+          "vietnamese": "Cho tôi hóa đơn",
+          "english": "Please give me the receipt",
+          "pronunciation": "cho toy hwa dun",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-service-receipt",
+          "audioKey": "store-7"
+        },
+        {
+          "id": "food-17",
+          "vietnamese": "Trả riêng được không?",
+          "english": "Can we pay separately?",
+          "pronunciation": "tra ryeng dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-food-17",
+          "audioKey": "food-17"
+        },
+        {
+          "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+          "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+          "english": "Can I pay the bill by card?",
+          "pronunciation": "Toi co the thanh toan hoa don bang the khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-pay-the-bill-by-card",
+          "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
+        },
+        {
+          "id": "v900-food-drin-can-you-remove-this-from-the-bill",
+          "vietnamese": "Bạn có thể loại bỏ điều này khỏi hóa đơn?",
+          "english": "Can you remove this from the bill?",
+          "pronunciation": "Ban co the loai bo dieu nay khoi hoa don",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-you-remove-this-from-the-bill",
+          "audioKey": "v900-food-drin-can-you-remove-this-from-the-bill"
+        },
+        {
+          "id": "v900-food-drin-thats-all-thank-you",
+          "vietnamese": "Vậy thôi, cảm ơn",
+          "english": "That's all, thank you.",
+          "pronunciation": "Vay thoi cam on",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-thats-all-thank-you",
+          "audioKey": "audio-authored-vay-thoi-cam-on-efab00a56b"
+        }
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
+      "body": "A quiet tone and a visible receipt make the correction feel like a check, not an accusation.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Smaller-bills, exact-change, break-this-bill, pay-now, and card-payment phrases cover the payment turn after the bill is corrected.",
       "phrases": [
         {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v500-mone-numb-pric-i-need-smaller-bills",
+          "vietnamese": "Tôi cần tiền mệnh giá nhỏ hơn",
+          "english": "I need smaller bills",
+          "pronunciation": "Toi can tien menh gia nho hon",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
-          "audioKey": "coffee-4"
+          "detailPageID": "viet-phrase-v500-mone-numb-pric-i-need-smaller-bills",
+          "audioKey": null
         },
         {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v500-mone-numb-pric-do-i-need-exact-change",
+          "vietnamese": "Tôi có cần trả đúng tiền không?",
+          "english": "Do I need exact change?",
+          "pronunciation": "Toi co can tra dung tien khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
-          "audioKey": "coffee-5"
+          "detailPageID": "viet-phrase-v500-mone-numb-pric-do-i-need-exact-change",
+          "audioKey": null
         },
         {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
-          "audioKey": "coffee-6"
+          "id": "v900-tran-can-you-break-this-bill",
+          "vietnamese": "Bạn có thể đổi tờ này thành tiền lẻ không?",
+          "english": "Can you break this bill?",
+          "pronunciation": "Ban co the doi to nay thanh tien le khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-v900-tran-can-you-break-this-bill",
+          "audioKey": null
         },
         {
           "id": "coffee-7",
@@ -159,20 +186,30 @@
           "pronunciation": "ting tyen zoop toy",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
+          "detailPageID": "viet-family-food-pay-now",
           "audioKey": "coffee-7"
         },
         {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
+          "id": "store-6",
+          "vietnamese": "Tôi quẹt thẻ được không?",
+          "english": "Can I pay by card?",
+          "pronunciation": "toy quet teh dook khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
-          "audioKey": "food-need-table"
+          "tintName": "teal",
+          "detailPageID": "viet-family-service-card",
+          "audioKey": "store-6"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Receipt, separate-payment, and card-payment phrases stay close for the rest of checkout.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [

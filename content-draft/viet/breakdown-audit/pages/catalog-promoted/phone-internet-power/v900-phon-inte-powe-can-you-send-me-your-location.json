@@ -20,45 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "gửi cho tôi",
+      "english": "send me",
+      "keepTogetherReason": "send-me phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "gửi",
-      "english": "send"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tôi",
-      "english": "me"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "vị",
-      "english": "taste / position"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "trí",
-      "english": "location / mind"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "của bạn?",
-      "english": "your",
-      "keepTogetherReason": "possessive phrase"
+      "vietnamese": "vị trí của bạn?",
+      "english": "your location?",
+      "keepTogetherReason": "your-location phrase"
     },
     {
       "id": "full",

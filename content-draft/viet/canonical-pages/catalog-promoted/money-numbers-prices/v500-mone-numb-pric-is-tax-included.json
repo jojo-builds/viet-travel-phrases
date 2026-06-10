@@ -7,7 +7,7 @@
   "title": "Có bao gồm thuế không?",
   "englishTitle": "Is tax included?",
   "pronunciation": "Co bao gom thue khong",
-  "summary": "Is tax included?",
+  "summary": "Ask whether tax is already in the displayed price before the final bill or checkout amount changes.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có bao gồm thuế không? keeps the question easy to answer. Keep the relevant place, item, or screen visible."
+      "body": "Good at hotels, tours, tickets, and larger purchases where the posted price may not be final."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Có bao gồm thuế không? together as one sentence before adding details. Say Có bao gồm thuế không?",
+      "body": "Show the quote, menu, receipt, or checkout screen after the question.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-is-tax-included",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bao gồm thuế asks whether tax is included.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
+      "body": "Price and per-kilo cards help if the answer sends you back to the amount.",
       "phrases": [
         {
           "id": "price-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is is tax included. Keep the relevant place, item, or screen visible."
+      "body": "Best before agreeing to a price, tapping a card, or signing a tour or hotel bill."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+      "body": "If tax is separate, ask for the final amount before tapping a card or signing."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Too-expensive, lower-price, and final-price cards cover the money talk after the tax question.",
       "phrases": [
         {
           "id": "price-3",

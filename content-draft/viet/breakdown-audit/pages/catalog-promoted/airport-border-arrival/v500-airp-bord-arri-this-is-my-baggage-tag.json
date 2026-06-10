@@ -20,25 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đây",
-      "english": "here / this"
+      "vietnamese": "Đây là",
+      "english": "this is",
+      "keepTogetherReason": "this-is phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "là",
-      "english": "is / means"
+      "vietnamese": "thẻ hành lý",
+      "english": "baggage tag",
+      "keepTogetherReason": "baggage-tag noun"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "thẻ hành lý",
-      "english": "baggage tag",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
+      "english": "mine",
+      "keepTogetherReason": "mine phrase"
     },
     {
       "id": "full",

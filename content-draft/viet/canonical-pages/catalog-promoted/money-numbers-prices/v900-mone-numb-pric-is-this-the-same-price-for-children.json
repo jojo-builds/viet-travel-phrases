@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Đây có phải là mức giá tương tự cho trẻ em?, then show the child count or ticket screen. The answer may include an age cutoff.",
+      "body": "Ask once, then pause for the answer.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-is-this-the-same-price-for-children",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Đây có phải + là mức giá, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
+      "body": "Keep close by: How much is this? and How much per kilo?",
       "phrases": [
         {
           "id": "price-1",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Useful if the exchange continues: Too expensive, Can you lower it a little, and What’s your final price.",
       "phrases": [
         {
           "id": "price-3",

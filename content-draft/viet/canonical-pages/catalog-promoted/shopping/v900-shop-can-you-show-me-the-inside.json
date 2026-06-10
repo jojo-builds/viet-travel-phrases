@@ -7,7 +7,7 @@
   "title": "Bạn có thể cho tôi xem bên trong được không?",
   "englishTitle": "Can you show me the inside?",
   "pronunciation": "Ban co the cho toi xem ben trong duoc khong",
-  "summary": "Can you show me the inside?",
+  "summary": "For asking to see inside a bag, box, case, room, or wrapped item before deciding.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể cho tôi xem bên trong được không? asks someone to do one helpful action for you. Use it for show me the inside when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Ask before opening something yourself, especially if it is sealed, fragile, or behind the counter."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể cho tôi xem bên trong được không? together as one sentence before adding details. Start with Bạn có thể cho tôi xem bên trong được không?",
+      "body": "Point to the item and wait for staff to open it. This keeps the request polite and easy to refuse.",
       "phrases": [
         {
           "id": "v900-shop-can-you-show-me-the-inside",
@@ -42,44 +42,48 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; cho tôi xem means show me; bên trong means inside; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
+          "keepTogetherReason": "can-you request frame",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "cho tôi xem",
-          "english": "show me / let me see",
+          "english": "show me",
+          "keepTogetherReason": "show-me phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "bên trong",
-          "english": "the inside",
+          "english": "inside",
+          "keepTogetherReason": "inside phrase",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending",
           "audioKey": null
         },
         {
           "id": "chunk-5",
           "vietnamese": "Bạn có thể cho tôi xem bên trong được không?",
-          "english": "Can you show me the inside",
-          "audioKey": null
+          "english": "Can you show me the inside?",
+          "audioKey": "v900-shop-can-you-show-me-the-inside"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another shopping need.",
+      "body": "If the item still needs checking, move to size, color, try-on, or touch-it follow-ups.",
       "phrases": [
         {
           "id": "shop-1",
@@ -116,17 +120,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you show me the inside. Point to the item, menu line, receipt, size, or photo."
+      "body": "Good in shops, markets, boutiques, luggage stores, souvenir stalls, and hotel-room checks."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Let staff handle packaging or fragile goods first. A careful request protects both sides."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use just-looking, pay-where, exchange, touch-it, or smaller-size follow-ups as the shopping decision changes.",
       "phrases": [
         {
           "id": "shop-4",

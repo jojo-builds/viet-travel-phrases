@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Máy thẻ không hoạt động keeps the travel moment short and clear. Keep the relevant place, item, or screen visible."
+      "body": "Lead with Máy thẻ không hoạt động, then add the detail only if the reply needs it."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Máy thẻ không hoạt động together as one sentence before adding details. Keep the relevant place, item, or screen visible.",
+      "body": "Say Máy thẻ không hoạt động clearly; show the item, price tag, calculator, receipt, or ATM screen only if the reply needs detail.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-the-card-machine-is-not-working",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Practice Máy thẻ + không hoạt động first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
+      "body": "Nearby follow-ups: How much is this?; How much per kilo?",
       "phrases": [
         {
           "id": "price-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is the card machine is not working. Keep the relevant place, item, or screen visible."
+      "body": "Best in a market stall, ticket counter, ATM, or small shop, before the explanation gets long. Keep the item, price tag, calculator, receipt, or ATM screen close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Good next-step cards: Too expensive, Can you lower it a little, and What’s your final price.",
       "phrases": [
         {
           "id": "price-3",

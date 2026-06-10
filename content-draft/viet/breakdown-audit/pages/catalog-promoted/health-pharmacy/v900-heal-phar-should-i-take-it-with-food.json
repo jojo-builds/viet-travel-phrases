@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-heal-phar-should-i-take-it-with-food",
-  "phraseText": "Tôi có nên dùng nó cùng với thức ăn không?",
+  "phraseText": "Tôi có nên uống thuốc này cùng với đồ ăn không?",
   "englishTitle": "Should I take it with food?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -25,45 +25,38 @@
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "nên dùng",
-      "english": "should use / take",
+      "vietnamese": "có nên",
+      "english": "should / ought to",
       "keepTogetherReason": "fixed advice phrase"
     },
     {
+      "id": "chunk-3",
+      "vietnamese": "uống thuốc này",
+      "english": "take this medicine",
+      "keepTogetherReason": "medicine action phrase"
+    },
+    {
       "id": "chunk-4",
-      "vietnamese": "nó",
-      "english": "it"
+      "vietnamese": "cùng với",
+      "english": "together with",
+      "keepTogetherReason": "preposition phrase"
     },
     {
       "id": "chunk-5",
-      "vietnamese": "cùng",
-      "english": "together"
+      "vietnamese": "đồ ăn",
+      "english": "food",
+      "keepTogetherReason": "food noun"
     },
     {
       "id": "chunk-6",
-      "vietnamese": "với",
-      "english": "with / to"
-    },
-    {
-      "vietnamese": "thức ăn",
-      "english": "food",
-      "keepTogetherReason": "compound food noun"
-    },
-    {
-      "id": "chunk-9",
       "vietnamese": "không?",
       "english": "yes/no?"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi có nên dùng nó cùng với thức ăn không?",
+      "vietnamese": "Tôi có nên uống thuốc này cùng với đồ ăn không?",
       "english": "Should I take it with food?",
-      "audioKey": "v900-heal-phar-should-i-take-it-with-food"
+      "audioKey": "audio-authored-toi-co-nen-uong-thuoc-nay-cung-voi-do-an-khong-1a7e45ac4e"
     }
   ]
 }

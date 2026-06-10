@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Căn phòng quá + ồn ào, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Nearby follow-ups: I cannot sleep because it is too noisy, I have a reservation, and I’d like to check in.",
       "phrases": [
         {
           "id": "v500-hote-acco-the-room-is-too-noisy",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when \"The room is too noisy.\" Keep the booking, room number, date, or address visible."
+      "body": "Best in a front desk or guesthouse counter, before the explanation gets long. Keep the booking, room number, address, or key card close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Useful if the exchange continues: I’d like to check in, please, What time is check-out, and Can I have a quiet room.",
       "phrases": [
         {
           "id": "hotel-check-in-polite",

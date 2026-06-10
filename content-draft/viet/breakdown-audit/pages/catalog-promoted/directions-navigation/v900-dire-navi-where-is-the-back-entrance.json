@@ -22,23 +22,19 @@
       "id": "chunk-1",
       "vietnamese": "Lối vào",
       "english": "entrance",
-      "keepTogetherReason": "compound noun"
+      "keepTogetherReason": "entrance noun"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "phía",
-      "english": "side / direction"
+      "vietnamese": "phía sau",
+      "english": "back / rear side",
+      "keepTogetherReason": "rear-side phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "sau",
-      "english": "after / behind"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "ở đâu?",
-      "english": "where",
-      "keepTogetherReason": "fixed place question"
+      "english": "where?",
+      "keepTogetherReason": "where-question ending"
     },
     {
       "id": "full",

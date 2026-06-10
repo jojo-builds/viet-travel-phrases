@@ -7,7 +7,7 @@
   "title": "Cho xin một vé người lớn",
   "englishTitle": "One adult ticket, please",
   "pronunciation": "Cho xin mot ve nguoi lon",
-  "summary": "One adult ticket, please",
+  "summary": "Keeps the booking detail clear in a booking desk, tour counter, or message thread.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cho xin một vé người lớn keeps the travel moment short and clear. Keep the booking, room number, date, or address visible."
+      "body": "Keep the booking, room number, date, or address visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Cho xin một vé người lớn together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Say Cho xin một vé người lớn as one clean sentence; the date, time, ticket, booking, or address can carry the exact detail. Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "v900-time-date-book-one-adult-ticket-please",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Cho xin một + vé người lớn as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "The next turn may need: What time?; Today; Tomorrow morning.",
       "phrases": [
         {
           "id": "time-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is one adult ticket, please. Keep the booking, room number, date, or address visible."
+      "body": "Best in a booking desk, tour counter, or message thread, before the explanation gets long. Keep the date, time, ticket, booking, or address close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Nearby follow-ups: I have a booking, What time does it open, and Can we move it later.",
       "phrases": [
         {
           "id": "time-4",

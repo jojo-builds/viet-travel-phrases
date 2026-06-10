@@ -4,10 +4,10 @@
   "phraseID": "v900-time-date-book-please-send-it-by-text-message",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Vui lòng gửi nó bằng tin nhắn văn bản",
-  "englishTitle": "Please send it by text message",
-  "pronunciation": "Vui long gui no bang tin nhan van ban",
-  "summary": "Please send it by text message",
+  "title": "Anh/chị gửi qua tin nhắn giúp tôi được không?",
+  "englishTitle": "Can you send it by text message?",
+  "pronunciation": "Anh chi gui qua tin nhan giup toi duoc khong",
+  "summary": "For getting a time, address, booking detail, or confirmation in writing on your phone.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -15,65 +15,73 @@
     "v900-time-date-book-please-send-it-by-text-message",
     "premium"
   ],
-  "audioKey": "v900-time-date-book-please-send-it-by-text-message",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng gửi nó bằng tin nhắn văn bản makes the request direct without adding extra explanation. Keep the booking, room number, date, or address visible."
+      "body": "Use it when spoken details are too easy to miss and a message would be safer.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Vui lòng gửi nó bằng tin nhắn văn bản together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Show the chat or phone number first. Let the other person send the address, time, code, or confirmation.",
       "phrases": [
         {
           "id": "v900-time-date-book-please-send-it-by-text-message",
-          "vietnamese": "Vui lòng gửi nó bằng tin nhắn văn bản",
-          "english": "Please send it by text message",
-          "pronunciation": "Vui long gui no bang tin nhan van ban",
-          "symbolName": "speaker.wave.2.fill",
+          "vietnamese": "Anh/chị gửi qua tin nhắn giúp tôi được không?",
+          "english": "Can you send it by text message?",
+          "pronunciation": "Anh chi gui qua tin nhan giup toi duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "teal",
           "detailPageID": null,
-          "audioKey": "v900-time-date-book-please-send-it-by-text-message"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Anh/chị is polite you; gửi qua tin nhắn means send by message; giúp tôi means help me; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Vui lòng gửi",
-          "english": "please",
-          "audioKey": null
+          "vietnamese": "Anh/chị",
+          "english": "you",
+          "keepTogetherReason": "polite address"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nó bằng tin",
-          "english": "it by text message",
-          "audioKey": null
+          "vietnamese": "gửi qua tin nhắn",
+          "english": "send by text message",
+          "keepTogetherReason": "send-by-message phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "nhắn văn bản",
-          "english": "in writing",
-          "audioKey": null
+          "vietnamese": "giúp tôi",
+          "english": "help me / for me",
+          "keepTogetherReason": "help-me phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "Vui lòng gửi nó bằng tin nhắn văn bản",
-          "english": "Please send it by text message",
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Anh/chị gửi qua tin nhắn giúp tôi được không?",
+          "english": "Can you send it by text message?",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "If writing is enough, move to write-down-time, send-confirmation, type-address, email-it, or call-my-name follow-ups.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,17 +118,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please send it by text message. Keep the booking, room number, date, or address visible."
+      "body": "Good at hotels, tour desks, clinics, drivers, ticket counters, and message threads where exact details matter.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "A text message is useful when the next step depends on a spelling, time, address, pickup point, or code.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use confirmation-message, write-down-time, type-address, email-invoice, or call-my-name cards if the detail needs another format.",
       "phrases": [
         {
           "id": "time-4",
@@ -178,13 +188,13 @@
   "examples": [
     {
       "id": "v900-time-date-book-please-send-it-by-text-message",
-      "vietnamese": "Vui lòng gửi nó bằng tin nhắn văn bản",
-      "english": "Please send it by text message",
-      "pronunciation": "Vui long gui no bang tin nhan van ban",
-      "symbolName": "speaker.wave.2.fill",
+      "vietnamese": "Anh/chị gửi qua tin nhắn giúp tôi được không?",
+      "english": "Can you send it by text message?",
+      "pronunciation": "Anh chi gui qua tin nhan giup toi duoc khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "teal",
       "detailPageID": null,
-      "audioKey": "v900-time-date-book-please-send-it-by-text-message"
+      "audioKey": null
     }
   ]
 }

@@ -7,7 +7,7 @@
   "title": "Bạn có thể giúp tôi quay lại khách sạn được không?",
   "englishTitle": "Can you help me get back to my hotel?",
   "pronunciation": "Ban co the giup toi quay lai khach san duoc khong",
-  "summary": "Can you help me get back to my hotel?",
+  "summary": "For asking someone to help you find your way back to your hotel.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể giúp tôi quay lại khách sạn được không? keeps the question easy to answer. Keep the map, address, or destination visible."
+      "body": "The hotel name is clear; the route back is the part that needs help."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể giúp tôi quay lại khách sạn được không? together as one sentence before adding details. Start with Bạn có thể giúp tôi quay lại khách sạn được không?",
+      "body": "Show the hotel name, address, or map location before you ask.",
       "phrases": [
         {
           "id": "v500-dire-navi-can-you-help-me-get-back-to-my-hotel",
@@ -42,44 +42,50 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; giúp tôi means help me; quay lại means return to; khách sạn means hotel; được không? asks if it is possible.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "giúp tôi quay",
+          "vietnamese": "giúp tôi",
           "english": "help me",
-          "audioKey": null
+          "keepTogetherReason": "help-me phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "lại khách sạn",
-          "english": "hotel",
-          "audioKey": null
+          "vietnamese": "quay lại",
+          "english": "return to",
+          "keepTogetherReason": "return phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "khách sạn",
+          "english": "hotel",
+          "keepTogetherReason": "hotel noun"
         },
         {
           "id": "chunk-5",
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
+        },
+        {
+          "id": "full",
           "vietnamese": "Bạn có thể giúp tôi quay lại khách sạn được không?",
-          "english": "Can you help me get back to my hotel",
-          "audioKey": null
+          "english": "Can you help me get back to my hotel?",
+          "audioKey": "v500-dire-navi-can-you-help-me-get-back-to-my-hotel"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another directions need.",
+      "body": "Route, nearby, and walking-time follow-ups help after someone points you in a direction.",
       "phrases": [
         {
           "id": "directions-1",
@@ -116,17 +122,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you help me get back to my hotel. Keep the map, address, or destination visible."
+      "body": "Good at street corners, stations, shop counters, and hotel-adjacent neighborhoods when you need a clean reset."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "A hotel card or booking screen is better than a long explanation. Let the other person point or type the route."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Turn, straight-ahead, pickup-point, and thanks follow-ups cover the next direction step.",
       "phrases": [
         {
           "id": "directions-4",

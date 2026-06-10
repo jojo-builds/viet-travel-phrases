@@ -7,7 +7,7 @@
   "title": "Mọi thứ đều tốt, cảm ơn bạn",
   "englishTitle": "Everything was good, thank you",
   "pronunciation": "Moi thu deu tot cam on ban",
-  "summary": "Everything was good, thank you",
+  "summary": "Keeps the hotel request clear in a front desk or guesthouse counter.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Mọi thứ đều tốt, cảm ơn bạn together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Say Mọi thứ đều tốt, cảm ơn bạn as one clean sentence; the booking, room number, address, or key card can carry the exact detail. Keep the booking, room number, date, or address visible.",
       "phrases": [
         {
           "id": "v900-hote-acco-everything-was-good-thank-you",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Mọi thứ đều + tốt, cảm ơn, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Nearby follow-ups: I have a reservation, I’d like to check in, and I’d like to check in, please.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is everything was good, thank you. Keep the booking, room number, date, or address visible."
+      "body": "Best in a front desk or guesthouse counter, before the explanation gets long. Keep the booking, room number, address, or key card close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Useful if the exchange continues: What time is check-out, Can I have a quiet room, and I’d like to check out.",
       "phrases": [
         {
           "id": "hotel-3",

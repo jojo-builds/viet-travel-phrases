@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Khi nào nó sẽ đến? together as one sentence before adding details. Start with Khi nào nó sẽ đến?",
+      "body": "A short question is enough here; use the passport, baggage tag, flight detail, or pickup screen for the follow-up.",
       "phrases": [
         {
           "id": "v500-airp-bord-arri-when-will-it-arrive",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Khi nào nó + sẽ đến as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
+      "body": "Useful if the exchange continues: Where is immigration, Where is baggage claim, and Where can I buy a SIM card.",
       "phrases": [
         {
           "id": "airport-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is when will it arrive. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "At an airport counter, baggage area, or pickup point, keep the passport, baggage tag, flight detail, or pickup screen visible while the first answer comes back."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Useful if the exchange continues: Where is the pickup area, Where do I meet the driver, and My bag did not arrive.",
       "phrases": [
         {
           "id": "airport-5",

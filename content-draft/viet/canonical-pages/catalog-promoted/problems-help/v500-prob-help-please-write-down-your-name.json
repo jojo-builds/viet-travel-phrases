@@ -7,7 +7,7 @@
   "title": "Hãy viết tên của bạn",
   "englishTitle": "Please write down your name",
   "pronunciation": "Hay viet ten cua ban",
-  "summary": "Please write down your name",
+  "summary": "For asking someone to write their name clearly when a report, receipt, handoff, or follow-up depends on it.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy viết tên của bạn makes the request direct without adding extra explanation. Keep the relevant place, item, or screen visible."
+      "body": "Ask before leaving the counter if you may need to identify who helped you later."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Hãy viết tên của bạn together as one sentence before adding details. Keep the relevant place, item, or screen visible.",
+      "body": "Offer your phone, paper, receipt, or form while you ask. The name matters more than a spoken repeat.",
       "phrases": [
         {
           "id": "v500-prob-help-please-write-down-your-name",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hãy viết means please write; tên của bạn means your name.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy viết tên",
-          "english": "please do",
-          "audioKey": null
+          "vietnamese": "Hãy viết",
+          "english": "please write",
+          "keepTogetherReason": "please-write phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "của bạn",
-          "english": "write down your name",
-          "audioKey": null
+          "vietnamese": "tên của bạn",
+          "english": "your name",
+          "keepTogetherReason": "your-name phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Hãy viết tên của bạn",
           "english": "Please write down your name",
-          "audioKey": null
+          "audioKey": "v500-prob-help-please-write-down-your-name"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another problem-solving need.",
+      "body": "Lost-way and left-behind-item phrases cover nearby help situations.",
       "phrases": [
         {
           "id": "problems-1",
@@ -88,33 +88,23 @@
           "tintName": "orange",
           "detailPageID": "viet-phrase-problems-4",
           "audioKey": "problems-4"
-        },
-        {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please write down your name. Keep the relevant place, item, or screen visible."
+      "body": "Good for hotel desks, police or security reports, delivery handoffs, repair counters, clinics, and ticket offices."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Name one problem at a time. If the answer is fast, switch to a repeat or write-it-down phrase."
+      "body": "Ask for the name before the moment ends; it is harder to recover after you leave."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Need-help, call-hotel, manager, double-charge, and report cards cover the follow-up path after a name is recorded.",
       "phrases": [
         {
           "id": "help-need-help-direct",

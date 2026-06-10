@@ -7,7 +7,7 @@
   "title": "Điều đó tốt hay xấu?",
   "englishTitle": "Is that good or bad?",
   "pronunciation": "Dieu do tot hay xau",
-  "summary": "Is that good or bad?",
+  "summary": "For checking whether the answer you just received is good news, bad news, or a warning.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Điều đó tốt hay xấu? keeps the question easy to answer. If it is still unclear, show, write, or point to the exact word."
+      "body": "Use it after someone explains a delay, price, route, repair, test result, or problem and you cannot read the tone."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use Điều đó tốt hay xấu? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "body": "Point to the message, receipt, map, or item while you ask. Let the other person answer with a gesture or simpler word.",
       "phrases": [
         {
           "id": "v500-unde-repa-is-that-good-or-bad",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Điều đó means that thing; tốt hay xấu asks good or bad.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Điều đó tốt",
-          "english": "go / move",
-          "audioKey": null
+          "vietnamese": "Điều đó",
+          "english": "that thing / that",
+          "keepTogetherReason": "that-thing phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "hay xấu",
-          "english": "please do",
-          "audioKey": null
+          "vietnamese": "tốt hay xấu?",
+          "english": "good or bad?",
+          "keepTogetherReason": "good-or-bad phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Điều đó tốt hay xấu?",
-          "english": "Is that good or bad",
-          "audioKey": null
+          "english": "Is that good or bad?",
+          "audioKey": "v500-unde-repa-is-that-good-or-bad"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
+      "body": "I-don't-understand and slower-speech cards cover the moment before you can judge the answer.",
       "phrases": [
         {
           "id": "problems-2",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+      "body": "Good when the words were understandable but the meaning was not clear enough to decide what to do next."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "These phrases keep the exchange friendly when Vietnamese moves too fast. Ask for one specific next step: repeat, write, show, or point."
+      "body": "If the answer still feels vague, ask them to write, show, or point to the next step."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "If the answer still feels unclear, ask them to repeat it, write it, explain it, point to the right one, or show you.",
       "phrases": [
         {
           "id": "repair-1",

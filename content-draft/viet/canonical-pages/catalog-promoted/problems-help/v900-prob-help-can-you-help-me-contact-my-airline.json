@@ -7,7 +7,7 @@
   "title": "Bạn có thể giúp tôi liên hệ với hãng hàng không của tôi không?",
   "englishTitle": "Can you help me contact my airline?",
   "pronunciation": "Ban co the giup toi lien he voi hang hang khong cua toi khong",
-  "summary": "Can you help me contact my airline?",
+  "summary": "For asking a desk, hotel, or helpful local to help reach your airline.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể giúp tôi liên hệ với hãng hàng không của tôi không? keeps the question easy to answer. Keep the relevant place, item, or screen visible."
+      "body": "Use it when a flight, bag, check-in, cancellation, or connection problem needs the airline, not just local staff."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể giúp tôi liên hệ với hãng hàng không của tôi không? together as one sentence before adding details. Start with Bạn có thể giúp tôi liên hệ với hãng hàng không của tôi không?",
+      "body": "Show the booking, flight number, boarding pass, or airline app before adding the story.",
       "phrases": [
         {
           "id": "v900-prob-help-can-you-help-me-contact-my-airline",
@@ -42,153 +42,141 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể means can you; giúp tôi liên hệ means help me contact; hãng hàng không của tôi means my airline.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "giúp tôi liên",
-          "english": "help me",
-          "audioKey": null
+          "vietnamese": "giúp tôi liên hệ",
+          "english": "help me contact",
+          "keepTogetherReason": "help-contact phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "hệ với hãng",
+          "vietnamese": "với hãng hàng không của tôi",
           "english": "my airline",
-          "audioKey": null
+          "keepTogetherReason": "airline-contact phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "hàng không của",
-          "english": "yes/no question",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-5",
-          "vietnamese": "tôi",
-          "english": "I / me",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-6",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-7",
+          "id": "full",
           "vietnamese": "Bạn có thể giúp tôi liên hệ với hãng hàng không của tôi không?",
-          "english": "Can you help me contact my airline",
-          "audioKey": null
+          "english": "Can you help me contact my airline?",
+          "audioKey": "v900-prob-help-can-you-help-me-contact-my-airline"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another problem-solving need.",
+      "body": "Contact the driver, contact the hotel, and emergency contact phrases cover nearby help calls.",
       "phrases": [
         {
-          "id": "problems-1",
-          "vietnamese": "Tôi bị lạc đường",
-          "english": "I’m lost",
-          "pronunciation": "toy bee lahk doong",
+          "id": "v500-prob-help-can-you-contact-the-driver",
+          "vietnamese": "Bạn có thể liên hệ với tài xế được không?",
+          "english": "Can you contact the driver?",
+          "pronunciation": "Ban co the lien he voi tai xe duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-problems-1",
-          "audioKey": "problems-1"
+          "detailPageID": "viet-phrase-v500-prob-help-can-you-contact-the-driver",
+          "audioKey": "v500-prob-help-can-you-contact-the-driver"
         },
         {
-          "id": "problems-4",
-          "vietnamese": "Tôi quên đồ rồi",
-          "english": "I left something behind",
-          "pronunciation": "toy gwen doh roy",
+          "id": "v500-prob-help-can-you-help-me-contact-my-hotel",
+          "vietnamese": "Bạn có thể giúp tôi liên hệ với khách sạn của tôi được không?",
+          "english": "Can you help me contact my hotel?",
+          "pronunciation": "Ban co the giup toi lien he voi khach san cua toi duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-problems-4",
-          "audioKey": "problems-4"
+          "detailPageID": "viet-phrase-v500-prob-help-can-you-help-me-contact-my-hotel",
+          "audioKey": "v500-prob-help-can-you-help-me-contact-my-hotel"
         },
         {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
+          "id": "v500-prob-help-can-you-call-my-emergency-contact",
+          "vietnamese": "Bạn có thể gọi cho người liên lạc khẩn cấp của tôi được không?",
+          "english": "Can you call my emergency contact?",
+          "pronunciation": "Ban co the goi cho nguoi lien lac khan cap cua toi duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
+          "detailPageID": "viet-phrase-v500-prob-help-can-you-call-my-emergency-contact",
+          "audioKey": "v500-prob-help-can-you-call-my-emergency-contact"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you help me contact my airline. Keep the relevant place, item, or screen visible."
+      "body": "Good at airport information desks, hotel reception, tour counters, and help desks with a phone nearby."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Lead with the airline name and flight number. That helps the helper skip straight to the right contact path."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Lost luggage, baggage tag, driver, information desk, and departure hall phrases cover common airport follow-ups.",
       "phrases": [
         {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
+          "id": "v500-airp-bord-arri-i-need-to-report-lost-luggage",
+          "vietnamese": "Tôi cần báo cáo hành lý thất lạc",
+          "english": "I need to report lost luggage",
+          "pronunciation": "Toi can bao cao hanh ly that lac",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-help-need-help-direct",
-          "audioKey": "help-need-help-direct"
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v500-airp-bord-arri-i-need-to-report-lost-luggage",
+          "audioKey": "v500-airp-bord-arri-i-need-to-report-lost-luggage"
         },
         {
-          "id": "help-2",
-          "vietnamese": "Gọi khách sạn giúp tôi",
-          "english": "Please call the hotel for me",
-          "pronunciation": "goy khak san zoop toy",
+          "id": "v500-airp-bord-arri-this-is-my-baggage-tag",
+          "vietnamese": "Đây là thẻ hành lý của tôi",
+          "english": "This is my baggage tag",
+          "pronunciation": "Day la the hanh ly cua toi",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-help-2",
-          "audioKey": "help-2"
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v500-airp-bord-arri-this-is-my-baggage-tag",
+          "audioKey": "v500-airp-bord-arri-this-is-my-baggage-tag"
         },
         {
-          "id": "help-3",
-          "vietnamese": "Tôi cần quản lý",
-          "english": "I need the manager",
-          "pronunciation": "toy gun kwan lee",
+          "id": "v500-airp-bord-arri-my-driver-canceled",
+          "vietnamese": "Tài xế của tôi đã hủy",
+          "english": "My driver canceled",
+          "pronunciation": "Tai xe cua toi da huy",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-help-3",
-          "audioKey": "help-3"
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v500-airp-bord-arri-my-driver-canceled",
+          "audioKey": "v500-airp-bord-arri-my-driver-canceled"
         },
         {
-          "id": "help-4",
-          "vietnamese": "Tôi bị tính tiền hai lần",
-          "english": "I was charged twice",
-          "pronunciation": "toy bee ting tyen hai lun",
+          "id": "v900-airp-bord-arri-where-is-the-information-desk",
+          "vietnamese": "Bàn thông tin ở đâu?",
+          "english": "Where is the information desk?",
+          "pronunciation": "Ban thong tin o dau",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-help-4",
-          "audioKey": "help-4"
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v900-airp-bord-arri-where-is-the-information-desk",
+          "audioKey": "v900-airp-bord-arri-where-is-the-information-desk"
         },
         {
-          "id": "help-5",
-          "vietnamese": "Tôi cần làm biên bản",
-          "english": "I need to file a report",
-          "pronunciation": "toy gun lahm byeen ban",
+          "id": "v900-airp-bord-arri-where-is-the-departure-hall",
+          "vietnamese": "Sảnh khởi hành ở đâu?",
+          "english": "Where is the departure hall?",
+          "pronunciation": "Sanh khoi hanh o dau",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-help-5",
-          "audioKey": "help-5"
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v900-airp-bord-arri-where-is-the-departure-hall",
+          "audioKey": "v900-airp-bord-arri-where-is-the-departure-hall"
         }
       ]
     }

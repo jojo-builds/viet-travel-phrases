@@ -7,7 +7,7 @@
   "title": "Áp lực nước quá thấp",
   "englishTitle": "The water pressure is too low",
   "pronunciation": "Ap luc nuoc qua thap",
-  "summary": "The water pressure is too low",
+  "summary": "For telling the front desk the shower or sink has too little pressure to use comfortably.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Áp lực nước quá thấp keeps the travel moment short and clear. Keep the booking, room number, date, or address visible."
+      "body": "This is a room problem for staff to check, not a general complaint."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Áp lực nước quá thấp together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Name the pressure problem first, then point to the bathroom, room number, or a short video if needed.",
       "phrases": [
         {
           "id": "v900-hote-acco-the-water-pressure-is-too-low",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Áp lực nước means water pressure; quá thấp means too low.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Áp lực nước",
           "english": "water pressure",
-          "audioKey": null
+          "keepTogetherReason": "water-pressure phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "quá thấp",
-          "english": "water pressure is too low",
-          "audioKey": null
+          "english": "too low",
+          "keepTogetherReason": "too-low phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Áp lực nước quá thấp",
           "english": "The water pressure is too low",
-          "audioKey": null
+          "audioKey": "v900-hote-acco-the-water-pressure-is-too-low"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Reservation and check-in phrases cover the desk opening if you need to identify the room first.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -104,47 +104,47 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is the water pressure is too low. Keep the booking, room number, date, or address visible."
+      "body": "Good after trying the shower, sink, or hose and needing staff to check the room."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "A time estimate matters here. Ask when someone can come or whether another room is possible."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "If it turns into a room repair, ask for someone to come, mention no hot water or a broken toilet, or bring up heat and air conditioning.",
       "phrases": [
         {
-          "id": "hotel-3",
-          "vietnamese": "Mấy giờ trả phòng?",
-          "english": "What time is check-out?",
-          "pronunciation": "may zyuh tra fong",
+          "id": "v500-hote-acco-can-someone-come-fix-it",
+          "vietnamese": "Ai đó có thể đến sửa nó được không?",
+          "english": "Can someone come fix it?",
+          "pronunciation": "Ai do co the den sua no duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-3",
-          "audioKey": "hotel-3"
+          "detailPageID": "viet-phrase-v500-hote-acco-can-someone-come-fix-it",
+          "audioKey": "v500-hote-acco-can-someone-come-fix-it"
         },
         {
-          "id": "hotel-quiet-room",
-          "vietnamese": "Cho tôi phòng yên tĩnh được không?",
-          "english": "Can I have a quiet room?",
-          "pronunciation": "cho toy fong yen tinh dook khong",
+          "id": "hotel-premium-no-hot-water",
+          "vietnamese": "Ở đây không có nước nóng.",
+          "english": "There is no hot water.",
+          "pronunciation": "O day khong co nuoc nong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-quiet-room",
-          "audioKey": "hotel-quiet-room"
+          "detailPageID": "viet-phrase-hotel-premium-no-hot-water",
+          "audioKey": "hotel-premium-no-hot-water"
         },
         {
-          "id": "hotel-checkout",
-          "vietnamese": "Cho tôi trả phòng",
-          "english": "I’d like to check out",
-          "pronunciation": "cho toy tra fong",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v500-hote-acco-the-toilet-is-not-working",
+          "vietnamese": "Bồn cầu không sử dụng được",
+          "english": "The toilet is not working",
+          "pronunciation": "Bon cau khong su dung duoc",
+          "symbolName": "text.bubble.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-checkout",
-          "audioKey": "hotel-checkout"
+          "detailPageID": "viet-phrase-v500-hote-acco-the-toilet-is-not-working",
+          "audioKey": null
         },
         {
           "id": "hotel-4",
@@ -153,7 +153,7 @@
           "pronunciation": "fong nai nong gwah",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-4",
+          "detailPageID": "viet-family-hotel-room-hot",
           "audioKey": "hotel-4"
         },
         {
@@ -163,7 +163,7 @@
           "pronunciation": "mai lanh khong chai",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-5",
+          "detailPageID": "viet-family-hotel-aircon-broken",
           "audioKey": "hotel-5"
         }
       ]

@@ -20,7 +20,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when a spoken number is too fast or too important to guess. Hand over the phone, receipt, or paper and let the price become visible."
+      "body": "Hand over the phone, receipt, or paper and let the price become visible."
     },
     {
       "id": "quick-say",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Start with Hãy viết + giá; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
+      "body": "Keep close by: How much is this? and How much per kilo?",
       "phrases": [
         {
           "id": "price-1",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Nearby follow-ups: Too expensive; Can you lower it a little?; What’s your final price?",
       "phrases": [
         {
           "id": "price-3",

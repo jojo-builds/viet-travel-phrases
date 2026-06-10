@@ -20,29 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi đã đặt",
+      "english": "I booked",
+      "keepTogetherReason": "booking phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đã đặt",
-      "english": "booked / reserved",
-      "keepTogetherReason": "compound verb phrase"
+      "vietnamese": "sai",
+      "english": "wrong",
+      "keepTogetherReason": "wrong adjective"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "sai",
-      "english": "wrong"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "thời",
-      "english": "temporary / time"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "gian",
-      "english": "time / space"
+      "vietnamese": "thời gian",
+      "english": "time",
+      "keepTogetherReason": "time noun"
     },
     {
       "id": "full",

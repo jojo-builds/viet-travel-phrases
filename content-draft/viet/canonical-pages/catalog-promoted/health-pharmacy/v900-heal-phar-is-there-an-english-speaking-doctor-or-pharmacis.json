@@ -7,7 +7,7 @@
   "title": "Có bác sĩ hoặc dược sĩ nói tiếng Anh không?",
   "englishTitle": "Is there an English-speaking doctor or pharmacist?",
   "pronunciation": "Co bac si hoac duoc si noi tieng Anh khong",
-  "summary": "Is there an English-speaking doctor or pharmacist?",
+  "summary": "For asking a clinic, pharmacy, or hotel desk for someone who can discuss medicine in English.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có bác sĩ hoặc dược sĩ nói tiếng Anh không? keeps the question easy to answer. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Use it when dosage, symptoms, allergies, or paperwork need to be exact."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Có bác sĩ hoặc dược sĩ nói tiếng Anh không? together as one sentence before adding details. Say Có bác sĩ hoặc dược sĩ nói tiếng Anh không?",
+      "body": "Show the medicine, symptom note, or insurance form so staff know why English matters.",
       "phrases": [
         {
           "id": "v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
@@ -42,44 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có asks is there; bác sĩ hoặc dược sĩ means doctor or pharmacist; nói tiếng Anh means speaks English; không? makes it yes/no.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Có bác sĩ",
-          "english": "is there / does it have",
-          "audioKey": null
+          "vietnamese": "Có",
+          "english": "is there",
+          "keepTogetherReason": "existence question opener"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "hoặc dược sĩ",
-          "english": "an English-speaking doctor or pharmacist",
-          "audioKey": null
+          "vietnamese": "bác sĩ hoặc dược sĩ",
+          "english": "doctor or pharmacist",
+          "keepTogetherReason": "doctor-or-pharmacist phrase"
         },
         {
           "id": "chunk-3",
           "vietnamese": "nói tiếng Anh",
-          "english": "in English",
-          "audioKey": null
+          "english": "speaks English",
+          "keepTogetherReason": "English-speaking phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Có bác sĩ hoặc dược sĩ nói tiếng Anh không?",
-          "english": "Is there an English-speaking doctor or pharmacist",
-          "audioKey": null
+          "english": "Is there an English-speaking doctor or pharmacist?",
+          "audioKey": "v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Doctor, pharmacy, and nearest-pharmacy follow-ups help if they point you to another counter.",
       "phrases": [
         {
           "id": "problems-6",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is is there an English-speaking doctor or pharmacist. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at pharmacies, clinics, hotel desks, and hospital reception when the next answer needs detail."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "If no one speaks English, a written note or translation screen can still keep the conversation steady."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Headache, stomach, motion-sickness, allergy, and diarrhea follow-ups cover common health details.",
       "phrases": [
         {
           "id": "health-2",

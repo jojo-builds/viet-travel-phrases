@@ -20,34 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hãy",
-      "english": "please do"
+      "vietnamese": "Hãy gọi",
+      "english": "please call",
+      "keepTogetherReason": "please-call phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "gọi",
-      "english": "call"
+      "vietnamese": "tài xế này",
+      "english": "this driver",
+      "keepTogetherReason": "this-driver phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "tài xế",
-      "english": "driver",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "tôi",
-      "english": "me"
+      "vietnamese": "cho tôi",
+      "english": "for me",
+      "keepTogetherReason": "for-me phrase"
     },
     {
       "id": "full",

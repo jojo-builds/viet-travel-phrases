@@ -1,0 +1,4212 @@
+{
+  "generatedAt": "2026-06-10T17:52:40.424Z",
+  "pageCount": 1793,
+  "counts": {
+    "HARD_REVIEW": 0,
+    "WEAK_REVIEW": 0,
+    "WATCH": 0,
+    "PASS": 1793
+  },
+  "topRows": [
+    {
+      "pageID": "viet-acknowledge-co",
+      "title": "Có",
+      "englishTitle": "Yes / there is",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-co.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 1,
+      "visibleWords": 208,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 11 times"
+    },
+    {
+      "pageID": "viet-acknowledge-da",
+      "title": "Dạ",
+      "englishTitle": "Yes / polite acknowledgment",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 1,
+      "visibleWords": 215,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-acknowledge-dung",
+      "title": "Đúng",
+      "englishTitle": "Yes / correct",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-dung.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 1,
+      "visibleWords": 191,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-acknowledge-duoc",
+      "title": "Được",
+      "englishTitle": "Okay / that works",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-duoc.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 1,
+      "visibleWords": 199,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-acknowledge-khong",
+      "title": "Không",
+      "englishTitle": "No",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-khong.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 1,
+      "visibleWords": 182,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 8 times"
+    },
+    {
+      "pageID": "viet-da-chao-ba",
+      "title": "Dạ, chào bà",
+      "englishTitle": "Respectful hello to an elderly woman",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da-chao-ba.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 4,
+      "visibleWords": 240,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 11 times"
+    },
+    {
+      "pageID": "viet-da-chao-chi",
+      "title": "Dạ, chào chị",
+      "englishTitle": "Respectful hello to an older woman",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da-chao-chi.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 4,
+      "visibleWords": 233,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 8 times"
+    },
+    {
+      "pageID": "viet-da-chao-chu",
+      "title": "Dạ, chào chú",
+      "englishTitle": "Respectful hello to an uncle-age man",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da-chao-chu.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 4,
+      "visibleWords": 243,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 8 times"
+    },
+    {
+      "pageID": "viet-da-chao-ong",
+      "title": "Dạ, chào ông",
+      "englishTitle": "Respectful hello to an elderly man",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da-chao-ong.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 4,
+      "visibleWords": 222,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 8 times"
+    },
+    {
+      "pageID": "viet-family-airport-baggage",
+      "title": "Lấy hành lý ở đâu?",
+      "englishTitle": "Where is baggage claim?",
+      "tierRole": "tier1",
+      "categoryIDs": "airport-border-arrival",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-baggage.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 4,
+      "visibleWords": 296,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-airport-immigration",
+      "title": "Nhập cảnh ở đâu?",
+      "englishTitle": "Where is immigration?",
+      "tierRole": "tier1",
+      "categoryIDs": "airport-border-arrival",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-immigration.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 3,
+      "visibleWords": 280,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-airport-pickup",
+      "title": "Khu đón ở đâu?",
+      "englishTitle": "Where is the pickup area?",
+      "tierRole": "tier1",
+      "categoryIDs": "airport-border-arrival",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-pickup.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 3,
+      "visibleWords": 333,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-airport-sim",
+      "title": "Mua SIM ở đâu?",
+      "englishTitle": "Where can I buy a SIM card?",
+      "tierRole": "tier1",
+      "categoryIDs": "airport-border-arrival",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-sim.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 4,
+      "visibleWords": 314,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-bathroom-where",
+      "title": "Nhà vệ sinh ở đâu?",
+      "englishTitle": "Where is the bathroom?",
+      "tierRole": "tier1",
+      "categoryIDs": "bathroom-personal-needs",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/bathroom-personal-needs/bathroom-where.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 3,
+      "visibleWords": 282,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-directions-turn-left",
+      "title": "Rẽ trái ở đâu?",
+      "englishTitle": "Where do I turn left?",
+      "tierRole": "tier1",
+      "categoryIDs": "directions-navigation",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/directions-navigation/directions-turn-left.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 3,
+      "visibleWords": 314,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-food-coffee-bac-xiu",
+      "title": "Cho tôi bạc xỉu đá",
+      "englishTitle": "I’d like an iced bạc xỉu",
+      "tierRole": "tier1",
+      "categoryIDs": "food-drink",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/food-drink/food-coffee-bac-xiu.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 5,
+      "visibleWords": 378,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "traveler-insight: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "traveler-insight: repeated 8 times"
+    },
+    {
+      "pageID": "viet-family-food-coffee-black",
+      "title": "Cho tôi cà phê đen đá",
+      "englishTitle": "I’d like an iced black coffee",
+      "tierRole": "tier1",
+      "categoryIDs": "food-drink",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/food-drink/food-coffee-black.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 5,
+      "visibleWords": 378,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "traveler-insight: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "traveler-insight: repeated 8 times"
+    },
+    {
+      "pageID": "viet-family-food-coffee-milk",
+      "title": "Cho tôi một cà phê sữa đá",
+      "englishTitle": "One iced milk coffee please",
+      "tierRole": "tier1",
+      "categoryIDs": "food-drink",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/food-drink/food-coffee-milk.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 5,
+      "visibleWords": 393,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "traveler-insight: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "traveler-insight: repeated 8 times"
+    },
+    {
+      "pageID": "viet-family-food-more-herbs",
+      "title": "Cho thêm rau",
+      "englishTitle": "More herbs please",
+      "tierRole": "tier1",
+      "categoryIDs": "food-drink",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/food-drink/food-more-herbs.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 13,
+      "breakdownCards": 4,
+      "visibleWords": 375,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "traveler-insight: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "traveler-insight: repeated 8 times"
+    },
+    {
+      "pageID": "viet-family-food-need-table",
+      "title": "Cho tôi bàn cho hai người nhé",
+      "englishTitle": "A table for two, please",
+      "tierRole": "tier1",
+      "categoryIDs": "food-drink",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/food-drink/food-need-table.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 14,
+      "breakdownCards": 5,
+      "visibleWords": 459,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "traveler-insight: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "traveler-insight: repeated 8 times"
+    },
+    {
+      "pageID": "viet-family-money-find-atm",
+      "title": "ATM gần nhất ở đâu?",
+      "englishTitle": "Where is the nearest ATM?",
+      "tierRole": "tier1",
+      "categoryIDs": "money-numbers-prices",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/money-numbers-prices/money-find-atm.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 308,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-polite-its-okay",
+      "title": "Không sao đâu",
+      "englishTitle": "It’s okay",
+      "tierRole": "tier1",
+      "categoryIDs": "polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/polite-basics/polite-its-okay.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 22,
+      "breakdownCards": 3,
+      "visibleWords": 410,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 8 times"
+    },
+    {
+      "pageID": "viet-family-service-open-this",
+      "title": "Mở cái này giúp tôi",
+      "englishTitle": "Please open this for me",
+      "tierRole": "tier1",
+      "categoryIDs": "local-services-everyday-tasks",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/local-services-everyday-tasks/service-open-this.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 6,
+      "visibleWords": 295,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "traveler-insight: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "traveler-insight: repeated 8 times"
+    },
+    {
+      "pageID": "viet-family-service-receipt",
+      "title": "Cho tôi hóa đơn",
+      "englishTitle": "Please give me the receipt",
+      "tierRole": "tier1",
+      "categoryIDs": "local-services-everyday-tasks",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/local-services-everyday-tasks/service-receipt.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 4,
+      "visibleWords": 297,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "traveler-insight: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "traveler-insight: repeated 8 times"
+    },
+    {
+      "pageID": "viet-family-shopping-pay-where",
+      "title": "Trả ở đâu?",
+      "englishTitle": "Where do I pay?",
+      "tierRole": "tier1",
+      "categoryIDs": "shopping",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/shopping/shopping-pay-where.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 3,
+      "visibleWords": 291,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-shopping-size",
+      "title": "Tôi muốn cỡ này",
+      "englishTitle": "I want this size",
+      "tierRole": "tier1",
+      "categoryIDs": "shopping",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/shopping/shopping-size.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 5,
+      "visibleWords": 281,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "traveler-insight: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "traveler-insight: repeated 8 times"
+    },
+    {
+      "pageID": "viet-family-sight-meeting-point",
+      "title": "Điểm gặp ở đâu?",
+      "englishTitle": "Where is the meeting point?",
+      "tierRole": "tier1",
+      "categoryIDs": "sightseeing-activities",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/sightseeing-activities/sight-meeting-point.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 4,
+      "visibleWords": 259,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-sight-start",
+      "title": "Bắt đầu ở đâu?",
+      "englishTitle": "Where do we start?",
+      "tierRole": "tier1",
+      "categoryIDs": "sightseeing-activities",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/sightseeing-activities/sight-start.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 3,
+      "visibleWords": 258,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-v500-airp-bord-arri-where-is-the-atm",
+      "title": "ATM ở đâu?",
+      "englishTitle": "Where is the ATM?",
+      "tierRole": "tier1",
+      "categoryIDs": "airport-border-arrival",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/airport-border-arrival/v500-airp-bord-arri-where-is-the-atm.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 3,
+      "visibleWords": 310,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-v500-dire-navi-where-is-the-nearest-restroom",
+      "title": "Nhà vệ sinh gần nhất ở đâu?",
+      "englishTitle": "Where is the nearest restroom?",
+      "tierRole": "tier1",
+      "categoryIDs": "directions-navigation",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/directions-navigation/v500-dire-navi-where-is-the-nearest-restroom.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 4,
+      "visibleWords": 345,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-v500-loca-serv-ever-task-where-can-i-buy-water",
+      "title": "Tôi có thể mua nước ở đâu?",
+      "englishTitle": "Where can I buy water?",
+      "tierRole": "tier1",
+      "categoryIDs": "local-services-everyday-tasks",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/local-services-everyday-tasks/v500-loca-serv-ever-task-where-can-i-buy-water.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 6,
+      "visibleWords": 339,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-v500-phon-inte-powe-where-can-i-get-a-local-sim-card",
+      "title": "Tôi có thể mua SIM ở đâu?",
+      "englishTitle": "Where can I get a local SIM card?",
+      "tierRole": "tier1",
+      "categoryIDs": "phone-internet-power",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/phone-internet-power/v500-phon-inte-powe-where-can-i-get-a-local-sim-card.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 6,
+      "visibleWords": 364,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-hello-alo",
+      "title": "Alô",
+      "englishTitle": "Hello on the phone",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-alo.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 1,
+      "visibleWords": 232,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-hello-chao",
+      "title": "Chào",
+      "englishTitle": "Hi / hello",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 1,
+      "visibleWords": 190,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-hello-chao-anh",
+      "title": "Chào anh",
+      "englishTitle": "Hello to an older man",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao-anh.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 3,
+      "visibleWords": 234,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 8 times"
+    },
+    {
+      "pageID": "viet-hello-chao-ba",
+      "title": "Chào bà",
+      "englishTitle": "Hello to an elderly woman",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao-ba.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 209,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 8 times"
+    },
+    {
+      "pageID": "viet-hello-chao-ban",
+      "title": "Chào bạn",
+      "englishTitle": "Hi there / hello friend",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao-ban.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 3,
+      "visibleWords": 207,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 8 times"
+    },
+    {
+      "pageID": "viet-hello-chao-chi",
+      "title": "Chào chị",
+      "englishTitle": "Hello to an older woman",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao-chi.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 3,
+      "visibleWords": 243,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 11 times"
+    },
+    {
+      "pageID": "viet-hello-chao-chu",
+      "title": "Chào chú",
+      "englishTitle": "Hello to an uncle-age man",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao-chu.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 204,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 11 times"
+    },
+    {
+      "pageID": "viet-hello-chao-co",
+      "title": "Chào cô",
+      "englishTitle": "Hello to an aunt-age woman",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao-co.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 237,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 11 times"
+    },
+    {
+      "pageID": "viet-hello-chao-em",
+      "title": "Chào em",
+      "englishTitle": "Hello to a younger person",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao-em.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 3,
+      "visibleWords": 212,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 11 times"
+    },
+    {
+      "pageID": "viet-hello-chao-ong",
+      "title": "Chào ông",
+      "englishTitle": "Hello to an elderly man",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao-ong.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 3,
+      "visibleWords": 207,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 11 times"
+    },
+    {
+      "pageID": "viet-hello-da-chao-anh-chi",
+      "title": "Dạ, chào anh/chị",
+      "englishTitle": "Hello, sir or ma'am",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-da-chao-anh-chi.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 4,
+      "visibleWords": 224,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-hello-good-morning",
+      "title": "Chào buổi sáng",
+      "englishTitle": "Good morning",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-good-morning.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 3,
+      "visibleWords": 203,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-airport-pickup-clearer",
+      "title": "Tôi gặp tài xế ở đâu?",
+      "englishTitle": "Where do I meet the driver?",
+      "tierRole": "child",
+      "categoryIDs": "airport-border-arrival",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-pickup--airport-pickup-clearer.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 5,
+      "visibleWords": 287,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-phrase-emergency-premium-passport-report",
+      "title": "Tôi cần một báo cáo về hộ chiếu bị mất của tôi.",
+      "englishTitle": "I need a report for my lost passport.",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|emergency-passport-report|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/emergency-premium-passport-report.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 9,
+      "visibleWords": 359,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-phrase-emergency-premium-police-station",
+      "title": "Làm ơn đưa tôi đến đồn cảnh sát.",
+      "englishTitle": "Please take me to the police station.",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|emergency-police-station|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/emergency-premium-police-station.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 331,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-phrase-emergency-premium-take-me-safe",
+      "title": "Làm ơn đưa tôi đến nơi nào đó an toàn.",
+      "englishTitle": "Please take me somewhere safe.",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|emergency-take-me-safe|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/emergency-premium-take-me-safe.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 9,
+      "visibleWords": 341,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-phrase-health-1",
+      "title": "Nhà thuốc ở đâu?",
+      "englishTitle": "Where is the pharmacy?",
+      "tierRole": "child",
+      "categoryIDs": "health-pharmacy",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/health-pharmacy/health-pharmacy--health-1.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 3,
+      "visibleWords": 271,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-phrase-help-premium-print-document",
+      "title": "Tôi cần một bản in của tài liệu này.",
+      "englishTitle": "I need a printed copy of this document.",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "problems-help|help-print-document|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/problems-help/help-premium-print-document.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 9,
+      "visibleWords": 341,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-hotel-premium-booking-wrong",
+      "title": "Tôi nghĩ có vấn đề với việc đặt phòng của tôi.",
+      "englishTitle": "I think there is a problem with my booking.",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "hotel-accommodation|hotel-booking-wrong|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/hotel-accommodation/hotel-premium-booking-wrong.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 10,
+      "visibleWords": 352,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-hotel-premium-no-hot-water",
+      "title": "Ở đây không có nước nóng.",
+      "englishTitle": "There is no hot water.",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "hotel-accommodation|hotel-no-hot-water|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/hotel-accommodation/hotel-premium-no-hot-water.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 301,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-hotel-premium-too-noisy",
+      "title": "Căn phòng quá ồn ào.",
+      "englishTitle": "The room is too noisy.",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "hotel-accommodation|hotel-too-noisy|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/hotel-accommodation/hotel-premium-too-noisy.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 305,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-money-premium-total-wrong",
+      "title": "Tổng số này là sai.",
+      "englishTitle": "This total is wrong.",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "money-numbers-prices|money-total-wrong|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/money-numbers-prices/money-premium-total-wrong.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 276,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-phrase-repair-premium-time-exact",
+      "title": "Chính xác là mấy giờ?",
+      "englishTitle": "What time exactly?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "understanding-repair|repair-time-exact|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/understanding-repair/repair-premium-time-exact.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 304,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-transport-premium-wrong-car",
+      "title": "Đây không phải là xe của tôi.",
+      "englishTitle": "This is not my car.",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|transport-wrong-car|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/transport-premium-wrong-car.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 287,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-airp-bord-arri-my-suitcase-is-missing",
+      "title": "Vali của tôi bị mất",
+      "englishTitle": "My suitcase is missing",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "airport-border-arrival|v500-airp-bord-arri-my-suitcase-is-missing|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/airport-border-arrival/v500-airp-bord-arri-my-suitcase-is-missing.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 328,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 14 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 14 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-airp-bord-arri-when-will-it-arrive",
+      "title": "Khi nào nó sẽ đến?",
+      "englishTitle": "When will it arrive?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "airport-border-arrival|v500-airp-bord-arri-when-will-it-arrive|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/airport-border-arrival/v500-airp-bord-arri-when-will-it-arrive.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 5,
+      "visibleWords": 321,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-emer-safe-i-do-not-have-my-passport",
+      "title": "Tôi không có hộ chiếu",
+      "englishTitle": "I do not have my passport",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|v500-emer-safe-i-do-not-have-my-passport|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/v500-emer-safe-i-do-not-have-my-passport.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 5,
+      "visibleWords": 337,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 14 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 14 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-emer-safe-my-friend-needs-help",
+      "title": "Bạn tôi cần giúp đỡ",
+      "englishTitle": "My friend needs help",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|v500-emer-safe-my-friend-needs-help|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/v500-emer-safe-my-friend-needs-help.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 5,
+      "visibleWords": 339,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 14 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 14 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-emer-safe-my-passport-is-missing",
+      "title": "Hộ chiếu của tôi bị mất",
+      "englishTitle": "My passport is missing",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|v500-emer-safe-my-passport-is-missing|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/v500-emer-safe-my-passport-is-missing.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 332,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 14 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 14 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-emer-safe-there-is-a-fire",
+      "title": "Có cháy!",
+      "englishTitle": "There is a fire",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|v500-emer-safe-there-is-a-fire|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/v500-emer-safe-there-is-a-fire.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 3,
+      "visibleWords": 265,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-food-drin-i-cannot-eat-this-because-of-an-allergy",
+      "title": "Tôi không thể ăn món này vì bị dị ứng",
+      "englishTitle": "I cannot eat this because of an allergy",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v500-food-drin-i-cannot-eat-this-because-of-an-allergy|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v500-food-drin-i-cannot-eat-this-because-of-an-allergy.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 9,
+      "visibleWords": 448,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 14 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 14 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-food-drin-id-like-a-b-nh-m-please",
+      "title": "Làm ơn cho tôi một cái bánh mì",
+      "englishTitle": "I’d like a bánh mì, please",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v500-food-drin-id-like-a-b-nh-m-please|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v500-food-drin-id-like-a-b-nh-m-please.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 6,
+      "visibleWords": 380,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-food-drin-id-like-a-bowl-of-ph-please",
+      "title": "Làm ơn cho tôi một tô phở",
+      "englishTitle": "I’d like a bowl of phở, please",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v500-food-drin-id-like-a-bowl-of-ph-please|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v500-food-drin-id-like-a-bowl-of-ph-please.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 6,
+      "visibleWords": 365,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-food-drin-no-ice-please",
+      "title": "Làm ơn đừng có đá",
+      "englishTitle": "No ice, please",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v500-food-drin-no-ice-please|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v500-food-drin-no-ice-please.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 5,
+      "visibleWords": 304,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-heal-phar-i-feel-nauseous",
+      "title": "tôi cảm thấy buồn nôn",
+      "englishTitle": "I feel nauseous",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "health-pharmacy|v500-heal-phar-i-feel-nauseous|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/health-pharmacy/v500-heal-phar-i-feel-nauseous.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 275,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-heal-phar-i-have-diabetes",
+      "title": "Tôi bị tiểu đường",
+      "englishTitle": "I have diabetes",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "health-pharmacy|v500-heal-phar-i-have-diabetes|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/health-pharmacy/v500-heal-phar-i-have-diabetes.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 277,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-heal-phar-i-need-a-clinic",
+      "title": "Tôi cần một phòng khám",
+      "englishTitle": "I need a clinic",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "health-pharmacy|v500-heal-phar-i-need-a-clinic|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/health-pharmacy/v500-heal-phar-i-need-a-clinic.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 5,
+      "visibleWords": 303,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-heal-phar-i-need-a-dentist",
+      "title": "Tôi cần một nha sĩ",
+      "englishTitle": "I need a dentist",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "health-pharmacy|v500-heal-phar-i-need-a-dentist|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/health-pharmacy/v500-heal-phar-i-need-a-dentist.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 5,
+      "visibleWords": 306,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-hote-acco-please-remove-the-trash",
+      "title": "Vui lòng loại bỏ thùng rác",
+      "englishTitle": "Please remove the trash",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "hotel-accommodation|v500-hote-acco-please-remove-the-trash|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/hotel-accommodation/v500-hote-acco-please-remove-the-trash.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 311,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-hote-acco-the-room-is-not-clean",
+      "title": "Phòng không sạch sẽ",
+      "englishTitle": "The room is not clean",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "hotel-accommodation|v500-hote-acco-the-room-is-not-clean|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/hotel-accommodation/v500-hote-acco-the-room-is-not-clean.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 292,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-mone-numb-pric-is-this-enough",
+      "title": "Thế này đã đủ chưa?",
+      "englishTitle": "Is this enough?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "money-numbers-prices|v500-mone-numb-pric-is-this-enough|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/money-numbers-prices/v500-mone-numb-pric-is-this-enough.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 266,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-mone-numb-pric-is-this-per-person",
+      "title": "Đây có phải là mỗi người?",
+      "englishTitle": "Is this per person?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "money-numbers-prices|v500-mone-numb-pric-is-this-per-person|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/money-numbers-prices/v500-mone-numb-pric-is-this-per-person.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 266,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-mone-numb-pric-no-thanks-maybe-later",
+      "title": "Không, cảm ơn, có thể để sau",
+      "englishTitle": "No thanks, maybe later",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "money-numbers-prices|v500-mone-numb-pric-no-thanks-maybe-later|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/money-numbers-prices/v500-mone-numb-pric-no-thanks-maybe-later.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 300,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-mone-numb-pric-please-count-it-again",
+      "title": "Hãy đếm lại nhé",
+      "englishTitle": "Please count it again",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "money-numbers-prices|v500-mone-numb-pric-please-count-it-again|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/money-numbers-prices/v500-mone-numb-pric-please-count-it-again.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 274,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-phon-inte-powe-my-phone-got-wet",
+      "title": "Điện thoại của tôi bị ướt",
+      "englishTitle": "My phone got wet",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "phone-internet-power|v500-phon-inte-powe-my-phone-got-wet|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/phone-internet-power/v500-phon-inte-powe-my-phone-got-wet.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 5,
+      "visibleWords": 344,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 14 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 14 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-phon-inte-powe-my-screen-is-broken",
+      "title": "Màn hình của tôi bị hỏng",
+      "englishTitle": "My screen is broken",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "phone-internet-power|v500-phon-inte-powe-my-screen-is-broken|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/phone-internet-power/v500-phon-inte-powe-my-screen-is-broken.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 345,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 14 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 14 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-prob-help-i-have-contacted-my-embassy",
+      "title": "Tôi đã liên lạc với đại sứ quán của tôi",
+      "englishTitle": "I have contacted my embassy",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "problems-help|v500-prob-help-i-have-contacted-my-embassy|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/problems-help/v500-prob-help-i-have-contacted-my-embassy.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 8,
+      "visibleWords": 333,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-prob-help-my-wallet-is-missing",
+      "title": "Ví của tôi bị mất",
+      "englishTitle": "My wallet is missing",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "problems-help|v500-prob-help-my-wallet-is-missing|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/problems-help/v500-prob-help-my-wallet-is-missing.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 4,
+      "visibleWords": 312,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 14 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 14 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-prob-help-please-call-my-hotel",
+      "title": "Vui lòng gọi cho khách sạn của tôi",
+      "englishTitle": "Please call my hotel",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "problems-help|v500-prob-help-please-call-my-hotel|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/problems-help/v500-prob-help-please-call-my-hotel.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 6,
+      "visibleWords": 318,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-prob-help-please-call-this-number",
+      "title": "Vui lòng gọi số này",
+      "englishTitle": "Please call this number",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "problems-help|v500-prob-help-please-call-this-number|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/problems-help/v500-prob-help-please-call-this-number.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 5,
+      "visibleWords": 291,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-prob-help-please-speak-to-them-for-me",
+      "title": "Hãy nói chuyện với họ giúp tôi",
+      "englishTitle": "Please speak to them for me",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "problems-help|v500-prob-help-please-speak-to-them-for-me|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/problems-help/v500-prob-help-please-speak-to-them-for-me.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 8,
+      "visibleWords": 313,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-prob-help-someone-took-my-phone",
+      "title": "Ai đó đã lấy điện thoại của tôi",
+      "englishTitle": "Someone took my phone",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "problems-help|v500-prob-help-someone-took-my-phone|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/problems-help/v500-prob-help-someone-took-my-phone.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 6,
+      "visibleWords": 322,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-prob-help-this-is-what-happened",
+      "title": "Đây là những gì đã xảy ra",
+      "englishTitle": "This is what happened",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "problems-help|v500-prob-help-this-is-what-happened|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/problems-help/v500-prob-help-this-is-what-happened.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 7,
+      "visibleWords": 327,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-soci-smal-talk-i-want-to-be-alone-thank-you",
+      "title": "Tôi muốn ở một mình, cảm ơn bạn",
+      "englishTitle": "I want to be alone, thank you",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "social-small-talk|v500-soci-smal-talk-i-want-to-be-alone-thank-you|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/social-small-talk/v500-soci-smal-talk-i-want-to-be-alone-thank-you.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 304,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 11 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-time-date-book-when-is-the-next-one",
+      "title": "Lần tiếp theo là khi nào?",
+      "englishTitle": "When is the next one?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "time-dates-booking|v500-time-date-book-when-is-the-next-one|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/time-dates-booking/v500-time-date-book-when-is-the-next-one.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 306,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-tran-i-feel-unsafe-please-stop",
+      "title": "Tôi cảm thấy không an toàn, xin hãy dừng lại",
+      "englishTitle": "I feel unsafe, please stop",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|v500-tran-i-feel-unsafe-please-stop|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/v500-tran-i-feel-unsafe-please-stop.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 319,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-tran-i-got-on-the-wrong-bus",
+      "title": "Tôi lên nhầm xe buýt",
+      "englishTitle": "I got on the wrong bus",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|v500-tran-i-got-on-the-wrong-bus|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/v500-tran-i-got-on-the-wrong-bus.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 5,
+      "visibleWords": 291,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-tran-please-let-me-out-here",
+      "title": "Xin vui lòng cho tôi ra khỏi đây",
+      "englishTitle": "Please let me out here",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|v500-tran-please-let-me-out-here|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/v500-tran-please-let-me-out-here.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 301,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-tran-when-is-the-next-bus",
+      "title": "Khi nào có chuyến xe buýt tiếp theo?",
+      "englishTitle": "When is the next bus?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|v500-tran-when-is-the-next-bus|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/v500-tran-when-is-the-next-bus.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 311,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-v500-unde-repa-i-dont-understand-this-word",
+      "title": "Tôi không hiểu từ này",
+      "englishTitle": "I don’t understand this word",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "understanding-repair|v500-unde-repa-i-dont-understand-this-word|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/understanding-repair/v500-unde-repa-i-dont-understand-this-word.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 339,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 14 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 14 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-airp-bord-arri-how-long-does-it-take-to-get-downtown",
+      "title": "Đi vào trung tâm thành phố mất bao lâu?",
+      "englishTitle": "How long does it take to get downtown?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "airport-border-arrival|v900-airp-bord-arri-how-long-does-it-take-to-get-downtown|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/airport-border-arrival/v900-airp-bord-arri-how-long-does-it-take-to-get-downtown.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 327,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-dire-navi-how-long-does-it-take-by-taxi",
+      "title": "Đi taxi mất bao lâu?",
+      "englishTitle": "How long does it take by taxi?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "directions-navigation|v900-dire-navi-how-long-does-it-take-by-taxi|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/directions-navigation/v900-dire-navi-how-long-does-it-take-by-taxi.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 300,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-emer-safe-i-do-not-want-any-trouble",
+      "title": "Tôi không muốn bất kỳ rắc rối nào",
+      "englishTitle": "I do not want any trouble",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|v900-emer-safe-i-do-not-want-any-trouble|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/v900-emer-safe-i-do-not-want-any-trouble.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 369,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 14 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 14 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-emer-safe-i-need-a-temporary-travel-document",
+      "title": "Tôi cần giấy thông hành tạm thời",
+      "englishTitle": "I need a temporary travel document",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|v900-emer-safe-i-need-a-temporary-travel-document|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/v900-emer-safe-i-need-a-temporary-travel-document.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 5,
+      "visibleWords": 332,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-emer-safe-please-call-emergency-services",
+      "title": "Vui lòng gọi dịch vụ khẩn cấp",
+      "englishTitle": "Please call emergency services",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|v900-emer-safe-please-call-emergency-services|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/v900-emer-safe-please-call-emergency-services.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 312,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-emer-safe-please-call-the-manager-now",
+      "title": "Hãy gọi ngay cho người quản lý",
+      "englishTitle": "Please call the manager now",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|v900-emer-safe-please-call-the-manager-now|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/v900-emer-safe-please-call-the-manager-now.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 310,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-emer-safe-please-take-me-to-the-hospital",
+      "title": "Làm ơn đưa tôi đến bệnh viện",
+      "englishTitle": "Please take me to the hospital",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|v900-emer-safe-please-take-me-to-the-hospital|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/v900-emer-safe-please-take-me-to-the-hospital.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 332,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-emer-safe-please-write-down-what-happened",
+      "title": "Hãy viết ra điều gì đã xảy ra",
+      "englishTitle": "Please write down what happened",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|v900-emer-safe-please-write-down-what-happened|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/v900-emer-safe-please-write-down-what-happened.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 8,
+      "visibleWords": 321,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-a-table-for-four-please",
+      "title": "Vui lòng cho một bàn cho bốn người",
+      "englishTitle": "A table for four, please",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-a-table-for-four-please|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-a-table-for-four-please.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 8,
+      "visibleWords": 378,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-a-table-for-one-please",
+      "title": "Vui lòng cho một bàn",
+      "englishTitle": "A table for one, please",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-a-table-for-one-please|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-a-table-for-one-please.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 5,
+      "visibleWords": 366,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-i-cannot-eat-dairy",
+      "title": "Tôi không thể ăn sữa",
+      "englishTitle": "I cannot eat dairy",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-i-cannot-eat-dairy|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-i-cannot-eat-dairy.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 6,
+      "visibleWords": 411,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 14 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 14 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-i-cannot-eat-gluten",
+      "title": "Tôi không thể ăn gluten",
+      "englishTitle": "I cannot eat gluten",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-i-cannot-eat-gluten|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-i-cannot-eat-gluten.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 6,
+      "visibleWords": 409,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 14 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 14 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-i-do-not-eat-seafood",
+      "title": "Tôi không ăn hải sản",
+      "englishTitle": "I do not eat seafood",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-i-do-not-eat-seafood|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-i-do-not-eat-seafood.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 5,
+      "visibleWords": 424,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 14 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 14 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-is-this-cooked",
+      "title": "Cái này đã được nấu chín chưa?",
+      "englishTitle": "Is this cooked?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-is-this-cooked|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-is-this-cooked.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 7,
+      "visibleWords": 308,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-is-this-pork-beef-or-chicken",
+      "title": "Đây là thịt lợn, thịt bò hay thịt gà?",
+      "englishTitle": "Is this pork, beef, or chicken?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-is-this-pork-beef-or-chicken|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-is-this-pork-beef-or-chicken.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 7,
+      "visibleWords": 412,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-it-is-okay-now-thank-you",
+      "title": "Bây giờ thì ổn rồi, cảm ơn bạn",
+      "englishTitle": "It is okay now, thank you",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-it-is-okay-now-thank-you|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-it-is-okay-now-thank-you.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 7,
+      "visibleWords": 295,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-no-msg-please",
+      "title": "Không có bột ngọt, làm ơn",
+      "englishTitle": "No MSG, please",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-no-msg-please|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-no-msg-please.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 5,
+      "visibleWords": 372,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-no-straw-please",
+      "title": "Không cần ống hút nhé",
+      "englishTitle": "No straw, please",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-no-straw-please|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-no-straw-please.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 3,
+      "visibleWords": 310,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-one-fresh-coconut-please",
+      "title": "Làm ơn cho một quả dừa tươi",
+      "englishTitle": "One fresh coconut, please",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-one-fresh-coconut-please|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-one-fresh-coconut-please.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 6,
+      "visibleWords": 323,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-one-iced-tea-please",
+      "title": "Làm ơn cho một ly trà đá",
+      "englishTitle": "One iced tea, please",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-one-iced-tea-please|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-one-iced-tea-please.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 5,
+      "visibleWords": 330,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-one-more-please",
+      "title": "Xin thêm một cái nữa",
+      "englishTitle": "One more, please",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-one-more-please|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-one-more-please.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 5,
+      "visibleWords": 327,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-one-sugarcane-juice-please",
+      "title": "Xin cho một ly nước mía",
+      "englishTitle": "One sugarcane juice, please",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-one-sugarcane-juice-please|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-one-sugarcane-juice-please.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 5,
+      "visibleWords": 325,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-please-make-it-less-spicy",
+      "title": "Làm ơn làm cho nó bớt cay đi",
+      "englishTitle": "Please make it less spicy",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-please-make-it-less-spicy|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-please-make-it-less-spicy.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 8,
+      "visibleWords": 365,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-sauce-on-the-side-please",
+      "title": "Xin vui lòng cho nước sốt vào bên cạnh",
+      "englishTitle": "Sauce on the side, please",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-sauce-on-the-side-please|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-sauce-on-the-side-please.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 7,
+      "visibleWords": 365,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-food-drin-two-of-these-please",
+      "title": "Xin vui lòng cho hai trong số này",
+      "englishTitle": "Two of these, please",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "food-drink|v900-food-drin-two-of-these-please|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/food-drink/v900-food-drin-two-of-these-please.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 7,
+      "visibleWords": 363,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 17 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 17 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-heal-phar-how-long-is-the-clinic-wait",
+      "title": "Phòng khám phải đợi bao lâu?",
+      "englishTitle": "How long is the clinic wait?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "health-pharmacy|v900-heal-phar-how-long-is-the-clinic-wait|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/health-pharmacy/v900-heal-phar-how-long-is-the-clinic-wait.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 5,
+      "visibleWords": 287,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-heal-phar-how-many-days-should-i-take-it",
+      "title": "Tôi nên dùng nó trong bao nhiêu ngày?",
+      "englishTitle": "How many days should I take it?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "health-pharmacy|v900-heal-phar-how-many-days-should-i-take-it|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/health-pharmacy/v900-heal-phar-how-many-days-should-i-take-it.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 305,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-heal-phar-i-have-a-rash",
+      "title": "tôi bị phát ban",
+      "englishTitle": "I have a rash",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "health-pharmacy|v900-heal-phar-i-have-a-rash|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/health-pharmacy/v900-heal-phar-i-have-a-rash.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 276,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-heal-phar-i-need-bandages",
+      "title": "Tôi cần băng bó",
+      "englishTitle": "I need bandages",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "health-pharmacy|v900-heal-phar-i-need-bandages|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/health-pharmacy/v900-heal-phar-i-need-bandages.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 296,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-heal-phar-i-need-cold-medicine",
+      "title": "Tôi cần thuốc cảm",
+      "englishTitle": "I need cold medicine",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "health-pharmacy|v900-heal-phar-i-need-cold-medicine|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/health-pharmacy/v900-heal-phar-i-need-cold-medicine.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 301,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-heal-phar-i-need-sunscreen",
+      "title": "Tôi cần kem chống nắng",
+      "englishTitle": "I need sunscreen",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "health-pharmacy|v900-heal-phar-i-need-sunscreen|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/health-pharmacy/v900-heal-phar-i-need-sunscreen.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 305,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-heal-phar-thank-you-i-understand-the-instructions",
+      "title": "Cảm ơn bạn, tôi hiểu hướng dẫn",
+      "englishTitle": "Thank you, I understand the instructions",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "health-pharmacy|v900-heal-phar-thank-you-i-understand-the-instructions|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/health-pharmacy/v900-heal-phar-thank-you-i-understand-the-instructions.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 305,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-hote-acco-everything-was-good-thank-you",
+      "title": "Mọi thứ đều tốt, cảm ơn bạn",
+      "englishTitle": "Everything was good, thank you",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "hotel-accommodation|v900-hote-acco-everything-was-good-thank-you|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/hotel-accommodation/v900-hote-acco-everything-was-good-thank-you.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 305,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-hote-acco-the-shower-is-not-working",
+      "title": "Vòi hoa sen không hoạt động",
+      "englishTitle": "The shower is not working",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "hotel-accommodation|v900-hote-acco-the-shower-is-not-working|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/hotel-accommodation/v900-hote-acco-the-shower-is-not-working.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 5,
+      "visibleWords": 309,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-hote-acco-the-wi-fi-is-not-working-in-my-room",
+      "title": "Wi-Fi không hoạt động trong phòng tôi",
+      "englishTitle": "The Wi-Fi is not working in my room",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "hotel-accommodation|v900-hote-acco-the-wi-fi-is-not-working-in-my-room|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/hotel-accommodation/v900-hote-acco-the-wi-fi-is-not-working-in-my-room.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 347,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-loca-serv-ever-task-my-child-needs-a-bathroom",
+      "title": "Con tôi cần một phòng tắm",
+      "englishTitle": "My child needs a bathroom",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "local-services-everyday-tasks|v900-loca-serv-ever-task-my-child-needs-a-bathroom|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/local-services-everyday-tasks/v900-loca-serv-ever-task-my-child-needs-a-bathroom.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 330,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 14 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 14 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-mone-numb-pric-i-think-the-change-is-wrong",
+      "title": "Tôi nghĩ sự thay đổi là sai",
+      "englishTitle": "I think the change is wrong",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "money-numbers-prices|v900-mone-numb-pric-i-think-the-change-is-wrong|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/money-numbers-prices/v900-mone-numb-pric-i-think-the-change-is-wrong.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 8,
+      "visibleWords": 321,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-mone-numb-pric-i-was-charged-the-wrong-amount",
+      "title": "Tôi đã bị tính sai số tiền",
+      "englishTitle": "I was charged the wrong amount",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "money-numbers-prices|v900-mone-numb-pric-i-was-charged-the-wrong-amount|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/money-numbers-prices/v900-mone-numb-pric-i-was-charged-the-wrong-amount.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 311,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-mone-numb-pric-please-give-me-the-change",
+      "title": "Xin vui lòng đưa cho tôi tiền lẻ.",
+      "englishTitle": "Please give me the change.",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "money-numbers-prices|v900-mone-numb-pric-please-give-me-the-change|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/money-numbers-prices/v900-mone-numb-pric-please-give-me-the-change.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 318,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-mone-numb-pric-the-card-machine-is-not-working",
+      "title": "Máy thẻ không hoạt động",
+      "englishTitle": "The card machine is not working",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "money-numbers-prices|v900-mone-numb-pric-the-card-machine-is-not-working|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/money-numbers-prices/v900-mone-numb-pric-the-card-machine-is-not-working.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 287,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-mone-numb-pric-the-payment-went-through",
+      "title": "Việc thanh toán đã được thông qua",
+      "englishTitle": "The payment went through",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "money-numbers-prices|v900-mone-numb-pric-the-payment-went-through|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/money-numbers-prices/v900-mone-numb-pric-the-payment-went-through.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 293,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-mone-numb-pric-this-receipt-is-not-mine",
+      "title": "Biên lai này không phải của tôi",
+      "englishTitle": "This receipt is not mine",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "money-numbers-prices|v900-mone-numb-pric-this-receipt-is-not-mine|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/money-numbers-prices/v900-mone-numb-pric-this-receipt-is-not-mine.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 315,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-prob-help-i-need-a-police-report-for-insurance",
+      "title": "Tôi cần báo cáo của cảnh sát về bảo hiểm",
+      "englishTitle": "I need a police report for insurance",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "problems-help|v900-prob-help-i-need-a-police-report-for-insurance|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/problems-help/v900-prob-help-i-need-a-police-report-for-insurance.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 8,
+      "visibleWords": 326,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-prob-help-please-give-me-a-copy-of-the-report",
+      "title": "Xin vui lòng cho tôi một bản sao của báo cáo",
+      "englishTitle": "Please give me a copy of the report",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "problems-help|v900-prob-help-please-give-me-a-copy-of-the-report|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/problems-help/v900-prob-help-please-give-me-a-copy-of-the-report.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 8,
+      "visibleWords": 342,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-prob-help-thank-you-for-helping-me-report-this",
+      "title": "Cảm ơn bạn đã giúp tôi báo cáo điều này",
+      "englishTitle": "Thank you for helping me report this",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "problems-help|v900-prob-help-thank-you-for-helping-me-report-this|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/problems-help/v900-prob-help-thank-you-for-helping-me-report-this.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 9,
+      "visibleWords": 355,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 10 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 10 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-tran-how-many-stops-from-here",
+      "title": "Có bao nhiêu điểm dừng từ đây?",
+      "englishTitle": "How many stops from here?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|v900-tran-how-many-stops-from-here|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/v900-tran-how-many-stops-from-here.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 275,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-tran-id-like-to-rent-a-motorbike",
+      "title": "Tôi muốn thuê một chiếc xe máy",
+      "englishTitle": "I’d like to rent a motorbike",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|v900-tran-id-like-to-rent-a-motorbike|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/v900-tran-id-like-to-rent-a-motorbike.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 302,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-tran-one-ticket-to-da-nang-please",
+      "title": "Cho xin 1 vé đi Đà Nẵng",
+      "englishTitle": "One ticket to Da Nang, please",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|v900-tran-one-ticket-to-da-nang-please|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/v900-tran-one-ticket-to-da-nang-please.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 300,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-tran-pick-me-up-at-this-entrance",
+      "title": "Hãy đón tôi ở lối vào này",
+      "englishTitle": "Please pick me up at this entrance",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|v900-tran-pick-me-up-at-this-entrance|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/v900-tran-pick-me-up-at-this-entrance.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 326,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-tran-please-fill-up-the-tank",
+      "title": "Hãy đổ đầy bình.",
+      "englishTitle": "Please fill up the tank.",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|v900-tran-please-fill-up-the-tank|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/v900-tran-please-fill-up-the-tank.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 264,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-tran-thank-you-keep-the-change",
+      "title": "Cảm ơn bạn, hãy giữ sự thay đổi",
+      "englishTitle": "Thank you, keep the change",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|v900-tran-thank-you-keep-the-change|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/v900-tran-thank-you-keep-the-change.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 8,
+      "visibleWords": 319,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-tran-the-driver-asked-for-more-money",
+      "title": "Tài xế đòi thêm tiền",
+      "englishTitle": "The driver asked for more money",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|v900-tran-the-driver-asked-for-more-money|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/v900-tran-the-driver-asked-for-more-money.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 5,
+      "visibleWords": 285,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-tran-what-time-is-the-last-boat-back",
+      "title": "Chuyến tàu cuối cùng về lúc mấy giờ?",
+      "englishTitle": "What time is the last boat back?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|v900-tran-what-time-is-the-last-boat-back|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/v900-tran-what-time-is-the-last-boat-back.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 8,
+      "visibleWords": 319,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-phrase-v900-tran-which-stop-should-i-get-off-at",
+      "title": "Tôi nên xuống ở điểm dừng nào?",
+      "englishTitle": "Which stop should I get off at?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|v900-tran-which-stop-should-i-get-off-at|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/v900-tran-which-stop-should-i-get-off-at.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 298,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-smalltalk-di-dau-day",
+      "title": "Đi đâu đấy?",
+      "englishTitle": "Where are you going?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "small-talk|greetings",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/social-small-talk/smalltalk-di-dau-day.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 4,
+      "visibleWords": 234,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 11 times"
+    },
+    {
+      "pageID": "viet-smalltalk-nice-to-meet-you",
+      "title": "Rất vui được gặp bạn",
+      "englishTitle": "Nice to meet you",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "small-talk|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/social-small-talk/smalltalk-nice-to-meet-you.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 6,
+      "visibleWords": 223,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 11 times"
+    },
+    {
+      "pageID": "viet-thanks-cam-on-ban-da-hieu",
+      "title": "Cảm ơn bạn đã hiểu",
+      "englishTitle": "Thank you for understanding",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "gratitude|understanding-repair",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/understanding-repair/thank-you-cam-on-ban-da-hieu.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 5,
+      "visibleWords": 240,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-thanks-khong-cam-on",
+      "title": "Không, cảm ơn",
+      "englishTitle": "No, thank you",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "polite-basics|gratitude",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/thank-you-khong-cam-on.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 3,
+      "visibleWords": 235,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 11 times"
+    },
+    {
+      "pageID": "viet-phrase-repair-4",
+      "title": "Ý anh/chị là cái nào?",
+      "englishTitle": "Which one do you mean?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "understanding-repair|repair-which-one|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/understanding-repair/repair-4.json",
+      "score": 3,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 309,
+      "issues": [
+        {
+          "code": "let_question_land",
+          "weight": 3,
+          "detail": "quick-say: Keep the word, screen, address, or written note close, but let the question land first."
+        }
+      ],
+      "worstSnippet": "quick-say: Keep the word, screen, address, or written note close, but let the question land first."
+    },
+    {
+      "pageID": "viet-phrase-v500-airp-bord-arri-how-much-to-district-1",
+      "title": "Đến Quận 1 bao nhiêu?",
+      "englishTitle": "How much to District 1?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "airport-border-arrival|v500-airp-bord-arri-how-much-to-district-1|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/airport-border-arrival/v500-airp-bord-arri-how-much-to-district-1.json",
+      "score": 3,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 326,
+      "issues": [
+        {
+          "code": "lead_with_question",
+          "weight": 3,
+          "detail": "quick-say: Lead with the question; show the passport, baggage tag, flight detail, or pickup screen only if they need detail."
+        }
+      ],
+      "worstSnippet": "quick-say: Lead with the question; show the passport, baggage tag, flight detail, or pickup screen only if they need detail."
+    },
+    {
+      "pageID": "viet-phrase-v500-dire-navi-how-far-is-it",
+      "title": "Nó cách đây bao xa?",
+      "englishTitle": "How far is it?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "directions-navigation|v500-dire-navi-how-far-is-it|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/directions-navigation/v500-dire-navi-how-far-is-it.json",
+      "score": 3,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 5,
+      "visibleWords": 280,
+      "issues": [
+        {
+          "code": "lead_with_question",
+          "weight": 3,
+          "detail": "quick-say: Lead with the question; add details only if they ask."
+        }
+      ],
+      "worstSnippet": "quick-say: Lead with the question; add details only if they ask."
+    },
+    {
+      "pageID": "viet-phrase-v500-heal-phar-i-have-a-fever",
+      "title": "Tôi bị sốt",
+      "englishTitle": "I have a fever",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "health-pharmacy|v500-heal-phar-i-have-a-fever|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/health-pharmacy/v500-heal-phar-i-have-a-fever.json",
+      "score": 3,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 3,
+      "visibleWords": 257,
+      "issues": [
+        {
+          "code": "next_detail_generic",
+          "weight": 3,
+          "detail": "explore-next: Use doctor, pharmacy, headache, stomach, diarrhea, or dosage cards if staff need the next detail."
+        }
+      ],
+      "worstSnippet": "explore-next: Use doctor, pharmacy, headache, stomach, diarrhea, or dosage cards if staff need the next detail."
+    },
+    {
+      "pageID": "viet-phrase-v500-heal-phar-i-have-diarrhea",
+      "title": "Tôi bị tiêu chảy",
+      "englishTitle": "I have diarrhea",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "health-pharmacy|v500-heal-phar-i-have-diarrhea|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/health-pharmacy/v500-heal-phar-i-have-diarrhea.json",
+      "score": 3,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 3,
+      "visibleWords": 245,
+      "issues": [
+        {
+          "code": "next_detail_generic",
+          "weight": 3,
+          "detail": "explore-next: Use stomach, doctor, pharmacy, dosage, or allergy follow-ups if the staff needs the next detail."
+        }
+      ],
+      "worstSnippet": "explore-next: Use stomach, doctor, pharmacy, dosage, or allergy follow-ups if the staff needs the next detail."
+    },
+    {
+      "pageID": "viet-phrase-v500-loca-serv-ever-task-how-much-per-page",
+      "title": "Bao nhiêu một trang?",
+      "englishTitle": "How much per page?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "local-services-everyday-tasks|v500-loca-serv-ever-task-how-much-per-page|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/local-services-everyday-tasks/v500-loca-serv-ever-task-how-much-per-page.json",
+      "score": 3,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 279,
+      "issues": [
+        {
+          "code": "let_question_land",
+          "weight": 3,
+          "detail": "quick-say: Keep the item, document, bag, receipt, photo, or address close, but let the question land first."
+        }
+      ],
+      "worstSnippet": "quick-say: Keep the item, document, bag, receipt, photo, or address close, but let the question land first."
+    },
+    {
+      "pageID": "viet-phrase-v500-mone-numb-pric-how-much-for-one",
+      "title": "Bao nhiêu một cái?",
+      "englishTitle": "How much for one?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "money-numbers-prices|v500-mone-numb-pric-how-much-for-one|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/money-numbers-prices/v500-mone-numb-pric-how-much-for-one.json",
+      "score": 3,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 3,
+      "visibleWords": 261,
+      "issues": [
+        {
+          "code": "lead_with_question",
+          "weight": 3,
+          "detail": "quick-say: Lead with the question; show the item, price tag, calculator, receipt, or ATM screen only if they need detail."
+        }
+      ],
+      "worstSnippet": "quick-say: Lead with the question; show the item, price tag, calculator, receipt, or ATM screen only if they need detail."
+    },
+    {
+      "pageID": "viet-phrase-v500-prob-help-can-i-have-an-interpreter",
+      "title": "Tôi có thể có một thông dịch viên?",
+      "englishTitle": "Can I have an interpreter?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "problems-help|v500-prob-help-can-i-have-an-interpreter|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/problems-help/v500-prob-help-can-i-have-an-interpreter.json",
+      "score": 3,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 8,
+      "visibleWords": 316,
+      "issues": [
+        {
+          "code": "let_question_land",
+          "weight": 3,
+          "detail": "quick-say: Keep the receipt, room number, ride detail, photo, or last location close, but let the question land first."
+        }
+      ],
+      "worstSnippet": "quick-say: Keep the receipt, room number, ride detail, photo, or last location close, but let the question land first."
+    },
+    {
+      "pageID": "viet-phrase-v900-hote-acco-how-much-is-one-extra-night",
+      "title": "Thêm một đêm là bao nhiêu?",
+      "englishTitle": "How much is one extra night?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "hotel-accommodation|v900-hote-acco-how-much-is-one-extra-night|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/hotel-accommodation/v900-hote-acco-how-much-is-one-extra-night.json",
+      "score": 3,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 318,
+      "issues": [
+        {
+          "code": "let_question_land",
+          "weight": 3,
+          "detail": "quick-say: Keep the booking, room number, address, or key card close, but let the question land first."
+        }
+      ],
+      "worstSnippet": "quick-say: Keep the booking, room number, address, or key card close, but let the question land first."
+    },
+    {
+      "pageID": "viet-phrase-v900-mone-numb-pric-how-much-for-two-of-them",
+      "title": "Hai cái đó bao nhiêu?",
+      "englishTitle": "How much for two of them?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "money-numbers-prices|v900-mone-numb-pric-how-much-for-two-of-them|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/money-numbers-prices/v900-mone-numb-pric-how-much-for-two-of-them.json",
+      "score": 3,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 5,
+      "visibleWords": 271,
+      "issues": [
+        {
+          "code": "let_question_land",
+          "weight": 3,
+          "detail": "quick-say: Keep the item, price tag, calculator, receipt, or ATM screen close, but let the question land first."
+        }
+      ],
+      "worstSnippet": "quick-say: Keep the item, price tag, calculator, receipt, or ATM screen close, but let the question land first."
+    },
+    {
+      "pageID": "viet-phrase-v900-shop-i-will-buy-two-if-the-price-is-good",
+      "title": "Mình sẽ mua 2 cái nếu giá tốt",
+      "englishTitle": "I will buy two if the price is good",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "shopping|v900-shop-i-will-buy-two-if-the-price-is-good|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/shopping/v900-shop-i-will-buy-two-if-the-price-is-good.json",
+      "score": 3,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 8,
+      "visibleWords": 316,
+      "issues": [
+        {
+          "code": "another_request",
+          "weight": 3,
+          "detail": "quick-say: Say Mình sẽ mua 2 cái nếu giá tốt, then show both items. Wait for the counteroffer before adding another request."
+        }
+      ],
+      "worstSnippet": "quick-say: Say Mình sẽ mua 2 cái nếu giá tốt, then show both items. Wait for the counteroffer before adding another request."
+    },
+    {
+      "pageID": "viet-phrase-v900-shop-what-is-your-best-price",
+      "title": "Giá tốt nhất của bạn là gì?",
+      "englishTitle": "What is your best price?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "shopping|v900-shop-what-is-your-best-price|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/shopping/v900-shop-what-is-your-best-price.json",
+      "score": 3,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 307,
+      "issues": [
+        {
+          "code": "lead_with_question",
+          "weight": 3,
+          "detail": "quick-say: Lead with the question; show the item, size, receipt, price tag, or photo only if they need detail."
+        }
+      ],
+      "worstSnippet": "quick-say: Lead with the question; show the item, size, receipt, price tag, or photo only if they need detail."
+    },
+    {
+      "pageID": "viet-phrase-v900-sigh-acti-what-should-i-bring",
+      "title": "Tôi nên mang theo những gì?",
+      "englishTitle": "What should I bring?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "sightseeing-activities|v900-sigh-acti-what-should-i-bring|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/sightseeing-activities/v900-sigh-acti-what-should-i-bring.json",
+      "score": 3,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 290,
+      "issues": [
+        {
+          "code": "lead_with_question",
+          "weight": 3,
+          "detail": "quick-say: Lead with the question; add details only if they ask."
+        }
+      ],
+      "worstSnippet": "quick-say: Lead with the question; add details only if they ask."
+    },
+    {
+      "pageID": "viet-phrase-v900-time-date-book-can-i-have-seats-together",
+      "title": "Chúng tôi có thể ngồi cùng nhau được không?",
+      "englishTitle": "Can we sit together?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "time-dates-booking|v900-time-date-book-can-i-have-seats-together|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/time-dates-booking/v900-time-date-book-can-i-have-seats-together.json",
+      "score": 3,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 5,
+      "visibleWords": 259,
+      "issues": [
+        {
+          "code": "next_detail_generic",
+          "weight": 3,
+          "detail": "explore-next: Use seat choice, confirmation, booking, date-change, or waitlist follow-ups for the next detail."
+        }
+      ],
+      "worstSnippet": "explore-next: Use seat choice, confirmation, booking, date-change, or waitlist follow-ups for the next detail."
+    },
+    {
+      "pageID": "viet-phrase-v900-tran-i-paid-in-the-app-already",
+      "title": "Tôi đã thanh toán trong ứng dụng rồi",
+      "englishTitle": "I paid in the app already",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|v900-tran-i-paid-in-the-app-already|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/v900-tran-i-paid-in-the-app-already.json",
+      "score": 3,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 7,
+      "visibleWords": 272,
+      "issues": [
+        {
+          "code": "next_detail_generic",
+          "weight": 3,
+          "detail": "explore-next: If the ride continues, stop, route, air-con, wait, and cash cards cover the next detail."
+        }
+      ],
+      "worstSnippet": "explore-next: If the ride continues, stop, route, air-con, wait, and cash cards cover the next detail."
+    },
+    {
+      "pageID": "viet-family-ves-drop-near-dragon-bridge",
+      "title": "Cho tôi xuống gần Cầu Rồng.",
+      "englishTitle": "Drop me off near Dragon Bridge.",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "transport|editorial-model-support|support-model-place-navigation-photo|support-family-drop-off|difficulty-beginner|drop-off|dragon-bridge",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 10,
+      "breakdownCards": 4,
+      "visibleWords": 325,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "when-to-use: Use it when the exact entrance, viewing spot, or curb is flexible but the landmark is clear."
+        }
+      ],
+      "worstSnippet": "when-to-use: Use it when the exact entrance, viewing spot, or curb is flexible but the landmark is clear."
+    },
+    {
+      "pageID": "viet-family-ves-im-on-vo-nguyen-giap-street",
+      "title": "Tôi đang ở đường Võ Nguyên Giáp.",
+      "englishTitle": "I'm on Vo Nguyen Giap Street.",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "directions-navigation|editorial-model-support|support-model-street-pronouncer|support-family-pickup-location|difficulty-beginner|street-pronouncer|pickup-location",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 4,
+      "visibleWords": 337,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "use-it-with: Use it when someone asks where you are or where to meet you."
+        }
+      ],
+      "worstSnippet": "use-it-with: Use it when someone asks where you are or where to meet you."
+    },
+    {
+      "pageID": "viet-family-ves-is-this-address-correct",
+      "title": "Địa chỉ này đúng không?",
+      "englishTitle": "Is this address correct?",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "directions-navigation|editorial-model-support|support-model-driver-ready-phrase|support-family-address-confirm|difficulty-beginner|driver-ready-phrase|address-confirm",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 10,
+      "breakdownCards": 4,
+      "visibleWords": 291,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "when-to-use: Use it when the address is visible and a yes/no answer will prevent a wrong stop."
+        }
+      ],
+      "worstSnippet": "when-to-use: Use it when the address is visible and a yes/no answer will prevent a wrong stop."
+    },
+    {
+      "pageID": "viet-family-ves-is-this-bach-dang-street",
+      "title": "Đây có phải đường Bạch Đằng không?",
+      "englishTitle": "Is this Bach Dang Street?",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "directions-navigation|editorial-model-support|support-model-street-pronouncer|support-family-street-confirm|difficulty-beginner|street-pronouncer|confirm-location",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 6,
+      "visibleWords": 323,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "when-to-use: Use it when the street name matters more than a full address."
+        }
+      ],
+      "worstSnippet": "when-to-use: Use it when the street name matters more than a full address."
+    },
+    {
+      "pageID": "viet-family-ves-is-this-nguyen-van-linh-street",
+      "title": "Đây có phải đường Nguyễn Văn Linh không?",
+      "englishTitle": "Is this Nguyen Van Linh Street?",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "directions-navigation|editorial-model-support|support-model-street-pronouncer|support-family-street-confirm|difficulty-beginner|street-pronouncer|confirm-location",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 6,
+      "visibleWords": 338,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "when-to-use: Use it when the street name is visible but you are not fully sure it is the right one."
+        }
+      ],
+      "worstSnippet": "when-to-use: Use it when the street name is visible but you are not fully sure it is the right one."
+    },
+    {
+      "pageID": "viet-family-ves-is-this-vo-nguyen-giap-street",
+      "title": "Đây có phải đường Võ Nguyên Giáp không?",
+      "englishTitle": "Is this Vo Nguyen Giap Street?",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "directions-navigation|editorial-model-support|support-model-street-pronouncer|support-family-street-confirm|difficulty-beginner|street-pronouncer|confirm-location",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 6,
+      "visibleWords": 330,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "when-to-use: Use it when the sign, map, and spoken direction need to line up."
+        }
+      ],
+      "worstSnippet": "when-to-use: Use it when the sign, map, and spoken direction need to line up."
+    },
+    {
+      "pageID": "viet-family-ves-one-ticket-marble-mountains-polite",
+      "title": "Dạ, cho tôi một vé vào Ngũ Hành Sơn.",
+      "englishTitle": "One ticket to Marble Mountains, please.",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "sightseeing-activities|editorial-model-support|support-model-ticket-counter|support-family-marble-mountains-ticket|difficulty-beginner|ticket-counter|marble-mountains",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 4,
+      "visibleWords": 318,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "when-to-use: Use it when a polite full sentence fits better than a short ticket request."
+        }
+      ],
+      "worstSnippet": "when-to-use: Use it when a polite full sentence fits better than a short ticket request."
+    },
+    {
+      "pageID": "viet-family-ves-show-me-anh-chi",
+      "title": "Anh/chị chỉ giúp tôi được không?",
+      "englishTitle": "Can you show me?",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "understanding-repair|editorial-model-support|support-model-repair-phrase|support-family-show-me|difficulty-beginner|place-navigation",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 4,
+      "visibleWords": 268,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "use-it-with: Use it when street directions, entrance locations, or nearby landmarks are easier to show than describe."
+        }
+      ],
+      "worstSnippet": "use-it-with: Use it when street directions, entrance locations, or nearby landmarks are easier to show than describe."
+    },
+    {
+      "pageID": "viet-family-ves-take-me-to-ba-na-hills",
+      "title": "Cho tôi đi Bà Nà Hills.",
+      "englishTitle": "Please take me to Ba Na Hills.",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "transport|editorial-model-support|support-model-driver-ready-phrase|support-family-destination-request|difficulty-beginner|driver-ready-phrase|ba-na-hills",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 3,
+      "visibleWords": 311,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "use-it-with: Use it when the destination is set and the next step is arranging the ride."
+        }
+      ],
+      "worstSnippet": "use-it-with: Use it when the destination is set and the next step is arranging the ride."
+    },
+    {
+      "pageID": "viet-family-ves-take-me-to-dragon-bridge",
+      "title": "Cho tôi đi Cầu Rồng.",
+      "englishTitle": "Please take me to Dragon Bridge.",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "transport|editorial-model-support|support-model-driver-ready-phrase|support-family-destination-request|difficulty-beginner|driver-ready-phrase|dragon-bridge",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 3,
+      "visibleWords": 300,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "use-it-with: Use it when the route page keeps the title short but the driver needs a full sentence."
+        }
+      ],
+      "worstSnippet": "use-it-with: Use it when the route page keeps the title short but the driver needs a full sentence."
+    },
+    {
+      "pageID": "viet-family-ves-take-photo-for-me",
+      "title": "Bạn chụp giúp tôi được không?",
+      "englishTitle": "Can you take a photo for me?",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "sightseeing-activities|editorial-model-support|support-model-place-navigation-photo|support-family-photo-help|difficulty-beginner|photo-help|sightseeing",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 6,
+      "visibleWords": 301,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "when-to-use: Use it when the person is nearby and the ask is small. Keep your phone unlocked and camera ready."
+        }
+      ],
+      "worstSnippet": "when-to-use: Use it when the person is nearby and the ask is small. Keep your phone unlocked and camera ready."
+    },
+    {
+      "pageID": "viet-family-ves-two-tickets-ba-na-hills",
+      "title": "Dạ, cho tôi hai vé lên Bà Nà Hills.",
+      "englishTitle": "Two tickets to Ba Na Hills, please.",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "sightseeing-activities|editorial-model-support|support-model-place-journey-navigation|support-family-ticket-counter|difficulty-beginner|ticket-counter|ba-na-hills",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 4,
+      "visibleWords": 344,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "when-to-use: Use it when the number of tickets is the useful first detail and the destination is already decided."
+        }
+      ],
+      "worstSnippet": "when-to-use: Use it when the number of tickets is the useful first detail and the destination is already decided."
+    },
+    {
+      "pageID": "viet-family-ves-whats-in-this-dish",
+      "title": "Món này có gì?",
+      "englishTitle": "What is in this dish?",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "food-drink|editorial-model-support|support-model-dish-order-diet|support-family-ingredient-check|difficulty-beginner|dish-order-diet|ingredients",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 15,
+      "breakdownCards": 5,
+      "visibleWords": 349,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "when-to-use: Use it when the dish looks good but you need to know meat, seafood, peanuts, spice, or herbs before committing."
+        }
+      ],
+      "worstSnippet": "when-to-use: Use it when the dish looks good but you need to know meat, seafood, peanuts, spice, or herbs before committing."
+    },
+    {
+      "pageID": "viet-family-ves-where-cable-car",
+      "title": "Cáp treo ở đâu?",
+      "englishTitle": "Where is the cable car?",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "sightseeing-activities|editorial-model-support|support-model-place-journey-navigation|support-family-attraction-navigation|difficulty-beginner|place-journey|ba-na-hills",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 3,
+      "visibleWords": 253,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "when-to-use: Use it when you are already in the attraction flow and need the next place to stand or walk toward."
+        }
+      ],
+      "worstSnippet": "when-to-use: Use it when you are already in the attraction flow and need the next place to stand or walk toward."
+    },
+    {
+      "pageID": "viet-family-ves-where-driver-waits",
+      "title": "Tài xế chờ ở đâu?",
+      "englishTitle": "Where does the driver wait?",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "transport|editorial-model-support|support-model-place-journey-navigation|support-family-driver-wait|difficulty-beginner|place-journey|driver-wait",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 11,
+      "breakdownCards": 4,
+      "visibleWords": 301,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "use-it-with: Use it when the driver, guide, or hotel desk is coordinating the pickup point."
+        }
+      ],
+      "worstSnippet": "use-it-with: Use it when the driver, guide, or hotel desk is coordinating the pickup point."
+    },
+    {
+      "pageID": "viet-family-ves-where-has-good-cao-lau",
+      "title": "Ở đâu có cao lầu ngon?",
+      "englishTitle": "Where has good cao lau?",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "food-drink|editorial-model-support|support-model-dish-order-diet|support-family-dish-finder|difficulty-beginner|dish-order-diet|hoi-an-food",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 15,
+      "breakdownCards": 5,
+      "visibleWords": 356,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "when-to-use: Use it when the dish is the goal and you are still choosing where to eat."
+        }
+      ],
+      "worstSnippet": "when-to-use: Use it when the dish is the goal and you are still choosing where to eat."
+    },
+    {
+      "pageID": "viet-family-ves-where-linh-ung-pagoda",
+      "title": "Chùa Linh Ứng ở đâu?",
+      "englishTitle": "Where is Linh Ung Pagoda?",
+      "tierRole": "editorial-model-support",
+      "categoryIDs": "sightseeing-activities|editorial-model-support|support-model-place-journey-navigation|support-family-landmark-location|difficulty-beginner|place-navigation|son-tra",
+      "sourcePath": "",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 3,
+      "visibleWords": 276,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "when-to-use: Use it when a driver, guard, or helper can point you toward the pagoda entrance or next turn."
+        }
+      ],
+      "worstSnippet": "when-to-use: Use it when a driver, guard, or helper can point you toward the pagoda entrance or next turn."
+    },
+    {
+      "pageID": "viet-phrase-help-premium-contact-embassy",
+      "title": "Bạn có thể giúp tôi liên hệ với đại sứ quán được không?",
+      "englishTitle": "Can you help me contact the embassy?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "problems-help|help-contact-embassy|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/problems-help/help-premium-contact-embassy.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 5,
+      "visibleWords": 312,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when the next step needs an official contact, not just a local suggestion."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when the next step needs an official contact, not just a local suggestion."
+    },
+    {
+      "pageID": "viet-phrase-service-9",
+      "title": "Châm thêm nước vào chai này được không?",
+      "englishTitle": "Can you refill this water bottle?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "local-services-everyday-tasks|service-refill|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/local-services-everyday-tasks/service-9.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 5,
+      "visibleWords": 289,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when a refill station, cooler, or water jug is nearby but not clearly self-serve."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when a refill station, cooler, or water jug is nearby but not clearly self-serve."
+    },
+    {
+      "pageID": "viet-phrase-shop-6",
+      "title": "Tôi muốn đổi cái này",
+      "englishTitle": "I want to exchange this",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "shopping|shopping-exchange|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/shopping/shop-6.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 347,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Tôi muốn đổi cái này is a direct but natural way to say what you want next. Use it when exchange this is the practical goal and you want the reply to stay short and useful."
+        }
+      ],
+      "worstSnippet": "at-glance: Tôi muốn đổi cái này is a direct but natural way to say what you want next. Use it when exchange this is the practical goal and you want the reply to stay short and useful."
+    },
+    {
+      "pageID": "viet-phrase-transport-premium-route-wrong",
+      "title": "Tuyến đường này sai.",
+      "englishTitle": "This route is wrong.",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|transport-route-wrong|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/transport-premium-route-wrong.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 3,
+      "visibleWords": 251,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when the car, motorbike, or walking route is clearly drifting from the map or agreed destination."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when the car, motorbike, or walking route is clearly drifting from the map or agreed destination."
+    },
+    {
+      "pageID": "viet-phrase-transport-premium-turn-around",
+      "title": "Xin hãy quay lại.",
+      "englishTitle": "Please turn around.",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "transport|transport-turn-around|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/transport/transport-premium-turn-around.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 3,
+      "visibleWords": 242,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when the car or bike needs to go back, not just change lanes."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when the car or bike needs to go back, not just change lanes."
+    },
+    {
+      "pageID": "viet-phrase-v500-airp-bord-arri-i-cannot-find-my-driver",
+      "title": "Tôi không tìm thấy tài xế của mình",
+      "englishTitle": "I cannot find my driver",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "airport-border-arrival|v500-airp-bord-arri-i-cannot-find-my-driver|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/airport-border-arrival/v500-airp-bord-arri-i-cannot-find-my-driver.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 353,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "when-to-use: Use it when the driver should already be nearby but you cannot identify the car or person. It fits airport arrivals, hotel pickups, tour transfers, and ride-app confusion."
+        }
+      ],
+      "worstSnippet": "when-to-use: Use it when the driver should already be nearby but you cannot identify the car or person. It fits airport arrivals, hotel pickups, tour transfers, and ride-app confusion."
+    },
+    {
+      "pageID": "viet-phrase-v500-airp-bord-arri-my-driver-canceled",
+      "title": "Tài xế của tôi đã hủy",
+      "englishTitle": "My driver canceled",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "airport-border-arrival|v500-airp-bord-arri-my-driver-canceled|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/airport-border-arrival/v500-airp-bord-arri-my-driver-canceled.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 3,
+      "visibleWords": 293,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when you are stuck at arrivals, a lobby, or a pickup point and need a new transport plan."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when you are stuck at arrivals, a lobby, or a pickup point and need a new transport plan."
+    },
+    {
+      "pageID": "viet-phrase-v500-dire-navi-do-i-go-upstairs",
+      "title": "Tôi lên lầu phải không?",
+      "englishTitle": "Do I go upstairs?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "directions-navigation|v500-dire-navi-do-i-go-upstairs|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/directions-navigation/v500-dire-navi-do-i-go-upstairs.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 266,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when a sign, guard, shop, or counter points upward but you are not sure."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when a sign, guard, shop, or counter points upward but you are not sure."
+    },
+    {
+      "pageID": "viet-phrase-v500-dire-navi-is-it-open-now",
+      "title": "Bây giờ có mở cửa không?",
+      "englishTitle": "Is it open now?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "directions-navigation|v500-dire-navi-is-it-open-now|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/directions-navigation/v500-dire-navi-is-it-open-now.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 270,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when a door, counter, restaurant, clinic, or ticket window looks uncertain."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when a door, counter, restaurant, clinic, or ticket window looks uncertain."
+    },
+    {
+      "pageID": "viet-phrase-v500-emer-safe-please-call-the-police",
+      "title": "Hãy gọi cảnh sát",
+      "englishTitle": "Please call the police",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|v500-emer-safe-please-call-the-police|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/v500-emer-safe-please-call-the-police.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 250,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when the situation needs police help now. Keep the location or photo visible if you can."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when the situation needs police help now. Keep the location or photo visible if you can."
+    },
+    {
+      "pageID": "viet-phrase-v500-emer-safe-someone-is-injured",
+      "title": "Có người bị thương",
+      "englishTitle": "Someone is injured",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|v500-emer-safe-someone-is-injured|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/v500-emer-safe-someone-is-injured.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 3,
+      "visibleWords": 238,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when the injury is the first fact people need to understand."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when the injury is the first fact people need to understand."
+    },
+    {
+      "pageID": "viet-phrase-v500-emer-safe-there-has-been-an-accident",
+      "title": "Đã có một tai nạn",
+      "englishTitle": "There has been an accident",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "emergency-safety|v500-emer-safe-there-has-been-an-accident|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/emergency-safety/v500-emer-safe-there-has-been-an-accident.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 3,
+      "visibleWords": 242,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when you need attention fast before giving details."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when you need attention fast before giving details."
+    },
+    {
+      "pageID": "viet-phrase-v500-hote-acco-can-someone-come-fix-it",
+      "title": "Ai đó có thể đến sửa nó được không?",
+      "englishTitle": "Can someone come fix it?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "hotel-accommodation|v500-hote-acco-can-someone-come-fix-it|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/hotel-accommodation/v500-hote-acco-can-someone-come-fix-it.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 6,
+      "visibleWords": 295,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when the room issue needs a person, not just an explanation at the desk."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when the room issue needs a person, not just an explanation at the desk."
+    },
+    {
+      "pageID": "viet-phrase-v500-poli-basi-sorry",
+      "title": "Tôi xin lỗi",
+      "englishTitle": "Sorry",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "polite-basics|v500-poli-basi-sorry|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/v500-poli-basi-sorry.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 3,
+      "visibleWords": 197,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when you actually need to apologize, not just get attention. Keep the next words small."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when you actually need to apologize, not just get attention. Keep the next words small."
+    },
+    {
+      "pageID": "viet-phrase-v500-prob-help-can-you-call-my-emergency-contact",
+      "title": "Bạn có thể gọi cho người liên lạc khẩn cấp của tôi được không?",
+      "englishTitle": "Can you call my emergency contact?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "problems-help|v500-prob-help-can-you-call-my-emergency-contact|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/problems-help/v500-prob-help-can-you-call-my-emergency-contact.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 4,
+      "visibleWords": 315,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when you need another person reached, not just local help at the counter."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when you need another person reached, not just local help at the counter."
+    },
+    {
+      "pageID": "viet-phrase-v500-time-date-book-i-booked-the-wrong-time",
+      "title": "Tôi đã đặt sai thời gian",
+      "englishTitle": "I booked the wrong time",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "time-dates-booking|v500-time-date-book-i-booked-the-wrong-time|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/time-dates-booking/v500-time-date-book-i-booked-the-wrong-time.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 244,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when the booking exists but the time on it is not the time you meant."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when the booking exists but the time on it is not the time you meant."
+    },
+    {
+      "pageID": "viet-phrase-v500-unde-repa-can-you-write-the-price",
+      "title": "Bạn có thể viết giá được không?",
+      "englishTitle": "Can you write the price?",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "understanding-repair|v500-unde-repa-can-you-write-the-price|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/understanding-repair/v500-unde-repa-can-you-write-the-price.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 4,
+      "visibleWords": 264,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when a spoken price is too fast, too noisy, or has too many zeros."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when a spoken price is too fast, too noisy, or has too many zeros."
+    },
+    {
+      "pageID": "viet-phrase-v500-unde-repa-i-missed-what-you-said",
+      "title": "Tôi đã bỏ lỡ những gì bạn nói",
+      "englishTitle": "I missed what you said",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "understanding-repair|v500-unde-repa-i-missed-what-you-said|premium",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/understanding-repair/v500-unde-repa-i-missed-what-you-said.json",
+      "score": 2,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 3,
+      "visibleWords": 283,
+      "issues": [
+        {
+          "code": "use_it_when",
+          "weight": 2,
+          "detail": "at-glance: Use it when the person already answered but the words moved too fast to catch."
+        }
+      ],
+      "worstSnippet": "at-glance: Use it when the person already answered but the words moved too fast to catch."
+    }
+  ]
+}

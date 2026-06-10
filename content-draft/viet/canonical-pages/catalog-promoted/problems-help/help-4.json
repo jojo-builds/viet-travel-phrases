@@ -7,7 +7,7 @@
   "title": "Tôi bị tính tiền hai lần",
   "englishTitle": "I was charged twice",
   "pronunciation": "toy bee ting tyen hai lun",
-  "summary": "I was charged twice",
+  "summary": "For telling a desk, shop, hotel, or app counter that you were charged twice.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi bị tính tiền hai lần keeps the travel moment short and clear. Keep the relevant place, item, or screen visible."
+      "body": "Use it with the receipt, bank alert, app screen, or room bill visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi bị tính tiền hai lần together as one sentence before adding details. Keep the relevant place, item, or screen visible.",
+      "body": "Say the phrase once, then show the two charges before explaining anything else.",
       "phrases": [
         {
           "id": "help-4",
@@ -42,105 +42,115 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi bị means I was; tính tiền means charged; hai lần means twice.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi bị",
-          "english": "I have / got",
-          "audioKey": null
+          "english": "I was",
+          "keepTogetherReason": "passive problem frame"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tính tiền hai",
-          "english": "price / money",
-          "audioKey": null
+          "vietnamese": "tính tiền",
+          "english": "charged",
+          "keepTogetherReason": "charge verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "lần",
-          "english": "time / occasion",
-          "audioKey": null
+          "vietnamese": "hai lần",
+          "english": "twice",
+          "keepTogetherReason": "twice phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi bị tính tiền hai lần",
           "english": "I was charged twice",
-          "audioKey": null
+          "audioKey": "help-4"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another problem-solving need.",
+      "body": "Wrong amount, this is not my receipt, and wrong bill phrases help with nearby payment mistakes.",
       "phrases": [
         {
-          "id": "problems-1",
-          "vietnamese": "Tôi bị lạc đường",
-          "english": "I’m lost",
-          "pronunciation": "toy bee lahk doong",
+          "id": "v900-mone-numb-pric-i-was-charged-the-wrong-amount",
+          "vietnamese": "Tôi đã bị tính sai số tiền",
+          "english": "I was charged the wrong amount",
+          "pronunciation": "Toi da bi tinh sai so tien",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-problems-1",
-          "audioKey": "problems-1"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-i-was-charged-the-wrong-amount",
+          "audioKey": "v900-mone-numb-pric-i-was-charged-the-wrong-amount"
         },
         {
-          "id": "problems-4",
-          "vietnamese": "Tôi quên đồ rồi",
-          "english": "I left something behind",
-          "pronunciation": "toy gwen doh roy",
+          "id": "v900-mone-numb-pric-this-receipt-is-not-mine",
+          "vietnamese": "Biên lai này không phải của tôi",
+          "english": "This receipt is not mine",
+          "pronunciation": "Bien lai nay khong phai cua toi",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-problems-4",
-          "audioKey": "problems-4"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-this-receipt-is-not-mine",
+          "audioKey": "v900-mone-numb-pric-this-receipt-is-not-mine"
         },
         {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
+          "id": "v900-mone-numb-pric-i-gave-you-the-wrong-bill",
+          "vietnamese": "Tôi đưa nhầm hóa đơn cho bạn",
+          "english": "I gave you the wrong bill",
+          "pronunciation": "Toi dua nham hoa don cho ban",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-i-gave-you-the-wrong-bill",
+          "audioKey": "v900-mone-numb-pric-i-gave-you-the-wrong-bill"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i was charged twice. Keep the relevant place, item, or screen visible."
+      "body": "Good at hotel reception, restaurants, ticket counters, ride desks, shops, and service counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Name one problem at a time. If the answer is fast, switch to a repeat or write-it-down phrase."
+      "body": "Two visible charges make this much easier to solve. Keep the dates, amounts, and card screen ready."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Receipt, refund, cancel the card payment, manager, and report phrases cover the next recovery step.",
       "phrases": [
         {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
+          "id": "v500-mone-numb-pric-can-i-have-a-receipt",
+          "vietnamese": "Tôi có thể có biên nhận được không?",
+          "english": "Can I have a receipt?",
+          "pronunciation": "Toi co the co bien nhan duoc khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-help-need-help-direct",
-          "audioKey": "help-need-help-direct"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v500-mone-numb-pric-can-i-have-a-receipt",
+          "audioKey": "v500-mone-numb-pric-can-i-have-a-receipt"
         },
         {
-          "id": "help-2",
-          "vietnamese": "Gọi khách sạn giúp tôi",
-          "english": "Please call the hotel for me",
-          "pronunciation": "goy khak san zoop toy",
+          "id": "v900-mone-numb-pric-can-you-process-a-refund",
+          "vietnamese": "Bạn có thể xử lý hoàn tiền không?",
+          "english": "Can you process a refund?",
+          "pronunciation": "Ban co the xu ly hoan tien khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-help-2",
-          "audioKey": "help-2"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-can-you-process-a-refund",
+          "audioKey": "v900-mone-numb-pric-can-you-process-a-refund"
+        },
+        {
+          "id": "v900-mone-numb-pric-please-cancel-that-card-payment",
+          "vietnamese": "Vui lòng hủy thanh toán thẻ đó",
+          "english": "Please cancel that card payment",
+          "pronunciation": "Vui long huy thanh toan the do",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-please-cancel-that-card-payment",
+          "audioKey": "v900-mone-numb-pric-please-cancel-that-card-payment"
         },
         {
           "id": "help-3",
@@ -161,16 +171,6 @@
           "tintName": "orange",
           "detailPageID": "viet-phrase-help-5",
           "audioKey": "help-5"
-        },
-        {
-          "id": "help-premium-translate-for-me",
-          "vietnamese": "Bạn có thể dịch giúp tôi được không?",
-          "english": "Can you help translate for me?",
-          "pronunciation": "Ban co the dich giup toi duoc khong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-help-premium-translate-for-me",
-          "audioKey": "help-premium-translate-for-me"
         }
       ]
     }

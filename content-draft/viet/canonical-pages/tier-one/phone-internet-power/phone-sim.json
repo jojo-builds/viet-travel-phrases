@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có bán SIM không? keeps the question easy to answer. This is for convenience stores or phone shops when you still need a SIM.",
+      "body": "Có bán SIM không? belongs at a SIM shop, hotel desk, or cafe counter when the phone screen, error message, charger, or map app is already part of the exchange.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "SIM is the phone card; có asks whether they have one; không? makes it a yes-or-no question.",
       "breakdown": [
         {
           "id": "phone-2-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Show the phone screen or error message first so the problem is visible before you add more words.",
+      "body": "Show the phone screen, error message, charger, or map app first, ask once, and leave room for the answer.",
       "phrases": [
         {
           "id": "phone-2",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Phone phrases work best when the other person can see the exact screen or error. The reply may be unclear.",
+      "body": "SIM questions should happen before you leave the counter, while passport, phone, and plan details are still visible.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a yes/no answer, a gesture toward the item, or short alternative. Say Có bán SIM không?",
+      "body": "Expect a data amount, price, registration step, or activation check.",
       "phrases": [
         {
           "id": "phone-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for convenience stores or phone shops when you still need a SIM. The reply may be a yes/no answer, a gesture toward the item, or short alternative.",
+      "body": "Use it at airports, phone shops, convenience stores, or hotel desks when mobile data is the problem.",
       "phrases": [
         {
           "id": "phone-5",
@@ -199,7 +199,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover what is the Wi-Fi password?; my phone battery is dead; do you have a charger?",
       "phrases": [
         {
           "id": "phone-1",

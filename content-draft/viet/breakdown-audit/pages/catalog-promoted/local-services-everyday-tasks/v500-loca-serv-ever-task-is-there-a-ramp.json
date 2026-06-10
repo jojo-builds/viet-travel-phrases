@@ -21,23 +21,20 @@
     {
       "id": "chunk-1",
       "vietnamese": "Có",
-      "english": "have / there is"
+      "english": "is there",
+      "keepTogetherReason": "existence question opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đoạn đường",
-      "english": "stretch of road",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "đoạn đường nối",
+      "english": "ramp",
+      "keepTogetherReason": "ramp noun"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nối",
-      "english": "say / speak"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

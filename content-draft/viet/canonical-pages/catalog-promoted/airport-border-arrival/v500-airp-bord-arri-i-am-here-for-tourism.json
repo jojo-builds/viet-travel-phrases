@@ -7,7 +7,7 @@
   "title": "Tôi đến đây để du lịch",
   "englishTitle": "I am here for tourism",
   "pronunciation": "Toi den day de du lich",
-  "summary": "I am here for tourism",
+  "summary": "For answering an arrival or immigration question about the purpose of your visit.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi đến đây để du lịch names the need before the details start piling up. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Keep your passport, visa, arrival form, or hotel address visible. This is a short purpose-of-visit answer."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi đến đây để du lịch together as one sentence before adding details. Keep the passport, baggage tag, pickup screen, or flight detail visible.",
+      "body": "Say it plainly. If they ask next, show your hotel, return flight, or number of days.",
       "phrases": [
         {
           "id": "v500-airp-bord-arri-i-am-here-for-tourism",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi đến đây means I came here; để du lịch means for tourism.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi đến đây",
-          "english": "I am here",
-          "audioKey": null
+          "english": "I came here",
+          "keepTogetherReason": "arrival phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "để du lịch",
           "english": "for tourism",
-          "audioKey": null
+          "keepTogetherReason": "purpose phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi đến đây để du lịch",
           "english": "I am here for tourism",
-          "audioKey": null
+          "audioKey": "v500-airp-bord-arri-i-am-here-for-tourism"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
+      "body": "Immigration, baggage, and SIM-card cards cover the first airport questions after purpose of visit.",
       "phrases": [
         {
           "id": "airport-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i am here for tourism. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Good at immigration, airline desks, arrival counters, form checks, and any airport desk asking why you are in Vietnam."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Airport staff and drivers are used to short, practical questions. Keep the document or phone screen visible so they can answer quickly."
+      "body": "This is an answer, not a travel story. Keep documents ready and add details only if asked."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to pickup-area, meet-driver, missing-bag, domestic-terminal, or visa cards if the arrival flow continues.",
       "phrases": [
         {
           "id": "airport-5",

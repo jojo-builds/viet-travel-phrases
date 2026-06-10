@@ -7,7 +7,7 @@
   "title": "Điều này có làm tôi buồn ngủ không?",
   "englishTitle": "Will this make me sleepy?",
   "pronunciation": "Dieu nay co lam toi buon ngu khong",
-  "summary": "Will this make me sleepy?",
+  "summary": "For checking whether medicine will make you drowsy before travel, driving, or a tour.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Điều này có làm tôi buồn ngủ không? keeps the travel moment short and clear. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Sleepiness matters when you still need to walk, ride, fly, or stay alert in heat."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Điều này có làm tôi buồn ngủ không? together as one sentence before adding details. Say Điều này có làm tôi buồn ngủ không?",
+      "body": "Point to the medicine and ask before taking the first dose.",
       "phrases": [
         {
           "id": "v900-heal-phar-will-this-make-me-sleepy",
@@ -42,30 +42,42 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Buồn ngủ means sleepy; có làm tôi asks whether it makes you that way.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Điều này có",
-          "english": "go / move",
+          "vietnamese": "Điều này",
+          "english": "this",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "làm tôi buồn ngủ",
-          "english": "make me sleepy",
+          "vietnamese": "có làm",
+          "english": "does it make",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "tôi",
+          "english": "I / me",
           "audioKey": null
         },
         {
           "id": "chunk-4",
+          "vietnamese": "buồn ngủ",
+          "english": "sleepy",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-6",
           "vietnamese": "Điều này có làm tôi buồn ngủ không?",
-          "english": "Will this make me sleepy",
+          "english": "Will this make me sleepy?",
           "audioKey": null
         }
       ]
@@ -73,7 +85,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Headache, stomach, pharmacy, and dosage follow-ups stay useful if the answer changes what you take.",
       "phrases": [
         {
           "id": "problems-6",
@@ -110,17 +122,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is will this make me sleepy. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at pharmacies, clinics, hotel desks, and travel-insurance calls before a bus ride, flight, tour, or night out."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "If they say yes, ask when to take it and whether food or water helps."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "If the answer changes the plan, move to dose, food, doctor, pharmacy, or motion-sickness follow-ups.",
       "phrases": [
         {
           "id": "health-2",

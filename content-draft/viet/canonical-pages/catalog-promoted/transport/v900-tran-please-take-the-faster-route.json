@@ -4,10 +4,10 @@
   "phraseID": "v900-tran-please-take-the-faster-route",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Hãy đi con đường nhanh hơn",
+  "title": "Đi đường nhanh hơn giúp tôi được không?",
   "englishTitle": "Please take the faster route",
-  "pronunciation": "Hay di con duong nhanh hon",
-  "summary": "Please take the faster route",
+  "pronunciation": "Di duong nhanh hon giup toi duoc khong",
+  "summary": "For asking a driver to choose the quicker route when the map or timing matters.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -15,59 +15,73 @@
     "v900-tran-please-take-the-faster-route",
     "premium"
   ],
-  "audioKey": "v900-tran-please-take-the-faster-route",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy đi con đường nhanh hơn makes the request direct without adding extra explanation. Keep the map, address, or destination visible."
+      "body": "Use it before the turn, toll choice, bridge, or traffic split is already missed.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Hãy đi con đường nhanh hơn together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Show the map route. Keep the request calm so it sounds like timing, not blame.",
       "phrases": [
         {
           "id": "v900-tran-please-take-the-faster-route",
-          "vietnamese": "Hãy đi con đường nhanh hơn",
+          "vietnamese": "Đi đường nhanh hơn giúp tôi được không?",
           "english": "Please take the faster route",
-          "pronunciation": "Hay di con duong nhanh hon",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Di duong nhanh hon giup toi duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "orange",
           "detailPageID": null,
-          "audioKey": "v900-tran-please-take-the-faster-route"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đi đường means take the road; nhanh hơn means faster; giúp tôi means help me; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy đi con",
-          "english": "go / move",
-          "audioKey": null
+          "vietnamese": "Đi đường",
+          "english": "take the route",
+          "keepTogetherReason": "route phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đường nhanh hơn",
-          "english": "take the faster route",
-          "audioKey": null
+          "vietnamese": "nhanh hơn",
+          "english": "faster",
+          "keepTogetherReason": "faster phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "Hãy đi con đường nhanh hơn",
+          "vietnamese": "giúp tôi",
+          "english": "help me",
+          "keepTogetherReason": "help-me phrase"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Đi đường nhanh hơn giúp tôi được không?",
           "english": "Please take the faster route",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "If the route is still unclear, move to follow-map, avoid-tolls, turn-right, correct-address, or app-route follow-ups.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +118,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please take the faster route. Keep the map, address, or destination visible."
+      "body": "Good in taxis, ride-hailing cars, private transfers, and hotel-arranged rides when the route choice is visible.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "A map screen helps. It turns the request into a route comparison instead of a complaint.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use follow-map, avoid-tolls, app-route, turn-right, or correct-address cards if the route needs another cue.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",
@@ -172,13 +188,13 @@
   "examples": [
     {
       "id": "v900-tran-please-take-the-faster-route",
-      "vietnamese": "Hãy đi con đường nhanh hơn",
+      "vietnamese": "Đi đường nhanh hơn giúp tôi được không?",
       "english": "Please take the faster route",
-      "pronunciation": "Hay di con duong nhanh hon",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Di duong nhanh hon giup toi duoc khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "orange",
       "detailPageID": null,
-      "audioKey": "v900-tran-please-take-the-faster-route"
+      "audioKey": null
     }
   ]
 }

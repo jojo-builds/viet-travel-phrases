@@ -7,7 +7,7 @@
   "title": "Có tiền lẻ không?",
   "englishTitle": "Do you have smaller bills?",
   "pronunciation": "koh tyen leh khong",
-  "summary": "Do you have smaller bills?",
+  "summary": "Ask for smaller bills when a large note is slowing down a market, taxi, ticket, or small-shop payment.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có tiền lẻ không? keeps the question easy to answer. Keep the relevant place, item, or screen visible."
+      "body": "Good when the price is small and the other person may not have enough change."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Có tiền lẻ không? together as one sentence before adding details. Say Có tiền lẻ không?",
+      "body": "Show the bill after asking so they know whether change is possible.",
       "phrases": [
         {
           "id": "price-9",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tiền lẻ is smaller money or change; không turns it into a question.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
+      "body": "Price and per-kilo cards help if the cash problem starts with the amount.",
       "phrases": [
         {
           "id": "price-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is do you have smaller bills. Keep the relevant place, item, or screen visible."
+      "body": "Best before handing over a large note at a stall, taxi, ticket booth, or small cafe."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+      "body": "If they cannot change it, try a card payment, a nearby shop, or buying something smaller first."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Too-expensive, lower-price, and final-price cards cover bargaining if the payment turns into price talk.",
       "phrases": [
         {
           "id": "price-3",

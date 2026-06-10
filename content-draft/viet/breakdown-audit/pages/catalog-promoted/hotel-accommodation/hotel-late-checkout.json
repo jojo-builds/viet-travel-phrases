@@ -20,31 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể",
+      "english": "can I",
+      "keepTogetherReason": "can-I phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "trả phòng",
+      "english": "check out",
+      "keepTogetherReason": "checkout verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "trả phòng",
-      "english": "check out",
-      "keepTogetherReason": "compound hotel phrase"
+      "vietnamese": "sau",
+      "english": "later",
+      "keepTogetherReason": "later word"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "sau",
-      "english": "after / behind"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

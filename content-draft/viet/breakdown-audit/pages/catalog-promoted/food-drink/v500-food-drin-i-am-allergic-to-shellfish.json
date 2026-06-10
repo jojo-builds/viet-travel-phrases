@@ -20,39 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi bị dị ứng",
+      "english": "I am allergic",
+      "keepTogetherReason": "allergy phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bị dị ứng",
-      "english": "am allergic",
-      "keepTogetherReason": "fixed health phrase"
+      "vietnamese": "với",
+      "english": "to",
+      "keepTogetherReason": "to/with connector"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "với",
-      "english": "with / to"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "động",
-      "english": "cave / movement"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "vật",
-      "english": "object / animal"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "vỏ",
-      "english": "shell"
+      "vietnamese": "động vật có vỏ",
+      "english": "shellfish",
+      "keepTogetherReason": "shellfish phrase"
     },
     {
       "id": "full",

@@ -7,7 +7,7 @@
   "title": "Bạn có thể giặt những bộ quần áo này không?",
   "englishTitle": "Can you wash these clothes?",
   "pronunciation": "Ban co the giat nhung bo quan ao nay khong",
-  "summary": "Can you wash these clothes?",
+  "summary": "For asking a laundry or hotel desk to wash a specific bag of clothes.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể giặt những bộ quần áo này không? asks someone to do one helpful action for you. Use it for wash these clothes when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Point to the clothes, then ask about pickup time before you leave them."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể giặt những bộ quần áo này không? together as one sentence before adding details. Start with Bạn có thể giặt những bộ quần áo này không?",
+      "body": "Keep detergent, drying, and timing questions separate so the first answer stays clear.",
       "phrases": [
         {
           "id": "v900-loca-serv-ever-task-can-you-wash-these-clothes",
@@ -42,44 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể means can you; giặt means wash; những bộ quần áo này means these clothes.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "giặt những bộ",
-          "english": "price",
-          "audioKey": null
+          "vietnamese": "giặt",
+          "english": "wash",
+          "keepTogetherReason": "wash verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "quần áo này",
-          "english": "this one / this",
-          "audioKey": null
+          "vietnamese": "những bộ quần áo này",
+          "english": "these clothes",
+          "keepTogetherReason": "these-clothes noun phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Bạn có thể giặt những bộ quần áo này không?",
-          "english": "Can you wash these clothes",
-          "audioKey": null
+          "english": "Can you wash these clothes?",
+          "audioKey": "v900-loca-serv-ever-task-can-you-wash-these-clothes"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another local service need.",
+      "body": "Water, bag, and tissues cards are nearby counter requests, but laundry timing matters here.",
       "phrases": [
         {
           "id": "store-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you wash these clothes. Point to the item, menu line, receipt, size, or photo."
+      "body": "Good at laundries, hotel desks, homestays, and small service counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "If you need them tonight, ask the ready-time phrase right after this one."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Sunscreen, open-this, card-payment, receipt, and print-this cards cover nearby service-counter turns.",
       "phrases": [
         {
           "id": "store-4",

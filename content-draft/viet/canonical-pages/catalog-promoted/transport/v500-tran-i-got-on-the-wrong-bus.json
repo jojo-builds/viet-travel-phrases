@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi lên nhầm xe buýt keeps the travel moment short and clear. Keep the map, address, or destination visible."
+      "body": "Use it as soon as the route, stop names, or direction shows you are on the wrong bus."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi lên nhầm xe buýt together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Say Tôi lên nhầm xe buýt as one clean sentence; the destination, fare, or ride screen can carry the exact detail. Keep the map, address, or destination visible.",
       "phrases": [
         {
           "id": "v500-tran-i-got-on-the-wrong-bus",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Practice Tôi lên nhầm + xe buýt first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "Good next-step cards: Take me here, Go to District 1, and You can stop here.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i got on the wrong bus. Keep the map, address, or destination visible."
+      "body": "Best in a taxi, motorbike pickup, or station counter, before the explanation gets long. Keep the destination, fare, or ride screen close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Keep the next turn practical: Please stop right here, Go this way, and Please turn on the air conditioning.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

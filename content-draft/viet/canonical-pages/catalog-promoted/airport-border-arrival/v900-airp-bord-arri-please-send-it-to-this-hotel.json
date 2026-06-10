@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng gửi nó đến khách sạn này makes the request direct without adding extra explanation. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Vui lòng gửi nó đến khách sạn này works before the exchange needs a longer explanation."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Vui lòng gửi nó đến khách sạn này together as one sentence before adding details. Keep the passport, baggage tag, pickup screen, or flight detail visible.",
+      "body": "Say Vui lòng gửi nó đến khách sạn này in one clean pass; the passport, baggage tag, flight detail, or pickup screen can carry the detail.",
       "phrases": [
         {
           "id": "v900-airp-bord-arri-please-send-it-to-this-hotel",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Practice Vui lòng gửi + nó đến khách first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
+      "body": "If the exchange continues, where is immigration?; where is baggage claim?; where can I buy a SIM card? can carry the next detail.",
       "phrases": [
         {
           "id": "airport-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please send it to this hotel. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "At an airport counter, baggage area, or pickup point, keep the passport, baggage tag, flight detail, or pickup screen visible while the first answer comes back."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Keep close by: Where is the pickup area, Where do I meet the driver, and My bag did not arrive.",
       "phrases": [
         {
           "id": "airport-5",

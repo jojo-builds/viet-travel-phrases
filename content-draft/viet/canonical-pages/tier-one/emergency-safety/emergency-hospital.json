@@ -7,7 +7,7 @@
   "title": "Bệnh viện gần nhất ở đâu?",
   "englishTitle": "Where is the nearest hospital?",
   "pronunciation": "beng vyen gun nyut uh dow",
-  "summary": "Use this when the next step is getting to emergency care fast.",
+  "summary": "For finding the nearest hospital when the situation needs real medical help, not a long explanation.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bệnh viện gần nhất ở đâu? keeps the direction question short. Reach for it when the urgent need is reaching a hospital quickly.",
+      "body": "Bệnh viện gần nhất ở đâu? keeps the direction question short. Reach for it when the urgent need is reaching a hospital quickly. For finding the nearest hospital when the situation needs real medical help, not a long explanation.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks where a place or service is. Swap the first part to ask about another nearby stop.",
+      "body": "Bệnh viện is hospital; gần nhất means nearest; ở đâu? asks where it is.",
       "breakdown": [
         {
           "id": "emergency-hospital-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Ask while the location, passport copy, photo, injury, or helper contact is still visible, then pause before adding more words.",
       "phrases": [
         {
           "id": "emergency-hospital",
@@ -84,7 +84,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Emergency phrases put the urgent need first so help can move faster. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Hospital questions need a fast direction more than polished Vietnamese. Put the place first and keep the phone map, injury, or helper contact visible.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a point, short direction, nearby option, or counter name. Say Bệnh viện gần nhất ở đâu?",
+      "body": "Expect a point, a clinic name, a short ride suggestion, or someone reaching for a phone.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -131,7 +131,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when the urgent need is reaching a hospital quickly. The reply may be a point, short direction, nearby option, or counter name.",
+      "body": "At a hotel desk, during a street help moment, or at a police counter, keep the location, passport copy, photo, injury, or helper contact visible while the first answer comes back.",
       "phrases": [
         {
           "id": "emergency-4",
@@ -207,7 +207,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a hotel desk, during a street help moment, or at a police counter, the next useful language is usually call the police, call an ambulance, and I lost my passport.",
       "phrases": [
         {
           "id": "emergency-1",

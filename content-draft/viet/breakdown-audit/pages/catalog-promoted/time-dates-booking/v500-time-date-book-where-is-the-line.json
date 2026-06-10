@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-time-date-book-where-is-the-line",
-  "phraseText": "Đường dây ở đâu?",
+  "phraseText": "Xếp hàng ở đâu?",
   "englishTitle": "Where is the line?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -19,9 +19,9 @@
   ],
   "tokens": [
     {
-      "vietnamese": "Đường dây",
-      "english": "line",
-      "keepTogetherReason": "compound line noun"
+      "vietnamese": "Xếp hàng",
+      "english": "line up",
+      "keepTogetherReason": "queue or line-up action"
     },
     {
       "id": "chunk-3",
@@ -31,9 +31,9 @@
     },
     {
       "id": "full",
-      "vietnamese": "Đường dây ở đâu?",
+      "vietnamese": "Xếp hàng ở đâu?",
       "english": "Where is the line?",
-      "audioKey": "v500-time-date-book-where-is-the-line"
+      "audioKey": null
     }
   ]
 }

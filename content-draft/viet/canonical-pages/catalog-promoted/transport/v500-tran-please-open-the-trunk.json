@@ -7,7 +7,7 @@
   "title": "Vui lòng mở cốp xe",
   "englishTitle": "Please open the trunk",
   "pronunciation": "Vui long mo cop xe",
-  "summary": "Please open the trunk",
+  "summary": "For asking a taxi or ride driver to open the trunk for luggage.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng mở cốp xe makes the request direct without adding extra explanation. Keep the map, address, or destination visible."
+      "body": "Say it beside the car while gesturing to the bag, not from across the street."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Vui lòng mở cốp xe together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Keep the request short, then step back so the driver can open the trunk safely.",
       "phrases": [
         {
           "id": "v500-tran-please-open-the-trunk",
@@ -42,32 +42,37 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Vui lòng means please; mở means open; cốp xe means car trunk.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Vui lòng mở",
+          "vietnamese": "Vui lòng",
           "english": "please",
-          "audioKey": null
+          "keepTogetherReason": "polite please opener"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cốp xe",
-          "english": "open the trunk",
-          "audioKey": null
+          "vietnamese": "mở",
+          "english": "open"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "cốp xe",
+          "english": "car trunk",
+          "keepTogetherReason": "trunk noun"
+        },
+        {
+          "id": "full",
           "vietnamese": "Vui lòng mở cốp xe",
           "english": "Please open the trunk",
-          "audioKey": null
+          "audioKey": "v500-tran-please-open-the-trunk"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "Take-me-here, District 1, and stop-here phrases cover the ride setup around the bag.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +109,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please open the trunk. Keep the map, address, or destination visible."
+      "body": "Good at hotel pickup, airport curb, station taxi stands, and ride-hailing meetups."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "If the car is small or already full, the driver may point to the back seat or ask which bag."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Stop-here, go-this-way, air-conditioning, wait-five-minutes, and cash phrases cover the ride after loading.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

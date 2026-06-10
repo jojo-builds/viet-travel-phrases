@@ -7,7 +7,7 @@
   "title": "Điểm đón Grab ở đâu?",
   "englishTitle": "Where is the Grab pickup point?",
   "pronunciation": "Diem don Grab o dau",
-  "summary": "Where is the Grab pickup point?",
+  "summary": "For finding the exact Grab pickup spot after landing.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Điểm đón Grab ở đâu? keeps the direction question short. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Airport pickup points can be outside the main door, across a lane, or signed separately from taxis."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Điểm đón Grab ở đâu? together as one sentence before adding details. Say Điểm đón Grab ở đâu?",
+      "body": "Show the Grab screen and ask near information, security, or the curb.",
       "phrases": [
         {
           "id": "v900-airp-bord-arri-where-is-the-grab-pickup-point",
@@ -42,22 +42,30 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Điểm đón means pickup point; Grab names the app; ở đâu asks where.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Điểm đón Grab",
-          "english": "go / move",
+          "vietnamese": "Điểm đón",
+          "english": "pickup point",
+          "keepTogetherReason": "pickup-point phrase",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "ở đâu",
-          "english": "where?",
+          "vietnamese": "Grab",
+          "english": "Grab",
           "audioKey": null
         },
         {
           "id": "chunk-3",
+          "vietnamese": "ở đâu?",
+          "english": "where?",
+          "keepTogetherReason": "where-question ending",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
           "vietnamese": "Điểm đón Grab ở đâu?",
           "english": "Where is the Grab pickup point",
           "audioKey": null
@@ -67,7 +75,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
+      "body": "If the pickup spot changes, ask for the pickup area, driver, terminal, plate, or nearest exit.",
       "phrases": [
         {
           "id": "airport-1",
@@ -104,67 +112,77 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits airport, immigration, baggage, or pickup moment, especially when grab pickup point can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Good at airports, stations, malls, and large hotels where app pickups use a separate zone."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+      "body": "The app pin may not match the real curb. Follow local signs and staff directions once they point."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use pickup area, driver, car number, terminal, or this-address follow-ups if the app location is confusing.",
       "phrases": [
         {
-          "id": "airport-5",
-          "vietnamese": "Khu đón ở đâu?",
-          "english": "Where is the pickup area?",
-          "pronunciation": "khoo don uh dow",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-5",
-          "audioKey": "airport-5"
+          "id": "ves-call-taxi-for-me",
+          "vietnamese": "Gọi giúp tôi taxi được không?",
+          "english": "Can you call me a taxi?",
+          "pronunciation": "goy zoop toy tak see duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-ves-call-taxi-for-me",
+          "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
         },
         {
-          "id": "airport-pickup-clearer",
-          "vietnamese": "Tôi gặp tài xế ở đâu?",
-          "english": "Where do I meet the driver?",
-          "pronunciation": "toy gap tai seh uh dow",
+          "id": "v900-tran-please-take-me-to-this-address",
+          "vietnamese": "Hãy đưa tôi đến địa chỉ này",
+          "english": "Please take me to this address",
+          "pronunciation": "Hay dua toi den dia chi nay",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-pickup-clearer",
-          "audioKey": "airport-pickup-clearer"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-tran-please-take-me-to-this-address",
+          "audioKey": "v900-tran-please-take-me-to-this-address"
         },
         {
-          "id": "airport-6",
-          "vietnamese": "Hành lý của tôi chưa tới",
-          "english": "My bag did not arrive",
-          "pronunciation": "han lee koo-ah toy choo toy",
+          "id": "directions-8",
+          "vietnamese": "Điểm đón ở đâu?",
+          "english": "Where is the pickup point?",
+          "pronunciation": "deeym don uh dow",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-6",
-          "audioKey": "airport-6"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-directions-8",
+          "audioKey": "directions-8"
         },
         {
-          "id": "airport-7",
-          "vietnamese": "Nhà ga nội địa ở đâu?",
-          "english": "Where is the domestic terminal?",
-          "pronunciation": "nya ga noy dee-ah uh dow",
+          "id": "v900-dire-navi-is-this-the-correct-pickup-point",
+          "vietnamese": "Đây có phải là điểm đón chính xác không?",
+          "english": "Is this the correct pickup point?",
+          "pronunciation": "Day co phai la diem don chinh xac khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-7",
-          "audioKey": "airport-7"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-dire-navi-is-this-the-correct-pickup-point",
+          "audioKey": "v900-dire-navi-is-this-the-correct-pickup-point"
         },
         {
-          "id": "v500-airp-bord-arri-here-is-my-visa",
-          "vietnamese": "Đây là thị thực của tôi",
-          "english": "Here is my visa",
-          "pronunciation": "Day la thi thuc cua toi",
+          "id": "ves-drop-me-off-here",
+          "vietnamese": "Cho tôi xuống ở đây được không?",
+          "english": "Can you drop me off here?",
+          "pronunciation": "cho toy zoong uh day duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-ves-drop-me-off-here",
+          "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
+        },
+        {
+          "id": "v500-tran-please-call-the-driver",
+          "vietnamese": "Vui lòng gọi tài xế",
+          "english": "Please call the driver",
+          "pronunciation": "Vui long goi tai xe",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-v500-airp-bord-arri-here-is-my-visa",
-          "audioKey": "v500-airp-bord-arri-here-is-my-visa"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
+          "audioKey": "v500-tran-please-call-the-driver"
         }
       ]
     }

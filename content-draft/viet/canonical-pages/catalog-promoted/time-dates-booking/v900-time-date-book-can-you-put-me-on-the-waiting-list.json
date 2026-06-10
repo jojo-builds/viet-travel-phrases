@@ -7,7 +7,7 @@
   "title": "Bạn có thể đưa tôi vào danh sách chờ được không?",
   "englishTitle": "Can you put me on the waiting list?",
   "pronunciation": "Ban co the dua toi vao danh sach cho duoc khong",
-  "summary": "Can you put me on the waiting list?",
+  "summary": "Ask a counter or host to add your name when a table, tour, seat, or appointment is full.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể đưa tôi vào danh sách chờ được không? asks someone to do one helpful action for you. Use it for put me on the waiting list when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "This is for the moment after no availability, when staying nearby is still worth it."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể đưa tôi vào danh sách chờ được không? together as one sentence before adding details. Start with Bạn có thể đưa tôi vào danh sách chờ được không?",
+      "body": "Give your name, party size, phone number, or time window after the question.",
       "phrases": [
         {
           "id": "v900-time-date-book-can-you-put-me-on-the-waiting-list",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Danh sách chờ is the waiting-list phrase; đưa tôi vào asks them to put you on it.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "Time, today, and tomorrow-morning cards help if they offer a different slot instead.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you put me on the waiting list. Keep the booking, room number, date, or address visible."
+      "body": "Best at restaurants, clinics, tours, salons, or ticket counters where cancellations may open a spot."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Be ready to write your name or phone number. Some places call out a name instead of messaging."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Booking, opening-time, and move-it-later cards help if the wait turns into rescheduling.",
       "phrases": [
         {
           "id": "time-4",

@@ -26,14 +26,9 @@
     },
     {
       "id": "chunk-2",
-      "vietnamese": "gọi",
-      "english": "call"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "tài xế",
-      "english": "driver",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "gọi tài xế",
+      "english": "call the driver",
+      "keepTogetherReason": "call-driver phrase"
     },
     {
       "id": "full",

@@ -20,24 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "I need",
+      "keepTogetherReason": "need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "muối",
-      "english": "salt"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "bù nước",
-      "english": "rehydrate",
-      "keepTogetherReason": "compound health term"
+      "vietnamese": "muối bù nước",
+      "english": "rehydration salts",
+      "keepTogetherReason": "rehydration-salts phrase"
     },
     {
       "id": "full",

@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Giá tốt nhất của bạn là gì?, then stop talking. Give the seller room to type, say, or show the best price.",
+      "body": "Lead with the question; show the item, size, receipt, price tag, or photo only if they need detail.",
       "phrases": [
         {
           "id": "v900-shop-what-is-your-best-price",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Giá tốt nhất + của bạn là, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another shopping need.",
+      "body": "Good next-step cards: I want this size, Do you have another color, and Can I try this on.",
       "phrases": [
         {
           "id": "shop-1",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Keep close by: I’m just looking, Where do I pay, and I want to exchange this.",
       "phrases": [
         {
           "id": "shop-4",

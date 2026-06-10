@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Build the line around Tiền + xe, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "transport-fare-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Keep the map, address, or destination visible.",
+      "body": "Ask while the destination, fare, or ride screen is still visible, then pause before adding more words.",
       "phrases": [
         {
           "id": "transport-fare",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. Keep the map, address, or destination visible.",
+      "body": "Fare questions prevent confusion before cash, cards, meters, or app prices start competing.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a number, typed amount, calculator screen, or direct yes/no about payment. Say Tiền xe bao nhiêu?",
+      "body": "Expect a number, meter point, app screen, or calculator. Wait until the amount is visible.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This comes before or during the ride when you need the fare clearly. The reply may be a number, typed amount, calculator screen, or direct yes/no about payment.",
+      "body": "Use it before a ride starts, before paying, or when the price changes from what you expected.",
       "phrases": [
         {
           "id": "taxi-4",
@@ -219,7 +219,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Keep the conversation close to take me here, go to District 1, and you can stop here.",
       "phrases": [
         {
           "id": "taxi-1",

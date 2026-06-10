@@ -7,7 +7,7 @@
   "title": "Thẻ của tôi đã bị từ chối",
   "englishTitle": "My card was declined",
   "pronunciation": "The cua toi da bi tu choi",
-  "summary": "My card was declined",
+  "summary": "For explaining a declined card at a counter before trying cash or another payment.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Thẻ của tôi đã bị từ chối names the problem so staff or a helpful local can act on it. Use it when My card was declined is the clearest way to explain what changed, went missing, or needs attention."
+      "body": "Use it at checkout while the terminal, bill, or receipt is visible. Keep the tone neutral."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Thẻ của tôi đã bị từ chối calmly and show the proof if you have it: item, menu line, bill, calculator, ticket, or ride screen. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Say the sentence, then show another card, cash, or the app screen if you want to try again.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-my-card-was-declined",
@@ -42,22 +42,22 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Thẻ của tôi means my card; đã bị từ chối means was declined.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Thẻ của tôi",
           "english": "my card",
-          "audioKey": null
+          "keepTogetherReason": "owned-card phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "đã bị từ chối",
           "english": "was declined",
-          "audioKey": null
+          "keepTogetherReason": "declined-card phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Thẻ của tôi đã bị từ chối",
           "english": "My card was declined",
           "audioKey": "v500-mone-numb-pric-my-card-was-declined"
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
+      "body": "How-much and per-kilo cards help if the payment issue starts with a price check.",
       "phrases": [
         {
           "id": "price-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as soon as the problem is clear enough to name. It is especially useful at a counter or desk where someone can look at the photo, receipt, bag, booking, or phone screen with you."
+      "body": "Restaurants, shops, ticket counters, hotels, and clinics are the places where a payment backup may be needed."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "A declined card is not always a refusal by the shop. It may be bank security, network trouble, or card type."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Too-expensive, lower-price, final-price, another-one, and take-this cards cover nearby payment decisions.",
       "phrases": [
         {
           "id": "price-3",

@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy nói chuyện với họ qua điện thoại makes the request direct without adding extra explanation. Keep the phone screen or error message visible."
+      "body": "Keep the phone screen or error message visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Hãy nói chuyện với họ qua điện thoại together as one sentence before adding details. Keep the phone screen or error message visible.",
+      "body": "Say Hãy nói chuyện với họ qua điện thoại as one clean sentence; the phone screen, error message, charger, or map app can carry the exact detail. Keep the phone screen or error message visible.",
       "phrases": [
         {
           "id": "v900-phon-inte-powe-please-speak-to-them-on-the-phone",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Hãy nói chuyện + với họ qua as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another phone, internet, or power need.",
+      "body": "Keep close by: What is the Wi-Fi password? and Do you sell SIM cards?",
       "phrases": [
         {
           "id": "phone-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please speak to them on the phone. Keep the phone screen or error message visible."
+      "body": "Best in a SIM shop, hotel desk, or cafe counter, before the explanation gets long. Keep the phone screen, error message, charger, or map app close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Keep close by: My phone battery is dead, Do you have a charger, and Can I charge my phone here.",
       "phrases": [
         {
           "id": "phone-3",

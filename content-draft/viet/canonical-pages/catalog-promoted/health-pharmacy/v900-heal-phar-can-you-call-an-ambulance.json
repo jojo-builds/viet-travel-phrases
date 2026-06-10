@@ -7,7 +7,7 @@
   "title": "Bạn có thể gọi xe cứu thương được không?",
   "englishTitle": "Can you call an ambulance?",
   "pronunciation": "Ban co the goi xe cuu thuong duoc khong",
-  "summary": "Can you call an ambulance?",
+  "summary": "For asking someone nearby to call an ambulance in a serious medical emergency.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể gọi xe cứu thương được không? asks someone to do one helpful action for you. Use it for call an ambulance when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Say this first if someone is badly hurt, cannot breathe, has chest pain, or needs urgent help."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể gọi xe cứu thương được không? together as one sentence before adding details. Start with Bạn có thể gọi xe cứu thương được không?",
+      "body": "Keep the request direct, then show the person, location, or translated emergency note.",
       "phrases": [
         {
           "id": "v900-heal-phar-can-you-call-an-ambulance",
@@ -42,44 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể means can you; gọi xe cứu thương means call an ambulance; được không? asks if they can do it.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "gọi xe cứu",
-          "english": "call",
-          "audioKey": null
+          "vietnamese": "gọi xe cứu thương",
+          "english": "call an ambulance",
+          "keepTogetherReason": "ambulance request"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "thương",
-          "english": "injury / medical help",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "can you / is it possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Bạn có thể gọi xe cứu thương được không?",
-          "english": "Can you call an ambulance",
-          "audioKey": null
+          "english": "Can you call an ambulance?",
+          "audioKey": "v900-heal-phar-can-you-call-an-ambulance"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Doctor, pharmacy, and nearest-pharmacy cards are for less urgent medical help.",
       "phrases": [
         {
           "id": "problems-6",
@@ -116,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you call an ambulance. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at hotels, clinics, pharmacies, restaurants, stations, and security desks."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "If they hesitate, point to the injured person or phone screen and repeat the ambulance word."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Headache, stomach, motion-sickness, medicine, and allergy pages are nearby, but emergency symptoms come first.",
       "phrases": [
         {
           "id": "health-2",

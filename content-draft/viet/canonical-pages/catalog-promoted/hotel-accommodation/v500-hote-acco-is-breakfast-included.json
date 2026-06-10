@@ -7,7 +7,7 @@
   "title": "Có bao gồm bữa sáng không?",
   "englishTitle": "Is breakfast included?",
   "pronunciation": "Co bao gom bua sang khong",
-  "summary": "Is breakfast included?",
+  "summary": "Ask whether breakfast is part of the room price before you pay separately or miss the morning setup.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có bao gồm bữa sáng không? keeps the question easy to answer. Keep the booking, room number, date, or address visible."
+      "body": "This is a quick front-desk check for hotels, homestays, and guesthouses with unclear breakfast rules."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Có bao gồm bữa sáng không? together as one sentence before adding details. Say Có bao gồm bữa sáng không?",
+      "body": "Show the booking if needed; breakfast can depend on room type, rate, or booking channel.",
       "phrases": [
         {
           "id": "v500-hote-acco-is-breakfast-included",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bữa sáng is breakfast; bao gồm asks whether it is included.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Reservation and check-in cards help if staff need the booking before answering.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is is breakfast included. Keep the booking, room number, date, or address visible."
+      "body": "Best at check-in, the night before, or before walking into the breakfast area."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "They may mention hours, location, vouchers, or a separate price."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Checkout-time, quiet-room, and checkout cards stay nearby for other front-desk basics.",
       "phrases": [
         {
           "id": "hotel-3",

@@ -7,7 +7,7 @@
   "title": "Tôi có thể thanh toán cho tài xế bằng thẻ không?",
   "englishTitle": "Can I pay the driver by card?",
   "pronunciation": "Toi co the thanh toan cho tai xe bang the khong",
-  "summary": "Can I pay the driver by card?",
+  "summary": "For checking whether a driver can take card payment before you get in, leave the airport, or finish the ride.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể thanh toán cho tài xế bằng thẻ không? keeps the question easy to answer. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Ask before the luggage goes in or the ride starts. The answer may be card, cash, bank transfer, or app payment."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể thanh toán cho tài xế bằng thẻ không? together as one sentence before adding details. Start with Tôi có thể thanh toán cho tài xế bằng thẻ không?",
+      "body": "Show the card or payment screen if needed. Do not wait until the end of the ride if you have no cash.",
       "phrases": [
         {
           "id": "v900-airp-bord-arri-can-i-pay-the-driver-by-card",
@@ -42,50 +42,50 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể asks can I; thanh toán means pay; cho tài xế means the driver; bằng thẻ means by card; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể thanh toán",
+          "vietnamese": "thanh toán",
           "english": "pay",
-          "audioKey": null
+          "keepTogetherReason": "payment verb"
         },
         {
           "id": "chunk-3",
           "vietnamese": "cho tài xế",
-          "english": "driver",
-          "audioKey": null
+          "english": "the driver",
+          "keepTogetherReason": "driver phrase"
         },
         {
           "id": "chunk-4",
           "vietnamese": "bằng thẻ",
           "english": "by card",
-          "audioKey": null
+          "keepTogetherReason": "by-card phrase"
         },
         {
           "id": "chunk-5",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-6",
+          "id": "full",
           "vietnamese": "Tôi có thể thanh toán cho tài xế bằng thẻ không?",
-          "english": "Can I pay the driver by card",
-          "audioKey": null
+          "english": "Can I pay the driver by card?",
+          "audioKey": "v900-airp-bord-arri-can-i-pay-the-driver-by-card"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
+      "body": "Cash, bank transfer, receipt, break this bill, and airport-fee cards cover the payment questions around a ride.",
       "phrases": [
         {
           "id": "airport-1",
@@ -122,17 +122,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I pay the driver by card. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Good at airport pickups, hotel-arranged cars, taxis, private drivers, and counters that assign a driver."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "A card terminal may belong to the company, not the driver. Confirm before the car leaves the pickup area."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to cash, bank-transfer, receipt, break-bill, or airport-fee cards if payment needs another option.",
       "phrases": [
         {
           "id": "airport-5",

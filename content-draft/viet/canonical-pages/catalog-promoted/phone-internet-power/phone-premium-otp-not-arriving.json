@@ -7,7 +7,7 @@
   "title": "Mã xác minh không đến.",
   "englishTitle": "The verification code is not arriving.",
   "pronunciation": "Ma xac minh khong den",
-  "summary": "The verification code is not arriving.",
+  "summary": "For explaining that a verification code is not arriving on your phone.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use Mã xác minh không đến. for \"The verification code is not arriving.\". Mã xác minh không đến."
+      "body": "Login, payment, SIM setup, or booking verification can get stuck on this code step."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Mã xác minh không đến. for \"The verification code is not arriving.\". Keep the phone screen or error message visible.",
+      "body": "Show the waiting screen and phone number so staff can check the next step.",
       "phrases": [
         {
           "id": "phone-premium-otp-not-arriving",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Mã xác minh means verification code; không đến means not arriving.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Mã xác minh",
           "english": "verification code",
-          "audioKey": null
+          "keepTogetherReason": "verification-code noun"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "không đến",
-          "english": "to / arrive at",
-          "audioKey": null
+          "vietnamese": "không đến.",
+          "english": "is not arriving",
+          "keepTogetherReason": "not-arriving phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Mã xác minh không đến.",
-          "english": "The verification code is not arriving",
-          "audioKey": null
+          "english": "The verification code is not arriving.",
+          "audioKey": "phone-premium-otp-not-arriving"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another phone, internet, or power need.",
+      "body": "Wi-Fi, SIM, and data phrases help if the code problem is really a network problem.",
       "phrases": [
         {
           "id": "phone-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when \"The verification code is not arriving.\" Keep the phone screen or error message visible."
+      "body": "Good at phone shops, hotel desks, bank counters, booking desks, and app help chats."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Phone and Wi-Fi answers can be technical. Let the screen stay visible so the other person can point, type, or check the setting."
+      "body": "A retry may take a minute. Ask before sending the code again if staff are helping."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "No-signal, eSIM, activation, written-password, and data pages cover the nearby setup problems.",
       "phrases": [
         {
           "id": "phone-3",

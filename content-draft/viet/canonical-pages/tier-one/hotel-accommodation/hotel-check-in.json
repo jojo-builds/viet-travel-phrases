@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cho tôi nhận phòng keeps the travel moment short and clear. Reach for it when you are ready to begin check-in. This is the default phrase when the reservation exists and you need the next step.",
+      "body": "Reach for it when you are ready to begin check-in.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Hear Cho tôi + nhận phòng as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "hotel-2-piece-1",
@@ -53,7 +53,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Cho tôi nhận phòng together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Say Cho tôi nhận phòng clearly; show the booking, room number, address, or key card only if the reply needs detail.",
       "phrases": [
         {
           "id": "hotel-2",
@@ -72,7 +72,7 @@
     {
       "id": "natural-variations",
       "title": "Natural variations",
-      "body": "This form changes the tone or setting. Use it when the note under the phrase matches the moment.",
+      "body": "Keep I’d like to check in, please nearby for the same moment in a slightly different tone.",
       "phrases": [
         {
           "id": "hotel-check-in-polite",
@@ -91,7 +91,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. Keep the booking, room number, date, or address visible.",
+      "body": "Check-in language works best with the booking name or passport ready. The phrase opens the hotel process.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -99,7 +99,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "Keep the booking, room number, date, or address visible.",
+      "body": "Expect a passport request, booking check, deposit, room time, or key handoff.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -138,7 +138,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when you are ready to begin check-in. Keep the booking, room number, date, or address visible.",
+      "body": "Use it at hotels, homestays, apartments, and guesthouses when you are ready to start the stay.",
       "phrases": [
         {
           "id": "hotel-4",
@@ -214,7 +214,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover I have a reservation; what time is check-out?; I’d like to check out.",
       "phrases": [
         {
           "id": "hotel-1",

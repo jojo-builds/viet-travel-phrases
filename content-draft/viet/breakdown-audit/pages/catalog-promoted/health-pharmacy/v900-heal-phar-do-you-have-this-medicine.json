@@ -20,28 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có",
+      "english": "do you have",
+      "keepTogetherReason": "have question"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "thuốc này",
+      "english": "this medicine",
+      "keepTogetherReason": "medicine phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "thuốc",
-      "english": "medicine"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

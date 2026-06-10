@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Dừng ở đây được rồi keeps the travel moment short and clear. Reach for it when you want the driver to stop at the current spot. This is the safe phrase for the last turn or final stop.",
+      "body": "Reach for it when you want the driver to stop at the current spot.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Practice Dừng ở đây + được first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "taxi-3-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Dừng ở đây được rồi together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Say Dừng ở đây được rồi first; let the destination, fare, or ride screen support the reply.",
       "phrases": [
         {
           "id": "taxi-3",
@@ -78,7 +78,7 @@
     {
       "id": "natural-variations",
       "title": "Natural variations",
-      "body": "This form changes the tone or setting. Use it when the note under the phrase matches the moment.",
+      "body": "Keep please stop right here nearby for the same moment in a slightly different tone.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",
@@ -97,7 +97,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. Keep the map, address, or destination visible.",
+      "body": "Stopping phrases must be direct and easy to act on. This line tells the driver the location matters now.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -105,7 +105,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Keep the map, address, or destination visible.",
+      "body": "Expect a pull-over, a question about safety, or a request to stop at the next legal spot.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -144,7 +144,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when you want the driver to stop at the current spot. The reply may be a clear reply, a pointed detail, or simple follow-up.",
+      "body": "Best when the entrance, curb, landmark, or safety feeling says the ride should end here.",
       "phrases": [
         {
           "id": "taxi-5",
@@ -183,7 +183,7 @@
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
+      "body": "If stopping immediately is unsafe, expect the driver to move to the next legal spot.",
       "presentation": "tip-callout",
       "phrases": [],
       "breakdown": []
@@ -191,7 +191,7 @@
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Show the location on your phone while you say the phrase. The visual context reduces mistakes.",
+      "body": "Point ahead or toward the curb so the driver has a safe place to pull over.",
       "phrases": [
         {
           "id": "transport-fare",
@@ -230,7 +230,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover take me here, go to District 1, and go this way.",
       "phrases": [
         {
           "id": "taxi-1",

@@ -7,7 +7,7 @@
   "title": "Vui lòng dừng gần lối vào",
   "englishTitle": "Please stop near the entrance",
   "pronunciation": "Vui long dung gan loi vao",
-  "summary": "Please stop near the entrance",
+  "summary": "Ask the driver to stop near the entrance when the drop-off point matters more than the street name.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng dừng gần lối vào makes the request direct without adding extra explanation. Keep the map, address, or destination visible."
+      "body": "Good for malls, hospitals, hotels, markets, and rainy arrivals where the exact door matters."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Vui lòng dừng gần lối vào together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Say it while the entrance is still ahead, with the map or building visible.",
       "phrases": [
         {
           "id": "v900-tran-please-stop-near-the-entrance",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Dừng gần lối vào is the stop-near-the-entrance core.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "Take-me-here, District 1, and stop-here cards cover nearby taxi language.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please stop near the entrance. Keep the map, address, or destination visible."
+      "body": "Best before the car reaches the entrance, not after the driver has passed it."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "A visible entrance keeps the request simple; point if there are several doors."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Stop-here, this-way, and air-con cards cover the ride after the drop-off is clear.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

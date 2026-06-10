@@ -7,7 +7,7 @@
   "title": "Tôi có thể mượn bộ sạc được không?",
   "englishTitle": "Can I borrow a charger?",
   "pronunciation": "Toi co the muon bo sac duoc khong",
-  "summary": "Can I borrow a charger?",
+  "summary": "For asking to borrow a charger at a cafe, hotel desk, shop, or waiting area.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể mượn bộ sạc được không? keeps the question easy to answer. Keep the phone screen or error message visible."
+      "body": "Ask before your phone dies completely. Hold up the phone or cable so the connector type is obvious."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể mượn bộ sạc được không? together as one sentence before adding details. Start with Tôi có thể mượn bộ sạc được không?",
+      "body": "Show the charging port if needed. Staff may offer a charger, a wall outlet, or a place to leave the phone.",
       "phrases": [
         {
           "id": "v500-phon-inte-powe-can-i-borrow-a-charger",
@@ -42,44 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể asks can I; mượn means borrow; bộ sạc means charger; được không asks if it is possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể mượn bộ",
-          "english": "borrow a charger",
-          "audioKey": null
+          "vietnamese": "mượn",
+          "english": "borrow",
+          "keepTogetherReason": "borrow verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "sạc",
-          "english": "charge",
-          "audioKey": null
+          "vietnamese": "bộ sạc",
+          "english": "charger",
+          "keepTogetherReason": "charger noun"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Tôi có thể mượn bộ sạc được không?",
-          "english": "Can I borrow a charger",
-          "audioKey": null
+          "english": "Can I borrow a charger?",
+          "audioKey": "v500-phon-inte-powe-can-i-borrow-a-charger"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another phone, internet, or power need.",
+      "body": "Wi-Fi password and SIM-card cards help if the charger request turns into a phone-service stop.",
       "phrases": [
         {
           "id": "phone-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I borrow a charger. Keep the phone screen or error message visible."
+      "body": "Cafes, hotels, airport desks, bus offices, and phone shops are the natural places to ask."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Keep the phone in sight if you leave it charging. A battery pack may be easier than borrowing a wall charger."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Dead-battery, charger, charge-here, data-top-up, and eSIM cards cover nearby phone problems.",
       "phrases": [
         {
           "id": "phone-3",

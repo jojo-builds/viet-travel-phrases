@@ -20,48 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Thay",
-      "english": "replace / change"
+      "vietnamese": "Thay vào đó",
+      "english": "instead",
+      "keepTogetherReason": "instead phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "vào",
-      "english": "into / enter"
+      "vietnamese": "hãy để tôi",
+      "english": "let me",
+      "keepTogetherReason": "let-me phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đó",
-      "english": "that"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "hãy",
-      "english": "please do"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "để",
-      "english": "to / in order to"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "tôi",
-      "english": "I / me"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "chỉ",
-      "english": "show / point"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-9",
-      "vietnamese": "bạn",
-      "english": "you"
+      "vietnamese": "chỉ cho bạn",
+      "english": "show you",
+      "keepTogetherReason": "show-you phrase"
     },
     {
       "id": "full",

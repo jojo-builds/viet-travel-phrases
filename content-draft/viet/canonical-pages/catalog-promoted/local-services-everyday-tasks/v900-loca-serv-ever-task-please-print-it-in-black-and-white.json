@@ -7,7 +7,7 @@
   "title": "Vui lòng in nó bằng màu đen và trắng",
   "englishTitle": "Please print it in black and white",
   "pronunciation": "Vui long in no bang mau den va trang",
-  "summary": "Please print it in black and white",
+  "summary": "For asking a copy shop, hotel desk, or service counter to print without color.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng in nó bằng màu đen và trắng makes the request direct without adding extra explanation. Point to the item, menu line, receipt, size, or photo."
+      "body": "Say it before the file is printed, especially if price or official paperwork matters."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Vui lòng in nó bằng màu đen và trắng together as one sentence before adding details. Point to the item, menu line, receipt, size, or photo.",
+      "body": "Show the file, page, or sample and point to black-and-white if there is a display.",
       "phrases": [
         {
           "id": "v900-loca-serv-ever-task-please-print-it-in-black-and-white",
@@ -42,115 +42,119 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Vui lòng means please; in means print; bằng màu đen và trắng means in black and white.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Vui lòng in",
+          "vietnamese": "Vui lòng",
           "english": "please",
-          "audioKey": null
+          "keepTogetherReason": "polite please opener"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nó bằng màu",
-          "english": "it in color",
-          "audioKey": null
+          "vietnamese": "in",
+          "english": "print"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "đen và trắng",
-          "english": "pay",
-          "audioKey": null
+          "vietnamese": "nó",
+          "english": "it"
         },
         {
           "id": "chunk-4",
+          "vietnamese": "bằng màu đen và trắng",
+          "english": "in black and white",
+          "keepTogetherReason": "black-and-white print setting"
+        },
+        {
+          "id": "full",
           "vietnamese": "Vui lòng in nó bằng màu đen và trắng",
           "english": "Please print it in black and white",
-          "audioKey": null
+          "audioKey": "v900-loca-serv-ever-task-please-print-it-in-black-and-white"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another local service need.",
+      "body": "Print this, copy this, and email it phrases cover the usual copy-shop choices.",
       "phrases": [
         {
-          "id": "store-1",
-          "vietnamese": "Cho tôi chai nước",
-          "english": "A bottle of water please",
-          "pronunciation": "cho toy chai nook",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-loca-serv-ever-task-can-you-print-this-for-me",
+          "vietnamese": "Anh/chị in cái này giúp tôi được không?",
+          "english": "Can you print this for me?",
+          "pronunciation": "Anh chi in cai nay giup toi duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-store-1",
-          "audioKey": "store-1"
+          "detailPageID": "viet-phrase-v900-loca-serv-ever-task-can-you-print-this-for-me",
+          "audioKey": null
         },
         {
-          "id": "store-2",
-          "vietnamese": "Có túi không?",
-          "english": "Do you have a bag?",
-          "pronunciation": "koh too-ee khong",
+          "id": "v900-loca-serv-ever-task-can-you-copy-this-document",
+          "vietnamese": "Bạn có thể sao chép tài liệu này?",
+          "english": "Can you copy this document?",
+          "pronunciation": "Ban co the sao chep tai lieu nay",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-store-2",
-          "audioKey": "store-2"
+          "detailPageID": "viet-phrase-v900-loca-serv-ever-task-can-you-copy-this-document",
+          "audioKey": "v900-loca-serv-ever-task-can-you-copy-this-document"
         },
         {
-          "id": "store-3",
-          "vietnamese": "Cho tôi khăn giấy",
-          "english": "Tissues please",
-          "pronunciation": "cho toy khan zai",
+          "id": "v900-loca-serv-ever-task-can-you-email-it-to-me",
+          "vietnamese": "Bạn có thể gửi email cho tôi được không?",
+          "english": "Can you email it to me?",
+          "pronunciation": "Ban co the gui email cho toi duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-store-3",
-          "audioKey": "store-3"
+          "detailPageID": "viet-phrase-v900-loca-serv-ever-task-can-you-email-it-to-me",
+          "audioKey": "v900-loca-serv-ever-task-can-you-email-it-to-me"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please print it in black and white. Point to the item, menu line, receipt, size, or photo."
+      "body": "Good at copy shops, hotel desks, reception counters, visa offices, and travel-agency desks."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Service counters often answer with numbers or times. Ask the short question first, then use a write-it-down phrase if needed."
+      "body": "Ask before they press print; color pages may cost more or be wrong for forms."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Ready time, print location, scan this, receipt, and card payment phrases cover nearby counter details.",
       "phrases": [
         {
-          "id": "store-4",
-          "vietnamese": "Ở đâu có kem chống nắng?",
-          "english": "Where is the sunscreen?",
-          "pronunciation": "uh dow koh kem chong nang",
+          "id": "v900-loca-serv-ever-task-when-will-it-be-ready",
+          "vietnamese": "Khi nào nó sẽ sẵn sàng?",
+          "english": "When will it be ready?",
+          "pronunciation": "Khi nao no se san sang",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-store-4",
-          "audioKey": "store-4"
+          "detailPageID": "viet-phrase-v900-loca-serv-ever-task-when-will-it-be-ready",
+          "audioKey": "v900-loca-serv-ever-task-when-will-it-be-ready"
         },
         {
-          "id": "store-5",
-          "vietnamese": "Mở cái này giúp tôi",
-          "english": "Please open this for me",
-          "pronunciation": "muh gai nai zoop toy",
+          "id": "v900-loca-serv-ever-task-where-can-i-print-this",
+          "vietnamese": "Tôi có thể in cái này ở đâu?",
+          "english": "Where can I print this?",
+          "pronunciation": "Toi co the in cai nay o dau",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-store-5",
-          "audioKey": "store-5"
+          "detailPageID": "viet-phrase-v900-loca-serv-ever-task-where-can-i-print-this",
+          "audioKey": "v900-loca-serv-ever-task-where-can-i-print-this"
         },
         {
-          "id": "store-6",
-          "vietnamese": "Tôi quẹt thẻ được không?",
-          "english": "Can I pay by card?",
-          "pronunciation": "toy quet teh dook khong",
+          "id": "v900-loca-serv-ever-task-can-you-scan-this-document",
+          "vietnamese": "Bạn có thể scan tài liệu này được không?",
+          "english": "Can you scan this document?",
+          "pronunciation": "Ban co the scan tai lieu nay duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-store-6",
-          "audioKey": "store-6"
+          "detailPageID": "viet-phrase-v900-loca-serv-ever-task-can-you-scan-this-document",
+          "audioKey": "v900-loca-serv-ever-task-can-you-scan-this-document"
         },
         {
           "id": "store-7",
@@ -159,18 +163,18 @@
           "pronunciation": "cho toy hwa dun",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-store-7",
+          "detailPageID": "viet-family-service-receipt",
           "audioKey": "store-7"
         },
         {
-          "id": "service-8",
-          "vietnamese": "In cái này được không?",
-          "english": "Can I print this?",
-          "pronunciation": "in gai nai dook khong",
+          "id": "store-6",
+          "vietnamese": "Tôi quẹt thẻ được không?",
+          "english": "Can I pay by card?",
+          "pronunciation": "toy quet teh dook khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-service-8",
-          "audioKey": "service-8"
+          "detailPageID": "viet-family-service-card",
+          "audioKey": "store-6"
         }
       ]
     }

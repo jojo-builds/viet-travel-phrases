@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi sạc điện thoại ở đây được không? keeps the question easy to answer. Reach for it when the place has power and you need permission or a spot to charge. This works in cafés, hotels, airports, and waiting areas.",
+      "body": "Tôi sạc điện thoại ở đây được không? belongs at a SIM shop, hotel desk, or cafe counter when the phone screen, error message, charger, or map app is already part of the exchange.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Sạc means charge; điện thoại is phone; ở đây asks about doing it here.",
       "breakdown": [
         {
           "id": "phone-5-piece-1",
@@ -77,7 +77,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Show the phone screen or error message first so the problem is visible before you add more words.",
+      "body": "Ask while the phone screen, error message, charger, or map app is still visible, then pause before adding more words.",
       "phrases": [
         {
           "id": "phone-5",
@@ -96,7 +96,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Phone phrases work best when the other person can see the exact screen or error. The reply may be unclear.",
+      "body": "Charging questions are about permission and outlet location. Show the cable or low battery so the request is obvious.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -104,7 +104,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a yes/no answer, a gesture toward the item, or short alternative. Say Tôi sạc điện thoại ở đây được không?",
+      "body": "Expect a point to an outlet, a no, or a safer spot behind the counter.",
       "phrases": [
         {
           "id": "phone-1",
@@ -143,7 +143,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when the place has power and you need permission or a spot to charge. The reply may be a yes/no answer, a gesture toward the item, or short alternative.",
+      "body": "Use it in cafes, hotel lobbies, airports, buses, and shops when battery level is becoming a problem.",
       "phrases": [
         {
           "id": "phone-4",
@@ -209,7 +209,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Use these for what is the Wi-Fi password?; do you sell SIM cards?; my phone battery is dead if the moment moves past the first line.",
       "phrases": [
         {
           "id": "phone-1",

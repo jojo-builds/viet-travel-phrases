@@ -7,7 +7,7 @@
   "title": "Tôi cần làm biên bản",
   "englishTitle": "I need to file a report",
   "pronunciation": "toy gun lahm byeen ban",
-  "summary": "I need to file a report",
+  "summary": "For asking a desk, police counter, hotel, or transport office to make an official report.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần làm biên bản is the short line for naming what you need next. It works best when file a report is visible on your phone, ticket, note, shelf, or in the situation around you."
+      "body": "A written report gives you a record for a lost item, accident, charge problem, or insurance claim."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần làm biên bản with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "body": "Show the receipt, booking, photo, or last location first so the report starts with the right incident.",
       "phrases": [
         {
           "id": "help-5",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi cần means I need; làm biên bản means make or file an official report.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi cần",
           "english": "I need",
-          "audioKey": null
+          "keepTogetherReason": "I-need phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "làm biên bản",
-          "english": "file a report",
-          "audioKey": null
+          "english": "file an official report",
+          "keepTogetherReason": "official-report phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi cần làm biên bản",
           "english": "I need to file a report",
-          "audioKey": null
+          "audioKey": "help-5"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another problem-solving need.",
+      "body": "I'm lost and I left something behind help when the report starts with finding what went missing.",
       "phrases": [
         {
           "id": "problems-1",
@@ -88,33 +88,23 @@
           "tintName": "orange",
           "detailPageID": "viet-phrase-problems-4",
           "audioKey": "problems-4"
-        },
-        {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i need to file a report. Keep the relevant place, item, or screen visible."
+      "body": "Good at police stations, hotel desks, transport offices, clinics, and security counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Name one problem at a time. If the answer is fast, switch to a repeat or write-it-down phrase."
+      "body": "A report usually needs one clear problem, your contact details, and any proof you have. Keep the story short."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use I need help, please call the hotel, I need the manager, charged-twice, or translation phrases when the report becomes a recovery step.",
       "phrases": [
         {
           "id": "help-need-help-direct",

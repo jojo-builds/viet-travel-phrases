@@ -7,7 +7,7 @@
   "title": "In cái này được không?",
   "englishTitle": "Can I print this?",
   "pronunciation": "in gai nai dook khong",
-  "summary": "Can I print this?",
+  "summary": "For turning a phone file, form, ticket, or receipt into a paper copy.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "In cái này được không? keeps the question easy to answer. Point to the item, menu line, receipt, size, or photo."
+      "body": "The thing to print is already on your phone or in your hand; this line gets the counter moving without a long setup."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep In cái này được không? together as one sentence before adding details. Start with In cái này được không?",
+      "body": "Show the file first, then ask. The answer is usually a simple yes, price, or where to send it.",
       "phrases": [
         {
           "id": "service-8",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "The ending is polite and practical; it asks whether printing is possible, not whether someone personally wants to help.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another local service need.",
+      "body": "Nearby errands cover water, bags, and tissues when the stop turns into a small shop run.",
       "phrases": [
         {
           "id": "store-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I print this. Point to the item, menu line, receipt, size, or photo."
+      "body": "Good at hotel desks, copy counters, hostels, and small service shops. Keep the file, ticket, or document visible."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Ask about price before they print many pages, especially if it is a travel form or ticket."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "If printing is handled, the next need may be payment, a receipt, or help opening the file.",
       "phrases": [
         {
           "id": "store-4",

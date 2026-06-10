@@ -7,7 +7,7 @@
   "title": "Tôi có thể xem hợp đồng thuê được không?",
   "englishTitle": "Can I see the rental agreement?",
   "pronunciation": "Toi co the xem hop dong thue duoc khong",
-  "summary": "Can I see the rental agreement?",
+  "summary": "For asking to read the rental terms before you sign or pay.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể xem hợp đồng thuê được không? keeps the question easy to answer. Keep the map, address, or destination visible."
+      "body": "Useful before a motorbike, scooter, car, room, or equipment rental becomes a real commitment."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể xem hợp đồng thuê được không? together as one sentence before adding details. Start with Tôi có thể xem hợp đồng thuê được không?",
+      "body": "Ask before handing over a passport, deposit, or full payment. Point to the document if it is nearby.",
       "phrases": [
         {
           "id": "v900-tran-can-i-see-the-rental-agreement",
@@ -42,44 +42,41 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Xem means see or read; hợp đồng thuê means rental agreement; được không asks if it is possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Tôi có thể xem",
+          "english": "can I see / read",
+          "keepTogetherReason": "document request frame",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể xem hợp",
-          "english": "show / see",
+          "vietnamese": "hợp đồng thuê",
+          "english": "rental agreement",
+          "keepTogetherReason": "rental contract phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "đồng thuê",
-          "english": "see the rental agreement",
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Tôi có thể xem hợp đồng thuê được không?",
           "english": "Can I see the rental agreement",
-          "audioKey": null
+          "audioKey": "v900-tran-can-i-see-the-rental-agreement"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "If the terms are unclear, ask about deposit, return time, damage, receipt, or who to call.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -116,17 +113,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I see the rental agreement. Keep the map, address, or destination visible."
+      "body": "Good at rental counters, tour desks, hotel desks, and shops lending gear or vehicles."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Photos help if the agreement is only on paper. Check deposit, return time, and damage rules before signing."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use deposit, receipt, return, damage, or contact-number follow-ups if the agreement raises a question.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

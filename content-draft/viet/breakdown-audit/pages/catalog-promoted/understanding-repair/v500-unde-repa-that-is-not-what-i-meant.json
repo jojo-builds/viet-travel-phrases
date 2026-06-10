@@ -21,32 +21,20 @@
     {
       "id": "chunk-1",
       "vietnamese": "Đó",
-      "english": "that"
+      "english": "that",
+      "keepTogetherReason": "that pronoun"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "không",
-      "english": "no / not"
+      "vietnamese": "không phải là",
+      "english": "is not",
+      "keepTogetherReason": "not phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "phải",
-      "english": "must / right"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "ý",
-      "english": "meaning / idea"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "tôi",
-      "english": "I / me"
+      "vietnamese": "ý tôi",
+      "english": "what I meant",
+      "keepTogetherReason": "my-meaning phrase"
     },
     {
       "id": "full",

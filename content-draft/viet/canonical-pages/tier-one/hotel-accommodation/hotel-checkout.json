@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cho tôi trả phòng keeps the travel moment short and clear. This is for the desk when you are ready to end the stay.",
+      "body": "This is for the desk when you are ready to end the stay.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Cho tôi + trả phòng carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "hotel-checkout-piece-1",
@@ -53,7 +53,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Cho tôi trả phòng together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Say Cho tôi trả phòng clearly; show the booking, room number, address, or key card only if the reply needs detail.",
       "phrases": [
         {
           "id": "hotel-checkout",
@@ -72,7 +72,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. Keep the booking, room number, date, or address visible.",
+      "body": "Checkout is usually a sequence: room, bill, key, luggage, and receipt. This phrase starts that sequence cleanly.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -80,7 +80,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "Keep the booking, room number, date, or address visible.",
+      "body": "Expect a bill check, minibar question, key return, luggage offer, or receipt.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -119,7 +119,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for the desk when you are ready to end the stay. Keep the booking, room number, date, or address visible.",
+      "body": "Best when leaving the hotel, asking about the bill, or closing a stay before transport.",
       "phrases": [
         {
           "id": "hotel-4",
@@ -158,7 +158,7 @@
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
+      "body": "Minibar, laundry, and deposit questions can appear here; wait for the final bill before paying.",
       "presentation": "tip-callout",
       "phrases": [],
       "breakdown": []
@@ -166,7 +166,7 @@
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Pair the phrase with a booking screen, key card, room number, or photo of the problem.",
+      "body": "Keep the key card, room number, and any luggage question ready at the same time.",
       "phrases": [
         {
           "id": "hotel-7",
@@ -195,7 +195,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a front desk or guesthouse counter, the next useful language is usually I have a reservation; I’d like to check in; what time is check-out?",
       "phrases": [
         {
           "id": "hotel-1",

@@ -7,7 +7,7 @@
   "title": "Bạn có thể đặt xe tới sân bay được không?",
   "englishTitle": "Can you book a car to the airport?",
   "pronunciation": "Ban co the dat xe toi san bay duoc khong",
-  "summary": "Can you book a car to the airport?",
+  "summary": "For asking the hotel desk to arrange an airport car.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể đặt xe tới sân bay được không? asks someone to do one helpful action for you. Use it for book a car to the airport when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Airport rides need pickup time, terminal, luggage, and whether the fare is fixed."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể đặt xe tới sân bay được không? together as one sentence before adding details. Start with Bạn có thể đặt xe tới sân bay được không?",
+      "body": "Ask at the desk, then give flight time, terminal, room number, and number of bags.",
       "phrases": [
         {
           "id": "v900-hote-acco-can-you-book-a-car-to-the-airport",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đặt xe means book a car; tới sân bay means to the airport.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -65,7 +65,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "được không",
-          "english": "is it possible?",
+          "english": "can you?",
           "audioKey": null
         },
         {
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Reservation and check-in lines help if the desk needs to find your room or booking first.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you book a car to the airport. Keep the booking, room number, date, or address visible."
+      "body": "Good at hotels, guesthouses, serviced apartments, and tour desks before a flight day."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Confirm pickup time, price, and whether the driver waits in the lobby or outside."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Checkout time, quiet-room, checkout, hot-room, and air-con lines cover the rest of the front-desk exchange.",
       "phrases": [
         {
           "id": "hotel-3",

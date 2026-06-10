@@ -7,7 +7,7 @@
   "title": "Tôi bị ngộ độc thực phẩm",
   "englishTitle": "I have food poisoning",
   "pronunciation": "Toi bi ngo doc thuc pham",
-  "summary": "I have food poisoning",
+  "summary": "For telling a pharmacy, clinic, hotel desk, or helper that you suspect food poisoning.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi bị ngộ độc thực phẩm names the need before the details start piling up. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Name the problem first. Add vomiting, diarrhea, fever, dehydration, or timing only if they ask."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi bị ngộ độc thực phẩm together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Keep it direct and show a translated note, medicine package, or hotel card if talking is hard.",
       "phrases": [
         {
           "id": "v500-heal-phar-i-have-food-poisoning",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi bị means I have; ngộ độc thực phẩm means food poisoning.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi bị",
-          "english": "I have / got",
-          "audioKey": null
+          "english": "I have / I am suffering from",
+          "keepTogetherReason": "symptom phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "ngộ độc thực phẩm",
           "english": "food poisoning",
-          "audioKey": null
+          "keepTogetherReason": "food-poisoning phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi bị ngộ độc thực phẩm",
           "english": "I have food poisoning",
-          "audioKey": null
+          "audioKey": "v500-heal-phar-i-have-food-poisoning"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Doctor and pharmacy cards cover the next help step after naming the problem.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i have food poisoning. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at pharmacies, clinics, hotel desks, tour desks, and travel-insurance calls when stomach symptoms feel serious."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "If symptoms are severe, ask for a doctor or clinic instead of only asking for medicine."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to headache, stomach-hurts, motion-sickness, allergy, or diarrhea cards if the health details continue.",
       "phrases": [
         {
           "id": "health-2",

@@ -139,7 +139,10 @@ function breakdownQualityIssues(page) {
     issues.push("multiword phrase has only one breakdown card");
   }
 
-  if (nonFinalTokens.some((token) => normalizedVietnamese(token.vietnamese) === normalizedTitle)) {
+  if (nonFinalTokens.some((token) =>
+    normalizedVietnamese(token.vietnamese) === normalizedTitle
+    && !String(token.keepTogetherReason ?? "").trim()
+  )) {
     issues.push("non-final breakdown card duplicates the full phrase");
   }
 

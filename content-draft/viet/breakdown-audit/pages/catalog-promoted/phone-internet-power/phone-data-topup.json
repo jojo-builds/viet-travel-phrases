@@ -20,33 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "I need",
+      "keepTogetherReason": "I-need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "nạp",
-      "english": "top up / reload"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "thêm",
-      "english": "more / add"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "dữ",
-      "english": "data / fierce"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "liệu",
-      "english": "material / whether"
+      "vietnamese": "nạp thêm dữ liệu",
+      "english": "add more mobile data",
+      "keepTogetherReason": "data-top-up phrase"
     },
     {
       "id": "full",

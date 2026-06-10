@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần hủy đặt chỗ của mình is the short line for naming what you need next. It works best when cancel my booking is visible on your phone, ticket, note, shelf, or in the situation around you."
+      "body": "Lead with Tôi cần hủy đặt chỗ của mình, then add the detail only if the reply needs it."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần hủy đặt chỗ của mình with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "body": "Start with Tôi cần hủy đặt chỗ của mình; then point to the date, time, ticket, booking, or address if the other person needs context. Say Tôi cần hủy đặt chỗ của mình with the object, screen, or note visible.",
       "phrases": [
         {
           "id": "v900-time-date-book-i-need-to-cancel-my-booking",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Tôi cần + hủy đặt chỗ as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "Nearby follow-ups: What time?; Today; Tomorrow morning.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i need to cancel my booking. Keep the booking, room number, date, or address visible."
+      "body": "Best in a booking desk, tour counter, or message thread, before the explanation gets long. Keep the date, time, ticket, booking, or address close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Keep close by: I have a booking, What time does it open, and Can we move it later.",
       "phrases": [
         {
           "id": "time-4",

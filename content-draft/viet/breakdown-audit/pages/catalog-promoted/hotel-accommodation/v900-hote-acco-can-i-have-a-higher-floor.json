@@ -1,7 +1,7 @@
 {
   "pageID": "viet-phrase-v900-hote-acco-can-i-have-a-higher-floor",
-  "phraseText": "Tôi có thể có tầng cao hơn không?",
-  "englishTitle": "Can I have a higher floor?",
+  "phraseText": "Cho tôi phòng ở tầng cao hơn được không?",
+  "englishTitle": "Can I have a room on a higher floor?",
   "reviewStatus": "reviewed",
   "visualReview": {
     "status": "reviewed",
@@ -20,45 +20,32 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Cho tôi",
+      "english": "please give me",
+      "keepTogetherReason": "polite request phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "phòng",
+      "english": "room"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "ở tầng cao hơn",
+      "english": "on a higher floor",
+      "keepTogetherReason": "room-floor preference"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "tầng",
-      "english": "floor"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "cao",
-      "english": "high"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "hơn",
-      "english": "more"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "không?",
-      "english": "yes/no?"
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "fixed yes-no question ending"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi có thể có tầng cao hơn không?",
-      "english": "Can I have a higher floor?",
-      "audioKey": "v900-hote-acco-can-i-have-a-higher-floor"
+      "vietnamese": "Cho tôi phòng ở tầng cao hơn được không?",
+      "english": "Can I have a room on a higher floor?",
+      "audioKey": null
     }
   ]
 }

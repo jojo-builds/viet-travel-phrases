@@ -10,30 +10,30 @@ This is a static approximation of rendered listing content after renderer-level 
 - Practice CTA: Practice this phrase
 
 ### At a glance
-Tôi không hiểu keeps the travel moment short and clear. Reach for it when someone is speaking too quickly or using unfamiliar words. Lead with this before you ask for a repeat or a simpler version.
+Reach for it when someone is speaking too quickly or using unfamiliar words.
 
 ### The standard way
-Keep Tôi không hiểu together as one sentence before adding details. If it is still unclear, show, write, or point to the exact word.
+Say Tôi không hiểu in one connected line before adding details. If it is still unclear, show, write, or point to the exact word.
 - Tôi không hiểu — I don’t understand
 
 ### Break it down
-This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.
+Hear Tôi không + hiểu as the reference point, then compare it with the full phrase.
 - Tôi = I / me
 - không = no / not
 - hiểu = understand
 - Tôi không hiểu = I don’t understand
 
 ### Why it matters
-These phrases keep the interaction cooperative when repeating the same words is not helping. If it is still unclear, show, write, or point to the exact word.
+These phrases keep the interaction cooperative when repeating the same words is not helping. Keep the word, screen, address, or written note ready so the other person can act on the same detail.
 
 ### Traveler insight
-The reply may be a slower repeat, a pointed explanation, or switch to writing. If it is still unclear, show, write, or point to the exact word.
+Watch for a slower repeat, a pointed explanation, or switch to writing. If it is still unclear, show, write, or point to the exact word.
 - Nói chậm chút được không? — Can you speak a little slower?
 - Làm ơn nói lại — Please say that again
 - Viết xuống giúp tôi — Please write it down
 
 ### When to use it
-Reach for it when someone is speaking too quickly or using unfamiliar words. The reply may be a slower repeat, a pointed explanation, or switch to writing.
+Reach for it when someone is speaking too quickly or using unfamiliar words. Watch for a slower repeat, a pointed explanation, or switch to writing.
 - Cái đó nghĩa là gì? — What does that mean?
 - Làm ơn nói lại số đó — Please say the number again
 - Anh/chị nói tiếng Anh không? — Do you speak English?
@@ -45,15 +45,6 @@ If speaking does not work, move quickly to writing, pointing, or showing the exa
 ### Good to know
 Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.
 
-### Explore next
-Use these next when the conversation moves one step forward.
-- Nói chậm chút được không? — Can you speak a little slower?
-- Làm ơn nói lại — Please say that again
-- Viết xuống giúp tôi — Please write it down
-- Cái đó nghĩa là gì? — What does that mean?
-- Làm ơn nói lại số đó — Please say the number again
-- Anh/chị nói tiếng Anh không? — Do you speak English?
-
 ## Hotel check-in
 
 - Page ID: `viet-family-hotel-check-in`
@@ -62,34 +53,34 @@ Use these next when the conversation moves one step forward.
 - Practice CTA: Practice this situation
 
 ### At a glance
-Cho tôi nhận phòng keeps the travel moment short and clear. Reach for it when you are ready to begin check-in. This is the default phrase when the reservation exists and you need the next step.
+Reach for it when you are ready to begin check-in.
 
 ### The standard way
-Keep Cho tôi nhận phòng together as one sentence before adding details. Keep the booking, room number, date, or address visible.
+Say Cho tôi nhận phòng clearly; show the booking, room number, address, or key card only if the reply needs detail.
 - Cho tôi nhận phòng — I’d like to check in
 
 ### Break it down
-Play each piece, then the full phrase.
+Hear Cho tôi + nhận phòng as the reference point, then compare it with the full phrase.
 - cho = to / for
 - tôi = I / me
 - nhận phòng = check in
 - Cho tôi nhận phòng = I’d like to check in
 
 ### Natural variations
-This form changes the tone or setting. Use it when the note under the phrase matches the moment.
+Keep I’d like to check in, please nearby for the same moment in a slightly different tone.
 - Cho tôi nhận phòng nhé — I’d like to check in, please
 
 ### Why it matters
-Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. Keep the booking, room number, date, or address visible.
+Check-in language works best with the booking name or passport ready. The phrase opens the hotel process.
 
 ### Traveler insight
-Keep the booking, room number, date, or address visible.
+Expect a passport request, booking check, deposit, room time, or key handoff.
 - Tôi có đặt phòng — I have a reservation
 - Mấy giờ trả phòng? — What time is check-out?
 - Cho tôi trả phòng — I’d like to check out
 
 ### When to use it
-Reach for it when you are ready to begin check-in. Keep the booking, room number, date, or address visible.
+Use it at hotels, homestays, apartments, and guesthouses when you are ready to start the stay.
 - Phòng này nóng quá — This room is too hot
 - Máy lạnh không chạy — The air conditioner isn’t working
 - Cho tôi thêm khăn — More towels please
@@ -101,15 +92,6 @@ Pair the phrase with a booking screen, key card, room number, or photo of the pr
 
 ### Good to know
 Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.
-
-### Explore next
-Use these next when the conversation moves one step forward.
-- Tôi có đặt phòng — I have a reservation
-- Mấy giờ trả phòng? — What time is check-out?
-- Cho tôi trả phòng — I’d like to check out
-- Phòng này nóng quá — This room is too hot
-- Máy lạnh không chạy — The air conditioner isn’t working
-- Cho tôi thêm khăn — More towels please
 
 ## Bà Nà Hills
 
@@ -386,34 +368,34 @@ The hall can fill quickly. The arches and old maps are worth noticing even when 
 - Practice CTA: Practice this situation
 
 ### At a glance
-Cho tôi nhận phòng keeps the travel moment short and clear. Reach for it when you are ready to begin check-in. This is the default phrase when the reservation exists and you need the next step.
+Reach for it when you are ready to begin check-in.
 
 ### The standard way
-Keep Cho tôi nhận phòng together as one sentence before adding details. Keep the booking, room number, date, or address visible.
+Say Cho tôi nhận phòng clearly; show the booking, room number, address, or key card only if the reply needs detail.
 - Cho tôi nhận phòng — I’d like to check in
 
 ### Break it down
-Play each piece, then the full phrase.
+Hear Cho tôi + nhận phòng as the reference point, then compare it with the full phrase.
 - cho = to / for
 - tôi = I / me
 - nhận phòng = check in
 - Cho tôi nhận phòng = I’d like to check in
 
 ### Natural variations
-This form changes the tone or setting. Use it when the note under the phrase matches the moment.
+Keep I’d like to check in, please nearby for the same moment in a slightly different tone.
 - Cho tôi nhận phòng nhé — I’d like to check in, please
 
 ### Why it matters
-Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. Keep the booking, room number, date, or address visible.
+Check-in language works best with the booking name or passport ready. The phrase opens the hotel process.
 
 ### Traveler insight
-Keep the booking, room number, date, or address visible.
+Expect a passport request, booking check, deposit, room time, or key handoff.
 - Tôi có đặt phòng — I have a reservation
 - Mấy giờ trả phòng? — What time is check-out?
 - Cho tôi trả phòng — I’d like to check out
 
 ### When to use it
-Reach for it when you are ready to begin check-in. Keep the booking, room number, date, or address visible.
+Use it at hotels, homestays, apartments, and guesthouses when you are ready to start the stay.
 - Phòng này nóng quá — This room is too hot
 - Máy lạnh không chạy — The air conditioner isn’t working
 - Cho tôi thêm khăn — More towels please
@@ -426,15 +408,6 @@ Pair the phrase with a booking screen, key card, room number, or photo of the pr
 ### Good to know
 Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.
 
-### Explore next
-Use these next when the conversation moves one step forward.
-- Tôi có đặt phòng — I have a reservation
-- Mấy giờ trả phòng? — What time is check-out?
-- Cho tôi trả phòng — I’d like to check out
-- Phòng này nóng quá — This room is too hot
-- Máy lạnh không chạy — The air conditioner isn’t working
-- Cho tôi thêm khăn — More towels please
-
 ## Airport arrival
 
 - Page ID: `viet-family-airport-immigration`
@@ -443,10 +416,10 @@ Use these next when the conversation moves one step forward.
 - Practice CTA: Practice this situation
 
 ### At a glance
-Nhập cảnh ở đâu? keeps the direction question short. Use this right after landing when you need the first official line. Arrival phrases should keep you moving to the next checkpoint fast.
+Lead with Nhập cảnh ở đâu?; add the detail after the first reply.
 
 ### The standard way
-Use the full phrase before adding details. Keep your passport, visa, baggage tag, pickup message, or SIM details visible when staff need to match the phrase to a real item.
+Show the passport, baggage tag, flight detail, or pickup screen first, ask once, and leave room for the answer.
 - Nhập cảnh ở đâu? — Where is immigration?
 
 ### Break it down
@@ -459,13 +432,13 @@ This pattern asks where a place or service is. Swap the first part to ask about 
 Airport phrases help staff route you to the next counter or service without a long explanation. Keep the passport, baggage tag, pickup screen, or flight detail visible.
 
 ### Traveler insight
-The reply may be a point, short direction, nearby option, or counter name. Say Nhập cảnh ở đâu?
+Watch for a point, short direction, nearby option, or counter name. Say Nhập cảnh ở đâu?
 - Lấy hành lý ở đâu? — Where is baggage claim?
 - Mua SIM ở đâu? — Where can I buy a SIM card?
 - Khu đón ở đâu? — Where is the pickup area?
 
 ### When to use it
-Use this right after landing when you need the first official line. The reply may be a point, short direction, nearby option, or counter name.
+Use this right after landing when you need the first official line. Watch for a point, short direction, nearby option, or counter name.
 - Hành lý của tôi chưa tới — My bag did not arrive
 - Đây là thị thực của tôi — Here is my visa
 - ATM ở đâu? — Where is the ATM?
@@ -476,15 +449,6 @@ Keep your passport, baggage tag, or booking screen visible while you ask.
 
 ### Good to know
 Airport staff may answer by pointing. Follow the gesture first, then ask again if the next step is still unclear.
-
-### Explore next
-Use these next when the conversation moves one step forward.
-- Lấy hành lý ở đâu? — Where is baggage claim?
-- Mua SIM ở đâu? — Where can I buy a SIM card?
-- Khu đón ở đâu? — Where is the pickup area?
-- Hành lý của tôi chưa tới — My bag did not arrive
-- Đây là thị thực của tôi — Here is my visa
-- ATM ở đâu? — Where is the ATM?
 
 ## Taxi/Grab pickup
 
@@ -497,7 +461,7 @@ Use these next when the conversation moves one step forward.
 Khu đón ở đâu? keeps the direction question short. Use this for rideshare, shuttle, or private pickup handoffs. This keeps the first transport handoff from going messy.
 
 ### The standard way
-Use the full phrase before adding details. Keep your passport, visa, baggage tag, pickup message, or SIM details visible when staff need to match the phrase to a real item.
+Ask while the passport, baggage tag, flight detail, or pickup screen is still visible, then pause before adding more words.
 - Khu đón ở đâu? — Where is the pickup area?
 
 ### Break it down
@@ -507,20 +471,20 @@ This pattern asks where a place or service is. Swap the first part to ask about 
 - Khu đón ở đâu? = Where is the pickup area?
 
 ### Natural variations
-This form changes the tone or setting. Use it when the note under the phrase matches the moment.
+Choose where do I meet the driver? when that wording fits the person or setting better.
 - Tôi gặp tài xế ở đâu? — Where do I meet the driver?
 
 ### Why it matters
 Airport phrases help staff route you to the next counter or service without a long explanation. Keep the passport, baggage tag, pickup screen, or flight detail visible.
 
 ### Traveler insight
-The reply may be a point, short direction, nearby option, or counter name. Say Khu đón ở đâu?
+Watch for a point, short direction, nearby option, or counter name. Say Khu đón ở đâu?
 - Nhập cảnh ở đâu? — Where is immigration?
 - Lấy hành lý ở đâu? — Where is baggage claim?
 - Mua SIM ở đâu? — Where can I buy a SIM card?
 
 ### When to use it
-Use this for rideshare, shuttle, or private pickup handoffs. The reply may be a point, short direction, nearby option, or counter name.
+Use this for rideshare, shuttle, or private pickup handoffs. Watch for a point, short direction, nearby option, or counter name.
 - Hành lý của tôi chưa tới — My bag did not arrive
 - Đây là thị thực của tôi — Here is my visa
 - ATM ở đâu? — Where is the ATM?
@@ -534,15 +498,6 @@ A local may answer with: Outside gate 10.
 
 ### Good to know
 Airport staff may answer by pointing. Follow the gesture first, then ask again if the next step is still unclear.
-
-### Explore next
-Use these next when the conversation moves one step forward.
-- Nhập cảnh ở đâu? — Where is immigration?
-- Lấy hành lý ở đâu? — Where is baggage claim?
-- Mua SIM ở đâu? — Where can I buy a SIM card?
-- Hành lý của tôi chưa tới — My bag did not arrive
-- Đây là thị thực của tôi — Here is my visa
-- ATM ở đâu? — Where is the ATM?
 
 ## Shopping
 

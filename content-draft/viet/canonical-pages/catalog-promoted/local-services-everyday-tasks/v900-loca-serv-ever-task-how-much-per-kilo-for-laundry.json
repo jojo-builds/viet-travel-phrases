@@ -7,7 +7,7 @@
   "title": "Giặt đồ bao nhiêu một kg?",
   "englishTitle": "How much per kilo for laundry?",
   "pronunciation": "Giat do bao nhieu mot kg",
-  "summary": "How much per kilo for laundry?",
+  "summary": "For checking the laundry price before handing over a bag of clothes.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Ask before leaving laundry at a shop or hotel desk. Point to the bag so staff can quote by kilo, item, or service level."
+      "body": "Ask while the bag is still with you, before the shop weighs it, writes the ticket, or separates express service."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Giặt đồ bao nhiêu một kg?, then show the laundry bag. If they weigh it, wait for the number before agreeing.",
+      "body": "Point to the laundry bag and the scale if there is one. Ask for the price by kilo before agreeing to wash, dry, or iron.",
       "phrases": [
         {
           "id": "v900-loca-serv-ever-task-how-much-per-kilo-for-laundry",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Giặt đồ means laundry or washing clothes; bao nhiêu asks how much; một kg means per kilo.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Giặt đồ bao",
-          "english": "price",
-          "audioKey": null
+          "vietnamese": "Giặt đồ",
+          "english": "laundry / washing clothes",
+          "keepTogetherReason": "laundry phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nhiêu một kg",
-          "english": "per kilo for laundry",
-          "audioKey": null
+          "vietnamese": "bao nhiêu",
+          "english": "how much",
+          "keepTogetherReason": "how-much phrase"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "một kg?",
+          "english": "per kilo?",
+          "keepTogetherReason": "per-kilo phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Giặt đồ bao nhiêu một kg?",
-          "english": "How much per kilo for laundry",
-          "audioKey": null
+          "english": "How much per kilo for laundry?",
+          "audioKey": "v900-loca-serv-ever-task-how-much-per-kilo-for-laundry"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another local service need.",
+      "body": "Water, bag, and tissues cards stay useful at the same small shop or hotel desk.",
       "phrases": [
         {
           "id": "store-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it before handing over clothes. The answer may change for express service, ironing, or delicate items."
+      "body": "Good at laundry shops, homestays, hotel desks, and travel counters that charge by weight."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "A scale, receipt, or written ticket is easier to trust than a fast spoken price."
+      "body": "Express service, ironing, or delicate items can change the price. Ask for the total and pickup time together."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Sunscreen, open-this, card-payment, receipt, and printing cards cover the errand-counter path.",
       "phrases": [
         {
           "id": "store-4",

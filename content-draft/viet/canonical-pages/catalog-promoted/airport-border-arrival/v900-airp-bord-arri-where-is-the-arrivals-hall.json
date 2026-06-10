@@ -7,7 +7,7 @@
   "title": "Sảnh đến ở đâu?",
   "englishTitle": "Where is the arrivals hall?",
   "pronunciation": "Sanh den o dau",
-  "summary": "Where is the arrivals hall?",
+  "summary": "For meeting drivers, friends, or hotel pickup staff after baggage claim.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Sảnh đến ở đâu? keeps the direction question short. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Use this when signs split into arrivals, exits, domestic, and international halls."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Sảnh đến ở đâu? together as one sentence before adding details. Say Sảnh đến ở đâu?",
+      "body": "Show the pickup message or flight screen if you have one. The answer may be a door number, floor, or walking direction.",
       "phrases": [
         {
           "id": "v900-airp-bord-arri-where-is-the-arrivals-hall",
@@ -42,17 +42,17 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Sảnh đến names the arrivals hall; ở đâu asks where it is.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Sảnh đến",
-          "english": "to / arrive at",
+          "english": "arrivals hall",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "ở đâu",
+          "vietnamese": "ở đâu?",
           "english": "where?",
           "audioKey": null
         },
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
+      "body": "These cover the same airport path: immigration, baggage claim, and a SIM card counter.",
       "phrases": [
         {
           "id": "airport-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits airport, immigration, baggage, or pickup moment, especially when arrivals hall can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Use it after landing, especially when a driver or hotel says they are waiting at arrivals. Keep the pickup text visible."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+      "body": "Large Vietnamese airports can split arrival areas by terminal. If the answer mentions domestic or international, repeat that word before walking."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "If the meeting plan shifts, move to pickup area, driver meeting point, or baggage help.",
       "phrases": [
         {
           "id": "airport-5",

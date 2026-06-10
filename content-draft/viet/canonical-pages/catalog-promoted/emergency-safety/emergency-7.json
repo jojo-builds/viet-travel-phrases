@@ -7,7 +7,7 @@
   "title": "Tôi cần đại sứ quán",
   "englishTitle": "I need the embassy",
   "pronunciation": "toy gun dai soo kwan",
-  "summary": "I need the embassy",
+  "summary": "For asking for embassy help when a passport, document, or safety issue cannot wait.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần đại sứ quán is the short line for naming what you need next. It works best when embassy is visible on your phone, ticket, note, shelf, or in the situation around you."
+      "body": "Lead with the embassy request, then show your passport copy, phone screen, or written note."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần đại sứ quán with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "body": "Keep the sentence short and let the hotel desk, police counter, or helper ask for details.",
       "phrases": [
         {
           "id": "emergency-7",
@@ -42,53 +42,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi cần means I need; đại sứ quán means embassy.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi cần",
           "english": "I need",
-          "audioKey": null
+          "keepTogetherReason": "I-need phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "đại sứ quán",
           "english": "embassy",
-          "audioKey": null
+          "keepTogetherReason": "embassy noun"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi cần đại sứ quán",
           "english": "I need the embassy",
-          "audioKey": null
+          "audioKey": "emergency-7"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another safety or urgent-help need.",
+      "body": "Lost passport, nearest embassy, and contact embassy phrases keep the request focused.",
       "phrases": [
-        {
-          "id": "emergency-1",
-          "vietnamese": "Gọi công an",
-          "english": "Call the police",
-          "pronunciation": "goy kong an",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-1",
-          "audioKey": "emergency-1"
-        },
-        {
-          "id": "emergency-2",
-          "vietnamese": "Gọi xe cứu thương",
-          "english": "Call an ambulance",
-          "pronunciation": "goy seh koo-ah thu-ong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-2",
-          "audioKey": "emergency-2"
-        },
         {
           "id": "emergency-3",
           "vietnamese": "Tôi mất hộ chiếu",
@@ -96,25 +76,45 @@
           "pronunciation": "toy mut hoh chee-u",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-3",
+          "detailPageID": "viet-family-emergency-passport",
           "audioKey": "emergency-3"
+        },
+        {
+          "id": "v500-prob-help-where-is-the-nearest-embassy",
+          "vietnamese": "Đại sứ quán gần nhất ở đâu?",
+          "english": "Where is the nearest embassy?",
+          "pronunciation": "Dai su quan gan nhat o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-v500-prob-help-where-is-the-nearest-embassy",
+          "audioKey": "v500-prob-help-where-is-the-nearest-embassy"
+        },
+        {
+          "id": "v500-prob-help-please-help-me-contact-my-embassy",
+          "vietnamese": "Xin hãy giúp tôi liên hệ với đại sứ quán của tôi",
+          "english": "Please help me contact my embassy",
+          "pronunciation": "Xin hay giup toi lien he voi dai su quan cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-v500-prob-help-please-help-me-contact-my-embassy",
+          "audioKey": "v500-prob-help-please-help-me-contact-my-embassy"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i need the embassy. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at hotel desks, police counters, airports, clinics, and any official-help moment."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "If you know your country's embassy or consulate, show the name on your phone."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Unsafe, emergency, temporary document, passport report, and police station phrases cover stronger safety needs.",
       "phrases": [
         {
           "id": "emergency-4",
@@ -123,7 +123,7 @@
           "pronunciation": "toy kahm thai khong an toan",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-4",
+          "detailPageID": "viet-family-emergency-not-safe",
           "audioKey": "emergency-4"
         },
         {
@@ -133,38 +133,38 @@
           "pronunciation": "day la troong hop khun kup",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-emergency",
+          "detailPageID": "viet-family-emergency-emergency",
           "audioKey": "emergency-emergency"
         },
         {
-          "id": "emergency-5",
-          "vietnamese": "Cứu tôi với!",
-          "english": "Help!",
-          "pronunciation": "koo toy voy",
+          "id": "v900-emer-safe-i-need-a-temporary-travel-document",
+          "vietnamese": "Tôi cần giấy thông hành tạm thời",
+          "english": "I need a temporary travel document",
+          "pronunciation": "Toi can giay thong hanh tam thoi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-5",
-          "audioKey": "emergency-5"
+          "detailPageID": "viet-phrase-v900-emer-safe-i-need-a-temporary-travel-document",
+          "audioKey": "v900-emer-safe-i-need-a-temporary-travel-document"
         },
         {
-          "id": "emergency-hospital",
-          "vietnamese": "Bệnh viện gần nhất ở đâu?",
-          "english": "Where is the nearest hospital?",
-          "pronunciation": "beng vyen gun nyut uh dow",
+          "id": "emergency-premium-passport-report",
+          "vietnamese": "Tôi cần một báo cáo về hộ chiếu bị mất của tôi.",
+          "english": "I need a report for my lost passport.",
+          "pronunciation": "Toi can mot bao cao ve ho chieu bi mat cua toi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-hospital",
-          "audioKey": "emergency-hospital"
+          "detailPageID": "viet-phrase-emergency-premium-passport-report",
+          "audioKey": "emergency-premium-passport-report"
         },
         {
-          "id": "emergency-6",
-          "vietnamese": "Túi của tôi bị lấy mất",
-          "english": "My bag was stolen",
-          "pronunciation": "too-ee koo-ah toy bee lay mut",
+          "id": "emergency-premium-police-station",
+          "vietnamese": "Làm ơn đưa tôi đến đồn cảnh sát.",
+          "english": "Please take me to the police station.",
+          "pronunciation": "Lam on dua toi den don canh sat",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-6",
-          "audioKey": "emergency-6"
+          "detailPageID": "viet-phrase-emergency-premium-police-station",
+          "audioKey": "emergency-premium-police-station"
         }
       ]
     }

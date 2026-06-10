@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần thuốc tiêu chảy names the need before the details start piling up. This is for a pharmacy when the trip got messy and you need the medicine fast.",
+      "body": "This is for a pharmacy when the trip got messy and you need the medicine fast.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Practice Tôi cần + thuốc first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "health-6-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Tôi cần thuốc tiêu chảy together as one sentence before adding details.",
+      "body": "Say Tôi cần thuốc tiêu chảy first; let the symptom, medicine, affected area, or translated note support the reply.",
       "phrases": [
         {
           "id": "health-6",
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Watch for a confirmation, a handoff, a price, or follow-up question. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
       "phrases": [
         {
           "id": "problems-6",
@@ -197,7 +197,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a pharmacy, clinic, or hotel desk, the next useful language is usually I need a doctor; where is the nearest pharmacy?; I have a headache.",
       "phrases": [
         {
           "id": "problems-6",

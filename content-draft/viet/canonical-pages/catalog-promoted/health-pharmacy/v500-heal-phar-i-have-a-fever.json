@@ -4,10 +4,10 @@
   "phraseID": "v500-heal-phar-i-have-a-fever",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "tôi bị sốt",
+  "title": "Tôi bị sốt",
   "englishTitle": "I have a fever",
-  "pronunciation": "toi bi sot",
-  "summary": "I have a fever",
+  "pronunciation": "Toi bi sot",
+  "summary": "For telling a pharmacist, clinic, or hotel desk that you have a fever.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,18 +20,18 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "tôi bị sốt names the need before the details start piling up. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Say it early if you need medicine, clinic help, or advice about whether to rest or go in."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep tôi bị sốt together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Keep the sentence short. Show your temperature, medicine box, symptom note, or travel-insurance card if it helps.",
       "phrases": [
         {
           "id": "v500-heal-phar-i-have-a-fever",
-          "vietnamese": "tôi bị sốt",
+          "vietnamese": "Tôi bị sốt",
           "english": "I have a fever",
-          "pronunciation": "toi bi sot",
+          "pronunciation": "Toi bi sot",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
           "detailPageID": null,
@@ -42,32 +42,34 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi bị means I have or I am affected by; sốt means fever.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "tôi bị",
-          "english": "I have / got",
+          "vietnamese": "Tôi bị",
+          "english": "I have / I am affected by",
+          "keepTogetherReason": "condition phrase",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "sốt",
           "english": "fever",
+          "keepTogetherReason": "symptom word",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "tôi bị sốt",
+          "vietnamese": "Tôi bị sốt",
           "english": "I have a fever",
-          "audioKey": null
+          "audioKey": "v500-heal-phar-i-have-a-fever"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "If the fever comes with other symptoms, move to doctor, pharmacy, headache, stomach pain, or how-to-take-this follow-ups.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +106,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i have a fever. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at pharmacies, clinics, hotel desks, tour counters, and with a guide helping translate a health problem."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "A number helps. If you know your temperature, show it rather than trying to explain the whole illness."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use doctor, pharmacy, headache, stomach, diarrhea, or dosage cards if staff need the next detail.",
       "phrases": [
         {
           "id": "health-2",

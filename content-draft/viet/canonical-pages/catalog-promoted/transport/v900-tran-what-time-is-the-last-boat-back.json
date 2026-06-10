@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Chuyến tàu cuối cùng về lúc mấy giờ? together as one sentence before adding details. Start with Chuyến tàu cuối cùng về lúc mấy giờ?",
+      "body": "A short question is enough here; use the destination, fare, or ride screen for the follow-up.",
       "phrases": [
         {
           "id": "v900-tran-what-time-is-the-last-boat-back",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Chuyến tàu cuối + cùng về lúc, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "Useful if the exchange continues: Take me here, Go to District 1, and You can stop here.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is what time is the last boat back. Keep the map, address, or destination visible."
+      "body": "Best in a taxi, motorbike pickup, or station counter, before the explanation gets long. Keep the destination, fare, or ride screen close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "If the exchange continues, please stop right here, go this way, and please turn on the air conditioning can carry the next detail.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

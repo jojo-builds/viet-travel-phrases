@@ -7,7 +7,7 @@
   "title": "Bạn có thể gửi tin nhắn xác nhận không?",
   "englishTitle": "Can you send a confirmation message?",
   "pronunciation": "Ban co the gui tin nhan xac nhan khong",
-  "summary": "Can you send a confirmation message?",
+  "summary": "For getting written confirmation before you leave a booking desk or chat.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể gửi tin nhắn xác nhận không? asks someone to do one helpful action for you. Use it for send a confirmation message when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Ask before walking away. Keep the phone number, email address, booking code, or chat window visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể gửi tin nhắn xác nhận không? together as one sentence before adding details. Start with Bạn có thể gửi tin nhắn xác nhận không?",
+      "body": "Point to the correct contact line while you ask. A message matters most when pickup time or address is easy to forget.",
       "phrases": [
         {
           "id": "v900-time-date-book-can-you-send-a-confirmation-message",
@@ -42,44 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; gửi tin nhắn means send a message; xác nhận means confirmation; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "gửi tin nhắn",
           "english": "send a message",
-          "audioKey": null
+          "keepTogetherReason": "send-message phrase"
         },
         {
           "id": "chunk-3",
           "vietnamese": "xác nhận",
-          "english": "a confirmation message",
-          "audioKey": null
+          "english": "confirmation",
+          "keepTogetherReason": "confirmation noun"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Bạn có thể gửi tin nhắn xác nhận không?",
-          "english": "Can you send a confirmation message",
-          "audioKey": null
+          "english": "Can you send a confirmation message?",
+          "audioKey": "v900-time-date-book-can-you-send-a-confirmation-message"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "What-time, today, and tomorrow-morning cards help if the confirmation leads to a timing check.",
       "phrases": [
         {
           "id": "time-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you send a confirmation message. Keep the booking, room number, date, or address visible."
+      "body": "Use this after bookings, reservations, pickups, ticket changes, and any plan that needs a written trail."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Check the contact detail before they send it. A wrong digit makes the confirmation useless."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Booking, opening-time, move-it-later, boarding-time, and wait-time cards cover the next schedule question.",
       "phrases": [
         {
           "id": "time-4",

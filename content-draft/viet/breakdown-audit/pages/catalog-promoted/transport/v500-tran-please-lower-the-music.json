@@ -22,22 +22,19 @@
       "id": "chunk-1",
       "vietnamese": "Làm ơn",
       "english": "please",
-      "keepTogetherReason": "fixed polite phrase"
+      "keepTogetherReason": "polite opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "giảm",
-      "english": "reduce / discount"
+      "vietnamese": "giảm nhạc",
+      "english": "lower the music",
+      "keepTogetherReason": "lower-music phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nhạc",
-      "english": "music"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "đi",
-      "english": "go"
+      "english": "spoken request ending",
+      "keepTogetherReason": "imperative softener"
     },
     {
       "id": "full",

@@ -20,29 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi bị",
+      "english": "I was",
+      "keepTogetherReason": "passive problem frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bị tính",
-      "english": "was charged",
-      "keepTogetherReason": "fixed payment phrase"
+      "vietnamese": "tính tiền",
+      "english": "charged",
+      "keepTogetherReason": "charge verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "tiền",
-      "english": "money"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "hai",
-      "english": "two"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "lần",
-      "english": "time / occasion"
+      "vietnamese": "hai lần",
+      "english": "twice",
+      "keepTogetherReason": "twice phrase"
     },
     {
       "id": "full",

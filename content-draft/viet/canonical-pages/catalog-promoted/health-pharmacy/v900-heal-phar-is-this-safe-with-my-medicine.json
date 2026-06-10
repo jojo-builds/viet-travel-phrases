@@ -4,10 +4,10 @@
   "phraseID": "v900-heal-phar-is-this-safe-with-my-medicine",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Điều này có an toàn với thuốc của tôi không?",
+  "title": "Dùng cái này cùng thuốc của tôi có an toàn không?",
   "englishTitle": "Is this safe with my medicine?",
-  "pronunciation": "Dieu nay co an toan voi thuoc cua toi khong",
-  "summary": "Is this safe with my medicine?",
+  "pronunciation": "Dung cai nay cung thuoc cua toi co an toan khong",
+  "summary": "For asking a pharmacist or clinician about mixing a new medicine with what you already take.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -15,65 +15,67 @@
     "v900-heal-phar-is-this-safe-with-my-medicine",
     "premium"
   ],
-  "audioKey": "v900-heal-phar-is-this-safe-with-my-medicine",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Điều này có an toàn với thuốc của tôi không? keeps the question easy to answer. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Show your current medicine, prescription, or translated note before you take the new item.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use Điều này có an toàn với thuốc của tôi không? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "body": "Hold both medicines visible while you ask. Wait for a yes, no, dosage change, or doctor referral.",
       "phrases": [
         {
           "id": "v900-heal-phar-is-this-safe-with-my-medicine",
-          "vietnamese": "Điều này có an toàn với thuốc của tôi không?",
+          "vietnamese": "Dùng cái này cùng thuốc của tôi có an toàn không?",
           "english": "Is this safe with my medicine?",
-          "pronunciation": "Dieu nay co an toan voi thuoc cua toi khong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Dung cai nay cung thuoc cua toi co an toan khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
           "detailPageID": null,
-          "audioKey": "v900-heal-phar-is-this-safe-with-my-medicine"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Dùng cái này means using this; cùng thuốc của tôi means with my medicine; có an toàn không asks is it safe.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Điều này có an toàn",
-          "english": "is this safe",
-          "audioKey": null
+          "vietnamese": "Dùng cái này",
+          "english": "using this",
+          "keepTogetherReason": "use-this phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "với thuốc của tôi",
+          "vietnamese": "cùng thuốc của tôi",
           "english": "with my medicine",
-          "audioKey": null
+          "keepTogetherReason": "with-my-medicine phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không?",
-          "english": "yes/no?",
-          "audioKey": "breakdown-bath-6-piece-6"
+          "vietnamese": "có an toàn không?",
+          "english": "is it safe?",
+          "keepTogetherReason": "safety question"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "Điều này có an toàn với thuốc của tôi không?",
-          "english": "Is this safe with my medicine",
-          "audioKey": "v900-heal-phar-is-this-safe-with-my-medicine"
+          "id": "full",
+          "vietnamese": "Dùng cái này cùng thuốc của tôi có an toàn không?",
+          "english": "Is this safe with my medicine?",
+          "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Doctor, pharmacy, and nearest-pharmacy cards help if the safety question needs a professional handoff.",
       "phrases": [
         {
           "id": "problems-6",
@@ -110,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+      "body": "Pharmacies, clinics, and hotel medical desks are the right places for this interaction check.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "Medicine names are easy to mishear. Showing the package or active ingredient matters more than repeating the phrase.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Headache, stomach pain, motion-sickness medicine, allergy, and diarrhea cards cover nearby health needs.",
       "phrases": [
         {
           "id": "health-2",
@@ -178,13 +182,13 @@
   "examples": [
     {
       "id": "v900-heal-phar-is-this-safe-with-my-medicine",
-      "vietnamese": "Điều này có an toàn với thuốc của tôi không?",
+      "vietnamese": "Dùng cái này cùng thuốc của tôi có an toàn không?",
       "english": "Is this safe with my medicine?",
-      "pronunciation": "Dieu nay co an toan voi thuoc cua toi khong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Dung cai nay cung thuoc cua toi co an toan khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "red",
       "detailPageID": null,
-      "audioKey": "v900-heal-phar-is-this-safe-with-my-medicine"
+      "audioKey": null
     }
   ]
 }

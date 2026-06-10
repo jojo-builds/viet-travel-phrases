@@ -7,7 +7,7 @@
   "title": "Tôi cần một cáp sạc",
   "englishTitle": "I need a charging cable",
   "pronunciation": "Toi can mot cap sac",
-  "summary": "I need a charging cable",
+  "summary": "For asking to buy or borrow a charging cable when your phone is running low.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần một cáp sạc is the short line for naming what you need next. It works best when charging cable is visible on your phone, ticket, note, shelf, or in the situation around you."
+      "body": "Show the phone port or old cable if the connector type matters."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần một cáp sạc with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "body": "Say the line and point to the phone. Staff may need to know iPhone, USB-C, length, or whether you want to buy it.",
       "phrases": [
         {
           "id": "v500-phon-inte-powe-i-need-a-charging-cable",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi cần means I need; một cáp sạc means a charging cable.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi cần",
           "english": "I need",
-          "audioKey": null
+          "keepTogetherReason": "I-need phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "một cáp sạc",
-          "english": "charging cable",
-          "audioKey": null
+          "english": "a charging cable",
+          "keepTogetherReason": "charging-cable phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi cần một cáp sạc",
           "english": "I need a charging cable",
-          "audioKey": null
+          "audioKey": "v500-phon-inte-powe-i-need-a-charging-cable"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another phone, internet, or power need.",
+      "body": "Wi-Fi password, common Wi-Fi, and SIM-card phrases cover nearby phone setup needs.",
       "phrases": [
         {
           "id": "phone-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i need a charging cable. Keep the phone screen or error message visible."
+      "body": "Good at hotels, cafes, convenience stores, phone shops, bus counters, and airport charging corners."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Phone and Wi-Fi answers can be technical. Let the screen stay visible so the other person can point, type, or check the setting."
+      "body": "If you only need to borrow one, ask to charge the phone here instead."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Battery, charger, charge-here, data-top-up, and eSIM phrases cover the rest of the phone problem.",
       "phrases": [
         {
           "id": "phone-3",

@@ -20,35 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi sẽ trả",
+      "english": "I will pay",
+      "keepTogetherReason": "future payment phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "sẽ",
-      "english": "will"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "trả",
-      "english": "pay / return"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "tiền mặt",
       "english": "cash",
       "keepTogetherReason": "compound noun"
     },
     {
-      "id": "chunk-5",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "tài xế",
-      "english": "driver",
-      "keepTogetherReason": "compound noun"
+      "id": "chunk-3",
+      "vietnamese": "cho tài xế",
+      "english": "to the driver",
+      "keepTogetherReason": "recipient phrase"
     },
     {
       "id": "full",

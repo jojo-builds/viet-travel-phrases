@@ -7,7 +7,7 @@
   "title": "Tài xế của tôi đã hủy",
   "englishTitle": "My driver canceled",
   "pronunciation": "Tai xe cua toi da huy",
-  "summary": "My driver canceled",
+  "summary": "For explaining that your airport pickup or ride-booking driver canceled.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tài xế của tôi đã hủy names the problem so staff or a helpful local can act on it. Use it when My driver canceled is the clearest way to explain what changed, went missing, or needs attention."
+      "body": "Use it when you are stuck at arrivals, a lobby, or a pickup point and need a new transport plan."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tài xế của tôi đã hủy calmly and show the proof if you have it: passport, booking, baggage tag, map, or pickup screen. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Show the canceled ride screen first. The screenshot explains the timing better than a long story.",
       "phrases": [
         {
           "id": "v500-airp-bord-arri-my-driver-canceled",
@@ -42,129 +42,129 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tài xế của tôi means my driver; đã hủy means canceled.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tài xế của",
-          "english": "driver",
-          "audioKey": null
+          "vietnamese": "Tài xế của tôi",
+          "english": "my driver",
+          "keepTogetherReason": "my-driver phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tôi đã hủy",
-          "english": "I already / I did",
-          "audioKey": null
+          "vietnamese": "đã hủy",
+          "english": "canceled",
+          "keepTogetherReason": "canceled phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tài xế của tôi đã hủy",
           "english": "My driver canceled",
-          "audioKey": null
+          "audioKey": "v500-airp-bord-arri-my-driver-canceled"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
+      "body": "Taxi counter, contact the driver, and Grab booking phrases help you rebuild the ride.",
       "phrases": [
         {
-          "id": "airport-1",
-          "vietnamese": "Nhập cảnh ở đâu?",
-          "english": "Where is immigration?",
-          "pronunciation": "nyup canh uh dow",
+          "id": "v500-airp-bord-arri-where-is-the-taxi-counter",
+          "vietnamese": "Quầy taxi ở đâu?",
+          "english": "Where is the taxi counter?",
+          "pronunciation": "Quay taxi o dau",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-1",
-          "audioKey": "airport-1"
+          "detailPageID": "viet-phrase-v500-airp-bord-arri-where-is-the-taxi-counter",
+          "audioKey": "v500-airp-bord-arri-where-is-the-taxi-counter"
         },
         {
-          "id": "airport-2",
-          "vietnamese": "Lấy hành lý ở đâu?",
-          "english": "Where is baggage claim?",
-          "pronunciation": "lay han lee uh dow",
+          "id": "v500-prob-help-can-you-contact-the-driver",
+          "vietnamese": "Bạn có thể liên hệ với tài xế được không?",
+          "english": "Can you contact the driver?",
+          "pronunciation": "Ban co the lien he voi tai xe duoc khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-2",
-          "audioKey": "airport-2"
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-v500-prob-help-can-you-contact-the-driver",
+          "audioKey": "v500-prob-help-can-you-contact-the-driver"
         },
         {
-          "id": "airport-3",
-          "vietnamese": "Mua SIM ở đâu?",
-          "english": "Where can I buy a SIM card?",
-          "pronunciation": "moo-ah sim uh dow",
+          "id": "v900-phon-inte-powe-can-you-help-me-book-a-grab",
+          "vietnamese": "Bạn có thể giúp tôi đặt xe Grab được không?",
+          "english": "Can you help me book a Grab?",
+          "pronunciation": "Ban co the giup toi dat xe Grab duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-3",
-          "audioKey": "airport-3"
+          "detailPageID": "viet-phrase-v900-phon-inte-powe-can-you-help-me-book-a-grab",
+          "audioKey": "v900-phon-inte-powe-can-you-help-me-book-a-grab"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as soon as the problem is clear enough to name. It is especially useful at a counter or desk where someone can look at the photo, receipt, bag, booking, or phone screen with you."
+      "body": "Good at airport pickup points, hotel desks, taxi counters, tour desks, and ride-hailing help spots."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "If someone can help, the next useful detail is usually pickup point, destination, or whether to book another ride."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Call the driver, Grab pickup, hotel destination, information desk, and phone charging phrases cover the next move.",
       "phrases": [
         {
-          "id": "airport-5",
-          "vietnamese": "Khu đón ở đâu?",
-          "english": "Where is the pickup area?",
-          "pronunciation": "khoo don uh dow",
+          "id": "v900-airp-bord-arri-please-call-this-driver-for-me",
+          "vietnamese": "Hãy gọi tài xế này cho tôi",
+          "english": "Please call this driver for me",
+          "pronunciation": "Hay goi tai xe nay cho toi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-5",
-          "audioKey": "airport-5"
+          "detailPageID": "viet-phrase-v900-airp-bord-arri-please-call-this-driver-for-me",
+          "audioKey": "v900-airp-bord-arri-please-call-this-driver-for-me"
         },
         {
-          "id": "airport-pickup-clearer",
-          "vietnamese": "Tôi gặp tài xế ở đâu?",
-          "english": "Where do I meet the driver?",
-          "pronunciation": "toy gap tai seh uh dow",
+          "id": "v900-airp-bord-arri-where-is-the-grab-pickup-point",
+          "vietnamese": "Điểm đón Grab ở đâu?",
+          "english": "Where is the Grab pickup point?",
+          "pronunciation": "Diem don Grab o dau",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-pickup-clearer",
-          "audioKey": "airport-pickup-clearer"
+          "detailPageID": "viet-phrase-v900-airp-bord-arri-where-is-the-grab-pickup-point",
+          "audioKey": "v900-airp-bord-arri-where-is-the-grab-pickup-point"
         },
         {
-          "id": "airport-6",
-          "vietnamese": "Hành lý của tôi chưa tới",
-          "english": "My bag did not arrive",
-          "pronunciation": "han lee koo-ah toy choo toy",
+          "id": "v500-airp-bord-arri-please-take-me-to-the-hotel-listed-on-this-booki",
+          "vietnamese": "Vui lòng đưa tôi đến khách sạn được liệt kê trong đặt phòng này.",
+          "english": "Please take me to the hotel listed on this booking.",
+          "pronunciation": "Vui long dua toi den khach san duoc liet ke trong dat phong nay",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-6",
-          "audioKey": "airport-6"
+          "detailPageID": "viet-phrase-v500-airp-bord-arri-please-take-me-to-the-hotel-listed-on-this-booki",
+          "audioKey": "v500-airp-bord-arri-please-take-me-to-the-hotel-listed-on-this-booki"
         },
         {
-          "id": "airport-7",
-          "vietnamese": "Nhà ga nội địa ở đâu?",
-          "english": "Where is the domestic terminal?",
-          "pronunciation": "nya ga noy dee-ah uh dow",
+          "id": "v900-airp-bord-arri-where-is-the-information-desk",
+          "vietnamese": "Bàn thông tin ở đâu?",
+          "english": "Where is the information desk?",
+          "pronunciation": "Ban thong tin o dau",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-7",
-          "audioKey": "airport-7"
+          "detailPageID": "viet-phrase-v900-airp-bord-arri-where-is-the-information-desk",
+          "audioKey": "v900-airp-bord-arri-where-is-the-information-desk"
         },
         {
-          "id": "v500-airp-bord-arri-here-is-my-visa",
-          "vietnamese": "Đây là thị thực của tôi",
-          "english": "Here is my visa",
-          "pronunciation": "Day la thi thuc cua toi",
+          "id": "v900-airp-bord-arri-where-can-i-charge-my-phone",
+          "vietnamese": "Tôi có thể sạc điện thoại ở đâu?",
+          "english": "Where can I charge my phone?",
+          "pronunciation": "Toi co the sac dien thoai o dau",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-v500-airp-bord-arri-here-is-my-visa",
-          "audioKey": "v500-airp-bord-arri-here-is-my-visa"
+          "detailPageID": "viet-phrase-v900-airp-bord-arri-where-can-i-charge-my-phone",
+          "audioKey": "v900-airp-bord-arri-where-can-i-charge-my-phone"
         }
       ]
     }

@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when a price changes after the deal was already clear. Keep the receipt, menu, booking, or earlier app price visible so the disagreement stays specific."
+      "body": "Keep the receipt, menu, booking, or earlier app price visible so the disagreement stays specific."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi không đồng ý với mức giá đó, then show the earlier price. Keep the line calm and let the receipt, menu, or app screen carry the detail.",
+      "body": "Start with Tôi không đồng ý với mức giá đó; then point to the location, passport copy, photo, injury, or helper contact if the other person needs context. Say Tôi không đồng ý với mức giá đó, then show the earlier price.",
       "phrases": [
         {
           "id": "v900-emer-safe-i-did-not-agree-to-that-price",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Tôi không + đồng ý với, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another safety or urgent-help need.",
+      "body": "Good next-step cards: Call the police, Call an ambulance, and I lost my passport.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use these when the exchange shifts toward I feel unsafe, this is an emergency, and help!",
       "phrases": [
         {
           "id": "emergency-4",

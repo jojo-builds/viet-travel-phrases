@@ -7,7 +7,7 @@
   "title": "Tôi có thể có một giường phụ không?",
   "englishTitle": "Can I have an extra bed?",
   "pronunciation": "Toi co the co mot giuong phu khong",
-  "summary": "Can I have an extra bed?",
+  "summary": "Ask the front desk for another bed before room setup becomes a late-night problem.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể có một giường phụ không? keeps the question easy to answer. Keep the booking, room number, date, or address visible."
+      "body": "For one more sleeping place, ask before bags are unpacked or the lobby gets busy."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể có một giường phụ không? together as one sentence before adding details. Start with Tôi có thể có một giường phụ không?",
+      "body": "Show the booking or room number while you ask, especially in a busy lobby.",
       "phrases": [
         {
           "id": "v900-hote-acco-can-i-have-an-extra-bed",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Giường phụ is the extra-bed phrase; the rest turns it into a polite yes-or-no request.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Reservation and check-in phrases stay useful when the desk needs to find your booking first.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I have an extra bed. Keep the booking, room number, date, or address visible."
+      "body": "Best at check-in, before luggage is fully upstairs, or as soon as you notice the room setup."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Hotels may answer with a fee, a room change, or a housekeeping wait."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Checkout time, quiet-room, checkout, room-too-hot, and air-con phrases cover the next front-desk turns.",
       "phrases": [
         {
           "id": "hotel-3",

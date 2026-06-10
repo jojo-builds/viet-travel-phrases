@@ -7,7 +7,7 @@
   "title": "Tôi có thể có một phòng cách xa đường phố được không?",
   "englishTitle": "Can I have a room away from the street?",
   "pronunciation": "Toi co the co mot phong cach xa duong pho duoc khong",
-  "summary": "Can I have a room away from the street?",
+  "summary": "For asking the front desk for a quieter room away from road noise.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể có một phòng cách xa đường phố được không? keeps the question easy to answer. Keep the booking, room number, date, or address visible."
+      "body": "Ask before accepting the key if road noise could make the night hard to sleep."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể có một phòng cách xa đường phố được không? together as one sentence before adding details. Start with Tôi có thể có một phòng cách xa đường phố được không?",
+      "body": "Show the booking and mention sleep only if the desk asks why.",
       "phrases": [
         {
           "id": "v900-hote-acco-can-i-have-a-room-away-from-the-street",
@@ -42,50 +42,50 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể asks can I; có một phòng means have a room; cách xa đường phố means away from the street; được không? asks if it is possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể có một",
-          "english": "have a room away from the street",
-          "audioKey": null
+          "vietnamese": "có một phòng",
+          "english": "have a room",
+          "keepTogetherReason": "room-request phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "phòng cách xa",
-          "english": "room away from",
-          "audioKey": null
+          "vietnamese": "cách xa",
+          "english": "away from",
+          "keepTogetherReason": "away-from phrase"
         },
         {
           "id": "chunk-4",
           "vietnamese": "đường phố",
           "english": "the street",
-          "audioKey": null
+          "keepTogetherReason": "street noun"
         },
         {
           "id": "chunk-5",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-6",
+          "id": "full",
           "vietnamese": "Tôi có thể có một phòng cách xa đường phố được không?",
-          "english": "Can I have a room away from the street",
-          "audioKey": null
+          "english": "Can I have a room away from the street?",
+          "audioKey": "v900-hote-acco-can-i-have-a-room-away-from-the-street"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Reservation and check-in cards help the desk find your stay before changing the room.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -122,17 +122,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I have a room away from the street. Keep the booking, room number, date, or address visible."
+      "body": "Good at hotels, guesthouses, and homestays before you unpack or settle in."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Away from the street may mean a rear room, higher floor, or different side of the building."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Checkout, quiet-room, and room-problem cards cover nearby front-desk requests.",
       "phrases": [
         {
           "id": "hotel-3",

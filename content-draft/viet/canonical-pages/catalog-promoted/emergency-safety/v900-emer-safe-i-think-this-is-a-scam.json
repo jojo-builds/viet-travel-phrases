@@ -7,7 +7,7 @@
   "title": "Tôi nghĩ đây là một trò lừa đảo",
   "englishTitle": "I think this is a scam",
   "pronunciation": "Toi nghi day la mot tro lua dao",
-  "summary": "I think this is a scam",
+  "summary": "For naming a suspicious charge, ride, offer, or request when you need staff or police help.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi nghĩ đây là một trò lừa đảo keeps the travel moment short and clear. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Say it calmly with the receipt, chat, price, driver screen, or photo visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi nghĩ đây là một trò lừa đảo together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Keep the claim short. The evidence on your phone or paper should do most of the explaining.",
       "phrases": [
         {
           "id": "v900-emer-safe-i-think-this-is-a-scam",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi nghĩ means I think; đây là means this is; một trò lừa đảo means a scam.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi nghĩ đây",
+          "vietnamese": "Tôi nghĩ",
           "english": "I think",
-          "audioKey": null
+          "keepTogetherReason": "I-think phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là một trò lừa đảo",
-          "english": "a scam",
-          "audioKey": null
+          "vietnamese": "đây là",
+          "english": "this is",
+          "keepTogetherReason": "this-is phrase"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "một trò lừa đảo",
+          "english": "a scam",
+          "keepTogetherReason": "scam phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Tôi nghĩ đây là một trò lừa đảo",
           "english": "I think this is a scam",
-          "audioKey": null
+          "audioKey": "v900-emer-safe-i-think-this-is-a-scam"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another safety or urgent-help need.",
+      "body": "Police, ambulance, and passport cards help when the issue needs an official report or help from staff or authorities.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i think this is a scam. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at hotel desks, shops, stations, police counters, or ride pickup points when something feels dishonest or unsafe."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "If you feel physically unsafe, move to a staffed place and use emergency, police, or help-now phrases instead."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Unsafe, emergency, help, hospital, and passport cards cover more urgent safety paths.",
       "phrases": [
         {
           "id": "emergency-4",

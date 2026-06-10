@@ -19,25 +19,22 @@
   ],
   "tokens": [
     {
+      "id": "chunk-1",
       "vietnamese": "Chuyến tham quan",
-      "english": "tour",
-      "keepTogetherReason": "compound tour noun"
+      "english": "the tour",
+      "keepTogetherReason": "tour phrase"
     },
     {
+      "id": "chunk-2",
       "vietnamese": "bắt đầu",
-      "english": "start / begin",
-      "keepTogetherReason": "compound start verb"
+      "english": "starts",
+      "keepTogetherReason": "starts verb"
     },
     {
-      "id": "chunk-6",
-      "vietnamese": "lúc",
-      "english": "at the time"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "mấy giờ?",
-      "english": "what time",
-      "keepTogetherReason": "fixed time question"
+      "id": "chunk-3",
+      "vietnamese": "lúc mấy giờ?",
+      "english": "at what time?",
+      "keepTogetherReason": "what-time ending"
     },
     {
       "id": "full",

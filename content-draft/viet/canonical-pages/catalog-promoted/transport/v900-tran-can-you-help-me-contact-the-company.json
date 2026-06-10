@@ -7,7 +7,7 @@
   "title": "Bạn có thể giúp tôi liên hệ với công ty được không?",
   "englishTitle": "Can you help me contact the company?",
   "pronunciation": "Ban co the giup toi lien he voi cong ty duoc khong",
-  "summary": "Can you help me contact the company?",
+  "summary": "Ask for help contacting the transport company when a pickup, fare, or booking needs outside confirmation.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể giúp tôi liên hệ với công ty được không? keeps the question easy to answer. Keep the map, address, or destination visible."
+      "body": "For a missing pickup, fare question, or transfer problem, the driver, hotel desk, or station staff may need to call the company for you."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể giúp tôi liên hệ với công ty được không? together as one sentence before adding details. Start with Bạn có thể giúp tôi liên hệ với công ty được không?",
+      "body": "Show the booking, ticket, phone number, or app screen while you ask.",
       "phrases": [
         {
           "id": "v900-tran-can-you-help-me-contact-the-company",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Liên hệ với công ty is the important chunk: contact the company.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "Destination phrases stay nearby in case the fix is simply showing where you need to go.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you help me contact the company. Keep the map, address, or destination visible."
+      "body": "Good when a pickup is missing, a bus company is not answering, or a fare dispute needs the operator."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Give them the phone number or booking code first; it saves a long explanation."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Stop, route, air-con, waiting, and cash phrases are useful if the company call turns back into a ride issue.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

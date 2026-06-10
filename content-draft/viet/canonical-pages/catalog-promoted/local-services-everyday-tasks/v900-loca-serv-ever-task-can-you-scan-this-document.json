@@ -7,7 +7,7 @@
   "title": "Bạn có thể scan tài liệu này được không?",
   "englishTitle": "Can you scan this document?",
   "pronunciation": "Ban co the scan tai lieu nay duoc khong",
-  "summary": "Can you scan this document?",
+  "summary": "Ask a hotel desk, print shop, or office counter to scan a document when a photo is not enough.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể scan tài liệu này được không? asks someone to do one helpful action for you. Use it for scan this document when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Good for forms, receipts, passport copies, insurance papers, or anything that needs a clean file."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể scan tài liệu này được không? together as one sentence before adding details. Start with Bạn có thể scan tài liệu này được không?",
+      "body": "Show the document first, then point to email, USB, or phone if the file needs to go somewhere.",
       "phrases": [
         {
           "id": "v900-loca-serv-ever-task-can-you-scan-this-document",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Scan tài liệu này is scan this document; được không keeps it as a polite request.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another local service need.",
+      "body": "Bag, tissues, and water cards are nearby shop-counter language if the errand continues.",
       "phrases": [
         {
           "id": "store-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you scan this document. Point to the item, menu line, receipt, size, or photo."
+      "body": "Best before leaving a counter where scanning or printing is available."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "They may ask whether you need a PDF, a printout, or an email address."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Open-this, card-payment, and shop-item cards cover other small counter errands.",
       "phrases": [
         {
           "id": "store-4",

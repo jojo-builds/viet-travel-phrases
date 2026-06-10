@@ -20,35 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hành lý",
-      "english": "baggage / luggage",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "Hành lý của tôi",
+      "english": "my luggage",
+      "keepTogetherReason": "my-luggage phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "trong",
-      "english": "inside / in"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "cốp",
-      "english": "trunk"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "xe.",
-      "english": "vehicle"
+      "vietnamese": "ở trong cốp xe.",
+      "english": "is in the trunk.",
+      "keepTogetherReason": "in-the-trunk phrase"
     },
     {
       "id": "full",

@@ -7,7 +7,7 @@
   "title": "Tôi có thể mua sạc dự phòng ở đâu?",
   "englishTitle": "Where can I buy a power bank?",
   "pronunciation": "Toi co the mua sac du phong o dau",
-  "summary": "Where can I buy a power bank?",
+  "summary": "For finding a portable battery before your phone dies during a ride, tour, or long walk.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể mua sạc dự phòng ở đâu? keeps the direction question short. Keep the phone screen or error message visible."
+      "body": "Ask with your low-battery screen visible. Staff may point to a phone shop, mini-mart, mall floor, or charger shelf."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể mua sạc dự phòng ở đâu? together as one sentence before adding details. Say Tôi có thể mua sạc dự phòng ở đâu?",
+      "body": "Show a photo of a power bank if the word does not land. The answer is usually a nearby shop or shelf, not a long explanation.",
       "phrases": [
         {
           "id": "v900-phon-inte-powe-where-can-i-buy-a-power-bank",
@@ -42,44 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể mua asks where can I buy; sạc dự phòng means power bank; ở đâu asks where.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể mua",
+          "english": "where can I buy",
+          "keepTogetherReason": "can-I-buy question frame"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể mua sạc",
-          "english": "buy",
-          "audioKey": null
+          "vietnamese": "sạc dự phòng",
+          "english": "power bank",
+          "keepTogetherReason": "power-bank phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "dự phòng",
-          "english": "room",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
-          "vietnamese": "ở đâu",
+          "vietnamese": "ở đâu?",
           "english": "where?",
-          "audioKey": null
+          "keepTogetherReason": "where ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Tôi có thể mua sạc dự phòng ở đâu?",
-          "english": "Where can I buy a power bank",
-          "audioKey": null
+          "english": "Where can I buy a power bank?",
+          "audioKey": "v900-phon-inte-powe-where-can-i-buy-a-power-bank"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another phone, internet, or power need.",
+      "body": "Wi-Fi-password and SIM-card cards help if the same shop can solve more than battery.",
       "phrases": [
         {
           "id": "phone-1",
@@ -116,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits SIM shop, cafe, hotel lobby, airport desk, or charging moment, especially when buy a power bank can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Good at cafes, hotels, SIM shops, malls, airports, convenience stores, and tour stops when battery matters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+      "body": "Check cable type and charging speed before paying; the cheapest battery may not help your phone in time."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Dead-battery, charger, charge-here, Wi-Fi, and SIM cards cover the rest of the phone-and-power problem.",
       "phrases": [
         {
           "id": "phone-3",

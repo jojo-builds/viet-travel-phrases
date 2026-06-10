@@ -7,7 +7,7 @@
   "title": "Đây không phải là nơi tôi muốn nói",
   "englishTitle": "This is not the place I meant",
   "pronunciation": "Day khong phai la noi toi muon noi",
-  "summary": "This is not the place I meant",
+  "summary": "Tell a driver or helper the current spot is not the place you meant before the route mistake gets bigger.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đây không phải là nơi tôi muốn nói names the need before the details start piling up. Keep the map, address, or destination visible."
+      "body": "Good when the map pin, entrance, hotel branch, or pickup point does not match what you intended."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Đây không phải là nơi tôi muốn nói together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Show the correct place immediately so the fix is visual, not an argument.",
       "phrases": [
         {
           "id": "v900-tran-this-is-not-the-place-i-meant",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Không phải là nơi tôi muốn nói is the not-the-place-I-meant core.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "Take-me-here, District 1, and stop-here cards help reset the destination.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is this is not the place I meant. Keep the map, address, or destination visible."
+      "body": "Best as soon as the wrong place becomes obvious, before getting out or paying."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Keep the tone practical. Point to the correct pin, address, or booking name."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Stop-here, this-way, and air-con cards cover the ride after the location is corrected.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

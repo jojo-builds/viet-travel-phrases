@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đi taxi mất bao lâu? keeps the travel moment short and clear. Keep the map, address, or destination visible."
+      "body": "Đi taxi mất bao lâu?"
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Đi taxi mất bao lâu? together as one sentence before adding details. Start with Đi taxi mất bao lâu?",
+      "body": "Ask with the destination visible. The answer may be a time range, traffic warning, or better route.",
       "phrases": [
         {
           "id": "v900-dire-navi-how-long-does-it-take-by-taxi",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Start with Đi taxi + mất bao lâu; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -65,7 +65,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another directions need.",
+      "body": "Useful if the exchange continues: Excuse me, how do I get there, Is it near here, and How long does it take on foot.",
       "phrases": [
         {
           "id": "directions-1",
@@ -102,7 +102,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is how long does it take by taxi. Keep the map, address, or destination visible."
+      "body": "Best with a map, at a street corner, or at a ticket counter, before the explanation gets long. Keep the map location, address, station name, or sign close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -112,7 +112,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Useful if the exchange continues: Where do I turn left, Should I turn right, and Should I go straight.",
       "phrases": [
         {
           "id": "directions-4",

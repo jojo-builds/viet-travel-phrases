@@ -21,18 +21,20 @@
     {
       "id": "chunk-1",
       "vietnamese": "tôi",
-      "english": "I / me"
+      "english": "I",
+      "keepTogetherReason": "I pronoun"
     },
     {
       "id": "chunk-2",
       "vietnamese": "rất",
-      "english": "very"
+      "english": "very",
+      "keepTogetherReason": "very intensifier"
     },
     {
       "id": "chunk-3",
       "vietnamese": "xin lỗi",
       "english": "sorry",
-      "keepTogetherReason": "fixed polite phrase"
+      "keepTogetherReason": "sorry phrase"
     },
     {
       "id": "full",

@@ -4,10 +4,10 @@
   "phraseID": "v900-hote-acco-can-you-put-us-in-nearby-rooms",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Bạn có thể đưa chúng tôi vào phòng gần đó được không?",
+  "title": "Bạn có thể xếp phòng gần nhau cho chúng tôi không?",
   "englishTitle": "Can you put us in nearby rooms?",
-  "pronunciation": "Ban co the dua chung toi vao phong gan do duoc khong",
-  "summary": "Can you put us in nearby rooms?",
+  "pronunciation": "Ban co the xep phong gan nhau cho chung toi khong",
+  "summary": "A hotel check-in phrase for families or friends who want rooms close enough to coordinate.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -15,34 +15,34 @@
     "v900-hote-acco-can-you-put-us-in-nearby-rooms",
     "premium"
   ],
-  "audioKey": "v900-hote-acco-can-you-put-us-in-nearby-rooms",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể đưa chúng tôi vào phòng gần đó được không? asks someone to do one helpful action for you. Use it for put us in nearby rooms when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Use this before room keys are assigned; after check-in, it becomes a room-change request."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể đưa chúng tôi vào phòng gần đó được không? together as one sentence before adding details. Start with Bạn có thể đưa chúng tôi vào phòng gần đó được không?",
+      "body": "Show both bookings or names. The request is easier when the desk can see which rooms belong together.",
       "phrases": [
         {
           "id": "v900-hote-acco-can-you-put-us-in-nearby-rooms",
-          "vietnamese": "Bạn có thể đưa chúng tôi vào phòng gần đó được không?",
+          "vietnamese": "Bạn có thể xếp phòng gần nhau cho chúng tôi không?",
           "english": "Can you put us in nearby rooms?",
-          "pronunciation": "Ban co the dua chung toi vao phong gan do duoc khong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Ban co the xep phong gan nhau cho chung toi khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "purple",
           "detailPageID": null,
-          "audioKey": "v900-hote-acco-can-you-put-us-in-nearby-rooms"
+          "audioKey": "audio-authored-ban-co-the-xep-phong-gan-nhau-cho-chung-toi-khong-5ab359fa02"
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; xếp phòng gần nhau is arrange rooms near each other; cho chúng tôi means for us.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -52,31 +52,25 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đưa chúng tôi",
-          "english": "put us in nearby rooms",
+          "vietnamese": "xếp phòng gần nhau",
+          "english": "arrange nearby rooms",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "vào phòng gần",
-          "english": "near",
+          "vietnamese": "cho chúng tôi",
+          "english": "for us",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "đó",
-          "english": "that one / that",
+          "vietnamese": "không?",
+          "english": "can you?",
           "audioKey": null
         },
         {
           "id": "chunk-5",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-6",
-          "vietnamese": "Bạn có thể đưa chúng tôi vào phòng gần đó được không?",
+          "vietnamese": "Bạn có thể xếp phòng gần nhau cho chúng tôi không?",
           "english": "Can you put us in nearby rooms",
           "audioKey": null
         }
@@ -85,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Keep reservation and check-in phrases nearby because the staff may ask which bookings belong together.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -122,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you put us in nearby rooms. Keep the booking, room number, date, or address visible."
+      "body": "Best before the room cards are printed. If the rooms are already assigned, ask to change rooms instead."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Nearby may mean same floor, same hallway, or adjacent rooms. If exact next-door rooms matter, show that with your fingers or booking notes."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "If they cannot place you together, these help with checkout timing, a quiet-room request, or later checkout.",
       "phrases": [
         {
           "id": "hotel-3",
@@ -190,13 +184,13 @@
   "examples": [
     {
       "id": "v900-hote-acco-can-you-put-us-in-nearby-rooms",
-      "vietnamese": "Bạn có thể đưa chúng tôi vào phòng gần đó được không?",
+      "vietnamese": "Bạn có thể xếp phòng gần nhau cho chúng tôi không?",
       "english": "Can you put us in nearby rooms?",
-      "pronunciation": "Ban co the dua chung toi vao phong gan do duoc khong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Ban co the xep phong gan nhau cho chung toi khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "purple",
       "detailPageID": null,
-      "audioKey": "v900-hote-acco-can-you-put-us-in-nearby-rooms"
+      "audioKey": null
     }
   ]
 }

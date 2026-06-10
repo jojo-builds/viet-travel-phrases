@@ -7,7 +7,7 @@
   "title": "Có giảm giá cho sinh viên không?",
   "englishTitle": "Is there a student discount?",
   "pronunciation": "Co giam gia cho sinh vien khong",
-  "summary": "Is there a student discount?",
+  "summary": "For asking about a student discount before buying a ticket, class, tour, transport fare, or museum entry.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có giảm giá cho sinh viên không? keeps the question easy to answer. Keep the booking, room number, date, or address visible."
+      "body": "The student ID is the proof; show it before the price is finalized."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Có giảm giá cho sinh viên không? together as one sentence before adding details. Say Có giảm giá cho sinh viên không?",
+      "body": "Show the card or student app while you ask. The answer may depend on the ticket type or local rules.",
       "phrases": [
         {
           "id": "v900-time-date-book-is-there-a-student-discount",
@@ -42,38 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có asks is there; giảm giá means discount; cho sinh viên means for students; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Có giảm giá",
-          "english": "price / money",
-          "audioKey": null
+          "vietnamese": "Có",
+          "english": "is there",
+          "keepTogetherReason": "is-there question opener"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cho sinh viên",
-          "english": "a student discount",
-          "audioKey": null
+          "vietnamese": "giảm giá",
+          "english": "discount",
+          "keepTogetherReason": "discount phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "cho sinh viên",
+          "english": "for students",
+          "keepTogetherReason": "student phrase"
         },
         {
           "id": "chunk-4",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
+        },
+        {
+          "id": "full",
           "vietnamese": "Có giảm giá cho sinh viên không?",
-          "english": "Is there a student discount",
-          "audioKey": null
+          "english": "Is there a student discount?",
+          "audioKey": "v900-time-date-book-is-there-a-student-discount"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "What-time, today, and tomorrow-morning phrases help if the discount depends on the session.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,67 +116,67 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is is there a student discount. Keep the booking, room number, date, or address visible."
+      "body": "Good at museums, attractions, cinemas, tours, classes, buses, and ticket counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "Some discounts are only for local schools or certain ages. Ask before paying, not after the receipt is printed."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "After the discount answer, you may need the ticket price, one ticket, today's date, a refund question, or the scan point.",
       "phrases": [
         {
-          "id": "time-4",
-          "vietnamese": "Tôi có đặt chỗ",
-          "english": "I have a booking",
-          "pronunciation": "toy koh dat choh",
+          "id": "sight-1",
+          "vietnamese": "Vé bao nhiêu?",
+          "english": "How much is the ticket?",
+          "pronunciation": "veh bao nyew",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-time-4",
-          "audioKey": "time-4"
+          "tintName": "purple",
+          "detailPageID": "viet-family-sight-ticket",
+          "audioKey": "sight-1"
         },
         {
-          "id": "time-5",
-          "vietnamese": "Mấy giờ mở cửa?",
-          "english": "What time does it open?",
-          "pronunciation": "may zyuh muh koo-ah",
+          "id": "v500-time-date-book-one-ticket-please",
+          "vietnamese": "Xin một vé",
+          "english": "One ticket, please",
+          "pronunciation": "Xin mot ve",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-time-5",
-          "audioKey": "time-5"
+          "detailPageID": "viet-family-v500-time-date-book-one-ticket-please",
+          "audioKey": "v500-time-date-book-one-ticket-please"
         },
         {
-          "id": "time-6",
-          "vietnamese": "Dời lại muộn hơn được không?",
-          "english": "Can we move it later?",
-          "pronunciation": "zoy lie moon hun dook khong",
+          "id": "v900-time-date-book-is-this-ticket-for-today",
+          "vietnamese": "Đây có phải là vé cho ngày hôm nay không?",
+          "english": "Is this ticket for today?",
+          "pronunciation": "Day co phai la ve cho ngay hom nay khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-time-6",
-          "audioKey": "time-6"
+          "detailPageID": "viet-phrase-v900-time-date-book-is-this-ticket-for-today",
+          "audioKey": "v900-time-date-book-is-this-ticket-for-today"
         },
         {
-          "id": "time-7",
-          "vietnamese": "Mấy giờ bắt đầu lên máy bay?",
-          "english": "What time does boarding start?",
-          "pronunciation": "may zyuh bat dow len mai bai",
+          "id": "v900-time-date-book-can-i-get-a-ticket-refund",
+          "vietnamese": "Tôi có thể được hoàn tiền vé không?",
+          "english": "Can I get a ticket refund?",
+          "pronunciation": "Toi co the duoc hoan tien ve khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-time-7",
-          "audioKey": "time-7"
+          "detailPageID": "viet-phrase-v900-time-date-book-can-i-get-a-ticket-refund",
+          "audioKey": "v900-time-date-book-can-i-get-a-ticket-refund"
         },
         {
-          "id": "v500-time-date-book-is-there-a-wait",
-          "vietnamese": "Có chờ đợi không?",
-          "english": "Is there a wait?",
-          "pronunciation": "Co cho doi khong",
+          "id": "v900-time-date-book-where-do-i-scan-the-ticket",
+          "vietnamese": "Tôi quét vé ở đâu?",
+          "english": "Where do I scan the ticket?",
+          "pronunciation": "Toi quet ve o dau",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-v500-time-date-book-is-there-a-wait",
-          "audioKey": "v500-time-date-book-is-there-a-wait"
+          "detailPageID": "viet-phrase-v900-time-date-book-where-do-i-scan-the-ticket",
+          "audioKey": "v900-time-date-book-where-do-i-scan-the-ticket"
         }
       ]
     }

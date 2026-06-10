@@ -4,10 +4,10 @@
   "phraseID": "v900-hote-acco-can-i-have-a-hair-dryer",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Tôi có thể có máy sấy tóc được không?",
+  "title": "Tôi có thể mượn máy sấy tóc được không?",
   "englishTitle": "Can I have a hair dryer?",
-  "pronunciation": "Toi co the co may say toc duoc khong",
-  "summary": "Can I have a hair dryer?",
+  "pronunciation": "Toi co the muon may say toc duoc khong",
+  "summary": "For asking the hotel or homestay front desk to lend you a hair dryer for the room.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -15,71 +15,67 @@
     "v900-hote-acco-can-i-have-a-hair-dryer",
     "premium"
   ],
-  "audioKey": "v900-hote-acco-can-i-have-a-hair-dryer",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể có máy sấy tóc được không? keeps the question easy to answer. Keep the booking, room number, date, or address visible."
+      "body": "Ask with your room number or key card ready. Staff may send one up or hand it over at the desk.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể có máy sấy tóc được không? together as one sentence before adding details. Start with Tôi có thể có máy sấy tóc được không?",
+      "body": "Name the item, then show the room number if they need it. Keep the request small and practical.",
       "phrases": [
         {
           "id": "v900-hote-acco-can-i-have-a-hair-dryer",
-          "vietnamese": "Tôi có thể có máy sấy tóc được không?",
+          "vietnamese": "Tôi có thể mượn máy sấy tóc được không?",
           "english": "Can I have a hair dryer?",
-          "pronunciation": "Toi co the co may say toc duoc khong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Toi co the muon may say toc duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "purple",
           "detailPageID": null,
-          "audioKey": "v900-hote-acco-can-i-have-a-hair-dryer"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể mượn means can I borrow; máy sấy tóc means hair dryer; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể mượn",
+          "english": "can I borrow",
+          "keepTogetherReason": "borrow request"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể có máy",
-          "english": "can have the device",
-          "audioKey": null
+          "vietnamese": "máy sấy tóc",
+          "english": "hair dryer",
+          "keepTogetherReason": "hair-dryer phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "sấy tóc",
-          "english": "a hair dryer",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
-          "vietnamese": "Tôi có thể có máy sấy tóc được không?",
-          "english": "Can I have a hair dryer",
+          "id": "full",
+          "vietnamese": "Tôi có thể mượn máy sấy tóc được không?",
+          "english": "Can I have a hair dryer?",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Water, towel, air-conditioning, room-fix, and checkout cards cover the hotel requests that often sit nearby.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -116,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I have a hair dryer. Keep the booking, room number, date, or address visible."
+      "body": "Hotels, guesthouses, serviced apartments, homestays, and hostels are the right places to ask for this item.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Some rooms keep dryers at reception. If staff ask for a deposit or room number, keep the key card visible.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to drinking water, towel, air-conditioner, room repair, or late-checkout cards if the desk exchange continues.",
       "phrases": [
         {
           "id": "hotel-3",
@@ -184,13 +182,13 @@
   "examples": [
     {
       "id": "v900-hote-acco-can-i-have-a-hair-dryer",
-      "vietnamese": "Tôi có thể có máy sấy tóc được không?",
+      "vietnamese": "Tôi có thể mượn máy sấy tóc được không?",
       "english": "Can I have a hair dryer?",
-      "pronunciation": "Toi co the co may say toc duoc khong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Toi co the muon may say toc duoc khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "purple",
       "detailPageID": null,
-      "audioKey": "v900-hote-acco-can-i-have-a-hair-dryer"
+      "audioKey": null
     }
   ]
 }

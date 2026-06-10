@@ -7,7 +7,7 @@
   "title": "Trang đăng nhập Wi-Fi không tải.",
   "englishTitle": "The Wi-Fi login page is not loading.",
   "pronunciation": "Trang dang nhap Wi-Fi khong tai",
-  "summary": "The Wi-Fi login page is not loading.",
+  "summary": "For showing staff that the Wi-Fi sign-in page will not open on your phone.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use Trang đăng nhập Wi-Fi không tải. for \"The Wi-Fi login page is not loading.\". Trang đăng nhập Wi-Fi không tải."
+      "body": "Open the stuck screen before you ask. The problem is the sign-in page, not the password yet."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Trang đăng nhập Wi-Fi không tải. for \"The Wi-Fi login page is not loading.\". Keep the phone screen or error message visible.",
+      "body": "Say the line and show the blank, spinning, or error screen. Let staff tap the network name if they offer.",
       "phrases": [
         {
           "id": "phone-premium-login-page-not-loading",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Trang đăng nhập Wi-Fi means Wi-Fi login page; không tải means does not load.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Trang đăng nhập",
-          "english": "pay",
-          "audioKey": null
+          "vietnamese": "Trang đăng nhập Wi-Fi",
+          "english": "Wi-Fi login page",
+          "keepTogetherReason": "Wi-Fi login-page phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "Wi-Fi không tải",
-          "english": "yes/no question",
-          "audioKey": null
+          "vietnamese": "không tải.",
+          "english": "does not load",
+          "keepTogetherReason": "does-not-load phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Trang đăng nhập Wi-Fi không tải.",
-          "english": "The Wi-Fi login page is not loading",
-          "audioKey": null
+          "english": "The Wi-Fi login page is not loading.",
+          "audioKey": "phone-premium-login-page-not-loading"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another phone, internet, or power need.",
+      "body": "Wi-Fi password, common Wi-Fi, and SIM-card phrases cover the nearby connection setup path.",
       "phrases": [
         {
           "id": "phone-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when \"The Wi-Fi login page is not loading.\" Keep the phone screen or error message visible."
+      "body": "Good at hotels, cafes, coworking spaces, airports, buses, and shops with a captive Wi-Fi page."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Phone and Wi-Fi answers can be technical. Let the screen stay visible so the other person can point, type, or check the setting."
+      "body": "If the page opens later, the next question is usually the password or verification code."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Battery, charger, charging-point, data-top-up, and eSIM phrases cover the phone problems that can look similar.",
       "phrases": [
         {
           "id": "phone-3",

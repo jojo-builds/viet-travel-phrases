@@ -7,7 +7,7 @@
   "title": "Tôi có thể chụp ảnh ở đây được không?",
   "englishTitle": "Can I take a photo here?",
   "pronunciation": "Toi co the chup anh o day duoc khong",
-  "summary": "Can I take a photo here?",
+  "summary": "For checking photo rules before raising your camera at a temple, museum, shop, or viewpoint.",
   "iconName": "camera.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể chụp ảnh ở đây được không? keeps the question easy to answer. Keep the relevant place, item, or screen visible."
+      "body": "Ask before taking the shot when signs are unclear or staff are nearby."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể chụp ảnh ở đây được không? together as one sentence before adding details. Start with Tôi có thể chụp ảnh ở đây được không?",
+      "body": "Gesture lightly toward your phone or camera, say the phrase, then wait for yes, no, or a pointed boundary.",
       "phrases": [
         {
           "id": "v900-sigh-acti-can-i-take-a-photo-here",
@@ -42,132 +42,86 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể asks can I; chụp ảnh means take a photo; ở đây được không asks if it is allowed here.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I question frame"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể chụp ảnh",
-          "english": "take a photo here",
-          "audioKey": null
+          "vietnamese": "chụp ảnh",
+          "english": "take a photo",
+          "keepTogetherReason": "take-photo phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "ở đây",
-          "english": "here",
-          "audioKey": null
+          "vietnamese": "ở đây được không?",
+          "english": "is it allowed here?",
+          "keepTogetherReason": "allowed-here question"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Tôi có thể chụp ảnh ở đây được không?",
-          "english": "Can I take a photo here",
-          "audioKey": null
+          "english": "Can I take a photo here?",
+          "audioKey": "v900-sigh-acti-can-i-take-a-photo-here"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another sightseeing or activities need.",
+      "body": "Photography allowed, what to avoid, and included in ticket phrases cover nearby permission checks.",
       "phrases": [
         {
-          "id": "sight-1",
-          "vietnamese": "Vé bao nhiêu?",
-          "english": "How much is the ticket?",
-          "pronunciation": "veh bao nyew",
+          "id": "v900-sigh-acti-is-photography-allowed",
+          "vietnamese": "Có được phép chụp ảnh không?",
+          "english": "Is photography allowed?",
+          "pronunciation": "Co duoc phep chup anh khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-sight-1",
-          "audioKey": "sight-1"
+          "detailPageID": "viet-phrase-v900-sigh-acti-is-photography-allowed",
+          "audioKey": "v900-sigh-acti-is-photography-allowed"
         },
         {
-          "id": "sight-2",
-          "vietnamese": "Bắt đầu ở đâu?",
-          "english": "Where do we start?",
-          "pronunciation": "bat dow uh dow",
+          "id": "v500-sigh-acti-what-should-i-avoid",
+          "vietnamese": "Tôi nên tránh những gì?",
+          "english": "What should I avoid?",
+          "pronunciation": "Toi nen tranh nhung gi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-sight-2",
-          "audioKey": "sight-2"
+          "detailPageID": "viet-phrase-v500-sigh-acti-what-should-i-avoid",
+          "audioKey": "v500-sigh-acti-what-should-i-avoid"
         },
         {
-          "id": "sight-3",
-          "vietnamese": "Tôi chụp hình ở đây được không?",
-          "english": "Can I take photos here?",
-          "pronunciation": "toy choop hinh uh day dook khong",
+          "id": "v900-sigh-acti-is-this-included-in-the-ticket",
+          "vietnamese": "Cái này có bao gồm trong vé không?",
+          "english": "Is this included in the ticket?",
+          "pronunciation": "Cai nay co bao gom trong ve khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-sight-3",
-          "audioKey": "sight-3"
+          "detailPageID": "viet-phrase-v900-sigh-acti-is-this-included-in-the-ticket",
+          "audioKey": "v900-sigh-acti-is-this-included-in-the-ticket"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I take a photo here. Keep the relevant place, item, or screen visible."
+      "body": "Good at temples, museums, ticketed attractions, workshops, markets, and places where people may not want photos."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "A small nod or crossed-arm gesture may be the answer. Respect that first before asking for detail."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Entrance, exit, less crowded, safe at night, and written name phrases help when the visit continues.",
       "phrases": [
-        {
-          "id": "sight-4",
-          "vietnamese": "Mấy giờ đóng cửa?",
-          "english": "What time does it close?",
-          "pronunciation": "may zyuh dong koo-ah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
-          "detailPageID": "viet-phrase-sight-4",
-          "audioKey": "sight-4"
-        },
-        {
-          "id": "sight-5",
-          "vietnamese": "Điểm gặp ở đâu?",
-          "english": "Where is the meeting point?",
-          "pronunciation": "deeym gap uh dow",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
-          "detailPageID": "viet-phrase-sight-5",
-          "audioKey": "sight-5"
-        },
-        {
-          "id": "sight-6",
-          "vietnamese": "Tôi cần đặt trước không?",
-          "english": "Do I need to book in advance?",
-          "pronunciation": "toy gun dat chooc khong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
-          "detailPageID": "viet-phrase-sight-6",
-          "audioKey": "sight-6"
-        },
-        {
-          "id": "v500-sigh-acti-i-have-a-tour-booking",
-          "vietnamese": "Tôi có đặt tour",
-          "english": "I have a tour booking",
-          "pronunciation": "toy koh dat tour",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
-          "detailPageID": "viet-phrase-v500-sigh-acti-i-have-a-tour-booking",
-          "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
-        },
         {
           "id": "v500-sigh-acti-where-is-the-entrance",
           "vietnamese": "Lối vào ở đâu?",
@@ -177,6 +131,46 @@
           "tintName": "purple",
           "detailPageID": "viet-phrase-v500-sigh-acti-where-is-the-entrance",
           "audioKey": "v500-sigh-acti-where-is-the-entrance"
+        },
+        {
+          "id": "v500-sigh-acti-where-is-the-exit",
+          "vietnamese": "Lối ra ở đâu?",
+          "english": "Where is the exit?",
+          "pronunciation": "Loi ra o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v500-sigh-acti-where-is-the-exit",
+          "audioKey": "v500-sigh-acti-where-is-the-exit"
+        },
+        {
+          "id": "v900-sigh-acti-where-is-less-crowded",
+          "vietnamese": "Nơi nào ít đông đúc hơn?",
+          "english": "Where is less crowded?",
+          "pronunciation": "Noi nao it dong duc hon",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v900-sigh-acti-where-is-less-crowded",
+          "audioKey": "v900-sigh-acti-where-is-less-crowded"
+        },
+        {
+          "id": "v900-sigh-acti-is-this-area-safe-at-night",
+          "vietnamese": "Khu vực này có an toàn vào ban đêm không?",
+          "english": "Is this area safe at night?",
+          "pronunciation": "Khu vuc nay co an toan vao ban dem khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v900-sigh-acti-is-this-area-safe-at-night",
+          "audioKey": "v900-sigh-acti-is-this-area-safe-at-night"
+        },
+        {
+          "id": "v900-sigh-acti-can-you-write-the-name-for-me",
+          "vietnamese": "Bạn có thể viết tên cho tôi được không?",
+          "english": "Can you write the name for me?",
+          "pronunciation": "Ban co the viet ten cho toi duoc khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v900-sigh-acti-can-you-write-the-name-for-me",
+          "audioKey": "v900-sigh-acti-can-you-write-the-name-for-me"
         }
       ]
     }

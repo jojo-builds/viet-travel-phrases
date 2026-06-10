@@ -21,27 +21,20 @@
     {
       "id": "chunk-1",
       "vietnamese": "Hãy",
-      "english": "please do"
+      "english": "please / do",
+      "keepTogetherReason": "request marker"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "lái",
-      "english": "drive"
+      "vietnamese": "lái xe",
+      "english": "drive",
+      "keepTogetherReason": "drive phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "xe",
-      "english": "vehicle"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "cẩn",
-      "english": "careful"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "thận",
-      "english": "careful / kidney"
+      "vietnamese": "cẩn thận",
+      "english": "carefully",
+      "keepTogetherReason": "carefully phrase"
     },
     {
       "id": "full",

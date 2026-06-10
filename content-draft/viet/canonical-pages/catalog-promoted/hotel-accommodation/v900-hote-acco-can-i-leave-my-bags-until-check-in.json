@@ -7,7 +7,7 @@
   "title": "Tôi có thể để lại hành lý của mình cho đến khi nhận phòng không?",
   "englishTitle": "Can I leave my bags until check-in?",
   "pronunciation": "Toi co the de lai hanh ly cua minh cho den khi nhan phong khong",
-  "summary": "Can I leave my bags until check-in?",
+  "summary": "For asking the front desk to hold your bags before the room is ready.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể để lại hành lý của mình cho đến khi nhận phòng không? keeps the question easy to answer. Keep the booking, room number, date, or address visible."
+      "body": "Ask before dragging luggage around the lobby. Keep the booking name and check-in time ready."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể để lại hành lý của mình cho đến khi nhận phòng không? together as one sentence before adding details. Start with Tôi có thể để lại hành lý của mình cho đến khi nhận phòng không?",
+      "body": "Point to the bags while you ask. Staff may offer a luggage room, tag, pickup time, or different counter.",
       "phrases": [
         {
           "id": "v900-hote-acco-can-i-leave-my-bags-until-check-in",
@@ -42,56 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể asks can I; để lại hành lý means leave luggage; cho đến khi nhận phòng means until check-in; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể để lại",
-          "english": "my bags until check-in",
-          "audioKey": null
+          "vietnamese": "để lại hành lý của mình",
+          "english": "leave my luggage",
+          "keepTogetherReason": "leave-luggage phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "hành lý của",
-          "english": "luggage",
-          "audioKey": null
+          "vietnamese": "cho đến khi nhận phòng",
+          "english": "until check-in",
+          "keepTogetherReason": "until-check-in phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "mình cho đến",
-          "english": "to / arrive at",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-5",
-          "vietnamese": "khi nhận phòng",
-          "english": "room",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-6",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-7",
+          "id": "full",
           "vietnamese": "Tôi có thể để lại hành lý của mình cho đến khi nhận phòng không?",
-          "english": "Can I leave my bags until check-in",
-          "audioKey": null
+          "english": "Can I leave my bags until check-in?",
+          "audioKey": "v900-hote-acco-can-i-leave-my-bags-until-check-in"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Reservation, check-in, and polite check-in cards help if the desk needs to find the stay first.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -128,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I leave my bags until check-in. Keep the booking, room number, date, or address visible."
+      "body": "Hotel desks, guesthouse counters, hostels, and apartment check-in offices are the natural places to ask."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Ask whether the bags need a tag and when the desk closes, especially before a long walk or tour."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Checkout-time, quiet-room, checkout, hot-room, and air-conditioner cards cover nearby front-desk needs.",
       "phrases": [
         {
           "id": "hotel-3",

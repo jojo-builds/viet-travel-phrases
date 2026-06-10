@@ -7,7 +7,7 @@
   "title": "Điện thoại của tôi đã bị đánh cắp.",
   "englishTitle": "My phone was stolen.",
   "pronunciation": "Dien thoai cua toi da bi danh cap",
-  "summary": "My phone was stolen.",
+  "summary": "For saying your phone was stolen and moving quickly toward help or a report.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Điện thoại của tôi đã bị đánh cắp. names the problem so staff or a helpful local can act on it. Use it when My phone was stolen is the clearest way to explain what changed, went missing, or needs attention."
+      "body": "Use a borrowed phone, hotel desk, police desk, or staff counter. Show any device details you still have."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Điện thoại của tôi đã bị đánh cắp. calmly and show the proof if you have it: phone screen, address, document, visible problem, or nearby staff member. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Say the line once, then add where it happened, the phone model, and whether tracking is still available.",
       "phrases": [
         {
           "id": "emergency-premium-phone-stolen",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Điện thoại của tôi means my phone; đã bị đánh cắp means was stolen.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Điện thoại của",
-          "english": "go / move",
-          "audioKey": null
+          "vietnamese": "Điện thoại của tôi",
+          "english": "my phone",
+          "keepTogetherReason": "owned-phone phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tôi đã bị đánh cắp",
-          "english": "I was / I got",
-          "audioKey": null
+          "vietnamese": "đã bị đánh cắp.",
+          "english": "was stolen.",
+          "keepTogetherReason": "stolen phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Điện thoại của tôi đã bị đánh cắp.",
-          "english": "My phone was stolen",
-          "audioKey": null
+          "english": "My phone was stolen.",
+          "audioKey": "emergency-premium-phone-stolen"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another safety or urgent-help need.",
+      "body": "Police, ambulance, and passport-loss cards cover more serious escalation.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as soon as the problem is clear enough to name. It is especially useful at a counter or desk where someone can look at the photo, receipt, bag, booking, or phone screen with you."
+      "body": "This belongs with police, hotel staff, venue security, or someone helping you call your carrier or bank."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "If the phone had payment apps or cards, ask for help contacting the bank after the report starts."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Unsafe, emergency, help, hospital, and stolen-bag cards cover nearby safety steps.",
       "phrases": [
         {
           "id": "emergency-4",

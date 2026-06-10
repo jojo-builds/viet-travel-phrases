@@ -124,7 +124,7 @@
           "english": "Iced tea, please"
         }
       ],
-      "atGlance": "This is the short drink row behind the Bún chả Hương Liên pilot. It keeps the table flow moving after the main dish is understood.",
+      "atGlance": "Cho tôi trà đá is the short table line after the main dish is understood. It keeps the drink request easy at a casual restaurant.",
       "quickSay": "Say it while pointing to the drink list or glass. Cho tôi keeps the request direct without turning it into a long sentence.",
       "breakdownBody": "Cho tôi is the useful ordering frame. Trà đá is iced tea, a common cold-table drink in casual restaurant moments.",
       "useItWithTitle": "Table add-on",
@@ -282,7 +282,7 @@
       "atGlance": "This gives the Phở Bát Đàn page a real order sentence after the restaurant name has done its job.",
       "quickSay": "Say it while pointing at pho on the menu. If staff ask a follow-up, listen for beef, chicken, big, or small.",
       "breakdownBody": "Một tô is the bowl-size frame. It pairs naturally with pho and other soup/noodle dishes.",
-      "useItWithTitle": "Likely follow-up",
+      "useItWithTitle": "Useful next phrases",
       "useItWith": "After this phrase, the next useful question may be about size, beef/chicken, herbs, or payment.",
       "whenToUse": "Use it at a pho counter or table when you already know what you want and need the order taken quickly.",
       "goodToKnow": "Pho shops may ask short follow-up questions. Keep your phone or menu open and answer with pointing if the words come fast.",
@@ -582,7 +582,7 @@
           "english": "What is in this dish?"
         }
       ],
-      "atGlance": "This is the compact ingredient question behind the dish model. It keeps food pages useful for travelers who cannot read every menu word yet.",
+      "atGlance": "This is the compact ingredient question behind the dish model. It helps when the menu words are still unfamiliar.",
       "quickSay": "Point to the dish and ask the short question. Listen for the first ingredient word, then use a diet or allergy phrase if needed.",
       "breakdownBody": "Món này means this dish. Có gì asks what it has, which is enough to invite a simple ingredient answer.",
       "useItWithTitle": "Ingredient check",
@@ -2302,13 +2302,13 @@
           "english": "Go to Ba Na Hills"
         }
       ],
-      "atGlance": "This is the clipped Ba Na Hills route identity from the pilot. Keep it as a label, then use the fuller driver sentence when speaking.",
-      "quickSay": "Use this when search, a map label, or a quick route note needs the old title shape. For a driver, move to Cho tôi đi Bà Nà Hills.",
+      "atGlance": "Đi Bà Nà Hills is a clipped route label. Keep it for search or map recognition; use Cho tôi đi Bà Nà Hills with a driver.",
+      "quickSay": "Use this for search, a map label, or a quick route note. With a driver, use Cho tôi đi Bà Nà Hills.",
       "breakdownBody": "Đi marks the route action. Bà Nà Hills is the destination name.",
-      "useItWithTitle": "Title-preserving row",
-      "useItWith": "Use it when preserving the existing page identity matters, especially before a future import replaces the visible quick-say card.",
+      "useItWithTitle": "Pair With A Fuller Driver Line",
+      "useItWith": "Pair it with Cho tôi đi Bà Nà Hills when someone needs the actual request, not just the route label.",
       "whenToUse": "Use it as a compact label, not as the only sentence in a driver exchange.",
-      "goodToKnow": "The fuller sentence is warmer and clearer for a driver. This row keeps the old title from disappearing.",
+      "goodToKnow": "The fuller sentence is warmer and clearer for a driver. This short label is still useful when the place name is already understood.",
       "exploreNextBody": "Go next to the full driver sentence, address-confirm, cable-car, and taxi-return pages.",
       "rationale": "Required by EP-012 so the future title-preserving import keeps Đi Bà Nà Hills while linking the full driver sentence.",
       "relatedPhraseIDs": [
@@ -2574,7 +2574,7 @@
           "english": "Where is Linh Ung Pagoda?"
         }
       ],
-      "atGlance": "This is the specific-stop question for the Sơn Trà pilot. It moves from the peninsula name to the pagoda visitors usually need to find.",
+      "atGlance": "Use this when Sơn Trà is too broad and the helper needs the exact pagoda stop.",
       "quickSay": "Say it with the place card visible. The question is useful at a curb, parking area, hotel desk, or viewpoint turnoff.",
       "breakdownBody": "Chùa Linh Ứng is the pagoda name. Ở đâu asks where it is.",
       "useItWithTitle": "Specific stop",
@@ -2642,7 +2642,7 @@
           "english": "Where is Ba Na Hills?"
         }
       ],
-      "atGlance": "This is the location question for the Ba Na Hills pilot. It is useful before the cable-car step or a ride handoff.",
+      "atGlance": "Use this before the cable-car step or a ride handoff, when Ba Na Hills is the place name you need located.",
       "quickSay": "Say it while showing the place card. If the helper starts explaining the route, keep the map visible.",
       "breakdownBody": "Bà Nà Hills is the attraction name. Ở đâu asks where it is.",
       "useItWithTitle": "Route check",
@@ -2714,7 +2714,7 @@
           "english": "Can you show me?"
         }
       ],
-      "atGlance": "This is the respectful show-me row behind the Nguyễn Văn Linh pilot. It asks for pointing, not a long spoken explanation.",
+      "atGlance": "Use this respectful show-me line when a map or address needs pointing rather than a long spoken explanation.",
       "quickSay": "Say it while holding the map or address open. The relationship pair keeps the request polite with an adult helper.",
       "breakdownBody": "Anh/chị addresses the helper respectfully. Chỉ giúp tôi asks them to show or point for you.",
       "useItWithTitle": "Point instead",
@@ -2766,7 +2766,7 @@
         "speak English anh",
         "English help"
       ],
-      "context": "Use this with a man or older male-presenting helper when English may solve the next step.",
+      "context": "Choose this with an older man or male helper when English may solve the next step.",
       "youMayHear": "Có / Một chút.",
       "chunks": [
         {
@@ -2786,13 +2786,13 @@
           "english": "Do you speak English?"
         }
       ],
-      "atGlance": "This is the male-address version behind the respectful hello pilot. It asks for English help after the greeting opens the exchange.",
-      "quickSay": "Use it after Dạ, chào anh or Chào anh if the next step needs English. Keep your phone or booking visible.",
+      "atGlance": "This male-address version fits after a respectful hello when English would solve the next step.",
+      "quickSay": "Ask after Da, chao anh or Chao anh, then show the phone, booking, address, or word you need help with.",
       "breakdownBody": "Anh sets the respectful address. Nói tiếng Anh asks about speaking English.",
       "useItWithTitle": "After hello",
-      "useItWith": "Use it when a man or older male-presenting helper is the person you are asking.",
-      "whenToUse": "Use it at hotel desks, counters, rides, or help moments where English would make the next step clearer.",
-      "goodToKnow": "If the person says một chút, keep your next English sentence short and show the screen.",
+      "useItWith": "Choose it when the helper is an older man and the relationship word anh feels natural.",
+      "whenToUse": "At hotel desks, counters, rides, or help moments, English can make the next step clearer.",
+      "goodToKnow": "If the person says mot chut, keep your next English sentence short and show the screen.",
       "exploreNextBody": "Go next to the neutral English-help phrase, respectful hello, simple hello, and repeat-that pages.",
       "rationale": "Required by EP-020 because the pilot visible row uses anh, not the neutral anh/chị form.",
       "relatedPhraseIDs": [

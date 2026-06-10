@@ -7,7 +7,7 @@
   "title": "Tôi bị đau họng",
   "englishTitle": "I have a sore throat",
   "pronunciation": "Toi bi dau hong",
-  "summary": "I have a sore throat",
+  "summary": "For telling a pharmacy, clinic, hotel desk, or helper that your throat hurts.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi bị đau họng names the need before the details start piling up. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Name the symptom first. Add fever, cough, medicine allergies, or timing only if they ask."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi bị đau họng together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Show a translated note or point to your throat. Pharmacy staff may offer lozenges, spray, or ask about fever.",
       "phrases": [
         {
           "id": "v900-heal-phar-i-have-a-sore-throat",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi bị means I have; đau họng means a sore throat.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi bị",
-          "english": "I have / got",
-          "audioKey": null
+          "english": "I have",
+          "keepTogetherReason": "symptom opener"
         },
         {
           "id": "chunk-2",
           "vietnamese": "đau họng",
-          "english": "sore throat",
-          "audioKey": null
+          "english": "a sore throat",
+          "keepTogetherReason": "sore-throat phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi bị đau họng",
           "english": "I have a sore throat",
-          "audioKey": null
+          "audioKey": "v900-heal-phar-i-have-a-sore-throat"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Doctor, pharmacy, and nearest-pharmacy cards help if you need a place rather than a symptom line.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i have a sore throat. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Pharmacies, clinics, hotel desks, and travel helpers are the natural places for this symptom line."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "Short symptom phrases are easier at a counter. Keep any medicine package or allergy note visible."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Headache, stomach pain, motion-sickness medicine, allergy, and diarrhea cards cover nearby health needs.",
       "phrases": [
         {
           "id": "health-2",

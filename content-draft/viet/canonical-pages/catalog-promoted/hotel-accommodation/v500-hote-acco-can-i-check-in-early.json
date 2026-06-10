@@ -7,7 +7,7 @@
   "title": "Tôi có thể nhận phòng sớm được không?",
   "englishTitle": "Can I check in early?",
   "pronunciation": "Toi co the nhan phong som duoc khong",
-  "summary": "Can I check in early?",
+  "summary": "For asking the front desk whether the room can be ready before normal check-in.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể nhận phòng sớm được không? keeps the question easy to answer. Keep the booking, room number, date, or address visible."
+      "body": "Ask before luggage, waiting time, or a tired arrival gets awkward. Keep the booking name and passport handy."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể nhận phòng sớm được không? together as one sentence before adding details. Start with Tôi có thể nhận phòng sớm được không?",
+      "body": "Show the booking screen while you ask. The answer may be yes, a fee, a wait time, or luggage storage.",
       "phrases": [
         {
           "id": "v500-hote-acco-can-i-check-in-early",
@@ -42,44 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể asks can I; nhận phòng means check in; sớm means early; được không asks if it is possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể nhận phòng",
-          "english": "room",
-          "audioKey": null
+          "vietnamese": "nhận phòng",
+          "english": "check in",
+          "keepTogetherReason": "hotel check-in phrase"
         },
         {
           "id": "chunk-3",
           "vietnamese": "sớm",
-          "english": "check in early",
-          "audioKey": null
+          "english": "early",
+          "keepTogetherReason": "time adverb"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Tôi có thể nhận phòng sớm được không?",
-          "english": "Can I check in early",
-          "audioKey": null
+          "english": "Can I check in early?",
+          "audioKey": "v500-hote-acco-can-i-check-in-early"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Reservation, check-in, and polite check-in cards help if the desk needs to look up the stay.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I check in early. Keep the booking, room number, date, or address visible."
+      "body": "Front desks and guesthouse counters are the right place to ask before normal check-in time."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Early check-in often depends on housekeeping. If the room is not ready, ask where to leave luggage."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Checkout-time, quiet-room, checkout, hot-room, and air-conditioner cards cover the next front-desk needs.",
       "phrases": [
         {
           "id": "hotel-3",

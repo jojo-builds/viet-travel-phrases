@@ -7,7 +7,7 @@
   "title": "Hôm nay bạn có sẵn thứ gì không?",
   "englishTitle": "Do you have anything available today?",
   "pronunciation": "Hom nay ban co san thu gi khong",
-  "summary": "Do you have anything available today?",
+  "summary": "Ask whether there is any same-day opening for a table, room, appointment, seat, or tour.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hôm nay bạn có sẵn thứ gì không? keeps the question easy to answer. Keep the booking, room number, date, or address visible."
+      "body": "Good when you are flexible but need something today, not a specific perfect slot."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Hôm nay bạn có sẵn thứ gì không? together as one sentence before adding details. Say Hôm nay bạn có sẵn thứ gì không?",
+      "body": "Give party size, service, or time window after they answer yes.",
       "phrases": [
         {
           "id": "v900-time-date-book-do-you-have-anything-available-today",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hôm nay is today; có sẵn asks if anything is available.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "Time, today, and tomorrow-morning cards help narrow the offer.",
       "phrases": [
         {
           "id": "time-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is do you have anything available today. Keep the booking, room number, date, or address visible."
+      "body": "Best at desks and counters where staff can scan open slots quickly."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "They may offer a different time, a waitlist, or a smaller option."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Booking, opening-time, and move-it-later cards help once an available time appears.",
       "phrases": [
         {
           "id": "time-4",

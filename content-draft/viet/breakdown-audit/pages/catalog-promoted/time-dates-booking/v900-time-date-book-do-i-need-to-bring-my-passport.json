@@ -20,39 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có cần",
+      "english": "do I need",
+      "keepTogetherReason": "do-I-need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "mang theo",
+      "english": "bring",
+      "keepTogetherReason": "bring-with phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "cần",
-      "english": "need"
+      "vietnamese": "hộ chiếu",
+      "english": "passport",
+      "keepTogetherReason": "passport noun"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "mang",
-      "english": "bring / carry"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "theo",
-      "english": "follow"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "hộ chiếu",
-      "english": "passport",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

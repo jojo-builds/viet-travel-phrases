@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cho tôi thêm khăn keeps the travel moment short and clear. Use this for a straightforward front-desk request for more room supplies.",
+      "body": "Use this for a straightforward front-desk request for more room supplies.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Cho tôi asks to give me; thêm means more; the final words name the specific supply.",
       "breakdown": [
         {
           "id": "hotel-6-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Cho tôi thêm khăn together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Say Cho tôi thêm khăn first; let the booking, room number, address, or key card support the reply.",
       "phrases": [
         {
           "id": "hotel-6",
@@ -78,7 +78,7 @@
     {
       "id": "natural-variations",
       "title": "Natural variations",
-      "body": "This form changes the tone or setting. Use it when the note under the phrase matches the moment.",
+      "body": "Choose can I have more toilet paper? when that wording fits the person or setting better.",
       "phrases": [
         {
           "id": "hotel-more-supplies-paper",
@@ -97,7 +97,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. Keep the booking, room number, date, or address visible.",
+      "body": "Supply requests are simple if the item is named clearly. Keep the room number or missing item visible.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -105,7 +105,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "Keep the booking, room number, date, or address visible.",
+      "body": "Expect a handoff, housekeeping visit, wait time, or question about how many you need.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -144,7 +144,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this for a straightforward front-desk request for more room supplies. Keep the booking, room number, date, or address visible.",
+      "body": "Use it for towels, toilet paper, water, soap, or room basics that should be easy to replace.",
       "phrases": [
         {
           "id": "hotel-checkout",
@@ -220,7 +220,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through I have a reservation; I’d like to check in; what time is check-out?",
       "phrases": [
         {
           "id": "hotel-1",

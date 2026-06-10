@@ -20,19 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "I need",
+      "keepTogetherReason": "I-need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "đại sứ quán",
       "english": "embassy",
-      "keepTogetherReason": "compound place term"
+      "keepTogetherReason": "embassy noun"
     },
     {
       "id": "full",

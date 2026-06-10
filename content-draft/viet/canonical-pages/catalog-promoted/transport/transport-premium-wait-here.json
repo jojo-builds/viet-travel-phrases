@@ -7,7 +7,7 @@
   "title": "Xin hãy đợi ở đây, tôi đang tới.",
   "englishTitle": "Please wait here, I am coming.",
   "pronunciation": "Xin hay doi o day toi dang toi",
-  "summary": "Please wait here, I am coming.",
+  "summary": "For asking a driver or pickup contact to stay put while you walk toward them.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use Xin hãy đợi ở đây, tôi đang tới. for \"Please wait here, I am coming.\". Xin hãy đợi ở đây, tôi đang tới."
+      "body": "Send or show it when the driver is nearby but you still need a minute to reach the car, bike, gate, or curb.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Xin hãy đợi ở đây, tôi đang tới. for \"Please wait here, I am coming.\". Keep the map, address, or destination visible.",
+      "body": "Keep the pickup point, plate, or chat open. The sentence works best with a small wave or map location so they know where to wait.",
       "phrases": [
         {
           "id": "transport-premium-wait-here",
@@ -42,32 +43,39 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Xin hãy đợi means please wait; ở đây means here; tôi đang tới means I am coming.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Xin hãy đợi",
-          "english": "please / ask",
-          "audioKey": null
+          "english": "please wait",
+          "keepTogetherReason": "please-wait phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "ở đây, tôi đang tới",
-          "english": "wait here, I am coming",
-          "audioKey": null
+          "vietnamese": "ở đây,",
+          "english": "here,",
+          "keepTogetherReason": "here phrase"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "tôi đang tới.",
+          "english": "I am coming.",
+          "keepTogetherReason": "I-am-coming phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Xin hãy đợi ở đây, tôi đang tới.",
-          "english": "Please wait here, I am coming",
-          "audioKey": null
+          "english": "Please wait here, I am coming.",
+          "audioKey": "transport-premium-wait-here"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "Take-me-here, District-1, and stop-here cards cover the normal taxi direction sequence.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when \"Please wait here, I am coming.\" Keep the map, address, or destination visible."
+      "body": "Good at airports, hotels, bus stations, ferry piers, cafes, and crowded pickup lanes where moving early can break the meet-up.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "If traffic rules prevent stopping, switch to a pickup-point or call-driver phrase instead of repeating this one.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Stop-here, go-this-way, air-conditioning, fare, and meter cards cover the ride once you meet.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

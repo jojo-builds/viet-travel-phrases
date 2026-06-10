@@ -7,7 +7,7 @@
   "title": "Cái này bị hỏng",
   "englishTitle": "This one is damaged",
   "pronunciation": "Cai nay bi hong",
-  "summary": "This one is damaged",
+  "summary": "For showing a damaged item before asking what can be done.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cái này bị hỏng names the problem so staff or a helpful local can act on it. Use it when This one is damaged is the clearest way to explain what changed, went missing, or needs attention."
+      "body": "The problem is visible, so point to the crack, tear, stain, dent, or missing part."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Cái này bị hỏng calmly and show the proof if you have it: item, shelf, photo, size, color, price tag, or calculator. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Say the line calmly and show the item or photo. Keep the receipt or rental form ready if money is involved.",
       "phrases": [
         {
           "id": "v900-shop-this-one-is-damaged",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Cái này means this one; bị hỏng means is damaged or broken.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Cái này",
           "english": "this one",
-          "audioKey": null
+          "keepTogetherReason": "this-one phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "bị hỏng",
           "english": "is damaged",
-          "audioKey": null
+          "keepTogetherReason": "damaged phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Cái này bị hỏng",
           "english": "This one is damaged",
-          "audioKey": null
+          "audioKey": "v900-shop-this-one-is-damaged"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another shopping need.",
+      "body": "Size, color, and try-on phrases stay useful if the next step is replacing the item.",
       "phrases": [
         {
           "id": "shop-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as soon as the problem is clear enough to name. It is especially useful at a counter or desk where someone can look at the photo, receipt, bag, booking, or phone screen with you."
+      "body": "Good before paying, returning an item, checking a rental, or reporting something found in the room."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "Show the damaged spot first, then ask about exchange, refund, or repair."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Looking, pay-where, exchange, price, and lower-price phrases cover nearby shop decisions.",
       "phrases": [
         {
           "id": "shop-4",

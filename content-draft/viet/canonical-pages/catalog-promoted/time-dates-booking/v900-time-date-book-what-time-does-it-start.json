@@ -7,7 +7,7 @@
   "title": "Nó bắt đầu lúc mấy giờ?",
   "englishTitle": "What time does it start?",
   "pronunciation": "No bat dau luc may gio",
-  "summary": "What time does it start?",
+  "summary": "For confirming the start time of a booking, class, tour, appointment, show, or pickup.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Nó bắt đầu lúc mấy giờ? is for confirming the time or date before you commit. It helps turn What time does it start into one clear answer you can check against a ticket, booking, calendar, or meeting point."
+      "body": "Ask while the ticket, booking, calendar, message thread, or address is visible.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Nó bắt đầu lúc mấy giờ? together as one sentence before adding details. Start with Nó bắt đầu lúc mấy giờ?",
+      "body": "Get the time first, then confirm the place if the event has multiple entrances or meeting points.",
       "phrases": [
         {
           "id": "v900-time-date-book-what-time-does-it-start",
@@ -42,38 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Nó bắt đầu means it starts; lúc mấy giờ asks at what time.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Nó bắt đầu",
           "english": "it starts",
-          "audioKey": null
+          "keepTogetherReason": "it-starts phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "lúc",
-          "english": "at the time",
-          "audioKey": null
+          "vietnamese": "lúc mấy giờ?",
+          "english": "at what time?",
+          "keepTogetherReason": "what-time ending"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "mấy giờ",
-          "english": "asks what time",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Nó bắt đầu lúc mấy giờ?",
-          "english": "What time does it start",
-          "audioKey": null
+          "english": "What time does it start?",
+          "audioKey": "v900-time-date-book-what-time-does-it-start"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "What-time, today, and tomorrow-morning cards help when the start time changes the plan.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is what time does it start. Keep the booking, room number, date, or address visible."
+      "body": "Good for tours, buses, ferries, appointments, classes, events, rentals, and timed entries.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "If the answer includes a range, ask whether that is arrival time, start time, or pickup time.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Booking, opening-time, move-it-later, boarding-time, and wait-list cards cover the scheduling follow-up.",
       "phrases": [
         {
           "id": "time-4",

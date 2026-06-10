@@ -4,10 +4,10 @@
   "phraseID": "v900-loca-serv-ever-task-can-we-sit-somewhere-quieter",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Chúng ta có thể ngồi chỗ nào yên tĩnh hơn được không?",
+  "title": "Chúng tôi có thể ngồi chỗ nào yên tĩnh hơn được không?",
   "englishTitle": "Can we sit somewhere quieter?",
-  "pronunciation": "Chung ta co the ngoi cho nao yen tinh hon duoc khong",
-  "summary": "Can we sit somewhere quieter?",
+  "pronunciation": "Chung toi co the ngoi cho nao yen tinh hon duoc khong",
+  "summary": "For asking staff to move to a quieter table or waiting spot.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -15,168 +15,167 @@
     "v900-loca-serv-ever-task-can-we-sit-somewhere-quieter",
     "premium"
   ],
-  "audioKey": "v900-loca-serv-ever-task-can-we-sit-somewhere-quieter",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Chúng ta có thể ngồi chỗ nào yên tĩnh hơn được không? keeps the question easy to answer. Point to the item, menu line, receipt, size, or photo."
+      "body": "Ask while pointing gently toward another table, corner, or area away from music or street noise."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Chúng ta có thể ngồi chỗ nào yên tĩnh hơn được không? together as one sentence before adding details. Say Chúng ta có thể ngồi chỗ nào yên tĩnh hơn được không?",
+      "body": "Keep your tone calm; the request is about hearing each other, not complaining.",
       "phrases": [
         {
           "id": "v900-loca-serv-ever-task-can-we-sit-somewhere-quieter",
-          "vietnamese": "Chúng ta có thể ngồi chỗ nào yên tĩnh hơn được không?",
+          "vietnamese": "Chúng tôi có thể ngồi chỗ nào yên tĩnh hơn được không?",
           "english": "Can we sit somewhere quieter?",
-          "pronunciation": "Chung ta co the ngoi cho nao yen tinh hon duoc khong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Chung toi co the ngoi cho nao yen tinh hon duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "teal",
           "detailPageID": null,
-          "audioKey": "v900-loca-serv-ever-task-can-we-sit-somewhere-quieter"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Chúng tôi có thể asks can we; ngồi means sit; chỗ nào yên tĩnh hơn means somewhere quieter; được không? asks if possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Chúng ta có",
+          "vietnamese": "Chúng tôi có thể",
           "english": "can we",
-          "audioKey": null
+          "keepTogetherReason": "can-we phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể ngồi chỗ",
-          "english": "call",
-          "audioKey": null
+          "vietnamese": "ngồi",
+          "english": "sit"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "nào yên tĩnh hơn",
+          "vietnamese": "chỗ nào yên tĩnh hơn",
           "english": "somewhere quieter",
-          "audioKey": null
+          "keepTogetherReason": "quieter-place phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
+          "vietnamese": "được không?",
           "english": "is it possible?",
-          "audioKey": null
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-5",
-          "vietnamese": "Chúng ta có thể ngồi chỗ nào yên tĩnh hơn được không?",
-          "english": "Can we sit somewhere quieter",
-          "audioKey": null
+          "id": "full",
+          "vietnamese": "Chúng tôi có thể ngồi chỗ nào yên tĩnh hơn được không?",
+          "english": "Can we sit somewhere quieter?",
+          "audioKey": "v900-loca-serv-ever-task-can-we-sit-somewhere-quieter"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another local service need.",
+      "body": "Inside, outside, and fan-seat phrases cover nearby seating choices.",
       "phrases": [
         {
-          "id": "store-1",
-          "vietnamese": "Cho tôi chai nước",
-          "english": "A bottle of water please",
-          "pronunciation": "cho toy chai nook",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-1",
-          "audioKey": "store-1"
+          "id": "v900-food-drin-can-we-sit-inside",
+          "vietnamese": "Chúng tôi có thể ngồi bên trong được không?",
+          "english": "Can we sit inside?",
+          "pronunciation": "Chung toi co the ngoi ben trong duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-we-sit-inside",
+          "audioKey": null
         },
         {
-          "id": "store-2",
-          "vietnamese": "Có túi không?",
-          "english": "Do you have a bag?",
-          "pronunciation": "koh too-ee khong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-2",
-          "audioKey": "store-2"
+          "id": "v900-food-drin-can-we-sit-outside",
+          "vietnamese": "Chúng tôi có thể ngồi bên ngoài được không?",
+          "english": "Can we sit outside?",
+          "pronunciation": "Chung toi co the ngoi ben ngoai duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-we-sit-outside",
+          "audioKey": null
         },
         {
-          "id": "store-3",
-          "vietnamese": "Cho tôi khăn giấy",
-          "english": "Tissues please",
-          "pronunciation": "cho toy khan zai",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-3",
-          "audioKey": "store-3"
+          "id": "v900-food-drin-can-we-sit-by-the-fan",
+          "vietnamese": "Chúng tôi có thể ngồi cạnh quạt được không?",
+          "english": "Can we sit by the fan?",
+          "pronunciation": "Chung toi co the ngoi canh quat duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-we-sit-by-the-fan",
+          "audioKey": null
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can we sit somewhere quieter. Point to the item, menu line, receipt, size, or photo."
+      "body": "Good at cafes, restaurants, lounges, waiting rooms, and hotel breakfast areas."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Service counters often answer with numbers or times. Ask the short question first, then use a write-it-down phrase if needed."
+      "body": "If staff cannot move you, they may point to a waiting area or quieter time."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Table request, wait time, fan seat, cooler seat, and clean table phrases cover the seating conversation around it.",
       "phrases": [
         {
-          "id": "store-4",
-          "vietnamese": "Ở đâu có kem chống nắng?",
-          "english": "Where is the sunscreen?",
-          "pronunciation": "uh dow koh kem chong nang",
+          "id": "v900-food-drin-a-table-for-one-please",
+          "vietnamese": "Vui lòng cho một bàn",
+          "english": "A table for one, please",
+          "pronunciation": "Vui long cho mot ban",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-4",
-          "audioKey": "store-4"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-a-table-for-one-please",
+          "audioKey": "v900-food-drin-a-table-for-one-please"
         },
         {
-          "id": "store-5",
-          "vietnamese": "Mở cái này giúp tôi",
-          "english": "Please open this for me",
-          "pronunciation": "muh gai nai zoop toy",
+          "id": "v900-food-drin-a-table-for-four-please",
+          "vietnamese": "Vui lòng cho một bàn cho bốn người",
+          "english": "A table for four, please",
+          "pronunciation": "Vui long cho mot ban cho bon nguoi",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-5",
-          "audioKey": "store-5"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-a-table-for-four-please",
+          "audioKey": "v900-food-drin-a-table-for-four-please"
         },
         {
-          "id": "store-6",
-          "vietnamese": "Tôi quẹt thẻ được không?",
-          "english": "Can I pay by card?",
-          "pronunciation": "toy quet teh dook khong",
+          "id": "v900-food-drin-is-there-a-wait-for-a-table",
+          "vietnamese": "Có phải đợi bàn không?",
+          "english": "Is there a wait for a table?",
+          "pronunciation": "Co phai doi ban khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-6",
-          "audioKey": "store-6"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-is-there-a-wait-for-a-table",
+          "audioKey": "v900-food-drin-is-there-a-wait-for-a-table"
         },
         {
-          "id": "store-7",
-          "vietnamese": "Cho tôi hóa đơn",
-          "english": "Please give me the receipt",
-          "pronunciation": "cho toy hwa dun",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-loca-serv-ever-task-can-we-sit-somewhere-cooler",
+          "vietnamese": "Chúng tôi có thể ngồi chỗ nào mát hơn được không?",
+          "english": "Can we sit somewhere cooler?",
+          "pronunciation": "Chung toi co the ngoi cho nao mat hon duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-store-7",
-          "audioKey": "store-7"
+          "detailPageID": "viet-phrase-v900-loca-serv-ever-task-can-we-sit-somewhere-cooler",
+          "audioKey": null
         },
         {
-          "id": "service-8",
-          "vietnamese": "In cái này được không?",
-          "english": "Can I print this?",
-          "pronunciation": "in gai nai dook khong",
+          "id": "v900-food-drin-can-you-clean-this-table",
+          "vietnamese": "Bạn có thể lau cái bàn này được không?",
+          "english": "Can you clean this table?",
+          "pronunciation": "Ban co the lau cai ban nay duoc khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-service-8",
-          "audioKey": "service-8"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-you-clean-this-table",
+          "audioKey": "v900-food-drin-can-you-clean-this-table"
         }
       ]
     }
@@ -184,13 +183,13 @@
   "examples": [
     {
       "id": "v900-loca-serv-ever-task-can-we-sit-somewhere-quieter",
-      "vietnamese": "Chúng ta có thể ngồi chỗ nào yên tĩnh hơn được không?",
+      "vietnamese": "Chúng tôi có thể ngồi chỗ nào yên tĩnh hơn được không?",
       "english": "Can we sit somewhere quieter?",
-      "pronunciation": "Chung ta co the ngoi cho nao yen tinh hon duoc khong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Chung toi co the ngoi cho nao yen tinh hon duoc khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "teal",
       "detailPageID": null,
-      "audioKey": "v900-loca-serv-ever-task-can-we-sit-somewhere-quieter"
+      "audioKey": null
     }
   ]
 }

@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi thử cái này được không? keeps the question easy to answer. This comes before you take an item into the fitting room. This keeps the shopping moment functional and short.",
+      "body": "Tôi thử cái này được không? works before the exchange turns into a longer explanation.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Listen for Tôi first, then let không? carry the question ending.",
       "breakdown": [
         {
           "id": "shop-3-piece-1",
@@ -71,7 +71,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Ask while the item, size, receipt, price tag, or photo is still visible, then pause before adding more words.",
       "phrases": [
         {
           "id": "shop-3",
@@ -90,7 +90,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. The reply may be unclear.",
+      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. Keep the item, size, receipt, price tag, or photo ready so the other person can act on the same detail.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -98,7 +98,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a yes/no answer, a gesture toward the item, or short alternative. Say Tôi thử cái này được không?",
+      "body": "Watch for a yes/no answer, a gesture toward the item, or short alternative. Say Tôi thử cái này được không?",
       "phrases": [
         {
           "id": "shop-1",
@@ -137,7 +137,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This comes before you take an item into the fitting room. The reply may be a yes/no answer, a gesture toward the item, or short alternative.",
+      "body": "This comes before you take an item into the fitting room. Watch for a yes/no answer, a gesture toward the item, or short alternative.",
       "phrases": [
         {
           "id": "shop-5",
@@ -203,7 +203,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Keep the conversation close to I want this size; do you have another color?; I’m just looking.",
       "phrases": [
         {
           "id": "shop-1",

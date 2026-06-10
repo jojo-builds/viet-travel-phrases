@@ -20,55 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi đã bị tính phí",
+      "english": "I was charged",
+      "keepTogetherReason": "was-charged phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đã",
-      "english": "already / did"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "bị tính",
-      "english": "was charged",
-      "keepTogetherReason": "fixed payment phrase"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "phí",
-      "english": "fee"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "thứ",
-      "english": "thing"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "mà",
-      "english": "that / but"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "tôi",
-      "english": "I (second subject)"
-    },
-    {
-      "id": "chunk-9",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-10",
-      "vietnamese": "sử dụng",
-      "english": "use",
-      "keepTogetherReason": "compound verb"
+      "vietnamese": "cho thứ mà tôi không sử dụng",
+      "english": "for something I did not use",
+      "keepTogetherReason": "unused-item phrase"
     },
     {
       "id": "full",

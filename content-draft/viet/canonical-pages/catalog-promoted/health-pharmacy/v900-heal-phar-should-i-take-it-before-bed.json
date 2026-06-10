@@ -4,10 +4,10 @@
   "phraseID": "v900-heal-phar-should-i-take-it-before-bed",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Tôi có nên dùng nó trước khi đi ngủ không?",
+  "title": "Tôi có nên uống thuốc này trước khi đi ngủ không?",
   "englishTitle": "Should I take it before bed?",
-  "pronunciation": "Toi co nen dung no truoc khi di ngu khong",
-  "summary": "Should I take it before bed?",
+  "pronunciation": "Toi co nen uong thuoc nay truoc khi di ngu khong",
+  "summary": "For checking bedtime timing on a medicine before you take it.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -15,62 +15,65 @@
     "v900-heal-phar-should-i-take-it-before-bed",
     "premium"
   ],
-  "audioKey": "v900-heal-phar-should-i-take-it-before-bed",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có nên dùng nó trước khi đi ngủ không? keeps the question easy to answer. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Ask while the medicine is in view, especially if sleepiness, food, or timing matters."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có nên dùng nó trước khi đi ngủ không? together as one sentence before adding details. Say Tôi có nên dùng nó trước khi đi ngủ không?",
+      "body": "Show the box or blister pack. Let the answer be morning, night, after food, or not before bed.",
       "phrases": [
         {
           "id": "v900-heal-phar-should-i-take-it-before-bed",
-          "vietnamese": "Tôi có nên dùng nó trước khi đi ngủ không?",
+          "vietnamese": "Tôi có nên uống thuốc này trước khi đi ngủ không?",
           "english": "Should I take it before bed?",
-          "pronunciation": "Toi co nen dung no truoc khi di ngu khong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Toi co nen uong thuoc nay truoc khi di ngu khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
           "detailPageID": null,
-          "audioKey": "v900-heal-phar-should-i-take-it-before-bed"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có nên asks should; uống thuốc này means take this medicine; trước khi đi ngủ means before bed.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Tôi có nên",
+          "english": "should I",
+          "keepTogetherReason": "advice question frame",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nên dùng nó",
-          "english": "should take it",
+          "vietnamese": "uống thuốc này",
+          "english": "take this medicine",
+          "keepTogetherReason": "medicine-taking phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "trước khi đi ngủ",
           "english": "before bed",
+          "keepTogetherReason": "bedtime phrase",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "không?",
+          "english": "yes/no?",
           "audioKey": null
         },
         {
           "id": "chunk-5",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-6",
-          "vietnamese": "Tôi có nên dùng nó trước khi đi ngủ không?",
+          "vietnamese": "Tôi có nên uống thuốc này trước khi đi ngủ không?",
           "english": "Should I take it before bed",
           "audioKey": null
         }
@@ -79,7 +82,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "If timing is unclear, ask with food, before bed, will this make me sleepy, or when should I come back.",
       "phrases": [
         {
           "id": "problems-6",
@@ -116,17 +119,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is should I take it before bed. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at pharmacies, clinics, hotel desks, or any counter where someone is explaining dosage."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "A written schedule helps. Point to morning, afternoon, or night if the answer gets too fast."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use food, sleepy, alcohol, dosage, or come-back follow-ups if the instructions still need checking.",
       "phrases": [
         {
           "id": "health-2",
@@ -184,13 +187,13 @@
   "examples": [
     {
       "id": "v900-heal-phar-should-i-take-it-before-bed",
-      "vietnamese": "Tôi có nên dùng nó trước khi đi ngủ không?",
+      "vietnamese": "Tôi có nên uống thuốc này trước khi đi ngủ không?",
       "english": "Should I take it before bed?",
-      "pronunciation": "Toi co nen dung no truoc khi di ngu khong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Toi co nen uong thuoc nay truoc khi di ngu khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "red",
       "detailPageID": null,
-      "audioKey": "v900-heal-phar-should-i-take-it-before-bed"
+      "audioKey": null
     }
   ]
 }

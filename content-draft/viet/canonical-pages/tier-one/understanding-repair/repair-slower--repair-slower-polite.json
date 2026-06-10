@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when someone is willing to help but the pace is too fast to follow.",
+      "body": "Nói chậm giúp tôi được không? belongs in any moment where speech is not landing, with the word, screen, address, or written note close by.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Say this when you want them to slow down, not repeat the whole conversation.",
+      "body": "Keep the word, screen, address, or written note visible so the reply can be a point, number, or short correction.",
       "phrases": [
         {
           "id": "repair-slower-polite",
@@ -45,7 +45,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Say the main request in one piece, then pause after không? for the yes-or-no answer.",
       "breakdown": [
         {
           "id": "viet-phrase-repair-slower-polite-breakdown-piece-1",
@@ -84,7 +84,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "Giúp tôi được không? makes the request gentler than a bare command. It works well when you still want to keep trying in Vietnamese.",
+      "body": "The answer usually comes as slower speech, a written word, pointing, or a repeat. Giúp tôi được không?",
       "phrases": [
         {
           "id": "problems-3",

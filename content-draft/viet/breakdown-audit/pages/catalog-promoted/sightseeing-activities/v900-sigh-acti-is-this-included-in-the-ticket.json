@@ -20,43 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Cái",
-      "english": "item / classifier"
+      "vietnamese": "Cái này",
+      "english": "this item",
+      "keepTogetherReason": "visible item"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "này",
-      "english": "this"
+      "vietnamese": "có bao gồm",
+      "english": "is included",
+      "keepTogetherReason": "included phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "trong vé",
+      "english": "in the ticket",
+      "keepTogetherReason": "ticket phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "bao",
-      "english": "how / cover"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "gồm",
-      "english": "include"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "trong",
-      "english": "inside / in"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "vé",
-      "english": "ticket"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

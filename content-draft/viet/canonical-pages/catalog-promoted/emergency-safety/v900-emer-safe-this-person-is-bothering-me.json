@@ -7,7 +7,7 @@
   "title": "Người này đang làm phiền tôi",
   "englishTitle": "This person is bothering me",
   "pronunciation": "Nguoi nay dang lam phien toi",
-  "summary": "This person is bothering me",
+  "summary": "For telling staff, security, or police that one specific person is creating a problem right now.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Người này đang làm phiền tôi names the need before the details start piling up. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Say it when pointing, stepping closer to staff, or showing a location makes the situation clear."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Người này đang làm phiền tôi together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Keep the sentence direct. Point to the person or move beside staff instead of adding a long explanation.",
       "phrases": [
         {
           "id": "v900-emer-safe-this-person-is-bothering-me",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Người này means this person; đang marks what is happening now; làm phiền tôi means bothering me.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Người này đang",
-          "english": "this person is",
-          "audioKey": null
+          "vietnamese": "Người này",
+          "english": "this person",
+          "keepTogetherReason": "person phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "làm phiền tôi",
-          "english": "fee",
-          "audioKey": null
+          "vietnamese": "đang",
+          "english": "is / currently",
+          "keepTogetherReason": "current-action marker"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "làm phiền tôi",
+          "english": "bothering me",
+          "keepTogetherReason": "bothering-me phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Người này đang làm phiền tôi",
           "english": "This person is bothering me",
-          "audioKey": null
+          "audioKey": "v900-emer-safe-this-person-is-bothering-me"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another safety or urgent-help need.",
+      "body": "Police, ambulance, passport, and unsafe cards are nearby if the situation needs a stronger next step.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is this person is bothering me. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at hotels, bars, stations, markets, rides, event entrances, and police counters when you need another person to intervene."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "A calm, short line helps staff act. If you feel unsafe, move to the unsafe or emergency card immediately."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to unsafe, emergency, help, hospital, or stolen-bag cards if the problem escalates or needs official help.",
       "phrases": [
         {
           "id": "emergency-4",

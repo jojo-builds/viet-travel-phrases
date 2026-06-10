@@ -7,7 +7,7 @@
   "title": "Có túi không?",
   "englishTitle": "Do you have a bag?",
   "pronunciation": "koh too-ee khong",
-  "summary": "This helps in stores, markets, and takeaway counters.",
+  "summary": "For asking for a bag before the counter, market stall, or takeaway handoff is finished.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có túi không? keeps the question easy to answer. Reach for it when the item needs a bag or you forgot to ask at checkout. This helps in stores, markets, and takeaway counters.",
+      "body": "Ask while the item is still visible and before the receipt or food handoff closes the exchange.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Có asks whether they have it; túi is the bag; không? makes it a yes-or-no question.",
       "breakdown": [
         {
           "id": "store-2-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Point to what you bought, say the line once, and wait for the bag, price, or quick no.",
       "phrases": [
         {
           "id": "store-2",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Everyday service phrases keep quick errands smooth without needing a full conversation. The reply may be unclear.",
+      "body": "Bag requests are tiny but time-sensitive. Asking early keeps the checkout or takeaway moment from turning into a second trip back to the counter.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a yes/no answer, a gesture toward the item, or short alternative. Say Có túi không?",
+      "body": "Watch for a bag offered, a small extra charge, or head shake if bags are not available. Move to the follow-up card that matches buying, printing, laundry, payment, or repair.",
       "phrases": [
         {
           "id": "store-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when the item needs a bag or you forgot to ask at checkout. The reply may be a yes/no answer, a gesture toward the item, or short alternative.",
+      "body": "Good at convenience stores, markets, bakeries, pharmacies, street-food stalls, and hotel desks when your hands are already full.",
       "phrases": [
         {
           "id": "store-5",
@@ -164,7 +164,7 @@
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "If the item is not available, ask for a nearby alternative instead of repeating the same phrase.",
+      "body": "Some places charge a little extra or use reusable bags. Keep cash or the item visible until the answer is clear.",
       "presentation": "tip-callout",
       "phrases": [],
       "breakdown": []
@@ -172,7 +172,7 @@
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Point to the item or show a photo when you can. It avoids guessing from pronunciation alone.",
+      "body": "Point to the item rather than repeating the phrase louder. The bag need is usually obvious once the purchase is in view.",
       "phrases": [
         {
           "id": "v500-loca-serv-ever-task-where-can-i-buy-water",
@@ -191,7 +191,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Water, tissues, sunscreen, receipt, and card-payment cards cover the same small-errand lane.",
       "phrases": [
         {
           "id": "store-1",

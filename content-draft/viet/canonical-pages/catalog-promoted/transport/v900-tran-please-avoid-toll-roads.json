@@ -7,7 +7,7 @@
   "title": "Vui lòng tránh đường thu phí",
   "englishTitle": "Please avoid toll roads",
   "pronunciation": "Vui long tranh duong thu phi",
-  "summary": "Please avoid toll roads",
+  "summary": "For telling a driver you want a route without toll roads before the ride is underway.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng tránh đường thu phí makes the request direct without adding extra explanation. Keep the map, address, or destination visible."
+      "body": "Say it before the driver chooses the route, especially on airport, highway, or intercity trips."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Vui lòng tránh đường thu phí together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Keep the map open and say the line calmly. If price matters, point to the toll road or route option.",
       "phrases": [
         {
           "id": "v900-tran-please-avoid-toll-roads",
@@ -42,32 +42,41 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Vui lòng means please; tránh means avoid; đường thu phí means toll roads.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Vui lòng tránh",
+          "vietnamese": "Vui lòng",
           "english": "please",
+          "keepTogetherReason": "polite opener",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đường thu phí",
-          "english": "fee",
+          "vietnamese": "tránh",
+          "english": "avoid",
+          "keepTogetherReason": "avoid action",
           "audioKey": null
         },
         {
           "id": "chunk-3",
+          "vietnamese": "đường thu phí",
+          "english": "toll roads",
+          "keepTogetherReason": "toll-road phrase",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
           "vietnamese": "Vui lòng tránh đường thu phí",
           "english": "Please avoid toll roads",
-          "audioKey": null
+          "audioKey": "v900-tran-please-avoid-toll-roads"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "If the route changes, move to stop-here, go-this-way, District 1, or take-me-here follow-ups.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +113,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please avoid toll roads. Keep the map, address, or destination visible."
+      "body": "Good in taxis, private cars, app rides, and shuttle arrangements before the driver commits to a highway."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Avoiding tolls can make the ride longer. Confirm whether time or price matters more before you insist."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use stop-here, go-this-way, air-conditioning, fare, or address follow-ups if the ride needs another adjustment.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

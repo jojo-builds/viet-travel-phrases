@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đại sứ quán gần nhất ở đâu? keeps the direction question short. Keep the relevant place, item, or screen visible."
+      "body": "Đại sứ quán gần nhất ở đâu?"
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Đại sứ quán gần nhất ở đâu? together as one sentence before adding details. Say Đại sứ quán gần nhất ở đâu?",
+      "body": "Ask once, then pause for the answer.",
       "phrases": [
         {
           "id": "v500-prob-help-where-is-the-nearest-embassy",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear the place or item first; ở đâu? turns it into the where question.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another problem-solving need.",
+      "body": "Nearby follow-ups: I’m lost, I left something behind, and I need help.",
       "phrases": [
         {
           "id": "problems-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits moment when something is unclear, not working, missing, or needs help, especially when nearest embassy can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Reach for it at a desk or counter, or during a help moment when the other person needs one clear problem report."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Keep the next turn practical: I need help, Please call the hotel for me, and I need the manager.",
       "phrases": [
         {
           "id": "help-need-help-direct",

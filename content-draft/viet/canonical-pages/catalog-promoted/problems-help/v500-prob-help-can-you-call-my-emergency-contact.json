@@ -7,7 +7,7 @@
   "title": "Bạn có thể gọi cho người liên lạc khẩn cấp của tôi được không?",
   "englishTitle": "Can you call my emergency contact?",
   "pronunciation": "Ban co the goi cho nguoi lien lac khan cap cua toi duoc khong",
-  "summary": "Can you call my emergency contact?",
+  "summary": "For asking a hotel desk, clinic, police counter, or helper to call the emergency contact saved on your phone.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể gọi cho người liên lạc khẩn cấp của tôi được không? asks someone to do one helpful action for you. Use it for call my emergency contact when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Use it when you need another person reached, not just local help at the counter."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể gọi cho người liên lạc khẩn cấp của tôi được không? together as one sentence before adding details. Start with Bạn có thể gọi cho người liên lạc khẩn cấp của tôi được không?",
+      "body": "Open the contact first. Show the name and number so the helper does not have to search your phone.",
       "phrases": [
         {
           "id": "v500-prob-help-can-you-call-my-emergency-contact",
@@ -42,30 +42,30 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể gọi cho asks can you call; người liên lạc khẩn cấp của tôi means my emergency contact; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bạn có thể gọi",
+          "vietnamese": "Bạn có thể gọi cho",
           "english": "can you call",
-          "audioKey": null
+          "keepTogetherReason": "can-you-call phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "người liên lạc khẩn cấp của tôi",
           "english": "my emergency contact",
-          "audioKey": null
+          "keepTogetherReason": "emergency-contact phrase"
         },
         {
           "id": "chunk-3",
           "vietnamese": "được không?",
-          "english": "is it possible?",
-          "audioKey": "breakdown-authored-duoc-khong-cc7ef288f9"
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Bạn có thể gọi cho người liên lạc khẩn cấp của tôi được không?",
-          "english": "Can you call my emergency contact",
+          "english": "Can you call my emergency contact?",
           "audioKey": "v500-prob-help-can-you-call-my-emergency-contact"
         }
       ]
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another problem-solving need.",
+      "body": "Lost and left-something cards cover the story that may explain why the contact is needed.",
       "phrases": [
         {
           "id": "problems-1",
@@ -94,33 +94,23 @@
           "tintName": "orange",
           "detailPageID": "viet-phrase-problems-4",
           "audioKey": "problems-4"
-        },
-        {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you call my emergency contact. Keep the relevant place, item, or screen visible."
+      "body": "Good at hotels, clinics, police counters, stations, and with trusted staff when you cannot comfortably make the call yourself."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Keep the contact screen open and unlocked. If the call is urgent, show the number before explaining everything."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to need-help, call-hotel, manager, charged-twice, or file-report cards if the helper asks what happened next.",
       "phrases": [
         {
           "id": "help-need-help-direct",

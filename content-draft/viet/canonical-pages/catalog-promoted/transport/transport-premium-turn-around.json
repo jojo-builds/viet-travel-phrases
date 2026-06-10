@@ -7,7 +7,7 @@
   "title": "Xin hãy quay lại.",
   "englishTitle": "Please turn around.",
   "pronunciation": "Xin hay quay lai",
-  "summary": "Please turn around.",
+  "summary": "For asking a driver to turn back when the route has gone the wrong way.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use Xin hãy quay lại. for \"Please turn around.\". Xin hãy quay lại."
+      "body": "Use it when the car or bike needs to go back, not just change lanes."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Xin hãy quay lại. for \"Please turn around.\". Keep the map, address, or destination visible.",
+      "body": "Keep the map open and point behind you or to the route line.",
       "phrases": [
         {
           "id": "transport-premium-turn-around",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Xin hãy means please; quay lại means turn back or go back.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Xin hãy quay",
-          "english": "please / ask",
-          "audioKey": null
+          "vietnamese": "Xin hãy",
+          "english": "please",
+          "keepTogetherReason": "polite request opener"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "lại",
-          "english": "turn around",
-          "audioKey": null
+          "vietnamese": "quay lại.",
+          "english": "turn back / go back",
+          "keepTogetherReason": "turn-back phrase with punctuation"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Xin hãy quay lại.",
-          "english": "Please turn around",
-          "audioKey": null
+          "english": "Please turn around.",
+          "audioKey": "transport-premium-turn-around"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "Go-back, destination, and District 1 follow-ups help if the driver needs the corrected route.",
       "phrases": [
         {
           "id": "v500-tran-please-turn-around",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when \"Please turn around.\" Keep the map, address, or destination visible."
+      "body": "Good in taxis, ride-hailing cars, motorbike pickups, or shuttle vans when the turn has already been missed."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Say it early and calmly. A map gesture often explains the problem faster than extra words."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Stop-here, go-this-way, air-conditioning, and wait follow-ups cover nearby driver requests.",
       "phrases": [
         {
           "id": "taxi-3",

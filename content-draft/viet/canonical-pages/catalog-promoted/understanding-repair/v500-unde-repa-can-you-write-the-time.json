@@ -7,7 +7,7 @@
   "title": "Bạn có thể viết thời gian được không?",
   "englishTitle": "Can you write the time?",
   "pronunciation": "Ban co the viet thoi gian duoc khong",
-  "summary": "Can you write the time?",
+  "summary": "For getting a pickup time, booking time, closing time, or appointment time written clearly.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể viết thời gian được không? asks someone to do one helpful action for you. Use it for write the time when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "When a spoken time is too fast, noisy, or easy to mishear, ask for it on paper or in your notes app."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể viết thời gian được không? together as one sentence before adding details. Start with Bạn có thể viết thời gian được không?",
+      "body": "Show the booking, ticket, or notes app. Let them write the time before you ask about where to go.",
       "phrases": [
         {
           "id": "v500-unde-repa-can-you-write-the-time",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; viết thời gian means write the time; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "viết thời gian",
-          "english": "price",
-          "audioKey": null
+          "english": "write the time",
+          "keepTogetherReason": "write-time phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Bạn có thể viết thời gian được không?",
-          "english": "Can you write the time",
-          "audioKey": null
+          "english": "Can you write the time?",
+          "audioKey": "v500-unde-repa-can-you-write-the-time"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
+      "body": "Slower, repeat, and write-down cards help when the time still comes back too quickly.",
       "phrases": [
         {
           "id": "problems-2",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you write the time. If it is still unclear, show, write, or point to the exact word."
+      "body": "Good at ticket desks, hotels, clinics, tour counters, restaurants, stations, and pickup points."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Times can be misunderstood across accents and noise. A written time is safer than guessing from memory."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to say-again, write-down, meaning, which-one, or show-me cards if another detail is unclear.",
       "phrases": [
         {
           "id": "repair-1",

@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Phòng khám phải đợi bao lâu? keeps the travel moment short and clear. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Phòng khám phải đợi bao lâu?"
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Phòng khám phải đợi bao lâu? together as one sentence before adding details. Start with Phòng khám phải đợi bao lâu?",
+      "body": "Ask after you have checked in or found the reception desk. The answer may be a rough wait, queue number, or callback.",
       "phrases": [
         {
           "id": "v900-heal-phar-how-long-is-the-clinic-wait",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Phòng khám phải + đợi bao lâu, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Keep close by: I need a doctor, Where is the pharmacy, and Where is the nearest pharmacy.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is how long is the clinic wait. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Best in a pharmacy, clinic, or hotel desk, before the explanation gets long. Keep the symptom, medicine, affected area, or translated note close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "These follow-ups cover symptoms, medicine, clinic help, or dosage: I have a headache, My stomach hurts, and Do you have motion sickness medicine?",
       "phrases": [
         {
           "id": "health-2",

@@ -7,7 +7,7 @@
   "title": "Làm ơn đừng chụp ảnh tôi",
   "englishTitle": "Please do not take my photo",
   "pronunciation": "Lam on dung chup anh toi",
-  "summary": "Please do not take my photo",
+  "summary": "For politely setting a photo boundary without turning the exchange into an argument.",
   "iconName": "bubble.left.and.bubble.right.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Làm ơn đừng chụp ảnh tôi makes the request direct without adding extra explanation. Keep the tone warm and leave room for a short reply."
+      "body": "Use it once, clearly, when a camera or phone is pointed at you."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Làm ơn đừng chụp ảnh tôi together as one sentence before adding details. Keep the tone warm and leave room for a short reply.",
+      "body": "Keep your voice calm and your hand gesture small. The line is direct enough without extra explanation.",
       "phrases": [
         {
           "id": "v500-soci-smal-talk-please-do-not-take-my-photo",
@@ -42,135 +42,135 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Làm ơn means please; đừng chụp ảnh means do not take photos; tôi means me.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Làm ơn",
           "english": "please",
-          "audioKey": null
+          "keepTogetherReason": "polite opener"
         },
         {
           "id": "chunk-2",
           "vietnamese": "đừng chụp ảnh",
-          "english": "do not take my photo",
-          "audioKey": null
+          "english": "do not take photos",
+          "keepTogetherReason": "photo-boundary phrase"
         },
         {
           "id": "chunk-3",
           "vietnamese": "tôi",
-          "english": "I / me",
-          "audioKey": null
+          "english": "me",
+          "keepTogetherReason": "object pronoun"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Làm ơn đừng chụp ảnh tôi",
           "english": "Please do not take my photo",
-          "audioKey": null
+          "audioKey": "v500-soci-smal-talk-please-do-not-take-my-photo"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another social small talk need.",
+      "body": "Photography-allowed, photo-here, and what-to-avoid phrases cover the nearby photo-rule context.",
       "phrases": [
         {
-          "id": "smalltalk-1",
-          "vietnamese": "Tôi đến từ Mỹ",
-          "english": "I’m from the United States",
-          "pronunciation": "toy den too mee",
+          "id": "v900-sigh-acti-is-photography-allowed",
+          "vietnamese": "Có được phép chụp ảnh không?",
+          "english": "Is photography allowed?",
+          "pronunciation": "Co duoc phep chup anh khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-smalltalk-1",
-          "audioKey": "smalltalk-1"
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v900-sigh-acti-is-photography-allowed",
+          "audioKey": "v900-sigh-acti-is-photography-allowed"
         },
         {
-          "id": "smalltalk-2",
-          "vietnamese": "Tôi từ Anh",
-          "english": "I’m from England",
-          "pronunciation": "toy too anh",
+          "id": "v900-sigh-acti-can-i-take-a-photo-here",
+          "vietnamese": "Tôi có thể chụp ảnh ở đây được không?",
+          "english": "Can I take a photo here?",
+          "pronunciation": "Toi co the chup anh o day duoc khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-smalltalk-2",
-          "audioKey": "smalltalk-2"
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v900-sigh-acti-can-i-take-a-photo-here",
+          "audioKey": "v900-sigh-acti-can-i-take-a-photo-here"
         },
         {
-          "id": "smalltalk-3",
-          "vietnamese": "Đây là lần đầu của tôi",
-          "english": "This is my first time",
-          "pronunciation": "day la lun dow koo-ah toy",
+          "id": "v500-sigh-acti-what-should-i-avoid",
+          "vietnamese": "Tôi nên tránh những gì?",
+          "english": "What should I avoid?",
+          "pronunciation": "Toi nen tranh nhung gi",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-smalltalk-3",
-          "audioKey": "smalltalk-3"
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v500-sigh-acti-what-should-i-avoid",
+          "audioKey": "v500-sigh-acti-what-should-i-avoid"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please do not take my photo. Keep the tone warm and leave room for a short reply."
+      "body": "Good in markets, homestays, tours, cafes, and street moments when you do not want to be photographed."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Small talk should feel light. Use the phrase once, smile, and let the other person decide how much conversation follows."
+      "body": "A short no is kinder than a long apology. Smile if it feels right, then move on."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "No-thank-you, alone-thank-you, not-interested, excuse-me, and thank-you-for-understanding phrases cover the boundary after that.",
       "phrases": [
         {
-          "id": "smalltalk-4",
-          "vietnamese": "Tôi thích Việt Nam",
-          "english": "I like Vietnam",
-          "pronunciation": "toy thik vyet nam",
+          "id": "v500-soci-smal-talk-no-thank-you-im-not-interested",
+          "vietnamese": "Không, cảm ơn, tôi không quan tâm",
+          "english": "No thank you, I’m not interested",
+          "pronunciation": "Khong cam on toi khong quan tam",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-smalltalk-4",
-          "audioKey": "smalltalk-4"
+          "detailPageID": "viet-phrase-v500-soci-smal-talk-no-thank-you-im-not-interested",
+          "audioKey": "v500-soci-smal-talk-no-thank-you-im-not-interested"
         },
         {
-          "id": "smalltalk-5",
-          "vietnamese": "Đồ ăn ngon quá",
-          "english": "The food is so good",
-          "pronunciation": "doh an ngon gwah",
+          "id": "v500-soci-smal-talk-i-want-to-be-alone-thank-you",
+          "vietnamese": "Tôi muốn ở một mình, cảm ơn bạn",
+          "english": "I want to be alone, thank you",
+          "pronunciation": "Toi muon o mot minh cam on ban",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-smalltalk-5",
-          "audioKey": "smalltalk-5"
+          "detailPageID": "viet-phrase-v500-soci-smal-talk-i-want-to-be-alone-thank-you",
+          "audioKey": "v500-soci-smal-talk-i-want-to-be-alone-thank-you"
         },
         {
-          "id": "smalltalk-6",
-          "vietnamese": "Thời tiết nóng quá",
-          "english": "The weather is so hot",
-          "pronunciation": "thoy tyet nong gwah",
+          "id": "v900-shop-no-thank-you-ill-look-around-first",
+          "vietnamese": "Không, cảm ơn, tôi sẽ xem xét xung quanh trước",
+          "english": "No thank you, I’ll look around first",
+          "pronunciation": "Khong cam on toi se xem xet xung quanh truoc",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-smalltalk-6",
-          "audioKey": "smalltalk-6"
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v900-shop-no-thank-you-ill-look-around-first",
+          "audioKey": "v900-shop-no-thank-you-ill-look-around-first"
         },
         {
-          "id": "smalltalk-7",
-          "vietnamese": "Bạn khỏe không?",
-          "english": "How are you?",
-          "pronunciation": "ban khoe khong",
+          "id": "polite-5",
+          "vietnamese": "Xin lỗi",
+          "english": "Excuse me / sorry",
+          "pronunciation": "sin loy",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-smalltalk-7",
-          "audioKey": "smalltalk-7"
+          "tintName": "red",
+          "detailPageID": "viet-excuse-sorry",
+          "audioKey": "polite-5"
         },
         {
-          "id": "social-8",
-          "vietnamese": "Bạn ở đây bao lâu?",
-          "english": "How long are you staying?",
-          "pronunciation": "ban uh day bao low",
+          "id": "v500-unde-repa-thank-you-for-understanding",
+          "vietnamese": "Cảm ơn bạn đã hiểu",
+          "english": "Thank you for understanding",
+          "pronunciation": "cam on ban da hieu",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-social-8",
-          "audioKey": "social-8"
+          "tintName": "blue",
+          "detailPageID": "viet-thanks-cam-on-ban-da-hieu",
+          "audioKey": "v500-unde-repa-thank-you-for-understanding"
         }
       ]
     }

@@ -7,7 +7,7 @@
   "title": "Túi của tôi bị lấy mất",
   "englishTitle": "My bag was stolen",
   "pronunciation": "too-ee koo-ah toy bee lay mut",
-  "summary": "My bag was stolen",
+  "summary": "For telling staff, police, or a nearby helper that your bag was taken.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Túi của tôi bị lấy mất names the problem so staff or a helpful local can act on it. Use it when My bag was stolen is the clearest way to explain what changed, went missing, or needs attention."
+      "body": "Keep it direct. Show the bag photo, receipt, hotel tag, ride screen, or last known place if you have it."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Túi của tôi bị lấy mất calmly and show the proof if you have it: phone screen, address, document, visible problem, or nearby staff member. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Say the problem first, then stop. Let the other person ask where, when, or what the bag looked like.",
       "phrases": [
         {
           "id": "emergency-6",
@@ -42,22 +42,22 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Túi của tôi means my bag; bị lấy mất means was taken or stolen.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Túi của tôi",
           "english": "my bag",
-          "audioKey": null
+          "keepTogetherReason": "owned-item phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "bị lấy mất",
           "english": "was taken / stolen",
-          "audioKey": null
+          "keepTogetherReason": "stolen-bag phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Túi của tôi bị lấy mất",
           "english": "My bag was stolen",
           "audioKey": "emergency-6"
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another safety or urgent-help need.",
+      "body": "Police, ambulance, and passport-loss cards cover more serious escalation.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as soon as the problem is clear enough to name. It is especially useful at a counter or desk where someone can look at the photo, receipt, bag, booking, or phone screen with you."
+      "body": "Use this with hotel staff, station staff, police, venue security, or a driver who can help trace the stop."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "Short facts help: color, size, where it was, and the last time you saw it."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Unsafe, emergency, help, hospital, and embassy cards cover the next safety handoff.",
       "phrases": [
         {
           "id": "emergency-4",

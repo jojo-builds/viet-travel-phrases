@@ -20,24 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hãy",
-      "english": "please do"
+      "vietnamese": "Hãy đi theo",
+      "english": "please follow",
+      "keepTogetherReason": "route-following request"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đi",
-      "english": "go"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "theo",
-      "english": "follow"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "bản đồ",
       "english": "map",
-      "keepTogetherReason": "compound noun"
+      "keepTogetherReason": "compound map noun"
     },
     {
       "id": "full",

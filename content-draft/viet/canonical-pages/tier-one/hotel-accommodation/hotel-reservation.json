@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có đặt phòng names the need before the details start piling up. This is for the desk when you have already booked. At check-in, reservation first is usually the fastest path.",
+      "body": "This is for the desk when you have already booked.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Tôi có + đặt carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "hotel-1-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Tôi có đặt phòng together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Say Tôi có đặt phòng first; let the booking, room number, address, or key card support the reply.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. Keep the booking, room number, date, or address visible.",
+      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. Keep the booking, room number, address, or key card ready so the other person can act on the same detail.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a name check, booking-code request, counter direction, or short wait. Keep the booking, room number, date, or address visible.",
+      "body": "Watch for a name check, booking-code request, counter direction, or short wait. Move to the follow-up card that matches check-in, room help, timing, or payment.",
       "phrases": [
         {
           "id": "hotel-2",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for the desk when you have already booked. The reply may be a name check, booking-code request, counter direction, or short wait.",
+      "body": "This is for the desk when you have already booked. Watch for a name check, booking-code request, counter direction, or short wait.",
       "phrases": [
         {
           "id": "hotel-4",
@@ -201,7 +201,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a front desk or guesthouse counter, the next useful language is usually I’d like to check in; what time is check-out?; I’d like to check out.",
       "phrases": [
         {
           "id": "hotel-2",

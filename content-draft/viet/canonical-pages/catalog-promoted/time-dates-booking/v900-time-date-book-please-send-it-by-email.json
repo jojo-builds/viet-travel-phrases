@@ -7,7 +7,7 @@
   "title": "Vui lòng gửi nó qua email",
   "englishTitle": "Please send it by email",
   "pronunciation": "Vui long gui no qua email",
-  "summary": "Please send it by email",
+  "summary": "For asking staff to send a receipt, ticket, booking note, or document to your email instead of paper.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng gửi nó qua email makes the request direct without adding extra explanation. Keep the booking, room number, date, or address visible."
+      "body": "The document matters later, so the email address needs to be clear."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Vui lòng gửi nó qua email together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Show the email address on your phone while you say the line. Spell it slowly if they start typing.",
       "phrases": [
         {
           "id": "v900-time-date-book-please-send-it-by-email",
@@ -42,32 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Vui lòng means please; gửi means send; nó means it; qua email means by email.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Vui lòng gửi",
+          "vietnamese": "Vui lòng",
           "english": "please",
-          "audioKey": null
+          "keepTogetherReason": "polite opener"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nó qua email",
-          "english": "it by email",
-          "audioKey": null
+          "vietnamese": "gửi",
+          "english": "send",
+          "keepTogetherReason": "send verb"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "nó",
+          "english": "it",
+          "keepTogetherReason": "it pronoun"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "qua email",
+          "english": "by email",
+          "keepTogetherReason": "email-delivery phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Vui lòng gửi nó qua email",
           "english": "Please send it by email",
-          "audioKey": null
+          "audioKey": "v900-time-date-book-please-send-it-by-email"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "What-time, today, and tomorrow-morning phrases stay useful if the email confirms a booking time.",
       "phrases": [
         {
           "id": "time-1",
@@ -104,67 +116,67 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please send it by email. Keep the booking, room number, date, or address visible."
+      "body": "Good for hotel invoices, tour confirmations, tickets, forms, receipts, and service documents."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "Keep the inbox open until it arrives if the document is important for reimbursement or entry."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "For nearby document needs, ask for an invoice by email, a receipt by email, a report by email, or a paper receipt.",
       "phrases": [
         {
-          "id": "time-4",
-          "vietnamese": "Tôi có đặt chỗ",
-          "english": "I have a booking",
-          "pronunciation": "toy koh dat choh",
+          "id": "v900-hote-acco-can-you-email-me-the-invoice",
+          "vietnamese": "Bạn có thể gửi email cho tôi hóa đơn được không?",
+          "english": "Can you email me the invoice?",
+          "pronunciation": "Ban co the gui email cho toi hoa don duoc khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-time-4",
-          "audioKey": "time-4"
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v900-hote-acco-can-you-email-me-the-invoice",
+          "audioKey": "v900-hote-acco-can-you-email-me-the-invoice"
         },
         {
-          "id": "time-5",
-          "vietnamese": "Mấy giờ mở cửa?",
-          "english": "What time does it open?",
-          "pronunciation": "may zyuh muh koo-ah",
+          "id": "v900-mone-numb-pric-can-you-email-the-receipt",
+          "vietnamese": "Bạn có thể gửi email hóa đơn được không?",
+          "english": "Can you email the receipt?",
+          "pronunciation": "Ban co the gui email hoa don duoc khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-time-5",
-          "audioKey": "time-5"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-can-you-email-the-receipt",
+          "audioKey": "v900-mone-numb-pric-can-you-email-the-receipt"
         },
         {
-          "id": "time-6",
-          "vietnamese": "Dời lại muộn hơn được không?",
-          "english": "Can we move it later?",
-          "pronunciation": "zoy lie moon hun dook khong",
+          "id": "v900-loca-serv-ever-task-can-you-email-it-to-me",
+          "vietnamese": "Bạn có thể gửi email cho tôi được không?",
+          "english": "Can you email it to me?",
+          "pronunciation": "Ban co the gui email cho toi duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-time-6",
-          "audioKey": "time-6"
+          "detailPageID": "viet-phrase-v900-loca-serv-ever-task-can-you-email-it-to-me",
+          "audioKey": "v900-loca-serv-ever-task-can-you-email-it-to-me"
         },
         {
-          "id": "time-7",
-          "vietnamese": "Mấy giờ bắt đầu lên máy bay?",
-          "english": "What time does boarding start?",
-          "pronunciation": "may zyuh bat dow len mai bai",
+          "id": "v900-heal-phar-can-you-email-the-report-to-me",
+          "vietnamese": "Bạn có thể gửi email báo cáo cho tôi được không?",
+          "english": "Can you email the report to me?",
+          "pronunciation": "Ban co the gui email bao cao cho toi duoc khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-time-7",
-          "audioKey": "time-7"
+          "tintName": "red",
+          "detailPageID": "viet-phrase-v900-heal-phar-can-you-email-the-report-to-me",
+          "audioKey": "v900-heal-phar-can-you-email-the-report-to-me"
         },
         {
-          "id": "v500-time-date-book-is-there-a-wait",
-          "vietnamese": "Có chờ đợi không?",
-          "english": "Is there a wait?",
-          "pronunciation": "Co cho doi khong",
+          "id": "store-7",
+          "vietnamese": "Cho tôi hóa đơn",
+          "english": "Please give me the receipt",
+          "pronunciation": "cho toy hwa dun",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-v500-time-date-book-is-there-a-wait",
-          "audioKey": "v500-time-date-book-is-there-a-wait"
+          "detailPageID": "viet-family-service-receipt",
+          "audioKey": "store-7"
         }
       ]
     }

@@ -7,7 +7,7 @@
   "title": "Bạn có thể xử lý hoàn tiền không?",
   "englishTitle": "Can you process a refund?",
   "pronunciation": "Ban co the xu ly hoan tien khong",
-  "summary": "Can you process a refund?",
+  "summary": "For asking whether a shop, counter, app desk, or ticket office can start a refund.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể xử lý hoàn tiền không? asks someone to do one helpful action for you. Use it for process a refund when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Ask while the receipt, booking, charge, or item is visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể xử lý hoàn tiền không? together as one sentence before adding details. Start with Bạn có thể xử lý hoàn tiền không?",
+      "body": "Show the proof first. Then ask whether they can process the refund or need a manager.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-can-you-process-a-refund",
@@ -42,44 +42,48 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; xử lý means process; hoàn tiền means refund.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
+          "keepTogetherReason": "can-you question frame",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "xử lý hoàn",
-          "english": "process a refund",
+          "vietnamese": "xử lý",
+          "english": "process",
+          "keepTogetherReason": "process action",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "tiền",
-          "english": "money",
+          "vietnamese": "hoàn tiền",
+          "english": "refund",
+          "keepTogetherReason": "refund phrase",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending",
           "audioKey": null
         },
         {
           "id": "chunk-5",
           "vietnamese": "Bạn có thể xử lý hoàn tiền không?",
-          "english": "Can you process a refund",
-          "audioKey": null
+          "english": "Can you process a refund?",
+          "audioKey": "v900-mone-numb-pric-can-you-process-a-refund"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
+      "body": "If the answer changes, move to final price, receipt, manager, refund difference, or charged-twice follow-ups.",
       "phrases": [
         {
           "id": "price-1",
@@ -116,17 +120,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you process a refund. Keep the relevant place, item, or screen visible."
+      "body": "Good at ticket counters, shops, tour desks, hotel desks, and payment counters after a mistake or cancellation."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Refunds may go back to the original card or need manager approval. Keep the receipt and payment screen open."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use receipt, manager, charged-twice, refund-difference, or final-price follow-ups if the refund needs another step.",
       "phrases": [
         {
           "id": "price-3",

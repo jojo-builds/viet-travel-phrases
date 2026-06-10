@@ -20,35 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "sao chép",
+      "english": "copy",
+      "keepTogetherReason": "copy verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "sao chép",
-      "english": "copy",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "tài",
-      "english": "driver / tài"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "liệu",
-      "english": "material / whether"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "này?",
-      "english": "this"
+      "vietnamese": "tài liệu này?",
+      "english": "this document?",
+      "keepTogetherReason": "this-document noun with question mark"
     },
     {
       "id": "full",

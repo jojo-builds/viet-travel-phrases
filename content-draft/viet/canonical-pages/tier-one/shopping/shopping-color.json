@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có màu khác không? keeps the question easy to answer. Reach for it when the item is right but the color is wrong. This is the simplest comparison phrase for clothing and small goods.",
+      "body": "Lead with Có màu khác không?; add the detail after the first reply.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Listen for Có first, then let không? carry the question ending.",
       "breakdown": [
         {
           "id": "shop-2-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Ask while the item, size, receipt, price tag, or photo is still visible, then pause before adding more words.",
       "phrases": [
         {
           "id": "shop-2",
@@ -84,7 +84,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. The reply may be unclear.",
+      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. Keep the item, size, receipt, price tag, or photo ready so the other person can act on the same detail.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a yes/no answer, a gesture toward the item, or short alternative. Say Có màu khác không?",
+      "body": "Watch for a yes/no answer, a gesture toward the item, or short alternative. Say Có màu khác không?",
       "phrases": [
         {
           "id": "shop-1",
@@ -131,7 +131,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when the item is right but the color is wrong. The reply may be a yes/no answer, a gesture toward the item, or short alternative.",
+      "body": "Reach for it when the item is right but the color is wrong. Watch for a yes/no answer, a gesture toward the item, or short alternative.",
       "phrases": [
         {
           "id": "shop-5",
@@ -197,7 +197,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover I want this size; can I try this on?; I’m just looking.",
       "phrases": [
         {
           "id": "shop-1",

@@ -20,28 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi sẽ",
+      "english": "I will",
+      "keepTogetherReason": "future marker"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "sẽ",
-      "english": "will"
+      "vietnamese": "nghĩ về",
+      "english": "think about",
+      "keepTogetherReason": "think-about phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nghĩ",
-      "english": "think"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "về",
-      "english": "back / about"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "nó",
-      "english": "it"
+      "english": "it",
+      "keepTogetherReason": "object pronoun"
     },
     {
       "id": "full",

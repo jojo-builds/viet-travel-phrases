@@ -7,7 +7,7 @@
   "title": "Tôi cần nghỉ ngơi một lát",
   "englishTitle": "I need to rest for a moment",
   "pronunciation": "Toi can nghi ngoi mot lat",
-  "summary": "I need to rest for a moment",
+  "summary": "For politely pausing a walk, tour, conversation, or errand when heat or fatigue catches up.",
   "iconName": "bubble.left.and.bubble.right.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần nghỉ ngơi một lát is the short line for naming what you need next. It works best when rest for a moment is visible on your phone, ticket, note, shelf, or in the situation around you."
+      "body": "Say it before you are visibly struggling. It gives the other person a clear reason to slow down without a big explanation.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần nghỉ ngơi một lát with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "body": "Gesture toward a bench, shade, wall, or lobby if you need a place to pause. A calm tone keeps it from sounding dramatic.",
       "phrases": [
         {
           "id": "v500-soci-smal-talk-i-need-to-rest-for-a-moment",
@@ -42,38 +43,39 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi cần means I need; nghỉ ngơi means rest; một lát means for a moment.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi cần",
           "english": "I need",
-          "audioKey": null
+          "keepTogetherReason": "I-need phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nghỉ ngơi một",
-          "english": "call",
-          "audioKey": null
+          "vietnamese": "nghỉ ngơi",
+          "english": "rest",
+          "keepTogetherReason": "rest verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "lát",
-          "english": "rest for a moment",
-          "audioKey": null
+          "vietnamese": "một lát",
+          "english": "for a moment",
+          "keepTogetherReason": "short-time phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi cần nghỉ ngơi một lát",
           "english": "I need to rest for a moment",
-          "audioKey": null
+          "audioKey": "v500-soci-smal-talk-i-need-to-rest-for-a-moment"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another social small talk need.",
+      "body": "From-US, from-UK, and first-time cards stay close when the conversation resumes.",
       "phrases": [
         {
           "id": "smalltalk-1",
@@ -110,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i need to rest for a moment. Keep the tone warm and leave room for a short reply."
+      "body": "Good during market walks, tours, temple visits, hotel check-ins, family visits, and friendly chats that have gone longer than expected.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Small talk should feel light. Use the phrase once, smile, and let the other person decide how much conversation follows."
+      "body": "If the issue is heat, dizziness, or pain, switch to water, pharmacy, doctor, or hospital phrases instead of treating it like small talk.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Like-Vietnam, food-good, hot-weather, how-are-you, and first-time cards cover lighter chat after the pause.",
       "phrases": [
         {
           "id": "smalltalk-4",

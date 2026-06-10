@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi quét vé ở đâu? together as one sentence before adding details. Say Tôi quét vé ở đâu?",
+      "body": "A short question is enough here; use the date, time, ticket, booking, or address for the follow-up.",
       "phrases": [
         {
           "id": "v900-time-date-book-where-do-i-scan-the-ticket",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear the place or item first; ở đâu? turns it into the where question.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "Good next-step phrases: What time?; Today; Tomorrow morning.",
       "phrases": [
         {
           "id": "time-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits ticket desk, hotel desk, tour meeting point, station, or reservation conversation, especially when scan the ticket can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Best in a booking desk, tour counter, or message thread, before the explanation gets long. Keep the date, time, ticket, booking, or address close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Nearby follow-ups: I have a booking, What time does it open, and Can we move it later.",
       "phrases": [
         {
           "id": "time-4",

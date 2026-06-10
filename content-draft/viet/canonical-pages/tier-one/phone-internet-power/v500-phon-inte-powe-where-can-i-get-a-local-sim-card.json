@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when you land, lose data, or need a local mobile plan. In real travel speech, asking where to buy a SIM is clearer than a literal 'local SIM card' sentence.",
+      "body": "In real travel speech, asking where to buy a SIM is clearer than a literal 'local SIM card' sentence.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a point, short direction, nearby option, or counter name. Say Tôi có thể mua SIM ở đâu?",
+      "body": "Watch for a point, short direction, nearby option, or counter name. Say Tôi có thể mua SIM ở đâu?",
       "phrases": [
         {
           "id": "phone-1",
@@ -191,7 +191,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through what is the Wi-Fi password?; do you sell SIM cards?; my phone battery is dead.",
       "phrases": [
         {
           "id": "phone-1",

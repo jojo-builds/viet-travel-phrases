@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần quản lý names the need before the details start piling up. Reach for it when the staff cannot solve the problem and you need escalation. This is a practical escalation phrase, not a dramatic one.",
+      "body": "Reach for it when the staff cannot solve the problem and you need escalation.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Tôi cần + quản carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "help-3-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Tôi cần quản lý together as one sentence before adding details.",
+      "body": "Say Tôi cần quản lý clearly; show the receipt, room number, ride detail, photo, or last location only if the reply needs detail.",
       "phrases": [
         {
           "id": "help-3",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Help phrases work when they name the problem and the next person or action you need. Keep the relevant place, item, or screen visible.",
+      "body": "Help phrases work when they name the problem and the next person or action you need. Keep the receipt, room number, last location, or contact visible.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
+      "body": "Watch for a confirmation, a handoff, a price, or follow-up question. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
       "phrases": [
         {
           "id": "problems-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when the staff cannot solve the problem and you need escalation. Keep the relevant place, item, or screen visible.",
+      "body": "Reach for it when the staff cannot solve the problem and you need escalation. Keep the receipt, room number, last location, or contact visible.",
       "phrases": [
         {
           "id": "help-2",
@@ -181,7 +181,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a desk or counter, or during a help moment, the next useful language is usually I’m lost, I left something behind, and I need help.",
       "phrases": [
         {
           "id": "problems-1",

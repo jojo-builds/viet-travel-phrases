@@ -7,7 +7,7 @@
   "title": "Cho tôi tới đây",
   "englishTitle": "Take me here",
   "pronunciation": "cho toy toy day",
-  "summary": "In most ride situations, the destination is the first sentence that matters.",
+  "summary": "For showing a driver the exact place you want to go before the ride starts moving.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cho tôi tới đây makes the request direct without adding extra explanation. Use this while showing your destination on your phone. In most ride situations, the destination is the first sentence that matters.",
+      "body": "Use this while showing your destination on your phone.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Practice Cho tôi + tới first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "taxi-1-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Cho tôi tới đây together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Say Cho tôi tới đây first; let the destination, fare, or ride screen support the reply.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. Keep the map, address, or destination visible.",
+      "body": "Vietnamese addresses, alleys, and entrances can be easy to mishear. The phrase works best with the map already on screen.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Keep the map, address, or destination visible.",
+      "body": "Expect a nod, fare question, route question, or a closer entrance suggestion.",
       "phrases": [
         {
           "id": "taxi-2",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this while showing your destination on your phone. The reply may be a clear reply, a pointed detail, or simple follow-up.",
+      "body": "Use this before getting in, before the driver pulls away, or when the destination needs to be reset.",
       "phrases": [
         {
           "id": "taxi-5",
@@ -219,7 +219,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover go to District 1, you can stop here, and go this way.",
       "phrases": [
         {
           "id": "taxi-2",

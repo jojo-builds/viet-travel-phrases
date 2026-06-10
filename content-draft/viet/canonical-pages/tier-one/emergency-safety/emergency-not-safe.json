@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cảm thấy không an toàn keeps the travel moment short and clear. Reach for it when the situation feels unsafe and you need help quickly. This is a short high-signal safety phrase for stressful moments.",
+      "body": "Reach for it when the situation feels unsafe and you need help quickly.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Hear Tôi + cảm thấy as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "emergency-4-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Tôi cảm thấy không an toàn together as one sentence before adding details.",
+      "body": "Say Tôi cảm thấy không an toàn clearly; show the location, passport copy, photo, injury, or helper contact only if the reply needs detail.",
       "phrases": [
         {
           "id": "emergency-4",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Emergency phrases put the urgent need first so help can move faster. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Safety phrases should not sound like bargaining. This line says the feeling clearly so the next step can move toward help or distance.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Watch for a staff member stepping in, a direction to move, or question about who is involved. Move to the follow-up card that matches location, documents, help, or reporting.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when the situation feels unsafe and you need help quickly. The reply may be a clear reply, a pointed detail, or simple follow-up.",
+      "body": "Best when a ride, person, street, room, or situation feels wrong enough that help needs to move now.",
       "phrases": [
         {
           "id": "emergency-emergency",
@@ -164,7 +164,7 @@
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "In safety moments, clarity matters more than sounding polished. Repeat the phrase if needed.",
+      "body": "Do not soften this one too much. The point is to be understood quickly.",
       "presentation": "tip-callout",
       "phrases": [],
       "breakdown": []
@@ -172,7 +172,7 @@
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Use the phrase clearly, then show your location, passport copy, injury, or emergency contact.",
+      "body": "Move toward staff, light, or a public counter while keeping the phrase short.",
       "phrases": [
         {
           "id": "v500-emer-safe-i-cannot-move",
@@ -201,7 +201,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through call the police, call an ambulance, and I lost my passport.",
       "phrases": [
         {
           "id": "emergency-1",

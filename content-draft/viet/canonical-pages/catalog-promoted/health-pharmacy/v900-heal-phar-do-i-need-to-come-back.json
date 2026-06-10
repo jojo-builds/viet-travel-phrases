@@ -7,7 +7,7 @@
   "title": "Tôi có cần quay lại không?",
   "englishTitle": "Do I need to come back?",
   "pronunciation": "Toi co can quay lai khong",
-  "summary": "Do I need to come back?",
+  "summary": "For checking whether a follow-up visit is actually needed.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có cần quay lại không? checks whether a step is required before you spend time on it. It is helpful for forms, tickets, bookings, queues, and documents because the answer can be a simple yes or no."
+      "body": "A clinic or pharmacy may want you back for results, a second dose, a dressing change, or a symptom check."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có cần quay lại không? together as one sentence before adding details. Start with Tôi có cần quay lại không?",
+      "body": "Ask before leaving. Point to the prescription, receipt, or appointment note if they gave you one.",
       "phrases": [
         {
           "id": "v900-heal-phar-do-i-need-to-come-back",
@@ -42,24 +42,24 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Cần means need; quay lại means come back; không? asks if it is necessary.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi có",
-          "english": "I have",
+          "english": "do I",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "cần quay lại",
-          "english": "need",
+          "english": "need to come back",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "không",
-          "english": "no / not",
+          "english": "is it necessary?",
           "audioKey": null
         },
         {
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Doctor and pharmacy lines help if the follow-up depends on symptoms or medicine.",
       "phrases": [
         {
           "id": "problems-6",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is do I need to come back. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at clinics, pharmacies, dental offices, hotel doctor desks, and tour medical stops before you leave."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "If yes, ask when and bring back the paper, package, or photo they gave you."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Headache, stomach, motion-sickness, allergy, and diarrhea lines help explain why you might return.",
       "phrases": [
         {
           "id": "health-2",

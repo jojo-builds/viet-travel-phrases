@@ -7,7 +7,7 @@
   "title": "Làm ơn giảm nhạc đi",
   "englishTitle": "Please lower the music",
   "pronunciation": "Lam on giam nhac di",
-  "summary": "Please lower the music",
+  "summary": "For asking a driver to turn the music down without making the ride feel tense.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Làm ơn giảm nhạc đi makes the request direct without adding extra explanation. Keep the map, address, or destination visible."
+      "body": "Ask when the music is too loud for calls, directions, nausea, or a tired ride back."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Làm ơn giảm nhạc đi together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "A small hand-lowering gesture makes the request clear. Keep your voice calm and let the driver answer.",
       "phrases": [
         {
           "id": "v500-tran-please-lower-the-music",
@@ -42,32 +42,41 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Làm ơn means please; giảm nhạc means lower the music; đi gives the request a spoken ending.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Làm ơn",
           "english": "please",
+          "keepTogetherReason": "polite opener",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "giảm nhạc đi",
-          "english": "go / move",
+          "vietnamese": "giảm nhạc",
+          "english": "lower the music",
+          "keepTogetherReason": "lower-music phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
+          "vietnamese": "đi",
+          "english": "spoken request ending",
+          "keepTogetherReason": "imperative softener",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
           "vietnamese": "Làm ơn giảm nhạc đi",
           "english": "Please lower the music",
-          "audioKey": null
+          "audioKey": "v500-tran-please-lower-the-music"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "If comfort is still the issue, move to slower driving, air-conditioning, stop-here, or wait-here follow-ups.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +113,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please lower the music. Keep the map, address, or destination visible."
+      "body": "Good in taxis, app rides, vans, and private cars when the volume is the problem."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Keep the tone light. A gesture plus the phrase usually lands better than repeating in English."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use stop-here, go-this-way, air-conditioning, drive-slower, or wait-here cards if the ride still needs adjusting.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

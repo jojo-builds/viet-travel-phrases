@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Start with Mấy + giờ; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "time-5-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Ask while the date, time, ticket, booking, or address is still visible, then pause before adding more words.",
       "phrases": [
         {
           "id": "time-5",
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a smile, a time, or light follow-up question. Say Mấy giờ mở cửa?",
+      "body": "Watch for a short reply, a smile, a time, or light follow-up question. Say Mấy giờ mở cửa?",
       "phrases": [
         {
           "id": "time-1",
@@ -131,7 +131,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this for museums, cafés, counters, or services you plan to return to. The reply may be a smile, a time, or light follow-up question.",
+      "body": "Use this for museums, cafés, counters, or services you plan to return to. Watch for a smile, a time, or light follow-up question.",
       "phrases": [
         {
           "id": "time-4",
@@ -197,7 +197,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Use these for what time?; today; tomorrow morning if the moment moves past the first line.",
       "phrases": [
         {
           "id": "time-1",

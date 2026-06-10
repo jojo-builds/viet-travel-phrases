@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the conversation is moving too fast and you need to reset expectations.",
+      "body": "Lead with Xin lỗi, tôi không nói tiếng Việt; add the detail after the first reply.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -45,7 +45,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Start with Xin lỗi, + tôi; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "chunk-1",

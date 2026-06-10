@@ -4,10 +4,10 @@
   "phraseID": "v500-dire-navi-do-i-go-upstairs",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Tôi có lên lầu không?",
+  "title": "Tôi lên lầu phải không?",
   "englishTitle": "Do I go upstairs?",
-  "pronunciation": "Toi co len lau khong",
-  "summary": "Do I go upstairs?",
+  "pronunciation": "Toi len lau phai khong",
+  "summary": "For confirming whether the place is above you before taking the stairs or elevator.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -15,65 +15,67 @@
     "v500-dire-navi-do-i-go-upstairs",
     "premium"
   ],
-  "audioKey": "v500-dire-navi-do-i-go-upstairs",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có lên lầu không? keeps the question easy to answer. Keep the map, address, or destination visible."
+      "body": "Use it when a sign, guard, shop, or counter points upward but you are not sure.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có lên lầu không? together as one sentence before adding details. Say Tôi có lên lầu không?",
+      "body": "Point to the stairs, elevator, or upper floor. Wait for yes, no, or a floor number.",
       "phrases": [
         {
           "id": "v500-dire-navi-do-i-go-upstairs",
-          "vietnamese": "Tôi có lên lầu không?",
+          "vietnamese": "Tôi lên lầu phải không?",
           "english": "Do I go upstairs?",
-          "pronunciation": "Toi co len lau khong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Toi len lau phai khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "blue",
           "detailPageID": null,
-          "audioKey": "v500-dire-navi-do-i-go-upstairs"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi lên lầu means I go upstairs; phải không asks right? or is that correct?",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi",
+          "english": "I",
+          "keepTogetherReason": "subject"
         },
         {
           "id": "chunk-2",
           "vietnamese": "lên lầu",
-          "english": "upstairs",
-          "audioKey": null
+          "english": "go upstairs",
+          "keepTogetherReason": "upstairs phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "phải không?",
+          "english": "right? / is that correct?",
+          "keepTogetherReason": "confirmation ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "Tôi có lên lầu không?",
-          "english": "Do I go upstairs",
+          "id": "full",
+          "vietnamese": "Tôi lên lầu phải không?",
+          "english": "Do I go upstairs?",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another directions need.",
+      "body": "If the direction changes, move to downstairs, elevator, inside-mall, which-entrance, or write-address follow-ups.",
       "phrases": [
         {
           "id": "directions-1",
@@ -110,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is do I go upstairs. Keep the map, address, or destination visible."
+      "body": "Good in malls, clinics, stations, hotels, apartment lobbies, offices, and older buildings with unclear signs.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For directions, give the listener one clear anchor. A map or address lets them point instead of explaining everything in fast Vietnamese."
+      "body": "Floor words can come fast. A finger pointing up or down may be more useful than another sentence.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use downstairs, elevator, inside-mall, which-entrance, or right-number cards if the building still feels confusing.",
       "phrases": [
         {
           "id": "directions-4",
@@ -178,13 +182,13 @@
   "examples": [
     {
       "id": "v500-dire-navi-do-i-go-upstairs",
-      "vietnamese": "Tôi có lên lầu không?",
+      "vietnamese": "Tôi lên lầu phải không?",
       "english": "Do I go upstairs?",
-      "pronunciation": "Toi co len lau khong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Toi len lau phai khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "blue",
       "detailPageID": null,
-      "audioKey": "v500-dire-navi-do-i-go-upstairs"
+      "audioKey": null
     }
   ]
 }

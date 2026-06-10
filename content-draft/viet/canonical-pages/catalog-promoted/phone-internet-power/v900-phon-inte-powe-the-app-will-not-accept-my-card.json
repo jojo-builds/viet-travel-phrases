@@ -7,7 +7,7 @@
   "title": "Ứng dụng sẽ không chấp nhận thẻ của tôi",
   "englishTitle": "The app will not accept my card",
   "pronunciation": "Ung dung se khong chap nhan the cua toi",
-  "summary": "The app will not accept my card",
+  "summary": "For showing a payment screen when an app refuses your card.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Ứng dụng sẽ không chấp nhận thẻ của tôi keeps the travel moment short and clear. Keep the phone screen or error message visible."
+      "body": "Use it with a ride, delivery, ticket, hotel, or SIM app when the error is visible on your phone."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Ứng dụng sẽ không chấp nhận thẻ của tôi together as one sentence before adding details. Keep the phone screen or error message visible.",
+      "body": "Show the error screen first. Then ask for help switching payment, trying another card, or paying another way.",
       "phrases": [
         {
           "id": "v900-phon-inte-powe-the-app-will-not-accept-my-card",
@@ -42,28 +42,28 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Ứng dụng means the app; sẽ không chấp nhận means will not accept; thẻ của tôi means my card.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Ứng dụng",
-          "english": "app",
-          "audioKey": null
+          "english": "the app",
+          "keepTogetherReason": "app noun"
         },
         {
           "id": "chunk-2",
           "vietnamese": "sẽ không chấp nhận",
           "english": "will not accept",
-          "audioKey": null
+          "keepTogetherReason": "will-not-accept phrase"
         },
         {
           "id": "chunk-3",
           "vietnamese": "thẻ của tôi",
           "english": "my card",
-          "audioKey": null
+          "keepTogetherReason": "my-card phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Ứng dụng sẽ không chấp nhận thẻ của tôi",
           "english": "The app will not accept my card",
           "audioKey": "v900-phon-inte-powe-the-app-will-not-accept-my-card"
@@ -73,104 +73,104 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another phone, internet, or power need.",
+      "body": "Declined card, try another card, and card machine not working phrases help when the problem moves from app to payment.",
       "phrases": [
         {
-          "id": "phone-1",
-          "vietnamese": "Mật khẩu Wi-Fi là gì?",
-          "english": "What is the Wi-Fi password?",
-          "pronunciation": "mat khau wai-fai la zee",
+          "id": "v500-mone-numb-pric-my-card-was-declined",
+          "vietnamese": "Thẻ của tôi đã bị từ chối",
+          "english": "My card was declined",
+          "pronunciation": "The cua toi da bi tu choi",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-phone-1",
-          "audioKey": "phone-1"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v500-mone-numb-pric-my-card-was-declined",
+          "audioKey": "v500-mone-numb-pric-my-card-was-declined"
         },
         {
-          "id": "phone-wifi-common",
-          "vietnamese": "Pass Wi-Fi là gì?",
-          "english": "What is the Wi-Fi password?",
-          "pronunciation": "pas wai-fai la zee",
+          "id": "v500-mone-numb-pric-can-i-try-another-card",
+          "vietnamese": "Tôi có thể thử thẻ khác được không?",
+          "english": "Can I try another card?",
+          "pronunciation": "Toi co the thu the khac duoc khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-phone-wifi-common",
-          "audioKey": "phone-wifi-common"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v500-mone-numb-pric-can-i-try-another-card",
+          "audioKey": "v500-mone-numb-pric-can-i-try-another-card"
         },
         {
-          "id": "phone-2",
-          "vietnamese": "Có bán SIM không?",
-          "english": "Do you sell SIM cards?",
-          "pronunciation": "koh ban sim khong",
+          "id": "v900-mone-numb-pric-the-card-machine-is-not-working",
+          "vietnamese": "Máy thẻ không hoạt động",
+          "english": "The card machine is not working",
+          "pronunciation": "May the khong hoat dong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-phone-2",
-          "audioKey": "phone-2"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-the-card-machine-is-not-working",
+          "audioKey": "v900-mone-numb-pric-the-card-machine-is-not-working"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is the app will not accept my card. Keep the phone screen or error message visible."
+      "body": "Good at hotel desks, SIM shops, ride pickup points, ticket counters, and cafes when staff can see the failed payment."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Phone and Wi-Fi answers can be technical. Let the screen stay visible so the other person can point, type, or check the setting."
+      "body": "Keep the phone in your hand if money is involved. Let them point, read, or type only what you allow."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "QR payment, payment went through, book a Grab, type the address, and Wi-Fi phrases cover common app-payment follow-ups.",
       "phrases": [
         {
-          "id": "phone-3",
-          "vietnamese": "Điện thoại tôi hết pin rồi",
-          "english": "My phone battery is dead",
-          "pronunciation": "dyen thoai toy het pin roy",
+          "id": "v900-mone-numb-pric-can-i-pay-by-qr-code",
+          "vietnamese": "Tôi có thể thanh toán bằng mã QR không?",
+          "english": "Can I pay by QR code?",
+          "pronunciation": "Toi co the thanh toan bang ma QR khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-phone-3",
-          "audioKey": "phone-3"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-can-i-pay-by-qr-code",
+          "audioKey": "v900-mone-numb-pric-can-i-pay-by-qr-code"
         },
         {
-          "id": "phone-4",
-          "vietnamese": "Có sạc không?",
-          "english": "Do you have a charger?",
-          "pronunciation": "koh sahk khong",
+          "id": "v900-mone-numb-pric-the-payment-went-through",
+          "vietnamese": "Việc thanh toán đã được thông qua",
+          "english": "The payment went through",
+          "pronunciation": "Viec thanh toan da duoc thong qua",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-phone-4",
-          "audioKey": "phone-4"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-the-payment-went-through",
+          "audioKey": "v900-mone-numb-pric-the-payment-went-through"
         },
         {
-          "id": "phone-5",
-          "vietnamese": "Tôi sạc điện thoại ở đây được không?",
-          "english": "Can I charge my phone here?",
-          "pronunciation": "toy sahk dyen thoai uh day dook khong",
+          "id": "v900-phon-inte-powe-can-you-help-me-book-a-grab",
+          "vietnamese": "Bạn có thể giúp tôi đặt xe Grab được không?",
+          "english": "Can you help me book a Grab?",
+          "pronunciation": "Ban co the giup toi dat xe Grab duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-phone-5",
-          "audioKey": "phone-5"
+          "detailPageID": "viet-phrase-v900-phon-inte-powe-can-you-help-me-book-a-grab",
+          "audioKey": "v900-phon-inte-powe-can-you-help-me-book-a-grab"
         },
         {
-          "id": "phone-6",
-          "vietnamese": "Tôi cần nạp thêm dữ liệu",
-          "english": "I need a data top-up",
-          "pronunciation": "toy gun nap them yoo lee-ew",
+          "id": "v900-phon-inte-powe-can-you-type-the-address-for-me",
+          "vietnamese": "Bạn có thể gõ địa chỉ cho tôi được không?",
+          "english": "Can you type the address for me?",
+          "pronunciation": "Ban co the go dia chi cho toi duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-phone-6",
-          "audioKey": "phone-6"
+          "detailPageID": "viet-phrase-v900-phon-inte-powe-can-you-type-the-address-for-me",
+          "audioKey": "v900-phon-inte-powe-can-you-type-the-address-for-me"
         },
         {
-          "id": "phone-7",
-          "vietnamese": "eSIM của tôi không hoạt động",
-          "english": "My eSIM is not working",
-          "pronunciation": "ee-sim koo-ah toy khong hwat dohng",
+          "id": "v500-phon-inte-powe-can-i-use-the-wi-fi",
+          "vietnamese": "Tôi có thể sử dụng Wi-Fi không?",
+          "english": "Can I use the Wi-Fi?",
+          "pronunciation": "Toi co the su dung Wi-Fi khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-phone-7",
-          "audioKey": "phone-7"
+          "detailPageID": "viet-phrase-v500-phon-inte-powe-can-i-use-the-wi-fi",
+          "audioKey": "v500-phon-inte-powe-can-i-use-the-wi-fi"
         }
       ]
     }

@@ -20,29 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hãy",
-      "english": "please do"
+      "vietnamese": "Hãy viết",
+      "english": "please write",
+      "keepTogetherReason": "please-write phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "viết",
-      "english": "write"
+      "vietnamese": "địa chỉ",
+      "english": "address",
+      "keepTogetherReason": "address phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "địa chỉ",
-      "english": "address",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tôi",
-      "english": "me"
+      "vietnamese": "cho tôi",
+      "english": "for me",
+      "keepTogetherReason": "for-me phrase"
     },
     {
       "id": "full",

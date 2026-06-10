@@ -7,7 +7,7 @@
   "title": "Bạn có thể khởi động lại bộ định tuyến không?",
   "englishTitle": "Can you restart the router?",
   "pronunciation": "Ban co the khoi dong lai bo dinh tuyen khong",
-  "summary": "Can you restart the router?",
+  "summary": "For asking staff or a host to restart the router when Wi-Fi has failed in your room or table area.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể khởi động lại bộ định tuyến không? asks someone to do one helpful action for you. Use it for restart the router when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Best when the password is correct but pages, maps, calls, or work apps still will not load.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể khởi động lại bộ định tuyến không? together as one sentence before adding details. Start with Bạn có thể khởi động lại bộ định tuyến không?",
+      "body": "Show the Wi-Fi screen or error message. It helps them tell router trouble from a password typo.",
       "phrases": [
         {
           "id": "v500-phon-inte-powe-can-you-restart-the-router",
@@ -42,38 +43,45 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; khởi động lại means restart; bộ định tuyến means router; không makes it a question.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you request frame"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "khởi động lại bộ định tuyến",
-          "english": "the router",
-          "audioKey": null
+          "vietnamese": "khởi động lại",
+          "english": "restart",
+          "keepTogetherReason": "restart verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "bộ định tuyến",
+          "english": "router",
+          "keepTogetherReason": "router noun"
         },
         {
           "id": "chunk-4",
+          "vietnamese": "không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "yes-no ending"
+        },
+        {
+          "id": "full",
           "vietnamese": "Bạn có thể khởi động lại bộ định tuyến không?",
-          "english": "Can you restart the router",
-          "audioKey": null
+          "english": "Can you restart the router?",
+          "audioKey": "v500-phon-inte-powe-can-you-restart-the-router"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another phone, internet, or power need.",
+      "body": "Wi-Fi-password and SIM-card cards help if the problem is access, not the router itself.",
       "phrases": [
         {
           "id": "phone-1",
@@ -110,17 +118,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you restart the router. Keep the phone screen or error message visible."
+      "body": "Good at hotels, homestays, cafes, coworking spaces, or tour offices where staff control the network.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "If they cannot restart it, ask for another network, a seat closer to the router, or the password again.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Battery, charger, charging, data-top-up, and eSIM cards cover the next phone or internet workaround.",
       "phrases": [
         {
           "id": "phone-3",

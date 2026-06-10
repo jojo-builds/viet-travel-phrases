@@ -53,7 +53,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
+      "body": "Show the sign, product, bathroom direction, or payment detail first, ask once, and leave room for the answer.",
       "phrases": [
         {
           "id": "bath-1",
@@ -72,7 +72,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "These phrases are practical and often need a quick answer, not a long conversation. Keep the relevant place, item, or screen visible.",
+      "body": "These phrases are practical and often need a quick answer, not a long conversation. Keep the object, place, note, or screen close by.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -80,7 +80,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a point, short direction, nearby option, or counter name. Say Nhà vệ sinh ở đâu?",
+      "body": "Watch for a point, short direction, nearby option, or counter name. Say Nhà vệ sinh ở đâu?",
       "phrases": [
         {
           "id": "bath-2",
@@ -119,7 +119,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when you need the restroom immediately. The reply may be a point, short direction, nearby option, or counter name.",
+      "body": "Reach for it when you need the restroom immediately. Watch for a point, short direction, nearby option, or counter name.",
       "phrases": [
         {
           "id": "bath-4",
@@ -175,7 +175,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a cafe, station, hotel, or shop, the next useful language is usually do you have toilet paper?; can I use the bathroom?; do you have soap?",
       "phrases": [
         {
           "id": "bath-2",

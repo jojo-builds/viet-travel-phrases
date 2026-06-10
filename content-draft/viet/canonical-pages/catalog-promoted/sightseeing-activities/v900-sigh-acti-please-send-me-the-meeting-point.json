@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng gửi cho tôi điểm tập trung makes the request direct without adding extra explanation. Keep the relevant place, item, or screen visible."
+      "body": "Lead with Vui lòng gửi cho tôi điểm tập trung, then add the detail only if the reply needs it."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Vui lòng gửi cho tôi điểm tập trung together as one sentence before adding details. Keep the relevant place, item, or screen visible.",
+      "body": "Start with Vui lòng gửi cho tôi điểm tập trung; the ticket, booking, meeting point, map location, or attraction name can handle the follow-up detail.",
       "phrases": [
         {
           "id": "v900-sigh-acti-please-send-me-the-meeting-point",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Vui lòng gửi + cho tôi điểm as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another sightseeing or activities need.",
+      "body": "Nearby follow-ups: How much is the ticket?; Where do we start?; Can I take photos here?",
       "phrases": [
         {
           "id": "sight-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please send me the meeting point. Keep the relevant place, item, or screen visible."
+      "body": "Best in a ticket desk, tour counter, entrance, or meeting point, before the explanation gets long. Keep the ticket, booking, meeting point, map location, or attraction name close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Keep close by: What time does it close, Where is the meeting point, and Do I need to book in advance.",
       "phrases": [
         {
           "id": "sight-4",

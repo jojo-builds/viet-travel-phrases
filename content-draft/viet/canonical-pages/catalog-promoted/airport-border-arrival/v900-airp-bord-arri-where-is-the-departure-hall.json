@@ -7,7 +7,7 @@
   "title": "Sảnh khởi hành ở đâu?",
   "englishTitle": "Where is the departure hall?",
   "pronunciation": "Sanh khoi hanh o dau",
-  "summary": "Where is the departure hall?",
+  "summary": "For finding the departure hall before check-in, security, or a terminal split.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Sảnh khởi hành ở đâu? keeps the direction question short. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Departure halls can be on another floor, another building, or the opposite side of arrivals."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Sảnh khởi hành ở đâu? together as one sentence before adding details. Say Sảnh khởi hành ở đâu?",
+      "body": "Show the airline, flight number, or ticket first. Ask before following the wrong crowd.",
       "phrases": [
         {
           "id": "v900-airp-bord-arri-where-is-the-departure-hall",
@@ -42,18 +42,20 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Sảnh khởi hành means departure hall; ở đâu asks where.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Sảnh khởi hành",
-          "english": "the departure hall",
+          "english": "departure hall",
+          "keepTogetherReason": "airport area phrase",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "ở đâu",
+          "vietnamese": "ở đâu?",
           "english": "where?",
+          "keepTogetherReason": "where-question ending",
           "audioKey": null
         },
         {
@@ -67,7 +69,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
+      "body": "If the answer sends you elsewhere, ask about terminal, check-in, gate, elevator, or shuttle.",
       "phrases": [
         {
           "id": "airport-1",
@@ -104,17 +106,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits airport, immigration, baggage, or pickup moment, especially when departure hall can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Good at airport entrances, information desks, taxi drop-offs, and terminal transfers."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+      "body": "Airports often answer with a floor, door, or terminal name. Repeat that one detail back before walking away."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use terminal, gate, check-in, elevator, or shuttle follow-ups if the route has another step.",
       "phrases": [
         {
           "id": "airport-5",

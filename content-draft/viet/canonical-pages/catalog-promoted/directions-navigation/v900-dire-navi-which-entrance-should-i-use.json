@@ -7,7 +7,7 @@
   "title": "Tôi nên sử dụng lối vào nào?",
   "englishTitle": "Which entrance should I use?",
   "pronunciation": "Toi nen su dung loi vao nao",
-  "summary": "Which entrance should I use?",
+  "summary": "For choosing the correct entrance before a station, attraction, hotel, or pickup point splits into several doors.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi nên sử dụng lối vào nào? helps you choose the right option when several lines, gates, counters, sizes, or routes look similar. It asks for Which entrance should I use without making the other person explain everything at once."
+      "body": "Ask while the sign, door, gate number, or map location is still in front of you."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi nên sử dụng lối vào nào? together as one sentence before adding details. Start with Tôi nên sử dụng lối vào nào?",
+      "body": "Show the entrance you mean, then ask the question. A point, head shake, or short correction is enough before you move.",
       "phrases": [
         {
           "id": "v900-dire-navi-which-entrance-should-i-use",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi nên means I should; sử dụng lối vào nào asks which entrance to use.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi nên sử",
-          "english": "entrance",
-          "audioKey": null
+          "vietnamese": "Tôi nên",
+          "english": "I should",
+          "keepTogetherReason": "I-should phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "dụng lối vào",
-          "english": "use the entrance",
-          "audioKey": null
+          "vietnamese": "sử dụng",
+          "english": "use",
+          "keepTogetherReason": "use verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "nào",
-          "english": "which / how",
-          "audioKey": null
+          "vietnamese": "lối vào nào?",
+          "english": "which entrance?",
+          "keepTogetherReason": "which-entrance phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi nên sử dụng lối vào nào?",
-          "english": "Which entrance should I use",
-          "audioKey": null
+          "english": "Which entrance should I use?",
+          "audioKey": "v900-dire-navi-which-entrance-should-i-use"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another directions need.",
+      "body": "If the answer becomes a longer route, ask how to get there, whether it is nearby, or how long the walk takes.",
       "phrases": [
         {
           "id": "directions-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is which entrance should I use. Keep the map, address, or destination visible."
+      "body": "Good at stations, malls, museums, hotels, parking areas, and attractions with several entry points."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For directions, give the listener one clear anchor. A map or address lets them point instead of explaining everything in fast Vietnamese."
+      "body": "If staff answer with a floor, gate, or street name, ask them to point before you walk away."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Left, right, straight, pickup-point, and understand-now phrases cover the next route move.",
       "phrases": [
         {
           "id": "directions-4",

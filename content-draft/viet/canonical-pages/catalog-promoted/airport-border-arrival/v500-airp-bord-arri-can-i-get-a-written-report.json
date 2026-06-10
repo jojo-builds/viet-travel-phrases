@@ -7,7 +7,7 @@
   "title": "Tôi có thể nhận được một báo cáo bằng văn bản không?",
   "englishTitle": "Can I get a written report?",
   "pronunciation": "Toi co the nhan duoc mot bao cao bang van ban khong",
-  "summary": "Can I get a written report?",
+  "summary": "For asking airport staff for a written report, claim note, or incident record.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể nhận được một báo cáo bằng văn bản không? keeps the question easy to answer. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "The document matters later. Keep the baggage tag, form, receipt, or counter screen visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể nhận được một báo cáo bằng văn bản không? together as one sentence before adding details. Start with Tôi có thể nhận được một báo cáo bằng văn bản không?",
+      "body": "Ask for the report before leaving the counter. A claim number, printed note, or photo can save a second trip.",
       "phrases": [
         {
           "id": "v500-airp-bord-arri-can-i-get-a-written-report",
@@ -42,50 +42,50 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể asks can I; nhận được means get; báo cáo bằng văn bản means written report.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I question frame"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể nhận được",
-          "english": "can receive",
-          "audioKey": null
+          "vietnamese": "nhận được",
+          "english": "get / receive",
+          "keepTogetherReason": "get-receive phrase"
         },
         {
           "id": "chunk-3",
           "vietnamese": "một báo cáo",
-          "english": "report",
-          "audioKey": null
+          "english": "a report",
+          "keepTogetherReason": "report phrase"
         },
         {
           "id": "chunk-4",
           "vietnamese": "bằng văn bản",
           "english": "in writing",
-          "audioKey": null
+          "keepTogetherReason": "written/in-writing phrase"
         },
         {
           "id": "chunk-5",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-6",
+          "id": "full",
           "vietnamese": "Tôi có thể nhận được một báo cáo bằng văn bản không?",
-          "english": "Can I get a written report",
-          "audioKey": null
+          "english": "Can I get a written report?",
+          "audioKey": "v500-airp-bord-arri-can-i-get-a-written-report"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
+      "body": "Immigration, baggage claim, and SIM-card phrases cover the arrival basics nearby.",
       "phrases": [
         {
           "id": "airport-1",
@@ -122,17 +122,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I get a written report. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Good for lost luggage, damaged bags, canceled pickups, insurance claims, or anything staff say must be documented."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Check that the report has a date, counter name, and reference number before you leave."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Pickup-area, driver-meeting, missing-bag, baggage-tag, and visa phrases cover the airport path around the report.",
       "phrases": [
         {
           "id": "airport-5",

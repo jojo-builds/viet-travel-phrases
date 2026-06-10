@@ -20,35 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Giá",
-      "english": "price"
+      "vietnamese": "Giá này",
+      "english": "this price",
+      "keepTogetherReason": "this-price phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "này",
-      "english": "this"
+      "vietnamese": "bằng đồng Việt Nam",
+      "english": "in Vietnamese dong",
+      "keepTogetherReason": "Vietnamese-dong phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "bằng",
-      "english": "by / with"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "đồng",
-      "english": "dong / currency"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "Việt Nam",
-      "english": "Vietnamese",
-      "keepTogetherReason": "country name used as modifier"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "phải không?",
-      "english": "is that right?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "english": "right?",
+      "keepTogetherReason": "confirmation ending"
     },
     {
       "id": "full",

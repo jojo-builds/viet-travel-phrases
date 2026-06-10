@@ -7,7 +7,7 @@
   "title": "Tôi không thể tìm thấy hướng dẫn viên du lịch",
   "englishTitle": "I cannot find the tour guide",
   "pronunciation": "Toi khong the tim thay huong dan vien du lich",
-  "summary": "I cannot find the tour guide",
+  "summary": "For telling staff you are at the meeting area but cannot find the guide.",
   "iconName": "camera.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi không thể tìm thấy hướng dẫn viên du lịch explains a limit without making the exchange tense. It helps someone understand I cannot find the tour guide and offer a simpler option, a written detail, or a next step."
+      "body": "Use it with a tour booking, ticket, chat thread, or meeting-point sign in view."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi không thể tìm thấy hướng dẫn viên du lịch calmly and show the proof if you have it: ticket, map, attraction name, booking screen, or meeting point sign. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Show the booking or meeting point after the phrase so staff can match the time, company, or guide name.",
       "phrases": [
         {
           "id": "v900-sigh-acti-i-cannot-find-the-tour-guide",
@@ -42,116 +42,80 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi không thể tìm thấy means I cannot find; hướng dẫn viên du lịch means the tour guide.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi không",
-          "english": "I do not",
-          "audioKey": null
+          "vietnamese": "Tôi không thể tìm thấy",
+          "english": "I cannot find",
+          "keepTogetherReason": "cannot-find phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể tìm thấy hướng dẫn viên",
-          "english": "cannot find the guide",
-          "audioKey": null
+          "vietnamese": "hướng dẫn viên du lịch",
+          "english": "the tour guide",
+          "keepTogetherReason": "tour-guide phrase"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "du lịch",
-          "english": "meet the tour group",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi không thể tìm thấy hướng dẫn viên du lịch",
           "english": "I cannot find the tour guide",
-          "audioKey": null
+          "audioKey": "v900-sigh-acti-i-cannot-find-the-tour-guide"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another sightseeing or activities need.",
+      "body": "Tour meeting place, start time, and send meeting point phrases help when the guide is not visible yet.",
       "phrases": [
         {
-          "id": "sight-1",
-          "vietnamese": "Vé bao nhiêu?",
-          "english": "How much is the ticket?",
-          "pronunciation": "veh bao nyew",
+          "id": "v900-sigh-acti-where-does-the-tour-meet",
+          "vietnamese": "Chuyến đi gặp nhau ở đâu?",
+          "english": "Where does the tour meet?",
+          "pronunciation": "Chuyen di gap nhau o dau",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-sight-1",
-          "audioKey": "sight-1"
+          "detailPageID": "viet-phrase-v900-sigh-acti-where-does-the-tour-meet",
+          "audioKey": "v900-sigh-acti-where-does-the-tour-meet"
         },
         {
-          "id": "sight-2",
-          "vietnamese": "Bắt đầu ở đâu?",
-          "english": "Where do we start?",
-          "pronunciation": "bat dow uh dow",
+          "id": "v900-sigh-acti-what-time-does-the-tour-start",
+          "vietnamese": "Chuyến tham quan bắt đầu lúc mấy giờ?",
+          "english": "What time does the tour start?",
+          "pronunciation": "Chuyen tham quan bat dau luc may gio",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-sight-2",
-          "audioKey": "sight-2"
+          "detailPageID": "viet-phrase-v900-sigh-acti-what-time-does-the-tour-start",
+          "audioKey": "v900-sigh-acti-what-time-does-the-tour-start"
         },
         {
-          "id": "sight-3",
-          "vietnamese": "Tôi chụp hình ở đây được không?",
-          "english": "Can I take photos here?",
-          "pronunciation": "toy choop hinh uh day dook khong",
+          "id": "v900-sigh-acti-please-send-me-the-meeting-point",
+          "vietnamese": "Vui lòng gửi cho tôi điểm tập trung",
+          "english": "Please send me the meeting point",
+          "pronunciation": "Vui long gui cho toi diem tap trung",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-sight-3",
-          "audioKey": "sight-3"
+          "detailPageID": "viet-phrase-v900-sigh-acti-please-send-me-the-meeting-point",
+          "audioKey": "v900-sigh-acti-please-send-me-the-meeting-point"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i cannot find the tour guide. Keep the relevant place, item, or screen visible."
+      "body": "Good at hotel lobbies, ticket desks, attraction entrances, bus pickup points, and tour counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "The next useful detail is usually the tour company, guide name, start time, or meeting point."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Tour booking, entrance, English guide, tour meeting place, and book a tour phrases cover the next sightseeing handoff.",
       "phrases": [
-        {
-          "id": "sight-4",
-          "vietnamese": "Mấy giờ đóng cửa?",
-          "english": "What time does it close?",
-          "pronunciation": "may zyuh dong koo-ah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
-          "detailPageID": "viet-phrase-sight-4",
-          "audioKey": "sight-4"
-        },
-        {
-          "id": "sight-5",
-          "vietnamese": "Điểm gặp ở đâu?",
-          "english": "Where is the meeting point?",
-          "pronunciation": "deeym gap uh dow",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
-          "detailPageID": "viet-phrase-sight-5",
-          "audioKey": "sight-5"
-        },
-        {
-          "id": "sight-6",
-          "vietnamese": "Tôi cần đặt trước không?",
-          "english": "Do I need to book in advance?",
-          "pronunciation": "toy gun dat chooc khong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "purple",
-          "detailPageID": "viet-phrase-sight-6",
-          "audioKey": "sight-6"
-        },
         {
           "id": "v500-sigh-acti-i-have-a-tour-booking",
           "vietnamese": "Tôi có đặt tour",
@@ -171,6 +135,36 @@
           "tintName": "purple",
           "detailPageID": "viet-phrase-v500-sigh-acti-where-is-the-entrance",
           "audioKey": "v500-sigh-acti-where-is-the-entrance"
+        },
+        {
+          "id": "v900-sigh-acti-is-there-an-english-guide",
+          "vietnamese": "Có hướng dẫn viên tiếng Anh không?",
+          "english": "Is there an English guide?",
+          "pronunciation": "Co huong dan vien tieng Anh khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v900-sigh-acti-is-there-an-english-guide",
+          "audioKey": null
+        },
+        {
+          "id": "v900-dire-navi-where-do-i-meet-the-tour-group",
+          "vietnamese": "Tôi gặp nhóm du lịch ở đâu?",
+          "english": "Where do I meet the tour group?",
+          "pronunciation": "Toi gap nhom du lich o dau",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v900-dire-navi-where-do-i-meet-the-tour-group",
+          "audioKey": "v900-dire-navi-where-do-i-meet-the-tour-group"
+        },
+        {
+          "id": "v900-sigh-acti-id-like-to-book-a-tour",
+          "vietnamese": "Tôi muốn đặt một chuyến tham quan",
+          "english": "I’d like to book a tour",
+          "pronunciation": "Toi muon dat mot chuyen tham quan",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v900-sigh-acti-id-like-to-book-a-tour",
+          "audioKey": "v900-sigh-acti-id-like-to-book-a-tour"
         }
       ]
     }

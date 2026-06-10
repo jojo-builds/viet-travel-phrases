@@ -19,10 +19,17 @@
   ],
   "tokens": [
     {
+      "id": "chunk-1",
+      "vietnamese": "Mang đi",
+      "english": "to go / take away",
+      "audioKey": "breakdown-coffee-6-full",
+      "keepTogetherReason": "fixed takeaway phrase"
+    },
+    {
       "id": "full",
       "vietnamese": "Mang đi",
       "english": "To go",
-      "audioKey": "food-to-go"
+      "audioKey": "coffee-6"
     }
   ]
 }

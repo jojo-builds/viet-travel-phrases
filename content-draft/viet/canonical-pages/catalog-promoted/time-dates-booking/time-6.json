@@ -7,7 +7,7 @@
   "title": "Dời lại muộn hơn được không?",
   "englishTitle": "Can we move it later?",
   "pronunciation": "zoy lie moon hun dook khong",
-  "summary": "Can we move it later?",
+  "summary": "For asking to push a booking, pickup, ticket time, or appointment later.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Dời lại muộn hơn được không? keeps the question easy to answer. Keep the booking, room number, date, or address visible."
+      "body": "Ask while the current time is visible on the booking, ticket, calendar, or chat."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Dời lại muộn hơn được không? together as one sentence before adding details. Say Dời lại muộn hơn được không?",
+      "body": "Show the original time first. Then listen for the new slot, fee, or no-change answer.",
       "phrases": [
         {
           "id": "time-6",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Dời lại means move or reschedule; muộn hơn means later; được không? asks if it is possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Dời lại muộn",
-          "english": "move it later",
-          "audioKey": null
+          "vietnamese": "Dời lại",
+          "english": "move / reschedule",
+          "keepTogetherReason": "reschedule verb"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "hơn",
-          "english": "more",
-          "audioKey": null
+          "vietnamese": "muộn hơn",
+          "english": "later",
+          "keepTogetherReason": "later-time phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Dời lại muộn hơn được không?",
-          "english": "Can we move it later",
-          "audioKey": null
+          "english": "Can we move it later?",
+          "audioKey": "time-6"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "What-time, today, and tomorrow-morning cards help if the answer becomes a new time choice.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can we move it later. Keep the booking, room number, date, or address visible."
+      "body": "Booking desks, tour counters, clinic appointments, pickup chats, and ticket windows are natural places for it."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "A later time may cost more or depend on availability. Keep the booking code ready for the follow-up."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Booking, opening-time, boarding-time, wait-time, and one-ticket cards cover nearby schedule decisions.",
       "phrases": [
         {
           "id": "time-4",

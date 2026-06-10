@@ -1,13 +1,31 @@
 {
   "sourcePagesChecked": 933,
-  "sectionsChecked": 6884,
-  "sectionsUpdated": 5,
-  "changedFiles": 4,
+  "summariesChecked": 933,
+  "summariesUpdated": 38,
+  "sectionsChecked": 6868,
+  "sectionsUpdated": 80,
+  "changedFiles": 106,
   "ledgerPath": "docs/content-audits/phrase-copy-production-gate-2026-06-08/anti-thinning-ledger.jsonl",
   "changedFilesSample": [
-    "content-draft/viet/canonical-pages/tier-one/directions-navigation/directions-understand-now.json",
-    "content-draft/viet/canonical-pages/tier-one/polite-basics/polite-acknowledge.json",
-    "content-draft/viet/canonical-pages/tier-one/polite-basics/polite-no-thanks.json",
-    "content-draft/viet/canonical-pages/tier-one/polite-basics/v500-poli-basi-yes.json"
+    "content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-sim.json",
+    "content-draft/viet/canonical-pages/tier-one/airport-border-arrival/v500-airp-bord-arri-here-is-my-passport.json",
+    "content-draft/viet/canonical-pages/tier-one/airport-border-arrival/v500-airp-bord-arri-here-is-my-visa.json",
+    "content-draft/viet/canonical-pages/tier-one/airport-border-arrival/v500-airp-bord-arri-where-is-the-atm.json",
+    "content-draft/viet/canonical-pages/tier-one/bathroom-personal-needs/bathroom-paper.json",
+    "content-draft/viet/canonical-pages/tier-one/directions-navigation/directions-turn-right.json",
+    "content-draft/viet/canonical-pages/tier-one/directions-navigation/v500-dire-navi-where-is-the-nearest-restroom.json",
+    "content-draft/viet/canonical-pages/tier-one/emergency-safety/emergency-ambulance.json",
+    "content-draft/viet/canonical-pages/tier-one/emergency-safety/emergency-hospital.json",
+    "content-draft/viet/canonical-pages/tier-one/emergency-safety/emergency-police.json",
+    "content-draft/viet/canonical-pages/tier-one/emergency-safety/v500-emer-safe-do-not-touch-me.json",
+    "content-draft/viet/canonical-pages/tier-one/emergency-safety/v500-emer-safe-i-am-injured.json",
+    "content-draft/viet/canonical-pages/tier-one/emergency-safety/v500-emer-safe-i-cannot-move.json",
+    "content-draft/viet/canonical-pages/tier-one/health-pharmacy/health-allergy.json",
+    "content-draft/viet/canonical-pages/tier-one/health-pharmacy/health-diarrhea.json",
+    "content-draft/viet/canonical-pages/tier-one/health-pharmacy/health-doctor.json",
+    "content-draft/viet/canonical-pages/tier-one/health-pharmacy/health-pharmacy.json",
+    "content-draft/viet/canonical-pages/tier-one/health-pharmacy/v500-heal-phar-i-feel-dizzy.json",
+    "content-draft/viet/canonical-pages/tier-one/hotel-accommodation/hotel-checkout.json",
+    "content-draft/viet/canonical-pages/tier-one/hotel-accommodation/hotel-more-supplies.json"
   ]
 }

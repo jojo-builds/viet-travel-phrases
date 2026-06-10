@@ -7,7 +7,7 @@
   "title": "Nó có ở phía sau tòa nhà này không?",
   "englishTitle": "Is it behind this building?",
   "pronunciation": "No co o phia sau toa nha nay khong",
-  "summary": "Is it behind this building?",
+  "summary": "For checking whether the entrance, shop, counter, or pickup spot is behind the building.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Nó có ở phía sau tòa nhà này không? keeps the question easy to answer. Keep the map, address, or destination visible."
+      "body": "Vietnamese directions often use landmarks; behind this building can mean alley, rear gate, parking lane, or courtyard."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use Nó có ở phía sau tòa nhà này không? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "body": "Point to the building or map location first. Ask before walking into a side alley.",
       "phrases": [
         {
           "id": "v900-dire-navi-is-it-behind-this-building",
@@ -42,36 +42,42 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Phía sau means behind; tòa nhà này means this building; không? checks if you are right.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Nó có ở",
-          "english": "the hotel",
+          "vietnamese": "Nó",
+          "english": "it",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "phía sau tòa",
-          "english": "fee",
+          "vietnamese": "có ở",
+          "english": "is located at",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "nhà này",
-          "english": "this one / this",
+          "vietnamese": "phía sau",
+          "english": "behind",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "tòa nhà này",
+          "english": "this building",
           "audioKey": null
         },
         {
           "id": "chunk-5",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-6",
           "vietnamese": "Nó có ở phía sau tòa nhà này không?",
-          "english": "Is it behind this building",
+          "english": "Is it behind this building?",
           "audioKey": null
         }
       ]
@@ -79,7 +85,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another directions need.",
+      "body": "If the answer becomes a route, use turn, cross, entrance, or landmark follow-ups.",
       "phrases": [
         {
           "id": "directions-1",
@@ -116,17 +122,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+      "body": "Good near malls, clinics, apartment blocks, cafes, stations, and office buildings where the front door is not the only entrance."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For directions, give the listener one clear anchor. A map or address lets them point instead of explaining everything in fast Vietnamese."
+      "body": "If someone points behind the building, ask whether you should go left, right, or through a gate."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Left, right, straight, entrance, and landmark follow-ups handle the route after the yes/no answer.",
       "phrases": [
         {
           "id": "directions-4",

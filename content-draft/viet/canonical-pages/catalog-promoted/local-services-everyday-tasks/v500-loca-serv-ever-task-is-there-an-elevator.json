@@ -7,7 +7,7 @@
   "title": "Có thang máy không?",
   "englishTitle": "Is there an elevator?",
   "pronunciation": "Co thang may khong",
-  "summary": "Is there an elevator?",
+  "summary": "For checking lift access before carrying bags, entering a building, or choosing stairs.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có thang máy không? keeps the question easy to answer. Point to the item, menu line, receipt, size, or photo."
+      "body": "Ask before committing to stairs, especially with luggage, heat, injury, or an upper-floor address."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Có thang máy không? together as one sentence before adding details. Say Có thang máy không?",
+      "body": "Point toward the lobby, stairwell, or floor number so the answer is about this building.",
       "phrases": [
         {
           "id": "v500-loca-serv-ever-task-is-there-an-elevator",
@@ -42,129 +42,134 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có means there is or has; thang máy means elevator; không? makes it yes/no.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Có thang máy",
-          "english": "has an elevator",
-          "audioKey": null
+          "vietnamese": "Có",
+          "english": "is there / has"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "thang máy",
+          "english": "elevator",
+          "keepTogetherReason": "elevator noun"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
+        },
+        {
+          "id": "full",
           "vietnamese": "Có thang máy không?",
-          "english": "Is there an elevator",
-          "audioKey": null
+          "english": "Is there an elevator?",
+          "audioKey": "v500-loca-serv-ever-task-is-there-an-elevator"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another local service need.",
+      "body": "Elevator-location, ramp, and upstairs phrases cover nearby access questions.",
       "phrases": [
         {
-          "id": "store-1",
-          "vietnamese": "Cho tôi chai nước",
-          "english": "A bottle of water please",
-          "pronunciation": "cho toy chai nook",
+          "id": "v500-dire-navi-where-is-the-elevator",
+          "vietnamese": "Thang máy ở đâu?",
+          "english": "Where is the elevator?",
+          "pronunciation": "Thang may o dau",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-1",
-          "audioKey": "store-1"
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v500-dire-navi-where-is-the-elevator",
+          "audioKey": "v500-dire-navi-where-is-the-elevator"
         },
         {
-          "id": "store-2",
-          "vietnamese": "Có túi không?",
-          "english": "Do you have a bag?",
-          "pronunciation": "koh too-ee khong",
+          "id": "v500-loca-serv-ever-task-is-there-a-ramp",
+          "vietnamese": "Có đoạn đường nối không?",
+          "english": "Is there a ramp?",
+          "pronunciation": "Co doan duong noi khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-store-2",
-          "audioKey": "store-2"
+          "detailPageID": "viet-phrase-v500-loca-serv-ever-task-is-there-a-ramp",
+          "audioKey": "v500-loca-serv-ever-task-is-there-a-ramp"
         },
         {
-          "id": "store-3",
-          "vietnamese": "Cho tôi khăn giấy",
-          "english": "Tissues please",
-          "pronunciation": "cho toy khan zai",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-3",
-          "audioKey": "store-3"
+          "id": "v500-dire-navi-do-i-go-upstairs",
+          "vietnamese": "Tôi lên lầu phải không?",
+          "english": "Do I go upstairs?",
+          "pronunciation": "Toi len lau phai khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v500-dire-navi-do-i-go-upstairs",
+          "audioKey": null
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is is there an elevator. Point to the item, menu line, receipt, size, or photo."
+      "body": "Good at hotels, apartment lobbies, clinics, malls, stations, and small office buildings."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Service counters often answer with numbers or times. Ask the short question first, then use a write-it-down phrase if needed."
+      "body": "If there is no elevator, ask for the floor, a ramp, or help with bags before moving on."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Downstairs, back-entrance, write-address, quieter-seat, and cooler-seat phrases cover practical reroutes.",
       "phrases": [
         {
-          "id": "store-4",
-          "vietnamese": "Ở đâu có kem chống nắng?",
-          "english": "Where is the sunscreen?",
-          "pronunciation": "uh dow koh kem chong nang",
+          "id": "v500-dire-navi-do-i-go-downstairs",
+          "vietnamese": "Tôi có đi xuống tầng dưới không?",
+          "english": "Do I go downstairs?",
+          "pronunciation": "Toi co di xuong tang duoi khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-4",
-          "audioKey": "store-4"
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v500-dire-navi-do-i-go-downstairs",
+          "audioKey": "v500-dire-navi-do-i-go-downstairs"
         },
         {
-          "id": "store-5",
-          "vietnamese": "Mở cái này giúp tôi",
-          "english": "Please open this for me",
-          "pronunciation": "muh gai nai zoop toy",
+          "id": "v900-dire-navi-where-is-the-back-entrance",
+          "vietnamese": "Lối vào phía sau ở đâu?",
+          "english": "Where is the back entrance?",
+          "pronunciation": "Loi vao phia sau o dau",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-5",
-          "audioKey": "store-5"
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v900-dire-navi-where-is-the-back-entrance",
+          "audioKey": "v900-dire-navi-where-is-the-back-entrance"
         },
         {
-          "id": "store-6",
-          "vietnamese": "Tôi quẹt thẻ được không?",
-          "english": "Can I pay by card?",
-          "pronunciation": "toy quet teh dook khong",
+          "id": "v500-unde-repa-can-you-write-the-address",
+          "vietnamese": "Bạn có thể viết địa chỉ được không?",
+          "english": "Can you write the address?",
+          "pronunciation": "Ban co the viet dia chi duoc khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-6",
-          "audioKey": "store-6"
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v500-unde-repa-can-you-write-the-address",
+          "audioKey": "v500-unde-repa-can-you-write-the-address"
         },
         {
-          "id": "store-7",
-          "vietnamese": "Cho tôi hóa đơn",
-          "english": "Please give me the receipt",
-          "pronunciation": "cho toy hwa dun",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-loca-serv-ever-task-can-we-sit-somewhere-quieter",
+          "vietnamese": "Chúng tôi có thể ngồi chỗ nào yên tĩnh hơn được không?",
+          "english": "Can we sit somewhere quieter?",
+          "pronunciation": "Chung toi co the ngoi cho nao yen tinh hon duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-store-7",
-          "audioKey": "store-7"
+          "detailPageID": "viet-phrase-v900-loca-serv-ever-task-can-we-sit-somewhere-quieter",
+          "audioKey": null
         },
         {
-          "id": "service-8",
-          "vietnamese": "In cái này được không?",
-          "english": "Can I print this?",
-          "pronunciation": "in gai nai dook khong",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-loca-serv-ever-task-can-we-sit-somewhere-cooler",
+          "vietnamese": "Chúng tôi có thể ngồi chỗ nào mát hơn được không?",
+          "english": "Can we sit somewhere cooler?",
+          "pronunciation": "Chung toi co the ngoi cho nao mat hon duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-service-8",
-          "audioKey": "service-8"
+          "detailPageID": "viet-phrase-v900-loca-serv-ever-task-can-we-sit-somewhere-cooler",
+          "audioKey": null
         }
       ]
     }

@@ -7,7 +7,7 @@
   "title": "Món ăn nào an toàn nhất cho người bị dị ứng này?",
   "englishTitle": "Which dish is safest for this allergy?",
   "pronunciation": "Mon an nao an toan nhat cho nguoi bi di ung nay",
-  "summary": "Which dish is safest for this allergy?",
+  "summary": "For asking staff to steer you toward the safest dish for a specific allergy or restriction.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Món ăn nào an toàn nhất cho người bị dị ứng này? helps you choose the right option when several lines, gates, counters, sizes, or routes look similar. It asks for Which dish is safest for this allergy without making the other person explain everything at once."
+      "body": "Use this before ordering when the menu has several risky-looking choices and you need staff to narrow it down.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Món ăn nào an toàn nhất cho người bị dị ứng này? together as one sentence before adding details. Start with Món ăn nào an toàn nhất cho người bị dị ứng này?",
+      "body": "Show the allergy note first, then ask for the safest dish. Wait for one clear recommendation.",
       "phrases": [
         {
           "id": "food-premium-which-dish-safe",
@@ -37,148 +40,176 @@
           "detailPageID": null,
           "audioKey": "food-premium-which-dish-safe"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Start with Món ăn nào + an toàn nhất; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
-          "id": "chunk-1",
-          "vietnamese": "Món ăn nào",
-          "english": "which dish",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-2",
-          "vietnamese": "an toàn nhất",
-          "english": "safe",
+          "id": "viet-phrase-food-premium-which-dish-safe-breakdown-piece-1",
+          "vietnamese": "Món ăn",
+          "english": "dish / food",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "cho người bị",
-          "english": "for someone with",
-          "audioKey": null
+          "vietnamese": "nào",
+          "english": "which / any",
+          "audioKey": "breakdown-v500-bath-pers-need-is-there-a-public-bathroom-nearby-piece-6"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "dị ứng này",
-          "english": "this one / this",
+          "vietnamese": "an toàn",
+          "english": "safe",
           "audioKey": null
         },
         {
           "id": "chunk-5",
-          "vietnamese": "Món ăn nào an toàn nhất cho người bị dị ứng này?",
-          "english": "Which dish is safest for this allergy",
+          "vietnamese": "nhất",
+          "english": "most / first",
           "audioKey": null
-        }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
         },
         {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
+          "id": "chunk-6",
+          "vietnamese": "cho",
+          "english": "to / for",
+          "audioKey": "breakdown-taxi-1-first"
         },
         {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
+          "id": "chunk-7",
+          "vietnamese": "người",
+          "english": "person",
+          "audioKey": "breakdown-v900-tran-the-driver-left-without-me-first"
+        },
+        {
+          "id": "chunk-8",
+          "vietnamese": "bị dị ứng",
+          "english": "am allergic",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-9",
+          "vietnamese": "này?",
+          "english": "this",
+          "audioKey": null
+        },
+        {
+          "id": "full",
+          "vietnamese": "Món ăn nào an toàn nhất cho người bị dị ứng này?",
+          "english": "Which dish is safest for this allergy?",
+          "audioKey": "food-premium-which-dish-safe"
         }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is which dish is safest for this allergy. Point to the item, menu line, receipt, size, or photo."
+      "body": "Best at a restaurant counter or table before the kitchen starts cooking.",
+      "phrases": [
+        {
+          "id": "food-premium-no-meat",
+          "vietnamese": "Làm ơn đừng có thịt.",
+          "english": "No meat, please.",
+          "pronunciation": "Lam on dung co thit",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-food-premium-no-meat",
+          "audioKey": "food-premium-no-meat"
+        },
+        {
+          "id": "food-premium-without-this-ingredient",
+          "vietnamese": "Bạn có thể làm món này không có nguyên liệu này được không?",
+          "english": "Can you make it without this ingredient?",
+          "pronunciation": "Ban co the lam mon nay khong co nguyen lieu nay duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-food-premium-without-this-ingredient",
+          "audioKey": null
+        },
+        {
+          "id": "v900-food-drin-is-this-pork-beef-or-chicken",
+          "vietnamese": "Đây là thịt lợn, thịt bò hay thịt gà?",
+          "english": "Is this pork, beef, or chicken?",
+          "pronunciation": "Day la thit lon thit bo hay thit ga",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-is-this-pork-beef-or-chicken",
+          "audioKey": "v900-food-drin-is-this-pork-beef-or-chicken"
+        },
+        {
+          "id": "v500-food-drin-does-this-contain-shrimp",
+          "vietnamese": "Cái này có chứa tôm không?",
+          "english": "Does this contain shrimp?",
+          "pronunciation": "Cai nay co chua tom khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v500-food-drin-does-this-contain-shrimp",
+          "audioKey": "v500-food-drin-does-this-contain-shrimp"
+        },
+        {
+          "id": "v900-food-drin-does-this-contain-fish-sauce",
+          "vietnamese": "Cái này có nước mắm không?",
+          "english": "Does this contain fish sauce?",
+          "pronunciation": "Cai nay co nuoc mam khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-does-this-contain-fish-sauce",
+          "audioKey": "v900-food-drin-does-this-contain-fish-sauce"
+        }
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
+      "body": "A safe dish needs a clear answer, not just a friendly nod. Ask again if the reply feels vague.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Keep fish-sauce, shellfish, and cannot-eat-this cards nearby if the answer turns uncertain.",
       "phrases": [
         {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
+          "id": "v900-food-drin-can-i-order-this-without-meat",
+          "vietnamese": "Tôi có thể gọi món này mà không có thịt được không?",
+          "english": "Can I order this without meat?",
+          "pronunciation": "Toi co the goi mon nay ma khong co thit duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
-          "audioKey": "coffee-4"
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-order-this-without-meat",
+          "audioKey": "v900-food-drin-can-i-order-this-without-meat"
         },
         {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
+          "id": "food-peanut-allergy",
+          "vietnamese": "Tôi bị dị ứng đậu phộng",
+          "english": "I am allergic to peanuts",
+          "pronunciation": "toy bee zee oong dow fohng",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
-          "audioKey": "coffee-5"
-        },
-        {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
-          "audioKey": "coffee-6"
-        },
-        {
-          "id": "coffee-7",
-          "vietnamese": "Tính tiền giúp tôi",
-          "english": "Please let me pay",
-          "pronunciation": "ting tyen zoop toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
-          "audioKey": "coffee-7"
-        },
-        {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
-          "audioKey": "food-need-table"
+          "detailPageID": "viet-family-food-peanut-allergy",
+          "audioKey": "food-peanut-allergy"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use no-meat or without-this-ingredient cards when you already know which dish you want.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [

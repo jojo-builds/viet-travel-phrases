@@ -7,7 +7,7 @@
   "title": "Tôi bị tiêu chảy",
   "englishTitle": "I have diarrhea",
   "pronunciation": "Toi bi tieu chay",
-  "summary": "I have diarrhea",
+  "summary": "For naming diarrhea clearly at a pharmacy, clinic, or hotel desk.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi bị tiêu chảy names the need before the details start piling up. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Use this when you need medicine, oral rehydration salts, clinic advice, or help changing plans."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi bị tiêu chảy together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Say the line plainly. Point to your stomach, a pharmacy shelf, or a translated note if needed.",
       "phrases": [
         {
           "id": "v500-heal-phar-i-have-diarrhea",
@@ -42,32 +42,34 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi bị means I have or I am affected by; tiêu chảy means diarrhea.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi bị",
-          "english": "I have / got",
+          "english": "I have / I am affected by",
+          "keepTogetherReason": "condition phrase",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "tiêu chảy",
           "english": "diarrhea",
+          "keepTogetherReason": "symptom phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "Tôi bị tiêu chảy",
           "english": "I have diarrhea",
-          "audioKey": null
+          "audioKey": "v500-heal-phar-i-have-diarrhea"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "If the answer changes, ask pharmacy, doctor, stomach pain, allergy, or how to take this.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +106,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i have diarrhea. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at pharmacies, clinics, hotel desks, tour counters, or with a guide helping translate."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "Short and direct is kinder here. If symptoms are severe, ask for a doctor instead of only medicine."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use stomach, doctor, pharmacy, dosage, or allergy follow-ups if the staff needs the next detail.",
       "phrases": [
         {
           "id": "health-2",

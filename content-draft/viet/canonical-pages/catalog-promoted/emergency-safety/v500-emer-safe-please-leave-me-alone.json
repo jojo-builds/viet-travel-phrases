@@ -7,7 +7,7 @@
   "title": "Xin hãy để tôi yên",
   "englishTitle": "Please leave me alone",
   "pronunciation": "Xin hay de toi yen",
-  "summary": "Please leave me alone",
+  "summary": "For telling someone firmly to leave you alone when a situation feels uncomfortable or unsafe.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Xin hãy để tôi yên makes the request direct without adding extra explanation. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Use it with a clear voice and move toward staff, a counter, hotel security, or a public place if needed."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Xin hãy để tôi yên together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Say it once, then create space. If the person keeps following you, move to help or police language.",
       "phrases": [
         {
           "id": "v500-emer-safe-please-leave-me-alone",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Xin hãy means please; để tôi yên means leave me alone.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Xin hãy để",
-          "english": "please / ask",
-          "audioKey": null
+          "vietnamese": "Xin hãy",
+          "english": "please",
+          "keepTogetherReason": "polite opener"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tôi yên",
-          "english": "me alone",
-          "audioKey": null
+          "vietnamese": "để tôi yên",
+          "english": "leave me alone",
+          "keepTogetherReason": "leave-me-alone phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Xin hãy để tôi yên",
           "english": "Please leave me alone",
-          "audioKey": null
+          "audioKey": "v500-emer-safe-please-leave-me-alone"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another safety or urgent-help need.",
+      "body": "Police, ambulance, and lost-passport cards sit nearby because safety situations can change fast.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please leave me alone. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Street harassment, pushy sales, and unsafe encounters call for direct wording before you move toward staff or a public counter."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "This phrase is intentionally direct. You do not need to soften it if someone is bothering you."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Unsafe, emergency, help, hospital, and stolen-bag cards cover the next safety handoff.",
       "phrases": [
         {
           "id": "emergency-4",

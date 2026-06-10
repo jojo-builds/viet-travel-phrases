@@ -7,7 +7,7 @@
   "title": "Tôi cảm thấy không an toàn, xin hãy dừng lại",
   "englishTitle": "I feel unsafe, please stop",
   "pronunciation": "Toi cam thay khong an toan xin hay dung lai",
-  "summary": "I feel unsafe, please stop",
+  "summary": "Keeps the ride or fare need clear in a taxi, motorbike pickup, or station counter.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cảm thấy không an toàn, xin hãy dừng lại keeps the travel moment short and clear. Keep the map, address, or destination visible."
+      "body": "Use this when the ride itself feels wrong and stopping is more important than finishing the route."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi cảm thấy không an toàn, xin hãy dừng lại together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Say Tôi cảm thấy không an toàn, xin hãy dừng lại as one clean sentence; the destination, fare, or ride screen can carry the exact detail. Keep the map, address, or destination visible.",
       "phrases": [
         {
           "id": "v500-tran-i-feel-unsafe-please-stop",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Tôi cảm thấy + không an toàn, as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "Good next-step cards: Take me here, Go to District 1, and You can stop here.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i feel unsafe, please stop. Keep the map, address, or destination visible."
+      "body": "Best in a taxi, motorbike pickup, or station counter, before the explanation gets long. Keep the destination, fare, or ride screen close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Keep the next turn practical: Please stop right here, Go this way, and Please turn on the air conditioning.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

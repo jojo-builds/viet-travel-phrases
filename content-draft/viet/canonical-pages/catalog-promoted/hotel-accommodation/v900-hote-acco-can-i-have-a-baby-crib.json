@@ -7,7 +7,7 @@
   "title": "Tôi có thể có một cái cũi em bé được không?",
   "englishTitle": "Can I have a baby crib?",
   "pronunciation": "Toi co the co mot cai cui em be duoc khong",
-  "summary": "Can I have a baby crib?",
+  "summary": "Ask early for a baby crib so housekeeping has time to set up the room.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể có một cái cũi em bé được không? keeps the question easy to answer. Keep the booking, room number, date, or address visible."
+      "body": "For a baby or toddler, ask early so the room can be set up before bedtime."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể có một cái cũi em bé được không? together as one sentence before adding details. Start with Tôi có thể có một cái cũi em bé được không?",
+      "body": "Show the booking or room number while you ask, especially before going upstairs.",
       "phrases": [
         {
           "id": "v900-hote-acco-can-i-have-a-baby-crib",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Cũi em bé names the crib; say it as one piece before the polite request ending.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Reservation and check-in phrases help the desk find the right room before arranging the crib.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I have a baby crib. Keep the booking, room number, date, or address visible."
+      "body": "Best at check-in or as soon as you realize the room is not already set up for the baby."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "The answer may include availability, a delay, a fee, or a different room."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Quiet-room, checkout time, room heat, and air-con phrases cover the family-room follow-ups.",
       "phrases": [
         {
           "id": "hotel-3",

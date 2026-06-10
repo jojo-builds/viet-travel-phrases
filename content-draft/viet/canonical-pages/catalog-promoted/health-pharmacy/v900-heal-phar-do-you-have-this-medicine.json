@@ -7,7 +7,7 @@
   "title": "Bạn có thuốc này không?",
   "englishTitle": "Do you have this medicine?",
   "pronunciation": "Ban co thuoc nay khong",
-  "summary": "Do you have this medicine?",
+  "summary": "For showing a box, photo, prescription, or translated name and asking if the pharmacy has the same medicine.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thuốc này không? keeps the question easy to answer. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Keep the package, photo, or note visible so staff can compare the name instead of guessing from memory."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thuốc này không? together as one sentence before adding details. Say Bạn có thuốc này không?",
+      "body": "Show the medicine first. Let the answer be yes, no, a substitute, or a question about dosage.",
       "phrases": [
         {
           "id": "v900-heal-phar-do-you-have-this-medicine",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có asks do you have; thuốc này means this medicine; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bạn có thuốc",
-          "english": "medicine",
-          "audioKey": null
+          "vietnamese": "Bạn có",
+          "english": "do you have",
+          "keepTogetherReason": "have question"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "này",
-          "english": "this one / this",
-          "audioKey": null
+          "vietnamese": "thuốc này",
+          "english": "this medicine",
+          "keepTogetherReason": "medicine phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Bạn có thuốc này không?",
-          "english": "Do you have this medicine",
-          "audioKey": null
+          "english": "Do you have this medicine?",
+          "audioKey": "v900-heal-phar-do-you-have-this-medicine"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Doctor, pharmacy, and symptom cards help if the medicine is unavailable or the staff needs more context.",
       "phrases": [
         {
           "id": "problems-6",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is do you have this medicine. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at pharmacies, clinics, hotel desks, and counters where someone is helping you match a medicine name."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "Medicine names and doses matter. If the answer is a substitute, compare the box or label before buying."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to headache, stomach, motion-sickness, allergy, or diarrhea cards if the exchange shifts to symptoms.",
       "phrases": [
         {
           "id": "health-2",

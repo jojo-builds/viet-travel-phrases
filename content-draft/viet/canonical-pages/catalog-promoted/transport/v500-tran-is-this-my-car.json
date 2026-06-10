@@ -7,7 +7,7 @@
   "title": "Đây có phải là xe của tôi không?",
   "englishTitle": "Is this my car?",
   "pronunciation": "Day co phai la xe cua toi khong",
-  "summary": "Is this my car?",
+  "summary": "For checking the car, plate, driver, or destination before you get in.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đây có phải là xe của tôi không? keeps the question easy to answer. Keep the map, address, or destination visible."
+      "body": "At busy curbs, two similar cars can arrive at once. Names, plates, and app screens matter."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use Đây có phải là xe của tôi không? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "body": "Ask through the window first. Show the booking name, plate, or destination if needed.",
       "phrases": [
         {
           "id": "v500-tran-is-this-my-car",
@@ -42,34 +42,30 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đây có phải là asks is this; xe của tôi means my car; không? confirms it.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Đây có phải",
-          "english": "immigration line",
+          "vietnamese": "Đây có phải là",
+          "english": "is this",
+          "keepTogetherReason": "confirmation frame",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là xe của",
-          "english": "is my car",
+          "vietnamese": "xe của tôi",
+          "english": "my car",
+          "keepTogetherReason": "ride ownership phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "tôi",
-          "english": "I / me",
+          "vietnamese": "không?",
+          "english": "yes/no?",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
           "vietnamese": "Đây có phải là xe của tôi không?",
           "english": "Is this my car",
           "audioKey": null
@@ -79,7 +75,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "If it is not your car, ask for the driver, pickup point, plate, or destination.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -116,17 +112,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+      "body": "Good for ride apps, hotel pickups, airport transfers, tours, and station pickups."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Do not rely on color alone. Match the plate, driver name, and destination before loading bags."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use driver check, pickup point, car number, destination, or wait-here follow-ups next.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

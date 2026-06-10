@@ -7,7 +7,7 @@
   "title": "Một mặt hàng bị thiếu",
   "englishTitle": "One item is missing",
   "pronunciation": "Mot mat hang bi thieu",
-  "summary": "One item is missing",
+  "summary": "For telling a shop, laundry, delivery, hotel, or counter that one item is missing.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Một mặt hàng bị thiếu names the problem so staff or a helpful local can act on it. Use it when One item is missing is the clearest way to explain what changed, went missing, or needs attention."
+      "body": "Say it while the receipt, bag, order, laundry bundle, or delivery photo is still visible.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Một mặt hàng bị thiếu calmly and show the proof if you have it: item, receipt, photo, address, or phone screen. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Point to the list or empty spot first. Then let staff check the order, shelf, bag, or back room.",
       "phrases": [
         {
           "id": "v500-loca-serv-ever-task-one-item-is-missing",
@@ -42,32 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Một mặt hàng means one item; bị thiếu means is missing.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Một mặt hàng",
           "english": "one item",
-          "audioKey": null
+          "keepTogetherReason": "one-item phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "bị thiếu",
-          "english": "missing",
-          "audioKey": null
+          "english": "is missing",
+          "keepTogetherReason": "is-missing phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Một mặt hàng bị thiếu",
           "english": "One item is missing",
-          "audioKey": null
+          "audioKey": "v500-loca-serv-ever-task-one-item-is-missing"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another local service need.",
+      "body": "Water, bag, and tissues cards stay useful at the same small shop or hotel desk.",
       "phrases": [
         {
           "id": "store-1",
@@ -104,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as soon as the problem is clear enough to name. It is especially useful at a counter or desk where someone can look at the photo, receipt, bag, booking, or phone screen with you."
+      "body": "Good for shopping bags, laundry returns, delivery orders, hotel amenities, printed documents, and small counter services.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "If you know which item is missing, show the photo or name before repeating the sentence.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Sunscreen, open-this, card-payment, receipt, and printing cards cover the errand-counter follow-up.",
       "phrases": [
         {
           "id": "store-4",

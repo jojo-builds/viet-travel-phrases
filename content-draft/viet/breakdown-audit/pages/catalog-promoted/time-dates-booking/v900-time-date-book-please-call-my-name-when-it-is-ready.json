@@ -21,7 +21,7 @@
     {
       "id": "chunk-1",
       "vietnamese": "Hãy",
-      "english": "please do"
+      "english": "please"
     },
     {
       "id": "chunk-2",
@@ -36,7 +36,7 @@
     {
       "id": "chunk-4",
       "vietnamese": "tôi",
-      "english": "I / me"
+      "english": "me"
     },
     {
       "id": "chunk-5",
@@ -50,13 +50,9 @@
     },
     {
       "id": "chunk-7",
-      "vietnamese": "sẵn",
-      "english": "ready / available"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "sàng",
-      "english": "morning"
+      "vietnamese": "sẵn sàng",
+      "english": "ready",
+      "keepTogetherReason": "keeps sẵn sàng as the ready phrase"
     },
     {
       "id": "full",

@@ -20,29 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Túi",
-      "english": "bag"
+      "vietnamese": "Túi của tôi",
+      "english": "my bag",
+      "keepTogetherReason": "owned-item phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "lấy",
-      "english": "take / claim"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "mất",
-      "english": "takes / lose"
+      "vietnamese": "bị lấy mất",
+      "english": "was taken / stolen",
+      "keepTogetherReason": "stolen-bag phrase"
     },
     {
       "id": "full",

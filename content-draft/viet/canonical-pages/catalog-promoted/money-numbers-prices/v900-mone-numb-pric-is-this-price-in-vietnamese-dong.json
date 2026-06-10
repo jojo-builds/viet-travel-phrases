@@ -7,7 +7,7 @@
   "title": "Giá này bằng đồng Việt Nam phải không?",
   "englishTitle": "Is this price in Vietnamese dong?",
   "pronunciation": "Gia nay bang dong Viet Nam phai khong",
-  "summary": "Is this price in Vietnamese dong?",
+  "summary": "For confirming the currency on a quote, deposit, bill, or booking before money changes hands.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when a price might be in dollars, dong, or app credits. Point to the number so the currency is confirmed before you pay."
+      "body": "Point to the number and ask before tapping a card, handing over cash, or approving a transfer.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Giá này bằng đồng Việt Nam phải không?, then point to the number. Wait for a yes/no or a corrected currency.",
+      "body": "Keep the price tag, calculator, receipt, booking screen, or card terminal visible so the currency and amount stay together.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-is-this-price-in-vietnamese-dong",
@@ -42,44 +43,39 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Giá này means this price; đồng Việt Nam means Vietnamese dong; phải không asks right?",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Giá này bằng",
-          "english": "price / money",
-          "audioKey": null
+          "vietnamese": "Giá này",
+          "english": "this price",
+          "keepTogetherReason": "this-price phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đồng Việt Nam",
-          "english": "Vietnamese dong",
-          "audioKey": null
+          "vietnamese": "bằng đồng Việt Nam",
+          "english": "in Vietnamese dong",
+          "keepTogetherReason": "Vietnamese-dong phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "phải",
-          "english": "right",
-          "audioKey": null
+          "vietnamese": "phải không?",
+          "english": "right?",
+          "keepTogetherReason": "confirmation ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Giá này bằng đồng Việt Nam phải không?",
-          "english": "Is this price in Vietnamese dong",
-          "audioKey": null
+          "english": "Is this price in Vietnamese dong?",
+          "audioKey": "v900-mone-numb-pric-is-this-price-in-vietnamese-dong"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
+      "body": "How-much and per-kilo cards help when the issue is the number itself rather than the currency.",
       "phrases": [
         {
           "id": "price-1",
@@ -116,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it around tours, hotels, airport services, and online bookings where currencies can mix. Confirm before paying a deposit."
+      "body": "Good around tours, hotels, airport services, online bookings, SIM shops, and stalls where dollars and dong can be mixed.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Currency confusion gets expensive quickly; make the number and currency visible together."
+      "body": "Currency confusion gets expensive quickly. Ask while the number is visible, then repeat the amount if needed.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Too-expensive, lower-price, final-price, another-one, and take-this cards cover the ordinary price follow-up.",
       "phrases": [
         {
           "id": "price-3",

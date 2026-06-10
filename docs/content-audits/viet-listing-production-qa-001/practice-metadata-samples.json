@@ -245,20 +245,6 @@
         "supportPhraseIDs": [
           "v500-hote-acco-the-door-does-not-lock"
         ]
-      },
-      {
-        "stepID": "explore-next",
-        "title": "Explore next",
-        "sourceSectionID": "explore-next",
-        "primaryPhraseIDs": [
-          "hotel-1"
-        ],
-        "supportPhraseIDs": [
-          "hotel-3",
-          "hotel-checkout",
-          "hotel-4",
-          "hotel-5"
-        ]
       }
     ],
     "primaryPracticePhraseIDs": [

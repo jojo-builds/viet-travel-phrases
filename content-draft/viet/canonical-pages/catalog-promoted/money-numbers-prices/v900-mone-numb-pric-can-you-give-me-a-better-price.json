@@ -7,7 +7,7 @@
   "title": "Bạn có thể cho tôi một mức giá tốt hơn?",
   "englishTitle": "Can you give me a better price?",
   "pronunciation": "Ban co the cho toi mot muc gia tot hon",
-  "summary": "Can you give me a better price?",
+  "summary": "For making a polite bargain when the price feels flexible but you still want the exchange to stay friendly.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this for a polite bargain when the first price feels flexible. Keep the item in view and be ready to accept a simple yes/no or counteroffer."
+      "body": "Ask once with the item in view, then wait for a number, head shake, or counteroffer."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể cho tôi một mức giá tốt hơn?, then wait. If they type a new number, confirm it before adding more items.",
+      "body": "Keep your tone light. This works at markets and small shops, not at fixed-price counters with printed signs.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-can-you-give-me-a-better-price",
@@ -42,44 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; cho tôi means give me; một mức giá tốt hơn means a better price.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you question frame"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cho tôi một",
-          "english": "for me / please",
-          "audioKey": null
+          "vietnamese": "cho tôi",
+          "english": "give me",
+          "keepTogetherReason": "give-me phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "mức giá tốt",
-          "english": "price / money",
-          "audioKey": null
+          "vietnamese": "một mức giá tốt hơn?",
+          "english": "a better price?",
+          "keepTogetherReason": "better-price phrase"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "hơn",
-          "english": "more",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Bạn có thể cho tôi một mức giá tốt hơn?",
-          "english": "Can you give me a better price",
-          "audioKey": null
+          "english": "Can you give me a better price?",
+          "audioKey": "v900-mone-numb-pric-can-you-give-me-a-better-price"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
+      "body": "How-much and per-kilo cards help when you still need the base price first.",
       "phrases": [
         {
           "id": "price-1",
@@ -116,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it at markets, small shops, or service counters where prices may move. Skip it when the price is clearly fixed."
+      "body": "Good for souvenirs, clothing, small services, and market items where bargaining is normal."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "A friendly tone matters here; the phrase is a request, not a demand."
+      "body": "If they say no, smile and decide whether to accept, walk away, or ask for a smaller item."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Too-expensive, lower-price, final-price, another-one, and take-this cards cover the bargaining follow-up.",
       "phrases": [
         {
           "id": "price-3",

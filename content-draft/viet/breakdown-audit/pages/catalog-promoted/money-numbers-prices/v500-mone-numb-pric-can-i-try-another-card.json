@@ -20,35 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể thử",
+      "english": "can I try",
+      "keepTogetherReason": "can-I-try phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "thẻ khác",
+      "english": "another card",
+      "keepTogetherReason": "another-card phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "thử",
-      "english": "try"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "thẻ",
-      "english": "card"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "khác",
-      "english": "different / another"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite possibility ending"
     },
     {
       "id": "full",

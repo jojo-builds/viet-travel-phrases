@@ -7,7 +7,7 @@
   "title": "Xin vui lòng không dọn phòng ngày hôm nay",
   "englishTitle": "Please do not clean the room today",
   "pronunciation": "Xin vui long khong don phong ngay hom nay",
-  "summary": "Please do not clean the room today",
+  "summary": "For telling housekeeping or the front desk to skip room cleaning today.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Xin vui lòng không dọn phòng ngày hôm nay makes the request direct without adding extra explanation. Keep the booking, room number, date, or address visible."
+      "body": "Say it before leaving the room or when housekeeping knocks."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Xin vui lòng không dọn phòng ngày hôm nay together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Show the room number or door and keep the request polite.",
       "phrases": [
         {
           "id": "v900-hote-acco-please-do-not-clean-the-room-today",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Xin vui lòng means please; không dọn phòng means do not clean the room; ngày hôm nay means today.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Xin vui lòng",
           "english": "please",
-          "audioKey": null
+          "keepTogetherReason": "polite opener"
         },
         {
           "id": "chunk-2",
           "vietnamese": "không dọn phòng",
-          "english": "yes/no question",
-          "audioKey": null
+          "english": "do not clean the room",
+          "keepTogetherReason": "do-not-clean-room phrase"
         },
         {
           "id": "chunk-3",
           "vietnamese": "ngày hôm nay",
-          "english": "join today",
-          "audioKey": null
+          "english": "today",
+          "keepTogetherReason": "today phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Xin vui lòng không dọn phòng ngày hôm nay",
           "english": "Please do not clean the room today",
-          "audioKey": null
+          "audioKey": "v900-hote-acco-please-do-not-clean-the-room-today"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Reservation and check-in cards help if the front desk needs to confirm the room.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please do not clean the room today. Keep the booking, room number, date, or address visible."
+      "body": "Good at hotels, guesthouses, apartments, or homestays when you want privacy or restocking later."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "If you still need towels or water, ask for those separately so staff do not assume you need nothing."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Checkout-time, quiet-room, checkout, hot-room, and air-conditioner cards cover nearby stay requests.",
       "phrases": [
         {
           "id": "hotel-3",

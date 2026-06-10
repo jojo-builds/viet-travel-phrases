@@ -20,46 +20,33 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể",
+      "english": "can I",
+      "keepTogetherReason": "can-I question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "nhận được",
+      "english": "get / receive",
+      "keepTogetherReason": "get-receive phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nhận",
-      "english": "receive / accept"
+      "vietnamese": "một báo cáo",
+      "english": "a report",
+      "keepTogetherReason": "report phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "được",
-      "english": "possible / okay"
+      "vietnamese": "bằng văn bản",
+      "english": "in writing",
+      "keepTogetherReason": "written/in-writing phrase"
     },
     {
       "id": "chunk-5",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "báo cáo",
-      "english": "report",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "bằng văn bản",
-      "english": "in writing",
-      "keepTogetherReason": "fixed document phrase"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

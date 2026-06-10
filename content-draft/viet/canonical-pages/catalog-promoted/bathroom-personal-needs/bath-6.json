@@ -7,7 +7,7 @@
   "title": "Ở đây có chỗ tắm không?",
   "englishTitle": "Is there a shower here?",
   "pronunciation": "uh day koh choh tam khong",
-  "summary": "Is there a shower here?",
+  "summary": "For checking whether a shower is available at a stop, hotel, gym, beach, or station.",
   "iconName": "person.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Ở đây có chỗ tắm không? keeps the question easy to answer. Keep the relevant place, item, or screen visible."
+      "body": "Ask near the desk or attendant before paying, changing clothes, or walking into a private area."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Ở đây có chỗ tắm không? together as one sentence before adding details. Say Ở đây có chỗ tắm không?",
+      "body": "Point to the sign, towel, locker area, or restroom direction. The answer may be yes, fee, staff-only, or elsewhere.",
       "phrases": [
         {
           "id": "bath-6",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Ở đây means here; có chỗ tắm asks whether there is a place to shower; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Ở đây",
           "english": "here",
-          "audioKey": null
+          "keepTogetherReason": "place reference"
         },
         {
           "id": "chunk-2",
           "vietnamese": "có chỗ tắm",
-          "english": "a shower here",
-          "audioKey": null
+          "english": "has a place to shower",
+          "keepTogetherReason": "shower-place phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Ở đây có chỗ tắm không?",
-          "english": "Is there a shower here",
-          "audioKey": null
+          "english": "Is there a shower here?",
+          "audioKey": "bath-6"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another bathroom or personal-needs need.",
+      "body": "Bathroom, toilet-paper, and bathroom-use cards help if you only need the restroom.",
       "phrases": [
         {
           "id": "bath-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is is there a shower here. Keep the relevant place, item, or screen visible."
+      "body": "Stations, hostels, beaches, gyms, spas, and some cafes are the places where shower access may be unclear."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Short, calm wording works well for personal needs. Pointing or showing a photo can make the request feel normal and easy to answer."
+      "body": "If the answer is yes, ask about towels, payment, and where to leave your things before you step away."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Soap, hand-washing, water, toilet, and shampoo cards cover nearby personal-needs questions.",
       "phrases": [
         {
           "id": "bath-3",

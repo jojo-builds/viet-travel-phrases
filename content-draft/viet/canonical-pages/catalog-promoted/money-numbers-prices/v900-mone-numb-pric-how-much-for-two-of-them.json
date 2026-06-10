@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Ask this when two tickets, pieces, drinks, or seats may price differently from one. Point to both items so the total is clear."
+      "body": "Point to both items so the total is clear."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Hai cái đó bao nhiêu?, then point to both items together. The answer should be the two-item total.",
+      "body": "Keep the item, price tag, calculator, receipt, or ATM screen close, but let the question land first.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-how-much-for-two-of-them",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Hai cái đó + bao nhiêu as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
+      "body": "Keep close by: How much is this? and How much per kilo?",
       "phrases": [
         {
           "id": "price-1",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Useful if the exchange continues: Too expensive, Can you lower it a little, and What’s your final price.",
       "phrases": [
         {
           "id": "price-3",

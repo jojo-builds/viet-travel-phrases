@@ -20,34 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Có",
-      "english": "have / there is"
+      "vietnamese": "Có hiệu lực",
+      "english": "is valid / effective",
+      "keepTogetherReason": "validity phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "hiệu",
-      "english": "shop / sign"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "lực",
-      "english": "force / pressure"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "trong",
-      "english": "inside / in"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "bao nhiêu",
-      "english": "how much / how many",
-      "keepTogetherReason": "fixed amount question"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "ngày?",
-      "english": "day"
+      "vietnamese": "trong bao nhiêu ngày?",
+      "english": "for how many days?",
+      "keepTogetherReason": "duration question"
     },
     {
       "id": "full",

@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Ý anh/chị là cái nào? together as one sentence before adding details. Start with Ý anh/chị là cái nào?",
+      "body": "Keep the word, screen, address, or written note close, but let the question land first.",
       "phrases": [
         {
           "id": "repair-4",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Practice Ý anh/chị + là cái nào first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -65,7 +65,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
+      "body": "Nearby follow-ups: I don’t understand, Can you speak a little slower, and Could you speak a little slower, please.",
       "phrases": [
         {
           "id": "problems-2",
@@ -102,7 +102,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is which one do you mean. If it is still unclear, show, write, or point to the exact word."
+      "body": "Best in any moment where speech is not landing, before the explanation gets long. Keep the word, screen, address, or written note close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -112,7 +112,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Keep the next turn practical: Please say that again, Please write it down, and What does that mean?",
       "phrases": [
         {
           "id": "repair-1",

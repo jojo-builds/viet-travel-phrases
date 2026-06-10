@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bao nhiêu một trang?, then point to the file or page count. A written or calculator price is better than a rushed verbal estimate.",
+      "body": "Keep the item, document, bag, receipt, photo, or address close, but let the question land first.",
       "phrases": [
         {
           "id": "v500-loca-serv-ever-task-how-much-per-page",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Practice Bao nhiêu một + trang first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another local service need.",
+      "body": "Useful if the exchange continues: A bottle of water please, Do you have a bag, and Tissues please.",
       "phrases": [
         {
           "id": "store-1",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Good next-step phrases: Where is the sunscreen?; Please open this for me; Can I pay by card?",
       "phrases": [
         {
           "id": "store-4",

@@ -7,7 +7,7 @@
   "title": "Đó là lối ra nào?",
   "englishTitle": "Which exit is it?",
   "pronunciation": "Do la loi ra nao",
-  "summary": "Which exit is it?",
+  "summary": "For checking which exit someone means when directions are happening too fast.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đó là lối ra nào? helps you choose the right option when several lines, gates, counters, sizes, or routes look similar. It asks for Which exit is it without making the other person explain everything at once."
+      "body": "Stations, malls, markets, museums, parking areas, and airports can have several exits."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Đó là lối ra nào? together as one sentence before adding details. Start with Đó là lối ra nào?",
+      "body": "Point to the map, sign, or hallway before asking. A number, color, or finger point may be the whole answer.",
       "phrases": [
         {
           "id": "repair-premium-which-exit",
@@ -42,129 +42,129 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đó là means that is; lối ra nào asks which exit.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Đó là lối",
-          "english": "that exit",
-          "audioKey": null
+          "vietnamese": "Đó là",
+          "english": "that is",
+          "keepTogetherReason": "that-is phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "ra nào",
-          "english": "which exit",
-          "audioKey": null
+          "vietnamese": "lối ra nào?",
+          "english": "which exit?",
+          "keepTogetherReason": "which-exit phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Đó là lối ra nào?",
-          "english": "Which exit is it",
-          "audioKey": null
+          "english": "Which exit is it?",
+          "audioKey": "repair-premium-which-exit"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
+      "body": "Which exit, exit to the street, and which entrance phrases cover nearby building-navigation questions.",
       "phrases": [
         {
-          "id": "problems-2",
-          "vietnamese": "Tôi không hiểu",
-          "english": "I don’t understand",
-          "pronunciation": "toy khong hyew",
+          "id": "directions-9",
+          "vietnamese": "Lối ra nào?",
+          "english": "Which exit?",
+          "pronunciation": "loy za now",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-problems-2",
-          "audioKey": "problems-2"
+          "detailPageID": "viet-phrase-directions-9",
+          "audioKey": "directions-9"
         },
         {
-          "id": "problems-3",
-          "vietnamese": "Nói chậm chút được không?",
-          "english": "Can you speak a little slower?",
-          "pronunciation": "noy chuhm choot dook khong",
+          "id": "v900-dire-navi-where-is-the-exit-to-the-street",
+          "vietnamese": "Lối ra đường ở đâu?",
+          "english": "Where is the exit to the street?",
+          "pronunciation": "Loi ra duong o dau",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-problems-3",
-          "audioKey": "problems-3"
+          "detailPageID": "viet-phrase-v900-dire-navi-where-is-the-exit-to-the-street",
+          "audioKey": "v900-dire-navi-where-is-the-exit-to-the-street"
         },
         {
-          "id": "repair-slower-polite",
-          "vietnamese": "Nói chậm giúp tôi được không?",
-          "english": "Could you speak a little slower, please?",
-          "pronunciation": "noy chuhm zoop toy dook khong",
+          "id": "v900-dire-navi-which-entrance-should-i-use",
+          "vietnamese": "Tôi nên sử dụng lối vào nào?",
+          "english": "Which entrance should I use?",
+          "pronunciation": "Toi nen su dung loi vao nao",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-repair-slower-polite",
-          "audioKey": "repair-slower-polite"
+          "detailPageID": "viet-phrase-v900-dire-navi-which-entrance-should-i-use",
+          "audioKey": "v900-dire-navi-which-entrance-should-i-use"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is which exit is it. If it is still unclear, show, write, or point to the exact word."
+      "body": "Good when a person says go out there but the building has more than one way out."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "These phrases keep the exchange friendly when Vietnamese moves too fast. Ask for one specific next step: repeat, write, show, or point."
+      "body": "Repeat the exit number, floor, or landmark back if you are not sure."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Downstairs, upstairs, correct street, main entrance, and back entrance phrases help after the exit is chosen.",
       "phrases": [
         {
-          "id": "repair-1",
-          "vietnamese": "Làm ơn nói lại",
-          "english": "Please say that again",
-          "pronunciation": "lahm uhn noy lie",
+          "id": "v500-dire-navi-do-i-go-downstairs",
+          "vietnamese": "Tôi có đi xuống tầng dưới không?",
+          "english": "Do I go downstairs?",
+          "pronunciation": "Toi co di xuong tang duoi khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-repair-1",
-          "audioKey": "repair-1"
+          "detailPageID": "viet-phrase-v500-dire-navi-do-i-go-downstairs",
+          "audioKey": "v500-dire-navi-do-i-go-downstairs"
         },
         {
-          "id": "repair-2",
-          "vietnamese": "Viết xuống giúp tôi",
-          "english": "Please write it down",
-          "pronunciation": "vee-et zoong zoop toy",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v500-dire-navi-do-i-go-upstairs",
+          "vietnamese": "Tôi lên lầu phải không?",
+          "english": "Do I go upstairs?",
+          "pronunciation": "Toi len lau phai khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-repair-2",
-          "audioKey": "repair-2"
+          "detailPageID": "viet-phrase-v500-dire-navi-do-i-go-upstairs",
+          "audioKey": null
         },
         {
-          "id": "repair-3",
-          "vietnamese": "Cái đó nghĩa là gì?",
-          "english": "What does that mean?",
-          "pronunciation": "gai doh ngee-ah lah zee",
+          "id": "v900-dire-navi-is-this-the-correct-street",
+          "vietnamese": "Đây có phải là đường phố chính xác không?",
+          "english": "Is this the correct street?",
+          "pronunciation": "Day co phai la duong pho chinh xac khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-repair-3",
-          "audioKey": "repair-3"
+          "detailPageID": "viet-phrase-v900-dire-navi-is-this-the-correct-street",
+          "audioKey": "v900-dire-navi-is-this-the-correct-street"
         },
         {
-          "id": "repair-4",
-          "vietnamese": "Ý anh/chị là cái nào?",
-          "english": "Which one do you mean?",
-          "pronunciation": "ee anh chee lah gai now",
+          "id": "v900-dire-navi-where-is-the-main-entrance",
+          "vietnamese": "Lối vào chính ở đâu?",
+          "english": "Where is the main entrance?",
+          "pronunciation": "Loi vao chinh o dau",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-repair-4",
-          "audioKey": "repair-4"
+          "detailPageID": "viet-phrase-v900-dire-navi-where-is-the-main-entrance",
+          "audioKey": "v900-dire-navi-where-is-the-main-entrance"
         },
         {
-          "id": "repair-show-me",
-          "vietnamese": "Chỉ cho tôi được không?",
-          "english": "Can you show me?",
-          "pronunciation": "chee cho toy dook khong",
+          "id": "v900-dire-navi-where-is-the-back-entrance",
+          "vietnamese": "Lối vào phía sau ở đâu?",
+          "english": "Where is the back entrance?",
+          "pronunciation": "Loi vao phia sau o dau",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-repair-show-me",
-          "audioKey": "repair-show-me"
+          "detailPageID": "viet-phrase-v900-dire-navi-where-is-the-back-entrance",
+          "audioKey": "v900-dire-navi-where-is-the-back-entrance"
         }
       ]
     }

@@ -7,7 +7,7 @@
   "title": "Đây có phải là điểm đón chính xác không?",
   "englishTitle": "Is this the correct pickup point?",
   "pronunciation": "Day co phai la diem don chinh xac khong",
-  "summary": "Is this the correct pickup point?",
+  "summary": "For checking the exact pickup spot before you wait in the wrong place.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đây có phải là điểm đón chính xác không? keeps the question easy to answer. Keep the map, address, or destination visible."
+      "body": "Pickup areas can be split by gate, curb, app lane, tour group, or hotel entrance."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use Đây có phải là điểm đón chính xác không? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "body": "Show the booking, app pin, or message and point to where you are standing.",
       "phrases": [
         {
           "id": "v900-dire-navi-is-this-the-correct-pickup-point",
@@ -42,44 +42,47 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đây có phải là asks is this; điểm đón means pickup point; chính xác means correct or exact.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Đây có phải",
-          "english": "pickup point",
+          "vietnamese": "Đây có phải là",
+          "english": "is this",
+          "keepTogetherReason": "confirmation frame",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là điểm đón",
-          "english": "go / move",
+          "vietnamese": "điểm đón",
+          "english": "pickup point",
+          "keepTogetherReason": "pickup-point phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "chính xác",
-          "english": "correct",
+          "english": "correct / exact",
+          "keepTogetherReason": "accuracy phrase",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "không?",
+          "english": "yes/no?",
           "audioKey": null
         },
         {
           "id": "chunk-5",
           "vietnamese": "Đây có phải là điểm đón chính xác không?",
           "english": "Is this the correct pickup point",
-          "audioKey": null
+          "audioKey": "v900-dire-navi-is-this-the-correct-pickup-point"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another directions need.",
+      "body": "If the answer sends you elsewhere, ask for the pickup point, entrance, driver, or nearest landmark.",
       "phrases": [
         {
           "id": "directions-1",
@@ -116,57 +119,37 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+      "body": "Good before a Grab, shuttle, tour bus, airport pickup, or hotel-arranged car."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For directions, give the listener one clear anchor. A map or address lets them point instead of explaining everything in fast Vietnamese."
+      "body": "Do not wait on a guess if the curb is crowded. A small correction now can save a missed pickup."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use pickup point, address, direction, meeting-point, or stop-here follow-ups if the location changes.",
       "phrases": [
         {
-          "id": "directions-4",
-          "vietnamese": "Rẽ trái ở đâu?",
-          "english": "Where do I turn left?",
-          "pronunciation": "reh chai uh dow",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-directions-4",
-          "audioKey": "directions-4"
+          "id": "ves-call-taxi-for-me",
+          "vietnamese": "Gọi giúp tôi taxi được không?",
+          "english": "Can you call me a taxi?",
+          "pronunciation": "goy zoop toy tak see duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-family-ves-call-taxi-for-me",
+          "audioKey": "audio-authored-goi-giup-toi-taxi-duoc-khong-d1d2e5a74d"
         },
         {
-          "id": "directions-5",
-          "vietnamese": "Tôi rẽ phải đúng không?",
-          "english": "Should I turn right?",
-          "pronunciation": "toy reh fai zoong khong",
+          "id": "v900-tran-please-take-me-to-this-address",
+          "vietnamese": "Hãy đưa tôi đến địa chỉ này",
+          "english": "Please take me to this address",
+          "pronunciation": "Hay dua toi den dia chi nay",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-directions-5",
-          "audioKey": "directions-5"
-        },
-        {
-          "id": "directions-6",
-          "vietnamese": "Tôi đi thẳng phải không?",
-          "english": "Should I go straight?",
-          "pronunciation": "toy dee thang fai khong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-directions-6",
-          "audioKey": "directions-6"
-        },
-        {
-          "id": "directions-7",
-          "vietnamese": "Cảm ơn, tôi hiểu rồi",
-          "english": "Thanks, I understand now",
-          "pronunciation": "kahm uhn toy hyew roy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-directions-7",
-          "audioKey": "directions-7"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-tran-please-take-me-to-this-address",
+          "audioKey": "v900-tran-please-take-me-to-this-address"
         },
         {
           "id": "directions-8",
@@ -174,9 +157,39 @@
           "english": "Where is the pickup point?",
           "pronunciation": "deeym don uh dow",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
+          "tintName": "green",
           "detailPageID": "viet-phrase-directions-8",
           "audioKey": "directions-8"
+        },
+        {
+          "id": "ves-drop-me-off-here",
+          "vietnamese": "Cho tôi xuống ở đây được không?",
+          "english": "Can you drop me off here?",
+          "pronunciation": "cho toy zoong uh day duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-ves-drop-me-off-here",
+          "audioKey": "audio-authored-cho-toi-xuong-o-day-duoc-khong-e6561710e9"
+        },
+        {
+          "id": "v500-tran-please-call-the-driver",
+          "vietnamese": "Vui lòng gọi tài xế",
+          "english": "Please call the driver",
+          "pronunciation": "Vui long goi tai xe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
+          "audioKey": "v500-tran-please-call-the-driver"
+        },
+        {
+          "id": "v900-phon-inte-powe-can-you-help-me-book-a-grab",
+          "vietnamese": "Bạn có thể giúp tôi đặt xe Grab được không?",
+          "english": "Can you help me book a Grab?",
+          "pronunciation": "Ban co the giup toi dat xe Grab duoc khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-v900-phon-inte-powe-can-you-help-me-book-a-grab",
+          "audioKey": "v900-phon-inte-powe-can-you-help-me-book-a-grab"
         }
       ]
     }

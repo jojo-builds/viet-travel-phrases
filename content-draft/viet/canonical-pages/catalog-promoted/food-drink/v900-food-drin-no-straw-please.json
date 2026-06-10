@@ -4,10 +4,10 @@
   "phraseID": "v900-food-drin-no-straw-please",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Làm ơn đừng có rơm",
+  "title": "Không cần ống hút nhé",
   "englishTitle": "No straw, please",
-  "pronunciation": "Lam on dung co rom",
-  "summary": "No straw, please",
+  "pronunciation": "Khong can ong hut nhe",
+  "summary": "Keeps the food or drink request clear in a stall, cafe, or busy counter.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -15,107 +15,107 @@
     "v900-food-drin-no-straw-please",
     "premium"
   ],
-  "audioKey": "v900-food-drin-no-straw-please",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Làm ơn đừng có rơm keeps the social move simple and polite. Point to the item, menu line, receipt, size, or photo."
+      "body": "Không cần ống hút nhé is the no-straw line for drinks. Say it before the cup is made or as the drink is handed over.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Làm ơn đừng có rơm together as one sentence before adding details. Point to the item, menu line, receipt, size, or photo.",
+      "body": "Say Không cần ống hút nhé once, with a small gesture toward the cup. It is direct without sounding sharp.",
       "phrases": [
         {
           "id": "v900-food-drin-no-straw-please",
-          "vietnamese": "Làm ơn đừng có rơm",
+          "vietnamese": "Không cần ống hút nhé",
           "english": "No straw, please",
-          "pronunciation": "Lam on dung co rom",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Khong can ong hut nhe",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
           "detailPageID": null,
-          "audioKey": "v900-food-drin-no-straw-please"
+          "audioKey": "audio-authored-khong-can-ong-hut-nhe-c1f7415658"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Start with Không cần + ống hút nhé; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Làm ơn",
-          "english": "please",
+          "vietnamese": "Không cần",
+          "english": "no need",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đừng có rơm",
-          "english": "no straw",
+          "vietnamese": "ống hút nhé",
+          "english": "straw, please",
           "audioKey": null
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "Làm ơn đừng có rơm",
+          "id": "full",
+          "vietnamese": "Không cần ống hút nhé",
           "english": "No straw, please",
           "audioKey": null
         }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
-        }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is no straw, please. Point to the item, menu line, receipt, size, or photo."
-    },
-    {
-      "id": "good-to-know",
-      "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use it at coffee shops, juice stands, and takeaway counters before the straw goes into the bag or cup.",
       "phrases": [
+        {
+          "id": "v900-food-drin-one-fresh-coconut-please",
+          "vietnamese": "Làm ơn cho một quả dừa tươi",
+          "english": "One fresh coconut, please",
+          "pronunciation": "Lam on cho mot qua dua tuoi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-one-fresh-coconut-please",
+          "audioKey": "v900-food-drin-one-fresh-coconut-please"
+        },
+        {
+          "id": "v900-food-drin-one-sugarcane-juice-please",
+          "vietnamese": "Xin cho một ly nước mía",
+          "english": "One sugarcane juice, please",
+          "pronunciation": "Xin cho mot ly nuoc mia",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-one-sugarcane-juice-please",
+          "audioKey": "v900-food-drin-one-sugarcane-juice-please"
+        },
+        {
+          "id": "v900-food-drin-do-you-have-beer",
+          "vietnamese": "Bạn có bia không?",
+          "english": "Do you have beer?",
+          "pronunciation": "Ban co bia khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-do-you-have-beer",
+          "audioKey": "v900-food-drin-do-you-have-beer"
+        },
+        {
+          "id": "v900-food-drin-can-i-have-a-cup-of-ice",
+          "vietnamese": "Tôi có thể có một cốc đá được không?",
+          "english": "Can I have a cup of ice?",
+          "pronunciation": "Toi co the co mot coc da duoc khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-have-a-cup-of-ice",
+          "audioKey": "v900-food-drin-can-i-have-a-cup-of-ice"
+        },
         {
           "id": "coffee-4",
           "vietnamese": "Ít đá thôi",
@@ -123,9 +123,26 @@
           "pronunciation": "eet dah toy",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
+          "detailPageID": "viet-family-food-less-ice",
           "audioKey": "coffee-4"
-        },
+        }
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Use to go, please let me pay, and please give me the receipt when the first phrase leads to another request.",
+      "phrases": [
         {
           "id": "coffee-5",
           "vietnamese": "Không đường nhé",
@@ -133,52 +150,42 @@
           "pronunciation": "khong doong nhe",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
+          "detailPageID": "viet-family-food-no-sugar",
           "audioKey": "coffee-5"
         },
         {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
+          "id": "food-5",
+          "vietnamese": "Có nước suối không?",
+          "english": "Do you have bottled water?",
+          "pronunciation": "koh nook soy khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
-          "audioKey": "coffee-6"
-        },
-        {
-          "id": "coffee-7",
-          "vietnamese": "Tính tiền giúp tôi",
-          "english": "Please let me pay",
-          "pronunciation": "ting tyen zoop toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
-          "audioKey": "coffee-7"
-        },
-        {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
-          "audioKey": "food-need-table"
+          "detailPageID": "viet-family-food-bottled-water",
+          "audioKey": "food-5"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Use one fresh coconut, please; one sugarcane juice, please; do you have beer? when the first phrase leads to another request.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [
     {
       "id": "v900-food-drin-no-straw-please",
-      "vietnamese": "Làm ơn đừng có rơm",
+      "vietnamese": "Không cần ống hút nhé",
       "english": "No straw, please",
-      "pronunciation": "Lam on dung co rom",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Khong can ong hut nhe",
+      "symbolName": "text.bubble.fill",
       "tintName": "green",
       "detailPageID": null,
-      "audioKey": "v900-food-drin-no-straw-please"
+      "audioKey": null
     }
   ]
 }

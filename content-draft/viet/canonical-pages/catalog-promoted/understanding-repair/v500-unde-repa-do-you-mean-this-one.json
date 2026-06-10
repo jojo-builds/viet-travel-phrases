@@ -7,7 +7,7 @@
   "title": "Ý bạn là cái này phải không?",
   "englishTitle": "Do you mean this one?",
   "pronunciation": "Y ban la cai nay phai khong",
-  "summary": "Do you mean this one?",
+  "summary": "For confirming the exact item, option, button, address, or person before you agree.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Ý bạn là cái này phải không? keeps the question easy to answer. If it is still unclear, show, write, or point to the exact word."
+      "body": "Pointing can be clearer than another long explanation."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Ý bạn là cái này phải không? together as one sentence before adding details. Say Ý bạn là cái này phải không?",
+      "body": "Point to the item, screen, map location, or written line. Keep the question short and wait for yes or no.",
       "phrases": [
         {
           "id": "v500-unde-repa-do-you-mean-this-one",
@@ -42,38 +42,41 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Ý bạn là means you mean; cái này means this one; phải không asks for confirmation.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Ý bạn là",
-          "english": "do you mean",
+          "english": "you mean",
+          "keepTogetherReason": "meaning-confirmation frame",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cái này phải",
-          "english": "this one / this",
+          "vietnamese": "cái này",
+          "english": "this one",
+          "keepTogetherReason": "this-one phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "phải không?",
+          "english": "right?",
+          "keepTogetherReason": "confirmation ending",
           "audioKey": null
         },
         {
           "id": "chunk-4",
           "vietnamese": "Ý bạn là cái này phải không?",
-          "english": "Do you mean this one",
-          "audioKey": null
+          "english": "Do you mean this one?",
+          "audioKey": "v500-unde-repa-do-you-mean-this-one"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
+      "body": "If the answer is not clear, move to repeat, point-to-it, translation-correct, or write-it-down follow-ups.",
       "phrases": [
         {
           "id": "problems-2",
@@ -110,17 +113,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is do you mean this one. If it is still unclear, show, write, or point to the exact word."
+      "body": "Good with menus, forms, maps, shop items, ticket options, names, and app screens."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "These phrases keep the exchange friendly when Vietnamese moves too fast. Ask for one specific next step: repeat, write, show, or point."
+      "body": "This line is helpful when both people can see the same thing. Point first, then ask."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use say-again, write-down, meaning, point-to-it, or translation-correct cards if confirmation needs another step.",
       "phrases": [
         {
           "id": "repair-1",

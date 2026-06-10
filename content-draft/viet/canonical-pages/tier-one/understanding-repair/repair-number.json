@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Làm ơn nói lại số đó makes the request direct without adding extra explanation. Reach for it when you think you missed only the number. This is useful for room numbers, gates, fares, and prices.",
+      "body": "Reach for it when you think you missed only the number.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Làm ơn + nói lại carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "repair-6-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Làm ơn nói lại số đó together as one sentence before adding details. If it is still unclear, show, write, or point to the exact word.",
+      "body": "Say Làm ơn nói lại số đó in one connected line before adding details. If it is still unclear, show, write, or point to the exact word.",
       "phrases": [
         {
           "id": "repair-6",
@@ -84,7 +84,7 @@
     {
       "id": "natural-variations",
       "title": "Natural variations",
-      "body": "This form changes the tone or setting. Use it when the note under the phrase matches the moment.",
+      "body": "how much did you say? covers the nearby version of this exchange.",
       "phrases": [
         {
           "id": "repair-number-amount",
@@ -103,7 +103,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping. If it is still unclear, show, write, or point to the exact word.",
+      "body": "These phrases keep the interaction cooperative when repeating the same words is not helping. Keep the word, screen, address, or written note ready so the other person can act on the same detail.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -111,7 +111,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "If it is still unclear, show, write, or point to the exact word.",
+      "body": "The answer may be a room number, gate, fare, or time. Ask for the number again while the ticket, bill, or screen is still visible.",
       "phrases": [
         {
           "id": "problems-2",
@@ -189,7 +189,7 @@
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
+      "body": "Move to writing or a phone calculator if the number matters. Repeating a fast number rarely makes it safer.",
       "presentation": "tip-callout",
       "phrases": [],
       "breakdown": []
@@ -197,7 +197,7 @@
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "If speaking does not work, move quickly to writing, pointing, or showing the exact word on your phone.",
+      "body": "Hold the bill, ticket, or booking open. The object tells the other person which number you missed.",
       "phrases": [
         {
           "id": "v500-unde-repa-please-say-it-slowly",
@@ -216,7 +216,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover I don’t understand; can you speak a little slower?; please say that again.",
       "phrases": [
         {
           "id": "problems-2",

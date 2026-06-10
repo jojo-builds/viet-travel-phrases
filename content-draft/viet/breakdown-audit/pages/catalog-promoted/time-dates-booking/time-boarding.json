@@ -22,23 +22,19 @@
       "id": "chunk-1",
       "vietnamese": "Mấy giờ",
       "english": "what time",
-      "keepTogetherReason": "fixed time question"
+      "keepTogetherReason": "what-time question"
     },
     {
+      "id": "chunk-2",
       "vietnamese": "bắt đầu",
-      "english": "start / begin",
-      "keepTogetherReason": "compound start verb"
+      "english": "starts",
+      "keepTogetherReason": "start verb"
     },
     {
-      "id": "chunk-4",
-      "vietnamese": "lên",
-      "english": "up / board"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "máy bay?",
-      "english": "plane",
-      "keepTogetherReason": "compound vehicle term"
+      "id": "chunk-3",
+      "vietnamese": "lên máy bay?",
+      "english": "board the plane?",
+      "keepTogetherReason": "boarding phrase"
     },
     {
       "id": "full",

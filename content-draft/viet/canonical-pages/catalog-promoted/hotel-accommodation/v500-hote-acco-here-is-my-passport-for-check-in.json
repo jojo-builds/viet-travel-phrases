@@ -7,7 +7,7 @@
   "title": "Đây là hộ chiếu của tôi để nhận phòng",
   "englishTitle": "Here is my passport for check-in",
   "pronunciation": "Day la ho chieu cua toi de nhan phong",
-  "summary": "Here is my passport for check-in",
+  "summary": "For handing over your passport at the front desk when check-in paperwork starts.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đây là hộ chiếu của tôi để nhận phòng names the need before the details start piling up. Keep the booking, room number, date, or address visible."
+      "body": "The desk has asked for ID and your booking screen is already open."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Đây là hộ chiếu của tôi để nhận phòng together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Hand over the passport and say the phrase. Keep the booking name or confirmation visible.",
       "phrases": [
         {
           "id": "v500-hote-acco-here-is-my-passport-for-check-in",
@@ -42,44 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đây là means this is; hộ chiếu của tôi means my passport; để nhận phòng means for check-in.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Đây là",
           "english": "this is",
-          "audioKey": null
+          "keepTogetherReason": "this-is phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "hộ chiếu của",
-          "english": "passport",
-          "audioKey": null
+          "vietnamese": "hộ chiếu của tôi",
+          "english": "my passport",
+          "keepTogetherReason": "my-passport phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "tôi để nhận",
+          "vietnamese": "để nhận phòng",
           "english": "for check-in",
-          "audioKey": null
+          "keepTogetherReason": "check-in phrase"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "phòng",
-          "english": "room",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Đây là hộ chiếu của tôi để nhận phòng",
           "english": "Here is my passport for check-in",
-          "audioKey": null
+          "audioKey": "v500-hote-acco-here-is-my-passport-for-check-in"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Reservation, check-in, and polite check-in phrases cover the normal front-desk opening.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -116,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is here is my passport for check-in. Keep the booking, room number, date, or address visible."
+      "body": "Good at hotels, guesthouses, homestays, and apartment desks before room keys or deposits come up."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "Keep the passport in view and watch where it goes. A photo or quick scan is common; a long hold should be clear."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Checkout time, quiet room, checkout, hot room, and air-conditioner phrases cover nearby hotel needs.",
       "phrases": [
         {
           "id": "hotel-3",

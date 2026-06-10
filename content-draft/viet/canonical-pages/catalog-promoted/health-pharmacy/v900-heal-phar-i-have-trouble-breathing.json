@@ -7,7 +7,7 @@
   "title": "Tôi khó thở",
   "englishTitle": "I have trouble breathing",
   "pronunciation": "Toi kho tho",
-  "summary": "I have trouble breathing",
+  "summary": "For telling someone a breathing problem is happening now.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi khó thở names the need before the details start piling up. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Use this as an urgent health phrase. Say it before giving background details."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi khó thở together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Show the person, inhaler, medicine, or translated emergency note if speaking is hard.",
       "phrases": [
         {
           "id": "v900-heal-phar-i-have-trouble-breathing",
@@ -42,43 +42,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi means I; khó thở means hard to breathe or trouble breathing.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi khó",
-          "english": "I have trouble",
-          "audioKey": null
+          "vietnamese": "Tôi",
+          "english": "I",
+          "keepTogetherReason": "subject pronoun"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thở",
-          "english": "breathing",
-          "audioKey": null
+          "vietnamese": "khó thở",
+          "english": "have trouble breathing",
+          "keepTogetherReason": "breathing-trouble phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi khó thở",
           "english": "I have trouble breathing",
-          "audioKey": null
+          "audioKey": "v900-heal-phar-i-have-trouble-breathing"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Pharmacy and allergy-medicine phrases help if the first person redirects you to a counter nearby.",
       "phrases": [
-        {
-          "id": "problems-6",
-          "vietnamese": "Tôi cần bác sĩ",
-          "english": "I need a doctor",
-          "pronunciation": "toy gun bak see",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "red",
-          "detailPageID": "viet-phrase-problems-6",
-          "audioKey": "problems-6"
-        },
         {
           "id": "health-1",
           "vietnamese": "Nhà thuốc ở đâu?",
@@ -98,73 +88,83 @@
           "tintName": "red",
           "detailPageID": "viet-phrase-health-pharmacy-clearer",
           "audioKey": "health-pharmacy-clearer"
+        },
+        {
+          "id": "v900-heal-phar-i-need-allergy-medicine",
+          "vietnamese": "Tôi cần thuốc dị ứng",
+          "english": "I need allergy medicine",
+          "pronunciation": "Toi can thuoc di ung",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-v900-heal-phar-i-need-allergy-medicine",
+          "audioKey": "v900-heal-phar-i-need-allergy-medicine"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i have trouble breathing. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at clinics, pharmacies, hotels, restaurants, stations, and anywhere someone can call help."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "Trouble breathing is not a routine pharmacy question. If it is severe, ask for an ambulance or doctor."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Ambulance, doctor, asthma, chest pain, and English-speaking doctor phrases cover urgent next steps.",
       "phrases": [
         {
-          "id": "health-2",
-          "vietnamese": "Tôi bị đau đầu",
-          "english": "I have a headache",
-          "pronunciation": "toy bee dow dow",
+          "id": "v900-heal-phar-can-you-call-an-ambulance",
+          "vietnamese": "Bạn có thể gọi xe cứu thương được không?",
+          "english": "Can you call an ambulance?",
+          "pronunciation": "Ban co the goi xe cuu thuong duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-2",
-          "audioKey": "health-2"
+          "detailPageID": "viet-phrase-v900-heal-phar-can-you-call-an-ambulance",
+          "audioKey": "v900-heal-phar-can-you-call-an-ambulance"
         },
         {
-          "id": "health-3",
-          "vietnamese": "Tôi đau bụng",
-          "english": "My stomach hurts",
-          "pronunciation": "toy dow boong",
+          "id": "problems-6",
+          "vietnamese": "Tôi cần bác sĩ",
+          "english": "I need a doctor",
+          "pronunciation": "toy gun bak see",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-3",
-          "audioKey": "health-3"
+          "detailPageID": "viet-family-health-doctor",
+          "audioKey": "problems-6"
         },
         {
-          "id": "health-4",
-          "vietnamese": "Có thuốc say xe không?",
-          "english": "Do you have motion sickness medicine?",
-          "pronunciation": "koh thoo-ok sai seh khong",
+          "id": "v500-heal-phar-i-have-asthma",
+          "vietnamese": "Tôi bị hen suyễn",
+          "english": "I have asthma",
+          "pronunciation": "Toi bi hen suyen",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-4",
-          "audioKey": "health-4"
+          "detailPageID": "viet-phrase-v500-heal-phar-i-have-asthma",
+          "audioKey": "v500-heal-phar-i-have-asthma"
         },
         {
-          "id": "health-5",
-          "vietnamese": "Tôi bị dị ứng cái này",
-          "english": "I am allergic to this",
-          "pronunciation": "toy bee zee oong gai nai",
+          "id": "v500-heal-phar-i-have-chest-pain",
+          "vietnamese": "Tôi bị đau ngực",
+          "english": "I have chest pain",
+          "pronunciation": "Toi bi dau nguc",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-5",
-          "audioKey": "health-5"
+          "detailPageID": "viet-phrase-v500-heal-phar-i-have-chest-pain",
+          "audioKey": "v500-heal-phar-i-have-chest-pain"
         },
         {
-          "id": "health-6",
-          "vietnamese": "Tôi cần thuốc tiêu chảy",
-          "english": "I need something for diarrhea",
-          "pronunciation": "toy gun thoo-ok tyew chai",
+          "id": "v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
+          "vietnamese": "Có bác sĩ hoặc dược sĩ nói tiếng Anh không?",
+          "english": "Is there an English-speaking doctor or pharmacist?",
+          "pronunciation": "Co bac si hoac duoc si noi tieng Anh khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-6",
-          "audioKey": "health-6"
+          "detailPageID": "viet-phrase-v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
+          "audioKey": "v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis"
         }
       ]
     }

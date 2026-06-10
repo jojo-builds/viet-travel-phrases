@@ -7,7 +7,7 @@
   "title": "Có được phép chụp ảnh không?",
   "englishTitle": "Is photography allowed?",
   "pronunciation": "Co duoc phep chup anh khong",
-  "summary": "Is photography allowed?",
+  "summary": "For checking photo rules before taking pictures in a museum, temple, exhibit, performance space, market stall, or tour site.",
   "iconName": "camera.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có được phép chụp ảnh không? keeps the question easy to answer. Keep the relevant place, item, or screen visible."
+      "body": "Ask before raising the camera or phone. Staff may point to a sign, a no-flash rule, or a restricted room."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Có được phép chụp ảnh không? together as one sentence before adding details. Say Có được phép chụp ảnh không?",
+      "body": "Show the phone or camera if needed, then wait for yes, no, or a gesture toward the allowed area.",
       "phrases": [
         {
           "id": "v900-sigh-acti-is-photography-allowed",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có được phép means is it allowed; chụp ảnh means take photos; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Có được phép",
-          "english": "is there / does it have",
-          "audioKey": null
+          "english": "is it allowed",
+          "keepTogetherReason": "allowed question"
         },
         {
           "id": "chunk-2",
           "vietnamese": "chụp ảnh",
-          "english": "photography",
-          "audioKey": null
+          "english": "take photos",
+          "keepTogetherReason": "photography phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Có được phép chụp ảnh không?",
-          "english": "Is photography allowed",
-          "audioKey": null
+          "english": "Is photography allowed?",
+          "audioKey": "v900-sigh-acti-is-photography-allowed"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another sightseeing or activities need.",
+      "body": "Ticket, guide, entrance, meeting-point, and closing-time cards cover the attraction questions around photo rules.",
       "phrases": [
         {
           "id": "sight-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is is photography allowed. Keep the relevant place, item, or screen visible."
+      "body": "Museums, temples, galleries, shows, markets, workshops, and tours are the moments where photo rules can change by room."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "At attractions, keep the ticket or booking visible so staff can check names and times quickly."
+      "body": "Flash can be a separate rule. If staff say yes, still watch for signs around altars, exhibits, or performers."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to English guide, entrance, ticket, closing time, or meeting point cards if the visit needs another rule check.",
       "phrases": [
         {
           "id": "sight-4",

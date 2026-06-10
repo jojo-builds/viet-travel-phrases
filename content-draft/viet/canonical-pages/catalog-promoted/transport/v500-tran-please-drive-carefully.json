@@ -7,7 +7,7 @@
   "title": "Hãy lái xe cẩn thận",
   "englishTitle": "Please drive carefully",
   "pronunciation": "Hay lai xe can than",
-  "summary": "Please drive carefully",
+  "summary": "For asking a taxi, ride-hailing, motorbike, or tour driver to drive more carefully when the ride feels unsafe.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy lái xe cẩn thận makes the request direct without adding extra explanation. Keep the map, address, or destination visible."
+      "body": "Say it calmly and early. Pointing to the road, speed, seat belt, or traffic can make the request clearer."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Hãy lái xe cẩn thận together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Keep the line short. The driver needs the safety request more than a long explanation.",
       "phrases": [
         {
           "id": "v500-tran-please-drive-carefully",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hãy is a request marker; lái xe means drive; cẩn thận means carefully.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy lái xe",
-          "english": "please do",
-          "audioKey": null
+          "vietnamese": "Hãy",
+          "english": "please / do",
+          "keepTogetherReason": "request marker"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cẩn thận",
-          "english": "drive carefully",
-          "audioKey": null
+          "vietnamese": "lái xe",
+          "english": "drive",
+          "keepTogetherReason": "drive phrase"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "cẩn thận",
+          "english": "carefully",
+          "keepTogetherReason": "carefully phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Hãy lái xe cẩn thận",
           "english": "Please drive carefully",
-          "audioKey": null
+          "audioKey": "v500-tran-please-drive-carefully"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "Drive slower, stop here, follow the map, lower the music, and seat-belt cards cover the ride-safety flow.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please drive carefully. Keep the map, address, or destination visible."
+      "body": "Good in taxis, ride-hailing cars, motorbike taxis, vans, and private transfers when the driving feels too risky."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "A calm tone works better than a panic tone. If the ride still feels unsafe, ask to stop at the next safe place."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to drive-slower, stop-here, follow-map, lower-music, or wrong-route cards if the ride still feels off.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

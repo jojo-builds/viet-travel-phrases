@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Ở gần đây không? keeps the question easy to answer. This comes before you commit to walking. This helps you decide whether to walk or change plans.",
+      "body": "Ở gần đây không? belongs with a map, at a street corner, or at a ticket counter, with the map location, address, station name, or sign close by.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Keep Ở together; không? turns the line into a yes-or-no question.",
       "breakdown": [
         {
           "id": "directions-2-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Keep the map, address, or destination visible.",
+      "body": "Ask with the map location, address, station name, or sign visible, then wait for yes, no, or a correction.",
       "phrases": [
         {
           "id": "directions-2",
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Say Ở gần đây không?",
+      "body": "Watch for a clear reply, a pointed detail, or simple follow-up. Say Ở gần đây không?",
       "phrases": [
         {
           "id": "directions-1",
@@ -131,7 +131,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This comes before you commit to walking. The reply may be a clear reply, a pointed detail, or simple follow-up.",
+      "body": "This comes before you commit to walking. Watch for a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "directions-5",
@@ -197,7 +197,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Use these for excuse me, how do I get there?; how long does it take on foot?; where do I turn left? if the moment moves past the first line.",
       "phrases": [
         {
           "id": "directions-1",

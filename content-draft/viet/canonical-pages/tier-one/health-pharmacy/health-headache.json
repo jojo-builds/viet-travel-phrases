@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi bị đau đầu names the need before the details start piling up. Reach for it when you want the symptom understood before asking for medicine. Short symptom phrases work better than long explanations.",
+      "body": "Reach for it when you want the symptom understood before asking for medicine.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Build the line around Tôi bị + đau, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "health-2-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Tôi bị đau đầu together as one sentence before adding details.",
+      "body": "Start with Tôi bị đau đầu; keep the symptom, medicine, affected area, or translated note ready if the reply needs proof.",
       "phrases": [
         {
           "id": "health-2",
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a question about symptoms, medicine, a doctor, or where the pain is. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Watch for a question about symptoms, medicine, a doctor, or where the pain is. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
       "phrases": [
         {
           "id": "problems-6",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when you want the symptom understood before asking for medicine. The reply may be a question about symptoms, medicine, a doctor, or where the pain is.",
+      "body": "Reach for it when you want the symptom understood before asking for medicine. Watch for a question about symptoms, medicine, a doctor, or where the pain is.",
       "phrases": [
         {
           "id": "health-4",
@@ -191,7 +191,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Use these for I need a doctor; where is the nearest pharmacy?; my stomach hurts if the moment moves past the first line.",
       "phrases": [
         {
           "id": "problems-6",

@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Điện thoại tôi hết pin rồi names the need before the details start piling up. This comes before asking for a charger or outlet. This is the short version of a common travel problem.",
+      "body": "This comes before asking for a charger or outlet.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Practice Điện thoại + tôi first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "phone-3-piece-1",
@@ -71,7 +71,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Điện thoại tôi hết pin rồi together as one sentence before adding details. Show the phone screen or error message first so the problem is visible before you add more words.",
+      "body": "Say Điện thoại tôi hết pin rồi in one connected line before adding details. Show the phone screen or error message first so the problem is visible before you add more words.",
       "phrases": [
         {
           "id": "phone-3",
@@ -98,7 +98,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Show the phone screen or error message first so the problem is visible before you add more words.",
+      "body": "Watch for a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "phone-1",
@@ -137,7 +137,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This comes before asking for a charger or outlet. The reply may be a clear reply, a pointed detail, or simple follow-up.",
+      "body": "This comes before asking for a charger or outlet. Watch for a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "phone-5",
@@ -203,7 +203,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through what is the Wi-Fi password?; do you sell SIM cards?; do you have a charger?",
       "phrases": [
         {
           "id": "phone-1",

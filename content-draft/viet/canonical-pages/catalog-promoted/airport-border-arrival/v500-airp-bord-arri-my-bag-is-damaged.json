@@ -7,7 +7,7 @@
   "title": "Túi của tôi bị hỏng",
   "englishTitle": "My bag is damaged",
   "pronunciation": "Tui cua toi bi hong",
-  "summary": "My bag is damaged",
+  "summary": "For reporting damaged luggage at baggage claim before leaving the arrivals area.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Túi của tôi bị hỏng names the problem so staff or a helpful local can act on it. Use it when My bag is damaged is the clearest way to explain what changed, went missing, or needs attention."
+      "body": "Say it while the bag, tag, flight number, and damage are still easy for staff to inspect.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Túi của tôi bị hỏng calmly and show the proof if you have it: passport, booking, baggage tag, map, or pickup screen. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Show the tear, wheel, handle, lock, or photo first. Then ask where to make the report or take the next step.",
       "phrases": [
         {
           "id": "v500-airp-bord-arri-my-bag-is-damaged",
@@ -42,32 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Túi của tôi means my bag; bị hỏng means is damaged.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Túi của tôi",
           "english": "my bag",
-          "audioKey": null
+          "keepTogetherReason": "my-bag phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "bị hỏng",
           "english": "is damaged",
-          "audioKey": null
+          "keepTogetherReason": "is-damaged phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Túi của tôi bị hỏng",
           "english": "My bag is damaged",
           "audioKey": "v500-airp-bord-arri-my-bag-is-damaged"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
+      "body": "Immigration, baggage-claim, and SIM-card cards help if you are still inside arrivals.",
       "phrases": [
         {
           "id": "airport-1",
@@ -104,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as soon as the problem is clear enough to name. It is especially useful at a counter or desk where someone can look at the photo, receipt, bag, booking, or phone screen with you."
+      "body": "Good at baggage desks, airline counters, airport service rooms, and hotel desks if the damage appears after pickup.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "Take a photo before leaving the airport. A report is easier to make while the bag tag and flight are still visible.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Pickup-area, driver-meet, missing-bag, domestic-terminal, and visa cards cover nearby airport follow-ups.",
       "phrases": [
         {
           "id": "airport-5",

@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Build the line around Mấy + giờ, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "sight-4-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Keep the relevant place, item, or screen visible.",
+      "body": "Show the ticket, booking, meeting point, map location, or attraction name first, ask once, and leave room for the answer.",
       "phrases": [
         {
           "id": "sight-4",
@@ -84,7 +84,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Sightseeing phrases help staff answer with a point, ticket, time, or location. Keep the relevant place, item, or screen visible.",
+      "body": "Sightseeing phrases help staff answer with a point, ticket, time, or location. Keep the ticket, meeting point, map location, or booking visible.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a smile, a time, or light follow-up question. Say Mấy giờ đóng cửa?",
+      "body": "Watch for a short reply, a smile, a time, or light follow-up question. Say Mấy giờ đóng cửa?",
       "phrases": [
         {
           "id": "sight-1",
@@ -131,7 +131,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when you need to plan the visit window. The reply may be a smile, a time, or light follow-up question.",
+      "body": "Reach for it when you need to plan the visit window. Watch for a smile, a time, or light follow-up question.",
       "phrases": [
         {
           "id": "sight-5",
@@ -187,7 +187,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Use these for how much is the ticket?; where do we start?; can I take photos here? if the moment moves past the first line.",
       "phrases": [
         {
           "id": "sight-1",

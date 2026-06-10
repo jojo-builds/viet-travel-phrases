@@ -19,19 +19,16 @@
   ],
   "tokens": [
     {
+      "id": "chunk-1",
       "vietnamese": "Mã xác minh",
       "english": "verification code",
-      "keepTogetherReason": "compound code term"
+      "keepTogetherReason": "verification-code noun"
     },
     {
-      "id": "chunk-4",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đến.",
-      "english": "to / arrive at"
+      "id": "chunk-2",
+      "vietnamese": "không đến.",
+      "english": "is not arriving",
+      "keepTogetherReason": "not-arriving phrase"
     },
     {
       "id": "full",

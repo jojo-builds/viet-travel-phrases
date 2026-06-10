@@ -7,7 +7,7 @@
   "title": "Hãy ghi địa chỉ phòng khám",
   "englishTitle": "Please write the address of the clinic",
   "pronunciation": "Hay ghi dia chi phong kham",
-  "summary": "Please write the address of the clinic",
+  "summary": "For getting a clinic address written clearly before you leave.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy ghi địa chỉ phòng khám makes the request direct without adding extra explanation. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Ask while the clinic name, referral, or map is still open."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Hãy ghi địa chỉ phòng khám together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Hand over your phone, paper, or receipt so they can write the address instead of spelling it aloud.",
       "phrases": [
         {
           "id": "v900-heal-phar-please-write-the-address-of-the-clinic",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hãy ghi means please write; địa chỉ phòng khám means the clinic address.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy ghi địa",
-          "english": "please do",
-          "audioKey": null
+          "vietnamese": "Hãy ghi",
+          "english": "please write",
+          "keepTogetherReason": "please-write phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "chỉ phòng khám",
-          "english": "room",
-          "audioKey": null
+          "vietnamese": "địa chỉ phòng khám",
+          "english": "the clinic address",
+          "keepTogetherReason": "clinic-address noun phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Hãy ghi địa chỉ phòng khám",
           "english": "Please write the address of the clinic",
-          "audioKey": null
+          "audioKey": "v900-heal-phar-please-write-the-address-of-the-clinic"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Doctor, pharmacy, and nearest-pharmacy pages help if you still need to choose where to go.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please write the address of the clinic. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at pharmacies, hotel desks, clinics, insurance calls, and front desks."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "A written address is easier for taxis, maps, and insurance notes than a fast spoken direction."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Headache, stomach, motion-sickness, medicine, and allergy pages cover the reason for the clinic visit.",
       "phrases": [
         {
           "id": "health-2",

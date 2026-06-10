@@ -7,7 +7,7 @@
   "title": "Bạn có thể giảm giá cho tôi được không?",
   "englishTitle": "Can you give me a discount?",
   "pronunciation": "Ban co the giam gia cho toi duoc khong",
-  "summary": "Can you give me a discount?",
+  "summary": "For asking a market seller or flexible-price shop for a lower price after you already know the amount.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể giảm giá cho tôi được không? asks someone to do one helpful action for you. Use it for give me a discount when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Ask while holding or pointing at one item. A smile and a pause keep the price talk light."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể giảm giá cho tôi được không? together as one sentence before adding details. Start with Bạn có thể giảm giá cho tôi được không?",
+      "body": "Let the seller answer with a new number, a calculator, or a firm no. Do not add a long explanation.",
       "phrases": [
         {
           "id": "v900-shop-can-you-give-me-a-discount",
@@ -42,44 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; giảm giá cho tôi means give me a discount; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "giảm giá cho",
-          "english": "price / money",
-          "audioKey": null
+          "vietnamese": "giảm giá cho tôi",
+          "english": "give me a discount",
+          "keepTogetherReason": "discount phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "tôi",
-          "english": "I / me",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Bạn có thể giảm giá cho tôi được không?",
-          "english": "Can you give me a discount",
-          "audioKey": null
+          "english": "Can you give me a discount?",
+          "audioKey": "v900-shop-can-you-give-me-a-discount"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another shopping need.",
+      "body": "Best-price, cheaper-one, lower-price, final-price, and how-much cards cover the bargaining flow around this ask.",
       "phrases": [
         {
           "id": "shop-1",
@@ -116,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you give me a discount. Point to the item, menu line, receipt, size, or photo."
+      "body": "Markets, souvenir stalls, informal clothing shops, and flexible-price counters are the right places. Fixed-price stores are not."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Ask after the first price, not before. If they type a number, repeat it back or show it on the calculator."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to best-price, cheaper-one, how-much, final-price, or too-expensive cards if the bargaining continues.",
       "phrases": [
         {
           "id": "shop-4",

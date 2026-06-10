@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi nghĩ chúng ta bị lạc rồi keeps the travel moment short and clear. Reach for it when the route feels wrong and you need to reset the ride.",
+      "body": "Reach for it when the route feels wrong and you need to reset the ride.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Start with Tôi + nghĩ; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "transport-lost-piece-1",
@@ -83,7 +83,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Tôi nghĩ chúng ta bị lạc rồi together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Say Tôi nghĩ chúng ta bị lạc rồi clearly; show the destination, fare, or ride screen only if the reply needs detail.",
       "phrases": [
         {
           "id": "transport-lost",
@@ -102,7 +102,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. Keep the map, address, or destination visible.",
+      "body": "Lost-driver moments need a simple reset. This phrase says the route is not making sense before anxiety takes over.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -110,7 +110,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Keep the map, address, or destination visible.",
+      "body": "The next answer may be a map check, a turn, a stop, or a call to the destination.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -149,7 +149,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when the route feels wrong and you need to reset the ride. The reply may be a clear reply, a pointed detail, or simple follow-up.",
+      "body": "Best when the road, landmark, or app route no longer matches where you meant to go.",
       "phrases": [
         {
           "id": "taxi-4",
@@ -188,7 +188,7 @@
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
+      "body": "If the feeling shifts from confused to unsafe, stop-here language matters more than route repair.",
       "presentation": "tip-callout",
       "phrases": [],
       "breakdown": []
@@ -196,7 +196,7 @@
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Show the location on your phone while you say the phrase. The visual context reduces mistakes.",
+      "body": "Show the map first so the driver can see the mismatch instead of hearing only worry.",
       "phrases": [
         {
           "id": "taxi-7",
@@ -235,7 +235,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "During a taxi ride, motorbike pickup, or station-counter exchange, the next useful language is usually take me here, go to District 1, and you can stop here.",
       "phrases": [
         {
           "id": "taxi-1",

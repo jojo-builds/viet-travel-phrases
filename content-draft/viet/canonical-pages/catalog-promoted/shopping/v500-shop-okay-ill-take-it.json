@@ -7,7 +7,7 @@
   "title": "Được rồi, tôi sẽ lấy nó",
   "englishTitle": "Okay, I’ll take it",
   "pronunciation": "Duoc roi toi se lay no",
-  "summary": "Okay, I’ll take it",
+  "summary": "Keeps the shopping question clear in a market stall or small shop.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Được rồi, tôi sẽ lấy nó keeps the travel moment short and clear. Point to the item, menu line, receipt, size, or photo."
+      "body": "Point to the item, menu line, receipt, size, or photo."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Được rồi, tôi sẽ lấy nó together as one sentence before adding details. Point to the item, menu line, receipt, size, or photo.",
+      "body": "Say Được rồi, tôi sẽ lấy nó as one clean sentence; the item, size, receipt, price tag, or photo can carry the exact detail. Point to the item, menu line, receipt, size, or photo.",
       "phrases": [
         {
           "id": "v500-shop-okay-ill-take-it",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Được rồi, tôi + sẽ lấy nó as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another shopping need.",
+      "body": "Useful if the exchange continues: I want this size, Do you have another color, and Can I try this on.",
       "phrases": [
         {
           "id": "shop-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is okay, I'll take it. Point to the item, menu line, receipt, size, or photo."
+      "body": "Best in a market stall or small shop, before the explanation gets long. Keep the item, size, receipt, price tag, or photo close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Good next-step cards: I’m just looking, Where do I pay, and I want to exchange this.",
       "phrases": [
         {
           "id": "shop-4",

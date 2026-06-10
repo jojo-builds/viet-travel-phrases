@@ -7,7 +7,7 @@
   "title": "Đây là thẻ hành lý của tôi",
   "englishTitle": "This is my baggage tag",
   "pronunciation": "Day la the hanh ly cua toi",
-  "summary": "This is my baggage tag",
+  "summary": "For showing the baggage tag when staff are tracing, claiming, or reporting a bag.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đây là thẻ hành lý của tôi names the need before the details start piling up. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Use it at a baggage desk before describing the bag, flight, or delivery address."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Đây là thẻ hành lý của tôi together as one sentence before adding details. Keep the passport, baggage tag, pickup screen, or flight detail visible.",
+      "body": "Hold out the tag or photo while you say it so staff can read the number.",
       "phrases": [
         {
           "id": "v500-airp-bord-arri-this-is-my-baggage-tag",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đây là means this is; thẻ hành lý means baggage tag; của tôi means mine.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Đây là",
           "english": "this is",
-          "audioKey": null
+          "keepTogetherReason": "this-is phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "thẻ hành lý",
           "english": "baggage tag",
-          "audioKey": null
+          "keepTogetherReason": "baggage-tag noun"
         },
         {
           "id": "chunk-3",
           "vietnamese": "của tôi",
-          "english": "my / mine",
-          "audioKey": null
+          "english": "mine",
+          "keepTogetherReason": "mine phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Đây là thẻ hành lý của tôi",
           "english": "This is my baggage tag",
-          "audioKey": null
+          "audioKey": "v500-airp-bord-arri-this-is-my-baggage-tag"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
+      "body": "Immigration, baggage claim, and SIM card phrases help if you are still moving through arrivals.",
       "phrases": [
         {
           "id": "airport-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is this is my baggage tag. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Good at baggage claim, airline counters, transfer desks, lost-luggage offices, and airport information desks."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Airport staff and drivers are used to short, practical questions. Keep the document or phone screen visible so they can answer quickly."
+      "body": "The tag number matters more than a long description at first. Keep your passport or boarding pass nearby too."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Pickup, driver meetup, bag did not arrive, domestic terminal, and visa phrases cover common arrivals follow-ups.",
       "phrases": [
         {
           "id": "airport-5",

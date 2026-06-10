@@ -20,44 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có cần",
+      "english": "do I need",
+      "keepTogetherReason": "need-question phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "điền vào",
+      "english": "fill in",
+      "keepTogetherReason": "fill-in verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "cần điền",
-      "english": "need to fill in",
-      "keepTogetherReason": "fixed task phrase"
+      "vietnamese": "mẫu đơn này",
+      "english": "this form",
+      "keepTogetherReason": "this-form phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "vào",
-      "english": "into / enter"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "mẫu",
-      "english": "form / sample"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "đơn",
-      "english": "form / order"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

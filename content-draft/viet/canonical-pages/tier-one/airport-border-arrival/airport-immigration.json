@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Nhập cảnh ở đâu? keeps the direction question short. Use this right after landing when you need the first official line. Arrival phrases should keep you moving to the next checkpoint fast.",
+      "body": "Lead with Nhập cảnh ở đâu?; add the detail after the first reply.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -53,7 +53,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Keep your passport, visa, baggage tag, pickup message, or SIM details visible when staff need to match the phrase to a real item.",
+      "body": "Show the passport, baggage tag, flight detail, or pickup screen first, ask once, and leave room for the answer.",
       "phrases": [
         {
           "id": "airport-1",
@@ -80,7 +80,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a point, short direction, nearby option, or counter name. Say Nhập cảnh ở đâu?",
+      "body": "Watch for a point, short direction, nearby option, or counter name. Say Nhập cảnh ở đâu?",
       "phrases": [
         {
           "id": "airport-2",
@@ -119,7 +119,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this right after landing when you need the first official line. The reply may be a point, short direction, nearby option, or counter name.",
+      "body": "Use this right after landing when you need the first official line. Watch for a point, short direction, nearby option, or counter name.",
       "phrases": [
         {
           "id": "airport-6",
@@ -185,7 +185,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover where is baggage claim?; where can I buy a SIM card?; where is the pickup area?",
       "phrases": [
         {
           "id": "airport-2",

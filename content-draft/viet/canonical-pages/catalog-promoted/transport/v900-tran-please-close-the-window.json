@@ -7,7 +7,7 @@
   "title": "Hãy đóng cửa sổ lại",
   "englishTitle": "Please close the window",
   "pronunciation": "Hay dong cua so lai",
-  "summary": "Please close the window",
+  "summary": "For asking a driver to shut a window when wind, rain, smoke, or noise is making the ride uncomfortable.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy đóng cửa sổ lại makes the request direct without adding extra explanation. Keep the map, address, or destination visible."
+      "body": "Use this during a taxi, Grab, bus, or shuttle ride when the open window is the problem, not the route.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Hãy đóng cửa sổ lại together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Say the line calmly and point to the window. A small gesture keeps it from sounding like a complaint about the whole ride.",
       "phrases": [
         {
           "id": "v900-tran-please-close-the-window",
@@ -42,32 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hay marks a polite request; dong cua so lai means close the window.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy đóng cửa",
-          "english": "please do",
-          "audioKey": null
+          "vietnamese": "Hãy",
+          "english": "please",
+          "keepTogetherReason": "polite request marker"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "sổ lại",
+          "vietnamese": "đóng cửa sổ lại",
           "english": "close the window",
-          "audioKey": null
+          "keepTogetherReason": "close-the-window phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Hãy đóng cửa sổ lại",
           "english": "Please close the window",
-          "audioKey": null
+          "audioKey": "v900-tran-please-close-the-window"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "Destination, District 1, and stop-here cards help if the window request happens during a ride conversation.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please close the window. Keep the map, address, or destination visible."
+      "body": "Good when rain blows in, exhaust smell drifts through, road noise is too much, or the air conditioning is already on.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "If the driver opened it for ventilation, add a polite face and point to yourself; the phrase asks for one small change.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Stop-here and air-conditioning cards sit close by because window comfort often comes up mid-ride.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

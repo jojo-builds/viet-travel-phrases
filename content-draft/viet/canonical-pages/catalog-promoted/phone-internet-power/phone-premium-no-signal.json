@@ -7,7 +7,7 @@
   "title": "Không có tín hiệu ở đây.",
   "englishTitle": "There is no signal here.",
   "pronunciation": "Khong co tin hieu o day",
-  "summary": "There is no signal here.",
+  "summary": "For telling a hotel desk, cafe, or phone shop that your phone has no signal here.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use Không có tín hiệu ở đây. for \"There is no signal here.\". Không có tín hiệu ở đây."
+      "body": "Show the signal bars or error screen before asking for help."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Không có tín hiệu ở đây. for \"There is no signal here.\". Keep the phone screen or error message visible.",
+      "body": "Keep the phone unlocked so staff can see whether it is signal, SIM, or data.",
       "phrases": [
         {
           "id": "phone-premium-no-signal",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Không có means there is no; tín hiệu means signal; ở đây means here.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Không có tín",
-          "english": "yes/no question",
-          "audioKey": null
+          "vietnamese": "Không có",
+          "english": "there is no",
+          "keepTogetherReason": "there-is-no phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "hiệu ở đây",
-          "english": "signal here",
-          "audioKey": null
+          "vietnamese": "tín hiệu",
+          "english": "signal",
+          "keepTogetherReason": "signal noun"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "ở đây.",
+          "english": "here",
+          "keepTogetherReason": "here phrase with punctuation"
+        },
+        {
+          "id": "full",
           "vietnamese": "Không có tín hiệu ở đây.",
-          "english": "There is no signal here",
-          "audioKey": null
+          "english": "There is no signal here.",
+          "audioKey": "phone-premium-no-signal"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another phone, internet, or power need.",
+      "body": "Wi-Fi, SIM, and data phrases help when the fix is changing networks instead of moving locations.",
       "phrases": [
         {
           "id": "phone-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when \"There is no signal here.\" Keep the phone screen or error message visible."
+      "body": "Good at SIM counters, hotels, cafes, airports, and phone shops when service drops."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Phone and Wi-Fi answers can be technical. Let the screen stay visible so the other person can point, type, or check the setting."
+      "body": "If the place has Wi-Fi, ask for the password while the mobile signal is down."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Data top-up, eSIM, OTP, activation, and charging pages cover nearby phone-troubleshooting turns.",
       "phrases": [
         {
           "id": "phone-3",

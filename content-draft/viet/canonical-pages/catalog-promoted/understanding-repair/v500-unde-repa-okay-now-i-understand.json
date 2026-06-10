@@ -7,7 +7,7 @@
   "title": "Được rồi, bây giờ tôi đã hiểu",
   "englishTitle": "Okay, now I understand",
   "pronunciation": "Duoc roi bay gio toi da hieu",
-  "summary": "Okay, now I understand",
+  "summary": "Keeps the repair move clear in any moment where speech is not landing.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Được rồi, bây giờ tôi đã hiểu keeps the travel moment short and clear. If it is still unclear, show, write, or point to the exact word."
+      "body": "If it is still unclear, show, write, or point to the exact word."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Được rồi, bây giờ tôi đã hiểu together as one sentence before adding details. If it is still unclear, show, write, or point to the exact word.",
+      "body": "Say Được rồi, bây giờ tôi đã hiểu as one clean sentence; the word, screen, address, or written note can carry the exact detail. If it is still unclear, show, write, or point to the exact word.",
       "phrases": [
         {
           "id": "v500-unde-repa-okay-now-i-understand",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Được rồi, bây + giờ tôi đã, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
+      "body": "Useful if the exchange continues: I don’t understand, Can you speak a little slower, and Could you speak a little slower, please.",
       "phrases": [
         {
           "id": "problems-2",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is okay, now I understand. If it is still unclear, show, write, or point to the exact word."
+      "body": "Best in any moment where speech is not landing, before the explanation gets long. Keep the word, screen, address, or written note close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Keep the next turn practical: Please say that again, Please write it down, and What does that mean?",
       "phrases": [
         {
           "id": "repair-1",

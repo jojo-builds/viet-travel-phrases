@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể có một thông dịch viên? keeps the question easy to answer. Keep the relevant place, item, or screen visible."
+      "body": "Tôi có thể có một thông dịch viên?"
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể có một thông dịch viên? together as one sentence before adding details. Start with Tôi có thể có một thông dịch viên?",
+      "body": "Keep the receipt, room number, ride detail, photo, or last location close, but let the question land first.",
       "phrases": [
         {
           "id": "v500-prob-help-can-i-have-an-interpreter",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Start with Tôi có + thể có một thông dịch viên; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another problem-solving need.",
+      "body": "Nearby follow-ups: I’m lost, I left something behind, and I need help.",
       "phrases": [
         {
           "id": "problems-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I have an interpreter. Keep the relevant place, item, or screen visible."
+      "body": "Use it at a desk or counter, or during a help moment before adding the receipt, room number, ride detail, photo, or last location as supporting detail."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use these when the exchange shifts toward I need help, please call the hotel for me, and I need the manager.",
       "phrases": [
         {
           "id": "help-need-help-direct",

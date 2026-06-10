@@ -7,7 +7,7 @@
   "title": "Điện thoại của tôi bị mất",
   "englishTitle": "My phone is missing",
   "pronunciation": "Dien thoai cua toi bi mat",
-  "summary": "My phone is missing",
+  "summary": "For telling staff or a helper that your phone is missing and you need help finding or reporting it.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Điện thoại của tôi bị mất names the problem so staff or a helpful local can act on it. Use it when My phone is missing is the clearest way to explain what changed, went missing, or needs attention."
+      "body": "Say the problem clearly, then show the last place, receipt, booking, or device photo if you have one."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Điện thoại của tôi bị mất calmly and show the proof if you have it: phone screen, receipt, item, photo, or the place where the issue is happening. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Keep the first sentence calm. The next step may be calling the phone, checking a counter, or filing a report.",
       "phrases": [
         {
           "id": "v500-prob-help-my-phone-is-missing",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Điện thoại means phone; của tôi means my; bị mất means is lost or missing.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Điện thoại của",
-          "english": "go / move",
-          "audioKey": null
+          "vietnamese": "Điện thoại",
+          "english": "phone",
+          "keepTogetherReason": "phone noun"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tôi bị mất",
-          "english": "I lost / is missing",
-          "audioKey": null
+          "vietnamese": "của tôi",
+          "english": "my / mine",
+          "keepTogetherReason": "my phrase"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "bị mất",
+          "english": "is lost / missing",
+          "keepTogetherReason": "lost/missing phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Điện thoại của tôi bị mất",
           "english": "My phone is missing",
-          "audioKey": null
+          "audioKey": "v500-prob-help-my-phone-is-missing"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another problem-solving need.",
+      "body": "Lost, left-something, and need-help phrases keep the first recovery step simple.",
       "phrases": [
         {
           "id": "problems-1",
@@ -88,33 +94,23 @@
           "tintName": "orange",
           "detailPageID": "viet-phrase-problems-4",
           "audioKey": "problems-4"
-        },
-        {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as soon as the problem is clear enough to name. It is especially useful at a counter or desk where someone can look at the photo, receipt, bag, booking, or phone screen with you."
+      "body": "Good at hotel desks, cafes, taxis, shops, stations, and police or security counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "A short phrase plus a map, photo, receipt, or ride screen usually works better than a long explanation."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Need-help, call-hotel, manager, charged-twice, and file-report phrases cover the recovery path.",
       "phrases": [
         {
           "id": "help-need-help-direct",

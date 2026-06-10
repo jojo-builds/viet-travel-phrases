@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "ATM đã giữ thẻ của tôi keeps the travel moment short and clear. Reach for it when you need the number, total, fee, or payment detail to be clear before it gets worse.",
+      "body": "Reach for it when you need the number, total, fee, or payment detail to be clear before it gets worse.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Start with ATM + đã; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "v500-mone-numb-pric-the-atm-kept-my-card-piece-1",
@@ -71,7 +71,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep ATM đã giữ thẻ của tôi together as one sentence before adding details. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "Start with ATM đã giữ thẻ của tôi; keep the item, price tag, calculator, receipt, or ATM screen ready if the reply needs proof.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-the-atm-kept-my-card",
@@ -90,7 +90,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. Keep the relevant place, item, or screen visible.",
+      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. Keep the item, price tag, calculator, or receipt visible.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -98,7 +98,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a number, typed amount, calculator screen, or direct yes/no about payment. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "Watch for a number, typed amount, calculator screen, or direct yes/no about payment. Keep the relevant place, object, or screen visible while you speak.",
       "phrases": [
         {
           "id": "price-1",
@@ -137,7 +137,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when you need the number, total, fee, or payment detail to be clear before it gets worse. The reply may be a number, typed amount, calculator screen, or direct yes/no about payment.",
+      "body": "Reach for it when you need the number, total, fee, or payment detail to be clear before it gets worse. Watch for a number, typed amount, calculator screen, or direct yes/no about payment.",
       "phrases": [
         {
           "id": "price-4",
@@ -213,7 +213,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover how much is this?; how much per kilo?; too expensive.",
       "phrases": [
         {
           "id": "price-1",

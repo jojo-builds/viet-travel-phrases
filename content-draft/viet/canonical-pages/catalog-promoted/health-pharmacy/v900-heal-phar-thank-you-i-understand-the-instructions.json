@@ -7,7 +7,7 @@
   "title": "Cảm ơn bạn, tôi hiểu hướng dẫn",
   "englishTitle": "Thank you, I understand the instructions",
   "pronunciation": "Cam on ban toi hieu huong dan",
-  "summary": "Thank you, I understand the instructions",
+  "summary": "Keeps the health or pharmacy need clear in a pharmacy, clinic, or hotel desk.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Cảm ơn bạn, tôi hiểu hướng dẫn together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Say Cảm ơn bạn, tôi hiểu hướng dẫn as one clean sentence; the symptom, medicine, affected area, or translated note can carry the exact detail. Show the symptom, medicine, location, or helper contact if you can.",
       "phrases": [
         {
           "id": "v900-heal-phar-thank-you-i-understand-the-instructions",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Cảm ơn bạn, + tôi hiểu hướng dẫn as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Nearby follow-ups: I need a doctor; Where is the pharmacy?; Where is the nearest pharmacy?",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is thank you, I understand the instructions. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Best in a pharmacy, clinic, or hotel desk, before the explanation gets long. Keep the symptom, medicine, affected area, or translated note close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Keep close by: I have a headache, My stomach hurts, and Do you have motion sickness medicine?",
       "phrases": [
         {
           "id": "health-2",

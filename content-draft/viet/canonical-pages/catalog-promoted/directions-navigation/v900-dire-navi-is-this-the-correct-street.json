@@ -7,7 +7,7 @@
   "title": "Đây có phải là đường phố chính xác không?",
   "englishTitle": "Is this the correct street?",
   "pronunciation": "Day co phai la duong pho chinh xac khong",
-  "summary": "Is this the correct street?",
+  "summary": "For checking whether you are on the right street before walking farther.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đây có phải là đường phố chính xác không? keeps the question easy to answer. Keep the map, address, or destination visible."
+      "body": "Ask at the corner, taxi door, shopfront, or map stop before committing to the route."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use Đây có phải là đường phố chính xác không? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "body": "Show the street name or pin. A yes/no answer is enough before you keep moving.",
       "phrases": [
         {
           "id": "v900-dire-navi-is-this-the-correct-street",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đây có phải là asks is this; đường phố chính xác means the correct street; không? makes it yes/no.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Đây có phải",
-          "english": "street",
-          "audioKey": null
+          "vietnamese": "Đây có phải là",
+          "english": "is this",
+          "keepTogetherReason": "is-this phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là đường phố chính xác",
-          "english": "is the correct street",
-          "audioKey": null
+          "vietnamese": "đường phố chính xác",
+          "english": "the correct street",
+          "keepTogetherReason": "correct-street phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Đây có phải là đường phố chính xác không?",
-          "english": "Is this the correct street",
-          "audioKey": null
+          "english": "Is this the correct street?",
+          "audioKey": "v900-dire-navi-is-this-the-correct-street"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another directions need.",
+      "body": "How-to-get-there, nearby, and walking-time cards help if the answer becomes a route correction.",
       "phrases": [
         {
           "id": "directions-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+      "body": "Best when the street sign, map pin, entrance, or pickup note looks close but not certain."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For directions, give the listener one clear anchor. A map or address lets them point instead of explaining everything in fast Vietnamese."
+      "body": "Street names can be hard to hear at speed. Show the sign or map so the other person can confirm with a point or short answer."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Left-turn, right-turn, straight-ahead, understand-now, and pickup-point cards cover the next route move.",
       "phrases": [
         {
           "id": "directions-4",

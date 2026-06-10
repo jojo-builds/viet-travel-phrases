@@ -4,10 +4,10 @@
   "phraseID": "v900-phon-inte-powe-is-this-the-correct-location-pin",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Đây có phải là pin vị trí chính xác không?",
-  "englishTitle": "Is this the correct location pin?",
-  "pronunciation": "Day co phai la pin vi tri chinh xac khong",
-  "summary": "Is this the correct location pin?",
+  "title": "Vị trí này có đúng không?",
+  "englishTitle": "Is this the correct location?",
+  "pronunciation": "Vi tri nay co dung khong",
+  "summary": "For checking a map location before you walk, wait, or send it to a driver.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -15,65 +15,67 @@
     "v900-phon-inte-powe-is-this-the-correct-location-pin",
     "premium"
   ],
-  "audioKey": "v900-phon-inte-powe-is-this-the-correct-location-pin",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đây có phải là pin vị trí chính xác không? keeps the question easy to answer. Keep the phone screen or error message visible."
+      "body": "Use it while the map is open and one dot, entrance, or pickup point needs confirmation.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use Đây có phải là pin vị trí chính xác không? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "body": "Point to the screen. Wait for yes, no, or a corrected spot before moving.",
       "phrases": [
         {
           "id": "v900-phon-inte-powe-is-this-the-correct-location-pin",
-          "vietnamese": "Đây có phải là pin vị trí chính xác không?",
-          "english": "Is this the correct location pin?",
-          "pronunciation": "Day co phai la pin vi tri chinh xac khong",
-          "symbolName": "speaker.wave.2.fill",
+          "vietnamese": "Vị trí này có đúng không?",
+          "english": "Is this the correct location?",
+          "pronunciation": "Vi tri nay co dung khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "blue",
           "detailPageID": null,
-          "audioKey": "v900-phon-inte-powe-is-this-the-correct-location-pin"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Vị trí này means this location; có đúng means is correct; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Đây có phải",
-          "english": "location pin",
-          "audioKey": null
+          "vietnamese": "Vị trí này",
+          "english": "this location",
+          "keepTogetherReason": "shown-location phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là pin vị trí chính xác",
-          "english": "is the correct location pin",
-          "audioKey": null
+          "vietnamese": "có đúng",
+          "english": "is correct",
+          "keepTogetherReason": "correctness phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "Đây có phải là pin vị trí chính xác không?",
-          "english": "Is this the correct location pin",
+          "id": "full",
+          "vietnamese": "Vị trí này có đúng không?",
+          "english": "Is this the correct location?",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another phone, internet, or power need.",
+      "body": "If the location is wrong, move to address, pickup, entrance, map not working, or type-the-address follow-ups.",
       "phrases": [
         {
           "id": "phone-1",
@@ -110,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+      "body": "Good with ride-hailing drivers, hotel desks, tour pickups, cafe meetups, and shops with more than one entrance.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Phone and Wi-Fi answers can be technical. Let the screen stay visible so the other person can point, type, or check the setting."
+      "body": "Map dots can land on a back door, side street, or old listing. A quick check saves the wrong wait.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use pickup-here, correct-address, map-not-working, type-address, or entrance cards if the location needs another check.",
       "phrases": [
         {
           "id": "phone-3",
@@ -178,13 +182,13 @@
   "examples": [
     {
       "id": "v900-phon-inte-powe-is-this-the-correct-location-pin",
-      "vietnamese": "Đây có phải là pin vị trí chính xác không?",
-      "english": "Is this the correct location pin?",
-      "pronunciation": "Day co phai la pin vi tri chinh xac khong",
-      "symbolName": "speaker.wave.2.fill",
+      "vietnamese": "Vị trí này có đúng không?",
+      "english": "Is this the correct location?",
+      "pronunciation": "Vi tri nay co dung khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "blue",
       "detailPageID": null,
-      "audioKey": "v900-phon-inte-powe-is-this-the-correct-location-pin"
+      "audioKey": null
     }
   ]
 }

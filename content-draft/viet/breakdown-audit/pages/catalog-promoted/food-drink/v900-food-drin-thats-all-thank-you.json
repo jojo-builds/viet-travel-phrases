@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-food-drin-thats-all-thank-you",
-  "phraseText": "Đó là tất cả, cảm ơn bạn.",
+  "phraseText": "Vậy thôi, cảm ơn",
   "englishTitle": "That's all, thank you.",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -15,41 +15,30 @@
     ]
   },
   "notes": [
-    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources.",
+    "Phrase-copy semantic repair; reviewed tokens updated and audio marked for regeneration."
   ],
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đó",
-      "english": "that"
+      "vietnamese": "Vậy thôi,",
+      "english": "that's all",
+      "keepTogetherReason": "closing phrase with comma"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "tất cả,",
-      "english": "all",
-      "keepTogetherReason": "fixed amount phrase"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "cảm ơn",
       "english": "thank you",
-      "keepTogetherReason": "fixed polite phrase"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "bạn.",
-      "english": "you"
+      "keepTogetherReason": "thanks phrase"
     },
     {
       "id": "full",
-      "vietnamese": "Đó là tất cả, cảm ơn bạn.",
+      "vietnamese": "Vậy thôi, cảm ơn",
       "english": "That's all, thank you.",
-      "audioKey": "v900-food-drin-thats-all-thank-you"
+      "audioKey": null
     }
-  ]
+  ],
+  "title": "Vậy thôi, cảm ơn",
+  "summary": "That's all, thank you",
+  "pronunciation": "Vay thoi cam on"
 }

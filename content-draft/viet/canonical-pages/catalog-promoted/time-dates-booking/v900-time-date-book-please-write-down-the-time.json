@@ -4,10 +4,10 @@
   "phraseID": "v900-time-date-book-please-write-down-the-time",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Hãy ghi lại thời gian",
-  "englishTitle": "Please write down the time",
-  "pronunciation": "Hay ghi lai thoi gian",
-  "summary": "Please write down the time",
+  "title": "Anh/chị ghi giờ giúp tôi được không?",
+  "englishTitle": "Can you write down the time?",
+  "pronunciation": "Anh chi ghi gio giup toi duoc khong",
+  "summary": "For getting the exact time written before you leave the counter or desk.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -15,59 +15,73 @@
     "v900-time-date-book-please-write-down-the-time",
     "premium"
   ],
-  "audioKey": "v900-time-date-book-please-write-down-the-time",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy ghi lại thời gian makes the request direct without adding extra explanation. Keep the booking, room number, date, or address visible."
+      "body": "Use it when a departure, pickup, appointment, or return time needs to be exact.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Hãy ghi lại thời gian together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Hand over paper or show your phone note. Let the written time carry the detail.",
       "phrases": [
         {
           "id": "v900-time-date-book-please-write-down-the-time",
-          "vietnamese": "Hãy ghi lại thời gian",
-          "english": "Please write down the time",
-          "pronunciation": "Hay ghi lai thoi gian",
-          "symbolName": "speaker.wave.2.fill",
+          "vietnamese": "Anh/chị ghi giờ giúp tôi được không?",
+          "english": "Can you write down the time?",
+          "pronunciation": "Anh chi ghi gio giup toi duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "teal",
           "detailPageID": null,
-          "audioKey": "v900-time-date-book-please-write-down-the-time"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Anh/chị is polite you; ghi giờ means write the time; giúp tôi means help me; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy ghi lại",
-          "english": "please do",
-          "audioKey": null
+          "vietnamese": "Anh/chị",
+          "english": "you",
+          "keepTogetherReason": "polite address"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thời gian",
-          "english": "time",
-          "audioKey": null
+          "vietnamese": "ghi giờ",
+          "english": "write the time",
+          "keepTogetherReason": "write-time phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "Hãy ghi lại thời gian",
-          "english": "Please write down the time",
+          "vietnamese": "giúp tôi",
+          "english": "help me / for me",
+          "keepTogetherReason": "help-me phrase"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Anh/chị ghi giờ giúp tôi được không?",
+          "english": "Can you write down the time?",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "If the detail changes, move to text-message, confirmation, today, tomorrow, or change-time follow-ups.",
       "phrases": [
         {
           "id": "time-1",
@@ -104,17 +118,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please write down the time. Keep the booking, room number, date, or address visible."
+      "body": "Good at stations, clinics, tour counters, hotel desks, ticket offices, and pickup points.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "Written times prevent mixups between morning, afternoon, last call, pickup, and return windows.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use text-message, confirmation, what-time, move-later, or tomorrow cards if the schedule needs another check.",
       "phrases": [
         {
           "id": "time-4",
@@ -172,13 +188,13 @@
   "examples": [
     {
       "id": "v900-time-date-book-please-write-down-the-time",
-      "vietnamese": "Hãy ghi lại thời gian",
-      "english": "Please write down the time",
-      "pronunciation": "Hay ghi lai thoi gian",
-      "symbolName": "speaker.wave.2.fill",
+      "vietnamese": "Anh/chị ghi giờ giúp tôi được không?",
+      "english": "Can you write down the time?",
+      "pronunciation": "Anh chi ghi gio giup toi duoc khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "teal",
       "detailPageID": null,
-      "audioKey": "v900-time-date-book-please-write-down-the-time"
+      "audioKey": null
     }
   ]
 }

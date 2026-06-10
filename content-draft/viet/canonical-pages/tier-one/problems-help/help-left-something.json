@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi quên đồ rồi names the need before the details start piling up. Say this if you forgot an item in a car, room, or café. This is a common hotel, taxi, and café recovery phrase.",
+      "body": "Say this if you forgot an item in a car, room, or café.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Hear Tôi + quên as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "problems-4-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Tôi quên đồ rồi together as one sentence before adding details.",
+      "body": "Say Tôi quên đồ rồi clearly; show the receipt, room number, ride detail, photo, or last location only if the reply needs detail.",
       "phrases": [
         {
           "id": "problems-4",
@@ -84,7 +84,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Help phrases work when they name the problem and the next person or action you need. Keep the relevant place, item, or screen visible.",
+      "body": "Help phrases work when they name the problem and the next person or action you need. Keep the receipt, room number, last location, or contact visible.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a question about the last place, a room or ride check, or staff handoff. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
+      "body": "Watch for a question about the last place, a room or ride check, or staff handoff. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
       "phrases": [
         {
           "id": "problems-1",
@@ -131,7 +131,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Say this if you forgot an item in a car, room, or café. The reply may be a question about the last place, a room or ride check, or staff handoff.",
+      "body": "Say this if you forgot an item in a car, room, or café. Watch for a question about the last place, a room or ride check, or staff handoff.",
       "phrases": [
         {
           "id": "help-3",
@@ -187,7 +187,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a desk or counter, or during a help moment, the next useful language is usually I’m lost, I need help, and please call the hotel for me.",
       "phrases": [
         {
           "id": "problems-1",

@@ -21,30 +21,26 @@
     {
       "id": "chunk-1",
       "vietnamese": "Có",
-      "english": "have / there is"
+      "english": "is there",
+      "keepTogetherReason": "existence question opener"
     },
     {
       "id": "chunk-2",
       "vietnamese": "xe đưa đón",
       "english": "shuttle",
-      "keepTogetherReason": "compound noun"
+      "keepTogetherReason": "shuttle phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "giữa các",
-      "english": "between",
-      "keepTogetherReason": "fixed preposition phrase"
+      "vietnamese": "giữa các nhà ga",
+      "english": "between terminals",
+      "keepTogetherReason": "between-terminals phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "nhà ga",
-      "english": "terminal / station",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

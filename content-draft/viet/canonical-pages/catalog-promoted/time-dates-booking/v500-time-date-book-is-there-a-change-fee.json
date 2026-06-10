@@ -7,7 +7,7 @@
   "title": "Có phí thay đổi không?",
   "englishTitle": "Is there a change fee?",
   "pronunciation": "Co phi thay doi khong",
-  "summary": "Is there a change fee?",
+  "summary": "For checking whether changing a ticket, tour, seat, or booking costs extra.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có phí thay đổi không? keeps the question easy to answer. Keep the booking, room number, date, or address visible."
+      "body": "Ask before agreeing to the new time, date, seat, or route."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Có phí thay đổi không? together as one sentence before adding details. Say Có phí thay đổi không?",
+      "body": "Show the ticket or booking. The answer may separate the fee from any fare difference.",
       "phrases": [
         {
           "id": "v500-time-date-book-is-there-a-change-fee",
@@ -42,38 +42,41 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có phí means is there a fee; thay đổi means change; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Có phí thay",
-          "english": "fee",
+          "vietnamese": "Có phí",
+          "english": "is there a fee",
+          "keepTogetherReason": "fee question frame",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đổi",
-          "english": "wait",
+          "vietnamese": "thay đổi",
+          "english": "change",
+          "keepTogetherReason": "change phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending",
           "audioKey": null
         },
         {
           "id": "chunk-4",
           "vietnamese": "Có phí thay đổi không?",
-          "english": "Is there a change fee",
-          "audioKey": null
+          "english": "Is there a change fee?",
+          "audioKey": "v500-time-date-book-is-there-a-change-fee"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "If the fee matters, move to refund, final price, receipt, change-time, or manager follow-ups.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,17 +113,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is is there a change fee. Keep the booking, room number, date, or address visible."
+      "body": "Good at bus desks, train counters, tour offices, hotel desks, clinics, and message threads."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "Ask before the staff reissues anything. Once a booking is changed, the fee may be harder to undo."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use refund, receipt, final-price, move-later, or change-time cards if the booking needs another step.",
       "phrases": [
         {
           "id": "time-4",

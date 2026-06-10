@@ -4,10 +4,10 @@
   "phraseID": "v900-food-drin-please-pack-it-to-go",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Hãy đóng gói nó để đi.",
+  "title": "Gói mang về giúp tôi nhé",
   "englishTitle": "Please pack it to go.",
-  "pronunciation": "Hay dong goi no de di",
-  "summary": "Please pack it to go.",
+  "pronunciation": "Goi mang ve giup toi nhe",
+  "summary": "For asking staff to pack remaining food or a fresh order for takeaway without reopening the whole order.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -15,136 +15,92 @@
     "v900-food-drin-please-pack-it-to-go",
     "premium"
   ],
-  "audioKey": "v900-food-drin-please-pack-it-to-go",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use Hãy đóng gói nó để đi. for \"Please pack it to go.\". Hãy đóng gói nó để đi."
+      "body": "Gói mang về giúp tôi nhé is the quiet opener for a stall, cafe, or busy counter.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Hãy đóng gói nó để đi. for \"Please pack it to go.\". Point to the item, menu line, receipt, size, or photo.",
+      "body": "Point to the dish or container, then ask for it to be packed.",
       "phrases": [
         {
           "id": "v900-food-drin-please-pack-it-to-go",
-          "vietnamese": "Hãy đóng gói nó để đi.",
+          "vietnamese": "Gói mang về giúp tôi nhé",
           "english": "Please pack it to go.",
-          "pronunciation": "Hay dong goi no de di",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Goi mang ve giup toi nhe",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
           "detailPageID": null,
-          "audioKey": "v900-food-drin-please-pack-it-to-go"
+          "audioKey": "audio-authored-goi-mang-ve-giup-toi-nhe-26441c34b2"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Gói makes this about packing the food; mang về makes it takeaway.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy đóng gói",
-          "english": "call",
-          "audioKey": null
+          "vietnamese": "Gói",
+          "english": "pack",
+          "audioKey": "breakdown-food-7-first"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nó để đi",
-          "english": "go / move",
-          "audioKey": null
+          "vietnamese": "mang về",
+          "english": "to take away",
+          "audioKey": "breakdown-food-7-rest"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "Hãy đóng gói nó để đi.",
-          "english": "Please pack it to go",
+          "vietnamese": "giúp tôi nhé",
+          "english": "for me, please",
+          "audioKey": null
+        },
+        {
+          "id": "full",
+          "vietnamese": "Gói mang về giúp tôi nhé",
+          "english": "Please pack it to go.",
           "audioKey": null
         }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
-        }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when \"Please pack it to go.\" Point to the item, menu line, receipt, size, or photo."
-    },
-    {
-      "id": "good-to-know",
-      "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use it near the end of a meal or at a counter when the food should leave with you.",
       "phrases": [
         {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-food-drin-id-like-it-to-go-please",
+          "vietnamese": "Cho tôi lấy mang đi nhé",
+          "english": "I'd like it to go, please.",
+          "pronunciation": "Cho toi lay mang di nhe",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
-          "audioKey": "coffee-4"
+          "detailPageID": "viet-phrase-v900-food-drin-id-like-it-to-go-please",
+          "audioKey": "audio-authored-cho-toi-lay-mang-di-nhe-9678482485"
         },
         {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-food-drin-thats-all-thank-you",
+          "vietnamese": "Vậy thôi, cảm ơn",
+          "english": "That's all, thank you.",
+          "pronunciation": "Vay thoi cam on",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
-          "audioKey": "coffee-5"
-        },
-        {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
-          "audioKey": "coffee-6"
+          "detailPageID": "viet-phrase-v900-food-drin-thats-all-thank-you",
+          "audioKey": "audio-authored-vay-thoi-cam-on-efab00a56b"
         },
         {
           "id": "coffee-7",
@@ -153,32 +109,79 @@
           "pronunciation": "ting tyen zoop toy",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
+          "detailPageID": "viet-family-food-pay-now",
           "audioKey": "coffee-7"
         },
         {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
+          "id": "store-7",
+          "vietnamese": "Cho tôi hóa đơn",
+          "english": "Please give me the receipt",
+          "pronunciation": "cho toy hwa dun",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
-          "audioKey": "food-need-table"
+          "detailPageID": "viet-family-service-receipt",
+          "audioKey": "store-7"
+        },
+        {
+          "id": "coffee-6",
+          "vietnamese": "Mang đi",
+          "english": "To go",
+          "pronunciation": "mang dee",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-to-go",
+          "audioKey": "coffee-6"
         }
-      ]
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Mang về and mang đi both work for takeaway; gói makes it about packing the food.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "If the exchange continues, can I pay the bill by card?; I think there is a mistake on the bill; one more, please can carry the next detail.",
+      "phrases": [
+        {
+          "id": "food-7",
+          "vietnamese": "Gói mang về",
+          "english": "Pack it to go",
+          "pronunciation": "goy mang veh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-pack-to-go",
+          "audioKey": "food-7"
+        }
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Once they answer, listen for whether I'd like it to go, please, that's all, thank you, and please let me pay fits the next step.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [
     {
       "id": "v900-food-drin-please-pack-it-to-go",
-      "vietnamese": "Hãy đóng gói nó để đi.",
+      "vietnamese": "Gói mang về giúp tôi nhé",
       "english": "Please pack it to go.",
-      "pronunciation": "Hay dong goi no de di",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Goi mang ve giup toi nhe",
+      "symbolName": "text.bubble.fill",
       "tintName": "green",
       "detailPageID": null,
-      "audioKey": "v900-food-drin-please-pack-it-to-go"
+      "audioKey": null
     }
   ]
 }

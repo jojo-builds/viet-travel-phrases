@@ -7,7 +7,7 @@
   "title": "Chuyến tham quan bắt đầu lúc mấy giờ?",
   "englishTitle": "What time does the tour start?",
   "pronunciation": "Chuyen tham quan bat dau luc may gio",
-  "summary": "What time does the tour start?",
+  "summary": "For confirming a tour start time before waiting in the wrong place or missing the group.",
   "iconName": "camera.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Chuyến tham quan bắt đầu lúc mấy giờ? is for confirming the time or date before you commit. It helps turn What time does the tour start into one clear answer you can check against a ticket, booking, calendar, or meeting point."
+      "body": "Ask with the booking, ticket, tour name, meeting point, or guide message visible.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Chuyến tham quan bắt đầu lúc mấy giờ? together as one sentence before adding details. Start with Chuyến tham quan bắt đầu lúc mấy giờ?",
+      "body": "Let the time answer land, then confirm the meeting place if there is any doubt.",
       "phrases": [
         {
           "id": "v900-sigh-acti-what-time-does-the-tour-start",
@@ -42,38 +43,39 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Chuyến tham quan means the tour; bắt đầu means starts; lúc mấy giờ asks what time.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Chuyến tham quan",
           "english": "the tour",
-          "audioKey": null
+          "keepTogetherReason": "tour phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "bắt đầu lúc",
-          "english": "starts at",
-          "audioKey": null
+          "vietnamese": "bắt đầu",
+          "english": "starts",
+          "keepTogetherReason": "starts verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "mấy giờ",
-          "english": "asks what time",
-          "audioKey": null
+          "vietnamese": "lúc mấy giờ?",
+          "english": "at what time?",
+          "keepTogetherReason": "what-time ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Chuyến tham quan bắt đầu lúc mấy giờ?",
-          "english": "What time does the tour start",
-          "audioKey": null
+          "english": "What time does the tour start?",
+          "audioKey": "v900-sigh-acti-what-time-does-the-tour-start"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another sightseeing or activities need.",
+      "body": "Ticket, start-point, and photo-permission cards cover the broader sightseeing exchange.",
       "phrases": [
         {
           "id": "sight-1",
@@ -110,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is what time does the tour start. Keep the relevant place, item, or screen visible."
+      "body": "Good at tour desks, hotel lobbies, piers, museum entrances, bus pickups, and attraction counters.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "Start time and meeting time may be different. Ask where to meet if the answer sounds like departure time.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Closing-time, meeting-point, advance-booking, tour-booking, and entrance cards cover the next attraction step.",
       "phrases": [
         {
           "id": "sight-4",

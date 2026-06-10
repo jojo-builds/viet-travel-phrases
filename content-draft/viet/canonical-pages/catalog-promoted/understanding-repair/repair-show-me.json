@@ -7,7 +7,7 @@
   "title": "Chỉ cho tôi được không?",
   "englishTitle": "Can you show me?",
   "pronunciation": "chee cho toy dook khong",
-  "summary": "Can you show me?",
+  "summary": "For asking someone to point, demonstrate, or show the option when words are not enough.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Chỉ cho tôi được không? asks someone to do one helpful action for you. Use it for show me when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Good when the map, menu, machine, ticket, form, or product choice is easier to show than explain."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Chỉ cho tôi được không? together as one sentence before adding details. Start with Chỉ cho tôi được không?",
+      "body": "Hold the screen, note, or object near the person and wait. A gesture may solve the exchange faster than more words.",
       "phrases": [
         {
           "id": "repair-show-me",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Chỉ cho tôi means show me; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Chỉ cho tôi",
           "english": "show me",
-          "audioKey": null
+          "keepTogetherReason": "show-me request"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Chỉ cho tôi được không?",
-          "english": "Can you show me",
-          "audioKey": null
+          "english": "Can you show me?",
+          "audioKey": "repair-show-me"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
+      "body": "Show-on-map, don't-understand, and slower cards help when the explanation still is not clear.",
       "phrases": [
         {
           "id": "repair-5",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you show me. If it is still unclear, show, write, or point to the exact word."
+      "body": "Reach for it when a map, menu, machine, ticket, or form would be easier to show than explain."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "This is a small clarification request, not a demand. A calm tone and visible context make it easier to answer."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Slower, repeat, write-it-down, meaning, and which-one cards cover the next misunderstanding.",
       "phrases": [
         {
           "id": "repair-slower-polite",

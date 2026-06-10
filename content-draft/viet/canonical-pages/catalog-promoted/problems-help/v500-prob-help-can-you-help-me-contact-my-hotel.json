@@ -7,7 +7,7 @@
   "title": "Bạn có thể giúp tôi liên hệ với khách sạn của tôi được không?",
   "englishTitle": "Can you help me contact my hotel?",
   "pronunciation": "Ban co the giup toi lien he voi khach san cua toi duoc khong",
-  "summary": "Can you help me contact my hotel?",
+  "summary": "For asking a helper to call or message your hotel when something needs sorting out.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể giúp tôi liên hệ với khách sạn của tôi được không? keeps the question easy to answer. Keep the relevant place, item, or screen visible."
+      "body": "A hotel can solve the next step faster than a long explanation at the counter."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể giúp tôi liên hệ với khách sạn của tôi được không? together as one sentence before adding details. Start with Bạn có thể giúp tôi liên hệ với khách sạn của tôi được không?",
+      "body": "Show the hotel name, room number, booking, or phone number. Then ask for help contacting them.",
       "phrases": [
         {
           "id": "v500-prob-help-can-you-help-me-contact-my-hotel",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Giúp tôi liên hệ asks for help contacting; khách sạn của tôi means my hotel.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another problem-solving need.",
+      "body": "If the hotel call is part of a problem, keep lost, left-something, and call-this-number close.",
       "phrases": [
         {
           "id": "problems-1",
@@ -96,31 +96,31 @@
           "audioKey": "problems-4"
         },
         {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
+          "id": "help-premium-call-this-number",
+          "vietnamese": "Bạn có thể gọi số này hộ tôi được không?",
+          "english": "Can you call this number for me?",
+          "pronunciation": "Ban co the goi so nay ho toi duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
+          "detailPageID": "viet-phrase-help-premium-call-this-number",
+          "audioKey": "help-premium-call-this-number"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you help me contact my hotel. Keep the relevant place, item, or screen visible."
+      "body": "Good at taxi desks, police desks, clinics, lost-and-found counters, or another hotel reception."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Keep your booking screen visible, but do not hand over private codes or payment screens."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use these if the next step is calling the hotel, asking for a manager, correcting a charge, or filing a report.",
       "phrases": [
         {
           "id": "help-need-help-direct",

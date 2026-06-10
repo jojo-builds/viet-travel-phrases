@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có xà phòng không? keeps the question easy to answer. Reach for it when the sink area is missing soap.",
+      "body": "Lead with Có xà phòng không?; add the detail after the first reply.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Let Có stay connected so the final không? sounds like one clear question.",
       "breakdown": [
         {
           "id": "bath-3-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
+      "body": "Ask while the sign, product, bathroom direction, or payment detail is still visible, then pause before adding more words.",
       "phrases": [
         {
           "id": "bath-3",
@@ -84,7 +84,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "These phrases are practical and often need a quick answer, not a long conversation. The reply may be unclear.",
+      "body": "These phrases are practical and often need a quick answer, not a long conversation. Watch for unclear.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a yes/no answer, a gesture toward the item, or short alternative. Say Có xà phòng không?",
+      "body": "Watch for a yes/no answer, a gesture toward the item, or short alternative. Say Có xà phòng không?",
       "phrases": [
         {
           "id": "bath-1",
@@ -131,7 +131,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when the sink area is missing soap. The reply may be a yes/no answer, a gesture toward the item, or short alternative.",
+      "body": "Reach for it when the sink area is missing soap. Watch for a yes/no answer, a gesture toward the item, or short alternative.",
       "phrases": [
         {
           "id": "bath-4",
@@ -187,7 +187,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Use these for where is the bathroom?; do you have toilet paper?; can I use the bathroom? if the moment moves past the first line.",
       "phrases": [
         {
           "id": "bath-1",

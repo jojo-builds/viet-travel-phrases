@@ -7,7 +7,7 @@
   "title": "Bạn có cái này màu đen không?",
   "englishTitle": "Do you have this in black?",
   "pronunciation": "Ban co cai nay mau den khong",
-  "summary": "Do you have this in black?",
+  "summary": "For asking whether the same item comes in black.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có cái này màu đen không? keeps the question easy to answer. Point to the item, menu line, receipt, size, or photo."
+      "body": "Hold up the item or photo so the color is the only thing changing."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có cái này màu đen không? together as one sentence before adding details. Say Bạn có cái này màu đen không?",
+      "body": "Point to the item first, then to a black sample, tag, or swatch.",
       "phrases": [
         {
           "id": "v900-shop-do-you-have-this-in-black",
@@ -42,38 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có asks do you have; cái này means this item; màu đen means black; không? makes it yes/no.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bạn có cái",
-          "english": "do you have this",
-          "audioKey": null
+          "vietnamese": "Bạn có",
+          "english": "do you have",
+          "keepTogetherReason": "do-you-have phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "này màu đen",
-          "english": "this one in black",
-          "audioKey": null
+          "vietnamese": "cái này",
+          "english": "this item",
+          "keepTogetherReason": "this-item phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "màu đen",
+          "english": "black",
+          "keepTogetherReason": "black color phrase"
         },
         {
           "id": "chunk-4",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
+        },
+        {
+          "id": "full",
           "vietnamese": "Bạn có cái này màu đen không?",
-          "english": "Do you have this in black",
-          "audioKey": null
+          "english": "Do you have this in black?",
+          "audioKey": "v900-shop-do-you-have-this-in-black"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another shopping need.",
+      "body": "Size, color, and try-on phrases keep the shop conversation clear.",
       "phrases": [
         {
           "id": "shop-1",
@@ -110,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is do you have this in black. Point to the item, menu line, receipt, size, or photo."
+      "body": "Good at clothing stalls, shoe shops, souvenir counters, and small boutiques."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "In shops and markets, the object is the reference point. Point to the item, menu line, receipt, size, or photo."
+      "body": "If the color is close but not right, point to a sample or photo instead of explaining shades."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Looking, where-to-pay, exchange, price, and bargaining phrases cover nearby shop turns.",
       "phrases": [
         {
           "id": "shop-4",

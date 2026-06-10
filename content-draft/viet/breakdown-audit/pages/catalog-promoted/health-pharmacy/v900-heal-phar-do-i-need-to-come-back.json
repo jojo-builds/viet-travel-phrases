@@ -20,29 +20,20 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có",
+      "english": "do I",
+      "keepTogetherReason": "keeps the Vietnamese question frame together"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "cần quay lại",
+      "english": "need to come back",
+      "keepTogetherReason": "keeps the follow-up visit phrase together"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "cần",
-      "english": "need"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "quay lại",
-      "english": "go back / turn around",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "is it necessary?"
     },
     {
       "id": "full",

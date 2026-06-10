@@ -7,7 +7,7 @@
   "title": "Người lái xe nên dừng ở đâu?",
   "englishTitle": "Where should the driver stop?",
   "pronunciation": "Nguoi lai xe nen dung o dau",
-  "summary": "Where should the driver stop?",
+  "summary": "Ask where the driver should pull over when the entrance, pickup point, or street edge is unclear.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Người lái xe nên dừng ở đâu? keeps the direction question short. Keep the map, address, or destination visible."
+      "body": "This is for confusing arrivals: markets, malls, hotels with side doors, or streets where stopping is awkward."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Người lái xe nên dừng ở đâu? together as one sentence before adding details. Say Người lái xe nên dừng ở đâu?",
+      "body": "Ask with the map open so staff or a local can point to the safest stopping spot.",
       "phrases": [
         {
           "id": "v900-dire-navi-where-should-the-driver-stop",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Dừng ở đâu is the stop-where core; người lái xe makes it about the driver.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another directions need.",
+      "body": "Direction cards help if the answer is left, right, straight, or across the street.",
       "phrases": [
         {
           "id": "directions-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is where should the driver stop. Keep the map, address, or destination visible."
+      "body": "Best before calling the driver, while choosing a pickup pin, or when a road has several entrances."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Turn-left, turn-right, and straight-ahead cards cover what to say after they point.",
       "phrases": [
         {
           "id": "directions-4",

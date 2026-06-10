@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi lấy cái này keeps the travel moment short and clear. Say this once you agree on the item and price. This closes the shopping moment quickly.",
+      "body": "Say this once you agree on the item and price.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Practice Tôi + lấy first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "price-7-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Tôi lấy cái này together as one sentence before adding details. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "Say Tôi lấy cái này clearly; show the item, price tag, calculator, receipt, or ATM screen only if the reply needs detail.",
       "phrases": [
         {
           "id": "price-7",
@@ -84,7 +84,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. Keep the relevant place, item, or screen visible.",
+      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. Keep the item, price tag, calculator, or receipt visible.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "Watch for a clear reply, a pointed detail, or simple follow-up. Keep the relevant place, object, or screen visible while you speak.",
       "phrases": [
         {
           "id": "price-1",
@@ -131,7 +131,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Say this once you agree on the item and price. The reply may be a clear reply, a pointed detail, or simple follow-up.",
+      "body": "Say this once you agree on the item and price. Watch for a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "price-4",
@@ -207,7 +207,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through how much is this?; how much per kilo?; too expensive.",
       "phrases": [
         {
           "id": "price-1",

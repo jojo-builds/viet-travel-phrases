@@ -7,7 +7,7 @@
   "title": "Xin cho một ly nước mía",
   "englishTitle": "One sugarcane juice, please",
   "pronunciation": "Xin cho mot ly nuoc mia",
-  "summary": "One sugarcane juice, please",
+  "summary": "Keeps the food or drink request clear in a stall, cafe, or busy counter.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Xin cho một ly nước mía keeps the travel moment short and clear. Point to the item, menu line, receipt, size, or photo."
+      "body": "Point to the item, menu line, receipt, size, or photo.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Xin cho một ly nước mía together as one sentence before adding details. Point to the item, menu line, receipt, size, or photo.",
+      "body": "Say Xin cho một ly nước mía as one clean sentence; the menu line, dish photo, bill, or ingredient can carry the exact detail. Point to the item, menu line, receipt, size, or photo.",
       "phrases": [
         {
           "id": "v900-food-drin-one-sugarcane-juice-please",
@@ -37,85 +40,94 @@
           "detailPageID": null,
           "audioKey": "v900-food-drin-one-sugarcane-juice-please"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Start with Xin cho một + ly nước mía; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Xin cho một",
-          "english": "please / ask",
-          "audioKey": null
+          "vietnamese": "Xin",
+          "english": "please / request",
+          "audioKey": "breakdown-xin"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "ly nước mía",
-          "english": "sugarcane juice",
-          "audioKey": null
+          "vietnamese": "cho",
+          "english": "to / for",
+          "audioKey": "breakdown-taxi-1-first"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "một ly",
+          "english": "one glass",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "nước mía",
+          "english": "sugarcane juice",
+          "audioKey": "menu-name-nuoc-mia-abbd50654a"
+        },
+        {
+          "id": "full",
           "vietnamese": "Xin cho một ly nước mía",
           "english": "One sugarcane juice, please",
-          "audioKey": null
+          "audioKey": "v900-food-drin-one-sugarcane-juice-please"
         }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
-        }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is one sugarcane juice, please. Point to the item, menu line, receipt, size, or photo."
-    },
-    {
-      "id": "good-to-know",
-      "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "At a cafe, stall, or restaurant counter, keep the drink name, menu line, cup size, ice, or sugar choice visible while the first answer comes back.",
       "phrases": [
+        {
+          "id": "v900-food-drin-one-fresh-coconut-please",
+          "vietnamese": "Làm ơn cho một quả dừa tươi",
+          "english": "One fresh coconut, please",
+          "pronunciation": "Lam on cho mot qua dua tuoi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-one-fresh-coconut-please",
+          "audioKey": "v900-food-drin-one-fresh-coconut-please"
+        },
+        {
+          "id": "v900-food-drin-do-you-have-beer",
+          "vietnamese": "Bạn có bia không?",
+          "english": "Do you have beer?",
+          "pronunciation": "Ban co bia khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-do-you-have-beer",
+          "audioKey": "v900-food-drin-do-you-have-beer"
+        },
+        {
+          "id": "v900-food-drin-no-straw-please",
+          "vietnamese": "Không cần ống hút nhé",
+          "english": "No straw, please",
+          "pronunciation": "Khong can ong hut nhe",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-no-straw-please",
+          "audioKey": "audio-authored-khong-can-ong-hut-nhe-c1f7415658"
+        },
+        {
+          "id": "v900-food-drin-can-i-have-a-cup-of-ice",
+          "vietnamese": "Tôi có thể có một cốc đá được không?",
+          "english": "Can I have a cup of ice?",
+          "pronunciation": "Toi co the co mot coc da duoc khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-have-a-cup-of-ice",
+          "audioKey": "v900-food-drin-can-i-have-a-cup-of-ice"
+        },
         {
           "id": "coffee-4",
           "vietnamese": "Ít đá thôi",
@@ -123,9 +135,26 @@
           "pronunciation": "eet dah toy",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
+          "detailPageID": "viet-family-food-less-ice",
           "audioKey": "coffee-4"
-        },
+        }
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Once they answer, listen for whether to go, please let me pay, and please give me the receipt fits the next step.",
+      "phrases": [
         {
           "id": "coffee-5",
           "vietnamese": "Không đường nhé",
@@ -133,40 +162,30 @@
           "pronunciation": "khong doong nhe",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
+          "detailPageID": "viet-family-food-no-sugar",
           "audioKey": "coffee-5"
         },
         {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
+          "id": "food-5",
+          "vietnamese": "Có nước suối không?",
+          "english": "Do you have bottled water?",
+          "pronunciation": "koh nook soy khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
-          "audioKey": "coffee-6"
-        },
-        {
-          "id": "coffee-7",
-          "vietnamese": "Tính tiền giúp tôi",
-          "english": "Please let me pay",
-          "pronunciation": "ting tyen zoop toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
-          "audioKey": "coffee-7"
-        },
-        {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
-          "audioKey": "food-need-table"
+          "detailPageID": "viet-family-food-bottled-water",
+          "audioKey": "food-5"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Once they answer, listen for whether one fresh coconut, please; do you have beer?; no straw, please fits the next step.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [

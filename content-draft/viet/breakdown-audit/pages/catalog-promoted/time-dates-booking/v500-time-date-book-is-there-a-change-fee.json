@@ -20,28 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Có",
-      "english": "have / there is"
+      "vietnamese": "Có phí",
+      "english": "is there a fee",
+      "keepTogetherReason": "fee question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "phí",
-      "english": "fee"
+      "vietnamese": "thay đổi",
+      "english": "change",
+      "keepTogetherReason": "change phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "thay",
-      "english": "replace / change"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "đổi",
-      "english": "change / exchange"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

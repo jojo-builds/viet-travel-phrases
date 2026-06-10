@@ -7,7 +7,7 @@
   "title": "Tôi có thể tham gia ngay hôm nay không?",
   "englishTitle": "Can I join today?",
   "pronunciation": "Toi co the tham gia ngay hom nay khong",
-  "summary": "Can I join today?",
+  "summary": "For asking whether a tour, activity, class, or ticketed visit still has same-day space.",
   "iconName": "camera.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể tham gia ngay hôm nay không? keeps the question easy to answer. Keep the relevant place, item, or screen visible."
+      "body": "Ask before paying, waiting, or walking to the meeting point."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể tham gia ngay hôm nay không? together as one sentence before adding details. Start with Tôi có thể tham gia ngay hôm nay không?",
+      "body": "Show the activity name, ticket counter, or booking screen while you ask.",
       "phrases": [
         {
           "id": "v500-sigh-acti-can-i-join-today",
@@ -42,44 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể asks can I; tham gia means join; ngay hôm nay means today; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I question frame"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể tham gia",
-          "english": "price",
-          "audioKey": null
+          "vietnamese": "tham gia",
+          "english": "join",
+          "keepTogetherReason": "join phrase"
         },
         {
           "id": "chunk-3",
           "vietnamese": "ngay hôm nay",
-          "english": "join today",
-          "audioKey": null
+          "english": "today",
+          "keepTogetherReason": "same-day phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Tôi có thể tham gia ngay hôm nay không?",
-          "english": "Can I join today",
-          "audioKey": null
+          "english": "Can I join today?",
+          "audioKey": "v500-sigh-acti-can-i-join-today"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another sightseeing or activities need.",
+      "body": "Ticket price, start point, and photo-permission phrases help if the answer is yes.",
       "phrases": [
         {
           "id": "sight-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I join today. Keep the relevant place, item, or screen visible."
+      "body": "Good at tour desks, museums, workshops, boat counters, cooking classes, and attraction entrances."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Same-day space may depend on time, group size, weather, or a guide. Ask for the start time next."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Closing time, meeting point, advance booking, tour booking, and entrance phrases cover the next activity detail.",
       "phrases": [
         {
           "id": "sight-4",
@@ -165,7 +165,7 @@
           "pronunciation": "toy koh dat tour",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-v500-sigh-acti-i-have-a-tour-booking",
+          "detailPageID": "viet-family-v500-sigh-acti-i-have-a-tour-booking",
           "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
         },
         {

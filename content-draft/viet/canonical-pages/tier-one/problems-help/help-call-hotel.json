@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Gọi khách sạn giúp tôi makes the request direct without adding extra explanation. Reach for it when you need local help contacting your hotel fast. This is a high-value second sentence once the problem involves a room, booking, or bag.",
+      "body": "Reach for it when you need local help contacting your hotel fast.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Start with Gọi + khách sạn; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "help-2-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Gọi khách sạn giúp tôi together as one sentence before adding details.",
+      "body": "Start with Gọi khách sạn giúp tôi; keep the receipt, room number, ride detail, photo, or last location ready if the reply needs proof.",
       "phrases": [
         {
           "id": "help-2",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Help phrases work when they name the problem and the next person or action you need. Keep the relevant place, item, or screen visible.",
+      "body": "Help phrases work when they name the problem and the next person or action you need. Keep the receipt, room number, last location, or contact visible.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
+      "body": "Watch for a confirmation, a handoff, a price, or follow-up question. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
       "phrases": [
         {
           "id": "problems-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when you need local help contacting your hotel fast. Keep the relevant place, item, or screen visible.",
+      "body": "Reach for it when you need local help contacting your hotel fast. Keep the receipt, room number, last location, or contact visible.",
       "phrases": [
         {
           "id": "help-3",
@@ -181,7 +181,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover I’m lost, I left something behind, and I need help.",
       "phrases": [
         {
           "id": "problems-1",

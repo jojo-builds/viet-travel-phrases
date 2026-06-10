@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi ký ở đâu? keeps the direction question short. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Tôi ký ở đâu?"
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi ký ở đâu? together as one sentence before adding details. Say Tôi ký ở đâu?",
+      "body": "A short question is enough here; use the passport, baggage tag, flight detail, or pickup screen for the follow-up.",
       "phrases": [
         {
           "id": "v500-airp-bord-arri-where-do-i-sign",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear the place or item first; ở đâu? turns it into the where question.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
+      "body": "Nearby follow-ups: Where is immigration, Where is baggage claim, and Where can I buy a SIM card.",
       "phrases": [
         {
           "id": "airport-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits airport, immigration, baggage, or pickup moment, especially when sign can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "At an airport counter, baggage area, or pickup point, keep the passport, baggage tag, flight detail, or pickup screen visible while the first answer comes back."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Nearby follow-ups: Where is the pickup area, Where do I meet the driver, and My bag did not arrive.",
       "phrases": [
         {
           "id": "airport-5",

@@ -7,7 +7,7 @@
   "title": "Bạn có thể giúp tôi liên hệ với đại sứ quán được không?",
   "englishTitle": "Can you help me contact the embassy?",
   "pronunciation": "Ban co the giup toi lien he voi dai su quan duoc khong",
-  "summary": "Can you help me contact the embassy?",
+  "summary": "For asking a hotel desk, clinic, police counter, or trusted helper to help contact your embassy.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể giúp tôi liên hệ với đại sứ quán được không? keeps the question easy to answer. Keep the relevant place, item, or screen visible."
+      "body": "Use it when the next step needs an official contact, not just a local suggestion."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể giúp tôi liên hệ với đại sứ quán được không? together as one sentence before adding details. Start with Bạn có thể giúp tôi liên hệ với đại sứ quán được không?",
+      "body": "Show your passport copy, embassy number, contact page, or message draft. Keep the request calm and direct.",
       "phrases": [
         {
           "id": "help-premium-contact-embassy",
@@ -42,44 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; giúp tôi means help me; liên hệ với đại sứ quán means contact the embassy; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "giúp tôi liên",
+          "vietnamese": "giúp tôi",
           "english": "help me",
-          "audioKey": null
+          "keepTogetherReason": "help-me phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "hệ với đại sứ quán",
-          "english": "the embassy",
-          "audioKey": null
+          "vietnamese": "liên hệ với đại sứ quán",
+          "english": "contact the embassy",
+          "keepTogetherReason": "embassy-contact phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Bạn có thể giúp tôi liên hệ với đại sứ quán được không?",
-          "english": "Can you help me contact the embassy",
-          "audioKey": null
+          "english": "Can you help me contact the embassy?",
+          "audioKey": "help-premium-contact-embassy"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another problem-solving need.",
+      "body": "Lost and left-something cards cover the story that may explain why embassy help is needed.",
       "phrases": [
         {
           "id": "problems-1",
@@ -100,33 +100,23 @@
           "tintName": "orange",
           "detailPageID": "viet-phrase-problems-4",
           "audioKey": "problems-4"
-        },
-        {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you help me contact the embassy. Keep the relevant place, item, or screen visible."
+      "body": "Good at hotels, clinics, police counters, travel offices, and with a trusted local helper during a serious document or safety problem."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Embassy help usually needs exact identity and contact details. Keep your passport copy or phone screen ready."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to need-help, call-hotel, manager, charged-twice, or file-report cards if the helper asks what happened next.",
       "phrases": [
         {
           "id": "help-need-help-direct",

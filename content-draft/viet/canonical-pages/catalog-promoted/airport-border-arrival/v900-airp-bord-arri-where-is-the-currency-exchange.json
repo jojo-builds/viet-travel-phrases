@@ -7,7 +7,7 @@
   "title": "Đổi tiền ở đâu?",
   "englishTitle": "Where is the currency exchange?",
   "pronunciation": "Doi tien o dau",
-  "summary": "Where is the currency exchange?",
+  "summary": "For finding money exchange after arrival without wandering the terminal.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đổi tiền ở đâu? keeps the direction question short. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Airports can have ATMs, bank counters, kiosks, and exchange desks that look similar."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Đổi tiền ở đâu? together as one sentence before adding details. Say Đổi tiền ở đâu?",
+      "body": "Ask near information, baggage, or arrivals. Show cash or the currency if pointing is easier.",
       "phrases": [
         {
           "id": "v900-airp-bord-arri-where-is-the-currency-exchange",
@@ -42,24 +42,24 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đổi tiền means exchange money; ở đâu asks where.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Đổi tiền",
-          "english": "price / money",
+          "english": "exchange money",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "ở đâu",
-          "english": "where?",
+          "vietnamese": "ở đâu?",
+          "english": "where",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "Đổi tiền ở đâu?",
-          "english": "Where is the currency exchange",
+          "english": "Where is the currency exchange?",
           "audioKey": null
         }
       ]
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
+      "body": "ATM, pickup, and baggage follow-ups stay useful because money often comes before the ride into town.",
       "phrases": [
         {
           "id": "airport-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits airport, immigration, baggage, or pickup moment, especially when currency exchange can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Good in airports, stations, malls, hotels, and tourist areas when you need a staffed exchange desk."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+      "body": "Ask the rate and fee before handing over cash. Keep passport and wallet details private until required."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "ATM, water, pickup, driver, and baggage follow-ups cover the first-arrival errands.",
       "phrases": [
         {
           "id": "airport-5",

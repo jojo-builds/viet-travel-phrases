@@ -4,10 +4,10 @@
   "phraseID": "v900-heal-phar-i-have-a-cough",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "tôi bị ho",
+  "title": "Tôi bị ho",
   "englishTitle": "I have a cough",
-  "pronunciation": "toi bi ho",
-  "summary": "I have a cough",
+  "pronunciation": "Toi bi ho",
+  "summary": "For telling a pharmacist, clinic desk, or doctor that cough is the symptom you need help with.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,18 +20,19 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "tôi bị ho names the need before the details start piling up. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Say it before asking for medicine. Add fever, asthma, pregnancy, or allergies if any of those also matter.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep tôi bị ho together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Keep the symptom clear and let staff ask about duration, fever, mucus, or other medicine.",
       "phrases": [
         {
           "id": "v900-heal-phar-i-have-a-cough",
-          "vietnamese": "tôi bị ho",
+          "vietnamese": "Tôi bị ho",
           "english": "I have a cough",
-          "pronunciation": "toi bi ho",
+          "pronunciation": "Toi bi ho",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
           "detailPageID": null,
@@ -42,32 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi bị means I have or I am suffering from; ho means cough.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "tôi bị",
-          "english": "I have / got",
-          "audioKey": null
+          "vietnamese": "Tôi bị",
+          "english": "I have / I am suffering from",
+          "keepTogetherReason": "symptom phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "ho",
-          "english": "meter / clock",
-          "audioKey": null
+          "english": "cough",
+          "keepTogetherReason": "symptom noun"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "tôi bị ho",
+          "id": "full",
+          "vietnamese": "Tôi bị ho",
           "english": "I have a cough",
-          "audioKey": null
+          "audioKey": "v900-heal-phar-i-have-a-cough"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Fever, asthma, sore throat, medicine, and drug-interaction cards cover the health questions around a cough.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i have a cough. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at pharmacies, clinics, hotel desks calling a doctor, and travel-insurance calls when cough is the main symptom.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "If you also have fever, chest pain, asthma, pregnancy, or trouble breathing, say that next before buying medicine.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to fever, asthma, medicine, how-to-take-this, or drug-interaction cards if the health conversation continues.",
       "phrases": [
         {
           "id": "health-2",
@@ -172,9 +176,9 @@
   "examples": [
     {
       "id": "v900-heal-phar-i-have-a-cough",
-      "vietnamese": "tôi bị ho",
+      "vietnamese": "Tôi bị ho",
       "english": "I have a cough",
-      "pronunciation": "toi bi ho",
+      "pronunciation": "Toi bi ho",
       "symbolName": "speaker.wave.2.fill",
       "tintName": "red",
       "detailPageID": null,

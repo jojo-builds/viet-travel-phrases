@@ -20,38 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Món",
-      "english": "dish"
+      "vietnamese": "Món này",
+      "english": "this dish",
+      "keepTogetherReason": "this-dish phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "này",
-      "english": "this"
+      "vietnamese": "quá cay",
+      "english": "too spicy",
+      "keepTogetherReason": "too-spicy phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "quá",
-      "english": "too / very"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "cay",
-      "english": "spicy"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đối",
-      "english": "opposite / toward"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "với",
-      "english": "with / to"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "tôi.",
-      "english": "I / me"
+      "vietnamese": "đối với tôi.",
+      "english": "for me",
+      "keepTogetherReason": "for-me phrase with punctuation"
     },
     {
       "id": "full",

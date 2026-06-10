@@ -7,7 +7,7 @@
   "title": "Tôi bị đau ngực",
   "englishTitle": "I have chest pain",
   "pronunciation": "Toi bi dau nguc",
-  "summary": "I have chest pain",
+  "summary": "For clearly saying chest pain at a clinic, pharmacy, hotel desk, or emergency desk.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi bị đau ngực names the need before the details start piling up. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Treat this as urgent. Say the symptom first, especially if pain is strong, sudden, or paired with breathing trouble."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi bị đau ngực together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Point to your chest, show any medicine or allergy note, and let staff call medical help if needed.",
       "phrases": [
         {
           "id": "v500-heal-phar-i-have-chest-pain",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi bị means I have or I am affected by; đau ngực means chest pain.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi bị",
-          "english": "I have / got",
-          "audioKey": null
+          "english": "I have / I am affected by",
+          "keepTogetherReason": "symptom opener"
         },
         {
           "id": "chunk-2",
           "vietnamese": "đau ngực",
           "english": "chest pain",
-          "audioKey": null
+          "keepTogetherReason": "symptom phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi bị đau ngực",
           "english": "I have chest pain",
-          "audioKey": null
+          "audioKey": "v500-heal-phar-i-have-chest-pain"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Doctor, pharmacy, and nearest-pharmacy cards help when staff need to route you quickly.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i have chest pain. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Use it with clinic staff, pharmacy staff, hotel staff, emergency desks, or any helper calling medical help."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "Chest pain should not be treated as a normal pharmacy errand if it is severe, sudden, or hard to breathe."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Headache, stomach pain, motion-sickness medicine, allergy, and diarrhea cards cover less urgent nearby symptoms.",
       "phrases": [
         {
           "id": "health-2",

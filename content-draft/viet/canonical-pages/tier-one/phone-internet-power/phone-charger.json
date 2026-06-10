@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có sạc không? keeps the question easy to answer. Reach for it when you need any charger before you explain more detail. This is the quickest recovery phrase when the battery problem can be fixed nearby.",
+      "body": "Có sạc không? works best as a short opener at a SIM shop, hotel desk, or cafe counter.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Say the main request in one piece, then pause after không? for the yes-or-no answer.",
       "breakdown": [
         {
           "id": "phone-4-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Show the phone screen or error message first so the problem is visible before you add more words.",
+      "body": "Keep the phone screen, error message, charger, or map app visible so the reply can be a point, number, or short correction.",
       "phrases": [
         {
           "id": "phone-4",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Phone phrases work best when the other person can see the exact screen or error. The reply may be unclear.",
+      "body": "Phone phrases work best when the other person can see the exact screen or error. Watch for unclear.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a yes/no answer, a gesture toward the item, or short alternative. Say Có sạc không?",
+      "body": "Watch for a yes/no answer, a gesture toward the item, or short alternative. Say Có sạc không?",
       "phrases": [
         {
           "id": "phone-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when you need any charger before you explain more detail. The reply may be a yes/no answer, a gesture toward the item, or short alternative.",
+      "body": "Best when the phone is low and the immediate need is buying, borrowing, or finding a compatible charger.",
       "phrases": [
         {
           "id": "phone-5",
@@ -164,7 +164,7 @@
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Show the screen first and keep control of your phone unless the situation feels trustworthy.",
+      "body": "Keep control of your phone while showing the port, cable, or battery warning.",
       "presentation": "tip-callout",
       "phrases": [],
       "breakdown": []
@@ -191,7 +191,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover what is the Wi-Fi password?; do you sell SIM cards?; my phone battery is dead.",
       "phrases": [
         {
           "id": "phone-1",

@@ -20,12 +20,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Làm ơn làm cho nó bớt cay đi makes the request direct without adding extra explanation. Point to the item, menu line, receipt, size, or photo."
+      "body": "Point to the item, menu line, receipt, size, or photo.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Làm ơn làm cho nó bớt cay đi together as one sentence before adding details. Point to the item, menu line, receipt, size, or photo.",
+      "body": "Say Làm ơn làm cho nó bớt cay đi as one clean sentence; the menu line, dish photo, bill, or ingredient can carry the exact detail. Point to the item, menu line, receipt, size, or photo.",
       "phrases": [
         {
           "id": "v900-food-drin-please-make-it-less-spicy",
@@ -37,120 +40,111 @@
           "detailPageID": null,
           "audioKey": "v900-food-drin-please-make-it-less-spicy"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Practice Làm ơn + làm cho nó first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Làm ơn",
           "english": "please",
-          "audioKey": null
+          "audioKey": "breakdown-authored-lam-on-94fabbadab"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "làm cho nó",
-          "english": "less spicy",
-          "audioKey": null
+          "vietnamese": "làm",
+          "english": "do / make",
+          "audioKey": "breakdown-repair-1-first"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "bớt cay đi",
-          "english": "go / move",
-          "audioKey": null
+          "vietnamese": "cho",
+          "english": "to / for",
+          "audioKey": "breakdown-taxi-1-first"
         },
         {
           "id": "chunk-4",
+          "vietnamese": "nó",
+          "english": "it",
+          "audioKey": "breakdown-v500-dire-navi-how-far-is-it-first"
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "bớt",
+          "english": "reduce / less",
+          "audioKey": "breakdown-price-4-first"
+        },
+        {
+          "id": "chunk-6",
+          "vietnamese": "cay",
+          "english": "spicy",
+          "audioKey": "breakdown-authored-cay-fc99e1ed31"
+        },
+        {
+          "id": "chunk-7",
+          "vietnamese": "đi",
+          "english": "go",
+          "audioKey": "breakdown-coffee-6-rest"
+        },
+        {
+          "id": "full",
           "vietnamese": "Làm ơn làm cho nó bớt cay đi",
           "english": "Please make it less spicy",
-          "audioKey": null
+          "audioKey": "v900-food-drin-please-make-it-less-spicy"
         }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
-        }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please make it less spicy. Point to the item, menu line, receipt, size, or photo."
-    },
-    {
-      "id": "good-to-know",
-      "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "At a stall, cafe, or busy counter, keep the menu line, dish photo, table item, or bill visible while the first answer comes back.",
       "phrases": [
         {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
+          "id": "food-2",
+          "vietnamese": "Cho tôi tô này",
+          "english": "I’ll take this bowl",
+          "pronunciation": "cho toy toh nai",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
-          "audioKey": "coffee-4"
+          "detailPageID": "viet-family-food-this-bowl",
+          "audioKey": "food-2"
         },
         {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
+          "id": "food-3",
+          "vietnamese": "Không cay nhé",
+          "english": "Not spicy please",
+          "pronunciation": "khong kai nhe",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
-          "audioKey": "coffee-5"
+          "detailPageID": "viet-family-food-not-spicy",
+          "audioKey": "food-3"
         },
         {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
+          "id": "food-6",
+          "vietnamese": "Cho tôi muỗng với đũa",
+          "english": "A spoon and chopsticks please",
+          "pronunciation": "cho toy moong voy doo-ah",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
-          "audioKey": "coffee-6"
+          "detailPageID": "viet-family-food-utensils",
+          "audioKey": "food-6"
+        },
+        {
+          "id": "food-7",
+          "vietnamese": "Gói mang về",
+          "english": "Pack it to go",
+          "pronunciation": "goy mang veh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-pack-to-go",
+          "audioKey": "food-7"
         },
         {
           "id": "coffee-7",
@@ -159,20 +153,57 @@
           "pronunciation": "ting tyen zoop toy",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
+          "detailPageID": "viet-family-food-pay-now",
           "audioKey": "coffee-7"
-        },
+        }
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Keep the next turn practical: Just a little ice, No sugar please, and To go.",
+      "phrases": [
         {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
+          "id": "food-vegetarian",
+          "vietnamese": "Tôi ăn chay",
+          "english": "I am vegetarian",
+          "pronunciation": "toy an chai",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
-          "audioKey": "food-need-table"
+          "detailPageID": "viet-family-food-vegetarian",
+          "audioKey": "food-vegetarian"
+        },
+        {
+          "id": "food-peanut-allergy",
+          "vietnamese": "Tôi bị dị ứng đậu phộng",
+          "english": "I am allergic to peanuts",
+          "pronunciation": "toy bee zee oong dow fohng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-peanut-allergy",
+          "audioKey": "food-peanut-allergy"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Once they answer, listen for whether I’ll take this bowl, not spicy please, and a spoon and chopsticks please fits the next step.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [

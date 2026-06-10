@@ -7,7 +7,7 @@
   "title": "Bạn có thể gói nó cẩn thận được không?",
   "englishTitle": "Can you wrap it carefully?",
   "pronunciation": "Ban co the goi no can than duoc khong",
-  "summary": "Can you wrap it carefully?",
+  "summary": "For asking a seller to wrap a fragile souvenir, gift, bottle, ceramic piece, or small purchase with care.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể gói nó cẩn thận được không? asks someone to do one helpful action for you. Use it for wrap it carefully when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Best while the item is still on the counter and before it goes into the bag."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể gói nó cẩn thận được không? together as one sentence before adding details. Start with Bạn có thể gói nó cẩn thận được không?",
+      "body": "Point to the item and gesture gently if needed. The phrase asks for careful wrapping, not a gift-wrap service.",
       "phrases": [
         {
           "id": "v900-shop-can-you-wrap-it-carefully",
@@ -42,44 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; gói nó means wrap it; cẩn thận means carefully; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "gói nó cẩn",
-          "english": "call",
-          "audioKey": null
+          "vietnamese": "gói nó",
+          "english": "wrap it",
+          "keepTogetherReason": "wrap-it phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "thận",
-          "english": "it carefully",
-          "audioKey": null
+          "vietnamese": "cẩn thận",
+          "english": "carefully",
+          "keepTogetherReason": "carefully phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Bạn có thể gói nó cẩn thận được không?",
-          "english": "Can you wrap it carefully",
-          "audioKey": null
+          "english": "Can you wrap it carefully?",
+          "audioKey": "v900-shop-can-you-wrap-it-carefully"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another shopping need.",
+      "body": "Size, color, and try-on cards remain nearby if the shop exchange turns into choosing another item.",
       "phrases": [
         {
           "id": "shop-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you wrap it carefully. Point to the item, menu line, receipt, size, or photo."
+      "body": "Good at souvenir shops, market stalls, ceramic stores, boutiques, food-gift counters, and luggage-packing moments."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "For fragile items, the gesture helps. Show the part you are worried about before they start wrapping."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to just-looking, where-pay, exchange-this, item-price, or lower-price cards if the purchase continues.",
       "phrases": [
         {
           "id": "shop-4",

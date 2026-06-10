@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Phòng bán vé ở đâu? together as one sentence before adding details. Say Phòng bán vé ở đâu?",
+      "body": "Ask near the entrance or information desk. A point, floor number, or window number may be the whole answer.",
       "phrases": [
         {
           "id": "v900-dire-navi-where-is-the-ticket-office",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear the place or item first; ở đâu? turns it into the where question.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another directions need.",
+      "body": "Useful if the exchange continues: Excuse me, how do I get there, Is it near here, and How long does it take on foot.",
       "phrases": [
         {
           "id": "directions-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits street, lobby, station, mall, or pickup-point moment, especially when ticket office can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Best with a map, at a street corner, or at a ticket counter, before the explanation gets long. Keep the map location, address, station name, or sign close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Useful if the exchange continues: Where do I turn left, Should I turn right, and Should I go straight.",
       "phrases": [
         {
           "id": "directions-4",

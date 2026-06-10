@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Use this when the price depends on a single item, ticket, portion, or piece. Point to one item so the answer is not for the whole group."
+      "body": "Point to one item so the answer is not for the whole group."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bao nhiêu một cái?, then point to one item. Keep your hand on the single piece until the price is clear.",
+      "body": "Lead with the question; show the item, price tag, calculator, receipt, or ATM screen only if they need detail.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-how-much-for-one",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bao nhiêu một + cái carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
+      "body": "Keep close by: How much is this? and How much per kilo?",
       "phrases": [
         {
           "id": "price-1",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Keep close by: Too expensive, Can you lower it a little, and What’s your final price.",
       "phrases": [
         {
           "id": "price-3",

@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi rẽ phải đúng không? keeps the question easy to answer. Reach for it when you want to confirm the next turn as a yes-or-no question.",
+      "body": "Tôi rẽ phải đúng không? works best as a short opener with a map, at a street corner, or at a ticket counter.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Listen for Tôi first, then let không? carry the question ending.",
       "breakdown": [
         {
           "id": "directions-5-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Keep the map, address, or destination visible.",
+      "body": "Ask with the map location, address, station name, or sign visible, then wait for yes, no, or a correction.",
       "phrases": [
         {
           "id": "directions-5",
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Say Tôi rẽ phải đúng không?",
+      "body": "Watch for a clear reply, a pointed detail, or simple follow-up. Say Tôi rẽ phải đúng không?",
       "phrases": [
         {
           "id": "directions-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when you want to confirm the next turn as a yes-or-no question. The reply may be a clear reply, a pointed detail, or simple follow-up.",
+      "body": "Reach for it when you want to confirm the next turn as a yes-or-no question. Watch for a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "directions-4",
@@ -191,7 +191,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "With a map, at a street corner, or at a ticket counter, the next useful language is usually excuse me, how do I get there?; is it near here?; how long does it take on foot?",
       "phrases": [
         {
           "id": "directions-1",

@@ -53,7 +53,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Ask with the item, size, receipt, price tag, or photo visible, then wait for yes, no, or a correction.",
       "phrases": [
         {
           "id": "shop-5",
@@ -72,7 +72,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. Point to the item, menu line, receipt, size, or photo.",
+      "body": "Shopping phrases keep the exchange short while still giving the seller enough detail to help. Keep the item, size, receipt, price tag, or photo ready so the other person can act on the same detail.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -80,7 +80,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a point, short direction, nearby option, or counter name. Say Trả ở đâu?",
+      "body": "Watch for a point, short direction, nearby option, or counter name. Say Trả ở đâu?",
       "phrases": [
         {
           "id": "shop-1",
@@ -119,7 +119,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when you have the item and need the payment point. The reply may be a point, short direction, nearby option, or counter name.",
+      "body": "Reach for it when you have the item and need the payment point. Watch for a point, short direction, nearby option, or counter name.",
       "phrases": [
         {
           "id": "shop-4",
@@ -185,7 +185,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Use these for I want this size; do you have another color?; can I try this on? if the moment moves past the first line.",
       "phrases": [
         {
           "id": "shop-1",

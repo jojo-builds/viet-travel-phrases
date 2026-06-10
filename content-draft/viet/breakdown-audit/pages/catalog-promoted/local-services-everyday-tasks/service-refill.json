@@ -20,39 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Châm",
-      "english": "refill"
+      "vietnamese": "Châm thêm",
+      "english": "refill / add more",
+      "keepTogetherReason": "refill phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "thêm",
-      "english": "more / add"
+      "vietnamese": "nước",
+      "english": "water",
+      "keepTogetherReason": "water noun"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nước",
-      "english": "water"
+      "vietnamese": "vào chai này",
+      "english": "into this bottle",
+      "keepTogetherReason": "into-this-bottle phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "vào",
-      "english": "into / enter"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "chai",
-      "english": "bottle"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

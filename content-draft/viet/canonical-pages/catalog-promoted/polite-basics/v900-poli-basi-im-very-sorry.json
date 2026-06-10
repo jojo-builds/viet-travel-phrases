@@ -7,7 +7,7 @@
   "title": "tôi rất xin lỗi",
   "englishTitle": "I’m very sorry",
   "pronunciation": "toi rat xin loi",
-  "summary": "I’m very sorry",
+  "summary": "For giving a clear apology after a mistake, delay, bump, spill, or awkward moment.",
   "iconName": "hand.wave.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "tôi rất xin lỗi names the need before the details start piling up. Keep the tone warm and leave room for a short reply."
+      "body": "A small, sincere apology is enough; the tone carries most of the meaning."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep tôi rất xin lỗi together as one sentence before adding details. Keep the tone warm and leave room for a short reply.",
+      "body": "Say it once, gently. If something needs fixing, follow with the practical request instead of overexplaining.",
       "phrases": [
         {
           "id": "v900-poli-basi-im-very-sorry",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi means I; rất means very; xin lỗi means sorry.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "tôi rất xin",
-          "english": "I am very sorry",
-          "audioKey": null
+          "vietnamese": "tôi",
+          "english": "I",
+          "keepTogetherReason": "I pronoun"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "lỗi",
-          "english": "mistake / fault",
-          "audioKey": null
+          "vietnamese": "rất",
+          "english": "very",
+          "keepTogetherReason": "very intensifier"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "xin lỗi",
+          "english": "sorry",
+          "keepTogetherReason": "sorry phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "tôi rất xin lỗi",
           "english": "I’m very sorry",
-          "audioKey": null
+          "audioKey": "v900-poli-basi-im-very-sorry"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another polite basics need.",
+      "body": "Hello, thank-you, and thank-you-very-much phrases keep small exchanges warm.",
       "phrases": [
         {
           "id": "polite-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i'm very sorry. Keep the tone warm and leave room for a short reply."
+      "body": "Good after bumping someone, arriving late, misunderstanding a price, or needing to correct yourself."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
+      "body": "Vietnamese politeness often lives in tone and brevity. A calm face and short apology work better than a speech."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Yes, no-thank-you, excuse-me, it-is-okay, and goodbye phrases cover the next polite turn.",
       "phrases": [
         {
           "id": "polite-3",

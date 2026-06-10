@@ -20,25 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi đã đặt",
+      "english": "I booked",
+      "keepTogetherReason": "I-booked phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đã đặt",
-      "english": "booked / reserved",
-      "keepTogetherReason": "compound verb phrase"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "qua",
-      "english": "through / past"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "ứng dụng",
-      "english": "app",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "qua ứng dụng",
+      "english": "through the app",
+      "keepTogetherReason": "through-the-app phrase"
     },
     {
       "id": "full",

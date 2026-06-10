@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Giá cuối bao nhiêu? keeps the travel moment short and clear. Ask this before making a final decision. This helps you move from browsing to decision.",
+      "body": "Giá cuối bao nhiêu? works best as a short opener at a market stall, ticket counter, ATM, or small shop.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Build the line around Giá + cuối, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "price-5-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "Ask with the item, price tag, calculator, receipt, or ATM screen visible, then wait for yes, no, or a correction.",
       "phrases": [
         {
           "id": "price-5",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. Keep the relevant place, item, or screen visible.",
+      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. Keep the item, price tag, calculator, or receipt visible.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a number, typed amount, calculator screen, or direct yes/no about payment. Say Giá cuối bao nhiêu?",
+      "body": "Watch for a number, typed amount, calculator screen, or direct yes/no about payment. Say Giá cuối bao nhiêu?",
       "phrases": [
         {
           "id": "price-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Ask this before making a final decision. The reply may be a number, typed amount, calculator screen, or direct yes/no about payment.",
+      "body": "Ask this before making a final decision. Watch for a number, typed amount, calculator screen, or direct yes/no about payment.",
       "phrases": [
         {
           "id": "price-4",
@@ -201,7 +201,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through how much is this?; how much per kilo?; too expensive.",
       "phrases": [
         {
           "id": "price-1",

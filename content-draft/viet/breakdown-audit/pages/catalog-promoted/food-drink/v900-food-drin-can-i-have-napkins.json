@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-food-drin-can-i-have-napkins",
-  "phraseText": "Tôi có thể có khăn ăn được không?",
+  "phraseText": "Cho tôi xin khăn giấy được không?",
   "englishTitle": "Can I have napkins?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,41 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Cho tôi xin",
+      "english": "may I have / please give me",
+      "keepTogetherReason": "polite request frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "khăn giấy",
+      "english": "napkins / tissues",
+      "keepTogetherReason": "napkin phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "khăn",
-      "english": "towel / cloth"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "ăn",
-      "english": "eat"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi có thể có khăn ăn được không?",
+      "vietnamese": "Cho tôi xin khăn giấy được không?",
       "english": "Can I have napkins?",
-      "audioKey": "v900-food-drin-can-i-have-napkins"
+      "audioKey": null
     }
   ]
 }

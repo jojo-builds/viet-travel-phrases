@@ -21,18 +21,20 @@
     {
       "id": "chunk-1",
       "vietnamese": "Có",
-      "english": "have / there is"
+      "english": "do you have",
+      "keepTogetherReason": "yes-no request opener"
     },
     {
       "id": "chunk-2",
       "vietnamese": "nước suối",
       "english": "bottled water",
-      "keepTogetherReason": "compound noun"
+      "keepTogetherReason": "bottled-water phrase"
     },
     {
       "id": "chunk-3",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

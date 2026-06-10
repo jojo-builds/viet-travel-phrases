@@ -20,31 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "I need",
+      "keepTogetherReason": "I-need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
+      "vietnamese": "báo cáo",
+      "english": "report",
+      "keepTogetherReason": "report verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "báo cáo",
-      "english": "report",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "hành lý",
-      "english": "baggage / luggage",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "thất lạc",
-      "english": "lost / missing",
-      "keepTogetherReason": "compound problem phrase"
+      "vietnamese": "hành lý thất lạc",
+      "english": "lost luggage",
+      "keepTogetherReason": "lost-luggage phrase"
     },
     {
       "id": "full",

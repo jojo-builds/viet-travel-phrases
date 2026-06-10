@@ -21,18 +21,19 @@
     {
       "id": "chunk-1",
       "vietnamese": "Có",
-      "english": "have / there is"
+      "english": "is there / has"
     },
     {
       "id": "chunk-2",
       "vietnamese": "thang máy",
       "english": "elevator",
-      "keepTogetherReason": "compound noun"
+      "keepTogetherReason": "elevator noun"
     },
     {
       "id": "chunk-3",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

@@ -7,7 +7,7 @@
   "title": "Tôi có thể thanh toán bây giờ được không?",
   "englishTitle": "Can I pay now?",
   "pronunciation": "Toi co the thanh toan bay gio duoc khong",
-  "summary": "Can I pay now?",
+  "summary": "Ask the hotel desk whether payment can be handled now instead of later.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể thanh toán bây giờ được không? keeps the question easy to answer. Keep the booking, room number, date, or address visible."
+      "body": "Good when you want to settle the bill at check-in, before checkout, or before leaving the desk."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể thanh toán bây giờ được không? together as one sentence before adding details. Start with Tôi có thể thanh toán bây giờ được không?",
+      "body": "Have the booking, room number, or card ready so the answer can be practical.",
       "phrases": [
         {
           "id": "v500-hote-acco-can-i-pay-now",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Thanh toán bây giờ is the payment-now core.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Reservation and check-in phrases help if the desk needs to pull up the booking first.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I pay now. Keep the booking, room number, date, or address visible."
+      "body": "Useful when plans are early, checkout will be rushed, or the desk asks how you want to settle."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "The desk may mention card, cash, a deposit, tax, or waiting until checkout."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Checkout time, quiet-room, checkout, room heat, and air-con phrases cover nearby desk issues.",
       "phrases": [
         {
           "id": "hotel-3",

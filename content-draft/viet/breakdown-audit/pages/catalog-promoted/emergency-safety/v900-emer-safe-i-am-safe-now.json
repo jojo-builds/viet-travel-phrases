@@ -22,23 +22,19 @@
       "id": "chunk-1",
       "vietnamese": "Bây giờ",
       "english": "now",
-      "keepTogetherReason": "fixed time phrase"
+      "keepTogetherReason": "time phrase"
     },
     {
       "id": "chunk-2",
       "vietnamese": "tôi",
-      "english": "I / me"
+      "english": "I",
+      "keepTogetherReason": "speaker pronoun"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đã",
-      "english": "already / did"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "an toàn",
-      "english": "safe",
-      "keepTogetherReason": "compound adjective"
+      "vietnamese": "đã an toàn",
+      "english": "am safe now",
+      "keepTogetherReason": "safe-now phrase"
     },
     {
       "id": "full",

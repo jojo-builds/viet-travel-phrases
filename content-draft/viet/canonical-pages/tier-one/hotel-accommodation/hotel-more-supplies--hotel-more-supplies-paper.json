@@ -26,7 +26,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Say this when you need more toilet paper brought or provided.",
+      "body": "Show the booking, room number, address, or key card first, ask once, and leave room for the answer.",
       "phrases": [
         {
           "id": "hotel-more-supplies-paper",
@@ -45,7 +45,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Cho tôi asks to give me; thêm means more; giấy vệ sinh names toilet paper specifically.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -137,7 +137,7 @@
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
+      "body": "This is a precise supply request. Keep the room number ready so staff can send it to the right door.",
       "presentation": "tip-callout",
       "phrases": [],
       "breakdown": []

@@ -20,7 +20,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Màn hình của tôi bị hỏng names the problem so staff or a helpful local can act on it. Use it when My screen is broken is the clearest way to explain what changed, went missing, or needs attention."
+      "body": "Màn hình của tôi bị hỏng names the problem so staff or a helpful local can act on it."
     },
     {
       "id": "quick-say",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Màn hình của + tôi bị hỏng, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another phone, internet, or power need.",
+      "body": "Nearby follow-ups: What is the Wi-Fi password?; Do you sell SIM cards?",
       "phrases": [
         {
           "id": "phone-1",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Useful if the exchange continues: My phone battery is dead, Do you have a charger, and Can I charge my phone here.",
       "phrases": [
         {
           "id": "phone-3",

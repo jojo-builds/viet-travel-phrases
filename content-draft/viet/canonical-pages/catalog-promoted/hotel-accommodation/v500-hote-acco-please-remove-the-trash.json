@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng loại bỏ thùng rác makes the request direct without adding extra explanation. Keep the booking, room number, date, or address visible."
+      "body": "Use this when the room trash is the one housekeeping task that needs attention."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Vui lòng loại bỏ thùng rác together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Say the phrase once, then show the bin, room number, or key card so staff know the exact room task.",
       "phrases": [
         {
           "id": "v500-hote-acco-please-remove-the-trash",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Start with Vui lòng loại + bỏ thùng rác; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another hotel or stay need.",
+      "body": "Nearby follow-ups: I have a reservation, I’d like to check in, and I’d like to check in, please.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please remove the trash. Keep the booking, room number, date, or address visible."
+      "body": "Best in a front desk or guesthouse counter, before the explanation gets long. Keep the booking, room number, address, or key card close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Nearby follow-ups: What time is check-out?; Can I have a quiet room?; I’d like to check out.",
       "phrases": [
         {
           "id": "hotel-3",

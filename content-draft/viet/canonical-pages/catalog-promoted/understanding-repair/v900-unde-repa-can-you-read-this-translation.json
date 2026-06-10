@@ -7,7 +7,7 @@
   "title": "Bạn có đọc được bản dịch này không?",
   "englishTitle": "Can you read this translation?",
   "pronunciation": "Ban co doc duoc ban dich nay khong",
-  "summary": "Can you read this translation?",
+  "summary": "For asking someone to check a translated sentence before you show or send it.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có đọc được bản dịch này không? asks someone to do one helpful action for you. Use it for read this translation when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Use it when the translation app might be close, but you need a human check."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có đọc được bản dịch này không? together as one sentence before adding details. Start with Bạn có đọc được bản dịch này không?",
+      "body": "Show only the line you want checked, not the whole chat.",
       "phrases": [
         {
           "id": "v900-unde-repa-can-you-read-this-translation",
@@ -42,44 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có asks can you; đọc được means can read; bản dịch này means this translation; không? makes it yes/no.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bạn có đọc",
-          "english": "can you read",
-          "audioKey": null
+          "vietnamese": "Bạn có",
+          "english": "can you",
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "được bản dịch",
-          "english": "read this translation",
-          "audioKey": null
+          "vietnamese": "đọc được",
+          "english": "can read",
+          "keepTogetherReason": "can-read phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "này",
-          "english": "this one / this",
-          "audioKey": null
+          "vietnamese": "bản dịch này",
+          "english": "this translation",
+          "keepTogetherReason": "this-translation noun"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Bạn có đọc được bản dịch này không?",
-          "english": "Can you read this translation",
-          "audioKey": null
+          "english": "Can you read this translation?",
+          "audioKey": "v900-unde-repa-can-you-read-this-translation"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
+      "body": "Slower, repeat, and I-do-not-understand follow-ups help if the answer starts a repair loop.",
       "phrases": [
         {
           "id": "problems-2",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you read this translation. If it is still unclear, show, write, or point to the exact word."
+      "body": "Good before sending a message, showing a request at a counter, or confirming that translated wording is safe."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "This is about checking meaning, not asking for a full translation. Keep the screen simple."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Repeat, write-it-down, meaning, which-one, and show-me follow-ups cover the next repair step.",
       "phrases": [
         {
           "id": "repair-1",

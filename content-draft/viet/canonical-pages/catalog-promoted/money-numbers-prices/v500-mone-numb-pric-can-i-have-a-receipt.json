@@ -7,7 +7,7 @@
   "title": "Tôi có thể có biên nhận được không?",
   "englishTitle": "Can I have a receipt?",
   "pronunciation": "Toi co the co bien nhan duoc khong",
-  "summary": "Can I have a receipt?",
+  "summary": "For asking for a receipt after buying tickets, medicine, food, transport, or a service.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể có biên nhận được không? keeps the question easy to answer. Keep the relevant place, item, or screen visible."
+      "body": "Ask before leaving the counter. Show the payment screen, card, cash, or item if staff need to match the sale."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể có biên nhận được không? together as one sentence before adding details. Start with Tôi có thể có biên nhận được không?",
+      "body": "Say it once and wait. If they ask paper or digital, show your phone or email address.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-can-i-have-a-receipt",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể asks can I; có biên nhận means have a receipt; được không asks if it is possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể có biên nhận",
-          "english": "a receipt",
-          "audioKey": null
+          "vietnamese": "có biên nhận",
+          "english": "have a receipt",
+          "keepTogetherReason": "receipt phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "possibility question"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi có thể có biên nhận được không?",
-          "english": "Can I have a receipt",
-          "audioKey": null
+          "english": "Can I have a receipt?",
+          "audioKey": "v500-mone-numb-pric-can-i-have-a-receipt"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
+      "body": "How-much and per-kilo cards help if the receipt request turns into checking the amount.",
       "phrases": [
         {
           "id": "price-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I have a receipt. Keep the relevant place, item, or screen visible."
+      "body": "Good at markets, ticket counters, pharmacies, cafes, hotel desks, transport desks, and repair shops."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Some small vendors cannot print a formal receipt. A written total, stamped slip, or photo may be the practical backup."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to too-expensive, lower-price, final-price, show-another, or take-this cards if the amount is still being settled.",
       "phrases": [
         {
           "id": "price-3",

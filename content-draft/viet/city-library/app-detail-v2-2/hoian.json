@@ -2925,11 +2925,11 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Chúng ta có thể ngồi bên ngoài được không?",
-          "en": "Can we sit outside?",
+          "vi": "Cho tôi bàn cho hai người nhé",
+          "en": "A table for two, please",
           "intent": "food-drink",
-          "phraseId": "v900-food-drin-can-we-sit-outside",
-          "audioId": "v900-food-drin-can-we-sit-outside",
+          "phraseId": "food-need-table",
+          "audioId": "food-need-table",
           "status": "mapped"
         },
         {
@@ -6456,11 +6456,11 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Chúng ta có thể ngồi bên ngoài được không?",
-          "en": "Can we sit outside?",
+          "vi": "Cho tôi bàn cho hai người nhé",
+          "en": "A table for two, please",
           "intent": "food-drink",
-          "phraseId": "v900-food-drin-can-we-sit-outside",
-          "audioId": "v900-food-drin-can-we-sit-outside",
+          "phraseId": "food-need-table",
+          "audioId": "food-need-table",
           "status": "mapped"
         },
         {
@@ -10096,11 +10096,11 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Chúng ta có thể ngồi bên ngoài được không?",
-          "en": "Can we sit outside?",
+          "vi": "Cho tôi bàn cho hai người nhé",
+          "en": "A table for two, please",
           "intent": "food-drink",
-          "phraseId": "v900-food-drin-can-we-sit-outside",
-          "audioId": "v900-food-drin-can-we-sit-outside",
+          "phraseId": "food-need-table",
+          "audioId": "food-need-table",
           "status": "mapped"
         },
         {

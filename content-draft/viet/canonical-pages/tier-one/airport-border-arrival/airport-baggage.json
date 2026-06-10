@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Keep your passport, visa, baggage tag, pickup message, or SIM details visible when staff need to match the phrase to a real item.",
+      "body": "Ask while the baggage tag, passport, flight detail, or bag photo is still visible, then pause before adding more words.",
       "phrases": [
         {
           "id": "airport-2",
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a point, short direction, nearby option, or counter name. Say Lấy hành lý ở đâu?",
+      "body": "Watch for a point, short direction, nearby option, or counter name. Say Lấy hành lý ở đâu?",
       "phrases": [
         {
           "id": "airport-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this after passport control when you need the bag carousel. The reply may be a point, short direction, nearby option, or counter name.",
+      "body": "Use this after passport control when you need the bag carousel. Watch for a point, short direction, nearby option, or counter name.",
       "phrases": [
         {
           "id": "airport-6",
@@ -191,7 +191,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Use these for where is immigration?; where can I buy a SIM card?; where is the pickup area? if the moment moves past the first line.",
       "phrases": [
         {
           "id": "airport-1",

@@ -7,7 +7,7 @@
   "title": "Bạn có thể gọi bác sĩ được không?",
   "englishTitle": "Can you call a doctor?",
   "pronunciation": "Ban co the goi bac si duoc khong",
-  "summary": "Can you call a doctor?",
+  "summary": "Ask hotel staff, a pharmacist, or a clinic desk to call a doctor when symptoms need more than basic advice.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể gọi bác sĩ được không? asks someone to do one helpful action for you. Use it for call a doctor when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Good when you need an actual doctor, not just medicine, directions, or a pharmacy shelf."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể gọi bác sĩ được không? together as one sentence before adding details. Start with Bạn có thể gọi bác sĩ được không?",
+      "body": "Show symptoms, medicine, your address, or the hotel room after asking.",
       "phrases": [
         {
           "id": "v500-heal-phar-can-you-call-a-doctor",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Gọi bác sĩ is call a doctor; được không keeps it polite.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Doctor and pharmacy cards help if the answer is a referral instead of a call.",
       "phrases": [
         {
           "id": "problems-6",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you call a doctor. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Best at a hotel desk, pharmacy, or clinic when moving alone feels hard."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "For urgent danger, use the emergency-service phrases instead of waiting for a normal appointment."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Headache, stomach-pain, and motion-sickness cards help describe what is wrong.",
       "phrases": [
         {
           "id": "health-2",

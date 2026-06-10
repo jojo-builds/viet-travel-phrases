@@ -20,23 +20,18 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bàn",
-      "english": "table"
+      "vietnamese": "Bàn thông tin",
+      "english": "information desk",
+      "keepTogetherReason": "keeps bàn thông tin as the desk phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "thông tin",
-      "english": "information",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "gần nhất",
       "english": "nearest",
       "keepTogetherReason": "fixed place phrase"
     },
     {
-      "id": "chunk-4",
+      "id": "chunk-3",
       "vietnamese": "ở đâu?",
       "english": "where",
       "keepTogetherReason": "fixed place question"

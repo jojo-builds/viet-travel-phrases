@@ -20,33 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi đang tìm",
+      "english": "I am looking for",
+      "keepTogetherReason": "looking-for phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đang",
-      "english": "currently / am"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "tìm",
-      "english": "find"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "món",
-      "english": "dish"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "quà",
-      "english": "gift"
+      "vietnamese": "một món quà",
+      "english": "a gift",
+      "keepTogetherReason": "gift noun phrase"
     },
     {
       "id": "full",

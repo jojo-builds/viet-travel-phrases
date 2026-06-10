@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "Keep the item, price tag, calculator, receipt, or ATM screen visible so the reply can be a point, number, or short correction.",
       "phrases": [
         {
           "id": "airport-4",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. Keep the relevant place, item, or screen visible.",
+      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. Keep the item, price tag, calculator, or receipt visible.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a point, short direction, nearby option, or counter name. Say ATM gần nhất ở đâu?",
+      "body": "Watch for a point, short direction, nearby option, or counter name. Say ATM gần nhất ở đâu?",
       "phrases": [
         {
           "id": "price-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when you need cash and want the closest ATM, not just any airport machine. The reply may be a point, short direction, nearby option, or counter name.",
+      "body": "Reach for it when you need cash and want the closest ATM, not just any airport machine. Watch for a point, short direction, nearby option, or counter name.",
       "phrases": [
         {
           "id": "price-4",
@@ -201,7 +201,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover how much is this?; how much per kilo?; too expensive.",
       "phrases": [
         {
           "id": "price-1",

@@ -7,7 +7,7 @@
   "title": "Tôi bị cao huyết áp",
   "englishTitle": "I have high blood pressure",
   "pronunciation": "Toi bi cao huyet ap",
-  "summary": "I have high blood pressure",
+  "summary": "For telling a pharmacist or clinician that high blood pressure affects what is safe.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi bị cao huyết áp names the need before the details start piling up. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Say it before medicine, decongestants, pain relief, or activity advice."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi bị cao huyết áp together as one sentence before adding details. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Show the medicine, prescription, blood-pressure reading, or translated note if you have one.",
       "phrases": [
         {
           "id": "v900-heal-phar-i-have-high-blood-pressure",
@@ -42,32 +42,34 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi bị means I have or I am affected by; cao huyết áp means high blood pressure.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi bị",
-          "english": "I have / got",
+          "english": "I have / I am affected by",
+          "keepTogetherReason": "condition phrase",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "cao huyết áp",
           "english": "high blood pressure",
+          "keepTogetherReason": "blood-pressure phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "Tôi bị cao huyết áp",
           "english": "I have high blood pressure",
-          "audioKey": null
+          "audioKey": "v900-heal-phar-i-have-high-blood-pressure"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "If staff need detail, move to medicine, alcohol, sleepy, doctor, or medical-report follow-ups.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +106,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i have high blood pressure. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at pharmacies, clinics, hotel desks, and with a guide helping translate health details."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "The exact medicine matters. Keep the box or prescription visible while they answer."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use doctor, pharmacy, medicine, sleepy, alcohol, or receipt-for-insurance cards if the advice needs another step.",
       "phrases": [
         {
           "id": "health-2",

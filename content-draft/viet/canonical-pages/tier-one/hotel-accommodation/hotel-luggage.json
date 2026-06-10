@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Giữ hành lý giúp tôi makes the request direct without adding extra explanation. Reach for it when you need the hotel to hold your bags for a while. This is a common before-check-in or after-checkout phrase.",
+      "body": "Reach for it when you need the hotel to hold your bags for a while.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Giữ + hành lý carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "hotel-7-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Giữ hành lý giúp tôi together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Say Giữ hành lý giúp tôi clearly; show the booking, room number, address, or key card only if the reply needs detail.",
       "phrases": [
         {
           "id": "hotel-7",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. Keep the booking, room number, date, or address visible.",
+      "body": "Luggage storage needs a clear handoff. This phrase tells staff the bag is staying while you move around.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "Keep the booking, room number, date, or address visible.",
+      "body": "Expect a tag, room number, pickup time, or where to leave the bags.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when you need the hotel to hold your bags for a while. Keep the booking, room number, date, or address visible.",
+      "body": "Use it before check-in, after checkout, or between a tour and a later ride.",
       "phrases": [
         {
           "id": "hotel-checkout",
@@ -201,7 +201,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Use these for I have a reservation; I’d like to check in; what time is check-out? if the moment moves past the first line.",
       "phrases": [
         {
           "id": "hotel-1",

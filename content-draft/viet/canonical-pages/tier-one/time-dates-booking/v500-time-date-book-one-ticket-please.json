@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Xin một vé keeps the travel moment short and clear. Reach for it when you need the exact time, date, booking detail, or schedule change to be clear.",
+      "body": "Reach for it when you need the exact time, date, booking detail, or schedule change to be clear.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Xin + một carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "v500-time-date-book-one-ticket-please-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Xin một vé together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Say Xin một vé clearly; show the date, time, ticket, booking, or address only if the reply needs detail.",
       "phrases": [
         {
           "id": "v500-time-date-book-one-ticket-please",
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "Keep the booking, room number, date, or address visible.",
+      "body": "Watch for a confirmation, a handoff, a price, or follow-up question. Move to the follow-up card that matches time, date, ticket, or pickup detail.",
       "phrases": [
         {
           "id": "time-1",
@@ -191,7 +191,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Keep the conversation close to what time?; today; tomorrow morning.",
       "phrases": [
         {
           "id": "time-1",

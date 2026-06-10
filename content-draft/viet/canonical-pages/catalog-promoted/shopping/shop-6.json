@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi muốn đổi cái này with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "body": "Tôi muốn đổi cái này works best as one short line, with the item, size, receipt, price tag, or photo doing the extra explaining. Say Tôi muốn đổi cái này with the object, screen, or note visible.",
       "phrases": [
         {
           "id": "shop-6",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Tôi muốn + đổi cái này, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another shopping need.",
+      "body": "Useful if the exchange continues: I want this size, Do you have another color, and Can I try this on.",
       "phrases": [
         {
           "id": "shop-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is i want to exchange this. Point to the item, menu line, receipt, size, or photo."
+      "body": "Best in a market stall or small shop, before the explanation gets long. Keep the item, size, receipt, price tag, or photo close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Nearby follow-ups: I’m just looking, Where do I pay, and How much is this item.",
       "phrases": [
         {
           "id": "shop-4",

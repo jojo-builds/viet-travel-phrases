@@ -4,10 +4,10 @@
   "phraseID": "v900-bath-pers-need-is-there-a-fee-for-the-bathroom",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Có tính phí cho phòng tắm không?",
+  "title": "Nhà vệ sinh có tính phí không?",
   "englishTitle": "Is there a fee for the bathroom?",
-  "pronunciation": "Co tinh phi cho phong tam khong",
-  "summary": "Is there a fee for the bathroom?",
+  "pronunciation": "Nha ve sinh co tinh phi khong",
+  "summary": "For checking whether a restroom costs money before you enter or ask for a key.",
   "iconName": "person.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -15,65 +15,67 @@
     "v900-bath-pers-need-is-there-a-fee-for-the-bathroom",
     "premium"
   ],
-  "audioKey": "v900-bath-pers-need-is-there-a-fee-for-the-bathroom",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có tính phí cho phòng tắm không? keeps the question easy to answer. Keep the relevant place, item, or screen visible."
+      "body": "Ask near cafes, stations, markets, beaches, or attractions where a small fee or ticket may apply.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Có tính phí cho phòng tắm không? together as one sentence before adding details. Say Có tính phí cho phòng tắm không?",
+      "body": "Point to the restroom sign or door while you ask. The answer may be a price, token, key, or free-use nod.",
       "phrases": [
         {
           "id": "v900-bath-pers-need-is-there-a-fee-for-the-bathroom",
-          "vietnamese": "Có tính phí cho phòng tắm không?",
+          "vietnamese": "Nhà vệ sinh có tính phí không?",
           "english": "Is there a fee for the bathroom?",
-          "pronunciation": "Co tinh phi cho phong tam khong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Nha ve sinh co tinh phi khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "teal",
           "detailPageID": null,
-          "audioKey": "v900-bath-pers-need-is-there-a-fee-for-the-bathroom"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Nhà vệ sinh means restroom; có tính phí asks whether there is a fee; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Có tính phí",
-          "english": "fee",
-          "audioKey": null
+          "vietnamese": "Nhà vệ sinh",
+          "english": "restroom",
+          "keepTogetherReason": "restroom phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cho phòng tắm",
-          "english": "room",
-          "audioKey": null
+          "vietnamese": "có tính phí",
+          "english": "has a fee",
+          "keepTogetherReason": "fee phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "Có tính phí cho phòng tắm không?",
-          "english": "Is there a fee for the bathroom",
+          "id": "full",
+          "vietnamese": "Nhà vệ sinh có tính phí không?",
+          "english": "Is there a fee for the bathroom?",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another bathroom or personal-needs need.",
+      "body": "Bathroom, toilet paper, and bathroom-use cards cover nearby restroom questions.",
       "phrases": [
         {
           "id": "bath-1",
@@ -110,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is is there a fee for the bathroom. Keep the relevant place, item, or screen visible."
+      "body": "Public restrooms, station stops, markets, and small cafes are the places where the fee may be unclear.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Short, calm wording works well for personal needs. Pointing or showing a photo can make the request feel normal and easy to answer."
+      "body": "Have small cash ready if the answer is yes. Some places charge for paper, entry, or a shower separately.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Soap, hand-washing, water, shower, and toilet-location cards cover the next personal-needs step.",
       "phrases": [
         {
           "id": "bath-3",
@@ -178,13 +182,13 @@
   "examples": [
     {
       "id": "v900-bath-pers-need-is-there-a-fee-for-the-bathroom",
-      "vietnamese": "Có tính phí cho phòng tắm không?",
+      "vietnamese": "Nhà vệ sinh có tính phí không?",
       "english": "Is there a fee for the bathroom?",
-      "pronunciation": "Co tinh phi cho phong tam khong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Nha ve sinh co tinh phi khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "teal",
       "detailPageID": null,
-      "audioKey": "v900-bath-pers-need-is-there-a-fee-for-the-bathroom"
+      "audioKey": null
     }
   ]
 }

@@ -7,7 +7,7 @@
   "title": "Không, cảm ơn, tôi sẽ xem xét xung quanh trước",
   "englishTitle": "No thank you, I’ll look around first",
   "pronunciation": "Khong cam on toi se xem xet xung quanh truoc",
-  "summary": "No thank you, I’ll look around first",
+  "summary": "Keeps the shopping question clear in a market stall or small shop.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Không, cảm ơn, tôi sẽ xem xét xung quanh trước together as one sentence before adding details. Point to the item, menu line, receipt, size, or photo.",
+      "body": "Say Không, cảm ơn, tôi sẽ xem xét xung quanh trước as one clean sentence; the item, size, receipt, price tag, or photo can carry the exact detail. Point to the item, menu line, receipt, size, or photo.",
       "phrases": [
         {
           "id": "v900-shop-no-thank-you-ill-look-around-first",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Practice Không, cảm ơn, + tôi sẽ xem first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another shopping need.",
+      "body": "Useful if the exchange continues: I want this size, Do you have another color, and Can I try this on.",
       "phrases": [
         {
           "id": "shop-1",
@@ -116,7 +116,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is no thank you, I'll look around first. Point to the item, menu line, receipt, size, or photo."
+      "body": "Best in a market stall or small shop, before the explanation gets long. Keep the item, size, receipt, price tag, or photo close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Nearby follow-ups: I’m just looking, Where do I pay, and I want to exchange this.",
       "phrases": [
         {
           "id": "shop-4",

@@ -7,7 +7,7 @@
   "title": "Tôi có thể thanh toán hóa đơn phòng khám bằng thẻ không?",
   "englishTitle": "Can I pay the clinic bill by card?",
   "pronunciation": "Toi co the thanh toan hoa don phong kham bang the khong",
-  "summary": "Can I pay the clinic bill by card?",
+  "summary": "For checking card payment before a clinic bill is settled.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể thanh toán hóa đơn phòng khám bằng thẻ không? keeps the question easy to answer. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Clinics may accept cards at the main desk, but small pharmacies or side counters may still expect cash."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể thanh toán hóa đơn phòng khám bằng thẻ không? together as one sentence before adding details. Start with Tôi có thể thanh toán hóa đơn phòng khám bằng thẻ không?",
+      "body": "Ask before they print the bill or hand over medicine. Keep the invoice or total visible.",
       "phrases": [
         {
           "id": "v900-heal-phar-can-i-pay-the-clinic-bill-by-card",
@@ -42,36 +42,36 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Thanh toán hóa đơn is paying the bill; phòng khám means clinic; bằng thẻ means by card.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể thanh toán",
+          "vietnamese": "thanh toán hóa đơn",
           "english": "pay",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "hóa đơn phòng",
-          "english": "bill",
+          "vietnamese": "phòng khám",
+          "english": "clinic",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "khám bằng thẻ",
+          "vietnamese": "bằng thẻ",
           "english": "by card",
           "audioKey": null
         },
         {
           "id": "chunk-5",
           "vietnamese": "không",
-          "english": "no / not",
+          "english": "can I?",
           "audioKey": null
         },
         {
@@ -85,7 +85,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Doctor and pharmacy lines help if payment comes after a consultation or prescription.",
       "phrases": [
         {
           "id": "problems-6",
@@ -122,17 +122,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I pay the clinic bill by card. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at clinics, pharmacies attached to clinics, hotel doctors, and reception desks before paying."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "If there is a card fee, ask for the final total before approving the payment."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Headache, stomach, motion-sickness, allergy, and diarrhea lines help if payment turns back to symptoms or medicine.",
       "phrases": [
         {
           "id": "health-2",

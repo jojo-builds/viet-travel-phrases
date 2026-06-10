@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể mua vé ở đâu? keeps the direction question short. Keep the relevant place, item, or screen visible."
+      "body": "Tôi có thể mua vé ở đâu?"
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể mua vé ở đâu? together as one sentence before adding details. Say Tôi có thể mua vé ở đâu?",
+      "body": "A short question is enough here; use the ticket, booking, meeting point, map location, or attraction name for the follow-up.",
       "phrases": [
         {
           "id": "v500-sigh-acti-where-can-i-buy-tickets",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear the place or item first; ở đâu? turns it into the where question.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another sightseeing or activities need.",
+      "body": "Good next-step cards: How much is the ticket, Where do we start, and Can I take photos here.",
       "phrases": [
         {
           "id": "sight-1",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Nearby follow-ups: What time does it close, Where is the meeting point, and Do I need to book in advance.",
       "phrases": [
         {
           "id": "sight-4",

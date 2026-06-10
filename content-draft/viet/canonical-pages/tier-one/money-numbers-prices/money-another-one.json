@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cho tôi xem cái khác makes the request direct without adding extra explanation. Reach for it when you want to compare options. This keeps the interaction moving without committing yet.",
+      "body": "Reach for it when you want to compare options.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Start with Cho tôi + xem; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "price-6-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Cho tôi xem cái khác together as one sentence before adding details. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "Say Cho tôi xem cái khác clearly; show the item, price tag, calculator, receipt, or ATM screen only if the reply needs detail.",
       "phrases": [
         {
           "id": "price-6",
@@ -84,7 +84,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. Keep the relevant place, item, or screen visible.",
+      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. Keep the item, price tag, calculator, or receipt visible.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "Watch for a clear reply, a pointed detail, or simple follow-up. Keep the relevant place, object, or screen visible while you speak.",
       "phrases": [
         {
           "id": "price-1",
@@ -131,7 +131,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when you want to compare options. The reply may be a clear reply, a pointed detail, or simple follow-up.",
+      "body": "Reach for it when you want to compare options. Watch for a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "price-4",
@@ -207,7 +207,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Keep the conversation close to how much is this?; how much per kilo?; too expensive.",
       "phrases": [
         {
           "id": "price-1",

@@ -7,7 +7,7 @@
   "title": "Có xe đưa đón giữa các nhà ga không?",
   "englishTitle": "Is there a shuttle between terminals?",
   "pronunciation": "Co xe dua don giua cac nha ga khong",
-  "summary": "Is there a shuttle between terminals?",
+  "summary": "For checking whether airport terminals are connected by shuttle before walking the wrong way.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có xe đưa đón giữa các nhà ga không? keeps the question easy to answer. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Ask before leaving the arrivals hall, baggage area, or check-in zone for another terminal."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Có xe đưa đón giữa các nhà ga không? together as one sentence before adding details. Say Có xe đưa đón giữa các nhà ga không?",
+      "body": "Show the terminal number, boarding pass, or flight screen. The answer may be shuttle, walkway, or taxi.",
       "phrases": [
         {
           "id": "v900-airp-bord-arri-is-there-a-shuttle-between-terminals",
@@ -42,44 +42,48 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có asks is there; xe đưa đón means shuttle; giữa các nhà ga means between terminals.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Có xe đưa",
-          "english": "is there / does it have",
+          "vietnamese": "Có",
+          "english": "is there",
+          "keepTogetherReason": "existence question opener",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đón giữa các",
-          "english": "a shuttle between terminals",
+          "vietnamese": "xe đưa đón",
+          "english": "shuttle",
+          "keepTogetherReason": "shuttle phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "nhà ga",
-          "english": "station / terminal",
+          "vietnamese": "giữa các nhà ga",
+          "english": "between terminals",
+          "keepTogetherReason": "between-terminals phrase",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending",
           "audioKey": null
         },
         {
           "id": "chunk-5",
           "vietnamese": "Có xe đưa đón giữa các nhà ga không?",
-          "english": "Is there a shuttle between terminals",
-          "audioKey": null
+          "english": "Is there a shuttle between terminals?",
+          "audioKey": "v900-airp-bord-arri-is-there-a-shuttle-between-terminals"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another airport arrival need.",
+      "body": "If the route changes, move to terminal, departure hall, information desk, or shuttle-between-terminals follow-ups.",
       "phrases": [
         {
           "id": "airport-1",
@@ -116,17 +120,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is is there a shuttle between terminals. Keep the passport, baggage tag, pickup screen, or flight detail visible."
+      "body": "Good after landing, during a transfer, or when domestic and international terminal signs are not obvious."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Airport staff and drivers are used to short, practical questions. Keep the document or phone screen visible so they can answer quickly."
+      "body": "Some airport transfers are close; others need a bus, taxi, or staff direction. Confirm before you start walking."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use pickup-area, driver, baggage, terminal, or information-desk cards if the transfer has another detail.",
       "phrases": [
         {
           "id": "airport-5",

@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-poli-basi-im-in-a-hurry",
-  "phraseText": "tôi đang vội",
+  "phraseText": "Tôi đang vội",
   "englishTitle": "I’m in a hurry",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,22 +20,19 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi đang",
+      "english": "I am",
+      "keepTogetherReason": "I-am phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đang",
-      "english": "currently / am"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "vội",
-      "english": "in a hurry"
+      "english": "in a hurry",
+      "keepTogetherReason": "hurry word"
     },
     {
       "id": "full",
-      "vietnamese": "tôi đang vội",
+      "vietnamese": "Tôi đang vội",
       "english": "I’m in a hurry",
       "audioKey": "v900-poli-basi-im-in-a-hurry"
     }

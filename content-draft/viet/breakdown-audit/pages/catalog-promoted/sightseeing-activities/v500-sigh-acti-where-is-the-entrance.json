@@ -21,14 +21,14 @@
     {
       "id": "chunk-1",
       "vietnamese": "Lối vào",
-      "english": "entrance",
-      "keepTogetherReason": "compound noun"
+      "english": "the entrance",
+      "keepTogetherReason": "entrance phrase"
     },
     {
       "id": "chunk-2",
       "vietnamese": "ở đâu?",
-      "english": "where",
-      "keepTogetherReason": "fixed place question"
+      "english": "where?",
+      "keepTogetherReason": "where question"
     },
     {
       "id": "full",

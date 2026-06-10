@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-bath-pers-need-is-there-a-public-bathroom-nearby",
-  "phraseText": "Có phòng tắm công cộng nào gần đây không?",
+  "phraseText": "Gần đây có nhà vệ sinh công cộng không?",
   "englishTitle": "Is there a public bathroom nearby?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -15,47 +15,35 @@
     ]
   },
   "notes": [
-    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources.",
+    "Phrase-copy semantic repair; reviewed tokens updated and audio marked for regeneration."
   ],
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Có",
-      "english": "have / there is"
+      "vietnamese": "Gần đây",
+      "english": "nearby",
+      "keepTogetherReason": "location phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "phòng tắm",
-      "english": "bathroom / shower room",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "có nhà vệ sinh công cộng",
+      "english": "is there a public restroom",
+      "keepTogetherReason": "public-restroom existence phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "công cộng",
-      "english": "public",
-      "keepTogetherReason": "compound adjective"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "nào",
-      "english": "which / any"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "gần đây",
-      "english": "near here",
-      "keepTogetherReason": "fixed place phrase"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "not? / yes-no ending"
     },
     {
       "id": "full",
-      "vietnamese": "Có phòng tắm công cộng nào gần đây không?",
+      "vietnamese": "Gần đây có nhà vệ sinh công cộng không?",
       "english": "Is there a public bathroom nearby?",
-      "audioKey": "v500-bath-pers-need-is-there-a-public-bathroom-nearby"
+      "audioKey": null
     }
-  ]
+  ],
+  "title": "Gần đây có nhà vệ sinh công cộng không?",
+  "summary": "Is there a public bathroom nearby",
+  "pronunciation": "Gan day co nha ve sinh cong cong khong"
 }

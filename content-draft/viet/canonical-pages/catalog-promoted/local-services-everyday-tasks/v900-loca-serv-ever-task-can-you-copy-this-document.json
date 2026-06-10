@@ -7,7 +7,7 @@
   "title": "Bạn có thể sao chép tài liệu này?",
   "englishTitle": "Can you copy this document?",
   "pronunciation": "Ban co the sao chep tai lieu nay",
-  "summary": "Can you copy this document?",
+  "summary": "For asking a print shop, hotel desk, or service counter to copy a document.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể sao chép tài liệu này? asks someone to do one helpful action for you. Use it for copy this document when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Have the document ready and keep the page count visible if there is more than one sheet."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Bạn có thể sao chép tài liệu này? together as one sentence before adding details. Start with Bạn có thể sao chép tài liệu này?",
+      "body": "Hand over or show the document first, then point to the page or side you need copied.",
       "phrases": [
         {
           "id": "v900-loca-serv-ever-task-can-you-copy-this-document",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; sao chép means copy; tài liệu này means this document.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "sao chép tài",
-          "english": "copy this document",
-          "audioKey": null
+          "vietnamese": "sao chép",
+          "english": "copy",
+          "keepTogetherReason": "copy verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "liệu này",
-          "english": "this one / this",
-          "audioKey": null
+          "vietnamese": "tài liệu này?",
+          "english": "this document?",
+          "keepTogetherReason": "this-document noun with question mark"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Bạn có thể sao chép tài liệu này?",
-          "english": "Can you copy this document",
-          "audioKey": null
+          "english": "Can you copy this document?",
+          "audioKey": "v900-loca-serv-ever-task-can-you-copy-this-document"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another local service need.",
+      "body": "The extra counter cards are useful if the copy errand turns into a longer wait.",
       "phrases": [
         {
           "id": "store-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you copy this document. Point to the item, menu line, receipt, size, or photo."
+      "body": "Good at copy shops, hotel desks, reception counters, visa offices, and travel-agency desks."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "If they ask about color or black-and-white, point to a sample or use the print follow-up next."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Print-this, black-and-white, email-it, receipt, and ready-time pages cover the next copy-shop details.",
       "phrases": [
         {
           "id": "store-4",

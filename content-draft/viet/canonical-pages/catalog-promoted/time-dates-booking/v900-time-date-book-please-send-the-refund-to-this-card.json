@@ -7,7 +7,7 @@
   "title": "Vui lòng gửi tiền hoàn lại vào thẻ này",
   "englishTitle": "Please send the refund to this card",
   "pronunciation": "Vui long gui tien hoan lai vao the nay",
-  "summary": "Please send the refund to this card",
+  "summary": "For asking a refund to go back to the card you are showing.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng gửi tiền hoàn lại vào thẻ này makes the request direct without adding extra explanation. Keep the booking, room number, date, or address visible."
+      "body": "After a booking, ticket, or order is cancelled, the refund card becomes the important detail."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Vui lòng gửi tiền hoàn lại vào thẻ này together as one sentence before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Show the card, receipt, or payment screen so the refund destination is clear.",
       "phrases": [
         {
           "id": "v900-time-date-book-please-send-the-refund-to-this-card",
@@ -42,28 +42,28 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Vui lòng gửi means please send; tiền hoàn lại means refund; vào thẻ này means to this card.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Vui lòng gửi",
           "english": "please send",
-          "audioKey": null
+          "keepTogetherReason": "please-send phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "tiền hoàn lại",
           "english": "the refund",
-          "audioKey": null
+          "keepTogetherReason": "refund noun"
         },
         {
           "id": "chunk-3",
           "vietnamese": "vào thẻ này",
           "english": "to this card",
-          "audioKey": null
+          "keepTogetherReason": "to-this-card phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Vui lòng gửi tiền hoàn lại vào thẻ này",
           "english": "Please send the refund to this card",
           "audioKey": "v900-time-date-book-please-send-the-refund-to-this-card"
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "Time and date phrases help if the refund depends on the original booking window.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please send the refund to this card. Keep the booking, room number, date, or address visible."
+      "body": "Good at booking desks, ticket counters, hotel desks, tour offices, and message threads after a cancellation."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "Refunds can take time. Ask for a receipt or written confirmation before leaving."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Booking, opening-time, move-later, boarding, and wait pages cover nearby schedule questions.",
       "phrases": [
         {
           "id": "time-4",

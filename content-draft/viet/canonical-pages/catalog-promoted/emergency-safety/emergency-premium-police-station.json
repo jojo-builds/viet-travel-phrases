@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Làm ơn + đưa tôi đến as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another safety or urgent-help need.",
+      "body": "Nearby follow-ups: Call the police, Call an ambulance, and I lost my passport.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when \"Please take me to the police station.\" Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Best at a hotel desk, during a street help moment, or at a police counter, before the explanation gets long. Keep the location, passport copy, photo, injury, or helper contact close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "These follow-ups cover location, documents, help, or reporting: I feel unsafe, This is an emergency, and Help!",
       "phrases": [
         {
           "id": "emergency-4",

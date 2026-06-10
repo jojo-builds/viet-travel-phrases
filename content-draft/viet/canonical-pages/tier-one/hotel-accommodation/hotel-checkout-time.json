@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Build the line around Mấy + giờ, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "hotel-3-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Keep the booking, room number, date, or address visible.",
+      "body": "Keep the booking, room number, address, or key card visible so the reply can be a point, number, or short correction.",
       "phrases": [
         {
           "id": "hotel-3",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. Keep the booking, room number, date, or address visible.",
+      "body": "Checkout time affects breakfast, luggage, rides, and tours. Ask while the booking or room key is visible.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a smile, a time, or light follow-up question. Say Mấy giờ trả phòng?",
+      "body": "Expect a time, late-checkout offer, luggage-storage option, or fee.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Ask this early so you know the deadline before your last day. The reply may be a smile, a time, or light follow-up question.",
+      "body": "Use it on arrival, the night before leaving, or before booking a pickup.",
       "phrases": [
         {
           "id": "hotel-4",
@@ -201,7 +201,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Keep the conversation close to I have a reservation, I’d like to check in, and I’d like to check out.",
       "phrases": [
         {
           "id": "hotel-1",

@@ -22,17 +22,19 @@
       "id": "chunk-1",
       "vietnamese": "Vui lòng",
       "english": "please",
-      "keepTogetherReason": "fixed polite phrase"
+      "keepTogetherReason": "polite opener"
     },
     {
       "id": "chunk-2",
       "vietnamese": "thay",
-      "english": "replace / change"
+      "english": "change",
+      "keepTogetherReason": "change verb"
     },
     {
+      "id": "chunk-3",
       "vietnamese": "ga trải giường",
       "english": "bed sheets",
-      "keepTogetherReason": "compound bedding term"
+      "keepTogetherReason": "bed-sheets phrase"
     },
     {
       "id": "full",

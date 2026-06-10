@@ -20,24 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Áp lực",
-      "english": "pressure",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "Áp lực nước",
+      "english": "water pressure",
+      "keepTogetherReason": "water-pressure phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "nước",
-      "english": "water"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "quá",
-      "english": "too / very"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "thấp",
-      "english": "low"
+      "vietnamese": "quá thấp",
+      "english": "too low",
+      "keepTogetherReason": "too-low phrase"
     },
     {
       "id": "full",

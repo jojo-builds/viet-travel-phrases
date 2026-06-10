@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Gọi công an makes the request direct without adding extra explanation. Reach for it when police help is needed right now.",
+      "body": "Reach for it when police help is needed right now.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Hear Gọi + công as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "emergency-1-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Gọi công an together as one sentence before adding details.",
+      "body": "Say Gọi công an first; let the location, passport copy, photo, injury, or helper contact support the reply.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Emergency phrases put the urgent need first so help can move faster. Show the symptom, medicine, location, or helper contact if you can.",
+      "body": "Police requests need a clear first action. This phrase keeps the ask direct before details, photos, or names make the exchange longer.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "The next answer may be a phone call, a nearby station, or a request to explain what happened.",
       "phrases": [
         {
           "id": "emergency-2",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when police help is needed right now. The reply may be a clear reply, a pointed detail, or simple follow-up.",
+      "body": "Best when theft, harassment, threats, scams, or an accident need official help.",
       "phrases": [
         {
           "id": "emergency-emergency",
@@ -164,7 +164,7 @@
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "In safety moments, clarity matters more than sounding polished. Repeat the phrase if needed.",
+      "body": "If the situation is still active, move to safety first and explain after help is coming.",
       "presentation": "tip-callout",
       "phrases": [],
       "breakdown": []
@@ -172,7 +172,7 @@
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Use the phrase clearly, then show your location, passport copy, injury, or emergency contact.",
+      "body": "Keep the photo, receipt, location, or witness detail ready for the next question.",
       "phrases": [
         {
           "id": "v500-emer-safe-i-cannot-move",
@@ -201,7 +201,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a hotel desk, during a street help moment, or at a police counter, the next useful language is usually call an ambulance, I lost my passport, and I feel unsafe.",
       "phrases": [
         {
           "id": "emergency-2",

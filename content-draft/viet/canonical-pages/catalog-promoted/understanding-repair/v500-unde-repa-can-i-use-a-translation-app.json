@@ -7,7 +7,7 @@
   "title": "Tôi có thể sử dụng ứng dụng dịch thuật không?",
   "englishTitle": "Can I use a translation app?",
   "pronunciation": "Toi co the su dung ung dung dich thuat khong",
-  "summary": "Can I use a translation app?",
+  "summary": "For asking permission before you put the conversation through your phone.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể sử dụng ứng dụng dịch thuật không? keeps the question easy to answer. If it is still unclear, show, write, or point to the exact word."
+      "body": "A translation app helps only if the other person is willing to read or speak into it."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể sử dụng ứng dụng dịch thuật không? together as one sentence before adding details. Start with Tôi có thể sử dụng ứng dụng dịch thuật không?",
+      "body": "Show the phone screen and ask before relying on it. It keeps the other person included in the repair.",
       "phrases": [
         {
           "id": "v500-unde-repa-can-i-use-a-translation-app",
@@ -42,18 +42,18 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Ứng dụng dịch thuật is a translation app; có thể sử dụng asks whether using it is okay.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể sử dụng",
-          "english": "can use",
+          "vietnamese": "sử dụng",
+          "english": "use",
           "audioKey": null
         },
         {
@@ -63,13 +63,13 @@
           "audioKey": null
         },
         {
-          "id": "chunk-5",
-          "vietnamese": "không",
-          "english": "no / not",
+          "id": "chunk-4",
+          "vietnamese": "không?",
+          "english": "can I?",
           "audioKey": null
         },
         {
-          "id": "chunk-6",
+          "id": "full",
           "vietnamese": "Tôi có thể sử dụng ứng dụng dịch thuật không?",
           "english": "Can I use a translation app",
           "audioKey": null
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
+      "body": "Slow-down, repeat, and write-it-down lines stay useful if the app does not solve it.",
       "phrases": [
         {
           "id": "problems-2",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I use a translation app. If it is still unclear, show, write, or point to the exact word."
+      "body": "Good at counters, hotels, clinics, shops, and ticket desks when speech is moving too fast."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Keep the screen facing them and avoid typing private numbers, passwords, or payment details into a translation box."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Repeat, write, meaning, which-one, and show-me lines cover the next repair move.",
       "phrases": [
         {
           "id": "repair-1",

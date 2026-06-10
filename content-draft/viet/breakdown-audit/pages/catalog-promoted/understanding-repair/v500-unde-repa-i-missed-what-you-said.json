@@ -20,43 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi đã bỏ lỡ",
+      "english": "I missed",
+      "keepTogetherReason": "I-missed phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đã",
-      "english": "already / did"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "bỏ",
-      "english": "remove / leave"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "lỡ",
-      "english": "miss / accidentally"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "những",
-      "english": "those / plural marker"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "gì",
-      "english": "what"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "bạn",
-      "english": "you"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "nói",
-      "english": "say / speak"
+      "vietnamese": "những gì bạn nói",
+      "english": "what you said",
+      "keepTogetherReason": "what-you-said phrase"
     },
     {
       "id": "full",

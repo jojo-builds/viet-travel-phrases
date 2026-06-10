@@ -7,7 +7,7 @@
   "title": "Tôi có cần đến sớm không?",
   "englishTitle": "Do I need to arrive early?",
   "pronunciation": "Toi co can den som khong",
-  "summary": "Do I need to arrive early?",
+  "summary": "For checking whether the listed time is the start time or the show-up time.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có cần đến sớm không? checks whether a step is required before you spend time on it. It is helpful for forms, tickets, bookings, queues, and documents because the answer can be a simple yes or no."
+      "body": "Tours, buses, ferries, appointments, ticketed entries, and hotel pickups often have a show-up time before the start time."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có cần đến sớm không? together as one sentence before adding details. Start with Tôi có cần đến sớm không?",
+      "body": "Show the booking time and ask before you plan the route. The answer may change when you leave.",
       "phrases": [
         {
           "id": "v900-time-date-book-do-i-need-to-arrive-early",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đến sớm means arrive early; có cần asks whether it is actually necessary.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another time, date, or booking need.",
+      "body": "Time words stay close when the answer becomes today, tomorrow, or a specific hour.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is do I need to arrive early. Keep the booking, room number, date, or address visible."
+      "body": "Good at booking desks, chat threads, hotel receptions, and tour counters before a timed plan."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Ask again if there is traffic, security screening, boarding, or a printed-ticket step."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "If timing changes, booking, opening-time, wait, and boarding-start lines help pin down the plan.",
       "phrases": [
         {
           "id": "time-4",

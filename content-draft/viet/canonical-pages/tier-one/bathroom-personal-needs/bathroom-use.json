@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi dùng nhà vệ sinh được không? keeps the question easy to answer. Reach for it when the bathroom exists but you need permission to use it. Permission to use the bathroom is a separate traveler moment from finding it.",
+      "body": "Lead with Tôi dùng nhà vệ sinh được không?; add the detail after the first reply.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Say the main request in one piece, then pause after không? for the yes-or-no answer.",
       "breakdown": [
         {
           "id": "bathroom-use-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Ask directly, then follow pointing or gestures; these moments usually need a quick practical answer.",
+      "body": "Show the sign, product, bathroom direction, or payment detail first, ask once, and leave room for the answer.",
       "phrases": [
         {
           "id": "bathroom-use",
@@ -84,7 +84,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "These phrases are practical and often need a quick answer, not a long conversation. The reply may be unclear.",
+      "body": "These phrases are practical and often need a quick answer, not a long conversation. Watch for unclear.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a yes/no answer, a gesture toward the item, or short alternative. Say Tôi dùng nhà vệ sinh được không?",
+      "body": "Watch for a yes/no answer, a gesture toward the item, or short alternative. Say Tôi dùng nhà vệ sinh được không?",
       "phrases": [
         {
           "id": "bath-1",
@@ -131,7 +131,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when the bathroom exists but you need permission to use it. The reply may be a yes/no answer, a gesture toward the item, or short alternative.",
+      "body": "Reach for it when the bathroom exists but you need permission to use it. Watch for a yes/no answer, a gesture toward the item, or short alternative.",
       "phrases": [
         {
           "id": "bath-4",
@@ -187,7 +187,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Keep the conversation close to where is the bathroom?; do you have toilet paper?; do you have soap?",
       "phrases": [
         {
           "id": "bath-1",

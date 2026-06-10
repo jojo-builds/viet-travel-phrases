@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể mua nước ở đâu? keeps the direction question short. Use this for errands, printing, laundry, basic supplies, and other practical tasks that keep the trip moving.",
+      "body": "Tôi có thể mua nước ở đâu? works best as a short opener at a shop, laundry counter, pharmacy shelf, or hotel desk.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Keep the item, document, bag, receipt, photo, or address visible so the reply can be a point, number, or short correction.",
       "phrases": [
         {
           "id": "v500-loca-serv-ever-task-where-can-i-buy-water",
@@ -84,7 +84,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Everyday service phrases keep quick errands smooth without needing a full conversation. Point to the item, menu line, receipt, size, or photo.",
+      "body": "Everyday service phrases keep quick errands smooth without needing a full conversation. Keep the item, document, bag, receipt, photo, or address ready so the other person can act on the same detail.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a point, short direction, nearby option, or counter name. Say Tôi có thể mua nước ở đâu?",
+      "body": "Watch for a point, short direction, nearby option, or counter name. Say Tôi có thể mua nước ở đâu?",
       "phrases": [
         {
           "id": "store-1",
@@ -131,7 +131,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this for errands, printing, laundry, basic supplies, and other practical tasks that keep the trip moving. The reply may be a point, short direction, nearby option, or counter name.",
+      "body": "Use this for errands, printing, laundry, basic supplies, and other practical tasks that keep the trip moving. Watch for a point, short direction, nearby option, or counter name.",
       "phrases": [
         {
           "id": "store-4",
@@ -197,7 +197,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover a bottle of water please; do you have a bag?; tissues please.",
       "phrases": [
         {
           "id": "store-1",

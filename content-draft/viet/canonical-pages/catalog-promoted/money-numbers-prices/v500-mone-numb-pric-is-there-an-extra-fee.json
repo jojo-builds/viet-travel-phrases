@@ -7,7 +7,7 @@
   "title": "Có phải trả thêm phí không?",
   "englishTitle": "Is there an extra fee?",
   "pronunciation": "Co phai tra them phi khong",
-  "summary": "Is there an extra fee?",
+  "summary": "For checking add-ons before the final price changes.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có phải trả thêm phí không? keeps the question easy to answer. Keep the relevant place, item, or screen visible."
+      "body": "A price can change after service, bags, delivery, card payment, or ticket handling."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Có phải trả thêm phí không? together as one sentence before adding details. Say Có phải trả thêm phí không?",
+      "body": "Point to the total and ask before agreeing. The answer should make the final amount clearer.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-is-there-an-extra-fee",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Trả thêm phí means pay an additional fee; không? makes it a direct yes-or-no check.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -59,7 +59,7 @@
         {
           "id": "chunk-3",
           "vietnamese": "không",
-          "english": "no / not",
+          "english": "is there?",
           "audioKey": null
         },
         {
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another money or price need.",
+      "body": "If the number needs to be written again, use the price, final-total, or per-kilo cards.",
       "phrases": [
         {
           "id": "price-1",
@@ -88,7 +88,7 @@
         {
           "id": "money-how-much-common",
           "vietnamese": "Cái này nhiêu tiền?",
-          "english": "How much is this?",
+          "english": "How much money is this?",
           "pronunciation": "gai nai nyew tyen",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is is there an extra fee. Keep the relevant place, item, or screen visible."
+      "body": "Good at counters, hotels, rentals, tours, delivery desks, and places with add-on charges."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+      "body": "Ask before the service starts when possible; surprise fees are harder to unwind later."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Price, discount, final-total, another option, and take-this cards keep the decision clear.",
       "phrases": [
         {
           "id": "price-3",

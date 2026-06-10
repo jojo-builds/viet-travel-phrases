@@ -7,7 +7,7 @@
   "title": "Tôi có nên băng qua đường không?",
   "englishTitle": "Should I cross the street?",
   "pronunciation": "Toi co nen bang qua duong khong",
-  "summary": "Should I cross the street?",
+  "summary": "For asking whether a crossing is safe before stepping into busy traffic.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có nên băng qua đường không? keeps the question easy to answer. Keep the map, address, or destination visible."
+      "body": "Useful at market streets, station roads, and intersections where signals or crossings are unclear."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có nên băng qua đường không? together as one sentence before adding details. Say Tôi có nên băng qua đường không?",
+      "body": "Point to the crossing and wait before moving. If they wave you back, stay put.",
       "phrases": [
         {
           "id": "v900-dire-navi-should-i-cross-the-street",
@@ -42,44 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có nên asks should I; băng qua đường means cross the street; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có nên",
+          "english": "should I",
+          "keepTogetherReason": "should-I question"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nên băng qua",
-          "english": "should cross",
-          "audioKey": null
+          "vietnamese": "băng qua đường",
+          "english": "cross the street",
+          "keepTogetherReason": "cross-street phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "đường",
-          "english": "sugar / street",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Tôi có nên băng qua đường không?",
-          "english": "Should I cross the street",
-          "audioKey": null
+          "english": "Should I cross the street?",
+          "audioKey": "v900-dire-navi-should-i-cross-the-street"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another directions need.",
+      "body": "How-to-get-there, near-here, and walking-time cards help if the crossing is part of a larger route.",
       "phrases": [
         {
           "id": "directions-1",
@@ -116,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is should I cross the street. Keep the map, address, or destination visible."
+      "body": "Street corners, market crossings, station roads, and wide intersections are the right moments for a quick local safety check."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For directions, give the listener one clear anchor. A map or address lets them point instead of explaining everything in fast Vietnamese."
+      "body": "Traffic can flow around pedestrians, but that does not make every crossing sensible. A guard, vendor, or hotel staffer may know the safer side."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Turn-left, turn-right, go-straight, understand-now, and pickup-point cards cover the next route decision.",
       "phrases": [
         {
           "id": "directions-4",

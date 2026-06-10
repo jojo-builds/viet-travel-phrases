@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Keep the map, address, or destination visible.",
+      "body": "Keep the map location, address, station name, or sign visible so the reply can be a point, number, or short correction.",
       "phrases": [
         {
           "id": "v500-dire-navi-where-is-the-nearest-restroom",
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a point, short direction, nearby option, or counter name. Say Nhà vệ sinh gần nhất ở đâu?",
+      "body": "Watch for a point, short direction, nearby option, or counter name. Say Nhà vệ sinh gần nhất ở đâu?",
       "phrases": [
         {
           "id": "directions-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this while walking, checking a route, or confirming the exact turn, stop, or entrance. The reply may be a point, short direction, nearby option, or counter name.",
+      "body": "Use this while walking, checking a route, or confirming the exact turn, stop, or entrance. Watch for a point, short direction, nearby option, or counter name.",
       "phrases": [
         {
           "id": "directions-4",
@@ -191,7 +191,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through excuse me, how do I get there?; is it near here?; how long does it take on foot?",
       "phrases": [
         {
           "id": "directions-1",

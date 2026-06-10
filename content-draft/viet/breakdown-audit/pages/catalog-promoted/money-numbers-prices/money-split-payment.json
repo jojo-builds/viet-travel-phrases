@@ -21,8 +21,8 @@
     {
       "id": "chunk-1",
       "vietnamese": "Chúng ta",
-      "english": "we / us",
-      "keepTogetherReason": "pronoun phrase"
+      "english": "we",
+      "keepTogetherReason": "group speaker phrase"
     },
     {
       "id": "chunk-2",
@@ -32,22 +32,12 @@
     },
     {
       "id": "chunk-3",
-      "vietnamese": "chia",
-      "english": "split"
+      "vietnamese": "chia tiền thanh toán",
+      "english": "split the payment",
+      "keepTogetherReason": "payment-splitting phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "tiền",
-      "english": "money"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "thanh toán",
-      "english": "pay",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "được không?",
       "english": "is that possible?",
       "keepTogetherReason": "fixed yes-no question ending"

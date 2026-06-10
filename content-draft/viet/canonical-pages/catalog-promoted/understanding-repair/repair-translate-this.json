@@ -7,7 +7,7 @@
   "title": "Dịch giúp tôi cái này được không?",
   "englishTitle": "Can you translate this for me?",
   "pronunciation": "zik zoop toy gai nai dook khong",
-  "summary": "Can you translate this for me?",
+  "summary": "Ask someone to translate a word, sign, menu line, message, or instruction when pointing is easier than explaining.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Dịch giúp tôi cái này được không? asks someone to do one helpful action for you. Use it for translate this for me when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Good when the exact written detail matters and guessing would waste time."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Dịch giúp tôi cái này được không? together as one sentence before adding details. Start with Dịch giúp tôi cái này được không?",
+      "body": "Show the word or screen clearly, then wait while they read it.",
       "phrases": [
         {
           "id": "repair-translate-this",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Dịch giúp tôi asks for translation help; cái này points to this thing.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
+      "body": "Understand and slower-speech cards help if the answer comes back too fast.",
       "phrases": [
         {
           "id": "problems-2",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can you translate this for me. If it is still unclear, show, write, or point to the exact word."
+      "body": "Best with a menu, medicine label, booking message, sign, receipt, or address."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Keep the item visible until they finish; moving the phone away makes the help harder."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Repeat, write-it-down, and meaning cards cover the next repair if the translation is still unclear.",
       "phrases": [
         {
           "id": "repair-1",

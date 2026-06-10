@@ -20,36 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể",
+      "english": "can I",
+      "keepTogetherReason": "can-I question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "tham gia",
+      "english": "join",
+      "keepTogetherReason": "join phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "tham gia",
-      "english": "join / participate",
-      "keepTogetherReason": "compound verb"
+      "vietnamese": "ngay hôm nay",
+      "english": "today",
+      "keepTogetherReason": "same-day phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "ngay",
-      "english": "right away / right"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "hôm nay",
-      "english": "today",
-      "keepTogetherReason": "fixed time phrase"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

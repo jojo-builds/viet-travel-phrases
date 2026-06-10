@@ -1297,8 +1297,8 @@
     },
     {
       "pageID": "viet-phrase-v900-heal-phar-can-i-get-a-receipt-for-insurance",
-      "title": "Tôi có thể nhận được biên nhận bảo hiểm không?",
-      "englishTitle": "Can I get a receipt for insurance?",
+      "title": "Tôi có thể lấy biên nhận để nộp cho bảo hiểm không?",
+      "englishTitle": "Can I get a receipt to submit to insurance?",
       "intent": "simple_phrase",
       "categoryIDs": [
         "health-pharmacy",
@@ -1331,8 +1331,7 @@
         "Traveler insight",
         "When to use it",
         "Local tip",
-        "Good to know",
-        "Explore next"
+        "Good to know"
       ]
     },
     {
@@ -1455,13 +1454,12 @@
         "Traveler insight",
         "When to use it",
         "Local tip",
-        "Good to know",
-        "Explore next"
+        "Good to know"
       ]
     },
     {
       "pageID": "viet-phrase-v900-loca-serv-ever-task-can-you-print-this-for-me",
-      "title": "Bạn có thể in cái này cho tôi được không?",
+      "title": "Anh/chị in cái này giúp tôi được không?",
       "englishTitle": "Can you print this for me?",
       "intent": "simple_phrase",
       "categoryIDs": [
@@ -1494,8 +1492,7 @@
         "Traveler insight",
         "When to use it",
         "Local tip",
-        "Good to know",
-        "Explore next"
+        "Good to know"
       ]
     },
     {
@@ -2388,8 +2385,8 @@
     },
     {
       "pageID": "viet-phrase-v900-heal-phar-can-i-get-a-receipt-for-insurance",
-      "title": "Tôi có thể nhận được biên nhận bảo hiểm không?",
-      "englishTitle": "Can I get a receipt for insurance?",
+      "title": "Tôi có thể lấy biên nhận để nộp cho bảo hiểm không?",
+      "englishTitle": "Can I get a receipt to submit to insurance?",
       "intent": "simple_phrase",
       "categoryIDs": [
         "health-pharmacy",
@@ -2422,8 +2419,7 @@
         "Traveler insight",
         "When to use it",
         "Local tip",
-        "Good to know",
-        "Explore next"
+        "Good to know"
       ]
     },
     {
@@ -2546,13 +2542,12 @@
         "Traveler insight",
         "When to use it",
         "Local tip",
-        "Good to know",
-        "Explore next"
+        "Good to know"
       ]
     },
     {
       "pageID": "viet-phrase-v900-loca-serv-ever-task-can-you-print-this-for-me",
-      "title": "Bạn có thể in cái này cho tôi được không?",
+      "title": "Anh/chị in cái này giúp tôi được không?",
       "englishTitle": "Can you print this for me?",
       "intent": "simple_phrase",
       "categoryIDs": [
@@ -2585,8 +2580,7 @@
         "Traveler insight",
         "When to use it",
         "Local tip",
-        "Good to know",
-        "Explore next"
+        "Good to know"
       ]
     },
     {

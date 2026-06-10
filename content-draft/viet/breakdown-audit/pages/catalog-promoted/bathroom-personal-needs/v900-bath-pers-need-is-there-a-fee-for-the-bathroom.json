@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-bath-pers-need-is-there-a-fee-for-the-bathroom",
-  "phraseText": "Có tính phí cho phòng tắm không?",
+  "phraseText": "Nhà vệ sinh có tính phí không?",
   "englishTitle": "Is there a fee for the bathroom?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,36 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Có",
-      "english": "have / there is"
+      "vietnamese": "Nhà vệ sinh",
+      "english": "restroom",
+      "keepTogetherReason": "restroom phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "tính phí",
-      "english": "charge a fee",
-      "keepTogetherReason": "compound verb"
+      "vietnamese": "có tính phí",
+      "english": "has a fee",
+      "keepTogetherReason": "fee phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "phòng tắm",
-      "english": "bathroom / shower room",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",
-      "vietnamese": "Có tính phí cho phòng tắm không?",
+      "vietnamese": "Nhà vệ sinh có tính phí không?",
       "english": "Is there a fee for the bathroom?",
-      "audioKey": "v900-bath-pers-need-is-there-a-fee-for-the-bathroom"
+      "audioKey": null
     }
   ]
 }

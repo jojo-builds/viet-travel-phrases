@@ -26,7 +26,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Say this when the item is visible and the context already makes the price question clear.",
+      "body": "Ask while the item, price tag, calculator, receipt, or ATM screen is still visible, then pause before adding more words.",
       "phrases": [
         {
           "id": "money-how-much-common",
@@ -45,7 +45,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Cái + này carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "chunk-1",

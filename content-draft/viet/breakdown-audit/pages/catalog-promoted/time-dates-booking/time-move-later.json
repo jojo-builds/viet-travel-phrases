@@ -19,25 +19,22 @@
   ],
   "tokens": [
     {
+      "id": "chunk-1",
       "vietnamese": "Dời lại",
-      "english": "move later / postpone",
-      "keepTogetherReason": "compound reschedule verb"
+      "english": "move / reschedule",
+      "keepTogetherReason": "reschedule verb"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "muộn hơn",
+      "english": "later",
+      "keepTogetherReason": "later-time phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "muộn",
-      "english": "late"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "hơn",
-      "english": "more"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

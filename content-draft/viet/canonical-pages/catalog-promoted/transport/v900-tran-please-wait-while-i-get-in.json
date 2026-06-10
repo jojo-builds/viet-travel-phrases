@@ -4,10 +4,10 @@
   "phraseID": "v900-tran-please-wait-while-i-get-in",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Vui lòng đợi trong khi tôi vào",
+  "title": "Vui lòng đợi tôi lên xe",
   "englishTitle": "Please wait while I get in",
-  "pronunciation": "Vui long doi trong khi toi vao",
-  "summary": "Please wait while I get in",
+  "pronunciation": "Vui long doi toi len xe",
+  "summary": "For asking a driver to wait a moment while you get into the car or onto the motorbike.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -15,65 +15,67 @@
     "v900-tran-please-wait-while-i-get-in",
     "premium"
   ],
-  "audioKey": "v900-tran-please-wait-while-i-get-in",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng đợi trong khi tôi vào makes the request direct without adding extra explanation. Keep the map, address, or destination visible."
+      "body": "Use it at the curb before the ride starts, especially with luggage, a child, or a slow step into traffic.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Vui lòng đợi trong khi tôi vào together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Say it before moving toward the door or seat. Keep the ride screen or destination visible if the driver is checking.",
       "phrases": [
         {
           "id": "v900-tran-please-wait-while-i-get-in",
-          "vietnamese": "Vui lòng đợi trong khi tôi vào",
+          "vietnamese": "Vui lòng đợi tôi lên xe",
           "english": "Please wait while I get in",
-          "pronunciation": "Vui long doi trong khi toi vao",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Vui long doi toi len xe",
+          "symbolName": "text.bubble.fill",
           "tintName": "orange",
           "detailPageID": null,
-          "audioKey": "v900-tran-please-wait-while-i-get-in"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Vui lòng means please; đợi tôi means wait for me; lên xe means get in or onto the vehicle.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Vui lòng đợi",
+          "vietnamese": "Vui lòng",
           "english": "please",
-          "audioKey": null
+          "keepTogetherReason": "polite opener"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "trong khi tôi",
-          "english": "wait while I get in",
-          "audioKey": null
+          "vietnamese": "đợi tôi",
+          "english": "wait for me",
+          "keepTogetherReason": "wait-for-me phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "vào",
-          "english": "into / touch target",
-          "audioKey": null
+          "vietnamese": "lên xe",
+          "english": "get in / onto the vehicle",
+          "keepTogetherReason": "vehicle-boarding phrase"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "Vui lòng đợi trong khi tôi vào",
+          "id": "full",
+          "vietnamese": "Vui lòng đợi tôi lên xe",
           "english": "Please wait while I get in",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "Take-me-here, District 1, and stop-here cards cover the ride instructions around the pickup.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please wait while I get in. Keep the map, address, or destination visible."
+      "body": "Good for taxis, rideshares, private cars, motorbike taxis, and station pickups when the driver is ready before you are seated.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "A small hand gesture helps. The driver needs to know you are getting in, not changing the destination.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to stop-here, go-this-way, air-conditioning, wait-five-minutes, or cash cards if the ride needs another instruction.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",
@@ -178,13 +182,13 @@
   "examples": [
     {
       "id": "v900-tran-please-wait-while-i-get-in",
-      "vietnamese": "Vui lòng đợi trong khi tôi vào",
+      "vietnamese": "Vui lòng đợi tôi lên xe",
       "english": "Please wait while I get in",
-      "pronunciation": "Vui long doi trong khi toi vao",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Vui long doi toi len xe",
+      "symbolName": "text.bubble.fill",
       "tintName": "orange",
       "detailPageID": null,
-      "audioKey": "v900-tran-please-wait-while-i-get-in"
+      "audioKey": null
     }
   ]
 }

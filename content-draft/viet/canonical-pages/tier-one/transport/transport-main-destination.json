@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đi quận 1 keeps the travel moment short and clear. Use this for a simple destination inside the city.",
+      "body": "Use this for a simple destination inside the city.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Play each piece, then the full phrase.",
+      "body": "Hear Đi + quận as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "taxi-2-piece-1",
@@ -59,7 +59,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Keep Đi quận 1 together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Start with Đi quận 1; keep the destination, fare, or ride screen ready if the reply needs proof.",
       "phrases": [
         {
           "id": "taxi-2",
@@ -78,7 +78,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. Keep the map, address, or destination visible.",
+      "body": "District names can be faster than a full address when the city area is the main point.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -86,7 +86,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a clear reply, a pointed detail, or simple follow-up. Keep the map, address, or destination visible.",
+      "body": "Watch for about route, fare, traffic, or which part of the district you mean. Move to the follow-up card that matches price, route, pickup, or payment.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -125,7 +125,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this for a simple destination inside the city. The reply may be a clear reply, a pointed detail, or simple follow-up.",
+      "body": "Use it for broad city moves when the exact street can come next on your map.",
       "phrases": [
         {
           "id": "taxi-5",
@@ -211,7 +211,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "During a taxi ride, motorbike pickup, or station-counter exchange, the next useful language is usually take me here, you can stop here, and go this way.",
       "phrases": [
         {
           "id": "taxi-1",

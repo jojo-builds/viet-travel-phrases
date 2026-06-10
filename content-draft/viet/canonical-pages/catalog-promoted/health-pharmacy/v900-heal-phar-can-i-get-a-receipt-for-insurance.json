@@ -4,10 +4,10 @@
   "phraseID": "v900-heal-phar-can-i-get-a-receipt-for-insurance",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Tôi có thể nhận được biên nhận bảo hiểm không?",
-  "englishTitle": "Can I get a receipt for insurance?",
-  "pronunciation": "Toi co the nhan duoc bien nhan bao hiem khong",
-  "summary": "Can I get a receipt for insurance?",
+  "title": "Tôi có thể lấy biên nhận để nộp cho bảo hiểm không?",
+  "englishTitle": "Can I get a receipt to submit to insurance?",
+  "pronunciation": "Toi co the lay bien nhan de nop cho bao hiem khong",
+  "summary": "For asking a clinic or pharmacy for a receipt your travel insurance can use.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -15,63 +15,69 @@
     "v900-heal-phar-can-i-get-a-receipt-for-insurance",
     "premium"
   ],
-  "audioKey": "v900-heal-phar-can-i-get-a-receipt-for-insurance",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể nhận được biên nhận bảo hiểm không? keeps the question easy to answer. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Insurance paperwork usually needs the name, date, amount, clinic, medicine, or service written clearly."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Tôi có thể nhận được biên nhận bảo hiểm không? together as one sentence before adding details. Start with Tôi có thể nhận được biên nhận bảo hiểm không?",
+      "body": "Ask before leaving and show the policy note or claim form if you have one.",
       "phrases": [
         {
           "id": "v900-heal-phar-can-i-get-a-receipt-for-insurance",
-          "vietnamese": "Tôi có thể nhận được biên nhận bảo hiểm không?",
-          "english": "Can I get a receipt for insurance?",
-          "pronunciation": "Toi co the nhan duoc bien nhan bao hiem khong",
-          "symbolName": "speaker.wave.2.fill",
+          "vietnamese": "Tôi có thể lấy biên nhận để nộp cho bảo hiểm không?",
+          "english": "Can I get a receipt to submit to insurance?",
+          "pronunciation": "Toi co the lay bien nhan de nop cho bao hiem khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
           "detailPageID": null,
-          "audioKey": "v900-heal-phar-can-i-get-a-receipt-for-insurance"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Lấy biên nhận means get a receipt; để nộp cho bảo hiểm makes the insurance claim use explicit.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Tôi",
+          "english": "I / me",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể nhận được",
-          "english": "can receive",
+          "vietnamese": "có thể",
+          "english": "can / able to",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "biên nhận bảo hiểm",
-          "english": "receipt for insurance",
+          "vietnamese": "lấy biên nhận",
+          "english": "get a receipt",
           "audioKey": null
         },
         {
           "id": "chunk-5",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "để nộp cho bảo hiểm",
+          "english": "to submit to insurance",
           "audioKey": null
         },
         {
           "id": "chunk-6",
-          "vietnamese": "Tôi có thể nhận được biên nhận bảo hiểm không?",
-          "english": "Can I get a receipt for insurance",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-7",
+          "vietnamese": "Tôi có thể lấy biên nhận để nộp cho bảo hiểm không?",
+          "english": "Can I get a receipt to submit to insurance?",
           "audioKey": null
         }
       ]
@@ -79,7 +85,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another pharmacy or health need.",
+      "body": "Report, bill, and medicine follow-ups stay useful because the receipt often follows a clinic visit.",
       "phrases": [
         {
           "id": "problems-6",
@@ -116,17 +122,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is can I get a receipt for insurance. Show the symptom, medicine, location, or helper contact if you can."
+      "body": "Good at clinics, pharmacies, dental offices, hospital desks, and hotel-arranged medical visits."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Check that your name and date are readable before you leave. A photo helps if paper gets lost."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "If the paperwork continues, move to clinic bill, report email, doctor, pharmacy, or follow-up visit.",
       "phrases": [
         {
           "id": "health-2",
@@ -184,13 +190,13 @@
   "examples": [
     {
       "id": "v900-heal-phar-can-i-get-a-receipt-for-insurance",
-      "vietnamese": "Tôi có thể nhận được biên nhận bảo hiểm không?",
-      "english": "Can I get a receipt for insurance?",
-      "pronunciation": "Toi co the nhan duoc bien nhan bao hiem khong",
-      "symbolName": "speaker.wave.2.fill",
+      "vietnamese": "Tôi có thể lấy biên nhận để nộp cho bảo hiểm không?",
+      "english": "Can I get a receipt to submit to insurance?",
+      "pronunciation": "Toi co the lay bien nhan de nop cho bao hiem khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "red",
       "detailPageID": null,
-      "audioKey": "v900-heal-phar-can-i-get-a-receipt-for-insurance"
+      "audioKey": null
     }
   ]
 }

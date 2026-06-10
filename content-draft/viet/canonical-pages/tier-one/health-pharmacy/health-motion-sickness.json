@@ -7,7 +7,7 @@
   "title": "Có thuốc say xe không?",
   "englishTitle": "Do you have motion sickness medicine?",
   "pronunciation": "koh thoo-ok sai seh khong",
-  "summary": "Useful for buses, ferries, and mountain travel.",
+  "summary": "For asking a pharmacy or helper for motion-sickness medicine before a ride, boat, or mountain road.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,7 +18,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có thuốc say xe không? keeps the question easy to answer. Reach for it when travel motion is the problem and you want the medicine, not a doctor. Useful for buses, ferries, and mountain travel.",
+      "body": "Có thuốc say xe không? is the quiet opener at a pharmacy, clinic, or hotel desk.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -26,7 +26,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Có asks whether they have it; thuốc say xe means motion-sickness medicine; không? makes it a question.",
       "breakdown": [
         {
           "id": "health-4-piece-1",
@@ -65,7 +65,7 @@
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use the full phrase before adding details. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Keep the symptom, medicine, affected area, or translated note visible so the reply can be a point, number, or short correction.",
       "phrases": [
         {
           "id": "health-4",
@@ -84,7 +84,7 @@
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up. The reply may be unclear.",
+      "body": "Motion sickness is easier to handle before the vehicle moves. Ask early, while the pharmacy shelf or trip plan is still visible.",
       "presentation": "plain-text",
       "phrases": [],
       "breakdown": []
@@ -92,7 +92,7 @@
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "The reply may be a yes/no answer, a gesture toward the item, or short alternative. Say Có thuốc say xe không?",
+      "body": "Expect questions about adult or child dose, drowsiness, timing, and how many pills to take.",
       "phrases": [
         {
           "id": "problems-6",
@@ -131,7 +131,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Reach for it when travel motion is the problem and you want the medicine, not a doctor. The reply may be a yes/no answer, a gesture toward the item, or short alternative.",
+      "body": "Use it before buses, boats, mountain roads, long taxis, and tours where nausea would ruin the day.",
       "phrases": [
         {
           "id": "health-3",
@@ -197,7 +197,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through I need a doctor; where is the nearest pharmacy?; I have a headache.",
       "phrases": [
         {
           "id": "problems-6",

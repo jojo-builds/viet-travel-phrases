@@ -7,7 +7,7 @@
   "title": "Đó không phải là ý tôi",
   "englishTitle": "That is not what I meant",
   "pronunciation": "Do khong phai la y toi",
-  "summary": "That is not what I meant",
+  "summary": "For correcting a misunderstanding when the wrong item, place, number, route, or request is being used.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đó không phải là ý tôi keeps the travel moment short and clear. If it is still unclear, show, write, or point to the exact word."
+      "body": "Use it before the mistake turns into payment, booking, food, or a ride. Keep the correction calm and specific."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Đó không phải là ý tôi together as one sentence before adding details. If it is still unclear, show, write, or point to the exact word.",
+      "body": "Say the line, then point to the right item, screen, number, or address so the fix has somewhere to go.",
       "phrases": [
         {
           "id": "v500-unde-repa-that-is-not-what-i-meant",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đó means that; không phải là means is not; ý tôi means what I meant or my meaning.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Đó không phải",
-          "english": "yes/no question",
-          "audioKey": null
+          "vietnamese": "Đó",
+          "english": "that",
+          "keepTogetherReason": "that pronoun"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là ý tôi",
-          "english": "what I meant",
-          "audioKey": null
+          "vietnamese": "không phải là",
+          "english": "is not",
+          "keepTogetherReason": "not phrase"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "ý tôi",
+          "english": "what I meant",
+          "keepTogetherReason": "my-meaning phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Đó không phải là ý tôi",
           "english": "That is not what I meant",
-          "audioKey": null
+          "audioKey": "v500-unde-repa-that-is-not-what-i-meant"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
+      "body": "This one, not this, write it down, translation app, and misunderstanding cards cover the repair flow around it.",
       "phrases": [
         {
           "id": "problems-2",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is that is not what I meant. If it is still unclear, show, write, or point to the exact word."
+      "body": "Good in shops, restaurants, taxis, hotel desks, clinics, and counters when someone picked up the wrong meaning."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "These phrases keep the exchange friendly when Vietnamese moves too fast. Ask for one specific next step: repeat, write, show, or point."
+      "body": "This phrase works best with a visible correction. Point, show, or write the right version immediately after."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Move to this-one, not-this, write-it-down, translation-app, or misunderstanding cards if the correction needs another step.",
       "phrases": [
         {
           "id": "repair-1",

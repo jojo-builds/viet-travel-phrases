@@ -7,7 +7,7 @@
   "title": "Hãy đi theo bản đồ",
   "englishTitle": "Please follow the map",
   "pronunciation": "Hay di theo ban do",
-  "summary": "Please follow the map",
+  "summary": "For asking a driver to use the route on your phone.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy đi theo bản đồ makes the request direct without adding extra explanation. Keep the map, address, or destination visible."
+      "body": "Useful when the route matters: hotel entrance, pickup lane, toll road, wrong turn, or a specific saved address."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep Hãy đi theo bản đồ together as one sentence before adding details. Keep the map, address, or destination visible.",
+      "body": "Show the map and say the line before the driver commits to another route.",
       "phrases": [
         {
           "id": "v500-tran-please-follow-the-map",
@@ -42,18 +42,20 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hãy đi theo means please follow; bản đồ means map.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Hãy đi theo",
-          "english": "go / move",
+          "english": "please follow",
+          "keepTogetherReason": "route-following request",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "bản đồ",
           "english": "map",
+          "keepTogetherReason": "compound map noun",
           "audioKey": null
         },
         {
@@ -67,7 +69,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another transport need.",
+      "body": "If the route still feels wrong, use turn, address, correct street, wrong way, or stop phrases.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +106,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use it when the next move is please follow the map. Keep the map, address, or destination visible."
+      "body": "Good in taxis, private cars, motorbike taxis, or transfer vans when the map is already open."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Keep your tone practical, not accusatory. Point to the route, not the driver."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Use address, route, wrong way, turn, or stop-here follow-ups if the driver needs the next instruction.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

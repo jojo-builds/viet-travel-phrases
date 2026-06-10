@@ -7,7 +7,7 @@
   "title": "Đây có phải là địa điểm trên bản đồ không?",
   "englishTitle": "Is this the place on the map?",
   "pronunciation": "Day co phai la dia diem tren ban do khong",
-  "summary": "Is this the place on the map?",
+  "summary": "For confirming that the map pin matches the real place in front of you.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đây có phải là địa điểm trên bản đồ không? keeps the question easy to answer. If it is still unclear, show, write, or point to the exact word."
+      "body": "A map pin can be close but still point to the wrong entrance, old branch, or nearby shop."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use Đây có phải là địa điểm trên bản đồ không? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "body": "Show the map and ask before walking in, boarding, or paying. Let them point if the pin is off.",
       "phrases": [
         {
           "id": "v500-unde-repa-is-this-the-place-on-the-map",
@@ -42,18 +42,18 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Địa điểm trên bản đồ means the place on the map; không? turns it into confirmation.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Đây có phải",
-          "english": "immigration line",
+          "english": "is this",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "là địa điểm",
-          "english": "go / move",
+          "english": "the place",
           "audioKey": null
         },
         {
@@ -65,7 +65,7 @@
         {
           "id": "chunk-4",
           "vietnamese": "không",
-          "english": "no / not",
+          "english": "is it?",
           "audioKey": null
         },
         {
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby phrases if the conversation shifts toward another understanding check need.",
+      "body": "If the correction comes back quickly, slow-down and I-don’t-understand cards keep it manageable.",
       "phrases": [
         {
           "id": "problems-2",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+      "body": "Good near markets, malls, hotels, pickup points, and places with multiple entrances."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "These phrases keep the exchange friendly when Vietnamese moves too fast. Ask for one specific next step: repeat, write, show, or point."
+      "body": "If they correct you, ask them to mark or point to the new spot."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these if the answer changes the next step.",
+      "body": "Repeat, write, meaning, which-one, and show-me cards cover the correction.",
       "phrases": [
         {
           "id": "repair-1",
