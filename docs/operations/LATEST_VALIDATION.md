@@ -41,7 +41,11 @@ Fresh command evidence from merged `main`:
 
 Physical iPhone proof from this merged copy gate:
 
-- pending after this validation receipt
+- Debug build from `main` commit `d6f06b719` passed with local-only signing overrides
+- install to the connected physical iPhone passed for bundle `app.speaklocal.vietnam.native`
+- launch was blocked because the iPhone was locked; iOS returned the locked-device launch denial after install succeeded
+- post-build signing scan passed; repo signing files stayed clean
+- `git status --short native-ios/project.yml native-ios/SpeakLocalNative.xcodeproj/project.pbxproj` returned no changes after the build
 
 ## Branch-Local Phrase Copy Production Gate
 
