@@ -20,57 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể gọi cho",
+      "english": "can you call",
+      "keepTogetherReason": "can-you-call phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "người liên lạc khẩn cấp của tôi",
+      "english": "my emergency contact",
+      "keepTogetherReason": "emergency-contact phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "gọi",
-      "english": "call"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "người",
-      "english": "person"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "liên",
-      "english": "contact / link"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "lạc",
-      "english": "lost / peanut"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "khẩn cấp",
-      "english": "urgent / emergency",
-      "keepTogetherReason": "compound adjective"
-    },
-    {
-      "id": "chunk-9",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-10",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

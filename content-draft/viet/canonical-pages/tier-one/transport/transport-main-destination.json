@@ -7,7 +7,7 @@
   "title": "Đi quận 1",
   "englishTitle": "Go to District 1",
   "pronunciation": "dee gwan mot",
-  "summary": "Đi quận 1 means “Go to District 1”.",
+  "summary": "Use the name when it is shorter than a full address.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Đi quận 1 when you need \"Go to District 1\". Use this for a simple destination inside the city. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Use this for a simple destination inside the city.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Hear Đi + quận as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "taxi-2-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "taxi-2"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Đi quận 1 as your first sentence for \"Go to District 1\". Use this for a simple destination inside the city. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Start with Đi quận 1; keep the destination, fare, or ride screen ready if the reply needs proof.",
       "phrases": [
         {
           "id": "taxi-2",
@@ -69,18 +72,21 @@
           "audioKey": "taxi-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"Go to District 1\", Đi quận 1 makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "District names can be faster than a full address when the city area is the main point.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Transport, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Đi quận 1 once, pause, and watch for the reply. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Watch for about route, fare, traffic, or which part of the district you mean. Move to the follow-up card that matches price, route, pickup, or payment.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -113,12 +119,13 @@
           "audioKey": "taxi-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this for a simple destination inside the city. It fits rides, routes, pickup points, and stops, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "body": "Use it for broad city moves when the exact street can come next on your map.",
       "phrases": [
         {
           "id": "taxi-5",
@@ -151,13 +158,16 @@
           "audioKey": "taxi-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -195,12 +205,13 @@
           "audioKey": "transport-lost"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "During a taxi ride, motorbike pickup, or station-counter exchange, the next useful language is usually take me here, you can stop here, and go this way.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -283,7 +294,8 @@
           "audioKey": "transport-meter"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

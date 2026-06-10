@@ -7,7 +7,7 @@
   "title": "Có thứ gì đó trong thức ăn của tôi",
   "englishTitle": "There is something in my food",
   "pronunciation": "Co thu gi do trong thuc an cua toi",
-  "summary": "There is something in my food",
+  "summary": "For pointing out a visible object or problem in your food before asking staff to fix it.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có thứ gì đó trong thức ăn của tôi is a practical food or drink phrase for keeping one travel detail clear. Use it when There is something in my food is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Show the bowl, plate, or photo first. The problem is easier to handle when it is visible.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Có thứ gì đó trong thức ăn của tôi. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say the line calmly and point to the spot. Keep the dish at the table until staff have seen it.",
       "phrases": [
         {
           "id": "v500-food-drin-there-is-something-in-my-food",
@@ -37,148 +40,136 @@
           "detailPageID": null,
           "audioKey": "v500-food-drin-there-is-something-in-my-food"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có thứ gì đó means there is something; trong thức ăn means in the food; của tôi means my.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Có thứ gì",
-          "english": "is there / does it have",
-          "audioKey": null
+          "vietnamese": "Có thứ gì đó",
+          "english": "there is something",
+          "keepTogetherReason": "there-is-something phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đó trong thức",
-          "english": "something in the food",
-          "audioKey": null
+          "vietnamese": "trong thức ăn",
+          "english": "in the food",
+          "keepTogetherReason": "in-the-food phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "ăn",
-          "english": "public security word",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
           "vietnamese": "của tôi",
-          "english": "my / mine",
-          "audioKey": null
+          "english": "my",
+          "keepTogetherReason": "my/mine phrase"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Có thứ gì đó trong thức ăn của tôi",
           "english": "There is something in my food",
-          "audioKey": null
+          "audioKey": "v500-food-drin-there-is-something-in-my-food"
         }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from There is something in my food to another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
-        }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real food or drink exchange when there is something in my food is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good when there is hair, plastic, a shell piece, an insect, or any object that should not be in the dish.",
+      "phrases": [
+        {
+          "id": "v900-food-drin-this-is-undercooked",
+          "vietnamese": "Món này chưa được nấu chín kỹ",
+          "english": "This is undercooked",
+          "pronunciation": "Mon nay chua duoc nau chin ky",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-this-is-undercooked",
+          "audioKey": "v900-food-drin-this-is-undercooked"
+        },
+        {
+          "id": "v500-food-drin-this-is-cold",
+          "vietnamese": "Món này nguội rồi",
+          "english": "This is cold",
+          "pronunciation": "Mon nay nguoi roi",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v500-food-drin-this-is-cold",
+          "audioKey": "audio-authored-mon-nay-nguoi-roi-bff9cddb46"
+        },
+        {
+          "id": "v500-food-drin-this-tastes-spoiled",
+          "vietnamese": "Cái này có vị hư hỏng",
+          "english": "This tastes spoiled",
+          "pronunciation": "Cai nay co vi hu hong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v500-food-drin-this-tastes-spoiled",
+          "audioKey": "v500-food-drin-this-tastes-spoiled"
+        },
+        {
+          "id": "v900-food-drin-i-asked-for-this-not-spicy",
+          "vietnamese": "Tôi yêu cầu món này không cay.",
+          "english": "I asked for this not spicy.",
+          "pronunciation": "Toi yeu cau mon nay khong cay",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-i-asked-for-this-not-spicy",
+          "audioKey": "v900-food-drin-i-asked-for-this-not-spicy"
+        },
+        {
+          "id": "food-premium-too-spicy-now",
+          "vietnamese": "Món này quá cay đối với tôi.",
+          "english": "This is too spicy for me.",
+          "pronunciation": "Mon nay qua cay doi voi toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-food-premium-too-spicy-now",
+          "audioKey": "food-premium-too-spicy-now"
+        }
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
+      "body": "Do not overexplain at first. Let staff see the problem, then ask whether they can change it.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Có thứ gì đó trong thức ăn của tôi.",
+      "body": "Change-this is the clean next ask if staff agree there is a problem.",
       "phrases": [
         {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
+          "id": "v900-food-drin-can-you-change-this",
+          "vietnamese": "Bạn có thể thay đổi điều này?",
+          "english": "Can you change this?",
+          "pronunciation": "Ban co the thay doi dieu nay",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
-          "audioKey": "coffee-4"
-        },
-        {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
-          "audioKey": "coffee-5"
-        },
-        {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
-          "audioKey": "coffee-6"
-        },
-        {
-          "id": "coffee-7",
-          "vietnamese": "Tính tiền giúp tôi",
-          "english": "Please let me pay",
-          "pronunciation": "ting tyen zoop toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
-          "audioKey": "coffee-7"
-        },
-        {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
-          "audioKey": "food-need-table"
+          "detailPageID": "viet-phrase-v900-food-drin-can-you-change-this",
+          "audioKey": "v900-food-drin-can-you-change-this"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Undercooked, cold, spoiled, not-spicy, and too-spicy phrases cover nearby food problems.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [

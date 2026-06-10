@@ -7,7 +7,7 @@
   "title": "Dừng ở đây được rồi",
   "englishTitle": "You can stop here",
   "pronunciation": "zoong uh day dook roy",
-  "summary": "Dừng ở đây được rồi means “You can stop here”.",
+  "summary": "This is the safe phrase for the last turn or final stop.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Dừng ở đây được rồi when you need \"You can stop here\". This is for when you want the driver to stop at the current spot. This is the safe phrase for the last turn or final stop. Use the rows below to pick the warmer, safer, or more direct version.",
-      "presentation": "plain-text"
+      "body": "Reach for it when you want the driver to stop at the current spot.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Practice Dừng ở đây + được first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "taxi-3-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "taxi-3"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Dừng ở đây được rồi as your first sentence for \"You can stop here\". This is for when you want the driver to stop at the current spot. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Say Dừng ở đây được rồi first; let the destination, fare, or ride screen support the reply.",
       "phrases": [
         {
           "id": "taxi-3",
@@ -69,12 +72,13 @@
           "audioKey": "taxi-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "natural-variations",
       "title": "Natural variations",
-      "body": "This form changes the tone or setting. Use it when the note under the phrase matches the moment.",
+      "body": "Keep please stop right here nearby for the same moment in a slightly different tone.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",
@@ -87,18 +91,21 @@
           "audioKey": "transport-stop-here-clearer"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"You can stop here\", Dừng ở đây được rồi makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Stopping phrases must be direct and easy to act on. This line tells the driver the location matters now.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Transport, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Dừng ở đây được rồi once, pause, and watch for the reply. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Expect a pull-over, a question about safety, or a request to stop at the next legal spot.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -131,12 +138,13 @@
           "audioKey": "taxi-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when you want the driver to stop at the current spot. It fits rides, routes, pickup points, and stops, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "body": "Best when the entrance, curb, landmark, or safety feeling says the ride should end here.",
       "phrases": [
         {
           "id": "taxi-5",
@@ -169,18 +177,21 @@
           "audioKey": "taxi-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
-      "presentation": "tip-callout"
+      "body": "If stopping immediately is unsafe, expect the driver to move to the next legal spot.",
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Show the location on your phone while you say the phrase. The visual context reduces mistakes.",
+      "body": "Point ahead or toward the curb so the driver has a safe place to pull over.",
       "phrases": [
         {
           "id": "transport-fare",
@@ -213,12 +224,13 @@
           "audioKey": "transport-lost"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover take me here, go to District 1, and go this way.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -301,7 +313,8 @@
           "audioKey": "transport-meter"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

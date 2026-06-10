@@ -20,38 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có",
+      "english": "do you have",
+      "keepTogetherReason": "have question"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "cái nào",
+      "english": "which one / any one",
+      "keepTogetherReason": "which-item phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "cái",
-      "english": "item / classifier"
+      "vietnamese": "rẻ hơn",
+      "english": "cheaper",
+      "keepTogetherReason": "cheaper phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "nào",
-      "english": "which / any"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "rẻ",
-      "english": "cheap"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "hơn",
-      "english": "more"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

@@ -30,18 +30,9 @@
     },
     {
       "id": "chunk-4",
-      "vietnamese": "chưa",
-      "english": "not yet / already?"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "sẵn",
-      "english": "ready / available"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "sàng.",
-      "english": "morning"
+      "vietnamese": "chưa sẵn sàng.",
+      "english": "not ready yet",
+      "keepTogetherReason": "keeps sẵn sàng as the ready phrase"
     },
     {
       "id": "full",

@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-dire-navi-is-it-open-now",
-  "phraseText": "Bây giờ nó có mở không?",
+  "phraseText": "Bây giờ có mở cửa không?",
   "englishTitle": "Is it open now?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -22,33 +22,25 @@
       "id": "chunk-1",
       "vietnamese": "Bây giờ",
       "english": "now",
-      "keepTogetherReason": "fixed time phrase"
+      "keepTogetherReason": "time phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "nó",
-      "english": "it"
+      "vietnamese": "có mở cửa",
+      "english": "is open",
+      "keepTogetherReason": "open-status phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "mở",
-      "english": "open"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",
-      "vietnamese": "Bây giờ nó có mở không?",
+      "vietnamese": "Bây giờ có mở cửa không?",
       "english": "Is it open now?",
-      "audioKey": "v500-dire-navi-is-it-open-now"
+      "audioKey": null
     }
   ]
 }

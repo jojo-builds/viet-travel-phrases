@@ -22,7 +22,7 @@
       "id": "chunk-1",
       "vietnamese": "Vui lòng",
       "english": "please",
-      "keepTogetherReason": "fixed polite phrase"
+      "keepTogetherReason": "polite please opener"
     },
     {
       "id": "chunk-2",
@@ -36,28 +36,9 @@
     },
     {
       "id": "chunk-4",
-      "vietnamese": "bằng",
-      "english": "by / with"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "màu",
-      "english": "color"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "đen",
-      "english": "black"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "và",
-      "english": "and"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "trắng",
-      "english": "white"
+      "vietnamese": "bằng màu đen và trắng",
+      "english": "in black and white",
+      "keepTogetherReason": "black-and-white print setting"
     },
     {
       "id": "full",

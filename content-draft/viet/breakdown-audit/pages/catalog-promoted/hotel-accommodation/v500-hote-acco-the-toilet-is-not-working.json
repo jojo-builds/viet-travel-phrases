@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-hote-acco-the-toilet-is-not-working",
-  "phraseText": "Nhà vệ sinh không hoạt động",
+  "phraseText": "Bồn cầu không sử dụng được",
   "englishTitle": "The toilet is not working",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,21 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Nhà vệ sinh",
-      "english": "bathroom / toilet",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "Bồn cầu",
+      "english": "toilet",
+      "keepTogetherReason": "toilet fixture phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "không hoạt động",
-      "english": "not working",
-      "keepTogetherReason": "fixed negative phrase"
+      "vietnamese": "không sử dụng được",
+      "english": "cannot be used / is not working",
+      "keepTogetherReason": "not-usable phrase"
     },
     {
       "id": "full",
-      "vietnamese": "Nhà vệ sinh không hoạt động",
+      "vietnamese": "Bồn cầu không sử dụng được",
       "english": "The toilet is not working",
-      "audioKey": "v500-hote-acco-the-toilet-is-not-working"
+      "audioKey": null
     }
   ]
 }

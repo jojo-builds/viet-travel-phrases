@@ -20,38 +20,24 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đây",
-      "english": "here / this"
+      "vietnamese": "Đây có phải là",
+      "english": "is this",
+      "keepTogetherReason": "confirmation frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "điểm đón",
+      "english": "pickup point",
+      "keepTogetherReason": "pickup-point phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "phải",
-      "english": "must / right"
+      "vietnamese": "chính xác",
+      "english": "correct / exact",
+      "keepTogetherReason": "accuracy phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "điểm đón",
-      "english": "pickup point",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "chính xác",
-      "english": "correct / exact",
-      "keepTogetherReason": "compound adjective"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "không?",
       "english": "yes/no?"
     },

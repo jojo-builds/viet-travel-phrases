@@ -7,7 +7,7 @@
   "title": "Bạn có thể nhắc lại phần cuối được không?",
   "englishTitle": "Can you repeat the last part?",
   "pronunciation": "Ban co the nhac lai phan cuoi duoc khong",
-  "summary": "Can you repeat the last part?",
+  "summary": "Ask for the end of a sentence again when you caught the start but lost the important detail.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể nhắc lại phần cuối được không? asks someone to do one helpful action for you. Use it for repeat the last part when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "For fast speech, this narrows the repair to the final word, number, gate, price, or instruction."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể nhắc lại phần cuối được không? once, then make the task visible with your phone, note, map, translation screen, number, or written address. The phrase is doing one job: getting a clear answer about repeat the last part.",
+      "body": "Ask once, then point to the word, screen, receipt, or place where the answer matters.",
       "phrases": [
         {
           "id": "v500-unde-repa-can-you-repeat-the-last-part",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Nhắc lại asks them to repeat it; phần cuối narrows it to the last part.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you repeat the last part? to another understanding check need.",
+      "body": "If the whole sentence is unclear, the slower-speech, write-it-down, and meaning cards are the better repair tools.",
       "phrases": [
         {
           "id": "problems-2",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real understanding check exchange when repeat the last part is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Best after you understand the topic but miss the price, time, street name, gate, or final instruction."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "This sounds softer than asking them to start over. Keep your phone ready if the missing part is a number or name."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể nhắc lại phần cuối được không?.",
+      "body": "For a bigger repair, try the repeat, write-it-down, or meaning cards.",
       "phrases": [
         {
           "id": "repair-1",

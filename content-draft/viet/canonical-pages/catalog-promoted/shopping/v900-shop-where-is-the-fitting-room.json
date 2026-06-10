@@ -7,7 +7,7 @@
   "title": "Phòng thử đồ ở đâu?",
   "englishTitle": "Where is the fitting room?",
   "pronunciation": "Phong thu do o dau",
-  "summary": "Where is the fitting room?",
+  "summary": "For finding the changing room in a clothing shop, market stall, boutique, or mall store before trying something on.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Phòng thử đồ ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names fitting room in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Ask while holding the item or size you want to try. The answer is usually a point, curtain, corner, or upstairs/downstairs."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Phòng thử đồ ở đâu?. Show your item, shelf, photo, size, color, price tag, or calculator, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Keep the item visible. If there are separate rooms or a line, show the piece and wait for the direction.",
       "phrases": [
         {
           "id": "v900-shop-where-is-the-fitting-room",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Phòng thử đồ means fitting room; ở đâu asks where.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Phòng thử đồ",
-          "english": "room",
-          "audioKey": null
+          "english": "fitting room",
+          "keepTogetherReason": "fitting-room phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "ở đâu",
+          "vietnamese": "ở đâu?",
           "english": "where?",
-          "audioKey": null
+          "keepTogetherReason": "where question"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Phòng thử đồ ở đâu?",
-          "english": "Where is the fitting room",
-          "audioKey": null
+          "english": "Where is the fitting room?",
+          "audioKey": "v900-shop-where-is-the-fitting-room"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where is the fitting room? to another shopping need.",
+      "body": "Size, color, and try-on cards cover the clothing questions that usually sit beside the fitting room.",
       "phrases": [
         {
           "id": "shop-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits market, shop, mall, pharmacy shelf, or souvenir counter, especially when fitting room can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Good in clothing shops, market stalls, boutiques, malls, tailor shops, and souvenir stores with apparel."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+      "body": "Some fitting rooms are simple curtained areas. Watch the gesture first, then ask again if the direction is unclear."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Phòng thử đồ ở đâu?.",
+      "body": "Move to just-looking, where-pay, exchange-this, item-price, or lower-price cards if the shopping flow continues.",
       "phrases": [
         {
           "id": "shop-4",

@@ -20,28 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "I need",
+      "keepTogetherReason": "I-need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "chiếc",
-      "english": "item classifier"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "ô",
-      "english": "umbrella / square"
+      "vietnamese": "một chiếc ô",
+      "english": "an umbrella",
+      "keepTogetherReason": "umbrella noun phrase"
     },
     {
       "id": "full",

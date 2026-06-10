@@ -7,7 +7,7 @@
   "title": "Xin hãy giúp tôi liên hệ với đại sứ quán của tôi",
   "englishTitle": "Please help me contact my embassy",
   "pronunciation": "Xin hay giup toi lien he voi dai su quan cua toi",
-  "summary": "Please help me contact my embassy",
+  "summary": "For asking a hotel, police desk, airline counter, or staffed place to help you reach your embassy.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Xin hãy giúp tôi liên hệ với đại sứ quán của tôi is a practical problem-solving phrase for keeping one travel detail clear. Use it when help me contact my embassy is the next detail to solve and a short answer would move the exchange forward."
+      "body": "The problem is serious enough that the embassy is the next contact, not just a translation request."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Xin hãy giúp tôi liên hệ với đại sứ quán của tôi. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Say the phrase, then show passport details, embassy contact info, a report, or the phone number you need called.",
       "phrases": [
         {
           "id": "v500-prob-help-please-help-me-contact-my-embassy",
@@ -42,97 +42,85 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Xin hãy giúp means please help; tôi liên hệ means me contact; đại sứ quán của tôi means my embassy.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Xin hãy giúp",
-          "english": "please / ask",
-          "audioKey": null
+          "english": "please help",
+          "keepTogetherReason": "please-help phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "tôi liên hệ",
-          "english": "contact",
-          "audioKey": null
+          "english": "me contact",
+          "keepTogetherReason": "contact-me phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "với đại sứ",
-          "english": "help me contact my embassy",
-          "audioKey": null
+          "vietnamese": "với đại sứ quán của tôi",
+          "english": "my embassy",
+          "keepTogetherReason": "my-embassy phrase"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "quán",
-          "english": "manage",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
-          "vietnamese": "của tôi",
-          "english": "my / mine",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-6",
+          "id": "full",
           "vietnamese": "Xin hãy giúp tôi liên hệ với đại sứ quán của tôi",
           "english": "Please help me contact my embassy",
-          "audioKey": null
+          "audioKey": "v500-prob-help-please-help-me-contact-my-embassy"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please help me contact my embassy to another problem-solving need.",
+      "body": "Nearest-embassy, contacted-embassy, and leave-contact-info phrases help if the next step becomes paperwork.",
       "phrases": [
         {
-          "id": "problems-1",
-          "vietnamese": "Tôi bị lạc đường",
-          "english": "I’m lost",
-          "pronunciation": "toy bee lahk doong",
+          "id": "v500-prob-help-where-is-the-nearest-embassy",
+          "vietnamese": "Đại sứ quán gần nhất ở đâu?",
+          "english": "Where is the nearest embassy?",
+          "pronunciation": "Dai su quan gan nhat o dau",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-problems-1",
-          "audioKey": "problems-1"
+          "detailPageID": "viet-phrase-v500-prob-help-where-is-the-nearest-embassy",
+          "audioKey": "v500-prob-help-where-is-the-nearest-embassy"
         },
         {
-          "id": "problems-4",
-          "vietnamese": "Tôi quên đồ rồi",
-          "english": "I left something behind",
-          "pronunciation": "toy gwen doh roy",
+          "id": "v500-prob-help-i-have-contacted-my-embassy",
+          "vietnamese": "Tôi đã liên lạc với đại sứ quán của tôi",
+          "english": "I have contacted my embassy",
+          "pronunciation": "Toi da lien lac voi dai su quan cua toi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-problems-4",
-          "audioKey": "problems-4"
+          "detailPageID": "viet-phrase-v500-prob-help-i-have-contacted-my-embassy",
+          "audioKey": "v500-prob-help-i-have-contacted-my-embassy"
         },
         {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
+          "id": "v500-prob-help-can-i-leave-my-contact-information",
+          "vietnamese": "Tôi có thể để lại thông tin liên lạc của mình được không?",
+          "english": "Can I leave my contact information?",
+          "pronunciation": "Toi co the de lai thong tin lien lac cua minh duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
+          "detailPageID": "viet-phrase-v500-prob-help-can-i-leave-my-contact-information",
+          "audioKey": "v500-prob-help-can-i-leave-my-contact-information"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real problem-solving exchange when help me contact my embassy is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good after lost documents, police reports, airline problems, hospital paperwork, or a serious travel problem."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Name one problem at a time. If the answer is fast, switch to a repeat or write-it-down phrase."
+      "body": "Keep one goal visible: call, address, email, or report. That is easier to act on than the whole story."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Xin hãy giúp tôi liên hệ với đại sứ quán của tôi.",
+      "body": "Need-help, embassy-contact, file-report, police-report, and report-copy phrases cover the next official step.",
       "phrases": [
         {
           "id": "help-need-help-direct",
@@ -145,34 +133,14 @@
           "audioKey": "help-need-help-direct"
         },
         {
-          "id": "help-2",
-          "vietnamese": "Gọi khách sạn giúp tôi",
-          "english": "Please call the hotel for me",
-          "pronunciation": "goy khak san zoop toy",
+          "id": "help-premium-contact-embassy",
+          "vietnamese": "Bạn có thể giúp tôi liên hệ với đại sứ quán được không?",
+          "english": "Can you help me contact the embassy?",
+          "pronunciation": "Ban co the giup toi lien he voi dai su quan duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-help-2",
-          "audioKey": "help-2"
-        },
-        {
-          "id": "help-3",
-          "vietnamese": "Tôi cần quản lý",
-          "english": "I need the manager",
-          "pronunciation": "toy gun kwan lee",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-help-3",
-          "audioKey": "help-3"
-        },
-        {
-          "id": "help-4",
-          "vietnamese": "Tôi bị tính tiền hai lần",
-          "english": "I was charged twice",
-          "pronunciation": "toy bee ting tyen hai lun",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-help-4",
-          "audioKey": "help-4"
+          "detailPageID": "viet-phrase-help-premium-contact-embassy",
+          "audioKey": "help-premium-contact-embassy"
         },
         {
           "id": "help-5",
@@ -183,6 +151,26 @@
           "tintName": "orange",
           "detailPageID": "viet-phrase-help-5",
           "audioKey": "help-5"
+        },
+        {
+          "id": "v900-prob-help-i-need-a-police-report-for-insurance",
+          "vietnamese": "Tôi cần báo cáo của cảnh sát về bảo hiểm",
+          "english": "I need a police report for insurance",
+          "pronunciation": "Toi can bao cao cua canh sat ve bao hiem",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-v900-prob-help-i-need-a-police-report-for-insurance",
+          "audioKey": "v900-prob-help-i-need-a-police-report-for-insurance"
+        },
+        {
+          "id": "v900-prob-help-please-give-me-a-copy-of-the-report",
+          "vietnamese": "Xin vui lòng cho tôi một bản sao của báo cáo",
+          "english": "Please give me a copy of the report",
+          "pronunciation": "Xin vui long cho toi mot ban sao cua bao cao",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-v900-prob-help-please-give-me-a-copy-of-the-report",
+          "audioKey": "v900-prob-help-please-give-me-a-copy-of-the-report"
         }
       ]
     }

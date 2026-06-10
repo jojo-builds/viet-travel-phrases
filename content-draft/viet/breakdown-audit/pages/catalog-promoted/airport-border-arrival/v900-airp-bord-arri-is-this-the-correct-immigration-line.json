@@ -20,45 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đây",
-      "english": "here / this"
+      "vietnamese": "Đây có phải là",
+      "english": "is this",
+      "keepTogetherReason": "is-this question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "đường nhập cư",
+      "english": "immigration line",
+      "keepTogetherReason": "audio-backed immigration-line wording"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "phải",
-      "english": "must / right"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đường",
-      "english": "street"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "nhập cư",
-      "english": "immigration",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "chính xác",
-      "english": "correct / exact",
-      "keepTogetherReason": "compound adjective"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "không?",
-      "english": "yes/no?"
+      "vietnamese": "chính xác không?",
+      "english": "correct?",
+      "keepTogetherReason": "correct yes-no ending"
     },
     {
       "id": "full",

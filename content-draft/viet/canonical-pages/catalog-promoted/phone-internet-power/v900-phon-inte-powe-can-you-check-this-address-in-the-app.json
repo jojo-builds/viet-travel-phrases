@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể kiểm tra địa chỉ này trong ứng dụng không? asks someone to do one helpful action for you. Use it for check this address in the app when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Bạn có thể kiểm tra địa chỉ này trong ứng dụng không?"
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể kiểm tra địa chỉ này trong ứng dụng không? once, then make the task visible with your phone screen, charger, SIM card, Wi-Fi screen, or outlet. The phrase is doing one job: getting a clear answer about check this address in the app.",
+      "body": "Show the app screen before you ask. It lets the other person check the address without guessing what you mean.",
       "phrases": [
         {
           "id": "v900-phon-inte-powe-can-you-check-this-address-in-the-app",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear the main request first; không? turns it into a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -85,7 +85,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you check this address in the app? to another phone, internet, or power need.",
+      "body": "Nearby follow-ups: What is the Wi-Fi password?; Do you sell SIM cards?",
       "phrases": [
         {
           "id": "phone-1",
@@ -122,7 +122,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real phone, internet, or power exchange when check this address in the app is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Best in a SIM shop, hotel desk, or cafe counter, before the explanation gets long. Keep the phone screen, error message, charger, or map app close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -132,7 +132,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể kiểm tra địa chỉ này trong ứng dụng không?.",
+      "body": "Useful if the exchange continues: My phone battery is dead, Do you have a charger, and Can I charge my phone here.",
       "phrases": [
         {
           "id": "phone-3",

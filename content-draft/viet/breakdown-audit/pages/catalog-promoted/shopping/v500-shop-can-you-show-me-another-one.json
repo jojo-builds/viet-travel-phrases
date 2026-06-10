@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-shop-can-you-show-me-another-one",
-  "phraseText": "Bạn có thể cho tôi xem một cái khác được không?",
+  "phraseText": "Cho tôi xem cái khác được không?",
   "englishTitle": "Can you show me another one?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,52 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Cho tôi xem",
+      "english": "show me / let me see",
+      "keepTogetherReason": "request phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "cái khác",
+      "english": "another one",
+      "keepTogetherReason": "shopping item phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "tôi",
-      "english": "me"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "xem",
-      "english": "look / see"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "một cái",
-      "english": "one item",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "khác",
-      "english": "different / another"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "được không?",
       "english": "is that possible?",
       "keepTogetherReason": "fixed yes-no question ending"
     },
     {
       "id": "full",
-      "vietnamese": "Bạn có thể cho tôi xem một cái khác được không?",
+      "vietnamese": "Cho tôi xem cái khác được không?",
       "english": "Can you show me another one?",
-      "audioKey": "v500-shop-can-you-show-me-another-one"
+      "audioKey": "audio-authored-cho-toi-xem-cai-khac-duoc-khong-37cde1cfd5"
     }
   ]
 }

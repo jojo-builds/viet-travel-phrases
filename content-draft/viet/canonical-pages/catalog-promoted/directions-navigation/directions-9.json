@@ -7,7 +7,7 @@
   "title": "Lối ra nào?",
   "englishTitle": "Which exit?",
   "pronunciation": "loy za now",
-  "summary": "Which exit?",
+  "summary": "For choosing the right exit at a station, mall, market, airport, or attraction.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Lối ra nào? helps you choose the right option when several lines, gates, counters, sizes, or routes look similar. It asks for Which exit without making the other person explain everything at once."
+      "body": "Ask when several exits or corridors look similar and you need one clear direction."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Lối ra nào? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Point to the sign, map, ticket, or phone route so the answer can be a gesture.",
       "phrases": [
         {
           "id": "directions-9",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Lối ra means exit; nào? asks which one.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Lối ra",
-          "english": "the exit",
-          "audioKey": null
+          "english": "exit",
+          "keepTogetherReason": "exit noun"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nào",
-          "english": "which / how",
-          "audioKey": null
+          "vietnamese": "nào?",
+          "english": "which one?",
+          "keepTogetherReason": "which-question ending"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Lối ra nào?",
-          "english": "Which exit",
-          "audioKey": null
+          "english": "Which exit?",
+          "audioKey": "directions-9"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Which exit? to another directions need.",
+      "body": "How to get there, near here, and walking time phrases help if the exit answer becomes a route.",
       "phrases": [
         {
           "id": "directions-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real directions exchange when which exit is the detail you need resolved. The likely reply is a choice, counter, gate, line, or direction, so keep the phrase short and ready for one follow-up."
+      "body": "Good at stations, malls, markets, airports, parking areas, museums, and apartment lobbies."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For directions, give the listener one clear anchor. A map or address lets them point instead of explaining everything in fast Vietnamese."
+      "body": "People may answer with a number, color, floor, or finger point. Repeat the landmark if you are unsure."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Lối ra nào?.",
+      "body": "Turn left, turn right, straight ahead, understood, and pickup point phrases cover the next direction step.",
       "phrases": [
         {
           "id": "directions-4",

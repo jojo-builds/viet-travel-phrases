@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-tran-please-wait-while-i-get-in",
-  "phraseText": "Vui lòng đợi trong khi tôi vào",
+  "phraseText": "Vui lòng đợi tôi lên xe",
   "englishTitle": "Please wait while I get in",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -22,38 +22,25 @@
       "id": "chunk-1",
       "vietnamese": "Vui lòng",
       "english": "please",
-      "keepTogetherReason": "fixed polite phrase"
+      "keepTogetherReason": "polite opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đợi",
-      "english": "wait"
+      "vietnamese": "đợi tôi",
+      "english": "wait for me",
+      "keepTogetherReason": "wait-for-me phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "trong",
-      "english": "inside / in"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "khi",
-      "english": "when"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tôi",
-      "english": "I / me"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "vào",
-      "english": "into / enter"
+      "vietnamese": "lên xe",
+      "english": "get in / onto the vehicle",
+      "keepTogetherReason": "vehicle-boarding phrase"
     },
     {
       "id": "full",
-      "vietnamese": "Vui lòng đợi trong khi tôi vào",
+      "vietnamese": "Vui lòng đợi tôi lên xe",
       "english": "Please wait while I get in",
-      "audioKey": "v900-tran-please-wait-while-i-get-in"
+      "audioKey": null
     }
   ]
 }

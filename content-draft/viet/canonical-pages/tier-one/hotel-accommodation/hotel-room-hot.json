@@ -7,7 +7,7 @@
   "title": "Phòng này nóng quá",
   "englishTitle": "This room is too hot",
   "pronunciation": "fong nai nong gwah",
-  "summary": "Phòng này nóng quá means “This room is too hot”.",
+  "summary": "Lead with the room problem before asking for the fix.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Phòng này nóng quá when you need \"This room is too hot\". This is for when the room temperature is the main problem. Lead with the room problem before asking for the fix. Listen for a room-number check, maintenance visit, new key, or room-change option; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Reach for it when the room temperature is the main problem.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Phòng + này carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "hotel-4-piece-1",
@@ -57,12 +59,13 @@
           "audioKey": "hotel-4"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Phòng này nóng quá as your first sentence for \"This room is too hot\". This is for when the room temperature is the main problem. Pause after the phrase and listen for a room-number check, maintenance visit, new key, or room-change option. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Say Phòng này nóng quá first; let the booking, room number, address, or key card support the reply.",
       "phrases": [
         {
           "id": "hotel-4",
@@ -75,18 +78,21 @@
           "audioKey": "hotel-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. For \"This room is too hot\", Phòng này nóng quá makes the next step easier to answer. Have the room number ready and show the item if staff need to inspect it.",
-      "presentation": "plain-text"
+      "body": "A hot room can mean air conditioning, fan, window, or room-change help. Start with the condition, then let staff choose the fix.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Hotel Accommodation, the reply often comes as a room-number check, maintenance visit, new key, or room-change option. Say Phòng này nóng quá once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Expect a remote check, fan, maintenance visit, or another room if the problem persists.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -119,12 +125,13 @@
           "audioKey": "hotel-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when the room temperature is the main problem. It fits front desk, room, check-in, and hotel-service moments, especially when the next step is a room-number check, maintenance visit, new key, or room-change option. Have the room number ready and show the item if staff need to inspect it.",
+      "body": "Best when the room stays hot after you have tried the obvious controls.",
       "phrases": [
         {
           "id": "hotel-checkout",
@@ -157,18 +164,21 @@
           "audioKey": "hotel-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
-      "presentation": "tip-callout"
+      "body": "If the room still does not cool, move to air-conditioner-broken or room-change language.",
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Pair the phrase with a booking screen, key card, room number, or photo of the problem.",
+      "body": "Show the thermostat, remote, or warm room before adding a long explanation.",
       "phrases": [
         {
           "id": "hotel-7",
@@ -191,12 +201,13 @@
           "audioKey": "v500-hote-acco-the-door-does-not-lock"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Keep the conversation close to I have a reservation; I’d like to check in; what time is check-out?",
       "phrases": [
         {
           "id": "hotel-1",
@@ -279,7 +290,8 @@
           "audioKey": "v500-hote-acco-the-door-does-not-lock"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

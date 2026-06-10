@@ -7,7 +7,7 @@
   "title": "Bạn có thể giúp tôi gọi bảo hiểm du lịch của tôi được không?",
   "englishTitle": "Can you help me call my travel insurance?",
   "pronunciation": "Ban co the giup toi goi bao hiem du lich cua toi duoc khong",
-  "summary": "Can you help me call my travel insurance?",
+  "summary": "For asking clinic, hotel, or pharmacy staff to help call your insurer.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể giúp tôi gọi bảo hiểm du lịch của tôi được không? is a friendly way to ask for help with call my travel insurance. It gives the other person a clear job and keeps the conversation focused on the next practical step."
+      "body": "Insurance calls are easier with the policy screen, clinic note, or receipt already open."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể giúp tôi gọi bảo hiểm du lịch của tôi được không? once, then make the task visible with your symptom note, medicine box, body area, photo, or translated note. The phrase is doing one job: getting a clear answer about call my travel insurance.",
+      "body": "Show the insurer name and phone number before you ask. Keep the call simple until someone agrees to help.",
       "phrases": [
         {
           "id": "v900-heal-phar-can-you-help-me-call-my-travel-insurance",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Giúp tôi gọi asks for help making the call; bảo hiểm du lịch is the travel insurance.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you help me call my travel insurance? to another pharmacy or health need.",
+      "body": "Doctor and pharmacy cards stay close if the insurance call sends you to another stop.",
       "phrases": [
         {
           "id": "problems-6",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when call my travel insurance is the detail you need resolved. The likely reply is help, a question back, or a practical next step, so keep the phrase short and ready for one follow-up."
+      "body": "Good at a clinic desk, pharmacy counter, hotel reception, or travel desk after a health problem or lost paperwork."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Do not hand over private codes or payment screens. Let the helper see only the number, policy name, and needed document."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể giúp tôi gọi bảo hiểm du lịch của tôi được không?.",
+      "body": "If the call turns back to symptoms, headache, stomach, allergy, and medicine cards help explain what happened.",
       "phrases": [
         {
           "id": "health-2",

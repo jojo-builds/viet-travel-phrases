@@ -7,7 +7,7 @@
   "title": "Điện thoại tôi hết pin rồi",
   "englishTitle": "My phone battery is dead",
   "pronunciation": "dyen thoai toy het pin roy",
-  "summary": "Điện thoại tôi hết pin rồi means “My phone battery is dead”.",
+  "summary": "This is the short version of a common travel problem.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Điện thoại tôi hết pin rồi when you need \"My phone battery is dead\". This comes before asking for a charger or outlet. This is the short version of a common travel problem. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "This comes before asking for a charger or outlet.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Practice Điện thoại + tôi first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "phone-3-piece-1",
@@ -63,12 +65,13 @@
           "audioKey": "phone-3"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Điện thoại tôi hết pin rồi as your first sentence for \"My phone battery is dead\". This comes before asking for a charger or outlet. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Show the phone screen or error message first so the problem is visible before you add more words.",
+      "body": "Say Điện thoại tôi hết pin rồi in one connected line before adding details. Show the phone screen or error message first so the problem is visible before you add more words.",
       "phrases": [
         {
           "id": "phone-3",
@@ -81,18 +84,21 @@
           "audioKey": "phone-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Phone phrases work best when the other person can see the exact screen or error. For \"My phone battery is dead\", Điện thoại tôi hết pin rồi makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Phone phrases work best when the other person can see the exact screen or error. Keep the phone screen or error message visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Phone, Internet & Power, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Điện thoại tôi hết pin rồi once, pause, and watch for the reply. Show the phone screen or error message first so the problem is visible before you add more words.",
+      "body": "Watch for a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "phone-1",
@@ -125,12 +131,13 @@
           "audioKey": "phone-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This comes before asking for a charger or outlet. It fits Wi-Fi, SIM, battery, charging, maps, and phone setup, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "body": "This comes before asking for a charger or outlet. Watch for a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "phone-5",
@@ -163,13 +170,16 @@
           "audioKey": "audio-authored-toi-co-the-mua-sim-o-dau-2f8ec6bd87"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Show the screen first and keep control of your phone unless the situation feels trustworthy.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -187,12 +197,13 @@
           "audioKey": "v500-phon-inte-powe-i-need-an-esim"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through what is the Wi-Fi password?; do you sell SIM cards?; do you have a charger?",
       "phrases": [
         {
           "id": "phone-1",
@@ -265,7 +276,8 @@
           "audioKey": "v500-phon-inte-powe-i-need-an-esim"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

@@ -7,7 +7,7 @@
   "title": "Bạn có thể gửi email hóa đơn được không?",
   "englishTitle": "Can you email the receipt?",
   "pronunciation": "Ban co the gui email hoa don duoc khong",
-  "summary": "Can you email the receipt?",
+  "summary": "For getting a receipt sent digitally when paper is easy to lose.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể gửi email hóa đơn được không? asks someone to do one helpful action for you. Use it for email the receipt when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "After payment, a digital receipt can be safer than a small slip of paper."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể gửi email hóa đơn được không? once, then make the task visible with your item, menu line, bill, calculator, ticket, or ride screen. The phrase is doing one job: getting a clear answer about email the receipt.",
+      "body": "Show your email address or QR contact if you have one. Then let them confirm whether email is possible.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-can-you-email-the-receipt",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "The line asks for the receipt by email; được không makes it a yes-or-no request.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you email the receipt? to another money or price need.",
+      "body": "Price-checking lines stay nearby if the receipt makes you revisit the total.",
       "phrases": [
         {
           "id": "price-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when email the receipt is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Good when you need proof for expenses, insurance, a refund, or a later booking check."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Ask before leaving the counter; some places can resend it only while the payment screen is open."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể gửi email hóa đơn được không?.",
+      "body": "If the total looks wrong, move to price, discount, or final-price lines before paying again.",
       "phrases": [
         {
           "id": "price-3",

@@ -13,11 +13,14 @@
       "scenarioEligible": false
     },
     "renderedSections": [
-      "Meaning",
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Common follow-ups",
-      "Good to know",
-      "Next phrases"
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "Good to know"
     ],
     "status": "PASS"
   },
@@ -35,11 +38,15 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Other ways",
-      "Common follow-ups",
-      "Good to know",
-      "Next phrases"
+      "Natural variations",
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "Good to know"
     ],
     "status": "PASS"
   },
@@ -269,11 +276,15 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Other ways",
-      "Common follow-ups",
-      "Good to know",
-      "Next phrases"
+      "Natural variations",
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "Good to know"
     ],
     "status": "PASS"
   },
@@ -291,10 +302,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Common follow-ups",
-      "Good to know",
-      "Next phrases"
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "Good to know"
     ],
     "status": "PASS"
   },
@@ -312,11 +327,16 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Other ways",
-      "Common follow-ups",
-      "Good to know",
-      "Next phrases"
+      "Natural variations",
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "You May Hear",
+      "Good to know"
     ],
     "status": "PASS"
   },

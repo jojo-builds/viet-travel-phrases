@@ -7,7 +7,7 @@
   "title": "Đây là trường hợp khẩn cấp",
   "englishTitle": "This is an emergency",
   "pronunciation": "day la troong hop khun kup",
-  "summary": "Đây là trường hợp khẩn cấp means “This is an emergency”.",
+  "summary": "Say it is an emergency before the details if the moment is urgent.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Đây là trường hợp khẩn cấp when you need \"This is an emergency\". This is for when the first thing people need to know is that the situation is urgent. Use the rows below to pick the warmer, safer, or more direct version.",
-      "presentation": "plain-text"
+      "body": "Reach for it when the first thing people need to know is that the situation is urgent.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Use this when you need to identify what something is. The phrase points to the item first, then names it clearly.",
+      "body": "Start with Đây + là; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "emergency-emergency-piece-1",
@@ -57,12 +59,13 @@
           "audioKey": "emergency-emergency"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Đây là trường hợp khẩn cấp as your first sentence for \"This is an emergency\". This is for when the first thing people need to know is that the situation is urgent. Pause after the phrase and listen for a question about what happened, a call for help, or an instruction to wait nearby. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Say Đây là trường hợp khẩn cấp first; let the location, passport copy, photo, injury, or helper contact support the reply.",
       "phrases": [
         {
           "id": "emergency-emergency",
@@ -75,12 +78,13 @@
           "audioKey": "emergency-emergency"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "natural-variations",
       "title": "Natural variations",
-      "body": "This form changes the tone or setting. Use it when the note under the phrase matches the moment.",
+      "body": "Choose help when that wording fits the person or setting better.",
       "phrases": [
         {
           "id": "emergency-5",
@@ -93,18 +97,21 @@
           "audioKey": "emergency-5"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Emergency phrases put the urgent need first so help can move faster. For \"This is an emergency\", Đây là trường hợp khẩn cấp makes the next step easier to answer. After they understand it is urgent, add the location, person, or injury detail they ask for.",
-      "presentation": "plain-text"
+      "body": "A short emergency word can cut through noise when you cannot explain the full problem yet.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Emergency & Safety, the reply often comes as a question about what happened, a call for help, or an instruction to wait nearby. Say Đây là trường hợp khẩn cấp once, pause, and watch for the reply. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "People may ask what happened, where, or who needs help. Show the person, location, or phone screen quickly.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -137,12 +144,13 @@
           "audioKey": "emergency-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when the first thing people need to know is that the situation is urgent. It fits police, ambulance, hospitals, passports, and immediate safety, especially when the next step is a question about what happened, a call for help, or an instruction to wait nearby. After they understand it is urgent, add the location, person, or injury detail they ask for.",
+      "body": "Use it first when the situation is urgent and the exact Vietnamese for the problem is not ready.",
       "phrases": [
         {
           "id": "emergency-4",
@@ -175,13 +183,16 @@
           "audioKey": "v500-emer-safe-i-am-injured"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "In safety moments, clarity matters more than sounding polished. Repeat the phrase if needed.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -209,12 +220,13 @@
           "audioKey": "v500-emer-safe-do-not-touch-me"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover call the police, call an ambulance, and I lost my passport.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -297,7 +309,8 @@
           "audioKey": "v500-emer-safe-do-not-touch-me"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

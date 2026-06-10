@@ -20,36 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đây",
-      "english": "here / this"
+      "vietnamese": "Đây là",
+      "english": "this is",
+      "keepTogetherReason": "this-is phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "là",
-      "english": "is / means"
+      "vietnamese": "hộ chiếu của tôi",
+      "english": "my passport",
+      "keepTogetherReason": "my-passport phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "hộ chiếu",
-      "english": "passport",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "để",
-      "english": "to / in order to"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "nhận phòng",
-      "english": "check in",
-      "keepTogetherReason": "compound hotel phrase"
+      "vietnamese": "để nhận phòng",
+      "english": "for check-in",
+      "keepTogetherReason": "check-in phrase"
     },
     {
       "id": "full",

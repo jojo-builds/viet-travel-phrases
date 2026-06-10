@@ -20,30 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Trang",
-      "english": "page / white"
+      "vietnamese": "Trang đăng nhập Wi-Fi",
+      "english": "Wi-Fi login page",
+      "keepTogetherReason": "Wi-Fi login-page phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đăng nhập",
-      "english": "log in",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "Wi-Fi",
-      "english": "Wi-Fi",
-      "keepTogetherReason": "loanword"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tải.",
-      "english": "load"
+      "vietnamese": "không tải.",
+      "english": "does not load",
+      "keepTogetherReason": "does-not-load phrase"
     },
     {
       "id": "full",

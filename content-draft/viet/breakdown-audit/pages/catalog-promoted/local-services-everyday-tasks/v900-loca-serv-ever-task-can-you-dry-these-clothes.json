@@ -20,54 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "làm khô",
+      "english": "dry",
+      "keepTogetherReason": "drying verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "làm",
-      "english": "do / make"
+      "vietnamese": "những bộ quần áo này",
+      "english": "these clothes",
+      "keepTogetherReason": "these-clothes noun phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "khô",
-      "english": "dry"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "những",
-      "english": "those / plural marker"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "bộ",
-      "english": "set / walk"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "quần",
-      "english": "pants"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "áo",
-      "english": "shirt"
-    },
-    {
-      "id": "chunk-9",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-10",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

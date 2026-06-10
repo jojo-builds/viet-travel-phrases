@@ -7,7 +7,7 @@
   "title": "Có bao nhiêu gigabyte được bao gồm?",
   "englishTitle": "How many gigabytes are included?",
   "pronunciation": "Co bao nhieu gigabyte duoc bao gom",
-  "summary": "How many gigabytes are included?",
+  "summary": "For checking how much mobile data comes with a SIM or eSIM plan.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có bao nhiêu gigabyte được bao gồm? is a practical phone, internet, or power phrase for keeping one travel detail clear. Use it when How many gigabytes are included is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask before paying for a SIM, eSIM, top-up, or tourist data package."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Có bao nhiêu gigabyte được bao gồm?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point to the plan, price card, or phone screen while you ask.",
       "phrases": [
         {
           "id": "v900-phon-inte-powe-how-many-gigabytes-are-included",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có bao nhiêu asks how many; gigabyte is the data amount; được bao gồm means are included.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Có bao nhiêu",
-          "english": "asks how much",
-          "audioKey": null
+          "english": "how many",
+          "keepTogetherReason": "how-many phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "gigabyte được bao gồm",
-          "english": "gigabytes included",
-          "audioKey": null
+          "vietnamese": "gigabyte",
+          "english": "gigabytes",
+          "keepTogetherReason": "data unit"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "được bao gồm?",
+          "english": "are included",
+          "keepTogetherReason": "included phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Có bao nhiêu gigabyte được bao gồm?",
-          "english": "How many gigabytes are included",
-          "audioKey": null
+          "english": "How many gigabytes are included?",
+          "audioKey": "v900-phon-inte-powe-how-many-gigabytes-are-included"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How many gigabytes are included? to another phone, internet, or power need.",
+      "body": "Wi-Fi password and SIM-card follow-ups stay useful if the data plan is not enough.",
       "phrases": [
         {
           "id": "phone-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real phone, internet, or power exchange when how many gigabytes are included is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at airport SIM counters, phone shops, minimarts, hotel desks, and mobile-service stalls."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Phone and Wi-Fi answers can be technical. Let the screen stay visible so the other person can point, type, or check the setting."
+      "body": "Data amounts can sound like prices. Confirm the number on a screen before choosing the plan."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Có bao nhiêu gigabyte được bao gồm?.",
+      "body": "Battery, charger, charging, data top-up, and eSIM follow-ups cover nearby phone problems.",
       "phrases": [
         {
           "id": "phone-3",

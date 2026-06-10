@@ -7,7 +7,7 @@
   "title": "Có phí rút tiền không?",
   "englishTitle": "Is there a withdrawal fee?",
   "pronunciation": "Co phi rut tien khong",
-  "summary": "Is there a withdrawal fee?",
+  "summary": "For checking an ATM or cash-service fee before you withdraw money.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có phí rút tiền không? is a practical money or price phrase for keeping one travel detail clear. Use it when Is there a withdrawal fee is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it before confirming an ATM withdrawal, exchange-counter cash service, or card cash advance."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Có phí rút tiền không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point to the ATM screen, fee line, or amount first. Ask before you press confirm.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-is-there-a-withdrawal-fee",
@@ -42,38 +42,39 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có phí rút tiền không asks whether there is a withdrawal fee.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Có phí rút",
-          "english": "fee",
+          "vietnamese": "Có",
+          "english": "is there",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tiền",
-          "english": "money",
+          "vietnamese": "phí rút tiền",
+          "english": "withdrawal fee",
+          "keepTogetherReason": "ATM fee phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "không?",
+          "english": "yes/no?",
           "audioKey": null
         },
         {
           "id": "chunk-4",
           "vietnamese": "Có phí rút tiền không?",
           "english": "Is there a withdrawal fee",
-          "audioKey": null
+          "audioKey": "v900-mone-numb-pric-is-there-a-withdrawal-fee"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is there a withdrawal fee? to another money or price need.",
+      "body": "If the fee is unclear, ask final total, smaller bills, card fee, or refund difference next.",
       "phrases": [
         {
           "id": "price-1",
@@ -110,17 +111,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when is there a withdrawal fee is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at ATMs, banks, hotel desks, exchange counters, and convenience-store cash services."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+      "body": "ATM screens may show several fees. Check both the local fee and your bank's warning before accepting."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Có phí rút tiền không?.",
+      "body": "Use ATM, final price, smaller bills, card fee, or receipt follow-ups if the money question has another step.",
       "phrases": [
         {
           "id": "price-3",

@@ -21,19 +21,14 @@
     {
       "id": "chunk-1",
       "vietnamese": "Đi xe máy",
-      "english": "go by motorbike",
-      "keepTogetherReason": "compound verb"
+      "english": "by motorbike",
+      "keepTogetherReason": "motorbike-travel phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "mất",
-      "english": "takes / lose"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "bao lâu?",
-      "english": "how long",
-      "keepTogetherReason": "fixed duration question"
+      "vietnamese": "mất bao lâu?",
+      "english": "takes how long?",
+      "keepTogetherReason": "how-long ending"
     },
     {
       "id": "full",

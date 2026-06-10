@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể gõ nó trên điện thoại của bạn? asks someone to do one helpful action for you. Use it for type it on your phone when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Bạn có thể gõ nó trên điện thoại của bạn?"
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể gõ nó trên điện thoại của bạn? once, then make the task visible with your phone, note, map, translation screen, number, or written address. The phrase is doing one job: getting a clear answer about type it on your phone.",
+      "body": "A short question is enough here; use the word, screen, address, or written note for the follow-up.",
       "phrases": [
         {
           "id": "repair-premium-type-phone",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Start with Bạn có thể + gõ nó trên; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you type it on your phone? to another understanding check need.",
+      "body": "Nearby follow-ups: I don’t understand, Can you speak a little slower, and Could you speak a little slower, please.",
       "phrases": [
         {
           "id": "problems-2",
@@ -116,7 +116,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real understanding check exchange when type it on your phone is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Best in any moment where speech is not landing, before the explanation gets long. Keep the word, screen, address, or written note close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể gõ nó trên điện thoại của bạn?.",
+      "body": "These follow-ups cover slower speech, writing, pointing, or confirmation: Please say that again, Please write it down, and What does that mean?",
       "phrases": [
         {
           "id": "repair-1",

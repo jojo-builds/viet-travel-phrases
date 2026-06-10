@@ -7,7 +7,7 @@
   "title": "Hãy đánh thức tôi lúc sáu giờ nhé",
   "englishTitle": "Please wake me up at six",
   "pronunciation": "Hay danh thuc toi luc sau gio nhe",
-  "summary": "Please wake me up at six",
+  "summary": "For asking the hotel to arrange a six o'clock wake-up call.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy đánh thức tôi lúc sáu giờ nhé is a practical hotel or stay phrase for keeping one travel detail clear. Use it when wake me up at six is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask at the front desk the night before an early pickup, flight, train, or tour."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hãy đánh thức tôi lúc sáu giờ nhé. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Show the time on your phone and confirm morning if there is any doubt.",
       "phrases": [
         {
           "id": "v900-hote-acco-please-wake-me-up-at-six",
@@ -42,32 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hãy đánh thức means please wake; tôi means me; lúc sáu giờ means at six o'clock; nhé softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Hãy đánh thức",
-          "english": "please do",
-          "audioKey": null
+          "english": "please wake",
+          "keepTogetherReason": "wake-up request"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tôi lúc sáu giờ nhé",
-          "english": "wake me up at six",
-          "audioKey": null
+          "vietnamese": "tôi",
+          "english": "me",
+          "keepTogetherReason": "object pronoun"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "lúc sáu giờ",
+          "english": "at six o'clock",
+          "keepTogetherReason": "time phrase"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "nhé",
+          "english": "softens the request",
+          "keepTogetherReason": "softening particle"
+        },
+        {
+          "id": "full",
           "vietnamese": "Hãy đánh thức tôi lúc sáu giờ nhé",
           "english": "Please wake me up at six",
-          "audioKey": null
+          "audioKey": "v900-hote-acco-please-wake-me-up-at-six"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please wake me up at six to another hotel or stay need.",
+      "body": "Reservation and check-in cards help if the desk needs to attach the wake-up call to your room.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -104,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when wake me up at six is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good for hotels and guesthouses before an early departure or tour pickup."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "Six can be repeated back as a number. Listen for sáu giờ or point to 6:00."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hãy đánh thức tôi lúc sáu giờ nhé.",
+      "body": "Checkout-time, quiet-room, checkout, hot-room, and air-conditioner cards cover nearby front-desk needs.",
       "phrases": [
         {
           "id": "hotel-3",

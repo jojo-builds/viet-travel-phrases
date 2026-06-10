@@ -7,7 +7,7 @@
   "title": "Sáng mai",
   "englishTitle": "Tomorrow morning",
   "pronunciation": "sahng mai",
-  "summary": "Sáng mai means “Tomorrow morning”.",
+  "summary": "Short date anchors keep booking conversations simple.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Sáng mai when you need \"Tomorrow morning\". This is for when confirming tomorrow-morning timing without a full sentence. Short date anchors keep booking conversations simple. Listen for a short reply, a smile, a time, or a light follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Reach for it when confirming tomorrow-morning timing without a full sentence.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Sáng + mai carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "time-3-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "time-3"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Sáng mai as your first sentence for \"Tomorrow morning\". This is for when confirming tomorrow-morning timing without a full sentence. Pause after the phrase and listen for a short reply, a smile, a time, or a light follow-up question. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Say Sáng mai first; let the date, time, ticket, booking, or address support the reply.",
       "phrases": [
         {
           "id": "time-3",
@@ -63,18 +66,21 @@
           "audioKey": "time-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Time phrases prevent missed pickups, bookings, and closing times. For \"Tomorrow morning\", Sáng mai makes the next step easier to answer. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
-      "presentation": "plain-text"
+      "body": "Time phrases prevent missed pickups, bookings, and closing times. Keep the booking, room number, date, or address visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Time, Dates & Booking, the reply often comes as a short reply, a smile, a time, or a light follow-up question. Say Sáng mai once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Watch for a short reply, a smile, a time, or light follow-up question. Move to the follow-up card that matches time, date, ticket, or pickup detail.",
       "phrases": [
         {
           "id": "time-1",
@@ -107,12 +113,13 @@
           "audioKey": "time-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when confirming tomorrow-morning timing without a full sentence. It fits times, dates, tickets, waits, and bookings, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
+      "body": "Reach for it when confirming tomorrow-morning timing without a full sentence. Watch for a smile, a time, or light follow-up question.",
       "phrases": [
         {
           "id": "time-5",
@@ -145,13 +152,16 @@
           "audioKey": "v500-time-date-book-one-ticket-please"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Morning, afternoon, and tomorrow can be easy to mix up. Repeat the date or show it if the booking matters.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -169,12 +179,13 @@
           "audioKey": "time-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through what time?; today; I have a booking.",
       "phrases": [
         {
           "id": "time-1",
@@ -237,7 +248,8 @@
           "audioKey": "v500-time-date-book-one-ticket-please"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

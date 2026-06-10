@@ -7,7 +7,7 @@
   "title": "Đồn cảnh sát ở đâu?",
   "englishTitle": "Where is the police station?",
   "pronunciation": "Don canh sat o dau",
-  "summary": "Where is the police station?",
+  "summary": "For finding the police station when a report, lost item, or safety issue needs an official desk.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đồn cảnh sát ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names police station in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Ask for the station, then be ready to show the map, hotel card, photo, or last known location."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Đồn cảnh sát ở đâu?. Show your phone screen, receipt, item, photo, or the place where the issue is happening, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Keep it direct. If the situation is urgent, say you need help now before asking for directions.",
       "phrases": [
         {
           "id": "v500-prob-help-where-is-the-police-station",
@@ -42,32 +42,34 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đồn cảnh sát means police station; ở đâu asks where.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Đồn cảnh sát",
-          "english": "the police station",
+          "english": "police station",
+          "keepTogetherReason": "police-station phrase",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "ở đâu",
+          "vietnamese": "ở đâu?",
           "english": "where?",
+          "keepTogetherReason": "where question",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "Đồn cảnh sát ở đâu?",
-          "english": "Where is the police station",
-          "audioKey": null
+          "english": "Where is the police station?",
+          "audioKey": "v500-prob-help-where-is-the-police-station"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where is the police station? to another problem-solving need.",
+      "body": "If the first answer is not enough, move to lost, left-something, contact-information, or call-hotel follow-ups.",
       "phrases": [
         {
           "id": "problems-1",
@@ -90,31 +92,31 @@
           "audioKey": "problems-4"
         },
         {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
+          "id": "v500-prob-help-can-i-leave-my-contact-information",
+          "vietnamese": "Tôi có thể để lại thông tin liên lạc của mình được không?",
+          "english": "Can I leave my contact information?",
+          "pronunciation": "Toi co the de lai thong tin lien lac cua minh duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
+          "detailPageID": "viet-phrase-v500-prob-help-can-i-leave-my-contact-information",
+          "audioKey": "v500-prob-help-can-i-leave-my-contact-information"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits moment when something is unclear, not working, missing, or needs help, especially when police station can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Good at hotel desks, shop counters, transport desks, or with someone helping you find official help."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+      "body": "Staff may point you to a ward-level station or suggest calling first. A hotel address can help."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Đồn cảnh sát ở đâu?.",
+      "body": "Use need-help, hotel-call, manager, report, or contact-information follow-ups once you reach the right desk.",
       "phrases": [
         {
           "id": "help-need-help-direct",

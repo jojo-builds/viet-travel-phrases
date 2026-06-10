@@ -20,45 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Khu vực",
-      "english": "area",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "Khu vực này",
+      "english": "this area",
+      "keepTogetherReason": "this-area phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "này",
-      "english": "this"
+      "vietnamese": "có an toàn",
+      "english": "is safe",
+      "keepTogetherReason": "safe yes-no phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "vào ban đêm",
+      "english": "at night",
+      "keepTogetherReason": "at-night phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "an toàn",
-      "english": "safe",
-      "keepTogetherReason": "compound adjective"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "vào",
-      "english": "into / enter"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "ban",
-      "english": "you"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "đêm",
-      "english": "night"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

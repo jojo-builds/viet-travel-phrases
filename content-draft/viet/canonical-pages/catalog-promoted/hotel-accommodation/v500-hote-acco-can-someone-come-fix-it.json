@@ -7,7 +7,7 @@
   "title": "Ai đó có thể đến sửa nó được không?",
   "englishTitle": "Can someone come fix it?",
   "pronunciation": "Ai do co the den sua no duoc khong",
-  "summary": "Can someone come fix it?",
+  "summary": "For asking the hotel or guesthouse to send someone to fix a room problem.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Ai đó có thể đến sửa nó được không? is a practical hotel or stay phrase for keeping one travel detail clear. Use it when Can someone come fix it is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it when the room issue needs a person, not just an explanation at the desk."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Ai đó có thể đến sửa nó được không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say the request, then show the room number, photo, or broken item. Keep the problem visible if you can.",
       "phrases": [
         {
           "id": "v500-hote-acco-can-someone-come-fix-it",
@@ -42,44 +42,55 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Ai đó means someone; có thể means can; đến sửa means come fix; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Ai đó có",
-          "english": "can someone",
+          "vietnamese": "Ai đó",
+          "english": "someone",
+          "keepTogetherReason": "someone phrase",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể đến sửa",
-          "english": "to / arrive at",
+          "vietnamese": "có thể",
+          "english": "can",
+          "keepTogetherReason": "can phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "nó",
-          "english": "it",
+          "vietnamese": "đến sửa",
+          "english": "come fix",
+          "keepTogetherReason": "come-fix phrase",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
+          "vietnamese": "nó",
+          "english": "it",
+          "keepTogetherReason": "object pronoun",
           "audioKey": null
         },
         {
           "id": "chunk-5",
-          "vietnamese": "Ai đó có thể đến sửa nó được không?",
-          "english": "Can someone come fix it",
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending",
           "audioKey": null
+        },
+        {
+          "id": "chunk-6",
+          "vietnamese": "Ai đó có thể đến sửa nó được không?",
+          "english": "Can someone come fix it?",
+          "audioKey": "v500-hote-acco-can-someone-come-fix-it"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can someone come fix it? to another hotel or stay need.",
+      "body": "If staff need detail, move to toilet, shower, air conditioner, door lock, or room-too-hot follow-ups.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -116,17 +127,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when can someone come fix it is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good for toilets, showers, locks, lights, air conditioning, safes, and room fixtures that need maintenance."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "A photo helps if the desk is busy. It shows the problem before the explanation gets long."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Ai đó có thể đến sửa nó được không?.",
+      "body": "Use toilet, shower, aircon, door-lock, room-hot, or front-desk cards if the repair needs more detail.",
       "phrases": [
         {
           "id": "hotel-3",

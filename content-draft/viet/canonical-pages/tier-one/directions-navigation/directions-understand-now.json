@@ -7,7 +7,7 @@
   "title": "Cảm ơn, tôi hiểu rồi",
   "englishTitle": "Thanks, I understand now",
   "pronunciation": "kahm uhn toy hyew roy",
-  "summary": "Cảm ơn, tôi hiểu rồi is a common way to say “Thanks, I understand now” in Vietnamese.",
+  "summary": "This is useful when the other person kept helping and you want to end the exchange cleanly.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Cảm ơn, tôi hiểu rồi when you need \"Thanks, I understand now\". This is for when the directions finally make sense and you are ready to move. This is useful when the other person kept helping and you want to end the exchange cleanly. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Reach for it when the directions finally make sense and you are ready to move.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Start with Cảm ơn, + tôi; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "directions-7-piece-1",
@@ -57,12 +59,13 @@
           "audioKey": "directions-7"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Cảm ơn, tôi hiểu rồi as your first sentence for \"Thanks, I understand now\". This is for when the directions finally make sense and you are ready to move. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Say Cảm ơn, tôi hiểu rồi clearly; show the map location, address, station name, or sign only if the reply needs detail.",
       "phrases": [
         {
           "id": "directions-7",
@@ -75,18 +78,21 @@
           "audioKey": "directions-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Direction phrases turn a vague travel problem into a specific next step. For \"Thanks, I understand now\", Cảm ơn, tôi hiểu rồi makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Direction phrases turn a vague travel problem into a specific next step. Keep the map, address, or destination visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Directions & Navigation, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Cảm ơn, tôi hiểu rồi once, pause, and watch for the reply. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Watch for a clear reply, a pointed detail, or simple follow-up. Move to the follow-up card that matches distance, direction, or transit choice.",
       "phrases": [
         {
           "id": "directions-1",
@@ -119,12 +125,13 @@
           "audioKey": "directions-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when the directions finally make sense and you are ready to move. It fits finding places, turns, distance, and walking directions, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "body": "Reach for it when the directions finally make sense and you are ready to move. Watch for a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "directions-4",
@@ -157,13 +164,16 @@
           "audioKey": "directions-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "If the answer is long, ask them to point or type it. Street directions can be hard to catch by ear.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -181,12 +191,13 @@
           "audioKey": "v500-dire-navi-where-is-the-nearest-restroom"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Keep the conversation close to excuse me, how do I get there?; is it near here?; how long does it take on foot?",
       "phrases": [
         {
           "id": "directions-1",
@@ -259,7 +270,8 @@
           "audioKey": "v500-dire-navi-where-is-the-nearest-restroom"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

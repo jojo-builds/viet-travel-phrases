@@ -7,7 +7,7 @@
   "title": "Hãy gọi xe cấp cứu",
   "englishTitle": "Please call an ambulance",
   "pronunciation": "Hay goi xe cap cuu",
-  "summary": "Please call an ambulance",
+  "summary": "For asking someone nearby to call an ambulance during a medical emergency.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy gọi xe cấp cứu is a practical safety or urgent-help phrase for keeping one travel detail clear. Use it when call an ambulance is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say the request first, then show the injured person, location, hotel card, or translated emergency note."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hãy gọi xe cấp cứu. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Point to the person who needs help and keep the sentence short. The goal is action, not a full explanation.",
       "phrases": [
         {
           "id": "v500-emer-safe-please-call-an-ambulance",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hãy gọi means please call; xe cấp cứu means ambulance.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy gọi xe",
-          "english": "call",
-          "audioKey": null
+          "vietnamese": "Hãy gọi",
+          "english": "please call",
+          "keepTogetherReason": "call request"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cấp cứu",
-          "english": "an ambulance",
-          "audioKey": null
+          "vietnamese": "xe cấp cứu",
+          "english": "ambulance",
+          "keepTogetherReason": "ambulance phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Hãy gọi xe cấp cứu",
           "english": "Please call an ambulance",
-          "audioKey": null
+          "audioKey": "v500-emer-safe-please-call-an-ambulance"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please call an ambulance to another safety or urgent-help need.",
+      "body": "Police, ambulance, and lost-passport cards cover the urgent help options nearby.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real safety or urgent-help exchange when call an ambulance is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Use it with hotel staff, guards, clinic workers, drivers, or anyone nearby who can make the emergency call."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "In an emergency, the clearest phrase is the best phrase. Let the other person ask follow-up questions after they understand."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hãy gọi xe cấp cứu.",
+      "body": "Unsafe, emergency, help, hospital, and stolen-bag cards cover the next safety handoff.",
       "phrases": [
         {
           "id": "emergency-4",

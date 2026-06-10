@@ -7,7 +7,7 @@
   "title": "Bạn có thể giúp tôi tìm nó được không?",
   "englishTitle": "Can you help me look for it?",
   "pronunciation": "Ban co the giup toi tim no duoc khong",
-  "summary": "Can you help me look for it?",
+  "summary": "For asking staff or a nearby helper to help search for something you lost there.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể giúp tôi tìm nó được không? is a friendly way to ask for help with look for it. It gives the other person a clear job and keeps the conversation focused on the next practical step."
+      "body": "Use it while pointing to the last place, table, room, car, shelf, or photo."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể giúp tôi tìm nó được không? once, then make the task visible with your phone screen, receipt, item, photo, or the place where the issue is happening. The phrase is doing one job: getting a clear answer about look for it.",
+      "body": "Keep the item description short, then show a picture, receipt, or last location.",
       "phrases": [
         {
           "id": "v500-prob-help-can-you-help-me-look-for-it",
@@ -42,44 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể means can you; giúp tôi tìm nó means help me look for it; được không? softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "giúp tôi tìm",
-          "english": "help me",
-          "audioKey": null
+          "vietnamese": "giúp tôi tìm nó",
+          "english": "help me look for it",
+          "keepTogetherReason": "help-look-for-it phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "nó",
-          "english": "it",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Bạn có thể giúp tôi tìm nó được không?",
-          "english": "Can you help me look for it",
-          "audioKey": null
+          "english": "Can you help me look for it?",
+          "audioKey": "v500-prob-help-can-you-help-me-look-for-it"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you help me look for it? to another problem-solving need.",
+      "body": "I'm lost and I left something behind help if the search becomes a clearer report.",
       "phrases": [
         {
           "id": "problems-1",
@@ -100,33 +94,23 @@
           "tintName": "orange",
           "detailPageID": "viet-phrase-problems-4",
           "audioKey": "problems-4"
-        },
-        {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real problem-solving exchange when look for it is the detail you need resolved. The likely reply is help, a question back, or a practical next step, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotels, cafes, taxis, shops, stations, and security desks."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "People can help faster if you name the item, last place, and time in one short sequence."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể giúp tôi tìm nó được không?.",
+      "body": "Use I need help, please call the hotel, manager, charged-twice, and report phrases if the search becomes a recovery path.",
       "phrases": [
         {
           "id": "help-need-help-direct",

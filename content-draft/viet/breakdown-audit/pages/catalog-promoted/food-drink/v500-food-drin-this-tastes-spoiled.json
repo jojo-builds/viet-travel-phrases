@@ -20,33 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Cái",
-      "english": "item / classifier"
+      "vietnamese": "Cái này",
+      "english": "this",
+      "keepTogetherReason": "this phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "này",
-      "english": "this"
+      "vietnamese": "có vị",
+      "english": "tastes",
+      "keepTogetherReason": "taste phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "vị",
-      "english": "taste / position"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "hư",
-      "english": "spoiled / broken"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "hỏng",
-      "english": "broken / damaged"
+      "vietnamese": "hư hỏng",
+      "english": "spoiled",
+      "keepTogetherReason": "spoiled adjective"
     },
     {
       "id": "full",

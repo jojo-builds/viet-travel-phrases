@@ -7,7 +7,7 @@
   "title": "Hãy gọi tên tôi khi nó sẵn sàng",
   "englishTitle": "Please call my name when it is ready",
   "pronunciation": "Hay goi ten toi khi no san sang",
-  "summary": "Please call my name when it is ready",
+  "summary": "For waiting nearby instead of hovering at the counter.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy gọi tên tôi khi nó sẵn sàng is a practical time, date, or booking phrase for keeping one travel detail clear. Use it when call my name when it is ready is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Food, tickets, laundry, documents, and bookings can all need a name called when they are ready."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hãy gọi tên tôi khi nó sẵn sàng. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Give the name first, then ask. Point to the order slip, booking, or counter number if there is one.",
       "phrases": [
         {
           "id": "v900-time-date-book-please-call-my-name-when-it-is-ready",
@@ -42,22 +42,52 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Gọi tên tôi means call my name; khi nó sẵn sàng means when it is ready.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy gọi tên",
-          "english": "call",
+          "vietnamese": "Hãy",
+          "english": "please",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tôi khi nó sẵn sàng",
-          "english": "call my name when it is ready",
+          "vietnamese": "gọi",
+          "english": "call",
           "audioKey": null
         },
         {
           "id": "chunk-3",
+          "vietnamese": "tên",
+          "english": "name",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "tôi",
+          "english": "me",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "khi",
+          "english": "when",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-6",
+          "vietnamese": "nó",
+          "english": "it",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-7",
+          "vietnamese": "sẵn sàng",
+          "english": "ready",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-8",
           "vietnamese": "Hãy gọi tên tôi khi nó sẵn sàng",
           "english": "Please call my name when it is ready",
           "audioKey": null
@@ -67,7 +97,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please call my name when it is ready to another time, date, or booking need.",
+      "body": "Time cards help if they answer with a pickup time instead of calling your name.",
       "phrases": [
         {
           "id": "time-1",
@@ -104,17 +134,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when call my name when it is ready is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at cafes, clinics, laundry counters, ticket desks, tour desks, and hotel lobbies when you can wait nearby."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "If the counter is noisy, show the written name or order slip. It saves them from calling the wrong person."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hãy gọi tên tôi khi nó sẵn sàng.",
+      "body": "Booking, opening-time, move-later, boarding-start, and wait cards cover the timing follow-up.",
       "phrases": [
         {
           "id": "time-4",

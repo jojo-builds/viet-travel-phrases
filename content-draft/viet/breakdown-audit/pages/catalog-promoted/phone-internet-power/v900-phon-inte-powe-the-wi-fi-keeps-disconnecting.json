@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-phon-inte-powe-the-wi-fi-keeps-disconnecting",
-  "phraseText": "Wi-Fi liên tục bị ngắt kết nối",
+  "phraseText": "Wi-Fi cứ bị ngắt kết nối",
   "englishTitle": "The Wi-Fi keeps disconnecting",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -22,29 +22,25 @@
       "id": "chunk-1",
       "vietnamese": "Wi-Fi",
       "english": "Wi-Fi",
-      "keepTogetherReason": "loanword"
+      "keepTogetherReason": "connection name"
     },
     {
-      "vietnamese": "liên tục",
-      "english": "continuously / keeps",
-      "keepTogetherReason": "compound frequency adverb"
+      "id": "chunk-2",
+      "vietnamese": "cứ bị",
+      "english": "keeps getting",
+      "keepTogetherReason": "repeated-problem phrase"
     },
     {
-      "id": "chunk-4",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "id": "chunk-5",
+      "id": "chunk-3",
       "vietnamese": "ngắt kết nối",
-      "english": "disconnect",
-      "keepTogetherReason": "compound verb"
+      "english": "disconnected",
+      "keepTogetherReason": "disconnect phrase"
     },
     {
       "id": "full",
-      "vietnamese": "Wi-Fi liên tục bị ngắt kết nối",
+      "vietnamese": "Wi-Fi cứ bị ngắt kết nối",
       "english": "The Wi-Fi keeps disconnecting",
-      "audioKey": "v900-phon-inte-powe-the-wi-fi-keeps-disconnecting"
+      "audioKey": null
     }
   ]
 }

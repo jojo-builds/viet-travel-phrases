@@ -7,7 +7,7 @@
   "title": "Món này có trứng hay đậu phộng không?",
   "englishTitle": "Does this have egg or peanuts?",
   "pronunciation": "mon nai koh choong hai dow fohng khong",
-  "summary": "A focused guide to when Món này có trứng hay đậu phộng không? sounds more natural than Tôi bị dị ứng đậu phộng.",
+  "summary": "Ask about egg or peanuts when the exact ingredient matters before you eat.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -18,75 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Món này có trứng hay đậu phộng không? is useful when \"Does this have egg or peanuts?\" needs a slightly different tone or setting. Use this after the allergy warning when you need to check the ingredients directly.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "breakdown",
-      "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
-      "breakdown": [
-        {
-          "id": "food-15-piece-1",
-          "vietnamese": "Món",
-          "english": "dish",
-          "audioKey": "breakdown-food-premium-too-spicy-now-first"
-        },
-        {
-          "id": "food-15-piece-2",
-          "vietnamese": "này",
-          "english": "this",
-          "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2"
-        },
-        {
-          "id": "food-15-piece-3",
-          "vietnamese": "có",
-          "english": "have / yes",
-          "audioKey": "breakdown-food-5-first"
-        },
-        {
-          "id": "food-15-piece-4",
-          "vietnamese": "trứng",
-          "english": "egg",
-          "audioKey": "breakdown-authored-trung-7e4461a3f9"
-        },
-        {
-          "id": "food-15-piece-5",
-          "vietnamese": "hay",
-          "english": "or",
-          "audioKey": "breakdown-authored-hay-ebddd6b268"
-        },
-        {
-          "id": "food-15-piece-6",
-          "vietnamese": "đậu",
-          "english": "bean / peanut",
-          "audioKey": "breakdown-authored-dau-9b24b3d631"
-        },
-        {
-          "id": "food-15-piece-7",
-          "vietnamese": "phộng",
-          "english": "peanut",
-          "audioKey": "breakdown-authored-phong-a47787ffce"
-        },
-        {
-          "id": "food-15-piece-8",
-          "vietnamese": "không?",
-          "english": "asks yes or no",
-          "audioKey": "breakdown-bath-6-piece-6"
-        },
-        {
-          "id": "food-15-full",
-          "vietnamese": "Món này có trứng hay đậu phộng không?",
-          "english": "Does this have egg or peanuts?",
-          "audioKey": "food-15"
-        }
-      ],
-      "presentation": "breakdown-strip"
+      "body": "Use this before ordering or eating when egg or peanuts would change the decision.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Món này có trứng hay đậu phộng không? when \"Does this have egg or peanuts?\" is the exact tone or situation you want.",
+      "body": "Say this while pointing at a dish, menu photo, or tray.",
       "phrases": [
         {
           "id": "food-15",
@@ -99,18 +39,71 @@
           "audioKey": "food-15"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "Use this after the allergy warning when you need to check the ingredients directly. Use Tôi bị dị ứng đậu phộng when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
-      "presentation": "plain-text"
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Món này means this dish; có asks whether it contains something; trứng hay đậu phộng names egg or peanuts.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Món",
+          "english": "dish",
+          "audioKey": "breakdown-food-premium-too-spicy-now-first"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "này",
+          "english": "this",
+          "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "có",
+          "english": "have / there is",
+          "audioKey": "breakdown-food-5-first"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "trứng",
+          "english": "egg",
+          "audioKey": "breakdown-authored-trung-7e4461a3f9"
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "hay",
+          "english": "or",
+          "audioKey": "breakdown-authored-hay-ebddd6b268"
+        },
+        {
+          "id": "chunk-6",
+          "vietnamese": "đậu phộng",
+          "english": "peanuts",
+          "audioKey": null,
+          "keepTogetherReason": "compound food allergy term"
+        },
+        {
+          "id": "chunk-8",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "audioKey": "breakdown-bath-6-piece-6"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Món này có trứng hay đậu phộng không?",
+          "english": "Does this have egg or peanuts?",
+          "audioKey": "food-15"
+        }
+      ],
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Food & Drink, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Món này có trứng hay đậu phộng không? once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "For serious allergies, keep the allergy phrase visible too. This line is an ingredient check, not a full medical warning.",
       "phrases": [
         {
           "id": "food-peanut-allergy",
@@ -123,101 +116,114 @@
           "audioKey": "food-peanut-allergy"
         },
         {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
+          "id": "food-vegetarian",
+          "vietnamese": "Tôi ăn chay",
+          "english": "I am vegetarian",
+          "pronunciation": "toy an chai",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-coffee-milk",
-          "audioKey": "coffee-1"
+          "detailPageID": "viet-family-food-vegetarian",
+          "audioKey": "food-vegetarian"
         },
         {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
+          "id": "food-premium-no-meat",
+          "vietnamese": "Làm ơn đừng có thịt.",
+          "english": "No meat, please.",
+          "pronunciation": "Lam on dung co thit",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-coffee-black",
-          "audioKey": "coffee-2"
+          "detailPageID": "viet-phrase-food-premium-no-meat",
+          "audioKey": "food-premium-no-meat"
+        },
+        {
+          "id": "food-premium-without-this-ingredient",
+          "vietnamese": "Bạn có thể làm món này không có nguyên liệu này được không?",
+          "english": "Can you make it without this ingredient?",
+          "pronunciation": "Ban co the lam mon nay khong co nguyen lieu nay duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-food-premium-without-this-ingredient",
+          "audioKey": null
+        },
+        {
+          "id": "food-premium-which-dish-safe",
+          "vietnamese": "Món ăn nào an toàn nhất cho người bị dị ứng này?",
+          "english": "Which dish is safest for this allergy?",
+          "pronunciation": "Mon an nao an toan nhat cho nguoi bi di ung nay",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-food-premium-which-dish-safe",
+          "audioKey": "food-premium-which-dish-safe"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Best when the ingredient matters and you need a yes/no answer before choosing.",
+      "presentation": "plain-text",
+      "phrases": [
+        {
+          "id": "v900-food-drin-is-this-pork-beef-or-chicken",
+          "vietnamese": "Đây là thịt lợn, thịt bò hay thịt gà?",
+          "english": "Is this pork, beef, or chicken?",
+          "pronunciation": "Day la thit lon thit bo hay thit ga",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-is-this-pork-beef-or-chicken",
+          "audioKey": "v900-food-drin-is-this-pork-beef-or-chicken"
+        },
+        {
+          "id": "v500-food-drin-does-this-contain-shrimp",
+          "vietnamese": "Cái này có chứa tôm không?",
+          "english": "Does this contain shrimp?",
+          "pronunciation": "Cai nay co chua tom khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v500-food-drin-does-this-contain-shrimp",
+          "audioKey": "v500-food-drin-does-this-contain-shrimp"
+        }
+      ],
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "tip-callout"
+      "body": "For allergies, wait for a clear answer and choose another dish if the kitchen seems unsure.",
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Nearby phrases keep the conversation moving after this one.",
+      "body": "Keep allergy, vegetarian, not-spicy, and bill phrases nearby for the rest of the meal.",
       "phrases": [
         {
-          "id": "food-peanut-allergy",
-          "vietnamese": "Tôi bị dị ứng đậu phộng",
-          "english": "I am allergic to peanuts",
-          "pronunciation": "toy bee zee oong dow fohng",
+          "id": "food-premium-has-peanuts",
+          "vietnamese": "Cái này có đậu phộng không?",
+          "english": "Does this have peanuts?",
+          "pronunciation": "Cai nay co dau phong khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-peanut-allergy",
-          "audioKey": "food-peanut-allergy"
+          "detailPageID": "viet-phrase-food-premium-has-peanuts",
+          "audioKey": "food-premium-has-peanuts"
         },
         {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
+          "id": "v900-food-drin-does-this-contain-fish-sauce",
+          "vietnamese": "Cái này có nước mắm không?",
+          "english": "Does this contain fish sauce?",
+          "pronunciation": "Cai nay co nuoc mam khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-coffee-milk",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-coffee-black",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-coffee-bac-xiu",
-          "audioKey": "coffee-3"
-        },
-        {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-less-ice",
-          "audioKey": "coffee-4"
-        },
-        {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-no-sugar",
-          "audioKey": "coffee-5"
+          "detailPageID": "viet-phrase-v900-food-drin-does-this-contain-fish-sauce",
+          "audioKey": "v900-food-drin-does-this-contain-fish-sauce"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

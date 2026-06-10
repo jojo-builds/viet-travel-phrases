@@ -7,7 +7,7 @@
   "title": "Tôi mua nhầm kích thước",
   "englishTitle": "I bought the wrong size",
   "pronunciation": "Toi mua nham kich thuoc",
-  "summary": "I bought the wrong size",
+  "summary": "For explaining that the item you bought is the wrong size before asking about an exchange.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi mua nhầm kích thước is a practical shopping phrase for keeping one travel detail clear. Use it when I bought the wrong size is the next detail to solve and a short answer would move the exchange forward."
+      "body": "The purchase is already made; the receipt, tag, and item need to be visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi mua nhầm kích thước. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the item and receipt together. Then point to the size tag or the fit problem.",
       "phrases": [
         {
           "id": "v900-shop-i-bought-the-wrong-size",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi mua means I bought; nhầm means by mistake; kích thước means size.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi mua nhầm",
-          "english": "buy",
-          "audioKey": null
+          "vietnamese": "Tôi mua",
+          "english": "I bought",
+          "keepTogetherReason": "I-bought phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "kích thước",
-          "english": "medicine",
-          "audioKey": null
+          "vietnamese": "nhầm",
+          "english": "by mistake",
+          "keepTogetherReason": "mistake marker"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "kích thước",
+          "english": "size",
+          "keepTogetherReason": "size phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Tôi mua nhầm kích thước",
           "english": "I bought the wrong size",
-          "audioKey": null
+          "audioKey": "v900-shop-i-bought-the-wrong-size"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I bought the wrong size to another shopping need.",
+      "body": "Size, color, and try-on phrases help narrow the same item without starting over.",
       "phrases": [
         {
           "id": "shop-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real shopping exchange when i bought the wrong size is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at a shop counter soon after buying clothes, sandals, raincoats, helmets, or packed goods."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "In shops and markets, the object is the anchor. Point clearly, then listen for the number or option."
+      "body": "A quick exchange is easier when the item is unused and the bag or receipt is still with you."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi mua nhầm kích thước.",
+      "body": "Looking, pay-where, exchange, price, and lower-price phrases cover the next shop move.",
       "phrases": [
         {
           "id": "shop-4",

@@ -1,0 +1,13 @@
+{
+  "sourceFilesChecked": 93,
+  "updatedFiles": 93,
+  "updatedSections": 602,
+  "ledgerRows": 602,
+  "beforeTotalCards": 1003,
+  "afterTotalCards": 779,
+  "netCardChange": -224,
+  "pagesWithLowerSourceCardCount": 87,
+  "removedPhraseCards": 837,
+  "addedPhraseCards": 645,
+  "antiThinningNote": "Source was mirrored from the cleaned rendered app surface. Removed cards were stale/wrong-context or duplicate-rendered support cards; the rendered app keeps every page carded and increases total visible phrase cards versus the pre-repair audit."
+}

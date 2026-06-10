@@ -20,36 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể mua",
+      "english": "where can I buy",
+      "keepTogetherReason": "can-I-buy question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "sạc dự phòng",
+      "english": "power bank",
+      "keepTogetherReason": "power-bank phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "mua",
-      "english": "buy"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "sạc",
-      "english": "charge"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "dự phòng",
-      "english": "backup / spare",
-      "keepTogetherReason": "compound adjective"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "ở đâu?",
-      "english": "where",
-      "keepTogetherReason": "fixed place question"
+      "english": "where?",
+      "keepTogetherReason": "where ending"
     },
     {
       "id": "full",

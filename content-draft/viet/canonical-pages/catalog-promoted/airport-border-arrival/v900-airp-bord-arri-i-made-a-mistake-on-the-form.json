@@ -7,7 +7,7 @@
   "title": "Tôi đã mắc lỗi trong biểu mẫu",
   "englishTitle": "I made a mistake on the form",
   "pronunciation": "Toi da mac loi trong bieu mau",
-  "summary": "I made a mistake on the form",
+  "summary": "For telling airport, immigration, airline, or hotel staff that a form needs correction.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi đã mắc lỗi trong biểu mẫu is a practical airport arrival phrase for keeping one travel detail clear. Use it when I made a mistake on the form is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say it before handing the form over for final processing, especially if the passport or booking detail is wrong.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi đã mắc lỗi trong biểu mẫu. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point to the exact field. Staff need to know the mistake, not hear a long apology.",
       "phrases": [
         {
           "id": "v900-airp-bord-arri-i-made-a-mistake-on-the-form",
@@ -42,38 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi đã mắc lỗi means I made a mistake; trong biểu mẫu means on the form.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi đã mắc",
-          "english": "I made",
-          "audioKey": null
+          "vietnamese": "Tôi đã mắc lỗi",
+          "english": "I made a mistake",
+          "keepTogetherReason": "made-a-mistake phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "lỗi trong biểu",
-          "english": "mistake on the form",
-          "audioKey": null
+          "vietnamese": "trong biểu mẫu",
+          "english": "on the form",
+          "keepTogetherReason": "on-the-form phrase"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "mẫu",
-          "english": "color",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi đã mắc lỗi trong biểu mẫu",
           "english": "I made a mistake on the form",
-          "audioKey": null
+          "audioKey": "v900-airp-bord-arri-i-made-a-mistake-on-the-form"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I made a mistake on the form to another airport arrival need.",
+      "body": "Immigration, baggage-claim, and SIM-card cards help if the form issue sends you back into arrivals.",
       "phrases": [
         {
           "id": "airport-1",
@@ -110,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real airport arrival exchange when i made a mistake on the form is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at immigration, airline desks, baggage reports, hotel check-in, visa forms, and tour paperwork.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Airport staff and drivers are used to short, practical questions. Keep the document or phone screen visible so they can answer quickly."
+      "body": "Ask before crossing out or rewriting a form; some counters need a clean copy.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi đã mắc lỗi trong biểu mẫu.",
+      "body": "Pickup-area, driver-meet, missing-bag, domestic-terminal, and visa cards cover nearby airport follow-ups.",
       "phrases": [
         {
           "id": "airport-5",

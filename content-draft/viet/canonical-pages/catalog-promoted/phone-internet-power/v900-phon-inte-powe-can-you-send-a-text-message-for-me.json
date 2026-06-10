@@ -7,7 +7,7 @@
   "title": "Bạn có thể gửi tin nhắn văn bản cho tôi được không?",
   "englishTitle": "Can you send a text message for me?",
   "pronunciation": "Ban co the gui tin nhan van ban cho toi duoc khong",
-  "summary": "Can you send a text message for me?",
+  "summary": "For asking someone to send a short SMS when your phone setup is stuck.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể gửi tin nhắn văn bản cho tôi được không? asks someone to do one helpful action for you. Use it for send a text message for me when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "A local number, booking contact, driver, or hotel may need a text when your phone cannot send one."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể gửi tin nhắn văn bản cho tôi được không? once, then make the task visible with your phone screen, charger, SIM card, Wi-Fi screen, or outlet. The phrase is doing one job: getting a clear answer about send a text message for me.",
+      "body": "Show the number and the message. Keep it short enough that the other person can check it before sending.",
       "phrases": [
         {
           "id": "v900-phon-inte-powe-can-you-send-a-text-message-for-me",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "The phrase asks for help sending a text message on your behalf; được không keeps it polite.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -85,7 +85,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you send a text message for me? to another phone, internet, or power need.",
+      "body": "Wi-Fi and SIM questions stay nearby if the message problem turns into a connection problem.",
       "phrases": [
         {
           "id": "phone-1",
@@ -122,17 +122,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real phone, internet, or power exchange when send a text message for me is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotel desks, SIM shops, tour counters, and cafe counters when a call is too much."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Do not hand over private codes; read one-time passwords yourself and keep sensitive messages visible to you."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể gửi tin nhắn văn bản cho tôi được không?.",
+      "body": "If the issue is battery, charger, or data, these phone lines cover the next practical fix.",
       "phrases": [
         {
           "id": "phone-3",

@@ -20,27 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Ứng dụng",
-      "english": "app",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "Ứng dụng bản đồ của tôi",
+      "english": "my map app",
+      "keepTogetherReason": "my-map-app phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bản đồ",
-      "english": "map",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "không hoạt động",
-      "english": "not working",
-      "keepTogetherReason": "fixed negative phrase"
+      "english": "is not working",
+      "keepTogetherReason": "not-working phrase"
     },
     {
       "id": "full",

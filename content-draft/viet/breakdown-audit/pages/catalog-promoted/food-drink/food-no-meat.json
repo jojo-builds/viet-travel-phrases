@@ -26,18 +26,9 @@
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đừng",
-      "english": "do not"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "thịt.",
-      "english": "meat"
+      "vietnamese": "đừng có thịt.",
+      "english": "do not include meat",
+      "keepTogetherReason": "no-meat phrase"
     },
     {
       "id": "full",

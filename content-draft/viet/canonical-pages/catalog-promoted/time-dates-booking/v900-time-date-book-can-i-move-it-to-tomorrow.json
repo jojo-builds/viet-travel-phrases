@@ -7,7 +7,7 @@
   "title": "Tôi có thể chuyển nó sang ngày mai được không?",
   "englishTitle": "Can I move it to tomorrow?",
   "pronunciation": "Toi co the chuyen no sang ngay mai duoc khong",
-  "summary": "Can I move it to tomorrow?",
+  "summary": "For moving a booking, ticket, appointment, or pickup to the next day.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể chuyển nó sang ngày mai được không? is for asking permission before you act. It is useful when move it to tomorrow depends on local rules, staff approval, or the right way to use a space or service."
+      "body": "A plan may be possible tomorrow only if seats, staff, weather, or a time slot still works."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có thể chuyển nó sang ngày mai được không? once, then make the task visible with your booking screen, ticket, calendar, time, line, or confirmation message. The phrase is doing one job: getting a clear answer about move it to tomorrow.",
+      "body": "Show the current date or booking first. Ask before explaining why you need the change.",
       "phrases": [
         {
           "id": "v900-time-date-book-can-i-move-it-to-tomorrow",
@@ -42,18 +42,18 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Chuyển nó means move it; sang ngày mai means to tomorrow.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể chuyển nó",
-          "english": "move it to tomorrow",
+          "vietnamese": "chuyển nó",
+          "english": "move it",
           "audioKey": null
         },
         {
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can I move it to tomorrow? to another time, date, or booking need.",
+      "body": "Time lines help if they answer with a different available hour or day.",
       "phrases": [
         {
           "id": "time-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when move it to tomorrow is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+      "body": "Good at booking desks, tour counters, clinics, hotel desks, and chat threads when today's plan no longer works."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Ask about change fees before agreeing; tomorrow may have a different price or availability."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể chuyển nó sang ngày mai được không?.",
+      "body": "Booking, opening-time, later-time, boarding-start, and wait lines help lock in the new slot.",
       "phrases": [
         {
           "id": "time-4",

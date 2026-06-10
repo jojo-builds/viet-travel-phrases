@@ -20,50 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "chỉ ra",
+      "english": "point out",
+      "keepTogetherReason": "point-out verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "chỉ",
-      "english": "show / point"
+      "vietnamese": "một điểm mốc gần đó",
+      "english": "a nearby landmark",
+      "keepTogetherReason": "nearby-landmark noun phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "ra",
-      "english": "out"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "điểm mốc",
-      "english": "landmark",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "gần",
-      "english": "near"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "đó",
-      "english": "that"
-    },
-    {
-      "id": "chunk-9",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

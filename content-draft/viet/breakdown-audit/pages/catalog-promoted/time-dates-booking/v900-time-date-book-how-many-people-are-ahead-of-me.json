@@ -20,40 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Có",
-      "english": "have / there is"
+      "vietnamese": "Có bao nhiêu",
+      "english": "how many",
+      "keepTogetherReason": "how-many phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bao nhiêu",
-      "english": "how much / how many",
-      "keepTogetherReason": "fixed amount question"
+      "vietnamese": "người",
+      "english": "people",
+      "keepTogetherReason": "people noun"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "người",
-      "english": "person"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "đang ở",
-      "english": "am staying at / am at",
-      "keepTogetherReason": "compound verb phrase"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "phía",
-      "english": "side / direction"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "trước",
-      "english": "before / front"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "tôi?",
-      "english": "I / me"
+      "vietnamese": "đang ở phía trước tôi?",
+      "english": "are ahead of me?",
+      "keepTogetherReason": "ahead-of-me phrase"
     },
     {
       "id": "full",

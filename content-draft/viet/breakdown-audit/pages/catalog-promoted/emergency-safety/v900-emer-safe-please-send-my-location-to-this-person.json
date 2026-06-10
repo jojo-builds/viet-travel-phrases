@@ -20,45 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Vui lòng",
-      "english": "please",
-      "keepTogetherReason": "fixed polite phrase"
+      "vietnamese": "Vui lòng gửi",
+      "english": "please send",
+      "keepTogetherReason": "please-send phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "gửi",
-      "english": "send"
+      "vietnamese": "vị trí của tôi",
+      "english": "my location",
+      "keepTogetherReason": "my-location phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "vị",
-      "english": "taste / position"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "trí",
-      "english": "location / mind"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "người",
-      "english": "person"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "này",
-      "english": "this"
+      "vietnamese": "cho người này",
+      "english": "to this person",
+      "keepTogetherReason": "to-this-person phrase"
     },
     {
       "id": "full",

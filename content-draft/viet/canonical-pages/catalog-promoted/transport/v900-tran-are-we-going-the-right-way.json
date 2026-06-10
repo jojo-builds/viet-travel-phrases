@@ -7,7 +7,7 @@
   "title": "Chúng ta có đang đi đúng hướng không?",
   "englishTitle": "Are we going the right way?",
   "pronunciation": "Chung ta co dang di dung huong khong",
-  "summary": "Are we going the right way?",
+  "summary": "Check the route calmly when the driver turns away from the map or expected road.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Chúng ta có đang đi đúng hướng không? is a practical transport phrase for keeping one travel detail clear. Use it when Are we going the right way is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use this when the route looks strange but you want to ask without accusing the driver."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Chúng ta có đang đi đúng hướng không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the map route or destination after you ask, not before.",
       "phrases": [
         {
           "id": "v900-tran-are-we-going-the-right-way",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đúng hướng means the right direction; không? keeps it as a check.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Are we going the right way? to another transport need.",
+      "body": "Destination phrases help if you need to restate where you are going.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when are we going the right way is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best in a taxi, Grab, private car, or motorbike ride when the route starts to feel wrong."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "A visible map usually makes this easier than repeating the destination."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Chúng ta có đang đi đúng hướng không?.",
+      "body": "Stop, route, air-con, waiting, and cash phrases cover the next ride decisions.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

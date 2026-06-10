@@ -20,19 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Cái",
-      "english": "item / classifier"
+      "vietnamese": "Cái này",
+      "english": "this one",
+      "keepTogetherReason": "this-one phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "bị hỏng",
-      "english": "is broken / damaged",
-      "keepTogetherReason": "fixed problem phrase"
+      "english": "is damaged",
+      "keepTogetherReason": "damaged phrase"
     },
     {
       "id": "full",

@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Giá thuê một ngày là bao nhiêu? is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on rental per day, so the answer can be a number, calculator screen, or typed price."
+      "body": "Ask before renting a motorbike, bicycle, room, or gear for a full day. Confirm whether the number includes deposit, insurance, fuel, or late return."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Ask Giá thuê một ngày là bao nhiêu? before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "body": "A short question is enough here; use the destination, fare, or ride screen for the follow-up.",
       "phrases": [
         {
           "id": "v900-tran-how-much-is-the-rental-per-day",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Giá thuê một + ngày là, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How much is the rental per day? to another transport need.",
+      "body": "Keep close by: Take me here, Go to District 1, and You can stop here.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+      "body": "Use it before signing or leaving your passport. The daily price and deposit should be separate in your head."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "Rental prices often come with conditions; ask what the number includes."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Giá thuê một ngày là bao nhiêu?.",
+      "body": "These follow-ups cover price, route, pickup, or payment: Please stop right here, Go this way, and Please turn on the air conditioning.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

@@ -20,24 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi không",
+      "english": "I do not",
+      "keepTogetherReason": "I-do-not phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "không",
-      "english": "no / not"
+      "vietnamese": "ăn",
+      "english": "eat",
+      "keepTogetherReason": "eat verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "ăn",
-      "english": "eat"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "thịt bò",
       "english": "beef",
-      "keepTogetherReason": "compound food term"
+      "keepTogetherReason": "beef phrase"
     },
     {
       "id": "full",

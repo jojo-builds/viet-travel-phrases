@@ -7,7 +7,7 @@
   "title": "Bữa sáng lúc mấy giờ?",
   "englishTitle": "What time is breakfast?",
   "pronunciation": "Bua sang luc may gio",
-  "summary": "What time is breakfast?",
+  "summary": "For checking the hotel breakfast time before you plan the morning.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bữa sáng lúc mấy giờ? is for confirming the time or date before you commit. It helps turn What time is breakfast into one clear answer you can check against a ticket, booking, calendar, or meeting point."
+      "body": "Ask at check-in, the front desk, or breakfast-room entrance. A room number or booking screen may help staff answer."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bữa sáng lúc mấy giờ? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Keep the question short and listen for the hour range. If the answer is fast, ask them to write or show the time.",
       "phrases": [
         {
           "id": "v500-hote-acco-what-time-is-breakfast",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bữa sáng means breakfast; lúc asks at what time; mấy giờ asks which hour.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bữa sáng lúc",
-          "english": "breakfast is at",
-          "audioKey": null
+          "vietnamese": "Bữa sáng",
+          "english": "breakfast",
+          "keepTogetherReason": "breakfast noun"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "mấy giờ",
-          "english": "asks what time",
-          "audioKey": null
+          "vietnamese": "lúc mấy giờ?",
+          "english": "at what time?",
+          "keepTogetherReason": "time question"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Bữa sáng lúc mấy giờ?",
-          "english": "What time is breakfast",
-          "audioKey": null
+          "english": "What time is breakfast?",
+          "audioKey": "v500-hote-acco-what-time-is-breakfast"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from What time is breakfast? to another hotel or stay need.",
+      "body": "Reservation, check-in, and polite check-in cards help if the breakfast question starts at the desk.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when what time is breakfast is the detail you need resolved. The likely reply is a time, date, or schedule detail, so keep the phrase short and ready for one follow-up."
+      "body": "Use it before early tours, airport rides, or checkout mornings when breakfast timing changes the plan."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "Some stays have a breakfast window, not one exact time. Confirm the last serving time if the morning is tight."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bữa sáng lúc mấy giờ?.",
+      "body": "Checkout-time, quiet-room, checkout, hot-room, and air-conditioner cards cover nearby hotel logistics.",
       "phrases": [
         {
           "id": "hotel-3",

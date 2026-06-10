@@ -20,38 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có",
+      "english": "do you have",
+      "keepTogetherReason": "do-you-have phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "cái này",
+      "english": "this item",
+      "keepTogetherReason": "this-item phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "cái",
-      "english": "item / classifier"
+      "vietnamese": "màu đen",
+      "english": "black",
+      "keepTogetherReason": "black color phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "màu",
-      "english": "color"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "đen",
-      "english": "black"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

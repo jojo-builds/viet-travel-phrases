@@ -4,10 +4,10 @@
   "phraseID": "v500-heal-phar-i-am-pregnant",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "tôi đang mang thai",
+  "title": "Tôi đang mang thai",
   "englishTitle": "I am pregnant",
-  "pronunciation": "toi dang mang thai",
-  "summary": "I am pregnant",
+  "pronunciation": "Toi dang mang thai",
+  "summary": "For telling a pharmacist or clinician you are pregnant before advice or medicine.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,18 +20,18 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "tôi đang mang thai is a practical pharmacy or health phrase for keeping one travel detail clear. Use it when I am pregnant is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say it early, before medicine, X-rays, injections, or strong treatment advice."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: tôi đang mang thai. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Keep the line simple. Show any prescription, symptom note, or gestational-week detail if you have it.",
       "phrases": [
         {
           "id": "v500-heal-phar-i-am-pregnant",
-          "vietnamese": "tôi đang mang thai",
+          "vietnamese": "Tôi đang mang thai",
           "english": "I am pregnant",
-          "pronunciation": "toi dang mang thai",
+          "pronunciation": "Toi dang mang thai",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
           "detailPageID": null,
@@ -42,21 +42,25 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi đang means I am; mang thai means pregnant.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "tôi đang",
-          "english": "I am"
+          "vietnamese": "Tôi đang",
+          "english": "I am",
+          "keepTogetherReason": "current-state phrase",
+          "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "mang thai",
-          "english": "pregnant"
+          "english": "pregnant",
+          "keepTogetherReason": "pregnancy phrase",
+          "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "tôi đang mang thai",
+          "vietnamese": "Tôi đang mang thai",
           "english": "I am pregnant",
           "audioKey": "v500-heal-phar-i-am-pregnant"
         }
@@ -65,7 +69,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I am pregnant to another pharmacy or health need.",
+      "body": "If the answer changes, ask allergy, medicine, doctor, receipt, or clinic follow-ups.",
       "phrases": [
         {
           "id": "problems-6",
@@ -102,17 +106,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when i am pregnant is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at pharmacies, clinics, hospitals, hotel desks, and with guides helping translate health details."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "You do not need to explain everything first. This one fact can change which medicine is safe."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after tôi đang mang thai.",
+      "body": "Use doctor, allergy, medicine, pharmacy, or medical-report follow-ups if the staff needs more context.",
       "phrases": [
         {
           "id": "health-2",
@@ -170,9 +174,9 @@
   "examples": [
     {
       "id": "v500-heal-phar-i-am-pregnant",
-      "vietnamese": "tôi đang mang thai",
+      "vietnamese": "Tôi đang mang thai",
       "english": "I am pregnant",
-      "pronunciation": "toi dang mang thai",
+      "pronunciation": "Toi dang mang thai",
       "symbolName": "speaker.wave.2.fill",
       "tintName": "red",
       "detailPageID": null,

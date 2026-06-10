@@ -21,34 +21,26 @@
     {
       "id": "chunk-1",
       "vietnamese": "Chỉ",
-      "english": "show / point"
+      "english": "point / show",
+      "keepTogetherReason": "show verb"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "trên",
-      "english": "on / above"
+      "vietnamese": "trên bản đồ",
+      "english": "on the map",
+      "keepTogetherReason": "map phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "bản đồ",
-      "english": "map",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "giúp tôi",
+      "english": "help me",
+      "keepTogetherReason": "help-me phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "giúp",
-      "english": "help"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tôi",
-      "english": "me"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Chuyến tàu cuối cùng về lúc mấy giờ? is for confirming the time or date before you commit. It helps turn What time is the last boat back into one clear answer you can check against a ticket, booking, calendar, or meeting point."
+      "body": "Ask this before you commit to the return trip. Keep the ticket, pier sign, or schedule visible so the answer is a time you can check."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Chuyến tàu cuối cùng về lúc mấy giờ? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "A short question is enough here; use the destination, fare, or ride screen for the follow-up.",
       "phrases": [
         {
           "id": "v900-tran-what-time-is-the-last-boat-back",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Chuyến tàu cuối + cùng về lúc, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from What time is the last boat back? to another transport need.",
+      "body": "Useful if the exchange continues: Take me here, Go to District 1, and You can stop here.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when what time is the last boat back is the detail you need resolved. The likely reply is a time, date, or schedule detail, so keep the phrase short and ready for one follow-up."
+      "body": "Best in a taxi, motorbike pickup, or station counter, before the explanation gets long. Keep the destination, fare, or ride screen close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Chuyến tàu cuối cùng về lúc mấy giờ?.",
+      "body": "If the exchange continues, please stop right here, go this way, and please turn on the air conditioning can carry the next detail.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

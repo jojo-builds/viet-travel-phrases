@@ -7,7 +7,7 @@
   "title": "Tôi cần đặt trước không?",
   "englishTitle": "Do I need to book in advance?",
   "pronunciation": "toy gun dat chooc khong",
-  "summary": "Do I need to book in advance?",
+  "summary": "For checking whether a tour, ticket, or attraction needs a reservation before you show up.",
   "iconName": "camera.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần đặt trước không? checks whether a step is required before you spend time on it. It is helpful for forms, tickets, bookings, queues, and documents because the answer can be a simple yes or no."
+      "body": "Ask before walking to the entrance or committing to a time slot."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần đặt trước không? once, then make the task visible with your ticket, map, attraction name, booking screen, or meeting point sign. The phrase is doing one job: getting a clear answer about book in advance.",
+      "body": "Point to the tour, ticket window, map location, or date so the answer is about this plan.",
       "phrases": [
         {
           "id": "sight-6",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi cần means do I need; đặt trước means book in advance; không? makes it yes/no.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi cần",
-          "english": "I need",
-          "audioKey": null
+          "english": "do I need / I need",
+          "keepTogetherReason": "need-question frame"
         },
         {
           "id": "chunk-2",
           "vietnamese": "đặt trước",
-          "english": "book / reserve",
-          "audioKey": null
+          "english": "book in advance",
+          "keepTogetherReason": "advance-booking phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi cần đặt trước không?",
-          "english": "Do I need to book in advance",
-          "audioKey": null
+          "english": "Do I need to book in advance?",
+          "audioKey": "sight-6"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Do I need to book in advance? to another sightseeing or activities need.",
+      "body": "Ticket price, start time, and photo-permission phrases help if booking is not needed.",
       "phrases": [
         {
           "id": "sight-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real sightseeing or activities exchange when book in advance is the detail you need resolved. The likely reply is yes/no, a form, a document, or the next step, so keep the phrase short and ready for one follow-up."
+      "body": "Good at tour desks, museums, boats, cooking classes, buses, and popular attractions."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "If the answer is yes, ask about time, price, or where to book before leaving the counter."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi cần đặt trước không?.",
+      "body": "Ask what time it closes, where the meeting point is, where the entrance is, or where to buy tickets next.",
       "phrases": [
         {
           "id": "sight-4",

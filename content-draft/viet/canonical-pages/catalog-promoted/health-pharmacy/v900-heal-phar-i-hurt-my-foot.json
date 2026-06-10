@@ -7,7 +7,7 @@
   "title": "Tôi bị thương ở chân",
   "englishTitle": "I hurt my foot",
   "pronunciation": "Toi bi thuong o chan",
-  "summary": "I hurt my foot",
+  "summary": "For explaining a foot or lower-leg injury at a pharmacy, clinic, hotel desk, or tour stop.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi bị thương ở chân is a practical pharmacy or health phrase for keeping one travel detail clear. Use it when I hurt my foot is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Point to the injured foot, shoe, swelling, scrape, or walking problem while you say it."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi bị thương ở chân. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Keep the line simple. If staff ask, show where it hurts, when it happened, and whether you can walk.",
       "phrases": [
         {
           "id": "v900-heal-phar-i-hurt-my-foot",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi bị thương means I am injured; ở chân points to the foot or leg area.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi bị",
-          "english": "I have / got",
-          "audioKey": null
+          "vietnamese": "Tôi bị thương",
+          "english": "I am injured",
+          "keepTogetherReason": "injury phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thương ở chân",
-          "english": "foot injury",
-          "audioKey": null
+          "vietnamese": "ở chân",
+          "english": "in the foot or leg",
+          "keepTogetherReason": "foot-leg area phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi bị thương ở chân",
           "english": "I hurt my foot",
-          "audioKey": null
+          "audioKey": "v900-heal-phar-i-hurt-my-foot"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I hurt my foot to another pharmacy or health need.",
+      "body": "Doctor and pharmacy-location cards help if the person sends you somewhere else for care.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when i hurt my foot is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good after a fall, motorbike scrape, long walk, beach cut, blister, or twisted ankle."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "If you cannot put weight on it, switch to doctor, hospital, or transport help instead of treating it like a small pharmacy errand."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi bị thương ở chân.",
+      "body": "Headache, stomach, motion-sickness, allergy, and diarrhea cards cover other symptom conversations.",
       "phrases": [
         {
           "id": "health-2",

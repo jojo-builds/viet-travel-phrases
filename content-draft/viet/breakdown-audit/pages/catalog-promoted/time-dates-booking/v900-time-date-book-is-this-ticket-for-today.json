@@ -20,44 +20,26 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đây",
-      "english": "here / this"
+      "vietnamese": "Đây có phải là",
+      "english": "is this",
+      "keepTogetherReason": "is-this question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "phải",
-      "english": "must / right"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "vé",
       "english": "ticket"
     },
     {
-      "id": "chunk-6",
-      "vietnamese": "cho",
-      "english": "to / for"
+      "id": "chunk-3",
+      "vietnamese": "cho ngày hôm nay",
+      "english": "for today",
+      "keepTogetherReason": "for-today phrase"
     },
     {
-      "id": "chunk-7",
-      "vietnamese": "ngày hôm nay",
-      "english": "today",
-      "keepTogetherReason": "fixed time phrase"
-    },
-    {
-      "id": "chunk-8",
+      "id": "chunk-4",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

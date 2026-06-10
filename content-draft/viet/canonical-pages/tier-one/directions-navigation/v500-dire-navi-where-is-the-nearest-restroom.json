@@ -7,7 +7,7 @@
   "title": "Nhà vệ sinh gần nhất ở đâu?",
   "englishTitle": "Where is the nearest restroom?",
   "pronunciation": "Nha ve sinh gan nhat o dau",
-  "summary": "Nhà vệ sinh gần nhất ở đâu? means “Where is the nearest restroom?”",
+  "summary": "Ask this when you need where is the nearest restroom.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -18,8 +18,10 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Nhà vệ sinh gần nhất ở đâu? when you need \"Where is the nearest restroom\". Use this while walking, checking a route, or confirming the exact turn, stop, or entrance. Listen for a point, short direction, nearby option, or counter name; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Nhà vệ sinh gần nhất ở đâu? keeps the direction question short. Use this while walking, checking a route, or confirming the exact turn, stop, or entrance.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
@@ -51,12 +53,13 @@
           "audioKey": "v500-dire-navi-where-is-the-nearest-restroom"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Nhà vệ sinh gần nhất ở đâu? as your first sentence for \"Where is the nearest restroom\". Use this while walking, checking a route, or confirming the exact turn, stop, or entrance. Pause after the phrase and listen for a point, short direction, nearby option, or counter name. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Keep the map location, address, station name, or sign visible so the reply can be a point, number, or short correction.",
       "phrases": [
         {
           "id": "v500-dire-navi-where-is-the-nearest-restroom",
@@ -69,18 +72,21 @@
           "audioKey": "v500-dire-navi-where-is-the-nearest-restroom"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Direction phrases turn a vague travel problem into a specific next step. For \"Where is the nearest restroom\", Nhà vệ sinh gần nhất ở đâu? makes the next step easier to answer. If the answer is longer than a point or nearby stop, ask them to show it on your phone.",
-      "presentation": "plain-text"
+      "body": "Direction phrases turn a vague travel problem into a specific next step. Keep the map, address, or destination visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Directions & Navigation, the reply often comes as a point, short direction, nearby option, or counter name. Say Nhà vệ sinh gần nhất ở đâu? once, pause, and watch for the reply. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Watch for a point, short direction, nearby option, or counter name. Say Nhà vệ sinh gần nhất ở đâu?",
       "phrases": [
         {
           "id": "directions-1",
@@ -113,12 +119,13 @@
           "audioKey": "directions-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this while walking, checking a route, or confirming the exact turn, stop, or entrance. It fits finding places, turns, distance, and walking directions, especially when the next step is a point, short direction, nearby option, or counter name. If the answer is longer than a point or nearby stop, ask them to show it on your phone.",
+      "body": "Use this while walking, checking a route, or confirming the exact turn, stop, or entrance. Watch for a point, short direction, nearby option, or counter name.",
       "phrases": [
         {
           "id": "directions-4",
@@ -151,13 +158,16 @@
           "audioKey": "directions-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "If the answer is long, ask them to point or type it. Street directions can be hard to catch by ear.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -175,12 +185,13 @@
           "audioKey": "directions-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through excuse me, how do I get there?; is it near here?; how long does it take on foot?",
       "phrases": [
         {
           "id": "directions-1",
@@ -253,7 +264,8 @@
           "audioKey": "directions-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

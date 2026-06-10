@@ -7,7 +7,7 @@
   "title": "Hãy chỉ cho tôi cách bắt đầu nó",
   "englishTitle": "Please show me how to start it",
   "pronunciation": "Hay chi cho toi cach bat dau no",
-  "summary": "Please show me how to start it",
+  "summary": "For asking staff to demonstrate how to start a rental bike, scooter, appliance, or machine.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy chỉ cho tôi cách bắt đầu nó is a practical transport phrase for keeping one travel detail clear. Use it when show me how to start it is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask before leaving the counter if the controls are unfamiliar."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hãy chỉ cho tôi cách bắt đầu nó. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Hold the key, button, or handlebar area in view while they show you.",
       "phrases": [
         {
           "id": "v900-tran-please-show-me-how-to-start-it",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hãy chỉ cho tôi means please show me; cách bắt đầu means how to start; nó means it.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy chỉ cho",
-          "english": "please do",
-          "audioKey": null
+          "vietnamese": "Hãy chỉ cho tôi",
+          "english": "please show me",
+          "keepTogetherReason": "show-me request"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tôi cách bắt đầu nó",
-          "english": "how to start it",
-          "audioKey": null
+          "vietnamese": "cách bắt đầu",
+          "english": "how to start",
+          "keepTogetherReason": "how-to-start phrase"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "nó",
+          "english": "it",
+          "keepTogetherReason": "object pronoun"
+        },
+        {
+          "id": "full",
           "vietnamese": "Hãy chỉ cho tôi cách bắt đầu nó",
           "english": "Please show me how to start it",
-          "audioKey": null
+          "audioKey": "v900-tran-please-show-me-how-to-start-it"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please show me how to start it to another transport need.",
+      "body": "Taxi and stop-here cards help if you decide not to ride or need another way to leave.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when show me how to start it is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at motorbike rentals, scooter counters, ferry gear desks, hotel equipment desks, and activity rentals."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "A demonstration is better than a long explanation here. Try it once while staff are still nearby."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hãy chỉ cho tôi cách bắt đầu nó.",
+      "body": "Stop-here, route, air-conditioning, wait, and cash cards cover nearby transport needs.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

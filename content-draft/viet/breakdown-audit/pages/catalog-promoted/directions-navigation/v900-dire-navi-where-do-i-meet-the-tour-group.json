@@ -20,30 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi gặp",
+      "english": "I meet",
+      "keepTogetherReason": "meet phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "gặp",
-      "english": "meet"
+      "vietnamese": "nhóm du lịch",
+      "english": "tour group",
+      "keepTogetherReason": "tour-group phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nhóm",
-      "english": "group"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "du lịch",
-      "english": "tourism / travel",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "ở đâu?",
-      "english": "where",
-      "keepTogetherReason": "fixed place question"
+      "english": "where?",
+      "keepTogetherReason": "where ending"
     },
     {
       "id": "full",

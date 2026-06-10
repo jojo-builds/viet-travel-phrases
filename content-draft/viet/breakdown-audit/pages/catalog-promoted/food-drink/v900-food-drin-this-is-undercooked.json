@@ -20,34 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Món",
-      "english": "dish"
+      "vietnamese": "Món này",
+      "english": "this dish",
+      "keepTogetherReason": "this-dish phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "chưa",
-      "english": "not yet / already?"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "được",
-      "english": "possible / okay"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "nấu chín",
-      "english": "cooked",
-      "keepTogetherReason": "compound adjective"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "kỹ",
-      "english": "thoroughly"
+      "vietnamese": "chưa được nấu chín kỹ",
+      "english": "not cooked thoroughly yet",
+      "keepTogetherReason": "undercooked phrase"
     },
     {
       "id": "full",

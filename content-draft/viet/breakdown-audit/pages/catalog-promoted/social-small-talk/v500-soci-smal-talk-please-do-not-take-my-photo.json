@@ -22,27 +22,19 @@
       "id": "chunk-1",
       "vietnamese": "Làm ơn",
       "english": "please",
-      "keepTogetherReason": "fixed polite phrase"
+      "keepTogetherReason": "polite opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đừng",
-      "english": "do not"
+      "vietnamese": "đừng chụp ảnh",
+      "english": "do not take photos",
+      "keepTogetherReason": "photo-boundary phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "chụp",
-      "english": "take a photo"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "ảnh",
-      "english": "photo"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "tôi",
-      "english": "I / me"
+      "english": "me",
+      "keepTogetherReason": "object pronoun"
     },
     {
       "id": "full",

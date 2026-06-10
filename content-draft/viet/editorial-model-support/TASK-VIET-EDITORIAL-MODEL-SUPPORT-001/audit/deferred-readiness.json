@@ -11,11 +11,11 @@
   "summary": {
     "deferredRows": 17,
     "readyForJojoApproval": 13,
-    "readyWithTitlePreservingImport": 3,
-    "blockedTitleIdentity": 1,
+    "readyWithTitlePreservingImport": 2,
+    "blockedTitleIdentity": 2,
     "blockedResearchNeeded": 0,
     "blockedUnresolvedLinks": 0,
-    "createdSupportPages": 32
+    "createdSupportPages": 39
   },
   "recommendedNextImportSubset": [
     "EP-001",
@@ -34,11 +34,11 @@
   ],
   "recommendedTitlePreservingImportSubset": [
     "EP-012",
-    "EP-014",
-    "EP-015"
+    "EP-014"
   ],
   "blockedRows": [
-    "EP-003"
+    "EP-003",
+    "EP-015"
   ],
   "rows": [
     {
@@ -60,10 +60,10 @@
         },
         {
           "slot": "inside-the-place",
-          "vietnamese": "Làm ơn cho một ly trà đá",
-          "phraseID": "v900-food-drin-one-iced-tea-please",
-          "detailPageID": "viet-family-v900-food-drin-one-iced-tea-please",
-          "source": "existing-canonical",
+          "vietnamese": "Cho tôi trà đá.",
+          "phraseID": "ves-iced-tea-please",
+          "detailPageID": "viet-family-ves-iced-tea-please",
+          "source": "created-support",
           "status": "resolved"
         },
         {
@@ -288,9 +288,9 @@
         {
           "slot": "where",
           "vietnamese": "Cầu Rồng ở đâu?",
-          "phraseID": "city-danang-where-dragon-bridge",
-          "detailPageID": "viet-family-city-danang-where-dragon-bridge",
-          "source": "existing-canonical",
+          "phraseID": "ves-where-dragon-bridge",
+          "detailPageID": "viet-family-ves-where-dragon-bridge",
+          "source": "created-support",
           "status": "resolved"
         },
         {
@@ -319,9 +319,9 @@
         {
           "slot": "ticket",
           "vietnamese": "Một vé vào Ngũ Hành Sơn.",
-          "phraseID": "city-danang-ticket-marble-mountains",
-          "detailPageID": "viet-family-city-danang-ticket-marble-mountains",
-          "source": "existing-canonical",
+          "phraseID": "ves-one-ticket-marble-mountains",
+          "detailPageID": "viet-family-ves-one-ticket-marble-mountains",
+          "source": "created-support",
           "status": "resolved"
         },
         {
@@ -362,17 +362,17 @@
         {
           "slot": "route",
           "vietnamese": "Đi bán đảo Sơn Trà.",
-          "phraseID": "city-danang-go-son-tra",
-          "detailPageID": "viet-family-city-danang-go-son-tra",
-          "source": "existing-canonical",
+          "phraseID": "ves-go-son-tra-peninsula",
+          "detailPageID": "viet-family-ves-go-son-tra-peninsula",
+          "source": "created-support",
           "status": "resolved"
         },
         {
           "slot": "specific-stop",
           "vietnamese": "Chùa Linh Ứng ở đâu?",
-          "phraseID": "city-danang-where-linh-ung",
-          "detailPageID": "viet-family-city-danang-where-linh-ung",
-          "source": "existing-canonical",
+          "phraseID": "ves-where-linh-ung-pagoda",
+          "detailPageID": "viet-family-ves-where-linh-ung-pagoda",
+          "source": "created-support",
           "status": "resolved"
         },
         {
@@ -578,7 +578,7 @@
           "vietnamese": "Bà Nà Hills ở đâu?",
           "phraseID": "city-danang-where-ba-na-hills",
           "detailPageID": "viet-family-city-danang-where-ba-na-hills",
-          "source": "existing-canonical",
+          "source": "created-support",
           "status": "resolved"
         },
         {
@@ -603,6 +603,8 @@
       "patchID": "EP-014",
       "patchPageID": "viet-phrase-city-danang-ticket-marble-mountains",
       "phraseID": "city-danang-ticket-marble-mountains",
+      "currentCanonicalPhraseID": "ves-one-ticket-marble-mountains",
+      "currentCanonicalDetailPageID": "viet-family-ves-one-ticket-marble-mountains",
       "modelGroup": "ticket-counter",
       "readiness": "ready_with_title_preserving_import",
       "sourceEvidenceIDs": [
@@ -643,9 +645,10 @@
       "patchPageID": "viet-phrase-city-danang-go-dragon-bridge",
       "phraseID": "city-danang-go-dragon-bridge",
       "modelGroup": "driver-ready-phrase",
-      "readiness": "ready_with_title_preserving_import",
-      "blockerReason": "Pilot proposes changing canonical Vietnamese from Đi cầu Rồng to Cho tôi đi Cầu Rồng. Future import must preserve the existing title and use the full sentence as a linked Quick Say row.",
-      "recommendedNextAction": "Ready only for a title-preserving import variant after Jojo approval.",
+      "readiness": "blocked_title_identity",
+      "missingCurrentCanonicalPhrase": true,
+      "blockerReason": "Pilot proposes changing canonical Vietnamese from Đi cầu Rồng to Cho tôi đi Cầu Rồng, but the current Đi cầu Rồng phrase ID is not present in the generated catalog. Keep the full-sentence support row live; do not import this pilot title without a canonical identity decision.",
+      "recommendedNextAction": "Blocked from future import until Jojo decides whether a short Đi cầu Rồng title should exist as a separate canonical phrase.",
       "visibleRows": [
         {
           "slot": "quick-say",
@@ -692,10 +695,10 @@
         },
         {
           "slot": "show",
-          "vietnamese": "Chỉ cho tôi được không?",
-          "phraseID": "repair-show-me",
-          "detailPageID": "viet-family-repair-show-me",
-          "source": "existing-canonical",
+          "vietnamese": "Anh/chị chỉ giúp tôi được không?",
+          "phraseID": "ves-show-me-anh-chi",
+          "detailPageID": "viet-family-ves-show-me-anh-chi",
+          "source": "created-support",
           "status": "resolved"
         },
         {
@@ -735,10 +738,10 @@
         },
         {
           "slot": "follow-up",
-          "vietnamese": "Anh/chị nói tiếng Anh không?",
-          "phraseID": "repair-english-help",
-          "detailPageID": "viet-family-repair-english-help",
-          "source": "existing-canonical",
+          "vietnamese": "Anh nói tiếng Anh không?",
+          "phraseID": "ves-do-you-speak-english-anh",
+          "detailPageID": "viet-family-ves-do-you-speak-english-anh",
+          "source": "created-support",
           "status": "resolved"
         }
       ]

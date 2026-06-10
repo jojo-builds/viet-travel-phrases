@@ -7,7 +7,7 @@
   "title": "Bàn thông tin gần nhất ở đâu?",
   "englishTitle": "Where is the nearest information desk?",
   "pronunciation": "Ban thong tin gan nhat o dau",
-  "summary": "Where is the nearest information desk?",
+  "summary": "For finding staffed help inside a station, mall, airport, museum, or venue.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bàn thông tin gần nhất ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names nearest information desk in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Signs can point in circles; a staffed desk can solve tickets, maps, toilets, lost items, and routes."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Bàn thông tin gần nhất ở đâu?. Show your map, address, ride screen, sign, or nearby landmark, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Ask near an entrance, ticket counter, or security post. Watch for a pointing answer before asking again.",
       "phrases": [
         {
           "id": "v900-dire-navi-where-is-the-nearest-information-desk",
@@ -42,12 +42,12 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bàn thông tin is information desk; gần nhất means nearest.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bàn thông tin",
-          "english": "the nearest information desk",
+          "english": "information desk",
           "audioKey": null
         },
         {
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where is the nearest information desk? to another directions need.",
+      "body": "Direction lines stay useful if they point you down a corridor or across the street.",
       "phrases": [
         {
           "id": "directions-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits street, lobby, station, mall, or pickup-point moment, especially when nearest information desk can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Good in airports, stations, malls, hospitals, museums, ferry terminals, and big attractions."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+      "body": "If there are several desks, ask for the nearest one for your current problem, not the main office far away."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bàn thông tin gần nhất ở đâu?.",
+      "body": "Turn, straight, pickup-point, understand-now, and station lines cover the next direction.",
       "phrases": [
         {
           "id": "directions-4",

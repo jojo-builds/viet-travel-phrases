@@ -21,22 +21,20 @@
     {
       "id": "chunk-1",
       "vietnamese": "Có",
-      "english": "have / there is"
+      "english": "is it / is there",
+      "keepTogetherReason": "yes-no lead"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "gần",
-      "english": "near"
+      "vietnamese": "gần chợ",
+      "english": "near the market",
+      "keepTogetherReason": "market landmark phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "chợ",
-      "english": "market"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

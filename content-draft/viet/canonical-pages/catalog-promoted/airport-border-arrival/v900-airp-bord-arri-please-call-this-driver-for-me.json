@@ -7,7 +7,7 @@
   "title": "Hãy gọi tài xế này cho tôi",
   "englishTitle": "Please call this driver for me",
   "pronunciation": "Hay goi tai xe nay cho toi",
-  "summary": "Please call this driver for me",
+  "summary": "For asking someone to call the driver shown on your booking or pickup screen.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy gọi tài xế này cho tôi is a practical airport arrival phrase for keeping one travel detail clear. Use it when call this driver for me is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it when the driver is hard to find, messages are not working, or the pickup point is confusing."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hãy gọi tài xế này cho tôi. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Show the phone number or booking screen first so the helper knows exactly who to call.",
       "phrases": [
         {
           "id": "v900-airp-bord-arri-please-call-this-driver-for-me",
@@ -42,85 +42,85 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hãy gọi means please call; tài xế này means this driver; cho tôi means for me.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy gọi tài",
-          "english": "call",
-          "audioKey": null
+          "vietnamese": "Hãy gọi",
+          "english": "please call",
+          "keepTogetherReason": "please-call phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "xế này cho",
-          "english": "this driver for me",
-          "audioKey": null
+          "vietnamese": "tài xế này",
+          "english": "this driver",
+          "keepTogetherReason": "this-driver phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "tôi",
-          "english": "I / me",
-          "audioKey": null
+          "vietnamese": "cho tôi",
+          "english": "for me",
+          "keepTogetherReason": "for-me phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Hãy gọi tài xế này cho tôi",
           "english": "Please call this driver for me",
-          "audioKey": null
+          "audioKey": "v900-airp-bord-arri-please-call-this-driver-for-me"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please call this driver for me to another airport arrival need.",
+      "body": "Driver canceled, contact the driver, and Grab pickup phrases help if the call becomes a ride problem.",
       "phrases": [
         {
-          "id": "airport-1",
-          "vietnamese": "Nhập cảnh ở đâu?",
-          "english": "Where is immigration?",
-          "pronunciation": "nyup canh uh dow",
+          "id": "v500-airp-bord-arri-my-driver-canceled",
+          "vietnamese": "Tài xế của tôi đã hủy",
+          "english": "My driver canceled",
+          "pronunciation": "Tai xe cua toi da huy",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-1",
-          "audioKey": "airport-1"
+          "detailPageID": "viet-phrase-v500-airp-bord-arri-my-driver-canceled",
+          "audioKey": "v500-airp-bord-arri-my-driver-canceled"
         },
         {
-          "id": "airport-2",
-          "vietnamese": "Lấy hành lý ở đâu?",
-          "english": "Where is baggage claim?",
-          "pronunciation": "lay han lee uh dow",
+          "id": "v500-prob-help-can-you-contact-the-driver",
+          "vietnamese": "Bạn có thể liên hệ với tài xế được không?",
+          "english": "Can you contact the driver?",
+          "pronunciation": "Ban co the lien he voi tai xe duoc khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-2",
-          "audioKey": "airport-2"
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-v500-prob-help-can-you-contact-the-driver",
+          "audioKey": "v500-prob-help-can-you-contact-the-driver"
         },
         {
-          "id": "airport-3",
-          "vietnamese": "Mua SIM ở đâu?",
-          "english": "Where can I buy a SIM card?",
-          "pronunciation": "moo-ah sim uh dow",
+          "id": "v900-airp-bord-arri-where-is-the-grab-pickup-point",
+          "vietnamese": "Điểm đón Grab ở đâu?",
+          "english": "Where is the Grab pickup point?",
+          "pronunciation": "Diem don Grab o dau",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-airport-3",
-          "audioKey": "airport-3"
+          "detailPageID": "viet-phrase-v900-airp-bord-arri-where-is-the-grab-pickup-point",
+          "audioKey": "v900-airp-bord-arri-where-is-the-grab-pickup-point"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real airport arrival exchange when call this driver for me is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at airport pickup points, hotel desks, tour counters, security desks, and ride-hailing help spots."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Airport staff and drivers are used to short, practical questions. Keep the document or phone screen visible so they can answer quickly."
+      "body": "Keep the phone unlocked and the number visible. If the driver cancels, switch to the driver canceled phrase."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hãy gọi tài xế này cho tôi.",
+      "body": "Pickup area, driver meetup, missing bag, domestic terminal, and visa phrases cover arrival follow-ups.",
       "phrases": [
         {
           "id": "airport-5",

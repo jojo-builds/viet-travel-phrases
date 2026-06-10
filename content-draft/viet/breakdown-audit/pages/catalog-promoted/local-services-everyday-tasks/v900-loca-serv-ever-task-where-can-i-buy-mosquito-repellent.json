@@ -20,30 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể mua",
+      "english": "can I buy",
+      "keepTogetherReason": "can-I-buy phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "thuốc chống muỗi",
+      "english": "mosquito repellent",
+      "keepTogetherReason": "repellent noun"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "mua",
-      "english": "buy"
-    },
-    {
-      "vietnamese": "thuốc chống muỗi",
-      "english": "mosquito repellent",
-      "keepTogetherReason": "compound repellent term"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "ở đâu?",
-      "english": "where",
-      "keepTogetherReason": "fixed place question"
+      "english": "where?",
+      "keepTogetherReason": "where-question ending"
     },
     {
       "id": "full",

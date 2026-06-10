@@ -7,7 +7,7 @@
   "title": "Mấy giờ bắt đầu lên máy bay?",
   "englishTitle": "What time does boarding start?",
   "pronunciation": "may zyuh bat dow len mai bai",
-  "summary": "What time does boarding start?",
+  "summary": "For checking boarding time against a ticket, gate screen, or airport announcement.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Mấy giờ bắt đầu lên máy bay? is for confirming the time or date before you commit. It helps turn What time does boarding start into one clear answer you can check against a ticket, booking, calendar, or meeting point."
+      "body": "Use this at a gate, airline desk, lounge counter, or information desk when the schedule is not obvious.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Mấy giờ bắt đầu lên máy bay? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Show the boarding pass or flight number. The answer may be a time, a gate change, or a wait instruction.",
       "phrases": [
         {
           "id": "time-7",
@@ -42,38 +43,39 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Mấy giờ asks what time; bắt đầu means starts; lên máy bay means board the plane.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Mấy giờ bắt",
-          "english": "asks what time",
-          "audioKey": null
+          "vietnamese": "Mấy giờ",
+          "english": "what time",
+          "keepTogetherReason": "what-time question"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đầu lên máy",
-          "english": "start boarding",
-          "audioKey": null
+          "vietnamese": "bắt đầu",
+          "english": "starts",
+          "keepTogetherReason": "start verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "bay",
-          "english": "now word",
-          "audioKey": null
+          "vietnamese": "lên máy bay?",
+          "english": "board the plane?",
+          "keepTogetherReason": "boarding phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Mấy giờ bắt đầu lên máy bay?",
-          "english": "What time does boarding start",
-          "audioKey": null
+          "english": "What time does boarding start?",
+          "audioKey": "time-7"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from What time does boarding start? to another time, date, or booking need.",
+      "body": "What-time, today, and tomorrow-morning cards cover shorter time checks outside the airport.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when what time does boarding start is the detail you need resolved. The likely reply is a time, date, or schedule detail, so keep the phrase short and ready for one follow-up."
+      "body": "Good when the screen has changed, announcements are unclear, or the printed boarding time conflicts with what people are doing.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "Boarding and departure are different times. If the reply sounds like a gate-closing time, ask them to write it.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Mấy giờ bắt đầu lên máy bay?.",
+      "body": "Booking, opening-time, later-time, wait, and ticket cards cover adjacent schedule questions.",
       "phrases": [
         {
           "id": "time-4",

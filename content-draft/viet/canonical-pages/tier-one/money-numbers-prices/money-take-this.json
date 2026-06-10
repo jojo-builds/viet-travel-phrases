@@ -7,7 +7,7 @@
   "title": "Tôi lấy cái này",
   "englishTitle": "I’ll take this one",
   "pronunciation": "toy lay gai nai",
-  "summary": "Tôi lấy cái này means “I’ll take this one”.",
+  "summary": "This closes the shopping moment quickly.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi lấy cái này when you need \"I'll take this one\". Say this once you agree on the item and price. This closes the shopping moment quickly. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Say this once you agree on the item and price.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Practice Tôi + lấy first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "price-7-piece-1",
@@ -57,12 +59,13 @@
           "audioKey": "price-7"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi lấy cái này as your first sentence for \"I'll take this one\". Say this once you agree on the item and price. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "Say Tôi lấy cái này clearly; show the item, price tag, calculator, receipt, or ATM screen only if the reply needs detail.",
       "phrases": [
         {
           "id": "price-7",
@@ -75,18 +78,21 @@
           "audioKey": "price-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. For \"I'll take this one\", Tôi lấy cái này makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. Keep the item, price tag, calculator, or receipt visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Payment & numbers, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Tôi lấy cái này once, pause, and watch for the reply. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "Watch for a clear reply, a pointed detail, or simple follow-up. Keep the relevant place, object, or screen visible while you speak.",
       "phrases": [
         {
           "id": "price-1",
@@ -119,12 +125,13 @@
           "audioKey": "price-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Say this once you agree on the item and price. It fits prices, quantities, payment, and ATM moments, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "body": "Say this once you agree on the item and price. Watch for a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "price-4",
@@ -157,13 +164,16 @@
           "audioKey": "price-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Confirm the final price before handing over cash or card, especially in markets and taxi moments.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -191,12 +201,13 @@
           "audioKey": "v500-mone-numb-pric-the-atm-kept-my-card"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through how much is this?; how much per kilo?; too expensive.",
       "phrases": [
         {
           "id": "price-1",
@@ -279,7 +290,8 @@
           "audioKey": "v500-mone-numb-pric-the-atm-kept-my-card"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

@@ -7,7 +7,7 @@
   "title": "Tôi cần cảnh sát du lịch.",
   "englishTitle": "I need the tourist police.",
   "pronunciation": "Toi can canh sat du lich",
-  "summary": "I need the tourist police.",
+  "summary": "For asking for tourist-police help when a passport, scam, threat, or official report is involved.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần cảnh sát du lịch. is the short line for naming what you need next. It works best when tourist police is visible on your phone, ticket, note, shelf, or in the situation around you."
+      "body": "Say it at a hotel desk, police counter, station, or staffed place where someone can help you reach the right office.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần cảnh sát du lịch. with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "body": "Keep your passport copy, location, report, photo, receipt, or helper contact visible. The phrase is short so the evidence can carry the rest.",
       "phrases": [
         {
           "id": "emergency-premium-tourist-police",
@@ -42,32 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi cần means I need; cảnh sát du lịch means the tourist police.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi cần",
           "english": "I need",
-          "audioKey": null
+          "keepTogetherReason": "I-need phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cảnh sát du lịch",
-          "english": "tourist police",
-          "audioKey": null
+          "vietnamese": "cảnh sát du lịch.",
+          "english": "the tourist police.",
+          "keepTogetherReason": "tourist-police phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi cần cảnh sát du lịch.",
-          "english": "I need the tourist police",
-          "audioKey": null
+          "english": "I need the tourist police.",
+          "audioKey": "emergency-premium-tourist-police"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I need the tourist police. to another safety or urgent-help need.",
+      "body": "Police, ambulance, and passport cards help when the situation needs a different official response.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -104,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real safety or urgent-help exchange when tourist police is the detail you need resolved. The likely reply is a point, option, yes/no answer, or next step, so keep the phrase short and ready for one follow-up."
+      "body": "Good for lost documents, scams, harassment, theft reports, or situations where ordinary staff cannot solve the problem.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "If there is immediate danger, use police, emergency, or help-now phrases first and move toward a public staffed area.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi cần cảnh sát du lịch..",
+      "body": "Unsafe, emergency, help, hospital, and passport cards cover more urgent safety paths.",
       "phrases": [
         {
           "id": "emergency-4",

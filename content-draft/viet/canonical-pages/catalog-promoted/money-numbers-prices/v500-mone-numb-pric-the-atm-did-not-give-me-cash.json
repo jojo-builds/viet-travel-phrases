@@ -7,7 +7,7 @@
   "title": "ATM không đưa tiền mặt cho tôi",
   "englishTitle": "The ATM did not give me cash",
   "pronunciation": "ATM khong dua tien mat cho toi",
-  "summary": "The ATM did not give me cash",
+  "summary": "For reporting an ATM problem when the withdrawal completed but no cash came out.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "ATM không đưa tiền mặt cho tôi is a practical money or price phrase for keeping one travel detail clear. Use it when ATM did not give me cash is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say it with the ATM screen, receipt, bank app, location, time, and card visible if possible.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: ATM không đưa tiền mặt cho tôi. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Do not walk away without a record. Ask nearby bank, shop, hotel, or security staff what to do next.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-the-atm-did-not-give-me-cash",
@@ -42,44 +43,45 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "ATM refers to the cash machine; không đưa means did not give; tiền mặt means cash; cho tôi means to me.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "ATM",
-          "english": "ATM",
-          "audioKey": "breakdown-v500-mone-numb-pric-the-atm-kept-my-card-first"
+          "english": "cash machine",
+          "keepTogetherReason": "ATM noun"
         },
         {
           "id": "chunk-2",
           "vietnamese": "không đưa",
           "english": "did not give",
-          "audioKey": null
+          "keepTogetherReason": "did-not-give phrase"
         },
         {
           "id": "chunk-3",
           "vietnamese": "tiền mặt",
           "english": "cash",
-          "audioKey": "breakdown-authored-tien-mat-16c6e89498"
+          "keepTogetherReason": "cash phrase"
         },
         {
           "id": "chunk-4",
           "vietnamese": "cho tôi",
-          "english": "for me / please",
-          "audioKey": "breakdown-authored-cho-toi-18c6fe1018"
+          "english": "to me",
+          "keepTogetherReason": "to-me phrase"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "ATM không đưa tiền mặt cho tôi",
           "english": "The ATM did not give me cash",
           "audioKey": "v500-mone-numb-pric-the-atm-did-not-give-me-cash"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from The ATM did not give me cash to another money or price need.",
+      "body": "How-much and per-kilo cards help when the next problem is payment at a counter.",
       "phrases": [
         {
           "id": "price-1",
@@ -116,17 +118,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when aTM did not give me cash is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good when the ATM keeps the transaction, shows success, prints a receipt, or debits your account without dispensing cash.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+      "body": "Avoid trying multiple withdrawals until you know whether the first one charged. Photograph the machine location if safe.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after ATM không đưa tiền mặt cho tôi.",
+      "body": "Too-expensive, lower-price, final-price, another-one, and take-this cards cover ordinary money follow-ups after the ATM issue is handled.",
       "phrases": [
         {
           "id": "price-3",

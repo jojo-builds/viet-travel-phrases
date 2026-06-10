@@ -20,48 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Điều",
-      "english": "thing / matter"
+      "vietnamese": "Điều đó",
+      "english": "that",
+      "keepTogetherReason": "that-reference phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đó",
-      "english": "that"
+      "vietnamese": "có bao gồm",
+      "english": "include",
+      "keepTogetherReason": "include phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "phí cầu đường",
+      "english": "tolls",
+      "keepTogetherReason": "toll-fee phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "bao",
-      "english": "how / cover"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "gồm",
-      "english": "include"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "phí",
-      "english": "fee"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "cầu",
-      "english": "bridge"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "đường",
-      "english": "street"
-    },
-    {
-      "id": "chunk-9",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

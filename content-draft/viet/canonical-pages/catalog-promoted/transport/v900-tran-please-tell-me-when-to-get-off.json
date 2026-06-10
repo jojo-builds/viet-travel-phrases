@@ -7,7 +7,7 @@
   "title": "Hãy cho tôi biết khi nào nên xuống xe",
   "englishTitle": "Please tell me when to get off",
   "pronunciation": "Hay cho toi biet khi nao nen xuong xe",
-  "summary": "Please tell me when to get off",
+  "summary": "Ask a driver or passenger to tell you the right stop before you miss it on a bus, shuttle, or long ride.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy cho tôi biết khi nào nên xuống xe is a practical transport phrase for keeping one travel detail clear. Use it when tell me when to get off is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Good when you cannot read the route or the stop names are moving too fast."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hãy cho tôi biết khi nào nên xuống xe. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Show the destination first so they know which stop to watch for.",
       "phrases": [
         {
           "id": "v900-tran-please-tell-me-when-to-get-off",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Khi nào nên xuống xe is when-to-get-off; hãy cho tôi biết asks them to tell you.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please tell me when to get off to another transport need.",
+      "body": "Take-me-here, District 1, and stop-here cards help if the drop-off changes.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when tell me when to get off is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best at the start of a bus, shuttle, or shared ride."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Stay near enough to hear or see their signal. A map open on your phone helps."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hãy cho tôi biết khi nào nên xuống xe.",
+      "body": "Stop-here, this-way, and air-con cards cover the ride after they point you off.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

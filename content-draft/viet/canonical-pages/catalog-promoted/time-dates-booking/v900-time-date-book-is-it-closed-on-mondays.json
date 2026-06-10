@@ -7,7 +7,7 @@
   "title": "Nó có đóng cửa vào thứ Hai không?",
   "englishTitle": "Is it closed on Mondays?",
   "pronunciation": "No co dong cua vao thu Hai khong",
-  "summary": "Is it closed on Mondays?",
+  "summary": "For checking a weekly closure before you plan around it.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Nó có đóng cửa vào thứ Hai không? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Is it closed on Mondays is right."
+      "body": "Monday closures can change a museum, clinic, restaurant, salon, ticket office, or tour plan."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use Nó có đóng cửa vào thứ Hai không? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "body": "Show the place or booking date, then ask. Let the answer be yes, no, or a different open day.",
       "phrases": [
         {
           "id": "v900-time-date-book-is-it-closed-on-mondays",
@@ -42,30 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đóng cửa means closed; vào thứ Hai means on Monday; không? makes it a yes/no check.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Nó có đóng",
-          "english": "is it closed",
+          "vietnamese": "Nó",
+          "english": "it",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cửa vào thứ",
-          "english": "closed on weekday",
+          "vietnamese": "có đóng cửa",
+          "english": "is closed",
+          "keepTogetherReason": "business-hours closure phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "Hai",
-          "english": "two",
+          "vietnamese": "vào thứ Hai",
+          "english": "on Monday",
+          "keepTogetherReason": "weekday phrase",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "không?",
+          "english": "yes/no?",
           "audioKey": null
         },
         {
@@ -79,7 +81,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is it closed on Mondays? to another time, date, or booking need.",
+      "body": "If the schedule changes, ask what time, today, or tomorrow morning next.",
       "phrases": [
         {
           "id": "time-1",
@@ -116,17 +118,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+      "body": "Good before booking, walking over, paying, or sending a driver to a place that may be shut."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "Vietnam schedules can shift around holidays and weekly rest days. A current sign, booking page, or staff answer beats an old map listing."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Nó có đóng cửa vào thứ Hai không?.",
+      "body": "Use booking, opening time, date-change, boarding-time, or wait questions if the answer changes the plan.",
       "phrases": [
         {
           "id": "time-4",

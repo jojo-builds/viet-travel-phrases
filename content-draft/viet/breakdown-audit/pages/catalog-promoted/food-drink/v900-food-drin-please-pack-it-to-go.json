@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-food-drin-please-pack-it-to-go",
-  "phraseText": "Hãy đóng gói nó để đi.",
+  "phraseText": "Gói mang về giúp tôi nhé",
   "englishTitle": "Please pack it to go.",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -15,39 +15,35 @@
     ]
   },
   "notes": [
-    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources.",
+    "Phrase-copy semantic repair; reviewed tokens updated and audio marked for regeneration."
   ],
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hãy",
-      "english": "please do"
+      "vietnamese": "Gói",
+      "english": "pack"
     },
     {
-      "vietnamese": "đóng gói",
-      "english": "pack / package",
-      "keepTogetherReason": "compound packing verb"
+      "id": "chunk-2",
+      "vietnamese": "mang về",
+      "english": "to take away",
+      "keepTogetherReason": "takeaway phrase"
     },
     {
-      "id": "chunk-4",
-      "vietnamese": "nó",
-      "english": "it"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "để",
-      "english": "to / in order to"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "đi.",
-      "english": "go"
+      "id": "chunk-3",
+      "vietnamese": "giúp tôi nhé",
+      "english": "for me, please",
+      "keepTogetherReason": "polite help ending"
     },
     {
       "id": "full",
-      "vietnamese": "Hãy đóng gói nó để đi.",
+      "vietnamese": "Gói mang về giúp tôi nhé",
       "english": "Please pack it to go.",
-      "audioKey": "v900-food-drin-please-pack-it-to-go"
+      "audioKey": null
     }
-  ]
+  ],
+  "title": "Gói mang về giúp tôi nhé",
+  "summary": "Please pack it to go",
+  "pronunciation": "Goi mang ve giup toi nhe"
 }

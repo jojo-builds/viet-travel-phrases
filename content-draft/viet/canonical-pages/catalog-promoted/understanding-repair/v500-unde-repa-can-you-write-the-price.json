@@ -7,7 +7,7 @@
   "title": "Bạn có thể viết giá được không?",
   "englishTitle": "Can you write the price?",
   "pronunciation": "Ban co the viet gia duoc khong",
-  "summary": "Can you write the price?",
+  "summary": "For asking someone to write a price so you can check the number before paying.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể viết giá được không? is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on Can you write the price, so the answer can be a number, calculator screen, or typed price."
+      "body": "Use it when a spoken price is too fast, too noisy, or has too many zeros."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Ask Bạn có thể viết giá được không? before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "body": "Hand over your phone, calculator, or paper and wait for the number.",
       "phrases": [
         {
           "id": "v500-unde-repa-can-you-write-the-price",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể means can you; viết giá means write the price; được không? asks politely.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "viết giá",
-          "english": "price / money",
-          "audioKey": null
+          "english": "write the price",
+          "keepTogetherReason": "write-price phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Bạn có thể viết giá được không?",
-          "english": "Can you write the price",
-          "audioKey": null
+          "english": "Can you write the price?",
+          "audioKey": "v500-unde-repa-can-you-write-the-price"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you write the price? to another understanding check need.",
+      "body": "Understand and slower-speech phrases help if the price turns into a longer explanation.",
       "phrases": [
         {
           "id": "problems-2",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+      "body": "Good at markets, taxis, repair counters, pharmacies, ticket windows, and small shops."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "Written prices help you check zeros, currency, and whether the amount is per person or total."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể viết giá được không?.",
+      "body": "Repeat, write-it-down, meaning, which-one, and show-me phrases cover the next clarification step.",
       "phrases": [
         {
           "id": "repair-1",

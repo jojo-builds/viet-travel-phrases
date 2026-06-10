@@ -7,7 +7,7 @@
   "title": "Anh khỏe không?",
   "englishTitle": "How are you, older man?",
   "pronunciation": "anh khweh khom",
-  "summary": "Ask Anh khỏe không? when checking in on a slightly older man.",
+  "summary": "For a friendly check-in with an older man after the greeting has already opened the exchange.",
   "iconName": "bubble.left.and.bubble.right.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -19,12 +19,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Anh khỏe không? is a practical polite basics phrase for keeping one travel detail clear. Use it when How are you, older man is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Anh khỏe không? works when the tone is already warm and the man is clearly older than you.",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use this after Dạ, chào anh or Chào anh when you have time for a friendly check-in.",
+      "body": "Say it after Dạ, chào anh or Chào anh, then pause for the short answer before adding a request.",
       "phrases": [
         {
           "id": "how-are-you-anh",
@@ -41,38 +42,39 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Anh names an older man; khỏe asks about being well; không? makes it a gentle yes-or-no question.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Anh",
           "english": "older man",
-          "audioKey": null
+          "keepTogetherReason": "relationship pronoun"
         },
         {
           "id": "chunk-2",
           "vietnamese": "khỏe",
-          "english": "healthy / well",
-          "audioKey": "breakdown-authored-khoe-172d93f8d9"
+          "english": "well / healthy",
+          "keepTogetherReason": "wellness word"
         },
         {
           "id": "chunk-3",
           "vietnamese": "không?",
-          "english": "question marker",
-          "audioKey": "breakdown-bath-6-piece-6"
+          "english": "yes or no?",
+          "keepTogetherReason": "soft question ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Anh khỏe không?",
-          "english": "How are you, older man",
+          "english": "How are you, older man?",
           "audioKey": "audio-authored-anh-khoe-khong-942769853d"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "relationship-forms",
       "title": "Relationship forms",
-      "body": "Use the version that matches the person in front of you.",
+      "body": "Switch to chị, em, or bạn when the person in front of you is not an older man.",
       "phrases": [
         {
           "id": "smalltalk-7",
@@ -109,17 +111,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real polite basics exchange when how are you, older man is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good with a host, guide, driver, shop owner, or familiar helper when the exchange has room for warmth.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
+      "body": "This is friendlier than a transaction phrase. Skip it if the line is moving fast or you need help immediately.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Anh khỏe không?.",
+      "body": "Respectful hello, plain hello, and thank-you cards sit nearby for the same polite first-contact moment.",
       "phrases": [
         {
           "id": "acknowledge-da-chao-anh",

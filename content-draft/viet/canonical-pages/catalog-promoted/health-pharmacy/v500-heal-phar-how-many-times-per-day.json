@@ -7,7 +7,7 @@
   "title": "Bao nhiêu lần mỗi ngày?",
   "englishTitle": "How many times per day?",
   "pronunciation": "Bao nhieu lan moi ngay",
-  "summary": "How many times per day?",
+  "summary": "For checking medicine frequency before you leave the pharmacy or clinic.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bao nhiêu lần mỗi ngày? is a practical pharmacy or health phrase for keeping one travel detail clear. Use it when How many times per day is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask while the packet, bottle, or prescription is still on the counter."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Bao nhiêu lần mỗi ngày?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point to the medicine and wait for the number; then ask them to write it if needed.",
       "phrases": [
         {
           "id": "v500-heal-phar-how-many-times-per-day",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bao nhiêu lần asks how many times; mỗi ngày? means each day?",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bao nhiêu lần",
-          "english": "asks how much",
-          "audioKey": null
+          "english": "how many times",
+          "keepTogetherReason": "frequency question"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "mỗi ngày",
-          "english": "per day",
-          "audioKey": null
+          "vietnamese": "mỗi ngày?",
+          "english": "each day / per day?",
+          "keepTogetherReason": "per-day phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Bao nhiêu lần mỗi ngày?",
-          "english": "How many times per day",
-          "audioKey": null
+          "english": "How many times per day?",
+          "audioKey": "v500-heal-phar-how-many-times-per-day"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How many times per day? to another pharmacy or health need.",
+      "body": "Doctor, pharmacy, and nearest-pharmacy phrases help if the dose question reveals you need more help.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when how many times per day is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good when instructions are spoken quickly or the label is not clear enough to trust."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "Numbers matter here. If you hear one, two, or three, confirm with fingers or ask for written instructions."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bao nhiêu lần mỗi ngày?.",
+      "body": "Headache, stomach, motion-sickness, allergy, and diarrhea phrases cover common pharmacy branches.",
       "phrases": [
         {
           "id": "health-2",

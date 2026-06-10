@@ -7,7 +7,7 @@
   "title": "Tiền đặt cọc có được hoàn lại không?",
   "englishTitle": "Was the deposit refunded?",
   "pronunciation": "Tien dat coc co duoc hoan lai khong",
-  "summary": "Was the deposit refunded?",
+  "summary": "Ask whether the hotel deposit was refunded before leaving the desk or closing the payment app.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tiền đặt cọc có được hoàn lại không? is a practical hotel or stay phrase for keeping one travel detail clear. Use it when Was the deposit refunded is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Good at checkout when a card hold, cash deposit, or damage deposit is still unclear."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tiền đặt cọc có được hoàn lại không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Ask with the receipt, card app, or cash envelope visible.",
       "phrases": [
         {
           "id": "v900-hote-acco-was-the-deposit-refunded",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tiền đặt cọc is the deposit; hoàn lại asks whether it was returned.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Was the deposit refunded? to another hotel or stay need.",
+      "body": "Reservation and check-in cards help if the desk needs to find the stay first.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when was the deposit refunded is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best before leaving the hotel, especially if the refund was cash or a card hold."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "Card holds may take time to disappear, so ask what timing to expect."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tiền đặt cọc có được hoàn lại không?.",
+      "body": "Checkout-time, quiet-room, and checkout cards cover nearby front-desk needs.",
       "phrases": [
         {
           "id": "hotel-3",

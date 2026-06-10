@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tổng cộng bao nhiêu? is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on altogether, so the answer can be a number, calculator screen, or typed price."
+      "body": "Use this at the end of an order, ride, or small purchase when separate prices need one total. Let the other person type or show the final number."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Ask Tổng cộng bao nhiêu? before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "body": "Ask once, then pause for the answer.",
       "phrases": [
         {
           "id": "price-8",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Tổng cộng + bao nhiêu as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How much altogether? to another money or price need.",
+      "body": "Useful if the exchange continues: How much is this? and How much per kilo?",
       "phrases": [
         {
           "id": "price-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+      "body": "Ask before paying when items, add-ons, or people are being counted together. The answer should be the total, not one line item."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "A typed total avoids guessing which number you just heard."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tổng cộng bao nhiêu?.",
+      "body": "Nearby follow-ups: Too expensive; Can you lower it a little?; What’s your final price?",
       "phrases": [
         {
           "id": "price-3",

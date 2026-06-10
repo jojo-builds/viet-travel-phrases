@@ -7,7 +7,7 @@
   "title": "Có bao gồm bữa trưa không?",
   "englishTitle": "Is lunch included?",
   "pronunciation": "Co bao gom bua trua khong",
-  "summary": "Is lunch included?",
+  "summary": "For checking whether a tour, ticket, or activity already includes lunch.",
   "iconName": "camera.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có bao gồm bữa trưa không? is a practical sightseeing or activities phrase for keeping one travel detail clear. Use it when Is lunch included is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask before buying snacks, adding a meal option, or leaving the meeting point."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Có bao gồm bữa trưa không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the booking or ticket and point to the full-day schedule if the plan runs through lunch.",
       "phrases": [
         {
           "id": "v900-sigh-acti-is-lunch-included",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có bao gồm asks whether it is included; bữa trưa means lunch; không? makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Có bao gồm",
-          "english": "is it included?",
-          "audioKey": null
+          "english": "is included",
+          "keepTogetherReason": "included phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "bữa trưa",
           "english": "lunch",
-          "audioKey": null
+          "keepTogetherReason": "meal noun"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Có bao gồm bữa trưa không?",
-          "english": "Is lunch included",
-          "audioKey": null
+          "english": "Is lunch included?",
+          "audioKey": "v900-sigh-acti-is-lunch-included"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is lunch included? to another sightseeing or activities need.",
+      "body": "Ticket-price, start-point, and photo-permission cards cover the next attraction-desk questions.",
       "phrases": [
         {
           "id": "sight-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real sightseeing or activities exchange when is lunch included is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Use it for boat trips, cooking classes, day tours, museum packages, and full-day activity bookings."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "At attractions, keep the ticket or booking visible so staff can check names and times quickly."
+      "body": "Included can still mean a set meal, voucher, or simple stop. Ask before assuming drinks or special diets are covered."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Có bao gồm bữa trưa không?.",
+      "body": "Close-time, meeting-point, advance-booking, tour-booking, and entrance cards cover nearby activity planning.",
       "phrases": [
         {
           "id": "sight-4",

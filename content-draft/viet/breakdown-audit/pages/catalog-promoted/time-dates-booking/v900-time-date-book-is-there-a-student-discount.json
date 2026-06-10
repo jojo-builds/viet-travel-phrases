@@ -21,28 +21,26 @@
     {
       "id": "chunk-1",
       "vietnamese": "Có",
-      "english": "have / there is"
+      "english": "is there",
+      "keepTogetherReason": "is-there question opener"
     },
     {
       "id": "chunk-2",
       "vietnamese": "giảm giá",
-      "english": "discount / lower price",
-      "keepTogetherReason": "compound price phrase"
+      "english": "discount",
+      "keepTogetherReason": "discount phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "cho sinh viên",
+      "english": "for students",
+      "keepTogetherReason": "student phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "vietnamese": "sinh viên",
-      "english": "student",
-      "keepTogetherReason": "compound student noun"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

@@ -20,41 +20,29 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Điều",
-      "english": "thing / matter"
+      "vietnamese": "Điều này",
+      "english": "this",
+      "keepTogetherReason": "this-item phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "này",
-      "english": "this"
+      "vietnamese": "có làm",
+      "english": "does it make",
+      "keepTogetherReason": "effect question phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "tôi",
+      "english": "me"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "làm",
-      "english": "do / make"
+      "vietnamese": "buồn ngủ",
+      "english": "sleepy",
+      "keepTogetherReason": "compound adjective"
     },
     {
       "id": "chunk-5",
-      "vietnamese": "tôi",
-      "english": "I / me"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "buồn",
-      "english": "sad / nauseous"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "ngủ",
-      "english": "sleep"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "không?",
       "english": "yes/no?"
     },

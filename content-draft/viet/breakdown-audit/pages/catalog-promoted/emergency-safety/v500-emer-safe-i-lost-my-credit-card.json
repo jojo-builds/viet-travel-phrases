@@ -20,20 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi bị mất",
+      "english": "I lost",
+      "keepTogetherReason": "lost-item phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bị mất",
-      "english": "is missing / lost",
-      "keepTogetherReason": "fixed problem phrase"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "thẻ tín dụng",
       "english": "credit card",
-      "keepTogetherReason": "compound noun"
+      "keepTogetherReason": "credit-card phrase"
     },
     {
       "id": "full",

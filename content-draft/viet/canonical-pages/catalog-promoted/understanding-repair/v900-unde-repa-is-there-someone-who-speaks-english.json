@@ -7,7 +7,7 @@
   "title": "Có ai nói được tiếng Anh không?",
   "englishTitle": "Is there someone who speaks English?",
   "pronunciation": "Co ai noi duoc tieng Anh khong",
-  "summary": "Is there someone who speaks English?",
+  "summary": "For politely asking for an English speaking handoff when the exchange is stuck.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có ai nói được tiếng Anh không? is a practical understanding check phrase for keeping one travel detail clear. Use it when Is there someone who speaks English is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Repeating, pointing, or translation has not solved the conversation."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Có ai nói được tiếng Anh không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Ask calmly at the counter or desk. The answer may be a staff handoff, a phone call, or a polite no.",
       "phrases": [
         {
           "id": "v900-unde-repa-is-there-someone-who-speaks-english",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có ai asks is there anyone; nói được tiếng Anh means who can speak English; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Có ai nói",
-          "english": "is there / does it have",
-          "audioKey": null
+          "vietnamese": "Có ai",
+          "english": "is there anyone",
+          "keepTogetherReason": "is-there-anyone phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "được tiếng Anh",
-          "english": "in English",
-          "audioKey": null
+          "vietnamese": "nói được tiếng Anh",
+          "english": "who can speak English",
+          "keepTogetherReason": "speaks-English phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Có ai nói được tiếng Anh không?",
-          "english": "Is there someone who speaks English",
-          "audioKey": null
+          "english": "Is there someone who speaks English?",
+          "audioKey": "v900-unde-repa-is-there-someone-who-speaks-english"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is there someone who speaks English? to another understanding check need.",
+      "body": "I do not understand, slower speech, and polite slower speech phrases help before asking for a full handoff.",
       "phrases": [
         {
           "id": "problems-2",
@@ -110,67 +110,67 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real understanding check exchange when is there someone who speaks English is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotels, clinics, transport counters, police desks, pharmacies, and service counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "These phrases keep the exchange friendly when Vietnamese moves too fast. Ask for one specific next step: repeat, write, show, or point."
+      "body": "If no one speaks English, switch to writing, pointing, or a translation app instead of repeating louder."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Có ai nói được tiếng Anh không?.",
+      "body": "Explain in English, translation app, type into my phone, write the address, and translate-this phrases cover the next repair path.",
       "phrases": [
         {
-          "id": "repair-1",
-          "vietnamese": "Làm ơn nói lại",
-          "english": "Please say that again",
-          "pronunciation": "lahm uhn noy lie",
+          "id": "v900-unde-repa-can-you-explain-it-in-english",
+          "vietnamese": "Bạn có thể giải thích nó bằng tiếng Anh không?",
+          "english": "Can you explain it in English?",
+          "pronunciation": "Ban co the giai thich no bang tieng Anh khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-repair-1",
-          "audioKey": "repair-1"
+          "detailPageID": "viet-phrase-v900-unde-repa-can-you-explain-it-in-english",
+          "audioKey": "v900-unde-repa-can-you-explain-it-in-english"
         },
         {
-          "id": "repair-2",
-          "vietnamese": "Viết xuống giúp tôi",
-          "english": "Please write it down",
-          "pronunciation": "vee-et zoong zoop toy",
+          "id": "v500-unde-repa-can-i-use-a-translation-app",
+          "vietnamese": "Tôi có thể sử dụng ứng dụng dịch thuật không?",
+          "english": "Can I use a translation app?",
+          "pronunciation": "Toi co the su dung ung dung dich thuat khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-repair-2",
-          "audioKey": "repair-2"
+          "detailPageID": "viet-phrase-v500-unde-repa-can-i-use-a-translation-app",
+          "audioKey": "v500-unde-repa-can-i-use-a-translation-app"
         },
         {
-          "id": "repair-3",
-          "vietnamese": "Cái đó nghĩa là gì?",
-          "english": "What does that mean?",
-          "pronunciation": "gai doh ngee-ah lah zee",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v500-unde-repa-please-type-it-into-my-phone",
+          "vietnamese": "Anh/chị gõ vào điện thoại giúp tôi được không?",
+          "english": "Please type it into my phone.",
+          "pronunciation": "Anh chi go vao dien thoai giup toi duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-repair-3",
-          "audioKey": "repair-3"
+          "detailPageID": "viet-phrase-v500-unde-repa-please-type-it-into-my-phone",
+          "audioKey": null
         },
         {
-          "id": "repair-4",
-          "vietnamese": "Ý anh/chị là cái nào?",
-          "english": "Which one do you mean?",
-          "pronunciation": "ee anh chee lah gai now",
+          "id": "v500-unde-repa-can-you-write-the-address",
+          "vietnamese": "Bạn có thể viết địa chỉ được không?",
+          "english": "Can you write the address?",
+          "pronunciation": "Ban co the viet dia chi duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-repair-4",
-          "audioKey": "repair-4"
+          "detailPageID": "viet-phrase-v500-unde-repa-can-you-write-the-address",
+          "audioKey": "v500-unde-repa-can-you-write-the-address"
         },
         {
-          "id": "repair-show-me",
-          "vietnamese": "Chỉ cho tôi được không?",
-          "english": "Can you show me?",
-          "pronunciation": "chee cho toy dook khong",
+          "id": "repair-translate-this",
+          "vietnamese": "Dịch giúp tôi cái này được không?",
+          "english": "Can you translate this for me?",
+          "pronunciation": "zik zoop toy gai nai dook khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
-          "detailPageID": "viet-phrase-repair-show-me",
-          "audioKey": "repair-show-me"
+          "detailPageID": "viet-phrase-repair-translate-this",
+          "audioKey": "repair-translate-this"
         }
       ]
     }

@@ -4,10 +4,10 @@
   "phraseID": "v500-poli-basi-sorry",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Lấy làm tiếc",
+  "title": "Tôi xin lỗi",
   "englishTitle": "Sorry",
-  "pronunciation": "Lay lam tiec",
-  "summary": "Sorry",
+  "pronunciation": "Toi xin loi",
+  "summary": "For giving a direct apology after a small mistake, delay, bump, or misunderstanding.",
   "iconName": "hand.wave.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -15,57 +15,61 @@
     "v500-poli-basi-sorry",
     "premium"
   ],
-  "audioKey": "v500-poli-basi-sorry",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Lấy làm tiếc is a practical polite basics phrase for keeping one travel detail clear. Use it when Sorry is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it when you actually need to apologize, not just get attention. Keep the next words small.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Lấy làm tiếc. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say it calmly, then pause. If needed, add the mistake, item, room number, or request after the apology lands.",
       "phrases": [
         {
           "id": "v500-poli-basi-sorry",
-          "vietnamese": "Lấy làm tiếc",
+          "vietnamese": "Tôi xin lỗi",
           "english": "Sorry",
-          "pronunciation": "Lay lam tiec",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Toi xin loi",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
           "detailPageID": null,
-          "audioKey": "v500-poli-basi-sorry"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi means I; xin lỗi means apologize or sorry.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Lấy làm",
-          "english": "feel regret"
+          "vietnamese": "Tôi",
+          "english": "I",
+          "keepTogetherReason": "speaker pronoun"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tiếc",
-          "english": "regret / apology"
+          "vietnamese": "xin lỗi",
+          "english": "am sorry / apologize",
+          "keepTogetherReason": "apology phrase"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "Lấy làm tiếc",
+          "id": "full",
+          "vietnamese": "Tôi xin lỗi",
           "english": "Sorry",
-          "audioKey": "v500-poli-basi-sorry"
+          "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Sorry to another polite basics need.",
+      "body": "Hello, thank-you, and thank-you-very-much cards cover softer polite openings.",
       "phrases": [
         {
           "id": "polite-1",
@@ -102,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real polite basics exchange when sorry is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Counters, rides, hotel desks, shops, and crowded walkways are common places for a quick apology.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
+      "body": "Xin lỗi alone can mean excuse me or sorry. Tôi xin lỗi makes the apology more direct.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Lấy làm tiếc.",
+      "body": "Yes, no-thank-you, excuse-me, it's-okay, and goodbye cards cover the next polite move.",
       "phrases": [
         {
           "id": "polite-3",
@@ -170,13 +176,13 @@
   "examples": [
     {
       "id": "v500-poli-basi-sorry",
-      "vietnamese": "Lấy làm tiếc",
+      "vietnamese": "Tôi xin lỗi",
       "english": "Sorry",
-      "pronunciation": "Lay lam tiec",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Toi xin loi",
+      "symbolName": "text.bubble.fill",
       "tintName": "red",
       "detailPageID": null,
-      "audioKey": "v500-poli-basi-sorry"
+      "audioKey": null
     }
   ]
 }

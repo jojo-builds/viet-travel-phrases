@@ -4,10 +4,10 @@
   "phraseID": "v900-loca-serv-ever-task-can-you-print-this-for-me",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Bạn có thể in cái này cho tôi được không?",
+  "title": "Anh/chị in cái này giúp tôi được không?",
   "englishTitle": "Can you print this for me?",
-  "pronunciation": "Ban co the in cai nay cho toi duoc khong",
-  "summary": "Can you print this for me?",
+  "pronunciation": "Anh chi in cai nay giup toi duoc khong",
+  "summary": "For asking a hotel desk, copy shop, or service counter to print the file on your phone.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -15,71 +15,73 @@
     "v900-loca-serv-ever-task-can-you-print-this-for-me",
     "premium"
   ],
-  "audioKey": "v900-loca-serv-ever-task-can-you-print-this-for-me",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể in cái này cho tôi được không? asks someone to do one helpful action for you. Use it for print this for me when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Use it when the document is visible and the next step is a printed copy, not a long explanation.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể in cái này cho tôi được không? once, then make the task visible with your item, receipt, photo, address, or phone screen. The phrase is doing one job: getting a clear answer about print this for me.",
+      "body": "Open the file first. Show the screen, then ask once and let staff point to price, paper size, or pickup time.",
       "phrases": [
         {
           "id": "v900-loca-serv-ever-task-can-you-print-this-for-me",
-          "vietnamese": "Bạn có thể in cái này cho tôi được không?",
+          "vietnamese": "Anh/chị in cái này giúp tôi được không?",
           "english": "Can you print this for me?",
-          "pronunciation": "Ban co the in cai nay cho toi duoc khong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Anh chi in cai nay giup toi duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "teal",
           "detailPageID": null,
-          "audioKey": "v900-loca-serv-ever-task-can-you-print-this-for-me"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Anh/chị is a polite you; in cái này means print this; giúp tôi means help me; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bạn có thể",
-          "english": "can you",
-          "audioKey": null
+          "vietnamese": "Anh/chị",
+          "english": "you",
+          "keepTogetherReason": "polite address"
         },
         {
           "id": "chunk-2",
           "vietnamese": "in cái này",
-          "english": "this one / this",
-          "audioKey": null
+          "english": "print this",
+          "keepTogetherReason": "print-this phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "cho tôi",
-          "english": "for me / please",
-          "audioKey": null
+          "vietnamese": "giúp tôi",
+          "english": "help me / for me",
+          "keepTogetherReason": "help-me phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-5",
-          "vietnamese": "Bạn có thể in cái này cho tôi được không?",
-          "english": "Can you print this for me",
+          "id": "full",
+          "vietnamese": "Anh/chị in cái này giúp tôi được không?",
+          "english": "Can you print this for me?",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you print this for me? to another local service need.",
+      "body": "If the print job needs detail, move to black-and-white, copy, scan, email, or receipt follow-ups.",
       "phrases": [
         {
           "id": "store-1",
@@ -116,17 +118,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real local service exchange when print this for me is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotel desks, copy shops, tour offices, visa errands, clinics, and counters that handle documents.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Printing requests move faster when the file is already open and the name is easy to see.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể in cái này cho tôi được không?.",
+      "body": "Use copy, scan, black-and-white, email-it, or receipt cards if the counter needs one more instruction.",
       "phrases": [
         {
           "id": "store-4",
@@ -184,13 +188,13 @@
   "examples": [
     {
       "id": "v900-loca-serv-ever-task-can-you-print-this-for-me",
-      "vietnamese": "Bạn có thể in cái này cho tôi được không?",
+      "vietnamese": "Anh/chị in cái này giúp tôi được không?",
       "english": "Can you print this for me?",
-      "pronunciation": "Ban co the in cai nay cho toi duoc khong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Anh chi in cai nay giup toi duoc khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "teal",
       "detailPageID": null,
-      "audioKey": "v900-loca-serv-ever-task-can-you-print-this-for-me"
+      "audioKey": null
     }
   ]
 }

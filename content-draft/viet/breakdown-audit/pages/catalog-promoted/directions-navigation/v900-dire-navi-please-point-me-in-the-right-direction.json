@@ -20,43 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Xin",
-      "english": "please / request"
+      "vietnamese": "Xin hãy",
+      "english": "please",
+      "keepTogetherReason": "polite request opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "hãy",
-      "english": "please do"
+      "vietnamese": "chỉ cho tôi",
+      "english": "point out / show me",
+      "keepTogetherReason": "pointing-help phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "chỉ",
-      "english": "show / point"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tôi",
-      "english": "me"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "đi",
-      "english": "go"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "đúng",
-      "english": "correct / right"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "hướng",
-      "english": "direction"
+      "vietnamese": "đi đúng hướng",
+      "english": "go the right way",
+      "keepTogetherReason": "right-direction phrase"
     },
     {
       "id": "full",

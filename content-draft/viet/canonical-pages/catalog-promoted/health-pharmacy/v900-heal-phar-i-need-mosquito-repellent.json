@@ -7,7 +7,7 @@
   "title": "Tôi cần thuốc chống muỗi",
   "englishTitle": "I need mosquito repellent",
   "pronunciation": "Toi can thuoc chong muoi",
-  "summary": "I need mosquito repellent",
+  "summary": "For asking a pharmacy, shop, or hotel desk for mosquito repellent.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần thuốc chống muỗi is the short line for naming what you need next. It works best when mosquito repellent is visible on your phone, ticket, note, shelf, or in the situation around you."
+      "body": "Ask before evenings outside, river walks, garden seating, or countryside transfers."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần thuốc chống muỗi with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "body": "Point to your skin, bite marks, or a shelf of sprays so they know you mean repellent.",
       "phrases": [
         {
           "id": "v900-heal-phar-i-need-mosquito-repellent",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi cần means I need; thuốc chống muỗi means mosquito repellent.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi cần",
           "english": "I need",
-          "audioKey": null
+          "keepTogetherReason": "I-need phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "thuốc chống muỗi",
-          "english": "medicine",
-          "audioKey": null
+          "english": "mosquito repellent",
+          "keepTogetherReason": "mosquito-repellent noun"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi cần thuốc chống muỗi",
           "english": "I need mosquito repellent",
-          "audioKey": null
+          "audioKey": "v900-heal-phar-i-need-mosquito-repellent"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I need mosquito repellent to another pharmacy or health need.",
+      "body": "Doctor, pharmacy, and nearest-pharmacy pages stay nearby if bites become a medical issue.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when mosquito repellent is the detail you need resolved. The likely reply is a point, option, yes/no answer, or next step, so keep the phrase short and ready for one follow-up."
+      "body": "Good at pharmacies, convenience stores, hotel desks, homestays, and outdoor-tour counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "Vietnam shops may offer sprays, creams, coils, or plug-ins. Point to skin-safe repellent if that matters."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi cần thuốc chống muỗi.",
+      "body": "Headache, stomach, motion-sickness, medicine, and allergy pages cover common pharmacy follow-ups.",
       "phrases": [
         {
           "id": "health-2",

@@ -7,7 +7,7 @@
   "title": "Cứu tôi với!",
   "englishTitle": "Help!",
   "pronunciation": "koo toy voy",
-  "summary": "A focused guide to when Cứu tôi với! sounds more natural than Đây là trường hợp khẩn cấp.",
+  "summary": "A direct emergency call for when you need immediate attention.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,45 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cứu tôi với! is useful when \"Help!\" needs a slightly different tone or setting. Use this when you need immediate attention in a real emergency.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "breakdown",
-      "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
-      "breakdown": [
-        {
-          "id": "emergency-5-piece-1",
-          "vietnamese": "Cứu",
-          "english": "rescue / help",
-          "audioKey": "breakdown-authored-cuu-981c314329"
-        },
-        {
-          "id": "emergency-5-piece-2",
-          "vietnamese": "tôi",
-          "english": "I / me",
-          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
-        },
-        {
-          "id": "emergency-5-piece-3",
-          "vietnamese": "với",
-          "english": "please / with",
-          "audioKey": "breakdown-authored-voi-25e5621456"
-        },
-        {
-          "id": "emergency-5-full",
-          "vietnamese": "Cứu tôi với!",
-          "english": "Help!",
-          "audioKey": "emergency-5"
-        }
-      ],
-      "presentation": "breakdown-strip"
+      "body": "It is shorter and more urgent than explaining the whole emergency first.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Cứu tôi với! when \"Help!\" is the exact tone or situation you want.",
+      "body": "Say this first when the priority is getting attention fast.",
       "phrases": [
         {
           "id": "emergency-5",
@@ -69,18 +39,46 @@
           "audioKey": "emergency-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "This is for when you need immediate attention in a real emergency. Use Đây là trường hợp khẩn cấp when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
-      "presentation": "plain-text"
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Build the line around Cứu + tôi, then replay the full phrase until the rhythm feels natural.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Cứu",
+          "english": "rescue / help",
+          "audioKey": "breakdown-authored-cuu-981c314329"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "với!",
+          "english": "with / to",
+          "audioKey": null
+        },
+        {
+          "id": "full",
+          "vietnamese": "Cứu tôi với!",
+          "english": "Help!",
+          "audioKey": "emergency-5"
+        }
+      ],
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Emergency & Safety, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Cứu tôi với! once, pause, and watch for the reply. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "After someone responds, move to the more specific emergency, pharmacy, police, or hotel phrase if you can.",
       "phrases": [
         {
           "id": "emergency-emergency",
@@ -113,18 +111,29 @@
           "audioKey": "emergency-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use for immediate danger, injury, or a situation where you need someone to step in before details matter.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "In safety moments, clarity matters more than sounding polished. Repeat the phrase if needed.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Nearby phrases keep the conversation moving after this one.",
+      "body": "Keep nearby emergency, police, hospital, and pharmacy phrases close for the next sentence.",
       "phrases": [
         {
           "id": "emergency-emergency",
@@ -187,7 +196,8 @@
           "audioKey": "emergency-hospital"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

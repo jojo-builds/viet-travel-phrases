@@ -7,7 +7,7 @@
   "title": "Tôi để quên thứ gì đó trong xe",
   "englishTitle": "I left something in the car",
   "pronunciation": "Toi de quen thu gi do trong xe",
-  "summary": "I left something in the car",
+  "summary": "For telling a driver or desk that a bag, phone, wallet, or small item stayed in the car.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi để quên thứ gì đó trong xe is a practical transport phrase for keeping one travel detail clear. Use it when I left something in the car is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it as soon as you notice the missing item, while the ride, plate, or driver contact is still available."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi để quên thứ gì đó trong xe. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the booking, plate number, or driver message first. Then say what item you left if they ask.",
       "phrases": [
         {
           "id": "v500-tran-i-left-something-in-the-car",
@@ -42,38 +42,41 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi để quên means I left behind; thứ gì đó means something; trong xe means in the car.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi để quên",
           "english": "I left behind",
+          "keepTogetherReason": "left-behind phrase",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "thứ gì đó",
-          "english": "that one / that",
+          "english": "something",
+          "keepTogetherReason": "something phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "trong xe",
           "english": "in the car",
+          "keepTogetherReason": "in-car phrase",
           "audioKey": null
         },
         {
           "id": "chunk-4",
           "vietnamese": "Tôi để quên thứ gì đó trong xe",
           "english": "I left something in the car",
-          "audioKey": null
+          "audioKey": "v500-tran-i-left-something-in-the-car"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I left something in the car to another transport need.",
+      "body": "If recovery takes another step, move to call-driver, contact-information, hotel-call, or report follow-ups.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +113,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when i left something in the car is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good after taxis, app rides, private cars, hotel pickups, and tour vans."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "The faster you ask, the better. Plate number, pickup point, and drop-off time matter more than a long story."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi để quên thứ gì đó trong xe.",
+      "body": "Use stop-here, go-this-way, driver-call, contact-information, or left-something follow-ups as the recovery path changes.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

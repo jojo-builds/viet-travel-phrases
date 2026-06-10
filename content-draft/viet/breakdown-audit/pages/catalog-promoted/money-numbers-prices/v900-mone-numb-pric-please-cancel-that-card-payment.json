@@ -22,28 +22,19 @@
       "id": "chunk-1",
       "vietnamese": "Vui lòng",
       "english": "please",
-      "keepTogetherReason": "fixed polite phrase"
+      "keepTogetherReason": "polite opener"
     },
     {
       "id": "chunk-2",
       "vietnamese": "hủy",
-      "english": "cancel"
+      "english": "cancel",
+      "keepTogetherReason": "cancel verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "thanh toán",
-      "english": "pay",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "thẻ",
-      "english": "card"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đó",
-      "english": "that"
+      "vietnamese": "thanh toán thẻ đó",
+      "english": "that card payment",
+      "keepTogetherReason": "card-payment phrase"
     },
     {
       "id": "full",

@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-heal-phar-i-am-pregnant",
-  "phraseText": "tôi đang mang thai",
+  "phraseText": "Tôi đang mang thai",
   "englishTitle": "I am pregnant",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,23 +20,19 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi đang",
+      "english": "I am",
+      "keepTogetherReason": "current-state phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đang",
-      "english": "currently / am"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "mang thai",
       "english": "pregnant",
-      "keepTogetherReason": "compound health term"
+      "keepTogetherReason": "pregnancy phrase"
     },
     {
       "id": "full",
-      "vietnamese": "tôi đang mang thai",
+      "vietnamese": "Tôi đang mang thai",
       "english": "I am pregnant",
       "audioKey": "v500-heal-phar-i-am-pregnant"
     }

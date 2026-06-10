@@ -56,7 +56,7 @@
           "english": "One portion of bun cha, please"
         }
       ],
-      "atGlance": "This is the restaurant action phrase behind the Bún chả Hương Liên pilot row. It turns the place page from name recognition into a real order a beginner can say.",
+      "atGlance": "This is the restaurant action phrase for ordering at Bún chả Hương Liên. It turns name recognition into a real order a beginner can say.",
       "quickSay": "Say the whole line once while pointing at the menu or photo. Dạ keeps it soft, and một phần keeps the order simple.",
       "breakdownBody": "The useful frame is cho tôi plus a quantity and dish name. Swap the dish later, but keep the polite opener for walk-in restaurant moments.",
       "useItWithTitle": "Restaurant flow",
@@ -66,16 +66,84 @@
       "exploreNextBody": "Go next to drink, bill, taxi, or recommendation phrases that complete the restaurant visit.",
       "rationale": "Required by EP-001 as a live restaurant interaction row. It is a full canonical phrase page because the row is visible and playable in future imports.",
       "relatedPhraseIDs": [
-        "v900-food-drin-one-iced-tea-please",
+        "ves-iced-tea-please",
         "coffee-7",
         "ves-call-taxi-for-me",
         "ves-popular-dish-here"
       ],
       "explorePhraseIDs": [
-        "v900-food-drin-one-iced-tea-please",
+        "ves-iced-tea-please",
         "coffee-7",
         "ves-call-taxi-for-me",
         "v900-food-drin-what-do-you-recommend"
+      ]
+    },
+    {
+      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+      "status": "approved",
+      "phraseID": "ves-iced-tea-please",
+      "familyID": "ves-iced-tea-please",
+      "scenarioID": "food-drink",
+      "supportModel": "restaurant-live-interaction",
+      "supportFamily": "restaurant-drinks",
+      "requiredForPatchIDs": [
+        "EP-001"
+      ],
+      "difficulty": "beginner",
+      "targetText": "Cho tôi trà đá.",
+      "englishText": "Iced tea, please.",
+      "canonicalTargetText": "Cho tôi trà đá.",
+      "pronunciation": "cho toy cha da",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "audioStatus": "planned",
+      "iconName": "cup.and.saucer.fill",
+      "tintName": "blue",
+      "categoryIDs": [
+        "restaurant-live-interaction",
+        "food-drink"
+      ],
+      "searchAliases": [
+        "iced tea please",
+        "tra da please",
+        "order iced tea"
+      ],
+      "context": "Use this after the server knows you are ordering and the drink is the next small item.",
+      "youMayHear": "Có / Hết rồi.",
+      "chunks": [
+        {
+          "vietnamese": "Cho tôi",
+          "english": "give me / for me"
+        },
+        {
+          "vietnamese": "trà đá",
+          "english": "iced tea"
+        },
+        {
+          "vietnamese": "Cho tôi trà đá.",
+          "english": "Iced tea, please"
+        }
+      ],
+      "atGlance": "Cho tôi trà đá is the short table line after the main dish is understood. It keeps the drink request easy at a casual restaurant.",
+      "quickSay": "Say it while pointing to the drink list or glass. Cho tôi keeps the request direct without turning it into a long sentence.",
+      "breakdownBody": "Cho tôi is the useful ordering frame. Trà đá is iced tea, a common cold-table drink in casual restaurant moments.",
+      "useItWithTitle": "Table add-on",
+      "useItWith": "Use it after ordering food, asking what is available, or answering a server who is waiting for the drink choice.",
+      "whenToUse": "Use it at a table, food stall, or casual counter when the drink order is the only thing left to say.",
+      "goodToKnow": "If the server says hết rồi, the item is out. Point to another drink or use a recommendation phrase next.",
+      "exploreNextBody": "Go next to the longer iced-tea phrase, bill, taxi, or recommendation pages.",
+      "rationale": "Required by EP-001 because the pilot visible row says Cho tôi trà đá, not the longer existing one-iced-tea page.",
+      "relatedPhraseIDs": [
+        "ves-order-bun-cha-portion",
+        "v900-food-drin-one-iced-tea-please",
+        "coffee-7",
+        "v900-food-drin-what-do-you-recommend"
+      ],
+      "explorePhraseIDs": [
+        "v900-food-drin-one-iced-tea-please",
+        "coffee-7",
+        "ves-call-taxi-for-me",
+        "ves-popular-dish-here"
       ]
     },
     {
@@ -211,10 +279,10 @@
           "english": "One bowl of pho, please"
         }
       ],
-      "atGlance": "This supports the Phở Bát Đàn pilot row by giving the traveler a real order sentence after the restaurant name has done its job.",
+      "atGlance": "This gives the Phở Bát Đàn page a real order sentence after the restaurant name has done its job.",
       "quickSay": "Say it while pointing at pho on the menu. If staff ask a follow-up, listen for beef, chicken, big, or small.",
       "breakdownBody": "Một tô is the bowl-size frame. It pairs naturally with pho and other soup/noodle dishes.",
-      "useItWithTitle": "Likely follow-up",
+      "useItWithTitle": "Useful next phrases",
       "useItWith": "After this phrase, the next useful question may be about size, beef/chicken, herbs, or payment.",
       "whenToUse": "Use it at a pho counter or table when you already know what you want and need the order taken quickly.",
       "goodToKnow": "Pho shops may ask short follow-up questions. Keep your phone or menu open and answer with pointing if the words come fast.",
@@ -303,10 +371,10 @@
         "coffee-7"
       ],
       "explorePhraseIDs": [
-        "v900-food-drin-what-do-you-recommend",
-        "ves-whats-in-this-dish",
-        "ves-order-pho-bowl",
-        "coffee-7"
+        "ves-order-bun-cha-portion",
+        "ves-order-cao-lau-portion",
+        "ves-order-bun-bo-hue-bowl",
+        "ves-not-too-spicy"
       ]
     },
     {
@@ -373,7 +441,7 @@
       "whenToUse": "Use it as the final step of a taxi, car, or motorbike ride when you can see the place or it is safe to stop.",
       "goodToKnow": "Short drop-off phrases are normal in rides. A calm tone plus pointing is usually clearer than adding more words.",
       "exploreNextBody": "Go next to stop-here, cash, fare, and street-confirmation pages.",
-      "rationale": "Required by restaurant and street pilot rows as an exact visible drop-off support page.",
+      "rationale": "Required by restaurant and street pages as an exact visible drop-off support page.",
       "relatedPhraseIDs": [
         "taxi-3",
         "transport-stop-here-clearer",
@@ -441,7 +509,7 @@
           "english": "One portion of cao lau, please"
         }
       ],
-      "atGlance": "This is the beginner order phrase that lets a cao lầu page become actionable without changing the canonical dish-page title.",
+      "atGlance": "This is the beginner order phrase that makes a cao lầu page actionable once the dish name is familiar.",
       "quickSay": "Say it while pointing at cao lầu on the menu. The phrase is short enough for a first-time traveler to use at a stall or restaurant.",
       "breakdownBody": "The order frame is the same as other dish pages: polite opener, give me, one portion, dish name.",
       "useItWithTitle": "Dish page flow",
@@ -514,7 +582,7 @@
           "english": "What is in this dish?"
         }
       ],
-      "atGlance": "This is the compact ingredient question behind the dish model. It keeps food pages useful for travelers who cannot read every menu word yet.",
+      "atGlance": "This is the compact ingredient question behind the dish model. It helps when the menu words are still unfamiliar.",
       "quickSay": "Point to the dish and ask the short question. Listen for the first ingredient word, then use a diet or allergy phrase if needed.",
       "breakdownBody": "Món này means this dish. Có gì asks what it has, which is enough to invite a simple ingredient answer.",
       "useItWithTitle": "Ingredient check",
@@ -1050,7 +1118,7 @@
       "useItWithTitle": "Pickup point",
       "useItWith": "Use it after naming the place or stop, then confirm the return time if needed.",
       "whenToUse": "Use it for a short photo stop, viewpoint, pagoda stop, or pickup plan where the same driver may stay nearby.",
-      "goodToKnow": "Anh is for a male or older male-presenting driver. If unsure, the app can later offer an anh/chị version.",
+      "goodToKnow": "Anh fits a male or older male-presenting driver. If the driver is a woman or the relationship is unclear, keep the destination visible and use a shorter wait phrase instead.",
       "exploreNextBody": "Go next to return-time, exact-stop, and show-me pages.",
       "rationale": "Required by EP-008 as a full canonical support target for area-route handling.",
       "relatedPhraseIDs": [
@@ -1766,6 +1834,978 @@
         "ves-not-right-place",
         "repair-5",
         "taxi-1"
+      ]
+    },
+    {
+      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+      "status": "approved",
+      "phraseID": "ves-two-tickets-ba-na-hills",
+      "familyID": "ves-two-tickets-ba-na-hills",
+      "scenarioID": "sightseeing-activities",
+      "supportModel": "place-journey-navigation",
+      "supportFamily": "ticket-counter",
+      "requiredForPatchIDs": [
+        "EP-005"
+      ],
+      "difficulty": "beginner",
+      "targetText": "Dạ, cho tôi hai vé lên Bà Nà Hills.",
+      "englishText": "Two tickets to Ba Na Hills, please.",
+      "canonicalTargetText": "Dạ, cho tôi hai vé lên Bà Nà Hills.",
+      "pronunciation": "yah cho toy hai veh len ba na hills",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "audioStatus": "planned",
+      "iconName": "ticket.fill",
+      "tintName": "purple",
+      "categoryIDs": [
+        "ticket-counter",
+        "ba-na-hills"
+      ],
+      "searchAliases": [
+        "two tickets to Ba Na Hills",
+        "Ba Na Hills tickets",
+        "two tickets please"
+      ],
+      "context": "Use this at a ticket or tour counter when the destination is Ba Na Hills and the number of tickets matters.",
+      "youMayHear": "Hai vé hả? / Cho mấy người?",
+      "chunks": [
+        {
+          "vietnamese": "Dạ, cho tôi",
+          "english": "please give me"
+        },
+        {
+          "vietnamese": "hai vé",
+          "english": "two tickets"
+        },
+        {
+          "vietnamese": "lên Bà Nà Hills",
+          "english": "up to Ba Na Hills"
+        },
+        {
+          "vietnamese": "Dạ, cho tôi hai vé lên Bà Nà Hills.",
+          "english": "Two tickets to Ba Na Hills, please."
+        }
+      ],
+      "atGlance": "This is the ticket-counter sentence for a Ba Na Hills visit. It keeps the request on quantity and destination, not attraction logistics.",
+      "quickSay": "Say it with the place name or ticket screen visible so staff can match the request to the right attraction.",
+      "breakdownBody": "Hai vé is the ticket count. Lên Bà Nà Hills points to the uphill attraction trip.",
+      "useItWithTitle": "At the counter",
+      "useItWith": "Use it before staff ask follow-up questions about people, ticket type, or the next line.",
+      "whenToUse": "Use it when the number of tickets is the useful first detail and the destination is already decided.",
+      "goodToKnow": "Do not add money or timing details into this phrase. Let the counter answer with the available options.",
+      "exploreNextBody": "Go next to cable-car, entrance, photo, and return-ride phrases.",
+      "rationale": "Required by EP-005 as a stable Ba Na Hills ticket-counter support row without volatile operating-detail claims.",
+      "relatedPhraseIDs": [
+        "ves-where-cable-car",
+        "ves-take-photo-for-me",
+        "ves-call-taxi-for-me",
+        "repair-5"
+      ],
+      "explorePhraseIDs": [
+        "ves-where-cable-car",
+        "ves-take-photo-for-me",
+        "ves-call-taxi-for-me",
+        "repair-5"
+      ]
+    },
+    {
+      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+      "status": "approved",
+      "phraseID": "ves-drop-near-dragon-bridge",
+      "familyID": "ves-drop-near-dragon-bridge",
+      "scenarioID": "transport",
+      "supportModel": "place-navigation-photo",
+      "supportFamily": "drop-off",
+      "requiredForPatchIDs": [
+        "EP-006",
+        "EP-015"
+      ],
+      "difficulty": "beginner",
+      "targetText": "Cho tôi xuống gần Cầu Rồng.",
+      "englishText": "Drop me off near Dragon Bridge.",
+      "canonicalTargetText": "Cho tôi xuống gần Cầu Rồng.",
+      "pronunciation": "cho toy zoong gan cow rong",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "audioStatus": "planned",
+      "iconName": "car.fill",
+      "tintName": "orange",
+      "categoryIDs": [
+        "drop-off",
+        "dragon-bridge"
+      ],
+      "searchAliases": [
+        "drop me near Dragon Bridge",
+        "Dragon Bridge drop off",
+        "near Dragon Bridge"
+      ],
+      "context": "Use this with a driver when Dragon Bridge is the landmark and nearby is close enough for the plan.",
+      "youMayHear": "Gần đây được không? / Bên này hả?",
+      "chunks": [
+        {
+          "vietnamese": "Cho tôi xuống",
+          "english": "let me get off"
+        },
+        {
+          "vietnamese": "gần",
+          "english": "near"
+        },
+        {
+          "vietnamese": "Cầu Rồng",
+          "english": "Dragon Bridge"
+        },
+        {
+          "vietnamese": "Cho tôi xuống gần Cầu Rồng.",
+          "english": "Drop me off near Dragon Bridge."
+        }
+      ],
+      "atGlance": "This is a landmark drop-off phrase. It gives the driver a clear place while leaving room for the safest nearby curb.",
+      "quickSay": "Say it as the car gets close, then point to the map or the bridge side you want.",
+      "breakdownBody": "Xuống is getting out. Gần Cầu Rồng keeps the stop near the landmark instead of forcing an exact address.",
+      "useItWithTitle": "Driver moment",
+      "useItWith": "Use it after the route is already heading toward the bridge and you need the final stop.",
+      "whenToUse": "Use it when the exact entrance, viewing spot, or curb is flexible but the landmark is clear.",
+      "goodToKnow": "Near can be safer than exact at busy riverfront roads. Let the driver choose a legal stop if needed.",
+      "exploreNextBody": "Go next to address-confirm, photo, wrong-place, and call-taxi phrases.",
+      "rationale": "Required by EP-006 and EP-015 as a stable Dragon Bridge drop-off support row.",
+      "relatedPhraseIDs": [
+        "ves-is-this-address-correct",
+        "ves-take-photo-for-me",
+        "ves-not-right-place",
+        "ves-call-taxi-for-me"
+      ],
+      "explorePhraseIDs": [
+        "ves-is-this-address-correct",
+        "ves-take-photo-for-me",
+        "ves-not-right-place",
+        "ves-call-taxi-for-me"
+      ]
+    },
+    {
+      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+      "status": "approved",
+      "phraseID": "ves-take-me-to-ba-na-hills",
+      "familyID": "ves-take-me-to-ba-na-hills",
+      "scenarioID": "transport",
+      "supportModel": "driver-ready-phrase",
+      "supportFamily": "destination-request",
+      "requiredForPatchIDs": [
+        "EP-012"
+      ],
+      "difficulty": "beginner",
+      "targetText": "Cho tôi đi Bà Nà Hills.",
+      "englishText": "Please take me to Ba Na Hills.",
+      "canonicalTargetText": "Cho tôi đi Bà Nà Hills.",
+      "pronunciation": "cho toy dee ba na hills",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "audioStatus": "planned",
+      "iconName": "car.fill",
+      "tintName": "orange",
+      "categoryIDs": [
+        "driver-ready-phrase",
+        "ba-na-hills"
+      ],
+      "searchAliases": [
+        "take me to Ba Na Hills",
+        "go to Ba Na Hills",
+        "Ba Na Hills driver"
+      ],
+      "context": "Use this with a driver or hotel desk when Ba Na Hills is the destination.",
+      "youMayHear": "Bà Nà hả? / Đi bây giờ hả?",
+      "chunks": [
+        {
+          "vietnamese": "Cho tôi đi",
+          "english": "take me / let me go"
+        },
+        {
+          "vietnamese": "Bà Nà Hills",
+          "english": "Ba Na Hills"
+        },
+        {
+          "vietnamese": "Cho tôi đi Bà Nà Hills.",
+          "english": "Please take me to Ba Na Hills."
+        }
+      ],
+      "atGlance": "This is the driver-ready version of the Ba Na Hills route. It works well with the map or place card visible.",
+      "quickSay": "Say it while showing the destination. The next useful answer may be a pickup point, fare question, or confirmation.",
+      "breakdownBody": "Cho tôi đi asks to go somewhere. Bà Nà Hills names the destination.",
+      "useItWithTitle": "Before the ride",
+      "useItWith": "Use it when the destination is set and the next step is arranging the ride.",
+      "whenToUse": "Use it before getting in, at a hotel desk, or while confirming the route with a driver.",
+      "goodToKnow": "Keep this phrase separate from ticket questions. The driver phrase gets you there; the counter handles tickets.",
+      "exploreNextBody": "Go next to address-confirm, cable-car, ticket, and return-ride phrases.",
+      "rationale": "Required by EP-012 as a title-preserving linked support row for the existing Ba Na Hills route page.",
+      "relatedPhraseIDs": [
+        "ves-is-this-address-correct",
+        "ves-where-cable-car",
+        "ves-two-tickets-ba-na-hills",
+        "ves-call-taxi-for-me"
+      ],
+      "explorePhraseIDs": [
+        "ves-is-this-address-correct",
+        "ves-where-cable-car",
+        "ves-two-tickets-ba-na-hills",
+        "ves-call-taxi-for-me"
+      ]
+    },
+    {
+      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+      "status": "approved",
+      "phraseID": "ves-one-ticket-marble-mountains-polite",
+      "familyID": "ves-one-ticket-marble-mountains-polite",
+      "scenarioID": "sightseeing-activities",
+      "supportModel": "ticket-counter",
+      "supportFamily": "marble-mountains-ticket",
+      "requiredForPatchIDs": [
+        "EP-014"
+      ],
+      "difficulty": "beginner",
+      "targetText": "Dạ, cho tôi một vé vào Ngũ Hành Sơn.",
+      "englishText": "One ticket to Marble Mountains, please.",
+      "canonicalTargetText": "Dạ, cho tôi một vé vào Ngũ Hành Sơn.",
+      "pronunciation": "yah cho toy mot veh vao ngu hanh son",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "audioStatus": "planned",
+      "iconName": "ticket.fill",
+      "tintName": "purple",
+      "categoryIDs": [
+        "ticket-counter",
+        "marble-mountains"
+      ],
+      "searchAliases": [
+        "one ticket to Marble Mountains",
+        "Marble Mountains ticket",
+        "one ticket please"
+      ],
+      "context": "Use this at the ticket counter when you want one entry ticket for Marble Mountains.",
+      "youMayHear": "Một vé hả? / Đi lối này.",
+      "chunks": [
+        {
+          "vietnamese": "Dạ, cho tôi",
+          "english": "please give me"
+        },
+        {
+          "vietnamese": "một vé",
+          "english": "one ticket"
+        },
+        {
+          "vietnamese": "vào Ngũ Hành Sơn",
+          "english": "into Marble Mountains"
+        },
+        {
+          "vietnamese": "Dạ, cho tôi một vé vào Ngũ Hành Sơn.",
+          "english": "One ticket to Marble Mountains, please."
+        }
+      ],
+      "atGlance": "This is the polite counter version for one Marble Mountains ticket. It keeps the number and place clear.",
+      "quickSay": "Say it at the ticket window with the place name visible if there are multiple lines or options.",
+      "breakdownBody": "Một vé is one ticket. Vào Ngũ Hành Sơn points to entering the Marble Mountains site.",
+      "useItWithTitle": "At the ticket window",
+      "useItWith": "Use it before asking about entrance, driver wait, photos, or the next stop.",
+      "whenToUse": "Use it when a polite full sentence fits better than a short ticket request.",
+      "goodToKnow": "Keep money and entry rules out of the phrase. The counter will answer with the available details.",
+      "exploreNextBody": "Go next to entrance, driver-wait, photo, and return-ride phrases.",
+      "rationale": "Required by EP-014 as a title-preserving linked support row for Marble Mountains ticketing.",
+      "relatedPhraseIDs": [
+        "ves-two-tickets-marble-mountains",
+        "v500-sigh-acti-where-is-the-entrance",
+        "ves-where-driver-waits",
+        "ves-take-photo-for-me"
+      ],
+      "explorePhraseIDs": [
+        "ves-two-tickets-marble-mountains",
+        "v500-sigh-acti-where-is-the-entrance",
+        "ves-where-driver-waits",
+        "ves-take-photo-for-me"
+      ]
+    },
+    {
+      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+      "status": "approved",
+      "phraseID": "ves-two-tickets-marble-mountains",
+      "familyID": "ves-two-tickets-marble-mountains",
+      "scenarioID": "sightseeing-activities",
+      "supportModel": "ticket-counter",
+      "supportFamily": "marble-mountains-ticket",
+      "requiredForPatchIDs": [
+        "EP-014"
+      ],
+      "difficulty": "beginner",
+      "targetText": "Hai vé vào Ngũ Hành Sơn.",
+      "englishText": "Two tickets to Marble Mountains.",
+      "canonicalTargetText": "Hai vé vào Ngũ Hành Sơn.",
+      "pronunciation": "hai veh vao ngu hanh son",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "audioStatus": "planned",
+      "iconName": "ticket.fill",
+      "tintName": "purple",
+      "categoryIDs": [
+        "ticket-counter",
+        "marble-mountains"
+      ],
+      "searchAliases": [
+        "two tickets to Marble Mountains",
+        "two Marble Mountains tickets"
+      ],
+      "context": "Use this when two tickets is the only detail the counter needs first.",
+      "youMayHear": "Hai vé hả? / Hai người?",
+      "chunks": [
+        {
+          "vietnamese": "Hai vé",
+          "english": "two tickets"
+        },
+        {
+          "vietnamese": "vào Ngũ Hành Sơn",
+          "english": "into Marble Mountains"
+        },
+        {
+          "vietnamese": "Hai vé vào Ngũ Hành Sơn.",
+          "english": "Two tickets to Marble Mountains."
+        }
+      ],
+      "atGlance": "This is the short two-ticket version for Marble Mountains. It is direct when the place and count are already clear.",
+      "quickSay": "Say it at the counter, then let staff ask the needed follow-up.",
+      "breakdownBody": "Hai vé gives the quantity. Vào Ngũ Hành Sơn names the site you are entering.",
+      "useItWithTitle": "At the ticket window",
+      "useItWith": "Use it after the place is obvious and the only first detail is the number of tickets.",
+      "whenToUse": "Use it as a compact variant beside the one-ticket polite phrase.",
+      "goodToKnow": "If staff ask a follow-up, point to the group or ticket screen instead of adding extra English.",
+      "exploreNextBody": "Go next to one-ticket, entrance, driver-wait, and photo phrases.",
+      "rationale": "Required by EP-014 as the two-ticket support variant for Marble Mountains.",
+      "relatedPhraseIDs": [
+        "ves-one-ticket-marble-mountains-polite",
+        "v500-sigh-acti-where-is-the-entrance",
+        "ves-where-driver-waits",
+        "ves-take-photo-for-me"
+      ],
+      "explorePhraseIDs": [
+        "ves-one-ticket-marble-mountains-polite",
+        "v500-sigh-acti-where-is-the-entrance",
+        "ves-where-driver-waits",
+        "ves-take-photo-for-me"
+      ]
+    },
+    {
+      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+      "status": "approved",
+      "phraseID": "ves-take-me-to-dragon-bridge",
+      "familyID": "ves-take-me-to-dragon-bridge",
+      "scenarioID": "transport",
+      "supportModel": "driver-ready-phrase",
+      "supportFamily": "destination-request",
+      "requiredForPatchIDs": [
+        "EP-015"
+      ],
+      "difficulty": "beginner",
+      "targetText": "Cho tôi đi Cầu Rồng.",
+      "englishText": "Please take me to Dragon Bridge.",
+      "canonicalTargetText": "Cho tôi đi Cầu Rồng.",
+      "pronunciation": "cho toy dee cow rong",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "audioStatus": "planned",
+      "iconName": "car.fill",
+      "tintName": "orange",
+      "categoryIDs": [
+        "driver-ready-phrase",
+        "dragon-bridge"
+      ],
+      "searchAliases": [
+        "take me to Dragon Bridge",
+        "go to Dragon Bridge",
+        "Dragon Bridge driver"
+      ],
+      "context": "Use this with a driver when Dragon Bridge is the destination.",
+      "youMayHear": "Cầu Rồng hả? / Bên nào?",
+      "chunks": [
+        {
+          "vietnamese": "Cho tôi đi",
+          "english": "take me / let me go"
+        },
+        {
+          "vietnamese": "Cầu Rồng",
+          "english": "Dragon Bridge"
+        },
+        {
+          "vietnamese": "Cho tôi đi Cầu Rồng.",
+          "english": "Please take me to Dragon Bridge."
+        }
+      ],
+      "atGlance": "This is the driver-ready Dragon Bridge sentence. It works well when paired with a map pin or place card.",
+      "quickSay": "Say it before the ride starts, then confirm the side or drop-off if the driver asks.",
+      "breakdownBody": "Cho tôi đi asks to go somewhere. Cầu Rồng names Dragon Bridge.",
+      "useItWithTitle": "Before the ride",
+      "useItWith": "Use it when the route page keeps the title short but the driver needs a full sentence.",
+      "whenToUse": "Use it at a hotel desk, taxi curb, or ride handoff when the destination is Dragon Bridge.",
+      "goodToKnow": "Dragon Bridge has several nearby stopping points. Follow with near-the-bridge if the exact curb matters.",
+      "exploreNextBody": "Go next to drop-off, address-confirm, photo, and return-ride phrases.",
+      "rationale": "Required by EP-015 as a title-preserving linked support row for the Dragon Bridge route page.",
+      "relatedPhraseIDs": [
+        "ves-drop-near-dragon-bridge",
+        "ves-is-this-address-correct",
+        "ves-take-photo-for-me",
+        "ves-call-taxi-for-me"
+      ],
+      "explorePhraseIDs": [
+        "ves-drop-near-dragon-bridge",
+        "ves-is-this-address-correct",
+        "ves-take-photo-for-me",
+        "ves-call-taxi-for-me"
+      ]
+    },
+    {
+      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+      "status": "approved",
+      "phraseID": "city-danang-go-ba-na-hills",
+      "familyID": "city-danang-go-ba-na-hills",
+      "scenarioID": "transport",
+      "supportModel": "driver-ready-phrase",
+      "supportFamily": "destination-label",
+      "requiredForPatchIDs": [
+        "EP-012"
+      ],
+      "difficulty": "beginner",
+      "targetText": "Đi Bà Nà Hills",
+      "englishText": "Go to Ba Na Hills",
+      "canonicalTargetText": "Đi Bà Nà Hills",
+      "pronunciation": "dee ba na hills",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "audioStatus": "planned",
+      "iconName": "car.fill",
+      "tintName": "orange",
+      "categoryIDs": [
+        "driver-ready-phrase",
+        "ba-na-hills"
+      ],
+      "searchAliases": [
+        "go to Ba Na Hills",
+        "Ba Na Hills route",
+        "Ba Na Hills driver"
+      ],
+      "context": "Use this as the short route label for Ba Na Hills when the place name is already understood.",
+      "youMayHear": "Bà Nà hả? / Đi bây giờ hả?",
+      "chunks": [
+        {
+          "vietnamese": "Đi",
+          "english": "go"
+        },
+        {
+          "vietnamese": "Bà Nà Hills",
+          "english": "Ba Na Hills"
+        },
+        {
+          "vietnamese": "Đi Bà Nà Hills",
+          "english": "Go to Ba Na Hills"
+        }
+      ],
+      "atGlance": "Đi Bà Nà Hills is a clipped route label. Keep it for search or map recognition; use Cho tôi đi Bà Nà Hills with a driver.",
+      "quickSay": "Use this for search, a map label, or a quick route note. With a driver, use Cho tôi đi Bà Nà Hills.",
+      "breakdownBody": "Đi marks the route action. Bà Nà Hills is the destination name.",
+      "useItWithTitle": "Pair With A Fuller Driver Line",
+      "useItWith": "Pair it with Cho tôi đi Bà Nà Hills when someone needs the actual request, not just the route label.",
+      "whenToUse": "Use it as a compact label, not as the only sentence in a driver exchange.",
+      "goodToKnow": "The fuller sentence is warmer and clearer for a driver. This short label is still useful when the place name is already understood.",
+      "exploreNextBody": "Go next to the full driver sentence, address-confirm, cable-car, and taxi-return pages.",
+      "rationale": "Required by EP-012 so the future title-preserving import keeps Đi Bà Nà Hills while linking the full driver sentence.",
+      "relatedPhraseIDs": [
+        "ves-take-me-to-ba-na-hills",
+        "ves-is-this-address-correct",
+        "ves-where-cable-car",
+        "ves-call-taxi-for-me"
+      ],
+      "explorePhraseIDs": [
+        "ves-take-me-to-ba-na-hills",
+        "ves-is-this-address-correct",
+        "city-danang-where-ba-na-hills",
+        "ves-call-taxi-for-me"
+      ]
+    },
+    {
+      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+      "status": "approved",
+      "phraseID": "ves-where-dragon-bridge",
+      "familyID": "ves-where-dragon-bridge",
+      "scenarioID": "sightseeing-activities",
+      "supportModel": "place-journey-navigation",
+      "supportFamily": "landmark-location",
+      "requiredForPatchIDs": [
+        "EP-006"
+      ],
+      "difficulty": "beginner",
+      "targetText": "Cầu Rồng ở đâu?",
+      "englishText": "Where is Dragon Bridge?",
+      "canonicalTargetText": "Cầu Rồng ở đâu?",
+      "pronunciation": "cow rong uh dow",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "audioStatus": "planned",
+      "iconName": "map.fill",
+      "tintName": "teal",
+      "categoryIDs": [
+        "place-navigation",
+        "dragon-bridge"
+      ],
+      "searchAliases": [
+        "where is Dragon Bridge",
+        "Dragon Bridge where",
+        "Cau Rong where"
+      ],
+      "context": "Use this when Dragon Bridge is the landmark and you need a direction, pointer, or confirmation nearby.",
+      "youMayHear": "Ở kia / Gần sông Hàn.",
+      "chunks": [
+        {
+          "vietnamese": "Cầu Rồng",
+          "english": "Dragon Bridge"
+        },
+        {
+          "vietnamese": "ở đâu?",
+          "english": "where is it?"
+        },
+        {
+          "vietnamese": "Cầu Rồng ở đâu?",
+          "english": "Where is Dragon Bridge?"
+        }
+      ],
+      "atGlance": "This is the simple location question for finding Dragon Bridge when it is close in the plan but not obvious on the street.",
+      "quickSay": "Say it while showing the map or place card. The question asks for orientation, not a ride or exact curb.",
+      "breakdownBody": "Cầu Rồng is the place name. Ở đâu asks where, so the whole line is a compact landmark-location question.",
+      "useItWithTitle": "Near the landmark",
+      "useItWith": "Use it before a photo stop, river walk, taxi drop-off, or handoff where Dragon Bridge is the anchor.",
+      "whenToUse": "Use it with hotel staff, a driver, a guard, or someone nearby when pointing at the map is not enough.",
+      "goodToKnow": "If someone points across the river or names a side, keep the map visible and confirm the next walking step.",
+      "exploreNextBody": "Go next to drop-off, take-me-there, photo, and taxi-return phrases.",
+      "rationale": "Required by EP-006 because the pilot visible row needs the exact Dragon Bridge where-question.",
+      "relatedPhraseIDs": [
+        "city-danang-place-dragon-bridge",
+        "ves-drop-near-dragon-bridge",
+        "ves-take-me-to-dragon-bridge",
+        "ves-take-photo-for-me"
+      ],
+      "explorePhraseIDs": [
+        "ves-drop-near-dragon-bridge",
+        "ves-take-me-to-dragon-bridge",
+        "ves-take-photo-for-me",
+        "ves-call-taxi-for-me"
+      ]
+    },
+    {
+      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+      "status": "approved",
+      "phraseID": "ves-one-ticket-marble-mountains",
+      "familyID": "ves-one-ticket-marble-mountains",
+      "scenarioID": "sightseeing-activities",
+      "supportModel": "place-journey-navigation",
+      "supportFamily": "attraction-ticket",
+      "requiredForPatchIDs": [
+        "EP-007"
+      ],
+      "difficulty": "beginner",
+      "targetText": "Một vé vào Ngũ Hành Sơn.",
+      "englishText": "One ticket to Marble Mountains.",
+      "canonicalTargetText": "Một vé vào Ngũ Hành Sơn.",
+      "pronunciation": "mot veh vao ngu hanh son",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "audioStatus": "planned",
+      "iconName": "ticket.fill",
+      "tintName": "orange",
+      "categoryIDs": [
+        "attraction-ticket",
+        "marble-mountains"
+      ],
+      "searchAliases": [
+        "one ticket to Marble Mountains",
+        "Marble Mountains ticket",
+        "Ngu Hanh Son ticket"
+      ],
+      "context": "Use this at the counter when the place is already clear and you only need one entry ticket.",
+      "youMayHear": "Một vé? / Người lớn?",
+      "chunks": [
+        {
+          "vietnamese": "Một vé",
+          "english": "one ticket"
+        },
+        {
+          "vietnamese": "vào Ngũ Hành Sơn",
+          "english": "into Marble Mountains"
+        },
+        {
+          "vietnamese": "Một vé vào Ngũ Hành Sơn.",
+          "english": "One ticket to Marble Mountains."
+        }
+      ],
+      "atGlance": "This is the short ticket-counter row for Marble Mountains. It keeps the count and place clear without adding extra politeness.",
+      "quickSay": "Say it at the ticket window and hold up one finger if needed. The place name does most of the work.",
+      "breakdownBody": "Một vé gives the count. Vào Ngũ Hành Sơn names the site you are entering.",
+      "useItWithTitle": "Ticket counter",
+      "useItWith": "Use it after reaching the entrance or ticket desk, when the next task is buying one ticket.",
+      "whenToUse": "Use it for a solo visit or when the group is splitting tickets and one person needs a single entry.",
+      "goodToKnow": "If the counter asks for quantity again, repeat một vé or show one finger before paying.",
+      "exploreNextBody": "Go next to polite one-ticket, two-ticket, entrance, and driver-wait phrases.",
+      "rationale": "Required by EP-007 because the pilot visible row uses the short one-ticket Marble Mountains sentence.",
+      "relatedPhraseIDs": [
+        "ves-one-ticket-marble-mountains-polite",
+        "ves-two-tickets-marble-mountains",
+        "v500-sigh-acti-where-is-the-entrance",
+        "ves-where-driver-waits"
+      ],
+      "explorePhraseIDs": [
+        "ves-one-ticket-marble-mountains-polite",
+        "ves-two-tickets-marble-mountains",
+        "v500-sigh-acti-where-is-the-entrance",
+        "ves-call-taxi-for-me"
+      ]
+    },
+    {
+      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+      "status": "approved",
+      "phraseID": "ves-go-son-tra-peninsula",
+      "familyID": "ves-go-son-tra-peninsula",
+      "scenarioID": "transport",
+      "supportModel": "driver-ready-phrase",
+      "supportFamily": "destination-request",
+      "requiredForPatchIDs": [
+        "EP-008"
+      ],
+      "difficulty": "beginner",
+      "targetText": "Đi bán đảo Sơn Trà.",
+      "englishText": "Go to Son Tra Peninsula.",
+      "canonicalTargetText": "Đi bán đảo Sơn Trà.",
+      "pronunciation": "dee ban dao son tra",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "audioStatus": "planned",
+      "iconName": "car.fill",
+      "tintName": "green",
+      "categoryIDs": [
+        "driver-ready-phrase",
+        "son-tra"
+      ],
+      "searchAliases": [
+        "go to Son Tra Peninsula",
+        "Son Tra driver",
+        "ban dao Son Tra"
+      ],
+      "context": "Use this as a short destination line when Son Tra Peninsula is the planned area.",
+      "youMayHear": "Sơn Trà hả? / Chỗ nào?",
+      "chunks": [
+        {
+          "vietnamese": "Đi",
+          "english": "go"
+        },
+        {
+          "vietnamese": "bán đảo Sơn Trà",
+          "english": "Son Tra Peninsula"
+        },
+        {
+          "vietnamese": "Đi bán đảo Sơn Trà.",
+          "english": "Go to Son Tra Peninsula."
+        }
+      ],
+      "atGlance": "This is the short route row for Sơn Trà. It names the wider peninsula, so keep a map pin or specific stop ready.",
+      "quickSay": "Say it before the ride starts and keep the map visible. If the driver asks which part, point to the pagoda, viewpoint, or road.",
+      "breakdownBody": "Đi sets the route direction. Bán đảo Sơn Trà names the peninsula instead of one exact building.",
+      "useItWithTitle": "Before the ride",
+      "useItWith": "Use it with a driver, hotel desk, or tour helper when the broader Sơn Trà area is the destination.",
+      "whenToUse": "Use it before adding a specific stop like Linh Ung Pagoda, a viewpoint, or a pickup time.",
+      "goodToKnow": "Sơn Trà is an area, not one doorway. Keep the exact stop or map pin ready.",
+      "exploreNextBody": "Go next to Linh Ung, wait-here, return-time, and taxi-back phrases.",
+      "rationale": "Required by EP-008 because the pilot visible row uses this short Sơn Trà route sentence.",
+      "relatedPhraseIDs": [
+        "city-danang-place-son-tra",
+        "ves-where-linh-ung-pagoda",
+        "ves-can-you-wait-here",
+        "ves-what-time-come-back"
+      ],
+      "explorePhraseIDs": [
+        "ves-where-linh-ung-pagoda",
+        "ves-can-you-wait-here",
+        "ves-what-time-come-back",
+        "ves-call-taxi-for-me"
+      ]
+    },
+    {
+      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+      "status": "approved",
+      "phraseID": "ves-where-linh-ung-pagoda",
+      "familyID": "ves-where-linh-ung-pagoda",
+      "scenarioID": "sightseeing-activities",
+      "supportModel": "place-journey-navigation",
+      "supportFamily": "landmark-location",
+      "requiredForPatchIDs": [
+        "EP-008"
+      ],
+      "difficulty": "beginner",
+      "targetText": "Chùa Linh Ứng ở đâu?",
+      "englishText": "Where is Linh Ung Pagoda?",
+      "canonicalTargetText": "Chùa Linh Ứng ở đâu?",
+      "pronunciation": "choo-ah linh ung uh dow",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "audioStatus": "planned",
+      "iconName": "map.fill",
+      "tintName": "teal",
+      "categoryIDs": [
+        "place-navigation",
+        "son-tra"
+      ],
+      "searchAliases": [
+        "where is Linh Ung Pagoda",
+        "Linh Ung where",
+        "Chua Linh Ung"
+      ],
+      "context": "Use this when the Sơn Trà plan needs the pagoda stop, not just the wider peninsula.",
+      "youMayHear": "Trên kia / Đi thẳng.",
+      "chunks": [
+        {
+          "vietnamese": "Chùa Linh Ứng",
+          "english": "Linh Ung Pagoda"
+        },
+        {
+          "vietnamese": "ở đâu?",
+          "english": "where is it?"
+        },
+        {
+          "vietnamese": "Chùa Linh Ứng ở đâu?",
+          "english": "Where is Linh Ung Pagoda?"
+        }
+      ],
+      "atGlance": "Use this when Sơn Trà is too broad and the helper needs the exact pagoda stop.",
+      "quickSay": "Say it with the place card visible. The question is useful at a curb, parking area, hotel desk, or viewpoint turnoff.",
+      "breakdownBody": "Chùa Linh Ứng is the pagoda name. Ở đâu asks where it is.",
+      "useItWithTitle": "Specific stop",
+      "useItWith": "Use it after the broader Sơn Trà route is understood and you need the pagoda direction.",
+      "whenToUse": "Use it when a driver, guard, or helper can point you toward the pagoda entrance or next turn.",
+      "goodToKnow": "If someone answers with a gesture, follow by showing the map pin and asking for the next walking step.",
+      "exploreNextBody": "Go next to Sơn Trà route, wait-here, return-time, and photo phrases.",
+      "rationale": "Required by EP-008 because the pilot visible row names Linh Ung Pagoda as the specific stop.",
+      "relatedPhraseIDs": [
+        "city-danang-place-linh-ung-pagoda",
+        "ves-go-son-tra-peninsula",
+        "ves-can-you-wait-here",
+        "ves-what-time-come-back"
+      ],
+      "explorePhraseIDs": [
+        "ves-go-son-tra-peninsula",
+        "ves-can-you-wait-here",
+        "ves-what-time-come-back",
+        "ves-take-photo-for-me"
+      ]
+    },
+    {
+      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+      "status": "approved",
+      "phraseID": "city-danang-where-ba-na-hills",
+      "familyID": "city-danang-where-ba-na-hills",
+      "scenarioID": "sightseeing-activities",
+      "supportModel": "place-journey-navigation",
+      "supportFamily": "landmark-location",
+      "requiredForPatchIDs": [
+        "EP-013"
+      ],
+      "difficulty": "beginner",
+      "targetText": "Bà Nà Hills ở đâu?",
+      "englishText": "Where is Ba Na Hills?",
+      "canonicalTargetText": "Bà Nà Hills ở đâu?",
+      "pronunciation": "ba na hills uh dow",
+      "accessTier": "premium",
+      "variantRole": "say-first",
+      "audioStatus": "planned",
+      "iconName": "map.fill",
+      "tintName": "teal",
+      "categoryIDs": [
+        "place-navigation",
+        "ba-na-hills"
+      ],
+      "searchAliases": [
+        "where is Ba Na Hills",
+        "Ba Na Hills where",
+        "Ba Na direction"
+      ],
+      "context": "Use this when the place name is the anchor and you need direction or confirmation.",
+      "youMayHear": "Xa lắm / Đi cáp treo.",
+      "chunks": [
+        {
+          "vietnamese": "Bà Nà Hills",
+          "english": "Ba Na Hills"
+        },
+        {
+          "vietnamese": "ở đâu?",
+          "english": "where is it?"
+        },
+        {
+          "vietnamese": "Bà Nà Hills ở đâu?",
+          "english": "Where is Ba Na Hills?"
+        }
+      ],
+      "atGlance": "Use this before the cable-car step or a ride handoff, when Ba Na Hills is the place name you need located.",
+      "quickSay": "Say it while showing the place card. If the helper starts explaining the route, keep the map visible.",
+      "breakdownBody": "Bà Nà Hills is the attraction name. Ở đâu asks where it is.",
+      "useItWithTitle": "Route check",
+      "useItWith": "Use it at a hotel desk, ticket counter approach, or driver conversation when the route is still unclear.",
+      "whenToUse": "Use it before asking about cable car, tickets, wait-here, or the return ride.",
+      "goodToKnow": "If the answer mentions the cable car, move to the cable-car phrase instead of repeating the place name.",
+      "exploreNextBody": "Go next to cable-car, ticket, ride-there, and repeat-that phrases.",
+      "rationale": "Required by EP-013 because the pilot visible row uses this Ba Na Hills where-question.",
+      "relatedPhraseIDs": [
+        "city-danang-place-ba-na-hills",
+        "ves-where-cable-car",
+        "ves-take-me-to-ba-na-hills",
+        "repair-1"
+      ],
+      "explorePhraseIDs": [
+        "ves-where-cable-car",
+        "ves-two-tickets-ba-na-hills",
+        "ves-take-me-to-ba-na-hills",
+        "repair-1"
+      ]
+    },
+    {
+      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+      "status": "approved",
+      "phraseID": "ves-show-me-anh-chi",
+      "familyID": "ves-show-me-anh-chi",
+      "scenarioID": "understanding-repair",
+      "supportModel": "repair-phrase",
+      "supportFamily": "show-me",
+      "requiredForPatchIDs": [
+        "EP-016"
+      ],
+      "difficulty": "beginner",
+      "targetText": "Anh/chị chỉ giúp tôi được không?",
+      "englishText": "Can you show me?",
+      "canonicalTargetText": "Anh/chị chỉ giúp tôi được không?",
+      "pronunciation": "anh chee chee zoop toy duoc khong",
+      "accessTier": "premium",
+      "variantRole": "more-polite",
+      "audioStatus": "planned",
+      "iconName": "hand.point.up.left.fill",
+      "tintName": "purple",
+      "categoryIDs": [
+        "understanding-repair",
+        "place-navigation"
+      ],
+      "searchAliases": [
+        "can you show me",
+        "please point it out",
+        "show me please"
+      ],
+      "context": "Use this when a direction is easier to point out than explain.",
+      "youMayHear": "Đây / Ở kia.",
+      "chunks": [
+        {
+          "vietnamese": "Anh/chị",
+          "english": "you, respectfully"
+        },
+        {
+          "vietnamese": "chỉ giúp tôi",
+          "english": "show / point for me"
+        },
+        {
+          "vietnamese": "được không?",
+          "english": "is it okay?"
+        },
+        {
+          "vietnamese": "Anh/chị chỉ giúp tôi được không?",
+          "english": "Can you show me?"
+        }
+      ],
+      "atGlance": "Use this respectful show-me line when a map or address needs pointing rather than a long spoken explanation.",
+      "quickSay": "Say it while holding the map or address open. The relationship pair keeps the request polite with an adult helper.",
+      "breakdownBody": "Anh/chị addresses the helper respectfully. Chỉ giúp tôi asks them to show or point for you.",
+      "useItWithTitle": "Point instead",
+      "useItWith": "Use it when street directions, entrance locations, or nearby landmarks are easier to show than describe.",
+      "whenToUse": "Use it after a direction question stalls or when the next turn is close enough for pointing.",
+      "goodToKnow": "If the helper points, repeat the street or place name once to confirm you understood.",
+      "exploreNextBody": "Go next to the shorter show-me phrase, English-help, street-driver, and address-check pages.",
+      "rationale": "Required by EP-016 because the pilot visible row uses the respectful anh/chị form.",
+      "relatedPhraseIDs": [
+        "repair-show-me",
+        "repair-english-help",
+        "ves-to-nguyen-van-linh-street",
+        "ves-is-this-address-correct"
+      ],
+      "explorePhraseIDs": [
+        "repair-show-me",
+        "repair-english-help",
+        "ves-to-nguyen-van-linh-street",
+        "ves-is-this-nguyen-van-linh-street"
+      ]
+    },
+    {
+      "taskID": "TASK-VIET-EDITORIAL-MODEL-SUPPORT-001",
+      "status": "approved",
+      "phraseID": "ves-do-you-speak-english-anh",
+      "familyID": "ves-do-you-speak-english-anh",
+      "scenarioID": "understanding-repair",
+      "supportModel": "repair-phrase",
+      "supportFamily": "english-help",
+      "requiredForPatchIDs": [
+        "EP-020"
+      ],
+      "difficulty": "beginner",
+      "targetText": "Anh nói tiếng Anh không?",
+      "englishText": "Do you speak English?",
+      "canonicalTargetText": "Anh nói tiếng Anh không?",
+      "pronunciation": "anh noy tyeng anh khong",
+      "accessTier": "premium",
+      "variantRole": "same-need-alt-context",
+      "audioStatus": "planned",
+      "iconName": "bubble.left.and.bubble.right.fill",
+      "tintName": "blue",
+      "categoryIDs": [
+        "understanding-repair",
+        "polite-basics"
+      ],
+      "searchAliases": [
+        "do you speak English",
+        "speak English anh",
+        "English help"
+      ],
+      "context": "Choose this with an older man or male helper when English may solve the next step.",
+      "youMayHear": "Có / Một chút.",
+      "chunks": [
+        {
+          "vietnamese": "Anh",
+          "english": "you, older man"
+        },
+        {
+          "vietnamese": "nói tiếng Anh",
+          "english": "speak English"
+        },
+        {
+          "vietnamese": "không?",
+          "english": "not? / do you?"
+        },
+        {
+          "vietnamese": "Anh nói tiếng Anh không?",
+          "english": "Do you speak English?"
+        }
+      ],
+      "atGlance": "This male-address version fits after a respectful hello when English would solve the next step.",
+      "quickSay": "Ask after Da, chao anh or Chao anh, then show the phone, booking, address, or word you need help with.",
+      "breakdownBody": "Anh sets the respectful address. Nói tiếng Anh asks about speaking English.",
+      "useItWithTitle": "After hello",
+      "useItWith": "Choose it when the helper is an older man and the relationship word anh feels natural.",
+      "whenToUse": "At hotel desks, counters, rides, or help moments, English can make the next step clearer.",
+      "goodToKnow": "If the person says mot chut, keep your next English sentence short and show the screen.",
+      "exploreNextBody": "Go next to the neutral English-help phrase, respectful hello, simple hello, and repeat-that pages.",
+      "rationale": "Required by EP-020 because the pilot visible row uses anh, not the neutral anh/chị form.",
+      "relatedPhraseIDs": [
+        "repair-english-help",
+        "acknowledge-da-chao-anh",
+        "hello-chao-anh",
+        "repair-1"
+      ],
+      "explorePhraseIDs": [
+        "repair-english-help",
+        "acknowledge-da-chao-anh",
+        "hello-chao-anh",
+        "problems-3"
       ]
     }
   ]

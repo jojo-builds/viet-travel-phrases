@@ -7,7 +7,7 @@
   "title": "Tôi muốn đặt chỗ cho hai người",
   "englishTitle": "I’d like to book for two people",
   "pronunciation": "Toi muon dat cho cho hai nguoi",
-  "summary": "I’d like to book for two people",
+  "summary": "For asking for a reservation for two before a restaurant, tour, room, class, or ticket slot fills up.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi muốn đặt chỗ cho hai người is a practical time, date, or booking phrase for keeping one travel detail clear. Use it when I’d like to book for two people is the next detail to solve and a short answer would move the exchange forward."
+      "body": "The head count is the key detail; the date and time can come right after."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi muốn đặt chỗ cho hai người. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say the line, then show the date, time, or place. Keep two fingers or the number on screen if the counter is loud.",
       "phrases": [
         {
           "id": "v900-time-date-book-id-like-to-book-for-two-people",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi muốn means I want; đặt chỗ means make a reservation; cho hai người means for two people.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi muốn",
           "english": "I want",
-          "audioKey": null
+          "keepTogetherReason": "I-want phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đặt chỗ cho",
-          "english": "book / reserve",
-          "audioKey": null
+          "vietnamese": "đặt chỗ",
+          "english": "make a reservation",
+          "keepTogetherReason": "reservation phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "hai người",
-          "english": "two people",
-          "audioKey": null
+          "vietnamese": "cho hai người",
+          "english": "for two people",
+          "keepTogetherReason": "two-people phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi muốn đặt chỗ cho hai người",
           "english": "I’d like to book for two people",
-          "audioKey": null
+          "audioKey": "v900-time-date-book-id-like-to-book-for-two-people"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I’d like to book for two people to another time, date, or booking need.",
+      "body": "What-time, today, and tomorrow-morning phrases help pin down the reservation.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when i’d like to book for two people is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good for restaurants, classes, boat trips, spas, homestays, and ticketed activities where capacity matters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "If the answer is yes, confirm the time and name before putting the phone away."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi muốn đặt chỗ cho hai người.",
+      "body": "Booking, opening-time, move-later, boarding-time, and wait-time phrases cover the next time detail.",
       "phrases": [
         {
           "id": "time-4",

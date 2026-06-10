@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể lấy Wi-Fi sân bay ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names get airport Wi-Fi in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Tôi có thể lấy Wi-Fi sân bay ở đâu?"
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Tôi có thể lấy Wi-Fi sân bay ở đâu?. Show your passport, booking, baggage tag, map, or pickup screen, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Open your Wi-Fi settings while you ask. The reply is usually a network name, password, or counter direction.",
       "phrases": [
         {
           "id": "v900-airp-bord-arri-where-can-i-get-airport-wi-fi",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear the place or item first; ở đâu? turns it into the where question.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where can I get airport Wi-Fi? to another airport arrival need.",
+      "body": "Useful if the exchange continues: Where is immigration, Where is baggage claim, and Where can I buy a SIM card.",
       "phrases": [
         {
           "id": "airport-1",
@@ -116,7 +116,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits airport, immigration, baggage, or pickup moment, especially when get airport Wi-Fi can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Use it at an airport counter, baggage area, or pickup point before adding the passport, baggage tag, flight detail, or pickup screen as supporting detail."
     },
     {
       "id": "good-to-know",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể lấy Wi-Fi sân bay ở đâu?.",
+      "body": "Nearby follow-ups: Where is the pickup area?; Where do I meet the driver?; My bag did not arrive.",
       "phrases": [
         {
           "id": "airport-5",

@@ -20,50 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể",
+      "english": "can I",
+      "keepTogetherReason": "can-I phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "ở lại",
+      "english": "stay",
+      "keepTogetherReason": "stay verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
+      "vietnamese": "thêm một đêm nữa",
+      "english": "one more night",
+      "keepTogetherReason": "one-more-night phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "lại",
-      "english": "again / back"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "thêm",
-      "english": "more / add"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "đêm",
-      "english": "night"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "nữa",
-      "english": "more / again"
-    },
-    {
-      "id": "chunk-9",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

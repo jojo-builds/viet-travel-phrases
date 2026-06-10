@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-heal-phar-i-have-a-cough",
-  "phraseText": "tôi bị ho",
+  "phraseText": "Tôi bị ho",
   "englishTitle": "I have a cough",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,22 +20,19 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi bị",
+      "english": "I have / I am suffering from",
+      "keepTogetherReason": "symptom phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "ho",
-      "english": "cough"
+      "english": "cough",
+      "keepTogetherReason": "symptom noun"
     },
     {
       "id": "full",
-      "vietnamese": "tôi bị ho",
+      "vietnamese": "Tôi bị ho",
       "english": "I have a cough",
       "audioKey": "v900-heal-phar-i-have-a-cough"
     }

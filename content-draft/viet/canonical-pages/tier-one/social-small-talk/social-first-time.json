@@ -7,7 +7,7 @@
   "title": "Đây là lần đầu của tôi",
   "englishTitle": "This is my first time",
   "pronunciation": "day la lun dow koo-ah toy",
-  "summary": "Đây là lần đầu của tôi means “This is my first time”.",
+  "summary": "This is one of the easiest travel small-talk answers to use.",
   "iconName": "bubble.left.and.bubble.right.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Đây là lần đầu của tôi when you need \"This is my first time\". This is for when someone asks whether you have visited before. This is one of the easiest travel small-talk answers to use. Listen for a short reply, a smile, a time, or a light follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Reach for it when someone asks whether you have visited before.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Use this when you are showing a document or item. The phrase points to it, names it, then marks it as yours.",
+      "body": "Hear Đây + là as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "smalltalk-3-piece-1",
@@ -63,12 +65,13 @@
           "audioKey": "smalltalk-3"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Đây là lần đầu của tôi as your first sentence for \"This is my first time\". This is for when someone asks whether you have visited before. Pause after the phrase and listen for a short reply, a smile, a time, or a light follow-up question. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
+      "body": "Say Đây là lần đầu của tôi in one connected line before adding details. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
       "phrases": [
         {
           "id": "smalltalk-3",
@@ -81,18 +84,21 @@
           "audioKey": "smalltalk-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Small talk in Vietnamese often becomes warmer when it connects to place, food, or shared experience. For \"This is my first time\", Đây là lần đầu của tôi makes the next step easier to answer. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
-      "presentation": "plain-text"
+      "body": "Small talk in Vietnamese often becomes warmer when it connects to place, food, or shared experience. Keep the tone warm and leave room for a short reply.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Social Small Talk, the reply often comes as a short reply, a smile, a time, or a light follow-up question. Say Đây là lần đầu của tôi once, pause, and watch for the reply. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
+      "body": "Watch for a smile, a time, or light follow-up question. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
       "phrases": [
         {
           "id": "smalltalk-1",
@@ -125,12 +131,13 @@
           "audioKey": "smalltalk-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when someone asks whether you have visited before. It fits friendly introductions and light local conversation, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
+      "body": "Reach for it when someone asks whether you have visited before. Watch for a smile, a time, or light follow-up question.",
       "phrases": [
         {
           "id": "smalltalk-5",
@@ -163,13 +170,16 @@
           "audioKey": "smalltalk-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Some social phrases are best after a greeting, not as the very first thing you say to a stranger.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -207,12 +217,13 @@
           "audioKey": "audio-authored-anh-khoe-khong-942769853d"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "nearby-phrases",
       "title": "Useful nearby phrases",
-      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
+      "body": "Use these for how are you, older woman?; how are you, younger person? if the moment moves past the first line.",
       "phrases": [
         {
           "id": "how-are-you-chi",
@@ -235,12 +246,13 @@
           "audioKey": "audio-phrase-em-khoe-khong"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "During a greeting, thanks, apology, or short chat, the next useful language is usually I’m from the United States, I’m from England, and I like Vietnam.",
       "phrases": [
         {
           "id": "smalltalk-1",
@@ -323,7 +335,8 @@
           "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

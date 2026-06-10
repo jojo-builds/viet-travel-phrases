@@ -4,9 +4,9 @@
   "phraseID": "v500-emer-safe-there-is-a-fire",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Có một ngọn lửa",
+  "title": "Có cháy!",
   "englishTitle": "There is a fire",
-  "pronunciation": "Co mot ngon lua",
+  "pronunciation": "Co chay",
   "summary": "There is a fire",
   "iconName": "cross.circle.fill",
   "tintName": "red",
@@ -15,50 +15,50 @@
     "v500-emer-safe-there-is-a-fire",
     "premium"
   ],
-  "audioKey": "v500-emer-safe-there-is-a-fire",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có một ngọn lửa is a practical safety or urgent-help phrase for keeping one travel detail clear. Use it when There is a fire is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Có cháy! is the urgent warning when something is on fire. Say it loudly enough to get attention, then move away from danger."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Có một ngọn lửa. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say Có cháy! first; pointing or moving away can carry the location detail faster than extra words.",
       "phrases": [
         {
           "id": "v500-emer-safe-there-is-a-fire",
-          "vietnamese": "Có một ngọn lửa",
+          "vietnamese": "Có cháy!",
           "english": "There is a fire",
-          "pronunciation": "Co mot ngon lua",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Co chay",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
           "detailPageID": null,
-          "audioKey": "v500-emer-safe-there-is-a-fire"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Practice Có + cháy first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Có một ngọn",
-          "english": "is there / does it have",
+          "vietnamese": "Có",
+          "english": "there is",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "lửa",
-          "english": "train station",
+          "vietnamese": "cháy",
+          "english": "fire / burning",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "Có một ngọn lửa",
+          "vietnamese": "Có cháy!",
           "english": "There is a fire",
           "audioKey": null
         }
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from There is a fire to another safety or urgent-help need.",
+      "body": "Nearby follow-ups: Call the police, Call an ambulance, and I lost my passport.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real safety or urgent-help exchange when there is a fire is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Use it for a real fire or smoke emergency. After the warning, move toward exits, staff, or emergency help."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Có một ngọn lửa.",
+      "body": "These follow-ups cover location, documents, help, or reporting: I feel unsafe, This is an emergency, and Help!",
       "phrases": [
         {
           "id": "emergency-4",
@@ -172,13 +172,13 @@
   "examples": [
     {
       "id": "v500-emer-safe-there-is-a-fire",
-      "vietnamese": "Có một ngọn lửa",
+      "vietnamese": "Có cháy!",
       "english": "There is a fire",
-      "pronunciation": "Co mot ngon lua",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Co chay",
+      "symbolName": "text.bubble.fill",
       "tintName": "red",
       "detailPageID": null,
-      "audioKey": "v500-emer-safe-there-is-a-fire"
+      "audioKey": null
     }
   ]
 }

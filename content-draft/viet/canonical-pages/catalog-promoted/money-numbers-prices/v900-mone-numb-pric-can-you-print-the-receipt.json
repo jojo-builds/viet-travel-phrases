@@ -7,7 +7,7 @@
   "title": "Bạn có thể in biên lai được không?",
   "englishTitle": "Can you print the receipt?",
   "pronunciation": "Ban co the in bien lai duoc khong",
-  "summary": "Can you print the receipt?",
+  "summary": "For asking a cashier, hotel desk, clinic, pharmacy, or ticket counter to print a receipt before you leave.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể in biên lai được không? asks someone to do one helpful action for you. Use it for print the receipt when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Ask while the payment screen, bill, or purchase is still visible. It is easier before the next customer starts."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể in biên lai được không? once, then make the task visible with your item, menu line, bill, calculator, ticket, or ride screen. The phrase is doing one job: getting a clear answer about print the receipt.",
+      "body": "Keep the card, cash, room number, or booking nearby in case staff need to find the transaction.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-can-you-print-the-receipt",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; in biên lai means print the receipt; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "in biên lai",
-          "english": "the receipt",
-          "audioKey": null
+          "english": "print the receipt",
+          "keepTogetherReason": "print-receipt phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Bạn có thể in biên lai được không?",
-          "english": "Can you print the receipt",
-          "audioKey": null
+          "english": "Can you print the receipt?",
+          "audioKey": "v900-mone-numb-pric-can-you-print-the-receipt"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you print the receipt? to another money or price need.",
+      "body": "Card payment, refund, insurance receipt, and smaller-bills cards cover the paperwork around payment.",
       "phrases": [
         {
           "id": "price-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when print the receipt is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Shops, pharmacies, clinics, hotels, transport counters, and ticket desks are the places where a printed receipt may matter later."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Ask before walking away. Once the counter resets, staff may need the exact time, amount, or card slip to find it."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể in biên lai được không?.",
+      "body": "Move to card payment, insurance receipt, refund, smaller bills, or write-down cards if the payment record needs more detail.",
       "phrases": [
         {
           "id": "price-3",

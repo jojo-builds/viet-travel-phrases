@@ -1,7 +1,7 @@
 {
   "pageID": "viet-phrase-v900-heal-phar-can-i-get-a-receipt-for-insurance",
-  "phraseText": "Tôi có thể nhận được biên nhận bảo hiểm không?",
-  "englishTitle": "Can I get a receipt for insurance?",
+  "phraseText": "Tôi có thể lấy biên nhận để nộp cho bảo hiểm không?",
+  "englishTitle": "Can I get a receipt to submit to insurance?",
   "reviewStatus": "reviewed",
   "visualReview": {
     "status": "reviewed",
@@ -31,36 +31,26 @@
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nhận",
-      "english": "receive / accept"
+      "vietnamese": "lấy biên nhận",
+      "english": "get a receipt",
+      "keepTogetherReason": "receipt request phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "được",
-      "english": "possible / okay"
+      "vietnamese": "để nộp cho bảo hiểm",
+      "english": "to submit to insurance",
+      "keepTogetherReason": "insurance submission phrase"
     },
     {
       "id": "chunk-5",
-      "vietnamese": "biên nhận",
-      "english": "receipt",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "bảo hiểm",
-      "english": "insurance",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "không?",
       "english": "yes/no?"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi có thể nhận được biên nhận bảo hiểm không?",
-      "english": "Can I get a receipt for insurance?",
-      "audioKey": "v900-heal-phar-can-i-get-a-receipt-for-insurance"
+      "vietnamese": "Tôi có thể lấy biên nhận để nộp cho bảo hiểm không?",
+      "english": "Can I get a receipt to submit to insurance?",
+      "audioKey": null
     }
   ]
 }

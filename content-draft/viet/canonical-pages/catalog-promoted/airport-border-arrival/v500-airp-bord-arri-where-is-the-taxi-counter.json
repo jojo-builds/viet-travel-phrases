@@ -32,6 +32,7 @@
           "vietnamese": "Quầy taxi ở đâu?",
           "english": "Where is the taxi counter?",
           "pronunciation": "Quay taxi o dau",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": null,
           "audioKey": "v500-airp-bord-arri-where-is-the-taxi-counter"
         }
@@ -72,6 +73,7 @@
           "vietnamese": "Nhập cảnh ở đâu?",
           "english": "Where is immigration?",
           "pronunciation": "nyup canh uh dow",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-family-airport-immigration",
           "audioKey": "airport-1"
         },
@@ -80,6 +82,7 @@
           "vietnamese": "Lấy hành lý ở đâu?",
           "english": "Where is baggage claim?",
           "pronunciation": "lay han lee uh dow",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-family-airport-baggage",
           "audioKey": "airport-2"
         },
@@ -88,6 +91,7 @@
           "vietnamese": "Mua SIM ở đâu?",
           "english": "Where can I buy a SIM card?",
           "pronunciation": "moo-ah sim uh dow",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-family-airport-sim",
           "audioKey": "airport-3"
         }
@@ -113,6 +117,7 @@
           "vietnamese": "Khu đón ở đâu?",
           "english": "Where is the pickup area?",
           "pronunciation": "khoo don uh dow",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-family-airport-pickup",
           "audioKey": "airport-5"
         },
@@ -121,6 +126,7 @@
           "vietnamese": "Tôi gặp tài xế ở đâu?",
           "english": "Where do I meet the driver?",
           "pronunciation": "toy gap tai seh uh dow",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-phrase-airport-pickup-clearer",
           "audioKey": "airport-pickup-clearer"
         },
@@ -129,6 +135,7 @@
           "vietnamese": "Hành lý của tôi chưa tới",
           "english": "My bag did not arrive",
           "pronunciation": "han lee koo-ah toy choo toy",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-family-airport-bag-missing",
           "audioKey": "airport-6"
         },
@@ -137,6 +144,7 @@
           "vietnamese": "Nhà ga nội địa ở đâu?",
           "english": "Where is the domestic terminal?",
           "pronunciation": "nya ga noy dee-ah uh dow",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-phrase-airport-7",
           "audioKey": "airport-7"
         },
@@ -145,6 +153,7 @@
           "vietnamese": "Đây là thị thực của tôi",
           "english": "Here is my visa",
           "pronunciation": "Day la thi thuc cua toi",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-family-v500-airp-bord-arri-here-is-my-visa",
           "audioKey": "v500-airp-bord-arri-here-is-my-visa"
         }

@@ -20,44 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể",
+      "english": "can I",
+      "keepTogetherReason": "can-I phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "được hoàn lại",
+      "english": "get refunded",
+      "keepTogetherReason": "refund phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "được",
-      "english": "possible / okay"
+      "vietnamese": "tiền phòng",
+      "english": "room payment",
+      "keepTogetherReason": "room-money phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "hoàn",
-      "english": "refund / return"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "lại",
-      "english": "again / back"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "tiền",
-      "english": "money"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "phòng",
-      "english": "room"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

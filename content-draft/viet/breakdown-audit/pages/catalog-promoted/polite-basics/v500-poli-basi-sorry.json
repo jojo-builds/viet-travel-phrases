@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-poli-basi-sorry",
-  "phraseText": "Lấy làm tiếc",
+  "phraseText": "Tôi xin lỗi",
   "englishTitle": "Sorry",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,24 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Lấy",
-      "english": "take / claim"
+      "vietnamese": "Tôi",
+      "english": "I",
+      "keepTogetherReason": "speaker pronoun"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "làm",
-      "english": "do / make"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "tiếc",
-      "english": "regret / sorry"
+      "vietnamese": "xin lỗi",
+      "english": "am sorry / apologize",
+      "keepTogetherReason": "apology phrase"
     },
     {
       "id": "full",
-      "vietnamese": "Lấy làm tiếc",
+      "vietnamese": "Tôi xin lỗi",
       "english": "Sorry",
-      "audioKey": "v500-poli-basi-sorry"
+      "audioKey": null
     }
   ]
 }

@@ -486,11 +486,11 @@
           "status": "mapped"
         },
         {
-          "vi": "Chúng ta có thể ngồi bên ngoài được không?",
-          "en": "Can we sit outside?",
+          "vi": "Cho tôi bàn cho hai người nhé",
+          "en": "A table for two, please",
           "intent": "food-drink",
-          "phraseId": "v900-food-drin-can-we-sit-outside",
-          "audioId": "v900-food-drin-can-we-sit-outside",
+          "phraseId": "food-need-table",
+          "audioId": "food-need-table",
           "status": "mapped"
         },
         {
@@ -5912,11 +5912,11 @@
           "status": "mapped"
         },
         {
-          "vi": "Chúng ta có thể ngồi bên ngoài được không?",
-          "en": "Can we sit outside?",
+          "vi": "Cho tôi bàn cho hai người nhé",
+          "en": "A table for two, please",
           "intent": "food-drink",
-          "phraseId": "v900-food-drin-can-we-sit-outside",
-          "audioId": "v900-food-drin-can-we-sit-outside",
+          "phraseId": "food-need-table",
+          "audioId": "food-need-table",
           "status": "mapped"
         },
         {
@@ -7935,7 +7935,7 @@
         {
           "id": "pickup-and-return-plans",
           "heading": "Pickup And Return Plans",
-          "body": "Keep the airport name, hotel address, and pickup plan easy to show. It helps avoid confusion with Da Nang, another common central Vietnam flight gateway."
+          "body": "Keep the airport name, hotel address, and pickup plan easy to show. It keeps Phu Bai distinct from Da Nang, another common central Vietnam flight gateway."
         },
         {
           "id": "airport-pickup-reality",
@@ -8688,11 +8688,11 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Chúng ta có thể ngồi bên ngoài được không?",
-          "en": "Can we sit outside?",
+          "vi": "Cho tôi bàn cho hai người nhé",
+          "en": "A table for two, please",
           "intent": "food-drink",
-          "phraseId": "v900-food-drin-can-we-sit-outside",
-          "audioId": "v900-food-drin-can-we-sit-outside",
+          "phraseId": "food-need-table",
+          "audioId": "food-need-table",
           "status": "mapped"
         },
         {
@@ -10147,11 +10147,11 @@
           "status": "mapped"
         },
         {
-          "vi": "Chúng ta có thể ngồi bên ngoài được không?",
-          "en": "Can we sit outside?",
+          "vi": "Cho tôi bàn cho hai người nhé",
+          "en": "A table for two, please",
           "intent": "food-drink",
-          "phraseId": "v900-food-drin-can-we-sit-outside",
-          "audioId": "v900-food-drin-can-we-sit-outside",
+          "phraseId": "food-need-table",
+          "audioId": "food-need-table",
           "status": "mapped"
         },
         {
@@ -11157,11 +11157,11 @@
           "status": "mapped"
         },
         {
-          "vi": "Chúng ta có thể ngồi bên ngoài được không?",
-          "en": "Can we sit outside?",
+          "vi": "Cho tôi bàn cho hai người nhé",
+          "en": "A table for two, please",
           "intent": "food-drink",
-          "phraseId": "v900-food-drin-can-we-sit-outside",
-          "audioId": "v900-food-drin-can-we-sit-outside",
+          "phraseId": "food-need-table",
+          "audioId": "food-need-table",
           "status": "mapped"
         },
         {

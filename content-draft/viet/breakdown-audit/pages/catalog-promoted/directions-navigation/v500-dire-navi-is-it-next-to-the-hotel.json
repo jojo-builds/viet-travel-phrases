@@ -21,33 +21,26 @@
     {
       "id": "chunk-1",
       "vietnamese": "Nó",
-      "english": "it"
+      "english": "it",
+      "keepTogetherReason": "subject pronoun"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "có ở cạnh",
+      "english": "is next to",
+      "keepTogetherReason": "next-to phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
+      "vietnamese": "khách sạn",
+      "english": "hotel",
+      "keepTogetherReason": "hotel noun"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "cạnh",
-      "english": "next to"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "khách sạn",
-      "english": "hotel",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

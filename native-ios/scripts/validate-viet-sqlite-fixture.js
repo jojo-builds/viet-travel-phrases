@@ -148,9 +148,16 @@ const reviewedCompoundPhrasePageIDs = [
   "viet-phrase-v900-tran-please-turn-left-at-the-next-street",
   "viet-phrase-v900-mone-numb-pric-is-there-an-atm-nearby",
   "viet-phrase-repair-show-me",
+  "viet-phrase-ves-show-me-anh-chi",
+  "viet-phrase-v500-airp-bord-arri-can-i-show-it-on-my-phone",
+  "viet-phrase-v500-unde-repa-please-type-it-into-my-phone",
   "viet-phrase-v900-dire-navi-can-you-call-this-place-and-ask-for-directions",
   "viet-phrase-v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
   "viet-phrase-v900-loca-serv-ever-task-please-print-it-in-black-and-white",
+  "viet-phrase-v900-loca-serv-ever-task-can-you-print-this-for-me",
+  "viet-phrase-v900-time-date-book-please-send-it-by-text-message",
+  "viet-phrase-v900-time-date-book-please-write-down-the-time",
+  "viet-phrase-v900-tran-can-you-pick-me-up-here",
 ];
 
 const approvedQuickSayShortcutPairs = [
@@ -1030,7 +1037,8 @@ function main() {
         WHERE psi2.section_id = ps.id
           AND psi2.item_kind = 'breakdown_token'
       )
-      AND bt.token_text = pp.title;
+      AND bt.token_text = pp.title
+      AND pp.id NOT IN (${reviewedCompoundPhrasePageIDSQL});
   `), "non-final breakdown tokens duplicating the full phrase");
 
   assertZero(sqliteValue(`

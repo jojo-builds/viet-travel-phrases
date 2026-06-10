@@ -20,44 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi không thể ngủ được",
+      "english": "I cannot sleep",
+      "keepTogetherReason": "cannot-sleep phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "thể",
-      "english": "can / able to"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "ngủ",
-      "english": "sleep"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "được",
-      "english": "possible / okay"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "vì",
-      "english": "because"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "quá",
-      "english": "too / very"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "ồn ào",
-      "english": "noisy",
-      "keepTogetherReason": "compound adjective"
+      "vietnamese": "vì quá ồn ào",
+      "english": "because it is too noisy",
+      "keepTogetherReason": "too-noisy reason"
     },
     {
       "id": "full",

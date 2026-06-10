@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-heal-phar-i-have-a-fever",
-  "phraseText": "tôi bị sốt",
+  "phraseText": "Tôi bị sốt",
   "englishTitle": "I have a fever",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,22 +20,19 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi bị",
+      "english": "I have / I am affected by",
+      "keepTogetherReason": "condition phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "sốt",
-      "english": "fever"
+      "english": "fever",
+      "keepTogetherReason": "symptom word"
     },
     {
       "id": "full",
-      "vietnamese": "tôi bị sốt",
+      "vietnamese": "Tôi bị sốt",
       "english": "I have a fever",
       "audioKey": "v500-heal-phar-i-have-a-fever"
     }

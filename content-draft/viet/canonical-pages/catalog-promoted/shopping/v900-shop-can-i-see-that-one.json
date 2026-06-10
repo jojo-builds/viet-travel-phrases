@@ -7,7 +7,7 @@
   "title": "Tôi có thể xem cái đó được không?",
   "englishTitle": "Can I see that one?",
   "pronunciation": "Toi co the xem cai do duoc khong",
-  "summary": "Can I see that one?",
+  "summary": "For asking shop staff to show the item behind the counter, high on a shelf, inside a case, or across the stall.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể xem cái đó được không? is for asking permission before you act. It is useful when see that one depends on local rules, staff approval, or the right way to use a space or service."
+      "body": "Point to the exact item first. The phrase is clearer when staff can see which color, size, or display piece you mean."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có thể xem cái đó được không? once, then make the task visible with your item, shelf, photo, size, color, price tag, or calculator. The phrase is doing one job: getting a clear answer about see that one.",
+      "body": "Keep pointing until they reach for the right one. If there are several similar items, add a color or size card next.",
       "phrases": [
         {
           "id": "v900-shop-can-i-see-that-one",
@@ -42,44 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể means can I; xem cái đó means see that one; được không softens the question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể xem cái",
-          "english": "show / see",
-          "audioKey": null
+          "vietnamese": "xem cái đó",
+          "english": "see that one",
+          "keepTogetherReason": "see-that-one phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "đó",
-          "english": "that one / that",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Tôi có thể xem cái đó được không?",
-          "english": "Can I see that one",
-          "audioKey": null
+          "english": "Can I see that one?",
+          "audioKey": "v900-shop-can-i-see-that-one"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can I see that one? to another shopping need.",
+      "body": "Color, size, inside, price, and cheaper-option cards cover the shopping questions that usually follow.",
       "phrases": [
         {
           "id": "shop-1",
@@ -116,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real shopping exchange when see that one is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+      "body": "Markets, souvenir stalls, jewelry cases, clothing shops, and electronics counters are the natural places for this request."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "If the item is fragile or behind glass, let staff handle it first. Ask to touch it only after they show it."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể xem cái đó được không?.",
+      "body": "Move to color, size, inside, price, touch-it, or cheaper-one cards if you keep comparing.",
       "phrases": [
         {
           "id": "shop-4",

@@ -20,38 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi để quên",
+      "english": "I left behind",
+      "keepTogetherReason": "left-behind phrase"
     },
     {
-      "vietnamese": "để quên",
-      "english": "left behind / forgot",
-      "keepTogetherReason": "compound forgot-left verb"
+      "id": "chunk-2",
+      "vietnamese": "thứ gì đó",
+      "english": "something",
+      "keepTogetherReason": "something phrase"
     },
     {
-      "id": "chunk-4",
-      "vietnamese": "thứ",
-      "english": "thing"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "gì",
-      "english": "what"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "đó",
-      "english": "that"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "trong",
-      "english": "inside / in"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "xe",
-      "english": "vehicle"
+      "id": "chunk-3",
+      "vietnamese": "trong xe",
+      "english": "in the car",
+      "keepTogetherReason": "in-car phrase"
     },
     {
       "id": "full",

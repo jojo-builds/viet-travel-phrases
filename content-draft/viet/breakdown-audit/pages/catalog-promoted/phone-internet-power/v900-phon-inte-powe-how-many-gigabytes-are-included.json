@@ -20,35 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Có",
-      "english": "have / there is"
+      "vietnamese": "Có bao nhiêu",
+      "english": "how many",
+      "keepTogetherReason": "how-many phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bao nhiêu",
-      "english": "how much / how many",
-      "keepTogetherReason": "fixed amount question"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "gigabyte",
-      "english": "gigabyte",
+      "english": "gigabytes",
       "keepTogetherReason": "data unit"
     },
     {
-      "id": "chunk-4",
-      "vietnamese": "được",
-      "english": "possible / okay"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "bao",
-      "english": "how / cover"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "gồm?",
-      "english": "include"
+      "id": "chunk-3",
+      "vietnamese": "được bao gồm?",
+      "english": "are included",
+      "keepTogetherReason": "included phrase"
     },
     {
       "id": "full",

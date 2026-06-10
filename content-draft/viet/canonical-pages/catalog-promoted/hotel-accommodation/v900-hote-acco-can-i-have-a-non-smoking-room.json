@@ -7,7 +7,7 @@
   "title": "Tôi có thể có phòng không hút thuốc được không?",
   "englishTitle": "Can I have a non-smoking room?",
   "pronunciation": "Toi co the co phong khong hut thuoc duoc khong",
-  "summary": "Can I have a non-smoking room?",
+  "summary": "Ask for a non-smoking room before accepting a space that smells like smoke or sits near a smoking area.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể có phòng không hút thuốc được không? is for asking permission before you act. It is useful when have a non-smoking room depends on local rules, staff approval, or the right way to use a space or service."
+      "body": "Good at check-in or right after entering the room if smoke smell is obvious."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có thể có phòng không hút thuốc được không? once, then make the task visible with your booking screen, room key, address, room number, or photo of the issue. The phrase is doing one job: getting a clear answer about have a non-smoking room.",
+      "body": "Ask with the booking open so the desk can compare room types quickly.",
       "phrases": [
         {
           "id": "v900-hote-acco-can-i-have-a-non-smoking-room",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Phòng không hút thuốc is the non-smoking-room chunk; được không keeps it polite.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can I have a non-smoking room? to another hotel or stay need.",
+      "body": "Reservation and check-in cards help if the desk needs to find your room first.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when have a non-smoking room is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+      "body": "Best before unpacking or paying, while a room change is still possible."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "The desk might offer another room, a higher floor, or a wait while housekeeping checks."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể có phòng không hút thuốc được không?.",
+      "body": "Checkout-time, quiet-room, and checkout cards cover nearby front-desk needs.",
       "phrases": [
         {
           "id": "hotel-3",

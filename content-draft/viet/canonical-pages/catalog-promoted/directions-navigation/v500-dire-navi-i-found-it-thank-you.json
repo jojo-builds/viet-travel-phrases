@@ -7,7 +7,7 @@
   "title": "Tôi đã tìm thấy nó, cảm ơn bạn",
   "englishTitle": "I found it, thank you",
   "pronunciation": "Toi da tim thay no cam on ban",
-  "summary": "I found it, thank you",
+  "summary": "Keeps the direction question clear with a map, at a street corner, or at a ticket counter.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi đã tìm thấy nó, cảm ơn bạn. Keep the situation visible, pause after the phrase, and let the other person answer with a smile, acknowledgment, or short reply.",
+      "body": "Say Tôi đã tìm thấy nó, cảm ơn bạn clearly; show the map location, address, station name, or sign only if the reply needs detail.",
       "phrases": [
         {
           "id": "v500-dire-navi-i-found-it-thank-you",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Practice Tôi đã tìm + thấy nó, cảm ơn bạn first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I found it, thank you to another directions need.",
+      "body": "Good next-step cards: Excuse me, how do I get there, Is it near here, and How long does it take on foot.",
       "phrases": [
         {
           "id": "directions-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real directions exchange when i found it, thank you is the detail you need resolved. The likely reply is a smile, acknowledgment, or short reply, so keep the phrase short and ready for one follow-up."
+      "body": "Best with a map, at a street corner, or at a ticket counter, before the explanation gets long. Keep the map location, address, station name, or sign close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi đã tìm thấy nó, cảm ơn bạn.",
+      "body": "Nearby follow-ups: Where do I turn left?; Should I turn right?; Should I go straight?",
       "phrases": [
         {
           "id": "directions-4",

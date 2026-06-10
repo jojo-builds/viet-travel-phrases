@@ -20,44 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hãy",
-      "english": "please do"
+      "vietnamese": "Hãy làm món này",
+      "english": "please make this dish",
+      "keepTogetherReason": "make-this-dish phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "làm",
-      "english": "do / make"
+      "vietnamese": "mà không cần",
+      "english": "without / not needing",
+      "keepTogetherReason": "without phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "món",
-      "english": "dish"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "mà",
-      "english": "that / but"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "cần",
-      "english": "need"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "đậu phộng",
       "english": "peanuts",
-      "keepTogetherReason": "compound food allergy term"
+      "keepTogetherReason": "peanut noun"
     },
     {
       "id": "full",

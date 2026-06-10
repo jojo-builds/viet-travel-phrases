@@ -7,7 +7,7 @@
   "title": "Xe buýt nào đi vào trung tâm thành phố?",
   "englishTitle": "Which bus goes to the city center?",
   "pronunciation": "Xe buyt nao di vao trung tam thanh pho",
-  "summary": "Which bus goes to the city center?",
+  "summary": "For asking station staff, airport staff, a kiosk, or another passenger which bus goes toward the city center before you board.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Xe buýt nào đi vào trung tâm thành phố? helps you choose the right option when several lines, gates, counters, sizes, or routes look similar. It asks for Which bus goes to the city center without making the other person explain everything at once."
+      "body": "Ask before stepping onto the bus. Keep the destination or map visible so the answer can point to a route number or bay."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Xe buýt nào đi vào trung tâm thành phố? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Point toward the buses or route board, then wait for a number, platform, or direction.",
       "phrases": [
         {
           "id": "v900-tran-which-bus-goes-to-the-city-center",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Xe buýt nào means which bus; đi vào means goes into; trung tâm thành phố means the city center.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Xe buýt nào",
           "english": "which bus",
-          "audioKey": null
+          "keepTogetherReason": "which-bus phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đi vào trung",
-          "english": "go / move",
-          "audioKey": null
+          "vietnamese": "đi vào",
+          "english": "goes into",
+          "keepTogetherReason": "goes-into phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "tâm thành phố",
-          "english": "how long does it take to get downtown",
-          "audioKey": null
+          "vietnamese": "trung tâm thành phố?",
+          "english": "the city center?",
+          "keepTogetherReason": "city-center phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Xe buýt nào đi vào trung tâm thành phố?",
-          "english": "Which bus goes to the city center",
-          "audioKey": null
+          "english": "Which bus goes to the city center?",
+          "audioKey": "v900-tran-which-bus-goes-to-the-city-center"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Which bus goes to the city center? to another transport need.",
+      "body": "Ticket, platform, shuttle, pickup-point, and fare cards cover the transport choices around this question.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when which bus goes to the city center is the detail you need resolved. The likely reply is a choice, counter, gate, line, or direction, so keep the phrase short and ready for one follow-up."
+      "body": "Airport bus stops, stations, local terminals, hotel desks, and street-side bus bays are the moments where route numbers matter."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "The answer may be a route number instead of a sentence. Ask them to point if the board is crowded."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Xe buýt nào đi vào trung tâm thành phố?.",
+      "body": "Move to ticket, platform, fare, shuttle, or where-to-buy-ticket cards once you know the route.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

@@ -20,35 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "I need",
+      "keepTogetherReason": "I-need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
+      "vietnamese": "thay đổi",
+      "english": "change",
+      "keepTogetherReason": "change verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "thay",
-      "english": "replace / change"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "đổi",
-      "english": "change / exchange"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đặt chỗ",
-      "english": "make a reservation",
-      "keepTogetherReason": "compound booking action"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "của mình",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
+      "vietnamese": "đặt chỗ của mình",
+      "english": "my booking",
+      "keepTogetherReason": "my-booking phrase"
     },
     {
       "id": "full",

@@ -20,37 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "liên hệ với",
+      "english": "contact",
+      "keepTogetherReason": "contact phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "liên hệ",
-      "english": "contact",
-      "keepTogetherReason": "compound verb"
+      "vietnamese": "tài xế",
+      "english": "the driver",
+      "keepTogetherReason": "driver noun"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "với",
-      "english": "with / to"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tài xế",
-      "english": "driver",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

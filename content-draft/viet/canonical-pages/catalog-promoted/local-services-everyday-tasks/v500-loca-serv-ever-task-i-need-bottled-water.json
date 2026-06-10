@@ -7,7 +7,7 @@
   "title": "Tôi cần nước đóng chai",
   "englishTitle": "I need bottled water",
   "pronunciation": "Toi can nuoc dong chai",
-  "summary": "I need bottled water",
+  "summary": "For asking for sealed drinking water at a shop, hotel desk, stall, or counter.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần nước đóng chai is the short line for naming what you need next. It works best when bottled water is visible on your phone, ticket, note, shelf, or in the situation around you."
+      "body": "Use this when you need bottled water, not a glass or refill."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần nước đóng chai with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "body": "Point to a bottle size, fridge, shelf, or room-service tray if there is more than one option.",
       "phrases": [
         {
           "id": "v500-loca-serv-ever-task-i-need-bottled-water",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi cần means I need; nước đóng chai means bottled water.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi cần",
           "english": "I need",
-          "audioKey": null
+          "keepTogetherReason": "I-need phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "nước đóng chai",
           "english": "bottled water",
-          "audioKey": null
+          "keepTogetherReason": "bottled-water noun"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi cần nước đóng chai",
           "english": "I need bottled water",
-          "audioKey": null
+          "audioKey": "v500-loca-serv-ever-task-i-need-bottled-water"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I need bottled water to another local service need.",
+      "body": "Bottle-of-water, bag, and tissues phrases cover nearby counter requests.",
       "phrases": [
         {
           "id": "store-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real local service exchange when bottled water is the detail you need resolved. The likely reply is a point, option, yes/no answer, or next step, so keep the phrase short and ready for one follow-up."
+      "body": "Good at convenience stores, hotel desks, pharmacies, cafes, bus stops, and airport counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Service counters often answer with numbers or times. Ask the short question first, then use a write-it-down phrase if needed."
+      "body": "If the answer is a price or size, point to the bottle you want and keep the exchange simple."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi cần nước đóng chai.",
+      "body": "Sunscreen, open-this, card-payment, receipt, and print-this phrases cover common small errand follow-ups.",
       "phrases": [
         {
           "id": "store-4",

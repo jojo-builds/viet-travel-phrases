@@ -7,7 +7,7 @@
   "title": "Tôi đã bỏ lỡ những gì bạn nói",
   "englishTitle": "I missed what you said",
   "pronunciation": "Toi da bo lo nhung gi ban noi",
-  "summary": "I missed what you said",
+  "summary": "For recovering after you missed a spoken answer and need the person to repeat or show it.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi đã bỏ lỡ những gì bạn nói is a practical understanding check phrase for keeping one travel detail clear. Use it when I missed what you said is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it when the person already answered but the words moved too fast to catch.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi đã bỏ lỡ những gì bạn nói. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say the line once, then point to your ear, the menu, the address, or the screen that caused the confusion.",
       "phrases": [
         {
           "id": "v500-unde-repa-i-missed-what-you-said",
@@ -42,32 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi đã bỏ lỡ means I missed; những gì bạn nói means what you said.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi đã bỏ",
-          "english": "I already / I did",
-          "audioKey": null
+          "vietnamese": "Tôi đã bỏ lỡ",
+          "english": "I missed",
+          "keepTogetherReason": "I-missed phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "lỡ những gì bạn nói",
-          "english": "missed what you said",
-          "audioKey": null
+          "vietnamese": "những gì bạn nói",
+          "english": "what you said",
+          "keepTogetherReason": "what-you-said phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi đã bỏ lỡ những gì bạn nói",
           "english": "I missed what you said",
-          "audioKey": null
+          "audioKey": "v500-unde-repa-i-missed-what-you-said"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I missed what you said to another understanding check need.",
+      "body": "I-do-not-understand and slower-speech cards help if the repeat still comes too fast.",
       "phrases": [
         {
           "id": "problems-2",
@@ -104,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real understanding check exchange when i missed what you said is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at counters, cafes, hotels, ride pickups, ticket desks, and any moment where spoken detail matters.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "These phrases keep the exchange friendly when Vietnamese moves too fast. Ask for one specific next step: repeat, write, show, or point."
+      "body": "Ask for one repair move at a time: repeat it, slow down, write it, show it, or point to it.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi đã bỏ lỡ những gì bạn nói.",
+      "body": "Repeat, write-it-down, meaning, which-one, and show-me cards cover the next repair step.",
       "phrases": [
         {
           "id": "repair-1",

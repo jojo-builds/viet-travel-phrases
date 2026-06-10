@@ -19,24 +19,22 @@
   ],
   "tokens": [
     {
+      "id": "chunk-1",
       "vietnamese": "Căn phòng",
-      "english": "room",
-      "keepTogetherReason": "compound room noun"
+      "english": "the room",
+      "keepTogetherReason": "room noun"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "có mùi",
+      "english": "has a smell",
+      "keepTogetherReason": "smell phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "mùi",
-      "english": "smell"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "khói",
-      "english": "smoke"
+      "english": "smoke",
+      "keepTogetherReason": "smoke noun"
     },
     {
       "id": "full",

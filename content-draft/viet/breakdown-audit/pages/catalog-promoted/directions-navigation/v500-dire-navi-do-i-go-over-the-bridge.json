@@ -20,33 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có",
+      "english": "do I",
+      "keepTogetherReason": "do-I question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "đi qua cầu",
+      "english": "go over the bridge",
+      "keepTogetherReason": "bridge-crossing phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đi",
-      "english": "go"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "qua",
-      "english": "through / past"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "cầu",
-      "english": "bridge"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

@@ -7,7 +7,7 @@
   "title": "Bạn có thể giải thích nó bằng tiếng Anh không?",
   "englishTitle": "Can you explain it in English?",
   "pronunciation": "Ban co the giai thich no bang tieng Anh khong",
-  "summary": "Can you explain it in English?",
+  "summary": "For asking someone to switch from fast Vietnamese into simple English.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể giải thích nó bằng tiếng Anh không? asks someone to do one helpful action for you. Use it for explain it in English when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Use it when a price, address, rule, medicine note, or booking answer is important and gestures are not enough."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể giải thích nó bằng tiếng Anh không? once, then make the task visible with your phone, note, map, translation screen, number, or written address. The phrase is doing one job: getting a clear answer about explain it in English.",
+      "body": "Ask once, then show the word, screen, address, or note that needs explaining.",
       "phrases": [
         {
           "id": "v900-unde-repa-can-you-explain-it-in-english",
@@ -42,34 +42,49 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có thể asks can; giải thích means explain; bằng tiếng Anh means in English.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bạn có thể",
-          "english": "can you",
+          "vietnamese": "Bạn",
+          "english": "you",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "giải thích nó",
-          "english": "price",
+          "vietnamese": "có thể",
+          "english": "can / able to",
+          "keepTogetherReason": "fixed modal phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "bằng tiếng Anh",
-          "english": "in English",
+          "vietnamese": "giải thích",
+          "english": "explain",
+          "keepTogetherReason": "compound explanation verb",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "nó",
+          "english": "it",
           "audioKey": null
         },
         {
           "id": "chunk-5",
+          "vietnamese": "bằng tiếng Anh",
+          "english": "in English",
+          "keepTogetherReason": "language phrase",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-6",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-7",
           "vietnamese": "Bạn có thể giải thích nó bằng tiếng Anh không?",
           "english": "Can you explain it in English",
           "audioKey": null
@@ -79,7 +94,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you explain it in English? to another understanding check need.",
+      "body": "If English is not possible, move to slower speech, writing, pointing, or translation-app help.",
       "phrases": [
         {
           "id": "problems-2",
@@ -116,17 +131,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real understanding check exchange when explain it in English is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Good at counters, clinics, hotels, stations, tours, and shops when the answer matters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "The reply may still be short. Combine this with pointing or writing instead of asking for a long explanation."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể giải thích nó bằng tiếng Anh không?.",
+      "body": "Use repeat, write-down, meaning, slower-speech, or show-me follow-ups if English is not available.",
       "phrases": [
         {
           "id": "repair-1",

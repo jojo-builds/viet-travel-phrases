@@ -20,7 +20,7 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có phải ở phía bên này của đường phố? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Is it on this side of the street is right."
+      "body": "Use Có phải ở phía bên này của đường phố?"
     },
     {
       "id": "quick-say",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Có phải ở + phía bên này as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is it on this side of the street? to another directions need.",
+      "body": "Useful if the exchange continues: Excuse me, how do I get there, Is it near here, and How long does it take on foot.",
       "phrases": [
         {
           "id": "directions-1",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Có phải ở phía bên này của đường phố?.",
+      "body": "If the exchange continues, where do I turn left?; should I turn right?; should I go straight? can carry the next detail.",
       "phrases": [
         {
           "id": "directions-4",

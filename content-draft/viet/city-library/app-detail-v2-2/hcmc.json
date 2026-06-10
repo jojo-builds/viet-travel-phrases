@@ -1585,11 +1585,11 @@
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể ăn cơm với cái này không?",
-          "en": "Can I have rice with this?",
+          "vi": "Cho tôi một phần",
+          "en": "One portion please",
           "intent": "food-drink",
-          "phraseId": "v900-food-drin-can-i-have-rice-with-this",
-          "audioId": "v900-food-drin-can-i-have-rice-with-this",
+          "phraseId": "food-1",
+          "audioId": "food-1",
           "status": "mapped"
         },
         {
@@ -4976,11 +4976,11 @@
           "status": "mapped"
         },
         {
-          "vi": "Tôi có thể ăn cơm với cái này không?",
-          "en": "Can I have rice with this?",
+          "vi": "Cho tôi một phần",
+          "en": "One portion please",
           "intent": "food-drink",
-          "phraseId": "v900-food-drin-can-i-have-rice-with-this",
-          "audioId": "v900-food-drin-can-i-have-rice-with-this",
+          "phraseId": "food-1",
+          "audioId": "food-1",
           "status": "mapped"
         },
         {
@@ -7591,11 +7591,11 @@
           "status": "mapped"
         },
         {
-          "vi": "Điều đó rất tốt",
-          "en": "That was very good",
+          "vi": "Đồ ăn ngon quá",
+          "en": "The food is so good",
           "intent": "food-drink",
-          "phraseId": "v900-food-drin-that-was-very-good",
-          "audioId": "v900-food-drin-that-was-very-good",
+          "phraseId": "smalltalk-5",
+          "audioId": "smalltalk-5",
           "status": "mapped"
         }
       ],
@@ -8279,11 +8279,11 @@
           "status": "mapped"
         },
         {
-          "vi": "Chúng ta có thể ngồi bên trong được không?",
-          "en": "Can we sit inside?",
+          "vi": "Cho tôi bàn cho hai người nhé",
+          "en": "A table for two, please",
           "intent": "food-drink",
-          "phraseId": "v900-food-drin-can-we-sit-inside",
-          "audioId": "v900-food-drin-can-we-sit-inside",
+          "phraseId": "food-need-table",
+          "audioId": "food-need-table",
           "status": "mapped"
         },
         {
@@ -12342,7 +12342,7 @@
       "storySpine": "Central Saigon has a long green institution here, with the zoo and gardens sitting inside everyday family movement.",
       "intro": {
         "heading": "Old Trees Inside The City",
-        "body": "Saigon Zoo and Botanical Gardens is an open-air city park with old trees, walking paths, families, gardens, and animal areas near the center. It is the kind of place where shade, water, and pacing matter as much as what you came to see."
+        "body": "Saigon Zoo and Botanical Gardens is an open-air city park with old trees, walking paths, gardens, and animal areas. Plan for shade, water, and a slower pace."
       },
       "usefulPhraseCards": [
         {

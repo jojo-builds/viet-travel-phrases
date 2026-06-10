@@ -20,28 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hãy",
-      "english": "please do"
+      "vietnamese": "Hãy viết",
+      "english": "please write",
+      "keepTogetherReason": "please-write request"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "viết",
-      "english": "write"
+      "vietnamese": "tổng số",
+      "english": "the total",
+      "keepTogetherReason": "total amount phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "tổng",
-      "english": "total"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "số",
-      "english": "number"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "ra.",
-      "english": "out"
+      "english": "out / down",
+      "keepTogetherReason": "write-it-out ending"
     },
     {
       "id": "full",

@@ -7,7 +7,7 @@
   "title": "Tôi đến từ Mỹ",
   "englishTitle": "I’m from the United States",
   "pronunciation": "toy den too mee",
-  "summary": "Tôi đến từ Mỹ means “I’m from the United States”.",
+  "summary": "Keep small talk simple and traveler-specific.",
   "iconName": "bubble.left.and.bubble.right.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi đến từ Mỹ when you need \"I'm from the United States\". This is for light conversation after someone asks where you are from. Listen for a short reply, a smile, a time, or a light follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "This is for light conversation after someone asks where you are from.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Practice Tôi + đến first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "smalltalk-1-piece-1",
@@ -57,12 +59,13 @@
           "audioKey": "smalltalk-1"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi đến từ Mỹ as your first sentence for \"I'm from the United States\". This is for light conversation after someone asks where you are from. Pause after the phrase and listen for a short reply, a smile, a time, or a light follow-up question. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
+      "body": "Say Tôi đến từ Mỹ in one connected line before adding details. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
       "phrases": [
         {
           "id": "smalltalk-1",
@@ -75,18 +78,21 @@
           "audioKey": "smalltalk-1"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Small talk in Vietnamese often becomes warmer when it connects to place, food, or shared experience. For \"I'm from the United States\", Tôi đến từ Mỹ makes the next step easier to answer. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
-      "presentation": "plain-text"
+      "body": "Small talk in Vietnamese often becomes warmer when it connects to place, food, or shared experience. Keep the tone warm and leave room for a short reply.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Social Small Talk, the reply often comes as a short reply, a smile, a time, or a light follow-up question. Say Tôi đến từ Mỹ once, pause, and watch for the reply. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
+      "body": "Watch for a smile, a time, or light follow-up question. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
       "phrases": [
         {
           "id": "smalltalk-2",
@@ -119,12 +125,13 @@
           "audioKey": "smalltalk-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for light conversation after someone asks where you are from. It fits friendly introductions and light local conversation, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
+      "body": "This is for light conversation after someone asks where you are from. Watch for a smile, a time, or light follow-up question.",
       "phrases": [
         {
           "id": "smalltalk-5",
@@ -157,13 +164,16 @@
           "audioKey": "smalltalk-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Some social phrases are best after a greeting, not as the very first thing you say to a stranger.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -201,12 +211,13 @@
           "audioKey": "audio-authored-anh-khoe-khong-942769853d"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "nearby-phrases",
       "title": "Useful nearby phrases",
-      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
+      "body": "Use these for how are you, older woman?; how are you, younger person? if the moment moves past the first line.",
       "phrases": [
         {
           "id": "how-are-you-chi",
@@ -229,12 +240,13 @@
           "audioKey": "audio-phrase-em-khoe-khong"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover I’m from England, this is my first time, and I like Vietnam.",
       "phrases": [
         {
           "id": "smalltalk-2",
@@ -317,7 +329,8 @@
           "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

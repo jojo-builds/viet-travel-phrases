@@ -21,18 +21,20 @@
     {
       "id": "chunk-1",
       "vietnamese": "Hãy",
-      "english": "please do"
+      "english": "please do",
+      "keepTogetherReason": "direct request opener"
     },
     {
       "id": "chunk-2",
       "vietnamese": "gọi",
-      "english": "call"
+      "english": "call",
+      "keepTogetherReason": "call verb"
     },
     {
       "id": "chunk-3",
       "vietnamese": "cảnh sát",
       "english": "police",
-      "keepTogetherReason": "compound public-safety term"
+      "keepTogetherReason": "police noun"
     },
     {
       "id": "full",

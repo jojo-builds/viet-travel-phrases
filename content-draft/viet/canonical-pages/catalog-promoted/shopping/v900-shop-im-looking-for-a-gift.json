@@ -7,7 +7,7 @@
   "title": "Tôi đang tìm một món quà",
   "englishTitle": "I’m looking for a gift",
   "pronunciation": "Toi dang tim mot mon qua",
-  "summary": "I’m looking for a gift",
+  "summary": "For telling shop staff you want a gift, not something for yourself.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi đang tìm một món quà is a practical shopping phrase for keeping one travel detail clear. Use it when I’m looking for a gift is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say it before asking for suggestions, wrapping, size, or price."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi đang tìm một món quà. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point to the kind of item you are considering so suggestions stay practical.",
       "phrases": [
         {
           "id": "v900-shop-im-looking-for-a-gift",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi đang tìm means I am looking for; một món quà means a gift.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi đang tìm",
-          "english": "I already / I did",
-          "audioKey": null
+          "english": "I am looking for",
+          "keepTogetherReason": "looking-for phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "một món quà",
           "english": "a gift",
-          "audioKey": null
+          "keepTogetherReason": "gift noun phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi đang tìm một món quà",
           "english": "I’m looking for a gift",
-          "audioKey": null
+          "audioKey": "v900-shop-im-looking-for-a-gift"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I’m looking for a gift to another shopping need.",
+      "body": "Size, color, and try-on cards help if the gift becomes a specific item.",
       "phrases": [
         {
           "id": "shop-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real shopping exchange when i’m looking for a gift is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at markets, souvenir shops, clothing stalls, bookstores, and hotel gift counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "In shops and markets, the object is the anchor. Point clearly, then listen for the number or option."
+      "body": "Mentioning a gift can make staff show safer, easier-to-pack options."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi đang tìm một món quà.",
+      "body": "Just-looking, pay-where, exchange-this, how-much, and lower-price pages cover the shopping turn.",
       "phrases": [
         {
           "id": "shop-4",

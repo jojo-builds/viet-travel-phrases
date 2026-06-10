@@ -20,38 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hãy",
-      "english": "please do"
+      "vietnamese": "Hãy đánh thức",
+      "english": "please wake",
+      "keepTogetherReason": "wake-up request"
     },
     {
-      "vietnamese": "đánh thức",
-      "english": "wake up",
-      "keepTogetherReason": "compound wake-up verb"
+      "id": "chunk-2",
+      "vietnamese": "tôi",
+      "english": "me",
+      "keepTogetherReason": "object pronoun"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "lúc sáu giờ",
+      "english": "at six o'clock",
+      "keepTogetherReason": "time phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "tôi",
-      "english": "I / me"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "lúc",
-      "english": "at the time"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "sáu",
-      "english": "six"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "giờ",
-      "english": "time / hour"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "nhé",
-      "english": "soft polite ending"
+      "english": "softens the request",
+      "keepTogetherReason": "softening particle"
     },
     {
       "id": "full",

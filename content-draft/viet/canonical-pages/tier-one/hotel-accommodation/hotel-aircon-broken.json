@@ -7,7 +7,7 @@
   "title": "Máy lạnh không chạy",
   "englishTitle": "The air conditioner isn’t working",
   "pronunciation": "mai lanh khong chai",
-  "summary": "Máy lạnh không chạy means “The air conditioner isn’t working”.",
+  "summary": "This is the more specific follow-up when the heat problem is the air conditioner.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Máy lạnh không chạy when you need \"The air conditioner isn't working\". This is for when the air conditioner is not working at all. This is the more specific follow-up when the heat problem is the air conditioner. Listen for a room-number check, maintenance visit, new key, or room-change option; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Reach for it when the air conditioner is not working at all.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Hear Máy lạnh + không as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "hotel-5-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "hotel-5"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Máy lạnh không chạy as your first sentence for \"The air conditioner isn't working\". This is for when the air conditioner is not working at all. Pause after the phrase and listen for a room-number check, maintenance visit, new key, or room-change option. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Say Máy lạnh không chạy first; let the booking, room number, address, or key card support the reply.",
       "phrases": [
         {
           "id": "hotel-5",
@@ -69,18 +72,21 @@
           "audioKey": "hotel-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. For \"The air conditioner isn't working\", Máy lạnh không chạy makes the next step easier to answer. Have the room number ready and show the item if staff need to inspect it.",
-      "presentation": "plain-text"
+      "body": "Room problems are easier to fix when the object is clear. This phrase points staff to the air conditioner first.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Hotel Accommodation, the reply often comes as a room-number check, maintenance visit, new key, or room-change option. Say Máy lạnh không chạy once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Expect a room visit, remote-control check, repair wait, or room-change offer.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -113,12 +119,13 @@
           "audioKey": "hotel-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when the air conditioner is not working at all. It fits front desk, room, check-in, and hotel-service moments, especially when the next step is a room-number check, maintenance visit, new key, or room-change option. Have the room number ready and show the item if staff need to inspect it.",
+      "body": "Best when the unit will not cool, turn on, respond to the remote, or stop leaking.",
       "phrases": [
         {
           "id": "hotel-checkout",
@@ -151,18 +158,21 @@
           "audioKey": "hotel-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
-      "presentation": "tip-callout"
+      "body": "A room change may be easier than a repair if it is late or the heat is bad.",
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Pair the phrase with a booking screen, key card, room number, or photo of the problem.",
+      "body": "Show the remote, room number, or the unit itself if staff comes upstairs.",
       "phrases": [
         {
           "id": "hotel-7",
@@ -185,12 +195,13 @@
           "audioKey": "v500-hote-acco-the-door-does-not-lock"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a front desk or guesthouse counter, the next useful language is usually I have a reservation; I’d like to check in; what time is check-out?",
       "phrases": [
         {
           "id": "hotel-1",
@@ -273,7 +284,8 @@
           "audioKey": "v500-hote-acco-the-door-does-not-lock"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

@@ -7,7 +7,7 @@
   "title": "Tôi chỉ có bấy nhiêu thôi",
   "englishTitle": "I only have this much",
   "pronunciation": "Toi chi co bay nhieu thoi",
-  "summary": "I only have this much",
+  "summary": "For showing the amount you can pay when the price, fare, or cash limit is the issue.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi chỉ có bấy nhiêu thôi is a practical money or price phrase for keeping one travel detail clear. Use it when I only have this much is the next detail to solve and a short answer would move the exchange forward."
+      "body": "This belongs in a market, taxi, ticket, or small-shop moment where the number is visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi chỉ có bấy nhiêu thôi. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the cash or calculator while you say it. Let the amount do most of the explaining.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-i-only-have-this-much",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi chỉ có means I only have; bấy nhiêu thôi means only this much.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi chỉ có",
           "english": "I only have",
-          "audioKey": null
+          "keepTogetherReason": "I-only-have phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "bấy nhiêu thôi",
-          "english": "this much only",
-          "audioKey": null
+          "english": "only this much",
+          "keepTogetherReason": "this-much phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi chỉ có bấy nhiêu thôi",
           "english": "I only have this much",
-          "audioKey": null
+          "audioKey": "v500-mone-numb-pric-i-only-have-this-much"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I only have this much to another money or price need.",
+      "body": "How-much and per-kilo phrases help if the amount needs to be checked first.",
       "phrases": [
         {
           "id": "price-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when i only have this much is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good when you are negotiating, short on cash, or deciding whether the price still works."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+      "body": "Keep the tone calm. This phrase is clearer as a limit than as a hard bargain."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi chỉ có bấy nhiêu thôi.",
+      "body": "Too-expensive, lower-price, final-price, show-another, and take-this phrases cover common market replies.",
       "phrases": [
         {
           "id": "price-3",

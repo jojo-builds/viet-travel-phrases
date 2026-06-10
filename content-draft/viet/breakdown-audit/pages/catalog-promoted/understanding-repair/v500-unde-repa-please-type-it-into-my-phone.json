@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-unde-repa-please-type-it-into-my-phone",
-  "phraseText": "Hãy gõ nó vào điện thoại của tôi.",
+  "phraseText": "Anh/chị gõ vào điện thoại giúp tôi được không?",
   "englishTitle": "Please type it into my phone.",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -15,46 +15,36 @@
     ]
   },
   "notes": [
-    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources.",
+    "Phrase-copy semantic repair; reviewed tokens updated and audio marked for regeneration."
   ],
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hãy",
-      "english": "please do"
+      "vietnamese": "Anh/chị gõ",
+      "english": "please type",
+      "keepTogetherReason": "polite typing request"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "gõ",
-      "english": "type / knock"
+      "vietnamese": "vào điện thoại",
+      "english": "into the phone",
+      "keepTogetherReason": "phone target phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nó",
-      "english": "it"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "vào",
-      "english": "into / enter"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "điện thoại",
-      "english": "phone",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "của tôi.",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
+      "vietnamese": "giúp tôi được không?",
+      "english": "for me, is that okay?",
+      "keepTogetherReason": "polite help question"
     },
     {
       "id": "full",
-      "vietnamese": "Hãy gõ nó vào điện thoại của tôi.",
+      "vietnamese": "Anh/chị gõ vào điện thoại giúp tôi được không?",
       "english": "Please type it into my phone.",
-      "audioKey": "v500-unde-repa-please-type-it-into-my-phone"
+      "audioKey": null
     }
-  ]
+  ],
+  "title": "Anh/chị gõ vào điện thoại giúp tôi được không?",
+  "summary": "Please type it into my phone",
+  "pronunciation": "Anh chi go vao dien thoai giup toi duoc khong"
 }

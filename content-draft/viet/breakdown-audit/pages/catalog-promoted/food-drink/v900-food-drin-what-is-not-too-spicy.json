@@ -20,28 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Cái",
-      "english": "item / classifier"
+      "vietnamese": "Cái gì",
+      "english": "what",
+      "keepTogetherReason": "what question"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "gì",
-      "english": "what"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "quá",
-      "english": "too / very"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "cay?",
-      "english": "spicy"
+      "vietnamese": "không quá cay?",
+      "english": "is not too spicy?",
+      "keepTogetherReason": "not-too-spicy phrase"
     },
     {
       "id": "full",

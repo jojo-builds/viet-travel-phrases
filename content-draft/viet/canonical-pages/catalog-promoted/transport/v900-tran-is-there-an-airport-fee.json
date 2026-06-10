@@ -7,7 +7,7 @@
   "title": "Có phí sân bay không?",
   "englishTitle": "Is there an airport fee?",
   "pronunciation": "Co phi san bay khong",
-  "summary": "Is there an airport fee?",
+  "summary": "Ask whether an airport surcharge is part of the fare before a taxi, pickup, or drop-off gets awkward.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có phí sân bay không? is a practical transport phrase for keeping one travel detail clear. Use it when Is there an airport fee is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Good at airport taxi lines, hotel pickups, or rides where the quoted fare suddenly changes."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Có phí sân bay không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Ask before getting in or paying, with the fare screen or receipt visible.",
       "phrases": [
         {
           "id": "v900-tran-is-there-an-airport-fee",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Phí sân bay is airport fee; có asks whether there is one.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is there an airport fee? to another transport need.",
+      "body": "Take-me-here, District 1, and stop-here cards help if the fare question turns back into the ride.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when is there an airport fee is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best before agreeing to a fixed fare or when a driver adds a charge at the airport."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Let the amount appear on the meter, app, receipt, or calculator before you agree."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Có phí sân bay không?.",
+      "body": "Stop-here, this-way, and air-con cards cover the ride once the fare is clear.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

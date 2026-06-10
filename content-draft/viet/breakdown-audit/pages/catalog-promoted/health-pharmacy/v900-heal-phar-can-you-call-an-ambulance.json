@@ -20,31 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "gọi xe cứu thương",
+      "english": "call an ambulance",
+      "keepTogetherReason": "ambulance request"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "gọi",
-      "english": "call"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "xe cứu thương",
-      "english": "ambulance",
-      "keepTogetherReason": "compound emergency vehicle term"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "được không?",
-      "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "english": "can you / is it possible?",
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

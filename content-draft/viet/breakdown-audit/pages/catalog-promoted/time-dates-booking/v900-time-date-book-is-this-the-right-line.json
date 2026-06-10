@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-time-date-book-is-this-the-right-line",
-  "phraseText": "Đây có phải là dòng đúng không?",
+  "phraseText": "Đây có phải là hàng đúng không?",
   "englishTitle": "Is this the right line?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,40 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đây",
-      "english": "here / this"
+      "vietnamese": "Đây có phải",
+      "english": "is this",
+      "keepTogetherReason": "is-this question"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "là hàng đúng",
+      "english": "the right line / queue",
+      "keepTogetherReason": "right-queue phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "phải",
-      "english": "must / right"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "dòng",
-      "english": "line / row"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "đúng không?",
-      "english": "is that correct?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "vietnamese": "không?",
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",
-      "vietnamese": "Đây có phải là dòng đúng không?",
+      "vietnamese": "Đây có phải là hàng đúng không?",
       "english": "Is this the right line?",
-      "audioKey": "v900-time-date-book-is-this-the-right-line"
+      "audioKey": null
     }
   ]
 }

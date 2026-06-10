@@ -7,7 +7,7 @@
   "title": "Bạn có mũ bảo hiểm không?",
   "englishTitle": "Do you have a helmet?",
   "pronunciation": "Ban co mu bao hiem khong",
-  "summary": "Do you have a helmet?",
+  "summary": "For asking for a helmet before getting on a motorbike.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có mũ bảo hiểm không? is a practical transport phrase for keeping one travel detail clear. Use it when Do you have a helmet is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Helmet questions belong before the ride starts, not after traffic is moving."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Bạn có mũ bảo hiểm không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Ask while you are still off the bike. Wait for the helmet or choose another ride.",
       "phrases": [
         {
           "id": "v500-tran-do-you-have-a-helmet",
@@ -42,24 +42,26 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Mũ bảo hiểm means helmet; bạn có asks do you have; không? makes it yes/no.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bạn có mũ",
-          "english": "do you have a helmet",
+          "vietnamese": "Bạn có",
+          "english": "do you have",
+          "keepTogetherReason": "yes-no possession frame",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "bảo hiểm",
-          "english": "insurance",
+          "vietnamese": "mũ bảo hiểm",
+          "english": "helmet",
+          "keepTogetherReason": "compound safety noun",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "không?",
+          "english": "yes/no?",
           "audioKey": null
         },
         {
@@ -73,7 +75,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Do you have a helmet? to another transport need.",
+      "body": "If there is no helmet, use wait, wrong ride, unsafe, or another pickup question.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +112,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when do you have a helmet is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good for motorbike taxis, rentals, tours, and hotel-arranged rides."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "A real helmet should fit and fasten. Do not treat a vague nod as enough."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có mũ bảo hiểm không?.",
+      "body": "Use driver check, wrong car, unsafe stop, rental agreement, or wait-here phrases if the ride changes.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

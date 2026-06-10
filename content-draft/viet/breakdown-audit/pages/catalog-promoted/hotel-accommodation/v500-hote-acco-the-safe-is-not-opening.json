@@ -21,23 +21,14 @@
     {
       "id": "chunk-1",
       "vietnamese": "két sắt",
-      "english": "safe box",
-      "keepTogetherReason": "compound noun"
+      "english": "safe",
+      "keepTogetherReason": "safe noun"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "mở",
-      "english": "open"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "được",
-      "english": "possible / okay"
+      "vietnamese": "không mở được",
+      "english": "cannot be opened",
+      "keepTogetherReason": "not-opening phrase"
     },
     {
       "id": "full",

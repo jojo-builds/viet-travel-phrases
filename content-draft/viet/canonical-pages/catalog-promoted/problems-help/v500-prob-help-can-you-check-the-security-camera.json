@@ -7,7 +7,7 @@
   "title": "Bạn có thể kiểm tra camera an ninh được không?",
   "englishTitle": "Can you check the security camera?",
   "pronunciation": "Ban co the kiem tra camera an ninh duoc khong",
-  "summary": "Can you check the security camera?",
+  "summary": "For asking staff to review camera footage after a lost item, wrong bag, room issue, or pickup confusion.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể kiểm tra camera an ninh được không? asks someone to do one helpful action for you. Use it for check the security camera when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Use this at a desk with the time, place, and item visible. The more exact the moment, the easier the ask."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể kiểm tra camera an ninh được không? once, then make the task visible with your phone screen, receipt, item, photo, or the place where the issue is happening. The phrase is doing one job: getting a clear answer about check the security camera.",
+      "body": "Show the receipt, room number, ride screen, or photo first. Then ask for the camera check in one calm sentence.",
       "phrases": [
         {
           "id": "v500-prob-help-can-you-check-the-security-camera",
@@ -42,44 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; kiểm tra means check; camera an ninh means security camera; được không softens the request.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "kiểm tra camera",
-          "english": "pay",
-          "audioKey": null
+          "vietnamese": "kiểm tra",
+          "english": "check",
+          "keepTogetherReason": "compound verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "an ninh",
-          "english": "check the security camera",
-          "audioKey": null
+          "vietnamese": "camera an ninh",
+          "english": "security camera",
+          "keepTogetherReason": "security-camera phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Bạn có thể kiểm tra camera an ninh được không?",
-          "english": "Can you check the security camera",
-          "audioKey": null
+          "english": "Can you check the security camera?",
+          "audioKey": "v500-prob-help-can-you-check-the-security-camera"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you check the security camera? to another problem-solving need.",
+      "body": "Lost, left-something, and help cards cover the story you may need before staff can look.",
       "phrases": [
         {
           "id": "problems-1",
@@ -100,33 +100,23 @@
           "tintName": "orange",
           "detailPageID": "viet-phrase-problems-4",
           "audioKey": "problems-4"
-        },
-        {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real problem-solving exchange when check the security camera is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotels, shops, stations, cafes, apartment lobbies, and parking areas where a camera may cover the spot."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Staff may need a manager, time range, or location. Keep the detail short and avoid turning it into a long accusation."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể kiểm tra camera an ninh được không?.",
+      "body": "Move to need-help, call-hotel, manager, charged-twice, or file-report cards if the desk asks for the next step.",
       "phrases": [
         {
           "id": "help-need-help-direct",

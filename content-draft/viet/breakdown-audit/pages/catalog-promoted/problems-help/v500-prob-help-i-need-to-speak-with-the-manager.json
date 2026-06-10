@@ -20,39 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "I need",
+      "keepTogetherReason": "I-need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
+      "vietnamese": "nói chuyện với",
+      "english": "speak with",
+      "keepTogetherReason": "speak-with phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nói",
-      "english": "say / speak"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "chuyện",
-      "english": "matter / story"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "với",
-      "english": "with / to"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "người",
-      "english": "person"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "quản lý",
-      "english": "manager",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "người quản lý",
+      "english": "the manager",
+      "keepTogetherReason": "manager phrase"
     },
     {
       "id": "full",

@@ -1,7 +1,7 @@
 {
   "pageID": "viet-phrase-v900-time-date-book-can-i-have-seats-together",
-  "phraseText": "Tôi có thể ngồi chung được không?",
-  "englishTitle": "Can I have seats together?",
+  "phraseText": "Chúng tôi có thể ngồi cùng nhau được không?",
+  "englishTitle": "Can we sit together?",
   "reviewStatus": "reviewed",
   "visualReview": {
     "status": "reviewed",
@@ -20,8 +20,9 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Chúng tôi",
+      "english": "we",
+      "keepTogetherReason": "group speaker phrase"
     },
     {
       "id": "chunk-2",
@@ -31,25 +32,21 @@
     },
     {
       "id": "chunk-3",
-      "vietnamese": "ngồi",
-      "english": "sit"
+      "vietnamese": "ngồi cùng nhau",
+      "english": "sit together",
+      "keepTogetherReason": "seat-together phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "chung",
-      "english": "together / shared"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "được không?",
       "english": "is that possible?",
       "keepTogetherReason": "fixed yes-no question ending"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi có thể ngồi chung được không?",
-      "english": "Can I have seats together?",
-      "audioKey": "v900-time-date-book-can-i-have-seats-together"
+      "vietnamese": "Chúng tôi có thể ngồi cùng nhau được không?",
+      "english": "Can we sit together?",
+      "audioKey": null
     }
   ]
 }

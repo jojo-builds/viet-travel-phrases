@@ -20,29 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi đến đây",
+      "english": "I came here",
+      "keepTogetherReason": "arrival phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đến",
-      "english": "to / arrive at"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "đây",
-      "english": "here / this"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "để",
-      "english": "to / in order to"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "du lịch",
-      "english": "tourism / travel",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "để du lịch",
+      "english": "for tourism",
+      "keepTogetherReason": "purpose phrase"
     },
     {
       "id": "full",

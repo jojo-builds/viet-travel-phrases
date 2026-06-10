@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Cảm ơn bạn đã giúp tôi báo cáo điều này. Keep the situation visible, pause after the phrase, and let the other person answer with a smile, acknowledgment, or short reply.",
+      "body": "Say Cảm ơn bạn đã giúp tôi báo cáo điều này as one clean sentence; the receipt, room number, ride detail, photo, or last location can carry the exact detail.",
       "phrases": [
         {
           "id": "v900-prob-help-thank-you-for-helping-me-report-this",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Cảm ơn bạn + đã giúp tôi, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Thank you for helping me report this to another problem-solving need.",
+      "body": "Useful if the exchange continues: I’m lost, I left something behind, and I need help.",
       "phrases": [
         {
           "id": "problems-1",
@@ -116,7 +116,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real problem-solving exchange when thank you for helping me report this is the detail you need resolved. The likely reply is a smile, acknowledgment, or short reply, so keep the phrase short and ready for one follow-up."
+      "body": "At a desk or counter, or during a help moment, keep the receipt, room number, ride detail, photo, or last location visible while the first answer comes back."
     },
     {
       "id": "good-to-know",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Cảm ơn bạn đã giúp tôi báo cáo điều này.",
+      "body": "If the answer moves on, move to I need help, please call the hotel for me, and I need the manager.",
       "phrases": [
         {
           "id": "help-need-help-direct",

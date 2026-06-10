@@ -7,7 +7,7 @@
   "title": "Tôi cần nạp thêm dữ liệu",
   "englishTitle": "I need a data top-up",
   "pronunciation": "toy gun nap them yoo lee-ew",
-  "summary": "I need a data top-up",
+  "summary": "For asking a SIM shop, hotel desk, or phone counter to add more mobile data.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần nạp thêm dữ liệu is the short line for naming what you need next. It works best when data top-up is visible on your phone, ticket, note, shelf, or in the situation around you."
+      "body": "The phone is the evidence. Keep the data warning, SIM plan, or map app open."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần nạp thêm dữ liệu with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "body": "Show the screen while you say the line. Staff may need the carrier, phone number, or package amount next.",
       "phrases": [
         {
           "id": "phone-6",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi cần means I need; nạp thêm dữ liệu means add more mobile data.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi cần",
           "english": "I need",
-          "audioKey": null
+          "keepTogetherReason": "I-need phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "nạp thêm dữ liệu",
-          "english": "data top-up",
-          "audioKey": null
+          "english": "add more mobile data",
+          "keepTogetherReason": "data-top-up phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi cần nạp thêm dữ liệu",
           "english": "I need a data top-up",
-          "audioKey": null
+          "audioKey": "phone-6"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I need a data top-up to another phone, internet, or power need.",
+      "body": "Wi-Fi password, local SIM, and SIM-card questions cover the earlier phone setup path.",
       "phrases": [
         {
           "id": "phone-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real phone, internet, or power exchange when data top-up is the detail you need resolved. The likely reply is a point, option, yes/no answer, or next step, so keep the phrase short and ready for one follow-up."
+      "body": "Good when maps, ride apps, messages, or bookings are failing because the data plan is empty or too small."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Phone and Wi-Fi answers can be technical. Let the screen stay visible so the other person can point, type, or check the setting."
+      "body": "Ask the price and package length before handing over the phone or cash."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi cần nạp thêm dữ liệu.",
+      "body": "Battery, charger, charging-point, eSIM, and verification-code phrases cover the usual phone-counter follow-ups.",
       "phrases": [
         {
           "id": "phone-3",

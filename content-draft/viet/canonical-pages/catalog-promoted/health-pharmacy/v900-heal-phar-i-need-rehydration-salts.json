@@ -7,7 +7,7 @@
   "title": "Tôi cần muối bù nước",
   "englishTitle": "I need rehydration salts",
   "pronunciation": "Toi can muoi bu nuoc",
-  "summary": "I need rehydration salts",
+  "summary": "For asking a pharmacy for rehydration salts after heat, stomach trouble, or dehydration.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần muối bù nước is the short line for naming what you need next. It works best when rehydration salts is visible on your phone, ticket, note, shelf, or in the situation around you."
+      "body": "Ask at the pharmacy counter and show any symptom note, medicine photo, or translation screen."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần muối bù nước with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "body": "Keep the request simple. Staff may point to packets, ask about symptoms, or suggest a clinic if it sounds serious.",
       "phrases": [
         {
           "id": "v900-heal-phar-i-need-rehydration-salts",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi cần means I need; muối bù nước means rehydration salts.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi cần",
           "english": "I need",
-          "audioKey": null
+          "keepTogetherReason": "need phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "muối bù nước",
           "english": "rehydration salts",
-          "audioKey": null
+          "keepTogetherReason": "rehydration-salts phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi cần muối bù nước",
           "english": "I need rehydration salts",
-          "audioKey": null
+          "audioKey": "v900-heal-phar-i-need-rehydration-salts"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I need rehydration salts to another pharmacy or health need.",
+      "body": "Doctor, pharmacy, and nearest-pharmacy cards help if symptoms need professional attention.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when rehydration salts is the detail you need resolved. The likely reply is a point, option, yes/no answer, or next step, so keep the phrase short and ready for one follow-up."
+      "body": "Pharmacies, clinics, hotel desks, and tour stops are the places where dehydration help comes up."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "Ask how to mix and drink it. Packet instructions can be fast, tiny, or only partly familiar."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi cần muối bù nước.",
+      "body": "Headache, stomach pain, motion-sickness medicine, allergy, and diarrhea cards cover nearby health needs.",
       "phrases": [
         {
           "id": "health-2",

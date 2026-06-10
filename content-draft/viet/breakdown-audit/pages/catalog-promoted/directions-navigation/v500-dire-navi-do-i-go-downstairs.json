@@ -20,34 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có",
+      "english": "do I",
+      "keepTogetherReason": "question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "đi xuống",
+      "english": "go down",
+      "keepTogetherReason": "go-down verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đi",
-      "english": "go"
+      "vietnamese": "tầng dưới",
+      "english": "downstairs / lower floor",
+      "keepTogetherReason": "lower-floor phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "xuống tầng",
-      "english": "go downstairs",
-      "keepTogetherReason": "compound direction phrase"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "dưới",
-      "english": "below / downstairs"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

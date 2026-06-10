@@ -7,7 +7,7 @@
   "title": "Chúng ta có thể chia tiền thanh toán được không?",
   "englishTitle": "Can we split the payment?",
   "pronunciation": "Chung ta co the chia tien thanh toan duoc khong",
-  "summary": "Can we split the payment?",
+  "summary": "For asking whether one bill can be divided between people or payment methods.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Chúng ta có thể chia tiền thanh toán được không? is a practical money or price phrase for keeping one travel detail clear. Use it when Can we split the payment is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Some places can split a restaurant bill or tour payment; small stalls may prefer one total."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Chúng ta có thể chia tiền thanh toán được không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Ask before anyone pays. Show two cards, two phones, or the group if that makes the split clear.",
       "phrases": [
         {
           "id": "money-premium-split-payment",
@@ -42,30 +42,34 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Chúng ta means we; chia tiền thanh toán means split the payment; được không asks if it is possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Chúng ta có",
-          "english": "can we",
+          "vietnamese": "Chúng ta",
+          "english": "we",
+          "keepTogetherReason": "group speaker phrase",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể chia tiền",
-          "english": "price / money",
+          "vietnamese": "có thể",
+          "english": "can / able to",
+          "keepTogetherReason": "fixed modal phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "thanh toán",
-          "english": "pay",
+          "vietnamese": "chia tiền thanh toán",
+          "english": "split the payment",
+          "keepTogetherReason": "payment-splitting phrase",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "fixed yes-no question ending",
           "audioKey": null
         },
         {
@@ -79,7 +83,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can we split the payment? to another money or price need.",
+      "body": "If the answer is no, use cash, card, final price, receipt, or another payment question.",
       "phrases": [
         {
           "id": "price-1",
@@ -116,17 +120,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when can we split the payment is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at restaurants, hotel desks, tour counters, clinics, and ticket offices before the total is settled."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+      "body": "A calculator helps. Agree on the split before handing over cash or tapping a card."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Chúng ta có thể chia tiền thanh toán được không?.",
+      "body": "Use total price, receipt, card, cash, or refund follow-ups if the payment needs a second step.",
       "phrases": [
         {
           "id": "price-3",

@@ -25,37 +25,24 @@
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "có ở",
+      "english": "is located at",
+      "keepTogetherReason": "location phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
+      "vietnamese": "phía sau",
+      "english": "behind",
+      "keepTogetherReason": "direction phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "phía",
-      "english": "side / direction"
+      "vietnamese": "tòa nhà này",
+      "english": "this building",
+      "keepTogetherReason": "specific landmark"
     },
     {
       "id": "chunk-5",
-      "vietnamese": "sau",
-      "english": "after / behind"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "tòa nhà",
-      "english": "building",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "không?",
       "english": "yes/no?"
     },

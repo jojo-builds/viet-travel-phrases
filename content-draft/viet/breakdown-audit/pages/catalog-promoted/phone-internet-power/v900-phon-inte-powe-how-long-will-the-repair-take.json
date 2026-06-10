@@ -20,26 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Việc",
-      "english": "work / task"
+      "vietnamese": "Việc sửa chữa",
+      "english": "the repair",
+      "keepTogetherReason": "repair noun phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "sửa chữa",
-      "english": "repair",
-      "keepTogetherReason": "compound verb"
+      "vietnamese": "sẽ mất",
+      "english": "will take",
+      "keepTogetherReason": "will-take phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "sẽ mất",
-      "english": "will take",
-      "keepTogetherReason": "fixed verb phrase"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "bao lâu?",
-      "english": "how long",
-      "keepTogetherReason": "fixed duration question"
+      "english": "how long?",
+      "keepTogetherReason": "how-long question"
     },
     {
       "id": "full",

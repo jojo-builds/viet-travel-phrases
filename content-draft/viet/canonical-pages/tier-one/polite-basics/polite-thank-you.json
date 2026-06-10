@@ -7,7 +7,7 @@
   "title": "Cảm ơn",
   "englishTitle": "Thank you",
   "pronunciation": "kahm uhn",
-  "summary": "Cảm ơn is a common way to say “Thank you” in Vietnamese.",
+  "summary": "A short thank-you keeps service moments warm and simple.",
   "iconName": "hand.wave.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Cảm ơn when you need \"Thank you\". Say this anytime someone helps you, serves you, or gives directions. A short thank-you keeps service moments warm and simple. Use the rows below to pick the warmer, safer, or more direct version.",
-      "presentation": "plain-text"
+      "body": "Say this anytime someone helps you, serves you, or gives directions.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Build the line around Cảm + ơn, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "polite-2-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "polite-2"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Cảm ơn as your first sentence for \"Thank you\". Say this anytime someone helps you, serves you, or gives directions. Pause after the phrase and listen for a short reply, a smile, a time, or a light follow-up question. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
+      "body": "Say Cảm ơn first; let the tone, eye contact, and the next small request support the reply.",
       "phrases": [
         {
           "id": "polite-2",
@@ -63,12 +66,13 @@
           "audioKey": "polite-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "natural-variations",
       "title": "Natural variations",
-      "body": "This form changes the tone or setting. Use it when the note under the phrase matches the moment.",
+      "body": "thank you very much covers the nearby version of this exchange.",
       "phrases": [
         {
           "id": "polite-thank-you-polite",
@@ -81,18 +85,21 @@
           "audioKey": "polite-thank-you-polite"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Polite Vietnamese often works by softening the start or end of an interaction before the main request. For \"Thank you\", Cảm ơn makes the next step easier to answer. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
-      "presentation": "plain-text"
+      "body": "Polite Vietnamese often works by softening the start or end of an interaction before the main request. Keep the tone warm and leave room for a short reply.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Polite Basics, the reply often comes as a short reply, a smile, a time, or a light follow-up question. Say Cảm ơn once, pause, and watch for the reply. Keep your voice calm and let the short phrase do the politeness work before you add another request.",
+      "body": "Watch for a short reply, a smile, a time, or light follow-up question. Move to the follow-up card that matches thanks, apology, greeting, or small follow-up.",
       "phrases": [
         {
           "id": "polite-1",
@@ -125,12 +132,13 @@
           "audioKey": "polite-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Say this anytime someone helps you, serves you, or gives directions. It fits small service and first-contact moments, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
+      "body": "Say this anytime someone helps you, serves you, or gives directions. Watch for a smile, a time, or light follow-up question.",
       "phrases": [
         {
           "id": "polite-5",
@@ -163,13 +171,16 @@
           "audioKey": "polite-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Keep quick service phrases clear, polite, and short. A calm short sentence usually works better than a long one said nervously.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -207,12 +218,13 @@
           "audioKey": "audio-phrase-chao-ban"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through hello, sir or ma'am, hello on the phone, and good morning.",
       "phrases": [
         {
           "id": "hello-da-chao-anh-chi",
@@ -295,7 +307,8 @@
           "audioKey": "breakdown-viet-hello-ong-full"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

@@ -21,20 +21,16 @@
     {
       "id": "chunk-1",
       "vietnamese": "Có",
-      "english": "have / there is"
+      "english": "is there"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "phí",
-      "english": "fee"
+      "vietnamese": "phí rút tiền",
+      "english": "withdrawal fee",
+      "keepTogetherReason": "ATM fee phrase"
     },
     {
-      "vietnamese": "rút tiền",
-      "english": "withdraw cash",
-      "keepTogetherReason": "compound money action"
-    },
-    {
-      "id": "chunk-5",
+      "id": "chunk-3",
       "vietnamese": "không?",
       "english": "yes/no?"
     },

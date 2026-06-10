@@ -20,22 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Cổng",
-      "english": "gate"
+      "vietnamese": "Cổng 10",
+      "english": "gate 10",
+      "keepTogetherReason": "gate number"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "10",
-      "english": [
-        "thất",
-        "lost"
-      ]
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "ở đâu?",
-      "english": "where",
-      "keepTogetherReason": "fixed place question"
+      "english": "where?",
+      "keepTogetherReason": "where question"
     },
     {
       "id": "full",

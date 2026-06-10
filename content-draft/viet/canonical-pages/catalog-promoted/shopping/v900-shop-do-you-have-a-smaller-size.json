@@ -7,7 +7,7 @@
   "title": "Bạn có kích thước nhỏ hơn không?",
   "englishTitle": "Do you have a smaller size?",
   "pronunciation": "Ban co kich thuoc nho hon khong",
-  "summary": "Do you have a smaller size?",
+  "summary": "For asking for a smaller size while the item, tag, or sample is in front of you.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có kích thước nhỏ hơn không? is a practical shopping phrase for keeping one travel detail clear. Use it when Do you have a smaller size is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask with the item in hand so staff knows which cut, shoe, shirt, or packet you mean."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Bạn có kích thước nhỏ hơn không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point to the tag or hold up the item. The answer may be another size, another color, or no stock.",
       "phrases": [
         {
           "id": "v900-shop-do-you-have-a-smaller-size",
@@ -42,38 +42,41 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có asks do you have; kích thước nhỏ hơn means a smaller size; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bạn có kích",
-          "english": "do you have a size",
+          "vietnamese": "Bạn có",
+          "english": "do you have",
+          "keepTogetherReason": "do-you-have frame",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thước nhỏ hơn",
-          "english": "medicine",
+          "vietnamese": "kích thước nhỏ hơn",
+          "english": "a smaller size",
+          "keepTogetherReason": "smaller-size phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending",
           "audioKey": null
         },
         {
           "id": "chunk-4",
           "vietnamese": "Bạn có kích thước nhỏ hơn không?",
-          "english": "Do you have a smaller size",
-          "audioKey": null
+          "english": "Do you have a smaller size?",
+          "audioKey": "v900-shop-do-you-have-a-smaller-size"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Do you have a smaller size? to another shopping need.",
+      "body": "If the size is close, move to this-size, another-color, try-on, or show-inside follow-ups.",
       "phrases": [
         {
           "id": "shop-1",
@@ -110,17 +113,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real shopping exchange when do you have a smaller size is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good for clothes, shoes, helmets, bags, packaged goods, and anything sold in size options."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "In shops and markets, the object is the anchor. Point clearly, then listen for the number or option."
+      "body": "Vietnam sizing can vary by shop. Pointing to the tag is clearer than translating a size system."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có kích thước nhỏ hơn không?.",
+      "body": "Use try-on, color, touch-it, exchange, or pay-where cards if the shopping choice continues.",
       "phrases": [
         {
           "id": "shop-4",

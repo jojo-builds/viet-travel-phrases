@@ -19,21 +19,16 @@
   ],
   "tokens": [
     {
+      "id": "chunk-1",
       "vietnamese": "Hãy",
-      "english": "please do"
+      "english": "please",
+      "keepTogetherReason": "polite request marker"
     },
     {
-      "vietnamese": "đóng",
-      "english": "close"
-    },
-    {
-      "vietnamese": "cửa sổ",
-      "english": "window",
-      "keepTogetherReason": "compound window noun"
-    },
-    {
-      "vietnamese": "lại",
-      "english": "again / back"
+      "id": "chunk-2",
+      "vietnamese": "đóng cửa sổ lại",
+      "english": "close the window",
+      "keepTogetherReason": "close-the-window phrase"
     },
     {
       "id": "full",

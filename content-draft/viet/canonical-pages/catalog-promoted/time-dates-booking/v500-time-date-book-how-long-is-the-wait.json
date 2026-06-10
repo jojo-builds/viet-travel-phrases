@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Thời gian chờ đợi là bao lâu? helps you decide whether the next move is worth the time. Use it when How long is the wait affects a taxi, walk, booking, tour, or connection and you need a practical estimate."
+      "body": "Thời gian chờ đợi là bao lâu?"
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Thời gian chờ đợi là bao lâu? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Ask once while the line, table list, or booking screen is visible. The answer should be a time, not a long explanation.",
       "phrases": [
         {
           "id": "v500-time-date-book-how-long-is-the-wait",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Thời gian chờ + đợi là bao lâu, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How long is the wait? to another time, date, or booking need.",
+      "body": "Good next-step phrases: What time?; Today; Tomorrow morning.",
       "phrases": [
         {
           "id": "time-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when how long is the wait is the detail you need resolved. The likely reply is a time estimate or route choice, so keep the phrase short and ready for one follow-up."
+      "body": "Best in a booking desk, tour counter, or message thread, before the explanation gets long. Keep the date, time, ticket, booking, or address close for the follow-up."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "If the number matters, show your phone clock or booking. Waiting answers are easier when both people see the same time."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Thời gian chờ đợi là bao lâu?.",
+      "body": "Useful if the exchange continues: I have a booking, What time does it open, and Can we move it later.",
       "phrases": [
         {
           "id": "time-4",

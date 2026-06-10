@@ -20,28 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Một",
-      "english": "one / a"
+      "vietnamese": "Một mặt hàng",
+      "english": "one item",
+      "keepTogetherReason": "one-item phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "mặt",
-      "english": "face / cash"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "hàng",
-      "english": "shop / goods"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "thiếu",
-      "english": "missing / short"
+      "vietnamese": "bị thiếu",
+      "english": "is missing",
+      "keepTogetherReason": "is-missing phrase"
     },
     {
       "id": "full",

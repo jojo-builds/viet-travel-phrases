@@ -20,18 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hãy",
-      "english": "please do"
+      "vietnamese": "Hãy gọi",
+      "english": "please call",
+      "keepTogetherReason": "call request"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "gọi",
-      "english": "call"
-    },
-    {
       "vietnamese": "xe cấp cứu",
       "english": "ambulance",
-      "keepTogetherReason": "compound emergency vehicle term"
+      "keepTogetherReason": "ambulance phrase"
     },
     {
       "id": "full",

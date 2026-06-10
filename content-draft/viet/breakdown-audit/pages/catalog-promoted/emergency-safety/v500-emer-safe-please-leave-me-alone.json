@@ -20,18 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Xin",
-      "english": "please / request"
+      "vietnamese": "Xin hãy",
+      "english": "please",
+      "keepTogetherReason": "polite opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "hãy",
-      "english": "please do"
-    },
-    {
       "vietnamese": "để tôi yên",
       "english": "leave me alone",
-      "keepTogetherReason": "fixed safety phrase"
+      "keepTogetherReason": "leave-me-alone phrase"
     },
     {
       "id": "full",

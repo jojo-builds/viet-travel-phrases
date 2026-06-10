@@ -20,39 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi nghĩ",
+      "english": "I think",
+      "keepTogetherReason": "I-think phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "nghĩ",
-      "english": "think"
+      "vietnamese": "có sai sót",
+      "english": "there is a mistake",
+      "keepTogetherReason": "mistake phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "sai",
-      "english": "wrong"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "sót",
-      "english": "mistake / missing"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "trên",
-      "english": "on / above"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "hóa đơn",
-      "english": "receipt / invoice",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "trên hóa đơn",
+      "english": "on the bill",
+      "keepTogetherReason": "on-the-bill phrase"
     },
     {
       "id": "full",

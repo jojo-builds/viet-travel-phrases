@@ -7,7 +7,7 @@
   "title": "Tôi có đặt phòng",
   "englishTitle": "I have a reservation",
   "pronunciation": "toy koh dat fong",
-  "summary": "Tôi có đặt phòng means “I have a reservation”.",
+  "summary": "At check-in, reservation first is usually the fastest path.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi có đặt phòng when you need \"I have a reservation\". This is for the desk when you have already booked. At check-in, reservation first is usually the fastest path. Listen for a name check, booking-code request, counter direction, or short wait; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "This is for the desk when you have already booked.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Tôi có + đặt carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "hotel-1-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "hotel-1"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi có đặt phòng as your first sentence for \"I have a reservation\". This is for the desk when you have already booked. Pause after the phrase and listen for a name check, booking-code request, counter direction, or short wait. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Say Tôi có đặt phòng first; let the booking, room number, address, or key card support the reply.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -69,18 +72,21 @@
           "audioKey": "hotel-1"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. For \"I have a reservation\", Tôi có đặt phòng makes the next step easier to answer. Keep the booking name, code, room number, or ticket visible until staff find the record.",
-      "presentation": "plain-text"
+      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. Keep the booking, room number, address, or key card ready so the other person can act on the same detail.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Hotel Accommodation, the reply often comes as a name check, booking-code request, counter direction, or short wait. Say Tôi có đặt phòng once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Watch for a name check, booking-code request, counter direction, or short wait. Move to the follow-up card that matches check-in, room help, timing, or payment.",
       "phrases": [
         {
           "id": "hotel-2",
@@ -113,12 +119,13 @@
           "audioKey": "hotel-checkout"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for the desk when you have already booked. It fits front desk, room, check-in, and hotel-service moments, especially when the next step is a name check, booking-code request, counter direction, or short wait. Keep the booking name, code, room number, or ticket visible until staff find the record.",
+      "body": "This is for the desk when you have already booked. Watch for a name check, booking-code request, counter direction, or short wait.",
       "phrases": [
         {
           "id": "hotel-4",
@@ -151,13 +158,16 @@
           "audioKey": "hotel-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -185,12 +195,13 @@
           "audioKey": "v500-hote-acco-the-door-does-not-lock"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a front desk or guesthouse counter, the next useful language is usually I’d like to check in; what time is check-out?; I’d like to check out.",
       "phrases": [
         {
           "id": "hotel-2",
@@ -273,7 +284,8 @@
           "audioKey": "v500-hote-acco-the-door-does-not-lock"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

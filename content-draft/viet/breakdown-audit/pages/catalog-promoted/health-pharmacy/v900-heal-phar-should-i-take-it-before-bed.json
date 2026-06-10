@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-heal-phar-should-i-take-it-before-bed",
-  "phraseText": "Tôi có nên dùng nó trước khi đi ngủ không?",
+  "phraseText": "Tôi có nên uống thuốc này trước khi đi ngủ không?",
   "englishTitle": "Should I take it before bed?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,55 +20,32 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có nên",
+      "english": "should I",
+      "keepTogetherReason": "advice question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "uống thuốc này",
+      "english": "take this medicine",
+      "keepTogetherReason": "medicine-taking phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nên dùng",
-      "english": "should use / take",
-      "keepTogetherReason": "fixed advice phrase"
+      "vietnamese": "trước khi đi ngủ",
+      "english": "before bed",
+      "keepTogetherReason": "bedtime phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "nó",
-      "english": "it"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "trước",
-      "english": "before / front"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "khi",
-      "english": "when"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "đi",
-      "english": "go"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "ngủ",
-      "english": "sleep"
-    },
-    {
-      "id": "chunk-9",
       "vietnamese": "không?",
       "english": "yes/no?"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi có nên dùng nó trước khi đi ngủ không?",
+      "vietnamese": "Tôi có nên uống thuốc này trước khi đi ngủ không?",
       "english": "Should I take it before bed?",
-      "audioKey": "v900-heal-phar-should-i-take-it-before-bed"
+      "audioKey": null
     }
   ]
 }

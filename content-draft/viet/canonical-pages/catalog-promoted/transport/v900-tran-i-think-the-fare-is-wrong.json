@@ -7,7 +7,7 @@
   "title": "Tôi nghĩ giá vé sai",
   "englishTitle": "I think the fare is wrong",
   "pronunciation": "Toi nghi gia ve sai",
-  "summary": "I think the fare is wrong",
+  "summary": "For telling a driver, ticket counter, or ride-hailing helper that the fare does not look right.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi nghĩ giá vé sai is a practical transport phrase for keeping one travel detail clear. Use it when I think the fare is wrong is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Show the app, meter, ticket, or posted price first. The phrase is stronger when the number is visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi nghĩ giá vé sai. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say it calmly and point to the amount. Wait for a recalculation, explanation, or correction before paying more.",
       "phrases": [
         {
           "id": "v900-tran-i-think-the-fare-is-wrong",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi nghĩ means I think; giá vé means fare or ticket price; sai means wrong.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi nghĩ giá",
-          "english": "price / money",
-          "audioKey": null
+          "vietnamese": "Tôi nghĩ",
+          "english": "I think",
+          "keepTogetherReason": "I-think phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "vé sai",
-          "english": "ticket",
-          "audioKey": null
+          "vietnamese": "giá vé",
+          "english": "fare / ticket price",
+          "keepTogetherReason": "fare phrase"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "sai",
+          "english": "wrong",
+          "keepTogetherReason": "wrong adjective"
+        },
+        {
+          "id": "full",
           "vietnamese": "Tôi nghĩ giá vé sai",
           "english": "I think the fare is wrong",
-          "audioKey": null
+          "audioKey": "v900-tran-i-think-the-fare-is-wrong"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I think the fare is wrong to another transport need.",
+      "body": "Receipt, refund, card payment, tolls, and exact-change cards cover the fare dispute around this phrase.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when i think the fare is wrong is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good in taxis, ride-hailing pickups, bus counters, boat tickets, airport transfers, and tour transport desks."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "If the issue is tolls, airport fee, or route change, use the specific card next instead of arguing over the total."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi nghĩ giá vé sai.",
+      "body": "Move to receipt, refund, tolls, airport-fee, card-payment, or exact-change cards if the fare needs proof.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

@@ -20,35 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể",
+      "english": "can I",
+      "keepTogetherReason": "can-I phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "dùng tương ớt",
+      "english": "use chili sauce",
+      "keepTogetherReason": "chili-sauce request"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "dùng",
-      "english": "use"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "tương",
-      "english": "sauce"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "ớt",
-      "english": "chili"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

@@ -7,7 +7,7 @@
   "title": "Xin hãy quay lại theo hướng khác",
   "englishTitle": "Please go back the other way",
   "pronunciation": "Xin hay quay lai theo huong khac",
-  "summary": "Please go back the other way",
+  "summary": "For asking the driver to turn back after a missed turn, wrong road, or route mistake.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Xin hãy quay lại theo hướng khác is a practical transport phrase for keeping one travel detail clear. Use it when go back the other way is the next detail to solve and a short answer would move the exchange forward."
+      "body": "The turn has already been missed, and going back matters more than continuing forward."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Xin hãy quay lại theo hướng khác. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Point to the map route or last turn after the phrase so the driver can see why you need to go back.",
       "phrases": [
         {
           "id": "v500-tran-please-turn-around",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Xin hãy quay + lại theo hướng carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please go back the other way to another transport need.",
+      "body": "Use the shorter turn-around card when the driver already understands the mistake.",
       "phrases": [
         {
           "id": "transport-premium-turn-around",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when go back the other way is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best in a taxi, motorbike pickup, or walking route when the map shows the missed turn clearly."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "A turn-around request may need a safe place to loop. Give the driver room to choose the legal turn."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Xin hãy quay lại theo hướng khác.",
+      "body": "After the turn-around request, stop-here, take-me-here, and go-this-way cards cover the next route correction.",
       "phrases": [
         {
           "id": "taxi-3",

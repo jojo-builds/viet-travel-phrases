@@ -4,10 +4,10 @@
   "phraseID": "v900-heal-phar-can-i-drink-alcohol-with-this",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Tôi có thể uống rượu với cái này không?",
+  "title": "Tôi có thể uống rượu khi dùng thuốc này không?",
   "englishTitle": "Can I drink alcohol with this?",
-  "pronunciation": "Toi co the uong ruou voi cai nay khong",
-  "summary": "Can I drink alcohol with this?",
+  "pronunciation": "Toi co the uong ruou khi dung thuoc nay khong",
+  "summary": "For checking whether alcohol is safe with a medicine you were given.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -15,62 +15,65 @@
     "v900-heal-phar-can-i-drink-alcohol-with-this",
     "premium"
   ],
-  "audioKey": "v900-heal-phar-can-i-drink-alcohol-with-this",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể uống rượu với cái này không? is for asking permission before you act. It is useful when drink alcohol with this depends on local rules, staff approval, or the right way to use a space or service."
+      "body": "Ask before you leave the pharmacy or clinic, while the package or prescription is still visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có thể uống rượu với cái này không? once, then make the task visible with your symptom note, medicine box, body area, photo, or translated note. The phrase is doing one job: getting a clear answer about drink alcohol with this.",
+      "body": "Show the medicine and ask once. Let the staff answer yes, no, or how many hours to wait.",
       "phrases": [
         {
           "id": "v900-heal-phar-can-i-drink-alcohol-with-this",
-          "vietnamese": "Tôi có thể uống rượu với cái này không?",
+          "vietnamese": "Tôi có thể uống rượu khi dùng thuốc này không?",
           "english": "Can I drink alcohol with this?",
-          "pronunciation": "Toi co the uong ruou voi cai nay khong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Toi co the uong ruou khi dung thuoc nay khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
           "detailPageID": null,
-          "audioKey": "v900-heal-phar-can-i-drink-alcohol-with-this"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Uống rượu means drink alcohol; khi dùng thuốc này means while taking this medicine.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I question frame",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể uống rượu",
-          "english": "drink alcohol with this",
+          "vietnamese": "uống rượu",
+          "english": "drink alcohol",
+          "keepTogetherReason": "alcohol phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "với cái này",
-          "english": "this one / this",
+          "vietnamese": "khi dùng thuốc này",
+          "english": "while taking this medicine",
+          "keepTogetherReason": "medicine-use phrase",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "không?",
+          "english": "yes/no?",
           "audioKey": null
         },
         {
           "id": "chunk-5",
-          "vietnamese": "Tôi có thể uống rượu với cái này không?",
+          "vietnamese": "Tôi có thể uống rượu khi dùng thuốc này không?",
           "english": "Can I drink alcohol with this",
           "audioKey": null
         }
@@ -79,7 +82,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can I drink alcohol with this? to another pharmacy or health need.",
+      "body": "If the answer is complicated, ask when to take it, whether it causes sleepiness, or whether food matters.",
       "phrases": [
         {
           "id": "problems-6",
@@ -116,17 +119,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when drink alcohol with this is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+      "body": "Good at pharmacies, clinics, hotel desks, or with a guide helping translate medicine instructions."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Keep the packaging visible. The exact medicine matters more than a long explanation in English."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể uống rượu với cái này không?.",
+      "body": "Use food, bedtime, sleepy, dosage, or come-back follow-ups if the medicine instructions need another check.",
       "phrases": [
         {
           "id": "health-2",
@@ -184,13 +187,13 @@
   "examples": [
     {
       "id": "v900-heal-phar-can-i-drink-alcohol-with-this",
-      "vietnamese": "Tôi có thể uống rượu với cái này không?",
+      "vietnamese": "Tôi có thể uống rượu khi dùng thuốc này không?",
       "english": "Can I drink alcohol with this?",
-      "pronunciation": "Toi co the uong ruou voi cai nay khong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Toi co the uong ruou khi dung thuoc nay khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "red",
       "detailPageID": null,
-      "audioKey": "v900-heal-phar-can-i-drink-alcohol-with-this"
+      "audioKey": null
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-food-drin-id-like-it-to-go-please",
-  "phraseText": "Tôi muốn nó đi, làm ơn.",
+  "phraseText": "Cho tôi lấy mang đi nhé",
   "englishTitle": "I'd like it to go, please.",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -15,40 +15,35 @@
     ]
   },
   "notes": [
-    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources.",
+    "Phrase-copy semantic repair; reviewed tokens updated and audio marked for regeneration."
   ],
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Cho tôi lấy",
+      "english": "let me take / I will take it",
+      "keepTogetherReason": "order-taking phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "muốn",
-      "english": "want"
+      "vietnamese": "mang đi",
+      "english": "to go",
+      "keepTogetherReason": "takeaway phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nó",
-      "english": "it"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "đi,",
-      "english": "go"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "làm ơn.",
-      "english": "please",
-      "keepTogetherReason": "fixed polite phrase"
+      "vietnamese": "nhé",
+      "english": "soft polite ending"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi muốn nó đi, làm ơn.",
+      "vietnamese": "Cho tôi lấy mang đi nhé",
       "english": "I'd like it to go, please.",
-      "audioKey": "v900-food-drin-id-like-it-to-go-please"
+      "audioKey": null
     }
-  ]
+  ],
+  "title": "Cho tôi lấy mang đi nhé",
+  "summary": "I'd like it to go, please",
+  "pronunciation": "Cho toi lay mang di nhe"
 }

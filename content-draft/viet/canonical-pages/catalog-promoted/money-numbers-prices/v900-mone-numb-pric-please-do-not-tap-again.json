@@ -7,7 +7,7 @@
   "title": "Làm ơn đừng gõ nữa",
   "englishTitle": "Please do not tap again",
   "pronunciation": "Lam on dung go nua",
-  "summary": "Please do not tap again",
+  "summary": "For stopping a second keypad, card-reader, or phone-screen tap before a payment goes through twice.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Làm ơn đừng gõ nữa is a practical money or price phrase for keeping one travel detail clear. Use it when do not tap again is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Someone is reaching for the screen again, and the payment moment needs to pause."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Làm ơn đừng gõ nữa. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Keep your card, phone, receipt, or terminal screen visible. Point to the pending payment before repeating the sentence.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-please-do-not-tap-again",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Làm ơn means please; đừng means do not; gõ nữa means tap or type again.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Làm ơn",
           "english": "please",
-          "audioKey": null
+          "keepTogetherReason": "fixed polite phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đừng gõ nữa",
-          "english": "do not tap again",
-          "audioKey": null
+          "vietnamese": "đừng",
+          "english": "do not",
+          "keepTogetherReason": "negative command"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "gõ nữa",
+          "english": "tap / type again",
+          "keepTogetherReason": "do-not-tap-again phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Làm ơn đừng gõ nữa",
           "english": "Please do not tap again",
-          "audioKey": null
+          "audioKey": "v900-mone-numb-pric-please-do-not-tap-again"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please do not tap again to another money or price need.",
+      "body": "How-much and per-kilo cards help when the issue is price clarity rather than a payment tap.",
       "phrases": [
         {
           "id": "price-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when do not tap again is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at card readers, QR payments, ATMs, ticket counters, and small shops when one more tap could create confusion."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+      "body": "After the pause, show the receipt, app status, or bank notification before deciding whether to try again."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Làm ơn đừng gõ nữa.",
+      "body": "Too-expensive, lower-price, final-price, another-one, and take-this cards cover ordinary price follow-ups.",
       "phrases": [
         {
           "id": "price-3",

@@ -7,7 +7,7 @@
   "title": "Chờ tôi năm phút",
   "englishTitle": "Wait for me five minutes",
   "pronunciation": "cho toy nam foot",
-  "summary": "Chờ tôi năm phút means “Wait for me five minutes”.",
+  "summary": "Keep this to very short stops so the driver understands the scope.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Chờ tôi năm phút when you need \"Wait for me five minutes\". This helps if you need a very short stop. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "This helps if you need a very short stop.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Hear Chờ tôi + năm as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "taxi-6-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "taxi-6"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Chờ tôi năm phút as your first sentence for \"Wait for me five minutes\". This helps if you need a very short stop. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Say Chờ tôi năm phút first; let the destination, fare, or ride screen support the reply.",
       "phrases": [
         {
           "id": "taxi-6",
@@ -69,18 +72,21 @@
           "audioKey": "taxi-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"Wait for me five minutes\", Chờ tôi năm phút makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Waiting requests need a time limit. Five minutes makes the ask concrete enough for a driver or helper to answer.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Transport, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Chờ tôi năm phút once, pause, and watch for the reply. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Expect a yes, a price adjustment, or a request to meet at a specific pickup point.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -113,12 +119,13 @@
           "audioKey": "taxi-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This helps if you need a very short stop. It fits rides, routes, pickup points, and stops, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "body": "Use it during quick stops, luggage pickups, bathroom breaks, or ticket-counter errands.",
       "phrases": [
         {
           "id": "taxi-4",
@@ -151,13 +158,16 @@
           "audioKey": "taxi-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -195,12 +205,13 @@
           "audioKey": "transport-lost"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through take me here, go to District 1, and you can stop here.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -283,7 +294,8 @@
           "audioKey": "transport-meter"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

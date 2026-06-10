@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-food-drin-can-we-sit-inside",
-  "phraseText": "Chúng ta có thể ngồi bên trong được không?",
+  "phraseText": "Chúng tôi có thể ngồi bên trong được không?",
   "englishTitle": "Can we sit inside?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,40 +20,25 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Chúng ta",
-      "english": "we / us",
-      "keepTogetherReason": "pronoun phrase"
+      "vietnamese": "Chúng tôi có thể",
+      "english": "can we",
+      "keepTogetherReason": "can-we phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "ngồi bên trong",
+      "english": "sit inside",
+      "keepTogetherReason": "sit-inside phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "ngồi",
-      "english": "sit"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "bên",
-      "english": "side"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "trong",
-      "english": "inside / in"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",
-      "vietnamese": "Chúng ta có thể ngồi bên trong được không?",
+      "vietnamese": "Chúng tôi có thể ngồi bên trong được không?",
       "english": "Can we sit inside?",
       "audioKey": "v900-food-drin-can-we-sit-inside"
     }
