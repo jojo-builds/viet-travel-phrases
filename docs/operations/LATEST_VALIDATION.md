@@ -47,6 +47,23 @@ Physical iPhone proof from this merged copy gate:
 - post-build signing scan passed; repo signing files stayed clean
 - `git status --short native-ios/project.yml native-ios/SpeakLocalNative.xcodeproj/project.pbxproj` returned no changes after the build
 
+## Rendered Listing Front-End QA Follow-Up
+
+Follow-up on top of `main` commit `51f229b86`, continuing thread `019ea562-0e44-7370-86fd-a2b53f4d9243`:
+
+- original task: pick `25` mixed listing pages across tier-one, catalog-promoted, city/place, and derived city phrase pages, then verify the simulator front-end copy still reads production-ready
+- recovered proof: the prior thread had captured `150` screenshots into `/tmp/speaklocal-listing-front-end-qa-20260611/`, but that temp folder was gone during this continuation
+- fresh simulator reproof used an `iPhone 17 Pro` simulator and app bundle `app.speaklocal.vietnam.native`
+- fresh visual pass covered pages `11` through `25`; pages `1` through `5` were already reviewed as production-ready in the original thread, and page group `6` through `10` was re-opened in this continuation before the temp folder disappeared
+- issue found and fixed: the page `viet-phrase-food-premium-which-dish-safe` visually ellipsized its three-line Vietnamese hero title under the photo-backed listing layout
+- code fix: `PhraseListingView` now allows three hero title lines for listing article heroes, matching the compact phrase hero allowance and preventing the page-12 headline truncation
+- verification: XcodeBuildMCP simulator build/install/launch succeeded for `SpeakLocalNative` on `iPhone 17 Pro` after the fix
+- visual proof after fix: `/tmp/speaklocal-listing-front-end-qa-reproof-20260611/page12-after-title-fix.png` showed the full Vietnamese title with no ellipsis and the English title, pronunciation, playback dock, and first content section still fitting
+- runtime spot checks after fix: `viet-phrase-food-premium-which-dish-safe`, `viet-family-city-danang-atm-han-market`, and `viet-family-city-danang-where-nen` launched and exposed readable title, subtitle, breakdown, and related phrase text in the UI snapshot tree
+- remaining accepted follow-up: compact derived city phrase pages expose sparse main player chrome and at least one `audio not available yet` breakdown accessibility label; this is audio/accessibility debt, not a visible-copy blocker for this rendered copy gate
+- final rendered-copy verdict for the `25`-page sample: `PASS_WITH_FOLLOW_UPS`, with no remaining visible-copy blocker after the hero title line-limit fix
+- `git diff --check` passed after the fix
+
 ## Branch-Local Phrase Copy Production Gate
 
 Current branch-local evidence for `codex/phrase-copy-production-gate`, based on base `0a503335c`:
