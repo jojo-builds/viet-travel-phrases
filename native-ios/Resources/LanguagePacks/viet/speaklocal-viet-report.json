@@ -4,8 +4,8 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:d2efcf821ca8e486",
-    "generatedAt": "source-hash:d2efcf821ca8e486"
+    "contentVersion": "viet-sqlite-fixture:9a4fa959db3a2539",
+    "generatedAt": "source-hash:9a4fa959db3a2539"
   },
   "sourceInputs": {
     "catalog": {
@@ -14,7 +14,7 @@
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "cf1843e7135d22e20acb1869b2f8c6d31128d627c7fc79c7cfc65c515a1a9f0d"
+      "sha256": "ed2e762eb5ae00d14121c91ff25c37abcedf30603b805be60737f7d1acc54789"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -49,7 +49,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "1204a80394f7328d56f23be111ebc2156af584901c250276982058990d8ce792",
+    "databaseSha256": "61cbac0f818d3803a72cd2741169bf412215582eb0ddfbf64aa9c1ec53e4881d",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -97,7 +97,7 @@
     "pageCategories": 9087,
     "pagePracticeSeeds": 1793,
     "pagePracticeSteps": 3800,
-    "sections": 11053,
+    "sections": 11359,
     "sectionItems": 17946,
     "breakdownTokens": 5796,
     "relations": 11728,
@@ -340,7 +340,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:d269d118bca8587e",
@@ -354,7 +354,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:457a37007d7a629e",
@@ -368,7 +368,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:4a33fc209bfd8bb9",
@@ -382,7 +382,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "v500-hote-acco-the-toilet-is-not-working",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:7bd366a1f02d9e38",
@@ -396,7 +396,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "v500-food-drin-this-is-cold",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:a0586fad8ec4e5d7",
@@ -410,7 +410,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:a65b5fa7984a8c37",
@@ -424,7 +424,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:607c4f4649e02e09",
@@ -438,7 +438,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:0fb428bb32869e9c",
@@ -452,7 +452,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:894a6d0e98adc478",
@@ -466,7 +466,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "audio-authored-toi-khong-tim-thay-tai-xe-cua-minh-6a054e30bf",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:fa0570276316b616",
@@ -480,7 +480,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:d4fbe000b031bdbc",
@@ -494,7 +494,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "v500-heal-phar-how-do-i-take-this",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:c7b3c6d059f3be8c",
@@ -508,7 +508,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:f318dedd1fb827eb",
@@ -522,7 +522,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:4962298ab3c98e32",
@@ -536,7 +536,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:66e1ecf843f7028a",
@@ -550,7 +550,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "v500-emer-safe-there-is-a-fire",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:da9698ec79666d2c",
@@ -564,7 +564,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "v500-emer-safe-stop-following-me",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:bc2ce85c2fde4300",
@@ -578,7 +578,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:a0293106d22297b9",
@@ -592,7 +592,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
         "id": "missing-audio:planned:15fee9af1cd45110",
@@ -606,7 +606,7 @@
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:d2efcf821ca8e486"
+        "created_at": "source-hash:9a4fa959db3a2539"
       }
     ]
   },

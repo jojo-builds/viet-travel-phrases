@@ -1,4 +1,152 @@
 severity,score,pageID,tierRole,title,englishTitle,phraseCards,breakdownCards,visibleWords,issueCodes,sourcePath,worstSnippet
+WATCH,7,viet-family-city-danang-atm-airport,city-v1,Có ATM gần Sân bay Đà Nẵng không?,Is there an ATM near Da Nang Airport?,5,6,156,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-danang-atm-bach-dang-street,city-v1,Có ATM gần Đường Bạch Đằng không?,Is there an ATM near Bach Dang Street?,5,6,146,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-danang-atm-con-market,city-v1,Có ATM gần Chợ Cồn không?,Is there an ATM near Con Market?,5,6,128,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-danang-atm-han-market,city-v1,Có ATM gần Chợ Hàn không?,Is there an ATM near Han Market?,5,6,128,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-danang-atm-helio-night-market,city-v1,Có ATM gần Chợ đêm Helio không?,Is there an ATM near Helio Night Market?,5,6,146,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-danang-go-airport,city-v1,Đi Sân bay Đà Nẵng,Go to Da Nang Airport,5,3,147,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-danang-go-con-market,city-v1,Đi Chợ Cồn,Go to Con Market,5,3,119,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-danang-go-han-market,city-v1,Đi Chợ Hàn,Go to Han Market,5,3,120,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-danang-go-helio-night-market,city-v1,Đi Chợ đêm Helio,Go to Helio Night Market,5,3,137,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-danang-go-nguyen-van-linh-street,city-v1,Đi Đường Nguyễn Văn Linh,Go to Nguyen Van Linh Street,4,3,138,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-danang-go-railway-station,city-v1,Đi Ga Đà Nẵng,Go to Da Nang Railway Station,2,3,106,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-danang-go-son-tra-night-market,city-v1,Đi Chợ đêm Sơn Trà,Go to Son Tra Night Market,3,3,126,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-danang-go-tien-sa-port,city-v1,Đi Cảng Tiên Sa,Go to Tien Sa Port,4,3,124,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-danang-go-vo-nguyen-giap-street,city-v1,Đi Đường Võ Nguyên Giáp,Go to Vo Nguyen Giap Street,3,3,126,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-danang-near-bach-dang-street,city-v1,Đường Bạch Đằng gần đây không?,Is Bach Dang Street near here?,5,4,143,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-danang-near-con-market,city-v1,Chợ Cồn gần đây không?,Is Con Market near here?,5,4,132,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-danang-near-han-market,city-v1,Chợ Hàn gần đây không?,Is Han Market near here?,5,4,133,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-danang-near-helio-night-market,city-v1,Chợ đêm Helio gần đây không?,Is Helio Night Market near here?,5,4,150,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-danang-near-nguyen-van-linh-street,city-v1,Đường Nguyễn Văn Linh gần đây không?,Is Nguyen Van Linh Street near here?,4,4,145,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-danang-near-son-tra-night-market,city-v1,Chợ đêm Sơn Trà gần đây không?,Is Son Tra Night Market near here?,3,4,139,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-danang-near-vo-nguyen-giap-street,city-v1,Đường Võ Nguyên Giáp gần đây không?,Is Vo Nguyen Giap Street near here?,3,4,132,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-danang-stop-airport,city-v1,Dừng ở Sân bay Đà Nẵng,Stop at Da Nang Airport,5,3,142,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-danang-stop-bach-dang-street,city-v1,Dừng ở Đường Bạch Đằng,Stop at Bach Dang Street,5,3,132,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-danang-stop-con-market,city-v1,Dừng ở Chợ Cồn,Stop at Con Market,5,3,114,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-danang-stop-helio-night-market,city-v1,Dừng ở Chợ đêm Helio,Stop at Helio Night Market,5,3,132,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-danang-stop-nguyen-van-linh-street,city-v1,Dừng ở Đường Nguyễn Văn Linh,Stop at Nguyen Van Linh Street,4,3,133,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-danang-stop-railway-station,city-v1,Dừng ở Ga Đà Nẵng,Stop at Da Nang Railway Station,2,3,101,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-atm-bun-cha-huong-lien,city-v1,Có ATM gần Bún chả Hương Liên không?,Is there an ATM near Bun Cha Huong Lien?,5,6,169,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hanoi-atm-cha-ca-thang-long,city-v1,Có ATM gần Chả cá Thăng Long không?,Is there an ATM near Cha Ca Thang Long?,5,6,169,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hanoi-atm-dong-xuan-market,city-v1,Có ATM gần Chợ Đồng Xuân không?,Is there an ATM near Dong Xuan Market?,5,6,149,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hanoi-atm-giang-cafe,city-v1,Có ATM gần Cà phê Giảng không?,Is there an ATM near Giang Cafe?,5,6,142,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hanoi-atm-hang-bac-street,city-v1,Có ATM gần Phố Hàng Bạc không?,Is there an ATM near Hang Bac Street?,5,6,146,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hanoi-atm-hang-gai-street,city-v1,Có ATM gần Phố Hàng Gai không?,Is there an ATM near Hang Gai Street?,5,6,151,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hanoi-atm-long-bien-market,city-v1,Có ATM gần Chợ Long Biên không?,Is there an ATM near Long Bien Market?,5,6,149,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hanoi-go-dong-xuan-market,city-v1,Đi Chợ Đồng Xuân,Go to Dong Xuan Market,5,3,137,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-go-giang-cafe,city-v1,Đi Cà phê Giảng,Go to Giang Cafe,5,3,133,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-go-hang-bac-street,city-v1,Đi Phố Hàng Bạc,Go to Hang Bac Street,5,3,137,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-go-hang-gai-street,city-v1,Đi Phố Hàng Gai,Go to Hang Gai Street,5,3,142,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-go-long-bien-market,city-v1,Đi Chợ Long Biên,Go to Long Bien Market,5,3,137,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-go-noi-bai-airport,city-v1,Đi Sân bay Nội Bài,Go to Noi Bai Airport,3,3,118,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-go-old-quarter,city-v1,Đi Phố cổ Hà Nội,Go to Hanoi Old Quarter,5,3,145,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-go-phan-dinh-phung-street,city-v1,Đi Phố Phan Đình Phùng,Go to Phan Dinh Phung Street,3,3,124,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-go-tay-ho,city-v1,Đi Tây Hồ,Go to Tay Ho,3,3,96,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-go-train-street,city-v1,Đi Phố đường tàu Hà Nội,Go to Hanoi Train Street,3,3,124,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-near-dong-xuan-market,city-v1,Chợ Đồng Xuân gần đây không?,Is Dong Xuan Market near here?,5,4,150,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hanoi-near-hang-bac-street,city-v1,Phố Hàng Bạc gần đây không?,Is Hang Bac Street near here?,5,4,143,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hanoi-near-hang-gai-street,city-v1,Phố Hàng Gai gần đây không?,Is Hang Gai Street near here?,5,4,148,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hanoi-near-long-bien-market,city-v1,Chợ Long Biên gần đây không?,Is Long Bien Market near here?,5,4,150,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hanoi-stop-dong-xuan-market,city-v1,Dừng ở Chợ Đồng Xuân,Stop at Dong Xuan Market,5,3,132,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-stop-giang-cafe,city-v1,Dừng ở Cà phê Giảng,Stop at Giang Cafe,5,3,125,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-stop-hang-bac-street,city-v1,Dừng ở Phố Hàng Bạc,Stop at Hang Bac Street,5,3,132,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-stop-hang-gai-street,city-v1,Dừng ở Phố Hàng Gai,Stop at Hang Gai Street,5,3,137,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-stop-long-bien-market,city-v1,Dừng ở Chợ Long Biên,Stop at Long Bien Market,5,3,132,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-stop-noi-bai-airport,city-v1,Dừng ở Sân bay Nội Bài,Stop at Noi Bai Airport,3,3,113,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-stop-phan-dinh-phung-street,city-v1,Dừng ở Phố Phan Đình Phùng,Stop at Phan Dinh Phung Street,3,3,119,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-stop-ta-hien-street,city-v1,Dừng ở Phố Tạ Hiện,Stop at Ta Hien Street,3,3,105,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-stop-tay-ho,city-v1,Dừng ở Tây Hồ,Stop at Tay Ho,3,3,91,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hanoi-stop-train-street,city-v1,Dừng ở Phố đường tàu Hà Nội,Stop at Hanoi Train Street,3,3,119,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-atm-anan-saigon,city-v1,Có ATM gần Anăn Sài Gòn không?,Is there an ATM near Anan Saigon?,5,6,152,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hcmc-atm-ben-thanh-market,city-v1,Có ATM gần Chợ Bến Thành không?,Is there an ATM near Ben Thanh Market?,5,6,149,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hcmc-atm-binh-tay-market,city-v1,Có ATM gần Chợ Bình Tây không?,Is there an ATM near Binh Tay Market?,5,6,149,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hcmc-atm-bui-vien-street,city-v1,Có ATM gần Phố Bùi Viện không?,Is there an ATM near Bui Vien Street?,5,6,144,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hcmc-atm-cho-lon,city-v1,Có ATM gần Chợ Lớn không?,Is there an ATM near Cho Lon?,5,6,126,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hcmc-atm-district-1,city-v1,Có ATM gần Quận 1 không?,Is there an ATM near District 1?,5,6,131,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hcmc-atm-dong-khoi-street,city-v1,Có ATM gần Đường Đồng Khởi không?,Is there an ATM near Dong Khoi Street?,5,6,147,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hcmc-atm-ho-thi-ky-flower-market,city-v1,Có ATM gần Chợ hoa Hồ Thị Kỷ không?,Is there an ATM near Ho Thi Ky Flower Market?,5,6,185,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hcmc-go-binh-tay-market,city-v1,Đi Chợ Bình Tây,Go to Binh Tay Market,5,3,135,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-go-cho-lon,city-v1,Đi Chợ Lớn,Go to Cho Lon,5,3,117,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-go-dong-khoi-street,city-v1,Đi Đường Đồng Khởi,Go to Dong Khoi Street,5,3,138,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-go-ho-thi-ky-flower-market,city-v1,Đi Chợ hoa Hồ Thị Kỷ,Go to Ho Thi Ky Flower Market,5,3,173,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-go-le-thanh-ton-street,city-v1,Đi Đường Lê Thánh Tôn,Go to Le Thanh Ton Street,2,3,112,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-go-nguyen-hue-walking-street,city-v1,Đi Phố đi bộ Nguyễn Huệ,Go to Nguyen Hue Walking Street,4,3,151,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-go-nguyen-trai-street,city-v1,Đi Đường Nguyễn Trãi,Go to Nguyen Trai Street,2,3,100,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-go-pasteur-street,city-v1,Đi Đường Pasteur,Go to Pasteur Street,2,3,88,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-go-pham-ngu-lao-street,city-v1,Đi Phố Phạm Ngũ Lão,Go to Pham Ngu Lao Street,2,3,112,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-go-tan-son-nhat-airport,city-v1,Đi Sân bay Tân Sơn Nhất,Go to Tan Son Nhat Airport,2,3,119,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-go-thao-dien,city-v1,Đi Thảo Điền,Go to Thao Dien,4,3,114,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-near-anan-saigon,city-v1,Anăn Sài Gòn gần đây không?,Is Anan Saigon near here?,5,4,143,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hcmc-near-ben-thanh-market,city-v1,Chợ Bến Thành gần đây không?,Is Ben Thanh Market near here?,5,4,150,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hcmc-near-binh-tay-market,city-v1,Chợ Bình Tây gần đây không?,Is Binh Tay Market near here?,5,4,150,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hcmc-near-ho-thi-ky-flower-market,city-v1,Chợ hoa Hồ Thị Kỷ gần đây không?,Is Ho Thi Ky Flower Market near here?,5,4,176,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hcmc-stop-ben-thanh-market,city-v1,Dừng ở Chợ Bến Thành,Stop at Ben Thanh Market,5,3,132,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-stop-binh-tay-market,city-v1,Dừng ở Chợ Bình Tây,Stop at Binh Tay Market,5,3,130,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-stop-bui-vien-street,city-v1,Dừng ở Phố Bùi Viện,Stop at Bui Vien Street,5,3,130,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-stop-cho-lon,city-v1,Dừng ở Chợ Lớn,Stop at Cho Lon,5,3,112,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-stop-district-1,city-v1,Dừng ở Quận 1,Stop at District 1,5,3,113,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-stop-dong-khoi-street,city-v1,Dừng ở Đường Đồng Khởi,Stop at Dong Khoi Street,5,3,133,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-stop-ho-thi-ky-flower-market,city-v1,Dừng ở Chợ hoa Hồ Thị Kỷ,Stop at Ho Thi Ky Flower Market,5,3,168,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-stop-le-thanh-ton-street,city-v1,Dừng ở Đường Lê Thánh Tôn,Stop at Le Thanh Ton Street,2,3,107,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-stop-nguyen-trai-street,city-v1,Dừng ở Đường Nguyễn Trãi,Stop at Nguyen Trai Street,2,3,95,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-stop-pasteur-street,city-v1,Dừng ở Đường Pasteur,Stop at Pasteur Street,2,3,83,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hcmc-stop-pham-ngu-lao-street,city-v1,Dừng ở Phố Phạm Ngũ Lão,Stop at Pham Ngu Lao Street,2,3,107,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-atm-an-hoi-island,city-v1,Có ATM gần Đảo An Hội không?,Is there an ATM near An Hoi Island?,5,6,146,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hoian-atm-ancient-town,city-v1,Có ATM gần Phố cổ Hội An không?,Is there an ATM near Hoi An Ancient Town?,5,6,164,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hoian-atm-banh-mi-phuong,city-v1,Có ATM gần Bánh mì Phượng không?,Is there an ATM near Banh Mi Phuong?,5,6,155,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hoian-atm-cam-chau,city-v1,Có ATM gần Cẩm Châu không?,Is there an ATM near Cam Chau?,4,6,118,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hoian-atm-cam-nam,city-v1,Có ATM gần Cẩm Nam không?,Is there an ATM near Cam Nam?,4,6,118,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hoian-atm-faifo-coffee,city-v1,Có ATM gần Faifo Coffee không?,Is there an ATM near Faifo Coffee?,5,6,134,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hoian-go-an-hoi-island,city-v1,Đi Đảo An Hội,Go to An Hoi Island,5,3,137,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-go-cam-chau,city-v1,Đi Cẩm Châu,Go to Cam Chau,4,3,109,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-go-cam-nam,city-v1,Đi Cẩm Nam,Go to Cam Nam,4,3,109,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-go-faifo-coffee,city-v1,Đi Faifo Coffee,Go to Faifo Coffee,5,3,125,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-go-market,city-v1,Đi Chợ Hội An,Go to Hoi An Market,5,3,137,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-go-nguyen-hoang-night-market,city-v1,Đi Chợ đêm Nguyễn Hoàng,Go to Nguyen Hoang Night Market,5,3,155,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-go-reach-out-tea-house,city-v1,Đi Reaching Out Tea House,Go to Reaching Out Tea House,5,3,144,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-go-tran-phu-street,city-v1,Đi Phố Trần Phú,Go to Tran Phu Street,2,3,100,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-near-an-hoi-island,city-v1,Đảo An Hội gần đây không?,Is An Hoi Island near here?,5,4,143,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hoian-near-ancient-town,city-v1,Phố cổ Hội An gần đây không?,Is Hoi An Ancient Town near here?,5,4,158,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hoian-near-market,city-v1,Chợ Hội An gần đây không?,Is Hoi An Market near here?,5,4,150,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hoian-near-nguyen-hoang-night-market,city-v1,Chợ đêm Nguyễn Hoàng gần đây không?,Is Nguyen Hoang Night Market near here?,5,4,168,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hoian-near-night-market,city-v1,Chợ đêm Hội An gần đây không?,Is Hoi An Night Market near here?,4,4,151,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hoian-stop-an-hoi-island,city-v1,Dừng ở Đảo An Hội,Stop at An Hoi Island,5,3,132,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-stop-ancient-town,city-v1,Dừng ở Phố cổ Hội An,Stop at Hoi An Ancient Town,5,3,147,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-stop-cam-chau,city-v1,Dừng ở Cẩm Châu,Stop at Cam Chau,4,3,104,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-stop-cam-nam,city-v1,Dừng ở Cẩm Nam,Stop at Cam Nam,4,3,104,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-stop-faifo-coffee,city-v1,Dừng ở Faifo Coffee,Stop at Faifo Coffee,5,3,116,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-stop-market,city-v1,Dừng ở Chợ Hội An,Stop at Hoi An Market,5,3,132,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-stop-nguyen-hoang-night-market,city-v1,Dừng ở Chợ đêm Nguyễn Hoàng,Stop at Nguyen Hoang Night Market,5,3,150,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-stop-night-market,city-v1,Dừng ở Chợ đêm Hội An,Stop at Hoi An Night Market,4,3,133,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hoian-stop-reach-out-tea-house,city-v1,Dừng ở Reaching Out Tea House,Stop at Reaching Out Tea House,5,3,143,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-atm-an-cuu-market,city-v1,Có ATM gần Chợ An Cựu không?,Is there an ATM near An Cuu Market?,5,6,149,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hue-atm-bao-vinh-ancient-town,city-v1,Có ATM gần Phố cổ Bao Vinh không?,Is there an ATM near Bao Vinh Ancient Town?,5,6,164,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hue-atm-dong-ba-market,city-v1,Có ATM gần Chợ Đông Ba không?,Is there an ATM near Dong Ba Market?,5,6,153,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hue-atm-hen-island,city-v1,Có ATM gần Cồn Hến không?,Is there an ATM near Hen Island?,5,6,128,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hue-atm-le-loi-street,city-v1,Có ATM gần Đường Lê Lợi không?,Is there an ATM near Le Loi Street?,5,6,146,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hue-atm-les-jardins,city-v1,Có ATM gần Les Jardins de la Carambole không?,Is there an ATM near Les Jardins de la Carambole?,5,6,191,body_repeated_20_plus,,good-to-know: repeated 32 times
+WATCH,7,viet-family-city-hue-go-an-cuu-market,city-v1,Đi Chợ An Cựu,Go to An Cuu Market,5,3,137,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-go-bao-vinh-ancient-town,city-v1,Đi Phố cổ Bao Vinh,Go to Bao Vinh Ancient Town,5,3,155,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-go-hen-island,city-v1,Đi Cồn Hến,Go to Hen Island,5,3,119,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-go-nguyen-dinh-chieu-street,city-v1,Đi Phố đi bộ Nguyễn Đình Chiểu,Go to Nguyen Dinh Chieu Walking Street,4,3,162,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-go-night-market,city-v1,Đi Chợ đêm Huế,Go to Hue Night Market,4,3,122,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-go-phu-bai-airport,city-v1,Đi Sân bay Phú Bài,Go to Phu Bai Airport,3,3,117,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-go-railway-station,city-v1,Đi Ga Huế,Go to Hue Railway Station,3,3,103,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-near-an-cuu-market,city-v1,Chợ An Cựu gần đây không?,Is An Cuu Market near here?,5,4,150,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hue-near-bao-vinh-ancient-town,city-v1,Phố cổ Bao Vinh gần đây không?,Is Bao Vinh Ancient Town near here?,5,4,161,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hue-near-hen-island,city-v1,Cồn Hến gần đây không?,Is Hen Island near here?,5,4,125,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hue-near-le-loi-street,city-v1,Đường Lê Lợi gần đây không?,Is Le Loi Street near here?,5,4,143,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hue-near-nguyen-dinh-chieu-street,city-v1,Phố đi bộ Nguyễn Đình Chiểu gần đây không?,Is Nguyen Dinh Chieu Walking Street near here?,4,4,168,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hue-near-night-market,city-v1,Chợ đêm Huế gần đây không?,Is Hue Night Market near here?,4,4,135,body_repeated_20_plus,,good-to-know: repeated 26 times
+WATCH,7,viet-family-city-hue-stop-an-cuu-market,city-v1,Dừng ở Chợ An Cựu,Stop at An Cuu Market,5,3,132,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-stop-bao-vinh-ancient-town,city-v1,Dừng ở Phố cổ Bao Vinh,Stop at Bao Vinh Ancient Town,5,3,150,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-stop-dong-ba-market,city-v1,Dừng ở Chợ Đông Ba,Stop at Dong Ba Market,5,3,134,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-stop-hen-island,city-v1,Dừng ở Cồn Hến,Stop at Hen Island,5,3,114,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-stop-le-loi-street,city-v1,Dừng ở Đường Lê Lợi,Stop at Le Loi Street,5,3,132,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-stop-nguyen-dinh-chieu-street,city-v1,Dừng ở Phố đi bộ Nguyễn Đình Chiểu,Stop at Nguyen Dinh Chieu Walking Street,4,3,157,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-stop-night-market,city-v1,Dừng ở Chợ đêm Huế,Stop at Hue Night Market,4,3,117,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-stop-phu-bai-airport,city-v1,Dừng ở Sân bay Phú Bài,Stop at Phu Bai Airport,3,3,112,body_repeated_20_plus,,good-to-know: repeated 45 times
+WATCH,7,viet-family-city-hue-stop-railway-station,city-v1,Dừng ở Ga Huế,Stop at Hue Railway Station,3,3,98,body_repeated_20_plus,,good-to-know: repeated 45 times
 PASS,4,viet-acknowledge-co,catalog-promoted,Có,Yes / there is,7,1,208,body_repeated_8_plus,content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-co.json,when-to-use: repeated 11 times
 PASS,4,viet-acknowledge-da,catalog-promoted,Dạ,Yes / polite acknowledgment,8,1,215,body_repeated_8_plus,content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da.json,good-to-know: repeated 8 times
 PASS,4,viet-acknowledge-dung,catalog-promoted,Đúng,Yes / correct,7,1,191,body_repeated_8_plus,content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-dung.json,good-to-know: repeated 8 times
@@ -13,6 +161,93 @@ PASS,4,viet-family-airport-immigration,tier1,Nhập cảnh ở đâu?,Where is i
 PASS,4,viet-family-airport-pickup,tier1,Khu đón ở đâu?,Where is the pickup area?,9,3,333,body_repeated_8_plus,content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-pickup.json,breakdown: repeated 16 times
 PASS,4,viet-family-airport-sim,tier1,Mua SIM ở đâu?,Where can I buy a SIM card?,8,4,314,body_repeated_8_plus,content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-sim.json,breakdown: repeated 16 times
 PASS,4,viet-family-bathroom-where,tier1,Nhà vệ sinh ở đâu?,Where is the bathroom?,6,3,282,body_repeated_8_plus,content-draft/viet/canonical-pages/tier-one/bathroom-personal-needs/bathroom-where.json,breakdown: repeated 16 times
+PASS,4,viet-family-city-danang-eat-near-bach-dang-street,city-v1,Ăn gần Đường Bạch Đằng,Eat near Bach Dang Street,5,4,133,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-danang-eat-near-con-market,city-v1,Ăn gần Chợ Cồn,Eat near Con Market,5,4,110,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-danang-eat-near-han-market,city-v1,Ăn gần Chợ Hàn,Eat near Han Market,5,4,110,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-danang-go-nen,city-v1,Cho tôi đến nhà hàng Nén Đà Nẵng.,Please take me to Nén Đà Nẵng restaurant.,5,6,164,body_repeated_8_plus,,good-to-know: repeated 11 times
+PASS,4,viet-family-city-danang-stop-nen,city-v1,Cho tôi xuống gần nhà hàng Nén Đà Nẵng.,Let me off near Nén Đà Nẵng restaurant.,5,7,171,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-danang-where-nen,city-v1,Nhà hàng Nén Đà Nẵng ở đâu?,Where is Nén Đà Nẵng?,5,4,155,body_repeated_8_plus,,good-to-know: repeated 11 times
+PASS,4,viet-family-city-hanoi-eat-near-bun-cha-huong-lien,city-v1,Ăn gần Bún chả Hương Liên,Eat near Bun Cha Huong Lien,5,4,156,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hanoi-eat-near-cha-ca-thang-long,city-v1,Ăn gần Chả cá Thăng Long,Eat near Cha Ca Thang Long,5,4,156,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hanoi-eat-near-dong-xuan-market,city-v1,Ăn gần Chợ Đồng Xuân,Eat near Dong Xuan Market,5,4,131,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hanoi-entrance-dong-xuan-market,city-v1,Lối vào Chợ Đồng Xuân ở đâu?,Where is the entrance to Dong Xuan Market?,5,4,149,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hanoi-entrance-long-bien-market,city-v1,Lối vào Chợ Long Biên ở đâu?,Where is the entrance to Long Bien Market?,5,4,149,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hanoi-go-bun-cha-huong-lien,city-v1,Cho tôi đến nhà hàng Bún chả Hương Liên.,Please take me to Bún chả Hương Liên restaurant.,5,6,175,body_repeated_8_plus,,good-to-know: repeated 11 times
+PASS,4,viet-family-city-hanoi-go-cha-ca-thang-long,city-v1,Cho tôi đến nhà hàng Chả cá Thăng Long.,Please take me to Chả cá Thăng Long restaurant.,5,6,175,body_repeated_8_plus,,good-to-know: repeated 11 times
+PASS,4,viet-family-city-hanoi-go-pho-bat-dan,city-v1,Cho tôi đến nhà hàng Phở Bát Đàn.,Please take me to Phở Bát Đàn restaurant.,5,6,154,body_repeated_8_plus,,good-to-know: repeated 11 times
+PASS,4,viet-family-city-hanoi-go-tam-vi,city-v1,Cho tôi đến nhà hàng Tầm Vị.,Please take me to Tầm Vị restaurant.,5,6,148,body_repeated_8_plus,,good-to-know: repeated 11 times
+PASS,4,viet-family-city-hanoi-stop-bun-cha-huong-lien,city-v1,Cho tôi xuống gần nhà hàng Bún chả Hương Liên.,Let me off near Bún chả Hương Liên restaurant.,5,7,184,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hanoi-stop-cha-ca-thang-long,city-v1,Cho tôi xuống gần nhà hàng Chả cá Thăng Long.,Let me off near Chả cá Thăng Long restaurant.,5,7,184,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hanoi-stop-pho-bat-dan,city-v1,Cho tôi xuống gần nhà hàng Phở Bát Đàn.,Let me off near Phở Bát Đàn restaurant.,5,7,165,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hanoi-stop-tam-vi,city-v1,Cho tôi xuống gần nhà hàng Tầm Vị.,Let me off near Tầm Vị restaurant.,5,7,153,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hanoi-where-bun-cha-huong-lien,city-v1,Bún chả Hương Liên ở đâu?,Where is Bun Cha Huong Lien?,5,3,165,body_repeated_8_plus,,good-to-know: repeated 12 times
+PASS,4,viet-family-city-hanoi-where-cha-ca-thang-long,city-v1,Chả cá Thăng Long ở đâu?,Where is Cha Ca Thang Long?,5,3,165,body_repeated_8_plus,,good-to-know: repeated 12 times
+PASS,4,viet-family-city-hanoi-where-hang-gai-street,city-v1,Phố Hàng Gai ở đâu?,Where is Hang Gai Street?,5,3,141,body_repeated_8_plus,,good-to-know: repeated 12 times
+PASS,4,viet-family-city-hanoi-where-long-bien-market,city-v1,Chợ Long Biên ở đâu?,Where is Long Bien Market?,5,3,142,body_repeated_8_plus,,good-to-know: repeated 12 times
+PASS,4,viet-family-city-hanoi-where-noi-bai-airport,city-v1,Sân bay Nội Bài ở đâu?,Where is Noi Bai Airport?,3,3,118,body_repeated_8_plus,,good-to-know: repeated 12 times
+PASS,4,viet-family-city-hanoi-where-old-quarter,city-v1,Phố cổ Hà Nội ở đâu?,Where is Hanoi Old Quarter?,5,3,143,body_repeated_8_plus,,good-to-know: repeated 12 times
+PASS,4,viet-family-city-hanoi-where-phan-dinh-phung-street,city-v1,Phố Phan Đình Phùng ở đâu?,Where is Phan Dinh Phung Street?,3,3,122,body_repeated_8_plus,,good-to-know: repeated 12 times
+PASS,4,viet-family-city-hanoi-where-pho-bat-dan,city-v1,Phở Bát Đàn ở đâu?,Where is Pho Bat Dan?,5,3,144,body_repeated_8_plus,,good-to-know: repeated 12 times
+PASS,4,viet-family-city-hanoi-where-ta-hien-street,city-v1,Phố Tạ Hiện ở đâu?,Where is Ta Hien Street?,3,3,108,body_repeated_8_plus,,good-to-know: repeated 12 times
+PASS,4,viet-family-city-hanoi-where-tam-vi,city-v1,Tầm Vị ở đâu?,Where is Tam Vi?,5,3,138,body_repeated_8_plus,,good-to-know: repeated 12 times
+PASS,4,viet-family-city-hanoi-where-tay-ho,city-v1,Tây Hồ ở đâu?,Where is Tay Ho?,3,3,94,body_repeated_8_plus,,good-to-know: repeated 12 times
+PASS,4,viet-family-city-hanoi-where-train-street,city-v1,Phố đường tàu Hà Nội ở đâu?,Where is Hanoi Train Street?,3,3,122,body_repeated_8_plus,,good-to-know: repeated 12 times
+PASS,4,viet-family-city-hcmc-eat-near-anan-saigon,city-v1,Ăn gần Anăn Sài Gòn,Eat near Anan Saigon,5,4,134,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hcmc-eat-near-ben-thanh-market,city-v1,Ăn gần Chợ Bến Thành,Eat near Ben Thanh Market,5,4,131,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hcmc-eat-near-binh-tay-market,city-v1,Ăn gần Chợ Bình Tây,Eat near Binh Tay Market,5,4,131,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hcmc-eat-near-bui-vien-street,city-v1,Ăn gần Phố Bùi Viện,Eat near Bui Vien Street,5,4,131,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hcmc-eat-near-cho-lon,city-v1,Ăn gần Chợ Lớn,Eat near Cho Lon,5,4,113,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hcmc-eat-near-district-1,city-v1,Ăn gần Quận 1,Eat near District 1,5,4,113,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hcmc-eat-near-dong-khoi-street,city-v1,Ăn gần Đường Đồng Khởi,Eat near Dong Khoi Street,5,4,134,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hcmc-entrance-ben-thanh-market,city-v1,Lối vào Chợ Bến Thành ở đâu?,Where is the entrance to Ben Thanh Market?,5,4,149,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hcmc-entrance-binh-tay-market,city-v1,Lối vào Chợ Bình Tây ở đâu?,Where is the entrance to Binh Tay Market?,5,4,147,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hcmc-entrance-ho-thi-ky-flower-market,city-v1,Lối vào Chợ hoa Hồ Thị Kỷ ở đâu?,Where is the entrance to Ho Thi Ky Flower Market?,5,4,175,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hcmc-go-anan-saigon,city-v1,Cho tôi đến nhà hàng Anăn Sài Gòn.,Please take me to Anăn Sài Gòn restaurant.,5,6,157,body_repeated_8_plus,,good-to-know: repeated 11 times
+PASS,4,viet-family-city-hcmc-go-pho-hoa-pasteur,city-v1,Cho tôi đến nhà hàng Phở Hòa Pasteur.,Please take me to Phở Hòa Pasteur restaurant.,5,6,154,body_repeated_8_plus,,good-to-know: repeated 11 times
+PASS,4,viet-family-city-hcmc-stop-anan-saigon,city-v1,Cho tôi xuống gần nhà hàng Anăn Sài Gòn.,Let me off near Anăn Sài Gòn restaurant.,5,7,165,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hcmc-where-anan-saigon,city-v1,Anăn Sài Gòn ở đâu?,Where is Anan Saigon?,5,3,145,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hcmc-where-binh-tay-market,city-v1,Chợ Bình Tây ở đâu?,Where is Binh Tay Market?,5,3,140,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hcmc-where-bui-vien-street,city-v1,Phố Bùi Viện ở đâu?,Where is Bui Vien Street?,5,3,133,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hcmc-where-cho-lon,city-v1,Chợ Lớn ở đâu?,Where is Cho Lon?,5,3,115,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hcmc-where-district-1,city-v1,Quận 1 ở đâu?,Where is District 1?,5,3,116,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hcmc-where-dong-khoi-street,city-v1,Đường Đồng Khởi ở đâu?,Where is Dong Khoi Street?,5,3,136,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hcmc-where-ho-thi-ky-flower-market,city-v1,Chợ hoa Hồ Thị Kỷ ở đâu?,Where is Ho Thi Ky Flower Market?,5,3,168,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hcmc-where-pho-hoa-pasteur,city-v1,Phở Hòa Pasteur ở đâu?,Where is Pho Hoa Pasteur?,5,3,144,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hcmc-where-tan-son-nhat-airport,city-v1,Sân bay Tân Sơn Nhất ở đâu?,Where is Tan Son Nhat Airport?,2,3,119,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hoian-eat-near-an-hoi-island,city-v1,Ăn gần Đảo An Hội,Eat near An Hoi Island,5,4,128,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hoian-eat-near-ancient-town,city-v1,Ăn gần Phố cổ Hội An,Eat near Hoi An Ancient Town,5,4,146,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hoian-entrance-market,city-v1,Lối vào Chợ Hội An ở đâu?,Where is the entrance to Hoi An Market?,5,4,149,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hoian-entrance-nguyen-hoang-night-market,city-v1,Lối vào Chợ đêm Nguyễn Hoàng ở đâu?,Where is the entrance to Nguyen Hoang Night Market?,5,4,167,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hoian-go-banh-mi-phuong,city-v1,Cho tôi đến nhà hàng Bánh mì Phượng.,Please take me to Bánh mì Phượng restaurant.,5,6,166,body_repeated_8_plus,,good-to-know: repeated 11 times
+PASS,4,viet-family-city-hoian-go-morning-glory,city-v1,Cho tôi đến nhà hàng Morning Glory Hội An.,Please take me to Morning Glory Hội An restaurant.,5,6,176,body_repeated_8_plus,,good-to-know: repeated 11 times
+PASS,4,viet-family-city-hoian-stop-banh-mi-phuong,city-v1,Cho tôi xuống gần nhà hàng Bánh mì Phượng.,Let me off near Bánh mì Phượng restaurant.,5,7,168,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hoian-stop-morning-glory,city-v1,Cho tôi xuống gần nhà hàng Morning Glory Hội An.,Let me off near Morning Glory Hội An restaurant.,5,7,185,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hoian-where-an-hoi-island,city-v1,Đảo An Hội ở đâu?,Where is An Hoi Island?,5,3,136,body_repeated_8_plus,,good-to-know: repeated 8 times
+PASS,4,viet-family-city-hoian-where-cam-chau,city-v1,Cẩm Châu ở đâu?,Where is Cam Chau?,4,3,108,body_repeated_8_plus,,good-to-know: repeated 8 times
+PASS,4,viet-family-city-hoian-where-cam-nam,city-v1,Cẩm Nam ở đâu?,Where is Cam Nam?,4,3,108,body_repeated_8_plus,,good-to-know: repeated 8 times
+PASS,4,viet-family-city-hoian-where-faifo-coffee,city-v1,Faifo Coffee ở đâu?,Where is Faifo Coffee?,5,3,131,body_repeated_8_plus,,good-to-know: repeated 8 times
+PASS,4,viet-family-city-hoian-where-morning-glory,city-v1,Morning Glory Hội An ở đâu?,Where is Morning Glory Hoi An?,5,3,167,body_repeated_8_plus,,good-to-know: repeated 8 times
+PASS,4,viet-family-city-hoian-where-nguyen-hoang-night-market,city-v1,Chợ đêm Nguyễn Hoàng ở đâu?,Where is Nguyen Hoang Night Market?,5,3,161,body_repeated_8_plus,,good-to-know: repeated 8 times
+PASS,4,viet-family-city-hoian-where-night-market,city-v1,Chợ đêm Hội An ở đâu?,Where is Hoi An Night Market?,4,3,144,body_repeated_8_plus,,good-to-know: repeated 8 times
+PASS,4,viet-family-city-hoian-where-reach-out-tea-house,city-v1,Reaching Out Tea House ở đâu?,Where is Reaching Out Tea House?,5,3,150,body_repeated_8_plus,,good-to-know: repeated 8 times
+PASS,4,viet-family-city-hue-eat-near-an-cuu-market,city-v1,Ăn gần Chợ An Cựu,Eat near An Cuu Market,5,4,131,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hue-eat-near-bao-vinh-ancient-town,city-v1,Ăn gần Phố cổ Bao Vinh,Eat near Bao Vinh Ancient Town,5,4,146,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hue-eat-near-dong-ba-bun-bo,city-v1,Ăn gần Bún bò ở chợ Đông Ba,Eat near Bun bo at Dong Ba Market,3,4,143,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hue-eat-near-dong-ba-market,city-v1,Ăn gần Chợ Đông Ba,Eat near Dong Ba Market,5,4,135,body_repeated_8_plus,,good-to-know: repeated 19 times
+PASS,4,viet-family-city-hue-entrance-an-cuu-market,city-v1,Lối vào Chợ An Cựu ở đâu?,Where is the entrance to An Cuu Market?,5,4,149,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hue-entrance-dong-ba-market,city-v1,Lối vào Chợ Đông Ba ở đâu?,Where is the entrance to Dong Ba Market?,5,4,151,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hue-go-les-jardins,city-v1,Cho tôi đến nhà hàng Les Jardins de la Carambole.,Please take me to Les Jardins de la Carambole restaurant.,5,6,197,body_repeated_8_plus,,good-to-know: repeated 11 times
+PASS,4,viet-family-city-hue-stop-les-jardins,city-v1,Cho tôi xuống gần nhà hàng Les Jardins de la Carambole.,Let me off near Les Jardins de la Carambole restaurant.,5,7,208,body_repeated_8_plus,,good-to-know: repeated 9 times
+PASS,4,viet-family-city-hue-where-an-cuu-market,city-v1,Chợ An Cựu ở đâu?,Where is An Cuu Market?,5,3,142,body_repeated_8_plus,,good-to-know: repeated 10 times
+PASS,4,viet-family-city-hue-where-bao-vinh-ancient-town,city-v1,Phố cổ Bao Vinh ở đâu?,Where is Bao Vinh Ancient Town?,5,3,153,body_repeated_8_plus,,good-to-know: repeated 10 times
+PASS,4,viet-family-city-hue-where-dong-ba-market,city-v1,Chợ Đông Ba ở đâu?,Where is Dong Ba Market?,5,3,144,body_repeated_8_plus,,good-to-know: repeated 10 times
+PASS,4,viet-family-city-hue-where-hen-island,city-v1,Cồn Hến ở đâu?,Where is Hen Island?,5,3,117,body_repeated_8_plus,,good-to-know: repeated 10 times
+PASS,4,viet-family-city-hue-where-le-loi-street,city-v1,Đường Lê Lợi ở đâu?,Where is Le Loi Street?,5,3,135,body_repeated_8_plus,,good-to-know: repeated 10 times
+PASS,4,viet-family-city-hue-where-les-jardins,city-v1,Les Jardins de la Carambole ở đâu?,Where is Les Jardins de la Carambole?,5,3,175,body_repeated_8_plus,,good-to-know: repeated 10 times
+PASS,4,viet-family-city-hue-where-nguyen-dinh-chieu-street,city-v1,Phố đi bộ Nguyễn Đình Chiểu ở đâu?,Where is Nguyen Dinh Chieu Walking Street?,4,3,160,body_repeated_8_plus,,good-to-know: repeated 10 times
+PASS,4,viet-family-city-hue-where-night-market,city-v1,Chợ đêm Huế ở đâu?,Where is Hue Night Market?,4,3,127,body_repeated_8_plus,,good-to-know: repeated 10 times
+PASS,4,viet-family-city-hue-where-railway-station,city-v1,Ga Huế ở đâu?,Where is Hue Railway Station?,3,3,103,body_repeated_8_plus,,good-to-know: repeated 10 times
+PASS,4,viet-family-city-hue-where-walking-street,city-v1,Phố đi bộ Huế ở đâu?,Where is Hue Walking Street?,2,3,104,body_repeated_8_plus,,good-to-know: repeated 10 times
 PASS,4,viet-family-directions-turn-left,tier1,Rẽ trái ở đâu?,Where do I turn left?,8,3,314,body_repeated_8_plus,content-draft/viet/canonical-pages/tier-one/directions-navigation/directions-turn-left.json,breakdown: repeated 16 times
 PASS,4,viet-family-food-coffee-bac-xiu,tier1,Cho tôi bạc xỉu đá,I’d like an iced bạc xỉu,11,5,378,body_repeated_8_plus,content-draft/viet/canonical-pages/tier-one/food-drink/food-coffee-bac-xiu.json,traveler-insight: repeated 8 times
 PASS,4,viet-family-food-coffee-black,tier1,Cho tôi cà phê đen đá,I’d like an iced black coffee,11,5,378,body_repeated_8_plus,content-draft/viet/canonical-pages/tier-one/food-drink/food-coffee-black.json,traveler-insight: repeated 8 times
@@ -230,34 +465,9 @@ PASS,0,viet-family-bathroom-soap,tier1,Có xà phòng không?,Do you have soap?,
 PASS,0,viet-family-bathroom-use,tier1,Tôi dùng nhà vệ sinh được không?,Can I use the bathroom?,6,5,283,,content-draft/viet/canonical-pages/tier-one/bathroom-personal-needs/bathroom-use.json,
 PASS,0,viet-family-bathroom-wash-hands,tier1,Tôi rửa tay ở đây được không?,Can I wash my hands here?,6,7,288,,content-draft/viet/canonical-pages/tier-one/bathroom-personal-needs/bathroom-wash-hands.json,
 PASS,0,viet-family-bathroom-water,tier1,Tôi cần nước,I need water,6,4,257,,content-draft/viet/canonical-pages/tier-one/bathroom-personal-needs/bathroom-water.json,
-PASS,0,viet-family-city-danang-atm-airport,city-v1,Có ATM gần Sân bay Đà Nẵng không?,Is there an ATM near Da Nang Airport?,5,6,135,,,
-PASS,0,viet-family-city-danang-atm-bach-dang-street,city-v1,Có ATM gần Đường Bạch Đằng không?,Is there an ATM near Bach Dang Street?,5,6,126,,,
-PASS,0,viet-family-city-danang-atm-con-market,city-v1,Có ATM gần Chợ Cồn không?,Is there an ATM near Con Market?,5,6,108,,,
-PASS,0,viet-family-city-danang-atm-han-market,city-v1,Có ATM gần Chợ Hàn không?,Is there an ATM near Han Market?,5,6,108,,,
-PASS,0,viet-family-city-danang-atm-helio-night-market,city-v1,Có ATM gần Chợ đêm Helio không?,Is there an ATM near Helio Night Market?,5,6,126,,,
-PASS,0,viet-family-city-danang-bach-dang-route,city-v1,Đi đường Bạch Đằng,Go by Bach Dang Street,5,3,101,,,
-PASS,0,viet-family-city-danang-eat-near-bach-dang-street,city-v1,Ăn gần Đường Bạch Đằng,Eat near Bach Dang Street,5,4,111,,,
-PASS,0,viet-family-city-danang-eat-near-con-market,city-v1,Ăn gần Chợ Cồn,Eat near Con Market,5,4,88,,,
-PASS,0,viet-family-city-danang-eat-near-han-market,city-v1,Ăn gần Chợ Hàn,Eat near Han Market,5,4,88,,,
-PASS,0,viet-family-city-danang-go-airport,city-v1,Đi Sân bay Đà Nẵng,Go to Da Nang Airport,5,3,124,,,
+PASS,0,viet-family-city-danang-bach-dang-route,city-v1,Đi đường Bạch Đằng,Go by Bach Dang Street,5,3,123,,,
 PASS,0,viet-family-city-danang-go-ba-na-hills,editorial-model-support,Đi Bà Nà Hills,Go to Ba Na Hills,6,3,254,,,
-PASS,0,viet-family-city-danang-go-con-market,city-v1,Đi Chợ Cồn,Go to Con Market,5,3,97,,,
-PASS,0,viet-family-city-danang-go-han-market,city-v1,Đi Chợ Hàn,Go to Han Market,5,3,98,,,
-PASS,0,viet-family-city-danang-go-helio-night-market,city-v1,Đi Chợ đêm Helio,Go to Helio Night Market,5,3,115,,,
-PASS,0,viet-family-city-danang-go-nen,city-v1,Cho tôi đến nhà hàng Nén Đà Nẵng.,Please take me to Nén Đà Nẵng restaurant.,5,6,137,,,
-PASS,0,viet-family-city-danang-go-nguyen-van-linh-street,city-v1,Đi Đường Nguyễn Văn Linh,Go to Nguyen Van Linh Street,4,3,116,,,
-PASS,0,viet-family-city-danang-go-railway-station,city-v1,Đi Ga Đà Nẵng,Go to Da Nang Railway Station,2,3,85,,,
-PASS,0,viet-family-city-danang-go-son-tra-night-market,city-v1,Đi Chợ đêm Sơn Trà,Go to Son Tra Night Market,3,3,104,,,
-PASS,0,viet-family-city-danang-go-tien-sa-port,city-v1,Đi Cảng Tiên Sa,Go to Tien Sa Port,4,3,102,,,
-PASS,0,viet-family-city-danang-go-vo-nguyen-giap-street,city-v1,Đi Đường Võ Nguyên Giáp,Go to Vo Nguyen Giap Street,3,3,104,,,
-PASS,0,viet-family-city-danang-near-bach-dang-street,city-v1,Đường Bạch Đằng gần đây không?,Is Bach Dang Street near here?,5,4,123,,,
-PASS,0,viet-family-city-danang-near-con-market,city-v1,Chợ Cồn gần đây không?,Is Con Market near here?,5,4,105,,,
-PASS,0,viet-family-city-danang-near-han-market,city-v1,Chợ Hàn gần đây không?,Is Han Market near here?,5,4,106,,,
-PASS,0,viet-family-city-danang-near-helio-night-market,city-v1,Chợ đêm Helio gần đây không?,Is Helio Night Market near here?,5,4,123,,,
-PASS,0,viet-family-city-danang-near-nguyen-van-linh-street,city-v1,Đường Nguyễn Văn Linh gần đây không?,Is Nguyen Van Linh Street near here?,4,4,124,,,
-PASS,0,viet-family-city-danang-near-son-tra-night-market,city-v1,Chợ đêm Sơn Trà gần đây không?,Is Son Tra Night Market near here?,3,4,112,,,
-PASS,0,viet-family-city-danang-near-vo-nguyen-giap-street,city-v1,Đường Võ Nguyên Giáp gần đây không?,Is Vo Nguyen Giap Street near here?,3,4,112,,,
-PASS,0,viet-family-city-danang-pharmacy-han-market,city-v1,Có nhà thuốc gần chợ Hàn không?,Is there a pharmacy near Han Market?,5,6,110,,,
+PASS,0,viet-family-city-danang-pharmacy-han-market,city-v1,Có nhà thuốc gần chợ Hàn không?,Is there a pharmacy near Han Market?,5,6,124,,,
 PASS,0,viet-family-city-danang-place-3d-art-in-paradise,city-v1,Bảo tàng 3D Art in Paradise Đà Nẵng,3D Art in Paradise Da Nang,3,0,181,,,
 PASS,0,viet-family-city-danang-place-43-factory,city-v1,43 Factory Coffee Roaster,43 Factory Coffee Roaster,3,0,219,,,
 PASS,0,viet-family-city-danang-place-airport,city-v1,Sân bay Đà Nẵng,Da Nang Airport,3,0,183,,,
@@ -364,61 +574,23 @@ PASS,0,viet-family-city-danang-place-vincom-plaza,city-v1,Vincom Plaza Đà Nẵ
 PASS,0,viet-family-city-danang-place-vo-nguyen-giap-street,city-v1,Đường Võ Nguyên Giáp,Vo Nguyen Giap Street,3,0,245,,,
 PASS,0,viet-family-city-danang-place-wonderlust,city-v1,Wonderlust,Wonderlust,3,0,177,,,
 PASS,0,viet-family-city-danang-place-yen-retreat,city-v1,Yên Retreat,Yen Retreat,3,0,199,,,
-PASS,0,viet-family-city-danang-reservation-nen,city-v1,Tôi có đặt bàn ở Nén Đà Nẵng,I have a reservation at Nén Đà Nẵng,5,6,139,,,
-PASS,0,viet-family-city-danang-stop-airport,city-v1,Dừng ở Sân bay Đà Nẵng,Stop at Da Nang Airport,5,3,122,,,
-PASS,0,viet-family-city-danang-stop-bach-dang-street,city-v1,Dừng ở Đường Bạch Đằng,Stop at Bach Dang Street,5,3,113,,,
-PASS,0,viet-family-city-danang-stop-con-market,city-v1,Dừng ở Chợ Cồn,Stop at Con Market,5,3,95,,,
-PASS,0,viet-family-city-danang-stop-han-market,city-v1,Dừng ở chợ Hàn,Stop at Han Market,5,3,92,,,
-PASS,0,viet-family-city-danang-stop-helio-night-market,city-v1,Dừng ở Chợ đêm Helio,Stop at Helio Night Market,5,3,113,,,
-PASS,0,viet-family-city-danang-stop-nen,city-v1,Cho tôi xuống gần nhà hàng Nén Đà Nẵng.,Let me off near Nén Đà Nẵng restaurant.,5,7,142,,,
-PASS,0,viet-family-city-danang-stop-nguyen-van-linh-street,city-v1,Dừng ở Đường Nguyễn Văn Linh,Stop at Nguyen Van Linh Street,4,3,114,,,
-PASS,0,viet-family-city-danang-stop-railway-station,city-v1,Dừng ở Ga Đà Nẵng,Stop at Da Nang Railway Station,2,3,83,,,
-PASS,0,viet-family-city-danang-to-airport,city-v1,Cho tôi đến sân bay Đà Nẵng,Please take me to Da Nang Airport,5,5,123,,,
-PASS,0,viet-family-city-danang-where-airport,city-v1,Sân bay Đà Nẵng ở đâu?,Where is Da Nang Airport?,5,3,111,,,
+PASS,0,viet-family-city-danang-reservation-nen,city-v1,Tôi có đặt bàn ở Nén Đà Nẵng,I have a reservation at Nén Đà Nẵng,5,6,170,,,
+PASS,0,viet-family-city-danang-stop-han-market,city-v1,Dừng ở chợ Hàn,Stop at Han Market,5,3,115,,,
+PASS,0,viet-family-city-danang-to-airport,city-v1,Cho tôi đến sân bay Đà Nẵng,Please take me to Da Nang Airport,5,5,151,,,
+PASS,0,viet-family-city-danang-where-airport,city-v1,Sân bay Đà Nẵng ở đâu?,Where is Da Nang Airport?,5,3,138,,,
 PASS,0,viet-family-city-danang-where-ba-na-hills,editorial-model-support,Bà Nà Hills ở đâu?,Where is Ba Na Hills?,6,3,259,,,
-PASS,0,viet-family-city-danang-where-bach-dang-street,city-v1,Đường Bạch Đằng ở đâu?,Where is Bach Dang Street?,5,3,113,,,
-PASS,0,viet-family-city-danang-where-con-market,city-v1,Chợ Cồn ở đâu?,Where is Con Market?,5,3,95,,,
-PASS,0,viet-family-city-danang-where-han-market,city-v1,Chợ Hàn ở đâu?,Where is Han Market?,5,3,89,,,
-PASS,0,viet-family-city-danang-where-helio-night-market,city-v1,Chợ đêm Helio ở đâu?,Where is Helio Night Market?,5,3,113,,,
-PASS,0,viet-family-city-danang-where-nen,city-v1,Nhà hàng Nén Đà Nẵng ở đâu?,Where is Nén Đà Nẵng?,5,4,117,,,
-PASS,0,viet-family-city-danang-where-nguyen-van-linh-street,city-v1,Đường Nguyễn Văn Linh ở đâu?,Where is Nguyen Van Linh Street?,4,3,114,,,
-PASS,0,viet-family-city-danang-where-son-tra-night-market,city-v1,Chợ đêm Sơn Trà ở đâu?,Where is Son Tra Night Market?,3,3,102,,,
-PASS,0,viet-family-city-danang-where-vo-nguyen-giap-street,city-v1,Đường Võ Nguyên Giáp ở đâu?,Where is Vo Nguyen Giap Street?,3,3,102,,,
-PASS,0,viet-family-city-hanoi-atm-bun-cha-huong-lien,city-v1,Có ATM gần Bún chả Hương Liên không?,Is there an ATM near Bun Cha Huong Lien?,5,6,149,,,
-PASS,0,viet-family-city-hanoi-atm-cha-ca-thang-long,city-v1,Có ATM gần Chả cá Thăng Long không?,Is there an ATM near Cha Ca Thang Long?,5,6,149,,,
-PASS,0,viet-family-city-hanoi-atm-dong-xuan-market,city-v1,Có ATM gần Chợ Đồng Xuân không?,Is there an ATM near Dong Xuan Market?,5,6,129,,,
-PASS,0,viet-family-city-hanoi-atm-giang-cafe,city-v1,Có ATM gần Cà phê Giảng không?,Is there an ATM near Giang Cafe?,5,6,121,,,
-PASS,0,viet-family-city-hanoi-atm-hang-bac-street,city-v1,Có ATM gần Phố Hàng Bạc không?,Is there an ATM near Hang Bac Street?,5,6,126,,,
-PASS,0,viet-family-city-hanoi-atm-hang-gai-street,city-v1,Có ATM gần Phố Hàng Gai không?,Is there an ATM near Hang Gai Street?,5,6,131,,,
-PASS,0,viet-family-city-hanoi-atm-long-bien-market,city-v1,Có ATM gần Chợ Long Biên không?,Is there an ATM near Long Bien Market?,5,6,129,,,
-PASS,0,viet-family-city-hanoi-atm-old-quarter,city-v1,Có ATM gần phố cổ Hà Nội không?,Is there an ATM near Hanoi Old Quarter?,5,6,132,,,
-PASS,0,viet-family-city-hanoi-buy-gift-hang-gai,city-v1,Tôi muốn mua quà ở Hàng Gai,I want to buy gifts on Hang Gai,5,8,129,,,
-PASS,0,viet-family-city-hanoi-eat-near-bun-cha-huong-lien,city-v1,Ăn gần Bún chả Hương Liên,Eat near Bun Cha Huong Lien,5,4,134,,,
-PASS,0,viet-family-city-hanoi-eat-near-cha-ca-thang-long,city-v1,Ăn gần Chả cá Thăng Long,Eat near Cha Ca Thang Long,5,4,134,,,
-PASS,0,viet-family-city-hanoi-eat-near-dong-xuan-market,city-v1,Ăn gần Chợ Đồng Xuân,Eat near Dong Xuan Market,5,4,109,,,
-PASS,0,viet-family-city-hanoi-entrance-dong-xuan-market,city-v1,Lối vào Chợ Đồng Xuân ở đâu?,Where is the entrance to Dong Xuan Market?,5,4,126,,,
-PASS,0,viet-family-city-hanoi-entrance-long-bien-market,city-v1,Lối vào Chợ Long Biên ở đâu?,Where is the entrance to Long Bien Market?,5,4,126,,,
-PASS,0,viet-family-city-hanoi-go-bun-cha-huong-lien,city-v1,Cho tôi đến nhà hàng Bún chả Hương Liên.,Please take me to Bún chả Hương Liên restaurant.,5,6,148,,,
-PASS,0,viet-family-city-hanoi-go-cha-ca-thang-long,city-v1,Cho tôi đến nhà hàng Chả cá Thăng Long.,Please take me to Chả cá Thăng Long restaurant.,5,6,148,,,
-PASS,0,viet-family-city-hanoi-go-dong-xuan-market,city-v1,Đi Chợ Đồng Xuân,Go to Dong Xuan Market,5,3,115,,,
-PASS,0,viet-family-city-hanoi-go-giang-cafe,city-v1,Đi Cà phê Giảng,Go to Giang Cafe,5,3,110,,,
-PASS,0,viet-family-city-hanoi-go-hang-bac-street,city-v1,Đi Phố Hàng Bạc,Go to Hang Bac Street,5,3,115,,,
-PASS,0,viet-family-city-hanoi-go-hang-gai-street,city-v1,Đi Phố Hàng Gai,Go to Hang Gai Street,5,3,120,,,
-PASS,0,viet-family-city-hanoi-go-long-bien-market,city-v1,Đi Chợ Long Biên,Go to Long Bien Market,5,3,115,,,
-PASS,0,viet-family-city-hanoi-go-noi-bai-airport,city-v1,Đi Sân bay Nội Bài,Go to Noi Bai Airport,3,3,95,,,
-PASS,0,viet-family-city-hanoi-go-old-quarter,city-v1,Đi Phố cổ Hà Nội,Go to Hanoi Old Quarter,5,3,122,,,
-PASS,0,viet-family-city-hanoi-go-phan-dinh-phung-street,city-v1,Đi Phố Phan Đình Phùng,Go to Phan Dinh Phung Street,3,3,102,,,
-PASS,0,viet-family-city-hanoi-go-pho-bat-dan,city-v1,Cho tôi đến nhà hàng Phở Bát Đàn.,Please take me to Phở Bát Đàn restaurant.,5,6,127,,,
-PASS,0,viet-family-city-hanoi-go-ta-hien,city-v1,Đi phố Tạ Hiện,Go to Ta Hien Street,3,3,76,,,
-PASS,0,viet-family-city-hanoi-go-tam-vi,city-v1,Cho tôi đến nhà hàng Tầm Vị.,Please take me to Tầm Vị restaurant.,5,6,121,,,
-PASS,0,viet-family-city-hanoi-go-tay-ho,city-v1,Đi Tây Hồ,Go to Tay Ho,3,3,74,,,
-PASS,0,viet-family-city-hanoi-go-train-street,city-v1,Đi Phố đường tàu Hà Nội,Go to Hanoi Train Street,3,3,100,,,
-PASS,0,viet-family-city-hanoi-near-dong-xuan-market,city-v1,Chợ Đồng Xuân gần đây không?,Is Dong Xuan Market near here?,5,4,123,,,
-PASS,0,viet-family-city-hanoi-near-hang-bac-street,city-v1,Phố Hàng Bạc gần đây không?,Is Hang Bac Street near here?,5,4,123,,,
-PASS,0,viet-family-city-hanoi-near-hang-gai-street,city-v1,Phố Hàng Gai gần đây không?,Is Hang Gai Street near here?,5,4,128,,,
-PASS,0,viet-family-city-hanoi-near-long-bien-market,city-v1,Chợ Long Biên gần đây không?,Is Long Bien Market near here?,5,4,123,,,
-PASS,0,viet-family-city-hanoi-near-old-quarter,city-v1,Phố cổ Hà Nội gần đây không?,Is Hanoi Old Quarter near here?,5,4,123,,,
-PASS,0,viet-family-city-hanoi-pharmacy-dong-xuan,city-v1,Có nhà thuốc gần chợ Đồng Xuân không?,Is there a pharmacy near Dong Xuan Market?,5,6,127,,,
+PASS,0,viet-family-city-danang-where-bach-dang-street,city-v1,Đường Bạch Đằng ở đâu?,Where is Bach Dang Street?,5,3,136,,,
+PASS,0,viet-family-city-danang-where-con-market,city-v1,Chợ Cồn ở đâu?,Where is Con Market?,5,3,125,,,
+PASS,0,viet-family-city-danang-where-han-market,city-v1,Chợ Hàn ở đâu?,Where is Han Market?,5,3,117,,,
+PASS,0,viet-family-city-danang-where-helio-night-market,city-v1,Chợ đêm Helio ở đâu?,Where is Helio Night Market?,5,3,143,,,
+PASS,0,viet-family-city-danang-where-nguyen-van-linh-street,city-v1,Đường Nguyễn Văn Linh ở đâu?,Where is Nguyen Van Linh Street?,4,3,137,,,
+PASS,0,viet-family-city-danang-where-son-tra-night-market,city-v1,Chợ đêm Sơn Trà ở đâu?,Where is Son Tra Night Market?,3,3,132,,,
+PASS,0,viet-family-city-danang-where-vo-nguyen-giap-street,city-v1,Đường Võ Nguyên Giáp ở đâu?,Where is Vo Nguyen Giap Street?,3,3,125,,,
+PASS,0,viet-family-city-hanoi-atm-old-quarter,city-v1,Có ATM gần phố cổ Hà Nội không?,Is there an ATM near Hanoi Old Quarter?,5,6,154,,,
+PASS,0,viet-family-city-hanoi-buy-gift-hang-gai,city-v1,Tôi muốn mua quà ở Hàng Gai,I want to buy gifts on Hang Gai,5,8,162,,,
+PASS,0,viet-family-city-hanoi-go-ta-hien,city-v1,Đi phố Tạ Hiện,Go to Ta Hien Street,3,3,99,,,
+PASS,0,viet-family-city-hanoi-near-old-quarter,city-v1,Phố cổ Hà Nội gần đây không?,Is Hanoi Old Quarter near here?,5,4,145,,,
+PASS,0,viet-family-city-hanoi-pharmacy-dong-xuan,city-v1,Có nhà thuốc gần chợ Đồng Xuân không?,Is there a pharmacy near Dong Xuan Market?,5,6,142,,,
 PASS,0,viet-family-city-hanoi-place-ba-dinh-district,city-v1,Quận Ba Đình,Ba Dinh District,3,0,221,,,
 PASS,0,viet-family-city-hanoi-place-ba-dinh-square,city-v1,Quảng trường Ba Đình,Ba Dinh Square,3,0,227,,,
 PASS,0,viet-family-city-hanoi-place-banh-cuon,city-v1,Bánh cuốn ở Hà Nội,Steamed rice rolls,3,0,209,,,
@@ -525,83 +697,22 @@ PASS,0,viet-family-city-hanoi-place-west-lake-loop,city-v1,Vòng Hồ Tây,West 
 PASS,0,viet-family-city-hanoi-place-womens-museum,city-v1,Bảo tàng Phụ nữ Việt Nam,Vietnamese Women's Museum,3,0,169,,,
 PASS,0,viet-family-city-hanoi-place-xoi-xeo,city-v1,Xôi xéo ở Hà Nội,Sticky rice with mung bean,3,0,182,,,
 PASS,0,viet-family-city-hanoi-place-yen-so-park,city-v1,Công viên Yên Sở,Yen So Park,3,0,195,,,
-PASS,0,viet-family-city-hanoi-reservation-tam-vi,city-v1,Tôi có đặt bàn ở Tầm Vị,I have a reservation at Tam Vi,5,6,124,,,
-PASS,0,viet-family-city-hanoi-stop-bun-cha-huong-lien,city-v1,Cho tôi xuống gần nhà hàng Bún chả Hương Liên.,Let me off near Bún chả Hương Liên restaurant.,5,7,155,,,
-PASS,0,viet-family-city-hanoi-stop-cha-ca-thang-long,city-v1,Cho tôi xuống gần nhà hàng Chả cá Thăng Long.,Let me off near Chả cá Thăng Long restaurant.,5,7,155,,,
-PASS,0,viet-family-city-hanoi-stop-dong-xuan-market,city-v1,Dừng ở Chợ Đồng Xuân,Stop at Dong Xuan Market,5,3,113,,,
-PASS,0,viet-family-city-hanoi-stop-giang-cafe,city-v1,Dừng ở Cà phê Giảng,Stop at Giang Cafe,5,3,105,,,
-PASS,0,viet-family-city-hanoi-stop-hang-bac-street,city-v1,Dừng ở Phố Hàng Bạc,Stop at Hang Bac Street,5,3,113,,,
-PASS,0,viet-family-city-hanoi-stop-hang-gai-street,city-v1,Dừng ở Phố Hàng Gai,Stop at Hang Gai Street,5,3,118,,,
-PASS,0,viet-family-city-hanoi-stop-long-bien-market,city-v1,Dừng ở Chợ Long Biên,Stop at Long Bien Market,5,3,113,,,
-PASS,0,viet-family-city-hanoi-stop-noi-bai-airport,city-v1,Dừng ở Sân bay Nội Bài,Stop at Noi Bai Airport,3,3,93,,,
-PASS,0,viet-family-city-hanoi-stop-old-quarter,city-v1,Dừng ở phố cổ Hà Nội,Stop in Hanoi Old Quarter,5,3,114,,,
-PASS,0,viet-family-city-hanoi-stop-phan-dinh-phung-street,city-v1,Dừng ở Phố Phan Đình Phùng,Stop at Phan Dinh Phung Street,3,3,100,,,
-PASS,0,viet-family-city-hanoi-stop-pho-bat-dan,city-v1,Cho tôi xuống gần nhà hàng Phở Bát Đàn.,Let me off near Phở Bát Đàn restaurant.,5,7,136,,,
-PASS,0,viet-family-city-hanoi-stop-ta-hien-street,city-v1,Dừng ở Phố Tạ Hiện,Stop at Ta Hien Street,3,3,86,,,
-PASS,0,viet-family-city-hanoi-stop-tam-vi,city-v1,Cho tôi xuống gần nhà hàng Tầm Vị.,Let me off near Tầm Vị restaurant.,5,7,124,,,
-PASS,0,viet-family-city-hanoi-stop-tay-ho,city-v1,Dừng ở Tây Hồ,Stop at Tay Ho,3,3,72,,,
-PASS,0,viet-family-city-hanoi-stop-train-street,city-v1,Dừng ở Phố đường tàu Hà Nội,Stop at Hanoi Train Street,3,3,98,,,
-PASS,0,viet-family-city-hanoi-where-bun-cha-huong-lien,city-v1,Bún chả Hương Liên ở đâu?,Where is Bun Cha Huong Lien?,5,3,136,,,
-PASS,0,viet-family-city-hanoi-where-cha-ca-thang-long,city-v1,Chả cá Thăng Long ở đâu?,Where is Cha Ca Thang Long?,5,3,136,,,
-PASS,0,viet-family-city-hanoi-where-dong-xuan,city-v1,Chợ Đồng Xuân ở đâu?,Where is Dong Xuan Market?,5,3,105,,,
-PASS,0,viet-family-city-hanoi-where-giang-cafe,city-v1,Quán cà phê Giảng ở đâu?,Where is Giang Cafe?,5,4,104,,,
-PASS,0,viet-family-city-hanoi-where-hang-bac,city-v1,Phố Hàng Bạc ở đâu?,Where is Hang Bac Street?,5,3,109,,,
-PASS,0,viet-family-city-hanoi-where-hang-gai-street,city-v1,Phố Hàng Gai ở đâu?,Where is Hang Gai Street?,5,3,119,,,
-PASS,0,viet-family-city-hanoi-where-long-bien-market,city-v1,Chợ Long Biên ở đâu?,Where is Long Bien Market?,5,3,113,,,
-PASS,0,viet-family-city-hanoi-where-noi-bai-airport,city-v1,Sân bay Nội Bài ở đâu?,Where is Noi Bai Airport?,3,3,93,,,
-PASS,0,viet-family-city-hanoi-where-old-quarter,city-v1,Phố cổ Hà Nội ở đâu?,Where is Hanoi Old Quarter?,5,3,120,,,
-PASS,0,viet-family-city-hanoi-where-phan-dinh-phung-street,city-v1,Phố Phan Đình Phùng ở đâu?,Where is Phan Dinh Phung Street?,3,3,100,,,
-PASS,0,viet-family-city-hanoi-where-pho-bat-dan,city-v1,Phở Bát Đàn ở đâu?,Where is Pho Bat Dan?,5,3,115,,,
-PASS,0,viet-family-city-hanoi-where-ta-hien-street,city-v1,Phố Tạ Hiện ở đâu?,Where is Ta Hien Street?,3,3,86,,,
-PASS,0,viet-family-city-hanoi-where-tam-vi,city-v1,Tầm Vị ở đâu?,Where is Tam Vi?,5,3,109,,,
-PASS,0,viet-family-city-hanoi-where-tay-ho,city-v1,Tây Hồ ở đâu?,Where is Tay Ho?,3,3,72,,,
-PASS,0,viet-family-city-hanoi-where-train-street,city-v1,Phố đường tàu Hà Nội ở đâu?,Where is Hanoi Train Street?,3,3,98,,,
-PASS,0,viet-family-city-hcmc-atm-anan-saigon,city-v1,Có ATM gần Anăn Sài Gòn không?,Is there an ATM near Anan Saigon?,5,6,131,,,
-PASS,0,viet-family-city-hcmc-atm-ben-thanh-market,city-v1,Có ATM gần Chợ Bến Thành không?,Is there an ATM near Ben Thanh Market?,5,6,129,,,
-PASS,0,viet-family-city-hcmc-atm-binh-tay-market,city-v1,Có ATM gần Chợ Bình Tây không?,Is there an ATM near Binh Tay Market?,5,6,129,,,
-PASS,0,viet-family-city-hcmc-atm-bui-vien-street,city-v1,Có ATM gần Phố Bùi Viện không?,Is there an ATM near Bui Vien Street?,5,6,124,,,
-PASS,0,viet-family-city-hcmc-atm-cho-lon,city-v1,Có ATM gần Chợ Lớn không?,Is there an ATM near Cho Lon?,5,6,106,,,
-PASS,0,viet-family-city-hcmc-atm-district-1,city-v1,Có ATM gần Quận 1 không?,Is there an ATM near District 1?,5,6,111,,,
-PASS,0,viet-family-city-hcmc-atm-dong-khoi-street,city-v1,Có ATM gần Đường Đồng Khởi không?,Is there an ATM near Dong Khoi Street?,5,6,127,,,
-PASS,0,viet-family-city-hcmc-atm-ho-thi-ky-flower-market,city-v1,Có ATM gần Chợ hoa Hồ Thị Kỷ không?,Is there an ATM near Ho Thi Ky Flower Market?,5,6,165,,,
-PASS,0,viet-family-city-hcmc-atm-nguyen-hue,city-v1,Có ATM gần phố đi bộ Nguyễn Huệ không?,Is there an ATM near Nguyen Hue Walking Street?,4,6,133,,,
-PASS,0,viet-family-city-hcmc-binh-tay-far,city-v1,Chợ Bình Tây xa không?,Is Binh Tay Market far?,5,4,105,,,
-PASS,0,viet-family-city-hcmc-dong-khoi-route,city-v1,Đi đường Đồng Khởi được không?,Can we go by Dong Khoi Street?,5,4,119,,,
-PASS,0,viet-family-city-hcmc-eat-near-anan-saigon,city-v1,Ăn gần Anăn Sài Gòn,Eat near Anan Saigon,5,4,111,,,
-PASS,0,viet-family-city-hcmc-eat-near-ben-thanh-market,city-v1,Ăn gần Chợ Bến Thành,Eat near Ben Thanh Market,5,4,109,,,
-PASS,0,viet-family-city-hcmc-eat-near-binh-tay-market,city-v1,Ăn gần Chợ Bình Tây,Eat near Binh Tay Market,5,4,109,,,
-PASS,0,viet-family-city-hcmc-eat-near-bui-vien-street,city-v1,Ăn gần Phố Bùi Viện,Eat near Bui Vien Street,5,4,109,,,
-PASS,0,viet-family-city-hcmc-eat-near-cho-lon,city-v1,Ăn gần Chợ Lớn,Eat near Cho Lon,5,4,91,,,
-PASS,0,viet-family-city-hcmc-eat-near-district-1,city-v1,Ăn gần Quận 1,Eat near District 1,5,4,91,,,
-PASS,0,viet-family-city-hcmc-eat-near-dong-khoi-street,city-v1,Ăn gần Đường Đồng Khởi,Eat near Dong Khoi Street,5,4,112,,,
-PASS,0,viet-family-city-hcmc-entrance-ben-thanh-market,city-v1,Lối vào Chợ Bến Thành ở đâu?,Where is the entrance to Ben Thanh Market?,5,4,126,,,
-PASS,0,viet-family-city-hcmc-entrance-binh-tay-market,city-v1,Lối vào Chợ Bình Tây ở đâu?,Where is the entrance to Binh Tay Market?,5,4,124,,,
-PASS,0,viet-family-city-hcmc-entrance-ho-thi-ky-flower-market,city-v1,Lối vào Chợ hoa Hồ Thị Kỷ ở đâu?,Where is the entrance to Ho Thi Ky Flower Market?,5,4,162,,,
-PASS,0,viet-family-city-hcmc-get-off-district-1,city-v1,Cho tôi xuống ở Quận 1,Let me get off in District 1,5,5,107,,,
-PASS,0,viet-family-city-hcmc-go-anan-saigon,city-v1,Cho tôi đến nhà hàng Anăn Sài Gòn.,Please take me to Anăn Sài Gòn restaurant.,5,6,130,,,
-PASS,0,viet-family-city-hcmc-go-ben-thanh,city-v1,Đi chợ Bến Thành,Go to Ben Thanh Market,5,3,105,,,
-PASS,0,viet-family-city-hcmc-go-binh-tay-market,city-v1,Đi Chợ Bình Tây,Go to Binh Tay Market,5,3,113,,,
-PASS,0,viet-family-city-hcmc-go-bui-vien,city-v1,Đi phố Bùi Viện,Go to Bui Vien Street,5,3,100,,,
-PASS,0,viet-family-city-hcmc-go-cho-lon,city-v1,Đi Chợ Lớn,Go to Cho Lon,5,3,95,,,
-PASS,0,viet-family-city-hcmc-go-district-1,city-v1,Đến Quận 1,Head to District 1,5,3,99,,,
-PASS,0,viet-family-city-hcmc-go-dong-khoi-street,city-v1,Đi Đường Đồng Khởi,Go to Dong Khoi Street,5,3,116,,,
-PASS,0,viet-family-city-hcmc-go-ho-thi-ky-flower-market,city-v1,Đi Chợ hoa Hồ Thị Kỷ,Go to Ho Thi Ky Flower Market,5,3,151,,,
-PASS,0,viet-family-city-hcmc-go-le-thanh-ton-street,city-v1,Đi Đường Lê Thánh Tôn,Go to Le Thanh Ton Street,2,3,90,,,
-PASS,0,viet-family-city-hcmc-go-nguyen-hue-walking-street,city-v1,Đi Phố đi bộ Nguyễn Huệ,Go to Nguyen Hue Walking Street,4,3,128,,,
-PASS,0,viet-family-city-hcmc-go-nguyen-trai-street,city-v1,Đi Đường Nguyễn Trãi,Go to Nguyen Trai Street,2,3,78,,,
-PASS,0,viet-family-city-hcmc-go-pasteur-street,city-v1,Đi Đường Pasteur,Go to Pasteur Street,2,3,66,,,
-PASS,0,viet-family-city-hcmc-go-pham-ngu-lao-street,city-v1,Đi Phố Phạm Ngũ Lão,Go to Pham Ngu Lao Street,2,3,90,,,
-PASS,0,viet-family-city-hcmc-go-pho-hoa-pasteur,city-v1,Cho tôi đến nhà hàng Phở Hòa Pasteur.,Please take me to Phở Hòa Pasteur restaurant.,5,6,127,,,
-PASS,0,viet-family-city-hcmc-go-tan-son-nhat-airport,city-v1,Đi Sân bay Tân Sơn Nhất,Go to Tan Son Nhat Airport,2,3,96,,,
-PASS,0,viet-family-city-hcmc-go-thao-dien,city-v1,Đi Thảo Điền,Go to Thao Dien,4,3,92,,,
-PASS,0,viet-family-city-hcmc-hotel-district-1,city-v1,Khách sạn ở Quận 1,Hotel in District 1,5,4,93,,,
-PASS,0,viet-family-city-hcmc-near-anan-saigon,city-v1,Anăn Sài Gòn gần đây không?,Is Anan Saigon near here?,5,4,125,,,
-PASS,0,viet-family-city-hcmc-near-ben-thanh-market,city-v1,Chợ Bến Thành gần đây không?,Is Ben Thanh Market near here?,5,4,123,,,
-PASS,0,viet-family-city-hcmc-near-binh-tay-market,city-v1,Chợ Bình Tây gần đây không?,Is Binh Tay Market near here?,5,4,123,,,
-PASS,0,viet-family-city-hcmc-near-district-1,city-v1,Quận 1 gần đây không?,Is District 1 near here?,5,4,97,,,
-PASS,0,viet-family-city-hcmc-near-ho-thi-ky-flower-market,city-v1,Chợ hoa Hồ Thị Kỷ gần đây không?,Is Ho Thi Ky Flower Market near here?,5,4,159,,,
-PASS,0,viet-family-city-hcmc-near-nguyen-hue,city-v1,Phố đi bộ Nguyễn Huệ gần đây không?,Is Nguyen Hue Walking Street near here?,4,4,125,,,
-PASS,0,viet-family-city-hcmc-pharmacy-ben-thanh,city-v1,Có nhà thuốc gần chợ Bến Thành không?,Is there a pharmacy near Ben Thanh Market?,5,6,129,,,
+PASS,0,viet-family-city-hanoi-reservation-tam-vi,city-v1,Tôi có đặt bàn ở Tầm Vị,I have a reservation at Tam Vi,5,6,157,,,
+PASS,0,viet-family-city-hanoi-stop-old-quarter,city-v1,Dừng ở phố cổ Hà Nội,Stop in Hanoi Old Quarter,5,3,138,,,
+PASS,0,viet-family-city-hanoi-where-dong-xuan,city-v1,Chợ Đồng Xuân ở đâu?,Where is Dong Xuan Market?,5,3,136,,,
+PASS,0,viet-family-city-hanoi-where-giang-cafe,city-v1,Quán cà phê Giảng ở đâu?,Where is Giang Cafe?,5,4,134,,,
+PASS,0,viet-family-city-hanoi-where-hang-bac,city-v1,Phố Hàng Bạc ở đâu?,Where is Hang Bac Street?,5,3,133,,,
+PASS,0,viet-family-city-hcmc-atm-nguyen-hue,city-v1,Có ATM gần phố đi bộ Nguyễn Huệ không?,Is there an ATM near Nguyen Hue Walking Street?,4,6,158,,,
+PASS,0,viet-family-city-hcmc-binh-tay-far,city-v1,Chợ Bình Tây xa không?,Is Binh Tay Market far?,5,4,138,,,
+PASS,0,viet-family-city-hcmc-dong-khoi-route,city-v1,Đi đường Đồng Khởi được không?,Can we go by Dong Khoi Street?,5,4,136,,,
+PASS,0,viet-family-city-hcmc-get-off-district-1,city-v1,Cho tôi xuống ở Quận 1,Let me get off in District 1,5,5,130,,,
+PASS,0,viet-family-city-hcmc-go-ben-thanh,city-v1,Đi chợ Bến Thành,Go to Ben Thanh Market,5,3,134,,,
+PASS,0,viet-family-city-hcmc-go-bui-vien,city-v1,Đi phố Bùi Viện,Go to Bui Vien Street,5,3,129,,,
+PASS,0,viet-family-city-hcmc-go-district-1,city-v1,Đến Quận 1,Head to District 1,5,3,121,,,
+PASS,0,viet-family-city-hcmc-hotel-district-1,city-v1,Khách sạn ở Quận 1,Hotel in District 1,5,4,114,,,
+PASS,0,viet-family-city-hcmc-near-district-1,city-v1,Quận 1 gần đây không?,Is District 1 near here?,5,4,116,,,
+PASS,0,viet-family-city-hcmc-near-nguyen-hue,city-v1,Phố đi bộ Nguyễn Huệ gần đây không?,Is Nguyen Hue Walking Street near here?,4,4,152,,,
+PASS,0,viet-family-city-hcmc-pharmacy-ben-thanh,city-v1,Có nhà thuốc gần chợ Bến Thành không?,Is there a pharmacy near Ben Thanh Market?,5,6,145,,,
 PASS,0,viet-family-city-hcmc-place-42-nguyen-hue-apartment,city-v1,Chung cư 42 Nguyễn Huệ,42 Nguyen Hue apartment building,3,0,226,,,
 PASS,0,viet-family-city-hcmc-place-akuna,city-v1,Akuna,Akuna,3,0,232,,,
 PASS,0,viet-family-city-hcmc-place-an-dong-market,city-v1,Chợ An Đông,An Dong Market,3,0,234,,,
@@ -708,64 +819,18 @@ PASS,0,viet-family-city-hcmc-place-vinhomes-central-park,city-v1,Công viên Vin
 PASS,0,viet-family-city-hcmc-place-war-remnants-museum,city-v1,Bảo tàng Chứng tích Chiến tranh,War Remnants Museum,3,0,249,,,
 PASS,0,viet-family-city-hcmc-place-workshop-coffee,city-v1,The Workshop Coffee,The Workshop Coffee,3,0,245,,,
 PASS,0,viet-family-city-hcmc-place-zoo-botanical-gardens,city-v1,Thảo Cầm Viên Sài Gòn,Saigon Zoo and Botanical Gardens,3,0,230,,,
-PASS,0,viet-family-city-hcmc-reservation-anan,city-v1,Tôi có đặt bàn ở Anăn Sài Gòn,I have a reservation at Anan Saigon,5,6,130,,,
-PASS,0,viet-family-city-hcmc-sim-ben-thanh,city-v1,Tôi muốn mua SIM gần chợ Bến Thành,I want to buy a SIM near Ben Thanh Market,5,7,136,,,
-PASS,0,viet-family-city-hcmc-stop-anan-saigon,city-v1,Cho tôi xuống gần nhà hàng Anăn Sài Gòn.,Let me off near Anăn Sài Gòn restaurant.,5,7,136,,,
-PASS,0,viet-family-city-hcmc-stop-ben-thanh-market,city-v1,Dừng ở Chợ Bến Thành,Stop at Ben Thanh Market,5,3,113,,,
-PASS,0,viet-family-city-hcmc-stop-binh-tay-market,city-v1,Dừng ở Chợ Bình Tây,Stop at Binh Tay Market,5,3,111,,,
-PASS,0,viet-family-city-hcmc-stop-bui-vien-street,city-v1,Dừng ở Phố Bùi Viện,Stop at Bui Vien Street,5,3,111,,,
-PASS,0,viet-family-city-hcmc-stop-cho-lon,city-v1,Dừng ở Chợ Lớn,Stop at Cho Lon,5,3,93,,,
-PASS,0,viet-family-city-hcmc-stop-district-1,city-v1,Dừng ở Quận 1,Stop at District 1,5,3,94,,,
-PASS,0,viet-family-city-hcmc-stop-dong-khoi-street,city-v1,Dừng ở Đường Đồng Khởi,Stop at Dong Khoi Street,5,3,114,,,
-PASS,0,viet-family-city-hcmc-stop-ho-thi-ky-flower-market,city-v1,Dừng ở Chợ hoa Hồ Thị Kỷ,Stop at Ho Thi Ky Flower Market,5,3,149,,,
-PASS,0,viet-family-city-hcmc-stop-le-thanh-ton-street,city-v1,Dừng ở Đường Lê Thánh Tôn,Stop at Le Thanh Ton Street,2,3,88,,,
-PASS,0,viet-family-city-hcmc-stop-nguyen-hue,city-v1,Dừng ở phố đi bộ Nguyễn Huệ,Stop at Nguyen Hue Walking Street,4,3,123,,,
-PASS,0,viet-family-city-hcmc-stop-nguyen-trai-street,city-v1,Dừng ở Đường Nguyễn Trãi,Stop at Nguyen Trai Street,2,3,76,,,
-PASS,0,viet-family-city-hcmc-stop-pasteur-street,city-v1,Dừng ở Đường Pasteur,Stop at Pasteur Street,2,3,64,,,
-PASS,0,viet-family-city-hcmc-stop-pham-ngu-lao-street,city-v1,Dừng ở Phố Phạm Ngũ Lão,Stop at Pham Ngu Lao Street,2,3,88,,,
-PASS,0,viet-family-city-hcmc-where-anan,city-v1,Nhà hàng Anăn Sài Gòn ở đâu?,Where is Anan Saigon restaurant?,5,4,118,,,
-PASS,0,viet-family-city-hcmc-where-anan-saigon,city-v1,Anăn Sài Gòn ở đâu?,Where is Anan Saigon?,5,3,115,,,
-PASS,0,viet-family-city-hcmc-where-ben-thanh,city-v1,Chợ Bến Thành ở đâu?,Where is Ben Thanh Market?,5,3,110,,,
-PASS,0,viet-family-city-hcmc-where-binh-tay-market,city-v1,Chợ Bình Tây ở đâu?,Where is Binh Tay Market?,5,3,111,,,
-PASS,0,viet-family-city-hcmc-where-bui-vien-street,city-v1,Phố Bùi Viện ở đâu?,Where is Bui Vien Street?,5,3,111,,,
-PASS,0,viet-family-city-hcmc-where-cho-lon,city-v1,Chợ Lớn ở đâu?,Where is Cho Lon?,5,3,93,,,
-PASS,0,viet-family-city-hcmc-where-district-1,city-v1,Quận 1 ở đâu?,Where is District 1?,5,3,94,,,
-PASS,0,viet-family-city-hcmc-where-dong-khoi-street,city-v1,Đường Đồng Khởi ở đâu?,Where is Dong Khoi Street?,5,3,114,,,
-PASS,0,viet-family-city-hcmc-where-ho-thi-ky-flower-market,city-v1,Chợ hoa Hồ Thị Kỷ ở đâu?,Where is Ho Thi Ky Flower Market?,5,3,149,,,
-PASS,0,viet-family-city-hcmc-where-pho-hoa-pasteur,city-v1,Phở Hòa Pasteur ở đâu?,Where is Pho Hoa Pasteur?,5,3,115,,,
-PASS,0,viet-family-city-hcmc-where-tan-son-nhat-airport,city-v1,Sân bay Tân Sơn Nhất ở đâu?,Where is Tan Son Nhat Airport?,2,3,94,,,
-PASS,0,viet-family-city-hoian-atm-an-hoi-island,city-v1,Có ATM gần Đảo An Hội không?,Is there an ATM near An Hoi Island?,5,6,126,,,
-PASS,0,viet-family-city-hoian-atm-ancient-town,city-v1,Có ATM gần Phố cổ Hội An không?,Is there an ATM near Hoi An Ancient Town?,5,6,144,,,
-PASS,0,viet-family-city-hoian-atm-banh-mi-phuong,city-v1,Có ATM gần Bánh mì Phượng không?,Is there an ATM near Banh Mi Phuong?,5,6,135,,,
-PASS,0,viet-family-city-hoian-atm-cam-chau,city-v1,Có ATM gần Cẩm Châu không?,Is there an ATM near Cam Chau?,4,6,98,,,
-PASS,0,viet-family-city-hoian-atm-cam-nam,city-v1,Có ATM gần Cẩm Nam không?,Is there an ATM near Cam Nam?,4,6,98,,,
-PASS,0,viet-family-city-hoian-atm-cao-lau-city,city-v1,Ở đây có cao lầu không?,Do you have cao lau here?,5,6,128,,,
-PASS,0,viet-family-city-hoian-atm-faifo-coffee,city-v1,Có ATM gần Faifo Coffee không?,Is there an ATM near Faifo Coffee?,5,6,114,,,
-PASS,0,viet-family-city-hoian-atm-market,city-v1,Có ATM gần chợ Hội An không?,Is there an ATM near Hoi An Market?,5,6,123,,,
-PASS,0,viet-family-city-hoian-cao-lau,city-v1,Tôi muốn ăn cao lầu ở Hội An,I want to eat cao lau in Hoi An,5,5,133,,,
-PASS,0,viet-family-city-hoian-eat-near-an-hoi-island,city-v1,Ăn gần Đảo An Hội,Eat near An Hoi Island,5,4,106,,,
-PASS,0,viet-family-city-hoian-eat-near-ancient-town,city-v1,Ăn gần Phố cổ Hội An,Eat near Hoi An Ancient Town,5,4,124,,,
-PASS,0,viet-family-city-hoian-entrance-market,city-v1,Lối vào Chợ Hội An ở đâu?,Where is the entrance to Hoi An Market?,5,4,126,,,
-PASS,0,viet-family-city-hoian-entrance-nguyen-hoang-night-market,city-v1,Lối vào Chợ đêm Nguyễn Hoàng ở đâu?,Where is the entrance to Nguyen Hoang Night Market?,5,4,144,,,
-PASS,0,viet-family-city-hoian-go-an-hoi-island,city-v1,Đi Đảo An Hội,Go to An Hoi Island,5,3,115,,,
-PASS,0,viet-family-city-hoian-go-ancient-town,city-v1,Đi phố cổ Hội An,Go to Hoi An Ancient Town,5,3,119,,,
-PASS,0,viet-family-city-hoian-go-banh-mi-phuong,city-v1,Cho tôi đến nhà hàng Bánh mì Phượng.,Please take me to Bánh mì Phượng restaurant.,5,6,134,,,
-PASS,0,viet-family-city-hoian-go-cam-chau,city-v1,Đi Cẩm Châu,Go to Cam Chau,4,3,87,,,
-PASS,0,viet-family-city-hoian-go-cam-nam,city-v1,Đi Cẩm Nam,Go to Cam Nam,4,3,87,,,
-PASS,0,viet-family-city-hoian-go-cao-lau-city,city-v1,Ăn cao lầu ở đâu?,Where can I eat cao lau?,5,4,111,,,
-PASS,0,viet-family-city-hoian-go-faifo-coffee,city-v1,Đi Faifo Coffee,Go to Faifo Coffee,5,3,103,,,
-PASS,0,viet-family-city-hoian-go-market,city-v1,Đi Chợ Hội An,Go to Hoi An Market,5,3,115,,,
-PASS,0,viet-family-city-hoian-go-morning-glory,city-v1,Cho tôi đến nhà hàng Morning Glory Hội An.,Please take me to Morning Glory Hội An restaurant.,5,6,149,,,
-PASS,0,viet-family-city-hoian-go-nguyen-hoang-night-market,city-v1,Đi Chợ đêm Nguyễn Hoàng,Go to Nguyen Hoang Night Market,5,3,133,,,
-PASS,0,viet-family-city-hoian-go-reach-out-tea-house,city-v1,Đi Reaching Out Tea House,Go to Reaching Out Tea House,5,3,122,,,
-PASS,0,viet-family-city-hoian-go-tran-phu-street,city-v1,Đi Phố Trần Phú,Go to Tran Phu Street,2,3,78,,,
-PASS,0,viet-family-city-hoian-near-an-hoi-island,city-v1,Đảo An Hội gần đây không?,Is An Hoi Island near here?,5,4,123,,,
-PASS,0,viet-family-city-hoian-near-ancient-town,city-v1,Phố cổ Hội An gần đây không?,Is Hoi An Ancient Town near here?,5,4,138,,,
-PASS,0,viet-family-city-hoian-near-market,city-v1,Chợ Hội An gần đây không?,Is Hoi An Market near here?,5,4,123,,,
-PASS,0,viet-family-city-hoian-near-nguyen-hoang-night-market,city-v1,Chợ đêm Nguyễn Hoàng gần đây không?,Is Nguyen Hoang Night Market near here?,5,4,141,,,
-PASS,0,viet-family-city-hoian-near-night-market,city-v1,Chợ đêm Hội An gần đây không?,Is Hoi An Night Market near here?,4,4,124,,,
-PASS,0,viet-family-city-hoian-night-market,city-v1,Đi chợ đêm Hội An,Go to Hoi An Night Market,4,3,101,,,
-PASS,0,viet-family-city-hoian-pharmacy-ancient-town,city-v1,Có nhà thuốc gần phố cổ Hội An không?,Is there a pharmacy near Hoi An Ancient Town?,5,6,140,,,
+PASS,0,viet-family-city-hcmc-reservation-anan,city-v1,Tôi có đặt bàn ở Anăn Sài Gòn,I have a reservation at Anan Saigon,5,6,165,,,
+PASS,0,viet-family-city-hcmc-sim-ben-thanh,city-v1,Tôi muốn mua SIM gần chợ Bến Thành,I want to buy a SIM near Ben Thanh Market,5,7,154,,,
+PASS,0,viet-family-city-hcmc-stop-nguyen-hue,city-v1,Dừng ở phố đi bộ Nguyễn Huệ,Stop at Nguyen Hue Walking Street,4,3,147,,,
+PASS,0,viet-family-city-hcmc-where-anan,city-v1,Nhà hàng Anăn Sài Gòn ở đâu?,Where is Anan Saigon restaurant?,5,4,147,,,
+PASS,0,viet-family-city-hcmc-where-ben-thanh,city-v1,Chợ Bến Thành ở đâu?,Where is Ben Thanh Market?,5,3,139,,,
+PASS,0,viet-family-city-hoian-atm-cao-lau-city,city-v1,Ở đây có cao lầu không?,Do you have cao lau here?,5,6,143,,,
+PASS,0,viet-family-city-hoian-atm-market,city-v1,Có ATM gần chợ Hội An không?,Is there an ATM near Hoi An Market?,5,6,145,,,
+PASS,0,viet-family-city-hoian-cao-lau,city-v1,Tôi muốn ăn cao lầu ở Hội An,I want to eat cao lau in Hoi An,5,5,152,,,
+PASS,0,viet-family-city-hoian-go-ancient-town,city-v1,Đi phố cổ Hội An,Go to Hoi An Ancient Town,5,3,147,,,
+PASS,0,viet-family-city-hoian-go-cao-lau-city,city-v1,Ăn cao lầu ở đâu?,Where can I eat cao lau?,5,4,134,,,
+PASS,0,viet-family-city-hoian-night-market,city-v1,Đi chợ đêm Hội An,Go to Hoi An Night Market,4,3,132,,,
+PASS,0,viet-family-city-hoian-pharmacy-ancient-town,city-v1,Có nhà thuốc gần phố cổ Hội An không?,Is there a pharmacy near Hoi An Ancient Town?,5,6,160,,,
 PASS,0,viet-family-city-hoian-place-an-bang,city-v1,Biển An Bàng,An Bang Beach,3,0,218,,,
 PASS,0,viet-family-city-hoian-place-an-hoi-bridge,city-v1,Cầu An Hội,An Hoi Bridge,3,0,212,,,
 PASS,0,viet-family-city-hoian-place-an-hoi-island,city-v1,Đảo An Hội,An Hoi Island,3,0,215,,,
@@ -868,69 +933,24 @@ PASS,0,viet-family-city-hoian-place-white-rose-dumplings,city-v1,Bánh bao bánh
 PASS,0,viet-family-city-hoian-place-white-rose-restaurant,city-v1,Nhà hàng White Rose,White Rose Restaurant,3,0,187,,,
 PASS,0,viet-family-city-hoian-place-wonton,city-v1,Hoành thánh Hội An,Hoi An wonton,3,0,185,,,
 PASS,0,viet-family-city-hoian-place-yaly-couture,city-v1,Yaly Couture,Yaly Couture,3,0,161,,,
-PASS,0,viet-family-city-hoian-reservation-morning-glory,city-v1,Tôi có đặt bàn ở Morning Glory Hội An,I have a reservation at Morning Glory Hoi An,5,6,149,,,
-PASS,0,viet-family-city-hoian-stop-an-hoi-island,city-v1,Dừng ở Đảo An Hội,Stop at An Hoi Island,5,3,113,,,
-PASS,0,viet-family-city-hoian-stop-ancient-town,city-v1,Dừng ở Phố cổ Hội An,Stop at Hoi An Ancient Town,5,3,128,,,
-PASS,0,viet-family-city-hoian-stop-banh-mi-phuong,city-v1,Cho tôi xuống gần nhà hàng Bánh mì Phượng.,Let me off near Bánh mì Phượng restaurant.,5,7,139,,,
-PASS,0,viet-family-city-hoian-stop-cam-chau,city-v1,Dừng ở Cẩm Châu,Stop at Cam Chau,4,3,85,,,
-PASS,0,viet-family-city-hoian-stop-cam-nam,city-v1,Dừng ở Cẩm Nam,Stop at Cam Nam,4,3,85,,,
-PASS,0,viet-family-city-hoian-stop-cao-lau-city,city-v1,Cho tôi cao lầu,"Cao lau, please",5,4,106,,,
-PASS,0,viet-family-city-hoian-stop-faifo-coffee,city-v1,Dừng ở Faifo Coffee,Stop at Faifo Coffee,5,3,97,,,
-PASS,0,viet-family-city-hoian-stop-market,city-v1,Dừng ở Chợ Hội An,Stop at Hoi An Market,5,3,113,,,
-PASS,0,viet-family-city-hoian-stop-morning-glory,city-v1,Cho tôi xuống gần nhà hàng Morning Glory Hội An.,Let me off near Morning Glory Hội An restaurant.,5,7,156,,,
-PASS,0,viet-family-city-hoian-stop-nguyen-hoang-night-market,city-v1,Dừng ở Chợ đêm Nguyễn Hoàng,Stop at Nguyen Hoang Night Market,5,3,131,,,
-PASS,0,viet-family-city-hoian-stop-night-market,city-v1,Dừng ở Chợ đêm Hội An,Stop at Hoi An Night Market,4,3,114,,,
-PASS,0,viet-family-city-hoian-stop-reach-out-tea-house,city-v1,Dừng ở Reaching Out Tea House,Stop at Reaching Out Tea House,5,3,124,,,
-PASS,0,viet-family-city-hoian-ticket-ancient-town,city-v1,Một vé vào phố cổ Hội An,One ticket to Hoi An Ancient Town,5,5,127,,,
-PASS,0,viet-family-city-hoian-where-an-hoi-island,city-v1,Đảo An Hội ở đâu?,Where is An Hoi Island?,5,3,113,,,
-PASS,0,viet-family-city-hoian-where-ancient-town,city-v1,Phố cổ Hội An ở đâu?,Where is Hoi An Ancient Town?,5,3,120,,,
-PASS,0,viet-family-city-hoian-where-banh-mi-phuong,city-v1,Bánh mì Phượng ở đâu?,Where is Banh Mi Phuong?,5,3,120,,,
-PASS,0,viet-family-city-hoian-where-cam-chau,city-v1,Cẩm Châu ở đâu?,Where is Cam Chau?,4,3,85,,,
-PASS,0,viet-family-city-hoian-where-cam-nam,city-v1,Cẩm Nam ở đâu?,Where is Cam Nam?,4,3,85,,,
-PASS,0,viet-family-city-hoian-where-cao-lau-city,city-v1,Ở đâu có cao lầu?,Where can I get cao lau?,5,4,112,,,
-PASS,0,viet-family-city-hoian-where-faifo-coffee,city-v1,Faifo Coffee ở đâu?,Where is Faifo Coffee?,5,3,101,,,
-PASS,0,viet-family-city-hoian-where-market,city-v1,Chợ Hội An ở đâu?,Where is Hoi An Market?,5,3,105,,,
-PASS,0,viet-family-city-hoian-where-morning-glory,city-v1,Morning Glory Hội An ở đâu?,Where is Morning Glory Hoi An?,5,3,137,,,
-PASS,0,viet-family-city-hoian-where-nguyen-hoang-night-market,city-v1,Chợ đêm Nguyễn Hoàng ở đâu?,Where is Nguyen Hoang Night Market?,5,3,131,,,
-PASS,0,viet-family-city-hoian-where-night-market,city-v1,Chợ đêm Hội An ở đâu?,Where is Hoi An Night Market?,4,3,114,,,
-PASS,0,viet-family-city-hoian-where-reach-out-tea-house,city-v1,Reaching Out Tea House ở đâu?,Where is Reaching Out Tea House?,5,3,120,,,
-PASS,0,viet-family-city-hoian-where-tran-phu,city-v1,Phố Trần Phú ở đâu?,Where is Tran Phu Street?,2,3,68,,,
-PASS,0,viet-family-city-hue-atm-an-cuu-market,city-v1,Có ATM gần Chợ An Cựu không?,Is there an ATM near An Cuu Market?,5,6,129,,,
-PASS,0,viet-family-city-hue-atm-bao-vinh-ancient-town,city-v1,Có ATM gần Phố cổ Bao Vinh không?,Is there an ATM near Bao Vinh Ancient Town?,5,6,144,,,
-PASS,0,viet-family-city-hue-atm-bun-bo-city,city-v1,Ở đây có bún bò Huế không?,Do you have bun bo Hue here?,5,6,133,,,
-PASS,0,viet-family-city-hue-atm-dong-ba-bun-bo,city-v1,Gần hàng bún bò ở chợ Đông Ba có ATM không?,Is there an ATM near the bun bo stall at Dong Ba Market?,5,7,162,,,
-PASS,0,viet-family-city-hue-atm-dong-ba-market,city-v1,Có ATM gần Chợ Đông Ba không?,Is there an ATM near Dong Ba Market?,5,6,133,,,
-PASS,0,viet-family-city-hue-atm-hen-island,city-v1,Có ATM gần Cồn Hến không?,Is there an ATM near Hen Island?,5,6,108,,,
-PASS,0,viet-family-city-hue-atm-le-loi-street,city-v1,Có ATM gần Đường Lê Lợi không?,Is there an ATM near Le Loi Street?,5,6,126,,,
-PASS,0,viet-family-city-hue-atm-les-jardins,city-v1,Có ATM gần Les Jardins de la Carambole không?,Is there an ATM near Les Jardins de la Carambole?,5,6,171,,,
-PASS,0,viet-family-city-hue-bun-bo,city-v1,Tôi muốn ăn bún bò Huế,I want to eat bun bo Hue,5,5,117,,,
-PASS,0,viet-family-city-hue-eat-near-an-cuu-market,city-v1,Ăn gần Chợ An Cựu,Eat near An Cuu Market,5,4,109,,,
-PASS,0,viet-family-city-hue-eat-near-bao-vinh-ancient-town,city-v1,Ăn gần Phố cổ Bao Vinh,Eat near Bao Vinh Ancient Town,5,4,124,,,
-PASS,0,viet-family-city-hue-eat-near-bun-bo-city,city-v1,Ăn bún bò Huế ở đâu?,Where can I eat bun bo Hue?,5,4,115,,,
-PASS,0,viet-family-city-hue-eat-near-dong-ba-bun-bo,city-v1,Ăn gần Bún bò ở chợ Đông Ba,Eat near Bun bo at Dong Ba Market,3,4,132,,,
-PASS,0,viet-family-city-hue-eat-near-dong-ba-market,city-v1,Ăn gần Chợ Đông Ba,Eat near Dong Ba Market,5,4,113,,,
-PASS,0,viet-family-city-hue-entrance-an-cuu-market,city-v1,Lối vào Chợ An Cựu ở đâu?,Where is the entrance to An Cuu Market?,5,4,126,,,
-PASS,0,viet-family-city-hue-entrance-dong-ba-market,city-v1,Lối vào Chợ Đông Ba ở đâu?,Where is the entrance to Dong Ba Market?,5,4,128,,,
-PASS,0,viet-family-city-hue-go-an-cuu-market,city-v1,Đi Chợ An Cựu,Go to An Cuu Market,5,3,115,,,
-PASS,0,viet-family-city-hue-go-bao-vinh-ancient-town,city-v1,Đi Phố cổ Bao Vinh,Go to Bao Vinh Ancient Town,5,3,133,,,
-PASS,0,viet-family-city-hue-go-bun-bo-city,city-v1,Tìm bún bò Huế ở đâu?,Where can I find bun bo Hue?,5,4,114,,,
-PASS,0,viet-family-city-hue-go-dong-ba,city-v1,Đi chợ Đông Ba,Go to Dong Ba Market,5,3,101,,,
-PASS,0,viet-family-city-hue-go-dong-ba-bun-bo,city-v1,Tôi muốn tìm bún bò ở chợ Đông Ba,I want to find bun bo at Dong Ba Market,3,5,134,,,
-PASS,0,viet-family-city-hue-go-hen-island,city-v1,Đi Cồn Hến,Go to Hen Island,5,3,97,,,
-PASS,0,viet-family-city-hue-go-les-jardins,city-v1,Cho tôi đến nhà hàng Les Jardins de la Carambole.,Please take me to Les Jardins de la Carambole restaurant.,5,6,170,,,
-PASS,0,viet-family-city-hue-go-nguyen-dinh-chieu-street,city-v1,Đi Phố đi bộ Nguyễn Đình Chiểu,Go to Nguyen Dinh Chieu Walking Street,4,3,139,,,
-PASS,0,viet-family-city-hue-go-night-market,city-v1,Đi Chợ đêm Huế,Go to Hue Night Market,4,3,100,,,
-PASS,0,viet-family-city-hue-go-phu-bai-airport,city-v1,Đi Sân bay Phú Bài,Go to Phu Bai Airport,3,3,94,,,
-PASS,0,viet-family-city-hue-go-railway-station,city-v1,Đi Ga Huế,Go to Hue Railway Station,3,3,82,,,
-PASS,0,viet-family-city-hue-le-loi-route,city-v1,Đi đường Lê Lợi,Go by Le Loi Street,5,3,101,,,
-PASS,0,viet-family-city-hue-near-an-cuu-market,city-v1,Chợ An Cựu gần đây không?,Is An Cuu Market near here?,5,4,123,,,
-PASS,0,viet-family-city-hue-near-bao-vinh-ancient-town,city-v1,Phố cổ Bao Vinh gần đây không?,Is Bao Vinh Ancient Town near here?,5,4,141,,,
-PASS,0,viet-family-city-hue-near-dong-ba,city-v1,Chợ Đông Ba gần đây không?,Is Dong Ba Market near here?,5,4,113,,,
-PASS,0,viet-family-city-hue-near-hen-island,city-v1,Cồn Hến gần đây không?,Is Hen Island near here?,5,4,105,,,
-PASS,0,viet-family-city-hue-near-le-loi-street,city-v1,Đường Lê Lợi gần đây không?,Is Le Loi Street near here?,5,4,123,,,
-PASS,0,viet-family-city-hue-near-nguyen-dinh-chieu-street,city-v1,Phố đi bộ Nguyễn Đình Chiểu gần đây không?,Is Nguyen Dinh Chieu Walking Street near here?,4,4,147,,,
-PASS,0,viet-family-city-hue-near-night-market,city-v1,Chợ đêm Huế gần đây không?,Is Hue Night Market near here?,4,4,108,,,
-PASS,0,viet-family-city-hue-pharmacy-dong-ba,city-v1,Có nhà thuốc gần chợ Đông Ba không?,Is there a pharmacy near Dong Ba Market?,5,6,131,,,
+PASS,0,viet-family-city-hoian-reservation-morning-glory,city-v1,Tôi có đặt bàn ở Morning Glory Hội An,I have a reservation at Morning Glory Hoi An,5,6,182,,,
+PASS,0,viet-family-city-hoian-stop-cao-lau-city,city-v1,Cho tôi cao lầu,"Cao lau, please",5,4,129,,,
+PASS,0,viet-family-city-hoian-ticket-ancient-town,city-v1,Một vé vào phố cổ Hội An,One ticket to Hoi An Ancient Town,5,5,147,,,
+PASS,0,viet-family-city-hoian-where-ancient-town,city-v1,Phố cổ Hội An ở đâu?,Where is Hoi An Ancient Town?,5,3,139,,,
+PASS,0,viet-family-city-hoian-where-banh-mi-phuong,city-v1,Bánh mì Phượng ở đâu?,Where is Banh Mi Phuong?,5,3,142,,,
+PASS,0,viet-family-city-hoian-where-cao-lau-city,city-v1,Ở đâu có cao lầu?,Where can I get cao lau?,5,4,138,,,
+PASS,0,viet-family-city-hoian-where-market,city-v1,Chợ Hội An ở đâu?,Where is Hoi An Market?,5,3,134,,,
+PASS,0,viet-family-city-hoian-where-tran-phu,city-v1,Phố Trần Phú ở đâu?,Where is Tran Phu Street?,2,3,93,,,
+PASS,0,viet-family-city-hue-atm-bun-bo-city,city-v1,Ở đây có bún bò Huế không?,Do you have bun bo Hue here?,5,6,158,,,
+PASS,0,viet-family-city-hue-atm-dong-ba-bun-bo,city-v1,Gần hàng bún bò ở chợ Đông Ba có ATM không?,Is there an ATM near the bun bo stall at Dong Ba Market?,5,7,185,,,
+PASS,0,viet-family-city-hue-bun-bo,city-v1,Tôi muốn ăn bún bò Huế,I want to eat bun bo Hue,5,5,149,,,
+PASS,0,viet-family-city-hue-eat-near-bun-bo-city,city-v1,Ăn bún bò Huế ở đâu?,Where can I eat bun bo Hue?,5,4,147,,,
+PASS,0,viet-family-city-hue-go-bun-bo-city,city-v1,Tìm bún bò Huế ở đâu?,Where can I find bun bo Hue?,5,4,145,,,
+PASS,0,viet-family-city-hue-go-dong-ba,city-v1,Đi chợ Đông Ba,Go to Dong Ba Market,5,3,138,,,
+PASS,0,viet-family-city-hue-go-dong-ba-bun-bo,city-v1,Tôi muốn tìm bún bò ở chợ Đông Ba,I want to find bun bo at Dong Ba Market,3,5,156,,,
+PASS,0,viet-family-city-hue-le-loi-route,city-v1,Đi đường Lê Lợi,Go by Le Loi Street,5,3,122,,,
+PASS,0,viet-family-city-hue-near-dong-ba,city-v1,Chợ Đông Ba gần đây không?,Is Dong Ba Market near here?,5,4,142,,,
+PASS,0,viet-family-city-hue-pharmacy-dong-ba,city-v1,Có nhà thuốc gần chợ Đông Ba không?,Is there a pharmacy near Dong Ba Market?,5,6,146,,,
 PASS,0,viet-family-city-hue-place-an-cuu-market,city-v1,Chợ An Cựu,An Cuu Market,3,0,189,,,
 PASS,0,viet-family-city-hue-place-an-dinh-palace,city-v1,Cung An Định,An Dinh Palace,3,0,194,,,
 PASS,0,viet-family-city-hue-place-an-hien-garden-house,city-v1,Nhà vườn An Hiên,An Hien Garden House,3,0,188,,,
@@ -1031,33 +1051,13 @@ PASS,0,viet-family-city-hue-place-vong-canh-hill,city-v1,Đồi Vọng Cảnh,Vo
 PASS,0,viet-family-city-hue-place-vy-da,city-v1,Vỹ Dạ,Vy Da,3,0,261,,,
 PASS,0,viet-family-city-hue-place-walking-street,city-v1,Phố đi bộ Huế,Hue Walking Street,3,0,254,,,
 PASS,0,viet-family-city-hue-place-y-thao-garden,city-v1,Ý Thảo Garden,Y Thao Garden,3,0,245,,,
-PASS,0,viet-family-city-hue-reservation-les-jardins,city-v1,Tôi có đặt bàn ở Les Jardins de la Carambole,I have a reservation at Les Jardins de la Carambole,5,6,169,,,
-PASS,0,viet-family-city-hue-stop-an-cuu-market,city-v1,Dừng ở Chợ An Cựu,Stop at An Cuu Market,5,3,113,,,
-PASS,0,viet-family-city-hue-stop-bao-vinh-ancient-town,city-v1,Dừng ở Phố cổ Bao Vinh,Stop at Bao Vinh Ancient Town,5,3,131,,,
-PASS,0,viet-family-city-hue-stop-bun-bo-city,city-v1,Cho tôi bún bò Huế,"Bun bo Hue, please",5,4,109,,,
-PASS,0,viet-family-city-hue-stop-dong-ba-bun-bo,city-v1,Cho tôi xuống ở chợ Đông Ba,Let me off at Dong Ba Market,5,5,122,,,
-PASS,0,viet-family-city-hue-stop-dong-ba-market,city-v1,Dừng ở Chợ Đông Ba,Stop at Dong Ba Market,5,3,115,,,
-PASS,0,viet-family-city-hue-stop-hen-island,city-v1,Dừng ở Cồn Hến,Stop at Hen Island,5,3,95,,,
-PASS,0,viet-family-city-hue-stop-le-loi-street,city-v1,Dừng ở Đường Lê Lợi,Stop at Le Loi Street,5,3,113,,,
-PASS,0,viet-family-city-hue-stop-les-jardins,city-v1,Cho tôi xuống gần nhà hàng Les Jardins de la Carambole.,Let me off near Les Jardins de la Carambole restaurant.,5,7,179,,,
-PASS,0,viet-family-city-hue-stop-nguyen-dinh-chieu-street,city-v1,Dừng ở Phố đi bộ Nguyễn Đình Chiểu,Stop at Nguyen Dinh Chieu Walking Street,4,3,137,,,
-PASS,0,viet-family-city-hue-stop-night-market,city-v1,Dừng ở Chợ đêm Huế,Stop at Hue Night Market,4,3,98,,,
-PASS,0,viet-family-city-hue-stop-phu-bai-airport,city-v1,Dừng ở Sân bay Phú Bài,Stop at Phu Bai Airport,3,3,92,,,
-PASS,0,viet-family-city-hue-stop-railway-station,city-v1,Dừng ở Ga Huế,Stop at Hue Railway Station,3,3,80,,,
-PASS,0,viet-family-city-hue-walking-street,city-v1,Đi phố đi bộ Huế,Go to Hue Walking Street,2,3,72,,,
-PASS,0,viet-family-city-hue-where-airport,city-v1,Sân bay Phú Bài ở đâu?,Where is Phu Bai Airport?,3,3,79,,,
-PASS,0,viet-family-city-hue-where-an-cuu-market,city-v1,Chợ An Cựu ở đâu?,Where is An Cuu Market?,5,3,113,,,
-PASS,0,viet-family-city-hue-where-bao-vinh-ancient-town,city-v1,Phố cổ Bao Vinh ở đâu?,Where is Bao Vinh Ancient Town?,5,3,131,,,
-PASS,0,viet-family-city-hue-where-bun-bo-city,city-v1,Ở đâu có bún bò Huế?,Where can I get bun bo Hue?,5,4,116,,,
-PASS,0,viet-family-city-hue-where-dong-ba-bun-bo,city-v1,Bún bò ở chợ Đông Ba ở chỗ nào?,Where is bun bo at Dong Ba Market?,3,5,135,,,
-PASS,0,viet-family-city-hue-where-dong-ba-market,city-v1,Chợ Đông Ba ở đâu?,Where is Dong Ba Market?,5,3,115,,,
-PASS,0,viet-family-city-hue-where-hen-island,city-v1,Cồn Hến ở đâu?,Where is Hen Island?,5,3,95,,,
-PASS,0,viet-family-city-hue-where-le-loi-street,city-v1,Đường Lê Lợi ở đâu?,Where is Le Loi Street?,5,3,113,,,
-PASS,0,viet-family-city-hue-where-les-jardins,city-v1,Les Jardins de la Carambole ở đâu?,Where is Les Jardins de la Carambole?,5,3,158,,,
-PASS,0,viet-family-city-hue-where-nguyen-dinh-chieu-street,city-v1,Phố đi bộ Nguyễn Đình Chiểu ở đâu?,Where is Nguyen Dinh Chieu Walking Street?,4,3,137,,,
-PASS,0,viet-family-city-hue-where-night-market,city-v1,Chợ đêm Huế ở đâu?,Where is Hue Night Market?,4,3,98,,,
-PASS,0,viet-family-city-hue-where-railway-station,city-v1,Ga Huế ở đâu?,Where is Hue Railway Station?,3,3,80,,,
-PASS,0,viet-family-city-hue-where-walking-street,city-v1,Phố đi bộ Huế ở đâu?,Where is Hue Walking Street?,2,3,81,,,
+PASS,0,viet-family-city-hue-reservation-les-jardins,city-v1,Tôi có đặt bàn ở Les Jardins de la Carambole,I have a reservation at Les Jardins de la Carambole,5,6,193,,,
+PASS,0,viet-family-city-hue-stop-bun-bo-city,city-v1,Cho tôi bún bò Huế,"Bun bo Hue, please",5,4,143,,,
+PASS,0,viet-family-city-hue-stop-dong-ba-bun-bo,city-v1,Cho tôi xuống ở chợ Đông Ba,Let me off at Dong Ba Market,5,5,146,,,
+PASS,0,viet-family-city-hue-walking-street,city-v1,Đi phố đi bộ Huế,Go to Hue Walking Street,2,3,98,,,
+PASS,0,viet-family-city-hue-where-airport,city-v1,Sân bay Phú Bài ở đâu?,Where is Phu Bai Airport?,3,3,107,,,
+PASS,0,viet-family-city-hue-where-bun-bo-city,city-v1,Ở đâu có bún bò Huế?,Where can I get bun bo Hue?,5,4,151,,,
+PASS,0,viet-family-city-hue-where-dong-ba-bun-bo,city-v1,Bún bò ở chợ Đông Ba ở chỗ nào?,Where is bun bo at Dong Ba Market?,3,5,156,,,
 PASS,0,viet-family-directions-go-straight,tier1,Tôi đi thẳng phải không?,Should I go straight?,8,4,299,,content-draft/viet/canonical-pages/tier-one/directions-navigation/directions-go-straight.json,
 PASS,0,viet-family-directions-how-long,tier1,Đi bộ mất bao lâu?,How long does it take on foot?,8,4,327,,content-draft/viet/canonical-pages/tier-one/directions-navigation/directions-how-long.json,
 PASS,0,viet-family-directions-how-to-get,tier1,"Cho hỏi, đi tới đó thế nào?","Excuse me, how do I get there?",8,6,325,,content-draft/viet/canonical-pages/tier-one/directions-navigation/directions-how-to-get.json,

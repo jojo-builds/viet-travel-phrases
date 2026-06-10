@@ -38,6 +38,7 @@ const formulaPatterns = [
 const bannedPremiumPatterns = [
   { code: "this_page_helps", weight: 12, re: /\bthis page helps\b/i },
   { code: "internal_role", weight: 12, re: /\b(content role|source rationale|relationship rows|route phrase|where-question)\b/i },
+  { code: "source_scaffold_compact_direction", weight: 12, re: /\bcompact direction question\b/i },
   { code: "travel_cliche", weight: 8, re: /\b(perfect for|must-visit|hidden gem|vibrant|bustling|curated|nestled)\b/i },
   { code: "source_scaffold", weight: 10, re: /\b(atomic|this row|move here|these cards stay|keep these close|next exchange close|reply points toward|likely follow-up|after the first answer)\b/i },
 ];
@@ -125,6 +126,27 @@ function scorePage(page, sourceByPageID, bodyFrequency) {
   const sections = page.sections ?? [];
   const phraseCards = sections.reduce((total, section) => total + (section.phrases?.length ?? 0), 0);
   const breakdownCards = sections.reduce((total, section) => total + (section.breakdown?.length ?? 0), 0);
+  const isDerivedPlacePhrase = (page.categoryIDs ?? []).includes("derived-place-phrases");
+
+  if (isDerivedPlacePhrase) {
+    const firstVisible = sections.find((section) => (
+      Boolean(section.body)
+      || (section.phrases?.length ?? 0) > 0
+      || (section.breakdown?.length ?? 0) > 0
+    ));
+    const intro = sections.find((section) => section.id === "at-glance" || section.title === "At a glance");
+    const introWords = wordCount(intro?.body);
+    if (!intro || introWords < 12) {
+      addIssue(issues, "derived_intro_missing_or_thin", 18, `Derived phrase needs At a glance copy before mechanics; current intro words: ${introWords}.`);
+    }
+    if (firstVisible && firstVisible.id !== "at-glance") {
+      addIssue(issues, "derived_intro_not_first", 18, `First visible section is ${firstVisible.id}; derived phrases must not start with mechanics.`);
+    }
+    const derivedBodyText = sections.map((section) => String(section.body ?? "")).filter(Boolean).join("\n");
+    if (/\b(compact direction question|route phrase|where-question|content role|source rationale|this page helps)\b/i.test(derivedBodyText)) {
+      addIssue(issues, "derived_intro_internal_copy", 18, derivedBodyText);
+    }
+  }
 
   if (["tier1", "child", "catalog-promoted", "editorial-model-support"].includes(page.tierRole)) {
     if (phraseCards === 0) addIssue(issues, "no_phrase_cards", 10, "No rendered phrase cards.");

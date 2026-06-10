@@ -3067,6 +3067,9 @@ function cityBreakdownTokens(pageRecord, pageKind = null, placeKind = null, opti
 }
 
 function derivedPlacePhraseTip(pageRecord, placeKind) {
+  const authoredTip = cleanTravelerBody(pageRecord.tip);
+  if (authoredTip) return authoredTip;
+
   const authoredContext = cleanTravelerBody(pageRecord.context);
   if (authoredContext) {
     return authoredContext
@@ -3077,8 +3080,6 @@ function derivedPlacePhraseTip(pageRecord, placeKind) {
       .replace(/^Use this as\b/i, "Best as")
       .replace(/^Ask this when\b/i, "Ask when");
   }
-  const authoredTip = cleanTravelerBody(pageRecord.tip);
-  if (authoredTip) return authoredTip;
   if (placeKind === "restaurant" || placeKind === "cafe") {
     return "If the name is hard to say, show the map location and play the full sentence.";
   }
@@ -3353,6 +3354,11 @@ function applyCityEditorialImport(sections, pageRecord) {
 }
 
 function compactDerivedPlacePhraseSections(authoredSections, generatedSections) {
+  const generatedAtGlance = generatedSections.find((section) => section.id === "at-glance");
+  const authoredAtGlance = authoredSections.find((section) => (
+    section.id === "at-glance"
+    && wordCount(section.body) >= 12
+  ));
   const generatedRelated = generatedSections.find((section) => section.id === "related-phrases");
   const authoredRelated = authoredSections.find((section) => (
     section.id === "related-phrases"
@@ -3362,11 +3368,12 @@ function compactDerivedPlacePhraseSections(authoredSections, generatedSections) 
 
   const breakdown = generatedSections.find((section) => section.id === "breakdown")
     ?? authoredSections.find((section) => section.id === "breakdown");
+  const atGlance = authoredAtGlance ?? generatedAtGlance;
   const related = authoredRelated ?? generatedRelated;
   const tip = generatedSections.find((section) => section.id === "good-to-know")
     ?? authoredSections.find((section) => section.id === "good-to-know");
 
-  return [breakdown, related, tip].filter(Boolean);
+  return [atGlance, breakdown, related, tip].filter(Boolean);
 }
 
 function findRelatedCityRecords(pageRecord, pageRecords, placePageByPlaceID) {
@@ -3643,6 +3650,11 @@ function cityPageForRecord(pageRecord, context) {
 
   const sections = derivedPlacePhrase
     ? [
+      {
+        id: "at-glance",
+        title: "At a glance",
+        body: cityPhraseAtGlanceBody(pageRecord, city, place),
+      },
       {
         id: "breakdown",
         title: "Break it down",
@@ -4130,6 +4142,11 @@ function collectAudioAudit(pages) {
   return { required, missing };
 }
 
+function wordCount(value) {
+  const text = String(value ?? "").trim();
+  return text ? text.split(/\s+/).length : 0;
+}
+
 function cleanTravelerBody(body) {
   let text = String(body ?? "");
   const exactBodies = new Map([
@@ -4509,6 +4526,7 @@ function cleanTravelerSectionTitle(title, page) {
   const profile = authoredPageProfile(page);
   if (profile === "derived-place-phrase") {
     const byID = {
+      "at-glance": "At a glance",
       breakdown: "Break it down",
       "related-phrases": "Related phrases",
       "good-to-know": "Tip",
@@ -5304,10 +5322,18 @@ function phraseSectionBody(page, section, phraseRole = "traveler_says") {
   }
 }
 
+function derivedPlacePhraseSectionBody(section) {
+  if (section.id === "at-glance" || section.id === "good-to-know") {
+    return cleanTravelerBody(section.body);
+  }
+  return "";
+}
+
 function shouldKeepSectionForProfile(section, profile, page = null, phraseRole = "traveler_says") {
   const hasRows = (section.phrases || []).length > 0;
   const hasBreakdown = (section.breakdown || []).length > 0;
   if (profile === "derived-place-phrase") {
+    if (section.id === "at-glance") return String(section.body ?? "").trim().length > 0;
     if (section.id === "breakdown") return hasBreakdown;
     if (section.id === "related-phrases") return hasRows;
     if (section.id === "good-to-know") return String(section.body ?? "").trim().length > 0;
@@ -5380,7 +5406,7 @@ const sectionOrderByProfile = {
   street: ["at-glance", "quick-say", "show-driver", "place-brief", "confirm", "use-it-with", "wrong-place", "when-to-use", "breakdown", "good-to-know", "explore-next"],
   restaurant: ["at-glance", "quick-say", "place-brief", "use-it-with", "when-to-use", "inside-the-place", "good-to-know", "table-menu", "before-you-go", "menu-dietary", "breakdown"],
   dish: ["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"],
-  "derived-place-phrase": ["breakdown", "related-phrases", "good-to-know"],
+  "derived-place-phrase": ["at-glance", "breakdown", "related-phrases", "good-to-know"],
   phrase: ["at-glance", "quick-say", "standard-way", "breakdown", "natural-variations", "why-it-matters", "traveler-insight", "when-to-use", "nearby-phrases", "local-tip", "what-happens-next", "you-may-hear", "practice-pairs", "good-to-know", "explore-next"],
 };
 
@@ -6481,6 +6507,7 @@ function sanitizeAuthoredPage(page) {
       ? cleanFinalPunctuation(section.body || "")
       : preservePhraseEditorial
       ? cleanPreservedPhraseSectionBody(page, section, profile, phraseRole)
+      : profile === "derived-place-phrase" ? shortenBodyForMobile(derivedPlacePhraseSectionBody(section))
       : isNameBasedProfile(profile) ? shortenBodyForMobile(adultNameSectionBody(page, section, profile)) : shortenBodyForMobile(phraseSectionBody(page, section, phraseRole)),
     phrases: curatedSectionPhrases(page, section, profile, phraseRole).map((phrase) => ({
       ...phrase,

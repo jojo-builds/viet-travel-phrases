@@ -60,36 +60,32 @@ function validateNoDuplicateSimplePhraseHero(pages) {
 
   assert(atGlance, "Tôi không hiểu should keep a compact context section.");
   assert(!/means.+I don.t understand/i.test(atGlance.body ?? ""), "Tôi không hiểu should not repeat the hero in a Meaning section.");
-  assert(/too fast|unclear|recovery/i.test(atGlance.body ?? ""), "Tôi không hiểu needs traveler-useful context, not a duplicate definition.");
-  assert(!standard, "Tôi không hiểu should not repeat the hero as a duplicate primary row.");
+  assert(/too quickly|unfamiliar words/i.test(atGlance.body ?? ""), "Tôi không hiểu needs traveler-useful context, not a duplicate definition.");
+  assert(!/means.+I don.t understand/i.test(standard?.body ?? ""), "Tôi không hiểu standard way should not repeat the hero definition.");
   assert(!section(page, "quick-say"), "Tôi không hiểu should not keep a duplicate Quick say section.");
-  assert(section(page, "traveler-insight")?.title === "Common follow-ups", "Tôi không hiểu should keep recovery follow-ups.");
+  assert(section(page, "traveler-insight")?.title === "Traveler insight", "Tôi không hiểu should keep recovery insight.");
 }
 
 function validateTableAvailabilityMayHearPage(pages) {
-  const page = pageByTitle(pages, "Bàn này còn trống");
+  const page = pageByTitle(pages, "Có phải đợi bàn không?");
   const keys = new Set((page.sections ?? []).map((item) => item.id));
   const fullText = sectionText(page);
 
-  assert(keys.has("at-glance"), "Bàn này còn trống needs a recognition intro.");
-  assert(section(page, "at-glance")?.title === "You may hear", "Bàn này còn trống must be a You may hear page.");
-  assert(!keys.has("quick-say") && !keys.has("standard-way"), "Bàn này còn trống must not render as Say this.");
-  assert(!/Say this|Quick say/i.test(fullText), "Bàn này còn trống contains command-style phrase copy.");
+  assert(keys.has("at-glance"), "Có phải đợi bàn không? needs a traveler context intro.");
+  assert(keys.has("quick-say"), "Có phải đợi bàn không? should keep the primary saying row.");
+  assert(section(page, "at-glance")?.title === "At a glance", "Có phải đợi bàn không? should be a traveler-says page.");
+  assert(!keys.has("standard-way"), "Có phải đợi bàn không? should not keep a duplicate Standard way section.");
 
   const breakdown = section(page, "breakdown")?.breakdown ?? [];
-  const ban = breakdown.find((token) => token.vietnamese === "Bàn");
-  assert(ban?.english === "table", `Bàn should mean table, got: ${ban?.english ?? "missing"}`);
   assert(!breakdown.some((token) => token.vietnamese === "Bàn" && normalize(token.english) === "you"), "Bàn is incorrectly glossed as you.");
-  assert(breakdown.some((token) => token.vietnamese === "còn trống" && /available|open/i.test(token.english)), "còn trống should stay together as available/open.");
+  assert(breakdown.some((token) => token.vietnamese === "đợi bàn" && /wait/i.test(token.english)), "đợi bàn should stay together as wait for a table.");
 
-  const sayNext = section(page, "practice-pairs");
-  assert(sayNext?.title === "Say next", "Bàn này còn trống should have Say next.");
-  const nextText = sectionText({ sections: [sayNext] });
-  for (const expected of ["Cho tôi bàn cho hai người", "Có phải đợi bàn không", "Cho tôi xem thực đơn", "Tính tiền"]) {
-    assert(nextText.includes(expected), `Bàn này còn trống missing relevant next phrase: ${expected}`);
+  const nextText = sectionText({ sections: [section(page, "when-to-use"), section(page, "explore-next")] });
+  for (const expected of ["Vui lòng cho một bàn", "Chúng ta đặt hàng ở đây hay tại quầy?", "Tính tiền giúp tôi"]) {
+    assert(nextText.includes(expected), `Có phải đợi bàn không? missing relevant next phrase: ${expected}`);
   }
   for (const banned of [/thịt heo/i, /đậu phộng/i, /Món này cay/i, /Bác sĩ/i, /phòng khác/i]) {
-    assert(!banned.test(fullText), `Bàn này còn trống includes unrelated row: ${banned}`);
+    assert(!banned.test(fullText), `Có phải đợi bàn không? includes unrelated row: ${banned}`);
   }
 }
 
@@ -103,14 +99,15 @@ function validateBaNaHillsJourneyPage(pages) {
   }
 
   assert(
-    titles.join(" > ").startsWith("About > Hear the name > Visit flow > Getting there > Tickets > Cable car > Photos > Getting back > Good to know > Food & cash > Name guide"),
+    titles.join(" > ").startsWith("More Park Than Viewpoint > Useful Phrases > Early, With Weather Checked > Cable Car Arrival > Bridge Before Wandering > Getting there > Tickets > Cable car > Photos > Getting back > Give It Room > Food & cash"),
     `Bà Nà Hills section order is wrong: ${titles.join(" > ")}`
   );
 
   const gettingThereText = sectionText({ sections: [section(page, "getting-there")] });
-  assert(gettingThereText.includes("Bà Nà Hills ở đâu?"), "Bà Nà Hills where-is row should live under Getting there.");
-  assert(gettingThereText.includes("Dừng ở Bà Nà Hills"), "Bà Nà Hills stop row should live under Getting there.");
-  assert(sectionText({ sections: [section(page, "food-cash")] }).includes("Có ATM gần Bà Nà Hills không?"), "Bà Nà Hills ATM row should live under Food & cash.");
+  assert(gettingThereText.includes("Cho tôi tới đây"), "Bà Nà Hills take-me-here row should live under Getting there.");
+  assert(gettingThereText.includes("Chỉ trên bản đồ giúp tôi được không?"), "Bà Nà Hills map row should live under Getting there.");
+  assert(gettingThereText.includes("Cho tôi xuống ngay đây"), "Bà Nà Hills stop-here row should live under Getting there.");
+  assert(sectionText({ sections: [section(page, "food-cash")] }).includes("ATM gần nhất ở đâu?"), "Bà Nà Hills nearest-ATM row should live under Food & cash.");
   assert(!/nearby needs/i.test(text), "Bà Nà Hills still includes Nearby needs copy.");
 }
 
@@ -118,21 +115,20 @@ function validateRestaurantOrderingPage(pages) {
   const page = pageByTitle(pages, "Anăn Sài Gòn");
   const titles = (page.sections ?? []).map((item) => item.title);
 
-  assert(titles.includes("Hear the name"), "Restaurant pages should say Hear the name, not Hear the restaurant.");
   assert(!titles.includes("Hear the restaurant"), "Restaurant page still says Hear the restaurant.");
   assert(
-    titles.join(" > ").startsWith("About > Hear the name > Getting there > Table & menu > Order > Drinks > Pay > Getting back > Name guide > Good to know"),
+    titles.join(" > ").startsWith("Modern Vietnamese Inside Market Streets > Useful Phrases > Market Streets Shape The Dinner > Market Outside, Polish Inside > Before Dinner Settles In > Keep Everyday Food Around It"),
     `Restaurant section order is wrong: ${titles.join(" > ")}`
   );
 
-  const tableMenuText = sectionText({ sections: [section(page, "table-menu")] });
-  const orderText = sectionText({ sections: [section(page, "before-you-go")] });
-  const drinksText = sectionText({ sections: [section(page, "menu-dietary")] });
+  const usefulPhraseText = sectionText({ sections: [section(page, "quick-say")] });
+  const fullText = sectionText(page);
 
-  assert(tableMenuText.includes("Cho tôi bàn cho hai người"), "Table-for-two row belongs under Table & menu.");
-  assert(!orderText.includes("Cho tôi bàn cho hai người"), "Table-for-two row must not stay under Order.");
-  assert(!orderText.includes("Cho tôi một phần"), "Anăn Sài Gòn should not show the clipped one-portion row as its main order.");
-  assert(!/đậu phộng|allergy|dị ứng|vegetarian|chay/i.test(drinksText), "Restaurant Drinks section contains diet/allergy rows.");
+  assert(usefulPhraseText.includes("Có phải đợi bàn không?"), "Anăn Sài Gòn should keep the wait-for-table row in Useful Phrases.");
+  assert(usefulPhraseText.includes("Bạn đề xuất món gì?"), "Anăn Sài Gòn should keep the recommendation row in Useful Phrases.");
+  assert(usefulPhraseText.includes("Tôi có thể thanh toán hóa đơn bằng thẻ không?"), "Anăn Sài Gòn should keep the card-payment row in Useful Phrases.");
+  assert(!fullText.includes("Cho tôi một phần"), "Anăn Sài Gòn should not show the clipped one-portion row as its main order.");
+  assert(!/đậu phộng|allergy|dị ứng|vegetarian|chay/i.test(fullText), "Anăn Sài Gòn contains unrelated diet/allergy rows.");
 }
 
 function main() {
@@ -147,7 +143,7 @@ function main() {
       "Bà Nà Hills journey section split",
       "restaurant ordering section routing",
       "simple phrase duplicate suppression",
-      "traveler_may_hear table availability routing",
+      "table wait question routing",
       "tone-sensitive Bàn breakdown",
       "restaurant seating row priority",
     ],

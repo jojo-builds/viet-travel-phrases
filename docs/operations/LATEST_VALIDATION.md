@@ -19,7 +19,7 @@ Current `main` evidence after merging `codex/phrase-copy-production-gate`, based
 - paywall remained excluded; `git cherry -v main feature/paywall` still shows the paywall setup/skeleton commits as unmerged
 - visible copy recommendation: `PASS`
 - merge/release recommendation: `PASS_WITH_ACCEPTED_RISKS`
-- premium visible-copy audit on merged `main`: `1793` pages, `0` `HARD_REVIEW`, `0` `WEAK_REVIEW`, `0` `WATCH`, `1793` `PASS`
+- premium visible-copy audit after the derived place-phrase copy-floor follow-up: `1793` pages, `0` `HARD_REVIEW`, `0` `WEAK_REVIEW`, `148` `WATCH`, `1645` `PASS`; the earlier zero-watch receipt remains historical because the follow-up tightened derived helper-page scrutiny
 - subagent review gates: Euclid returned focused copy `PASS`; Noether returned `MERGE_OK_ACCEPT_RISK` for source/render card parity
 - accepted source/render parity risk on merged `main`: `319` mismatch rows, `201` page mismatches, `57` unique source-card missing rows, `262` section layout diff rows, `0` hard-block rows, recommendation `REVISE_BEFORE_PRODUCTION`; accepted as runtime/source-card curation bookkeeping, not visible-copy failure
 - anti-thinning evidence remains branch-local: `882` ledger rows across `613` unique edited page IDs, including `20` Batch 48 rows and `4` Batch 49 rows
@@ -27,7 +27,7 @@ Current `main` evidence after merging `codex/phrase-copy-production-gate`, based
 
 Fresh command evidence from merged `main`:
 
-- `node native-ios/scripts/audit-viet-premium-listing-copy.js` passed: `1793` pages, `0` hard, `0` weak, `0` watch, `1793` pass
+- `node native-ios/scripts/audit-viet-premium-listing-copy.js` completed: `1793` pages, `0` hard, `0` weak, `148` watch, `1645` pass
 - `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed: SQLite OK, `1793` canonical pages, `11728` relations, `0` release-blocking missing-audio rows, `778` planned missing-audio rows
 - `node native-ios/scripts/audit-viet-listing-production-qa.js` passed: `1793` pages, `0` blockers, `0` majors, `775` duplicate hero sections hidden at render time, `500` missing-audio priority rows
 - `node native-ios/scripts/validate-tier-one-listing-pages.js` passed: `150 / 150` strong
@@ -63,6 +63,24 @@ Follow-up on top of `main` commit `51f229b86`, continuing thread `019ea562-0e44-
 - remaining accepted follow-up: compact derived city phrase pages expose sparse main player chrome and at least one `audio not available yet` breakdown accessibility label; this is audio/accessibility debt, not a visible-copy blocker for this rendered copy gate
 - final rendered-copy verdict for the `25`-page sample: `PASS_WITH_FOLLOW_UPS`, with no remaining visible-copy blocker after the hero title line-limit fix
 - `git diff --check` passed after the fix
+
+## Derived Place Phrase Copy Floor Follow-Up
+
+Follow-up on `main` after screenshot review of `viet-family-city-danang-where-nen`:
+
+- root cause: derived place-phrase pages were treated as compact helper pages and allowed to render only `Break it down`, `Related phrases`, and `Tip`; the premium copy audit skipped their thin-page floor because they are `city-v1`
+- scope found before fix: `306 / 306` derived place-phrase pages had no first-copy `at-glance` body, and the tightened all-page copy audit correctly raised `306` `HARD_REVIEW` rows before regeneration
+- generator fix: derived place-phrase pages now render `At a glance` first, then `Break it down`, `Related phrases`, and `Tip`; derived tips now prefer authored traveler tips over source `context` so source notes like `A compact direction question...` do not surface
+- validator fix: production QA, premium copy audit, city-library validation, and the intent-routing validator now require the derived-page copy floor instead of forbidding it
+- generated resources refreshed: `native-ios/Resources/viet-authored-listing-pages.json` and the Viet SQLite fixture/report were regenerated from the updated authored listing payload
+- direct resource proof after fix: `306` derived place-phrase pages, `0` missing or misordered `at-glance` copy sections
+- `node native-ios/scripts/audit-viet-listing-production-qa.js --check` passed: `1793` pages, `0` blockers, `0` majors
+- `node native-ios/scripts/audit-viet-premium-listing-copy.js` completed: `0` `HARD_REVIEW`, `0` `WEAK_REVIEW`, `148` `WATCH`, `1645` `PASS`; remaining watch rows are repeated helper-copy taste debt, not missing-copy blockers
+- `node native-ios/scripts/validate-viet-city-library.js` passed: `826` pages
+- `node native-ios/scripts/validate-viet-listing-intent-routing.js` passed after updating stale Bà Nà, Anăn, recovery, and table-wait expectations to current resource truth
+- `node native-ios/scripts/generate-viet-sqlite-fixture.js` passed: SQLite integrity OK, `1793` pages
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed: `1793` canonical pages, `11728` relations, `0` release-blocking missing-audio rows, `778` planned missing-audio rows
+- `node native-ios/scripts/validate-tier-one-listing-pages.js`, `node native-ios/scripts/validate-viet-city-app-detail-v2-2.js`, `node native-ios/scripts/validate-viet-breakdown-audit.js`, `node scripts/guard-native-only.js`, and `git diff --check` passed
 
 ## Branch-Local Phrase Copy Production Gate
 

@@ -6,368 +6,368 @@ This audit is intentionally stricter than production QA. It flags copy that pass
 
 - HARD_REVIEW: 0
 - WEAK_REVIEW: 0
-- WATCH: 0
-- PASS: 1793
+- WATCH: 148
+- PASS: 1645
 
 ## Top Review Queue
 
-### PASS 4 - Yes / there is
-
-- pageID: `viet-acknowledge-co`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-co.json`
-- cards: 7 phrase, 1 breakdown
-- issues: `body_repeated_8_plus`
-- sample: when-to-use: repeated 11 times
-
-### PASS 4 - Yes / polite acknowledgment
-
-- pageID: `viet-acknowledge-da`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da.json`
-- cards: 8 phrase, 1 breakdown
-- issues: `body_repeated_8_plus`
-- sample: good-to-know: repeated 8 times
-
-### PASS 4 - Yes / correct
-
-- pageID: `viet-acknowledge-dung`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-dung.json`
-- cards: 7 phrase, 1 breakdown
-- issues: `body_repeated_8_plus`
-- sample: good-to-know: repeated 8 times
-
-### PASS 4 - Okay / that works
-
-- pageID: `viet-acknowledge-duoc`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-duoc.json`
-- cards: 7 phrase, 1 breakdown
-- issues: `body_repeated_8_plus`
-- sample: good-to-know: repeated 8 times
-
-### PASS 4 - No
-
-- pageID: `viet-acknowledge-khong`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-khong.json`
-- cards: 6 phrase, 1 breakdown
-- issues: `body_repeated_8_plus`
-- sample: when-to-use: repeated 8 times
-
-### PASS 4 - Respectful hello to an elderly woman
-
-- pageID: `viet-da-chao-ba`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da-chao-ba.json`
-- cards: 6 phrase, 4 breakdown
-- issues: `body_repeated_8_plus`
-- sample: when-to-use: repeated 11 times
-
-### PASS 4 - Respectful hello to an older woman
-
-- pageID: `viet-da-chao-chi`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da-chao-chi.json`
-- cards: 7 phrase, 4 breakdown
-- issues: `body_repeated_8_plus`
-- sample: when-to-use: repeated 8 times
-
-### PASS 4 - Respectful hello to an uncle-age man
-
-- pageID: `viet-da-chao-chu`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da-chao-chu.json`
-- cards: 7 phrase, 4 breakdown
-- issues: `body_repeated_8_plus`
-- sample: when-to-use: repeated 8 times
-
-### PASS 4 - Respectful hello to an elderly man
-
-- pageID: `viet-da-chao-ong`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da-chao-ong.json`
-- cards: 6 phrase, 4 breakdown
-- issues: `body_repeated_8_plus`
-- sample: when-to-use: repeated 8 times
-
-### PASS 4 - Where is baggage claim?
-
-- pageID: `viet-family-airport-baggage`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-baggage.json`
-- cards: 8 phrase, 4 breakdown
-- issues: `body_repeated_8_plus`
-- sample: breakdown: repeated 16 times
-
-### PASS 4 - Where is immigration?
-
-- pageID: `viet-family-airport-immigration`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-immigration.json`
-- cards: 8 phrase, 3 breakdown
-- issues: `body_repeated_8_plus`
-- sample: breakdown: repeated 16 times
-
-### PASS 4 - Where is the pickup area?
-
-- pageID: `viet-family-airport-pickup`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-pickup.json`
-- cards: 9 phrase, 3 breakdown
-- issues: `body_repeated_8_plus`
-- sample: breakdown: repeated 16 times
-
-### PASS 4 - Where can I buy a SIM card?
-
-- pageID: `viet-family-airport-sim`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-sim.json`
-- cards: 8 phrase, 4 breakdown
-- issues: `body_repeated_8_plus`
-- sample: breakdown: repeated 16 times
-
-### PASS 4 - Where is the bathroom?
-
-- pageID: `viet-family-bathroom-where`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/bathroom-personal-needs/bathroom-where.json`
-- cards: 6 phrase, 3 breakdown
-- issues: `body_repeated_8_plus`
-- sample: breakdown: repeated 16 times
-
-### PASS 4 - Where do I turn left?
-
-- pageID: `viet-family-directions-turn-left`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/directions-navigation/directions-turn-left.json`
-- cards: 8 phrase, 3 breakdown
-- issues: `body_repeated_8_plus`
-- sample: breakdown: repeated 16 times
-
-### PASS 4 - I’d like an iced bạc xỉu
-
-- pageID: `viet-family-food-coffee-bac-xiu`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/food-drink/food-coffee-bac-xiu.json`
-- cards: 11 phrase, 5 breakdown
-- issues: `body_repeated_8_plus`
-- sample: traveler-insight: repeated 8 times
-
-### PASS 4 - I’d like an iced black coffee
-
-- pageID: `viet-family-food-coffee-black`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/food-drink/food-coffee-black.json`
-- cards: 11 phrase, 5 breakdown
-- issues: `body_repeated_8_plus`
-- sample: traveler-insight: repeated 8 times
-
-### PASS 4 - One iced milk coffee please
-
-- pageID: `viet-family-food-coffee-milk`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/food-drink/food-coffee-milk.json`
-- cards: 11 phrase, 5 breakdown
-- issues: `body_repeated_8_plus`
-- sample: traveler-insight: repeated 8 times
-
-### PASS 4 - More herbs please
-
-- pageID: `viet-family-food-more-herbs`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/food-drink/food-more-herbs.json`
-- cards: 13 phrase, 4 breakdown
-- issues: `body_repeated_8_plus`
-- sample: traveler-insight: repeated 8 times
-
-### PASS 4 - A table for two, please
-
-- pageID: `viet-family-food-need-table`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/food-drink/food-need-table.json`
-- cards: 14 phrase, 5 breakdown
-- issues: `body_repeated_8_plus`
-- sample: traveler-insight: repeated 8 times
-
-### PASS 4 - Where is the nearest ATM?
-
-- pageID: `viet-family-money-find-atm`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/money-numbers-prices/money-find-atm.json`
-- cards: 9 phrase, 4 breakdown
-- issues: `body_repeated_8_plus`
-- sample: breakdown: repeated 16 times
-
-### PASS 4 - It’s okay
-
-- pageID: `viet-family-polite-its-okay`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/polite-basics/polite-its-okay.json`
-- cards: 22 phrase, 3 breakdown
-- issues: `body_repeated_8_plus`
-- sample: when-to-use: repeated 8 times
-
-### PASS 4 - Please open this for me
-
-- pageID: `viet-family-service-open-this`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/local-services-everyday-tasks/service-open-this.json`
-- cards: 8 phrase, 6 breakdown
-- issues: `body_repeated_8_plus`
-- sample: traveler-insight: repeated 8 times
-
-### PASS 4 - Please give me the receipt
-
-- pageID: `viet-family-service-receipt`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/local-services-everyday-tasks/service-receipt.json`
-- cards: 8 phrase, 4 breakdown
-- issues: `body_repeated_8_plus`
-- sample: traveler-insight: repeated 8 times
-
-### PASS 4 - Where do I pay?
-
-- pageID: `viet-family-shopping-pay-where`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/shopping/shopping-pay-where.json`
-- cards: 7 phrase, 3 breakdown
-- issues: `body_repeated_8_plus`
-- sample: breakdown: repeated 16 times
-
-### PASS 4 - I want this size
-
-- pageID: `viet-family-shopping-size`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/shopping/shopping-size.json`
-- cards: 7 phrase, 5 breakdown
-- issues: `body_repeated_8_plus`
-- sample: traveler-insight: repeated 8 times
-
-### PASS 4 - Where is the meeting point?
-
-- pageID: `viet-family-sight-meeting-point`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/sightseeing-activities/sight-meeting-point.json`
-- cards: 6 phrase, 4 breakdown
-- issues: `body_repeated_8_plus`
-- sample: breakdown: repeated 16 times
-
-### PASS 4 - Where do we start?
-
-- pageID: `viet-family-sight-start`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/sightseeing-activities/sight-start.json`
-- cards: 6 phrase, 3 breakdown
-- issues: `body_repeated_8_plus`
-- sample: breakdown: repeated 16 times
-
-### PASS 4 - Where is the ATM?
-
-- pageID: `viet-family-v500-airp-bord-arri-where-is-the-atm`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/airport-border-arrival/v500-airp-bord-arri-where-is-the-atm.json`
-- cards: 8 phrase, 3 breakdown
-- issues: `body_repeated_8_plus`
-- sample: breakdown: repeated 16 times
-
-### PASS 4 - Where is the nearest restroom?
-
-- pageID: `viet-family-v500-dire-navi-where-is-the-nearest-restroom`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/directions-navigation/v500-dire-navi-where-is-the-nearest-restroom.json`
-- cards: 8 phrase, 4 breakdown
-- issues: `body_repeated_8_plus`
-- sample: breakdown: repeated 16 times
-
-### PASS 4 - Where can I buy water?
-
-- pageID: `viet-family-v500-loca-serv-ever-task-where-can-i-buy-water`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/local-services-everyday-tasks/v500-loca-serv-ever-task-where-can-i-buy-water.json`
-- cards: 8 phrase, 6 breakdown
-- issues: `body_repeated_8_plus`
-- sample: breakdown: repeated 16 times
-
-### PASS 4 - Where can I get a local SIM card?
-
-- pageID: `viet-family-v500-phon-inte-powe-where-can-i-get-a-local-sim-card`
-- tierRole: `tier1`
-- source: `content-draft/viet/canonical-pages/tier-one/phone-internet-power/v500-phon-inte-powe-where-can-i-get-a-local-sim-card.json`
-- cards: 8 phrase, 6 breakdown
-- issues: `body_repeated_8_plus`
-- sample: breakdown: repeated 16 times
-
-### PASS 4 - Hello on the phone
-
-- pageID: `viet-hello-alo`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-alo.json`
-- cards: 7 phrase, 1 breakdown
-- issues: `body_repeated_8_plus`
-- sample: good-to-know: repeated 8 times
-
-### PASS 4 - Hi / hello
-
-- pageID: `viet-hello-chao`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao.json`
-- cards: 7 phrase, 1 breakdown
-- issues: `body_repeated_8_plus`
-- sample: good-to-know: repeated 8 times
-
-### PASS 4 - Hello to an older man
-
-- pageID: `viet-hello-chao-anh`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao-anh.json`
-- cards: 7 phrase, 3 breakdown
-- issues: `body_repeated_8_plus`
-- sample: when-to-use: repeated 8 times
-
-### PASS 4 - Hello to an elderly woman
-
-- pageID: `viet-hello-chao-ba`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao-ba.json`
+### WATCH 7 - Is there an ATM near Da Nang Airport?
+
+- pageID: `viet-family-city-danang-atm-airport`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 6 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 32 times
+
+### WATCH 7 - Is there an ATM near Bach Dang Street?
+
+- pageID: `viet-family-city-danang-atm-bach-dang-street`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 6 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 32 times
+
+### WATCH 7 - Is there an ATM near Con Market?
+
+- pageID: `viet-family-city-danang-atm-con-market`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 6 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 32 times
+
+### WATCH 7 - Is there an ATM near Han Market?
+
+- pageID: `viet-family-city-danang-atm-han-market`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 6 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 32 times
+
+### WATCH 7 - Is there an ATM near Helio Night Market?
+
+- pageID: `viet-family-city-danang-atm-helio-night-market`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 6 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 32 times
+
+### WATCH 7 - Go to Da Nang Airport
+
+- pageID: `viet-family-city-danang-go-airport`
+- tierRole: `city-v1`
+- source: `unknown`
 - cards: 5 phrase, 3 breakdown
-- issues: `body_repeated_8_plus`
-- sample: when-to-use: repeated 8 times
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
 
-### PASS 4 - Hi there / hello friend
+### WATCH 7 - Go to Con Market
 
-- pageID: `viet-hello-chao-ban`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao-ban.json`
-- cards: 7 phrase, 3 breakdown
-- issues: `body_repeated_8_plus`
-- sample: when-to-use: repeated 8 times
-
-### PASS 4 - Hello to an older woman
-
-- pageID: `viet-hello-chao-chi`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao-chi.json`
-- cards: 7 phrase, 3 breakdown
-- issues: `body_repeated_8_plus`
-- sample: when-to-use: repeated 11 times
-
-### PASS 4 - Hello to an uncle-age man
-
-- pageID: `viet-hello-chao-chu`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao-chu.json`
+- pageID: `viet-family-city-danang-go-con-market`
+- tierRole: `city-v1`
+- source: `unknown`
 - cards: 5 phrase, 3 breakdown
-- issues: `body_repeated_8_plus`
-- sample: when-to-use: repeated 11 times
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
 
-### PASS 4 - Hello to an aunt-age woman
+### WATCH 7 - Go to Han Market
 
-- pageID: `viet-hello-chao-co`
-- tierRole: `catalog-promoted`
-- source: `content-draft/viet/canonical-pages/catalog-promoted/polite-basics/hello-chao-co.json`
+- pageID: `viet-family-city-danang-go-han-market`
+- tierRole: `city-v1`
+- source: `unknown`
 - cards: 5 phrase, 3 breakdown
-- issues: `body_repeated_8_plus`
-- sample: when-to-use: repeated 11 times
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Go to Helio Night Market
+
+- pageID: `viet-family-city-danang-go-helio-night-market`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Go to Nguyen Van Linh Street
+
+- pageID: `viet-family-city-danang-go-nguyen-van-linh-street`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 4 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Go to Da Nang Railway Station
+
+- pageID: `viet-family-city-danang-go-railway-station`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 2 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Go to Son Tra Night Market
+
+- pageID: `viet-family-city-danang-go-son-tra-night-market`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 3 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Go to Tien Sa Port
+
+- pageID: `viet-family-city-danang-go-tien-sa-port`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 4 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Go to Vo Nguyen Giap Street
+
+- pageID: `viet-family-city-danang-go-vo-nguyen-giap-street`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 3 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Is Bach Dang Street near here?
+
+- pageID: `viet-family-city-danang-near-bach-dang-street`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 4 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 26 times
+
+### WATCH 7 - Is Con Market near here?
+
+- pageID: `viet-family-city-danang-near-con-market`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 4 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 26 times
+
+### WATCH 7 - Is Han Market near here?
+
+- pageID: `viet-family-city-danang-near-han-market`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 4 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 26 times
+
+### WATCH 7 - Is Helio Night Market near here?
+
+- pageID: `viet-family-city-danang-near-helio-night-market`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 4 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 26 times
+
+### WATCH 7 - Is Nguyen Van Linh Street near here?
+
+- pageID: `viet-family-city-danang-near-nguyen-van-linh-street`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 4 phrase, 4 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 26 times
+
+### WATCH 7 - Is Son Tra Night Market near here?
+
+- pageID: `viet-family-city-danang-near-son-tra-night-market`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 3 phrase, 4 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 26 times
+
+### WATCH 7 - Is Vo Nguyen Giap Street near here?
+
+- pageID: `viet-family-city-danang-near-vo-nguyen-giap-street`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 3 phrase, 4 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 26 times
+
+### WATCH 7 - Stop at Da Nang Airport
+
+- pageID: `viet-family-city-danang-stop-airport`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Stop at Bach Dang Street
+
+- pageID: `viet-family-city-danang-stop-bach-dang-street`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Stop at Con Market
+
+- pageID: `viet-family-city-danang-stop-con-market`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Stop at Helio Night Market
+
+- pageID: `viet-family-city-danang-stop-helio-night-market`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Stop at Nguyen Van Linh Street
+
+- pageID: `viet-family-city-danang-stop-nguyen-van-linh-street`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 4 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Stop at Da Nang Railway Station
+
+- pageID: `viet-family-city-danang-stop-railway-station`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 2 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Is there an ATM near Bun Cha Huong Lien?
+
+- pageID: `viet-family-city-hanoi-atm-bun-cha-huong-lien`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 6 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 32 times
+
+### WATCH 7 - Is there an ATM near Cha Ca Thang Long?
+
+- pageID: `viet-family-city-hanoi-atm-cha-ca-thang-long`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 6 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 32 times
+
+### WATCH 7 - Is there an ATM near Dong Xuan Market?
+
+- pageID: `viet-family-city-hanoi-atm-dong-xuan-market`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 6 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 32 times
+
+### WATCH 7 - Is there an ATM near Giang Cafe?
+
+- pageID: `viet-family-city-hanoi-atm-giang-cafe`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 6 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 32 times
+
+### WATCH 7 - Is there an ATM near Hang Bac Street?
+
+- pageID: `viet-family-city-hanoi-atm-hang-bac-street`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 6 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 32 times
+
+### WATCH 7 - Is there an ATM near Hang Gai Street?
+
+- pageID: `viet-family-city-hanoi-atm-hang-gai-street`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 6 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 32 times
+
+### WATCH 7 - Is there an ATM near Long Bien Market?
+
+- pageID: `viet-family-city-hanoi-atm-long-bien-market`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 6 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 32 times
+
+### WATCH 7 - Go to Dong Xuan Market
+
+- pageID: `viet-family-city-hanoi-go-dong-xuan-market`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Go to Giang Cafe
+
+- pageID: `viet-family-city-hanoi-go-giang-cafe`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Go to Hang Bac Street
+
+- pageID: `viet-family-city-hanoi-go-hang-bac-street`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Go to Hang Gai Street
+
+- pageID: `viet-family-city-hanoi-go-hang-gai-street`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Go to Long Bien Market
+
+- pageID: `viet-family-city-hanoi-go-long-bien-market`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 5 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
+
+### WATCH 7 - Go to Noi Bai Airport
+
+- pageID: `viet-family-city-hanoi-go-noi-bai-airport`
+- tierRole: `city-v1`
+- source: `unknown`
+- cards: 3 phrase, 3 breakdown
+- issues: `body_repeated_20_plus`
+- sample: good-to-know: repeated 45 times
 
