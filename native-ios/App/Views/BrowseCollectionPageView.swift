@@ -1511,7 +1511,7 @@ private struct BrowseCollectionMessageEntryCard: View {
     var body: some View {
         Button(action: onPractice) {
             HStack(spacing: 14) {
-                Image(systemName: "waveform")
+                Image(systemName: "square.grid.2x2.fill")
                     .font(.title3.weight(.bold))
                     .foregroundStyle(.white)
                     .frame(width: 58, height: 58)
@@ -1531,12 +1531,12 @@ private struct BrowseCollectionMessageEntryCard: View {
                 }
                 .layoutPriority(1)
 
-                Text("Practice")
-                    .font(.caption.weight(.black))
+                Image(systemName: "play.fill")
+                    .font(.subheadline.weight(.black))
                     .foregroundStyle(.red)
-                    .padding(.horizontal, 14)
-                    .frame(height: 38)
-                    .nativeGlass(cornerRadius: 19, interactive: true)
+                    .frame(width: 44, height: 44)
+                    .nativeGlass(cornerRadius: 22, interactive: true)
+                    .accessibilityHidden(true)
             }
             .padding(14)
             .phraseListCard(cornerRadius: 24)

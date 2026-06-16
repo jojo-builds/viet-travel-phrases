@@ -330,18 +330,56 @@ final class PracticeNativeMVPTests: XCTestCase {
         let firstRound = session.round
 
         session.matchedPairIDs = Set(firstRound.pairs.map(\.id))
+        session.selectedPromptID = firstRound.prompts.first?.id
+        session.selectedAnswerID = firstRound.answers.first?.id
+        session.incorrectPromptID = firstRound.prompts.last?.id
+        session.incorrectAnswerID = firstRound.answers.last?.id
+        session.hintedPairID = firstRound.pairs.first?.id
 
         XCTAssertTrue(session.advanceToNextRound(rng: &nextGenerator))
         XCTAssertEqual(session.roundIndex, 1)
         XCTAssertNotEqual(session.round.id, firstRound.id)
         XCTAssertTrue(session.matchedPairIDs.isEmpty)
+        XCTAssertNil(session.selectedPromptID)
+        XCTAssertNil(session.selectedAnswerID)
+        XCTAssertNil(session.incorrectPromptID)
+        XCTAssertNil(session.incorrectAnswerID)
+        XCTAssertNil(session.hintedPairID)
         XCTAssertTrue(session.canReturnToPreviousRound)
         XCTAssertTrue(Set(session.round.pairs.map(\.id)).isDisjoint(with: Set(firstRound.pairs.map(\.id))))
+
+        session.selectedPromptID = session.round.prompts.first?.id
+        session.selectedAnswerID = session.round.answers.first?.id
+        session.incorrectPromptID = session.round.prompts.last?.id
+        session.incorrectAnswerID = session.round.answers.last?.id
+        session.hintedPairID = session.round.pairs.first?.id
 
         XCTAssertTrue(session.returnToPreviousRound())
         XCTAssertEqual(session.roundIndex, 0)
         XCTAssertEqual(session.round, firstRound)
         XCTAssertTrue(session.matchedPairIDs.isEmpty)
+        XCTAssertNil(session.selectedPromptID)
+        XCTAssertNil(session.selectedAnswerID)
+        XCTAssertNil(session.incorrectPromptID)
+        XCTAssertNil(session.incorrectAnswerID)
+        XCTAssertNil(session.hintedPairID)
+    }
+
+    func testEveryLoadedMatchSourceCanAdvancePastFirstCompletedRound() throws {
+        let snapshot = try PracticeMatchSnapshot.load(practicePageIDs: [], savedPageIDs: [])
+
+        for source in snapshot.sources where source.canStart {
+            var generator = SeededPracticeRandomNumberGenerator(seed: 41)
+            var session = try XCTUnwrap(PracticeMatchActiveSession(source: source, rng: &generator), source.id)
+            session.matchedPairIDs = Set(session.round.pairs.map(\.id))
+
+            XCTAssertTrue(
+                session.advanceToNextRound(rng: &generator),
+                "\(source.id) should advance to a second match round."
+            )
+            XCTAssertFalse(session.isRoundComplete, "\(source.id) should reset matched state for the next round.")
+            XCTAssertEqual(session.roundIndex, 1, "\(source.id) should move to round index 1.")
+        }
     }
 
     func testPracticeMatchPresentationUsesNativeSheetContract() {
@@ -475,7 +513,12 @@ final class PracticeNativeMVPTests: XCTestCase {
                 usesPhotoBackdrop: true,
                 topContentClearance: 132
             ),
-            18,
+            0,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            PracticeMatchHubLayout.sectionSpacing(usesPhotoBackdrop: true),
+            10,
             accuracy: 0.001
         )
         XCTAssertEqual(
@@ -484,6 +527,11 @@ final class PracticeNativeMVPTests: XCTestCase {
                 topContentClearance: 132
             ),
             154,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            PracticeMatchHubLayout.sectionSpacing(usesPhotoBackdrop: false),
+            22,
             accuracy: 0.001
         )
     }

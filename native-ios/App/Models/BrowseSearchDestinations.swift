@@ -1216,8 +1216,8 @@ enum BrowseSearchDestinations {
             subcategories: [],
             starterTitle: starterTitle(for: id),
             starterItems: [],
-            practiceTitle: messageEntryTitle(for: title),
-            practiceSubtitle: practiceSubtitle(for: title),
+            practiceTitle: practiceEntryTitle(for: id, title: title),
+            practiceSubtitle: practiceSubtitle(for: id),
             practiceAction: .addStarterPages([]),
             messageSectionTitle: categoryMessageSectionTitle(for: id, title: title),
             exploreShelves: []
@@ -1303,8 +1303,8 @@ enum BrowseSearchDestinations {
             subcategories: subcategories,
             starterTitle: entityContent?.starterTitle ?? starterTitle(for: id),
             starterItems: starterItems,
-            practiceTitle: messageEntryTitle(for: title),
-            practiceSubtitle: practiceSubtitle(for: title),
+            practiceTitle: practiceEntryTitle(for: id, title: title),
+            practiceSubtitle: practiceSubtitle(for: id),
             practiceAction: categoryPracticeAction(for: id, starterPageIDs: practiceStarterItems.map(\.pageID)),
             messageSectionTitle: categoryMessageSectionTitle(for: id, title: title),
             exploreShelves: shelves
@@ -2694,15 +2694,25 @@ enum BrowseSearchDestinations {
         }
     }
 
-    private static func practiceSubtitle(for title: String) -> String {
-        if title == "Shopping" {
-            return "Prices, sizes, payment, and returns."
+    private static func practiceSubtitle(for id: String) -> String {
+        switch id {
+        case "first-day":
+            return "Match airport, hotel, and transport phrases."
+        case "airport":
+            return "Match airport arrival and transit phrases."
+        case "food":
+            return "Match food, coffee, and ordering phrases."
+        case "hotel":
+            return "Match check-in and hotel-desk phrases."
+        case "getting-around", "transport":
+            return "Match taxi, directions, and transport phrases."
+        case "shopping":
+            return "Match prices, sizes, payment, and return phrases."
+        case "emergency":
+            return "Match calm help phrases."
+        default:
+            return "Match useful phrases from this collection."
         }
-        if title == "Emergency" {
-            return "Ask for help calmly."
-        }
-
-        return "A quick \(title.lowercased()) conversation."
     }
 
     private static func categoryPracticeAction(for id: String, starterPageIDs: [String]) -> BrowseCollectionPracticeAction {
@@ -2714,8 +2724,13 @@ enum BrowseSearchDestinations {
         }
     }
 
-    private static func messageEntryTitle(for title: String) -> String {
-        "\(title) messages"
+    private static func practiceEntryTitle(for id: String, title: String) -> String {
+        switch id {
+        case "first-day":
+            return "First day practice"
+        default:
+            return "\(title) practice"
+        }
     }
 
     private static func cityPracticeTitle(for id: String, title: String) -> String {
