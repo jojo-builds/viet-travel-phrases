@@ -2563,7 +2563,15 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(BrowsePageLayout.bottomContentClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
         XCTAssertEqual(SearchPageLayout.resultsBottomClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
         XCTAssertEqual(SavedTripLayout.bottomContentClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
-        XCTAssertEqual(PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
+        XCTAssertGreaterThan(
+            PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: true),
+            AppBottomContentClearance.photoBackdropRoot
+        )
+        XCTAssertEqual(
+            PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: true),
+            AppBottomContentClearance.photoBackdropRoot + PracticeMatchHubLayout.photoBackdropLaunchScrollSlack,
+            accuracy: 0.001
+        )
         XCTAssertGreaterThan(
             AppBottomContentClearance.photoBackdropRoot,
             PhrasePhotoBackdropLayout.bottomReadingClearance
@@ -3662,6 +3670,23 @@ final class AppChromeTests: XCTestCase {
             + firstDayCoreSubcategories.map(\.title)
         XCTAssertFalse(visibleLabels.contains { $0.localizedCaseInsensitiveContains("repair") })
         XCTAssertTrue(visibleLabels.allSatisfy { $0.count <= 10 })
+    }
+
+    func testCategoryPracticeEntryCopyDescribesMatchPractice() {
+        let firstDay = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("first-day")))
+        let food = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("food")))
+        let airport = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport")))
+
+        XCTAssertEqual(firstDay.practiceTitle, "First day practice")
+        XCTAssertEqual(firstDay.practiceSubtitle, "Match airport, hotel, and transport phrases.")
+        XCTAssertEqual(food.practiceTitle, "Eating Out practice")
+        XCTAssertEqual(food.practiceSubtitle, "Match food, coffee, and ordering phrases.")
+        XCTAssertEqual(airport.practiceTitle, "Airport practice")
+        XCTAssertEqual(airport.practiceSubtitle, "Match airport arrival and transit phrases.")
+        XCTAssertFalse([firstDay, food, airport].contains { descriptor in
+            descriptor.practiceTitle.localizedCaseInsensitiveContains("message")
+                || descriptor.practiceSubtitle.localizedCaseInsensitiveContains("conversation")
+        })
     }
 
     func testSearchOnlyPhraseSurfacingAddsBrowsableSectionsForAll315Rows() {
