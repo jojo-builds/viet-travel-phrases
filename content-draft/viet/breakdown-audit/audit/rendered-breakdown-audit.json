@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-06-10T22:32:15.174Z",
-  "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/content-draft/viet/breakdown-audit/pages",
+  "generatedAt": "2026-06-16T03:38:22.823Z",
+  "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/launch-readiness-bug-hunt-20260616/content-draft/viet/breakdown-audit/pages",
   "summary": {
     "pages": 1793,
     "reviewed": 1407,
     "visualReviewed": 1407,
     "missing": 386,
-    "generatedAt": "2026-06-10T22:32:15.174Z"
+    "generatedAt": "2026-06-16T03:38:22.823Z"
   },
   "pages": [
     {
@@ -61680,7 +61680,7 @@
     {
       "pageID": "viet-how-are-you-anh",
       "phraseText": "Anh khỏe không?",
-      "englishTitle": "How are you, older man?",
+      "englishTitle": "How are you? (to an older man)",
       "reviewStatus": "reviewed",
       "visualReview": {
         "status": "reviewed",
@@ -61721,7 +61721,7 @@
         {
           "id": "full",
           "vietnamese": "Anh khỏe không?",
-          "english": "How are you, older man?",
+          "english": "How are you? (to an older man)",
           "audioKey": "audio-authored-anh-khoe-khong-942769853d"
         }
       ],
@@ -61750,7 +61750,7 @@
         {
           "id": "full",
           "vietnamese": "Anh khỏe không?",
-          "english": "How are you, older man?",
+          "english": "How are you? (to an older man)",
           "audioKey": "audio-authored-anh-khoe-khong-942769853d"
         }
       ]
@@ -61830,7 +61830,7 @@
     {
       "pageID": "viet-how-are-you-chi",
       "phraseText": "Chị khỏe không?",
-      "englishTitle": "How are you, older woman?",
+      "englishTitle": "How are you? (to an older woman)",
       "reviewStatus": "reviewed",
       "visualReview": {
         "status": "reviewed",
@@ -61868,7 +61868,7 @@
         {
           "id": "full",
           "vietnamese": "Chị khỏe không?",
-          "english": "How are you, older woman?",
+          "english": "How are you? (to an older woman)",
           "audioKey": "audio-authored-chi-khoe-khong-1483c77058"
         }
       ],
@@ -61894,7 +61894,7 @@
         {
           "id": "full",
           "vietnamese": "Chị khỏe không?",
-          "english": "How are you, older woman?",
+          "english": "How are you? (to an older woman)",
           "audioKey": "audio-authored-chi-khoe-khong-1483c77058"
         }
       ]
@@ -61902,7 +61902,7 @@
     {
       "pageID": "viet-how-are-you-em",
       "phraseText": "Em khỏe không?",
-      "englishTitle": "How are you, younger person?",
+      "englishTitle": "How are you? (to someone younger)",
       "reviewStatus": "reviewed",
       "visualReview": {
         "status": "reviewed",
@@ -61943,7 +61943,7 @@
         {
           "id": "full",
           "vietnamese": "Em khỏe không?",
-          "english": "How are you, younger person?",
+          "english": "How are you? (to someone younger)",
           "audioKey": "audio-phrase-em-khoe-khong"
         }
       ],
@@ -61972,7 +61972,7 @@
         {
           "id": "full",
           "vietnamese": "Em khỏe không?",
-          "english": "How are you, younger person?",
+          "english": "How are you? (to someone younger)",
           "audioKey": "audio-phrase-em-khoe-khong"
         }
       ]

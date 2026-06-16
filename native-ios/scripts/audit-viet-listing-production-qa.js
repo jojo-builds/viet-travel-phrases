@@ -127,23 +127,25 @@ function main() {
   const fallbackReport = buildFallbackTemplateReport(pages);
   const screenshotChecklist = buildScreenshotChecklist();
 
-  writeOutputs({
-    pages,
-    issues,
-    fixedProbeResults,
-    randomSample,
-    dataDuplicateHeroCount,
-    missingAudioPriority,
-    heroImageReport,
-    practiceMetadataSamples,
-    fallbackReport,
-    screenshotChecklist,
-  });
+  if (!checkMode) {
+    writeOutputs({
+      pages,
+      issues,
+      fixedProbeResults,
+      randomSample,
+      dataDuplicateHeroCount,
+      missingAudioPriority,
+      heroImageReport,
+      practiceMetadataSamples,
+      fallbackReport,
+      screenshotChecklist,
+    });
+  }
 
   const blockerCount = issues.filter((issue) => issue.severity === "BLOCKER").length;
   const majorCount = issues.filter((issue) => issue.severity === "MAJOR").length;
   const summaryLine = [
-    `Production QA audit wrote ${path.relative(repoRoot, outputRoot)}`,
+    `Production QA audit ${checkMode ? "checked" : "wrote"} ${path.relative(repoRoot, outputRoot)}`,
     `${pages.length} pages`,
     `${blockerCount} blockers`,
     `${majorCount} majors`,

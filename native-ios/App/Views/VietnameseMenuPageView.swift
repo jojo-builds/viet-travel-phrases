@@ -135,8 +135,11 @@ struct VietnameseMenuPageView: View {
                             .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
 
                         AppBottomSentinel(id: bottomSentinelID)
+                        AppBottomClearanceScrollTarget(
+                            sentinelID: bottomSentinelID,
+                            height: VietnameseMenuLayout.bottomContentClearance(usesPhotoBackdrop: false)
+                        )
                     }
-                    .padding(.bottom, VietnameseMenuLayout.bottomContentClearance(usesPhotoBackdrop: false))
                 }
                 .onPreferenceChange(VietnameseMenuSectionFramePreferenceKey.self) { frames in
                     updateCurrentSection(from: frames)
@@ -386,8 +389,12 @@ struct VietnameseMenuPageView: View {
 
             AppBottomSentinel(id: bottomSentinelID)
                 .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
+            AppBottomClearanceScrollTarget(
+                sentinelID: bottomSentinelID,
+                height: VietnameseMenuLayout.bottomContentClearance(usesPhotoBackdrop: true)
+            )
+                .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
         }
-        .padding(.bottom, VietnameseMenuLayout.bottomContentClearance(usesPhotoBackdrop: true))
         .background {
             UnevenRoundedRectangle(
                 cornerRadii: RectangleCornerRadii(

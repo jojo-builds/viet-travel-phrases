@@ -4223,9 +4223,9 @@ final class AppChromeTests: XCTestCase {
             ),
             (
                 "viet-family-city-hcmc-place-pasteur-street",
-                "One Doorway To Begin",
-                "one real doorway",
-                ["directions-1", "directions-3", "v500-dire-navi-can-i-walk-there"]
+                "A Street Of Doorways",
+                "real address",
+                ["v900-tran-please-take-me-to-this-address", "v500-unde-repa-can-you-write-the-address", "directions-3"]
             ),
             (
                 "viet-family-city-hanoi-place-loading-t-cafe",
@@ -4241,8 +4241,8 @@ final class AppChromeTests: XCTestCase {
             ),
             (
                 "viet-family-city-danang-place-3d-art-in-paradise",
-                "Photos Before Art",
-                "optical-illusion rooms",
+                "Indoor 3D Photo Museum",
+                "painted illusions",
                 ["sight-3", "time-5", "bath-1"]
             ),
             (
@@ -4253,8 +4253,8 @@ final class AppChromeTests: XCTestCase {
             ),
             (
                 "viet-family-city-hcmc-place-ben-thanh-market",
-                "Start With The Clock Tower",
-                "snack stalls",
+                "The First Market Name To Know",
+                "snack counters",
                 ["price-1", "price-4", "shop-4"]
             ),
             (
@@ -4265,8 +4265,8 @@ final class AppChromeTests: XCTestCase {
             ),
             (
                 "viet-family-city-hoian-place-ancient-town-ticket-booth",
-                "The Ticket Threshold",
-                "wandering turns into tickets",
+                "Ancient Town Ticket Booth",
+                "heritage houses",
                 ["sight-1", "sight-2", "sight-3"]
             ),
         ]

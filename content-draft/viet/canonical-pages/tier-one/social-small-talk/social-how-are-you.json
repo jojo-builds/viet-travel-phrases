@@ -131,7 +131,7 @@
         {
           "id": "how-are-you-anh",
           "vietnamese": "Anh khỏe không?",
-          "english": "How are you, older man?",
+          "english": "How are you? (to an older man)",
           "pronunciation": "anh khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
@@ -141,7 +141,7 @@
         {
           "id": "how-are-you-chi",
           "vietnamese": "Chị khỏe không?",
-          "english": "How are you, older woman?",
+          "english": "How are you? (to an older woman)",
           "pronunciation": "chee khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
@@ -151,7 +151,7 @@
         {
           "id": "how-are-you-em",
           "vietnamese": "Em khỏe không?",
-          "english": "How are you, younger person?",
+          "english": "How are you? (to someone younger)",
           "pronunciation": "em khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
@@ -237,7 +237,7 @@
         {
           "id": "how-are-you-anh",
           "vietnamese": "Anh khỏe không?",
-          "english": "How are you, older man?",
+          "english": "How are you? (to an older man)",
           "pronunciation": "anh khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
@@ -251,12 +251,12 @@
     {
       "id": "nearby-phrases",
       "title": "Useful nearby phrases",
-      "body": "Use these for how are you, older woman?; how are you, younger person? if the moment moves past the first line.",
+      "body": "Use these for how are you? (to an older woman); how are you? (to someone younger) if the moment moves past the first line.",
       "phrases": [
         {
           "id": "how-are-you-chi",
           "vietnamese": "Chị khỏe không?",
-          "english": "How are you, older woman?",
+          "english": "How are you? (to an older woman)",
           "pronunciation": "chee khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
@@ -266,7 +266,7 @@
         {
           "id": "how-are-you-em",
           "vietnamese": "Em khỏe không?",
-          "english": "How are you, younger person?",
+          "english": "How are you? (to someone younger)",
           "pronunciation": "em khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
