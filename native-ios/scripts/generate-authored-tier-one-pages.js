@@ -2568,9 +2568,9 @@ function pageForFamily(family, childPageIDsByPhraseID) {
       title: "Relationship forms",
       body: "Swap bạn when the relationship is clear. These versions sound warmer with older or younger people because Vietnamese treats the relationship word as part of the sentence.",
       phrases: [
-        manualPhraseOption("how-are-you-anh", "Anh khỏe không?", "How are you, older man?", "anh khweh khom", "blue"),
-        manualPhraseOption("how-are-you-chi", "Chị khỏe không?", "How are you, older woman?", "chee khweh khom", "red"),
-        manualPhraseOption("how-are-you-em", "Em khỏe không?", "How are you, younger person?", "em khweh khom", "green"),
+        manualPhraseOption("how-are-you-anh", "Anh khỏe không?", "How are you? (to an older man)", "anh khweh khom", "blue"),
+        manualPhraseOption("how-are-you-chi", "Chị khỏe không?", "How are you? (to an older woman)", "chee khweh khom", "red"),
+        manualPhraseOption("how-are-you-em", "Em khỏe không?", "How are you? (to someone younger)", "em khweh khom", "green"),
       ],
     });
   }

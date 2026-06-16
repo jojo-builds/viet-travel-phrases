@@ -5,7 +5,7 @@
   "tierRole": "catalog-promoted",
   "depth": "deep",
   "title": "Em khỏe không?",
-  "englishTitle": "How are you, younger person?",
+  "englishTitle": "How are you? (to someone younger)",
   "pronunciation": "em khweh khom",
   "summary": "For checking in with someone younger when the moment is friendly enough for a small personal question.",
   "iconName": "bubble.left.and.bubble.right.fill",
@@ -30,7 +30,7 @@
         {
           "id": "how-are-you-em",
           "vietnamese": "Em khỏe không?",
-          "english": "How are you, younger person?",
+          "english": "How are you? (to someone younger)",
           "pronunciation": "em khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
@@ -65,7 +65,7 @@
         {
           "id": "full",
           "vietnamese": "Em khỏe không?",
-          "english": "How are you, younger person?",
+          "english": "How are you? (to someone younger)",
           "audioKey": "audio-phrase-em-khoe-khong"
         }
       ],
@@ -89,7 +89,7 @@
         {
           "id": "how-are-you-anh",
           "vietnamese": "Anh khỏe không?",
-          "english": "How are you, older man?",
+          "english": "How are you? (to an older man)",
           "pronunciation": "anh khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
@@ -99,7 +99,7 @@
         {
           "id": "how-are-you-chi",
           "vietnamese": "Chị khỏe không?",
-          "english": "How are you, older woman?",
+          "english": "How are you? (to an older woman)",
           "pronunciation": "chee khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
@@ -162,7 +162,7 @@
     {
       "id": "how-are-you-em",
       "vietnamese": "Em khỏe không?",
-      "english": "How are you, younger person?",
+      "english": "How are you? (to someone younger)",
       "pronunciation": "em khweh khom",
       "symbolName": "speaker.wave.2.fill",
       "tintName": "green",
