@@ -163,4 +163,3 @@ The goal is complete when:
 - the durable report exists
 - the feature lane is clean and committed
 - paywall remains excluded unless Jojo explicitly changed scope
-
