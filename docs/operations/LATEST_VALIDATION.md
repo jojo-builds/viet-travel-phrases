@@ -10,6 +10,49 @@ Authority lane: latest durable native iOS validation evidence
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
 
+## Current Launch Readiness Main Evidence
+
+Current `main` evidence after merging `feature/launch-readiness-bug-hunt-20260616`, based on merge commit `93c08cf64`:
+
+- merged `feature/launch-readiness-bug-hunt-20260616` into `main` with merge commit `93c08cf64`
+- target bug-hunt commits included in `main`: `92aa37f83` (`Complete Viet launch readiness bug hunt`) and `6e86e38ea` (`Fix launch bug hunt goal whitespace`)
+- paywall remained excluded; `git cherry -v main feature/paywall` still showed the paywall setup/skeleton commits as unmerged
+- bug-hunt recommendation on the merged lane: `PASS_WITH_FOLLOW_UPS` for simulator-tested non-paywall native Vietnam paths
+- user-facing fixes included:
+  - relationship-form Practice/detail copy changed from awkward labels such as `How are you, older man?` to natural parenthetical labels such as `How are you? (to an older man)`
+  - Vietnamese menu bottom-clearance scroll target added for bottom chrome validation
+  - production QA `--check` mode stopped rewriting audit artifacts
+  - stale city V2.2 unit-test fixture expectations aligned to current source truth
+
+Fresh command evidence from merged `main`:
+
+- `git diff --check` passed
+- `node scripts/guard-native-only.js` passed
+- `node native-ios/scripts/guard-native-chrome.js` passed
+- `node native-ios/scripts/audit-viet-listing-production-qa.js --check` passed: `1793` pages, `0` blockers, `0` majors
+- `node --test ./native-ios/scripts/audit-viet-listing-production-qa.test.js ./native-ios/scripts/viet-practice-copy.test.js` passed: `2` tests
+- `node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production` passed: `520` pass, `0` revise, `0` fail
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed: `1793` canonical pages, `11728` relations, `0` release-blocking missing-audio rows, `778` planned missing-audio rows
+- `node native-ios/scripts/validate-tier-one-listing-pages.js` passed: `150` strong, `0` thin/awkward/placeholder
+- `node native-ios/scripts/validate-vietnamese-menu-copy.js` passed: `355` handwritten Vietnamese menu item pages, `15` ready helper phrases
+- `node native-ios/scripts/validate-viet-search-only-surfacing.js` passed: `315` search-only rows, `315` generated relations, `315` generated section items
+- focused simulator unit test command passed: `30` tests executed, `0` failures, `1` intentional skip
+- targeted simulator UI test command passed: `7` tests executed, `0` failures
+
+Physical iPhone proof for this merged `main` payload:
+
+- Debug build from `main` commit `93c08cf64` passed with local-only signing overrides
+- install to the connected physical iPhone passed for bundle `app.speaklocal.vietnam.native`
+- launch on the connected physical iPhone passed
+- post-build signing scan passed; repo signing files stayed clean
+- `git status --short native-ios/project.yml native-ios/SpeakLocalNative.xcodeproj/project.pbxproj` returned no changes after the build
+
+Remaining honest follow-ups:
+
+- StoreKit/paywall proof remains separate and excluded unless Jojo explicitly includes paywall in the release
+- audio continuity remains a quality watch item; current validation has `0` release-blocking missing-audio rows but `778` planned missing-audio audit rows
+- device performance profiling for search, first audio tap, Browse/Home first render, and Saved/Practice state fanout would strengthen App Store confidence but no user-visible jank was reproduced in the tested simulator paths
+
 ## Current Merge Sweep Main Evidence
 
 Current `main` app-code evidence after merging the ready non-paywall lanes, based on app-code merge head `a8df5ce59`:

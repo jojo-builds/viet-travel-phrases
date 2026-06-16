@@ -33,10 +33,11 @@ Do not use `/Users/jojolim/Documents/New project` or a resurrected `app/` folder
 - Local validation should use the native commands in `docs/operations/TESTING_RUNBOOK.md`.
 - Physical iPhone installs should normally come from `main` using `speaklocal-ios-device-build`.
 - Feature branches should use dedicated simulator instances unless Jojo explicitly asks to install that branch on his phone.
-- Latest refreshed phone build/install used current `main`; the native app-code payload was the 2026-06-16 non-paywall, non-Messages merge sweep commit `a8df5ce59`.
-- That build installed successfully on the connected physical iPhone; remote launch was blocked because the phone was locked.
-- Unlock the phone and open SpeakLocal for fresh launch/manual walkthrough proof from this build.
+- Latest refreshed phone proof used current `main` at commit `93c08cf64` after merging `feature/launch-readiness-bug-hunt-20260616`.
+- The 2026-06-16 post-merge validation passed native guards, Viet content/resource validators, focused simulator unit tests, targeted UI tests, and physical iPhone build/install/launch.
+- Repo signing files stayed clean after the phone build; signing remained local.
+- Paywall remains intentionally excluded from `main` until Jojo explicitly approves that lane and StoreKit proof passes.
 
 ## Evidence Boundary
 
-This document does not claim a new App Store/TestFlight release. It records the repo direction and active app surface after the native-only cleanup and 2026-06-16 non-paywall merge sweep.
+This document does not claim a new App Store/TestFlight release. It records the repo direction and active app surface after the native-only cleanup, 2026-06-16 non-paywall merge sweep, and 2026-06-16 launch-readiness bug-hunt merge.
