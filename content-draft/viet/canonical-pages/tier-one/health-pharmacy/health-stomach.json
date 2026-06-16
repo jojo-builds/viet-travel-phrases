@@ -7,7 +7,7 @@
   "title": "Tôi đau bụng",
   "englishTitle": "My stomach hurts",
   "pronunciation": "toy dow boong",
-  "summary": "Tôi đau bụng means “My stomach hurts”.",
+  "summary": "This is one of the highest-value travel symptom phrases.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi đau bụng when you need \"My stomach hurts\". Use this for stomach pain, cramps, or when you need stomach medicine. This is one of the highest-value travel symptom phrases. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Use this for stomach pain, cramps, or when you need stomach medicine.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Build the line around Tôi + đau, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "health-3-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "health-3"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi đau bụng as your first sentence for \"My stomach hurts\". Use this for stomach pain, cramps, or when you need stomach medicine. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Say Tôi đau bụng first; let the symptom, medicine, affected area, or translated note support the reply.",
       "phrases": [
         {
           "id": "health-3",
@@ -69,18 +72,21 @@
           "audioKey": "health-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up. For \"My stomach hurts\", Tôi đau bụng makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Stomach symptoms can be sensitive, so a short clear phrase is kinder than miming the whole problem.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Health & Pharmacy, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Tôi đau bụng once, pause, and watch for the reply. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "The next answer may be medicine, hydration advice, dosage, or a clinic suggestion.",
       "phrases": [
         {
           "id": "problems-6",
@@ -113,12 +119,13 @@
           "audioKey": "health-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this for stomach pain, cramps, or when you need stomach medicine. It fits doctors, pharmacies, symptoms, and medication, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "body": "Use it at a pharmacy, hotel desk, clinic, or with a guide when your stomach is the main issue.",
       "phrases": [
         {
           "id": "health-4",
@@ -151,13 +158,16 @@
           "audioKey": "health-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Keep urgent medical needs clear and direct. A short sentence gives helpers something they can act on quickly.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -175,12 +185,13 @@
           "audioKey": "v500-heal-phar-i-feel-dizzy"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through I need a doctor; where is the nearest pharmacy?; I have a headache.",
       "phrases": [
         {
           "id": "problems-6",
@@ -253,7 +264,8 @@
           "audioKey": "v500-heal-phar-i-feel-dizzy"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

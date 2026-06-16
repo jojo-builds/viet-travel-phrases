@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-food-drin-this-is-cold",
-  "phraseText": "Trời lạnh quá",
+  "phraseText": "Món này nguội rồi",
   "englishTitle": "This is cold",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,24 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Trời",
-      "english": "weather / sky"
+      "vietnamese": "Món này",
+      "english": "this dish",
+      "keepTogetherReason": "fixed noun phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "lạnh",
-      "english": "cold"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "quá",
-      "english": "too / very"
+      "vietnamese": "nguội rồi",
+      "english": "has gone cold",
+      "keepTogetherReason": "fixed result phrase"
     },
     {
       "id": "full",
-      "vietnamese": "Trời lạnh quá",
+      "vietnamese": "Món này nguội rồi",
       "english": "This is cold",
-      "audioKey": "v500-food-drin-this-is-cold"
+      "audioKey": null
     }
   ]
 }

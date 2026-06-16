@@ -1,6 +1,6 @@
 # V2.2 Global Render Proof - 2026-06-01
 
-Status: IN_PROGRESS_PARTIAL_RENDER_PROOF
+Status: COMPLETE_CURRENT_V2_2_RENDER_PROOF
 
 This folder contains the manifest and screenshot output for the rendered V2.2 proof gate. The manifest covers 520 first-class app-detail source pages from `content-draft/viet/city-library/app-detail-v2-2/*.json`.
 
@@ -21,7 +21,7 @@ xcodebuild test-without-building \
 
 Why single page per invocation: the test harness works, but multi-page runs can kill the UI-test runner on the current simulator after several launches. Single-page invocations returned stable receipts and still capture top, middle, and end-of-content screenshots for each page.
 
-## Current Partial Proof
+## Current Render Proof
 
 Category-balanced batch:
 
@@ -114,7 +114,14 @@ Category-balanced batch:
   - `missing-pages-proof-007-results.jsonl`: `27` previously unrendered Huế pages, `81` screenshots, `0` failures.
   - Scope: the final Huế proof gap, including river boats, streets, church, markets, stations, royal museums/music, mangrove/lagoon nature, floating restaurant, SốngLab, palaces, cafes, bridge, temples, tombs, neighborhoods, walking street, and garden restaurants.
   - Text review before render added or tightened first-time-reader explanations for dragon boats, Phạm Ngũ Lão as a hotel/backpacker-area street, Phủ Cam as a modern Catholic cathedral, royal antiquities, nhã nhạc, mangroves, SốngLab as a contemporary digital/art space, Tam Giang as a shallow coastal lagoon, Thái Hòa Palace as the main audience hall, Thế Miếu as a Citadel temple honoring Nguyễn emperors, Từ Hiếu as a Buddhist pagoda and monastery, and Vọng Cảnh Hill as a viewpoint near royal tombs.
-- Combined latest-current proof across the maintained result files is `520` unique pages, `1560` latest-current screenshots, and `0` current failures. Total historical proof rows in this folder include `712` rows and `2136` screenshots, but the current count uses the latest passing row for each page.
+- What/why repair proof:
+  - `what-why-repair-2026-06-02-results.jsonl`: `59` touched/what-why repair pages, `177` screenshots, `0` failures.
+  - Scope: Chợ Lớn district and walking route, Nội Bài, Bún Chả Đắc Kim, Bùi Viện, Bánh Xèo Bà Dưỡng, Bánh Mì Phượng, Takashimaya, Landmark 81, Rex rooftop, Saigon Skydeck, Hội An old-town and craft pages, Huế tomb/court-music pages, and the identity-forward heading repairs across all five cities.
+  - Source audit after this pass: `native-ios/scripts/audit-viet-city-listing-what-why.js` reports `520` entries, `0` findings, `0` hard-review pages.
+- Final orchestrator repair proof:
+  - `final-orchestrator-repair-2026-06-08-results.jsonl`: `11` repaired pages, `33` screenshots, `0` failures.
+  - Scope: final copy/schema/related-card repairs for 3D Art in Paradise, Da Nang Central Bus Station, Cham Museum, Đồng Đình Museum, Sơn Trà, Red River, Hội An Handicraft Workshop, Japanese Bridge, Nguyễn Thái Học Street, Trần Phú Street, and Rú Chá.
+- Combined latest-current proof across the maintained result files is `520` unique pages, `1560` latest-current screenshots, and `0` current failures. Total historical proof rows in this folder include `1018` rows and `3054` screenshots, but the current count uses the latest passing row for each page.
 
 This folder now contains the final 520-page rendered proof receipt for the current V2.2 city/place inventory.
 

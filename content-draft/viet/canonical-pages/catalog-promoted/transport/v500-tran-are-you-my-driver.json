@@ -7,7 +7,7 @@
   "title": "Bạn là tài xế của tôi à?",
   "englishTitle": "Are you my driver?",
   "pronunciation": "Ban la tai xe cua toi a",
-  "summary": "Are you my driver?",
+  "summary": "For confirming a pickup before you get into the wrong car or motorbike.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn là tài xế của tôi à? is a practical transport phrase for keeping one travel detail clear. Use it when Are you my driver is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Names, plates, and app screens matter more than a long explanation at the curb."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Bạn là tài xế của tôi à?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Ask through the window first, then show the booking name, plate, or destination.",
       "phrases": [
         {
           "id": "v500-tran-are-you-my-driver",
@@ -42,30 +42,42 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tài xế của tôi is my driver; à? makes it a soft confirmation.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bạn là",
-          "english": "are you",
+          "vietnamese": "Bạn",
+          "english": "you",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tài xế của tôi",
-          "english": "my driver",
+          "vietnamese": "là",
+          "english": "are / is",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "à?",
-          "english": "polite yes / opener",
+          "vietnamese": "tài xế",
+          "english": "driver",
           "audioKey": null
         },
         {
           "id": "chunk-4",
+          "vietnamese": "của tôi",
+          "english": "my / mine",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "à?",
+          "english": "right? / soft confirmation",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-6",
           "vietnamese": "Bạn là tài xế của tôi à?",
-          "english": "Are you my driver",
+          "english": "Are you my driver?",
           "audioKey": "v500-tran-are-you-my-driver"
         }
       ]
@@ -73,7 +85,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Are you my driver? to another transport need.",
+      "body": "Once the driver is confirmed, destination and stop phrases become the next move.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +122,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when are you my driver is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at airports, hotels, stations, ride-app pickups, and tour pickups when several drivers are waiting."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Check the plate or booking name before loading bags. A correct destination alone is not enough proof."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn là tài xế của tôi à?.",
+      "body": "Use stop, route, air-con, wait, or cash follow-ups once the pickup is confirmed.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

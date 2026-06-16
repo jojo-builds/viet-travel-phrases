@@ -7,7 +7,7 @@
   "title": "Tôi có thể để lại thông tin liên lạc của mình được không?",
   "englishTitle": "Can I leave my contact information?",
   "pronunciation": "Toi co the de lai thong tin lien lac cua minh duoc khong",
-  "summary": "Can I leave my contact information?",
+  "summary": "For leaving your phone, email, or hotel contact so someone can follow up.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể để lại thông tin liên lạc của mình được không? is for asking permission before you act. It is useful when leave my contact information depends on local rules, staff approval, or the right way to use a space or service."
+      "body": "Useful when a lost item, report, refund, repair, or booking problem will not be solved immediately."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có thể để lại thông tin liên lạc của mình được không? once, then make the task visible with your phone screen, receipt, item, photo, or the place where the issue is happening. The phrase is doing one job: getting a clear answer about leave my contact information.",
+      "body": "Show the phone number, email, room card, or hotel name. Ask before writing anything down.",
       "phrases": [
         {
           "id": "v500-prob-help-can-i-leave-my-contact-information",
@@ -42,38 +42,48 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Để lại means leave behind; thông tin liên lạc means contact information; được không asks if it is possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I question frame",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể để lại thông tin liên lạc của mình",
-          "english": "my contact information",
+          "vietnamese": "để lại",
+          "english": "leave behind",
+          "keepTogetherReason": "leave-contact action",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "được không",
-          "english": "is it possible?",
+          "vietnamese": "thông tin liên lạc của mình",
+          "english": "my contact information",
+          "keepTogetherReason": "contact-information phrase",
           "audioKey": null
         },
         {
           "id": "chunk-4",
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-5",
           "vietnamese": "Tôi có thể để lại thông tin liên lạc của mình được không?",
           "english": "Can I leave my contact information",
-          "audioKey": null
+          "audioKey": "v500-prob-help-can-i-leave-my-contact-information"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can I leave my contact information? to another problem-solving need.",
+      "body": "If they need more, use call hotel, text me, report, manager, or left-something follow-ups.",
       "phrases": [
         {
           "id": "problems-1",
@@ -96,31 +106,31 @@
           "audioKey": "problems-4"
         },
         {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
+          "id": "repair-premium-text-me",
+          "vietnamese": "Bạn có thể nhắn tin cho tôi được không?",
+          "english": "Can you text it to me?",
+          "pronunciation": "Ban co the nhan tin cho toi duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
+          "detailPageID": "viet-phrase-repair-premium-text-me",
+          "audioKey": "repair-premium-text-me"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real problem-solving exchange when leave my contact information is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotel desks, police counters, clinics, shops, tour offices, and transport desks."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Write clearly and include country code if you use a non-Vietnam number. A hotel contact can be easier."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể để lại thông tin liên lạc của mình được không?.",
+      "body": "Use phone-number, hotel-call, report, manager, or text-me follow-ups if the handoff needs one more step.",
       "phrases": [
         {
           "id": "help-need-help-direct",

@@ -7,7 +7,7 @@
   "title": "Có máy ATM nào gần đây không?",
   "englishTitle": "Is there an ATM nearby?",
   "pronunciation": "Co may ATM nao gan day khong",
-  "summary": "Is there an ATM nearby?",
+  "summary": "Cash-only stalls, hotel desks, and market counters often need a nearby ATM before the purchase can move.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có máy ATM nào gần đây không? is a practical money or price phrase for keeping one travel detail clear. Use it when Is there an ATM nearby is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Useful at markets, pharmacies, cafes, hotels, or stations when card payment is not enough."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Có máy ATM nào gần đây không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show your wallet or map while you ask. The answer may be a bank name, mall floor, or short street direction.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-is-there-an-atm-nearby",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có means is there; máy ATM means ATM; nào gần đây means any nearby; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Có máy ATM",
-          "english": "is there an ATM",
-          "audioKey": null
+          "vietnamese": "Có máy ATM nào",
+          "english": "is there any ATM",
+          "keepTogetherReason": "ATM question"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nào gần đây",
-          "english": "near",
-          "audioKey": null
+          "vietnamese": "gần đây",
+          "english": "nearby",
+          "keepTogetherReason": "nearby phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Có máy ATM nào gần đây không?",
-          "english": "Is there an ATM nearby",
-          "audioKey": null
+          "english": "Is there an ATM nearby?",
+          "audioKey": "v900-mone-numb-pric-is-there-an-atm-nearby"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is there an ATM nearby? to another money or price need.",
+      "body": "How-much and per-kilo cards cover price checks if the ATM question starts from a purchase.",
       "phrases": [
         {
           "id": "price-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when is there an ATM nearby is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Markets, stations, hotels, and cash-only counters are the natural places for this question."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+      "body": "Ask which bank or landmark if the first answer is vague. ATMs are often inside malls, convenience stores, or bank lobbies."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Có máy ATM nào gần đây không?.",
+      "body": "Too-expensive, lower-price, final-price, another-one, and take-this cards cover the cash and purchase flow.",
       "phrases": [
         {
           "id": "price-3",

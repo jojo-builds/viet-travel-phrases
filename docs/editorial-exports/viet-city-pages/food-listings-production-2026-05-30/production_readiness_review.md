@@ -7,6 +7,37 @@ Scope: first-class V2.2 source objects in `content-draft/viet/city-library/app-d
 
 ## Decision
 
+### Latest Status - 2026-06-02 What/Why Repair
+
+Status: `GLOBAL_PRODUCTION_READY_FOR_CURRENT_V2_2_CITY_LISTING_COPY`.
+
+This latest pass directly addressed the user-observed Chợ Lớn problem: a first-time U.S. traveler should not have to infer what a page is, what the place/food/route means, or why it is worth remembering. The copy standard is now: lead with a concrete identity and let the appeal come through observed food, room, route, history, texture, or practical travel use. Do not add a literal `Why go` section.
+
+Changes made:
+
+- Repaired Chợ Lớn's visible intro so it identifies the page as Saigon's Chinatown district, with Bình Tây Market, Thiên Hậu Temple, trade streets, temples, dried goods, and delivery-cart energy named in the first screen copy.
+- Added `native-ios/scripts/audit-viet-city-listing-what-why.js` as a recursive source audit over all 520 V2.2 city listings.
+- Swept all audit findings from `116` initial findings / `8` hard-review pages to `0` findings / `0` hard-review pages.
+- Tightened identity-forward first headings across affected listings: airport, walking route, phở shop, duck specialist, bánh mì shop, fabric market, shopping mall, observation deck, rooftop view, royal tomb, assembly hall, tailor atelier, silk village, art gallery, and similar first-scan nouns.
+- Regenerated native authored listing JSON and the Viet SQLite fixture from the authored source.
+
+Validation and proof:
+
+- `node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production`: PASS, 520 entries, 520 `FINAL_PASS`.
+- `node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js`: PASS.
+- `node native-ios/scripts/validate-viet-city-copy.js`: PASS, 5 hubs, 520 city noun pages, 520 unique target heroes.
+- `node native-ios/scripts/validate-viet-city-library.js`: PASS, 826 pages.
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js`: PASS, 520 city places, 826 city phrase tags, 0 release-blocking missing-audio rows.
+- `node native-ios/scripts/audit-viet-listing-production-qa.js`: PASS, 1778 pages, 0 blockers, 0 majors.
+- `node native-ios/scripts/audit-viet-city-listing-what-why.js`: PASS, 520 entries, 0 findings, 0 hard review.
+- `git diff --check`: PASS.
+- Fresh render proof for the 59 touched/what-why repair pages: `what-why-repair-2026-06-02-results.jsonl`, 59 rows, 177 screenshots, 0 failures across all five cities.
+- Existing global rendered proof remains complete for the full V2.2 city/place inventory: 520 unique pages, 1560 latest-current screenshots, 0 current failures.
+
+The historical notes below are preserved as the earlier audit trail. Their older `not production-ready` decision was true at that time, but it has been superseded by the 2026-06-02 recursive what/why repair, validation chain, and fresh render proof.
+
+### Historical Decision - 2026-05-30
+
 The food, restaurant, cafe, market, and drink listings are not broadly production-ready by taste yet.
 
 They are structurally valid V2.2 pages, but a validator pass should be treated as schema proof, not editorial approval. The current direction is correct: these pages should make a pre-trip traveler understand why a place, dish, market, or restaurant is worth remembering and saving, then give enough phrase/audio utility to use it in Vietnam.
@@ -4295,6 +4326,85 @@ This pass repairs the highest-count remaining city batch after Da Nang, but it d
 
 No subagents were spawned or closed in this continuation. This pass used local source, U.S.-voice, Michelin-claim preservation, food-desire, runtime, validator, render, and receipt gates only because prior real-agent lifecycle attempts froze the thread.
 
+## Continuation: Final Random-10 Production Gate
+
+Final gate date: 2026-06-02
+
+This pass closes the earlier open risks under the current review standard:
+
+- first-time U.S. travelers must not meet unexplained award or dining-insider shorthand such as `Bib Gourmand`, `MICHELIN`, `counter dinner`, or unclear counter/chef jargon;
+- normal native iOS scroll-under glass behavior is acceptable and must not be fixed by making the top chrome an opaque white slab;
+- true blockers remain fixed chrome or sticky audio controls that prevent reading, tapping, or reaching required content after normal scrolling.
+
+### Runtime / Copy Changes
+
+- `PinnedAudioSpeedChromePolicy` now limits the pinned top audio speed control to Home, so detail pages keep inline playback without a sticky speed control floating over page text.
+- The recurring opaque top-white shield regression is guarded by `native-ios/scripts/guard-native-chrome.js`, and the native/design docs now forbid strengthening the light top gradient into a solid shield.
+- The random-sample copy was tightened after review:
+  - `Hải sản Năm Đảnh`: `local-table lane` became `casual local Da Nang seafood table`.
+  - `Hibana by Koki`: `chef-counter meal` became `chef-led teppanyaki meal`.
+
+### Validation
+
+Commands run after final copy/resource changes:
+
+```sh
+node native-ios/scripts/import-viet-city-handwritten-copy.js
+node native-ios/scripts/generate-authored-tier-one-pages.js
+node native-ios/scripts/generate-viet-sqlite-fixture.js
+node native-ios/scripts/validate-viet-city-app-detail-v2-2.js --strict-production
+node native-ios/scripts/audit-viet-city-app-detail-v2-2-voice.js
+node native-ios/scripts/validate-viet-city-copy.js
+node native-ios/scripts/validate-viet-city-library.js
+node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/audit-viet-listing-production-qa.js
+node native-ios/scripts/guard-native-chrome.js
+git diff --check
+xcodebuild build-for-testing -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,id=7C386DD3-4BF1-4A34-A918-768C43CD1258' -derivedDataPath /Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/orchestrator-309442864093/DerivedData/SpeakLocalNative-8f3e721625a0 CODE_SIGNING_ALLOWED=NO
+node native-ios/scripts/run-viet-city-v2-2-render-proof.js --manifest docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-06-01-v2-2-global/random-10-human-gate-2026-06-02-manifest.json --results docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-06-01-v2-2-global/random-10-human-gate-2026-06-02-rerun-013-results.jsonl --screenshotRoot docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-06-01-v2-2-global/random-10-human-gate-2026-06-02-rerun-013-screenshots --count 10
+```
+
+Results:
+
+- V2.2 source validation: PASS, 520 entries, 520 `FINAL_PASS`.
+- Voice drift audit: PASS.
+- City copy validation: PASS, 5 hubs, 520 city noun pages, 520 unique target heroes.
+- City library validation: PASS, 826 pages.
+- SQLite validation: PASS, 520 city places, 826 city phrase tags, 0 release-blocking missing-audio rows.
+- Production QA audit: PASS, 1778 pages, 0 blockers, 0 majors.
+- Native chrome guard: PASS, no opaque light top chrome shield.
+- Xcode build-for-testing: PASS.
+- Current-build random-10 render proof: PASS, 10/10 pages, 30 screenshots.
+
+### Random-10 Screenshot Proof
+
+Fresh proof folder:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-06-01-v2-2-global/random-10-human-gate-2026-06-02-rerun-013-screenshots/`
+
+Results file:
+
+`docs/editorial-exports/viet-city-pages/food-listings-production-2026-05-30/render-proof-2026-06-01-v2-2-global/random-10-human-gate-2026-06-02-rerun-013-results.jsonl`
+
+Sampled pages:
+
+- `viet-family-city-danang-place-nam-danh-seafood`
+- `viet-family-city-hanoi-place-trang-tien-street`
+- `viet-family-city-hanoi-place-bay-mau-lake`
+- `viet-family-city-danang-place-bac-my-an-market`
+- `viet-family-city-danang-place-son-tra-night-market`
+- `viet-family-city-danang-place-banh-canh-yen`
+- `viet-family-city-hanoi-place-imperial-citadel`
+- `viet-family-city-hanoi-place-old-quarter`
+- `viet-family-city-hue-place-an-hien-garden-house`
+- `viet-family-city-hue-place-bao-quoc-pagoda`
+
+Independent sub-agent review (`Arendt`) classified the random-10 sample as `PASS` under the corrected chrome standard. It observed normal native scroll-under in middle/bottom screenshots, accepted it as non-blocking, and found no solid opaque top slab, no sticky audio blocker, no missing required modules, and no copy/render/proof-harness blockers in the sample.
+
+### Final Status
+
+Status: `GLOBAL_PRODUCTION_READY` for the current 520 V2.2 city listing set in this worktree, based on full-source strict validation, regenerated runtime resources, production QA audit, native build proof, current-build random-10 screenshots, Codex review, and independent sub-agent screenshot review.
+
 ## Continuation: Hội An Representative Food Render Proof
 
 Thirtieth pass date: 2026-05-31
@@ -4427,12 +4537,14 @@ Thirty-first pass date: 2026-05-31
 
 Commit before pass: `b972294cf Repair Hoian Hue listing save language`
 
+Superseded on 2026-06-02: do not restore this visual treatment. The opaque top shield made the photo-backed listing chrome read as a large solid white block and diverged from `main`'s softer native chrome. Future fixes for text under fixed controls should adjust scroll layout, proof capture offsets, or the pinned control policy rather than strengthening the global light `ChromeSeparationGradient`.
+
 This continuation fixes the shared render blocker where page text could remain readable underneath the sticky top admin controls after the inline audio player scrolled away. The issue was not a content-resource problem; it was the top chrome readability shield ending too soon for the pinned audio speed control state.
 
 ### Runtime Change
 
-- Strengthened `AppChromeLayout.topReadableShieldHeight` so the top admin hit-test/readability area extends below the pinned speed control.
-- Strengthened the non-menu `ChromeSeparationGradient` into an opaque white upper shield before fading into the page background.
+- Superseded: `AppChromeLayout.topReadableShieldHeight` must not be expanded to create a solid shield.
+- Superseded: the non-menu `ChromeSeparationGradient` must not be strengthened into an opaque white upper shield.
 - Left the pinned audio control behavior itself unchanged: it still floats in the top admin layer rather than consuming scroll layout space.
 
 Changed file:

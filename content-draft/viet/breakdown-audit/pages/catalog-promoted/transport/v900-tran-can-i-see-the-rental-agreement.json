@@ -20,40 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể xem",
+      "english": "can I see / read",
+      "keepTogetherReason": "document request frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "hợp đồng thuê",
+      "english": "rental agreement",
+      "keepTogetherReason": "rental contract phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "xem",
-      "english": "look / see"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "hợp",
-      "english": "suitable / combine"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đồng",
-      "english": "dong / currency"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "thuê",
-      "english": "rent"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

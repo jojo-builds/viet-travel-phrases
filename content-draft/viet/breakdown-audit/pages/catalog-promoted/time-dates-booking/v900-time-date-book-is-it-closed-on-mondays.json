@@ -25,26 +25,18 @@
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "có đóng cửa",
+      "english": "is closed",
+      "keepTogetherReason": "business-hours closure phrase"
     },
     {
-      "vietnamese": "đóng cửa",
-      "english": "close / closed / closing",
-      "keepTogetherReason": "compound business-hours verb"
+      "id": "chunk-3",
+      "vietnamese": "vào thứ Hai",
+      "english": "on Monday",
+      "keepTogetherReason": "weekday phrase"
     },
     {
-      "id": "chunk-5",
-      "vietnamese": "vào",
-      "english": "into / enter"
-    },
-    {
-      "vietnamese": "thứ Hai",
-      "english": "Monday",
-      "keepTogetherReason": "weekday name"
-    },
-    {
-      "id": "chunk-8",
+      "id": "chunk-4",
       "vietnamese": "không?",
       "english": "yes/no?"
     },

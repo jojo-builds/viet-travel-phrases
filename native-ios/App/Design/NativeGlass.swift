@@ -289,15 +289,17 @@ enum AppChromeLayout {
     static let topAdminHitTestLayerZIndex: Double = 390
     static let topAdminControlLayerZIndex: Double = 410
     static let bottomAdminHitTestLayerZIndex: Double = 430
-    static let topAdminHorizontalPadding: CGFloat = 24
+    static let topAdminHorizontalPadding: CGFloat = 18
     static let topAdminTopPadding: CGFloat = 10
     static let topAdminControlSize: CGFloat = 47
     static let topAdminControlCornerRadius: CGFloat = topAdminControlSize / 2
+    static let topAdminRowSpacing: CGFloat = 8
+    static let topAdminSpeedChipWidth: CGFloat = 58
     static let menuSectionChromeHeight: CGFloat = 38
-    static let menuSectionChromeRowSpacing: CGFloat = 8
-    static let menuSectionBackdropTopOffset: CGFloat = topAdminTopPadding + topAdminControlSize + menuSectionChromeRowSpacing
-    static let menuSectionBackdropHeight: CGFloat = 92
-    static let menuSectionJumpClearance: CGFloat = topAdminTopPadding + topAdminControlSize + menuSectionChromeRowSpacing + menuSectionChromeHeight + 44
+    static let menuSectionChromeRowSpacing: CGFloat = 0
+    static let menuSectionBackdropTopOffset: CGFloat = topAdminTopPadding
+    static let menuSectionBackdropHeight: CGFloat = topAdminControlSize
+    static let menuSectionJumpClearance: CGFloat = topAdminTopPadding + topAdminControlSize + 44
     static let menuSectionJumpViewportAnchorY: CGFloat = 0.19
     static let pinnedAudioSpeedRevealY: CGFloat = 96
     static let pinnedAudioSpeedScrollClearance: CGFloat = 0
@@ -307,10 +309,6 @@ enum AppChromeLayout {
     static let bottomAdminHitTestEnvelopeHeight: CGFloat = 92
 
     static func topChromeBackdropHeight(showsMenuSectionChrome: Bool) -> CGFloat {
-        if showsMenuSectionChrome {
-            return max(topReadableShieldHeight, menuSectionBackdropTopOffset + menuSectionBackdropHeight)
-        }
-
         return topReadableShieldHeight
     }
 }

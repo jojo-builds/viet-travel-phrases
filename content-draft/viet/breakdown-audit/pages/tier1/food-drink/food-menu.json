@@ -20,30 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "cho",
-      "english": "to / for"
+      "vietnamese": "Cho tôi xem",
+      "english": "let me see",
+      "keepTogetherReason": "let-me-see phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "tôi",
-      "english": "me"
+      "vietnamese": "thực đơn",
+      "english": "the menu",
+      "keepTogetherReason": "menu noun"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "xem",
-      "english": "look / see"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "thực đơn",
-      "english": "menu",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

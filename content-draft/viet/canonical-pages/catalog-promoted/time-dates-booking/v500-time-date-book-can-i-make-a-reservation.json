@@ -7,7 +7,7 @@
   "title": "Tôi có thể đặt chỗ được không?",
   "englishTitle": "Can I make a reservation?",
   "pronunciation": "Toi co the dat cho duoc khong",
-  "summary": "Can I make a reservation?",
+  "summary": "For asking if a table, room, tour, or appointment can be reserved.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể đặt chỗ được không? is for asking permission before you act. It is useful when make a reservation depends on local rules, staff approval, or the right way to use a space or service."
+      "body": "The plan needs a held spot, not just opening hours."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có thể đặt chỗ được không? once, then make the task visible with your booking screen, ticket, calendar, time, line, or confirmation message. The phrase is doing one job: getting a clear answer about make a reservation.",
+      "body": "Ask first, then give date, time, party size, or name only after they say yes.",
       "phrases": [
         {
           "id": "v500-time-date-book-can-i-make-a-reservation",
@@ -42,18 +42,18 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đặt chỗ means reserve a spot; được không asks if it is possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể đặt chỗ",
-          "english": "book / reserve",
+          "vietnamese": "đặt chỗ",
+          "english": "make a reservation",
           "audioKey": null
         },
         {
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can I make a reservation? to another time, date, or booking need.",
+      "body": "Once they say yes, the time cards help pin down day and hour.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when make a reservation is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+      "body": "Good at restaurants, tour desks, salons, clinics, ferries, and hotel counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Have date, time, number of people, and phone number ready before they write it down."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể đặt chỗ được không?.",
+      "body": "Booking, opening time, later time, boarding start, and wait cards help set the exact slot.",
       "phrases": [
         {
           "id": "time-4",

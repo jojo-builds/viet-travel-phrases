@@ -7,7 +7,7 @@
   "title": "Bạn có thể kích hoạt nó cho tôi được không?",
   "englishTitle": "Can you activate it for me?",
   "pronunciation": "Ban co the kich hoat no cho toi duoc khong",
-  "summary": "Can you activate it for me?",
+  "summary": "For asking a SIM, eSIM, app, or phone-shop clerk to activate the service for you.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể kích hoạt nó cho tôi được không? asks someone to do one helpful action for you. Use it for activate it for me when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "The purchase is done; the phone still needs the counter to make it work."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể kích hoạt nó cho tôi được không? once, then make the task visible with your phone screen, charger, SIM card, Wi-Fi screen, or outlet. The phrase is doing one job: getting a clear answer about activate it for me.",
+      "body": "Keep the SIM, eSIM QR code, error screen, or setup page visible.",
       "phrases": [
         {
           "id": "v500-phon-inte-powe-can-you-activate-it-for-me",
@@ -42,44 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; kích hoạt means activate; nó cho tôi means it for me; được không? asks if it is possible.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "kích hoạt nó",
-          "english": "it for me",
-          "audioKey": null
+          "vietnamese": "kích hoạt",
+          "english": "activate",
+          "keepTogetherReason": "activate verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "cho tôi",
-          "english": "for me / please",
-          "audioKey": null
+          "vietnamese": "nó cho tôi",
+          "english": "it for me",
+          "keepTogetherReason": "it-for-me phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Bạn có thể kích hoạt nó cho tôi được không?",
-          "english": "Can you activate it for me",
-          "audioKey": null
+          "english": "Can you activate it for me?",
+          "audioKey": "v500-phon-inte-powe-can-you-activate-it-for-me"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you activate it for me? to another phone, internet, or power need.",
+      "body": "Wi-Fi password, SIM-card, and data-top-up pages help if activation turns into setup trouble.",
       "phrases": [
         {
           "id": "phone-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real phone, internet, or power exchange when activate it for me is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Good at airport SIM counters, phone shops, hotel desks, and mobile-service kiosks."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Activation may need a passport, code, restart, or APN setting. Let staff point to the next screen."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể kích hoạt nó cho tôi được không?.",
+      "body": "No-signal, OTP, eSIM, charging, and written-password pages cover problems that can show up after activation.",
       "phrases": [
         {
           "id": "phone-3",

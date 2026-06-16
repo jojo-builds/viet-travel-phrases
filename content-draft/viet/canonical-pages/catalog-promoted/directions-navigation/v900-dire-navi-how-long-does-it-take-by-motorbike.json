@@ -7,7 +7,7 @@
   "title": "Đi xe máy mất bao lâu?",
   "englishTitle": "How long does it take by motorbike?",
   "pronunciation": "Di xe may mat bao lau",
-  "summary": "How long does it take by motorbike?",
+  "summary": "For estimating a motorbike ride before choosing between walking, taxi, bus, or waiting.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đi xe máy mất bao lâu? helps you decide whether the next move is worth the time. Use it when How long does it take by motorbike affects a taxi, walk, booking, tour, or connection and you need a practical estimate."
+      "body": "Ask with the destination on your map so the answer can be a real time, not a vague guess."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Đi xe máy mất bao lâu? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Show the pin, then ask. If the number sounds fast, confirm whether that includes traffic or only the ride itself.",
       "phrases": [
         {
           "id": "v900-dire-navi-how-long-does-it-take-by-motorbike",
@@ -42,22 +42,24 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đi xe máy means by motorbike; mất bao lâu asks how long it takes.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Đi xe máy",
-          "english": "the action"
+          "english": "by motorbike",
+          "keepTogetherReason": "motorbike-travel phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "mất bao lâu",
-          "english": "takes how long"
+          "vietnamese": "mất bao lâu?",
+          "english": "takes how long?",
+          "keepTogetherReason": "how-long ending"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Đi xe máy mất bao lâu?",
-          "english": "How long does it take by motorbike",
+          "english": "How long does it take by motorbike?",
           "audioKey": "v900-dire-navi-how-long-does-it-take-by-motorbike"
         }
       ]
@@ -65,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How long does it take by motorbike? to another directions need.",
+      "body": "Excuse-me, how-to-get-there, and near-here cards help when you still need the path, not just the time.",
       "phrases": [
         {
           "id": "directions-1",
@@ -102,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real directions exchange when how long does it take by motorbike is the detail you need resolved. The likely reply is a time estimate or route choice, so keep the phrase short and ready for one follow-up."
+      "body": "Good before booking a ride, accepting a hotel suggestion, leaving a cafe, or deciding whether a place is close enough."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "Vietnam traffic can change quickly. A typed number or hand signal is easier to trust than a fast spoken estimate."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Đi xe máy mất bao lâu?.",
+      "body": "Turn-left, right, straight, nearby, and walking-time cards cover the route once you choose how to go.",
       "phrases": [
         {
           "id": "directions-4",

@@ -7,7 +7,7 @@
   "title": "Đã có một tai nạn",
   "englishTitle": "There has been an accident",
   "pronunciation": "Da co mot tai nan",
-  "summary": "There has been an accident",
+  "summary": "For telling someone there has been an accident and the situation needs help now.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đã có một tai nạn is a practical safety or urgent-help phrase for keeping one travel detail clear. Use it when There has been an accident is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it when you need attention fast before giving details."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Đã có một tai nạn. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say the line, then show the location, injury, vehicle, photo, or person who needs help.",
       "phrases": [
         {
           "id": "v500-emer-safe-there-has-been-an-accident",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đã có means there has been; một tai nạn means an accident.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Đã có một",
-          "english": "there has been a",
-          "audioKey": null
+          "vietnamese": "Đã có",
+          "english": "there has been",
+          "keepTogetherReason": "there-has-been phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tai nạn",
-          "english": "accident",
-          "audioKey": null
+          "vietnamese": "một tai nạn",
+          "english": "an accident",
+          "keepTogetherReason": "accident phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Đã có một tai nạn",
           "english": "There has been an accident",
-          "audioKey": null
+          "audioKey": "v500-emer-safe-there-has-been-an-accident"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from There has been an accident to another safety or urgent-help need.",
+      "body": "Police, ambulance, and passport cards cover the urgent help choices around this report.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real safety or urgent-help exchange when there has been an accident is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good with hotel staff, station staff, police counters, clinic desks, drivers, and bystanders when an accident has just happened."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "After this line, the next useful detail is usually location, injury, or whether an ambulance is needed."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Đã có một tai nạn.",
+      "body": "Move to unsafe, emergency, help, hospital, or stolen-bag cards if the helper needs the situation named.",
       "phrases": [
         {
           "id": "emergency-4",

@@ -7,7 +7,7 @@
   "title": "Xin hãy giúp tôi ra khỏi đây",
   "englishTitle": "Please help me get out of here",
   "pronunciation": "Xin hay giup toi ra khoi day",
-  "summary": "Please help me get out of here",
+  "summary": "For asking someone to help you leave an unsafe, confusing, or overwhelming place immediately.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Xin hãy giúp tôi ra khỏi đây is a practical safety or urgent-help phrase for keeping one travel detail clear. Use it when help me get out of here is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say it to staff, a driver, a guard, hotel help, or another trusted person while moving toward a safer exit.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Xin hãy giúp tôi ra khỏi đây. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Do not explain everything first. Name the need, point toward the door, street, desk, or safer area, and move.",
       "phrases": [
         {
           "id": "v900-emer-safe-please-help-me-get-out-of-here",
@@ -42,38 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Xin hãy giúp means please help; tôi ra khỏi đây means me get out of here.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Xin hãy giúp",
-          "english": "please / ask",
-          "audioKey": null
+          "english": "please help",
+          "keepTogetherReason": "please-help phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tôi ra khỏi",
-          "english": "help me get out of here",
-          "audioKey": null
+          "vietnamese": "tôi ra khỏi đây",
+          "english": "me get out of here",
+          "keepTogetherReason": "get-out-of-here phrase"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "đây",
-          "english": "here / this",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Xin hãy giúp tôi ra khỏi đây",
           "english": "Please help me get out of here",
-          "audioKey": null
+          "audioKey": "v900-emer-safe-please-help-me-get-out-of-here"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please help me get out of here to another safety or urgent-help need.",
+      "body": "Police, ambulance, and passport cards help when the situation needs official help.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -110,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real safety or urgent-help exchange when help me get out of here is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good when a bar, room, vehicle, crowd, alley, or building no longer feels safe or manageable.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "If someone is blocking you or following you, switch to police, help, or emergency phrases as soon as you can.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Xin hãy giúp tôi ra khỏi đây.",
+      "body": "Unsafe, emergency, help, hospital, and passport cards cover the next safety step.",
       "phrases": [
         {
           "id": "emergency-4",

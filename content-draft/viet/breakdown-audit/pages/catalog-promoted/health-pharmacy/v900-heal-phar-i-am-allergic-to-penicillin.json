@@ -20,24 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi bị",
+      "english": "I am / I have",
+      "keepTogetherReason": "I-have condition frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bị dị ứng",
-      "english": "am allergic",
-      "keepTogetherReason": "fixed health phrase"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "với",
-      "english": "with / to"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "penicillin",
-      "english": "penicillin"
+      "vietnamese": "dị ứng với penicillin",
+      "english": "allergic to penicillin",
+      "keepTogetherReason": "drug-allergy phrase"
     },
     {
       "id": "full",

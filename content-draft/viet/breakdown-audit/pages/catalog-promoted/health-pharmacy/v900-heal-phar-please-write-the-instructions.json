@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-heal-phar-please-write-the-instructions",
-  "phraseText": "Hãy viết hướng dẫn",
+  "phraseText": "Vui lòng viết hướng dẫn dùng thuốc",
   "englishTitle": "Please write the instructions",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,24 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hãy",
-      "english": "please do"
+      "vietnamese": "Vui lòng",
+      "english": "please",
+      "keepTogetherReason": "polite opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "viết",
-      "english": "write"
+      "vietnamese": "viết hướng dẫn",
+      "english": "write instructions",
+      "keepTogetherReason": "write-instructions phrase"
     },
     {
-      "vietnamese": "hướng dẫn",
-      "english": "instructions / guide",
-      "keepTogetherReason": "compound instruction term"
+      "id": "chunk-3",
+      "vietnamese": "dùng thuốc",
+      "english": "taking medicine",
+      "keepTogetherReason": "medicine-use phrase"
     },
     {
       "id": "full",
-      "vietnamese": "Hãy viết hướng dẫn",
+      "vietnamese": "Vui lòng viết hướng dẫn dùng thuốc",
       "english": "Please write the instructions",
-      "audioKey": "v900-heal-phar-please-write-the-instructions"
+      "audioKey": null
     }
   ]
 }

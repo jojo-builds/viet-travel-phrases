@@ -20,44 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đây",
-      "english": "here / this"
+      "vietnamese": "Đây có phải là",
+      "english": "is this",
+      "keepTogetherReason": "is-this phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "đường phố chính xác",
+      "english": "the correct street",
+      "keepTogetherReason": "correct-street phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "phải",
-      "english": "must / right"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đường",
-      "english": "street"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "phố",
-      "english": "street / old quarter"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "chính xác",
-      "english": "correct / exact",
-      "keepTogetherReason": "compound adjective"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

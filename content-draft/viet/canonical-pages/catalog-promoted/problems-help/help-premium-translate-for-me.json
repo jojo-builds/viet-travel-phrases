@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể dịch giúp tôi được không? asks someone to do one helpful action for you. Use it for help translate for me when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Bạn có thể dịch giúp tôi được không?"
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể dịch giúp tôi được không? once, then make the task visible with your phone screen, receipt, item, photo, or the place where the issue is happening. The phrase is doing one job: getting a clear answer about help translate for me.",
+      "body": "A short question is enough here; use the receipt, room number, ride detail, photo, or last location for the follow-up.",
       "phrases": [
         {
           "id": "help-premium-translate-for-me",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear the main request first; không? turns it into a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you help translate for me? to another problem-solving need.",
+      "body": "Nearby follow-ups: I’m lost, I left something behind, and I need help.",
       "phrases": [
         {
           "id": "problems-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real problem-solving exchange when help translate for me is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "At a desk or counter, or during a help moment, keep the receipt, room number, ride detail, photo, or last location visible while the first answer comes back."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể dịch giúp tôi được không?.",
+      "body": "Keep the next turn practical: I need help, Please call the hotel for me, and I need the manager.",
       "phrases": [
         {
           "id": "help-need-help-direct",

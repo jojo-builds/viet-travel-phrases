@@ -20,46 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Xin",
-      "english": "please / request"
+      "vietnamese": "Xin hãy giúp",
+      "english": "please help",
+      "keepTogetherReason": "please-help phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "hãy",
-      "english": "please do"
+      "vietnamese": "tôi liên hệ",
+      "english": "me contact",
+      "keepTogetherReason": "contact-me phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "giúp",
-      "english": "help"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "tôi",
-      "english": "me"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "liên hệ",
-      "english": "contact",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "với",
-      "english": "with / to"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "đại sứ quán",
-      "english": "embassy",
-      "keepTogetherReason": "compound place term"
-    },
-    {
-      "id": "chunk-10",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
+      "vietnamese": "với đại sứ quán của tôi",
+      "english": "my embassy",
+      "keepTogetherReason": "my-embassy phrase"
     },
     {
       "id": "full",

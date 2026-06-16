@@ -7,7 +7,7 @@
   "title": "Có côn trùng trong phòng",
   "englishTitle": "There are insects in the room",
   "pronunciation": "Co con trung trong phong",
-  "summary": "There are insects in the room",
+  "summary": "Tell the desk there are insects in the room so they can clean, spray, or move you before the stay gets worse.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có côn trùng trong phòng is a practical hotel or stay phrase for keeping one travel detail clear. Use it when There are insects in the room is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Good when bugs show up near the bed, bathroom, windows, or luggage."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Có côn trùng trong phòng. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say it with the room number ready, then show a photo if you have one.",
       "phrases": [
         {
           "id": "v900-hote-acco-there-are-insects-in-the-room",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Côn trùng means insects; trong phòng places the problem in the room.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from There are insects in the room to another hotel or stay need.",
+      "body": "Reservation and check-in cards help if staff need to confirm the room before sending help.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when there are insects in the room is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best as soon as you notice the problem, before unpacking fully or going to sleep."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "They may send housekeeping, spray the room, change rooms, or ask to see the spot."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Có côn trùng trong phòng.",
+      "body": "Checkout-time, quiet-room, and checkout cards cover nearby front-desk needs.",
       "phrases": [
         {
           "id": "hotel-3",

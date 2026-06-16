@@ -7,7 +7,7 @@
   "title": "Tôi không thể di chuyển",
   "englishTitle": "I cannot move",
   "pronunciation": "Toi khong the di chuyen",
-  "summary": "Tôi không thể di chuyển means “I cannot move”.",
+  "summary": "Use this when you need to explain that i cannot move.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi không thể di chuyển when you need \"I cannot move\". This is for when safety, theft, documents, police, or urgent help needs to be clear right now. Listen for a safety check, a question about pain, or help moving you to a safer spot; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Reach for it when safety, theft, documents, police, or urgent help needs to be clear right now.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Tôi không + thể carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "v500-emer-safe-i-cannot-move-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "v500-emer-safe-i-cannot-move"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi không thể di chuyển as your first sentence for \"I cannot move\". This is for when safety, theft, documents, police, or urgent help needs to be clear right now. Pause after the phrase and listen for a safety check, a question about pain, or help moving you to a safer spot. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Say Tôi không thể di chuyển clearly; show the location, passport copy, photo, injury, or helper contact only if the reply needs detail.",
       "phrases": [
         {
           "id": "v500-emer-safe-i-cannot-move",
@@ -69,18 +72,21 @@
           "audioKey": "v500-emer-safe-i-cannot-move"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Emergency phrases put the urgent need first so help can move faster. For \"I cannot move\", Tôi không thể di chuyển makes the next step easier to answer. Point to what hurts or where you need to stay still if words are not enough.",
-      "presentation": "plain-text"
+      "body": "This line makes the limit clear before anyone asks you to stand, walk, or follow them.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Emergency & Safety, the reply often comes as a safety check, a question about pain, or help moving you to a safer spot. Say Tôi không thể di chuyển once, pause, and watch for the reply. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "The next useful answer is usually help coming to you, a call, or a safer place to wait.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -113,12 +119,13 @@
           "audioKey": "emergency-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when safety, theft, documents, police, or urgent help needs to be clear right now. It fits police, ambulance, hospitals, passports, and immediate safety, especially when the next step is a safety check, a question about pain, or help moving you to a safer spot. Point to what hurts or where you need to stay still if words are not enough.",
+      "body": "Best when standing, walking, or moving would make the situation worse.",
       "phrases": [
         {
           "id": "emergency-4",
@@ -151,18 +158,21 @@
           "audioKey": "emergency-hospital"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "In safety moments, clarity matters more than sounding polished. Repeat the phrase if needed.",
-      "presentation": "tip-callout"
+      "body": "Let someone come to you. Moving too soon can confuse the help you actually need.",
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Use the phrase clearly, then show your location, passport copy, injury, or emergency contact.",
+      "body": "Point to the injured area or stay seated so the words and body language match.",
       "phrases": [
         {
           "id": "v500-emer-safe-i-am-injured",
@@ -185,12 +195,13 @@
           "audioKey": "v500-emer-safe-do-not-touch-me"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a hotel desk, during a street help moment, or at a police counter, the next useful language is usually call the police, call an ambulance, and I lost my passport.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -273,7 +284,8 @@
           "audioKey": "v500-emer-safe-do-not-touch-me"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

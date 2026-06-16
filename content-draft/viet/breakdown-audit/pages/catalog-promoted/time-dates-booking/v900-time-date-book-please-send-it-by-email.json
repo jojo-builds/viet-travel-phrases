@@ -22,27 +22,25 @@
       "id": "chunk-1",
       "vietnamese": "Vui lòng",
       "english": "please",
-      "keepTogetherReason": "fixed polite phrase"
+      "keepTogetherReason": "polite opener"
     },
     {
       "id": "chunk-2",
       "vietnamese": "gửi",
-      "english": "send"
+      "english": "send",
+      "keepTogetherReason": "send verb"
     },
     {
       "id": "chunk-3",
       "vietnamese": "nó",
-      "english": "it"
+      "english": "it",
+      "keepTogetherReason": "it pronoun"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "qua",
-      "english": "through / past"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "email",
-      "english": "email"
+      "vietnamese": "qua email",
+      "english": "by email",
+      "keepTogetherReason": "email-delivery phrase"
     },
     {
       "id": "full",

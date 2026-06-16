@@ -1040,12 +1040,19 @@ function appFacingBreakdownTokens(entry, audioKeyForToken) {
       ? token.audioKey
       : (audioKeyForToken ? audioKeyForToken(vietnamese, { isFinal, token, index }) : null);
 
-    return {
+    const exportedToken = {
       id: appFacingTokenID(entry.pageID, token, index, isFinal),
       vietnamese,
       english,
       audioKey,
     };
+
+    const keepTogetherReason = normalizeDisplayText(token.keepTogetherReason);
+    if (keepTogetherReason) {
+      exportedToken.keepTogetherReason = keepTogetherReason;
+    }
+
+    return exportedToken;
   });
 }
 

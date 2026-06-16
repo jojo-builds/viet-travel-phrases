@@ -7,7 +7,7 @@
   "title": "Bạn có thể viết địa chỉ được không?",
   "englishTitle": "Can you write the address?",
   "pronunciation": "Ban co the viet dia chi duoc khong",
-  "summary": "Can you write the address?",
+  "summary": "For asking someone to write the address so you can show it to a driver, desk, or friend.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể viết địa chỉ được không? asks someone to do one helpful action for you. Use it for write the address when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Written addresses keep tone marks, street numbers, and ward names from getting lost in speech."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể viết địa chỉ được không? once, then make the task visible with your phone, note, map, translation screen, number, or written address. The phrase is doing one job: getting a clear answer about write the address.",
+      "body": "Show your phone, paper, or booking screen and leave space for the address.",
       "phrases": [
         {
           "id": "v500-unde-repa-can-you-write-the-address",
@@ -42,38 +42,43 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể means can you; viết means write; địa chỉ means address; được không? asks if possible.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "viết địa chỉ",
-          "english": "address",
-          "audioKey": null
+          "vietnamese": "viết",
+          "english": "write"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "địa chỉ",
+          "english": "address",
+          "keepTogetherReason": "address noun"
         },
         {
           "id": "chunk-4",
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
+        },
+        {
+          "id": "full",
           "vietnamese": "Bạn có thể viết địa chỉ được không?",
-          "english": "Can you write the address",
-          "audioKey": null
+          "english": "Can you write the address?",
+          "audioKey": "v500-unde-repa-can-you-write-the-address"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you write the address? to another understanding check need.",
+      "body": "Repeat, slower, and simpler-speech phrases help if the conversation still feels too fast.",
       "phrases": [
         {
           "id": "problems-2",
@@ -110,17 +115,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real understanding check exchange when write the address is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotel desks, cafes, shops, station counters, and anywhere a driver needs the exact address."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Street names in Vietnam can sound similar. A written line is often better than another spoken attempt."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể viết địa chỉ được không?.",
+      "body": "Repeat, write it down, meaning, which one, and show me phrases cover nearby clarification.",
       "phrases": [
         {
           "id": "repair-1",

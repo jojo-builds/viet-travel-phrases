@@ -20,55 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể",
+      "english": "can I",
+      "keepTogetherReason": "can-I phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "gọi món này",
+      "english": "order this dish",
+      "keepTogetherReason": "order-this-dish phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "gọi",
-      "english": "call"
+      "vietnamese": "mà không có thịt",
+      "english": "without meat",
+      "keepTogetherReason": "without-meat phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "món",
-      "english": "dish"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "mà",
-      "english": "that / but"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-9",
-      "vietnamese": "thịt",
-      "english": "meat"
-    },
-    {
-      "id": "chunk-10",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

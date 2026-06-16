@@ -21,27 +21,26 @@
     {
       "id": "chunk-1",
       "vietnamese": "Hãy",
-      "english": "please do"
+      "english": "please / do",
+      "keepTogetherReason": "request marker"
     },
     {
+      "id": "chunk-2",
       "vietnamese": "đánh dấu",
       "english": "mark",
-      "keepTogetherReason": "compound action verb"
+      "keepTogetherReason": "mark phrase"
+    },
+    {
+      "id": "chunk-3",
+      "vietnamese": "nó",
+      "english": "it",
+      "keepTogetherReason": "object pronoun"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "nó",
-      "english": "it"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "đây",
-      "english": "here / this"
+      "vietnamese": "ở đây",
+      "english": "here",
+      "keepTogetherReason": "here phrase"
     },
     {
       "id": "full",

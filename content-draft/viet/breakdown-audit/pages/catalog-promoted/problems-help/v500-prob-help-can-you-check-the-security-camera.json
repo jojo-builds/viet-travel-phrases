@@ -20,38 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "kiểm tra",
       "english": "check",
       "keepTogetherReason": "compound verb"
     },
     {
+      "id": "chunk-3",
+      "vietnamese": "camera an ninh",
+      "english": "security camera",
+      "keepTogetherReason": "security-camera phrase"
+    },
+    {
       "id": "chunk-4",
-      "vietnamese": "camera",
-      "english": "camera",
-      "keepTogetherReason": "loanword"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "an ninh",
-      "english": "security",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

@@ -20,23 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hãy",
-      "english": "please do"
+      "vietnamese": "Hãy chỉ vào",
+      "english": "please point to",
+      "keepTogetherReason": "please-point-to phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "chỉ",
-      "english": "show / point"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "vào",
-      "english": "into / enter"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "nó",
-      "english": "it"
+      "english": "it",
+      "keepTogetherReason": "it pronoun"
     },
     {
       "id": "full",

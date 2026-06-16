@@ -20,21 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Nhà ga",
-      "english": "terminal / station",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "Nhà ga nội địa",
+      "english": "domestic terminal",
+      "keepTogetherReason": "domestic-terminal phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "nội địa",
-      "english": "domestic",
-      "keepTogetherReason": "compound adjective"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "ở đâu?",
-      "english": "where",
-      "keepTogetherReason": "fixed place question"
+      "english": "where?",
+      "keepTogetherReason": "where ending"
     },
     {
       "id": "full",

@@ -4,10 +4,10 @@
   "phraseID": "v900-hote-acco-the-shower-is-not-draining",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Vòi sen không chảy nước",
+  "title": "Cống thoát nước chỗ vòi sen bị nghẹt",
   "englishTitle": "The shower is not draining",
-  "pronunciation": "Voi sen khong chay nuoc",
-  "summary": "The shower is not draining",
+  "pronunciation": "Cong thoat nuoc cho voi sen bi nghet",
+  "summary": "A room-maintenance phrase for standing water in the shower, not a shower that lacks water.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -15,50 +15,56 @@
     "v900-hote-acco-the-shower-is-not-draining",
     "premium"
   ],
-  "audioKey": "v900-hote-acco-the-shower-is-not-draining",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vòi sen không chảy nước is a practical hotel or stay phrase for keeping one travel detail clear. Use it when shower is not draining is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use this when water pools on the bathroom floor or does not go down the shower drain."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Vòi sen không chảy nước. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say the sentence and show a photo if needed. The room number matters more than a long explanation.",
       "phrases": [
         {
           "id": "v900-hote-acco-the-shower-is-not-draining",
-          "vietnamese": "Vòi sen không chảy nước",
+          "vietnamese": "Cống thoát nước chỗ vòi sen bị nghẹt",
           "english": "The shower is not draining",
-          "pronunciation": "Voi sen khong chay nuoc",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Cong thoat nuoc cho voi sen bi nghet",
+          "symbolName": "text.bubble.fill",
           "tintName": "purple",
           "detailPageID": null,
-          "audioKey": "v900-hote-acco-the-shower-is-not-draining"
+          "audioKey": "audio-authored-cong-thoat-nuoc-cho-voi-sen-bi-nghet-0e1c657268"
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Cống thoát nước is the drain; chỗ vòi sen points to the shower area; bị nghẹt means it is clogged.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Vòi sen không",
-          "english": "yes/no question",
+          "vietnamese": "Cống thoát nước",
+          "english": "drain",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "chảy nước",
-          "english": "shower is not draining",
+          "vietnamese": "chỗ vòi sen",
+          "english": "in the shower area",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "Vòi sen không chảy nước",
+          "vietnamese": "bị nghẹt",
+          "english": "is clogged",
+          "audioKey": null
+        },
+        {
+          "id": "full",
+          "vietnamese": "Cống thoát nước chỗ vòi sen bị nghẹt",
           "english": "The shower is not draining",
           "audioKey": null
         }
@@ -67,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from The shower is not draining to another hotel or stay need.",
+      "body": "These are not maintenance lines, but they keep the hotel context nearby if the desk needs the booking or room.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when shower is not draining is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best at the front desk after you have checked the room. Show the room number and, if possible, a quick photo of the standing water."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "This is different from saying the shower has no water. The problem is the drain, so a photo helps prevent the wrong maintenance visit."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Vòi sen không chảy nước.",
+      "body": "If the room problem changes the stay, these help with checkout time, a quieter room, or leaving the room later.",
       "phrases": [
         {
           "id": "hotel-3",
@@ -172,13 +178,13 @@
   "examples": [
     {
       "id": "v900-hote-acco-the-shower-is-not-draining",
-      "vietnamese": "Vòi sen không chảy nước",
+      "vietnamese": "Cống thoát nước chỗ vòi sen bị nghẹt",
       "english": "The shower is not draining",
-      "pronunciation": "Voi sen khong chay nuoc",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Cong thoat nuoc cho voi sen bi nghet",
+      "symbolName": "text.bubble.fill",
       "tintName": "purple",
       "detailPageID": null,
-      "audioKey": "v900-hote-acco-the-shower-is-not-draining"
+      "audioKey": null
     }
   ]
 }

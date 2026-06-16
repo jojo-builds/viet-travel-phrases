@@ -20,45 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you request frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "khởi động lại",
+      "english": "restart",
+      "keepTogetherReason": "restart verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "khởi động",
-      "english": "restart / boot",
-      "keepTogetherReason": "compound verb"
+      "vietnamese": "bộ định tuyến",
+      "english": "router",
+      "keepTogetherReason": "router noun"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "lại",
-      "english": "again / back"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "bộ",
-      "english": "set / walk"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "định",
-      "english": "intend"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "tuyến",
-      "english": "line / route"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "is that possible?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

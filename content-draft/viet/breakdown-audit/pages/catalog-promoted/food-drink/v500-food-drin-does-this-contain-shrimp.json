@@ -20,33 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Cái",
-      "english": "item / classifier"
+      "vietnamese": "Cái này",
+      "english": "this item",
+      "keepTogetherReason": "visible item"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "này",
-      "english": "this"
+      "vietnamese": "có chứa",
+      "english": "contains",
+      "keepTogetherReason": "contains phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "tôm",
+      "english": "shrimp",
+      "keepTogetherReason": "ingredient noun"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "chứa",
-      "english": "contain"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tôm",
-      "english": "shrimp"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

@@ -20,35 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "gửi tin nhắn",
+      "english": "send a message",
+      "keepTogetherReason": "send-message phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "gửi",
-      "english": "send"
-    },
-    {
-      "vietnamese": "tin nhắn",
-      "english": "message / text message",
-      "keepTogetherReason": "compound message noun"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "xác nhận",
-      "english": "confirm",
-      "keepTogetherReason": "compound verb"
+      "english": "confirmation",
+      "keepTogetherReason": "confirmation noun"
     },
     {
-      "id": "chunk-7",
+      "id": "chunk-4",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

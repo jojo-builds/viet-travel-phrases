@@ -20,29 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Cái",
-      "english": "item / classifier"
+      "vietnamese": "Cái này",
+      "english": "this item",
+      "keepTogetherReason": "this-item phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "này",
-      "english": "this"
+      "vietnamese": "có",
+      "english": "has",
+      "keepTogetherReason": "has verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "đậu phộng",
+      "english": "peanuts",
+      "keepTogetherReason": "peanut noun"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "đậu phộng",
-      "english": "peanuts",
-      "keepTogetherReason": "compound food allergy term"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

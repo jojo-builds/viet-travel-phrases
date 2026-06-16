@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-heal-phar-can-i-get-a-medical-report",
-  "phraseText": "Tôi có thể nhận được báo cáo y tế không?",
+  "phraseText": "Tôi có thể lấy giấy xác nhận y tế không?",
   "englishTitle": "Can I get a medical report?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,51 +20,26 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể lấy",
+      "english": "can I get",
+      "keepTogetherReason": "request frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "giấy xác nhận y tế",
+      "english": "medical confirmation paper",
+      "keepTogetherReason": "medical-document phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nhận",
-      "english": "receive / accept"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "được",
-      "english": "possible / okay"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "báo cáo",
-      "english": "report",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "y",
-      "english": "medical"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "tế",
-      "english": "international / medical"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "không?",
       "english": "yes/no?"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi có thể nhận được báo cáo y tế không?",
+      "vietnamese": "Tôi có thể lấy giấy xác nhận y tế không?",
       "english": "Can I get a medical report?",
-      "audioKey": "v900-heal-phar-can-i-get-a-medical-report"
+      "audioKey": null
     }
   ]
 }

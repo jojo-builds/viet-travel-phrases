@@ -7,7 +7,7 @@
   "title": "Bạn có thể đi cùng tôi được không?",
   "englishTitle": "Can you come with me?",
   "pronunciation": "Ban co the di cung toi duoc khong",
-  "summary": "Can you come with me?",
+  "summary": "For asking someone to walk with you to a desk, entrance, room, or problem spot.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể đi cùng tôi được không? asks someone to do one helpful action for you. Use it for come with me when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Reach for this when pointing is not enough and the person needs to see the place with you."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể đi cùng tôi được không? once, then make the task visible with your phone screen, receipt, item, photo, or the place where the issue is happening. The phrase is doing one job: getting a clear answer about come with me.",
+      "body": "Ask once, then gesture toward the door, counter, room, vehicle, or item. Keep the reason short.",
       "phrases": [
         {
           "id": "help-premium-come-with-me",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể asks can you; đi cùng tôi means come or go with me; được không? asks if it is possible.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "đi cùng tôi",
-          "english": "go / move",
-          "audioKey": null
+          "english": "come with me / go with me",
+          "keepTogetherReason": "come-with-me phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Bạn có thể đi cùng tôi được không?",
-          "english": "Can you come with me",
-          "audioKey": null
+          "english": "Can you come with me?",
+          "audioKey": "help-premium-come-with-me"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you come with me? to another problem-solving need.",
+      "body": "Lost and left-something-behind cards fit when the next step is showing the place.",
       "phrases": [
         {
           "id": "problems-1",
@@ -94,33 +94,23 @@
           "tintName": "orange",
           "detailPageID": "viet-phrase-problems-4",
           "audioKey": "problems-4"
-        },
-        {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real problem-solving exchange when come with me is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Hotels, stations, clinics, venues, repair counters, and security desks are common places for this handoff."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "This is a bigger ask than calling or pointing. It fits situations that truly need someone to come see the problem."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể đi cùng tôi được không?.",
+      "body": "Direct-help, call-hotel, manager, charged-twice, and report cards cover nearby escalation paths.",
       "phrases": [
         {
           "id": "help-need-help-direct",

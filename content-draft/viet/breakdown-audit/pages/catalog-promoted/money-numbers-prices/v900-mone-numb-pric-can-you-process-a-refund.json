@@ -20,35 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "xử lý",
+      "english": "process",
+      "keepTogetherReason": "process action"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "xử lý",
-      "english": "process / handle",
-      "keepTogetherReason": "compound verb"
+      "vietnamese": "hoàn tiền",
+      "english": "refund",
+      "keepTogetherReason": "refund phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "hoàn",
-      "english": "refund / return"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tiền",
-      "english": "money"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

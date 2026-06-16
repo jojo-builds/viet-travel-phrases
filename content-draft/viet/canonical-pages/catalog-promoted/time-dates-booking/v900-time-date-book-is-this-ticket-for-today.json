@@ -7,7 +7,7 @@
   "title": "Đây có phải là vé cho ngày hôm nay không?",
   "englishTitle": "Is this ticket for today?",
   "pronunciation": "Day co phai la ve cho ngay hom nay khong",
-  "summary": "Is this ticket for today?",
+  "summary": "For checking whether the ticket you are holding is valid for today.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đây có phải là vé cho ngày hôm nay không? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Is this ticket for today is right."
+      "body": "Ask before entering, boarding, scanning, or standing in the wrong line."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use Đây có phải là vé cho ngày hôm nay không? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "body": "Show the printed ticket, QR code, or booking screen and point to the date.",
       "phrases": [
         {
           "id": "v900-time-date-book-is-this-ticket-for-today",
@@ -42,44 +42,43 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đây có phải là asks is this; vé means ticket; cho ngày hôm nay means for today; không? makes it yes/no.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Đây có phải",
-          "english": "immigration line",
-          "audioKey": null
+          "vietnamese": "Đây có phải là",
+          "english": "is this",
+          "keepTogetherReason": "is-this question frame"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là vé cho",
-          "english": "ticket",
-          "audioKey": null
+          "vietnamese": "vé",
+          "english": "ticket"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "ngày hôm nay",
-          "english": "join today",
-          "audioKey": null
+          "vietnamese": "cho ngày hôm nay",
+          "english": "for today",
+          "keepTogetherReason": "for-today phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Đây có phải là vé cho ngày hôm nay không?",
-          "english": "Is this ticket for today",
-          "audioKey": null
+          "english": "Is this ticket for today?",
+          "audioKey": "v900-time-date-book-is-this-ticket-for-today"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is this ticket for today? to another time, date, or booking need.",
+      "body": "What time, today, and tomorrow morning phrases help if the date is right but timing is unclear.",
       "phrases": [
         {
           "id": "time-1",
@@ -116,17 +115,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+      "body": "Good at ticket gates, ferry piers, museums, tour desks, and station counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "Dates can be printed in small text or local formats. A quick check prevents the wrong queue."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Đây có phải là vé cho ngày hôm nay không?.",
+      "body": "Booking, opening-time, move-later, boarding-time, and wait phrases cover common ticket timing questions.",
       "phrases": [
         {
           "id": "time-4",

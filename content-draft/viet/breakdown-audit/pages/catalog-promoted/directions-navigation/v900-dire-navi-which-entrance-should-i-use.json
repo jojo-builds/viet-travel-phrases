@@ -20,30 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi nên",
+      "english": "I should",
+      "keepTogetherReason": "I-should phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "nên",
-      "english": "should"
+      "vietnamese": "sử dụng",
+      "english": "use",
+      "keepTogetherReason": "use verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "sử dụng",
-      "english": "use",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "lối vào",
-      "english": "entrance",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "nào?",
-      "english": "which / any"
+      "vietnamese": "lối vào nào?",
+      "english": "which entrance?",
+      "keepTogetherReason": "which-entrance phrase"
     },
     {
       "id": "full",

@@ -20,7 +20,10 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cái này đã được nấu chín chưa? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Is this cooked is right."
+      "body": "Cái này đã được nấu chín chưa? keeps the food or drink request clear before details spread out.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
@@ -37,136 +40,164 @@
           "detailPageID": null,
           "audioKey": "v900-food-drin-is-this-cooked"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Cái này + đã được nấu chín chưa carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Cái này",
-          "english": "this one",
-          "audioKey": null
+          "vietnamese": "Cái",
+          "english": "item / classifier",
+          "audioKey": "breakdown-repair-3-first"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đã được nấu chín chưa",
-          "english": "cooked yet",
-          "audioKey": null
+          "vietnamese": "này",
+          "english": "this",
+          "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "Cái này đã được nấu chín chưa?",
-          "english": "Is this cooked",
+          "vietnamese": "đã",
+          "english": "already / did",
+          "audioKey": "breakdown-v500-emer-safe-there-has-been-an-accident-first"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "được",
+          "english": "possible / okay",
+          "audioKey": "breakdown-v500-unde-repa-okay-now-i-understand-first"
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "nấu chín",
+          "english": "cooked",
           "audioKey": null
-        }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is this cooked? to another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
         },
         {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
+          "id": "chunk-6",
+          "vietnamese": "chưa?",
+          "english": "not yet / already?",
+          "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-7"
         },
         {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
+          "id": "full",
+          "vietnamese": "Cái này đã được nấu chín chưa?",
+          "english": "Is this cooked?",
+          "audioKey": "v900-food-drin-is-this-cooked"
         }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+      "body": "Ask before you move, pay, enter, board, sign, or choose.",
+      "phrases": [
+        {
+          "id": "v900-food-drin-this-is-undercooked",
+          "vietnamese": "Món này chưa được nấu chín kỹ",
+          "english": "This is undercooked",
+          "pronunciation": "Mon nay chua duoc nau chin ky",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-this-is-undercooked",
+          "audioKey": "v900-food-drin-this-is-undercooked"
+        },
+        {
+          "id": "v500-food-drin-this-is-cold",
+          "vietnamese": "Món này nguội rồi",
+          "english": "This is cold",
+          "pronunciation": "Mon nay nguoi roi",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v500-food-drin-this-is-cold",
+          "audioKey": "audio-authored-mon-nay-nguoi-roi-bff9cddb46"
+        },
+        {
+          "id": "v500-food-drin-this-tastes-spoiled",
+          "vietnamese": "Cái này có vị hư hỏng",
+          "english": "This tastes spoiled",
+          "pronunciation": "Cai nay co vi hu hong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v500-food-drin-this-tastes-spoiled",
+          "audioKey": "v500-food-drin-this-tastes-spoiled"
+        },
+        {
+          "id": "v500-food-drin-there-is-something-in-my-food",
+          "vietnamese": "Có thứ gì đó trong thức ăn của tôi",
+          "english": "There is something in my food",
+          "pronunciation": "Co thu gi do trong thuc an cua toi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v500-food-drin-there-is-something-in-my-food",
+          "audioKey": "v500-food-drin-there-is-something-in-my-food"
+        },
+        {
+          "id": "v900-food-drin-i-asked-for-this-not-spicy",
+          "vietnamese": "Tôi yêu cầu món này không cay.",
+          "english": "I asked for this not spicy.",
+          "pronunciation": "Toi yeu cau mon nay khong cay",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-i-asked-for-this-not-spicy",
+          "audioKey": "v900-food-drin-i-asked-for-this-not-spicy"
+        }
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
+      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Cái này đã được nấu chín chưa?.",
+      "body": "Keep the next turn practical: Just a little ice, No sugar please, and To go.",
       "phrases": [
         {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
+          "id": "food-premium-too-spicy-now",
+          "vietnamese": "Món này quá cay đối với tôi.",
+          "english": "This is too spicy for me.",
+          "pronunciation": "Mon nay qua cay doi voi toi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
-          "audioKey": "coffee-4"
+          "detailPageID": "viet-phrase-food-premium-too-spicy-now",
+          "audioKey": "food-premium-too-spicy-now"
         },
         {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
+          "id": "food-16",
+          "vietnamese": "Đây không phải món tôi gọi",
+          "english": "This isn’t what I ordered",
+          "pronunciation": "day khong fai mon toy goy",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
-          "audioKey": "coffee-5"
-        },
-        {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
-          "audioKey": "coffee-6"
-        },
-        {
-          "id": "coffee-7",
-          "vietnamese": "Tính tiền giúp tôi",
-          "english": "Please let me pay",
-          "pronunciation": "ting tyen zoop toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
-          "audioKey": "coffee-7"
-        },
-        {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
-          "audioKey": "food-need-table"
+          "detailPageID": "viet-phrase-food-16",
+          "audioKey": "food-16"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Keep this is undercooked, this is cold, and this tastes spoiled ready for the next turn.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [

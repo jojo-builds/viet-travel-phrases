@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-food-drin-that-was-very-good",
-  "phraseText": "Điều đó rất tốt",
+  "phraseText": "Món này rất ngon",
   "englishTitle": "That was very good",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,29 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Điều",
-      "english": "thing / matter"
+      "vietnamese": "Món này",
+      "english": "this dish",
+      "keepTogetherReason": "dish phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đó",
-      "english": "that"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "rất",
-      "english": "very"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "tốt",
-      "english": "good"
+      "vietnamese": "rất ngon",
+      "english": "very delicious",
+      "keepTogetherReason": "food compliment"
     },
     {
       "id": "full",
-      "vietnamese": "Điều đó rất tốt",
+      "vietnamese": "Món này rất ngon",
       "english": "That was very good",
-      "audioKey": "v900-food-drin-that-was-very-good"
+      "audioKey": null
     }
   ]
 }

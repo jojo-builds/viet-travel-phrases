@@ -4,10 +4,10 @@
   "phraseID": "v900-phon-inte-powe-the-wi-fi-keeps-disconnecting",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Wi-Fi liên tục bị ngắt kết nối",
+  "title": "Wi-Fi cứ bị ngắt kết nối",
   "englishTitle": "The Wi-Fi keeps disconnecting",
-  "pronunciation": "Wi-Fi lien tuc bi ngat ket noi",
-  "summary": "The Wi-Fi keeps disconnecting",
+  "pronunciation": "Wi-Fi cu bi ngat ket noi",
+  "summary": "For showing that the Wi-Fi connects, drops, and needs help staying online.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -15,65 +15,67 @@
     "v900-phon-inte-powe-the-wi-fi-keeps-disconnecting",
     "premium"
   ],
-  "audioKey": "v900-phon-inte-powe-the-wi-fi-keeps-disconnecting",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Wi-Fi liên tục bị ngắt kết nối is a practical phone, internet, or power phrase for keeping one travel detail clear. Use it when Wi-Fi keeps disconnecting is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it when the password worked but the connection keeps falling out.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Wi-Fi liên tục bị ngắt kết nối. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Keep the Wi-Fi screen open. Let staff see the network name, error, or reconnect loop.",
       "phrases": [
         {
           "id": "v900-phon-inte-powe-the-wi-fi-keeps-disconnecting",
-          "vietnamese": "Wi-Fi liên tục bị ngắt kết nối",
+          "vietnamese": "Wi-Fi cứ bị ngắt kết nối",
           "english": "The Wi-Fi keeps disconnecting",
-          "pronunciation": "Wi-Fi lien tuc bi ngat ket noi",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Wi-Fi cu bi ngat ket noi",
+          "symbolName": "text.bubble.fill",
           "tintName": "blue",
           "detailPageID": null,
-          "audioKey": "v900-phon-inte-powe-the-wi-fi-keeps-disconnecting"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Wi-Fi names the connection; cứ bị means keeps getting; ngắt kết nối means disconnected.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Wi-Fi liên tục",
+          "vietnamese": "Wi-Fi",
           "english": "Wi-Fi",
-          "audioKey": null
+          "keepTogetherReason": "connection name"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "bị ngắt kết",
-          "english": "Wi-Fi keeps disconnecting",
-          "audioKey": null
+          "vietnamese": "cứ bị",
+          "english": "keeps getting",
+          "keepTogetherReason": "repeated-problem phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "nối",
-          "english": "say / speak",
-          "audioKey": null
+          "vietnamese": "ngắt kết nối",
+          "english": "disconnected",
+          "keepTogetherReason": "disconnect phrase"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "Wi-Fi liên tục bị ngắt kết nối",
+          "id": "full",
+          "vietnamese": "Wi-Fi cứ bị ngắt kết nối",
           "english": "The Wi-Fi keeps disconnecting",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from The Wi-Fi keeps disconnecting to another phone, internet, or power need.",
+      "body": "If the fix is different, move to password, charger, SIM, data top-up, or map-not-working follow-ups.",
       "phrases": [
         {
           "id": "phone-1",
@@ -110,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real phone, internet, or power exchange when wi-Fi keeps disconnecting is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotels, cafes, coworking rooms, SIM shops, and anywhere the connection matters before you can move on.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Phone and Wi-Fi answers can be technical. Let the screen stay visible so the other person can point, type, or check the setting."
+      "body": "The screen is the proof. It saves everyone from guessing whether the problem is password, signal, or the network.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Wi-Fi liên tục bị ngắt kết nối.",
+      "body": "Use Wi-Fi password, eSIM not working, data top-up, charge-phone, or map-not-working cards if the connection problem changes.",
       "phrases": [
         {
           "id": "phone-3",
@@ -178,13 +182,13 @@
   "examples": [
     {
       "id": "v900-phon-inte-powe-the-wi-fi-keeps-disconnecting",
-      "vietnamese": "Wi-Fi liên tục bị ngắt kết nối",
+      "vietnamese": "Wi-Fi cứ bị ngắt kết nối",
       "english": "The Wi-Fi keeps disconnecting",
-      "pronunciation": "Wi-Fi lien tuc bi ngat ket noi",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Wi-Fi cu bi ngat ket noi",
+      "symbolName": "text.bubble.fill",
       "tintName": "blue",
       "detailPageID": null,
-      "audioKey": "v900-phon-inte-powe-the-wi-fi-keeps-disconnecting"
+      "audioKey": null
     }
   ]
 }

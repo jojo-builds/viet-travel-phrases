@@ -7,7 +7,7 @@
   "title": "Tôi có cần đặt cọc không?",
   "englishTitle": "Do I need a deposit?",
   "pronunciation": "Toi co can dat coc khong",
-  "summary": "Do I need a deposit?",
+  "summary": "For checking whether money is due upfront before a tour, room, rental, appointment, or reservation is held.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có cần đặt cọc không? checks whether a step is required before you spend time on it. It is helpful for forms, tickets, bookings, queues, and documents because the answer can be a simple yes or no."
+      "body": "Ask before confirming the booking, especially when the price, refund rule, or pickup time is still being discussed."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có cần đặt cọc không? once, then make the task visible with your booking screen, ticket, calendar, time, line, or confirmation message. The phrase is doing one job: getting a clear answer about deposit.",
+      "body": "Keep the booking screen or price visible. The answer may be a number, a percentage, or a simple no.",
       "phrases": [
         {
           "id": "v500-time-date-book-do-i-need-a-deposit",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có cần asks do I need; đặt cọc means a deposit; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có cần",
+          "english": "do I need",
+          "keepTogetherReason": "need question"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cần đặt cọc",
-          "english": "need",
-          "audioKey": null
+          "vietnamese": "đặt cọc",
+          "english": "a deposit",
+          "keepTogetherReason": "deposit noun"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi có cần đặt cọc không?",
-          "english": "Do I need a deposit",
-          "audioKey": null
+          "english": "Do I need a deposit?",
+          "audioKey": "v500-time-date-book-do-i-need-a-deposit"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Do I need a deposit? to another time, date, or booking need.",
+      "body": "Time, today, and tomorrow cards help when the deposit question turns into scheduling.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when deposit is the detail you need resolved. The likely reply is yes/no, a form, a document, or the next step, so keep the phrase short and ready for one follow-up."
+      "body": "Good at tour desks, guesthouses, rental counters, clinics, classes, and message threads about reservations."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "If a deposit is required, ask for the amount or receipt before paying. That keeps the later pickup or check-in simpler."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có cần đặt cọc không?.",
+      "body": "Move to booking, opening-time, move-later, boarding-time, or wait cards if the answer becomes a schedule detail.",
       "phrases": [
         {
           "id": "time-4",

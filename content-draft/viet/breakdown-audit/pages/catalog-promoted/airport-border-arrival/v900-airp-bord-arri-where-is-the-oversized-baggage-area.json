@@ -22,25 +22,19 @@
       "id": "chunk-1",
       "vietnamese": "Khu vực",
       "english": "area",
-      "keepTogetherReason": "compound noun"
+      "keepTogetherReason": "area noun"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "hành lý",
-      "english": "baggage / luggage",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "hành lý quá khổ",
+      "english": "oversized baggage",
+      "keepTogetherReason": "oversized-baggage phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "quá khổ",
-      "english": "oversized",
-      "keepTogetherReason": "compound adjective"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "ở đâu?",
-      "english": "where",
-      "keepTogetherReason": "fixed place question"
+      "english": "where?",
+      "keepTogetherReason": "where ending"
     },
     {
       "id": "full",

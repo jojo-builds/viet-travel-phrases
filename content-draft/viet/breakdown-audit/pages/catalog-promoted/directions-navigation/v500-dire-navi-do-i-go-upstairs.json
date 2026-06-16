@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-dire-navi-do-i-go-upstairs",
-  "phraseText": "Tôi có lên lầu không?",
+  "phraseText": "Tôi lên lầu phải không?",
   "englishTitle": "Do I go upstairs?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -21,29 +21,26 @@
     {
       "id": "chunk-1",
       "vietnamese": "Tôi",
-      "english": "I / me"
+      "english": "I",
+      "keepTogetherReason": "subject"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "lên lầu",
+      "english": "go upstairs",
+      "keepTogetherReason": "upstairs phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "lên lầu",
-      "english": "go upstairs",
-      "keepTogetherReason": "compound direction phrase"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "không?",
-      "english": "yes/no?"
+      "vietnamese": "phải không?",
+      "english": "right? / is that correct?",
+      "keepTogetherReason": "confirmation ending"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi có lên lầu không?",
+      "vietnamese": "Tôi lên lầu phải không?",
       "english": "Do I go upstairs?",
-      "audioKey": "v500-dire-navi-do-i-go-upstairs"
+      "audioKey": null
     }
   ]
 }

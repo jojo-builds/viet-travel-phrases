@@ -4,10 +4,10 @@
   "phraseID": "v900-loca-serv-ever-task-can-we-sit-somewhere-cooler",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Chúng ta có thể ngồi chỗ nào mát hơn được không?",
+  "title": "Chúng tôi có thể ngồi chỗ nào mát hơn được không?",
   "englishTitle": "Can we sit somewhere cooler?",
-  "pronunciation": "Chung ta co the ngoi cho nao mat hon duoc khong",
-  "summary": "Can we sit somewhere cooler?",
+  "pronunciation": "Chung toi co the ngoi cho nao mat hon duoc khong",
+  "summary": "For asking to move toward shade, a fan, or air-conditioning when the heat is starting to matter.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -15,168 +15,172 @@
     "v900-loca-serv-ever-task-can-we-sit-somewhere-cooler",
     "premium"
   ],
-  "audioKey": "v900-loca-serv-ever-task-can-we-sit-somewhere-cooler",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Chúng ta có thể ngồi chỗ nào mát hơn được không? is a practical local service phrase for keeping one travel detail clear. Use it when Can we sit somewhere cooler is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask before ordering, waiting, or unpacking bags if the current seat is too hot to stay comfortable.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Chúng ta có thể ngồi chỗ nào mát hơn được không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Gesture toward the cooler table, fan, shade, or indoor area. Keep the request light so staff can offer a practical alternative.",
       "phrases": [
         {
           "id": "v900-loca-serv-ever-task-can-we-sit-somewhere-cooler",
-          "vietnamese": "Chúng ta có thể ngồi chỗ nào mát hơn được không?",
+          "vietnamese": "Chúng tôi có thể ngồi chỗ nào mát hơn được không?",
           "english": "Can we sit somewhere cooler?",
-          "pronunciation": "Chung ta co the ngoi cho nao mat hon duoc khong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Chung toi co the ngoi cho nao mat hon duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "teal",
           "detailPageID": null,
-          "audioKey": "v900-loca-serv-ever-task-can-we-sit-somewhere-cooler"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Chúng tôi có thể asks can we; ngồi chỗ nào means sit somewhere; mát hơn means cooler; được không asks is that possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Chúng ta có",
+          "vietnamese": "Chúng tôi có thể",
           "english": "can we",
-          "audioKey": null
+          "keepTogetherReason": "traveler-party can-we phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể ngồi chỗ",
-          "english": "call",
-          "audioKey": null
+          "vietnamese": "ngồi chỗ nào",
+          "english": "sit somewhere",
+          "keepTogetherReason": "sit-somewhere phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "nào mát hơn",
-          "english": "somewhere cooler",
-          "audioKey": null
+          "vietnamese": "mát hơn",
+          "english": "cooler",
+          "keepTogetherReason": "cooler phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite possibility ending"
         },
         {
-          "id": "chunk-5",
-          "vietnamese": "Chúng ta có thể ngồi chỗ nào mát hơn được không?",
-          "english": "Can we sit somewhere cooler",
+          "id": "full",
+          "vietnamese": "Chúng tôi có thể ngồi chỗ nào mát hơn được không?",
+          "english": "Can we sit somewhere cooler?",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can we sit somewhere cooler? to another local service need.",
+      "body": "Sit-by-the-fan, can-I-sit-here, and seats-together cards keep the seating request close.",
       "phrases": [
         {
-          "id": "store-1",
-          "vietnamese": "Cho tôi chai nước",
-          "english": "A bottle of water please",
-          "pronunciation": "cho toy chai nook",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-1",
-          "audioKey": "store-1"
+          "id": "v900-food-drin-can-we-sit-by-the-fan",
+          "vietnamese": "Chúng tôi có thể ngồi cạnh quạt được không?",
+          "english": "Can we sit by the fan?",
+          "pronunciation": "Chung toi co the ngoi canh quat duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-we-sit-by-the-fan",
+          "audioKey": null
         },
         {
-          "id": "store-2",
-          "vietnamese": "Có túi không?",
-          "english": "Do you have a bag?",
-          "pronunciation": "koh too-ee khong",
+          "id": "v900-poli-basi-can-i-sit-here",
+          "vietnamese": "Tôi có thể ngồi đây được không?",
+          "english": "Can I sit here?",
+          "pronunciation": "Toi co the ngoi day duoc khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-2",
-          "audioKey": "store-2"
+          "tintName": "red",
+          "detailPageID": "viet-phrase-v900-poli-basi-can-i-sit-here",
+          "audioKey": "v900-poli-basi-can-i-sit-here"
         },
         {
-          "id": "store-3",
-          "vietnamese": "Cho tôi khăn giấy",
-          "english": "Tissues please",
-          "pronunciation": "cho toy khan zai",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-time-date-book-can-i-have-seats-together",
+          "vietnamese": "Chúng tôi có thể ngồi cùng nhau được không?",
+          "english": "Can we sit together?",
+          "pronunciation": "Chung toi co the ngoi cung nhau duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "teal",
-          "detailPageID": "viet-phrase-store-3",
-          "audioKey": "store-3"
+          "detailPageID": "viet-phrase-v900-time-date-book-can-i-have-seats-together",
+          "audioKey": null
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real local service exchange when can we sit somewhere cooler is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good in cafes, food courts, hotel lobbies, tour stops, waiting rooms, and open-air restaurants during hot hours.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Service counters often answer with numbers or times. Ask the short question first, then use a write-it-down phrase if needed."
+      "body": "A small move may solve it: one table nearer a fan, away from sun, or inside for a few minutes.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Chúng ta có thể ngồi chỗ nào mát hơn được không?.",
+      "body": "Sit-inside, sit-outside, air-conditioning, table, and seat-available cards cover the next comfort move.",
       "phrases": [
         {
-          "id": "store-4",
-          "vietnamese": "Ở đâu có kem chống nắng?",
-          "english": "Where is the sunscreen?",
-          "pronunciation": "uh dow koh kem chong nang",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-4",
-          "audioKey": "store-4"
+          "id": "v900-food-drin-can-we-sit-inside",
+          "vietnamese": "Chúng tôi có thể ngồi bên trong được không?",
+          "english": "Can we sit inside?",
+          "pronunciation": "Chung toi co the ngoi ben trong duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-we-sit-inside",
+          "audioKey": null
         },
         {
-          "id": "store-5",
-          "vietnamese": "Mở cái này giúp tôi",
-          "english": "Please open this for me",
-          "pronunciation": "muh gai nai zoop toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-5",
-          "audioKey": "store-5"
+          "id": "v900-food-drin-can-we-sit-outside",
+          "vietnamese": "Chúng tôi có thể ngồi bên ngoài được không?",
+          "english": "Can we sit outside?",
+          "pronunciation": "Chung toi co the ngoi ben ngoai duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-we-sit-outside",
+          "audioKey": null
         },
         {
-          "id": "store-6",
-          "vietnamese": "Tôi quẹt thẻ được không?",
-          "english": "Can I pay by card?",
-          "pronunciation": "toy quet teh dook khong",
+          "id": "taxi-5",
+          "vietnamese": "Mở máy lạnh giúp tôi",
+          "english": "Please turn on the air conditioning",
+          "pronunciation": "muh mai lanh zoop toy",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-6",
-          "audioKey": "store-6"
+          "tintName": "orange",
+          "detailPageID": "viet-family-transport-aircon",
+          "audioKey": "taxi-5"
         },
         {
-          "id": "store-7",
-          "vietnamese": "Cho tôi hóa đơn",
-          "english": "Please give me the receipt",
-          "pronunciation": "cho toy hwa dun",
+          "id": "food-need-table",
+          "vietnamese": "Cho tôi bàn cho hai người nhé",
+          "english": "A table for two, please",
+          "pronunciation": "cho toy ban cho hai ngwee nhe",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-store-7",
-          "audioKey": "store-7"
+          "tintName": "green",
+          "detailPageID": "viet-family-food-need-table",
+          "audioKey": "food-need-table"
         },
         {
-          "id": "service-8",
-          "vietnamese": "In cái này được không?",
-          "english": "Can I print this?",
-          "pronunciation": "in gai nai dook khong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "teal",
-          "detailPageID": "viet-phrase-service-8",
-          "audioKey": "service-8"
+          "id": "v900-tran-is-this-seat-available",
+          "vietnamese": "Chỗ này còn trống không?",
+          "english": "Is this seat available?",
+          "pronunciation": "Cho nay con trong khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-v900-tran-is-this-seat-available",
+          "audioKey": null
         }
       ]
     }
@@ -184,13 +188,13 @@
   "examples": [
     {
       "id": "v900-loca-serv-ever-task-can-we-sit-somewhere-cooler",
-      "vietnamese": "Chúng ta có thể ngồi chỗ nào mát hơn được không?",
+      "vietnamese": "Chúng tôi có thể ngồi chỗ nào mát hơn được không?",
       "english": "Can we sit somewhere cooler?",
-      "pronunciation": "Chung ta co the ngoi cho nao mat hon duoc khong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Chung toi co the ngoi cho nao mat hon duoc khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "teal",
       "detailPageID": null,
-      "audioKey": "v900-loca-serv-ever-task-can-we-sit-somewhere-cooler"
+      "audioKey": null
     }
   ]
 }

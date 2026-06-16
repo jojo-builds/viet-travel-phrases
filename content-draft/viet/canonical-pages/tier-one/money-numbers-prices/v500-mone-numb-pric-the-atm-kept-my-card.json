@@ -7,7 +7,7 @@
   "title": "ATM đã giữ thẻ của tôi",
   "englishTitle": "The ATM kept my card",
   "pronunciation": "ATM da giu the cua toi",
-  "summary": "ATM đã giữ thẻ của tôi means “The ATM kept my card”.",
+  "summary": "Use this when you need to say the atm kept my card.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say ATM đã giữ thẻ của tôi when you need \"The ATM kept my card\". This is for when you need the number, total, fee, or payment detail to be clear before it gets worse. Listen for a number, typed amount, calculator screen, or direct yes/no about payment; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Reach for it when you need the number, total, fee, or payment detail to be clear before it gets worse.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Start with ATM + đã; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "v500-mone-numb-pric-the-atm-kept-my-card-piece-1",
@@ -63,12 +65,13 @@
           "audioKey": "v500-mone-numb-pric-the-atm-kept-my-card"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use ATM đã giữ thẻ của tôi as your first sentence for \"The ATM kept my card\". This is for when you need the number, total, fee, or payment detail to be clear before it gets worse. Pause after the phrase and listen for a number, typed amount, calculator screen, or direct yes/no about payment. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "Start with ATM đã giữ thẻ của tôi; keep the item, price tag, calculator, receipt, or ATM screen ready if the reply needs proof.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-the-atm-kept-my-card",
@@ -81,18 +84,21 @@
           "audioKey": "v500-mone-numb-pric-the-atm-kept-my-card"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. For \"The ATM kept my card\", ATM đã giữ thẻ của tôi makes the next step easier to answer. Repeat or show the number before paying if the amount matters.",
-      "presentation": "plain-text"
+      "body": "Money phrases prevent small misunderstandings from becoming awkward after the transaction starts. Keep the item, price tag, calculator, or receipt visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Payment & numbers, the reply often comes as a number, typed amount, calculator screen, or direct yes/no about payment. Say ATM đã giữ thẻ của tôi once, pause, and watch for the reply. Keep the relevant place, object, or screen visible while you speak.",
+      "body": "Watch for a number, typed amount, calculator screen, or direct yes/no about payment. Keep the relevant place, object, or screen visible while you speak.",
       "phrases": [
         {
           "id": "price-1",
@@ -125,12 +131,13 @@
           "audioKey": "price-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when you need the number, total, fee, or payment detail to be clear before it gets worse. It fits prices, quantities, payment, and ATM moments, especially when the next step is a number, typed amount, calculator screen, or direct yes/no about payment. Repeat or show the number before paying if the amount matters.",
+      "body": "Reach for it when you need the number, total, fee, or payment detail to be clear before it gets worse. Watch for a number, typed amount, calculator screen, or direct yes/no about payment.",
       "phrases": [
         {
           "id": "price-4",
@@ -163,13 +170,16 @@
           "audioKey": "price-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Confirm the final price before handing over cash or card, especially in markets and taxi moments.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -197,12 +207,13 @@
           "audioKey": "airport-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover how much is this?; how much per kilo?; too expensive.",
       "phrases": [
         {
           "id": "price-1",
@@ -285,7 +296,8 @@
           "audioKey": "airport-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

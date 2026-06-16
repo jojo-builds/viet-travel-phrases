@@ -32,6 +32,7 @@
           "vietnamese": "Gọi taxi giúp tôi được không?",
           "english": "Can you call a taxi for me?",
           "pronunciation": "goy taxi zoop toy dook khong",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": null,
           "audioKey": "hotel-9"
         }
@@ -76,6 +77,7 @@
           "vietnamese": "Tôi có đặt phòng",
           "english": "I have a reservation",
           "pronunciation": "toy koh dat fong",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-family-hotel-reservation",
           "audioKey": "hotel-1"
         },
@@ -84,6 +86,7 @@
           "vietnamese": "Cho tôi nhận phòng",
           "english": "I’d like to check in",
           "pronunciation": "cho toy nyun fong",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-family-hotel-check-in",
           "audioKey": "hotel-2"
         },
@@ -92,6 +95,7 @@
           "vietnamese": "Cho tôi nhận phòng nhé",
           "english": "I’d like to check in, please",
           "pronunciation": "cho toy nyun fong nhe",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-phrase-hotel-check-in-polite",
           "audioKey": "hotel-check-in-polite"
         }
@@ -100,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when staff can help arrange a ride and you need a simple, playable request."
+      "body": "Best in a front desk or guesthouse counter, before the explanation gets long. Keep the booking, room number, address, or key card close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -117,6 +121,7 @@
           "vietnamese": "Mấy giờ trả phòng?",
           "english": "What time is check-out?",
           "pronunciation": "may zyuh tra fong",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-family-hotel-checkout-time",
           "audioKey": "hotel-3"
         },
@@ -125,6 +130,7 @@
           "vietnamese": "Cho tôi phòng yên tĩnh được không?",
           "english": "Can I have a quiet room?",
           "pronunciation": "cho toy fong yen tinh dook khong",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-phrase-hotel-quiet-room",
           "audioKey": "hotel-quiet-room"
         },
@@ -133,6 +139,7 @@
           "vietnamese": "Cho tôi trả phòng",
           "english": "I’d like to check out",
           "pronunciation": "cho toy tra fong",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-family-hotel-checkout",
           "audioKey": "hotel-checkout"
         },
@@ -141,6 +148,7 @@
           "vietnamese": "Phòng này nóng quá",
           "english": "This room is too hot",
           "pronunciation": "fong nai nong gwah",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-family-hotel-room-hot",
           "audioKey": "hotel-4"
         },
@@ -149,6 +157,7 @@
           "vietnamese": "Máy lạnh không chạy",
           "english": "The air conditioner isn’t working",
           "pronunciation": "mai lanh khong chai",
+          "symbolName": "speaker.wave.2.fill",
           "detailPageID": "viet-family-hotel-aircon-broken",
           "audioKey": "hotel-5"
         }

@@ -7,7 +7,7 @@
   "title": "Đây là địa chỉ chính xác",
   "englishTitle": "This is the correct address",
   "pronunciation": "Day la dia chi chinh xac",
-  "summary": "This is the correct address",
+  "summary": "For confirming the driver, desk, or delivery helper is looking at the right address.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đây là địa chỉ chính xác is a practical transport phrase for keeping one travel detail clear. Use it when This is the correct address is the next detail to solve and a short answer would move the exchange forward."
+      "body": "The map location, booking, street number, or hotel address is being questioned; this confirms the right one."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Đây là địa chỉ chính xác. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the address and say the line once. Let the other person compare it with their screen or notes.",
       "phrases": [
         {
           "id": "v900-tran-this-is-the-correct-address",
@@ -42,38 +42,41 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đây là means this is; địa chỉ means address; chính xác means correct or exact.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Đây là",
           "english": "this is",
+          "keepTogetherReason": "this-is phrase",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "địa chỉ chính",
+          "vietnamese": "địa chỉ",
           "english": "address",
+          "keepTogetherReason": "address phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "xác",
-          "english": "correct",
+          "vietnamese": "chính xác",
+          "english": "correct / exact",
+          "keepTogetherReason": "accuracy phrase",
           "audioKey": null
         },
         {
           "id": "chunk-4",
           "vietnamese": "Đây là địa chỉ chính xác",
           "english": "This is the correct address",
-          "audioKey": null
+          "audioKey": "v900-tran-this-is-the-correct-address"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from This is the correct address to another transport need.",
+      "body": "If the location still needs work, move to take-me-here, call-driver, correct-pickup-point, or write-address follow-ups.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +113,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when this is the correct address is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good with taxis, delivery handoffs, hotel pickups, tour desks, and anyone checking a destination."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Vietnam addresses can hinge on ward, district, alley, or landmark. Keep the full address visible."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Đây là địa chỉ chính xác.",
+      "body": "Use stop-here, go-this-way, turn-right, pickup-point, or driver-call follow-ups if the route still needs confirmation.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

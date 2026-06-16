@@ -20,38 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hãy",
-      "english": "please do"
+      "vietnamese": "Hãy chỉ cho tôi",
+      "english": "please show me",
+      "keepTogetherReason": "show-me request"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "chỉ",
-      "english": "show / point"
+      "vietnamese": "cách bắt đầu",
+      "english": "how to start",
+      "keepTogetherReason": "how-to-start phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "tôi",
-      "english": "me"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "cách",
-      "english": "way / distance"
-    },
-    {
-      "vietnamese": "bắt đầu",
-      "english": "start / begin",
-      "keepTogetherReason": "compound start verb"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "nó",
-      "english": "it"
+      "english": "it",
+      "keepTogetherReason": "object pronoun"
     },
     {
       "id": "full",

@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Nơi nào ít đông đúc hơn? is useful when the map, sign, or building layout is not giving you the final answer. It names less crowded in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Nơi nào ít đông đúc hơn?"
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Nơi nào ít đông đúc hơn?. Show your ticket, map, attraction name, booking screen, or meeting point sign, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "A short question is enough here; use the ticket, booking, meeting point, map location, or attraction name for the follow-up.",
       "phrases": [
         {
           "id": "v900-sigh-acti-where-is-less-crowded",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Practice Nơi nào + ít đông đúc hơn first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -65,7 +65,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where is less crowded? to another sightseeing or activities need.",
+      "body": "Keep close by: How much is the ticket, Where do we start, and Can I take photos here.",
       "phrases": [
         {
           "id": "sight-1",
@@ -102,7 +102,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits museum, tour desk, attraction entrance, ticket counter, or meeting point, especially when less crowded can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Best in a ticket desk, tour counter, entrance, or meeting point, before the explanation gets long. Keep the ticket, booking, meeting point, map location, or attraction name close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -112,7 +112,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Nơi nào ít đông đúc hơn?.",
+      "body": "Good next-step cards: What time does it close, Where is the meeting point, and Do I need to book in advance.",
       "phrases": [
         {
           "id": "sight-4",

@@ -7,7 +7,7 @@
   "title": "Cửa không khóa",
   "englishTitle": "The door does not lock",
   "pronunciation": "Cua khong khoa",
-  "summary": "Cửa không khóa means “The door does not lock”.",
+  "summary": "Use this when you need to say the door does not lock.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Cửa không khóa when you need \"The door does not lock\". This is for the front desk or in the room when you need the hotel to fix the next step. Listen for a room-number check, maintenance visit, new key, or room-change option; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "This is for the front desk or in the room when you need the hotel to fix the next step.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Hear Cửa + không as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "v500-hote-acco-the-door-does-not-lock-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "v500-hote-acco-the-door-does-not-lock"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Cửa không khóa as your first sentence for \"The door does not lock\". This is for the front desk or in the room when you need the hotel to fix the next step. Pause after the phrase and listen for a room-number check, maintenance visit, new key, or room-change option. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Start with Cửa không khóa; keep the booking, room number, address, or key card ready if the reply needs proof.",
       "phrases": [
         {
           "id": "v500-hote-acco-the-door-does-not-lock",
@@ -69,18 +72,21 @@
           "audioKey": "v500-hote-acco-the-door-does-not-lock"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Hotel staff usually need one concrete detail: your booking, room number, time, or the item you need. For \"The door does not lock\", Cửa không khóa makes the next step easier to answer. Have the room number ready and show the item if staff need to inspect it.",
-      "presentation": "plain-text"
+      "body": "Door-lock problems are safety problems, not comfort complaints. This phrase should move staff toward checking the room immediately.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Hotel Accommodation, the reply often comes as a room-number check, maintenance visit, new key, or room-change option. Say Cửa không khóa once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Expect a staff visit, new key card, repair, or room change.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -113,12 +119,13 @@
           "audioKey": "hotel-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for the front desk or in the room when you need the hotel to fix the next step. It fits front desk, room, check-in, and hotel-service moments, especially when the next step is a room-number check, maintenance visit, new key, or room-change option. Have the room number ready and show the item if staff need to inspect it.",
+      "body": "Use it as soon as the door, balcony, or room lock fails to secure.",
       "phrases": [
         {
           "id": "hotel-checkout",
@@ -151,13 +158,16 @@
           "audioKey": "hotel-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -185,12 +195,13 @@
           "audioKey": "hotel-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a front desk or guesthouse counter, the next useful language is usually I have a reservation; I’d like to check in; what time is check-out?",
       "phrases": [
         {
           "id": "hotel-1",
@@ -273,7 +284,8 @@
           "audioKey": "hotel-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

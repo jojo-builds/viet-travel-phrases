@@ -27,6 +27,7 @@
 		65627E82017E546AA617DB0D /* BrowseSearchDestinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BB33D2DD6D5436415A66F6 /* BrowseSearchDestinations.swift */; };
 		73D1A2BB8E7BF70AA804E6C3 /* melo-completion-lantern.png in Resources */ = {isa = PBXBuildFile; fileRef = B797C57C03E4824D2C7F7365 /* melo-completion-lantern.png */; };
 		74A59C7F4112F9B90D75573E /* SpeakLocalNativeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3E28FD0D3D32FC332E86B /* SpeakLocalNativeApp.swift */; };
+		74E086000973ECEC3313CE2E /* TopAdminMoreMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779E9A0473CC669D08396FC /* TopAdminMoreMenu.swift */; };
 		7A3C2A4210802EBC0319FAA7 /* VietnameseMenuCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3723F574BB0F2BBDADECC7 /* VietnameseMenuCatalog.swift */; };
 		7BC5DB99A2B5D7A88FF5C56A /* SelectableBodyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728BB5077B486608F5F505FB /* SelectableBodyText.swift */; };
 		823A89032E506F7A15CE8A3A /* PracticeStoryTranscriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA3A7EC05C7713DDEBCB850 /* PracticeStoryTranscriptView.swift */; };
@@ -115,6 +116,7 @@
 		984D2A43AF3229BAB3B464DA /* melo-early-vietnam-jade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "melo-early-vietnam-jade.png"; sourceTree = "<group>"; };
 		9B9449DF7FBCB9AFC51C3131 /* melo-base-traveler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "melo-base-traveler.png"; sourceTree = "<group>"; };
 		9CD14DE0AC8D062F8D93BE3C /* PracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeUITests.swift; sourceTree = "<group>"; };
+		A779E9A0473CC669D08396FC /* TopAdminMoreMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAdminMoreMenu.swift; sourceTree = "<group>"; };
 		A83272548030E59BD55C69E3 /* LanguagePacks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LanguagePacks; path = Resources/LanguagePacks; sourceTree = SOURCE_ROOT; };
 		ADA3A7EC05C7713DDEBCB850 /* PracticeStoryTranscriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeStoryTranscriptView.swift; sourceTree = "<group>"; };
 		B16251C7B60B5DAA58A148B9 /* AudioControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioControls.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				FAEEEF420BD953C06190A6E3 /* PracticeView.swift */,
 				152EC4AC0563F01164AC24D5 /* SearchPageView.swift */,
 				728BB5077B486608F5F505FB /* SelectableBodyText.swift */,
+				A779E9A0473CC669D08396FC /* TopAdminMoreMenu.swift */,
 				89751C70F34503CB30EB9E47 /* VietnameseMenuPageView.swift */,
 			);
 			path = Views;
@@ -456,6 +459,7 @@
 				7BC5DB99A2B5D7A88FF5C56A /* SelectableBodyText.swift in Sources */,
 				B5527E65B3B401A6D99AC0AD /* SharedBackdropImagePool.swift in Sources */,
 				74A59C7F4112F9B90D75573E /* SpeakLocalNativeApp.swift in Sources */,
+				74E086000973ECEC3313CE2E /* TopAdminMoreMenu.swift in Sources */,
 				36168CE7BECAB88F2D81B389 /* VietSQLiteLanguagePackRepository.swift in Sources */,
 				4EF7F1AA978616DA9360391A /* VietSearchOnlyPhraseSurfacing.swift in Sources */,
 				7A3C2A4210802EBC0319FAA7 /* VietnameseMenuCatalog.swift in Sources */,

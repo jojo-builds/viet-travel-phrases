@@ -7,7 +7,7 @@
   "title": "Bạn có thể giới thiệu một nhà hàng gần đó không?",
   "englishTitle": "Can you recommend a nearby restaurant?",
   "pronunciation": "Ban co the gioi thieu mot nha hang gan do khong",
-  "summary": "Can you recommend a nearby restaurant?",
+  "summary": "Ask the hotel desk for a nearby restaurant when you want a real local suggestion, not another map search.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể giới thiệu một nhà hàng gần đó không? asks someone to do one helpful action for you. Use it for recommend a nearby restaurant when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Good after check-in, on a rainy night, or when you want somewhere close enough to walk."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể giới thiệu một nhà hàng gần đó không? once, then make the task visible with your booking screen, room key, address, room number, or photo of the issue. The phrase is doing one job: getting a clear answer about recommend a nearby restaurant.",
+      "body": "Ask first, then add what you care about: close, casual, vegetarian, seafood, or good for kids.",
       "phrases": [
         {
           "id": "v900-hote-acco-can-you-recommend-a-nearby-restaurant",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Giới thiệu is recommend; nhà hàng gần đó is a nearby restaurant.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -85,7 +85,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you recommend a nearby restaurant? to another hotel or stay need.",
+      "body": "Reservation and check-in cards help if the suggestion turns into a booking.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -122,17 +122,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when recommend a nearby restaurant is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Best at the front desk before you head out, especially in a neighborhood you do not know yet."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Staff may point to a street, call ahead, or write the restaurant name for a driver."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể giới thiệu một nhà hàng gần đó không?.",
+      "body": "Checkout-time, quiet-room, and checkout cards cover other front-desk basics.",
       "phrases": [
         {
           "id": "hotel-3",

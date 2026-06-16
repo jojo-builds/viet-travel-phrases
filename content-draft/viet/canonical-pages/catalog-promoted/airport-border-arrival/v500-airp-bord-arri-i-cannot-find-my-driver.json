@@ -4,9 +4,9 @@
   "phraseID": "v500-airp-bord-arri-i-cannot-find-my-driver",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Tôi không thể tìm thấy trình điều khiển của mình",
+  "title": "Tôi không tìm thấy tài xế của mình",
   "englishTitle": "I cannot find my driver",
-  "pronunciation": "Toi khong the tim thay trinh dieu khien cua minh",
+  "pronunciation": "Toi khong tim thay tai xe cua minh",
   "summary": "I cannot find my driver",
   "iconName": "airplane.arrival",
   "tintName": "blue",
@@ -15,62 +15,56 @@
     "v500-airp-bord-arri-i-cannot-find-my-driver",
     "premium"
   ],
-  "audioKey": "v500-airp-bord-arri-i-cannot-find-my-driver",
+  "audioKey": "audio-authored-toi-khong-tim-thay-tai-xe-cua-minh-6a054e30bf",
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi không thể tìm thấy trình điều khiển của mình explains a limit without making the exchange tense. It helps someone understand I cannot find my driver and offer a simpler option, a written detail, or a next step."
+      "body": "Use this at an airport pickup desk, hotel lobby, or curb when the ride exists but you cannot spot the person. Show the booking screen so staff can check the name, plate, or pickup point."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi không thể tìm thấy trình điều khiển của mình calmly and show the proof if you have it: passport, booking, baggage tag, map, or pickup screen. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Say it once, then show the pickup screen, driver name, license plate, or chat. The phrase is calmer than waving around the curb and hoping someone recognizes you.",
       "phrases": [
         {
           "id": "v500-airp-bord-arri-i-cannot-find-my-driver",
-          "vietnamese": "Tôi không thể tìm thấy trình điều khiển của mình",
+          "vietnamese": "Tôi không tìm thấy tài xế của mình",
           "english": "I cannot find my driver",
-          "pronunciation": "Toi khong the tim thay trinh dieu khien cua minh",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Toi khong tim thay tai xe cua minh",
+          "symbolName": "text.bubble.fill",
           "tintName": "blue",
           "detailPageID": null,
-          "audioKey": "v500-airp-bord-arri-i-cannot-find-my-driver"
+          "audioKey": "audio-authored-toi-khong-tim-thay-tai-xe-cua-minh-6a054e30bf"
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Start with Tôi không tìm thấy + tài xế; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi không",
-          "english": "I do not",
+          "vietnamese": "Tôi không tìm thấy",
+          "english": "I cannot find",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể tìm thấy",
-          "english": "can find",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-3",
-          "vietnamese": "trình điều khiển",
+          "vietnamese": "tài xế",
           "english": "driver",
           "audioKey": null
         },
         {
-          "id": "chunk-4",
+          "id": "chunk-3",
           "vietnamese": "của mình",
           "english": "my / mine",
           "audioKey": null
         },
         {
-          "id": "chunk-5",
-          "vietnamese": "Tôi không thể tìm thấy trình điều khiển của mình",
+          "id": "chunk-4",
+          "vietnamese": "Tôi không tìm thấy tài xế của mình",
           "english": "I cannot find my driver",
           "audioKey": null
         }
@@ -79,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I cannot find my driver to another airport arrival need.",
+      "body": "Nearby follow-ups: Where is immigration?; Where is baggage claim?; Where can I buy a SIM card?",
       "phrases": [
         {
           "id": "airport-1",
@@ -116,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real airport arrival exchange when i cannot find my driver is the detail you need resolved. The likely reply is a simpler option, help, or a follow-up question, so keep the phrase short and ready for one follow-up."
+      "body": "Use it when the driver should already be nearby but you cannot identify the car or person. It fits airport arrivals, hotel pickups, tour transfers, and ride-app confusion."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "Keep the pickup screen visible. Staff can read a name or plate faster than they can follow a long English explanation."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi không thể tìm thấy trình điều khiển của mình.",
+      "body": "Go next to pickup-area, meeting-driver, and baggage phrases if the search turns into a location check or staff handoff.",
       "phrases": [
         {
           "id": "airport-5",
@@ -184,13 +178,13 @@
   "examples": [
     {
       "id": "v500-airp-bord-arri-i-cannot-find-my-driver",
-      "vietnamese": "Tôi không thể tìm thấy trình điều khiển của mình",
+      "vietnamese": "Tôi không tìm thấy tài xế của mình",
       "english": "I cannot find my driver",
-      "pronunciation": "Toi khong the tim thay trinh dieu khien cua minh",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Toi khong tim thay tai xe cua minh",
+      "symbolName": "text.bubble.fill",
       "tintName": "blue",
       "detailPageID": null,
-      "audioKey": "v500-airp-bord-arri-i-cannot-find-my-driver"
+      "audioKey": "audio-authored-toi-khong-tim-thay-tai-xe-cua-minh-6a054e30bf"
     }
   ]
 }

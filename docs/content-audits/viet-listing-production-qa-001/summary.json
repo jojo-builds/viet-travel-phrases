@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-06-01T02:09:55.202Z",
-  "pageCount": 1778,
+  "generatedAt": "2026-06-10T22:32:41.602Z",
+  "pageCount": 1793,
   "issueCounts": {
     "BLOCKER": 0,
     "MAJOR": 0,
-    "MINOR": 64,
+    "MINOR": 87,
     "INFO": 3
   },
   "fixedProbeCount": 17,
   "randomSeed": 20260506,
   "randomSampleCount": 50,
   "dataDuplicateHeroCount": {
-    "meaning": 1,
-    "sayThis": 0,
-    "renderedHidden": 1
+    "meaning": 0,
+    "sayThis": 775,
+    "renderedHidden": 775
   },
   "missingAudioPriorityCount": 500,
   "heroImageFollowUpCount": 0,

@@ -20,29 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi chỉ có",
+      "english": "I only have",
+      "keepTogetherReason": "I-only-have phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "chỉ",
-      "english": "show / point"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "hóa đơn",
-      "english": "receipt / invoice",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "lớn",
-      "english": "big / adult"
+      "vietnamese": "hóa đơn lớn",
+      "english": "large bills",
+      "keepTogetherReason": "large-bill phrase"
     },
     {
       "id": "full",

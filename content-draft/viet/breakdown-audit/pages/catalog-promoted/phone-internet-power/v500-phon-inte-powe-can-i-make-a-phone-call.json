@@ -31,19 +31,14 @@
     },
     {
       "id": "chunk-3",
-      "vietnamese": "gọi",
-      "english": "call"
+      "vietnamese": "gọi điện thoại",
+      "english": "make a phone call",
+      "keepTogetherReason": "phone-call verb phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "điện thoại",
-      "english": "phone",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "được không?",
-      "english": "is that possible?",
+      "english": "is that okay?",
       "keepTogetherReason": "fixed yes-no question ending"
     },
     {

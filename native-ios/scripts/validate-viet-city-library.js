@@ -95,6 +95,11 @@ function normalizeText(value) {
     .toLowerCase();
 }
 
+function wordCount(value) {
+  const normalized = normalizeText(value);
+  return normalized ? normalized.split(/\s+/).length : 0;
+}
+
 function placeAnchorVariants(place) {
   const vietnamese = normalizeText(place.vietnameseName);
   const english = normalizeText(place.englishName);
@@ -380,12 +385,24 @@ function main() {
     const bodySections = (authoredPage.sections ?? []).filter((section) => String(section.body ?? "").trim());
     if (isDerivedPlacePhrase) {
       const sectionIDs = (authoredPage.sections ?? []).map((section) => section.id);
-      const requiredDerivedSections = ["breakdown", "related-phrases", "good-to-know"];
+      const requiredDerivedSections = ["at-glance", "breakdown", "related-phrases", "good-to-know"];
       const missingDerivedSections = requiredDerivedSections.filter((sectionID) => !sectionIDs.includes(sectionID));
       if (missingDerivedSections.length > 0) {
         pageKindTemplateErrors.push(`${page.id} derived place phrase missing compact sections: ${missingDerivedSections.join(", ")}`);
       }
-      const forbiddenDerivedSections = ["at-glance", "quick-say", "when-to-use", "explore-next", "relationship-words"]
+      const firstVisibleSection = (authoredPage.sections ?? []).find((section) => (
+        String(section.body ?? "").trim()
+        || (section.phrases ?? []).length > 0
+        || (section.breakdown ?? []).length > 0
+      ));
+      const atGlance = sectionByID(authoredPage, "at-glance");
+      if (firstVisibleSection?.id !== "at-glance") {
+        pageKindTemplateErrors.push(`${page.id} derived place phrase must start with at-glance copy`);
+      }
+      if (wordCount(atGlance?.body) < 12) {
+        pageKindTemplateErrors.push(`${page.id} derived place phrase at-glance copy is missing or too thin`);
+      }
+      const forbiddenDerivedSections = ["quick-say", "when-to-use", "explore-next", "relationship-words"]
         .filter((sectionID) => sectionIDs.includes(sectionID));
       if (forbiddenDerivedSections.length > 0) {
         pageKindTemplateErrors.push(`${page.id} derived place phrase has destination/duplicate sections: ${forbiddenDerivedSections.join(", ")}`);

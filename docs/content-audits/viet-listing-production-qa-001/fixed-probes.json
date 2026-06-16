@@ -13,11 +13,14 @@
       "scenarioEligible": false
     },
     "renderedSections": [
-      "Meaning",
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Common follow-ups",
-      "Good to know",
-      "Next phrases"
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "Good to know"
     ],
     "status": "PASS"
   },
@@ -35,11 +38,15 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Other ways",
-      "Common follow-ups",
-      "Good to know",
-      "Next phrases"
+      "Natural variations",
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "Good to know"
     ],
     "status": "PASS"
   },
@@ -57,7 +64,7 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "About",
+      "More Park Than Viewpoint",
       "Useful Phrases",
       "Early, With Weather Checked",
       "Cable Car Arrival",
@@ -67,7 +74,7 @@
       "Cable car",
       "Photos",
       "Getting back",
-      "Good to know",
+      "Give It Room",
       "Food & cash"
     ],
     "status": "PASS"
@@ -131,12 +138,12 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "A Special-Occasion Saigon Dinner",
+      "Modern Vietnamese Inside Market Streets",
       "Useful Phrases",
-      "Why This One",
-      "Dinner Is The Event",
-      "Ask Before Ordering",
-      "Pair It With Market Energy"
+      "Market Streets Shape The Dinner",
+      "Market Outside, Polish Inside",
+      "Before Dinner Settles In",
+      "Keep Everyday Food Around It"
     ],
     "status": "PASS"
   },
@@ -154,12 +161,12 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Grill Smoke, Broth, Herbs",
+      "The Famous Bún Chả Lunch",
       "Useful Phrases",
       "Build The Bite Slowly",
-      "Add-Ons Stay Secondary",
+      "Obama Table, Grill Smoke",
       "Lunch With One Job",
-      "Famous Room, Quick Lunch"
+      "Eat While It Is Warm"
     ],
     "status": "PASS"
   },
@@ -177,12 +184,12 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Steam At The Table",
+      "An Old Quarter Phở Bowl",
       "Useful Phrases",
-      "Bowl Before Table",
+      "Know The Bowl First",
       "Broth First",
       "Short Meal",
-      "Room Habits Change"
+      "Compare It With Gia Truyền"
     ],
     "status": "PASS"
   },
@@ -200,11 +207,11 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Hue In One Bowl",
+      "Hue's Famous Spicy Noodle Soup",
       "Useful Phrases",
       "Aromatic And Deep",
       "Famous Beyond Hue",
-      "Morning Heritage Fuel",
+      "A Bowl Before A Long Day",
       "Chili After The Opening Sip"
     ],
     "status": "PASS"
@@ -226,9 +233,9 @@
       "Hội An In One Bowl",
       "Useful Phrases",
       "Chewy, Dry, Herb-Heavy",
-      "Tone Marks Help",
+      "Cao Lầu On Menus",
       "Lunch Between Walks",
-      "Know The Noodle Style"
+      "Mostly Dry, Not Soup"
     ],
     "status": "PASS"
   },
@@ -246,12 +253,12 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "A Short Architectural Visit",
+      "Yellow Facade, Arched Hall",
       "Useful Phrases",
       "Facade, Hall, Street",
       "Close By, Short Visit",
-      "Inside Then Out",
-      "Crowd Expectations"
+      "Old Maps And Postcard Counters",
+      "Arches Before Photos"
     ],
     "status": "PASS"
   },
@@ -269,11 +276,15 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Other ways",
-      "Common follow-ups",
-      "Good to know",
-      "Next phrases"
+      "Natural variations",
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "Good to know"
     ],
     "status": "PASS"
   },
@@ -291,10 +302,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Common follow-ups",
-      "Good to know",
-      "Next phrases"
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "Good to know"
     ],
     "status": "PASS"
   },
@@ -312,11 +327,16 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Other ways",
-      "Common follow-ups",
-      "Good to know",
-      "Next phrases"
+      "Natural variations",
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "You May Hear",
+      "Good to know"
     ],
     "status": "PASS"
   },

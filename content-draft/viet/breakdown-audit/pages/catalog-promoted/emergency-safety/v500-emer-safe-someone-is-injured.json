@@ -20,23 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Có",
-      "english": "have / there is"
+      "vietnamese": "Có người",
+      "english": "there is someone",
+      "keepTogetherReason": "someone phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "người",
-      "english": "person"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "thương",
-      "english": "injury / love"
+      "vietnamese": "bị thương",
+      "english": "injured",
+      "keepTogetherReason": "injury phrase"
     },
     {
       "id": "full",

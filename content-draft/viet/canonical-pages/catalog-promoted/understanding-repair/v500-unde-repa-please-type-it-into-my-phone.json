@@ -4,10 +4,10 @@
   "phraseID": "v500-unde-repa-please-type-it-into-my-phone",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Hãy gõ nó vào điện thoại của tôi.",
+  "title": "Anh/chị gõ vào điện thoại giúp tôi được không?",
   "englishTitle": "Please type it into my phone.",
-  "pronunciation": "Hay go no vao dien thoai cua toi",
-  "summary": "Please type it into my phone.",
+  "pronunciation": "Anh chi go vao dien thoai giup toi duoc khong",
+  "summary": "For handing over your phone so a price, address, name, or instruction can be typed instead of repeated.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -15,57 +15,57 @@
     "v500-unde-repa-please-type-it-into-my-phone",
     "premium"
   ],
-  "audioKey": "v500-unde-repa-please-type-it-into-my-phone",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy gõ nó vào điện thoại của tôi. is a practical understanding check phrase for keeping one travel detail clear. Use it when type it into my phone is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Anh/chị gõ vào điện thoại giúp tôi được không? is enough to start the next practical step."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hãy gõ nó vào điện thoại của tôi.. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Hand over the keyboard only after they agree; keep the field ready.",
       "phrases": [
         {
           "id": "v500-unde-repa-please-type-it-into-my-phone",
-          "vietnamese": "Hãy gõ nó vào điện thoại của tôi.",
+          "vietnamese": "Anh/chị gõ vào điện thoại giúp tôi được không?",
           "english": "Please type it into my phone.",
-          "pronunciation": "Hay go no vao dien thoai cua toi",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Anh chi go vao dien thoai giup toi duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "blue",
           "detailPageID": null,
-          "audioKey": "v500-unde-repa-please-type-it-into-my-phone"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "This asks for typed help politely, without sounding like an order.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy gõ nó",
-          "english": "please do",
+          "vietnamese": "Anh/chị gõ",
+          "english": "please type",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "vào điện thoại",
-          "english": "go / move",
+          "english": "into the phone",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "của tôi",
-          "english": "my / mine",
+          "vietnamese": "giúp tôi được không?",
+          "english": "for me, is that okay?",
           "audioKey": null
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "Hãy gõ nó vào điện thoại của tôi.",
-          "english": "Please type it into my phone",
+          "id": "full",
+          "vietnamese": "Anh/chị gõ vào điện thoại giúp tôi được không?",
+          "english": "Please type it into my phone.",
           "audioKey": null
         }
       ]
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please type it into my phone. to another understanding check need.",
+      "body": "Useful if the exchange continues: I don’t understand, Can you speak a little slower, and Could you speak a little slower, please.",
       "phrases": [
         {
           "id": "problems-2",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real understanding check exchange when type it into my phone is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good when spelling, pronunciation, noise, or fast speech is blocking the exact detail you need to keep."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "These phrases keep the exchange friendly when Vietnamese moves too fast. Ask for one specific next step: repeat, write, show, or point."
+      "body": "Open the note, map, or message field first so the request feels easy to answer."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hãy gõ nó vào điện thoại của tôi..",
+      "body": "If the answer moves on, move to please say that again, please write it down, and what does that mean?",
       "phrases": [
         {
           "id": "repair-1",
@@ -178,13 +178,13 @@
   "examples": [
     {
       "id": "v500-unde-repa-please-type-it-into-my-phone",
-      "vietnamese": "Hãy gõ nó vào điện thoại của tôi.",
+      "vietnamese": "Anh/chị gõ vào điện thoại giúp tôi được không?",
       "english": "Please type it into my phone.",
-      "pronunciation": "Hay go no vao dien thoai cua toi",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Anh chi go vao dien thoai giup toi duoc khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "blue",
       "detailPageID": null,
-      "audioKey": "v500-unde-repa-please-type-it-into-my-phone"
+      "audioKey": null
     }
   ]
 }

@@ -22,18 +22,19 @@
       "id": "chunk-1",
       "vietnamese": "Lối ra",
       "english": "exit",
-      "keepTogetherReason": "compound noun"
+      "keepTogetherReason": "exit noun"
     },
     {
       "id": "chunk-2",
       "vietnamese": "đường",
-      "english": "street"
+      "english": "street",
+      "keepTogetherReason": "street noun"
     },
     {
       "id": "chunk-3",
       "vietnamese": "ở đâu?",
-      "english": "where",
-      "keepTogetherReason": "fixed place question"
+      "english": "where?",
+      "keepTogetherReason": "where ending"
     },
     {
       "id": "full",

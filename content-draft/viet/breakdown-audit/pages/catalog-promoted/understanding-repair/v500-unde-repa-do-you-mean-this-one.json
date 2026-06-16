@@ -20,34 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Ý",
-      "english": "meaning / idea"
+      "vietnamese": "Ý bạn là",
+      "english": "you mean",
+      "keepTogetherReason": "meaning-confirmation frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bạn",
-      "english": "you"
+      "vietnamese": "cái này",
+      "english": "this one",
+      "keepTogetherReason": "this-one phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "cái",
-      "english": "item / classifier"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "phải không?",
-      "english": "is that right?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "english": "right?",
+      "keepTogetherReason": "confirmation ending"
     },
     {
       "id": "full",

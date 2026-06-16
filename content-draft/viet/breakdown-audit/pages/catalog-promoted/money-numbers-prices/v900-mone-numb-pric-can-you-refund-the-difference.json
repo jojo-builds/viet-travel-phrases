@@ -31,27 +31,18 @@
     },
     {
       "id": "chunk-3",
-      "vietnamese": "hoàn",
-      "english": "refund / return"
+      "vietnamese": "hoàn lại tiền",
+      "english": "refund money",
+      "keepTogetherReason": "refund phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "lại",
-      "english": "again / back"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tiền",
-      "english": "money"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "chênh lệch",
-      "english": "difference",
+      "english": "the difference",
       "keepTogetherReason": "compound noun"
     },
     {
-      "id": "chunk-7",
+      "id": "chunk-5",
       "vietnamese": "không?",
       "english": "yes/no?"
     },

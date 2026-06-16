@@ -7,7 +7,7 @@
   "title": "Mấy giờ đóng cửa?",
   "englishTitle": "What time does it close?",
   "pronunciation": "may zyuh dong koo-ah",
-  "summary": "Mấy giờ đóng cửa? means “What time does it close?”",
+  "summary": "This is the most useful sightseeing follow-up after ticket price.",
   "iconName": "camera.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Mấy giờ đóng cửa? when you need \"What time does it close\". This is for when you need to plan the visit window. This is the most useful sightseeing follow-up after ticket price. Listen for a short reply, a smile, a time, or a light follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Mấy giờ đóng cửa? puts the practical detail first. Reach for it when you need to plan the visit window. This is the most useful sightseeing follow-up after ticket price.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Build the line around Mấy + giờ, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "sight-4-piece-1",
@@ -57,12 +59,13 @@
           "audioKey": "sight-4"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Mấy giờ đóng cửa? as your first sentence for \"What time does it close\". This is for when you need to plan the visit window. Pause after the phrase and listen for a short reply, a smile, a time, or a light follow-up question. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Show the ticket, booking, meeting point, map location, or attraction name first, ask once, and leave room for the answer.",
       "phrases": [
         {
           "id": "sight-4",
@@ -75,18 +78,21 @@
           "audioKey": "sight-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Sightseeing phrases help staff answer with a point, ticket, time, or location. For \"What time does it close\", Mấy giờ đóng cửa? makes the next step easier to answer. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
-      "presentation": "plain-text"
+      "body": "Sightseeing phrases help staff answer with a point, ticket, time, or location. Keep the ticket, meeting point, map location, or booking visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Sightseeing & Activities, the reply often comes as a short reply, a smile, a time, or a light follow-up question. Say Mấy giờ đóng cửa? once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Watch for a short reply, a smile, a time, or light follow-up question. Say Mấy giờ đóng cửa?",
       "phrases": [
         {
           "id": "sight-1",
@@ -119,12 +125,13 @@
           "audioKey": "sight-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when you need to plan the visit window. It fits tickets, tours, photos, closing times, and meeting points, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
+      "body": "Reach for it when you need to plan the visit window. Watch for a smile, a time, or light follow-up question.",
       "phrases": [
         {
           "id": "sight-5",
@@ -147,13 +154,16 @@
           "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Meeting points and start times are worth confirming twice, especially on busy tours.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -171,12 +181,13 @@
           "audioKey": "sight-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Use these for how much is the ticket?; where do we start?; can I take photos here? if the moment moves past the first line.",
       "phrases": [
         {
           "id": "sight-1",
@@ -229,7 +240,8 @@
           "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

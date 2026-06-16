@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-sigh-acti-is-there-an-english-guide",
-  "phraseText": "Có hướng dẫn tiếng Anh không?",
+  "phraseText": "Có hướng dẫn viên tiếng Anh không?",
   "englishTitle": "Is there an English guide?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -21,29 +21,24 @@
     {
       "id": "chunk-1",
       "vietnamese": "Có",
-      "english": "have / there is"
+      "english": "is there"
     },
     {
-      "vietnamese": "hướng dẫn",
-      "english": "instructions / guide",
-      "keepTogetherReason": "compound instruction term"
+      "id": "chunk-2",
+      "vietnamese": "hướng dẫn viên tiếng Anh",
+      "english": "English-speaking guide",
+      "keepTogetherReason": "guide phrase"
     },
     {
-      "id": "chunk-4",
-      "vietnamese": "tiếng Anh",
-      "english": "English language",
-      "keepTogetherReason": "compound language name"
-    },
-    {
-      "id": "chunk-5",
+      "id": "chunk-3",
       "vietnamese": "không?",
       "english": "yes/no?"
     },
     {
       "id": "full",
-      "vietnamese": "Có hướng dẫn tiếng Anh không?",
+      "vietnamese": "Có hướng dẫn viên tiếng Anh không?",
       "english": "Is there an English guide?",
-      "audioKey": "v900-sigh-acti-is-there-an-english-guide"
+      "audioKey": null
     }
   ]
 }

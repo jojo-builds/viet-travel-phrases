@@ -358,18 +358,17 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(minimumDockWidth, usableCardWidth)
     }
 
-    func testMenuSectionChromeFitsBelowTopAdminRow() {
-        let stackedChromeHeight = AppChromeLayout.topAdminTopPadding
-            + AppChromeLayout.topAdminControlSize
-            + AppChromeLayout.menuSectionChromeRowSpacing
-            + AppChromeLayout.menuSectionChromeHeight
+    func testMenuSectionChromeSharesTopAdminRow() {
+        let compactChromeHeight = AppChromeLayout.topAdminTopPadding
+            + max(AppChromeLayout.topAdminControlSize, AppChromeLayout.menuSectionChromeHeight)
 
-        XCTAssertLessThanOrEqual(stackedChromeHeight, AppChromeLayout.topAdminHitTestEnvelopeHeight)
+        XCTAssertEqual(AppChromeLayout.menuSectionChromeRowSpacing, 0)
+        XCTAssertLessThanOrEqual(compactChromeHeight, AppChromeLayout.topAdminHitTestEnvelopeHeight)
         XCTAssertLessThanOrEqual(
-            stackedChromeHeight,
+            compactChromeHeight,
             AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: true)
         )
-        XCTAssertGreaterThan(AppChromeLayout.menuSectionJumpClearance, stackedChromeHeight)
+        XCTAssertGreaterThan(AppChromeLayout.menuSectionJumpClearance, compactChromeHeight)
         XCTAssertEqual(AppChromeLayout.menuSectionJumpViewportAnchorY, 0.19, accuracy: 0.001)
         XCTAssertEqual(
             BrowseCollectionLayout.sectionJumpViewportAnchorY,
@@ -378,24 +377,36 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
-    func testMenuSectionChromeExtendsSharedTopBackdropBehindContent() {
-        let sectionRowY = AppChromeLayout.topAdminTopPadding
-            + AppChromeLayout.topAdminControlSize
-            + AppChromeLayout.menuSectionChromeRowSpacing
-        let sectionRowBottomY = sectionRowY + AppChromeLayout.menuSectionChromeHeight
+    func testMenuSectionChromeUsesSingleRowSharedTopBackdrop() {
         let menuBackdropHeight = AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: true)
 
-        XCTAssertEqual(AppChromeLayout.menuSectionBackdropTopOffset, sectionRowY)
+        XCTAssertEqual(AppChromeLayout.menuSectionBackdropTopOffset, AppChromeLayout.topAdminTopPadding)
         XCTAssertEqual(
             menuBackdropHeight,
-            AppChromeLayout.menuSectionBackdropTopOffset + AppChromeLayout.menuSectionBackdropHeight
+            AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false)
         )
-        XCTAssertGreaterThan(menuBackdropHeight, AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false))
         XCTAssertGreaterThan(
             menuBackdropHeight,
-            sectionRowBottomY + 32
+            AppChromeLayout.topAdminTopPadding + AppChromeLayout.topAdminControlSize
         )
         XCTAssertFalse(AppChromeLayout.chromeSeparationAllowsHitTesting)
+    }
+
+    func testTopAdminMoreMenuInventoryIsGoLiveOnly() {
+        let items = TopAdminMoreMenuItem.goLiveItems
+        let titles = items.map(\.title)
+        let urls = items.map(\.url.absoluteString)
+
+        XCTAssertEqual(
+            titles,
+            ["Send Feedback", "Contact Support", "Privacy Policy", "Terms of Use"]
+        )
+        XCTAssertEqual(urls[0], "mailto:feedback@jayopsai.com")
+        XCTAssertEqual(urls[1], "https://speaklocal.app/feedback/")
+        XCTAssertEqual(urls[2], "https://speaklocal.app/privacy/")
+        XCTAssertEqual(urls[3], "https://speaklocal.app/terms/")
+        XCTAssertFalse(titles.contains { $0.localizedCaseInsensitiveContains("about") })
+        XCTAssertFalse(titles.contains { $0.localizedCaseInsensitiveContains("grab") })
     }
 
     func testPhotoBackdropChromeUsesOneSharedDissolveTiming() {
@@ -2312,6 +2323,13 @@ final class AppChromeTests: XCTestCase {
                 isSearchPresented: false
             )
         )
+        XCTAssertTrue(
+            PinnedAudioSpeedChromePolicy.canShowPinnedControl(
+                on: .detailPage("viet-phrase-polite-1"),
+                hasStaticBackButton: true,
+                isSearchPresented: false
+            )
+        )
         XCTAssertFalse(
             PinnedAudioSpeedChromePolicy.canShowPinnedControl(
                 on: .home,
@@ -2545,7 +2563,15 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(BrowsePageLayout.bottomContentClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
         XCTAssertEqual(SearchPageLayout.resultsBottomClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
         XCTAssertEqual(SavedTripLayout.bottomContentClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
-        XCTAssertEqual(PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
+        XCTAssertGreaterThan(
+            PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: true),
+            AppBottomContentClearance.photoBackdropRoot
+        )
+        XCTAssertEqual(
+            PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: true),
+            AppBottomContentClearance.photoBackdropRoot + PracticeMatchHubLayout.photoBackdropLaunchScrollSlack,
+            accuracy: 0.001
+        )
         XCTAssertGreaterThan(
             AppBottomContentClearance.photoBackdropRoot,
             PhrasePhotoBackdropLayout.bottomReadingClearance
@@ -3644,6 +3670,23 @@ final class AppChromeTests: XCTestCase {
             + firstDayCoreSubcategories.map(\.title)
         XCTAssertFalse(visibleLabels.contains { $0.localizedCaseInsensitiveContains("repair") })
         XCTAssertTrue(visibleLabels.allSatisfy { $0.count <= 10 })
+    }
+
+    func testCategoryPracticeEntryCopyDescribesMatchPractice() {
+        let firstDay = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("first-day")))
+        let food = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("food")))
+        let airport = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport")))
+
+        XCTAssertEqual(firstDay.practiceTitle, "First day practice")
+        XCTAssertEqual(firstDay.practiceSubtitle, "Match airport, hotel, and transport phrases.")
+        XCTAssertEqual(food.practiceTitle, "Eating Out practice")
+        XCTAssertEqual(food.practiceSubtitle, "Match food, coffee, and ordering phrases.")
+        XCTAssertEqual(airport.practiceTitle, "Airport practice")
+        XCTAssertEqual(airport.practiceSubtitle, "Match airport arrival and transit phrases.")
+        XCTAssertFalse([firstDay, food, airport].contains { descriptor in
+            descriptor.practiceTitle.localizedCaseInsensitiveContains("message")
+                || descriptor.practiceSubtitle.localizedCaseInsensitiveContains("conversation")
+        })
     }
 
     func testSearchOnlyPhraseSurfacingAddsBrowsableSectionsForAll315Rows() {

@@ -4,17 +4,17 @@
     "id": "viet",
     "appID": "speaklocal-vietnam",
     "languageCode": "vi",
-    "contentVersion": "viet-sqlite-fixture:9806c023e0fe1d71",
-    "generatedAt": "source-hash:9806c023e0fe1d71"
+    "contentVersion": "viet-sqlite-fixture:9a4fa959db3a2539",
+    "generatedAt": "source-hash:9a4fa959db3a2539"
   },
   "sourceInputs": {
     "catalog": {
       "path": "native-ios/Resources/viet-phrase-catalog.json",
-      "sha256": "0af653c6ad920807428bc437f8a58383e3ade7f6fcdf1ac93dbfba22326e56f4"
+      "sha256": "ca74c5a788c492ffdf952647d8ba025fdca533e4481755f3acd798a136814887"
     },
     "authoredPages": {
       "path": "native-ios/Resources/viet-authored-listing-pages.json",
-      "sha256": "b4c78eb2792e213a7b280c3c1624bab57024f02500ca17b2a10513dab2169c77"
+      "sha256": "ed2e762eb5ae00d14121c91ff25c37abcedf30603b805be60737f7d1acc54789"
     },
     "audioManifest": {
       "path": "native-ios/Resources/viet-audio-manifest.json",
@@ -34,11 +34,11 @@
     },
     "cityLibrary": {
       "path": "content-draft/viet/city-library/v1.json",
-      "sha256": "de4a87c3da3c4b9545c0bb568a8237f6b232034ee45073b7206859772677a21b"
+      "sha256": "cfe4d42c21f3207d97ae17331947dea766072c7d259bbed4b433ba14184befd2"
     },
     "searchOnlySurfacing": {
       "path": "content-draft/viet/search-only-surfacing-v1.json",
-      "sha256": "c6354caabea8251e9a9d581c7c217f3fcd901c831f124dd51215f672c725dee9"
+      "sha256": "895b8e222657f510ab63cbb96cb46e781425c5ed8685030337d1b87b5c2fbdd4"
     },
     "phraseBackdrops": {
       "path": "content-draft/viet/phrase-backdrops-v1.json",
@@ -49,7 +49,7 @@
     "database": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet.sqlite",
     "report": "native-ios/Resources/LanguagePacks/viet/speaklocal-viet-report.json",
     "schema": "native-ios/scripts/sqlite/001_initial.sql",
-    "databaseSha256": "b91b5fb364183bf3d82476f816ef4fb1828319e52d14f0519c0bf71653ce6196",
+    "databaseSha256": "61cbac0f818d3803a72cd2741169bf412215582eb0ddfbf64aa9c1ec53e4881d",
     "deterministicMode": "byte-for-byte recreated from sorted inserts and source-hash metadata"
   },
   "bundlePackaging": {
@@ -66,57 +66,58 @@
       "ok": true
     },
     "clusters": {
-      "expected": 1767,
-      "actual": 1767,
+      "expected": 1782,
+      "actual": 1782,
       "ok": true
     },
     "phrases": {
-      "expected": 1785,
-      "actual": 1785,
+      "expected": 1800,
+      "actual": 1800,
       "ok": true
     },
     "canonicalPhrasePages": {
-      "expected": 1778,
-      "actual": 1778,
+      "expected": 1793,
+      "actual": 1793,
       "ok": true
     },
     "authoredPagesOrAliases": {
-      "expected": 1778,
-      "actual": 1778,
+      "expected": 1793,
+      "actual": 1793,
       "ok": true
     }
   },
   "generatedCounts": {
     "languagePacks": 1,
     "scenarios": 19,
-    "clusters": 1767,
-    "clusterMembers": 1785,
-    "phrases": 1785,
-    "pages": 1778,
-    "aliases": 2659,
-    "pageCategories": 8985,
-    "pagePracticeSeeds": 1778,
-    "pagePracticeSteps": 1981,
-    "sections": 7204,
-    "sectionItems": 15430,
-    "breakdownTokens": 6900,
-    "relations": 9091,
-    "searchDocuments": 1785,
+    "clusters": 1782,
+    "clusterMembers": 1800,
+    "phrases": 1800,
+    "pages": 1793,
+    "aliases": 2716,
+    "pageCategories": 9087,
+    "pagePracticeSeeds": 1793,
+    "pagePracticeSteps": 3800,
+    "sections": 11359,
+    "sectionItems": 17946,
+    "breakdownTokens": 5796,
+    "relations": 11728,
+    "searchDocuments": 1800,
     "audioAssets": 4318,
-    "audioUsages": 14291,
+    "audioUsages": 16126,
     "audioTextDedupeRows": 2919,
-    "missingAudioAuditRows": 700,
+    "missingAudioAuditRows": 778,
     "vietnameseMenuHelperPhrases": 16,
     "vietnameseMenuItems": 355
   },
   "validation": {
     "integrityCheck": "ok",
     "foreignKeyCheckRows": 0,
-    "ftsRowCount": 1785,
+    "ftsRowCount": 1800,
     "duplicateCanonicalPageGroupCount": 0,
     "sectionlessCanonicalPageCount": 0,
-    "relationshipWordsEligiblePageCount": 20,
+    "relationshipWordsEligiblePageCount": 22,
     "relationshipWordsEligiblePageIDs": [
+      "viet-phrase-acknowledge-co",
       "viet-phrase-acknowledge-da-chao-anh",
       "viet-phrase-acknowledge-da-chao-ba",
       "viet-phrase-acknowledge-da-chao-chi",
@@ -136,7 +137,8 @@
       "viet-phrase-hello-da-chao-anh-chi",
       "viet-phrase-hello-good-afternoon",
       "viet-phrase-hello-good-morning",
-      "viet-phrase-polite-1"
+      "viet-phrase-polite-1",
+      "viet-phrase-smalltalk-di-dau-day"
     ],
     "missingRelationshipWordsSectionCount": 0,
     "unexpectedRelationshipWordsSectionCount": 0,
@@ -187,9 +189,9 @@
     "authoredPhraseItemsNotInCatalog": []
   },
   "canonicalIdentity": {
-    "canonicalPageCount": 1778,
-    "sourcePhraseRowCount": 1785,
-    "phrasesResolvedToCanonicalPages": 1785,
+    "canonicalPageCount": 1793,
+    "sourcePhraseRowCount": 1800,
+    "phrasesResolvedToCanonicalPages": 1800,
     "duplicateNormalizedTargetTextGroupCount": 5,
     "resolvedDuplicateNormalizedTargetTextGroups": [
       {
@@ -258,32 +260,8 @@
       }
     ],
     "unresolvedDuplicateNormalizedTargetTextGroups": [],
-    "aliasConflictCount": 6,
+    "aliasConflictCount": 2,
     "aliasConflicts": [
-      {
-        "aliasID": "viet-family-food-peanut-allergy",
-        "firstCanonicalPageID": "viet-phrase-food-peanut-allergy",
-        "nextCanonicalPageID": "viet-phrase-food-15",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-food-peanut-allergy",
-        "firstCanonicalPageID": "viet-phrase-food-peanut-allergy",
-        "nextCanonicalPageID": "viet-phrase-food-15",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-food-peanut-allergy",
-        "firstCanonicalPageID": "viet-phrase-food-peanut-allergy",
-        "nextCanonicalPageID": "viet-phrase-food-15",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
-      {
-        "aliasID": "viet-family-food-peanut-allergy",
-        "firstCanonicalPageID": "viet-phrase-food-peanut-allergy",
-        "nextCanonicalPageID": "viet-phrase-food-15",
-        "sourcePath": "native-ios/Resources/viet-authored-listing-pages.json"
-      },
       {
         "aliasID": "viet-phrase-repair-show-me",
         "firstCanonicalPageID": "viet-phrase-repair-show-me",
@@ -299,7 +277,7 @@
     ]
   },
   "graph": {
-    "relationCount": 9091,
+    "relationCount": 11728,
     "relationTypes": [
       {
         "relationType": "also_common_with",
@@ -311,11 +289,11 @@
       },
       {
         "relationType": "compare-nearby",
-        "count": 583
+        "count": 579
       },
       {
         "relationType": "mentioned-here",
-        "count": 72
+        "count": 69
       },
       {
         "relationType": "more_polite_than",
@@ -323,7 +301,7 @@
       },
       {
         "relationType": "next_step_after",
-        "count": 4372
+        "count": 4048
       },
       {
         "relationType": "same_need_alt_context",
@@ -331,7 +309,7 @@
       },
       {
         "relationType": "see_also",
-        "count": 3713
+        "count": 6681
       },
       {
         "relationType": "useful_next_phrase",
@@ -343,297 +321,297 @@
     "manifestEntries": 4318,
     "uniqueNormalizedSpokenTextCount": 2919,
     "assets": 4318,
-    "usages": 14291,
-    "missingAudioAuditRows": 700,
-    "plannedMissingAudioAuditRows": 700,
+    "usages": 16126,
+    "missingAudioAuditRows": 778,
+    "plannedMissingAudioAuditRows": 778,
     "releaseBlockingMissingAudioAuditRows": 0,
     "plannedMissingAudioQueue": "docs/audio-queues/viet-planned-missing-audio.csv",
-    "plannedMissingAudioQueueRows": 700,
+    "plannedMissingAudioQueueRows": 778,
     "missingAudioAuditSample": [
       {
-        "id": "missing-audio:planned:a80b9b12c97ab056",
+        "id": "missing-audio:planned:f179d2281163f794",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-atm-airport",
-        "expected_text": "Có ATM gần Sân bay Đà Nẵng không?",
-        "normalized_expected_text": "có atm gần sân bay đà nẵng không?",
+        "target_id": "food-premium-without-this-ingredient",
+        "expected_text": "Bạn có thể làm món này không có nguyên liệu này được không?",
+        "normalized_expected_text": "bạn có thể làm món này không có nguyên liệu này được không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:e99af4e6ed3415e9",
+        "id": "missing-audio:planned:d269d118bca8587e",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-atm-bach-dang-street",
-        "expected_text": "Có ATM gần Đường Bạch Đằng không?",
-        "normalized_expected_text": "có atm gần đường bạch đằng không?",
+        "target_id": "v500-poli-basi-sorry",
+        "expected_text": "Tôi xin lỗi",
+        "normalized_expected_text": "tôi xin lỗi",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:764b6155e5c22492",
+        "id": "missing-audio:planned:457a37007d7a629e",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-atm-con-market",
-        "expected_text": "Có ATM gần Chợ Cồn không?",
-        "normalized_expected_text": "có atm gần chợ cồn không?",
+        "target_id": "v500-unde-repa-please-type-it-into-my-phone",
+        "expected_text": "Anh/chị gõ vào điện thoại giúp tôi được không?",
+        "normalized_expected_text": "anh/chị gõ vào điện thoại giúp tôi được không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:6d67f52835b5221a",
+        "id": "missing-audio:planned:4a33fc209bfd8bb9",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-atm-han-market",
-        "expected_text": "Có ATM gần Chợ Hàn không?",
-        "normalized_expected_text": "có atm gần chợ hàn không?",
+        "target_id": "v500-hote-acco-the-toilet-is-not-working",
+        "expected_text": "Bồn cầu không sử dụng được",
+        "normalized_expected_text": "bồn cầu không sử dụng được",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
-        "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "suggested_audio_key": "v500-hote-acco-the-toilet-is-not-working",
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:f8876c196e5ef6ba",
+        "id": "missing-audio:planned:7bd366a1f02d9e38",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-atm-helio-night-market",
-        "expected_text": "Có ATM gần Chợ đêm Helio không?",
-        "normalized_expected_text": "có atm gần chợ đêm helio không?",
+        "target_id": "v500-food-drin-this-is-cold",
+        "expected_text": "Món này nguội rồi",
+        "normalized_expected_text": "món này nguội rồi",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
-        "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "suggested_audio_key": "v500-food-drin-this-is-cold",
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:a1feb27d5406fe82",
+        "id": "missing-audio:planned:a0586fad8ec4e5d7",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-bach-dang-route",
-        "expected_text": "Đi đường Bạch Đằng",
-        "normalized_expected_text": "đi đường bạch đằng",
+        "target_id": "v500-mone-numb-pric-i-need-smaller-bills",
+        "expected_text": "Tôi cần tiền mệnh giá nhỏ hơn",
+        "normalized_expected_text": "tôi cần tiền mệnh giá nhỏ hơn",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:403773227918538e",
+        "id": "missing-audio:planned:a65b5fa7984a8c37",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-eat-near-bach-dang-street",
-        "expected_text": "Ăn gần Đường Bạch Đằng",
-        "normalized_expected_text": "ăn gần đường bạch đằng",
+        "target_id": "v500-mone-numb-pric-do-i-need-exact-change",
+        "expected_text": "Tôi có cần trả đúng tiền không?",
+        "normalized_expected_text": "tôi có cần trả đúng tiền không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:c53f053b84a3f347",
+        "id": "missing-audio:planned:607c4f4649e02e09",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-eat-near-con-market",
-        "expected_text": "Ăn gần Chợ Cồn",
-        "normalized_expected_text": "ăn gần chợ cồn",
+        "target_id": "v500-dire-navi-is-it-open-now",
+        "expected_text": "Bây giờ có mở cửa không?",
+        "normalized_expected_text": "bây giờ có mở cửa không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:818232de24b38677",
+        "id": "missing-audio:planned:0fb428bb32869e9c",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-eat-near-han-market",
-        "expected_text": "Ăn gần Chợ Hàn",
-        "normalized_expected_text": "ăn gần chợ hàn",
+        "target_id": "v500-dire-navi-do-i-go-upstairs",
+        "expected_text": "Tôi lên lầu phải không?",
+        "normalized_expected_text": "tôi lên lầu phải không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:cbdd59522fc81b64",
+        "id": "missing-audio:planned:894a6d0e98adc478",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-go-airport",
-        "expected_text": "Đi Sân bay Đà Nẵng",
-        "normalized_expected_text": "đi sân bay đà nẵng",
+        "target_id": "v500-airp-bord-arri-i-cannot-find-my-driver",
+        "expected_text": "Tôi không tìm thấy tài xế của mình",
+        "normalized_expected_text": "tôi không tìm thấy tài xế của mình",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
-        "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "suggested_audio_key": "audio-authored-toi-khong-tim-thay-tai-xe-cua-minh-6a054e30bf",
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:e6570e4fdfc03b4c",
+        "id": "missing-audio:planned:fa0570276316b616",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-go-con-market",
-        "expected_text": "Đi Chợ Cồn",
-        "normalized_expected_text": "đi chợ cồn",
+        "target_id": "v500-airp-bord-arri-can-i-show-it-on-my-phone",
+        "expected_text": "Tôi cho anh/chị xem trên điện thoại được không?",
+        "normalized_expected_text": "tôi cho anh/chị xem trên điện thoại được không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:9092d3a9a7f5ef69",
+        "id": "missing-audio:planned:d4fbe000b031bdbc",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-go-han-market",
-        "expected_text": "Đi Chợ Hàn",
-        "normalized_expected_text": "đi chợ hàn",
+        "target_id": "v500-heal-phar-how-do-i-take-this",
+        "expected_text": "Tôi uống thuốc này như thế nào?",
+        "normalized_expected_text": "tôi uống thuốc này như thế nào?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
-        "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "suggested_audio_key": "v500-heal-phar-how-do-i-take-this",
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:5c43895521dadcd2",
+        "id": "missing-audio:planned:c7b3c6d059f3be8c",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-go-helio-night-market",
-        "expected_text": "Đi Chợ đêm Helio",
-        "normalized_expected_text": "đi chợ đêm helio",
+        "target_id": "v500-time-date-book-where-is-the-line",
+        "expected_text": "Xếp hàng ở đâu?",
+        "normalized_expected_text": "xếp hàng ở đâu?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:4a0e5d7c25084e30",
+        "id": "missing-audio:planned:f318dedd1fb827eb",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-go-nen",
-        "expected_text": "Cho tôi đến nhà hàng Nén Đà Nẵng.",
-        "normalized_expected_text": "cho tôi đến nhà hàng nén đà nẵng.",
+        "target_id": "v500-shop-can-you-show-me-another-one",
+        "expected_text": "Cho tôi xem cái khác được không?",
+        "normalized_expected_text": "cho tôi xem cái khác được không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:3ace51e6cb6ffe22",
+        "id": "missing-audio:planned:4962298ab3c98e32",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-go-nguyen-van-linh-street",
-        "expected_text": "Đi Đường Nguyễn Văn Linh",
-        "normalized_expected_text": "đi đường nguyễn văn linh",
+        "target_id": "v500-bath-pers-need-is-there-a-public-bathroom-nearby",
+        "expected_text": "Gần đây có nhà vệ sinh công cộng không?",
+        "normalized_expected_text": "gần đây có nhà vệ sinh công cộng không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:227ff23e02e88d38",
+        "id": "missing-audio:planned:66e1ecf843f7028a",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-go-railway-station",
-        "expected_text": "Đi Ga Đà Nẵng",
-        "normalized_expected_text": "đi ga đà nẵng",
+        "target_id": "v500-emer-safe-there-is-a-fire",
+        "expected_text": "Có cháy!",
+        "normalized_expected_text": "có cháy!",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
-        "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "suggested_audio_key": "v500-emer-safe-there-is-a-fire",
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:9b68d931ca7603da",
+        "id": "missing-audio:planned:da9698ec79666d2c",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-go-son-tra-night-market",
-        "expected_text": "Đi Chợ đêm Sơn Trà",
-        "normalized_expected_text": "đi chợ đêm sơn trà",
+        "target_id": "v500-emer-safe-stop-following-me",
+        "expected_text": "Đừng đi theo tôi nữa",
+        "normalized_expected_text": "đừng đi theo tôi nữa",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
-        "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "suggested_audio_key": "v500-emer-safe-stop-following-me",
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:32704d7e2d6643fc",
+        "id": "missing-audio:planned:bc2ce85c2fde4300",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-go-tien-sa-port",
-        "expected_text": "Đi Cảng Tiên Sa",
-        "normalized_expected_text": "đi cảng tiên sa",
+        "target_id": "v900-poli-basi-may-i",
+        "expected_text": "Tôi có thể làm vậy được không?",
+        "normalized_expected_text": "tôi có thể làm vậy được không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:6c6278be26fbcec4",
+        "id": "missing-audio:planned:a0293106d22297b9",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-go-vo-nguyen-giap-street",
-        "expected_text": "Đi Đường Võ Nguyên Giáp",
-        "normalized_expected_text": "đi đường võ nguyên giáp",
+        "target_id": "v900-tran-is-this-seat-available",
+        "expected_text": "Chỗ này còn trống không?",
+        "normalized_expected_text": "chỗ này còn trống không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "created_at": "source-hash:9a4fa959db3a2539"
       },
       {
-        "id": "missing-audio:planned:73af4abe3b4d4425",
+        "id": "missing-audio:planned:15fee9af1cd45110",
         "language_pack_id": "viet",
         "target_kind": "phrase",
-        "target_id": "city-danang-near-bach-dang-street",
-        "expected_text": "Đường Bạch Đằng gần đây không?",
-        "normalized_expected_text": "đường bạch đằng gần đây không?",
+        "target_id": "v900-tran-can-you-break-this-bill",
+        "expected_text": "Bạn có thể đổi tờ này thành tiền lẻ không?",
+        "normalized_expected_text": "bạn có thể đổi tờ này thành tiền lẻ không?",
         "source_path": "native-ios/Resources/viet-phrase-catalog.json",
         "reason": "planned-authored-audio",
         "severity": "planned",
         "release_blocking": 0,
         "suggested_audio_key": "",
-        "created_at": "source-hash:9806c023e0fe1d71"
+        "created_at": "source-hash:9a4fa959db3a2539"
       }
     ]
   },
   "categoryData": {
-    "authoredCategoryCount": 855,
+    "authoredCategoryCount": 871,
     "authoredCategoryIDs": [
       "actual-landmarks",
       "address-confirm",
@@ -641,6 +619,7 @@
       "airport-border-arrival",
       "airport-domestic-terminal",
       "arrivals-routes",
+      "attraction-ticket",
       "ba-na-hills",
       "ba-na-hills-journey-v2",
       "bathroom-personal-needs",
@@ -666,6 +645,7 @@
       "directions-pickup-point",
       "directions-which-exit",
       "dish-order-diet",
+      "dragon-bridge",
       "driver-ready",
       "driver-ready-phrase",
       "driver-wait",
@@ -725,6 +705,7 @@
       "landmarks-attractions",
       "local-dishes",
       "local-services-everyday-tasks",
+      "marble-mountains",
       "menu-help",
       "money-numbers-prices",
       "money-price-changed",
@@ -797,31 +778,44 @@
       "social-how-long",
       "social-recommend",
       "social-small-talk",
+      "son-tra",
       "spice",
       "street-pronouncer",
       "support-family-address-confirm",
       "support-family-attraction-navigation",
+      "support-family-attraction-ticket",
+      "support-family-destination-label",
+      "support-family-destination-request",
       "support-family-dish-finder",
       "support-family-dish-ordering",
       "support-family-driver-wait",
       "support-family-drop-off",
+      "support-family-english-help",
       "support-family-ingredient-check",
+      "support-family-landmark-location",
+      "support-family-marble-mountains-ticket",
       "support-family-menu-recommendation",
       "support-family-photo-help",
       "support-family-pickup-location",
+      "support-family-restaurant-drinks",
       "support-family-restaurant-ordering",
       "support-family-return-time",
       "support-family-ride-back",
+      "support-family-show-me",
       "support-family-spice-check",
       "support-family-street-confirm",
       "support-family-street-driver",
+      "support-family-ticket-counter",
       "support-family-wrong-place",
       "support-model-dish-order-diet",
       "support-model-driver-ready-phrase",
       "support-model-place-journey-navigation",
       "support-model-place-navigation-photo",
+      "support-model-repair-phrase",
       "support-model-restaurant-live-interaction",
       "support-model-street-pronouncer",
+      "support-model-ticket-counter",
+      "ticket-counter",
       "time-boarding",
       "time-dates-booking",
       "time-move-later",

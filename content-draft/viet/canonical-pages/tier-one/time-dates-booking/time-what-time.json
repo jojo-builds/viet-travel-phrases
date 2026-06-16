@@ -7,7 +7,7 @@
   "title": "Mấy giờ?",
   "englishTitle": "What time?",
   "pronunciation": "may zyuh",
-  "summary": "Mấy giờ? means “What time?”",
+  "summary": "This is the safest time question because the thing itself can be pointed to or named separately.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Mấy giờ? when you need \"What time\". This is for when you already both know what the event is and you just need the time. This is the safest time question because the thing itself can be pointed to or named separately. Listen for a short reply, a smile, a time, or a light follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Mấy giờ? puts the practical detail first. Reach for it when you already both know what the event is and you just need the time. This is the safest time question because the thing itself can be pointed to or named separately.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Mấy + giờ carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "time-1-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "time-1"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Mấy giờ? as your first sentence for \"What time\". This is for when you already both know what the event is and you just need the time. Pause after the phrase and listen for a short reply, a smile, a time, or a light follow-up question. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Ask while the date, time, ticket, booking, or address is still visible, then pause before adding more words.",
       "phrases": [
         {
           "id": "time-1",
@@ -63,18 +66,21 @@
           "audioKey": "time-1"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Time phrases prevent missed pickups, bookings, and closing times. For \"What time\", Mấy giờ? makes the next step easier to answer. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
-      "presentation": "plain-text"
+      "body": "Time phrases prevent missed pickups, bookings, and closing times. Keep the booking, room number, date, or address visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Time, Dates & Booking, the reply often comes as a short reply, a smile, a time, or a light follow-up question. Say Mấy giờ? once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Watch for a short reply, a smile, a time, or light follow-up question. Say Mấy giờ?",
       "phrases": [
         {
           "id": "time-2",
@@ -107,12 +113,13 @@
           "audioKey": "time-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when you already both know what the event is and you just need the time. It fits times, dates, tickets, waits, and bookings, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
+      "body": "Reach for it when you already both know what the event is and you just need the time. Watch for a smile, a time, or light follow-up question.",
       "phrases": [
         {
           "id": "time-5",
@@ -145,13 +152,16 @@
           "audioKey": "v500-time-date-book-one-ticket-please"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Morning, afternoon, and tomorrow can be easy to mix up. Repeat the date or show it if the booking matters.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -169,12 +179,13 @@
           "audioKey": "time-1"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through today, tomorrow morning, and I have a booking.",
       "phrases": [
         {
           "id": "time-2",
@@ -237,7 +248,8 @@
           "audioKey": "v500-time-date-book-one-ticket-please"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

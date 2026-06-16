@@ -20,20 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "eSIM",
-      "english": "eSIM"
+      "vietnamese": "eSIM của tôi",
+      "english": "my eSIM",
+      "keepTogetherReason": "eSIM phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "không hoạt động",
-      "english": "not working",
-      "keepTogetherReason": "fixed negative phrase"
+      "english": "is not working",
+      "keepTogetherReason": "not-working phrase"
     },
     {
       "id": "full",

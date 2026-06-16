@@ -7,7 +7,7 @@
   "title": "Tôi đã bị tính phí cho thứ mà tôi không sử dụng",
   "englishTitle": "I was charged for something I did not use",
   "pronunciation": "Toi da bi tinh phi cho thu ma toi khong su dung",
-  "summary": "I was charged for something I did not use",
+  "summary": "For questioning a hotel or service charge for something you did not use.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi đã bị tính phí cho thứ mà tôi không sử dụng is a practical hotel or stay phrase for keeping one travel detail clear. Use it when I was charged for something I did not... is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Point to the bill line, room number, booking, minibar item, laundry slip, or service charge before explaining.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi đã bị tính phí cho thứ mà tôi không sử dụng. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Keep the receipt visible. Ask for the line to be checked before arguing about the full bill.",
       "phrases": [
         {
           "id": "v900-hote-acco-i-was-charged-for-something-i-did-not-use",
@@ -42,44 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi đã bị tính phí means I was charged; cho thứ mà tôi không sử dụng means for something I did not use.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi đã bị",
-          "english": "my phone was stolen",
-          "audioKey": null
+          "vietnamese": "Tôi đã bị tính phí",
+          "english": "I was charged",
+          "keepTogetherReason": "was-charged phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tính phí cho",
-          "english": "fee",
-          "audioKey": null
+          "vietnamese": "cho thứ mà tôi không sử dụng",
+          "english": "for something I did not use",
+          "keepTogetherReason": "unused-item phrase"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "thứ mà tôi",
-          "english": "the item I",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
-          "vietnamese": "không sử dụng",
-          "english": "yes/no question",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Tôi đã bị tính phí cho thứ mà tôi không sử dụng",
           "english": "I was charged for something I did not use",
-          "audioKey": null
+          "audioKey": "v900-hote-acco-i-was-charged-for-something-i-did-not-use"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I was charged for something I did not use to another hotel or stay need.",
+      "body": "Reservation, check-in, and polite-check-in cards help if the bill issue is tied to your booking.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -116,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when i was charged for something I did not... is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotel checkout, guesthouse desks, tour counters, laundry pickups, and service bills with an extra item.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "If they remove the charge, ask for the new total or updated receipt before paying.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi đã bị tính phí cho thứ mà tôi không sử dụng.",
+      "body": "Checkout-time, quiet-room, checkout, room-key, and luggage cards cover nearby hotel desk needs.",
       "phrases": [
         {
           "id": "hotel-3",

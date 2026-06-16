@@ -22,13 +22,13 @@
       "id": "chunk-1",
       "vietnamese": "Đồn cảnh sát",
       "english": "police station",
-      "keepTogetherReason": "compound public-safety place term"
+      "keepTogetherReason": "police-station phrase"
     },
     {
-      "id": "chunk-4",
+      "id": "chunk-2",
       "vietnamese": "ở đâu?",
-      "english": "where",
-      "keepTogetherReason": "fixed place question"
+      "english": "where?",
+      "keepTogetherReason": "where question"
     },
     {
       "id": "full",

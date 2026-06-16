@@ -20,24 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi bị",
+      "english": "I was / got",
+      "keepTogetherReason": "I-was phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "vietnamese": "côn trùng",
-      "english": "insect / insects",
-      "keepTogetherReason": "compound insect term"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "cắn",
-      "english": "bite",
-      "keepTogetherReason": "compound health term"
+      "vietnamese": "côn trùng cắn",
+      "english": "bitten by an insect",
+      "keepTogetherReason": "insect-bite phrase"
     },
     {
       "id": "full",

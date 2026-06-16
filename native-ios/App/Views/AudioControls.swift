@@ -304,6 +304,7 @@ struct AudioSpeedSegmentedControl: View {
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
+                .accessibilityIdentifier("AudioSpeedOption.\(speed)")
 
                 if index < speeds.count - 1 {
                     Rectangle()
@@ -335,6 +336,42 @@ struct PinnedAudioSpeedControl: View {
     var body: some View {
         AudioSpeedSegmentedControl(metrics: .topAdmin)
             .accessibilityIdentifier("PinnedAudioSpeedControl")
+    }
+}
+
+struct TopAdminAudioSpeedChip: View {
+    let action: () -> Void
+
+    @AppStorage(AudioPlaybackPreference.speedKey) private var selectedSpeed = AudioPlaybackPreference.defaultSpeed
+
+    private var currentSpeed: String {
+        AudioPlaybackPreference.normalizedSpeed(selectedSpeed)
+    }
+
+    var body: some View {
+        Button(action: action) {
+            Text(currentSpeed)
+                .font(.system(size: 13, weight: .bold))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.82)
+                .frame(width: AppChromeLayout.topAdminSpeedChipWidth, height: AppChromeLayout.topAdminControlSize)
+                .contentShape(Capsule(style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .background {
+            Capsule(style: .continuous)
+                .fill(.ultraThinMaterial)
+                .overlay {
+                    Capsule(style: .continuous)
+                        .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
+                }
+                .softInteractiveControlShadow()
+        }
+        .nativeGlass(in: Capsule(style: .continuous), interactive: true)
+        .accessibilityLabel(currentSpeed)
+        .accessibilityHint("Opens audio speed")
+        .accessibilityIdentifier("TopAdmin.SpeedChip")
     }
 }
 
@@ -391,6 +428,14 @@ enum PinnedAudioSpeedChromePolicy {
         isSearchPresented: Bool,
         isMenuSectionChromeVisible: Bool = false
     ) -> Bool {
+        guard !isSearchPresented else {
+            return false
+        }
+
+        if isMenuSectionChromeVisible {
+            return true
+        }
+
         guard canShowPinnedControl(
             on: currentRoute,
             hasStaticBackButton: hasStaticBackButton,

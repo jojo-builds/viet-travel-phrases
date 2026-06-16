@@ -7,7 +7,7 @@
   "title": "Cảm ơn bạn, hãy giữ sự thay đổi",
   "englishTitle": "Thank you, keep the change",
   "pronunciation": "Cam on ban hay giu su thay doi",
-  "summary": "Thank you, keep the change",
+  "summary": "A clear phrase for “Thank you, keep the change” in a taxi, motorbike pickup, or station counter.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Cảm ơn bạn, hãy giữ sự thay đổi. Keep the situation visible, pause after the phrase, and let the other person answer with a smile, acknowledgment, or short reply.",
+      "body": "Say Cảm ơn bạn, hãy giữ sự thay đổi as one clean sentence; the destination, fare, or ride screen can carry the exact detail. Keep the map, address, or destination visible.",
       "phrases": [
         {
           "id": "v900-tran-thank-you-keep-the-change",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Start with Cảm ơn bạn, + hãy giữ sự thay đổi; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Thank you, keep the change to another transport need.",
+      "body": "Nearby follow-ups: Take me here, Go to District 1, and You can stop here.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,7 +104,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when thank you, keep the change is the detail you need resolved. The likely reply is a smile, acknowledgment, or short reply, so keep the phrase short and ready for one follow-up."
+      "body": "Best in a taxi, motorbike pickup, or station counter, before the explanation gets long. Keep the destination, fare, or ride screen close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -114,7 +114,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Cảm ơn bạn, hãy giữ sự thay đổi.",
+      "body": "These follow-ups cover price, route, pickup, or payment: Please stop right here, Go this way, and Please turn on the air conditioning.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

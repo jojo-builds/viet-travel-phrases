@@ -21,40 +21,26 @@
     {
       "id": "chunk-1",
       "vietnamese": "Có",
-      "english": "have / there is"
+      "english": "is there",
+      "keepTogetherReason": "existence question opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bác sĩ",
-      "english": "doctor",
-      "keepTogetherReason": "compound health term"
+      "vietnamese": "bác sĩ hoặc dược sĩ",
+      "english": "doctor or pharmacist",
+      "keepTogetherReason": "doctor-or-pharmacist phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "hoặc",
-      "english": "or"
+      "vietnamese": "nói tiếng Anh",
+      "english": "speaks English",
+      "keepTogetherReason": "English-speaking phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "dược sĩ",
-      "english": "pharmacist",
-      "keepTogetherReason": "compound health term"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "nói",
-      "english": "say / speak"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "tiếng Anh",
-      "english": "English language",
-      "keepTogetherReason": "compound language name"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

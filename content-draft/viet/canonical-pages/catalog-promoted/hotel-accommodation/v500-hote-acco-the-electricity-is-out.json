@@ -7,7 +7,7 @@
   "title": "Điện đã hết",
   "englishTitle": "The electricity is out",
   "pronunciation": "Dien da het",
-  "summary": "The electricity is out",
+  "summary": "Tell the front desk the power is out in your room so they can check the breaker, key card slot, or building issue.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Điện đã hết is a practical hotel or stay phrase for keeping one travel detail clear. Use it when electricity is out is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Good when lights, outlets, air conditioning, or charging stop working in the room."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Điện đã hết. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say it with the room number ready, then point to the light, outlet, or key-card slot.",
       "phrases": [
         {
           "id": "v500-hote-acco-the-electricity-is-out",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Điện is electricity; the full line says the power has gone out.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from The electricity is out to another hotel or stay need.",
+      "body": "Reservation and check-in cards help if staff need to confirm the room before sending help.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when electricity is out is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best as soon as the room loses power, especially before phones or medical devices run low."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "They may send maintenance, move rooms, or ask whether the key card is in the power slot."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Điện đã hết.",
+      "body": "Checkout-time, quiet-room, and checkout cards cover other front-desk basics.",
       "phrases": [
         {
           "id": "hotel-3",

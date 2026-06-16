@@ -20,52 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "giúp tôi liên hệ",
+      "english": "help me contact",
+      "keepTogetherReason": "help-contact phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "giúp",
-      "english": "help"
+      "vietnamese": "với hãng hàng không của tôi",
+      "english": "my airline",
+      "keepTogetherReason": "airline-contact phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "tôi",
-      "english": "me"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "liên hệ",
-      "english": "contact",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "với",
-      "english": "with / to"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "hãng hàng không",
-      "english": "airline",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-9",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

@@ -22,7 +22,7 @@
       "id": "chunk-1",
       "vietnamese": "Vui lòng",
       "english": "please",
-      "keepTogetherReason": "fixed polite phrase"
+      "keepTogetherReason": "polite please opener"
     },
     {
       "id": "chunk-2",
@@ -31,13 +31,9 @@
     },
     {
       "id": "chunk-3",
-      "vietnamese": "cốp",
-      "english": "trunk"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "xe",
-      "english": "vehicle"
+      "vietnamese": "cốp xe",
+      "english": "car trunk",
+      "keepTogetherReason": "trunk noun"
     },
     {
       "id": "full",

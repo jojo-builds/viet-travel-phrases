@@ -211,11 +211,12 @@ function run(command, args, options = {}) {
   const result = spawnSync(command, args, {
     cwd: repoRoot,
     encoding: "utf8",
+    maxBuffer: 1024 * 1024 * 256,
     ...options,
   });
 
   if (result.status !== 0) {
-    throw new Error(`${command} ${args.join(" ")} failed\nSTDOUT:\n${result.stdout}\nSTDERR:\n${result.stderr}`);
+    throw new Error(`${command} ${args.join(" ")} failed\nERROR:\n${result.error ?? ""}\nSTDOUT:\n${result.stdout ?? ""}\nSTDERR:\n${result.stderr ?? ""}`);
   }
 
   return result.stdout.trim();
@@ -748,6 +749,9 @@ function main() {
 
   function shouldShowRelationshipWordsSection(phrase, authoredPage = null) {
     if (!phrase) return false;
+    if (phrase.id === "smalltalk-7" || howAreYouRelationshipFormPhraseIDs.includes(phrase.id)) {
+      return false;
+    }
     const cityRecord = cityLibraryPageByPhraseID.get(phrase.id);
     const cityPageKind = authoredPage?.cityMetadata?.pageKind
       ?? cityRecord?.pageKind

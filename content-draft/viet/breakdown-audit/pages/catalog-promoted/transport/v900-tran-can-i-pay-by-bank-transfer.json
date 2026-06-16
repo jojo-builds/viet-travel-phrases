@@ -33,26 +33,16 @@
       "id": "chunk-3",
       "vietnamese": "thanh toán",
       "english": "pay",
-      "keepTogetherReason": "compound verb"
+      "keepTogetherReason": "compound payment verb"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "bằng",
-      "english": "by / with"
+      "vietnamese": "bằng chuyển khoản ngân hàng",
+      "english": "by bank transfer",
+      "keepTogetherReason": "bank-transfer payment phrase"
     },
     {
-      "vietnamese": "chuyển khoản",
-      "english": "bank transfer",
-      "keepTogetherReason": "compound payment term"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "ngân hàng",
-      "english": "bank",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-8",
+      "id": "chunk-5",
       "vietnamese": "không?",
       "english": "yes/no?"
     },

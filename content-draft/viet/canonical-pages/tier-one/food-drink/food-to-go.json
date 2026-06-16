@@ -7,7 +7,7 @@
   "title": "Mang đi",
   "englishTitle": "To go",
   "pronunciation": "mang dee",
-  "summary": "Mang đi means “To go”.",
+  "summary": "This keeps the order short and easy to recognize.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -18,39 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Mang đi when you need \"To go\". Say this when you want takeaway instead of staying. This keeps the order atomic and easy to recognize. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "breakdown",
-      "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
-      "breakdown": [
-        {
-          "id": "coffee-6-piece-1",
-          "vietnamese": "Mang",
-          "english": "bring / carry",
-          "audioKey": "breakdown-coffee-6-first"
-        },
-        {
-          "id": "coffee-6-piece-2",
-          "vietnamese": "đi",
-          "english": "go",
-          "audioKey": "breakdown-coffee-6-rest"
-        },
-        {
-          "id": "coffee-6-full",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "audioKey": "coffee-6"
-        }
-      ],
-      "presentation": "breakdown-strip"
+      "body": "This keeps the order short and easy to recognize.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Mang đi as your first sentence for \"To go\". Say this when you want takeaway instead of staying. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Say Mang đi in one connected line before adding details. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "coffee-6",
@@ -63,76 +39,83 @@
           "audioKey": "coffee-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Build the line around Mang + đi, then replay the full phrase until the rhythm feels natural.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Mang đi",
+          "english": "to go / take away",
+          "audioKey": "breakdown-coffee-6-full",
+          "keepTogetherReason": "fixed takeaway phrase"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Mang đi",
+          "english": "To go",
+          "audioKey": "coffee-6"
+        }
+      ],
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. For \"To go\", Mang đi makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. Point to the item, menu line, receipt, size, or photo.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Food & Drink, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Mang đi once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Watch for a clear reply, a pointed detail, or simple follow-up. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
+          "id": "food-7",
+          "vietnamese": "Gói mang về",
+          "english": "Pack it to go",
+          "pronunciation": "goy mang veh",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-coffee-milk",
-          "audioKey": "coffee-1"
+          "detailPageID": "viet-family-food-pack-to-go",
+          "audioKey": "food-7"
         },
         {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-food-drin-id-like-it-to-go-please",
+          "vietnamese": "Cho tôi lấy mang đi nhé",
+          "english": "I'd like it to go, please.",
+          "pronunciation": "Cho toi lay mang di nhe",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-coffee-black",
-          "audioKey": "coffee-2"
+          "detailPageID": "viet-phrase-v900-food-drin-id-like-it-to-go-please",
+          "audioKey": "audio-authored-cho-toi-lay-mang-di-nhe-9678482485"
         },
         {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-food-drin-please-pack-it-to-go",
+          "vietnamese": "Gói mang về giúp tôi nhé",
+          "english": "Please pack it to go.",
+          "pronunciation": "Goi mang ve giup toi nhe",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-coffee-bac-xiu",
-          "audioKey": "coffee-3"
-        }
-      ],
-      "presentation": "phrase-list"
-    },
-    {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "Say this when you want takeaway instead of staying. It fits ordering, adjusting dishes, and checking ingredients, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
-      "phrases": [
-        {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-less-ice",
-          "audioKey": "coffee-4"
+          "detailPageID": "viet-phrase-v900-food-drin-please-pack-it-to-go",
+          "audioKey": "audio-authored-goi-mang-ve-giup-toi-nhe-26441c34b2"
         },
         {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-food-drin-thats-all-thank-you",
+          "vietnamese": "Vậy thôi, cảm ơn",
+          "english": "That's all, thank you.",
+          "pronunciation": "Vay thoi cam on",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-no-sugar",
-          "audioKey": "coffee-5"
+          "detailPageID": "viet-phrase-v900-food-drin-thats-all-thank-you",
+          "audioKey": "audio-authored-vay-thoi-cam-on-efab00a56b"
         },
         {
           "id": "coffee-7",
@@ -145,147 +128,113 @@
           "audioKey": "coffee-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
-      "id": "good-to-know",
-      "title": "Good to know",
-      "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "tip-callout"
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "At a stall, cafe, or casual restaurant, let the dish, container, bag, bill, or counter order do the explaining after the first line lands.",
+      "phrases": [
+        {
+          "id": "store-7",
+          "vietnamese": "Cho tôi hóa đơn",
+          "english": "Please give me the receipt",
+          "pronunciation": "cho toy hwa dun",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-service-receipt",
+          "audioKey": "store-7"
+        },
+        {
+          "id": "store-6",
+          "vietnamese": "Tôi quẹt thẻ được không?",
+          "english": "Can I pay by card?",
+          "pronunciation": "toy quet teh dook khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-service-card",
+          "audioKey": "store-6"
+        }
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Point to the dish or ingredient while speaking. It helps when tone marks or dish names are hard to pronounce.",
+      "body": "Say mang đi before the order is finished. It changes packaging, timing, and sometimes the way the dish is assembled.",
       "phrases": [
         {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
+          "id": "food-17",
+          "vietnamese": "Trả riêng được không?",
+          "english": "Can we pay separately?",
+          "pronunciation": "tra ryeng dook khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-need-table",
-          "audioKey": "food-need-table"
-        },
-        {
-          "id": "food-menu",
-          "vietnamese": "Cho tôi xem thực đơn được không?",
-          "english": "Can I see the menu?",
-          "pronunciation": "cho toy sem thook dun dook khong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-menu",
-          "audioKey": "food-menu"
-        },
-        {
-          "id": "food-1",
-          "vietnamese": "Cho tôi một phần",
-          "english": "One portion please",
-          "pronunciation": "cho toy mot fun",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-one-portion",
-          "audioKey": "food-1"
+          "detailPageID": "viet-phrase-food-17",
+          "audioKey": "food-17"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
-      "id": "nearby-phrases",
-      "title": "Useful nearby phrases",
-      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
-      "phrases": [
-        {
-          "id": "food-2",
-          "vietnamese": "Cho tôi tô này",
-          "english": "I’ll take this bowl",
-          "pronunciation": "cho toy toh nai",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-this-bowl",
-          "audioKey": "food-2"
-        },
-        {
-          "id": "food-3",
-          "vietnamese": "Không cay nhé",
-          "english": "Not spicy please",
-          "pronunciation": "khong kai nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-not-spicy",
-          "audioKey": "food-3"
-        },
-        {
-          "id": "food-4",
-          "vietnamese": "Cho thêm rau",
-          "english": "More herbs please",
-          "pronunciation": "cho them zow",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-more-herbs",
-          "audioKey": "food-4"
-        },
-        {
-          "id": "food-5",
-          "vietnamese": "Có nước suối không?",
-          "english": "Do you have bottled water?",
-          "pronunciation": "koh nook soy khong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-bottled-water",
-          "audioKey": "food-5"
-        }
-      ],
-      "presentation": "horizontal-phrase-cards"
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "For soups or saucy dishes, expect separate containers. Check the bag before leaving if the order has several parts.",
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover can I pay the bill by card?; I think there is a mistake on the bill; one more, please.",
       "phrases": [
         {
-          "id": "food-6",
-          "vietnamese": "Cho tôi muỗng với đũa",
-          "english": "A spoon and chopsticks please",
-          "pronunciation": "cho toy moong voy doo-ah",
+          "id": "v900-food-drin-can-i-pay-the-bill-by-card",
+          "vietnamese": "Tôi có thể thanh toán hóa đơn bằng thẻ không?",
+          "english": "Can I pay the bill by card?",
+          "pronunciation": "Toi co the thanh toan hoa don bang the khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-utensils",
-          "audioKey": "food-6"
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-pay-the-bill-by-card",
+          "audioKey": "v900-food-drin-can-i-pay-the-bill-by-card"
         },
         {
-          "id": "food-7",
-          "vietnamese": "Gói mang về",
-          "english": "Pack it to go",
-          "pronunciation": "goy mang veh",
+          "id": "v900-food-drin-i-think-there-is-a-mistake-on-the-bill",
+          "vietnamese": "Tôi nghĩ có sai sót trên hóa đơn",
+          "english": "I think there is a mistake on the bill",
+          "pronunciation": "Toi nghi co sai sot tren hoa don",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-pack-to-go",
-          "audioKey": "food-7"
+          "detailPageID": "viet-phrase-v900-food-drin-i-think-there-is-a-mistake-on-the-bill",
+          "audioKey": "v900-food-drin-i-think-there-is-a-mistake-on-the-bill"
         },
         {
-          "id": "food-vegetarian",
-          "vietnamese": "Tôi ăn chay",
-          "english": "I am vegetarian",
-          "pronunciation": "toy an chai",
+          "id": "v900-food-drin-one-more-please",
+          "vietnamese": "Xin thêm một cái nữa",
+          "english": "One more, please",
+          "pronunciation": "Xin them mot cai nua",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-vegetarian",
-          "audioKey": "food-vegetarian"
+          "detailPageID": "viet-phrase-v900-food-drin-one-more-please",
+          "audioKey": "v900-food-drin-one-more-please"
         },
         {
-          "id": "food-peanut-allergy",
-          "vietnamese": "Tôi bị dị ứng đậu phộng",
-          "english": "I am allergic to peanuts",
-          "pronunciation": "toy bee zee oong dow fohng",
+          "id": "v900-food-drin-two-of-these-please",
+          "vietnamese": "Xin vui lòng cho hai trong số này",
+          "english": "Two of these, please",
+          "pronunciation": "Xin vui long cho hai trong so nay",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-peanut-allergy",
-          "audioKey": "food-peanut-allergy"
+          "detailPageID": "viet-phrase-v900-food-drin-two-of-these-please",
+          "audioKey": "v900-food-drin-two-of-these-please"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

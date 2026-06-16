@@ -4,10 +4,10 @@
   "phraseID": "v900-poli-basi-im-in-a-hurry",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "tôi đang vội",
+  "title": "Tôi đang vội",
   "englishTitle": "I’m in a hurry",
-  "pronunciation": "toi dang voi",
-  "summary": "I’m in a hurry",
+  "pronunciation": "Toi dang voi",
+  "summary": "For politely explaining that time is tight before a counter, ride, or queue answer drags on.",
   "iconName": "hand.wave.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,18 +20,19 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "tôi đang vội is a practical polite basics phrase for keeping one travel detail clear. Use it when I’m in a hurry is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Keep it calm. This is a time-pressure note, not a complaint.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: tôi đang vội. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say it once, then add the concrete request: taxi, bill, ticket, room key, or direction.",
       "phrases": [
         {
           "id": "v900-poli-basi-im-in-a-hurry",
-          "vietnamese": "tôi đang vội",
+          "vietnamese": "Tôi đang vội",
           "english": "I’m in a hurry",
-          "pronunciation": "toi dang voi",
+          "pronunciation": "Toi dang voi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
           "detailPageID": null,
@@ -42,32 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi đang means I am; vội means in a hurry.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "tôi đang",
+          "vietnamese": "Tôi đang",
           "english": "I am",
-          "audioKey": null
+          "keepTogetherReason": "I-am phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "vội",
-          "english": "with / to",
-          "audioKey": null
+          "english": "in a hurry",
+          "keepTogetherReason": "hurry word"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "tôi đang vội",
+          "id": "full",
+          "vietnamese": "Tôi đang vội",
           "english": "I’m in a hurry",
-          "audioKey": null
+          "audioKey": "v900-poli-basi-im-in-a-hurry"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I’m in a hurry to another polite basics need.",
+      "body": "Hello, thank-you, and thank-you-very-much cards cover softer polite openings.",
       "phrases": [
         {
           "id": "polite-1",
@@ -104,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real polite basics exchange when i’m in a hurry is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Use it at counters, rides, queues, or hotel desks when the other person can still help quickly.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
+      "body": "A rushed tone can sound sharp. Calm wording plus the visible ticket, map, or bill works better.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after tôi đang vội.",
+      "body": "Yes, no-thank-you, excuse-me, it's-okay, and goodbye cards cover the next polite move.",
       "phrases": [
         {
           "id": "polite-3",
@@ -172,9 +176,9 @@
   "examples": [
     {
       "id": "v900-poli-basi-im-in-a-hurry",
-      "vietnamese": "tôi đang vội",
+      "vietnamese": "Tôi đang vội",
       "english": "I’m in a hurry",
-      "pronunciation": "toi dang voi",
+      "pronunciation": "Toi dang voi",
       "symbolName": "speaker.wave.2.fill",
       "tintName": "red",
       "detailPageID": null,

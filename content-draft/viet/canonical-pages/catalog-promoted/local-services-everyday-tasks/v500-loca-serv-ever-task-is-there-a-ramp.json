@@ -7,7 +7,7 @@
   "title": "Có đoạn đường nối không?",
   "englishTitle": "Is there a ramp?",
   "pronunciation": "Co doan duong noi khong",
-  "summary": "Is there a ramp?",
+  "summary": "For asking whether there is a ramp before moving bags, a stroller, or a wheelchair.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có đoạn đường nối không? is a practical local service phrase for keeping one travel detail clear. Use it when Is there a ramp is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask at the entrance before committing to stairs or a narrow doorway."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Có đoạn đường nối không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point to the steps, doorway, bag, stroller, or chair so the answer can be a direction.",
       "phrases": [
         {
           "id": "v500-loca-serv-ever-task-is-there-a-ramp",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có asks is there; đoạn đường nối means ramp; không? makes it yes/no.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Có đoạn đường",
-          "english": "is there / does it have",
-          "audioKey": null
+          "vietnamese": "Có",
+          "english": "is there",
+          "keepTogetherReason": "existence question opener"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nối",
-          "english": "say / speak",
-          "audioKey": null
+          "vietnamese": "đoạn đường nối",
+          "english": "ramp",
+          "keepTogetherReason": "ramp noun"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Có đoạn đường nối không?",
-          "english": "Is there a ramp",
-          "audioKey": null
+          "english": "Is there a ramp?",
+          "audioKey": "v500-loca-serv-ever-task-is-there-a-ramp"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is there a ramp? to another local service need.",
+      "body": "The extra cards cover small counter asks that often happen after the access question.",
       "phrases": [
         {
           "id": "store-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real local service exchange when is there a ramp is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at stations, hotels, shops, clinics, malls, and service counters with steps at the entrance."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Service counters often answer with numbers or times. Ask the short question first, then use a write-it-down phrase if needed."
+      "body": "The answer may be a point to a side entrance, lift, or back door. Wait for the gesture before moving."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Có đoạn đường nối không?.",
+      "body": "Print, receipt, card-payment, open-this, and repair-bag pages cover nearby service-counter details.",
       "phrases": [
         {
           "id": "store-4",

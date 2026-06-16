@@ -7,7 +7,7 @@
   "title": "Khu vực hút thuốc ở đâu?",
   "englishTitle": "Where is the smoking area?",
   "pronunciation": "Khu vuc hut thuoc o dau",
-  "summary": "Where is the smoking area?",
+  "summary": "For finding the designated smoking area in an airport, station, mall, hotel, or attraction without guessing near the doors.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Khu vực hút thuốc ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names smoking area in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Ask staff before stepping outside or following a crowd. The answer is usually a gate, floor, balcony, or marked corner."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Khu vực hút thuốc ở đâu?. Show your passport, booking, baggage tag, map, or pickup screen, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Point toward the terminal, lobby, or concourse if there are several exits. Wait for a gesture before walking.",
       "phrases": [
         {
           "id": "v900-airp-bord-arri-where-is-the-smoking-area",
@@ -42,38 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Khu vực hút thuốc means smoking area; ở đâu asks where.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Khu vực hút",
-          "english": "the smoking area",
-          "audioKey": null
+          "vietnamese": "Khu vực hút thuốc",
+          "english": "smoking area",
+          "keepTogetherReason": "smoking-area phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thuốc",
-          "english": "medicine",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-3",
-          "vietnamese": "ở đâu",
+          "vietnamese": "ở đâu?",
           "english": "where?",
-          "audioKey": null
+          "keepTogetherReason": "where question"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Khu vực hút thuốc ở đâu?",
-          "english": "Where is the smoking area",
-          "audioKey": null
+          "english": "Where is the smoking area?",
+          "audioKey": "v900-airp-bord-arri-where-is-the-smoking-area"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where is the smoking area? to another airport arrival need.",
+      "body": "Information-desk, departure-hall, arrival-hall, and phone-charge cards cover nearby terminal navigation.",
       "phrases": [
         {
           "id": "airport-1",
@@ -110,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits airport, immigration, baggage, or pickup moment, especially when smoking area can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Good in airports, train stations, malls, hotels, large restaurants, and attractions where smoking is restricted to marked areas."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+      "body": "Do not assume an outdoor doorway is allowed. In Vietnam, staff may point to a specific corner even when the space looks open."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Khu vực hút thuốc ở đâu?.",
+      "body": "Move to information-desk, departure-hall, arrivals, shuttle, or pickup-point cards if you still need orientation.",
       "phrases": [
         {
           "id": "airport-5",

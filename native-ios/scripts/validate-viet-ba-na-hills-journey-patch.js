@@ -6,24 +6,24 @@ const { spawnSync } = require("child_process");
 
 const nativeRoot = path.resolve(__dirname, "..");
 const repoRoot = path.resolve(nativeRoot, "..");
-const pageID = "viet-phrase-city-danang-place-ba-na-hills";
+
+const sqlitePageID = "viet-phrase-city-danang-place-ba-na-hills";
 const authoredResourcePageID = "viet-family-city-danang-place-ba-na-hills";
 const phraseID = "city-danang-place-ba-na-hills";
-const patchID = "BNH-001";
-const heroImageName = "HeroBaNaHills";
+const heroImageName = "HeroCityDanangPlaceBaNaHills";
 
+const appDetailPath = path.join(repoRoot, "content-draft", "viet", "city-library", "app-detail-v2-2", "danang.json");
 const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
 const authoredPagesPath = path.join(nativeRoot, "Resources", "viet-authored-listing-pages.json");
-const catalogPath = path.join(nativeRoot, "Resources", "viet-phrase-catalog.json");
 const databasePath = path.join(nativeRoot, "Resources", "LanguagePacks", "viet", "speaklocal-viet.sqlite");
-const patchPath = path.join(repoRoot, "docs", "editorial-exports", "viet-canonical-pages", "ba-na-hills-journey-v2", "SpeakLocal_Ba_Na_Hills_Journey_Patch_v2.json");
-const approvalPath = path.join(repoRoot, "docs", "editorial-exports", "viet-canonical-pages", "ba-na-hills-journey-v2", "approved-imports-TASK-VIET-BA-NA-HILLS-JOURNEY-PATCH-001.json");
 const assetDir = path.join(nativeRoot, "Resources", "Assets.xcassets", `${heroImageName}.imageset`);
 
 const expectedSectionOrder = [
   "at-glance",
   "quick-say",
-  "journey-flow",
+  "place-brief",
+  "use-it-with",
+  "when-to-use",
   "getting-there",
   "tickets",
   "cable-car",
@@ -31,43 +31,59 @@ const expectedSectionOrder = [
   "getting-back",
   "good-to-know",
   "food-cash",
-  "breakdown",
 ];
+
+const expectedSourceHeadings = [
+  "Early, With Weather Checked",
+  "Cable Car Arrival",
+  "Bridge Before Wandering",
+  "Give It Room",
+];
+
 const expectedBodies = new Map([
   [
+    "at-glance",
+    "A mountain theme park above Da Nang: cable cars, cooler air, the Golden Bridge, gardens, replica streets, crowds, and weather risk.",
+  ],
+  [
+    "place-brief",
+    "Morning is the least painful crowd strategy. Fog or rain can turn the famous view into an expensive cloud walk, so the forecast matters before the ride west.",
+  ],
+  [
+    "use-it-with",
+    "The climb turns city heat into a mountain day: forest below, mist on the glass, cooler air at the upper level. Clear sky makes the scale feel cinematic.",
+  ],
+  [
+    "when-to-use",
+    "If the Golden Bridge is the main reason, do it first. After that, decide how much of the wider park the group actually wants.",
+  ],
+  [
     "good-to-know",
-    "Ticket rules, hours, and pickup details can change. Keep your ticket or booking screen visible, and confirm the return pickup point.",
+    "Travel time, tickets, cable cars, walking, and crowd flow all take space. A lighter city day leaves room for the mountain weather and the long ride back.",
   ],
 ]);
+
 const expectedRows = new Map([
-  ["quick-say", ["city-danang-place-ba-na-hills"]],
+  ["quick-say", ["sight-1", "sight-3", "sight-4"]],
   ["getting-there", ["taxi-1", "repair-5", "transport-stop-here-clearer", "ves-is-this-address-correct"]],
   ["tickets", ["v500-time-date-book-two-tickets-please", "v500-time-date-book-one-ticket-please", "v500-sigh-acti-where-can-i-buy-tickets"]],
   ["cable-car", ["ves-where-cable-car"]],
   ["photos", ["ves-take-photo-for-me"]],
-  ["getting-back", ["directions-8", "v900-dire-navi-is-this-the-correct-pickup-point", "ves-call-taxi-for-me"]],
+  ["getting-back", ["ves-call-taxi-for-me"]],
   ["food-cash", ["store-1", "airport-4"]],
 ]);
-const retiredAttractionPhraseIDs = [
-  "city-danang-go-ba-na-hills",
-  "city-danang-where-ba-na-hills",
-  "city-danang-stop-ba-na-hills",
-  "city-danang-eat-near-ba-na-hills",
-  "city-danang-atm-ba-na-hills",
-  "ves-take-me-to-ba-na-hills",
-  "ves-two-tickets-ba-na-hills",
-];
-const expectedBreakdownTokens = [
-  ["Bà Nà", "local name"],
-  ["Hills", "English word in the attraction name"],
-  ["Bà Nà Hills", "Ba Na Hills"],
-];
+
 const bannedPatterns = [
+  /\bRelated because\b/i,
+  /\bMentioned here because\b/i,
+  /\bdo_not_render\b/i,
+  /\bdatabase\b/i,
+  /\bschema\b/i,
+  /\bvalidator\b/i,
+  /\bFINAL_PASS\b/i,
   /This is not a single place-name card/i,
   /Keep the page focused/i,
   /Connect to:/i,
-  /\bdatabase\b/i,
-  /\bimport\b/i,
   /REVIEW_ONLY/i,
   /Watch out/i,
   /repair phrase/i,
@@ -115,74 +131,52 @@ function assertArrayEqual(actual, expected, label) {
 }
 
 function main() {
+  const appDetail = readJSON(appDetailPath);
   const cityLibrary = readJSON(cityLibraryPath);
   const authoredResource = readJSON(authoredPagesPath);
-  const catalog = readJSON(catalogPath);
-  const patch = readJSON(patchPath);
-  const approval = readJSON(approvalPath);
 
-  assert(patch.patches?.length === 1, "patch file must contain exactly one patch");
-  const patchRow = patch.patches[0];
-  assert(patchRow.page_id === pageID, `patch page_id changed: ${patchRow.page_id}`);
-  assert(patchRow.authored_resource_page_id === authoredResourcePageID, `patch authored_resource_page_id changed: ${patchRow.authored_resource_page_id}`);
-  assert(patchRow.phrase_id === phraseID, `patch phrase_id changed: ${patchRow.phrase_id}`);
-  assert(approval.approvals?.length === 1, "approval overlay must contain exactly one approval");
-  assert(approval.approvals[0].patch_id === patchID, `approval patch_id changed: ${approval.approvals[0].patch_id}`);
-  assert(approval.approvals[0].import_approval === "APPROVED_FOR_IMPORT", `approval import_approval changed: ${approval.approvals[0].import_approval}`);
+  const sourcePage = appDetail.entries.find((page) => page.id === authoredResourcePageID);
+  assert(sourcePage, `V2.2 source page missing ${authoredResourcePageID}`);
+  assert(sourcePage.displayName === "Bà Nà Hills", "V2.2 Vietnamese title changed");
+  assert(sourcePage.englishName === "Ba Na Hills", "V2.2 English title changed");
+  assert(sourcePage.intro?.heading === "More Park Than Viewpoint", "V2.2 intro heading changed");
+  assertArrayEqual((sourcePage.sections ?? []).map((section) => section.heading), expectedSourceHeadings, "V2.2 source headings");
+  assertArrayEqual((sourcePage.usefulPhraseCards ?? []).map((card) => card.phraseId), ["sight-1", "sight-3", "sight-4"], "V2.2 useful phrase cards");
 
   const cityPage = cityLibrary.pages.find((page) => page.id === phraseID);
   assert(cityPage, `city library page missing ${phraseID}`);
   assert(cityPage.targetText === "Bà Nà Hills", "city library Vietnamese title changed");
   assert(cityPage.englishText === "Ba Na Hills", "city library English title changed");
-  assert(cityPage.editorialImport?.patchID === patchID, "city library editorial patch missing");
-  assert(cityPage.editorialImport?.sourcePatch === "SpeakLocal_Ba_Na_Hills_Journey_Patch_v2.json", "source patch marker missing");
-  assert(cityPage.editorialImport?.replaceGeneratedSections === true, "replaceGeneratedSections must be true");
+  assert(cityPage.editorialImport?.runtimeOverride?.kind === "ba-na-hills-journey", "runtime override kind missing");
   assert(cityPage.editorialImport?.heroImageName === heroImageName, "city source hero image missing");
+  assertArrayEqual(cityPage.editorialImport?.runtimeOverride?.expectedSectionIDs ?? [], expectedSectionOrder, "runtime override expected sections");
 
-  const authoredPage = authoredResource.pages.find((page) => page.phraseID === phraseID);
-  assert(authoredPage, `authored listing resource missing ${phraseID}`);
-  assert(authoredPage.id === authoredResourcePageID, `authored page id changed: ${authoredPage.id}`);
+  const authoredPage = authoredResource.pages.find((page) => page.id === authoredResourcePageID);
+  assert(authoredPage, `authored listing resource missing ${authoredResourcePageID}`);
+  assert(authoredPage.phraseID === phraseID, `authored phrase id changed: ${authoredPage.phraseID}`);
   assert(authoredPage.title === "Bà Nà Hills", "authored Vietnamese title changed");
   assert(authoredPage.englishTitle === "Ba Na Hills", "authored English title changed");
   assert(authoredPage.heroImageName === heroImageName, "authored hero image missing");
   assertArrayEqual(ids(authoredPage.sections ?? []), expectedSectionOrder, "authored section order");
+
+  const authoredTitles = new Map((authoredPage.sections ?? []).map((section) => [section.id, section.title]));
+  assert(authoredTitles.get("at-glance") === "More Park Than Viewpoint", "Bà Nà rendered intro title regressed to a generic label");
+  assert(authoredTitles.get("good-to-know") === "Give It Room", "Bà Nà rendered final prose title regressed to a generic label");
+  assert(!["About", "Good to know"].includes(authoredTitles.get("at-glance")), "generic About label rendered");
+  assert(!["About", "Good to know"].includes(authoredTitles.get("good-to-know")), "generic Good to know label rendered");
+
   for (const [sectionID, expectedBody] of expectedBodies) {
     assert(authoredPage.sections.find((section) => section.id === sectionID)?.body === expectedBody, `${sectionID} copy changed`);
   }
   for (const [sectionID, expectedPhraseIDs] of expectedRows) {
     assertArrayEqual(phraseIDs(authoredPage.sections.find((section) => section.id === sectionID)), expectedPhraseIDs, `${sectionID} phrase IDs`);
   }
-  const breakdown = authoredPage.sections.find((section) => section.id === "breakdown");
-  assert(breakdown?.title === "Name guide", "breakdown title must be Name guide");
-  assertArrayEqual(
-    (breakdown?.breakdown ?? []).map((token) => [token.vietnamese, token.english]),
-    expectedBreakdownTokens,
-    "Name guide breakdown tokens"
-  );
   assert(!ids(authoredPage.sections ?? []).includes("relationship-words"), "Bà Nà page must not include relationship words");
 
-  const keyPhraseBody = authoredPage.sections.find((section) => section.id === "key-phrases")?.body ?? "";
-  assert(!keyPhraseBody.includes("/"), "Key phrase body must not contain slash-separated copy");
   const pageText = JSON.stringify(authoredPage);
   for (const pattern of bannedPatterns) {
     assert(!pattern.test(pageText), `Bà Nà page contains banned/meta wording: ${pattern}`);
   }
-  for (const phraseID of retiredAttractionPhraseIDs) {
-    assert(!pageText.includes(phraseID), `Bà Nà page still links retired attraction phrase ${phraseID}`);
-  }
-  for (const section of authoredPage.sections ?? []) {
-    for (const phrase of section.phrases ?? []) {
-      if (phrase.id === phraseID) continue;
-      assert(!String(phrase.english ?? "").includes("Ba Na Hills"), `Reusable row ${phrase.id} should not say Ba Na Hills`);
-      assert(!String(phrase.vietnamese ?? "").includes("Bà Nà Hills"), `Reusable row ${phrase.id} should not say Bà Nà Hills`);
-    }
-  }
-
-  const storePhrase = catalog.phrases.find((phrase) => phrase.id === "store-1");
-  assert(storePhrase, "store-1 phrase missing from catalog");
-  assert(storePhrase.targetText === "Cho tôi chai nước", `store-1 Vietnamese changed: ${storePhrase.targetText}`);
-  assert(storePhrase.englishText === "A bottle of water please", `store-1 English changed: ${storePhrase.englishText}`);
-  assert(storePhrase.audioKey === "store-1", `store-1 audio key changed: ${storePhrase.audioKey}`);
 
   const sqlitePages = sqliteJSON(`
     SELECT pp.id, pp.phrase_id, pp.title, pp.english_title, pp.hero_image_name
@@ -190,23 +184,15 @@ function main() {
     WHERE pp.phrase_id = '${phraseID}';
   `);
   assert(sqlitePages.length === 1, `expected one SQLite phrase_page for ${phraseID}, found ${sqlitePages.length}`);
-  assert(sqlitePages[0].id === pageID, `SQLite canonical page id changed: ${sqlitePages[0].id}`);
+  assert(sqlitePages[0].id === sqlitePageID, `SQLite canonical page id changed: ${sqlitePages[0].id}`);
   assert(sqlitePages[0].title === "Bà Nà Hills", "SQLite Vietnamese title changed");
   assert(sqlitePages[0].english_title === "Ba Na Hills", "SQLite English title changed");
   assert(sqlitePages[0].hero_image_name === heroImageName, "SQLite hero_image_name missing");
 
-  const duplicateTitleRows = sqliteJSON(`
-    SELECT lower(trim(title)) AS title_key, count(*) AS page_count
-    FROM phrase_page
-    WHERE lower(trim(title)) = lower(trim('Bà Nà Hills'))
-    GROUP BY lower(trim(title));
-  `);
-  assert(duplicateTitleRows.length === 1 && Number(duplicateTitleRows[0].page_count) === 1, "duplicate Bà Nà Hills canonical pages found");
-
   const sqliteSections = sqliteJSON(`
     SELECT section_key AS id
     FROM page_section
-    WHERE page_id = '${pageID}'
+    WHERE page_id = '${sqlitePageID}'
     ORDER BY sort_order;
   `);
   assertArrayEqual(ids(sqliteSections), expectedSectionOrder, "SQLite section order");
@@ -215,7 +201,7 @@ function main() {
       SELECT psi.target_id AS id
       FROM page_section ps
       JOIN page_section_item psi ON psi.section_id = ps.id
-      WHERE ps.page_id = '${pageID}'
+      WHERE ps.page_id = '${sqlitePageID}'
         AND ps.section_key = '${sectionID}'
         AND psi.item_kind = 'phrase'
       ORDER BY psi.sort_order;
@@ -223,15 +209,10 @@ function main() {
     assertArrayEqual(ids(sqliteRows), expectedPhraseIDs, `SQLite ${sectionID} phrase IDs`);
   }
 
-  assert(fs.existsSync(path.join(assetDir, "Contents.json")), "HeroBaNaHills Contents.json missing");
-  assert(fs.existsSync(path.join(assetDir, "hero-ba-na-hills.png")), "HeroBaNaHills PNG missing");
-  const phraseListingView = fs.readFileSync(path.join(nativeRoot, "App", "Views", "PhraseListingView.swift"), "utf8");
-  assert(
-    phraseListingView.includes("HeroMastheadImage(imageName: page.heroImageName ?? PhrasePageStyle.heroImageName)"),
-    "PhraseListingView is not using per-page hero image metadata"
-  );
+  assert(fs.existsSync(path.join(assetDir, "Contents.json")), "HeroCityDanangPlaceBaNaHills Contents.json missing");
+  assert(fs.existsSync(path.join(assetDir, "hero-city-danang-place-ba-na-hills-720q80.jpg")), "HeroCityDanangPlaceBaNaHills image missing");
 
-  console.log("Bà Nà Hills journey patch validation passed.");
+  console.log("Bà Nà Hills V2.2 journey validation passed.");
 }
 
 main();

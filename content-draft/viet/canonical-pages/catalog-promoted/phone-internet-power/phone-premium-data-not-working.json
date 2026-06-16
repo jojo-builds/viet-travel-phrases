@@ -7,7 +7,7 @@
   "title": "Dữ liệu của tôi không hoạt động.",
   "englishTitle": "My data is not working.",
   "pronunciation": "Du lieu cua toi khong hoat dong",
-  "summary": "My data is not working.",
+  "summary": "For showing that mobile data is on but maps, messages, or browser pages still will not load.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Dữ liệu của tôi không hoạt động. names the problem so staff or a helpful local can act on it. Use it when My data is not working is the clearest way to explain what changed, went missing, or needs attention."
+      "body": "Use it with the cellular data screen, no-service bar, or failed app open.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Dữ liệu của tôi không hoạt động. calmly and show the proof if you have it: phone screen, charger, SIM card, Wi-Fi screen, or outlet. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Show the phone while you say it. The helper may check data balance, roaming, SIM setup, or coverage.",
       "phrases": [
         {
           "id": "phone-premium-data-not-working",
@@ -42,38 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Dữ liệu của tôi means my data; không hoạt động means is not working.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Dữ liệu của",
+          "vietnamese": "Dữ liệu của tôi",
           "english": "my data",
-          "audioKey": null
+          "keepTogetherReason": "mobile-data phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tôi không hoạt",
-          "english": "yes/no question",
-          "audioKey": null
+          "vietnamese": "không hoạt động.",
+          "english": "is not working",
+          "keepTogetherReason": "not-working phrase"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "động",
-          "english": "close",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Dữ liệu của tôi không hoạt động.",
-          "english": "My data is not working",
-          "audioKey": null
+          "english": "My data is not working.",
+          "audioKey": "phone-premium-data-not-working"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from My data is not working. to another phone, internet, or power need.",
+      "body": "Wi-Fi password and SIM-card cards help if the answer is to switch networks or check the SIM.",
       "phrases": [
         {
           "id": "phone-1",
@@ -110,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as soon as the problem is clear enough to name. It is especially useful at a counter or desk where someone can look at the photo, receipt, bag, booking, or phone screen with you."
+      "body": "Good at phone shops, airport SIM desks, hotel desks, cafes, and anywhere you need help getting online.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "Data problems are easier to diagnose with the settings screen open. Keep the phone unlocked until the next check is clear.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Dữ liệu của tôi không hoạt động..",
+      "body": "Move to battery, charger, charge-here, data-top-up, eSIM, or verification-code cards if the fix needs another phrase.",
       "phrases": [
         {
           "id": "phone-3",

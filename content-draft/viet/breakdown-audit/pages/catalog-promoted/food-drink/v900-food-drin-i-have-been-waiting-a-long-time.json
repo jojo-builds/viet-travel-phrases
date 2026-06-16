@@ -20,34 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi đã",
+      "english": "I have",
+      "keepTogetherReason": "completed-action opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đã",
-      "english": "already / did"
+      "vietnamese": "chờ đợi",
+      "english": "waited",
+      "keepTogetherReason": "waiting verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "chờ đợi",
-      "english": "wait",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "rất",
-      "english": "very"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "lâu",
-      "english": "long time"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "rồi",
-      "english": "already / done"
+      "vietnamese": "rất lâu rồi",
+      "english": "for a very long time already",
+      "keepTogetherReason": "long-wait phrase"
     },
     {
       "id": "full",

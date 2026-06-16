@@ -7,7 +7,7 @@
   "title": "tôi bị thương",
   "englishTitle": "I am injured",
   "pronunciation": "toi bi thuong",
-  "summary": "tôi bị thương means “I am injured”.",
+  "summary": "Use this when you need to explain that i am injured.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say tôi bị thương when you need \"I am injured\". This is for when safety, theft, documents, police, or urgent help needs to be clear right now. Listen for a question about symptoms, medicine, a doctor, or where the pain is; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Reach for it when safety, theft, documents, police, or urgent help needs to be clear right now.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Build the line around tôi bị + thương, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "v500-emer-safe-i-am-injured-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "v500-emer-safe-i-am-injured"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use tôi bị thương as your first sentence for \"I am injured\". This is for when safety, theft, documents, police, or urgent help needs to be clear right now. Pause after the phrase and listen for a question about symptoms, medicine, a doctor, or where the pain is. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Start with tôi bị thương; keep the location, passport copy, photo, injury, or helper contact ready if the reply needs proof.",
       "phrases": [
         {
           "id": "v500-emer-safe-i-am-injured",
@@ -63,18 +66,21 @@
           "audioKey": "v500-emer-safe-i-am-injured"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Emergency phrases put the urgent need first so help can move faster. For \"I am injured\", tôi bị thương makes the next step easier to answer. Point to the affected area or show the medicine name if that makes the need clearer.",
-      "presentation": "plain-text"
+      "body": "Injury language should put the body problem first so help does not wait for a perfect story.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Emergency & Safety, the reply often comes as a question about symptoms, medicine, a doctor, or where the pain is. Say tôi bị thương once, pause, and watch for the reply. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Expect a question about where it hurts, whether you can move, or whether you need a clinic.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -107,12 +113,13 @@
           "audioKey": "emergency-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when safety, theft, documents, police, or urgent help needs to be clear right now. It fits police, ambulance, hospitals, passports, and immediate safety, especially when the next step is a question about symptoms, medicine, a doctor, or where the pain is. Point to the affected area or show the medicine name if that makes the need clearer.",
+      "body": "Use it after a fall, crash, cut, burn, or sudden pain when someone nearby can help.",
       "phrases": [
         {
           "id": "emergency-4",
@@ -145,13 +152,16 @@
           "audioKey": "emergency-hospital"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "In safety moments, clarity matters more than sounding polished. Repeat the phrase if needed.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -179,12 +189,13 @@
           "audioKey": "v500-emer-safe-do-not-touch-me"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover call the police, call an ambulance, and I lost my passport.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -267,7 +278,8 @@
           "audioKey": "v500-emer-safe-do-not-touch-me"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

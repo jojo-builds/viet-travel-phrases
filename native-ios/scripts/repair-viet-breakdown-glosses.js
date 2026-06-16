@@ -746,7 +746,7 @@ function fallbackFromVietnamese(vietnamese) {
   if (raw === "phộng") return "peanut";
   if (raw === "đậu phộng") return "peanuts";
   if (raw === "hãy") return "please do";
-  if (raw === "không?") return "question marker";
+  if (raw === "không?") return "not? / yes-no ending";
   if (raw === "lắm") return "very";
   if (raw === "làm") return "do / make";
   if (raw === "tới") return "arrive / reach";
@@ -1253,7 +1253,7 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
       { vietnamese: "Tôi có thể hiển thị", english: "can I show" },
       { vietnamese: "nó", english: "it" },
       { vietnamese: "trên điện thoại của tôi", english: "on my phone" },
-      { vietnamese: "không?", english: "question marker" },
+      { vietnamese: "không?", english: "not? / yes-no ending" },
     ]);
   }
   if (key === "ung dung ban do cua toi khong hoat dong") {
@@ -1288,7 +1288,7 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
       { vietnamese: "Bạn có thể", english: "can you" },
       { vietnamese: "gửi hành lý của tôi", english: "store my luggage" },
       { vietnamese: "sau khi trả phòng", english: "after check-out" },
-      { vietnamese: "không?", english: "question marker" },
+      { vietnamese: "không?", english: "not? / yes-no ending" },
     ]);
   }
   if (key === "cai nay co dau phong khong") {
@@ -1296,7 +1296,7 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
       { vietnamese: "Cái này", english: "this one" },
       { vietnamese: "có", english: "have / yes" },
       { vietnamese: "đậu phộng", english: "peanuts" },
-      { vietnamese: "không?", english: "question marker" },
+      { vietnamese: "không?", english: "not? / yes-no ending" },
     ]);
   }
   if (key === "cai nay co trung hay dau phong khong") {
@@ -1306,7 +1306,7 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
       { vietnamese: "trứng", english: "egg" },
       { vietnamese: "hay", english: "or" },
       { vietnamese: "đậu phộng", english: "peanuts" },
-      { vietnamese: "không?", english: "question marker" },
+      { vietnamese: "không?", english: "not? / yes-no ending" },
     ]);
   }
   if (key === "toi bi di ung dau phong") {
@@ -1333,7 +1333,7 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
       { vietnamese: "Tôi có thể thanh toán", english: "can I pay" },
       { vietnamese: "hóa đơn", english: "bill / receipt" },
       { vietnamese: "bằng thẻ", english: "by card" },
-      { vietnamese: "không?", english: "question marker" },
+      { vietnamese: "không?", english: "not? / yes-no ending" },
     ]);
   }
   if (key === "toi co the thanh toan tien ve bang the khong") {
@@ -1341,14 +1341,14 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
       { vietnamese: "Tôi có thể thanh toán", english: "can I pay" },
       { vietnamese: "tiền vé", english: "the fare" },
       { vietnamese: "bằng thẻ", english: "by card" },
-      { vietnamese: "không?", english: "question marker" },
+      { vietnamese: "không?", english: "not? / yes-no ending" },
     ]);
   }
   if (key === "co tinh phi the khong") {
     return semanticReplacementWithFull(page, tokens, [
       { vietnamese: "Có tính phí", english: "is there a fee" },
       { vietnamese: "thẻ", english: "card" },
-      { vietnamese: "không?", english: "question marker" },
+      { vietnamese: "không?", english: "not? / yes-no ending" },
     ]);
   }
   if (key === "ung dung se khong chap nhan the cua toi") {
@@ -1362,7 +1362,7 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
     return semanticReplacementWithFull(page, tokens, [
       { vietnamese: "Điều này có an toàn", english: "is this safe" },
       { vietnamese: "với thuốc của tôi", english: "with my medicine" },
-      { vietnamese: "không?", english: "question marker" },
+      { vietnamese: "không?", english: "not? / yes-no ending" },
     ]);
   }
   if (key === "ban co the giup toi goi bao hiem du lich cua toi duoc khong") {
@@ -1378,13 +1378,11 @@ function replacementForDuplicateFullPhraseBreakdown(page, tokens) {
       { vietnamese: "không hoạt động", english: "is not working" },
     ]);
   }
-  if (key === "ung dung cho biet trinh dieu khien cua toi co o day nhung toi khong the tim thay chung") {
+  if (key === "ung dung bao tai xe da den nhung toi chua thay tai xe") {
     return semanticReplacementWithFull(page, tokens, [
-      { vietnamese: "Ứng dụng cho biết", english: "the app says" },
-      { vietnamese: "trình điều khiển của tôi", english: "my driver" },
-      { vietnamese: "có ở đây", english: "is here" },
-      { vietnamese: "nhưng tôi không thể tìm thấy", english: "but I cannot find" },
-      { vietnamese: "chúng", english: "them" },
+      { vietnamese: "Ứng dụng báo", english: "the app says" },
+      { vietnamese: "tài xế đã đến", english: "the driver has arrived" },
+      { vietnamese: "nhưng tôi chưa thấy tài xế", english: "but I do not see the driver yet" },
     ]);
   }
   if (key === "ban co the goi cho nguoi lien lac khan cap cua toi duoc khong") {

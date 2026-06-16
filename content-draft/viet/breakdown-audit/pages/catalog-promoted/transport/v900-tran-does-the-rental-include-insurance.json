@@ -20,39 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Giá",
-      "english": "price"
+      "vietnamese": "Giá thuê",
+      "english": "rental price",
+      "keepTogetherReason": "rental-price noun"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "thuê",
-      "english": "rent"
+      "vietnamese": "có bao gồm",
+      "english": "does it include",
+      "keepTogetherReason": "include phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "bảo hiểm",
+      "english": "insurance",
+      "keepTogetherReason": "insurance noun"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "bao",
-      "english": "how / cover"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "gồm",
-      "english": "include"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "bảo hiểm",
-      "english": "insurance",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

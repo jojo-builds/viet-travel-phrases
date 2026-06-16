@@ -20,32 +20,23 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
-    },
-    {
-      "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
+      "vietnamese": "Tôi có thể",
+      "english": "can I",
       "keepTogetherReason": "fixed modal phrase"
     },
     {
+      "id": "chunk-2",
+      "vietnamese": "trả lại",
+      "english": "return / give back",
+      "keepTogetherReason": "keeps trả lại as the return phrase"
+    },
+    {
       "id": "chunk-3",
-      "vietnamese": "trả",
-      "english": "pay / return"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "lại",
-      "english": "again / back"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "nó",
       "english": "it"
     },
     {
-      "id": "chunk-6",
+      "id": "chunk-4",
       "vietnamese": "ở đâu?",
       "english": "where",
       "keepTogetherReason": "fixed place question"

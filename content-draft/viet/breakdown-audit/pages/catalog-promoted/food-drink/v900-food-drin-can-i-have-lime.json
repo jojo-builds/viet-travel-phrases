@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-food-drin-can-i-have-lime",
-  "phraseText": "Tôi có thể có vôi không?",
+  "phraseText": "Cho tôi xin chanh được không?",
   "englishTitle": "Can I have lime?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,35 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Cho tôi xin",
+      "english": "please give me",
+      "keepTogetherReason": "polite request opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "chanh",
+      "english": "lime / citrus",
+      "keepTogetherReason": "lime noun"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "vôi",
-      "english": "lime"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "không?",
-      "english": "yes/no?"
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi có thể có vôi không?",
+      "vietnamese": "Cho tôi xin chanh được không?",
       "english": "Can I have lime?",
-      "audioKey": "v900-food-drin-can-i-have-lime"
+      "audioKey": null
     }
   ]
 }

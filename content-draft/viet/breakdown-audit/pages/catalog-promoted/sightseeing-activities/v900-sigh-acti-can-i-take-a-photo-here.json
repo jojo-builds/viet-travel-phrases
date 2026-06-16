@@ -20,40 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể",
+      "english": "can I",
+      "keepTogetherReason": "can-I question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "chụp ảnh",
+      "english": "take a photo",
+      "keepTogetherReason": "take-photo phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "chụp",
-      "english": "take a photo"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "ảnh",
-      "english": "photo"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "đây",
-      "english": "here / this"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "được không?",
-      "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "vietnamese": "ở đây được không?",
+      "english": "is it allowed here?",
+      "keepTogetherReason": "allowed-here question"
     },
     {
       "id": "full",

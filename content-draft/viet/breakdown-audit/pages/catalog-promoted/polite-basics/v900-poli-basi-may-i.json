@@ -1,7 +1,7 @@
 {
   "pageID": "viet-phrase-v900-poli-basi-may-i",
-  "phraseText": "Tôi có thể không?",
-  "englishTitle": "May I?",
+  "phraseText": "Tôi có thể làm vậy được không?",
+  "englishTitle": "May I do that?",
   "reviewStatus": "reviewed",
   "visualReview": {
     "status": "reviewed",
@@ -20,25 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể",
+      "english": "can I",
+      "keepTogetherReason": "can-I phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "làm vậy",
+      "english": "do that",
+      "keepTogetherReason": "do-that phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "không?",
-      "english": "yes/no?"
+      "vietnamese": "được không?",
+      "english": "is that okay?",
+      "keepTogetherReason": "permission ending"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi có thể không?",
-      "english": "May I?",
-      "audioKey": "v900-poli-basi-may-i"
+      "vietnamese": "Tôi có thể làm vậy được không?",
+      "english": "May I do that?",
+      "audioKey": null
     }
   ]
 }

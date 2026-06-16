@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-tran-is-this-seat-available",
-  "phraseText": "Chỗ ngồi này có sẵn không?",
+  "phraseText": "Chỗ này còn trống không?",
   "englishTitle": "Is this seat available?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,35 +20,26 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Chỗ ngồi",
-      "english": "seat",
+      "vietnamese": "Chỗ này",
+      "english": "this seat / spot",
       "keepTogetherReason": "compound noun"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "này",
-      "english": "this"
+      "vietnamese": "còn trống",
+      "english": "still free / empty",
+      "keepTogetherReason": "fixed availability phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "sẵn",
-      "english": "ready / available"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "không?",
       "english": "yes/no?"
     },
     {
       "id": "full",
-      "vietnamese": "Chỗ ngồi này có sẵn không?",
+      "vietnamese": "Chỗ này còn trống không?",
       "english": "Is this seat available?",
-      "audioKey": "v900-tran-is-this-seat-available"
+      "audioKey": "audio-authored-cho-nay-con-trong-khong-a5a332557d"
     }
   ]
 }

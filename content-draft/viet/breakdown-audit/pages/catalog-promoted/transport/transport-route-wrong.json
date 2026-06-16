@@ -20,23 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tuyến",
-      "english": "line / route"
+      "vietnamese": "Tuyến đường này",
+      "english": "this route",
+      "keepTogetherReason": "this-route phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đường",
-      "english": "street"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "sai.",
-      "english": "wrong"
+      "english": "wrong.",
+      "keepTogetherReason": "wrong adjective"
     },
     {
       "id": "full",

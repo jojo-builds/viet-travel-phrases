@@ -20,35 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Nó",
-      "english": "it"
+      "vietnamese": "Nó có ở",
+      "english": "is it at",
+      "keepTogetherReason": "location question"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "đối diện",
+      "english": "across from",
+      "keepTogetherReason": "opposite phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
+      "vietnamese": "quán cà phê",
+      "english": "cafe",
+      "keepTogetherReason": "cafe phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "đối diện",
-      "english": "across from",
-      "keepTogetherReason": "fixed place phrase"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "quán cà phê",
-      "english": "cafe",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

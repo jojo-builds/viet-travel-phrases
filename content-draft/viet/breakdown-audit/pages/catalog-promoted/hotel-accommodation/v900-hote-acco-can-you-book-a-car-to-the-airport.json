@@ -31,29 +31,20 @@
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đặt",
-      "english": "book / reserve / order"
+      "vietnamese": "đặt xe",
+      "english": "book a car",
+      "keepTogetherReason": "keeps đặt xe as the car-booking phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "xe",
-      "english": "vehicle"
+      "vietnamese": "tới sân bay",
+      "english": "to the airport",
+      "keepTogetherReason": "fixed destination phrase"
     },
     {
       "id": "chunk-5",
-      "vietnamese": "tới",
-      "english": "to / arrive"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "sân bay",
-      "english": "airport",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "được không?",
-      "english": "is that possible?",
+      "english": "can you?",
       "keepTogetherReason": "fixed yes-no question ending"
     },
     {

@@ -4,10 +4,10 @@
   "phraseID": "v900-time-date-book-do-you-have-anything-available-this-afternoon",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Chiều nay bạn có việc gì không?",
+  "title": "Chiều nay còn chỗ trống không?",
   "englishTitle": "Do you have anything available this afternoon?",
-  "pronunciation": "Chieu nay ban co viec gi khong",
-  "summary": "Do you have anything available this afternoon?",
+  "pronunciation": "Chieu nay con cho trong khong",
+  "summary": "For asking whether a booking desk, salon, clinic, tour, or table has an open slot this afternoon.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -15,65 +15,67 @@
     "v900-time-date-book-do-you-have-anything-available-this-afternoon",
     "premium"
   ],
-  "audioKey": "v900-time-date-book-do-you-have-anything-available-this-afternoon",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Chiều nay bạn có việc gì không? is a practical time, date, or booking phrase for keeping one travel detail clear. Use it when Do you have anything available this afternoon is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask with today's date, your preferred time, and the service you want visible on your phone or booking note.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Chiều nay bạn có việc gì không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say the line once, then show the time window. Staff can answer with yes, no, or a specific opening.",
       "phrases": [
         {
           "id": "v900-time-date-book-do-you-have-anything-available-this-afternoon",
-          "vietnamese": "Chiều nay bạn có việc gì không?",
+          "vietnamese": "Chiều nay còn chỗ trống không?",
           "english": "Do you have anything available this afternoon?",
-          "pronunciation": "Chieu nay ban co viec gi khong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Chieu nay con cho trong khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "teal",
           "detailPageID": null,
-          "audioKey": "v900-time-date-book-do-you-have-anything-available-this-afternoon"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Chiều nay means this afternoon; còn chỗ trống asks whether there is still an open spot; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Chiều nay bạn",
+          "vietnamese": "Chiều nay",
           "english": "this afternoon",
-          "audioKey": null
+          "keepTogetherReason": "this-afternoon phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "có việc gì",
-          "english": "anything available this afternoon",
-          "audioKey": null
+          "vietnamese": "còn chỗ trống",
+          "english": "still an open spot",
+          "keepTogetherReason": "availability phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "Chiều nay bạn có việc gì không?",
-          "english": "Do you have anything available this afternoon",
+          "id": "full",
+          "vietnamese": "Chiều nay còn chỗ trống không?",
+          "english": "Do you have anything available this afternoon?",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Do you have anything available this afternoon? to another time, date, or booking need.",
+      "body": "What-time, today, and tomorrow-morning cards help when afternoon availability is not possible.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when do you have anything available this afternoon is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good for tours, cafes, restaurants, clinics, spas, laundry pickups, and ticket counters when morning is already gone.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "If they offer a time, confirm the exact hour before giving your name or deposit.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Chiều nay bạn có việc gì không?.",
+      "body": "Booking, opening-time, move-it-later, boarding-time, and wait-list cards cover the scheduling follow-up.",
       "phrases": [
         {
           "id": "time-4",
@@ -178,13 +182,13 @@
   "examples": [
     {
       "id": "v900-time-date-book-do-you-have-anything-available-this-afternoon",
-      "vietnamese": "Chiều nay bạn có việc gì không?",
+      "vietnamese": "Chiều nay còn chỗ trống không?",
       "english": "Do you have anything available this afternoon?",
-      "pronunciation": "Chieu nay ban co viec gi khong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Chieu nay con cho trong khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "teal",
       "detailPageID": null,
-      "audioKey": "v900-time-date-book-do-you-have-anything-available-this-afternoon"
+      "audioKey": null
     }
   ]
 }

@@ -20,29 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Có",
-      "english": "have / there is"
+      "vietnamese": "Có được phép",
+      "english": "is it allowed",
+      "keepTogetherReason": "allowed question"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "được phép",
-      "english": "allowed / permitted",
-      "keepTogetherReason": "fixed permission phrase"
+      "vietnamese": "chụp ảnh",
+      "english": "take photos",
+      "keepTogetherReason": "photography phrase"
     },
     {
-      "id": "chunk-4",
-      "vietnamese": "chụp",
-      "english": "take a photo"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "ảnh",
-      "english": "photo"
-    },
-    {
-      "id": "chunk-6",
+      "id": "chunk-3",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

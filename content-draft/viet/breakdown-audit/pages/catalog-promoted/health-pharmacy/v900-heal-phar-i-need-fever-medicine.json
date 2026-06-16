@@ -20,24 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "I need",
+      "keepTogetherReason": "I-need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "thuốc",
-      "english": "medicine"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "hạ sốt",
-      "english": "reduce fever",
-      "keepTogetherReason": "compound health term"
+      "vietnamese": "thuốc hạ sốt",
+      "english": "fever-reducing medicine",
+      "keepTogetherReason": "fever-medicine noun"
     },
     {
       "id": "full",

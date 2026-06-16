@@ -19,6 +19,12 @@
   ],
   "tokens": [
     {
+      "id": "chunk-1",
+      "vietnamese": "Đồng ý",
+      "english": "agree / okay",
+      "keepTogetherReason": "fixed agreement phrase"
+    },
+    {
       "id": "full",
       "vietnamese": "Đồng ý",
       "english": "Okay",

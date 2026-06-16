@@ -20,28 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi nghĩ",
+      "english": "I think",
+      "keepTogetherReason": "I-think phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "nghĩ",
-      "english": "think"
+      "vietnamese": "giá vé",
+      "english": "fare / ticket price",
+      "keepTogetherReason": "fare phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "giá",
-      "english": "price"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "vé",
-      "english": "ticket"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "sai",
-      "english": "wrong"
+      "english": "wrong",
+      "keepTogetherReason": "wrong adjective"
     },
     {
       "id": "full",

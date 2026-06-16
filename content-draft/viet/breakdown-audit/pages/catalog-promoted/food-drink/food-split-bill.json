@@ -20,19 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Trả",
-      "english": "pay / return"
+      "vietnamese": "Trả riêng",
+      "english": "pay separately",
+      "keepTogetherReason": "separate-payment phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "riêng",
-      "english": "separate"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "possibility question"
     },
     {
       "id": "full",

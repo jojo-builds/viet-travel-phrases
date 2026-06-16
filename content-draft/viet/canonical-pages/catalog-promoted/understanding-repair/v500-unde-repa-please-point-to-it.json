@@ -7,7 +7,7 @@
   "title": "Hãy chỉ vào nó",
   "englishTitle": "Please point to it",
   "pronunciation": "Hay chi vao no",
-  "summary": "Please point to it",
+  "summary": "For asking someone to indicate the exact item, word, direction, or option instead of explaining it again.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy chỉ vào nó is a practical understanding check phrase for keeping one travel detail clear. Use it when point to it is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it when pointing would solve the confusion faster than another spoken explanation.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hãy chỉ vào nó. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Hold up the menu, receipt, phone, map, or form. Let them point, then confirm the exact item.",
       "phrases": [
         {
           "id": "v500-unde-repa-please-point-to-it",
@@ -42,32 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hãy chỉ vào means please point to; nó means it.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Hãy chỉ vào",
-          "english": "please do",
-          "audioKey": null
+          "english": "please point to",
+          "keepTogetherReason": "please-point-to phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "nó",
           "english": "it",
-          "audioKey": null
+          "keepTogetherReason": "it pronoun"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Hãy chỉ vào nó",
           "english": "Please point to it",
-          "audioKey": null
+          "audioKey": "v500-unde-repa-please-point-to-it"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please point to it to another understanding check need.",
+      "body": "I-do-not-understand and slower-speech cards help if pointing still leaves the choice unclear.",
       "phrases": [
         {
           "id": "problems-2",
@@ -104,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real understanding check exchange when point to it is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good with menus, prices, addresses, platform signs, ticket rows, forms, and shop shelves.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "These phrases keep the exchange friendly when Vietnamese moves too fast. Ask for one specific next step: repeat, write, show, or point."
+      "body": "After they point, repeat the item or show it back so both sides are looking at the same thing.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hãy chỉ vào nó.",
+      "body": "Repeat, write-it-down, meaning, which-one, and show-me cards cover nearby repair moves.",
       "phrases": [
         {
           "id": "repair-1",

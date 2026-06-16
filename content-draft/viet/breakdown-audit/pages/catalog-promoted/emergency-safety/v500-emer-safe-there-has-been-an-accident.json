@@ -20,24 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đã",
-      "english": "already / did"
+      "vietnamese": "Đã có",
+      "english": "there has been",
+      "keepTogetherReason": "there-has-been phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "tai nạn",
-      "english": "accident",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "một tai nạn",
+      "english": "an accident",
+      "keepTogetherReason": "accident phrase"
     },
     {
       "id": "full",

@@ -7,7 +7,7 @@
   "title": "Cái này quá lớn",
   "englishTitle": "This is too big",
   "pronunciation": "Cai nay qua lon",
-  "summary": "This is too big",
+  "summary": "For telling a shop that the item or size is too big.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cái này quá lớn is a practical shopping phrase for keeping one travel detail clear. Use it when This is too big is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Point to the item on your body, bag, table, or receipt so the size problem is obvious."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Cái này quá lớn. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Hold the item while you say it, then show the smaller size, color, or exchange option you want.",
       "phrases": [
         {
           "id": "v500-shop-this-is-too-big",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Cái này means this one; quá means too; lớn means big.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Cái này",
           "english": "this one",
-          "audioKey": null
+          "keepTogetherReason": "this-one phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "quá lớn",
-          "english": "too big",
-          "audioKey": null
+          "vietnamese": "quá",
+          "english": "too",
+          "keepTogetherReason": "too adverb"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "lớn",
+          "english": "big",
+          "keepTogetherReason": "big adjective"
+        },
+        {
+          "id": "full",
           "vietnamese": "Cái này quá lớn",
           "english": "This is too big",
-          "audioKey": null
+          "audioKey": "v500-shop-this-is-too-big"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from This is too big to another shopping need.",
+      "body": "Size, color, and try-on phrases keep the shop conversation moving.",
       "phrases": [
         {
           "id": "shop-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real shopping exchange when this is too big is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at clothing stalls, shoe shops, souvenir counters, markets, and exchange desks."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "In shops and markets, the object is the anchor. Point clearly, then listen for the number or option."
+      "body": "If you need a smaller one, point to the size tag or hold two options side by side."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Cái này quá lớn.",
+      "body": "Looking, payment, exchange, price, and bargaining pages cover nearby shop turns.",
       "phrases": [
         {
           "id": "shop-4",

@@ -4,10 +4,10 @@
   "phraseID": "v500-emer-safe-stop-following-me",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Dừng theo dõi tôi",
+  "title": "Đừng đi theo tôi nữa",
   "englishTitle": "Stop following me",
-  "pronunciation": "Dung theo doi toi",
-  "summary": "Stop following me",
+  "pronunciation": "Dung di theo toi nua",
+  "summary": "For telling someone to stop following you while you move toward help or a public staffed place.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -15,59 +15,61 @@
     "v500-emer-safe-stop-following-me",
     "premium"
   ],
-  "audioKey": "v500-emer-safe-stop-following-me",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Dừng theo dõi tôi is a practical safety or urgent-help phrase for keeping one travel detail clear. Use it when Stop following me is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say it clearly, create distance, and head toward staff, light, cameras, a desk, or other people.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Dừng theo dõi tôi. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Do not explain first. Say the sentence, then show or point to the person if a guard, receptionist, or officer can help.",
       "phrases": [
         {
           "id": "v500-emer-safe-stop-following-me",
-          "vietnamese": "Dừng theo dõi tôi",
+          "vietnamese": "Đừng đi theo tôi nữa",
           "english": "Stop following me",
-          "pronunciation": "Dung theo doi toi",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Dung di theo toi nua",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
           "detailPageID": null,
-          "audioKey": "v500-emer-safe-stop-following-me"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đừng means do not; đi theo tôi nữa means follow me anymore.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Dừng theo dõi",
-          "english": "stop following",
-          "audioKey": null
+          "vietnamese": "Đừng",
+          "english": "do not",
+          "keepTogetherReason": "negative command"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tôi",
-          "english": "I / me",
-          "audioKey": null
+          "vietnamese": "đi theo tôi nữa",
+          "english": "follow me anymore",
+          "keepTogetherReason": "stop-following phrase"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "Dừng theo dõi tôi",
+          "id": "full",
+          "vietnamese": "Đừng đi theo tôi nữa",
           "english": "Stop following me",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Stop following me to another safety or urgent-help need.",
+      "body": "Police, ambulance, and passport cards help when the situation becomes official or urgent.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -104,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real safety or urgent-help exchange when stop following me is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good when someone is physically trailing you and you need the behavior to stop right now.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "If it continues, switch to police, help, unsafe, or emergency phrases and keep moving toward staff, light, or a public desk.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Dừng theo dõi tôi.",
+      "body": "Unsafe, emergency, help, hospital, and passport cards cover the next safety step.",
       "phrases": [
         {
           "id": "emergency-4",
@@ -172,13 +176,13 @@
   "examples": [
     {
       "id": "v500-emer-safe-stop-following-me",
-      "vietnamese": "Dừng theo dõi tôi",
+      "vietnamese": "Đừng đi theo tôi nữa",
       "english": "Stop following me",
-      "pronunciation": "Dung theo doi toi",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Dung di theo toi nua",
+      "symbolName": "text.bubble.fill",
       "tintName": "red",
       "detailPageID": null,
-      "audioKey": "v500-emer-safe-stop-following-me"
+      "audioKey": null
     }
   ]
 }

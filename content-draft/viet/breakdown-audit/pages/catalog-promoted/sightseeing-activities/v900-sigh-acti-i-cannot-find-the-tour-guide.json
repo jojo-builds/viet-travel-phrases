@@ -20,40 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi không thể tìm thấy",
+      "english": "I cannot find",
+      "keepTogetherReason": "cannot-find phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "thể",
-      "english": "can / able to"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "tìm thấy",
-      "english": "find",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "vietnamese": "hướng dẫn",
-      "english": "instructions / guide",
-      "keepTogetherReason": "compound instruction term"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "viên",
-      "english": "staff / viên"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "du lịch",
-      "english": "tourism / travel",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "hướng dẫn viên du lịch",
+      "english": "the tour guide",
+      "keepTogetherReason": "tour-guide phrase"
     },
     {
       "id": "full",

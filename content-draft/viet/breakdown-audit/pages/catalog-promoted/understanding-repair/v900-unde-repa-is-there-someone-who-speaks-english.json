@@ -20,34 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Có",
-      "english": "have / there is"
+      "vietnamese": "Có ai",
+      "english": "is there anyone",
+      "keepTogetherReason": "is-there-anyone phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "ai",
-      "english": "who / someone"
+      "vietnamese": "nói được tiếng Anh",
+      "english": "who can speak English",
+      "keepTogetherReason": "speaks-English phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nói",
-      "english": "say / speak"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "được",
-      "english": "possible / okay"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tiếng Anh",
-      "english": "English language",
-      "keepTogetherReason": "compound language name"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

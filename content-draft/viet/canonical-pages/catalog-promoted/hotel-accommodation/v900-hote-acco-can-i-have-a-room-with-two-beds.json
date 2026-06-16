@@ -7,7 +7,7 @@
   "title": "Tôi có thể đặt một phòng có hai giường được không?",
   "englishTitle": "Can I have a room with two beds?",
   "pronunciation": "Toi co the dat mot phong co hai giuong duoc khong",
-  "summary": "Can I have a room with two beds?",
+  "summary": "Ask for two beds before accepting a room setup that does not match friends, family, or shared travel.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể đặt một phòng có hai giường được không? is for asking permission before you act. It is useful when have a room with two beds depends on local rules, staff approval, or the right way to use a space or service."
+      "body": "Good at check-in, before luggage goes upstairs or the room assignment is final."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có thể đặt một phòng có hai giường được không? once, then make the task visible with your booking screen, room key, address, room number, or photo of the issue. The phrase is doing one job: getting a clear answer about have a room with two beds.",
+      "body": "Ask with the booking open so staff can see the room type you reserved.",
       "phrases": [
         {
           "id": "v900-hote-acco-can-i-have-a-room-with-two-beds",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Phòng có hai giường is the room-with-two-beds chunk; được không keeps it polite.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -85,7 +85,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can I have a room with two beds? to another hotel or stay need.",
+      "body": "Reservation and check-in cards help if the desk needs to find the booking first.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -122,17 +122,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when have a room with two beds is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+      "body": "Best before payment, before carrying bags up, or when a double bed will not work."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "The desk might offer a twin room, extra bed, room change, or upgrade fee."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể đặt một phòng có hai giường được không?.",
+      "body": "Checkout-time, quiet-room, and checkout cards cover other front-desk needs.",
       "phrases": [
         {
           "id": "hotel-3",

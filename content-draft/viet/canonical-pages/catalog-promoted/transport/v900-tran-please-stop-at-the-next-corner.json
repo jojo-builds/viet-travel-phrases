@@ -7,7 +7,7 @@
   "title": "Vui lòng dừng lại ở góc tiếp theo",
   "englishTitle": "Please stop at the next corner",
   "pronunciation": "Vui long dung lai o goc tiep theo",
-  "summary": "Please stop at the next corner",
+  "summary": "For giving a driver a clean stopping point before the map location or street entrance gets confusing.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng dừng lại ở góc tiếp theo is a practical transport phrase for keeping one travel detail clear. Use it when stop at the next corner is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say it before the corner arrives, with the map or street visible if possible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Vui lòng dừng lại ở góc tiếp theo. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Keep the line short and clear. The driver needs the stop point more than the full explanation.",
       "phrases": [
         {
           "id": "v900-tran-please-stop-at-the-next-corner",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Vui lòng means please; dừng lại means stop; ở góc tiếp theo means at the next corner.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Vui lòng dừng",
+          "vietnamese": "Vui lòng",
           "english": "please",
-          "audioKey": null
+          "keepTogetherReason": "polite opener"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "lại ở góc tiếp theo",
-          "english": "stop at the next corner",
-          "audioKey": null
+          "vietnamese": "dừng lại",
+          "english": "stop",
+          "keepTogetherReason": "stop verb"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "ở góc tiếp theo",
+          "english": "at the next corner",
+          "keepTogetherReason": "next-corner phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Vui lòng dừng lại ở góc tiếp theo",
           "english": "Please stop at the next corner",
-          "audioKey": null
+          "audioKey": "v900-tran-please-stop-at-the-next-corner"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please stop at the next corner to another transport need.",
+      "body": "Take-me-here, District 1, and stop-here cards cover nearby ride instructions.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when stop at the next corner is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good in taxis, rideshares, motorbike taxis, and private cars when the exact building entrance is hard to reach."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Corners are useful landmarks. If traffic is moving fast, point toward the side where you want to stop."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Vui lòng dừng lại ở góc tiếp theo.",
+      "body": "Move to stop-here, go-this-way, air-conditioning, wait-five-minutes, or cash cards if the ride needs another instruction.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

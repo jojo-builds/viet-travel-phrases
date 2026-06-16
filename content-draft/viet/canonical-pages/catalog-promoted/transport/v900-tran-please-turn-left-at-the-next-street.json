@@ -7,7 +7,7 @@
   "title": "Vui lòng rẽ trái ở đường tiếp theo",
   "englishTitle": "Please turn left at the next street",
   "pronunciation": "Vui long re trai o duong tiep theo",
-  "summary": "Please turn left at the next street",
+  "summary": "For guiding a driver to turn left at the next street when your map or landmark is clear.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng rẽ trái ở đường tiếp theo is a practical transport phrase for keeping one travel detail clear. Use it when turn left at the next street is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say it before the turn arrives. A map point or small hand gesture can help if traffic is loud."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Vui lòng rẽ trái ở đường tiếp theo. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Keep the instruction short and early. Do not wait until the car is already at the intersection.",
       "phrases": [
         {
           "id": "v900-tran-please-turn-left-at-the-next-street",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Vui lòng means please; rẽ trái means turn left; ở đường tiếp theo means at the next street.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Vui lòng rẽ",
+          "vietnamese": "Vui lòng",
           "english": "please",
-          "audioKey": null
+          "keepTogetherReason": "polite marker"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "trái ở đường",
-          "english": "pay",
-          "audioKey": null
+          "vietnamese": "rẽ trái",
+          "english": "turn left",
+          "keepTogetherReason": "turn-left phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "tiếp theo",
-          "english": "next",
-          "audioKey": null
+          "vietnamese": "ở đường tiếp theo",
+          "english": "at the next street",
+          "keepTogetherReason": "next-street phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Vui lòng rẽ trái ở đường tiếp theo",
           "english": "Please turn left at the next street",
-          "audioKey": null
+          "audioKey": "v900-tran-please-turn-left-at-the-next-street"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please turn left at the next street to another transport need.",
+      "body": "Destination, District 1, and stop-here cards cover the route-control moments around this turn.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when turn left at the next street is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good in taxis, ride-hailing cars, motorbike taxis, and private cars when you are helping guide the route."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "The driver may choose the nearest legal or safer left turn. Watch the road and let them adjust if needed."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Vui lòng rẽ trái ở đường tiếp theo.",
+      "body": "Move to stop-here, go-this-way, air-conditioning, wait-five-minutes, or cash cards if the ride continues.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

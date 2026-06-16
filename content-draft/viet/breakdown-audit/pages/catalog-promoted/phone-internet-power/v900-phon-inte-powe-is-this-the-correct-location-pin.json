@@ -1,7 +1,7 @@
 {
   "pageID": "viet-phrase-v900-phon-inte-powe-is-this-the-correct-location-pin",
-  "phraseText": "Đây có phải là pin vị trí chính xác không?",
-  "englishTitle": "Is this the correct location pin?",
+  "phraseText": "Vị trí này có đúng không?",
+  "englishTitle": "Is this the correct location?",
   "reviewStatus": "reviewed",
   "visualReview": {
     "status": "reviewed",
@@ -20,55 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đây",
-      "english": "here / this"
+      "vietnamese": "Vị trí này",
+      "english": "this location",
+      "keepTogetherReason": "shown-location phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "có đúng",
+      "english": "is correct",
+      "keepTogetherReason": "correctness phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "phải",
-      "english": "must / right"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "pin",
-      "english": "battery"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "vị",
-      "english": "taste / position"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "trí",
-      "english": "location / mind"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "chính xác",
-      "english": "correct / exact",
-      "keepTogetherReason": "compound adjective"
-    },
-    {
-      "id": "chunk-9",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",
-      "vietnamese": "Đây có phải là pin vị trí chính xác không?",
-      "english": "Is this the correct location pin?",
-      "audioKey": "v900-phon-inte-powe-is-this-the-correct-location-pin"
+      "vietnamese": "Vị trí này có đúng không?",
+      "english": "Is this the correct location?",
+      "audioKey": null
     }
   ]
 }

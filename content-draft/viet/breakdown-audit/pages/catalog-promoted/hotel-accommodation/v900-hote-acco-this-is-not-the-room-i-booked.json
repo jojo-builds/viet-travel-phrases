@@ -20,39 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đây",
-      "english": "here / this"
+      "vietnamese": "Đây không phải",
+      "english": "this is not",
+      "keepTogetherReason": "this-is-not phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "không",
-      "english": "no / not"
+      "vietnamese": "là",
+      "english": "is",
+      "keepTogetherReason": "is connector"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "phải",
-      "english": "must / right"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "phòng",
-      "english": "room"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "tôi",
-      "english": "I / me"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "đã đặt",
-      "english": "booked / reserved",
-      "keepTogetherReason": "compound verb phrase"
+      "vietnamese": "phòng tôi đã đặt",
+      "english": "the room I booked",
+      "keepTogetherReason": "booked-room phrase"
     },
     {
       "id": "full",

@@ -7,7 +7,7 @@
   "title": "Không, cảm ơn, có thể để sau",
   "englishTitle": "No thanks, maybe later",
   "pronunciation": "Khong cam on co the de sau",
-  "summary": "No thanks, maybe later",
+  "summary": "Keeps the price or payment question clear in a market stall, ticket counter, ATM, or small shop.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Không, cảm ơn, có thể để sau. Keep the situation visible, pause after the phrase, and let the other person answer with a smile, acknowledgment, or short reply.",
+      "body": "Không, cảm ơn, có thể để sau should land before the extra explanation. Keep the item, price tag, calculator, receipt, or ATM screen ready.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-no-thanks-maybe-later",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Không, cảm ơn, + có thể để carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from No thanks, maybe later to another money or price need.",
+      "body": "Keep close by: How much is this? and How much per kilo?",
       "phrases": [
         {
           "id": "price-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when no thanks, maybe later is the detail you need resolved. The likely reply is a smile, acknowledgment, or short reply, so keep the phrase short and ready for one follow-up."
+      "body": "Best in a market stall, ticket counter, ATM, or small shop, before the explanation gets long. Keep the item, price tag, calculator, receipt, or ATM screen close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Không, cảm ơn, có thể để sau.",
+      "body": "Keep close by: Too expensive, Can you lower it a little, and What’s your final price.",
       "phrases": [
         {
           "id": "price-3",

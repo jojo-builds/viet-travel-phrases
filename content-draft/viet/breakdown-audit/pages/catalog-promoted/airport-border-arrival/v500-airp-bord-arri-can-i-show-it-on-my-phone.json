@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-airp-bord-arri-can-i-show-it-on-my-phone",
-  "phraseText": "Tôi có thể hiển thị nó trên điện thoại của tôi không?",
+  "phraseText": "Tôi cho anh/chị xem trên điện thoại được không?",
   "englishTitle": "Can I show it on my phone?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -15,58 +15,36 @@
     ]
   },
   "notes": [
-    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources.",
+    "Phrase-copy semantic repair; reviewed tokens updated and audio marked for regeneration."
   ],
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cho anh/chị xem",
+      "english": "I show you",
+      "keepTogetherReason": "show-you permission phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "trên điện thoại",
+      "english": "on the phone",
+      "keepTogetherReason": "phone location phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "hiển thị",
-      "english": "show / display",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "nó",
-      "english": "it"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "trên",
-      "english": "on / above"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "điện thoại",
-      "english": "phone",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "không?",
-      "english": "yes/no?"
+      "vietnamese": "được không?",
+      "english": "is that okay?",
+      "keepTogetherReason": "question ending"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi có thể hiển thị nó trên điện thoại của tôi không?",
+      "vietnamese": "Tôi cho anh/chị xem trên điện thoại được không?",
       "english": "Can I show it on my phone?",
-      "audioKey": "v500-airp-bord-arri-can-i-show-it-on-my-phone"
+      "audioKey": null
     }
-  ]
+  ],
+  "title": "Tôi cho anh/chị xem trên điện thoại được không?",
+  "summary": "Can I show it on my phone",
+  "pronunciation": "Toi cho anh chi xem tren dien thoai duoc khong"
 }

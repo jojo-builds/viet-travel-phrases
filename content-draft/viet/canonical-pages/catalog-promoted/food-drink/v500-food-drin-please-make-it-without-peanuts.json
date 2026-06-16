@@ -7,7 +7,7 @@
   "title": "Hãy làm món này mà không cần đậu phộng",
   "englishTitle": "Please make it without peanuts",
   "pronunciation": "Hay lam mon nay ma khong can dau phong",
-  "summary": "Please make it without peanuts",
+  "summary": "For asking staff to leave peanuts out before the dish is cooked or assembled.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy làm món này mà không cần đậu phộng is a practical food or drink phrase for keeping one travel detail clear. Use it when make it without peanuts is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say it before ordering, then point to the dish so staff know which item needs the change.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hãy làm món này mà không cần đậu phộng. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Keep the wording short and serious; if it is an allergy, say the allergy phrase too.",
       "phrases": [
         {
           "id": "v500-food-drin-please-make-it-without-peanuts",
@@ -37,136 +40,176 @@
           "detailPageID": null,
           "audioKey": "v500-food-drin-please-make-it-without-peanuts"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hãy làm món này means please make this dish; mà không cần đậu phộng means without peanuts.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Hãy làm món này",
           "english": "please make this dish",
-          "audioKey": null
+          "keepTogetherReason": "make-this-dish phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "mà không cần đậu phộng",
-          "english": "without peanuts",
-          "audioKey": null
+          "vietnamese": "mà không cần",
+          "english": "without / not needing",
+          "keepTogetherReason": "without phrase"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "đậu phộng",
+          "english": "peanuts",
+          "keepTogetherReason": "peanut noun"
+        },
+        {
+          "id": "full",
           "vietnamese": "Hãy làm món này mà không cần đậu phộng",
           "english": "Please make it without peanuts",
           "audioKey": "v500-food-drin-please-make-it-without-peanuts"
         }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please make it without peanuts to another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
-        }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real food or drink exchange when make it without peanuts is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at street stalls, casual restaurants, cafes, and counters where toppings or sauces are adjusted.",
+      "phrases": [
+        {
+          "id": "food-premium-no-meat",
+          "vietnamese": "Làm ơn đừng có thịt.",
+          "english": "No meat, please.",
+          "pronunciation": "Lam on dung co thit",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-food-premium-no-meat",
+          "audioKey": "food-premium-no-meat"
+        },
+        {
+          "id": "food-premium-without-this-ingredient",
+          "vietnamese": "Bạn có thể làm món này không có nguyên liệu này được không?",
+          "english": "Can you make it without this ingredient?",
+          "pronunciation": "Ban co the lam mon nay khong co nguyen lieu nay duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-food-premium-without-this-ingredient",
+          "audioKey": null
+        },
+        {
+          "id": "food-premium-which-dish-safe",
+          "vietnamese": "Món ăn nào an toàn nhất cho người bị dị ứng này?",
+          "english": "Which dish is safest for this allergy?",
+          "pronunciation": "Mon an nao an toan nhat cho nguoi bi di ung nay",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-food-premium-which-dish-safe",
+          "audioKey": "food-premium-which-dish-safe"
+        },
+        {
+          "id": "v900-food-drin-is-this-pork-beef-or-chicken",
+          "vietnamese": "Đây là thịt lợn, thịt bò hay thịt gà?",
+          "english": "Is this pork, beef, or chicken?",
+          "pronunciation": "Day la thit lon thit bo hay thit ga",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-is-this-pork-beef-or-chicken",
+          "audioKey": "v900-food-drin-is-this-pork-beef-or-chicken"
+        },
+        {
+          "id": "v500-food-drin-does-this-contain-shrimp",
+          "vietnamese": "Cái này có chứa tôm không?",
+          "english": "Does this contain shrimp?",
+          "pronunciation": "Cai nay co chua tom khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v500-food-drin-does-this-contain-shrimp",
+          "audioKey": "v500-food-drin-does-this-contain-shrimp"
+        }
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
+      "body": "Peanuts can appear as garnish, sauce, or crunch. Pointing at the dish helps, but allergy wording matters if the risk is medical.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hãy làm món này mà không cần đậu phộng.",
+      "body": "Fish sauce, meat, ingredient, allergy, and shrimp checks keep the order precise if staff ask what to change.",
       "phrases": [
         {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
+          "id": "v900-food-drin-can-i-order-this-without-meat",
+          "vietnamese": "Tôi có thể gọi món này mà không có thịt được không?",
+          "english": "Can I order this without meat?",
+          "pronunciation": "Toi co the goi mon nay ma khong co thit duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
-          "audioKey": "coffee-4"
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-order-this-without-meat",
+          "audioKey": "v900-food-drin-can-i-order-this-without-meat"
         },
         {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
+          "id": "v500-food-drin-i-am-allergic-to-fish-sauce",
+          "vietnamese": "Tôi bị dị ứng với nước mắm",
+          "english": "I am allergic to fish sauce",
+          "pronunciation": "Toi bi di ung voi nuoc mam",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
-          "audioKey": "coffee-5"
+          "detailPageID": "viet-phrase-v500-food-drin-i-am-allergic-to-fish-sauce",
+          "audioKey": "v500-food-drin-i-am-allergic-to-fish-sauce"
         },
         {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
+          "id": "v500-food-drin-i-am-allergic-to-shellfish",
+          "vietnamese": "Tôi bị dị ứng với động vật có vỏ",
+          "english": "I am allergic to shellfish",
+          "pronunciation": "Toi bi di ung voi dong vat co vo",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
-          "audioKey": "coffee-6"
+          "detailPageID": "viet-phrase-v500-food-drin-i-am-allergic-to-shellfish",
+          "audioKey": "v500-food-drin-i-am-allergic-to-shellfish"
         },
         {
-          "id": "coffee-7",
-          "vietnamese": "Tính tiền giúp tôi",
-          "english": "Please let me pay",
-          "pronunciation": "ting tyen zoop toy",
+          "id": "v500-food-drin-i-cannot-eat-this-because-of-an-allergy",
+          "vietnamese": "Tôi không thể ăn món này vì bị dị ứng",
+          "english": "I cannot eat this because of an allergy",
+          "pronunciation": "Toi khong the an mon nay vi bi di ung",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
-          "audioKey": "coffee-7"
+          "detailPageID": "viet-phrase-v500-food-drin-i-cannot-eat-this-because-of-an-allergy",
+          "audioKey": "v500-food-drin-i-cannot-eat-this-because-of-an-allergy"
         },
         {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
+          "id": "v500-food-drin-i-ordered-this-without-peanuts",
+          "vietnamese": "Tôi đã gọi món này mà không có đậu phộng",
+          "english": "I ordered this without peanuts",
+          "pronunciation": "Toi da goi mon nay ma khong co dau phong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
-          "audioKey": "food-need-table"
+          "detailPageID": "viet-phrase-v500-food-drin-i-ordered-this-without-peanuts",
+          "audioKey": "v500-food-drin-i-ordered-this-without-peanuts"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "No-meat, no-this-ingredient, safe-for-allergy, pork-beef-chicken, and shrimp phrases keep the food question specific.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [

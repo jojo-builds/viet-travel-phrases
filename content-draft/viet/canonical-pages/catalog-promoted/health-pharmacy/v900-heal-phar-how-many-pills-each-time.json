@@ -7,7 +7,7 @@
   "title": "Mỗi lần bao nhiêu viên?",
   "englishTitle": "How many pills each time?",
   "pronunciation": "Moi lan bao nhieu vien",
-  "summary": "How many pills each time?",
+  "summary": "For checking the number of tablets or capsules to take at one dose.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Mỗi lần bao nhiêu viên? is a practical pharmacy or health phrase for keeping one travel detail clear. Use it when How many pills each time is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask before you leave the pharmacy or clinic, while the medicine is still in hand."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Mỗi lần bao nhiêu viên?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the box or blister pack and point to one dose, not the whole day.",
       "phrases": [
         {
           "id": "v900-heal-phar-how-many-pills-each-time",
@@ -42,129 +42,129 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Mỗi lần means each time; bao nhiêu viên asks how many pills or tablets.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Mỗi lần bao",
-          "english": "how many each time",
-          "audioKey": null
+          "vietnamese": "Mỗi lần",
+          "english": "each time",
+          "keepTogetherReason": "each-time phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nhiêu viên",
-          "english": "how many pills",
-          "audioKey": null
+          "vietnamese": "bao nhiêu viên?",
+          "english": "how many pills?",
+          "keepTogetherReason": "pill-count question"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Mỗi lần bao nhiêu viên?",
-          "english": "How many pills each time",
-          "audioKey": null
+          "english": "How many pills each time?",
+          "audioKey": "v900-heal-phar-how-many-pills-each-time"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How many pills each time? to another pharmacy or health need.",
+      "body": "Medicine availability, interaction, and sleepiness checks help before you accept the medicine.",
       "phrases": [
         {
-          "id": "problems-6",
-          "vietnamese": "Tôi cần bác sĩ",
-          "english": "I need a doctor",
-          "pronunciation": "toy gun bak see",
+          "id": "v900-heal-phar-do-you-have-this-medicine",
+          "vietnamese": "Bạn có thuốc này không?",
+          "english": "Do you have this medicine?",
+          "pronunciation": "Ban co thuoc nay khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-problems-6",
-          "audioKey": "problems-6"
+          "detailPageID": "viet-phrase-v900-heal-phar-do-you-have-this-medicine",
+          "audioKey": "v900-heal-phar-do-you-have-this-medicine"
         },
         {
-          "id": "health-1",
-          "vietnamese": "Nhà thuốc ở đâu?",
-          "english": "Where is the pharmacy?",
-          "pronunciation": "nya thoo-ok uh dow",
+          "id": "v900-heal-phar-please-check-for-drug-interactions",
+          "vietnamese": "Vui lòng kiểm tra tương tác thuốc",
+          "english": "Please check for drug interactions",
+          "pronunciation": "Vui long kiem tra tuong tac thuoc",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-1",
-          "audioKey": "health-1"
+          "detailPageID": "viet-phrase-v900-heal-phar-please-check-for-drug-interactions",
+          "audioKey": "v900-heal-phar-please-check-for-drug-interactions"
         },
         {
-          "id": "health-pharmacy-clearer",
-          "vietnamese": "Nhà thuốc gần nhất ở đâu?",
-          "english": "Where is the nearest pharmacy?",
-          "pronunciation": "nya thoo-ok gun nyut uh dow",
+          "id": "v900-heal-phar-will-this-make-me-sleepy",
+          "vietnamese": "Điều này có làm tôi buồn ngủ không?",
+          "english": "Will this make me sleepy?",
+          "pronunciation": "Dieu nay co lam toi buon ngu khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-pharmacy-clearer",
-          "audioKey": "health-pharmacy-clearer"
+          "detailPageID": "viet-phrase-v900-heal-phar-will-this-make-me-sleepy",
+          "audioKey": "v900-heal-phar-will-this-make-me-sleepy"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when how many pills each time is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good when instructions are spoken quickly, handwritten, or split across several medicines."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "Confirm pills per dose separately from times per day. Those are easy to mix up."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Mỗi lần bao nhiêu viên?.",
+      "body": "Ask how to take it, how many times per day, with food, before bed, or ask them to write the instructions.",
       "phrases": [
         {
-          "id": "health-2",
-          "vietnamese": "Tôi bị đau đầu",
-          "english": "I have a headache",
-          "pronunciation": "toy bee dow dow",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v500-heal-phar-how-do-i-take-this",
+          "vietnamese": "Tôi uống thuốc này như thế nào?",
+          "english": "How do I take this?",
+          "pronunciation": "Toi uong thuoc nay nhu the nao",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-2",
-          "audioKey": "health-2"
+          "detailPageID": "viet-phrase-v500-heal-phar-how-do-i-take-this",
+          "audioKey": null
         },
         {
-          "id": "health-3",
-          "vietnamese": "Tôi đau bụng",
-          "english": "My stomach hurts",
-          "pronunciation": "toy dow boong",
+          "id": "v500-heal-phar-how-many-times-per-day",
+          "vietnamese": "Bao nhiêu lần mỗi ngày?",
+          "english": "How many times per day?",
+          "pronunciation": "Bao nhieu lan moi ngay",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-3",
-          "audioKey": "health-3"
+          "detailPageID": "viet-phrase-v500-heal-phar-how-many-times-per-day",
+          "audioKey": "v500-heal-phar-how-many-times-per-day"
         },
         {
-          "id": "health-4",
-          "vietnamese": "Có thuốc say xe không?",
-          "english": "Do you have motion sickness medicine?",
-          "pronunciation": "koh thoo-ok sai seh khong",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-heal-phar-should-i-take-it-with-food",
+          "vietnamese": "Tôi có nên uống thuốc này cùng với đồ ăn không?",
+          "english": "Should I take it with food?",
+          "pronunciation": "Toi co nen uong thuoc nay cung voi do an khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-4",
-          "audioKey": "health-4"
+          "detailPageID": "viet-phrase-v900-heal-phar-should-i-take-it-with-food",
+          "audioKey": null
         },
         {
-          "id": "health-5",
-          "vietnamese": "Tôi bị dị ứng cái này",
-          "english": "I am allergic to this",
-          "pronunciation": "toy bee zee oong gai nai",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-heal-phar-should-i-take-it-before-bed",
+          "vietnamese": "Tôi có nên uống thuốc này trước khi đi ngủ không?",
+          "english": "Should I take it before bed?",
+          "pronunciation": "Toi co nen uong thuoc nay truoc khi di ngu khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-5",
-          "audioKey": "health-5"
+          "detailPageID": "viet-phrase-v900-heal-phar-should-i-take-it-before-bed",
+          "audioKey": null
         },
         {
-          "id": "health-6",
-          "vietnamese": "Tôi cần thuốc tiêu chảy",
-          "english": "I need something for diarrhea",
-          "pronunciation": "toy gun thoo-ok tyew chai",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-heal-phar-please-write-the-instructions",
+          "vietnamese": "Vui lòng viết hướng dẫn dùng thuốc",
+          "english": "Please write the instructions",
+          "pronunciation": "Vui long viet huong dan dung thuoc",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-health-6",
-          "audioKey": "health-6"
+          "detailPageID": "viet-phrase-v900-heal-phar-please-write-the-instructions",
+          "audioKey": null
         }
       ]
     }

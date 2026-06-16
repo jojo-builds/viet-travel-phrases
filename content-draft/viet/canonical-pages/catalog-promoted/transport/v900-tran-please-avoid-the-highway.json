@@ -7,7 +7,7 @@
   "title": "Xin hãy tránh đường cao tốc",
   "englishTitle": "Please avoid the highway",
   "pronunciation": "Xin hay tranh duong cao toc",
-  "summary": "Please avoid the highway",
+  "summary": "For asking a driver to avoid the highway when you want city streets, fewer tolls, or a slower local route.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Xin hãy tránh đường cao tốc is a practical transport phrase for keeping one travel detail clear. Use it when avoid the highway is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask before the route is locked in. Show the map if you mean one specific highway or toll road."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Xin hãy tránh đường cao tốc. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Say it early and point to the route. If the driver gives a reason, confirm whether the issue is tolls, traffic, or time.",
       "phrases": [
         {
           "id": "v900-tran-please-avoid-the-highway",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Xin hãy tránh means please avoid; đường cao tốc means highway or expressway.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Xin hãy tránh",
-          "english": "pay",
-          "audioKey": null
+          "english": "please avoid",
+          "keepTogetherReason": "avoid request"
         },
         {
           "id": "chunk-2",
           "vietnamese": "đường cao tốc",
-          "english": "avoid the highway",
-          "audioKey": null
+          "english": "highway / expressway",
+          "keepTogetherReason": "highway phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Xin hãy tránh đường cao tốc",
           "english": "Please avoid the highway",
-          "audioKey": null
+          "audioKey": "v900-tran-please-avoid-the-highway"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please avoid the highway to another transport need.",
+      "body": "Destination, District 1, and stop-here cards keep the ride anchored after you change the route.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when avoid the highway is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good in taxis, ride-hailing cars, private transfers, and airport rides before the driver commits to a highway."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "A highway may be faster but cost more or feel less direct. Ask before the car is already on the ramp."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Xin hãy tránh đường cao tốc.",
+      "body": "Move to stop-here, go-this-way, air-conditioning, wait-five-minutes, or cash cards if the ride needs another adjustment.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

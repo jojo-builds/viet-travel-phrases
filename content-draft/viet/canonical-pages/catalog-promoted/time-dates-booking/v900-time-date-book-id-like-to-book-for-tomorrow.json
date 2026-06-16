@@ -7,7 +7,7 @@
   "title": "Tôi muốn đặt chỗ cho ngày mai",
   "englishTitle": "I’d like to book for tomorrow",
   "pronunciation": "Toi muon dat cho cho ngay mai",
-  "summary": "I’d like to book for tomorrow",
+  "summary": "For making a booking for tomorrow at a desk, counter, or message thread.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi muốn đặt chỗ cho ngày mai is a practical time, date, or booking phrase for keeping one travel detail clear. Use it when I’d like to book for tomorrow is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say tomorrow early so the date is checked before time, name, or price."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi muốn đặt chỗ cho ngày mai. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the calendar date if timing matters or tomorrow could be misunderstood.",
       "phrases": [
         {
           "id": "v900-time-date-book-id-like-to-book-for-tomorrow",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi muốn means I would like; đặt chỗ means book or reserve; cho ngày mai means for tomorrow.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi muốn",
-          "english": "I want",
-          "audioKey": null
+          "english": "I would like",
+          "keepTogetherReason": "I-would-like phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đặt chỗ cho",
+          "vietnamese": "đặt chỗ",
           "english": "book / reserve",
-          "audioKey": null
+          "keepTogetherReason": "booking verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "ngày mai",
-          "english": "tomorrow",
-          "audioKey": null
+          "vietnamese": "cho ngày mai",
+          "english": "for tomorrow",
+          "keepTogetherReason": "for-tomorrow phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi muốn đặt chỗ cho ngày mai",
           "english": "I’d like to book for tomorrow",
-          "audioKey": null
+          "audioKey": "v900-time-date-book-id-like-to-book-for-tomorrow"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I’d like to book for tomorrow to another time, date, or booking need.",
+      "body": "What time, today, and tomorrow morning phrases help settle the date and time.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when i’d like to book for tomorrow is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good for tours, restaurants, clinics, salons, transport desks, and hotel activities."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "If the booking is important, ask them to write or message the time back."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi muốn đặt chỗ cho ngày mai.",
+      "body": "Existing booking, opening time, move later, boarding time, and wait phrases cover common scheduling follow-ups.",
       "phrases": [
         {
           "id": "time-4",

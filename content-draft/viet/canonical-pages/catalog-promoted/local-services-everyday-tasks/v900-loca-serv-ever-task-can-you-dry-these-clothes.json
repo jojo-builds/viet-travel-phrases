@@ -7,7 +7,7 @@
   "title": "Bạn có thể làm khô những bộ quần áo này không?",
   "englishTitle": "Can you dry these clothes?",
   "pronunciation": "Ban co the lam kho nhung bo quan ao nay khong",
-  "summary": "Can you dry these clothes?",
+  "summary": "For asking laundry staff to dry clothes, not just wash them.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể làm khô những bộ quần áo này không? asks someone to do one helpful action for you. Use it for dry these clothes when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Ask before handing over the bag if you need clothes back dry the same day."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể làm khô những bộ quần áo này không? once, then make the task visible with your item, receipt, photo, address, or phone screen. The phrase is doing one job: getting a clear answer about dry these clothes.",
+      "body": "Point to the clothes and confirm the pickup time before leaving.",
       "phrases": [
         {
           "id": "v900-loca-serv-ever-task-can-you-dry-these-clothes",
@@ -42,44 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể means can you; làm khô means dry; những bộ quần áo này means these clothes.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bạn có thể",
           "english": "can you",
-          "audioKey": null
+          "keepTogetherReason": "can-you phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "làm khô những bộ quần áo",
-          "english": "these clothes",
-          "audioKey": null
+          "vietnamese": "làm khô",
+          "english": "dry",
+          "keepTogetherReason": "drying verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "này",
-          "english": "this one / this",
-          "audioKey": null
+          "vietnamese": "những bộ quần áo này",
+          "english": "these clothes",
+          "keepTogetherReason": "these-clothes noun phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Bạn có thể làm khô những bộ quần áo này không?",
-          "english": "Can you dry these clothes",
-          "audioKey": null
+          "english": "Can you dry these clothes?",
+          "audioKey": "v900-loca-serv-ever-task-can-you-dry-these-clothes"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you dry these clothes? to another local service need.",
+      "body": "Water, bag, and tissues cards are nearby counter requests, but laundry timing matters here.",
       "phrases": [
         {
           "id": "store-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real local service exchange when dry these clothes is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Good at laundries, hotel desks, homestays, and small service counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Rainy weather can change drying time. Ask when it will be ready if you need them for travel."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể làm khô những bộ quần áo này không?.",
+      "body": "Sunscreen, open-this, card-payment, receipt, and print-this cards cover nearby service-counter turns.",
       "phrases": [
         {
           "id": "store-4",

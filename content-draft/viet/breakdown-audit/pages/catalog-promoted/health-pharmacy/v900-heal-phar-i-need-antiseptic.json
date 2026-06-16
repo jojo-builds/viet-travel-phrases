@@ -20,18 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "I need",
+      "keepTogetherReason": "I-need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
-    },
-    {
       "vietnamese": "thuốc sát trùng",
       "english": "antiseptic",
-      "keepTogetherReason": "compound medicine term"
+      "keepTogetherReason": "antiseptic phrase"
     },
     {
       "id": "full",

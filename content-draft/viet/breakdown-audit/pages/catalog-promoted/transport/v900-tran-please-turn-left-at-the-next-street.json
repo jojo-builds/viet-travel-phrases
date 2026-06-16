@@ -22,33 +22,19 @@
       "id": "chunk-1",
       "vietnamese": "Vui lòng",
       "english": "please",
-      "keepTogetherReason": "fixed polite phrase"
+      "keepTogetherReason": "polite marker"
     },
     {
       "id": "chunk-2",
       "vietnamese": "rẽ trái",
       "english": "turn left",
-      "keepTogetherReason": "compound direction phrase"
+      "keepTogetherReason": "turn-left phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "đường",
-      "english": "street"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tiếp",
-      "english": "continue / next"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "theo",
-      "english": "follow"
+      "vietnamese": "ở đường tiếp theo",
+      "english": "at the next street",
+      "keepTogetherReason": "next-street phrase"
     },
     {
       "id": "full",

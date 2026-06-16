@@ -7,7 +7,7 @@
   "title": "Tôi có thể mua thuốc chống muỗi ở đâu?",
   "englishTitle": "Where can I buy mosquito repellent?",
   "pronunciation": "Toi co the mua thuoc chong muoi o dau",
-  "summary": "Where can I buy mosquito repellent?",
+  "summary": "For asking where to buy mosquito repellent before an evening, beach, or rural stop.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể mua thuốc chống muỗi ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names buy mosquito repellent in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Ask before sunset, after rain, or before a river, beach, garden, or countryside stop."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Tôi có thể mua thuốc chống muỗi ở đâu?. Show your item, receipt, photo, address, or phone screen, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Show a photo of spray or lotion if the word does not land.",
       "phrases": [
         {
           "id": "v900-loca-serv-ever-task-where-can-i-buy-mosquito-repellent",
@@ -42,44 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể mua asks can I buy; thuốc chống muỗi means mosquito repellent; ở đâu? asks where.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể mua",
+          "english": "can I buy",
+          "keepTogetherReason": "can-I-buy phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể mua thuốc",
-          "english": "buy",
-          "audioKey": null
+          "vietnamese": "thuốc chống muỗi",
+          "english": "mosquito repellent",
+          "keepTogetherReason": "repellent noun"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "chống muỗi",
-          "english": "mosquito repellent",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
-          "vietnamese": "ở đâu",
+          "vietnamese": "ở đâu?",
           "english": "where?",
-          "audioKey": null
+          "keepTogetherReason": "where-question ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Tôi có thể mua thuốc chống muỗi ở đâu?",
-          "english": "Where can I buy mosquito repellent",
-          "audioKey": null
+          "english": "Where can I buy mosquito repellent?",
+          "audioKey": "v900-loca-serv-ever-task-where-can-i-buy-mosquito-repellent"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where can I buy mosquito repellent? to another local service need.",
+      "body": "Water, bag, and tissues cards cover the small-shop basics around this request.",
       "phrases": [
         {
           "id": "store-1",
@@ -116,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits laundry, print shop, counter, desk, or everyday errand, especially when buy mosquito repellent can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Good at pharmacies, convenience stores, hotel desks, markets, and small neighborhood shops."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+      "body": "Vietnamese shops may point you to a pharmacy or a shelf instead of explaining the product."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể mua thuốc chống muỗi ở đâu?.",
+      "body": "Sunscreen, open-this, card-payment, receipt, and print-this cards cover nearby counter needs.",
       "phrases": [
         {
           "id": "store-4",

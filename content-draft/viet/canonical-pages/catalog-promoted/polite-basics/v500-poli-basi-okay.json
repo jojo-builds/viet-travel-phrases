@@ -7,7 +7,7 @@
   "title": "Đồng ý",
   "englishTitle": "Okay",
   "pronunciation": "Dong y",
-  "summary": "Okay",
+  "summary": "For agreeing clearly when someone confirms a price, time, route, or simple plan.",
   "iconName": "hand.wave.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đồng ý is a practical polite basics phrase for keeping one travel detail clear. Use it when Okay is the next detail to solve and a short answer would move the exchange forward."
+      "body": "A short yes works best when the choice is already clear."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Đồng ý. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say it once, then nod or point to the item, screen, or direction being confirmed.",
       "phrases": [
         {
           "id": "v500-poli-basi-okay",
@@ -42,32 +42,26 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đồng ý means agree or okay.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Đồng",
-          "english": "close",
-          "audioKey": null
+          "vietnamese": "Đồng ý",
+          "english": "agree / okay",
+          "keepTogetherReason": "fixed agreement phrase"
         },
         {
-          "id": "chunk-2",
-          "vietnamese": "ý",
-          "english": "okay / idea",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Đồng ý",
           "english": "Okay",
-          "audioKey": null
+          "audioKey": "v500-poli-basi-okay"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Okay to another polite basics need.",
+      "body": "Hello, thanks, and a warmer thank-you keep the polite exchange open.",
       "phrases": [
         {
           "id": "polite-1",
@@ -104,17 +98,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real polite basics exchange when okay is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good when a driver, seller, receptionist, or server checks that you agree."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
+      "body": "Short agreement can sound warm in Vietnamese when your tone is relaxed and your face says yes too."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Đồng ý.",
+      "body": "Yes, no thanks, excuse me, it's okay, and goodbye phrases cover the nearby polite turns.",
       "phrases": [
         {
           "id": "polite-3",

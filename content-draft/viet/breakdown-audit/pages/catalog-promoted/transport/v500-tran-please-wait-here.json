@@ -22,22 +22,13 @@
       "id": "chunk-1",
       "vietnamese": "Xin vui lòng",
       "english": "please",
-      "keepTogetherReason": "fixed polite phrase"
+      "keepTogetherReason": "polite request phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đợi",
-      "english": "wait"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "đây",
-      "english": "here / this"
+      "vietnamese": "đợi ở đây",
+      "english": "wait here",
+      "keepTogetherReason": "wait-here phrase"
     },
     {
       "id": "full",

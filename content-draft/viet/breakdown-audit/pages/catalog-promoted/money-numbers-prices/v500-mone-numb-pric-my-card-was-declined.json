@@ -20,30 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Thẻ",
-      "english": "card"
+      "vietnamese": "Thẻ của tôi",
+      "english": "my card",
+      "keepTogetherReason": "owned-card phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "đã",
-      "english": "already / did"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "từ chối",
-      "english": "decline / reject",
-      "keepTogetherReason": "compound verb"
+      "vietnamese": "đã bị từ chối",
+      "english": "was declined",
+      "keepTogetherReason": "declined-card phrase"
     },
     {
       "id": "full",

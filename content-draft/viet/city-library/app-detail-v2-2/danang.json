@@ -27,7 +27,7 @@
       "travelerMoment": "This is the moment when a group wants an indoor laugh, a phone full of staged photos, and a break from beach or bridge weather without turning the day serious.",
       "storySpine": "The museum gives Da Nang a playful photo-room stop: painted illusions only work when people pose, adjust angles, and let the group become part of the scene.",
       "intro": {
-        "heading": "The Group Becomes The Picture",
+        "heading": "Indoor 3D Photo Museum",
         "body": "3D Art in Paradise is an indoor photo-room stop where painted illusions need people, camera angles, and a little patience to work."
       },
       "usefulPhraseCards": [
@@ -59,13 +59,13 @@
       "sections": [
         {
           "id": "camera-angle-does-the-work",
-          "heading": "The Camera Angle Does The Work",
-          "body": "Move slowly through the rooms and let one person handle the camera while someone else poses. A small change in feet or phone angle usually matters more than the pose."
+          "heading": "Rooms Built For Photos",
+          "body": "Each painted room is staged for a camera, not slow gallery viewing. Look for floor marks, sample images, and angles before everyone starts posing."
         },
         {
           "id": "better-with-company",
-          "heading": "Let Someone Direct The Shot",
-          "body": "The clearest rooms need one person behind the camera and one person willing to pose. Small moves in feet, hands, and phone angle change the whole trick."
+          "heading": "One Person Directs",
+          "body": "The clearest shots need someone behind the phone and someone willing to move. Tiny changes in feet, hands, and phone height change the whole trick."
         },
         {
           "id": "a-weather-break",
@@ -80,7 +80,7 @@
           "label": "Bảo tàng Mỹ thuật Đà Nẵng",
           "relationship": "curated route comparison",
           "displaySubtitle": "A quieter gallery stop when camera play is not the mood.",
-          "reason": "Related because: A quieter gallery stop when camera play is not the mood.",
+          "reason": "A quieter gallery stop when camera play is not the mood.",
           "status": "render"
         }
       ],
@@ -165,13 +165,13 @@
       "sections": [
         {
           "id": "coffee-as-the-stop",
-          "heading": "Coffee As The Stop",
+          "heading": "Coffee, Plants, Bright Counters",
           "body": "Come for a careful coffee break rather than a grab-and-go cup. The room, plants, counters, and precise drinks are the reason to sit down."
         },
         {
           "id": "not-a-beach-snack",
           "heading": "Beyond Beach Snacks",
-          "body": "The value is the cooler room: clean lines, careful drinks, and relief from heat. It suits people who want coffee to be part of the day, not just caffeine."
+          "body": "Inside, clean lines, careful drinks, plants, and cooler air give the beach-side day a slower coffee room."
         },
         {
           "id": "between-louder-plans",
@@ -303,7 +303,7 @@
           "label": "Nhà ga quốc nội Đà Nẵng",
           "relationship": "domestic-arrival handoff",
           "displaySubtitle": "The local-flight side when pickup, bags, and the first ride need one clear meeting point.",
-          "reason": "Related because: The local-flight side when pickup, bags, and the first ride need one clear meeting point.",
+          "reason": "The local-flight side when pickup, bags, and the first ride need one clear meeting point.",
           "status": "render"
         }
       ],
@@ -414,7 +414,7 @@
           "label": "Quận Hải Châu",
           "relationship": "central-base contrast",
           "displaySubtitle": "The practical center for hotel blocks, river walks, errands, and coffee between bigger Da Nang plans.",
-          "reason": "Related because: The practical center for hotel blocks, river walks, errands, and coffee between bigger Da Nang plans.",
+          "reason": "The practical center for hotel blocks, river walks, errands, and coffee between bigger Da Nang plans.",
           "status": "render"
         }
       ],
@@ -514,7 +514,7 @@
         },
         {
           "id": "the-canopy-carries-it",
-          "heading": "The Canopy Carries It",
+          "heading": "The Canopy Is The Landmark",
           "body": "The lifted curved structure is the main visual cue. Once you have seen it, the rest is simple: sit, walk, photograph lightly, and continue."
         }
       ],
@@ -525,7 +525,7 @@
           "label": "Công viên Châu Á",
           "relationship": "after-dark park contrast",
           "displaySubtitle": "A lights-and-rides evening for family-park energy instead of another river walk.",
-          "reason": "Related because: A lights-and-rides evening for family-park energy instead of another river walk.",
+          "reason": "A lights-and-rides evening for family-park energy instead of another river walk.",
           "status": "render"
         }
       ],
@@ -615,7 +615,7 @@
         },
         {
           "id": "the-gate-sets-expectations",
-          "heading": "The Gate Sets Expectations",
+          "heading": "Gate, Wheel, Evening Lights",
           "body": "Make the entrance the first orientation point. If rides are the reason, read the boards together before the group drifts inside."
         },
         {
@@ -636,7 +636,7 @@
           "label": "Công viên APEC",
           "relationship": "riverside-breather contrast",
           "displaySubtitle": "A short open-air pause by the Hàn River, with the curved canopy as the meeting point.",
-          "reason": "Related because: A short open-air pause by the Hàn River, with the curved canopy as the meeting point.",
+          "reason": "A short open-air pause by the Hàn River, with the curved canopy as the meeting point.",
           "status": "render"
         }
       ],
@@ -690,7 +690,7 @@
       "storySpine": "The cable car owns the arrival moment: forest below, glass around you, and the first sign that the day has left the city.",
       "intro": {
         "heading": "The Climb Is The Moment",
-        "body": "The cable-car climb carries you from Da Nang heat into forest, mist, cooler air, and the larger Ba Na Hills complex above the city."
+        "body": "The cable-car climb moves you from Da Nang heat into forest, mist, cooler air, and the larger Ba Na Hills complex above the city."
       },
       "usefulPhraseCards": [
         {
@@ -747,7 +747,7 @@
           "label": "Màn phun lửa Cầu Rồng",
           "relationship": "timed-river ritual",
           "displaySubtitle": "The timed crowd moment when the bridge becomes fire, spray, phones, and a fast exit plan.",
-          "reason": "Related because: The timed crowd moment when the bridge becomes fire, spray, phones, and a fast exit plan.",
+          "reason": "The timed crowd moment when the bridge becomes fire, spray, phones, and a fast exit plan.",
           "status": "render"
         }
       ],
@@ -848,7 +848,7 @@
         {
           "id": "give-it-room",
           "heading": "Give It Room",
-          "body": "Travel time, tickets, cable cars, walking, and crowd flow all take space. Pair it with less instead of forcing a full city checklist around it."
+          "body": "Travel time, tickets, cable cars, walking, and crowd flow all take space. A lighter city day leaves room for the mountain weather and the long ride back."
         }
       ],
       "mentionedHereCandidates": [],
@@ -858,7 +858,7 @@
           "label": "Đỉnh Bàn Cờ",
           "relationship": "son-tra-viewpoint contrast",
           "displaySubtitle": "A weather-dependent Sơn Trà climb for coastline views, road curves, and a slower return from the mountain.",
-          "reason": "Related because: A weather-dependent Sơn Trà climb for coastline views, road curves, and a slower return from the mountain.",
+          "reason": "A weather-dependent Sơn Trà climb for coastline views, road curves, and a slower return from the mountain.",
           "status": "render"
         }
       ],
@@ -908,11 +908,11 @@
       "city": "Đà Nẵng",
       "category": "Market",
       "pronunciation": "cho bac my an",
-      "travelerMoment": "Come from My An, My Khe, or the beach side when a quick bite sounds better than a full market mission.",
-      "storySpine": "Bac My An gives the beach side a snack stop without the scale of Han Market or the fuller food-crawl energy of Con Market.",
+      "travelerMoment": "Come from My An, My Khe, or the beach side when avocado ice cream, a simple snack, and a quick cash order sound better than a full market mission.",
+      "storySpine": "Bac My An gives the beach side a snack stop without the scale of Hàn Market or the fuller food-crawl energy of Cồn Market.",
       "intro": {
-        "heading": "Kem Bơ, Then Wander",
-        "body": "A smaller beach-side market near Mỹ An, good for kem bơ, small orders, cash, pointing, and a low-pressure snack between swims."
+        "heading": "Avocado Ice Cream Near The Beach",
+        "body": "Bac My An is a smaller beach-side market near Mỹ An, useful for kem bơ, Vietnam's avocado ice cream, plus small orders, cash, pointing, and a quick snack between swims."
       },
       "usefulPhraseCards": [
         {
@@ -944,17 +944,17 @@
         {
           "id": "small-orders-help",
           "heading": "Small Orders Help",
-          "body": "Point, smile, ask the price, and keep the opening order modest. Treat the market as a quick bite rather than a full decode."
+          "body": "Start with kem bơ or one small snack, then look around. Point, smile, ask the price, and keep cash ready."
         },
         {
           "id": "beach-side-timing",
           "heading": "Beach-Side Timing",
-          "body": "It makes sense when the beach side is already your base. Crossing the city only for this market can make the snack heavier than it needs to be."
+          "body": "It makes sense when the beach side is already your base. Cross-town visitors may prefer Hàn Market or Cồn Market unless avocado ice cream is the point."
         },
         {
           "id": "not-han-or-con",
-          "heading": "Not Han Or Con",
-          "body": "Han is easier for central bearings and gifts, while Con has a fuller food crawl. Bac My An is narrower: come when the food lanes are the point."
+          "heading": "Smaller Than Hàn Or Cồn",
+          "body": "Hàn Market is easier for central bearings and gifts, while Cồn Market has a fuller food crawl. Bắc Mỹ An is narrower: use it for a beach-side snack stop and keep the market visit short."
         }
       ],
       "mentionedHereCandidates": [],
@@ -963,7 +963,7 @@
           "catalogId": "viet-family-city-danang-place-kem-bo",
           "label": "Kem bơ ở Đà Nẵng",
           "relationship": "market-to-snack follow-through",
-          "displaySubtitle": "The avocado-ice-cream snack that makes this student-side market worth remembering.",
+          "displaySubtitle": "Vietnam's avocado ice cream, the beach-side snack that makes this smaller market worth remembering.",
           "reason": "Kem bo is the strongest snack reason to route from Bac My An Market.",
           "status": "render"
         }
@@ -1076,7 +1076,7 @@
           "label": "Đường Nguyễn Văn Linh",
           "relationship": "cross-town-avenue handoff",
           "displaySubtitle": "A broad airport-to-river avenue name for pickups, crossings, and first-day bearings.",
-          "reason": "Related because: A broad airport-to-river avenue name for pickups, crossings, and first-day bearings.",
+          "reason": "A broad airport-to-river avenue name for pickups, crossings, and first-day bearings.",
           "status": "render"
         }
       ],
@@ -1189,7 +1189,7 @@
           "label": "Bán đảo Sơn Trà",
           "relationship": "son-tra-view-route",
           "displaySubtitle": "The wider Sơn Trà route when the hilltop view should connect to peninsula roads and coast light.",
-          "reason": "Related because: The wider Sơn Trà route when the hilltop view should connect to peninsula roads and coast light.",
+          "reason": "The wider Sơn Trà route when the hilltop view should connect to peninsula roads and coast light.",
           "status": "render"
         }
       ],
@@ -1575,11 +1575,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "banh xeo ba duong",
-      "travelerMoment": "Choose Ba Duong when the group wants a Da Nang banh xeo meal: hot pancakes, herbs, rice paper, sauce, and a first roll that moves quickly.",
-      "storySpine": "Ba Duong makes the central-coast pancake feel physical: crackly edges, wet herbs, hands at the table, and sauce deciding the bite.",
+      "travelerMoment": "Bánh Xèo Bà Dưỡng is a Da Nang place for bánh xèo, the sizzling savory pancake eaten with herbs, rice paper, and sauce. The meal starts hot, loud, and hands-on.",
+      "storySpine": "Bà Dưỡng matters because the dish becomes physical at the table: crisp pancake edges, wet herbs, rice paper, skewered pork nearby, and peanut sauce deciding the bite.",
       "intro": {
-        "heading": "Hot Pancake, Fast Hands",
-        "body": "Banh Xeo Ba Duong is a Da Nang pancake shop: hot banh xeo, herbs, rice paper, sauce, and a room that moves before you have overthought the menu."
+        "heading": "Da Nang Sizzling Pancake",
+        "body": "Bánh Xèo Bà Dưỡng is a no-frills Da Nang bánh xèo shop: crisp savory pancakes, rice paper, herbs, skewered pork, cucumber, pickled papaya, and peanut sauce."
       },
       "usefulPhraseCards": [
         {
@@ -1610,23 +1610,23 @@
       "sections": [
         {
           "id": "watch-the-first-roll",
-          "heading": "Watch The First Roll",
-          "body": "Let the table show you the rhythm. Pancake, herbs, wrapper, sauce, and one neat bite make the meal click faster than reading the whole menu."
+          "heading": "Build The First Roll",
+          "body": "Bánh xèo is easier after one example. Tear pancake, add herbs, wrap with rice paper, dip, then repeat before the crisp edge softens."
         },
         {
           "id": "eat-while-it-cracks",
-          "heading": "Eat While It Cracks",
-          "body": "Banh xeo makes the most sense while the edge still has snap. Set up the herbs first, then keep the order simple enough to stay hot."
+          "heading": "Order Around Heat",
+          "body": "The pancake makes the most sense while the edge still snaps. Set up herbs and sauce first, then keep the order simple enough to stay hot."
         },
         {
           "id": "sauce-carries-the-memory",
-          "heading": "Sauce Carries The Memory",
-          "body": "Taste the dipping sauce once before adding chili. The house flavor lives there as much as in the pancake."
+          "heading": "Taste Sauce First",
+          "body": "Taste the peanut dipping sauce before adding chili. The sauce is part of why this shop feels different from a generic pancake stop."
         },
         {
           "id": "shared-table-fit",
-          "heading": "Crisp Edges First",
-          "body": "The reason is tactile: crisp edge, wet herbs, sauce, and the first roll landing hot."
+          "heading": "More Than One Dish",
+          "body": "If the table wants range, add nem lụi or grilled meat. The point is still the same: wrap, dip, eat, and keep the table moving."
         }
       ],
       "mentionedHereCandidates": [
@@ -1636,7 +1636,7 @@
           "catalogId": "viet-family-city-danang-place-banh-xeo",
           "sourceText": "banh xeo",
           "displaySubtitle": "The crisp pancake dish behind the Ba Duong table.",
-          "reason": "Mentioned here because: The crisp pancake dish behind the Ba Duong table.",
+          "reason": "The crisp pancake dish behind the Ba Duong table.",
           "status": "render"
         },
         {
@@ -1655,7 +1655,7 @@
           "label": "Hải sản Bé Mặn",
           "relationship": "seafood table",
           "displaySubtitle": "A seafood table where trays, prices, and cooking style shape dinner first.",
-          "reason": "Related because: A seafood table where trays, prices, and cooking style shape dinner first.",
+          "reason": "A seafood table where trays, prices, and cooking style shape dinner first.",
           "status": "render"
         }
       ],
@@ -1708,11 +1708,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "hai san be man",
-      "travelerMoment": "Come for a seafood dinner when everyone is ready for a louder room, trays of seafood, and a little ordering negotiation.",
-      "storySpine": "Be Man makes most sense once diners understand the first decision is selection, not just sitting down: tanks, trays, price, cooking style, and a recognized Da Nang seafood-table ritual.",
+      "travelerMoment": "Bé Mặn is a famous My Khe-side Da Nang seafood restaurant where dinner starts at the tanks and trays: choose the seafood, confirm price or size, then pick the cooking style.",
+      "storySpine": "The listing earns its place by teaching the seafood-table format before the meal starts. The key decision is selection, not just sitting down.",
       "intro": {
-        "heading": "Ice Tray Before Plate",
-        "body": "Be Man is a seafood table where ice trays, sea air, table noise, and clear price questions come before the first plate arrives hot."
+        "heading": "Pick Seafood Before Sitting",
+        "body": "Bé Mặn is a louder Da Nang seafood restaurant where tanks, ice trays, sea air, and price questions come before the first plate arrives hot."
       },
       "usefulPhraseCards": [
         {
@@ -1743,23 +1743,23 @@
       "sections": [
         {
           "id": "seafood-starts-at-the-display",
-          "heading": "Seafood Starts At The Display",
-          "body": "Seafood dinner starts before sitting down. Ice trays, size, weight, price, and cooking style decide the meal before the first plate arrives."
+          "heading": "Start At The Display",
+          "body": "Look at the seafood before settling in. Size, weight, price, and cooking style shape the meal before the first plate arrives."
         },
         {
           "id": "the-display-is-the-menu",
           "heading": "The Display Is The Menu",
-          "body": "Look before settling in. If seafood is selected by piece, size, or weight, confirm the exact choice before the order moves."
+          "body": "If seafood is selected by piece, size, or weight, confirm the exact choice before the order moves. Pointing is fine when language gets thin."
         },
         {
           "id": "loud-tables-cold-drinks",
           "heading": "Still Loud, Still Casual",
-          "body": "The open-air feel is plates landing, shells cracking, drinks arriving, and people ordering more than they planned."
+          "body": "Expect a casual open-air feel: plates landing, shells cracking, drinks arriving, and people ordering more than they planned."
         },
         {
           "id": "simple-cooking-travels-better",
           "heading": "Simple Cooking Travels Better",
-          "body": "A clear grilled, steamed, or stir-fried main is easier than a table crowded with sauces. One main plate gives the meal a clean start."
+          "body": "A grilled, steamed, or stir-fried main is easier than a table crowded with sauces. One clear plate gives the meal a clean start."
         }
       ],
       "mentionedHereCandidates": [
@@ -1779,7 +1779,7 @@
           "label": "Bánh xèo Bà Dưỡng",
           "relationship": "pancake table",
           "displaySubtitle": "A pancake shop for hot edges, herbs, wrappers, and sauce at the table.",
-          "reason": "Related because: A pancake shop for hot edges, herbs, wrappers, and sauce at the table.",
+          "reason": "A pancake shop for hot edges, herbs, wrappers, and sauce at the table.",
           "status": "render"
         }
       ],
@@ -1877,8 +1877,8 @@
         },
         {
           "id": "guide-note-not-the-whole-story",
-          "heading": "Guide Note, Simple Meal",
-          "body": "The table is still about clean herbs, soft wrappers, salty mắm nêm sauce, and the small skill of one good roll."
+          "heading": "Herbs, Wrappers, Mắm Nêm",
+          "body": "The table is still about clean herbs, soft wrappers, salty mắm nêm, and the small hand skill of building one balanced roll."
         },
         {
           "id": "sauce-decides-the-bite",
@@ -1955,7 +1955,7 @@
       "category": "Restaurant",
       "pronunciation": "bep hen",
       "travelerMoment": "Bếp Hên is the smaller, more personal Da Nang dinner: a home-style table, handwritten menu energy, garlicky prawns, beef, greens, and dishes chosen for sharing.",
-      "storySpine": "Bếp Hên earns the slot because it adds a warm house-kitchen register to Da Nang's food set: a room, a table, and dishes that feel cooked by someone rather than chosen from a big venue menu.",
+      "storySpine": "Bếp Hên earns the slot because it adds a warm house-kitchen side to Da Nang's food set: a room, a table, and dishes that feel cooked by someone rather than chosen from a big venue menu.",
       "intro": {
         "heading": "A Small House Dinner",
         "body": "Bếp Hên is a Da Nang restaurant for a warmer home-style meal: handwritten-menu energy, garlicky prawns, beef, greens, and shared plates in a smaller room."
@@ -2038,7 +2038,8 @@
         "notes": [
           "Additive Da Nang 105-page pilot on 2026-05-31: added to reduce noodle-heavy expansion and give the catalog a warmer home-style restaurant save.",
           "Official guide support checked on 2026-05-31: current guide venue page and 2025 Vietnam coverage support Bếp Hên as a guide-recognized Da Nang restaurant.",
-          "Distinctness from Madame Lân is smaller-room, home-style shared dishes; distinctness from Bếp Cuốn is broader house-kitchen dinner rather than a focused roll-and-dip meal."
+          "Distinctness from Madame Lân is smaller-room, home-style shared dishes; distinctness from Bếp Cuốn is broader house-kitchen dinner rather than a focused roll-and-dip meal.",
+          "2026-06-01 U.S.-traveler repair: removed abstract register phrasing from house-dinner framing."
         ]
       },
       "score": {
@@ -2137,7 +2138,7 @@
           "catalogId": "viet-family-city-danang-place-hai-san",
           "sourceText": "seafood",
           "displaySubtitle": "The Da Nang seafood ordering guide behind this named table.",
-          "reason": "Mentioned here because: The Da Nang seafood ordering guide behind this named table.",
+          "reason": "The Da Nang seafood ordering guide behind this named table.",
           "status": "render"
         }
       ],
@@ -2264,7 +2265,7 @@
           "label": "43 Factory Coffee Roaster",
           "relationship": "roastery comparison",
           "displaySubtitle": "A more coffee-focused stop when espresso and roastery detail matter more than a sweet break.",
-          "reason": "43 Factory gives Boulevard a clearer support-page comparison: coffee craft instead of gelato/cool-down utility.",
+          "reason": "43 Factory gives Boulevard a clearer comparison: coffee craft instead of gelato or a quick cool-down stop.",
           "status": "render"
         }
       ],
@@ -2364,7 +2365,7 @@
         {
           "id": "fish-cake-first",
           "heading": "Start With Fish Cake",
-          "body": "The springy chả cá carries the bowl. Taste broth and fish cake before adding too much chili or lime."
+          "body": "The springy chả cá is the center of the bowl. Taste broth and fish cake before adding too much chili or lime."
         },
         {
           "id": "a-simple-meal-window",
@@ -2504,7 +2505,7 @@
           "catalogId": "viet-family-city-danang-place-bun-cha-ca",
           "sourceText": "fish-cake noodle soup",
           "displaySubtitle": "The Da Nang fish-cake noodle guide behind this named shop.",
-          "reason": "Mentioned here because: The Da Nang fish-cake noodle guide behind this named shop.",
+          "reason": "The Da Nang fish-cake noodle guide behind this named shop.",
           "status": "render"
         }
       ],
@@ -2611,8 +2612,8 @@
       "sections": [
         {
           "id": "named-bowl-stop",
-          "heading": "Named Bowl Stop",
-          "body": "Hờn gives the citywide dish a specific place to sit down with it. Start with the first bowl; chili, herbs, or extras can wait until after tasting."
+          "heading": "Hờn Gives The Bowl A Table",
+          "body": "Hờn turns the citywide fish-cake soup into one place to sit with springy chả cá, clear broth, noodles, herbs, and chili waiting until after the opening taste."
         },
         {
           "id": "taste-before-adjusting",
@@ -2621,13 +2622,13 @@
         },
         {
           "id": "beside-the-broader-dish",
-          "heading": "Compare It With The Dish Guide",
-          "body": "The broader bún chả cá guide explains the food. Hờn gives that bowl one concrete Da Nang table."
+          "heading": "Fish Cake, Broth, Herbs",
+          "body": "The dish guide explains the broader style; this shop makes it concrete through a short table, a warm bowl, and a fish-cake chew you can compare later."
         },
         {
           "id": "before-crossing-town",
-          "heading": "One Bowl, Clear Reason",
-          "body": "The meal points back to the bowl and its short table rhythm. Keep the meal focused on fish cake, broth, herbs, and the first clean taste."
+          "heading": "Keep The Bowl Focused",
+          "body": "Let fish cake, broth, herbs, and the clean opening taste carry the meal before turning the day toward another Da Nang stop."
         }
       ],
       "mentionedHereCandidates": [
@@ -2761,7 +2762,7 @@
           "label": "Bún Chả Cá Hờn",
           "relationship": "fish-cake bowl",
           "displaySubtitle": "A fish-cake noodle bowl for a broth-and-herbs breakfast.",
-          "reason": "Related because: A fish-cake noodle bowl for a broth-and-herbs breakfast.",
+          "reason": "A fish-cake noodle bowl for a broth-and-herbs breakfast.",
           "status": "render"
         },
         {
@@ -2857,7 +2858,7 @@
       "sections": [
         {
           "id": "texture-is-the-point",
-          "heading": "Texture Carries The Bowl",
+          "heading": "Texture Makes The Bowl",
           "body": "Bánh canh is about the thick noodle as much as the broth. Let the first spoonful show the chew before adding chili or extra herbs."
         },
         {
@@ -2872,7 +2873,7 @@
         },
         {
           "id": "keep-the-claim-small",
-          "heading": "Let The Bowl Carry It",
+          "heading": "Let The Bowl Be Enough",
           "body": "Remember it for the street-food comfort: thick noodles, hot broth, toppings, herbs, and a short meal that feels different from mì Quảng or fish-cake soup."
         }
       ],
@@ -2883,7 +2884,7 @@
           "label": "Bún Riêu Cua 39",
           "relationship": "crab-tomato bowl",
           "displaySubtitle": "A crab-tomato noodle bowl when Da Nang needs a brighter soup lane.",
-          "reason": "Related because: A crab-tomato noodle bowl when Da Nang needs a brighter soup lane.",
+          "reason": "A crab-tomato noodle bowl when Da Nang needs a brighter soup lane.",
           "status": "render"
         },
         {
@@ -2891,7 +2892,7 @@
           "label": "Bún Chả Cá Hờn",
           "relationship": "fish-cake bowl",
           "displaySubtitle": "A fish-cake noodle bowl for a broth-and-herbs breakfast.",
-          "reason": "Related because: A fish-cake noodle bowl for a broth-and-herbs breakfast.",
+          "reason": "A fish-cake noodle bowl for a broth-and-herbs breakfast.",
           "status": "render"
         }
       ],
@@ -3005,7 +3006,7 @@
           "label": "Chợ Hàn",
           "relationship": "central-walk-pairing",
           "displaySubtitle": "A central market stop nearby when the pink church visit should stay inside the city core.",
-          "reason": "Related because: A central market stop nearby when the pink church visit should stay inside the city core.",
+          "reason": "A central market stop nearby when the pink church visit should stay inside the city core.",
           "status": "render"
         }
       ],
@@ -3090,8 +3091,8 @@
       "sections": [
         {
           "id": "travel-day-clarity",
-          "heading": "Travel-Day Clarity",
-          "body": "This stop is about luggage, route signs, vehicle bays, and the next road. The practical pieces matter while patience and phone battery still exist."
+          "heading": "Bags, Bays, Next Road",
+          "body": "Arrive with the next city, bus company, and hotel address easy to show. Route signs, bay numbers, and luggage storage matter more than scenery here."
         },
         {
           "id": "bay-before-boarding",
@@ -3116,7 +3117,7 @@
           "label": "Ga Đà Nẵng",
           "relationship": "train-day handoff",
           "displaySubtitle": "The rail stop for bags, route boards, curb pickups, and leaving Da Nang by train.",
-          "reason": "Related because: The rail stop for bags, route boards, curb pickups, and leaving Da Nang by train.",
+          "reason": "The rail stop for bags, route boards, curb pickups, and leaving Da Nang by train.",
           "status": "render"
         }
       ],
@@ -3222,7 +3223,7 @@
           "label": "Bảo tàng 3D Art in Paradise Đà Nẵng",
           "relationship": "playful-indoor break",
           "displaySubtitle": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
-          "reason": "Related because: A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
+          "reason": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
           "status": "render"
         }
       ],
@@ -3389,7 +3390,7 @@
       "travelerMoment": "Come when the group wants a casual duck stop instead of another seafood or roll table.",
       "storySpine": "Co Chu Nho gets a clearer job: a Da Nang duck specialist where porridge, salad, sliced duck, herbs, and ginger fish sauce give the meal its point.",
       "intro": {
-        "heading": "Duck Stop",
+        "heading": "Da Nang Duck Specialist",
         "body": "Cô Chủ Nhỏ is a casual duck specialist: porridge, salad, sliced duck, herbs, and ginger fish sauce instead of another beach-city seafood meal."
       },
       "usefulPhraseCards": [
@@ -3541,7 +3542,7 @@
         },
         {
           "id": "small-plates-beat-a-checklist",
-          "heading": "Small Plates Beat A Checklist",
+          "heading": "Small Plates Before More Browsing",
           "body": "Tiny steamed rice cakes, chewy tapioca dumplings, bún mắm noodle bowls, and mì Quảng give the market its food pull. One or two small orders make a good first pass."
         },
         {
@@ -3576,7 +3577,7 @@
           "sourceText": "Hàn",
           "displaySubtitle": "The calmer first market for bearings, gifts, and an easier lap.",
           "reason": "The page explicitly contrasts Cồn with Hàn, and Hàn has a renderable V2.2 page.",
-          "status": "render"
+          "status": "do_not_render"
         }
       ],
       "relatedPlaceCandidates": [
@@ -3638,11 +3639,11 @@
       "city": "Đà Nẵng",
       "category": "Cafe",
       "pronunciation": "cong ca phe bach dang",
-      "travelerMoment": "This branch is a hinge between Bạch Đằng Street, the Hàn River edge, and the next meal or evening walk.",
-      "storySpine": "The cafe makes Da Nang's river walk feel less like movement and more like a real stop, with seats and heat shaping the visit.",
+      "travelerMoment": "Cộng Cà Phê on Bạch Đằng is the easy retro-branded coffee pause on Da Nang's riverfront: green chairs, coconut coffee, iced milk coffee, air-conditioning, and a table before Dragon Bridge or dinner.",
+      "storySpine": "For first-time visitors, the value is reliability. You can recognize the brand, order familiar Vietnamese coffee styles, cool down, and stay close to the Hàn River walk.",
       "intro": {
-        "heading": "The River Coffee Stop",
-        "body": "Cong Caphe Bach Dang is a river-side coffee break for heat, walking, bridge lights, iced drinks, and the green retro room slowing the next decision."
+        "heading": "Retro Coffee By The River",
+        "body": "Cộng Cà Phê Bạch Đằng is a familiar green retro cafe by Da Nang's river walk: iced milk coffee, coconut coffee, air-conditioning, and a table before bridge lights or dinner."
       },
       "usefulPhraseCards": [
         {
@@ -3673,23 +3674,23 @@
       "sections": [
         {
           "id": "cold-coffee-fits-the-heat",
-          "heading": "Cold Coffee Fits The Heat",
-          "body": "Cà phê sữa đá is the easy first order for sweet, strong iced coffee. Bạc xỉu is softer; coconut coffee makes the stop closer to dessert."
+          "heading": "Coconut Or Classic",
+          "body": "Cà phê sữa đá is sweet, strong iced coffee. Coconut coffee is creamier and more dessert-like, which can be exactly right after a hot river walk."
         },
         {
           "id": "seat-before-settling",
-          "heading": "Check The Room First",
-          "body": "The better seat is the one that fits your energy: river-facing if it is open, cooler inside if the heat is heavy, or takeaway if the room is full."
+          "heading": "Choose By Heat",
+          "body": "River-facing seats are nice if open. On a hot day, the better choice may be the cooler room inside, even without the view."
         },
         {
           "id": "river-walk-coffee-break",
-          "heading": "River Walk, Coffee Break",
-          "body": "This branch sits naturally beside Bạch Đằng Street, the Hàn River edge, or a bridge-light evening. Treat coffee as the hinge."
+          "heading": "Between Bridge And Dinner",
+          "body": "The cafe fits before Dragon Bridge, after a river stroll, or while deciding dinner. It gives the group a table without turning into a long plan."
         },
         {
           "id": "seats-define-the-stop",
-          "heading": "The Seat Decides The Stop",
-          "body": "River-facing seats are a bonus, not the promise. Check the room when you arrive, then pick shade, air-conditioning, or takeaway."
+          "heading": "Know The Tradeoff",
+          "body": "Cộng is easy to recognize and easy to order from. For a more local-feeling coffee counter, compare it with Long Coffee instead of expecting this branch to do everything."
         }
       ],
       "mentionedHereCandidates": [],
@@ -3699,7 +3700,7 @@
           "label": "Cà phê Long",
           "relationship": "local coffee contrast",
           "displaySubtitle": "A more local old-school coffee counter after the riverfront nostalgia stop.",
-          "reason": "Long Coffee gives Cong Caphe a real coffee-register contrast.",
+          "reason": "Long Coffee is the useful comparison when you want old-school Vietnamese coffee instead of a branded cafe stop.",
           "status": "render"
         }
       ],
@@ -3811,7 +3812,7 @@
           "label": "Sân bay Đà Nẵng",
           "relationship": "arrival-departure handoff",
           "displaySubtitle": "The practical first or last Da Nang airport stop for bags, terminal signs, pickups, and warm air outside.",
-          "reason": "Related because: The practical first or last Da Nang airport stop for bags, terminal signs, pickups, and warm air outside.",
+          "reason": "The practical first or last Da Nang airport stop for bags, terminal signs, pickups, and warm air outside.",
           "status": "render"
         }
       ],
@@ -4011,7 +4012,7 @@
         {
           "id": "close-has-a-different-energy",
           "heading": "Close Has A Different Energy",
-          "body": "If spray and crowd noise are part of the fun, stand nearer. If photos and space matter more, stay back and let the river hold the scene."
+          "body": "Near the bridge, spray and crowd noise hit first. Farther back, the river gives the dragon, lights, and skyline more room in the photo."
         },
         {
           "id": "a-short-riverfront-loop",
@@ -4026,7 +4027,7 @@
           "label": "Màn phun lửa Cầu Rồng",
           "relationship": "same-bridge-timing",
           "displaySubtitle": "The timed fire-and-water moment when the bridge becomes a night event, not just a crossing.",
-          "reason": "Related because: The timed fire-and-water moment when the bridge becomes a night event, not just a crossing.",
+          "reason": "The timed fire-and-water moment when the bridge becomes a night event, not just a crossing.",
           "status": "render"
         }
       ],
@@ -4118,8 +4119,8 @@
         },
         {
           "id": "farther-back-holds-the-view",
-          "heading": "Farther Back Holds The Scene",
-          "body": "From the promenade, you lose some force but gain the scene: dragon head, river, lights, and crowd silhouettes."
+          "heading": "Dragon, River, Crowd Lights",
+          "body": "From the promenade, the burst feels farther away, but the dragon head, river, lights, and crowd silhouettes fit into one view."
         },
         {
           "id": "move-after-the-burst",
@@ -4139,7 +4140,7 @@
           "label": "Cầu Rồng",
           "relationship": "same-bridge-context",
           "displaySubtitle": "The bridge page for the landmark itself before the timed fire-and-water crowd forms.",
-          "reason": "Related because: The bridge page for the landmark itself before the timed fire-and-water crowd forms.",
+          "reason": "The bridge page for the landmark itself before the timed fire-and-water crowd forms.",
           "status": "render"
         }
       ],
@@ -4250,7 +4251,7 @@
           "label": "Cầu Tình Yêu",
           "relationship": "riverfront-photo-pairing",
           "displaySubtitle": "A nearby riverfront stop for locks, photos, and the same short evening walk.",
-          "reason": "Related because: A nearby riverfront stop for locks, photos, and the same short evening walk.",
+          "reason": "A nearby riverfront stop for locks, photos, and the same short evening walk.",
           "status": "render"
         }
       ],
@@ -4308,11 +4309,11 @@
       },
       "usefulPhraseCards": [
         {
-          "vi": "Chúng ta có thể ngồi bên ngoài được không?",
-          "en": "Can we sit outside?",
+          "vi": "Cho tôi bàn cho hai người nhé",
+          "en": "A table for two, please",
           "intent": "food-drink",
-          "phraseId": "v900-food-drin-can-we-sit-outside",
-          "audioId": "v900-food-drin-can-we-sit-outside",
+          "phraseId": "food-need-table",
+          "audioId": "food-need-table",
           "status": "mapped"
         },
         {
@@ -4455,7 +4456,7 @@
         {
           "id": "downtown-rooms-in-the-heat",
           "heading": "Downtown Rooms In The Heat",
-          "body": "The Lê Duẩn address gives this stop a different city register than the riverfront. It is an indoor break when heat or rain weakens another outdoor plan."
+          "body": "The Lê Duẩn address gives this stop a different city mood than the riverfront. It is an indoor break when heat or rain weakens another outdoor plan."
         },
         {
           "id": "compact-then-back-outside",
@@ -4470,7 +4471,7 @@
           "label": "Bảo tàng 3D Art in Paradise Đà Nẵng",
           "relationship": "playful-indoor break",
           "displaySubtitle": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
-          "reason": "Related because: A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
+          "reason": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
           "status": "render"
         }
       ],
@@ -4484,7 +4485,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
-          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "2026-06-01 U.S.-traveler repair: replaced abstract register language with plain city-mood framing."
         ]
       },
       "score": {
@@ -4581,7 +4583,7 @@
           "label": "Bà Nà Hills",
           "relationship": "same-mountain-context",
           "displaySubtitle": "The larger Bà Nà mountain day around the bridge, cable car, weather, and crowds.",
-          "reason": "Related because: The larger Bà Nà mountain day around the bridge, cable car, weather, and crowds.",
+          "reason": "The larger Bà Nà mountain day around the bridge, cable car, weather, and crowds.",
           "status": "render"
         }
       ],
@@ -4692,7 +4694,7 @@
           "label": "Khu An Thượng",
           "relationship": "beachside-night pocket",
           "displaySubtitle": "A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
-          "reason": "Related because: A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
+          "reason": "A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
           "status": "render"
         }
       ],
@@ -4923,7 +4925,7 @@
           "label": "Chuyến đi đèo Hải Vân",
           "relationship": "same-route-action",
           "displaySubtitle": "The road-day version of Hải Vân Pass: curves, weather, photo stops, and the slower ride between cities.",
-          "reason": "Related because the pass is often remembered as a ride, not only a viewpoint name.",
+          "reason": "the pass is often remembered as a ride, not only a viewpoint name.",
           "status": "render"
         }
       ],
@@ -5034,7 +5036,7 @@
           "label": "Đèo Hải Vân",
           "relationship": "same-route-viewpoint",
           "displaySubtitle": "The pass page when the road day needs the viewpoint name and mountain context.",
-          "reason": "Related because: The pass page when the road day needs the viewpoint name and mountain context.",
+          "reason": "The pass page when the road day needs the viewpoint name and mountain context.",
           "status": "render"
         }
       ],
@@ -5164,7 +5166,7 @@
           "sourceText": "Cồn",
           "displaySubtitle": "The louder Da Nang market when snacks matter more than easy browsing.",
           "reason": "The page explicitly compares Hàn and Cồn; the related food-market page exists.",
-          "status": "render"
+          "status": "do_not_render"
         }
       ],
       "relatedPlaceCandidates": [
@@ -5173,7 +5175,7 @@
           "label": "Chợ Cồn",
           "relationship": "food-market comparison",
           "displaySubtitle": "Da Nang’s louder snack-market choice for stools, steam, and dessert cups.",
-          "reason": "Related because: Da Nang’s louder snack-market choice for stools, steam, and dessert cups.",
+          "reason": "Da Nang’s louder snack-market choice for stools, steam, and dessert cups.",
           "status": "render"
         }
       ],
@@ -5341,7 +5343,7 @@
       "travelerMoment": "The cruise is about the boat sequence: boarding point, start time, route, and return before stepping on.",
       "storySpine": "The cruise feels easier when boarding point, start time, route, and return are clear before the lights take over.",
       "intro": {
-        "heading": "Board For The Lights, Not The Checklist",
+        "heading": "Board For The River Lights",
         "body": "A Hàn River cruise is a simple night move: small boat, bridge lights, dark water, boarding clarity, and a slower look at Da Nang from below the skyline."
       },
       "usefulPhraseCards": [
@@ -5399,7 +5401,7 @@
           "label": "Sông Hàn",
           "relationship": "river-context",
           "displaySubtitle": "The river page when the cruise should sit inside Da Nang’s bridges, skyline, and waterline.",
-          "reason": "Related because: The river page when the cruise should sit inside Da Nang’s bridges, skyline, and waterline.",
+          "reason": "The river page when the cruise should sit inside Da Nang’s bridges, skyline, and waterline.",
           "status": "render"
         }
       ],
@@ -5617,7 +5619,7 @@
           "label": "Hồ Hòa Trung",
           "relationship": "outside-city-reset",
           "displaySubtitle": "Another outside-city nature reset when Da Nang needs water, space, and a ride plan.",
-          "reason": "Related because: Another outside-city nature reset when Da Nang needs water, space, and a ride plan.",
+          "reason": "Another outside-city nature reset when Da Nang needs water, space, and a ride plan.",
           "status": "render"
         }
       ],
@@ -5728,7 +5730,7 @@
           "label": "Rạn Nam Ô",
           "relationship": "working-coast nature",
           "displaySubtitle": "A tide-dependent rocky coast stop for pools, fishing edges, and a northern Da Nang shoreline feel.",
-          "reason": "Related because: A tide-dependent rocky coast stop for pools, fishing edges, and a northern Da Nang shoreline feel.",
+          "reason": "A tide-dependent rocky coast stop for pools, fishing edges, and a northern Da Nang shoreline feel.",
           "status": "render"
         }
       ],
@@ -6001,11 +6003,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "la maison 1888",
-      "travelerMoment": "La Maison 1888 is for a Da Nang night when dinner is the plan: a special-occasion meal with room, service pace, and a reservation-led evening.",
-      "storySpine": "The restaurant gives Da Nang a polished destination-dinner register, distinct from beach seafood, market snacks, and river-night wandering.",
+      "travelerMoment": "La Maison 1888 is for a Da Nang night built around one formal French-influenced resort dinner: a dressed table, careful service, and space around the reservation.",
+      "storySpine": "The restaurant gives Da Nang a destination-dinner option away from beach seafood, market snacks, and river-night wandering.",
       "intro": {
-        "heading": "A Special-Occasion Dinner",
-        "body": "La Maison 1888 is the Da Nang dinner for when the meal should become the night: a special-occasion restaurant with a formal room, careful service pace, and no need to stack plans afterward."
+        "heading": "A Formal Resort Dinner",
+        "body": "La Maison 1888 is the Da Nang dinner for when the meal becomes the night: a formal resort restaurant with careful service, a dressed table, and no need to stack plans afterward."
       },
       "usefulPhraseCards": [
         {
@@ -6037,22 +6039,22 @@
         {
           "id": "why-this-dinner",
           "heading": "Why This Dinner",
-          "body": "Come for a slower room rather than quick beach food. It gives Da Nang an occasion-meal slot: slower pacing, staff guidance, and a dressed table."
+          "body": "The reason to come is the room as much as the food: slower service, staff guidance, and a dinner that feels separate from the beach day outside."
         },
         {
-          "id": "plan-around-the-room",
-          "heading": "Plan Around The Room",
-          "body": "Leave space before and after the booking. A polished meal loses its point if it is squeezed between a beach rinse, bridge photos, and a late ride."
+          "id": "space-around-the-booking",
+          "heading": "Space Around The Booking",
+          "body": "Leave time before and after the reservation. The meal loses its shape if it is squeezed between a beach rinse, bridge photos, and a late ride."
         },
         {
-          "id": "ask-early",
-          "heading": "Ask Early",
-          "body": "Ingredient, wine, allergy, or portion questions travel better before courses begin. The first practical phrase is often menu or recommendation language, not the restaurant name."
+          "id": "questions-before-courses",
+          "heading": "Questions Before Courses",
+          "body": "Ingredient, wine, allergy, or portion questions belong before courses begin. Menu and recommendation phrases are more useful than the restaurant name once you are seated."
         },
         {
-          "id": "not-the-only-food-save",
-          "heading": "Balance It With Street Food",
-          "body": "Place this beside a market, mì Quảng, or seafood stop so the trip has both registers: Da Nang as everyday eating and Da Nang as a planned dinner."
+          "id": "balance-with-everyday-danang",
+          "heading": "Balance With Everyday Da Nang",
+          "body": "Pair this with mì Quảng, seafood, or a market stop on another day so Da Nang does not become only formal dining or only quick food."
         }
       ],
       "mentionedHereCandidates": [],
@@ -6061,7 +6063,7 @@
           "catalogId": "viet-family-city-danang-place-nen",
           "label": "Nén Đà Nẵng",
           "relationship": "special-occasion dinner comparison",
-          "displaySubtitle": "A slower Da Nang tasting-style dinner with herbs, ceramics, and staff guidance.",
+          "displaySubtitle": "A slower Da Nang dinner when Vietnamese ingredients, herbs, and staff guidance matter more than a formal resort room.",
           "reason": "Nén gives another planned-dinner comparison for travelers building a higher-end Da Nang food night.",
           "status": "render"
         }
@@ -6077,7 +6079,8 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
-          "Save-worthy food voice pass on 2026-05-30: added bounded 2025 special-occasion copy and clarified why this dinner deserves a saved trip slot."
+          "Save-worthy food voice pass on 2026-05-30: added bounded 2025 special-occasion copy and clarified why this dinner deserves a saved trip slot.",
+          "2026-06-01 U.S.-traveler repair: replaced special-occasion/register phrasing with plain formal resort dinner framing and concrete planning tradeoffs."
         ]
       },
       "score": {
@@ -6159,7 +6162,7 @@
         },
         {
           "id": "respect-carries-the-visit",
-          "heading": "Respect Carries The Visit",
+          "heading": "Respect Shapes The Visit",
           "body": "Covered shoulders, low voices, and careful photos are safer than treating the statue as only a viewpoint."
         },
         {
@@ -6175,7 +6178,7 @@
           "label": "Chùa Linh Ứng",
           "relationship": "same-pagoda-context",
           "displaySubtitle": "The pagoda context behind the statue, with courtyards, sea views, and Sơn Trà air.",
-          "reason": "Related because: The pagoda context behind the statue, with courtyards, sea views, and Sơn Trà air.",
+          "reason": "The pagoda context behind the statue, with courtyards, sea views, and Sơn Trà air.",
           "status": "render"
         }
       ],
@@ -6225,11 +6228,11 @@
       "city": "Đà Nẵng",
       "category": "Market",
       "pronunciation": "cho dem le duan",
-      "travelerMoment": "This is a short browse rather than a full food crawl or a night that has to compete with larger markets.",
-      "storySpine": "The market works at modest scale: a short browse, light bargaining, flexible expectations, and a quick check before heading over.",
+      "travelerMoment": "Lê Duẩn Night Market is a compact Da Nang evening browse: clothing racks, phone cases, small gifts, snack smoke, and quick price phrases before the hotel or the next river stop.",
+      "storySpine": "The market earns its place when expectations stay modest: a short after-dark loop, light bargaining, and a lighter alternative to bigger night-market plans.",
       "intro": {
-        "heading": "A Short Night Browse",
-        "body": "Lê Duẩn Night Market is a compact after-dark browse: clothing racks, small gifts, warm bulbs, a little food smoke, and one more walk before the hotel."
+        "heading": "Compact Night-Market Loop",
+        "body": "Lê Duẩn Night Market is a small Da Nang after-dark browse: clothing racks, phone cases, small gifts, snack smoke, and a quick loop before the hotel or river walk."
       },
       "usefulPhraseCards": [
         {
@@ -6260,23 +6263,23 @@
       "sections": [
         {
           "id": "one-lap-before-buying",
-          "heading": "One Lap Before Buying",
-          "body": "Walk the lane once before choosing. The market is easier when you know where clothes, snacks, phone cases, and small gifts cluster."
+          "heading": "Walk Once Before Buying",
+          "body": "Take one full lap before asking prices. The market is easier once you know where clothes, snacks, phone cases, and small gifts cluster."
         },
         {
           "id": "bargain-lightly",
           "heading": "Bargain Lightly",
-          "body": "Keep bargaining small. Price it, try one polite discount, then buy or move on."
+          "body": "Keep bargaining small. Ask the price, try one polite discount, then buy or move on without turning the lane tense."
         },
         {
           "id": "small-scale-is-the-point",
-          "heading": "Small Scale Is The Draw",
-          "body": "The stop can feel thin if you expect a full food crawl. Treat it as one pocket of night color: racks, snacks, small gifts, and a simple loop before the hotel."
+          "heading": "Expect A Short Loop",
+          "body": "Think of it as a pocket of night color rather than a full food crawl. Racks, snacks, small gifts, and a short loop give the evening its shape."
         },
         {
           "id": "small-market-light-expectations",
-          "heading": "Leave While It Still Feels Easy",
-          "body": "A short loop, a small buy, and a clear exit keep the stop pleasant. If the lane feels quiet, use it as a quick browse rather than forcing a full night-market plan."
+          "heading": "Compare Helio First",
+          "body": "If the group wants bigger lights, more food, and a fuller evening, Helio is the easier night-market plan. Lê Duẩn is the lighter browse."
         }
       ],
       "mentionedHereCandidates": [],
@@ -6286,7 +6289,7 @@
           "label": "Chợ đêm Helio",
           "relationship": "support night-market comparison",
           "displaySubtitle": "A more built-out evening market when snacks, lights, and easy browsing matter more than local texture.",
-          "reason": "Helio is a practical support comparison for Le Duan Night Market without overstating it as a food feature.",
+          "reason": "Helio is the practical comparison when you want a larger, easier night-market plan.",
           "status": "render"
         }
       ],
@@ -6301,7 +6304,8 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
-          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
+          "2026-06-01 U.S.-traveler repair: replaced abstract draw phrasing with plain scale/trip-fit language."
         ]
       },
       "score": {
@@ -6388,7 +6392,7 @@
         {
           "id": "son-tra-can-wait",
           "heading": "Son Tra Can Wait",
-          "body": "The pagoda pairs naturally with a Sơn Trà drive, but it does not need to become a rushed checklist. If weather, road, or group energy changes, stay with the grounds and view."
+          "body": "The pagoda pairs naturally with a Sơn Trà drive. If weather, road, or group energy changes, the courtyards, sea view, and statue can carry the visit."
         }
       ],
       "mentionedHereCandidates": [],
@@ -6398,7 +6402,7 @@
           "label": "Tượng Phật Bà",
           "relationship": "same-pagoda-landmark",
           "displaySubtitle": "The tall white statue that markers the pagoda visit from the coast road.",
-          "reason": "Related because: The tall white statue that markers the pagoda visit from the coast road.",
+          "reason": "The tall white statue that markers the pagoda visit from the coast road.",
           "status": "render"
         }
       ],
@@ -6616,7 +6620,7 @@
           "label": "Chợ Hàn",
           "relationship": "curated route comparison",
           "displaySubtitle": "A central market contrast when texture matters more than air-conditioning.",
-          "reason": "Related because: A central market contrast when texture matters more than air-conditioning.",
+          "reason": "A central market contrast when texture matters more than air-conditioning.",
           "status": "render"
         }
       ],
@@ -6725,7 +6729,7 @@
           "label": "Tượng Cá Chép Hóa Rồng",
           "relationship": "nearby-riverfront-photo",
           "displaySubtitle": "A nearby photo stop where the river, bridges, and evening lights stay in frame.",
-          "reason": "Related because: A nearby photo stop where the river, bridges, and evening lights stay in frame.",
+          "reason": "A nearby photo stop where the river, bridges, and evening lights stay in frame.",
           "status": "render"
         }
       ],
@@ -6968,7 +6972,7 @@
           "label": "Biển Mỹ An",
           "relationship": "soft-beach edge",
           "displaySubtitle": "A smaller Mỹ An beach edge for a quick swim, sand walk, or low-friction coast break.",
-          "reason": "Related because: A smaller Mỹ An beach edge for a quick swim, sand walk, or low-friction coast break.",
+          "reason": "A smaller Mỹ An beach edge for a quick swim, sand walk, or low-friction coast break.",
           "status": "render"
         }
       ],
@@ -7021,7 +7025,7 @@
       "travelerMoment": "This is a physical visit with a real pace: cave, shrine, stair, dim air, and whatever energy the group still has.",
       "storySpine": "The cave walk gives Marble Mountains a specific on-foot pace, distinct from the broader mountain-cluster stop.",
       "intro": {
-        "heading": "Stone Steps Before Shrine Light",
+        "heading": "Marble Mountain Cave Walk",
         "body": "The Marble Mountain cave walk is the cave-and-shrine side of Ngu Hanh Son, with stone steps, dimmer air, incense, and a slower kind of attention."
       },
       "usefulPhraseCards": [
@@ -7063,7 +7067,7 @@
         },
         {
           "id": "caves-over-checklist",
-          "heading": "Caves Over Checklist",
+          "heading": "Caves, Steps, Stone Light",
           "body": "Let the cave-and-shrine pace lead instead of racing every viewpoint. Stairs, shade, and quiet movement are the visit."
         },
         {
@@ -7079,7 +7083,7 @@
           "label": "Ngũ Hành Sơn",
           "relationship": "same-site-context",
           "displaySubtitle": "The main Marble Mountains page for the hills, shrines, stairs, and broader visit.",
-          "reason": "Related because: The main Marble Mountains page for the hills, shrines, stairs, and broader visit.",
+          "reason": "The main Marble Mountains page for the hills, shrines, stairs, and broader visit.",
           "status": "render"
         }
       ],
@@ -7190,7 +7194,7 @@
           "label": "Hang động Ngũ Hành Sơn",
           "relationship": "same-site-action",
           "displaySubtitle": "The cave-walk version when the marble hills become stairs, shade, shrines, and route choices.",
-          "reason": "Related because: The cave-walk version when the marble hills become stairs, shade, shrines, and route choices.",
+          "reason": "The cave-walk version when the marble hills become stairs, shade, shrines, and route choices.",
           "status": "render"
         }
       ],
@@ -7413,7 +7417,7 @@
           "catalogId": "viet-family-city-danang-place-mi-quang",
           "sourceText": "Mi Quang",
           "displaySubtitle": "The Da Nang noodle bowl behind this focused lunch stop.",
-          "reason": "Mentioned here because: The Da Nang noodle bowl behind this focused lunch stop.",
+          "reason": "The Da Nang noodle bowl behind this focused lunch stop.",
           "status": "render"
         }
       ],
@@ -7537,7 +7541,7 @@
           "catalogId": "viet-family-city-danang-place-mi-quang",
           "sourceText": "mì Quảng",
           "displaySubtitle": "The regional bowl behind this more specific jellyfish version.",
-          "reason": "Mentioned here because: The regional bowl behind this more specific jellyfish version.",
+          "reason": "The regional bowl behind this more specific jellyfish version.",
           "status": "render"
         }
       ],
@@ -7555,7 +7559,7 @@
           "label": "Bánh Canh Yến",
           "relationship": "thick-noodle bowl",
           "displaySubtitle": "A thick-noodle soup when texture, broth, and toppings can lead.",
-          "reason": "Related because: A thick-noodle soup when texture, broth, and toppings can lead.",
+          "reason": "A thick-noodle soup when texture, broth, and toppings can lead.",
           "status": "render"
         }
       ],
@@ -7664,7 +7668,7 @@
           "label": "Bảo tàng 3D Art in Paradise Đà Nẵng",
           "relationship": "playful-indoor break",
           "displaySubtitle": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
-          "reason": "Related because: A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
+          "reason": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
           "status": "render"
         }
       ],
@@ -7777,7 +7781,7 @@
           "label": "Bảo tàng 3D Art in Paradise Đà Nẵng",
           "relationship": "playful-indoor break",
           "displaySubtitle": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
-          "reason": "Related because: A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
+          "reason": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
           "status": "render"
         }
       ],
@@ -7888,7 +7892,7 @@
           "label": "Khu An Thượng",
           "relationship": "beachside-night pocket",
           "displaySubtitle": "A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
-          "reason": "Related because: A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
+          "reason": "A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
           "status": "render"
         }
       ],
@@ -7974,7 +7978,7 @@
         {
           "id": "arrive-light",
           "heading": "Arrive Light",
-          "body": "Bring only what you want to carry back through the street. This beach suits a swim, a short sit, or a slow walk before the next food, hotel, or river plan."
+          "body": "Bring only what you want to take back through the street. This beach suits a swim, a short sit, or a slow walk before the next food, hotel, or river plan."
         },
         {
           "id": "water-first",
@@ -7984,7 +7988,7 @@
         {
           "id": "beach-time-with-conditions",
           "heading": "Beach Time With Conditions",
-          "body": "A short sit, swim decision, or sand walk near the My An area is enough. Weather and water decide the stop when conditions feel rough."
+          "body": "A short sit, swim decision, or sand walk near the My An area can be plenty. Weather and water decide how long the beach holds you."
         },
         {
           "id": "sea-air-before-seafood",
@@ -7999,7 +8003,7 @@
           "label": "Biển Mân Thái",
           "relationship": "working-beach contrast",
           "displaySubtitle": "A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
-          "reason": "Related because: A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
+          "reason": "A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
           "status": "render"
         }
       ],
@@ -8110,7 +8114,7 @@
           "label": "Biển Mân Thái",
           "relationship": "working-beach contrast",
           "displaySubtitle": "A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
-          "reason": "Related because: A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
+          "reason": "A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
           "status": "render"
         }
       ],
@@ -8163,7 +8167,7 @@
       "travelerMoment": "Mỳ Quảng Bà Mua is the easy branch-style mì Quảng backup: a clearer table, fast ordering, and a familiar named stop when the group wants the dish without a harder hunt.",
       "storySpine": "Bà Mua keeps a smaller job in the mì Quảng set: accessible regional noodles, an easy name to show, and a clearer table when convenience matters.",
       "intro": {
-        "heading": "The Easy Backup Bowl",
+        "heading": "Branch-Style Mì Quảng Bowl",
         "body": "Mỳ Quảng Bà Mua is the easier branch-style mì Quảng stop: yellow noodles, shallow broth, herbs, rice cracker, and a clearer table when the group wants less friction."
       },
       "usefulPhraseCards": [
@@ -8221,7 +8225,7 @@
           "catalogId": "viet-family-city-danang-place-mi-quang",
           "sourceText": "Mỳ Quảng",
           "displaySubtitle": "The regional bowl this easier branch-style stop is built around.",
-          "reason": "Mentioned here because: The regional bowl this easier branch-style stop is built around.",
+          "reason": "The regional bowl this easier branch-style stop is built around.",
           "status": "render"
         }
       ],
@@ -8231,7 +8235,7 @@
           "label": "Mỳ Quảng Sứa Hồng Vân",
           "relationship": "same-dish restaurant comparison",
           "displaySubtitle": "A mì Quảng stop with a sharper seafood-texture hook.",
-          "reason": "Related because: A mì Quảng stop with a sharper seafood-texture hook.",
+          "reason": "A mì Quảng stop with a sharper seafood-texture hook.",
           "status": "render"
         },
         {
@@ -8354,7 +8358,7 @@
           "catalogId": "viet-family-city-danang-place-mi-quang",
           "sourceText": "Mỳ Quảng",
           "displaySubtitle": "The regional bowl behind this compact mì Quảng shop.",
-          "reason": "Mentioned here because: The regional bowl behind this compact mì Quảng shop.",
+          "reason": "The regional bowl behind this compact mì Quảng shop.",
           "status": "render"
         }
       ],
@@ -8364,7 +8368,7 @@
           "label": "Mỳ Quảng Sứa Hồng Vân",
           "relationship": "same-dish restaurant comparison",
           "displaySubtitle": "A mì Quảng stop with texture at the center.",
-          "reason": "Related because: A mì Quảng stop with texture at the center.",
+          "reason": "A mì Quảng stop with texture at the center.",
           "status": "render"
         },
         {
@@ -8372,7 +8376,7 @@
           "label": "Mì Quảng 1A",
           "relationship": "same-dish restaurant comparison",
           "displaySubtitle": "A mì Quảng stop when you want a cleaner lunch choice.",
-          "reason": "Mi Quang 1A gives Dung a source-supported same-dish comparison.",
+          "reason": "Mi Quang 1A gives Dung a same-dish comparison for travelers choosing between named mì Quảng shops.",
           "status": "render"
         }
       ],
@@ -8426,11 +8430,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "hai san nam danh",
-      "travelerMoment": "Nam Danh is a local casual Da Nang seafood table built around shared rounds, cold drinks, plastic stools, practical ordering, and plates arriving hot.",
-      "storySpine": "Nam Danh Seafood is a casual seafood table: shared rounds, pointing clearly, neighborhood energy, and a meal built plate by plate.",
+      "travelerMoment": "Năm Đảnh is the local-feeling Da Nang seafood choice after the beachfront names: a residential-neighborhood restaurant with many tables, shared shellfish, cold drinks, and prices worth confirming.",
+      "storySpine": "The value is contrast. Năm Đảnh feels less scenic and more local than a polished beach seafood dinner, but the group still needs to order carefully by plate, portion, or seafood choice.",
       "intro": {
-        "heading": "Order In Rounds",
-        "body": "Nam Danh Seafood is a neighborhood seafood table where clams, grilled fish, cold drinks, plastic stools, and shared rounds make the meal."
+        "heading": "Local-Feeling Seafood Table",
+        "body": "Năm Đảnh is a casual Da Nang seafood restaurant away from the polished beachfront mood: shared shellfish, cold drinks, many tables, and dishes arriving plate by plate."
       },
       "usefulPhraseCards": [
         {
@@ -8460,24 +8464,24 @@
       ],
       "sections": [
         {
-          "id": "small-plates-easy-night",
-          "heading": "Small Plates, Easy Night",
-          "body": "Seafood gets easier when the first order is a warm-up. One clam dish, one grilled plate, or one shared thing, then decide what deserves a second round."
+          "id": "start-with-two-plates",
+          "heading": "Start Small",
+          "body": "Begin with clams, scallops, shrimp, sea snails, or another dish that is easy to share. Add more once the table pace makes sense."
         },
         {
           "id": "point-price-then-share",
-          "heading": "Point, Price, Then Share",
-          "body": "Do not expect every choice to unfold like a long English menu conversation. Point clearly, settle price or portion when it matters, and shared plates can do the work."
+          "heading": "Point, Then Confirm",
+          "body": "You may need to point at a menu, seafood display, or photo instead of having a long English conversation. Confirm price or portion before anything large or sold by weight."
         },
         {
           "id": "rounds-at-the-table",
-          "heading": "Casual, Not Precious",
-          "body": "The room still feels casual. Begin with one or two plates, let the table settle, then add more."
+          "heading": "Keep It Low-Key",
+          "body": "Come for a casual local table rather than a scenic seafood splurge. Expect quick decisions, cold drinks, and food that arrives plate by plate."
         },
         {
-          "id": "the-table-carries-the-meal",
-          "heading": "The Table Carries The Meal",
-          "body": "The fish is only part of the memory. The neighborhood seafood feeling is stools close together, sauce bowls, drinks sweating on the table, and a meal that feels part of the evening."
+          "id": "why-save-it",
+          "heading": "Why It Sticks",
+          "body": "The memory is practical and close-up: stools together, sauce bowls on the table, shellfish in the middle, and several small dishes to compare."
         }
       ],
       "mentionedHereCandidates": [
@@ -8487,7 +8491,7 @@
           "catalogId": "viet-family-city-danang-place-hai-san",
           "sourceText": "seafood",
           "displaySubtitle": "The Da Nang seafood guide behind this local table.",
-          "reason": "Mentioned here because: The Da Nang seafood guide behind this local table.",
+          "reason": "The Da Nang seafood guide behind this local table.",
           "status": "render"
         }
       ],
@@ -8590,7 +8594,7 @@
         },
         {
           "id": "old-house-details-carry-it",
-          "heading": "Old-House Details Carry It",
+          "heading": "Old-House Details Make It Work",
           "body": "The room matters here. Patterned tile, plants, old objects, and warm corners give you something to notice while the ice melts and the street heat drops away."
         },
         {
@@ -8610,7 +8614,7 @@
           "catalogId": "viet-family-city-danang-place-long-coffee",
           "label": "Cà phê Long",
           "relationship": "Da Nang cafe mood contrast",
-          "displaySubtitle": "A local coffee counter when the stop should feel less like a styled cafe pause.",
+          "displaySubtitle": "A local coffee counter with a less styled cafe pause.",
           "reason": "Long Coffee gives Nam House a more useful local coffee contrast.",
           "status": "render"
         }
@@ -8723,7 +8727,7 @@
           "label": "Rạn Nam Ô",
           "relationship": "same-coastal-edge",
           "displaySubtitle": "The rocky shoreline stop nearby when Nam Ô should feel like coast, tide, and village edge.",
-          "reason": "Related because: The rocky shoreline stop nearby when Nam Ô should feel like coast, tide, and village edge.",
+          "reason": "The rocky shoreline stop nearby when Nam Ô should feel like coast, tide, and village edge.",
           "status": "render"
         }
       ],
@@ -8834,7 +8838,7 @@
           "label": "Hồ Hòa Trung",
           "relationship": "open-water escape",
           "displaySubtitle": "A soft lake-and-grass escape outside the core for space and low hills.",
-          "reason": "Related because: A soft lake-and-grass escape outside the core for space and low hills.",
+          "reason": "A soft lake-and-grass escape outside the core for space and low hills.",
           "status": "render"
         }
       ],
@@ -8996,11 +9000,11 @@
       "city": "Đà Nẵng",
       "category": "Restaurant",
       "pronunciation": "nen da nang",
-      "travelerMoment": "Nén is the slower, more ingredient-led Da Nang dinner: an ingredient-led restaurant where the meal needs time around it.",
-      "storySpine": "Nen gives Da Nang a sustainability-minded dining memory, connecting Vietnamese ingredients, farm detail, staff guidance, and a composed table pace.",
+      "travelerMoment": "Nén is the slower Da Nang dinner for Vietnamese ingredient stories: herbs, ceramics, staff explanation, and enough time for a meal built in small steps.",
+      "storySpine": "Nén gives Da Nang a sustainability-minded restaurant memory, connecting Vietnamese ingredients, farm detail, staff guidance, and a composed table pace.",
       "intro": {
-        "heading": "A Slower Ingredient-Led Dinner",
-        "body": "Nen Da Nang is the slower dinner for ingredient stories, herbs, ceramics, staff guidance, and an ingredient-led reason to make the meal its own evening."
+        "heading": "A Vietnamese Ingredient Dinner",
+        "body": "Nén Đà Nẵng is a slower Vietnamese dinner built around local ingredients, herbs, ceramics, and staff explanation rather than one big signature plate."
       },
       "usefulPhraseCards": [
         {
@@ -9030,9 +9034,9 @@
       ],
       "sections": [
         {
-          "id": "ingredient-story-first",
-          "heading": "Ingredient Story First",
-          "body": "The draw is not speed. Let local produce, herbs, small courses, and staff explanation shape the night before comparing it to street food."
+          "id": "ingredients-lead-the-night",
+          "heading": "Ingredients Lead The Night",
+          "body": "Let local produce, herbs, small courses, and staff explanation shape the meal before comparing it to street food. The point is attention, not speed."
         },
         {
           "id": "space-around-the-booking",
@@ -9042,12 +9046,12 @@
         {
           "id": "food-limits-before-courses",
           "heading": "Food Limits Before Courses",
-          "body": "If shellfish, pork, heat, alcohol, or a dietary restriction matters, say it before the table starts moving. It is easier to adjust early."
+          "body": "Shellfish, pork, spice, alcohol, and dietary restrictions should come up early. The table is easier when the kitchen knows the limits before courses start."
         },
         {
-          "id": "balance-with-everyday-da-nang",
+          "id": "balance-with-everyday-danang",
           "heading": "Balance With Everyday Da Nang",
-          "body": "Place it beside mì Quảng, seafood, or Cồn Market so the food plan has both registers: a careful dinner and the city’s everyday eating."
+          "body": "Put it beside mì Quảng, seafood, or Cồn Market on the trip plan so Da Nang food has both everyday eating and one careful dinner."
         }
       ],
       "mentionedHereCandidates": [
@@ -9066,7 +9070,7 @@
           "catalogId": "viet-family-city-danang-place-la-maison-1888",
           "label": "La Maison 1888",
           "relationship": "recognized dinner comparison",
-          "displaySubtitle": "A special-occasion meal when dinner should become the night.",
+          "displaySubtitle": "A formal resort dinner when the room and service should feel more dressed-up.",
           "reason": "La Maison 1888 is the clearer high-end dinner comparison for Nen.",
           "status": "render"
         }
@@ -9082,7 +9086,8 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
-          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2."
+          "Production food/save-worthiness pass on 2026-05-30: item-level copy, food desire, guide-safe claims where applicable, Mentioned Here, and related-card subtitles reviewed against V2.2.",
+          "2026-06-01 U.S.-traveler repair: replaced abstract draw/special-occasion language with concrete Vietnamese ingredient-dinner framing."
         ]
       },
       "score": {
@@ -9180,7 +9185,7 @@
           "label": "Khu An Thượng",
           "relationship": "beachside-night pocket",
           "displaySubtitle": "A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
-          "reason": "Related because: A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
+          "reason": "A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
           "status": "render"
         }
       ],
@@ -9291,7 +9296,7 @@
           "label": "Nhà hát Trưng Vương",
           "relationship": "performance-comparison",
           "displaySubtitle": "Another Da Nang performance venue when the night should be planned around a show.",
-          "reason": "Related because: Another Da Nang performance venue when the night should be planned around a show.",
+          "reason": "Another Da Nang performance venue when the night should be planned around a show.",
           "status": "render"
         }
       ],
@@ -9402,7 +9407,7 @@
           "label": "Đường Bạch Đằng",
           "relationship": "riverfront-walking spine",
           "displaySubtitle": "The Hàn River walking line for bridge views, cafes, lights, and central Da Nang bearings.",
-          "reason": "Related because: The Hàn River walking line for bridge views, cafes, lights, and central Da Nang bearings.",
+          "reason": "The Hàn River walking line for bridge views, cafes, lights, and central Da Nang bearings.",
           "status": "render"
         }
       ],
@@ -9493,12 +9498,12 @@
         {
           "id": "open-space-over-a-list",
           "heading": "Open Space Over A List",
-          "body": "The appeal is simple: walking, sea air, cloudy light, and a break between resort roads and the wider city. Let it stay a beach stop without turning it into a checklist."
+          "body": "Walking, sea air, cloudy light, and resort-road calm give this beach its own slower edge."
         },
         {
           "id": "marble-mountains-half-day",
           "heading": "Marble Mountains Half-Day",
-          "body": "The beach makes most sense when the southern side of Da Nang is already in the plan. Sand, stone, and an easy return ride keep the stop from feeling random."
+          "body": "The beach sits naturally with the southern side of Da Nang. Sand, stone, and an easy return ride keep the outing connected."
         },
         {
           "id": "weather-sets-the-mood",
@@ -9513,7 +9518,7 @@
           "label": "Biển Mân Thái",
           "relationship": "working-beach contrast",
           "displaySubtitle": "A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
-          "reason": "Related because: A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
+          "reason": "A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
           "status": "render"
         }
       ],
@@ -9604,7 +9609,7 @@
         {
           "id": "beside-the-mountains",
           "heading": "Beside The Mountains",
-          "body": "The stop lands well before or after Marble Mountains, when the stone in the cliffs and the stone in the workshops can sit together in your head."
+          "body": "Before or after Marble Mountains, the cliff stone and workshop stone start to feel connected."
         },
         {
           "id": "making-before-shopping",
@@ -9614,7 +9619,7 @@
         {
           "id": "look-first-then-price",
           "heading": "Look First, Then Price",
-          "body": "Take one slow pass before stepping into a shop. If someone is carving, start with price, material, photo permission, or whether a piece is easy to carry."
+          "body": "Take one slow pass before stepping into a shop. If someone is carving, start with price, material, photo permission, or whether a piece is easy to take with you."
         }
       ],
       "mentionedHereCandidates": [],
@@ -9624,7 +9629,7 @@
           "label": "Bảo tàng 3D Art in Paradise Đà Nẵng",
           "relationship": "playful-indoor break",
           "displaySubtitle": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
-          "reason": "Related because: A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
+          "reason": "A low-pressure indoor photo stop when heat, rain, or tired legs need a lighter hour.",
           "status": "render"
         }
       ],
@@ -9677,7 +9682,7 @@
       "travelerMoment": "The first order sets the table: a small portion, a taste of the heat, and a few minutes to understand the shells.",
       "storySpine": "Oc hut keeps the food memory concrete through shells, sauce, lemongrass, chili, and the motion of a first shared order.",
       "intro": {
-        "heading": "Small Shells, Slow First Order",
+        "heading": "Da Nang Stirred-Snail Snack",
         "body": "Ốc hút is Da Nang snack food built around small shells, lemongrass, chili, fingers, sauce, and a table that can stay a little messy."
       },
       "usefulPhraseCards": [
@@ -9847,7 +9852,7 @@
           "label": "Biển Mân Thái",
           "relationship": "working-beach contrast",
           "displaySubtitle": "A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
-          "reason": "Related because: A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
+          "reason": "A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
           "status": "render"
         }
       ],
@@ -9898,10 +9903,10 @@
       "category": "Landmark",
       "pronunciation": "chua phap lam",
       "travelerMoment": "The pagoda suits a respectful temple visit between louder city plans; expect a courtyard and worship space more than a large sightseeing complex.",
-      "storySpine": "The pagoda earns its place through courtyard etiquette, yellow walls, incense, and a slower register behind central traffic.",
+      "storySpine": "The pagoda earns its place through courtyard etiquette, yellow walls, incense, and a calmer religious stop behind central traffic.",
       "intro": {
         "heading": "A Courtyard Behind Traffic",
-        "body": "Phap Lam Pagoda gives central Da Nang a slower register: yellow walls, courtyard shade, incense, Buddhist imagery, and a compact cultural stop behind ordinary traffic."
+        "body": "Phap Lam Pagoda gives central Da Nang a calmer religious stop: yellow walls, courtyard shade, incense, Buddhist imagery, and a compact pause behind ordinary traffic."
       },
       "usefulPhraseCards": [
         {
@@ -9947,7 +9952,7 @@
         },
         {
           "id": "a-small-counterpoint",
-          "heading": "A Small contrast",
+          "heading": "Courtyard Shade, Busy Streets",
           "body": "Come between beach, bridge, market, or museum time when you want Da Nang to feel less waterfront-only. It stays compact and respectful."
         }
       ],
@@ -9958,7 +9963,7 @@
           "label": "Nhà thờ Con Gà Đà Nẵng",
           "relationship": "central-worship-contrast",
           "displaySubtitle": "A nearby central worship landmark with a different room, color, and street mood.",
-          "reason": "Related because: A nearby central worship landmark with a different room, color, and street mood.",
+          "reason": "A nearby central worship landmark with a different room, color, and street mood.",
           "status": "render"
         }
       ],
@@ -10069,7 +10074,7 @@
           "label": "Khu An Thượng",
           "relationship": "beachside-night pocket",
           "displaySubtitle": "A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
-          "reason": "Related because: A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
+          "reason": "A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
           "status": "render"
         }
       ],
@@ -10180,7 +10185,7 @@
           "label": "Bến xe Trung tâm Đà Nẵng",
           "relationship": "onward-bus handoff",
           "displaySubtitle": "The bus-station edge for route names, luggage, bays, and the road out of Da Nang.",
-          "reason": "Related because: The bus-station edge for route names, luggage, bays, and the road out of Da Nang.",
+          "reason": "The bus-station edge for route names, luggage, bays, and the road out of Da Nang.",
           "status": "render"
         }
       ],
@@ -10230,11 +10235,11 @@
       "city": "Đà Nẵng",
       "category": "Cafe",
       "pronunciation": "reply 1988 cafe",
-      "travelerMoment": "Reply 1988 is a retro downtown cafe pause: one sweet coffee, one dessert, warm light, and a short sit near Hải Châu rather than a destination meal.",
-      "storySpine": "The place is chosen for its K-drama-inspired retro room and dessert-coffee stop, not because it represents Da Nang food culture by itself.",
+      "travelerMoment": "Reply 1988 is a playful indoor cafe break in Hải Châu: retro K-drama styling, sweet coffee, dessert, photos, and a table that resets the group between bigger Da Nang plans.",
+      "storySpine": "Reply 1988 adds a modern comfort stop to the day: a light Korean-drama cafe mood between seafood, mì Quảng, beach time, and downtown errands.",
       "intro": {
-        "heading": "Retro Coffee, Light Stop",
-        "body": "Reply 1988 Cafe is a K-drama-inspired Da Nang cafe for a retro room, salted or egg coffee, tiramisu or cheesecake, and a light pause near Hải Châu."
+        "heading": "K-Drama Cafe Break",
+        "body": "Reply 1988 Cafe is a retro K-drama-inspired cafe in Hải Châu: warm wood, photo corners, salted or egg coffee, tiramisu, cheesecake, and a playful reset between bigger Da Nang plans."
       },
       "usefulPhraseCards": [
         {
@@ -10265,18 +10270,18 @@
       "sections": [
         {
           "id": "retro-is-the-hook",
-          "heading": "Retro Is The Hook",
-          "body": "Brown wood, warm light, and photo corners do the work. The drink can be simple enough that the room stays the reason."
+          "heading": "Make It A Treat",
+          "body": "This is dessert-and-coffee, not the main meal. Let one sweet drink and one cake carry the visit, then return to Da Nang’s local food stops."
         },
         {
           "id": "pick-one-sweet-thing",
-          "heading": "Pick One Sweet Thing",
-          "body": "Egg coffee, salt coffee, tiramisu, or cheesecake gives the stop more texture than a generic iced drink."
+          "heading": "Order For The Table",
+          "body": "Salt coffee, egg coffee, tiramisu, or cheesecake makes the break more specific than another iced drink. Share if the group only needs a quick reset."
         },
         {
           "id": "small-cafe-break",
-          "heading": "A Small Cafe Break",
-          "body": "Keep it as a gentle cafe stop around downtown plans. Da Nang’s deeper food memories still come from mì Quảng, seafood, and local coffee rooms."
+          "heading": "Photo Room, Then Onward",
+          "body": "The retro room gives you the photo, the cool-down, and a simple pause before the next Da Nang plan."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10486,8 +10491,8 @@
       "sections": [
         {
           "id": "the-road-before-the-viewpoints",
-          "heading": "The Road Before The Viewpoints",
-          "body": "The peninsula can become a list of viewpoints fast. Notice one coastal ride or one green stop, then leave room for weather, light, and the return."
+          "heading": "Coast Road Before Viewpoints",
+          "body": "The ride is part of the peninsula: beach blocks fade into curves, forest, sea wind, and wide turns above the water. Pick the view you want before the road starts feeling like errands."
         },
         {
           "id": "weather-changes-the-visit",
@@ -10496,13 +10501,13 @@
         },
         {
           "id": "one-green-goal",
-          "heading": "One Green Stop",
-          "body": "Choose one green stop or coastal ride, then leave room for weather, light, and the ride back. Too many viewpoints can make the peninsula feel rushed."
+          "heading": "Leave Room For The Return",
+          "body": "Weather, traffic, and light can change the ride back. One pagoda, beach edge, or viewpoint usually keeps the day clearer than chasing every overlook."
         },
         {
           "id": "green-beside-the-city",
           "heading": "Green Beside The City",
-          "body": "Sơn Trà pairs naturally with My Khe Beach, Linh Ung Pagoda, Lady Buddha, or a Hàn River evening. One pairing is better than a checklist."
+          "body": "Sơn Trà pairs naturally with My Khe Beach, Linh Ung Pagoda, Lady Buddha, or a Hàn River evening. One nearby pairing keeps the peninsula day from feeling rushed."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10512,7 +10517,7 @@
           "label": "Hồ Hòa Trung",
           "relationship": "open-water escape",
           "displaySubtitle": "A soft lake-and-grass escape outside the core for space and low hills.",
-          "reason": "Related because: A soft lake-and-grass escape outside the core for space and low hills.",
+          "reason": "A soft lake-and-grass escape outside the core for space and low hills.",
           "status": "render"
         }
       ],
@@ -10623,7 +10628,7 @@
           "label": "Khu An Thượng",
           "relationship": "beachside-night pocket",
           "displaySubtitle": "A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
-          "reason": "Related because: A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
+          "reason": "A Mỹ An-side pocket of cafes, small restaurants, hotel edges, and easy evening choices.",
           "status": "render"
         }
       ],
@@ -10718,8 +10723,8 @@
         },
         {
           "id": "con-does-the-food-crawl-better",
-          "heading": "Cồn Does The Food Crawl Better",
-          "body": "Cồn has the fuller daytime food crawl. Sơn Trà is lighter: a convenient night-market add-on when you are already near the river."
+          "heading": "Cồn Market Is The Food Crawl",
+          "body": "Cồn Market has the fuller daytime food crawl. Sơn Trà is lighter: a convenient night-market add-on when you are already near the river."
         }
       ],
       "mentionedHereCandidates": [],
@@ -10783,7 +10788,7 @@
       "travelerMoment": "The drive is about route, weather, distance, and respectful behavior; wildlife is possible, never promised.",
       "storySpine": "The wildlife theme comes alive when sightings, shade, curves, and road comfort are allowed to change the course of the ride.",
       "intro": {
-        "heading": "A Slow Peninsula Loop",
+        "heading": "Sơn Trà Wildlife Drive",
         "body": "The Sơn Trà wildlife drive changes Da Nang from beach city to forest road: curves, shade, sudden sea openings, and a cooler line above the city."
       },
       "usefulPhraseCards": [
@@ -10821,7 +10826,7 @@
         {
           "id": "wildlife-stays-unscheduled",
           "heading": "Wildlife Is Never Guaranteed",
-          "body": "The drive is still worthwhile without an animal sighting. Forest shade, sea views, and quiet road edges are part of the experience."
+          "body": "The drive is still worthwhile without an animal sighting. Forest shade, sea views, and shaded road edges are part of the experience."
         },
         {
           "id": "return-plan-before-wildlife",
@@ -10841,7 +10846,7 @@
           "label": "Bán đảo Sơn Trà",
           "relationship": "same-peninsula-route",
           "displaySubtitle": "The wider Sơn Trà page for peninsula roads, viewpoints, coast, and careful timing.",
-          "reason": "Related because: The wider Sơn Trà page for peninsula roads, viewpoints, coast, and careful timing.",
+          "reason": "The wider Sơn Trà page for peninsula roads, viewpoints, coast, and careful timing.",
           "status": "render"
         }
       ],
@@ -10952,7 +10957,7 @@
           "label": "Biển Mân Thái",
           "relationship": "working-beach contrast",
           "displaySubtitle": "A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
-          "reason": "Related because: A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
+          "reason": "A fishing-boat beach edge near Sơn Trà, better for morning light and a short coastal look.",
           "status": "render"
         }
       ],
@@ -11157,7 +11162,7 @@
         },
         {
           "id": "wind-changes-the-stop",
-          "heading": "Wind Changes The Stop",
+          "heading": "Wind On The Crossing",
           "body": "This is exposed coastal infrastructure rather than a sheltered promenade. Wind, rain, harsh sun, or traffic can turn a quick look into a less comfortable stop."
         },
         {
@@ -11178,7 +11183,7 @@
           "label": "Sông Hàn",
           "relationship": "river-orientation",
           "displaySubtitle": "The river page when the bridge should fit into Da Nang’s wider waterline and evening map.",
-          "reason": "Related because: The river page when the bridge should fit into Da Nang’s wider waterline and evening map.",
+          "reason": "The river page when the bridge should fit into Da Nang’s wider waterline and evening map.",
           "status": "render"
         }
       ],
@@ -11400,7 +11405,7 @@
           "label": "Đường Bạch Đằng",
           "relationship": "riverfront-walking spine",
           "displaySubtitle": "The Hàn River walking line for bridge views, cafes, lights, and central Da Nang bearings.",
-          "reason": "Related because: The Hàn River walking line for bridge views, cafes, lights, and central Da Nang bearings.",
+          "reason": "The Hàn River walking line for bridge views, cafes, lights, and central Da Nang bearings.",
           "status": "render"
         }
       ],
@@ -11486,7 +11491,7 @@
         {
           "id": "angle-before-crossing",
           "heading": "Angle Before Crossing",
-          "body": "The bridge shows clearly from a river angle. Pick the silhouette, the traffic movement, or a quick crossing, then keep the stop simple."
+          "body": "The bridge shows clearly from a river angle. The silhouette, traffic movement, or a quick crossing can be the whole view."
         },
         {
           "id": "late-light-on-the-lines",
@@ -11511,7 +11516,7 @@
           "label": "Sông Hàn",
           "relationship": "river-orientation",
           "displaySubtitle": "The river page when bridge shapes, crossings, and evening light need one wider context.",
-          "reason": "Related because: The river page when bridge shapes, crossings, and evening light need one wider context.",
+          "reason": "The river page when bridge shapes, crossings, and evening light need one wider context.",
           "status": "render"
         }
       ],
@@ -11601,8 +11606,8 @@
         },
         {
           "id": "the-front-carries-the-mood",
-          "heading": "The Front Carries The Mood",
-          "body": "Even a short look can make the city feel less beach-only. Stage doors, evening traffic, posters, and lobby movement give Da Nang another cultural register."
+          "heading": "The Front Sets The Mood",
+          "body": "Even a short look can make the city feel less beach-only. Stage doors, evening traffic, posters, and lobby movement give Da Nang another cultural side."
         },
         {
           "id": "real-program-first",
@@ -11622,7 +11627,7 @@
           "label": "Nhà hát Tuồng Nguyễn Hiển Dĩnh",
           "relationship": "performance-comparison",
           "displaySubtitle": "A smaller traditional-theatre option when performance, tickets, and timing matter more than sightseeing.",
-          "reason": "Related because: A smaller traditional-theatre option when performance, tickets, and timing matter more than sightseeing.",
+          "reason": "A smaller traditional-theatre option when performance, tickets, and timing matter more than sightseeing.",
           "status": "render"
         }
       ],
@@ -11636,7 +11641,8 @@
         "antiCynicismTest": "pass",
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
-          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate."
+          "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
+          "2026-06-01 U.S.-traveler repair: removed carry/register wording from theatre copy."
         ]
       },
       "score": {
@@ -11675,8 +11681,8 @@
       "travelerMoment": "The mall covers rest, simple shopping, regrouping, or rain cover; it cannot replace Da Nang's working markets.",
       "storySpine": "The mall gives Da Nang an indoor break while shops, services, hours, prices, and amenities stay current on arrival.",
       "intro": {
-        "heading": "Indoor Break Near The River",
-        "body": "Vincom Plaza Da Nang is the polished indoor break when heat, rain, errands, or group logistics need cool air, storefronts, food counters, and an easy meetup point."
+        "heading": "River-Side Shopping Mall",
+        "body": "Vincom Plaza Da Nang is a river-side shopping mall for heat, rain, errands, cool air, food counters, storefronts, and an easy meetup point."
       },
       "usefulPhraseCards": [
         {
@@ -11845,7 +11851,7 @@
           "label": "Đường Bạch Đằng",
           "relationship": "riverfront-walking spine",
           "displaySubtitle": "The Hàn River walking line for bridge views, cafes, lights, and central Da Nang bearings.",
-          "reason": "Related because: The Hàn River walking line for bridge views, cafes, lights, and central Da Nang bearings.",
+          "reason": "The Hàn River walking line for bridge views, cafes, lights, and central Da Nang bearings.",
           "status": "render"
         }
       ],
@@ -11895,11 +11901,11 @@
       "city": "Đà Nẵng",
       "category": "Cafe",
       "pronunciation": "wonderlust",
-      "travelerMoment": "Wonderlust is a bright cafe pause for an iced drink, a simple table, and a short break before the next Da Nang meal or walk.",
-      "storySpine": "It belongs in the cafe set as a light modern room: clean lines, cold drinks, and a practical pause between heat, errands, and dinner.",
+      "travelerMoment": "Wonderlust is a bright modern cafe reset for Da Nang days that need cold coffee, a clean table, and a place to regroup before market walking, beach time, or dinner.",
+      "storySpine": "Wonderlust earns its place as a support listing: a reliable modern room for cooling down and deciding the next move between bigger Da Nang plans.",
       "intro": {
-        "heading": "A Bright Iced-Coffee Pause",
-        "body": "Wonderlust is a bright Da Nang cafe for an iced drink, a simple table, and a short pause between heat, walking, markets, beach time, or dinner."
+        "heading": "Bright Cafe Between Bigger Stops",
+        "body": "Wonderlust is a bright Da Nang cafe for cold coffee, a clean table, and a practical reset before market walking, beach time, dinner, or the next ride."
       },
       "usefulPhraseCards": [
         {
@@ -11931,17 +11937,17 @@
         {
           "id": "decide-sweetness-early",
           "heading": "Decide Sweetness Early",
-          "body": "Iced milk coffee brings the classic sweet pull; black iced coffee keeps it sharper. If sugar or ice matters, say it before the drink is made."
+          "body": "Iced milk coffee brings the sweet pull; black iced coffee keeps the break sharper. If sugar or ice matters, ask before the drink is made."
         },
         {
           "id": "keep-the-stop-light",
-          "heading": "Keep The Stop Light",
-          "body": "Keep the visit light: order cold, sit long enough to cool down, then let the day keep moving."
+          "heading": "Regroup Here",
+          "body": "A good visit can be ten calm minutes: check the map, cool down, choose the next meal, then move again."
         },
         {
           "id": "room-over-ritual",
-          "heading": "Room Over Ritual",
-          "body": "The draw is the bright room and easy table more than a complicated coffee ritual."
+          "heading": "Know What It Is",
+          "body": "Wonderlust is more reset than ritual. For a coffee-first stop, compare it with 43 Factory; for an easy room, this is the simpler choice."
         }
       ],
       "mentionedHereCandidates": [],
@@ -11951,7 +11957,7 @@
           "label": "43 Factory Coffee Roaster",
           "relationship": "coffee-reference comparison",
           "displaySubtitle": "A coffee-first stop where the drink matters more than the room.",
-          "reason": "Related because 43 Factory is a coffee-first stop where the drink matters more than the room.",
+          "reason": "43 Factory is a coffee-first stop where the drink matters more than the room.",
           "status": "render"
         }
       ],
@@ -11966,7 +11972,8 @@
         "notes": [
           "City voice gate passed on 2026-05-27; visible copy reviewed for scene, why-here, first move, phrase-card fit, duplicate body, and internal-language leaks.",
           "Renderable related-place candidate verified against the approved v2.2 source list during the hard-reset final gate.",
-          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching."
+          "Da Nang/Hoi An food graph pass on 2026-05-30: related and Mentioned Here cards reviewed for dish-to-place, market-to-route, cafe-to-ritual, and support/deemphasize trip-building instead of generic same-city matching.",
+          "2026-06-01 U.S.-traveler repair: replaced abstract draw phrasing with concrete cafe value."
         ]
       },
       "score": {
@@ -12005,7 +12012,7 @@
       "travelerMoment": "Yên Retreat is an outdoor edge beyond dense Da Nang: lawn, river, mountain line, shade, and a ride back that needs daylight and weather margin.",
       "storySpine": "The nature mood comes from water, lawn, mountain edges, and the feeling of leaving the beach-and-bridge loop behind.",
       "intro": {
-        "heading": "An Outdoor Edge Past The Traffic",
+        "heading": "Da Nang Outdoor Retreat",
         "body": "Yen Retreat is Da Nang's outdoor edge: lawn, river, simple tents, mountains, and breathing room beyond the dense beach-and-bridge loop."
       },
       "usefulPhraseCards": [
@@ -12063,7 +12070,7 @@
           "label": "Hồ Hòa Trung",
           "relationship": "open-water escape",
           "displaySubtitle": "A soft lake-and-grass escape outside the core for space and low hills.",
-          "reason": "Related because: A soft lake-and-grass escape outside the core for space and low hills.",
+          "reason": "A soft lake-and-grass escape outside the core for space and low hills.",
           "status": "render"
         }
       ],

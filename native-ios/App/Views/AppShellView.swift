@@ -215,6 +215,7 @@ struct AppShellView: View {
     @State private var savedTripSectionChromeStates: [SavedTripSectionChromeState] = []
     @State private var savedTripSectionJumpRequestID = 0
     @State private var savedTripSectionJumpRequest: SavedTripSectionJumpRequest?
+    @State private var isTopAdminMorePresented = false
     @StateObject private var intentStore = LocalUserIntentStore()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.scenePhase) private var scenePhase
@@ -641,21 +642,11 @@ struct AppShellView: View {
                 canGoForward: navigation.canGoForward,
                 backSwipeCaptureEdge: { backSwipeCaptureEdge(width: pageWidth) },
                 forwardSwipeCaptureEdge: { forwardSwipeCaptureEdge(width: pageWidth) },
-                topAdminRow: { showsPinnedAudioSpeedControl in
-                    topAdminRow(showsPinnedAudioSpeedControl: showsPinnedAudioSpeedControl)
-                },
-                menuSectionRail: {
-                    if menuSectionChromeCoordinator.currentState != nil {
-                        VietnameseMenuTopSectionRail(
-                            coordinator: menuSectionChromeCoordinator,
-                            onSelect: jumpToMenuSection
-                        )
-                    } else if let currentSavedTripSectionChromeState {
-                        SavedTripTopSectionRail(
-                            state: currentSavedTripSectionChromeState,
-                            onSelect: jumpToSavedTripSection
-                        )
-                    }
+                topAdminRow: { showsPinnedAudioSpeedControl, showsMenuSectionChrome in
+                    topAdminRow(
+                        showsPinnedAudioSpeedControl: showsPinnedAudioSpeedControl,
+                        showsMenuSectionChrome: showsMenuSectionChrome
+                    )
                 }
             )
             .onPreferenceChange(VietnameseMenuSectionChromePreferenceKey.self) { states in
@@ -1366,40 +1357,56 @@ struct AppShellView: View {
             || currentSavedTripSectionChromeState?.isPinned == true
     }
 
-    private func topAdminRow(showsPinnedAudioSpeedControl: Bool) -> some View {
+    private func topAdminRow(
+        showsPinnedAudioSpeedControl: Bool,
+        showsMenuSectionChrome: Bool
+    ) -> some View {
         Group {
             if #available(iOS 26.0, *) {
                 GlassEffectContainer(spacing: 14) {
-                    topAdminRowContent(showsPinnedAudioSpeedControl: showsPinnedAudioSpeedControl)
+                    topAdminRowContent(
+                        showsPinnedAudioSpeedControl: showsPinnedAudioSpeedControl,
+                        showsMenuSectionChrome: showsMenuSectionChrome
+                    )
                 }
             } else {
-                topAdminRowContent(showsPinnedAudioSpeedControl: showsPinnedAudioSpeedControl)
+                topAdminRowContent(
+                    showsPinnedAudioSpeedControl: showsPinnedAudioSpeedControl,
+                    showsMenuSectionChrome: showsMenuSectionChrome
+                )
             }
         }
         .frame(maxWidth: .infinity)
         .frame(height: AppChromeLayout.topAdminControlSize)
     }
 
-    private func topAdminRowContent(showsPinnedAudioSpeedControl: Bool) -> some View {
-        ZStack {
-            HStack {
-                if showsStaticBackButton {
-                    staticBackButton
-                } else {
-                    topAdminPlaceholder
-                }
+    private func topAdminRowContent(
+        showsPinnedAudioSpeedControl: Bool,
+        showsMenuSectionChrome: Bool
+    ) -> some View {
+        HStack(spacing: AppChromeLayout.topAdminRowSpacing) {
+            if showsStaticBackButton {
+                staticBackButton
+            }
 
+            if showsMenuSectionChrome {
+                topAdminSectionPicker
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .layoutPriority(1)
+            } else {
                 Spacer(minLength: 0)
-
-                if navigation.canGoForward {
-                    forwardButton
-                } else {
-                    topAdminPlaceholder
-                }
             }
 
             if showsPinnedAudioSpeedControl {
-                PinnedAudioSpeedControl()
+                TopAdminAudioSpeedChip {
+                    isTopAdminMorePresented = true
+                }
+            }
+
+            topAdminMoreButton
+
+            if navigation.canGoForward {
+                forwardButton
             }
         }
     }
@@ -1436,11 +1443,127 @@ struct AppShellView: View {
         .accessibilityIdentifier("TopAdmin.ForwardButton")
     }
 
+    @ViewBuilder
+    private var topAdminSectionPicker: some View {
+        if menuSectionChromeCoordinator.currentState != nil {
+            VietnameseMenuTopSectionRail(
+                coordinator: menuSectionChromeCoordinator,
+                onSelect: jumpToMenuSection
+            )
+        } else if let currentSavedTripSectionChromeState {
+            SavedTripTopSectionRail(
+                state: currentSavedTripSectionChromeState,
+                onSelect: jumpToSavedTripSection
+            )
+        }
+    }
+
+    private var topAdminMoreButton: some View {
+        Button {
+            isTopAdminMorePresented.toggle()
+        } label: {
+            Image(systemName: "ellipsis")
+                .font(.system(size: 18, weight: .bold))
+                .frame(width: AppChromeLayout.topAdminControlSize, height: AppChromeLayout.topAdminControlSize)
+                .foregroundStyle(.primary)
+                .contentShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .nativeGlass(in: Circle(), interactive: true)
+        .accessibilityLabel("More")
+        .accessibilityIdentifier("TopAdmin.MoreButton")
+        .popover(
+            isPresented: $isTopAdminMorePresented,
+            attachmentAnchor: .rect(.bounds),
+            arrowEdge: .top
+        ) {
+            TopAdminMorePanel()
+                .presentationCompactAdaptation(.popover)
+        }
+    }
+
     private var topAdminPlaceholder: some View {
         Color.clear
             .frame(width: AppChromeLayout.topAdminControlSize, height: AppChromeLayout.topAdminControlSize)
             .allowsHitTesting(false)
             .accessibilityHidden(true)
+    }
+
+    private struct TopAdminMorePanel: View {
+        @Environment(\.openURL) private var openURL
+
+        private var supportItems: [TopAdminMoreMenuItem] {
+            Array(TopAdminMoreMenuItem.goLiveItems.prefix(2))
+        }
+
+        private var legalItems: [TopAdminMoreMenuItem] {
+            Array(TopAdminMoreMenuItem.goLiveItems.suffix(2))
+        }
+
+        var body: some View {
+            VStack(alignment: .leading, spacing: 18) {
+                VStack(alignment: .leading, spacing: 10) {
+                    topAdminMoreSectionHeader("AUDIO")
+
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("Audio speed")
+                            .font(.subheadline.weight(.medium))
+                            .foregroundStyle(.primary)
+
+                        AudioSpeedSegmentedControl()
+                            .accessibilityIdentifier("TopAdmin.More.SpeedControl")
+                    }
+                }
+
+                Divider()
+
+                topAdminMoreRows(title: "SUPPORT", items: supportItems)
+
+                Divider()
+
+                topAdminMoreRows(title: "LEGAL", items: legalItems)
+            }
+            .padding(20)
+            .frame(width: 302, alignment: .leading)
+            .accessibilityElement(children: .contain)
+            .accessibilityIdentifier("TopAdmin.MorePanel")
+        }
+
+        private func topAdminMoreSectionHeader(_ title: String) -> some View {
+            Text(title)
+                .font(.caption.weight(.black))
+                .foregroundStyle(.secondary)
+                .textCase(.uppercase)
+        }
+
+        private func topAdminMoreRows(title: String, items: [TopAdminMoreMenuItem]) -> some View {
+            VStack(alignment: .leading, spacing: 6) {
+                topAdminMoreSectionHeader(title)
+
+                ForEach(items) { item in
+                    Button {
+                        openURL(item.url)
+                    } label: {
+                        HStack(spacing: 12) {
+                            Image(systemName: item.systemImage)
+                                .font(.system(size: 17, weight: .medium))
+                                .frame(width: 22)
+                                .foregroundStyle(.primary)
+
+                            Text(item.title)
+                                .font(.subheadline)
+                                .foregroundStyle(.primary)
+
+                            Spacer(minLength: 0)
+                        }
+                        .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityIdentifier("TopAdmin.More.\(item.title)")
+                }
+            }
+        }
     }
 
     private struct VietnameseMenuTopSectionRail: View {
@@ -1460,54 +1583,48 @@ struct AppShellView: View {
         }
 
         var body: some View {
-            HStack {
-                Spacer(minLength: 0)
-
-                Menu {
-                    ForEach(state?.sections ?? []) { section in
-                        Button {
-                            onSelect(section.id)
-                        } label: {
-                            Label(section.title, systemImage: section.symbolName)
-                        }
-                        .accessibilityIdentifier("VietnameseMenu.TopSectionMenu.\(section.id)")
+            Menu {
+                ForEach(state?.sections ?? []) { section in
+                    Button {
+                        onSelect(section.id)
+                    } label: {
+                        Label(section.title, systemImage: section.symbolName)
                     }
-                } label: {
-                    HStack(spacing: 7) {
-                        if let currentSection {
-                            Image(systemName: currentSection.symbolName)
-                                .font(.caption.weight(.black))
-                                .foregroundStyle(currentSection.tintName.color)
-
-                            Text(currentSection.title)
-                                .font(.subheadline.weight(.black))
-                                .foregroundStyle(.primary)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.78)
-                        }
-
-                        Image(systemName: "chevron.down")
-                            .font(.caption2.weight(.black))
-                            .foregroundStyle(.secondary)
-                    }
-                    .padding(.horizontal, 14)
-                    .frame(height: AppChromeLayout.menuSectionChromeHeight)
-                    .background(.white.opacity(0.42), in: Capsule(style: .continuous))
-                    .overlay {
-                        Capsule(style: .continuous)
-                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
-                            .allowsHitTesting(false)
-                    }
-                    .contentShape(Capsule(style: .continuous))
+                    .accessibilityIdentifier("VietnameseMenu.TopSectionMenu.\(section.id)")
                 }
-                .buttonStyle(.plain)
-                .nativeGlass(in: Capsule(style: .continuous), tint: .white.opacity(0.18), interactive: true)
-                .accessibilityLabel("Menu section")
-                .accessibilityValue(currentSection?.title ?? "")
-                .accessibilityIdentifier("VietnameseMenu.TopSectionPill")
+            } label: {
+                HStack(spacing: 7) {
+                    if let currentSection {
+                        Image(systemName: currentSection.symbolName)
+                            .font(.caption.weight(.black))
+                            .foregroundStyle(currentSection.tintName.color)
 
-                Spacer(minLength: 0)
+                        Text(currentSection.title)
+                            .font(.subheadline.weight(.black))
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.72)
+                    }
+
+                    Image(systemName: "chevron.down")
+                        .font(.caption2.weight(.black))
+                        .foregroundStyle(.secondary)
+                }
+                .padding(.horizontal, 12)
+                .frame(height: AppChromeLayout.menuSectionChromeHeight)
+                .background(.white.opacity(0.42), in: Capsule(style: .continuous))
+                .overlay {
+                    Capsule(style: .continuous)
+                        .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
+                        .allowsHitTesting(false)
+                }
+                .contentShape(Capsule(style: .continuous))
             }
+            .buttonStyle(.plain)
+            .nativeGlass(in: Capsule(style: .continuous), tint: .white.opacity(0.18), interactive: true)
+            .accessibilityLabel("Menu section")
+            .accessibilityValue(currentSection?.title ?? "")
+            .accessibilityIdentifier("VietnameseMenu.TopSectionPill")
             .frame(height: AppChromeLayout.menuSectionChromeHeight)
         }
     }
@@ -1521,54 +1638,48 @@ struct AppShellView: View {
         }
 
         var body: some View {
-            HStack {
-                Spacer(minLength: 0)
-
-                Menu {
-                    ForEach(state.sections) { section in
-                        Button {
-                            onSelect(section.id)
-                        } label: {
-                            Label(section.title, systemImage: section.symbolName)
-                        }
-                        .accessibilityIdentifier("SavedTrip.TopSectionMenu.\(section.id)")
+            Menu {
+                ForEach(state.sections) { section in
+                    Button {
+                        onSelect(section.id)
+                    } label: {
+                        Label(section.title, systemImage: section.symbolName)
                     }
-                } label: {
-                    HStack(spacing: 7) {
-                        if let currentSection {
-                            Image(systemName: currentSection.symbolName)
-                                .font(.caption.weight(.black))
-                                .foregroundStyle(currentSection.tintName.color)
-
-                            Text(currentSection.title)
-                                .font(.subheadline.weight(.black))
-                                .foregroundStyle(.primary)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.78)
-                        }
-
-                        Image(systemName: "chevron.down")
-                            .font(.caption2.weight(.black))
-                            .foregroundStyle(.secondary)
-                    }
-                    .padding(.horizontal, 14)
-                    .frame(height: AppChromeLayout.menuSectionChromeHeight)
-                    .background(.white.opacity(0.42), in: Capsule(style: .continuous))
-                    .overlay {
-                        Capsule(style: .continuous)
-                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
-                            .allowsHitTesting(false)
-                    }
-                    .contentShape(Capsule(style: .continuous))
+                    .accessibilityIdentifier("SavedTrip.TopSectionMenu.\(section.id)")
                 }
-                .buttonStyle(.plain)
-                .nativeGlass(in: Capsule(style: .continuous), tint: .white.opacity(0.18), interactive: true)
-                .accessibilityLabel("Saved section")
-                .accessibilityValue(currentSection?.title ?? "")
-                .accessibilityIdentifier("SavedTrip.TopSectionPill")
+            } label: {
+                HStack(spacing: 7) {
+                    if let currentSection {
+                        Image(systemName: currentSection.symbolName)
+                            .font(.caption.weight(.black))
+                            .foregroundStyle(currentSection.tintName.color)
 
-                Spacer(minLength: 0)
+                        Text(currentSection.title)
+                            .font(.subheadline.weight(.black))
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.72)
+                    }
+
+                    Image(systemName: "chevron.down")
+                        .font(.caption2.weight(.black))
+                        .foregroundStyle(.secondary)
+                }
+                .padding(.horizontal, 12)
+                .frame(height: AppChromeLayout.menuSectionChromeHeight)
+                .background(.white.opacity(0.42), in: Capsule(style: .continuous))
+                .overlay {
+                    Capsule(style: .continuous)
+                        .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
+                        .allowsHitTesting(false)
+                }
+                .contentShape(Capsule(style: .continuous))
             }
+            .buttonStyle(.plain)
+            .nativeGlass(in: Capsule(style: .continuous), tint: .white.opacity(0.18), interactive: true)
+            .accessibilityLabel("Saved section")
+            .accessibilityValue(currentSection?.title ?? "")
+            .accessibilityIdentifier("SavedTrip.TopSectionPill")
             .frame(height: AppChromeLayout.menuSectionChromeHeight)
         }
     }
@@ -3643,7 +3754,7 @@ private struct NavigationPageMotion: ViewModifier {
 }
 
 private extension View {
-    func appShellChromeOverlays<BackSwipeCaptureEdge: View, ForwardSwipeCaptureEdge: View, TopAdminRow: View, MenuSectionRail: View>(
+    func appShellChromeOverlays<BackSwipeCaptureEdge: View, ForwardSwipeCaptureEdge: View, TopAdminRow: View>(
         currentRoute: AppRoute,
         isSearchPresented: Bool,
         isPracticeThreadPresented: Bool,
@@ -3656,8 +3767,10 @@ private extension View {
         canGoForward: Bool,
         @ViewBuilder backSwipeCaptureEdge: @escaping () -> BackSwipeCaptureEdge,
         @ViewBuilder forwardSwipeCaptureEdge: @escaping () -> ForwardSwipeCaptureEdge,
-        @ViewBuilder topAdminRow: @escaping (_ showsPinnedAudioSpeedControl: Bool) -> TopAdminRow,
-        @ViewBuilder menuSectionRail: @escaping () -> MenuSectionRail
+        @ViewBuilder topAdminRow: @escaping (
+            _ showsPinnedAudioSpeedControl: Bool,
+            _ showsMenuSectionChrome: Bool
+        ) -> TopAdminRow
     ) -> some View {
         modifier(
             AppShellChromeOverlayModifier(
@@ -3673,8 +3786,7 @@ private extension View {
                 canGoForward: canGoForward,
                 backSwipeCaptureEdge: backSwipeCaptureEdge,
                 forwardSwipeCaptureEdge: forwardSwipeCaptureEdge,
-                topAdminRow: topAdminRow,
-                menuSectionRail: menuSectionRail
+                topAdminRow: topAdminRow
             )
         )
     }
@@ -3922,7 +4034,7 @@ private extension UIViewController {
 }
 #endif
 
-private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, ForwardSwipeCaptureEdge: View, TopAdminRow: View, MenuSectionRail: View>: ViewModifier {
+private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, ForwardSwipeCaptureEdge: View, TopAdminRow: View>: ViewModifier {
     @State private var pinnedAudioSpeedChromeState = PinnedAudioSpeedChromeState.hidden
 
     let currentRoute: AppRoute
@@ -3937,8 +4049,7 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
     let canGoForward: Bool
     let backSwipeCaptureEdge: () -> BackSwipeCaptureEdge
     let forwardSwipeCaptureEdge: () -> ForwardSwipeCaptureEdge
-    let topAdminRow: (_ showsPinnedAudioSpeedControl: Bool) -> TopAdminRow
-    let menuSectionRail: () -> MenuSectionRail
+    let topAdminRow: (_ showsPinnedAudioSpeedControl: Bool, _ showsMenuSectionChrome: Bool) -> TopAdminRow
 
     func body(content: Content) -> some View {
         let showsPinnedAudioSpeedControl = PinnedAudioSpeedChromePolicy.shouldShowPinnedControl(
@@ -3951,9 +4062,9 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
         let showsTopAdminRow = !hidesPhotoBackdropChrome
             && !isPracticeThreadPresented
             && !isPracticeMatchPresented
-            && (showsStaticBackButton || showsPinnedAudioSpeedControl || canGoForward)
+            && (showsStaticBackButton || showsPinnedAudioSpeedControl || showsMenuSectionChrome || canGoForward)
         let showsTopGlassChrome = !hidesPhotoBackdropChrome
-            && (showsTopAdminRow || showsMenuSectionChrome)
+            && showsTopAdminRow
 
         content
             .onPreferenceChange(PhraseAudioPlayerAnchorPreferenceKey.self) { anchors in
@@ -3995,16 +4106,7 @@ private struct AppShellChromeOverlayModifier<BackSwipeCaptureEdge: View, Forward
             }
             .overlay(alignment: .top) {
                 if !isPracticeThreadPresented, showsTopGlassChrome {
-                    VStack(spacing: AppChromeLayout.menuSectionChromeRowSpacing) {
-                        if showsTopAdminRow {
-                            topAdminRow(showsPinnedAudioSpeedControl)
-                        }
-
-                        if showsMenuSectionChrome {
-                            menuSectionRail()
-                                .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
-                        }
-                    }
+                    topAdminRow(showsPinnedAudioSpeedControl, showsMenuSectionChrome)
                         .padding(.horizontal, AppChromeLayout.topAdminHorizontalPadding)
                         .padding(.top, AppChromeLayout.topAdminTopPadding)
                         .zIndex(AppChromeLayout.topAdminControlLayerZIndex)

@@ -20,41 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể",
+      "english": "can I",
+      "keepTogetherReason": "can-I phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "thanh toán hóa đơn",
+      "english": "pay the bill",
+      "keepTogetherReason": "pay-bill phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "thanh toán",
-      "english": "pay",
-      "keepTogetherReason": "compound verb"
+      "vietnamese": "bằng thẻ",
+      "english": "by card",
+      "keepTogetherReason": "card-payment phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "hóa đơn",
-      "english": "receipt / invoice",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "bằng",
-      "english": "by / with"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "thẻ",
-      "english": "card"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

@@ -20,34 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đây",
-      "english": "here / this"
+      "vietnamese": "Đây có phải là",
+      "english": "is this",
+      "keepTogetherReason": "is-this question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "phải",
-      "english": "must / right"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tuyến taxi",
-      "english": "taxi line",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "vietnamese": "chính thức?",
-      "english": "official",
-      "keepTogetherReason": "compound official adjective"
+      "vietnamese": "tuyến taxi chính thức?",
+      "english": "the official taxi line?",
+      "keepTogetherReason": "official-taxi-line phrase"
     },
     {
       "id": "full",

@@ -7,7 +7,7 @@
   "title": "Có bao nhiêu người đang ở phía trước tôi?",
   "englishTitle": "How many people are ahead of me?",
   "pronunciation": "Co bao nhieu nguoi dang o phia truoc toi",
-  "summary": "How many people are ahead of me?",
+  "summary": "For checking your place in a queue before deciding whether to wait, leave, or come back.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có bao nhiêu người đang ở phía trước tôi? is a practical time, date, or booking phrase for keeping one travel detail clear. Use it when How many people are ahead of me is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask while you still have the ticket number, queue screen, line, or waiting area in view."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Có bao nhiêu người đang ở phía trước tôi?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point to yourself and the line if needed. The useful answer is a number or a rough wait time.",
       "phrases": [
         {
           "id": "v900-time-date-book-how-many-people-are-ahead-of-me",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có bao nhiêu asks how many; người means people; đang ở phía trước tôi means are ahead of me.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Có bao nhiêu",
-          "english": "asks how much",
-          "audioKey": null
+          "english": "how many",
+          "keepTogetherReason": "how-many phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "người đang ở",
-          "english": "people ahead",
-          "audioKey": null
+          "vietnamese": "người",
+          "english": "people",
+          "keepTogetherReason": "people noun"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "phía trước tôi",
-          "english": "fee",
-          "audioKey": null
+          "vietnamese": "đang ở phía trước tôi?",
+          "english": "are ahead of me?",
+          "keepTogetherReason": "ahead-of-me phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Có bao nhiêu người đang ở phía trước tôi?",
-          "english": "How many people are ahead of me",
-          "audioKey": null
+          "english": "How many people are ahead of me?",
+          "audioKey": "v900-time-date-book-how-many-people-are-ahead-of-me"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How many people are ahead of me? to another time, date, or booking need.",
+      "body": "What-time, today, and tomorrow-morning cards help if waiting today is not worth it.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when how many people are ahead of me is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at clinics, restaurants, ticket counters, salons, ferries, and tour desks where the line is unclear."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "If the number is high, ask about the wait time before losing your place or leaving the area."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Có bao nhiêu người đang ở phía trước tôi?.",
+      "body": "Booking, opening-time, move-it-later, boarding-time, and wait-list cards cover scheduling after the queue answer.",
       "phrases": [
         {
           "id": "time-4",

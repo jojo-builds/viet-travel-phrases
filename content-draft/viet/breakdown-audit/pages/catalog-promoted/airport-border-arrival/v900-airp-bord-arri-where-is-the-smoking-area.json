@@ -22,13 +22,13 @@
       "id": "chunk-1",
       "vietnamese": "Khu vực hút thuốc",
       "english": "smoking area",
-      "keepTogetherReason": "compound noun"
+      "keepTogetherReason": "smoking-area phrase"
     },
     {
       "id": "chunk-2",
       "vietnamese": "ở đâu?",
-      "english": "where",
-      "keepTogetherReason": "fixed place question"
+      "english": "where?",
+      "keepTogetherReason": "where question"
     },
     {
       "id": "full",

@@ -7,7 +7,7 @@
   "title": "Xin lỗi, tôi không nói tiếng Việt",
   "englishTitle": "Sorry, I don’t speak Vietnamese",
   "pronunciation": "sin loy toy khong noy tyeng vyet",
-  "summary": "A focused guide to when Xin lỗi, tôi không nói tiếng Việt sounds more natural than Anh/chị nói tiếng Anh không?.",
+  "summary": "Explain your Vietnamese limit before asking for another way to communicate.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -18,57 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Xin lỗi, tôi không nói tiếng Việt is useful when \"Sorry, I don’t speak Vietnamese\" needs a slightly different tone or setting. Use this after the first phrase when you need to explain the language problem clearly.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "breakdown",
-      "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
-      "breakdown": [
-        {
-          "id": "repair-english-help-self-limit-piece-1",
-          "vietnamese": "Xin lỗi,",
-          "english": "excuse me / sorry",
-          "audioKey": "breakdown-authored-xin-loi-f08350a24d"
-        },
-        {
-          "id": "repair-english-help-self-limit-piece-2",
-          "vietnamese": "tôi không",
-          "english": "I do not",
-          "audioKey": "breakdown-authored-toi-khong-d857f6f7a6"
-        },
-        {
-          "id": "repair-english-help-self-limit-piece-3",
-          "vietnamese": "nói",
-          "english": "speak / say",
-          "audioKey": "breakdown-problems-3-first"
-        },
-        {
-          "id": "repair-english-help-self-limit-piece-4",
-          "vietnamese": "tiếng",
-          "english": "language / sound",
-          "audioKey": "breakdown-authored-tieng-cdab7036ce"
-        },
-        {
-          "id": "repair-english-help-self-limit-piece-5",
-          "vietnamese": "Việt",
-          "english": "write",
-          "audioKey": "breakdown-smalltalk-4-piece-3"
-        },
-        {
-          "id": "repair-english-help-self-limit-full",
-          "vietnamese": "Xin lỗi, tôi không nói tiếng Việt",
-          "english": "Sorry, I don’t speak Vietnamese",
-          "audioKey": "repair-english-help-self-limit"
-        }
-      ],
-      "presentation": "breakdown-strip"
+      "body": "Lead with Xin lỗi, tôi không nói tiếng Việt; add the detail after the first reply.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Xin lỗi, tôi không nói tiếng Việt when \"Sorry, I don’t speak Vietnamese\" is the exact tone or situation you want.",
+      "body": "Say this before switching to English, pointing, typing, or a translation app.",
       "phrases": [
         {
           "id": "repair-english-help-self-limit",
@@ -81,18 +39,58 @@
           "audioKey": "repair-english-help-self-limit"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "Use this after the first phrase when you need to explain the language problem clearly. Use Anh/chị nói tiếng Anh không? when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
-      "presentation": "plain-text"
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Start with Xin lỗi, + tôi; the full audio shows how the words connect in one breath.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Xin lỗi,",
+          "english": "sorry",
+          "audioKey": "breakdown-authored-xin-loi-f08350a24d"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "không",
+          "english": "no / not",
+          "audioKey": "breakdown-polite-6-first"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "nói",
+          "english": "say / speak",
+          "audioKey": "breakdown-problems-3-first"
+        },
+        {
+          "id": "viet-phrase-repair-english-help-self-limit-breakdown-piece-5",
+          "vietnamese": "tiếng Việt",
+          "english": "Vietnamese language",
+          "audioKey": null
+        },
+        {
+          "id": "full",
+          "vietnamese": "Xin lỗi, tôi không nói tiếng Việt",
+          "english": "Sorry, I don’t speak Vietnamese",
+          "audioKey": "repair-english-help-self-limit"
+        }
+      ],
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In When You Don't Understand, the reply often comes as a slower repeat, a pointed explanation, or a switch to writing. Say Xin lỗi, tôi không nói tiếng Việt once, pause, and watch for the reply. If speech still does not land, move to writing, pointing, or showing the exact word on your phone.",
+      "body": "It is softer than only asking if they speak English. It explains the problem first, then leaves room for another solution.",
       "phrases": [
         {
           "id": "repair-english-help",
@@ -125,18 +123,29 @@
           "audioKey": "problems-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Best when someone is trying to help but assumes you understand more Vietnamese than you do.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Nearby phrases keep the conversation moving after this one.",
+      "body": "Follow with English, repeat, write-it-down, type-it, or translation-app phrases.",
       "phrases": [
         {
           "id": "repair-english-help",
@@ -199,7 +208,8 @@
           "audioKey": "repair-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

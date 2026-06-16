@@ -21,33 +21,26 @@
     {
       "id": "chunk-1",
       "vietnamese": "Có",
-      "english": "have / there is"
+      "english": "does it",
+      "keepTogetherReason": "yes-no opener"
     },
     {
       "id": "chunk-2",
       "vietnamese": "vượt qua",
-      "english": "go past / pass",
-      "keepTogetherReason": "compound verb"
+      "english": "go past",
+      "keepTogetherReason": "go-past phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đèn",
-      "english": "light"
+      "vietnamese": "đèn giao thông",
+      "english": "traffic light",
+      "keepTogetherReason": "traffic-light phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "giao",
-      "english": "traffic / deliver"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "thông",
-      "english": "information / through"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

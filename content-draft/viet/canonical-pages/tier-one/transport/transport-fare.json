@@ -7,7 +7,7 @@
   "title": "Tiền xe bao nhiêu?",
   "englishTitle": "How much is the fare?",
   "pronunciation": "tyen seh bao nyew",
-  "summary": "Tiền xe bao nhiêu? means “How much is the fare?”",
+  "summary": "Ask the fare directly before the ride moves on.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tiền xe bao nhiêu? when you need \"How much is the fare\". This comes before or during the ride when you need the fare clearly. Listen for a number, typed amount, calculator screen, or direct yes/no about payment; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Tiền xe bao nhiêu? puts the practical detail first. This comes before or during the ride when you need the fare clearly.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Build the line around Tiền + xe, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "transport-fare-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "transport-fare"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tiền xe bao nhiêu? as your first sentence for \"How much is the fare\". This comes before or during the ride when you need the fare clearly. Pause after the phrase and listen for a number, typed amount, calculator screen, or direct yes/no about payment. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Ask while the destination, fare, or ride screen is still visible, then pause before adding more words.",
       "phrases": [
         {
           "id": "transport-fare",
@@ -69,18 +72,21 @@
           "audioKey": "transport-fare"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"How much is the fare\", Tiền xe bao nhiêu? makes the next step easier to answer. Repeat or show the number before paying if the amount matters.",
-      "presentation": "plain-text"
+      "body": "Fare questions prevent confusion before cash, cards, meters, or app prices start competing.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Transport, the reply often comes as a number, typed amount, calculator screen, or direct yes/no about payment. Say Tiền xe bao nhiêu? once, pause, and watch for the reply. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Expect a number, meter point, app screen, or calculator. Wait until the amount is visible.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -113,12 +119,13 @@
           "audioKey": "taxi-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This comes before or during the ride when you need the fare clearly. It fits rides, routes, pickup points, and stops, especially when the next step is a number, typed amount, calculator screen, or direct yes/no about payment. Repeat or show the number before paying if the amount matters.",
+      "body": "Use it before a ride starts, before paying, or when the price changes from what you expected.",
       "phrases": [
         {
           "id": "taxi-4",
@@ -151,13 +158,16 @@
           "audioKey": "taxi-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -195,18 +205,21 @@
           "audioKey": "transport-lost"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "you-may-hear",
       "title": "You May Hear",
       "body": "A local may answer with: Fixed price, not meter.",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Keep the conversation close to take me here, go to District 1, and you can stop here.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -289,7 +302,8 @@
           "audioKey": "transport-meter"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

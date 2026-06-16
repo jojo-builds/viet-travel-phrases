@@ -20,30 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Xe buýt",
-      "english": "bus",
-      "keepTogetherReason": "compound vehicle term"
+      "vietnamese": "Xe buýt nào",
+      "english": "which bus",
+      "keepTogetherReason": "which-bus phrase"
+    },
+    {
+      "id": "chunk-2",
+      "vietnamese": "đi vào",
+      "english": "goes into",
+      "keepTogetherReason": "goes-into phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nào",
-      "english": "which / any"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "đi",
-      "english": "go"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "vào",
-      "english": "into / enter"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "trung tâm thành phố?",
-      "english": "city center / downtown",
-      "keepTogetherReason": "compound noun"
+      "english": "the city center?",
+      "keepTogetherReason": "city-center phrase"
     },
     {
       "id": "full",

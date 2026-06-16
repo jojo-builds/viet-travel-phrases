@@ -7,7 +7,7 @@
   "title": "Tôi đưa nhầm hóa đơn cho bạn",
   "englishTitle": "I gave you the wrong bill",
   "pronunciation": "Toi dua nham hoa don cho ban",
-  "summary": "I gave you the wrong bill",
+  "summary": "For correcting a bill, receipt, or payment slip you handed over by mistake.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi đưa nhầm hóa đơn cho bạn is a practical money or price phrase for keeping one travel detail clear. Use it when I gave you the wrong bill is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it when the wrong paper, receipt, room bill, or payment slip is already in someone's hand."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi đưa nhầm hóa đơn cho bạn. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the correct bill or receipt right after the phrase so the fix is obvious.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-i-gave-you-the-wrong-bill",
@@ -42,135 +42,129 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi đưa nhầm means I gave by mistake; hóa đơn cho bạn means the bill to you.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi đưa nhầm",
           "english": "I gave by mistake",
-          "audioKey": null
+          "keepTogetherReason": "wrong-item handoff phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "hóa đơn cho",
-          "english": "bill",
-          "audioKey": null
+          "vietnamese": "hóa đơn cho bạn",
+          "english": "the bill to you",
+          "keepTogetherReason": "bill handoff phrase"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "bạn",
-          "english": "you",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi đưa nhầm hóa đơn cho bạn",
           "english": "I gave you the wrong bill",
-          "audioKey": null
+          "audioKey": "v900-mone-numb-pric-i-gave-you-the-wrong-bill"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I gave you the wrong bill to another money or price need.",
+      "body": "Use this is not my receipt, wrong amount, or charged twice phrases when the mistake came from their side.",
       "phrases": [
         {
-          "id": "price-1",
-          "vietnamese": "Cái này bao nhiêu?",
-          "english": "How much is this?",
-          "pronunciation": "gai nai bao nyew",
+          "id": "v900-mone-numb-pric-this-receipt-is-not-mine",
+          "vietnamese": "Biên lai này không phải của tôi",
+          "english": "This receipt is not mine",
+          "pronunciation": "Bien lai nay khong phai cua toi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-price-1",
-          "audioKey": "price-1"
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-this-receipt-is-not-mine",
+          "audioKey": "v900-mone-numb-pric-this-receipt-is-not-mine"
         },
         {
-          "id": "money-how-much-common",
-          "vietnamese": "Cái này nhiêu tiền?",
-          "english": "How much is this?",
-          "pronunciation": "gai nai nyew tyen",
+          "id": "v900-mone-numb-pric-i-was-charged-the-wrong-amount",
+          "vietnamese": "Tôi đã bị tính sai số tiền",
+          "english": "I was charged the wrong amount",
+          "pronunciation": "Toi da bi tinh sai so tien",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-money-how-much-common",
-          "audioKey": "money-how-much-common"
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-i-was-charged-the-wrong-amount",
+          "audioKey": "v900-mone-numb-pric-i-was-charged-the-wrong-amount"
         },
         {
-          "id": "price-2",
-          "vietnamese": "Bao nhiêu một ký?",
-          "english": "How much per kilo?",
-          "pronunciation": "bao nyew mot kee",
+          "id": "help-4",
+          "vietnamese": "Tôi bị tính tiền hai lần",
+          "english": "I was charged twice",
+          "pronunciation": "toy bee ting tyen hai lun",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-price-2",
-          "audioKey": "price-2"
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-help-4",
+          "audioKey": "help-4"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when i gave you the wrong bill is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotel desks, shops, ticket counters, clinics, and restaurants before the mistake becomes a longer dispute."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+      "body": "Keep both bills visible if you can. Pointing is faster than explaining every line item."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi đưa nhầm hóa đơn cho bạn.",
+      "body": "Receipt, cancel the payment, refund, and write the price phrases cover the next repair step.",
       "phrases": [
         {
-          "id": "price-3",
-          "vietnamese": "Mắc quá",
-          "english": "Too expensive",
-          "pronunciation": "mak gwah",
+          "id": "v500-mone-numb-pric-can-i-have-a-receipt",
+          "vietnamese": "Tôi có thể có biên nhận được không?",
+          "english": "Can I have a receipt?",
+          "pronunciation": "Toi co the co bien nhan duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-price-3",
-          "audioKey": "price-3"
+          "detailPageID": "viet-phrase-v500-mone-numb-pric-can-i-have-a-receipt",
+          "audioKey": "v500-mone-numb-pric-can-i-have-a-receipt"
         },
         {
-          "id": "price-4",
-          "vietnamese": "Bớt chút được không?",
-          "english": "Can you lower it a little?",
-          "pronunciation": "but choot dook khong",
+          "id": "v900-mone-numb-pric-please-cancel-that-card-payment",
+          "vietnamese": "Vui lòng hủy thanh toán thẻ đó",
+          "english": "Please cancel that card payment",
+          "pronunciation": "Vui long huy thanh toan the do",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-price-4",
-          "audioKey": "price-4"
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-please-cancel-that-card-payment",
+          "audioKey": "v900-mone-numb-pric-please-cancel-that-card-payment"
         },
         {
-          "id": "price-5",
-          "vietnamese": "Giá cuối bao nhiêu?",
-          "english": "What’s your final price?",
-          "pronunciation": "za gooy bao nyew",
+          "id": "v900-mone-numb-pric-can-you-process-a-refund",
+          "vietnamese": "Bạn có thể xử lý hoàn tiền không?",
+          "english": "Can you process a refund?",
+          "pronunciation": "Ban co the xu ly hoan tien khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-price-5",
-          "audioKey": "price-5"
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-can-you-process-a-refund",
+          "audioKey": "v900-mone-numb-pric-can-you-process-a-refund"
         },
         {
-          "id": "price-6",
-          "vietnamese": "Cho tôi xem cái khác",
-          "english": "Show me another one",
-          "pronunciation": "cho toy sem gai khak",
+          "id": "v900-mone-numb-pric-can-you-refund-the-difference",
+          "vietnamese": "Bạn có thể hoàn lại tiền chênh lệch không?",
+          "english": "Can you refund the difference?",
+          "pronunciation": "Ban co the hoan lai tien chenh lech khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-price-6",
-          "audioKey": "price-6"
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-can-you-refund-the-difference",
+          "audioKey": "v900-mone-numb-pric-can-you-refund-the-difference"
         },
         {
-          "id": "price-7",
-          "vietnamese": "Tôi lấy cái này",
-          "english": "I’ll take this one",
-          "pronunciation": "toy lay gai nai",
+          "id": "v500-unde-repa-can-you-write-the-price",
+          "vietnamese": "Bạn có thể viết giá được không?",
+          "english": "Can you write the price?",
+          "pronunciation": "Ban co the viet gia duoc khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-price-7",
-          "audioKey": "price-7"
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v500-unde-repa-can-you-write-the-price",
+          "audioKey": "v500-unde-repa-can-you-write-the-price"
         }
       ]
     }

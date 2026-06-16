@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-heal-phar-how-do-i-take-this",
-  "phraseText": "Làm thế nào để tôi thực hiện điều này?",
+  "phraseText": "Tôi uống thuốc này như thế nào?",
   "englishTitle": "How do I take this?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,49 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Làm",
-      "english": "do / make"
+      "vietnamese": "Tôi uống",
+      "english": "I take / drink",
+      "keepTogetherReason": "take-medicine verb"
     },
     {
-      "vietnamese": "thế nào",
-      "english": "how",
-      "keepTogetherReason": "fixed how question phrase"
+      "id": "chunk-2",
+      "vietnamese": "thuốc này",
+      "english": "this medicine",
+      "keepTogetherReason": "this-medicine phrase"
     },
     {
-      "id": "chunk-4",
-      "vietnamese": "để",
-      "english": "to / in order to"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tôi",
-      "english": "I / me"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "thực",
-      "english": "food / real"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "hiện",
-      "english": "show / present"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "điều",
-      "english": "thing / matter"
-    },
-    {
-      "id": "chunk-9",
-      "vietnamese": "này?",
-      "english": "this"
+      "id": "chunk-3",
+      "vietnamese": "như thế nào?",
+      "english": "how?",
+      "keepTogetherReason": "how ending"
     },
     {
       "id": "full",
-      "vietnamese": "Làm thế nào để tôi thực hiện điều này?",
+      "vietnamese": "Tôi uống thuốc này như thế nào?",
       "english": "How do I take this?",
-      "audioKey": "v500-heal-phar-how-do-i-take-this"
+      "audioKey": null
     }
   ]
 }

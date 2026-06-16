@@ -7,7 +7,7 @@
   "title": "Cái này có mới không?",
   "englishTitle": "Is this new?",
   "pronunciation": "Cai nay co moi khong",
-  "summary": "Is this new?",
+  "summary": "For checking whether a shop item is new, unused, or fresh stock before buying it.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cái này có mới không? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Is this new is right."
+      "body": "Ask while pointing at the exact item, box, tag, or display piece."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use Cái này có mới không? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "body": "Hold up the item and wait for yes, no, or a replacement from the back.",
       "phrases": [
         {
           "id": "v500-shop-is-this-new",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Cái này means this item; có mới asks is it new; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Cái này",
-          "english": "this one",
-          "audioKey": null
+          "english": "this item",
+          "keepTogetherReason": "this-item phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "có mới",
-          "english": "is there / does it have",
-          "audioKey": null
+          "english": "is new",
+          "keepTogetherReason": "is-new phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Cái này có mới không?",
-          "english": "Is this new",
-          "audioKey": null
+          "english": "Is this new?",
+          "audioKey": "v500-shop-is-this-new"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is this new? to another shopping need.",
+      "body": "Size, color, and try-on cards cover the choice questions that often follow.",
       "phrases": [
         {
           "id": "shop-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+      "body": "Good in markets, clothing shops, electronics counters, souvenir shops, and stalls where display pieces may be handled."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "In shops and markets, the object is the anchor. Point clearly, then listen for the number or option."
+      "body": "If condition matters, point to the packaging, seal, tag, or scratch you are asking about."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Cái này có mới không?.",
+      "body": "Move to just-looking, where-pay, exchange-this, item-price, or lower-price cards if the shopping exchange continues.",
       "phrases": [
         {
           "id": "shop-4",

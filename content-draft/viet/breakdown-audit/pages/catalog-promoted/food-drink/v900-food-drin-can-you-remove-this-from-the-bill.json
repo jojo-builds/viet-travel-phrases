@@ -20,45 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "loại bỏ điều này",
+      "english": "remove this",
+      "keepTogetherReason": "remove-this phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "loại",
-      "english": "type / remove"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "bỏ",
-      "english": "remove / leave"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "điều",
-      "english": "thing / matter"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "khỏi",
-      "english": "out of / from"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "hóa đơn?",
-      "english": "receipt / invoice",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "khỏi hóa đơn?",
+      "english": "from the bill?",
+      "keepTogetherReason": "from-the-bill phrase"
     },
     {
       "id": "full",

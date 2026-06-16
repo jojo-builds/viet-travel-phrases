@@ -4,10 +4,10 @@
   "phraseID": "v900-food-drin-can-we-sit-inside",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Chúng ta có thể ngồi bên trong được không?",
+  "title": "Chúng tôi có thể ngồi bên trong được không?",
   "englishTitle": "Can we sit inside?",
-  "pronunciation": "Chung ta co the ngoi ben trong duoc khong",
-  "summary": "Can we sit inside?",
+  "pronunciation": "Chung toi co the ngoi ben trong duoc khong",
+  "summary": "For asking cafe or restaurant staff whether your group can take an indoor table instead of sitting outside.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -15,148 +15,179 @@
     "v900-food-drin-can-we-sit-inside",
     "premium"
   ],
-  "audioKey": "v900-food-drin-can-we-sit-inside",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Chúng ta có thể ngồi bên trong được không? is a practical food or drink phrase for keeping one travel detail clear. Use it when Can we sit inside is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask while pointing toward the indoor tables or doorway. The answer may depend on space, air conditioning, or reservations.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Chúng ta có thể ngồi bên trong được không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Keep the group visible and wait for a table, a no, or a point toward another seating area.",
       "phrases": [
         {
           "id": "v900-food-drin-can-we-sit-inside",
-          "vietnamese": "Chúng ta có thể ngồi bên trong được không?",
+          "vietnamese": "Chúng tôi có thể ngồi bên trong được không?",
           "english": "Can we sit inside?",
-          "pronunciation": "Chung ta co the ngoi ben trong duoc khong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Chung toi co the ngoi ben trong duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
           "detailPageID": null,
-          "audioKey": "v900-food-drin-can-we-sit-inside"
+          "audioKey": null
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Chúng ta có thể means can we; ngồi bên trong means sit inside; được không softens the question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Chúng ta có",
+          "vietnamese": "Chúng tôi có thể",
           "english": "can we",
-          "audioKey": null
+          "keepTogetherReason": "can-we phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể ngồi bên",
-          "english": "call",
-          "audioKey": null
+          "vietnamese": "ngồi bên trong",
+          "english": "sit inside",
+          "keepTogetherReason": "sit-inside phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "trong",
-          "english": "inside / in",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
-          "vietnamese": "Chúng ta có thể ngồi bên trong được không?",
-          "english": "Can we sit inside",
-          "audioKey": null
+          "id": "full",
+          "vietnamese": "Chúng tôi có thể ngồi bên trong được không?",
+          "english": "Can we sit inside?",
+          "audioKey": "v900-food-drin-can-we-sit-inside"
         }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can we sit inside? to another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
-        }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real food or drink exchange when can we sit inside is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Cafes, noodle shops, restaurants, hotel breakfast rooms, and food courts are the natural moments for this question.",
+      "phrases": [
+        {
+          "id": "v900-food-drin-a-table-for-one-please",
+          "vietnamese": "Vui lòng cho một bàn",
+          "english": "A table for one, please",
+          "pronunciation": "Vui long cho mot ban",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-a-table-for-one-please",
+          "audioKey": "v900-food-drin-a-table-for-one-please"
+        },
+        {
+          "id": "v900-food-drin-a-table-for-four-please",
+          "vietnamese": "Vui lòng cho một bàn cho bốn người",
+          "english": "A table for four, please",
+          "pronunciation": "Vui long cho mot ban cho bon nguoi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-a-table-for-four-please",
+          "audioKey": "v900-food-drin-a-table-for-four-please"
+        },
+        {
+          "id": "v900-food-drin-is-there-a-wait-for-a-table",
+          "vietnamese": "Có phải đợi bàn không?",
+          "english": "Is there a wait for a table?",
+          "pronunciation": "Co phai doi ban khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-is-there-a-wait-for-a-table",
+          "audioKey": "v900-food-drin-is-there-a-wait-for-a-table"
+        },
+        {
+          "id": "v900-food-drin-can-we-sit-outside",
+          "vietnamese": "Chúng tôi có thể ngồi bên ngoài được không?",
+          "english": "Can we sit outside?",
+          "pronunciation": "Chung toi co the ngoi ben ngoai duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-we-sit-outside",
+          "audioKey": null
+        },
+        {
+          "id": "v900-food-drin-can-we-sit-by-the-fan",
+          "vietnamese": "Chúng tôi có thể ngồi cạnh quạt được không?",
+          "english": "Can we sit by the fan?",
+          "pronunciation": "Chung toi co the ngoi canh quat duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-we-sit-by-the-fan",
+          "audioKey": null
+        }
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
+      "body": "Indoor seats may be full or reserved. If staff point outside, ask about the fan or another table instead of repeating the same line.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Chúng ta có thể ngồi bên trong được không?.",
+      "body": "After you get seated, move to ordering at the counter, waiting a long time, asking what they recommend, saying that's all, or paying.",
       "phrases": [
         {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
+          "id": "v900-food-drin-do-we-order-here-or-at-the-counter",
+          "vietnamese": "Chúng ta đặt hàng ở đây hay tại quầy?",
+          "english": "Do we order here or at the counter?",
+          "pronunciation": "Chung ta dat hang o day hay tai quay",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
-          "audioKey": "coffee-4"
+          "detailPageID": "viet-phrase-v900-food-drin-do-we-order-here-or-at-the-counter",
+          "audioKey": "v900-food-drin-do-we-order-here-or-at-the-counter"
         },
         {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
+          "id": "v900-food-drin-i-have-been-waiting-a-long-time",
+          "vietnamese": "Tôi đã chờ đợi rất lâu rồi",
+          "english": "I have been waiting a long time",
+          "pronunciation": "Toi da cho doi rat lau roi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
-          "audioKey": "coffee-5"
+          "detailPageID": "viet-phrase-v900-food-drin-i-have-been-waiting-a-long-time",
+          "audioKey": "v900-food-drin-i-have-been-waiting-a-long-time"
         },
         {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
+          "id": "v900-food-drin-what-do-you-recommend",
+          "vietnamese": "Bạn đề xuất món gì?",
+          "english": "What do you recommend?",
+          "pronunciation": "Ban de xuat mon gi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
-          "audioKey": "coffee-6"
+          "detailPageID": "viet-phrase-v900-food-drin-what-do-you-recommend",
+          "audioKey": "v900-food-drin-what-do-you-recommend"
+        },
+        {
+          "id": "v900-food-drin-thats-all-thank-you",
+          "vietnamese": "Vậy thôi, cảm ơn",
+          "english": "That's all, thank you.",
+          "pronunciation": "Vay thoi cam on",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-thats-all-thank-you",
+          "audioKey": "audio-authored-vay-thoi-cam-on-efab00a56b"
         },
         {
           "id": "coffee-7",
@@ -165,32 +196,32 @@
           "pronunciation": "ting tyen zoop toy",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
+          "detailPageID": "viet-family-food-pay-now",
           "audioKey": "coffee-7"
-        },
-        {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
-          "audioKey": "food-need-table"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Ordering, wait-time, recommendations, closing the order, and payment cards cover the restaurant flow after seating.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [
     {
       "id": "v900-food-drin-can-we-sit-inside",
-      "vietnamese": "Chúng ta có thể ngồi bên trong được không?",
+      "vietnamese": "Chúng tôi có thể ngồi bên trong được không?",
       "english": "Can we sit inside?",
-      "pronunciation": "Chung ta co the ngoi ben trong duoc khong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Chung toi co the ngoi ben trong duoc khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "green",
       "detailPageID": null,
-      "audioKey": "v900-food-drin-can-we-sit-inside"
+      "audioKey": null
     }
   ]
 }

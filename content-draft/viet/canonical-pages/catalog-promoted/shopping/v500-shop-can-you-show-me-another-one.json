@@ -4,10 +4,10 @@
   "phraseID": "v500-shop-can-you-show-me-another-one",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Bạn có thể cho tôi xem một cái khác được không?",
+  "title": "Cho tôi xem cái khác được không?",
   "englishTitle": "Can you show me another one?",
-  "pronunciation": "Ban co the cho toi xem mot cai khac duoc khong",
-  "summary": "Can you show me another one?",
+  "pronunciation": "Cho toi xem cai khac duoc khong",
+  "summary": "A small-shop phrase for asking to see a different item, size, color, or condition without rejecting the first choice.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -15,63 +15,57 @@
     "v500-shop-can-you-show-me-another-one",
     "premium"
   ],
-  "audioKey": "v500-shop-can-you-show-me-another-one",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể cho tôi xem một cái khác được không? asks someone to do one helpful action for you. Use it for show me another one when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "The first item is close but not right: wrong color, size, pattern, condition, or price tier."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể cho tôi xem một cái khác được không? once, then make the task visible with your item, shelf, photo, size, color, price tag, or calculator. The phrase is doing one job: getting a clear answer about show me another one.",
+      "body": "Point to the item you are comparing, then ask. It keeps the exchange friendly while you look at another option.",
       "phrases": [
         {
           "id": "v500-shop-can-you-show-me-another-one",
-          "vietnamese": "Bạn có thể cho tôi xem một cái khác được không?",
+          "vietnamese": "Cho tôi xem cái khác được không?",
           "english": "Can you show me another one?",
-          "pronunciation": "Ban co the cho toi xem mot cai khac duoc khong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Cho toi xem cai khac duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "purple",
           "detailPageID": null,
-          "audioKey": "v500-shop-can-you-show-me-another-one"
+          "audioKey": "audio-authored-cho-toi-xem-cai-khac-duoc-khong-37cde1cfd5"
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Cho tôi xem asks to see it; cái khác means another one; được không keeps the request polite.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bạn có thể",
-          "english": "can you",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-2",
-          "vietnamese": "cho tôi xem",
+          "vietnamese": "Cho tôi xem",
           "english": "show me / let me see",
           "audioKey": null
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "một cái khác",
+          "id": "chunk-2",
+          "vietnamese": "cái khác",
           "english": "another one",
           "audioKey": null
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "được không",
-          "english": "is it possible?",
+          "id": "chunk-3",
+          "vietnamese": "được không?",
+          "english": "can you / is it okay",
           "audioKey": null
         },
         {
-          "id": "chunk-5",
-          "vietnamese": "Bạn có thể cho tôi xem một cái khác được không?",
-          "english": "Can you show me another one",
+          "id": "full",
+          "vietnamese": "Cho tôi xem cái khác được không?",
+          "english": "Can you show me another one?",
           "audioKey": null
         }
       ]
@@ -79,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you show me another one? to another shopping need.",
+      "body": "These keep the shopping exchange concrete: size, another color, or trying the item on.",
       "phrases": [
         {
           "id": "shop-1",
@@ -116,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real shopping exchange when show me another one is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it before bargaining or rejecting the item outright. The phrase works best when your hand, photo, or size label shows what you want changed."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "A calm tone matters in markets. This asks for another option, not a lecture about why the first one is wrong."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể cho tôi xem một cái khác được không?.",
+      "body": "If the seller brings options, these cover browsing, paying, or exchanging the item later.",
       "phrases": [
         {
           "id": "shop-4",
@@ -184,13 +178,13 @@
   "examples": [
     {
       "id": "v500-shop-can-you-show-me-another-one",
-      "vietnamese": "Bạn có thể cho tôi xem một cái khác được không?",
+      "vietnamese": "Cho tôi xem cái khác được không?",
       "english": "Can you show me another one?",
-      "pronunciation": "Ban co the cho toi xem mot cai khac duoc khong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Cho toi xem cai khac duoc khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "purple",
       "detailPageID": null,
-      "audioKey": "v500-shop-can-you-show-me-another-one"
+      "audioKey": null
     }
   ]
 }

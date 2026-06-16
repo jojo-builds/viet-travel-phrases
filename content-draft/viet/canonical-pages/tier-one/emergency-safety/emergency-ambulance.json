@@ -7,7 +7,7 @@
   "title": "Gọi xe cứu thương",
   "englishTitle": "Call an ambulance",
   "pronunciation": "goy seh koo-ah thu-ong",
-  "summary": "Gọi xe cứu thương means “Call an ambulance”.",
+  "summary": "Use this when you need an ambulance right away.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Gọi xe cứu thương when you need \"Call an ambulance\". This is for when someone needs urgent medical transport. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Reach for it when someone needs urgent medical transport.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Gọi + xe cứu thương carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "emergency-2-piece-1",
@@ -45,12 +47,13 @@
           "audioKey": "emergency-2"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Gọi xe cứu thương as your first sentence for \"Call an ambulance\". This is for when someone needs urgent medical transport. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Say Gọi xe cứu thương clearly; show the location, passport copy, photo, injury, or helper contact only if the reply needs detail.",
       "phrases": [
         {
           "id": "emergency-2",
@@ -63,18 +66,21 @@
           "audioKey": "emergency-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Emergency phrases put the urgent need first so help can move faster. For \"Call an ambulance\", Gọi xe cứu thương makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Ambulance language should be unmistakable. This phrase makes the needed action clear before symptoms or location details get added.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Emergency & Safety, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Gọi xe cứu thương once, pause, and watch for the reply. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "The next move may be a call, a question about location, or someone asking what happened.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -107,12 +113,13 @@
           "audioKey": "emergency-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when someone needs urgent medical transport. It fits police, ambulance, hospitals, passports, and immediate safety, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "body": "Best when someone cannot safely walk, breathe, stand, or wait for normal clinic help.",
       "phrases": [
         {
           "id": "emergency-emergency",
@@ -145,18 +152,21 @@
           "audioKey": "v500-emer-safe-i-am-injured"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "In safety moments, clarity matters more than sounding polished. Repeat the phrase if needed.",
-      "presentation": "tip-callout"
+      "body": "If people ask follow-up questions, keep returning to ambulance, location, and the injured person.",
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Use the phrase clearly, then show your location, passport copy, injury, or emergency contact.",
+      "body": "Say the line, then show the location or point to the person who needs help.",
       "phrases": [
         {
           "id": "v500-emer-safe-i-cannot-move",
@@ -179,12 +189,13 @@
           "audioKey": "v500-emer-safe-do-not-touch-me"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through call the police, I lost my passport, and I feel unsafe.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -267,7 +278,8 @@
           "audioKey": "v500-emer-safe-do-not-touch-me"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

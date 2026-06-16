@@ -7,7 +7,7 @@
   "title": "Nhà thuốc gần nhất ở đâu?",
   "englishTitle": "Where is the nearest pharmacy?",
   "pronunciation": "nya thoo-ok gun nyut uh dow",
-  "summary": "Nhà thuốc gần nhất ở đâu? means “Where is the nearest pharmacy?”",
+  "summary": "Use this when you need a pharmacy nearby.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Nhà thuốc gần nhất ở đâu? when you need \"Where is the nearest pharmacy\". This is for when you need the nearest pharmacy, not just any pharmacy. Use the rows below to pick the warmer, safer, or more direct version.",
-      "presentation": "plain-text"
+      "body": "Nhà thuốc gần nhất ở đâu? keeps the direction question short. Reach for it when you need the nearest pharmacy, not just any pharmacy.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks where a place or service is. Swap the first part to ask about another nearby stop.",
+      "body": "Nhà thuốc means pharmacy; gần nhất means nearest; ở đâu? asks where it is.",
       "breakdown": [
         {
           "id": "health-pharmacy-clearer-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "health-pharmacy-clearer"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Nhà thuốc gần nhất ở đâu? as your first sentence for \"Where is the nearest pharmacy\". This is for when you need the nearest pharmacy, not just any pharmacy. Pause after the phrase and listen for a point, short direction, nearby option, or counter name. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Show the symptom, medicine, affected area, or translated note first, ask once, and leave room for the answer.",
       "phrases": [
         {
           "id": "health-pharmacy-clearer",
@@ -69,12 +72,13 @@
           "audioKey": "health-pharmacy-clearer"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "natural-variations",
       "title": "Natural variations",
-      "body": "This form changes the tone or setting. Use it when the note under the phrase matches the moment.",
+      "body": "where is the pharmacy? covers the nearby version of this exchange.",
       "phrases": [
         {
           "id": "health-1",
@@ -87,18 +91,21 @@
           "audioKey": "health-1"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up. For \"Where is the nearest pharmacy\", Nhà thuốc gần nhất ở đâu? makes the next step easier to answer. If the answer is longer than a point or nearby stop, ask them to show it on your phone.",
-      "presentation": "plain-text"
+      "body": "Pharmacy questions work best when the symptom or medicine box is visible. The phrase gets you to the right counter first.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Health & Pharmacy, the reply often comes as a point, short direction, nearby option, or counter name. Say Nhà thuốc gần nhất ở đâu? once, pause, and watch for the reply. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Expect a point, product suggestion, dosage question, or a request to describe symptoms.",
       "phrases": [
         {
           "id": "problems-6",
@@ -131,12 +138,13 @@
           "audioKey": "health-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when you need the nearest pharmacy, not just any pharmacy. It fits doctors, pharmacies, symptoms, and medication, especially when the next step is a point, short direction, nearby option, or counter name. If the answer is longer than a point or nearby stop, ask them to show it on your phone.",
+      "body": "Best when you need medicine, first aid, sunscreen, stomach help, or advice before a clinic.",
       "phrases": [
         {
           "id": "health-4",
@@ -169,18 +177,21 @@
           "audioKey": "health-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep urgent medical needs clear and direct. A short sentence gives helpers something they can act on quickly.",
-      "presentation": "tip-callout"
+      "body": "Ask about dose and timing before leaving; pharmacy answers can be fast.",
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Show the symptom, medication, or affected area when possible. It gives the helper something concrete.",
+      "body": "Show the symptom, medicine box, or photo so the pharmacist can narrow the shelf quickly.",
       "phrases": [
         {
           "id": "v500-heal-phar-i-feel-dizzy",
@@ -193,12 +204,13 @@
           "audioKey": "v500-heal-phar-i-feel-dizzy"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a pharmacy, clinic, or hotel desk, the next useful language is usually I need a doctor, I have a headache, and my stomach hurts.",
       "phrases": [
         {
           "id": "problems-6",
@@ -271,7 +283,8 @@
           "audioKey": "v500-heal-phar-i-feel-dizzy"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

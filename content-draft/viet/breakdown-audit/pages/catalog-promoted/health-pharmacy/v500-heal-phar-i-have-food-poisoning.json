@@ -20,19 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi bị",
+      "english": "I have / I am suffering from",
+      "keepTogetherReason": "symptom phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "ngộ độc thực phẩm",
       "english": "food poisoning",
-      "keepTogetherReason": "compound health term"
+      "keepTogetherReason": "food-poisoning phrase"
     },
     {
       "id": "full",

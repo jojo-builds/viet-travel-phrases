@@ -7,7 +7,7 @@
   "title": "Tôi bị hen suyễn",
   "englishTitle": "I have asthma",
   "pronunciation": "Toi bi hen suyen",
-  "summary": "I have asthma",
+  "summary": "For telling someone asthma matters before medicine, transport, or clinic advice.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi bị hen suyễn is a practical pharmacy or health phrase for keeping one travel detail clear. Use it when I have asthma is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it before staff recommend medicine, activity, smoke exposure, or a long wait."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi bị hen suyễn. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show an inhaler, medicine photo, or translated note if you have one. Keep the phrase calm and direct.",
       "phrases": [
         {
           "id": "v500-heal-phar-i-have-asthma",
@@ -42,32 +42,34 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi bị means I have or I am affected by; hen suyễn means asthma.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi bị",
-          "english": "I have / got",
+          "english": "I have / I am affected by",
+          "keepTogetherReason": "condition phrase",
           "audioKey": null
         },
         {
           "id": "chunk-2",
           "vietnamese": "hen suyễn",
           "english": "asthma",
+          "keepTogetherReason": "asthma phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "Tôi bị hen suyễn",
           "english": "I have asthma",
-          "audioKey": null
+          "audioKey": "v500-heal-phar-i-have-asthma"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I have asthma to another pharmacy or health need.",
+      "body": "If breathing is difficult now, move to trouble-breathing, doctor, emergency help, or medicine follow-ups.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +106,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when i have asthma is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at pharmacies, clinics, hotel desks, tour counters, and any moment where breathing risk changes the plan."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "If symptoms are urgent, do not bury that detail. Ask for medical help right away."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi bị hen suyễn.",
+      "body": "Use doctor, pharmacy, trouble-breathing, emergency help, or medicine cards if the situation needs another step.",
       "phrases": [
         {
           "id": "health-2",

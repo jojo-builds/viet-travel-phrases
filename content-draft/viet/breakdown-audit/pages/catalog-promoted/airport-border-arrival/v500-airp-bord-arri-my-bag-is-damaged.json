@@ -20,20 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Túi",
-      "english": "bag"
+      "vietnamese": "Túi của tôi",
+      "english": "my bag",
+      "keepTogetherReason": "my-bag phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "bị hỏng",
-      "english": "is broken / damaged",
-      "keepTogetherReason": "fixed problem phrase"
+      "english": "is damaged",
+      "keepTogetherReason": "is-damaged phrase"
     },
     {
       "id": "full",

@@ -20,28 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Điều",
-      "english": "thing / matter"
+      "vietnamese": "Điều đó",
+      "english": "that thing / that",
+      "keepTogetherReason": "that-thing phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đó",
-      "english": "that"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "tốt",
-      "english": "good"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "hay",
-      "english": "or"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "xấu?",
-      "english": "bad"
+      "vietnamese": "tốt hay xấu?",
+      "english": "good or bad?",
+      "keepTogetherReason": "good-or-bad phrase"
     },
     {
       "id": "full",

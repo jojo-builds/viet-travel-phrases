@@ -22,27 +22,19 @@
       "id": "chunk-1",
       "vietnamese": "Vui lòng",
       "english": "please",
-      "keepTogetherReason": "fixed polite phrase"
+      "keepTogetherReason": "polite opener"
     },
     {
       "id": "chunk-2",
       "vietnamese": "tránh",
-      "english": "avoid"
+      "english": "avoid",
+      "keepTogetherReason": "avoid action"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đường",
-      "english": "street"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "thu",
-      "english": "collect"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "phí",
-      "english": "fee"
+      "vietnamese": "đường thu phí",
+      "english": "toll roads",
+      "keepTogetherReason": "toll-road phrase"
     },
     {
       "id": "full",

@@ -20,43 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đó",
-      "english": "that"
+      "vietnamese": "Đó có phải là",
+      "english": "is that",
+      "keepTogetherReason": "is-that question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "phải",
-      "english": "must / right"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tổng",
-      "english": "total"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "số",
-      "english": "number"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "cuối",
-      "english": "last / final"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "cùng?",
-      "english": "together"
+      "vietnamese": "tổng số cuối cùng?",
+      "english": "the final total?",
+      "keepTogetherReason": "final-total phrase"
     },
     {
       "id": "full",

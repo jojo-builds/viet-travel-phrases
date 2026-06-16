@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-heal-phar-is-this-safe-with-my-medicine",
-  "phraseText": "Điều này có an toàn với thuốc của tôi không?",
+  "phraseText": "Dùng cái này cùng thuốc của tôi có an toàn không?",
   "englishTitle": "Is this safe with my medicine?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,51 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Điều",
-      "english": "thing / matter"
+      "vietnamese": "Dùng cái này",
+      "english": "using this",
+      "keepTogetherReason": "use-this phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "này",
-      "english": "this"
+      "vietnamese": "cùng thuốc của tôi",
+      "english": "with my medicine",
+      "keepTogetherReason": "with-my-medicine phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "an toàn",
-      "english": "safe",
-      "keepTogetherReason": "compound adjective"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "với",
-      "english": "with / to"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "thuốc",
-      "english": "medicine"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "không?",
-      "english": "yes/no?"
+      "vietnamese": "có an toàn không?",
+      "english": "is it safe?",
+      "keepTogetherReason": "safety question"
     },
     {
       "id": "full",
-      "vietnamese": "Điều này có an toàn với thuốc của tôi không?",
+      "vietnamese": "Dùng cái này cùng thuốc của tôi có an toàn không?",
       "english": "Is this safe with my medicine?",
-      "audioKey": "v900-heal-phar-is-this-safe-with-my-medicine"
+      "audioKey": null
     }
   ]
 }

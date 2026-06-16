@@ -20,33 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có cần",
+      "english": "do I need",
+      "keepTogetherReason": "need question"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "đặt cọc",
+      "english": "a deposit",
+      "keepTogetherReason": "deposit noun"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "cần",
-      "english": "need"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "đặt",
-      "english": "book / reserve / order"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "cọc",
-      "english": "deposit"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

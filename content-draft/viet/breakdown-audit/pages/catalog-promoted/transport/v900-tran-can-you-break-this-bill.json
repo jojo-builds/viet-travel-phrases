@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-tran-can-you-break-this-bill",
-  "phraseText": "Bạn có thể phá vỡ hóa đơn này?",
+  "phraseText": "Bạn có thể đổi tờ này thành tiền lẻ không?",
   "englishTitle": "Can you break this bill?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -15,42 +15,36 @@
     ]
   },
   "notes": [
-    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources.",
+    "Phrase-copy semantic repair; reviewed tokens updated and audio marked for regeneration."
   ],
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "polite question opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "đổi tờ này",
+      "english": "change this note",
+      "keepTogetherReason": "cash-note action phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "phá vỡ",
-      "english": "break",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "hóa đơn",
-      "english": "receipt / invoice",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "này?",
-      "english": "this"
+      "vietnamese": "thành tiền lẻ không?",
+      "english": "into small change?",
+      "keepTogetherReason": "cash-change question phrase"
     },
     {
       "id": "full",
-      "vietnamese": "Bạn có thể phá vỡ hóa đơn này?",
+      "vietnamese": "Bạn có thể đổi tờ này thành tiền lẻ không?",
       "english": "Can you break this bill?",
-      "audioKey": "v900-tran-can-you-break-this-bill"
+      "audioKey": null
     }
-  ]
+  ],
+  "title": "Bạn có thể đổi tờ này thành tiền lẻ không?",
+  "summary": "Can you break this bill",
+  "pronunciation": "Ban co the doi to nay thanh tien le khong"
 }

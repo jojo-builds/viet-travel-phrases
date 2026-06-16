@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-food-drin-can-i-have-rice-with-this",
-  "phraseText": "Tôi có thể ăn cơm với cái này không?",
+  "phraseText": "Cho tôi cơm ăn kèm được không?",
   "englishTitle": "Can I have rice with this?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,50 +20,33 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Cho tôi",
+      "english": "give me / please give me",
+      "keepTogetherReason": "request opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "cơm",
+      "english": "rice",
+      "keepTogetherReason": "rice noun"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "ăn",
-      "english": "eat"
+      "vietnamese": "ăn kèm",
+      "english": "to go with it",
+      "keepTogetherReason": "with-the-dish phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "cơm",
-      "english": "rice"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "với",
-      "english": "with / to"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "cái",
-      "english": "item / classifier"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "không?",
-      "english": "yes/no?"
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi có thể ăn cơm với cái này không?",
+      "vietnamese": "Cho tôi cơm ăn kèm được không?",
       "english": "Can I have rice with this?",
-      "audioKey": "v900-food-drin-can-i-have-rice-with-this"
+      "audioKey": null
     }
   ]
 }

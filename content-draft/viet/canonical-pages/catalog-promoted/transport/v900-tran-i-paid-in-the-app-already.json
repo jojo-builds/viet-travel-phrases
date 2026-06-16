@@ -7,7 +7,7 @@
   "title": "Tôi đã thanh toán trong ứng dụng rồi",
   "englishTitle": "I paid in the app already",
   "pronunciation": "Toi da thanh toan trong ung dung roi",
-  "summary": "I paid in the app already",
+  "summary": "For showing that the ride or ticket was already paid digitally.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi đã thanh toán trong ứng dụng rồi is a practical transport phrase for keeping one travel detail clear. Use it when I paid in the app already is the next detail to solve and a short answer would move the exchange forward."
+      "body": "This is for the awkward moment when someone asks for money after the app or booking already charged you."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi đã thanh toán trong ứng dụng rồi. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the paid screen first, then say the line. Let them check the amount, driver, or booking number.",
       "phrases": [
         {
           "id": "v900-tran-i-paid-in-the-app-already",
@@ -42,17 +42,17 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đã thanh toán means already paid; trong ứng dụng means in the app.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi đã thanh",
-          "english": "I already / I did",
+          "vietnamese": "Tôi đã",
+          "english": "I already",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "toán trong ứng dụng rồi",
+          "vietnamese": "thanh toán trong ứng dụng rồi",
           "english": "paid in the app already",
           "audioKey": null
         },
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I paid in the app already to another transport need.",
+      "body": "Destination cards help if the driver needs to match the paid ride to the right route.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when i paid in the app already is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good with ride apps, pre-booked transfers, online tickets, and counters where payment status is unclear."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Keep the paid screen visible until they confirm it; do not close it too quickly."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi đã thanh toán trong ứng dụng rồi.",
+      "body": "If the ride continues, stop, route, air-con, wait, and cash cards cover the next detail.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

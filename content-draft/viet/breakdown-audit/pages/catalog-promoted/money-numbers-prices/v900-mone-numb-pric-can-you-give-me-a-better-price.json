@@ -20,45 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "cho tôi",
+      "english": "give me",
+      "keepTogetherReason": "give-me phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "tôi",
-      "english": "me"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "mức giá",
-      "english": "price level",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "tốt",
-      "english": "good"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "hơn?",
-      "english": "more"
+      "vietnamese": "một mức giá tốt hơn?",
+      "english": "a better price?",
+      "keepTogetherReason": "better-price phrase"
     },
     {
       "id": "full",

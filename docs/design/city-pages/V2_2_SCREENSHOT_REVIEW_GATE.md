@@ -20,7 +20,8 @@ This is a screenshot/render gate, not the full production gate. Final production
 - Mentioned Here cards render when useful `render` candidates exist.
 - Related Places cards render when useful `render` candidates exist.
 - Visible card subtitles are user-facing `displaySubtitle`, not internal `reason`.
-- Bottom chrome and sticky audio controls do not hide content.
+- Fixed chrome and sticky audio controls do not prevent reading, tapping, or reaching required content after normal scrolling.
+- Normal native iOS scroll-under behavior behind translucent top/back/bottom chrome is acceptable. Do not fail a screenshot just because faint content passes behind glass chrome, and do not solve it by making the top chrome opaque.
 - Long phrase rows wrap cleanly.
 - Phrase/audio status is known.
 - Natural catalog mentions are evaluated, not silently ignored.

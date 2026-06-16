@@ -19,7 +19,9 @@
       "id": "at-glance",
       "title": "At a glance",
       "body": "Use this when the restroom is missing toilet paper or you need to ask before going in. It is a quick practical question, so the best delivery is direct, calm, and paired with a small gesture toward the stall, sink area, or paper holder.",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
@@ -43,7 +45,8 @@
           "audioKey": "bath-2"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
@@ -61,13 +64,16 @@
           "audioKey": "bath-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
       "body": "This question is practical and quick. Keeping giấy vệ sinh together prevents the phrase from turning into misleading word cards. A traveler does not need to analyze each syllable here; the useful unit is the item you are asking for.",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
@@ -105,7 +111,8 @@
           "audioKey": "bath-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
@@ -133,13 +140,16 @@
           "audioKey": "bath-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "For travelers, giấy vệ sinh should be learned as toilet paper, not split into separate unrelated words. That keeps the phrase practical and avoids false word-by-word meanings.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -157,7 +167,8 @@
           "audioKey": "bath-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -215,7 +226,8 @@
           "audioKey": "bath-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

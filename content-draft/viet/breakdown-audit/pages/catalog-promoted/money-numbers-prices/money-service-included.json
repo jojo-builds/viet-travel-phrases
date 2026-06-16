@@ -20,38 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Dịch",
-      "english": "translate / service"
+      "vietnamese": "Dịch vụ",
+      "english": "service",
+      "keepTogetherReason": "service noun"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "vụ",
-      "english": "service"
+      "vietnamese": "đã được bao gồm",
+      "english": "already included",
+      "keepTogetherReason": "included phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đã",
-      "english": "already / did"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "được",
-      "english": "possible / okay"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "bao",
-      "english": "how / cover"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "gồm",
-      "english": "include"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "chưa?",
-      "english": "not yet / already?"
+      "english": "yet?",
+      "keepTogetherReason": "yet question"
     },
     {
       "id": "full",

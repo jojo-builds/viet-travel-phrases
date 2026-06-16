@@ -20,34 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Có",
-      "english": "have / there is"
+      "vietnamese": "Có máy ATM nào",
+      "english": "is there any ATM",
+      "keepTogetherReason": "ATM question"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "máy",
-      "english": "machine"
+      "vietnamese": "gần đây",
+      "english": "nearby",
+      "keepTogetherReason": "nearby phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "ATM",
-      "english": "an ATM"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "nào",
-      "english": "which / any"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "gần đây",
-      "english": "near here",
-      "keepTogetherReason": "fixed place phrase"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

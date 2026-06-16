@@ -22,27 +22,25 @@
       "id": "chunk-1",
       "vietnamese": "Hôm nay",
       "english": "today",
-      "keepTogetherReason": "fixed time phrase"
+      "keepTogetherReason": "today phrase"
     },
     {
       "id": "chunk-2",
       "vietnamese": "trời",
-      "english": "weather / sky"
+      "english": "weather / sky",
+      "keepTogetherReason": "weather noun"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "có mưa",
+      "english": "rain",
+      "keepTogetherReason": "rain phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "mưa",
-      "english": "rain"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

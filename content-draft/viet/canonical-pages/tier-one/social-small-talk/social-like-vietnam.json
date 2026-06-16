@@ -7,7 +7,7 @@
   "title": "Tôi thích Việt Nam",
   "englishTitle": "I like Vietnam",
   "pronunciation": "toy thik vyet nam",
-  "summary": "Tôi thích Việt Nam means “I like Vietnam”.",
+  "summary": "This is a warm small-talk phrase that still stays practical.",
   "iconName": "bubble.left.and.bubble.right.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi thích Việt Nam when you need \"I like Vietnam\". This is for when the conversation turns to the trip itself. This is a warm small-talk phrase that still stays practical. Listen for a short reply, a smile, a time, or a light follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Reach for it when the conversation turns to the trip itself.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Tôi + thích carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "smalltalk-4-piece-1",
@@ -57,12 +59,13 @@
           "audioKey": "smalltalk-4"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi thích Việt Nam as your first sentence for \"I like Vietnam\". This is for when the conversation turns to the trip itself. Pause after the phrase and listen for a short reply, a smile, a time, or a light follow-up question. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
+      "body": "Say Tôi thích Việt Nam in one connected line before adding details. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
       "phrases": [
         {
           "id": "smalltalk-4",
@@ -75,18 +78,21 @@
           "audioKey": "smalltalk-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Small talk in Vietnamese often becomes warmer when it connects to place, food, or shared experience. For \"I like Vietnam\", Tôi thích Việt Nam makes the next step easier to answer. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
-      "presentation": "plain-text"
+      "body": "Small talk in Vietnamese often becomes warmer when it connects to place, food, or shared experience. Keep the tone warm and leave room for a short reply.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Social Small Talk, the reply often comes as a short reply, a smile, a time, or a light follow-up question. Say Tôi thích Việt Nam once, pause, and watch for the reply. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
+      "body": "Watch for a smile, a time, or light follow-up question. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
       "phrases": [
         {
           "id": "smalltalk-1",
@@ -119,12 +125,13 @@
           "audioKey": "smalltalk-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when the conversation turns to the trip itself. It fits friendly introductions and light local conversation, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
+      "body": "Reach for it when the conversation turns to the trip itself. Watch for a smile, a time, or light follow-up question.",
       "phrases": [
         {
           "id": "smalltalk-5",
@@ -157,13 +164,16 @@
           "audioKey": "smalltalk-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Some social phrases are best after a greeting, not as the very first thing you say to a stranger.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -201,12 +211,13 @@
           "audioKey": "audio-authored-anh-khoe-khong-942769853d"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "nearby-phrases",
       "title": "Useful nearby phrases",
-      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
+      "body": "These nearby cards cover how are you, older woman?; how are you, younger person?",
       "phrases": [
         {
           "id": "how-are-you-chi",
@@ -229,12 +240,13 @@
           "audioKey": "audio-phrase-em-khoe-khong"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover I’m from the United States, I’m from England, and this is my first time.",
       "phrases": [
         {
           "id": "smalltalk-1",
@@ -317,7 +329,8 @@
           "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

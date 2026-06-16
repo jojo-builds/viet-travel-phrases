@@ -7,7 +7,7 @@
   "title": "Tôi có thể đổi phòng được không?",
   "englishTitle": "Can I change rooms?",
   "pronunciation": "Toi co the doi phong duoc khong",
-  "summary": "Can I change rooms?",
+  "summary": "A front-desk phrase for asking to switch rooms without turning the problem into a long speech.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể đổi phòng được không? is for asking permission before you act. It is useful when change rooms depends on local rules, staff approval, or the right way to use a space or service."
+      "body": "Use this when the room is noisy, too hot, smells off, or simply does not match the booking."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có thể đổi phòng được không? once, then make the task visible with your booking screen, room key, address, room number, or photo of the issue. The phrase is doing one job: getting a clear answer about change rooms.",
+      "body": "Say it calmly with the key card or booking open. Add the reason only if they ask.",
       "phrases": [
         {
           "id": "v500-hote-acco-can-i-change-rooms",
@@ -42,18 +42,18 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể asks whether you can; đổi phòng is the room change; được không keeps it polite.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể đổi phòng",
-          "english": "room",
+          "vietnamese": "đổi phòng",
+          "english": "change rooms",
           "audioKey": null
         },
         {
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can I change rooms? to another hotel or stay need.",
+      "body": "Keep the reservation and check-in lines nearby because the desk may ask which booking or room you mean.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when change rooms is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+      "body": "Best at the front desk before the request becomes a complaint. Point to the room number, booking, or key card so the staff can check availability."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Vietnam hotels often solve room issues faster with the room number in view. Start with the change request, then let the staff ask for the reason."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể đổi phòng được không?.",
+      "body": "If they can help, these move into checkout time, a quiet-room request, or checkout logistics.",
       "phrases": [
         {
           "id": "hotel-3",

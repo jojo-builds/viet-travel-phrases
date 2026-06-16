@@ -7,7 +7,7 @@
   "title": "Ứng dụng bản đồ của tôi không hoạt động",
   "englishTitle": "My map app is not working",
   "pronunciation": "Ung dung ban do cua toi khong hoat dong",
-  "summary": "My map app is not working",
+  "summary": "For asking for directions when your map app will not load, locate you, or route correctly.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Ứng dụng bản đồ của tôi không hoạt động names the problem so staff or a helpful local can act on it. Use it when My map app is not working is the clearest way to explain what changed, went missing, or needs attention."
+      "body": "Show the frozen map, address, hotel name, ride screen, or nearby landmark while you say it.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Ứng dụng bản đồ của tôi không hoạt động calmly and show the proof if you have it: map, address, ride screen, sign, or nearby landmark. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Keep the phone open and let the other person point, type, or show a simpler route.",
       "phrases": [
         {
           "id": "v500-dire-navi-my-map-app-is-not-working",
@@ -42,32 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Ứng dụng bản đồ của tôi means my map app; không hoạt động means is not working.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Ứng dụng bản đồ của tôi",
           "english": "my map app",
-          "audioKey": null
+          "keepTogetherReason": "my-map-app phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "không hoạt động",
           "english": "is not working",
-          "audioKey": null
+          "keepTogetherReason": "not-working phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Ứng dụng bản đồ của tôi không hoạt động",
           "english": "My map app is not working",
           "audioKey": "v500-dire-navi-my-map-app-is-not-working"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from My map app is not working to another directions need.",
+      "body": "Excuse-me, how-to-get-there, and near-here cards help when someone can guide you directly.",
       "phrases": [
         {
           "id": "directions-1",
@@ -104,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as soon as the problem is clear enough to name. It is especially useful at a counter or desk where someone can look at the photo, receipt, bag, booking, or phone screen with you."
+      "body": "Good when data drops, GPS is wrong, the route will not load, or the app sends you to the wrong side of a street.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "Once they understand the app problem, switch to where, near-here, turn, or walking-time phrases.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Ứng dụng bản đồ của tôi không hoạt động.",
+      "body": "Turn-left, right, straight, nearby, and walking-time cards cover the route after the map fails.",
       "phrases": [
         {
           "id": "directions-4",

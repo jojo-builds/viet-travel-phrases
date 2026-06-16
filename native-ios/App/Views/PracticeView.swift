@@ -80,18 +80,26 @@ struct PracticeOverlayBackdropOpacityPreferenceKey: PreferenceKey {
 }
 
 enum PracticeMatchHubLayout {
+    static let photoBackdropLaunchScrollSlack: CGFloat = 180
+
     static func topPadding(usesPhotoBackdrop: Bool, topContentClearance: CGFloat) -> CGFloat {
-        let basePadding: CGFloat = usesPhotoBackdrop ? 18 : 22
+        let basePadding: CGFloat = usesPhotoBackdrop ? 0 : 22
         let contentClearance = usesPhotoBackdrop ? 0 : topContentClearance
 
         return basePadding + contentClearance
     }
 
+    static func sectionSpacing(usesPhotoBackdrop: Bool) -> CGFloat {
+        usesPhotoBackdrop ? 10 : 22
+    }
+
     static func bottomContentClearance(usesPhotoBackdrop: Bool) -> CGFloat {
-        AppBottomContentClearance.rootSurface(
+        let baseClearance = AppBottomContentClearance.rootSurface(
             usesPhotoBackdrop: usesPhotoBackdrop,
             standard: HomeLayout.bottomChromeContentClearance
         )
+
+        return usesPhotoBackdrop ? baseClearance + photoBackdropLaunchScrollSlack : baseClearance
     }
 }
 
@@ -4658,7 +4666,7 @@ private struct PracticeMatchRootView: View {
                 .presentationBackgroundInteraction(.disabled)
                 .presentationContentInteraction(.resizes)
                 .onAppear {
-                    nativeRoundSheetDetent = .medium
+                    nativeRoundSheetDetent = activeSession == nil ? .medium : .large
                 }
         }
         .task {
@@ -4685,6 +4693,15 @@ private struct PracticeMatchRootView: View {
         }
         .onChange(of: requestedStartID) { _, _ in
             startRequestedModeIfPossible()
+        }
+        .onChange(of: activeSession?.isRoundComplete) { _, isComplete in
+            guard PracticeMatchPresentationPolicy.usesNativeSystemSheet(for: presentationStyle) else {
+                return
+            }
+
+            withAnimation(.spring(response: 0.28, dampingFraction: 0.86)) {
+                nativeRoundSheetDetent = isComplete == nil ? .medium : .large
+            }
         }
         .onChange(of: scrollToTopTrigger) { _, _ in
             activeSession = nil
@@ -4940,14 +4957,14 @@ private struct PracticeMatchRootView: View {
         }
 
         if PracticeMatchPresentationPolicy.usesNativeSystemSheet(for: presentationStyle) {
-            nativeRoundSheetDetent = .medium
+            nativeRoundSheetDetent = .large
             activeSessionDismissalTarget = dismissalTarget
             activeSession = session
             return
         }
 
         withAnimation(.easeInOut(duration: 0.22)) {
-            nativeRoundSheetDetent = .medium
+            nativeRoundSheetDetent = .large
             activeSessionDismissalTarget = dismissalTarget
             activeSession = session
         }
@@ -5005,7 +5022,7 @@ private struct PracticeMatchRootView: View {
         }
 
         withAnimation(.spring(response: 0.28, dampingFraction: 0.86)) {
-            nativeRoundSheetDetent = .medium
+            nativeRoundSheetDetent = .large
             activeSession = session
         }
     }
@@ -5102,6 +5119,7 @@ private struct PracticeMatchRootView: View {
         }
 
         withAnimation(.easeInOut(duration: 0.22)) {
+            nativeRoundSheetDetent = .large
             activeSession = session
         }
     }
@@ -5240,8 +5258,8 @@ private struct PracticeMatchHubView: View {
     }
 
     private var contentStack: some View {
-        VStack(alignment: .leading, spacing: 22) {
-            PracticeMatchHero()
+        VStack(alignment: .leading, spacing: PracticeMatchHubLayout.sectionSpacing(usesPhotoBackdrop: usesPhotoBackdrop)) {
+            PracticeMatchHero(usesPhotoBackdrop: usesPhotoBackdrop)
 
             switch state {
             case .loading:
@@ -5273,14 +5291,16 @@ private struct PracticeMatchHubView: View {
 }
 
 private struct PracticeMatchHero: View {
+    let usesPhotoBackdrop: Bool
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: usesPhotoBackdrop ? 4 : 12) {
             Text("Practice")
-                .font(.system(size: 42, weight: .black, design: .rounded))
+                .font(.system(size: usesPhotoBackdrop ? 30 : 42, weight: .black, design: .rounded))
                 .foregroundStyle(.primary)
 
             Text("Short matching rounds from the phrasebook.")
-                .font(.title3.weight(.semibold))
+                .font((usesPhotoBackdrop ? Font.subheadline : Font.title3).weight(.semibold))
                 .foregroundStyle(.secondary)
                 .lineLimit(2)
         }
@@ -5318,26 +5338,26 @@ private struct PracticeMatchTopicList: View {
     let onStartSource: (PracticeMatchSource) -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 6) {
             Text("Practice by topic")
-                .font(.title2.weight(.black))
+                .font(.headline.weight(.black))
                 .foregroundStyle(.primary)
 
-            VStack(spacing: 10) {
+            VStack(spacing: 6) {
                 ForEach(sources.filter(\.canStart)) { source in
                     Button {
                         onStartSource(source)
                     } label: {
-                        HStack(spacing: 12) {
-                            PracticeIcon(symbolName: source.symbolName, tint: source.tint, size: 44)
+                        HStack(spacing: 8) {
+                            PracticeIcon(symbolName: source.symbolName, tint: source.tint, size: 36)
 
-                            VStack(alignment: .leading, spacing: 3) {
+                            VStack(alignment: .leading, spacing: 2) {
                                 Text(source.title)
                                     .font(.headline.weight(.bold))
                                     .foregroundStyle(.primary)
 
                                 Text(source.itemCountLabel)
-                                    .font(.subheadline.weight(.semibold))
+                                    .font(.caption.weight(.semibold))
                                     .foregroundStyle(.secondary)
                             }
                             .layoutPriority(1)
@@ -5346,7 +5366,7 @@ private struct PracticeMatchTopicList: View {
                                 .font(.headline.weight(.bold))
                                 .foregroundStyle(.secondary.opacity(0.62))
                         }
-                        .padding(12)
+                        .padding(8)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .phraseListCard(cornerRadius: 18)
                     }
@@ -5456,17 +5476,17 @@ private struct PracticeMatchSavedEmptyCard: View {
     let onBrowseTapped: () -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(spacing: 14) {
-                PracticeIcon(symbolName: "heart.fill", tint: .red, size: 52)
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 10) {
+                PracticeIcon(symbolName: "heart.fill", tint: .red, size: 36)
 
-                VStack(alignment: .leading, spacing: 5) {
+                VStack(alignment: .leading, spacing: 3) {
                     Text("Practice Saved")
                         .font(.headline.weight(.black))
                         .foregroundStyle(.primary)
 
                     Text("Save 4 phrases, foods, or drinks to start a trip round.")
-                        .font(.subheadline.weight(.semibold))
+                        .font(.caption.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }
                 .layoutPriority(1)
@@ -5477,13 +5497,13 @@ private struct PracticeMatchSavedEmptyCard: View {
                     .font(.headline.weight(.bold))
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
-                    .frame(height: 48)
-                    .background(Color.red, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    .frame(height: 38)
+                    .background(Color.red, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             }
             .buttonStyle(.plain)
         }
-        .padding(14)
-        .phraseListCard(cornerRadius: 22)
+        .padding(8)
+        .phraseListCard(cornerRadius: 20)
     }
 }
 
@@ -5513,7 +5533,6 @@ private struct PracticeMatchRoundView: View {
             ) {
                 roundContent(topHandlePadding: 12)
             }
-            .accessibilityIdentifier("Practice.Match.Round")
         } else {
             roundContent(topHandlePadding: max(8, topContentClearance + 8))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
@@ -5523,7 +5542,6 @@ private struct PracticeMatchRoundView: View {
                         isComplete: session.isRoundComplete
                     )
                 }
-                .accessibilityIdentifier("Practice.Match.Round")
         }
     }
 
@@ -5538,6 +5556,7 @@ private struct PracticeMatchRoundView: View {
                     session: session,
                     intentStore: intentStore,
                     topContentClearance: presentationStyle == .route ? topContentClearance : 0,
+                    onClose: onClose,
                     onContinue: onContinue
                 )
                     .background {
@@ -5979,7 +5998,7 @@ private struct PracticeMatchRoundHeader: View {
                             .foregroundStyle(.secondary)
                     }
                     .padding(.horizontal, 12)
-                    .frame(height: 34)
+                    .frame(minWidth: 168, maxWidth: 218, minHeight: 34)
                     .background(PhrasePageStyle.elevatedCardFill, in: Capsule(style: .continuous))
                     .overlay {
                         Capsule(style: .continuous)
@@ -5988,6 +6007,7 @@ private struct PracticeMatchRoundHeader: View {
                     .softAmbientCardShadow()
                 }
                 .buttonStyle(.plain)
+                .layoutPriority(1)
                 .accessibilityLabel("Change practice topic")
                 .accessibilityIdentifier("Practice.Match.TopicPicker")
 
@@ -6204,7 +6224,6 @@ private struct PracticeMatchBoardView: View {
         .frame(height: boardHeight)
         .animation(.spring(response: 0.30, dampingFraction: 0.84), value: session.matchedPairIDs)
         .animation(.easeInOut(duration: 0.18), value: session.hintedPairID)
-        .accessibilityIdentifier("Practice.Match.Board")
     }
 
     private func cardState(_ card: PracticeMatchCard) -> PracticeMatchCardVisualState {
@@ -6627,6 +6646,7 @@ private struct PracticeMatchCompletionView: View {
     let session: PracticeMatchActiveSession
     @ObservedObject var intentStore: LocalUserIntentStore
     let topContentClearance: CGFloat
+    let onClose: () -> Void
     let onContinue: () -> Void
 
     @State private var rewardPulse = false
@@ -6703,12 +6723,30 @@ private struct PracticeMatchCompletionView: View {
             .padding(.bottom, 12)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .overlay(alignment: .topTrailing) {
+            Button(action: onClose) {
+                Image(systemName: "xmark")
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(.primary)
+                    .frame(width: 44, height: 44)
+                    .background(PhrasePageStyle.elevatedCardFill, in: Circle())
+                    .overlay {
+                        Circle()
+                            .stroke(.white.opacity(AppSurfaceDepth.controlStrokeOpacity), lineWidth: 1)
+                    }
+                    .softAmbientCardShadow()
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Close practice")
+            .accessibilityIdentifier("Practice.Match.Complete.Close")
+            .padding(.top, max(16, topContentClearance + 12))
+            .padding(.trailing, 24)
+        }
         .onAppear {
             withAnimation(.spring(response: 0.46, dampingFraction: 0.70).delay(0.04)) {
                 rewardPulse = true
             }
         }
-        .accessibilityIdentifier("Practice.Match.Complete")
     }
 }
 
@@ -6764,14 +6802,16 @@ private struct PracticeMatchCompletionRow: View {
                 Text(pair.item.vietnamese)
                     .font(.subheadline.weight(.bold))
                     .foregroundStyle(.primary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.76)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.72)
+                    .fixedSize(horizontal: false, vertical: true)
 
                 Text(pair.item.english)
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
                     .lineLimit(2)
                     .minimumScaleFactor(0.76)
+                    .fixedSize(horizontal: false, vertical: true)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
 

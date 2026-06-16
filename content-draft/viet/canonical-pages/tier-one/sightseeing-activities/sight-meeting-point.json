@@ -7,7 +7,7 @@
   "title": "Điểm gặp ở đâu?",
   "englishTitle": "Where is the meeting point?",
   "pronunciation": "deeym gap uh dow",
-  "summary": "Điểm gặp ở đâu? means “Where is the meeting point?”",
+  "summary": "This avoids missed tours and pickup confusion.",
   "iconName": "camera.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -18,8 +18,10 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Điểm gặp ở đâu? when you need \"Where is the meeting point\". This comes before a tour, boat, or day trip starts. This avoids missed tours and pickup confusion. Listen for a point, short direction, nearby option, or counter name; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Điểm gặp ở đâu? keeps the direction question short. This comes before a tour, boat, or day trip starts. This avoids missed tours and pickup confusion.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
@@ -45,12 +47,13 @@
           "audioKey": "sight-5"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Điểm gặp ở đâu? as your first sentence for \"Where is the meeting point\". This comes before a tour, boat, or day trip starts. Pause after the phrase and listen for a point, short direction, nearby option, or counter name. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Ask while the ticket, booking, meeting point, map location, or attraction name is still visible, then pause before adding more words.",
       "phrases": [
         {
           "id": "sight-5",
@@ -63,18 +66,21 @@
           "audioKey": "sight-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Sightseeing phrases help staff answer with a point, ticket, time, or location. For \"Where is the meeting point\", Điểm gặp ở đâu? makes the next step easier to answer. If the answer is longer than a point or nearby stop, ask them to show it on your phone.",
-      "presentation": "plain-text"
+      "body": "Sightseeing phrases help staff answer with a point, ticket, time, or location. Keep the ticket, meeting point, map location, or booking visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Sightseeing & Activities, the reply often comes as a point, short direction, nearby option, or counter name. Say Điểm gặp ở đâu? once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Watch for a point, short direction, nearby option, or counter name. Say Điểm gặp ở đâu?",
       "phrases": [
         {
           "id": "sight-1",
@@ -107,12 +113,13 @@
           "audioKey": "sight-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This comes before a tour, boat, or day trip starts. It fits tickets, tours, photos, closing times, and meeting points, especially when the next step is a point, short direction, nearby option, or counter name. If the answer is longer than a point or nearby stop, ask them to show it on your phone.",
+      "body": "This comes before a tour, boat, or day trip starts. Watch for a point, short direction, nearby option, or counter name.",
       "phrases": [
         {
           "id": "sight-4",
@@ -135,13 +142,16 @@
           "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Meeting points and start times are worth confirming twice, especially on busy tours.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -159,12 +169,13 @@
           "audioKey": "sight-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover how much is the ticket?; where do we start?; can I take photos here?",
       "phrases": [
         {
           "id": "sight-1",
@@ -217,7 +228,8 @@
           "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [
