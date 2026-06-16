@@ -1,6 +1,6 @@
 # Latest Validation
 
-Last updated: 2026-06-11
+Last updated: 2026-06-16
 Authority lane: latest durable native iOS validation evidence
 
 ## Use This Doc For
@@ -9,6 +9,34 @@ Authority lane: latest durable native iOS validation evidence
 - what still needs proof after the native-only cleanup
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
+
+## Current Merge Sweep Main Evidence
+
+Current `main` evidence after merging the ready non-paywall lanes, based on head `a8df5ce59`:
+
+- merged `feature/practice-area` into `main` with merge commit `a7497ba97`
+- merged `feature/browse-page` into `main` with merge commit `a8df5ce59`
+- checkpointed included lane work: `6d9e07237` (`Checkpoint practice match polish`) and `597aa4515` (`Checkpoint browse selectable text work`)
+- synced all clean non-paywall feature/codex worktrees to `a8df5ce59`
+- intentionally skipped legacy Messages, archived Messages, old integration lanes, and `feature/paywall`
+- paywall remained excluded; `git cherry -v main feature/paywall` still shows the paywall setup/skeleton commits as unmerged
+- legacy Messages remained excluded; `git cherry -v main feature/messages-section` still shows `04dd789f2` as unmerged
+
+Fresh command evidence from merged `main`:
+
+- `git diff --check` passed
+- `node scripts/guard-native-only.js` passed
+- `node native-ios/scripts/guard-native-chrome.js` passed
+- `xcodegen generate` passed and left `native-ios/SpeakLocalNative.xcodeproj` clean
+- focused simulator test passed: `xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' -only-testing:SpeakLocalNativeTests/AppChromeTests/testCategoryPracticeEntryCopyDescribesMatchPractice -only-testing:SpeakLocalNativeTests/PracticeNativeMVPTests/testEveryLoadedMatchSourceCanAdvancePastFirstCompletedRound test`
+
+Physical iPhone proof from current `main`:
+
+- Debug build from `main` commit `a8df5ce59` passed with local-only signing overrides
+- install to the connected physical iPhone passed for bundle `app.speaklocal.vietnam.native`
+- launch was blocked because the iPhone was locked; iOS returned the locked-device launch denial after install succeeded
+- post-build signing scan passed; repo signing files stayed clean
+- `git status --short native-ios/project.yml native-ios/SpeakLocalNative.xcodeproj/project.pbxproj` returned no changes after the build
 
 ## Current Phrase Copy Production Gate Main Evidence
 

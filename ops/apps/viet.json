@@ -7,16 +7,16 @@
   "stage": "live",
   "testingGates": {
     "localValidation": {
-      "status": "pending",
+      "status": "passed",
       "evidenceRef": "docs/operations/LATEST_VALIDATION.md"
     },
     "previewBuild": {
-      "status": "pending",
-      "evidenceRef": "docs/operations/APP_STATUS.md"
+      "status": "passed",
+      "evidenceRef": "docs/operations/LATEST_VALIDATION.md"
     },
     "previewInstall": {
-      "status": "pending",
-      "evidenceRef": "docs/operations/APP_STATUS.md"
+      "status": "passed",
+      "evidenceRef": "docs/operations/LATEST_VALIDATION.md"
     },
     "runtimeManualSmoke": {
       "status": "pending",
@@ -29,11 +29,11 @@
   },
   "hardBlock": {
     "active": true,
-    "type": "device-proof",
+    "type": "device-launch-proof",
     "owner": "user",
     "system": "Native iOS device testing",
-    "detail": "After the native-only cleanup, the current app needs a fresh native build/install proof from main on Jojo's iPhone. Paywall/StoreKit proof remains intentionally separate until that feature branch is approved.",
-    "nextHumanAction": "Build main from native-ios onto the connected iPhone, then test the current accepted app surfaces."
+    "detail": "Current main built and installed on Jojo's iPhone from commit a8df5ce59, but remote launch was blocked because the phone was locked. Paywall/StoreKit proof remains intentionally separate until that feature branch is approved.",
+    "nextHumanAction": "Unlock the iPhone and open SpeakLocal, or rerun the native iOS device build/launch helper after unlock, then test the current accepted app surfaces."
   },
   "contentReadiness": "native-viet-resources-bundled",
   "audioReadiness": "native-audio-manifest-bundled",
@@ -48,9 +48,9 @@
   ],
   "featureIntakeStatus": "active",
   "releaseStatus": "live",
-  "blockerTag": "blocked:human",
-  "blockerDetail": "Fresh native device proof is needed after merging the native-only cleanup.",
-  "nextStep": "Use the native iOS device build workflow from main.",
+  "blockerTag": "blocked:device-locked",
+  "blockerDetail": "Build/install proof is fresh for current main, but launch/manual walkthrough proof is still pending because the phone was locked.",
+  "nextStep": "Unlock the iPhone and open SpeakLocal, or rerun the device launch/build helper after unlock.",
   "sessionRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
-  "lastValidatedAt": "2026-05-13"
+  "lastValidatedAt": "2026-06-16"
 }
