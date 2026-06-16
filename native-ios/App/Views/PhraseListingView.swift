@@ -623,7 +623,8 @@ struct PhraseArticleTemplateView: View {
                     morphPageID: morphPageID,
                     morphNamespace: chromeNamespace,
                     isMorphActive: false,
-                    isMorphSource: false
+                    isMorphSource: false,
+                    allowsTextSelection: true
                 )
 
                 if shouldShowHeroPlaybackDock {
@@ -750,7 +751,8 @@ struct PhraseArticleTemplateView: View {
                     morphPageID: morphPageID,
                     morphNamespace: chromeNamespace,
                     isMorphActive: usesHomePhraseHeroMorph,
-                    isMorphSource: false
+                    isMorphSource: false,
+                    allowsTextSelection: true
                 )
                 .zIndex(usesHomePhraseHeroMorph ? 4 : 0)
 
@@ -1698,11 +1700,7 @@ private struct ArticleSectionView: View {
     private var relationshipShelfSection: some View {
         SectionBlock(title: section.title, leadIn: sectionLeadIn(when: !section.phrases.isEmpty)) {
             if section.phrases.isEmpty {
-                Text(section.body)
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                    .lineSpacing(3)
-                    .fixedSize(horizontal: false, vertical: true)
+                SelectableBodyText(text: section.body)
             } else {
                 GeometryReader { proxy in
                     let groupWidth = max(260, min(326, proxy.size.width - 42))
@@ -1731,11 +1729,7 @@ private struct ArticleSectionView: View {
     private var phraseListSection: some View {
         SectionBlock(title: section.title, leadIn: sectionLeadIn(when: !section.phrases.isEmpty)) {
             if section.phrases.isEmpty {
-                Text(section.body)
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                    .lineSpacing(3)
-                    .fixedSize(horizontal: false, vertical: true)
+                SelectableBodyText(text: section.body)
             } else {
                 VStack(spacing: 0) {
                     ForEach(section.phrases) { phrase in
@@ -1759,11 +1753,7 @@ private struct ArticleSectionView: View {
     private var horizontalCardsSection: some View {
         SectionBlock(title: section.title, leadIn: sectionLeadIn(when: !section.phrases.isEmpty)) {
             if section.phrases.isEmpty {
-                Text(section.body)
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                    .lineSpacing(3)
-                    .fixedSize(horizontal: false, vertical: true)
+                SelectableBodyText(text: section.body)
             } else {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
@@ -1786,11 +1776,7 @@ private struct ArticleSectionView: View {
     private var breakdownSection: some View {
         SectionBlock(title: section.title, leadIn: sectionLeadIn(when: !section.breakdown.isEmpty)) {
             if section.breakdown.isEmpty {
-                Text(section.body)
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                    .lineSpacing(3)
-                    .fixedSize(horizontal: false, vertical: true)
+                SelectableBodyText(text: section.body)
             } else {
                 BreakdownView(tokens: section.breakdown)
             }
@@ -1800,11 +1786,7 @@ private struct ArticleSectionView: View {
     private var menuChipsSection: some View {
         SectionBlock(title: section.title, leadIn: sectionLeadIn(when: !section.chips.isEmpty)) {
             if section.chips.isEmpty {
-                Text(section.body)
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                    .lineSpacing(3)
-                    .fixedSize(horizontal: false, vertical: true)
+                SelectableBodyText(text: section.body)
             } else {
                 MenuChipFlow(chips: section.chips, sectionID: section.id)
             }
@@ -2047,11 +2029,11 @@ private struct ArticleCallout: View {
                     .font(.headline.weight(.bold))
                     .foregroundStyle(.primary)
 
-                Text(text)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    .lineSpacing(2)
-                    .fixedSize(horizontal: false, vertical: true)
+                SelectableBodyText(
+                    text: text,
+                    textStyle: .subheadline,
+                    lineSpacing: 2
+                )
             }
         }
         .padding(16)
@@ -2069,7 +2051,11 @@ private struct DefinedBodyText: View {
     @State private var selectedDefinition: PhraseInlineDefinition?
 
     var body: some View {
-        Text(attributedText)
+        SelectableBodyText(
+            text: text,
+            definitions: definitions,
+            onOpenDefinition: { selectedDefinition = $0 }
+        )
             .contentShape(Rectangle())
             .onTapGesture {
                 if definitions.count == 1 {
@@ -2093,23 +2079,6 @@ private struct DefinedBodyText: View {
             }
     }
 
-    private var attributedText: AttributedString {
-        var attributed = AttributedString(text)
-        for definition in definitions {
-            var searchStart = attributed.startIndex
-            while let range = attributed[searchStart...].range(
-                of: definition.vietnamese,
-                options: [.caseInsensitive, .diacriticInsensitive]
-            ) {
-                attributed[range].foregroundColor = .red
-                attributed[range].font = .body.weight(.semibold)
-                attributed[range].underlineStyle = Text.LineStyle(pattern: .dot)
-                attributed[range].underlineColor = UIColor.systemRed.withAlphaComponent(0.75)
-                searchStart = range.upperBound
-            }
-        }
-        return attributed
-    }
 }
 
 private struct DefinitionPopover: View {
@@ -2198,11 +2167,11 @@ private struct SectionLeadIn: View {
     let text: String
 
     var body: some View {
-        Text(text)
-            .font(.subheadline)
-            .foregroundStyle(.secondary)
-            .lineSpacing(2)
-            .fixedSize(horizontal: false, vertical: true)
+        SelectableBodyText(
+            text: text,
+            textStyle: .subheadline,
+            lineSpacing: 2
+        )
     }
 }
 
@@ -2542,10 +2511,11 @@ private struct CulturalNote: View {
                 Text("Cultural note")
                     .font(.headline.weight(.bold))
                     .foregroundStyle(.primary)
-                Text(text)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    .lineSpacing(2)
+                SelectableBodyText(
+                    text: text,
+                    textStyle: .subheadline,
+                    lineSpacing: 2
+                )
             }
         }
         .padding(16)

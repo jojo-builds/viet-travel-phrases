@@ -252,9 +252,6 @@ private struct DetailSectionCard: View {
                 .font(.headline.weight(.bold))
 
             DetailDefinedBodyText(text: section.body, definitions: section.inlineDefinitions)
-                .font(.body)
-                .foregroundStyle(.secondary)
-                .lineSpacing(3)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
@@ -268,7 +265,11 @@ private struct DetailDefinedBodyText: View {
     @State private var selectedDefinition: PhraseInlineDefinition?
 
     var body: some View {
-        Text(attributedText)
+        SelectableBodyText(
+            text: text,
+            definitions: definitions,
+            onOpenDefinition: { selectedDefinition = $0 }
+        )
             .contentShape(Rectangle())
             .onTapGesture {
                 if definitions.count == 1 {
@@ -292,23 +293,6 @@ private struct DetailDefinedBodyText: View {
             }
     }
 
-    private var attributedText: AttributedString {
-        var attributed = AttributedString(text)
-        for definition in definitions {
-            var searchStart = attributed.startIndex
-            while let range = attributed[searchStart...].range(
-                of: definition.vietnamese,
-                options: [.caseInsensitive, .diacriticInsensitive]
-            ) {
-                attributed[range].foregroundColor = .red
-                attributed[range].font = .body.weight(.semibold)
-                attributed[range].underlineStyle = Text.LineStyle(pattern: .dot)
-                attributed[range].underlineColor = UIColor.systemRed.withAlphaComponent(0.75)
-                searchStart = range.upperBound
-            }
-        }
-        return attributed
-    }
 }
 
 private struct DetailDefinitionPopover: View {
@@ -339,11 +323,11 @@ private struct DetailPhraseListSection: View {
                 .font(.headline.weight(.bold))
 
             if !section.body.isEmpty {
-                Text(section.body)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    .lineSpacing(2)
-                    .fixedSize(horizontal: false, vertical: true)
+                SelectableBodyText(
+                    text: section.body,
+                    textStyle: .subheadline,
+                    lineSpacing: 2
+                )
             }
 
             VStack(spacing: 0) {
@@ -370,11 +354,11 @@ private struct DetailBreakdownSection: View {
                 .font(.headline.weight(.bold))
 
             if !section.body.isEmpty {
-                Text(section.body)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    .lineSpacing(2)
-                    .fixedSize(horizontal: false, vertical: true)
+                SelectableBodyText(
+                    text: section.body,
+                    textStyle: .subheadline,
+                    lineSpacing: 2
+                )
             }
 
             BreakdownView(tokens: section.breakdown)

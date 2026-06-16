@@ -5,7 +5,6 @@ struct SpeakLocalNativeApp: App {
     var body: some Scene {
         WindowGroup {
             AppShellView()
-                .textSelection(.enabled)
         }
     }
 }
