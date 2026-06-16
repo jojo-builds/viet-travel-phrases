@@ -20,7 +20,7 @@ Use this doc for blocker state only. Use `TESTING_RUNBOOK.md` for native validat
    - Do not claim perfect same-speaker uniformity unless a fresh native audio-quality pass proves it.
 
 4. Fresh launch/manual walkthrough proof is still waiting on an unlocked iPhone.
-   - Current `main` commit `a8df5ce59` built and installed successfully on the connected physical iPhone.
+   - Current `main` built and installed successfully on the connected physical iPhone; native app code matched merge payload `a8df5ce59`.
    - Remote launch was refused by iOS because the phone was locked.
    - Unlock the phone and open SpeakLocal, or rerun the launch/build helper after unlock, before claiming a current launch/manual walkthrough pass.
 

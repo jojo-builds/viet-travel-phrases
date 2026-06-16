@@ -32,7 +32,7 @@
     "type": "device-launch-proof",
     "owner": "user",
     "system": "Native iOS device testing",
-    "detail": "Current main built and installed on Jojo's iPhone from commit a8df5ce59, but remote launch was blocked because the phone was locked. Paywall/StoreKit proof remains intentionally separate until that feature branch is approved.",
+    "detail": "Current main built and installed on Jojo's iPhone with native app-code payload a8df5ce59, but remote launch was blocked because the phone was locked. Paywall/StoreKit proof remains intentionally separate until that feature branch is approved.",
     "nextHumanAction": "Unlock the iPhone and open SpeakLocal, or rerun the native iOS device build/launch helper after unlock, then test the current accepted app surfaces."
   },
   "contentReadiness": "native-viet-resources-bundled",

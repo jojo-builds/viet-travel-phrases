@@ -12,7 +12,7 @@ Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCK
 
 ## Current Merge Sweep Main Evidence
 
-Current `main` evidence after merging the ready non-paywall lanes, based on head `a8df5ce59`:
+Current `main` app-code evidence after merging the ready non-paywall lanes, based on app-code merge head `a8df5ce59`:
 
 - merged `feature/practice-area` into `main` with merge commit `a7497ba97`
 - merged `feature/browse-page` into `main` with merge commit `a8df5ce59`
@@ -30,9 +30,9 @@ Fresh command evidence from merged `main`:
 - `xcodegen generate` passed and left `native-ios/SpeakLocalNative.xcodeproj` clean
 - focused simulator test passed: `xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' -only-testing:SpeakLocalNativeTests/AppChromeTests/testCategoryPracticeEntryCopyDescribesMatchPractice -only-testing:SpeakLocalNativeTests/PracticeNativeMVPTests/testEveryLoadedMatchSourceCanAdvancePastFirstCompletedRound test`
 
-Physical iPhone proof from current `main`:
+Physical iPhone proof for this app-code payload:
 
-- Debug build from `main` commit `a8df5ce59` passed with local-only signing overrides
+- Debug build from current `main` passed with local-only signing overrides; native app code matched merge payload `a8df5ce59`
 - install to the connected physical iPhone passed for bundle `app.speaklocal.vietnam.native`
 - launch was blocked because the iPhone was locked; iOS returned the locked-device launch denial after install succeeded
 - post-build signing scan passed; repo signing files stayed clean
