@@ -507,7 +507,7 @@ final class BrowseSearchUITests: XCTestCase {
         )
     }
 
-    func testPhrasePlaceAndFoodTextCanBeCopiedFromVisibleText() {
+    func testDetailHeroAndParagraphTextCanBeCopiedWithoutRootWideSelection() {
         assertVisibleTextOffersCopy(
             title: "Chào anh",
             launchArguments: ["--detail-page", "viet-phrase-hello-chao-anh"]
@@ -519,6 +519,10 @@ final class BrowseSearchUITests: XCTestCase {
         assertVisibleTextOffersCopy(
             title: "Phở bò",
             launchArguments: ["--detail-page", "viet-menu-food-pho-bo"]
+        )
+        assertVisibleTextOffersCopy(
+            title: "A warm greeting for a slightly older man or adult male helper.",
+            launchArguments: ["--detail-page", "viet-phrase-hello-chao-anh"]
         )
     }
 
@@ -1440,7 +1444,7 @@ final class BrowseSearchUITests: XCTestCase {
         line: UInt = #line
     ) {
         let app = launchApp(arguments: launchArguments)
-        let text = app.staticTexts[title].firstMatch
+        let text = visibleTextElement(title, in: app)
 
         XCTAssertTrue(text.waitForExistence(timeout: 5), "\(title) should render before checking copy affordance.", file: file, line: line)
         text.press(forDuration: 1.1)
@@ -1462,6 +1466,27 @@ final class BrowseSearchUITests: XCTestCase {
         }
 
         return app.buttons["Copy"]
+    }
+
+    private func visibleTextElement(_ title: String, in app: XCUIApplication) -> XCUIElement {
+        let staticText = app.staticTexts[title].firstMatch
+        if staticText.exists {
+            return staticText
+        }
+
+        let exactPredicate = NSPredicate(format: "label == %@", title)
+        let matchingTextView = app.textViews.matching(exactPredicate).firstMatch
+        if matchingTextView.exists {
+            return matchingTextView
+        }
+
+        let containsPredicate = NSPredicate(format: "label CONTAINS[c] %@", title)
+        let textView = app.textViews.matching(containsPredicate).firstMatch
+        if textView.exists {
+            return textView
+        }
+
+        return app.descendants(matching: .any).matching(containsPredicate).firstMatch
     }
 
     private func tapCityNounHeroMasthead(_ app: XCUIApplication) {

@@ -132,6 +132,7 @@ struct PhraseHeroCopyStack: View {
     var morphNamespace: Namespace.ID? = nil
     var isMorphActive = false
     var isMorphSource = false
+    var allowsTextSelection = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -172,6 +173,7 @@ struct PhraseHeroCopyStack: View {
             isSource: isMorphSource,
             anchor: .topLeading
         )
+        .phraseHeroTextSelection(allowsTextSelection)
     }
 
     private var morphID: String {
@@ -179,6 +181,17 @@ struct PhraseHeroCopyStack: View {
             return ""
         }
         return HomePhraseHeroMorphID.copyStack(morphPageID)
+    }
+}
+
+private extension View {
+    @ViewBuilder
+    func phraseHeroTextSelection(_ isEnabled: Bool) -> some View {
+        if isEnabled {
+            textSelection(.enabled)
+        } else {
+            textSelection(.disabled)
+        }
     }
 }
 
