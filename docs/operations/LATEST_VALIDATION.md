@@ -10,12 +10,31 @@ Authority lane: latest durable native iOS validation evidence
 
 Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCKERS.md`, `TESTING_RUNBOOK.md`, and `IOS_DEVICE_BUILDING.md` own the current handoff path.
 
-## Current Main Merge Proof
+## Current Main Proof
 
-Current `main` head `470016d3e` after the 2026-07-05 non-paywall launch-readiness checkpoint and real-traveler Browse-back merge:
+Current `main` app-code payload after the 2026-07-05 three-hour parallel launch-readiness push:
+
+- merged stale photo-backdrop route/back hardening as `2834a52af`
+- merged rapid audio tap stabilization as `48c608b92`
+- committed active playback stress hardening as `4f6462906`
+- follow-up local UI-test harness change aligns the Drink Menu row-audio stress path with the real Coffee-section route; it does not change shipped app runtime behavior
+- `AudioTapReliabilityUITests/testRowAudioButtonsStayResponsiveAcrossSearchMenuAndSaved` passed after the harness fix: `1` test, `0` failures, result bundle `/tmp/speaklocal-audio-harness-single-1783255528.xcresult`
+- full `AudioTapReliabilityUITests` passed after the harness fix: `2` tests, `0` failures, result bundle `/tmp/speaklocal-audio-harness-class-1783255691.xcresult`
+- fresh focused UI rerun after correcting stale `only-testing` selectors passed in two commands: `4` tests + `5` tests, `9` unique tests total, `0` failures across audio reliability, Browse detail back restore, fast double-back restore, Search category/city handoffs, Hoi An Browse-by jump, city top-admin clearance, and Practice saved match sheet
+- current `main` built and installed on Jojo's active physical iPhone; launch was blocked because the phone was locked
+- fallback simulator launch proof passed for current `main`
+- App Store screenshot proof captured seven Pro Max screenshots at `1320x2868` under `docs/task-results/parallel-goals-2026-07-05/three-hour-push/app-store-screenshot-proof/`
+- static audio release audit found no launch-blocking audio defect: required validators passed, no broken manifest references, no zero-duration bundled audio files, and `Không cay` is covered
+- signing hygiene stayed clean: no tracked changes to `native-ios/project.yml` or the native Xcode project signing files
+- `feature/paywall` remains excluded from `main`; it has green hosted StoreKit/XCTest readiness at commit `453d6f55a`, but still needs real purchase/restore/relaunch proof before merge
+
+## Prior 2026-07-05 Main Merge Proof
+
+App-code payload after the 2026-07-05 non-paywall launch-readiness checkpoint and real-traveler Browse-back merge:
 
 - committed the non-paywall launch-readiness checkpoint as `7b63e4fd7`
 - merged `feature/real-traveler-walkthrough-20260705` into `main`; final merge head is `470016d3e`
+- later docs/marketing commits may sit on top of that app-code payload without changing the native binary inputs
 - user-facing merge addition: Browse root now remounts/resets safely after a detail -> collection -> Browse back chain, preserving the newer detail-aware reset guard from `main`
 - `git diff --check` passed
 - `node scripts/guard-native-only.js` passed
@@ -25,7 +44,8 @@ Current `main` head `470016d3e` after the 2026-07-05 non-paywall launch-readines
 - `node native-ios/scripts/validate-tier-one-listing-pages.js` passed: `150` strong, `0` thin/awkward/placeholder
 - `node native-ios/scripts/validate-vietnamese-menu-copy.js` passed: `355` handwritten menu item pages and `15` ready helper phrases
 - XcodeBuildMCP simulator regression passed on final `main`: `BrowseSearchUITests/testBackFromBrowseDetailRestoresBrowseRootContent`, `1` test, `0` failures
-- physical iPhone build/install/launch proof for this exact head is pending because device tooling reported no available paired iPhone during the latest attempt
+- physical iPhone build/install/launch proof for the latest `main` checkout remains pending because device tooling reported no available paired iPhone during the latest attempts
+- fallback Simulator proof for app-equivalent head `b101ed419` passed on 2026-07-05: XcodeBuildMCP built, installed, and launched `SpeakLocalNative` on `SpeakLocal Launch Runtime`, with screenshot proof in `docs/task-results/parallel-goals-2026-07-05/three-hour-push/phone-device-simulator-home-b101ed419.jpg`
 - signing hygiene stayed clean: no tracked changes to `native-ios/project.yml` or the native Xcode project signing files
 - `feature/paywall` was synced forward to current `main` in paywall commit `9fcdf217a`, but paywall remains excluded from `main`
 

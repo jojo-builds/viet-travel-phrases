@@ -43,6 +43,8 @@ final class AudioTapReliabilityUITests: XCTestCase {
         verifyRowAudioButton(
             launchArguments: ["--browse-category", "vietnamese-drink-menu"],
             readyText: "Drink Menu",
+            sectionRailIdentifier: "VietnameseMenu.SectionRail.coffee",
+            sectionReadyIdentifier: "VietnameseMenu.SectionTitle.coffee",
             audioIdentifier: "VietnameseMenu.Audio.viet-menu-drink-ca-phe-sua-da",
             fallbackLabel: "Play phrase audio",
             stableText: "Drink Menu",
@@ -90,6 +92,8 @@ final class AudioTapReliabilityUITests: XCTestCase {
     private func verifyRowAudioButton(
         launchArguments: [String],
         readyText: String,
+        sectionRailIdentifier: String? = nil,
+        sectionReadyIdentifier: String? = nil,
         audioIdentifier: String,
         fallbackLabel: String,
         stableText: String,
@@ -102,6 +106,25 @@ final class AudioTapReliabilityUITests: XCTestCase {
         app.launch()
 
         XCTAssertTrue(app.staticTexts[readyText].waitForExistence(timeout: 5), file: file, line: line)
+
+        if let sectionRailIdentifier {
+            let sectionRail = makeElementHittable(
+                primary: app.buttons[sectionRailIdentifier],
+                fallback: app.descendants(matching: .any)[sectionRailIdentifier],
+                app: app,
+                file: file,
+                line: line
+            )
+            sectionRail.tap()
+
+            if let sectionReadyIdentifier {
+                XCTAssertTrue(
+                    app.staticTexts[sectionReadyIdentifier].waitForExistence(timeout: 3),
+                    file: file,
+                    line: line
+                )
+            }
+        }
 
         let audioButton = makeElementHittable(
             primary: app.descendants(matching: .any)[audioIdentifier],
