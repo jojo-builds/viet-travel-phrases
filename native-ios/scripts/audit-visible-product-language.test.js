@@ -36,6 +36,13 @@ test("visible product language audit catches retired Messages labels in Swift UI
       "",
     ].join("\n"),
   );
+  fs.writeFileSync(
+    path.join(fixtureRoot, "GeneratedResource.json"),
+    JSON.stringify({
+      title: "Practice moments",
+      body: "This generated copy should not say Quick conversations or hotel messages.",
+    }, null, 2),
+  );
 
   const result = spawnSync(process.execPath, [scriptPath, "--root", fixtureRoot], {
     cwd: path.resolve(__dirname, "../.."),
@@ -52,5 +59,6 @@ test("visible product language audit catches retired Messages labels in Swift UI
   assert.match(result.stdout, /Mark Unread/);
   assert.match(result.stdout, /Open thread/);
   assert.match(result.stdout, /hotel messages/);
+  assert.match(result.stdout, /GeneratedResource\.json/);
   assert.doesNotMatch(result.stdout, /Simple ways to start speaking/);
 });

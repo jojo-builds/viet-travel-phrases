@@ -28,6 +28,12 @@ Use this doc for blocker state only. Use `TESTING_RUNBOOK.md` for native validat
    - The 2026-07-05 static audio release audit found no launch-blocking audio defect, no broken manifest references, no zero-duration bundled audio, and confirmed `Không cay` coverage.
    - This is no longer a known missing-audio blocker, but do not claim perfect pronunciation or same-speaker uniformity until a fresh native audio-quality/listen pass proves it.
 
+5. Unique city/place hero image completion is still open if Jojo requires page-specific owned photos for every approved city/place page before launch.
+   - Current runtime is not known to render blank hero areas for the 20 affected pages; they use bundled shared city fallback heroes on `main`.
+   - Normal active hero validation and the full V2.2 render proof pass for current `main`.
+   - The stricter completion gate `node native-ios/scripts/validate-viet-hero-image-assets.js --require-unique-city-place-assets` still fails because 20 target page-specific imagesets are missing and are not present in the current generation manifest.
+   - Treat this as a media-completion decision, not something to patch with cheap placeholder imagery. Current report: `docs/task-results/frontend-qa-2026-07-05/eight-hour-audit/hero-image-strict-gate-followup.md`.
+
 ## Resolved Current Gates
 
 - Front-end QA bug hunt completed for the current non-paywall native app payload.
@@ -63,4 +69,4 @@ Use this doc for blocker state only. Use `TESTING_RUNBOOK.md` for native validat
 - React Native/Metro preview issues are no longer product blockers because that app shell is no longer active.
 - Physical iPhone setup/provisioning was proven on Jojo's replacement/new active phone at `07a2db5d8`; exact-current `main` phone proof is tracked above because the latest device attempt built and installed but could not launch while the phone was locked.
 - Non-paywall frontend QA has a fresh full-UI simulator pass and phone proof; remaining paywall/StoreKit work is intentionally outside this payload.
-- Hero image asset validation passed in the 2026-05-18 merge sweep with the strict unique city-place asset gate.
+- Normal hero image asset validation passes for the current runtime-referenced hero names. The stricter unique city/place image completion gate is tracked above because it now exposes 20 still-shared city fallback heroes.

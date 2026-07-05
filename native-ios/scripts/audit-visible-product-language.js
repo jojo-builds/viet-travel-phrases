@@ -5,6 +5,14 @@ const path = require("path");
 
 const repoRoot = path.resolve(__dirname, "../..");
 const defaultRoot = path.join(repoRoot, "native-ios", "App");
+const defaultSourceBackedRoots = [
+  defaultRoot,
+  path.join(repoRoot, "native-ios", "Resources", "viet-authored-listing-pages.json"),
+  path.join(repoRoot, "native-ios", "Resources", "viet-phrase-catalog.json"),
+  path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json"),
+  path.join(repoRoot, "content-draft", "viet", "city-library", "app-detail-v2-2"),
+  path.join(repoRoot, "content-draft", "viet", "search-only-surfacing-v1.json"),
+];
 
 const retiredVisiblePhrases = [
   "Quick conversations",
@@ -59,28 +67,47 @@ function parseArgs(argv) {
   return args;
 }
 
-function swiftFiles(root) {
+function shouldSkipPath(current) {
+  const entry = path.basename(current);
+  return entry === "artifacts"
+    || entry.startsWith("DerivedData")
+    || entry === "v22-render-proof-screenshots";
+}
+
+function filesWithExtensions(root, extensions) {
   const results = [];
+  if (!fs.existsSync(root)) {
+    return results;
+  }
 
   function visit(current) {
+    if (shouldSkipPath(current)) {
+      return;
+    }
+
     const stat = fs.statSync(current);
     if (stat.isDirectory()) {
       for (const entry of fs.readdirSync(current)) {
-        if (entry === "artifacts" || entry === "DerivedData-main") {
-          continue;
-        }
         visit(path.join(current, entry));
       }
       return;
     }
 
-    if (current.endsWith(".swift")) {
+    if (extensions.some((extension) => current.endsWith(extension))) {
       results.push(current);
     }
   }
 
   visit(root);
   return results;
+}
+
+function swiftFiles(root) {
+  return filesWithExtensions(root, [".swift"]);
+}
+
+function sourceBackedFiles(root) {
+  return filesWithExtensions(root, [".swift", ".json", ".csv"]);
 }
 
 function lineNumber(source, index) {
@@ -133,7 +160,7 @@ function auditSourceBackedCopy(filePath, source) {
 
 function auditFile(filePath) {
   const source = fs.readFileSync(filePath, "utf8");
-  const findings = auditSourceBackedCopy(filePath, source);
+  const findings = [];
 
   for (const pattern of visibleLiteralPatterns) {
     pattern.lastIndex = 0;
@@ -157,8 +184,42 @@ function auditFile(filePath) {
   return findings;
 }
 
-function auditVisibleProductLanguage(root = defaultRoot) {
-  return swiftFiles(root).flatMap(auditFile);
+function uniqueFindings(findings) {
+  const seen = new Set();
+  return findings.filter((finding) => {
+    const key = `${finding.filePath}:${finding.line}:${finding.value}:${finding.reason}`;
+    if (seen.has(key)) {
+      return false;
+    }
+    seen.add(key);
+    return true;
+  });
+}
+
+function auditVisibleProductLanguage(root = null) {
+  const roots = root ? [root] : defaultSourceBackedRoots;
+  const findings = [];
+  const visibleSwiftFiles = new Set();
+  const sourceFiles = new Set();
+
+  for (const auditRoot of roots) {
+    for (const filePath of swiftFiles(auditRoot)) {
+      visibleSwiftFiles.add(filePath);
+    }
+    for (const filePath of sourceBackedFiles(auditRoot)) {
+      sourceFiles.add(filePath);
+    }
+  }
+
+  for (const filePath of visibleSwiftFiles) {
+    findings.push(...auditFile(filePath));
+  }
+
+  for (const filePath of sourceFiles) {
+    findings.push(...auditSourceBackedCopy(filePath, fs.readFileSync(filePath, "utf8")));
+  }
+
+  return uniqueFindings(findings);
 }
 
 function main() {

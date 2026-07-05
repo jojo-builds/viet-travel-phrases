@@ -79,3 +79,9 @@ Additional test-harness cleanup on 2026-07-06:
 - The identifiers now use `Practice.Scenarios.*` and `BrowseCollection.PracticeMoments.*`; the user-facing labels did not change.
 - Validation: `node native-ios/scripts/audit-visible-product-language.js`, `node --test native-ios/scripts/audit-visible-product-language.test.js`, exact old-identifier `rg` scan, `git diff --check`, a Swift parse pass over the modified Swift files, and a focused native Xcode rerun all passed.
 - The first focused native Xcode rerun was blocked by local disk pressure with an asset-catalog `Failed to write to CAR` build-cache error. After clearing generated `/tmp` result bundles, the focused rerun passed `3` tests with `0` failures: `AppChromeTests/testBrowseTopLevelGreetingCardsHaveDistinctJobs`, `AppChromeTests/testBrowseCollectionDescriptorsExposeStarterRowsAndMessagePolicy`, and `PracticeScenarioModeTests/testMessagesUseShortSituationNamesAndUnreadPreviews`.
+
+Additional source-backed audit hardening on 2026-07-06:
+- The visible-language audit now scans active generated/native resource inputs for exact retired multiword labels, not just direct SwiftUI literals.
+- Covered active source-backed roots include `native-ios/Resources/viet-authored-listing-pages.json`, `native-ios/Resources/viet-phrase-catalog.json`, `content-draft/viet/city-library/v1.json`, V2.2 city detail JSON, and `content-draft/viet/search-only-surfacing-v1.json`.
+- The unit test now proves a generated JSON fixture containing `Quick conversations` and `hotel messages` fails the audit.
+- Fresh validation passed: `node native-ios/scripts/audit-visible-product-language.js`, `node --test native-ios/scripts/audit-visible-product-language.test.js`, and `git diff --check`.
