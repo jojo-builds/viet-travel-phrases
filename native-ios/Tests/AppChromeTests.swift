@@ -454,6 +454,28 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPhotoBackdropImmersiveStateDoesNotSurviveBackToBrowseCollection() {
+        let detailContext = PhrasePhotoBackdropImmersiveImageContext(
+            pageID: "viet-family-food-coffee-black",
+            imageName: "BackdropPhraseCoffeeCounter",
+            viewportSize: CGSize(width: 393, height: 852),
+            safeAreaTop: 59,
+            safeAreaBottom: 34,
+            imageFrameHeight: 1046,
+            verticalFocusOffset: 0
+        )
+
+        XCTAssertTrue(
+            AppShellPhotoBackdropImmersivePolicy.context(detailContext, matches: .detailPage("viet-family-food-coffee-black"))
+        )
+        XCTAssertNil(
+            AppShellPhotoBackdropImmersivePolicy.acceptedContext(detailContext, on: .browseCollection(.category("food")))
+        )
+        XCTAssertFalse(
+            AppShellPhotoBackdropImmersivePolicy.acceptsHiddenChrome(true, on: .browseCollection(.category("food")))
+        )
+    }
+
     func testPhotoBackdropContentFoundationStartsAtVisibleSheetTop() {
         let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
         let visibleSheetTop = max(metrics.collapsedContentTop - metrics.initialAnchorOffset, 0)
