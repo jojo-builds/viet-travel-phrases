@@ -46,4 +46,27 @@ enum SubscriptionAccessDecision {
 struct CachedSubscriptionAccess: Codable, Equatable {
     let productID: String
     let unlockedAt: Date
+    let expiresAt: Date?
+
+    init(
+        productID: String,
+        unlockedAt: Date,
+        expiresAt: Date? = nil
+    ) {
+        self.productID = productID
+        self.unlockedAt = unlockedAt
+        self.expiresAt = expiresAt
+    }
+
+    func isUsable(now: Date = Date()) -> Bool {
+        guard productID == SubscriptionProduct.monthlyProductID else {
+            return false
+        }
+
+        guard let expiresAt else {
+            return true
+        }
+
+        return expiresAt > now
+    }
 }

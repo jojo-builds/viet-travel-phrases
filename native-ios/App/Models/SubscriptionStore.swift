@@ -28,6 +28,10 @@ final class SubscriptionStore: ObservableObject {
         return try? JSONDecoder().decode(CachedSubscriptionAccess.self, from: data)
     }
 
+    var hasUsableCachedAccess: Bool {
+        cachedAccess?.isUsable() == true
+    }
+
     func start() async {
         guard !hasStarted else { return }
 
@@ -47,10 +51,10 @@ final class SubscriptionStore: ObservableObject {
 
         do {
             products = try await Product.products(for: productIDs)
-            let hasActiveEntitlement = await isActiveEntitlementAvailable()
+            let activeEntitlement = await activeEntitlement()
 
-            if hasActiveEntitlement {
-                cacheActiveAccess()
+            if let activeEntitlement {
+                cacheActiveAccess(expiresAt: activeEntitlement.expirationDate)
                 entitlementStatus = .active
             } else {
                 clearCachedAccess()
@@ -58,7 +62,7 @@ final class SubscriptionStore: ObservableObject {
             }
         } catch {
             errorMessage = "Unable to check subscription status."
-            entitlementStatus = cachedAccess == nil ? .failed : .loading
+            entitlementStatus = hasUsableCachedAccess ? .loading : .failed
         }
     }
 
@@ -68,7 +72,7 @@ final class SubscriptionStore: ObservableObject {
             await refresh()
         } catch {
             errorMessage = "Restore could not be completed."
-            entitlementStatus = cachedAccess == nil ? .failed : entitlementStatus
+            entitlementStatus = hasUsableCachedAccess ? entitlementStatus : .failed
         }
     }
 
@@ -89,7 +93,7 @@ final class SubscriptionStore: ObservableObject {
         }
     }
 
-    private func isActiveEntitlementAvailable() async -> Bool {
+    private func activeEntitlement() async -> ActiveSubscriptionEntitlement? {
         for productID in productIDs {
             for await entitlement in Transaction.currentEntitlements(for: productID) {
                 guard case .verified(let transaction) = entitlement else {
@@ -104,17 +108,18 @@ final class SubscriptionStore: ObservableObject {
                     continue
                 }
 
-                return true
+                return ActiveSubscriptionEntitlement(expirationDate: transaction.expirationDate)
             }
         }
 
-        return false
+        return nil
     }
 
-    private func cacheActiveAccess() {
+    private func cacheActiveAccess(expiresAt: Date?) {
         let access = CachedSubscriptionAccess(
             productID: SubscriptionProduct.monthlyProductID,
-            unlockedAt: Date()
+            unlockedAt: Date(),
+            expiresAt: expiresAt
         )
 
         if let data = try? JSONEncoder().encode(access) {
@@ -128,5 +133,9 @@ final class SubscriptionStore: ObservableObject {
 
     deinit {
         transactionUpdatesTask?.cancel()
+    }
+
+    private struct ActiveSubscriptionEntitlement {
+        let expirationDate: Date?
     }
 }

@@ -46,7 +46,7 @@ struct AccessGateView: View {
         let snapshot = SubscriptionAccessSnapshot(
             entitlementStatus: subscriptionStore.entitlementStatus,
             hasCompletedOnboarding: hasCompletedOnboarding,
-            hasCachedActiveAccess: subscriptionStore.cachedAccess != nil,
+            hasCachedActiveAccess: subscriptionStore.hasUsableCachedAccess,
             isDebugBypassEnabled: isDebugBypassEnabled
         )
 
@@ -56,6 +56,10 @@ struct AccessGateView: View {
     private var isDebugBypassEnabled: Bool {
         if hasLaunchArgument("--subscription-bypass") {
             return true
+        }
+
+        if hasLaunchArgument("--disable-subscription-ui-test-bypass") {
+            return false
         }
 
         #if DEBUG
@@ -124,16 +128,16 @@ private struct SubscriptionOnboardingView: View {
                     .font(.largeTitle.bold())
                     .foregroundStyle(.primary)
 
-                Text("A short placeholder intro will eventually show the real traveler workflows, practice loops, and phrase tools.")
+                Text("Get a calm first pass at the phrases, food, places, and pronunciation that make Vietnam feel easier before you land.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
             }
 
             VStack(alignment: .leading, spacing: 14) {
-                SubscriptionPlaceholderRow(title: "Offline phrase help", subtitle: "Placeholder for the core travel phrase experience.")
-                SubscriptionPlaceholderRow(title: "Practice before the trip", subtitle: "Placeholder for saved phrase and rehearsal flows.")
-                SubscriptionPlaceholderRow(title: "Helpful local context", subtitle: "Placeholder for article and listing-page value.")
+                SubscriptionPlaceholderRow(title: "Hear useful Vietnamese", subtitle: "Practice natural travel phrases with bundled audio.")
+                SubscriptionPlaceholderRow(title: "Prepare for real moments", subtitle: "Browse food, transport, hotels, shopping, health, and repair situations.")
+                SubscriptionPlaceholderRow(title: "Carry local context", subtitle: "Use curated phrase pages, city/place guidance, search, saved phrases, and Practice offline.")
             }
 
             Button(action: onContinueToPaywall) {

@@ -81,9 +81,11 @@ final class SubscriptionAccessStateTests: XCTestCase {
 
     func testCachedAccessEncodesAndDecodesLaunchContinuityData() throws {
         let unlockedAt = Date(timeIntervalSince1970: 1_777_123_456)
+        let expiresAt = unlockedAt.addingTimeInterval(60 * 60 * 24 * 7)
         let cached = CachedSubscriptionAccess(
             productID: SubscriptionProduct.monthlyProductID,
-            unlockedAt: unlockedAt
+            unlockedAt: unlockedAt,
+            expiresAt: expiresAt
         )
 
         let data = try JSONEncoder().encode(cached)
@@ -91,6 +93,29 @@ final class SubscriptionAccessStateTests: XCTestCase {
 
         XCTAssertEqual(decoded.productID, "app.speaklocal.vietnam.subscription.monthly")
         XCTAssertEqual(decoded.unlockedAt, unlockedAt)
+        XCTAssertEqual(decoded.expiresAt, expiresAt)
+    }
+
+    func testCachedAccessIsUsableUntilItsExpirationDate() {
+        let now = Date(timeIntervalSince1970: 1_777_123_456)
+        let cached = CachedSubscriptionAccess(
+            productID: SubscriptionProduct.monthlyProductID,
+            unlockedAt: now.addingTimeInterval(-60),
+            expiresAt: now.addingTimeInterval(60)
+        )
+
+        XCTAssertTrue(cached.isUsable(now: now))
+    }
+
+    func testExpiredCachedAccessIsNotUsableForLaunchContinuity() {
+        let now = Date(timeIntervalSince1970: 1_777_123_456)
+        let cached = CachedSubscriptionAccess(
+            productID: SubscriptionProduct.monthlyProductID,
+            unlockedAt: now.addingTimeInterval(-120),
+            expiresAt: now.addingTimeInterval(-60)
+        )
+
+        XCTAssertFalse(cached.isUsable(now: now))
     }
 
     func testHostedUnitTestEnvironmentDoesNotEnableDebugBypass() {

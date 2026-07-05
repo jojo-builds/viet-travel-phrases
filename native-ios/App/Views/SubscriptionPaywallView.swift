@@ -40,10 +40,11 @@ struct SubscriptionPaywallView: View {
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
 
-            Text("This placeholder paywall is intentionally simple while the final feature showcase and design direction are still being shaped.")
-                .font(.body)
-                .foregroundStyle(.secondary)
-                .fixedSize(horizontal: false, vertical: true)
+            VStack(alignment: .leading, spacing: 10) {
+                SubscriptionPaywallBenefitRow(title: "Full Vietnam companion", subtitle: "Unlock the complete curated food, city, place, phrase, audio, search, saved, and Practice library.")
+                SubscriptionPaywallBenefitRow(title: "Made for the trip", subtitle: "Keep practical language and local context ready before departure and while traveling.")
+                SubscriptionPaywallBenefitRow(title: "Offline by design", subtitle: "No runtime AI calls, no account backend, and no surprise web dependency in this pass.")
+            }
         }
     }
 
@@ -72,5 +73,25 @@ struct SubscriptionPaywallView: View {
         .padding(.horizontal, 24)
         .padding(.vertical, 14)
         .frame(maxWidth: .infinity)
+    }
+}
+
+private struct SubscriptionPaywallBenefitRow: View {
+    let title: String
+    let subtitle: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 3) {
+            Text(title)
+                .font(.headline)
+                .foregroundStyle(.primary)
+            Text(subtitle)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(.secondarySystemBackground), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
     }
 }
