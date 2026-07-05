@@ -68,7 +68,7 @@ For focused app changes, also run the relevant Xcode test target or UI smoke tes
 - Native generation commands rebuild and validate the bundled resources used by the SwiftUI app.
 - Native Xcode build/test output is the gate for app behavior.
 - Visible UI changes need native simulator screenshots or physical iPhone proof, not web previews.
-- `node native-ios/scripts/audit-visible-product-language.js` blocks retired visible product labels such as old Messages/conversation wording on active Practice-era surfaces.
+- `node native-ios/scripts/audit-visible-product-language.js` blocks retired visible product labels such as old Messages/conversation wording on active Practice-era surfaces, including case variants such as `MESSAGES`, nested completion labels such as `Conversation complete`, and one-line accessibility fallbacks such as `Conversation break`.
 - `node native-ios/scripts/guard-native-chrome.js` must pass after native chrome changes; it blocks the recurring opaque top-white shield regression.
 - `node scripts/guard-native-only.js` must pass after workflow or repo-structure changes.
 

@@ -39,3 +39,24 @@ The old Messages/scenario implementation names leaked into visible Practice-era 
 
 Future front-end QA must include a mid-page and bottom-page product-language pass. It is not enough to prove a page is nonblank and tappable; labels must still make sense for the current app direction.
 
+## Follow-Up Miss Found During The Eight-Hour Pass
+
+After the first fix, a worker found two more Practice-scenario strings that explained why the first gate was still too weak:
+
+- `MESSAGES` appeared as an uppercase caption in the scenario header.
+- `Conversation complete` appeared on the scenario completion card.
+
+The immediate why: the static audit blocked exact `Messages`, but did not treat case variants as retired labels and did not include the completion headline. The deeper why: the earlier front-end pass did not enter and complete the Practice scenario flow, so top/middle/bottom page review still missed nested states.
+
+Follow-up fix:
+
+- scenario header caption changed to `PRACTICE`
+- completion headline changed to `Practice complete`
+- completion body changed from `thread` wording to `practice run`
+- story transcript accessibility fallback changed from `Conversation break` to `Practice beat`
+- local greeting scenario titles and scene titles changed to `Market greeting`, `Hotel greeting`, and `Respectful greeting`
+- top-level Browse card changed from `Respectful hellos` / `hello` subtitle to `Respectful greetings` / `greeting` subtitle
+- unknown city practice fallback changed from `messages` to `practice`
+- stale Browse UI test expectation changed from `Quick conversations` to `Practice moments`
+- trip fallback subtitle changed from `Practical travel conversations...` to `Practical travel moments to practice first.`
+- the visible-language audit now catches case variants of exact retired labels, `Conversation complete`, and `Conversation break` accessibility fallbacks

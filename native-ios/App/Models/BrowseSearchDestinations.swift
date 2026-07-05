@@ -627,8 +627,8 @@ enum BrowseSearchDestinations {
         ),
         BrowseDestination(
             id: "local-greetings",
-            title: "Respectful hellos",
-            subtitle: "Choose the right hello for who you are speaking to",
+            title: "Respectful greetings",
+            subtitle: "Choose the right greeting for who you are speaking to",
             categoryIDs: ["local-greetings", "greetings", "polite-basics"],
             symbolName: "bubble.left.and.bubble.right.fill",
             tintName: .green,
@@ -2787,7 +2787,7 @@ enum BrowseSearchDestinations {
         case "hue":
             return "Hue day"
         default:
-            return "\(title) messages"
+            return "\(title) practice"
         }
     }
 

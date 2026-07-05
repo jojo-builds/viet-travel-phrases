@@ -225,7 +225,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(waitForSavedRoot(in: app, timeout: 4))
     }
 
-    func testFoodCollectionUsesMessageSectionAfterNounRows() {
+    func testFoodCollectionUsesPracticeMomentsAfterNounRows() {
         let app = launchApp(arguments: ["--browse-category", "food"])
         let messageSection = app.descendants(matching: .any)["BrowseCollection.Messages.category.food"]
 
@@ -233,7 +233,7 @@ final class BrowseSearchUITests: XCTestCase {
         scrollUntilExists(messageSection, app: app)
 
         XCTAssertTrue(messageSection.waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Quick conversations"].exists)
+        XCTAssertTrue(app.staticTexts["Practice moments"].exists)
         XCTAssertFalse(app.buttons["BrowseCollection.PracticeEntry.category.food"].exists)
     }
 

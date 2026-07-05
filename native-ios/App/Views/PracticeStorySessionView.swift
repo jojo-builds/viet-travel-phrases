@@ -571,7 +571,7 @@ private struct PracticeStoryHeader: View {
                 }
 
             VStack(alignment: .leading, spacing: 4) {
-                Text("MESSAGES")
+                Text("PRACTICE")
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
 
@@ -608,12 +608,12 @@ struct PracticeStoryCompletionSurface: View {
                     .frame(width: 64, height: 64)
                     .background(PhrasePageStyle.elevatedCardFill, in: Circle())
 
-                Text("Conversation complete")
+                Text("Practice complete")
                     .font(.system(size: 34, weight: .black, design: .rounded))
                     .foregroundStyle(.primary)
                     .accessibilityIdentifier("Practice.Story.Complete")
 
-                Text("You sent \(summary.practicedCount) useful replies in this thread.")
+                Text("You sent \(summary.practicedCount) useful replies in this practice run.")
                     .font(.body.weight(.semibold))
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)

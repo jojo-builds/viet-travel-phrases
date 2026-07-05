@@ -3637,8 +3637,8 @@ final class AppChromeTests: XCTestCase {
         let localHellos = try! XCTUnwrap(BrowseSearchDestinations.situations.first { $0.id == "local-greetings" })
         let helloBasics = try! XCTUnwrap(BrowseSearchDestinations.phraseFamilies.first { $0.id == "greetings" })
 
-        XCTAssertEqual(localHellos.title, "Respectful hellos")
-        XCTAssertEqual(localHellos.subtitle, "Choose the right hello for who you are speaking to")
+        XCTAssertEqual(localHellos.title, "Respectful greetings")
+        XCTAssertEqual(localHellos.subtitle, "Choose the right greeting for who you are speaking to")
         XCTAssertEqual(helloBasics.title, "Hello basics")
         XCTAssertEqual(helloBasics.subtitle, "Simple ways to start conversations.")
     }

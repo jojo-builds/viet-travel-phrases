@@ -21,7 +21,10 @@ test("visible product language audit catches retired Messages labels in Swift UI
       "  var body: some View {",
       "    VStack {",
       "      Text(\"Quick conversations\")",
+      "      Text(\"MESSAGES\")",
       "      Label(\"Back to Messages\", systemImage: \"text.bubble.fill\")",
+      "      Text(\"Conversation complete\")",
+      "      Color.clear.accessibilityLabel(turn.text ?? \"Conversation break\")",
       "      Text(\"Simple ways to start conversations.\")",
       "    }",
       "  }",
@@ -37,7 +40,9 @@ test("visible product language audit catches retired Messages labels in Swift UI
 
   assert.notStrictEqual(result.status, 0, result.stdout);
   assert.match(result.stdout, /Quick conversations/);
+  assert.match(result.stdout, /MESSAGES/);
   assert.match(result.stdout, /Back to Messages/);
+  assert.match(result.stdout, /Conversation complete/);
+  assert.match(result.stdout, /Conversation break/);
   assert.doesNotMatch(result.stdout, /Simple ways to start conversations/);
 });
-

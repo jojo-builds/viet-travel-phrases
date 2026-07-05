@@ -11,20 +11,23 @@ const retiredVisiblePhrases = [
   "Back to Messages",
   "Messages thread",
   "Restart conversation",
+  "Conversation complete",
+  "Conversation break",
   "Market Hello",
   "Hotel Hello",
   "Respectful Hello",
 ];
 
-const retiredExactVisibleLabels = new Set([
+const retiredExactVisibleLabels = [
   "Messages",
-]);
+];
 
 const visibleLiteralPatterns = [
   /\bText\s*\(\s*"([^"]+)"/g,
   /\bLabel\s*\(\s*"([^"]+)"/g,
   /\bButton\s*\(\s*"([^"]+)"/g,
   /\.accessibilityLabel\s*\(\s*"([^"]+)"/g,
+  /\.accessibilityLabel\s*\([^)]*\?\?\s*"([^"]+)"/g,
   /\.navigationTitle\s*\(\s*"([^"]+)"/g,
 ];
 
@@ -77,8 +80,11 @@ function lineNumber(source, index) {
 }
 
 function retiredReason(value) {
-  if (retiredExactVisibleLabels.has(value)) {
-    return `exact retired label "${value}"`;
+  const exactLabel = retiredExactVisibleLabels.find(
+    (retired) => value.localeCompare(retired, undefined, { sensitivity: "accent" }) === 0,
+  );
+  if (exactLabel) {
+    return `exact retired label "${exactLabel}"`;
   }
 
   const phrase = retiredVisiblePhrases.find((retired) => value.includes(retired));
@@ -153,4 +159,3 @@ module.exports = {
   auditVisibleProductLanguage,
   retiredReason,
 };
-
