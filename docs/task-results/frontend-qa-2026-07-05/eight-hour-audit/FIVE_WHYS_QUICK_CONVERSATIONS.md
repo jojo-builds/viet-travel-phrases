@@ -111,3 +111,9 @@ Hidden fallback follow-up on 2026-07-06:
 - The fallback labels were renamed to Practice-safe copy (`Quick match`, `Practice pool`, and `practice round` wording), and the visible-language audit plus route-scrolling UI guardrail now block those old labels too.
 - Fresh validation passed: `node native-ios/scripts/audit-visible-product-language.js`, `node --test native-ios/scripts/audit-visible-product-language.test.js`, `swiftc -parse native-ios/UITests/ProductLanguageUITests.swift`, `git diff --check`, exact retired-label `rg` scan showing only negative tests/guardrails, and shell `xcodebuild` rerun of `ProductLanguageUITests/testRepresentativeRoutesDoNotExposeRetiredPracticeVocabularyWhileScrolling` (`1` test, `0` failures, `279.075` seconds).
 - Xcode reported low disk while writing extra result-bundle summaries after the successful test run; the temporary derived data was deleted afterward. The test result itself completed successfully before that cleanup warning.
+
+Visual/semantic smell follow-up on 2026-07-06:
+- A source-level pass found two subtler legacy cues: the Practice completion surface used the `checkmark.message.fill` symbol, and the driver-help scenario setup said `without letting the thread drift`.
+- The completion icon now uses `checkmark.seal.fill`, and the driver-help setup now says `without losing the plan`.
+- The visible-language audit now blocks the exact retired visual symbol `checkmark.message.fill` and the exact stale phrase `thread drift` while leaving legitimate traveler copy such as text messages, pickup messages, and real cafe note/messages content alone.
+- Fresh validation passed: visible-language audit, audit unit test, Swift parse of the changed Swift files, JS syntax checks for the audit script and test, exact `rg` scan showing only guardrail/test references, and `git diff --check`.

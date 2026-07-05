@@ -29,11 +29,16 @@ const retiredVisiblePhrases = [
   "Quick practice",
   "My practice phrases",
   "First day in Vietnam messages",
+  "thread drift",
 ];
 
 const retiredExactVisibleLabels = [
   "Messages",
   "Unread",
+];
+
+const retiredVisibleSymbolNames = [
+  "checkmark.message.fill",
 ];
 
 const retiredSourceBackedPhrases = [
@@ -48,6 +53,11 @@ const visibleLiteralPatterns = [
   /\.accessibilityLabel\s*\(\s*"([^"]+)"/g,
   /\.accessibilityLabel\s*\([^)]*\?\?\s*"([^"]+)"/g,
   /\.navigationTitle\s*\(\s*"([^"]+)"/g,
+];
+
+const visibleSymbolPatterns = [
+  /\bImage\s*\(\s*systemName:\s*"([^"]+)"/g,
+  /\bsystemImage:\s*"([^"]+)"/g,
 ];
 
 function parseArgs(argv) {
@@ -142,6 +152,15 @@ function sourceBackedRetiredReason(value) {
   return null;
 }
 
+function retiredSymbolReason(value) {
+  const symbolName = retiredVisibleSymbolNames.find((retired) => value === retired);
+  if (symbolName) {
+    return `retired visual symbol "${symbolName}"`;
+  }
+
+  return null;
+}
+
 function auditSourceBackedCopy(filePath, source) {
   const findings = [];
   for (const phrase of retiredSourceBackedPhrases) {
@@ -171,6 +190,25 @@ function auditFile(filePath) {
     while ((match = pattern.exec(source)) !== null) {
       const value = match[1];
       const reason = retiredReason(value);
+      if (!reason) {
+        continue;
+      }
+
+      findings.push({
+        filePath,
+        line: lineNumber(source, match.index),
+        value,
+        reason,
+      });
+    }
+  }
+
+  for (const pattern of visibleSymbolPatterns) {
+    pattern.lastIndex = 0;
+    let match;
+    while ((match = pattern.exec(source)) !== null) {
+      const value = match[1];
+      const reason = retiredSymbolReason(value);
       if (!reason) {
         continue;
       }
@@ -258,4 +296,5 @@ if (require.main === module) {
 module.exports = {
   auditVisibleProductLanguage,
   retiredReason,
+  retiredSymbolReason,
 };

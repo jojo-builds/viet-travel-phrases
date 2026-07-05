@@ -4250,7 +4250,7 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
         PracticeScenarioTemplate(
             id: .driverProblemHelp,
             sceneTitle: "Driver help",
-            sceneSetup: "Handle wrong-car, driver-contact, safety, and lost-ride moments without letting the thread drift.",
+            sceneSetup: "Handle wrong-car, driver-contact, safety, and lost-ride moments without losing the plan.",
             steps: [
                 messageScenarioStep(
                     id: "driver-problem-opening",

@@ -602,7 +602,7 @@ struct PracticeStoryCompletionSurface: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
             VStack(alignment: .leading, spacing: 10) {
-                Image(systemName: "checkmark.message.fill")
+                Image(systemName: "checkmark.seal.fill")
                     .font(.system(size: 34, weight: .bold))
                     .foregroundStyle(.green)
                     .frame(width: 64, height: 64)

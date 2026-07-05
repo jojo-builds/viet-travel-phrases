@@ -31,6 +31,8 @@ test("visible product language audit catches retired Messages labels in Swift UI
       "      Text(\"Quick practice\")",
       "      Text(\"My practice phrases\")",
       "      Text(\"First day in Vietnam messages\")",
+      "      Text(\"without letting the thread drift\")",
+      "      Image(systemName: \"checkmark.message.fill\")",
       "      Text(\"Simple ways to start speaking.\")",
       "      let proof = \"Useful before pickup and hotel messages.\"",
       "    }",
@@ -64,6 +66,8 @@ test("visible product language audit catches retired Messages labels in Swift UI
   assert.match(result.stdout, /Quick practice/);
   assert.match(result.stdout, /My practice phrases/);
   assert.match(result.stdout, /First day in Vietnam messages/);
+  assert.match(result.stdout, /thread drift/);
+  assert.match(result.stdout, /checkmark\.message\.fill/);
   assert.match(result.stdout, /hotel messages/);
   assert.match(result.stdout, /GeneratedResource\.json/);
   assert.doesNotMatch(result.stdout, /Simple ways to start speaking/);
