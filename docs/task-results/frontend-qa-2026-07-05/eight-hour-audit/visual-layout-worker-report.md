@@ -46,6 +46,7 @@ All paths are under `docs/task-results/frontend-qa-2026-07-05/eight-hour-audit/v
 - `21-practice-hub-topic-rows.jpg`
 - `22-practice-scenario-food-coffee.jpg`
 - `23-practice-hub-start-fixed.jpg`
+- `24-menu-pho-bo-focal-fixed.jpg`
 
 ## Findings
 
@@ -60,15 +61,22 @@ Pre-repair, the red trailing action badge on the `Practice Saved` card compresse
 
 Fix applied: `PracticeMatchSourceCard` now gives the action capsule a one-line fixed-size text layout, minimum width, and higher layout priority. Fresh current-build simulator proof shows `Start` fully readable.
 
-### SAFE_FIX_NOW: Phở bò backdrop crop hides the dish in the first viewport
+### SAFE_FIX_NOW, RESOLVED IN WORKING TREE: Phở bò backdrop crop hid the dish in the first viewport
 
 Evidence:
 - Screenshot: `visual-layout-screenshots/13-menu-pho-bo-top.jpg`
+- Fixed proof: `visual-layout-screenshots/24-menu-pho-bo-focal-fixed.jpg`
 - Asset/source anchor: `native-ios/Resources/Assets.xcassets/BackdropMenuFoodPhoBo.imageset/backdrop-menu-food-pho-bo-720q86.jpg`; `native-ios/App/Models/VietnameseMenuCatalog.swift:118-120`, `native-ios/App/Models/VietnameseMenuCatalog.swift:1259-1261`
+- Fix anchor: `native-ios/App/Views/PhraseListingView.swift`, `native-ios/App/Views/VietnameseMenuPageView.swift`
 
 The `Phở bò` page uses the intended `BackdropMenuFoodPhoBo` asset, and the full asset does contain the bowl. In the live top viewport, the crop shows mostly herbs and an iced drink, so the first impression reads like a drink/table scene rather than beef noodle soup.
 
-Likely fix surface: adjust backdrop focal positioning/crop for this item or use a tighter hero asset where the bowl remains visible in the top-frame crop.
+Fix applied: `BackdropMenuFoodPhoBo` now has an asset-specific vertical focus lift in the shared photo-backdrop layout, menu backdrop frame height includes that lift, and `VietnameseMenuPageView` applies the same offset in the normal first viewport. Fresh simulator proof shows the bowl visible behind the sheet while preserving the original glass/photo design.
+
+Validation:
+- Red/green unit proof: `AppChromeTests/testVietnameseMenuBackdropImageUsesStablePortraitFrame` failed before the crop-policy fix and passed after it.
+- Focused current-build regression passed: `AppChromeTests/testVietnameseMenuBackdropImageUsesStablePortraitFrame` plus `BottomInsetUITests/testRepresentativeCollectionAndDetailRoutesKeepBottomContentAboveSystemTabBar`, `2` tests, `0` failures.
+- Repo guards passed after the fix: `node native-ios/scripts/audit-visible-product-language.js`, `node scripts/guard-native-only.js`, `node native-ios/scripts/guard-native-chrome.js`, and `git diff --check`.
 
 ### ACCEPTED_TEMPORARY_RISK: Static chrome intentionally overlaps passing content during scroll
 
@@ -90,9 +98,6 @@ Keep this as an accepted visual tradeoff unless Jojo wants less content visible 
 
 ## Recommendation
 
-No `HARD_BLOCK` visual layout issue found in this sweep.
-
-Fix before the next visual closeout:
-- Phở bò first-viewport crop/focal framing.
+No `HARD_BLOCK` visual layout issue found in this sweep. The two `SAFE_FIX_NOW` visual issues found by this worker are now resolved in the working tree and have fresh screenshot proof.
 
 No additional current copy-polish issue is being raised from the stale `Respectful hellos` screenshot because current source already moved that label to `Respectful greetings`.

@@ -1205,6 +1205,9 @@ enum PhrasePhotoBackdropLayout {
         "BackdropPhrasePhoneAirportCharging": 0.22,
         "BackdropPhraseTransportStreetMap": 0.20,
     ]
+    private static let menuBackdropFocusFractions: [String: CGFloat] = [
+        "BackdropMenuFoodPhoBo": 0.23,
+    ]
 
     static func bottomReadingClearance(pageID: String, heroImageName: String?) -> CGFloat {
         if supportsCityListingPage(pageID: pageID, heroImageName: heroImageName) {
@@ -1264,7 +1267,11 @@ enum PhrasePhotoBackdropLayout {
         let height = max(size.height, 1)
 
         if supportsMenuListingPage(pageID: pageID, heroImageName: heroImageName) {
-            return height + safeAreaInsets.bottom
+            return height + safeAreaInsets.bottom + backdropVerticalFocusOffset(
+                for: size,
+                pageID: pageID,
+                heroImageName: heroImageName
+            )
         }
 
         return height + safeAreaInsets.top + safeAreaInsets.bottom + standardBackdropVerticalOverscan
@@ -1275,11 +1282,24 @@ enum PhrasePhotoBackdropLayout {
         pageID: String,
         heroImageName: String?
     ) -> CGFloat {
-        guard let heroImageName, heroImageName.hasPrefix("BackdropPhrase") else {
+        guard let heroImageName else {
             return 0
         }
 
         let height = max(size.height, 1)
+
+        if heroImageName.hasPrefix("BackdropMenu") {
+            guard let focusFraction = menuBackdropFocusFractions[heroImageName] else {
+                return 0
+            }
+
+            return min(max(height * focusFraction, 120), 240)
+        }
+
+        guard heroImageName.hasPrefix("BackdropPhrase") else {
+            return 0
+        }
+
         let focusFraction = phraseBackdropFocusFractions[heroImageName] ?? phraseBackdropDefaultFocusFraction
         return min(max(height * focusFraction, 120), 260)
     }

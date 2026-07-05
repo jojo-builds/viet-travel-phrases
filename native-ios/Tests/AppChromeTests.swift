@@ -5004,13 +5004,33 @@ final class AppChromeTests: XCTestCase {
     func testVietnameseMenuBackdropImageUsesStablePortraitFrame() {
         let size = CGSize(width: 393, height: 852)
         let safeAreaInsets = EdgeInsets(top: 59, leading: 0, bottom: 34, trailing: 0)
+        let phoBoFocusOffset = PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+            for: size,
+            pageID: "viet-menu-food-pho-bo",
+            heroImageName: "BackdropMenuFoodPhoBo"
+        )
         let menuFocusOffset = PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
             for: size,
             pageID: "viet-menu-food-pho-dac-biet",
             heroImageName: "BackdropMenuFoodPhoDacBiet"
         )
 
+        XCTAssertGreaterThanOrEqual(
+            phoBoFocusOffset,
+            180,
+            "Phở bò's tall portrait backdrop should lift the bowl into the visible resting crop"
+        )
         XCTAssertEqual(menuFocusOffset, 0)
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.backdropFrameHeight(
+                for: size,
+                safeAreaInsets: safeAreaInsets,
+                pageID: "viet-menu-food-pho-bo",
+                heroImageName: "BackdropMenuFoodPhoBo"
+            ),
+            size.height + safeAreaInsets.bottom + phoBoFocusOffset,
+            accuracy: 0.001
+        )
         XCTAssertEqual(
             PhrasePhotoBackdropLayout.backdropFrameHeight(
                 for: size,
