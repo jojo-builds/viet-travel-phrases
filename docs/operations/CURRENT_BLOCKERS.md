@@ -13,8 +13,8 @@ Use this doc for blocker state only. Use `TESTING_RUNBOOK.md` for native validat
    - If Jojo ships the current non-paywall native app payload, this is not a blocker for that non-paywall release.
 
 2. Exact-current physical iPhone launch proof is pending for the latest `main` checkout.
-   - Current `main` app-code commit `4f6462906` built and installed on Jojo's active physical iPhone during the 2026-07-05 parallel launch-readiness push.
-   - Launch was blocked only because the phone was locked; simulator fallback launch succeeded.
+   - Current app-code commit `0a7fb4d50` built and installed on Jojo's active physical iPhone after the root photo-backdrop immersive chrome fix.
+   - Launch was blocked only because the phone was locked; simulator focused validation succeeded for the same app-code payload.
    - Repo signing files stayed clean after the physical build/install attempt.
    - Rerun `speaklocal-ios-device-build` or a focused device launch once Jojo's active iPhone is unlocked.
 

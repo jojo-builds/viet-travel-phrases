@@ -39,3 +39,9 @@ Receipt:
 - `node scripts/guard-native-only.js` passed
 - `node native-ios/scripts/guard-native-chrome.js` passed
 
+## Physical Device Follow-Up
+
+- App-code commit `0a7fb4d50` built for Jojo's active physical iPhone.
+- Install succeeded.
+- Launch was denied only because the phone was locked.
+- Repo signing files stayed clean after the build/install attempt.

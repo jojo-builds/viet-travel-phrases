@@ -337,6 +337,33 @@ Boundary note: commits after `4f6462906` added/updated docs, reports, proof arti
 - Audio remains intentionally delegated to the orchestrator/audio-harness lane, whose report records the updated `AudioTapReliabilityUITests` path and green audio-class proof.
 - No app-code edits were made in this thread.
 
+## Latest Current-Main Anchor - `0a7fb4d50`
+
+Continuation timestamp: 2026-07-05 22:14 Asia/Manila local
+Latest observed `main`: `0a7fb4d50` (`Fix root photo backdrop immersive chrome`)
+Boundary note: this commit includes app-runtime changes in `native-ios/App/Views/AppShellView.swift` plus `AppChromeTests` coverage for root photo-backdrop immersive policy. This thread did not edit those files.
+
+### Build And Visible Proof
+
+- XcodeBuildMCP `build_run_sim` passed at `0a7fb4d50` with `CODE_SIGNING_ALLOWED=NO`.
+- Build log: `/Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/app-family-fd8e8a2a818d/logs/build_run_sim_2026-07-05T14-10-31-684Z_pid42996_ee450b1a.log`
+- Runtime log: `/Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/app-family-fd8e8a2a818d/logs/app.speaklocal.vietnam.native_2026-07-05T14-10-39-510Z_helperpid86371_ownerpid42996_44981ba6.log`
+- Visible Home proof: `traveler-qa-proof-post-0a7fb4d50/000-home-launch-0a7fb4d50.jpg`
+- Visual read: Home still renders visible `Xin chào` content, audio controls, Home/Essentials shelf context, and bottom chrome after the root photo-backdrop immersive chrome fix.
+- Disk note: the first screenshot attempt failed because the volume was out of space. This thread removed only its disposable `/tmp/speaklocal-traveler-qa-deriveddata` cache, freeing enough room to capture the final screenshot. Other workers' artifacts were left alone.
+
+### Related Fix-Lane Proof Read
+
+- `root-photo-backdrop-immersive-fix-report.md` records focused validation for the runtime change:
+  - `AppChromeTests/testAdminRootBackdropImmersivePolicyAcceptsRootSurfaceContexts`
+  - `AdminChromeUITests/testHomePhotoBackdropHidesAndRestoresContent`
+  - `AdminChromeUITests/testBrowseRootPhotoBackdropHidesAndRestoresContent`
+  - `AdminChromeUITests/testSavedRootPhotoBackdropHidesAndRestoresContent`
+  - `AdminChromeUITests/testPracticeRootPhotoBackdropHidesAndRestoresContent`
+  - `AdminChromeUITests/testSearchRootPhotoBackdropHidesAndRestoresContent`
+  - Result: `6` passed, `0` failed.
+- This traveler thread did not rerun that root-photo class because disk was critically low; it treats the fix-lane report as authoritative for that surface and adds only the latest exact-main rebuild/Home visual anchor.
+
 ## Visual Inspection Notes From Post-Fix Proof Artifacts
 
 These notes reuse existing post-fix proof screenshots under `post-fix-visual-regression-proof/`; this thread did not overwrite those artifacts.
@@ -353,9 +380,11 @@ These notes reuse existing post-fix proof screenshots under `post-fix-visual-reg
 ## Current Status Summary For Orchestrator
 
 - This thread made no app-code edits and did not merge or touch paywall.
-- Current exact-main anchor: `60db7e9fb`, rebuilt and launched successfully on `SpeakLocal Traveler`.
-- Latest direct proof from this thread: Home screenshot plus `4` focused route/state tests passed at `60db7e9fb`.
+- Current exact-main anchor: `0a7fb4d50`, rebuilt and launched successfully on `SpeakLocal Traveler`.
+- Latest direct proof from this thread: Home screenshot at `0a7fb4d50`; previous exact-current route sanity had `4` focused route/state tests passed at `60db7e9fb`.
 - Broader route/state matrix from the earlier post-advance window is green across Browse/Search, Saved/menu, city Browse-by, Back/Forward, Practice, bottom-inset, Search/admin tab, collection section/filter, and Home-origin route restoration checks.
+- Root photo-backdrop immersive chrome authority belongs to `root-photo-backdrop-immersive-fix-report.md`, which records `6` focused checks passed for Home/Browse/Saved/Practice/Search root backdrop behavior.
+- Supporting App Store screenshot packet review: `app-store-screenshot-proof/contact-sheet.png` shows populated Home, Browse, Eating Out, Da Nang city section, Search, Saved, and Practice states; `app-store-screenshot-capture-report.md` records no screenshot-blocking defect in those non-paywall simulator captures.
 - Older red evidence from `7989e1f67` is retained for history only and is explicitly superseded where later post-fix proof exists.
 - Audio final authority belongs to `audio-harness-fix-report.md`, not this traveler report.
 - Remaining non-simulator launch-risk outside this thread: physical iPhone walkthrough and any paywall-specific purchase/restore proof owned by separate lanes.
