@@ -1045,6 +1045,28 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
     }
 
+    func testBackFromBrowseDetailRestoresBrowseRootContent() {
+        let app = launchApp(arguments: ["--browse-category", "airport"])
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+        let firstAirportRow = app.buttons["BrowseCollection.Row.viet-phrase-v900-airp-bord-arri-where-is-the-arrivals-hall"]
+        XCTAssertTrue(firstAirportRow.waitForExistence(timeout: 3))
+        firstAirportRow.tap()
+
+        XCTAssertTrue(app.staticTexts["Where is the arrivals hall?"].waitForExistence(timeout: 4))
+        app.buttons["TopAdmin.BackButton"].tap()
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 3))
+        app.buttons["TopAdmin.BackButton"].tap()
+
+        let hotelCard = app.staticTexts["Hotel"]
+        XCTAssertTrue(hotelCard.waitForExistence(timeout: 3))
+        XCTAssertTrue(
+            isVerticallyClearOfChrome(hotelCard, in: app),
+            "Back from detail through a Browse collection should restore visible Browse cards, not leave a blank photo sheet."
+        )
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
+    }
+
     func testCaptureRepresentativeHeroImagesForProductionReview() {
         let pages: [(label: String, arguments: [String], title: String, requiredText: String)] = [
             ("saigon-city", ["--browse-city", "hcmc"], "Saigon", "Browse by"),

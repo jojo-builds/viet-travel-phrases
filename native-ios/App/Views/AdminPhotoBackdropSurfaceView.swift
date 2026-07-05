@@ -334,7 +334,12 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
                             .onChange(of: scrollToTopTrigger) { _, _ in
                                 onScrollToTop()
                                 isImmersive = false
+                                scrollOffset = 0
                                 scrollProxy.scrollTo(topAnchorID, anchor: .top)
+                                DispatchQueue.main.async {
+                                    scrollOffset = 0
+                                    scrollProxy.scrollTo(topAnchorID, anchor: .top)
+                                }
                             }
                             .task(id: AdminPhotoBackdropTaskPolicy.shouldRunInitialPositionTask(
                                 isActive: isActive,

@@ -214,6 +214,7 @@ struct AppShellView: View {
     @State private var pendingPracticeThreadForwardRestore: PracticeThreadForwardRestore?
     @State private var pendingPracticeMatchReturnFocus: BrowseCollectionFocusRequest?
     @State private var shouldResetBrowseRootAfterDetailBack = false
+    @State private var browseRootSurfaceResetID = 0
     @State private var isPracticeOverlayPresented = false
     @State private var practiceOverlayBackdropOpacity = PracticeMatchPullUpMetrics.backdropOpacity
     @State private var practiceOverlayResetTrigger = 0
@@ -512,6 +513,7 @@ struct AppShellView: View {
                         onSearchQuery: openSearchQuery
                     )
                 }
+                .id("browse-root-surface-\(browseRootSurfaceResetID)")
                 .allowsHitTesting(navigation.currentRoute == .browse && allowsBasePageHitTesting)
                 .accessibilityHidden(navigation.currentRoute != .browse)
                 .navigationPageMotion(
@@ -2251,6 +2253,7 @@ struct AppShellView: View {
             navigation.goBack()
         }
         if shouldConsumeBrowseRootReset, navigation.currentRoute == .browse {
+            browseRootSurfaceResetID += 1
             navigation.browseScrollToTopTrigger += 1
             shouldResetBrowseRootAfterDetailBack = false
         } else {
