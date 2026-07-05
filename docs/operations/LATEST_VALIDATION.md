@@ -25,6 +25,25 @@ Fresh evidence from the 2026-07-05 `feature/paywall` StoreKit-readiness worker:
 
 No physical iPhone build was installed from this branch in this pass.
 
+## Current Main Merge Proof
+
+Current `main` head `470016d3e` after the 2026-07-05 non-paywall launch-readiness checkpoint and real-traveler Browse-back merge:
+
+- committed the non-paywall launch-readiness checkpoint as `7b63e4fd7`
+- merged `feature/real-traveler-walkthrough-20260705` into `main`; final merge head is `470016d3e`
+- user-facing merge addition: Browse root now remounts/resets safely after a detail -> collection -> Browse back chain, preserving the newer detail-aware reset guard from `main`
+- `git diff --check` passed
+- `node scripts/guard-native-only.js` passed
+- `node native-ios/scripts/guard-native-chrome.js` passed
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed: `1782` clusters, `1800` source phrases, `1793` canonical pages, `5353` audio assets, and `0` release-blocking missing-audio rows
+- `node native-ios/scripts/sync-viet-audio.js` passed: validated `5353` native audio manifest entries
+- `node native-ios/scripts/validate-tier-one-listing-pages.js` passed: `150` strong, `0` thin/awkward/placeholder
+- `node native-ios/scripts/validate-vietnamese-menu-copy.js` passed: `355` handwritten menu item pages and `15` ready helper phrases
+- XcodeBuildMCP simulator regression passed on final `main`: `BrowseSearchUITests/testBackFromBrowseDetailRestoresBrowseRootContent`, `1` test, `0` failures
+- physical iPhone build/install/launch proof for this exact head is pending because device tooling reported no available paired iPhone during the latest attempt
+- signing hygiene stayed clean: no tracked changes to `native-ios/project.yml` or the native Xcode project signing files
+- `feature/paywall` was synced forward to current `main` in paywall commit `9fcdf217a`, but paywall remains excluded from `main`
+
 ## Current Front-End QA Proof
 
 Current 2026-07-05 deep visual QA follow-up after Jojo's physical iPhone review exposed missed visual/functionality defects:

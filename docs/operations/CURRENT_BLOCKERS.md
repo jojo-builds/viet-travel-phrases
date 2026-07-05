@@ -13,11 +13,17 @@ Use this doc for blocker state only. Use `TESTING_RUNBOOK.md` for native validat
    - Required proof before shipping paywall: real purchase, restore, relaunch persistence, locked/unlocked entitlement behavior, and clear App Store Connect product state.
    - If Jojo ships the current non-paywall native app payload, this is not a blocker for that non-paywall release.
 
-2. Mixed historical docs may still mention Expo/EAS as archive context.
+2. Exact-current physical iPhone proof is pending for `main` head `470016d3e`.
+   - The 2026-07-05 merged `main` passed focused simulator/data validation after the non-paywall checkpoint and real-traveler Browse-back fix.
+   - The physical-device helper could not build/install/launch because no paired iPhone was available to device tooling.
+   - Repo signing files stayed clean after the blocked attempt.
+   - Rerun `speaklocal-ios-device-build` once Jojo's active iPhone is available/unlocked.
+
+3. Mixed historical docs may still mention Expo/EAS as archive context.
    - Active implementation authority now says native iOS only.
    - If a worker finds an operational doc directing new app work through Expo/React Native, update or remove that instruction before proceeding.
 
-3. Audio continuity remains an honest quality watch item.
+4. Audio continuity remains an honest quality watch item.
    - The 2026-07-04/05 ElevenLabs remediation and deep visual QA pass cleared the missing/planned audio queue in the launch-readiness working tree: `5353` manifest entries validated, authored audio audit reports `0` missing, and the regenerated SQLite report shows `0` missing-audio audit rows.
    - This is no longer a known missing-audio blocker, but do not claim perfect pronunciation or same-speaker uniformity until a fresh native audio-quality/listen pass proves it.
 
@@ -28,10 +34,11 @@ Use this doc for blocker state only. Use `TESTING_RUNBOOK.md` for native validat
   - Coverage included Home/Browse/Search/Saved/Practice, navigation/back-forward, top/bottom chrome, audio buttons, city V2.2 pages, menu/detail/listing surfaces, and production listing proof paths.
   - Issue ledger and proof artifacts live under `docs/task-results/frontend-qa-2026-07-04/`.
 
-- Fresh physical iPhone launch proof was completed on the replacement/new active iPhone.
+- Previous physical iPhone launch proof was completed on the replacement/new active iPhone.
   - Current `main` commit `07a2db5d8` built, installed, and launched successfully on the new active physical iPhone on 2026-07-04.
   - Xcode account sign-in, Apple Program License Agreement acceptance, and automatic provisioning refresh cleared the earlier device-registration blocker.
   - Post-build signing scan passed; repo signing files stayed clean.
+  - Exact-current head `470016d3e` still needs a fresh phone proof rerun.
 
 - Home scroll-jank visual regression from the initial performance attempt was fixed in the 2026-07-04 launch-readiness working tree.
   - The original lifted/glass Home panel styling was restored instead of replaced with cheaper panels.
@@ -53,6 +60,6 @@ Use this doc for blocker state only. Use `TESTING_RUNBOOK.md` for native validat
 
 - Expo/EAS packaging drift is no longer an active app-development blocker because the app product surface is now native SwiftUI/Xcode.
 - React Native/Metro preview issues are no longer product blockers because that app shell is no longer active.
-- Physical iPhone build/install/launch is refreshed for current `main` at `07a2db5d8` on Jojo's replacement/new active phone.
+- Physical iPhone setup/provisioning was proven on Jojo's replacement/new active phone at `07a2db5d8`; exact-current `main` phone proof is tracked above because the latest device attempt found no available paired iPhone.
 - Non-paywall frontend QA has a fresh full-UI simulator pass and phone proof; remaining paywall/StoreKit work is intentionally outside this payload.
 - Hero image asset validation passed in the 2026-05-18 merge sweep with the strict unique city-place asset gate.

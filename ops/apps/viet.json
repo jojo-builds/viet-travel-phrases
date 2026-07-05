@@ -11,29 +11,29 @@
       "evidenceRef": "docs/operations/LATEST_VALIDATION.md"
     },
     "previewBuild": {
-      "status": "passed",
+      "status": "pending",
       "evidenceRef": "docs/operations/LATEST_VALIDATION.md"
     },
     "previewInstall": {
-      "status": "passed",
+      "status": "pending",
       "evidenceRef": "docs/operations/LATEST_VALIDATION.md"
     },
     "runtimeManualSmoke": {
-      "status": "passed",
+      "status": "pending",
       "evidenceRef": "docs/operations/LATEST_VALIDATION.md"
     },
     "deviceWalkthrough": {
-      "status": "passed",
+      "status": "pending",
       "evidenceRef": "docs/operations/LATEST_VALIDATION.md"
     }
   },
   "hardBlock": {
-    "active": false,
-    "type": "none",
-    "owner": "none",
+    "active": true,
+    "type": "device-proof",
+    "owner": "codex-orchestrator",
     "system": "Native iOS launch validation",
-    "detail": "Current non-paywall native app has fresh simulator/UI/content validation and physical iPhone build/install/launch proof. Paywall/StoreKit proof remains intentionally separate until that feature branch is approved.",
-    "nextHumanAction": "Review the installed non-paywall app on the active iPhone, then decide whether to ship this payload first or continue into paywall proof before release."
+    "detail": "Current exact main head has fresh simulator/UI/content validation, but physical iPhone build/install/launch proof is pending because no paired iPhone was available to device tooling during the latest attempt. Paywall/StoreKit proof remains intentionally separate until that feature branch is approved.",
+    "nextHumanAction": "Make the active iPhone available/unlocked, then rerun the main phone build before App Store/TestFlight submission."
   },
   "contentReadiness": "native-viet-resources-bundled",
   "audioReadiness": "native-audio-manifest-bundled",
@@ -48,9 +48,9 @@
   ],
   "featureIntakeStatus": "active",
   "releaseStatus": "live",
-  "blockerTag": "blocked:none",
-  "blockerDetail": "No active device-setup blocker remains for the current non-paywall native app. Paywall remains a separate pending rollout if this release must include subscription gating.",
-  "nextStep": "Review the installed main build, then decide whether to ship the current non-paywall app or continue into paywall proof.",
+  "blockerTag": "blocked:device-proof",
+  "blockerDetail": "Exact-current physical iPhone proof is pending for main head 470016d3e; latest device tooling pass found no available paired iPhone. Paywall remains a separate pending rollout if this release must include subscription gating.",
+  "nextStep": "Rerun the main phone build once the active iPhone is available, then decide whether to ship the current non-paywall app or continue into paywall proof.",
   "sessionRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
-  "lastValidatedAt": "2026-07-04"
+  "lastValidatedAt": "2026-07-05"
 }
