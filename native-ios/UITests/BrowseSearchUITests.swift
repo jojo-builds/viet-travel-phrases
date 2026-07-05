@@ -82,7 +82,7 @@ final class BrowseSearchUITests: XCTestCase {
         app = launchApp(arguments: ["--browse-category", "hotel"])
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 4))
 
-        openDock("Messages", in: app)
+        openDock("Practice", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
 
         tapWhenVisible(app.buttons["TopAdmin.BackButton"], app: app)
@@ -1526,7 +1526,7 @@ final class BrowseSearchUITests: XCTestCase {
             normalizedX = 0.31
         case "Saved":
             normalizedX = 0.49
-        case "Messages":
+        case "Practice":
             normalizedX = 0.66
         case "Search":
             normalizedX = 0.82
