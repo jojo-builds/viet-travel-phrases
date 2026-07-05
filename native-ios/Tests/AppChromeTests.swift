@@ -187,6 +187,42 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testBackdropPreheaterFallsBackWhenCityPlaceHeroAssetIsMissing() {
+        let missingCityPlaceHeroName = "HeroCityDanangPlaceBanhCanhYen"
+        let fallbackImageName = SharedBackdropImagePool.fallbackImageName
+        let preparedImage = UIGraphicsImageRenderer(size: CGSize(width: 4, height: 4)).image { context in
+            UIColor.blue.setFill()
+            context.fill(CGRect(x: 0, y: 0, width: 4, height: 4))
+        }
+
+        AdminBackdropImagePreheater.resetForTesting(
+            imagePreparer: { imageName in
+                imageName == fallbackImageName ? preparedImage : nil
+            },
+            imageAvailabilityChecker: { imageName in
+                imageName == fallbackImageName
+            }
+        )
+        defer { AdminBackdropImagePreheater.resetForTesting() }
+
+        XCTAssertEqual(
+            AdminBackdropImagePreheater.displayImageName(for: missingCityPlaceHeroName),
+            fallbackImageName
+        )
+
+        AdminBackdropImagePreheater.preheatFocused([missingCityPlaceHeroName])
+
+        let deadline = Date().addingTimeInterval(2)
+        while AdminBackdropImagePreheater.preparedImage(named: missingCityPlaceHeroName) == nil, Date() < deadline {
+            Thread.sleep(forTimeInterval: 0.01)
+        }
+
+        XCTAssertNotNil(
+            AdminBackdropImagePreheater.preparedImage(named: missingCityPlaceHeroName),
+            "Missing city/place hero assets should preheat and display the shared fallback instead of rendering blank."
+        )
+    }
+
     func testPracticeMatchSnapshotCacheTracksInFlightLoads() {
         let key = PracticeMatchSnapshotCacheKey(
             practicePageIDs: ["viet-thank-you"],
@@ -581,6 +617,34 @@ final class AppChromeTests: XCTestCase {
         )
         XCTAssertFalse(PhrasePhotoBackdropLayout.scrollState(for: 24, metrics: metrics).hasPassedRevealThreshold)
         XCTAssertTrue(PhrasePhotoBackdropLayout.scrollState(for: 25, metrics: metrics).hasPassedRevealThreshold)
+    }
+
+    func testHomePhotoBackdropPublishesScrollStateAtCoarserPerformanceStride() {
+        XCTAssertGreaterThan(
+            HomeLayout.photoBackdropScrollDisplayStride,
+            PhrasePhotoBackdropLayout.scrollGeometryUpdateStride
+        )
+        XCTAssertGreaterThan(
+            HomeLayout.shellScrollOffsetPublishStride,
+            HomeLayout.photoBackdropScrollDisplayStride
+        )
+
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.quantizedScrollOffset(
+                95,
+                stride: HomeLayout.shellScrollOffsetPublishStride
+            ),
+            0,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.quantizedScrollOffset(
+                96,
+                stride: HomeLayout.shellScrollOffsetPublishStride
+            ),
+            96,
+            accuracy: 0.001
+        )
     }
 
     func testPhraseArticleStandardScrollTaskRunsOnlyForActivePages() {
@@ -1041,6 +1105,39 @@ final class AppChromeTests: XCTestCase {
                 "\(route.id) should use one uniform message-section policy"
             )
         }
+    }
+
+    func testBrowseCollectionSectionChromePolicyCoversMultiSectionCategoriesAndCities() {
+        let categoryRoutes: [BrowseCollectionRoute] = [
+            .category("airport"),
+            .category("hotel"),
+            .category("food"),
+            .category("getting-around"),
+            .category("shopping"),
+        ]
+
+        for route in categoryRoutes {
+            let descriptor = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: route))
+            let items = BrowseCollectionSectionChromePolicy.items(for: descriptor)
+
+            XCTAssertGreaterThan(items.count, 1, "\(route.id) should expose top-admin Browse section chrome.")
+            XCTAssertEqual(items.map(\.id), descriptor.subcategories.filter { !$0.items.isEmpty }.map(\.id))
+            XCTAssertTrue(items.allSatisfy { !$0.title.isEmpty && !$0.symbolName.isEmpty })
+        }
+
+        for cityID in ["danang", "hoian", "hcmc", "hanoi", "hue"] {
+            let descriptor = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city(cityID)))
+            let cityHub = try! XCTUnwrap(descriptor.cityHub)
+            let items = BrowseCollectionSectionChromePolicy.items(for: descriptor)
+
+            XCTAssertGreaterThan(items.count, 1, "\(cityID) should expose top-admin city Browse section chrome.")
+            XCTAssertEqual(items.map(\.id), cityHub.cityBrowseFilters.filter { !$0.items.isEmpty }.map(\.id))
+            XCTAssertTrue(items.contains { $0.id == "\(cityID).browse.landmarks" })
+            XCTAssertTrue(items.contains { $0.id == "\(cityID).browse.restaurants" })
+        }
+
+        let countryHub = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("city-guides")))
+        XCTAssertTrue(BrowseCollectionSectionChromePolicy.items(for: countryHub).isEmpty)
     }
 
     func testSharedBackdropPoolUsesTwentyUniqueExistingAppAssets() {
@@ -3568,11 +3665,19 @@ final class AppChromeTests: XCTestCase {
 
     func testAirportCollectionSubcategoryCardsExposeSimAndCashLanes() {
         let airport = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport")))
+        let airportFallback = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport-border-arrival")))
 
         XCTAssertEqual(
             airport.subcategories.map(\.title),
             ["Arrival", "Baggage", "Transport", "SIM card", "Cash"]
         )
+        XCTAssertEqual(airportFallback.title, "Airport")
+        XCTAssertEqual(airportFallback.subtitle, airport.subtitle)
+        XCTAssertEqual(airportFallback.starterTitle, airport.starterTitle)
+        XCTAssertEqual(airportFallback.messageSectionTitle, "Airport")
+        XCTAssertEqual(airportFallback.mastheadImageName, "HeroCategoryAirport")
+        XCTAssertEqual(airportFallback.subcategories.map(\.title), airport.subcategories.map(\.title))
+        XCTAssertEqual(airportFallback.subcategories.compactMap(\.imageName), airport.subcategories.compactMap(\.imageName))
         XCTAssertTrue(airport.subcategories.allSatisfy { !$0.items.isEmpty })
         XCTAssertTrue(airport.subcategories.allSatisfy { $0.phraseCount == $0.items.count })
         XCTAssertEqual(
@@ -3618,7 +3723,15 @@ final class AppChromeTests: XCTestCase {
 
     func testHotelExploreShelfHeadersCanRouteToTheirCategories() {
         let hotel = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("hotel")))
+        let hotelFallback = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("hotel-accommodation")))
 
+        XCTAssertEqual(hotelFallback.title, "Hotel")
+        XCTAssertEqual(hotelFallback.subtitle, hotel.subtitle)
+        XCTAssertEqual(hotelFallback.starterTitle, hotel.starterTitle)
+        XCTAssertEqual(hotelFallback.messageSectionTitle, "Hotel")
+        XCTAssertEqual(hotelFallback.mastheadImageName, "HeroCategoryHotel")
+        XCTAssertEqual(hotelFallback.subcategories.map(\.title), hotel.subcategories.map(\.title))
+        XCTAssertEqual(hotelFallback.subcategories.compactMap(\.imageName), hotel.subcategories.compactMap(\.imageName))
         XCTAssertFalse(hotel.exploreShelves.isEmpty)
         XCTAssertTrue(hotel.exploreShelves.allSatisfy { shelf in
             guard let targetRoute = shelf.targetRoute else {
@@ -3878,8 +3991,9 @@ final class AppChromeTests: XCTestCase {
 
         let dragonBridge = try repository.loadPhraseDetailPage(pageID: "viet-phrase-city-danang-place-dragon-bridge")
         let dragonRows = dragonBridge.sections.flatMap(\.phrases)
-        XCTAssertTrue(dragonRows.contains { $0.id == "transport-stop-here-clearer" })
-        XCTAssertTrue(dragonRows.contains { $0.id == "repair-5" })
+        XCTAssertTrue(dragonRows.contains { $0.id == "directions-1" })
+        XCTAssertTrue(dragonRows.contains { $0.id == "sight-3" })
+        XCTAssertTrue(dragonRows.contains { $0.id == "sight-4" })
         XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-ves-drop-near-dragon-bridge" })
         XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-city-danang-go-dragon-bridge" })
         XCTAssertFalse(dragonRows.contains { $0.detailPageID == "viet-phrase-city-danang-where-dragon-bridge" })
@@ -4453,7 +4567,7 @@ final class AppChromeTests: XCTestCase {
         let expected: [String: (targetPageID: String, proofSnippet: String)] = [
             "viet-family-city-danang-place-banh-xeo-ba-duong": (
                 "viet-phrase-city-danang-place-be-man",
-                "Beach-side seafood"
+                "trays, prices, and cooking style"
             ),
             "viet-family-city-danang-place-con-market": (
                 "viet-phrase-city-danang-place-han-market",
@@ -4461,19 +4575,15 @@ final class AppChromeTests: XCTestCase {
             ),
             "viet-family-city-hanoi-place-gia": (
                 "viet-phrase-city-hanoi-place-tam-vi",
-                "One MICHELIN Star northern table"
+                "home-style"
             ),
             "viet-family-city-hcmc-place-akuna": (
                 "viet-phrase-city-hcmc-place-anan-saigon",
-                "market-side 2025 One MICHELIN Star"
+                "market-side modern Vietnamese dinner"
             ),
             "viet-family-city-hoian-place-white-rose-restaurant": (
                 "viet-phrase-city-hoian-place-bale-well",
                 "shared set meal"
-            ),
-            "viet-family-city-hue-place-dong-ba": (
-                "viet-phrase-city-hue-place-bun-bo-city",
-                "city bowl"
             ),
         ]
 
@@ -4634,9 +4744,9 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(coffee.title, "Cà phê sữa đá")
         XCTAssertEqual(coffee.englishTitle, "Vietnamese iced milk coffee")
         XCTAssertEqual(coffee.heroImageName, "BackdropMenuDrinkCaPheSuaDa")
-        XCTAssertTrue(coffee.sections.first?.body.contains("robusta bitterness") == true)
+        XCTAssertTrue(coffee.sections.first?.body.contains("strong phin-brewed robusta") == true)
         XCTAssertTrue(coffee.sections.first { $0.id == "how-locals-order" }?.body.contains("less sweet") == true)
-        XCTAssertTrue(coffee.sections.first { $0.id == "worth-knowing" }?.body.contains("condensed milk gives the body") == true)
+        XCTAssertTrue(coffee.sections.first { $0.id == "worth-knowing" }?.body.contains("condensed milk gives body") == true)
         XCTAssertEqual(coffee.sections.first { $0.id == "useful-phrases" }?.phrases.map(\.vietnamese), ["Làm ơn bớt đường đi", "Không đường nhé", "Ít đá thôi", "Làm ơn đừng có đá", "Tính tiền giúp tôi"])
         XCTAssertTrue(coffee.sections.first { $0.id == "useful-phrases" }?.phrases.allSatisfy { $0.playbackAudioKey != nil } == true)
         XCTAssertEqual(coffee.practiceCTALabel, "Practice ordering this")
@@ -4933,6 +5043,8 @@ final class AppChromeTests: XCTestCase {
         let hue = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .city("hue")))
         let airport = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport")))
         let hotel = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("hotel")))
+        let airportFallback = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport-border-arrival")))
+        let hotelFallback = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("hotel-accommodation")))
         let food = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("food")))
         let greetings = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("greetings")))
         let questions = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("questions")))
@@ -4952,6 +5064,8 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(hue.mastheadImageName, "HeroCityHue")
         XCTAssertEqual(airport.mastheadImageName, "HeroCategoryAirport")
         XCTAssertEqual(hotel.mastheadImageName, "HeroCategoryHotel")
+        XCTAssertEqual(airportFallback.mastheadImageName, "HeroCategoryAirport")
+        XCTAssertEqual(hotelFallback.mastheadImageName, "HeroCategoryHotel")
         XCTAssertEqual(food.mastheadImageName, "HeroCategoryFood")
         XCTAssertEqual(greetings.mastheadImageName, "HeroCategoryGreetings")
         XCTAssertEqual(questions.mastheadImageName, "HeroCategoryQuestions")
@@ -5363,6 +5477,21 @@ final class LocalUserIntentStoreTests: XCTestCase {
         XCTAssertEqual(store.savedPageIDs, ["viet-menu-drink-ca-phe-sua-da"])
         XCTAssertTrue(store.isPageSaved("viet-menu-drink-ca-phe-sua-da"))
         XCTAssertTrue(store.practicePageIDs.isEmpty)
+    }
+
+    func testSavedCityHubIDsPersistAsTripItems() {
+        let store = LocalUserIntentStore(defaults: defaults)
+        let cityPageID = "browse-city-hoian"
+
+        store.toggleSavedPage(cityPageID)
+
+        XCTAssertEqual(store.savedPageIDs, [cityPageID])
+        XCTAssertTrue(store.isPageSaved(cityPageID))
+
+        let snapshot = SavedTripSnapshot.make(savedPageIDs: store.savedPageIDs)
+        XCTAssertEqual(snapshot.sections.map(\.kind), [.cities])
+        XCTAssertEqual(snapshot.sections.first?.items.first?.pageID, cityPageID)
+        XCTAssertEqual(snapshot.sections.first?.items.first?.title, "Hoi An")
     }
 
     func testSavedTripSnapshotGroupsMenuItemsAndPhrases() {

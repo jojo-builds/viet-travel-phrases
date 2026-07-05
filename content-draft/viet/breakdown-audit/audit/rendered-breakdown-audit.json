@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-06-16T03:38:22.823Z",
-  "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/launch-readiness-bug-hunt-20260616/content-draft/viet/breakdown-audit/pages",
+  "generatedAt": "2026-07-05T01:55:18.526Z",
+  "ledgerRoot": "/Users/jojolim/Developer/products/speaklocal/app-family/content-draft/viet/breakdown-audit/pages",
   "summary": {
     "pages": 1793,
     "reviewed": 1407,
     "visualReviewed": 1407,
     "missing": 386,
-    "generatedAt": "2026-06-16T03:38:22.823Z"
+    "generatedAt": "2026-07-05T01:55:18.526Z"
   },
   "pages": [
     {
@@ -3167,7 +3167,7 @@
           "id": "chunk-1",
           "vietnamese": "Không cay",
           "english": "not spicy",
-          "audioKey": null,
+          "audioKey": "breakdown-authored-khong-cay",
           "keepTogetherReason": "compound food phrase"
         },
         {
@@ -111050,7 +111050,7 @@
           "id": "city-danang-go-ba-na-hills-chunk-3",
           "vietnamese": "Đi Bà Nà Hills",
           "english": "Go to Ba Na Hills",
-          "audioKey": null
+          "audioKey": "audio-authored-di-ba-na-hills-aa992e3c66"
         }
       ],
       "reviewedBreakdown": null
@@ -111081,7 +111081,7 @@
           "id": "city-danang-where-ba-na-hills-chunk-3",
           "vietnamese": "Bà Nà Hills ở đâu?",
           "english": "Where is Ba Na Hills?",
-          "audioKey": null
+          "audioKey": "audio-authored-ba-na-hills-o-dau-5a70cb99cc"
         }
       ],
       "reviewedBreakdown": null
@@ -111326,7 +111326,7 @@
           "id": "ves-do-you-speak-english-anh-chunk-4",
           "vietnamese": "Anh nói tiếng Anh không?",
           "english": "Do you speak English?",
-          "audioKey": null
+          "audioKey": "audio-authored-anh-noi-tieng-anh-khong-38b15123ba"
         }
       ],
       "reviewedBreakdown": null
@@ -111463,7 +111463,7 @@
           "id": "ves-drop-near-dragon-bridge-chunk-4",
           "vietnamese": "Cho tôi xuống gần Cầu Rồng.",
           "english": "Drop me off near Dragon Bridge.",
-          "audioKey": null
+          "audioKey": "audio-authored-cho-toi-xuong-gan-cau-rong-858bbe4abc"
         }
       ],
       "reviewedBreakdown": null
@@ -111494,7 +111494,7 @@
           "id": "ves-go-son-tra-peninsula-chunk-3",
           "vietnamese": "Đi bán đảo Sơn Trà.",
           "english": "Go to Son Tra Peninsula.",
-          "audioKey": null
+          "audioKey": "audio-authored-di-ban-dao-son-tra-e3d044d9a0"
         }
       ],
       "reviewedBreakdown": null
@@ -111525,7 +111525,7 @@
           "id": "ves-iced-tea-please-chunk-3",
           "vietnamese": "Cho tôi trà đá.",
           "english": "Iced tea, please",
-          "audioKey": null
+          "audioKey": "audio-authored-cho-toi-tra-da-4426954f03"
         }
       ],
       "reviewedBreakdown": null
@@ -112096,7 +112096,7 @@
           "id": "chunk-1",
           "vietnamese": "Không cay",
           "english": "not spicy",
-          "audioKey": null,
+          "audioKey": "breakdown-authored-khong-cay",
           "keepTogetherReason": "compound food phrase"
         },
         {
@@ -112172,7 +112172,7 @@
           "id": "ves-one-ticket-marble-mountains-chunk-3",
           "vietnamese": "Một vé vào Ngũ Hành Sơn.",
           "english": "One ticket to Marble Mountains.",
-          "audioKey": null
+          "audioKey": "audio-authored-mot-ve-vao-ngu-hanh-son-a756bb49d1"
         }
       ],
       "reviewedBreakdown": null
@@ -112209,7 +112209,7 @@
           "id": "ves-one-ticket-marble-mountains-polite-chunk-4",
           "vietnamese": "Dạ, cho tôi một vé vào Ngũ Hành Sơn.",
           "english": "One ticket to Marble Mountains, please.",
-          "audioKey": null
+          "audioKey": "audio-authored-da-cho-toi-mot-ve-vao-ngu-hanh-son-7f6e289d9b"
         }
       ],
       "reviewedBreakdown": null
@@ -112654,7 +112654,7 @@
           "id": "ves-show-me-anh-chi-chunk-4",
           "vietnamese": "Anh/chị chỉ giúp tôi được không?",
           "english": "Can you show me?",
-          "audioKey": null
+          "audioKey": "audio-authored-anh-chi-chi-giup-toi-duoc-khong-8f310cf83e"
         }
       ],
       "reviewedBreakdown": null
@@ -112685,7 +112685,7 @@
           "id": "ves-take-me-to-ba-na-hills-chunk-3",
           "vietnamese": "Cho tôi đi Bà Nà Hills.",
           "english": "Please take me to Ba Na Hills.",
-          "audioKey": null
+          "audioKey": "audio-authored-cho-toi-di-ba-na-hills-7e1fd2f0f0"
         }
       ],
       "reviewedBreakdown": null
@@ -112716,7 +112716,7 @@
           "id": "ves-take-me-to-dragon-bridge-chunk-3",
           "vietnamese": "Cho tôi đi Cầu Rồng.",
           "english": "Please take me to Dragon Bridge.",
-          "audioKey": null
+          "audioKey": "audio-authored-cho-toi-di-cau-rong-31d5036c87"
         }
       ],
       "reviewedBreakdown": null
@@ -113109,7 +113109,7 @@
           "id": "ves-two-tickets-ba-na-hills-chunk-4",
           "vietnamese": "Dạ, cho tôi hai vé lên Bà Nà Hills.",
           "english": "Two tickets to Ba Na Hills, please.",
-          "audioKey": null
+          "audioKey": "audio-authored-da-cho-toi-hai-ve-len-ba-na-hills-cb395e159b"
         }
       ],
       "reviewedBreakdown": null
@@ -113140,7 +113140,7 @@
           "id": "ves-two-tickets-marble-mountains-chunk-3",
           "vietnamese": "Hai vé vào Ngũ Hành Sơn.",
           "english": "Two tickets to Marble Mountains.",
-          "audioKey": null
+          "audioKey": "audio-authored-hai-ve-vao-ngu-hanh-son-83aeec767b"
         }
       ],
       "reviewedBreakdown": null
@@ -113383,7 +113383,7 @@
           "id": "ves-where-dragon-bridge-chunk-3",
           "vietnamese": "Cầu Rồng ở đâu?",
           "english": "Where is Dragon Bridge?",
-          "audioKey": null
+          "audioKey": "audio-authored-cau-rong-o-dau-8de12d7ea5"
         }
       ],
       "reviewedBreakdown": null
@@ -113578,7 +113578,7 @@
           "id": "ves-where-linh-ung-pagoda-chunk-3",
           "vietnamese": "Chùa Linh Ứng ở đâu?",
           "english": "Where is Linh Ung Pagoda?",
-          "audioKey": null
+          "audioKey": "audio-authored-chua-linh-ung-o-dau-03317f605a"
         }
       ],
       "reviewedBreakdown": null

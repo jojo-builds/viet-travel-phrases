@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-07-04T07:59:12.562Z",
+  "gitCommit": "07a2db5d8",
+  "catalog": {
+    "families": 1782,
+    "phrases": 1800,
+    "scenarios": 19
+  },
+  "authoredListingPages": {
+    "pages": 1793,
+    "explicitHeroRefs": 826,
+    "uniqueExplicitHeroRefs": 521,
+    "missingExplicitHeroRefs": 20
+  },
+  "audio": {
+    "manifestEntries": 4318,
+    "plannedMissingAudioQueueRows": 778
+  },
+  "images": {
+    "totalImagesets": 1273,
+    "heroImagesets": 879,
+    "heroCityImagesets": 505,
+    "heroCategoryImagesets": 11,
+    "heroMenuImagesets": 355,
+    "backdropImagesets": 377,
+    "backdropMenuImagesets": 355,
+    "backdropPhraseImagesets": 20
+  },
+  "phraseBackdrops": {
+    "placements": 952,
+    "semanticPools": 12,
+    "semanticPoolAssets": 20
+  },
+  "menuImages": {
+    "itemCount": 355,
+    "expectedThumbnailAssets": 355,
+    "expectedBackdropAssets": 355,
+    "uniqueThumbnailHashes": 355,
+    "uniqueBackdropHashes": 355,
+    "issueCount": 0,
+    "issues": []
+  },
+  "sqliteCounts": [
+    {
+      "table_name": "scenario",
+      "count": 19
+    },
+    {
+      "table_name": "phrase_cluster",
+      "count": 1782
+    },
+    {
+      "table_name": "phrase",
+      "count": 1800
+    },
+    {
+      "table_name": "phrase_ready_audio",
+      "count": 1022
+    },
+    {
+      "table_name": "phrase_planned_audio",
+      "count": 778
+    },
+    {
+      "table_name": "phrase_page",
+      "count": 1793
+    },
+    {
+      "table_name": "missing_audio_audit",
+      "count": 778
+    },
+    {
+      "table_name": "release_blocking_missing_audio",
+      "count": 0
+    },
+    {
+      "table_name": "search_document",
+      "count": 1800
+    },
+    {
+      "table_name": "city_place",
+      "count": 520
+    },
+    {
+      "table_name": "vietnamese_menu_item",
+      "count": 355
+    }
+  ]
+}

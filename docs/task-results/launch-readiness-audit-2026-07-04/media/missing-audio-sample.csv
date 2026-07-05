@@ -1,0 +1,81 @@
+target_kind,target_id,expected_text,severity,release_blocking,source_path,reason
+phrase,city-danang-atm-airport,Có ATM gần Sân bay Đà Nẵng không?,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-atm-bach-dang-street,Có ATM gần Đường Bạch Đằng không?,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-atm-con-market,Có ATM gần Chợ Cồn không?,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-atm-han-market,Có ATM gần Chợ Hàn không?,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-atm-helio-night-market,Có ATM gần Chợ đêm Helio không?,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-bach-dang-route,Đi đường Bạch Đằng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-eat-near-bach-dang-street,Ăn gần Đường Bạch Đằng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-eat-near-con-market,Ăn gần Chợ Cồn,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-eat-near-han-market,Ăn gần Chợ Hàn,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-go-airport,Đi Sân bay Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-go-ba-na-hills,Đi Bà Nà Hills,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-go-con-market,Đi Chợ Cồn,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-go-han-market,Đi Chợ Hàn,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-go-helio-night-market,Đi Chợ đêm Helio,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-go-nen,Cho tôi đến nhà hàng Nén Đà Nẵng.,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-go-nguyen-van-linh-street,Đi Đường Nguyễn Văn Linh,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-go-railway-station,Đi Ga Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-go-son-tra-night-market,Đi Chợ đêm Sơn Trà,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-go-tien-sa-port,Đi Cảng Tiên Sa,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-go-vo-nguyen-giap-street,Đi Đường Võ Nguyên Giáp,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-near-bach-dang-street,Đường Bạch Đằng gần đây không?,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-near-con-market,Chợ Cồn gần đây không?,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-near-han-market,Chợ Hàn gần đây không?,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-near-helio-night-market,Chợ đêm Helio gần đây không?,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-near-nguyen-van-linh-street,Đường Nguyễn Văn Linh gần đây không?,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-near-son-tra-night-market,Chợ đêm Sơn Trà gần đây không?,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-near-vo-nguyen-giap-street,Đường Võ Nguyên Giáp gần đây không?,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-pharmacy-han-market,Có nhà thuốc gần chợ Hàn không?,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-3d-art-in-paradise,Bảo tàng 3D Art in Paradise Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-43-factory,43 Factory Coffee Roaster,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-an-thuong-street-area,Khu An Thượng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-ba-na-cable-car,Cáp treo Bà Nà,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-bac-my-an-market,Chợ Bắc Mỹ An,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-banh-canh-yen,Bánh Canh Yến,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-banh-mi,Bánh mì ở Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-banh-trang-cuon-thit-heo,Bánh tráng cuốn thịt heo ở Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-banh-xeo,Bánh xèo ở Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-banh-xeo-ba-duong,Bánh xèo Bà Dưỡng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-be-man,Hải sản Bé Mặn,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-bep-cuon,Bếp Cuốn Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-bep-hen,Bếp Hên,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-boulevard-gelato-coffee,Boulevard Gelato & Coffee,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-bun-cha-ca,Bún chả cá ở Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-bun-cha-ca-109,Bún Chả Cá 109,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-bun-cha-ca-hon,Bún Chả Cá Hờn,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-bun-rieu-cua-39,Bún Riêu Cua 39,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-central-bus-station,Bến xe Trung tâm Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-che-xoa-xoa-hat-luu,Chè xoa xoa hạt lựu ở Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-co-chu-nho,Cô Chủ Nhỏ,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-cong-caphe-bach-dang,Cộng Cà Phê Bạch Đằng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-domestic-terminal,Nhà ga quốc nội Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-dong-dinh-museum,Bảo tàng Đồng Đình,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-dragon-bridge-fire-show,Màn phun lửa Cầu Rồng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-dragon-carp-statue,Tượng Cá Chép Hóa Rồng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-fatfish,Fatfish,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-fine-arts-museum,Bảo tàng Mỹ thuật Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-hai-chau-district,Quận Hải Châu,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-hai-san,Hải sản ở Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-hai-van-pass,Đèo Hải Vân,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-hai-van-pass-ride,Chuyến đi đèo Hải Vân,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-han-river-cruise,Du thuyền sông Hàn,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-hoa-phu-thanh,Khu du lịch Hòa Phú Thành,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-hoa-trung-lake,Hồ Hòa Trung,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-international-terminal,Nhà ga quốc tế Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-kem-bo,Kem bơ ở Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-la-maison-1888,La Maison 1888,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-lady-buddha,Tượng Phật Bà,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-le-duan-night-market,Chợ đêm Lê Duẩn,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-long-coffee,Cà phê Long,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-lotte-mart,Lotte Mart Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-madame-lan,Madame Lân,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-marble-mountain-cave-walk,Hang động Ngũ Hành Sơn,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-mi-quang,Mì Quảng ở Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-mi-quang-1a,Mì Quảng 1A,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-moc-quan-seafood,MỘC Quán Seafood,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-museum,Bảo tàng Đà Nẵng,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-museum-branch-2,Bảo tàng Đà Nẵng - Cơ sở 2,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-my-an,Mỹ An,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-my-an-beach,Biển Mỹ An,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio
+phrase,city-danang-place-my-quang-ba-mua,Mỳ Quảng Bà Mua,planned,0,native-ios/Resources/viet-phrase-catalog.json,planned-authored-audio

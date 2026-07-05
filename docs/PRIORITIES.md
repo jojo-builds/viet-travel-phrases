@@ -42,7 +42,7 @@ Use `docs/DECISIONS.md` for durable decisions and `docs/V2_BASELINE.md` plus `do
 - rewriting all 10+ apps simultaneously before the family shell exists
 - a third runtime-wired app before Viet + Tagalog content proof is stronger
 - turning the website into the full phrase library
-- pretending the current Viet pass is device-proven or broader audio-quality-cleared
+- pretending the current Viet pass is broader audio-quality-cleared than the actual validation proves
 - pretending practice/quiz exists before its offline deck, native UX, local progress, mascot lane, practice audio audit, simulator proof, and device proof are implemented and validated
 - pretending the repo-side StoreKit pass counts as device proof by itself
 - splitting content truth or workflow truth across separate repos during the native cutover

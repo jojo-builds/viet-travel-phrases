@@ -40,6 +40,27 @@ final class BackSwipeUITests: XCTestCase {
         XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
     }
 
+    func testTopForwardButtonRestoresForwardPageAfterBackButton() {
+        let app = XCUIApplication()
+        app.launchArguments = ["--detail-page", "viet-hello-anh"]
+        app.launch()
+
+        XCTAssertTrue(app.staticTexts["Chào anh"].waitForExistence(timeout: 5))
+
+        let backButton = app.buttons["TopAdmin.BackButton"]
+        XCTAssertTrue(backButton.waitForExistence(timeout: 3))
+        backButton.tap()
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
+
+        let forwardButton = app.buttons["TopAdmin.ForwardButton"]
+        XCTAssertTrue(forwardButton.waitForExistence(timeout: 3))
+        forwardButton.tap()
+
+        XCTAssertTrue(app.staticTexts["Chào anh"].waitForExistence(timeout: 3))
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
+    }
+
     func testBrowseBackSwipeKeepsHomeSearchChromeUsable() {
         let app = XCUIApplication()
         app.launchArguments = ["--browse"]
@@ -384,7 +405,15 @@ final class BackSwipeUITests: XCTestCase {
         line: UInt = #line
     ) {
         for _ in 0..<maxSwipes where !isComfortablyHittable(element, in: app) {
-            app.swipeUp()
+            if element.exists, element.frame.maxY < app.frame.minY + 24 {
+                app.swipeDown()
+            } else {
+                app.swipeUp()
+            }
+        }
+
+        for _ in 0..<maxSwipes where !isComfortablyHittable(element, in: app) {
+            app.swipeDown()
         }
 
         XCTAssertTrue(element.waitForExistence(timeout: 3), "Expected element to exist.", file: file, line: line)

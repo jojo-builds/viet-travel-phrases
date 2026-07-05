@@ -1,0 +1,179 @@
+{
+  "assetCount": 1273,
+  "referencedStaticAssetNames": 561,
+  "presentReferencedAssetNames": 534,
+  "missingReferencedAssetNames": 27,
+  "missing": [
+    {
+      "name": "BackdropMenu",
+      "refs": [
+        "native-ios/App/Models/VietnameseMenuCatalog.swift",
+        "native-ios/App/Views/BrowseCollectionPageView.swift",
+        "native-ios/App/Views/PhraseListingView.swift"
+      ]
+    },
+    {
+      "name": "BackdropVietnamese",
+      "refs": [
+        "native-ios/App/Views/BrowseCollectionPageView.swift"
+      ]
+    },
+    {
+      "name": "HeroCategory",
+      "refs": [
+        "native-ios/App/Design/NativeGlass.swift",
+        "native-ios/App/Views/AppShellView.swift",
+        "native-ios/App/Views/BrowseCollectionPageView.swift",
+        "native-ios/App/Views/PhraseListingView.swift"
+      ]
+    },
+    {
+      "name": "HeroCity",
+      "refs": [
+        "native-ios/App/Design/NativeGlass.swift",
+        "native-ios/App/Views/BrowseCollectionPageView.swift",
+        "native-ios/App/Views/PhraseListingView.swift"
+      ]
+    },
+    {
+      "name": "HeroCityDanangPlaceBanhCanhYen",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityDanangPlaceBepHen",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityDanangPlaceBunChaCa109",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityDanangPlaceBunRieuCua39",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityDanangPlaceMocQuanSeafood",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityDanangPlaceMyQuangSuaHongVan",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityHanoiPlaceBanhCuonBaHoanh",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityHanoiPlaceBanhCuonBaXuan",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityHanoiPlaceBunChaDacKim",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityHanoiPlacePho10LyQuocSu",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityHanoiPlacePhoGaNguyet",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityHanoiPlaceTuyetBunCha34",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityHcmcPlaceBoKhoGanh",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityHcmcPlaceBunBoHue14b",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityHcmcPlaceManMoi",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityHcmcPlacePhoHuongBinh",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityHcmcPlacePhoLeDistrict5",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityHcmcPlacePhoMinh",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityHoianPlaceCaoLauThanh",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCityHoianPlaceComGaBaBuoi",
+      "refs": [
+        "native-ios/Resources/viet-authored-listing-pages.json"
+      ]
+    },
+    {
+      "name": "HeroCountry",
+      "refs": [
+        "native-ios/App/Design/NativeGlass.swift"
+      ]
+    },
+    {
+      "name": "HeroMenu",
+      "refs": [
+        "native-ios/App/Models/VietnameseMenuCatalog.swift",
+        "native-ios/App/Views/BrowseCollectionPageView.swift"
+      ]
+    },
+    {
+      "name": "HeroVietnam",
+      "refs": [
+        "native-ios/App/Views/BrowseCollectionPageView.swift"
+      ]
+    }
+  ],
+  "note": "This checks literal asset-like names in Swift/JSON. Dynamic generated names may need separate catalog-specific validation."
+}

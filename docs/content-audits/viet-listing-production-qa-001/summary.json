@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-10T22:32:41.602Z",
+  "generatedAt": "2026-07-05T10:44:00.227Z",
   "pageCount": 1793,
   "issueCounts": {
     "BLOCKER": 0,
@@ -15,7 +15,7 @@
     "sayThis": 775,
     "renderedHidden": 775
   },
-  "missingAudioPriorityCount": 500,
+  "missingAudioPriorityCount": 0,
   "heroImageFollowUpCount": 0,
   "verdict": "NO_BLOCKER_OR_MAJOR_ISSUES_IN_STATIC_RENDER_MODEL"
 }

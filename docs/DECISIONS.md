@@ -148,12 +148,16 @@
 ## Current live Viet boundary decisions
 
 - The current Viet live reality is now:
-  - 150 starter visible entries
-  - 750 premium visible entries
-  - 900 total visible entries
-  - 919 approved phrase rows
-  - 919 approved rows currently marked `audioStatus=ready`
-  - 0 approved rows currently marked `audioStatus=planned`
+  - 19 runtime scenarios
+  - 177 starter visible intent families
+  - 1605 premium visible intent families
+  - 1782 total visible intent families / clusters
+  - 1800 source phrase rows
+  - 1793 canonical phrase pages
+  - 11728 relation rows
+  - 4318 bundled audio assets
+  - 778 planned missing-audio phrase rows
+  - 0 release-blocking missing-audio rows
 - The autonomous completion audits for the live Viet pack now live under:
   - `content-draft/viet/autonomous-500/`
   - `content-draft/viet/autonomous-900/`
@@ -182,9 +186,9 @@
 
 ## Future boundary decisions
 
-- Any future expansion beyond the live `150 / 750 / 900` boundary is now an explicit future-only `200 / 1000` decision, not the current planning default.
+- Any future expansion beyond the live generated `177 / 1605 / 1782` family boundary is an explicit future decision, not the current planning default.
 - Viet premium expansion planning authority now lives in `docs/VIET_PREMIUM_EXPANSION_PLAN.md`.
 - Viet premium expansion lanes under `content-draft/viet/premium-expansion/` may now be either:
   - future prepared-not-live lanes
   - or promoted-live historical manifests that document how a lane entered runtime truth
-- A later `200 / 1000` shape is an explicit future option only, not the default.
+- Older `150 / 750 / 900` and `200 / 1000` planning shapes are historical references only unless a future task deliberately reopens them.

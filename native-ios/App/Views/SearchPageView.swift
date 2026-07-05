@@ -132,12 +132,6 @@ struct SearchPageView: View {
                     }
                 }
             }
-            .contentShape(Rectangle())
-            .simultaneousGesture(
-                TapGesture().onEnded {
-                    dismissSearchFromContent()
-                }
-            )
         }
         .accessibilityIdentifier("SearchPageView")
         .onAppear {
@@ -994,7 +988,7 @@ private struct SearchChipWrap: View {
     var body: some View {
         SearchSection(title: title) {
             StringChipGrid(items: chips) { chip in
-                SearchTextChip(title: chip) {
+                SearchTextChip(title: chip, accessibilityID: "Search.Chip.\(chip.normalizedSearchChipIdentifier)") {
                     onTap(chip)
                 }
             }
@@ -1058,6 +1052,7 @@ private struct SearchIconChip: View {
 
 private struct SearchTextChip: View {
     let title: String
+    let accessibilityID: String
     let action: () -> Void
 
     var body: some View {
@@ -1072,6 +1067,7 @@ private struct SearchTextChip: View {
                 .nativeGlass(cornerRadius: 22, interactive: true)
         }
         .buttonStyle(.plain)
+        .accessibilityIdentifier(accessibilityID)
     }
 }
 
@@ -1081,6 +1077,16 @@ enum SearchResultRowLayout {
 
     static func usesLeadingAudioControl(audioKey: String?) -> Bool {
         AudioSpeakerButton.isPlayableAudioKey(audioKey)
+    }
+}
+
+private extension String {
+    var normalizedSearchChipIdentifier: String {
+        lowercased()
+            .replacingOccurrences(of: "&", with: "and")
+            .components(separatedBy: CharacterSet.alphanumerics.inverted)
+            .filter { !$0.isEmpty }
+            .joined(separator: "-")
     }
 }
 

@@ -15,15 +15,15 @@ final class BaNaHillsJourneyProofUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Ba Na Hills"].waitForExistence(timeout: 3))
         capture(name: "ba-na-top-hero.png")
 
-        scrollUntilVisible(app: app, text: "Visit flow")
-        XCTAssertTrue(app.staticTexts["Getting there"].waitForExistence(timeout: 3))
-        capture(name: "ba-na-visit-flow-getting-there.png")
+        scrollUntilVisible(app: app, text: "Getting there")
+        XCTAssertTrue(app.staticTexts["Tickets"].waitForExistence(timeout: 3))
+        capture(name: "ba-na-getting-there-tickets.png")
 
-        scrollUntilVisible(app: app, text: "Tickets")
-        XCTAssertTrue(app.staticTexts["Cable car"].waitForExistence(timeout: 3))
+        scrollUntilVisible(app: app, text: "Cable car")
+        XCTAssertTrue(app.staticTexts["Photos"].waitForExistence(timeout: 3))
         capture(name: "ba-na-tickets-cable-car.png")
 
-        scrollUntilVisible(app: app, text: "Good to know")
+        scrollUntilVisible(app: app, text: "Give It Room")
         XCTAssertTrue(app.staticTexts["Food & cash"].waitForExistence(timeout: 3))
         capture(name: "ba-na-good-to-know-food-cash.png")
     }
@@ -215,13 +215,13 @@ final class ListingLatestFeedbackProofUITests: XCTestCase {
             "emergency-hub",
             ["--browse-category", "emergency"],
             "Emergency",
-            ["Ask for help calmly.", "Help!"]
+            ["Calm help, health, safety, and problem-solving phrases.", "Help phrases"]
         ),
         (
             "shopping-hub",
             ["--browse-category", "shopping"],
             "Shopping",
-            ["Prices, sizes, payment, and returns."]
+            ["Ask prices, sizes, receipts, returns, and payment questions."]
         ),
         (
             "danang-city-hub",
@@ -375,8 +375,7 @@ final class CityAppDetailV22RenderProofUITests: XCTestCase {
 
     private func loadPages() throws -> [Page] {
         guard let manifestPath = environment["SPEAKLOCAL_V2_2_RENDER_PROOF_MANIFEST"] else {
-            XCTFail("SPEAKLOCAL_V2_2_RENDER_PROOF_MANIFEST is required.")
-            return []
+            throw XCTSkip("SPEAKLOCAL_V2_2_RENDER_PROOF_MANIFEST is required for the city V2.2 render-proof batch.")
         }
 
         let data = try Data(contentsOf: URL(fileURLWithPath: manifestPath))
@@ -469,25 +468,25 @@ final class ListingHubRandomLoopProofUITests: XCTestCase {
         ("saigon", ["--browse-city", "hcmc"], "Saigon", ["Browse by", "Landmarks", "Restaurants"]),
         ("hoi-an", ["--browse-city", "hoian"], "Hoi An", ["Browse by", "Landmarks", "Restaurants"]),
         ("hue", ["--browse-city", "hue"], "Hue", ["Browse by", "Landmarks", "Restaurants"]),
-        ("airport-topic", ["--browse-category", "airport"], "Airport", ["Good first phrases", "Airport Baggage", "Passport Control", "SIM & Cash"]),
-        ("hotel-topic", ["--browse-category", "hotel"], "Hotel", ["At the hotel desk", "Hotel Check-In", "Room Help", "Bags & Taxi"]),
-        ("food-topic", ["--browse-category", "food"], "Eating Out", ["Quick orders", "Order drinks", "Order dishes", "Places to eat & drink", "Food Allergies", "Restaurant Table", "Beach Snacks"]),
-        ("getting-around-topic", ["--browse-category", "getting-around"], "Getting Around", ["Start here", "Grab Pickup", "Taxi Route", "Driver Help"]),
-        ("local-greetings-topic", ["--browse-category", "local-greetings"], "Local Greetings", ["Start here", "Market Hello", "Hotel Hello", "Respectful Hello"]),
+        ("airport-topic", ["--browse-category", "airport"], "Airport", ["Arrival phrases", "Where is the arrivals hall?", "Passport Control", "SIM & Cash"]),
+        ("hotel-topic", ["--browse-category", "hotel"], "Hotel", ["Check-in phrases", "Can you store my luggage after", "Room Help", "Bags & Taxi"]),
+        ("food-topic", ["--browse-category", "food"], "Eating Out", ["Order drinks phrases", "Black coffee", "Order dishes", "Food Allergies", "Restaurant Table", "Beach Snacks"]),
+        ("getting-around-topic", ["--browse-category", "getting-around"], "Getting Around", ["Streets", "Bach Dang Street", "Grab Pickup", "Taxi Route"]),
+        ("local-greetings-topic", ["--browse-category", "local-greetings"], "Local Greetings", ["Greetings phrases", "Hello on the phone", "Hotel Hello", "Respectful Hello"]),
     ]
 
     private let detailPages: [(label: String, pageID: String, title: String, requiredTexts: [String])] = [
-        ("excuse-sorry", "viet-excuse-sorry", "Xin lỗi", ["Break it down", "Common follow-ups", "Good to know", "Next phrases"]),
-        ("cash", "viet-family-transport-cash", "Tôi trả bằng tiền mặt", ["Break it down", "Common follow-ups"]),
-        ("gate", "viet-phrase-v500-airp-bord-arri-where-is-gate-10", "Cổng 10 ở đâu?", ["Break it down", "Good to know"]),
-        ("atm-cathedral", "viet-family-city-danang-atm-cathedral", "Có ATM gần Nhà thờ Con Gà Đà Nẵng không?", ["Break it down", "Related phrases", "Tip"]),
-        ("vo-nguyen-giap", "viet-family-city-danang-place-vo-nguyen-giap-street", "Đường Võ Nguyên Giáp", ["About", "Hear the street", "Driver phrases", "Confirm"]),
-        ("hang-bac", "viet-family-city-hanoi-place-hang-bac-street", "Phố Hàng Bạc", ["About", "Hear the street", "Driver phrases", "Good to know"]),
-        ("golden-bridge", "viet-family-city-danang-place-golden-bridge", "Cầu Vàng", ["About", "Hear the name", "Getting there", "Good to know"]),
-        ("pho-hoa-pasteur", "viet-family-city-hcmc-place-pho-hoa-pasteur", "Phở Hòa Pasteur", ["Getting there", "Table & menu", "Order", "Pay"]),
-        ("banh-mi-phuong", "viet-family-city-hoian-place-banh-mi-phuong", "Bánh mì Phượng", ["Getting there", "Table & menu", "Drinks", "Pay"]),
-        ("take-me-here", "viet-family-transport-destination", "Cho tôi tới đây", ["Break it down", "Common follow-ups", "More ride phrases"]),
-        ("fare", "viet-family-transport-fare", "Tiền xe bao nhiêu?", ["Break it down", "Common follow-ups", "Good to know"]),
+        ("excuse-sorry", "viet-excuse-sorry", "Xin lỗi", ["At a glance", "Break it down", "Useful nearby phrases", "Explore next"]),
+        ("cash", "viet-family-transport-cash", "Tôi trả bằng tiền mặt", ["At a glance", "Break it down", "Good to know"]),
+        ("gate", "viet-phrase-v500-airp-bord-arri-where-is-gate-10", "Cổng 10 ở đâu?", ["At a glance", "Break it down", "Explore next"]),
+        ("cathedral", "viet-family-city-danang-place-cathedral", "Nhà thờ Con Gà Đà Nẵng", ["Slow Down Before The Door", "Useful Phrases", "Facade First", "Worship Space Stays Clear"]),
+        ("vo-nguyen-giap", "viet-family-city-danang-place-vo-nguyen-giap-street", "Đường Võ Nguyên Giáp", ["The Road Along The Beach", "Useful Phrases", "Beach-Side Pickup Point", "Short Stretches Beat The Boulevard"]),
+        ("hang-bac", "viet-family-city-hanoi-place-hang-bac-street", "Phố Hàng Bạc", ["Silver Shops Set The Line", "Useful Phrases", "Browse Before Buying", "Fold It Into A Walk"]),
+        ("golden-bridge", "viet-family-city-danang-place-golden-bridge", "Cầu Vàng", ["Bridge First, Park Second", "Useful Phrases", "The Hands Are The Photograph", "Weather And Tickets Matter"]),
+        ("pho-hoa-pasteur", "viet-family-city-hcmc-place-pho-hoa-pasteur", "Phở Hòa Pasteur", ["Central Saigon Phở Bowl", "Useful Phrases", "The Room Moves Fast", "A Central Pasteur Bowl"]),
+        ("banh-mi-phuong", "viet-family-city-hoian-place-banh-mi-phuong", "Bánh mì Phượng", ["Famous Hội An Bánh Mì Shop", "Useful Phrases", "The Line Can Move Fast", "Portable Lunch, Old Streets Nearby"]),
+        ("take-me-here", "viet-family-transport-destination", "Cho tôi tới đây", ["At a glance", "Break it down", "You May Hear", "Good to know"]),
+        ("fare", "viet-family-transport-fare", "Tiền xe bao nhiêu?", ["At a glance", "Break it down", "You May Hear", "Good to know"]),
     ]
 
     func testCaptureHubPagesForCityCountryTopicQA() {

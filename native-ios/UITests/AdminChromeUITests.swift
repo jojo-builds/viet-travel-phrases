@@ -124,11 +124,16 @@ final class AdminChromeUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Chào anh"].waitForExistence(timeout: 5))
 
         openSearch(in: app, iteration: 1)
+        XCTAssertTrue(searchField(in: app).waitForExistence(timeout: 2))
+        openDock("Home", in: app)
+        assertHomeVisible(in: app)
+
         openDock("Browse", in: app)
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 3))
 
         openSearch(in: app, iteration: 2)
-        XCTAssertTrue(app.staticTexts["Search"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Search.Title"].waitForExistence(timeout: 2))
+        XCTAssertTrue(searchField(in: app).waitForExistence(timeout: 2))
     }
 
     func testDetailPagePinsAudioSpeedControlAfterPlayerScrollsOffscreen() {

@@ -28,6 +28,7 @@ enum HomeScrollTarget: Hashable, Sendable {
 struct HomeScrollRestorationTarget: Equatable {
     let target: HomeScrollTarget
     let offsetY: CGFloat
+    let prefersAnchor: Bool
 }
 
 private struct HomePhotoBackdropScrollState: Equatable {
@@ -37,12 +38,33 @@ private struct HomePhotoBackdropScrollState: Equatable {
 
     init(rawOffset: CGFloat, metrics: PhrasePhotoBackdropLayout.Metrics) {
         let offset = max(rawOffset, 0)
-        displayOffset = PhrasePhotoBackdropLayout.quantizedScrollOffset(offset)
+        displayOffset = PhrasePhotoBackdropLayout.quantizedScrollOffset(
+            offset,
+            stride: HomeLayout.photoBackdropScrollDisplayStride
+        )
         restorationOffset = PhrasePhotoBackdropLayout.quantizedScrollOffset(
             offset,
             stride: HomeLayout.shellScrollOffsetPublishStride
         )
         hasPassedRevealThreshold = offset > metrics.revealImmersiveOffset
+    }
+}
+
+private final class HomePhotoBackdropScrollCoordinator: ObservableObject {
+    @Published private(set) var displayOffset: CGFloat = 0
+
+    func apply(_ scrollState: HomePhotoBackdropScrollState) -> Bool {
+        if displayOffset != scrollState.displayOffset {
+            displayOffset = scrollState.displayOffset
+        }
+
+        return scrollState.hasPassedRevealThreshold
+    }
+
+    func reset() {
+        if displayOffset != 0 {
+            displayOffset = 0
+        }
     }
 }
 
@@ -191,6 +213,7 @@ struct AppShellView: View {
     @State private var pendingPracticeThreadReturnFocus: BrowseCollectionFocusRequest?
     @State private var pendingPracticeThreadForwardRestore: PracticeThreadForwardRestore?
     @State private var pendingPracticeMatchReturnFocus: BrowseCollectionFocusRequest?
+    @State private var shouldResetBrowseRootAfterDetailBack = false
     @State private var browseRootSurfaceResetID = 0
     @State private var isPracticeOverlayPresented = false
     @State private var practiceOverlayBackdropOpacity = PracticeMatchPullUpMetrics.backdropOpacity
@@ -207,6 +230,7 @@ struct AppShellView: View {
     @State private var browseDetailHeroImageOverrides = AppShellBrowseDetailHeroOverrideCache()
     @State private var homeCurrentScrollTarget: HomeScrollTarget? = .top
     @State private var homeCurrentScrollOffsetY: CGFloat = 0
+    @State private var homeCurrentScrollIsPositionedByUser = false
     @State private var homeScrollRestorationTarget: HomeScrollRestorationTarget?
     @State private var adminBackdropStates: [AdminRootPhotoBackdropSurface: AdminRootPhotoBackdropState]
     @State private var menuSectionChromeCoordinator = VietnameseMenuSectionChromeCoordinator()
@@ -437,6 +461,7 @@ struct AppShellView: View {
                     isSearchActive: navigation.isSearchPresented,
                     currentScrollTarget: $homeCurrentScrollTarget,
                     currentScrollOffsetY: $homeCurrentScrollOffsetY,
+                    currentScrollIsPositionedByUser: $homeCurrentScrollIsPositionedByUser,
                     scrollRestorationTarget: $homeScrollRestorationTarget,
                     onSearchTapped: openSearch,
                     onOpenDetail: { id, target in
@@ -467,6 +492,7 @@ struct AppShellView: View {
                     drag: interactiveDrag,
                     width: pageWidth
                 )
+                .accessibilityHidden(navigation.currentRoute != .home)
 
                 let browseBackdropState = adminBackdropState(for: .browse)
                 AdminPhotoBackdropSurfaceView(
@@ -498,6 +524,7 @@ struct AppShellView: View {
                     drag: interactiveDrag,
                     width: pageWidth
                 )
+                .accessibilityHidden(navigation.currentRoute != .browse)
 
                 let savedBackdropState = adminBackdropState(for: .saved)
                 AdminPhotoBackdropSurfaceView(
@@ -529,6 +556,7 @@ struct AppShellView: View {
                     drag: interactiveDrag,
                     width: pageWidth
                 )
+                .accessibilityHidden(navigation.currentRoute != .saved)
 
                 practiceRouteSurface
                 .allowsHitTesting(navigation.currentRoute == .practice && allowsBasePageHitTesting)
@@ -541,6 +569,7 @@ struct AppShellView: View {
                     drag: interactiveDrag,
                     width: pageWidth
                 )
+                .accessibilityHidden(navigation.currentRoute != .practice)
 
                 if navigation.shouldRenderRootSurface(.phrasePage) {
                     PhraseListingView(
@@ -571,6 +600,7 @@ struct AppShellView: View {
                         drag: interactiveDrag,
                         width: pageWidth
                     )
+                    .accessibilityHidden(navigation.currentRoute != .phrasePage)
                 } else {
                     Color.clear
                         .accessibilityHidden(true)
@@ -789,6 +819,7 @@ struct AppShellView: View {
                     scrollToTopTrigger: navigation.browseCollectionScrollToTopTrigger,
                     scrollToTopRoute: navigation.browseCollectionScrollToTopRoute,
                     focusRequest: browseCollectionFocusRequest,
+                    sectionJumpRequest: menuSectionJumpRequest,
                     isActive: isActive,
                     isSaved: { intentStore.isPageSaved($0) },
                     onToggleSaved: { intentStore.toggleSavedPage($0) },
@@ -894,7 +925,7 @@ struct AppShellView: View {
             switch tab {
             case .home:
                 clearPracticeThreadForwardRestore()
-                navigation.openHome()
+                navigation.openHome(scrollsToTop: homeScrollRestorationTarget == nil)
                 searchQuery = ""
             case .browse:
                 prepareHomeScrollRestoration()
@@ -1040,6 +1071,7 @@ struct AppShellView: View {
                 isSearchActive: navigation.isSearchPresented,
                 currentScrollTarget: .constant(nil),
                 currentScrollOffsetY: .constant(0),
+                currentScrollIsPositionedByUser: .constant(false),
                 scrollRestorationTarget: .constant(nil),
                 onSearchTapped: openSearch,
                 onOpenDetail: { id, _ in openDetailFromHome(id) },
@@ -1085,6 +1117,7 @@ struct AppShellView: View {
                     scrollToTopTrigger: 0,
                     scrollToTopRoute: nil,
                     focusRequest: nil,
+                    sectionJumpRequest: nil,
                     isActive: false,
                     isSaved: { intentStore.isPageSaved($0) },
                     onToggleSaved: { intentStore.toggleSavedPage($0) },
@@ -1584,6 +1617,14 @@ struct AppShellView: View {
             return state.sections.first { $0.id == state.currentSectionID } ?? state.sections.first
         }
 
+        private var accessibilityNamespace: String {
+            state?.accessibilityNamespace ?? "VietnameseMenu"
+        }
+
+        private var accessibilityLabel: String {
+            state?.accessibilityLabel ?? "Menu section"
+        }
+
         var body: some View {
             Menu {
                 ForEach(state?.sections ?? []) { section in
@@ -1592,7 +1633,7 @@ struct AppShellView: View {
                     } label: {
                         Label(section.title, systemImage: section.symbolName)
                     }
-                    .accessibilityIdentifier("VietnameseMenu.TopSectionMenu.\(section.id)")
+                    .accessibilityIdentifier("\(accessibilityNamespace).TopSectionMenu.\(section.id)")
                 }
             } label: {
                 HStack(spacing: 7) {
@@ -1624,9 +1665,9 @@ struct AppShellView: View {
             }
             .buttonStyle(.plain)
             .nativeGlass(in: Capsule(style: .continuous), tint: .white.opacity(0.18), interactive: true)
-            .accessibilityLabel("Menu section")
+            .accessibilityLabel(accessibilityLabel)
             .accessibilityValue(currentSection?.title ?? "")
-            .accessibilityIdentifier("VietnameseMenu.TopSectionPill")
+            .accessibilityIdentifier("\(accessibilityNamespace).TopSectionPill")
             .frame(height: AppChromeLayout.menuSectionChromeHeight)
         }
     }
@@ -1803,14 +1844,17 @@ struct AppShellView: View {
             return
         }
 
+        let restoredOffsetY = max(homeCurrentScrollOffsetY, 0)
         let resolvedTarget = target
             ?? homeScrollRestorationTarget?.target
             ?? homeCurrentScrollTarget
             ?? .top
+        let shouldAnchorTopRestore = resolvedTarget == .top && !homeCurrentScrollIsPositionedByUser
 
         homeScrollRestorationTarget = HomeScrollRestorationTarget(
             target: resolvedTarget,
-            offsetY: max(homeCurrentScrollOffsetY, 0)
+            offsetY: restoredOffsetY,
+            prefersAnchor: restoredOffsetY <= 1 || shouldAnchorTopRestore
         )
     }
 
@@ -1991,7 +2035,7 @@ struct AppShellView: View {
         cancelSearchFocus()
         clearPracticeThreadForwardRestore()
         withAnimation(.snappy(duration: 0.34)) {
-            navigation.openHome()
+            navigation.openHome(scrollsToTop: homeScrollRestorationTarget == nil)
         }
         activateAdminBackdropIfNeeded(from: previousRoute, to: navigation.currentRoute)
         searchQuery = ""
@@ -2198,13 +2242,9 @@ struct AppShellView: View {
     private func goBack() {
         let previousRoute = navigation.currentRoute
         let backPreviewRoute = navigation.backPreviewRoute
-        let isReturningFromBrowseCollection: Bool
-        if case .browseCollection = previousRoute {
-            isReturningFromBrowseCollection = true
-        } else {
-            isReturningFromBrowseCollection = false
-        }
-        let shouldConsumeBrowseRootReset = isReturningFromBrowseCollection
+        let shouldArmBrowseRootReset = previousRoute.isDetailPage && backPreviewRoute?.isBrowseCollection == true
+        let shouldConsumeBrowseRootReset = shouldResetBrowseRootAfterDetailBack
+            && previousRoute.isBrowseCollection
             && backPreviewRoute == .browse
         cancelInteractiveChromeState()
         preparePracticeMatchFocusRestoreIfNeeded()
@@ -2215,6 +2255,9 @@ struct AppShellView: View {
         if shouldConsumeBrowseRootReset, navigation.currentRoute == .browse {
             browseRootSurfaceResetID += 1
             navigation.browseScrollToTopTrigger += 1
+            shouldResetBrowseRootAfterDetailBack = false
+        } else {
+            shouldResetBrowseRootAfterDetailBack = shouldArmBrowseRootReset
         }
         clearRouteTransition(after: transitionResetID)
         refreshSearchReturnFocusAfterReturningToSearch(from: previousRoute)
@@ -2541,6 +2584,10 @@ struct AppShellView: View {
     }
 
     private static func shortcutRoute(for arguments: [String]) -> AppRoute {
+        if arguments.contains("--home") {
+            return .home
+        }
+
         if let route = initialBrowseCollectionRoute(for: arguments) {
             return .browseCollection(route)
         }
@@ -3049,9 +3096,11 @@ struct AppShellNavigationState: Equatable {
         return phraseCatalogCanonicalPageID
     }
 
-    mutating func openHome() {
+    mutating func openHome(scrollsToTop: Bool = true) {
         guard currentRoute != .home else {
-            homeScrollToTopTrigger += 1
+            if scrollsToTop {
+                homeScrollToTopTrigger += 1
+            }
             return
         }
 
@@ -3061,7 +3110,9 @@ struct AppShellNavigationState: Equatable {
         detailPath.removeAll()
         isSearchPresented = false
         forwardStack.removeAll()
-        homeScrollToTopTrigger += 1
+        if scrollsToTop {
+            homeScrollToTopTrigger += 1
+        }
     }
 
     mutating func openBrowse() {
@@ -4136,11 +4187,12 @@ struct HomeView: View {
     @ObservedObject var intentStore: LocalUserIntentStore
     @Binding var currentScrollTarget: HomeScrollTarget?
     @Binding var currentScrollOffsetY: CGFloat
+    @Binding var currentScrollIsPositionedByUser: Bool
     @Binding var scrollRestorationTarget: HomeScrollRestorationTarget?
     @State private var scrollPosition = ScrollPosition(idType: HomeScrollTarget.self, edge: .top)
     @State private var didApplyPhotoBackdropInitialPosition = false
     @State private var isPhotoBackdropImmersive = false
-    @State private var photoBackdropScrollOffset: CGFloat = 0
+    @State private var photoBackdropScrollCoordinator = HomePhotoBackdropScrollCoordinator()
 
     let backdropImageName: String
     let backdropActivationToken: Int
@@ -4165,6 +4217,7 @@ struct HomeView: View {
         isSearchActive: Bool = false,
         currentScrollTarget: Binding<HomeScrollTarget?>,
         currentScrollOffsetY: Binding<CGFloat>,
+        currentScrollIsPositionedByUser: Binding<Bool>,
         scrollRestorationTarget: Binding<HomeScrollRestorationTarget?>,
         onSearchTapped: @escaping () -> Void,
         onOpenDetail: @escaping (String, HomeScrollTarget) -> Void,
@@ -4178,6 +4231,7 @@ struct HomeView: View {
         self.backdropActivationToken = backdropActivationToken
         self._currentScrollTarget = currentScrollTarget
         self._currentScrollOffsetY = currentScrollOffsetY
+        self._currentScrollIsPositionedByUser = currentScrollIsPositionedByUser
         self._scrollRestorationTarget = scrollRestorationTarget
         self.scrollToTopTrigger = scrollToTopTrigger
         self.isActive = isActive
@@ -4196,17 +4250,20 @@ struct HomeView: View {
             if isVisible {
                 GeometryReader { geometry in
                     let metrics = PhrasePhotoBackdropLayout.metrics(for: geometry.size)
-                    let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
-                    let topChromeStyle = PhrasePhotoBackdropLayout.topChromeStyle(
-                        sheetTop: sheetTop,
-                        safeAreaTop: geometry.safeAreaInsets.top,
-                        topChromeBackdropHeight: AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false)
-                    )
 
                     ZStack(alignment: .top) {
                         photoBackdropImage(geometry: geometry)
 
-                        photoBackdropBottomChromeBackdrop(geometry: geometry, metrics: metrics)
+                        HomePhotoBackdropChromeLayer(
+                            scrollCoordinator: photoBackdropScrollCoordinator,
+                            viewportHeight: geometry.size.height,
+                            safeAreaTop: geometry.safeAreaInsets.top,
+                            safeAreaBottom: geometry.safeAreaInsets.bottom,
+                            collapsedContentTop: metrics.collapsedContentTop,
+                            isActive: isActive,
+                            isVisible: isVisible,
+                            isPhotoBackdropImmersive: isPhotoBackdropImmersive
+                        )
 
                         ScrollViewReader { scrollProxy in
                             ScrollView(.vertical, showsIndicators: false) {
@@ -4228,6 +4285,33 @@ struct HomeView: View {
                                 }
                             }
                             .scrollPosition($scrollPosition)
+                            .onChange(of: scrollPosition) { _, position in
+                                guard isActive else {
+                                    return
+                                }
+
+                                let isPositionedByUser = position.isPositionedByUser
+                                if currentScrollIsPositionedByUser != isPositionedByUser {
+                                    currentScrollIsPositionedByUser = isPositionedByUser
+                                }
+
+                                let offsetY: CGFloat?
+                                if #available(iOS 26.0, *) {
+                                    offsetY = position.y ?? position.point?.y
+                                } else {
+                                    offsetY = position.point?.y
+                                }
+                                if let offsetY {
+                                    let normalizedOffsetY = max(offsetY, 0)
+                                    if currentScrollOffsetY != normalizedOffsetY {
+                                        currentScrollOffsetY = normalizedOffsetY
+                                    }
+                                }
+
+                                if let visibleTarget = position.viewID(type: HomeScrollTarget.self) {
+                                    currentScrollTarget = visibleTarget
+                                }
+                            }
                             .onScrollGeometryChange(for: HomePhotoBackdropScrollState.self, of: { scrollGeometry in
                                 HomePhotoBackdropScrollState(
                                     rawOffset: max(scrollGeometry.contentOffset.y + scrollGeometry.contentInsets.top, 0),
@@ -4245,11 +4329,9 @@ struct HomeView: View {
                                     currentScrollOffsetY = scrollState.restorationOffset
                                 }
 
-                                if photoBackdropScrollOffset != scrollState.displayOffset {
-                                    photoBackdropScrollOffset = scrollState.displayOffset
-                                }
+                                let hasPassedRevealThreshold = photoBackdropScrollCoordinator.apply(scrollState)
 
-                                if isPhotoBackdropImmersive, scrollState.hasPassedRevealThreshold {
+                                if isPhotoBackdropImmersive, hasPassedRevealThreshold {
                                     withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
                                         isPhotoBackdropImmersive = false
                                     }
@@ -4312,10 +4394,6 @@ struct HomeView: View {
                             )
                             : nil
                     )
-                    .preference(
-                        key: PhrasePhotoBackdropTopChromeStylePreferenceKey.self,
-                        value: isActive && isVisible && !isPhotoBackdropImmersive ? topChromeStyle : .light
-                    )
                 }
             } else {
                 Color.clear
@@ -4346,6 +4424,7 @@ struct HomeView: View {
         .onChange(of: isVisible) { _, visible in
             if !visible {
                 isPhotoBackdropImmersive = false
+                photoBackdropScrollCoordinator.reset()
             }
         }
     }
@@ -4446,44 +4525,6 @@ struct HomeView: View {
             .accessibilityLabel("Home backdrop")
             .accessibilityHidden(true)
             .accessibilityIdentifier("Home.PhotoBackdrop.Image")
-    }
-
-    private func photoBackdropBottomChromeBackdrop(
-        geometry: GeometryProxy,
-        metrics: PhrasePhotoBackdropLayout.Metrics
-    ) -> some View {
-        let safeAreaBottom = geometry.safeAreaInsets.bottom
-        let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
-        let backingFrameHeight = PhrasePhotoBackdropLayout.bottomChromeBackingFrameHeight(
-            viewportHeight: geometry.size.height,
-            safeAreaBottom: safeAreaBottom
-        )
-        let backdropHeight = PhrasePhotoBackdropLayout.bottomChromeBackingHeight(
-            viewportHeight: geometry.size.height,
-            safeAreaBottom: safeAreaBottom,
-            sheetTop: sheetTop
-        )
-        let topCornerRadius = PhrasePhotoBackdropLayout.bottomChromeBackingTopCornerRadius(sheetTop: sheetTop)
-
-        return VStack(spacing: 0) {
-            Color.clear
-                .frame(height: sheetTop)
-                .accessibilityHidden(true)
-
-            PhotoBackdropBottomChromeBacking(
-                height: backdropHeight,
-                topCornerRadius: topCornerRadius
-            )
-        }
-        .frame(
-            height: backingFrameHeight,
-            alignment: .top
-        )
-        .ignoresSafeArea(edges: .bottom)
-        .opacity(isPhotoBackdropImmersive ? 0 : 1)
-        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
-        .allowsHitTesting(false)
-        .accessibilityHidden(true)
     }
 
     private var header: some View {
@@ -4621,6 +4662,12 @@ struct HomeView: View {
         restoreScrollPosition(target, scrollProxy: scrollProxy, metrics: metrics)
         Task { @MainActor in
             await Task.yield()
+            if shouldRestoreByAnchor(target) {
+                try? await Task.sleep(nanoseconds: 80_000_000)
+            }
+            guard isActive else {
+                return
+            }
             restoreScrollPosition(target, scrollProxy: scrollProxy, metrics: metrics)
             scrollRestorationTarget = nil
         }
@@ -4631,12 +4678,16 @@ struct HomeView: View {
         scrollProxy: ScrollViewProxy,
         metrics: PhrasePhotoBackdropLayout.Metrics
     ) {
-        if target.offsetY <= 1 {
+        if shouldRestoreByAnchor(target) {
             scrollProxy.scrollTo(target.target, anchor: .top)
             currentScrollOffsetY = target.target == .top ? metrics.initialAnchorOffset : 0
         } else {
             scrollPosition.scrollTo(y: target.offsetY)
         }
+    }
+
+    private func shouldRestoreByAnchor(_ target: HomeScrollRestorationTarget) -> Bool {
+        target.prefersAnchor
     }
 
     @MainActor
@@ -4669,7 +4720,7 @@ struct HomeView: View {
 
         guard PhrasePhotoBackdropLayout.isImageTap(
             location,
-            scrollOffset: photoBackdropScrollOffset,
+            scrollOffset: photoBackdropScrollCoordinator.displayOffset,
             metrics: metrics
         ) else {
             return
@@ -4678,6 +4729,74 @@ struct HomeView: View {
         withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
             isPhotoBackdropImmersive = true
         }
+    }
+}
+
+private struct HomePhotoBackdropChromeLayer: View {
+    @ObservedObject var scrollCoordinator: HomePhotoBackdropScrollCoordinator
+    let viewportHeight: CGFloat
+    let safeAreaTop: CGFloat
+    let safeAreaBottom: CGFloat
+    let collapsedContentTop: CGFloat
+    let isActive: Bool
+    let isVisible: Bool
+    let isPhotoBackdropImmersive: Bool
+
+    private var sheetTop: CGFloat {
+        max(collapsedContentTop - scrollCoordinator.displayOffset, 0)
+    }
+
+    private var topChromeStyle: ChromeSeparationGradientStyle {
+        PhrasePhotoBackdropLayout.topChromeStyle(
+            sheetTop: sheetTop,
+            safeAreaTop: safeAreaTop,
+            topChromeBackdropHeight: AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false)
+        )
+    }
+
+    var body: some View {
+        VStack(spacing: 0) {
+            Color.clear
+                .frame(height: sheetTop)
+                .accessibilityHidden(true)
+
+            PhotoBackdropBottomChromeBacking(
+                height: backdropHeight,
+                topCornerRadius: topCornerRadius
+            )
+        }
+        .frame(
+            height: backingFrameHeight,
+            alignment: .top
+        )
+        .ignoresSafeArea(edges: .bottom)
+        .opacity(isPhotoBackdropImmersive ? 0 : 1)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+        .preference(
+            key: PhrasePhotoBackdropTopChromeStylePreferenceKey.self,
+            value: isActive && isVisible && !isPhotoBackdropImmersive ? topChromeStyle : .light
+        )
+    }
+
+    private var backingFrameHeight: CGFloat {
+        PhrasePhotoBackdropLayout.bottomChromeBackingFrameHeight(
+            viewportHeight: viewportHeight,
+            safeAreaBottom: safeAreaBottom
+        )
+    }
+
+    private var backdropHeight: CGFloat {
+        PhrasePhotoBackdropLayout.bottomChromeBackingHeight(
+            viewportHeight: viewportHeight,
+            safeAreaBottom: safeAreaBottom,
+            sheetTop: sheetTop
+        )
+    }
+
+    private var topCornerRadius: CGFloat {
+        PhrasePhotoBackdropLayout.bottomChromeBackingTopCornerRadius(sheetTop: sheetTop)
     }
 }
 
@@ -4964,7 +5083,8 @@ struct SavedPagesView: View {
                     Text("Browse Vietnam, then tap the heart on phrases, foods, and drinks to keep them here.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
-                        .lineLimit(2)
+                        .lineLimit(3)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 .layoutPriority(1)
             }
@@ -5442,7 +5562,8 @@ enum HomeLayout {
     static let relationshipGroupVerticalPadding: CGFloat = 10
     static let bottomChromeContentClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance
     static let photoBackdropBottomReadingClearance: CGFloat = AppBottomContentClearance.photoBackdropRoot
-    static let shellScrollOffsetPublishStride: CGFloat = 4
+    static let photoBackdropScrollDisplayStride: CGFloat = 32
+    static let shellScrollOffsetPublishStride: CGFloat = 96
 
     static func bottomContentClearance(usesPhotoBackdrop: Bool) -> CGFloat {
         AppBottomContentClearance.rootSurface(
@@ -5645,6 +5766,7 @@ private struct HomePhraseShelfDefinition: Identifiable {
         fillsFromSourceCategories: Bool
     ) -> [HomePhraseItem] {
         var seen = Set<String>()
+        var seenSubtitles = Set<String>()
         var rows: [HomePhraseItem] = []
 
         func append(_ item: HomePhraseItem) {
@@ -5653,6 +5775,14 @@ private struct HomePhraseShelfDefinition: Identifiable {
             }
             guard seen.insert(item.pageID).inserted else {
                 return
+            }
+            let normalizedSubtitle = item.subtitle
+                .trimmingCharacters(in: .whitespacesAndNewlines)
+                .lowercased()
+            if !normalizedSubtitle.isEmpty {
+                guard seenSubtitles.insert(normalizedSubtitle).inserted else {
+                    return
+                }
             }
             rows.append(item)
         }

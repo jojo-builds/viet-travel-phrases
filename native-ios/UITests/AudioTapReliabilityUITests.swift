@@ -15,6 +15,13 @@ final class AudioTapReliabilityUITests: XCTestCase {
             repetitions: 20
         )
         verifyBreakdownAudioCard(
+            pageID: "viet-phrase-food-3",
+            title: "Không cay nhé",
+            audioIdentifier: "Breakdown.Audio.viet-phrase-food-3:breakdown:breakdown:chunk-1",
+            audioLabel: "Play Không cay",
+            repetitions: 8
+        )
+        verifyBreakdownAudioCard(
             pageID: "viet-phrase-polite-1",
             title: "Xin chào",
             audioIdentifier: "Breakdown.Audio.xin",
@@ -28,6 +35,28 @@ final class AudioTapReliabilityUITests: XCTestCase {
             audioLabel: "Play cho",
             repetitions: 8
         )
+    }
+
+    func testRowAudioButtonsStayResponsiveAcrossSearchMenuAndSaved() {
+        verifyRowAudioButton(
+            launchArguments: ["--search-query", "Cà phê sữa đá"],
+            readyText: "Results for Cà phê sữa đá",
+            audioIdentifier: "SearchResult.Audio.viet-menu-drink-ca-phe-sua-da",
+            fallbackLabel: "Play phrase audio",
+            stableText: "Cà phê sữa đá",
+            repetitions: 8
+        )
+
+        verifyRowAudioButton(
+            launchArguments: ["--browse-category", "vietnamese-drink-menu"],
+            readyText: "Drink Menu",
+            audioIdentifier: "VietnameseMenu.Audio.viet-menu-drink-ca-phe-sua-da",
+            fallbackLabel: "Play phrase audio",
+            stableText: "Drink Menu",
+            repetitions: 8
+        )
+
+        verifySavedRowAudioButton()
     }
 
     private func verifyBreakdownAudioCard(
@@ -67,6 +96,66 @@ final class AudioTapReliabilityUITests: XCTestCase {
         XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2), file: file, line: line)
     }
 
+    private func verifyRowAudioButton(
+        launchArguments: [String],
+        readyText: String,
+        audioIdentifier: String,
+        fallbackLabel: String,
+        stableText: String,
+        repetitions: Int,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        let app = XCUIApplication()
+        app.launchArguments = launchArguments
+        app.launch()
+
+        XCTAssertTrue(app.staticTexts[readyText].waitForExistence(timeout: 5), file: file, line: line)
+
+        let audioButton = makeElementHittable(
+            primary: app.descendants(matching: .any)[audioIdentifier],
+            fallback: app.buttons[fallbackLabel],
+            app: app,
+            file: file,
+            line: line
+        )
+
+        for _ in 0..<repetitions {
+            audioButton.tap()
+            usleep(120_000)
+        }
+
+        XCTAssertTrue(app.staticTexts[stableText].waitForExistence(timeout: 2), file: file, line: line)
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2), file: file, line: line)
+    }
+
+    private func verifySavedRowAudioButton(file: StaticString = #filePath, line: UInt = #line) {
+        let app = XCUIApplication()
+        app.launchArguments = ["--saved", "--reset-demo-state", "--seed-returning-user-shelves"]
+        app.launch()
+
+        XCTAssertTrue(savedRootExists(in: app), file: file, line: line)
+
+        let savedAudio = app.buttons
+            .matching(NSPredicate(format: "identifier BEGINSWITH %@", "SavedTrip.Audio."))
+            .firstMatch
+        let audioButton = makeElementHittable(
+            primary: savedAudio,
+            fallback: app.buttons["Play phrase audio"],
+            app: app,
+            file: file,
+            line: line
+        )
+
+        for _ in 0..<8 {
+            audioButton.tap()
+            usleep(120_000)
+        }
+
+        XCTAssertTrue(savedRootExists(in: app), file: file, line: line)
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2), file: file, line: line)
+    }
+
     private func systemTab(_ title: String, in app: XCUIApplication) -> XCUIElement {
         let tabBarButton = app.tabBars.buttons[title]
         if tabBarButton.exists {
@@ -78,6 +167,11 @@ final class AudioTapReliabilityUITests: XCTestCase {
 
     private func systemTabHost(in app: XCUIApplication) -> XCUIElement {
         app.descendants(matching: .any)["Tab Bar"]
+    }
+
+    private func savedRootExists(in app: XCUIApplication) -> Bool {
+        app.descendants(matching: .any)["Saved.PhotoBackdrop.Content"].waitForExistence(timeout: 4)
+            || app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 1)
     }
 
     private func makeElementHittable(

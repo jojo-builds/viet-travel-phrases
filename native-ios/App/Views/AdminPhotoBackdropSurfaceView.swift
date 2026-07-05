@@ -266,6 +266,11 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
                     )
 
                     ZStack(alignment: .top) {
+                        accessibilityMarker(
+                            identifier: "\(surface.accessibilityPrefix).PhotoBackdrop.Surface",
+                            label: "\(surface.accessibilityPrefix) photo backdrop surface"
+                        )
+
                         photoBackdropImage(geometry: geometry)
                         photoBackdropBottomChromeBackdrop(geometry: geometry, metrics: metrics)
 
@@ -406,7 +411,6 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
             key: PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self,
             value: isActive && isVisible && !isImmersive
         )
-        .accessibilityIdentifier("\(surface.accessibilityPrefix).PhotoBackdrop.Surface")
         .task(id: activationToken) {
             guard isActive, isVisible else {
                 return
@@ -442,6 +446,11 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
                 .padding(.bottom, 10)
                 .accessibilityHidden(true)
 
+            accessibilityMarker(
+                identifier: "\(surface.accessibilityPrefix).PhotoBackdrop.Content",
+                label: "\(surface.accessibilityPrefix) photo backdrop content"
+            )
+
             content(scrollProxy)
         }
         .background {
@@ -461,7 +470,14 @@ struct AdminPhotoBackdropSurfaceView<Content: View>: View {
         .allowsHitTesting(!isImmersive)
         .accessibilityHidden(isImmersive)
         .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isImmersive)
-        .accessibilityIdentifier("\(surface.accessibilityPrefix).PhotoBackdrop.Content")
+    }
+
+    private func accessibilityMarker(identifier: String, label: String) -> some View {
+        Color.clear
+            .frame(width: 1, height: 1)
+            .accessibilityElement()
+            .accessibilityLabel(label)
+            .accessibilityIdentifier(identifier)
     }
 
     private func photoBackdropImage(geometry: GeometryProxy) -> some View {
@@ -581,12 +597,16 @@ enum AdminBackdropImagePreheater {
     }
 
     typealias ImagePreparer = (String) -> UIImage?
+    typealias ImageAvailabilityChecker = (String) -> Bool
 
     private static let maxPreheatedImageCount = AdminBackdropPreheatPolicy.maxRetainedPreparedImages
     private static let maxQueuedImageCount = AdminBackdropPreheatPolicy.maxRetainedPreparedImages
     private static let lock = NSLock()
     private static let defaultImagePreparer: ImagePreparer = { imageName in
         UIImage(named: imageName)?.preparingForDisplay()
+    }
+    private static let defaultImageAvailabilityChecker: ImageAvailabilityChecker = { imageName in
+        UIImage(named: imageName) != nil
     }
     private static var preheatedImageNames = Set<String>()
     private static var preheatedImages = [String: UIImage]()
@@ -596,6 +616,8 @@ enum AdminBackdropImagePreheater {
     private static var focusedRequestImageNames = Set<String>()
     private static var focusedGenerationByImageName = [String: Int]()
     private static var imagePreparer: ImagePreparer = defaultImagePreparer
+    private static var imageAvailabilityChecker: ImageAvailabilityChecker = defaultImageAvailabilityChecker
+    private static var displayImageNameCache = [String: String]()
     private static var queueWorkerTask: Task<Void, Never>?
 
     static func preheat(_ imageNames: [String]) {
@@ -607,6 +629,7 @@ enum AdminBackdropImagePreheater {
     }
 
     private static func preheat(_ imageNames: [String], queueMode: QueueMode) {
+        let imageNames = imageNames.map(displayImageName(for:))
         lock.lock()
         let pendingImageNames = AdminBackdropImagePreheatPlan.pendingImageNames(
             requestedImageNames: imageNames,
@@ -661,9 +684,29 @@ enum AdminBackdropImagePreheater {
     }
 
     static func preparedImage(named imageName: String) -> UIImage? {
+        let imageName = displayImageName(for: imageName)
         lock.lock()
         defer { lock.unlock() }
         return preheatedImages[imageName]
+    }
+
+    static func displayImageName(for imageName: String) -> String {
+        lock.lock()
+        if let cachedDisplayImageName = displayImageNameCache[imageName] {
+            lock.unlock()
+            return cachedDisplayImageName
+        }
+        let availabilityChecker = Self.imageAvailabilityChecker
+        lock.unlock()
+
+        let displayImageName = availabilityChecker(imageName)
+            ? imageName
+            : SharedBackdropImagePool.fallbackImageName
+
+        lock.lock()
+        displayImageNameCache[imageName] = displayImageName
+        lock.unlock()
+        return displayImageName
     }
 
     private static func drainPreheatQueue() {
@@ -733,7 +776,10 @@ enum AdminBackdropImagePreheater {
     }
 
 #if DEBUG
-    static func resetForTesting(imagePreparer: ImagePreparer? = nil) {
+    static func resetForTesting(
+        imagePreparer: ImagePreparer? = nil,
+        imageAvailabilityChecker: ImageAvailabilityChecker? = nil
+    ) {
         lock.lock()
         queueWorkerTask?.cancel()
         queueWorkerTask = nil
@@ -745,12 +791,16 @@ enum AdminBackdropImagePreheater {
         focusedRequestImageNames.removeAll()
         focusedGenerationByImageName.removeAll()
         Self.imagePreparer = imagePreparer ?? defaultImagePreparer
+        Self.imageAvailabilityChecker = imageAvailabilityChecker
+            ?? (imagePreparer == nil ? defaultImageAvailabilityChecker : { _ in true })
+        displayImageNameCache.removeAll()
         lock.unlock()
     }
 #endif
     #else
     static func preheat(_ imageNames: [String]) {}
     static func preheatFocused(_ imageNames: [String]) {}
+    static func displayImageName(for imageName: String) -> String { imageName }
     #endif
 }
 
@@ -759,12 +809,13 @@ struct AdminBackdropPreparedImage: View {
 
     var body: some View {
         #if canImport(UIKit)
-        if let preparedImage = AdminBackdropImagePreheater.preparedImage(named: name) {
+        let imageName = AdminBackdropImagePreheater.displayImageName(for: name)
+        if let preparedImage = AdminBackdropImagePreheater.preparedImage(named: imageName) {
             Image(uiImage: preparedImage)
                 .resizable()
                 .interpolation(.medium)
         } else {
-            Image(name)
+            Image(imageName)
                 .resizable()
                 .interpolation(.medium)
         }

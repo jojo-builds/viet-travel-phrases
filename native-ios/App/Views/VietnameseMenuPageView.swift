@@ -1041,22 +1041,12 @@ private struct VietnameseMenuSectionBlock: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: VietnameseMenuLayout.sectionTitleToRowsSpacing) {
-            VStack(alignment: .leading, spacing: 5) {
-                Text(section.title)
-                    .font(.title2.weight(.black))
-                    .foregroundStyle(.primary)
-                    .lineLimit(2)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .accessibilityIdentifier("VietnameseMenu.SectionTitle.\(section.id)")
-
-                if !section.subtitle.isEmpty {
-                    Text(section.subtitle)
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-            }
+            Text(section.title)
+                .font(.title2.weight(.black))
+                .foregroundStyle(.primary)
+                .lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true)
+                .accessibilityIdentifier("VietnameseMenu.SectionTitle.\(section.id)")
 
             LazyVStack(spacing: 0) {
                 ForEach(section.items) { item in
@@ -1179,6 +1169,24 @@ struct VietnameseMenuSectionChromeState: Equatable {
     let currentSectionID: String
     let isPinned: Bool
     let sections: [VietnameseMenuSectionChromeItem]
+    let accessibilityNamespace: String
+    let accessibilityLabel: String
+
+    init(
+        route: BrowseCollectionRoute,
+        currentSectionID: String,
+        isPinned: Bool,
+        sections: [VietnameseMenuSectionChromeItem],
+        accessibilityNamespace: String = "VietnameseMenu",
+        accessibilityLabel: String = "Menu section"
+    ) {
+        self.route = route
+        self.currentSectionID = currentSectionID
+        self.isPinned = isPinned
+        self.sections = sections
+        self.accessibilityNamespace = accessibilityNamespace
+        self.accessibilityLabel = accessibilityLabel
+    }
 }
 
 struct VietnameseMenuSectionChromePreferenceKey: PreferenceKey {

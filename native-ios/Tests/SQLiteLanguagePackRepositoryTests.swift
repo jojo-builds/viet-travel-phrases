@@ -296,9 +296,11 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
             "HeroBaNaHills",
         ])
 
-        XCTAssertEqual(cityHeroNames.count, report.validation.cityLibraryPageCount)
+        XCTAssertEqual(cityHeroNames.count, report.validation.cityPrefixedPageCount)
         XCTAssertEqual(cityHeroNames["city-hcmc-place-anan-saigon"], "HeroCityHcmcPlaceAnanSaigon")
         XCTAssertEqual(cityHeroNames["city-hcmc-where-anan-saigon"], "HeroCompactPhraseMasthead")
+        XCTAssertEqual(cityHeroNames["city-danang-go-ba-na-hills"], "HeroCompactPhraseMasthead")
+        XCTAssertEqual(cityHeroNames["city-danang-where-ba-na-hills"], "HeroCompactPhraseMasthead")
 
         let invalidHeroRows = cityHeroNames.filter { _, heroName in
             let isCityPlaceHero = heroName.range(
@@ -390,7 +392,7 @@ final class SQLiteLanguagePackRepositoryTests: XCTestCase {
 
         let pageExpectations: [(pageID: String, phrases: [String])] = [
             ("viet-phrase-polite-1", expectedVietnamese),
-            ("viet-phrase-hello-chao", Array(expectedVietnamese.dropFirst())),
+            ("viet-phrase-hello-chao", expectedVietnamese),
         ]
 
         for expectation in pageExpectations {
@@ -653,6 +655,7 @@ private struct VietSQLiteFixtureReport: Decodable {
         let integrityCheck: String
         let cityCount: Int
         let cityLibraryPageCount: Int
+        let cityPrefixedPageCount: Int
         let cityPlaceCount: Int
         let cityTagCount: Int
     }

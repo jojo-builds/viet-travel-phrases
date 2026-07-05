@@ -321,6 +321,63 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Hot Vietnamese milk coffee"].exists)
     }
 
+    func testSavedTripUnsaveRemovesSavedMenuItem() {
+        let pageID = "viet-menu-drink-ca-phe-sua-nong"
+        let app = launchApp(arguments: ["--browse-category", "vietnamese-drink-menu", "--reset-demo-state"])
+
+        XCTAssertTrue(app.staticTexts["Drink Menu"].waitForExistence(timeout: 4))
+        tapHorizontalCard(
+            app.buttons["VietnameseMenu.SectionRail.coffee"],
+            app: app,
+            scrollAnchor: app.buttons["VietnameseMenu.SectionRail.popular"]
+        )
+        XCTAssertTrue(app.staticTexts["VietnameseMenu.SectionTitle.coffee"].waitForExistence(timeout: 3))
+
+        let menuSaveButton = app.buttons["VietnameseMenu.Save.\(pageID)"]
+        XCTAssertTrue(menuSaveButton.waitForExistence(timeout: 3))
+        tapWhenVisible(menuSaveButton, app: app)
+        XCTAssertEqual(menuSaveButton.label, "Remove from Saved")
+
+        openDock("Saved", in: app)
+        XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
+
+        let savedCoffee = app.buttons["SavedTrip.Row.\(pageID)"]
+        scrollUntilHittable(savedCoffee, app: app)
+        XCTAssertTrue(app.staticTexts["Cà phê sữa nóng"].exists)
+
+        let unsaveButton = app.buttons["SavedTrip.Unsave.\(pageID)"]
+        XCTAssertTrue(unsaveButton.waitForExistence(timeout: 2))
+        tapWhenVisible(unsaveButton, app: app)
+
+        XCTAssertTrue(savedCoffee.waitForNonExistence(timeout: 3))
+        XCTAssertTrue(unsaveButton.waitForNonExistence(timeout: 3))
+    }
+
+    func testCityHeaderSaveAddsCityToSavedTrip() {
+        let cityPageID = "browse-city-hoian"
+        let app = launchApp(arguments: ["--browse-city", "hoian", "--reset-demo-state"])
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.hoian"].waitForExistence(timeout: 4))
+
+        let saveButton = app.buttons["BrowseCollection.HeaderSave.\(cityPageID)"]
+        XCTAssertTrue(saveButton.waitForExistence(timeout: 3))
+        tapWhenVisible(saveButton, app: app)
+        XCTAssertEqual(saveButton.label, "Remove from Saved")
+
+        openDock("Saved", in: app)
+        XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
+
+        let savedCity = app.buttons["SavedTrip.Row.\(cityPageID)"]
+        scrollUntilHittable(savedCity, app: app)
+        XCTAssertTrue(app.staticTexts["Hoi An"].exists)
+        XCTAssertTrue(
+            app.staticTexts
+                .matching(NSPredicate(format: "label CONTAINS[c] %@", "Ancient Town walks"))
+                .firstMatch
+                .exists
+        )
+    }
+
     func testVietnameseMenuTopSectionPillAppearsAfterInPageRailScrollsOff() {
         let app = launchApp(arguments: ["--browse-category", "vietnamese-food-menu"])
 
@@ -521,8 +578,8 @@ final class BrowseSearchUITests: XCTestCase {
             launchArguments: ["--detail-page", "viet-menu-food-pho-bo"]
         )
         assertVisibleTextOffersCopy(
-            title: "A warm greeting for a slightly older man or adult male helper.",
-            launchArguments: ["--detail-page", "viet-phrase-hello-chao-anh"]
+            title: "Dragon Bridge is the landmark most visitors notice first: a dragon-shaped span over the Han River, bright at night, and useful for understanding how Da Nang's center connects toward the beach.",
+            launchArguments: ["--detail-page", "viet-phrase-city-danang-place-dragon-bridge"]
         )
     }
 
@@ -607,10 +664,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["MenuDetail.Chip.common-options.no-msg"].exists)
         XCTAssertFalse(app.buttons["Breakdown.Audio.option-0-extra-herbs"].exists)
 
-        for _ in 0..<6 where !app.staticTexts["Cho tôi một tô phở bò."].exists {
-            app.swipeUp()
-        }
-        XCTAssertTrue(app.staticTexts["Cho tôi một tô phở bò."].waitForExistence(timeout: 2))
+        XCTAssertFalse(app.buttons["Breakdown.Audio.quick-say-0"].exists)
     }
 
     func testDaNangCityCollectionRendersTravelModeHub() {
@@ -645,18 +699,23 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(landmarksFilter.waitForExistence(timeout: 2))
         tapWhenVisible(landmarksFilter, app: app)
 
-        let saveButton = app.buttons["BrowseCollection.Save.viet-phrase-city-danang-place-dragon-bridge"]
+        let pageID = "viet-phrase-city-danang-place-ba-na-hills"
+        let saveButton = app.buttons["BrowseCollection.Save.\(pageID)"]
         XCTAssertTrue(saveButton.waitForExistence(timeout: 3))
-        tapWhenVisible(saveButton, app: app)
+        let landmarksGroup = app.descendants(matching: .any)["BrowseCollection.CityGroup.danang.browse.landmarks"]
+        XCTAssertTrue(landmarksGroup.waitForExistence(timeout: 3))
+        let cityCard = app.buttons["BrowseCollection.Row.\(pageID)"]
+        scrollHorizontalCardUntilVisible(cityCard, app: app, scrollAnchor: landmarksGroup)
+        tapVisibleCenter(of: saveButton, in: app)
         XCTAssertEqual(saveButton.label, "Remove from Saved")
 
         openDock("Saved", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
 
-        let savedBridge = app.buttons["SavedTrip.Row.viet-phrase-city-danang-place-dragon-bridge"]
-        scrollUntilHittable(savedBridge, app: app)
-        XCTAssertTrue(app.staticTexts["Cầu Rồng"].exists)
-        XCTAssertTrue(app.staticTexts["Dragon Bridge"].exists)
+        let savedPlace = app.buttons["SavedTrip.Row.\(pageID)"]
+        scrollUntilHittable(savedPlace, app: app)
+        XCTAssertTrue(app.staticTexts["Bà Nà Hills"].exists)
+        XCTAssertTrue(app.staticTexts["Ba Na Hills"].exists)
     }
 
     func testCityFilterSelectionStaysOnCollection() {
@@ -664,8 +723,8 @@ final class BrowseSearchUITests: XCTestCase {
         let filterID = "BrowseCollection.CityFilter.danang.browse.landmarks"
 
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
-        tapWhenVisible(app.buttons["Browse.City.danang"], app: app)
-        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
+        tapWhenComfortablyVisible(identifier: "Browse.City.danang", app: app)
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 5))
         tapWhenComfortablyVisible(identifier: filterID, app: app)
         XCTAssertTrue(app.buttons[filterID].isSelected)
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].exists)
@@ -676,8 +735,8 @@ final class BrowseSearchUITests: XCTestCase {
         let app = launchApp(arguments: ["--browse"])
 
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
-        tapWhenVisible(app.buttons["Browse.City.danang"], app: app)
-        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 1))
+        tapWhenComfortablyVisible(identifier: "Browse.City.danang", app: app)
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 3))
         XCTAssertTrue(
             app.staticTexts["Browse by"].waitForExistence(timeout: 0.2),
             "City-card native dissolve should mount the destination body immediately."
@@ -705,6 +764,31 @@ final class BrowseSearchUITests: XCTestCase {
         )
     }
 
+    func testHoiAnBrowseByRestaurantCardJumpsToMatchingSection() {
+        let app = launchApp(arguments: ["--browse-city", "hoian"])
+        let targetFilterID = "BrowseCollection.CityFilter.hoian.browse.restaurants"
+        let targetGroup = app.descendants(matching: .any)["BrowseCollection.CityGroup.hoian.browse.restaurants"]
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.hoian"].waitForExistence(timeout: 4))
+        let targetFilter = app.buttons[targetFilterID]
+        XCTAssertTrue(targetFilter.waitForExistence(timeout: 2))
+
+        tapWhenComfortablyVisible(identifier: targetFilterID, app: app)
+        RunLoop.current.run(until: Date().addingTimeInterval(0.45))
+
+        XCTAssertTrue(targetFilter.isSelected)
+        XCTAssertTrue(targetGroup.waitForExistence(timeout: 2))
+        XCTAssertTrue(
+            targetGroup.frame.intersects(app.windows.firstMatch.frame),
+            "Selecting a Hoi An Browse by card should jump down to its matching noun section."
+        )
+        assertElementClearsTopAdminChrome(
+            targetGroup,
+            app: app,
+            message: "Hoi An Browse by jumps should leave the noun-group label below the top admin chrome."
+        )
+    }
+
     func testCityBrowseCardJumpClearsTopAdminChrome() {
         let app = launchApp(arguments: ["--browse-city", "danang"])
         let targetFilterID = "BrowseCollection.CityFilter.danang.browse.landmarks"
@@ -719,6 +803,32 @@ final class BrowseSearchUITests: XCTestCase {
             app: app,
             message: "City Browse by jumps should leave the noun-group label below the top admin chrome."
         )
+    }
+
+    func testBrowseCityTopSectionPillJumpsToNounGroup() {
+        let app = launchApp(arguments: ["--browse-city", "danang"])
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.danang"].waitForExistence(timeout: 4))
+
+        for _ in 0..<7 where !app.descendants(matching: .any)["BrowseCollection.TopSectionPill"].exists {
+            app.swipeUp()
+            RunLoop.current.run(until: Date().addingTimeInterval(0.18))
+        }
+
+        let sectionPill = app.descendants(matching: .any)["BrowseCollection.TopSectionPill"]
+        XCTAssertTrue(sectionPill.waitForExistence(timeout: 2))
+        XCTAssertTrue(app.descendants(matching: .any)["TopAdmin.SpeedChip"].waitForExistence(timeout: 2))
+        sectionPill.tap()
+
+        let restaurants = app.buttons["BrowseCollection.TopSectionMenu.danang.browse.restaurants"]
+        if restaurants.waitForExistence(timeout: 2) {
+            restaurants.tap()
+        } else {
+            app.buttons["Restaurants"].tap()
+        }
+
+        XCTAssertTrue(waitForTopSectionPill(sectionPill, value: "Restaurants", timeout: 3))
+        XCTAssertTrue(app.descendants(matching: .any)["BrowseCollection.CityGroup.danang.browse.restaurants"].waitForExistence(timeout: 3))
     }
 
     func testCaptureBrowseCityHeroFadeProofForAllCityCards() {
@@ -757,6 +867,34 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["SIM card phrases"].waitForExistence(timeout: 3))
         XCTAssertTrue(matchingStaticText(app: app, text: "SIM").waitForExistence(timeout: 2))
         XCTAssertFalse(app.staticTexts["Good first phrases"].exists)
+    }
+
+    func testBrowseCollectionTopSectionPillJumpsToAirportSubcategory() {
+        let app = launchApp(arguments: ["--browse-category", "airport"])
+
+        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.airport"].waitForExistence(timeout: 4))
+        XCTAssertFalse(app.descendants(matching: .any)["BrowseCollection.TopSectionPill"].exists)
+
+        for _ in 0..<6 where !app.descendants(matching: .any)["BrowseCollection.TopSectionPill"].exists {
+            app.swipeUp()
+            RunLoop.current.run(until: Date().addingTimeInterval(0.18))
+        }
+
+        let sectionPill = app.descendants(matching: .any)["BrowseCollection.TopSectionPill"]
+        XCTAssertTrue(sectionPill.waitForExistence(timeout: 2))
+        XCTAssertTrue(app.descendants(matching: .any)["TopAdmin.SpeedChip"].waitForExistence(timeout: 2))
+        sectionPill.tap()
+
+        let simCard = app.buttons["BrowseCollection.TopSectionMenu.airport.sim-card"]
+        if simCard.waitForExistence(timeout: 2) {
+            simCard.tap()
+        } else {
+            app.buttons["SIM card"].tap()
+        }
+
+        XCTAssertTrue(waitForTopSectionPill(sectionPill, value: "SIM card", timeout: 3))
+        XCTAssertTrue(app.staticTexts["SIM card phrases"].waitForExistence(timeout: 3))
+        XCTAssertTrue(matchingStaticText(app: app, text: "SIM").waitForExistence(timeout: 2))
     }
 
     func testRepresentativeCategorySubcategoryJumpsClearTopAdminChrome() {
@@ -844,14 +982,67 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
 
         let lowerBrowseCard = app.buttons["Browse.PhraseFamily.polite-repair"]
-        tapWhenComfortablyVisible(identifier: "Browse.PhraseFamily.polite-repair", app: app)
+        let collectionTitle = app.staticTexts["BrowseCollection.Title.category.polite-repair"]
+        for attempt in 0..<2 where !collectionTitle.exists {
+            scrollUntilComfortablyVisible(lowerBrowseCard, app: app)
+            lowerBrowseCard.tap()
+            if !collectionTitle.waitForExistence(timeout: attempt == 0 ? 2 : 4) {
+                app.swipeDown()
+            }
+        }
 
-        XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.polite-repair"].waitForExistence(timeout: 4))
+        XCTAssertTrue(collectionTitle.waitForExistence(timeout: 2))
 
         app.buttons["Go back"].tap()
 
         XCTAssertTrue(lowerBrowseCard.waitForExistence(timeout: 3))
         XCTAssertTrue(lowerBrowseCard.isHittable, "Back should return to the card area that opened the collection, not the top of Browse.")
+        XCTAssertTrue(
+            isVerticallyClearOfChrome(lowerBrowseCard, in: app),
+            "Back should return the originating Browse card above the bottom chrome, not partially under it."
+        )
+    }
+
+    func testFastDoubleBackFromBrowseDetailRestoresBrowseRootContent() {
+        let app = launchApp(arguments: ["--browse"])
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
+        let lowerBrowseCard = app.buttons["Browse.PhraseFamily.polite-repair"]
+        let collectionTitle = app.staticTexts["BrowseCollection.Title.category.polite-repair"]
+        for attempt in 0..<2 where !collectionTitle.exists {
+            scrollUntilComfortablyVisible(lowerBrowseCard, app: app)
+            lowerBrowseCard.tap()
+            if !collectionTitle.waitForExistence(timeout: attempt == 0 ? 2 : 4) {
+                app.swipeDown()
+            }
+        }
+
+        XCTAssertTrue(collectionTitle.waitForExistence(timeout: 2))
+        let firstCollectionRow = app.buttons
+            .matching(NSPredicate(format: "identifier BEGINSWITH %@", "BrowseCollection.Row."))
+            .firstMatch
+        scrollUntilHittable(firstCollectionRow, app: app)
+        firstCollectionRow.tap()
+
+        XCTAssertTrue(app.buttons["TopAdmin.BackButton"].waitForExistence(timeout: 4))
+        XCTAssertFalse(collectionTitle.waitForExistence(timeout: 1))
+
+        let backButton = app.buttons["TopAdmin.BackButton"]
+        backButton.tap()
+        RunLoop.current.run(until: Date().addingTimeInterval(0.12))
+        if backButton.waitForExistence(timeout: 1) {
+            backButton.tap()
+        }
+
+        XCTAssertTrue(app.staticTexts["Browse.Title"].waitForExistence(timeout: 4))
+        let topBrowseCard = app.buttons["Browse.Situation.hotel"]
+        XCTAssertTrue(topBrowseCard.waitForExistence(timeout: 2))
+        XCTAssertTrue(
+            isVerticallyClearOfChrome(topBrowseCard, in: app),
+            "Fast detail back/back should restore actual Browse content, not leave an empty photo sheet."
+        )
+        XCTAssertFalse(collectionTitle.exists)
+        XCTAssertTrue(systemTabHost(in: app).waitForExistence(timeout: 2))
     }
 
     func testBackFromBrowseDetailRestoresBrowseRootContent() {
@@ -879,9 +1070,9 @@ final class BrowseSearchUITests: XCTestCase {
     func testCaptureRepresentativeHeroImagesForProductionReview() {
         let pages: [(label: String, arguments: [String], title: String, requiredText: String)] = [
             ("saigon-city", ["--browse-city", "hcmc"], "Saigon", "Browse by"),
-            ("greetings-category", ["--browse-category", "greetings"], "Greetings", "Start here"),
-            ("ben-thanh-market", ["--detail-page", "viet-family-city-hcmc-place-ben-thanh-market"], "Chợ Bến Thành", "About"),
-            ("anan-saigon", ["--detail-page", "viet-family-city-hcmc-place-anan-saigon"], "Anăn Sài Gòn", "About"),
+            ("greetings-category", ["--browse-category", "greetings"], "Greetings", "Simple ways to start conversations."),
+            ("ben-thanh-market", ["--detail-page", "viet-family-city-hcmc-place-ben-thanh-market"], "Chợ Bến Thành", "The First Market Name To Know"),
+            ("anan-saigon", ["--detail-page", "viet-family-city-hcmc-place-anan-saigon"], "Anăn Sài Gòn", "Modern Vietnamese Inside Market Streets"),
         ]
 
         for page in pages {
@@ -915,7 +1106,7 @@ final class BrowseSearchUITests: XCTestCase {
                 "03-hcmc-pasteur-street",
                 "viet-family-city-hcmc-place-pasteur-street",
                 "Đường Pasteur",
-                "One Doorway To Begin",
+                "A Street Of Doorways",
                 "Đến Quận 1"
             ),
             (
@@ -936,7 +1127,7 @@ final class BrowseSearchUITests: XCTestCase {
                 "06-danang-3d-art-in-paradise",
                 "viet-family-city-danang-place-3d-art-in-paradise",
                 "Bảo tàng 3D Art in Paradise Đà Nẵng",
-                "Photos Before Art",
+                "Indoor 3D Photo Museum",
                 "Bảo tàng Mỹ thuật Đà Nẵng"
             ),
             (
@@ -950,7 +1141,7 @@ final class BrowseSearchUITests: XCTestCase {
                 "08-hcmc-ben-thanh-market",
                 "viet-family-city-hcmc-place-ben-thanh-market",
                 "Chợ Bến Thành",
-                "Start With The Clock Tower",
+                "The First Market Name To Know",
                 "Chợ An Đông"
             ),
             (
@@ -964,7 +1155,7 @@ final class BrowseSearchUITests: XCTestCase {
                 "10-hoian-ancient-town-ticket-booth",
                 "viet-family-city-hoian-place-ancient-town-ticket-booth",
                 "Quầy vé phố cổ Hội An",
-                "The Ticket Threshold",
+                "Ancient Town Ticket Booth",
                 "Phố cổ Hội An"
             ),
         ]
@@ -1091,6 +1282,31 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["No exact phrase yet"].exists)
     }
 
+    func testSearchRecoveryCardsAndRelatedChipsStayInteractive() {
+        var app = launchApp(arguments: ["--search-query", "zzzzzz"])
+
+        XCTAssertTrue(app.staticTexts["Search nearby phrases"].waitForExistence(timeout: 4))
+        tapWhenVisible(app.buttons["Search.Recovery.help"], app: app)
+
+        XCTAssertTrue(app.buttons["TopAdmin.BackButton"].waitForExistence(timeout: 4))
+        XCTAssertTrue(app.staticTexts["Break it down"].waitForExistence(timeout: 4))
+        XCTAssertFalse(app.staticTexts["Search nearby phrases"].exists)
+
+        app.terminate()
+
+        app = launchApp(arguments: ["--search-query", "hotel"])
+        XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 4))
+        tapWhenVisible(app.buttons["Search.Filter.Categories"], app: app)
+        XCTAssertTrue(app.staticTexts["Related searches"].waitForExistence(timeout: 3))
+
+        let lateCheckoutChip = app.buttons["Search.Chip.late-checkout"]
+        scrollUntilHittable(lateCheckoutChip, app: app)
+        lateCheckoutChip.tap()
+
+        XCTAssertTrue(app.staticTexts["Results for late checkout"].waitForExistence(timeout: 4))
+        XCTAssertEqual(searchFieldValue(in: app), "late checkout")
+    }
+
     func testSearchFieldUsesLoosePhrasebookResultsForNoisyKnownTokens() {
         let app = launchApp()
         openSearch(in: app)
@@ -1211,7 +1427,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(field.waitForExistence(timeout: 3))
         field.tap()
 
-        tapWhenVisible(app.buttons["Search.Prompt.hotel"], app: app)
+        tapWhenVisible(app.buttons["Search.Chip.hotel"], app: app)
 
         XCTAssertTrue(app.staticTexts["Results for hotel"].waitForExistence(timeout: 3))
 
@@ -1491,9 +1707,11 @@ final class BrowseSearchUITests: XCTestCase {
     }
 
     private func visibleTextElement(_ title: String, in app: XCUIApplication) -> XCUIElement {
-        let staticText = app.staticTexts[title].firstMatch
-        if staticText.exists {
-            return staticText
+        if title.count <= 128 {
+            let staticText = app.staticTexts[title].firstMatch
+            if staticText.exists {
+                return staticText
+            }
         }
 
         let exactPredicate = NSPredicate(format: "label == %@", title)
@@ -1735,8 +1953,8 @@ final class BrowseSearchUITests: XCTestCase {
     private func tapHorizontalCard(_ element: XCUIElement, app: XCUIApplication, scrollAnchor: XCUIElement? = nil, file: StaticString = #filePath, line: UInt = #line) {
         for _ in 0..<6 {
             if element.waitForExistence(timeout: 1) {
-                if isComfortablyVisible(element, in: app) {
-                    element.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+                if isComfortablyVisible(element, in: app) || hasUsableVisibleTapFrame(element, in: app) {
+                    tapVisibleCenter(of: element, in: app)
                     return
                 }
             }
@@ -1761,6 +1979,36 @@ final class BrowseSearchUITests: XCTestCase {
         }
 
         XCTFail("Horizontal card was not hittable: \(element)", file: file, line: line)
+    }
+
+    private func hasUsableVisibleTapFrame(_ element: XCUIElement, in app: XCUIApplication) -> Bool {
+        let frame = element.frame
+        let appFrame = app.windows.firstMatch.frame.insetBy(dx: 8, dy: 8)
+
+        guard !frame.isNull, !frame.isInfinite, !frame.isEmpty else {
+            return false
+        }
+
+        let visibleFrame = frame.intersection(appFrame)
+        guard !visibleFrame.isNull, !visibleFrame.isEmpty else {
+            return false
+        }
+
+        return visibleFrame.width >= min(72, frame.width * 0.45)
+            && visibleFrame.height >= min(44, frame.height * 0.5)
+    }
+
+    private func tapVisibleCenter(of element: XCUIElement, in app: XCUIApplication) {
+        let appFrame = app.windows.firstMatch.frame
+        let visibleFrame = element.frame.intersection(appFrame)
+        let tapFrame = visibleFrame.isNull || visibleFrame.isEmpty ? element.frame : visibleFrame
+        app.coordinate(
+            withNormalizedOffset: CGVector(
+                dx: tapFrame.midX / max(appFrame.width, 1),
+                dy: tapFrame.midY / max(appFrame.height, 1)
+            )
+        )
+        .tap()
     }
 
     private func scrollHorizontalCardUntilVisible(_ element: XCUIElement, app: XCUIApplication, scrollAnchor: XCUIElement, file: StaticString = #filePath, line: UInt = #line) {

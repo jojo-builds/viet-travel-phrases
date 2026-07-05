@@ -14,7 +14,6 @@ struct BrowsePageView: View {
     var body: some View {
         if usesPhotoBackdrop {
             contentStack
-                .accessibilityIdentifier("BrowsePageView")
         } else {
             ZStack(alignment: .bottom) {
                 PhrasePageStyle.pageBackground
@@ -30,7 +29,6 @@ struct BrowsePageView: View {
                 }
                 .ignoresSafeArea(edges: .top)
             }
-            .accessibilityIdentifier("BrowsePageView")
         }
     }
 
@@ -38,6 +36,8 @@ struct BrowsePageView: View {
 
     private var contentStack: some View {
         VStack(alignment: .leading, spacing: BrowsePageLayout.sectionSpacing) {
+            browseAccessibilityMarker
+
             header
                 .id(Self.scrollTopID)
 
@@ -59,6 +59,14 @@ struct BrowsePageView: View {
             AppBottomSentinel(id: "Browse.BottomSentinel")
         }
         .padding(.bottom, BrowsePageLayout.bottomContentClearance(usesPhotoBackdrop: usesPhotoBackdrop))
+    }
+
+    private var browseAccessibilityMarker: some View {
+        Color.clear
+            .frame(width: 1, height: 1)
+            .accessibilityElement()
+            .accessibilityLabel("Browse")
+            .accessibilityIdentifier("BrowsePageView")
     }
 
     private var header: some View {

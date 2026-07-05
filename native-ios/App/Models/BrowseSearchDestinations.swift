@@ -926,6 +926,29 @@ enum BrowseSearchDestinations {
         return descriptor
     }
 
+    static func savedCityPageID(for cityID: String) -> String? {
+        let route = BrowseCollectionRoute.city(cityID)
+        guard collectionDescriptor(for: route) != nil else {
+            return nil
+        }
+
+        return "browse-city-\(cityID)"
+    }
+
+    static func cityID(forSavedCityPageID pageID: String) -> String? {
+        let prefix = "browse-city-"
+        guard pageID.hasPrefix(prefix) else {
+            return nil
+        }
+
+        let cityID = String(pageID.dropFirst(prefix.count))
+        guard collectionDescriptor(for: .city(cityID)) != nil else {
+            return nil
+        }
+
+        return cityID
+    }
+
     static var visibleCategoryCollectionRoutes: [BrowseCollectionRoute] {
         allCategoryDestinations.map { .category($0.id) }
     }
@@ -1979,7 +2002,8 @@ enum BrowseSearchDestinations {
         categoryIDs: [String],
         tintName: AccentTint
     ) -> [BrowseCollectionSubcategory] {
-        let specs = subcategorySpecs[collectionID] ?? categoryIDs.map { categoryID in
+        let visualCollectionID = categoryVisualCollectionID(for: collectionID)
+        let specs = subcategorySpecs[visualCollectionID] ?? categoryIDs.map { categoryID in
             CollectionSubcategorySpec(
                 id: categoryID,
                 title: PhraseCatalog.category(withID: categoryID)?.title ?? collectionTitle(for: categoryID, fallback: categoryID),
@@ -2005,7 +2029,7 @@ enum BrowseSearchDestinations {
                 symbolName: spec.symbolName,
                 tintName: tintName,
                 phraseCount: max(phraseCount, rows.count),
-                imageName: subcategoryImageName(for: collectionID, specID: spec.id),
+                imageName: subcategoryImageName(for: visualCollectionID, specID: spec.id),
                 items: rows
             )
         }
@@ -2518,9 +2542,22 @@ enum BrowseSearchDestinations {
     private static func mastheadImageName(for route: BrowseCollectionRoute) -> String {
         switch route {
         case .category(let id):
-            return categoryMastheadImages[id] ?? "HeroVietnamMasthead"
+            return categoryMastheadImages[id]
+                ?? categoryMastheadImages[categoryVisualCollectionID(for: id)]
+                ?? "HeroVietnamMasthead"
         case .city(let id):
             return cityMastheadImages[id] ?? "HeroVietnamMasthead"
+        }
+    }
+
+    private static func categoryVisualCollectionID(for id: String) -> String {
+        switch id {
+        case "airport-border-arrival":
+            return "airport"
+        case "hotel-accommodation":
+            return "hotel"
+        default:
+            return id
         }
     }
 
@@ -2560,6 +2597,10 @@ enum BrowseSearchDestinations {
 
     private static func collectionTitle(for id: String, fallback: String) -> String {
         switch id {
+        case "airport-border-arrival":
+            return "Airport"
+        case "hotel-accommodation":
+            return "Hotel"
         case "getting-around":
             return "Getting Around"
         case "local-greetings":
@@ -2579,9 +2620,9 @@ enum BrowseSearchDestinations {
 
     private static func collectionSubtitle(for id: String, fallback: String) -> String {
         switch id {
-        case "airport":
+        case "airport", "airport-border-arrival":
             return "Arrival, passport, bags, taxis, SIM cards, and airport help."
-        case "hotel":
+        case "hotel", "hotel-accommodation":
             return "Check in, leave bags, fix room issues, ask breakfast times, and check out."
         case "food":
             return "Restaurant and cafe phrases for tables, ordering, allergies, and paying."
@@ -2662,11 +2703,11 @@ enum BrowseSearchDestinations {
 
     private static func starterTitle(for id: String) -> String {
         switch id {
-        case "airport":
+        case "airport", "airport-border-arrival":
             return "Good first phrases"
         case "food":
             return "Start at the table"
-        case "hotel":
+        case "hotel", "hotel-accommodation":
             return "At the hotel desk"
         default:
             return "Start here"
@@ -2675,9 +2716,9 @@ enum BrowseSearchDestinations {
 
     private static func categoryMessageSectionTitle(for id: String, title: String) -> String? {
         switch id {
-        case "airport":
+        case "airport", "airport-border-arrival":
             return "Airport"
-        case "hotel":
+        case "hotel", "hotel-accommodation":
             return "Hotel"
         case "food":
             return "Food"

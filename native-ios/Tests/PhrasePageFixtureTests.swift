@@ -461,6 +461,26 @@ final class PhrasePageFixtureTests: XCTestCase {
         }
     }
 
+    func testNotSpicyBreakdownCardHasPlayableAudio() throws {
+        enableSQLiteRuntimeForTesting()
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-phrase-food-3"))
+        let article = page.articleTemplate
+        let breakdownToken = try XCTUnwrap(
+            article.sections.flatMap(\.breakdown).first { $0.vietnamese == "Không cay" }
+        )
+        let playbackAudioKey = try XCTUnwrap(
+            breakdownToken.playbackAudioKey,
+            "The visible Không cay breakdown card should expose a speaker, not a silent card."
+        )
+
+        XCTAssertNotNil(manifest.url(for: playbackAudioKey))
+        XCTAssertTrue(
+            manifest.hasPlayableEntry(for: playbackAudioKey, matchingText: "Không cay"),
+            "The visible Không cay breakdown speaker should play exact bundled audio."
+        )
+    }
+
     func testTierOneCatalogAudioKeysMatchVisibleTitles() throws {
         let manifest = try XCTUnwrap(AudioAssetManifest.main)
 
