@@ -397,7 +397,9 @@ function main() {
   assertZero(counts.releaseBlockingMissingAudioAuditRows, "release-blocking missing audio audit rows");
   const plannedAudioSourcePhraseCount = Number(sqliteValue("SELECT count(*) FROM phrase WHERE audio_status = 'planned';"));
   const plannedAudioQueueRows = csvRowCount(plannedMissingAudioQueuePath);
-  assertTrue(plannedAudioQueueRows > 0, `planned missing-audio queue is empty or missing: ${relative(plannedMissingAudioQueuePath)}`);
+  if (counts.plannedMissingAudioAuditRows > 0) {
+    assertTrue(plannedAudioQueueRows > 0, `planned missing-audio queue is empty or missing: ${relative(plannedMissingAudioQueuePath)}`);
+  }
   assertEqual(counts.plannedMissingAudioAuditRows, counts.missingAudioAuditRows, "missing audio audit rows should all be planned");
   assertEqual(counts.releaseBlockingMissingAudioAuditRows, 0, "release-blocking missing audio audit rows");
   assertEqual(counts.plannedMissingAudioAuditRows, plannedAudioQueueRows, "planned missing audio queue rows");

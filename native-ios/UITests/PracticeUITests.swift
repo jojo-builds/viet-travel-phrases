@@ -26,6 +26,8 @@ final class PracticeUITests: XCTestCase {
 
         XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.staticTexts["Phrase"].waitForExistence(timeout: 4))
+        capturePracticeProof(app: app, name: "saved-round-start.png")
+        assertPracticeRoundHeaderClearsNativeSheetTopEdge(in: app)
         XCTAssertTrue(app.buttons["Need a hint?"].waitForExistence(timeout: 4))
         XCTAssertFalse(app.staticTexts["0 of 4"].exists)
         XCTAssertFalse(app.staticTexts["1 / 10"].exists)
@@ -164,13 +166,16 @@ final class PracticeUITests: XCTestCase {
     }
 
     func testHomeQuickPracticeCallerCompletesRoundAndReturnsToHomePracticeRail() {
-        let app = launchApp(extraArguments: ["--reset-demo-state"])
+        let app = launchApp(extraArguments: ["--home", "--reset-demo-state"])
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 4))
+        XCTAssertFalse(app.staticTexts["Browse.Title"].exists)
         let quickPractice = app.buttons["Home.PracticeStarter.quick"]
         scrollUntilElementIsHittable(quickPractice, in: app)
         capturePracticeProof(app: app, name: "home-practice-rail-quick-visible.png")
 
         tapWhenHittable(quickPractice, app: app)
-        XCTAssertTrue(app.staticTexts["Quick practice"].waitForExistence(timeout: 5))
+        assertPracticeRoundVisible(in: app, afterContinueScreenshotName: "home-quick-practice-open-failed.png")
+        capturePracticeProof(app: app, name: "home-quick-practice-open.png")
         completeCurrentMatchRound(in: app)
         assertPracticeCompletionVisible(in: app)
         capturePracticeProof(app: app, name: "home-quick-practice-complete.png")
@@ -268,7 +273,7 @@ final class PracticeUITests: XCTestCase {
     }
 
     private func launchPracticeApp(extraArguments: [String] = []) -> XCUIApplication {
-        launchApp(extraArguments: ["--practice", "--reset-demo-state"] + extraArguments)
+        launchApp(extraArguments: ["--practice", "--reset-demo-state", "--enable-practice-layout-probes"] + extraArguments)
     }
 
     private func launchApp(extraArguments: [String] = []) -> XCUIApplication {
@@ -316,7 +321,9 @@ final class PracticeUITests: XCTestCase {
         line: UInt = #line
     ) {
         for _ in 0..<8 {
-            if element.waitForExistence(timeout: 1), element.isHittable {
+            if element.waitForExistence(timeout: 1),
+               element.isHittable,
+               isElementFullyVisible(element, in: app) {
                 return
             }
             app.swipeUp()
@@ -324,6 +331,20 @@ final class PracticeUITests: XCTestCase {
 
         XCTAssertTrue(element.waitForExistence(timeout: 1), file: file, line: line)
         XCTAssertTrue(element.isHittable, file: file, line: line)
+        XCTAssertTrue(isElementFullyVisible(element, in: app), file: file, line: line)
+    }
+
+    private func isElementFullyVisible(_ element: XCUIElement, in app: XCUIApplication) -> Bool {
+        let frame = element.frame
+        let windowFrame = app.windows.firstMatch.frame.insetBy(dx: 0, dy: 8)
+        guard !frame.isEmpty, !windowFrame.isEmpty else {
+            return false
+        }
+
+        return frame.minY >= windowFrame.minY
+            && frame.maxY <= windowFrame.maxY
+            && frame.midX >= windowFrame.minX
+            && frame.midX <= windowFrame.maxX
     }
 
     private func dragVertically(in app: XCUIApplication, from startY: CGFloat, to endY: CGFloat) {
@@ -419,6 +440,43 @@ final class PracticeUITests: XCTestCase {
         assertElementFullyVisible(app.buttons["Practice.Match.Close"], in: app, file: file, line: line)
         assertElementFullyVisible(app.buttons["Practice.Match.TopicPicker"], in: app, file: file, line: line)
         assertElementFullyVisible(app.buttons["Practice.Match.Hint"], in: app, file: file, line: line)
+    }
+
+    private func assertPracticeRoundHeaderClearsNativeSheetTopEdge(
+        in app: XCUIApplication,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        let topBoundary = app.descendants(matching: .any)["Practice.Match.SheetTopBoundary"]
+        XCTAssertTrue(topBoundary.waitForExistence(timeout: 2), file: file, line: line)
+
+        let minimumHeaderInset: CGFloat = 48
+        let header = app.descendants(matching: .any)["Practice.Match.HeaderControls"]
+        XCTAssertTrue(header.waitForExistence(timeout: 2), file: file, line: line)
+        XCTAssertGreaterThanOrEqual(
+            header.frame.minY,
+            topBoundary.frame.maxY + minimumHeaderInset,
+            "Practice sheet header should clear the native sheet top edge as a full cluster.",
+            file: file,
+            line: line
+        )
+
+        let controls = [
+            app.buttons["Practice.Match.PreviousRound"],
+            app.buttons["Practice.Match.TopicPicker"],
+            app.buttons["Practice.Match.Close"],
+        ]
+
+        for control in controls {
+            XCTAssertTrue(control.waitForExistence(timeout: 2), file: file, line: line)
+            XCTAssertGreaterThanOrEqual(
+                control.frame.minY,
+                topBoundary.frame.maxY + minimumHeaderInset,
+                "Practice sheet header controls should sit fully below the native sheet top edge.",
+                file: file,
+                line: line
+            )
+        }
     }
 
     private func assertElementFullyVisible(

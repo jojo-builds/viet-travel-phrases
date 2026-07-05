@@ -71,6 +71,14 @@ enum PracticeMatchPullUpMetrics {
     }
 }
 
+private enum PracticeMatchRoundLayout {
+    static let nativeSheetTopChromeClearance: CGFloat = 44
+
+    static var exposesUITestTopBoundary: Bool {
+        ProcessInfo.processInfo.arguments.contains("--enable-practice-layout-probes")
+    }
+}
+
 struct PracticeOverlayBackdropOpacityPreferenceKey: PreferenceKey {
     static var defaultValue: Double = 0
 
@@ -5137,6 +5145,9 @@ private struct PracticeMatchDirectStartCard: View {
             if showsSheetHandle {
                 PracticeMatchSheetHandle()
                     .padding(.top, 12)
+            } else {
+                Color.clear
+                    .frame(height: PracticeMatchRoundLayout.nativeSheetTopChromeClearance)
             }
 
             HStack {
@@ -5534,7 +5545,7 @@ private struct PracticeMatchRoundView: View {
                 roundContent(topHandlePadding: 12)
             }
         } else {
-            roundContent(topHandlePadding: max(8, topContentClearance + 8))
+            roundContent(topHandlePadding: topChromeClearance)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                 .background {
                     PracticeMatchAtmosphereBackground(
@@ -5547,6 +5558,18 @@ private struct PracticeMatchRoundView: View {
 
     private var pullUpDismissAction: () -> Void {
         presentationStyle == .route ? onClose : onDismiss
+    }
+
+    private var topChromeClearance: CGFloat {
+        if showsSheetHandle {
+            return max(8, topContentClearance + 8)
+        }
+
+        if PracticeMatchPresentationPolicy.usesNativeSystemSheet(for: presentationStyle) {
+            return PracticeMatchRoundLayout.nativeSheetTopChromeClearance
+        }
+
+        return max(8, topContentClearance + 8)
     }
 
     private func roundContent(topHandlePadding: CGFloat) -> some View {
@@ -5569,6 +5592,15 @@ private struct PracticeMatchRoundView: View {
             } else {
                 ZStack(alignment: .top) {
                     VStack(spacing: 12) {
+                        if PracticeMatchRoundLayout.exposesUITestTopBoundary {
+                            Rectangle()
+                                .fill(.clear)
+                                .frame(height: 1)
+                                .accessibilityElement()
+                                .accessibilityLabel("Practice sheet top boundary")
+                                .accessibilityIdentifier("Practice.Match.SheetTopBoundary")
+                        }
+
                         if showsSheetHandle {
                             PracticeMatchSheetHandle()
                                 .padding(.top, topHandlePadding)
@@ -6048,6 +6080,8 @@ private struct PracticeMatchRoundHeader: View {
                 .accessibilityIdentifier("Practice.Match.ModeBadge")
         }
         .padding(.horizontal, 14)
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("Practice.Match.HeaderControls")
     }
 }
 

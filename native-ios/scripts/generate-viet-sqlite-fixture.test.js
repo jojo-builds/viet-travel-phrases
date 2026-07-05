@@ -153,6 +153,11 @@ test("generates deterministic Viet SQLite fixture with required counts and integ
     report.validation.cityLibraryPageCount,
     "city phrase tags should remain tied to the curated city library"
   );
+  assert.strictEqual(
+    Number(sqliteValue("SELECT count(*) FROM phrase WHERE id LIKE 'city-%';")),
+    report.validation.cityPrefixedPageCount,
+    "city-prefixed phrase pages should have an explicit report count for hero policy coverage"
+  );
 
   const duplicateCanonicalPages = sqliteValue(`
     SELECT count(*)

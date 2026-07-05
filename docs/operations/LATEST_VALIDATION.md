@@ -1,6 +1,6 @@
 # Latest Validation
 
-Last updated: 2026-06-16
+Last updated: 2026-07-05 (Asia/Manila local)
 Authority lane: latest durable native iOS validation evidence
 
 ## Use This Doc For
@@ -12,27 +12,85 @@ Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCK
 
 ## Branch-Local Paywall Lane Evidence
 
-Fresh evidence from the 2026-05-21 `feature/paywall` sync with current local `main`:
+Fresh evidence from the 2026-07-05 `feature/paywall` StoreKit-readiness worker:
 
-- merged current local `main` into `feature/paywall`; conflicts were resolved in the paywall docs and regenerated Xcode project
-- XcodeGen regenerated `native-ios/SpeakLocalNative.xcodeproj/project.pbxproj` with the paywall files and the latest native resources still included
-- StoreKit test config still defines `app.speaklocal.vietnam.subscription.monthly` as a monthly subscription with a one-week free introductory offer and `4.99` display price
-- `git diff --check`
-  - passed
-- XcodeBuildMCP simulator build on `SpeakLocal Paywall 26.5`
-  - passed
-- `xcodebuild -only-testing:SpeakLocalNativeTests/SubscriptionAccessStateTests test`
-  - passed: `10` tests, `0` failures
-- `xcodebuild -only-testing:SpeakLocalNativeUITests/SubscriptionGateUITests test`
-  - passed: `3` tests, `0` failures
-- simulator manual checks on `SpeakLocal Paywall 26.5`
-  - natural no-entitlement launch shows onboarding
-  - Continue advances from onboarding to the paywall
-  - forced paywall shows the Apple-native subscription shell, Restore, Terms, and Privacy
-  - local/direct simulator launch still shows `Subscription Unavailable`, so real purchase/restore/relaunch proof remains Apple-side/TestFlight or StoreKit-session work
-  - subscription bypass can open the app for inspection; a latest-main backdrop initialization loop found during this pass was fixed in the paywall lane
+- paywall remains branch-local and is not merged into `main`
+- local StoreKit config still defines `app.speaklocal.vietnam.subscription.monthly` as a monthly subscription with a one-week introductory offer and `4.99` display price
+- cached entitlement state is now expiration-aware, so expired cached subscriptions should not continue unlocking premium access
+- placeholder paywall copy was removed from the native paywall surface
+- `--disable-subscription-ui-test-bypass` was added for subscription gate UI coverage
+- `git diff --check`, native-only guard, StoreKit config sanity, simulator build, simulator install, and forced-paywall launch proof passed in the worker lane
+- current worker report: `docs/task-results/parallel-goals-2026-07-05/paywall-storekit-report.md`
+- remaining status is `FIX_FIRST`: local XCTest StoreKit harness stalled before producing meaningful assertion counts, and real purchase/restore/relaunch/gating still need App Store Connect or StoreKit-session proof
 
 No physical iPhone build was installed from this branch in this pass.
+
+## Current Front-End QA Proof
+
+Current 2026-07-05 deep visual QA follow-up after Jojo's physical iPhone review exposed missed visual/functionality defects:
+
+- deep visual QA ledger: `docs/task-results/deep-visual-qa-2026-07-05/BUG_LEDGER.md`
+- fixes covered: not-spicy `Không cay` breakdown audio, Browse detail fast back/back blank canvas, city header save/favorite, city row save persistence, city Browse-by jumps and top-admin clearance, Practice native sheet top-header clearance, and stale Practice/Home quick-practice UI test expectation
+- focused unit receipt passed: `4` tests, `0` failures across not-spicy audio, speaker manifest policy, audio-session setup, and city saved-trip persistence
+- focused Browse/Search UI matrix passed: `8` tests, `0` failures covering double-back restoration, city header save, city row save, Browse-by jump behavior, top-admin clearance, and Saved unsave
+- audio UI reliability passed: `2` focused tests, `0` failures across breakdown audio cards and row audio taps
+- BackSwipe UI suite passed: `13` tests, `0` failures across detail, Browse, Home city/phrase/practice, forward history, and tab back chains
+- Practice visual sheet proof passed on a Pro Max simulator: `PracticeUITests/testPracticeSavedOpensSingleFourPairMatchRound`, `1` executed test, `0` failures, screenshot proof at `/tmp/speaklocal-practice-proof-pro-max/saved-round-start.png`
+- Practice home quick-practice return flow passed after aligning the test to the current direct-round behavior: `1` executed test, `0` failures
+- broad post-fix UI sweep on the Pro Max simulator executed `135` tests with `132` passing and `1` skipped; the `2` failures were both test-harness/configuration issues found by the deeper pass, not accepted as green:
+  - `CityAppDetailV22RenderProofUITests/testCaptureCityAppDetailV22RenderProofBatch` now skips when the required render-proof manifest is not supplied instead of failing generic full sweeps
+  - `PracticeUITests/testHomeQuickPracticeCallerCompletesRoundAndReturnsToHomePracticeRail` exposed an offscreen Home quick-practice tap caused by relying on XCTest `isHittable` without visible-window geometry; the helper now requires visible geometry before tapping
+- focused post-broad-sweep rerun passed: `2` selected tests, `1` pass, `1` intentional skip, `0` failures
+- physical iPhone proof passed for the corrected `main` working tree: Debug build, install, and launch completed on Jojo's active physical iPhone with local-only signing overrides; repo signing files stayed clean after the build
+- final post-harness app-code proof also passed on Jojo's active physical iPhone after the Home quick-practice visibility fix and render-proof skip repair: Debug build, install, launch, and signing hygiene all completed cleanly
+- the earlier broad frontend QA green is narrowed by this follow-up: future validation claims must verify nonzero XCTest execution counts and should include exact visual/state assertions for native sheet chrome, audio affordances, city jumps, and rapid navigation paths
+- paywall remains excluded
+
+Current 2026-07-04/05 non-paywall native UI evidence from the frontend QA bug hunt:
+
+- full final simulator sweep passed: `SpeakLocalNativeUITests` executed `132` tests, with `1` intentional skip and `0` failures, completing at 2026-07-05 04:42 Asia/Manila local time
+- the sweep covered Admin/Chrome, audio button reliability, Bà Nà journey proof, Back/Forward navigation, bottom insets, Browse/Search, city V2.2 render proof, listing hub/detail/production proof, and Practice flows
+- compact summary: `docs/task-results/frontend-qa-2026-07-04/test-summaries/full-ui-final-sweep-summary.json`
+- per-test xcodebuild receipt: `docs/task-results/frontend-qa-2026-07-04/test-logs/full-ui-final-sweep.log`
+- screenshot/proof set: `259` files under `docs/task-results/frontend-qa-2026-07-04/full-ui-final-sweep-proofs/`
+- frontend QA issue ledger: `docs/task-results/frontend-qa-2026-07-04/BUG_LEDGER.md`; issues `FQA-001` through `FQA-019` were fixed or covered and then validated
+- follow-up Practice header clearance proof passed after Jojo's physical-device screenshot exposed a missed visual gate: the saved-practice geometry regression failed red before the layout fix, passed green afterward, the full `PracticeUITests` class passed with `13` tests and `0` failures, visual screenshots were retained under `docs/task-results/frontend-qa-2026-07-04/practice-header-fix-proof/`, and a follow-up physical iPhone Debug build/install/launch passed with repo signing files clean
+- physical iPhone proof for the same QA/resource payload passed: Debug build, install, and launch completed on Jojo's active physical iPhone with local-only signing overrides; repo signing files stayed clean
+- paywall / StoreKit proof remains separate and excluded from this frontend QA result
+
+## Current Audio Coverage Proof
+
+Current 2026-07-04 launch-readiness working-tree evidence after the ElevenLabs remediation pass:
+
+- visible placeholder scan passed with `0` `TODO` / `TBD` / placeholder / `coming soon` / `audio not available yet` hits across `native-ios/Resources/viet-phrase-catalog.json`, `native-ios/Resources/viet-authored-listing-pages.json`, and `native-ios/Resources/vietnamese-menu-copy.json`
+- `node native-ios/scripts/sync-viet-audio.js` passed: validated `5353` native audio manifest entries in `native-ios/Resources/Audio`
+- `node native-ios/scripts/generate-city-noun-audio-elevenlabs.js --dry-run` passed with `520` already ready and `0` to generate
+- `node native-ios/scripts/generate-vietnamese-menu-audio-elevenlabs.js --dry-run` passed with `709` already ready and `0` to generate
+- `node native-ios/scripts/generate-breakdown-audio-elevenlabs.js --authored-audit-missing --dry-run` passed with `0` manifest keys and `0` to generate
+- `native-ios/Resources/viet-authored-audio-audit.json` reports `2246` required audio entries and `0` missing audio entries
+- regenerated Viet SQLite report shows `5353` audio assets, `3949` unique normalized spoken texts, `19552` audio usages, `0` missing-audio audit rows, `0` planned missing-audio audit rows, `0` release-blocking missing-audio rows, and `0` planned missing-audio queue rows
+- focused simulator test command passed for `9` audio/content tests across SQLite audio resolution, authored phrase-row audio, phrase option audio, city/place audio, and Vietnamese menu audio
+- fresh physical iPhone proof for the regenerated audio payload passed: Debug build, install, and launch all completed with local-only signing overrides; repo signing files stayed clean
+- human audio-quality/listen spot-checks are still recommended before claiming perfect pronunciation or same-voice consistency
+
+## Current New-Phone Device Proof
+
+Current `main` evidence from 2026-07-04, based on commit `07a2db5d8`:
+
+- `./scripts/status.sh` showed most non-paywall lanes at `07a2db5d8`; `feature/paywall` and legacy `feature/messages-section` remain outside `main`
+- `git branch --no-merged main` showed only the archived/legacy Messages branch, `feature/messages-section`, and `feature/paywall`
+- `git cherry -v main feature/paywall` showed the paywall setup/skeleton commits still unmerged
+- `node native-ios/scripts/validate-viet-sqlite-fixture.js` passed with `1782` clusters, `1800` source phrases, `1793` canonical pages, `11728` relations, `778` planned missing-audio rows, and `0` release-blocking missing-audio rows
+- `node native-ios/scripts/audit-viet-listing-production-qa.js --check` passed with `1793` pages, `0` blockers, and `0` majors; it still reported `500` missing-audio priority rows
+- first physical install attempt to Jojo's replacement/new active iPhone did not complete because Xcode reported Developer Mode disabled on the phone before install
+- after Developer Mode was enabled, Xcode saw the phone as a valid iOS destination, but signing/provisioning initially failed because Xcode had no signed-in Apple account, the cached development profile did not include the new phone, and Apple required a Program License Agreement update
+- after Xcode account sign-in and Apple Program License Agreement acceptance, the current-`main` debug build passed with local-only signing overrides
+- install to the replacement/new active physical iPhone passed for bundle `app.speaklocal.vietnam.native`
+- launch on the replacement/new active physical iPhone passed
+- signing hygiene checks before and after the successful build showed no tracked signing-file changes and no personal signing/team/device identifiers written into `native-ios/project.yml` or `native-ios/SpeakLocalNative.xcodeproj/project.pbxproj`
+- after the Home scroll-jank report on the same launch-readiness working tree, the original Home lifted/glass panel styling was restored and the deeper scroll-state fix moved photo-backdrop/chrome offset updates out of the full Home content tree
+- focused Home validation passed after that fix: `AppChromeTests/testHomePhotoBackdropPublishesScrollStateAtCoarserPerformanceStride` and `AdminChromeUITests/testHomeLiquidGlassRedesignProofScreenshots`
+- full Browse/Search UI validation passed after the Home fix: `BrowseSearchUITests`, `60` tests, `0` failures, result bundle `docs/task-results/launch-readiness-audit-2026-07-04/runtime/browse-search-full-post-home-fix.xcresult`
 
 ## Current Launch Readiness Main Evidence
 
@@ -74,7 +132,7 @@ Physical iPhone proof for this merged `main` payload:
 Remaining honest follow-ups:
 
 - StoreKit/paywall proof remains separate and excluded unless Jojo explicitly includes paywall in the release
-- audio continuity remains a quality watch item; current validation has `0` release-blocking missing-audio rows but `778` planned missing-audio audit rows
+- audio continuity remains a quality watch item; the current audio coverage proof above cleared the planned missing-audio queue in the launch-readiness working tree and passed a fresh phone build/install/launch, but human listen spot-checks are still recommended
 - device performance profiling for search, first audio tap, Browse/Home first render, and Saved/Practice state fanout would strengthen App Store confidence but no user-visible jank was reproduced in the tested simulator paths
 
 ## Current Merge Sweep Main Evidence

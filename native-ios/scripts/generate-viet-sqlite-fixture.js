@@ -2032,7 +2032,8 @@ function main() {
         });
       }
       for (const token of section.breakdown ?? []) {
-        if (!token.audioKey) {
+        const tokenAudioKey = token.audioKey ?? audioAssetIDByNormalizedText.get(normalizeText(token.vietnamese));
+        if (!tokenAudioKey) {
           continue;
         }
 
@@ -2042,7 +2043,7 @@ function main() {
           targetKind: "breakdown_token",
           targetID: tokenID,
           expectedText: token.vietnamese,
-          audioKey: token.audioKey,
+          audioKey: tokenAudioKey,
           isPrimary: 0,
           sourcePath: relative(authoredPagesPath),
         });
@@ -2788,6 +2789,7 @@ function main() {
       bannedUserFacingMatchCount: bannedUserFacingMatches.length,
       bannedUserFacingMatches,
       cityLibraryPageCount: cityLibraryPages.length,
+      cityPrefixedPageCount: canonicalPhrases.filter((phrase) => phrase.id.startsWith("city-")).length,
       cityCount: cityRows.length,
       cityPlaceCount: cityPlaceRows.length,
       cityTagCount: phraseCityTagRows.length,

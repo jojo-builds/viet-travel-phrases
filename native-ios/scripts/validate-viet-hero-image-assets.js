@@ -193,7 +193,9 @@ function collectCityLibraryHeroNames() {
   const heroNames = new Set();
   for (const page of cityLibrary.pages || []) {
     addHeroName(heroNames, page.heroImageName);
-    addHeroName(heroNames, page.editorialImport?.heroImageName);
+    if (requireUniqueCityPlaceAssets) {
+      addHeroName(heroNames, page.editorialImport?.heroImageName);
+    }
   }
   return heroNames;
 }

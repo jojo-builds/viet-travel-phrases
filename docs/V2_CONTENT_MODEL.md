@@ -179,15 +179,19 @@ Prepared-next lanes may also carry:
 
 Current Viet counts:
 
-- 150 starter visible entries
-- 750 premium visible entries
-- 900 total visible entries
-- 919 approved raw phrase rows
-- 919 approved rows currently marked `audioStatus=ready`
-- 0 approved rows currently marked `audioStatus=planned`
+- 19 runtime scenarios
+- 177 starter visible intent families
+- 1605 premium visible intent families
+- 1782 total visible intent families / clusters
+- 1800 source phrase rows
+- 1793 canonical phrase pages
+- 11728 relation rows
+- 4318 bundled audio assets
+- 778 planned missing-audio phrase rows
+- 0 release-blocking missing-audio rows
 - The live-completion audits now live in `content-draft/viet/autonomous-500/` and `content-draft/viet/autonomous-900/`.
 - Future Vietnam expansion planning beyond the current live pack now lives in `docs/VIET_PREMIUM_EXPANSION_PLAN.md`.
-- Do not infer future `200 / 1000` planning counts from the current runtime presentation config or the current boundary validator.
+- Do not infer older `150 / 750 / 900` or `200 / 1000` planning counts from historical docs when generated native resources disagree.
 
 ## Authoring surfaces
 
@@ -275,7 +279,7 @@ Website export output:
 
 ## Audio rule
 
-- the current live Viet pack now has all `919` approved rows audio-backed in the app seam
+- the current live Viet pack has `4318` bundled audio assets and `0` release-blocking missing-audio rows, but still carries `778` planned missing-audio phrase rows
 - future newly authored rows may still stay `audioStatus=planned` until app audio catches up
 - approved traveler-facing phrase rows should remain auditable against audio coverage, even when content grows faster than generation
 - the long-term product target is that useful retained phrase rows receive audio rather than remaining a permanent text-only shadow layer

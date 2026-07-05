@@ -28,6 +28,7 @@ struct BrowseCollectionPageView: View {
     let scrollToTopTrigger: Int
     let scrollToTopRoute: BrowseCollectionRoute?
     let focusRequest: BrowseCollectionFocusRequest?
+    var sectionJumpRequest: VietnameseMenuSectionJumpRequest? = nil
     var isActive: Bool = true
     var isSaved: (String) -> Bool = { _ in false }
     var onToggleSaved: (String) -> Void = { _ in }
@@ -40,6 +41,9 @@ struct BrowseCollectionPageView: View {
     @State private var didApplyPhotoBackdropInitialPosition = false
     @State private var isPhotoBackdropImmersive = false
     @State private var photoBackdropScrollOffset: CGFloat = 0
+    @State private var sectionTracker = VietnameseMenuSectionTrackingCoordinator(initialSectionID: "")
+    @State private var browseSectionJumpSettleID = 0
+    @State private var isSettlingProgrammaticBrowseSectionJump = false
 
     private var bottomSentinelID: String {
         "BrowseCollection.BottomSentinel.\(descriptor.route.id)"
@@ -60,6 +64,19 @@ struct BrowseCollectionPageView: View {
             didApplyPhotoBackdropInitialPosition = false
             isPhotoBackdropImmersive = false
             photoBackdropScrollOffset = 0
+            resetBrowseSectionTracker()
+        }
+        .onAppear(perform: resetBrowseSectionTracker)
+        .task(id: browseSectionJumpSettleID) {
+            await clearProgrammaticBrowseSectionJumpSettleIfNeeded()
+        }
+        .background {
+            BrowseCollectionSectionChromePreferenceEmitter(
+                route: descriptor.route,
+                isActive: isActive,
+                sectionTracker: sectionTracker,
+                sections: sectionChromeItems
+            )
         }
         .preference(
             key: PhrasePhotoBackdropImmersiveChromePreferenceKey.self,
@@ -80,7 +97,12 @@ struct BrowseCollectionPageView: View {
             ScrollViewReader { scrollProxy in
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
-                        BrowseCollectionHeader(descriptor: descriptor)
+                        BrowseCollectionHeader(
+                            descriptor: descriptor,
+                            savedPageID: collectionSavedPageID,
+                            isSaved: isSaved,
+                            onToggleSaved: onToggleSaved
+                        )
                             .id(Self.scrollTopID)
 
                         collectionSections(scrollProxy: scrollProxy)
@@ -95,6 +117,19 @@ struct BrowseCollectionPageView: View {
                     }
 
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
+                }
+                .onChange(of: sectionJumpRequest?.requestID) { _, _ in
+                    guard let sectionJumpRequest, sectionJumpRequest.route == descriptor.route else {
+                        return
+                    }
+
+                    jumpToBrowseSection(sectionJumpRequest.sectionID, scrollProxy: scrollProxy)
+                }
+                .onPreferenceChange(BrowseCollectionSectionFramePreferenceKey.self) { frames in
+                    updateCurrentBrowseSection(from: frames)
+                }
+                .onPreferenceChange(BrowseCollectionRailFramePreferenceKey.self) { frame in
+                    updateBrowseSectionRailFrame(frame)
                 }
                 .task(id: "\(isActive)-\(focusRequest.map { String($0.id) } ?? "none")") {
                     guard BrowseCollectionTaskPolicy.shouldRunStandardFocusTask(isActive: isActive) else {
@@ -169,6 +204,20 @@ struct BrowseCollectionPageView: View {
 
                         isPhotoBackdropImmersive = false
                         scrollProxy.scrollTo(Self.photoBackdropInitialID, anchor: .top)
+                    }
+                    .onChange(of: sectionJumpRequest?.requestID) { _, _ in
+                        guard let sectionJumpRequest, sectionJumpRequest.route == descriptor.route else {
+                            return
+                        }
+
+                        isPhotoBackdropImmersive = false
+                        jumpToBrowseSection(sectionJumpRequest.sectionID, scrollProxy: scrollProxy)
+                    }
+                    .onPreferenceChange(BrowseCollectionSectionFramePreferenceKey.self) { frames in
+                        updateCurrentBrowseSection(from: frames)
+                    }
+                    .onPreferenceChange(BrowseCollectionRailFramePreferenceKey.self) { frame in
+                        updateBrowseSectionRailFrame(frame)
                     }
                     .task(id: "\(isActive)-\(focusRequest.map { String($0.id) } ?? "none")") {
                         guard isActive else {
@@ -324,6 +373,14 @@ struct BrowseCollectionPageView: View {
         descriptor.route == .category("food")
     }
 
+    private var collectionSavedPageID: String? {
+        guard case .city(let cityID) = descriptor.route else {
+            return nil
+        }
+
+        return BrowseSearchDestinations.savedCityPageID(for: cityID)
+    }
+
     private func photoBackdropContentSheet(scrollProxy: ScrollViewProxy) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             Capsule()
@@ -335,7 +392,10 @@ struct BrowseCollectionPageView: View {
                 .accessibilityHidden(true)
 
             BrowseCollectionHeaderCopy(
-                descriptor: descriptor
+                descriptor: descriptor,
+                savedPageID: collectionSavedPageID,
+                isSaved: isSaved,
+                onToggleSaved: onToggleSaved
             )
             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             .padding(.bottom, 18)
@@ -427,6 +487,19 @@ struct BrowseCollectionPageView: View {
         )
     }
 
+    private var sectionChromeItems: [VietnameseMenuSectionChromeItem] {
+        BrowseCollectionSectionChromePolicy.items(for: descriptor)
+    }
+
+    private var initialChromeSectionID: String {
+        sectionChromeItems.first?.id ?? ""
+    }
+
+    private func resetBrowseSectionTracker() {
+        isSettlingProgrammaticBrowseSectionJump = false
+        sectionTracker.reset(to: initialChromeSectionID)
+    }
+
     @MainActor
     private func applyPhotoBackdropInitialPositionIfNeeded(_ scrollProxy: ScrollViewProxy) async {
         guard !didApplyPhotoBackdropInitialPosition else {
@@ -472,7 +545,7 @@ struct BrowseCollectionPageView: View {
         withAnimation(.snappy(duration: 0.28)) {
             scrollProxy.scrollTo(
                 BrowseCityBrowseScrollID.group(filter.id),
-                anchor: UnitPoint(x: 0.5, y: BrowseCollectionLayout.sectionJumpViewportAnchorY)
+                anchor: UnitPoint(x: 0.5, y: BrowseCollectionLayout.citySectionJumpViewportAnchorY)
             )
         }
     }
@@ -489,6 +562,62 @@ struct BrowseCollectionPageView: View {
                 anchor: UnitPoint(x: 0.5, y: BrowseCollectionLayout.sectionJumpViewportAnchorY)
             )
         }
+    }
+
+    private func jumpToBrowseSection(_ sectionID: String, scrollProxy: ScrollViewProxy) {
+        if let cityFilter = descriptor.cityHub?.cityBrowseFilters.first(where: { $0.id == sectionID }) {
+            beginProgrammaticBrowseSectionJump(to: sectionID)
+            selectCityBrowseGroup(cityFilter, scrollProxy: scrollProxy)
+            return
+        }
+
+        if let subcategory = descriptor.subcategories.first(where: { $0.id == sectionID }) {
+            beginProgrammaticBrowseSectionJump(to: sectionID)
+            selectCategorySubcategory(subcategory, scrollProxy: scrollProxy)
+        }
+    }
+
+    private func beginProgrammaticBrowseSectionJump(to sectionID: String) {
+        sectionTracker.setCurrentSection(sectionID)
+        isSettlingProgrammaticBrowseSectionJump = true
+        browseSectionJumpSettleID += 1
+    }
+
+    private func updateCurrentBrowseSection(from frames: [VietnameseMenuSectionFrame]) {
+        guard BrowseCollectionTaskPolicy.shouldApplySectionPreferenceTracking(isActive: isActive),
+              !isSettlingProgrammaticBrowseSectionJump else {
+            return
+        }
+
+        _ = sectionTracker.applySectionFrames(
+            frames,
+            activationY: BrowseCollectionLayout.sectionActivationY
+        )
+    }
+
+    private func updateBrowseSectionRailFrame(_ frame: CGRect?) {
+        guard BrowseCollectionTaskPolicy.shouldApplySectionPreferenceTracking(isActive: isActive) else {
+            return
+        }
+
+        sectionTracker.applyRailFrame(frame, revealY: BrowseCollectionLayout.glassRailRevealY)
+    }
+
+    @MainActor
+    private func clearProgrammaticBrowseSectionJumpSettleIfNeeded() async {
+        guard BrowseCollectionTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive),
+              browseSectionJumpSettleID > 0,
+              isSettlingProgrammaticBrowseSectionJump else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: VietnameseMenuSectionJumpPolicy.settleNanoseconds)
+        guard !Task.isCancelled,
+              BrowseCollectionTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive) else {
+            return
+        }
+
+        isSettlingProgrammaticBrowseSectionJump = false
     }
 
     @MainActor
@@ -537,7 +666,10 @@ enum BrowseCollectionLayout {
     static let cityNounThumbnailSize: CGFloat = 62
     static let subcategoryCardWidth: CGFloat = 136
     static let subcategoryCardHeight: CGFloat = 124
+    static let sectionActivationY: CGFloat = AppChromeLayout.menuSectionJumpClearance + 32
     static let sectionJumpViewportAnchorY: CGFloat = AppChromeLayout.menuSectionJumpViewportAnchorY
+    static let citySectionJumpViewportAnchorY: CGFloat = 0.38
+    static let glassRailRevealY: CGFloat = 72
 
     static func bottomContentClearance(usesPhotoBackdrop: Bool) -> CGFloat {
         AppBottomContentClearance.rootSurface(
@@ -652,12 +784,20 @@ private enum BrowseImageAssetCache {
 
 private struct BrowseCollectionHeader: View {
     let descriptor: BrowseCollectionDescriptor
+    let savedPageID: String?
+    let isSaved: (String) -> Bool
+    let onToggleSaved: (String) -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HeroMastheadImage(imageName: descriptor.mastheadImageName)
 
-            BrowseCollectionHeaderCopy(descriptor: descriptor)
+            BrowseCollectionHeaderCopy(
+                descriptor: descriptor,
+                savedPageID: savedPageID,
+                isSaved: isSaved,
+                onToggleSaved: onToggleSaved
+            )
             .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             .padding(.top, 16)
         }
@@ -666,6 +806,9 @@ private struct BrowseCollectionHeader: View {
 
 private struct BrowseCollectionHeaderCopy: View {
     let descriptor: BrowseCollectionDescriptor
+    let savedPageID: String?
+    let isSaved: (String) -> Bool
+    let onToggleSaved: (String) -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -683,12 +826,32 @@ private struct BrowseCollectionHeaderCopy: View {
                     .foregroundStyle(.secondary)
             }
 
-            Text(descriptor.title)
-                .font(.system(size: 46, weight: .black, design: .serif))
-                .foregroundStyle(.primary)
-                .lineLimit(2)
-                .minimumScaleFactor(0.64)
-                .accessibilityIdentifier("BrowseCollection.Title.\(descriptor.route.id)")
+            HStack(alignment: .firstTextBaseline, spacing: 12) {
+                Text(descriptor.title)
+                    .font(.system(size: 46, weight: .black, design: .serif))
+                    .foregroundStyle(.primary)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.64)
+                    .accessibilityIdentifier("BrowseCollection.Title.\(descriptor.route.id)")
+                    .layoutPriority(1)
+
+                if let savedPageID {
+                    Button {
+                        onToggleSaved(savedPageID)
+                    } label: {
+                        Image(systemName: isSaved(savedPageID) ? "heart.fill" : "heart")
+                            .font(.headline.weight(.black))
+                            .foregroundStyle(.red)
+                            .frame(width: 48, height: 48)
+                            .contentShape(Circle())
+                    }
+                    .buttonStyle(.plain)
+                    .frame(width: 48, height: 48)
+                    .nativeGlass(in: Circle(), tint: .white.opacity(0.14), interactive: true)
+                    .accessibilityLabel(isSaved(savedPageID) ? "Remove from Saved" : "Save to My Trip")
+                    .accessibilityIdentifier("BrowseCollection.HeaderSave.\(savedPageID)")
+                }
+            }
 
             Text(descriptor.subtitle)
                 .font(.title3.weight(.semibold))
@@ -722,6 +885,14 @@ private struct BrowseCollectionSubcategoryRail: View {
         }
         .scrollClipDisabled()
         .frame(height: BrowseCollectionLayout.subcategoryCardHeight + 6)
+        .background {
+            GeometryReader { proxy in
+                Color.clear.preference(
+                    key: BrowseCollectionRailFramePreferenceKey.self,
+                    value: proxy.frame(in: .global)
+                )
+            }
+        }
     }
 }
 
@@ -743,6 +914,13 @@ private struct BrowseCollectionSubcategorySections<AfterFirstSection: View>: Vie
                         title: sectionTitle(for: subcategory),
                         items: subcategory.items,
                         onOpenDetail: onOpenDetail
+                    )
+                }
+                .background {
+                    BrowseCollectionSectionFrameEmitter(
+                        id: subcategory.id,
+                        order: index,
+                        isEnabled: !subcategory.items.isEmpty
                     )
                 }
 
@@ -963,8 +1141,8 @@ private struct BrowseCityFilterSection: View {
             VStack(alignment: .leading, spacing: 18) {
                 imageFilterRail
 
-                LazyVStack(alignment: .leading, spacing: 18) {
-                    ForEach(visibleFilters) { filter in
+                VStack(alignment: .leading, spacing: 18) {
+                    ForEach(Array(visibleFilters.enumerated()), id: \.element.id) { index, filter in
                         VStack(alignment: .leading, spacing: 0) {
                             Color.clear
                                 .frame(width: 1, height: 1)
@@ -976,6 +1154,13 @@ private struct BrowseCityFilterSection: View {
                                 onOpenDetail: onOpenDetail,
                                 isSaved: isSaved,
                                 onToggleSaved: onToggleSaved
+                            )
+                        }
+                        .background {
+                            BrowseCollectionSectionFrameEmitter(
+                                id: filter.id,
+                                order: index,
+                                isEnabled: true
                             )
                         }
                     }
@@ -1021,6 +1206,14 @@ private struct BrowseCityFilterSection: View {
             }
         }
         .frame(height: BrowseCollectionLayout.cityFilterCardHeight + PhrasePageStyle.cardShadowBleedPadding)
+        .background {
+            GeometryReader { proxy in
+                Color.clear.preference(
+                    key: BrowseCollectionRailFramePreferenceKey.self,
+                    value: proxy.frame(in: .global)
+                )
+            }
+        }
     }
 
     private func filterImageName(_ filter: BrowseCollectionSubcategory) -> String? {
@@ -1263,12 +1456,118 @@ enum BrowseFocusedAssetImagePolicy {
 }
 
 enum BrowseCollectionTaskPolicy {
+    static func shouldRunDeferredSectionTask(isActive: Bool) -> Bool {
+        isActive
+    }
+
     static func shouldRunStandardFocusTask(isActive: Bool) -> Bool {
         isActive
     }
 
     static func shouldApplyPhotoBackdropScrollGeometry(isActive: Bool) -> Bool {
         isActive
+    }
+
+    static func shouldApplySectionPreferenceTracking(isActive: Bool) -> Bool {
+        isActive
+    }
+}
+
+enum BrowseCollectionSectionChromePolicy {
+    static func items(for descriptor: BrowseCollectionDescriptor) -> [VietnameseMenuSectionChromeItem] {
+        let sourceSections: [BrowseCollectionSubcategory]
+        if descriptor.route != .category("city-guides"), let cityHub = descriptor.cityHub {
+            sourceSections = cityHub.cityBrowseFilters
+        } else {
+            sourceSections = descriptor.subcategories
+        }
+
+        let visibleSections = sourceSections.filter { !$0.items.isEmpty }
+        guard visibleSections.count > 1 else {
+            return []
+        }
+
+        return visibleSections.map { section in
+            VietnameseMenuSectionChromeItem(
+                id: section.id,
+                title: section.title,
+                symbolName: section.symbolName,
+                tintName: section.tintName
+            )
+        }
+    }
+}
+
+private struct BrowseCollectionSectionChromePreferenceEmitter: View {
+    let route: BrowseCollectionRoute
+    let isActive: Bool
+    @ObservedObject var sectionTracker: VietnameseMenuSectionTrackingCoordinator
+    let sections: [VietnameseMenuSectionChromeItem]
+
+    var body: some View {
+        Color.clear
+            .preference(
+                key: VietnameseMenuSectionChromePreferenceKey.self,
+                value: preferenceValue
+            )
+            .accessibilityHidden(true)
+    }
+
+    private var preferenceValue: [VietnameseMenuSectionChromeState] {
+        guard isActive, !sections.isEmpty else {
+            return []
+        }
+
+        return [
+            VietnameseMenuSectionChromeState(
+                route: route,
+                currentSectionID: sectionTracker.currentSectionID,
+                isPinned: sectionTracker.isSectionRailPinned,
+                sections: sections,
+                accessibilityNamespace: "BrowseCollection",
+                accessibilityLabel: "Browse section"
+            ),
+        ]
+    }
+}
+
+private struct BrowseCollectionSectionFrameEmitter: View {
+    let id: String
+    let order: Int
+    let isEnabled: Bool
+
+    var body: some View {
+        GeometryReader { proxy in
+            Color.clear.preference(
+                key: BrowseCollectionSectionFramePreferenceKey.self,
+                value: isEnabled
+                    ? [
+                        VietnameseMenuSectionFrame(
+                            id: id,
+                            order: order,
+                            minY: proxy.frame(in: .global).minY
+                        ),
+                    ]
+                    : []
+            )
+        }
+        .accessibilityHidden(true)
+    }
+}
+
+private struct BrowseCollectionSectionFramePreferenceKey: PreferenceKey {
+    static var defaultValue: [VietnameseMenuSectionFrame] = []
+
+    static func reduce(value: inout [VietnameseMenuSectionFrame], nextValue: () -> [VietnameseMenuSectionFrame]) {
+        value.append(contentsOf: nextValue())
+    }
+}
+
+private struct BrowseCollectionRailFramePreferenceKey: PreferenceKey {
+    static var defaultValue: CGRect?
+
+    static func reduce(value: inout CGRect?, nextValue: () -> CGRect?) {
+        value = nextValue() ?? value
     }
 }
 

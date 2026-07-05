@@ -1751,7 +1751,14 @@ enum LocationMenuPicksCatalog {
     }
 
     private static func canonicalLookupPageID(for pageID: String) -> String {
+        if pageID.hasPrefix("viet-family-city-") {
+            return pageID
+        }
+
         if let canonicalPageID = VietSQLitePhraseGraphRuntime.canonicalPageID(for: pageID) {
+            if canonicalPageID.hasPrefix("viet-phrase-city-") {
+                return "viet-family-city-" + String(canonicalPageID.dropFirst("viet-phrase-city-".count))
+            }
             return canonicalPageID
         }
 
@@ -2230,7 +2237,14 @@ enum LocationRelatedPicksCatalog {
     }
 
     private static func canonicalLookupPageID(for pageID: String) -> String {
+        if pageID.hasPrefix("viet-family-city-") {
+            return pageID
+        }
+
         if let canonicalPageID = VietSQLitePhraseGraphRuntime.canonicalPageID(for: pageID) {
+            if canonicalPageID.hasPrefix("viet-phrase-city-") {
+                return "viet-family-city-" + String(canonicalPageID.dropFirst("viet-phrase-city-".count))
+            }
             return canonicalPageID
         }
 

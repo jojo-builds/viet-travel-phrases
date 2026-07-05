@@ -547,9 +547,10 @@ struct ChromeSeparationGradient: View {
 
         guard extendsBehindMenuSectionChrome else {
             return [
-                .init(color: Color(.systemBackground).opacity(0.96), location: 0),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.48), location: 0.42),
-                .init(color: PhrasePageStyle.pageBackground.opacity(0.12), location: 0.76),
+                .init(color: Color(.systemBackground).opacity(0.98), location: 0),
+                .init(color: Color(.systemBackground).opacity(0.96), location: 0.28),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.74), location: 0.58),
+                .init(color: PhrasePageStyle.pageBackground.opacity(0.18), location: 0.86),
                 .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
             ]
         }
