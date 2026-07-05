@@ -1,6 +1,6 @@
 # Latest Validation
 
-Last updated: 2026-07-05 (Asia/Manila local)
+Last updated: 2026-07-06 (Asia/Manila local)
 Authority lane: latest durable native iOS validation evidence
 
 ## Use This Doc For
@@ -43,6 +43,7 @@ Current `main` app-code payload after the 2026-07-05 three-hour parallel launch-
 - current app-code payload `b93edb9a6` built and installed successfully on Jojo's active physical iPhone after the eight-hour follow-up. iOS refused launch because the phone was locked; repo signing files stayed clean and no project signing settings were changed.
 - strict unique city/place hero-image completion remains open for `20` pages: normal active hero validation and full V2.2 render proof pass because the current app uses bundled shared city fallback heroes, but `node native-ios/scripts/validate-viet-hero-image-assets.js --require-unique-city-place-assets` still fails until those 20 page-specific owned imagesets are deliberately generated/imported. Current report: `docs/task-results/frontend-qa-2026-07-05/eight-hour-audit/hero-image-strict-gate-followup.md`.
 - visible product-language audit now scans active generated/native resource inputs for exact retired multiword labels as well as SwiftUI literals, closing the class of miss that allowed source-backed copy like `hotel messages` to slip past the first audit. Fresh validation passed: `node native-ios/scripts/audit-visible-product-language.js`, `node --test native-ios/scripts/audit-visible-product-language.test.js`, and `git diff --check`.
+- hidden Practice fallback labels were also cleaned and guarded: `Quick practice` -> `Quick match`, `My practice phrases` -> `Practice pool`, and the saved-phrase empty-state subtitle now says `start a practice round` instead of `start your own round`. The visible-language audit and route-scrolling UI guardrail now block `Quick practice`, `My practice phrases`, and `First day in Vietnam messages`; fresh validation passed with the static audit, audit unit test, Swift parse of `ProductLanguageUITests.swift`, `git diff --check`, exact retired-label `rg` scan showing only negative tests/guardrails, and shell `xcodebuild` rerun of `ProductLanguageUITests/testRepresentativeRoutesDoNotExposeRetiredPracticeVocabularyWhileScrolling` (`1` test, `0` failures, `279.075` seconds). Xcode hit low disk while writing extra result-bundle summaries after the successful run, and the temporary derived data was deleted afterward.
 - future content-surfacing audit output now uses Practice-era framing: `practice-moment-candidates.csv` and `Practice Moment Reuse Recommendation` instead of the old Messages/conversation report language. Syntax validation passed with `node --check native-ios/scripts/audit-viet-content-surfacing.js`.
 - post-guardrail static validator sweep passed on current `main`: native-only guard, native chrome guard, visible product-language audit, visible audit unit test, SQLite fixture (`1800` source phrases, `1793` canonical pages, `5353` audio assets, `0` missing-audio audit rows), Tier 1 listing validation (`150` strong), Vietnamese menu copy/images (`355` pages and `355` image pairs), search-only surfacing (`315` rows), production listing QA (`1793` pages, `0` blockers, `0` majors), V2.2 city detail strict production (`520` pass), normal hero image asset gate (`524` active premium hero assets), phrase backdrops (`952` placements), catalog-promoted authoring (`770` pages), breakdown audit (`PASS`), city library (`826` pages), city copy (`5` hubs, `520` city noun pages), audio sync (`5353` entries), and `git diff --check`.
 - merged stale photo-backdrop route/back hardening as `2834a52af`
@@ -2010,9 +2011,9 @@ Fresh evidence from the eight-hour visible front-end audit after the `Quick conv
 - XcodeBuildMCP simulator UI tests for Practice-era labels and Browse-to-Practice return behavior
   - passed: `4` tests, `0` failures
 - Shell `xcodebuild` simulator UI test, `ProductLanguageUITests/testRepresentativeRoutesDoNotExposeRetiredPracticeVocabularyWhileScrolling`
-  - passed: `1` test, `0` failures, `283.058` seconds
+  - passed after the hidden fallback cleanup: `1` test, `0` failures, `279.075` seconds
   - route coverage: Home, Browse, Local Greetings, Eating Out, Airport, Hotel, Hoi An, Da Nang, Search, Saved, and Practice
-  - failure gate: exact retired visible labels including `Quick conversations`, exact `Messages`/`MESSAGES`, `Back to Messages`, `Conversation complete`, `Unread`, `Mark Unread`, `Open thread`, and the old `Market/Hotel/Respectful Hello` card names
+  - failure gate: exact retired visible labels including `Quick conversations`, exact `Messages`/`MESSAGES`, `Back to Messages`, `Conversation complete`, `Unread`, `Mark Unread`, `Open thread`, the old `Market/Hotel/Respectful Hello` card names, `Quick practice`, `My practice phrases`, and `First day in Vietnam messages`
 - Live simulator visual spot checks
   - `--browse-category local-greetings --reset-demo-state`: first and mid-page views showed Practice-era labels such as `Local Greetings`, `Greetings`, `Polite Basics`, and `Small talk & boundaries`, with no visible `Quick conversations` or old `Hello` scenario-card labels
   - `--browse-category food --reset-demo-state`: top and mid-page views showed `Eating Out`, active top admin section chips, audio-backed phrase rows, and no retired Messages/conversation shelf label

@@ -4222,8 +4222,8 @@ struct PracticeMatchSnapshot {
             quickSource: PracticeMatchSource(
                 id: "quick",
                 kind: .quick,
-                title: "Quick practice",
-                subtitle: "Four easy phrases to match.",
+                title: "Quick match",
+                subtitle: "Four useful pairs.",
                 symbolName: "bolt.fill",
                 tint: .red,
                 items: quickItems
@@ -4231,9 +4231,9 @@ struct PracticeMatchSnapshot {
             practiceSource: PracticeMatchSource(
                 id: "practice",
                 kind: .practice,
-                title: "My practice phrases",
+                title: "Practice pool",
                 subtitle: practiceItems.count < PracticeMatchRound.pairCount
-                    ? "Add at least 4 phrases to start your own round."
+                    ? "Add at least 4 phrases to start a practice round."
                     : "Match phrases you added to practice.",
                 symbolName: "bookmark.fill",
                 tint: .red,

@@ -63,7 +63,10 @@ final class ProductLanguageUITests: XCTestCase {
         "Open thread",
         "Market Hello",
         "Hotel Hello",
-        "Respectful Hello"
+        "Respectful Hello",
+        "Quick practice",
+        "My practice phrases",
+        "First day in Vietnam messages"
     ]
 }
 

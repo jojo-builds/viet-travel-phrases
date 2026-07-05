@@ -26,6 +26,9 @@ const retiredVisiblePhrases = [
   "Market Hello",
   "Hotel Hello",
   "Respectful Hello",
+  "Quick practice",
+  "My practice phrases",
+  "First day in Vietnam messages",
 ];
 
 const retiredExactVisibleLabels = [

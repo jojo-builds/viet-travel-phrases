@@ -105,3 +105,9 @@ New front-end guardrail added on 2026-07-06:
 - The test launches and scrolls representative routes across Home, Browse, Local Greetings, Eating Out, Airport, Hotel, Hoi An, Da Nang, Search, Saved, and Practice.
 - It fails on exact retired visible labels: `Quick conversations`, exact `Messages`/`MESSAGES`, `Back to Messages`, `Messages thread`, `Restart conversation`, `Conversation complete`, `Conversation break`, `Unread`, `Mark Unread`, `Open thread`, `Market Hello`, `Hotel Hello`, and `Respectful Hello`.
 - Validation passed with shell `xcodebuild` after the MCP test transport closed under low disk pressure: `1` test, `0` failures, `283.058` seconds.
+
+Hidden fallback follow-up on 2026-07-06:
+- A later source scan found old fallback labels that were not currently visible but could leak back onto Practice surfaces: `Quick practice`, `My practice phrases`, and `First day in Vietnam messages`.
+- The fallback labels were renamed to Practice-safe copy (`Quick match`, `Practice pool`, and `practice round` wording), and the visible-language audit plus route-scrolling UI guardrail now block those old labels too.
+- Fresh validation passed: `node native-ios/scripts/audit-visible-product-language.js`, `node --test native-ios/scripts/audit-visible-product-language.test.js`, `swiftc -parse native-ios/UITests/ProductLanguageUITests.swift`, `git diff --check`, exact retired-label `rg` scan showing only negative tests/guardrails, and shell `xcodebuild` rerun of `ProductLanguageUITests/testRepresentativeRoutesDoNotExposeRetiredPracticeVocabularyWhileScrolling` (`1` test, `0` failures, `279.075` seconds).
+- Xcode reported low disk while writing extra result-bundle summaries after the successful test run; the temporary derived data was deleted afterward. The test result itself completed successfully before that cleanup warning.
