@@ -191,6 +191,7 @@ struct AppShellView: View {
     @State private var pendingPracticeThreadReturnFocus: BrowseCollectionFocusRequest?
     @State private var pendingPracticeThreadForwardRestore: PracticeThreadForwardRestore?
     @State private var pendingPracticeMatchReturnFocus: BrowseCollectionFocusRequest?
+    @State private var browseRootSurfaceResetID = 0
     @State private var isPracticeOverlayPresented = false
     @State private var practiceOverlayBackdropOpacity = PracticeMatchPullUpMetrics.backdropOpacity
     @State private var practiceOverlayResetTrigger = 0
@@ -486,6 +487,7 @@ struct AppShellView: View {
                         onSearchQuery: openSearchQuery
                     )
                 }
+                .id("browse-root-surface-\(browseRootSurfaceResetID)")
                 .allowsHitTesting(navigation.currentRoute == .browse && allowsBasePageHitTesting)
                 .accessibilityHidden(navigation.currentRoute != .browse)
                 .navigationPageMotion(
@@ -2195,11 +2197,24 @@ struct AppShellView: View {
 
     private func goBack() {
         let previousRoute = navigation.currentRoute
+        let backPreviewRoute = navigation.backPreviewRoute
+        let isReturningFromBrowseCollection: Bool
+        if case .browseCollection = previousRoute {
+            isReturningFromBrowseCollection = true
+        } else {
+            isReturningFromBrowseCollection = false
+        }
+        let shouldConsumeBrowseRootReset = isReturningFromBrowseCollection
+            && backPreviewRoute == .browse
         cancelInteractiveChromeState()
         preparePracticeMatchFocusRestoreIfNeeded()
         let transitionResetID = beginRouteTransition(.back)
         withAnimation(.snappy(duration: 0.34)) {
             navigation.goBack()
+        }
+        if shouldConsumeBrowseRootReset, navigation.currentRoute == .browse {
+            browseRootSurfaceResetID += 1
+            navigation.browseScrollToTopTrigger += 1
         }
         clearRouteTransition(after: transitionResetID)
         refreshSearchReturnFocusAfterReturningToSearch(from: previousRoute)
