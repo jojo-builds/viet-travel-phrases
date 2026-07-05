@@ -172,16 +172,21 @@ enum AppShellPhotoBackdropImmersivePolicy {
             }
             let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) ?? pageID
             return context.pageID == canonicalPageID
-        case .browse, .browseCollection, .saved, .practice, .search:
+        case .browse, .saved, .practice, .search:
+            guard let surface = AdminRootPhotoBackdropSurface.surface(for: route) else {
+                return false
+            }
+            return context.pageID == surface.pageID
+        case .browseCollection:
             return false
         }
     }
 
     private static func routeSupportsImmersiveChrome(_ route: AppRoute) -> Bool {
         switch route {
-        case .home, .phrasePage, .detailPage:
+        case .home, .phrasePage, .detailPage, .browse, .saved, .practice, .search:
             return true
-        case .browse, .browseCollection, .saved, .practice, .search:
+        case .browseCollection:
             return false
         }
     }

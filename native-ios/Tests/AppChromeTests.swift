@@ -1922,6 +1922,58 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(adminRootPoolKeys.count, 1)
     }
 
+    func testAdminRootBackdropImmersivePolicyAcceptsRootSurfaceContexts() {
+        let rootSurfaces: [(route: AppRoute, surface: AdminRootPhotoBackdropSurface)] = [
+            (.browse, .browse),
+            (.saved, .saved),
+            (.practice, .practice),
+            (.search, .search),
+        ]
+
+        for rootSurface in rootSurfaces {
+            let context = PhrasePhotoBackdropImmersiveImageContext(
+                pageID: rootSurface.surface.pageID,
+                imageName: SharedBackdropImagePool.fallbackImageName,
+                viewportSize: CGSize(width: 393, height: 852),
+                safeAreaTop: 59,
+                safeAreaBottom: 34,
+                imageFrameHeight: 420,
+                verticalFocusOffset: 0
+            )
+
+            XCTAssertEqual(
+                AppShellPhotoBackdropImmersivePolicy.acceptedContext(context, on: rootSurface.route),
+                context
+            )
+            XCTAssertTrue(
+                AppShellPhotoBackdropImmersivePolicy.acceptsHiddenChrome(true, on: rootSurface.route)
+            )
+        }
+
+        let browseRootContext = PhrasePhotoBackdropImmersiveImageContext(
+            pageID: AdminRootPhotoBackdropSurface.browse.pageID,
+            imageName: SharedBackdropImagePool.fallbackImageName,
+            viewportSize: CGSize(width: 393, height: 852),
+            safeAreaTop: 59,
+            safeAreaBottom: 34,
+            imageFrameHeight: 420,
+            verticalFocusOffset: 0
+        )
+
+        XCTAssertNil(
+            AppShellPhotoBackdropImmersivePolicy.acceptedContext(
+                browseRootContext,
+                on: .browseCollection(.category("airport"))
+            )
+        )
+        XCTAssertFalse(
+            AppShellPhotoBackdropImmersivePolicy.acceptsHiddenChrome(
+                true,
+                on: .browseCollection(.category("airport"))
+            )
+        )
+    }
+
     func testAdminRootBackdropAdvancesOnlyWhenEnteringDifferentRootSurface() {
         XCTAssertEqual(
             AdminRootPhotoBackdropActivationPolicy.targetSurface(

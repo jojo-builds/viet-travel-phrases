@@ -28,6 +28,8 @@ Current `main` app-code payload after the 2026-07-05 three-hour parallel launch-
 - post-checkpoint main validator sweep passed on `abd3f3a6e`: SQLite fixture, audio manifest sync, tier-one listing pages, Vietnamese menu copy, production QA audit, city app-detail v2.2 strict production, search-only surfacing, and focused Node tests
 - release-submission gap pass verified seven screenshot candidates, local support/privacy/terms/about sources, launch metadata files, and `1024 x 1024` app icon; App Store Connect-only fields still require Jojo/ASC decisions
 - paywall final risk pass kept `feature/paywall` isolated and reran `SubscriptionAccessStateTests`: `13` tests, `0` failures; real purchase/restore/relaunch and App Store Connect product state remain unproven
+- root photo-backdrop immersive chrome regression was fixed after a broad UI sweep exposed four pre-fix root-page failures; focused validation now passes `6` tests across the root policy unit test plus Home, Browse, Saved, Practice, and Search hidden/restored chrome UI checks
+- root photo-backdrop fix receipt: `docs/task-results/parallel-goals-2026-07-05/three-hour-push/root-photo-backdrop-immersive-fix-report.md`
 - signing hygiene stayed clean: no tracked changes to `native-ios/project.yml` or the native Xcode project signing files
 - `feature/paywall` remains excluded from `main`; it has green hosted StoreKit/XCTest readiness at commit `453d6f55a`, but still needs real purchase/restore/relaunch proof before merge
 

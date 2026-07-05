@@ -1,6 +1,6 @@
 # Backup Traveler QA Report
 
-> Boundary note: this report is pre-fix / earlier-worker evidence. Unless a section explicitly says otherwise, screenshots and test receipts here apply to the current-thread build of `main` at `7989e1f67` on the `SpeakLocal Traveler` simulator. During this QA run, local `main` later advanced to `4f6462906` with newer worker threads producing post-fix reports. Do not treat this file as post-fix validation for commits after `7989e1f67`, and do not use the broad Browse/Search class evidence below to override newer post-fix receipts.
+> Boundary note: the original report and early continuation sections are pre-fix / earlier-worker evidence. Unless a section explicitly says otherwise, screenshots and test receipts in those early sections apply to the current-thread build of `main` at `7989e1f67` on the `SpeakLocal Traveler` simulator. Later addenda are separately labeled for `4f6462906` and `60db7e9fb`. Do not use the broad Browse/Search class evidence below to override newer post-fix receipts.
 
 Run timestamp: 2026-07-05 19:24 PST
 Worker scope: backup visual/function QA for Home, Browse/category/detail/back, city Browse-by jump, Search, Saved, and Practice sheet chrome.
@@ -155,13 +155,13 @@ App-code edits: none.
 - The backup report's blank-detail/back proof is preserved at `traveler-qa-proof/05-bug-blank-after-detail-back.jpg`.
 - Per orchestrator instruction, app-code ownership moved to a separate lane. This thread did not edit app code for it.
 
-### P1/P2: audio tap reliability is red on current main
+### P1/P2: audio tap reliability was red before the audio-harness correction
 
 - `AudioTapReliabilityUITests/testBreakdownAudioCardsStayResponsiveAcrossTargetPages` failed during repeated taps on the coffee breakdown audio card. The first target page opened, but repeated tapping lost the expected detail context and the failure hierarchy showed Practice content instead of the detail page.
 - `AudioTapReliabilityUITests/testRowAudioButtonsStayResponsiveAcrossSearchMenuAndSaved` failed because `VietnameseMenu.Audio.viet-menu-drink-ca-phe-sua-da` / `Play phrase audio` never became hittable after repeated scroll attempts.
 - Result: `0` passed, `2` failed.
 - Receipt: `/Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/app-family-fd8e8a2a818d/logs/test_sim_2026-07-05T11-21-25-284Z_pid42996_a5f41c15.log`
-- Recommendation: after the blank-route fix lands, rerun audio reliability from fresh simulator state. If still red, treat row-level audio hit-target/repeated-tap state loss as launch-blocking until fixed.
+- Superseding note: this is retained as pre-harness-fix evidence. Later `audio-harness-fix-report.md` records the real user-path harness correction and green full audio-class proof in the orchestrator lane.
 
 ### P2: top Forward button proof failed, right-edge forward passed
 
@@ -181,11 +181,11 @@ App-code edits: none.
 
 ## Updated Remaining Launch Blockers / Follow-Ups
 
-1. Blank-back / blank-route state remains the highest-priority launch blocker and is owned by the orchestrator's separate fix lane.
-2. Audio tap reliability needs a clean rerun after blank-route stabilization; current main produced two red audio reliability tests.
-3. Visible top Forward button behavior needs follow-up because gesture forward passed but button forward did not appear.
-4. Practice sheet visual clearance has good screenshot evidence, but the automated regression gate is not green in this continuation.
-5. Search category/city/recovery automated proof passed in this continuation, but the backup blank-search screenshots should be rerun after the blank-route fix because they may share the same route-state root cause.
+1. Blank-back / blank-route state was the highest-priority launch blocker in the early `7989e1f67` evidence; later post-fix proof sections and reports should be treated as authoritative for current `main`.
+2. Audio tap reliability was red in this early continuation, then superseded by the orchestrator audio-harness report with green full-class proof.
+3. Visible top Forward button behavior failed in the early continuation, then passed in the later `4f6462906` and `60db7e9fb` route-state reruns.
+4. Practice sheet visual clearance had good screenshot evidence but an early automated gate failure; later Practice saved-round and representative Practice flow checks passed.
+5. Search category/city/recovery automated proof passed in the early continuation and was reinforced by later post-fix route-state and visual proof.
 
 ## Boundary Wrap After Main Advanced
 
@@ -257,10 +257,105 @@ Proof folder: `traveler-qa-proof-post-4f6462906/`
   - `BottomInsetUITests/testRepresentativeCollectionAndDetailRoutesKeepBottomContentAboveSystemTabBar`
   - Result: `2` passed, `0` failed.
   - Receipt: `/Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/app-family-fd8e8a2a818d/logs/test_sim_2026-07-05T13-10-39-628Z_pid42996_4bbd94e0.log`
+- Search keyboard/admin tab reachability proof passed:
+  - `AdminChromeUITests/testFocusedSystemSearchFieldAcceptsTyping`
+  - `AdminChromeUITests/testPrimarySystemTabsRemainReachableAroundSearch`
+  - `AdminChromeUITests/testSystemTabTapsCommitDestinations`
+  - `BrowseSearchUITests/testProgressiveSearchTypingAndDeletingKeepsFieldResponsive`
+  - `BrowseSearchUITests/testSearchTabOpensSystemSearchField`
+  - `BrowseSearchUITests/testSearchTapOutsideFieldReturnsToDiscoveryContent`
+  - Result: `6` passed, `0` failed.
+  - Receipt: `/Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/app-family-fd8e8a2a818d/logs/test_sim_2026-07-05T13-12-23-904Z_pid42996_f7baad1b.log`
+- Collection section-jump and filter proof passed:
+  - `BrowseSearchUITests/testAirportSubcategoryCardsFilterVisibleRows`
+  - `BrowseSearchUITests/testBrowseCityTopSectionPillJumpsToNounGroup`
+  - `BrowseSearchUITests/testBrowseCollectionTopSectionPillJumpsToAirportSubcategory`
+  - `BrowseSearchUITests/testHoiAnBrowseByRestaurantCardJumpsToMatchingSection`
+  - `BrowseSearchUITests/testRepresentativeCategorySubcategoryJumpsClearTopAdminChrome`
+  - `BrowseSearchUITests/testVietnameseFoodMenuSectionRailScrollsToCategory`
+  - `BrowseSearchUITests/testVietnameseMenuTopSectionPillJumpsToMatchingFoodSections`
+  - `BrowseSearchUITests/testVietnameseMenuTopSectionPillJumpsToSeafood`
+  - Result: `8` passed, `0` failed.
+  - Receipt: `/Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/app-family-fd8e8a2a818d/logs/test_sim_2026-07-05T13-24-54-786Z_pid42996_c064673b.log`
+- Practice representative flow proof passed:
+  - `BrowseSearchUITests/testBrowsePracticeBackReturnsToCollectionPracticeFocus`
+  - `BrowseSearchUITests/testBrowsePracticeOverlayKeepsCollectionInPlaceThroughDismissal`
+  - `PracticeUITests/testBrowseFirstDayPracticeCallerCompletesRoundAndReturnsToCollection`
+  - `PracticeUITests/testPracticeHubUsesMatchPracticeInsteadOfMessages`
+  - `PracticeUITests/testPracticeSavedSourceStartsFromSavedTripItems`
+  - `PracticeUITests/testPracticeTopicHeaderClearsBottomChromeOnLaunch`
+  - Result: `6` passed, `0` failed.
+  - Receipt: `/Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/app-family-fd8e8a2a818d/logs/test_sim_2026-07-05T13-28-02-798Z_pid42996_b0325310.log`
+- Home-origin route/back proof passed:
+  - `BackSwipeUITests/testHomeCityCardBackButtonReturnsHome`
+  - `BackSwipeUITests/testHomeCityCardBackSwipeReturnsHomePosition`
+  - `BackSwipeUITests/testHomePhraseBackSwipeReturnsHomePosition`
+  - `BackSwipeUITests/testHomePracticeBackChainReturnsHomePosition`
+  - `BackSwipeUITests/testHomePracticePoolOpensDirectRoundWithoutPracticeHubFallback`
+  - `BackSwipeUITests/testHomeShelfHeaderBackButtonPreservesViewportPosition`
+  - `BackSwipeUITests/testHomeSituationBackButtonReturnsHomePosition`
+  - Result: `7` passed, `0` failed.
+  - Receipt: `/Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/app-family-fd8e8a2a818d/logs/test_sim_2026-07-05T13-30-03-394Z_pid42996_b36d4fde.log`
 
 ### Current Interpretation
 
 - The earlier `7989e1f67` blank-back and top-forward failures should remain pre-fix evidence only.
-- On the labeled `4f6462906` shared-checkout snapshot, the focused route/state regressions rerun here are green: Browse detail/back, fast double-back, Search category/city handoff, Search recovery, Saved/menu save-remove, city Browse-by jump/admin clearance, Back/Forward button/gesture behavior, one Practice saved-round gate, and representative bottom-inset layout checks.
+- On the labeled `4f6462906` shared-checkout snapshot, the focused route/state regressions rerun here are green: Browse detail/back, fast double-back, Search category/city handoff, Search recovery, Saved/menu save-remove, city Browse-by jump/admin clearance, Back/Forward button/gesture behavior, Practice saved/collection flows, representative bottom-inset layout checks, Search/admin tab reachability, collection section/filter jumps, and Home-origin back/viewport restoration.
 - Audio is intentionally excluded from this thread's post-advance claims because the current audio proof belongs to the orchestrator lane with the uncommitted `AudioTapReliabilityUITests` harness fix.
 - No app-code edits were made in this thread.
+
+## Latest Current-Main Anchor - `60db7e9fb`
+
+Continuation timestamp: 2026-07-05 21:43 Asia/Manila local
+Latest observed `main`: `60db7e9fb` (`Add release risk addendum`)
+Boundary note: commits after `4f6462906` added/updated docs, reports, proof artifacts, and the audio UI-test harness file; no app-target runtime source changed in the `4f6462906..60db7e9fb` diff inspected by this thread. This thread still rebuilt exact-current `main` after the boundary moved again.
+
+### Build And Visible Proof
+
+- XcodeBuildMCP `build_run_sim` passed at `60db7e9fb` with `CODE_SIGNING_ALLOWED=NO`.
+- App path: `/tmp/speaklocal-traveler-qa-deriveddata/Build/Products/Debug-iphonesimulator/SpeakLocalNative.app`
+- Bundle: `app.speaklocal.vietnam.native`
+- Build log: `/Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/app-family-fd8e8a2a818d/logs/build_run_sim_2026-07-05T13-34-15-280Z_pid42996_877223f2.log`
+- Runtime log: `/Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/app-family-fd8e8a2a818d/logs/app.speaklocal.vietnam.native_2026-07-05T13-34-25-633Z_helperpid68536_ownerpid42996_f29e5723.log`
+- Visible Home proof: `traveler-qa-proof-post-60db7e9fb/000-home-launch-60db7e9fb.jpg`
+- Visual read: Home still renders visible `Xin chào` content, audio controls, Home/Essentials shelf context, and bottom chrome.
+
+### Tiny Exact-Current Route Sanity
+
+- Focused exact-current route sanity passed:
+  - `BackSwipeUITests/testTopForwardButtonRestoresForwardPageAfterBackButton`
+  - `BrowseSearchUITests/testFastDoubleBackFromBrowseDetailRestoresBrowseRootContent`
+  - `BrowseSearchUITests/testSearchRecoveryCardsAndRelatedChipsStayInteractive`
+  - `PracticeUITests/testPracticeSavedOpensSingleFourPairMatchRound`
+  - Result: `4` passed, `0` failed.
+  - Receipt: `/Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/app-family-fd8e8a2a818d/logs/test_sim_2026-07-05T13-40-47-193Z_pid42996_0b54ca31.log`
+
+### Latest Interpretation
+
+- The broader post-advance matrix above was started at the `4f6462906` boundary and later overlapped docs/test-harness/report-only main movement.
+- The latest exact-current rebuild and focused sanity pass at `60db7e9fb` preserve the key route-state signal: fast double-back, Search recovery, top Forward, and Practice saved-round are green.
+- Audio remains intentionally delegated to the orchestrator/audio-harness lane, whose report records the updated `AudioTapReliabilityUITests` path and green audio-class proof.
+- No app-code edits were made in this thread.
+
+## Visual Inspection Notes From Post-Fix Proof Artifacts
+
+These notes reuse existing post-fix proof screenshots under `post-fix-visual-regression-proof/`; this thread did not overwrite those artifacts.
+
+- `03-browse-collection-after-detail-back.jpg`: Eating Out returns from detail to a populated collection rather than a blank sheet; top Back/Forward controls and bottom chrome remain visible.
+- `04-search-coffee-results.jpg`: Search results for `coffee` render with Browse collection and phrase result content; the bottom search island remains usable and does not cover the first actionable result.
+- `05-search-result-routed-drink-menu.jpg`: routed Drink Menu page is populated; row audio and save controls are visible.
+- `06-hoi-an-city-route-top.jpg`: Hoi An route top renders readable intro copy plus save/audio controls.
+- `07-hoi-an-restaurants-section-jump.jpg`: city Browse-by jump lands on Restaurants with row audio/save controls visible and top chrome still coherent.
+- `08-saved.jpg`: Saved screen renders readable empty/onramp state and bottom chrome.
+- `09-practice-round-sheet.jpg`: Practice match sheet header, close button, cards, speaker buttons, and hint control fit without top clipping in the visible screenshot.
+- `11-browse-category-direct-launch-empty-ax.jpg`: direct Drink Menu launch is visually populated; the earlier audio-row red result should be read as test-path/hittability evidence, not a blank-page visual regression.
+
+## Current Status Summary For Orchestrator
+
+- This thread made no app-code edits and did not merge or touch paywall.
+- Current exact-main anchor: `60db7e9fb`, rebuilt and launched successfully on `SpeakLocal Traveler`.
+- Latest direct proof from this thread: Home screenshot plus `4` focused route/state tests passed at `60db7e9fb`.
+- Broader route/state matrix from the earlier post-advance window is green across Browse/Search, Saved/menu, city Browse-by, Back/Forward, Practice, bottom-inset, Search/admin tab, collection section/filter, and Home-origin route restoration checks.
+- Older red evidence from `7989e1f67` is retained for history only and is explicitly superseded where later post-fix proof exists.
+- Audio final authority belongs to `audio-harness-fix-report.md`, not this traveler report.
+- Remaining non-simulator launch-risk outside this thread: physical iPhone walkthrough and any paywall-specific purchase/restore proof owned by separate lanes.
