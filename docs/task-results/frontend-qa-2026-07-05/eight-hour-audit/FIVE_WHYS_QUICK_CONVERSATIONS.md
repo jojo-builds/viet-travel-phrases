@@ -90,3 +90,18 @@ Additional internal generator cleanup on 2026-07-06:
 - `native-ios/scripts/audit-viet-content-surfacing.js` no longer frames future reuse rows as `Messages` or writes a new `message-conversation-candidates.csv` report. Future output is `practice-moment-candidates.csv`, with README language describing Browse-launched Practice moments.
 - This does not change current app runtime copy; it prevents future audit packets and worker prompts from reintroducing the parked Messages mental model.
 - Validation: `node --check native-ios/scripts/audit-viet-content-surfacing.js` and `git diff --check` passed.
+
+Additional live mid-page validation on 2026-07-06:
+- XcodeBuildMCP launched current `main` on the `SpeakLocal Frontend QA` simulator with `--browse-category local-greetings --reset-demo-state`; first and mid-page screenshots showed `Local Greetings`, `Greetings`, `Polite Basics`, and `Small talk & boundaries`, with no visible `Quick conversations`, `Market Hello`, `Hotel Hello`, or `Respectful Hello` labels.
+- The same live route, after scrolling, showed the sticky top admin section chip updating to `Greetings` and then `Polite Basics`, with phrase rows and speaker affordances still present.
+- XcodeBuildMCP launched `--browse-category food --reset-demo-state`; top and mid-page screenshots showed `Eating Out`, section chips, active top admin chips, and audio-backed phrase rows including `Không cay nhé / Not spicy please`.
+- Focused simulator UI validation passed: `BrowseSearchUITests/testFoodCollectionUsesPracticeMomentsAfterNounRows`.
+- Focused route/function UI validation passed: `testCityBrowseCardSelectionJumpsToMatchingSection`, `testHoiAnBrowseByRestaurantCardJumpsToMatchingSection`, `testBrowseCollectionTopSectionPillJumpsToAirportSubcategory`, and `testRepresentativeCategorySubcategoryJumpsClearTopAdminChrome`.
+- Focused Practice UI validation passed: `PracticeUITests/testPracticeHubUsesMatchPracticeInsteadOfMessages`, `PracticeUITests/testLegacyPracticeScenarioLaunchFallsBackToMatchRound`, `BrowseSearchUITests/testBrowsePracticeBackReturnsToCollectionPracticeFocus`, and `BrowseSearchUITests/testBrowsePracticeOverlayKeepsCollectionInPlaceThroughDismissal`.
+- A fresh source-backed scan of active app/resource copy still contains legitimate phrase-learning uses of `conversation`, `message`, and `thread` such as text-message phrases, pickup messages, and museum thread copy. The guardrail intentionally blocks retired app-feature labels instead of banning normal traveler copy.
+
+New front-end guardrail added on 2026-07-06:
+- Added `ProductLanguageUITests/testRepresentativeRoutesDoNotExposeRetiredPracticeVocabularyWhileScrolling`.
+- The test launches and scrolls representative routes across Home, Browse, Local Greetings, Eating Out, Airport, Hotel, Hoi An, Da Nang, Search, Saved, and Practice.
+- It fails on exact retired visible labels: `Quick conversations`, exact `Messages`/`MESSAGES`, `Back to Messages`, `Messages thread`, `Restart conversation`, `Conversation complete`, `Conversation break`, `Unread`, `Mark Unread`, `Open thread`, `Market Hello`, `Hotel Hello`, and `Respectful Hello`.
+- Validation passed with shell `xcodebuild` after the MCP test transport closed under low disk pressure: `1` test, `0` failures, `283.058` seconds.

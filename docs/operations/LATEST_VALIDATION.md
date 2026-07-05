@@ -1995,6 +1995,28 @@ Known pre-existing test debt:
 - Fresh StoreKit purchase/restore/relaunch proof when the native paywall branch is ready.
 - Fresh screenshots for any native UI work that changes visible app behavior.
 
+## 2026-07-06 Front-End Product-Language Follow-Up
+
+Fresh evidence from the eight-hour visible front-end audit after the `Quick conversations` report:
+
+- `node native-ios/scripts/audit-visible-product-language.js`
+  - passed: no retired visible labels found across SwiftUI literals and active source-backed app/resource copy
+- `node --test native-ios/scripts/audit-visible-product-language.test.js`
+  - passed: generated fixture coverage proves retired labels such as `Quick conversations`, `Back to Messages`, `Conversation complete`, `Conversation break`, `Mark Unread`, `Open thread`, and source-backed `hotel messages` fail the audit
+- XcodeBuildMCP simulator UI test, `BrowseSearchUITests/testFoodCollectionUsesPracticeMomentsAfterNounRows`
+  - passed: `1` test, `0` failures
+- XcodeBuildMCP simulator UI tests for city/category jump behavior
+  - passed individually: `testCityBrowseCardSelectionJumpsToMatchingSection`, `testHoiAnBrowseByRestaurantCardJumpsToMatchingSection`, `testBrowseCollectionTopSectionPillJumpsToAirportSubcategory`, and `testRepresentativeCategorySubcategoryJumpsClearTopAdminChrome`
+- XcodeBuildMCP simulator UI tests for Practice-era labels and Browse-to-Practice return behavior
+  - passed: `4` tests, `0` failures
+- Shell `xcodebuild` simulator UI test, `ProductLanguageUITests/testRepresentativeRoutesDoNotExposeRetiredPracticeVocabularyWhileScrolling`
+  - passed: `1` test, `0` failures, `283.058` seconds
+  - route coverage: Home, Browse, Local Greetings, Eating Out, Airport, Hotel, Hoi An, Da Nang, Search, Saved, and Practice
+  - failure gate: exact retired visible labels including `Quick conversations`, exact `Messages`/`MESSAGES`, `Back to Messages`, `Conversation complete`, `Unread`, `Mark Unread`, `Open thread`, and the old `Market/Hotel/Respectful Hello` card names
+- Live simulator visual spot checks
+  - `--browse-category local-greetings --reset-demo-state`: first and mid-page views showed Practice-era labels such as `Local Greetings`, `Greetings`, `Polite Basics`, and `Small talk & boundaries`, with no visible `Quick conversations` or old `Hello` scenario-card labels
+  - `--browse-category food --reset-demo-state`: top and mid-page views showed `Eating Out`, active top admin section chips, audio-backed phrase rows, and no retired Messages/conversation shelf label
+
 ## Historical Evidence Boundary
 
 Older validation snapshots may mention Windows paths, Expo, EAS, React Native, or an `app/` folder. Those records are archive context only. They do not define the current app build path.
