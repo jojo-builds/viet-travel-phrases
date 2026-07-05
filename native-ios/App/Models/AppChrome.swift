@@ -10,6 +10,20 @@ enum AppRoute: Equatable {
     case practice
     case detailPage(String)
     case search
+
+    var isBrowseCollection: Bool {
+        if case .browseCollection = self {
+            return true
+        }
+        return false
+    }
+
+    var isDetailPage: Bool {
+        if case .detailPage = self {
+            return true
+        }
+        return false
+    }
 }
 
 enum DockItemKind: Equatable, Hashable {
@@ -346,7 +360,11 @@ final class LocalUserIntentStore: ObservableObject {
     }
 
     private static func canonicalPageID(forOpenablePageID pageID: String) -> String? {
-        PhraseCatalog.canonicalPageID(forOpenablePageID: pageID)
+        if BrowseSearchDestinations.cityID(forSavedCityPageID: pageID) != nil {
+            return pageID
+        }
+
+        return PhraseCatalog.canonicalPageID(forOpenablePageID: pageID)
     }
 
     private static let maxRecentPages = 12
@@ -662,6 +680,20 @@ enum SavedTripPracticeCatalog {
 
 private enum SavedTripResolver {
     static func item(for pageID: String) -> SavedTripItem? {
+        if let cityID = BrowseSearchDestinations.cityID(forSavedCityPageID: pageID),
+           let descriptor = BrowseSearchDestinations.collectionDescriptor(for: .city(cityID)) {
+            return SavedTripItem(
+                pageID: pageID,
+                title: descriptor.title,
+                subtitle: descriptor.subtitle,
+                symbolName: descriptor.symbolName,
+                tintName: descriptor.tintName,
+                audioKey: descriptor.cityHub?.cityNameAudioItem?.audioKey,
+                imageName: descriptor.mastheadImageName,
+                kind: .cities
+            )
+        }
+
         if let menuItem = VietnameseMenuCatalog.detailItem(withPageID: pageID),
            let kind = savedKind(for: menuItem.kind) {
             return SavedTripItem(

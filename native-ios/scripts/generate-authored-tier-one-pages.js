@@ -1097,8 +1097,9 @@ function authoredBreakdownAudioKey(text) {
 }
 
 function hasExactAudio(text, audioKey) {
-  if (!audioKey) return false;
-  const entry = audioManifest[audioKey];
+  const resolvedAudioKey = exactAudioKey(text, audioKey);
+  if (!resolvedAudioKey) return false;
+  const entry = audioManifest[resolvedAudioKey];
   return Boolean(entry && normalizeAudioText(entry.text) === normalizeAudioText(text));
 }
 
@@ -3841,7 +3842,7 @@ function cityPageForRecord(pageRecord, context) {
     englishTitle: pageRecord.englishText,
     pronunciation: pageRecord.pronunciation,
     summary: pageRecord.editorialImport?.summary ?? pageRecord.englishText,
-    heroImageName: pageRecord.editorialImport?.heroImageName ?? pageRecord.heroImageName ?? (derivedPlacePhrase ? "HeroCompactPhraseMasthead" : cityFallbackHeroImageName(pageKind)),
+    heroImageName: pageRecord.heroImageName ?? pageRecord.editorialImport?.heroImageName ?? (derivedPlacePhrase ? "HeroCompactPhraseMasthead" : cityFallbackHeroImageName(pageKind)),
     iconName: pageKind === "restaurant" ? "fork.knife"
       : pageKind === "drink" ? "cup.and.saucer.fill"
       : pageKind === "dessert" ? "birthday.cake.fill"
@@ -4071,6 +4072,7 @@ function editorialSupportPageForRecord(record) {
     englishTitle: record.englishText,
     pronunciation: record.pronunciation,
     summary: record.englishText,
+    ...(record.phraseID.startsWith("city-") ? { heroImageName: "HeroCompactPhraseMasthead" } : {}),
     iconName: record.iconName ?? symbolForScenario(record.scenarioID),
     tintName: record.tintName ?? tintForScenario(record.scenarioID),
     categoryIDs: Array.from(new Set([
@@ -4106,7 +4108,9 @@ function collectAudioAudit(pages) {
   const seen = new Set();
 
   function addAudio(ref) {
-    if (!ref.audioKey) {
+    const resolvedAudioKey = exactAudioKey(ref.text, ref.audioKey);
+
+    if (!resolvedAudioKey) {
       if (ref.kind === "breakdown") {
         return;
       }
@@ -4117,12 +4121,12 @@ function collectAudioAudit(pages) {
       return;
     }
 
-    const key = `${ref.audioKey}\u0000${ref.text}`;
+    const key = `${resolvedAudioKey}\u0000${ref.text}`;
     if (seen.has(key)) return;
     seen.add(key);
-    const entry = audioManifest[ref.audioKey];
+    const entry = audioManifest[resolvedAudioKey];
     const resolved = Boolean(entry && normalizeAudioText(entry.text) === normalizeAudioText(ref.text));
-    const record = { ...ref, resolved };
+    const record = { ...ref, audioKey: resolvedAudioKey, resolved };
     required.push(record);
     if (!resolved) missing.push(record);
   }

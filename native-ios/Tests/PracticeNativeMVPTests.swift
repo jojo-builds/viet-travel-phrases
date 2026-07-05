@@ -212,8 +212,8 @@ final class PracticeNativeMVPTests: XCTestCase {
         }
 
         XCTAssertTrue(failures.isEmpty, failures.joined(separator: "\n"))
-        XCTAssertFalse(snapshot.practiceSource.items.contains { $0.pageID == "viet-phrase-ves-call-taxi-for-me" })
-        XCTAssertFalse(snapshot.savedSource.items.contains { $0.pageID == "viet-phrase-ves-drop-me-off-here" })
+        XCTAssertTrue(snapshot.practiceSource.items.contains { $0.pageID == "viet-phrase-ves-call-taxi-for-me" })
+        XCTAssertTrue(snapshot.savedSource.items.contains { $0.pageID == "viet-phrase-ves-drop-me-off-here" })
         XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:taxi-directions" && $0.canStart })
         XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:shopping-markets" && $0.canStart })
         XCTAssertTrue(snapshot.topicSources.contains { $0.id == "topic:emergency" && $0.canStart })

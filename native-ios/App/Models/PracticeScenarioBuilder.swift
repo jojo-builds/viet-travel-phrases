@@ -1898,7 +1898,7 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                         english: "I'm at this entrance"
                     ),
                     "viet-family-v900-tran-can-you-pick-me-up-here": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Bạn đón tôi ở đây được không?",
+                        vietnamese: "Bạn có thể đón tôi ở đây được không?",
                         english: "Can you pick me up here?",
                         nextLocalLine: "Được, tôi sẽ tới cửa này.",
                         nextLocalMeaning: "Yes, I will come to this entrance."
@@ -2209,11 +2209,10 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 localLineMeaning: "Is this medicine okay?",
                 userGoal: "Ask how to take it before paying.",
                 bestPageIDs: [
-                    "viet-family-v500-heal-phar-how-do-i-take-this",
                     "viet-family-v500-heal-phar-how-many-times-per-day",
                 ],
                 alternatePageIDs: [
-                    "viet-family-v500-heal-phar-how-many-times-per-day",
+                    "viet-family-v900-heal-phar-how-many-days-should-i-take-it",
                     "viet-family-health-allergy",
                 ],
                 recoveryPageIDs: [
@@ -2227,19 +2226,21 @@ private let scenarioTemplates: [PracticeScenarioTemplate] = ([
                 nextStepTitle: "Close the exchange",
                 localScenarioContext: "pharmacy_story_medicine",
                 scenarioResponseCopies: [
-                    "viet-family-v500-heal-phar-how-do-i-take-this": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Tôi uống thuốc này như thế nào?",
-                        english: "How do I take this medicine?"
-                    ),
                     "viet-family-v500-heal-phar-how-many-times-per-day": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Uống bao nhiêu lần mỗi ngày?",
+                        vietnamese: "Bao nhiêu lần mỗi ngày?",
                         english: "How many times per day should I take it?",
                         nextLocalLine: "Uống sau khi ăn, ngày hai lần.",
                         nextLocalMeaning: "Take it after eating, twice a day."
                     ),
+                    "viet-family-v900-heal-phar-how-many-days-should-i-take-it": PracticeScenarioPhraseTemplate(
+                        vietnamese: "Tôi nên dùng nó trong bao nhiêu ngày?",
+                        english: "How many days should I take it?",
+                        nextLocalLine: "Dùng trong ba ngày, nếu không đỡ thì đi khám.",
+                        nextLocalMeaning: "Take it for three days; if it does not improve, see a doctor."
+                    ),
                     "viet-family-health-allergy": PracticeScenarioPhraseTemplate(
-                        vietnamese: "Tôi bị dị ứng thuốc này",
-                        english: "I am allergic to this medicine",
+                        vietnamese: "Tôi bị dị ứng cái này",
+                        english: "I am allergic to this",
                         nextLocalLine: "Đừng uống loại này. Tôi sẽ tìm loại khác hoặc gọi bác sĩ.",
                         nextLocalMeaning: "Do not take this one. I will find another option or call a doctor."
                     ),
@@ -3177,7 +3178,7 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     userGoal: "Name the bathroom or door problem clearly.",
                     best: messageReply(
                         "viet-family-v500-hote-acco-the-toilet-is-not-working",
-                        vietnamese: "Nhà vệ sinh không hoạt động",
+                        vietnamese: "Bồn cầu không sử dụng được",
                         english: "The toilet is not working",
                         nextLocalLine: "Xin lỗi, tôi sẽ báo kỹ thuật kiểm tra ngay.",
                         nextLocalMeaning: "Sorry, I will ask maintenance to check it right away."
@@ -3263,9 +3264,9 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                             nextLocalMeaning: "Yes, I will bring more soap."
                         ),
                         messageReply(
-                            "viet-family-v900-hote-acco-can-i-have-more-drinking-water",
-                            vietnamese: "Cho tôi thêm nước uống được không?",
-                            english: "Can I have more drinking water?",
+                            "viet-family-service-water",
+                            vietnamese: "Cho tôi chai nước",
+                            english: "Bottled water please",
                             nextLocalLine: "Được, tôi sẽ mang thêm nước uống.",
                             nextLocalMeaning: "Yes, I will bring more drinking water."
                         ),
@@ -4005,9 +4006,9 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     ),
                     alternates: [
                         messageReply(
-                            "viet-family-v900-food-drin-can-i-have-napkins",
-                            vietnamese: "Cho tôi khăn giấy được không?",
-                            english: "Can I have napkins?",
+                            "viet-family-service-tissues",
+                            vietnamese: "Cho tôi khăn giấy",
+                            english: "Napkins please",
                             nextLocalLine: "Dạ, khăn giấy ở đây.",
                             nextLocalMeaning: "Yes, napkins are here."
                         ),
@@ -4087,11 +4088,11 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                             nextLocalMeaning: "Okay, I will go this way."
                         ),
                         messageReply(
-                            "viet-family-v900-tran-please-take-the-faster-route",
-                            vietnamese: "Làm ơn đi đường nhanh hơn",
-                            english: "Please take the faster route",
-                            nextLocalLine: "Được, tôi sẽ chọn đường nhanh hơn.",
-                            nextLocalMeaning: "Okay, I will take the faster route."
+                            "viet-family-v900-tran-please-avoid-the-highway",
+                            vietnamese: "Xin hãy tránh đường cao tốc",
+                            english: "Please avoid the highway",
+                            nextLocalLine: "Được, tôi sẽ tránh đường cao tốc.",
+                            nextLocalMeaning: "Okay, I will avoid the highway."
                         ),
                     ],
                     nextStepTitle: "Repair the route",
@@ -4106,7 +4107,7 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     userGoal: "Ask about the different route without escalating.",
                     best: messageReply(
                         "viet-family-v900-tran-the-app-shows-a-different-route",
-                        vietnamese: "Ứng dụng hiển thị tuyến đường khác",
+                        vietnamese: "Ứng dụng hiển thị một tuyến đường khác",
                         english: "The app shows a different route",
                         nextLocalLine: "Tôi hiểu, tôi sẽ quay lại tuyến đó.",
                         nextLocalMeaning: "I understand, I will go back to that route."
@@ -4450,9 +4451,9 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     ),
                     alternates: [
                         messageReply(
-                            "viet-family-v500-shop-can-you-show-me-another-one",
-                            vietnamese: "Bạn cho tôi xem cái khác được không?",
-                            english: "Can you show me another one?",
+                            "viet-phrase-price-6",
+                            vietnamese: "Cho tôi xem cái khác",
+                            english: "Show me another one",
                             nextLocalLine: "Được, tôi lấy mẫu khác cho bạn.",
                             nextLocalMeaning: "Yes, I will get another one for you."
                         ),
@@ -5763,7 +5764,7 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     userGoal: "Ask permission politely.",
                     best: messageReply(
                         "viet-family-v900-poli-basi-can-i-sit-here",
-                        vietnamese: "Tôi ngồi đây được không?",
+                        vietnamese: "Tôi có thể ngồi đây được không?",
                         english: "Can I sit here?",
                         nextLocalLine: "Được, bạn ngồi đây nhé.",
                         nextLocalMeaning: "Yes, you can sit here."
@@ -5771,17 +5772,10 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
                     alternates: [
                         messageReply(
                             "viet-family-v900-poli-basi-can-i-come-in",
-                            vietnamese: "Tôi vào được không?",
+                            vietnamese: "Tôi có thể vào được không?",
                             english: "Can I come in?",
                             nextLocalLine: "Được, mời bạn vào.",
                             nextLocalMeaning: "Yes, please come in."
-                        ),
-                        messageReply(
-                            "viet-family-v900-poli-basi-may-i",
-                            vietnamese: "Tôi xin phép",
-                            english: "May I?",
-                            nextLocalLine: "Dạ được, mời bạn.",
-                            nextLocalMeaning: "Yes, please."
                         ),
                     ],
                     nextStepTitle: "Say thanks",

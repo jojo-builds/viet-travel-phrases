@@ -140,10 +140,10 @@
           "vietnamese": "Chúng tôi có thể ngồi bên trong được không?",
           "english": "Can we sit inside?",
           "pronunciation": "Chung toi co the ngoi ben trong duoc khong",
-          "symbolName": "text.bubble.fill",
+          "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
           "detailPageID": "viet-phrase-v900-food-drin-can-we-sit-inside",
-          "audioKey": "audio-authored-chung-toi-co-the-ngoi-ben-trong-duoc-khong-39d37d157c"
+          "audioKey": "v900-food-drin-can-we-sit-inside"
         }
       ],
       "presentation": "phrase-list",
@@ -159,20 +159,20 @@
           "vietnamese": "Chúng tôi có thể ngồi bên ngoài được không?",
           "english": "Can we sit outside?",
           "pronunciation": "Chung toi co the ngoi ben ngoai duoc khong",
-          "symbolName": "text.bubble.fill",
+          "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
           "detailPageID": "viet-phrase-v900-food-drin-can-we-sit-outside",
-          "audioKey": "audio-authored-chung-toi-co-the-ngoi-ben-ngoai-duoc-khong-f5e16122a7"
+          "audioKey": "v900-food-drin-can-we-sit-outside"
         },
         {
           "id": "v900-food-drin-can-we-sit-by-the-fan",
           "vietnamese": "Chúng tôi có thể ngồi cạnh quạt được không?",
           "english": "Can we sit by the fan?",
           "pronunciation": "Chung toi co the ngoi canh quat duoc khong",
-          "symbolName": "text.bubble.fill",
+          "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
           "detailPageID": "viet-phrase-v900-food-drin-can-we-sit-by-the-fan",
-          "audioKey": "audio-authored-chung-toi-co-the-ngoi-canh-quat-duoc-khong-8ca9876a84"
+          "audioKey": "v900-food-drin-can-we-sit-by-the-fan"
         }
       ],
       "presentation": "phrase-list",
@@ -245,7 +245,7 @@
           "vietnamese": "Vậy thôi, cảm ơn",
           "english": "That's all, thank you.",
           "pronunciation": "Vay thoi cam on",
-          "symbolName": "text.bubble.fill",
+          "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
           "detailPageID": "viet-phrase-v900-food-drin-thats-all-thank-you",
           "audioKey": "audio-authored-vay-thoi-cam-on-efab00a56b"

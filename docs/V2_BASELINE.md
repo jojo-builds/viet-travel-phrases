@@ -28,26 +28,31 @@
   - StoreKit entitlement sync plus on-device persistence
   - dev validation unlock only when the real store path is unavailable
 - A real Viet content boundary on top of that seam:
-  - 18 live categories
-  - 900 authored intent families / visible entries
-  - 150 starter visible entries
-  - 750 premium visible entries
-  - 919 approved phrase rows
-  - 919 approved rows currently marked `audioStatus=ready`
-  - 0 approved rows currently marked `audioStatus=planned`
+  - 19 runtime scenarios
+  - 1782 authored intent families / visible clusters
+  - 177 starter visible intent families
+  - 1605 premium visible intent families
+  - 1800 source phrase rows
+  - 1793 canonical phrase pages
+  - 11728 relation rows
+  - 4318 bundled audio assets
+  - 778 planned missing-audio phrase rows
+  - 0 release-blocking missing-audio rows
   - starter vs premium tagging in the real pack
   - website preview exports generated from approved starter/default-first slices
 
 ## Current content reality
 
 - Viet is no longer just the old thin starter surface.
-- Viet now ships a materially stronger 900-family v2 milestone:
-  - current starter visible entries: 150
-  - current premium visible entries: 750
-  - current total visible entries: 900
-  - current approved phrase rows: 919
-  - current audio posture: 919 ready / 0 planned
-  - future expansion beyond this milestone is an explicit future-only `200 / 1000` option, not the current live boundary
+- Viet now ships a materially stronger generated native graph:
+  - current starter visible intent families: 177
+  - current premium visible intent families: 1605
+  - current total visible intent families / clusters: 1782
+  - current source phrase rows: 1800
+  - current canonical phrase pages: 1793
+  - current relation rows: 11728
+  - current audio posture: 4318 bundled audio assets, 778 planned missing-audio phrase rows, 0 release-blocking missing-audio rows
+  - older `150 / 750 / 900` and `200 / 1000` planning shapes are historical references only unless a future task deliberately reopens them
 - Tagalog still carries the earlier thin pack:
   - 10 scenarios
   - 70 phrases
@@ -88,10 +93,10 @@ Tagalog still needs separate work for:
 
 ## Before Viet v2 can ship confidently
 
-- package a fresh native preview build that includes the current 900-family pack
-- confirm the Viet non-consumable in App Store Connect at `$4.99`
+- package a fresh native preview build that includes the current generated Viet graph
+- confirm the Viet monthly subscription in App Store Connect at `7-day free trial, then $4.99/month`
 - run real purchase / restore / restart / gating validation on physical iOS hardware
 - capture the evidence honestly in `docs/operations/*`
-- keep the current `919 ready / 0 planned` audio coverage honest and benchmark continuity before any stronger same-speaker quality claim
-- treat any future move beyond `150 / 750 / 900` as a deliberate new scope decision, not as implied current work
+- keep the current planned missing-audio queue honest and benchmark continuity before any stronger same-speaker quality claim
+- treat any future move beyond the generated `177 / 1605 / 1782` family boundary as a deliberate new scope decision, not as implied current work
 - keep the earlier shared-search device-proof debt honest in `docs/operations/*`
