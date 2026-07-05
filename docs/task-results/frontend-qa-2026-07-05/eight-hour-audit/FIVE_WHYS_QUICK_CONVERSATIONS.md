@@ -64,4 +64,5 @@ Additional harness-prevention follow-up on 2026-07-06:
 - UI-test tab helpers now navigate to `Practice` instead of the retired `Messages` alias.
 - Local-greetings proof expectations now use `Hotel greeting` and `Respectful greeting` instead of the old `Hotel Hello` / `Respectful Hello` card labels.
 - Exact stale-term scan now finds no `openDock("Messages")`, `case "Messages"`, `Hotel Hello`, `Respectful Hello`, or `Quick conversations` references in `native-ios/UITests` or `native-ios/Tests`.
+- The visible-language audit now blocks message-inbox affordances that survived inside scenario practice: `Unread`, `Mark Unread`, and `Open thread`. Current app copy uses `Ready to practice`, `Mark for practice`, and `Start practice`.
 - the visible-language audit now catches case variants of exact retired labels, `Conversation complete`, and `Conversation break` accessibility fallbacks

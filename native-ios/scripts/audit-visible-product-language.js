@@ -13,6 +13,8 @@ const retiredVisiblePhrases = [
   "Restart conversation",
   "Conversation complete",
   "Conversation break",
+  "Mark Unread",
+  "Open thread",
   "Market Hello",
   "Hotel Hello",
   "Respectful Hello",
@@ -20,6 +22,7 @@ const retiredVisiblePhrases = [
 
 const retiredExactVisibleLabels = [
   "Messages",
+  "Unread",
 ];
 
 const visibleLiteralPatterns = [

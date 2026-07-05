@@ -1446,7 +1446,7 @@ private struct PracticeMessageContactButton: View {
                                     .stroke(.white, lineWidth: 2)
                             }
                             .offset(PracticeMessageHubLayout.unreadDotOffset)
-                            .accessibilityLabel("Unread")
+                            .accessibilityLabel("Ready to practice")
                             .accessibilityIdentifier("Practice.Message.Contact.UnreadDot.\(scenario.id.rawValue)")
                     }
                 }
@@ -1465,7 +1465,7 @@ private struct PracticeMessageContactButton: View {
         .buttonStyle(.plain)
         .contextMenu {
             Button(action: onMarkUnread) {
-                Label("Mark Unread", systemImage: "circle.fill")
+                Label("Mark for practice", systemImage: "checkmark.circle.fill")
             }
         }
         .accessibilityLabel(scenario.id.messageContactName)
@@ -2445,7 +2445,7 @@ private struct PracticeScenarioPrimaryCard: View {
             PracticeScenarioBeatRow(beats: scenario.id.flowBeats, tint: scenario.id.tint)
 
             Button(action: onStart) {
-                Label("Open thread", systemImage: "text.bubble.fill")
+                Label("Start practice", systemImage: "play.fill")
                     .font(.headline.weight(.bold))
                     .frame(maxWidth: .infinity)
                     .frame(height: 52)

@@ -25,6 +25,9 @@ test("visible product language audit catches retired Messages labels in Swift UI
       "      Label(\"Back to Messages\", systemImage: \"text.bubble.fill\")",
       "      Text(\"Conversation complete\")",
       "      Color.clear.accessibilityLabel(turn.text ?? \"Conversation break\")",
+      "      Color.clear.accessibilityLabel(\"Unread\")",
+      "      Label(\"Mark Unread\", systemImage: \"circle.fill\")",
+      "      Label(\"Open thread\", systemImage: \"text.bubble.fill\")",
       "      Text(\"Simple ways to start conversations.\")",
       "    }",
       "  }",
@@ -44,5 +47,8 @@ test("visible product language audit catches retired Messages labels in Swift UI
   assert.match(result.stdout, /Back to Messages/);
   assert.match(result.stdout, /Conversation complete/);
   assert.match(result.stdout, /Conversation break/);
+  assert.match(result.stdout, /Unread/);
+  assert.match(result.stdout, /Mark Unread/);
+  assert.match(result.stdout, /Open thread/);
   assert.doesNotMatch(result.stdout, /Simple ways to start conversations/);
 });

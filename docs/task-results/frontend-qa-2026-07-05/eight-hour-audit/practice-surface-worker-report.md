@@ -15,6 +15,7 @@ Orchestrator follow-up after this report resolved the concrete stale-test/defaul
 - `BrowseSearchUITests/testFoodCollectionUsesMessageSectionAfterNounRows` was renamed to `testFoodCollectionUsesPracticeMomentsAfterNounRows` and now expects `Practice moments`.
 - `cityPracticeTitle(for:title:)` now falls back to `"\(title) practice"` instead of `"\(title) messages"`.
 - The top-level Browse card now says `Respectful greetings` with a matching `greeting` subtitle.
+- Visible/accessibility inbox labels in scenario practice were reframed: `Unread` -> `Ready to practice`, `Mark Unread` -> `Mark for practice`, and `Open thread` -> `Start practice`. The visible-language audit now blocks all three retired labels.
 
 ## Answers
 
@@ -23,7 +24,7 @@ Orchestrator follow-up after this report resolved the concrete stale-test/defaul
   - Current Browse scenario rows are headed `Practice moments`, which is better than `Quick conversations`, but the implementation still renders them as message/contact buttons.
 
 - Do scenario cards feel like Practice, not contacts/messages?
-  - Not fully. The visible section title is now `Scenario practice` / `Practice moments`, but the component is still `PracticeMessageContactGrid` with contact avatars, unread dots, `Mark Unread`, and contact names. That reads as message inbox behavior, not practice progress.
+  - Better after the orchestrator follow-up. The visible section title is now `Scenario practice` / `Practice moments`, the dot reads `Ready to practice`, the context action says `Mark for practice`, and the scenario CTA says `Start practice`. Internal component/identifier names still use message/contact language, so a deeper refactor remains useful.
 
 - Do completion buttons and back controls return to the right surface with current labels?
   - Yes for the focused current-source proof. Browse first-day practice opened `Match the pairs`, completed all 4 pairs, showed `Nice match!`, used `Close practice`, and returned to `BrowseCollection.PracticeEntry.category.first-day`.
@@ -40,10 +41,11 @@ Orchestrator follow-up after this report resolved the concrete stale-test/defaul
 
 ## Findings
 
-1. `SAFE_FIX_NOW`: Scenario practice still has message/contact affordances.
+1. `SAFE_FIX_NOW, PARTIALLY RESOLVED IN WORKING TREE`: Scenario practice still had message/contact affordances.
    - Source: `native-ios/App/Views/PracticeView.swift`
-   - Evidence: `PracticeMessagesHeader` shows `Scenario practice`, but the surface below is `PracticeMessageContactGrid`; items show unread dots, expose `Mark Unread`, and label cards with `messageContactName`.
-   - Recommended fix: rename/reframe these as scenario practice cards, remove or replace unread/message semantics with practice semantics such as `New`, `Try again`, `In progress`, or `Practiced`, and update accessibility identifiers only after UI tests are migrated.
+   - Evidence: `PracticeMessagesHeader` shows `Scenario practice`, but the surface below is `PracticeMessageContactGrid`; items showed unread dots, exposed `Mark Unread`, and label cards with `messageContactName`.
+   - Fix applied: the user-facing/accessibility labels now use Practice semantics: `Ready to practice`, `Mark for practice`, and `Start practice`.
+   - Remaining follow-up: rename/reframe internal component names and identifiers such as `PracticeMessageContactGrid`, `Practice.Messages.*`, and `messageContactName` in a separate UI-test migration pass.
 
 2. `SAFE_FIX_NOW`: Browse `Practice moments` rows still use message-contact implementation.
    - Source: `native-ios/App/Views/BrowseCollectionPageView.swift`
@@ -73,6 +75,7 @@ Orchestrator follow-up after this report resolved the concrete stale-test/defaul
 - Orchestrator follow-up:
   - XcodeBuildMCP simulator tests passed: `AppChromeTests/testBrowseTopLevelGreetingCardsHaveDistinctJobs`, `AppChromeTests/testBrowseCollectionDescriptorsExposeStarterRowsAndMessagePolicy`, `AppChromeTests/testBrowseCategoryMessageSectionsMirrorMessagesHubGroups`, `AppChromeTests/testCategoryPracticeEntryCopyDescribesMatchPractice`, and `PracticeScenarioModeTests/testMessagesUseShortSituationNamesAndUnreadPreviews`.
   - XcodeBuildMCP single-test rerun passed: `BrowseSearchUITests/testFoodCollectionUsesPracticeMomentsAfterNounRows`.
+  - Additional inbox-label repair validation passed: `node native-ios/scripts/audit-visible-product-language.js`, `node --test native-ios/scripts/audit-visible-product-language.test.js`, `PracticeUITests/testPracticeHubUsesMatchPracticeInsteadOfMessages`, `PracticeUITests/testLegacyPracticeScenarioLaunchFallsBackToMatchRound`, and `PracticeScenarioModeTests/testMessagesUseShortSituationNamesAndUnreadPreviews`.
 
 ## Stale Evidence Retired
 
