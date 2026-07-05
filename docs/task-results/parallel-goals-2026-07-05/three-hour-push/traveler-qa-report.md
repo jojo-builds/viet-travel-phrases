@@ -252,10 +252,15 @@ Proof folder: `traveler-qa-proof-post-4f6462906/`
   - `PracticeUITests/testPracticeSavedOpensSingleFourPairMatchRound`
   - Result: `1` passed, `0` failed.
   - Receipt: `/Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/app-family-fd8e8a2a818d/logs/test_sim_2026-07-05T13-02-23-797Z_pid42996_9fece3b4.log`
+- Bottom-inset visual/layout proof passed:
+  - `BottomInsetUITests/testPrimaryRootRoutesKeepBottomContentAboveSystemTabBar`
+  - `BottomInsetUITests/testRepresentativeCollectionAndDetailRoutesKeepBottomContentAboveSystemTabBar`
+  - Result: `2` passed, `0` failed.
+  - Receipt: `/Users/jojolim/Library/Developer/XcodeBuildMCP/workspaces/app-family-fd8e8a2a818d/logs/test_sim_2026-07-05T13-10-39-628Z_pid42996_4bbd94e0.log`
 
 ### Current Interpretation
 
 - The earlier `7989e1f67` blank-back and top-forward failures should remain pre-fix evidence only.
-- On the labeled `4f6462906` shared-checkout snapshot, the focused route/state regressions rerun here are green: Browse detail/back, fast double-back, Search category/city handoff, Search recovery, Saved/menu save-remove, city Browse-by jump/admin clearance, Back/Forward button/gesture behavior, and one Practice saved-round gate.
+- On the labeled `4f6462906` shared-checkout snapshot, the focused route/state regressions rerun here are green: Browse detail/back, fast double-back, Search category/city handoff, Search recovery, Saved/menu save-remove, city Browse-by jump/admin clearance, Back/Forward button/gesture behavior, one Practice saved-round gate, and representative bottom-inset layout checks.
 - Audio is intentionally excluded from this thread's post-advance claims because the current audio proof belongs to the orchestrator lane with the uncommitted `AudioTapReliabilityUITests` harness fix.
 - No app-code edits were made in this thread.

@@ -30,6 +30,8 @@ Paywall remained isolated on `feature/paywall`.
 | Exact-current phone retry | `019f3238-fe62-7f03-bfa7-69933667ae4b` | Current `main` physical build and install succeeded; launch blocked by locked phone; simulator fallback launch succeeded. |
 | App Store screenshot capture | `019f324b-30f6-7ff1-9a89-25f78eb5dee0` | Captured seven Pro Max screenshots at `1320x2868` plus contact sheet. |
 | Audio release audit | `019f324b-4993-7990-87c7-b2eb04fcf24d` | No launch-blocking audio defect; validators and static checks green. |
+| Paywall final risk | `019f3268-b5d9-7f52-bb03-0c38ac6be960` | Confirmed paywall remains isolated; fresh `SubscriptionAccessStateTests` passed `13` tests, `0` failures; recommends non-paywall first unless Jojo wants paywall day one. |
+| Release submission gap | `019f3268-cb35-77a2-9e59-07febfb9f54d` | Verified seven screenshot candidates, local legal/support files, icon, and App Store metadata gaps; no App Store Connect login. |
 
 ## Reports And Proof
 
@@ -39,6 +41,9 @@ Paywall remained isolated on `feature/paywall`.
 - App Store screenshots: `app-store-screenshot-capture-report.md`, `app-store-screenshot-proof/`
 - Audio release audit: `audio-release-audit-report.md`
 - Audio harness fix: `audio-harness-fix-report.md`
+- Main validator sweep: `main-validator-sweep-report.md`
+- Paywall final risk: `paywall-final-risk-report.md`
+- Release submission gap: `release-submission-gap-report.md`
 - Post-fix visual regression: `post-fix-visual-regression-report.md`, `post-fix-visual-regression-proof/`
 - City Browse-by reliability: `city-browse-by-reliability-report.md`, `city-browse-by-reliability-proof/`
 - Traveler QA pre-fix report: `traveler-qa-report.md`, `traveler-qa-proof/`
@@ -56,6 +61,10 @@ Orchestrator/local:
   - audio/back/practice command: `4` tests, `0` failures.
   - Browse/Search command: `5` tests, `0` failures.
   - total current-run focused UI coverage: `9` unique tests, `0` failures across audio reliability, Browse back restore, fast double-back restore, Search handoffs, Hoi An Browse-by jump, city top-admin clearance, and Practice sheet geometry.
+- Traveler QA bottom-inset addendum passed: `BottomInsetUITests/testPrimaryRootRoutesKeepBottomContentAboveSystemTabBar` and `BottomInsetUITests/testRepresentativeCollectionAndDetailRoutesKeepBottomContentAboveSystemTabBar`, `2` tests, `0` failures.
+- Main validator sweep on `abd3f3a6e` passed: SQLite fixture, audio manifest sync, tier-one listing pages, Vietnamese menu copy, production QA audit, city app-detail v2.2 strict production, search-only surfacing, and focused Node tests.
+- Paywall focused local proof passed in `feature/paywall`: `SubscriptionAccessStateTests`, `13` tests, `0` failures. Paywall still not merged.
+- Release-submission gap proof passed: seven numbered screenshot candidates are `1320 x 2868`; local privacy/terms/support/about and marketing launch-pack files exist; icon is `1024 x 1024`.
 
 Worker receipts:
 
