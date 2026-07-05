@@ -85,3 +85,8 @@ Additional source-backed audit hardening on 2026-07-06:
 - Covered active source-backed roots include `native-ios/Resources/viet-authored-listing-pages.json`, `native-ios/Resources/viet-phrase-catalog.json`, `content-draft/viet/city-library/v1.json`, V2.2 city detail JSON, and `content-draft/viet/search-only-surfacing-v1.json`.
 - The unit test now proves a generated JSON fixture containing `Quick conversations` and `hotel messages` fails the audit.
 - Fresh validation passed: `node native-ios/scripts/audit-visible-product-language.js`, `node --test native-ios/scripts/audit-visible-product-language.test.js`, and `git diff --check`.
+
+Additional internal generator cleanup on 2026-07-06:
+- `native-ios/scripts/audit-viet-content-surfacing.js` no longer frames future reuse rows as `Messages` or writes a new `message-conversation-candidates.csv` report. Future output is `practice-moment-candidates.csv`, with README language describing Browse-launched Practice moments.
+- This does not change current app runtime copy; it prevents future audit packets and worker prompts from reintroducing the parked Messages mental model.
+- Validation: `node --check native-ios/scripts/audit-viet-content-surfacing.js` and `git diff --check` passed.
