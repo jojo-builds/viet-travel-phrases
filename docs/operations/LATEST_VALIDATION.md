@@ -14,6 +14,9 @@ Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCK
 
 Current `main` app-code payload after the 2026-07-05 three-hour parallel launch-readiness push:
 
+- immediate 2026-07-05 follow-up renamed stale Browse/Practice conversation labels: `Quick conversations` -> `Practice moments`, local hello cards -> `Market greeting` / `Hotel greeting` / `Respectful greeting`, and visible Practice `Messages` labels -> Practice-oriented language
+- focused red/green validation passed for `AppChromeTests/testBrowseCollectionDescriptorsExposeStarterRowsAndMessagePolicy` and `PracticeScenarioModeTests/testMessagesUseShortSituationNamesAndUnreadPreviews`
+- new static visible product-language audit passed: `node native-ios/scripts/audit-visible-product-language.js`
 - merged stale photo-backdrop route/back hardening as `2834a52af`
 - merged rapid audio tap stabilization as `48c608b92`
 - committed active playback stress hardening as `4f6462906`

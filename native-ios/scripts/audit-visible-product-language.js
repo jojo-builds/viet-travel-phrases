@@ -1,0 +1,156 @@
+#!/usr/bin/env node
+
+const fs = require("fs");
+const path = require("path");
+
+const repoRoot = path.resolve(__dirname, "../..");
+const defaultRoot = path.join(repoRoot, "native-ios", "App");
+
+const retiredVisiblePhrases = [
+  "Quick conversations",
+  "Back to Messages",
+  "Messages thread",
+  "Restart conversation",
+  "Market Hello",
+  "Hotel Hello",
+  "Respectful Hello",
+];
+
+const retiredExactVisibleLabels = new Set([
+  "Messages",
+]);
+
+const visibleLiteralPatterns = [
+  /\bText\s*\(\s*"([^"]+)"/g,
+  /\bLabel\s*\(\s*"([^"]+)"/g,
+  /\bButton\s*\(\s*"([^"]+)"/g,
+  /\.accessibilityLabel\s*\(\s*"([^"]+)"/g,
+  /\.navigationTitle\s*\(\s*"([^"]+)"/g,
+];
+
+function parseArgs(argv) {
+  const args = {
+    root: defaultRoot,
+  };
+
+  for (let index = 2; index < argv.length; index += 1) {
+    const arg = argv[index];
+    if (arg === "--root") {
+      args.root = path.resolve(argv[index + 1] ?? "");
+      index += 1;
+    } else if (arg === "--help" || arg === "-h") {
+      args.help = true;
+    } else {
+      throw new Error(`Unknown argument: ${arg}`);
+    }
+  }
+
+  return args;
+}
+
+function swiftFiles(root) {
+  const results = [];
+
+  function visit(current) {
+    const stat = fs.statSync(current);
+    if (stat.isDirectory()) {
+      for (const entry of fs.readdirSync(current)) {
+        if (entry === "artifacts" || entry === "DerivedData-main") {
+          continue;
+        }
+        visit(path.join(current, entry));
+      }
+      return;
+    }
+
+    if (current.endsWith(".swift")) {
+      results.push(current);
+    }
+  }
+
+  visit(root);
+  return results;
+}
+
+function lineNumber(source, index) {
+  return source.slice(0, index).split("\n").length;
+}
+
+function retiredReason(value) {
+  if (retiredExactVisibleLabels.has(value)) {
+    return `exact retired label "${value}"`;
+  }
+
+  const phrase = retiredVisiblePhrases.find((retired) => value.includes(retired));
+  if (phrase) {
+    return `retired phrase "${phrase}"`;
+  }
+
+  return null;
+}
+
+function auditFile(filePath) {
+  const source = fs.readFileSync(filePath, "utf8");
+  const findings = [];
+
+  for (const pattern of visibleLiteralPatterns) {
+    pattern.lastIndex = 0;
+    let match;
+    while ((match = pattern.exec(source)) !== null) {
+      const value = match[1];
+      const reason = retiredReason(value);
+      if (!reason) {
+        continue;
+      }
+
+      findings.push({
+        filePath,
+        line: lineNumber(source, match.index),
+        value,
+        reason,
+      });
+    }
+  }
+
+  return findings;
+}
+
+function auditVisibleProductLanguage(root = defaultRoot) {
+  return swiftFiles(root).flatMap(auditFile);
+}
+
+function main() {
+  const args = parseArgs(process.argv);
+  if (args.help) {
+    console.log("Usage: node native-ios/scripts/audit-visible-product-language.js [--root path]");
+    return 0;
+  }
+
+  const findings = auditVisibleProductLanguage(args.root);
+  if (findings.length === 0) {
+    console.log("Visible product language audit passed: no retired visible labels found.");
+    return 0;
+  }
+
+  console.log(`Visible product language audit failed: ${findings.length} finding(s).`);
+  for (const finding of findings) {
+    const relative = path.relative(repoRoot, finding.filePath);
+    console.log(`${relative}:${finding.line}: ${finding.reason}: ${finding.value}`);
+  }
+  return 1;
+}
+
+if (require.main === module) {
+  try {
+    process.exitCode = main();
+  } catch (error) {
+    console.error(error.message);
+    process.exitCode = 2;
+  }
+}
+
+module.exports = {
+  auditVisibleProductLanguage,
+  retiredReason,
+};
+
