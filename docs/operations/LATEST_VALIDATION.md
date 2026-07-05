@@ -19,9 +19,10 @@ Fresh evidence from the 2026-07-05 `feature/paywall` StoreKit-readiness worker:
 - cached entitlement state is now expiration-aware, so expired cached subscriptions should not continue unlocking premium access
 - placeholder paywall copy was removed from the native paywall surface
 - `--disable-subscription-ui-test-bypass` was added for subscription gate UI coverage
-- `git diff --check`, native-only guard, StoreKit config sanity, simulator build, simulator install, and forced-paywall launch proof passed in the worker lane
-- current worker report: `docs/task-results/parallel-goals-2026-07-05/paywall-storekit-report.md`
-- remaining status is `FIX_FIRST`: local XCTest StoreKit harness stalled before producing meaningful assertion counts, and real purchase/restore/relaunch/gating still need App Store Connect or StoreKit-session proof
+- the hosted unit-test harness blocker was fixed by detecting the real simulator test-host signal, `XCTestBundlePath=PlugIns/SpeakLocalNativeTests.xctest`, and skipping the app-level subscription gate only for hosted unit-test launches
+- `git diff --check`, native-only guard, StoreKit config sanity, focused subscription unit tests, focused subscription UI tests, and forced-paywall launch/screenshot proof passed in the worker lane
+- current worker report: `docs/task-results/parallel-goals-2026-07-05/three-hour-push/paywall-storekit-report.md`
+- remaining status is `READY_FOR_JOJO_TEST` for simulator/paywall-branch review and App Store Connect/TestFlight setup; real purchase, restore, relaunch entitlement persistence, and granular starter/free-vs-premium in-app route gates still need external proof or product decisions
 
 No physical iPhone build was installed from this branch in this pass.
 

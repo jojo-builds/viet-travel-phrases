@@ -1,0 +1,137 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -configuration Debug -destination "platform=iOS Simulator,id=D4CFA5E1-CB6E-4D54-899F-D85E5C0CCB6F" -derivedDataPath build/DerivedData-Paywall-Manual CODE_SIGNING_ALLOWED=NO "-only-testing:SpeakLocalNativeUITests/SubscriptionGateUITests" test
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (3 targets)
+    Target 'SpeakLocalNativeUITests' in project 'SpeakLocalNative'
+        ➜ Explicit dependency on target 'SpeakLocalNative' in project 'SpeakLocalNative'
+    Target 'SpeakLocalNativeTests' in project 'SpeakLocalNative'
+        ➜ Explicit dependency on target 'SpeakLocalNative' in project 'SpeakLocalNative'
+    Target 'SpeakLocalNative' in project 'SpeakLocalNative' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk /Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/paywall/native-ios/build/DerivedData-Paywall-Manual/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-6cfe768891a92b912361537c460fe42b.sdkstatcache
+    cd /Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/paywall/native-ios/SpeakLocalNative.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -o /Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/paywall/native-ios/build/DerivedData-Paywall-Manual/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-6cfe768891a92b912361537c460fe42b.sdkstatcache
+
+2026-07-05 19:20:05.781615+0800 SpeakLocalNativeUITests-Runner[80932:250916] [Default] Running tests...
+objc[80932]: Class UIAccessibilityLoaderWebShared is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x106a34310) and /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x1062b4398). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-07-05 19:20:10.062.
+Test Suite 'SpeakLocalNativeUITests.xctest' started at 2026-07-05 19:20:10.063.
+Test Suite 'SubscriptionGateUITests' started at 2026-07-05 19:20:10.063.
+Test Case '-[SpeakLocalNativeUITests.SubscriptionGateUITests testCompletedOnboardingRelaunchesToPaywallWithoutDebugBypass]' started.
+    t =     0.00s Start Test at 2026-07-05 19:20:10.065
+    t =     0.27s Set Up
+    t =     0.29s Open app.speaklocal.vietnam.native
+    t =     0.29s     Launch app.speaklocal.vietnam.native
+2026-07-05 19:20:10.481 xcodebuild[80829:250580] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-07-05 19:20:10.481 xcodebuild[80829:250580] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     4.79s         Setting up automation session
+    t =     6.01s         Wait for app.speaklocal.vietnam.native to idle
+    t =     7.31s Waiting 5.0s for "SubscriptionOnboardingView" Any to exist
+    t =     8.38s     Checking `Expect predicate `existsNoRetry == 1` for object "SubscriptionOnboardingView" Any`
+    t =     8.38s         Checking existence of `"SubscriptionOnboardingView" Any`
+    t =     8.43s Tap "Continue" Button
+    t =     8.43s     Wait for app.speaklocal.vietnam.native to idle
+    t =     8.43s     Find the "Continue" Button
+    t =     8.44s     Check for interrupting elements affecting "SubscriptionOnboardingView" Button
+    t =     8.46s     Synthesize event
+    t =     8.86s     Wait for app.speaklocal.vietnam.native to idle
+    t =     8.87s Waiting 5.0s for "SubscriptionPaywallView" Any to exist
+    t =     9.94s     Checking `Expect predicate `existsNoRetry == 1` for object "SubscriptionPaywallView" Any`
+    t =     9.94s         Checking existence of `"SubscriptionPaywallView" Any`
+    t =     9.96s Terminate app.speaklocal.vietnam.native:80995
+    t =    11.05s Open app.speaklocal.vietnam.native
+2026-07-05 19:20:21.121 xcodebuild[80829:250580] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-07-05 19:20:21.121 xcodebuild[80829:250580] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =    11.05s     Launch app.speaklocal.vietnam.native
+    t =    11.27s         Setting up automation session
+    t =    12.24s         Wait for app.speaklocal.vietnam.native to idle
+    t =    13.55s Waiting 5.0s for "SubscriptionPaywallView" Any to exist
+    t =    14.61s     Checking `Expect predicate `existsNoRetry == 1` for object "SubscriptionPaywallView" Any`
+    t =    14.61s         Checking existence of `"SubscriptionPaywallView" Any`
+    t =    14.65s Checking existence of `"SubscriptionOnboardingView" Any`
+    t =    14.67s Tear Down
+Test Case '-[SpeakLocalNativeUITests.SubscriptionGateUITests testCompletedOnboardingRelaunchesToPaywallWithoutDebugBypass]' passed (14.909 seconds).
+Test Case '-[SpeakLocalNativeUITests.SubscriptionGateUITests testForceSubscriptionOnboardingShowsPlaceholderFlow]' started.
+    t =     0.00s Start Test at 2026-07-05 19:20:24.974
+    t =     0.01s Set Up
+    t =     0.01s Open app.speaklocal.vietnam.native
+    t =     0.01s     Launch app.speaklocal.vietnam.native
+    t =     0.01s         Terminate app.speaklocal.vietnam.native:81019
+2026-07-05 19:20:26.075 xcodebuild[80829:250580] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-07-05 19:20:26.075 xcodebuild[80829:250580] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     1.32s         Setting up automation session
+    t =     2.17s         Wait for app.speaklocal.vietnam.native to idle
+    t =     3.39s Waiting 5.0s for "SubscriptionOnboardingView" Any to exist
+    t =     4.45s     Checking `Expect predicate `existsNoRetry == 1` for object "SubscriptionOnboardingView" Any`
+    t =     4.45s         Checking existence of `"SubscriptionOnboardingView" Any`
+    t =     4.49s Checking existence of `"Try SpeakLocal Vietnam" StaticText`
+    t =     4.49s Tear Down
+Test Case '-[SpeakLocalNativeUITests.SubscriptionGateUITests testForceSubscriptionOnboardingShowsPlaceholderFlow]' passed (4.708 seconds).
+Test Case '-[SpeakLocalNativeUITests.SubscriptionGateUITests testForceSubscriptionPaywallShowsAppleNativePlaceholder]' started.
+    t =     0.00s Start Test at 2026-07-05 19:20:29.683
+    t =     0.02s Set Up
+    t =     0.02s Open app.speaklocal.vietnam.native
+    t =     0.02s     Launch app.speaklocal.vietnam.native
+    t =     0.02s         Terminate app.speaklocal.vietnam.native:81061
+2026-07-05 19:20:30.792 xcodebuild[80829:250580] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-07-05 19:20:30.792 xcodebuild[80829:250580] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     1.32s         Setting up automation session
+    t =     1.82s         Wait for app.speaklocal.vietnam.native to idle
+    t =     3.01s Waiting 5.0s for "SubscriptionPaywallView" Any to exist
+    t =     4.07s     Checking `Expect predicate `existsNoRetry == 1` for object "SubscriptionPaywallView" Any`
+    t =     4.07s         Checking existence of `"SubscriptionPaywallView" Any`
+    t =     4.11s Checking existence of `"Start your 7-day free trial" StaticText`
+    t =     4.12s Checking existence of `"Full Vietnam companion" StaticText`
+    t =     4.13s Checking existence of `"Restore" Button`
+    t =     4.13s Tear Down
+Test Case '-[SpeakLocalNativeUITests.SubscriptionGateUITests testForceSubscriptionPaywallShowsAppleNativePlaceholder]' passed (4.362 seconds).
+Test Case '-[SpeakLocalNativeUITests.SubscriptionGateUITests testSubscriptionBypassLaunchesMainApp]' started.
+    t =     0.00s Start Test at 2026-07-05 19:20:34.046
+    t =     0.01s Set Up
+    t =     0.02s Open app.speaklocal.vietnam.native
+    t =     0.02s     Launch app.speaklocal.vietnam.native
+    t =     0.02s         Terminate app.speaklocal.vietnam.native:81340
+2026-07-05 19:20:35.151 xcodebuild[80829:250580] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-07-05 19:20:35.151 xcodebuild[80829:250580] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     1.31s         Setting up automation session
+    t =     1.83s         Wait for app.speaklocal.vietnam.native to idle
+    t =    61.84s             App event loop idle notification not received, will attempt to continue.
+    t =    62.86s Wait for app.speaklocal.vietnam.native to become Running Foreground
+    t =    62.86s Tear Down
+Test Case '-[SpeakLocalNativeUITests.SubscriptionGateUITests testSubscriptionBypassLaunchesMainApp]' passed (63.094 seconds).
+Test Suite 'SubscriptionGateUITests' passed at 2026-07-05 19:21:37.140.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 87.073 (87.077) seconds
+Test Suite 'SpeakLocalNativeUITests.xctest' passed at 2026-07-05 19:21:37.140.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 87.073 (87.077) seconds
+Test Suite 'Selected tests' passed at 2026-07-05 19:21:37.141.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 87.073 (87.079) seconds
+2026-07-05 19:21:37.486 xcodebuild[80829:250580] [MT] IDETestOperationsObserverDebug: 92.690 elapsed -- Testing started completed.
+2026-07-05 19:21:37.486 xcodebuild[80829:250580] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-07-05 19:21:37.486 xcodebuild[80829:250580] [MT] IDETestOperationsObserverDebug: 92.690 sec, +92.690 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/jojolim/Developer/products/speaklocal/app-family/.worktrees/paywall/native-ios/build/DerivedData-Paywall-Manual/Logs/Test/Test-SpeakLocalNative-2026.07.05_19-20-04-+0800.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started

@@ -17,18 +17,24 @@ struct AccessGateView: View {
 
     var body: some View {
         Group {
-            switch destination {
-            case .app:
-                AppShellView()
-            case .onboarding:
-                SubscriptionOnboardingView {
-                    hasCompletedOnboarding = true
+            if isHostedUnitTestHost {
+                Color.clear
+                    .accessibilityIdentifier("HostedUnitTestHostView")
+            } else {
+                switch destination {
+                case .app:
+                    AppShellView()
+                case .onboarding:
+                    SubscriptionOnboardingView {
+                        hasCompletedOnboarding = true
+                    }
+                case .paywall:
+                    SubscriptionPaywallView(store: subscriptionStore)
                 }
-            case .paywall:
-                SubscriptionPaywallView(store: subscriptionStore)
             }
         }
         .task {
+            guard !isHostedUnitTestHost else { return }
             applyLaunchResetsIfNeeded()
             await subscriptionStore.start()
         }
@@ -69,6 +75,10 @@ struct AccessGateView: View {
         #endif
     }
 
+    private var isHostedUnitTestHost: Bool {
+        SubscriptionTestEnvironment.isRunningHostedUnitTests(launchEnvironment)
+    }
+
     private var hasAnyForcedSubscriptionState: Bool {
         hasLaunchArgument("--force-subscription-onboarding") ||
             hasLaunchArgument("--force-subscription-paywall")
@@ -103,10 +113,11 @@ enum SubscriptionTestEnvironment {
             environment["XCInjectBundleInto"] != nil
     }
 
-    private static func isRunningHostedUnitTests(_ environment: [String: String]) -> Bool {
+    static func isRunningHostedUnitTests(_ environment: [String: String]) -> Bool {
         let testHints = [
             environment["XCTestConfigurationFilePath"],
             environment["XCInjectBundleInto"],
+            environment["XCTestBundlePath"],
         ].compactMap { $0 }
 
         return testHints.contains { hint in

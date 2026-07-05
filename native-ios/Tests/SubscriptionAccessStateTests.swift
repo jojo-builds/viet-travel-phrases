@@ -127,6 +127,16 @@ final class SubscriptionAccessStateTests: XCTestCase {
         XCTAssertFalse(SubscriptionTestEnvironment.isRunningUITests(environment))
     }
 
+    func testHostedUnitTestEnvironmentIsDetectedForAppHostBypass() {
+        let environment = [
+            "XCInjectBundleInto": "unused",
+            "XCTestBundlePath": "PlugIns/SpeakLocalNativeTests.xctest",
+            "XCTestConfigurationFilePath": "",
+        ]
+
+        XCTAssertTrue(SubscriptionTestEnvironment.isRunningHostedUnitTests(environment))
+    }
+
     func testUITestEnvironmentEnablesDebugBypass() {
         let environment = [
             "XCTestConfigurationFilePath": "/tmp/SpeakLocalNativeUITests.xctestconfiguration",
