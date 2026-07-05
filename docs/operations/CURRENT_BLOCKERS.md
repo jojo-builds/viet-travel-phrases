@@ -1,6 +1,6 @@
 # Current Blockers
 
-Last updated: 2026-07-05 (Asia/Manila local)
+Last updated: 2026-07-06 (Asia/Manila local)
 Authority lane: live app operational truth
 
 Use this doc for blocker state only. Use `TESTING_RUNBOOK.md` for native validation commands.
@@ -13,9 +13,9 @@ Use this doc for blocker state only. Use `TESTING_RUNBOOK.md` for native validat
    - If Jojo ships the current non-paywall native app payload, this is not a blocker for that non-paywall release.
 
 2. Exact-current physical iPhone launch proof is pending for the latest `main` checkout.
-   - Latest app-code payload is now `b93edb9a6` after the eight-hour front-end/product-language follow-up.
-   - Current app-code payload `b93edb9a6` built and installed successfully on Jojo's active physical iPhone.
-   - Launch was blocked only because the phone was locked; simulator focused validation succeeded for the same app-code payload.
+   - Latest app-code payload is now `521cdf883` after the eight-hour front-end/product-language follow-up.
+   - Current app-code payload `521cdf883` built and installed successfully on Jojo's active physical iPhone.
+   - Launch was blocked only because the phone was locked; latest simulator route-scrolling product-language validation succeeded for the same app-code payload.
    - Repo signing files stayed clean after the physical build/install attempt.
    - Unlock Jojo's active iPhone and tap SpeakLocal, or rerun the launch step from current `main`, to close exact-current physical launch proof.
 
