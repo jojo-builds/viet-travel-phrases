@@ -14,10 +14,10 @@ Use this doc for blocker state only. Use `TESTING_RUNBOOK.md` for native validat
 
 2. Exact-current physical iPhone launch proof is pending for the latest `main` checkout.
    - Latest app-code payload is now `b93edb9a6` after the eight-hour front-end/product-language follow-up.
-   - The most recent nearby physical-phone proof built and installed app-code commit `0a7fb4d50` on Jojo's active physical iPhone after the root photo-backdrop immersive chrome fix.
-   - Launch for that nearby payload was blocked only because the phone was locked; simulator focused validation succeeded for the same app-code payload.
+   - Current app-code payload `b93edb9a6` built and installed successfully on Jojo's active physical iPhone.
+   - Launch was blocked only because the phone was locked; simulator focused validation succeeded for the same app-code payload.
    - Repo signing files stayed clean after the physical build/install attempt.
-   - Rerun `speaklocal-ios-device-build` from current `main` once Jojo's active iPhone is unlocked.
+   - Unlock Jojo's active iPhone and tap SpeakLocal, or rerun the launch step from current `main`, to close exact-current physical launch proof.
 
 3. Mixed historical docs may still mention Expo/EAS as archive context.
    - Active implementation authority now says native iOS only.
