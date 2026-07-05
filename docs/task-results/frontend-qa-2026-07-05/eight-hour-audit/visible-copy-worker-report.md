@@ -106,3 +106,9 @@ Audit coverage applied in current working tree:
 ## Recommendation
 
 Visible retired-label cleanup is repaired in the current working tree: the audit command passes, the old Browse label is fixed, local greeting card/scenario titles are Practice-safe, the Practice thread/completion strings no longer say `MESSAGES` or `Conversation complete`, and the `Conversation break` accessibility fallback is now `Practice beat` with audit coverage.
+
+## Orchestrator Semantic-Copy Follow-Up
+
+After the broad current-main sweeps, a second semantic scan found one data-backed copy leak outside direct SwiftUI labels: the Da Nang terminal SIM proof said `hotel messages`. That now says `hotel check-in details`. The Browse `Hello basics` subtitle was also softened from `Simple ways to start conversations.` to `Simple ways to start speaking.`
+
+The audit script now scans source-backed retired phrases as well as direct `Text` / `Label` / `Button` / accessibility literals. Validation passed with `node native-ios/scripts/audit-visible-product-language.js`, `node --test native-ios/scripts/audit-visible-product-language.test.js`, exact stale-term `rg`, `git diff --check`, and `AppChromeTests/testBrowseTopLevelGreetingCardsHaveDistinctJobs`.

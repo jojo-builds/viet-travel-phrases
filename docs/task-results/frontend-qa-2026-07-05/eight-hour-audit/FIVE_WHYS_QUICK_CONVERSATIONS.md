@@ -66,3 +66,10 @@ Additional harness-prevention follow-up on 2026-07-06:
 - Exact stale-term scan now finds no `openDock("Messages")`, `case "Messages"`, `Hotel Hello`, `Respectful Hello`, or `Quick conversations` references in `native-ios/UITests` or `native-ios/Tests`.
 - The visible-language audit now blocks message-inbox affordances that survived inside scenario practice: `Unread`, `Mark Unread`, and `Open thread`. Current app copy uses `Ready to practice`, `Mark for practice`, and `Start practice`.
 - the visible-language audit now catches case variants of exact retired labels, `Conversation complete`, and `Conversation break` accessibility fallbacks
+
+Additional data-backed copy follow-up on 2026-07-06:
+- A later semantic scan found `Useful before pickup and hotel messages.` in the Da Nang airport terminal SIM-card proof. This was not a direct SwiftUI `Text("...")` literal, so the first visible-language audit missed it.
+- That copy now reads `Useful before pickup and hotel check-in details.`
+- The Browse `Hello basics` subtitle now reads `Simple ways to start speaking.` instead of leaning on the old conversation framing.
+- The audit now scans source-backed retired phrases as well as direct SwiftUI labels, while keeping legitimate phrase-teaching copy such as `respectful hello` allowed.
+- Fresh validation passed: `node native-ios/scripts/audit-visible-product-language.js`, `node --test native-ios/scripts/audit-visible-product-language.test.js`, exact stale-term `rg` scan, `git diff --check`, and `AppChromeTests/testBrowseTopLevelGreetingCardsHaveDistinctJobs`.

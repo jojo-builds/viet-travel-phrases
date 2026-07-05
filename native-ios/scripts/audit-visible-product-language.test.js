@@ -28,7 +28,8 @@ test("visible product language audit catches retired Messages labels in Swift UI
       "      Color.clear.accessibilityLabel(\"Unread\")",
       "      Label(\"Mark Unread\", systemImage: \"circle.fill\")",
       "      Label(\"Open thread\", systemImage: \"text.bubble.fill\")",
-      "      Text(\"Simple ways to start conversations.\")",
+      "      Text(\"Simple ways to start speaking.\")",
+      "      let proof = \"Useful before pickup and hotel messages.\"",
       "    }",
       "  }",
       "}",
@@ -50,5 +51,6 @@ test("visible product language audit catches retired Messages labels in Swift UI
   assert.match(result.stdout, /Unread/);
   assert.match(result.stdout, /Mark Unread/);
   assert.match(result.stdout, /Open thread/);
-  assert.doesNotMatch(result.stdout, /Simple ways to start conversations/);
+  assert.match(result.stdout, /hotel messages/);
+  assert.doesNotMatch(result.stdout, /Simple ways to start speaking/);
 });

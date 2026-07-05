@@ -3640,7 +3640,7 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(localHellos.title, "Respectful greetings")
         XCTAssertEqual(localHellos.subtitle, "Choose the right greeting for who you are speaking to")
         XCTAssertEqual(helloBasics.title, "Hello basics")
-        XCTAssertEqual(helloBasics.subtitle, "Simple ways to start conversations.")
+        XCTAssertEqual(helloBasics.subtitle, "Simple ways to start speaking.")
     }
 
     func testBrowseSearchDestinationsUseCanonicalCityIDs() {

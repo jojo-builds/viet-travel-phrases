@@ -1070,7 +1070,7 @@ final class BrowseSearchUITests: XCTestCase {
     func testCaptureRepresentativeHeroImagesForProductionReview() {
         let pages: [(label: String, arguments: [String], title: String, requiredText: String)] = [
             ("saigon-city", ["--browse-city", "hcmc"], "Saigon", "Browse by"),
-            ("greetings-category", ["--browse-category", "greetings"], "Greetings", "Simple ways to start conversations."),
+            ("greetings-category", ["--browse-category", "greetings"], "Greetings", "Simple ways to start speaking."),
             ("ben-thanh-market", ["--detail-page", "viet-family-city-hcmc-place-ben-thanh-market"], "Chợ Bến Thành", "The First Market Name To Know"),
             ("anan-saigon", ["--detail-page", "viet-family-city-hcmc-place-anan-saigon"], "Anăn Sài Gòn", "Modern Vietnamese Inside Market Streets"),
         ]

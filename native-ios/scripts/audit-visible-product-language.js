@@ -25,6 +25,11 @@ const retiredExactVisibleLabels = [
   "Unread",
 ];
 
+const retiredSourceBackedPhrases = [
+  ...retiredVisiblePhrases,
+  "hotel messages",
+];
+
 const visibleLiteralPatterns = [
   /\bText\s*\(\s*"([^"]+)"/g,
   /\bLabel\s*\(\s*"([^"]+)"/g,
@@ -98,9 +103,37 @@ function retiredReason(value) {
   return null;
 }
 
+function sourceBackedRetiredReason(value) {
+  const phrase = retiredSourceBackedPhrases.find((retired) => value.includes(retired));
+  if (phrase) {
+    return `source-backed retired phrase "${phrase}"`;
+  }
+
+  return null;
+}
+
+function auditSourceBackedCopy(filePath, source) {
+  const findings = [];
+  for (const phrase of retiredSourceBackedPhrases) {
+    let searchIndex = source.indexOf(phrase);
+
+    while (searchIndex !== -1) {
+      findings.push({
+        filePath,
+        line: lineNumber(source, searchIndex),
+        value: source.slice(searchIndex, searchIndex + phrase.length),
+        reason: `source-backed retired phrase "${phrase}"`,
+      });
+      searchIndex = source.indexOf(phrase, searchIndex + phrase.length);
+    }
+  }
+
+  return findings;
+}
+
 function auditFile(filePath) {
   const source = fs.readFileSync(filePath, "utf8");
-  const findings = [];
+  const findings = auditSourceBackedCopy(filePath, source);
 
   for (const pattern of visibleLiteralPatterns) {
     pattern.lastIndex = 0;

@@ -685,7 +685,7 @@ enum BrowseSearchDestinations {
         BrowseDestination(
             id: "greetings",
             title: "Hello basics",
-            subtitle: "Simple ways to start conversations.",
+            subtitle: "Simple ways to start speaking.",
             categoryIDs: ["greetings", "local-greetings"],
             symbolName: "text.bubble.fill",
             tintName: .green,
