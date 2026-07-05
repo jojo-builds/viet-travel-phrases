@@ -492,11 +492,11 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         case .emergencyCallHelp:
             return "Call for Help"
         case .localGreetingMarket:
-            return "Market Hello"
+            return "Market greeting"
         case .localGreetingHotel:
-            return "Hotel Hello"
+            return "Hotel greeting"
         case .localGreetingRespect:
-            return "Respectful Hello"
+            return "Respectful greeting"
         case .localThanksSorry:
             return "Thanks & Sorry"
         case .localSmallTalk:

@@ -278,7 +278,7 @@ struct BrowseCollectionShelf: Identifiable, Equatable {
 }
 
 struct BrowseCollectionDescriptor: Identifiable, Equatable {
-    static let messageSectionDisplayTitle = "Quick conversations"
+    static let messageSectionDisplayTitle = "Practice moments"
 
     let route: BrowseCollectionRoute
     let title: String

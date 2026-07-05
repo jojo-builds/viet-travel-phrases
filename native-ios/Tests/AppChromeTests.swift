@@ -3672,12 +3672,12 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(hotel.subcategories.isEmpty)
         XCTAssertFalse(hotel.starterItems.isEmpty)
         XCTAssertEqual(hotel.messageSectionTitle, "Hotel")
-        XCTAssertEqual(hotel.browseMessageSectionTitle, "Quick conversations")
+        XCTAssertEqual(hotel.browseMessageSectionTitle, "Practice moments")
         XCTAssertEqual(hotel.messageScenarioIDs, [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout, .hotelRoomSupplies])
         XCTAssertEqual(hotel.mastheadImageName, "HeroCategoryHotel")
 
         XCTAssertEqual(shopping.messageSectionTitle, "Shopping")
-        XCTAssertEqual(shopping.browseMessageSectionTitle, "Quick conversations")
+        XCTAssertEqual(shopping.browseMessageSectionTitle, "Practice moments")
         XCTAssertEqual(shopping.messageScenarioIDs, [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard, .shoppingMarketProduce])
 
         XCTAssertEqual(hanoi.route, .city("hanoi"))

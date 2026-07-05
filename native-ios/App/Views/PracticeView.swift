@@ -1312,7 +1312,7 @@ private struct PracticeMessagesHubSurface: View {
 
 private struct PracticeMessagesHeader: View {
     var body: some View {
-        Text("Messages")
+        Text("Scenario practice")
             .font(.system(size: 32, weight: .bold))
             .foregroundStyle(.primary)
             .frame(maxWidth: .infinity)
@@ -2507,7 +2507,7 @@ private struct PracticeScenarioModeList: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Messages")
+            Text("Scenario practice")
                 .font(.subheadline.weight(.bold))
                 .foregroundStyle(.secondary)
 

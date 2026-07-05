@@ -93,13 +93,13 @@ struct PracticeMessagesThreadHost: View {
     }
 
     private var threadAccessibilityMarker: some View {
-        Text("Messages thread")
+        Text("Practice scenario")
             .font(.caption2)
             .frame(width: 1, height: 1)
             .opacity(0.001)
             .allowsHitTesting(false)
             .accessibilityIdentifier("Practice.Messages.Thread")
-            .accessibilityLabel("Messages thread")
+            .accessibilityLabel("Practice scenario")
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
 
@@ -225,7 +225,7 @@ private struct PracticeMessagesThreadBackButton: View {
         .contentShape(RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous))
         .onTapGesture(perform: action)
         .accessibilityElement()
-        .accessibilityLabel("Back to Messages")
+        .accessibilityLabel("Back to Practice")
         .accessibilityIdentifier("Practice.Messages.Back")
         .accessibilityAddTraits(.isButton)
     }
@@ -628,7 +628,7 @@ struct PracticeStoryCompletionSurface: View {
 
             VStack(spacing: 10) {
                 Button(action: onPracticeAnother) {
-                    Label("Restart conversation", systemImage: "arrow.clockwise")
+                    Label("Restart practice", systemImage: "arrow.clockwise")
                         .font(.headline.weight(.bold))
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 15)
@@ -638,7 +638,7 @@ struct PracticeStoryCompletionSurface: View {
                 .background(summary.scenario.id.tint.color, in: Capsule())
 
                 Button(action: onBackToPractice) {
-                    Label("Back to Messages", systemImage: "text.bubble.fill")
+                    Label("Back to Practice", systemImage: "rectangle.grid.2x2.fill")
                         .font(.subheadline.weight(.bold))
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 13)
