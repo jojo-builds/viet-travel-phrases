@@ -1813,7 +1813,8 @@ final class PhrasePageFixtureTests: XCTestCase {
                         playCount += 1
                     }
                 }
-            }
+            },
+            minimumReplayInterval: 0
         )
 
         for _ in 0..<10 {
@@ -1822,6 +1823,38 @@ final class PhrasePageFixtureTests: XCTestCase {
 
         XCTAssertEqual(makePlayerCount, 1)
         XCTAssertEqual(playCount, 10)
+    }
+
+    func testAudioPlaybackServiceCoalescesRapidSameClipTaps() throws {
+        let manifest = try XCTUnwrap(AudioAssetManifest.main)
+        var events: [String] = []
+        var now: TimeInterval = 100
+
+        let service = AudioPlaybackService(
+            manifest: manifest,
+            configureAudioSession: {},
+            makePlayer: { _ in
+                RecordingAudioPlayer { event in
+                    events.append(event)
+                }
+            },
+            minimumReplayInterval: 0.18,
+            currentTime: { now }
+        )
+
+        XCTAssertTrue(service.play(audioKey: "polite-1"))
+        now += 0.12
+        XCTAssertTrue(service.play(audioKey: "polite-1"))
+        now += 0.04
+        XCTAssertTrue(service.play(audioKey: "polite-1"))
+        XCTAssertEqual(events, ["prepare", "play"])
+
+        now += 0.18
+        XCTAssertTrue(service.play(audioKey: "polite-1"))
+        XCTAssertEqual(events, [
+            "prepare", "play",
+            "stop", "seek-0", "prepare", "play",
+        ])
     }
 
     func testAudioPlaybackServiceDoesNotCacheFailedFirstStart() throws {
@@ -1840,7 +1873,8 @@ final class PhrasePageFixtureTests: XCTestCase {
                 player.playResult = players.isEmpty ? false : true
                 players.append(player)
                 return player
-            }
+            },
+            minimumReplayInterval: 0
         )
 
         XCTAssertFalse(service.play(audioKey: "polite-1"))
@@ -1864,7 +1898,8 @@ final class PhrasePageFixtureTests: XCTestCase {
                 }
                 players.append(player)
                 return player
-            }
+            },
+            minimumReplayInterval: 0
         )
 
         XCTAssertTrue(service.play(audioKey: "polite-1"))

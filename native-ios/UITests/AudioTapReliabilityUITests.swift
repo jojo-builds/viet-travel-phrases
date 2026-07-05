@@ -166,7 +166,7 @@ final class AudioTapReliabilityUITests: XCTestCase {
     }
 
     private func systemTabHost(in app: XCUIApplication) -> XCUIElement {
-        app.descendants(matching: .any)["Tab Bar"]
+        systemTab("Home", in: app)
     }
 
     private func savedRootExists(in app: XCUIApplication) -> Bool {
