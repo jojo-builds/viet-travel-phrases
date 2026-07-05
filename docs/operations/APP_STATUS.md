@@ -33,8 +33,8 @@ Do not use `/Users/jojolim/Documents/New project` or a resurrected `app/` folder
 - Local validation should use the native commands in `docs/operations/TESTING_RUNBOOK.md`.
 - Physical iPhone installs should normally come from `main` using `speaklocal-ios-device-build`.
 - Feature branches should use dedicated simulator instances unless Jojo explicitly asks to install that branch on his phone.
-- Latest exact-current physical-phone proof is pending for current `main` commit `afaeb74b0`. The most recent nearby phone proof built and installed app-code commit `0a7fb4d50`; launch was blocked because the phone was locked.
-- Current app-code payload is the 2026-07-05 non-paywall launch-readiness checkpoint plus route/back, rapid audio tap, active-playback hardening, frontend QA proof receipts, Practice-era copy cleanup, full V2.2 render proof receipts, and the semantic product-language follow-up through `afaeb74b0`.
+- Latest exact-current physical-phone proof is pending for current app-code payload `b93edb9a6`. The most recent nearby phone proof built and installed app-code commit `0a7fb4d50`; launch was blocked because the phone was locked.
+- Current app-code payload is the 2026-07-05 non-paywall launch-readiness checkpoint plus route/back, rapid audio tap, active-playback hardening, frontend QA proof receipts, Practice-era copy cleanup, full V2.2 render proof receipts, semantic product-language follow-up, and Practice scenario test-identifier cleanup through `b93edb9a6`.
 - The 2026-06-16 post-merge validation passed native guards, Viet content/resource validators, focused simulator unit tests, targeted UI tests, and physical iPhone build/install/launch.
 - Jojo's previous test iPhone is now away for Apple service. The new active iPhone was visible to device tooling on 2026-07-04, Developer Mode is enabled, and Xcode sees it as a valid iOS destination.
 - After Xcode account sign-in, Apple Program License Agreement acceptance, and automatic provisioning refresh, the 2026-07-04 current-`main` debug build, install, and launch all passed on the new phone.
