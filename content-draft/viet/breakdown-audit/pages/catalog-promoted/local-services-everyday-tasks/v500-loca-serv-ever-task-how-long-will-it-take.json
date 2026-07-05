@@ -22,13 +22,13 @@
       "id": "chunk-1",
       "vietnamese": "Sẽ mất",
       "english": "will take",
-      "keepTogetherReason": "fixed verb phrase"
+      "keepTogetherReason": "will-take phrase"
     },
     {
       "id": "chunk-2",
       "vietnamese": "bao lâu?",
-      "english": "how long",
-      "keepTogetherReason": "fixed duration question"
+      "english": "how long?",
+      "keepTogetherReason": "how-long phrase"
     },
     {
       "id": "full",

@@ -1,7 +1,7 @@
 {
   "pageID": "viet-phrase-v900-time-date-book-please-write-down-the-time",
-  "phraseText": "Hãy ghi lại thời gian",
-  "englishTitle": "Please write down the time",
+  "phraseText": "Anh/chị ghi giờ giúp tôi được không?",
+  "englishTitle": "Can you write down the time?",
   "reviewStatus": "reviewed",
   "visualReview": {
     "status": "reviewed",
@@ -20,34 +20,33 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hãy",
-      "english": "please do"
+      "vietnamese": "Anh/chị",
+      "english": "you",
+      "keepTogetherReason": "polite address"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "ghi",
-      "english": "write down / record"
+      "vietnamese": "ghi giờ",
+      "english": "write the time",
+      "keepTogetherReason": "write-time phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "lại",
-      "english": "again / back"
+      "vietnamese": "giúp tôi",
+      "english": "help me / for me",
+      "keepTogetherReason": "help-me phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "thời",
-      "english": "temporary / time"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "gian",
-      "english": "time / space"
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",
-      "vietnamese": "Hãy ghi lại thời gian",
-      "english": "Please write down the time",
-      "audioKey": "v900-time-date-book-please-write-down-the-time"
+      "vietnamese": "Anh/chị ghi giờ giúp tôi được không?",
+      "english": "Can you write down the time?",
+      "audioKey": null
     }
   ]
 }

@@ -7,7 +7,7 @@
   "title": "Cho tôi tới đây",
   "englishTitle": "Take me here",
   "pronunciation": "cho toy toy day",
-  "summary": "Cho tôi tới đây means “Take me here”.",
+  "summary": "For showing a driver the exact place you want to go before the ride starts moving.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Cho tôi tới đây when you need \"Take me here\". Use this while showing your destination on your phone. In most ride situations, the destination is the first sentence that matters. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Use this while showing your destination on your phone.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Practice Cho tôi + tới first; the full line keeps the request from sounding chopped up.",
       "breakdown": [
         {
           "id": "taxi-1-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "taxi-1"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Cho tôi tới đây as your first sentence for \"Take me here\". Use this while showing your destination on your phone. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Say Cho tôi tới đây first; let the destination, fare, or ride screen support the reply.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -69,18 +72,21 @@
           "audioKey": "taxi-1"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"Take me here\", Cho tôi tới đây makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Vietnamese addresses, alleys, and entrances can be easy to mishear. The phrase works best with the map already on screen.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Transport, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Cho tôi tới đây once, pause, and watch for the reply. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Expect a nod, fare question, route question, or a closer entrance suggestion.",
       "phrases": [
         {
           "id": "taxi-2",
@@ -113,12 +119,13 @@
           "audioKey": "taxi-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this while showing your destination on your phone. It fits rides, routes, pickup points, and stops, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "body": "Use this before getting in, before the driver pulls away, or when the destination needs to be reset.",
       "phrases": [
         {
           "id": "taxi-5",
@@ -151,13 +158,16 @@
           "audioKey": "taxi-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -195,18 +205,21 @@
           "audioKey": "transport-lost"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "you-may-hear",
-      "title": "You may hear",
+      "title": "You May Hear",
       "body": "A local may answer with: This entrance or the next one?",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover go to District 1, you can stop here, and go this way.",
       "phrases": [
         {
           "id": "taxi-2",
@@ -289,7 +302,8 @@
           "audioKey": "transport-meter"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

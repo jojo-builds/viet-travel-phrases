@@ -7,7 +7,7 @@
   "title": "Tôi bị mất chìa khóa phòng",
   "englishTitle": "I lost my room key",
   "pronunciation": "Toi bi mat chia khoa phong",
-  "summary": "I lost my room key",
+  "summary": "For telling hotel staff you lost the room key or key card.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi bị mất chìa khóa phòng names the problem so staff or a helpful local can act on it. Use it when I lost my room key is the clearest way to explain what changed, went missing, or needs attention."
+      "body": "Use it at reception before giving your room number, passport name, or booking screen."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi bị mất chìa khóa phòng calmly and show the proof if you have it: phone screen, receipt, item, photo, or the place where the issue is happening. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Say it calmly, then show your room number or booking so staff can verify you.",
       "phrases": [
         {
           "id": "v500-prob-help-i-lost-my-room-key",
@@ -42,48 +42,42 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi bị mất means I lost; chìa khóa phòng means room key.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi bị",
-          "english": "I have / got",
-          "audioKey": null
+          "vietnamese": "Tôi bị mất",
+          "english": "I lost",
+          "keepTogetherReason": "lost-item phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "mất chìa khóa",
-          "english": "lost key",
-          "audioKey": null
+          "vietnamese": "chìa khóa phòng",
+          "english": "room key",
+          "keepTogetherReason": "room-key noun"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "phòng",
-          "english": "room",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi bị mất chìa khóa phòng",
           "english": "I lost my room key",
-          "audioKey": null
+          "audioKey": "v500-prob-help-i-lost-my-room-key"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I lost my room key to another problem-solving need.",
+      "body": "The key card and left something behind phrases cover nearby hotel desk problems.",
       "phrases": [
         {
-          "id": "problems-1",
-          "vietnamese": "Tôi bị lạc đường",
-          "english": "I’m lost",
-          "pronunciation": "toy bee lahk doong",
+          "id": "hotel-8",
+          "vietnamese": "Thẻ phòng không mở được",
+          "english": "The key card doesn’t work",
+          "pronunciation": "teh fong khong muh dook",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-problems-1",
-          "audioKey": "problems-1"
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-hotel-8",
+          "audioKey": "hotel-8"
         },
         {
           "id": "problems-4",
@@ -94,33 +88,23 @@
           "tintName": "orange",
           "detailPageID": "viet-phrase-problems-4",
           "audioKey": "problems-4"
-        },
-        {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as soon as the problem is clear enough to name. It is especially useful at a counter or desk where someone can look at the photo, receipt, bag, booking, or phone screen with you."
+      "body": "Good at hotel desks, homestays, apartments, guesthouses, and security counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "Staff may ask for ID or charge a replacement fee. Keep the room number private until you are at the desk."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi bị mất chìa khóa phòng.",
+      "body": "Call the hotel, ask for the manager, make a report, charged twice, and translate for me phrases cover recovery follow-ups.",
       "phrases": [
         {
           "id": "help-need-help-direct",

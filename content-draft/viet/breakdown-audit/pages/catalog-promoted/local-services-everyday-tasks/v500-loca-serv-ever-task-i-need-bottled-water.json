@@ -20,23 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "I need",
+      "keepTogetherReason": "I-need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "nước",
-      "english": "water"
-    },
-    {
-      "vietnamese": "đóng chai",
-      "english": "bottled / sealed in a bottle",
-      "keepTogetherReason": "compound bottled adjective"
+      "vietnamese": "nước đóng chai",
+      "english": "bottled water",
+      "keepTogetherReason": "bottled-water noun"
     },
     {
       "id": "full",

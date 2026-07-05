@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 import SQLite3
 
 enum VietSQLiteLanguagePackTable: String, CaseIterable {
@@ -65,6 +66,21 @@ struct VietSQLitePhraseCatalogSnapshot: Equatable {
     let catalogItems: [PhraseCatalogItem]
 }
 
+enum VietSQLiteRuntimeDiagnostics {
+    private static let logger = Logger(
+        subsystem: "app.speaklocal.vietnam.native",
+        category: "SQLiteRuntime"
+    )
+
+    static func reportFallback(surface: String, reason: String) {
+        logger.error("SQLite fallback for \(surface, privacy: .public): \(reason, privacy: .public)")
+    }
+
+    static func reportFallback(surface: String, error: Error) {
+        reportFallback(surface: surface, reason: String(describing: error))
+    }
+}
+
 private struct VietSQLitePracticeCandidateRow {
     let phraseID: String
     let pageID: String
@@ -105,6 +121,7 @@ enum VietSQLiteLanguagePackRepositoryError: Error, LocalizedError {
     case missingPreviewPhrase(id: String)
     case missingCanonicalPage(id: String)
     case missingPhrase(id: String)
+    case invalidJSONColumn(name: String, value: String)
 
     var errorDescription: String? {
         switch self {
@@ -128,6 +145,8 @@ enum VietSQLiteLanguagePackRepositoryError: Error, LocalizedError {
             return "SQLite canonical phrase page is missing: \(id)"
         case .missingPhrase(let id):
             return "SQLite phrase is missing: \(id)"
+        case .invalidJSONColumn(let name, let value):
+            return "SQLite JSON column \(name) could not be decoded: \(value)"
         }
     }
 }
@@ -302,6 +321,119 @@ final class VietSQLiteLanguagePackRepository {
             scenarioCategories: try loadScenarioCategories(),
             catalogItems: try loadCatalogItems()
         )
+    }
+
+    func loadVietnameseMenuPayload() throws -> VietnameseMenuPayload {
+        VietnameseMenuPayload(
+            helperPhrases: try loadVietnameseMenuHelperPhrases(),
+            items: try loadVietnameseMenuItems()
+        )
+    }
+
+    func loadVietnameseMenuHelperPhrases() throws -> [VietnameseMenuHelperPhraseDefinition] {
+        let sql = """
+        SELECT
+          id,
+          vietnamese,
+          english,
+          pronunciation,
+          audio_key,
+          detail_page_id,
+          audio_status,
+          applies_to_json
+        FROM vietnamese_menu_helper_phrase
+        ORDER BY sort_order, id;
+        """
+
+        return try rows(sql) { statement in
+            VietnameseMenuHelperPhraseDefinition(
+                id: Self.stringColumn(statement, index: 0),
+                vietnamese: Self.stringColumn(statement, index: 1),
+                english: Self.stringColumn(statement, index: 2),
+                pronunciation: Self.stringColumn(statement, index: 3),
+                audioKey: Self.optionalStringColumn(statement, index: 4),
+                detailPageID: Self.optionalStringColumn(statement, index: 5),
+                audioStatus: Self.stringColumn(statement, index: 6),
+                appliesTo: try Self.jsonStringArrayColumn(statement, index: 7, name: "vietnamese_menu_helper_phrase.applies_to_json")
+            )
+        }
+    }
+
+    func loadVietnameseMenuItems() throws -> [VietnameseMenuItem] {
+        let sql = """
+        SELECT
+          item_id,
+          menu_type,
+          category,
+          subcategory,
+          popular,
+          vietnamese_item,
+          english_translation,
+          romanized_no_tones,
+          sound_out,
+          notes,
+          at_a_glance,
+          what_it_is,
+          usually_includes_json,
+          how_to_enjoy,
+          how_locals_order,
+          worth_knowing,
+          regional_association,
+          origin_posture,
+          traveler_caution,
+          good_to_know,
+          common_options_json,
+          quick_say_vietnamese,
+          quick_say_english,
+          quick_say_sound_out,
+          order_line_vietnamese,
+          order_line_english,
+          order_line_pronunciation,
+          order_line_audio_policy,
+          helper_phrase_ids_json,
+          editorial_review_status,
+          editorial_review_reviewed_by,
+          editorial_review_reviewed_at,
+          editorial_review_checks_json,
+          editorial_review_review_note
+        FROM vietnamese_menu_item
+        ORDER BY sort_order, item_id;
+        """
+
+        return try rows(sql) { statement in
+            let orderLine = Self.vietnameseMenuOrderLine(statement: statement)
+            let editorialReview = try Self.vietnameseMenuEditorialReview(statement: statement)
+
+            return VietnameseMenuItem(
+                itemID: Self.stringColumn(statement, index: 0),
+                menuType: Self.stringColumn(statement, index: 1),
+                category: Self.stringColumn(statement, index: 2),
+                subcategory: Self.stringColumn(statement, index: 3),
+                popular: sqlite3_column_int(statement, 4) != 0,
+                vietnameseItem: Self.stringColumn(statement, index: 5),
+                englishTranslation: Self.stringColumn(statement, index: 6),
+                romanizedNoTones: Self.stringColumn(statement, index: 7),
+                soundOut: Self.stringColumn(statement, index: 8),
+                notes: Self.stringColumn(statement, index: 9),
+                atAGlance: Self.stringColumn(statement, index: 10),
+                whatItIs: Self.optionalStringColumn(statement, index: 11),
+                usuallyIncludes: try Self.jsonStringArrayColumn(statement, index: 12, name: "vietnamese_menu_item.usually_includes_json"),
+                howToEnjoy: Self.optionalStringColumn(statement, index: 13),
+                howLocalsOrder: Self.optionalStringColumn(statement, index: 14),
+                worthKnowing: Self.optionalStringColumn(statement, index: 15),
+                regionalAssociation: Self.optionalStringColumn(statement, index: 16),
+                originPosture: Self.optionalStringColumn(statement, index: 17),
+                travelerCaution: Self.optionalStringColumn(statement, index: 18),
+                goodToKnow: Self.stringColumn(statement, index: 19),
+                commonOptions: try Self.jsonStringArrayColumn(statement, index: 20, name: "vietnamese_menu_item.common_options_json"),
+                quickSayVietnamese: Self.stringColumn(statement, index: 21),
+                quickSayEnglish: Self.stringColumn(statement, index: 22),
+                quickSaySoundOut: Self.stringColumn(statement, index: 23),
+                orderLine: orderLine,
+                helperPhraseIDs: try Self.jsonStringArrayColumn(statement, index: 28, name: "vietnamese_menu_item.helper_phrase_ids_json"),
+                editorialReview: editorialReview
+            )
+        }
     }
 
     func loadScenarioCategories() throws -> [PhraseCategory] {
@@ -722,6 +854,10 @@ final class VietSQLiteLanguagePackRepository {
     }
 
     func canonicalPageID(forPageIDOrAlias pageIDOrAlias: String) throws -> String {
+#if DEBUG
+        Self.recordCanonicalPageIDLookupForTesting()
+#endif
+
         let sql = """
         SELECT id
         FROM phrase_page
@@ -842,6 +978,14 @@ final class VietSQLiteLanguagePackRepository {
 
     func loadPhraseDetailPage(pageID: String) throws -> PhraseDetailPage {
         let canonicalPageID = try canonicalPageID(forPageIDOrAlias: pageID)
+        return try loadPhraseDetailPage(canonicalPageID: canonicalPageID, requestedPageID: pageID)
+    }
+
+    func loadCanonicalPhraseDetailPage(pageID canonicalPageID: String) throws -> PhraseDetailPage {
+        try loadPhraseDetailPage(canonicalPageID: canonicalPageID, requestedPageID: canonicalPageID)
+    }
+
+    private func loadPhraseDetailPage(canonicalPageID: String, requestedPageID: String) throws -> PhraseDetailPage {
         let sql = """
         SELECT
           pp.id,
@@ -873,7 +1017,7 @@ final class VietSQLiteLanguagePackRepository {
             try self.bindText(canonicalPageID, to: 1, in: statement, sql: sql)
 
             guard sqlite3_step(statement) == SQLITE_ROW else {
-                throw VietSQLiteLanguagePackRepositoryError.missingCanonicalPage(id: pageID)
+                throw VietSQLiteLanguagePackRepositoryError.missingCanonicalPage(id: requestedPageID)
             }
 
             let pageID = Self.stringColumn(statement, index: 0)
@@ -907,6 +1051,26 @@ final class VietSQLiteLanguagePackRepository {
                 practiceCTALabel: practiceCTALabel,
                 showsCatalogExplore: true
             )
+        }
+    }
+
+    func heroImageName(forPageIDOrAlias pageID: String) throws -> String? {
+        let canonicalPageID = try canonicalPageID(forPageIDOrAlias: pageID)
+        let sql = """
+        SELECT hero_image_name
+        FROM phrase_page
+        WHERE id = ?
+        LIMIT 1;
+        """
+
+        return try withPreparedStatement(sql) { statement in
+            try self.bindText(canonicalPageID, to: 1, in: statement, sql: sql)
+
+            guard sqlite3_step(statement) == SQLITE_ROW else {
+                throw VietSQLiteLanguagePackRepositoryError.missingCanonicalPage(id: pageID)
+            }
+
+            return Self.optionalStringColumn(statement, index: 0)
         }
     }
 
@@ -976,6 +1140,46 @@ final class VietSQLiteLanguagePackRepository {
         }
     }
 
+    func locationRelationPicks(forPageID pageID: String, relationType: String) throws -> [LocationMenuPick] {
+        let canonicalPageID = try canonicalPageID(forPageIDOrAlias: pageID)
+        let afterSectionID = try preferredLocationPicksSectionID(forPageID: canonicalPageID)
+        let sql = """
+        SELECT
+          r.id,
+          pp.id,
+          pp.title,
+          pp.english_title,
+          COALESCE(NULLIF(r.display_label, ''), r.reason, ''),
+          COALESCE(NULLIF(pp.hero_image_name, ''), 'HeroCompactPhraseMasthead'),
+          p.target_text
+        FROM phrase_relation r
+        JOIN phrase_page pp ON pp.id = r.target_id
+        JOIN phrase p ON p.id = pp.phrase_id
+        WHERE r.source_kind = 'phrase_page'
+          AND r.target_kind = 'phrase_page'
+          AND r.source_id = ?
+          AND r.relation_type = ?
+        ORDER BY r.sort_order, pp.title COLLATE NOCASE ASC;
+        """
+
+        return try rows(sql, bind: { statement in
+            try self.bindText(canonicalPageID, to: 1, in: statement, sql: sql)
+            try self.bindText(relationType, to: 2, in: statement, sql: sql)
+        }) { statement in
+            LocationMenuPick(
+                id: Self.stringColumn(statement, index: 0),
+                title: Self.stringColumn(statement, index: 2),
+                subtitle: Self.stringColumn(statement, index: 3),
+                proof: Self.stringColumn(statement, index: 4),
+                imageName: Self.stringColumn(statement, index: 5),
+                detailPageID: Self.stringColumn(statement, index: 1),
+                audioText: Self.stringColumn(statement, index: 6),
+                linkedMenuItemID: nil,
+                afterSectionID: afterSectionID
+            )
+        }
+    }
+
     func visibleAudioUsages(forPageID pageID: String) throws -> [VietSQLiteVisibleAudioUsage] {
         let canonicalPageID = try canonicalPageID(forPageIDOrAlias: pageID)
         let sql = """
@@ -1042,10 +1246,42 @@ final class VietSQLiteLanguagePackRepository {
         "dish",
     ]
 
+    private func preferredLocationPicksSectionID(forPageID pageID: String) throws -> String? {
+        let sql = """
+        SELECT section_key
+        FROM page_section
+        WHERE page_id = ?
+        ORDER BY
+          CASE section_key
+            WHEN 'good-to-know' THEN 0
+            WHEN 'use-it-with' THEN 1
+            WHEN 'place-brief' THEN 2
+            WHEN 'at-glance' THEN 3
+            ELSE 4
+          END,
+          sort_order DESC
+        LIMIT 1;
+        """
+
+        return try rows(sql, bind: { statement in
+            try self.bindText(pageID, to: 1, in: statement, sql: sql)
+        }) { statement in
+            Self.stringColumn(statement, index: 0)
+        }.first
+    }
+
     private func loadSections(
         forPageID pageID: String,
         suppressDerivedPlacePhraseRows: Bool = false
     ) throws -> [PhraseDetailSection] {
+        struct SectionRow {
+            let databaseID: String
+            let sectionKey: String
+            let title: String
+            let body: String
+            let presentation: SectionPresentation
+        }
+
         let sql = """
         SELECT id, section_key, title, body, presentation
         FROM page_section
@@ -1053,33 +1289,50 @@ final class VietSQLiteLanguagePackRepository {
         ORDER BY sort_order;
         """
 
-        return try rows(sql, bind: { statement in
+        let sectionRows = try rows(sql, bind: { statement in
             try self.bindText(pageID, to: 1, in: statement, sql: sql)
         }) { statement in
-            let sectionID = Self.stringColumn(statement, index: 0)
-            let sectionKey = Self.stringColumn(statement, index: 1)
-            let presentation = Self.sectionPresentation(Self.stringColumn(statement, index: 4))
-
-            return PhraseDetailSection(
-                id: sectionKey,
+            SectionRow(
+                databaseID: Self.stringColumn(statement, index: 0),
+                sectionKey: Self.stringColumn(statement, index: 1),
                 title: Self.stringColumn(statement, index: 2),
                 body: Self.stringColumn(statement, index: 3),
-                phrases: try loadPhraseOptions(
-                    forSectionID: sectionID,
-                    suppressDerivedPlacePhraseRows: suppressDerivedPlacePhraseRows
-                ),
-                breakdown: try loadBreakdownTokens(forSectionID: sectionID),
-                presentation: presentation
+                presentation: Self.sectionPresentation(Self.stringColumn(statement, index: 4))
+            )
+        }
+
+        let sectionIDs = sectionRows.map(\.databaseID)
+        let phraseOptionsBySectionID = try loadPhraseOptions(
+            forSectionIDs: sectionIDs,
+            suppressDerivedPlacePhraseRows: suppressDerivedPlacePhraseRows
+        )
+        let breakdownTokensBySectionID = try loadBreakdownTokens(forSectionIDs: sectionIDs)
+
+        return sectionRows.map { section in
+            PhraseDetailSection(
+                id: section.sectionKey,
+                title: section.title,
+                body: section.body,
+                phrases: phraseOptionsBySectionID[section.databaseID] ?? [],
+                breakdown: breakdownTokensBySectionID[section.databaseID] ?? [],
+                presentation: section.presentation
             )
         }
     }
 
     private func loadPhraseOptions(
-        forSectionID sectionID: String,
+        forSectionIDs sectionIDs: [String],
         suppressDerivedPlacePhraseRows: Bool = false
-    ) throws -> [PhraseOption] {
+    ) throws -> [String: [PhraseOption]] {
+        let uniqueSectionIDs = Array(Set(sectionIDs)).sorted()
+        guard !uniqueSectionIDs.isEmpty else {
+            return [:]
+        }
+
+        let placeholders = Array(repeating: "?", count: uniqueSectionIDs.count).joined(separator: ", ")
         let sql = """
         SELECT
+          psi.section_id,
           psi.id,
           psi.item_kind,
           psi.target_id,
@@ -1106,7 +1359,7 @@ final class VietSQLiteLanguagePackRepository {
             AND au.target_id = psi.target_id
           )
         LEFT JOIN audio_asset aa ON aa.id = au.audio_asset_id
-        WHERE psi.section_id = ?
+        WHERE psi.section_id IN (\(placeholders))
           AND psi.item_kind IN ('phrase', 'authored_phrase')
           AND (
             ? = 0
@@ -1119,34 +1372,50 @@ final class VietSQLiteLanguagePackRepository {
                 AND pc.category_id = 'derived-place-phrases'
             )
           )
-        ORDER BY psi.sort_order;
+        ORDER BY psi.section_id, psi.sort_order;
         """
 
-        return try rows(sql, bind: { statement in
-            try self.bindText(sectionID, to: 1, in: statement, sql: sql)
-            try self.bindInt(suppressDerivedPlacePhraseRows ? 1 : 0, to: 2, in: statement, sql: sql)
+        let rows = try rows(sql, bind: { statement in
+            for (offset, sectionID) in uniqueSectionIDs.enumerated() {
+                try self.bindText(sectionID, to: Int32(offset + 1), in: statement, sql: sql)
+            }
+            try self.bindInt(suppressDerivedPlacePhraseRows ? 1 : 0, to: Int32(uniqueSectionIDs.count + 1), in: statement, sql: sql)
         }) { statement in
-            let itemKind = Self.stringColumn(statement, index: 1)
-            let targetID = Self.stringColumn(statement, index: 2)
-            let detailPageID = itemKind == "phrase" ? Self.optionalStringColumn(statement, index: 8) : nil
-            let tint = AccentTint(rawValue: Self.stringColumn(statement, index: 7)) ?? .red
+            let itemKind = Self.stringColumn(statement, index: 2)
+            let targetID = Self.stringColumn(statement, index: 3)
+            let detailPageID = itemKind == "phrase" ? Self.optionalStringColumn(statement, index: 9) : nil
+            let tint = AccentTint(rawValue: Self.stringColumn(statement, index: 8)) ?? .red
 
-            return PhraseOption(
-                id: targetID.isEmpty ? Self.stringColumn(statement, index: 0) : targetID,
-                vietnamese: Self.stringColumn(statement, index: 3),
-                english: Self.stringColumn(statement, index: 4),
-                pronunciation: Self.stringColumn(statement, index: 5),
-                symbolName: Self.stringColumn(statement, index: 6),
-                tintName: tint,
-                detailPageID: detailPageID,
-                audioKey: Self.optionalStringColumn(statement, index: 9)
+            return (
+                sectionID: Self.stringColumn(statement, index: 0),
+                option: PhraseOption(
+                    id: targetID.isEmpty ? Self.stringColumn(statement, index: 1) : targetID,
+                    vietnamese: Self.stringColumn(statement, index: 4),
+                    english: Self.stringColumn(statement, index: 5),
+                    pronunciation: Self.stringColumn(statement, index: 6),
+                    symbolName: Self.stringColumn(statement, index: 7),
+                    tintName: tint,
+                    detailPageID: detailPageID,
+                    audioKey: Self.optionalStringColumn(statement, index: 10)
+                )
             )
+        }
+
+        return rows.reduce(into: [String: [PhraseOption]]()) { result, row in
+            result[row.sectionID, default: []].append(row.option)
         }
     }
 
-    private func loadBreakdownTokens(forSectionID sectionID: String) throws -> [BreakdownToken] {
+    private func loadBreakdownTokens(forSectionIDs sectionIDs: [String]) throws -> [String: [BreakdownToken]] {
+        let uniqueSectionIDs = Array(Set(sectionIDs)).sorted()
+        guard !uniqueSectionIDs.isEmpty else {
+            return [:]
+        }
+
+        let placeholders = Array(repeating: "?", count: uniqueSectionIDs.count).joined(separator: ", ")
         let sql = """
         SELECT
+          psi.section_id,
           bt.id,
           bt.token_text,
           bt.english_gloss,
@@ -1157,20 +1426,29 @@ final class VietSQLiteLanguagePackRepository {
           ON au.target_kind = 'breakdown_token'
          AND au.target_id = bt.id
         LEFT JOIN audio_asset aa ON aa.id = au.audio_asset_id
-        WHERE psi.section_id = ?
+        WHERE psi.section_id IN (\(placeholders))
           AND psi.item_kind = 'breakdown_token'
-        ORDER BY psi.sort_order;
+        ORDER BY psi.section_id, psi.sort_order;
         """
 
-        return try rows(sql, bind: { statement in
-            try self.bindText(sectionID, to: 1, in: statement, sql: sql)
+        let rows = try rows(sql, bind: { statement in
+            for (offset, sectionID) in uniqueSectionIDs.enumerated() {
+                try self.bindText(sectionID, to: Int32(offset + 1), in: statement, sql: sql)
+            }
         }) { statement in
-            BreakdownToken(
-                id: Self.stringColumn(statement, index: 0),
-                vietnamese: Self.stringColumn(statement, index: 1),
-                english: Self.stringColumn(statement, index: 2),
-                audioKey: Self.optionalStringColumn(statement, index: 3)
+            (
+                sectionID: Self.stringColumn(statement, index: 0),
+                token: BreakdownToken(
+                    id: Self.stringColumn(statement, index: 1),
+                    vietnamese: Self.stringColumn(statement, index: 2),
+                    english: Self.stringColumn(statement, index: 3),
+                    audioKey: Self.optionalStringColumn(statement, index: 4)
+                )
             )
+        }
+
+        return rows.reduce(into: [String: [BreakdownToken]]()) { result, row in
+            result[row.sectionID, default: []].append(row.token)
         }
     }
 
@@ -1325,6 +1603,10 @@ final class VietSQLiteLanguagePackRepository {
         _ sql: String,
         _ body: (OpaquePointer) throws -> Value
     ) throws -> Value {
+#if DEBUG
+        Self.recordPreparedStatementForTesting()
+#endif
+
         guard let database else {
             throw VietSQLiteLanguagePackRepositoryError.openFailed(
                 path: databaseURL.path,
@@ -1402,6 +1684,61 @@ final class VietSQLiteLanguagePackRepository {
 
         let value = stringColumn(statement, index: index)
         return value.isEmpty ? nil : value
+    }
+
+    private static func jsonStringArrayColumn(
+        _ statement: OpaquePointer,
+        index: Int32,
+        name: String
+    ) throws -> [String] {
+        let value = stringColumn(statement, index: index)
+        guard let data = value.data(using: .utf8) else {
+            throw VietSQLiteLanguagePackRepositoryError.invalidJSONColumn(name: name, value: value)
+        }
+
+        do {
+            return try JSONDecoder().decode([String].self, from: data)
+        } catch {
+            throw VietSQLiteLanguagePackRepositoryError.invalidJSONColumn(name: name, value: value)
+        }
+    }
+
+    private static func vietnameseMenuOrderLine(statement: OpaquePointer) -> VietnameseMenuOrderLine? {
+        guard
+            let vietnamese = optionalStringColumn(statement, index: 24),
+            let english = optionalStringColumn(statement, index: 25),
+            let pronunciation = optionalStringColumn(statement, index: 26),
+            let audioPolicy = optionalStringColumn(statement, index: 27)
+        else {
+            return nil
+        }
+
+        return VietnameseMenuOrderLine(
+            vietnamese: vietnamese,
+            english: english,
+            pronunciation: pronunciation,
+            audioPolicy: audioPolicy
+        )
+    }
+
+    private static func vietnameseMenuEditorialReview(
+        statement: OpaquePointer
+    ) throws -> VietnameseMenuEditorialReview? {
+        guard let status = optionalStringColumn(statement, index: 29) else {
+            return nil
+        }
+
+        return VietnameseMenuEditorialReview(
+            status: status,
+            reviewedBy: optionalStringColumn(statement, index: 30),
+            reviewedAt: optionalStringColumn(statement, index: 31),
+            checks: try jsonStringArrayColumn(
+                statement,
+                index: 32,
+                name: "vietnamese_menu_item.editorial_review_checks_json"
+            ),
+            reviewNote: optionalStringColumn(statement, index: 33)
+        )
     }
 
     private static func sectionPresentation(_ value: String) -> SectionPresentation {
@@ -1664,6 +2001,49 @@ final class VietSQLiteLanguagePackRepository {
 
         return variants
     }
+
+#if DEBUG
+    private static let canonicalPageIDLookupCountLock = NSLock()
+    private static var canonicalPageIDLookupCount = 0
+    private static let preparedStatementCountLock = NSLock()
+    private static var preparedStatementCount = 0
+
+    static var canonicalPageIDLookupCountForTesting: Int {
+        canonicalPageIDLookupCountLock.lock()
+        defer { canonicalPageIDLookupCountLock.unlock() }
+        return canonicalPageIDLookupCount
+    }
+
+    static var preparedStatementCountForTesting: Int {
+        preparedStatementCountLock.lock()
+        defer { preparedStatementCountLock.unlock() }
+        return preparedStatementCount
+    }
+
+    static func resetCanonicalPageIDLookupCountForTesting() {
+        canonicalPageIDLookupCountLock.lock()
+        canonicalPageIDLookupCount = 0
+        canonicalPageIDLookupCountLock.unlock()
+    }
+
+    static func resetPreparedStatementCountForTesting() {
+        preparedStatementCountLock.lock()
+        preparedStatementCount = 0
+        preparedStatementCountLock.unlock()
+    }
+
+    private static func recordCanonicalPageIDLookupForTesting() {
+        canonicalPageIDLookupCountLock.lock()
+        canonicalPageIDLookupCount += 1
+        canonicalPageIDLookupCountLock.unlock()
+    }
+
+    private static func recordPreparedStatementForTesting() {
+        preparedStatementCountLock.lock()
+        preparedStatementCount += 1
+        preparedStatementCountLock.unlock()
+    }
+#endif
 }
 
 enum VietSQLitePhraseGraphRuntime {
@@ -1671,6 +2051,12 @@ enum VietSQLitePhraseGraphRuntime {
     static let environmentVariable = "SPEAKLOCAL_USE_SQLITE_GRAPH"
     static let disabledLaunchArgument = "--disable-sqlite-phrase-graph"
     static let disabledEnvironmentVariable = "SPEAKLOCAL_DISABLE_SQLITE_GRAPH"
+    private static let canonicalPageIDCacheLimit = 512
+    private static let heroImageNameCacheLimit = 512
+    private static let detailPageCacheLimit = 96
+    private static let searchResultCacheLimit = 32
+    private static let locationRelationPicksCacheLimit = 512
+    private static let cacheLock = NSLock()
 
     static var isEnabled: Bool {
 #if DEBUG
@@ -1688,24 +2074,43 @@ enum VietSQLitePhraseGraphRuntime {
     }
 
     static func catalogSnapshot() -> VietSQLitePhraseCatalogSnapshot? {
-        guard isEnabled, let repository = repository() else {
+        guard isEnabled, let repository = repository(surface: "PhraseCatalog.catalogSnapshot") else {
             return nil
         }
 
-        return try? repository.loadCatalogSnapshot()
+        do {
+            return try repository.loadCatalogSnapshot()
+        } catch {
+            VietSQLiteRuntimeDiagnostics.reportFallback(surface: "PhraseCatalog.catalogSnapshot", error: error)
+            return nil
+        }
     }
 
     static func canonicalPageID(for pageIDOrAlias: String) -> String? {
+#if DEBUG
+        recordCanonicalPageIDLookupForTesting()
+#endif
+
+        if let cachedResult = cachedCanonicalPageID(for: pageIDOrAlias) {
+            return cachedResult
+        }
+
         guard isEnabled, let repository = repository() else {
             return nil
         }
 
-        return try? repository.canonicalPageID(forPageIDOrAlias: pageIDOrAlias)
+        let canonicalPageID = try? repository.canonicalPageID(forPageIDOrAlias: pageIDOrAlias)
+        storeCachedCanonicalPageID(canonicalPageID, for: pageIDOrAlias)
+        return canonicalPageID
+    }
+
+    static func seedKnownCanonicalPageID(_ pageID: String) {
+        storeCachedCanonicalPageID(pageID, for: pageID)
     }
 
     static func search(_ query: String, limit: Int = 8) -> [PhraseSearchResult]? {
         let cacheKey = searchCacheKey(query: query, limit: limit)
-        if let cachedResults = cachedSearchResultsByKey[cacheKey] {
+        if let cachedResults = cachedSearchResults(for: cacheKey) {
             return cachedResults
         }
 
@@ -1717,12 +2122,35 @@ enum VietSQLitePhraseGraphRuntime {
             return nil
         }
 
-        cachedSearchResultsByKey[cacheKey] = results
+        storeCachedSearchResults(results, for: cacheKey)
         return results
     }
 
+    static func vietnameseMenuPayload() -> VietnameseMenuPayload? {
+        if let cachedVietnameseMenuPayload {
+            return cachedVietnameseMenuPayload
+        }
+
+        guard isEnabled, let repository = repository(surface: "VietnameseMenuCatalog") else {
+            return nil
+        }
+
+        do {
+            let payload = try repository.loadVietnameseMenuPayload()
+            cachedVietnameseMenuPayload = payload
+            return payload
+        } catch {
+            VietSQLiteRuntimeDiagnostics.reportFallback(surface: "VietnameseMenuCatalog", error: error)
+            return nil
+        }
+    }
+
     static func detailPage(withID pageID: String) -> PhraseDetailPage? {
-        if let cachedPage = cachedDetailPagesByID[pageID] {
+#if DEBUG
+        recordDetailPageLookupForTesting()
+#endif
+
+        if let cachedPage = cachedDetailPage(for: pageID) {
             return cachedPage
         }
 
@@ -1730,65 +2158,388 @@ enum VietSQLitePhraseGraphRuntime {
             return nil
         }
 
-        if
-            let canonicalPageID = try? repository.canonicalPageID(forPageIDOrAlias: pageID),
-            let cachedPage = cachedDetailPagesByID[canonicalPageID] {
-            cachedDetailPagesByID[pageID] = cachedPage
-            return cachedPage
-        }
-
-        guard let page = try? repository.loadPhraseDetailPage(pageID: pageID) else {
+        guard let canonicalPageID = canonicalPageID(for: pageID) else {
             return nil
         }
 
-        cachedDetailPagesByID[pageID] = page
-        cachedDetailPagesByID[page.id] = page
+        if let cachedPage = cachedDetailPage(for: canonicalPageID) {
+            storeCachedDetailPage(cachedPage, for: pageID)
+            return cachedPage
+        }
+
+        guard let page = try? repository.loadCanonicalPhraseDetailPage(pageID: canonicalPageID) else {
+            return nil
+        }
+
+        storeCachedDetailPage(page, for: pageID)
+        storeCachedDetailPage(page, for: page.id)
         return page
     }
 
-    static func canOpenPage(_ pageID: String) -> Bool {
-        guard isEnabled, let repository = repository() else {
-            return false
+    static func locationRelationPicks(forPageID pageID: String, relationType: String) -> [LocationMenuPick] {
+        let cacheKey = "\(relationType)|\(pageID)"
+        if let cachedPicks = cachedLocationRelationPicks(for: cacheKey) {
+            return cachedPicks
         }
 
-        return ((try? repository.canOpenPage(pageIDOrAlias: pageID)) ?? false)
+        guard isEnabled, let repository = repository() else {
+            return []
+        }
+
+        let picks = (try? repository.locationRelationPicks(
+            forPageID: pageID,
+            relationType: relationType
+        )) ?? []
+        storeCachedLocationRelationPicks(picks, for: cacheKey)
+        return picks
     }
 
-    private static func repository() -> VietSQLiteLanguagePackRepository? {
+    static func heroImageName(for pageID: String) -> String? {
+#if DEBUG
+        recordHeroImageNameLookupForTesting()
+#endif
+
+        if let cachedHeroImageName = cachedHeroImageName(for: pageID) {
+            return cachedHeroImageName.value
+        }
+
+        guard isEnabled, let repository = repository() else {
+            return nil
+        }
+
+        let heroImageName = try? repository.heroImageName(forPageIDOrAlias: pageID)
+        storeCachedHeroImageName(heroImageName, for: pageID)
+        return heroImageName
+    }
+
+    static func canOpenPage(_ pageID: String) -> Bool {
+        canonicalPageID(for: pageID) != nil
+    }
+
+    private static func repository(surface: String = "VietSQLitePhraseGraphRuntime") -> VietSQLiteLanguagePackRepository? {
         if let cachedRepository {
             return cachedRepository
         }
 
-        cachedRepository = try? VietSQLiteLanguagePackRepository.bundled()
+        do {
+            cachedRepository = try VietSQLiteLanguagePackRepository.bundled()
+        } catch {
+            if !hasReportedRepositoryOpenFailure {
+                VietSQLiteRuntimeDiagnostics.reportFallback(surface: surface, error: error)
+                hasReportedRepositoryOpenFailure = true
+            }
+            return nil
+        }
+
         return cachedRepository
     }
 
     private static func searchCacheKey(query: String, limit: Int) -> String {
-        "\(limit)|\(query.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current).lowercased())"
+        let normalizedQuery = query
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+            .lowercased()
+        return "\(limit)|\(normalizedQuery)"
+    }
+
+    private static func cachedSearchResults(for key: String) -> [PhraseSearchResult]? {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        guard let results = cachedSearchResultsByKey[key] else {
+            return nil
+        }
+
+        touchCacheKey(key, in: &cachedSearchResultKeys)
+        return results
+    }
+
+    private static func cachedCanonicalPageID(for key: String) -> String?? {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        guard let cachedResult = cachedCanonicalPageIDsByAlias[key] else {
+            return nil
+        }
+
+        touchCacheKey(key, in: &cachedCanonicalPageIDKeys)
+        return .some(cachedResult.value)
+    }
+
+    private static func storeCachedCanonicalPageID(_ value: String?, for key: String) {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        cachedCanonicalPageIDsByAlias[key] = CachedCanonicalPageID(value)
+        touchCacheKey(key, in: &cachedCanonicalPageIDKeys)
+        trimCache(
+            keys: &cachedCanonicalPageIDKeys,
+            limit: canonicalPageIDCacheLimit,
+            removeValue: { cachedCanonicalPageIDsByAlias.removeValue(forKey: $0) }
+        )
+    }
+
+    private static func storeCachedSearchResults(_ results: [PhraseSearchResult], for key: String) {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        cachedSearchResultsByKey[key] = results
+        touchCacheKey(key, in: &cachedSearchResultKeys)
+        trimCache(
+            keys: &cachedSearchResultKeys,
+            limit: searchResultCacheLimit,
+            removeValue: { cachedSearchResultsByKey.removeValue(forKey: $0) }
+        )
+    }
+
+    private static func cachedLocationRelationPicks(for key: String) -> [LocationMenuPick]? {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        guard let picks = cachedLocationRelationPicksByKey[key] else {
+            return nil
+        }
+
+        touchCacheKey(key, in: &cachedLocationRelationPickKeys)
+        return picks
+    }
+
+    private static func storeCachedLocationRelationPicks(_ picks: [LocationMenuPick], for key: String) {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        cachedLocationRelationPicksByKey[key] = picks
+        touchCacheKey(key, in: &cachedLocationRelationPickKeys)
+        trimCache(
+            keys: &cachedLocationRelationPickKeys,
+            limit: locationRelationPicksCacheLimit,
+            removeValue: { cachedLocationRelationPicksByKey.removeValue(forKey: $0) }
+        )
+    }
+
+    private static func cachedHeroImageName(for key: String) -> CachedOptionalString? {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        guard let imageName = cachedHeroImageNamesByID[key] else {
+            return nil
+        }
+
+        touchCacheKey(key, in: &cachedHeroImageNameKeys)
+        return imageName
+    }
+
+    private static func storeCachedHeroImageName(_ imageName: String?, for key: String) {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        cachedHeroImageNamesByID[key] = CachedOptionalString(imageName)
+        touchCacheKey(key, in: &cachedHeroImageNameKeys)
+        trimCache(
+            keys: &cachedHeroImageNameKeys,
+            limit: heroImageNameCacheLimit,
+            removeValue: { cachedHeroImageNamesByID.removeValue(forKey: $0) }
+        )
+    }
+
+    private static func cachedDetailPage(for key: String) -> PhraseDetailPage? {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        guard let page = cachedDetailPagesByID[key] else {
+            return nil
+        }
+
+        touchCacheKey(key, in: &cachedDetailPageKeys)
+        return page
+    }
+
+    private static func storeCachedDetailPage(_ page: PhraseDetailPage, for key: String) {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        cachedDetailPagesByID[key] = page
+        touchCacheKey(key, in: &cachedDetailPageKeys)
+        trimCache(
+            keys: &cachedDetailPageKeys,
+            limit: detailPageCacheLimit,
+            removeValue: { cachedDetailPagesByID.removeValue(forKey: $0) }
+        )
+    }
+
+    private static func touchCacheKey(_ key: String, in keys: inout [String]) {
+        keys.removeAll { $0 == key }
+        keys.append(key)
+    }
+
+    private static func trimCache(
+        keys: inout [String],
+        limit: Int,
+        removeValue: (String) -> Void
+    ) {
+        while keys.count > limit {
+            removeValue(keys.removeFirst())
+        }
+    }
+
+    private enum CachedCanonicalPageID {
+        case found(String)
+        case missing
+
+        init(_ value: String?) {
+            if let value {
+                self = .found(value)
+            } else {
+                self = .missing
+            }
+        }
+
+        var value: String? {
+            switch self {
+            case .found(let value):
+                return value
+            case .missing:
+                return nil
+            }
+        }
+    }
+
+    private enum CachedOptionalString {
+        case found(String)
+        case missing
+
+        init(_ value: String?) {
+            if let value {
+                self = .found(value)
+            } else {
+                self = .missing
+            }
+        }
+
+        var value: String? {
+            switch self {
+            case .found(let value):
+                return value
+            case .missing:
+                return nil
+            }
+        }
     }
 
     private static var cachedRepository: VietSQLiteLanguagePackRepository?
+    private static var cachedCanonicalPageIDsByAlias: [String: CachedCanonicalPageID] = [:]
+    private static var cachedCanonicalPageIDKeys: [String] = []
+    private static var cachedHeroImageNamesByID: [String: CachedOptionalString] = [:]
+    private static var cachedHeroImageNameKeys: [String] = []
     private static var cachedDetailPagesByID: [String: PhraseDetailPage] = [:]
+    private static var cachedDetailPageKeys: [String] = []
     private static var cachedSearchResultsByKey: [String: [PhraseSearchResult]] = [:]
+    private static var cachedSearchResultKeys: [String] = []
+    private static var cachedLocationRelationPicksByKey: [String: [LocationMenuPick]] = [:]
+    private static var cachedLocationRelationPickKeys: [String] = []
+    private static var cachedVietnameseMenuPayload: VietnameseMenuPayload?
+    private static var hasReportedRepositoryOpenFailure = false
 
 #if DEBUG
+    static var detailPageCacheLimitForTesting: Int { detailPageCacheLimit }
+    static var searchResultCacheLimitForTesting: Int { searchResultCacheLimit }
+
+    static var cachedCanonicalPageIDCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return cachedCanonicalPageIDsByAlias.count
+    }
+
+    static var cachedDetailPageCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return cachedDetailPagesByID.count
+    }
+
+    static var cachedSearchResultCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return cachedSearchResultsByKey.count
+    }
+
+    static var detailPageLookupCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return detailPageLookupCount
+    }
+
+    static var canonicalPageIDLookupCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return canonicalPageIDLookupCount
+    }
+
+    static var heroImageNameLookupCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return heroImageNameLookupCount
+    }
+
     static func setEnabledForTesting(_ enabled: Bool) {
         isEnabledOverride = enabled
         cachedRepository = nil
-        cachedDetailPagesByID.removeAll()
-        cachedSearchResultsByKey.removeAll()
+        clearCachesForTesting()
+        cachedVietnameseMenuPayload = nil
+        hasReportedRepositoryOpenFailure = false
+        PhraseDetailPage.resetResolvedPageCacheForTesting()
         PhraseCatalog.resetCacheForTesting()
     }
 
     static func resetTestingOverrides() {
         isEnabledOverride = nil
         cachedRepository = nil
-        cachedDetailPagesByID.removeAll()
-        cachedSearchResultsByKey.removeAll()
+        clearCachesForTesting()
+        cachedVietnameseMenuPayload = nil
+        hasReportedRepositoryOpenFailure = false
+        PhraseDetailPage.resetResolvedPageCacheForTesting()
         PhraseCatalog.resetCacheForTesting()
     }
 
+    private static func clearCachesForTesting() {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        cachedCanonicalPageIDsByAlias.removeAll()
+        cachedCanonicalPageIDKeys.removeAll()
+        cachedHeroImageNamesByID.removeAll()
+        cachedHeroImageNameKeys.removeAll()
+        cachedDetailPagesByID.removeAll()
+        cachedDetailPageKeys.removeAll()
+        cachedSearchResultsByKey.removeAll()
+        cachedSearchResultKeys.removeAll()
+        cachedLocationRelationPicksByKey.removeAll()
+        cachedLocationRelationPickKeys.removeAll()
+        detailPageLookupCount = 0
+        canonicalPageIDLookupCount = 0
+        heroImageNameLookupCount = 0
+    }
+
+    private static func recordDetailPageLookupForTesting() {
+        cacheLock.lock()
+        detailPageLookupCount += 1
+        cacheLock.unlock()
+    }
+
+    private static func recordCanonicalPageIDLookupForTesting() {
+        cacheLock.lock()
+        canonicalPageIDLookupCount += 1
+        cacheLock.unlock()
+    }
+
+    private static func recordHeroImageNameLookupForTesting() {
+        cacheLock.lock()
+        heroImageNameLookupCount += 1
+        cacheLock.unlock()
+    }
+
     private static var isEnabledOverride: Bool?
+    private static var detailPageLookupCount = 0
+    private static var canonicalPageIDLookupCount = 0
+    private static var heroImageNameLookupCount = 0
 #endif
 }
 

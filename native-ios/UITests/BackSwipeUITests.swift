@@ -208,7 +208,7 @@ final class BackSwipeUITests: XCTestCase {
         )
         XCTAssertFalse(
             app.tabBars.firstMatch.exists && app.tabBars.firstMatch.isHittable,
-            "Home practice should hide the bottom tab bar while the pull-up card is open."
+            "Home practice should hide the bottom tab bar while the practice sheet is open."
         )
         XCTAssertFalse(
             app.descendants(matching: .any)["Practice.Match.Hub"].exists,
@@ -223,6 +223,41 @@ final class BackSwipeUITests: XCTestCase {
             in: app,
             message: "Back from Home practice should restore the Practice shelf."
         )
+    }
+
+    func testHomePracticePoolOpensDirectRoundWithoutPracticeHubFallback() {
+        let app = XCUIApplication()
+        app.launchArguments = ["--seed-returning-user-shelves"]
+        app.launch()
+
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 5))
+
+        let quickPractice = app.buttons["Home.PracticeStarter.quick"]
+        scrollUntilHittable(quickPractice, in: app)
+
+        let practicePool = app.buttons["Home.PracticeStarter.practice"]
+        let practiceRail = app.descendants(matching: .any)["HomePracticeStarterRail"]
+        for _ in 0..<3 where !isComfortablyHittable(practicePool, in: app) {
+            practiceRail.swipeLeft()
+        }
+        XCTAssertTrue(practicePool.waitForExistence(timeout: 3))
+        XCTAssertTrue(isComfortablyHittable(practicePool, in: app))
+        practicePool.tap()
+
+        XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 5))
+        XCTAssertFalse(
+            app.descendants(matching: .any)["Practice.Match.Hub"].exists,
+            "Home Practice pool should open the direct round without exposing the Practice hub."
+        )
+        XCTAssertFalse(
+            app.descendants(matching: .any)["Practice.Match.Topic.essentials"].exists,
+            "Practice topics should stay out of the Home-launched practice sheet."
+        )
+
+        dragVertically(in: app, from: 0.58, to: 0.94)
+        XCTAssertTrue(app.descendants(matching: .any)["Practice.Match.Root"].waitForNonExistence(timeout: 4))
+        XCTAssertFalse(app.descendants(matching: .any)["Practice.Match.Hub"].exists)
+        XCTAssertTrue(app.descendants(matching: .any)["HomeView"].waitForExistence(timeout: 3))
     }
 
     func testHomeSituationBackButtonReturnsHomePosition() {

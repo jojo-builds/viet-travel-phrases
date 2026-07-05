@@ -21,43 +21,26 @@
     {
       "id": "chunk-1",
       "vietnamese": "Chúng ta",
-      "english": "we / us",
-      "keepTogetherReason": "pronoun phrase"
+      "english": "we",
+      "keepTogetherReason": "we pronoun"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đặt",
-      "english": "book / reserve / order"
+      "vietnamese": "đặt hàng",
+      "english": "order",
+      "keepTogetherReason": "order verb phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "hàng",
-      "english": "shop / goods"
+      "vietnamese": "ở đây",
+      "english": "here",
+      "keepTogetherReason": "here phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đây",
-      "english": "here / this"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "hay",
-      "english": "or"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "tại",
-      "english": "at / because"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "quầy?",
-      "english": "counter / desk"
+      "vietnamese": "hay tại quầy?",
+      "english": "or at the counter?",
+      "keepTogetherReason": "counter-choice ending"
     },
     {
       "id": "full",

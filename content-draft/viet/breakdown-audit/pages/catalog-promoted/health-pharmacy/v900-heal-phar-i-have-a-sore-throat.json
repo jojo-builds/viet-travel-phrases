@@ -20,19 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi bị",
+      "english": "I have",
+      "keepTogetherReason": "symptom opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bị đau",
-      "english": "hurts / has pain",
-      "keepTogetherReason": "fixed symptom phrase"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "họng",
-      "english": "throat"
+      "vietnamese": "đau họng",
+      "english": "a sore throat",
+      "keepTogetherReason": "sore-throat phrase"
     },
     {
       "id": "full",

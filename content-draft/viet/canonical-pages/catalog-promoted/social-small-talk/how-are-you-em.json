@@ -5,9 +5,9 @@
   "tierRole": "catalog-promoted",
   "depth": "deep",
   "title": "Em khỏe không?",
-  "englishTitle": "How are you, younger person?",
+  "englishTitle": "How are you? (to someone younger)",
   "pronunciation": "em khweh khom",
-  "summary": "Ask Em khỏe không? when checking in on someone clearly younger.",
+  "summary": "For checking in with someone younger when the moment is friendly enough for a small personal question.",
   "iconName": "bubble.left.and.bubble.right.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -19,17 +19,18 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Em khỏe không? is a practical polite basics phrase for keeping one travel detail clear. Use it when How are you, younger person is the next detail to solve and a short answer would move the exchange forward."
+      "body": "A gentle Em khỏe không? fits after a greeting, not as the first words at a rushed counter.",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use it when em is clearly appropriate and the check-in is friendly, not formal.",
+      "body": "Use em only when the person is clearly younger than you or the relationship already feels informal and kind.",
       "phrases": [
         {
           "id": "how-are-you-em",
           "vietnamese": "Em khỏe không?",
-          "english": "How are you, younger person?",
+          "english": "How are you? (to someone younger)",
           "pronunciation": "em khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
@@ -41,38 +42,39 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Em names the younger person; khỏe asks about being well; không? turns it into a soft check-in.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Em",
           "english": "younger person",
-          "audioKey": null
+          "keepTogetherReason": "relationship pronoun"
         },
         {
           "id": "chunk-2",
           "vietnamese": "khỏe",
-          "english": "healthy / well",
-          "audioKey": "breakdown-authored-khoe-172d93f8d9"
+          "english": "well / healthy",
+          "keepTogetherReason": "wellness word"
         },
         {
           "id": "chunk-3",
           "vietnamese": "không?",
-          "english": "question marker",
-          "audioKey": "breakdown-bath-6-piece-6"
+          "english": "yes or no?",
+          "keepTogetherReason": "soft question ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Em khỏe không?",
-          "english": "How are you, younger person",
+          "english": "How are you? (to someone younger)",
           "audioKey": "audio-phrase-em-khoe-khong"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "relationship-forms",
       "title": "Relationship forms",
-      "body": "Use these when the person is a peer or older adult instead.",
+      "body": "Move to bạn, anh, or chị when the age relationship is unclear or the person is older.",
       "phrases": [
         {
           "id": "smalltalk-7",
@@ -87,7 +89,7 @@
         {
           "id": "how-are-you-anh",
           "vietnamese": "Anh khỏe không?",
-          "english": "How are you, older man?",
+          "english": "How are you? (to an older man)",
           "pronunciation": "anh khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "blue",
@@ -97,7 +99,7 @@
         {
           "id": "how-are-you-chi",
           "vietnamese": "Chị khỏe không?",
-          "english": "How are you, older woman?",
+          "english": "How are you? (to an older woman)",
           "pronunciation": "chee khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
@@ -109,17 +111,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real polite basics exchange when how are you, younger person is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best with a younger server you have already greeted, a homestay host's child, a guide, or someone helping in a relaxed moment.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "A calm tone matters as much as the words. Short polite phrases keep the exchange warm without forcing a long conversation."
+      "body": "This can feel warm in the right relationship. If you are unsure, Chào bạn or Cảm ơn is safer.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Em khỏe không?.",
+      "body": "Younger-person hello, friendly hello, and thank-you cards keep the conversation polite if the check-in lands well.",
       "phrases": [
         {
           "id": "hello-chao-em",
@@ -158,7 +162,7 @@
     {
       "id": "how-are-you-em",
       "vietnamese": "Em khỏe không?",
-      "english": "How are you, younger person?",
+      "english": "How are you? (to someone younger)",
       "pronunciation": "em khweh khom",
       "symbolName": "speaker.wave.2.fill",
       "tintName": "green",

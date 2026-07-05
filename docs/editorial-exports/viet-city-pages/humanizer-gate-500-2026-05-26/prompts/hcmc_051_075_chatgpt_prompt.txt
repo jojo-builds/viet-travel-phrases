@@ -1,0 +1,1128 @@
+Batch ID: hcmc_051_075_humanizer_500_2026_05_26
+
+# ChatGPT Bulk Humanizer Prompt
+
+Use inside the ChatGPT Project `SpeakLocal City Pages v2.2 Copy`.
+
+You are repairing existing SpeakLocal Viet city-library source copy into humanized v2.2 production-candidate copy. You are not creating a new schema, not writing a travel article, and not adding new one-off phrase cards.
+
+Read the project source pack first. V2.2 repo docs remain the source of truth.
+
+## Your Job
+
+Rewrite the provided JSON chunk while preserving the exact object shape:
+
+- same `cityID`
+- same `range`
+- same number of `entries`
+- same page order
+- same `pageID` values
+- same top-level entry field names
+- same section IDs
+- preserve all source sections, including `when-to-use` if present
+- preserve exact `phraseIDs` arrays when they already exist
+- do not add new phrase IDs
+
+The output must be valid JSON for the chunk file. Also include a compact self-gate report after the JSON.
+
+## Voice
+
+Shorter. Sharper. More observed. Adult. Calm. Useful.
+
+The page should feel like a well-traveled friend quietly pointing out how this place fits into the day.
+
+Before rewriting each page, silently choose the one traveler moment it owns: a pause, crossing, pickup, bowl, upstairs choice, market browse, indoor reset, station move, rain plan, ticket moment, route pairing, or similar concrete situation.
+
+Let that moment shape the copy. Then map it back into the existing fields.
+
+## Remove Known Drift
+
+Do not use these visible patterns:
+
+- `best for`, `best as`, `best when`, `works best`, `reads best`
+- `Worth it if`
+- `What you'll get`
+- `Before you go`
+- `Why go`
+- `Say it locally`
+- `useful because`
+- `useful moment`
+- `the page`
+- `the entry`
+- `this listing`
+- `city library`
+- `visible copy`
+- `freshness check`
+- `source evidence`
+- `copy should`
+- `copy stays`
+- `check_catalog`
+- `render`
+- `not_run`
+- `production-ready`
+- `database`
+- `schema`
+
+Avoid headings that start with command verbs such as `Use`, `Keep`, `Choose`, `Ask`, `Confirm`, `Leave`, `Start`, or `Let`.
+
+Avoid visible sentences beginning with `Use ...`.
+
+## Phrase Cards
+
+If the source `quick-say` section has `phraseIDs`:
+
+- keep the exact IDs in the same order
+- title must stay `Useful Phrases`
+- body must stay empty
+
+If the source `quick-say` section has no `phraseIDs`:
+
+- do not use the title `Useful Phrases`
+- do not add phrase IDs
+- write a natural title and a short body that helps pronunciation, naming, ordering, route, or recognition
+
+## Substance Preservation
+
+Do not delete the actual place to sound cleaner.
+
+Preserve stable specifics from the source: neighborhood, building role, market role, food/drink role, river/beach/station/airport/bridge context, old building details, craft village context, or stable route pairing.
+
+If source evidence is thin, narrow the claim. Do not pad with generic props like signs, benches, awnings, bags, shopfronts, or `local texture` unless the source specifically supports them.
+
+Do not invent hours, prices, current menus, ticket rules, access rules, closures, schedules, rankings, awards, or live operations.
+
+## Mobile Limits
+
+- Keep `summary`, `context`, `tip`, `rationale`, and every non-empty section body under 45 words.
+- Keep `summary` at least 130 characters so it survives the importer floor.
+- Keep every section doing a different job.
+- No duplicate body lines.
+
+## Output
+
+First output the complete JSON chunk in one fenced `json` block.
+
+Then output:
+
+```markdown
+## Writer self-gate
+
+- `chunk_file: ...`
+- `entries: ...`
+- `self_gate_status: pass/revise`
+- `heading_cadence_risks: ...`
+- `phrase_card_risks: ...`
+- `thin_source_pages: ...`
+- `pages_requiring_codex_integrity_review: ...`
+- `notes_for_codex: ...`
+```
+
+If you cannot safely finish the whole chunk, output `BLOCKED_STUB` and explain why. Do not return a partial chunk as if it is final.
+
+## City-Specific Brief
+
+HCMC-specific repair brief: remove old formula copy such as "works best when the name is tied to the reason for going," "not memorized as an abstract label," "alongside Saigon street energy/light/movement," "At X, you get...," "carries the visual details," and generic Worth it if scaffolding. Write from HCMC place evidence: arrival, ordering, crossing, waiting, cooling off indoors, choosing a street, finding the right entrance, or deciding whether a detour is worth it.
+
+## Chunk To Repair
+
+```json
+{
+  "cityID": "hcmc",
+  "range": "051-075",
+  "entries": [
+    {
+      "pageID": "city-hcmc-place-independence-palace",
+      "summary": "Independence Palace is worth visiting because it makes history physical through architecture, gates, courtyards, and memory. Expect Independence Palace front lawn and modernist facade.",
+      "context": "For Independence Palace, Saigon's heritage landmark story comes through tiled roofs, ceremonial space, old walls, and gates, alongside Saigon river lights.",
+      "tip": "Dinh Độc Lập sits inside the scene around Independence Palace: tiled roofs, ceremonial space, old walls, and gates, alongside Saigon river lights.",
+      "rationale": "Independence Palace brings Saigon into focus through tiled roofs, ceremonial space, old walls, and gates, alongside Saigon river lights.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Independence Palace is worth visiting because it makes history physical: old walls, gates, courtyards, and stone paths, alongside Saigon river lights."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Independence Palace, you get history made physical in architecture, ceremony, and place memory: Independence Palace front lawn and modernist facade, with old walls, gates, courtyards, and stone paths, alongside Saigon river lights."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Dinh Độc Lập for Independence Palace. The local name is easier to remember once it sits beside stone paths, tiled roofs, ceremonial space, and old walls, alongside Saigon river lights."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if old walls, gates, courtyards, and public memory are part of the trip you want: gates, courtyards, stone paths, and tiled roofs, alongside Saigon river lights."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Independence Palace works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Independence Palace front lawn and modernist facade with ceremonial space, old walls, gates, and courtyards, alongside Saigon river lights."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Dinh Độc Lập carries the visual details around it: old walls, gates, courtyards, and stone paths, alongside Saigon river lights, plus the local setting of Independence Palace front lawn and modernist facade."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-jade-emperor-pagoda",
+      "summary": "Jade Emperor Pagoda is worth approaching slowly because worship, architecture, incense, and local memory shape the visit. Expect Jade Emperor Pagoda courtyard with incense smoke and red details.",
+      "context": "For Jade Emperor Pagoda, Saigon's sacred place story comes through temple gates, shade, respectful pauses, and incense, alongside Ben Thanh market energy.",
+      "tip": "Jade Emperor Pagoda carries temple gates, shade, respectful pauses, and incense, alongside Ben Thanh market energy into the travel plan.",
+      "rationale": "Jade Emperor Pagoda brings Saigon into focus through courtyards, tiled roofs, temple gates, and shade, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Jade Emperor Pagoda is worth approaching slowly because worship, architecture, incense, and local memory all shape the visit: respectful pauses, incense, courtyards, and tiled roofs, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Jade Emperor Pagoda, you get worship, architecture, local memory, and the quieter rhythm of a spiritual stop: Jade Emperor Pagoda courtyard with incense smoke and red details, with temple gates, shade, respectful pauses, and incense, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chùa Ngọc Hoàng for Jade Emperor Pagoda. The local name is easier to remember once it sits beside tiled roofs, temple gates, shade, and respectful pauses, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if temples, incense, worship, and quiet architecture help the place feel deeper: tiled roofs, temple gates, shade, and respectful pauses, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Jade Emperor Pagoda works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Jade Emperor Pagoda courtyard with incense smoke and red details with shade, respectful pauses, incense, and courtyards, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chùa Ngọc Hoàng fits naturally with temple gates, shade, respectful pauses, and incense, alongside Ben Thanh market energy around Jade Emperor Pagoda."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-japan-town",
+      "summary": "Japan Town Saigon is the compact District 1 dining-and-alley cluster around Lê Thánh Tôn and Thái Văn Lung, where reading the door matters before entering.",
+      "context": "Japan Town works when the first move is one alley and one dinner or drink decision, not an attempt to decode every business in the cluster.",
+      "tip": "Go early if food is the main goal. Later, the area becomes more bar-driven and less useful for calm orientation.",
+      "rationale": "The neighborhood is still worth it because it gives District 1 a narrower, layered texture: Japanese signs, small stairways, curtains, lanterns, restaurants, and discreet nightlife.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Choose An Alley Before Dinner",
+          "body": "Start around Lê Thánh Tôn and Thái Văn Lung, choose one alley, then decide whether the night is ramen, izakaya food, a quiet drink, or just a look."
+        },
+        {
+          "id": "place-brief",
+          "title": "District 1, Different Texture",
+          "body": "The streets are narrower and more layered than nearby hotel avenues. Japanese signs, small stairways, restaurant curtains, lanterns, and upper-floor businesses sit close together."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phraseIDs": [
+            "directions-1",
+            "directions-3",
+            "shop-4",
+            "taxi-3"
+          ]
+        },
+        {
+          "id": "use-it-with",
+          "title": "Read The Door Before Entering",
+          "body": "Some doors are straightforward restaurants; others are bars, clubs, or adult-oriented businesses. Menu, entrance, and crowd tell you more than the alley alone."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Early Dinner Is Easier",
+          "body": "Early dinner is better for a first visit. Later at night the area can get louder and less useful for someone trying to orient calmly."
+        }
+      ],
+      "sourceMode": "expanded-detail"
+    },
+    {
+      "pageID": "city-hcmc-place-landmark-81",
+      "summary": "Landmark 81 is worth knowing in Saigon because it brings the city turning into a skyline and a memory of height, light, and orientation into the trip. Expect Landmark 81 skyscraper beside Saigon River, evening city light.",
+      "context": "For Landmark 81, Saigon's viewpoint story comes through rooftops, river light, city-center streets, and evening air, alongside Ben Thanh market energy.",
+      "tip": "Saigon feels more specific when Landmark 81 is tied to river light, city-center streets, evening air, and skyline views, alongside Ben Thanh market energy.",
+      "rationale": "Landmark 81 brings Saigon into focus through river light, city-center streets, evening air, and skyline views, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Landmark 81 is worth knowing because it gives Saigon a specific viewpoint scene: rooftops, river light, city-center streets, and evening air, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Landmark 81, you get the city turning into a skyline and a memory of height, light, and orientation: Landmark 81 skyscraper beside Saigon River, evening city light, with city-center streets, evening air, skyline views, and rooftops, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Landmark 81 usually stays as the venue name. Say it slowly and connect it to the scene around it: evening air, skyline views, rooftops, and river light, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Landmark 81 gives your itinerary a clearer image: rooftops, river light, city-center streets, and evening air, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Landmark 81 works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Landmark 81 skyscraper beside Saigon River, evening city light with evening air, skyline views, rooftops, and river light, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Landmark 81 points to Landmark 81's scene through city-center streets, evening air, skyline views, and rooftops, alongside Ben Thanh market energy."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-le-thanh-ton-street",
+      "summary": "Le Thanh Ton Street is worth recognizing because a named street can make Saigon feel walkable before arrival. Expect Le Thanh Ton Street restaurant frontage at night.",
+      "context": "For Le Thanh Ton Street, Saigon's street story comes through scooters, crossings, cafe edges, and neighborhood movement, alongside District 1 movement.",
+      "tip": "Scooters, crossings, cafe edges, and neighborhood movement, alongside District 1 movement make Đường Lê Thánh Tôn feel connected to a real stop.",
+      "rationale": "Le Thanh Ton Street brings Saigon into focus through street signs, shopfronts, scooters, and crossings, alongside District 1 movement.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Le Thanh Ton Street is worth recognizing because streets shape how Saigon feels on the ground: scooters, crossings, cafe edges, and neighborhood movement, alongside District 1 movement."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Le Thanh Ton Street, you get a named street scene of trees, shopfronts, crossings, cafes, and neighborhood movement: Le Thanh Ton Street restaurant frontage at night, with cafe edges, neighborhood movement, street signs, and shopfronts, alongside District 1 movement."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Đường Lê Thánh Tôn for Le Thanh Ton Street. The local name is easier to remember once it sits beside neighborhood movement, street signs, shopfronts, and scooters, alongside District 1 movement."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the street helps you understand the neighborhood before you are there: crossings, cafe edges, neighborhood movement, and street signs, alongside District 1 movement."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Le Thanh Ton Street works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Le Thanh Ton Street restaurant frontage at night with neighborhood movement, street signs, shopfronts, and scooters, alongside District 1 movement."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "For Le Thanh Ton Street, the name stays close to scooters, crossings, cafe edges, and neighborhood movement, alongside District 1 movement, which makes the stop feel rooted in Saigon."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-le-van-tam-park",
+      "summary": "Le Van Tam Park is worth knowing in Saigon because it brings everyday city life in open air without a formal attraction into the trip. Expect Le Van Tam Park shaded paths with scooters outside gate.",
+      "context": "For Le Van Tam Park, Saigon's park story comes through open lawns, evening light, walking paths, and trees, alongside District 1 movement.",
+      "tip": "Công viên Lê Văn Tám sits inside the scene around Le Van Tam Park: open lawns, evening light, walking paths, and trees, alongside District 1 movement.",
+      "rationale": "Le Van Tam Park brings Saigon into focus through family time, shade, open lawns, and evening light, alongside District 1 movement.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Le Van Tam Park is worth knowing because it gives Saigon a specific park scene: walking paths, trees, family time, and shade, alongside District 1 movement."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Le Van Tam Park, you get everyday city life in open air without a formal attraction: Le Van Tam Park shaded paths with scooters outside gate, with walking paths, trees, family time, and shade, alongside District 1 movement."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Công viên Lê Văn Tám for Le Van Tam Park. The local name is easier to remember once it sits beside evening light, walking paths, trees, and family time, alongside District 1 movement."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Le Van Tam Park gives your itinerary a clearer image: shade, open lawns, evening light, and walking paths, alongside District 1 movement."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Le Van Tam Park works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Le Van Tam Park shaded paths with scooters outside gate with shade, open lawns, evening light, and walking paths, alongside District 1 movement."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The name and scene work together: Công viên Lê Văn Tám beside Le Van Tam Park shaded paths with scooters outside gate, with family time, shade, open lawns, and evening light, alongside District 1 movement nearby."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-little-hanoi-egg-coffee",
+      "summary": "Little HaNoi Egg Coffee Saigon is worth saving for Saigon's cafe rhythm: coffee, ice, sweetness, design, and a slower pause in the day. Expect Egg coffee cup in compact Saigon cafe, warm.",
+      "context": "For Little HaNoi Egg Coffee Saigon, Saigon's cafe story comes through street stools, design details, soft pauses, and cafe views, alongside Saigon street energy.",
+      "tip": "Little HaNoi Egg Coffee points back to Little HaNoi Egg Coffee Saigon through coffee counters, iced glasses, street stools, and design details, alongside Saigon street energy.",
+      "rationale": "Little HaNoi Egg Coffee Saigon brings Saigon into focus through soft pauses, cafe views, coffee counters, and iced glasses, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Little HaNoi Egg Coffee Saigon is worth saving when you want Saigon's cafe culture, not just caffeine: soft pauses, cafe views, coffee counters, and iced glasses, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Little HaNoi Egg Coffee Saigon, you get Vietnam's cafe culture and the slower rhythm between meals and sightseeing: Egg coffee cup in compact Saigon cafe, warm, with street stools, design details, soft pauses, and cafe views, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Little HaNoi Egg Coffee for Little HaNoi Egg Coffee Saigon. The local name is easier to remember once it sits beside design details, soft pauses, cafe views, and coffee counters, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the trip needs a slower pause between walks, markets, meals, or heat: design details, soft pauses, cafe views, and coffee counters, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Little HaNoi Egg Coffee Saigon works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Egg coffee cup in compact Saigon cafe, warm with iced glasses, street stools, design details, and soft pauses, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The scene around Little HaNoi Egg Coffee Saigon stays vivid when Little HaNoi Egg Coffee sits beside soft pauses, cafe views, coffee counters, and iced glasses, alongside Saigon street energy."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-long-trieu",
+      "summary": "Long Trieu is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect refined Chinese dining room with dim sum table setting.",
+      "context": "For Long Trieu, Saigon's restaurant story comes through house dishes, menu details, staff rhythm, and drinks, alongside Saigon street energy.",
+      "tip": "Long Trieu stays rooted in Saigon through house dishes, menu details, staff rhythm, and drinks, alongside Saigon street energy.",
+      "rationale": "Long Trieu brings Saigon into focus through evening meal energy, tables, house dishes, and menu details, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Long Trieu is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with evening meal energy, tables, house dishes, and menu details, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Long Trieu, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: refined Chinese dining room with dim sum table setting, with staff rhythm, drinks, evening meal energy, and tables, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Long Triều for Long Trieu. The local name is easier to remember once it sits beside menu details, staff rhythm, drinks, and evening meal energy, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: tables, house dishes, menu details, and staff rhythm, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Long Trieu works best when the name is tied to the reason for going, not memorized as an abstract label. Picture refined Chinese dining room with dim sum table setting with drinks, evening meal energy, tables, and house dishes, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Long Triều belongs in the same image as staff rhythm, drinks, evening meal energy, and tables, alongside Saigon street energy, with Long Trieu rooted in Saigon."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-lusine-thao-dien",
+      "summary": "L'Usine Thao Dien is the softer branch for a morning that can drift from iced coffee into brunch. High ceilings, warm wood, quiet tables, and shop shelves make it feel easy to stay.",
+      "context": "L'Usine has several Saigon locations. This is the calmer Thao Dien one, with villas, side streets, design shops, and longer coffees.",
+      "tip": "Early is the better version, before traffic builds, brunch fills in, and the sidewalks heat up.",
+      "rationale": "High ceilings, warm wood, soft light, quiet tables, and enough polish to feel easy without feeling formal.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "A Slower Thao Dien Morning",
+          "body": "Coffee can be the whole plan here. The room just makes it easier to stay longer."
+        },
+        {
+          "id": "place-brief",
+          "title": "Why This Branch Works",
+          "body": "High ceilings, warm wood, soft light, quiet tables, and enough polish to feel easy without feeling formal."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Popular Here",
+          "body": "Vietnamese milk coffee, salt caramel coffee, Eggs Benedict, Premium Pho, crispy chicken salad, and squid ink crab pasta with crab."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Come Before It Gets Loud",
+          "body": "Early is the better version. Before traffic builds, brunch fills in, and the sidewalks heat up."
+        },
+        {
+          "id": "good-to-know",
+          "title": "The Thao Dien One",
+          "body": "L'Usine has several Saigon locations. This is the calmer one, with villas, side streets, design shops, and longer coffees."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Here",
+          "body": "Ask for a table, get the menu, order Vietnamese iced milk coffee, ask what they recommend, and check whether you can pay by card.",
+          "phraseIDs": [
+            "food-need-table",
+            "food-menu",
+            "coffee-1",
+            "v900-food-drin-what-do-you-recommend",
+            "v900-food-drin-can-i-pay-the-bill-by-card"
+          ]
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-mariamman-temple",
+      "summary": "Mariamman Hindu Temple is worth approaching slowly because worship, architecture, incense, and local memory shape the visit. Expect colorful Hindu temple facade in central Saigon street.",
+      "context": "For Mariamman Hindu Temple, Saigon's sacred place story comes through shade, respectful pauses, incense, and courtyards, alongside Nguyen Hue city light.",
+      "tip": "Tiled roofs, temple gates, shade, and respectful pauses, alongside Nguyen Hue city light make Đền Mariamman feel connected to a real stop.",
+      "rationale": "Mariamman Hindu Temple brings Saigon into focus through tiled roofs, temple gates, shade, and respectful pauses, alongside Nguyen Hue city light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Mariamman Hindu Temple is worth approaching slowly because worship, architecture, incense, and local memory all shape the visit: incense, courtyards, tiled roofs, and temple gates, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Mariamman Hindu Temple, you get worship, architecture, local memory, and the quieter rhythm of a spiritual stop: colorful Hindu temple facade in central Saigon street, with tiled roofs, temple gates, shade, and respectful pauses, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Đền Mariamman for Mariamman Hindu Temple. The local name is easier to remember once it sits beside respectful pauses, incense, courtyards, and tiled roofs, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if temples, incense, worship, and quiet architecture help the place feel deeper: temple gates, shade, respectful pauses, and incense, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Mariamman Hindu Temple works best when the name is tied to the reason for going, not memorized as an abstract label. Picture colorful Hindu temple facade in central Saigon street with respectful pauses, incense, courtyards, and tiled roofs, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The image of Mariamman Hindu Temple feels more present when Đền Mariamman has tiled roofs, temple gates, shade, and respectful pauses, alongside Nguyen Hue city light around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-mien-dong-bus-station",
+      "summary": "Mien Dong Bus Station is worth recognizing because travel days still carry the mood of Saigon. Expect station awnings, station windows, local signs, and the city just outside the doors.",
+      "context": "For Mien Dong Bus Station, Saigon's station story comes through route boards, waiting benches, city light, and local signs, alongside Saigon river lights.",
+      "tip": "Mien Dong Bus Station stays rooted in Saigon through route boards, waiting benches, city light, and local signs, alongside Saigon river lights.",
+      "rationale": "Mien Dong Bus Station brings Saigon into focus through route boards, waiting benches, city light, and local signs, alongside Saigon river lights.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Mien Dong Bus Station is worth recognizing because travel days still carry the city's mood: route boards, waiting benches, city light, and local signs, alongside Saigon river lights."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Mien Dong Bus Station, you get the handoff between travel days, city days, trains, buses, rides, and local names: station awnings, station windows, local signs, and the city just outside the doors, with route boards, waiting benches, city light, and local signs, alongside Saigon river lights."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bến xe Miền Đông for Mien Dong Bus Station. The local name is easier to remember once it sits beside local signs, onward roads, station doors, and route boards, alongside Saigon river lights."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Mien Dong Bus Station gives your itinerary a clearer image: local signs, onward roads, station doors, and route boards, alongside Saigon river lights."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Mien Dong Bus Station works best when the name is tied to the reason for going, not memorized as an abstract label. Picture station awnings, station windows, local signs, and the city just outside the doors with station doors, route boards, waiting benches, and city light, alongside Saigon river lights."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bến xe Miền Đông belongs with Station awnings, station windows, local signs, and the city just outside the doors, giving Mien Dong Bus Station a specific travel scene before the trip begins."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-mien-tay-bus-station",
+      "summary": "Mien Tay Bus Station is worth recognizing because travel days still carry the mood of Saigon. Expect station awnings, station windows, local signs, and the city just outside the doors.",
+      "context": "For Mien Tay Bus Station, Saigon's station story comes through onward roads, station doors, route boards, and waiting benches, alongside Ben Thanh market energy.",
+      "tip": "Mien Tay Bus Station stays rooted in Saigon through route boards, waiting benches, city light, and local signs, alongside Ben Thanh market energy.",
+      "rationale": "Mien Tay Bus Station brings Saigon into focus through onward roads, station doors, route boards, and waiting benches, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Mien Tay Bus Station is worth recognizing because travel days still carry the city's mood: route boards, waiting benches, city light, and local signs, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Mien Tay Bus Station, you get the handoff between travel days, city days, trains, buses, rides, and local names: station awnings, station windows, local signs, and the city just outside the doors, with route boards, waiting benches, city light, and local signs, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bến xe Miền Tây for Mien Tay Bus Station. The local name is easier to remember once it sits beside waiting benches, city light, local signs, and onward roads, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Mien Tay Bus Station gives your itinerary a clearer image: station doors, route boards, waiting benches, and city light, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Mien Tay Bus Station works best when the name is tied to the reason for going, not memorized as an abstract label. Picture station awnings, station windows, local signs, and the city just outside the doors with local signs, onward roads, station doors, and route boards, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bến xe Miền Tây points back to Station awnings, station windows, local signs, and the city just outside the doors, where Mien Tay Bus Station feels specific rather than abstract."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-motorbike-food-tour",
+      "summary": "Saigon motorbike food tour is worth knowing in Saigon because it brings food discovery as a route across the city into the trip. Expect passenger-view motorbike ride through Saigon food streets at night.",
+      "context": "For Saigon motorbike food tour, Saigon's food walk story comes through steam, herbs, sidewalk seats, and food lanes, alongside District 1 movement.",
+      "tip": "Saigon motorbike food tour carries sidewalk seats, food lanes, the route between bites, and small tables, alongside District 1 movement into the travel plan.",
+      "rationale": "Saigon motorbike food tour brings Saigon into focus through steam, herbs, sidewalk seats, and food lanes, alongside District 1 movement.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Saigon motorbike food tour is worth knowing because it gives Saigon a specific food walk scene: the route between bites, small tables, steam, and herbs, alongside District 1 movement."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Saigon motorbike food tour, you get food discovery as a route across the city: passenger-view motorbike ride through Saigon food streets at night, with the route between bites, small tables, steam, and herbs, alongside District 1 movement."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Tour ăn tối bằng xe máy for Saigon motorbike food tour. The local name is easier to remember once it sits beside food lanes, the route between bites, small tables, and steam, alongside District 1 movement."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Saigon motorbike food tour gives your itinerary a clearer image: food lanes, the route between bites, small tables, and steam, alongside District 1 movement."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Saigon motorbike food tour works best when the name is tied to the reason for going, not memorized as an abstract label. Picture passenger-view motorbike ride through Saigon food streets at night with food lanes, the route between bites, small tables, and steam, alongside District 1 movement."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Tour ăn tối bằng xe máy points to Saigon motorbike food tour's scene through sidewalk seats, food lanes, the route between bites, and small tables, alongside District 1 movement."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-municipal-theatre-square",
+      "summary": "Lam Son Square is worth knowing in Saigon because it brings living performance culture rather than a static monument into the trip. Expect Lam Son Square with Opera House and city lights, street.",
+      "context": "For Lam Son Square, Saigon's performance venue story comes through music, masks, theatre doors, and evening streets, alongside Saigon street energy.",
+      "tip": "Saigon feels more specific when Lam Son Square is tied to cultural memory, stage light, music, and masks, alongside Saigon street energy.",
+      "rationale": "Lam Son Square brings Saigon into focus through theatre doors, evening streets, cultural memory, and stage light, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Lam Son Square is worth knowing because it gives Saigon a specific performance venue scene: cultural memory, stage light, music, and masks, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Lam Son Square, you get living performance culture rather than a static monument: Lam Son Square with Opera House and city lights, street, with cultural memory, stage light, music, and masks, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Công trường Lam Sơn for Lam Son Square. The local name is easier to remember once it sits beside stage light, music, masks, and theatre doors, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Lam Son Square gives your itinerary a clearer image: evening streets, cultural memory, stage light, and music, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Lam Son Square works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Lam Son Square with Opera House and city lights, street with masks, theatre doors, evening streets, and cultural memory, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Công trường Lam Sơn belongs in the same image as cultural memory, stage light, music, and masks, alongside Saigon street energy, with Lam Son Square rooted in Saigon."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-nephele",
+      "summary": "Nephele is worth considering when a meal should feel like part of the itinerary, not just fuel between sights. Expect small modern Saigon restaurant table with wine glasses and warm lighting.",
+      "context": "For Nephele, Saigon's restaurant story comes through tables, house dishes, menu details, and staff rhythm, alongside Saigon street energy.",
+      "tip": "Nephele becomes more specific beside drinks, evening meal energy, tables, and house dishes, alongside Saigon street energy.",
+      "rationale": "Nephele brings Saigon into focus through tables, house dishes, menu details, and staff rhythm, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Nephele is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with tables, house dishes, menu details, and staff rhythm, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Nephele, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: small modern Saigon restaurant table with wine glasses and warm lighting, with drinks, evening meal energy, tables, and house dishes, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Nephele usually stays as the venue name. Say it slowly and connect it to the scene around it: evening meal energy, tables, house dishes, and menu details, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the meal itself should be one of the day's memories: staff rhythm, drinks, evening meal energy, and tables, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Nephele works best when the name is tied to the reason for going, not memorized as an abstract label. Picture small modern Saigon restaurant table with wine glasses and warm lighting with evening meal energy, tables, house dishes, and menu details, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Nephele sits beside menu details, staff rhythm, drinks, and evening meal energy, alongside Saigon street energy, so Nephele feels connected to a real place."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-nguyen-hue",
+      "summary": "Nguyen Hue Walking Street is worth recognizing because a named street can make Saigon feel walkable before arrival. Expect Nguyen Hue walking street at dusk with City Hall and families.",
+      "context": "For Nguyen Hue Walking Street, Saigon's street story comes through street signs, shopfronts, scooters, and crossings, alongside Nguyen Hue city light.",
+      "tip": "Saigon's street scene comes through scooters, crossings, cafe edges, and neighborhood movement, alongside Nguyen Hue city light.",
+      "rationale": "Nguyen Hue Walking Street brings Saigon into focus through cafe edges, neighborhood movement, street signs, and shopfronts, alongside Nguyen Hue city light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Nguyen Hue Walking Street is worth recognizing because streets shape how Saigon feels on the ground: cafe edges, neighborhood movement, street signs, and shopfronts, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Nguyen Hue Walking Street, you get a named street scene of trees, shopfronts, crossings, cafes, and neighborhood movement: Nguyen Hue walking street at dusk with City Hall and families, with cafe edges, neighborhood movement, street signs, and shopfronts, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Phố đi bộ Nguyễn Huệ for Nguyen Hue Walking Street. The local name is easier to remember once it sits beside crossings, cafe edges, neighborhood movement, and street signs, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the street helps you understand the neighborhood before you are there: shopfronts, scooters, crossings, and cafe edges, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Nguyen Hue Walking Street works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Nguyen Hue walking street at dusk with City Hall and families with crossings, cafe edges, neighborhood movement, and street signs, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Phố đi bộ Nguyễn Huệ carries Nguyen Hue Walking Street's scene through scooters, crossings, cafe edges, and neighborhood movement, alongside Nguyen Hue city light."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-nguyen-trai-street",
+      "summary": "Nguyen Trai Street is worth recognizing because a named street can make Saigon feel walkable before arrival. Expect busy Nguyen Trai shopping street with clothing stores and scooters.",
+      "context": "For Nguyen Trai Street, Saigon's street story comes through street signs, shopfronts, scooters, and crossings, alongside Nguyen Hue city light.",
+      "tip": "Nguyen Trai Street becomes more specific beside cafe edges, neighborhood movement, street signs, and shopfronts, alongside Nguyen Hue city light.",
+      "rationale": "Nguyen Trai Street brings Saigon into focus through scooters, crossings, cafe edges, and neighborhood movement, alongside Nguyen Hue city light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Nguyen Trai Street is worth recognizing because streets shape how Saigon feels on the ground: scooters, crossings, cafe edges, and neighborhood movement, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Nguyen Trai Street, you get a named street scene of trees, shopfronts, crossings, cafes, and neighborhood movement: busy Nguyen Trai shopping street with clothing stores and scooters, with street signs, shopfronts, scooters, and crossings, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Đường Nguyễn Trãi for Nguyen Trai Street. The local name is easier to remember once it sits beside neighborhood movement, street signs, shopfronts, and scooters, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the street helps you understand the neighborhood before you are there: neighborhood movement, street signs, shopfronts, and scooters, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Nguyen Trai Street works best when the name is tied to the reason for going, not memorized as an abstract label. Picture busy Nguyen Trai shopping street with clothing stores and scooters with crossings, cafe edges, neighborhood movement, and street signs, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Đường Nguyễn Trãi carries the visual details around it: scooters, crossings, cafe edges, and neighborhood movement, alongside Nguyen Hue city light, plus the local setting of Busy Nguyen Trai shopping street with clothing stores and scooters."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-nhieu-loc-canal",
+      "summary": "Nhieu Loc - Thi Nghe Canal is worth knowing in Saigon because it brings the city showing a softer everyday water route between districts into the trip. Expect Saigon canal with bridges, apartment buildings, evening lights.",
+      "context": "For Nhieu Loc - Thi Nghe Canal, Saigon's canal story comes through neighborhood movement, canal water, small bridges, and apartment lights, alongside Nguyen Hue city light.",
+      "tip": "Bank-side paths, neighborhood movement, canal water, and small bridges, alongside Nguyen Hue city light give Nhieu Loc - Thi Nghe Canal a setting before the trip begins.",
+      "rationale": "Nhieu Loc - Thi Nghe Canal brings Saigon into focus through small bridges, apartment lights, bank-side paths, and neighborhood movement, alongside Nguyen Hue city light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Nhieu Loc - Thi Nghe Canal is worth knowing because it gives Saigon a specific canal scene: apartment lights, bank-side paths, neighborhood movement, and canal water, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Nhieu Loc - Thi Nghe Canal, you get the city showing a softer everyday water route between districts: Saigon canal with bridges, apartment buildings, evening lights, with bank-side paths, neighborhood movement, canal water, and small bridges, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Kênh Nhiêu Lộc - Thị Nghè for Nhieu Loc - Thi Nghe Canal. The local name is easier to remember once it sits beside canal water, small bridges, apartment lights, and bank-side paths, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Nhieu Loc - Thi Nghe Canal gives your itinerary a clearer image: small bridges, apartment lights, bank-side paths, and neighborhood movement, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Nhieu Loc - Thi Nghe Canal works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Saigon canal with bridges, apartment buildings, evening lights with apartment lights, bank-side paths, neighborhood movement, and canal water, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Kênh Nhiêu Lộc - Thị Nghè belongs in the same image as canal water, small bridges, apartment lights, and bank-side paths, alongside Nguyen Hue city light, with Nhieu Loc - Thi Nghe Canal rooted in Saigon."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-notre-dame",
+      "summary": "Notre Dame Cathedral Basilica of Saigon is worth approaching slowly because worship, architecture, incense, and local memory shape the visit. Expect Saigon Notre Dame Cathedral exterior with trees and scooters.",
+      "context": "For Notre Dame Cathedral Basilica of Saigon, Saigon's sacred place story comes through courtyard shade, bells, Saigon worship, and cathedral facades, alongside Saigon river lights.",
+      "tip": "Saigon worship, cathedral facades, quiet pews, and stained-glass light, alongside Saigon river lights give Notre Dame Cathedral Basilica of Saigon a setting before the trip begins.",
+      "rationale": "Notre Dame Cathedral Basilica of Saigon brings Saigon into focus through Saigon worship, cathedral facades, quiet pews, and stained-glass light, alongside Saigon river lights.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Notre Dame Cathedral Basilica of Saigon is worth approaching slowly because worship, architecture, incense, and local memory all shape the visit: courtyard shade, bells, Saigon worship, and cathedral facades, alongside Saigon river lights."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Notre Dame Cathedral Basilica of Saigon, you get worship, architecture, local memory, and the quieter rhythm of a spiritual stop: Saigon Notre Dame Cathedral exterior with trees and scooters, with courtyard shade, bells, Saigon worship, and cathedral facades, alongside Saigon river lights."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Nhà thờ Đức Bà Sài Gòn for Notre Dame Cathedral Basilica of Saigon. The local name is easier to remember once it sits beside cathedral facades, quiet pews, stained-glass light, and courtyard shade, alongside Saigon river lights."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if temples, incense, worship, and quiet architecture help the place feel deeper: bells, Saigon worship, cathedral facades, and quiet pews, alongside Saigon river lights."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Notre Dame Cathedral Basilica of Saigon works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Saigon Notre Dame Cathedral exterior with trees and scooters with cathedral facades, quiet pews, stained-glass light, and courtyard shade, alongside Saigon river lights."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Nhà thờ Đức Bà Sài Gòn fits naturally with Saigon worship, cathedral facades, quiet pews, and stained-glass light, alongside Saigon river lights around Notre Dame Cathedral Basilica of Saigon."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-oc",
+      "summary": "Saigon snails and seafood is worth trying in Saigon because it gives the trip a flavor to imagine before arrival. Expect Saigon seafood table with snails, clams, sauces, small stools.",
+      "context": "For Saigon snails and seafood, Saigon's food story comes through small meal rituals, flavor, herbs, and sauce, alongside Saigon street energy.",
+      "tip": "Saigon snails and seafood feels clearer with herbs, sauce, steam, and texture, alongside Saigon street energy around it.",
+      "rationale": "Saigon snails and seafood brings Saigon into focus through small meal rituals, flavor, herbs, and sauce, alongside Saigon street energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Saigon snails and seafood is worth trying because it turns Saigon into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with herbs, sauce, steam, and texture, alongside Saigon street energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Saigon snails and seafood, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: Saigon seafood table with snails, clams, sauces, small stools, with herbs, sauce, steam, and texture, alongside Saigon street energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Ốc Sài Gòn ở Thành phố Hồ Chí Minh for Saigon snails and seafood. The local name is easier to remember once it sits beside sauce, steam, texture, and small meal rituals, alongside Saigon street energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: flavor, herbs, sauce, and steam, alongside Saigon street energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Saigon snails and seafood works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Saigon seafood table with snails, clams, sauces, small stools with texture, small meal rituals, flavor, and herbs, alongside Saigon street energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "For Saigon snails and seafood, the name stays close to herbs, sauce, steam, and texture, alongside Saigon street energy, which makes the stop feel rooted in Saigon."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-opera-a-o-show",
+      "summary": "A O Show at Saigon Opera House is worth knowing in Saigon because it brings living performance culture rather than a static monument into the trip. Expect contemporary Vietnamese stage performance inside historic theatre, evening.",
+      "context": "For A O Show at Saigon Opera House, Saigon's performance venue story comes through evening streets, cultural memory, stage light, and music, alongside Nguyen Hue city light.",
+      "tip": "À Ố Show points back to A O Show at Saigon Opera House through stage light, music, masks, and theatre doors, alongside Nguyen Hue city light.",
+      "rationale": "A O Show at Saigon Opera House brings Saigon into focus through stage light, music, masks, and theatre doors, alongside Nguyen Hue city light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "A O Show at Saigon Opera House is worth knowing because it gives Saigon a specific performance venue scene: masks, theatre doors, evening streets, and cultural memory, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At A O Show at Saigon Opera House, you get living performance culture rather than a static monument: contemporary Vietnamese stage performance inside historic theatre, evening, with masks, theatre doors, evening streets, and cultural memory, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say À Ố Show for A O Show at Saigon Opera House. The local name is easier to remember once it sits beside music, masks, theatre doors, and evening streets, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if A O Show at Saigon Opera House gives your itinerary a clearer image: cultural memory, stage light, music, and masks, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "A O Show at Saigon Opera House works best when the name is tied to the reason for going, not memorized as an abstract label. Picture contemporary Vietnamese stage performance inside historic theatre, evening with cultural memory, stage light, music, and masks, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "À Ố Show belongs to the scene, with masks, theatre doors, evening streets, and cultural memory, alongside Nguyen Hue city light around it and Saigon in view."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-opera-house",
+      "summary": "Saigon Opera House is worth knowing in Saigon because it brings living performance culture rather than a static monument into the trip. Expect Saigon Opera House lit at dusk, scooters passing.",
+      "context": "For Saigon Opera House, Saigon's performance venue story comes through theatre doors, evening streets, cultural memory, and stage light, alongside Saigon river lights.",
+      "tip": "Nhà hát Thành phố feels tied to Saigon Opera House through theatre doors, evening streets, cultural memory, and stage light, alongside Saigon river lights.",
+      "rationale": "Saigon Opera House brings Saigon into focus through music, masks, theatre doors, and evening streets, alongside Saigon river lights.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Saigon Opera House is worth knowing because it gives Saigon a specific performance venue scene: music, masks, theatre doors, and evening streets, alongside Saigon river lights."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Saigon Opera House, you get living performance culture rather than a static monument: Saigon Opera House lit at dusk, scooters passing, with theatre doors, evening streets, cultural memory, and stage light, alongside Saigon river lights."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Nhà hát Thành phố for Saigon Opera House. The local name is easier to remember once it sits beside evening streets, cultural memory, stage light, and music, alongside Saigon river lights."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Saigon Opera House gives your itinerary a clearer image: masks, theatre doors, evening streets, and cultural memory, alongside Saigon river lights."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Saigon Opera House works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Saigon Opera House lit at dusk, scooters passing with evening streets, cultural memory, stage light, and music, alongside Saigon river lights."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Nhà hát Thành phố carries the visual details around it: music, masks, theatre doors, and evening streets, alongside Saigon river lights, plus the local setting of Saigon Opera House lit at dusk, scooters passing."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-pasteur-street",
+      "summary": "Pasteur Street is easiest when it starts from one cafe, office, museum edge, or District 1 errand, then helps the next few blocks feel readable.",
+      "context": "Pasteur Street is easiest when you do not try to make it a destination. Start near one cafe, office, museum edge, or District 1 errand, then use the street name to keep the next few blocks readable.",
+      "tip": "Traffic, tree shade, and parked scooters can hide the obvious entrance. Pause before crossing, check the map, then ask with the phone open if the pin looks close but wrong.",
+      "rationale": "Pasteur Street adds a named street-orientation listing for Saigon, with stable historical identity and practical map use rather than changeable cafe claims.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Start With One Doorway",
+          "body": "Pasteur Street is easiest when you do not try to make it a destination. Start near one cafe, office, museum edge, or District 1 errand, then use the street name to keep the next few blocks readable."
+        },
+        {
+          "id": "quick-say",
+          "title": "Useful Phrases",
+          "body": "",
+          "phraseIDs": [
+            "directions-2",
+            "directions-3",
+            "repair-show-me",
+            "taxi-3"
+          ]
+        },
+        {
+          "id": "place-brief",
+          "title": "Let The Block Orient You",
+          "body": "After the first stop, look for the next real doorway: a cafe sign, an office lobby, a side street, or the entrance your phone map is trying to describe."
+        },
+        {
+          "id": "use-it-with",
+          "title": "The Name Still Carries Weight",
+          "body": "The street name carries colonial-era layers, the Pasteur Institute story, surviving shophouses, and everyday traffic. It also gives drivers and map pins one shared reference."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Pause Before Crossing",
+          "body": "Traffic, tree shade, and parked scooters can hide the obvious entrance. Pause before crossing, check the map, then ask with the phone open if the pin looks close but wrong."
+        }
+      ],
+      "sourceMode": "expanded-detail"
+    },
+    {
+      "pageID": "city-hcmc-place-pha-lau",
+      "summary": "Pha lau is worth trying in Saigon because it gives the trip a flavor to imagine before arrival. Expect bowl of phá lấu stew with bread on Saigon sidewalk table.",
+      "context": "For Pha lau, Saigon's food story comes through small meal rituals, flavor, herbs, and sauce, alongside Ben Thanh market energy.",
+      "tip": "Small meal rituals, flavor, herbs, and sauce, alongside Ben Thanh market energy give Pha lau a setting before the trip begins.",
+      "rationale": "Pha lau brings Saigon into focus through herbs, sauce, steam, and texture, alongside Ben Thanh market energy.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Pha lau is worth trying because it turns Saigon into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with small meal rituals, flavor, herbs, and sauce, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Pha lau, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: bowl of phá lấu stew with bread on Saigon sidewalk table, with steam, texture, small meal rituals, and flavor, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Phá lấu ở Thành phố Hồ Chí Minh for Pha lau. The local name is easier to remember once it sits beside sauce, steam, texture, and small meal rituals, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: flavor, herbs, sauce, and steam, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Pha lau works best when the name is tied to the reason for going, not memorized as an abstract label. Picture bowl of phá lấu stew with bread on Saigon sidewalk table with flavor, herbs, sauce, and steam, alongside Ben Thanh market energy."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Phá lấu ở Thành phố Hồ Chí Minh belongs to the scene, with herbs, sauce, steam, and texture, alongside Ben Thanh market energy around it and Saigon in view."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hcmc-place-pham-ngu-lao-street",
+      "summary": "Pham Ngu Lao Street is worth recognizing because a named street can make Saigon feel walkable before arrival. Expect Pham Ngu Lao street with travel offices and buses.",
+      "context": "For Pham Ngu Lao Street, Saigon's street story comes through shopfronts, scooters, crossings, and cafe edges, alongside Nguyen Hue city light.",
+      "tip": "Pham Ngu Lao Street carries crossings, cafe edges, neighborhood movement, and street signs, alongside Nguyen Hue city light into the travel plan.",
+      "rationale": "Pham Ngu Lao Street brings Saigon into focus through crossings, cafe edges, neighborhood movement, and street signs, alongside Nguyen Hue city light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Pham Ngu Lao Street is worth recognizing because streets shape how Saigon feels on the ground: crossings, cafe edges, neighborhood movement, and street signs, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Pham Ngu Lao Street, you get a named street scene of trees, shopfronts, crossings, cafes, and neighborhood movement: Pham Ngu Lao street with travel offices and buses, with crossings, cafe edges, neighborhood movement, and street signs, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Phố Phạm Ngũ Lão for Pham Ngu Lao Street. The local name is easier to remember once it sits beside scooters, crossings, cafe edges, and neighborhood movement, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the street helps you understand the neighborhood before you are there: street signs, shopfronts, scooters, and crossings, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Pham Ngu Lao Street works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Pham Ngu Lao street with travel offices and buses with cafe edges, neighborhood movement, street signs, and shopfronts, alongside Nguyen Hue city light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Phố Phạm Ngũ Lão feels less abstract when it sits beside neighborhood movement, street signs, shopfronts, and scooters, alongside Nguyen Hue city light and the scene of Pham Ngu Lao Street."
+        }
+      ]
+    }
+  ],
+  "decisions": {
+    "status": "needs_humanizer_repair",
+    "source": "current handwritten-copy source",
+    "notes": "Initial failing chunk for ChatGPT/Codex humanizer repair."
+  }
+}
+```
+
+Return only the complete repaired chunk JSON block first, then the Writer self-gate block. Do not summarize before the JSON.

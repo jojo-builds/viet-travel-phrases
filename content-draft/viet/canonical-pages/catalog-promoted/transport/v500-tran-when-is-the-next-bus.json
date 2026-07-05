@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Khi nào có chuyến xe buýt tiếp theo? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Ask once, then pause for the answer.",
       "phrases": [
         {
           "id": "v500-tran-when-is-the-next-bus",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Khi nào có + chuyến xe buýt as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from When is the next bus? to another transport need.",
+      "body": "Useful if the exchange continues: Take me here, Go to District 1, and You can stop here.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when when is the next bus is the detail you need resolved. The likely reply is a time, date, or schedule detail, so keep the phrase short and ready for one follow-up."
+      "body": "Best in a taxi, motorbike pickup, or station counter, before the explanation gets long. Keep the destination, fare, or ride screen close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Khi nào có chuyến xe buýt tiếp theo?.",
+      "body": "These follow-ups cover price, route, pickup, or payment: Please stop right here, Go this way, and Please turn on the air conditioning.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

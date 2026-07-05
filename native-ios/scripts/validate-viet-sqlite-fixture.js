@@ -10,6 +10,7 @@ const databasePath = path.join(nativeRoot, "Resources", "LanguagePacks", "viet",
 const reportPath = path.join(nativeRoot, "Resources", "LanguagePacks", "viet", "speaklocal-viet-report.json");
 const catalogPath = path.join(nativeRoot, "Resources", "viet-phrase-catalog.json");
 const authoredPagesPath = path.join(nativeRoot, "Resources", "viet-authored-listing-pages.json");
+const menuCopyPath = path.join(nativeRoot, "Resources", "vietnamese-menu-copy.json");
 const cityLibraryPath = path.join(repoRoot, "content-draft", "viet", "city-library", "v1.json");
 const plannedMissingAudioQueuePath = path.join(repoRoot, "docs", "audio-queues", "viet-planned-missing-audio.csv");
 const phraseSourcePath = path.join(repoRoot, "content-draft", "viet", "phrase-source.csv");
@@ -147,9 +148,16 @@ const reviewedCompoundPhrasePageIDs = [
   "viet-phrase-v900-tran-please-turn-left-at-the-next-street",
   "viet-phrase-v900-mone-numb-pric-is-there-an-atm-nearby",
   "viet-phrase-repair-show-me",
+  "viet-phrase-ves-show-me-anh-chi",
+  "viet-phrase-v500-airp-bord-arri-can-i-show-it-on-my-phone",
+  "viet-phrase-v500-unde-repa-please-type-it-into-my-phone",
   "viet-phrase-v900-dire-navi-can-you-call-this-place-and-ask-for-directions",
   "viet-phrase-v900-heal-phar-is-there-an-english-speaking-doctor-or-pharmacis",
   "viet-phrase-v900-loca-serv-ever-task-please-print-it-in-black-and-white",
+  "viet-phrase-v900-loca-serv-ever-task-can-you-print-this-for-me",
+  "viet-phrase-v900-time-date-book-please-send-it-by-text-message",
+  "viet-phrase-v900-time-date-book-please-write-down-the-time",
+  "viet-phrase-v900-tran-can-you-pick-me-up-here",
 ];
 
 const approvedQuickSayShortcutPairs = [
@@ -310,6 +318,9 @@ function main() {
     'cities', (SELECT count(*) FROM city),
     'cityPlaces', (SELECT count(*) FROM city_place),
     'cityPhraseTags', (SELECT count(*) FROM phrase_city_tag),
+    'vietnameseMenuItems', (SELECT count(*) FROM vietnamese_menu_item),
+    'vietnameseMenuHelperPhrases', (SELECT count(*) FROM vietnamese_menu_helper_phrase),
+    'readyVietnameseMenuHelperPhrases', (SELECT count(*) FROM vietnamese_menu_helper_phrase WHERE audio_status = 'ready'),
     'cityReadyAudioPhraseRows', (
       SELECT count(*)
       FROM phrase p
@@ -325,6 +336,7 @@ function main() {
   );`));
   const cityLibrary = fs.existsSync(cityLibraryPath) ? readJSON(cityLibraryPath) : { cities: [], places: [], pages: [] };
   const cityLibraryPages = (cityLibrary.pages ?? []).filter((page) => page.status === "approved");
+  const menuPayload = readJSON(menuCopyPath);
 
   assertEqual(sqliteValue("PRAGMA integrity_check;"), "ok", "SQLite integrity check");
   assertEqual(sqliteValue("PRAGMA foreign_key_check;"), "", "SQLite foreign key check");
@@ -401,6 +413,57 @@ function main() {
   assertEqual(counts.cityPhraseTags, cityLibraryPages.length, "city phrase tag count");
   assertZero(sqliteValue(`
     SELECT count(*)
+    FROM page_section
+    WHERE title = 'Useful Phrases'
+      AND (
+        presentation != 'phrase-list'
+        OR trim(COALESCE(body, '')) != ''
+      );
+  `), "city Useful Phrases sections must be phrase cards without prose bodies");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section ps
+    WHERE ps.title = 'Useful Phrases'
+      AND (
+        SELECT count(*)
+        FROM page_section_item psi
+        WHERE psi.section_id = ps.id
+          AND psi.item_kind IN ('phrase', 'authored_phrase')
+      ) < 2;
+  `), "city Useful Phrases sections need at least two phrase rows");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section ps
+    JOIN page_section_item psi ON psi.section_id = ps.id
+    LEFT JOIN audio_usage au
+      ON (
+        psi.item_kind = 'phrase'
+        AND au.target_kind = 'phrase'
+        AND au.target_id = psi.target_id
+        AND au.is_primary = 1
+      )
+      OR (
+        psi.item_kind = 'authored_phrase'
+        AND au.target_kind = 'authored_phrase'
+        AND au.target_id = psi.target_id
+      )
+    LEFT JOIN audio_asset aa ON aa.id = au.audio_asset_id
+    WHERE ps.title = 'Useful Phrases'
+      AND psi.item_kind IN ('phrase', 'authored_phrase')
+      AND aa.id IS NULL;
+  `), "city Useful Phrases rows must have bundled audio");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM page_section ps
+    JOIN page_section_item psi ON psi.section_id = ps.id
+    JOIN phrase p ON p.id = psi.target_id
+    JOIN phrase_page pp ON pp.phrase_id = p.canonical_phrase_id
+    JOIN page_category pc ON pc.page_id = pp.id AND pc.category_id = 'derived-place-phrases'
+    WHERE ps.title = 'Useful Phrases'
+      AND psi.item_kind = 'phrase';
+  `), "city Useful Phrases must not use derived place phrase rows hidden by the app");
+  assertZero(sqliteValue(`
+    SELECT count(*)
     FROM city_place
     WHERE COALESCE(place_kind, '') = '';
   `), "city places missing place_kind");
@@ -416,6 +479,58 @@ function main() {
     WHERE page_kind IN ('restaurant', 'dish')
       AND COALESCE(content_role, '') = '';
   `), "restaurant/dish city pages missing content_role");
+  assertEqual(counts.vietnameseMenuItems, (menuPayload.items ?? []).length, "Vietnamese menu item table count");
+  assertEqual(counts.vietnameseMenuHelperPhrases, (menuPayload.helperPhrases ?? []).length, "Vietnamese menu helper phrase table count");
+  assertEqual(
+    counts.readyVietnameseMenuHelperPhrases,
+    (menuPayload.helperPhrases ?? []).filter((phrase) => phrase.audioStatus === "ready").length,
+    "ready Vietnamese menu helper phrase count"
+  );
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM vietnamese_menu_item
+    WHERE COALESCE(menu_type, '') = ''
+       OR COALESCE(category, '') = ''
+       OR COALESCE(vietnamese_item, '') = ''
+       OR COALESCE(english_translation, '') = ''
+       OR COALESCE(at_a_glance, '') = ''
+       OR COALESCE(usually_includes_json, '') = ''
+       OR COALESCE(good_to_know, '') = ''
+       OR COALESCE(common_options_json, '') = ''
+       OR COALESCE(quick_say_vietnamese, '') = ''
+       OR COALESCE(quick_say_english, '') = ''
+       OR COALESCE(quick_say_sound_out, '') = '';
+  `), "Vietnamese menu items missing required runtime fields");
+  assertZero(sqliteValue(`
+    SELECT count(*)
+    FROM vietnamese_menu_helper_phrase
+    WHERE COALESCE(vietnamese, '') = ''
+       OR COALESCE(english, '') = ''
+       OR COALESCE(pronunciation, '') = ''
+       OR COALESCE(audio_status, '') = ''
+       OR COALESCE(applies_to_json, '') = '';
+  `), "Vietnamese menu helper phrases missing required runtime fields");
+  const menuHelperIDs = new Set(JSON.parse(sqliteValue("SELECT json_group_array(id) FROM vietnamese_menu_helper_phrase;")) ?? []);
+  const menuReferenceRows = JSON.parse(sqliteValue(`
+    SELECT json_group_array(json_object(
+      'itemID', item_id,
+      'helperPhraseIDsJSON', helper_phrase_ids_json
+    ))
+    FROM vietnamese_menu_item;
+  `)) ?? [];
+  const unresolvedMenuHelperReferences = [];
+  for (const row of menuReferenceRows) {
+    for (const helperPhraseID of JSON.parse(row.helperPhraseIDsJSON || "[]")) {
+      if (!menuHelperIDs.has(helperPhraseID)) {
+        unresolvedMenuHelperReferences.push(`${row.itemID}:${helperPhraseID}`);
+      }
+    }
+  }
+  assertEqual(
+    unresolvedMenuHelperReferences.slice(0, 10).join("\n"),
+    "",
+    `Vietnamese menu helper phrase references must resolve (${unresolvedMenuHelperReferences.length} unresolved)`
+  );
 
   assertZero(sqliteValue(`
     SELECT count(*)
@@ -563,6 +678,7 @@ function main() {
     JOIN page_section ps ON ps.page_id = pp.id
     JOIN page_section_item psi ON psi.section_id = ps.id
     WHERE ps.section_key IN ('quick-say', 'standard-way')
+      AND ps.title != 'Useful Phrases'
       AND psi.item_kind = 'phrase'
       AND NOT (
         (psi.note = pp.id AND psi.title_override = pp.title)
@@ -825,7 +941,7 @@ function main() {
   );
   assertEqual(
     sqliteValue("SELECT summary FROM phrase_page WHERE id = 'viet-phrase-polite-1';"),
-    "Hello (universal greeting)",
+    "A safe first hello for shops, hotels, tours, and any moment where the relationship word is not obvious yet.",
     "Xin chào flagship summary"
   );
   for (const [aliasID, canonicalPageID] of requiredLegacyNativePageAliases) {
@@ -921,7 +1037,8 @@ function main() {
         WHERE psi2.section_id = ps.id
           AND psi2.item_kind = 'breakdown_token'
       )
-      AND bt.token_text = pp.title;
+      AND bt.token_text = pp.title
+      AND pp.id NOT IN (${reviewedCompoundPhrasePageIDSQL});
   `), "non-final breakdown tokens duplicating the full phrase");
 
   assertZero(sqliteValue(`
@@ -1127,6 +1244,8 @@ function main() {
 
   assertEqual(report.countParity.phrases.actual, report.countParity.phrases.expected, "report phrase count");
   assertEqual(report.countParity.canonicalPhrasePages.actual, report.countParity.canonicalPhrasePages.expected, "report canonical page count");
+  assertEqual(report.generatedCounts.vietnameseMenuItems, counts.vietnameseMenuItems, "report Vietnamese menu item count");
+  assertEqual(report.generatedCounts.vietnameseMenuHelperPhrases, counts.vietnameseMenuHelperPhrases, "report Vietnamese menu helper phrase count");
   assertEqual(report.canonicalIdentity.phrasesResolvedToCanonicalPages, report.countParity.phrases.expected, "report resolved phrase count");
   assertEqual(report.canonicalIdentity.unresolvedDuplicateNormalizedTargetTextGroups.length, 0, "unresolved duplicate phrase groups");
   assertEqual(report.validation.duplicateCanonicalPageGroupCount, 0, "report duplicate page groups");
@@ -1145,6 +1264,8 @@ function main() {
   assertEqual(report.validation.badBreakdownGlossCount, 0, "report bad breakdown gloss count");
   assertEqual(report.validation.duplicateBreakdownGlossCount, 0, "report duplicate breakdown gloss count");
   assertEqual(report.validation.bannedUserFacingMatchCount, 0, "report banned wording count");
+  assertEqual(report.validation.vietnameseMenuItemCount, counts.vietnameseMenuItems, "report validation Vietnamese menu item count");
+  assertEqual(report.validation.vietnameseMenuHelperPhraseCount, counts.vietnameseMenuHelperPhrases, "report validation Vietnamese menu helper phrase count");
 
   console.log(JSON.stringify({
     ok: true,

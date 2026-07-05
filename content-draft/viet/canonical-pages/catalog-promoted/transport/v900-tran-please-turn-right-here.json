@@ -7,7 +7,7 @@
   "title": "Vui lòng rẽ phải ở đây",
   "englishTitle": "Please turn right here",
   "pronunciation": "Vui long re phai o day",
-  "summary": "Please turn right here",
+  "summary": "For giving a driver a simple turn instruction while the map or street is visible.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng rẽ phải ở đây is a practical transport phrase for keeping one travel detail clear. Use it when turn right here is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say it before the corner, not after the driver has passed the turn."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Vui lòng rẽ phải ở đây. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Point lightly or show the map as you say it. Keep the phrase short so the driver can act quickly.",
       "phrases": [
         {
           "id": "v900-tran-please-turn-right-here",
@@ -42,32 +42,41 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Vui lòng means please; rẽ phải means turn right; ở đây means here.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Vui lòng rẽ",
+          "vietnamese": "Vui lòng",
           "english": "please",
+          "keepTogetherReason": "polite opener",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "phải ở đây",
-          "english": "turn right here",
+          "vietnamese": "rẽ phải",
+          "english": "turn right",
+          "keepTogetherReason": "turn-right phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
+          "vietnamese": "ở đây",
+          "english": "here",
+          "keepTogetherReason": "here phrase",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-4",
           "vietnamese": "Vui lòng rẽ phải ở đây",
           "english": "Please turn right here",
-          "audioKey": null
+          "audioKey": "v900-tran-please-turn-right-here"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please turn right here to another transport need.",
+      "body": "If the route keeps changing, move to stop-here, go-this-way, take-me-here, or correct-address follow-ups.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +113,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when turn right here is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good in taxis, app rides, motorbike taxis, private cars, and hotel-arranged transport."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Short route instructions land best before the intersection. Pair the phrase with the map if traffic is busy."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Vui lòng rẽ phải ở đây.",
+      "body": "Use stop-here, go-this-way, air-conditioning, correct-address, or avoid-tolls cards as the ride changes.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

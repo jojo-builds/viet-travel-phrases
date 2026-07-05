@@ -7,7 +7,7 @@
   "title": "Tôi có đặt tour",
   "englishTitle": "I have a tour booking",
   "pronunciation": "toy koh dat tour",
-  "summary": "Tôi có đặt tour means “I have a tour booking”.",
+  "summary": "Use this when staff need to find an existing tour reservation, not sell you a new ticket.",
   "iconName": "camera.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -19,12 +19,14 @@
       "id": "at-glance",
       "title": "At a glance",
       "body": "Use this at a tour desk, pier, hotel lobby, or attraction entrance when you already booked and need staff to find your reservation. Show the booking name, QR code, or confirmation screen while you say it.",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Tôi có + đặt tour carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "v500-sigh-acti-i-have-a-tour-booking-piece-1",
@@ -45,7 +47,8 @@
           "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
@@ -63,18 +66,21 @@
           "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
       "body": "Tour check-ins move quickly because staff are usually matching names, times, and group lists. This phrase tells them you are already in the system, so the next useful answer is likely a meeting point, guide name, or confirmation request.",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Sightseeing & Activities, the reply often comes as a name check, booking-code request, counter direction, or short wait. Say Tôi có đặt tour once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Watch for a name check, booking-code request, counter direction, or short wait. Move to the follow-up card that matches ticket, timing, meeting point, entrance, or photo rule.",
       "phrases": [
         {
           "id": "sight-1",
@@ -107,7 +113,8 @@
           "audioKey": "sight-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
@@ -135,13 +142,16 @@
           "audioKey": "sight-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Pair the phrase with the voucher or booking code when the place is busy so staff can match the right tour quickly.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -159,12 +169,13 @@
           "audioKey": "audio-authored-toi-co-dat-tour-f8fa71b6af"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through how much is the ticket?; where do we start?; can I take photos here?",
       "phrases": [
         {
           "id": "sight-1",
@@ -217,7 +228,8 @@
           "audioKey": "sight-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

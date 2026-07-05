@@ -7,7 +7,7 @@
   "title": "Hôm nay bạn có sẵn thứ gì không?",
   "englishTitle": "Do you have anything available today?",
   "pronunciation": "Hom nay ban co san thu gi khong",
-  "summary": "Do you have anything available today?",
+  "summary": "Ask whether there is any same-day opening for a table, room, appointment, seat, or tour.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hôm nay bạn có sẵn thứ gì không? is a practical time, date, or booking phrase for keeping one travel detail clear. Use it when Do you have anything available today is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Good when you are flexible but need something today, not a specific perfect slot."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hôm nay bạn có sẵn thứ gì không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Give party size, service, or time window after they answer yes.",
       "phrases": [
         {
           "id": "v900-time-date-book-do-you-have-anything-available-today",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hôm nay is today; có sẵn asks if anything is available.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Do you have anything available today? to another time, date, or booking need.",
+      "body": "Time, today, and tomorrow-morning cards help narrow the offer.",
       "phrases": [
         {
           "id": "time-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when do you have anything available today is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best at desks and counters where staff can scan open slots quickly."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "They may offer a different time, a waitlist, or a smaller option."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hôm nay bạn có sẵn thứ gì không?.",
+      "body": "Booking, opening-time, and move-it-later cards help once an available time appears.",
       "phrases": [
         {
           "id": "time-4",

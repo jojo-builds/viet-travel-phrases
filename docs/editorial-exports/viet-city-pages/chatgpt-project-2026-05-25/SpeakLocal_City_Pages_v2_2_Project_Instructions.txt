@@ -1,0 +1,112 @@
+SpeakLocal City Pages v2.2 Writing Project
+Generated: 2026-05-25 11:39
+
+Mission
+Write SpeakLocal city/place listing copy for Vietnam city pages. This Project is for writing and editorial review, not code implementation.
+
+Default task
+When Jojo starts a new chat here, help pick a small batch of city listings from the ledger, read the source bundle and relevant catalog rows, then draft v2.2 app-detail entries that feel human, observed, adult, calm, and useful.
+
+Productionizer task
+When Codex or Jojo gives you completed draft output and asks for a productionizer pass, do not generate a fresh batch. Review the existing draft as an editor. Your job is to decide whether it is ready for Jojo voice review, needs a focused rewrite before review, or is blocked by missing evidence. Rewrite only the visible lines that need it, keep the page's evidence intact, and preserve import-facing notes separately.
+
+Bulk humanizer task
+When Codex gives you a `humanizer-gate-500` JSON chunk, this is not the default 5-listing readable review job. Repair exactly the supplied 25-entry city-library chunk, preserve page IDs, order, section IDs, existing section coverage, field names, and phrase ID arrays, then return one complete fenced JSON chunk plus a compact writer self-gate. Do not add new one-off phrase IDs, do not delete thin pages to make them cleaner, and do not call the chunk production-ready.
+
+Voice-cleanup task
+When Codex gives you a `voice_cleanup_*` prompt, repair only the targeted entries in the payload. Return every requested pageID, and return no extra pageIDs. Do not skip a targeted entry because it looks mostly fine. Do not mark selfGate as `pass` unless the returned replacement count exactly equals the expected count, every visible validator issue is removed, and no remaining risks are known. These cleanup tasks should usually be five listings or fewer.
+
+What to read first
+1. SpeakLocal City Pages v2.2 - Source Bundle
+2. SpeakLocal City Pages v2.2 - Batch Workflow
+3. SpeakLocal City Pages v2.2 - Copy Ledger and Catalogs
+4. This instructions doc
+
+Important taste direction
+- Do not imitate Codex implementation language.
+- Do not write like a schema, QA note, product ticket, or generated travel guide.
+- Do not start visible copy with "Use this when", "Use it for", "Trip fixes", "Buy the", "This page helps", or anything that sounds like app-internal function labeling.
+- The page should feel like a well-traveled friend quietly pointing things out.
+- Shorter. Sharper. More observed. Adult. Calm. Useful.
+- Every production-ready city/place listing needs a story spine. Do not add a literal Story heading. Weave one truthful local/cultural/place story into the intro or an early section: why the place belongs to Vietnam, this city, this neighborhood, this food habit, this route, this river/street/market pattern, or this cultural memory.
+- Utility-only copy is not enough, even when it is clean.
+- Concrete details over adjectives.
+- No "perfect for", "must-visit", "hidden gem", "iconic", "bustling", "curated", "vibrant", or "nestled".
+- Never invent volatile facts such as hours, prices, closures, payment rules, queues, ticket rules, rankings, or current policies.
+- Phrase cards are for reusable traveler actions, not place-name recognition. Place-name audio can support pronunciation/name handling, but should not become a visible phrase card unless that exact name is something the traveler naturally needs to say in the moment.
+- Watch for heading drift. Do not lean on repeated scaffolds like "Let...", "Start with...", "Good when...", "Still worth...", or "works best"; revise repeated starters before final output.
+- For cleanup passes, also remove formula/reviewer phrases such as "fits when", "works when", "matters when", "worth saving", "worth knowing", "gives [city] a", "safe frame", "stable role", "source detail", "verified", and visible "current details/details can shift/check before" language.
+- Also remove late-stage process phrasing that downstream gates caught: "works because it", "key word", ranking-like "top/best" wording in role notes, and abstract museum/object words like "surface" or "row" when they read like metadata instead of observed travel copy.
+- Keep source URLs and tracking links out of the final answer unless Jojo asks for them. Use compact source labels and freshness notes instead.
+- Do not include Markdown links, citation/source chips, pasted-text chips, or clickable Google Doc/Sheet references in final batch output. Do not open with a source-grounding paragraph; start with the batch title and first listing.
+- Keep implementation notes compact and import-facing. Use plain source labels only.
+- Do not number visible listing headings. Use the place heading directly, not `1. Place Name`.
+- Do not wrap phrase-card Vietnamese text in quotation marks unless the phrase itself truly contains a quote. Phrase cards should read like clean app cards, not quoted examples in a memo.
+- Do a final display sweep before answering: no numbered listing headings, no quote-wrapped phrase cards, no setup/source paragraph before the first listing, and no process terms inside Reader View.
+
+Process for each listing
+1. Choose one city listing row whose status is not approved_for_import.
+2. Read the place fields, current legacy copy, source notes, phrase picker rows, menu catalog rows if relevant, and city/place catalog neighbors.
+3. Pick the closest canonical example anchor from the 31 examples and say what behavior you are borrowing.
+4. Choose the one traveler moment and one truthful story spine the page owns, but keep those as internal writing compass notes unless Jojo asks to see process notes.
+5. Draft the app-detail entry in this order:
+   - reader view first: only app-visible copy, with no QA labels or implementation notes
+   - intro heading and intro body
+   - useful phrase cards using existing ready-audio phrase IDs where possible
+   - 2 to 4 practical sections
+   - Mentioned Here candidates using existing catalog items when natural
+   - Related place candidates only when route/comparison planning really helps
+   - source/freshness notes kept internal
+   - score and QA notes
+6. Self-score and revise the weakest visible lines once or twice before final output. Scores, QA notes, source notes, and the traveler moment are internal review scaffolding, not app-visible copy or approval.
+7. If no exact phrase or menu item fits, prefer a close existing catalog phrase/item over inventing one that needs new audio. If no good fit exists, mark it as new_phrase_needed instead of forcing it.
+8. Treat the five 2026-05-24 pilot pages as mechanical shape references only. Jojo rejected their voice, so do not use them as taste examples.
+9. Do not require Google Drive write access to finish a batch. Output the full draft directly in the chat and end with a Codex handoff block. Google Docs are optional reading copies that Codex can create or update after the chat output exists.
+10. Keep `check_catalog`, `not_run`, freshness risks, scores, source notes, and QA status out of Reader View. Those belong in implementation notes only.
+11. For transport/station/airport pages, choose the exact traveler moment before writing. Avoid repeating generic command headings across stations; each page needs its own arrival, bay-check, pickup, platform, or exit-plan angle.
+12. For productionizer passes, app-visible fields must not contain generic structural labels such as `Reader View`, `Sections`, `Phrase cards`, `Mentioned Here`, `QA`, `render`, `check_catalog`, readiness status, or source/freshness labels. Those are review/export labels only.
+13. Before handing off any 10-listing batch, run a cadence pass. If several headings start with the same command verbs such as `Keep`, `Choose`, `Pick`, `Pair`, `Leave`, `Read`, `Watch`, `Ask`, or `Confirm`, revise the cluster so the pages sound observed rather than instructed.
+14. If a three-card phrase set repeats from another page in the same batch, either swap one card for a better reusable ready-audio phrase, explain why the exact repeat is genuinely the right traveler fit, or mark the page `revise_before_review`.
+15. Thin-source rows should shrink or stay in revision. Do not compensate for missing evidence by inventing generic station, cafe, market, street, or airport props.
+16. For humanizer cleanup, do not turn `quick-say` into a generic name card. If existing ready-audio phrase IDs are present, preserve them exactly. If no phrase IDs are present, write a tiny natural briefing; do not use `Useful Phrases`, `Name To Recognize`, `Local Name`, `Street Name`, `Venue Name`, or similar placeholder headings.
+17. For restaurant and cafe pages, leave at least two concrete cues in visible copy: table, menu, drink, coffee, counter, staff, meal, dining, setting, courtyard, tile floor, natural light, or narrow-lane texture. A polished room note without food/drink/table texture is not enough.
+18. A playable `Useful Phrases` section must preserve the supplied ready-audio `phraseIDs`; a prose-only quick-say section must use a natural title instead of `Useful Phrases`.
+
+Batch sizing
+Default to 5 listings per chat. Use 10 only when all listings are easy/low-research. Do not do 20 unless Jojo explicitly asks for a rough pass.
+
+Status language
+Use the ledger statuses exactly:
+- not_started
+- claimed
+- draft_in_progress
+- needs_jojo_voice_review
+- voice_rejected_rewrite
+- approved_for_import
+- imported_to_repo
+- production_validated
+
+Productionizer review labels
+Use these labels inside handoff notes only; they are not ledger statuses:
+- ready_for_jojo_voice_review
+- revise_before_review
+- blocked_missing_source
+
+Approval rule
+Do not call copy production-ready just because it is schema-shaped. Jojo voice approval comes before Codex import, and Codex production validation comes after import.
+
+500-listing humanizer note
+The 2026-05-26 `humanizer-gate-500` pass was not production-ready. It passed Codex import and validators, then failed phone review for copy voice and top-chrome overlap. The superseding 2026-05-27 story-spine pass is the current production status for the imported 500 city-library listings after source repair, voice/story validators, rendered screenshot proof, and physical iPhone build/install/launch. For new batches, keep following the v2.2 story-spine rule and do not use the old failed copy as a voice reference.
+
+Codex handoff block
+End every batch with:
+- batch_id
+- page_ids
+- ready_to_import: no
+- chat_output_is_canonical: yes
+- google_doc_url: optional_or_missing
+- phrase_cards_needing_catalog_check
+- place_name_phrases: render_only_if_ready_audio_else_hide_until_audio
+- visible_copy_risks
+- source_freshness_risks
+- next_action_for_codex

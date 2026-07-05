@@ -7,7 +7,7 @@
   "title": "Căn phòng vẫn chưa sẵn sàng.",
   "englishTitle": "The room is not ready yet.",
   "pronunciation": "Can phong van chua san sang",
-  "summary": "The room is not ready yet.",
+  "summary": "For a front-desk moment when check-in stalls and you need the next real time or option.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Căn phòng vẫn chưa sẵn sàng. is a practical hotel or stay phrase for keeping one travel detail clear. Use it when room is not ready yet is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Rooms can be nearly ready, actually delayed, or waiting on housekeeping. This line names the problem without turning it into a complaint."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Căn phòng vẫn chưa sẵn sàng.. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Use the line calmly, then show the booking or room number. The next answer should be a time, a place to wait, or another room.",
       "phrases": [
         {
           "id": "hotel-premium-room-not-ready",
@@ -42,22 +42,28 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Chưa sẵn sàng means not ready yet; căn phòng names the room.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Căn phòng vẫn",
+          "vietnamese": "Căn phòng",
           "english": "room",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "chưa sẵn sàng",
-          "english": "room is not ready yet",
+          "vietnamese": "vẫn",
+          "english": "still",
           "audioKey": null
         },
         {
           "id": "chunk-3",
+          "vietnamese": "chưa sẵn sàng.",
+          "english": "not ready yet",
+          "audioKey": null
+        },
+        {
+          "id": "full",
           "vietnamese": "Căn phòng vẫn chưa sẵn sàng.",
           "english": "The room is not ready yet",
           "audioKey": null
@@ -67,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from The room is not ready yet. to another hotel or stay need.",
+      "body": "Reservation and check-in lines help if the desk needs to find your booking first.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when room is not ready yet is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotel desks, guesthouses, serviced apartments, and tour lodging when the room is still being prepared."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "Ask for the new time before sitting down. If you are exhausted, ask whether bags can stay at the desk while you wait."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Căn phòng vẫn chưa sẵn sàng..",
+      "body": "Checkout, quiet-room, room-too-hot, air-con, and luggage lines cover the next front-desk move.",
       "phrases": [
         {
           "id": "hotel-3",

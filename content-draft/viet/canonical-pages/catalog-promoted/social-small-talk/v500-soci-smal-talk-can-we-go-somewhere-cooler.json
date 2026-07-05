@@ -7,7 +7,7 @@
   "title": "Chúng ta có thể đi đâu đó mát mẻ hơn được không?",
   "englishTitle": "Can we go somewhere cooler?",
   "pronunciation": "Chung ta co the di dau do mat me hon duoc khong",
-  "summary": "Can we go somewhere cooler?",
+  "summary": "For suggesting a cooler place without making the heat feel like a complaint.",
   "iconName": "bubble.left.and.bubble.right.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Chúng ta có thể đi đâu đó mát mẻ hơn được không? is a practical social small talk phrase for keeping one travel detail clear. Use it when Can we go somewhere cooler is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it with friends, a guide, a host, or staff when shade, air conditioning, or a fan would help."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Chúng ta có thể đi đâu đó mát mẻ hơn được không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Keep the delivery light. Gesture toward shade, the doorway, or a cooler room if the group is already moving.",
       "phrases": [
         {
           "id": "v500-soci-smal-talk-can-we-go-somewhere-cooler",
@@ -42,50 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Chúng tôi có thể asks can we; đi đâu đó means go somewhere; mát mẻ hơn means cooler; được không asks if possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Chúng ta có",
+          "vietnamese": "Chúng ta có thể",
           "english": "can we",
-          "audioKey": null
+          "keepTogetherReason": "can-we phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể đi đâu",
-          "english": "go / move",
-          "audioKey": null
+          "vietnamese": "đi đâu đó",
+          "english": "go somewhere",
+          "keepTogetherReason": "go-somewhere phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "đó mát mẻ",
-          "english": "somewhere cool",
-          "audioKey": null
+          "vietnamese": "mát mẻ hơn",
+          "english": "cooler",
+          "keepTogetherReason": "cooler-place phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "hơn",
-          "english": "more",
-          "audioKey": null
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-5",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-6",
+          "id": "full",
           "vietnamese": "Chúng ta có thể đi đâu đó mát mẻ hơn được không?",
-          "english": "Can we go somewhere cooler",
-          "audioKey": null
+          "english": "Can we go somewhere cooler?",
+          "audioKey": "v500-soci-smal-talk-can-we-go-somewhere-cooler"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can we go somewhere cooler? to another social small talk need.",
+      "body": "From-the-United-States, from-England, and first-time cards cover nearby social openers.",
       "phrases": [
         {
           "id": "smalltalk-1",
@@ -122,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real social small talk exchange when can we go somewhere cooler is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Hot afternoons, outdoor tables, walking tours, and crowded rooms are common moments for this phrase."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Small talk should feel light. Use the phrase once, smile, and let the other person decide how much conversation follows."
+      "body": "Vietnam heat can be intense. A gentle suggestion lands better than saying the place is too hot."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Chúng ta có thể đi đâu đó mát mẻ hơn được không?.",
+      "body": "Like-Vietnam, food-good, weather-hot, how-are-you, and stay-length cards keep the small talk friendly.",
       "phrases": [
         {
           "id": "smalltalk-4",

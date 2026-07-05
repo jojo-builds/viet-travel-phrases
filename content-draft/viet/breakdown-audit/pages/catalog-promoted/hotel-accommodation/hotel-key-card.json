@@ -22,22 +22,13 @@
       "id": "chunk-1",
       "vietnamese": "Thẻ phòng",
       "english": "room key card",
-      "keepTogetherReason": "compound hotel item term"
+      "keepTogetherReason": "key-card phrase"
     },
     {
-      "id": "chunk-3",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "mở",
-      "english": "open"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "được",
-      "english": "possible / okay"
+      "id": "chunk-2",
+      "vietnamese": "không mở được",
+      "english": "does not open / does not work",
+      "keepTogetherReason": "not-opening phrase"
     },
     {
       "id": "full",

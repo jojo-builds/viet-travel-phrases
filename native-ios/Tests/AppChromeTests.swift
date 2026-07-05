@@ -1,10 +1,16 @@
 import XCTest
+import Combine
 import CoreGraphics
 import SwiftUI
 import UIKit
 @testable import SpeakLocalNative
 
 final class AppChromeTests: XCTestCase {
+    override func tearDown() {
+        PracticeMatchSnapshotCache.clearForTesting()
+        super.tearDown()
+    }
+
     func testSystemTabsMapRoutesToAppleTabBarDestinations() {
         XCTAssertEqual(AppSystemTab(route: .home), .home)
         XCTAssertEqual(AppSystemTab(route: .browse), .browse)
@@ -66,6 +72,197 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testSearchReturnFocusPolicyAppliesEachRequestOnce() {
+        XCTAssertTrue(SearchReturnFocusPolicy.shouldApply(requestID: 7, lastAppliedRequestID: nil))
+        XCTAssertFalse(SearchReturnFocusPolicy.shouldApply(requestID: 7, lastAppliedRequestID: 7))
+        XCTAssertTrue(SearchReturnFocusPolicy.shouldApply(requestID: 8, lastAppliedRequestID: 7))
+    }
+
+    func testAdminBackdropPreheatPlanDeduplicatesAgainstReservedImages() {
+        let pendingNames = AdminBackdropImagePreheatPlan.pendingImageNames(
+            requestedImageNames: ["HeroCityHuePlacePerfumeRiver", "HeroCityHuePlacePerfumeRiver", "HeroCityHanoiPlaceLongBienBridge"],
+            reservedImageNames: Set(["HeroCityHanoiPlaceLongBienBridge"])
+        )
+
+        XCTAssertEqual(pendingNames, ["HeroCityHuePlacePerfumeRiver"])
+    }
+
+    func testAdminBackdropPreheatPlanKeepsLatestQueuedWorkBounded() {
+        let queuedNames = AdminBackdropImagePreheatPlan.queuedImageNames(
+            existingQueuedImageNames: [
+                "HeroCityHuePlacePerfumeRiver",
+                "HeroCityHanoiPlaceLongBienBridge",
+            ],
+            incomingImageNames: [
+                "BackdropPhrasePhoneCafeCharging",
+                "BackdropPhrasePhoneSimSetup",
+                "BackdropPhrasePhoneAirportCharging",
+            ],
+            maxQueuedImageCount: 2
+        )
+
+        XCTAssertEqual(queuedNames, [
+            "BackdropPhrasePhoneSimSetup",
+            "BackdropPhrasePhoneAirportCharging",
+        ])
+    }
+
+    func testFocusedDetailBackdropPreheatDropsStaleQueuedHeroWork() {
+        let queuedNames = AdminBackdropImagePreheatPlan.focusedQueuedImageNames(
+            existingQueuedImageNames: [
+                "HeroCityHuePlacePerfumeRiver",
+                "HeroCityHanoiPlaceLongBienBridge",
+                "BackdropPhrasePhoneCafeCharging",
+            ],
+            incomingImageNames: [
+                "BackdropPhrasePhoneAirportCharging",
+            ],
+            maxQueuedImageCount: 4
+        )
+
+        XCTAssertEqual(queuedNames, [
+            "BackdropPhrasePhoneAirportCharging",
+        ])
+    }
+
+    func testAdminBackdropPreheatPlanDrainsNewestQueuedWorkFirst() {
+        let next = AdminBackdropImagePreheatPlan.nextQueuedImageName(
+            from: [
+                "HeroCityHuePlacePerfumeRiver",
+                "BackdropPhrasePhoneSimSetup",
+                "BackdropPhrasePhoneAirportCharging",
+            ]
+        )
+
+        XCTAssertEqual(next?.imageName, "BackdropPhrasePhoneAirportCharging")
+        XCTAssertEqual(next?.remainingQueuedImageNames, [
+            "HeroCityHuePlacePerfumeRiver",
+            "BackdropPhrasePhoneSimSetup",
+        ])
+    }
+
+    func testFocusedBackdropPreheaterRejectsStaleInFlightHeroWork() {
+        let staleImageName = "StaleFocusedBackdrop"
+        let currentImageName = "CurrentFocusedBackdrop"
+        let stalePreparationStarted = expectation(description: "stale preparation started")
+        let releaseStalePreparation = DispatchSemaphore(value: 0)
+        let preparedImage = UIGraphicsImageRenderer(size: CGSize(width: 4, height: 4)).image { context in
+            UIColor.red.setFill()
+            context.fill(CGRect(x: 0, y: 0, width: 4, height: 4))
+        }
+
+        AdminBackdropImagePreheater.resetForTesting(imagePreparer: { imageName in
+            if imageName == staleImageName {
+                stalePreparationStarted.fulfill()
+                _ = releaseStalePreparation.wait(timeout: .now() + 2)
+                return preparedImage
+            }
+
+            if imageName == currentImageName {
+                return preparedImage
+            }
+
+            return nil
+        })
+        defer { AdminBackdropImagePreheater.resetForTesting() }
+
+        AdminBackdropImagePreheater.preheatFocused([staleImageName])
+        wait(for: [stalePreparationStarted], timeout: 1)
+
+        AdminBackdropImagePreheater.preheatFocused([currentImageName])
+        releaseStalePreparation.signal()
+
+        let deadline = Date().addingTimeInterval(2)
+        while AdminBackdropImagePreheater.preparedImage(named: currentImageName) == nil, Date() < deadline {
+            Thread.sleep(forTimeInterval: 0.01)
+        }
+
+        XCTAssertNil(
+            AdminBackdropImagePreheater.preparedImage(named: staleImageName),
+            "Focused preheat should reject stale in-flight full-screen hero work once a newer focused request replaces it."
+        )
+        XCTAssertNotNil(
+            AdminBackdropImagePreheater.preparedImage(named: currentImageName),
+            "Focused preheat should still commit the newest active hero image."
+        )
+    }
+
+    func testPracticeMatchSnapshotCacheTracksInFlightLoads() {
+        let key = PracticeMatchSnapshotCacheKey(
+            practicePageIDs: ["viet-thank-you"],
+            savedPageIDs: ["viet-excuse-sorry"]
+        )
+
+        XCTAssertTrue(PracticeMatchSnapshotCache.beginLoading(key))
+        XCTAssertFalse(PracticeMatchSnapshotCache.beginLoading(key))
+
+        PracticeMatchSnapshotCache.finishLoading(key)
+
+        XCTAssertTrue(PracticeMatchSnapshotCache.beginLoading(key))
+    }
+
+    func testPracticeOverlayUsesDarkTopAndStatusChrome() {
+        XCTAssertEqual(
+            AppShellPracticeOverlayChromePolicy.topChromeStyle(
+                isPracticeOverlayPresented: true,
+                hidesPhotoBackdropChrome: false,
+                photoBackdropTopChromeStyle: .light
+            ),
+            .darkPhoto
+        )
+        XCTAssertEqual(
+            AppShellPracticeOverlayChromePolicy.topChromeStyle(
+                isPracticeOverlayPresented: false,
+                hidesPhotoBackdropChrome: false,
+                photoBackdropTopChromeStyle: .darkPhoto
+            ),
+            .darkPhoto
+        )
+        XCTAssertEqual(
+            AppShellPracticeOverlayChromePolicy.topChromeStyle(
+                isPracticeOverlayPresented: false,
+                hidesPhotoBackdropChrome: true,
+                photoBackdropTopChromeStyle: .darkPhoto
+            ),
+            .light
+        )
+        XCTAssertEqual(
+            AppShellPracticeOverlayChromePolicy.preferredSystemColorScheme(
+                isPracticeOverlayPresented: true
+            ),
+            .dark
+        )
+        XCTAssertNil(
+            AppShellPracticeOverlayChromePolicy.preferredSystemColorScheme(
+                isPracticeOverlayPresented: false
+            )
+        )
+        XCTAssertEqual(
+            AppShellPracticeOverlayChromePolicy.topChromeOpacityScale(
+                isPracticeOverlayPresented: false,
+                backdropOpacity: 0
+            ),
+            1,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            AppShellPracticeOverlayChromePolicy.topChromeOpacityScale(
+                isPracticeOverlayPresented: true,
+                backdropOpacity: PracticeMatchPullUpMetrics.backdropOpacity
+            ),
+            1,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            AppShellPracticeOverlayChromePolicy.topChromeOpacityScale(
+                isPracticeOverlayPresented: true,
+                backdropOpacity: PracticeMatchPullUpMetrics.backdropOpacity * 0.25
+            ),
+            0.25,
+            accuracy: 0.001
+        )
+    }
+
     func testPlayableAudioTintsUseOneConsistentActionColor() {
         let expected = rgbaComponents(for: AccentTint.red.audioColor)
 
@@ -101,6 +298,7 @@ final class AppChromeTests: XCTestCase {
 
     func testOnlyTopAdminAndAppSpecificChromeStayLayeredAboveContent() {
         XCTAssertLessThanOrEqual(AppChromeLayout.topSeparationHeight, 120)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.topReadableShieldHeight, AppChromeLayout.topAdminHitTestEnvelopeHeight)
         XCTAssertLessThan(
             AppChromeLayout.topSeparationHeight,
             AppChromeLayout.pinnedAudioSpeedRevealY + AppChromeLayout.topAdminControlSize
@@ -124,6 +322,20 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testBottomAdminHitTestEnvelopeDoesNotCoverPulledPhotoSheet() {
+        XCTAssertLessThan(AppChromeLayout.bottomAdminHitTestEnvelopeHeight, PhrasePageStyle.bottomChromeContentClearance)
+        XCTAssertGreaterThanOrEqual(AppChromeLayout.bottomAdminHitTestEnvelopeHeight, 88)
+    }
+
+    func testBottomInsetValidationUsesPostClearanceScrollTarget() {
+        let sentinelID = "PhraseArticle.BottomSentinel.viet-phrase-city-danang-place-dragon-bridge"
+
+        XCTAssertEqual(
+            AppBottomInsetValidation.scrollTargetID(for: sentinelID),
+            "\(sentinelID).ScrollTarget"
+        )
+    }
+
     func testTopAdminControlsUseCompactAlignedMetrics() {
         XCTAssertEqual(AppChromeLayout.topAdminControlSize, 47)
         XCTAssertLessThanOrEqual(AppChromeLayout.topAdminControlSize, 48)
@@ -136,44 +348,65 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
-    func testMenuSectionChromeFitsBelowTopAdminRow() {
-        let stackedChromeHeight = AppChromeLayout.topAdminTopPadding
-            + AppChromeLayout.topAdminControlSize
-            + AppChromeLayout.menuSectionChromeRowSpacing
-            + AppChromeLayout.menuSectionChromeHeight
+    func testPlaybackDockFitsInsideHomeFeatureCardPadding() {
+        let usableCardWidth = HomeLayout.featurePhraseCardWidth - 36
+        let speedControlWidth = AudioSpeedControlMetrics.regular.minimumControlWidth(
+            itemCount: AudioPlaybackPreference.speeds.count
+        )
+        let minimumDockWidth = PlaybackDockLayout.minimumWidth(speedControlWidth: speedControlWidth)
 
-        XCTAssertLessThanOrEqual(stackedChromeHeight, AppChromeLayout.topAdminHitTestEnvelopeHeight)
+        XCTAssertLessThanOrEqual(minimumDockWidth, usableCardWidth)
+    }
+
+    func testMenuSectionChromeSharesTopAdminRow() {
+        let compactChromeHeight = AppChromeLayout.topAdminTopPadding
+            + max(AppChromeLayout.topAdminControlSize, AppChromeLayout.menuSectionChromeHeight)
+
+        XCTAssertEqual(AppChromeLayout.menuSectionChromeRowSpacing, 0)
+        XCTAssertLessThanOrEqual(compactChromeHeight, AppChromeLayout.topAdminHitTestEnvelopeHeight)
         XCTAssertLessThanOrEqual(
-            stackedChromeHeight,
+            compactChromeHeight,
             AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: true)
         )
-        XCTAssertGreaterThan(AppChromeLayout.menuSectionJumpClearance, stackedChromeHeight)
+        XCTAssertGreaterThan(AppChromeLayout.menuSectionJumpClearance, compactChromeHeight)
         XCTAssertEqual(AppChromeLayout.menuSectionJumpViewportAnchorY, 0.19, accuracy: 0.001)
         XCTAssertEqual(
-            BrowseCollectionLayout.subcategoryJumpViewportAnchorY,
+            BrowseCollectionLayout.sectionJumpViewportAnchorY,
             AppChromeLayout.menuSectionJumpViewportAnchorY,
             accuracy: 0.001
         )
     }
 
-    func testMenuSectionChromeExtendsSharedTopBackdropBehindContent() {
-        let sectionRowY = AppChromeLayout.topAdminTopPadding
-            + AppChromeLayout.topAdminControlSize
-            + AppChromeLayout.menuSectionChromeRowSpacing
-        let sectionRowBottomY = sectionRowY + AppChromeLayout.menuSectionChromeHeight
+    func testMenuSectionChromeUsesSingleRowSharedTopBackdrop() {
         let menuBackdropHeight = AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: true)
 
-        XCTAssertEqual(AppChromeLayout.menuSectionBackdropTopOffset, sectionRowY)
+        XCTAssertEqual(AppChromeLayout.menuSectionBackdropTopOffset, AppChromeLayout.topAdminTopPadding)
         XCTAssertEqual(
             menuBackdropHeight,
-            AppChromeLayout.menuSectionBackdropTopOffset + AppChromeLayout.menuSectionBackdropHeight
+            AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false)
         )
-        XCTAssertGreaterThan(menuBackdropHeight, AppChromeLayout.topChromeBackdropHeight(showsMenuSectionChrome: false))
         XCTAssertGreaterThan(
             menuBackdropHeight,
-            sectionRowBottomY + 32
+            AppChromeLayout.topAdminTopPadding + AppChromeLayout.topAdminControlSize
         )
         XCTAssertFalse(AppChromeLayout.chromeSeparationAllowsHitTesting)
+    }
+
+    func testTopAdminMoreMenuInventoryIsGoLiveOnly() {
+        let items = TopAdminMoreMenuItem.goLiveItems
+        let titles = items.map(\.title)
+        let urls = items.map(\.url.absoluteString)
+
+        XCTAssertEqual(
+            titles,
+            ["Send Feedback", "Contact Support", "Privacy Policy", "Terms of Use"]
+        )
+        XCTAssertEqual(urls[0], "mailto:feedback@jayopsai.com")
+        XCTAssertEqual(urls[1], "https://speaklocal.app/feedback/")
+        XCTAssertEqual(urls[2], "https://speaklocal.app/privacy/")
+        XCTAssertEqual(urls[3], "https://speaklocal.app/terms/")
+        XCTAssertFalse(titles.contains { $0.localizedCaseInsensitiveContains("about") })
+        XCTAssertFalse(titles.contains { $0.localizedCaseInsensitiveContains("grab") })
     }
 
     func testPhotoBackdropChromeUsesOneSharedDissolveTiming() {
@@ -196,6 +429,118 @@ final class AppChromeTests: XCTestCase {
             accuracy: 0.001
         )
         XCTAssertLessThanOrEqual(PhrasePhotoBackdropLayout.bottomReadingClearance, 244)
+    }
+
+    func testPhotoBackdropBottomBackingKeepsRoundedSheetEdge() {
+        let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
+        let restingSheetTop = max(metrics.collapsedContentTop - metrics.initialAnchorOffset, 0)
+
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.bottomChromeBackingTopCornerRadius(sheetTop: restingSheetTop),
+            PhrasePhotoBackdropLayout.sheetTopCornerRadius,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.bottomChromeBackingTopCornerRadius(sheetTop: 0),
+            0,
+            accuracy: 0.001
+        )
+    }
+
+    func testPhotoBackdropBottomBackingOverscansNativeTabSamplingArea() {
+        let viewportHeight: CGFloat = 852
+        let safeAreaBottom: CGFloat = 34
+        let sheetTop: CGFloat = 540
+        let backingFrameHeight = PhrasePhotoBackdropLayout.bottomChromeBackingFrameHeight(
+            viewportHeight: viewportHeight,
+            safeAreaBottom: safeAreaBottom
+        )
+        let backingHeight = PhrasePhotoBackdropLayout.bottomChromeBackingHeight(
+            viewportHeight: viewportHeight,
+            safeAreaBottom: safeAreaBottom,
+            sheetTop: sheetTop
+        )
+
+        XCTAssertGreaterThan(
+            PhrasePhotoBackdropLayout.bottomChromeBackingOverscan,
+            AppChromeLayout.bottomAdminHitTestEnvelopeHeight
+        )
+        XCTAssertEqual(
+            backingFrameHeight,
+            viewportHeight + safeAreaBottom + PhrasePhotoBackdropLayout.bottomChromeBackingOverscan,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            backingHeight + sheetTop,
+            backingFrameHeight,
+            accuracy: 0.001
+        )
+    }
+
+    func testAdminPhotoBackdropRestingSheetUsesRealInitialScrollOffset() {
+        let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
+        let naturalState = AdminPhotoBackdropScrollState(rawOffset: 0, metrics: metrics)
+        let restingState = AdminPhotoBackdropScrollState(rawOffset: metrics.initialAnchorOffset, metrics: metrics)
+        let restingSheetTop = AdminPhotoBackdropSurfaceLayout.sheetTop(
+            scrollOffset: restingState.displayOffset,
+            metrics: metrics
+        )
+        let pulledDownState = AdminPhotoBackdropScrollState(
+            rawOffset: metrics.initialAnchorOffset - 160,
+            metrics: metrics
+        )
+        let pulledDownSheetTop = AdminPhotoBackdropSurfaceLayout.sheetTop(
+            scrollOffset: pulledDownState.displayOffset,
+            metrics: metrics
+        )
+
+        XCTAssertEqual(naturalState.displayOffset, 0, accuracy: 0.001)
+        XCTAssertEqual(
+            restingState.displayOffset,
+            PhrasePhotoBackdropLayout.quantizedScrollOffset(metrics.initialAnchorOffset),
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            restingSheetTop,
+            metrics.initialContentTop,
+            accuracy: PhrasePhotoBackdropLayout.scrollGeometryUpdateStride
+        )
+        XCTAssertGreaterThan(pulledDownSheetTop, restingSheetTop)
+        XCTAssertLessThanOrEqual(pulledDownSheetTop, metrics.collapsedContentTop)
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.bottomChromeBackingTopCornerRadius(sheetTop: restingSheetTop),
+            PhrasePhotoBackdropLayout.sheetTopCornerRadius,
+            accuracy: 0.001
+        )
+    }
+
+    func testCityPlacePhotoBackdropDetailPagesHaveExtraBottomScrollClearance() {
+        let cityPage = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-phrase-city-hcmc-place-lusine-thao-dien"))
+        let menuPage = try! XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-pho-bo"))
+
+        XCTAssertTrue(
+            PhrasePhotoBackdropLayout.supportsCityListingPage(
+                pageID: cityPage.id,
+                heroImageName: cityPage.heroImageName
+            )
+        )
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.bottomReadingClearance(
+                pageID: cityPage.id,
+                heroImageName: cityPage.heroImageName
+            ),
+            PhrasePhotoBackdropLayout.bottomReadingClearance + PhrasePhotoBackdropLayout.cityDetailBottomScrollLift,
+            accuracy: 0.001
+        )
+        XCTAssertGreaterThanOrEqual(PhrasePhotoBackdropLayout.cityDetailBottomScrollLift, 128)
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.bottomReadingClearance(
+                pageID: menuPage.id,
+                heroImageName: menuPage.heroImageName
+            ),
+            PhrasePhotoBackdropLayout.bottomReadingClearance,
+            accuracy: 0.001
+        )
     }
 
     func testPhotoBackdropTopChromeTurnsDarkOnlyWhileImageIsUnderStatusArea() {
@@ -236,6 +581,444 @@ final class AppChromeTests: XCTestCase {
         )
         XCTAssertFalse(PhrasePhotoBackdropLayout.scrollState(for: 24, metrics: metrics).hasPassedRevealThreshold)
         XCTAssertTrue(PhrasePhotoBackdropLayout.scrollState(for: 25, metrics: metrics).hasPassedRevealThreshold)
+    }
+
+    func testPhraseArticleStandardScrollTaskRunsOnlyForActivePages() {
+        XCTAssertFalse(PhraseArticleTaskPolicy.shouldRunStandardScrollTask(isActive: false))
+        XCTAssertTrue(PhraseArticleTaskPolicy.shouldRunStandardScrollTask(isActive: true))
+    }
+
+    func testAdminPhotoBackdropDelayedTaskRunsOnlyForActiveVisiblePages() {
+        XCTAssertFalse(
+            AdminPhotoBackdropTaskPolicy.shouldRunInitialPositionTask(
+                isActive: false,
+                isVisible: true
+            )
+        )
+        XCTAssertFalse(
+            AdminPhotoBackdropTaskPolicy.shouldRunInitialPositionTask(
+                isActive: true,
+                isVisible: false
+            )
+        )
+        XCTAssertTrue(
+            AdminPhotoBackdropTaskPolicy.shouldRunInitialPositionTask(
+                isActive: true,
+                isVisible: true
+            )
+        )
+
+        XCTAssertFalse(
+            AdminPhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                isActive: false,
+                isVisible: true
+            ),
+            "Inactive root/admin backdrop preview surfaces should not publish scroll geometry while mounted for navigation previews."
+        )
+        XCTAssertFalse(
+            AdminPhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                isActive: true,
+                isVisible: false
+            )
+        )
+        XCTAssertTrue(
+            AdminPhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                isActive: true,
+                isVisible: true
+            )
+        )
+
+        XCTAssertFalse(
+            HomePhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                isActive: false,
+                isVisible: true
+            ),
+            "Inactive Home backdrop preview surfaces should not publish restoration or backing offsets."
+        )
+        XCTAssertFalse(
+            HomePhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                isActive: true,
+                isVisible: false
+            )
+        )
+        XCTAssertTrue(
+            HomePhotoBackdropTaskPolicy.shouldApplyScrollGeometry(
+                isActive: true,
+                isVisible: true
+            )
+        )
+    }
+
+    func testVietnameseMenuPhotoBackdropScrollCoordinatorPublishesOnlyDisplayOffsetChanges() {
+        let coordinator = VietnameseMenuPhotoBackdropScrollCoordinator()
+        var publishCount = 0
+        let cancellable = coordinator.objectWillChange.sink { _ in
+            publishCount += 1
+        }
+
+        XCTAssertFalse(
+            coordinator.apply(
+                PhrasePhotoBackdropLayout.ScrollState(displayOffset: 0, hasPassedRevealThreshold: false)
+            )
+        )
+        XCTAssertEqual(coordinator.displayOffset, 0)
+        XCTAssertEqual(publishCount, 0)
+
+        XCTAssertFalse(
+            coordinator.apply(
+                PhrasePhotoBackdropLayout.ScrollState(displayOffset: 16, hasPassedRevealThreshold: false)
+            )
+        )
+        XCTAssertEqual(coordinator.displayOffset, 16)
+        XCTAssertEqual(publishCount, 1)
+
+        XCTAssertTrue(
+            coordinator.apply(
+                PhrasePhotoBackdropLayout.ScrollState(displayOffset: 16, hasPassedRevealThreshold: true)
+            )
+        )
+        XCTAssertEqual(coordinator.displayOffset, 16)
+        XCTAssertEqual(publishCount, 1)
+
+        coordinator.reset()
+        XCTAssertEqual(coordinator.displayOffset, 0)
+        XCTAssertEqual(publishCount, 2)
+        _ = cancellable
+    }
+
+    func testVietnameseMenuSectionTrackingCoordinatorPublishesOnlyMeaningfulChanges() {
+        let coordinator = VietnameseMenuSectionTrackingCoordinator(initialSectionID: "popular")
+        var publishCount = 0
+        let cancellable = coordinator.objectWillChange.sink { _ in
+            publishCount += 1
+        }
+
+        coordinator.applySectionFrames(
+            [
+                VietnameseMenuSectionFrame(id: "popular", order: 0, minY: 20),
+                VietnameseMenuSectionFrame(id: "noodles-and-bowls", order: 1, minY: 180),
+            ],
+            activationY: 120
+        )
+        XCTAssertEqual(coordinator.currentSectionID, "popular")
+        XCTAssertEqual(publishCount, 0)
+
+        coordinator.applySectionFrames(
+            [
+                VietnameseMenuSectionFrame(id: "popular", order: 0, minY: -220),
+                VietnameseMenuSectionFrame(id: "noodles-and-bowls", order: 1, minY: 64),
+                VietnameseMenuSectionFrame(id: "seafood", order: 2, minY: 220),
+            ],
+            activationY: 120
+        )
+        XCTAssertEqual(coordinator.currentSectionID, "noodles-and-bowls")
+        XCTAssertEqual(publishCount, 1)
+
+        coordinator.applySectionFrames(
+            [
+                VietnameseMenuSectionFrame(id: "popular", order: 0, minY: -240),
+                VietnameseMenuSectionFrame(id: "noodles-and-bowls", order: 1, minY: 40),
+                VietnameseMenuSectionFrame(id: "seafood", order: 2, minY: 200),
+            ],
+            activationY: 120
+        )
+        XCTAssertEqual(coordinator.currentSectionID, "noodles-and-bowls")
+        XCTAssertEqual(publishCount, 1)
+
+        coordinator.applyRailFrame(CGRect(x: 0, y: 140, width: 1, height: 80), revealY: 72)
+        XCTAssertFalse(coordinator.isSectionRailPinned)
+        XCTAssertEqual(publishCount, 1)
+
+        coordinator.applyRailFrame(CGRect(x: 0, y: -120, width: 1, height: 20), revealY: 72)
+        XCTAssertTrue(coordinator.isSectionRailPinned)
+        XCTAssertEqual(publishCount, 2)
+
+        coordinator.setCurrentSection("seafood")
+        coordinator.setCurrentSection("seafood")
+        XCTAssertEqual(coordinator.currentSectionID, "seafood")
+        XCTAssertEqual(publishCount, 3)
+        _ = cancellable
+    }
+
+    func testVietnameseMenuSectionTrackingDefersPinnedScrollBoundaryChanges() {
+        let coordinator = VietnameseMenuSectionTrackingCoordinator(initialSectionID: "noodles-and-bowls")
+        var publishCount = 0
+        let cancellable = coordinator.objectWillChange.sink { _ in
+            publishCount += 1
+        }
+
+        coordinator.applyRailFrame(CGRect(x: 0, y: -120, width: 1, height: 20), revealY: 72)
+        XCTAssertTrue(coordinator.isSectionRailPinned)
+        XCTAssertEqual(publishCount, 1)
+
+        let seafoodUpdate = coordinator.applySectionFrames(
+            [
+                VietnameseMenuSectionFrame(id: "noodles-and-bowls", order: 0, minY: -320),
+                VietnameseMenuSectionFrame(id: "seafood", order: 1, minY: 80),
+                VietnameseMenuSectionFrame(id: "grilled-and-braised-meats", order: 2, minY: 260),
+            ],
+            activationY: 120,
+            defersPinnedUpdates: true
+        )
+        XCTAssertEqual(coordinator.currentSectionID, "noodles-and-bowls")
+        XCTAssertEqual(publishCount, 1)
+        XCTAssertEqual(seafoodUpdate?.sectionID, "seafood")
+
+        let grilledMeatsUpdate = coordinator.applySectionFrames(
+            [
+                VietnameseMenuSectionFrame(id: "seafood", order: 1, minY: -280),
+                VietnameseMenuSectionFrame(id: "grilled-and-braised-meats", order: 2, minY: 70),
+                VietnameseMenuSectionFrame(id: "soups-and-hot-pots", order: 3, minY: 240),
+            ],
+            activationY: 120,
+            defersPinnedUpdates: true
+        )
+        XCTAssertEqual(coordinator.currentSectionID, "noodles-and-bowls")
+        XCTAssertEqual(publishCount, 1)
+        XCTAssertEqual(grilledMeatsUpdate?.sectionID, "grilled-and-braised-meats")
+
+        coordinator.commitPendingSectionUpdate(seafoodUpdate!)
+        XCTAssertEqual(coordinator.currentSectionID, "noodles-and-bowls")
+        XCTAssertEqual(publishCount, 1)
+
+        coordinator.commitPendingSectionUpdate(grilledMeatsUpdate!)
+        XCTAssertEqual(coordinator.currentSectionID, "grilled-and-braised-meats")
+        XCTAssertEqual(publishCount, 2)
+        _ = cancellable
+    }
+
+    func testVietnameseMenuLargeModelsAvoidDeepEquatableComparisons() {
+        XCTAssertFalse(
+            VietnameseMenuItem.self is any Equatable.Type,
+            "Menu item payloads are large enough that scroll-time AttributeGraph comparisons should not walk every field."
+        )
+        XCTAssertFalse(
+            VietnameseMenuSection.self is any Equatable.Type,
+            "Section views carry item arrays; deep Equatable conformance can show up as scroll-time section-boundary work."
+        )
+        XCTAssertFalse(
+            VietnameseMenuPayload.self is any Equatable.Type,
+            "The decoded menu payload is runtime content, not a value that should participate in SwiftUI equality checks."
+        )
+    }
+
+    func testVietnameseMenuDetailLookupsUseIndexedItems() {
+        XCTAssertEqual(VietnameseMenuCatalog.indexedItemCountForTesting, VietnameseMenuCatalog.allItems.count)
+
+        for item in VietnameseMenuCatalog.allItems {
+            XCTAssertEqual(VietnameseMenuCatalog.item(withID: item.itemID)?.detailPageID, item.detailPageID)
+            XCTAssertEqual(VietnameseMenuCatalog.detailItem(withPageID: item.detailPageID)?.itemID, item.itemID)
+        }
+    }
+
+    func testMenuDetailPagesBypassSQLitePhraseGraphLookup() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        let menuPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-food-pho-bo"))
+        let locationMenuPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-menu-lusine-thao-dien-eggs-benedict"))
+
+        XCTAssertEqual(menuPage.title, "Phở bò")
+        XCTAssertEqual(locationMenuPage.title, "Eggs Benedict")
+        XCTAssertEqual(VietSQLitePhraseGraphRuntime.detailPageLookupCountForTesting, 0)
+    }
+
+    func testCanonicalDetailPagesReuseResolvedPageWithoutRepeatedSQLiteLookup() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        let pageID = "viet-phrase-hello-chao-anh"
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: pageID))
+        let lookupCountAfterWarmup = VietSQLitePhraseGraphRuntime.detailPageLookupCountForTesting
+
+        for _ in 0..<12 {
+            XCTAssertEqual(PhraseDetailPage.page(withID: pageID)?.id, page.id)
+        }
+
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.detailPageLookupCountForTesting,
+            lookupCountAfterWarmup,
+            "SwiftUI detail redraws should reuse the resolved page instead of re-entering the SQLite detail resolver for the same canonical page."
+        )
+    }
+
+    func testMenuDetailNavigationBypassesSQLiteCanonicalLookup() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        var navigation = AppShellNavigationState()
+
+        let menuRecentPageID = navigation.openDetail("viet-menu-food-pho-bo")
+        let locationMenuRecentPageID = navigation.openDetail("viet-menu-lusine-thao-dien-eggs-benedict")
+
+        XCTAssertEqual(menuRecentPageID, "viet-menu-food-pho-bo")
+        XCTAssertEqual(locationMenuRecentPageID, "viet-menu-lusine-thao-dien-eggs-benedict")
+        XCTAssertEqual(navigation.currentRoute, .detailPage("viet-menu-lusine-thao-dien-eggs-benedict"))
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            0,
+            "Menu-owned detail navigation should not ask the SQLite phrase graph to canonicalize pages it cannot own."
+        )
+    }
+
+    func testKnownCatalogPageIDsBypassSQLiteCanonicalLookup() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        XCTAssertTrue(PhraseCatalog.allItems.contains { $0.pageID == "viet-phrase-phone-1" })
+        let lookupCountAfterCatalogWarmup = VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting
+
+        XCTAssertEqual(
+            PhraseCatalog.canonicalPageID(forOpenablePageID: "viet-phrase-phone-1"),
+            "viet-phrase-phone-1"
+        )
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            lookupCountAfterCatalogWarmup,
+            "Catalog rows already carry canonical page IDs, so rapid listing taps should not run a SQLite alias lookup before opening each known page."
+        )
+    }
+
+    func testVietnameseMenuSectionsAreCachedForRepeatedSelectorAccess() {
+        VietnameseMenuCatalog.resetSectionBuildCountsForTesting()
+
+        for _ in 0..<20 {
+            XCTAssertFalse(VietnameseMenuCatalog.sections(for: .food).isEmpty)
+        }
+
+        XCTAssertLessThanOrEqual(
+            VietnameseMenuCatalog.sectionBuildCountForTesting(.food),
+            1,
+            "Top selector updates should not rebuild the grouped Food Menu sections on every access."
+        )
+    }
+
+    func testVietnameseMenuSectionJumpPolicyUsesImmediateScroll() {
+        XCTAssertEqual(VietnameseMenuSectionJumpPolicy.delayNanoseconds, 0)
+        XCTAssertFalse(VietnameseMenuSectionJumpPolicy.usesAnimatedScroll)
+        XCTAssertEqual(VietnameseMenuSectionJumpPolicy.layoutCorrectionPasses, 3)
+        XCTAssertEqual(VietnameseMenuSectionJumpPolicy.settleNanoseconds, 900_000_000)
+        XCTAssertEqual(VietnameseMenuSectionTrackingPolicy.pinnedScrollUpdateDelayNanoseconds, 120_000_000)
+    }
+
+    func testInactiveCollectionPagesSkipDeferredScrollTasks() {
+        XCTAssertFalse(
+            VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: false),
+            "Hidden or preview-only menu pages should not keep delayed section-tracking work alive."
+        )
+        XCTAssertTrue(VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: true))
+
+        XCTAssertFalse(
+            VietnameseMenuTaskPolicy.shouldRunStandardScrollTask(isActive: false),
+            "Inactive standard menu pages should not run startup bottom-inset or section-jump work."
+        )
+        XCTAssertTrue(VietnameseMenuTaskPolicy.shouldRunStandardScrollTask(isActive: true))
+
+        XCTAssertFalse(
+            BrowseCollectionTaskPolicy.shouldRunStandardFocusTask(isActive: false),
+            "Inactive standard browse collection pages should not restore focus or run bottom-inset validation."
+        )
+        XCTAssertTrue(BrowseCollectionTaskPolicy.shouldRunStandardFocusTask(isActive: true))
+    }
+
+    func testInactivePagesSkipScrollGeometryAndPreferenceTracking() {
+        XCTAssertFalse(
+            PhraseArticleTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: false),
+            "Inactive listing photo backdrops should not publish scroll-offset state while mounted only as previews."
+        )
+        XCTAssertTrue(PhraseArticleTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: true))
+
+        XCTAssertFalse(
+            BrowseCollectionTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: false),
+            "Inactive browse collection photo backdrops should not update backing geometry state."
+        )
+        XCTAssertTrue(BrowseCollectionTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: true))
+
+        XCTAssertFalse(
+            VietnameseMenuTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: false),
+            "Inactive menu photo backdrops should not publish scroll coordinator changes."
+        )
+        XCTAssertTrue(VietnameseMenuTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: true))
+
+        XCTAssertFalse(
+            VietnameseMenuTaskPolicy.shouldApplySectionPreferenceTracking(isActive: false),
+            "Inactive menu pages should not sort section-frame preferences or publish rail state."
+        )
+        XCTAssertTrue(VietnameseMenuTaskPolicy.shouldApplySectionPreferenceTracking(isActive: true))
+    }
+
+    func testVietnameseMenuSectionChromeCoordinatorSeparatesPinnedChangesFromLabelChanges() {
+        let coordinator = VietnameseMenuSectionChromeCoordinator()
+        let popular = VietnameseMenuSectionChromeItem(
+            id: "popular",
+            title: "Popular",
+            symbolName: "star.fill",
+            tintName: .red
+        )
+        let seafood = VietnameseMenuSectionChromeItem(
+            id: "seafood",
+            title: "Seafood",
+            symbolName: "fish.fill",
+            tintName: .teal
+        )
+        let route = BrowseCollectionRoute.category("vietnamese-food-menu")
+
+        var publishCount = 0
+        let cancellable = coordinator.objectWillChange.sink { _ in
+            publishCount += 1
+        }
+
+        XCTAssertTrue(
+            coordinator.apply([
+                VietnameseMenuSectionChromeState(
+                    route: route,
+                    currentSectionID: popular.id,
+                    isPinned: true,
+                    sections: [popular, seafood]
+                ),
+            ])
+        )
+        XCTAssertEqual(coordinator.currentState?.currentSectionID, popular.id)
+        XCTAssertEqual(publishCount, 1)
+
+        XCTAssertFalse(
+            coordinator.apply([
+                VietnameseMenuSectionChromeState(
+                    route: route,
+                    currentSectionID: seafood.id,
+                    isPinned: true,
+                    sections: [popular, seafood]
+                ),
+            ])
+        )
+        XCTAssertEqual(coordinator.currentState?.currentSectionID, seafood.id)
+        XCTAssertEqual(publishCount, 2)
+
+        XCTAssertTrue(
+            coordinator.apply([
+                VietnameseMenuSectionChromeState(
+                    route: route,
+                    currentSectionID: seafood.id,
+                    isPinned: false,
+                    sections: [popular, seafood]
+                ),
+            ])
+        )
+        XCTAssertEqual(coordinator.currentState?.currentSectionID, seafood.id)
+        XCTAssertEqual(publishCount, 3)
+
+        XCTAssertFalse(
+            coordinator.apply([
+                VietnameseMenuSectionChromeState(
+                    route: route,
+                    currentSectionID: seafood.id,
+                    isPinned: false,
+                    sections: [popular, seafood]
+                ),
+            ])
+        )
+        XCTAssertEqual(publishCount, 3)
+        _ = cancellable
     }
 
     func testBrowseCollectionMessagePolicyUsesMessageSectionsWhenAvailable() {
@@ -305,39 +1088,43 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
-    func testSharedBackdropPoolKeepsSurfaceSequencesIsolated() {
+    func testSharedBackdropPoolUsesOneCursorAcrossAdminRootSurfaces() {
         let isolatedDefaults = isolatedBackdropDefaults(named: #function)
         let defaults = isolatedDefaults.defaults
         defer { defaults.removePersistentDomain(forName: isolatedDefaults.suiteName) }
-        _ = SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults)
-        _ = SharedBackdropImagePool.nextImageName(for: .home, defaults: defaults)
+        let imageNames = SharedBackdropImagePool.vietnamForwardAssetNames
+        let adminRootSurfaces: [SharedBackdropImagePool.Surface] = [
+            .home,
+            .browse,
+            .saved,
+            .practice,
+            .search,
+        ]
 
-        for surface in [SharedBackdropImagePool.Surface.browse, .saved, .practice, .search, .sharedPage] {
+        for (offset, surface) in adminRootSurfaces.enumerated() {
             XCTAssertEqual(
                 SharedBackdropImagePool.nextImageName(for: surface, defaults: defaults),
-                SharedBackdropImagePool.vietnamForwardAssetNames[0],
-                "\(surface.rawValue) should have an independent backdrop cursor"
+                imageNames[offset],
+                "\(surface.rawValue) should advance the shared admin-root cursor"
             )
         }
+
         XCTAssertEqual(
             defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .home)),
-            2
+            adminRootSurfaces.count
         )
         XCTAssertEqual(
-            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .browse)),
+            Set(adminRootSurfaces.map { SharedBackdropImagePool.storageKey(for: $0) }).count,
             1
         )
-        XCTAssertEqual(
-            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .saved)),
-            1
+
+        XCTAssertNotEqual(
+            SharedBackdropImagePool.storageKey(for: .sharedPage),
+            SharedBackdropImagePool.storageKey(for: .home)
         )
         XCTAssertEqual(
-            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .practice)),
-            1
-        )
-        XCTAssertEqual(
-            defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .search)),
-            1
+            SharedBackdropImagePool.nextImageName(for: .sharedPage, defaults: defaults),
+            imageNames[0]
         )
         XCTAssertEqual(
             defaults.integer(forKey: SharedBackdropImagePool.storageKey(for: .sharedPage)),
@@ -369,7 +1156,633 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(HomeBackdropPreheatPolicy.maxRetainedPreparedImages, 4)
     }
 
-    func testAdminRootBackdropSurfacesMapToIndependentPoolSurfaces() {
+    func testAdminBackdropPreheatPolicyOnlyWarmsSelectedRootImage() {
+        let selectedImageName = "HeroCityHoianPlaceAnBangBeach"
+        let imageNames = AdminBackdropPreheatPolicy.imageNames(backdropImageName: selectedImageName)
+
+        XCTAssertEqual(imageNames, [selectedImageName])
+        XCTAssertFalse(imageNames.contains("HeroCityHuePlacePerfumeRiver"))
+        XCTAssertLessThanOrEqual(AdminBackdropPreheatPolicy.maxRetainedPreparedImages, 4)
+    }
+
+    func testPhrasePhotoBackdropPreheatPolicyOnlyWarmsEligibleListingHero() {
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.preheatImageNames(
+                pageID: "viet-phrase-phone-1",
+                heroImageName: "BackdropPhrasePhoneCafeCharging"
+            ),
+            ["BackdropPhrasePhoneCafeCharging"]
+        )
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.preheatImageNames(
+                pageID: "viet-family-city-danang-place-airport",
+                heroImageName: "HeroCityDanangPlaceAirport"
+            ),
+            ["HeroCityDanangPlaceAirport"]
+        )
+        XCTAssertTrue(
+            PhrasePhotoBackdropLayout.preheatImageNames(
+                pageID: "viet-family-airport-help-find-luggage",
+                heroImageName: "HeroCompactPhraseMasthead"
+            ).isEmpty
+        )
+        XCTAssertTrue(
+            PhrasePhotoBackdropLayout.preheatImageNames(
+                pageID: "viet-family-airport-help-find-luggage",
+                heroImageName: nil
+            ).isEmpty
+        )
+        XCTAssertLessThanOrEqual(AdminBackdropPreheatPolicy.maxRetainedPreparedImages, 4)
+    }
+
+    func testDetailNavigationPreheatSkipsSQLiteHeroLookupForGeneratedPages() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        let generatedPageID = "viet-phrase-phone-1"
+        let generatedPage = try XCTUnwrap(PhraseDetailPage.page(withID: generatedPageID))
+        XCTAssertEqual(generatedPage.heroImageName, "BackdropPhrasePhoneCafeCharging")
+
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+
+        XCTAssertTrue(
+            AppShellView.detailBackdropPreheatImageNames(pageID: generatedPageID).isEmpty,
+            "Generated SQLite-backed pages should not synchronously query SQLite for hero preheat during rapid detail navigation; the active page preheats after its already-loaded detail model supplies the hero image."
+        )
+        XCTAssertEqual(VietSQLitePhraseGraphRuntime.heroImageNameLookupCountForTesting, 0)
+
+        XCTAssertEqual(
+            AppShellView.detailBackdropPreheatImageNames(pageID: "viet-phone-hello"),
+            ["BackdropPhrasePhoneCafeCharging"],
+            "Static authored pages still have cheap known backdrop names and can keep immediate navigation preheat."
+        )
+    }
+
+    func testPhraseDetailViewBuildsArticleTemplateOncePerPageInstance() throws {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        let page = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-phrase-phone-1"))
+        PhraseDetailPage.resetArticleTemplateBuildCountForTesting()
+
+        let view = PhraseDetailView(
+            page: page,
+            onBackTapped: {},
+            onSearchTapped: {},
+            onDetailTapped: { _ in }
+        )
+
+        XCTAssertEqual(PhraseDetailPage.articleTemplateBuildCountForTesting, 1)
+
+        _ = view.body
+        _ = view.body
+
+        XCTAssertEqual(
+            PhraseDetailPage.articleTemplateBuildCountForTesting,
+            1,
+            "SwiftUI body refreshes should reuse the page article adapter instead of remapping all detail sections and playback metadata every redraw."
+        )
+    }
+
+    func testPhraseArticleTemplateBuildsVisibleSectionsOncePerPageInstance() throws {
+        let detailPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-phrase-phone-1"))
+        let articlePage = detailPage.articleTemplate
+        PhraseArticleTemplateView.resetVisibleSectionsBuildCountForTesting()
+
+        let view = PhraseArticleTemplateView(
+            page: articlePage,
+            chromeRoute: .detailPage(detailPage.id)
+        )
+
+        XCTAssertEqual(PhraseArticleTemplateView.visibleSectionsBuildCountForTesting, 1)
+
+        _ = view.body
+        _ = view.body
+        _ = view.body
+
+        XCTAssertEqual(
+            PhraseArticleTemplateView.visibleSectionsBuildCountForTesting,
+            1,
+            "SwiftUI redraws should reuse the visible section list instead of re-filtering and re-normalizing the article sections every time the page body refreshes."
+        )
+    }
+
+    func testPhraseArticleTemplateGroupsLocationPicksOncePerPageInstance() throws {
+        let detailPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-family-city-danang-place-international-terminal"))
+        let articlePage = detailPage.articleTemplate
+
+        LocationMenuPicksCatalog.resetCacheForTesting()
+        LocationRelatedPicksCatalog.resetCacheForTesting()
+        PhraseArticleLocationPickGroups.resetBuildCountForTesting()
+
+        let view = PhraseArticleTemplateView(
+            page: articlePage,
+            chromeRoute: .detailPage(detailPage.id)
+        )
+
+        XCTAssertEqual(PhraseArticleLocationPickGroups.buildCountForTesting, 1)
+        XCTAssertEqual(LocationMenuPicksCatalog.sectionFilterCountForTesting, 0)
+        XCTAssertEqual(LocationRelatedPicksCatalog.sectionFilterCountForTesting, 0)
+
+        _ = view.body
+        _ = view.body
+        _ = view.body
+
+        XCTAssertEqual(
+            PhraseArticleLocationPickGroups.buildCountForTesting,
+            1,
+            "SwiftUI redraws should reuse grouped Mentioned Here and Compare Nearby cards instead of regrouping them from the article body."
+        )
+        XCTAssertEqual(
+            LocationMenuPicksCatalog.sectionFilterCountForTesting,
+            0,
+            "Article rendering should not repeatedly ask the menu-pick catalog to filter by section ID from the SwiftUI body."
+        )
+        XCTAssertEqual(
+            LocationRelatedPicksCatalog.sectionFilterCountForTesting,
+            0,
+            "Article rendering should not repeatedly ask the related-pick catalog to filter by section ID from the SwiftUI body."
+        )
+    }
+
+    func testPhraseArticleLocationPickGroupsPrepareAudioKeysOncePerPageInstance() throws {
+        LocationMenuPicksCatalog.resetCacheForTesting()
+        defer { LocationMenuPicksCatalog.resetCacheForTesting() }
+
+        let pageID = "viet-family-city-hcmc-place-lusine-thao-dien"
+        let rawPick = try XCTUnwrap(
+            LocationMenuPicksCatalog.picks(forPageID: pageID).first { $0.id == "lusine-premium-pho" }
+        )
+
+        AudioAssetManifest.resetLookupCountsForTesting()
+        let resolvedPick = rawPick.resolvingAudioKey()
+
+        XCTAssertGreaterThan(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            0,
+            "Resolving a linked menu pick should do its manifest lookup once during preparation."
+        )
+
+        let lookupCountAfterResolve = AudioAssetManifest.playbackResolutionLookupCountForTesting
+        XCTAssertNotNil(resolvedPick.audioKey)
+        XCTAssertEqual(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            lookupCountAfterResolve,
+            "Prepared location picks should read a stored audio key instead of resolving from the row body."
+        )
+
+        AudioAssetManifest.resetLookupCountsForTesting()
+        PhraseArticleLocationPickGroups.resetBuildCountForTesting()
+
+        let groups = PhraseArticleLocationPickGroups(pageID: pageID)
+
+        XCTAssertEqual(PhraseArticleLocationPickGroups.buildCountForTesting, 1)
+        XCTAssertGreaterThan(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            0,
+            "Location pick grouping should prepare card audio while it already groups the picks for the page."
+        )
+
+        let lookupCountAfterGroupBuild = AudioAssetManifest.playbackResolutionLookupCountForTesting
+        let groupedPick = try XCTUnwrap(groups.trailingPicks.first { $0.id == "lusine-premium-pho" })
+        XCTAssertNotNil(groupedPick.audioKey)
+        XCTAssertEqual(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            lookupCountAfterGroupBuild,
+            "Location pick rows should read prepared audio keys instead of re-entering AudioAssetManifest during SwiftUI row rendering."
+        )
+    }
+
+    func testPhraseArticleLocationPickGroupsPrepareAudioTintOncePerPageInstance() throws {
+        LocationMenuPicksCatalog.resetCacheForTesting()
+        defer { LocationMenuPicksCatalog.resetCacheForTesting() }
+
+        let pageID = "viet-family-city-hcmc-place-lusine-thao-dien"
+        let rawPick = try XCTUnwrap(
+            LocationMenuPicksCatalog.picks(forPageID: pageID).first { $0.id == "lusine-premium-pho" }
+        )
+
+        VietnameseMenuCatalog.resetItemLookupCountForTesting()
+        let resolvedPick = rawPick.resolvingAudioKey()
+
+        XCTAssertGreaterThan(
+            VietnameseMenuCatalog.itemLookupCountForTesting,
+            0,
+            "Resolving a linked menu pick should read the linked menu item once while preparing row playback metadata."
+        )
+
+        let lookupCountAfterResolve = VietnameseMenuCatalog.itemLookupCountForTesting
+        _ = resolvedPick.audioTintName
+        XCTAssertEqual(
+            VietnameseMenuCatalog.itemLookupCountForTesting,
+            lookupCountAfterResolve,
+            "Prepared location picks should read a stored audio tint instead of looking up the linked menu item from the row body."
+        )
+
+        VietnameseMenuCatalog.resetItemLookupCountForTesting()
+
+        let groups = PhraseArticleLocationPickGroups(pageID: pageID)
+
+        XCTAssertGreaterThan(
+            VietnameseMenuCatalog.itemLookupCountForTesting,
+            0,
+            "Location pick grouping should prepare row playback tint while it already prepares card audio."
+        )
+
+        let lookupCountAfterGroupBuild = VietnameseMenuCatalog.itemLookupCountForTesting
+        let groupedPick = try XCTUnwrap(groups.trailingPicks.first { $0.id == "lusine-premium-pho" })
+        _ = groupedPick.audioTintName
+        XCTAssertEqual(
+            VietnameseMenuCatalog.itemLookupCountForTesting,
+            lookupCountAfterGroupBuild,
+            "Location pick rows should read prepared tint names instead of re-entering the menu catalog during SwiftUI row rendering."
+        )
+    }
+
+    func testPhraseArticleTemplatePreparesRowPlaybackAudioOncePerPageInstance() throws {
+        let detailPage = try XCTUnwrap(PhraseDetailPage.page(withID: "viet-phrase-phone-1"))
+        let articlePage = detailPage.articleTemplate
+
+        AudioAssetManifest.resetLookupCountsForTesting()
+        PhraseOption.resetPlaybackAudioResolutionCacheForTesting()
+        BreakdownToken.resetPlaybackAudioResolutionCacheForTesting()
+        PhraseArticlePlaybackAudioResolver.resetBuildCountForTesting()
+
+        let resolvedPage = PhraseArticlePlaybackAudioResolver.resolvedPage(for: articlePage)
+
+        XCTAssertEqual(PhraseArticlePlaybackAudioResolver.buildCountForTesting, 1)
+        XCTAssertGreaterThan(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            0,
+            "The resolver should do the manifest work once while preparing the article page."
+        )
+
+        let lookupCountAfterResolve = AudioAssetManifest.playbackResolutionLookupCountForTesting
+
+        for section in resolvedPage.sections {
+            for phrase in section.phrases {
+                _ = phrase.playbackAudioKey
+            }
+            for token in section.breakdown {
+                _ = token.playbackAudioKey
+            }
+        }
+
+        XCTAssertEqual(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            lookupCountAfterResolve,
+            "Prepared phrase rows and breakdown cards should read already-resolved audio keys instead of re-entering AudioAssetManifest during SwiftUI row rendering."
+        )
+
+        PhraseArticlePlaybackAudioResolver.resetBuildCountForTesting()
+        _ = PhraseArticleTemplateView(
+            page: articlePage,
+            chromeRoute: .detailPage(detailPage.id)
+        )
+
+        XCTAssertEqual(
+            PhraseArticlePlaybackAudioResolver.buildCountForTesting,
+            1,
+            "PhraseArticleTemplateView should prepare row playback audio once per page instance."
+        )
+    }
+
+    func testPhraseRowPlaybackAudioResolutionCachesAcrossPageInstances() {
+        PhraseOption.resetPlaybackAudioResolutionCacheForTesting()
+        BreakdownToken.resetPlaybackAudioResolutionCacheForTesting()
+        defer { PhraseOption.resetPlaybackAudioResolutionCacheForTesting() }
+        defer { BreakdownToken.resetPlaybackAudioResolutionCacheForTesting() }
+
+        let option = PhraseOption(
+            id: "polite-1",
+            vietnamese: "Xin chào",
+            english: "Hello",
+            pronunciation: "sin chow",
+            symbolName: "speaker.wave.2.fill",
+            tintName: .red,
+            audioKey: "polite-1"
+        )
+        let token = BreakdownToken(
+            id: "chao",
+            vietnamese: "chào",
+            english: "greet / hello",
+            audioKey: "breakdown-chao"
+        )
+
+        AudioAssetManifest.resetLookupCountsForTesting()
+
+        _ = option.resolvingPlaybackAudioKey().playbackAudioKey
+        _ = token.resolvingPlaybackAudioKey().playbackAudioKey
+
+        XCTAssertGreaterThan(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            0,
+            "The first row/token resolution should consult the audio manifest."
+        )
+        let lookupCountAfterFirstResolution = AudioAssetManifest.playbackResolutionLookupCountForTesting
+
+        for _ in 0..<12 {
+            _ = option.resolvingPlaybackAudioKey().playbackAudioKey
+            _ = token.resolvingPlaybackAudioKey().playbackAudioKey
+        }
+
+        XCTAssertEqual(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            lookupCountAfterFirstResolution,
+            "Shared phrase rows and breakdown tokens can appear across many listing pages; repeated page instances should reuse cached playback decisions instead of re-entering AudioAssetManifest for the same row metadata."
+        )
+    }
+
+    func testPhraseCatalogItemsCachePlaybackAudioAcrossRepeatedRowRendering() throws {
+        PhraseCatalogItem.resetPlaybackAudioResolutionCacheForTesting()
+        defer { PhraseCatalogItem.resetPlaybackAudioResolutionCacheForTesting() }
+
+        let item = PhraseCatalogItem(
+            pageID: PhrasePage.xinChao.id,
+            title: PhrasePage.xinChao.title,
+            subtitle: PhrasePage.xinChao.englishTitle,
+            categoryID: "greetings",
+            symbolName: "hand.wave.fill",
+            tintName: .red
+        )
+
+        AudioAssetManifest.resetLookupCountsForTesting()
+
+        XCTAssertNotNil(item.playbackAudioKey)
+        XCTAssertGreaterThan(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            0,
+            "The first catalog row audio read may resolve through the manifest."
+        )
+
+        let lookupCountAfterFirstRead = AudioAssetManifest.playbackResolutionLookupCountForTesting
+
+        for _ in 0..<12 {
+            _ = item.playbackAudioKey
+        }
+
+        XCTAssertEqual(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            lookupCountAfterFirstRead,
+            "Catalog and Explore rows should reuse cached playback audio decisions instead of re-entering AudioAssetManifest on every SwiftUI row render."
+        )
+    }
+
+    func testVietnameseMenuItemsCachePlaybackAudioAcrossRepeatedRowRendering() throws {
+        VietnameseMenuItem.resetPlaybackAudioResolutionCacheForTesting()
+        defer { VietnameseMenuItem.resetPlaybackAudioResolutionCacheForTesting() }
+
+        let item = try XCTUnwrap(VietnameseMenuCatalog.item(withID: "food-pho-bo"))
+
+        AudioAssetManifest.resetLookupCountsForTesting()
+
+        XCTAssertNotNil(item.playbackAudioKey)
+        XCTAssertGreaterThan(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            0,
+            "The first menu row audio read may resolve through the manifest."
+        )
+
+        let lookupCountAfterFirstRead = AudioAssetManifest.playbackResolutionLookupCountForTesting
+
+        for _ in 0..<12 {
+            _ = item.playbackAudioKey
+        }
+
+        XCTAssertEqual(
+            AudioAssetManifest.playbackResolutionLookupCountForTesting,
+            lookupCountAfterFirstRead,
+            "Food and drink menu rows should reuse cached playback audio decisions instead of re-entering AudioAssetManifest on every SwiftUI row render."
+        )
+    }
+
+    func testPhraseArticleMorphPolicySkipsCanonicalLookupWhenNoHomeMorphIsActive() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        XCTAssertEqual(
+            PhraseArticleMorphPolicy.resolvedPageID(
+                pageID: "viet-phrase-phone-1",
+                heroMorphPageID: nil,
+                heroMorphContentHoldPageID: nil
+            ),
+            "viet-phrase-phone-1"
+        )
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            0,
+            "Normal listing redraws should not canonicalize a morph identity when no home hero morph is active."
+        )
+    }
+
+    func testBrowseDetailHeroImageOverrideKeepsOnlyCategoryMastheads() {
+        XCTAssertEqual(
+            AppShellView.browseDetailHeroImageOverride(for: "HeroCategoryAirport"),
+            "HeroCategoryAirport"
+        )
+        XCTAssertNil(AppShellView.browseDetailHeroImageOverride(for: "BackdropPhrasePhoneCafeCharging"))
+        XCTAssertNil(AppShellView.browseDetailHeroImageOverride(for: "HeroVietnamMasthead"))
+        XCTAssertNil(AppShellView.browseDetailHeroImageOverride(for: nil))
+    }
+
+    func testBrowseDetailGenericPreheatSkipsOnlyAfterCategoryOverride() {
+        XCTAssertFalse(
+            AppShellView.shouldPreheatGenericDetailBackdrop(
+                source: .browse,
+                browseHeroOverride: "HeroCategoryAirport"
+            )
+        )
+        XCTAssertTrue(
+            AppShellView.shouldPreheatGenericDetailBackdrop(
+                source: .browse,
+                browseHeroOverride: nil
+            )
+        )
+        XCTAssertTrue(
+            AppShellView.shouldPreheatGenericDetailBackdrop(
+                source: .home,
+                browseHeroOverride: "HeroCategoryAirport"
+            )
+        )
+    }
+
+    func testBrowseCollectionRoutePreheatWarmsBackdropBeforeNavigation() {
+        XCTAssertEqual(
+            AppShellView.browseCollectionBackdropPreheatImageNames(for: .category("airport")),
+            ["HeroCategoryAirport"],
+            "Category collection routes should enqueue their photo backdrop before the first page render."
+        )
+        XCTAssertEqual(
+            AppShellView.browseCollectionBackdropPreheatImageNames(for: .city("danang")),
+            ["HeroCityDanang"],
+            "City collection routes should enqueue their photo backdrop before the first page render."
+        )
+        XCTAssertEqual(
+            AppShellView.browseCollectionBackdropPreheatImageNames(for: .category(VietnameseMenuKind.food.routeID)),
+            ["BackdropVietnameseFoodMenu"],
+            "Menu collection routes should enqueue the actual menu photo backdrop, not just the fallback hero image."
+        )
+        XCTAssertTrue(
+            AppShellView.browseCollectionBackdropPreheatImageNames(for: .category("missing-route")).isEmpty,
+            "Unknown collection routes should not enqueue extra image work."
+        )
+    }
+
+    func testBrowseDetailHeroOverrideCacheStaysBoundedDuringRapidCategoryBrowsing() {
+        var cache = AppShellBrowseDetailHeroOverrideCache()
+        let cacheLimit = AppShellBrowseDetailHeroOverrideCache.cacheLimitForTesting
+
+        for index in 0..<(cacheLimit + 16) {
+            cache.set("HeroCategoryAirport", for: "viet-family-airport-\(index)")
+        }
+
+        XCTAssertEqual(cache.countForTesting, cacheLimit)
+        XCTAssertNil(cache["viet-family-airport-0"])
+        XCTAssertEqual(cache["viet-family-airport-\(cacheLimit + 15)"], "HeroCategoryAirport")
+
+        cache.set(nil, for: "viet-family-airport-\(cacheLimit + 15)")
+        XCTAssertNil(cache["viet-family-airport-\(cacheLimit + 15)"])
+        XCTAssertEqual(cache.countForTesting, cacheLimit - 1)
+    }
+
+    func testBrowseCollectionPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops() {
+        XCTAssertEqual(
+            BrowseCollectionPhotoBackdropPolicy.preheatImageNames(
+                hasCityHub: false,
+                mastheadImageName: "HeroCategoryFood"
+            ),
+            ["HeroCategoryFood"]
+        )
+        XCTAssertEqual(
+            BrowseCollectionPhotoBackdropPolicy.preheatImageNames(
+                hasCityHub: true,
+                mastheadImageName: "HeroCityDanangPlaceAirport"
+            ),
+            ["HeroCityDanangPlaceAirport"]
+        )
+        XCTAssertTrue(
+            BrowseCollectionPhotoBackdropPolicy.preheatImageNames(
+                hasCityHub: false,
+                mastheadImageName: "HeroCompactPhraseMasthead"
+            ).isEmpty
+        )
+    }
+
+    func testBrowseFocusedAssetImagesReadSizesOnlyForCustomFocusAssets() {
+        XCTAssertTrue(
+            BrowseFocusedAssetImagePolicy.shouldReadImageSize(
+                for: "HeroCityDanangPlaceBaNaHills"
+            )
+        )
+        XCTAssertFalse(
+            BrowseFocusedAssetImagePolicy.shouldReadImageSize(
+                for: "HeroCityHanoiPlaceEggCoffee"
+            )
+        )
+        XCTAssertEqual(
+            BrowseFocusedAssetImagePolicy.focusPoint(for: "HeroCityHanoiPlaceEggCoffee"),
+            UnitPoint.center
+        )
+    }
+
+    func testBrowseImageAssetPolicyTrustsGeneratedAssetsWithoutExistenceProbe() {
+        var existenceProbeCount = 0
+        let missingProbe: (String) -> Bool = { _ in
+            existenceProbeCount += 1
+            return false
+        }
+
+        let trustedGeneratedImageNames = [
+            "HeroCityDanangPlaceGoldenBridge",
+            "HeroCategoryAirport",
+            "HeroMenuFoodPhoBo",
+            "HeroCompactPhraseMasthead",
+            "BackdropPhraseGreetingCafeDoorway",
+            "BackdropMenuPhoBo",
+        ]
+
+        for imageName in trustedGeneratedImageNames {
+            XCTAssertEqual(
+                BrowseImageAssetPolicy.resolvedImageName(imageName, exists: missingProbe),
+                imageName,
+                "\(imageName) should render directly instead of loading UIImage just to validate existence"
+            )
+        }
+
+        XCTAssertEqual(existenceProbeCount, 0)
+
+        XCTAssertNil(
+            BrowseImageAssetPolicy.resolvedImageName("ManualExperimentMissing", exists: missingProbe)
+        )
+        XCTAssertEqual(existenceProbeCount, 1)
+
+        XCTAssertEqual(
+            BrowseImageAssetPolicy.resolvedImageName("ManualExperimentPresent") { _ in
+                existenceProbeCount += 1
+                return true
+            },
+            "ManualExperimentPresent"
+        )
+        XCTAssertEqual(existenceProbeCount, 2)
+
+        XCTAssertNil(
+            BrowseImageAssetPolicy.resolvedImageName(nil) { _ in
+                existenceProbeCount += 1
+                return true
+            }
+        )
+        XCTAssertEqual(existenceProbeCount, 2)
+    }
+
+    func testVietnameseMenuPhotoBackdropPreheatPolicyWarmsOnlyPhotoBackdrops() {
+        XCTAssertEqual(
+            VietnameseMenuPhotoBackdropPolicy.preheatImageNames(
+                photoBackdropImageName: "BackdropMenuPho",
+                fallbackHeroImageName: "HeroCategoryFood"
+            ),
+            ["BackdropMenuPho"]
+        )
+        XCTAssertTrue(
+            VietnameseMenuPhotoBackdropPolicy.preheatImageNames(
+                photoBackdropImageName: nil,
+                fallbackHeroImageName: "HeroCategoryFood"
+            ).isEmpty
+        )
+    }
+
+    func testSQLiteRuntimeCachesStayBoundedDuringSearchAndDetailBrowsing() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        _ = VietSQLitePhraseGraphRuntime.search("coffee", limit: 4)
+        _ = VietSQLitePhraseGraphRuntime.search(" coffee ", limit: 4)
+        XCTAssertEqual(VietSQLitePhraseGraphRuntime.cachedSearchResultCountForTesting, 1)
+
+        for index in 0..<(VietSQLitePhraseGraphRuntime.searchResultCacheLimitForTesting + 8) {
+            _ = VietSQLitePhraseGraphRuntime.search("cache-test-query-\(index)", limit: 3)
+        }
+        XCTAssertLessThanOrEqual(
+            VietSQLitePhraseGraphRuntime.cachedSearchResultCountForTesting,
+            VietSQLitePhraseGraphRuntime.searchResultCacheLimitForTesting
+        )
+
+        let pageIDs = Array(
+            PhraseCatalog.items(selectedCategoryID: PhraseCatalog.allCategoryID)
+                .map(\.pageID)
+                .prefix(VietSQLitePhraseGraphRuntime.detailPageCacheLimitForTesting + 12)
+        )
+        XCTAssertGreaterThan(pageIDs.count, VietSQLitePhraseGraphRuntime.detailPageCacheLimitForTesting)
+
+        for pageID in pageIDs {
+            _ = VietSQLitePhraseGraphRuntime.detailPage(withID: pageID)
+        }
+        XCTAssertLessThanOrEqual(
+            VietSQLitePhraseGraphRuntime.cachedDetailPageCountForTesting,
+            VietSQLitePhraseGraphRuntime.detailPageCacheLimitForTesting
+        )
+    }
+
+    func testAdminRootBackdropSurfacesMapToSharedPoolCursor() {
         XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .home), .home)
         XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .browse), .browse)
         XCTAssertEqual(AdminRootPhotoBackdropSurface.surface(for: .saved), .saved)
@@ -383,6 +1796,11 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(AdminRootPhotoBackdropSurface.saved.poolSurface, .saved)
         XCTAssertEqual(AdminRootPhotoBackdropSurface.practice.poolSurface, .practice)
         XCTAssertEqual(AdminRootPhotoBackdropSurface.search.poolSurface, .search)
+
+        let adminRootPoolKeys = Set(AdminRootPhotoBackdropSurface.allCases.map {
+            SharedBackdropImagePool.storageKey(for: $0.poolSurface)
+        })
+        XCTAssertEqual(adminRootPoolKeys.count, 1)
     }
 
     func testAdminRootBackdropAdvancesOnlyWhenEnteringDifferentRootSurface() {
@@ -427,6 +1845,33 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testAdminRootBackdropRefreshPolicyKeepsNonHomeRootImagesStable() {
+        XCTAssertTrue(
+            AdminRootPhotoBackdropActivationPolicy.shouldRefreshImage(
+                surface: .home,
+                currentState: AdminRootPhotoBackdropState(imageName: "HeroCityHoianPlaceAnBangBeach", activationToken: 3)
+            )
+        )
+        XCTAssertTrue(
+            AdminRootPhotoBackdropActivationPolicy.shouldRefreshImage(
+                surface: .browse,
+                currentState: .fallback
+            )
+        )
+        XCTAssertFalse(
+            AdminRootPhotoBackdropActivationPolicy.shouldRefreshImage(
+                surface: .browse,
+                currentState: AdminRootPhotoBackdropState(imageName: "HeroCityHoianPlaceAnBangBeach", activationToken: 1)
+            )
+        )
+        XCTAssertFalse(
+            AdminRootPhotoBackdropActivationPolicy.shouldRefreshImage(
+                surface: .practice,
+                currentState: AdminRootPhotoBackdropState(imageName: "HeroCityHuePlacePerfumeRiver", activationToken: 2)
+            )
+        )
+    }
+
     func testHomeBackdropAdvancesOnlyWhenShellActivatesHomeFromAnotherRoute() {
         XCTAssertTrue(
             HomeBackdropActivationPolicy.shouldAdvanceBackdrop(
@@ -453,7 +1898,7 @@ final class AppChromeTests: XCTestCase {
             )
         )
 
-        XCTAssertEqual(HomeLayout.photoBackdropBottomReadingClearance, PhrasePhotoBackdropLayout.bottomReadingClearance)
+        XCTAssertEqual(HomeLayout.photoBackdropBottomReadingClearance, AppBottomContentClearance.photoBackdropRoot)
     }
 
     func testHomePhotoBackdropImageTapRegionIncludesInitialVisibleImage() {
@@ -654,6 +2099,84 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testHomeRecentlyViewedFeatureItemsReuseResolvedCardsAcrossRapidDetailOpens() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        PhraseDetailPage.resetArticleTemplateBuildCountForTesting()
+        HomeRecentlyViewedContent.resetFeatureItemCacheForTesting()
+        defer {
+            HomeRecentlyViewedContent.resetFeatureItemCacheForTesting()
+            VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        }
+
+        let firstRecentPageIDs = [
+            "viet-phrase-phone-1",
+            "viet-phrase-hotel-1",
+            "viet-phrase-food-menu",
+            "viet-phrase-price-1",
+            "viet-phrase-airport-1",
+            "viet-phrase-taxi-1",
+        ]
+        let nextRecentPageIDs = [
+            "viet-phrase-bath-1",
+            "viet-phrase-phone-1",
+            "viet-phrase-hotel-1",
+            "viet-phrase-food-menu",
+            "viet-phrase-price-1",
+            "viet-phrase-airport-1",
+        ]
+
+        XCTAssertEqual(
+            HomeRecentlyViewedContent.featureItemPageIDsForTesting(from: firstRecentPageIDs),
+            firstRecentPageIDs
+        )
+        let buildsAfterFirstPass = PhraseDetailPage.articleTemplateBuildCountForTesting
+        XCTAssertEqual(buildsAfterFirstPass, firstRecentPageIDs.count)
+
+        XCTAssertEqual(
+            HomeRecentlyViewedContent.featureItemPageIDsForTesting(from: nextRecentPageIDs),
+            nextRecentPageIDs
+        )
+        XCTAssertEqual(
+            PhraseDetailPage.articleTemplateBuildCountForTesting,
+            buildsAfterFirstPass + 1,
+            "Rapid listing opens should add only the newest recent-card adapter; the five still-visible recent cards should reuse cached Home feature items instead of rebuilding article templates on every detail navigation."
+        )
+    }
+
+    func testHomeRecentlyViewedFeatureItemsTrustCanonicalRecentPageIDs() {
+        let recentPageIDs = [
+            "viet-phrase-phone-1",
+            "viet-phrase-hotel-1",
+            "viet-phrase-food-menu",
+            "viet-phrase-price-1",
+            "viet-phrase-airport-1",
+            "viet-phrase-taxi-1",
+        ]
+
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        HomeRecentlyViewedContent.resetFeatureItemCacheForTesting()
+        XCTAssertEqual(
+            HomeRecentlyViewedContent.featureItemPageIDsForTesting(fromCanonicalRecentPageIDs: recentPageIDs),
+            recentPageIDs
+        )
+
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer {
+            HomeRecentlyViewedContent.resetFeatureItemCacheForTesting()
+            VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        }
+
+        XCTAssertEqual(
+            HomeRecentlyViewedContent.featureItemPageIDsForTesting(fromCanonicalRecentPageIDs: recentPageIDs),
+            recentPageIDs
+        )
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            0,
+            "LocalUserIntentStore.recentPageIDs are already canonical, so a cached Recently viewed shelf should not re-enter canonical lookup work before reading cached feature items."
+        )
+    }
+
     func testHomepagePhraseCardsOpenBuiltOutListingPages() throws {
         let manifest = try XCTUnwrap(AudioAssetManifest.main)
         let issues = HomePageLinkRegistry.homepageListingPageIDs.compactMap {
@@ -736,6 +2259,15 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(BrowseCollectionNativeTransition.cityDissolveDuration, 0.24)
     }
 
+    func testButtonBackRouteTransitionsUseReverseSlideEdges() {
+        XCTAssertEqual(AppRouteTransitionPolicy.edge(for: nil, phase: .insertion), .trailing)
+        XCTAssertEqual(AppRouteTransitionPolicy.edge(for: nil, phase: .removal), .trailing)
+        XCTAssertEqual(AppRouteTransitionPolicy.edge(for: .forward, phase: .insertion), .trailing)
+        XCTAssertEqual(AppRouteTransitionPolicy.edge(for: .forward, phase: .removal), .trailing)
+        XCTAssertEqual(AppRouteTransitionPolicy.edge(for: .back, phase: .insertion), .leading)
+        XCTAssertEqual(AppRouteTransitionPolicy.edge(for: .back, phase: .removal), .trailing)
+    }
+
     func testBrowseCityHeroCardKeepsImageAndCopyAreasStable() {
         XCTAssertEqual(
             BrowsePageLayout.cityHeroImageHeight + BrowsePageLayout.cityHeroCopyAreaHeight,
@@ -788,6 +2320,13 @@ final class AppChromeTests: XCTestCase {
             PinnedAudioSpeedChromePolicy.canShowPinnedControl(
                 on: .browse,
                 hasStaticBackButton: false,
+                isSearchPresented: false
+            )
+        )
+        XCTAssertTrue(
+            PinnedAudioSpeedChromePolicy.canShowPinnedControl(
+                on: .detailPage("viet-phrase-polite-1"),
+                hasStaticBackButton: true,
                 isSearchPresented: false
             )
         )
@@ -878,6 +2417,24 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(AppShellView.shouldRenderDesignedXinChaoPage(for: PhrasePage.xinChao.id))
         XCTAssertTrue(AppShellView.shouldRenderDesignedXinChaoPage(for: "viet-phrase-polite-1"))
         XCTAssertFalse(AppShellView.shouldRenderDesignedXinChaoPage(for: "viet-phrase-hello-chao-anh"))
+    }
+
+    func testDesignedXinChaoCheckAvoidsRepeatedCanonicalLookupForNormalListings() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        XCTAssertFalse(AppShellView.shouldRenderDesignedXinChaoPage(for: "viet-phrase-hello-chao-anh"))
+        let lookupCountAfterWarmup = VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting
+
+        for _ in 0..<12 {
+            XCTAssertFalse(AppShellView.shouldRenderDesignedXinChaoPage(for: "viet-phrase-hello-chao-anh"))
+        }
+
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            lookupCountAfterWarmup,
+            "App-shell detail rendering should not repeatedly enter SQLite canonical lookup just to reject non-Xin-chào pages."
+        )
     }
 
     func testSearchLaunchArgumentOpensSearchPage() {
@@ -1001,6 +2558,66 @@ final class AppChromeTests: XCTestCase {
         XCTAssertLessThanOrEqual(SearchPageLayout.resultsBottomClearance, 132)
     }
 
+    func testRootPhotoBackdropSurfacesReserveFullBottomReadingClearance() {
+        XCTAssertEqual(HomeLayout.bottomContentClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
+        XCTAssertEqual(BrowsePageLayout.bottomContentClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
+        XCTAssertEqual(SearchPageLayout.resultsBottomClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
+        XCTAssertEqual(SavedTripLayout.bottomContentClearance(usesPhotoBackdrop: true), AppBottomContentClearance.photoBackdropRoot)
+        XCTAssertGreaterThan(
+            PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: true),
+            AppBottomContentClearance.photoBackdropRoot
+        )
+        XCTAssertEqual(
+            PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: true),
+            AppBottomContentClearance.photoBackdropRoot + PracticeMatchHubLayout.photoBackdropLaunchScrollSlack,
+            accuracy: 0.001
+        )
+        XCTAssertGreaterThan(
+            AppBottomContentClearance.photoBackdropRoot,
+            PhrasePhotoBackdropLayout.bottomReadingClearance
+        )
+
+        XCTAssertEqual(HomeLayout.bottomContentClearance(usesPhotoBackdrop: false), PhrasePageStyle.bottomChromeContentClearance)
+        XCTAssertEqual(BrowsePageLayout.bottomContentClearance(usesPhotoBackdrop: false), BrowsePageLayout.bottomChromeContentClearance)
+        XCTAssertEqual(SearchPageLayout.resultsBottomClearance(usesPhotoBackdrop: false), SearchPageLayout.resultsBottomClearance)
+        XCTAssertEqual(SavedTripLayout.bottomContentClearance(usesPhotoBackdrop: false), PhrasePageStyle.bottomChromeContentClearance)
+        XCTAssertEqual(PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: false), PhrasePageStyle.bottomChromeContentClearance)
+    }
+
+    func testBottomClearancePolicyCoversEveryOpenablePageAndRouteFamily() {
+        let routeSurfaces = AppBottomContentClearance.validationRouteSurfaces()
+        XCTAssertGreaterThanOrEqual(routeSurfaces.count, 10)
+
+        for surface in routeSurfaces {
+            XCTAssertGreaterThanOrEqual(
+                surface.actualClearance,
+                surface.requiredClearance,
+                "\(surface.id) should leave content readable above bottom admin chrome"
+            )
+        }
+
+        let detailSurfaces = PhraseCatalog.allItems.compactMap { item -> AppBottomContentClearance.ValidationSurface? in
+            guard let page = PhraseDetailPage.page(withID: item.pageID) else {
+                return nil
+            }
+
+            return AppBottomContentClearance.detailValidationSurface(
+                pageID: page.id,
+                heroImageName: page.heroImageName
+            )
+        }
+
+        XCTAssertGreaterThanOrEqual(detailSurfaces.count, 1_700)
+
+        for surface in detailSurfaces {
+            XCTAssertGreaterThanOrEqual(
+                surface.actualClearance,
+                surface.requiredClearance,
+                "\(surface.id) should leave content readable above bottom admin chrome"
+            )
+        }
+    }
+
     func testSearchPageUsesCompactHeaderForQueryResults() {
         let inactiveQueryMode = SearchPageLayout.headerMode(query: "hotel", isFieldFocused: false)
         let compactMode = SearchPageLayout.headerMode(query: "hotel", isFieldFocused: true)
@@ -1041,6 +2658,36 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPhraseRowNavigationCachesRepeatedCanonicalPairChecks() {
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        XCTAssertEqual(
+            PhraseRowNavigation.destinationPageID(
+                for: "viet-hello-chi",
+                currentPageID: "viet-phrase-hello-chao-anh"
+            ),
+            "viet-hello-chi"
+        )
+        let lookupCountAfterWarmup = VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting
+
+        for _ in 0..<12 {
+            XCTAssertEqual(
+                PhraseRowNavigation.destinationPageID(
+                    for: "viet-hello-chi",
+                    currentPageID: "viet-phrase-hello-chao-anh"
+                ),
+                "viet-hello-chi"
+            )
+        }
+
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            lookupCountAfterWarmup,
+            "SwiftUI row body refreshes should reuse the canonical pair decision instead of re-entering SQLite canonical lookup."
+        )
+    }
+
     func testForwardDetailNavigationRequestsTopScroll() {
         var navigation = AppShellNavigationState()
 
@@ -1053,6 +2700,15 @@ final class AppChromeTests: XCTestCase {
 
         XCTAssertEqual(navigation.detailPath, ["viet-phrase-hello-chao-anh", "viet-phrase-hello-chao-chi"])
         XCTAssertEqual(navigation.detailScrollToTopTrigger, 2)
+    }
+
+    func testForwardDetailNavigationReturnsCanonicalIDForRecentRecording() {
+        var navigation = AppShellNavigationState()
+
+        let recentPageID = navigation.openDetail("viet-thank-you")
+
+        XCTAssertEqual(recentPageID, "viet-phrase-polite-2")
+        XCTAssertEqual(navigation.detailPath, ["viet-phrase-polite-2"])
     }
 
     func testOpeningRootFromCatalogUsesSQLiteCanonicalDetailRoute() {
@@ -1134,6 +2790,54 @@ final class AppChromeTests: XCTestCase {
         XCTAssertTrue(navigation.showsStaticBackButton)
     }
 
+    func testRootSurfacesRenderOnlyWhenCurrentBackOrForwardRouteNeedsThem() {
+        var navigation = AppShellNavigationState()
+
+        XCTAssertTrue(navigation.shouldRenderRootSurface(.home))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.browse))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.saved))
+
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+
+        XCTAssertTrue(navigation.shouldRenderRootSurface(.home))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.browse))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.saved))
+
+        navigation.openDetail("viet-phrase-hello-chao-chi")
+
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.home))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.browse))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.saved))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.phrasePage))
+
+        navigation.goBack()
+
+        XCTAssertTrue(navigation.shouldRenderRootSurface(.home))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.browse))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.saved))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.phrasePage))
+    }
+
+    func testRootXinChaoSurfaceRendersOnlyWhenCurrentBackOrForwardRouteNeedsIt() {
+        var navigation = AppShellNavigationState(initialRoute: .phrasePage)
+
+        XCTAssertTrue(navigation.shouldRenderRootSurface(.phrasePage))
+        XCTAssertTrue(navigation.shouldRenderRootSurface(.home))
+
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+
+        XCTAssertTrue(navigation.shouldRenderRootSurface(.phrasePage))
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.home))
+
+        navigation.openDetail("viet-phrase-hello-chao-chi")
+
+        XCTAssertFalse(navigation.shouldRenderRootSurface(.phrasePage))
+
+        navigation.goBack()
+
+        XCTAssertTrue(navigation.shouldRenderRootSurface(.phrasePage))
+    }
+
     func testHomeCollectionBackChainReturnsToHomeInsteadOfBrowse() {
         var navigation = AppShellNavigationState()
 
@@ -1158,6 +2862,22 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(navigation.showsStaticBackButton)
     }
 
+    func testHomeCollectionBackAfterHomeTabReturnsHomeBeforeOlderDetailHistory() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openDetail("viet-family-airport-immigration")
+        navigation.openHome()
+        navigation.openHomeBrowseCollection(.city("danang"))
+
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.city("danang")))
+        XCTAssertEqual(navigation.backPreviewRoute, .home)
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .home)
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.city("danang"))])
+    }
+
     func testBrowseCollectionBackChainStillReturnsToBrowse() {
         var navigation = AppShellNavigationState()
 
@@ -1170,6 +2890,22 @@ final class AppChromeTests: XCTestCase {
         navigation.goBack()
         XCTAssertEqual(navigation.currentRoute, .browse)
         XCTAssertEqual(navigation.forwardStack, [.browseCollection(.city("danang"))])
+    }
+
+    func testBrowseCollectionBackAfterBrowseTabReturnsBrowseBeforeOlderDetailHistory() {
+        var navigation = AppShellNavigationState()
+
+        navigation.openDetail("viet-family-airport-baggage")
+        navigation.openBrowse()
+        navigation.openBrowseCollection(.category("airport"))
+
+        XCTAssertEqual(navigation.currentRoute, .browseCollection(.category("airport")))
+        XCTAssertEqual(navigation.backPreviewRoute, .browse)
+
+        navigation.goBack()
+
+        XCTAssertEqual(navigation.currentRoute, .browse)
+        XCTAssertEqual(navigation.forwardStack, [.browseCollection(.category("airport"))])
     }
 
     func testSavedDetourFromBrowseCollectionReturnsToCollection() {
@@ -1474,6 +3210,89 @@ final class AppChromeTests: XCTestCase {
             "viet-phrase-hello-chao-em",
         ])
         XCTAssertEqual(navigation.forwardStack, [.detailPage("viet-phrase-hello-chao-ba")])
+    }
+
+    func testHiddenBackDetailPageCanStayUnmountedUntilBackSwipePreview() {
+        var navigation = AppShellNavigationState()
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+        navigation.openDetail("viet-phrase-hello-chao-chi")
+        navigation.openDetail("viet-phrase-hello-chao-em")
+
+        XCTAssertEqual(navigation.renderedDetailPageIDs(includeBackPreview: false), [
+            "viet-phrase-hello-chao-em",
+        ])
+        XCTAssertEqual(navigation.renderedDetailPageIDs(includeBackPreview: true), [
+            "viet-phrase-hello-chao-chi",
+            "viet-phrase-hello-chao-em",
+        ])
+    }
+
+    func testRenderedDetailPagesDoNotScanEntireLongHistory() {
+        let pageIDs = [
+            "viet-phrase-hello-chao-anh",
+            "viet-phrase-hello-chao-chi",
+            "viet-phrase-hello-chao-em",
+            "viet-phrase-hello-chao-ong",
+            "viet-phrase-hello-chao-ba",
+            "viet-phrase-hello-chao-chu",
+            "viet-phrase-hello-chao-co",
+        ]
+        var navigation = AppShellNavigationState()
+
+        for pageID in pageIDs {
+            XCTAssertNotNil(navigation.openDetail(pageID), pageID)
+        }
+
+        AppShellNavigationState.resetRenderedDetailPageCandidateChecksForTesting()
+        XCTAssertEqual(navigation.renderedDetailPageIDs(includeBackPreview: false), [
+            "viet-phrase-hello-chao-co",
+        ])
+        XCTAssertEqual(
+            AppShellNavigationState.renderedDetailPageCandidateChecksForTesting,
+            1,
+            "Rapid detail navigation can leave a long browser history, but rendering should only inspect the active page when no back-swipe preview is in progress."
+        )
+
+        AppShellNavigationState.resetRenderedDetailPageCandidateChecksForTesting()
+        XCTAssertEqual(navigation.renderedDetailPageIDs(includeBackPreview: true), [
+            "viet-phrase-hello-chao-chu",
+            "viet-phrase-hello-chao-co",
+        ])
+        XCTAssertEqual(
+            AppShellNavigationState.renderedDetailPageCandidateChecksForTesting,
+            2,
+            "Back-swipe preview needs only the immediate previous page plus the active page, not the whole detail history."
+        )
+    }
+
+    func testHiddenBackBrowseCollectionCanStayUnmountedUntilBackSwipePreview() {
+        var navigation = AppShellNavigationState()
+        navigation.openBrowseCollection(.category("food"))
+        navigation.openDetail("viet-phrase-hello-chao-anh")
+
+        XCTAssertEqual(navigation.renderedBrowseCollectionRoutes(includeBackPreview: false), [])
+        XCTAssertEqual(navigation.renderedBrowseCollectionRoutes(includeBackPreview: true), [
+            .category("food"),
+        ])
+
+        navigation.openDetail("viet-phrase-hello-chao-chi")
+
+        XCTAssertEqual(navigation.renderedBrowseCollectionRoutes(includeBackPreview: false), [])
+        XCTAssertEqual(navigation.renderedBrowseCollectionRoutes(includeBackPreview: true), [])
+    }
+
+    func testBrowseCollectionsKeepOnlyVisibleRouteUntilBackSwipePreview() {
+        var navigation = AppShellNavigationState()
+        navigation.openBrowseCollection(.category("food"))
+        navigation.openBrowseCollection(.category("shopping"))
+
+        XCTAssertEqual(navigation.renderedBrowseCollectionRoutes(includeBackPreview: false), [
+            .category("shopping"),
+        ])
+        XCTAssertEqual(navigation.renderedBrowseCollectionRoutes(includeBackPreview: true), [
+            .category("food"),
+            .category("shopping"),
+        ])
     }
 
     func testRenderedDetailPagesKeepVisitIdentityForRevisitedPhrase() {
@@ -1812,10 +3631,11 @@ final class AppChromeTests: XCTestCase {
 
     func testClarificationCollectionUsesTravelerFacingFilterLabels() {
         let clarification = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("polite-repair")))
+        let coreSubcategories = coreBrowseSubcategories(in: clarification)
 
         XCTAssertEqual(clarification.title, "When You Don't Understand")
         XCTAssertEqual(
-            clarification.subcategories.map(\.title),
+            coreSubcategories.map(\.title),
             ["Clarify", "Polite basics", "Get help"]
         )
         XCTAssertTrue(clarification.subcategories.allSatisfy { !$0.items.isEmpty })
@@ -1828,25 +3648,84 @@ final class AppChromeTests: XCTestCase {
         let questions = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("questions")))
         let numbersMoney = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("numbers-money")))
         let firstDay = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("first-day")))
+        let questionCoreSubcategories = coreBrowseSubcategories(in: questions)
+        let numbersMoneyCoreSubcategories = coreBrowseSubcategories(in: numbersMoney)
+        let firstDayCoreSubcategories = coreBrowseSubcategories(in: firstDay)
 
         XCTAssertEqual(
-            questions.subcategories.map(\.title),
+            questionCoreSubcategories.map(\.title),
             ["Directions", "Time", "Clarify"]
         )
         XCTAssertEqual(
-            numbersMoney.subcategories.map(\.title),
+            numbersMoneyCoreSubcategories.map(\.title),
             ["Payment", "Shopping"]
         )
         XCTAssertEqual(
-            firstDay.subcategories.map(\.title),
+            firstDayCoreSubcategories.map(\.title),
             ["Airport", "Hotel", "Transport"]
         )
 
-        let visibleLabels = questions.subcategories.map(\.title)
-            + numbersMoney.subcategories.map(\.title)
-            + firstDay.subcategories.map(\.title)
+        let visibleLabels = questionCoreSubcategories.map(\.title)
+            + numbersMoneyCoreSubcategories.map(\.title)
+            + firstDayCoreSubcategories.map(\.title)
         XCTAssertFalse(visibleLabels.contains { $0.localizedCaseInsensitiveContains("repair") })
         XCTAssertTrue(visibleLabels.allSatisfy { $0.count <= 10 })
+    }
+
+    func testCategoryPracticeEntryCopyDescribesMatchPractice() {
+        let firstDay = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("first-day")))
+        let food = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("food")))
+        let airport = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("airport")))
+
+        XCTAssertEqual(firstDay.practiceTitle, "First day practice")
+        XCTAssertEqual(firstDay.practiceSubtitle, "Match airport, hotel, and transport phrases.")
+        XCTAssertEqual(food.practiceTitle, "Eating Out practice")
+        XCTAssertEqual(food.practiceSubtitle, "Match food, coffee, and ordering phrases.")
+        XCTAssertEqual(airport.practiceTitle, "Airport practice")
+        XCTAssertEqual(airport.practiceSubtitle, "Match airport arrival and transit phrases.")
+        XCTAssertFalse([firstDay, food, airport].contains { descriptor in
+            descriptor.practiceTitle.localizedCaseInsensitiveContains("message")
+                || descriptor.practiceSubtitle.localizedCaseInsensitiveContains("conversation")
+        })
+    }
+
+    func testSearchOnlyPhraseSurfacingAddsBrowsableSectionsForAll315Rows() {
+        let routeIDs = [
+            "emergency",
+            "everyday-services",
+            "getting-around",
+            "local-greetings",
+            "numbers-money",
+            "polite-repair",
+            "questions",
+            "shopping",
+            "tours-sights",
+        ]
+        let descriptors = routeIDs.map { routeID in
+            try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category(routeID)), routeID)
+        }
+        let surfacedSubcategories = descriptors.flatMap { searchOnlySubcategories(in: $0) }
+        let surfacedPageIDs = surfacedSubcategories.flatMap { subcategory in
+            subcategory.items.map(\.pageID)
+        }
+
+        XCTAssertEqual(BrowseSearchDestinations.situations.first { $0.id == "everyday-services" }?.title, "Everyday Needs")
+        XCTAssertEqual(BrowseSearchDestinations.situations.first { $0.id == "tours-sights" }?.title, "Tours & Sights")
+        XCTAssertEqual(surfacedSubcategories.count, 26)
+        XCTAssertEqual(surfacedPageIDs.count, 315)
+        XCTAssertEqual(Set(surfacedPageIDs).count, 315)
+        XCTAssertTrue(surfacedSubcategories.allSatisfy { !$0.items.isEmpty })
+
+        let everydayServices = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("everyday-services")))
+        let toursSights = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("tours-sights")))
+        let numbersMoney = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("numbers-money")))
+        let emergency = try! XCTUnwrap(BrowseSearchDestinations.collectionDescriptor(for: .category("emergency")))
+
+        XCTAssertTrue(searchOnlyItemIDs(in: everydayServices).contains("viet-phrase-phone-premium-otp-not-arriving"))
+        XCTAssertTrue(searchOnlyItemIDs(in: everydayServices).contains("viet-phrase-v500-bath-pers-need-is-there-a-public-bathroom-nearby"))
+        XCTAssertTrue(searchOnlyItemIDs(in: toursSights).contains("viet-phrase-v500-sigh-acti-where-is-the-entrance"))
+        XCTAssertTrue(searchOnlyItemIDs(in: numbersMoney).contains("viet-phrase-money-premium-total-wrong"))
+        XCTAssertTrue(searchOnlyItemIDs(in: emergency).contains("viet-phrase-emergency-premium-phone-stolen"))
     }
 
     func testVisibleCategorySubcategorySectionsArePopulated() {
@@ -1863,6 +3742,18 @@ final class AppChromeTests: XCTestCase {
                 )
             }
         }
+    }
+
+    private func coreBrowseSubcategories(in descriptor: BrowseCollectionDescriptor) -> [BrowseCollectionSubcategory] {
+        descriptor.subcategories.filter { !$0.id.contains(".search-only.") }
+    }
+
+    private func searchOnlySubcategories(in descriptor: BrowseCollectionDescriptor) -> [BrowseCollectionSubcategory] {
+        descriptor.subcategories.filter { $0.id.contains(".search-only.") }
+    }
+
+    private func searchOnlyItemIDs(in descriptor: BrowseCollectionDescriptor) -> Set<String> {
+        Set(searchOnlySubcategories(in: descriptor).flatMap { $0.items.map(\.pageID) })
     }
 
     func testCategoryHeroOverridesEnablePhotoBackdropForPhrasePages() {
@@ -2094,8 +3985,8 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(food.starterTitle, "Popular dishes")
         XCTAssertEqual(food.starterItems.first?.pageID, "viet-menu-food-pho-bo")
         XCTAssertEqual(food.starterItems.first?.title, "Phở bò")
-        XCTAssertEqual(food.subcategories.first?.title, "Khai vị & snacks")
-        XCTAssertEqual(food.subcategories.first?.phraseCount, 32)
+        XCTAssertEqual(food.subcategories.first?.title, "Starters & snacks")
+        XCTAssertEqual(food.subcategories.first?.phraseCount, 29)
 
         XCTAssertEqual(drinks.title, "Drink Menu")
         XCTAssertEqual(drinks.mastheadImageName, "HeroVietnameseDrinkMenu")
@@ -2108,51 +3999,589 @@ final class AppChromeTests: XCTestCase {
         XCTAssertEqual(drinks.subcategories.first?.phraseCount, 14)
     }
 
+    func testLusineReviewBackedMenuPicksResolveAndLink() throws {
+        let picks = LocationMenuPicksCatalog.picks(forPageID: "viet-family-city-hcmc-place-lusine-thao-dien")
+
+        XCTAssertEqual(
+            picks.map(\.title),
+            [
+                "Eggs Benedict",
+                "Premium Pho",
+                "Squid ink crab pasta",
+                "Crispy chicken salad",
+                "Salt caramel coffee",
+                "Avocado toast",
+            ]
+        )
+        XCTAssertEqual(
+            LocationMenuPicksCatalog.picks(forPageID: "viet-phrase-city-hcmc-place-lusine-thao-dien").map(\.id),
+            picks.map(\.id)
+        )
+        XCTAssertTrue(LocationMenuPicksCatalog.picks(forPageID: "viet-menu-food-pho-bo").isEmpty)
+        XCTAssertTrue(picks.allSatisfy { !$0.proof.localizedCaseInsensitiveContains("guest signal") })
+
+        let premiumPho = try XCTUnwrap(picks.first { $0.id == "lusine-premium-pho" })
+        XCTAssertEqual(premiumPho.detailPageID, "viet-menu-food-pho-dac-biet")
+        XCTAssertNotNil(VietnameseMenuCatalog.detailItem(withPageID: premiumPho.detailPageID))
+        XCTAssertNil(LocationMenuPicksCatalog.detailPage(withID: premiumPho.detailPageID))
+
+        let eggs = try XCTUnwrap(picks.first { $0.id == "lusine-eggs-benedict" })
+        let eggsDetail = try XCTUnwrap(LocationMenuPicksCatalog.detailPage(withID: eggs.detailPageID))
+        XCTAssertEqual(eggsDetail.title, "Eggs Benedict")
+        XCTAssertTrue(PhraseCatalog.isOpenablePageID(eggs.detailPageID))
+        XCTAssertNotNil(PhraseDetailPage.page(withID: eggs.detailPageID))
+    }
+
+    func testLusineLocationMenuPicksUseExistingAssetsAndSavedTripRows() throws {
+        let picks = LocationMenuPicksCatalog.picks(forPageID: "viet-family-city-hcmc-place-lusine-thao-dien")
+
+        for pick in picks {
+            XCTAssertNotNil(UIImage(named: pick.imageName), "Missing location menu pick image: \(pick.imageName)")
+
+            guard pick.linkedMenuItemID == nil else {
+                continue
+            }
+
+            let detail = try XCTUnwrap(PhraseDetailPage.page(withID: pick.detailPageID))
+            let heroImageName = try XCTUnwrap(detail.heroImageName)
+            XCTAssertNotNil(UIImage(named: heroImageName), "Missing location menu detail image: \(heroImageName)")
+            XCTAssertTrue(
+                PhrasePhotoBackdropLayout.supportsListingPage(pageID: detail.id, heroImageName: heroImageName),
+                "\(pick.id) should open with the same photo-backdrop feel as menu item pages"
+            )
+        }
+
+        let snapshot = SavedTripSnapshot.make(
+            savedPageIDs: [
+                "viet-menu-lusine-thao-dien-eggs-benedict",
+                "viet-menu-lusine-thao-dien-salt-caramel-coffee",
+            ]
+        )
+
+        XCTAssertEqual(snapshot.sections.map(\.kind), [.food, .drinks])
+        XCTAssertEqual(snapshot.sections.first(where: { $0.kind == .food })?.items.first?.title, "Eggs Benedict")
+        XCTAssertEqual(snapshot.sections.first(where: { $0.kind == .drinks })?.items.first?.title, "Salt caramel coffee")
+    }
+
+    func testCalibratedCityMenuPicksResolveInlineAndStayCapped() throws {
+        LocationMenuPicksCatalog.resetCacheForTesting()
+        defer { LocationMenuPicksCatalog.resetCacheForTesting() }
+
+        let expected: [String: (sectionID: String, itemIDs: [String])] = [
+            "viet-family-city-danang-place-bac-my-an-market": ("quick-say", ["food-kem-bo"]),
+            "viet-family-city-danang-place-con-market": ("place-brief", ["food-che-ba-mau", "food-banh-beo", "food-banh-xeo", "food-mi-quang-ga"]),
+            "viet-family-city-danang-place-han-market": ("place-brief", ["food-mi-quang-ga", "food-mi-quang-tom-thit", "food-banh-beo", "food-banh-xeo"]),
+            "viet-family-city-danang-place-helio-night-market": ("use-it-with", ["food-tom-nuong-muoi-ot", "food-lau-hai-san", "food-cha-gio", "food-che-ba-mau"]),
+            "viet-family-city-danang-place-son-tra-night-market": ("place-brief", ["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-lau-hai-san", "food-cha-gio"]),
+            "viet-family-city-hanoi-place-dinh-cafe": ("place-brief", ["drink-ca-phe-phin", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"]),
+            "viet-family-city-hanoi-place-giang-cafe": ("quick-say", ["drink-ca-phe-trung", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"]),
+            "viet-family-city-hanoi-place-the-note-coffee": ("quick-say", ["drink-ca-phe-sua-da", "drink-ca-phe-phin", "drink-ca-phe-trung"]),
+            "viet-family-city-hoian-place-bale-well": ("quick-say", ["food-banh-xeo", "food-nem-nuong-cuon", "food-goi-cuon", "food-cha-gio-tom-thit"]),
+            "viet-family-city-hoian-place-banh-mi-phuong": ("quick-say", ["food-banh-mi-dac-biet", "food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate"]),
+            "viet-family-city-hoian-place-madam-khanh": ("quick-say", ["food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate", "food-banh-mi-dac-biet"]),
+            "viet-family-city-hoian-place-morning-glory": ("quick-say", ["food-cao-lau", "food-mi-quang-ga", "food-banh-xeo", "food-banh-bot-loc"]),
+            "viet-family-city-hue-place-tam-giang-lagoon": ("place-brief", ["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-ngheu-xao-bo-toi"]),
+        ]
+
+        for (pageID, expectation) in expected {
+            let picks = LocationMenuPicksCatalog.picks(forPageID: pageID)
+            let menuPicks = picks.filter { $0.linkedMenuItemID != nil }
+            let aliasPageID = pageID.replacingOccurrences(of: "viet-family-city-", with: "viet-phrase-city-")
+
+            XCTAssertEqual(
+                LocationMenuPicksCatalog.picks(forPageID: aliasPageID).map(\.id),
+                picks.map(\.id),
+                "\(aliasPageID) should share the same menu bridge as its family page"
+            )
+            XCTAssertLessThanOrEqual(menuPicks.count, 4, "\(pageID) should keep the food bridge compact")
+            XCTAssertEqual(menuPicks.map(\.linkedMenuItemID), expectation.itemIDs.map(Optional.some))
+            XCTAssertEqual(
+                LocationMenuPicksCatalog.picks(forPageID: pageID, afterSectionID: expectation.sectionID)
+                    .filter { $0.linkedMenuItemID != nil }
+                    .map(\.id),
+                menuPicks.map(\.id),
+                "\(pageID) should render the menu bridge directly after the food-related section"
+            )
+            XCTAssertTrue(LocationMenuPicksCatalog.trailingPicks(forPageID: pageID).isEmpty)
+
+            for pick in menuPicks {
+                let linkedMenuItemID = try XCTUnwrap(pick.linkedMenuItemID)
+                let item = try XCTUnwrap(VietnameseMenuCatalog.allItems.first { $0.itemID == linkedMenuItemID })
+                XCTAssertEqual(pick.title, item.vietnameseItem)
+                XCTAssertEqual(pick.subtitle, item.englishTranslation)
+                XCTAssertEqual(pick.detailPageID, item.detailPageID)
+                XCTAssertNotNil(VietnameseMenuCatalog.detailItem(withPageID: pick.detailPageID))
+                XCTAssertNotNil(pick.audioKey, "\(pick.title) should use existing exact menu-name audio")
+                XCTAssertNotNil(UIImage(named: pick.imageName), "Missing menu pick image: \(pick.imageName)")
+            }
+        }
+
+        for pageID in [
+            "viet-family-city-danang-place-cham-museum",
+            "viet-family-city-danang-place-dragon-bridge",
+            "viet-family-city-hue-place-bach-ma-national-park",
+            "viet-family-city-hue-place-thuy-xuan-incense-village",
+            "viet-family-city-hue-place-vong-canh-hill",
+        ] {
+            XCTAssertTrue(LocationMenuPicksCatalog.picks(forPageID: pageID).isEmpty, "\(pageID) should not force food rows")
+        }
+    }
+
+    func testLocationMenuPicksCacheCanonicalCityLookups() {
+        LocationMenuPicksCatalog.resetCacheForTesting()
+        defer { LocationMenuPicksCatalog.resetCacheForTesting() }
+
+        let pageID = "viet-family-city-danang-place-international-terminal"
+        let aliasPageID = "viet-phrase-city-danang-place-international-terminal"
+
+        XCTAssertEqual(LocationMenuPicksCatalog.buildCountForTesting(pageID: pageID), 0)
+
+        XCTAssertFalse(LocationMenuPicksCatalog.picks(forPageID: pageID).isEmpty)
+        XCTAssertFalse(LocationMenuPicksCatalog.picks(forPageID: aliasPageID).isEmpty)
+        XCTAssertEqual(LocationMenuPicksCatalog.buildCountForTesting(pageID: pageID), 1)
+    }
+
+    func testLocationPickCachesStayBoundedDuringRapidCityBrowsing() {
+        LocationMenuPicksCatalog.resetCacheForTesting()
+        LocationRelatedPicksCatalog.resetCacheForTesting()
+        defer { LocationMenuPicksCatalog.resetCacheForTesting() }
+        defer { LocationRelatedPicksCatalog.resetCacheForTesting() }
+
+        let pageCount = max(
+            LocationMenuPicksCatalog.cacheLimitForTesting,
+            LocationRelatedPicksCatalog.cacheLimitForTesting
+        ) + 12
+
+        for index in 0..<pageCount {
+            let pageID = "viet-phrase-city-thermal-cache-\(index)"
+
+            XCTAssertTrue(LocationMenuPicksCatalog.picks(forPageID: pageID).isEmpty)
+            XCTAssertTrue(LocationRelatedPicksCatalog.picks(forPageID: pageID).isEmpty)
+        }
+
+        XCTAssertLessThanOrEqual(
+            LocationMenuPicksCatalog.cachedPageCountForTesting,
+            LocationMenuPicksCatalog.cacheLimitForTesting
+        )
+        XCTAssertLessThanOrEqual(
+            LocationRelatedPicksCatalog.cachedPageCountForTesting,
+            LocationRelatedPicksCatalog.cacheLimitForTesting
+        )
+    }
+
+    func testHanMarketRelatedPlacePickLinksToConMarket() throws {
+        let pageID = "viet-family-city-danang-place-han-market"
+        let aliasPageID = "viet-phrase-city-danang-place-han-market"
+        let picks = LocationRelatedPicksCatalog.picks(forPageID: pageID)
+
+        XCTAssertEqual(picks.count, 1)
+        XCTAssertEqual(LocationRelatedPicksCatalog.picks(forPageID: aliasPageID).map(\.id), picks.map(\.id))
+
+        let conMarket = try XCTUnwrap(picks.first)
+        XCTAssertEqual(conMarket.id, "han-market-related-con-market")
+        XCTAssertEqual(conMarket.title, "Chợ Cồn")
+        XCTAssertEqual(conMarket.subtitle, "Con Market")
+        XCTAssertEqual(conMarket.proof, "The stronger food-first market nearby.")
+        XCTAssertEqual(conMarket.detailPageID, "viet-family-city-danang-place-con-market")
+        XCTAssertEqual(conMarket.afterSectionID, "good-to-know")
+        XCTAssertNil(conMarket.linkedMenuItemID)
+        XCTAssertNotNil(conMarket.audioKey)
+        XCTAssertNotNil(UIImage(named: conMarket.imageName))
+        XCTAssertTrue(PhraseCatalog.isOpenablePageID(conMarket.detailPageID))
+
+        XCTAssertEqual(
+            LocationRelatedPicksCatalog.picks(forPageID: pageID, afterSectionID: "good-to-know").map(\.id),
+            [conMarket.id]
+        )
+        XCTAssertTrue(LocationRelatedPicksCatalog.picks(forPageID: pageID, afterSectionID: "place-brief").isEmpty)
+
+        let detail = try XCTUnwrap(PhraseDetailPage.page(withID: conMarket.detailPageID))
+        XCTAssertEqual(detail.title, "Chợ Cồn")
+        XCTAssertEqual(detail.englishTitle, "Con Market")
+
+        let savedTrip = SavedTripSnapshot.make(savedPageIDs: [conMarket.detailPageID])
+        let savedItem = try XCTUnwrap(savedTrip.sections.flatMap(\.items).first)
+        XCTAssertEqual(savedItem.title, "Chợ Cồn")
+        XCTAssertEqual(savedItem.subtitle, "Con Market")
+        XCTAssertNotNil(savedItem.audioKey)
+        XCTAssertEqual(savedItem.imageName, "HeroCityDanangPlaceConMarket")
+    }
+
+    func testV22CityPagesExposeProductionHeadingsAndPhraseCards() throws {
+        let expected: [(pageID: String, heading: String, bodySnippet: String, phraseIDs: [String])] = [
+            (
+                "viet-family-city-danang-place-international-terminal",
+                "Land, Then Find The Ride",
+                "first practical hour",
+                ["airport-1", "airport-2", "airport-3"]
+            ),
+            (
+                "viet-family-city-danang-place-dong-dinh-museum",
+                "A Small Museum Under Trees",
+                "paths under trees",
+                ["sight-1", "sight-3", "sight-4"]
+            ),
+            (
+                "viet-family-city-hcmc-place-pasteur-street",
+                "A Street Of Doorways",
+                "real address",
+                ["v900-tran-please-take-me-to-this-address", "v500-unde-repa-can-you-write-the-address", "directions-3"]
+            ),
+            (
+                "viet-family-city-hanoi-place-loading-t-cafe",
+                "Find The Upstairs Room",
+                "cinnamon-leaning egg coffee",
+                ["coffee-1", "v900-food-drin-one-hot-coffee-please", "v900-food-drin-less-sugar-please"]
+            ),
+            (
+                "viet-family-city-danang-place-lotte-mart",
+                "Cool Aisles, Easy Errands",
+                "cool indoor errand stop",
+                ["price-1", "shop-5", "store-2"]
+            ),
+            (
+                "viet-family-city-danang-place-3d-art-in-paradise",
+                "Indoor 3D Photo Museum",
+                "painted illusions",
+                ["sight-3", "time-5", "bath-1"]
+            ),
+            (
+                "viet-family-city-hanoi-place-bun-cha",
+                "Smoke First, Then The Table",
+                "charcoal pork",
+                ["food-menu", "food-1", "v900-food-drin-what-do-you-recommend"]
+            ),
+            (
+                "viet-family-city-hcmc-place-ben-thanh-market",
+                "The First Market Name To Know",
+                "snack counters",
+                ["price-1", "price-4", "shop-4"]
+            ),
+            (
+                "viet-family-city-hue-place-bach-ma-national-park",
+                "Mountain Weather Leads",
+                "weather that can rewrite",
+                ["sight-2", "sight-5", "store-1"]
+            ),
+            (
+                "viet-family-city-hoian-place-ancient-town-ticket-booth",
+                "Ancient Town Ticket Booth",
+                "heritage houses",
+                ["sight-1", "sight-2", "sight-3"]
+            ),
+        ]
+
+        for pageExpectation in expected {
+            let page = try XCTUnwrap(PhraseDetailPage.page(withID: pageExpectation.pageID), pageExpectation.pageID)
+            let atGlance = try XCTUnwrap(page.sections.first { $0.id == "at-glance" }, pageExpectation.pageID)
+            let quickSay = try XCTUnwrap(page.sections.first { $0.id == "quick-say" }, pageExpectation.pageID)
+            let visibleText = ([page.title, page.englishTitle, page.summary] + page.sections.flatMap { [$0.title, $0.body] })
+                .joined(separator: " ")
+
+            XCTAssertEqual(atGlance.title, pageExpectation.heading, pageExpectation.pageID)
+            XCTAssertTrue(atGlance.body.contains(pageExpectation.bodySnippet), pageExpectation.pageID)
+            XCTAssertEqual(quickSay.title, "Useful Phrases", pageExpectation.pageID)
+            XCTAssertEqual(quickSay.phrases.map(\.id), pageExpectation.phraseIDs, pageExpectation.pageID)
+            XCTAssertTrue(quickSay.phrases.allSatisfy { $0.playbackAudioKey != nil }, pageExpectation.pageID)
+            XCTAssertFalse(visibleText.localizedCaseInsensitiveContains("Use It For"), pageExpectation.pageID)
+            XCTAssertFalse(visibleText.localizedCaseInsensitiveContains("Use The Street As A Spine"), pageExpectation.pageID)
+            XCTAssertFalse(visibleText.localizedCaseInsensitiveContains("Solve The First Thirty Minutes"), pageExpectation.pageID)
+            XCTAssertFalse(visibleText.localizedCaseInsensitiveContains("Buy The Trip Fixes Here"), pageExpectation.pageID)
+            XCTAssertFalse(visibleText.localizedCaseInsensitiveContains("internal reason"), pageExpectation.pageID)
+        }
+    }
+
+    func testV22CityPagesExposeNativeMentionedHereCards() throws {
+        let expected: [String: (sectionID: String, cardIDs: [String], detailPageIDs: [String])] = [
+            "viet-family-city-danang-place-international-terminal": (
+                "place-brief",
+                ["terminal-mentioned-sim", "terminal-mentioned-atm"],
+                ["viet-family-airport-sim", "viet-family-money-find-atm"]
+            ),
+            "viet-family-city-danang-place-dong-dinh-museum": (
+                "good-to-know",
+                ["dong-dinh-mentioned-son-tra", "dong-dinh-mentioned-lady-buddha"],
+                ["viet-family-city-danang-place-son-tra", "viet-family-city-danang-place-lady-buddha"]
+            ),
+            "viet-family-city-hcmc-place-pasteur-street": (
+                "place-brief",
+                ["pasteur-mentioned-district-1"],
+                ["viet-family-city-hcmc-go-district-1"]
+            ),
+            "viet-family-city-hanoi-place-loading-t-cafe": (
+                "place-brief",
+                ["loading-t-mentioned-egg-coffee", "loading-t-mentioned-ca-phe-sua-da", "loading-t-mentioned-old-quarter"],
+                [
+                    "viet-family-city-hanoi-place-egg-coffee",
+                    "viet-family-city-hanoi-place-ca-phe-sua-da",
+                    "viet-family-city-hanoi-go-old-quarter",
+                ]
+            ),
+            "viet-family-city-danang-place-lotte-mart": (
+                "place-brief",
+                ["lotte-mart-mentioned-sunscreen"],
+                ["viet-family-service-sunscreen"]
+            ),
+        ]
+
+        for (pageID, expectation) in expected {
+            let aliasPageID = pageID.replacingOccurrences(of: "viet-family-city-", with: "viet-phrase-city-")
+            let picks = LocationMenuPicksCatalog.picks(forPageID: pageID)
+
+            XCTAssertEqual(LocationMenuPicksCatalog.picks(forPageID: aliasPageID).map(\.id), picks.map(\.id), pageID)
+            XCTAssertTrue(Set(expectation.cardIDs).isSubset(of: Set(picks.map(\.id))), pageID)
+            XCTAssertTrue(Set(expectation.detailPageIDs).isSubset(of: Set(picks.map(\.detailPageID))), pageID)
+            XCTAssertTrue(
+                Set(expectation.cardIDs).isSubset(
+                    of: Set(LocationMenuPicksCatalog.picks(forPageID: pageID, afterSectionID: expectation.sectionID).map(\.id))
+                ),
+                pageID
+            )
+            XCTAssertTrue(LocationMenuPicksCatalog.trailingPicks(forPageID: pageID).isEmpty, pageID)
+            XCTAssertFalse(picks.contains { $0.detailPageID.localizedCaseInsensitiveContains("hoi-an") }, pageID)
+            XCTAssertFalse(picks.contains { $0.title.localizedCaseInsensitiveContains("Food court") }, pageID)
+            XCTAssertFalse(picks.contains { $0.title.localizedCaseInsensitiveContains("Pasteur Institute") }, pageID)
+
+            for pick in picks {
+                XCTAssertNil(pick.linkedMenuItemID, "\(pick.id) should link to an authored page, not a menu item row")
+                XCTAssertTrue(PhraseCatalog.isOpenablePageID(pick.detailPageID), pick.id)
+                XCTAssertNotNil(PhraseDetailPage.page(withID: pick.detailPageID), pick.id)
+                XCTAssertNotNil(UIImage(named: pick.imageName), "Missing card image for \(pick.id): \(pick.imageName)")
+                XCTAssertFalse(pick.proof.localizedCaseInsensitiveContains("reason"), pick.id)
+                XCTAssertFalse(pick.subtitle.localizedCaseInsensitiveContains("check_catalog"), pick.id)
+            }
+        }
+    }
+
+    func testV22CityPagesExposeNativeRelatedPlaceCards() throws {
+        LocationRelatedPicksCatalog.resetCacheForTesting()
+        defer { LocationRelatedPicksCatalog.resetCacheForTesting() }
+
+        let expected: [String: (sectionID: String, cardIDs: [String], detailPageIDs: [String])] = [
+            "viet-family-city-danang-place-international-terminal": (
+                "good-to-know",
+                ["terminal-related-airport", "terminal-related-domestic-terminal"],
+                ["viet-family-city-danang-place-airport", "viet-family-city-danang-place-domestic-terminal"]
+            ),
+            "viet-family-city-danang-place-dong-dinh-museum": (
+                "good-to-know",
+                ["dong-dinh-related-linh-ung", "dong-dinh-related-cham-museum"],
+                ["viet-family-city-danang-place-linh-ung-pagoda", "viet-family-city-danang-place-cham-museum"]
+            ),
+            "viet-family-city-hcmc-place-pasteur-street": (
+                "good-to-know",
+                ["pasteur-related-dong-khoi", "pasteur-related-district-3"],
+                ["viet-family-city-hcmc-place-dong-khoi-street", "viet-family-city-hcmc-place-district-3"]
+            ),
+            "viet-family-city-hanoi-place-loading-t-cafe": (
+                "good-to-know",
+                ["loading-t-related-dinh-cafe", "loading-t-related-giang-cafe"],
+                ["viet-family-city-hanoi-place-dinh-cafe", "viet-family-city-hanoi-place-giang-cafe"]
+            ),
+            "viet-family-city-danang-place-lotte-mart": (
+                "good-to-know",
+                ["lotte-mart-related-han-market", "lotte-mart-related-vincom-plaza"],
+                ["viet-family-city-danang-place-han-market", "viet-family-city-danang-place-vincom-plaza"]
+            ),
+            "viet-family-city-danang-place-bep-cuon": (
+                "good-to-know",
+                ["bep-cuon-related-banh-xeo-ba-duong"],
+                ["viet-family-city-danang-place-banh-xeo-ba-duong"]
+            ),
+            "viet-family-city-danang-place-co-chu-nho": (
+                "good-to-know",
+                ["co-chu-nho-related-bep-cuon"],
+                ["viet-family-city-danang-place-bep-cuon"]
+            ),
+            "viet-family-city-danang-place-the-temptation": (
+                "good-to-know",
+                ["the-temptation-related-nen"],
+                ["viet-family-city-danang-place-nen"]
+            ),
+            "viet-family-city-danang-place-3d-art-in-paradise": (
+                "good-to-know",
+                ["3d-art-related-fine-arts"],
+                ["viet-family-city-danang-place-fine-arts-museum"]
+            ),
+            "viet-family-city-hanoi-place-bun-cha": (
+                "good-to-know",
+                ["bun-cha-related-huong-lien", "bun-cha-related-bun-cha-ta"],
+                ["viet-family-city-hanoi-place-bun-cha-huong-lien", "viet-family-city-hanoi-place-bun-cha-ta"]
+            ),
+            "viet-family-city-hcmc-place-ben-thanh-market": (
+                "good-to-know",
+                ["ben-thanh-related-an-dong", "ben-thanh-related-binh-tay"],
+                ["viet-family-city-hcmc-place-an-dong-market", "viet-family-city-hcmc-place-binh-tay-market"]
+            ),
+            "viet-family-city-hoian-place-ancient-town-ticket-booth": (
+                "good-to-know",
+                ["ticket-booth-related-ancient-town"],
+                ["viet-family-city-hoian-place-ancient-town"]
+            ),
+            "viet-family-city-hue-place-bach-ma-national-park": (
+                "good-to-know",
+                ["bach-ma-related-lap-an", "bach-ma-related-hai-van"],
+                ["viet-family-city-hue-place-lap-an-lagoon", "viet-family-city-danang-place-hai-van-pass"]
+            ),
+        ]
+
+        for (pageID, expectation) in expected {
+            let aliasPageID = pageID.replacingOccurrences(of: "viet-family-city-", with: "viet-phrase-city-")
+            let picks = LocationRelatedPicksCatalog.picks(forPageID: pageID)
+
+            XCTAssertEqual(LocationRelatedPicksCatalog.picks(forPageID: aliasPageID).map(\.id), picks.map(\.id), pageID)
+            XCTAssertTrue(Set(expectation.cardIDs).isSubset(of: Set(picks.map(\.id))), pageID)
+            XCTAssertTrue(Set(expectation.detailPageIDs).isSubset(of: Set(picks.map(\.detailPageID))), pageID)
+            XCTAssertTrue(
+                Set(expectation.cardIDs).isSubset(
+                    of: Set(LocationRelatedPicksCatalog.picks(forPageID: pageID, afterSectionID: expectation.sectionID).map(\.id))
+                ),
+                pageID
+            )
+
+            for pick in picks {
+                XCTAssertNil(pick.linkedMenuItemID, "\(pick.id) should link to a place page, not a menu item row")
+                XCTAssertTrue(PhraseCatalog.isOpenablePageID(pick.detailPageID), pick.id)
+                XCTAssertNotNil(PhraseDetailPage.page(withID: pick.detailPageID), pick.id)
+                XCTAssertNotNil(UIImage(named: pick.imageName), "Missing related card image for \(pick.id): \(pick.imageName)")
+                XCTAssertFalse(pick.proof.localizedCaseInsensitiveContains("reason"), pick.id)
+            }
+        }
+    }
+
+    func testV22CityPagesRenderSQLiteRelatedCandidates() throws {
+        let expected: [String: (targetPageID: String, proofSnippet: String)] = [
+            "viet-family-city-danang-place-banh-xeo-ba-duong": (
+                "viet-phrase-city-danang-place-be-man",
+                "Beach-side seafood"
+            ),
+            "viet-family-city-danang-place-con-market": (
+                "viet-phrase-city-danang-place-han-market",
+                "easier first market"
+            ),
+            "viet-family-city-hanoi-place-gia": (
+                "viet-phrase-city-hanoi-place-tam-vi",
+                "One MICHELIN Star northern table"
+            ),
+            "viet-family-city-hcmc-place-akuna": (
+                "viet-phrase-city-hcmc-place-anan-saigon",
+                "market-side 2025 One MICHELIN Star"
+            ),
+            "viet-family-city-hoian-place-white-rose-restaurant": (
+                "viet-phrase-city-hoian-place-bale-well",
+                "shared set meal"
+            ),
+            "viet-family-city-hue-place-dong-ba": (
+                "viet-phrase-city-hue-place-bun-bo-city",
+                "city bowl"
+            ),
+        ]
+
+        for (pageID, expectation) in expected {
+            let picks = LocationRelatedPicksCatalog.picks(forPageID: pageID)
+            let pick = try XCTUnwrap(
+                picks.first { $0.detailPageID == expectation.targetPageID },
+                "\(pageID) should render its V2.2 related-place candidate"
+            )
+
+            XCTAssertTrue(pick.proof.localizedCaseInsensitiveContains(expectation.proofSnippet), pageID)
+            XCTAssertNotNil(pick.afterSectionID, pageID)
+            XCTAssertTrue(PhraseCatalog.isOpenablePageID(pick.detailPageID), pick.id)
+            XCTAssertNotNil(PhraseDetailPage.page(withID: pick.detailPageID), pick.id)
+            XCTAssertNotNil(UIImage(named: pick.imageName), "Missing related card image for \(pick.id): \(pick.imageName)")
+        }
+    }
+
+    func testV22CityPagesRenderSQLiteMentionedHereCandidates() throws {
+        let expected: [String: [String]] = [
+            "viet-family-city-danang-place-banh-xeo-ba-duong": [
+                "viet-phrase-city-danang-place-banh-xeo",
+                "viet-phrase-city-danang-place-nem-lui",
+            ],
+            "viet-family-city-danang-place-bep-cuon": [
+                "viet-phrase-city-danang-place-banh-trang-cuon-thit-heo",
+            ],
+            "viet-family-city-hanoi-place-cha-ca-thang-long": [
+                "viet-phrase-city-hanoi-place-cha-ca",
+            ],
+            "viet-family-city-hue-place-dong-ba": [
+                "viet-phrase-city-hue-place-bun-bo-city",
+            ],
+        ]
+
+        for (pageID, targetPageIDs) in expected {
+            let picks = LocationMenuPicksCatalog.picks(forPageID: pageID)
+                .filter { $0.linkedMenuItemID == nil }
+            let detailPageIDs = Set(picks.map(\.detailPageID))
+
+            for targetPageID in targetPageIDs {
+                XCTAssertTrue(detailPageIDs.contains(targetPageID), "\(pageID) should render \(targetPageID)")
+            }
+
+            for pick in picks {
+                XCTAssertTrue(PhraseCatalog.isOpenablePageID(pick.detailPageID), pick.id)
+                XCTAssertNotNil(PhraseDetailPage.page(withID: pick.detailPageID), pick.id)
+                XCTAssertNotNil(UIImage(named: pick.imageName), "Missing mentioned card image for \(pick.id): \(pick.imageName)")
+                XCTAssertFalse(pick.proof.localizedCaseInsensitiveContains("reason"), pick.id)
+            }
+        }
+    }
+
+    func testLocationRelatedPicksCacheCanonicalCityLookups() {
+        LocationRelatedPicksCatalog.resetCacheForTesting()
+        defer { LocationRelatedPicksCatalog.resetCacheForTesting() }
+
+        let pageID = "viet-family-city-danang-place-international-terminal"
+        let aliasPageID = "viet-phrase-city-danang-place-international-terminal"
+
+        XCTAssertEqual(LocationRelatedPicksCatalog.buildCountForTesting(pageID: pageID), 0)
+
+        XCTAssertFalse(LocationRelatedPicksCatalog.picks(forPageID: pageID).isEmpty)
+        XCTAssertFalse(LocationRelatedPicksCatalog.picks(forPageID: aliasPageID).isEmpty)
+        XCTAssertEqual(LocationRelatedPicksCatalog.buildCountForTesting(pageID: pageID), 1)
+    }
+
     func testVietnameseMenuSectionsExposeFullVerticalInventory() {
         let foodSections = VietnameseMenuCatalog.sections(for: .food)
         let drinkSections = VietnameseMenuCatalog.sections(for: .drink)
 
         XCTAssertEqual(foodSections.map(\.id), [
             "popular",
-            "khai-vi-and-snacks",
-            "noodle-soups",
-            "vermicelli-bowls",
-            "rice-and-clay-pot",
+            "starters-and-snacks",
+            "noodles-and-bowls",
+            "rice-plates-and-clay-pots",
             "banh-mi-and-buns",
             "seafood",
-            "pork",
-            "chicken-and-duck",
-            "beef-and-goat",
-            "canh-and-lau",
-            "tofu-and-chay",
-            "desserts",
+            "grilled-and-braised-meats",
+            "soups-and-hot-pots",
+            "vegetarian-and-chay",
+            "sweets",
         ])
+        XCTAssertFalse(foodSections.contains { ["Pork", "Chicken & duck", "Beef & goat"].contains($0.title) })
         XCTAssertEqual(foodSections.first?.items.map(\.itemID), ["food-pho-bo", "food-pho-ga", "food-bun-bo-hue", "food-bun-rieu-cua", "food-hu-tieu-nam-vang"])
         XCTAssertEqual(foodSections.first?.featuredImageName, "HeroMenuFoodPhoBo")
         XCTAssertEqual(foodSections.first { $0.id == "seafood" }?.featuredImageName, "HeroMenuFoodTomRangMuoi")
         XCTAssertEqual(
             Dictionary(uniqueKeysWithValues: foodSections.dropFirst().map { ($0.id, $0.itemCount) }),
             [
-                "khai-vi-and-snacks": 32,
-                "noodle-soups": 33,
-                "vermicelli-bowls": 21,
-                "rice-and-clay-pot": 28,
+                "starters-and-snacks": 29,
+                "noodles-and-bowls": 48,
+                "rice-plates-and-clay-pots": 26,
                 "banh-mi-and-buns": 16,
                 "seafood": 26,
-                "pork": 19,
-                "chicken-and-duck": 19,
-                "beef-and-goat": 18,
-                "canh-and-lau": 24,
-                "tofu-and-chay": 7,
-                "desserts": 26,
+                "grilled-and-braised-meats": 56,
+                "soups-and-hot-pots": 22,
+                "vegetarian-and-chay": 20,
+                "sweets": 26,
             ]
         )
         XCTAssertEqual(foodSections.dropFirst().reduce(0) { $0 + $1.itemCount }, 269)
         XCTAssertEqual(Set(foodSections.dropFirst().flatMap { $0.items }.map(\.itemID)).count, 269)
-        XCTAssertTrue(foodSections.first { $0.id == "khai-vi-and-snacks" }?.items.contains { $0.itemID == "food-banh-xeo-chay" } == true)
-        XCTAssertTrue(foodSections.first { $0.id == "noodle-soups" }?.items.contains { $0.itemID == "food-bun-mang-vit" } == true)
-        XCTAssertTrue(foodSections.first { $0.id == "canh-and-lau" }?.items.contains { $0.itemID == "food-bo-nhung-dam" } == true)
-        XCTAssertTrue(foodSections.first { $0.id == "tofu-and-chay" }?.items.contains { $0.itemID == "food-dau-hu-kho-nam" } == true)
+        XCTAssertTrue(foodSections.first { $0.id == "starters-and-snacks" }?.items.contains { $0.itemID == "food-goi-cuon" } == true)
+        XCTAssertTrue(foodSections.first { $0.id == "noodles-and-bowls" }?.items.contains { $0.itemID == "food-bun-mang-vit" } == true)
+        XCTAssertTrue(foodSections.first { $0.id == "grilled-and-braised-meats" }?.items.contains { $0.itemID == "food-bo-luc-lac" } == true)
+        XCTAssertTrue(foodSections.first { $0.id == "soups-and-hot-pots" }?.items.contains { $0.itemID == "food-bo-nhung-dam" } == true)
+        XCTAssertTrue(foodSections.first { $0.id == "vegetarian-and-chay" }?.items.contains { $0.itemID == "food-dau-hu-kho-nam" } == true)
 
         XCTAssertEqual(drinkSections.map(\.id), [
             "popular",
@@ -2806,6 +5235,102 @@ final class LocalUserIntentStoreTests: XCTestCase {
 
         XCTAssertEqual(store.recentPageIDs, ["viet-phrase-hello-chao-anh", "viet-phrase-polite-2"])
         XCTAssertEqual(store.recentPages.first?.source, .article)
+    }
+
+    func testRecordingRecentPageDoesNotPublishStoreWideInvalidation() {
+        let store = LocalUserIntentStore(defaults: defaults)
+        var invalidationCount = 0
+        let cancellable = store.objectWillChange.sink {
+            invalidationCount += 1
+        }
+
+        store.recordOpenedPage("viet-phrase-hello-chao-anh", source: .home)
+
+        XCTAssertEqual(store.recentPageIDs, ["viet-phrase-hello-chao-anh"])
+        XCTAssertEqual(invalidationCount, 0)
+        cancellable.cancel()
+    }
+
+    func testRecentPagesPersistAfterExplicitFlushInsteadOfEveryTap() {
+        let store = LocalUserIntentStore(defaults: defaults)
+
+        store.recordOpenedPage("viet-phrase-hello-chao-anh", source: .home)
+        store.recordOpenedPage("viet-thank-you", source: .search)
+
+        XCTAssertEqual(store.recentPageIDs, ["viet-phrase-polite-2", "viet-phrase-hello-chao-anh"])
+        XCTAssertTrue(LocalUserIntentStore(defaults: defaults).recentPageIDs.isEmpty)
+
+        store.flushRecentPages()
+
+        XCTAssertEqual(
+            LocalUserIntentStore(defaults: defaults).recentPageIDs,
+            ["viet-phrase-polite-2", "viet-phrase-hello-chao-anh"]
+        )
+    }
+
+    func testRecentPagesCanRecordAlreadyCanonicalPageID() {
+        let store = LocalUserIntentStore(defaults: defaults)
+
+        store.recordOpenedCanonicalPage("viet-phrase-polite-2", source: .browse)
+
+        XCTAssertEqual(store.recentPageIDs, ["viet-phrase-polite-2"])
+    }
+
+    func testSavedPageToggleStillPublishesStoreChanges() {
+        let store = LocalUserIntentStore(defaults: defaults)
+        var invalidationCount = 0
+        let cancellable = store.objectWillChange.sink {
+            invalidationCount += 1
+        }
+
+        store.toggleSavedPage("viet-thank-you")
+
+        XCTAssertEqual(store.savedPageIDs, ["viet-phrase-polite-2"])
+        XCTAssertEqual(invalidationCount, 1)
+        cancellable.cancel()
+    }
+
+    func testSavedMembershipSkipsCanonicalLookupForEmptyAndDirectCanonicalIDs() {
+        let store = LocalUserIntentStore(defaults: defaults)
+
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        XCTAssertFalse(store.isPageSaved("viet-phrase-phone-1"))
+        XCTAssertEqual(VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting, 0)
+
+        store.toggleSavedPage("viet-thank-you")
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+
+        XCTAssertTrue(store.isPageSaved("viet-phrase-polite-2"))
+        XCTAssertEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            0,
+            "Saved membership checks should use the direct canonical ID fast path before entering the SQLite canonical resolver."
+        )
+    }
+
+    func testSavedMembershipCachesRepeatedUnsavedMissesWhenSavedListIsNonEmpty() {
+        let store = LocalUserIntentStore(defaults: defaults)
+        store.toggleSavedPage("viet-thank-you")
+        let picks = LocationRelatedPicksCatalog.picks(forPageID: "viet-family-city-danang-place-international-terminal")
+
+        XCTAssertFalse(picks.isEmpty)
+
+        VietSQLitePhraseGraphRuntime.resetTestingOverrides()
+        defer { VietSQLitePhraseGraphRuntime.resetTestingOverrides() }
+
+        for _ in 0..<10 {
+            for pick in picks {
+                XCTAssertFalse(store.isPageSaved(pick.detailPageID))
+            }
+        }
+
+        XCTAssertLessThanOrEqual(
+            VietSQLitePhraseGraphRuntime.canonicalPageIDLookupCountForTesting,
+            picks.count,
+            "Repeated saved-state misses from visible location/card rows should reuse membership decisions instead of canonicalizing the same unsaved page IDs on every redraw."
+        )
     }
 
     func testSavedAndPracticeIDsPersistPrivatelyInUserDefaults() {

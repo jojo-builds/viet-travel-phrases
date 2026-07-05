@@ -7,7 +7,7 @@
   "title": "Tôi cần sơ cứu",
   "englishTitle": "I need first aid",
   "pronunciation": "Toi can so cuu",
-  "summary": "I need first aid",
+  "summary": "For asking for basic medical help before the situation needs a clinic, ambulance, or longer explanation.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần sơ cứu is the short line for naming what you need next. It works best when first aid is visible on your phone, ticket, note, shelf, or in the situation around you."
+      "body": "The injury is immediate enough to name first aid, but not every detail has to come first."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần sơ cứu with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "body": "Say the phrase, then point to the cut, burn, fall, or person who needs help.",
       "phrases": [
         {
           "id": "v500-emer-safe-i-need-first-aid",
@@ -42,80 +42,100 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi cần means I need; sơ cứu means first aid.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi cần",
           "english": "I need",
-          "audioKey": null
+          "keepTogetherReason": "I-need phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "sơ cứu",
           "english": "first aid",
-          "audioKey": null
+          "keepTogetherReason": "first-aid phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi cần sơ cứu",
           "english": "I need first aid",
-          "audioKey": null
+          "audioKey": "v500-emer-safe-i-need-first-aid"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I need first aid to another safety or urgent-help need.",
+      "body": "Injured, someone-injured, and ambulance phrases help if the situation escalates.",
       "phrases": [
         {
-          "id": "emergency-1",
-          "vietnamese": "Gọi công an",
-          "english": "Call the police",
-          "pronunciation": "goy kong an",
+          "id": "v500-emer-safe-i-am-injured",
+          "vietnamese": "tôi bị thương",
+          "english": "I am injured",
+          "pronunciation": "toi bi thuong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-1",
-          "audioKey": "emergency-1"
+          "detailPageID": "viet-family-v500-emer-safe-i-am-injured",
+          "audioKey": "v500-emer-safe-i-am-injured"
         },
         {
-          "id": "emergency-2",
-          "vietnamese": "Gọi xe cứu thương",
-          "english": "Call an ambulance",
-          "pronunciation": "goy seh koo-ah thu-ong",
+          "id": "v500-emer-safe-someone-is-injured",
+          "vietnamese": "Có người bị thương",
+          "english": "Someone is injured",
+          "pronunciation": "Co nguoi bi thuong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-2",
-          "audioKey": "emergency-2"
+          "detailPageID": "viet-phrase-v500-emer-safe-someone-is-injured",
+          "audioKey": "v500-emer-safe-someone-is-injured"
         },
         {
-          "id": "emergency-3",
-          "vietnamese": "Tôi mất hộ chiếu",
-          "english": "I lost my passport",
-          "pronunciation": "toy mut hoh chee-u",
+          "id": "v500-emer-safe-please-call-an-ambulance",
+          "vietnamese": "Hãy gọi xe cấp cứu",
+          "english": "Please call an ambulance",
+          "pronunciation": "Hay goi xe cap cuu",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-3",
-          "audioKey": "emergency-3"
+          "detailPageID": "viet-phrase-v500-emer-safe-please-call-an-ambulance",
+          "audioKey": "v500-emer-safe-please-call-an-ambulance"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real safety or urgent-help exchange when first aid is the detail you need resolved. The likely reply is a point, option, yes/no answer, or next step, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotels, shops, attractions, stations, and staffed counters when someone can call or guide you."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "Keep the first sentence short. Show the injury or photo after the phrase so the next step is clear."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi cần sơ cứu.",
+      "body": "Hospital, take-me-to-hospital, unsafe, emergency, and help phrases cover the next safety move.",
       "phrases": [
+        {
+          "id": "emergency-hospital",
+          "vietnamese": "Bệnh viện gần nhất ở đâu?",
+          "english": "Where is the nearest hospital?",
+          "pronunciation": "beng vyen gun nyut uh dow",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-family-emergency-hospital",
+          "audioKey": "emergency-hospital"
+        },
+        {
+          "id": "v900-emer-safe-please-take-me-to-the-hospital",
+          "vietnamese": "Làm ơn đưa tôi đến bệnh viện",
+          "english": "Please take me to the hospital",
+          "pronunciation": "Lam on dua toi den benh vien",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "red",
+          "detailPageID": "viet-phrase-v900-emer-safe-please-take-me-to-the-hospital",
+          "audioKey": "v900-emer-safe-please-take-me-to-the-hospital"
+        },
         {
           "id": "emergency-4",
           "vietnamese": "Tôi cảm thấy không an toàn",
@@ -123,7 +143,7 @@
           "pronunciation": "toy kahm thai khong an toan",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-4",
+          "detailPageID": "viet-family-emergency-not-safe",
           "audioKey": "emergency-4"
         },
         {
@@ -145,26 +165,6 @@
           "tintName": "red",
           "detailPageID": "viet-phrase-emergency-5",
           "audioKey": "emergency-5"
-        },
-        {
-          "id": "emergency-hospital",
-          "vietnamese": "Bệnh viện gần nhất ở đâu?",
-          "english": "Where is the nearest hospital?",
-          "pronunciation": "beng vyen gun nyut uh dow",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-hospital",
-          "audioKey": "emergency-hospital"
-        },
-        {
-          "id": "emergency-6",
-          "vietnamese": "Túi của tôi bị lấy mất",
-          "english": "My bag was stolen",
-          "pronunciation": "too-ee koo-ah toy bee lay mut",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-6",
-          "audioKey": "emergency-6"
         }
       ]
     }

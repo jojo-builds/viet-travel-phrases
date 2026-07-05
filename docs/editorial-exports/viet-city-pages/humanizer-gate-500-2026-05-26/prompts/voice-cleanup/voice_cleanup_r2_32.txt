@@ -1,0 +1,301 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_32",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_32",
+  "chunks": [
+    {
+      "chunkFile": "hcmc_001_025_humanized.json",
+      "cityID": "hcmc",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-hcmc-place-binh-tay-market",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-bitexco-tower",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-bo-la-lot",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hcmc-place-bot-chien",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hcmc-place-bot-chien",
+          "message": "banned visible fragment: gives hcmc a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hcmc-place-bep-me-in",
+          "message": "freshness/process-like heading: Menu Details Need Care"
+        },
+        {
+          "id": "city-hcmc-place-bitexco-tower",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "001-025",
+          "message": "repeated exact heading 5x: the dish name"
+        },
+        {
+          "id": "001-025",
+          "message": "repeated formula heading 7x: freshness/checking heading"
+        },
+        {
+          "id": "001-025",
+          "message": "freshness/process headings appear 7x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hcmc-place-bep-me-in",
+          "summary": "Bep Me In is a central Saigon restaurant pick when the group wants Vietnamese comfort dishes in a room that feels more settled than the street, with clay pots, herbs, and table pacing.",
+          "context": "The place belongs in the restaurant set as a sit-down choice near central wandering, not a generic food label or a promise of specific current dishes.",
+          "tip": "Go when a readable table meal sounds better than another counter order. Confirm dish names and booking details before making them part of the plan.",
+          "rationale": "It adds a softer restaurant option to HCMC coverage: family-style dishes, herbs, clay-pot cues, and a calmer meal slot near the center.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Readable Vietnamese Table",
+              "body": "Bep Me In fits the moment when you want Vietnamese food with table pacing: clay-pot cues, herbs, shared dishes, and a room that feels easier than a street crawl."
+            },
+            {
+              "id": "place-brief",
+              "title": "Calm After Central Streets",
+              "body": "The appeal is not speed. It is sitting down, reading the menu, letting dishes arrive, and giving the meal a little room."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Restaurant Name",
+              "body": "Bếp Mẹ Ỉn is the Vietnamese name. Bếp means kitchen, and the full name is what matters for searches or ride pickup."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A First Sit-Down Meal",
+              "body": "It suits a night when the group wants familiar ordering structure but still wants Vietnamese flavors and central Saigon context."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Menu Details Need Care",
+              "body": "Do not lock the description to specific dishes, prices, or booking rules unless a fresh source confirms them."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Shared Plates Make Sense",
+              "body": "A restaurant like this is easier with shared plates and a slower table. It is not trying to be a quick bánh mì stop."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-binh-tay-market",
+          "summary": "Binh Tay Market is Chợ Lớn’s big market landmark, with a yellow facade, courtyard, stalls, and wholesale-feeling movement that suits a local shopping browse more than a souvenir-only stop.",
+          "context": "Chợ Bình Tây sits in the Chợ Lớn story: market aisles, goods, courtyard views, local buying rhythm, and a different job from Ben Thanh.",
+          "tip": "Give it a first lap and stay aware of exits. The market rewards orientation before buying or photographing.",
+          "rationale": "It gives HCMC a market angle rooted in Chợ Lớn, with everyday trade and architecture rather than only central tourist shopping.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Chợ Lớn’s Big Market Landmark",
+              "body": "Binh Tay Market gives a different market read from Ben Thanh: yellow facade, courtyard, stalls, goods, and a stronger everyday buying rhythm."
+            },
+            {
+              "id": "place-brief",
+              "title": "Courtyard, Aisles, Trade",
+              "body": "The market works through movement by aisle and counter. Look for the courtyard and facade first, then let the goods set the pace."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Local Name",
+              "body": "Chợ Bình Tây is the Vietnamese name. Chợ means market, and Bình Tây connects the stop to Chợ Lớn’s trading side."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Chợ Lớn Pairing",
+              "body": "It pairs naturally with nearby Chợ Lớn streets or Thiên Hậu Temple when the day has room for a west-side market stop."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Everyday Trade Over Gifts",
+              "body": "Come for the working-market feeling, architecture, and goods. Souvenirs may exist, but the stronger reason is seeing a different market role."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Wider Detour",
+              "body": "It sits outside the tight District 1 loop. Plan the ride there and back instead of assuming a casual central walk."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-bitexco-tower",
+          "summary": "Bitexco Financial Tower is the District 1 tower that makes modern Saigon easy to read vertically, with skyline views, a lotus-like shape, and streets moving far below.",
+          "context": "Tòa nhà Bitexco gives HCMC a vertical landmark: architecture, city views, local pride, and a quick way to understand the downtown skyline.",
+          "tip": "Treat the tower as orientation first. Specific observation deck prices, hours, and access details need a fresh check before they guide the visit.",
+          "rationale": "It belongs because Bitexco turns central Saigon into a recognizable shape, helping the river, towers, and street grid make sense.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Modern Saigon, Read From Above",
+              "body": "Bitexco is a vertical landmark, not just a tall building. Its shape and skyline views help District 1 feel easier to place."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Streets Look Different Below",
+              "body": "From the tower area, Saigon’s movement becomes clearer: river edge, office towers, scooters, shopping streets, and the height of the downtown core."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Tower Name",
+              "body": "Tòa nhà Bitexco means Bitexco building or tower. Bitexco is the name locals and drivers are most likely to recognize."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Skyline Orientation Stop",
+              "body": "It pairs with Nguyen Hue, Bach Dang Wharf, or a central coffee break when the day needs height and a cleaner map in your head."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Fresh Access Checks",
+              "body": "Observation areas, ticketing, opening hours, and restaurant access can change. Confirm those specifics separately before planning the visit around them."
+            },
+            {
+              "id": "good-to-know",
+              "title": "More Than A Photo Shape",
+              "body": "Even without going high, the tower helps you recognize central Saigon from streets, riverfront paths, and taxi windows."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-bo-la-lot",
+          "summary": "Bò lá lốt in Saigon is a grilled, fragrant food moment built around beef wrapped in betel leaves, herbs, rice paper, and sauce, with the best bite assembled at the table.",
+          "context": "The dish is about rolling and balancing flavor: smoky beef, leaf aroma, herbs, rice paper, and dipping sauce rather than a single plated bite.",
+          "tip": "Watch how the first roll is built before following it. Herbs and sauce are part of the dish, not garnish.",
+          "rationale": "It adds a hands-on HCMC food memory that is slower than bánh mì and more aromatic than a plain grilled skewer.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Grilled Leaf, Rolled Bite",
+              "body": "Bò lá lốt is beef wrapped in betel leaves and grilled until fragrant, then usually eaten with herbs, rice paper, and sauce."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Assembly Matters",
+              "body": "The bite comes together at the table. Beef, leaf, herbs, wrapper, and sauce each do a different job."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Dish Name",
+              "body": "Bò lá lốt is the phrase to recognize. Bò means beef, and lá lốt is the aromatic leaf wrapped around it."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Sit-And-Roll Snack",
+              "body": "It fits when you want something more social than a quick sandwich but lighter than a long restaurant meal."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Good For Sharing",
+              "body": "A plate makes more sense with shared hands and a little patience. The first roll teaches the rest."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Pork And Beef Checks",
+              "body": "Ingredients can vary by shop. Ask if meat type, pork fat, or sauce contents matter to you."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-bot-chien",
+          "summary": "Bột chiên in Saigon is a flat-griddle snack of fried rice-flour cakes with egg and green onions, crisp at the edges and easy to understand once you see the pan.",
+          "context": "The food moment is visual and quick: cubes on a hot griddle, egg added, green onions scattered, sauce nearby, and a plate that works between meals.",
+          "tip": "Look for the griddle. Seeing the cakes and egg cook tells you more than a translated menu line.",
+          "rationale": "It gives HCMC a snack texture: crisp, soft, eggy, sauced, and simple enough for a first street-food try.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Griddle Snack Between Meals",
+              "body": "Bột chiên is fried rice-flour cakes cooked on a flat griddle with egg and green onions, then eaten as a savory snack."
+            },
+            {
+              "id": "place-brief",
+              "title": "Crisp Edge, Soft Center",
+              "body": "The appeal is texture: browned edges, soft rice-flour pieces, egg holding it together, and sauce cutting through the richness."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Dish Name",
+              "body": "Bột chiên is the name to listen for. Bột points to flour or batter; chiên means fried."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Small Street-Food Try",
+              "body": "It fits when you want one hot plate, not a full meal. Share it if you are still saving room for dinner."
+            },
+            {
+              "id": "when-to-use",
+              "title": "The Pan Makes It Clear",
+              "body": "Menus can be less helpful than watching the griddle. If it looks right, the dish is easy to point out."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sauce Changes The Bite",
+              "body": "The sauce and pickled sides can shift the flavor quickly. Try a little first before pouring everything over the plate."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

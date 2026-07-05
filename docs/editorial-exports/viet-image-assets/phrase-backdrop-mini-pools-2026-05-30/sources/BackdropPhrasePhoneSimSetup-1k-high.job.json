@@ -1,0 +1,21 @@
+[
+  {
+    "id": "1b771a63-eedf-4a92-ad46-d55ab54a9972",
+    "status": "completed",
+    "display_name": "GPT Image 2",
+    "job_set_type": "imagegen_2_0",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38ecHrKXVn9clw0Nl9IQC7UnMcD/hf_20260530_081541_1b771a63-eedf-4a92-ad46-d55ab54a9972.png",
+    "created_at": 1780128941.086979,
+    "params": {
+      "width": 752,
+      "height": 1344,
+      "prompt": "Scene: traveler phone setup still life with a blank SIM tray, SIM eject pin, passport cover turned away from camera, small pouch, and phone on a clean service counter. Make it clearly about SIM/eSIM setup without printed carrier branding or readable card text. Composition: close top-down flat-lay crop on the service counter; the phone, SIM tray, and eject pin must fill the upper-middle safe zone between 18% and 45% down from the top. Avoid street views, windows, distant backgrounds, tall empty counter space, or a person outside the shop; this should read immediately as SIM setup. Photorealistic vertical 9:16 editorial travel photograph for SpeakLocal, a premium native iPhone phrasebook for travelers in Vietnam. The image will sit behind a white scrollable app sheet. Place the primary visual subject in the upper-middle safe zone, roughly 18% to 48% down from the top of the frame, so it remains visible when the content card is pulled down. Do not leave the top quarter as empty ceiling, blank wall, or plain sky. Keep the lower third calmer because it may sit behind the content card. Natural daylight or believable warm ambient light, real camera feel, premium travel-documentary style, not CGI, not illustration, not glossy stock. Vietnam-forward but not tourist-cliche; use practical traveler context, local material texture, tile, wood, glass, street light, greenery, luggage, tableware, or counters as appropriate. Strictly avoid readable text, signage, labels, logos, brand marks, license plates, watermarks, fake app UI, fake menus, distorted hands, distorted faces, extra fingers, injury, blood, panic, or emergency drama.",
+      "medias": [],
+      "aspect_ratio": "9:16",
+      "quality": "high",
+      "resolution": "1k",
+      "model": "videotape-alpha",
+      "reference_elements": []
+    }
+  }
+]

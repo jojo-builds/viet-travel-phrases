@@ -5093,7 +5093,7 @@
       "romanizedNoTones": "Banh mi thit",
       "soundOut": "bahn mee tit",
       "notes": "",
-      "atAGlance": "The classic mixed-meat bánh mì: French-introduced bread made Vietnamese with pâté, pork, đồ chua pickles, cilantro, cucumber, chili, and street-cart speed.",
+      "atAGlance": "Bánh mì thịt is the everyday meat bánh mì: crisp bread, pork, pâté, pickles, herbs, chili if you want it, and a vendor rhythm that moves quickly.",
       "usuallyIncludes": [
         "baguette",
         "pork",
@@ -5101,7 +5101,7 @@
         "cilantro",
         "chili optional"
       ],
-      "goodToKnow": "If you do not eat pâté or pork liver, ask before ordering.",
+      "goodToKnow": "Many versions include pork and pâté. Ask first if you avoid liver, pork, or chili.",
       "commonOptions": [
         "no chili",
         "extra pickles",
@@ -5117,13 +5117,13 @@
         "pronunciation": "chaw toy moht oh bahn mee tit",
         "audioPolicy": "text-only"
       },
-      "whatItIs": "Bánh mì thịt is the everyday meat sandwich many visitors imagine first, but it is also a compact food history: baguette and pâté meeting Vietnamese pork, herbs, pickled carrot and daikon, and Maggi-style seasoning.",
-      "howToEnjoy": "Point to the fillings you want if the cart has a glass case. Eat it soon after ordering so the crust stays crisp, the pâté is warm, and the pickles still cut through the pork.",
-      "howLocalsOrder": "Order bánh mì thịt for a pork bánh mì, then say no chili or extra pickles before the vendor adds the final seasoning. Locals keep coming back because it works as breakfast, a workday snack, or a meal you can carry on a motorbike.",
-      "worthKnowing": "Bánh mì became beloved because Vietnam transformed a colonial-era baguette into democratic street food: affordable, fast, layered, and unmistakably local once herbs, pickles, chili, and pork went inside.",
+      "whatItIs": "Bánh mì thịt is Vietnam's fast pork sandwich in a light baguette, layered with meat, pâté, pickled carrot and daikon, cucumber, cilantro, chili, and seasoning. It is compact, portable, and usually made while you stand there.",
+      "howToEnjoy": "Eat it soon after ordering while the crust still cracks and the pickles cut through the richness. If the cart has a glass case, point to fillings you want or do not want before the final sauce and chili go in.",
+      "howLocalsOrder": "Order bánh mì thịt for the default pork sandwich, then ask for no chili or extra pickles before the vendor finishes it. The important choices happen fast at the end.",
+      "worthKnowing": "The sandwich is a Vietnamese street-food transformation of French-introduced bread: lighter baguette, local fillings, herbs, pickles, chili, and enough speed to work as breakfast, snack, or meal on the move.",
       "regionalAssociation": "Vietnam",
       "originPosture": "origin-story",
-      "travelerCaution": "May contain pork.",
+      "travelerCaution": "Often contains pork, pâté, and chili unless you ask otherwise.",
       "helperPhraseIDs": [
         "menu-not-spicy",
         "menu-less-spicy",
@@ -6819,7 +6819,7 @@
       "romanizedNoTones": "Banh xeo",
       "soundOut": "bahn say-oh",
       "notes": "",
-      "atAGlance": "Bánh xèo is a crisp turmeric-rice pancake eaten by tearing pieces into rice paper or lettuce with herbs, then dipping in the fish-sauce dip.",
+      "atAGlance": "Bánh xèo is a crisp turmeric-rice pancake eaten with your hands: tear, wrap with herbs and rice paper or lettuce, then dip.",
       "usuallyIncludes": [
         "rice flour batter",
         "pork and shrimp",
@@ -6827,7 +6827,7 @@
         "rice paper or lettuce",
         "fresh herbs and fish-sauce dip"
       ],
-      "goodToKnow": "Fresh herbs are part of the flavor, not a garnish. Skip chili if you want the fish-sauce dip milder.",
+      "goodToKnow": "Fresh herbs and wrappers are part of the dish. Extra rice paper or herbs is a normal ask when the table is sharing.",
       "commonOptions": [
         "extra rice paper",
         "extra herbs",
@@ -6843,13 +6843,13 @@
         "pronunciation": "chaw toy moht fuhn bahn say-oh",
         "audioPolicy": "text-only"
       },
-      "whatItIs": "Bánh xèo is a sizzling turmeric-rice pancake folded around pork, shrimp, bean sprouts, and herbs. The local fun is not fork-and-knife pancake eating: you tear it, wrap it with rice paper or lettuce and herbs, then dip in the fish-sauce dip.",
-      "howToEnjoy": "Tear off a crisp piece, tuck it into rice paper or lettuce with herbs, roll or fold it, then dip lightly in the fish-sauce dip. The herbs and wrapper are part of the dish, not decoration.",
-      "howLocalsOrder": "Order bánh xèo expecting a hands-on wrap-and-dip plate. Ask for extra rice paper or herbs if the table is sharing, and say no chili in the fish-sauce dip before dipping starts.",
-      "worthKnowing": "Bánh xèo changes by region, but the eating ritual is the traveler key: crisp pancake, fresh herbs, rice paper or lettuce, and bright fish-sauce dip in one bite.",
+      "whatItIs": "Bánh xèo is a sizzling turmeric-rice pancake folded around pork, shrimp, bean sprouts, and herbs. The point is the eating ritual, not a fork-and-knife pancake: tear a piece, wrap it, add herbs, dip lightly.",
+      "howToEnjoy": "Build one bite at a time. Keep the wrapper small enough to hold, add herbs for freshness, and dip instead of soaking so the crisp edge still matters.",
+      "howLocalsOrder": "Order bánh xèo expecting a shared wrap-and-dip plate. Ask for more rice paper or more herbs if the table needs them, and ask for no chili before the dip gets too spicy.",
+      "worthKnowing": "Styles change by region across Vietnam, but the useful traveler pattern stays the same: crisp pancake, fresh herbs, wrapper, and fish-sauce dip working together in one bite.",
       "regionalAssociation": "Vietnam",
       "originPosture": "regional-variation",
-      "travelerCaution": "",
+      "travelerCaution": "Often contains shrimp or pork; ask first if that matters.",
       "helperPhraseIDs": [
         "menu-not-spicy",
         "menu-less-spicy",
@@ -18248,14 +18248,14 @@
       "romanizedNoTones": "Ca phe sua da",
       "soundOut": "kah fay soo-uh dah",
       "notes": "",
-      "atAGlance": "Cà phê sữa đá is Vietnam’s iconic iced milk coffee, balancing dark robusta bite with condensed milk and a hard chill from the ice.",
+      "atAGlance": "Vietnam's classic iced condensed-milk coffee brings dark robusta, thick sweetness, and ice into a slow street-cafe pause.",
       "usuallyIncludes": [
         "robusta coffee",
         "phin filter",
         "condensed milk",
         "ice"
       ],
-      "goodToKnow": "Strong and sweet; ask for less condensed milk or more ice if you want it lighter.",
+      "goodToKnow": "It is usually strong and sweet. Ask for less condensed milk before the drink is mixed; fixing it afterward is harder.",
       "commonOptions": [
         "less sweet",
         "more ice",
@@ -18271,13 +18271,13 @@
         "pronunciation": "chaw toy moht lee kah fay soo-uh dah",
         "audioPolicy": "text-only"
       },
-      "whatItIs": "Cà phê sữa đá is a slow phin coffee mixed with condensed milk and poured over ice. Expect dark robusta bitterness rounded by condensed-milk sweetness, creamy body, and a hard chill from the ice.",
-      "howToEnjoy": "Stir until the condensed milk rises from the bottom; order less sugar only if you want it less dessert-like.",
-      "howLocalsOrder": "Cà phê sữa đá is the classic iced condensed-milk coffee order. Ask less sweet before it is mixed if you want the roasted robusta bite to stay stronger than the milk.",
-      "worthKnowing": "In Vietnam, Cà phê sữa đá shows why Vietnamese iced coffee tastes stronger and sweeter than many visitors expect: robusta coffee gives the bite, condensed milk gives the body.",
+      "whatItIs": "Cà phê sữa đá starts with strong phin-brewed robusta and condensed milk, then goes over ice. Expect bitterness, sweetness, and creamy weight in a smaller cup than many visitors expect.",
+      "howToEnjoy": "Stir from the bottom before the first sip so the condensed milk actually joins the coffee. Ask for less sweet before it is mixed if you want the roasted coffee bite to lead.",
+      "howLocalsOrder": "Order it as cà phê sữa đá when you want the default iced milk coffee. Ask for less sweet before mixing, or ask for less ice if you want a stronger glass.",
+      "worthKnowing": "The drink makes Vietnam's coffee style clear fast: robusta gives the bite, condensed milk gives body, and ice turns a strong cup into something built for heat and lingering.",
       "regionalAssociation": "Vietnam",
       "originPosture": "cultural-context",
-      "travelerCaution": "",
+      "travelerCaution": "Contains condensed milk and caffeine.",
       "helperPhraseIDs": [
         "menu-less-sugar",
         "menu-no-sugar",

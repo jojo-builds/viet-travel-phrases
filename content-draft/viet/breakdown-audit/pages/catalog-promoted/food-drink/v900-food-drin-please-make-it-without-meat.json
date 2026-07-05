@@ -20,38 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hãy",
-      "english": "please do"
+      "vietnamese": "Hãy làm",
+      "english": "please make",
+      "keepTogetherReason": "please-make phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "làm",
-      "english": "do / make"
+      "vietnamese": "món này",
+      "english": "this dish",
+      "keepTogetherReason": "this-dish phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "món",
-      "english": "dish"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "thịt",
-      "english": "meat"
+      "vietnamese": "không có thịt",
+      "english": "without meat",
+      "keepTogetherReason": "without-meat phrase"
     },
     {
       "id": "full",

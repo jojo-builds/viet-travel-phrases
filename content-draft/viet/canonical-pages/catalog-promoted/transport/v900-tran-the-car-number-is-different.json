@@ -4,10 +4,10 @@
   "phraseID": "v900-tran-the-car-number-is-different",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Số xe khác hẳn",
-  "englishTitle": "The car number is different",
-  "pronunciation": "So xe khac han",
-  "summary": "The car number is different",
+  "title": "Biển số xe không giống",
+  "englishTitle": "The license plate is different",
+  "pronunciation": "Bien so xe khong giong",
+  "summary": "For telling a driver, guard, or ride-hailing helper that the license plate does not match the car on your app.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -15,57 +15,61 @@
     "v900-tran-the-car-number-is-different",
     "premium"
   ],
-  "audioKey": "v900-tran-the-car-number-is-different",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Số xe khác hẳn is a practical transport phrase for keeping one travel detail clear. Use it when car number is different is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Keep the ride screen open and compare the plate before getting in. This is a safety check, not a small wording detail.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Số xe khác hẳn. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point to the app plate and then the vehicle plate. Wait for an explanation before opening the door.",
       "phrases": [
         {
           "id": "v900-tran-the-car-number-is-different",
-          "vietnamese": "Số xe khác hẳn",
-          "english": "The car number is different",
-          "pronunciation": "So xe khac han",
-          "symbolName": "speaker.wave.2.fill",
+          "vietnamese": "Biển số xe không giống",
+          "english": "The license plate is different",
+          "pronunciation": "Bien so xe khong giong",
+          "symbolName": "text.bubble.fill",
           "tintName": "orange",
           "detailPageID": null,
-          "audioKey": "v900-tran-the-car-number-is-different"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Biển số xe means license plate; không giống means does not match.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Số xe",
-          "english": "car number"
+          "vietnamese": "Biển số xe",
+          "english": "license plate",
+          "keepTogetherReason": "license-plate phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "khác hẳn",
-          "english": "different"
+          "vietnamese": "không giống",
+          "english": "does not match / is different",
+          "keepTogetherReason": "not-matching phrase"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "Số xe khác hẳn",
-          "english": "The car number is different",
-          "audioKey": "v900-tran-the-car-number-is-different"
+          "id": "full",
+          "vietnamese": "Biển số xe không giống",
+          "english": "The license plate is different",
+          "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from The car number is different to another transport need.",
+      "body": "Driver, pickup point, correct car, address, and cancel-ride cards cover the ride-hailing checks around this line.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -102,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when car number is different is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Ride-hailing pickups, hotel driveways, airport pickup zones, and station curbs are the moments where plate mismatch matters.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "If the plate, driver photo, or car color is wrong, do not get in until the app or staff confirms it.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Số xe khác hẳn.",
+      "body": "Move to driver, correct car, pickup point, cancel ride, or contact-driver cards if the pickup still feels uncertain.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",
@@ -170,13 +176,13 @@
   "examples": [
     {
       "id": "v900-tran-the-car-number-is-different",
-      "vietnamese": "Số xe khác hẳn",
-      "english": "The car number is different",
-      "pronunciation": "So xe khac han",
-      "symbolName": "speaker.wave.2.fill",
+      "vietnamese": "Biển số xe không giống",
+      "english": "The license plate is different",
+      "pronunciation": "Bien so xe khong giong",
+      "symbolName": "text.bubble.fill",
       "tintName": "orange",
       "detailPageID": null,
-      "audioKey": "v900-tran-the-car-number-is-different"
+      "audioKey": null
     }
   ]
 }

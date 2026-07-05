@@ -7,7 +7,7 @@
   "title": "Tôi đã đặt trực tuyến",
   "englishTitle": "I booked online",
   "pronunciation": "Toi da dat truc tuyen",
-  "summary": "I booked online",
+  "summary": "Tell the desk your booking was made online when they cannot find it by name alone.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi đã đặt trực tuyến is a practical hotel or stay phrase for keeping one travel detail clear. Use it when I booked online is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Good at check-in when the reservation sits in an app, email, or agency system."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi đã đặt trực tuyến. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the confirmation screen right after the phrase so staff can match the code or date.",
       "phrases": [
         {
           "id": "v500-hote-acco-i-booked-online",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đặt trực tuyến is booked online; tôi đã makes it something you already did.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I booked online to another hotel or stay need.",
+      "body": "Reservation and check-in cards help if the desk needs the normal arrival wording too.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when i booked online is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best before spelling your name repeatedly or handing over extra documents."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "Bookings can appear under an agency, email address, or the person who paid."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi đã đặt trực tuyến.",
+      "body": "Checkout-time, quiet-room, and checkout cards cover nearby front-desk basics.",
       "phrases": [
         {
           "id": "hotel-3",

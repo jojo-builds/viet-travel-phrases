@@ -1,0 +1,317 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_23",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_23",
+  "chunks": [
+    {
+      "chunkFile": "hanoi_051_075_humanized.json",
+      "cityID": "hanoi",
+      "range": "051-075",
+      "errors": [],
+      "warnings": [
+        {
+          "id": "city-hanoi-place-nguyen-huu-huan-street",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-night-market-walk",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-night-market-walk",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-noi-bai-airport",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-noi-bai-airport",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-nuoc-ngam-bus-station",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-nuoc-ngam-bus-station",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-old-quarter",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 25x: local name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 25x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 5x: freshness/checking heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 25x"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 5x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hanoi-place-nguyen-huu-huan-street",
+          "summary": "Nguyen Huu Huan Street turns Hanoi coffee into a short walk: narrow doorways, upstairs rooms, egg-coffee signs, and scooters close to the curb.",
+          "context": "Choose one coffee room from the street instead of treating a famous cup as the whole story.",
+          "tip": "Look up before choosing. Some of the better-feeling rooms are upstairs or tucked behind doorways that are easy to miss.",
+          "rationale": "Phố Nguyễn Hữu Huân is a coffee-street scene, with Cà phê Giảng as one reference point but not the only reason to remember it.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Coffee Street Before The Cup",
+              "body": "Nguyễn Hữu Huân is a close Old Quarter coffee street: signs, narrow shopfronts, upstairs rooms, and scooters passing while cups cool."
+            },
+            {
+              "id": "place-brief",
+              "title": "Look Up At Doorways",
+              "body": "Pause before picking a cafe. A doorway, stairwell, or small upstairs room may carry more of the stop than the sidewalk sign."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Phố Nguyễn Hữu Huân is the street name to pair with egg-coffee signs, close storefronts, and Old Quarter movement."
+            },
+            {
+              "id": "use-it-with",
+              "title": "One Famous Cup, More Rooms",
+              "body": "Cà phê Giảng can be the familiar name, but the street is wider than one stop. Let the room decide the pause."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short Walk, Clear Cup",
+              "body": "This is a coffee pause, not a full afternoon. Pair it with nearby lanes, then move before traffic and caffeine blur."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Cafe Lineups Change",
+              "body": "Cafe names and rooms can change. Let the street guide the pause, then choose the doorway that feels open and easy."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-night-market-walk",
+          "summary": "The Old Quarter night market walk changes Hanoi's pace: warm bulbs, stall tables, snack smoke, phone photos, and slower evening crowds.",
+          "context": "Make one lap before buying. Looking first keeps the night open and prevents one stall from swallowing the walk.",
+          "tip": "Walk once without buying, then decide what is worth carrying. Small gifts and snacks make more sense than heavy bags.",
+          "rationale": "Đi chợ đêm phố cổ is a night loop through Old Quarter energy, with schedule and stall mix left flexible.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Night Lap",
+              "body": "The walk is warm lights, table stalls, food smoke, phone photos, and people moving slower than the Old Quarter does at noon."
+            },
+            {
+              "id": "place-brief",
+              "title": "One Pass Before Paying",
+              "body": "A first lap shows what repeats, what feels crowded, and what is actually worth carrying for the rest of the evening."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Đi chợ đêm phố cổ is the phrase to connect with an Old Quarter evening walk through stalls and snack smoke."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Small Purchases",
+              "body": "Check the price, hold your change, and keep the buy light. The walk feels better when your hands stay free."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Exit With Energy",
+              "body": "Step back toward a quieter lane or the lake edge before the crowd makes every choice feel harder."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Night Rhythm Changes",
+              "body": "Market nights, pedestrian flow, and stall mix can change. Check the evening rhythm before counting on a full run of stalls."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-noi-bai-airport",
+          "summary": "Noi Bai is the first real Hanoi threshold: bags, glass doors, waiting families, phone setup, and the first ride toward the city center.",
+          "context": "Clear immigration, bags, pickup point, and hotel address before stepping into the public arrival area.",
+          "tip": "Pause with your phone and address before meeting the ride crowd. The first Hanoi conversation is easier when the destination is already visible.",
+          "rationale": "Sân bay Nội Bài should prepare calm arrival behavior while keeping terminal flow, pickup rules, and services flexible.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The First Threshold",
+              "body": "Nội Bài turns the trip into glass doors, bags, signs, waiting families, and the first ride toward Hanoi."
+            },
+            {
+              "id": "place-brief",
+              "title": "Basics Before Pickup",
+              "body": "Clear the official steps, find your bag, and pause before the public arrival area. A quiet minute saves confusion outside."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Sân bay Nội Bài is the airport name to show when arranging a ride or checking arrival details."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Pickup Point Name",
+              "body": "Ride pickups feel simple until everyone is under the same sign. Confirm the exact area before moving with luggage."
+            },
+            {
+              "id": "when-to-use",
+              "title": "First Ride Plain",
+              "body": "The road into Hanoi is not the moment for a complicated plan. Aim clearly for the hotel, Old Quarter, or first stop."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Airport Rules Change",
+              "body": "Terminal flow, pickup zones, SIM counters, and ride rules can change. Check the official signs before moving outside with bags."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-nuoc-ngam-bus-station",
+          "summary": "Nuoc Ngam Bus Station is a practical Hanoi travel handoff: route boards, counters, benches, motorbike noise, and the scramble before an onward bus.",
+          "context": "Confirm the right bay and ticket before settling. Keep the station minute operational and calm.",
+          "tip": "Check the route, bay, and departure detail before sitting down. Boarding starts to feel faster once bags and announcements enter the scene.",
+          "rationale": "Bến xe Nước Ngầm gives name recognition and station behavior while routes, bays, and operators stay changeable.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Practical Handoff",
+              "body": "Nước Ngầm is buses, route boards, ticket counters, benches, and the small scramble that belongs to an onward travel day."
+            },
+            {
+              "id": "place-brief",
+              "title": "Bay Before Bench",
+              "body": "Check the bay, route, and ticket detail before relaxing. A station can feel calm until the boarding moment arrives."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Bến xe Nước Ngầm is the Vietnamese station name to match against tickets, ride screens, and staff directions."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Bags Within Reach",
+              "body": "Keep the ticket, phone, and small bag close while people are boarding, calling, and moving through narrow gaps."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Arrival Plan Too",
+              "body": "Know how you will leave at the other end. A taxi or pickup plan matters as much as the departure bay."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Bay Layouts Change",
+              "body": "Routes, counters, access, and bay layout can change. Check the ticket and station signs before settling into the waiting area."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-old-quarter",
+          "summary": "The Old Quarter is close-up Hanoi: shop signs, scooters, hotel doors, coffee rooms, low stools, and trade streets packed into a tight walk.",
+          "context": "Choose one short spine through the neighborhood instead of trying to collect every lane.",
+          "tip": "Pick a lake edge, coffee street, or market corner first. A little structure makes the wandering feel better.",
+          "rationale": "Phố cổ Hà Nội should read as a walkable neighborhood with texture, crossings, and pauses, not a generic old-town label.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Close-Up Hanoi",
+              "body": "The Old Quarter is shop signs, scooters, hotel doors, low stools, coffee rooms, and streets folding into one another."
+            },
+            {
+              "id": "place-brief",
+              "title": "One Spine",
+              "body": "A lake edge, coffee street, or market corner gives the walk a shape when the lanes begin to overlap."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Phố cổ Hà Nội is the name to connect with the tight lanes, old trade streets, and central walking days."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Crossing Pause",
+              "body": "Stop at corners before crossing. Watch the traffic for a moment, then move steadily instead of turning it into drama."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Coffee Reset",
+              "body": "A short cafe pause can turn the neighborhood from noise into texture. Sit briefly, then return before the route gets ambitious."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Street Details Shift",
+              "body": "Street works, shop turnover, and pedestrian flow can change. Let the walk adjust instead of forcing an old map memory."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

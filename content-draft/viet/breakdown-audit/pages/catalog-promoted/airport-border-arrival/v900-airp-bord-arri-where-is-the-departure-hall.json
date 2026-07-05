@@ -22,13 +22,13 @@
       "id": "chunk-1",
       "vietnamese": "Sảnh khởi hành",
       "english": "departure hall",
-      "keepTogetherReason": "compound noun"
+      "keepTogetherReason": "airport area phrase"
     },
     {
       "id": "chunk-2",
       "vietnamese": "ở đâu?",
-      "english": "where",
-      "keepTogetherReason": "fixed place question"
+      "english": "where?",
+      "keepTogetherReason": "where-question ending"
     },
     {
       "id": "full",

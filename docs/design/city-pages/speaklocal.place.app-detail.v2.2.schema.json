@@ -1,0 +1,448 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "speaklocal.place.app-detail.v2.2.schema.json",
+  "title": "SpeakLocal Place App Detail v2.2",
+  "description": "Source-owned contract for current SpeakLocal city/place app-detail entries. Runtime resources may still project these records through compatibility layers, but approval starts here.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contentContract",
+    "id",
+    "pageID",
+    "displayName",
+    "englishName",
+    "city",
+    "category",
+    "pronunciation",
+    "travelerMoment",
+    "storySpine",
+    "intro",
+    "usefulPhraseCards",
+    "sections",
+    "mentionedHereCandidates",
+    "relatedPlaceCandidates",
+    "verificationFlags",
+    "qa",
+    "score",
+    "sourceNotes",
+    "status",
+    "review"
+  ],
+  "properties": {
+    "contentContract": {
+      "const": "speaklocal.place.app-detail.v2.2"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pageID": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourcePageID": {
+      "type": "string",
+      "minLength": 1
+    },
+    "displayName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "englishName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "city": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pronunciation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "travelerMoment": {
+      "type": "string",
+      "description": "Internal authoring proof of the concrete traveler situation the page owns.",
+      "minLength": 1
+    },
+    "storySpine": {
+      "type": "string",
+      "description": "Internal authoring proof of the truthful local/cultural/place reason the page belongs.",
+      "minLength": 1
+    },
+    "intro": {
+      "$ref": "#/$defs/headingBody"
+    },
+    "usefulPhraseCards": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 3,
+      "items": {
+        "$ref": "#/$defs/usefulPhraseCard"
+      }
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 4,
+      "items": {
+        "$ref": "#/$defs/section"
+      }
+    },
+    "mentionedHereCandidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/mentionedHereCandidate"
+      }
+    },
+    "relatedPlaceCandidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relatedPlaceCandidate"
+      }
+    },
+    "verificationFlags": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/verificationFlag"
+      }
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "replaceabilityTest",
+        "phraseCardTest",
+        "mentionedHereTest",
+        "catalogMentionScan",
+        "duplicateBodyTest",
+        "antiCynicismTest"
+      ],
+      "properties": {
+        "replaceabilityTest": {
+          "$ref": "#/$defs/testStatus"
+        },
+        "phraseCardTest": {
+          "$ref": "#/$defs/testStatus"
+        },
+        "mentionedHereTest": {
+          "$ref": "#/$defs/testStatus"
+        },
+        "catalogMentionScan": {
+          "$ref": "#/$defs/testStatus",
+          "description": "Fail when visible copy naturally mentions catalogable items but mentionedHereCandidates is empty or unevaluated."
+        },
+        "duplicateBodyTest": {
+          "$ref": "#/$defs/testStatus"
+        },
+        "antiCynicismTest": {
+          "$ref": "#/$defs/testStatus"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "score": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "max",
+        "reason"
+      ],
+      "properties": {
+        "value": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max": {
+          "const": 30
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "sourceNotes": {
+      "type": "array",
+      "description": "Internal source notes and evidence reminders. Do not render as user-facing copy.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "enum": [
+        "needs_voice_gate",
+        "REVISE",
+        "FAIL",
+        "FINAL_PASS"
+      ]
+    },
+    "review": {
+      "type": "object",
+      "description": "Internal review/gate metadata. Do not render as user-facing copy.",
+      "additionalProperties": true,
+      "required": [
+        "status",
+        "voiceGateStatus"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "voiceGateStatus": {
+          "type": "string",
+          "minLength": 1
+        },
+        "v2_2GateStatus": {
+          "type": "string"
+        },
+        "v2_2GateSources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "generatedFrom": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "headingBody": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "heading",
+        "body"
+      ],
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "section": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "heading",
+        "body"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "usefulPhraseCard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "vi",
+        "en",
+        "intent",
+        "phraseId",
+        "audioId",
+        "status"
+      ],
+      "properties": {
+        "vi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "intent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phraseId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "audioId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "enum": [
+            "mapped",
+            "close_match",
+            "new_phrase_needed",
+            "hide_until_audio"
+          ]
+        }
+      }
+    },
+    "mentionedHereCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "type",
+        "catalogId",
+        "sourceText",
+        "displaySubtitle",
+        "reason",
+        "status"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "catalogId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sourceText": {
+          "type": "string",
+          "minLength": 1
+        },
+        "displaySubtitle": {
+          "type": "string",
+          "description": "User-facing card subtitle. Render this, not the internal reason.",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "description": "Internal QA/source rationale. Do not render as user-facing copy.",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "render",
+            "check_catalog",
+            "do_not_render"
+          ]
+        }
+      }
+    },
+    "relatedPlaceCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "catalogId",
+        "label",
+        "relationship",
+        "displaySubtitle",
+        "reason",
+        "status"
+      ],
+      "properties": {
+        "catalogId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relationship": {
+          "type": "string",
+          "minLength": 1
+        },
+        "displaySubtitle": {
+          "type": "string",
+          "description": "User-facing card subtitle. Render this, not the internal reason.",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "description": "Internal QA/source rationale. Do not render as user-facing copy.",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "render",
+            "check_catalog",
+            "do_not_render"
+          ]
+        }
+      }
+    },
+    "verificationFlag": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "reason",
+        "blocking"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "light",
+            "same_week",
+            "status_blocking",
+            "native_speaker_qa",
+            "catalog_qa",
+            "audio_qa"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blocking": {
+          "type": "boolean"
+        }
+      }
+    },
+    "testStatus": {
+      "enum": [
+        "pass",
+        "fail",
+        "needs_review"
+      ]
+    }
+  }
+}

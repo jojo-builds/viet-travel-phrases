@@ -1,0 +1,1736 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_05",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_05",
+  "chunks": [
+    {
+      "chunkFile": "hcmc_001_025_humanized.json",
+      "cityID": "hcmc",
+      "range": "001-025",
+      "errors": [],
+      "warnings": [
+        {
+          "id": "city-hcmc-place-akuna",
+          "message": "freshness/process-like heading: A Polished Meal, Then A Fresh Check"
+        },
+        {
+          "id": "city-hcmc-place-anan-saigon",
+          "message": "freshness/process-like heading: Details Need A Fresh Look"
+        },
+        {
+          "id": "city-hcmc-place-anan-saigon",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-ao-dai-museum",
+          "message": "freshness/process-like heading: Fresh Details To Check"
+        },
+        {
+          "id": "city-hcmc-place-ao-dai-museum",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-bach-dang-waterbus-station",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-bach-dang-wharf",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-banh-mi",
+          "message": "generic non-playable quick-say title: The Dish Name"
+        },
+        {
+          "id": "city-hcmc-place-banh-mi-huynh-hoa",
+          "message": "freshness/process-like heading: Details Can Shift"
+        },
+        {
+          "id": "city-hcmc-place-banh-mi-huynh-hoa",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-banh-xeo",
+          "message": "generic non-playable quick-say title: The Dish Name"
+        },
+        {
+          "id": "city-hcmc-place-banh-xeo-46a",
+          "message": "freshness/process-like heading: Details Need Verifying"
+        },
+        {
+          "id": "city-hcmc-place-banh-xeo-46a",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-ben-thanh-metro-station",
+          "message": "freshness/process-like heading: Live Details Stay Current"
+        },
+        {
+          "id": "city-hcmc-place-ben-thanh-metro-station",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-bep-me-in",
+          "message": "freshness/process-like heading: Menu Details Need Care"
+        },
+        {
+          "id": "city-hcmc-place-bitexco-tower",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-bo-la-lot",
+          "message": "generic non-playable quick-say title: The Dish Name"
+        },
+        {
+          "id": "city-hcmc-place-bot-chien",
+          "message": "generic non-playable quick-say title: The Dish Name"
+        },
+        {
+          "id": "city-hcmc-place-bun-thit-nuong",
+          "message": "generic non-playable quick-say title: The Dish Name"
+        },
+        {
+          "id": "city-hcmc-place-cafe-vot-pham-ngoc-thach",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "001-025",
+          "message": "repeated exact heading 5x: the dish name"
+        },
+        {
+          "id": "001-025",
+          "message": "repeated formula heading 7x: freshness/checking heading"
+        },
+        {
+          "id": "001-025",
+          "message": "non-playable quick-say name-card pattern appears 5x"
+        },
+        {
+          "id": "001-025",
+          "message": "freshness/process headings appear 7x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hcmc-place-akuna",
+          "summary": "Akuna is a polished fine-dining stop for a night when the meal can carry the plan, with Vietnamese ingredients, counter detail, and a quieter room after Ho Chi Minh City’s daytime heat.",
+          "context": "Treat Akuna as a booked-meal kind of place, not a quick refill between sights. The draw is the room, pacing, and how Vietnamese ingredients are handled.",
+          "tip": "Arrive with time for the meal to unfold. This is the wrong slot for a rushed stop before a ride or market browse.",
+          "rationale": "It adds a different HCMC food memory: not street speed, but a controlled table or counter where the evening slows down.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Dinner As The Plan",
+              "body": "Akuna suits the night when dinner is the main event. Expect a polished room, careful pacing, Vietnamese ingredients, and a meal that asks for time rather than a quick in-and-out."
+            },
+            {
+              "id": "place-brief",
+              "title": "Counter Detail, Slower Pace",
+              "body": "The useful picture is close-up: plates arriving in sequence, staff guiding the room, drinks considered, and a Saigon interior that feels calmer than the streets outside."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Venue Name",
+              "body": "Akuna usually stays as the name to say and search. Pair it with the address or hotel pickup point rather than trying to translate it."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Grown-Up Evening Slot",
+              "body": "This belongs after a lighter day, when a long meal will not steal energy from museums, markets, or an early departure."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Room For The Meal",
+              "body": "Plan it when conversation, pacing, and ingredients matter. It is less useful as a last-minute hunger fix."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Polished Meal, Then A Fresh Check",
+              "body": "The stable reason is the kind of meal, not a fixed dish list. Confirm dishes, prices, and booking rules separately before making plans."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-anan-saigon",
+          "summary": "Anan Saigon is a contemporary Vietnamese restaurant to remember for a planned meal near central market streets, where small plates, herbs, and a polished room give the night a clear food centerpiece.",
+          "context": "The place works as an evening meal decision rather than a casual snack stop. Keep the claim to contemporary Vietnamese food and a restaurant room, not broad market romance.",
+          "tip": "Give it a meal slot with room to order slowly; current dishes, awards, and availability need a fresh check before being named.",
+          "rationale": "It brings a polished restaurant version of Saigon food into the set, distinct from street bites, markets, and quick counters.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Planned Vietnamese Dinner",
+              "body": "Anan Saigon fits when the meal needs its own slot. Expect contemporary Vietnamese cooking, small plates, herbs, and a room that feels more deliberate than a street-food run."
+            },
+            {
+              "id": "place-brief",
+              "title": "Market-Side Energy, Restaurant Pace",
+              "body": "The draw is the contrast: central Saigon movement nearby, then a table where courses, drinks, and menu details slow the night down."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Name To Hear",
+              "body": "Anăn Sài Gòn is the local-style name to recognize. The venue name matters more than a phrase; confirm the address when booking or riding there."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Food-Focused Evening",
+              "body": "It suits a night when dinner is not filler between sights. Leave space before and after, especially if the meal is the main plan."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Details Need A Fresh Look",
+              "body": "Menus, formats, and booking rules can change. Keep the focus on the restaurant’s role, then confirm meal logistics separately."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not A Street-Food Substitute",
+              "body": "Menus, formats, and booking rules can change. Treat the restaurant’s role as stable and confirm details separately."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-ao-dai-museum",
+          "summary": "Ao Dai Museum is a quieter HCMC stop for seeing the áo dài as dress, craft, and memory, with colorful silk in a garden-like museum setting away from the usual street rush.",
+          "context": "Bảo tàng Áo Dài gives the city a cultural pause: garments, display rooms, local history, and a slower look at a dress visitors may see across Vietnam.",
+          "tip": "Go when you want an indoor-and-garden reset, not a quick landmark hit. The clothing story and calmer pace carry the visit more than a fast photo stop.",
+          "rationale": "It belongs because the áo dài is not just a souvenir image; the museum gives that visual symbol a quieter local frame.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Silk, Shape, And Memory",
+              "body": "Ao Dai Museum is for a slower look at the áo dài: fabric, shape, color, display rooms, and the cultural memory behind a dress visitors see across Vietnam."
+            },
+            {
+              "id": "place-brief",
+              "title": "A Calm Museum Reset",
+              "body": "Expect a garden-like museum space rather than a dense central landmark. The visit works when the day needs quiet rooms and a softer pace."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Vietnamese Name",
+              "body": "Bảo tàng Áo Dài means Ao Dai Museum. Bảo tàng means museum, and Áo Dài is the dress name to recognize on signs."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Break From Street Heat",
+              "body": "It pairs with a day that needs color, shade, and cultural context between louder city stops."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short, Focused, Quiet",
+              "body": "A focused visit is enough. Look for how fabric, form, and display choices explain the garment instead of trying to read every label."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Fresh Details To Check",
+              "body": "Exhibits, opening hours, and English interpretation can change. Keep attention on the museum’s clothing story, then confirm visit logistics separately."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-bach-dang-waterbus-station",
+          "summary": "Bach Dang Waterbus Station is the Saigon River handoff point where a city day can shift from road movement to boat movement, with boarding points, water, skyline edges, and a practical route decision.",
+          "context": "The station sits in the riverfront story around Bạch Đằng: boats, boarding, bridges, skyline views, and the different feel of moving by water.",
+          "tip": "Arrive with the route in mind. The view is a bonus, but the station makes most sense when it starts or ends a river move.",
+          "rationale": "It gives HCMC a transport stop that feels specific: not another road or ride-hail pickup, but a river boarding point.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A River Route Handoff",
+              "body": "Bach Dang Waterbus Station is where the city can change pace: street noise behind you, boats ahead, and the river becoming the next route instead of the view."
+            },
+            {
+              "id": "place-brief",
+              "title": "Boarding Before Skyline",
+              "body": "Look for the practical pieces first: boarding point, boat direction, return plan, and where the river path meets the street again."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Station Name",
+              "body": "Bến tàu thủy Bạch Đằng is the Vietnamese name. Bến tàu points to a boat landing, while Bạch Đằng keeps the riverfront location clear."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Boat Instead Of A Car",
+              "body": "It fits a day when a river ride is part of the plan, especially if you want a different angle on central Saigon."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Route First, View Second",
+              "body": "The stop is most useful when connected to an actual waterbus ride. Without a route, it becomes a short riverfront look."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Schedules Stay Out",
+              "body": "Do not rely on stale times, fares, or service patterns. Those details need current transport checks before they appear."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-bach-dang-wharf",
+          "summary": "Bach Dang Wharf is a central Saigon River pause for skyline views, boats, and orientation, useful when the day needs water, open space, and a quick read on the city edge.",
+          "context": "Bến Bạch Đằng is the familiar riverfront name around central views, boats, lights, and the way District 1 opens toward the water.",
+          "tip": "Treat it as a pause or meeting point, not a full attraction. The river, skyline, and nearby streets carry the stop.",
+          "rationale": "It belongs because the riverfront gives central HCMC a simple visual reference point between walking streets, towers, and boat options.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Riverfront Breather",
+              "body": "Bach Dang Wharf is a central pause, not a long itinerary item. The draw is simple: Saigon River, boats, skyline edges, and space after dense streets."
+            },
+            {
+              "id": "place-brief",
+              "title": "Water At The City Edge",
+              "body": "The wharf helps the map click. District 1 stops feeling like only streets and shops once the river opens in front of you."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Wharf Name",
+              "body": "Bến Bạch Đằng is the local name to recognize. Bến can mean wharf or landing, and Bạch Đằng marks this riverfront stretch."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Short Central Pairing",
+              "body": "It pairs easily with Nguyen Hue, Bitexco, a waterbus look, or a river walk when you want open air without going far."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Pause, Then Move",
+              "body": "Give it a short slot. Stay for the view, choose the next street or boat plan, then keep the day moving."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Views Change With Light",
+              "body": "Daytime gives orientation; evening gives lights. Specific cruise, dock, or service details need a fresh check before being named."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-banh-mi",
+          "summary": "Banh mi in Saigon is a fast street-food decision: crisp bread, pâté or meat, herbs, pickles, chili, and a vendor rhythm that makes lunch feel local before the first bite.",
+          "context": "Bánh mì matters because it is portable, common, and easy to order. The first choice is usually filling, chili, and whether you eat now or carry it.",
+          "tip": "Decide on chili before the roll is built; that one small choice can change the whole sandwich.",
+          "rationale": "It gives HCMC one of its simplest food wins: recognizable, quick, layered, and easy to compare from shop to shop.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Fast Bread, Many Layers",
+              "body": "Banh mi shows Saigon at street speed: crisp bread, pâté or meat, herbs, pickles, chili, and lunch built in a few practiced motions."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Heat Decision Comes Early",
+              "body": "The roll gets built fast. Know whether you want chili before the vendor reaches for it, especially on a first sandwich."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Dish Name",
+              "body": "Bánh mì is already the menu word. It can mean bread generally, but at a food counter it usually points to the filled sandwich."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Low-Effort First Bite",
+              "body": "It fits between bigger plans: quick enough for a snack, filling enough for lunch, and easy to eat without decoding a long menu."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Good When Time Is Thin",
+              "body": "Choose it when you need food that moves with the day: before a museum, after a market, or between rides."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Small Differences Matter",
+              "body": "Bread texture, filling, sauce, and chili vary by shop. That is why two bánh mì stops can feel completely different."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-banh-mi-huynh-hoa",
+          "summary": "Banh Mi Huynh Hoa is a focused Saigon sandwich stop, built around crusty baguettes and layered fillings, better for a decisive counter order than a long sit-down meal.",
+          "context": "The place belongs with HCMC’s famous bánh mì rhythm: counter movement, fillings, bread, and the small pressure of ordering before the line reaches you.",
+          "tip": "Know the name and chili preference before the counter. A clear order keeps the stop from feeling more complicated than a sandwich should.",
+          "rationale": "It gives the set a named bánh mì counter, distinct from the general dish by place, queue energy, and the focused order.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Named Sandwich Counter",
+              "body": "Banh Mi Huynh Hoa is for the moment when the general bánh mì craving becomes one specific counter: bread, fillings, assembly, and a quick decision at the front."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Order Moves Fast",
+              "body": "Expect a street-shop rhythm, not a slow table. Choose filling and chili early, then step aside once the sandwich is in hand."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Shop Name",
+              "body": "Bánh mì Huỳnh Hoa is the name to recognize. The accents matter less in conversation than saying Huynh Hoa clearly with bánh mì."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Quick Meal Stop",
+              "body": "It fits a central day when one filling sandwich can cover lunch without turning the schedule into a restaurant hunt."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Counter Confidence Helps",
+              "body": "The visit is easiest when you already know whether you want chili, takeaway, and a classic filling before it is your turn."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Details Can Shift",
+              "body": "Menu options, lines, prices, and hours need fresh checks. Keep the stable idea to the sandwich counter and the name."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-banh-xeo",
+          "summary": "Bánh xèo in Saigon is a hands-on Southern food moment: a crisp sizzling pancake with shrimp or pork, herbs, lettuce or rice paper, and dipping sauce doing as much work as the pancake.",
+          "context": "The dish is less about one neat bite than wrapping, dipping, and balancing crunch with herbs. It shows a local meal rhythm before you order.",
+          "tip": "Do not attack it like a plain pancake. Break pieces, add herbs, wrap if given wrappers, and dip lightly first.",
+          "rationale": "It adds a food memory with texture and action: sizzle, crunch, herbs, sauce, and a small learning curve at the table.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Crunch, Herbs, Sauce",
+              "body": "Bánh xèo is a Southern sizzling pancake built for texture: crisp edges, shrimp or pork, herbs, lettuce or rice paper, and dipping sauce."
+            },
+            {
+              "id": "place-brief",
+              "title": "A Hands-On Plate",
+              "body": "The meal can feel confusing at first because the pancake is not eaten alone. Pieces are usually paired with greens and sauce."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Dish Name",
+              "body": "Bánh xèo is the name to recognize. Xèo echoes the sizzle, which makes the dish easier to remember once you hear the pan."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Shared Table Moment",
+              "body": "It fits a meal when you have time to sit, wrap, dip, and learn the rhythm instead of grabbing something fast."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Messy Is Normal",
+              "body": "Expect some cracking, dripping, and rearranging. The point is the mix of hot pancake, cool herbs, and sauce."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Filling Details Vary",
+              "body": "Shrimp, pork, bean sprouts, herbs, and wrapping style vary by shop. Ingredient checks matter if seafood or pork is an issue."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-banh-xeo-46a",
+          "summary": "Banh Xeo 46A is a named stop for the larger restaurant-table version of bánh xèo, with a crispy pancake, herbs, metal trays, and enough ritual to slow down a meal.",
+          "context": "The place turns bánh xèo into a specific table decision: large pancake, greens, sauce, staff rhythm, and a meal that may need a little space.",
+          "tip": "Arrive ready for a dish built to share or linger over, not a quick snack between two rides.",
+          "rationale": "It gives HCMC a concrete bánh xèo address while keeping volatile menu, queue, and hours details out of the first plan.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Bánh Xèo With A Table",
+              "body": "Banh Xeo 46A is for the full sit-down version: a large crispy pancake, herbs, sauce, metal tray, and the small ritual of eating it correctly."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Plate Needs Space",
+              "body": "This is not the fastest Saigon bite. The pancake, herbs, and dipping sauce need room on the table and a few minutes of attention."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Name To Recognize",
+              "body": "Bánh xèo 46A keeps the dish and address together. Saying the number helps distinguish the restaurant from bánh xèo as a general food."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Dish-Specific Meal",
+              "body": "It fits when bánh xèo is the point of the meal, not just one item among many."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Ingredient Checks Matter",
+              "body": "Ask before ordering if shrimp, pork, or spice matters. Bánh xèo often looks simple but can hide ingredients in the filling."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Details Need Verifying",
+              "body": "Menu, hours, and service style can change. The stable point is the named bánh xèo restaurant and its large pancake focus."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-ben-thanh-metro-station",
+          "summary": "Ben Thanh Metro Station is a central transport landmark to recognize before a station move, with route boards, doors, waiting areas, and busy streets just outside the Ben Thanh side of District 1.",
+          "context": "Ben Thanh Metro Station is about arrival and onward movement: train entrances, route names, street exits, and the handoff back into central Saigon.",
+          "tip": "Check the exit and onward street before leaving the platform area. The station name alone is not enough in central traffic.",
+          "rationale": "It gives HCMC a transport orientation point near a major market name, practical for reading signs or planning a handoff.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Central Station Name",
+              "body": "Ben Thanh Metro Station matters as a wayfinding point. Route boards, station doors, exits, and nearby streets all connect to a name visitors already hear around the market."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Exit Is The Real Choice",
+              "body": "The real decision is not just reaching the station. It is choosing the right exit for Ben Thanh, Nguyen Hue, a ride pickup, or the next walk."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Station Name",
+              "body": "Ga Bến Thành is the Vietnamese name. Ga means station, and Bến Thành keeps the stop tied to the central market area."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Transfer Point, Not A Pause",
+              "body": "It fits airport-style thinking inside the city: arrive, read signs, choose an exit, then continue to the market, hotel, or meeting point."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Names Over Landmarks",
+              "body": "For navigation, listen for Bến Thành rather than relying only on what the street looks like above ground."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Live Details Stay Current",
+              "body": "Service times, line operations, and ticket rules need current checks. The stable claim is the station name and central role."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-bep-me-in",
+          "summary": "Bep Me In is a central Saigon restaurant pick when the group wants Vietnamese comfort dishes in a room that feels more settled than the street, with clay pots, herbs, and table pacing.",
+          "context": "The place belongs in the restaurant set as a sit-down choice near central wandering, not a generic food label or a promise of specific current dishes.",
+          "tip": "Go when a readable table meal sounds better than another counter order. Confirm dish names and booking details before making them part of the plan.",
+          "rationale": "It adds a softer restaurant option to HCMC coverage: family-style dishes, herbs, clay-pot cues, and a calmer meal slot near the center.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Readable Vietnamese Table",
+              "body": "Bep Me In fits the moment when you want Vietnamese food with table pacing: clay-pot cues, herbs, shared dishes, and a room that feels easier than a street crawl."
+            },
+            {
+              "id": "place-brief",
+              "title": "Calm After Central Streets",
+              "body": "The appeal is not speed. It is sitting down, reading the menu, letting dishes arrive, and giving the meal a little room."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Restaurant Name",
+              "body": "Bếp Mẹ Ỉn is the Vietnamese name. Bếp means kitchen, and the full name is what matters for searches or ride pickup."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A First Sit-Down Meal",
+              "body": "It suits a night when the group wants familiar ordering structure but still wants Vietnamese flavors and central Saigon context."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Menu Details Need Care",
+              "body": "Do not lock the description to specific dishes, prices, or booking rules unless a fresh source confirms them."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Shared Plates Make Sense",
+              "body": "A restaurant like this is easier with shared plates and a slower table. It is not trying to be a quick bánh mì stop."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-bitexco-tower",
+          "summary": "Bitexco Financial Tower is the District 1 tower that makes modern Saigon easy to read vertically, with skyline views, a lotus-like shape, and streets moving far below.",
+          "context": "Tòa nhà Bitexco gives HCMC a vertical landmark: architecture, city views, local pride, and a quick way to understand the downtown skyline.",
+          "tip": "Treat the tower as orientation first. Specific observation deck prices, hours, and access details need a fresh check before they guide the visit.",
+          "rationale": "It belongs because Bitexco turns central Saigon into a recognizable shape, helping the river, towers, and street grid make sense.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Modern Saigon, Read From Above",
+              "body": "Bitexco is a vertical landmark, not just a tall building. Its shape and skyline views help District 1 feel easier to place."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Streets Look Different Below",
+              "body": "From the tower area, Saigon’s movement becomes clearer: river edge, office towers, scooters, shopping streets, and the height of the downtown core."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Tower Name",
+              "body": "Tòa nhà Bitexco means Bitexco building or tower. Bitexco is the name locals and drivers are most likely to recognize."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Skyline Orientation Stop",
+              "body": "It pairs with Nguyen Hue, Bach Dang Wharf, or a central coffee break when the day needs height and a cleaner map in your head."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Fresh Access Checks",
+              "body": "Observation areas, ticketing, opening hours, and restaurant access can change. Confirm those specifics separately before planning the visit around them."
+            },
+            {
+              "id": "good-to-know",
+              "title": "More Than A Photo Shape",
+              "body": "Even without going high, the tower helps you recognize central Saigon from streets, riverfront paths, and taxi windows."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-bo-la-lot",
+          "summary": "Bò lá lốt in Saigon is a grilled, fragrant food moment built around beef wrapped in betel leaves, herbs, rice paper, and sauce, with the best bite assembled at the table.",
+          "context": "The dish is about rolling and balancing flavor: smoky beef, leaf aroma, herbs, rice paper, and dipping sauce rather than a single plated bite.",
+          "tip": "Watch how the first roll is built before following it. Herbs and sauce are part of the dish, not garnish.",
+          "rationale": "It adds a hands-on HCMC food memory that is slower than bánh mì and more aromatic than a plain grilled skewer.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Grilled Leaf, Rolled Bite",
+              "body": "Bò lá lốt is beef wrapped in betel leaves and grilled until fragrant, then usually eaten with herbs, rice paper, and sauce."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Assembly Matters",
+              "body": "The bite comes together at the table. Beef, leaf, herbs, wrapper, and sauce each do a different job."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Dish Name",
+              "body": "Bò lá lốt is the phrase to recognize. Bò means beef, and lá lốt is the aromatic leaf wrapped around it."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Sit-And-Roll Snack",
+              "body": "It fits when you want something more social than a quick sandwich but lighter than a long restaurant meal."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Good For Sharing",
+              "body": "A plate makes more sense with shared hands and a little patience. The first roll teaches the rest."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Pork And Beef Checks",
+              "body": "Ingredients can vary by shop. Ask if meat type, pork fat, or sauce contents matter to you."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-bot-chien",
+          "summary": "Bột chiên in Saigon is a flat-griddle snack of fried rice-flour cakes with egg and green onions, crisp at the edges and easy to understand once you see the pan.",
+          "context": "The food moment is visual and quick: cubes on a hot griddle, egg added, green onions scattered, sauce nearby, and a plate that works between meals.",
+          "tip": "Look for the griddle. Seeing the cakes and egg cook tells you more than a translated menu line.",
+          "rationale": "It gives HCMC a snack texture: crisp, soft, eggy, sauced, and simple enough for a first street-food try.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Griddle Snack Between Meals",
+              "body": "Bột chiên is fried rice-flour cakes cooked on a flat griddle with egg and green onions, then eaten as a savory snack."
+            },
+            {
+              "id": "place-brief",
+              "title": "Crisp Edge, Soft Center",
+              "body": "The appeal is texture: browned edges, soft rice-flour pieces, egg holding it together, and sauce cutting through the richness."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Dish Name",
+              "body": "Bột chiên is the name to listen for. Bột points to flour or batter; chiên means fried."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Small Street-Food Try",
+              "body": "It fits when you want one hot plate, not a full meal. Share it if you are still saving room for dinner."
+            },
+            {
+              "id": "when-to-use",
+              "title": "The Pan Makes It Clear",
+              "body": "Menus can be less helpful than watching the griddle. If it looks right, the dish is easy to point out."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sauce Changes The Bite",
+              "body": "The sauce and pickled sides can shift the flavor quickly. Try a little first before pouring everything over the plate."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-bun-thit-nuong",
+          "summary": "Bún thịt nướng in Saigon is a bowl built for contrast: grilled pork, cool vermicelli, herbs, peanuts, sauce, and the easy comfort of mixing lunch instead of chasing it.",
+          "context": "The dish is a good first bowl because the parts are easy to read: noodles, pork, herbs, peanuts, pickles or vegetables, and sauce added to taste.",
+          "tip": "Add sauce gradually and mix from the bottom. The bowl changes once herbs, pork, noodles, and peanuts start sharing space.",
+          "rationale": "It gives HCMC a casual bowl memory with texture, sweetness, smoke, herbs, and a low-pressure ordering moment.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Bowl Built For Mixing",
+              "body": "Bún thịt nướng brings grilled pork, vermicelli, herbs, peanuts, and sauce into one bowl that gets better after a few turns with chopsticks."
+            },
+            {
+              "id": "place-brief",
+              "title": "Smoke Over Cool Noodles",
+              "body": "The contrast is the point: warm grilled pork over cool noodles, fresh herbs against sweet-savory sauce, peanuts for crunch."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Dish Name",
+              "body": "Bún thịt nướng is the useful name. Bún means vermicelli noodles, thịt nướng means grilled meat, usually pork unless stated otherwise."
+            },
+            {
+              "id": "use-it-with",
+              "title": "An Easy First Bowl",
+              "body": "It fits lunch when you want something filling but not heavy, with enough clear parts to understand before you order."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Sauce Slowly First",
+              "body": "Pour a little sauce, mix, then add more. The balance can get too sweet or too wet if you rush it."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Pork Is Usually Central",
+              "body": "If you avoid pork, ask before ordering. The English name can sound broad, but the classic bowl usually centers grilled pork."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-cafe-vot-pham-ngoc-thach",
+          "summary": "Pham Ngoc Thach cloth-filter coffee is a slower Saigon coffee pause built around the vợt filter, poured coffee, ice, sweetness, and the feel of an older cafe rhythm.",
+          "context": "This coffee stop is about ritual rather than a broad cafe scene: cloth filter, counter, iced glass, and a pause that feels less polished.",
+          "tip": "Go for the pour and the pause. Confirm hours, seating, and exact menu items before making them part of the plan.",
+          "rationale": "It gives HCMC coffee coverage beyond modern cafes and iced milk coffee, with a small ritual visitors can notice.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Coffee Through The Cloth Filter",
+              "body": "Cà phê vợt is coffee made through a cloth filter, a slower rhythm than a quick espresso or bottled iced drink."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Pour Is The Memory",
+              "body": "The scene is small: filter, counter, glass, ice, sweetness, and a pause that feels older than the newer cafe rooms around the city."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Coffee Name",
+              "body": "Cà phê vợt Phạm Ngọc Thạch points to cloth-filter coffee on Pham Ngoc Thach. Vợt is the filter word to recognize."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Slower Coffee Stop",
+              "body": "It fits between walks, market browsing, or rain delays when a short, old-school coffee pause would carry the mood."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Ritual Before Menu",
+              "body": "Specific drinks can change, but the durable idea is cloth-filter coffee and a slower counter rhythm."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Fresh Shop Details Needed",
+              "body": "Hours, address cues, seating, and menu availability can shift. Treat the filter-coffee ritual as the stable reason to remember it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chunkFile": "hcmc_026_050_humanized.json",
+      "cityID": "hcmc",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-hcmc-place-fito-museum",
+          "message": "heading is command-like: Check Practical Details Late"
+        },
+        {
+          "id": "city-hcmc-place-golden-dragon-water-puppet",
+          "message": "heading is command-like: Check The Show Time"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hcmc-place-cheo-leo-cafe",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-hcmc-place-cho-lon-walking-route",
+          "message": "generic non-playable quick-say title: Route Name"
+        },
+        {
+          "id": "city-hcmc-place-ciel",
+          "message": "generic non-playable quick-say title: Venue Name"
+        },
+        {
+          "id": "city-hcmc-place-ciel",
+          "message": "freshness/process-like heading: Menu Details Can Shift"
+        },
+        {
+          "id": "city-hcmc-place-ciel",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-city-hall",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-coco-dining",
+          "message": "generic non-playable quick-say title: Venue Name"
+        },
+        {
+          "id": "city-hcmc-place-coco-dining",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-com-tam",
+          "message": "generic non-playable quick-say title: Dish Name"
+        },
+        {
+          "id": "city-hcmc-place-com-tam-ba-ghien",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-cu-chi-tunnels",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-cuc-gach-quan",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-cuc-gach-quan",
+          "message": "freshness/process-like heading: Menu Details Can Shift"
+        },
+        {
+          "id": "city-hcmc-place-cuc-gach-quan",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-district-1",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-dong-khoi-landmark-walk",
+          "message": "generic non-playable quick-say title: Route Name"
+        },
+        {
+          "id": "city-hcmc-place-fine-arts-museum",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-fine-arts-museum",
+          "message": "freshness/process-like heading: Current Exhibits Can Change"
+        },
+        {
+          "id": "city-hcmc-place-fine-arts-museum",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-fito-museum",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-fito-museum",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-gia-dinh-park",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-goi-cuon",
+          "message": "generic non-playable quick-say title: Dish Name"
+        },
+        {
+          "id": "city-hcmc-place-golden-dragon-water-puppet",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-history-museum",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-history-museum",
+          "message": "freshness/process-like heading: Details Need Current Checks"
+        },
+        {
+          "id": "city-hcmc-place-history-museum",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-ho-chi-minh-city-museum",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-ho-chi-minh-city-museum",
+          "message": "freshness/process-like heading: Practical Details Can Change"
+        },
+        {
+          "id": "city-hcmc-place-ho-chi-minh-city-museum",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-ho-thi-ky-flower-market",
+          "message": "generic non-playable quick-say title: Local Name"
+        },
+        {
+          "id": "city-hcmc-place-ho-thi-ky-flower-market",
+          "message": "freshness/process-like heading: Timing Can Shift The Feel"
+        },
+        {
+          "id": "city-hcmc-place-hu-tieu",
+          "message": "generic non-playable quick-say title: Dish Name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 12x: local name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 3x: dish name"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 21x: generic name-card heading"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 6x: freshness/checking heading"
+        },
+        {
+          "id": "026-050",
+          "message": "non-playable quick-say name-card pattern appears 20x"
+        },
+        {
+          "id": "026-050",
+          "message": "freshness/process headings appear 6x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hcmc-place-cheo-leo-cafe",
+          "summary": "Cheo Leo Cafe is a small old-Saigon coffee pause for metal-filter rhythm, iced sweetness, and stools close to the day’s street movement around central Saigon.",
+          "context": "The visit is about a short pause: watch the coffee land, cool down with ice, then step back into the central Saigon walk.",
+          "tip": "Keep the stop short and simple. Cheo Leo makes more sense as a coffee break between heat, markets, or errands than as a long café session.",
+          "rationale": "Metal filters, small stools, and an old coffee-shop rhythm give the place a clearer memory than another generic caffeine stop.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Small Old-Saigon Coffee Pause",
+              "body": "Cheo Leo is for the coffee rhythm: metal filters, ice, sweetness, small stools, and a slower beat before the next walk."
+            },
+            {
+              "id": "place-brief",
+              "title": "Coffee Before The Next Move",
+              "body": "The room works as a reset between heat, errands, and market edges. Order simply, watch the filter, and let the stop stay small."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Cà phê Cheo Leo is the name to listen for. The words matter most when you are finding the shop or checking the stop with a driver."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Between Walks And Heat",
+              "body": "The café fits after a central walk or before another meal. It gives the day a seated pause without turning coffee into the whole plan."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Short Sit Makes Sense",
+              "body": "Think of Cheo Leo as an old coffee-shop stop: metal filter, iced glass, small stool, and enough time to cool down before moving again."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Local Name, Simple Scene",
+              "body": "Cà phê Cheo Leo is easier to remember with the physical cues: filter coffee, small seating, and the pause that sits between louder parts of Saigon."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-cho-lon-walking-route",
+          "summary": "A Cho Lon walking route works only when the route has clear stops: market edges, a temple gate, Chinese-Vietnamese signs, and short breaks between crowded streets.",
+          "context": "The route is a way to connect Chợ Lớn details without pretending the whole district can be done on foot in one smooth line.",
+          "tip": "Set one market, one temple, and one nearby street as the walk. Ride between farther pieces when heat or traffic starts taking over.",
+          "rationale": "The value is movement between named places: market bags, temple entrances, shop signs, corners, and the moment a ride becomes smarter than walking.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Named Stops Make The Walk",
+              "body": "A Chợ Lớn walk needs named stops. Link a market edge, a temple gate, and one nearby trade street instead of roaming until the district blurs."
+            },
+            {
+              "id": "place-brief",
+              "title": "Signs, Gates, Short Crossings",
+              "body": "Expect Chinese-Vietnamese signs, market bags, temple entrances, and crowded corners. The route feels better when each stretch has a reason."
+            },
+            {
+              "id": "quick-say",
+              "title": "Route Name",
+              "body": "Đi bộ Chợ Lớn means walking Chợ Lớn. It helps when asking whether a nearby stop is walkable or whether a short ride is wiser."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Market And Temple Pairing",
+              "body": "Pair the walk with Bình Tây Market or Thiên Hậu Temple. Those stops give the route a beginning, a pause, and an easy reason to turn back."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Ride When The District Spreads",
+              "body": "Chợ Lớn is broad. Walking works for tight clusters; short rides keep the day from becoming a hot march between unrelated blocks."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not A Perfect Loop",
+              "body": "Đi bộ Chợ Lớn is better as a flexible cluster than a fixed loop. Let traffic, heat, and distance decide the last stretch."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-ciel",
+          "summary": "CieL is a modern dining-room choice for a considered evening meal: open kitchen, Vietnamese ingredients, and a slower table after daytime walking.",
+          "context": "CieL belongs to the planned-meal part of Saigon: menu details, staff rhythm, drinks, and the decision to make dinner part of the night.",
+          "tip": "Treat CieL as the meal you plan around, not the backup between sights. The room and pacing matter as much as the venue name.",
+          "rationale": "The open kitchen, Vietnamese ingredients, and intimate room give the restaurant a concrete reason to stay in memory beyond a generic dinner label.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Meal With Its Own Place",
+              "body": "CieL fits an evening when dinner is part of the plan: a modern room, open kitchen, Vietnamese ingredients, and a slower table."
+            },
+            {
+              "id": "place-brief",
+              "title": "Open Kitchen, Measured Pace",
+              "body": "The useful detail is not just the menu. Watch the kitchen rhythm, ask what the kitchen is leaning into, and let the room carry the night."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name",
+              "body": "CieL usually stays as the venue name. Say it slowly, then show the address if pronunciation or capitalization causes a blank look."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After A Dense Central Day",
+              "body": "The restaurant works after markets, museums, or a long District 1 walk, when you want the evening to slow down around one table."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Dinner As The Plan",
+              "body": "Plan around the meal if the room matters. CieL is less useful as a rushed fuel stop between two louder plans."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Menu Details Can Shift",
+              "body": "Keep menu expectations flexible. The stable idea is modern Vietnamese dining in an intimate room, not one fixed dish or price."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-city-hall",
+          "summary": "Ho Chi Minh City Hall is a Nguyen Hue landmark to notice from outside, especially when the lit facade turns the boulevard into a quick city-memory stop.",
+          "context": "The building gives Saigon a formal civic face: architecture, local pride, history, and nighttime light along Nguyen Hue.",
+          "tip": "Look from Nguyen Hue rather than treating it like an interior attraction. The facade, boulevard view, and evening light are the point.",
+          "rationale": "The City Hall facade gives Nguyen Hue a clear memory: a civic building, a broad walking street, and the city lit at night.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Facade For Nguyen Hue",
+              "body": "Ho Chi Minh City Hall is mainly an outside landmark. The facade gives Nguyen Hue a formal face and an easy place to pause."
+            },
+            {
+              "id": "place-brief",
+              "title": "Civic Scale, Boulevard Light",
+              "body": "The building gives the boulevard a formal edge: symmetry, city light, local pride, and a photo stop that does not need a long visit."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Trụ sở UBND Thành phố is the formal local name. It is most useful for recognition, maps, or checking that you are in the right place."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Nguyen Hue At Night",
+              "body": "The stop pairs naturally with an evening walk on Nguyen Hue. The building is quick; the boulevard gives it room."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Outside View, Not An Interior Plan",
+              "body": "Picture the lit facade from Nguyen Hue. Do not build the stop around access inside unless current rules have been checked."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Short Landmark Memory",
+              "body": "Trụ sở UBND Thành phố is easier to remember with the boulevard scene: lights, open space, and the civic front of central Saigon."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-coco-dining",
+          "summary": "Coco Dining is a polished contemporary Vietnamese dinner choice when the room, fermentation details, warm light, and table pacing should carry the evening.",
+          "context": "Coco Dining belongs to Saigon’s planned-dinner layer: staff rhythm, drinks, house dishes, and the decision to sit somewhere intentional.",
+          "tip": "Let the meal be the main evening plan. The stable draw is contemporary Vietnamese dining with a styled room, not a guaranteed dish list.",
+          "rationale": "The dining room, fermentation jars, and warm light give the restaurant a specific reason to remember it beyond another nice dinner.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Polished Dinner Plan",
+              "body": "Coco Dining fits a night with a chosen meal: contemporary Vietnamese cooking, warm light, fermentation details, and a slower table."
+            },
+            {
+              "id": "place-brief",
+              "title": "Room Before Checklist",
+              "body": "The room is part of the decision. Expect a styled setting and a meal paced for sitting, not a quick plate between errands."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name",
+              "body": "Coco Dining stays in English. Show the name or address if needed; the place is easier to identify than to translate."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Evening Without A Rush",
+              "body": "Pair it with a light day or one central stop before dinner. It works less well when you are trying to squeeze in three more places."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Menu Details May Change",
+              "body": "Hold the specifics lightly. The durable picture is contemporary Vietnamese dining, a warm room, and a meal that deserves its own slot."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Planned-Meal Choice",
+              "body": "Coco Dining is clearer when treated as a planned dinner, not a spontaneous refuel after heat, traffic, or sightseeing."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-com-tam",
+          "summary": "Broken rice is a Saigon meal to learn early: grilled pork, egg, pickles, fish sauce, and the plate rhythm of a fast, filling local lunch.",
+          "context": "Cơm tấm gives the city a food memory through rice texture, grilled meat, sauce, pickles, and a table that moves quickly.",
+          "tip": "Start with cơm tấm sườn bì chả if you want the classic full plate. Add fish sauce slowly if you are still learning the balance.",
+          "rationale": "The dish is a better memory than a translation. Broken rice becomes specific through the plate: rice grains, pork, egg, pickles, and sauce.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Saigon Plate To Learn",
+              "body": "Cơm tấm turns lunch into a clear scene: broken rice, grilled pork, egg, pickles, herbs, and fish sauce on one fast plate."
+            },
+            {
+              "id": "place-brief",
+              "title": "Rice, Pork, Sauce",
+              "body": "The usual full order, cơm tấm sườn bì chả, brings grilled pork, shredded pork skin, egg meatloaf, pickles, and sauce together."
+            },
+            {
+              "id": "quick-say",
+              "title": "Dish Name",
+              "body": "Cơm tấm is the useful name. Add sườn for grilled pork, or point to a plate if the counter has the combinations displayed."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Fast Lunch Energy",
+              "body": "This is a good first everyday meal when you want something filling without making lunch complicated. The table rhythm is usually quick."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Sauce Changes The Plate",
+              "body": "Fish sauce is part of the dish, but you control the pour. Add a little first, then adjust once you taste the rice and pork."
+            },
+            {
+              "id": "good-to-know",
+              "title": "The Translation Is Not Enough",
+              "body": "Broken rice sounds plain in English. The Saigon memory is the full plate: grill, rice texture, pickles, egg, and sauce."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-com-tam-ba-ghien",
+          "summary": "Com Tam Ba Ghien is a focused broken-rice stop for a big grilled pork chop, egg, pickles, and a meal that works better than a long menu debate.",
+          "context": "The restaurant makes sense around one order: cơm tấm with grilled pork, egg, pickles, fish sauce, and a busy local-meal rhythm.",
+          "tip": "Go for the pork chop plate if that is the reason you came. Decide egg and add-ons early so the order stays easy.",
+          "rationale": "Ba Ghien gives the dish a named stop: a large pork chop, broken rice, sauce, pickles, and the momentum of a focused meal.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Pork Chop Is The Point",
+              "body": "Com Tam Ba Ghien is easiest when you know the move: broken rice with a big grilled pork chop, egg, pickles, and fish sauce."
+            },
+            {
+              "id": "place-brief",
+              "title": "One Focused Meal",
+              "body": "This is not a wandering dinner choice. The stop makes sense when cơm tấm, grilled pork, and a filling plate are the reason."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Cơm tấm Ba Ghiền is the name to show or say. It links the dish and the shop in one easy phrase."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Lunch With Momentum",
+              "body": "The meal fits a day when you want a clear local plate before moving on. Order, eat, and let the stop stay focused."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Add-Ons Decided Early",
+              "body": "Pick the pork chop first, then decide egg or extra pieces. A quick decision keeps the order from becoming a counter-side puzzle."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sauce On Your Terms",
+              "body": "Fish sauce brings the plate together, but pour gradually. The pork, rice, pickles, and egg already carry plenty of flavor."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-cu-chi-tunnels",
+          "summary": "Cu Chi Tunnels is a historic-site stop where forest paths, tunnel displays, shaded guide pauses, and wartime memory make the visit heavier than a photo stop.",
+          "context": "The tunnels bring Saigon history into a physical setting: earth, preserved spaces, quiet exhibits, guide stops, and trees outside the city core.",
+          "tip": "Go with enough time to listen. The site is strongest when the tunnel display, earth paths, and guide context stay connected.",
+          "rationale": "Cu Chi Tunnels gives the history a place to stand: shaded trees, preserved spaces, exhibits, and the discomfort of close underground design.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "History Underfoot",
+              "body": "Cu Chi Tunnels is about more than seeing an entrance. The paths, displays, and guide stops make wartime history physical."
+            },
+            {
+              "id": "place-brief",
+              "title": "Forest Edge And Tunnel Displays",
+              "body": "Expect shaded trees, earth paths, preserved spaces, and quiet exhibits. The site works when you slow down enough for context."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Địa đạo Củ Chi is the local name for Cu Chi Tunnels. It helps with maps, drivers, and recognizing the site."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Guide Context First",
+              "body": "A guide or clear explanation matters here. Without context, the site can flatten into objects, paths, and photos."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Serious Stop",
+              "body": "Treat the visit as a history stop, not a light countryside break. The strongest memory may be the scale and closeness of the tunnels."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Outside The Central Day",
+              "body": "Địa đạo Củ Chi usually belongs to a planned outing from Saigon. The travel time is part of the decision."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-cuc-gach-quan",
+          "summary": "Cuc Gach Quan is an old-house restaurant choice for a slower Vietnamese meal, tiled floors, family-style dishes, and a room that feels separate from traffic.",
+          "context": "The restaurant works around house setting and table rhythm: shared dishes, old Saigon interiors, staff pacing, and a dinner that slows down.",
+          "tip": "Let the meal be shared and unhurried. The old-house feel is part of the reason to go, not just decoration around the food.",
+          "rationale": "Tiled floors, family-style dishes, and an old-house interior give Cuc Gach Quan a clearer role than a generic Vietnamese dinner.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Old House, Shared Table",
+              "body": "Cuc Gach Quan fits a slower meal in an old Saigon house: tiled floors, family-style dishes, and a room away from traffic."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Room Carries The Meal",
+              "body": "The setting matters here. Shared dishes, house details, and a calmer table make the meal feel different from a quick central restaurant."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Cục Gạch Quán is the name to show or say. Diacritics help, but the address may be easier when ordering a ride."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Slower Dinner Slot",
+              "body": "The restaurant belongs on a night when you want to sit, share dishes, and let dinner be the main plan."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Family-Style Expectations",
+              "body": "Think shared plates rather than one rushed solo bowl. The meal makes more sense when the table has time to settle."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Menu Details Can Shift",
+              "body": "Hold exact dish expectations lightly. The durable draw is the old-house setting, family-style rhythm, and quieter dinner mood."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-district-1",
+          "summary": "District 1 is the central Saigon base layer for hotel edges, boulevards, markets, cafés, older facades, high-rises, scooters, and evening landmark walks.",
+          "context": "Quận 1 organizes central Saigon: many first landmarks, hotels, cafés, shops, and walking corridors sit close together here.",
+          "tip": "Think in smaller corridors, not the whole district at once. Ben Thanh, Nguyen Hue, Dong Khoi, and the river each create a different walk.",
+          "rationale": "District 1 turns scattered landmarks into a mental map: market edge, boulevard, hotel core, older facades, traffic, cafés, and river direction.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Central Saigon Base Layer",
+              "body": "District 1 is where many first Saigon references cluster: hotels, cafés, markets, boulevards, old facades, high-rises, and evening walks."
+            },
+            {
+              "id": "place-brief",
+              "title": "Several Corridors, Not One Mood",
+              "body": "Ben Thanh, Dong Khoi, Nguyen Hue, and the river edge feel different. The district makes sense when you read it in smaller pieces."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Quận 1 is the local name. It is useful for taxis, hotel directions, and understanding why many first stops sit nearby."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Hotel Core And First Walks",
+              "body": "The district is a strong base for early orientation. Step out for one corridor, then build confidence before crossing into other neighborhoods."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small Routes Beat Big Statements",
+              "body": "Picture one boulevard or market edge at a time. Trying to summarize all of District 1 makes the place less useful."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Busy Does Not Mean Simple",
+              "body": "Quận 1 is central, but not uniform. Traffic, hotel blocks, shopping streets, and civic spaces each ask for a different pace."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-dong-khoi-landmark-walk",
+          "summary": "The Dong Khoi landmark walk gives District 1 a simple line: cathedral and post office area, Opera House, old hotel facades, shops, and the river edge.",
+          "context": "This route turns central Saigon into steps rather than scattered names, with cafe pauses, corners, landmarks, and Nguyen Hue nearby.",
+          "tip": "Walk toward the river if you want the sequence to make sense. The street reads better as a spine than as a quiet heritage lane.",
+          "rationale": "The walk helps visitors connect named places in one mental map: old facades, landmark doors, café breaks, traffic, and the river direction.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Landmark Spine",
+              "body": "The Dong Khoi walk gives District 1 a simple line: post office area, Opera House, hotel facades, shops, and the river."
+            },
+            {
+              "id": "place-brief",
+              "title": "Movement Between Names",
+              "body": "The value is the sequence, not any single corner. Traffic, café windows, old facades, and landmark doors keep the walk legible."
+            },
+            {
+              "id": "quick-say",
+              "title": "Route Name",
+              "body": "Đi bộ Đồng Khởi means walking Dong Khoi. It helps when asking whether the Opera House, post office, or river is close enough on foot."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Coffee And Landmark Pauses",
+              "body": "The route pairs naturally with a café stop or a short Nguyen Hue detour. Keep the walk compact and the pauses intentional."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Toward The River Reads Better",
+              "body": "Moving from the cathedral and post office area toward the river gives the street a clearer direction and a cleaner finish."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not A Quiet Heritage Lane",
+              "body": "Dong Khoi has old facades, but it also has traffic, shops, hotels, and modern storefronts. That mix is the real walk."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-fine-arts-museum",
+          "summary": "Ho Chi Minh City Museum of Fine Arts is a quiet indoor reset with yellow courtyards, tiled floors, gallery rooms, and a slower layer of Saigon history.",
+          "context": "The museum gives central Saigon a cultural pause: art, rooms, display cases, local memory, quiet light, and an old building around it.",
+          "tip": "Pick a few rooms rather than trying to absorb everything. The building, courtyard, and tiled floors are part of the visit.",
+          "rationale": "The museum works because it changes the city’s pace: street noise outside, yellow walls and gallery rooms inside.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quiet Indoor Layer",
+              "body": "The Fine Arts Museum gives Saigon a slower indoor pause: yellow courtyards, tiled floors, gallery rooms, and art away from street noise."
+            },
+            {
+              "id": "place-brief",
+              "title": "Building And Rooms Together",
+              "body": "The old building is part of the memory. Let the courtyard, stairs, tiles, and galleries share attention instead of rushing every display."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Bảo tàng Mỹ thuật is the useful local name. It helps with drivers, maps, and recognizing the museum entrance."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Rain Or Heat Reset",
+              "body": "The museum fits when outdoor stops start feeling harsh. It gives the day shade, quiet rooms, and a different pace."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Few Rooms Are Enough",
+              "body": "Do not pressure the visit into a full art survey. A courtyard pause and a few rooms can still make the stop worthwhile."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Current Exhibits Can Change",
+              "body": "Hold exhibit expectations lightly. The durable draw is the museum building, gallery rhythm, and quieter cultural layer inside central Saigon."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-fito-museum",
+          "summary": "FITO Museum is a focused indoor stop for traditional Vietnamese medicine, wooden cabinets, herbs, display rooms, and a quieter cultural layer away from central noise.",
+          "context": "The museum’s story sits in objects and rooms: medicine history, cabinets, herbs, display cases, artifacts, and quiet light.",
+          "tip": "Go when the subject interests you. The stop is strongest as a focused medicine-history visit, not a general museum placeholder.",
+          "rationale": "FITO feels specific because the cabinets, herbs, and traditional medicine context give the rooms a clear topic.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Medicine-History Detour",
+              "body": "FITO Museum is a focused stop: traditional Vietnamese medicine, wooden cabinets, herbs, artifacts, and rooms built around one subject."
+            },
+            {
+              "id": "place-brief",
+              "title": "Cabinets, Herbs, Objects",
+              "body": "The details matter more than speed. Look at the tools, drawers, labels, and herb displays as parts of one medical-history story."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Bảo tàng Y học Cổ truyền Việt Nam is the full local name. Showing it on a map may be easier than saying it from memory."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Focused Indoor Reset",
+              "body": "The museum fits a day that needs shade and a quieter stop, especially if medicine, herbs, or small museums interest you."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Narrow Subject, Better Visit",
+              "body": "The stop is stronger when you accept its focus. It is not a broad Saigon overview; it is a traditional medicine museum."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Check Practical Details Late",
+              "body": "Hours, ticket details, and interpretation can change. The stable reason to go is the medicine-history collection and wooden interior."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-gia-dinh-park",
+          "summary": "Gia Dinh Park is an everyday open-air reset near the airport, with trees, walking paths, family time, shade, and a park rhythm outside the sightseeing core.",
+          "context": "The park shows Saigon without a formal attraction: walking paths, open lawns, evening light, families, shade, and airport-side movement.",
+          "tip": "Treat it as a nearby breather, especially around airport timing or a local stay. It is not a cross-city must-plan attraction.",
+          "rationale": "The park’s value is ordinary city life: trees, shade, walkers, families, open lawns, and space away from central sightseeing.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Everyday Air Near The Airport",
+              "body": "Gia Dinh Park is an open-air reset: trees, walking paths, shade, lawns, and family time near the airport side of Saigon."
+            },
+            {
+              "id": "place-brief",
+              "title": "Park Rhythm, Not Attraction Mode",
+              "body": "The scene is everyday rather than formal: walking, sitting, family time, and evening light under trees."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Công viên Gia Định is the local name. It helps with maps or drivers, especially when airport-area timing matters."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Airport-Side Breather",
+              "body": "The park makes most sense if you are nearby, between plans, or need fresh air before or after airport movement."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Nearby Beats Cross-City",
+              "body": "Do not force it from across town. Gia Dinh Park is strongest as a local reset when the route already puts you close."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Ordinary Is The Point",
+              "body": "Công viên Gia Định is memorable because it is not trying to be a landmark: shade, walkers, families, and open space."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-goi-cuon",
+          "summary": "Fresh spring rolls are a light Saigon food memory: rice paper, herbs, shrimp or pork, cool texture, and peanut or fish sauce at the table.",
+          "context": "Gỏi cuốn gives the city a cooler food rhythm through herbs, rice paper, sauce, texture, and a small meal that does not feel heavy.",
+          "tip": "Order them when you want something lighter than soup or rice. Dip gently first so the sauce does not take over the herbs.",
+          "rationale": "The dish becomes specific through texture: soft rice paper, fresh herbs, cool filling, and sauce on the side.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Cooler Food Break",
+              "body": "Gỏi cuốn gives Saigon a lighter bite: rice paper, herbs, cool filling, and sauce instead of a hot bowl or heavy plate."
+            },
+            {
+              "id": "place-brief",
+              "title": "Herbs, Rice Paper, Sauce",
+              "body": "Fresh spring rolls are about texture. The filling stays clean, the herbs do the lifting, and the sauce adds the final pull."
+            },
+            {
+              "id": "quick-say",
+              "title": "Dish Name",
+              "body": "Gỏi cuốn is the useful name. Pointing also helps because fillings and sauces can vary by shop."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Light Meal Or Shared Plate",
+              "body": "They work as a small lunch, a shared starter, or a break from richer meals. The portion is usually easy to read."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Sauce First, Then More",
+              "body": "Dip lightly before committing. Peanut sauce or fish sauce can change the balance fast, especially if the herbs are fresh and sharp."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Cool Does Not Mean Plain",
+              "body": "The memory is in the contrast: soft wrapper, crisp herbs, cool filling, and sauce that makes the roll feel complete."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-golden-dragon-water-puppet",
+          "summary": "Golden Dragon Water Puppet Theater is an evening performance stop where music, puppets, stage light, and a traditional show give Saigon a cultural indoor option.",
+          "context": "The theater brings performance culture into the trip: music, masks, water-puppet staging, theater doors, and evening streets around District 1.",
+          "tip": "Treat it as a timed show, not a drop-in landmark. Check the schedule and ticket situation before building the evening around it.",
+          "rationale": "The stop matters because it adds living performance to the city mix, with musicians, puppets, stage light, and a short evening structure.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "An Evening Show Stop",
+              "body": "Golden Dragon Water Puppet Theater gives the night a timed cultural stop: music, puppets, stage light, and a performance indoors."
+            },
+            {
+              "id": "place-brief",
+              "title": "Music And Water Stage",
+              "body": "The draw is the live staging: musicians, puppets, warm lights, water movement, and a show rhythm different from museums or monuments."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Nhà hát Múa rối nước Rồng Vàng is the local name. Showing it on a map may be easier than saying the full phrase."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Timed Evening Plan",
+              "body": "The theater fits before or after a simple dinner. Build the evening around the showtime only after checking the current schedule."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Performance, Not Landmark",
+              "body": "Think of it as a show you attend, not a building you glance at. Tickets and timing matter more than the facade."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Check The Show Time",
+              "body": "Do not rely on old show times. The stable reason to go is the water-puppet performance; the practical details should be current."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-history-museum",
+          "summary": "Museum of Vietnamese History is a calmer museum stop near the botanical gardens, with artifacts, gallery rooms, quiet light, and a broader history layer.",
+          "context": "The museum gives the day an indoor cultural pause through display cases, local history, artifacts, and rooms near the garden area.",
+          "tip": "Pick a few galleries or object types instead of trying to read everything. The stop works better as a focused pause.",
+          "rationale": "The museum is useful when street movement needs context: objects, cases, rooms, and a building near a greener part of the city.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "History Near The Gardens",
+              "body": "The Museum of Vietnamese History is a calmer indoor stop near the botanical gardens: artifacts, cases, gallery rooms, and quiet light."
+            },
+            {
+              "id": "place-brief",
+              "title": "Objects Before Exhaustion",
+              "body": "A few strong rooms are enough. Let repeated objects, materials, and timelines guide the visit instead of reading every label."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Bảo tàng Lịch sử Thành phố Hồ Chí Minh is the formal local name. It is useful for maps and drivers."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Garden-Area Pairing",
+              "body": "The museum pairs naturally with nearby garden or zoo-area plans. It gives that side of the city an indoor historical stop."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short Visits Still Work",
+              "body": "Do not turn museum fatigue into a duty. A focused hour with a few rooms can still leave a clear memory."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Details Need Current Checks",
+              "body": "Hours, tickets, and interpretation can change. The durable draw is the artifact collection and quieter history setting."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-ho-chi-minh-city-museum",
+          "summary": "Ho Chi Minh City Museum is a District 1 indoor pause in a colonial-era building with garden edges, display rooms, local memory, and quieter light.",
+          "context": "The museum adds a city-history layer to central Saigon: old building, garden setting, artifacts, gallery rooms, and a break from street movement.",
+          "tip": "Go for the building and a few city-history rooms rather than a full-day museum plan. It works well as a central reset.",
+          "rationale": "The museum matters because the old building, garden, and displays make central Saigon feel layered without leaving District 1.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "City History In An Old Building",
+              "body": "Ho Chi Minh City Museum gives District 1 a quieter layer: colonial-era building, garden edges, display rooms, and local history."
+            },
+            {
+              "id": "place-brief",
+              "title": "Building First, Rooms Second",
+              "body": "The architecture and garden setting are part of the visit. Let the building slow the pace before moving through the displays."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Bảo tàng Thành phố Hồ Chí Minh is the local name. It helps with drivers, maps, and distinguishing it from other museums."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Central Indoor Reset",
+              "body": "The museum fits between outdoor landmarks, especially when heat or rain makes another street stop less appealing."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Few Rooms Are Fine",
+              "body": "The stop does not need to become a full history survey. A short visit can still add depth to a District 1 day."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Practical Details Can Change",
+              "body": "Check hours and exhibit access late. The stable draw is the old building, garden feel, and central city-history context."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-ho-thi-ky-flower-market",
+          "summary": "Ho Thi Ky Flower Market is a street-trade stop for flower bundles, scooters, gift stalls, wet pavement, and late color in a working market lane.",
+          "context": "The market shows Saigon through flowers and trade: vendors, bundles, scooters, gifts, damp pavement, and street color rather than a polished attraction.",
+          "tip": "Go to look, buy small, or pass through with care. The market is active, so movement matters more than lingering in the way.",
+          "rationale": "The flower market is memorable because it is practical and visual at once: bundles, deliveries, vendors, scooters, and color pressed into narrow streets.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Flowers In A Working Lane",
+              "body": "Ho Thi Ky is a flower-trade scene: bundles, vendors, scooters, gift stalls, wet pavement, and color packed into market lanes."
+            },
+            {
+              "id": "place-brief",
+              "title": "Trade Still Comes First",
+              "body": "This is not only a photo stop. People are buying, delivering, arranging, and moving through narrow space with flowers and supplies."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name",
+              "body": "Chợ hoa Hồ Thị Kỷ is the local name. It helps with maps, drivers, and recognizing the flower-market lanes."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Careful Browse",
+              "body": "Browse slowly and stay out of delivery paths. A small purchase or short look fits better than blocking the working lanes."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Color With Movement",
+              "body": "The market is strongest when you want street color tied to real trade, not a staged flower display."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Timing Can Shift The Feel",
+              "body": "Flower-market energy changes by hour and delivery rhythm. Avoid fixed expectations about crowds, stock, or how late a lane stays active."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-hu-tieu",
+          "summary": "Hu tieu is a flexible Saigon noodle bowl to learn: clear broth or dry style, pork, shrimp, herbs, sauce, and a lighter rhythm than phở.",
+          "context": "Hủ tiếu gives Saigon a noodle-shop memory through broth, texture, herbs, pork or shrimp, sauce, and quick table movement.",
+          "tip": "Decide soup or dry first if the shop offers both. Herbs and sauce can change the bowl, so adjust after tasting.",
+          "rationale": "The dish becomes specific when the bowl appears: clear broth, noodles, pork, shrimp, herbs, and the small choices at the table.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Flexible Saigon Noodle Bowl",
+              "body": "Hủ tiếu can be soupy or dry, light or full: noodles, pork, shrimp, herbs, clear broth, and sauce at the table."
+            },
+            {
+              "id": "place-brief",
+              "title": "Broth, Noodles, Herbs",
+              "body": "The bowl is often lighter than it looks. Texture, herbs, and sauce give it shape after the first spoonful."
+            },
+            {
+              "id": "quick-say",
+              "title": "Dish Name",
+              "body": "Hủ tiếu is the useful name. If a shop offers versions, point or ask for nước for soup and khô for dry."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Breakfast Or Light Meal",
+              "body": "The dish works well when you want noodles without a heavy bowl. It can fit breakfast, lunch, or a simple evening meal."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Soup Or Dry First",
+              "body": "The main decision is style. Choose broth when you want comfort; choose dry when texture and sauce sound better."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Table Adjustments Matter",
+              "body": "Taste before adding too much sauce or chili. A good bowl changes quickly once herbs, lime, or seasoning go in."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

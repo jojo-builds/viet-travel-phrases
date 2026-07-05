@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể xác nhận đặt phòng của tôi? asks someone to do one helpful action for you. Use it for confirm my booking when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Bạn có thể xác nhận đặt phòng của tôi?"
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể xác nhận đặt phòng của tôi? once, then make the task visible with your booking screen, ticket, calendar, time, line, or confirmation message. The phrase is doing one job: getting a clear answer about confirm my booking.",
+      "body": "A short question is enough here; use the date, time, ticket, booking, or address for the follow-up.",
       "phrases": [
         {
           "id": "v900-time-date-book-can-you-confirm-my-booking",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có thể + xác nhận đặt carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you confirm my booking? to another time, date, or booking need.",
+      "body": "Good next-step phrases: What time?; Today; Tomorrow morning.",
       "phrases": [
         {
           "id": "time-1",
@@ -116,7 +116,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when confirm my booking is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Best in a booking desk, tour counter, or message thread, before the explanation gets long. Keep the date, time, ticket, booking, or address close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -126,7 +126,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể xác nhận đặt phòng của tôi?.",
+      "body": "Good next-step cards: I have a booking, What time does it open, and Can we move it later.",
       "phrases": [
         {
           "id": "time-4",

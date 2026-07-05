@@ -1,0 +1,321 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_52",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_52",
+  "chunks": [
+    {
+      "chunkFile": "hoian_051_075_humanized.json",
+      "cityID": "hoian",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-hoian-place-mai-fish",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-mi-quang",
+          "message": "banned visible fragment: gives hoi an a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hoian-place-lantern-making-class",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-mai-fish",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-market",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-memories-land",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-memories-land",
+          "message": "freshness/process-like heading: Practical Details need a close-to-the-day check"
+        },
+        {
+          "id": "city-hoian-place-memories-land",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-mi-quang",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 17x: local name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 6x: venue name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 23x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 5x: freshness/checking heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 17x"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 5x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hoian-place-lantern-making-class",
+          "summary": "Lantern-making class turns Hoi An’s lantern streets into a hands-on workshop pause: colored frames, patient instruction, and a finished piece you can remember later.",
+          "context": "For Lantern-making class, the useful scene is the table: bamboo frames, fabric or paper, tools, and someone showing the next small step.",
+          "tip": "Arrive ready to make one object slowly. The point is not a show; it is the moment your hands understand the lantern shape.",
+          "rationale": "Lantern-making class gives craft a simple role in the day: a seated break from looking, with a souvenir that comes from doing.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Hands First, Lantern Later",
+              "body": "Lantern-making class works as a quiet break from sightseeing. Sit at the workshop table, follow the frame, and let the finished lantern carry the memory."
+            },
+            {
+              "id": "place-brief",
+              "title": "A Workshop Break From Looking",
+              "body": "Expect colored lantern frames, tools, instruction, and a room that feels more hands-on than staged. It suits visitors who want one craft moment, not another photo stop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Lớp làm lồng đèn Hội An means a Hoi An lantern-making class. It helps when asking a driver, hotel desk, or workshop host to confirm the right activity."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After Old Streets Or Rain",
+              "body": "The class fits after a lantern-street walk or during a wet afternoon. It slows the day without sending you far from the old-town rhythm."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Small Making Moment",
+              "body": "Think of this as one patient hour with frames, hands, and a finished object. Avoid loading it with every craft expectation in Hoi An."
+            },
+            {
+              "id": "good-to-know",
+              "title": "The Finished Piece Matters",
+              "body": "The useful memory is the lantern you handled, not the room itself. That keeps the activity grounded even if the setup feels visitor-friendly."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-mai-fish",
+          "summary": "Mai Fish suits the night when dinner feels settled, not improvised: a Vietnamese dining room, fish and herbs on the table, warm light, and staff rhythm.",
+          "context": "For Mai Fish, the useful scene is a seated meal with menu questions, drinks, shared dishes, and enough room for dinner to be part of the evening.",
+          "tip": "The table can start with one clear house-style dish or fish order, then add only what the group can actually finish.",
+          "rationale": "Mai Fish gives Hoi An a calmer restaurant moment after walking, when a meal needs more shape than another snack stop.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Dinner With A Real Pause",
+              "body": "Mai Fish belongs to the evening when you want to sit down and let dinner hold the itinerary for a while, not just fill the gap between sights."
+            },
+            {
+              "id": "place-brief",
+              "title": "Fish, Herbs, Warm Light",
+              "body": "Expect a Vietnamese restaurant frame rather than a market bite: tables, drinks, fish or house dishes, herbs, menu details, and a slower room rhythm."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name To Recognize",
+              "body": "Mai Fish usually stays as the venue name. It is easiest to confirm when tied to dinner, fish dishes, and a settled table."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After A Long Walking Day",
+              "body": "It pairs well after old-town walking, a tailor errand, or river time. The meal gives the day a seated finish without becoming formal."
+            },
+            {
+              "id": "when-to-use",
+              "title": "One Clear Order First",
+              "body": "Begin with one dish the table can agree on, then add from there. That keeps the meal readable if the menu feels wider than expected."
+            },
+            {
+              "id": "good-to-know",
+              "title": "No Need To Chase A Signature",
+              "body": "menus can change. Staff guidance and the menu can shape the night better than one dish that may not be available."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-market",
+          "summary": "Hoi An Market gives the old town its working edge: produce colors, food counters, small goods, bargaining rhythm, and morning buying under yellow awnings.",
+          "context": "For Hoi An Market, the first slow lap through aisles matters before choosing snacks, gifts, or a small purchase.",
+          "tip": "Bring small bills and curiosity. One lap before buying makes the market feel less like pressure and more like a working place.",
+          "rationale": "Hoi An Market keeps daily buying close to the tourist streets, giving visitors a practical read on food, goods, and local rhythm.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A First Lap Market",
+              "body": "Hoi An Market is easiest after one slow loop. Notice produce, food counters, and small goods before deciding whether to snack, browse, or bargain."
+            },
+            {
+              "id": "place-brief",
+              "title": "Morning Color, Real Buying",
+              "body": "Expect produce, food stalls, yellow awnings, bags, and quick exchanges. It is a working market, not just a backdrop for old-town color."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Chợ Hội An is the name to listen for. It helps when asking about the market, a nearby stall, or the way back to the old streets."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Snacks Before Souvenirs",
+              "body": "Food and produce give the market its rhythm early. Gift browsing can come after you understand the aisles and the pace of buying."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small Purchases Feel Easier",
+              "body": "The market suits a light browse, a snack, or one practical purchase. It gets harder when treated like a full shopping mission."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Bargaining Stays Gentle",
+              "body": "Check prices calmly and keep the exchange small. A polite question does more here than trying to win every dong."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-memories-land",
+          "summary": "Hoi An Memories Land is an evening performance-island stop, useful when the day needs a clearer show plan beyond lantern streets and river wandering.",
+          "context": "For Hoi An Memories Land, the useful scene is arrival at dusk: riverside stop, show posters, lantern glow, and the sense of a planned evening.",
+          "tip": "Give it room in the night. The stop works poorly as an afterthought because the approach, stop, and performance frame need time.",
+          "rationale": "Hoi An Memories Land gives the river side of town a staged evening role, distinct from casual old-town wandering.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Show Night, Not A Stroll",
+              "body": "Hoi An Memories Land belongs to a planned evening. Think riverside stop, performance posters, lantern glow, and the shift from wandering to show time."
+            },
+            {
+              "id": "place-brief",
+              "title": "Performance Island Energy",
+              "body": "Expect a large, staged attraction frame rather than a small heritage stop. The useful image is arrival at dusk, before the performance pulls attention inward."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Đảo Ký ức Hội An means Hoi An Memories Island. It helps when confirming the right attraction with a driver or hotel desk."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Dinner Timing Matters",
+              "body": "Put dinner before or after with care. A show-focused evening needs cleaner timing than a casual market browse."
+            },
+            {
+              "id": "when-to-use",
+              "title": "One Evening reference point",
+              "body": "This stop can reference point the night when you want structure after daytime wandering. It should not be squeezed into a loose lantern walk."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Practical Details need a close-to-the-day check",
+              "body": "Schedules, access, and ticket details can change. Those checks sit apart from the durable idea: riverside arrival and a staged Hoi An show."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-mi-quang",
+          "summary": "Mi Quang in Hoi An is a bowl to understand before you order: turmeric-toned noodles, herbs, peanuts, rice cracker, a little sauce, and central-coast texture.",
+          "context": "For Mi Quang in Hoi An, the bowl reads through noodles, herbs, crunch, sauce, and heat before anything gets mixed.",
+          "tip": "Notice the rice cracker and herbs before stirring. The bowl makes more sense when texture stays part of the first few bites.",
+          "rationale": "Mi Quang gives Hoi An a central-coast food reference point, distinct from bánh mì counters and white rose dumplings.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Bowl Has Its Own Logic",
+              "body": "Mì Quảng is not a soup bowl in the usual sense. Noodles, herbs, peanuts, rice cracker, and a small amount of sauce all matter."
+            },
+            {
+              "id": "place-brief",
+              "title": "Texture Before Volume",
+              "body": "Expect a bowl built around contrast: soft noodles, fresh herbs, crunchy cracker, peanuts, and savory sauce. The first bites should not be rushed."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Mì Quảng ở Hội An means mì Quảng in Hoi An. It helps when scanning menus or asking for the dish near the old town."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Central-Coast Food reference point",
+              "body": "The dish gives the food day a different shape from bánh mì, dumplings, or cao lầu. It is a good small-meal reference point."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Heat And Herbs First",
+              "body": "Check spice level and herbs before mixing everything. The bowl is easier to enjoy when you understand what each part is doing."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Regional, Not Random",
+              "body": "Mì Quảng belongs to central Vietnam’s food map. In Hoi An, it helps connect the meal to the wider coast rather than one restaurant name."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

@@ -7,7 +7,7 @@
   "title": "Tôi có thể trả lại nó ở đâu?",
   "englishTitle": "Where do I return it?",
   "pronunciation": "Toi co the tra lai no o dau",
-  "summary": "Where do I return it?",
+  "summary": "For finding the right return point before you walk away with a rental, ticket, or borrowed item.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể trả lại nó ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names return it in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Helmets, locker keys, luggage carts, tickets, and rental gear often go back to a specific desk or bay."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Tôi có thể trả lại nó ở đâu?. Show your map, destination, ride screen, ticket, vehicle, or pickup point, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Hold up the item and ask. Let them point to the counter, bay, desk, or person.",
       "phrases": [
         {
           "id": "v500-tran-where-do-i-return-it",
@@ -42,17 +42,17 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Trả lại means return or give back; ở đâu asks where it should go.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể trả lại",
+          "vietnamese": "trả lại",
           "english": "return / give back",
           "audioKey": null
         },
@@ -79,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where do I return it? to another transport need.",
+      "body": "Stop, route, and cash lines help if the return question turns into a ride handoff.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits taxi, ride-hailing pickup, bus stop, station, ferry, or street corner, especially when return it can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Good at rental counters, stations, tour desks, ferry desks, luggage storage, and scooter or bicycle returns."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+      "body": "Ask before leaving the area; a missing return tag or deposit can turn into a longer problem."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể trả lại nó ở đâu?.",
+      "body": "If the handoff turns back into a ride, stop, route, air-con, wait, and cash lines cover one more ride step.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

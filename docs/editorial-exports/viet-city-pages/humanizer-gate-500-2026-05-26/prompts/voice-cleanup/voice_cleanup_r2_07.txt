@@ -1,0 +1,278 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 4
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_07",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 4,
+    "returnedReplacementCount": 4,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_07",
+  "chunks": [
+    {
+      "chunkFile": "danang_026_050_humanized.json",
+      "cityID": "danang",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-danang-place-kem-bo",
+          "message": "banned visible fragment: gives da nang a"
+        },
+        {
+          "id": "city-danang-place-la-maison-1888",
+          "message": "heading is command-like: Check The Basics First"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-danang-place-kem-bo",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-la-maison-1888",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-la-maison-1888",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-danang-place-lady-buddha",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-danang-place-le-duan-night-market",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-le-duan-night-market",
+          "message": "freshness/process-like heading: Small Markets Can Shift"
+        },
+        {
+          "id": "city-danang-place-le-duan-night-market",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 17x: name to recognize"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 18x: generic name-card heading"
+        },
+        {
+          "id": "026-050",
+          "message": "non-playable quick-say name-card pattern appears 17x"
+        },
+        {
+          "id": "026-050",
+          "message": "freshness/process headings appear 3x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-danang-place-kem-bo",
+          "summary": "Kem bơ is a small Da Nang sweetness break: avocado cream, ice cream, condensed milk, coconut if offered, and a cold ten-minute pause between bigger plans.",
+          "context": "This dessert stop is about texture and ordering, not a specific vendor, price, topping, or stall promise.",
+          "tip": "Start with one cup before adding more dessert; the avocado makes it richer than fruit juice or shaved ice.",
+          "rationale": "The dessert gives Da Nang a vivid sweet texture: cold avocado cream, ice cream, condensed milk, and a quick spoonable pause.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Green, Cold, Done In Ten Minutes",
+              "body": "Kem bơ is a small Da Nang sweetness break: avocado cream, ice cream, condensed milk, maybe coconut, spoonable and colder than a smoothie."
+            },
+            {
+              "id": "place-brief",
+              "title": "Texture Is The Point",
+              "body": "Do not expect savory avocado. The pleasure is cold, thick, green, and sweet, with avocado making the cup richer than fruit juice."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Kem bơ means avocado ice cream or avocado cream. Say the name first, then point to the cup size or topping if the counter is busy."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Small First, Sweet Enough",
+              "body": "One cup is usually the right first move. Add another dessert only after you know how sweet and heavy this shop makes it."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Best After Salt Or Heat",
+              "body": "Kem bơ works as a reset after seafood, a market lap, or a hot ride back from the beach side. Keep it short."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Every Counter Is Different",
+              "body": "Shop availability, toppings, sweetness, pricing, and cup wording vary. Treat the first cup as the test before ordering more."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-la-maison-1888",
+          "summary": "La Maison 1888 is a Da Nang occasion meal: white tablecloths, colonial-style room mood, careful service, and a night that should not be squeezed between errands.",
+          "context": "This restaurant works as a special dinner frame through room mood, service pace, table questions, and a plan made before arrival.",
+          "tip": "Leave room for the table rhythm: menus, drinks, pauses, and the feeling that dinner is the evening.",
+          "rationale": "La Maison 1888 is useful as an occasion-dinner choice, where pacing, questions, booking basics, and the room matter more than prestige.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Make Dinner The Plan",
+              "body": "La Maison 1888 is the Da Nang meal to save for a night with its own pace. The room and service matter more than checking off local dishes."
+            },
+            {
+              "id": "place-brief",
+              "title": "Arrive Ready To Slow Down",
+              "body": "This is not the meal to squeeze between the beach and a bridge walk. Leave room for menus, drinks, pauses, and the table rhythm."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "La Maison 1888 usually stays as the venue name. Tie it to the occasion-dinner role rather than a specific dish or award."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Early Questions Travel Better",
+              "body": "If ingredients, wine, allergies, or portion size matter, ask early. A polished room is easier when the first questions happen before courses arrive."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Softer End To The Night",
+              "body": "The room does the heavy lifting. After dinner, choose a short ride, a quiet drink, or the hotel return instead of stacking plans."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Check The Basics First",
+              "body": "Menus, recognition, booking patterns, and holiday closures can change. Check the basics first, then treat the night as a slow occasion meal."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-lady-buddha",
+          "summary": "Lady Buddha is the tall white statue at Linh Ung Pagoda on Son Tra, where the statue, temple courtyards, sea wind, and Da Nang view belong together.",
+          "context": "The English nickname belongs with the pagoda setting, not apart from Linh Ung or Son Tra.",
+          "tip": "If the English nickname does not land, add Linh Ung or Son Tra so the statue connects to the right pagoda area.",
+          "rationale": "Lady Buddha belongs in Da Nang because the statue is one of the clearest visual links between city, peninsula, pagoda, and bay.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Statue Belongs To The Pagoda",
+              "body": "Lady Buddha is the tall white figure people mean at Linh Ung Pagoda on Son Tra. Go for the statue, but leave time for the temple setting."
+            },
+            {
+              "id": "place-brief",
+              "title": "Quiet Before The View",
+              "body": "The statue is why most visitors come, but the setting is not just a lookout. Move through the courtyard slowly and keep voices low."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name It With Context",
+              "body": "Tượng Phật Bà names Lady Buddha. Adding Linh Ung or Son Tra gives a driver or hotel desk the setting around the statue."
+            },
+            {
+              "id": "use-it-with",
+              "title": "One Stop, Two Readings",
+              "body": "It can be a photo stop, a pagoda visit, or a wider Son Tra pause. The visit feels better when those meanings are not rushed."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Respect Carries The Visit",
+              "body": "Covered shoulders, quiet voices, and careful photos are safer than treating the statue as only a viewpoint."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Temple Setting First",
+              "body": "Access, parking, pickup, and temple guidance can vary. Keep the visit respectful, flexible, and tied to Linh Ung."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-le-duan-night-market",
+          "summary": "Lê Duẩn Night Market is a compact after-dark browse: clothing racks, small gifts, warm bulbs, a little food smoke, and one more walk before the hotel.",
+          "context": "This works as a short browse, not a full food crawl or a night that has to compete with larger markets.",
+          "tip": "Walk the lane once before buying, then bargain lightly and keep moving if the first price or item does not feel right.",
+          "rationale": "The market reads clearly at modest scale: a short browse, light bargaining, flexible expectations, and a quick check before heading over.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Short Night Browse",
+              "body": "Le Duan Night Market is a compact after-dark lane for clothing racks, small gifts, warm bulbs, and a little food smoke."
+            },
+            {
+              "id": "place-brief",
+              "title": "One Lap Before Buying",
+              "body": "Walk the lane once before choosing. The market is easier when you know where clothes, snacks, phone cases, and small gifts cluster."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Chợ đêm Lê Duẩn names the night market on Lê Duẩn. Keep it tied to a compact browse rather than a guaranteed food night."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Bargain Lightly",
+              "body": "This is a place for small decisions, not a long negotiation performance. Ask the price, try one polite discount, then buy or keep moving."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small Scale Is The Point",
+              "body": "The stop can feel thin if you expect a full food crawl. It works better as one pocket of night color before the hotel."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Small Markets Can Shift",
+              "body": "Hours, stall mix, and exact lane feel can shift. Treat it as a small browse and check the current scene before heading over."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

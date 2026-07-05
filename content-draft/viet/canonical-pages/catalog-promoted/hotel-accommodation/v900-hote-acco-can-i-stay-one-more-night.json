@@ -7,7 +7,7 @@
   "title": "Tôi có thể ở lại thêm một đêm nữa được không?",
   "englishTitle": "Can I stay one more night?",
   "pronunciation": "Toi co the o lai them mot dem nua duoc khong",
-  "summary": "Can I stay one more night?",
+  "summary": "For asking the front desk if you can extend your room by one night.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể ở lại thêm một đêm nữa được không? is for asking permission before you act. It is useful when stay one more night depends on local rules, staff approval, or the right way to use a space or service."
+      "body": "Ask before checkout pressure starts. Have your room number, booking name, and payment method ready."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có thể ở lại thêm một đêm nữa được không? once, then make the task visible with your booking screen, room key, address, room number, or photo of the issue. The phrase is doing one job: getting a clear answer about stay one more night.",
+      "body": "Say it at the desk, then show the booking or room key. The answer may depend on availability or a new rate.",
       "phrases": [
         {
           "id": "v900-hote-acco-can-i-stay-one-more-night",
@@ -42,38 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể asks can I; ở lại means stay; thêm một đêm nữa means one more night; được không asks if possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể ở lại thêm một đêm nữa",
-          "english": "stay one more night",
-          "audioKey": null
+          "vietnamese": "ở lại",
+          "english": "stay",
+          "keepTogetherReason": "stay verb"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "được không",
-          "english": "is it possible?",
-          "audioKey": null
+          "vietnamese": "thêm một đêm nữa",
+          "english": "one more night",
+          "keepTogetherReason": "one-more-night phrase"
         },
         {
           "id": "chunk-4",
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "keepTogetherReason": "polite yes-no ending"
+        },
+        {
+          "id": "full",
           "vietnamese": "Tôi có thể ở lại thêm một đêm nữa được không?",
-          "english": "Can I stay one more night",
-          "audioKey": null
+          "english": "Can I stay one more night?",
+          "audioKey": "v900-hote-acco-can-i-stay-one-more-night"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can I stay one more night? to another hotel or stay need.",
+      "body": "Reservation, check-in, and polite check-in cards help if the desk needs to look up your stay.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -110,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when stay one more night is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+      "body": "Ask at the front desk before checkout time, while the booking name and room number are easy to verify."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Availability can change fast in small hotels. If the same room is full, staff may offer another room."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể ở lại thêm một đêm nữa được không?.",
+      "body": "Checkout-time, quiet-room, checkout, hot-room, and air-conditioner cards cover the rest of the hotel desk flow.",
       "phrases": [
         {
           "id": "hotel-3",

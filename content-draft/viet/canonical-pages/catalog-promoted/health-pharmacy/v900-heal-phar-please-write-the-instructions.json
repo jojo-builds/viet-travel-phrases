@@ -4,10 +4,10 @@
   "phraseID": "v900-heal-phar-please-write-the-instructions",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Hãy viết hướng dẫn",
+  "title": "Vui lòng viết hướng dẫn dùng thuốc",
   "englishTitle": "Please write the instructions",
-  "pronunciation": "Hay viet huong dan",
-  "summary": "Please write the instructions",
+  "pronunciation": "Vui long viet huong dan dung thuoc",
+  "summary": "For asking pharmacy or clinic staff to write the medicine instructions clearly.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -15,59 +15,67 @@
     "v900-heal-phar-please-write-the-instructions",
     "premium"
   ],
-  "audioKey": "v900-heal-phar-please-write-the-instructions",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy viết hướng dẫn is a practical pharmacy or health phrase for keeping one travel detail clear. Use it when write the instructions is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it before leaving the counter. Keep the medicine box, dosage label, or translation screen visible.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hãy viết hướng dẫn. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Point to the medicine and a note field. Written timing is safer than trying to remember fast speech.",
       "phrases": [
         {
           "id": "v900-heal-phar-please-write-the-instructions",
-          "vietnamese": "Hãy viết hướng dẫn",
+          "vietnamese": "Vui lòng viết hướng dẫn dùng thuốc",
           "english": "Please write the instructions",
-          "pronunciation": "Hay viet huong dan",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Vui long viet huong dan dung thuoc",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
           "detailPageID": null,
-          "audioKey": "v900-heal-phar-please-write-the-instructions"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Vui lòng means please; viết hướng dẫn means write instructions; dùng thuốc means taking medicine.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy viết hướng",
-          "english": "please do",
-          "audioKey": null
+          "vietnamese": "Vui lòng",
+          "english": "please",
+          "keepTogetherReason": "polite opener"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "dẫn",
-          "english": "write the instructions",
-          "audioKey": null
+          "vietnamese": "viết hướng dẫn",
+          "english": "write instructions",
+          "keepTogetherReason": "write-instructions phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "Hãy viết hướng dẫn",
+          "vietnamese": "dùng thuốc",
+          "english": "taking medicine",
+          "keepTogetherReason": "medicine-use phrase"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Vui lòng viết hướng dẫn dùng thuốc",
           "english": "Please write the instructions",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please write the instructions to another pharmacy or health need.",
+      "body": "Doctor, pharmacy, and nearest-pharmacy cards help if you need a place or professional first.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when write the instructions is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Pharmacies, clinics, and hotel desks are where written dosage, timing, and warnings matter most.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "Ask for morning, night, before food, after food, and number of days in writing if the answer is fast.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hãy viết hướng dẫn.",
+      "body": "Headache, stomach pain, motion-sickness medicine, allergy, and diarrhea cards cover nearby health needs.",
       "phrases": [
         {
           "id": "health-2",
@@ -172,13 +182,13 @@
   "examples": [
     {
       "id": "v900-heal-phar-please-write-the-instructions",
-      "vietnamese": "Hãy viết hướng dẫn",
+      "vietnamese": "Vui lòng viết hướng dẫn dùng thuốc",
       "english": "Please write the instructions",
-      "pronunciation": "Hay viet huong dan",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Vui long viet huong dan dung thuoc",
+      "symbolName": "text.bubble.fill",
       "tintName": "red",
       "detailPageID": null,
-      "audioKey": "v900-heal-phar-please-write-the-instructions"
+      "audioKey": null
     }
   ]
 }

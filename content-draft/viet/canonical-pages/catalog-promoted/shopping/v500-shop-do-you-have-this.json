@@ -7,7 +7,7 @@
   "title": "Bạn có cái này không?",
   "englishTitle": "Do you have this?",
   "pronunciation": "Ban co cai nay khong",
-  "summary": "Do you have this?",
+  "summary": "For asking a shop if they carry the item, size, color, or product you are showing.",
   "iconName": "bag.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có cái này không? is a practical shopping phrase for keeping one travel detail clear. Use it when Do you have this is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Point to the item, shelf label, photo, or empty package before asking."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Bạn có cái này không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Keep the object or phone screen visible so the answer can be yes, no, or a point to another shelf.",
       "phrases": [
         {
           "id": "v500-shop-do-you-have-this",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bạn có asks do you have; cái này means this item; không? makes it yes/no.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bạn có cái",
-          "english": "do you have this",
-          "audioKey": null
+          "vietnamese": "Bạn có",
+          "english": "do you have",
+          "keepTogetherReason": "do-you-have phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "này",
-          "english": "this one / this",
-          "audioKey": null
+          "vietnamese": "cái này",
+          "english": "this item",
+          "keepTogetherReason": "this-item phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Bạn có cái này không?",
-          "english": "Do you have this",
-          "audioKey": null
+          "english": "Do you have this?",
+          "audioKey": "v500-shop-do-you-have-this"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Do you have this? to another shopping need.",
+      "body": "Size, color, and try-on follow-ups help if the first answer is yes.",
       "phrases": [
         {
           "id": "shop-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real shopping exchange when do you have this is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at markets, pharmacies, minimarts, clothing shops, electronics counters, and souvenir stalls."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "In shops and markets, the object is the anchor. Point clearly, then listen for the number or option."
+      "body": "If staff walk away after hearing it, they may be checking stock. Keep the sample or photo ready."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có cái này không?.",
+      "body": "Looking, payment, exchange, price, and bargaining follow-ups cover nearby shopping turns.",
       "phrases": [
         {
           "id": "shop-4",

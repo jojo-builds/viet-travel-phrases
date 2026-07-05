@@ -20,19 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Xin",
-      "english": "please / request"
+      "vietnamese": "Xin hãy",
+      "english": "please",
+      "keepTogetherReason": "polite request opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "hãy",
-      "english": "please do"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "quay lại.",
-      "english": "go back / turn around",
-      "keepTogetherReason": "compound verb"
+      "english": "turn back / go back",
+      "keepTogetherReason": "turn-back phrase with punctuation"
     },
     {
       "id": "full",

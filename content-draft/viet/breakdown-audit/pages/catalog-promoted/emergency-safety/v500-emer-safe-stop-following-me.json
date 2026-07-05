@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-emer-safe-stop-following-me",
-  "phraseText": "Dừng theo dõi tôi",
+  "phraseText": "Đừng đi theo tôi nữa",
   "englishTitle": "Stop following me",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,25 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Dừng",
-      "english": "stop"
+      "vietnamese": "Đừng",
+      "english": "do not",
+      "keepTogetherReason": "negative command"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "theo dõi",
-      "english": "track",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "tôi",
-      "english": "I / me"
+      "vietnamese": "đi theo tôi nữa",
+      "english": "follow me anymore",
+      "keepTogetherReason": "stop-following phrase"
     },
     {
       "id": "full",
-      "vietnamese": "Dừng theo dõi tôi",
+      "vietnamese": "Đừng đi theo tôi nữa",
       "english": "Stop following me",
-      "audioKey": "v500-emer-safe-stop-following-me"
+      "audioKey": null
     }
   ]
 }

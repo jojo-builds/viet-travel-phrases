@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hai cái đó bao nhiêu? is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on for two of them, so the answer can be a number, calculator screen, or typed price."
+      "body": "Point to both items so the total is clear."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Ask Hai cái đó bao nhiêu? before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "body": "Keep the item, price tag, calculator, receipt, or ATM screen close, but let the question land first.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-how-much-for-two-of-them",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Hai cái đó + bao nhiêu as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How much for two of them? to another money or price need.",
+      "body": "Keep close by: How much is this? and How much per kilo?",
       "phrases": [
         {
           "id": "price-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+      "body": "Use it before you ask for a discount or hand over cash. It prevents one-item and two-item prices from blending together."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "If they answer per item, ask for the total again before paying."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hai cái đó bao nhiêu?.",
+      "body": "Useful if the exchange continues: Too expensive, Can you lower it a little, and What’s your final price.",
       "phrases": [
         {
           "id": "price-3",

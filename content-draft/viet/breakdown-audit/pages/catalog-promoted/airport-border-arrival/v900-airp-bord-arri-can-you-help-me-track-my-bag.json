@@ -20,41 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "giúp tôi",
+      "english": "help me",
+      "keepTogetherReason": "help-me phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "giúp",
-      "english": "help"
+      "vietnamese": "theo dõi",
+      "english": "track",
+      "keepTogetherReason": "track verb"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "tôi",
-      "english": "me"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "theo dõi",
-      "english": "track",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "túi",
-      "english": "bag"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "của tôi?",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
+      "vietnamese": "túi của tôi?",
+      "english": "my bag?",
+      "keepTogetherReason": "my-bag phrase"
     },
     {
       "id": "full",

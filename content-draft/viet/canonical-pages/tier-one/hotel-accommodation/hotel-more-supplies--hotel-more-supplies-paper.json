@@ -7,7 +7,7 @@
   "title": "Cho tôi thêm giấy vệ sinh được không?",
   "englishTitle": "Can I have more toilet paper?",
   "pronunciation": "cho toy them zai veh sinh dook khong",
-  "summary": "A focused guide to when Cho tôi thêm giấy vệ sinh được không? sounds more natural than Cho tôi thêm khăn.",
+  "summary": "Ask for toilet paper specifically, not a general towel or supply request.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -18,51 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cho tôi thêm giấy vệ sinh được không? is useful when \"Can I have more toilet paper?\" needs a slightly different tone or setting. Use this when the room needs more toilet paper rather than more towels.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "breakdown",
-      "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
-      "breakdown": [
-        {
-          "id": "hotel-more-supplies-paper-piece-1",
-          "vietnamese": "Cho tôi",
-          "english": "can I have",
-          "audioKey": "breakdown-authored-cho-toi-18c6fe1018"
-        },
-        {
-          "id": "hotel-more-supplies-paper-piece-2",
-          "vietnamese": "thêm",
-          "english": "more / add",
-          "audioKey": "breakdown-v900-hote-acco-how-much-is-one-extra-night-first"
-        },
-        {
-          "id": "hotel-more-supplies-paper-piece-3",
-          "vietnamese": "giấy vệ sinh",
-          "english": "toilet paper",
-          "audioKey": null
-        },
-        {
-          "id": "hotel-more-supplies-paper-piece-4",
-          "vietnamese": "được không?",
-          "english": "is it possible?",
-          "audioKey": "breakdown-authored-duoc-khong-cc7ef288f9"
-        },
-        {
-          "id": "hotel-more-supplies-paper-full",
-          "vietnamese": "Cho tôi thêm giấy vệ sinh được không?",
-          "english": "Can I have more toilet paper?",
-          "audioKey": "hotel-more-supplies-paper"
-        }
-      ],
-      "presentation": "breakdown-strip"
+      "body": "Use this at a hotel, homestay, or guesthouse when the missing item is toilet paper.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Cho tôi thêm giấy vệ sinh được không? when \"Can I have more toilet paper?\" is the exact tone or situation you want.",
+      "body": "Show the booking, room number, address, or key card first, ask once, and leave room for the answer.",
       "phrases": [
         {
           "id": "hotel-more-supplies-paper",
@@ -75,18 +39,58 @@
           "audioKey": "hotel-more-supplies-paper"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "This is for when the room needs more toilet paper rather than more towels. Use Cho tôi thêm khăn when you want the shorter default, and choose this form when the note under the phrase matches the person or setting.",
-      "presentation": "plain-text"
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Cho tôi asks to give me; thêm means more; giấy vệ sinh names toilet paper specifically.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "cho",
+          "english": "to / for",
+          "audioKey": "breakdown-taxi-1-first"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "thêm",
+          "english": "more / add",
+          "audioKey": "breakdown-v900-hote-acco-how-much-is-one-extra-night-first"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "giấy vệ sinh",
+          "english": "toilet paper",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "audioKey": "breakdown-authored-duoc-khong-cc7ef288f9"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Cho tôi thêm giấy vệ sinh được không?",
+          "english": "Can I have more toilet paper?",
+          "audioKey": "hotel-more-supplies-paper"
+        }
+      ],
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Hotel Accommodation, the reply often comes as a yes/no answer, a gesture toward the item, or a short alternative. Say Cho tôi thêm giấy vệ sinh được không? once, pause, and watch for the reply. Keep the booking, ticket, room number, or time visible when the exact detail matters.",
+      "body": "Giấy vệ sinh is specific. It avoids a broad supplies request that could be mistaken for towels or other room items.",
       "phrases": [
         {
           "id": "hotel-6",
@@ -119,18 +123,29 @@
           "audioKey": "hotel-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Best when asking housekeeping, the front desk, or a host, especially if pointing at the bathroom is awkward.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.",
-      "presentation": "tip-callout"
+      "body": "This is a precise supply request. Keep the room number ready so staff can send it to the right door.",
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Nearby phrases keep the conversation moving after this one.",
+      "body": "Keep towel, housekeeping, room problem, and front-desk phrases nearby if the room still needs attention.",
       "phrases": [
         {
           "id": "hotel-6",
@@ -193,7 +208,8 @@
           "audioKey": "hotel-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

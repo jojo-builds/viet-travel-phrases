@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đến Quận 1 bao nhiêu? is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on District 1, so the answer can be a number, calculator screen, or typed price."
+      "body": "Use this before getting in a taxi or accepting an airport ride quote. Keep the District 1 address visible so the driver can answer with a fare, meter plan, or counter direction."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Ask Đến Quận 1 bao nhiêu? before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "body": "Lead with the question; show the passport, baggage tag, flight detail, or pickup screen only if they need detail.",
       "phrases": [
         {
           "id": "v500-airp-bord-arri-how-much-to-district-1",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Đến Quận 1 + bao nhiêu, then replay the full phrase until the rhythm feels natural.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How much to District 1? to another airport arrival need.",
+      "body": "Useful if the exchange continues: Where is immigration, Where is baggage claim, and Where can I buy a SIM card.",
       "phrases": [
         {
           "id": "airport-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+      "body": "Ask before the bags go into the car. If the answer is unclear, point to the address and ask them to show the number."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "A calculator or ride-app screen is clearer than a fast verbal price."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Đến Quận 1 bao nhiêu?.",
+      "body": "Good next-step cards: Where is the pickup area, Where do I meet the driver, and My bag did not arrive.",
       "phrases": [
         {
           "id": "airport-5",

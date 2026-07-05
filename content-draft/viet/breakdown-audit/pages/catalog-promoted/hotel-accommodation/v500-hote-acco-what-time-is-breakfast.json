@@ -20,24 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bữa",
-      "english": "meal"
+      "vietnamese": "Bữa sáng",
+      "english": "breakfast",
+      "keepTogetherReason": "breakfast noun"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "sáng",
-      "english": "morning / light"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "lúc",
-      "english": "at the time"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "mấy giờ?",
-      "english": "what time",
-      "keepTogetherReason": "fixed time question"
+      "vietnamese": "lúc mấy giờ?",
+      "english": "at what time?",
+      "keepTogetherReason": "time question"
     },
     {
       "id": "full",

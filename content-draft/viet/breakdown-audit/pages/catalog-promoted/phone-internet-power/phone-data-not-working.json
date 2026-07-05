@@ -20,25 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Dữ",
-      "english": "data / fierce"
+      "vietnamese": "Dữ liệu của tôi",
+      "english": "my data",
+      "keepTogetherReason": "mobile-data phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "liệu",
-      "english": "material / whether"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "không hoạt động.",
-      "english": "not working",
-      "keepTogetherReason": "fixed negative phrase"
+      "english": "is not working",
+      "keepTogetherReason": "not-working phrase"
     },
     {
       "id": "full",

@@ -1,0 +1,318 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_31",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_31",
+  "chunks": [
+    {
+      "chunkFile": "hcmc_001_025_humanized.json",
+      "cityID": "hcmc",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-hcmc-place-banh-xeo-46a",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hcmc-place-banh-xeo-46a",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-ben-thanh-market",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-ben-thanh-metro-station",
+          "message": "banned visible fragment: gives hcmc a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hcmc-place-bach-dang-wharf",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-banh-mi-huynh-hoa",
+          "message": "freshness/process-like heading: Details Can Shift"
+        },
+        {
+          "id": "city-hcmc-place-banh-mi-huynh-hoa",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-banh-xeo-46a",
+          "message": "freshness/process-like heading: Details Need Verifying"
+        },
+        {
+          "id": "city-hcmc-place-banh-xeo-46a",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hcmc-place-ben-thanh-metro-station",
+          "message": "freshness/process-like heading: Live Details Stay Current"
+        },
+        {
+          "id": "city-hcmc-place-ben-thanh-metro-station",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "001-025",
+          "message": "repeated exact heading 5x: the dish name"
+        },
+        {
+          "id": "001-025",
+          "message": "repeated formula heading 7x: freshness/checking heading"
+        },
+        {
+          "id": "001-025",
+          "message": "freshness/process headings appear 7x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hcmc-place-bach-dang-wharf",
+          "summary": "Bach Dang Wharf is a central Saigon River pause for skyline views, boats, and orientation, useful when the day needs water, open space, and a quick read on the city edge.",
+          "context": "Bến Bạch Đằng is the familiar riverfront name around central views, boats, lights, and the way District 1 opens toward the water.",
+          "tip": "Treat it as a pause or meeting point, not a full attraction. The river, skyline, and nearby streets carry the stop.",
+          "rationale": "It belongs because the riverfront gives central HCMC a simple visual reference point between walking streets, towers, and boat options.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Riverfront Breather",
+              "body": "Bach Dang Wharf is a central pause, not a long itinerary item. The draw is simple: Saigon River, boats, skyline edges, and space after dense streets."
+            },
+            {
+              "id": "place-brief",
+              "title": "Water At The City Edge",
+              "body": "The wharf helps the map click. District 1 stops feeling like only streets and shops once the river opens in front of you."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Wharf Name",
+              "body": "Bến Bạch Đằng is the local name to recognize. Bến can mean wharf or landing, and Bạch Đằng marks this riverfront stretch."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Short Central Pairing",
+              "body": "It pairs easily with Nguyen Hue, Bitexco, a waterbus look, or a river walk when you want open air without going far."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Pause, Then Move",
+              "body": "Give it a short slot. Stay for the view, choose the next street or boat plan, then keep the day moving."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Views Change With Light",
+              "body": "Daytime gives orientation; evening gives lights. Specific cruise, dock, or service details need a fresh check before being named."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-banh-mi-huynh-hoa",
+          "summary": "Banh Mi Huynh Hoa is a focused Saigon sandwich stop, built around crusty baguettes and layered fillings, better for a decisive counter order than a long sit-down meal.",
+          "context": "The place belongs with HCMC’s famous bánh mì rhythm: counter movement, fillings, bread, and the small pressure of ordering before the line reaches you.",
+          "tip": "Know the name and chili preference before the counter. A clear order keeps the stop from feeling more complicated than a sandwich should.",
+          "rationale": "It gives the set a named bánh mì counter, distinct from the general dish by place, queue energy, and the focused order.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Named Sandwich Counter",
+              "body": "Banh Mi Huynh Hoa is for the moment when the general bánh mì craving becomes one specific counter: bread, fillings, assembly, and a quick decision at the front."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Order Moves Fast",
+              "body": "Expect a street-shop rhythm, not a slow table. Choose filling and chili early, then step aside once the sandwich is in hand."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Shop Name",
+              "body": "Bánh mì Huỳnh Hoa is the name to recognize. The accents matter less in conversation than saying Huynh Hoa clearly with bánh mì."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Quick Meal Stop",
+              "body": "It fits a central day when one filling sandwich can cover lunch without turning the schedule into a restaurant hunt."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Counter Confidence Helps",
+              "body": "The visit is easiest when you already know whether you want chili, takeaway, and a classic filling before it is your turn."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Details Can Shift",
+              "body": "Menu options, lines, prices, and hours need fresh checks. Keep the stable idea to the sandwich counter and the name."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-banh-xeo-46a",
+          "summary": "Banh Xeo 46A is a named stop for the larger restaurant-table version of bánh xèo, with a crispy pancake, herbs, metal trays, and enough ritual to slow down a meal.",
+          "context": "The place turns bánh xèo into a specific table decision: large pancake, greens, sauce, staff rhythm, and a meal that may need a little space.",
+          "tip": "Arrive ready for a dish built to share or linger over, not a quick snack between two rides.",
+          "rationale": "It gives HCMC a concrete bánh xèo address while keeping volatile menu, queue, and hours details out of the first plan.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Bánh Xèo With A Table",
+              "body": "Banh Xeo 46A is for the full sit-down version: a large crispy pancake, herbs, sauce, metal tray, and the small ritual of eating it correctly."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Plate Needs Space",
+              "body": "This is not the fastest Saigon bite. The pancake, herbs, and dipping sauce need room on the table and a few minutes of attention."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Name To Recognize",
+              "body": "Bánh xèo 46A keeps the dish and address together. Saying the number helps distinguish the restaurant from bánh xèo as a general food."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Dish-Specific Meal",
+              "body": "It fits when bánh xèo is the point of the meal, not just one item among many."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Ingredient Checks Matter",
+              "body": "Ask before ordering if shrimp, pork, or spice matters. Bánh xèo often looks simple but can hide ingredients in the filling."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Details Need Verifying",
+              "body": "Menu, hours, and service style can change. The stable point is the named bánh xèo restaurant and its large pancake focus."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-ben-thanh-market",
+          "summary": "Ben Thanh Market is the central clock-tower market for first bearings in Saigon: snack stalls, souvenir aisles, bargaining practice, and an outside meeting point before the aisles take over.",
+          "context": "The market is both landmark and shopping stop: clock tower, snack counters, souvenir aisles, quick price checks, and a simple way to orient around central District 1.",
+          "tip": "Walk once before buying. The first lap gives prices, tone, exits, and a calmer place to meet if the group splits.",
+          "rationale": "Ben Thanh gives HCMC a famous first market scene that is still useful for orientation, snacks, gifts, and basic price confidence.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Clock Tower First",
+              "body": "Ben Thanh is both landmark and working market scene: clock-tower entrance, souvenir aisles, snack stalls, and practiced sales rhythm packed into one central stop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Useful Phrases",
+              "body": "",
+              "phraseIDs": [
+                "price-1",
+                "price-8",
+                "coffee-7"
+              ]
+            },
+            {
+              "id": "place-brief",
+              "title": "The First Lap Helps",
+              "body": "The same bag, shirt, coffee pack, or snack may appear more than once. A lap gives you prices, tone, and exits before you commit."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Small Snacks, Light Browse",
+              "body": "A drink, a bowl, or one grilled item is enough to make the market feel real without turning it into a full meal."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Outside Meeting Points",
+              "body": "The clock tower is easier than a stall number. If people split up, choose an outside meeting point before the aisles pull everyone apart."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hcmc-place-ben-thanh-metro-station",
+          "summary": "Ben Thanh Metro Station is a central transport landmark to recognize before a station move, with route boards, doors, waiting areas, and busy streets just outside the Ben Thanh side of District 1.",
+          "context": "Ben Thanh Metro Station is about arrival and onward movement: train entrances, route names, street exits, and the handoff back into central Saigon.",
+          "tip": "Check the exit and onward street before leaving the platform area. The station name alone is not enough in central traffic.",
+          "rationale": "It gives HCMC a transport orientation point near a major market name, practical for reading signs or planning a handoff.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Central Station Name",
+              "body": "Ben Thanh Metro Station matters as a wayfinding point. Route boards, station doors, exits, and nearby streets all connect to a name visitors already hear around the market."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Exit Is The Real Choice",
+              "body": "The real decision is not just reaching the station. It is choosing the right exit for Ben Thanh, Nguyen Hue, a ride pickup, or the next walk."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Station Name",
+              "body": "Ga Bến Thành is the Vietnamese name. Ga means station, and Bến Thành keeps the stop tied to the central market area."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Transfer Point, Not A Pause",
+              "body": "It fits airport-style thinking inside the city: arrive, read signs, choose an exit, then continue to the market, hotel, or meeting point."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Names Over Landmarks",
+              "body": "For navigation, listen for Bến Thành rather than relying only on what the street looks like above ground."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Live Details Stay Current",
+              "body": "Service times, line operations, and ticket rules need current checks. The stable claim is the station name and central role."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

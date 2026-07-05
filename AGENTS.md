@@ -93,7 +93,8 @@ Rules:
 - `native-ios/scripts/generate-authored-tier-one-pages.js` generates the authored Tier 1 listing-page resource and audio audit from `content-draft/viet/listing-pages/**`.
 - Phrase/listing navigation is a canonical page graph, not a strict parent-child tree. Each traveler-facing phrase page has one stable page ID, and search, browse, related rows, and "ways to say it" links must all point to that canonical page instead of creating duplicate pages for the same phrase.
 - Entity/place pages should not inflate the app by surfacing every generated `action + place` row as catalog inventory. Follow `docs/content/ENTITY_TEMPLATE_PHRASE_POLICY.md`: Browse/Home/city/category surfaces are entity-first, `derived-place-phrases` stay hidden from top-level shelves, and those helper rows surface only for explicit action search, intentional template UI, or Messages/Story flows.
-- Listing pages should follow the `speaklocal-listing-pages` skill: thoughtful offline "Different ways to say [phrase] in Vietnam" article pages with real traveler utility, not generic generated filler.
+- City/place app-detail work must start from `docs/design/city-pages/CURRENT_CITY_PAGE_STANDARD.md`. The current standard is `speaklocal.place.app-detail.v2.2`; older city-v1, mobile-first/expanded-detail, and fixed-section city-library models are legacy references only.
+- Canonical phrase listing pages should follow the `speaklocal-listing-pages` skill for thoughtful offline "Different ways to say [phrase] in Vietnam" article pages with real traveler utility. For city/place app-detail work, that skill is mechanics-only for phrase/audio/routing/rendering; it is not the editorial authority.
 - Homepage phrase shelves should reuse existing Browse routes when they are genuinely close instead of creating duplicate category IDs. Current homepage shelf routing contract:
   - `Essentials` -> `.category("essentials")`
   - `First Day in Vietnam` -> `.category("first-day")`

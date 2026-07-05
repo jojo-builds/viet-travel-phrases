@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-mone-numb-pric-i-need-smaller-bills",
-  "phraseText": "Tôi cần hóa đơn nhỏ hơn",
+  "phraseText": "Tôi cần tiền mệnh giá nhỏ hơn",
   "englishTitle": "I need smaller bills",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -15,7 +15,8 @@
     ]
   },
   "notes": [
-    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources.",
+    "Phrase-copy semantic repair; reviewed tokens updated and audio marked for regeneration."
   ],
   "tokens": [
     {
@@ -30,25 +31,24 @@
     },
     {
       "id": "chunk-3",
-      "vietnamese": "hóa đơn",
-      "english": "receipt / invoice",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "tiền mệnh giá",
+      "english": "denomination money",
+      "keepTogetherReason": "cash-denomination phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "nhỏ",
-      "english": "small"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "hơn",
-      "english": "more"
+      "vietnamese": "nhỏ hơn",
+      "english": "smaller",
+      "keepTogetherReason": "comparative phrase"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi cần hóa đơn nhỏ hơn",
+      "vietnamese": "Tôi cần tiền mệnh giá nhỏ hơn",
       "english": "I need smaller bills",
-      "audioKey": "v500-mone-numb-pric-i-need-smaller-bills"
+      "audioKey": null
     }
-  ]
+  ],
+  "title": "Tôi cần tiền mệnh giá nhỏ hơn",
+  "summary": "I need smaller bills",
+  "pronunciation": "Toi can tien menh gia nho hon"
 }

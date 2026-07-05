@@ -26,23 +26,14 @@
     {
       "id": "chunk-2",
       "vietnamese": "gợi ý",
-      "english": "suggestion",
-      "keepTogetherReason": "compound noun"
+      "english": "suggest / recommend",
+      "keepTogetherReason": "recommendation verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "gì",
-      "english": "what"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đây?",
-      "english": "here / this"
+      "vietnamese": "gì ở đây?",
+      "english": "what here?",
+      "keepTogetherReason": "what-here phrase"
     },
     {
       "id": "full",

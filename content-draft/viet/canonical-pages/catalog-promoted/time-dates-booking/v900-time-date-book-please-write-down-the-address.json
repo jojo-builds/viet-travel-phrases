@@ -7,7 +7,7 @@
   "title": "Hãy ghi lại địa chỉ",
   "englishTitle": "Please write down the address",
   "pronunciation": "Hay ghi lai dia chi",
-  "summary": "Please write down the address",
+  "summary": "Ask someone to write the address so you can show it to a driver, hotel desk, or map search.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy ghi lại địa chỉ is a practical time, date, or booking phrase for keeping one travel detail clear. Use it when write down the address is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Good when pronunciation is difficult or the place name has several similar versions."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hãy ghi lại địa chỉ. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Hand over your phone, paper, or booking screen so they can write the exact address.",
       "phrases": [
         {
           "id": "v900-time-date-book-please-write-down-the-address",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Ghi lại địa chỉ is the write-down-the-address core.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please write down the address to another time, date, or booking need.",
+      "body": "Time, today, and tomorrow cards help if the address is tied to an appointment or pickup.",
       "phrases": [
         {
           "id": "time-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when write down the address is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best before leaving a counter, hotel, restaurant, or tour desk."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "A written address travels better than a half-heard name in a noisy street."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hãy ghi lại địa chỉ.",
+      "body": "Booking, opening-time, and move-it-later cards help if the address belongs to a reservation.",
       "phrases": [
         {
           "id": "time-4",

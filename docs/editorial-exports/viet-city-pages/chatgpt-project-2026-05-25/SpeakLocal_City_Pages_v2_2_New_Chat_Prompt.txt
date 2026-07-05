@@ -1,0 +1,37 @@
+# New Chat Prompt for This Project
+
+Pick 5 city listings from the ledger whose status is `not_started` or `voice_rejected_rewrite`. Use 10 only when Jojo asks or all listings are easy/low-research. If Codex provides an exact claimed batch list, use those rows only and do not pick replacements.
+
+Before writing, read:
+- the v2.2 Source Bundle,
+- the Copy Ledger and Catalogs spreadsheet,
+- the Canonical 31 examples inside the source bundle,
+- the Phrase Picker Ready Audio tab,
+- the Menu Catalog tab if any listing is food, drink, cafe, restaurant, dessert, market, or shop related.
+
+For each listing, choose one owned traveler moment and one truthful story spine before writing. The story spine is the small local, cultural, city, route, food, neighborhood, or place-memory reason this page belongs here. Weave it into the intro or one early section; do not add a literal `Story` section unless the page naturally needs it.
+
+For each listing, write one v2.2 app-detail draft. Use existing ready-audio phrase IDs when possible. Use existing menu/catalog items when natural. Do not invent facts. Do not write like a QA form.
+
+Output in a readable review format first, not JSON. Start with a clean reader view that contains only app-visible copy. Put schema fields, self-score, QA, source notes, freshness notes, phrase/audio status, and Mentioned Here mapping after the reader view.
+
+Self-score each draft against v2.2 voice and revise the weakest visible lines before final output. The score is an internal drafting aid only; the output remains draft/review material for later Jojo/Codex approval, import, and production validation.
+
+Batch 003-012 audit tightening:
+- Phrase cards are for reusable traveler actions, not place-name recognition. Even if a place-name audio row exists, keep it as pronunciation/name support unless the traveler would naturally say that exact name to staff or a driver in this moment and no reusable ready-audio phrase fits.
+- Vary headings. Do not default to `Let...`, `Start with...`, `Good when...`, `Still worth...`, or `works best`. If two headings in a batch share that scaffold, revise one before final.
+- If a score is below 28/30, or if the first screen sounds like a planning database, revise the visible heading and first paragraph once before outputting the final answer.
+- Keep public URLs and `utm_source=chatgpt.com` links out of the final batch unless explicitly requested. Source labels are enough for review.
+- Do not include Markdown links, citation/source chips, pasted-text chips, or clickable Google Doc/Sheet references anywhere in the final batch output, including implementation notes. Start with the batch title, not a "source grounding" paragraph.
+- Keep implementation notes compact and import-facing. Use plain source labels only.
+- Do not number visible listing headings. Use the place heading directly, not `1. Place Name`.
+- Do not wrap phrase-card Vietnamese in quotation marks unless the phrase truly contains a quote.
+- Keep `check_catalog`, `not_run`, scores, source notes, freshness risks, QA notes, and schema/process terms out of Reader View.
+- Do not put generic export labels like `Sections` or bare `Phrase cards` into app-visible fields. If you need a review label, keep it outside Reader View; if the app needs a phrase-card label, use `Useful phrase cards`.
+- For station, airport, route, and street pages, make each page own a specific traveler moment instead of repeating generic command headings.
+- If a page reads as clean utility but carries no story, revise the first screen before final output.
+- If the same three phrase cards repeat from another page in this batch, swap one card for a better reusable ready-audio fit, justify the repeat, or mark the page as needing revision.
+- Run a cadence pass before final output. If headings cluster around the same command verbs (`Keep`, `Choose`, `Pick`, `Pair`, `Leave`, `Read`, `Watch`, `Ask`, `Confirm`), revise the cluster into more observed, page-specific headings.
+- If the row is thin-source, shrink the claim or mark it as blocked. Do not fill gaps with generic props like signs, benches, bags, awnings, shopfronts, or "confirm the name" unless the evidence supports that actual page.
+- Before final output, do one display sweep for these formatting and Reader View leaks.
+- If the session cannot output the full batch, say `BLOCKED_STUB` and why instead of giving a partial response.

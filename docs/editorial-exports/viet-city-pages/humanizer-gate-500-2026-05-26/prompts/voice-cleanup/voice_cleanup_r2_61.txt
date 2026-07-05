@@ -1,0 +1,113 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 1
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_61",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 1,
+    "returnedReplacementCount": 1,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_61",
+  "chunks": [
+    {
+      "chunkFile": "hue_001_025_humanized.json",
+      "cityID": "hue",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-hue-place-dai-nam-restaurant",
+          "message": "banned visible fragment: fits when"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "001-025",
+          "message": "repeated formula heading 10x: generic name-card heading"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hue-place-dai-nam-restaurant",
+          "summary": "Dai Nam Restaurant is a classic Hue meal stop near Citadel-side context, with an stop area, wooden interior glimpsed through doors, and a settled table.",
+          "context": "The restaurant story here is about house dishes, menu detail, staff rhythm, drinks, and a meal that stays tied to Hue’s old-city side.",
+          "tip": "Nhà hàng Đại Nam is the name to recognize at the door or in directions; it helps separate the restaurant from a generic Dai Nam reference.",
+          "rationale": "Dai Nam Restaurant gives a heritage-day route a grounded meal option when staying near Citadel walls feels easier than crossing town.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Classic Meal Near The Walls",
+              "body": "Dai Nam Restaurant fits when you want a seated Hue meal near Citadel-side movement. The doorway and wooden interior make the stop feel rooted."
+            },
+            {
+              "id": "place-brief",
+              "title": "Table Before Menu Rush",
+              "body": "Settle before ordering widely. A classic room can make the meal feel calmer when the day has been full of gates and walls."
+            },
+            {
+              "id": "quick-say",
+              "title": "Restaurant Name To Match",
+              "body": "Say Nhà hàng Đại Nam when asking for the restaurant. Nhà hàng makes clear that you mean the dining place."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After A Citadel Block",
+              "body": "The restaurant pairs naturally with a heritage-heavy route, especially when crossing town for dinner sounds like too much."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Menu Leads",
+              "body": "The menu in front of you should decide the meal. Stable details are the classic setting and Citadel-side usefulness."
+            },
+            {
+              "id": "good-to-know",
+              "title": "A Grounded Stop, Not A Claim",
+              "body": "Avoid treating it as a grand dining statement. The value is a readable Hue restaurant in the right part of the day."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

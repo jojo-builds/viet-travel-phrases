@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-heal-phar-i-hurt-my-arm",
-  "phraseText": "tôi bị thương ở tay",
+  "phraseText": "Tôi bị thương ở tay",
   "englishTitle": "I hurt my arm",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,32 +20,19 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi bị thương",
+      "english": "I am injured",
+      "keepTogetherReason": "injury phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "thương",
-      "english": "injury / love"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tay",
-      "english": "hand"
+      "vietnamese": "ở tay",
+      "english": "in the arm or hand area",
+      "keepTogetherReason": "body-area phrase"
     },
     {
       "id": "full",
-      "vietnamese": "tôi bị thương ở tay",
+      "vietnamese": "Tôi bị thương ở tay",
       "english": "I hurt my arm",
       "audioKey": "v900-heal-phar-i-hurt-my-arm"
     }

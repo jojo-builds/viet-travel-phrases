@@ -22,7 +22,7 @@
       "id": "chunk-1",
       "vietnamese": "Điểm đón",
       "english": "pickup point",
-      "keepTogetherReason": "compound noun"
+      "keepTogetherReason": "pickup-point phrase"
     },
     {
       "id": "chunk-2",
@@ -32,8 +32,8 @@
     {
       "id": "chunk-3",
       "vietnamese": "ở đâu?",
-      "english": "where",
-      "keepTogetherReason": "fixed place question"
+      "english": "where?",
+      "keepTogetherReason": "where-question ending"
     },
     {
       "id": "full",

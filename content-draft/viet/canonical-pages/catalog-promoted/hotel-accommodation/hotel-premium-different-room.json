@@ -7,7 +7,7 @@
   "title": "Tôi đã đặt một phòng khác.",
   "englishTitle": "I booked a different room.",
   "pronunciation": "Toi da dat mot phong khac",
-  "summary": "I booked a different room.",
+  "summary": "For telling the front desk the room assigned does not match the room you booked.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi đã đặt một phòng khác. is a practical hotel or stay phrase for keeping one travel detail clear. Use it when I booked a different room is the next detail to solve and a short answer would move the exchange forward."
+      "body": "The booking screen, room type, bed setup, or confirmation email is the proof."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi đã đặt một phòng khác.. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say the phrase before unpacking. Then show the booking so the desk can compare the room type.",
       "phrases": [
         {
           "id": "hotel-premium-different-room",
@@ -42,129 +42,129 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi đã đặt means I booked; một phòng khác means a different room.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi đã đặt",
-          "english": "book / reserve",
-          "audioKey": null
+          "english": "I booked",
+          "keepTogetherReason": "I-booked phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "một phòng khác",
-          "english": "a different room",
-          "audioKey": null
+          "vietnamese": "một phòng khác.",
+          "english": "a different room.",
+          "keepTogetherReason": "different-room phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi đã đặt một phòng khác.",
-          "english": "I booked a different room",
-          "audioKey": null
+          "english": "I booked a different room.",
+          "audioKey": "hotel-premium-different-room"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I booked a different room. to another hotel or stay need.",
+      "body": "Not the room I booked, booking wrong, and booked online phrases help prove the mismatch.",
       "phrases": [
         {
-          "id": "hotel-1",
-          "vietnamese": "Tôi có đặt phòng",
-          "english": "I have a reservation",
-          "pronunciation": "toy koh dat fong",
+          "id": "v900-hote-acco-this-is-not-the-room-i-booked",
+          "vietnamese": "Đây không phải là phòng tôi đã đặt",
+          "english": "This is not the room I booked",
+          "pronunciation": "Day khong phai la phong toi da dat",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-1",
-          "audioKey": "hotel-1"
+          "detailPageID": "viet-phrase-v900-hote-acco-this-is-not-the-room-i-booked",
+          "audioKey": "v900-hote-acco-this-is-not-the-room-i-booked"
         },
         {
-          "id": "hotel-2",
-          "vietnamese": "Cho tôi nhận phòng",
-          "english": "I’d like to check in",
-          "pronunciation": "cho toy nyun fong",
+          "id": "hotel-premium-booking-wrong",
+          "vietnamese": "Tôi nghĩ có vấn đề với việc đặt phòng của tôi.",
+          "english": "I think there is a problem with my booking.",
+          "pronunciation": "Toi nghi co van de voi viec dat phong cua toi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-2",
-          "audioKey": "hotel-2"
+          "detailPageID": "viet-phrase-hotel-premium-booking-wrong",
+          "audioKey": "hotel-premium-booking-wrong"
         },
         {
-          "id": "hotel-check-in-polite",
-          "vietnamese": "Cho tôi nhận phòng nhé",
-          "english": "I’d like to check in, please",
-          "pronunciation": "cho toy nyun fong nhe",
+          "id": "v500-hote-acco-i-booked-online",
+          "vietnamese": "Tôi đã đặt trực tuyến",
+          "english": "I booked online",
+          "pronunciation": "Toi da dat truc tuyen",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-check-in-polite",
-          "audioKey": "hotel-check-in-polite"
+          "detailPageID": "viet-phrase-v500-hote-acco-i-booked-online",
+          "audioKey": "v500-hote-acco-i-booked-online"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when i booked a different room is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotel desks, guesthouses, homestays, and serviced apartments when the assigned room feels wrong."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "Stay specific: room type, bed count, window, floor, or booking photo. That is easier to fix than a long complaint."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi đã đặt một phòng khác..",
+      "body": "Change rooms, see the room first, nearby rooms, two beds, and room refund phrases cover the next front-desk move.",
       "phrases": [
         {
-          "id": "hotel-3",
-          "vietnamese": "Mấy giờ trả phòng?",
-          "english": "What time is check-out?",
-          "pronunciation": "may zyuh tra fong",
+          "id": "v500-hote-acco-can-i-change-rooms",
+          "vietnamese": "Tôi có thể đổi phòng được không?",
+          "english": "Can I change rooms?",
+          "pronunciation": "Toi co the doi phong duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-3",
-          "audioKey": "hotel-3"
+          "detailPageID": "viet-phrase-v500-hote-acco-can-i-change-rooms",
+          "audioKey": "v500-hote-acco-can-i-change-rooms"
         },
         {
-          "id": "hotel-quiet-room",
-          "vietnamese": "Cho tôi phòng yên tĩnh được không?",
-          "english": "Can I have a quiet room?",
-          "pronunciation": "cho toy fong yen tinh dook khong",
+          "id": "v900-hote-acco-can-i-see-the-room-first",
+          "vietnamese": "Tôi có thể xem phòng trước được không?",
+          "english": "Can I see the room first?",
+          "pronunciation": "Toi co the xem phong truoc duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-quiet-room",
-          "audioKey": "hotel-quiet-room"
+          "detailPageID": "viet-phrase-v900-hote-acco-can-i-see-the-room-first",
+          "audioKey": "v900-hote-acco-can-i-see-the-room-first"
         },
         {
-          "id": "hotel-checkout",
-          "vietnamese": "Cho tôi trả phòng",
-          "english": "I’d like to check out",
-          "pronunciation": "cho toy tra fong",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-hote-acco-can-you-put-us-in-nearby-rooms",
+          "vietnamese": "Bạn có thể xếp phòng gần nhau cho chúng tôi không?",
+          "english": "Can you put us in nearby rooms?",
+          "pronunciation": "Ban co the xep phong gan nhau cho chung toi khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-checkout",
-          "audioKey": "hotel-checkout"
+          "detailPageID": "viet-phrase-v900-hote-acco-can-you-put-us-in-nearby-rooms",
+          "audioKey": null
         },
         {
-          "id": "hotel-4",
-          "vietnamese": "Phòng này nóng quá",
-          "english": "This room is too hot",
-          "pronunciation": "fong nai nong gwah",
+          "id": "v900-hote-acco-can-i-have-a-room-with-two-beds",
+          "vietnamese": "Tôi có thể đặt một phòng có hai giường được không?",
+          "english": "Can I have a room with two beds?",
+          "pronunciation": "Toi co the dat mot phong co hai giuong duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-4",
-          "audioKey": "hotel-4"
+          "detailPageID": "viet-phrase-v900-hote-acco-can-i-have-a-room-with-two-beds",
+          "audioKey": "v900-hote-acco-can-i-have-a-room-with-two-beds"
         },
         {
-          "id": "hotel-5",
-          "vietnamese": "Máy lạnh không chạy",
-          "english": "The air conditioner isn’t working",
-          "pronunciation": "mai lanh khong chai",
+          "id": "v900-hote-acco-can-i-get-a-refund-for-the-room",
+          "vietnamese": "Tôi có thể được hoàn lại tiền phòng không?",
+          "english": "Can I get a refund for the room?",
+          "pronunciation": "Toi co the duoc hoan lai tien phong khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-5",
-          "audioKey": "hotel-5"
+          "detailPageID": "viet-phrase-v900-hote-acco-can-i-get-a-refund-for-the-room",
+          "audioKey": "v900-hote-acco-can-i-get-a-refund-for-the-room"
         }
       ]
     }

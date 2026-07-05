@@ -22,19 +22,19 @@
       "id": "chunk-1",
       "vietnamese": "Điện thoại",
       "english": "phone",
-      "keepTogetherReason": "compound noun"
+      "keepTogetherReason": "phone noun"
     },
     {
       "id": "chunk-2",
       "vietnamese": "của tôi",
       "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
+      "keepTogetherReason": "my phrase"
     },
     {
       "id": "chunk-3",
       "vietnamese": "bị mất",
-      "english": "is missing / lost",
-      "keepTogetherReason": "fixed problem phrase"
+      "english": "is lost / missing",
+      "keepTogetherReason": "lost/missing phrase"
     },
     {
       "id": "full",

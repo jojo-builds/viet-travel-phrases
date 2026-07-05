@@ -7,7 +7,7 @@
   "title": "Người lái xe rời đi mà không có tôi",
   "englishTitle": "The driver left without me",
   "pronunciation": "Nguoi lai xe roi di ma khong co toi",
-  "summary": "The driver left without me",
+  "summary": "For explaining a missed pickup when the driver has already gone.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Người lái xe rời đi mà không có tôi is a practical transport phrase for keeping one travel detail clear. Use it when driver left without me is the next detail to solve and a short answer would move the exchange forward."
+      "body": "This is a recovery line for a ride, shuttle, tour pickup, or transfer that left while you were not onboard."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Người lái xe rời đi mà không có tôi. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the booking or ride screen first. Keep the tone factual so the next step can be a call, refund, or new pickup.",
       "phrases": [
         {
           "id": "v900-tran-the-driver-left-without-me",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Người lái xe is the driver; rời đi means left; không có tôi means without me.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -52,14 +52,14 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "rời đi mà",
-          "english": "go / move",
+          "vietnamese": "rời đi",
+          "english": "left",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "không có tôi",
-          "english": "yes/no question",
+          "english": "without me",
           "audioKey": null
         },
         {
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from The driver left without me to another transport need.",
+      "body": "Destination lines help if the next step is finding the driver or arranging another ride.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when driver left without me is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotel pickups, tour meeting points, ride-app stops, shuttle desks, and station transfers."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Ask staff to call the driver before booking a second ride; the pickup may still be nearby."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Người lái xe rời đi mà không có tôi.",
+      "body": "Stop, route, air-con, wait, and cash lines help if the conversation turns into a new ride.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

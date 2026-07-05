@@ -7,7 +7,7 @@
   "title": "Tôi quẹt thẻ được không?",
   "englishTitle": "Can I pay by card?",
   "pronunciation": "toy quet teh dook khong",
-  "summary": "Tôi quẹt thẻ được không? means “Can I pay by card?”",
+  "summary": "For checking card payment before the cashier, driver, or counter staff expects cash.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi quẹt thẻ được không? when you need \"Can I pay by card\". This comes before checkout if you are not sure cards are accepted. This helps when you do not want to reach the register and stall out. Listen for a yes/no answer, a gesture toward the item, or a short alternative; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Ask before the total is final if no card reader, QR stand, or payment sticker is obvious.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
+      "body": "Tôi marks your payment; quẹt thẻ means swipe or pay by card; được không? asks if it is possible.",
       "breakdown": [
         {
           "id": "store-6-piece-1",
@@ -57,12 +59,13 @@
           "audioKey": "store-6"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi quẹt thẻ được không? as your first sentence for \"Can I pay by card\". This comes before checkout if you are not sure cards are accepted. Pause after the phrase and listen for a yes/no answer, a gesture toward the item, or a short alternative. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Keep the bill, item, or ride screen visible. The question is about payment method, not the price itself.",
       "phrases": [
         {
           "id": "store-6",
@@ -75,18 +78,21 @@
           "audioKey": "store-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Everyday service phrases keep quick errands smooth without needing a full conversation. For \"Can I pay by card\", Tôi quẹt thẻ được không? makes the next step easier to answer. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
-      "presentation": "plain-text"
+      "body": "Cash is still common in small shops, rides, markets, and guesthouses. This phrase checks the payment lane before the moment gets awkward.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Local Services & Everyday Tasks, the reply often comes as a yes/no answer, a gesture toward the item, or a short alternative. Say Tôi quẹt thẻ được không? once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Watch for a nod, a card machine, a QR code, a cash-only answer, or request to wait. Move to the follow-up card that matches buying, printing, laundry, payment, or repair.",
       "phrases": [
         {
           "id": "store-1",
@@ -119,12 +125,13 @@
           "audioKey": "store-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This comes before checkout if you are not sure cards are accepted. It fits buying small items, receipts, bags, and everyday errands, especially when the next step is a yes/no answer, a gesture toward the item, or a short alternative. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
+      "body": "Good at shops, clinics, laundry counters, hotels, ticket desks, and cafes before you commit to paying.",
       "phrases": [
         {
           "id": "store-4",
@@ -157,18 +164,21 @@
           "audioKey": "store-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "If the item is not available, ask for a nearby alternative instead of repeating the same phrase.",
-      "presentation": "tip-callout"
+      "body": "If they say cash only, move to ATM, small-bill, or total-price cards instead of asking the same question again.",
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Point to the item or show a photo when you can. It avoids guessing from pronunciation alone.",
+      "body": "Show the card or phone wallet only after the answer is positive. It keeps the question calm and practical.",
       "phrases": [
         {
           "id": "v500-loca-serv-ever-task-where-can-i-buy-water",
@@ -181,12 +191,13 @@
           "audioKey": "v500-loca-serv-ever-task-where-can-i-buy-water"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Receipt, total-price, ATM, cash, and small-bill cards sit close by once payment starts.",
       "phrases": [
         {
           "id": "store-1",
@@ -259,7 +270,8 @@
           "audioKey": "v500-loca-serv-ever-task-where-can-i-buy-water"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

@@ -7,7 +7,7 @@
   "title": "Hôm nay có mở cửa không?",
   "englishTitle": "Is it open today?",
   "pronunciation": "Hom nay co mo cua khong",
-  "summary": "Is it open today?",
+  "summary": "For checking today's opening before you make the trip.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hôm nay có mở cửa không? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Is it open today is right."
+      "body": "Ask before leaving the hotel, walking across town, or paying for a ride."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use Hôm nay có mở cửa không? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "body": "Show the place, ticket, booking, or map listing. The answer may be yes, closed, later, or a different entrance.",
       "phrases": [
         {
           "id": "v500-time-date-book-is-it-open-today",
@@ -42,32 +42,41 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hôm nay means today; có mở cửa means is open; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hôm nay có mở cửa",
-          "english": "open today",
+          "vietnamese": "Hôm nay",
+          "english": "today",
+          "keepTogetherReason": "today phrase",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "có mở cửa",
+          "english": "is open",
+          "keepTogetherReason": "open-status phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "Hôm nay có mở cửa không?",
-          "english": "Is it open today",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending",
           "audioKey": null
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "Hôm nay có mở cửa không?",
+          "english": "Is it open today?",
+          "audioKey": "v500-time-date-book-is-it-open-today"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is it open today? to another time, date, or booking need.",
+      "body": "If the answer changes the plan, ask what time, tomorrow, Monday closing, or whether there is a wait.",
       "phrases": [
         {
           "id": "time-1",
@@ -104,17 +113,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+      "body": "Good for museums, restaurants, shops, clinics, ticket desks, attractions, and small counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Times and dates are easiest when visible. Show the booking or calendar if the reply needs to be exact."
+      "body": "Hours can shift around holidays, weather, and family-run shops. A quick check can save a wasted ride."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hôm nay có mở cửa không?.",
+      "body": "Use what-time, tomorrow, change-time, closed-on-Monday, or wait follow-ups if the schedule needs another check.",
       "phrases": [
         {
           "id": "time-4",

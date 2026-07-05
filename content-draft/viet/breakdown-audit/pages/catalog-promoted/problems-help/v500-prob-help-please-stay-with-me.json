@@ -20,33 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Xin",
-      "english": "please / request"
+      "vietnamese": "Xin hãy",
+      "english": "please",
+      "keepTogetherReason": "polite request frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "hãy",
-      "english": "please do"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "lại",
-      "english": "again / back"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "với",
-      "english": "with / to"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "tôi",
-      "english": "I / me"
+      "vietnamese": "ở lại với tôi",
+      "english": "stay with me",
+      "keepTogetherReason": "stay-with-me phrase"
     },
     {
       "id": "full",

@@ -7,7 +7,7 @@
   "title": "Tôi chỉ có hóa đơn lớn",
   "englishTitle": "I only have large bills",
   "pronunciation": "Toi chi co hoa don lon",
-  "summary": "I only have large bills",
+  "summary": "For explaining that your cash is too large for the payment or change situation.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi chỉ có hóa đơn lớn is a practical money or price phrase for keeping one travel detail clear. Use it when I only have large bills is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it before handing over a big note at a stall, taxi, ticket window, or small shop."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi chỉ có hóa đơn lớn. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the cash and the price together. The answer may be smaller bills, card, QR, or no change.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-i-only-have-large-bills",
@@ -42,79 +42,79 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi chỉ có means I only have; hóa đơn lớn carries the large-bill idea in this line.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi chỉ có",
           "english": "I only have",
-          "audioKey": null
+          "keepTogetherReason": "I-only-have phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "hóa đơn lớn",
-          "english": "bill",
-          "audioKey": null
+          "english": "large bills",
+          "keepTogetherReason": "large-bill phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi chỉ có hóa đơn lớn",
           "english": "I only have large bills",
-          "audioKey": null
+          "audioKey": "v500-mone-numb-pric-i-only-have-large-bills"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I only have large bills to another money or price need.",
+      "body": "Smaller-bills, exact-change, and receipt phrases cover the next cash step.",
       "phrases": [
         {
-          "id": "price-1",
-          "vietnamese": "Cái này bao nhiêu?",
-          "english": "How much is this?",
-          "pronunciation": "gai nai bao nyew",
+          "id": "price-9",
+          "vietnamese": "Có tiền lẻ không?",
+          "english": "Do you have smaller bills?",
+          "pronunciation": "koh tyen leh khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-price-1",
-          "audioKey": "price-1"
+          "detailPageID": "viet-phrase-price-9",
+          "audioKey": "price-9"
         },
         {
-          "id": "money-how-much-common",
-          "vietnamese": "Cái này nhiêu tiền?",
-          "english": "How much is this?",
-          "pronunciation": "gai nai nyew tyen",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v500-mone-numb-pric-i-need-smaller-bills",
+          "vietnamese": "Tôi cần tiền mệnh giá nhỏ hơn",
+          "english": "I need smaller bills",
+          "pronunciation": "Toi can tien menh gia nho hon",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-money-how-much-common",
-          "audioKey": "money-how-much-common"
+          "detailPageID": "viet-phrase-v500-mone-numb-pric-i-need-smaller-bills",
+          "audioKey": null
         },
         {
-          "id": "price-2",
-          "vietnamese": "Bao nhiêu một ký?",
-          "english": "How much per kilo?",
-          "pronunciation": "bao nyew mot kee",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v500-mone-numb-pric-do-i-need-exact-change",
+          "vietnamese": "Tôi có cần trả đúng tiền không?",
+          "english": "Do I need exact change?",
+          "pronunciation": "Toi co can tra dung tien khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-price-2",
-          "audioKey": "price-2"
+          "detailPageID": "viet-phrase-v500-mone-numb-pric-do-i-need-exact-change",
+          "audioKey": null
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when i only have large bills is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good when the amount is small and your available note may be hard for the other person to break."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+      "body": "Small stalls and drivers may not have change for a large note. Show the cash before the payment gets awkward."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi chỉ có hóa đơn lớn.",
+      "body": "Too-expensive, lower-price, final-price, show-another, and take-this phrases cover the rest of the payment flow.",
       "phrases": [
         {
           "id": "price-3",

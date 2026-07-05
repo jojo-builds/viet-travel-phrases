@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-phon-inte-powe-the-app-says-my-driver-is-here-but-i-cant-find-t",
-  "phraseText": "Ứng dụng cho biết trình điều khiển của tôi có ở đây nhưng tôi không thể tìm thấy chúng.",
+  "phraseText": "Ứng dụng báo tài xế đã đến, nhưng tôi chưa thấy tài xế.",
   "englishTitle": "The app says my driver is here, but I can't find them.",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,70 +20,26 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Ứng dụng",
-      "english": "app",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "Ứng dụng báo",
+      "english": "the app says",
+      "keepTogetherReason": "reporting phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cho biết",
-      "english": "says / tells",
-      "keepTogetherReason": "compound reporting verb"
+      "vietnamese": "tài xế đã đến,",
+      "english": "the driver has arrived",
+      "keepTogetherReason": "arrival status phrase"
     },
     {
-      "id": "chunk-4",
-      "vietnamese": "trình điều khiển",
-      "english": "driver",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "có ở đây",
-      "english": "is here",
-      "keepTogetherReason": "fixed location phrase"
-    },
-    {
-      "id": "chunk-9",
-      "vietnamese": "nhưng",
-      "english": "but"
-    },
-    {
-      "id": "chunk-10",
-      "vietnamese": "tôi",
-      "english": "I / me"
-    },
-    {
-      "id": "chunk-11",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-12",
-      "vietnamese": "thể",
-      "english": "can / able to"
-    },
-    {
-      "id": "chunk-13",
-      "vietnamese": "tìm thấy",
-      "english": "find",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-14",
-      "vietnamese": "chúng.",
-      "english": "we"
+      "id": "chunk-3",
+      "vietnamese": "nhưng tôi chưa thấy tài xế.",
+      "english": "but I do not see the driver yet",
+      "keepTogetherReason": "contrast phrase"
     },
     {
       "id": "full",
-      "vietnamese": "Ứng dụng cho biết trình điều khiển của tôi có ở đây nhưng tôi không thể tìm thấy chúng.",
-      "english": "The app says my driver is here, but I can't find them.",
-      "audioKey": "v900-phon-inte-powe-the-app-says-my-driver-is-here-but-i-cant-find-t"
+      "vietnamese": "Ứng dụng báo tài xế đã đến, nhưng tôi chưa thấy tài xế.",
+      "english": "The app says my driver is here, but I can't find them."
     }
   ]
 }

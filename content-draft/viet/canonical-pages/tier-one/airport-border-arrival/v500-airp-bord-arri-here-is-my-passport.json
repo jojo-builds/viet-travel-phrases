@@ -7,7 +7,7 @@
   "title": "Đây là hộ chiếu của tôi",
   "englishTitle": "Here is my passport",
   "pronunciation": "Day la ho chieu cua toi",
-  "summary": "Đây là hộ chiếu của tôi means “Here is my passport”.",
+  "summary": "Use this when you need to say here is my passport.",
   "iconName": "airplane.arrival",
   "tintName": "blue",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Đây là hộ chiếu của tôi when you need \"Here is my passport\". Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint. Listen for a quick check, a stamp, a counter direction, or a request for one more document; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Use this when you are showing a document or item. The phrase points to it, names it, then marks it as yours.",
+      "body": "Hear Đây + là as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "v500-airp-bord-arri-here-is-my-passport-piece-1",
@@ -57,12 +59,13 @@
           "audioKey": "v500-airp-bord-arri-here-is-my-passport"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Đây là hộ chiếu của tôi as your first sentence for \"Here is my passport\". Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint. Pause after the phrase and listen for a quick check, a stamp, a counter direction, or a request for one more document. Keep your passport, visa, baggage tag, pickup message, or SIM details visible when staff need to match the phrase to a real item.",
+      "body": "Say Đây là hộ chiếu của tôi first; let the passport, baggage tag, flight detail, or pickup screen support the reply.",
       "phrases": [
         {
           "id": "v500-airp-bord-arri-here-is-my-passport",
@@ -75,18 +78,21 @@
           "audioKey": "v500-airp-bord-arri-here-is-my-passport"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Airport phrases help staff route you to the next counter or service without a long explanation. For \"Here is my passport\", Đây là hộ chiếu của tôi makes the next step easier to answer. Keep the document open to the photo page or relevant line while staff check it.",
-      "presentation": "plain-text"
+      "body": "Airport phrases help staff route you to the next counter or service without a long explanation. Keep the passport, baggage tag, flight detail, or pickup screen ready so the other person can act on the same detail.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Airport Border Arrival, the reply often comes as a quick check, a stamp, a counter direction, or a request for one more document. Say Đây là hộ chiếu của tôi once, pause, and watch for the reply. Keep your passport, visa, baggage tag, pickup message, or SIM details visible when staff need to match the phrase to a real item.",
+      "body": "Watch for a quick check, a stamp, a counter direction, or request for one more document. Move to the follow-up card that matches documents, baggage, pickup, SIM, or transport.",
       "phrases": [
         {
           "id": "airport-1",
@@ -119,12 +125,13 @@
           "audioKey": "airport-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint. It fits arrival, immigration, baggage, SIM cards, pickup, and airport services, especially when the next step is a quick check, a stamp, a counter direction, or a request for one more document. Keep the document open to the photo page or relevant line while staff check it.",
+      "body": "Use this during arrival, transfers, baggage, pickups, or airport services when you need the next checkpoint. Watch for a quick check, a stamp, a counter direction, or request for one more document.",
       "phrases": [
         {
           "id": "airport-5",
@@ -157,13 +164,16 @@
           "audioKey": "v500-airp-bord-arri-here-is-my-visa"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Airport staff may answer by pointing. Follow the gesture first, then ask again if the next step is still unclear.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -181,12 +191,13 @@
           "audioKey": "v500-airp-bord-arri-where-is-the-atm"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "These nearby cards cover where is immigration?; where is baggage claim?; where can I buy a SIM card?",
       "phrases": [
         {
           "id": "airport-1",
@@ -259,7 +270,8 @@
           "audioKey": "v500-airp-bord-arri-where-is-the-atm"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

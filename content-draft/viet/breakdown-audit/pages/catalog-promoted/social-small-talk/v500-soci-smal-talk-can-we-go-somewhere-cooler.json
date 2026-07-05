@@ -20,46 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Chúng ta",
-      "english": "we / us",
-      "keepTogetherReason": "pronoun phrase"
+      "vietnamese": "Chúng ta có thể",
+      "english": "can we",
+      "keepTogetherReason": "can-we phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "đi đâu đó",
+      "english": "go somewhere",
+      "keepTogetherReason": "go-somewhere phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đi",
-      "english": "go"
+      "vietnamese": "mát mẻ hơn",
+      "english": "cooler",
+      "keepTogetherReason": "cooler-place phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "đâu",
-      "english": "where"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đó",
-      "english": "that"
-    },
-    {
-      "vietnamese": "mát mẻ",
-      "english": "cooler / pleasantly cool",
-      "keepTogetherReason": "compound temperature adjective"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "hơn",
-      "english": "more"
-    },
-    {
-      "id": "chunk-9",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

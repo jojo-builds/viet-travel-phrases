@@ -20,19 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Phòng",
-      "english": "room"
+      "vietnamese": "Phòng thử đồ",
+      "english": "fitting room",
+      "keepTogetherReason": "fitting-room phrase"
     },
     {
-      "vietnamese": "thử đồ",
-      "english": "try on clothes",
-      "keepTogetherReason": "compound fitting action"
-    },
-    {
-      "id": "chunk-4",
+      "id": "chunk-2",
       "vietnamese": "ở đâu?",
-      "english": "where",
-      "keepTogetherReason": "fixed place question"
+      "english": "where?",
+      "keepTogetherReason": "where question"
     },
     {
       "id": "full",

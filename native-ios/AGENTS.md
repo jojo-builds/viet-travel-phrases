@@ -66,7 +66,8 @@ Content and listing-page rules:
 
 - `Xin chào` is the flagship visual/content rhythm.
 - Tier 1 pages should feel like thoughtful offline answers to "Different ways to say [phrase] in Vietnam."
-- Use the installed `speaklocal-listing-pages` skill when authoring, reviewing, or refactoring listing/detail pages.
+- Use the installed `speaklocal-listing-pages` skill for canonical phrase listing mechanics, phrase rows, audio links, routing, renderer behavior, and validation.
+- City/place app-detail pages are different from canonical phrase listing pages. For city/place app-detail copy or implementation, start from `../docs/design/city-pages/CURRENT_CITY_PAGE_STANDARD.md`; the current source/render contract is `speaklocal.place.app-detail.v2.2`.
 - Runtime copy remains offline; do not add runtime AI/network dependency for phrase content.
 - One phrase gets one canonical page ID. Search, browse, variants, Explore shelves, and row arrows should all route to that page.
 - Speaker icons imply playable bundled audio or a missing-audio audit item.
@@ -77,6 +78,7 @@ Design rules Jojo has locked in:
 
 - Native iOS feel is the product direction.
 - Back/search/bottom chrome should be glassy and visually static while content moves beneath it.
+- Do not make the light top chrome gradient an opaque white shield. If text is readable under fixed controls, fix scroll layout, capture offset, or control policy instead of strengthening `ChromeSeparationGradient`.
 - Search should feel like the bottom search island morphing into the search field.
 - Swipe back and swipe forward should feel like browser history; forward history clears after opening a new route.
 - The bottom toolbar and search island should stay compact and close enough to feel like one native control area without touching the device edge.
@@ -101,3 +103,4 @@ Verification expectations:
   - `xcodegen generate`
   - `xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' build`
 - For content/resource changes, regenerate the relevant resource and inspect the diff before committing.
+- After native chrome changes, run `node native-ios/scripts/guard-native-chrome.js`.

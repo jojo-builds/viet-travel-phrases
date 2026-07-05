@@ -1,0 +1,3395 @@
+{
+  "generatedAt": "2026-05-31T18:28:39.512Z",
+  "total": 520,
+  "flagged": 56,
+  "byCategory": {
+    "Arrival": 3,
+    "Attraction": 3,
+    "Dish": 6,
+    "Restaurant": 11,
+    "Landmark": 8,
+    "Cafe": 2,
+    "Market": 7,
+    "Nature": 2,
+    "Neighborhood": 2,
+    "Drink": 1,
+    "Station": 6,
+    "Park": 2,
+    "Street": 3
+  },
+  "results": [
+    {
+      "pageID": "city-danang-place-airport",
+      "id": "viet-family-city-danang-place-airport",
+      "city": "Đà Nẵng",
+      "category": "Arrival",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-airport",
+        "actual-landmarks"
+      ],
+      "title": "Sân bay Đà Nẵng",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "The Road In",
+          "body": "Da Nang begins at the airport threshold: luggage wheels, warm air, terminal signs, pickup decisions, and the road into the city."
+        },
+        "sections": [
+          {
+            "heading": "Arrival Brain On",
+            "body": "Before the city opens up, there are terminal signs, bags, warm air, and the pickup decision. Settle those, then Da Nang can begin."
+          },
+          {
+            "heading": "Pickup Before Coffee",
+            "body": "After baggage, solve the ride handoff. The airport is manageable, but tired people lose time when they leave the hall before knowing the pickup area."
+          },
+          {
+            "heading": "Terminal Clarity",
+            "body": "Domestic and international arrivals can mean different meeting spots. Check the terminal before giving directions or telling a driver where to wait."
+          },
+          {
+            "heading": "A Simple Arrival Plan",
+            "body": "The drive shows bridges, hotel blocks, and beach-side traffic before the city fully opens up. A simple next plan protects everyone's energy."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "airport-1",
+            "en": "Where is immigration?"
+          },
+          {
+            "phraseId": "airport-2",
+            "en": "Where is baggage claim?"
+          },
+          {
+            "phraseId": "airport-3",
+            "en": "Where can I buy a SIM card?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-ba-na-cable-car",
+      "id": "viet-family-city-danang-place-ba-na-cable-car",
+      "city": "Đà Nẵng",
+      "category": "Attraction",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-experience",
+        "content-role-experience",
+        "actual-landmarks"
+      ],
+      "title": "Cáp treo Bà Nà",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "The Climb Is The Moment",
+          "body": "The cable-car climb from Da Nang heat into forest, mist, cooler air, and the much larger Ba Na Hills production above the city on the mountain."
+        },
+        "sections": [
+          {
+            "heading": "Boarding Becomes The Memory",
+            "body": "The climb itself is the memory: cabins, forest below, mist on the glass, and the shift from city heat into mountain weather."
+          },
+          {
+            "heading": "Boarding Before Views",
+            "body": "Find the right line and meeting point before chasing photos. The ride feels easier once ticket, group, and return timing are clear early."
+          },
+          {
+            "heading": "Weather Changes Everything",
+            "body": "Cloud can make the cabin moody or hide the view completely. If the Golden Bridge matters, check the forecast before leaving Da Nang."
+          },
+          {
+            "heading": "Give It A Full Slot",
+            "body": "The cable car leads into Ba Na Hills, so treat it as the start of a full upper-level outing. Give the day room for the ride up, the crowds, and the ride down."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "sight-1",
+            "en": "How much is the ticket?"
+          },
+          {
+            "phraseId": "sight-2",
+            "en": "Where do we start?"
+          },
+          {
+            "phraseId": "sight-5",
+            "en": "Where is the meeting point?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-banh-trang-cuon-thit-heo",
+      "id": "viet-family-city-danang-place-banh-trang-cuon-thit-heo",
+      "city": "Đà Nẵng",
+      "category": "Dish",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "food-coffee",
+        "intermediate",
+        "city-page-kind-dish",
+        "place-kind-dish",
+        "content-role-dish",
+        "local-dishes"
+      ],
+      "title": "Bánh tráng cuốn thịt heo ở Đà Nẵng",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "The First Roll Sets It",
+          "body": "A slower Da Nang table ritual of pork, rice paper, herbs, noodles, and dipping sauce, where the first neat roll sets the meal's pace."
+        },
+        "sections": [
+          {
+            "heading": "Hands Need Order",
+            "body": "Let the table slow down for pork, rice paper, herbs, noodles, and sauce. One neat roll teaches the meal better than rushing."
+          },
+          {
+            "heading": "Check The Tray",
+            "body": "Look for pork, rice paper, herbs, noodles, and sauce before starting. A rushed roll becomes salad; a neat one gives every bite its balance."
+          },
+          {
+            "heading": "Sauce Leads The Meal",
+            "body": "If the dip is mam nem, expect salt, funk, and force. Touch the roll into the sauce first instead of soaking it."
+          },
+          {
+            "heading": "Light But Memorable",
+            "body": "It stays lighter than heavy beach food. It suits a late lunch or shared table after heat, when everyone wants something fresh but still local."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "food-menu",
+            "en": "Can I see the menu?"
+          },
+          {
+            "phraseId": "food-1",
+            "en": "One portion please"
+          },
+          {
+            "phraseId": "food-3",
+            "en": "Not spicy please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-bep-hen",
+      "id": "viet-family-city-danang-place-bep-hen",
+      "city": "Đà Nẵng",
+      "category": "Restaurant",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "title": "Bếp Hên",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Small House Dinner",
+          "body": "Bếp Hên is a 2025 MICHELIN Selected Da Nang restaurant for a warmer home-style meal: handwritten-menu energy, garlicky prawns, beef, greens, and shared plates in a smaller room."
+        },
+        "sections": [
+          {
+            "heading": "Read The Menu Slowly",
+            "body": "This is the kind of place where one good menu question matters. Choose a seafood dish, a meat dish, and greens before the table gets too wide."
+          },
+          {
+            "heading": "Garlic Leads First",
+            "body": "Garlicky prawns give Bếp Hên a clear food memory before the rest of the table fills in. Let that flavor set the order, then add quieter plates around it."
+          },
+          {
+            "heading": "Home-Style Over Polished",
+            "body": "The room feels personal before it feels formal. Choose it when Da Nang needs a dinner memory that is smaller, warmer, and away from big group-venue energy."
+          },
+          {
+            "heading": "Compare It With Madame Lân",
+            "body": "Madame Lân is the broader courtyard restaurant. Bếp Hên is the more intimate choice when the night leans into house dishes and shared plates."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "food-need-table",
+            "en": "A table for two, please"
+          },
+          {
+            "phraseId": "v900-food-drin-what-do-you-recommend",
+            "en": "What do you recommend?"
+          },
+          {
+            "phraseId": "coffee-7",
+            "en": "Please let me pay"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-moc-quan-seafood",
+      "id": "viet-family-city-danang-place-moc-quan-seafood",
+      "city": "Đà Nẵng",
+      "category": "Restaurant",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "title": "MỘC Quán Seafood",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Guided Seafood From The Tanks",
+          "body": "MỘC Quán Seafood is a 2025 MICHELIN Selected Da Nang table for choosing seafood from tanks, getting help with shellfish, and letting lobster in garlic butter carry the meal."
+        },
+        "sections": [
+          {
+            "heading": "Choose Before The Plate",
+            "body": "The important moment happens before cooking: tank, size, style, and price. Slow that down and the table gets easier."
+          },
+          {
+            "heading": "Garlic Butter Has A Job",
+            "body": "Lobster in garlic butter gives MỘC a richer food cue than plain grilled seafood. Let it be the centerpiece, then keep the rest of the order cleaner."
+          },
+          {
+            "heading": "Help With Shellfish",
+            "body": "Choose this when seafood feels exciting and slightly technical. If staff help with shells, let that make the meal calmer instead of rushing through the order."
+          },
+          {
+            "heading": "Compare It With Bé Mặn",
+            "body": "Bé Mặn is the louder seafood-display restaurant. MỘC is the clearer choice when the group wants seafood, guidance, and a slightly more composed table."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "price-2",
+            "en": "How much per kilo?"
+          },
+          {
+            "phraseId": "v900-food-drin-what-do-you-recommend",
+            "en": "What do you recommend?"
+          },
+          {
+            "phraseId": "food-6",
+            "en": "A spoon and chopsticks please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-bun-cha-ca-109",
+      "id": "viet-family-city-danang-place-bun-cha-ca-109",
+      "city": "Đà Nẵng",
+      "category": "Restaurant",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "title": "Bún Chả Cá 109",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "House-Made Fish-Cake Texture",
+          "body": "Bún Chả Cá 109 is a 2025 MICHELIN Bib Gourmand Da Nang bowl for house-made fried and steamed fish cakes, seafood broth, herbs, and a bright pineapple-tomato edge."
+        },
+        "sections": [
+          {
+            "heading": "Fish Cake Has Texture",
+            "body": "The reason to remember 109 goes past the soup name. Fried and steamed fish cakes give the bowl bounce, chew, and savory edges."
+          },
+          {
+            "heading": "Broth Has Fruit And Sea",
+            "body": "Pineapple and tomato keep the broth bright while tuna, mackerel, and crab give it depth. Taste before adding chili."
+          },
+          {
+            "heading": "One Bowl Can Lead",
+            "body": "This focused noodle-shop meal keeps seafood in one bowl. Let fish cake, broth, herbs, and noodles carry the table."
+          },
+          {
+            "heading": "Compare It With Hờn",
+            "body": "Bún Chả Cá Hờn is the cleaner fish-cake soup comparison. 109 leans harder into house-made fish-cake texture and a fuller bowl."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "food-menu",
+            "en": "Can I see the menu?"
+          },
+          {
+            "phraseId": "food-1",
+            "en": "One portion please"
+          },
+          {
+            "phraseId": "food-3",
+            "en": "Not spicy please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-banh-canh-yen",
+      "id": "viet-family-city-danang-place-banh-canh-yen",
+      "city": "Đà Nẵng",
+      "category": "Restaurant",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "title": "Bánh Canh Yến",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Thick Noodles, Hot Broth",
+          "body": "Bánh Canh Yến is a 2025 MICHELIN Selected Da Nang street-food stop for bánh canh: thick noodles, hot broth, toppings, herbs, and chili at the table."
+        },
+        "sections": [
+          {
+            "heading": "Texture Carries The Bowl",
+            "body": "Bánh canh is about the thick noodle as much as the broth. Let the first spoonful show the chew before adding chili or extra herbs."
+          },
+          {
+            "heading": "Ask Before Choosing",
+            "body": "If the toppings are not obvious, ask what they recommend. Start with one bowl, then adjust once the table rhythm is clear."
+          },
+          {
+            "heading": "Texture Changes The Meal",
+            "body": "Place it beside Da Nang's other bowls because the texture changes the meal. Mì Quảng is drier; bún riêu is brighter; bánh canh is thicker and warmer."
+          },
+          {
+            "heading": "Let The Bowl Carry It",
+            "body": "Remember it for the street-food comfort: thick noodles, hot broth, toppings, herbs, and a short meal that feels different from mì Quảng or fish-cake soup."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "food-menu",
+            "en": "Can I see the menu?"
+          },
+          {
+            "phraseId": "food-1",
+            "en": "One portion please"
+          },
+          {
+            "phraseId": "v900-food-drin-what-do-you-recommend",
+            "en": "What do you recommend?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-cathedral",
+      "id": "viet-family-city-danang-place-cathedral",
+      "city": "Đà Nẵng",
+      "category": "Landmark",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks"
+      ],
+      "title": "Nhà thờ Con Gà Đà Nẵng",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Slow Down Before The Door",
+          "body": "Da Nang's pink cathedral and rooster-topped local name cue, better approached as an active worship space before a photo backdrop downtown."
+        },
+        "sections": [
+          {
+            "heading": "Photo, Then Guest Mode",
+            "body": "The pink facade is the easy cue. If the doors are open, the visit shifts into respectful guest behavior around an active worship space."
+          },
+          {
+            "heading": "Facade First",
+            "body": "Take the street view before worrying about the interior. If the doors are open, lower your voice and the room decide how long you stay."
+          },
+          {
+            "heading": "The Rooster Name Cue",
+            "body": "Nha tho Con Ga is the local name many people recognize. It is handy for drivers, maps, and hearing it around town."
+          },
+          {
+            "heading": "Worship Space Stays Clear",
+            "body": "Avoid blocking aisles, doors, or services. The building can be a landmark, but the right behavior is still respectful guest mode."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "directions-1",
+            "en": "Excuse me, how do I get there?"
+          },
+          {
+            "phraseId": "sight-3",
+            "en": "Can I take photos here?"
+          },
+          {
+            "phraseId": "v500-dire-navi-can-i-walk-there",
+            "en": "Can I walk there?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-cong-caphe-bach-dang",
+      "id": "viet-family-city-danang-place-cong-caphe-bach-dang",
+      "city": "Đà Nẵng",
+      "category": "Cafe",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-cafe",
+        "content-role-cafe",
+        "restaurants"
+      ],
+      "title": "Cộng Cà Phê Bạch Đằng",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "The River Coffee Stop",
+          "body": "Cong Caphe Bach Dang is a river-side coffee break for heat, walking, bridge lights, iced drinks, and the green retro room slowing the next decision."
+        },
+        "sections": [
+          {
+            "heading": "Cold Coffee Fits The Heat",
+            "body": "Cà phê sữa đá is the easy first order for sweet, strong iced coffee. Bạc xỉu is softer; coconut coffee makes the stop closer to dessert."
+          },
+          {
+            "heading": "Seat Before Settling",
+            "body": "The better seat is the one that fits your energy: river-facing if it is open, cooler inside if the heat is heavy, or takeaway if the room is full."
+          },
+          {
+            "heading": "River Walk, Coffee Break",
+            "body": "This branch sits naturally beside Bạch Đằng Street, the Hàn River edge, or a bridge-light evening. Treat coffee as the hinge."
+          },
+          {
+            "heading": "The Seat Decides The Stop",
+            "body": "River-facing seats are a bonus, not the promise. Check the room when you arrive, then pick shade, air-conditioning, or takeaway."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "coffee-1",
+            "en": "One iced milk coffee please"
+          },
+          {
+            "phraseId": "v900-food-drin-one-hot-coffee-please",
+            "en": "One hot coffee, please"
+          },
+          {
+            "phraseId": "v900-food-drin-less-sugar-please",
+            "en": "Less sugar, please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-han-market",
+      "id": "viet-family-city-danang-place-han-market",
+      "city": "Đà Nẵng",
+      "category": "Market",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "shopping-markets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-market",
+        "actual-landmarks"
+      ],
+      "title": "Chợ Hàn",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "The Easy First Market",
+          "body": "Hàn Market is the central Da Nang market for one readable first lap: dried seafood, fish-sauce jars, fabric stalls, rattan bags, breakfast bowls, and price questions before the day gets busy."
+        },
+        "sections": [
+          {
+            "heading": "One Lap Before Buying",
+            "body": "Walk the food and goods areas once before choosing. You will see where people are eating, which stalls are gift-focused, and where the bargaining rhythm feels comfortable."
+          },
+          {
+            "heading": "Breakfast Makes It Matter",
+            "body": "The market has the most energy when food is still awake. Sit for mì Quảng, bánh bèo, or a small bánh xèo first, then browse fabric, dried food, and gifts with less pressure."
+          },
+          {
+            "heading": "Hàn For Bearings, Cồn For Snacks",
+            "body": "Hàn is the calmer first-market lap. Cồn is the louder food-market move for stools, steam, dessert cups, and cash-ready snacking once you want more texture."
+          },
+          {
+            "heading": "First Morning Fit",
+            "body": "This belongs on a first Da Nang morning, especially before gifts, beach plans, or a later Cồn Market food run. It gives the city a practical starting point."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "price-1",
+            "en": "How much is this?"
+          },
+          {
+            "phraseId": "price-4",
+            "en": "Can you lower it a little?"
+          },
+          {
+            "phraseId": "food-1",
+            "en": "One portion please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-helio-night-market",
+      "id": "viet-family-city-danang-place-helio-night-market",
+      "city": "Đà Nẵng",
+      "category": "Market",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "shopping-markets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-market",
+        "actual-landmarks"
+      ],
+      "title": "Chợ đêm Helio",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Food-Court Night With Breathing Room",
+          "body": "Helio Night Market is Da Nang's controlled food-court night: stalls, seating, music, lights, and less working-market pressure than tighter snack markets."
+        },
+        "sections": [
+          {
+            "heading": "One Lap Before The Tray",
+            "body": "Walk the stalls once before ordering. The first lap shows portions, seating, grills, drinks, and dessert counters before your hands are full."
+          },
+          {
+            "heading": "Rounds Beat A Full Table",
+            "body": "Begin with one dish or snack, then add a skewer, drink, or sweet cup after you see the size. Pricing feels easier when the first order stays small."
+          },
+          {
+            "heading": "Different Night Than Sơn Trà",
+            "body": "Sơn Trà pairs more easily with Dragon Bridge. Helio is the more controlled food-and-seating night when you want options, lower pressure, and music."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "price-1",
+            "en": "How much is this?"
+          },
+          {
+            "phraseId": "food-1",
+            "en": "One portion please"
+          },
+          {
+            "phraseId": "food-3",
+            "en": "Not spicy please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-international-terminal",
+      "id": "viet-family-city-danang-place-international-terminal",
+      "city": "Đà Nẵng",
+      "category": "Arrival",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-airport",
+        "actual-landmarks"
+      ],
+      "title": "Nhà ga quốc tế Đà Nẵng",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Land, Then Find The Ride",
+          "body": "Da Nang International Terminal is the first practical hour of central Vietnam: immigration, baggage, public hall, SIM, cash, pickup, and the ride into the city."
+        },
+        "sections": [
+          {
+            "heading": "Public Hall Before Pickup",
+            "body": "Do not solve the car while you are still inside the arrival flow. The airport gets easier once counters, signs, drivers, and exits are all visible."
+          },
+          {
+            "heading": "One Pin, One Door",
+            "body": "Before leaving the hall, open the pickup pin and check the door, column, or outside meeting point. Airport exits can split a group quickly."
+          },
+          {
+            "heading": "Hoi An Needs A Clear Car",
+            "body": "If the next stop is Hoi An, confirm the driver name, car plate, and hotel area while you still have space and Wi-Fi."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "airport-1",
+            "en": "Where is immigration?"
+          },
+          {
+            "phraseId": "airport-2",
+            "en": "Where is baggage claim?"
+          },
+          {
+            "phraseId": "airport-3",
+            "en": "Where can I buy a SIM card?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-le-duan-night-market",
+      "id": "viet-family-city-danang-place-le-duan-night-market",
+      "city": "Đà Nẵng",
+      "category": "Market",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "shopping-markets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-market",
+        "actual-landmarks"
+      ],
+      "title": "Chợ đêm Lê Duẩn",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        },
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Short Night Browse",
+          "body": "Lê Duẩn Night Market is a compact after-dark browse: clothing racks, small gifts, warm bulbs, a little food smoke, and one more walk before the hotel."
+        },
+        "sections": [
+          {
+            "heading": "One Lap Before Buying",
+            "body": "Walk the lane once before choosing. The market is easier when you know where clothes, snacks, phone cases, and small gifts cluster."
+          },
+          {
+            "heading": "Bargain Lightly",
+            "body": "Keep bargaining small. Price it, try one polite discount, then buy or move on."
+          },
+          {
+            "heading": "Small Scale Is The Draw",
+            "body": "The stop can feel thin if you expect a full food crawl. Treat it as one pocket of night color: racks, snacks, small gifts, and a simple loop before the hotel."
+          },
+          {
+            "heading": "Leave While It Still Feels Easy",
+            "body": "A short loop, a small buy, and a clear exit keep the stop pleasant. If the lane feels quiet, use it as a quick browse rather than forcing a full night-market plan."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "price-1",
+            "en": "How much is this?"
+          },
+          {
+            "phraseId": "price-4",
+            "en": "Can you lower it a little?"
+          },
+          {
+            "phraseId": "food-1",
+            "en": "One portion please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-my-quang-sua-hong-van",
+      "id": "viet-family-city-danang-place-my-quang-sua-hong-van",
+      "city": "Đà Nẵng",
+      "category": "Restaurant",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "title": "Mỳ Quảng Sứa Hồng Vân",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Shrimp Broth, Jellyfish Crunch",
+          "body": "Mỳ Quảng Sứa Hồng Vân is a 2025 MICHELIN Bib Gourmand Da Nang street-food stop for mì Quảng with orange-red shrimp broth, yellow noodles, toppings, herbs, rice cracker, and optional jellyfish."
+        },
+        "sections": [
+          {
+            "heading": "Make It A Named Bowl",
+            "body": "The full name matters here because the bowl has a specific texture cue. The jellyfish option gives it a detail worth remembering."
+          },
+          {
+            "heading": "Broth First, Crunch After",
+            "body": "Taste the orange-red shrimp broth before adding chili or lime. Then fold in herbs and cracker so the bowl keeps its soft noodles and sharp crunch."
+          },
+          {
+            "heading": "Ask What To Choose",
+            "body": "If the menu is not obvious, ask what they recommend before naming a topping. One focused bowl beats over-ordering because mì Quảng already has plenty going on."
+          },
+          {
+            "heading": "Let The Detail Lead",
+            "body": "The Bib Gourmand recognition supports the choice, but the draw is more concrete: Da Nang's signature bowl with a seafood-texture twist."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "food-menu",
+            "en": "Can I see the menu?"
+          },
+          {
+            "phraseId": "food-1",
+            "en": "One portion please"
+          },
+          {
+            "phraseId": "v900-food-drin-what-do-you-recommend",
+            "en": "What do you recommend?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-nam-o-reef",
+      "id": "viet-family-city-danang-place-nam-o-reef",
+      "city": "Đà Nẵng",
+      "category": "Nature",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-nature",
+        "actual-landmarks"
+      ],
+      "title": "Rạn Nam Ô",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Low Tide Shows The Rocks",
+          "body": "Nam O Reef is a rocky shoreline stop for tide pools, fishing-village edges, low light, and a different side of Da Nang's coast north of town."
+        },
+        "sections": [
+          {
+            "heading": "Tide Is The Difference",
+            "body": "The reef matters most when water level reveals dark rock, shallow pools, and small edges that disappear when conditions are wrong. Check tide and weather first."
+          },
+          {
+            "heading": "Walk Like It Is Working Coast",
+            "body": "Treat the shore as a local fishing edge rather than a stage set. Watch your footing, stay back from slick rocks, and give people working near water enough room."
+          },
+          {
+            "heading": "Low Tide, Careful Feet",
+            "body": "Come when tide and weather reveal the rocks. This is a condition-dependent shoreline, better for careful looking than casual resort sand."
+          },
+          {
+            "heading": "Add It Only When The Route Fits",
+            "body": "Pair the reef with Nam O fish sauce village if you are already on this side of Da Nang. It loses force when squeezed into a packed beach-and-bridge day."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "sight-2",
+            "en": "Where do we start?"
+          },
+          {
+            "phraseId": "sight-5",
+            "en": "Where is the meeting point?"
+          },
+          {
+            "phraseId": "store-1",
+            "en": "A bottle of water please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-nem-lui",
+      "id": "viet-family-city-danang-place-nem-lui",
+      "city": "Đà Nẵng",
+      "category": "Dish",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-dish",
+        "place-kind-dish",
+        "content-role-dish",
+        "local-dishes"
+      ],
+      "title": "Nem lụi ở Đà Nẵng",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        },
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Roll The Skewer While It Is Hot",
+          "body": "Nem lụi is a hand-rolled table ritual: grilled pork, rice paper, herbs, sauce, and an opening order that teaches the meal slowly by hand."
+        },
+        "sections": [
+          {
+            "heading": "Watch One Roll Before Copying",
+            "body": "If staff or another table shows the method, take the hint: pork off the skewer, herbs in, sauce controlled, rice paper wrapped tight to hold."
+          },
+          {
+            "heading": "Sauce Sets The Bite",
+            "body": "The sauce can make nem lụi taste rich, sweet, nutty, or sharper depending on the shop. If peanuts matter, check before dipping; if heat worries you, taste before adding more."
+          },
+          {
+            "heading": "Wrap Slowly",
+            "body": "Choose it when the group can slow down and assemble the bite: skewer, herbs, rice paper, sauce, and heat. Peanut or pork questions should come early."
+          },
+          {
+            "heading": "One Order Teaches The Table",
+            "body": "This is a good opening dish because it teaches the table without committing the whole meal. Order one portion, understand the roll, then decide what to add."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "food-menu",
+            "en": "Can I see the menu?"
+          },
+          {
+            "phraseId": "food-1",
+            "en": "One portion please"
+          },
+          {
+            "phraseId": "food-3",
+            "en": "Not spicy please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-reply-1988",
+      "id": "viet-family-city-danang-place-reply-1988",
+      "city": "Đà Nẵng",
+      "category": "Cafe",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-cafe",
+        "content-role-cafe",
+        "restaurants"
+      ],
+      "title": "Reply 1988 Cafe",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Retro Coffee, Light Stop",
+          "body": "Reply 1988 Cafe is a K-drama-inspired Da Nang cafe for a retro room, salted or egg coffee, tiramisu or cheesecake, and a light pause near Hải Châu."
+        },
+        "sections": [
+          {
+            "heading": "Retro Is The Hook",
+            "body": "Brown wood, warm light, and photo corners do the work. The drink can be simple enough that the room stays the reason."
+          },
+          {
+            "heading": "Pick One Sweet Thing",
+            "body": "Egg coffee, salt coffee, tiramisu, or cheesecake gives the stop more texture than a generic iced drink."
+          },
+          {
+            "heading": "Support, Not Headline",
+            "body": "Keep it as a nice cafe break around downtown plans. Da Nang’s lead food paths still belong to mì Quảng, seafood, and local coffee rooms."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "coffee-1",
+            "en": "One iced milk coffee please"
+          },
+          {
+            "phraseId": "v900-food-drin-one-hot-coffee-please",
+            "en": "One hot coffee, please"
+          },
+          {
+            "phraseId": "v900-food-drin-less-sugar-please",
+            "en": "Less sugar, please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-son-tra-night-market",
+      "id": "viet-family-city-danang-place-son-tra-night-market",
+      "city": "Đà Nẵng",
+      "category": "Market",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "shopping-markets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-market",
+        "actual-landmarks"
+      ],
+      "title": "Chợ đêm Sơn Trà",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Snack Loop Before River Lights",
+          "body": "Sơn Trà Night Market is the easy evening loop near the Dragon Bridge side of the river: grill smoke, quick snacks, souvenirs, and a short walk toward the lights."
+        },
+        "sections": [
+          {
+            "heading": "Follow The Smoke Before Ordering",
+            "body": "Walk one lap before you buy. The first pass gives you time to check prices, smoke, seating, and where people are actually stopping."
+          },
+          {
+            "heading": "Bridge Pairings Give It Purpose",
+            "body": "The market has more purpose as part of a riverfront evening: Love Bridge, the Hàn River walk, or Dragon Bridge before or after the lights come on."
+          },
+          {
+            "heading": "Cồn Does The Food Crawl Better",
+            "body": "Cồn has the fuller daytime food crawl. Sơn Trà is lighter: a convenient night-market add-on when you are already near the river."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "price-1",
+            "en": "How much is this?"
+          },
+          {
+            "phraseId": "food-1",
+            "en": "One portion please"
+          },
+          {
+            "phraseId": "food-3",
+            "en": "Not spicy please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-danang-place-the-temptation",
+      "id": "viet-family-city-danang-place-the-temptation",
+      "city": "Đà Nẵng",
+      "category": "Restaurant",
+      "generatedCategories": [
+        "city-guides",
+        "danang",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "title": "The Temptation",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Selected French Dinner",
+          "body": "The Temptation is a 2025 MICHELIN Selected French Contemporary restaurant for a quieter Da Nang night: smaller room, careful pacing, staff attention, and a meal chosen on purpose."
+        },
+        "sections": [
+          {
+            "heading": "Arrive Unrushed",
+            "body": "Give this dinner room between a beach rinse and a late-night plan. A slower table needs space to arrive, ask, and settle in."
+          },
+          {
+            "heading": "French After Seafood",
+            "body": "This is the contrast meal after grilled seafood, markets, and noodle stops. Expect the night to lean more polished than spontaneous."
+          },
+          {
+            "heading": "Ask Before It Grows",
+            "body": "Check the menu and pacing before committing. If the group wants a lighter dinner, say that early so the meal stays comfortable."
+          },
+          {
+            "heading": "Pace Matters More Than Speed",
+            "body": "Treat the MICHELIN Selected note as context. The draw is pace: staff attention, table spacing, and a dinner that feels different from the beach-city default."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "v900-food-drin-is-there-a-wait-for-a-table",
+            "en": "Is there a wait for a table?"
+          },
+          {
+            "phraseId": "v900-food-drin-what-do-you-recommend",
+            "en": "What do you recommend?"
+          },
+          {
+            "phraseId": "v900-food-drin-can-i-pay-the-bill-by-card",
+            "en": "Can I pay the bill by card?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hanoi-place-ba-dinh-district",
+      "id": "viet-family-city-hanoi-place-ba-dinh-district",
+      "city": "Hà Nội",
+      "category": "Neighborhood",
+      "generatedCategories": [
+        "city-guides",
+        "hanoi",
+        "neighborhoods-streets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-neighborhood",
+        "actual-landmarks"
+      ],
+      "title": "Quận Ba Đình",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Formal Core, Softer Streets",
+          "body": "Ba Dinh is Hanoi at two speeds: formal avenues near the civic core, then hotel corners, cafes, small shops, and evening walks that bring the district back to street level."
+        },
+        "sections": [
+          {
+            "heading": "The Map Understates The Edges",
+            "body": "The roads and public spaces open beyond old-lane Hanoi. Crossings, fences, shade, and security edges can slow the visit down."
+          },
+          {
+            "heading": "Formal Core, Softer Edge",
+            "body": "Pair a formal landmark with a softer nearby edge. The district becomes more memorable when the civic mood has somewhere human to land."
+          },
+          {
+            "heading": "A District Name With A Plan",
+            "body": "On a mixed Ba Dinh day, the formal landmark can sit beside a garden, lake edge, cafe, or hotel-side walk. That contrast is the district."
+          },
+          {
+            "heading": "Evening Changes The Street",
+            "body": "After official hours, the area settles into hotel lobbies, small cafes, local errands, and slower walks. That ordinary street life is part of Ba Dinh too."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "directions-1",
+            "en": "Excuse me, how do I get there?"
+          },
+          {
+            "phraseId": "directions-3",
+            "en": "How long does it take on foot?"
+          },
+          {
+            "phraseId": "v500-dire-navi-can-i-walk-there",
+            "en": "Can I walk there?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hanoi-place-bia-hoi",
+      "id": "viet-family-city-hanoi-place-bia-hoi",
+      "city": "Hà Nội",
+      "category": "Drink",
+      "generatedCategories": [
+        "city-guides",
+        "hanoi",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-dish",
+        "place-kind-dish",
+        "content-role-dish",
+        "local-dishes"
+      ],
+      "title": "Bia hơi Hà Nội",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        },
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Low Stools, Quick Rounds",
+          "body": "Bia hoi is Hanoi at stool height: light fresh beer, quick pours, shared snacks, and a sidewalk corner meant for a short social pause."
+        },
+        "sections": [
+          {
+            "heading": "Check The Corner First",
+            "body": "Walk past once before sitting. Look for a table that feels active but not frantic, with people actually eating and drinking."
+          },
+          {
+            "heading": "Snacks Carry The Table",
+            "body": "The glass makes more sense with something small on the table. Peanuts, grilled snacks, or a simple plate let the corner scene settle."
+          },
+          {
+            "heading": "Tạ Hiện Is Louder",
+            "body": "Tạ Hiện is the easier name to recognize, but a quieter corner can make the ritual feel less like nightlife and more like Hanoi street life."
+          },
+          {
+            "heading": "One Glass Can Be Enough",
+            "body": "Bia hoi is light, but it is still alcohol. One cold glass can give you the scene without bending the whole day around it."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "v900-food-drin-do-you-have-beer",
+            "en": "Do you have beer?"
+          },
+          {
+            "phraseId": "food-need-table",
+            "en": "A table for two, please"
+          },
+          {
+            "phraseId": "food-1",
+            "en": "One portion please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hanoi-place-bun-thang",
+      "id": "viet-family-city-hanoi-place-bun-thang",
+      "city": "Hà Nội",
+      "category": "Dish",
+      "generatedCategories": [
+        "city-guides",
+        "hanoi",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-dish",
+        "place-kind-dish",
+        "content-role-dish",
+        "local-dishes"
+      ],
+      "title": "Bún thang ở Hà Nội",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Lighter Bowl Between Bigger Meals",
+          "body": "Bun thang is a lighter Hanoi bowl: clear broth, thin noodles, shredded chicken, egg ribbons, herbs, and careful toppings rather than heat or smoke."
+        },
+        "sections": [
+          {
+            "heading": "Notice The Thin Strips",
+            "body": "A good bowl reveals itself in thin strips and shreds, not one heavy topping. Notice the egg, chicken, herbs, and broth before adding anything extra."
+          },
+          {
+            "heading": "Gentle Does Not Mean Simple",
+            "body": "Some bowls include pork, egg, or dried-shrimp flavor. Anyone avoiding those should check before treating it like plain chicken soup."
+          },
+          {
+            "heading": "A Lighter Bowl Moment",
+            "body": "Bun thang suits days that need broth and fine detail after grilled, fried, or sweet stops. It brings steam and Hanoi detail without turning lunch into a project."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "food-menu",
+            "en": "Can I see the menu?"
+          },
+          {
+            "phraseId": "food-1",
+            "en": "One portion please"
+          },
+          {
+            "phraseId": "v900-food-drin-what-do-you-recommend",
+            "en": "What do you recommend?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hanoi-place-cho-buoi-market",
+      "id": "viet-family-city-hanoi-place-cho-buoi-market",
+      "city": "Hà Nội",
+      "category": "Market",
+      "generatedCategories": [
+        "city-guides",
+        "hanoi",
+        "shopping-markets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-market",
+        "actual-landmarks"
+      ],
+      "title": "Chợ Bưởi",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Errands Before Souvenirs",
+          "body": "Cho Buoi feels like a neighborhood market still doing its own errands: plant pots, housewares, small stalls, snack counters, and scooters close to the lane."
+        },
+        "sections": [
+          {
+            "heading": "Plants Tell You Where To Start",
+            "body": "The plant stalls are the easiest way into the mood. They make the market feel practical: people comparing small goods and moving through tight space."
+          },
+          {
+            "heading": "Browse Lightly",
+            "body": "One slow pass is enough. Notice what people are actually buying and step aside before asking a price."
+          },
+          {
+            "heading": "A Local-Market Browse",
+            "body": "Cho Buoi suits a day that can handle a practical market rather than a polished souvenir stop. The plant stalls and housewares give the walk its local detail."
+          },
+          {
+            "heading": "A Small Snack Is Enough",
+            "body": "A snack, a drink, or one active counter is plenty here. Treat it as a local-market browse rather than a long food crawl."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "price-1",
+            "en": "How much is this?"
+          },
+          {
+            "phraseId": "shop-4",
+            "en": "I’m just looking"
+          },
+          {
+            "phraseId": "price-8",
+            "en": "How much altogether?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hanoi-place-giap-bat-bus-station",
+      "id": "viet-family-city-hanoi-place-giap-bat-bus-station",
+      "city": "Hà Nội",
+      "category": "Station",
+      "generatedCategories": [
+        "city-guides",
+        "hanoi",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-station",
+        "actual-landmarks"
+      ],
+      "title": "Bến xe Giáp Bát",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Bags First, City Second",
+          "body": "Giap Bat Bus Station is a practical Hanoi edge: awnings, signs, luggage, waiting benches, and the first move into the next ride toward the south."
+        },
+        "sections": [
+          {
+            "heading": "Bay Before Bench",
+            "body": "Bus stations look obvious until a bay changes or a sign slips by. One quick check can settle where to wait."
+          },
+          {
+            "heading": "A Visible Curb Beats A Vague Pickup",
+            "body": "For taxi or ride-hailing pickup, choose a clear door or visible curb instead of drifting through traffic with luggage."
+          },
+          {
+            "heading": "Hanoi Returns Outside The Gate",
+            "body": "The station shows a real slice of travel-day Hanoi without extra drama. The goal is a clean exit back into the city."
+          },
+          {
+            "heading": "Transport Board First",
+            "body": "Station signs, ticket windows, and staff gestures should settle the next move before you relax into the waiting area."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "v500-tran-does-this-bus-go-there",
+            "en": "Does this bus go there?"
+          },
+          {
+            "phraseId": "v500-tran-when-is-the-next-bus",
+            "en": "When is the next bus?"
+          },
+          {
+            "phraseId": "transport-fare",
+            "en": "How much is the fare?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hanoi-place-hanoi-railway-station",
+      "id": "viet-family-city-hanoi-place-hanoi-railway-station",
+      "city": "Hà Nội",
+      "category": "Station",
+      "generatedCategories": [
+        "city-guides",
+        "hanoi",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-station",
+        "actual-landmarks"
+      ],
+      "title": "Ga Hà Nội",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "The Capital Arrives In Yellow",
+          "body": "Hanoi Railway Station is a classic capital threshold: yellow facade, route boards, bags, shaded platforms, and streets leading back into old Hanoi."
+        },
+        "sections": [
+          {
+            "heading": "Check The Boards First",
+            "body": "Stop long enough to match your train, time, and platform before following the busiest flow."
+          },
+          {
+            "heading": "An Unhurried Exit",
+            "body": "A clear pickup point and confirmed ride matter more than dragging luggage through extra corners."
+          },
+          {
+            "heading": "Old Hanoi Starts Outside",
+            "body": "The station is more than a doorway. The streets just beyond it bring back signs, shade, traffic, and the next small decision."
+          },
+          {
+            "heading": "Plain Transfer Choices",
+            "body": "The plain station choice usually wins: train, exit, luggage, then the next Hanoi move."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "directions-1",
+            "en": "Excuse me, how do I get there?"
+          },
+          {
+            "phraseId": "v900-dire-navi-where-is-the-train-station",
+            "en": "Where is the train station?"
+          },
+          {
+            "phraseId": "v500-tran-is-this-train-delayed",
+            "en": "Is this train delayed?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hanoi-place-lenin-park",
+      "id": "viet-family-city-hanoi-place-lenin-park",
+      "city": "Hà Nội",
+      "category": "Park",
+      "generatedCategories": [
+        "city-guides",
+        "hanoi",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-park",
+        "actual-landmarks"
+      ],
+      "title": "Công viên Lê Nin",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Everyday Hanoi In Open Air",
+          "body": "Lenin Park is a small city breather: shade trees, open paths, a statue plaza, and people walking, talking, and taking family time nearby."
+        },
+        "sections": [
+          {
+            "heading": "Shade Before The Next Museum",
+            "body": "The park sits well before or after heavier nearby stops like the citadel, Hanoi Flag Tower, or the Military History Museum."
+          },
+          {
+            "heading": "Watch Evening Change",
+            "body": "Late-day light, families, students, walkers, and traffic around the edges make the park feel local rather than formal."
+          },
+          {
+            "heading": "Short Visit, Shade Trees",
+            "body": "Let the statue plaza, shade trees, and open paths become a brief reset before the city pulls you onward."
+          },
+          {
+            "heading": "Open Air, Then Onward",
+            "body": "This does not need a long visit. Shade, paths, and a few minutes of everyday city life are the draw."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "directions-1",
+            "en": "Excuse me, how do I get there?"
+          },
+          {
+            "phraseId": "v500-dire-navi-can-i-walk-there",
+            "en": "Can I walk there?"
+          },
+          {
+            "phraseId": "store-1",
+            "en": "A bottle of water please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hanoi-place-my-dinh-bus-station",
+      "id": "viet-family-city-hanoi-place-my-dinh-bus-station",
+      "city": "Hà Nội",
+      "category": "Station",
+      "generatedCategories": [
+        "city-guides",
+        "hanoi",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-station",
+        "actual-landmarks"
+      ],
+      "title": "Bến xe Mỹ Đình",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Western Road Hub",
+          "body": "My Dinh Bus Station is Hanoi at its onward-road edge: bags, route boards, waiting benches, and the next leg of the north already pressing into view."
+        },
+        "sections": [
+          {
+            "heading": "Ticket Before Bench",
+            "body": "Check the route, company name, bay, and pickup point before relaxing. One distracted station minute can become boarding confusion quickly."
+          },
+          {
+            "heading": "The Exit Stays Simple",
+            "body": "Phone, ticket, and small bag should stay close. Once the right bus or pickup point is clear, the station decision can stay plain."
+          },
+          {
+            "heading": "Travel-Day Margin",
+            "body": "Give this stop extra time for traffic, ticket checks, and moving from the waiting area to the bus with luggage."
+          },
+          {
+            "heading": "Ticket, Then Signs",
+            "body": "Tickets, posted signs, and staff direction steady the plan before the waiting area starts to feel busy."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "v500-tran-does-this-bus-go-there",
+            "en": "Does this bus go there?"
+          },
+          {
+            "phraseId": "v500-tran-when-is-the-next-bus",
+            "en": "When is the next bus?"
+          },
+          {
+            "phraseId": "transport-fare",
+            "en": "How much is the fare?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hanoi-place-nuoc-ngam-bus-station",
+      "id": "viet-family-city-hanoi-place-nuoc-ngam-bus-station",
+      "city": "Hà Nội",
+      "category": "Station",
+      "generatedCategories": [
+        "city-guides",
+        "hanoi",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-station",
+        "actual-landmarks"
+      ],
+      "title": "Bến xe Nước Ngầm",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Practical Handoff",
+          "body": "Nuoc Ngam Bus Station is a practical Hanoi travel handoff: route boards, counters, benches, motorbike noise, and the scramble before an onward bus."
+        },
+        "sections": [
+          {
+            "heading": "Bay Before Bench",
+            "body": "Check the bay, route, and ticket detail before relaxing. A station can feel orderly until the boarding moment arrives."
+          },
+          {
+            "heading": "Bags Within Reach",
+            "body": "Ticket, phone, and small bag should stay close while people board, call, and move through narrow gaps."
+          },
+          {
+            "heading": "Arrival Plan Too",
+            "body": "Know how you will leave at the other end. A taxi or pickup plan matters as much as the departure bay."
+          },
+          {
+            "heading": "Bay Layouts Change",
+            "body": "Match the ticket, counter, and station signs before settling into the waiting area. The next move can be boringly clear."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "v500-tran-does-this-bus-go-there",
+            "en": "Does this bus go there?"
+          },
+          {
+            "phraseId": "v500-tran-when-is-the-next-bus",
+            "en": "When is the next bus?"
+          },
+          {
+            "phraseId": "transport-fare",
+            "en": "How much is the fare?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hanoi-place-pho-bo-lam",
+      "id": "viet-family-city-hanoi-place-pho-bo-lam",
+      "city": "Hà Nội",
+      "category": "Restaurant",
+      "generatedCategories": [
+        "city-guides",
+        "hanoi",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "title": "Phở Bò Lâm",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Bib Gourmand Pho Stop",
+          "body": "Pho Bo Lam is a 2025 MICHELIN Bib Gourmand beef-pho stop for broth, rice noodles, herbs, and the deeper chew of tendon or richer beef cuts."
+        },
+        "sections": [
+          {
+            "heading": "Chew On Purpose",
+            "body": "Tendon is richer and chewier than simple sliced beef. Pick it because you want that deeper bite."
+          },
+          {
+            "heading": "Plain And Memorable",
+            "body": "This table makes sense when lunch stays simple: broth, noodles, beef, herbs, shop pace, then back into the street."
+          },
+          {
+            "heading": "Pho Comparison",
+            "body": "If trying more than one pho stop, compare broth, beef cuts, herbs, and room pace without turning lunch into homework."
+          },
+          {
+            "heading": "Shop Details Shift",
+            "body": "Check the signs, queue, and room before making the bowl the fixed plan. Beef pho needs a shop that feels alive."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "food-menu",
+            "en": "Can I see the menu?"
+          },
+          {
+            "phraseId": "food-need-table",
+            "en": "A table for two, please"
+          },
+          {
+            "phraseId": "v900-food-drin-what-do-you-recommend",
+            "en": "What do you recommend?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hanoi-place-ta-hien",
+      "id": "viet-family-city-hanoi-place-ta-hien",
+      "city": "Hà Nội",
+      "category": "Street",
+      "generatedCategories": [
+        "city-guides",
+        "hanoi",
+        "neighborhoods-streets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-street",
+        "actual-landmarks"
+      ],
+      "title": "Phố Tạ Hiện",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "One Lap Before A Stool",
+          "body": "Ta Hien is the Old Quarter at evening volume: low stools, warm signs, food smoke, bia hơi, and groups deciding how long the night should go."
+        },
+        "sections": [
+          {
+            "heading": "Earlier Evening Check",
+            "body": "Dusk makes the lane easier to judge. You can compare seats, food, beer, music, and crowd level before committing."
+          },
+          {
+            "heading": "Prices Before Bottles",
+            "body": "Check the menu board and drink prices before you sit. The money question is simpler before the street gets loud."
+          },
+          {
+            "heading": "Exit Before It Drags",
+            "body": "The charm is compression. When noise stops feeling fun, step toward the lake or another Old Quarter lane."
+          },
+          {
+            "heading": "Night Conditions Change",
+            "body": "Walk the block once before sitting down: crowd pressure, parked bikes, bar entrances, and where you can step aside."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "directions-1",
+            "en": "Excuse me, how do I get there?"
+          },
+          {
+            "phraseId": "directions-3",
+            "en": "How long does it take on foot?"
+          },
+          {
+            "phraseId": "v500-dire-navi-can-i-walk-there",
+            "en": "Can I walk there?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hanoi-place-tay-ho",
+      "id": "viet-family-city-hanoi-place-tay-ho",
+      "city": "Hà Nội",
+      "category": "Neighborhood",
+      "generatedCategories": [
+        "city-guides",
+        "hanoi",
+        "neighborhoods-streets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-neighborhood",
+        "actual-landmarks"
+      ],
+      "title": "Tây Hồ",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Lake Air After The Center",
+          "body": "Tay Ho opens Hanoi toward the lake: cafes, small shops, scooters under trees, and calmer residential edges after the Old Quarter tightens the day."
+        },
+        "sections": [
+          {
+            "heading": "One Edge First",
+            "body": "West Lake is too large for vague wandering. A cafe street, lake-view corner, or short walk gives the neighborhood a clear starting point."
+          },
+          {
+            "heading": "Coffee Before Wandering",
+            "body": "A drink can make the area click faster than trying to cover every lane. After that, side streets feel easier to choose."
+          },
+          {
+            "heading": "A Lake-Side Base",
+            "body": "Tay Ho suits a day that needs a lake-side neighborhood rather than one monument. One cafe, lane, or shoreline edge can hold the wider area."
+          },
+          {
+            "heading": "The Return Ride Matters",
+            "body": "Tay Ho can feel close on a phone and longer on foot in heat or traffic. Decide the exit before the lake walk becomes tiring."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "directions-1",
+            "en": "Excuse me, how do I get there?"
+          },
+          {
+            "phraseId": "directions-3",
+            "en": "How long does it take on foot?"
+          },
+          {
+            "phraseId": "v500-dire-navi-can-i-walk-there",
+            "en": "Can I walk there?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hanoi-place-trang-tien-plaza",
+      "id": "viet-family-city-hanoi-place-trang-tien-plaza",
+      "city": "Hà Nội",
+      "category": "Market",
+      "generatedCategories": [
+        "city-guides",
+        "hanoi",
+        "shopping-markets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-market",
+        "actual-landmarks"
+      ],
+      "title": "Tràng Tiền Plaza",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Cool Air Between Streets",
+          "body": "Trang Tien Plaza is a polished indoor break near the lake: a known corner, scooters outside, cool air inside, and bright storefronts after crowded sidewalks."
+        },
+        "sections": [
+          {
+            "heading": "A Known Corner",
+            "body": "The central facade can be more practical than buying anything. It gives the lake, French Quarter, and Trang Tien Street a clear meeting point."
+          },
+          {
+            "heading": "Browse Lightly",
+            "body": "Step inside, cool down, check a shop or two, and leave before the city-center energy disappears behind a mall day."
+          },
+          {
+            "heading": "A Central Indoor Break",
+            "body": "The plaza fits heat, rain, or a meetup that needs an easy indoor landmark near the lake. The corner helps even if shopping stays secondary."
+          },
+          {
+            "heading": "Weather Makes The Case",
+            "body": "Heat or rain can make the plaza feel welcome. Treat it as a cool-down before the next walk, meal, or lake stop."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "store-6",
+            "en": "Can I pay by card?"
+          },
+          {
+            "phraseId": "store-2",
+            "en": "Do you have a bag?"
+          },
+          {
+            "phraseId": "bath-1",
+            "en": "Where is the bathroom?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hanoi-place-udam",
+      "id": "viet-family-city-hanoi-place-udam",
+      "city": "Hà Nội",
+      "category": "Restaurant",
+      "generatedCategories": [
+        "city-guides",
+        "hanoi",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "title": "Ưu Đàm",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Recognized Vegetarian Table",
+          "body": "Uu Dam is a 2025 MICHELIN Bib Gourmand vegetarian table for herbs, mushrooms, tofu, rice, sauces, and a calmer Hanoi meal after street-heavy hours."
+        },
+        "sections": [
+          {
+            "heading": "Begin With Fewer Dishes",
+            "body": "A vegetarian meal can still spread wide. Begin with a few plates, judge portion size, then add only if the table still feels balanced."
+          },
+          {
+            "heading": "Vegetarian Still Has Weight",
+            "body": "The table can be generous without meat: tofu, mushrooms, rice, herbs, and warm sauces carry the weight. Check spice before assuming gentleness."
+          },
+          {
+            "heading": "After Dense Streets",
+            "body": "Place Uu Dam after a street-heavy day when herbs, warm bowls, and a calmer vegetarian table sound more appealing than a fast meal."
+          },
+          {
+            "heading": "The Meal Holds The Evening",
+            "body": "Place it after a dense walking day. The room can slow the evening without adding a sight before or after."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "food-menu",
+            "en": "Can I see the menu?"
+          },
+          {
+            "phraseId": "food-need-table",
+            "en": "A table for two, please"
+          },
+          {
+            "phraseId": "v900-food-drin-what-do-you-recommend",
+            "en": "What do you recommend?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hcmc-place-banh-xeo-46a",
+      "id": "viet-family-city-hcmc-place-banh-xeo-46a",
+      "city": "Saigon",
+      "category": "Restaurant",
+      "generatedCategories": [
+        "city-guides",
+        "hcmc",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-everyday",
+        "restaurants"
+      ],
+      "title": "Bánh xèo 46A",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Bib Gourmand Pancake Table",
+          "body": "Banh Xeo 46A is a 2025 MICHELIN Bib Gourmand table for the larger restaurant version of bánh xèo: crisp pancake, herbs, metal trays, sauce, and a wrapping ritual that slows down the meal."
+        },
+        "sections": [
+          {
+            "heading": "The Plate Needs Space",
+            "body": "Let the pancake take room. Herbs, dipping sauce, and metal trays need a few minutes of table attention."
+          },
+          {
+            "heading": "A Dish-Specific Meal",
+            "body": "Make bánh xèo what matters of the meal. The Bib Gourmand recognition helps, but the crisp edge and wrapping rhythm carry the stop."
+          },
+          {
+            "heading": "Ingredient Checks Matter",
+            "body": "Shrimp, pork, and spice can matter here. Bánh xèo often looks simple but hides ingredients in the filling."
+          },
+          {
+            "heading": "The Pancake Is The Draw",
+            "body": "Remember the named Bib Gourmand pancake table: hot edges, greens, sauce, and the slow practical rhythm of building each bite."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "food-need-table",
+            "en": "A table for two, please"
+          },
+          {
+            "phraseId": "v900-food-drin-what-do-you-recommend",
+            "en": "What do you recommend?"
+          },
+          {
+            "phraseId": "v900-food-drin-sauce-on-the-side-please",
+            "en": "Sauce on the side, please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hcmc-place-bo-kho-ganh",
+      "id": "viet-family-city-hcmc-place-bo-kho-ganh",
+      "city": "Saigon",
+      "category": "Restaurant",
+      "generatedCategories": [
+        "city-guides",
+        "hcmc",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-fine-dining",
+        "restaurants"
+      ],
+      "title": "Bò Kho Gánh",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Bib Gourmand Beef-Stew Bowl",
+          "body": "Bò Kho Gánh is a 2025 MICHELIN Bib Gourmand Saigon street-food stop for bò kho: hot beef stew, bread or noodles nearby, herbs, sauce, and a bowl that can carry the meal."
+        },
+        "sections": [
+          {
+            "heading": "Let The Bowl Lead",
+            "body": "Come here when the plan can be one dish over a menu tour. Broth, beef, bread or noodles, herbs, and sauce give the stop enough shape."
+          },
+          {
+            "heading": "Choose The Meal Shape",
+            "body": "Bread turns the bowl into a dipping meal; noodles make it feel fuller. Decide the shape early so the first order stays simple."
+          },
+          {
+            "heading": "Street Food With A Clear Reason",
+            "body": "The Bib Gourmand recognition supports the choice because this is a named bò kho stop rather than a broad street-food idea. It gives the dish a place to remember."
+          },
+          {
+            "heading": "Sauce Changes The Bowl",
+            "body": "Condiments can move the broth quickly. Taste first, then add heat or sauce in small moves."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "food-menu",
+            "en": "Can I see the menu?"
+          },
+          {
+            "phraseId": "food-2",
+            "en": "I'll take this bowl"
+          },
+          {
+            "phraseId": "food-3",
+            "en": "Not spicy please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hcmc-place-bun-thit-nuong",
+      "id": "viet-family-city-hcmc-place-bun-thit-nuong",
+      "city": "Saigon",
+      "category": "Dish",
+      "generatedCategories": [
+        "city-guides",
+        "hcmc",
+        "food-coffee",
+        "intermediate",
+        "city-page-kind-dish",
+        "place-kind-dish",
+        "content-role-dish",
+        "local-dishes"
+      ],
+      "title": "Bún thịt nướng ở Thành phố Hồ Chí Minh",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Bowl Built For Mixing",
+          "body": "Bún thịt nướng in Saigon is a bowl built for contrast: grilled pork, cool vermicelli, herbs, peanuts, sauce, and the easy comfort of mixing lunch instead of chasing it."
+        },
+        "sections": [
+          {
+            "heading": "Smoke Over Cool Noodles",
+            "body": "The contrast is the draw: warm grilled pork over cool noodles, fresh herbs against sweet-savory sauce, peanuts for crunch."
+          },
+          {
+            "heading": "An Easy Bowl",
+            "body": "It suits lunch when you want something filling but not heavy, with clear parts to understand before you order."
+          },
+          {
+            "heading": "Sauce Slowly",
+            "body": "Pour a little sauce, mix, then add more. The balance can get too sweet or too wet if you rush it."
+          },
+          {
+            "heading": "Pork Is Usually Central",
+            "body": "The English name can sound broad, but the classic bowl usually centers grilled pork. Pork-free eating needs a check before ordering."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "food-menu",
+            "en": "Can I see the menu?"
+          },
+          {
+            "phraseId": "food-1",
+            "en": "One portion please"
+          },
+          {
+            "phraseId": "food-3",
+            "en": "Not spicy please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hcmc-place-gia-dinh-park",
+      "id": "viet-family-city-hcmc-place-gia-dinh-park",
+      "city": "Saigon",
+      "category": "Park",
+      "generatedCategories": [
+        "city-guides",
+        "hcmc",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-park",
+        "actual-landmarks"
+      ],
+      "title": "Công viên Gia Định",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Everyday Shade Near The Airport",
+          "body": "Gia Dinh Park is an everyday open-air breather near the airport, with trees, walking paths, family time, shade, and a park pace outside the sightseeing core."
+        },
+        "sections": [
+          {
+            "heading": "Park Pace Before Plans",
+            "body": "The scene is everyday rather than formal: walking, sitting, family time, and evening light under trees."
+          },
+          {
+            "heading": "Airport-Side Breather",
+            "body": "The park lands cleanly if you are nearby, between plans, or need fresh air before or after airport movement."
+          },
+          {
+            "heading": "Nearby Beats Cross-City",
+            "body": "Do not force it from across town. Gia Dinh Park is a local breather when the route already puts you close."
+          },
+          {
+            "heading": "Ordinary is the draw",
+            "body": "Công viên Gia Định is memorable because it stays ordinary: shade, walkers, families, and open space."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "sight-2",
+            "en": "Where do we start?"
+          },
+          {
+            "phraseId": "sight-5",
+            "en": "Where is the meeting point?"
+          },
+          {
+            "phraseId": "store-1",
+            "en": "A bottle of water please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hcmc-place-golden-dragon-water-puppet",
+      "id": "viet-family-city-hcmc-place-golden-dragon-water-puppet",
+      "city": "Saigon",
+      "category": "Attraction",
+      "generatedCategories": [
+        "city-guides",
+        "hcmc",
+        "landmarks-attractions",
+        "intermediate",
+        "city-page-kind-place",
+        "place-kind-museum",
+        "actual-landmarks"
+      ],
+      "title": "Nhà hát Múa rối nước Rồng Vàng",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "An Evening Show",
+          "body": "Golden Dragon Water Puppet Theater is an evening performance where music, puppets, stage light, and a traditional show give Saigon a cultural indoor option."
+        },
+        "sections": [
+          {
+            "heading": "Music And Water Stage",
+            "body": "The live staging carries it: musicians, puppets, warm lights, water movement, and a show pace different from museums or monuments."
+          },
+          {
+            "heading": "Timed Evening Plan",
+            "body": "The theater belongs before or after a simple dinner. Build the evening around the performance rhythm rather than treating it like a walk-by landmark."
+          },
+          {
+            "heading": "Performance, Not Landmark",
+            "body": "Think of it as a show you attend, with tickets and timing mattering more than the facade."
+          },
+          {
+            "heading": "Showtime Sets The Evening",
+            "body": "The reason to go is water-puppet music, staging, and a compact indoor show. Give the performance room in the evening instead of squeezing it between errands."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "directions-1",
+            "en": "Excuse me, how do I get there?"
+          },
+          {
+            "phraseId": "directions-3",
+            "en": "How long does it take on foot?"
+          },
+          {
+            "phraseId": "v500-dire-navi-can-i-walk-there",
+            "en": "Can I walk there?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hcmc-place-ho-thi-ky-flower-market",
+      "id": "viet-family-city-hcmc-place-ho-thi-ky-flower-market",
+      "city": "Saigon",
+      "category": "Market",
+      "generatedCategories": [
+        "city-guides",
+        "hcmc",
+        "shopping-markets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-market",
+        "actual-landmarks"
+      ],
+      "title": "Chợ hoa Hồ Thị Kỷ",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Flowers In A Working Lane",
+          "body": "Ho Thi Ky Flower Market is a street-trade lane for flower bundles, scooters, gift stalls, wet pavement, and late color in a working market lane."
+        },
+        "sections": [
+          {
+            "heading": "Trade Leads",
+            "body": "Flowers draw the eye, but trade gives the lane its rhythm. People are buying, delivering, arranging, and moving through narrow space with flowers and supplies."
+          },
+          {
+            "heading": "A Careful Browse",
+            "body": "Browse slowly and stay out of delivery paths. A small purchase or short look is easier than blocking the working lanes."
+          },
+          {
+            "heading": "Color With Movement",
+            "body": "Choose the market when you want street color tied to real trade rather than a staged flower display."
+          },
+          {
+            "heading": "Flower Trade Sets The Mood",
+            "body": "Flower-market energy changes by hour and delivery timing. Avoid fixed expectations about crowds, stock, or how late a lane stays active."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "price-1",
+            "en": "How much is this?"
+          },
+          {
+            "phraseId": "price-4",
+            "en": "Can you lower it a little?"
+          },
+          {
+            "phraseId": "shop-4",
+            "en": "I’m just looking"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hcmc-place-independence-palace",
+      "id": "viet-family-city-hcmc-place-independence-palace",
+      "city": "Saigon",
+      "category": "Landmark",
+      "generatedCategories": [
+        "city-guides",
+        "hcmc",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks"
+      ],
+      "title": "Dinh Độc Lập",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "History With A Front Lawn",
+          "body": "Independence Palace turns modern Saigon history into a physical route: front lawn, gates, ceremonial rooms, old command spaces, and the city pressing around the walls."
+        },
+        "sections": [
+          {
+            "heading": "Inside The Formal Shell",
+            "body": "Ceremonial spaces and older command areas make the visit less abstract. A slower pace lets the architecture do part of the explaining."
+          },
+          {
+            "heading": "A Landmark Between Walks",
+            "body": "It pairs naturally with nearby central landmarks for one civic landmark beyond cafes, malls, or street corners."
+          },
+          {
+            "heading": "Walk Through The Building",
+            "body": "The visit can be a walk through the building’s place in history, rather than a search for one famous photo."
+          },
+          {
+            "heading": "Facade Before Rooms",
+            "body": "The front lawn and facade set the mood, but the rooms and corridors carry most of the memory. Give them a little time."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "directions-1",
+            "en": "Excuse me, how do I get there?"
+          },
+          {
+            "phraseId": "v500-sigh-acti-where-is-the-entrance",
+            "en": "Where is the entrance?"
+          },
+          {
+            "phraseId": "sight-3",
+            "en": "Can I take photos here?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hcmc-place-le-thanh-ton-street",
+      "id": "viet-family-city-hcmc-place-le-thanh-ton-street",
+      "city": "Saigon",
+      "category": "Street",
+      "generatedCategories": [
+        "city-guides",
+        "hcmc",
+        "neighborhoods-streets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-street",
+        "actual-landmarks"
+      ],
+      "title": "Đường Lê Thánh Tôn",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Dinner Street Name",
+          "body": "Le Thanh Ton Street is a District 1 name worth recognizing before dinner, especially around the restaurant frontage and Japan Town edges that make the block choices matter."
+        },
+        "sections": [
+          {
+            "heading": "District 1 At Door Level",
+            "body": "This is an address street more than a landmark. The detail is practical: signs, addresses, and the right entrance at night."
+          },
+          {
+            "heading": "Good With Japan Town",
+            "body": "The street pairs naturally with Thái Văn Lung and the nearby Japanese dining cluster. One dinner plan gives it clearer purpose."
+          },
+          {
+            "heading": "Address Before Arrival",
+            "body": "A named street is clearest when you already have one restaurant, cafe, hotel, or pin to reach. The name keeps the blocks together."
+          },
+          {
+            "heading": "Crossings Take Patience",
+            "body": "Restaurant frontage can sit behind traffic, parked bikes, and small signs. A slow address check beats circling the block twice."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "directions-1",
+            "en": "Excuse me, how do I get there?"
+          },
+          {
+            "phraseId": "directions-3",
+            "en": "How long does it take on foot?"
+          },
+          {
+            "phraseId": "v500-dire-navi-can-i-walk-there",
+            "en": "Can I walk there?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hcmc-place-mien-dong-bus-station",
+      "id": "viet-family-city-hcmc-place-mien-dong-bus-station",
+      "city": "Saigon",
+      "category": "Station",
+      "generatedCategories": [
+        "city-guides",
+        "hcmc",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-station",
+        "actual-landmarks"
+      ],
+      "title": "Bến xe Miền Đông",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Station Transfer",
+          "body": "Mien Dong Bus Station is a travel-day name to recognize before an eastbound or onward bus transfer, where terminal, ticket counter, route board, and pickup matter."
+        },
+        "sections": [
+          {
+            "heading": "Names Matter Here",
+            "body": "Buses, ride-hailing pins, and local directions can blur on travel days. The Vietnamese station name is often the focus."
+          },
+          {
+            "heading": "Ticket And Pickup Checks",
+            "body": "The safest opening question is practical: correct station, correct company, correct departure point. Do not treat one gate or window as the whole answer."
+          },
+          {
+            "heading": "Buffer For Confusion",
+            "body": "A station transfer deserves extra time. Wrong pins, similar names, and traffic can turn a simple departure into a rushed one."
+          },
+          {
+            "heading": "City Still Outside",
+            "body": "Even after you reach the station, HCMC is still present: traffic, ride timing, bags, and the final check before departure."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "directions-8",
+            "en": "Where is the pickup point?"
+          },
+          {
+            "phraseId": "v900-tran-where-can-i-buy-a-ticket",
+            "en": "Where can I buy a ticket?"
+          },
+          {
+            "phraseId": "transport-2",
+            "en": "Does this bus go to…?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hcmc-place-tan-son-nhat-airport",
+      "id": "viet-family-city-hcmc-place-tan-son-nhat-airport",
+      "city": "Saigon",
+      "category": "Arrival",
+      "generatedCategories": [
+        "city-guides",
+        "hcmc",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-airport",
+        "actual-landmarks"
+      ],
+      "title": "Sân bay Tân Sơn Nhất",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "The Saigon Arrival Threshold",
+          "body": "Tan Son Nhat International Airport is where the planned Saigon day becomes real: arrival doors, warm air, signs, bags, rides, and the push toward the city."
+        },
+        "sections": [
+          {
+            "heading": "Bags, Signs, Warm Air",
+            "body": "Expect a practical arrival sequence rather than a place to linger. The airport matters because it starts the city before the hotel does."
+          },
+          {
+            "heading": "Arrival Over Itinerary",
+            "body": "The arrival task is knowing the name, the ride plan, and the next address. That makes the arrival handoff less blurry."
+          },
+          {
+            "heading": "The Ride Into Town",
+            "body": "The airport experience continues into the ride. Signs, roads, heat, and traffic are part of the arrival, not just logistics."
+          },
+          {
+            "heading": "A Clear Arrival Handoff",
+            "body": "The opening minutes are easier when the next address is ready and the airport name already looks familiar on signs or in the app."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "airport-1",
+            "en": "Where is immigration?"
+          },
+          {
+            "phraseId": "airport-2",
+            "en": "Where is baggage claim?"
+          },
+          {
+            "phraseId": "airport-3",
+            "en": "Where can I buy a SIM card?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hoian-place-bach-dang-street",
+      "id": "viet-family-city-hoian-place-bach-dang-street",
+      "city": "Hội An",
+      "category": "Street",
+      "generatedCategories": [
+        "city-guides",
+        "hoian",
+        "neighborhoods-streets",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-street",
+        "actual-landmarks"
+      ],
+      "title": "Đường Bạch Đằng ở Hội An",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "The River Walk Gets A Name",
+          "body": "Bach Dang Street gives Hội An’s riverfront a clear walking spine, with boats, yellow buildings, crossings, and blue-hour lantern reflections."
+        },
+        "sections": [
+          {
+            "heading": "Boats Beside Yellow Walls",
+            "body": "Expect a riverside street with boats, yellow buildings, and reflections near blue hour. Treat it as the walking edge of the old core."
+          },
+          {
+            "heading": "Easy Spine For An Opening Walk",
+            "body": "The street pairs well with Ancient Town wandering because it keeps the river close. Walk it when you need a clearer line through the old core."
+          },
+          {
+            "heading": "Blue Hour Adds The Pull",
+            "body": "Late light can make the river and lantern reflections easier to notice. During busier moments, keep moving until the edge opens up."
+          },
+          {
+            "heading": "Street, Pier, River",
+            "body": "Bach Dang can point to the street, nearby boat activity, or the riverfront around it. The context around the name matters."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "directions-1",
+            "en": "Excuse me, how do I get there?"
+          },
+          {
+            "phraseId": "directions-3",
+            "en": "How long does it take on foot?"
+          },
+          {
+            "phraseId": "v500-dire-navi-can-i-walk-there",
+            "en": "Can I walk there?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hoian-place-cao-lau-city",
+      "id": "viet-family-city-hoian-place-cao-lau-city",
+      "city": "Hội An",
+      "category": "Dish",
+      "generatedCategories": [
+        "city-guides",
+        "hoian",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-dish",
+        "place-kind-dish",
+        "content-role-dish",
+        "local-dishes"
+      ],
+      "title": "Cao lầu ở Hội An",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Hội An In One Bowl",
+          "body": "Cao lau is the Hội An noodle bowl to know: thick chewy noodles, pork, greens, herbs, crisp crackers, and a shallow coat of sauce."
+        },
+        "sections": [
+          {
+            "heading": "Chewy, Dry, Herb-Heavy",
+            "body": "Expect a compact bowl built around contrast: chewy noodles, fresh herbs, savory pork, crunchy pieces, and sauce that clings."
+          },
+          {
+            "heading": "Lunch Between Walks",
+            "body": "Cao lau works between old-town walks because it fills the table without becoming a long meal. It is a bowl to sit with, not rush past."
+          },
+          {
+            "heading": "Know The Noodle Style",
+            "body": "Cao lau usually has very little broth. If you expect soup, the dry-sauced chew can surprise you."
+          },
+          {
+            "heading": "Tone Marks Help",
+            "body": "Menus may spell it with tone marks as Cao lầu. Recognizing the words helps even when restaurant names shift."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "food-2",
+            "en": "I'll take this bowl"
+          },
+          {
+            "phraseId": "food-4",
+            "en": "More herbs please"
+          },
+          {
+            "phraseId": "food-3",
+            "en": "Not spicy please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hoian-place-from-danang-railway-station",
+      "id": "viet-family-city-hoian-place-from-danang-railway-station",
+      "city": "Hội An",
+      "category": "Station",
+      "generatedCategories": [
+        "city-guides",
+        "hoian",
+        "arrivals-routes",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-station",
+        "actual-landmarks"
+      ],
+      "title": "Ga Đà Nẵng đi Hội An",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "From Platform To Road",
+          "body": "Da Nang Railway Station for Hội An is the train-arrival handoff: platform, bags, station doors, road light, and the transfer that makes Hội An close."
+        },
+        "sections": [
+          {
+            "heading": "The Transfer To Picture",
+            "body": "The transfer image is station doors giving way to roads, river bridges, fields, bags, and the approach toward Hội An. The place matters because it starts the transfer."
+          },
+          {
+            "heading": "Arrival Planning",
+            "body": "The airport route is the natural comparison. This version centers station doors, luggage, pickup point, timing, and the road toward Hội An."
+          },
+          {
+            "heading": "Station Handoff",
+            "body": "The phrase makes sense when the platform part is over and the next task is finding the right car, driver, or onward plan."
+          },
+          {
+            "heading": "Different From The Airport Route",
+            "body": "The railway station and airport both feed Hội An, but pickup points and timing differ. The route label needs to stay specific."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "directions-8",
+            "en": "Where is the pickup point?"
+          },
+          {
+            "phraseId": "v900-tran-where-can-i-buy-a-ticket",
+            "en": "Where can I buy a ticket?"
+          },
+          {
+            "phraseId": "taxi-3",
+            "en": "You can stop here"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hoian-place-japanese-bridge",
+      "id": "viet-family-city-hoian-place-japanese-bridge",
+      "city": "Hội An",
+      "category": "Landmark",
+      "generatedCategories": [
+        "city-guides",
+        "hoian",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks"
+      ],
+      "title": "Chùa Cầu",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Short Crossing With Memory",
+          "body": "Japanese Covered Bridge gives Hội An one of its clearest crossing moments: a roofed bridge, narrow water, temple memory, and old-town movement compressed into a short span."
+        },
+        "sections": [
+          {
+            "heading": "Roof Over Narrow Water",
+            "body": "The span is a covered bridge over a narrow waterway, with lantern reflections and old-town movement nearby. The scale is small, which is part of the focus."
+          },
+          {
+            "heading": "Old-Town Reference Point",
+            "body": "The bridge is a bearing point during an Ancient Town walk, especially when nearby streets begin to blur."
+          },
+          {
+            "heading": "Remember The Crossing",
+            "body": "The bridge is easiest to remember as a crossing: roof overhead, water below, old town on both sides."
+          },
+          {
+            "heading": "Small Span, Flexible Flow",
+            "body": "The bridge is small and often busy. The roof, water, and crossing matter more than getting a perfectly empty photo."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "v500-sigh-acti-where-is-the-entrance",
+            "en": "Where is the entrance?"
+          },
+          {
+            "phraseId": "v500-sigh-acti-where-can-i-buy-tickets",
+            "en": "Where can I buy tickets?"
+          },
+          {
+            "phraseId": "sight-3",
+            "en": "Can I take photos here?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hoian-place-nu-eatery",
+      "id": "viet-family-city-hoian-place-nu-eatery",
+      "city": "Hội An",
+      "category": "Restaurant",
+      "generatedCategories": [
+        "city-guides",
+        "hoian",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-restaurant",
+        "place-kind-restaurant",
+        "content-role-everyday",
+        "restaurants"
+      ],
+      "title": "Nu Eatery",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Small Plates, Smaller Room",
+          "body": "Nu Eatery is an intimate courtyard-style meal for the night when small plates, Vietnamese flavors, attentive service, and a steadier table matter more than spectacle."
+        },
+        "sections": [
+          {
+            "heading": "Courtyard Scale, Shared Plates",
+            "body": "Expect a smaller restaurant room before you compare it with a riverside production. Order a few plates and let the table set the pace."
+          },
+          {
+            "heading": "A Smaller Dinner Choice",
+            "body": "Choose it on a night for Ancient Town is full and dinner more measured. The room matters because it keeps the meal close."
+          },
+          {
+            "heading": "A Few Plates Carry It",
+            "body": "The menu may tempt a broad order, but a small set of dishes gives the table more to notice."
+          },
+          {
+            "heading": "Intimate Table Leads",
+            "body": "The steadier reason to remember it is the intimate table, shared plates, and slower pace after old-town noise."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "food-need-table",
+            "en": "A table for two, please"
+          },
+          {
+            "phraseId": "v900-food-drin-what-do-you-recommend",
+            "en": "What do you recommend?"
+          },
+          {
+            "phraseId": "coffee-7",
+            "en": "Please let me pay"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hoian-place-wonton",
+      "id": "viet-family-city-hoian-place-wonton",
+      "city": "Hội An",
+      "category": "Dish",
+      "generatedCategories": [
+        "city-guides",
+        "hoian",
+        "food-coffee",
+        "beginner",
+        "city-page-kind-dish",
+        "place-kind-dish",
+        "content-role-dish",
+        "local-dishes"
+      ],
+      "title": "Hoành thánh Hội An",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        },
+        {
+          "kind": "banned",
+          "name": "check/confirm current"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Sauce Makes It Stand Out",
+          "body": "Hội An wonton is a saucy small-meal marker: crisp or soft wonton wrappers, tomato-rich sauce, herbs, and a plate unlike the town’s noodle bowls."
+        },
+        "sections": [
+          {
+            "heading": "A Snack Or Shared Plate",
+            "body": "The dish can sit between meals or beside other Hội An foods. Decide whether you want a taste or a fuller order."
+          },
+          {
+            "heading": "Between Dumplings And Noodles",
+            "body": "Add it to a food walk when white rose dumplings seem too delicate and a noodle bowl seems too large."
+          },
+          {
+            "heading": "Sauce And Filling Questions",
+            "body": "If pork, spice, or seafood matters, check before ordering. The sauce may be obvious; the filling is less visible."
+          },
+          {
+            "heading": "Not Every Version Matches",
+            "body": "Some plates lean crisp, some softer, and sauces vary. Remember the dish category more than one fixed presentation."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "food-menu",
+            "en": "Can I see the menu?"
+          },
+          {
+            "phraseId": "food-1",
+            "en": "One portion please"
+          },
+          {
+            "phraseId": "food-3",
+            "en": "Not spicy please"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hue-place-flag-tower",
+      "id": "viet-family-city-hue-place-flag-tower",
+      "city": "Huế",
+      "category": "Landmark",
+      "generatedCategories": [
+        "city-guides",
+        "hue",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks"
+      ],
+      "title": "Kỳ Đài Huế",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "The Citadel's Opening Marker",
+          "body": "Hue Flag Tower gives the Citadel approach a clear landmark: a tall flag above ramparts, a broad stone plaza, old walls, and the river-city axis nearby."
+        },
+        "sections": [
+          {
+            "heading": "Plaza, Flag, Ramparts",
+            "body": "Expect an outdoor landmark rather than an interior visit. The view depends on scale: open plaza, wall line, tower, and flag."
+          },
+          {
+            "heading": "Citadel Orientation",
+            "body": "Let it start or edge a Citadel walk, especially when you want the royal enclosure to make visual sense before entering."
+          },
+          {
+            "heading": "Open-Air Marker",
+            "body": "Shade can be limited around plaza spaces, so use it as a brief orientation point rather than a long linger."
+          },
+          {
+            "heading": "Landmark, Not Whole Site",
+            "body": "The tower is a marker inside a larger royal landscape. It marks arrival rather than replacing the Citadel visit."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "v500-sigh-acti-where-is-the-entrance",
+            "en": "Where is the entrance?"
+          },
+          {
+            "phraseId": "v500-sigh-acti-where-can-i-buy-tickets",
+            "en": "Where can I buy tickets?"
+          },
+          {
+            "phraseId": "sight-3",
+            "en": "Can I take photos here?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hue-place-forbidden-purple-city",
+      "id": "viet-family-city-hue-place-forbidden-purple-city",
+      "city": "Huế",
+      "category": "Landmark",
+      "generatedCategories": [
+        "city-guides",
+        "hue",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks"
+      ],
+      "title": "Tử Cấm Thành",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Inner Royal Side",
+          "body": "Forbidden Purple City is the Citadel's inner royal side: palace ruins, restored corridors, garden shade, and visible gaps that show how much history has vanished."
+        },
+        "sections": [
+          {
+            "heading": "Ruins And Restored Corridors",
+            "body": "Expect a Citadel interior with palace traces, rebuilt passages, open spaces, and shade. The gaps are part of what you are seeing."
+          },
+          {
+            "heading": "Citadel Depth",
+            "body": "It sits after the main gates and courtyards, when the Citadel starts shifting from grand arrival to private royal space."
+          },
+          {
+            "heading": "Absence Counts Here",
+            "body": "The clearest look comes when you notice what remains and what is gone. Restored corridors, shaded gardens, and empty spaces all carry the story."
+          },
+          {
+            "heading": "Part Of The Citadel",
+            "body": "In English, the name can sound like a standalone city. In Hue, it sits inside the royal enclosure and can be understood with the Citadel."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "v500-sigh-acti-where-is-the-entrance",
+            "en": "Where is the entrance?"
+          },
+          {
+            "phraseId": "v500-sigh-acti-where-can-i-buy-tickets",
+            "en": "Where can I buy tickets?"
+          },
+          {
+            "phraseId": "sight-3",
+            "en": "Can I take photos here?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hue-place-nam-giao-esplanade",
+      "id": "viet-family-city-hue-place-nam-giao-esplanade",
+      "city": "Huế",
+      "category": "Landmark",
+      "generatedCategories": [
+        "city-guides",
+        "hue",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks"
+      ],
+      "title": "Đàn Nam Giao",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Royal Space In The Open",
+          "body": "Nam Giao Esplanade is Hue in ritual geometry: open terraces, old brick, trees, and the rare feeling of a royal ceremony site without a crowded room."
+        },
+        "sections": [
+          {
+            "heading": "Subtle Rather Than Ornate",
+            "body": "Heavy decoration is beside what matters here. The site speaks through scale, alignment, and emptiness, which can feel subtle after the Imperial City."
+          },
+          {
+            "heading": "A Different Royal Mood",
+            "body": "It pairs well with palace or tomb days because it shows another side of court life: ceremony outdoors, more than buildings and objects."
+          },
+          {
+            "heading": "Subtle Stop, Strong Context",
+            "body": "This is a subtle visit with strong context. It helps when you already care about how Hue's royal world arranged ritual, hierarchy, and space."
+          },
+          {
+            "heading": "Ceremonial Terrace",
+            "body": "The site's strength is its ceremonial role and open terrace form. See it as royal ritual landscape rather than park filler."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "v500-sigh-acti-where-is-the-entrance",
+            "en": "Where is the entrance?"
+          },
+          {
+            "phraseId": "v500-sigh-acti-where-can-i-buy-tickets",
+            "en": "Where can I buy tickets?"
+          },
+          {
+            "phraseId": "sight-3",
+            "en": "Can I take photos here?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hue-place-ngo-mon-gate",
+      "id": "viet-family-city-hue-place-ngo-mon-gate",
+      "city": "Huế",
+      "category": "Landmark",
+      "generatedCategories": [
+        "city-guides",
+        "hue",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks"
+      ],
+      "title": "Ngọ Môn",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "The Royal Threshold",
+          "body": "Ngọ Môn is the Imperial City's front threshold: stone, flags, tiled rooflines, and the moment Hue shifts from busy streets into royal courtyards."
+        },
+        "sections": [
+          {
+            "heading": "Gate First, Then Courtyards",
+            "body": "The gate matters because it sets up the next move. A moment from farther back helps you take in the roof and walls before the courtyards pull you inward."
+          },
+          {
+            "heading": "A Natural Meeting Point",
+            "body": "Because the gate is so recognizable, it helps with photos, group meetups, and orientation before a larger Citadel walk."
+          },
+          {
+            "heading": "Crowds Change The Feel",
+            "body": "A crowded entrance can make the gate feel like logistics. Step aside when possible and give the architecture a moment before moving through."
+          },
+          {
+            "heading": "Main Ceremonial Front",
+            "body": "Ngo Mon is the Imperial City's main ceremonial front. Ticket signs and route signs sit in arrival, before the inner grounds take over."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "v500-sigh-acti-where-is-the-entrance",
+            "en": "Where is the entrance?"
+          },
+          {
+            "phraseId": "v500-sigh-acti-where-can-i-buy-tickets",
+            "en": "Where can I buy tickets?"
+          },
+          {
+            "phraseId": "sight-3",
+            "en": "Can I take photos here?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hue-place-nha-nhac-royal-court-music",
+      "id": "viet-family-city-hue-place-nha-nhac-royal-court-music",
+      "city": "Huế",
+      "category": "Attraction",
+      "generatedCategories": [
+        "city-guides",
+        "hue",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-museum",
+        "actual-landmarks"
+      ],
+      "title": "Nhã nhạc cung đình Huế",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Court Culture Heard Live",
+          "body": "Hue Royal Court Music turns the old capital into a listening stop: traditional instruments, stage light, costumes, and a performance side beyond gates and tombs."
+        },
+        "sections": [
+          {
+            "heading": "Performance After Museum Silence",
+            "body": "This staged cultural experience gives the old capital sound as well as silhouette. Hearing court tradition in Hue gives the old capital a sound, more than a silhouette."
+          },
+          {
+            "heading": "An Evening Culture Slot",
+            "body": "It suits a river walk, dinner, or museum day when sitting down for sound and ceremony sounds calmer than one more outdoor landmark."
+          },
+          {
+            "heading": "Court Music As The Evening",
+            "body": "The evening is cultural rather than casual: royal court sound, formal pacing, and a performance setting that sits to Hue's imperial story."
+          },
+          {
+            "heading": "Formality is the draw",
+            "body": "The music may feel formal compared with casual nightlife. That restraint is part of the court tradition, part of its restrained energy."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "v500-sigh-acti-where-is-the-entrance",
+            "en": "Where is the entrance?"
+          },
+          {
+            "phraseId": "sight-3",
+            "en": "Can I take photos here?"
+          },
+          {
+            "phraseId": "sight-5",
+            "en": "Where is the meeting point?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hue-place-thanh-toan-bridge",
+      "id": "viet-family-city-hue-place-thanh-toan-bridge",
+      "city": "Huế",
+      "category": "Landmark",
+      "generatedCategories": [
+        "city-guides",
+        "hue",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-landmark",
+        "actual-landmarks"
+      ],
+      "title": "Cầu ngói Thanh Toàn",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "A Covered Bridge In Village Pace",
+          "body": "Thanh Toan Bridge is a village-side landmark near Hue: a tile-roof covered bridge over a small canal, houses nearby, and bicycles passing slowly."
+        },
+        "sections": [
+          {
+            "heading": "Architecture With Daily Life",
+            "body": "The bridge matters as a lived landmark, with local pride and views held in a compact canal-side scene."
+          },
+          {
+            "heading": "A Countryside Add-On",
+            "body": "It sits on a Hue day that can move beyond the main imperial sites into village lanes and slower water."
+          },
+          {
+            "heading": "Small Scale is the draw",
+            "body": "Picture the covered bridge over a narrow canal, a small covered crossing. The slower scale is the charm."
+          },
+          {
+            "heading": "Brief Stop, Clear Image",
+            "body": "The name is easier to remember once tied to the tile roof, canal, village houses, and bicycles nearby."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "v500-sigh-acti-where-is-the-entrance",
+            "en": "Where is the entrance?"
+          },
+          {
+            "phraseId": "v500-sigh-acti-where-can-i-buy-tickets",
+            "en": "Where can I buy tickets?"
+          },
+          {
+            "phraseId": "sight-3",
+            "en": "Can I take photos here?"
+          }
+        ]
+      }
+    },
+    {
+      "pageID": "city-hue-place-vong-canh-hill",
+      "id": "viet-family-city-hue-place-vong-canh-hill",
+      "city": "Huế",
+      "category": "Nature",
+      "generatedCategories": [
+        "city-guides",
+        "hue",
+        "landmarks-attractions",
+        "beginner",
+        "city-page-kind-place",
+        "place-kind-nature",
+        "actual-landmarks"
+      ],
+      "title": "Đồi Vọng Cảnh",
+      "hits": [
+        {
+          "kind": "banned",
+          "name": "generic use"
+        }
+      ],
+      "snippets": {
+        "intro": {
+          "heading": "Tomb-Route Viewpoint",
+          "body": "Vọng Cảnh Hill is a short southwest Hue viewpoint after a tomb stop, with pine shade, Perfume River bends, countryside, soft light, and a planned ride back."
+        },
+        "sections": [
+          {
+            "heading": "Pines, River, Low Effort",
+            "body": "The hill is not high or dramatic. The reward is pine shade, Perfume River bends, countryside, and the tomb landscape nearby."
+          },
+          {
+            "heading": "Soft Light Helps",
+            "body": "Enough light matters: walk up, find the view, and leave without rushing. Soft light makes the small scale feel intentional."
+          },
+          {
+            "heading": "Ride Back Planned",
+            "body": "A car, scooter, or ride-hailing plan helps. The hill is easygoing, but transport after dark can be settled early."
+          }
+        ],
+        "cards": [
+          {
+            "phraseId": "v500-dire-navi-how-far-is-it",
+            "en": "How far is it?"
+          },
+          {
+            "phraseId": "v500-dire-navi-can-i-walk-there",
+            "en": "Can I walk there?"
+          },
+          {
+            "phraseId": "sight-3",
+            "en": "Can I take photos here?"
+          }
+        ]
+      }
+    }
+  ]
+}

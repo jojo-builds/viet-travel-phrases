@@ -1,0 +1,126 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 1
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_19",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 1,
+    "returnedReplacementCount": 1,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_19",
+  "chunks": [
+    {
+      "chunkFile": "hanoi_001_025_humanized.json",
+      "cityID": "hanoi",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-hanoi-place-gia",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hanoi-place-gia",
+          "message": "banned visible fragment: gives hanoi a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hanoi-place-gia",
+          "message": "freshness/process-like heading: Details Can Shift"
+        },
+        {
+          "id": "city-hanoi-place-gia",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "001-025",
+          "message": "freshness/process headings appear 1x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hanoi-place-gia",
+          "summary": "Gia gives Hanoi a polished contemporary dining pause: muted room, careful service rhythm, and a meal built for intention rather than casual fuel.",
+          "context": "Tone and pacing carry the Gia stop unless menu, booking, hours, and service format are confirmed for the visit.",
+          "tip": "Treat Gia as a plan-ahead dinner, not a spontaneous street-food cue. Give the reservation, pacing, and room mood enough space.",
+          "rationale": "Gia adds a refined restaurant option to the Hanoi set while staying calm, adult, and operationally cautious.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quieter Special Meal",
+              "body": "Gia belongs to a different Hanoi rhythm: composed room, careful pacing, and a dinner that asks for attention rather than speed."
+            },
+            {
+              "id": "quick-say",
+              "title": "The Name Stays Simple",
+              "body": "Gia usually stays as the venue name. Say it slowly, show the address, and let booking or arrival details be checked separately."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Room Settles First",
+              "body": "The muted interior and staff rhythm are part of the meal. Arrive ready to slow down instead of treating it like a quick stop between sights."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Planned Evening",
+              "body": "Gia fits when dinner is the event, not a break from the event. The rest of the evening has more room when it stays less crowded."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Dinner With Intention",
+              "body": "Gia fits when dinner is the plan, not fuel between plans. The strongest memory is mood and pacing unless menu or booking details are confirmed."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Details Can Shift",
+              "body": "Fine-dining details can change fast: menus, reservations, closures, and service format. Keep the stop grounded in mood and pacing unless those specifics are confirmed."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

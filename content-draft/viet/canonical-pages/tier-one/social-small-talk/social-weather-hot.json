@@ -7,7 +7,7 @@
   "title": "Thời tiết nóng quá",
   "englishTitle": "The weather is so hot",
   "pronunciation": "thoy tyet nong gwah",
-  "summary": "Thời tiết nóng quá means “The weather is so hot”.",
+  "summary": "This is low-stakes and easy for both sides to recognize.",
   "iconName": "bubble.left.and.bubble.right.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Thời tiết nóng quá when you need \"The weather is so hot\". This is for casual conversation during hot days or long walks. This is low-stakes and easy for both sides to recognize. Listen for a short reply, a smile, a time, or a light follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "This is for casual conversation during hot days or long walks.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Thời + tiết carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "smalltalk-6-piece-1",
@@ -57,12 +59,13 @@
           "audioKey": "smalltalk-6"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Thời tiết nóng quá as your first sentence for \"The weather is so hot\". This is for casual conversation during hot days or long walks. Pause after the phrase and listen for a short reply, a smile, a time, or a light follow-up question. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
+      "body": "Say Thời tiết nóng quá in one connected line before adding details. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
       "phrases": [
         {
           "id": "smalltalk-6",
@@ -75,18 +78,21 @@
           "audioKey": "smalltalk-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Small talk in Vietnamese often becomes warmer when it connects to place, food, or shared experience. For \"The weather is so hot\", Thời tiết nóng quá makes the next step easier to answer. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
-      "presentation": "plain-text"
+      "body": "Small talk in Vietnamese often becomes warmer when it connects to place, food, or shared experience. Keep the tone warm and leave room for a short reply.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Social Small Talk, the reply often comes as a short reply, a smile, a time, or a light follow-up question. Say Thời tiết nóng quá once, pause, and watch for the reply. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
+      "body": "Watch for a smile, a time, or light follow-up question. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
       "phrases": [
         {
           "id": "smalltalk-1",
@@ -119,12 +125,13 @@
           "audioKey": "smalltalk-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for casual conversation during hot days or long walks. It fits friendly introductions and light local conversation, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
+      "body": "This is for casual conversation during hot days or long walks. Watch for a smile, a time, or light follow-up question.",
       "phrases": [
         {
           "id": "smalltalk-4",
@@ -157,13 +164,16 @@
           "audioKey": "smalltalk-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Some social phrases are best after a greeting, not as the very first thing you say to a stranger.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -193,7 +203,7 @@
         {
           "id": "how-are-you-anh",
           "vietnamese": "Anh khỏe không?",
-          "english": "How are you, older man?",
+          "english": "How are you? (to an older man)",
           "pronunciation": "anh khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
@@ -201,17 +211,18 @@
           "audioKey": "audio-authored-anh-khoe-khong-942769853d"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "nearby-phrases",
       "title": "Useful nearby phrases",
-      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
+      "body": "These nearby cards cover how are you? (to an older woman); how are you? (to someone younger).",
       "phrases": [
         {
           "id": "how-are-you-chi",
           "vietnamese": "Chị khỏe không?",
-          "english": "How are you, older woman?",
+          "english": "How are you? (to an older woman)",
           "pronunciation": "chee khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
@@ -221,7 +232,7 @@
         {
           "id": "how-are-you-em",
           "vietnamese": "Em khỏe không?",
-          "english": "How are you, younger person?",
+          "english": "How are you? (to someone younger)",
           "pronunciation": "em khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
@@ -229,12 +240,13 @@
           "audioKey": "audio-phrase-em-khoe-khong"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Keep the conversation close to I’m from the United States, I’m from England, and this is my first time.",
       "phrases": [
         {
           "id": "smalltalk-1",
@@ -317,7 +329,8 @@
           "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

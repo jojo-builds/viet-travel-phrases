@@ -7,7 +7,7 @@
   "title": "Phải mất bao lâu?",
   "englishTitle": "How long does it take?",
   "pronunciation": "Phai mat bao lau",
-  "summary": "How long does it take?",
+  "summary": "For checking the length of a ride, line, repair, tour, or appointment before you commit.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Phải mất bao lâu? helps you decide whether the next move is worth the time. Use it when How long does it take affects a taxi, walk, booking, tour, or connection and you need a practical estimate."
+      "body": "Good when the answer changes whether you wait, book, walk, pay, or choose another option.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Phải mất bao lâu? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Ask with the route, queue, ticket, item, or appointment in view. The answer is usually an estimate.",
       "phrases": [
         {
           "id": "v500-time-date-book-how-long-does-it-take",
@@ -42,30 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Phải mất means it takes; bao lâu asks how long.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Phải mất",
-          "english": "takes"
+          "english": "it takes",
+          "keepTogetherReason": "it-takes phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "bao lâu",
-          "english": "how long"
+          "vietnamese": "bao lâu?",
+          "english": "how long?",
+          "keepTogetherReason": "how-long question"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Phải mất bao lâu?",
-          "english": "How long does it take",
+          "english": "How long does it take?",
           "audioKey": "v500-time-date-book-how-long-does-it-take"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How long does it take? to another time, date, or booking need.",
+      "body": "What-time, today, and tomorrow-morning cards help if the estimate turns into scheduling.",
       "phrases": [
         {
           "id": "time-1",
@@ -102,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when how long does it take is the detail you need resolved. The likely reply is a time estimate or route choice, so keep the phrase short and ready for one follow-up."
+      "body": "Good at tour desks, clinics, repair counters, stations, restaurants, and hotel lobbies.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "If the number matters, ask them to type it or point to a written time before you agree.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Phải mất bao lâu?.",
+      "body": "Booking, opening-time, later-time, boarding, and wait cards cover the surrounding schedule questions.",
       "phrases": [
         {
           "id": "time-4",

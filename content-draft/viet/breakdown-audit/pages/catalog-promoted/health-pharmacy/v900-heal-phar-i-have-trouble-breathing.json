@@ -21,12 +21,14 @@
     {
       "id": "chunk-1",
       "vietnamese": "Tôi",
-      "english": "I / me"
+      "english": "I",
+      "keepTogetherReason": "subject pronoun"
     },
     {
+      "id": "chunk-2",
       "vietnamese": "khó thở",
-      "english": "trouble breathing",
-      "keepTogetherReason": "compound symptom term"
+      "english": "have trouble breathing",
+      "keepTogetherReason": "breathing-trouble phrase"
     },
     {
       "id": "full",

@@ -7,7 +7,7 @@
   "title": "Có bao gồm phí dịch vụ không?",
   "englishTitle": "Is the service charge included?",
   "pronunciation": "Co bao gom phi dich vu khong",
-  "summary": "Is the service charge included?",
+  "summary": "For checking whether the posted price already includes the extra fee.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có bao gồm phí dịch vụ không? is a practical money or price phrase for keeping one travel detail clear. Use it when Is the service charge included is the next detail to solve and a short answer would move the exchange forward."
+      "body": "A menu, spa bill, hotel charge, or booking total can show one number while hiding unclear add-ons."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Có bao gồm phí dịch vụ không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point to the total and ask before paying. The answer can change the tip, cash amount, or card total.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-is-the-service-charge-included",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "The phrase asks if the service charge is already included; không marks the yes-or-no check.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is the service charge included? to another money or price need.",
+      "body": "Basic price questions stay close if you need the number written or recalculated.",
       "phrases": [
         {
           "id": "price-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when is the service charge included is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at restaurants, salons, hotel desks, tour counters, and any checkout with a printed bill."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+      "body": "If the answer is unclear, ask them to show the final total on a calculator or receipt."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Có bao gồm phí dịch vụ không?.",
+      "body": "If the charge is separate, these price lines help confirm the final amount before you pay.",
       "phrases": [
         {
           "id": "price-3",

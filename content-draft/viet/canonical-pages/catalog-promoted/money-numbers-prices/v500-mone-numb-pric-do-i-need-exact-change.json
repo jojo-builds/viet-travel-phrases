@@ -4,10 +4,10 @@
   "phraseID": "v500-mone-numb-pric-do-i-need-exact-change",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Tôi có cần thay đổi chính xác không?",
+  "title": "Tôi có cần trả đúng tiền không?",
   "englishTitle": "Do I need exact change?",
-  "pronunciation": "Toi co can thay doi chinh xac khong",
-  "summary": "Do I need exact change?",
+  "pronunciation": "Toi co can tra dung tien khong",
+  "summary": "For checking whether the cashier, driver, stall, or ticket counter needs the exact amount.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -15,71 +15,67 @@
     "v500-mone-numb-pric-do-i-need-exact-change",
     "premium"
   ],
-  "audioKey": "v500-mone-numb-pric-do-i-need-exact-change",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có cần thay đổi chính xác không? checks whether a step is required before you spend time on it. It is helpful for forms, tickets, bookings, queues, and documents because the answer can be a simple yes or no."
+      "body": "Ask before handing over a large bill. Keep the price, fare, ticket total, or calculator screen visible.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có cần thay đổi chính xác không? once, then make the task visible with your item, menu line, bill, calculator, ticket, or ride screen. The phrase is doing one job: getting a clear answer about exact change.",
+      "body": "Show the cash while you ask. The answer may be yes, no, smaller bills, or a quick change request.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-do-i-need-exact-change",
-          "vietnamese": "Tôi có cần thay đổi chính xác không?",
+          "vietnamese": "Tôi có cần trả đúng tiền không?",
           "english": "Do I need exact change?",
-          "pronunciation": "Toi co can thay doi chinh xac khong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Toi co can tra dung tien khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
           "detailPageID": null,
-          "audioKey": "v500-mone-numb-pric-do-i-need-exact-change"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có cần asks do I need; trả đúng tiền means pay the exact amount; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có cần",
+          "english": "do I need",
+          "keepTogetherReason": "need question"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cần thay đổi",
-          "english": "need",
-          "audioKey": null
+          "vietnamese": "trả đúng tiền",
+          "english": "pay the exact amount",
+          "keepTogetherReason": "exact-payment phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "chính xác",
-          "english": "correct",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-5",
-          "vietnamese": "Tôi có cần thay đổi chính xác không?",
-          "english": "Do I need exact change",
+          "id": "full",
+          "vietnamese": "Tôi có cần trả đúng tiền không?",
+          "english": "Do I need exact change?",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Do I need exact change? to another money or price need.",
+      "body": "How-much and per-kilo cards help if the exact-change question starts from a price check.",
       "phrases": [
         {
           "id": "price-1",
@@ -116,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when exact change is the detail you need resolved. The likely reply is yes/no, a form, a document, or the next step, so keep the phrase short and ready for one follow-up."
+      "body": "Markets, buses, taxis, ticket windows, and small shops are where exact cash can matter.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "If they cannot break a bill, ask for smaller bills or show another note before the payment gets tense.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có cần thay đổi chính xác không?.",
+      "body": "Too-expensive, lower-price, final-price, another-one, and take-this cards cover the next money step.",
       "phrases": [
         {
           "id": "price-3",
@@ -184,13 +182,13 @@
   "examples": [
     {
       "id": "v500-mone-numb-pric-do-i-need-exact-change",
-      "vietnamese": "Tôi có cần thay đổi chính xác không?",
+      "vietnamese": "Tôi có cần trả đúng tiền không?",
       "english": "Do I need exact change?",
-      "pronunciation": "Toi co can thay doi chinh xac khong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Toi co can tra dung tien khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "green",
       "detailPageID": null,
-      "audioKey": "v500-mone-numb-pric-do-i-need-exact-change"
+      "audioKey": null
     }
   ]
 }

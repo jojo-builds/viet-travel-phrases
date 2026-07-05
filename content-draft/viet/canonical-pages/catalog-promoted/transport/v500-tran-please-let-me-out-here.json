@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Xin vui lòng cho tôi ra khỏi đây is a practical transport phrase for keeping one travel detail clear. Use it when let me out here is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use this when the curb, entrance, landmark, or safety feeling says the ride should end at this spot."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Xin vui lòng cho tôi ra khỏi đây. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Say Xin vui lòng cho tôi ra khỏi đây as one clean sentence; the destination, fare, or ride screen can carry the exact detail. Keep the map, address, or destination visible.",
       "phrases": [
         {
           "id": "v500-tran-please-let-me-out-here",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Start with Xin vui lòng + cho tôi ra; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please let me out here to another transport need.",
+      "body": "Nearby follow-ups: Take me here, Go to District 1, and You can stop here.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,7 +110,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when let me out here is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best in a taxi, motorbike pickup, or station counter, before the explanation gets long. Keep the destination, fare, or ride screen close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -120,7 +120,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Xin vui lòng cho tôi ra khỏi đây.",
+      "body": "Keep the next turn practical: Please stop right here, Go this way, and Please turn on the air conditioning.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

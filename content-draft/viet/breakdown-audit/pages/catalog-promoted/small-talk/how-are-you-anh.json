@@ -1,7 +1,7 @@
 {
   "pageID": "viet-how-are-you-anh",
   "phraseText": "Anh khỏe không?",
-  "englishTitle": "How are you, older man?",
+  "englishTitle": "How are you? (to an older man)",
   "reviewStatus": "reviewed",
   "visualReview": {
     "status": "reviewed",
@@ -21,22 +21,25 @@
     {
       "id": "chunk-1",
       "vietnamese": "Anh",
-      "english": "older man / respectful male address"
+      "english": "older man",
+      "keepTogetherReason": "relationship pronoun"
     },
     {
       "id": "chunk-2",
       "vietnamese": "khỏe",
-      "english": "healthy / well"
+      "english": "well / healthy",
+      "keepTogetherReason": "wellness word"
     },
     {
       "id": "chunk-3",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes or no?",
+      "keepTogetherReason": "soft question ending"
     },
     {
       "id": "full",
       "vietnamese": "Anh khỏe không?",
-      "english": "How are you, older man?",
+      "english": "How are you? (to an older man)",
       "audioKey": "audio-authored-anh-khoe-khong-942769853d"
     }
   ]

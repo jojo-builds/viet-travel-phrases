@@ -7,7 +7,7 @@
   "title": "Làm ơn bật đồng hồ giúp tôi",
   "englishTitle": "Please use the meter",
   "pronunciation": "lahm uhn but dong ho zoop toy",
-  "summary": "Làm ơn bật đồng hồ giúp tôi means “Please use the meter”.",
+  "summary": "This helps keep the ride price grounded.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Làm ơn bật đồng hồ giúp tôi when you need \"Please use the meter\". This is for the start of the ride when you need the meter running. This helps keep the ride price grounded. Listen for a confirmation, a handoff, a price, or a follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "This is for the start of the ride when you need the meter running.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Hear Làm ơn + bật as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "transport-meter-piece-1",
@@ -63,12 +65,13 @@
           "audioKey": "transport-meter"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Làm ơn bật đồng hồ giúp tôi as your first sentence for \"Please use the meter\". This is for the start of the ride when you need the meter running. Pause after the phrase and listen for a confirmation, a handoff, a price, or a follow-up question. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Say Làm ơn bật đồng hồ giúp tôi first; let the destination, fare, or ride screen support the reply.",
       "phrases": [
         {
           "id": "transport-meter",
@@ -81,18 +84,21 @@
           "audioKey": "transport-meter"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"Please use the meter\", Làm ơn bật đồng hồ giúp tôi makes the next step easier to answer. Pause after the phrase so the person can confirm before you add more words.",
-      "presentation": "plain-text"
+      "body": "Meter questions belong at the start of a taxi ride, before the fare becomes a disagreement.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Transport, the reply often comes as a confirmation, a handoff, a price, or a follow-up question. Say Làm ơn bật đồng hồ giúp tôi once, pause, and watch for the reply. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Watch for the meter being turned on, a fixed-price offer, or a cash-only answer.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -125,12 +131,13 @@
           "audioKey": "taxi-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for the start of the ride when you need the meter running. It fits rides, routes, pickup points, and stops, especially when the next step is a confirmation, a handoff, a price, or a follow-up question. Pause after the phrase so the person can confirm before you add more words.",
+      "body": "Best when the ride is a taxi and no app fare is already locked in.",
       "phrases": [
         {
           "id": "taxi-4",
@@ -163,18 +170,21 @@
           "audioKey": "taxi-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
-      "presentation": "tip-callout"
+      "body": "If they offer a fixed price instead, confirm the amount before deciding.",
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Show the location on your phone while you say the phrase. The visual context reduces mistakes.",
+      "body": "Ask before the ride gets moving; it is harder to reset the fare after a few blocks.",
       "phrases": [
         {
           "id": "taxi-7",
@@ -207,12 +217,13 @@
           "audioKey": "transport-lost"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "During a taxi ride, motorbike pickup, or station-counter exchange, the next useful language is usually take me here, go to District 1, and you can stop here.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -295,7 +306,8 @@
           "audioKey": "transport-fare"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

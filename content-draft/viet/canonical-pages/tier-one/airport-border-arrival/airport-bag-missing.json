@@ -19,7 +19,9 @@
       "id": "at-glance",
       "title": "At a glance",
       "body": "Use this at baggage claim when your bag has not appeared. Show your baggage tag immediately after saying it so staff can match the phrase to the real item. The useful move is naming the missing bag first, before you try to explain the flight, carousel, or timing.",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
@@ -57,12 +59,13 @@
           "audioKey": "airport-6"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Hành lý của tôi chưa tới as your first sentence at the carousel or baggage desk. Pause after it so staff can ask for the baggage tag, flight number, passport, or the counter you should visit. If you have the tag in your hand, point to it right after the phrase.",
+      "body": "Say Hành lý của tôi chưa tới at the carousel or baggage desk. Keep the baggage tag visible so staff can ask for the flight number, passport, or next counter.",
       "phrases": [
         {
           "id": "airport-6",
@@ -75,13 +78,16 @@
           "audioKey": "airport-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
       "body": "This phrase names the bag problem before you start explaining. That helps airport staff move straight to the baggage tag, flight details, or next counter. It is more useful than a broad lost-bag sentence when the bag may simply be delayed, still on another carousel, or waiting for a staff handoff.",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
@@ -119,7 +125,8 @@
           "audioKey": "airport-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
@@ -157,13 +164,16 @@
           "audioKey": "v500-airp-bord-arri-where-is-the-atm"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Keep the baggage tag visible. This turns the phrase into an actionable request.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -181,7 +191,8 @@
           "audioKey": "v500-airp-bord-arri-here-is-my-passport"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
@@ -259,7 +270,8 @@
           "audioKey": "v500-airp-bord-arri-here-is-my-passport"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

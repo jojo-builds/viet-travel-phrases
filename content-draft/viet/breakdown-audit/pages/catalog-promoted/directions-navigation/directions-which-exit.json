@@ -22,12 +22,13 @@
       "id": "chunk-1",
       "vietnamese": "Lối ra",
       "english": "exit",
-      "keepTogetherReason": "compound noun"
+      "keepTogetherReason": "exit noun"
     },
     {
       "id": "chunk-2",
       "vietnamese": "nào?",
-      "english": "which / any"
+      "english": "which one?",
+      "keepTogetherReason": "which-question ending"
     },
     {
       "id": "full",

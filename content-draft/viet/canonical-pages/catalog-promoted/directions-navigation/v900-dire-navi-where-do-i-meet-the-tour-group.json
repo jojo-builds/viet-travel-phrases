@@ -7,7 +7,7 @@
   "title": "Tôi gặp nhóm du lịch ở đâu?",
   "englishTitle": "Where do I meet the tour group?",
   "pronunciation": "Toi gap nhom du lich o dau",
-  "summary": "Where do I meet the tour group?",
+  "summary": "For finding the exact tour meeting point before the guide, van, boat, or group walks away.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi gặp nhóm du lịch ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names meet the tour group in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Ask with the booking screen, tour name, and start time open so the answer can be a lobby, gate, landmark, or desk.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Tôi gặp nhóm du lịch ở đâu?. Show your map, address, ride screen, sign, or nearby landmark, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "Show the tour name first. A guard, receptionist, ticket seller, or cafe staffer may know the meeting spot even if they are not the guide.",
       "phrases": [
         {
           "id": "v900-dire-navi-where-do-i-meet-the-tour-group",
@@ -42,38 +43,39 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi gặp means I meet; nhóm du lịch means tour group; ở đâu asks where.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi gặp nhóm",
-          "english": "I meet the group",
-          "audioKey": null
+          "vietnamese": "Tôi gặp",
+          "english": "I meet",
+          "keepTogetherReason": "meet phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "du lịch",
-          "english": "meet the tour group",
-          "audioKey": null
+          "vietnamese": "nhóm du lịch",
+          "english": "tour group",
+          "keepTogetherReason": "tour-group phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "ở đâu",
+          "vietnamese": "ở đâu?",
           "english": "where?",
-          "audioKey": null
+          "keepTogetherReason": "where ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi gặp nhóm du lịch ở đâu?",
-          "english": "Where do I meet the tour group",
-          "audioKey": null
+          "english": "Where do I meet the tour group?",
+          "audioKey": "v900-dire-navi-where-do-i-meet-the-tour-group"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where do I meet the tour group? to another directions need.",
+      "body": "Excuse-me, how-to-get-there, and near-here cards keep the same direction exchange moving.",
       "phrases": [
         {
           "id": "directions-1",
@@ -110,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits street, lobby, station, mall, or pickup-point moment, especially when meet the tour group can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Good before walking around a crowded plaza, hotel lobby, pier, museum, station, or attraction entrance looking for the group.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+      "body": "If the answer is a landmark, ask them to point or show it on the map before you leave the counter.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi gặp nhóm du lịch ở đâu?.",
+      "body": "Turn-left, right, straight, nearby, and walking-time cards cover the route once the meeting point is named.",
       "phrases": [
         {
           "id": "directions-4",

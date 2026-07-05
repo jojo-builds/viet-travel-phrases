@@ -1,0 +1,308 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_56",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_56",
+  "chunks": [
+    {
+      "chunkFile": "hoian_076_100_humanized.json",
+      "cityID": "hoian",
+      "range": "076-100",
+      "errors": [],
+      "warnings": [
+        {
+          "id": "city-hoian-place-reaching-out-arts-crafts",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-hoian-place-roastery",
+          "message": "freshness/process-like heading: Branch Details Can Vary"
+        },
+        {
+          "id": "city-hoian-place-roastery",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-sa-huynh-culture-museum",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-thanh-ha",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hoian-place-the-field",
+          "message": "freshness/process-like heading: Menu Details need a close-to-the-day check"
+        },
+        {
+          "id": "city-hoian-place-the-field",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 4x: venue name first"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: vietnamese name"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 11x: generic name-card heading"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 4x: freshness/checking heading"
+        },
+        {
+          "id": "076-100",
+          "message": "freshness/process headings appear 4x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hoian-place-reaching-out-arts-crafts",
+          "summary": "Reaching Out Arts & Crafts gives Hội An a quieter craft stop: handmade ceramics, textiles, workshop tables, and materials you can study without turning the browse into souvenir pressure.",
+          "context": "The draw is the patient craft table, not a big shopping haul. Look for the material, the finish, and the small decisions behind a handmade piece.",
+          "tip": "A slow browse carries more than a rushed shelf-by-shelf pass. One cup, textile, or tool detail can be enough.",
+          "rationale": "It earns a place in Hội An by showing craft through hands and materials inside the old-town rhythm, without needing big specifics about a factory or show.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Craft At Table Speed",
+              "body": "This is a calm craft stop: ceramics, textiles, tools, and finished pieces close enough to notice the work behind them."
+            },
+            {
+              "id": "place-brief",
+              "title": "Materials Do The Talking",
+              "body": "Notice tactile details: glaze, thread, wood, cloth, and how a handmade object feels different from a mass souvenir."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "The English name is the practical label. Đồ thủ công means handicrafts, but the shop name will be clearer for directions."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Slow Browse Near Old Houses",
+              "body": "It pairs naturally with an old-town walk when you want one indoor craft stop instead of another cafe or lantern photo."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small Keepsake Energy",
+              "body": "The visit makes sense when a gift or object should carry a little memory of Hội An, not just fill luggage space."
+            },
+            {
+              "id": "good-to-know",
+              "title": "No Need To Overbuy",
+              "body": "A careful look is enough. The point is craft awareness first; buying only matters if one piece genuinely holds your attention."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-roastery",
+          "summary": "Hoi An Roastery is a compact coffee pause in the old-town loop, where a counter, iced glass, and street-side view can reset the walk without making coffee the main event.",
+          "context": "Think of it as a coffee stop inside the walking rhythm: espresso, Vietnamese coffee, iced glasses, and a place to sit before the next old-town move.",
+          "tip": "The clean move is simple: order, cool down, and leave before the pause turns into a plan. The cafe works as a reset.",
+          "rationale": "Hoi An Roastery belongs because coffee is part of the town’s walking day, especially when heat, crowds, or rain make a short seated break matter.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Coffee Inside The Walking Loop",
+              "body": "The pause is the reason: a counter, cups, iced drinks, and a place to reset without leaving the old-town rhythm."
+            },
+            {
+              "id": "place-brief",
+              "title": "Caffeine, Shade, Then Back Out",
+              "body": "Expect coffee first, atmosphere second. The stop is easy to understand when it stays short and tied to the walk."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name First",
+              "body": "Hoi An Roastery usually stays in English. Show the name on a map; no special Vietnamese phrase is needed to make it clear."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Between Heat And The Next Stop",
+              "body": "It fits between a museum, old house, tailor visit, or river walk when the body needs shade more than another sight."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short Pause Energy",
+              "body": "A short drink makes more sense than settling in for hours. The old town will keep pulling the day forward."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Branch Details Can Vary",
+              "body": "Treat the exact branch, seating, and menu as current-day details. The durable reason to remember it is the coffee pause."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-sa-huynh-culture-museum",
+          "summary": "Museum of Sa Huynh Culture is a compact way to add older layers to Hội An: pottery, artifacts, and quiet cases that pull the town beyond lanterns and shopfronts.",
+          "context": "The museum is strongest as a short context stop. Let a few objects do the work rather than trying to turn every case into a full history lesson.",
+          "tip": "Give yourself a few reference points: pottery shapes, burial objects, trade hints, and the feeling that Hội An was layered long before the postcard streets.",
+          "rationale": "It belongs because Hội An needs more than exterior charm, and this museum points toward older cultures behind the town’s later trading identity.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Older Than The Street Scene",
+              "body": "The museum gives Hội An a deeper time layer: pottery, artifacts, cases, and a quieter story behind the old-town surface."
+            },
+            {
+              "id": "place-brief",
+              "title": "Objects Before Labels",
+              "body": "A short visit works if you choose a few forms to notice: bowls, jars, silhouettes, and the way objects sit under museum light."
+            },
+            {
+              "id": "quick-say",
+              "title": "Vietnamese Name",
+              "body": "Bảo tàng Văn hóa Sa Huỳnh is the Vietnamese name. The first words simply tell someone you mean the museum."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Short Indoor Layer",
+              "body": "It pairs well with an old-house or assembly-hall walk when the day needs context rather than another exterior photo."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small Museum Energy",
+              "body": "This is a compact stop. A focused half hour can be better than forcing a long visit from thin labels or tired attention."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Interpretation May Vary",
+              "body": "Current exhibits and English explanations can change. Let the museum be a context layer, not the only source for history."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-thanh-ha",
+          "summary": "Thanh Ha Pottery Village gives Hội An a craft-village stop with clay at the center: wheels, terracotta vessels, workshop rhythm, and a slower route beyond Ancient Town.",
+          "context": "The village is strongest when seen through clay and hands, not through a generic village checklist. Pottery is the reason the detour exists.",
+          "tip": "Focus on the making before the shopping. A wheel, a drying shelf, or a terracotta shape gives the stop its memory.",
+          "rationale": "Thanh Ha belongs because it connects Hội An’s village life with a specific craft tradition instead of another yellow-wall walk.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Clay Gives The Village Its Shape",
+              "body": "Thanh Ha is easiest to understand through pottery: wheels, terracotta vessels, workshop tables, and the rhythm of making by hand."
+            },
+            {
+              "id": "place-brief",
+              "title": "A Craft Detour Beyond Town",
+              "body": "The stop feels slower than Ancient Town. Clay, water, drying pieces, and repeated forms are the details to watch."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name For The Village",
+              "body": "Làng gốm Thanh Hà means Thanh Ha pottery village. It is the phrase to recognize on maps or with a driver."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Countryside Craft Loop",
+              "body": "It pairs well with a route that already leaves the old streets, especially when you want one clear craft focus."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Hands Before Souvenirs",
+              "body": "The strongest memory is watching how the clay is worked. Shopping can come after the craft makes sense."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Narrow specifics Are Safer",
+              "body": "Workshops and activity levels can vary. The durable draw is the pottery tradition, not a guaranteed demonstration at every moment."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-the-field",
+          "summary": "The Field Hoi An makes the meal part of the route: open air, rice-field edges, sunset light, and a table chosen for the setting as much as the food.",
+          "context": "The restaurant’s role is the setting: a meal near the fields where space and light matter. Avoid making menu guarantees without checking them.",
+          "tip": "Let the location lead the decision. The table makes the most sense when you want a meal to slow the day rather than simply end it.",
+          "rationale": "It belongs because Hội An’s food day is not only old-town counters; a rice-field meal gives the itinerary a different pace.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Dinner Beside The Fields",
+              "body": "The Field Hoi An is about where the meal happens: open air, rice-field edges, sunset mood, and a table with room around it."
+            },
+            {
+              "id": "place-brief",
+              "title": "Setting First, Menu Second",
+              "body": "Expect the location to carry much of the memory. Current dishes can change, but the field-side pause is the reason to go."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Show A Driver",
+              "body": "The Field Hoi An is the practical name. Show it on a map rather than translating the restaurant into Vietnamese."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Slower Evening Meal",
+              "body": "It fits after a countryside ride or a dense old-town day, when dinner feels like part of the route."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Light Changes The Stop",
+              "body": "Late-day light can make the setting feel stronger. Rain or darkness may shift the meal back toward the table itself."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Menu Details need a close-to-the-day check",
+              "body": "Do not reference point the plan to one dish without a menu check. The durable reason is the field-side setting."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

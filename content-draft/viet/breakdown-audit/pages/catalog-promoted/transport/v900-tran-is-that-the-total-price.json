@@ -20,38 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đó",
-      "english": "that"
+      "vietnamese": "Đó có phải là",
+      "english": "is that",
+      "keepTogetherReason": "is-that question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "tổng giá",
+      "english": "the total price",
+      "keepTogetherReason": "total-price phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "phải",
-      "english": "must / right"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tổng",
-      "english": "total"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "giá",
-      "english": "price"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

@@ -7,7 +7,7 @@
   "title": "Tôi có đi qua cầu không?",
   "englishTitle": "Do I go over the bridge?",
   "pronunciation": "Toi co di qua cau khong",
-  "summary": "Do I go over the bridge?",
+  "summary": "For checking a bridge crossing before you keep walking, riding, or following the map.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có đi qua cầu không? is a practical directions phrase for keeping one travel detail clear. Use it when Do I go over the bridge is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask while the bridge, map route, or road sign is still in view."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi có đi qua cầu không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the map and ask the yes/no question. A point or short answer is enough before you move on.",
       "phrases": [
         {
           "id": "v500-dire-navi-do-i-go-over-the-bridge",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có asks do I; đi qua cầu means go over the bridge; không? makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "english": "do I",
+          "keepTogetherReason": "do-I question frame"
         },
         {
           "id": "chunk-2",
           "vietnamese": "đi qua cầu",
-          "english": "go / move",
-          "audioKey": null
+          "english": "go over the bridge",
+          "keepTogetherReason": "bridge-crossing phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi có đi qua cầu không?",
-          "english": "Do I go over the bridge",
-          "audioKey": null
+          "english": "Do I go over the bridge?",
+          "audioKey": "v500-dire-navi-do-i-go-over-the-bridge"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Do I go over the bridge? to another directions need.",
+      "body": "How-to-get-there, nearby, and walking-time phrases help if the answer turns into a route explanation.",
       "phrases": [
         {
           "id": "directions-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real directions exchange when do I go over the bridge is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at river crossings, station exits, bridge approaches, and ride pickups where one wrong turn adds distance."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For directions, give the listener one clear anchor. A map or address lets them point instead of explaining everything in fast Vietnamese."
+      "body": "Bridge names can be hard to catch at speed. Let the map or sign carry the exact name."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có đi qua cầu không?.",
+      "body": "Left, right, straight, understand-now, and pickup-point phrases cover the next route move.",
       "phrases": [
         {
           "id": "directions-4",

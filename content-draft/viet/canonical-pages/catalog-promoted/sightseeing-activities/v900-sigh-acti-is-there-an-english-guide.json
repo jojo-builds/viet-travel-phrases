@@ -4,10 +4,10 @@
   "phraseID": "v900-sigh-acti-is-there-an-english-guide",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Có hướng dẫn tiếng Anh không?",
+  "title": "Có hướng dẫn viên tiếng Anh không?",
   "englishTitle": "Is there an English guide?",
-  "pronunciation": "Co huong dan tieng Anh khong",
-  "summary": "Is there an English guide?",
+  "pronunciation": "Co huong dan vien tieng Anh khong",
+  "summary": "For checking whether a tour or attraction has an English-speaking guide.",
   "iconName": "camera.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -15,56 +15,57 @@
     "v900-sigh-acti-is-there-an-english-guide",
     "premium"
   ],
-  "audioKey": "v900-sigh-acti-is-there-an-english-guide",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có hướng dẫn tiếng Anh không? is a practical sightseeing or activities phrase for keeping one travel detail clear. Use it when Is there an English guide is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask at the ticket desk or meeting point before you commit to the tour."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Có hướng dẫn tiếng Anh không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the booking, time slot, or attraction name so staff know which tour you mean.",
       "phrases": [
         {
           "id": "v900-sigh-acti-is-there-an-english-guide",
-          "vietnamese": "Có hướng dẫn tiếng Anh không?",
+          "vietnamese": "Có hướng dẫn viên tiếng Anh không?",
           "english": "Is there an English guide?",
-          "pronunciation": "Co huong dan tieng Anh khong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Co huong dan vien tieng Anh khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "purple",
           "detailPageID": null,
-          "audioKey": "v900-sigh-acti-is-there-an-english-guide"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có hướng dẫn viên tiếng Anh không asks whether an English-speaking guide is available.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Có hướng dẫn",
-          "english": "is there / does it have",
+          "vietnamese": "Có",
+          "english": "is there",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tiếng Anh",
-          "english": "English",
+          "vietnamese": "hướng dẫn viên tiếng Anh",
+          "english": "English-speaking guide",
+          "keepTogetherReason": "guide phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
+          "vietnamese": "không?",
+          "english": "yes/no?",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "Có hướng dẫn tiếng Anh không?",
+          "vietnamese": "Có hướng dẫn viên tiếng Anh không?",
           "english": "Is there an English guide",
           "audioKey": null
         }
@@ -73,7 +74,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is there an English guide? to another sightseeing or activities need.",
+      "body": "If there is no guide, ask for English audio, a map, start time, or where the group meets.",
       "phrases": [
         {
           "id": "sight-1",
@@ -110,17 +111,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real sightseeing or activities exchange when is there an English guide is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at museums, boat tours, walking tours, temples, caves, and ticket counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "At attractions, keep the ticket or booking visible so staff can check names and times quickly."
+      "body": "Some places have English signs but no English guide. Ask before paying if the guide matters."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Có hướng dẫn tiếng Anh không?.",
+      "body": "Use ticket, meeting point, start time, photo, or booking follow-ups if the tour details need another check.",
       "phrases": [
         {
           "id": "sight-4",
@@ -178,13 +179,13 @@
   "examples": [
     {
       "id": "v900-sigh-acti-is-there-an-english-guide",
-      "vietnamese": "Có hướng dẫn tiếng Anh không?",
+      "vietnamese": "Có hướng dẫn viên tiếng Anh không?",
       "english": "Is there an English guide?",
-      "pronunciation": "Co huong dan tieng Anh khong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Co huong dan vien tieng Anh khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "purple",
       "detailPageID": null,
-      "audioKey": "v900-sigh-acti-is-there-an-english-guide"
+      "audioKey": null
     }
   ]
 }

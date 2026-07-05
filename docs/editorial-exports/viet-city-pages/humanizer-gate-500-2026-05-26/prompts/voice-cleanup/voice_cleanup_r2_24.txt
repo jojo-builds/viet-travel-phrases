@@ -1,0 +1,334 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_24",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_24",
+  "chunks": [
+    {
+      "chunkFile": "hanoi_051_075_humanized.json",
+      "cityID": "hanoi",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-hanoi-place-phan-dinh-phung-street",
+          "message": "banned visible fragment: gives hanoi a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hanoi-place-old-quarter-walking-tour",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-old-quarter-walking-tour",
+          "message": "freshness/process-like heading: Routes Can Change"
+        },
+        {
+          "id": "city-hanoi-place-old-quarter-walking-tour",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-one-pillar-pagoda",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-one-pillar-pagoda",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-opera-house",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-opera-house",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-phan-dinh-phung-street",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-phan-dinh-phung-street",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-pho-bat-dan",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-pho-bat-dan",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 25x: local name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 25x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 5x: freshness/checking heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 25x"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 5x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hanoi-place-old-quarter-walking-tour",
+          "summary": "An Old Quarter walking route is better as a loose line than a list: lake edge, street corner, coffee pause, snack stop, then a clean exit.",
+          "context": "Plan a route short enough to stay enjoyable. Three stops can teach more than ten names.",
+          "tip": "Pick one place to look, one place to drink or eat, and one street between them. Leave room for the route to breathe.",
+          "rationale": "Tuyến đi bộ Phố cổ should guide walking judgment without pretending to be a live itinerary or fixed route.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "One Route Beats Ten Stops",
+              "body": "A good Old Quarter route gives the neighborhood a line: lake edge, coffee pause, snack stop, and one more lane."
+            },
+            {
+              "id": "place-brief",
+              "title": "Three Stops",
+              "body": "One place to look, one place to drink or eat, and one street between them is enough for a first route."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Tuyến đi bộ Phố cổ is the phrase to hold beside a short Old Quarter route, not a marathon."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Reset Point",
+              "body": "Build in a cafe, bench, lake edge, or quiet corner so the walk does not become one long traffic lesson."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Clean Endpoint",
+              "body": "Know where the walking stops. A clear endpoint makes the last lane easier to enjoy."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Routes Can Change",
+              "body": "Roadworks, closures, and pedestrian flow can change. Keep the route loose and follow the open streets in front of you."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-one-pillar-pagoda",
+          "summary": "One Pillar Pagoda is compact enough that the shape carries the visit: raised structure, pond, courtyard, and a quieter Ba Đình pause.",
+          "context": "Look slowly at a small landmark instead of taking one quick photo and leaving.",
+          "tip": "Step back enough to see the pond and platform together. The form makes more sense when the water is part of it.",
+          "rationale": "Chùa Một Cột is a short respectful stop with a clear visual idea, not a generic temple label.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Small Pagoda, Slow Look",
+              "body": "The visit is the raised structure, pond, courtyard, and a few still minutes in a busy Ba Đình day."
+            },
+            {
+              "id": "place-brief",
+              "title": "Pond And Platform",
+              "body": "The famous shape makes more sense when you read the structure with the water below it, not only as a front-facing photo."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Chùa Một Cột is the name to connect with the one-pillar form, pond, and small courtyard."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Room For Worship",
+              "body": "Let people pass, keep voices low, and avoid turning the courtyard into a photo queue."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Ba Đình Pairing",
+              "body": "The pagoda fits naturally with nearby Ba Đình history stops when the day still has patience for quiet places."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Small Site, Changing Rules",
+              "body": "Access, hours, queue flow, and photo expectations can change. Check the entrance rhythm before making this the day's main stop."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-opera-house",
+          "summary": "Hanoi Opera House feels most alive near evening: lit facade, scooters around the square, people on the steps, and the possibility of a real performance.",
+          "context": "Decide whether the building is a pass-by landmark or an actual show night.",
+          "tip": "Step far enough back to see the facade with the street around it. The square is part of the frame.",
+          "rationale": "Nhà hát Lớn Hà Nội holds both the French Quarter street scene and the possibility of a performance.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Evening Facade",
+              "body": "The Opera House is lamps on stone, scooters around the square, people at the steps, and ticket doors suggesting a bigger night."
+            },
+            {
+              "id": "place-brief",
+              "title": "Program Or Pass-By",
+              "body": "The building can be a quick landmark or a performance plan. Check the current program close to the date."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Nhà hát Lớn Hà Nội is the name to connect with the facade, square, and performance doors."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Street Frame",
+              "body": "Cross carefully, stand back, and let the lamps, steps, and traffic give the building its Hanoi setting."
+            },
+            {
+              "id": "when-to-use",
+              "title": "French Quarter Walk",
+              "body": "A short walk nearby turns the Opera House from one facade into part of a quieter city rhythm."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Show Plans Move",
+              "body": "Programming, ticket access, photo rules, and opening conditions can change. Check the show plan before crossing town."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-phan-dinh-phung-street",
+          "summary": "Phan Dinh Phung Street gives Hanoi a broader breath: tree shade, yellow villas, bicycles, and enough width to notice facades calmly.",
+          "context": "Take a short shaded walk that relieves Old Quarter compression without becoming a full itinerary.",
+          "tip": "Stay aware of traffic and gates while taking photos. The street works better as a calm change of pace than a checklist.",
+          "rationale": "Phố Phan Đình Phùng gives a leafy Hanoi walk with practical photo manners and flexible street access.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Leafier Walk",
+              "body": "Phan Đình Phùng is tree shade, villa facades, bicycles, and a wider street that lets Hanoi breathe for a few blocks."
+            },
+            {
+              "id": "place-brief",
+              "title": "Shade Carries It",
+              "body": "The trees are the reason to slow down. Let the walk be calmer than the Old Quarter, not another packed route."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Phố Phan Đình Phùng is the street name to pair with shade, yellow facades, and north-side walking."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Photo From The Side",
+              "body": "Step out of the path, watch for motorbikes, and avoid blocking gates or sidewalks while taking photos."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Ba Đình Air",
+              "body": "The street pairs naturally with Ba Đình or the Imperial Citadel area when the day needs air between heavier stops."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sidewalks Change",
+              "body": "Sidewalk access, street works, traffic, and photo-sensitive areas can change. Keep the walk observant and easy to adjust."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-pho-bat-dan",
+          "summary": "Pho Bat Dan is a focused Old Quarter bowl: steam over beef broth, herbs at the side, a plain table, and a meal kept short before the street pulls you back out.",
+          "context": "Order the bowl before the room starts moving around you. The stop is about broth, not a long sit.",
+          "tip": "Taste the broth before adding lime, chili, or herbs. A lighter hand keeps the bowl from disappearing under condiments.",
+          "rationale": "Phở Bát Đàn is a specific pho stop centered on broth, steam, herbs, and a quick Old Quarter meal.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Steam At The Table",
+              "body": "Pho Bat Dan is steam, beef broth, herbs, a simple table, and the Old Quarter waiting outside after the bowl."
+            },
+            {
+              "id": "place-brief",
+              "title": "Bowl Before Table",
+              "body": "Know the main move before sitting: beef pho, herbs, broth, then the short pause of eating it well."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Phở Bát Đàn is the name to connect with an Old Quarter beef pho stop."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Broth First",
+              "body": "Add herbs, lime, or chili slowly. The first spoonful tells you how much the bowl actually needs."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short Meal",
+              "body": "Let the memory be steam, broth, and the street outside. Eat, pay, and move before overworking the stop."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Room Habits Change",
+              "body": "Venue details, line habits, menu, and payment flow can change. Arrive ready to read the room before ordering."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

@@ -20,51 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "gọi đến nơi này",
+      "english": "call this place",
+      "keepTogetherReason": "call-this-place phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "gọi",
-      "english": "call"
+      "vietnamese": "và hỏi đường",
+      "english": "and ask for directions",
+      "keepTogetherReason": "ask-directions phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "đến",
-      "english": "to / arrive at"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "nơi",
-      "english": "place"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "và",
-      "english": "and"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "hỏi đường",
-      "english": "ask directions",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-9",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

@@ -20,24 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Mỗi",
-      "english": "each"
+      "vietnamese": "Mỗi lần",
+      "english": "each time",
+      "keepTogetherReason": "each-time phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "lần",
-      "english": "time / occasion"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "bao nhiêu",
-      "english": "how much / how many",
-      "keepTogetherReason": "fixed amount question"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "viên?",
-      "english": "staff / viên"
+      "vietnamese": "bao nhiêu viên?",
+      "english": "how many pills?",
+      "keepTogetherReason": "pill-count question"
     },
     {
       "id": "full",

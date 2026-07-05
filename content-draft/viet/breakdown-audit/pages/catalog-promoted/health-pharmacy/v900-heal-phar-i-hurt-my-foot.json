@@ -20,28 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi bị thương",
+      "english": "I am injured",
+      "keepTogetherReason": "injury phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "thương",
-      "english": "injury / love"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "chân",
-      "english": "foot / leg"
+      "vietnamese": "ở chân",
+      "english": "in the foot or leg",
+      "keepTogetherReason": "foot-leg area phrase"
     },
     {
       "id": "full",

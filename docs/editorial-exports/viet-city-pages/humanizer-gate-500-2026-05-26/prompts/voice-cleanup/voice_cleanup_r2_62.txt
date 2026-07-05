@@ -1,0 +1,297 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_62",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_62",
+  "chunks": [
+    {
+      "chunkFile": "hue_026_050_humanized.json",
+      "cityID": "hue",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-hue-place-diem-phung-thi-art-center",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-dong-ba",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-duyet-thi-duong-theater",
+          "message": "banned visible fragment: verified"
+        },
+        {
+          "id": "city-hue-place-duyet-thi-duong-theater",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-hen-island",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hue-place-hen-island",
+          "message": "banned visible fragment: gives hue a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hue-place-de-po-cafe",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hue-place-duyet-thi-duong-theater",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 4x: local tomb name"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hue-place-de-po-cafe",
+          "summary": "De Po Cafe is an upstairs pause above Hue market life: coffee, a balcony view over the aisles, and a cooler beat before stepping back into the city.",
+          "context": "The stop belongs to a market day, not a long cafe session: order, look over the aisles, then reset before heat or another walk.",
+          "tip": "A short visit makes sense; the balcony and iced coffee do the work without turning the cafe into the whole afternoon.",
+          "rationale": "It gives Hue's cafe rhythm a physical scene: upstairs air, glass coffee, market movement below, and a pause between errands or sightseeing.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Upstairs Market Pause",
+              "body": "De Po Cafe makes the market feel quieter for a few minutes. Coffee, ice, balcony air, and movement below are the reason to stop."
+            },
+            {
+              "id": "place-brief",
+              "title": "Balcony Before Heat",
+              "body": "The scene is simple: an upstairs cafe, a glass on the table, market aisles below, and enough distance from the rush to choose your next move."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name Stays Simple",
+              "body": "De Po Cafe usually stays in English. The name is enough for a map or driver; the clearer memory is the balcony above the market."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Market-Day Pairing",
+              "body": "It fits before or after market browsing, especially when heat, bags, or noise make a short seated reset feel smarter than another lap."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short Pause Logic",
+              "body": "This is not a long work cafe. The clean version is coffee, a view, and a small reset before the street pulls you back."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Scene Over Menu",
+              "body": "Menu details can change, so keep the expectation broad: coffee, a market-side view, and a quieter upstairs beat."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-diem-phung-thi-art-center",
+          "summary": "Diem Phung Thi Art Center gives Hue a quieter indoor layer: sculpture, white gallery rooms, warm daylight, and a pause from streets that can feel monument-heavy.",
+          "context": "It serves as a calm art stop when tombs, citadel walls, and river walks have filled the day with larger history.",
+          "tip": "The Vietnamese name, Trung tâm Nghệ thuật Điềm Phùng Thị, helps when reading signs or asking around town.",
+          "rationale": "The center adds scale to Hue's culture: not royal architecture, but rooms, objects, light, and one artist's memory.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quiet Art Pause",
+              "body": "The draw is sculpture, gallery light, and a smaller cultural stop between the city's heavier monuments. It gives the day an indoor breath without needing a museum marathon."
+            },
+            {
+              "id": "place-brief",
+              "title": "White Rooms, Small Scale",
+              "body": "Expect quiet gallery rooms, white walls, warm daylight, and display cases. The stop is about close looking more than covering a long route."
+            },
+            {
+              "id": "quick-say",
+              "title": "Điềm Phùng Thị On The Sign",
+              "body": "Trung tâm Nghệ thuật Điềm Phùng Thị is the Vietnamese form. It helps with signs, taxis, and local directions around the art center."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Indoor Reset",
+              "body": "It fits well after a sunny walk or before another outdoor stop. The rooms give context without competing with Hue's larger royal sites."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Short Visit Is Enough",
+              "body": "The center can be strongest as a focused stop: a few rooms, one quiet look at the work, then back into the river-city day."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Artist Before Landmark",
+              "body": "The narrower frame is artist-centered rather than a general Hue museum. That keeps the visit from feeling vague."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-dong-ba",
+          "summary": "Dong Ba Market is Hue's central market: crowded aisles, produce, sesame candy, household goods, food counters, and the feeling of the city shopping around you.",
+          "context": "Close to river and royal-city routes, it gives a practical everyday counterweight to palaces, tombs, and formal heritage stops.",
+          "tip": "Chợ Đông Ba is the local name. Chợ means market, and Đông Ba is the name people will recognize around Hue.",
+          "rationale": "The market gives Hue an edible, practical center: snacks, gifts, household goods, and local shopping beside the heritage city.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "First Lap In The Aisles",
+              "body": "Dong Ba Market is worth a slow first lap before buying. Food counters, produce, sweets, hats, and household goods sit close enough to overwhelm fast decisions."
+            },
+            {
+              "id": "place-brief",
+              "title": "Everyday Hue Under One Roof",
+              "body": "Expect a covered market with warm light, produce, baskets, sesame candy, snacks, and constant movement. It shows Hue outside monument routes."
+            },
+            {
+              "id": "quick-say",
+              "title": "Market Name",
+              "body": "Chợ Đông Ba is the local name. Chợ means market, so the first word helps when you hear directions or read signs."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Snack Or Gift Stop",
+              "body": "It fits a central day when you want one market browse, a snack, or a small gift run between Citadel and river plans."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Flexible Browse",
+              "body": "A short visit can be enough. The market is easier when the goal is tasting, browsing, or recognizing Hue's daily shopping rhythm."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Central Market Role",
+              "body": "Dong Ba is one of Hue's easiest places to connect food, gifts, and everyday shopping without adding a separate market trip."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-duyet-thi-duong-theater",
+          "summary": "Duyet Thi Duong Royal Theater brings performance into Hue's palace world: lacquered beams, a stage, low warm light, and cultural memory beyond static monuments.",
+          "context": "Inside the royal-city frame, it adds music, masks, stage light, and theater doors to the usual gates-and-courtyard rhythm.",
+          "tip": "Duyệt Thị Đường is the local name to recognize; keep current performance details separate because schedules can change.",
+          "rationale": "The theater gives Hue a living-culture angle, where architecture and performance memory sit inside the imperial setting.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Stage Inside Royal Hue",
+              "body": "Duyet Thi Duong Royal Theater is the palace world with a performance layer: stage, lacquered beams, low light, music, masks, and memory."
+            },
+            {
+              "id": "place-brief",
+              "title": "Lacquer, Stage, Low Light",
+              "body": "Expect an interior rather than another courtyard walk. The draw is how the room frames royal performance culture inside the Citadel setting."
+            },
+            {
+              "id": "quick-say",
+              "title": "Theater Name",
+              "body": "Duyệt Thị Đường is the Vietnamese name. It is the phrase to match on signs, maps, or performance references."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Beyond Static Monuments",
+              "body": "It fits a day that already includes gates and halls, adding a cultural note that feels less like architecture-only sightseeing."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Schedule Stays Flexible",
+              "body": "Performance times, access, and programming should be verified close to the visit. The durable reason is the theater space itself."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Room Before Show",
+              "body": "Even before any performance, the room matters: stage light, wood, lacquer, and the sense that culture here was made to be heard."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-hen-island",
+          "summary": "Hen Island shows Hue at river-neighborhood scale: low houses, narrow lanes, morning light, food-stall hints, and the feeling of daily life close to water.",
+          "context": "Cồn Hến belongs to Hue's river-city memory, where neighborhoods, lanes, small shops, and food routines sit apart from monument routes.",
+          "tip": "Cồn Hến is the Vietnamese name. Cồn suggests a river islet, which helps the place make sense on a Hue map.",
+          "rationale": "The island gives Hue a smaller river-side identity: lanes, low houses, food traces, and morning light away from palace scale.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "River Neighborhood Scale",
+              "body": "Hen Island is not a monument stop. Low houses, small lanes, morning light, and life close to the river carry the experience."
+            },
+            {
+              "id": "place-brief",
+              "title": "Lanes Near The Water",
+              "body": "Expect a small-island neighborhood feel rather than a polished attraction: narrow streets, low buildings, food-stall clues, and quiet river edges."
+            },
+            {
+              "id": "quick-say",
+              "title": "Island Name",
+              "body": "Cồn Hến is the Vietnamese name. It helps because Cồn points to an islet, while Hến connects to the local identity of the place."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Morning Or Food Context",
+              "body": "It fits when you want a lighter neighborhood look, especially around food curiosity or a river-side pause outside the central monument loop."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small Expectations Help",
+              "body": "The visit should stay modest: a lane, a river feel, maybe a food stop if it fits the day. Bigger specifics would oversell it."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Lived-In, Not Staged",
+              "body": "The point is ordinary scale. Houses, lanes, and water proximity carry more truth here than any single landmark."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

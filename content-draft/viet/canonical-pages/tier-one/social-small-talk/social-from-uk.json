@@ -7,7 +7,7 @@
   "title": "Tôi từ Anh",
   "englishTitle": "I’m from England",
   "pronunciation": "toy too anh",
-  "summary": "Tôi từ Anh means “I’m from England”.",
+  "summary": "Keep small talk simple and traveler-specific.",
   "iconName": "bubble.left.and.bubble.right.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi từ Anh when you need \"I'm from England\". Use this as a simple nationality answer in small talk. Listen for a short reply, a smile, a time, or a light follow-up question; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Use this as a simple nationality answer in small talk.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Start with Tôi + từ; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "smalltalk-2-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "smalltalk-2"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi từ Anh as your first sentence for \"I'm from England\". Use this as a simple nationality answer in small talk. Pause after the phrase and listen for a short reply, a smile, a time, or a light follow-up question. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
+      "body": "Say Tôi từ Anh in one connected line before adding details. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
       "phrases": [
         {
           "id": "smalltalk-2",
@@ -69,18 +72,21 @@
           "audioKey": "smalltalk-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Small talk in Vietnamese often becomes warmer when it connects to place, food, or shared experience. For \"I'm from England\", Tôi từ Anh makes the next step easier to answer. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
-      "presentation": "plain-text"
+      "body": "Small talk in Vietnamese often becomes warmer when it connects to place, food, or shared experience. Keep the tone warm and leave room for a short reply.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Social Small Talk, the reply often comes as a short reply, a smile, a time, or a light follow-up question. Say Tôi từ Anh once, pause, and watch for the reply. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
+      "body": "Watch for a smile, a time, or light follow-up question. Use it after a greeting or shared moment, then leave space for a short friendly reply.",
       "phrases": [
         {
           "id": "smalltalk-1",
@@ -113,12 +119,13 @@
           "audioKey": "smalltalk-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as a simple nationality answer in small talk. It fits friendly introductions and light local conversation, especially when the next step is a short reply, a smile, a time, or a light follow-up question. Pause naturally after the phrase; these exchanges work best when the reply has room to arrive.",
+      "body": "Use this as a simple nationality answer in small talk. Watch for a smile, a time, or light follow-up question.",
       "phrases": [
         {
           "id": "smalltalk-5",
@@ -151,13 +158,16 @@
           "audioKey": "smalltalk-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Some social phrases are best after a greeting, not as the very first thing you say to a stranger.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -187,7 +197,7 @@
         {
           "id": "how-are-you-anh",
           "vietnamese": "Anh khỏe không?",
-          "english": "How are you, older man?",
+          "english": "How are you? (to an older man)",
           "pronunciation": "anh khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
@@ -195,17 +205,18 @@
           "audioKey": "audio-authored-anh-khoe-khong-942769853d"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "nearby-phrases",
       "title": "Useful nearby phrases",
-      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
+      "body": "Use these for how are you? (to an older woman); how are you? (to someone younger) if the moment moves past the first line.",
       "phrases": [
         {
           "id": "how-are-you-chi",
           "vietnamese": "Chị khỏe không?",
-          "english": "How are you, older woman?",
+          "english": "How are you? (to an older woman)",
           "pronunciation": "chee khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
@@ -215,7 +226,7 @@
         {
           "id": "how-are-you-em",
           "vietnamese": "Em khỏe không?",
-          "english": "How are you, younger person?",
+          "english": "How are you? (to someone younger)",
           "pronunciation": "em khweh khom",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
@@ -223,12 +234,13 @@
           "audioKey": "audio-phrase-em-khoe-khong"
         }
       ],
-      "presentation": "horizontal-phrase-cards"
+      "presentation": "horizontal-phrase-cards",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "The nearby path usually runs through I’m from the United States, this is my first time, and I like Vietnam.",
       "phrases": [
         {
           "id": "smalltalk-1",
@@ -311,7 +323,8 @@
           "audioKey": "audio-phrase-rat-vui-duoc-gap-ban"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

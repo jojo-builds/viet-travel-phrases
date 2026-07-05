@@ -19,19 +19,16 @@
   ],
   "tokens": [
     {
+      "id": "chunk-1",
       "vietnamese": "Tỷ giá hối đoái",
       "english": "exchange rate",
-      "keepTogetherReason": "compound money term"
+      "keepTogetherReason": "exchange-rate phrase"
     },
     {
-      "id": "chunk-4",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "gì?",
-      "english": "what"
+      "id": "chunk-2",
+      "vietnamese": "là gì?",
+      "english": "what is it?",
+      "keepTogetherReason": "what-is-it ending"
     },
     {
       "id": "full",

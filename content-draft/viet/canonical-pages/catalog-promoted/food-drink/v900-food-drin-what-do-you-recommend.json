@@ -20,12 +20,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn đề xuất món gì? is a practical food or drink phrase for keeping one travel detail clear. Use it when What do you recommend is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it after you show the menu page or name the kind of food you want.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Bạn đề xuất món gì?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say Bạn đề xuất món gì? with the menu open, then watch for a point, a dish name, or a quick explanation. If the setting is casual, a smile and the menu do a lot of the politeness work.",
       "phrases": [
         {
           "id": "v900-food-drin-what-do-you-recommend",
@@ -37,136 +40,152 @@
           "detailPageID": null,
           "audioKey": "v900-food-drin-what-do-you-recommend"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Bạn đề xuất + món gì as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bạn đề xuất",
-          "english": "do you recommend",
-          "audioKey": null
+          "vietnamese": "Bạn",
+          "english": "you",
+          "audioKey": "breakdown-smalltalk-7-first"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "món gì",
-          "english": "which dish",
+          "vietnamese": "đề xuất",
+          "english": "recommend",
           "audioKey": null
         },
         {
           "id": "chunk-3",
+          "vietnamese": "món",
+          "english": "dish",
+          "audioKey": "breakdown-food-premium-too-spicy-now-first"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "gì?",
+          "english": "what",
+          "audioKey": "audio-breakdown-gi"
+        },
+        {
+          "id": "full",
           "vietnamese": "Bạn đề xuất món gì?",
-          "english": "What do you recommend",
-          "audioKey": null
+          "english": "What do you recommend?",
+          "audioKey": "v900-food-drin-what-do-you-recommend"
         }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from What do you recommend? to another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
-        }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real food or drink exchange when what do you recommend is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Use it at restaurants, cafes, food courts, and stalls when you are choosing between options. If you have a restriction, say the allergy or no-pork/no-beef phrase first, then ask for a recommendation.",
+      "phrases": [
+        {
+          "id": "food-1",
+          "vietnamese": "Cho tôi một phần",
+          "english": "One portion please",
+          "pronunciation": "cho toy mot fun",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-one-portion",
+          "audioKey": "food-1"
+        },
+        {
+          "id": "food-2",
+          "vietnamese": "Cho tôi tô này",
+          "english": "I’ll take this bowl",
+          "pronunciation": "cho toy toh nai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-this-bowl",
+          "audioKey": "food-2"
+        },
+        {
+          "id": "food-3",
+          "vietnamese": "Không cay nhé",
+          "english": "Not spicy please",
+          "pronunciation": "khong kai nhe",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-not-spicy",
+          "audioKey": "food-3"
+        },
+        {
+          "id": "food-vegetarian",
+          "vietnamese": "Tôi ăn chay",
+          "english": "I am vegetarian",
+          "pronunciation": "toy an chai",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-vegetarian",
+          "audioKey": "food-vegetarian"
+        },
+        {
+          "id": "food-peanut-allergy",
+          "vietnamese": "Tôi bị dị ứng đậu phộng",
+          "english": "I am allergic to peanuts",
+          "pronunciation": "toy bee zee oong dow fohng",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-family-food-peanut-allergy",
+          "audioKey": "food-peanut-allergy"
+        }
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
+      "body": "This line can sound a little formal, so let the menu or display case do some of the work. A warm tone keeps it casual.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn đề xuất món gì?.",
+      "body": "If the exchange continues, one iced tea, please, I’ll have what they are having, and two of these, please can carry the next detail.",
       "phrases": [
         {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
+          "id": "v900-food-drin-do-you-have-beer",
+          "vietnamese": "Bạn có bia không?",
+          "english": "Do you have beer?",
+          "pronunciation": "Ban co bia khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
-          "audioKey": "coffee-4"
+          "detailPageID": "viet-phrase-v900-food-drin-do-you-have-beer",
+          "audioKey": "v900-food-drin-do-you-have-beer"
         },
         {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
+          "id": "v900-food-drin-one-iced-tea-please",
+          "vietnamese": "Làm ơn cho một ly trà đá",
+          "english": "One iced tea, please",
+          "pronunciation": "Lam on cho mot ly tra da",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
-          "audioKey": "coffee-5"
-        },
-        {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
-          "audioKey": "coffee-6"
-        },
-        {
-          "id": "coffee-7",
-          "vietnamese": "Tính tiền giúp tôi",
-          "english": "Please let me pay",
-          "pronunciation": "ting tyen zoop toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
-          "audioKey": "coffee-7"
-        },
-        {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
-          "audioKey": "food-need-table"
+          "detailPageID": "viet-phrase-v900-food-drin-one-iced-tea-please",
+          "audioKey": "v900-food-drin-one-iced-tea-please"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "If the answer changes what you need, try one portion please, I’ll take this bowl, and not spicy please.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [

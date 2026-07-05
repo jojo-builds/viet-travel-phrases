@@ -1,0 +1,333 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_40",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_40",
+  "chunks": [
+    {
+      "chunkFile": "hcmc_051_075_humanized.json",
+      "cityID": "hcmc",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-hcmc-place-nephele",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hcmc-place-nephele",
+          "message": "banned visible fragment: safe frame"
+        },
+        {
+          "id": "city-hcmc-place-nephele",
+          "message": "banned visible fragment: source detail"
+        },
+        {
+          "id": "city-hcmc-place-nephele",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-nguyen-hue",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-nguyen-trai-street",
+          "message": "banned visible fragment: matters when"
+        },
+        {
+          "id": "city-hcmc-place-nguyen-trai-street",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-nhieu-loc-canal",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-notre-dame",
+          "message": "banned visible fragment: gives hcmc a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hcmc-place-nguyen-hue",
+          "message": "freshness/process-like heading: Drop-Offs Can Shift"
+        },
+        {
+          "id": "city-hcmc-place-notre-dame",
+          "message": "generic non-playable quick-say title: Local Name Cue"
+        },
+        {
+          "id": "city-hcmc-place-notre-dame",
+          "message": "freshness/process-like heading: Access Can Change"
+        },
+        {
+          "id": "city-hcmc-place-notre-dame",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 6x: local name cue"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 3x: street name cue"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 15x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 7x"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 2x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hcmc-place-nephele",
+          "summary": "Nephele is a small modern Saigon restaurant stop for a planned evening meal, with wine glasses, warm lighting, and table rhythm carrying more weight than sightseeing.",
+          "context": "The source is thin, so the claim stays narrow: a modern restaurant room, drinks, menu details, and a meal that needs attention.",
+          "tip": "Nephele usually stays as the venue name. The exact address matters; the dinner plan, not the name alone, should guide the stop.",
+          "rationale": "The restaurant gives HCMC a quieter modern-dining option, useful when the meal itself is the evening reference point.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Small Modern Dinner",
+              "body": "The draw is not a landmark story. It is a table, warm light, wine glasses, and a meal with enough focus to slow the night."
+            },
+            {
+              "id": "place-brief",
+              "title": "Room Over Rush",
+              "body": "The setting suggests a calmer dinner: modern room, close table, drinks, and menu detail rather than quick fuel between stops."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name Cue",
+              "body": "Nephele usually stays as the venue name. Say it slowly and keep the address ready if the driver needs more than the name."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Meal As The Plan",
+              "body": "It fits when dinner is the main evening decision. That keeps the stop from feeling like another box on a busy route."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Narrower Claim",
+              "body": "Source detail is limited, so the safe frame is simple: a modern restaurant table for a quieter meal, not a broad Saigon dining statement."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Address Matters",
+              "body": "Small restaurants can be harder to spot from a moving car. The saved pin and exact address matter more than a rough neighborhood memory."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-nguyen-hue",
+          "summary": "Nguyen Hue Walking Street is the central pedestrian spine to recognize at dusk, with City Hall views, families, cafe edges, and enough space to read the city.",
+          "context": "The street is useful as orientation: one broad central line where walkers, lights, cafes, and City Hall sit in the same frame.",
+          "tip": "Phố đi bộ Nguyễn Huệ is the name to recognize. It helps when a driver drops you near the pedestrian zone rather than at one exact door.",
+          "rationale": "The street gives HCMC a clear walking landmark, especially for first bearings around City Hall, cafe apartments, and evening crowds.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Broad Central Spine",
+              "body": "This is one of the easiest central streets to understand on foot: wide space, City Hall views, families, cafe edges, and evening light."
+            },
+            {
+              "id": "place-brief",
+              "title": "Dusk Gives It Shape",
+              "body": "The street makes more sense when people arrive to stroll, take photos, and meet. Daytime can feel more exposed and less social."
+            },
+            {
+              "id": "quick-say",
+              "title": "Walking Street Name",
+              "body": "Phố đi bộ Nguyễn Huệ is the Vietnamese name. It means Nguyen Hue Walking Street and helps with maps or drop-off points."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Good First Bearings",
+              "body": "It pairs with the Opera House, Dong Khoi, the river end, or a cafe stop when you want central Saigon to feel readable."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Stroll, Not A Mission",
+              "body": "The move is simple: arrive, walk the spine, notice the buildings, then decide whether to sit, turn toward the river, or head for dinner."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Drop-Offs Can Shift",
+              "body": "Cars may stop near the edge rather than inside the pedestrian area. A nearby corner can be easier than an exact middle pin."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-nguyen-trai-street",
+          "summary": "Nguyen Trai Street is a shopping-street name to know before a clothing-store or scooter-heavy walk, where the useful skill is matching addresses to the right block.",
+          "context": "The street works as an address and shopping corridor, not a single attraction. Expect movement, store fronts, scooters, and repeated crossings.",
+          "tip": "Đường Nguyễn Trãi is the Vietnamese name. The street is long enough that the district, number, and side of the road matter.",
+          "rationale": "The street gives HCMC a practical shopping-and-navigation stop, with clothing stores, scooters, and address checks shaping the experience.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Shopping Street To Pin Down",
+              "body": "Nguyen Trai is easier with one shop, address, or block in mind. The street itself is too long to treat as one stop."
+            },
+            {
+              "id": "place-brief",
+              "title": "Stores And Scooters",
+              "body": "The scene is busy and practical: clothing stores, signs, parked bikes, traffic, and crossings that slow even a short walk."
+            },
+            {
+              "id": "quick-say",
+              "title": "Street Name Cue",
+              "body": "Đường Nguyễn Trãi is the Vietnamese street name. Add the address number when asking, because the name alone may be too broad."
+            },
+            {
+              "id": "use-it-with",
+              "title": "One Errand, Then Nearby",
+              "body": "It makes sense for a shopping errand or a specific food stop nearby, not as a vague wandering plan across the whole street."
+            },
+            {
+              "id": "when-to-use",
+              "title": "The Address Does The Work",
+              "body": "Before going, know the shop name, number, and district. That information matters more than memorizing the street as a destination."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Crossing Takes Time",
+              "body": "Traffic can turn a short distance into a slower move. The right side of the road matters when the shop is close but hard to reach."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-nhieu-loc-canal",
+          "summary": "Nhieu Loc - Thi Nghe Canal gives HCMC a softer water route between districts, with small bridges, bank-side paths, apartments, and evening lights replacing landmark pressure.",
+          "context": "The canal is an everyday water edge, not a dramatic river cruise. Its value is neighborhood movement, bridges, and the city reflected at a slower pace.",
+          "tip": "Kênh Nhiêu Lộc - Thị Nghè is the Vietnamese name. It helps when choosing a bridge, bank, or nearby cafe as the actual meeting point.",
+          "rationale": "The canal gives HCMC a water-and-neighborhood stop with durable details: paths, bridges, apartment lights, and daily movement along the banks.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Softer Water Line",
+              "body": "The canal is quieter than the big river story. Small bridges, bank-side paths, apartments, and evening light make it an everyday city route."
+            },
+            {
+              "id": "place-brief",
+              "title": "Between Districts",
+              "body": "This is a place to understand movement between neighborhoods, not a single viewpoint. The bridges and banks give the route its shape."
+            },
+            {
+              "id": "quick-say",
+              "title": "Canal Name Cue",
+              "body": "Kênh Nhiêu Lộc - Thị Nghè is the Vietnamese name. It is easier to use with a nearby bridge or cafe pin."
+            },
+            {
+              "id": "use-it-with",
+              "title": "An Evening Walk Edge",
+              "body": "It fits a lighter walk when you want water, neighborhood movement, and a calmer edge after dense streets."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Bridge First",
+              "body": "A canal is easiest with a starting bridge. The bank and nearby pin matter before the route can feel obvious."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Working City Water",
+              "body": "Treat it as everyday urban water, not a postcard river. The appeal is in bridges, apartments, passing traffic, and small changes of light."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-notre-dame",
+          "summary": "Notre Dame Cathedral Basilica of Saigon is a central exterior landmark to approach slowly, with brick facades, trees, scooters, and worship memory sharing the same corner.",
+          "context": "The safest frame is exterior, facade, and setting. Access details can change, but the cathedral still helps reference point central Saigon.",
+          "tip": "Nhà thờ Đức Bà Sài Gòn is the Vietnamese name. It pairs naturally with the Central Post Office area when giving directions.",
+          "rationale": "The cathedral gives HCMC a sacred landmark with strong exterior memory: brick facade, courtyard shade, bells, trees, and scooters around the edge.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Cathedral In Street Life",
+              "body": "The first impression is the exterior: brick facade, trees, scooters, and a sacred building holding its place in central traffic."
+            },
+            {
+              "id": "place-brief",
+              "title": "Exterior Carries Plenty",
+              "body": "Even if interior access is limited, the cathedral still serves as an orientation point beside the Post Office area and nearby central streets."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name Cue",
+              "body": "Nhà thờ Đức Bà Sài Gòn is the Vietnamese name. It helps with drivers, maps, and recognition around the central square."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Central Pairing",
+              "body": "It naturally pairs with the Central Post Office, Dong Khoi, and a slower walk through the older civic core."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Access Can Change",
+              "body": "Opening rules and restoration conditions can change. The durable visit is the exterior, the square, and the way the cathedral reference points the block."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Photos Are Not The Whole Stop",
+              "body": "The facade is the obvious image, but the street life around it explains why the corner stays memorable."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

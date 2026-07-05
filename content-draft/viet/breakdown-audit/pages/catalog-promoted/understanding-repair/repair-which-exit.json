@@ -20,24 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đó",
-      "english": "that"
+      "vietnamese": "Đó là",
+      "english": "that is",
+      "keepTogetherReason": "that-is phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "lối ra",
-      "english": "exit",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "nào?",
-      "english": "which / any"
+      "vietnamese": "lối ra nào?",
+      "english": "which exit?",
+      "keepTogetherReason": "which-exit phrase"
     },
     {
       "id": "full",

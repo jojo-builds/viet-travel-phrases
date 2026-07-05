@@ -1,7 +1,7 @@
 {
   "pageID": "viet-how-are-you-em",
   "phraseText": "Em khỏe không?",
-  "englishTitle": "How are you, younger person?",
+  "englishTitle": "How are you? (to someone younger)",
   "reviewStatus": "reviewed",
   "visualReview": {
     "status": "reviewed",
@@ -21,22 +21,25 @@
     {
       "id": "chunk-1",
       "vietnamese": "Em",
-      "english": "younger person"
+      "english": "younger person",
+      "keepTogetherReason": "relationship pronoun"
     },
     {
       "id": "chunk-2",
       "vietnamese": "khỏe",
-      "english": "healthy / well"
+      "english": "well / healthy",
+      "keepTogetherReason": "wellness word"
     },
     {
       "id": "chunk-3",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes or no?",
+      "keepTogetherReason": "soft question ending"
     },
     {
       "id": "full",
       "vietnamese": "Em khỏe không?",
-      "english": "How are you, younger person?",
+      "english": "How are you? (to someone younger)",
       "audioKey": "audio-phrase-em-khoe-khong"
     }
   ]

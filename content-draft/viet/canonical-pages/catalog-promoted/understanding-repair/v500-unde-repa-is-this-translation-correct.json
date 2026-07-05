@@ -7,7 +7,7 @@
   "title": "Bản dịch này có đúng không?",
   "englishTitle": "Is this translation correct?",
   "pronunciation": "Ban dich nay co dung khong",
-  "summary": "Is this translation correct?",
+  "summary": "For checking whether a translated sentence says what you mean before you show it.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bản dịch này có đúng không? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Is this translation correct is right."
+      "body": "Best for one line at a time, not a whole conversation."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use Bản dịch này có đúng không? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "body": "Hold up the translated sentence and pause while the other person reads it.",
       "phrases": [
         {
           "id": "v500-unde-repa-is-this-translation-correct",
@@ -42,38 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bản dịch này means this translation; có đúng không? asks is it correct.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Bản dịch này",
-          "english": "this one / this",
-          "audioKey": null
+          "english": "this translation",
+          "keepTogetherReason": "this-translation phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "có đúng",
-          "english": "right / correct",
-          "audioKey": null
+          "vietnamese": "có đúng không?",
+          "english": "is it correct?",
+          "keepTogetherReason": "correct yes-no question"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Bản dịch này có đúng không?",
-          "english": "Is this translation correct",
-          "audioKey": null
+          "english": "Is this translation correct?",
+          "audioKey": "v500-unde-repa-is-this-translation-correct"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is this translation correct? to another understanding check need.",
+      "body": "Understanding and slower-speech phrases help if the correction comes back quickly.",
       "phrases": [
         {
           "id": "problems-2",
@@ -110,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+      "body": "Good before showing a message, confirming a price, checking a medicine note, or sending a booking reply."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "These phrases keep the exchange friendly when Vietnamese moves too fast. Ask for one specific next step: repeat, write, show, or point."
+      "body": "If they correct it, save the wording or ask them to write it down."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bản dịch này có đúng không?.",
+      "body": "Repeat, write it down, meaning, which one, and show me phrases cover nearby repair moves.",
       "phrases": [
         {
           "id": "repair-1",

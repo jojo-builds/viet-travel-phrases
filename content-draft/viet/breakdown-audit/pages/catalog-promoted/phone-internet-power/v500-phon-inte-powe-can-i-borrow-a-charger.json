@@ -20,30 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể",
+      "english": "can I",
+      "keepTogetherReason": "can-I phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "mượn",
+      "english": "borrow",
+      "keepTogetherReason": "borrow verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "mượn",
-      "english": "borrow"
-    },
-    {
       "vietnamese": "bộ sạc",
       "english": "charger",
-      "keepTogetherReason": "compound device accessory term"
+      "keepTogetherReason": "charger noun"
     },
     {
-      "id": "chunk-6",
+      "id": "chunk-4",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

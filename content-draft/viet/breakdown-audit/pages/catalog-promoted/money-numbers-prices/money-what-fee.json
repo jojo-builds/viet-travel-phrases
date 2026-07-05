@@ -19,34 +19,16 @@
   ],
   "tokens": [
     {
-      "vietnamese": "Khoản phí",
-      "english": "fee",
-      "keepTogetherReason": "compound fee term"
+      "id": "chunk-1",
+      "vietnamese": "Khoản phí này",
+      "english": "this fee",
+      "keepTogetherReason": "this-fee phrase"
     },
     {
-      "id": "chunk-3",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "dùng",
-      "english": "use"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "để",
-      "english": "to / in order to"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "làm",
-      "english": "do / make"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "gì?",
-      "english": "what"
+      "id": "chunk-2",
+      "vietnamese": "dùng để làm gì?",
+      "english": "what is it for?",
+      "keepTogetherReason": "what-for phrase"
     },
     {
       "id": "full",

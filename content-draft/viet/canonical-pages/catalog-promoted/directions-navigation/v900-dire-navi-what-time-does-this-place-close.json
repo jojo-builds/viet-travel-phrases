@@ -25,7 +25,7 @@
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Nơi này đóng cửa lúc mấy giờ? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Ask while pointing at the place, sign, map pin, or ticket listing. The closing time is the detail to catch.",
       "phrases": [
         {
           "id": "v900-dire-navi-what-time-does-this-place-close",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Nơi này đóng + cửa lúc carries the core meaning. Use the full line to hear the travel-speed rhythm.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from What time does this place close? to another directions need.",
+      "body": "Useful if the exchange continues: Excuse me, how do I get there, Is it near here, and How long does it take on foot.",
       "phrases": [
         {
           "id": "directions-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real directions exchange when what time does this place close is the detail you need resolved. The likely reply is a time, date, or schedule detail, so keep the phrase short and ready for one follow-up."
+      "body": "Best with a map, at a street corner, or at a ticket counter, before the explanation gets long. Keep the map location, address, station name, or sign close for the follow-up."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "If staff answer with a number, repeat it back or check it against the posted sign before you leave."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Nơi này đóng cửa lúc mấy giờ?.",
+      "body": "Nearby follow-ups: Where do I turn left?; Should I turn right?; Should I go straight?",
       "phrases": [
         {
           "id": "directions-4",

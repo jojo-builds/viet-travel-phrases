@@ -2,6 +2,7 @@ import SwiftUI
 
 struct PhraseDetailView: View {
     let page: PhraseDetailPage
+    private let articlePage: PhraseArticlePage
     let initialScrollTarget: PhraseArticleInitialScrollTarget?
     let scrollToTopTrigger: Int
     let scrollToTopRoute: AppRoute?
@@ -11,12 +12,14 @@ struct PhraseDetailView: View {
     let showsChrome: Bool
     let topChromeContentClearance: CGFloat
     let isSaved: Bool
+    let isPageSaved: (String) -> Bool
     let heroMorphPageID: String?
     let heroMorphContentHoldPageID: String?
     let heroImageNameOverride: String?
     var onBackTapped: () -> Void
     var onSearchTapped: () -> Void
     var onToggleSaved: (() -> Void)?
+    var onToggleSavedPage: (String) -> Void
     var onDetailTapped: (String) -> Void
 
     init(
@@ -30,15 +33,18 @@ struct PhraseDetailView: View {
         showsChrome: Bool = true,
         topChromeContentClearance: CGFloat = 0,
         isSaved: Bool = false,
+        isPageSaved: @escaping (String) -> Bool = { _ in false },
         heroMorphPageID: String? = nil,
         heroMorphContentHoldPageID: String? = nil,
         heroImageNameOverride: String? = nil,
         onBackTapped: @escaping () -> Void,
         onSearchTapped: @escaping () -> Void,
         onToggleSaved: (() -> Void)? = nil,
+        onToggleSavedPage: @escaping (String) -> Void = { _ in },
         onDetailTapped: @escaping (String) -> Void
     ) {
         self.page = page
+        self.articlePage = page.articleTemplate
         self.initialScrollTarget = initialScrollTarget
         self.scrollToTopTrigger = scrollToTopTrigger
         self.scrollToTopRoute = scrollToTopRoute
@@ -48,19 +54,21 @@ struct PhraseDetailView: View {
         self.showsChrome = showsChrome
         self.topChromeContentClearance = topChromeContentClearance
         self.isSaved = isSaved
+        self.isPageSaved = isPageSaved
         self.heroMorphPageID = heroMorphPageID
         self.heroMorphContentHoldPageID = heroMorphContentHoldPageID
         self.heroImageNameOverride = heroImageNameOverride
         self.onBackTapped = onBackTapped
         self.onSearchTapped = onSearchTapped
         self.onToggleSaved = onToggleSaved
+        self.onToggleSavedPage = onToggleSavedPage
         self.onDetailTapped = onDetailTapped
     }
 
     @ViewBuilder
     var body: some View {
         PhraseArticleTemplateView(
-            page: page.articleTemplate,
+            page: articlePage,
             chromeRoute: .detailPage(page.id),
             initialScrollTarget: initialScrollTarget,
             scrollToTopTrigger: scrollToTopTrigger,
@@ -71,12 +79,14 @@ struct PhraseDetailView: View {
             showsChrome: showsChrome,
             topChromeContentClearance: topChromeContentClearance,
             isSaved: isSaved,
+            isPageSaved: isPageSaved,
             heroMorphPageID: heroMorphPageID,
             heroMorphContentHoldPageID: heroMorphContentHoldPageID,
             heroImageNameOverride: heroImageNameOverride,
             onBackTapped: onBackTapped,
             onSearchTapped: onSearchTapped,
             onToggleSaved: onToggleSaved,
+            onToggleSavedPage: onToggleSavedPage,
             onDetailTapped: onDetailTapped
         )
     }
@@ -242,9 +252,6 @@ private struct DetailSectionCard: View {
                 .font(.headline.weight(.bold))
 
             DetailDefinedBodyText(text: section.body, definitions: section.inlineDefinitions)
-                .font(.body)
-                .foregroundStyle(.secondary)
-                .lineSpacing(3)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
@@ -258,7 +265,11 @@ private struct DetailDefinedBodyText: View {
     @State private var selectedDefinition: PhraseInlineDefinition?
 
     var body: some View {
-        Text(attributedText)
+        SelectableBodyText(
+            text: text,
+            definitions: definitions,
+            onOpenDefinition: { selectedDefinition = $0 }
+        )
             .contentShape(Rectangle())
             .onTapGesture {
                 if definitions.count == 1 {
@@ -282,23 +293,6 @@ private struct DetailDefinedBodyText: View {
             }
     }
 
-    private var attributedText: AttributedString {
-        var attributed = AttributedString(text)
-        for definition in definitions {
-            var searchStart = attributed.startIndex
-            while let range = attributed[searchStart...].range(
-                of: definition.vietnamese,
-                options: [.caseInsensitive, .diacriticInsensitive]
-            ) {
-                attributed[range].foregroundColor = .red
-                attributed[range].font = .body.weight(.semibold)
-                attributed[range].underlineStyle = Text.LineStyle(pattern: .dot)
-                attributed[range].underlineColor = UIColor.systemRed.withAlphaComponent(0.75)
-                searchStart = range.upperBound
-            }
-        }
-        return attributed
-    }
 }
 
 private struct DetailDefinitionPopover: View {
@@ -329,11 +323,11 @@ private struct DetailPhraseListSection: View {
                 .font(.headline.weight(.bold))
 
             if !section.body.isEmpty {
-                Text(section.body)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    .lineSpacing(2)
-                    .fixedSize(horizontal: false, vertical: true)
+                SelectableBodyText(
+                    text: section.body,
+                    textStyle: .subheadline,
+                    lineSpacing: 2
+                )
             }
 
             VStack(spacing: 0) {
@@ -360,11 +354,11 @@ private struct DetailBreakdownSection: View {
                 .font(.headline.weight(.bold))
 
             if !section.body.isEmpty {
-                Text(section.body)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    .lineSpacing(2)
-                    .fixedSize(horizontal: false, vertical: true)
+                SelectableBodyText(
+                    text: section.body,
+                    textStyle: .subheadline,
+                    lineSpacing: 2
+                )
             }
 
             BreakdownView(tokens: section.breakdown)

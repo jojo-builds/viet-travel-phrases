@@ -7,7 +7,7 @@
   "title": "Xin hãy kiên nhẫn với tôi",
   "englishTitle": "Please be patient with me",
   "pronunciation": "Xin hay kien nhan voi toi",
-  "summary": "Please be patient with me",
+  "summary": "For keeping a tense or rushed exchange kind while you catch up with the language.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Xin hãy kiên nhẫn với tôi is a practical understanding check phrase for keeping one travel detail clear. Use it when be patient with me is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say it when the other person is moving faster than you can understand and you need one calm beat.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Xin hãy kiên nhẫn với tôi. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Pair the line with a small nod, open phone, receipt, or form. Then ask for the exact repair you need: repeat, write, show, or point.",
       "phrases": [
         {
           "id": "v500-unde-repa-please-be-patient-with-me",
@@ -42,32 +43,39 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Xin hãy means please; kiên nhẫn means be patient; với tôi means with me.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Xin hãy kiên",
-          "english": "please / ask",
-          "audioKey": null
+          "vietnamese": "Xin hãy",
+          "english": "please",
+          "keepTogetherReason": "polite request frame"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "nhẫn với tôi",
-          "english": "be patient with me",
-          "audioKey": null
+          "vietnamese": "kiên nhẫn",
+          "english": "be patient",
+          "keepTogetherReason": "be-patient phrase"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "với tôi",
+          "english": "with me",
+          "keepTogetherReason": "with-me phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Xin hãy kiên nhẫn với tôi",
           "english": "Please be patient with me",
-          "audioKey": null
+          "audioKey": "v500-unde-repa-please-be-patient-with-me"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please be patient with me to another understanding check need.",
+      "body": "Do-not-understand, slower, and polite-slower cards help when you need the sentence itself repeated.",
       "phrases": [
         {
           "id": "problems-2",
@@ -104,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real understanding check exchange when be patient with me is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at counters, clinics, hotels, stations, and police or security desks when pressure is rising but you still need cooperation.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "These phrases keep the exchange friendly when Vietnamese moves too fast. Ask for one specific next step: repeat, write, show, or point."
+      "body": "This is a bridge phrase. Follow it with a specific request so the other person knows how to help.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Xin hãy kiên nhẫn với tôi.",
+      "body": "Repeat, write-it-down, meaning, number, and show-me cards cover the practical follow-up.",
       "phrases": [
         {
           "id": "repair-1",

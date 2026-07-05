@@ -20,34 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Ví",
-      "english": "wallet"
+      "vietnamese": "Ví của tôi",
+      "english": "my wallet",
+      "keepTogetherReason": "my-wallet phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "đã",
-      "english": "already / did"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đánh",
-      "english": "hit / brush"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "cắp.",
-      "english": "urgent"
+      "vietnamese": "đã bị đánh cắp.",
+      "english": "was stolen.",
+      "keepTogetherReason": "was-stolen phrase"
     },
     {
       "id": "full",

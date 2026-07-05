@@ -7,7 +7,7 @@
   "title": "Mấy giờ thì xong?",
   "englishTitle": "What time does it finish?",
   "pronunciation": "May gio thi xong",
-  "summary": "What time does it finish?",
+  "summary": "For knowing when something will be done before you wait or leave.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Mấy giờ thì xong? is for confirming the time or date before you commit. It helps turn What time does it finish into one clear answer you can check against a ticket, booking, calendar, or meeting point."
+      "body": "Laundry, food, documents, repairs, tours, and clinic steps can all have a finish time that matters."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Mấy giờ thì xong? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Ask the short question, then show the order slip, ticket, or booking if they need context.",
       "phrases": [
         {
           "id": "v900-time-date-book-what-time-does-it-finish",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Mấy giờ asks what time; xong means finished or done.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from What time does it finish? to another time, date, or booking need.",
+      "body": "Time lines help if the answer becomes today, tomorrow, or a different appointment.",
       "phrases": [
         {
           "id": "time-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when what time does it finish is the detail you need resolved. The likely reply is a time, date, or schedule detail, so keep the phrase short and ready for one follow-up."
+      "body": "Good at cafes, laundry counters, clinics, tour desks, repair shops, and hotel lobbies when you need to plan the next move."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "If the answer is vague, ask them to write the time or point to it on the receipt."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Mấy giờ thì xong?.",
+      "body": "Booking, opening-time, later-time, boarding-start, and wait lines cover the timing follow-up.",
       "phrases": [
         {
           "id": "time-4",

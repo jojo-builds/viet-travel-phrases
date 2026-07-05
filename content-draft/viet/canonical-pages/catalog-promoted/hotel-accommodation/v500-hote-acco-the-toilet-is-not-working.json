@@ -4,10 +4,10 @@
   "phraseID": "v500-hote-acco-the-toilet-is-not-working",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Nhà vệ sinh không hoạt động",
+  "title": "Bồn cầu không sử dụng được",
   "englishTitle": "The toilet is not working",
-  "pronunciation": "Nha ve sinh khong hoat dong",
-  "summary": "The toilet is not working",
+  "pronunciation": "Bon cau khong su dung duoc",
+  "summary": "For telling hotel staff the toilet in the room cannot be used.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -15,50 +15,52 @@
     "v500-hote-acco-the-toilet-is-not-working",
     "premium"
   ],
-  "audioKey": "v500-hote-acco-the-toilet-is-not-working",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Nhà vệ sinh không hoạt động is a practical hotel or stay phrase for keeping one travel detail clear. Use it when toilet is not working is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say it with the room number visible so staff can send maintenance or change rooms."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Nhà vệ sinh không hoạt động. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Use the line at the front desk or in a message. Add the room number, not a long explanation.",
       "phrases": [
         {
           "id": "v500-hote-acco-the-toilet-is-not-working",
-          "vietnamese": "Nhà vệ sinh không hoạt động",
+          "vietnamese": "Bồn cầu không sử dụng được",
           "english": "The toilet is not working",
-          "pronunciation": "Nha ve sinh khong hoat dong",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Bon cau khong su dung duoc",
+          "symbolName": "text.bubble.fill",
           "tintName": "purple",
           "detailPageID": null,
-          "audioKey": "v500-hote-acco-the-toilet-is-not-working"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bồn cầu means toilet; không sử dụng được means cannot be used.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Nhà vệ sinh",
-          "english": "bathroom",
+          "vietnamese": "Bồn cầu",
+          "english": "toilet",
+          "keepTogetherReason": "toilet fixture phrase",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "không hoạt động",
-          "english": "yes/no question",
+          "vietnamese": "không sử dụng được",
+          "english": "cannot be used / is not working",
+          "keepTogetherReason": "not-usable phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "Nhà vệ sinh không hoạt động",
+          "vietnamese": "Bồn cầu không sử dụng được",
           "english": "The toilet is not working",
           "audioKey": null
         }
@@ -67,7 +69,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from The toilet is not working to another hotel or stay need.",
+      "body": "If the issue affects the room, ask for cleaning, a room change, maintenance, or another bathroom.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -104,17 +106,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when toilet is not working is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotels, homestays, apartments, guesthouses, and reception desks."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "Be specific if it will not flush, leaks, or is blocked. A photo can help if the desk is busy."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Nhà vệ sinh không hoạt động.",
+      "body": "Use room-change, maintenance, cleaning, front-desk, or bathroom follow-ups if the first answer is not enough.",
       "phrases": [
         {
           "id": "hotel-3",
@@ -172,13 +174,13 @@
   "examples": [
     {
       "id": "v500-hote-acco-the-toilet-is-not-working",
-      "vietnamese": "Nhà vệ sinh không hoạt động",
+      "vietnamese": "Bồn cầu không sử dụng được",
       "english": "The toilet is not working",
-      "pronunciation": "Nha ve sinh khong hoat dong",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Bon cau khong su dung duoc",
+      "symbolName": "text.bubble.fill",
       "tintName": "purple",
       "detailPageID": null,
-      "audioKey": "v500-hote-acco-the-toilet-is-not-working"
+      "audioKey": null
     }
   ]
 }

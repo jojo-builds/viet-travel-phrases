@@ -7,7 +7,7 @@
   "title": "Cái này có bao gồm trong vé không?",
   "englishTitle": "Is this included in the ticket?",
   "pronunciation": "Cai nay co bao gom trong ve khong",
-  "summary": "Is this included in the ticket?",
+  "summary": "For checking whether a ride, exhibit, guide, locker, or extra area is covered by your ticket.",
   "iconName": "camera.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cái này có bao gồm trong vé không? is a confirmation phrase for moments when you want to avoid guessing. It lets someone correct you gently, point to the right option, or confirm that Is this included in the ticket is right."
+      "body": "Ask before paying twice or walking into the wrong line. Keep the ticket, wristband, or booking screen visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use Cái này có bao gồm trong vé không? when you are almost sure but want confirmation. Hold up the option you mean, then pause for yes, no, or a correction.",
+      "body": "Point to the thing you mean while you ask. Staff can answer yes, no, extra fee, or different entrance.",
       "phrases": [
         {
           "id": "v900-sigh-acti-is-this-included-in-the-ticket",
@@ -42,44 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Cái này means this item; có bao gồm asks whether it is included; trong vé means in the ticket; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Cái này",
-          "english": "this one",
-          "audioKey": null
+          "english": "this item",
+          "keepTogetherReason": "visible item"
         },
         {
           "id": "chunk-2",
           "vietnamese": "có bao gồm",
-          "english": "is it included?",
-          "audioKey": null
+          "english": "is included",
+          "keepTogetherReason": "included phrase"
         },
         {
           "id": "chunk-3",
           "vietnamese": "trong vé",
-          "english": "ticket",
-          "audioKey": null
+          "english": "in the ticket",
+          "keepTogetherReason": "ticket phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Cái này có bao gồm trong vé không?",
-          "english": "Is this included in the ticket",
-          "audioKey": null
+          "english": "Is this included in the ticket?",
+          "audioKey": "v900-sigh-acti-is-this-included-in-the-ticket"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is this included in the ticket? to another sightseeing or activities need.",
+      "body": "Ticket price, start point, and photo-permission cards cover nearby attraction questions.",
       "phrases": [
         {
           "id": "sight-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you move, pay, enter, board, sign, or choose. It lets the other person confirm or correct the exact option you are showing."
+      "body": "Attractions, museums, cable cars, tours, and activity desks are the right places to check inclusions."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "At attractions, keep the ticket or booking visible so staff can check names and times quickly."
+      "body": "Tickets may include the entrance but not lockers, rides, guides, or special zones. Pointing keeps the question precise."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Cái này có bao gồm trong vé không?.",
+      "body": "Closing time, meeting point, advance booking, tour booking, and entrance cards cover the next attraction detail.",
       "phrases": [
         {
           "id": "sight-4",

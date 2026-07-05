@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Thêm một đêm là bao nhiêu? is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on one extra night, so the answer can be a number, calculator screen, or typed price."
+      "body": "Ask this at the hotel desk before extending a stay. Keep your booking open so staff can quote the extra night, taxes, and any room-change limits."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Ask Thêm một đêm là bao nhiêu? before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "body": "Keep the booking, room number, address, or key card close, but let the question land first.",
       "phrases": [
         {
           "id": "v900-hote-acco-how-much-is-one-extra-night",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Start with Thêm một đêm + là; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How much is one extra night? to another hotel or stay need.",
+      "body": "Useful if the exchange continues: I have a reservation, I’d like to check in, and I’d like to check in, please.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+      "body": "Use it before checkout time or before you unpack for another night. The answer may depend on the same room being available."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "Ask for the total before handing over the key card or payment."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Thêm một đêm là bao nhiêu?.",
+      "body": "Keep close by: What time is check-out, Can I have a quiet room, and I’d like to check out.",
       "phrases": [
         {
           "id": "hotel-3",

@@ -7,7 +7,7 @@
   "title": "Tôi trả bằng tiền mặt",
   "englishTitle": "I’ll pay cash",
   "pronunciation": "toy tra bang tyen mat",
-  "summary": "Tôi trả bằng tiền mặt means “I’ll pay cash”.",
+  "summary": "This prevents confusion before the ride ends.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi trả bằng tiền mặt when you need \"I'll pay cash\". This is for when payment method needs to be clear. This prevents confusion before the ride ends. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Reach for it when payment method needs to be clear.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Start with Tôi trả + bằng; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "taxi-7-piece-1",
@@ -51,12 +53,13 @@
           "audioKey": "taxi-7"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi trả bằng tiền mặt as your first sentence for \"I'll pay cash\". This is for when payment method needs to be clear. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Say Tôi trả bằng tiền mặt first; let the destination, fare, or ride screen support the reply.",
       "phrases": [
         {
           "id": "taxi-7",
@@ -69,18 +72,21 @@
           "audioKey": "taxi-7"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Transport phrases work best when the driver can connect your words to a map, address, or landmark. For \"I'll pay cash\", Tôi trả bằng tiền mặt makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Cash payment is a ride-ending detail, not a route request. Say it after the fare is understood so the driver knows how you plan to settle.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Transport, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Tôi trả bằng tiền mặt once, pause, and watch for the reply. Keep the map, address, or destination visible while you speak so the reply points to the same place.",
+      "body": "Expect a nod, a request for smaller bills, a card/QR correction, or a fare check. Keep the visible amount close until payment is done.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -113,12 +119,13 @@
           "audioKey": "taxi-3"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when payment method needs to be clear. It fits rides, routes, pickup points, and stops, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
+      "body": "Best near the end of a ride, after the fare is visible or the driver asks how you are paying.",
       "phrases": [
         {
           "id": "taxi-4",
@@ -151,18 +158,21 @@
           "audioKey": "taxi-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Say the key place first, then confirm. Long explanations in a moving car are easy to misunderstand.",
-      "presentation": "tip-callout"
+      "body": "Large bills can make the handoff harder. Confirm the fare before offering cash or asking for change.",
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
       "title": "Local tip",
-      "body": "Show the location on your phone while you say the phrase. The visual context reduces mistakes.",
+      "body": "Show the fare, meter, or app price first. Cash is clearer when the amount is already shared.",
       "phrases": [
         {
           "id": "transport-fare",
@@ -195,12 +205,13 @@
           "audioKey": "transport-lost"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "After cash is clear, move to change, receipt, card, fare, or small-bill phrases if the payment still needs work.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -283,7 +294,8 @@
           "audioKey": "transport-meter"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

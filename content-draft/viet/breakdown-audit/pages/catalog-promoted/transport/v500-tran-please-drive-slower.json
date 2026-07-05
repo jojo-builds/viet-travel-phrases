@@ -20,33 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Xin",
-      "english": "please / request"
+      "vietnamese": "Xin hãy",
+      "english": "please",
+      "keepTogetherReason": "polite request"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "hãy",
-      "english": "please do"
+      "vietnamese": "lái xe",
+      "english": "drive",
+      "keepTogetherReason": "drive phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "lái",
-      "english": "drive"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "xe",
-      "english": "vehicle"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "chậm",
-      "english": "slow"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "lại",
-      "english": "again / back"
+      "vietnamese": "chậm lại",
+      "english": "slower / slow down",
+      "keepTogetherReason": "slow-down phrase"
     },
     {
       "id": "full",

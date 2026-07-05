@@ -20,29 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "I need",
+      "keepTogetherReason": "I-need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
+      "vietnamese": "nghỉ ngơi",
+      "english": "rest",
+      "keepTogetherReason": "rest verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nghỉ ngơi",
-      "english": "rest",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "lát",
-      "english": "a moment"
+      "vietnamese": "một lát",
+      "english": "for a moment",
+      "keepTogetherReason": "short-time phrase"
     },
     {
       "id": "full",

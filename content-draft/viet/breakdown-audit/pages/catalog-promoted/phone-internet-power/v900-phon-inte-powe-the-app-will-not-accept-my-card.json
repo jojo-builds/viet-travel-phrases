@@ -21,39 +21,20 @@
     {
       "id": "chunk-1",
       "vietnamese": "Ứng dụng",
-      "english": "app",
-      "keepTogetherReason": "compound noun"
+      "english": "the app",
+      "keepTogetherReason": "app noun"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "sẽ",
-      "english": "will"
+      "vietnamese": "sẽ không chấp nhận",
+      "english": "will not accept",
+      "keepTogetherReason": "will-not-accept phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "chấp",
-      "english": "accept"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "nhận",
-      "english": "receive / accept"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "thẻ",
-      "english": "card"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
+      "vietnamese": "thẻ của tôi",
+      "english": "my card",
+      "keepTogetherReason": "my-card phrase"
     },
     {
       "id": "full",

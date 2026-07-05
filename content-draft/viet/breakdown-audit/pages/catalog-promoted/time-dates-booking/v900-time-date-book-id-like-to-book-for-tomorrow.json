@@ -20,29 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi muốn",
+      "english": "I would like",
+      "keepTogetherReason": "I-would-like phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "muốn",
-      "english": "want"
+      "vietnamese": "đặt chỗ",
+      "english": "book / reserve",
+      "keepTogetherReason": "booking verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đặt chỗ",
-      "english": "make a reservation",
-      "keepTogetherReason": "compound booking action"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "vietnamese": "ngày mai",
-      "english": "tomorrow",
-      "keepTogetherReason": "fixed day expression"
+      "vietnamese": "cho ngày mai",
+      "english": "for tomorrow",
+      "keepTogetherReason": "for-tomorrow phrase"
     },
     {
       "id": "full",

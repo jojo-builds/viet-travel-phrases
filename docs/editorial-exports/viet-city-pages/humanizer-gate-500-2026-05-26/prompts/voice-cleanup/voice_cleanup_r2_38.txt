@@ -1,0 +1,305 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_38",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_38",
+  "chunks": [
+    {
+      "chunkFile": "hcmc_051_075_humanized.json",
+      "cityID": "hcmc",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-hcmc-place-independence-palace",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-jade-emperor-pagoda",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-landmark-81",
+          "message": "banned visible fragment: gives hcmc a"
+        },
+        {
+          "id": "city-hcmc-place-little-hanoi-egg-coffee",
+          "message": "banned visible fragment: gives hcmc a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hcmc-place-jade-emperor-pagoda",
+          "message": "generic non-playable quick-say title: Local Name Cue"
+        },
+        {
+          "id": "city-hcmc-place-le-van-tam-park",
+          "message": "generic non-playable quick-say title: Local Name Cue"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 6x: local name cue"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 3x: street name cue"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 15x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 7x"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 2x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hcmc-place-independence-palace",
+          "summary": "Independence Palace turns modern Saigon history into a physical route: front lawn, gates, ceremonial rooms, old command spaces, and the city pressing around the walls.",
+          "context": "The stop is strongest as a slow arrival from the front lawn into architecture, ceremony, and memory, rather than a quick photo of the facade.",
+          "tip": "Dinh Độc Lập is the name to recognize on maps and with drivers. The visit lands better when gates, rooms, and public memory stay in view.",
+          "rationale": "The palace gives HCMC a clear landmark stop because its value is physical: modernist architecture, ceremonial space, and a route through a political past.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "History With A Front Lawn",
+              "body": "The first read is simple: a formal lawn, a modernist facade, and a building where national memory sits in rooms, gates, and corridors."
+            },
+            {
+              "id": "place-brief",
+              "title": "Inside The Formal Shell",
+              "body": "Ceremonial spaces and older command areas make the stop feel less abstract. A slower pace lets the architecture do part of the explaining."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Listen For",
+              "body": "Dinh Độc Lập is the local name. Drivers and signs may lean on that Vietnamese name more than the English translation."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Landmark Between Walks",
+              "body": "It pairs naturally with nearby central stops when the day needs one grounded landmark, not only cafes, malls, or street corners."
+            },
+            {
+              "id": "when-to-use",
+              "title": "The Better Frame",
+              "body": "The visit makes more sense as a walk through a building's role in history than as a search for one famous photo."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Facade First, Then Rooms",
+              "body": "The front lawn and facade set the mood, but the rooms and corridors carry most of the memory. Give them a little time."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-jade-emperor-pagoda",
+          "summary": "Jade Emperor Pagoda asks for a slower arrival: courtyard, incense, red details, worshippers, and layered temple rooms inside a working sacred stop.",
+          "context": "The point is not a long temple checklist. The visit is a respectful pause where incense, shade, and carved detail carry the memory.",
+          "tip": "Chùa Ngọc Hoàng is the name to recognize. A gentle entrance helps; watch the rhythm first, then let the courtyard slow the move inside.",
+          "rationale": "The pagoda gives HCMC a sacred-place stop with a distinct courtyard and incense atmosphere, without needing inflated specifics or market-style energy.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Slow Sacred Pause",
+              "body": "The visit begins before the shrine rooms. Courtyard shade, incense smoke, red detail, and worship rhythm set the pace."
+            },
+            {
+              "id": "place-brief",
+              "title": "Incense Before Detail",
+              "body": "Architecture matters here, but the first impression is usually smoke, pause, and respect. The carved rooms feel better when you do not rush them."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name Cue",
+              "body": "Chùa Ngọc Hoàng is the name to listen for. It means Jade Emperor Pagoda and helps with maps, drivers, and recognition."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Quieter Central Stop",
+              "body": "This is a good counterweight to louder District 1 streets. It gives the day a quieter sacred space without needing to stretch the visit."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Respect Sets The Pace",
+              "body": "A quick photo pass misses the point. The better visit is a few slow minutes of looking, pausing, and noticing how people move through the temple."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Courtyard First",
+              "body": "The courtyard is the first read before the rooms. Incense and worship rhythm matter as much as the architecture."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-landmark-81",
+          "summary": "Landmark 81 is the Saigon skyline moment with a river edge: a tall orienting point for evenings, photos, and the feeling of the city stretching upward.",
+          "context": "The useful frame is height and orientation, not a checklist. River light, towers, and evening air make the building easier to place in the city.",
+          "tip": "Landmark 81 usually stays in English. Say it clearly, then pair the name with the tower, the river, or the skyline if context is needed.",
+          "rationale": "The tower gives HCMC a modern viewpoint stop: skyline, river edge, height, and a clear mental marker outside the older central core.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Skyline Marker",
+              "body": "The building is easiest to understand as orientation: one tall point beside the river, especially useful when the city starts turning into evening light."
+            },
+            {
+              "id": "place-brief",
+              "title": "Height Beside The River",
+              "body": "The scene is height, glass, river light, and a skyline that feels very different from older District 1 streets."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Say Clearly",
+              "body": "Landmark 81 usually stays as the venue name. Speak it slowly and pair it with the tower or river if a driver needs context."
+            },
+            {
+              "id": "use-it-with",
+              "title": "An Evening Orientation Stop",
+              "body": "It makes sense when the day needs a skyline view or a modern contrast after older landmarks, cafes, and low streets."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Weather Changes The Payoff",
+              "body": "Haze or rain can flatten a height-based stop. The building still serves as a skyline marker, but the view mood depends on the sky."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not Old Saigon",
+              "body": "This is the newer, vertical version of the city. The value is contrast: glass, height, river edge, and evening light."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-le-van-tam-park",
+          "summary": "Le Van Tam Park is an everyday open-air reset in central HCMC: shaded paths, open lawns, scooters outside the gates, and a calmer pause between denser stops.",
+          "context": "The park works as a short reset, not a formal attraction. Trees, paths, and evening movement make the surrounding city feel less compressed.",
+          "tip": "Công viên Lê Văn Tám is the name to recognize. A short walk here makes more sense than trying to turn the park into a big sightseeing stop.",
+          "rationale": "The park gives the city a practical green pause: paths, shade, families, and the ordinary rhythm around a central gate.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Park For Breathing Room",
+              "body": "The point is simple: trees, paths, open lawn, and a break from tighter streets. It works well as a pause between errands or sights."
+            },
+            {
+              "id": "place-brief",
+              "title": "Everyday, Not Grand",
+              "body": "This is a city park, not a formal attraction. The memory is shade, walkers, families, and scooters waiting just outside the gate."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name Cue",
+              "body": "Công viên Lê Văn Tám is the Vietnamese name. It helps with drivers and maps when the English spacing varies."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Between Denser Stops",
+              "body": "The park makes sense after a museum, cafe, or long street walk when the day needs open air without adding another major stop."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Better In Cooler Light",
+              "body": "Morning or late-day light suits the park better than a harsh midday detour. The value is a calmer walk, not a checklist moment."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Gates And Traffic",
+              "body": "The gate can feel calmer than the curb; the scooter traffic outside still needs a moment."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-little-hanoi-egg-coffee",
+          "summary": "Little HaNoi Egg Coffee Saigon is a compact cafe pause built around egg coffee, sweetness, and a short break from the heat rather than a long cafe session.",
+          "context": "The place is easiest as a small coffee ritual: order, sit, taste the creamy top, then return to the day.",
+          "tip": "Little HaNoi Egg Coffee usually stays as the name. Sweetness matters here, so a smaller first order is easier than treating it like ordinary coffee.",
+          "rationale": "The cafe gives HCMC a simple coffee-specific stop: compact room, warm cup, and a slower beat between walks.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Short Egg-Coffee Pause",
+              "body": "Come for the egg coffee more than the room. The cup can feel rich and dessert-like, so a short stop is enough."
+            },
+            {
+              "id": "place-brief",
+              "title": "Compact Cafe Rhythm",
+              "body": "The scene is a small Saigon cafe, a warm cup, and a pause between heat, sidewalks, and the next meal."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name And Order Cue",
+              "body": "Little HaNoi Egg Coffee usually stays in English. For the order, listen for cà phê trứng, the Vietnamese name for egg coffee."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Break Between Meals",
+              "body": "It fits between walks or before a later dinner when you want something sweet, small, and recognizably Vietnamese without a full cafe crawl."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Rich, Not Routine",
+              "body": "Egg coffee is heavier than a normal iced coffee. Treat it as a small dessert pause if sweetness or dairy can wear you out."
+            },
+            {
+              "id": "good-to-know",
+              "title": "The Cup Is The Memory",
+              "body": "Do not ask the stop to carry a whole afternoon. The drink is the reference point, and the cafe works better as a short reset."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

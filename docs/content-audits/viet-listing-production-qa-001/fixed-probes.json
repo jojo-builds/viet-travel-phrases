@@ -13,11 +13,14 @@
       "scenarioEligible": false
     },
     "renderedSections": [
-      "Meaning",
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Common follow-ups",
-      "Good to know",
-      "Next phrases"
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "Good to know"
     ],
     "status": "PASS"
   },
@@ -35,11 +38,15 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Other ways",
-      "Common follow-ups",
-      "Good to know",
-      "Next phrases"
+      "Natural variations",
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "Good to know"
     ],
     "status": "PASS"
   },
@@ -57,20 +64,20 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "About",
-      "Say it locally",
-      "What you'll get",
-      "Worth it if",
-      "Before you go",
+      "More Park Than Viewpoint",
+      "Useful Phrases",
+      "Early, With Weather Checked",
+      "Cable Car Arrival",
+      "Bridge Before Wandering",
       "Getting there",
       "Tickets",
       "Cable car",
       "Photos",
       "Getting back",
-      "Good to know",
+      "Give It Room",
       "Food & cash"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Cầu Rồng",
@@ -86,12 +93,11 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "Say it locally",
-      "What you'll get",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "Dry View Or Close Crowd",
+      "Useful Phrases",
+      "The Riverbank Shows The Dragon",
+      "Close Has A Different Energy",
+      "A Short Riverfront Loop"
     ],
     "status": "PASS"
   },
@@ -109,14 +115,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "What you'll get",
-      "Say it locally",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "Avenue As Orientation",
+      "Useful Phrases",
+      "Crossings Set The Pace",
+      "Pickup And Drop-Off Point",
+      "Cross-Town Ride",
+      "One Block Can Orient You"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Anăn Sài Gòn",
@@ -132,14 +138,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "What you'll get",
-      "Say it locally",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "Modern Vietnamese Inside Market Streets",
+      "Useful Phrases",
+      "Market Streets Shape The Dinner",
+      "Market Outside, Polish Inside",
+      "Before Dinner Settles In",
+      "Keep Everyday Food Around It"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Bún chả Hương Liên",
@@ -155,14 +161,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "What you'll get",
-      "Say it locally",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "The Famous Bún Chả Lunch",
+      "Useful Phrases",
+      "Build The Bite Slowly",
+      "Obama Table, Grill Smoke",
+      "Lunch With One Job",
+      "Eat While It Is Warm"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Phở Bát Đàn",
@@ -178,14 +184,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "What you'll get",
-      "Say it locally",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "An Old Quarter Phở Bowl",
+      "Useful Phrases",
+      "Know The Bowl First",
+      "Broth First",
+      "Short Meal",
+      "Compare It With Gia Truyền"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Bún bò Huế",
@@ -201,14 +207,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "What you'll get",
-      "Say it locally",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "Hue's Famous Spicy Noodle Soup",
+      "Useful Phrases",
+      "Aromatic And Deep",
+      "Famous Beyond Hue",
+      "A Bowl Before A Long Day",
+      "Chili After The Opening Sip"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Cao lầu",
@@ -224,14 +230,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "What you'll get",
-      "Say it locally",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "Hội An In One Bowl",
+      "Useful Phrases",
+      "Chewy, Dry, Herb-Heavy",
+      "Cao Lầu On Menus",
+      "Lunch Between Walks",
+      "Mostly Dry, Not Soup"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Bưu điện Thành phố",
@@ -247,14 +253,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
-      "Why go",
-      "What you'll get",
-      "Say it locally",
-      "Worth it if",
-      "Before you go",
-      "Good to know"
+      "Yellow Facade, Arched Hall",
+      "Useful Phrases",
+      "Facade, Hall, Street",
+      "Close By, Short Visit",
+      "Old Maps And Postcard Counters",
+      "Arches Before Photos"
     ],
-    "status": "FAIL"
+    "status": "PASS"
   },
   {
     "label": "Hotel check-in",
@@ -270,11 +276,15 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Other ways",
-      "Common follow-ups",
-      "Good to know",
-      "Next phrases"
+      "Natural variations",
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "Good to know"
     ],
     "status": "PASS"
   },
@@ -292,10 +302,14 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Common follow-ups",
-      "Good to know",
-      "Next phrases"
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "Good to know"
     ],
     "status": "PASS"
   },
@@ -313,11 +327,16 @@
       "scenarioEligible": true
     },
     "renderedSections": [
+      "At a glance",
+      "The standard way",
       "Break it down",
-      "Other ways",
-      "Common follow-ups",
-      "Good to know",
-      "Next phrases"
+      "Natural variations",
+      "Why it matters",
+      "Traveler insight",
+      "When to use it",
+      "Local tip",
+      "You May Hear",
+      "Good to know"
     ],
     "status": "PASS"
   },

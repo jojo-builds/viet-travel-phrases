@@ -4,10 +4,10 @@
   "phraseID": "v500-heal-phar-how-do-i-take-this",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Làm thế nào để tôi thực hiện điều này?",
+  "title": "Tôi uống thuốc này như thế nào?",
   "englishTitle": "How do I take this?",
-  "pronunciation": "Lam the nao de toi thuc hien dieu nay",
-  "summary": "How do I take this?",
+  "pronunciation": "Toi uong thuoc nay nhu the nao",
+  "summary": "For asking how to take medicine before leaving a pharmacy, clinic, or hotel desk.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -15,65 +15,67 @@
     "v500-heal-phar-how-do-i-take-this",
     "premium"
   ],
-  "audioKey": "v500-heal-phar-how-do-i-take-this",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Làm thế nào để tôi thực hiện điều này? is a practical pharmacy or health phrase for keeping one travel detail clear. Use it when How do I take this is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Show the box, bottle, blister pack, prescription, or receipt while you ask.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Làm thế nào để tôi thực hiện điều này?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Ask for dose, timing, and food warnings before the package goes back in the bag.",
       "phrases": [
         {
           "id": "v500-heal-phar-how-do-i-take-this",
-          "vietnamese": "Làm thế nào để tôi thực hiện điều này?",
+          "vietnamese": "Tôi uống thuốc này như thế nào?",
           "english": "How do I take this?",
-          "pronunciation": "Lam the nao de toi thuc hien dieu nay",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Toi uong thuoc nay nhu the nao",
+          "symbolName": "text.bubble.fill",
           "tintName": "red",
           "detailPageID": null,
-          "audioKey": "v500-heal-phar-how-do-i-take-this"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi uống means I take or drink; thuốc này means this medicine; như thế nào asks how.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Làm thế nào",
-          "english": "how to",
-          "audioKey": null
+          "vietnamese": "Tôi uống",
+          "english": "I take / drink",
+          "keepTogetherReason": "take-medicine verb"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "để tôi thực",
-          "english": "for me to do",
-          "audioKey": null
+          "vietnamese": "thuốc này",
+          "english": "this medicine",
+          "keepTogetherReason": "this-medicine phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "hiện điều này",
-          "english": "this one / this",
-          "audioKey": null
+          "vietnamese": "như thế nào?",
+          "english": "how?",
+          "keepTogetherReason": "how ending"
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "Làm thế nào để tôi thực hiện điều này?",
-          "english": "How do I take this",
+          "id": "full",
+          "vietnamese": "Tôi uống thuốc này như thế nào?",
+          "english": "How do I take this?",
           "audioKey": null
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How do I take this? to another pharmacy or health need.",
+      "body": "Doctor and pharmacy-location cards help if the medicine needs a different kind of care.",
       "phrases": [
         {
           "id": "problems-6",
@@ -110,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when how do I take this is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good when instructions are spoken too fast, printed in Vietnamese, or unclear after a pharmacy handoff.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "Ask them to write the dose if the answer includes numbers, times, meals, or warnings.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Làm thế nào để tôi thực hiện điều này?.",
+      "body": "Headache, stomach, motion-sickness, allergy, and diarrhea cards cover symptom context if they ask why you need it.",
       "phrases": [
         {
           "id": "health-2",
@@ -178,13 +182,13 @@
   "examples": [
     {
       "id": "v500-heal-phar-how-do-i-take-this",
-      "vietnamese": "Làm thế nào để tôi thực hiện điều này?",
+      "vietnamese": "Tôi uống thuốc này như thế nào?",
       "english": "How do I take this?",
-      "pronunciation": "Lam the nao de toi thuc hien dieu nay",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Toi uong thuoc nay nhu the nao",
+      "symbolName": "text.bubble.fill",
       "tintName": "red",
       "detailPageID": null,
-      "audioKey": "v500-heal-phar-how-do-i-take-this"
+      "audioKey": null
     }
   ]
 }

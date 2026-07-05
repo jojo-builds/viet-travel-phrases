@@ -7,7 +7,7 @@
   "title": "Vui lòng gửi vị trí của tôi cho người này",
   "englishTitle": "Please send my location to this person",
   "pronunciation": "Vui long gui vi tri cua toi cho nguoi nay",
-  "summary": "Please send my location to this person",
+  "summary": "For asking someone to send your location to a trusted contact when you need help being found.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng gửi vị trí của tôi cho người này is a practical safety or urgent-help phrase for keeping one travel detail clear. Use it when send my location to this person is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Show the contact, chat, map, or phone screen so the helper knows exactly who should receive it.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Vui lòng gửi vị trí của tôi cho người này. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Keep your phone unlocked only if it feels safe. Point to the contact instead of handing over more than needed.",
       "phrases": [
         {
           "id": "v900-emer-safe-please-send-my-location-to-this-person",
@@ -42,38 +43,39 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Vui lòng gửi means please send; vị trí của tôi means my location; cho người này means to this person.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Vui lòng gửi",
-          "english": "please",
-          "audioKey": null
+          "english": "please send",
+          "keepTogetherReason": "please-send phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "vị trí của tôi cho người",
-          "english": "my location to this person",
-          "audioKey": null
+          "vietnamese": "vị trí của tôi",
+          "english": "my location",
+          "keepTogetherReason": "my-location phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "này",
-          "english": "this one / this",
-          "audioKey": null
+          "vietnamese": "cho người này",
+          "english": "to this person",
+          "keepTogetherReason": "to-this-person phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Vui lòng gửi vị trí của tôi cho người này",
           "english": "Please send my location to this person",
-          "audioKey": null
+          "audioKey": "v900-emer-safe-please-send-my-location-to-this-person"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please send my location to this person to another safety or urgent-help need.",
+      "body": "Police, ambulance, and passport cards help when location sharing is part of a larger emergency.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -110,17 +112,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real safety or urgent-help exchange when send my location to this person is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotels, police desks, clinics, ride pickups, stations, or late-night help moments when someone needs your location.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "If you cannot share your phone, ask them to write the address or send the location from their own device.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Vui lòng gửi vị trí của tôi cho người này.",
+      "body": "Unsafe, emergency, help, hospital, and passport cards cover more urgent safety paths.",
       "phrases": [
         {
           "id": "emergency-4",

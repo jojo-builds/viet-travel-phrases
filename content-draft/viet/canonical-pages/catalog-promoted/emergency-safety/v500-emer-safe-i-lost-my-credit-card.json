@@ -7,7 +7,7 @@
   "title": "Tôi bị mất thẻ tín dụng",
   "englishTitle": "I lost my credit card",
   "pronunciation": "Toi bi mat the tin dung",
-  "summary": "I lost my credit card",
+  "summary": "For explaining that a credit card is missing before asking for help canceling it.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi bị mất thẻ tín dụng names the problem so staff or a helpful local can act on it. Use it when I lost my credit card is the clearest way to explain what changed, went missing, or needs attention."
+      "body": "Tell hotel staff, bank staff, or a helper the problem before showing account details or the bank app."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi bị mất thẻ tín dụng calmly and show the proof if you have it: phone screen, address, document, visible problem, or nearby staff member. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Keep the wallet, card photo, bank screen, or passport ready. Do not hand over private numbers unless needed.",
       "phrases": [
         {
           "id": "v500-emer-safe-i-lost-my-credit-card",
@@ -42,38 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi bị mất means I lost; thẻ tín dụng means credit card.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi bị",
-          "english": "I have / got",
-          "audioKey": null
+          "vietnamese": "Tôi bị mất",
+          "english": "I lost",
+          "keepTogetherReason": "lost-item phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "mất thẻ tín",
-          "english": "lost credit card",
-          "audioKey": null
+          "vietnamese": "thẻ tín dụng",
+          "english": "credit card",
+          "keepTogetherReason": "credit-card phrase"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "dụng",
-          "english": "correct",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi bị mất thẻ tín dụng",
           "english": "I lost my credit card",
-          "audioKey": null
+          "audioKey": "v500-emer-safe-i-lost-my-credit-card"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I lost my credit card to another safety or urgent-help need.",
+      "body": "Police, ambulance, and passport-loss cards cover more serious escalation.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -110,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as soon as the problem is clear enough to name. It is especially useful at a counter or desk where someone can look at the photo, receipt, bag, booking, or phone screen with you."
+      "body": "Hotel desks, bank branches, bank phone calls, and police reports are the places this sentence helps."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "The phrase names the lost card. The next step is usually canceling the card or checking recent charges."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi bị mất thẻ tín dụng.",
+      "body": "Unsafe, emergency, help, hospital, and stolen-bag cards cover urgent next steps nearby.",
       "phrases": [
         {
           "id": "emergency-4",

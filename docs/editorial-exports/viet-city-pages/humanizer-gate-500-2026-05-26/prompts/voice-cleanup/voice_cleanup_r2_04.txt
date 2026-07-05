@@ -1,0 +1,322 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_04",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_04",
+  "chunks": [
+    {
+      "chunkFile": "danang_026_050_humanized.json",
+      "cityID": "danang",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-danang-place-cong-caphe-bach-dang",
+          "message": "heading is command-like: Check The Seat Before Settling"
+        },
+        {
+          "id": "city-danang-place-domestic-terminal",
+          "message": "banned visible fragment: gives da nang a"
+        },
+        {
+          "id": "city-danang-place-dragon-bridge-fire-show",
+          "message": "heading is command-like: Check The Show Night"
+        },
+        {
+          "id": "city-danang-place-fatfish",
+          "message": "banned visible fragment: fits when"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-danang-place-cong-caphe-bach-dang",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-domestic-terminal",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-dragon-bridge-fire-show",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-dragon-carp-statue",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-fatfish",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-fatfish",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 17x: name to recognize"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 18x: generic name-card heading"
+        },
+        {
+          "id": "026-050",
+          "message": "non-playable quick-say name-card pattern appears 17x"
+        },
+        {
+          "id": "026-050",
+          "message": "freshness/process headings appear 3x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-danang-place-cong-caphe-bach-dang",
+          "summary": "Cộng Cà Phê Bạch Đằng is a river-side coffee pause for heat, walking, bridge lights, iced drinks, and the green retro room slowing the next decision.",
+          "context": "This branch works as a hinge between Bạch Đằng Street, the Hàn River edge, and the next meal or evening walk.",
+          "tip": "Order cold first, then choose the seat that matches the day: river-facing if available, inside if heat is winning, or takeaway if the room is full.",
+          "rationale": "The cafe makes Da Nang's river walk feel less like movement and more like a real pause, with seats and heat shaping the stop.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Take The River Pause",
+              "body": "Cộng Cà Phê Bạch Đằng fits the moment after heat, bridges, and walking. Order something cold and let the green room slow the next decision."
+            },
+            {
+              "id": "place-brief",
+              "title": "Cold Coffee Fits The Heat",
+              "body": "Cà phê sữa đá is the easy first order for sweet, strong iced coffee. Bạc xỉu is softer; coconut coffee makes the stop closer to dessert."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Cộng Cà Phê Bạch Đằng is the name to look for around the riverfront. Keep the branch tied to Bạch Đằng Street rather than just the chain logo."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Check The Seat Before Settling",
+              "body": "The better pause is the seat that fits your energy: river-facing if it is open, cooler inside if the heat is heavy, or takeaway if the room is full."
+            },
+            {
+              "id": "when-to-use",
+              "title": "River Walk, Coffee Pause",
+              "body": "This branch makes the most sense beside Bạch Đằng Street, the Hàn River edge, or a bridge-light evening. Treat coffee as the hinge."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Seats Shape The Stop",
+              "body": "River-facing seats are a bonus, not the promise. Check the room when you arrive, then choose shade, air-conditioning, or takeaway."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-domestic-terminal",
+          "summary": "Da Nang Domestic Terminal is a quick arrival scene: local signs, baggage carts, waiting families, warm air outside, and one pickup decision before the city begins.",
+          "context": "Treat the terminal as an ordered first step, not a place to multitask. Find the exit, match the pickup point, then let the ride begin.",
+          "tip": "Step out of the baggage flow before messaging a driver or family member. It is easier to solve pickup once you can read the signs.",
+          "rationale": "The domestic terminal turns the first few minutes into a calm sequence: bags, signs, pickup choice, and the ride into Da Nang.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quick Arrival, Then The City",
+              "body": "The domestic terminal gives Da Nang a practical first scene: local signs, families waiting near bags, baggage carts, and warm air outside the doors."
+            },
+            {
+              "id": "place-brief",
+              "title": "Read The Exit Before The Ride",
+              "body": "Domestic arrivals can feel simple until everyone moves at once. Step out of the flow and decide whether you are meeting a driver, finding a taxi, or walking to pickup."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Nhà ga quốc nội Đà Nẵng means the domestic terminal. The name separates the local-flight side from the international terminal."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Pause Before The Pickup",
+              "body": "A minute inside is worth taking if phones, water, or bags are not settled. It is easier to message a driver away from the door stream."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Close Enough To Begin",
+              "body": "This is not a place to linger. It gives the first local texture: Vietnamese announcements, short flights emptying out, and the beach road beyond the airport edge."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Pickup Details Stay Fluid",
+              "body": "Pickup zones, taxi flow, and ride-app signs can change. Follow the terminal signs in front of you before choosing a door or meeting point."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-dragon-bridge-fire-show",
+          "summary": "The Dragon Bridge fire show is Da Nang looking up together: scooters slowing, families at the rail, phones raised, and the dragon glowing over the river.",
+          "context": "This stop belongs to the timed crowd ritual, not the bridge as a static landmark. Timing, side choice, and exit path matter most.",
+          "tip": "Choose your side before the burst, and verify the current schedule close to the night if the show is the reason you are going.",
+          "rationale": "The fire show gives the bridge a shared street ritual when timing, viewing side, weather, and the exit path are clear.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Street Crowd, Not A Seat",
+              "body": "The fire show is Da Nang looking up together: scooters slowing, families at the rail, phones already raised, and the dragon head glowing over the river."
+            },
+            {
+              "id": "place-brief",
+              "title": "Close Means Noise And Spray",
+              "body": "Near the bridge, the show feels less like a performance and more like a crowd reaction. Expect shoulder-to-shoulder watching and quick phones."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Màn phun lửa Cầu Rồng means the Dragon Bridge fire show. The phrase is for the event, not just the bridge itself."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Farther Back Holds The Frame",
+              "body": "From the promenade, you lose some force but gain the scene: dragon head, river, lights, and crowd silhouettes."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Move After The Burst",
+              "body": "The area shifts quickly once people start walking, scooters return, and groups look for the next snack or ride. Know your side before it ends."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Check The Show Night",
+              "body": "If the fire show is the reason for crossing town, check that night's timing, traffic, and weather before you pick a side."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-dragon-carp-statue",
+          "summary": "The Dragon Carp Statue is a small Hàn River foreground: carp-dragon form in front, bridge lights behind, and a quick photo pause along the promenade.",
+          "context": "It works as one link in a river walk, not a destination that has to carry the evening.",
+          "tip": "Step back enough to see the statue with Dragon Bridge, Love Bridge, or the river lights in the same frame.",
+          "rationale": "The statue gives a short riverfront walk a memorable object and a local-symbol cue without inflating the stop.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Statue Gives The River A Foreground",
+              "body": "The Dragon Carp Statue is a quick Hàn River stop: carp-dragon form in front, bridge lights and river behind, and people pausing for photos."
+            },
+            {
+              "id": "place-brief",
+              "title": "Look Across, Not Only At It",
+              "body": "The statue makes more sense with the river around it. Step back enough to catch nearby bridges or lights in the same mental frame."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Tượng Cá Chép Hóa Rồng names the carp turning into a dragon. The phrase keeps the small landmark distinct from Dragon Bridge."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Better As One Link In The Walk",
+              "body": "This is a short stop between other riverfront pieces: a photo, a look at the water, then a decision about where to go next."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small, Still Memorable",
+              "body": "The form is easy to remember after the name clicks: fish becoming dragon, local symbol becoming photo foreground. At night, surrounding lights carry it."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Come For The Shape",
+              "body": "Fountain timing and lighting can vary. The steady reason to stop is the statue's shape against the river and bridge lights."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-fatfish",
+          "summary": "Fatfish is a river-table choice for a slower Da Nang dinner: terrace light, drinks, Han River blur, and a meal that feels like part of the evening.",
+          "context": "This restaurant fits when dinner should hold the night gently, not just fill time between bridge photos and the ride home.",
+          "tip": "Start with drinks and one or two plates, then widen the order after you understand the portions and the room.",
+          "rationale": "Fatfish fits as a river-table decision: settle in slowly, check the basics, and let the evening pace matter more than menu detail.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A River Table When Dinner Matters",
+              "body": "Fatfish is for the evening when dinner is not just a gap between bridge photos and the ride home. The river setting gives the meal a slower Da Nang shape."
+            },
+            {
+              "id": "place-brief",
+              "title": "Terrace First, If The Air Is Kind",
+              "body": "The riverside seat is the reason to linger. If weather is heavy or the room feels easier, keep the order simple and let the view do less work."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Fatfish usually stays as the venue name. Keep it tied to the Hàn River dinner moment rather than a specific dish claim."
+            },
+            {
+              "id": "use-it-with",
+              "title": "One Round Before The Table Fills",
+              "body": "Start with drinks and one or two plates, then widen the order after you understand portions. It keeps the meal from becoming table management."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Calm Pair With The River",
+              "body": "Fatfish makes sense before or after a Hàn River walk, especially when the day has already had enough movement."
+            },
+            {
+              "id": "good-to-know",
+              "title": "The Room Sets The Pace",
+              "body": "Hours, menu, and terrace availability can shift. Check the basics before you go, then keep the plan about a slow river dinner."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

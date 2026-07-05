@@ -7,7 +7,7 @@
   "title": "Bạn có thể giúp tôi liên hệ với ngân hàng được không?",
   "englishTitle": "Can you help me contact the bank?",
   "pronunciation": "Ban co the giup toi lien he voi ngan hang duoc khong",
-  "summary": "Can you help me contact the bank?",
+  "summary": "For asking for help reaching the bank when a card or ATM problem stalls you.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể giúp tôi liên hệ với ngân hàng được không? is a friendly way to ask for help with contact the bank. It gives the other person a clear job and keeps the conversation focused on the next practical step."
+      "body": "A bank problem can be hard to explain while the ATM screen or payment counter is still in front of you."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể giúp tôi liên hệ với ngân hàng được không? once, then make the task visible with your item, menu line, bill, calculator, ticket, or ride screen. The phrase is doing one job: getting a clear answer about contact the bank.",
+      "body": "Show the bank name, card, ATM receipt, or error screen. Keep private codes covered.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-can-you-help-me-contact-the-bank",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Giúp tôi liên hệ asks for help contacting; ngân hàng is the bank.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -52,26 +52,26 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "giúp tôi liên",
-          "english": "help me",
+          "vietnamese": "giúp tôi liên hệ",
+          "english": "help me contact",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "hệ với ngân",
-          "english": "near",
+          "vietnamese": "với ngân hàng",
+          "english": "the bank",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "hàng",
-          "english": "item / goods",
+          "vietnamese": "được",
+          "english": "possible",
           "audioKey": null
         },
         {
           "id": "chunk-5",
-          "vietnamese": "được không",
-          "english": "is it possible?",
+          "vietnamese": "không",
+          "english": "can you?",
           "audioKey": null
         },
         {
@@ -85,12 +85,12 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you help me contact the bank? to another money or price need.",
+      "body": "Price cards stay nearby if the bank issue starts while paying or checking a receipt.",
       "phrases": [
         {
           "id": "price-1",
           "vietnamese": "Cái này bao nhiêu?",
-          "english": "How much is this?",
+          "english": "How much money is this?",
           "pronunciation": "gai nai bao nyew",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
@@ -122,17 +122,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when contact the bank is the detail you need resolved. The likely reply is help, a question back, or a practical next step, so keep the phrase short and ready for one follow-up."
+      "body": "Good at ATMs, hotel desks, bank counters, shops, and ticket counters when a payment or card problem needs a call."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Do not show PINs, one-time passwords, or full account screens. Let them see only what they need to place the call."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể giúp tôi liên hệ với ngân hàng được không?.",
+      "body": "If the issue turns back to the amount, discount and final-price cards help confirm what should have been charged.",
       "phrases": [
         {
           "id": "price-3",

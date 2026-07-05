@@ -7,7 +7,7 @@
   "title": "Tỷ giá hối đoái là gì?",
   "englishTitle": "What is the exchange rate?",
   "pronunciation": "Ty gia hoi doai la gi",
-  "summary": "What is the exchange rate?",
+  "summary": "For asking the rate a counter, hotel, shop, or driver is using before you exchange or compare money.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tỷ giá hối đoái là gì? is a practical money or price phrase for keeping one travel detail clear. Use it when What is the exchange rate is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask before accepting a conversion, especially when a calculator, note, bill, or foreign-currency amount is already visible.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tỷ giá hối đoái là gì?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Show the cash, quoted amount, or calculator. Then let the other person write or type the rate instead of explaining it aloud.",
       "phrases": [
         {
           "id": "v900-mone-numb-pric-what-is-the-exchange-rate",
@@ -42,32 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tỷ giá hối đoái means exchange rate; là gì asks what is it.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tỷ giá hối",
-          "english": "price / money",
-          "audioKey": null
+          "vietnamese": "Tỷ giá hối đoái",
+          "english": "exchange rate",
+          "keepTogetherReason": "exchange-rate phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đoái là gì",
-          "english": "exchange rate",
-          "audioKey": null
+          "vietnamese": "là gì?",
+          "english": "what is it?",
+          "keepTogetherReason": "what-is-it ending"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tỷ giá hối đoái là gì?",
-          "english": "What is the exchange rate",
-          "audioKey": null
+          "english": "What is the exchange rate?",
+          "audioKey": "v900-mone-numb-pric-what-is-the-exchange-rate"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from What is the exchange rate? to another money or price need.",
+      "body": "How-much and per-kilo cards stay useful when the next question is a price rather than a conversion.",
       "phrases": [
         {
           "id": "price-1",
@@ -104,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when what is the exchange rate is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at exchange counters, hotel desks, tour offices, border towns, and shops quoting in more than one currency.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+      "body": "Rates can include a fee or a worse round number. Ask for the total you will receive before handing over cash.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tỷ giá hối đoái là gì?.",
+      "body": "Too-expensive, lower-price, final-price, another-one, and take-this cards cover the money conversation after the rate is clear.",
       "phrases": [
         {
           "id": "price-3",

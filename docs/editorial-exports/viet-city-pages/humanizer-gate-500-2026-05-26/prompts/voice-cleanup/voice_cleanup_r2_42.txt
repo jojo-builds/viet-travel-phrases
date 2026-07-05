@@ -1,0 +1,293 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_42",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_42",
+  "chunks": [
+    {
+      "chunkFile": "hcmc_076_100_humanized.json",
+      "cityID": "hcmc",
+      "range": "076-100",
+      "errors": [
+        {
+          "id": "city-hcmc-place-pho-nam",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-hcmc-place-pho-nam",
+          "message": "banned visible fragment: gives saigon a"
+        },
+        {
+          "id": "city-hcmc-place-saigon-railway-station",
+          "message": "banned visible fragment: matters when"
+        },
+        {
+          "id": "city-hcmc-place-saigon-river-boat",
+          "message": "banned visible fragment: gives saigon a"
+        },
+        {
+          "id": "city-hcmc-place-saigon-skydeck",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-hcmc-place-saigon-skydeck",
+          "message": "banned visible fragment: gives saigon a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hcmc-place-saigon-square",
+          "message": "generic non-playable quick-say title: Name In English"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 10x: generic name-card heading"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hcmc-place-pho-nam",
+          "summary": "Southern pho is the bowl to picture when Saigon food starts with broth, herbs, bean sprouts, lime, and sauce choices. It turns a simple meal into a first taste of the city.",
+          "context": "The bowl is about small decisions: herbs, lime, bean sprouts, sauce, and how much sweetness or heat you want in the broth.",
+          "tip": "A slower first spoonful helps. Taste the broth before loading in herbs, lime, sauce, and bean sprouts.",
+          "rationale": "Southern pho gives Saigon a first food path through one common bowl and the rituals that gather around it.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Broth Before The Add-Ins",
+              "body": "Southern pho is easier to enjoy when the first spoonful comes before the herb pile. Taste the broth, then decide how much basil, sprouts, lime, and sauce belong."
+            },
+            {
+              "id": "place-brief",
+              "title": "Herbs, Lime, Sauce",
+              "body": "Expect a Saigon-style pho bowl built for adjustment. Bean sprouts, basil, lime, and sauce sit close because the bowl is finished at the table."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name Around The Bowl",
+              "body": "Phở Sài Gòn is the phrase to recognize for Saigon-style pho. The longer city name may appear in searches, but the bowl does the explaining."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A First Food Memory",
+              "body": "It fits a first Saigon meal because the choices are visible: broth, herbs, lime, sauce, heat. Nothing has to be decoded all at once."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Clear Breakfast Or Lunch",
+              "body": "The bowl works when the day needs a simple, local food decision. A classic first order leaves room to adjust the table extras slowly."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Southern Style Is Flexible",
+              "body": "Southern pho often tastes sweeter and more herb-heavy than northern bowls. That flexibility is part of the point, not a mistake to correct."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-saigon-railway-station",
+          "summary": "Saigon Railway Station is the place to recognize when the day shifts from city streets to an onward train. Route boards, waiting areas, station doors, and the city outside all matter.",
+          "context": "The station is a handoff point: bags, tickets, waiting, local signs, and the first move back into Saigon traffic.",
+          "tip": "A calmer arrival helps; stations are easier when the platform is not the first question.",
+          "rationale": "It gives the city a travel-day frame, turning a transport move into something less vague and less rushed.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Travel-Day Threshold",
+              "body": "Saigon Railway Station matters when the day changes from streets to trains. The useful scene is bags, waiting areas, signs, and the doors back to the city."
+            },
+            {
+              "id": "place-brief",
+              "title": "The City At The Doors",
+              "body": "Expect a station move rather than a sightseeing stop: route boards, platform questions, local signs, and traffic waiting just outside."
+            },
+            {
+              "id": "quick-say",
+              "title": "Station Name To Know",
+              "body": "Ga Sài Gòn is the name to recognize. Ga means station, and Sài Gòn is still the everyday name many people use for the city."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Earlier Than Necessary",
+              "body": "A little buffer makes the station easier. It gives time for the right entrance, platform, ticket question, or ride pickup without panic."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Bags, Signs, Platforms",
+              "body": "The stop is most useful when you picture the sequence: arrive, read the signs, find the platform, then let the city drop away."
+            },
+            {
+              "id": "good-to-know",
+              "title": "After The Ride",
+              "body": "On return, the station drops you straight back into Saigon movement. Have the next address ready before stepping into the traffic flow."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-saigon-river-boat",
+          "summary": "A Saigon River boat ride turns the skyline into a slower route, with boarding points, bridges, riverbanks, and water light shaping the day. The point is movement, not just photos.",
+          "context": "The ride works as a river route: board, settle in, watch bridges and banks pass, then return to the city with a clearer map.",
+          "tip": "The key question is the route. A named stretch or destination keeps the boat from becoming a vague loop.",
+          "rationale": "It gives Saigon a slower path across the water and makes the river feel like part of the city rather than scenery.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Slower Route By Water",
+              "body": "A Saigon River boat ride is strongest when it has a route, not just a view. Bridges, banks, and skyline changes give the ride its shape."
+            },
+            {
+              "id": "place-brief",
+              "title": "Boarding Point First",
+              "body": "The practical moment is finding where the ride begins, then understanding the path. Water light and skyline matter more once the route is clear."
+            },
+            {
+              "id": "quick-say",
+              "title": "Phrase For The Ride",
+              "body": "Đi thuyền sông Sài Gòn is the phrase to recognize for a Saigon River boat ride. Thuyền means boat."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Route Over Vague Loop",
+              "body": "A named direction, stretch, or return point makes the ride easier to judge before boarding."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Light And Weather",
+              "body": "The river changes quickly with haze, rain, and evening light. The ride is strongest when the sky still gives the water some shape."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Return Plan",
+              "body": "The end point should be clear before the ride feels relaxed. The boat should simplify the day, not scatter it."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-saigon-skydeck",
+          "summary": "Saigon Skydeck is a height-and-orientation stop above the river and central streets. It works when you want the city arranged below you, not another street-level landmark.",
+          "context": "The viewpoint story is simple: observation-deck glass, river bend, rooftops, central streets, and the city turning into a skyline.",
+          "tip": "Clearer weather gives the view more value. On hazy days, the stop becomes more about scale than crisp distance.",
+          "rationale": "It gives Saigon a vertical map, connecting river, rooftops, streets, and towers in one quick read.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A High Read On Saigon",
+              "body": "Saigon Skydeck gives the city a fast vertical read. From above, the river, roads, rooftops, and dense center make more sense together."
+            },
+            {
+              "id": "place-brief",
+              "title": "River Below The Glass",
+              "body": "Expect an observation-deck view over Saigon River and the central skyline. The experience is clean, elevated, and shorter than a full museum stop."
+            },
+            {
+              "id": "quick-say",
+              "title": "Venue Name In English",
+              "body": "Saigon Skydeck usually stays in English. The helpful link is the high observation-deck view over the river and the central streets below."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Clear Day Advantage",
+              "body": "The stop pays off most when weather lets the skyline read clearly. Haze can make the height feel softer and less precise."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short, Not Whole Afternoon",
+              "body": "It fits between central plans when you want orientation from above without building the whole day around a tower."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Pairing With The Center",
+              "body": "The view makes more sense after you have walked some of the streets below. Height is better with street memory attached."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hcmc-place-saigon-square",
+          "summary": "Saigon Square is a central indoor shopping stop for clothing stalls, bags, small counters, and a cooler break near Ben Thanh movement. Its job is browsing and light bargaining, not a full market lesson.",
+          "context": "The setting is small counters, clothing stalls, bags, and an indoor break near central Saigon movement.",
+          "tip": "A first lap gives the prices and styles a pattern before you start asking about size, color, or payment.",
+          "rationale": "It turns central shopping into a compact indoor reset when heat, rain, or too many street crossings are wearing down the day.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Indoor Browse Near Ben Thanh",
+              "body": "Saigon Square is useful when central shopping should stay compact. Clothing stalls, bags, small counters, and indoor air make it easier than wandering block by block."
+            },
+            {
+              "id": "place-brief",
+              "title": "Counters, Clothes, Bags",
+              "body": "Expect a dense indoor shopping layout rather than a polished mall. The stop is about comparing racks, asking simple questions, and moving on."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name In English",
+              "body": "Saigon Square usually stays in English. The name is useful for rides, searches, and recognizing the shopping-center stop near the central market area."
+            },
+            {
+              "id": "use-it-with",
+              "title": "First Lap For Prices",
+              "body": "A first pass helps you understand the range before asking about size, color, or price. It also lowers the pressure at any one counter."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Cooling-Off Stop",
+              "body": "It fits a hot or rainy central day when shopping, air-conditioning, and a short reset all matter at once."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Payment And Size Questions",
+              "body": "Have simple questions ready about size, color, and price. The browse is easier when each counter is treated as a quick decision."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

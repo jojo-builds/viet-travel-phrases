@@ -7,7 +7,7 @@
   "title": "Tôi cần thuốc giảm đau",
   "englishTitle": "I need pain medicine",
   "pronunciation": "Toi can thuoc giam dau",
-  "summary": "I need pain medicine",
+  "summary": "For asking a pharmacy or clinic counter for basic pain medicine without starting a long symptom story.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần thuốc giảm đau is the short line for naming what you need next. It works best when pain medicine is visible on your phone, ticket, note, shelf, or in the situation around you."
+      "body": "Say the need first, then point to the sore place, note, or translated symptom if staff ask."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần thuốc giảm đau with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "body": "Keep the line short. The headache, stomach pain, allergy, or current medicine can come after staff understand the request.",
       "phrases": [
         {
           "id": "v900-heal-phar-i-need-pain-medicine",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi cần means I need; thuốc giảm đau means pain medicine.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi cần",
           "english": "I need",
-          "audioKey": null
+          "keepTogetherReason": "I-need phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "thuốc giảm đau",
-          "english": "medicine",
-          "audioKey": null
+          "english": "pain medicine",
+          "keepTogetherReason": "pain-medicine phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi cần thuốc giảm đau",
           "english": "I need pain medicine",
-          "audioKey": null
+          "audioKey": "v900-heal-phar-i-need-pain-medicine"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I need pain medicine to another pharmacy or health need.",
+      "body": "Doctor and pharmacy-location cards help if the counter cannot handle the request.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when pain medicine is the detail you need resolved. The likely reply is a point, option, yes/no answer, or next step, so keep the phrase short and ready for one follow-up."
+      "body": "Good at pharmacies, hotel desks, clinics, and travel counters when you need a simple over-the-counter option."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "Mention allergies, pregnancy, blood pressure, or other medicine before accepting a pill packet."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi cần thuốc giảm đau.",
+      "body": "Headache, stomach, motion-sickness, allergy, and diarrhea cards cover the symptom follow-up.",
       "phrases": [
         {
           "id": "health-2",

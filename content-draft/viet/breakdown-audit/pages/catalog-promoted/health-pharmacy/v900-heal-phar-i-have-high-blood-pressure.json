@@ -20,24 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi bị",
+      "english": "I have / I am affected by",
+      "keepTogetherReason": "condition phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "cao",
-      "english": "high"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "huyết áp",
-      "english": "blood pressure",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "cao huyết áp",
+      "english": "high blood pressure",
+      "keepTogetherReason": "blood-pressure phrase"
     },
     {
       "id": "full",

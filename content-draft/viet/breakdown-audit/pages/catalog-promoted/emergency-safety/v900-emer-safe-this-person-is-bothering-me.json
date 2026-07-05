@@ -20,29 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Người",
-      "english": "person"
+      "vietnamese": "Người này",
+      "english": "this person",
+      "keepTogetherReason": "person phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "này",
-      "english": "this"
+      "vietnamese": "đang",
+      "english": "is / currently",
+      "keepTogetherReason": "current-action marker"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đang",
-      "english": "currently / am"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "làm phiền",
-      "english": "bother",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tôi",
-      "english": "I / me"
+      "vietnamese": "làm phiền tôi",
+      "english": "bothering me",
+      "keepTogetherReason": "bothering-me phrase"
     },
     {
       "id": "full",

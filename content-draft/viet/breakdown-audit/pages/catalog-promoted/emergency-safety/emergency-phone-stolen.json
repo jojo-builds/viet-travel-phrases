@@ -20,35 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Điện thoại",
-      "english": "phone",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "Điện thoại của tôi",
+      "english": "my phone",
+      "keepTogetherReason": "owned-phone phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "đã",
-      "english": "already / did"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đánh",
-      "english": "hit / brush"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "cắp.",
-      "english": "urgent"
+      "vietnamese": "đã bị đánh cắp.",
+      "english": "was stolen.",
+      "keepTogetherReason": "stolen phrase"
     },
     {
       "id": "full",

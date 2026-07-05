@@ -7,7 +7,7 @@
   "title": "Tôi nghĩ đây là một trò lừa đảo",
   "englishTitle": "I think this is a scam",
   "pronunciation": "Toi nghi day la mot tro lua dao",
-  "summary": "I think this is a scam",
+  "summary": "For naming a suspicious charge, ride, offer, or request when you need staff or police help.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi nghĩ đây là một trò lừa đảo is a practical safety or urgent-help phrase for keeping one travel detail clear. Use it when I think this is a scam is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say it calmly with the receipt, chat, price, driver screen, or photo visible."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi nghĩ đây là một trò lừa đảo. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Keep the claim short. The evidence on your phone or paper should do most of the explaining.",
       "phrases": [
         {
           "id": "v900-emer-safe-i-think-this-is-a-scam",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi nghĩ means I think; đây là means this is; một trò lừa đảo means a scam.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi nghĩ đây",
+          "vietnamese": "Tôi nghĩ",
           "english": "I think",
-          "audioKey": null
+          "keepTogetherReason": "I-think phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là một trò lừa đảo",
-          "english": "a scam",
-          "audioKey": null
+          "vietnamese": "đây là",
+          "english": "this is",
+          "keepTogetherReason": "this-is phrase"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "một trò lừa đảo",
+          "english": "a scam",
+          "keepTogetherReason": "scam phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Tôi nghĩ đây là một trò lừa đảo",
           "english": "I think this is a scam",
-          "audioKey": null
+          "audioKey": "v900-emer-safe-i-think-this-is-a-scam"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I think this is a scam to another safety or urgent-help need.",
+      "body": "Police, ambulance, and passport cards help when the issue needs an official report or help from staff or authorities.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real safety or urgent-help exchange when i think this is a scam is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotel desks, shops, stations, police counters, or ride pickup points when something feels dishonest or unsafe."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "If you feel physically unsafe, move to a staffed place and use emergency, police, or help-now phrases instead."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi nghĩ đây là một trò lừa đảo.",
+      "body": "Unsafe, emergency, help, hospital, and passport cards cover more urgent safety paths.",
       "phrases": [
         {
           "id": "emergency-4",

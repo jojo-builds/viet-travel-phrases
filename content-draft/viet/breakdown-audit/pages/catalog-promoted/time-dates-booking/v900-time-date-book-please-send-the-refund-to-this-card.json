@@ -20,44 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Vui lòng",
-      "english": "please",
-      "keepTogetherReason": "fixed polite phrase"
+      "vietnamese": "Vui lòng gửi",
+      "english": "please send",
+      "keepTogetherReason": "please-send phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "gửi",
-      "english": "send"
+      "vietnamese": "tiền hoàn lại",
+      "english": "the refund",
+      "keepTogetherReason": "refund noun"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "tiền",
-      "english": "money"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "hoàn",
-      "english": "refund / return"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "lại",
-      "english": "again / back"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "vào",
-      "english": "into / enter"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "thẻ",
-      "english": "card"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "này",
-      "english": "this"
+      "vietnamese": "vào thẻ này",
+      "english": "to this card",
+      "keepTogetherReason": "to-this-card phrase"
     },
     {
       "id": "full",

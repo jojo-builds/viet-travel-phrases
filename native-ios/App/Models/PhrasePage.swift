@@ -42,20 +42,131 @@ struct PhraseOption: Identifiable, Equatable {
     let tintName: AccentTint
     var detailPageID: String?
     var audioKey: String? = nil
+    private var resolvedPlaybackAudioKey: String? = nil
+    private var hasResolvedPlaybackAudioKey = false
+
+    init(
+        id: String,
+        vietnamese: String,
+        english: String,
+        pronunciation: String,
+        symbolName: String,
+        tintName: AccentTint,
+        detailPageID: String? = nil,
+        audioKey: String? = nil
+    ) {
+        self.id = id
+        self.vietnamese = vietnamese
+        self.english = english
+        self.pronunciation = pronunciation
+        self.symbolName = symbolName
+        self.tintName = tintName
+        self.detailPageID = detailPageID
+        self.audioKey = audioKey
+    }
 
     var playbackAudioKey: String? {
+        if hasResolvedPlaybackAudioKey {
+            return resolvedPlaybackAudioKey
+        }
+
+        return Self.resolvePlaybackAudioKey(id: id, vietnamese: vietnamese, audioKey: audioKey)
+    }
+
+    func resolvingPlaybackAudioKey() -> PhraseOption {
+        var resolved = self
+        resolved.resolvedPlaybackAudioKey = Self.resolvePlaybackAudioKey(
+            id: id,
+            vietnamese: vietnamese,
+            audioKey: audioKey
+        )
+        resolved.hasResolvedPlaybackAudioKey = true
+        return resolved
+    }
+
+    private static func resolvePlaybackAudioKey(id: String, vietnamese: String, audioKey: String?) -> String? {
+        let cacheKey = PlaybackAudioCacheKey(id: id, vietnamese: vietnamese, audioKey: audioKey)
+        if let cachedAudioKey = cachedPlaybackAudioKey(for: cacheKey) {
+            return cachedAudioKey.value
+        }
+
         let manifest = AudioAssetManifest.main
+        let resolvedAudioKey: String?
 
         if manifest?.hasPlayableEntry(for: audioKey, matchingText: vietnamese) == true {
-            return audioKey
+            resolvedAudioKey = audioKey
+        } else if manifest?.hasPlayableEntry(for: id, matchingText: vietnamese) == true {
+            resolvedAudioKey = id
+        } else {
+            resolvedAudioKey = manifest?.audioKey(forExactText: vietnamese)
         }
 
-        if manifest?.hasPlayableEntry(for: id, matchingText: vietnamese) == true {
-            return id
-        }
-
-        return manifest?.audioKey(forExactText: vietnamese)
+        storeCachedPlaybackAudioKey(CachedPlaybackAudioKey(resolvedAudioKey), for: cacheKey)
+        return resolvedAudioKey
     }
+
+    static func == (lhs: PhraseOption, rhs: PhraseOption) -> Bool {
+        lhs.id == rhs.id
+            && lhs.vietnamese == rhs.vietnamese
+            && lhs.english == rhs.english
+            && lhs.pronunciation == rhs.pronunciation
+            && lhs.symbolName == rhs.symbolName
+            && lhs.tintName == rhs.tintName
+            && lhs.detailPageID == rhs.detailPageID
+            && lhs.audioKey == rhs.audioKey
+    }
+
+    private struct PlaybackAudioCacheKey: Hashable {
+        let id: String
+        let vietnamese: String
+        let audioKey: String?
+    }
+
+    private struct CachedPlaybackAudioKey {
+        let value: String?
+
+        init(_ value: String?) {
+            self.value = value
+        }
+    }
+
+    private static let playbackAudioCacheLimit = 512
+    private static let playbackAudioCacheLock = NSLock()
+    private static var playbackAudioKeysByKey: [PlaybackAudioCacheKey: CachedPlaybackAudioKey] = [:]
+    private static var playbackAudioCacheKeys: [PlaybackAudioCacheKey] = []
+
+    private static func cachedPlaybackAudioKey(for key: PlaybackAudioCacheKey) -> CachedPlaybackAudioKey? {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        return playbackAudioKeysByKey[key]
+    }
+
+    private static func storeCachedPlaybackAudioKey(_ audioKey: CachedPlaybackAudioKey, for key: PlaybackAudioCacheKey) {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        guard playbackAudioKeysByKey[key] == nil else {
+            return
+        }
+
+        playbackAudioKeysByKey[key] = audioKey
+        playbackAudioCacheKeys.append(key)
+
+        while playbackAudioCacheKeys.count > playbackAudioCacheLimit {
+            let oldestKey = playbackAudioCacheKeys.removeFirst()
+            playbackAudioKeysByKey.removeValue(forKey: oldestKey)
+        }
+    }
+
+#if DEBUG
+    static func resetPlaybackAudioResolutionCacheForTesting() {
+        playbackAudioCacheLock.lock()
+        playbackAudioKeysByKey.removeAll()
+        playbackAudioCacheKeys.removeAll()
+        playbackAudioCacheLock.unlock()
+    }
+#endif
 }
 
 struct BreakdownToken: Identifiable, Equatable {
@@ -63,16 +174,112 @@ struct BreakdownToken: Identifiable, Equatable {
     let vietnamese: String
     let english: String
     var audioKey: String? = nil
+    private var resolvedPlaybackAudioKey: String? = nil
+    private var hasResolvedPlaybackAudioKey = false
+
+    init(id: String, vietnamese: String, english: String, audioKey: String? = nil) {
+        self.id = id
+        self.vietnamese = vietnamese
+        self.english = english
+        self.audioKey = audioKey
+    }
 
     var playbackAudioKey: String? {
-        let manifest = AudioAssetManifest.main
-
-        if manifest?.hasPlayableEntry(for: audioKey, matchingText: vietnamese) == true {
-            return audioKey
+        if hasResolvedPlaybackAudioKey {
+            return resolvedPlaybackAudioKey
         }
 
-        return manifest?.audioKey(forExactText: vietnamese)
+        return Self.resolvePlaybackAudioKey(id: id, vietnamese: vietnamese, audioKey: audioKey)
     }
+
+    func resolvingPlaybackAudioKey() -> BreakdownToken {
+        var resolved = self
+        resolved.resolvedPlaybackAudioKey = Self.resolvePlaybackAudioKey(
+            id: id,
+            vietnamese: vietnamese,
+            audioKey: audioKey
+        )
+        resolved.hasResolvedPlaybackAudioKey = true
+        return resolved
+    }
+
+    private static func resolvePlaybackAudioKey(id: String, vietnamese: String, audioKey: String?) -> String? {
+        let cacheKey = PlaybackAudioCacheKey(id: id, vietnamese: vietnamese, audioKey: audioKey)
+        if let cachedAudioKey = cachedPlaybackAudioKey(for: cacheKey) {
+            return cachedAudioKey.value
+        }
+
+        let manifest = AudioAssetManifest.main
+        let resolvedAudioKey: String?
+
+        if manifest?.hasPlayableEntry(for: audioKey, matchingText: vietnamese) == true {
+            resolvedAudioKey = audioKey
+        } else {
+            resolvedAudioKey = manifest?.audioKey(forExactText: vietnamese)
+        }
+
+        storeCachedPlaybackAudioKey(CachedPlaybackAudioKey(resolvedAudioKey), for: cacheKey)
+        return resolvedAudioKey
+    }
+
+    static func == (lhs: BreakdownToken, rhs: BreakdownToken) -> Bool {
+        lhs.id == rhs.id
+            && lhs.vietnamese == rhs.vietnamese
+            && lhs.english == rhs.english
+            && lhs.audioKey == rhs.audioKey
+    }
+
+    private struct PlaybackAudioCacheKey: Hashable {
+        let id: String
+        let vietnamese: String
+        let audioKey: String?
+    }
+
+    private struct CachedPlaybackAudioKey {
+        let value: String?
+
+        init(_ value: String?) {
+            self.value = value
+        }
+    }
+
+    private static let playbackAudioCacheLimit = 512
+    private static let playbackAudioCacheLock = NSLock()
+    private static var playbackAudioKeysByKey: [PlaybackAudioCacheKey: CachedPlaybackAudioKey] = [:]
+    private static var playbackAudioCacheKeys: [PlaybackAudioCacheKey] = []
+
+    private static func cachedPlaybackAudioKey(for key: PlaybackAudioCacheKey) -> CachedPlaybackAudioKey? {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        return playbackAudioKeysByKey[key]
+    }
+
+    private static func storeCachedPlaybackAudioKey(_ audioKey: CachedPlaybackAudioKey, for key: PlaybackAudioCacheKey) {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        guard playbackAudioKeysByKey[key] == nil else {
+            return
+        }
+
+        playbackAudioKeysByKey[key] = audioKey
+        playbackAudioCacheKeys.append(key)
+
+        while playbackAudioCacheKeys.count > playbackAudioCacheLimit {
+            let oldestKey = playbackAudioCacheKeys.removeFirst()
+            playbackAudioKeysByKey.removeValue(forKey: oldestKey)
+        }
+    }
+
+#if DEBUG
+    static func resetPlaybackAudioResolutionCacheForTesting() {
+        playbackAudioCacheLock.lock()
+        playbackAudioKeysByKey.removeAll()
+        playbackAudioCacheKeys.removeAll()
+        playbackAudioCacheLock.unlock()
+    }
+#endif
 }
 
 struct PhraseLink: Identifiable, Equatable {
@@ -99,6 +306,29 @@ struct PhraseDetailPage: Identifiable, Equatable {
     var audioKey: String? = nil
     var practiceCTALabel: String? = nil
     var showsCatalogExplore: Bool = true
+
+#if DEBUG
+    private static let articleTemplateBuildCountLock = NSLock()
+    private static var articleTemplateBuildCount = 0
+
+    static var articleTemplateBuildCountForTesting: Int {
+        articleTemplateBuildCountLock.lock()
+        defer { articleTemplateBuildCountLock.unlock() }
+        return articleTemplateBuildCount
+    }
+
+    static func resetArticleTemplateBuildCountForTesting() {
+        articleTemplateBuildCountLock.lock()
+        articleTemplateBuildCount = 0
+        articleTemplateBuildCountLock.unlock()
+    }
+
+    static func recordArticleTemplateBuildForTesting() {
+        articleTemplateBuildCountLock.lock()
+        articleTemplateBuildCount += 1
+        articleTemplateBuildCountLock.unlock()
+    }
+#endif
 
     var playbackAudioKey: String? {
         let manifest = AudioAssetManifest.main
@@ -140,6 +370,65 @@ struct PhraseArticleSection: Identifiable, Equatable {
     var inlineDefinitions: [PhraseInlineDefinition] = []
     var chips: [String] = []
     let presentation: SectionPresentation
+}
+
+enum PhraseArticlePlaybackAudioResolver {
+#if DEBUG
+    private static let buildCountLock = NSLock()
+    private static var buildCount = 0
+
+    static var buildCountForTesting: Int {
+        buildCountLock.lock()
+        defer { buildCountLock.unlock() }
+        return buildCount
+    }
+
+    static func resetBuildCountForTesting() {
+        buildCountLock.lock()
+        buildCount = 0
+        buildCountLock.unlock()
+    }
+
+    private static func recordBuildForTesting() {
+        buildCountLock.lock()
+        buildCount += 1
+        buildCountLock.unlock()
+    }
+#endif
+
+    static func resolvedPage(for page: PhraseArticlePage) -> PhraseArticlePage {
+#if DEBUG
+        recordBuildForTesting()
+#endif
+        return PhraseArticlePage(
+            id: page.id,
+            destination: page.destination,
+            title: page.title,
+            englishTitle: page.englishTitle,
+            pronunciation: page.pronunciation,
+            summary: page.summary,
+            iconName: page.iconName,
+            tintName: page.tintName,
+            heroImageName: page.heroImageName,
+            playbackAudioKey: page.playbackAudioKey,
+            sections: page.sections.map(resolvedSection),
+            practiceCTALabel: page.practiceCTALabel,
+            showsCatalogExplore: page.showsCatalogExplore
+        )
+    }
+
+    private static func resolvedSection(_ section: PhraseArticleSection) -> PhraseArticleSection {
+        PhraseArticleSection(
+            id: section.id,
+            title: section.title,
+            body: section.body,
+            phrases: section.phrases.map { $0.resolvingPlaybackAudioKey() },
+            breakdown: section.breakdown.map { $0.resolvingPlaybackAudioKey() },
+            inlineDefinitions: section.inlineDefinitions,
+            chips: section.chips,
+            presentation: section.presentation
+        )
+    }
 }
 
 struct PhraseInlineDefinition: Identifiable, Equatable {
@@ -271,20 +560,29 @@ struct PhraseCatalogItem: Identifiable, Equatable {
     var id: String { pageID }
     var categoryID: String { categoryIDs.first ?? "greetings" }
     var playbackAudioKey: String? {
+        let cacheKey = PlaybackAudioCacheKey(pageID: pageID, title: title, audioKey: audioKey)
+        if let cachedAudioKey = Self.cachedPlaybackAudioKey(for: cacheKey) {
+            return cachedAudioKey.value
+        }
+
         let manifest = AudioAssetManifest.main
 
         if manifest?.hasPlayableEntry(for: audioKey, matchingText: title) == true {
+            Self.storeCachedPlaybackAudioKey(CachedPlaybackAudioKey(audioKey), for: cacheKey)
             return audioKey
         }
 
         if let exactTitleAudioKey = manifest?.audioKey(forExactText: title) {
+            Self.storeCachedPlaybackAudioKey(CachedPlaybackAudioKey(exactTitleAudioKey), for: cacheKey)
             return exactTitleAudioKey
         }
 
         if let audioKey, manifest?.url(for: audioKey) != nil {
+            Self.storeCachedPlaybackAudioKey(CachedPlaybackAudioKey(audioKey), for: cacheKey)
             return audioKey
         }
 
+        Self.storeCachedPlaybackAudioKey(CachedPlaybackAudioKey(nil), for: cacheKey)
         return nil
     }
 
@@ -325,6 +623,70 @@ struct PhraseCatalogItem: Identifiable, Equatable {
         self.tintName = tintName
         self.audioKey = audioKey
     }
+
+    private struct PlaybackAudioCacheKey: Hashable {
+        let pageID: String
+        let title: String
+        let audioKey: String?
+    }
+
+    private struct CachedPlaybackAudioKey {
+        let value: String?
+
+        init(_ value: String?) {
+            self.value = value
+        }
+    }
+
+    private static let playbackAudioCacheLimit = 512
+    private static let playbackAudioCacheLock = NSLock()
+    private static var playbackAudioKeysByKey: [PlaybackAudioCacheKey: CachedPlaybackAudioKey] = [:]
+    private static var playbackAudioCacheKeys: [PlaybackAudioCacheKey] = []
+
+    private static func cachedPlaybackAudioKey(for key: PlaybackAudioCacheKey) -> CachedPlaybackAudioKey? {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        guard let cachedAudioKey = playbackAudioKeysByKey[key] else {
+            return nil
+        }
+
+        touchPlaybackAudioCacheKey(key)
+        return cachedAudioKey
+    }
+
+    private static func storeCachedPlaybackAudioKey(_ audioKey: CachedPlaybackAudioKey, for key: PlaybackAudioCacheKey) {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        playbackAudioKeysByKey[key] = audioKey
+        touchPlaybackAudioCacheKey(key)
+
+        while playbackAudioCacheKeys.count > playbackAudioCacheLimit {
+            let oldestKey = playbackAudioCacheKeys.removeFirst()
+            playbackAudioKeysByKey.removeValue(forKey: oldestKey)
+        }
+    }
+
+    private static func touchPlaybackAudioCacheKey(_ key: PlaybackAudioCacheKey) {
+        playbackAudioCacheKeys.removeAll { $0 == key }
+        playbackAudioCacheKeys.append(key)
+    }
+
+#if DEBUG
+    static var playbackAudioResolutionCacheCountForTesting: Int {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+        return playbackAudioKeysByKey.count
+    }
+
+    static func resetPlaybackAudioResolutionCacheForTesting() {
+        playbackAudioCacheLock.lock()
+        playbackAudioKeysByKey.removeAll()
+        playbackAudioCacheKeys.removeAll()
+        playbackAudioCacheLock.unlock()
+    }
+#endif
 }
 
 struct PhraseCatalogSection: Identifiable, Equatable {
@@ -410,16 +772,29 @@ enum PhraseCatalog {
     }
 
     static func isOpenablePageID(_ pageID: String) -> Bool {
+        if menuOwnedCanonicalPageID(for: pageID) != nil {
+            return true
+        }
+
         if VietSQLitePhraseGraphRuntime.canOpenPage(pageID) {
             return true
         }
 
         return pageID == PhrasePage.xinChao.id
             || VietnameseMenuCatalog.detailItem(withPageID: pageID) != nil
+            || LocationMenuPicksCatalog.detailPage(withID: pageID) != nil
             || PhraseDetailPage.hasAuthoredPage(withID: pageID)
     }
 
     static func canonicalPageID(forOpenablePageID pageID: String) -> String? {
+        if let menuCanonicalPageID = menuOwnedCanonicalPageID(for: pageID) {
+            return menuCanonicalPageID
+        }
+
+        if let catalogCanonicalPageID = loadedCatalogCanonicalPageID(for: pageID) {
+            return catalogCanonicalPageID
+        }
+
         if let sqliteCanonicalPageID = VietSQLitePhraseGraphRuntime.canonicalPageID(for: pageID) {
             return sqliteCanonicalPageID
         }
@@ -440,11 +815,55 @@ enum PhraseCatalog {
         return cache.itemsByPageID[canonicalPageID]
     }
 
-    private static var cache = Cache()
+    private static func menuOwnedCanonicalPageID(for pageID: String) -> String? {
+        guard pageID.hasPrefix("viet-menu-") else {
+            return nil
+        }
+
+        if VietnameseMenuCatalog.detailItem(withPageID: pageID) != nil {
+            return pageID
+        }
+
+        if LocationMenuPicksCatalog.hasDetailPage(withID: pageID) {
+            return pageID
+        }
+
+        return nil
+    }
+
+    private static let cacheLock = NSLock()
+    private static var loadedCache: Cache?
+    private static var cache: Cache {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+
+        if let loadedCache {
+            return loadedCache
+        }
+
+        let cache = Cache()
+        loadedCache = cache
+        return cache
+    }
+
+    private static func loadedCatalogCanonicalPageID(for pageID: String) -> String? {
+        cacheLock.lock()
+        let isKnownCanonicalPageID = loadedCache?.itemsByPageID[pageID] != nil
+        cacheLock.unlock()
+
+        guard isKnownCanonicalPageID else {
+            return nil
+        }
+
+        VietSQLitePhraseGraphRuntime.seedKnownCanonicalPageID(pageID)
+        return pageID
+    }
 
 #if DEBUG
     static func resetCacheForTesting() {
-        cache = Cache()
+        cacheLock.lock()
+        loadedCache = nil
+        cacheLock.unlock()
     }
 #endif
 
@@ -577,6 +996,31 @@ enum PhraseCatalog {
     }
 }
 
+enum StaticPhraseBackdropImagePolicy {
+    static func heroImageName(for pageID: String) -> String? {
+        if pageID.hasPrefix("viet-hello-") {
+            return "BackdropPhraseGreetingCafeDoorway"
+        }
+
+        switch pageID {
+        case PhrasePage.xinChao.id,
+            "viet-respectful-hello",
+            "viet-local-greetings",
+            "viet-time-greetings",
+            "viet-how-are-you",
+            "viet-where-going",
+            "viet-nice-to-meet-you":
+            return "BackdropPhraseGreetingCafeDoorway"
+        case "viet-phone-hello":
+            return "BackdropPhrasePhoneCafeCharging"
+        case "viet-thank-you", "viet-excuse-sorry", "viet-goodbye":
+            return "BackdropPhraseHelpQuietServiceDesk"
+        default:
+            return nil
+        }
+    }
+}
+
 extension PhrasePage {
     var articleTemplate: PhraseArticlePage {
         PhraseArticlePage(
@@ -588,6 +1032,7 @@ extension PhrasePage {
             summary: intentSummary,
             iconName: "star.fill",
             tintName: .red,
+            heroImageName: StaticPhraseBackdropImagePolicy.heroImageName(for: id),
             playbackAudioKey: quickSay.first?.playbackAudioKey,
             sections: [
                 PhraseArticleSection(
@@ -1119,6 +1564,32 @@ extension PhraseDetailPage {
     }
 
     static func page(withID id: String) -> PhraseDetailPage? {
+        if let cachedPage = cachedResolvedPage(for: id) {
+            return cachedPage
+        }
+
+        guard let page = resolvePage(withID: id) else {
+            return nil
+        }
+
+        storeResolvedPage(page, for: id)
+        if page.id != id {
+            storeResolvedPage(page, for: page.id)
+        }
+        return page
+    }
+
+    private static func resolvePage(withID id: String) -> PhraseDetailPage? {
+        if id.hasPrefix("viet-menu-") {
+            if let menuPage = VietnameseMenuCatalog.detailPage(withID: id) {
+                return menuPage
+            }
+
+            if let locationMenuPage = LocationMenuPicksCatalog.detailPage(withID: id) {
+                return locationMenuPage
+            }
+        }
+
         if let sqlitePage = VietSQLitePhraseGraphRuntime.detailPage(withID: id) {
             return sqlitePage
         }
@@ -1127,15 +1598,68 @@ extension PhraseDetailPage {
             return menuPage
         }
 
+        if let locationMenuPage = LocationMenuPicksCatalog.detailPage(withID: id) {
+            return locationMenuPage
+        }
+
         return pagesByID[id]
     }
+
+    private static let resolvedPageCacheLimit = 128
+    private static let resolvedPageCacheLock = NSLock()
+    private static var resolvedPagesByID: [String: PhraseDetailPage] = [:]
+    private static var resolvedPageIDs: [String] = []
+
+    private static func cachedResolvedPage(for id: String) -> PhraseDetailPage? {
+        resolvedPageCacheLock.lock()
+        defer { resolvedPageCacheLock.unlock() }
+
+        guard let page = resolvedPagesByID[id] else {
+            return nil
+        }
+
+        touchResolvedPageID(id)
+        return page
+    }
+
+    private static func storeResolvedPage(_ page: PhraseDetailPage, for id: String) {
+        resolvedPageCacheLock.lock()
+        defer { resolvedPageCacheLock.unlock() }
+
+        resolvedPagesByID[id] = page
+        touchResolvedPageID(id)
+
+        while resolvedPageIDs.count > resolvedPageCacheLimit {
+            let oldestID = resolvedPageIDs.removeFirst()
+            resolvedPagesByID.removeValue(forKey: oldestID)
+        }
+    }
+
+    private static func touchResolvedPageID(_ id: String) {
+        resolvedPageIDs.removeAll { $0 == id }
+        resolvedPageIDs.append(id)
+    }
+
+#if DEBUG
+    static func resetResolvedPageCacheForTesting() {
+        resolvedPageCacheLock.lock()
+        defer { resolvedPageCacheLock.unlock() }
+
+        resolvedPagesByID.removeAll()
+        resolvedPageIDs.removeAll()
+    }
+#endif
 
     static func hasAuthoredPage(withID id: String) -> Bool {
         pagesByID[id] != nil
     }
 
     var articleTemplate: PhraseArticlePage {
-        PhraseArticlePage(
+#if DEBUG
+        Self.recordArticleTemplateBuildForTesting()
+#endif
+
+        return PhraseArticlePage(
             id: id,
             destination: "SpeakLocal Vietnam",
             title: title,
@@ -1144,7 +1668,7 @@ extension PhraseDetailPage {
             summary: summary,
             iconName: iconName,
             tintName: tintName,
-            heroImageName: heroImageName,
+            heroImageName: heroImageName ?? StaticPhraseBackdropImagePolicy.heroImageName(for: id),
             playbackAudioKey: playbackAudioKey,
             sections: sections.map(\.articleSection),
             practiceCTALabel: practiceCTALabel,

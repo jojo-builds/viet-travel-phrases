@@ -7,7 +7,7 @@
   "title": "Xin hãy chỉ cho tôi đi đúng hướng",
   "englishTitle": "Please point me in the right direction",
   "pronunciation": "Xin hay chi cho toi di dung huong",
-  "summary": "Please point me in the right direction",
+  "summary": "For asking someone to show the right way when the map is close but the next turn is unclear.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Xin hãy chỉ cho tôi đi đúng hướng is a practical directions phrase for keeping one travel detail clear. Use it when point me in the right direction is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask when you can show the destination but still need a local to point the next move."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Xin hãy chỉ cho tôi đi đúng hướng. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Show the map or address first. Let the answer be a gesture, a turn, or a short landmark.",
       "phrases": [
         {
           "id": "v900-dire-navi-please-point-me-in-the-right-direction",
@@ -42,38 +42,41 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Xin hãy is a polite please; chỉ cho tôi means point or show me; đi đúng hướng means go the right way.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Xin hãy chỉ",
-          "english": "please / ask",
+          "vietnamese": "Xin hãy",
+          "english": "please",
+          "keepTogetherReason": "polite request opener",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "cho tôi đi",
-          "english": "go / move",
+          "vietnamese": "chỉ cho tôi",
+          "english": "point out / show me",
+          "keepTogetherReason": "pointing-help phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "đúng hướng",
-          "english": "right / correct",
+          "vietnamese": "đi đúng hướng",
+          "english": "go the right way",
+          "keepTogetherReason": "right-direction phrase",
           "audioKey": null
         },
         {
           "id": "chunk-4",
           "vietnamese": "Xin hãy chỉ cho tôi đi đúng hướng",
           "english": "Please point me in the right direction",
-          "audioKey": null
+          "audioKey": "v900-dire-navi-please-point-me-in-the-right-direction"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please point me in the right direction to another directions need.",
+      "body": "If the route still feels unclear, ask how to get there, whether it is near, or how long it takes on foot.",
       "phrases": [
         {
           "id": "directions-1",
@@ -110,17 +113,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real directions exchange when point me in the right direction is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at street corners, station exits, hotel desks, ticket counters, and shopfronts near your destination."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For directions, give the listener one clear anchor. A map or address lets them point instead of explaining everything in fast Vietnamese."
+      "body": "A pointed answer may be enough. Watch the gesture before asking for a longer explanation."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Xin hãy chỉ cho tôi đi đúng hướng.",
+      "body": "Move to left, right, straight, pickup point, or wrong-way follow-ups if the route needs another check.",
       "phrases": [
         {
           "id": "directions-4",

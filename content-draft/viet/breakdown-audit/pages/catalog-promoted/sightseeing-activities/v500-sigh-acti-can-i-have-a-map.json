@@ -26,25 +26,20 @@
     {
       "id": "chunk-2",
       "vietnamese": "có thể",
-      "english": "can / able to",
+      "english": "can",
       "keepTogetherReason": "fixed modal phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "có bản đồ",
+      "english": "have a map",
+      "keepTogetherReason": "have-map phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "bản đồ",
-      "english": "map",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "được không?",
-      "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "english": "is it possible?",
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

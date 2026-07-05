@@ -1,4 +1,27 @@
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
+
+enum BrowseCollectionPhotoBackdropPolicy {
+    static func usesPhotoBackdrop(
+        hasCityHub: Bool,
+        mastheadImageName: String
+    ) -> Bool {
+        hasCityHub || mastheadImageName.hasPrefix("HeroCategory")
+    }
+
+    static func preheatImageNames(
+        hasCityHub: Bool,
+        mastheadImageName: String
+    ) -> [String] {
+        guard usesPhotoBackdrop(hasCityHub: hasCityHub, mastheadImageName: mastheadImageName) else {
+            return []
+        }
+
+        return [mastheadImageName]
+    }
+}
 
 struct BrowseCollectionPageView: View {
     let descriptor: BrowseCollectionDescriptor
@@ -17,6 +40,10 @@ struct BrowseCollectionPageView: View {
     @State private var didApplyPhotoBackdropInitialPosition = false
     @State private var isPhotoBackdropImmersive = false
     @State private var photoBackdropScrollOffset: CGFloat = 0
+
+    private var bottomSentinelID: String {
+        "BrowseCollection.BottomSentinel.\(descriptor.route.id)"
+    }
 
     @ViewBuilder
     var body: some View {
@@ -57,8 +84,10 @@ struct BrowseCollectionPageView: View {
                             .id(Self.scrollTopID)
 
                         collectionSections(scrollProxy: scrollProxy)
+
+                        AppBottomSentinel(id: bottomSentinelID)
                     }
-                    .padding(.bottom, BrowseCollectionLayout.bottomChromeContentClearance)
+                    .padding(.bottom, BrowseCollectionLayout.bottomContentClearance(usesPhotoBackdrop: false))
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
                     guard scrollToTopRoute == nil || scrollToTopRoute == descriptor.route else {
@@ -67,7 +96,16 @@ struct BrowseCollectionPageView: View {
 
                     scrollProxy.scrollTo(Self.scrollTopID, anchor: .top)
                 }
-                .task(id: focusRequest?.id) {
+                .task(id: "\(isActive)-\(focusRequest.map { String($0.id) } ?? "none")") {
+                    guard BrowseCollectionTaskPolicy.shouldRunStandardFocusTask(isActive: isActive) else {
+                        return
+                    }
+
+                    if AppBottomInsetValidation.shouldScrollToBottom {
+                        await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
+                        return
+                    }
+
                     await restoreFocusIfNeeded(scrollProxy)
                 }
             }
@@ -110,6 +148,10 @@ struct BrowseCollectionPageView: View {
                             metrics: metrics
                         )
                     }) { _, scrollState in
+                        guard BrowseCollectionTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: isActive) else {
+                            return
+                        }
+
                         if photoBackdropScrollOffset != scrollState.displayOffset {
                             photoBackdropScrollOffset = scrollState.displayOffset
                         }
@@ -138,6 +180,8 @@ struct BrowseCollectionPageView: View {
                         } else {
                             await restoreFocusIfNeeded(scrollProxy)
                         }
+
+                        await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
                     }
                 }
                 .ignoresSafeArea(edges: .top)
@@ -175,6 +219,18 @@ struct BrowseCollectionPageView: View {
         .ignoresSafeArea(edges: .bottom)
         .statusBarHidden(isActive && isPhotoBackdropImmersive)
         .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
+        .task(id: isActive ? descriptor.mastheadImageName : "") {
+            guard isActive else {
+                return
+            }
+
+            AdminBackdropImagePreheater.preheatFocused(
+                BrowseCollectionPhotoBackdropPolicy.preheatImageNames(
+                    hasCityHub: descriptor.cityHub != nil,
+                    mastheadImageName: descriptor.mastheadImageName
+                )
+            )
+        }
     }
 
     @ViewBuilder
@@ -286,8 +342,10 @@ struct BrowseCollectionPageView: View {
 
             VStack(alignment: .leading, spacing: BrowseCollectionLayout.sectionSpacing) {
                 collectionSections(scrollProxy: scrollProxy)
+
+                AppBottomSentinel(id: bottomSentinelID)
             }
-            .padding(.bottom, PhrasePhotoBackdropLayout.bottomReadingClearance)
+            .padding(.bottom, BrowseCollectionLayout.bottomContentClearance(usesPhotoBackdrop: true))
         }
         .background {
             UnevenRoundedRectangle(
@@ -309,8 +367,7 @@ struct BrowseCollectionPageView: View {
     }
 
     private func photoBackdropImage(geometry: GeometryProxy) -> some View {
-        Image(descriptor.mastheadImageName)
-            .resizable()
+        AdminBackdropPreparedImage(name: descriptor.mastheadImageName)
             .scaledToFill()
             .frame(
                 width: geometry.size.width,
@@ -328,8 +385,16 @@ struct BrowseCollectionPageView: View {
     ) -> some View {
         let safeAreaBottom = geometry.safeAreaInsets.bottom
         let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
-        let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
-        let topCornerRadius: CGFloat = sheetTop > 1 ? 34 : 0
+        let backingFrameHeight = PhrasePhotoBackdropLayout.bottomChromeBackingFrameHeight(
+            viewportHeight: geometry.size.height,
+            safeAreaBottom: safeAreaBottom
+        )
+        let backdropHeight = PhrasePhotoBackdropLayout.bottomChromeBackingHeight(
+            viewportHeight: geometry.size.height,
+            safeAreaBottom: safeAreaBottom,
+            sheetTop: sheetTop
+        )
+        let topCornerRadius = PhrasePhotoBackdropLayout.bottomChromeBackingTopCornerRadius(sheetTop: sheetTop)
 
         return VStack(spacing: 0) {
             Color.clear
@@ -342,7 +407,7 @@ struct BrowseCollectionPageView: View {
             )
         }
         .frame(
-            height: geometry.size.height + safeAreaBottom,
+            height: backingFrameHeight,
             alignment: .top
         )
         .ignoresSafeArea(edges: .bottom)
@@ -356,7 +421,10 @@ struct BrowseCollectionPageView: View {
     private static let photoBackdropInitialID = "BrowseCollectionPhotoBackdropInitial"
 
     private var usesPhotoBackdropLayout: Bool {
-        descriptor.cityHub != nil || descriptor.mastheadImageName.hasPrefix("HeroCategory")
+        BrowseCollectionPhotoBackdropPolicy.usesPhotoBackdrop(
+            hasCityHub: descriptor.cityHub != nil,
+            mastheadImageName: descriptor.mastheadImageName
+        )
     }
 
     @MainActor
@@ -402,7 +470,10 @@ struct BrowseCollectionPageView: View {
 
         selectedCityCardID = filter.id
         withAnimation(.snappy(duration: 0.28)) {
-            scrollProxy.scrollTo(BrowseCityBrowseScrollID.group(filter.id), anchor: .top)
+            scrollProxy.scrollTo(
+                BrowseCityBrowseScrollID.group(filter.id),
+                anchor: UnitPoint(x: 0.5, y: BrowseCollectionLayout.sectionJumpViewportAnchorY)
+            )
         }
     }
 
@@ -415,7 +486,7 @@ struct BrowseCollectionPageView: View {
         withAnimation(.snappy(duration: 0.28)) {
             scrollProxy.scrollTo(
                 BrowseCategorySubcategoryScrollID.group(subcategory.id),
-                anchor: UnitPoint(x: 0.5, y: BrowseCollectionLayout.subcategoryJumpViewportAnchorY)
+                anchor: UnitPoint(x: 0.5, y: BrowseCollectionLayout.sectionJumpViewportAnchorY)
             )
         }
     }
@@ -466,7 +537,14 @@ enum BrowseCollectionLayout {
     static let cityNounThumbnailSize: CGFloat = 62
     static let subcategoryCardWidth: CGFloat = 136
     static let subcategoryCardHeight: CGFloat = 124
-    static let subcategoryJumpViewportAnchorY: CGFloat = AppChromeLayout.menuSectionJumpViewportAnchorY
+    static let sectionJumpViewportAnchorY: CGFloat = AppChromeLayout.menuSectionJumpViewportAnchorY
+
+    static func bottomContentClearance(usesPhotoBackdrop: Bool) -> CGFloat {
+        AppBottomContentClearance.rootSurface(
+            usesPhotoBackdrop: usesPhotoBackdrop,
+            standard: bottomChromeContentClearance
+        )
+    }
 
     static func cityFilterCardWidth(availableWidth: CGFloat) -> CGFloat {
         let visiblePeekWidth = min(cityFilterCardPeekWidth, max(28, availableWidth * 0.11))
@@ -483,12 +561,93 @@ private enum BrowseCategorySubcategoryScrollID {
 
 private extension BrowseSearchPhraseItem {
     var resolvedImageName: String? {
-        guard let imageName, UIImage(named: imageName) != nil else {
+        BrowseImageAssetPolicy.resolvedImageName(imageName, exists: BrowseImageAssetCache.exists)
+    }
+}
+
+enum BrowseImageAssetPolicy {
+    static func resolvedImageName(_ imageName: String?, exists: (String) -> Bool) -> String? {
+        guard let imageName else {
             return nil
         }
 
-        return imageName
+        if trustsBundledGeneratedAssetName(imageName) {
+            return imageName
+        }
+
+        return exists(imageName) ? imageName : nil
     }
+
+    private static func trustsBundledGeneratedAssetName(_ imageName: String) -> Bool {
+        trustedGeneratedAssetPrefixes.contains { imageName.hasPrefix($0) }
+            || trustedGeneratedAssetNames.contains(imageName)
+    }
+
+    private static let trustedGeneratedAssetPrefixes = [
+        "HeroCategory",
+        "HeroCity",
+        "HeroMenu",
+        "HeroVietnam",
+        "BackdropMenu",
+        "BackdropPhrase",
+        "BackdropVietnamese",
+    ]
+
+    private static let trustedGeneratedAssetNames: Set<String> = [
+        "HeroCompactPhraseMasthead",
+        "HeroXinChao",
+    ]
+}
+
+private enum BrowseImageAssetCache {
+    #if canImport(UIKit)
+    private static let lock = NSLock()
+    private static var existenceByName: [String: Bool] = [:]
+    private static var sizeByName: [String: CGSize] = [:]
+
+    static func exists(_ imageName: String) -> Bool {
+        lock.lock()
+        if let cached = existenceByName[imageName] {
+            lock.unlock()
+            return cached
+        }
+        lock.unlock()
+
+        let image = UIImage(named: imageName)
+        lock.lock()
+        existenceByName[imageName] = image != nil
+        if let image {
+            sizeByName[imageName] = image.size
+        }
+        lock.unlock()
+        return image != nil
+    }
+
+    static func size(for imageName: String) -> CGSize? {
+        lock.lock()
+        if let cached = sizeByName[imageName] {
+            lock.unlock()
+            return cached
+        }
+        lock.unlock()
+
+        guard let image = UIImage(named: imageName) else {
+            lock.lock()
+            existenceByName[imageName] = false
+            lock.unlock()
+            return nil
+        }
+
+        lock.lock()
+        existenceByName[imageName] = true
+        sizeByName[imageName] = image.size
+        lock.unlock()
+        return image.size
+    }
+    #else
+    static func exists(_ imageName: String) -> Bool { true }
+    static func size(for imageName: String) -> CGSize? { nil }
+    #endif
 }
 
 private struct BrowseCollectionHeader: View {
@@ -607,7 +766,7 @@ private struct BrowseCollectionSubcategoryCard: View {
 
     private var imageName: String? {
         subcategory.imageName
-            ?? subcategory.items.first(where: { $0.resolvedImageName != nil })?.resolvedImageName
+            ?? subcategory.items.lazy.compactMap(\.resolvedImageName).first
             ?? fallbackImageName
     }
 
@@ -806,13 +965,19 @@ private struct BrowseCityFilterSection: View {
 
                 LazyVStack(alignment: .leading, spacing: 18) {
                     ForEach(visibleFilters) { filter in
-                        BrowseCityNounGroupSection(
-                            filter: filter,
-                            onOpenDetail: onOpenDetail,
-                            isSaved: isSaved,
-                            onToggleSaved: onToggleSaved
-                        )
-                        .id(BrowseCityBrowseScrollID.group(filter.id))
+                        VStack(alignment: .leading, spacing: 0) {
+                            Color.clear
+                                .frame(width: 1, height: 1)
+                                .id(BrowseCityBrowseScrollID.group(filter.id))
+                                .accessibilityHidden(true)
+
+                            BrowseCityNounGroupSection(
+                                filter: filter,
+                                onOpenDetail: onOpenDetail,
+                                isSaved: isSaved,
+                                onToggleSaved: onToggleSaved
+                            )
+                        }
                     }
                 }
             }
@@ -859,12 +1024,14 @@ private struct BrowseCityFilterSection: View {
     }
 
     private func filterImageName(_ filter: BrowseCollectionSubcategory) -> String? {
-        if let preferredImageName = Self.preferredFilterImageNames[filter.id],
-           UIImage(named: preferredImageName) != nil {
+        if let preferredImageName = BrowseImageAssetPolicy.resolvedImageName(
+            Self.preferredFilterImageNames[filter.id],
+            exists: BrowseImageAssetCache.exists
+        ) {
             return preferredImageName
         }
 
-        return filter.items.first(where: { $0.resolvedImageName != nil })?.resolvedImageName
+        return filter.items.lazy.compactMap(\.resolvedImageName).first
     }
 
     private static func filterScrollID(_ filterID: String) -> String {
@@ -1080,6 +1247,31 @@ private struct BrowseCityNounRow: View {
     }
 }
 
+enum BrowseFocusedAssetImagePolicy {
+    static func shouldReadImageSize(for imageName: String) -> Bool {
+        focusedImages[imageName] != nil
+    }
+
+    static func focusPoint(for imageName: String) -> UnitPoint {
+        focusedImages[imageName] ?? .center
+    }
+
+    private static let focusedImages: [String: UnitPoint] = [
+        "HeroCityDanangPlaceBaNaHills": UnitPoint(x: 0.5, y: 0.25),
+        "HeroCityDanangPlaceBanhXeoBaDuong": UnitPoint(x: 0.5, y: 0.68),
+    ]
+}
+
+enum BrowseCollectionTaskPolicy {
+    static func shouldRunStandardFocusTask(isActive: Bool) -> Bool {
+        isActive
+    }
+
+    static func shouldApplyPhotoBackdropScrollGeometry(isActive: Bool) -> Bool {
+        isActive
+    }
+}
+
 private struct BrowseFocusedAssetImage: View {
     let imageName: String
 
@@ -1087,8 +1279,9 @@ private struct BrowseFocusedAssetImage: View {
         GeometryReader { proxy in
             let containerSize = proxy.size
 
-            if let image = UIImage(named: imageName) {
-                let imageSize = image.size
+            if
+                BrowseFocusedAssetImagePolicy.shouldReadImageSize(for: imageName),
+                let imageSize = BrowseImageAssetCache.size(for: imageName) {
                 let scale = max(
                     containerSize.width / imageSize.width,
                     containerSize.height / imageSize.height
@@ -1098,12 +1291,12 @@ private struct BrowseFocusedAssetImage: View {
                     height: imageSize.height * scale
                 )
                 let offset = Self.offset(
-                    focus: Self.focusPoint(for: imageName),
+                    focus: BrowseFocusedAssetImagePolicy.focusPoint(for: imageName),
                     scaledSize: scaledSize,
                     containerSize: containerSize
                 )
 
-                Image(uiImage: image)
+                Image(imageName)
                     .resizable()
                     .scaledToFill()
                     .frame(width: scaledSize.width, height: scaledSize.height)
@@ -1135,15 +1328,6 @@ private struct BrowseFocusedAssetImage: View {
             height: min(max(rawY, -maxY), maxY)
         )
     }
-
-    private static func focusPoint(for imageName: String) -> UnitPoint {
-        focusedImages[imageName] ?? .center
-    }
-
-    private static let focusedImages: [String: UnitPoint] = [
-        "HeroCityDanangPlaceBaNaHills": UnitPoint(x: 0.5, y: 0.25),
-        "HeroCityDanangPlaceBanhXeoBaDuong": UnitPoint(x: 0.5, y: 0.68),
-    ]
 }
 
 private struct BrowseCityFilterPill: View {
@@ -1327,7 +1511,7 @@ private struct BrowseCollectionMessageEntryCard: View {
     var body: some View {
         Button(action: onPractice) {
             HStack(spacing: 14) {
-                Image(systemName: "waveform")
+                Image(systemName: "square.grid.2x2.fill")
                     .font(.title3.weight(.bold))
                     .foregroundStyle(.white)
                     .frame(width: 58, height: 58)
@@ -1347,12 +1531,12 @@ private struct BrowseCollectionMessageEntryCard: View {
                 }
                 .layoutPriority(1)
 
-                Text("Practice")
-                    .font(.caption.weight(.black))
+                Image(systemName: "play.fill")
+                    .font(.subheadline.weight(.black))
                     .foregroundStyle(.red)
-                    .padding(.horizontal, 14)
-                    .frame(height: 38)
-                    .nativeGlass(cornerRadius: 19, interactive: true)
+                    .frame(width: 44, height: 44)
+                    .nativeGlass(cornerRadius: 22, interactive: true)
+                    .accessibilityHidden(true)
             }
             .padding(14)
             .phraseListCard(cornerRadius: 24)

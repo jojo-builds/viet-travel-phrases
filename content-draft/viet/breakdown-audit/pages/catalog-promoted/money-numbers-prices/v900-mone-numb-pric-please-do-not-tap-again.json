@@ -27,17 +27,14 @@
     {
       "id": "chunk-2",
       "vietnamese": "đừng",
-      "english": "do not"
+      "english": "do not",
+      "keepTogetherReason": "negative command"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "gõ",
-      "english": "type / knock"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "nữa",
-      "english": "more / again"
+      "vietnamese": "gõ nữa",
+      "english": "tap / type again",
+      "keepTogetherReason": "do-not-tap-again phrase"
     },
     {
       "id": "full",

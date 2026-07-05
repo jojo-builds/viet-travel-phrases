@@ -20,39 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có chấp nhận",
+      "english": "do you accept",
+      "keepTogetherReason": "accept question"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "đô la Mỹ",
+      "english": "US dollars",
+      "keepTogetherReason": "US-dollar phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "chấp",
-      "english": "accept"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "nhận",
-      "english": "receive / accept"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đô la",
-      "english": "dollars",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "Mỹ",
-      "english": "United States"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

@@ -7,7 +7,7 @@
   "title": "Giá thuê có bao gồm bảo hiểm không?",
   "englishTitle": "Does the rental include insurance?",
   "pronunciation": "Gia thue co bao gom bao hiem khong",
-  "summary": "Does the rental include insurance?",
+  "summary": "For checking whether a rental already includes insurance.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Giá thuê có bao gồm bảo hiểm không? is a practical transport phrase for keeping one travel detail clear. Use it when Does the rental include insurance is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask before signing, paying, or riding away."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Giá thuê có bao gồm bảo hiểm không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point to the rental price or contract and wait for what is covered.",
       "phrases": [
         {
           "id": "v900-tran-does-the-rental-include-insurance",
@@ -42,38 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Giá thuê means rental price; có bao gồm asks whether it includes; bảo hiểm means insurance; không? makes it yes/no.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Giá thuê có",
-          "english": "price / money",
-          "audioKey": null
+          "vietnamese": "Giá thuê",
+          "english": "rental price",
+          "keepTogetherReason": "rental-price noun"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "bao gồm bảo hiểm",
-          "english": "insurance",
-          "audioKey": null
+          "vietnamese": "có bao gồm",
+          "english": "does it include",
+          "keepTogetherReason": "include phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "bảo hiểm",
+          "english": "insurance",
+          "keepTogetherReason": "insurance noun"
         },
         {
           "id": "chunk-4",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
+        },
+        {
+          "id": "full",
           "vietnamese": "Giá thuê có bao gồm bảo hiểm không?",
-          "english": "Does the rental include insurance",
-          "audioKey": null
+          "english": "Does the rental include insurance?",
+          "audioKey": "v900-tran-does-the-rental-include-insurance"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Does the rental include insurance? to another transport need.",
+      "body": "Taxi and stop-here cards stay useful if the rental question turns into transport planning.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when does the rental include insurance is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good for motorbikes, cars, bicycles, boats, scooters, and gear rentals before money changes hands."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Insurance, deposit, and damage responsibility are separate details. Keep them clear before you leave."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Giá thuê có bao gồm bảo hiểm không?.",
+      "body": "Stop, route, air-conditioning, wait, and cash cards cover nearby transport conversations.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

@@ -20,39 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Đây",
-      "english": "here / this"
+      "vietnamese": "Đây có phải",
+      "english": "is this",
+      "keepTogetherReason": "is-this question start"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "là con số",
+      "english": "the number",
+      "keepTogetherReason": "number noun phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "phải",
-      "english": "must / right"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "là",
-      "english": "is / means"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "con",
-      "english": "child / animal classifier"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "số",
-      "english": "number"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "đúng không?",
-      "english": "is that correct?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "english": "correct?",
+      "keepTogetherReason": "correctness question"
     },
     {
       "id": "full",

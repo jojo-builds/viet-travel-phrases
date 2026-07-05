@@ -7,7 +7,7 @@
   "title": "Vui lòng cho một bàn",
   "englishTitle": "A table for one, please",
   "pronunciation": "Vui long cho mot ban",
-  "summary": "A table for one, please",
+  "summary": "Keeps the food or drink request clear in a stall, cafe, or busy counter.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng cho một bàn is a practical food or drink phrase for keeping one travel detail clear. Use it when table for one, please is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Point to the item, menu line, receipt, size, or photo.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Vui lòng cho một bàn. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say Vui lòng cho một bàn as one clean sentence; the menu line, dish photo, bill, or ingredient can carry the exact detail. Point to the item, menu line, receipt, size, or photo.",
       "phrases": [
         {
           "id": "v900-food-drin-a-table-for-one-please",
@@ -37,124 +40,130 @@
           "detailPageID": null,
           "audioKey": "v900-food-drin-a-table-for-one-please"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Start with Vui lòng cho + một bàn; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Vui lòng cho",
+          "vietnamese": "Vui lòng",
           "english": "please",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "một bàn",
-          "english": "table for one, please",
-          "audioKey": null
+          "vietnamese": "cho",
+          "english": "to / for",
+          "audioKey": "breakdown-taxi-1-first"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "một",
+          "english": "one / a",
+          "audioKey": "breakdown-v500-loca-serv-ever-task-one-item-is-missing-first"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "bàn",
+          "english": "table",
+          "audioKey": "breakdown-food-need-table-piece-3"
+        },
+        {
+          "id": "full",
           "vietnamese": "Vui lòng cho một bàn",
           "english": "A table for one, please",
-          "audioKey": null
+          "audioKey": "v900-food-drin-a-table-for-one-please"
         }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from A table for one, please to another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
-        }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real food or drink exchange when table for one, please is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "At a host stand, cafe doorway, or busy restaurant, keep the group size, table, seat, or waiting area visible while the first answer comes back.",
+      "phrases": [
+        {
+          "id": "v900-food-drin-a-table-for-four-please",
+          "vietnamese": "Vui lòng cho một bàn cho bốn người",
+          "english": "A table for four, please",
+          "pronunciation": "Vui long cho mot ban cho bon nguoi",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-a-table-for-four-please",
+          "audioKey": "v900-food-drin-a-table-for-four-please"
+        },
+        {
+          "id": "v900-food-drin-is-there-a-wait-for-a-table",
+          "vietnamese": "Có phải đợi bàn không?",
+          "english": "Is there a wait for a table?",
+          "pronunciation": "Co phai doi ban khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-is-there-a-wait-for-a-table",
+          "audioKey": "v900-food-drin-is-there-a-wait-for-a-table"
+        },
+        {
+          "id": "v900-food-drin-can-we-sit-inside",
+          "vietnamese": "Chúng tôi có thể ngồi bên trong được không?",
+          "english": "Can we sit inside?",
+          "pronunciation": "Chung toi co the ngoi ben trong duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-we-sit-inside",
+          "audioKey": null
+        },
+        {
+          "id": "v900-food-drin-can-we-sit-outside",
+          "vietnamese": "Chúng tôi có thể ngồi bên ngoài được không?",
+          "english": "Can we sit outside?",
+          "pronunciation": "Chung toi co the ngoi ben ngoai duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-we-sit-outside",
+          "audioKey": null
+        },
+        {
+          "id": "v900-food-drin-can-we-sit-by-the-fan",
+          "vietnamese": "Chúng tôi có thể ngồi cạnh quạt được không?",
+          "english": "Can we sit by the fan?",
+          "pronunciation": "Chung toi co the ngoi canh quat duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-we-sit-by-the-fan",
+          "audioKey": null
+        }
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
+      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Vui lòng cho một bàn.",
+      "body": "Use do we order here or at the counter?; I have been waiting a long time; what do you recommend? when the first phrase leads to another request.",
       "phrases": [
         {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
+          "id": "v900-food-drin-can-you-clean-this-table",
+          "vietnamese": "Bạn có thể lau cái bàn này được không?",
+          "english": "Can you clean this table?",
+          "pronunciation": "Ban co the lau cai ban nay duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
-          "audioKey": "coffee-4"
-        },
-        {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
-          "audioKey": "coffee-5"
-        },
-        {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
-          "audioKey": "coffee-6"
-        },
-        {
-          "id": "coffee-7",
-          "vietnamese": "Tính tiền giúp tôi",
-          "english": "Please let me pay",
-          "pronunciation": "ting tyen zoop toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
-          "audioKey": "coffee-7"
+          "detailPageID": "viet-phrase-v900-food-drin-can-you-clean-this-table",
+          "audioKey": "v900-food-drin-can-you-clean-this-table"
         },
         {
           "id": "food-need-table",
@@ -163,10 +172,20 @@
           "pronunciation": "cho toy ban cho hai ngwee nhe",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
+          "detailPageID": "viet-family-food-need-table",
           "audioKey": "food-need-table"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "Keep a table for four, please; is there a wait for a table?; can we sit inside? ready for the next turn.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [

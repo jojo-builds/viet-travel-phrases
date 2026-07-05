@@ -4,10 +4,10 @@
   "phraseID": "v900-heal-phar-i-hurt-my-arm",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "tôi bị thương ở tay",
+  "title": "Tôi bị thương ở tay",
   "englishTitle": "I hurt my arm",
-  "pronunciation": "toi bi thuong o tay",
-  "summary": "I hurt my arm",
+  "pronunciation": "Toi bi thuong o tay",
+  "summary": "For explaining an arm injury at a clinic, pharmacy, hotel desk, or to someone helping you.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,18 +20,19 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "tôi bị thương ở tay is a practical pharmacy or health phrase for keeping one travel detail clear. Use it when I hurt my arm is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Show the arm first and keep the sentence short. Add fall, swelling, cut, or pain level after they understand.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: tôi bị thương ở tay. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point to the exact spot while you say it. A photo, bandage, or translated note can carry the extra detail.",
       "phrases": [
         {
           "id": "v900-heal-phar-i-hurt-my-arm",
-          "vietnamese": "tôi bị thương ở tay",
+          "vietnamese": "Tôi bị thương ở tay",
           "english": "I hurt my arm",
-          "pronunciation": "toi bi thuong o tay",
+          "pronunciation": "Toi bi thuong o tay",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
           "detailPageID": null,
@@ -42,32 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi bị thương means I am injured; ở tay means in the arm or hand area.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "tôi bị thương",
+          "vietnamese": "Tôi bị thương",
           "english": "I am injured",
-          "audioKey": null
+          "keepTogetherReason": "injury phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "ở tay",
-          "english": "arm",
-          "audioKey": null
+          "english": "in the arm or hand area",
+          "keepTogetherReason": "body-area phrase"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "tôi bị thương ở tay",
+          "id": "full",
+          "vietnamese": "Tôi bị thương ở tay",
           "english": "I hurt my arm",
-          "audioKey": null
+          "audioKey": "v900-heal-phar-i-hurt-my-arm"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I hurt my arm to another pharmacy or health need.",
+      "body": "Doctor, pharmacy, and nearest-pharmacy cards help if you need medical direction after naming the injury.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when i hurt my arm is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Clinics, pharmacies, hotel desks, and nearby helpers are the right places to name the injury first.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "Vietnamese may use tay for arm or hand depending on context. Pointing removes the ambiguity.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after tôi bị thương ở tay.",
+      "body": "Headache, stomach pain, motion-sickness medicine, allergy, and diarrhea cards cover other health handoffs.",
       "phrases": [
         {
           "id": "health-2",
@@ -172,9 +176,9 @@
   "examples": [
     {
       "id": "v900-heal-phar-i-hurt-my-arm",
-      "vietnamese": "tôi bị thương ở tay",
+      "vietnamese": "Tôi bị thương ở tay",
       "english": "I hurt my arm",
-      "pronunciation": "toi bi thuong o tay",
+      "pronunciation": "Toi bi thuong o tay",
       "symbolName": "speaker.wave.2.fill",
       "tintName": "red",
       "detailPageID": null,

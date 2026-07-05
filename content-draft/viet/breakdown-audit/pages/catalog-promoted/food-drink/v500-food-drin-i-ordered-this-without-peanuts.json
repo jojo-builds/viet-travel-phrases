@@ -20,49 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi đã gọi",
+      "english": "I ordered",
+      "keepTogetherReason": "ordered phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đã",
-      "english": "already / did"
+      "vietnamese": "món này",
+      "english": "this dish",
+      "keepTogetherReason": "this-dish phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "gọi",
-      "english": "call"
+      "vietnamese": "mà không có",
+      "english": "without",
+      "keepTogetherReason": "without phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "món",
-      "english": "dish"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "mà",
-      "english": "that / but"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "không",
-      "english": "no / not"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-9",
       "vietnamese": "đậu phộng",
       "english": "peanuts",
-      "keepTogetherReason": "compound food allergy term"
+      "keepTogetherReason": "peanut phrase"
     },
     {
       "id": "full",

@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-mone-numb-pric-do-i-need-exact-change",
-  "phraseText": "Tôi có cần thay đổi chính xác không?",
+  "phraseText": "Tôi có cần trả đúng tiền không?",
   "englishTitle": "Do I need exact change?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,45 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có cần",
+      "english": "do I need",
+      "keepTogetherReason": "need question"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "trả đúng tiền",
+      "english": "pay the exact amount",
+      "keepTogetherReason": "exact-payment phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "cần",
-      "english": "need"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "thay",
-      "english": "replace / change"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đổi",
-      "english": "change / exchange"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "chính xác",
-      "english": "correct / exact",
-      "keepTogetherReason": "compound adjective"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi có cần thay đổi chính xác không?",
+      "vietnamese": "Tôi có cần trả đúng tiền không?",
       "english": "Do I need exact change?",
-      "audioKey": "v500-mone-numb-pric-do-i-need-exact-change"
+      "audioKey": null
     }
   ]
 }

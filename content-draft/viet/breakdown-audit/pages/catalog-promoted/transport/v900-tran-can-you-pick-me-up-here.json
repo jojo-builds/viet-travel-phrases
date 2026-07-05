@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-tran-can-you-pick-me-up-here",
-  "phraseText": "Bạn có thể đón tôi ở đây được không?",
+  "phraseText": "Anh/chị đón tôi ở đây được không?",
   "englishTitle": "Can you pick me up here?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,46 +20,33 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Anh/chị",
+      "english": "you",
+      "keepTogetherReason": "polite address"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "đón tôi",
+      "english": "pick me up",
+      "keepTogetherReason": "pickup phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đón",
-      "english": "pick up"
+      "vietnamese": "ở đây",
+      "english": "here",
+      "keepTogetherReason": "location phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "tôi",
-      "english": "I / me"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "đây",
-      "english": "here / this"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",
-      "vietnamese": "Bạn có thể đón tôi ở đây được không?",
+      "vietnamese": "Anh/chị đón tôi ở đây được không?",
       "english": "Can you pick me up here?",
-      "audioKey": "v900-tran-can-you-pick-me-up-here"
+      "audioKey": null
     }
   ]
 }

@@ -20,25 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bản dịch",
-      "english": "translation",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "Bản dịch này",
+      "english": "this translation",
+      "keepTogetherReason": "this-translation phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "đúng không?",
-      "english": "is that correct?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "vietnamese": "có đúng không?",
+      "english": "is it correct?",
+      "keepTogetherReason": "correct yes-no question"
     },
     {
       "id": "full",

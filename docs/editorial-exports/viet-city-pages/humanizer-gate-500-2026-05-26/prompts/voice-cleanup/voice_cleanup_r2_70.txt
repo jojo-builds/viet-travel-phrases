@@ -1,0 +1,309 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_70",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_70",
+  "chunks": [
+    {
+      "chunkFile": "hue_076_100_humanized.json",
+      "cityID": "hue",
+      "range": "076-100",
+      "errors": [
+        {
+          "id": "city-hue-place-thanh-toan-bridge",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hue-place-thanh-toan-bridge",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-thieu-tri-tomb",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hue-place-thieu-tri-tomb",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-thuy-bieu-village",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hue-place-thuy-bieu-village",
+          "message": "banned visible fragment: gives hue a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hue-place-tinh-gia-vien",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hue-place-toa-kham-boat-station",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: the image to hold"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 6x: generic name-card heading"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 16x: map/name utility heading"
+        },
+        {
+          "id": "076-100",
+          "message": "freshness/process headings appear 2x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hue-place-thanh-toan-bridge",
+          "summary": "Thanh Toan Bridge gives Hue a village-side landmark: a tile-roof covered bridge over a small canal, houses nearby, and bicycles passing slowly.",
+          "context": "The bridge belongs to Hue's countryside edge, where architecture, local pride, canal views, and village movement carry the stop.",
+          "tip": "Cầu ngói Thanh Toàn is the Vietnamese name to match with the covered bridge and its small canal setting.",
+          "rationale": "The bridge is memorable because the architecture sits in a lived village scene, not because it needs a long visit.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Covered Bridge In Village Pace",
+              "body": "Thanh Toan is a small architectural stop: tile roof, canal, village houses, and the quiet movement around the bridge."
+            },
+            {
+              "id": "place-brief",
+              "title": "Architecture With Daily Life",
+              "body": "The bridge matters as a lived landmark, with local pride and views held in a compact canal-side scene."
+            },
+            {
+              "id": "quick-say",
+              "title": "Bridge Name To Recognize",
+              "body": "Cầu ngói Thanh Toàn is the Vietnamese name. Ngói points to the tiled roof that makes the bridge distinctive."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Countryside Add-On",
+              "body": "It fits when a Hue day can move beyond the main imperial sites into village lanes and slower water."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small Scale Is The Point",
+              "body": "Picture the covered bridge over a narrow canal, not a dramatic city-span bridge. The slower scale is the charm."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Brief Stop, Clear Image",
+              "body": "The name is easier to remember once tied to the tile roof, canal, village houses, and bicycles nearby."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-thieu-tri-tomb",
+          "summary": "Tomb of Thieu Tri gives Hue a lower, quieter royal-tomb scene: open countryside, old walls, gates, courtyards, stone paths, and distant mountains.",
+          "context": "The tomb sits in Hue's heritage landscape, where royal memory spreads into countryside rather than staying inside the Citadel.",
+          "tip": "Lăng Thiệu Trị is the Vietnamese name to connect with the tomb gate, low structures, courtyards, and countryside setting.",
+          "rationale": "The tomb makes history feel physical through space and approach: walls, gates, stone paths, open ground, and mountain edges.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Low Royal Tomb Scene",
+              "body": "Thieu Tri's tomb is quieter and more open: low structures, old walls, gates, courtyards, and countryside around the path."
+            },
+            {
+              "id": "place-brief",
+              "title": "History Spread Into Countryside",
+              "body": "Expect royal tomb architecture in an open setting, with faint mountains behind it rather than a dense palace sequence."
+            },
+            {
+              "id": "quick-say",
+              "title": "Tomb Name To Recognize",
+              "body": "Lăng Thiệu Trị is the Vietnamese name to match with maps, route notes, and local directions."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Quieter Tomb Route",
+              "body": "It fits when the day needs another royal-tomb perspective without repeating the more famous, heavier stops."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Open Space Matters",
+              "body": "Picture low tomb structures, stone paths, old walls, and countryside air instead of a crowded monument courtyard."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Narrow The Expectation",
+              "body": "This is a heritage stop with a softer scale. Let the setting carry it instead of expecting spectacle."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-thuy-bieu-village",
+          "summary": "Thuy Bieu Village gives Hue a slower garden-house edge: pomelo trees, leafy lanes, garden walls, village rhythm, and the Perfume River nearby.",
+          "context": "The village belongs to Hue's quieter local side, where garden houses, markets, river edges, and lanes replace formal monuments.",
+          "tip": "Làng Thủy Biều is the Vietnamese name to recognize when maps or routes point toward the village area near Hue.",
+          "rationale": "The stop matters as a slower daily-life scene, with pomelo lanes, garden houses, markets, and river proximity shaping the visit.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Garden-House Village Pause",
+              "body": "Thuy Bieu is Hue at village pace: pomelo trees, leafy lanes, garden walls, and the river close enough to shape the mood."
+            },
+            {
+              "id": "place-brief",
+              "title": "Slower Than The Tomb Route",
+              "body": "Expect local rhythm and garden-house texture rather than a single headline monument. The details are lanes, shade, markets, and river edges."
+            },
+            {
+              "id": "quick-say",
+              "title": "Village Name To Recognize",
+              "body": "Làng Thủy Biều is the Vietnamese name to match with routes, maps, or local directions toward the village."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Soft Break From Formal Hue",
+              "body": "It fits when the itinerary needs a lived-in pause after imperial gates, tombs, or pagodas."
+            },
+            {
+              "id": "when-to-use",
+              "title": "The Image To Hold",
+              "body": "Picture a leafy lane with pomelo trees, a bicycle, garden walls, and quiet village movement near the river."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Local Rhythm, Not A Checklist",
+              "body": "The village is easier to appreciate when approached as a slower area, not a list of separate attractions."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-tinh-gia-vien",
+          "summary": "Tinh Gia Vien Restaurant turns a meal into a garden-house Hue moment: carved wood, foliage, courtyard space, and small plated dishes in a calmer setting.",
+          "context": "The restaurant belongs to Hue's garden-house dining rhythm, where tables, staff movement, menu details, and setting shape the meal.",
+          "tip": "Tịnh Gia Viên is the Vietnamese name to recognize when looking for the garden-house restaurant or matching a reservation note.",
+          "rationale": "The setting gives the meal its memory: courtyard, carved wood, foliage, small dishes, and a more composed Hue dining pace.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Garden-House Meal",
+              "body": "Tinh Gia Vien is for a meal that remembers the room: courtyard, carved wood, foliage, and small dishes arranged with care."
+            },
+            {
+              "id": "place-brief",
+              "title": "Setting Leads The Meal",
+              "body": "Expect a garden-house restaurant atmosphere rather than a fast meal stop. The room and pacing matter as much as the plate."
+            },
+            {
+              "id": "quick-say",
+              "title": "Restaurant Name To Recognize",
+              "body": "Tịnh Gia Viên is the Vietnamese name to match with signs, bookings, or local directions."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Slower Dining Slot",
+              "body": "It fits a day when dinner or lunch can settle down after markets, tombs, or river movement."
+            },
+            {
+              "id": "when-to-use",
+              "title": "The Courtyard Image",
+              "body": "Picture carved wood, foliage, small plated dishes, and a courtyard pace rather than a quick refuel."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Menu needs a close-to-the-day check",
+              "body": "The durable claim is the garden-house setting. Exact dishes and service rhythm can change by visit."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-toa-kham-boat-station",
+          "summary": "Toa Kham Boat Station is the river-route threshold in Hue: steps, boat noses, boarding points, bridges, and the shift from street to water.",
+          "context": "The station belongs to Hue's river logistics, where boarding points, skyline edges, and boat routes matter more than a normal street route.",
+          "tip": "Bến thuyền Tòa Khâm is the Vietnamese name to recognize when confirming a boat point on the Perfume River.",
+          "rationale": "The stop helps the city make sense by water: river steps, boats, bridge views, and the moment a route leaves the street.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The River Boarding Point",
+              "body": "Toa Kham is where a Hue route can shift from street movement to water movement: steps, boats, bridge views, and boarding talk."
+            },
+            {
+              "id": "place-brief",
+              "title": "A Practical River Edge",
+              "body": "Expect river steps, boat noses, skyline edges, and the small logistics of finding the right boat."
+            },
+            {
+              "id": "quick-say",
+              "title": "Boat Station Name",
+              "body": "Bến thuyền Tòa Khâm is the Vietnamese name to match with pickup notes, directions, or local boat references."
+            },
+            {
+              "id": "use-it-with",
+              "title": "When A Boat Route Has A Point",
+              "body": "It matters most when the river ride has a clear destination, pickup point, return plan, or timing question."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Street To Water",
+              "body": "Picture the change from traffic and sidewalks to steps, boats, bridges, and a quieter river pace."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Exact Point Matters",
+              "body": "Boat names, pickup points, and routes can blur along the river. Match the Vietnamese name and location before boarding."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

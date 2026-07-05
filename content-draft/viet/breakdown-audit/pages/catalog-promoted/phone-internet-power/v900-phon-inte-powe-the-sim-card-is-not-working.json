@@ -22,13 +22,13 @@
       "id": "chunk-1",
       "vietnamese": "Thẻ SIM",
       "english": "SIM card",
-      "keepTogetherReason": "compound noun"
+      "keepTogetherReason": "SIM-card noun"
     },
     {
       "id": "chunk-2",
       "vietnamese": "không hoạt động",
-      "english": "not working",
-      "keepTogetherReason": "fixed negative phrase"
+      "english": "is not working",
+      "keepTogetherReason": "not-working phrase"
     },
     {
       "id": "full",

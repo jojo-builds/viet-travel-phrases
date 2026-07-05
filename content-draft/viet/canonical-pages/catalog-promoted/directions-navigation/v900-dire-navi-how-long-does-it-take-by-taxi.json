@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đi taxi mất bao lâu? helps you decide whether the next move is worth the time. Use it when How long does it take by taxi affects a taxi, walk, booking, tour, or connection and you need a practical estimate."
+      "body": "Đi taxi mất bao lâu?"
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Đi taxi mất bao lâu? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Ask with the destination visible. The answer may be a time range, traffic warning, or better route.",
       "phrases": [
         {
           "id": "v900-dire-navi-how-long-does-it-take-by-taxi",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Start with Đi taxi + mất bao lâu; the full audio shows how the words connect in one breath.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -65,7 +65,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How long does it take by taxi? to another directions need.",
+      "body": "Useful if the exchange continues: Excuse me, how do I get there, Is it near here, and How long does it take on foot.",
       "phrases": [
         {
           "id": "directions-1",
@@ -102,7 +102,7 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real directions exchange when how long does it take by taxi is the detail you need resolved. The likely reply is a time estimate or route choice, so keep the phrase short and ready for one follow-up."
+      "body": "Best with a map, at a street corner, or at a ticket counter, before the explanation gets long. Keep the map location, address, station name, or sign close for the follow-up."
     },
     {
       "id": "good-to-know",
@@ -112,7 +112,7 @@
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Đi taxi mất bao lâu?.",
+      "body": "Useful if the exchange continues: Where do I turn left, Should I turn right, and Should I go straight.",
       "phrases": [
         {
           "id": "directions-4",

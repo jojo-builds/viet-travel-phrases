@@ -22,40 +22,25 @@
       "id": "chunk-1",
       "vietnamese": "Khi nào",
       "english": "when",
-      "keepTogetherReason": "fixed time question"
+      "keepTogetherReason": "when question word"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "tôi",
-      "english": "I / me"
+      "vietnamese": "tôi nên",
+      "english": "should I",
+      "keepTogetherReason": "should-I phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nên",
-      "english": "should"
+      "vietnamese": "tìm kiếm",
+      "english": "seek / look for",
+      "keepTogetherReason": "seek phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "tìm kiếm",
-      "english": "look for",
-      "keepTogetherReason": "compound verb"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "sự",
-      "english": "matter / event"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "giúp đỡ",
-      "english": "help",
-      "keepTogetherReason": "compound help verb"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "khẩn cấp?",
-      "english": "urgent / emergency",
-      "keepTogetherReason": "compound adjective"
+      "vietnamese": "sự giúp đỡ khẩn cấp?",
+      "english": "emergency help?",
+      "keepTogetherReason": "emergency-help phrase"
     },
     {
       "id": "full",

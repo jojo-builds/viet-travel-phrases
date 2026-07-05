@@ -20,23 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có",
+      "english": "do you have",
+      "keepTogetherReason": "have question"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "bia",
+      "english": "beer",
+      "keepTogetherReason": "drink noun"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "bia",
-      "english": "beer"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

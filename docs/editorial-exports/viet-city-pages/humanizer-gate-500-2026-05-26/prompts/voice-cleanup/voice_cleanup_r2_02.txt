@@ -1,0 +1,294 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_02",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_02",
+  "chunks": [
+    {
+      "chunkFile": "danang_001_025_humanized.json",
+      "cityID": "danang",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-danang-place-be-man",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-danang-place-bep-cuon",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-danang-place-boulevard-gelato-coffee",
+          "message": "banned visible fragment: the point is the small reset"
+        },
+        {
+          "id": "city-danang-place-bun-cha-ca",
+          "message": "banned visible fragment: gives da nang a"
+        },
+        {
+          "id": "city-danang-place-bun-cha-ca-hon",
+          "message": "heading is command-like: Check Before Crossing Town"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-danang-place-bun-cha-ca-hon",
+          "message": "freshness/process-like heading: Check Before Crossing Town"
+        },
+        {
+          "id": "001-025",
+          "message": "freshness/process headings appear 1x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-danang-place-be-man",
+          "summary": "A beach-side seafood meal where ice trays, sea air, table noise, and clear price questions come before the first plate arrives hot.",
+          "context": "Good for a group seafood dinner when everyone is ready for a louder room and a little ordering negotiation.",
+          "tip": "If seafood is chosen by size or weight, point clearly and ask the price before it leaves the display.",
+          "rationale": "Be Man works when diners understand the first decision is selection, not just sitting down.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Ice Tray Before Plate",
+              "body": "Be Man is the kind of seafood meal where the decision starts before the plate: ice trays, sea air, staff movement, and tables already in motion."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Seafood Starts At The Display",
+              "body": "Seafood dinner starts before sitting down. Ice trays, size, weight, price, and cooking style shape the meal before the first plate arrives."
+            },
+            {
+              "id": "quick-say",
+              "title": "Seafood Price Words",
+              "body": "Ask the seafood price, size, cooking style, and table number before anything leaves the ice display."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Display Is The Menu",
+              "body": "Look before settling in. If the seafood is selected by piece, size, or weight, confirm what you mean before the order moves."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Loud Tables, Cold Drinks",
+              "body": "The open-air feel is part of the meal: plates landing, shells cracking, drinks arriving, and people ordering more than they planned."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Simple Cooking Travels Better",
+              "body": "A clear grilled, steamed, or stir-fried main is easier than a table crowded with sauces. One main plate gives the meal a readable start."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-bep-cuon",
+          "summary": "A calmer restaurant frame for Da Nang's roll-and-dip habit: herbs, wrappers, dipping bowls, wood tables, and a first roll that needs patience.",
+          "context": "Good when roll meals sound appealing but a market stall or seafood board feels like too much work.",
+          "tip": "Read the platter before touching the sauce. Wrappers, herbs, fillings, and dipping bowls need a simple order.",
+          "rationale": "Bep Cuon gives local textures a controlled first-meal setting, useful after heat or a long outdoor day.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Rolls Without The Jostle",
+              "body": "Bep Cuon gives the roll-and-dip meal a cleaner frame: herbs on the table, dipping bowls, wood under the plates, and enough order to breathe."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Rolls With A Softer Landing",
+              "body": "This works when the group wants herbs, wrappers, fillings, and dipping bowls in a calmer room than a market stall or seafood board."
+            },
+            {
+              "id": "quick-say",
+              "title": "Roll And Sauce Words",
+              "body": "Ask for wrappers, herbs, dipping sauce, less chili, or a quick roll demo before the table gets messy."
+            },
+            {
+              "id": "place-brief",
+              "title": "Read Before Rolling",
+              "body": "Look at herbs, wrappers, fillings, and dipping bowls first. One slower roll keeps the bite from collapsing halfway to your mouth."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Controlled First Meal",
+              "body": "The table gives local textures without making you chase a stall or decode a seafood board. That restraint can be the pleasure."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Sauce Decides The Bite",
+              "body": "Roll meals live or die by the dip. Taste once, then ask for more herbs, less heat, or help if the setup is not obvious."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-boulevard-gelato-coffee",
+          "summary": "A bright cafe-and-gelato pause for coffee, sweetness, cool air, and a softer break between Da Nang meals or walks when the heat builds.",
+          "context": "Good when the day needs dessert or coffee without turning into a long restaurant stop.",
+          "tip": "Treat it as a pause, not a destination to over-plan. Coffee, gelato, and a seat may be enough.",
+          "rationale": "Boulevard Gelato & Coffee adds a gentle cafe rhythm to the day, better treated as a simple cold drink or gelato pause.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Coffee With A Sweet Exit",
+              "body": "Boulevard Gelato & Coffee is a softer Da Nang pause: a counter, cold sweetness, coffee, and enough daylight to slow the next decision."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Cool Pause Between Plans",
+              "body": "Good as a small reset: coffee, gelato, daylight, and a seat before the day asks for another meal, walk, or ride."
+            },
+            {
+              "id": "quick-say",
+              "title": "Coffee And Gelato Words",
+              "body": "Ask for coffee, gelato flavors, ice, sugar, a seat, and the bill during a small cool-down stop."
+            },
+            {
+              "id": "place-brief",
+              "title": "Not Just Caffeine",
+              "body": "The point is the small reset between meals, heat, and walking. A drink or gelato cup can carry the stop without making it larger."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Between Bigger Meals",
+              "body": "It fits after a market, before dinner, or when the group needs something cool and easy. Keep the stop light: one coffee, one gelato, then back into the day."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Brand Name Stays English",
+              "body": "The venue name usually stays in English. Coffee and payment phrases fit the exchange better than trying to translate the sign."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-bun-cha-ca",
+          "summary": "A Da Nang fish-cake noodle soup of clear broth, tomato, herbs, springy cha ca, and a bowl that feels tied to the coast near morning markets.",
+          "context": "Good for a simple local meal when you want a bowl, not a long restaurant decision.",
+          "tip": "Order one bowl first and adjust slowly. Herbs, chili, and broth strength can change the whole meal.",
+          "rationale": "Bun cha ca gives Da Nang a clear food memory: coastal fish cake, hot broth, herbs, and a table that stays simple.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Coastal Bowl",
+              "body": "Bun cha ca is Da Nang in a bowl: clear broth, fish cake, tomato, herbs, and steam rising from a simple table."
+            },
+            {
+              "id": "when-to-use",
+              "title": "One Coastal Bowl",
+              "body": "The dish matters more than one fixed shop. Broth, fish cake, herbs, tomato, and steam give Da Nang a simple food memory."
+            },
+            {
+              "id": "quick-say",
+              "title": "Noodle Bowl Words",
+              "body": "Ask for one bowl, herbs, chili, lime, fish cake, and the bill while keeping the meal simple."
+            },
+            {
+              "id": "place-brief",
+              "title": "Fish Cake First",
+              "body": "The springy cha ca is the reason the bowl feels local. Taste broth and fish cake before adding too much chili or lime."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Simple Meal Slot",
+              "body": "It works for breakfast, lunch, or a low-effort dinner when seafood plans feel too big. One bowl can be the whole stop."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Variation Is Normal",
+              "body": "Broth, herbs, tomato, spice, and fish-cake texture vary by shop. Expect a dish style, not one exact bowl repeated everywhere."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-bun-cha-ca-hon",
+          "summary": "A named Da Nang stop for fish-cake noodle soup, better approached as a focused bowl rather than a broad restaurant crawl before the day moves.",
+          "context": "Good when you want bun cha ca at a specific shop but still need simple ordering and spice control.",
+          "tip": "The first bowl should explain the place. Add extras only after tasting the broth and fish cake.",
+          "rationale": "Hon gives the citywide dish a concrete restaurant frame, with the first bowl and the day's opening rhythm doing most of the work.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Focused Fish-Cake Bowl",
+              "body": "Bun Cha Ca Hon is about the bowl first: broth, fish cake, herbs, steam, and the small confidence of ordering one clear thing."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Named Bowl Stop",
+              "body": "Hon gives the citywide dish a specific place frame. Let the first bowl carry the visit, then adjust chili, herbs, or extras after tasting."
+            },
+            {
+              "id": "quick-say",
+              "title": "Noodle Shop Words",
+              "body": "Ask for one bowl, extra herbs, less chili, the price, and opening times before crossing town."
+            },
+            {
+              "id": "place-brief",
+              "title": "Taste Before Adjusting",
+              "body": "Try the broth before changing the bowl. Chili, herbs, and condiments can pull it in a different direction fast."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Pair With The Broader Dish",
+              "body": "Read this named stop beside the broader bun cha ca guide. The dish explains the food; Hon gives a concrete place to try it."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Check Before Crossing Town",
+              "body": "For a named shop, confirm the current location and opening rhythm before building the day around it. The bowl matters more than a long menu."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

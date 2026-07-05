@@ -20,23 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Cái",
-      "english": "item / classifier"
+      "vietnamese": "Cái này",
+      "english": "this one",
+      "keepTogetherReason": "this-one phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "này",
-      "english": "this"
+      "vietnamese": "quá",
+      "english": "too",
+      "keepTogetherReason": "too adverb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "quá",
-      "english": "too / very"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "lớn",
-      "english": "big / adult"
+      "english": "big",
+      "keepTogetherReason": "big adjective"
     },
     {
       "id": "full",

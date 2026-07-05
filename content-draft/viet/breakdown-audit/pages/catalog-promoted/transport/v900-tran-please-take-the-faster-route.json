@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-tran-please-take-the-faster-route",
-  "phraseText": "Hãy đi con đường nhanh hơn",
+  "phraseText": "Đi đường nhanh hơn giúp tôi được không?",
   "englishTitle": "Please take the faster route",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,39 +20,33 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Hãy",
-      "english": "please do"
+      "vietnamese": "Đi đường",
+      "english": "take the route",
+      "keepTogetherReason": "route phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đi",
-      "english": "go"
+      "vietnamese": "nhanh hơn",
+      "english": "faster",
+      "keepTogetherReason": "faster phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "con",
-      "english": "child / animal classifier"
+      "vietnamese": "giúp tôi",
+      "english": "help me",
+      "keepTogetherReason": "help-me phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "đường",
-      "english": "street"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "nhanh",
-      "english": "fast"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "hơn",
-      "english": "more"
+      "vietnamese": "được không?",
+      "english": "is that possible?",
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",
-      "vietnamese": "Hãy đi con đường nhanh hơn",
+      "vietnamese": "Đi đường nhanh hơn giúp tôi được không?",
       "english": "Please take the faster route",
-      "audioKey": "v900-tran-please-take-the-faster-route"
+      "audioKey": null
     }
   ]
 }

@@ -20,23 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi hiểu",
+      "english": "I understand",
+      "keepTogetherReason": "I-understand phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "hiểu",
-      "english": "understand"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "chút",
-      "english": "a little"
+      "vietnamese": "một chút",
+      "english": "a little",
+      "keepTogetherReason": "a-little phrase"
     },
     {
       "id": "full",

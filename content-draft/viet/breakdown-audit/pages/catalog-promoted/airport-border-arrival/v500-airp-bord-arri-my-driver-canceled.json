@@ -20,25 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tài xế",
-      "english": "driver",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "Tài xế của tôi",
+      "english": "my driver",
+      "keepTogetherReason": "my-driver phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "đã",
-      "english": "already / did"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "hủy",
-      "english": "cancel"
+      "vietnamese": "đã hủy",
+      "english": "canceled",
+      "keepTogetherReason": "canceled phrase"
     },
     {
       "id": "full",

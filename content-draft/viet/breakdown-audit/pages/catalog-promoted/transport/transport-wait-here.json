@@ -20,43 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Xin",
-      "english": "please / request"
+      "vietnamese": "Xin hãy đợi",
+      "english": "please wait",
+      "keepTogetherReason": "please-wait phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "hãy",
-      "english": "please do"
+      "vietnamese": "ở đây,",
+      "english": "here,",
+      "keepTogetherReason": "here phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đợi",
-      "english": "wait"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đây,",
-      "english": "here / this"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "tôi",
-      "english": "I / me"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "đang",
-      "english": "currently / am"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "tới.",
-      "english": "to / arrive"
+      "vietnamese": "tôi đang tới.",
+      "english": "I am coming.",
+      "keepTogetherReason": "I-am-coming phrase"
     },
     {
       "id": "full",

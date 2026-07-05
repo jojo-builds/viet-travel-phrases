@@ -4,9 +4,9 @@
   "phraseID": "v500-mone-numb-pric-i-need-smaller-bills",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Tôi cần hóa đơn nhỏ hơn",
+  "title": "Tôi cần tiền mệnh giá nhỏ hơn",
   "englishTitle": "I need smaller bills",
-  "pronunciation": "Toi can hoa don nho hon",
+  "pronunciation": "Toi can tien menh gia nho hon",
   "summary": "I need smaller bills",
   "iconName": "creditcard.fill",
   "tintName": "green",
@@ -15,34 +15,34 @@
     "v500-mone-numb-pric-i-need-smaller-bills",
     "premium"
   ],
-  "audioKey": "v500-mone-numb-pric-i-need-smaller-bills",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần hóa đơn nhỏ hơn is the short line for naming what you need next. It works best when smaller bills is visible on your phone, ticket, note, shelf, or in the situation around you."
+      "body": "It asks for smaller-denomination cash, not a new receipt."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần hóa đơn nhỏ hơn with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "body": "Say it before handing over the money, then show the note you want changed.",
       "phrases": [
         {
           "id": "v500-mone-numb-pric-i-need-smaller-bills",
-          "vietnamese": "Tôi cần hóa đơn nhỏ hơn",
+          "vietnamese": "Tôi cần tiền mệnh giá nhỏ hơn",
           "english": "I need smaller bills",
-          "pronunciation": "Toi can hoa don nho hon",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Toi can tien menh gia nho hon",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
           "detailPageID": null,
-          "audioKey": "v500-mone-numb-pric-i-need-smaller-bills"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the line around Tôi cần + tiền mệnh giá nhỏ hơn, then use the full phrase in one calm sentence.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -52,19 +52,13 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "hóa đơn nhỏ",
-          "english": "bill",
+          "vietnamese": "tiền mệnh giá nhỏ hơn",
+          "english": "smaller-denomination cash",
           "audioKey": null
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "hơn",
-          "english": "more",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
-          "vietnamese": "Tôi cần hóa đơn nhỏ hơn",
+          "id": "full",
+          "vietnamese": "Tôi cần tiền mệnh giá nhỏ hơn",
           "english": "I need smaller bills",
           "audioKey": null
         }
@@ -73,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I need smaller bills to another money or price need.",
+      "body": "Useful if the exchange continues: How much is this? and How much per kilo?",
       "phrases": [
         {
           "id": "price-1",
@@ -110,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when smaller bills is the detail you need resolved. The likely reply is a point, option, yes/no answer, or next step, so keep the phrase short and ready for one follow-up."
+      "body": "Use it at a market stall, ticket desk, taxi, or small shop when the amount is clear but the cash note is too large."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+      "body": "If the person looks confused, show the note and point to the smaller bills or coins you need."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi cần hóa đơn nhỏ hơn.",
+      "body": "Keep close by: Too expensive, Can you lower it a little, and What’s your final price.",
       "phrases": [
         {
           "id": "price-3",
@@ -178,13 +172,13 @@
   "examples": [
     {
       "id": "v500-mone-numb-pric-i-need-smaller-bills",
-      "vietnamese": "Tôi cần hóa đơn nhỏ hơn",
+      "vietnamese": "Tôi cần tiền mệnh giá nhỏ hơn",
       "english": "I need smaller bills",
-      "pronunciation": "Toi can hoa don nho hon",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Toi can tien menh gia nho hon",
+      "symbolName": "text.bubble.fill",
       "tintName": "green",
       "detailPageID": null,
-      "audioKey": "v500-mone-numb-pric-i-need-smaller-bills"
+      "audioKey": null
     }
   ]
 }

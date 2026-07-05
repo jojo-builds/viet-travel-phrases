@@ -1,0 +1,315 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_71",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_71",
+  "chunks": [
+    {
+      "chunkFile": "hue_076_100_humanized.json",
+      "cityID": "hue",
+      "range": "076-100",
+      "errors": [
+        {
+          "id": "city-hue-place-truong-tien",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-truong-tien-plaza",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-hue-place-vong-canh-hill",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-vy-da",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-walking-street",
+          "message": "banned visible fragment: fits when"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hue-place-truong-tien-plaza",
+          "message": "freshness/process-like heading: Details Can Change"
+        },
+        {
+          "id": "city-hue-place-truong-tien-plaza",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hue-place-walking-street",
+          "message": "freshness/process-like heading: Current Street Rhythm Can Shift"
+        },
+        {
+          "id": "city-hue-place-walking-street",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: the image to hold"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 6x: generic name-card heading"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 16x: map/name utility heading"
+        },
+        {
+          "id": "076-100",
+          "message": "freshness/process headings appear 2x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hue-place-truong-tien",
+          "summary": "Truong Tien Bridge gives Hue a clean river landmark: white arches over the Perfume River, evening light, city lamps, and a view that orients the center.",
+          "context": "The bridge belongs to Hue's river-city memory, where architecture, local pride, crossings, and evening views meet over the water.",
+          "tip": "Cầu Trường Tiền is the Vietnamese name to recognize when directions, photos, or locals point to the bridge.",
+          "rationale": "The bridge turns the river into a central reference: arches, lights, crossing, and city memory in one view.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Bridge That Orients Hue",
+              "body": "Truong Tien gives the center a clear line: white arches, the Perfume River, evening light, and city lamps across the water."
+            },
+            {
+              "id": "place-brief",
+              "title": "Architecture In The River View",
+              "body": "The bridge is both crossing and landmark. Its shape makes the river easier to place in memory."
+            },
+            {
+              "id": "quick-say",
+              "title": "Bridge Name To Recognize",
+              "body": "Cầu Trường Tiền is the Vietnamese name to match with local directions, photos, and riverfront references."
+            },
+            {
+              "id": "use-it-with",
+              "title": "An Easy Evening reference point",
+              "body": "It fits a river walk, a cafe pause, or a simple crossing when the day needs one recognizable Hue frame."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Light Carries The Scene",
+              "body": "Picture the white arches at evening, with river light below and city lamps beginning to show."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Landmark Before Attraction",
+              "body": "The bridge does not need a long stop. Its value is orientation, memory, and the view it gives the river."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-truong-tien-plaza",
+          "summary": "Trang Tien Plaza Hue gives the city a polished indoor break: cool air, storefronts, food counters, easy meetups, and shelter from heat or rain.",
+          "context": "The plaza belongs to the practical city-center layer of Hue, where indoor space, meetups, and quick food can reset a street-heavy day.",
+          "tip": "Trung tâm thương mại Trường Tiền is the Vietnamese name to recognize when looking for the shopping center.",
+          "rationale": "The stop is useful when weather, heat, or meetup logistics matter more than sightseeing: cool air, stores, counters, and a central pause.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Indoor Reset Near The River",
+              "body": "Trang Tien Plaza is the polished break: cool air, storefronts, food counters, and a place to regroup near central Hue."
+            },
+            {
+              "id": "place-brief",
+              "title": "Shopping Center, Simple Job",
+              "body": "Expect a modern shopping-center facade, subdued signs, scooters outside, and the practical relief of being indoors."
+            },
+            {
+              "id": "quick-say",
+              "title": "Shopping Center Name",
+              "body": "Trung tâm thương mại Trường Tiền is the Vietnamese name to match with signs, maps, or directions."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Heat, Rain, Or Meetups",
+              "body": "It fits when the day needs cool air, a simple meeting point, or a low-effort food counter."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Practical Pause",
+              "body": "Picture a short indoor reset rather than a destination shopping mission. The role is relief and coordination."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Details Can Change",
+              "body": "Specific stores and food counters can shift. The stable value is the indoor city-center break."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-vong-canh-hill",
+          "summary": "Vọng Cảnh Hill is a short southwest Hue viewpoint after a tomb stop, with pine shade, Perfume River bends, countryside, soft light, and a planned ride back.",
+          "context": "Vọng Cảnh fits as a brief pause after Tự Đức, Đồng Khánh, or another southwest Hue stop, not a dramatic standalone mission.",
+          "tip": "Before sunset, leave enough light for the view and plan transport back before dark. Flat rain can turn the stop into a simple breather.",
+          "rationale": "The hill is still worthwhile when light helps because the small scale gives Hue a quiet river-and-tomb landscape pause between monuments.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Tomb-Route Viewpoint",
+              "body": "Vọng Cảnh Hill makes sense as a short viewpoint after Tự Đức, Đồng Khánh, or another southwest Hue stop. Sunset gives it a reason to linger."
+            },
+            {
+              "id": "place-brief",
+              "title": "Pines, River, Low Effort",
+              "body": "The hill is not high or dramatic. The reward is pine shade, Perfume River bends, countryside, and the tomb landscape nearby."
+            },
+            {
+              "id": "quick-say",
+              "title": "Useful Phrases",
+              "body": "",
+              "phraseIDs": [
+                "v500-dire-navi-how-far-is-it",
+                "v500-dire-navi-can-i-walk-there",
+                "sight-3",
+                "sight-5"
+              ]
+            },
+            {
+              "id": "use-it-with",
+              "title": "Soft Light Helps",
+              "body": "Enough light matters: walk up, find the view, and leave without rushing. Soft light makes the small scale feel intentional."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Ride Back Planned",
+              "body": "A car, scooter, or ride-hailing plan helps. The hill is easygoing, but transport after dark is better not improvised."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hue-place-vy-da",
+          "summary": "Vy Da gives Hue a lived-in neighborhood frame: river-adjacent houses, quiet lanes, cafes, small shops, hotel edges, and evening walks.",
+          "context": "The neighborhood belongs to Hue's everyday river-city side, where lanes, small shops, cafes, and hotel edges shape the stay.",
+          "tip": "Vỹ Dạ is the Vietnamese spelling to recognize when maps, hotel notes, or locals refer to the neighborhood.",
+          "rationale": "Vy Da helps the city feel lived-in rather than only visited, with lanes, cafes, evening movement, and river-adjacent houses.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Lived-In River Neighborhood",
+              "body": "Vy Da gives hotels, cafes, lanes, and evening walks a neighborhood identity instead of leaving them as loose addresses."
+            },
+            {
+              "id": "place-brief",
+              "title": "Small Streets, Real Context",
+              "body": "Expect quiet lanes, river-adjacent houses, small shops, and market-basket details rather than one main attraction."
+            },
+            {
+              "id": "quick-say",
+              "title": "Neighborhood Name To Recognize",
+              "body": "Vỹ Dạ is the Vietnamese spelling to match with hotel notes, maps, and local directions."
+            },
+            {
+              "id": "use-it-with",
+              "title": "When Staying Nearby",
+              "body": "It matters most when a hotel, cafe, or evening walk sits in the area and needs a name."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Area, Not Attraction",
+              "body": "Picture a neighborhood lane by the river, houses close to the street, and everyday movement rather than a ticketed stop."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Useful For Orientation",
+              "body": "The name helps connect small shops, cafes, and hotel edges into one mental map of Hue."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-walking-street",
+          "summary": "Hue Walking Street gives the evening a named pedestrian scene: small vendors, warm signs, shopfronts, cafe edges, crossings, and the river nearby.",
+          "context": "The street belongs to Hue's evening movement, where signs, vendors, crossings, cafes, and riverside light make the city feel walkable.",
+          "tip": "Phố đi bộ Huế is the Vietnamese phrase to recognize when directions or signs point toward the walking street.",
+          "rationale": "A named walking street helps first-time visitors understand where evening movement, vendors, and cafe edges gather.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Named Evening Walk",
+              "body": "Hue Walking Street gives the evening a simple frame: vendors, warm signs, shopfronts, cafe edges, and the river nearby."
+            },
+            {
+              "id": "place-brief",
+              "title": "Pedestrian Energy, Not A Whole Night",
+              "body": "Expect a lively street scene rather than a deep destination: small vendors, crossings, signs, and people moving through."
+            },
+            {
+              "id": "quick-say",
+              "title": "Street Name To Recognize",
+              "body": "Phố đi bộ Huế is the Vietnamese phrase to match with signs, directions, or local references to the walking street."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A First Evening Look",
+              "body": "It fits when the day needs an easy after-dinner walk or a quick read on Hue's evening street life."
+            },
+            {
+              "id": "when-to-use",
+              "title": "One Slow Pass First",
+              "body": "One slow pass helps before choosing a snack, cafe edge, or place to sit near the river."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Current Street Rhythm Can Shift",
+              "body": "Crowds, vendors, and pedestrian timing can change. Treat the name as orientation, not a fixed promise."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

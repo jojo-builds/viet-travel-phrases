@@ -1,0 +1,306 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_13",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_13",
+  "chunks": [
+    {
+      "chunkFile": "danang_076_100_humanized.json",
+      "cityID": "danang",
+      "range": "076-100",
+      "errors": [
+        {
+          "id": "city-danang-place-phuoc-my",
+          "message": "banned visible fragment: matters when"
+        },
+        {
+          "id": "city-danang-place-railway-station",
+          "message": "banned visible fragment: matters when"
+        },
+        {
+          "id": "city-danang-place-son-tra-district",
+          "message": "banned visible fragment: matters when"
+        },
+        {
+          "id": "city-danang-place-thanh-binh-beach",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-danang-place-tran-hung-dao-street",
+          "message": "banned visible fragment: matters when"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: street name"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: beach name"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated exact heading 3x: cafe name"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 8x: generic name-card heading"
+        },
+        {
+          "id": "076-100",
+          "message": "repeated formula heading 13x: good-for/as/when heading"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-danang-place-phuoc-my",
+          "summary": "Phuoc My turns Da Nang's beach side from a blur of hotels into a real area: cafes, side streets, balconies, small shops, and walks back from the sand.",
+          "context": "The name gives the city's east side a clearer identity, close to beach routines but still lived-in.",
+          "tip": "Phuoc My gives the area a name; one cafe, dinner plan, or beach access point is enough to make it legible.",
+          "rationale": "Phuoc My makes a broad neighborhood useful through beach-side orientation, cafe corners, hotel edges, and simple return points.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Blocks Behind The Beach",
+              "body": "Phuoc My is one of the names that makes Da Nang's beach side feel less anonymous. It belongs with hotel edges, cafes, apartment balconies, scooter crossings, and the walk back from the sand."
+            },
+            {
+              "id": "place-brief",
+              "title": "Name The Area First",
+              "body": "Drivers, maps, and hotel pages may use neighborhood names before they use the landmark in your head. Phuoc My places you on the east side of the city."
+            },
+            {
+              "id": "quick-say",
+              "title": "Area Name",
+              "body": "Say Phước Mỹ. The tone marks may look small, but showing the Vietnamese spelling on your phone can make the area name easier to recognize."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Cafes, Errands, Evening Walks",
+              "body": "The detail here is ordinary in the useful way: shops, balconies, hotel doors, and cafe corners that become landmarks because you pass them twice."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Good for Naming The Beach Side",
+              "body": "Phuoc My matters when hotel streets, cafes, and beach access points blur together. The area name gives the east side a softer map than one landmark pin."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Loose Blocks, Better Route",
+              "body": "One nearby cafe, beach access point, or dinner plan can carry the area. For a broader night out, another neighborhood may be clearer."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-railway-station",
+          "summary": "Da Nang Railway Station is the practical handoff between city days and travel days: bags, route boards, waiting benches, station doors, and the curb outside.",
+          "context": "The station moment is practical: train question first, pickup point second, next road after that.",
+          "tip": "Match the route board before stepping outside; curbside decisions get harder with luggage in hand.",
+          "rationale": "The station matters most as a travel-day handoff: route board, luggage, curb decision, and the next ride out of Da Nang.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Clear Handoff Before The Ride",
+              "body": "Da Nang Railway Station is where the city turns back into bags, tickets, route boards, waiting benches, and the curb outside. Keep the name handy for drivers and pickups."
+            },
+            {
+              "id": "place-brief",
+              "title": "Boards Before The Curb",
+              "body": "Pause inside long enough to match your route board, platform direction, and ticket or booking. It is easier to ask from the boards than from the street."
+            },
+            {
+              "id": "quick-say",
+              "title": "Station Name",
+              "body": "Say Ga Đà Nẵng. Ga means station, and the short phrase points to the railway station, not the airport or bus station."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Pickup Is Its Own Step",
+              "body": "The curb can feel like the real decision point. Handle the train question first, then look for your driver, taxi, or onward road."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Best On Departure Days",
+              "body": "The station name matters when bags, tickets, and pickup timing all compete for attention. Keep the Vietnamese name ready before stepping into the curbside flow."
+            },
+            {
+              "id": "good-to-know",
+              "title": "The Name At The Curb",
+              "body": "Show Ga Đà Nẵng on your phone or say it slowly when someone needs the exact transport stop. It saves confusion on departure days."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-son-tra-district",
+          "summary": "Son Tra District is the city side of the peninsula: coast road, hotel edges, cafes, small shops, lanes, and morning haze over green hills.",
+          "context": "The district name makes beach-side Da Nang less anonymous, especially when hotel areas and peninsula routes blur together.",
+          "tip": "The district name orients the beach edge, cafe clusters, and the road pointing toward the peninsula.",
+          "rationale": "The district keeps the beach side legible when hotel edges, cafe clusters, small shops, and peninsula roads start blending together.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A City Base With Peninsula Edges",
+              "body": "Son Tra District is not one sight. It is the city side of the peninsula: coast road, hotel edges, cafes, small shops, lanes, and green hills in the distance."
+            },
+            {
+              "id": "place-brief",
+              "title": "Pick One Edge To Walk",
+              "body": "The My Khe side, a cafe cluster, or the road pointing toward Sơn Trà is enough for one pass. The whole district is too broad for a single walk."
+            },
+            {
+              "id": "quick-say",
+              "title": "District Name",
+              "body": "Say Quận Sơn Trà. Quận means district, so this name works differently from Bán đảo Sơn Trà, the peninsula."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Hotels, Cafes, Small Shops",
+              "body": "This is the practical layer behind a beach-side stay: coffee, lanes, shopfronts, scooter crossings, and the walk back to your room after dinner."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Good for Beach-Side Bearings",
+              "body": "The district name matters when a hotel, cafe, or ride sits somewhere between the beach and the peninsula road. Broad east-side plans feel less nameless."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Know When It Becomes Peninsula",
+              "body": "The district and peninsula names can blur. Quận Sơn Trà is the lived-in area; Bán đảo Sơn Trà is the greener road and sea frame beyond it."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-thanh-binh-beach",
+          "summary": "Thanh Binh Beach is Da Nang coast without postcard pressure: bay water, fishing boats, city buildings behind the sand, and a quieter shoreline reset.",
+          "context": "The beach fits a short walk and city-edge mood, not the clearest classic Da Nang beach plan.",
+          "tip": "Pick the ride back early; smaller beach stops feel easier when the return does not become the hard part.",
+          "rationale": "The note stays restrained because this smaller bay-side beach is a modest city-edge pause shaped by light, boats, weather, and changing conditions.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Bay Beach For A Quiet Reset",
+              "body": "Thanh Binh Beach is Da Nang coast without postcard pressure: bay water, fishing boats, city buildings behind the sand, and softer morning light."
+            },
+            {
+              "id": "place-brief",
+              "title": "Morning Keeps It Simple",
+              "body": "This beach is easiest to understand in the morning, when boats, cloud, and city edges give the place its texture. A short walk can be enough."
+            },
+            {
+              "id": "quick-say",
+              "title": "Beach Name",
+              "body": "Say Biển Thanh Bình. The Vietnamese name keeps this smaller beach separate from the more familiar My Khe side."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Mỹ Khê Is The Easier Comparison",
+              "body": "My Khe is the clearer classic-beach plan. Thanh Binh is smaller and more local-map than headline beach, better for a bay-side pause."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Good for A Short Bay Walk",
+              "body": "Thanh Binh works when a quiet city-edge beach mood is enough. Keep expectations smaller than My Khe, and let fishing boats and bay light carry the stop."
+            },
+            {
+              "id": "good-to-know",
+              "title": "The Ride Back Matters Early",
+              "body": "Do not wander until the return becomes the hard part. Notice the road out, choose a drop-off point, and keep a ride plan in mind."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-tran-hung-dao-street",
+          "summary": "Tran Hung Dao Street makes Da Nang's east-bank river scene easier to read: bridge views, scooter flow, hotel fronts, shop lights, and walkable stretches beside the Hàn.",
+          "context": "The street works as a river line for orientation, not a block-by-block sightseeing list.",
+          "tip": "Walk a manageable stretch, notice the bridge angles, then decide whether to cross, keep moving, or stop nearby.",
+          "rationale": "The street-spine role keeps the focus on orientation, bridge angles, evening light, and manageable movement along the river.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Read The Bridges From The East Bank",
+              "body": "Tran Hung Dao Street makes Da Nang's river scene feel walkable. From this side, the Hàn River, bridge views, scooters, hotel fronts, and evening lights line up."
+            },
+            {
+              "id": "place-brief",
+              "title": "Follow The River Line",
+              "body": "Treat the street as a line, not a checklist. Walk a manageable stretch, notice the bridge angles, then decide whether to cross, keep moving, or stop nearby."
+            },
+            {
+              "id": "quick-say",
+              "title": "Street Name",
+              "body": "Say Đường Trần Hưng Đạo. Đường means street, and the full name distinguishes the east-bank road from the opposite riverfront."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Pick Your Bridge Side",
+              "body": "Dragon Bridge looks different from each bank. Tran Hung Dao gives one version of the view; Bach Dang Street gives another."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Good for An East-Bank Read",
+              "body": "The street matters when you want the river and bridges from the quieter side. Walk one manageable stretch instead of trying to make the whole bank an attraction."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Blue Hour Gives It Shape",
+              "body": "Late afternoon into evening is when the street often feels clearest: river light, scooter flow, shopfronts, and bridge lights arriving one layer at a time."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

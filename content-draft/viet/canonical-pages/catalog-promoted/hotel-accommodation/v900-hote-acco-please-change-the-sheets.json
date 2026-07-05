@@ -7,7 +7,7 @@
   "title": "Vui lòng thay ga trải giường",
   "englishTitle": "Please change the sheets",
   "pronunciation": "Vui long thay ga trai giuong",
-  "summary": "Please change the sheets",
+  "summary": "For asking housekeeping or the front desk to replace sheets that are dirty, damp, or not fresh.",
   "iconName": "bed.double.fill",
   "tintName": "purple",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng thay ga trải giường is a practical hotel or stay phrase for keeping one travel detail clear. Use it when change the sheets is the next detail to solve and a short answer would move the exchange forward."
+      "body": "The room is already assigned, and the problem is specific enough to name the sheets."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Vui lòng thay ga trải giường. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Say the line and point to the bed or a photo. Keep the room number visible so staff know where to go.",
       "phrases": [
         {
           "id": "v900-hote-acco-please-change-the-sheets",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Vui lòng means please; thay means change; ga trải giường means bed sheets.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Vui lòng thay",
+          "vietnamese": "Vui lòng",
           "english": "please",
-          "audioKey": null
+          "keepTogetherReason": "polite opener"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "ga trải giường",
-          "english": "pay",
-          "audioKey": null
+          "vietnamese": "thay",
+          "english": "change",
+          "keepTogetherReason": "change verb"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "ga trải giường",
+          "english": "bed sheets",
+          "keepTogetherReason": "bed-sheets phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Vui lòng thay ga trải giường",
           "english": "Please change the sheets",
-          "audioKey": null
+          "audioKey": "v900-hote-acco-please-change-the-sheets"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please change the sheets to another hotel or stay need.",
+      "body": "Reservation and check-in phrases cover the front-desk opening if staff ask which room is yours.",
       "phrases": [
         {
           "id": "hotel-1",
@@ -104,67 +110,67 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real hotel or stay exchange when change the sheets is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotels, guesthouses, homestays, or apartment stays when the bed needs attention."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Hotel staff can usually help faster when they can see the booking or room number. Keep that visible after you say the phrase."
+      "body": "If the issue is urgent, ask when someone can come instead of retelling the whole room problem."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Vui lòng thay ga trải giường.",
+      "body": "If staff need more context, ask for someone to come, mention hot water or toilet trouble, or point to smoke smell or the key card.",
       "phrases": [
         {
-          "id": "hotel-3",
-          "vietnamese": "Mấy giờ trả phòng?",
-          "english": "What time is check-out?",
-          "pronunciation": "may zyuh tra fong",
+          "id": "v500-hote-acco-can-someone-come-fix-it",
+          "vietnamese": "Ai đó có thể đến sửa nó được không?",
+          "english": "Can someone come fix it?",
+          "pronunciation": "Ai do co the den sua no duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-3",
-          "audioKey": "hotel-3"
+          "detailPageID": "viet-phrase-v500-hote-acco-can-someone-come-fix-it",
+          "audioKey": "v500-hote-acco-can-someone-come-fix-it"
         },
         {
-          "id": "hotel-quiet-room",
-          "vietnamese": "Cho tôi phòng yên tĩnh được không?",
-          "english": "Can I have a quiet room?",
-          "pronunciation": "cho toy fong yen tinh dook khong",
+          "id": "hotel-premium-no-hot-water",
+          "vietnamese": "Ở đây không có nước nóng.",
+          "english": "There is no hot water.",
+          "pronunciation": "O day khong co nuoc nong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-quiet-room",
-          "audioKey": "hotel-quiet-room"
+          "detailPageID": "viet-phrase-hotel-premium-no-hot-water",
+          "audioKey": "hotel-premium-no-hot-water"
         },
         {
-          "id": "hotel-checkout",
-          "vietnamese": "Cho tôi trả phòng",
-          "english": "I’d like to check out",
-          "pronunciation": "cho toy tra fong",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v500-hote-acco-the-toilet-is-not-working",
+          "vietnamese": "Bồn cầu không sử dụng được",
+          "english": "The toilet is not working",
+          "pronunciation": "Bon cau khong su dung duoc",
+          "symbolName": "text.bubble.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-checkout",
-          "audioKey": "hotel-checkout"
+          "detailPageID": "viet-phrase-v500-hote-acco-the-toilet-is-not-working",
+          "audioKey": null
         },
         {
-          "id": "hotel-4",
-          "vietnamese": "Phòng này nóng quá",
-          "english": "This room is too hot",
-          "pronunciation": "fong nai nong gwah",
+          "id": "v900-hote-acco-the-room-smells-like-smoke",
+          "vietnamese": "Căn phòng có mùi khói",
+          "english": "The room smells like smoke",
+          "pronunciation": "Can phong co mui khoi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-4",
-          "audioKey": "hotel-4"
+          "detailPageID": "viet-phrase-v900-hote-acco-the-room-smells-like-smoke",
+          "audioKey": "v900-hote-acco-the-room-smells-like-smoke"
         },
         {
-          "id": "hotel-5",
-          "vietnamese": "Máy lạnh không chạy",
-          "english": "The air conditioner isn’t working",
-          "pronunciation": "mai lanh khong chai",
+          "id": "hotel-8",
+          "vietnamese": "Thẻ phòng không mở được",
+          "english": "The key card doesn’t work",
+          "pronunciation": "teh fong khong muh dook",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "purple",
-          "detailPageID": "viet-phrase-hotel-5",
-          "audioKey": "hotel-5"
+          "detailPageID": "viet-phrase-hotel-8",
+          "audioKey": "hotel-8"
         }
       ]
     }

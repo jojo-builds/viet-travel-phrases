@@ -20,23 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "I need",
+      "keepTogetherReason": "I-need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "vietnamese": "cáp sạc",
-      "english": "charging cable",
-      "keepTogetherReason": "compound device accessory term"
+      "vietnamese": "một cáp sạc",
+      "english": "a charging cable",
+      "keepTogetherReason": "charging-cable phrase"
     },
     {
       "id": "full",

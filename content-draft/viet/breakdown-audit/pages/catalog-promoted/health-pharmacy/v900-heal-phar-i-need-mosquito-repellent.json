@@ -20,18 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "I need",
+      "keepTogetherReason": "I-need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
-    },
-    {
       "vietnamese": "thuốc chống muỗi",
       "english": "mosquito repellent",
-      "keepTogetherReason": "compound repellent term"
+      "keepTogetherReason": "mosquito-repellent noun"
     },
     {
       "id": "full",

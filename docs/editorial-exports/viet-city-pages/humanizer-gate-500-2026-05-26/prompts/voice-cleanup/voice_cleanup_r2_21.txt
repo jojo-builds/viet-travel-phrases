@@ -1,0 +1,246 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 4
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_21",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 4,
+    "returnedReplacementCount": 4,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_21",
+  "chunks": [
+    {
+      "chunkFile": "hanoi_026_050_humanized.json",
+      "cityID": "hanoi",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-hanoi-place-long-bien-bridge",
+          "message": "banned visible fragment: gives hanoi a"
+        },
+        {
+          "id": "city-hanoi-place-manzi-art-space",
+          "message": "heading is command-like: Check The Room First"
+        },
+        {
+          "id": "city-hanoi-place-mien-luon-chan-cam",
+          "message": "banned visible fragment: works when"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hanoi-place-long-bien-market",
+          "message": "freshness/process-like heading: Market Timing Can Shift"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 7x: generic name-card heading"
+        },
+        {
+          "id": "026-050",
+          "message": "freshness/process headings appear 3x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hanoi-place-long-bien-bridge",
+          "summary": "Long Bien Bridge gives Hanoi a working-river image: steel truss, Red River haze, market traffic, motorbikes, and old metal against the sky.",
+          "context": "This bridge is about view, memory, and route caution: river haze, old metal, traffic, and market edges.",
+          "tip": "Read the view before committing to movement. Choose a safer viewing point if the crossing feels too exposed.",
+          "rationale": "Long Bien Bridge is more vivid as a working-river frame than as a generic landmark.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Bridge Is The Frame",
+              "body": "The bridge makes Hanoi's working river visible: steel truss, Red River haze, market traffic, motorbikes, and old metal against the sky."
+            },
+            {
+              "id": "place-brief",
+              "title": "View First, Crossing Second",
+              "body": "Read the river, traffic rhythm, nearby market energy, and long steel line before deciding how much movement feels right."
+            },
+            {
+              "id": "quick-say",
+              "title": "Cầu Long Biên",
+              "body": "Cầu Long Biên is the local name. It is useful for maps, taxis, and pairing the bridge with nearby market streets."
+            },
+            {
+              "id": "use-it-with",
+              "title": "River Haze Changes The Mood",
+              "body": "Soft light makes the bridge easier to understand. In bright heat, it can feel more like infrastructure."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Pair Steel With Crates",
+              "body": "Long Bien Market sits naturally in the same frame: produce, carts, and the older working edge of Hanoi."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Access Is A Risk",
+              "body": "Choose the view that feels right from the ground. The bridge is still powerful even without a long crossing."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hanoi-place-long-bien-market",
+          "summary": "Long Bien Market is crates, fruit, carts, quick hands, and wholesale movement near the bridge, not a polished souvenir browse after dark.",
+          "context": "Long Bien Market is a working-market scene: crates, fruit, carts, quick hands, and bridge-side movement.",
+          "tip": "Stand back before stepping in. The market has its own traffic, and the gaps can close quickly.",
+          "rationale": "Long Bien Market becomes specific through wholesale rhythm and its relationship to the bridge.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Crates Before Souvenirs",
+              "body": "Long Bien Market is not a polished browsing market. It is crates, fruit, carts, quick hands, and wholesale movement near the bridge."
+            },
+            {
+              "id": "place-brief",
+              "title": "Watch The Flow First",
+              "body": "Stand back for a minute before stepping in. People carry produce, sellers sort goods, and narrow gaps close quickly."
+            },
+            {
+              "id": "quick-say",
+              "title": "Chợ Long Biên",
+              "body": "Chợ Long Biên is the local name. Keep it tied to produce, carts, bridge light, and the Red River edge."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Small Cash, Small Buys",
+              "body": "If you browse, keep it simple. Ask the price, buy a small amount, and avoid slowing a working seller."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Bridge Light Nearby",
+              "body": "The bridge gives the market a stronger setting. Fruit crates and steel truss belong to the same older Hanoi edge."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Market Timing Can Shift",
+              "body": "The market rewards patience from the edge. Watch first, then step in only when the flow makes sense."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hanoi-place-manzi-art-space",
+          "summary": "Manzi is a compact creative stop where framed work, quiet rooms, and a café pause can sit in the same visit between louder streets.",
+          "context": "Manzi is an art-first pause where framed work, quiet rooms, and a café table can share one compact visit.",
+          "tip": "Look at what is actually on view before deciding how long to stay. Small art spaces change with the current show.",
+          "rationale": "Manzi is strongest when the current room leads and the coffee stays secondary.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Art Before Coffee Pause",
+              "body": "Manzi is a small creative stop where framed work, quiet rooms, and a café pause can sit in the same visit."
+            },
+            {
+              "id": "place-brief",
+              "title": "Check The Room First",
+              "body": "Look at what is actually on view before deciding how long to stay. A small art space changes with its current show."
+            },
+            {
+              "id": "quick-say",
+              "title": "Manzi",
+              "body": "Manzi is the name people are likely to recognize. Show the name on a map if pronunciation feels uncertain."
+            },
+            {
+              "id": "use-it-with",
+              "title": "One Show, One Slow Drink",
+              "body": "The best rhythm is simple: see the work, choose a quiet table if available, and keep the café pause short."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Quiet Beats Long",
+              "body": "Manzi is strongest as a compact creative pause, not a whole afternoon plan."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Programming Changes",
+              "body": "If the show is light or the room is full, keep the stop gentle and move on without forcing it."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hanoi-place-mien-luon-chan-cam",
+          "summary": "Mien Luon Chan Cam is a focused Hanoi noodle stop: eel, glass noodles, herbs, steam, and a small-shop rhythm at the table for lunch.",
+          "context": "The stop connects to miến lươn through ordering pace, herbs, glass noodles, eel, steam, and the small-shop rhythm around the table.",
+          "tip": "Know the bowl you want before the room starts moving. If unsure, point to a nearby bowl and keep the order simple.",
+          "rationale": "Mien Luon Chan Cam works when the bowl, not the schedule around it, sets the pace.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Bowl Sets The Pace",
+              "body": "Mien Luon Chan Cam is a focused Hanoi noodle stop: eel, glass noodles, herbs, steam, and a small-shop rhythm."
+            },
+            {
+              "id": "place-brief",
+              "title": "Order Before The Room Moves",
+              "body": "Noodle shops feel easier when you decide quickly: bowl style, herbs, and whether you want anything extra."
+            },
+            {
+              "id": "quick-say",
+              "title": "Miến Lươn Chân Cầm",
+              "body": "Miến lươn Chân Cầm is the name to show for the shop. It keeps the dish and street name together."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Herbs, Glass Noodles, Eel",
+              "body": "The pleasure is texture more than size: noodles slip, eel adds chew or crispness, and herbs keep the bowl light."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Quick Meal, Clear Stop",
+              "body": "Do not stretch it into a long dinner. Eat, pay, and let the stop be one sharp food memory in an old-lane day."
+            },
+            {
+              "id": "good-to-know",
+              "title": "The Bowl Is Enough",
+              "body": "Keep the stop sharp: order, eat, pay, and let the bowl be the memory."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

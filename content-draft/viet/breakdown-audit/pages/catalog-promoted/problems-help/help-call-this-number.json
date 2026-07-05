@@ -20,45 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "gọi số này",
+      "english": "call this number",
+      "keepTogetherReason": "call-this-number phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "gọi",
-      "english": "call"
+      "vietnamese": "hộ tôi",
+      "english": "for me",
+      "keepTogetherReason": "helping-for-me phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "số",
-      "english": "number"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "hộ",
-      "english": "for me / on my behalf"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "tôi",
-      "english": "I / me"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

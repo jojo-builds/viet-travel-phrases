@@ -1,0 +1,289 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_58",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_58",
+  "chunks": [
+    {
+      "chunkFile": "hue_001_025_humanized.json",
+      "cityID": "hue",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-hue-place-an-dinh-palace",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-hue-place-an-dinh-palace",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-an-hien-garden-house",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-ancient-hue-gallery-cuisine",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-ancient-hue-restaurant",
+          "message": "banned visible fragment: gives hue a"
+        },
+        {
+          "id": "city-hue-place-ancient-space-restaurant",
+          "message": "banned visible fragment: matters when"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "001-025",
+          "message": "repeated formula heading 10x: generic name-card heading"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hue-place-an-dinh-palace",
+          "summary": "An Dinh Palace gives Hue a different royal mood: yellow facade, garden light, old gates, courtyards, and a palace story outside the Citadel frame.",
+          "context": "The palace adds a built-history stop to Hue through courtyards, stone paths, tiled roofs, and ceremonial space rather than another river or market pause.",
+          "tip": "Listen for Cung An Định when the route or ticket conversation turns local; it belongs with the yellow palace facade and garden approach.",
+          "rationale": "An Dinh Palace keeps Hue history physical, with old walls, gates, and rooms that make dynastic memory feel closer than a distant timeline.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Palace Outside The Main Frame",
+              "body": "An Dinh works when you want Hue history beyond the Citadel. The yellow facade, garden edge, and gates give the visit a quieter royal register."
+            },
+            {
+              "id": "place-brief",
+              "title": "Courtyards Before Rooms",
+              "body": "The approach matters: gate, courtyard, stone path, then the building. Take the outside sequence seriously before rushing indoors."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name For The Route",
+              "body": "Say Cung An Định for the palace. The name helps most when paired with the gate and garden, not repeated as a loose label."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Softer Heritage Stop",
+              "body": "Pair it with a heavier tomb or Citadel visit when the day needs architecture without another large complex."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Late-Morning History Pace",
+              "body": "The palace fits a slower heritage block, especially when you want one contained stop instead of a long route across Hue."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Old Walls, Not A Checklist",
+              "body": "The old walls, tiled rooflines, and courtyards can do the work. The stop does not need a crowded list of facts to land."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-an-hien-garden-house",
+          "summary": "An Hien Garden House is a quiet Hue pause where a gate, old trees, tiled roof, and garden-house path make domestic heritage feel close.",
+          "context": "The garden house shows Hue through old architecture, shaded paths, local pride, and the slower river-city memory carried by private homes.",
+          "tip": "Nhà vườn An Hiên is the name to recognize; picture the gate, trees, tiled roof, and calm path as one small arrival sequence.",
+          "rationale": "An Hien gives Hue a gentler heritage stop, where the point is not scale but the way house, garden, and memory sit together.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A House, Then A Garden",
+              "body": "An Hien is not a monument that announces itself loudly. The pleasure is the approach: gate, trees, tiled roof, and a slower walk into the garden-house world."
+            },
+            {
+              "id": "place-brief",
+              "title": "Domestic Hue, Not Palace Hue",
+              "body": "The stop gives a smaller kind of heritage than tombs or palaces. Architecture, shade, and family memory carry more weight than spectacle."
+            },
+            {
+              "id": "quick-say",
+              "title": "An Hiên In Vietnamese",
+              "body": "Nhà vườn An Hiên means garden house. Hearing nhà vườn helps you connect the gate, trees, roof, and path to one domestic Hue setting."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Pause Between Bigger Stops",
+              "body": "Place it between larger sights when the day needs quiet, trees, and a room-scale version of Hue's old-house culture."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Slow Feet, Better Read",
+              "body": "The visit lands better when you walk slowly enough to notice the gate, roofline, path, and shade before looking for a big moment."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Small Scale Is The Point",
+              "body": "Do not expect palace drama. The value is in proportion, old trees, and the feeling of a lived-in Hue house."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-ancient-hue-gallery-cuisine",
+          "summary": "Ancient Hue Gallery Cuisine suits a meal that feels folded into the Hue day: refined room, court-style plating, dark timber, and a slower table.",
+          "context": "The restaurant story here is about a chosen evening meal, with staff rhythm, drinks, table setting, and Hue dishes treated as part of the itinerary.",
+          "tip": "The English venue name is the practical name to say slowly; connect it with the dining room rather than searching for a separate local label.",
+          "rationale": "Ancient Hue Gallery Cuisine gives Hue a polished food stop when the meal itself should carry some memory, not just solve hunger.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Meal With A Room Around It",
+              "body": "Ancient Hue Gallery Cuisine is for a table that feels deliberate. The refined room, court-style plating, and dark timber make the meal part of the Hue plan."
+            },
+            {
+              "id": "place-brief",
+              "title": "Polished, Not Casual Snacking",
+              "body": "Expect a more composed dining rhythm than a quick bowl stop. Read the menu, settle in, and let the room slow the evening."
+            },
+            {
+              "id": "quick-say",
+              "title": "The English Sign Is Enough",
+              "body": "Ancient Hue Gallery Cuisine is normally the practical label. Say it slowly, then match it to the reservation note or restaurant front."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After A Heritage Day",
+              "body": "The restaurant fits after palace, tomb, or river time, when a meal can echo Hue's court-food reputation without turning into a lecture."
+            },
+            {
+              "id": "when-to-use",
+              "title": "One Table, Fewer Plans",
+              "body": "Give the meal space in the evening. It will feel crowded if squeezed between too many late stops."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Menu In Front Of You",
+              "body": "Read the menu before ordering. The reason to come is the formal Hue dining setting, not a fixed list of dishes."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-ancient-hue-restaurant",
+          "summary": "Ancient Hue Restaurant is a garden-style Hue meal stop with ruong-house timber, lanterns, and a set-table mood that can steady a long sightseeing day.",
+          "context": "The restaurant gives Hue a more settled dining scene through house dishes, menu detail, staff pacing, drinks, and the older architecture around the table.",
+          "tip": "Ancient Hue Restaurant is the name to match with the garden compound; listen for it at the gate rather than translating it into another phrase.",
+          "rationale": "The restaurant turns dinner into a calm heritage-adjacent pause, especially after a day of Citadel walls, tomb routes, or river movement.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Dinner In A Garden Frame",
+              "body": "Ancient Hue Restaurant works as a calmer sit-down meal, with ruong-house timber, lanterns, and a garden setting doing as much work as the menu."
+            },
+            {
+              "id": "place-brief",
+              "title": "Architecture Sets The Pace",
+              "body": "The room is part of the reason to go. Timber, roofline, and set table can slow the meal before the order gets too wide."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name At The Gate",
+              "body": "Ancient Hue Restaurant usually stays in English. Match the name to the garden entrance and keep the pronunciation clear when asking directions."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After Citadel Walls",
+              "body": "The stop pairs naturally with a heritage-heavy day, when you want dinner to feel connected to Hue rather than like any restaurant."
+            },
+            {
+              "id": "when-to-use",
+              "title": "A Seated Evening Choice",
+              "body": "Save it for a night when sitting properly feels better than hopping between snack counters."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Menu First",
+              "body": "Old dish lists may not help. The menu and staff guidance decide the meal; the setting remains the reference point."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hue-place-ancient-space-restaurant",
+          "summary": "Ancient Space Restaurant gives a Hue meal a ruong-house compound setting: tiled roof, garden path, and an old-space feeling before the first dish arrives.",
+          "context": "The restaurant sits in Hue's royal-city memory through tables, staff rhythm, drinks, and a dining compound that makes the approach part of the meal.",
+          "tip": "Không gian xưa is the Vietnamese name to notice; it means the old-space idea, which fits the tiled roof and garden path.",
+          "rationale": "Ancient Space Restaurant matters when the setting should help carry dinner, not just the dishes, with house architecture shaping the pause.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Old Space Before Dinner",
+              "body": "Ancient Space Restaurant is about the compound as much as the meal. The garden path, tiled roof, and ruong-house feel set the tone early."
+            },
+            {
+              "id": "place-brief",
+              "title": "A Slower Table Choice",
+              "body": "This is a better fit for a settled dinner than a fast food stop. The table, room, and staff pace deserve time."
+            },
+            {
+              "id": "quick-say",
+              "title": "Vietnamese Name Cue",
+              "body": "Listen for Không gian xưa. The phrase points to an older space, which matches the restaurant's garden-house setting."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Heritage Mood Without Another Site",
+              "body": "After tombs or palaces, the restaurant keeps the day in a Hue register without adding another formal attraction."
+            },
+            {
+              "id": "when-to-use",
+              "title": "One Evening reference point",
+              "body": "This is better as the main dinner plan than as a quick stop between other bookings."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Setting Over Certainty",
+              "body": "Specific menus change. The stable reason to remember it is the ruong-house compound and the meal rhythm around it."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

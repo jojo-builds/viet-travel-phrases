@@ -1,0 +1,124 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 1
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_68",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 1,
+    "returnedReplacementCount": 1,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_68",
+  "chunks": [
+    {
+      "chunkFile": "hue_051_075_humanized.json",
+      "cityID": "hue",
+      "range": "051-075",
+      "errors": [],
+      "warnings": [
+        {
+          "id": "city-hue-place-royal-antiquities-museum",
+          "message": "freshness/process-like heading: Displays Can Change"
+        },
+        {
+          "id": "city-hue-place-royal-antiquities-museum",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 7x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 13x: freshness/checking heading"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 13x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hue-place-royal-antiquities-museum",
+          "summary": "Hue Museum of Royal Antiquities gives the old capital an object room: carved timber nearby, museum signs, display cases, and royal material culture at human scale.",
+          "context": "This cultural stop is about royal objects and museum rooms, often tied in the visitor's mind to Long An Palace and imperial Hue.",
+          "tip": "Bảo tàng Cổ vật Cung đình Huế is long, but bảo tàng means museum and cổ vật points to antiquities.",
+          "rationale": "The museum shifts Hue from gates and processions to objects, letting royal life appear through furniture, ceramics, textiles, and display cases.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Royal Objects Up Close",
+              "body": "This museum gives Hue's royal world a smaller scale: cases, objects, carved timber, labels, and the feeling of court life held indoors."
+            },
+            {
+              "id": "place-brief",
+              "title": "A Palace-Museum Pairing",
+              "body": "The setting matters as much as the displays. Long An Palace context, garden edges, and museum signs help tie the objects back to imperial Hue."
+            },
+            {
+              "id": "quick-say",
+              "title": "Long Museum Name",
+              "body": "Bảo tàng Cổ vật Cung đình Huế is the Vietnamese name. Bảo tàng means museum, and cung đình points toward court or palace culture."
+            },
+            {
+              "id": "use-it-with",
+              "title": "After Gates And Courtyards",
+              "body": "It fits after Ngo Mon Gate or palace spaces, when a quieter object-focused stop can make the larger royal complex feel more human."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short, Focused Looking",
+              "body": "A few object types are enough: ceramics, furniture, textiles, or royal display details. This keeps museum fatigue from taking over."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Displays Can Change",
+              "body": "Room arrangements, exhibits, and interpretation may shift. The stable reason to go is Hue's royal material culture gathered indoors."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

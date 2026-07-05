@@ -7,7 +7,7 @@
   "title": "Tôi cảm thấy chóng mặt",
   "englishTitle": "I feel dizzy",
   "pronunciation": "toy gahm thay chong mat",
-  "summary": "Tôi cảm thấy chóng mặt means “I feel dizzy”.",
+  "summary": "Use this when dizziness is the symptom you need help for.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -19,12 +19,14 @@
       "id": "at-glance",
       "title": "At a glance",
       "body": "Use this at a pharmacy, clinic, hotel desk, or with a guide when you feel light-headed or dizzy. Keep it direct so the other person knows this is a health issue, not small talk.",
-      "presentation": "plain-text"
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Hear Tôi + cảm thấy as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "v500-heal-phar-i-feel-dizzy-piece-1",
@@ -51,7 +53,8 @@
           "audioKey": "v500-heal-phar-i-feel-dizzy"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
@@ -69,18 +72,21 @@
           "audioKey": "v500-heal-phar-i-feel-dizzy"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up. For \"I feel dizzy\", Tôi cảm thấy chóng mặt makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Health phrases need to be simple because the other person may need to act quickly or ask a follow-up. Show the symptom, medicine, location, or helper contact if you can.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Health & Pharmacy, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Tôi cảm thấy chóng mặt once, pause, and watch for the reply. Keep the affected area, passport copy, location, or helper contact visible if it helps the other person act.",
+      "body": "Watch for a clear reply, a pointed detail, or simple follow-up.",
       "phrases": [
         {
           "id": "problems-6",
@@ -113,7 +119,8 @@
           "audioKey": "health-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
@@ -151,13 +158,16 @@
           "audioKey": "health-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "Keep severe dizziness direct, especially with chest pain, fainting, or trouble breathing. Move to an emergency phrase when the situation needs urgent help.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -175,12 +185,13 @@
           "audioKey": "health-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "Use these for I need a doctor; where is the nearest pharmacy?; I have a headache if the moment moves past the first line.",
       "phrases": [
         {
           "id": "problems-6",
@@ -253,7 +264,8 @@
           "audioKey": "health-6"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

@@ -20,24 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi không",
+      "english": "I do not",
+      "keepTogetherReason": "negative opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "không",
-      "english": "no / not"
+      "vietnamese": "có",
+      "english": "have",
+      "keepTogetherReason": "have verb"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "bản in",
       "english": "printed copy",
-      "keepTogetherReason": "compound noun"
+      "keepTogetherReason": "printed-copy noun"
     },
     {
       "id": "full",

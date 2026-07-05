@@ -7,7 +7,7 @@
   "title": "Tôi bị côn trùng cắn",
   "englishTitle": "I was bitten by an insect",
   "pronunciation": "Toi bi con trung can",
-  "summary": "I was bitten by an insect",
+  "summary": "For explaining an insect bite when you need cream, advice, or help judging whether it is serious.",
   "iconName": "cross.case.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi bị côn trùng cắn is a practical pharmacy or health phrase for keeping one travel detail clear. Use it when I was bitten by an insect is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Show the bite if appropriate, or point to the affected area and say when it happened."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi bị côn trùng cắn. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Keep the sentence short. If there is swelling, fever, dizziness, or breathing trouble, move to urgent help.",
       "phrases": [
         {
           "id": "v900-heal-phar-i-was-bitten-by-an-insect",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi bị means I was or got; côn trùng cắn means bitten by an insect.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi bị",
-          "english": "I have / got",
-          "audioKey": null
+          "english": "I was / got",
+          "keepTogetherReason": "I-was phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "côn trùng cắn",
-          "english": "insect bite",
-          "audioKey": null
+          "english": "bitten by an insect",
+          "keepTogetherReason": "insect-bite phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi bị côn trùng cắn",
           "english": "I was bitten by an insect",
-          "audioKey": null
+          "audioKey": "v900-heal-phar-i-was-bitten-by-an-insect"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I was bitten by an insect to another pharmacy or health need.",
+      "body": "Doctor and pharmacy-location cards help if staff suggest in-person care.",
       "phrases": [
         {
           "id": "problems-6",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real pharmacy or health exchange when i was bitten by an insect is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at pharmacies, clinics, hotel desks, and tour counters after mosquito, ant, bee, or unknown insect bites."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "For health and pharmacy phrases, short wording plus a visible note is kinder to both sides. Let the staff ask one follow-up at a time."
+      "body": "A normal itch and a spreading reaction are different problems. Show the change if the bite is getting worse."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi bị côn trùng cắn.",
+      "body": "Headache, stomach, motion-sickness, allergy, and diarrhea cards cover other symptom details.",
       "phrases": [
         {
           "id": "health-2",

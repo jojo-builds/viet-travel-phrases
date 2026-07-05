@@ -7,7 +7,7 @@
   "title": "Việc sửa chữa sẽ mất bao lâu?",
   "englishTitle": "How long will the repair take?",
   "pronunciation": "Viec sua chua se mat bao lau",
-  "summary": "How long will the repair take?",
+  "summary": "For asking how long a phone or device repair will take.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Việc sửa chữa sẽ mất bao lâu? helps you decide whether the next move is worth the time. Use it when How long will the repair take affects a taxi, walk, booking, tour, or connection and you need a practical estimate."
+      "body": "Ask before leaving the device, paying a deposit, or agreeing to wait nearby."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Việc sửa chữa sẽ mất bao lâu? while the ticket, booking, map, or line is visible. Listen for the number, time, option, or direction first.",
+      "body": "Show the phone, ticket, or repair note so staff can answer with a time.",
       "phrases": [
         {
           "id": "v900-phon-inte-powe-how-long-will-the-repair-take",
@@ -42,27 +42,30 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Việc sửa chữa means the repair; sẽ mất means will take; bao lâu? asks how long.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Việc sửa chữa",
-          "english": "the repair"
+          "english": "the repair",
+          "keepTogetherReason": "repair noun phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "sẽ mất",
-          "english": "will take"
+          "english": "will take",
+          "keepTogetherReason": "will-take phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "bao lâu",
-          "english": "how long"
+          "vietnamese": "bao lâu?",
+          "english": "how long?",
+          "keepTogetherReason": "how-long question"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Việc sửa chữa sẽ mất bao lâu?",
-          "english": "How long will the repair take",
+          "english": "How long will the repair take?",
           "audioKey": "v900-phon-inte-powe-how-long-will-the-repair-take"
         }
       ]
@@ -70,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How long will the repair take? to another phone, internet, or power need.",
+      "body": "Wi-Fi and SIM phrases help if the repair counter starts checking setup instead of hardware.",
       "phrases": [
         {
           "id": "phone-1",
@@ -107,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real phone, internet, or power exchange when how long will the repair take is the detail you need resolved. The likely reply is a time estimate or route choice, so keep the phrase short and ready for one follow-up."
+      "body": "Good at phone shops, repair kiosks, hotel desks, and electronics counters."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "Ask for the pickup time in writing if the answer is fast or the timing matters."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Việc sửa chữa sẽ mất bao lâu?.",
+      "body": "Battery, charger, receipt, data, and written-password pages cover nearby repair-counter problems.",
       "phrases": [
         {
           "id": "phone-3",

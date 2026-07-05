@@ -88,13 +88,16 @@ struct RecentPhrasePage: Codable, Equatable, Identifiable {
 }
 
 final class LocalUserIntentStore: ObservableObject {
-    @Published private(set) var recentPages: [RecentPhrasePage]
+    private(set) var recentPages: [RecentPhrasePage]
     @Published private(set) var savedPageIDs: [String]
     @Published private(set) var practicePageIDs: [String]
 
     private let defaults: UserDefaults
     private let decoder = JSONDecoder()
     private let encoder = JSONEncoder()
+    private var recentPagesPersistTask: Task<Void, Never>?
+    private var savedMembershipCache = MembershipLookupCache()
+    private var practiceMembershipCache = MembershipLookupCache()
 
     private enum Key {
         static let recentPages = "SpeakLocal.LocalIntent.recentPages.v1"
@@ -143,6 +146,10 @@ final class LocalUserIntentStore: ObservableObject {
         }
     }
 
+    deinit {
+        recentPagesPersistTask?.cancel()
+    }
+
     var recentPageIDs: [String] {
         recentPages.map(\.pageID)
     }
@@ -156,32 +163,44 @@ final class LocalUserIntentStore: ObservableObject {
             return
         }
 
+        recordOpenedCanonicalPage(canonicalPageID, source: source)
+    }
+
+    func recordOpenedCanonicalPage(_ canonicalPageID: String, source: UserIntentSource) {
         var pages = recentPages.filter { page in
-            Self.canonicalPageID(forOpenablePageID: page.pageID) != canonicalPageID
+            page.pageID != canonicalPageID
         }
         pages.insert(
             RecentPhrasePage(pageID: canonicalPageID, openedAt: Date(), source: source),
             at: 0
         )
         recentPages = Array(pages.prefix(Self.maxRecentPages))
+        scheduleRecentPagesPersist()
+    }
+
+    func flushRecentPages() {
+        recentPagesPersistTask?.cancel()
+        recentPagesPersistTask = nil
         persist(recentPages, key: Key.recentPages)
     }
 
     func isPageSaved(_ pageID: String) -> Bool {
-        containsCanonicalID(savedPageIDs, pageID: pageID)
+        containsCanonicalID(savedPageIDs, pageID: pageID, cache: &savedMembershipCache)
     }
 
     func isPageInPractice(_ pageID: String) -> Bool {
-        containsCanonicalID(practicePageIDs, pageID: pageID)
+        containsCanonicalID(practicePageIDs, pageID: pageID, cache: &practiceMembershipCache)
     }
 
     func toggleSavedPage(_ pageID: String) {
         savedPageIDs = toggledCanonicalIDs(savedPageIDs, pageID: pageID)
+        savedMembershipCache.removeAll()
         persist(savedPageIDs, key: Key.savedPageIDs)
     }
 
     func togglePracticePage(_ pageID: String) {
         practicePageIDs = toggledCanonicalIDs(practicePageIDs, pageID: pageID)
+        practiceMembershipCache.removeAll()
         persist(practicePageIDs, key: Key.practicePageIDs)
     }
 
@@ -196,6 +215,7 @@ final class LocalUserIntentStore: ObservableObject {
         }
 
         practicePageIDs = merged
+        practiceMembershipCache.removeAll()
         persist(practicePageIDs, key: Key.practicePageIDs)
     }
 
@@ -204,19 +224,43 @@ final class LocalUserIntentStore: ObservableObject {
             return ids
         }
 
-        let filteredIDs = ids.filter { id in
-            Self.canonicalPageID(forOpenablePageID: id) != canonicalPageID
+        let canonicalIDs = Self.canonicalizedPageIDs(ids)
+        let filteredIDs = canonicalIDs.filter { id in
+            id != canonicalPageID
         }
 
-        if filteredIDs.count != ids.count {
+        if filteredIDs.count != canonicalIDs.count {
             return filteredIDs
         }
 
-        return [canonicalPageID] + Self.canonicalizedPageIDs(ids)
+        return [canonicalPageID] + canonicalIDs
     }
 
     private func persist<T: Encodable>(_ value: T, key: String) {
         guard let data = try? encoder.encode(value) else {
+            return
+        }
+
+        defaults.set(data, forKey: key)
+    }
+
+    private func scheduleRecentPagesPersist() {
+        recentPagesPersistTask?.cancel()
+
+        let snapshot = recentPages
+        let defaults = defaults
+        recentPagesPersistTask = Task.detached(priority: .utility) {
+            try? await Task.sleep(nanoseconds: Self.recentPagesPersistDelayNanoseconds)
+            guard !Task.isCancelled else {
+                return
+            }
+
+            Self.persist(snapshot, key: Key.recentPages, defaults: defaults)
+        }
+    }
+
+    private static func persist<T: Encodable>(_ value: T, key: String, defaults: UserDefaults) {
+        guard let data = try? JSONEncoder().encode(value) else {
             return
         }
 
@@ -231,14 +275,32 @@ final class LocalUserIntentStore: ObservableObject {
         return try? JSONDecoder().decode(type, from: data)
     }
 
-    private func containsCanonicalID(_ ids: [String], pageID: String) -> Bool {
-        guard let canonicalPageID = Self.canonicalPageID(forOpenablePageID: pageID) else {
+    private func containsCanonicalID(
+        _ ids: [String],
+        pageID: String,
+        cache: inout MembershipLookupCache
+    ) -> Bool {
+        guard !ids.isEmpty else {
             return false
         }
 
-        return ids.contains { id in
-            Self.canonicalPageID(forOpenablePageID: id) == canonicalPageID
+        if let cachedResult = cache.value(for: pageID) {
+            return cachedResult
         }
+
+        if ids.contains(pageID) {
+            cache.store(true, for: pageID)
+            return true
+        }
+
+        guard let canonicalPageID = Self.canonicalPageID(forOpenablePageID: pageID) else {
+            cache.store(false, for: pageID)
+            return false
+        }
+
+        let containsCanonicalID = ids.contains(canonicalPageID)
+        cache.store(containsCanonicalID, for: pageID)
+        return containsCanonicalID
     }
 
     private static func canonicalizedRecentPages(_ pages: [RecentPhrasePage]) -> [RecentPhrasePage] {
@@ -288,6 +350,42 @@ final class LocalUserIntentStore: ObservableObject {
     }
 
     private static let maxRecentPages = 12
+    private static let recentPagesPersistDelayNanoseconds: UInt64 = 700_000_000
+
+    private struct MembershipLookupCache {
+        private static let limit = 256
+        private var resultsByPageID: [String: Bool] = [:]
+        private var pageIDs: [String] = []
+
+        mutating func value(for pageID: String) -> Bool? {
+            guard let result = resultsByPageID[pageID] else {
+                return nil
+            }
+
+            touch(pageID)
+            return result
+        }
+
+        mutating func store(_ result: Bool, for pageID: String) {
+            resultsByPageID[pageID] = result
+            touch(pageID)
+
+            while pageIDs.count > Self.limit {
+                let oldestPageID = pageIDs.removeFirst()
+                resultsByPageID.removeValue(forKey: oldestPageID)
+            }
+        }
+
+        mutating func removeAll() {
+            resultsByPageID.removeAll()
+            pageIDs.removeAll()
+        }
+
+        private mutating func touch(_ pageID: String) {
+            pageIDs.removeAll { $0 == pageID }
+            pageIDs.append(pageID)
+        }
+    }
 
 #if DEBUG
     private static let returningUserShelfSeedRecentPages: [RecentPhrasePage] = [
@@ -506,8 +604,11 @@ struct SavedTripPracticeItem: Identifiable, Equatable {
 }
 
 enum SavedTripPracticeCatalog {
-    static func items(for savedPageIDs: [String]) throws -> [SavedTripPracticeItem] {
-        var repository: VietSQLiteLanguagePackRepository?
+    static func items(
+        for savedPageIDs: [String],
+        repository existingRepository: VietSQLiteLanguagePackRepository? = nil
+    ) throws -> [SavedTripPracticeItem] {
+        var repository = existingRepository
         var seenPageIDs = Set<String>()
         var seenVietnamese = Set<String>()
         var seenEnglish = Set<String>()
@@ -571,6 +672,21 @@ private enum SavedTripResolver {
                 tintName: menuItem.kind?.tintName ?? kind.tintName,
                 audioKey: AudioAssetManifest.main?.audioKey(forExactText: menuItem.vietnameseItem),
                 imageName: menuItem.menuImageName,
+                kind: kind
+            )
+        }
+
+        if let pick = LocationMenuPicksCatalog.pick(withDetailPageID: pageID) {
+            let kind: SavedTripSectionKind = pick.id.contains("coffee") ? .drinks : .food
+
+            return SavedTripItem(
+                pageID: pick.detailPageID,
+                title: pick.title,
+                subtitle: pick.subtitle,
+                symbolName: kind.symbolName,
+                tintName: kind.tintName,
+                audioKey: pick.audioKey,
+                imageName: pick.imageName,
                 kind: kind
             )
         }

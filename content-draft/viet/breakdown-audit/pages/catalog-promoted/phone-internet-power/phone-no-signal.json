@@ -20,29 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Không",
-      "english": "no / not"
+      "vietnamese": "Không có",
+      "english": "there is no",
+      "keepTogetherReason": "there-is-no phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "tín hiệu",
+      "english": "signal",
+      "keepTogetherReason": "signal noun"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "tín hiệu",
-      "english": "signal",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "ở",
-      "english": "at / in / stay"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đây.",
-      "english": "here / this"
+      "vietnamese": "ở đây.",
+      "english": "here",
+      "keepTogetherReason": "here phrase with punctuation"
     },
     {
       "id": "full",

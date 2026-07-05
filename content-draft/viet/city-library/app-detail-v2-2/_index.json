@@ -1,0 +1,3681 @@
+{
+  "contentContract": "speaklocal.place.app-detail.v2.2",
+  "schemaVersion": 1,
+  "source": {
+    "handwrittenCopyDir": "content-draft/viet/city-library/handwritten-copy",
+    "cityLibrary": "content-draft/viet/city-library/v1.json",
+    "phraseCatalog": "native-ios/Resources/viet-phrase-catalog.json",
+    "v2_2Gate": "docs/design/city-pages/V2_2_RENDER_PILOT_REDO_APP_DETAILS.json"
+  },
+  "output": {
+    "directory": "content-draft/viet/city-library/app-detail-v2-2",
+    "files": [
+      "_index.json",
+      "danang.json",
+      "hanoi.json",
+      "hcmc.json",
+      "hoian.json",
+      "hue.json"
+    ]
+  },
+  "counts": {
+    "cities": 5,
+    "entries": 520,
+    "byCity": {
+      "danang": 106,
+      "hanoi": 106,
+      "hcmc": 106,
+      "hoian": 102,
+      "hue": 100
+    },
+    "needsVoiceGate": 0,
+    "finalPass": 520,
+    "priorV2_2GateEvidence": 13,
+    "legacyV2_2GateEvidence": 0,
+    "renderableRelatedPlaceCandidates": 520,
+    "renderableMentionedHereCandidates": 57,
+    "verificationFlags": 1
+  },
+  "entries": [
+    {
+      "id": "viet-family-city-danang-place-3d-art-in-paradise",
+      "pageID": "city-danang-place-3d-art-in-paradise",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-43-factory",
+      "pageID": "city-danang-place-43-factory",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-airport",
+      "pageID": "city-danang-place-airport",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-an-thuong-street-area",
+      "pageID": "city-danang-place-an-thuong-street-area",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-apec-park",
+      "pageID": "city-danang-place-apec-park",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-asia-park",
+      "pageID": "city-danang-place-asia-park",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-ba-na-cable-car",
+      "pageID": "city-danang-place-ba-na-cable-car",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-ba-na-hills",
+      "pageID": "city-danang-place-ba-na-hills",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-bac-my-an-market",
+      "pageID": "city-danang-place-bac-my-an-market",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-bach-dang-street",
+      "pageID": "city-danang-place-bach-dang-street",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-ban-co-peak",
+      "pageID": "city-danang-place-ban-co-peak",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-banh-canh-yen",
+      "pageID": "city-danang-place-banh-canh-yen",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-banh-mi",
+      "pageID": "city-danang-place-banh-mi",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-banh-trang-cuon-thit-heo",
+      "pageID": "city-danang-place-banh-trang-cuon-thit-heo",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-banh-xeo",
+      "pageID": "city-danang-place-banh-xeo",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-banh-xeo-ba-duong",
+      "pageID": "city-danang-place-banh-xeo-ba-duong",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-be-man",
+      "pageID": "city-danang-place-be-man",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-bep-cuon",
+      "pageID": "city-danang-place-bep-cuon",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-bep-hen",
+      "pageID": "city-danang-place-bep-hen",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-boulevard-gelato-coffee",
+      "pageID": "city-danang-place-boulevard-gelato-coffee",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-bun-cha-ca",
+      "pageID": "city-danang-place-bun-cha-ca",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-bun-cha-ca-109",
+      "pageID": "city-danang-place-bun-cha-ca-109",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-bun-cha-ca-hon",
+      "pageID": "city-danang-place-bun-cha-ca-hon",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-bun-rieu-cua-39",
+      "pageID": "city-danang-place-bun-rieu-cua-39",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-cathedral",
+      "pageID": "city-danang-place-cathedral",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-central-bus-station",
+      "pageID": "city-danang-place-central-bus-station",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-cham-museum",
+      "pageID": "city-danang-place-cham-museum",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-che-xoa-xoa-hat-luu",
+      "pageID": "city-danang-place-che-xoa-xoa-hat-luu",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-co-chu-nho",
+      "pageID": "city-danang-place-co-chu-nho",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-con-market",
+      "pageID": "city-danang-place-con-market",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-cong-caphe-bach-dang",
+      "pageID": "city-danang-place-cong-caphe-bach-dang",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-domestic-terminal",
+      "pageID": "city-danang-place-domestic-terminal",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-dong-dinh-museum",
+      "pageID": "city-danang-place-dong-dinh-museum",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-dragon-bridge",
+      "pageID": "city-danang-place-dragon-bridge",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-dragon-bridge-fire-show",
+      "pageID": "city-danang-place-dragon-bridge-fire-show",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-dragon-carp-statue",
+      "pageID": "city-danang-place-dragon-carp-statue",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-fatfish",
+      "pageID": "city-danang-place-fatfish",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-fine-arts-museum",
+      "pageID": "city-danang-place-fine-arts-museum",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-golden-bridge",
+      "pageID": "city-danang-place-golden-bridge",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-hai-chau-district",
+      "pageID": "city-danang-place-hai-chau-district",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-hai-san",
+      "pageID": "city-danang-place-hai-san",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-hai-van-pass",
+      "pageID": "city-danang-place-hai-van-pass",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-hai-van-pass-ride",
+      "pageID": "city-danang-place-hai-van-pass-ride",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-han-market",
+      "pageID": "city-danang-place-han-market",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-han-river",
+      "pageID": "city-danang-place-han-river",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-han-river-cruise",
+      "pageID": "city-danang-place-han-river-cruise",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-helio-night-market",
+      "pageID": "city-danang-place-helio-night-market",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-hoa-phu-thanh",
+      "pageID": "city-danang-place-hoa-phu-thanh",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-hoa-trung-lake",
+      "pageID": "city-danang-place-hoa-trung-lake",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-international-terminal",
+      "pageID": "city-danang-place-international-terminal",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-kem-bo",
+      "pageID": "city-danang-place-kem-bo",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-la-maison-1888",
+      "pageID": "city-danang-place-la-maison-1888",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-lady-buddha",
+      "pageID": "city-danang-place-lady-buddha",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-le-duan-night-market",
+      "pageID": "city-danang-place-le-duan-night-market",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-linh-ung-pagoda",
+      "pageID": "city-danang-place-linh-ung-pagoda",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-long-coffee",
+      "pageID": "city-danang-place-long-coffee",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-lotte-mart",
+      "pageID": "city-danang-place-lotte-mart",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-love-bridge",
+      "pageID": "city-danang-place-love-bridge",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-madame-lan",
+      "pageID": "city-danang-place-madame-lan",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-man-thai-beach",
+      "pageID": "city-danang-place-man-thai-beach",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-marble-mountain-cave-walk",
+      "pageID": "city-danang-place-marble-mountain-cave-walk",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-marble-mountains",
+      "pageID": "city-danang-place-marble-mountains",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-mi-quang",
+      "pageID": "city-danang-place-mi-quang",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-mi-quang-1a",
+      "pageID": "city-danang-place-mi-quang-1a",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-moc-quan-seafood",
+      "pageID": "city-danang-place-moc-quan-seafood",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-museum",
+      "pageID": "city-danang-place-museum",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-museum-branch-2",
+      "pageID": "city-danang-place-museum-branch-2",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-my-an",
+      "pageID": "city-danang-place-my-an",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-my-an-beach",
+      "pageID": "city-danang-place-my-an-beach",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-my-khe",
+      "pageID": "city-danang-place-my-khe",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-my-quang-ba-mua",
+      "pageID": "city-danang-place-my-quang-ba-mua",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-my-quang-dung",
+      "pageID": "city-danang-place-my-quang-dung",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-my-quang-sua-hong-van",
+      "pageID": "city-danang-place-my-quang-sua-hong-van",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-nam-danh-seafood",
+      "pageID": "city-danang-place-nam-danh-seafood",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-nam-house",
+      "pageID": "city-danang-place-nam-house",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-nam-o-fish-sauce-village",
+      "pageID": "city-danang-place-nam-o-fish-sauce-village",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-nam-o-reef",
+      "pageID": "city-danang-place-nam-o-reef",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-nem-lui",
+      "pageID": "city-danang-place-nem-lui",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-nen",
+      "pageID": "city-danang-place-nen",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-ngu-hanh-son-district",
+      "pageID": "city-danang-place-ngu-hanh-son-district",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-nguyen-hien-dinh-tuong-theatre",
+      "pageID": "city-danang-place-nguyen-hien-dinh-tuong-theatre",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-nguyen-van-linh-street",
+      "pageID": "city-danang-place-nguyen-van-linh-street",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-non-nuoc-beach",
+      "pageID": "city-danang-place-non-nuoc-beach",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-non-nuoc-stone-village",
+      "pageID": "city-danang-place-non-nuoc-stone-village",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-oc-hut",
+      "pageID": "city-danang-place-oc-hut",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-pham-van-dong-beach",
+      "pageID": "city-danang-place-pham-van-dong-beach",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-phap-lam-pagoda",
+      "pageID": "city-danang-place-phap-lam-pagoda",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-phuoc-my",
+      "pageID": "city-danang-place-phuoc-my",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-railway-station",
+      "pageID": "city-danang-place-railway-station",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-reply-1988",
+      "pageID": "city-danang-place-reply-1988",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-six-on-six",
+      "pageID": "city-danang-place-six-on-six",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-son-tra",
+      "pageID": "city-danang-place-son-tra",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-son-tra-district",
+      "pageID": "city-danang-place-son-tra-district",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-son-tra-night-market",
+      "pageID": "city-danang-place-son-tra-night-market",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-son-tra-wildlife-drive",
+      "pageID": "city-danang-place-son-tra-wildlife-drive",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-thanh-binh-beach",
+      "pageID": "city-danang-place-thanh-binh-beach",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-the-temptation",
+      "pageID": "city-danang-place-the-temptation",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-thuan-phuoc-bridge",
+      "pageID": "city-danang-place-thuan-phuoc-bridge",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-tien-sa-port",
+      "pageID": "city-danang-place-tien-sa-port",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-tran-hung-dao-street",
+      "pageID": "city-danang-place-tran-hung-dao-street",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-tran-thi-ly-bridge",
+      "pageID": "city-danang-place-tran-thi-ly-bridge",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-trung-vuong-theatre",
+      "pageID": "city-danang-place-trung-vuong-theatre",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-vincom-plaza",
+      "pageID": "city-danang-place-vincom-plaza",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-vo-nguyen-giap-street",
+      "pageID": "city-danang-place-vo-nguyen-giap-street",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-wonderlust",
+      "pageID": "city-danang-place-wonderlust",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-danang-place-yen-retreat",
+      "pageID": "city-danang-place-yen-retreat",
+      "cityID": "danang",
+      "file": "danang.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-ba-dinh-district",
+      "pageID": "city-hanoi-place-ba-dinh-district",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-ba-dinh-square",
+      "pageID": "city-hanoi-place-ba-dinh-square",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-banh-cuon",
+      "pageID": "city-hanoi-place-banh-cuon",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-banh-cuon-ba-hoanh",
+      "pageID": "city-hanoi-place-banh-cuon-ba-hoanh",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-banh-cuon-ba-xuan",
+      "pageID": "city-hanoi-place-banh-cuon-ba-xuan",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-bay-mau-lake",
+      "pageID": "city-hanoi-place-bay-mau-lake",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-bia-hoi",
+      "pageID": "city-hanoi-place-bia-hoi",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-botanical-garden",
+      "pageID": "city-hanoi-place-botanical-garden",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-bun-cha",
+      "pageID": "city-hanoi-place-bun-cha",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-bun-cha-dac-kim",
+      "pageID": "city-hanoi-place-bun-cha-dac-kim",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-bun-cha-huong-lien",
+      "pageID": "city-hanoi-place-bun-cha-huong-lien",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-bun-cha-ta",
+      "pageID": "city-hanoi-place-bun-cha-ta",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-bun-thang",
+      "pageID": "city-hanoi-place-bun-thang",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-ca-phe-sua-da",
+      "pageID": "city-hanoi-place-ca-phe-sua-da",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-cha-ca",
+      "pageID": "city-hanoi-place-cha-ca",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-cha-ca-thang-long",
+      "pageID": "city-hanoi-place-cha-ca-thang-long",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-cho-buoi-market",
+      "pageID": "city-hanoi-place-cho-buoi-market",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-coffee-hop",
+      "pageID": "city-hanoi-place-coffee-hop",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-cong-ca-phe-trieu-viet-vuong",
+      "pageID": "city-hanoi-place-cong-ca-phe-trieu-viet-vuong",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-cyclo-old-quarter",
+      "pageID": "city-hanoi-place-cyclo-old-quarter",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-dinh-cafe",
+      "pageID": "city-hanoi-place-dinh-cafe",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-dong-da",
+      "pageID": "city-hanoi-place-dong-da",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-dong-xuan",
+      "pageID": "city-hanoi-place-dong-xuan",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-egg-coffee",
+      "pageID": "city-hanoi-place-egg-coffee",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-ethnology-museum",
+      "pageID": "city-hanoi-place-ethnology-museum",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-french-quarter",
+      "pageID": "city-hanoi-place-french-quarter",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-french-quarter-walk",
+      "pageID": "city-hanoi-place-french-quarter-walk",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-gia",
+      "pageID": "city-hanoi-place-gia",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-gia-lam-station",
+      "pageID": "city-hanoi-place-gia-lam-station",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-giang-cafe",
+      "pageID": "city-hanoi-place-giang-cafe",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-giap-bat-bus-station",
+      "pageID": "city-hanoi-place-giap-bat-bus-station",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-hang-bac-street",
+      "pageID": "city-hanoi-place-hang-bac-street",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-hang-da-market",
+      "pageID": "city-hanoi-place-hang-da-market",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-hang-gai-street",
+      "pageID": "city-hanoi-place-hang-gai-street",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-hanoi-flag-tower",
+      "pageID": "city-hanoi-place-hanoi-flag-tower",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-hanoi-railway-station",
+      "pageID": "city-hanoi-place-hanoi-railway-station",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-hibana-by-koki",
+      "pageID": "city-hanoi-place-hibana-by-koki",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-ho-chi-minh-mausoleum",
+      "pageID": "city-hanoi-place-ho-chi-minh-mausoleum",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-ho-chi-minh-museum",
+      "pageID": "city-hanoi-place-ho-chi-minh-museum",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-hoa-lo-prison",
+      "pageID": "city-hanoi-place-hoa-lo-prison",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-hoan-kiem",
+      "pageID": "city-hanoi-place-hoan-kiem",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-hom-market",
+      "pageID": "city-hanoi-place-hom-market",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-imperial-citadel",
+      "pageID": "city-hanoi-place-imperial-citadel",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-lam-cafe",
+      "pageID": "city-hanoi-place-lam-cafe",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-lamai-garden",
+      "pageID": "city-hanoi-place-lamai-garden",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-lenin-park",
+      "pageID": "city-hanoi-place-lenin-park",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-literature-museum",
+      "pageID": "city-hanoi-place-literature-museum",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-loading-t-cafe",
+      "pageID": "city-hanoi-place-loading-t-cafe",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-long-bien-bridge",
+      "pageID": "city-hanoi-place-long-bien-bridge",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-long-bien-market",
+      "pageID": "city-hanoi-place-long-bien-market",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-manzi-art-space",
+      "pageID": "city-hanoi-place-manzi-art-space",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-mien-luon",
+      "pageID": "city-hanoi-place-mien-luon",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-mien-luon-chan-cam",
+      "pageID": "city-hanoi-place-mien-luon-chan-cam",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-my-dinh-bus-station",
+      "pageID": "city-hanoi-place-my-dinh-bus-station",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-nang-cafe",
+      "pageID": "city-hanoi-place-nang-cafe",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-national-museum-history",
+      "pageID": "city-hanoi-place-national-museum-history",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-nem-cua-be",
+      "pageID": "city-hanoi-place-nem-cua-be",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-ngoc-son-temple",
+      "pageID": "city-hanoi-place-ngoc-son-temple",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-nguyen-huu-huan-street",
+      "pageID": "city-hanoi-place-nguyen-huu-huan-street",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-night-market-walk",
+      "pageID": "city-hanoi-place-night-market-walk",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-noi-bai-airport",
+      "pageID": "city-hanoi-place-noi-bai-airport",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-nuoc-ngam-bus-station",
+      "pageID": "city-hanoi-place-nuoc-ngam-bus-station",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-old-quarter",
+      "pageID": "city-hanoi-place-old-quarter",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-old-quarter-walking-tour",
+      "pageID": "city-hanoi-place-old-quarter-walking-tour",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-one-pillar-pagoda",
+      "pageID": "city-hanoi-place-one-pillar-pagoda",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-opera-house",
+      "pageID": "city-hanoi-place-opera-house",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-phan-dinh-phung-street",
+      "pageID": "city-hanoi-place-phan-dinh-phung-street",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-pho-10-ly-quoc-su",
+      "pageID": "city-hanoi-place-pho-10-ly-quoc-su",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-pho-bat-dan",
+      "pageID": "city-hanoi-place-pho-bat-dan",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-pho-bo",
+      "pageID": "city-hanoi-place-pho-bo",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-pho-bo-lam",
+      "pageID": "city-hanoi-place-pho-bo-lam",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-pho-ga",
+      "pageID": "city-hanoi-place-pho-ga",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-pho-ga-nguyet",
+      "pageID": "city-hanoi-place-pho-ga-nguyet",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-pho-gia-truyen",
+      "pageID": "city-hanoi-place-pho-gia-truyen",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-quan-thanh-temple",
+      "pageID": "city-hanoi-place-quan-thanh-temple",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-quang-ba-flower-market",
+      "pageID": "city-hanoi-place-quang-ba-flower-market",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-red-river",
+      "pageID": "city-hanoi-place-red-river",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-st-joseph-cathedral",
+      "pageID": "city-hanoi-place-st-joseph-cathedral",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-street-food-walk",
+      "pageID": "city-hanoi-place-street-food-walk",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-ta-hien",
+      "pageID": "city-hanoi-place-ta-hien",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-tam-vi",
+      "pageID": "city-hanoi-place-tam-vi",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-tay-ho",
+      "pageID": "city-hanoi-place-tay-ho",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-temple-literature",
+      "pageID": "city-hanoi-place-temple-literature",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-the-note-coffee",
+      "pageID": "city-hanoi-place-the-note-coffee",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-thong-nhat-park",
+      "pageID": "city-hanoi-place-thong-nhat-park",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-train-street",
+      "pageID": "city-hanoi-place-train-street",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-tran-quoc-pagoda",
+      "pageID": "city-hanoi-place-tran-quoc-pagoda",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-trang-tien-plaza",
+      "pageID": "city-hanoi-place-trang-tien-plaza",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-trang-tien-street",
+      "pageID": "city-hanoi-place-trang-tien-street",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-trieu-viet-vuong-coffee-street",
+      "pageID": "city-hanoi-place-trieu-viet-vuong-coffee-street",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-truc-bach-lake",
+      "pageID": "city-hanoi-place-truc-bach-lake",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-turtle-tower",
+      "pageID": "city-hanoi-place-turtle-tower",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-tuyet-bun-cha-34",
+      "pageID": "city-hanoi-place-tuyet-bun-cha-34",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-udam",
+      "pageID": "city-hanoi-place-udam",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-vietnam-art-gallery",
+      "pageID": "city-hanoi-place-vietnam-art-gallery",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-vietnam-circus",
+      "pageID": "city-hanoi-place-vietnam-circus",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-vietnam-fine-arts-museum",
+      "pageID": "city-hanoi-place-vietnam-fine-arts-museum",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-vietnam-military-history-museum",
+      "pageID": "city-hanoi-place-vietnam-military-history-museum",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-vietnam-national-tuong-theatre",
+      "pageID": "city-hanoi-place-vietnam-national-tuong-theatre",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-water-puppet-theatre",
+      "pageID": "city-hanoi-place-water-puppet-theatre",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-weekend-night-market",
+      "pageID": "city-hanoi-place-weekend-night-market",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-west-lake",
+      "pageID": "city-hanoi-place-west-lake",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-west-lake-loop",
+      "pageID": "city-hanoi-place-west-lake-loop",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-womens-museum",
+      "pageID": "city-hanoi-place-womens-museum",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-xoi-xeo",
+      "pageID": "city-hanoi-place-xoi-xeo",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hanoi-place-yen-so-park",
+      "pageID": "city-hanoi-place-yen-so-park",
+      "cityID": "hanoi",
+      "file": "hanoi.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-42-nguyen-hue-apartment",
+      "pageID": "city-hcmc-place-42-nguyen-hue-apartment",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-akuna",
+      "pageID": "city-hcmc-place-akuna",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-an-dong-market",
+      "pageID": "city-hcmc-place-an-dong-market",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-anan-saigon",
+      "pageID": "city-hcmc-place-anan-saigon",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-ao-dai-museum",
+      "pageID": "city-hcmc-place-ao-dai-museum",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-bach-dang-waterbus-station",
+      "pageID": "city-hcmc-place-bach-dang-waterbus-station",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-bach-dang-wharf",
+      "pageID": "city-hcmc-place-bach-dang-wharf",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-banh-mi",
+      "pageID": "city-hcmc-place-banh-mi",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-banh-mi-huynh-hoa",
+      "pageID": "city-hcmc-place-banh-mi-huynh-hoa",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-banh-xeo",
+      "pageID": "city-hcmc-place-banh-xeo",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-banh-xeo-46a",
+      "pageID": "city-hcmc-place-banh-xeo-46a",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-ben-thanh-market",
+      "pageID": "city-hcmc-place-ben-thanh-market",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-ben-thanh-metro-station",
+      "pageID": "city-hcmc-place-ben-thanh-metro-station",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-bep-me-in",
+      "pageID": "city-hcmc-place-bep-me-in",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-binh-tay-market",
+      "pageID": "city-hcmc-place-binh-tay-market",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-bitexco-tower",
+      "pageID": "city-hcmc-place-bitexco-tower",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-bo-kho-ganh",
+      "pageID": "city-hcmc-place-bo-kho-ganh",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-bo-la-lot",
+      "pageID": "city-hcmc-place-bo-la-lot",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-bot-chien",
+      "pageID": "city-hcmc-place-bot-chien",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-bui-vien-street",
+      "pageID": "city-hcmc-place-bui-vien-street",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-bun-bo-hue-14b",
+      "pageID": "city-hcmc-place-bun-bo-hue-14b",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-bun-thit-nuong",
+      "pageID": "city-hcmc-place-bun-thit-nuong",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-ca-phe-sua-da",
+      "pageID": "city-hcmc-place-ca-phe-sua-da",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-cafe-apartment-nguyen-hue",
+      "pageID": "city-hcmc-place-cafe-apartment-nguyen-hue",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-cafe-hop-nguyen-hue",
+      "pageID": "city-hcmc-place-cafe-hop-nguyen-hue",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-cafe-vot-pham-ngoc-thach",
+      "pageID": "city-hcmc-place-cafe-vot-pham-ngoc-thach",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-che",
+      "pageID": "city-hcmc-place-che",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-cheo-leo-cafe",
+      "pageID": "city-hcmc-place-cheo-leo-cafe",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-cho-lon",
+      "pageID": "city-hcmc-place-cho-lon",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-cho-lon-walking-route",
+      "pageID": "city-hcmc-place-cho-lon-walking-route",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-ciel",
+      "pageID": "city-hcmc-place-ciel",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-city-hall",
+      "pageID": "city-hcmc-place-city-hall",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-coco-dining",
+      "pageID": "city-hcmc-place-coco-dining",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-com-tam",
+      "pageID": "city-hcmc-place-com-tam",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-com-tam-ba-ghien",
+      "pageID": "city-hcmc-place-com-tam-ba-ghien",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-cong-ca-phe-dong-khoi",
+      "pageID": "city-hcmc-place-cong-ca-phe-dong-khoi",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-cu-chi-day-trip",
+      "pageID": "city-hcmc-place-cu-chi-day-trip",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-cu-chi-tunnels",
+      "pageID": "city-hcmc-place-cu-chi-tunnels",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-cuc-gach-quan",
+      "pageID": "city-hcmc-place-cuc-gach-quan",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-district-1",
+      "pageID": "city-hcmc-place-district-1",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-district-3",
+      "pageID": "city-hcmc-place-district-3",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-dong-khoi-landmark-walk",
+      "pageID": "city-hcmc-place-dong-khoi-landmark-walk",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-dong-khoi-street",
+      "pageID": "city-hcmc-place-dong-khoi-street",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-fine-arts-museum",
+      "pageID": "city-hcmc-place-fine-arts-museum",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-fito-museum",
+      "pageID": "city-hcmc-place-fito-museum",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-gia-dinh-park",
+      "pageID": "city-hcmc-place-gia-dinh-park",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-goi-cuon",
+      "pageID": "city-hcmc-place-goi-cuon",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-golden-dragon-water-puppet",
+      "pageID": "city-hcmc-place-golden-dragon-water-puppet",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-history-museum",
+      "pageID": "city-hcmc-place-history-museum",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-ho-chi-minh-city-museum",
+      "pageID": "city-hcmc-place-ho-chi-minh-city-museum",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-ho-thi-ky-flower-market",
+      "pageID": "city-hcmc-place-ho-thi-ky-flower-market",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-hu-tieu",
+      "pageID": "city-hcmc-place-hu-tieu",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-independence-palace",
+      "pageID": "city-hcmc-place-independence-palace",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-jade-emperor-pagoda",
+      "pageID": "city-hcmc-place-jade-emperor-pagoda",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-japan-town",
+      "pageID": "city-hcmc-place-japan-town",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-landmark-81",
+      "pageID": "city-hcmc-place-landmark-81",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-le-thanh-ton-street",
+      "pageID": "city-hcmc-place-le-thanh-ton-street",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-le-van-tam-park",
+      "pageID": "city-hcmc-place-le-van-tam-park",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-little-hanoi-egg-coffee",
+      "pageID": "city-hcmc-place-little-hanoi-egg-coffee",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-long-trieu",
+      "pageID": "city-hcmc-place-long-trieu",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-lusine-thao-dien",
+      "pageID": "city-hcmc-place-lusine-thao-dien",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-man-moi",
+      "pageID": "city-hcmc-place-man-moi",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-mariamman-temple",
+      "pageID": "city-hcmc-place-mariamman-temple",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-mien-dong-bus-station",
+      "pageID": "city-hcmc-place-mien-dong-bus-station",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-mien-tay-bus-station",
+      "pageID": "city-hcmc-place-mien-tay-bus-station",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-motorbike-food-tour",
+      "pageID": "city-hcmc-place-motorbike-food-tour",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-municipal-theatre-square",
+      "pageID": "city-hcmc-place-municipal-theatre-square",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-nephele",
+      "pageID": "city-hcmc-place-nephele",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-nguyen-hue",
+      "pageID": "city-hcmc-place-nguyen-hue",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-nguyen-trai-street",
+      "pageID": "city-hcmc-place-nguyen-trai-street",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-nhieu-loc-canal",
+      "pageID": "city-hcmc-place-nhieu-loc-canal",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-notre-dame",
+      "pageID": "city-hcmc-place-notre-dame",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-oc",
+      "pageID": "city-hcmc-place-oc",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-opera-a-o-show",
+      "pageID": "city-hcmc-place-opera-a-o-show",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-opera-house",
+      "pageID": "city-hcmc-place-opera-house",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pasteur-street",
+      "pageID": "city-hcmc-place-pasteur-street",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pha-lau",
+      "pageID": "city-hcmc-place-pha-lau",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pham-ngu-lao-street",
+      "pageID": "city-hcmc-place-pham-ngu-lao-street",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pho-hoa-pasteur",
+      "pageID": "city-hcmc-place-pho-hoa-pasteur",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pho-huong-binh",
+      "pageID": "city-hcmc-place-pho-huong-binh",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pho-le-district-5",
+      "pageID": "city-hcmc-place-pho-le-district-5",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pho-minh",
+      "pageID": "city-hcmc-place-pho-minh",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-pho-nam",
+      "pageID": "city-hcmc-place-pho-nam",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-post-office",
+      "pageID": "city-hcmc-place-post-office",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-rex-hotel-rooftop",
+      "pageID": "city-hcmc-place-rex-hotel-rooftop",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-russian-market",
+      "pageID": "city-hcmc-place-russian-market",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-saigon-railway-station",
+      "pageID": "city-hcmc-place-saigon-railway-station",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-saigon-river",
+      "pageID": "city-hcmc-place-saigon-river",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-saigon-river-boat",
+      "pageID": "city-hcmc-place-saigon-river-boat",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-saigon-skydeck",
+      "pageID": "city-hcmc-place-saigon-skydeck",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-saigon-square",
+      "pageID": "city-hcmc-place-saigon-square",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-southern-women-museum",
+      "pageID": "city-hcmc-place-southern-women-museum",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-street-food-evening",
+      "pageID": "city-hcmc-place-street-food-evening",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-takashimaya-saigon-centre",
+      "pageID": "city-hcmc-place-takashimaya-saigon-centre",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-tan-son-nhat-airport",
+      "pageID": "city-hcmc-place-tan-son-nhat-airport",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-tao-dan-park",
+      "pageID": "city-hcmc-place-tao-dan-park",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-thao-dien",
+      "pageID": "city-hcmc-place-thao-dien",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-thien-hau-pagoda",
+      "pageID": "city-hcmc-place-thien-hau-pagoda",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-thu-thiem-riverfront",
+      "pageID": "city-hcmc-place-thu-thiem-riverfront",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-ton-duc-thang-museum",
+      "pageID": "city-hcmc-place-ton-duc-thang-museum",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-turtle-lake",
+      "pageID": "city-hcmc-place-turtle-lake",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-vincom-dong-khoi",
+      "pageID": "city-hcmc-place-vincom-dong-khoi",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-vinhomes-central-park",
+      "pageID": "city-hcmc-place-vinhomes-central-park",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-war-remnants-museum",
+      "pageID": "city-hcmc-place-war-remnants-museum",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-workshop-coffee",
+      "pageID": "city-hcmc-place-workshop-coffee",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hcmc-place-zoo-botanical-gardens",
+      "pageID": "city-hcmc-place-zoo-botanical-gardens",
+      "cityID": "hcmc",
+      "file": "hcmc.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-an-bang",
+      "pageID": "city-hoian-place-an-bang",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-an-hoi-bridge",
+      "pageID": "city-hoian-place-an-hoi-bridge",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-an-hoi-island",
+      "pageID": "city-hoian-place-an-hoi-island",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-ancient-town",
+      "pageID": "city-hoian-place-ancient-town",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-ancient-town-ticket-booth",
+      "pageID": "city-hoian-place-ancient-town-ticket-booth",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-bach-dang-boat-pier",
+      "pageID": "city-hoian-place-bach-dang-boat-pier",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-bach-dang-street",
+      "pageID": "city-hoian-place-bach-dang-street",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-bale-well",
+      "pageID": "city-hoian-place-bale-well",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-banh-dap-hen-xao",
+      "pageID": "city-hoian-place-banh-dap-hen-xao",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-banh-mi",
+      "pageID": "city-hoian-place-banh-mi",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-banh-mi-phuong",
+      "pageID": "city-hoian-place-banh-mi-phuong",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-banh-xeo",
+      "pageID": "city-hoian-place-banh-xeo",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-bay-mau-coconut-forest",
+      "pageID": "city-hoian-place-bay-mau-coconut-forest",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-bebe-tailor",
+      "pageID": "city-hoian-place-bebe-tailor",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-bus-station",
+      "pageID": "city-hoian-place-bus-station",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cam-chau",
+      "pageID": "city-hoian-place-cam-chau",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cam-kim-island",
+      "pageID": "city-hoian-place-cam-kim-island",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cam-nam",
+      "pageID": "city-hoian-place-cam-nam",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cam-pho",
+      "pageID": "city-hoian-place-cam-pho",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cam-thanh",
+      "pageID": "city-hoian-place-cam-thanh",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cam-thanh-basket-boat",
+      "pageID": "city-hoian-place-cam-thanh-basket-boat",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cam-thanh-coconut-village",
+      "pageID": "city-hoian-place-cam-thanh-coconut-village",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cantonese-assembly-hall",
+      "pageID": "city-hoian-place-cantonese-assembly-hall",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cao-lau-city",
+      "pageID": "city-hoian-place-cao-lau-city",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cao-lau-thanh",
+      "pageID": "city-hoian-place-cao-lau-thanh",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cargo-club",
+      "pageID": "city-hoian-place-cargo-club",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cham-islands",
+      "pageID": "city-hoian-place-cham-islands",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cham-islands-snorkel-boat",
+      "pageID": "city-hoian-place-cham-islands-snorkel-boat",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-che-bap-cam-nam",
+      "pageID": "city-hoian-place-che-bap-cam-nam",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-chuc-thanh-pagoda",
+      "pageID": "city-hoian-place-chuc-thanh-pagoda",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cocobox",
+      "pageID": "city-hoian-place-cocobox",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-com-ga",
+      "pageID": "city-hoian-place-com-ga",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-com-ga-ba-buoi",
+      "pageID": "city-hoian-place-com-ga-ba-buoi",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cooking-class",
+      "pageID": "city-hoian-place-cooking-class",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-countryside-bicycle-loop",
+      "pageID": "city-hoian-place-countryside-bicycle-loop",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cua-dai-beach",
+      "pageID": "city-hoian-place-cua-dai-beach",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cua-dai-estuary",
+      "pageID": "city-hoian-place-cua-dai-estuary",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-cua-dai-pier",
+      "pageID": "city-hoian-place-cua-dai-pier",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-duc-an-old-house",
+      "pageID": "city-hoian-place-duc-an-old-house",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-espresso-station",
+      "pageID": "city-hoian-place-espresso-station",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-faifo-coffee",
+      "pageID": "city-hoian-place-faifo-coffee",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-folk-culture-museum",
+      "pageID": "city-hoian-place-folk-culture-museum",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-from-danang-airport",
+      "pageID": "city-hoian-place-from-danang-airport",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-from-danang-railway-station",
+      "pageID": "city-hoian-place-from-danang-railway-station",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-fujian-assembly-hall",
+      "pageID": "city-hoian-place-fujian-assembly-hall",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-hainan-assembly-hall",
+      "pageID": "city-hoian-place-hainan-assembly-hall",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-handicraft-workshop",
+      "pageID": "city-hoian-place-handicraft-workshop",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-history-culture-museum",
+      "pageID": "city-hoian-place-history-culture-museum",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-hoai-river",
+      "pageID": "city-hoian-place-hoai-river",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-japanese-bridge",
+      "pageID": "city-hoian-place-japanese-bridge",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-kim-bong-carpentry-village",
+      "pageID": "city-hoian-place-kim-bong-carpentry-village",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-lantern-boat",
+      "pageID": "city-hoian-place-lantern-boat",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-lantern-making-class",
+      "pageID": "city-hoian-place-lantern-making-class",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-lune-center",
+      "pageID": "city-hoian-place-lune-center",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-madam-khanh",
+      "pageID": "city-hoian-place-madam-khanh",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-mai-fish",
+      "pageID": "city-hoian-place-mai-fish",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-mango-mango",
+      "pageID": "city-hoian-place-mango-mango",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-market",
+      "pageID": "city-hoian-place-market",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-memories-land",
+      "pageID": "city-hoian-place-memories-land",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-metiseko",
+      "pageID": "city-hoian-place-metiseko",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-mi-quang",
+      "pageID": "city-hoian-place-mi-quang",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-minh-an-ward",
+      "pageID": "city-hoian-place-minh-an-ward",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-morning-glory",
+      "pageID": "city-hoian-place-morning-glory",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-mot-herbal-drink",
+      "pageID": "city-hoian-place-mot-herbal-drink",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-museum",
+      "pageID": "city-hoian-place-museum",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-my-son-sanctuary",
+      "pageID": "city-hoian-place-my-son-sanctuary",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-nguyen-hoang-night-market",
+      "pageID": "city-hoian-place-nguyen-hoang-night-market",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-nguyen-phuc-chu-street",
+      "pageID": "city-hoian-place-nguyen-phuc-chu-street",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-nguyen-thai-hoc-street",
+      "pageID": "city-hoian-place-nguyen-thai-hoc-street",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-night-market",
+      "pageID": "city-hoian-place-night-market",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-nu-eatery",
+      "pageID": "city-hoian-place-nu-eatery",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-phin-coffee",
+      "pageID": "city-hoian-place-phin-coffee",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-phung-hung-old-house",
+      "pageID": "city-hoian-place-phung-hung-old-house",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-pottery-workshop",
+      "pageID": "city-hoian-place-pottery-workshop",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-precious-heritage-museum",
+      "pageID": "city-hoian-place-precious-heritage-museum",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-quan-cong-temple",
+      "pageID": "city-hoian-place-quan-cong-temple",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-quan-thang-old-house",
+      "pageID": "city-hoian-place-quan-thang-old-house",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-reach-out-tea-house",
+      "pageID": "city-hoian-place-reach-out-tea-house",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-reaching-out-arts-crafts",
+      "pageID": "city-hoian-place-reaching-out-arts-crafts",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-rice-fields",
+      "pageID": "city-hoian-place-rice-fields",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-roastery",
+      "pageID": "city-hoian-place-roastery",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-rosies-cafe",
+      "pageID": "city-hoian-place-rosies-cafe",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-sa-huynh-culture-museum",
+      "pageID": "city-hoian-place-sa-huynh-culture-museum",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-silk-village",
+      "pageID": "city-hoian-place-silk-village",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-streets-restaurant-cafe",
+      "pageID": "city-hoian-place-streets-restaurant-cafe",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-tailor-fitting",
+      "pageID": "city-hoian-place-tailor-fitting",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-tan-ky-old-house",
+      "pageID": "city-hoian-place-tan-ky-old-house",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-thanh-ha",
+      "pageID": "city-hoian-place-thanh-ha",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-the-field",
+      "pageID": "city-hoian-place-the-field",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-thu-bon-river",
+      "pageID": "city-hoian-place-thu-bon-river",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-tra-nhieu-village",
+      "pageID": "city-hoian-place-tra-nhieu-village",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-tra-que",
+      "pageID": "city-hoian-place-tra-que",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-trade-ceramics-museum",
+      "pageID": "city-hoian-place-trade-ceramics-museum",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-traditional-art-performance-house",
+      "pageID": "city-hoian-place-traditional-art-performance-house",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-tran-phu-street",
+      "pageID": "city-hoian-place-tran-phu-street",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-trieu-chau-assembly-hall",
+      "pageID": "city-hoian-place-trieu-chau-assembly-hall",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-u-cafe",
+      "pageID": "city-hoian-place-u-cafe",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-vys-market",
+      "pageID": "city-hoian-place-vys-market",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-white-rose-dumplings",
+      "pageID": "city-hoian-place-white-rose-dumplings",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-white-rose-restaurant",
+      "pageID": "city-hoian-place-white-rose-restaurant",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-wonton",
+      "pageID": "city-hoian-place-wonton",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hoian-place-yaly-couture",
+      "pageID": "city-hoian-place-yaly-couture",
+      "cityID": "hoian",
+      "file": "hoian.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-an-cuu-market",
+      "pageID": "city-hue-place-an-cuu-market",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-an-dinh-palace",
+      "pageID": "city-hue-place-an-dinh-palace",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-an-hien-garden-house",
+      "pageID": "city-hue-place-an-hien-garden-house",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-ancient-hue-gallery-cuisine",
+      "pageID": "city-hue-place-ancient-hue-gallery-cuisine",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-ancient-hue-restaurant",
+      "pageID": "city-hue-place-ancient-hue-restaurant",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-ancient-space-restaurant",
+      "pageID": "city-hue-place-ancient-space-restaurant",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-ba-van-banh-loc",
+      "pageID": "city-hue-place-ba-van-banh-loc",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-bach-ma-national-park",
+      "pageID": "city-hue-place-bach-ma-national-park",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-banh-beo",
+      "pageID": "city-hue-place-banh-beo",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-banh-bot-loc",
+      "pageID": "city-hue-place-banh-bot-loc",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-banh-khoai",
+      "pageID": "city-hue-place-banh-khoai",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-banh-nam",
+      "pageID": "city-hue-place-banh-nam",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-bao-quoc-pagoda",
+      "pageID": "city-hue-place-bao-quoc-pagoda",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-bao-vinh-ancient-town",
+      "pageID": "city-hue-place-bao-vinh-ancient-town",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-ben-ngu-market",
+      "pageID": "city-hue-place-ben-ngu-market",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-ben-trang-cafe-bistro",
+      "pageID": "city-hue-place-ben-trang-cafe-bistro",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-bun-bo-city",
+      "pageID": "city-hue-place-bun-bo-city",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-bun-hen",
+      "pageID": "city-hue-place-bun-hen",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-bun-thit-nuong",
+      "pageID": "city-hue-place-bun-thit-nuong",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-che-hue",
+      "pageID": "city-hue-place-che-hue",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-chu-van-an-street",
+      "pageID": "city-hue-place-chu-van-an-street",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-com-am-phu",
+      "pageID": "city-hue-place-com-am-phu",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-com-hen",
+      "pageID": "city-hue-place-com-hen",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-cyclo-citadel-loop",
+      "pageID": "city-hue-place-cyclo-citadel-loop",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-dai-nam-restaurant",
+      "pageID": "city-hue-place-dai-nam-restaurant",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-de-po-cafe",
+      "pageID": "city-hue-place-de-po-cafe",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-diem-phung-thi-art-center",
+      "pageID": "city-hue-place-diem-phung-thi-art-center",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-dien-tho-palace",
+      "pageID": "city-hue-place-dien-tho-palace",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-dong-ba",
+      "pageID": "city-hue-place-dong-ba",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-dong-ba-bun-bo",
+      "pageID": "city-hue-place-dong-ba-bun-bo",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-dong-khanh-tomb",
+      "pageID": "city-hue-place-dong-khanh-tomb",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-duc-duc-tomb",
+      "pageID": "city-hue-place-duc-duc-tomb",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-duyet-thi-duong-theater",
+      "pageID": "city-hue-place-duyet-thi-duong-theater",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-flag-tower",
+      "pageID": "city-hue-place-flag-tower",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-forbidden-purple-city",
+      "pageID": "city-hue-place-forbidden-purple-city",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-gia-hoi",
+      "pageID": "city-hue-place-gia-hoi",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-gia-long-tomb",
+      "pageID": "city-hue-place-gia-long-tomb",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-hen-island",
+      "pageID": "city-hue-place-hen-island",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-hon-chen-temple",
+      "pageID": "city-hue-place-hon-chen-temple",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-huyen-tran-temple",
+      "pageID": "city-hue-place-huyen-tran-temple",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-imperial-city",
+      "pageID": "city-hue-place-imperial-city",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-incense-village-workshop",
+      "pageID": "city-hue-place-incense-village-workshop",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-khai-dinh-tomb",
+      "pageID": "city-hue-place-khai-dinh-tomb",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-khong-gian-hoai-co-coffee",
+      "pageID": "city-hue-place-khong-gian-hoai-co-coffee",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-kim-long",
+      "pageID": "city-hue-place-kim-long",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-kodo-cafe",
+      "pageID": "city-hue-place-kodo-cafe",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-lagoon-seafood-boat",
+      "pageID": "city-hue-place-lagoon-seafood-boat",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-lang-thang-coffee",
+      "pageID": "city-hue-place-lang-thang-coffee",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-lap-an-lagoon",
+      "pageID": "city-hue-place-lap-an-lagoon",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-le-ba-dang-art-center",
+      "pageID": "city-hue-place-le-ba-dang-art-center",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-le-ba-dang-memory-space",
+      "pageID": "city-hue-place-le-ba-dang-memory-space",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-le-loi-street",
+      "pageID": "city-hue-place-le-loi-street",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-les-jardins",
+      "pageID": "city-hue-place-les-jardins",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-lien-hoa-vegetarian",
+      "pageID": "city-hue-place-lien-hoa-vegetarian",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-long-an-palace",
+      "pageID": "city-hue-place-long-an-palace",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-mandarin-coffee-restaurant",
+      "pageID": "city-hue-place-mandarin-coffee-restaurant",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-me-xung",
+      "pageID": "city-hue-place-me-xung",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-minh-mang-tomb",
+      "pageID": "city-hue-place-minh-mang-tomb",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-museum-commissioned-porcelains",
+      "pageID": "city-hue-place-museum-commissioned-porcelains",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-nam-giao-esplanade",
+      "pageID": "city-hue-place-nam-giao-esplanade",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-ngo-mon-gate",
+      "pageID": "city-hue-place-ngo-mon-gate",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-ngu-binh-mountain",
+      "pageID": "city-hue-place-ngu-binh-mountain",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-nguyen-dinh-chieu-street",
+      "pageID": "city-hue-place-nguyen-dinh-chieu-street",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-nha-nhac-royal-court-music",
+      "pageID": "city-hue-place-nha-nhac-royal-court-music",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-night-market",
+      "pageID": "city-hue-place-night-market",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-nine-dynastic-urns",
+      "pageID": "city-hue-place-nine-dynastic-urns",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-northern-bus-station",
+      "pageID": "city-hue-place-northern-bus-station",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-perfume-river",
+      "pageID": "city-hue-place-perfume-river",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-perfume-river-dragon-boat",
+      "pageID": "city-hue-place-perfume-river-dragon-boat",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-pham-ngu-lao-street",
+      "pageID": "city-hue-place-pham-ngu-lao-street",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-phu-bai-airport",
+      "pageID": "city-hue-place-phu-bai-airport",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-phu-cam-church",
+      "pageID": "city-hue-place-phu-cam-church",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-phu-hau-market",
+      "pageID": "city-hue-place-phu-hau-market",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-railway-station",
+      "pageID": "city-hue-place-railway-station",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-royal-antiquities-museum",
+      "pageID": "city-hue-place-royal-antiquities-museum",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-royal-court-music-show",
+      "pageID": "city-hue-place-royal-court-music-show",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-ru-cha-mangrove",
+      "pageID": "city-hue-place-ru-cha-mangrove",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-song-huong-floating-restaurant",
+      "pageID": "city-hue-place-song-huong-floating-restaurant",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-songlab",
+      "pageID": "city-hue-place-songlab",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-southern-bus-station",
+      "pageID": "city-hue-place-southern-bus-station",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-tam-giang-lagoon",
+      "pageID": "city-hue-place-tam-giang-lagoon",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-tay-loc-market",
+      "pageID": "city-hue-place-tay-loc-market",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-thai-hoa-palace",
+      "pageID": "city-hue-place-thai-hoa-palace",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-thanh-cafe",
+      "pageID": "city-hue-place-thanh-cafe",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-thanh-toan-bridge",
+      "pageID": "city-hue-place-thanh-toan-bridge",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-the-mieu-temple",
+      "pageID": "city-hue-place-the-mieu-temple",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-thien-mu",
+      "pageID": "city-hue-place-thien-mu",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-thieu-tri-tomb",
+      "pageID": "city-hue-place-thieu-tri-tomb",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-thuy-bieu-village",
+      "pageID": "city-hue-place-thuy-bieu-village",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-thuy-xuan-incense-village",
+      "pageID": "city-hue-place-thuy-xuan-incense-village",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-tinh-gia-vien",
+      "pageID": "city-hue-place-tinh-gia-vien",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-toa-kham-boat-station",
+      "pageID": "city-hue-place-toa-kham-boat-station",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-truong-tien",
+      "pageID": "city-hue-place-truong-tien",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-truong-tien-plaza",
+      "pageID": "city-hue-place-truong-tien-plaza",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-tu-duc-tomb",
+      "pageID": "city-hue-place-tu-duc-tomb",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-tu-hieu-pagoda",
+      "pageID": "city-hue-place-tu-hieu-pagoda",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-vong-canh-hill",
+      "pageID": "city-hue-place-vong-canh-hill",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-vy-da",
+      "pageID": "city-hue-place-vy-da",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-walking-street",
+      "pageID": "city-hue-place-walking-street",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    },
+    {
+      "id": "viet-family-city-hue-place-y-thao-garden",
+      "pageID": "city-hue-place-y-thao-garden",
+      "cityID": "hue",
+      "file": "hue.json",
+      "status": "FINAL_PASS"
+    }
+  ]
+}

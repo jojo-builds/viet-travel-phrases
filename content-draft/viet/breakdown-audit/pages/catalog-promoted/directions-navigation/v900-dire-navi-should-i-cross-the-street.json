@@ -20,34 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có nên",
+      "english": "should I",
+      "keepTogetherReason": "should-I question"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "băng qua đường",
+      "english": "cross the street",
+      "keepTogetherReason": "cross-street phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "nên",
-      "english": "should"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "băng qua",
-      "english": "cross",
-      "keepTogetherReason": "compound direction verb"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "đường",
-      "english": "street"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

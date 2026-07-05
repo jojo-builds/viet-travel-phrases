@@ -54,6 +54,7 @@ node native-ios/scripts/generate-viet-catalog.js
 node native-ios/scripts/generate-authored-tier-one-pages.js
 node native-ios/scripts/sync-viet-audio.js
 node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/guard-native-chrome.js
 node scripts/guard-native-only.js
 git diff --check
 xcodebuild -project native-ios/SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' build CODE_SIGNING_ALLOWED=NO
@@ -66,6 +67,7 @@ For focused app changes, also run the relevant Xcode test target or UI smoke tes
 - Native generation commands rebuild and validate the bundled resources used by the SwiftUI app.
 - Native Xcode build/test output is the gate for app behavior.
 - Visible UI changes need native simulator screenshots or physical iPhone proof, not web previews.
+- `node native-ios/scripts/guard-native-chrome.js` must pass after native chrome changes; it blocks the recurring opaque top-white shield regression.
 - `node scripts/guard-native-only.js` must pass after workflow or repo-structure changes.
 
 ## Branch And Device Policy

@@ -7,7 +7,7 @@
   "title": "Cái này có thịt trong đó.",
   "englishTitle": "This has meat in it.",
   "pronunciation": "Cai nay co thit trong do",
-  "summary": "This has meat in it.",
+  "summary": "For pointing out meat in a dish when a vegetarian, allergy, or dietary limit changes the order.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Cái này có thịt trong đó. is a practical food or drink phrase for keeping one travel detail clear. Use it when This has meat in it is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use this after spotting meat in the dish, tray, sauce, or filling.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Cái này có thịt trong đó.. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point to the exact piece or menu photo while you say it. The issue is the meat, not the whole meal.",
       "phrases": [
         {
           "id": "food-premium-has-meat-in-it",
@@ -37,142 +40,164 @@
           "detailPageID": null,
           "audioKey": "food-premium-has-meat-in-it"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear Cái này + có thịt trong as the reference point, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Cái này",
-          "english": "this one",
-          "audioKey": null
+          "vietnamese": "Cái",
+          "english": "item / classifier",
+          "audioKey": "breakdown-repair-3-first"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "có thịt trong",
+          "vietnamese": "này",
+          "english": "this",
+          "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "có",
+          "english": "have / there is",
+          "audioKey": "breakdown-food-5-first"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "thịt",
           "english": "meat",
           "audioKey": null
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "đó",
-          "english": "that one / that",
+          "id": "chunk-5",
+          "vietnamese": "trong",
+          "english": "inside / in",
+          "audioKey": "breakdown-v500-dire-navi-is-it-inside-the-mall-piece-4"
+        },
+        {
+          "id": "chunk-6",
+          "vietnamese": "đó.",
+          "english": "that",
           "audioKey": null
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Cái này có thịt trong đó.",
-          "english": "This has meat in it",
-          "audioKey": null
+          "english": "This has meat in it.",
+          "audioKey": "food-premium-has-meat-in-it"
         }
-      ]
-    },
-    {
-      "id": "natural-variants",
-      "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from This has meat in it. to another food or drink need.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-1",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-2",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-3",
-          "audioKey": "coffee-3"
-        }
-      ]
+      ],
+      "phrases": [],
+      "presentation": "breakdown-strip"
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real food or drink exchange when this has meat in it is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best before eating or paying, while staff can still explain, remake, or suggest another dish.",
+      "phrases": [
+        {
+          "id": "food-premium-no-meat",
+          "vietnamese": "Làm ơn đừng có thịt.",
+          "english": "No meat, please.",
+          "pronunciation": "Lam on dung co thit",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-food-premium-no-meat",
+          "audioKey": "food-premium-no-meat"
+        },
+        {
+          "id": "food-premium-without-this-ingredient",
+          "vietnamese": "Bạn có thể làm món này không có nguyên liệu này được không?",
+          "english": "Can you make it without this ingredient?",
+          "pronunciation": "Ban co the lam mon nay khong co nguyen lieu nay duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-food-premium-without-this-ingredient",
+          "audioKey": null
+        },
+        {
+          "id": "food-premium-which-dish-safe",
+          "vietnamese": "Món ăn nào an toàn nhất cho người bị dị ứng này?",
+          "english": "Which dish is safest for this allergy?",
+          "pronunciation": "Mon an nao an toan nhat cho nguoi bi di ung nay",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-food-premium-which-dish-safe",
+          "audioKey": "food-premium-which-dish-safe"
+        },
+        {
+          "id": "v900-food-drin-is-this-pork-beef-or-chicken",
+          "vietnamese": "Đây là thịt lợn, thịt bò hay thịt gà?",
+          "english": "Is this pork, beef, or chicken?",
+          "pronunciation": "Day la thit lon thit bo hay thit ga",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-is-this-pork-beef-or-chicken",
+          "audioKey": "v900-food-drin-is-this-pork-beef-or-chicken"
+        },
+        {
+          "id": "v500-food-drin-does-this-contain-shrimp",
+          "vietnamese": "Cái này có chứa tôm không?",
+          "english": "Does this contain shrimp?",
+          "pronunciation": "Cai nay co chua tom khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v500-food-drin-does-this-contain-shrimp",
+          "audioKey": "v500-food-drin-does-this-contain-shrimp"
+        }
+      ],
+      "presentation": "plain-text",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Menus and photos do a lot of work. Point to the item while you say the phrase so the reply can stay short."
+      "body": "Meat can hide in broth, filling, or garnish. Ask again if the answer only covers the visible pieces.",
+      "phrases": [],
+      "presentation": "tip-callout",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Cái này có thịt trong đó..",
+      "body": "Move next to no-meat, without-this-ingredient, fish-sauce allergy, or shellfish allergy cards if safety matters.",
       "phrases": [
         {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
+          "id": "v900-food-drin-does-this-contain-fish-sauce",
+          "vietnamese": "Cái này có nước mắm không?",
+          "english": "Does this contain fish sauce?",
+          "pronunciation": "Cai nay co nuoc mam khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-4",
-          "audioKey": "coffee-4"
+          "detailPageID": "viet-phrase-v900-food-drin-does-this-contain-fish-sauce",
+          "audioKey": "v900-food-drin-does-this-contain-fish-sauce"
         },
         {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
+          "id": "v900-food-drin-can-i-order-this-without-meat",
+          "vietnamese": "Tôi có thể gọi món này mà không có thịt được không?",
+          "english": "Can I order this without meat?",
+          "pronunciation": "Toi co the goi mon nay ma khong co thit duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-5",
-          "audioKey": "coffee-5"
-        },
-        {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-6",
-          "audioKey": "coffee-6"
-        },
-        {
-          "id": "coffee-7",
-          "vietnamese": "Tính tiền giúp tôi",
-          "english": "Please let me pay",
-          "pronunciation": "ting tyen zoop toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-coffee-7",
-          "audioKey": "coffee-7"
-        },
-        {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-phrase-food-need-table",
-          "audioKey": "food-need-table"
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-order-this-without-meat",
+          "audioKey": "v900-food-drin-can-i-order-this-without-meat"
         }
-      ]
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "natural-variants",
+      "title": "Useful nearby phrases",
+      "body": "No-meat and without-this-ingredient cards are stronger before ordering; this line is for what is already in front of you.",
+      "phrases": [],
+      "presentation": "plain-text",
+      "breakdown": []
     }
   ],
   "examples": [

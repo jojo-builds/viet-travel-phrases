@@ -7,7 +7,7 @@
   "title": "Hãy gọi cảnh sát",
   "englishTitle": "Please call the police",
   "pronunciation": "Hay goi canh sat",
-  "summary": "Please call the police",
+  "summary": "For asking someone nearby to call the police in a real safety, theft, harassment, or threat situation.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy gọi cảnh sát is a practical safety or urgent-help phrase for keeping one travel detail clear. Use it when call the police is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it when the situation needs police help now. Keep the location or photo visible if you can."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hãy gọi cảnh sát. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Say the line clearly, then show the location, stolen item, photo, passport copy, or person involved.",
       "phrases": [
         {
           "id": "v500-emer-safe-please-call-the-police",
@@ -42,32 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hãy is a direct please-do opener; gọi means call; cảnh sát means police.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy gọi cảnh",
-          "english": "call",
-          "audioKey": null
+          "vietnamese": "Hãy",
+          "english": "please do",
+          "keepTogetherReason": "direct request opener"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "sát",
-          "english": "the police",
-          "audioKey": null
+          "vietnamese": "gọi",
+          "english": "call",
+          "keepTogetherReason": "call verb"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "cảnh sát",
+          "english": "police",
+          "keepTogetherReason": "police noun"
+        },
+        {
+          "id": "full",
           "vietnamese": "Hãy gọi cảnh sát",
           "english": "Please call the police",
-          "audioKey": null
+          "audioKey": "v500-emer-safe-please-call-the-police"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please call the police to another safety or urgent-help need.",
+      "body": "Police, ambulance, and passport cards cover the urgent help choices around this request.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -104,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real safety or urgent-help exchange when call the police is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotel desks, shops, stations, police counters, and street help moments when the problem is active or serious."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "Keep the request short. If you are unsafe, move toward staff, a counter, or a public place while asking."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hãy gọi cảnh sát.",
+      "body": "Move to unsafe, emergency, help, hospital, or stolen-bag cards if the helper needs the situation named.",
       "phrases": [
         {
           "id": "emergency-4",

@@ -7,7 +7,7 @@
   "title": "Tôi có thể đi bộ tới đó được không?",
   "englishTitle": "Can I walk there?",
   "pronunciation": "Toi co the di bo toi do duoc khong",
-  "summary": "Can I walk there?",
+  "summary": "For checking whether a walk is realistic before you leave the curb, station, beach road, or old-town lane.",
   "iconName": "location.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể đi bộ tới đó được không? is for asking permission before you act. It is useful when walk there depends on local rules, staff approval, or the right way to use a space or service."
+      "body": "The map may look close, but heat, traffic, bridges, and missing sidewalks can change the answer."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có thể đi bộ tới đó được không? once, then make the task visible with your map, address, ride screen, sign, or nearby landmark. The phrase is doing one job: getting a clear answer about walk there.",
+      "body": "Show the map or address while you ask. A local answer may be about the safer route, not just distance.",
       "phrases": [
         {
           "id": "v500-dire-navi-can-i-walk-there",
@@ -42,44 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi có thể asks can I; đi bộ means walk; tới đó means there; được không asks if it is possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
-          "audioKey": null
+          "vietnamese": "Tôi có thể",
+          "english": "can I",
+          "keepTogetherReason": "can-I question frame"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể đi bộ",
-          "english": "go / move",
-          "audioKey": null
+          "vietnamese": "đi bộ",
+          "english": "walk",
+          "keepTogetherReason": "walk phrase"
         },
         {
           "id": "chunk-3",
           "vietnamese": "tới đó",
-          "english": "that one / that",
-          "audioKey": null
+          "english": "there",
+          "keepTogetherReason": "destination phrase"
         },
         {
           "id": "chunk-4",
-          "vietnamese": "được không",
+          "vietnamese": "được không?",
           "english": "is it possible?",
-          "audioKey": null
+          "keepTogetherReason": "polite yes-no ending"
         },
         {
-          "id": "chunk-5",
+          "id": "full",
           "vietnamese": "Tôi có thể đi bộ tới đó được không?",
-          "english": "Can I walk there",
-          "audioKey": null
+          "english": "Can I walk there?",
+          "audioKey": "v500-dire-navi-can-i-walk-there"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can I walk there? to another directions need.",
+      "body": "Excuse-me, how-to-get-there, near-here, and walking-time phrases help if the answer turns into directions.",
       "phrases": [
         {
           "id": "directions-1",
@@ -116,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real directions exchange when walk there is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+      "body": "Good before walking between markets, bridges, beach roads, stations, hotels, and old-town lanes."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "A hesitant answer is travel advice. Ask for a pickup point or ride option if the route sounds rough."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể đi bộ tới đó được không?.",
+      "body": "If walking is realistic, the next question is usually a first turn or a safe pickup point.",
       "phrases": [
         {
           "id": "directions-4",

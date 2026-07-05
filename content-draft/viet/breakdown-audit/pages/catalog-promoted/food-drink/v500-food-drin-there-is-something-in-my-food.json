@@ -20,39 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Có",
-      "english": "have / there is"
+      "vietnamese": "Có thứ gì đó",
+      "english": "there is something",
+      "keepTogetherReason": "there-is-something phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "thứ",
-      "english": "thing"
+      "vietnamese": "trong thức ăn",
+      "english": "in the food",
+      "keepTogetherReason": "in-the-food phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "gì",
-      "english": "what"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "đó",
-      "english": "that"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "trong",
-      "english": "inside / in"
-    },
-    {
-      "vietnamese": "thức ăn",
-      "english": "food",
-      "keepTogetherReason": "compound food noun"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "của tôi",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
+      "english": "my",
+      "keepTogetherReason": "my/mine phrase"
     },
     {
       "id": "full",

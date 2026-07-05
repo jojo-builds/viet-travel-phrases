@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-hote-acco-can-i-have-more-drinking-water",
-  "phraseText": "Tôi có thể uống thêm nước được không?",
+  "phraseText": "Cho tôi xin thêm nước uống được không?",
   "englishTitle": "Can I have more drinking water?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -15,46 +15,36 @@
     ]
   },
   "notes": [
-    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources.",
+    "Phrase-copy semantic repair; reviewed tokens updated and audio marked for regeneration."
   ],
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Cho tôi xin",
+      "english": "may I have / please give me",
+      "keepTogetherReason": "polite request opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "thêm nước uống",
+      "english": "more drinking water",
+      "keepTogetherReason": "drinking-water noun phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "uống",
-      "english": "drink"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "thêm",
-      "english": "more / add"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "nước",
-      "english": "water"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "được không?",
-      "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "english": "is that okay?",
+      "keepTogetherReason": "question ending"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi có thể uống thêm nước được không?",
+      "vietnamese": "Cho tôi xin thêm nước uống được không?",
       "english": "Can I have more drinking water?",
-      "audioKey": "v900-hote-acco-can-i-have-more-drinking-water"
+      "audioKey": null
     }
-  ]
+  ],
+  "title": "Cho tôi xin thêm nước uống được không?",
+  "summary": "Can I have more drinking water",
+  "pronunciation": "Cho toi xin them nuoc uong duoc khong"
 }

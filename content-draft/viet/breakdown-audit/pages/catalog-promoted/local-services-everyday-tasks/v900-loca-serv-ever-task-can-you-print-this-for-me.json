@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-loca-serv-ever-task-can-you-print-this-for-me",
-  "phraseText": "Bạn có thể in cái này cho tôi được không?",
+  "phraseText": "Anh/chị in cái này giúp tôi được không?",
   "englishTitle": "Can you print this for me?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,51 +20,33 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Anh/chị",
+      "english": "you",
+      "keepTogetherReason": "polite address"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "in cái này",
+      "english": "print this",
+      "keepTogetherReason": "print-this phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "in",
-      "english": "print"
+      "vietnamese": "giúp tôi",
+      "english": "help me / for me",
+      "keepTogetherReason": "help-me phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "cái",
-      "english": "item / classifier"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "tôi",
-      "english": "me"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",
-      "vietnamese": "Bạn có thể in cái này cho tôi được không?",
+      "vietnamese": "Anh/chị in cái này giúp tôi được không?",
       "english": "Can you print this for me?",
-      "audioKey": "v900-loca-serv-ever-task-can-you-print-this-for-me"
+      "audioKey": null
     }
   ]
 }

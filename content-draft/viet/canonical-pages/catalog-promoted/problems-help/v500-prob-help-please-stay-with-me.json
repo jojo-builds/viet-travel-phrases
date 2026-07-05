@@ -7,7 +7,7 @@
   "title": "Xin hãy ở lại với tôi",
   "englishTitle": "Please stay with me",
   "pronunciation": "Xin hay o lai voi toi",
-  "summary": "Please stay with me",
+  "summary": "For asking a trusted person or staffer not to leave while you sort out a problem.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Xin hãy ở lại với tôi is a practical problem-solving phrase for keeping one travel detail clear. Use it when stay with me is the next detail to solve and a short answer would move the exchange forward."
+      "body": "This is for a moment when steady help beside you matters more than a phone call or quick direction.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Xin hãy ở lại với tôi. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Say it to someone already helping you, then show the receipt, address, room number, ride screen, or person involved.",
       "phrases": [
         {
           "id": "v500-prob-help-please-stay-with-me",
@@ -42,32 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Xin hãy means please; ở lại với tôi means stay with me.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Xin hãy ở",
-          "english": "please / ask",
-          "audioKey": null
+          "vietnamese": "Xin hãy",
+          "english": "please",
+          "keepTogetherReason": "polite request frame"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "lại với tôi",
+          "vietnamese": "ở lại với tôi",
           "english": "stay with me",
-          "audioKey": null
+          "keepTogetherReason": "stay-with-me phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Xin hãy ở lại với tôi",
           "english": "Please stay with me",
-          "audioKey": null
+          "audioKey": "v500-prob-help-please-stay-with-me"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please stay with me to another problem-solving need.",
+      "body": "Lost and left-something-behind cards cover nearby help situations.",
       "phrases": [
         {
           "id": "problems-1",
@@ -88,33 +90,25 @@
           "tintName": "orange",
           "detailPageID": "viet-phrase-problems-4",
           "audioKey": "problems-4"
-        },
-        {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real problem-solving exchange when stay with me is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotels, clinics, stations, shops, and street help moments when you need another person to stay present.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Name one problem at a time. If the answer is fast, switch to a repeat or write-it-down phrase."
+      "body": "If the situation is unsafe, move toward staff, light, or a public desk while asking them to stay.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Xin hãy ở lại với tôi.",
+      "body": "Need-help, call-hotel, manager, double-charge, and report cards cover the practical help path.",
       "phrases": [
         {
           "id": "help-need-help-direct",

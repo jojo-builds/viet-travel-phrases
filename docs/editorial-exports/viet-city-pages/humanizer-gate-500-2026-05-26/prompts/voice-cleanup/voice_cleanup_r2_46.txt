@@ -1,0 +1,293 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_46",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_46",
+  "chunks": [
+    {
+      "chunkFile": "hoian_001_025_humanized.json",
+      "cityID": "hoian",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-hoian-place-cam-thanh",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-cam-thanh-basket-boat",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-cam-thanh-coconut-village",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-hoian-place-cam-thanh-coconut-village",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-cantonese-assembly-hall",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-cao-lau-city",
+          "message": "banned visible fragment: gives hoi an a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "001-025",
+          "message": "repeated exact heading 4x: neighborhood name to hear"
+        },
+        {
+          "id": "001-025",
+          "message": "repeated formula heading 11x: map/name utility heading"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hoian-place-cam-thanh",
+          "summary": "Cam Thanh is Hoi An’s water-coconut neighborhood, where palm-fringed lanes, coconut groves, basket-boat context, and village water shift the day.",
+          "context": "Cam Thanh matters because it links neighborhoods to coconut waterways, not just cafes and hotel edges. It gives Hoi An a greener, wetter frame.",
+          "tip": "Cẩm Thanh is the name to recognize. It points toward water-coconut groves, basket boats, and the village side of Hoi An.",
+          "rationale": "Cam Thanh gives Hoi An a neighborhood rhythm built from palms, waterways, lanes, village life, and the basket-boat context around it.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Water-Coconut Hoi An",
+              "body": "Cam Thanh is the neighborhood name behind Hoi An’s coconut-waterway image: palms, village lanes, basket-boat context, and green edges."
+            },
+            {
+              "id": "place-brief",
+              "title": "Palm Lanes Beyond The Core",
+              "body": "Expect palm-fringed lanes near water coconut groves, especially away from the dense old streets. The area feels tied to water more than storefronts."
+            },
+            {
+              "id": "quick-say",
+              "title": "Neighborhood Name To Hear",
+              "body": "Say Cẩm Thanh for Cam Thanh. The name helps when coconut groves, basket boats, or village routes come up in directions."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Green Edges Shape The Day",
+              "body": "Cam Thanh fits a day that needs shade, water, and a slower village edge. It is not the same reset as the beach."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Basket-Boat Context Lives Here",
+              "body": "Many visitors know the round boats first, but Cam Thanh is the wider neighborhood setting around that coconut-waterway experience."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Different From A Beach Break",
+              "body": "Cam Thanh gives Hoi An water and palms without becoming a beach stop. Think channels, groves, lanes, and village routes."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cam-thanh-basket-boat",
+          "summary": "Cam Thanh basket boat is the round-boat moment in Hoi An’s coconut channels, where water travel becomes the place rather than transport.",
+          "context": "The basket boat matters because the ride is tied to Cam Thanh’s coconut waterways. The useful image is round boat, narrow channel, palms, and water.",
+          "tip": "Thuyền thúng Cẩm Thanh is the name to recognize. Thuyền thúng means basket boat, which helps separate it from regular boats.",
+          "rationale": "Cam Thanh basket boat gives Hoi An a specific water experience: round boat, palm channel, boarding moment, and slower movement through coconut groves.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Round Boat, Narrow Water",
+              "body": "Cam Thanh basket boat is a specific Hoi An water moment: a round boat moving through coconut-palm channels, not just transport from one bank to another."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Ride Is The Place",
+              "body": "Expect the boat shape, palm shade, narrow water, and boarding point to be the experience. The movement matters more than distance."
+            },
+            {
+              "id": "quick-say",
+              "title": "Boat Name To Hear",
+              "body": "Say Thuyền thúng Cẩm Thanh for Cam Thanh basket boat. Thuyền thúng means basket boat, so the name is tied to the round shape."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Motion Can Be Part Of It",
+              "body": "The round boat may feel playful, slow, or wobbly depending on the ride. Keep expectations flexible and tied to water, not speed."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Weather And Operator Details Matter",
+              "body": "Weather, pickup, and route details should be checked close to the ride. The durable part is the Cam Thanh coconut-channel setting."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Cam Thanh Sets The Scene",
+              "body": "The basket boat makes most sense inside Cam Thanh’s water-coconut landscape. Without that setting, it becomes only a novelty shape."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cam-thanh-coconut-village",
+          "summary": "Cam Thanh Coconut Village gives Hoi An a water-village frame: coconut palms, small docks, round boats, village routes, and slower daily rhythm.",
+          "context": "The village matters because it connects the basket-boat image to a wider Cam Thanh setting. Palms, docks, waterways, and local rhythm hold it together.",
+          "tip": "Làng dừa Cẩm Thanh is the name to recognize. Làng dừa means coconut village, which points toward palms, waterways, and the Cam Thanh area.",
+          "rationale": "Cam Thanh Coconut Village gives Hoi An a slower water edge: palm channels, round boats, small docks, village routes, and coconut-grove context.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Village Behind The Boat Ride",
+              "body": "Cam Thanh Coconut Village gives the round-boat image a wider setting: palms, waterways, small docks, village routes, and slower daily rhythm."
+            },
+            {
+              "id": "place-brief",
+              "title": "Palms, Docks, Round Boats",
+              "body": "Expect coconut village waterways with palms, a small dock feel, and round boats nearby. The scene is about water and village pace."
+            },
+            {
+              "id": "quick-say",
+              "title": "Village Name To Hear",
+              "body": "Say Làng dừa Cẩm Thanh for Cam Thanh Coconut Village. Làng dừa means coconut village, which keeps the name tied to palms and waterways."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Waterways Give It Shape",
+              "body": "The village works when the plan is simple: water, palms, a boat context, and a slower route beyond the old-town streets."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Not Just A Photo Stop",
+              "body": "The palms and boats are photogenic, but the stronger frame is the coconut-waterway village around them. Keep the setting bigger than the picture."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Cam Thanh Name Matters",
+              "body": "Cam Thanh is part of the name for a reason. It separates this coconut-waterway area from beaches, old-town lanes, and other villages."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cantonese-assembly-hall",
+          "summary": "Cantonese Assembly Hall makes Hoi An’s trading history physical through a colorful Chinese hall gate, tiled roof, courtyards, stone paths, and ceremonial space.",
+          "context": "The hall matters because architecture does the explaining. Gates, courtyards, old walls, and tiled roofs turn heritage from idea into a short walk.",
+          "tip": "Hội quán Quảng Đông is the name to recognize. Hội quán points to an assembly hall, and Quảng Đông means Cantonese.",
+          "rationale": "Cantonese Assembly Hall gives Hoi An a built-memory stop: gate, courtyard, tiled roof, stone path, and the Chinese community layer of the old town.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "History You Can Stand Inside",
+              "body": "Cantonese Assembly Hall makes history physical: a colorful gate, tiled roof, courtyards, stone paths, and ceremonial space inside the old town."
+            },
+            {
+              "id": "place-brief",
+              "title": "Gate, Courtyard, Roof",
+              "body": "Expect a Chinese assembly hall setting with lanterns, tiled rooflines, old walls, and spaces that slow you down before the next street."
+            },
+            {
+              "id": "quick-say",
+              "title": "Hall Name To Hear",
+              "body": "Say Hội quán Quảng Đông for Cantonese Assembly Hall. Hội quán points to an assembly hall, and Quảng Đông means Cantonese."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Threshold Before The Courtyard",
+              "body": "The hall rewards a slower entrance. Notice the gate and roof first, then let the courtyard and ceremonial space set the pace."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Short Visit, Real Detail",
+              "body": "You do not need to stretch the stop. A brief visit can still hold detail if you look at gates, stone paths, roofs, and altar space."
+            },
+            {
+              "id": "good-to-know",
+              "title": "One Of The Old-Town Halls",
+              "body": "The assembly hall name helps separate this stop from houses, temples, shops, and other heritage interiors in the Ancient Town."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-cao-lau-city",
+          "summary": "Cao lau is the Hoi An noodle bowl to know: thick chewy noodles, pork, greens, herbs, crisp crackers, and just enough sauce to coat it.",
+          "context": "Cao lau matters because it is tied closely to Hoi An’s food identity. It is not a soup; texture, herbs, and the dry-sauced bowl make it distinct.",
+          "tip": "Cao lầu is the phrase to say for the dish. You do not need to add Hoi An every time because the association is already strong.",
+          "rationale": "Cao lau gives Hoi An a food memory that is specific, easy to picture, and clearly different from pho or bun.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Hoi An In One Bowl",
+              "body": "Cao lau tastes like Hoi An specifically: thick chewy noodles, pork, herbs, greens, crisp crackers, and a dry sauce instead of a big broth."
+            },
+            {
+              "id": "place-brief",
+              "title": "Chewy, Dry, Herb-Heavy",
+              "body": "Expect a compact bowl with texture doing the work: chewy noodles, fresh herbs, savory pork, crunchy pieces, and sauce that clings."
+            },
+            {
+              "id": "quick-say",
+              "title": "Cao Lầu Is The Bowl",
+              "body": "Say Cao lầu for cao lau. The phrase is short enough to use on menus, at counters, or when asking what another table ordered."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Lunch Between Walks",
+              "body": "Cao lau fits well between old-town walks because it feels filling without becoming a long meal. It is a bowl to sit with, not rush past."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Not A Soup Bowl",
+              "body": "Cao lau usually has very little broth. If you expect soup, the dry-sauced texture can surprise you."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Tone Marks Help",
+              "body": "Menus may spell it with tone marks as Cao lầu. Recognizing the words helps even when restaurant names shift."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

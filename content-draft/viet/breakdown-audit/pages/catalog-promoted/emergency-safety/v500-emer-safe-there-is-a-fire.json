@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v500-emer-safe-there-is-a-fire",
-  "phraseText": "Có một ngọn lửa",
+  "phraseText": "Có cháy!",
   "englishTitle": "There is a fire",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -21,28 +21,18 @@
     {
       "id": "chunk-1",
       "vietnamese": "Có",
-      "english": "have / there is"
+      "english": "there is"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "ngọn",
-      "english": "flame / classifier"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "lửa",
-      "english": "fire"
+      "vietnamese": "cháy!",
+      "english": "fire / burning"
     },
     {
       "id": "full",
-      "vietnamese": "Có một ngọn lửa",
+      "vietnamese": "Có cháy!",
       "english": "There is a fire",
-      "audioKey": "v500-emer-safe-there-is-a-fire"
+      "audioKey": null
     }
   ]
 }

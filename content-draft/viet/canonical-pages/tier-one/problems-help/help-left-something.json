@@ -7,7 +7,7 @@
   "title": "Tôi quên đồ rồi",
   "englishTitle": "I left something behind",
   "pronunciation": "toy gwen doh roy",
-  "summary": "Tôi quên đồ rồi means “I left something behind”.",
+  "summary": "This is a common hotel, taxi, and café recovery phrase.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -18,13 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Tôi quên đồ rồi when you need \"I left something behind\". Say this if you forgot an item in a car, room, or café. This is a common hotel, taxi, and café recovery phrase. Listen for a question about the last place, a room or ride check, or a staff handoff; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
+      "body": "Say this if you forgot an item in a car, room, or café.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
+      "body": "Hear Tôi + quên as the anchor, then compare it with the full phrase.",
       "breakdown": [
         {
           "id": "problems-4-piece-1",
@@ -57,12 +59,13 @@
           "audioKey": "problems-4"
         }
       ],
-      "presentation": "breakdown-strip"
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Tôi quên đồ rồi as your first sentence for \"I left something behind\". Say this if you forgot an item in a car, room, or café. Pause after the phrase and listen for a question about the last place, a room or ride check, or a staff handoff. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
+      "body": "Say Tôi quên đồ rồi clearly; show the receipt, room number, ride detail, photo, or last location only if the reply needs detail.",
       "phrases": [
         {
           "id": "problems-4",
@@ -75,18 +78,21 @@
           "audioKey": "problems-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Help phrases work when they name the problem and the next person or action you need. For \"I left something behind\", Tôi quên đồ rồi makes the next step easier to answer. Have the receipt, room number, ride detail, or last location ready if they ask.",
-      "presentation": "plain-text"
+      "body": "Help phrases work when they name the problem and the next person or action you need. Keep the receipt, room number, last location, or contact visible.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Problems & Help, the reply often comes as a question about the last place, a room or ride check, or a staff handoff. Say Tôi quên đồ rồi once, pause, and watch for the reply. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
+      "body": "Watch for a question about the last place, a room or ride check, or staff handoff. Keep a receipt, room number, ride detail, or last location visible when it helps staff trace the problem.",
       "phrases": [
         {
           "id": "problems-1",
@@ -119,12 +125,13 @@
           "audioKey": "help-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Say this if you forgot an item in a car, room, or café. It fits lost items, help, managers, and recovery moments, especially when the next step is a question about the last place, a room or ride check, or a staff handoff. Have the receipt, room number, ride detail, or last location ready if they ask.",
+      "body": "Say this if you forgot an item in a car, room, or café. Watch for a question about the last place, a room or ride check, or staff handoff.",
       "phrases": [
         {
           "id": "help-3",
@@ -147,13 +154,16 @@
           "audioKey": "v500-prob-help-i-need-help-now"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
       "body": "If you feel unsafe or stuck, move to a stronger help phrase instead of trying to sound perfectly polite.",
-      "presentation": "tip-callout"
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "local-tip",
@@ -171,12 +181,13 @@
           "audioKey": "problems-4"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
+      "body": "At a desk or counter, or during a help moment, the next useful language is usually I’m lost, I need help, and please call the hotel for me.",
       "phrases": [
         {
           "id": "problems-1",
@@ -229,7 +240,8 @@
           "audioKey": "v500-prob-help-i-need-help-now"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

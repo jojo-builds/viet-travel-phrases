@@ -7,7 +7,7 @@
   "title": "Tôi hiểu một chút",
   "englishTitle": "I understand a little",
   "pronunciation": "Toi hieu mot chut",
-  "summary": "I understand a little",
+  "summary": "For letting someone know you followed part of the conversation but still need patience.",
   "iconName": "questionmark.bubble.fill",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi hiểu một chút is a practical understanding check phrase for keeping one travel detail clear. Use it when I understand a little is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Say it when you caught the basic idea but missed the exact number, word, or next step."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi hiểu một chút. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Follow it with a repeat, write-it-down, or point-to-it request if you need one more clue.",
       "phrases": [
         {
           "id": "v500-unde-repa-i-understand-a-little",
@@ -42,20 +42,22 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi hiểu means I understand; một chút means a little.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi hiểu",
-          "english": "I understand"
+          "english": "I understand",
+          "keepTogetherReason": "I-understand phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "một chút",
-          "english": "a little"
+          "english": "a little",
+          "keepTogetherReason": "a-little phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi hiểu một chút",
           "english": "I understand a little",
           "audioKey": "v500-unde-repa-i-understand-a-little"
@@ -65,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I understand a little to another understanding check need.",
+      "body": "I-don't-understand and slower-speech phrases help when you need the whole answer again.",
       "phrases": [
         {
           "id": "problems-2",
@@ -102,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real understanding check exchange when i understand a little is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good in taxis, markets, hotels, pharmacies, ticket counters, and friendly small talk."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "These phrases keep the exchange friendly when Vietnamese moves too fast. Ask for one specific next step: repeat, write, show, or point."
+      "body": "It keeps the tone warm without pretending you understood everything."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi hiểu một chút.",
+      "body": "Repeat, write-it-down, meaning, which-one, and show-me phrases keep the conversation moving.",
       "phrases": [
         {
           "id": "repair-1",

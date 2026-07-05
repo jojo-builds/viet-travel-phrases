@@ -20,34 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi đã mắc lỗi",
+      "english": "I made a mistake",
+      "keepTogetherReason": "made-a-mistake phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đã",
-      "english": "already / did"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "mắc",
-      "english": "expensive / stuck"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "lỗi",
-      "english": "mistake / fault"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "trong",
-      "english": "inside / in"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "biểu mẫu",
-      "english": "form",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "trong biểu mẫu",
+      "english": "on the form",
+      "keepTogetherReason": "on-the-form phrase"
     },
     {
       "id": "full",

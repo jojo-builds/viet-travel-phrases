@@ -592,6 +592,24 @@ enum BrowseSearchDestinations {
             sampleQuery: "price"
         ),
         BrowseDestination(
+            id: "everyday-services",
+            title: "Everyday Needs",
+            subtitle: "Bathroom, phone, laundry, water, rain",
+            categoryIDs: ["local-services-everyday-tasks", "bathroom-personal-needs", "phone-internet-power"],
+            symbolName: "wrench.and.screwdriver.fill",
+            tintName: .teal,
+            sampleQuery: "where is the bathroom"
+        ),
+        BrowseDestination(
+            id: "tours-sights",
+            title: "Tours & Sights",
+            subtitle: "Tickets, entrances, guides, photos",
+            categoryIDs: ["sightseeing-activities", "time-dates-booking", "directions-navigation"],
+            symbolName: "ticket.fill",
+            tintName: .orange,
+            sampleQuery: "where can I buy tickets"
+        ),
+        BrowseDestination(
             id: "emergency",
             title: "Emergency",
             subtitle: "Help, health, safety, problems",
@@ -864,16 +882,29 @@ enum BrowseSearchDestinations {
     }
 
     static func searchResults(for query: String, limit: Int) -> [BrowseSearchPhraseItem] {
+        guard limit > 0 else {
+            return []
+        }
+
         let rawResults = PhraseSearchIndex.search(query, limit: max(limit * 3, limit))
         let allowsDerivedPlacePhrases = allowsDerivedPlacePhraseSearchResults(for: query)
         let filteredResults = rawResults.filter { result in
             allowsDerivedPlacePhrases || !isDerivedPlacePhrase(pageID: result.pageID)
         }
         let results = filteredResults.isEmpty ? rawResults : filteredResults
-
-        return results
+        let phraseItems = results
             .prefix(limit)
             .map(BrowseSearchPhraseItem.fromSearchResult)
+
+        let menuCandidates = menuSearchCandidates(for: query, limit: max(limit * 2, limit))
+        let promotedMenuItems = menuCandidates
+            .filter { $0.score >= promotedMenuSearchScore }
+            .map(\.phraseItem)
+        let secondaryMenuItems = menuCandidates
+            .filter { $0.score < promotedMenuSearchScore }
+            .map(\.phraseItem)
+
+        return uniqueSearchItems(promotedMenuItems + phraseItems + secondaryMenuItems, limit: limit)
     }
 
     static func collectionDescriptor(for route: BrowseCollectionRoute) -> BrowseCollectionDescriptor? {
@@ -973,6 +1004,181 @@ enum BrowseSearchDestinations {
             .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
+    private struct MenuSearchCandidate {
+        let item: VietnameseMenuItem
+        let kind: VietnameseMenuKind
+        let score: Int
+
+        var phraseItem: BrowseSearchPhraseItem {
+            var phraseItem = VietnameseMenuCatalog.phraseItem(for: item)
+            phraseItem.imageName = item.menuImageName
+            return phraseItem
+        }
+    }
+
+    private static let promotedMenuSearchScore = 800
+
+    private static func menuSearchCandidates(for query: String, limit: Int) -> [MenuSearchCandidate] {
+        let normalizedQuery = searchNormalized(query)
+        guard !normalizedQuery.isEmpty else {
+            return []
+        }
+
+        let tokens = searchTokens(in: normalizedQuery)
+        guard !tokens.isEmpty else {
+            return []
+        }
+
+        return VietnameseMenuCatalog.allItems
+            .compactMap { item -> MenuSearchCandidate? in
+                guard let kind = item.kind else {
+                    return nil
+                }
+
+                let score = menuSearchScore(item: item, normalizedQuery: normalizedQuery, tokens: tokens)
+                guard score > 0 else {
+                    return nil
+                }
+
+                return MenuSearchCandidate(item: item, kind: kind, score: score)
+            }
+            .sorted(by: menuSearchSort)
+            .prefix(limit)
+            .map { $0 }
+    }
+
+    private static func menuSearchScore(
+        item: VietnameseMenuItem,
+        normalizedQuery: String,
+        tokens: [String]
+    ) -> Int {
+        let title = searchNormalized(item.vietnameseItem)
+        let romanized = searchNormalized(item.romanizedNoTones)
+        let english = searchNormalized(item.englishTranslation)
+        let pronunciation = searchNormalized(item.soundOut)
+        let identityHaystack = [title, romanized, english, pronunciation]
+            .filter { !$0.isEmpty }
+            .joined(separator: " ")
+        let fullHaystack = searchNormalized(
+            [
+                item.vietnameseItem,
+                item.englishTranslation,
+                item.romanizedNoTones,
+                item.soundOut,
+                item.category,
+                item.subcategory,
+                item.notes,
+                item.atAGlance,
+                item.whatItIs ?? "",
+                item.goodToKnow,
+                item.quickSayVietnamese,
+                item.quickSayEnglish,
+                item.commonOptions.joined(separator: " "),
+                item.usuallyIncludes.joined(separator: " "),
+            ].joined(separator: " ")
+        )
+
+        var score = 0
+
+        if title == normalizedQuery {
+            score = max(score, 1_000)
+        }
+        if romanized == normalizedQuery {
+            score = max(score, 980)
+        }
+        if english == normalizedQuery {
+            score = max(score, 940)
+        }
+        if pronunciation == normalizedQuery {
+            score = max(score, 920)
+        }
+
+        if title.hasPrefix(normalizedQuery) {
+            score = max(score, 900)
+        }
+        if romanized.hasPrefix(normalizedQuery) {
+            score = max(score, 880)
+        }
+        if english.hasPrefix(normalizedQuery) {
+            score = max(score, tokens.count > 1 ? 850 : 560)
+        }
+
+        if title.contains(normalizedQuery) {
+            score = max(score, 860)
+        }
+        if romanized.contains(normalizedQuery) {
+            score = max(score, 840)
+        }
+        if english.contains(normalizedQuery) {
+            score = max(score, tokens.count > 1 ? 820 : 520)
+        }
+
+        if tokens.count > 1, SearchTextMatcher.matchesAllTokens(tokens, in: identityHaystack) {
+            score = max(score, 780)
+        }
+        if SearchTextMatcher.matchesAllTokens(tokens, in: fullHaystack) {
+            score = max(score, tokens.count > 1 ? 520 : 180)
+        }
+
+        return score
+    }
+
+    private static func menuSearchSort(_ lhs: MenuSearchCandidate, _ rhs: MenuSearchCandidate) -> Bool {
+        if lhs.score != rhs.score {
+            return lhs.score > rhs.score
+        }
+
+        if lhs.item.popular != rhs.item.popular {
+            return lhs.item.popular && !rhs.item.popular
+        }
+
+        if lhs.kind != rhs.kind {
+            return lhs.kind == .drink
+        }
+
+        let titleComparison = lhs.item.vietnameseItem.localizedCaseInsensitiveCompare(rhs.item.vietnameseItem)
+        if titleComparison != .orderedSame {
+            return titleComparison == .orderedAscending
+        }
+
+        return lhs.item.detailPageID < rhs.item.detailPageID
+    }
+
+    private static func uniqueSearchItems(_ items: [BrowseSearchPhraseItem], limit: Int) -> [BrowseSearchPhraseItem] {
+        var seen = Set<String>()
+        var uniqueItems: [BrowseSearchPhraseItem] = []
+
+        for item in items {
+            guard seen.insert(item.pageID).inserted else {
+                continue
+            }
+
+            uniqueItems.append(item)
+            if uniqueItems.count >= limit {
+                return uniqueItems
+            }
+        }
+
+        return uniqueItems
+    }
+
+    private static func searchNormalized(_ text: String) -> String {
+        let folded = text
+            .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+            .lowercased()
+        let searchable = folded.unicodeScalars
+            .map { CharacterSet.alphanumerics.contains($0) ? String($0) : " " }
+            .joined()
+
+        return searchTokens(in: searchable).joined(separator: " ")
+    }
+
+    private static func searchTokens(in text: String) -> [String] {
+        text
+            .split(separator: " ")
+            .map(String.init)
+    }
+
     private static var collectionDescriptorCache: [BrowseCollectionRoute: BrowseCollectionDescriptor] = [:]
     private static var cityCollectionItemCache: [String: [BrowseCityCollectionItem]] = [:]
 
@@ -1010,8 +1216,8 @@ enum BrowseSearchDestinations {
             subcategories: [],
             starterTitle: starterTitle(for: id),
             starterItems: [],
-            practiceTitle: messageEntryTitle(for: title),
-            practiceSubtitle: practiceSubtitle(for: title),
+            practiceTitle: practiceEntryTitle(for: id, title: title),
+            practiceSubtitle: practiceSubtitle(for: id),
             practiceAction: .addStarterPages([]),
             messageSectionTitle: categoryMessageSectionTitle(for: id, title: title),
             exploreShelves: []
@@ -1077,7 +1283,9 @@ enum BrowseSearchDestinations {
             limit: 8
         )
         let starterItems = entityContent?.starterItems ?? phraseStarterItems
-        let subcategories = entityContent?.subcategories ?? categorySubcategories(for: id, categoryIDs: categoryIDs, tintName: tint)
+        let baseSubcategories = entityContent?.subcategories ?? categorySubcategories(for: id, categoryIDs: categoryIDs, tintName: tint)
+        let searchOnlySubcategories = VietSearchOnlyPhraseSurfacing.subcategories(for: id, tintName: tint)
+        let subcategories = categoryEntitySubcategories(baseSubcategories, inserting: searchOnlySubcategories, for: id)
         let shelves = categoryExploreShelves(
             collectionID: id,
             categoryIDs: categoryIDs,
@@ -1095,8 +1303,8 @@ enum BrowseSearchDestinations {
             subcategories: subcategories,
             starterTitle: entityContent?.starterTitle ?? starterTitle(for: id),
             starterItems: starterItems,
-            practiceTitle: messageEntryTitle(for: title),
-            practiceSubtitle: practiceSubtitle(for: title),
+            practiceTitle: practiceEntryTitle(for: id, title: title),
+            practiceSubtitle: practiceSubtitle(for: id),
             practiceAction: categoryPracticeAction(for: id, starterPageIDs: practiceStarterItems.map(\.pageID)),
             messageSectionTitle: categoryMessageSectionTitle(for: id, title: title),
             exploreShelves: shelves
@@ -2383,6 +2591,10 @@ enum BrowseSearchDestinations {
             return "Taxis, buses, walking directions, stops, maps, and addresses."
         case "emergency":
             return "Calm help, health, safety, and problem-solving phrases."
+        case "everyday-services":
+            return "The practical trip phrases for bathrooms, water, laundry, phone help, rain, and small service counters."
+        case "tours-sights":
+            return "Tickets, entrances, meeting points, guides, photos, and tour details."
         case "local-greetings":
             return "Relationship-aware hellos and warm local openers."
         case "city-guides":
@@ -2482,15 +2694,25 @@ enum BrowseSearchDestinations {
         }
     }
 
-    private static func practiceSubtitle(for title: String) -> String {
-        if title == "Shopping" {
-            return "Prices, sizes, payment, and returns."
+    private static func practiceSubtitle(for id: String) -> String {
+        switch id {
+        case "first-day":
+            return "Match airport, hotel, and transport phrases."
+        case "airport":
+            return "Match airport arrival and transit phrases."
+        case "food":
+            return "Match food, coffee, and ordering phrases."
+        case "hotel":
+            return "Match check-in and hotel-desk phrases."
+        case "getting-around", "transport":
+            return "Match taxi, directions, and transport phrases."
+        case "shopping":
+            return "Match prices, sizes, payment, and return phrases."
+        case "emergency":
+            return "Match calm help phrases."
+        default:
+            return "Match useful phrases from this collection."
         }
-        if title == "Emergency" {
-            return "Ask for help calmly."
-        }
-
-        return "A quick \(title.lowercased()) conversation."
     }
 
     private static func categoryPracticeAction(for id: String, starterPageIDs: [String]) -> BrowseCollectionPracticeAction {
@@ -2502,8 +2724,13 @@ enum BrowseSearchDestinations {
         }
     }
 
-    private static func messageEntryTitle(for title: String) -> String {
-        "\(title) messages"
+    private static func practiceEntryTitle(for id: String, title: String) -> String {
+        switch id {
+        case "first-day":
+            return "First day practice"
+        default:
+            return "\(title) practice"
+        }
     }
 
     private static func cityPracticeTitle(for id: String, title: String) -> String {
@@ -2912,6 +3139,8 @@ enum BrowseSearchDestinations {
         "hotel": "HeroCategoryHotel",
         "food": "HeroCategoryFood",
         "shopping": "HeroCategoryNumbersMoney",
+        "everyday-services": "HeroCategoryEssentials",
+        "tours-sights": "HeroCategoryQuestions",
         "getting-around": "HeroCategoryGettingAround",
         "first-day": "HeroCategoryFirstDay",
         "city-guides": "HeroCountryVietnam",
@@ -2989,6 +3218,24 @@ enum BrowseSearchDestinations {
             "pickup point",
             "call taxi",
             "call driver",
+        ],
+        "everyday-services": [
+            "bathroom",
+            "public bathroom",
+            "where can I print",
+            "laundry service",
+            "buy shampoo",
+            "phone charger",
+            "wifi password",
+            "data top up",
+        ],
+        "tours-sights": [
+            "buy tickets",
+            "where is the entrance",
+            "meeting point",
+            "tour guide",
+            "take photos",
+            "book a tour",
         ],
         "emergency": [
             "lost passport",

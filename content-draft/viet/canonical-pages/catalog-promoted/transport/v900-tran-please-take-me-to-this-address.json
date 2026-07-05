@@ -7,7 +7,7 @@
   "title": "Hãy đưa tôi đến địa chỉ này",
   "englishTitle": "Please take me to this address",
   "pronunciation": "Hay dua toi den dia chi nay",
-  "summary": "Please take me to this address",
+  "summary": "Hand over an address clearly when the destination is easier to show than pronounce.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy đưa tôi đến địa chỉ này is a practical transport phrase for keeping one travel detail clear. Use it when take me to this address is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use this with a written address, booking screen, saved map pin, or hotel card."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hãy đưa tôi đến địa chỉ này. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Say the phrase, then show the address so the driver can read the exact destination.",
       "phrases": [
         {
           "id": "v900-tran-please-take-me-to-this-address",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Địa chỉ này means this address; keep the phone or card visible while you say it.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please take me to this address to another transport need.",
+      "body": "Shorter destination phrases help when the driver only needs the broad area first.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when take me to this address is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best for taxi lines, hotel desks, airport pickups, or any ride where the name is hard to pronounce."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "If the address has a ward, district, or hotel name, let the driver read the whole line."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hãy đưa tôi đến địa chỉ này.",
+      "body": "Stop, route, air-con, waiting, and cash phrases cover the ride once the address is accepted.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

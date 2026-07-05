@@ -7,7 +7,7 @@
   "title": "Vui lòng đưa tôi đến khách sạn này",
   "englishTitle": "Please take me to this hotel",
   "pronunciation": "Vui long dua toi den khach san nay",
-  "summary": "Please take me to this hotel",
+  "summary": "Show a driver the hotel and ask for that exact destination, especially when the name is hard to pronounce.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Vui lòng đưa tôi đến khách sạn này is a practical transport phrase for keeping one travel detail clear. Use it when take me to this hotel is the next detail to solve and a short answer would move the exchange forward."
+      "body": "The hotel name, pin, or booking screen should do the heavy lifting here."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Vui lòng đưa tôi đến khách sạn này. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Say the line, then show the hotel name, address, or map pin before the driver guesses.",
       "phrases": [
         {
           "id": "v500-tran-please-take-me-to-this-hotel",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đưa tôi đến khách sạn này is the ride-to-this-hotel core.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please take me to this hotel to another transport need.",
+      "body": "Take-me-here, District 1, and stop-here cards cover nearby taxi language if the driver asks where or when.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when take me to this hotel is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best at an airport, station, lobby, or curbside pickup when the hotel is already on your phone."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "If there are multiple branches, keep the address visible until the driver confirms the route."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Vui lòng đưa tôi đến khách sạn này.",
+      "body": "Stop-here, this-way, and air-con cards cover the ride after the destination is clear.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

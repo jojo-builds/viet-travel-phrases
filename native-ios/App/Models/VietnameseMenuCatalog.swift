@@ -85,7 +85,7 @@ enum VietnameseMenuKind: String, CaseIterable, Equatable {
     }
 }
 
-struct VietnameseMenuItem: Identifiable, Decodable, Equatable {
+struct VietnameseMenuItem: Identifiable, Decodable {
     let itemID: String
     let menuType: String
     let category: String
@@ -123,6 +123,17 @@ struct VietnameseMenuItem: Identifiable, Decodable, Equatable {
         VietnameseMenuKind(rawValue: menuType)
     }
 
+    var playbackAudioKey: String? {
+        let cacheKey = PlaybackAudioCacheKey(itemID: itemID, vietnameseItem: vietnameseItem)
+        if let cachedAudioKey = Self.cachedPlaybackAudioKey(for: cacheKey) {
+            return cachedAudioKey.value
+        }
+
+        let audioKey = AudioAssetManifest.main?.audioKey(forExactText: vietnameseItem)
+        Self.storeCachedPlaybackAudioKey(CachedPlaybackAudioKey(audioKey), for: cacheKey)
+        return audioKey
+    }
+
     var displayPronunciation: String {
         soundOut.isEmpty ? romanizedNoTones : soundOut
     }
@@ -156,6 +167,63 @@ struct VietnameseMenuItem: Identifiable, Decodable, Equatable {
         let line = guideOrderLine
         return "\(line.vietnamese)\n\(line.english)\n\(line.pronunciation)"
     }
+
+    private struct PlaybackAudioCacheKey: Hashable {
+        let itemID: String
+        let vietnameseItem: String
+    }
+
+    private struct CachedPlaybackAudioKey {
+        let value: String?
+
+        init(_ value: String?) {
+            self.value = value
+        }
+    }
+
+    private static let playbackAudioCacheLimit = 512
+    private static let playbackAudioCacheLock = NSLock()
+    private static var playbackAudioKeysByKey: [PlaybackAudioCacheKey: CachedPlaybackAudioKey] = [:]
+    private static var playbackAudioCacheKeys: [PlaybackAudioCacheKey] = []
+
+    private static func cachedPlaybackAudioKey(for key: PlaybackAudioCacheKey) -> CachedPlaybackAudioKey? {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        guard let cachedAudioKey = playbackAudioKeysByKey[key] else {
+            return nil
+        }
+
+        touchPlaybackAudioCacheKey(key)
+        return cachedAudioKey
+    }
+
+    private static func storeCachedPlaybackAudioKey(_ audioKey: CachedPlaybackAudioKey, for key: PlaybackAudioCacheKey) {
+        playbackAudioCacheLock.lock()
+        defer { playbackAudioCacheLock.unlock() }
+
+        playbackAudioKeysByKey[key] = audioKey
+        touchPlaybackAudioCacheKey(key)
+
+        while playbackAudioCacheKeys.count > playbackAudioCacheLimit {
+            let oldestKey = playbackAudioCacheKeys.removeFirst()
+            playbackAudioKeysByKey.removeValue(forKey: oldestKey)
+        }
+    }
+
+    private static func touchPlaybackAudioCacheKey(_ key: PlaybackAudioCacheKey) {
+        playbackAudioCacheKeys.removeAll { $0 == key }
+        playbackAudioCacheKeys.append(key)
+    }
+
+#if DEBUG
+    static func resetPlaybackAudioResolutionCacheForTesting() {
+        playbackAudioCacheLock.lock()
+        playbackAudioKeysByKey.removeAll()
+        playbackAudioCacheKeys.removeAll()
+        playbackAudioCacheLock.unlock()
+    }
+#endif
 }
 
 struct VietnameseMenuOrderLine: Decodable, Equatable {
@@ -188,7 +256,7 @@ struct VietnameseMenuHelperPhraseDefinition: Identifiable, Decodable, Equatable 
     }
 }
 
-struct VietnameseMenuCategory: Identifiable, Equatable {
+struct VietnameseMenuCategory: Identifiable {
     let id: String
     let title: String
     let subtitle: String
@@ -200,7 +268,7 @@ struct VietnameseMenuCategory: Identifiable, Equatable {
     var itemCount: Int { items.count }
 }
 
-struct VietnameseMenuSection: Identifiable, Equatable {
+struct VietnameseMenuSection: Identifiable {
     let id: String
     let title: String
     let subtitle: String
@@ -232,7 +300,7 @@ enum VietnameseMenuImages {
     }
 }
 
-private struct VietnameseMenuPayload: Decodable {
+struct VietnameseMenuPayload: Decodable {
     let helperPhrases: [VietnameseMenuHelperPhraseDefinition]?
     let items: [VietnameseMenuItem]
 }
@@ -242,6 +310,65 @@ enum VietnameseMenuCatalog {
     static let allItems: [VietnameseMenuItem] = payload.items
     static let helperPhrases: [VietnameseMenuHelperPhraseDefinition] = payload.helperPhrases ?? []
     private static let helperPhrasesByID = Dictionary(uniqueKeysWithValues: helperPhrases.map { ($0.id, $0) })
+    private static let itemsByID = Dictionary(uniqueKeysWithValues: allItems.map { ($0.itemID, $0) })
+    private static let itemsByDetailPageID = Dictionary(uniqueKeysWithValues: allItems.map { ($0.detailPageID, $0) })
+    private static let itemsByKind: [VietnameseMenuKind: [VietnameseMenuItem]] = Dictionary(
+        uniqueKeysWithValues: VietnameseMenuKind.allCases.map { kind in
+            (kind, allItems.filter { $0.kind == kind })
+        }
+    )
+    private static let categoriesByKind: [VietnameseMenuKind: [VietnameseMenuCategory]] = Dictionary(
+        uniqueKeysWithValues: VietnameseMenuKind.allCases.map { kind in
+            (kind, buildCategories(for: kind))
+        }
+    )
+    private static let popularItemsByKind: [VietnameseMenuKind: [VietnameseMenuItem]] = Dictionary(
+        uniqueKeysWithValues: VietnameseMenuKind.allCases.map { kind in
+            (kind, (itemsByKind[kind] ?? []).filter(\.popular))
+        }
+    )
+    private static let sectionsByKind: [VietnameseMenuKind: [VietnameseMenuSection]] = Dictionary(
+        uniqueKeysWithValues: VietnameseMenuKind.allCases.map { kind in
+            (kind, buildSections(for: kind))
+        }
+    )
+    static var indexedItemCountForTesting: Int { itemsByID.count }
+
+#if DEBUG
+    private static let itemLookupCountLock = NSLock()
+    private static var itemLookupCount = 0
+    private static var sectionBuildCountsForTesting: [VietnameseMenuKind: Int] = [:]
+
+    static var itemLookupCountForTesting: Int {
+        itemLookupCountLock.lock()
+        defer { itemLookupCountLock.unlock() }
+        return itemLookupCount
+    }
+
+    static func resetItemLookupCountForTesting() {
+        itemLookupCountLock.lock()
+        itemLookupCount = 0
+        itemLookupCountLock.unlock()
+    }
+
+    private static func recordItemLookupForTesting() {
+        itemLookupCountLock.lock()
+        itemLookupCount += 1
+        itemLookupCountLock.unlock()
+    }
+
+    static func resetSectionBuildCountsForTesting() {
+        sectionBuildCountsForTesting = [:]
+    }
+
+    static func sectionBuildCountForTesting(_ kind: VietnameseMenuKind) -> Int {
+        sectionBuildCountsForTesting[kind, default: 0]
+    }
+
+    private static func recordSectionBuildForTesting(_ kind: VietnameseMenuKind) {
+        sectionBuildCountsForTesting[kind, default: 0] += 1
+    }
+#endif
 
     static func kind(for route: BrowseCollectionRoute) -> VietnameseMenuKind? {
         guard case .category(let id) = route else {
@@ -252,10 +379,21 @@ enum VietnameseMenuCatalog {
     }
 
     static func items(for kind: VietnameseMenuKind) -> [VietnameseMenuItem] {
-        allItems.filter { $0.kind == kind }
+        itemsByKind[kind] ?? []
+    }
+
+    static func item(withID itemID: String) -> VietnameseMenuItem? {
+#if DEBUG
+        recordItemLookupForTesting()
+#endif
+        return itemsByID[itemID]
     }
 
     static func categories(for kind: VietnameseMenuKind) -> [VietnameseMenuCategory] {
+        categoriesByKind[kind] ?? []
+    }
+
+    private static func buildCategories(for kind: VietnameseMenuKind) -> [VietnameseMenuCategory] {
         let rowsByCategory = Dictionary(grouping: items(for: kind)) { item in
             presentationCategoryTitle(for: item, kind: kind)
         }
@@ -289,18 +427,27 @@ enum VietnameseMenuCatalog {
     }
 
     static func popularItems(for kind: VietnameseMenuKind, limit: Int = 5) -> [VietnameseMenuItem] {
-        Array(items(for: kind).filter(\.popular).prefix(limit))
+        Array((popularItemsByKind[kind] ?? []).prefix(limit))
     }
 
     static func sections(for kind: VietnameseMenuKind) -> [VietnameseMenuSection] {
+        sectionsByKind[kind] ?? []
+    }
+
+    private static func buildSections(for kind: VietnameseMenuKind) -> [VietnameseMenuSection] {
+#if DEBUG
+        recordSectionBuildForTesting(kind)
+#endif
+
+        let popularItems = popularItems(for: kind, limit: 5)
         let popular = VietnameseMenuSection(
             id: "popular",
             title: kind.popularTitle,
             subtitle: "Traveler favorites",
             symbolName: "star.fill",
             tintName: .orange,
-            featuredImageName: popularItems(for: kind, limit: 1).first?.menuImageName ?? kind.heroImageName,
-            items: popularItems(for: kind, limit: 5),
+            featuredImageName: popularItems.first?.menuImageName ?? kind.heroImageName,
+            items: popularItems,
             isPopular: true
         )
 
@@ -325,8 +472,7 @@ enum VietnameseMenuCatalog {
             return nil
         }
 
-        let itemID = String(pageID.dropFirst("viet-menu-".count))
-        return allItems.first { $0.itemID == itemID }
+        return itemsByDetailPageID[pageID]
     }
 
     static func detailPage(withID pageID: String) -> PhraseDetailPage? {
@@ -1102,7 +1248,7 @@ enum VietnameseMenuCatalog {
             subtitle: item.englishTranslation,
             symbolName: item.kind?.symbolName ?? "fork.knife",
             tintName: item.kind?.tintName ?? .orange,
-            audioKey: AudioAssetManifest.main?.audioKey(forExactText: item.vietnameseItem)
+            audioKey: item.playbackAudioKey
         )
     }
 
@@ -1118,18 +1264,15 @@ enum VietnameseMenuCatalog {
         switch kind {
         case .food:
             return [
-                "Khai vị & snacks",
-                "Noodle soups",
-                "Vermicelli bowls",
-                "Rice & clay pot",
+                "Starters & snacks",
+                "Noodles & bowls",
+                "Rice plates & clay pots",
                 "Bánh mì & buns",
                 "Seafood",
-                "Pork",
-                "Chicken & duck",
-                "Beef & goat",
-                "Canh & lẩu",
-                "Tofu & chay",
-                "Desserts",
+                "Grilled & braised meats",
+                "Soups & hot pots",
+                "Vegetarian & chay",
+                "Sweets",
             ]
         case .drink:
             return [
@@ -1171,16 +1314,18 @@ enum VietnameseMenuCatalog {
 
     private static func categorySubtitle(for title: String) -> String {
         switch title {
-        case "Khai vị & snacks":
+        case "Khai vị & snacks", "Starters & snacks":
             return "cuốn, gỏi, bites"
-        case "Noodle soups":
+        case "Noodle soups", "Noodles & bowls":
             return "phở, bún, cháo"
         case "Vermicelli bowls", "Dry noodles & vermicelli":
             return "bún, mì khô"
-        case "Rice & clay pot", "Rice & sticky rice":
+        case "Rice & clay pot", "Rice & sticky rice", "Rice plates & clay pots":
             return "cơm, xôi, niêu"
         case "Bánh mì & buns", "Bánh mì, bread & buns":
             return "bánh mì, bao"
+        case "Grilled & braised meats":
+            return "pork, chicken, beef"
         case "Pork":
             return "grilled, braised"
         case "Chicken & duck":
@@ -1189,11 +1334,11 @@ enum VietnameseMenuCatalog {
             return "bò, bê, dê"
         case "Seafood":
             return "fish, shrimp, crab"
-        case "Canh & lẩu", "Soups, hot pots & family-style":
+        case "Canh & lẩu", "Soups, hot pots & family-style", "Soups & hot pots":
             return "soups, shared pots"
-        case "Tofu & chay", "Vegetarian":
+        case "Tofu & chay", "Vegetarian", "Vegetarian & chay":
             return "tofu, greens"
-        case "Desserts", "Desserts & sweets":
+        case "Desserts", "Desserts & sweets", "Sweets":
             return "chè, sweets"
         case "Coffee":
             return "iced, black, milk"
@@ -1212,25 +1357,27 @@ enum VietnameseMenuCatalog {
 
     private static func categorySymbolName(for title: String, kind: VietnameseMenuKind) -> String {
         switch title {
-        case "Khai vị & snacks":
+        case "Khai vị & snacks", "Starters & snacks":
             return "menucard.fill"
-        case "Noodle soups":
+        case "Noodle soups", "Noodles & bowls":
             return "takeoutbag.and.cup.and.straw.fill"
         case "Vermicelli bowls":
             return "fork.knife"
-        case "Rice & clay pot", "Rice & sticky rice":
+        case "Rice & clay pot", "Rice & sticky rice", "Rice plates & clay pots":
             return "fork.knife"
+        case "Grilled & braised meats":
+            return "flame.fill"
         case "Pork":
             return "fork.knife"
         case "Chicken & duck":
             return "bird.fill"
         case "Seafood":
             return "fish.fill"
-        case "Canh & lẩu":
+        case "Canh & lẩu", "Soups & hot pots":
             return "flame.fill"
-        case "Tofu & chay", "Vegetarian":
+        case "Tofu & chay", "Vegetarian", "Vegetarian & chay":
             return "leaf.fill"
-        case "Desserts":
+        case "Desserts", "Sweets":
             return "sparkles"
         case "Coffee":
             return "cup.and.saucer.fill"
@@ -1247,13 +1394,13 @@ enum VietnameseMenuCatalog {
 
     private static func categoryTintName(for title: String, kind: VietnameseMenuKind) -> AccentTint {
         switch title {
-        case "Noodle soups", "Tea", "Tofu & chay", "Vegetarian":
+        case "Noodle soups", "Noodles & bowls", "Tea", "Tofu & chay", "Vegetarian", "Vegetarian & chay":
             return .green
-        case "Seafood", "Canh & lẩu", "Water, soda & other drinks":
+        case "Seafood", "Canh & lẩu", "Soups & hot pots", "Water, soda & other drinks":
             return .blue
-        case "Khai vị & snacks", "Smoothies":
+        case "Khai vị & snacks", "Starters & snacks", "Smoothies":
             return .orange
-        case "Desserts", "Juices & fresh drinks":
+        case "Desserts", "Sweets", "Juices & fresh drinks":
             return .red
         default:
             return kind.tintName
@@ -1263,29 +1410,31 @@ enum VietnameseMenuCatalog {
     private static func featuredImageName(for title: String, items: [VietnameseMenuItem]) -> String {
         let preferredItemID: String?
         switch title {
-        case "Khai vị & snacks":
+        case "Khai vị & snacks", "Starters & snacks":
             preferredItemID = "food-goi-cuon"
-        case "Noodle soups":
+        case "Noodle soups", "Noodles & bowls":
             preferredItemID = "food-pho-bo"
         case "Vermicelli bowls":
             preferredItemID = "food-bun-cha"
-        case "Rice & clay pot":
+        case "Rice & clay pot", "Rice plates & clay pots":
             preferredItemID = "food-com-tam-suon"
         case "Bánh mì & buns":
             preferredItemID = "food-banh-mi-dac-biet"
         case "Seafood":
             preferredItemID = "food-tom-rang-muoi"
+        case "Grilled & braised meats":
+            preferredItemID = "food-suon-nuong"
         case "Pork":
             preferredItemID = "food-suon-nuong"
         case "Chicken & duck":
             preferredItemID = "food-ga-nuong-muoi-ot"
         case "Beef & goat":
             preferredItemID = "food-bo-luc-lac"
-        case "Canh & lẩu":
+        case "Canh & lẩu", "Soups & hot pots":
             preferredItemID = "food-lau-thai"
-        case "Tofu & chay", "Vegetarian":
+        case "Tofu & chay", "Vegetarian", "Vegetarian & chay":
             preferredItemID = "food-dau-hu-chien-gion"
-        case "Desserts":
+        case "Desserts", "Sweets":
             preferredItemID = "food-che-ba-mau"
         case "Coffee":
             preferredItemID = "drink-ca-phe-sua-da"
@@ -1314,51 +1463,34 @@ enum VietnameseMenuCatalog {
         switch item.itemID {
         case
             "food-bun-mang-vit",
-            "food-pho-chay",
-            "food-bun-bo-hue-chay",
-            "food-bun-rieu-chay",
-            "food-hu-tieu-chay",
             "food-chao-suon",
             "food-chao-vit":
-            return "Noodle soups"
-        case
-            "food-mi-xao-chay",
-            "food-bun-dau-chay":
-            return "Vermicelli bowls"
-        case
-            "food-com-chay",
-            "food-com-chien-chay":
-            return "Rice & clay pot"
-        case
-            "food-goi-cuon-chay",
-            "food-cha-gio-chay",
-            "food-banh-xeo-chay":
-            return "Khai vị & snacks"
+            return "Noodles & bowls"
         case
             "food-lau-de",
-            "food-bo-nhung-dam",
-            "food-canh-chua-chay",
-            "food-lau-nam-chay":
-            return "Canh & lẩu"
+            "food-bo-nhung-dam":
+            return "Soups & hot pots"
         default:
             break
         }
 
         switch item.category {
         case "Rolls, appetizers & street snacks":
-            return "Khai vị & snacks"
-        case "Dry noodles & vermicelli":
-            return "Vermicelli bowls"
+            return "Starters & snacks"
+        case "Noodle soups", "Dry noodles & vermicelli":
+            return "Noodles & bowls"
         case "Rice & sticky rice":
-            return "Rice & clay pot"
+            return "Rice plates & clay pots"
         case "Bánh mì, bread & buns":
             return "Bánh mì & buns"
+        case "Pork", "Chicken & duck", "Beef & goat":
+            return "Grilled & braised meats"
         case "Soups, hot pots & family-style":
-            return "Canh & lẩu"
+            return "Soups & hot pots"
         case "Vegetarian":
-            return "Tofu & chay"
+            return "Vegetarian & chay"
         case "Desserts & sweets":
-            return "Desserts"
+            return "Sweets"
         default:
             return item.category
         }
@@ -1377,15 +1509,1022 @@ enum VietnameseMenuCatalog {
     }
 
     private static func loadPayload() -> VietnameseMenuPayload {
-        guard
-            let url = Bundle.main.url(forResource: "vietnamese-menu-copy", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let payload = try? JSONDecoder().decode(VietnameseMenuPayload.self, from: data)
-        else {
+        if let payload = VietSQLitePhraseGraphRuntime.vietnameseMenuPayload() {
+            return payload
+        }
+
+        guard let url = Bundle.main.url(forResource: "vietnamese-menu-copy", withExtension: "json") else {
+            VietSQLiteRuntimeDiagnostics.reportFallback(
+                surface: "VietnameseMenuCatalog",
+                reason: "Missing bundled vietnamese-menu-copy.json fallback."
+            )
             return VietnameseMenuPayload(helperPhrases: [], items: [])
         }
 
-        return payload
+        do {
+            let data = try Data(contentsOf: url)
+            let payload = try JSONDecoder().decode(VietnameseMenuPayload.self, from: data)
+            VietSQLiteRuntimeDiagnostics.reportFallback(
+                surface: "VietnameseMenuCatalog",
+                reason: "Loaded bundled JSON fallback."
+            )
+            return payload
+        } catch {
+            VietSQLiteRuntimeDiagnostics.reportFallback(surface: "VietnameseMenuCatalog", error: error)
+            return VietnameseMenuPayload(helperPhrases: [], items: [])
+        }
+    }
+}
+
+struct LocationMenuPick: Identifiable, Equatable {
+    let id: String
+    let title: String
+    let subtitle: String
+    let proof: String
+    let imageName: String
+    let detailPageID: String
+    let audioText: String?
+    let linkedMenuItemID: String?
+    let afterSectionID: String?
+    private var resolvedAudioKey: String?
+    private var hasResolvedAudioKey = false
+    private var resolvedAudioTintName: AccentTint?
+    private var hasResolvedAudioTintName = false
+
+    init(
+        id: String,
+        title: String,
+        subtitle: String,
+        proof: String,
+        imageName: String,
+        detailPageID: String,
+        audioText: String? = nil,
+        linkedMenuItemID: String?,
+        afterSectionID: String?
+    ) {
+        self.id = id
+        self.title = title
+        self.subtitle = subtitle
+        self.proof = proof
+        self.imageName = imageName
+        self.detailPageID = detailPageID
+        self.audioText = audioText
+        self.linkedMenuItemID = linkedMenuItemID
+        self.afterSectionID = afterSectionID
+        self.resolvedAudioKey = nil
+        self.hasResolvedAudioKey = false
+        self.resolvedAudioTintName = nil
+        self.hasResolvedAudioTintName = false
+    }
+
+    var linkedMenuItem: VietnameseMenuItem? {
+        guard let linkedMenuItemID else {
+            return nil
+        }
+
+        return VietnameseMenuCatalog.item(withID: linkedMenuItemID)
+    }
+
+    var audioKey: String? {
+        if hasResolvedAudioKey {
+            return resolvedAudioKey
+        }
+
+        return Self.resolveAudioKey(audioText: audioText, linkedMenuItemID: linkedMenuItemID)
+    }
+
+    var audioTintName: AccentTint {
+        if hasResolvedAudioTintName {
+            return resolvedAudioTintName ?? .orange
+        }
+
+        return Self.resolveAudioTintName(linkedMenuItemID: linkedMenuItemID)
+    }
+
+    func resolvingAudioKey() -> LocationMenuPick {
+        let linkedMenuItem = linkedMenuItemID.flatMap(VietnameseMenuCatalog.item)
+        var resolved = self
+        resolved.resolvedAudioKey = Self.resolveAudioKey(
+            audioText: audioText,
+            linkedMenuItem: linkedMenuItem
+        )
+        resolved.hasResolvedAudioKey = true
+        resolved.resolvedAudioTintName = Self.resolveAudioTintName(linkedMenuItem: linkedMenuItem)
+        resolved.hasResolvedAudioTintName = true
+        return resolved
+    }
+
+    private static func resolveAudioKey(audioText: String?, linkedMenuItemID: String?) -> String? {
+        resolveAudioKey(
+            audioText: audioText,
+            linkedMenuItem: linkedMenuItemID.flatMap(VietnameseMenuCatalog.item)
+        )
+    }
+
+    private static func resolveAudioKey(audioText: String?, linkedMenuItem: VietnameseMenuItem?) -> String? {
+        if let audioText {
+            return AudioAssetManifest.main?.audioKey(forExactText: audioText)
+        }
+
+        guard let linkedMenuItem else {
+            return nil
+        }
+
+        return AudioAssetManifest.main?.audioKey(forExactText: linkedMenuItem.vietnameseItem)
+    }
+
+    private static func resolveAudioTintName(linkedMenuItemID: String?) -> AccentTint {
+        resolveAudioTintName(linkedMenuItem: linkedMenuItemID.flatMap(VietnameseMenuCatalog.item))
+    }
+
+    private static func resolveAudioTintName(linkedMenuItem: VietnameseMenuItem?) -> AccentTint {
+        linkedMenuItem?.kind?.tintName ?? .orange
+    }
+
+    static func == (lhs: LocationMenuPick, rhs: LocationMenuPick) -> Bool {
+        lhs.id == rhs.id
+            && lhs.title == rhs.title
+            && lhs.subtitle == rhs.subtitle
+            && lhs.proof == rhs.proof
+            && lhs.imageName == rhs.imageName
+            && lhs.detailPageID == rhs.detailPageID
+            && lhs.audioText == rhs.audioText
+            && lhs.linkedMenuItemID == rhs.linkedMenuItemID
+            && lhs.afterSectionID == rhs.afterSectionID
+    }
+}
+
+private func mergedLocationPicks(staticPicks: [LocationMenuPick], runtimePicks: [LocationMenuPick]) -> [LocationMenuPick] {
+    var seenDetailPageIDs = Set<String>()
+    return (staticPicks + runtimePicks).filter { pick in
+        let canonicalID = VietSQLitePhraseGraphRuntime.canonicalPageID(for: pick.detailPageID) ?? pick.detailPageID
+        return seenDetailPageIDs.insert(canonicalID).inserted
+    }
+}
+
+enum LocationMenuPicksCatalog {
+    private static let cacheLimit = 96
+    private static let cacheLock = NSLock()
+    private static var cachedPicksByPageID: [String: [LocationMenuPick]] = [:]
+    private static var cachedPageIDs: [String] = []
+
+#if DEBUG
+    private static var buildCountsByPageID: [String: Int] = [:]
+    private static var sectionFilterCount = 0
+
+    static func resetCacheForTesting() {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        cachedPicksByPageID.removeAll()
+        cachedPageIDs.removeAll()
+        buildCountsByPageID.removeAll()
+        sectionFilterCount = 0
+    }
+
+    static var cacheLimitForTesting: Int {
+        cacheLimit
+    }
+
+    static var cachedPageCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return cachedPicksByPageID.count
+    }
+
+    static func buildCountForTesting(pageID: String) -> Int {
+        let lookupPageID = canonicalLookupPageID(for: pageID)
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return buildCountsByPageID[lookupPageID] ?? 0
+    }
+
+    static var sectionFilterCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return sectionFilterCount
+    }
+#endif
+
+    static func picks(forPageID pageID: String) -> [LocationMenuPick] {
+        guard mayHavePicks(for: pageID) else {
+            return []
+        }
+
+        let lookupPageID = canonicalLookupPageID(for: pageID)
+
+        cacheLock.lock()
+        if let cachedPicks = cachedPicksByPageID[lookupPageID] {
+            touchCachedPageID(lookupPageID)
+            cacheLock.unlock()
+            return cachedPicks
+        }
+        cacheLock.unlock()
+
+        let picks = uncachedPicks(forPageID: lookupPageID)
+
+        cacheLock.lock()
+        storeCachedPicks(picks, for: lookupPageID)
+#if DEBUG
+        buildCountsByPageID[lookupPageID, default: 0] += 1
+#endif
+        cacheLock.unlock()
+
+        return picks
+    }
+
+    private static func storeCachedPicks(_ picks: [LocationMenuPick], for pageID: String) {
+        cachedPicksByPageID[pageID] = picks
+        touchCachedPageID(pageID)
+
+        while cachedPageIDs.count > cacheLimit {
+            let oldestPageID = cachedPageIDs.removeFirst()
+            cachedPicksByPageID.removeValue(forKey: oldestPageID)
+#if DEBUG
+            buildCountsByPageID.removeValue(forKey: oldestPageID)
+#endif
+        }
+    }
+
+    private static func touchCachedPageID(_ pageID: String) {
+        cachedPageIDs.removeAll { $0 == pageID }
+        cachedPageIDs.append(pageID)
+    }
+
+    private static func canonicalLookupPageID(for pageID: String) -> String {
+        if let canonicalPageID = VietSQLitePhraseGraphRuntime.canonicalPageID(for: pageID) {
+            return canonicalPageID
+        }
+
+        if pageID.hasPrefix("viet-phrase-city-") {
+            return "viet-family-city-" + String(pageID.dropFirst("viet-phrase-city-".count))
+        }
+
+        return pageID
+    }
+
+    private static func mayHavePicks(for pageID: String) -> Bool {
+        pageID.hasPrefix("viet-family-city-") || pageID.hasPrefix("viet-phrase-city-")
+    }
+
+    private static func uncachedPicks(forPageID pageID: String) -> [LocationMenuPick] {
+        let staticPicks: [LocationMenuPick]
+
+        switch pageID {
+        case "viet-family-city-danang-place-bac-my-an-market":
+            staticPicks = menuItemPicks(["food-kem-bo"], after: "quick-say")
+        case "viet-family-city-danang-place-con-market":
+            staticPicks = menuItemPicks(["food-che-ba-mau", "food-banh-beo", "food-banh-xeo", "food-mi-quang-ga"], after: "place-brief")
+        case "viet-family-city-danang-place-han-market":
+            staticPicks = menuItemPicks(["food-mi-quang-ga", "food-mi-quang-tom-thit", "food-banh-beo", "food-banh-xeo"], after: "place-brief")
+        case "viet-family-city-danang-place-helio-night-market":
+            staticPicks = menuItemPicks(["food-tom-nuong-muoi-ot", "food-lau-hai-san", "food-cha-gio", "food-che-ba-mau"], after: "use-it-with")
+        case "viet-family-city-danang-place-son-tra-night-market":
+            staticPicks = menuItemPicks(["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-lau-hai-san", "food-cha-gio"], after: "place-brief")
+        case "viet-family-city-hanoi-place-dinh-cafe":
+            staticPicks = menuItemPicks(["drink-ca-phe-phin", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"], after: "place-brief")
+        case "viet-family-city-hanoi-place-giang-cafe":
+            staticPicks = menuItemPicks(["drink-ca-phe-trung", "drink-ca-phe-den-nong", "drink-ca-phe-sua-nong"], after: "quick-say")
+        case "viet-family-city-hanoi-place-the-note-coffee":
+            staticPicks = menuItemPicks(["drink-ca-phe-sua-da", "drink-ca-phe-phin", "drink-ca-phe-trung"], after: "quick-say")
+        case "viet-family-city-hoian-place-bale-well":
+            staticPicks = menuItemPicks(["food-banh-xeo", "food-nem-nuong-cuon", "food-goi-cuon", "food-cha-gio-tom-thit"], after: "quick-say")
+        case "viet-family-city-hoian-place-banh-mi-phuong":
+            staticPicks = menuItemPicks(["food-banh-mi-dac-biet", "food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate"], after: "quick-say")
+        case "viet-family-city-hoian-place-madam-khanh":
+            staticPicks = menuItemPicks(["food-banh-mi-thit", "food-banh-mi-ga", "food-banh-mi-pate", "food-banh-mi-dac-biet"], after: "quick-say")
+        case "viet-family-city-hoian-place-morning-glory":
+            staticPicks = menuItemPicks(["food-cao-lau", "food-mi-quang-ga", "food-banh-xeo", "food-banh-bot-loc"], after: "quick-say")
+        case "viet-family-city-hue-place-tam-giang-lagoon":
+            staticPicks = menuItemPicks(["food-tom-nuong-muoi-ot", "food-ngheu-hap-sa", "food-ngheu-xao-bo-toi"], after: "place-brief")
+        case "viet-family-city-hcmc-place-lusine-thao-dien",
+             "viet-phrase-city-hcmc-place-lusine-thao-dien":
+            staticPicks = lusineThaoDienPicks
+        case "viet-family-city-danang-place-international-terminal":
+            staticPicks = danangInternationalTerminalMentionedPicks
+        case "viet-family-city-danang-place-dong-dinh-museum":
+            staticPicks = dongDinhMuseumMentionedPicks
+        case "viet-family-city-hcmc-place-pasteur-street":
+            staticPicks = pasteurStreetMentionedPicks
+        case "viet-family-city-hanoi-place-loading-t-cafe":
+            staticPicks = loadingTCafeMentionedPicks
+        case "viet-family-city-danang-place-lotte-mart":
+            staticPicks = lotteMartDanangMentionedPicks
+        default:
+            staticPicks = []
+        }
+
+        return mergedLocationPicks(
+            staticPicks: staticPicks,
+            runtimePicks: VietSQLitePhraseGraphRuntime.locationRelationPicks(
+                forPageID: pageID,
+                relationType: "mentioned-here"
+            )
+        )
+    }
+
+    static func picks(forPageID pageID: String, afterSectionID sectionID: String) -> [LocationMenuPick] {
+#if DEBUG
+        cacheLock.lock()
+        sectionFilterCount += 1
+        cacheLock.unlock()
+#endif
+        return picks(forPageID: pageID).filter { $0.afterSectionID == sectionID }
+    }
+
+    static func trailingPicks(forPageID pageID: String) -> [LocationMenuPick] {
+#if DEBUG
+        cacheLock.lock()
+        sectionFilterCount += 1
+        cacheLock.unlock()
+#endif
+        return picks(forPageID: pageID).filter { $0.afterSectionID == nil }
+    }
+
+    static func pick(withDetailPageID pageID: String) -> LocationMenuPick? {
+        allPicks.first { $0.detailPageID == pageID }
+    }
+
+    static func hasDetailPage(withID pageID: String) -> Bool {
+        guard let pick = pick(withDetailPageID: pageID) else {
+            return false
+        }
+
+        return pick.linkedMenuItemID == nil
+    }
+
+    static func detailPage(withID pageID: String) -> PhraseDetailPage? {
+        guard let pick = pick(withDetailPageID: pageID), pick.linkedMenuItemID == nil else {
+            return nil
+        }
+
+        return PhraseDetailPage(
+            id: pick.detailPageID,
+            title: pick.title,
+            englishTitle: pick.subtitle,
+            pronunciation: pick.title,
+            summary: pick.proof,
+            iconName: "fork.knife",
+            tintName: .orange,
+            heroImageName: detailHeroImageName(for: pick),
+            sections: detailSections(for: pick),
+            examples: [],
+            audioKey: nil,
+            practiceCTALabel: "Practice ordering here",
+            showsCatalogExplore: false
+        )
+    }
+
+    private static var allPicks: [LocationMenuPick] {
+        lusineThaoDienPicks
+    }
+
+    private static func menuItemPicks(_ itemIDs: [String], after sectionID: String) -> [LocationMenuPick] {
+        Array(itemIDs.prefix(4)).compactMap { menuItemPick(itemID: $0, after: sectionID) }
+    }
+
+    private static func menuItemPick(itemID: String, after sectionID: String) -> LocationMenuPick? {
+        guard let item = VietnameseMenuCatalog.item(withID: itemID) else {
+            return nil
+        }
+
+        return LocationMenuPick(
+            id: "\(sectionID)-\(item.itemID)",
+            title: item.vietnameseItem,
+            subtitle: item.englishTranslation,
+            proof: "",
+            imageName: item.menuImageName,
+            detailPageID: item.detailPageID,
+            linkedMenuItemID: item.itemID,
+            afterSectionID: sectionID
+        )
+    }
+
+    private static func authoredPagePick(
+        id: String,
+        title: String,
+        subtitle: String,
+        proof: String,
+        imageName: String,
+        detailPageID: String,
+        audioText: String? = nil,
+        after sectionID: String
+    ) -> LocationMenuPick {
+        LocationMenuPick(
+            id: id,
+            title: title,
+            subtitle: subtitle,
+            proof: proof,
+            imageName: imageName,
+            detailPageID: detailPageID,
+            audioText: audioText,
+            linkedMenuItemID: nil,
+            afterSectionID: sectionID
+        )
+    }
+
+    private static let danangInternationalTerminalMentionedPicks: [LocationMenuPick] = [
+        authoredPagePick(
+            id: "terminal-mentioned-sim",
+            title: "SIM card",
+            subtitle: "Get connected before leaving the terminal.",
+            proof: "Useful before pickup and hotel messages.",
+            imageName: "HeroCategoryAirport",
+            detailPageID: "viet-family-airport-sim",
+            after: "place-brief"
+        ),
+        authoredPagePick(
+            id: "terminal-mentioned-atm",
+            title: "ATM",
+            subtitle: "Find cash before the ride into the city.",
+            proof: "Good to settle before stepping into the pickup flow.",
+            imageName: "HeroCategoryNumbersMoney",
+            detailPageID: "viet-family-money-find-atm",
+            after: "place-brief"
+        ),
+    ]
+
+    private static let dongDinhMuseumMentionedPicks: [LocationMenuPick] = [
+        authoredPagePick(
+            id: "dong-dinh-mentioned-son-tra",
+            title: "Bán đảo Sơn Trà",
+            subtitle: "Son Tra Peninsula",
+            proof: "The wider peninsula route this stop belongs to.",
+            imageName: "HeroCityDanangPlaceSonTra",
+            detailPageID: "viet-family-city-danang-place-son-tra",
+            audioText: "Bán đảo Sơn Trà",
+            after: "good-to-know"
+        ),
+        authoredPagePick(
+            id: "dong-dinh-mentioned-lady-buddha",
+            title: "Tượng Phật Bà",
+            subtitle: "Lady Buddha",
+            proof: "The natural pairing before or after a quiet museum pause.",
+            imageName: "HeroCityDanangPlaceLadyBuddha",
+            detailPageID: "viet-family-city-danang-place-lady-buddha",
+            audioText: "Tượng Phật Bà",
+            after: "good-to-know"
+        ),
+    ]
+
+    private static let pasteurStreetMentionedPicks: [LocationMenuPick] = [
+        authoredPagePick(
+            id: "pasteur-mentioned-district-1",
+            title: "Đến Quận 1",
+            subtitle: "Head to District 1",
+            proof: "A District 1 line that helps errands, cafes, offices, and crossings make sense.",
+            imageName: "HeroCityHcmcPlaceDistrict1",
+            detailPageID: "viet-family-city-hcmc-go-district-1",
+            audioText: "Đến Quận 1",
+            after: "place-brief"
+        ),
+    ]
+
+    private static let loadingTCafeMentionedPicks: [LocationMenuPick] = [
+        authoredPagePick(
+            id: "loading-t-mentioned-egg-coffee",
+            title: "Cà phê trứng",
+            subtitle: "Egg coffee",
+            proof: "The Hanoi drink many visitors come upstairs for.",
+            imageName: "HeroCityHanoiPlaceEggCoffee",
+            detailPageID: "viet-family-city-hanoi-place-egg-coffee",
+            audioText: "Cà phê trứng",
+            after: "place-brief"
+        ),
+        authoredPagePick(
+            id: "loading-t-mentioned-ca-phe-sua-da",
+            title: "Cà phê sữa đá",
+            subtitle: "Iced milk coffee",
+            proof: "The familiar cold coffee order beside the room itself.",
+            imageName: "HeroCityHanoiPlaceCaPheSuaDa",
+            detailPageID: "viet-family-city-hanoi-place-ca-phe-sua-da",
+            audioText: "Cà phê sữa đá",
+            after: "place-brief"
+        ),
+        authoredPagePick(
+            id: "loading-t-mentioned-old-quarter",
+            title: "Phố cổ Hà Nội",
+            subtitle: "Hanoi Old Quarter",
+            proof: "The surrounding walking context for a tucked-away coffee pause.",
+            imageName: "HeroCityHanoiPlaceOldQuarter",
+            detailPageID: "viet-family-city-hanoi-go-old-quarter",
+            audioText: "Phố cổ Hà Nội",
+            after: "place-brief"
+        ),
+    ]
+
+    private static let lotteMartDanangMentionedPicks: [LocationMenuPick] = [
+        authoredPagePick(
+            id: "lotte-mart-mentioned-sunscreen",
+            title: "Sunscreen",
+            subtitle: "Restock before beach time or a long ride.",
+            proof: "Worth grabbing before beach time, a long walk, or a ride out of town.",
+            imageName: "HeroCityDanangPlaceLotteMart",
+            detailPageID: "viet-family-service-sunscreen",
+            after: "place-brief"
+        ),
+    ]
+
+    private static let lusineThaoDienPicks: [LocationMenuPick] = [
+        LocationMenuPick(
+            id: "lusine-eggs-benedict",
+            title: "Eggs Benedict",
+            subtitle: "Brunch eggs with hollandaise",
+            proof: "The familiar brunch default.",
+            imageName: "HeroMenuFoodBanhMiOpLa",
+            detailPageID: "viet-menu-lusine-thao-dien-eggs-benedict",
+            linkedMenuItemID: nil,
+            afterSectionID: nil
+        ),
+        LocationMenuPick(
+            id: "lusine-premium-pho",
+            title: "Premium Pho",
+            subtitle: "Related phrase: Phở đặc biệt",
+            proof: "The comfort bowl beside coffee.",
+            imageName: VietnameseMenuImages.assetName(forItemID: "food-pho-dac-biet"),
+            detailPageID: "viet-menu-food-pho-dac-biet",
+            linkedMenuItemID: "food-pho-dac-biet",
+            afterSectionID: nil
+        ),
+        LocationMenuPick(
+            id: "lusine-squid-ink-crab-pasta",
+            title: "Squid ink crab pasta",
+            subtitle: "Seafood pasta",
+            proof: "The plate that turns coffee into lunch.",
+            imageName: "HeroMenuFoodMiXaoHaiSan",
+            detailPageID: "viet-menu-lusine-thao-dien-squid-ink-crab-pasta",
+            linkedMenuItemID: nil,
+            afterSectionID: nil
+        ),
+        LocationMenuPick(
+            id: "lusine-crispy-chicken-salad",
+            title: "Crispy chicken salad",
+            subtitle: "Fresh salad with crunch",
+            proof: "The lighter plate with crunch.",
+            imageName: "HeroMenuFoodGoiGa",
+            detailPageID: "viet-menu-lusine-thao-dien-crispy-chicken-salad",
+            linkedMenuItemID: nil,
+            afterSectionID: nil
+        ),
+        LocationMenuPick(
+            id: "lusine-salt-caramel-coffee",
+            title: "Salt caramel coffee",
+            subtitle: "Sweet coffee drink",
+            proof: "The one people stay longer for.",
+            imageName: "HeroMenuDrinkCaPheMuoi",
+            detailPageID: "viet-menu-lusine-thao-dien-salt-caramel-coffee",
+            linkedMenuItemID: nil,
+            afterSectionID: nil
+        ),
+        LocationMenuPick(
+            id: "lusine-avocado-toast",
+            title: "Avocado toast",
+            subtitle: "Breakfast toast",
+            proof: "The simple breakfast beside coffee.",
+            imageName: "HeroMenuFoodBanhMiOpLa",
+            detailPageID: "viet-menu-lusine-thao-dien-avocado-toast",
+            linkedMenuItemID: nil,
+            afterSectionID: nil
+        ),
+    ]
+
+    private static func detailHeroImageName(for pick: LocationMenuPick) -> String {
+        switch pick.id {
+        case "lusine-eggs-benedict", "lusine-avocado-toast":
+            return "BackdropMenuFoodBanhMiOpLa"
+        case "lusine-squid-ink-crab-pasta":
+            return "BackdropMenuFoodMiXaoHaiSan"
+        case "lusine-crispy-chicken-salad":
+            return "BackdropMenuFoodGoiGa"
+        case "lusine-salt-caramel-coffee":
+            return "BackdropMenuDrinkCaPheMuoi"
+        default:
+            return "HeroCityHcmcPlaceLusineThaoDien"
+        }
+    }
+
+    private static func detailSections(for pick: LocationMenuPick) -> [PhraseDetailSection] {
+        [
+            PhraseDetailSection(
+                id: "why-it-shows-up",
+                title: "Why it shows up",
+                body: pick.proof,
+                presentation: .tipCallout
+            ),
+            PhraseDetailSection(
+                id: "what-it-is",
+                title: "What it is",
+                body: detailBody(for: pick)
+            ),
+            PhraseDetailSection(
+                id: "at-lusine",
+                title: "At L'Usine Thảo Điền",
+                body: "This branch is remembered as a sit-down brunch cafe, not just a coffee counter: real plates, good coffee, a calmer room, and service people mention afterward."
+            ),
+        ]
+    }
+
+    private static func detailBody(for pick: LocationMenuPick) -> String {
+        switch pick.id {
+        case "lusine-eggs-benedict":
+            return "A classic brunch plate with poached eggs and hollandaise. This is the easy first order when the visit is meant to be breakfast, not only coffee."
+        case "lusine-squid-ink-crab-pasta":
+            return "A richer seafood pasta order that makes the table feel more like lunch. It is one of the dishes guests name when the cafe turns into a full meal."
+        case "lusine-crispy-chicken-salad":
+            return "A lighter plate with crunch for the table that wants brunch without everyone choosing eggs, noodles, or a heavier main."
+        case "lusine-salt-caramel-coffee":
+            return "A sweeter coffee drink for the second-cup part of the visit. It belongs to the Sunday-morning side of this branch."
+        case "lusine-avocado-toast":
+            return "A familiar breakfast order that makes the branch feel easy for a first Thao Dien morning, especially beside coffee."
+        default:
+            return pick.subtitle
+        }
+    }
+}
+
+enum LocationRelatedPicksCatalog {
+    private static let cacheLimit = 96
+    private static let cacheLock = NSLock()
+    private static var cachedPicksByPageID: [String: [LocationMenuPick]] = [:]
+    private static var cachedPageIDs: [String] = []
+
+#if DEBUG
+    private static var buildCountsByPageID: [String: Int] = [:]
+    private static var sectionFilterCount = 0
+
+    static func resetCacheForTesting() {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        cachedPicksByPageID.removeAll()
+        cachedPageIDs.removeAll()
+        buildCountsByPageID.removeAll()
+        sectionFilterCount = 0
+    }
+
+    static var cacheLimitForTesting: Int {
+        cacheLimit
+    }
+
+    static var cachedPageCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return cachedPicksByPageID.count
+    }
+
+    static func buildCountForTesting(pageID: String) -> Int {
+        let lookupPageID = canonicalLookupPageID(for: pageID)
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return buildCountsByPageID[lookupPageID] ?? 0
+    }
+
+    static var sectionFilterCountForTesting: Int {
+        cacheLock.lock()
+        defer { cacheLock.unlock() }
+        return sectionFilterCount
+    }
+#endif
+
+    static func picks(forPageID pageID: String) -> [LocationMenuPick] {
+        guard mayHavePicks(for: pageID) else {
+            return []
+        }
+
+        let lookupPageID = canonicalLookupPageID(for: pageID)
+
+        cacheLock.lock()
+        if let cachedPicks = cachedPicksByPageID[lookupPageID] {
+            touchCachedPageID(lookupPageID)
+            cacheLock.unlock()
+            return cachedPicks
+        }
+        cacheLock.unlock()
+
+        let picks = uncachedPicks(forPageID: lookupPageID)
+
+        cacheLock.lock()
+        storeCachedPicks(picks, for: lookupPageID)
+#if DEBUG
+        buildCountsByPageID[lookupPageID, default: 0] += 1
+#endif
+        cacheLock.unlock()
+
+        return picks
+    }
+
+    private static func storeCachedPicks(_ picks: [LocationMenuPick], for pageID: String) {
+        cachedPicksByPageID[pageID] = picks
+        touchCachedPageID(pageID)
+
+        while cachedPageIDs.count > cacheLimit {
+            let oldestPageID = cachedPageIDs.removeFirst()
+            cachedPicksByPageID.removeValue(forKey: oldestPageID)
+#if DEBUG
+            buildCountsByPageID.removeValue(forKey: oldestPageID)
+#endif
+        }
+    }
+
+    private static func touchCachedPageID(_ pageID: String) {
+        cachedPageIDs.removeAll { $0 == pageID }
+        cachedPageIDs.append(pageID)
+    }
+
+    private static func canonicalLookupPageID(for pageID: String) -> String {
+        if let canonicalPageID = VietSQLitePhraseGraphRuntime.canonicalPageID(for: pageID) {
+            return canonicalPageID
+        }
+
+        if pageID.hasPrefix("viet-phrase-city-") {
+            return "viet-family-city-" + String(pageID.dropFirst("viet-phrase-city-".count))
+        }
+
+        return pageID
+    }
+
+    private static func mayHavePicks(for pageID: String) -> Bool {
+        pageID.hasPrefix("viet-family-city-") || pageID.hasPrefix("viet-phrase-city-")
+    }
+
+    private static func uncachedPicks(forPageID pageID: String) -> [LocationMenuPick] {
+        let staticPicks: [LocationMenuPick]
+
+        switch pageID {
+        case "viet-family-city-danang-place-international-terminal":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "terminal-related-airport",
+                    title: "Sân bay Đà Nẵng",
+                    subtitle: "Da Nang Airport",
+                    proof: "Use the broader airport name when terminal details are not needed.",
+                    imageName: "HeroCityDanangPlaceAirport",
+                    detailPageID: "viet-family-city-danang-place-airport",
+                    audioText: "Sân bay Đà Nẵng"
+                ),
+                relatedPlacePick(
+                    id: "terminal-related-domestic-terminal",
+                    title: "Nhà ga quốc nội Đà Nẵng",
+                    subtitle: "Da Nang Domestic Terminal",
+                    proof: "The domestic side matters for pickups, transfers, and check-in.",
+                    imageName: "HeroCityDanangPlaceDomesticTerminal",
+                    detailPageID: "viet-family-city-danang-place-domestic-terminal",
+                    audioText: "Nhà ga quốc nội Đà Nẵng"
+                ),
+            ]
+        case "viet-family-city-danang-place-dong-dinh-museum":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "dong-dinh-related-linh-ung",
+                    title: "Chùa Linh Ứng",
+                    subtitle: "Linh Ung Pagoda",
+                    proof: "The pagoda stop most people pair with a Sơn Trà route.",
+                    imageName: "HeroCityDanangPlaceLinhUngPagoda",
+                    detailPageID: "viet-family-city-danang-place-linh-ung-pagoda",
+                    audioText: "Chùa Linh Ứng"
+                ),
+                relatedPlacePick(
+                    id: "dong-dinh-related-cham-museum",
+                    title: "Bảo tàng Điêu khắc Chăm",
+                    subtitle: "Museum of Cham Sculpture",
+                    proof: "The stronger central-city museum contrast.",
+                    imageName: "HeroCityDanangPlaceChamMuseum",
+                    detailPageID: "viet-family-city-danang-place-cham-museum",
+                    audioText: "Bảo tàng Điêu khắc Chăm"
+                ),
+            ]
+        case "viet-family-city-hcmc-place-pasteur-street":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "pasteur-related-dong-khoi",
+                    title: "Đường Đồng Khởi",
+                    subtitle: "Dong Khoi Street",
+                    proof: "A more polished District 1 street contrast.",
+                    imageName: "HeroCityHcmcPlaceDongKhoiStreet",
+                    detailPageID: "viet-family-city-hcmc-place-dong-khoi-street",
+                    audioText: "Đường Đồng Khởi"
+                ),
+                relatedPlacePick(
+                    id: "pasteur-related-district-3",
+                    title: "Quận 3",
+                    subtitle: "District 3",
+                    proof: "A nearby district when the walk points beyond central errands.",
+                    imageName: "HeroCityHcmcPlaceDistrict3",
+                    detailPageID: "viet-family-city-hcmc-place-district-3",
+                    audioText: "Quận 3"
+                ),
+            ]
+        case "viet-family-city-hanoi-place-loading-t-cafe":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "loading-t-related-dinh-cafe",
+                    title: "Cà phê Đinh",
+                    subtitle: "Dinh Cafe",
+                    proof: "Another upstairs Old Quarter coffee room.",
+                    imageName: "HeroCityHanoiPlaceDinhCafe",
+                    detailPageID: "viet-family-city-hanoi-place-dinh-cafe",
+                    audioText: "Cà phê Đinh"
+                ),
+                relatedPlacePick(
+                    id: "loading-t-related-giang-cafe",
+                    title: "Cà phê Giảng",
+                    subtitle: "Cafe Giang",
+                    proof: "The classic egg-coffee comparison.",
+                    imageName: "HeroCityHanoiPlaceGiangCafe",
+                    detailPageID: "viet-family-city-hanoi-place-giang-cafe",
+                    audioText: "Cà phê Giảng"
+                ),
+            ]
+        case "viet-family-city-danang-place-lotte-mart":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "lotte-mart-related-han-market",
+                    title: "Chợ Hàn",
+                    subtitle: "Han Market",
+                    proof: "The central-market contrast for texture and bargaining.",
+                    imageName: "HeroCityDanangPlaceHanMarket",
+                    detailPageID: "viet-family-city-danang-place-han-market",
+                    audioText: "Chợ Hàn"
+                ),
+                relatedPlacePick(
+                    id: "lotte-mart-related-vincom-plaza",
+                    title: "Vincom Plaza Đà Nẵng",
+                    subtitle: "Vincom Plaza Da Nang",
+                    proof: "Another indoor mall option when cool air matters.",
+                    imageName: "HeroCityDanangPlaceVincomPlaza",
+                    detailPageID: "viet-family-city-danang-place-vincom-plaza",
+                    audioText: "Vincom Plaza Đà Nẵng"
+                ),
+            ]
+        case "viet-family-city-danang-place-3d-art-in-paradise":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "3d-art-related-fine-arts",
+                    title: "Bảo tàng Mỹ thuật Đà Nẵng",
+                    subtitle: "Da Nang Fine Arts Museum",
+                    proof: "A quieter art stop when you want galleries instead of camera play.",
+                    imageName: "HeroCityDanangPlaceFineArtsMuseum",
+                    detailPageID: "viet-family-city-danang-place-fine-arts-museum"
+                ),
+            ]
+        case "viet-family-city-hanoi-place-bun-cha":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "bun-cha-related-huong-lien",
+                    title: "Bún chả Hương Liên",
+                    subtitle: "Bun Cha Huong Lien",
+                    proof: "A named bun cha stop if you want a specific restaurant target.",
+                    imageName: "HeroCityHanoiPlaceBunChaHuongLien",
+                    detailPageID: "viet-family-city-hanoi-place-bun-cha-huong-lien"
+                ),
+                relatedPlacePick(
+                    id: "bun-cha-related-bun-cha-ta",
+                    title: "Bún Chả Ta",
+                    subtitle: "Bun Cha Ta",
+                    proof: "Another named bun cha restaurant candidate for comparison.",
+                    imageName: "HeroCityHanoiPlaceBunChaTa",
+                    detailPageID: "viet-family-city-hanoi-place-bun-cha-ta"
+                ),
+            ]
+        case "viet-family-city-hcmc-place-ben-thanh-market":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "ben-thanh-related-an-dong",
+                    title: "Chợ An Đông",
+                    subtitle: "An Dong Market",
+                    proof: "A market comparison when shopping matters more than the landmark.",
+                    imageName: "HeroCityHcmcPlaceAnDongMarket",
+                    detailPageID: "viet-family-city-hcmc-place-an-dong-market"
+                ),
+                relatedPlacePick(
+                    id: "ben-thanh-related-binh-tay",
+                    title: "Chợ Bình Tây",
+                    subtitle: "Binh Tay Market",
+                    proof: "A Cholon market contrast with a different city rhythm.",
+                    imageName: "HeroCityHcmcPlaceBinhTayMarket",
+                    detailPageID: "viet-family-city-hcmc-place-binh-tay-market"
+                ),
+            ]
+        case "viet-family-city-hoian-place-ancient-town-ticket-booth":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "ticket-booth-related-ancient-town",
+                    title: "Phố cổ Hội An",
+                    subtitle: "Hoi An Ancient Town",
+                    proof: "The larger old-town area beyond the ticket pause.",
+                    imageName: "HeroCityHoianPlaceAncientTown",
+                    detailPageID: "viet-family-city-hoian-place-ancient-town"
+                ),
+            ]
+        case "viet-family-city-hue-place-bach-ma-national-park":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "bach-ma-related-lap-an",
+                    title: "Đầm Lập An",
+                    subtitle: "Lap An Lagoon",
+                    proof: "A lighter water-and-weather stop on a central Vietnam route.",
+                    imageName: "HeroCityHuePlaceLapAnLagoon",
+                    detailPageID: "viet-family-city-hue-place-lap-an-lagoon"
+                ),
+                relatedPlacePick(
+                    id: "bach-ma-related-hai-van",
+                    title: "Đèo Hải Vân",
+                    subtitle: "Hai Van Pass",
+                    proof: "A scenic mountain-road option when the ride matters more than hiking.",
+                    imageName: "HeroCityDanangPlaceHaiVanPass",
+                    detailPageID: "viet-family-city-danang-place-hai-van-pass"
+                ),
+            ]
+        case "viet-family-city-danang-place-han-market":
+            staticPicks = [
+                LocationMenuPick(
+                    id: "han-market-related-con-market",
+                    title: "Chợ Cồn",
+                    subtitle: "Con Market",
+                    proof: "The stronger food-first market nearby.",
+                    imageName: "HeroCityDanangPlaceConMarket",
+                    detailPageID: "viet-family-city-danang-place-con-market",
+                    audioText: "Chợ Cồn",
+                    linkedMenuItemID: nil,
+                    afterSectionID: "good-to-know"
+                ),
+            ]
+        case "viet-family-city-danang-place-bep-cuon":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "bep-cuon-related-banh-xeo-ba-duong",
+                    title: "Bánh xèo Bà Dưỡng",
+                    subtitle: "Banh Xeo Ba Duong",
+                    proof: "A louder hands-on Da Nang table when crisp pancakes and sauce should lead.",
+                    imageName: "HeroCityDanangPlaceBanhXeoBaDuong",
+                    detailPageID: "viet-family-city-danang-place-banh-xeo-ba-duong",
+                    audioText: "Bánh xèo Bà Dưỡng"
+                ),
+            ]
+        case "viet-family-city-danang-place-co-chu-nho":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "co-chu-nho-related-bep-cuon",
+                    title: "Bếp Cuốn Đà Nẵng",
+                    subtitle: "Bep Cuon Da Nang",
+                    proof: "A 2025 MICHELIN Selected roll table when pork, herbs, rice paper, and mam nem should lead.",
+                    imageName: "HeroCityDanangPlaceBepCuon",
+                    detailPageID: "viet-family-city-danang-place-bep-cuon",
+                    audioText: "Bếp Cuốn Đà Nẵng"
+                ),
+            ]
+        case "viet-family-city-danang-place-the-temptation":
+            staticPicks = [
+                relatedPlacePick(
+                    id: "the-temptation-related-nen",
+                    title: "Nén Đà Nẵng",
+                    subtitle: "Nen Da Nang",
+                    proof: "A Vietnamese fine-dining destination when the evening should feel bigger than quiet French dinner.",
+                    imageName: "HeroCityDanangPlaceNen",
+                    detailPageID: "viet-family-city-danang-place-nen",
+                    audioText: "Nén Đà Nẵng"
+                ),
+            ]
+        default:
+            staticPicks = []
+        }
+
+        return mergedLocationPicks(
+            staticPicks: staticPicks,
+            runtimePicks: VietSQLitePhraseGraphRuntime.locationRelationPicks(
+                forPageID: pageID,
+                relationType: "compare-nearby"
+            )
+        )
+    }
+
+    static func picks(forPageID pageID: String, afterSectionID sectionID: String) -> [LocationMenuPick] {
+#if DEBUG
+        cacheLock.lock()
+        sectionFilterCount += 1
+        cacheLock.unlock()
+#endif
+        return picks(forPageID: pageID).filter { $0.afterSectionID == sectionID }
+    }
+
+    private static func relatedPlacePick(
+        id: String,
+        title: String,
+        subtitle: String,
+        proof: String,
+        imageName: String,
+        detailPageID: String,
+        audioText: String? = nil
+    ) -> LocationMenuPick {
+        LocationMenuPick(
+            id: id,
+            title: title,
+            subtitle: subtitle,
+            proof: proof,
+            imageName: imageName,
+            detailPageID: detailPageID,
+            audioText: audioText,
+            linkedMenuItemID: nil,
+            afterSectionID: "good-to-know"
+        )
     }
 }
 

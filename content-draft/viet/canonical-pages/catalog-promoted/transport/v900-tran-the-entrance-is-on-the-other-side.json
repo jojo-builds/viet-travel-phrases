@@ -7,7 +7,7 @@
   "title": "Lối vào nằm ở phía bên kia",
   "englishTitle": "The entrance is on the other side",
   "pronunciation": "Loi vao nam o phia ben kia",
-  "summary": "The entrance is on the other side",
+  "summary": "For explaining that the door, gate, or pickup entrance is across from where you are now.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Lối vào nằm ở phía bên kia is a practical transport phrase for keeping one travel detail clear. Use it when entrance is on the other side is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it when the car, walking route, or meeting point is on the wrong side."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Lối vào nằm ở phía bên kia. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point across the street, lobby, station, or parking area. Let the gesture carry the direction.",
       "phrases": [
         {
           "id": "v900-tran-the-entrance-is-on-the-other-side",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Lối vào means entrance; nằm ở means is located at; phía bên kia means the other side.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Lối vào nằm",
-          "english": "the entrance is",
-          "audioKey": null
+          "vietnamese": "Lối vào",
+          "english": "the entrance",
+          "keepTogetherReason": "entrance phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "ở phía bên",
-          "english": "fee",
-          "audioKey": null
+          "vietnamese": "nằm ở",
+          "english": "is located at",
+          "keepTogetherReason": "location phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "kia",
-          "english": "entrance is on the other side",
-          "audioKey": null
+          "vietnamese": "phía bên kia",
+          "english": "the other side",
+          "keepTogetherReason": "other-side phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Lối vào nằm ở phía bên kia",
           "english": "The entrance is on the other side",
-          "audioKey": null
+          "audioKey": "v900-tran-the-entrance-is-on-the-other-side"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from The entrance is on the other side to another transport need.",
+      "body": "If the route changes, move to stop-here, pick-up-entrance, correct-address, turn-around, or main-entrance follow-ups.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when entrance is on the other side is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at malls, stations, hotels, markets, ports, and buildings with more than one entrance."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "This line works best with a gesture. The other side may mean across the street, around the building, or another gate."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Lối vào nằm ở phía bên kia.",
+      "body": "Use pickup-entrance, main-entrance, turn-around, stop-here, or correct-address cards if the entrance still needs sorting.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

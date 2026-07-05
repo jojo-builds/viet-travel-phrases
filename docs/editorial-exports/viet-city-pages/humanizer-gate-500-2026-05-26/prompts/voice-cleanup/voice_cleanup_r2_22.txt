@@ -1,0 +1,346 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_22",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_22",
+  "chunks": [
+    {
+      "chunkFile": "hanoi_051_075_humanized.json",
+      "cityID": "hanoi",
+      "range": "051-075",
+      "errors": [
+        {
+          "id": "city-hanoi-place-national-museum-history",
+          "message": "banned visible fragment: gives hanoi a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-hanoi-place-my-dinh-bus-station",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-my-dinh-bus-station",
+          "message": "freshness/process-like heading: Routes Can Shift"
+        },
+        {
+          "id": "city-hanoi-place-my-dinh-bus-station",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-nang-cafe",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-nang-cafe",
+          "message": "freshness/process-like heading: Menus Can Shift"
+        },
+        {
+          "id": "city-hanoi-place-nang-cafe",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-national-museum-history",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-national-museum-history",
+          "message": "freshness/process-like heading: Details Can Shift"
+        },
+        {
+          "id": "city-hanoi-place-national-museum-history",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-nem-cua-be",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-nem-cua-be",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "city-hanoi-place-ngoc-son-temple",
+          "message": "generic non-playable quick-say title: Local Name To Recognize"
+        },
+        {
+          "id": "city-hanoi-place-ngoc-son-temple",
+          "message": "freshness/process-like heading: Access Can Shift"
+        },
+        {
+          "id": "city-hanoi-place-ngoc-son-temple",
+          "message": "visible QA/freshness/process language in body copy"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated exact heading 25x: local name to recognize"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 25x: generic name-card heading"
+        },
+        {
+          "id": "051-075",
+          "message": "repeated formula heading 5x: freshness/checking heading"
+        },
+        {
+          "id": "051-075",
+          "message": "non-playable quick-say name-card pattern appears 25x"
+        },
+        {
+          "id": "051-075",
+          "message": "freshness/process headings appear 5x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hanoi-place-my-dinh-bus-station",
+          "summary": "My Dinh Bus Station is Hanoi at its onward-road edge: bags, route boards, waiting benches, and the next leg of the north already pressing into view.",
+          "context": "This is a travel-day handoff, not sightseeing. Match the station name, ticket, bay, and ride plan before the crowd starts moving.",
+          "tip": "Give the station name, route, and pickup area one calm check before sitting down. Bags make every wrong turn feel longer.",
+          "rationale": "Bến xe Mỹ Đình should be easy to recognize when a bus, taxi, or ticket screen points away from central Hanoi.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Western Road Hub",
+              "body": "My Dinh feels like Hanoi stretching outward: buses, wide roads, route signs, benches, bags, and the low pressure of a departure day."
+            },
+            {
+              "id": "place-brief",
+              "title": "Ticket Before Bench",
+              "body": "Check the route, company name, bay, and pickup point before relaxing. A quiet station minute can become boarding confusion quickly."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Bến xe Mỹ Đình is the name to show or listen for when the ride, ticket, or driver needs the station in Vietnamese."
+            },
+            {
+              "id": "use-it-with",
+              "title": "The Exit Stays Simple",
+              "body": "Keep the phone, ticket, and small bag close. Once the right bus or pickup point is clear, leave the station decision plain."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Travel-Day Margin",
+              "body": "Give this stop extra time for traffic, ticket checks, and moving from the waiting area to the bus with luggage."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Routes Can Shift",
+              "body": "Routes, bays, and pickup habits can change. Let the station name steady the plan, then trust the ticket and posted signs."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-nang-cafe",
+          "summary": "Nang Cafe belongs to Hanoi's older coffee rhythm: small tables, strong cups, ice, sweetness, and a pause that should stay short enough to feel light.",
+          "context": "Come for one classic drink, a small table, and a short pause before returning to the street.",
+          "tip": "Order the simple coffee first, then settle into the room. If the space is full, Hanoi has enough coffee nearby to keep the day moving.",
+          "rationale": "Cà phê Năng gives a concrete Hanoi coffee pause without locking the visit to changing branch, menu, seating, or hour details.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Coffee As A Pause",
+              "body": "Nang Cafe is for a strong cup, a small table, and a few slower minutes between streets rather than a long work session."
+            },
+            {
+              "id": "place-brief",
+              "title": "Classic Glass First",
+              "body": "Iced milk coffee gives the sweeter Hanoi cafe feel. Iced black coffee keeps the roast sharper and the stop cleaner."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Cà phê Năng is the name to keep beside the coffee-street image: a small room, strong cups, ice, and street noise nearby."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Short Reset",
+              "body": "Pair it with Old Quarter walking, coffee streets, or a hot afternoon break. The stop is strongest when it gives the day a reset."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Full Room, Light Plan",
+              "body": "If seating looks tight, do not force the visit. The point is the coffee pause, not winning a specific chair."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Menus Can Shift",
+              "body": "Treat this as a classic Hanoi coffee pause. Branch details, seating, and menus can change, so keep the visit flexible."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-national-museum-history",
+          "summary": "Vietnam National Museum of History gives Hanoi a cooler indoor layer: artifacts, quiet galleries, warm architecture outside, and enough history to slow the city down.",
+          "context": "Pick one lane through the collection instead of trying to absorb the whole country in a single visit.",
+          "tip": "Choose the era, object type, or building detail you care about first. That keeps the galleries from blurring into labels.",
+          "rationale": "Bảo tàng Lịch sử Quốc gia works as a specific Hanoi cultural stop; exhibits, tickets, and guide details belong to the day-of check.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "History In A Cooler Room",
+              "body": "This museum gives Hanoi a quieter layer: display cases, objects, calm light, and an ochre building that already feels like part of the visit."
+            },
+            {
+              "id": "place-brief",
+              "title": "One Lane Is Enough",
+              "body": "Pick ancient objects, architecture, or historical context before entering deeply. A focused visit is easier than trying to read every case."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Bảo tàng Lịch sử Quốc gia is the Vietnamese name to match against signs, tickets, or a ride screen."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Calm Cultural Pairing",
+              "body": "It fits well with the French Quarter, the Opera House area, or a coffee afterward, especially when the day needs an indoor pause."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Room Afterward",
+              "body": "Avoid stacking it tightly with another heavy museum. A short walk or drink gives the objects time to settle."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Details Can Shift",
+              "body": "Hours, tickets, photo rules, and English interpretation can change. Check the entrance details before building the day around it."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-nem-cua-be",
+          "summary": "Nem cua bể is the crab spring-roll order to remember by shape and texture: square pieces, crisp edges, herbs, and dipping sauce on the side.",
+          "context": "Order one shared plate without overloading the meal. Shellfish awareness matters more here than adventurous guesswork.",
+          "tip": "Try one plate first, dip lightly, and keep herbs between bites. The roll is richer when the crisp wrapper still leads.",
+          "rationale": "This Hanoi food move is easy to remember by shape, texture, herbs, and clear shellfish risk.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Crisp, Square, Shareable",
+              "body": "Nem cua bể is easy to remember once you picture the square shape, crab filling, hot crisp edges, herbs, and dipping sauce."
+            },
+            {
+              "id": "place-brief",
+              "title": "One Plate First",
+              "body": "Start with a shared plate and see how rich it feels. It can be satisfying fast beside noodles or another small dish."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Nem cua bể is the dish name to notice when a menu or server points toward crab spring rolls."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Herbs Between Bites",
+              "body": "A light dip keeps the wrapper crisp. Herbs make the plate feel fresher instead of turning the whole order heavy."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Shellfish Awareness",
+              "body": "This is a crab dish, so allergy questions matter. Do not rely on an English menu guess when shellfish is a concern."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Shop Styles Vary",
+              "body": "Serving style and restaurant availability can vary. Treat the dish name as the steady part until a specific shop is checked."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hanoi-place-ngoc-son-temple",
+          "summary": "Ngoc Son Temple begins before the doorway: red bridge, lake water, trees, incense, and a small sacred pause inside central Hanoi near Hoan Kiem.",
+          "context": "Cross from Hoàn Kiếm Lake into a quiet temple space. Keep the visit respectful, short, and tied to the lake.",
+          "tip": "Move slowly near offerings and people praying. The bridge, island, and temple work better as one scene than as separate photos.",
+          "rationale": "Đền Ngọc Sơn needs a calm, specific role: a lake crossing, sacred room, and central Hanoi pause rather than a generic landmark label.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Lake Crossing First",
+              "body": "Ngọc Sơn starts with the red bridge over Hoàn Kiếm Lake, then folds into trees, incense, low rooms, and a quieter island rhythm."
+            },
+            {
+              "id": "place-brief",
+              "title": "Temple Pace",
+              "body": "People may be praying, not sightseeing. Step aside near offerings, lower your voice, and let the small space set the pace."
+            },
+            {
+              "id": "quick-say",
+              "title": "Local Name To Recognize",
+              "body": "Đền Ngọc Sơn is the name to connect with the red bridge, the lake island, and the temple entrance."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Lake Walk Afterward",
+              "body": "A short Hoàn Kiếm walk afterward makes the bridge and temple feel central to the city, not like a standalone stop."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Small Stop, Strong Memory",
+              "body": "The visit does not need to be long. It is strongest between Old Quarter lanes, coffee, and lake walking."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Access Can Shift",
+              "body": "Opening hours, ticketing, and photo expectations can change. Check the door rhythm before planning the temple as a fixed stop."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

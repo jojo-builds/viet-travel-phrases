@@ -20,29 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi chỉ có",
+      "english": "I only have",
+      "keepTogetherReason": "I-only-have phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "chỉ",
-      "english": "show / point"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "bấy nhiêu",
-      "english": "this much",
-      "keepTogetherReason": "fixed amount phrase"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "thôi",
-      "english": "just / only"
+      "vietnamese": "bấy nhiêu thôi",
+      "english": "only this much",
+      "keepTogetherReason": "this-much phrase"
     },
     {
       "id": "full",

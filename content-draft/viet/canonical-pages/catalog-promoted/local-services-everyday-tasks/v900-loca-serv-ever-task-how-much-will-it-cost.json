@@ -7,7 +7,7 @@
   "title": "Nó sẽ có giá bao nhiêu?",
   "englishTitle": "How much will it cost?",
   "pronunciation": "No se co gia bao nhieu",
-  "summary": "How much will it cost?",
+  "summary": "For getting a clear quote before a repair, errand, print job, delivery, or small service starts.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Nó sẽ có giá bao nhiêu? is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on will it cost, so the answer can be a number, calculator screen, or typed price."
+      "body": "Ask while the item, photo, document, bag, address, or task is visible.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Ask Nó sẽ có giá bao nhiêu? before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "body": "Tie the question to one job. If they add a step, ask again before the work continues.",
       "phrases": [
         {
           "id": "v900-loca-serv-ever-task-how-much-will-it-cost",
@@ -42,38 +43,33 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Nó sẽ có giá means it will cost; bao nhiêu asks how much.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Nó sẽ có",
+          "vietnamese": "Nó sẽ có giá",
           "english": "it will cost",
-          "audioKey": null
+          "keepTogetherReason": "it-will-cost phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "giá",
-          "english": "price",
-          "audioKey": null
+          "vietnamese": "bao nhiêu?",
+          "english": "how much?",
+          "keepTogetherReason": "how-much ending"
         },
         {
-          "id": "chunk-3",
-          "vietnamese": "bao nhiêu",
-          "english": "how much",
-          "audioKey": null
-        },
-        {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Nó sẽ có giá bao nhiêu?",
-          "english": "How much will it cost",
-          "audioKey": null
+          "english": "How much will it cost?",
+          "audioKey": "v900-loca-serv-ever-task-how-much-will-it-cost"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from How much will it cost? to another local service need.",
+      "body": "Water, bag, and tissues cards stay useful at the same small shop or counter.",
       "phrases": [
         {
           "id": "store-1",
@@ -110,17 +106,19 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+      "body": "Good at repair counters, print shops, laundry desks, delivery help, hotel errands, and small local services.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "A written quote, calculator number, or receipt is safer than a fast spoken estimate.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Nó sẽ có giá bao nhiêu?.",
+      "body": "Sunscreen, open-this, card-payment, receipt, and printing cards cover the errand-counter path.",
       "phrases": [
         {
           "id": "store-4",

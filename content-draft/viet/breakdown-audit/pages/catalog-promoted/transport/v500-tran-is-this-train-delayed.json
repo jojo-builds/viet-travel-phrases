@@ -20,36 +20,18 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Chuyến",
-      "english": "trip"
+      "vietnamese": "Chuyến tàu này",
+      "english": "this train",
+      "keepTogetherReason": "specific train"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "tàu",
-      "english": "train / boat"
+      "vietnamese": "có bị trễ",
+      "english": "is delayed",
+      "keepTogetherReason": "delay phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "này",
-      "english": "this"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "trễ",
-      "english": "late / delayed"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "không?",
       "english": "yes/no?"
     },

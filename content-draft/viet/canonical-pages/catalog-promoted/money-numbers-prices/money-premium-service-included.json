@@ -7,7 +7,7 @@
   "title": "Dịch vụ đã được bao gồm chưa?",
   "englishTitle": "Is service already included?",
   "pronunciation": "Dich vu da duoc bao gom chua",
-  "summary": "Is service already included?",
+  "summary": "For checking whether a service charge is already in the bill before you tip, pay, or question the total.",
   "iconName": "creditcard.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Dịch vụ đã được bao gồm chưa? is a practical money or price phrase for keeping one travel detail clear. Use it when Is service already included is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it with a bill, menu, hotel invoice, tour quote, or receipt in view."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Dịch vụ đã được bao gồm chưa?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point to the line item and ask once. The answer may be included, not included, tax, or service charge.",
       "phrases": [
         {
           "id": "money-premium-service-included",
@@ -42,38 +42,38 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Dịch vụ means service; đã được bao gồm means already included; chưa asks whether it has been included yet.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Dịch vụ đã",
-          "english": "service already",
-          "audioKey": null
+          "vietnamese": "Dịch vụ",
+          "english": "service",
+          "keepTogetherReason": "service noun"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "được bao gồm",
-          "english": "included",
-          "audioKey": null
+          "vietnamese": "đã được bao gồm",
+          "english": "already included",
+          "keepTogetherReason": "included phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "chưa",
-          "english": "not yet",
-          "audioKey": null
+          "vietnamese": "chưa?",
+          "english": "yet?",
+          "keepTogetherReason": "yet question"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Dịch vụ đã được bao gồm chưa?",
-          "english": "Is service already included",
-          "audioKey": null
+          "english": "Is service already included?",
+          "audioKey": "money-premium-service-included"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is service already included? to another money or price need.",
+      "body": "How-much, per-kilo, and price cards keep the amount visible if the total still needs checking.",
       "phrases": [
         {
           "id": "price-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real money or price exchange when is service already included is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good in restaurants, hotels, spas, tours, ticket counters, and shops when a total includes unclear fees."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to confirm visually. Hold up the item or calculator and let the other person show the price."
+      "body": "Service charge and tax can be separate lines. Show the exact number instead of asking about the whole bill."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Dịch vụ đã được bao gồm chưa?.",
+      "body": "Move to too-expensive, lower-price, final-price, show-another, or take-this cards if the conversation shifts back to price.",
       "phrases": [
         {
           "id": "price-3",

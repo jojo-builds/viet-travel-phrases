@@ -7,7 +7,7 @@
   "title": "Bây giờ tôi đã an toàn",
   "englishTitle": "I am safe now",
   "pronunciation": "Bay gio toi da an toan",
-  "summary": "I am safe now",
+  "summary": "For telling someone the immediate danger has passed while you still may need the next practical step.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bây giờ tôi đã an toàn is a practical safety or urgent-help phrase for keeping one travel detail clear. Use it when I am safe now is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it after a scare, separation, theft, or unsafe ride when the first update is reassurance."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Bây giờ tôi đã an toàn. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say it before the long story. Then show your location, contact, hotel, or report need.",
       "phrases": [
         {
           "id": "v900-emer-safe-i-am-safe-now",
@@ -42,79 +42,85 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bây giờ means now; tôi means I; đã an toàn means am safe now.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Bây giờ tôi",
-          "english": "now I",
-          "audioKey": null
+          "vietnamese": "Bây giờ",
+          "english": "now",
+          "keepTogetherReason": "time phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "đã an toàn",
-          "english": "safe",
-          "audioKey": null
+          "vietnamese": "tôi",
+          "english": "I",
+          "keepTogetherReason": "speaker pronoun"
         },
         {
           "id": "chunk-3",
+          "vietnamese": "đã an toàn",
+          "english": "am safe now",
+          "keepTogetherReason": "safe-now phrase"
+        },
+        {
+          "id": "full",
           "vietnamese": "Bây giờ tôi đã an toàn",
           "english": "I am safe now",
-          "audioKey": null
+          "audioKey": "v900-emer-safe-i-am-safe-now"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I am safe now to another safety or urgent-help need.",
+      "body": "Location, hotel contact, and contact-info phrases help if someone needs to know where you are.",
       "phrases": [
         {
-          "id": "emergency-1",
-          "vietnamese": "Gọi công an",
-          "english": "Call the police",
-          "pronunciation": "goy kong an",
+          "id": "v900-emer-safe-please-send-my-location-to-this-person",
+          "vietnamese": "Vui lòng gửi vị trí của tôi cho người này",
+          "english": "Please send my location to this person",
+          "pronunciation": "Vui long gui vi tri cua toi cho nguoi nay",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-1",
-          "audioKey": "emergency-1"
+          "detailPageID": "viet-phrase-v900-emer-safe-please-send-my-location-to-this-person",
+          "audioKey": "v900-emer-safe-please-send-my-location-to-this-person"
         },
         {
-          "id": "emergency-2",
-          "vietnamese": "Gọi xe cứu thương",
-          "english": "Call an ambulance",
-          "pronunciation": "goy seh koo-ah thu-ong",
+          "id": "help-2",
+          "vietnamese": "Gọi khách sạn giúp tôi",
+          "english": "Please call the hotel for me",
+          "pronunciation": "goy khak san zoop toy",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-2",
-          "audioKey": "emergency-2"
+          "tintName": "orange",
+          "detailPageID": "viet-family-help-call-hotel",
+          "audioKey": "help-2"
         },
         {
-          "id": "emergency-3",
-          "vietnamese": "Tôi mất hộ chiếu",
-          "english": "I lost my passport",
-          "pronunciation": "toy mut hoh chee-u",
+          "id": "v500-prob-help-can-i-leave-my-contact-information",
+          "vietnamese": "Tôi có thể để lại thông tin liên lạc của mình được không?",
+          "english": "Can I leave my contact information?",
+          "pronunciation": "Toi co the de lai thong tin lien lac cua minh duoc khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "red",
-          "detailPageID": "viet-phrase-emergency-3",
-          "audioKey": "emergency-3"
+          "tintName": "orange",
+          "detailPageID": "viet-phrase-v500-prob-help-can-i-leave-my-contact-information",
+          "audioKey": "v500-prob-help-can-i-leave-my-contact-information"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real safety or urgent-help exchange when i am safe now is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotel desks, police counters, rides, clinics, and phone handoffs after the urgent moment settles."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "This does not close the situation. It just tells the helper the danger level changed."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bây giờ tôi đã an toàn.",
+      "body": "Unsafe, emergency, help, hospital, and stolen-bag phrases stay nearby if the situation changes again.",
       "phrases": [
         {
           "id": "emergency-4",

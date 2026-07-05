@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-06-08T11:05:51.806Z",
+  "branch": "codex/city-copy-final-production-gate",
+  "baseCommit": "083c87301e7bf235a99d68cdc4ec2e8eb39340e1",
+  "auditedPages": 520,
+  "classifications": {
+    "PASS": 520
+  },
+  "hardBlocks": 0,
+  "safeFixNow": 0,
+  "acceptedTemporaryRisk": 0,
+  "inheritedSourceRationalePrefixes": {
+    "relatedBecause": 0,
+    "mentionedHereBecause": 0,
+    "pages": 0
+  },
+  "sourceReasonPrefixMatches": 0,
+  "nativeIntroMismatches": 0,
+  "nativeGenericTitles": 0,
+  "thinSafeHits": 0,
+  "changedSourcePagesThisPass": 147,
+  "changedRenderedPagesThisPass": 1,
+  "editedRenderManifestPages": 1,
+  "missingEditedManifestIDs": []
+}

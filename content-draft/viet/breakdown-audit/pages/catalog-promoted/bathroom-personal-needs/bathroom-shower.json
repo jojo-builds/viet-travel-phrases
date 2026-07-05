@@ -20,33 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Ở",
-      "english": "at / in / stay"
+      "vietnamese": "Ở đây",
+      "english": "here",
+      "keepTogetherReason": "place reference"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đây",
-      "english": "here / this"
+      "vietnamese": "có chỗ tắm",
+      "english": "has a place to shower",
+      "keepTogetherReason": "shower-place phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "chỗ",
-      "english": "place / spot"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tắm",
-      "english": "shower / bathe"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

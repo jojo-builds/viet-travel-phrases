@@ -7,7 +7,7 @@
   "title": "Hôm nay trời có mưa không?",
   "englishTitle": "Will it rain today?",
   "pronunciation": "Hom nay troi co mua khong",
-  "summary": "Will it rain today?",
+  "summary": "For checking the weather before you choose transport, clothes, a waiting spot, or an outdoor plan.",
   "iconName": "bubble.left.and.bubble.right.fill",
   "tintName": "green",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hôm nay trời có mưa không? is a practical social small talk phrase for keeping one travel detail clear. Use it when Will it rain today is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Ask when the sky is changing or staff seem to know the local pattern. A short yes, no, or maybe is enough."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hôm nay trời có mưa không?. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Point outside or show the weather app if needed. Keep the question light; this is often small talk too.",
       "phrases": [
         {
           "id": "v500-soci-smal-talk-will-it-rain-today",
@@ -42,38 +42,44 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hôm nay means today; trời means the weather or sky; có mưa means rain; không makes it a yes/no question.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hôm nay trời",
-          "english": "today's weather",
-          "audioKey": null
+          "vietnamese": "Hôm nay",
+          "english": "today",
+          "keepTogetherReason": "today phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "có mưa",
-          "english": "buy",
-          "audioKey": null
+          "vietnamese": "trời",
+          "english": "weather / sky",
+          "keepTogetherReason": "weather noun"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "có mưa",
+          "english": "rain",
+          "keepTogetherReason": "rain phrase"
         },
         {
           "id": "chunk-4",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
+        },
+        {
+          "id": "full",
           "vietnamese": "Hôm nay trời có mưa không?",
-          "english": "Will it rain today",
-          "audioKey": null
+          "english": "Will it rain today?",
+          "audioKey": "v500-soci-smal-talk-will-it-rain-today"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Will it rain today? to another social small talk need.",
+      "body": "Rain shelter, umbrella, hot weather, wait here, and taxi cards cover the plan changes around rain.",
       "phrases": [
         {
           "id": "smalltalk-1",
@@ -110,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real social small talk exchange when will it rain today is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at hotels, cafes, tour desks, markets, beach areas, stations, and outdoor attractions before you leave."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Small talk should feel light. Use the phrase once, smile, and let the other person decide how much conversation follows."
+      "body": "A local answer may be about this neighborhood, not the whole city. Afternoon rain can be very local."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hôm nay trời có mưa không?.",
+      "body": "Move to rain shelter, umbrella, taxi, wait-here, or change-time cards if the weather changes the plan.",
       "phrases": [
         {
           "id": "smalltalk-4",

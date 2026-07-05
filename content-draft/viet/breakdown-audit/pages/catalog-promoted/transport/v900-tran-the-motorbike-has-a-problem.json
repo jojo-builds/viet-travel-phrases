@@ -25,19 +25,10 @@
       "keepTogetherReason": "compound vehicle term"
     },
     {
-      "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "vấn",
-      "english": "issue"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đề",
-      "english": "propose / topic"
+      "id": "chunk-2",
+      "vietnamese": "có vấn đề",
+      "english": "has a problem",
+      "keepTogetherReason": "problem phrase"
     },
     {
       "id": "full",

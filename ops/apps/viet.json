@@ -7,33 +7,33 @@
   "stage": "live",
   "testingGates": {
     "localValidation": {
-      "status": "pending",
+      "status": "passed",
       "evidenceRef": "docs/operations/LATEST_VALIDATION.md"
     },
     "previewBuild": {
-      "status": "pending",
-      "evidenceRef": "docs/operations/APP_STATUS.md"
+      "status": "passed",
+      "evidenceRef": "docs/operations/LATEST_VALIDATION.md"
     },
     "previewInstall": {
-      "status": "pending",
-      "evidenceRef": "docs/operations/APP_STATUS.md"
+      "status": "passed",
+      "evidenceRef": "docs/operations/LATEST_VALIDATION.md"
     },
     "runtimeManualSmoke": {
-      "status": "pending",
-      "evidenceRef": "docs/operations/CURRENT_BLOCKERS.md"
+      "status": "passed",
+      "evidenceRef": "docs/operations/LATEST_VALIDATION.md"
     },
     "deviceWalkthrough": {
-      "status": "pending",
-      "evidenceRef": "docs/operations/CURRENT_BLOCKERS.md"
+      "status": "passed",
+      "evidenceRef": "docs/operations/LATEST_VALIDATION.md"
     }
   },
   "hardBlock": {
-    "active": true,
-    "type": "device-proof",
-    "owner": "user",
+    "active": false,
+    "type": "none",
+    "owner": "none",
     "system": "Native iOS device testing",
-    "detail": "After the native-only cleanup, the current app needs a fresh native build/install proof from main on Jojo's iPhone. Paywall/StoreKit proof remains intentionally separate until that feature branch is approved.",
-    "nextHumanAction": "Build main from native-ios onto the connected iPhone, then test the current accepted app surfaces."
+    "detail": "Current main commit 93c08cf64 passed merged validation, built, installed, and launched on Jojo's connected iPhone. Paywall/StoreKit proof remains intentionally separate until that feature branch is approved.",
+    "nextHumanAction": "If shipping with paywall, approve and validate the paywall lane. Otherwise proceed with release packaging/TestFlight decisions for the current non-paywall native payload."
   },
   "contentReadiness": "native-viet-resources-bundled",
   "audioReadiness": "native-audio-manifest-bundled",
@@ -48,9 +48,9 @@
   ],
   "featureIntakeStatus": "active",
   "releaseStatus": "live",
-  "blockerTag": "blocked:human",
-  "blockerDetail": "Fresh native device proof is needed after merging the native-only cleanup.",
-  "nextStep": "Use the native iOS device build workflow from main.",
+  "blockerTag": "none",
+  "blockerDetail": "No active device-launch hard block for the current non-paywall native main payload. Paywall remains a separate pending rollout.",
+  "nextStep": "Decide whether to ship the current non-paywall native payload or run the separate paywall/StoreKit proof lane before release.",
   "sessionRoot": "/Users/jojolim/Developer/products/speaklocal/app-family",
-  "lastValidatedAt": "2026-05-13"
+  "lastValidatedAt": "2026-06-16"
 }

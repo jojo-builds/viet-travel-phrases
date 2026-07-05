@@ -1,0 +1,291 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_44",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_44",
+  "chunks": [
+    {
+      "chunkFile": "hoian_001_025_humanized.json",
+      "cityID": "hoian",
+      "range": "001-025",
+      "errors": [
+        {
+          "id": "city-hoian-place-an-bang",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-bach-dang-boat-pier",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-bale-well",
+          "message": "banned visible fragment: works when"
+        },
+        {
+          "id": "city-hoian-place-banh-dap-hen-xao",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-banh-mi",
+          "message": "banned visible fragment: gives hoi an a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "001-025",
+          "message": "repeated exact heading 4x: neighborhood name to hear"
+        },
+        {
+          "id": "001-025",
+          "message": "repeated formula heading 11x: map/name utility heading"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-hoian-place-an-bang",
+          "summary": "An Bang Beach gives Hoi An an easy coast break: sand, basket boats, seafood shacks, and sea air after the lantern streets and old-town crowds.",
+          "context": "An Bang widens the day beyond the Ancient Town. The move is simple: leave the yellow walls for waves, sand, basket boats, and a slower seafood lunch.",
+          "tip": "Biển An Bàng is the phrase to catch. Biển means beach or sea, so the first word points your ear toward the coast.",
+          "rationale": "An Bang gives Hoi An a coastal rhythm: morning swims, open light, basket boats, and a softer pause outside the old streets.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Coast Break Near Town",
+              "body": "An Bang is the easy sea-air pause outside the old lanes. It gives the day sand, basket boats, and a meal that can slow down without leaving the Hoi An area."
+            },
+            {
+              "id": "place-brief",
+              "title": "Sand, Boats, Seafood",
+              "body": "Expect a relaxed beach edge with gentle waves, basket boats, seafood places, sun beds, and morning light. The feel is wider and breezier than the Ancient Town."
+            },
+            {
+              "id": "quick-say",
+              "title": "Biển Points To The Coast",
+              "body": "Say Biển An Bàng for An Bang Beach. Biển means beach or sea, so the name is easier to catch when drivers, signs, or menus point toward the coast."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Morning Swim, Slow Lunch",
+              "body": "The beach fits a simple reset: a swim, sand underfoot, then seafood or a cold drink before returning to tailor shops and river streets."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Weather Shapes The Stop",
+              "body": "Think of An Bang as a change of pace, not a box to tick. Sandals, sun cover, and a flexible lunch plan matter more than chasing one exact hour."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Different From The River",
+              "body": "An Bang is not the riverside old town with lanterns. That contrast is the point: the beach name tells you when the day is moving toward open water."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-bach-dang-boat-pier",
+          "summary": "Bach Dang boat pier is the Hoi An river handoff: street movement turns into boarding points, boat noses, low steps, and water routes.",
+          "context": "The pier matters because it changes the map from streets to river. Boats, bridges, and boarding points make the waterfront feel like a route.",
+          "tip": "Bến thuyền Bạch Đằng is the pier phrase to recognize. Bến thuyền means boat landing, useful when sorting river directions.",
+          "rationale": "Bach Dang boat pier gives Hoi An a practical water edge: where the walk pauses, the boat plan starts, and the river becomes part of the day.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Street Movement Turns To Water",
+              "body": "Bach Dang boat pier is where the riverside stops being only a view. Steps, boats, and boarding points make the next move feel water-based."
+            },
+            {
+              "id": "place-brief",
+              "title": "The River Has A Front Door",
+              "body": "Expect river steps, boat noses, bridge views, and the small shift from walking along the waterfront to asking where the boat is going."
+            },
+            {
+              "id": "quick-say",
+              "title": "Bến Thuyền Means Boat Landing",
+              "body": "Say Bến thuyền Bạch Đằng for Bach Dang boat pier. Bến thuyền means boat landing, so the phrase helps with river pickup points."
+            },
+            {
+              "id": "use-it-with",
+              "title": "A Simple Boarding Moment",
+              "body": "The pier fits a river ride, a meeting point, or a short look at boat movement. It is practical first, scenic second."
+            },
+            {
+              "id": "when-to-use",
+              "title": "River Plans Start At The Steps",
+              "body": "Treat the pier as the place where direction gets settled: which boat, which bank, which return, and how much of the evening belongs to the river."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Bach Dang Names The Edge",
+              "body": "The Bach Dang name also belongs to the riverside street, so listen for whether someone means the street, the pier, or the riverfront area."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-bale-well",
+          "summary": "Bale Well is the hands-on Hội An meal where pork skewers, bánh xèo, spring rolls, herbs, rice paper, and sauce arrive as a shared set.",
+          "context": "Bale Well makes sense when the meal is lively, messy, and social, with staff often showing the first roll rather than leaving you to decode it alone.",
+          "tip": "Settle the set price before the food starts landing, and check whether a smaller portion is possible if you are solo or not very hungry.",
+          "rationale": "Once the set, price, and first roll are clear, the friction becomes part of a lively table rather than an awkward surprise.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Set Comes First",
+              "body": "Bale Well is built around a roll-it-yourself spread: pork skewers, bánh xèo, spring rolls, herbs, rice paper, and sauce. Settle the price before the table fills."
+            },
+            {
+              "id": "place-brief",
+              "title": "Fast, Messy, Social",
+              "body": "Food can arrive quickly, which is both charm and caution. Let the staff show the first roll, then expect herbs, sauce, and pork juices on your fingers."
+            },
+            {
+              "id": "quick-say",
+              "title": "Useful Phrases",
+              "body": "",
+              "phraseIDs": [
+                "food-menu",
+                "food-1",
+                "food-3",
+                "coffee-7"
+              ]
+            },
+            {
+              "id": "use-it-with",
+              "title": "Sharing Makes More Sense",
+              "body": "The usual spread suits sharing more than nibbling. The stop works when you want a lively, filling meal with a little instruction."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Close To The Old Core",
+              "body": "The restaurant sits close enough to pair with an Ancient Town walk. It reads better as a food detour than as a slow tasting menu."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-hoian-place-banh-dap-hen-xao",
+          "summary": "Bánh đập hến xào gives Hoi An a small texture meal: cracked rice paper, stir-fried clams, herbs, sauce, and a hands-on bite to share.",
+          "context": "The dish matters because the pleasure is physical. Crunch, clams, herbs, and sauce give a quick table moment more shape than a generic snack.",
+          "tip": "Bánh đập hến xào ở Hội An is the phrase to recognize. Bánh đập points to cracked rice paper; hến xào points to stir-fried clams.",
+          "rationale": "Cracked rice paper and clams give Hoi An a food memory built from texture first: crisp, soft, salty, herbal, and easy to share.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Crunch First, Clams After",
+              "body": "Bánh đập hến xào is a texture dish before anything else: cracked rice paper, stir-fried clams, herbs, and sauce meeting in one small bite."
+            },
+            {
+              "id": "place-brief",
+              "title": "A Small Texture Meal",
+              "body": "Expect rice crackers with stir-fried clams and herbs, usually better as a light food stop than a heavy meal. The crack matters as much as the filling."
+            },
+            {
+              "id": "quick-say",
+              "title": "Cracked Rice Paper And Clams",
+              "body": "Say Bánh đập hến xào ở Hội An. Bánh đập points to cracked rice paper, while hến xào points to stir-fried clams."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Light Order, Big Texture",
+              "body": "The dish fits a snack route or shared table. Order it when you want something local-feeling without committing the whole meal to one bowl."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Sauce And Herbs Matter",
+              "body": "The flavor depends on the bite you build: crisp rice paper, clams, herbs, and sauce. Slow down enough to notice the contrast."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Not A Full Dinner Plan",
+              "body": "Think of it as a specific Hoi An food stop, not the only dinner plan. It pairs easily with other small dishes."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-banh-mi",
+          "summary": "Bánh mì Hội An is the quick sandwich move to know: crisp bread, herbs, sauce, filling, heat, and a counter order that happens fast.",
+          "context": "Banh mi matters in Hoi An because it turns a short break into a clear food memory. The useful decision is filling, sauce, and chili.",
+          "tip": "Bánh mì Hội An is the phrase to recognize. Bánh mì covers the sandwich; the Hoi An label ties it to the city’s counter-food rhythm.",
+          "rationale": "Banh mi gives Hoi An a fast, portable food memory: crisp bread, herbs, sauce, heat, and one confident order before the day keeps moving.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Quick Roll With Hoi An Texture",
+              "body": "Bánh mì in Hoi An is a fast food stop with real decisions: filling, herbs, sauce, chili, and whether you are eating now or taking it away."
+            },
+            {
+              "id": "place-brief",
+              "title": "Herbs, Sauce, Heat",
+              "body": "Expect a crisp roll with fresh herbs, filling, sauce, and heat. The bite is quick, but the choices come before the sandwich is built."
+            },
+            {
+              "id": "quick-say",
+              "title": "Bread, Herbs, Chili",
+              "body": "Say Bánh mì Hội An for Hoi An-style banh mi. The words are useful at counters, on menus, and when pointing to the sandwich you want."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Counter Meal, Not Ceremony",
+              "body": "This is a short meal for a moving day. Decide filling and chili early, then let the sandwich stay simple."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Chili Is The Early Choice",
+              "body": "Heat is easier to manage before the roll is assembled. If spice worries you, say little chili or no chili at the start."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Many Shops, Same Useful Word",
+              "body": "The specific counter may shift, but bánh mì is the word to keep. It travels well across Hoi An’s food stops."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

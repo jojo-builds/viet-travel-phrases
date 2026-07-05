@@ -20,24 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "I need",
+      "keepTogetherReason": "I-need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "bệnh viện",
-      "english": "hospital",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "một bệnh viện",
+      "english": "a hospital",
+      "keepTogetherReason": "hospital phrase"
     },
     {
       "id": "full",

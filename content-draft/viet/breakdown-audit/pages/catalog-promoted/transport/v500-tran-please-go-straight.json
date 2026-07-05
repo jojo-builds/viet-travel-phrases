@@ -21,13 +21,14 @@
     {
       "id": "chunk-1",
       "vietnamese": "Hãy",
-      "english": "please do"
+      "english": "please / go ahead",
+      "keepTogetherReason": "soft instruction opener"
     },
     {
       "id": "chunk-2",
       "vietnamese": "đi thẳng",
       "english": "go straight",
-      "keepTogetherReason": "compound direction phrase"
+      "keepTogetherReason": "straight-ahead phrase"
     },
     {
       "id": "full",

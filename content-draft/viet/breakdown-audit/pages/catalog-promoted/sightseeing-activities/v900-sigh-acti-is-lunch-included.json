@@ -20,28 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Có",
-      "english": "have / there is"
+      "vietnamese": "Có bao gồm",
+      "english": "is included",
+      "keepTogetherReason": "included phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bao",
-      "english": "how / cover"
+      "vietnamese": "bữa trưa",
+      "english": "lunch",
+      "keepTogetherReason": "meal noun"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "gồm",
-      "english": "include"
-    },
-    {
-      "vietnamese": "bữa trưa",
-      "english": "lunch",
-      "keepTogetherReason": "compound meal term"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

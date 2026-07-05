@@ -7,7 +7,7 @@
   "title": "Bạn có thể sửa cái này được không?",
   "englishTitle": "Can you fix this?",
   "pronunciation": "Ban co the sua cai nay duoc khong",
-  "summary": "Can you fix this?",
+  "summary": "For showing a broken item and asking whether someone can repair it.",
   "iconName": "building.2.fill",
   "tintName": "teal",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể sửa cái này được không? asks someone to do one helpful action for you. Use it for fix this when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "The problem is easier to show than explain: a zipper, charger, strap, wheel, document, or small device."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể sửa cái này được không? once, then make the task visible with your item, receipt, photo, address, or phone screen. The phrase is doing one job: getting a clear answer about fix this.",
+      "body": "Hold up the item and ask before naming the problem. If they can help, details can come next.",
       "phrases": [
         {
           "id": "v500-loca-serv-ever-task-can-you-fix-this",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Sửa cái này points to fixing this exact thing; được không keeps the request open-ended.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -53,7 +53,7 @@
         {
           "id": "chunk-2",
           "vietnamese": "sửa cái này",
-          "english": "this one / this",
+          "english": "fix this item",
           "audioKey": null
         },
         {
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you fix this? to another local service need.",
+      "body": "If the repair stop turns into a small errand, water, bag, receipt, and payment cards are close.",
       "phrases": [
         {
           "id": "store-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real local service exchange when fix this is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Good at repair counters, hotel desks, laundry shops, pharmacies, and small service stalls."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Ask about price and time before leaving the item behind."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể sửa cái này được không?.",
+      "body": "The related cards cover small shop errands: opening, payment, receipt, printing, and finding sunscreen.",
       "phrases": [
         {
           "id": "store-4",

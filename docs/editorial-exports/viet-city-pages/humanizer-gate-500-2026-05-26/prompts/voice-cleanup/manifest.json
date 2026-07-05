@@ -1,0 +1,1193 @@
+{
+  "generatedAt": "2026-05-26T11:23:40.170Z",
+  "sessions": [
+    {
+      "sessionID": "voice_cleanup_r2_01",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_01.txt",
+      "chunks": [
+        "danang_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-danang-place-43-factory",
+        "city-danang-place-an-thuong-street-area",
+        "city-danang-place-asia-park",
+        "city-danang-place-banh-mi",
+        "city-danang-place-banh-trang-cuon-thit-heo"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 6,
+      "warningCount": 1
+    },
+    {
+      "sessionID": "voice_cleanup_r2_02",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_02.txt",
+      "chunks": [
+        "danang_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-danang-place-be-man",
+        "city-danang-place-bep-cuon",
+        "city-danang-place-boulevard-gelato-coffee",
+        "city-danang-place-bun-cha-ca",
+        "city-danang-place-bun-cha-ca-hon"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 5,
+      "warningCount": 2
+    },
+    {
+      "sessionID": "voice_cleanup_r2_03",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_03.txt",
+      "chunks": [
+        "danang_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-danang-place-central-bus-station",
+        "city-danang-place-che-xoa-xoa-hat-luu"
+      ],
+      "targetEntryCount": 2,
+      "errorCount": 2,
+      "warningCount": 1
+    },
+    {
+      "sessionID": "voice_cleanup_r2_04",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_04.txt",
+      "chunks": [
+        "danang_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-danang-place-cong-caphe-bach-dang",
+        "city-danang-place-domestic-terminal",
+        "city-danang-place-dragon-bridge-fire-show",
+        "city-danang-place-dragon-carp-statue",
+        "city-danang-place-fatfish"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 4,
+      "warningCount": 10
+    },
+    {
+      "sessionID": "voice_cleanup_r2_05",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_05.txt",
+      "chunks": [
+        "danang_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-danang-place-fine-arts-museum",
+        "city-danang-place-golden-bridge",
+        "city-danang-place-hai-chau-district",
+        "city-danang-place-hai-san",
+        "city-danang-place-hai-van-pass"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 2,
+      "warningCount": 9
+    },
+    {
+      "sessionID": "voice_cleanup_r2_06",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_06.txt",
+      "chunks": [
+        "danang_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-danang-place-hai-van-pass-ride",
+        "city-danang-place-han-river",
+        "city-danang-place-han-river-cruise",
+        "city-danang-place-hoa-phu-thanh",
+        "city-danang-place-hoa-trung-lake"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 3,
+      "warningCount": 13
+    },
+    {
+      "sessionID": "voice_cleanup_r2_07",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_07.txt",
+      "chunks": [
+        "danang_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-danang-place-kem-bo",
+        "city-danang-place-la-maison-1888",
+        "city-danang-place-lady-buddha",
+        "city-danang-place-le-duan-night-market"
+      ],
+      "targetEntryCount": 4,
+      "errorCount": 2,
+      "warningCount": 11
+    },
+    {
+      "sessionID": "voice_cleanup_r2_08",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_08.txt",
+      "chunks": [
+        "danang_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-danang-place-linh-ung-pagoda",
+        "city-danang-place-long-coffee",
+        "city-danang-place-madame-lan",
+        "city-danang-place-man-thai-beach",
+        "city-danang-place-marble-mountain-cave-walk"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 1,
+      "warningCount": 8
+    },
+    {
+      "sessionID": "voice_cleanup_r2_09",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_09.txt",
+      "chunks": [
+        "danang_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-danang-place-marble-mountains",
+        "city-danang-place-mi-quang",
+        "city-danang-place-mi-quang-1a",
+        "city-danang-place-museum-branch-2",
+        "city-danang-place-my-an"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 2,
+      "warningCount": 8
+    },
+    {
+      "sessionID": "voice_cleanup_r2_10",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_10.txt",
+      "chunks": [
+        "danang_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-danang-place-my-an-beach",
+        "city-danang-place-my-khe",
+        "city-danang-place-my-quang-ba-mua",
+        "city-danang-place-my-quang-dung",
+        "city-danang-place-nam-danh-seafood"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 2,
+      "warningCount": 8
+    },
+    {
+      "sessionID": "voice_cleanup_r2_11",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_11.txt",
+      "chunks": [
+        "danang_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-danang-place-nam-house",
+        "city-danang-place-nam-o-fish-sauce-village",
+        "city-danang-place-nam-o-reef",
+        "city-danang-place-nem-lui",
+        "city-danang-place-nen"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 0,
+      "warningCount": 8
+    },
+    {
+      "sessionID": "voice_cleanup_r2_12",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_12.txt",
+      "chunks": [
+        "danang_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-danang-place-ngu-hanh-son-district",
+        "city-danang-place-nguyen-hien-dinh-tuong-theatre"
+      ],
+      "targetEntryCount": 2,
+      "errorCount": 1,
+      "warningCount": 5
+    },
+    {
+      "sessionID": "voice_cleanup_r2_13",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_13.txt",
+      "chunks": [
+        "danang_076_100_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-danang-place-phuoc-my",
+        "city-danang-place-railway-station",
+        "city-danang-place-son-tra-district",
+        "city-danang-place-thanh-binh-beach",
+        "city-danang-place-tran-hung-dao-street"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 5,
+      "warningCount": 5
+    },
+    {
+      "sessionID": "voice_cleanup_r2_14",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_14.txt",
+      "chunks": [
+        "danang_076_100_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-danang-place-tran-thi-ly-bridge",
+        "city-danang-place-trung-vuong-theatre",
+        "city-danang-place-vo-nguyen-giap-street",
+        "city-danang-place-wonderlust",
+        "city-danang-place-yen-retreat"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 5,
+      "warningCount": 5
+    },
+    {
+      "sessionID": "voice_cleanup_r2_15",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_15.txt",
+      "chunks": [
+        "hanoi_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hanoi-place-ba-dinh-square",
+        "city-hanoi-place-banh-cuon",
+        "city-hanoi-place-bay-mau-lake",
+        "city-hanoi-place-bun-cha",
+        "city-hanoi-place-bun-cha-huong-lien"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 6,
+      "warningCount": 3
+    },
+    {
+      "sessionID": "voice_cleanup_r2_16",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_16.txt",
+      "chunks": [
+        "hanoi_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hanoi-place-bun-cha-ta",
+        "city-hanoi-place-bun-thang",
+        "city-hanoi-place-cha-ca",
+        "city-hanoi-place-cha-ca-thang-long",
+        "city-hanoi-place-cho-buoi-market"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 6,
+      "warningCount": 4
+    },
+    {
+      "sessionID": "voice_cleanup_r2_17",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_17.txt",
+      "chunks": [
+        "hanoi_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hanoi-place-coffee-hop",
+        "city-hanoi-place-cong-ca-phe-trieu-viet-vuong",
+        "city-hanoi-place-cyclo-old-quarter",
+        "city-hanoi-place-dinh-cafe",
+        "city-hanoi-place-dong-da"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 6,
+      "warningCount": 2
+    },
+    {
+      "sessionID": "voice_cleanup_r2_18",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_18.txt",
+      "chunks": [
+        "hanoi_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hanoi-place-dong-xuan",
+        "city-hanoi-place-egg-coffee",
+        "city-hanoi-place-ethnology-museum",
+        "city-hanoi-place-french-quarter",
+        "city-hanoi-place-french-quarter-walk"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 8,
+      "warningCount": 2
+    },
+    {
+      "sessionID": "voice_cleanup_r2_19",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_19.txt",
+      "chunks": [
+        "hanoi_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hanoi-place-gia"
+      ],
+      "targetEntryCount": 1,
+      "errorCount": 2,
+      "warningCount": 3
+    },
+    {
+      "sessionID": "voice_cleanup_r2_20",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_20.txt",
+      "chunks": [
+        "hanoi_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hanoi-place-gia-lam-station",
+        "city-hanoi-place-giang-cafe",
+        "city-hanoi-place-giap-bat-bus-station",
+        "city-hanoi-place-hom-market",
+        "city-hanoi-place-loading-t-cafe"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 3,
+      "warningCount": 6
+    },
+    {
+      "sessionID": "voice_cleanup_r2_21",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_21.txt",
+      "chunks": [
+        "hanoi_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hanoi-place-long-bien-bridge",
+        "city-hanoi-place-long-bien-market",
+        "city-hanoi-place-manzi-art-space",
+        "city-hanoi-place-mien-luon-chan-cam"
+      ],
+      "targetEntryCount": 4,
+      "errorCount": 3,
+      "warningCount": 3
+    },
+    {
+      "sessionID": "voice_cleanup_r2_22",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_22.txt",
+      "chunks": [
+        "hanoi_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hanoi-place-my-dinh-bus-station",
+        "city-hanoi-place-nang-cafe",
+        "city-hanoi-place-national-museum-history",
+        "city-hanoi-place-nem-cua-be",
+        "city-hanoi-place-ngoc-son-temple"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 1,
+      "warningCount": 19
+    },
+    {
+      "sessionID": "voice_cleanup_r2_23",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_23.txt",
+      "chunks": [
+        "hanoi_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hanoi-place-nguyen-huu-huan-street",
+        "city-hanoi-place-night-market-walk",
+        "city-hanoi-place-noi-bai-airport",
+        "city-hanoi-place-nuoc-ngam-bus-station",
+        "city-hanoi-place-old-quarter"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 0,
+      "warningCount": 13
+    },
+    {
+      "sessionID": "voice_cleanup_r2_24",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_24.txt",
+      "chunks": [
+        "hanoi_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hanoi-place-old-quarter-walking-tour",
+        "city-hanoi-place-one-pillar-pagoda",
+        "city-hanoi-place-opera-house",
+        "city-hanoi-place-phan-dinh-phung-street",
+        "city-hanoi-place-pho-bat-dan"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 1,
+      "warningCount": 16
+    },
+    {
+      "sessionID": "voice_cleanup_r2_25",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_25.txt",
+      "chunks": [
+        "hanoi_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hanoi-place-pho-bo",
+        "city-hanoi-place-pho-bo-lam",
+        "city-hanoi-place-pho-ga",
+        "city-hanoi-place-pho-gia-truyen",
+        "city-hanoi-place-quan-thanh-temple"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 0,
+      "warningCount": 14
+    },
+    {
+      "sessionID": "voice_cleanup_r2_26",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_26.txt",
+      "chunks": [
+        "hanoi_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hanoi-place-quang-ba-flower-market",
+        "city-hanoi-place-red-river",
+        "city-hanoi-place-st-joseph-cathedral",
+        "city-hanoi-place-street-food-walk",
+        "city-hanoi-place-ta-hien"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 0,
+      "warningCount": 15
+    },
+    {
+      "sessionID": "voice_cleanup_r2_27",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_27.txt",
+      "chunks": [
+        "hanoi_076_100_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hanoi-place-tam-vi",
+        "city-hanoi-place-tay-ho",
+        "city-hanoi-place-thong-nhat-park",
+        "city-hanoi-place-train-street",
+        "city-hanoi-place-truc-bach-lake"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 5,
+      "warningCount": 5
+    },
+    {
+      "sessionID": "voice_cleanup_r2_28",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_28.txt",
+      "chunks": [
+        "hanoi_076_100_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hanoi-place-vietnam-circus",
+        "city-hanoi-place-vietnam-fine-arts-museum",
+        "city-hanoi-place-vietnam-military-history-museum",
+        "city-hanoi-place-vietnam-national-tuong-theatre",
+        "city-hanoi-place-water-puppet-theatre"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 4,
+      "warningCount": 6
+    },
+    {
+      "sessionID": "voice_cleanup_r2_29",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_29.txt",
+      "chunks": [
+        "hanoi_076_100_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hanoi-place-weekend-night-market",
+        "city-hanoi-place-west-lake",
+        "city-hanoi-place-womens-museum"
+      ],
+      "targetEntryCount": 3,
+      "errorCount": 3,
+      "warningCount": 5
+    },
+    {
+      "sessionID": "voice_cleanup_r2_30",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_30.txt",
+      "chunks": [
+        "hcmc_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hcmc-place-akuna",
+        "city-hcmc-place-an-dong-market",
+        "city-hcmc-place-anan-saigon",
+        "city-hcmc-place-ao-dai-museum",
+        "city-hcmc-place-bach-dang-waterbus-station"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 4,
+      "warningCount": 9
+    },
+    {
+      "sessionID": "voice_cleanup_r2_31",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_31.txt",
+      "chunks": [
+        "hcmc_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hcmc-place-bach-dang-wharf",
+        "city-hcmc-place-banh-mi-huynh-hoa",
+        "city-hcmc-place-banh-xeo-46a",
+        "city-hcmc-place-ben-thanh-market",
+        "city-hcmc-place-ben-thanh-metro-station"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 4,
+      "warningCount": 10
+    },
+    {
+      "sessionID": "voice_cleanup_r2_32",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_32.txt",
+      "chunks": [
+        "hcmc_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hcmc-place-bep-me-in",
+        "city-hcmc-place-binh-tay-market",
+        "city-hcmc-place-bitexco-tower",
+        "city-hcmc-place-bo-la-lot",
+        "city-hcmc-place-bot-chien"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 5,
+      "warningCount": 5
+    },
+    {
+      "sessionID": "voice_cleanup_r2_33",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_33.txt",
+      "chunks": [
+        "hcmc_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hcmc-place-bun-thit-nuong",
+        "city-hcmc-place-ca-phe-sua-da",
+        "city-hcmc-place-cafe-hop-nguyen-hue",
+        "city-hcmc-place-cafe-vot-pham-ngoc-thach",
+        "city-hcmc-place-che"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 5,
+      "warningCount": 4
+    },
+    {
+      "sessionID": "voice_cleanup_r2_34",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_34.txt",
+      "chunks": [
+        "hcmc_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hcmc-place-cheo-leo-cafe",
+        "city-hcmc-place-cho-lon",
+        "city-hcmc-place-ciel",
+        "city-hcmc-place-city-hall",
+        "city-hcmc-place-coco-dining"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 2,
+      "warningCount": 11
+    },
+    {
+      "sessionID": "voice_cleanup_r2_35",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_35.txt",
+      "chunks": [
+        "hcmc_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hcmc-place-com-tam-ba-ghien",
+        "city-hcmc-place-cu-chi-tunnels",
+        "city-hcmc-place-cuc-gach-quan",
+        "city-hcmc-place-district-1",
+        "city-hcmc-place-district-3"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 2,
+      "warningCount": 12
+    },
+    {
+      "sessionID": "voice_cleanup_r2_36",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_36.txt",
+      "chunks": [
+        "hcmc_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hcmc-place-fine-arts-museum",
+        "city-hcmc-place-fito-museum",
+        "city-hcmc-place-gia-dinh-park",
+        "city-hcmc-place-goi-cuon",
+        "city-hcmc-place-golden-dragon-water-puppet"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 5,
+      "warningCount": 13
+    },
+    {
+      "sessionID": "voice_cleanup_r2_37",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_37.txt",
+      "chunks": [
+        "hcmc_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hcmc-place-history-museum",
+        "city-hcmc-place-ho-chi-minh-city-museum",
+        "city-hcmc-place-ho-thi-ky-flower-market",
+        "city-hcmc-place-hu-tieu"
+      ],
+      "targetEntryCount": 4,
+      "errorCount": 1,
+      "warningCount": 14
+    },
+    {
+      "sessionID": "voice_cleanup_r2_38",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_38.txt",
+      "chunks": [
+        "hcmc_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hcmc-place-independence-palace",
+        "city-hcmc-place-jade-emperor-pagoda",
+        "city-hcmc-place-landmark-81",
+        "city-hcmc-place-le-van-tam-park",
+        "city-hcmc-place-little-hanoi-egg-coffee"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 4,
+      "warningCount": 7
+    },
+    {
+      "sessionID": "voice_cleanup_r2_39",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_39.txt",
+      "chunks": [
+        "hcmc_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hcmc-place-long-trieu",
+        "city-hcmc-place-mariamman-temple",
+        "city-hcmc-place-mien-dong-bus-station",
+        "city-hcmc-place-mien-tay-bus-station",
+        "city-hcmc-place-municipal-theatre-square"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 3,
+      "warningCount": 8
+    },
+    {
+      "sessionID": "voice_cleanup_r2_40",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_40.txt",
+      "chunks": [
+        "hcmc_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hcmc-place-nephele",
+        "city-hcmc-place-nguyen-hue",
+        "city-hcmc-place-nguyen-trai-street",
+        "city-hcmc-place-nhieu-loc-canal",
+        "city-hcmc-place-notre-dame"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 9,
+      "warningCount": 9
+    },
+    {
+      "sessionID": "voice_cleanup_r2_41",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_41.txt",
+      "chunks": [
+        "hcmc_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hcmc-place-oc",
+        "city-hcmc-place-opera-a-o-show",
+        "city-hcmc-place-opera-house",
+        "city-hcmc-place-pha-lau",
+        "city-hcmc-place-pham-ngu-lao-street"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 6,
+      "warningCount": 7
+    },
+    {
+      "sessionID": "voice_cleanup_r2_42",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_42.txt",
+      "chunks": [
+        "hcmc_076_100_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hcmc-place-pho-nam",
+        "city-hcmc-place-saigon-railway-station",
+        "city-hcmc-place-saigon-river-boat",
+        "city-hcmc-place-saigon-skydeck",
+        "city-hcmc-place-saigon-square"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 6,
+      "warningCount": 2
+    },
+    {
+      "sessionID": "voice_cleanup_r2_43",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_43.txt",
+      "chunks": [
+        "hcmc_076_100_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hcmc-place-thien-hau-pagoda",
+        "city-hcmc-place-thu-thiem-riverfront",
+        "city-hcmc-place-ton-duc-thang-museum",
+        "city-hcmc-place-vinhomes-central-park",
+        "city-hcmc-place-war-remnants-museum"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 5,
+      "warningCount": 2
+    },
+    {
+      "sessionID": "voice_cleanup_r2_44",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_44.txt",
+      "chunks": [
+        "hoian_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hoian-place-an-bang",
+        "city-hoian-place-bach-dang-boat-pier",
+        "city-hoian-place-bale-well",
+        "city-hoian-place-banh-dap-hen-xao",
+        "city-hoian-place-banh-mi"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 5,
+      "warningCount": 2
+    },
+    {
+      "sessionID": "voice_cleanup_r2_45",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_45.txt",
+      "chunks": [
+        "hoian_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hoian-place-bay-mau-coconut-forest",
+        "city-hoian-place-cam-chau",
+        "city-hoian-place-cam-kim-island",
+        "city-hoian-place-cam-nam",
+        "city-hoian-place-cam-pho"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 5,
+      "warningCount": 2
+    },
+    {
+      "sessionID": "voice_cleanup_r2_46",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_46.txt",
+      "chunks": [
+        "hoian_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hoian-place-cam-thanh",
+        "city-hoian-place-cam-thanh-basket-boat",
+        "city-hoian-place-cam-thanh-coconut-village",
+        "city-hoian-place-cantonese-assembly-hall",
+        "city-hoian-place-cao-lau-city"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 6,
+      "warningCount": 2
+    },
+    {
+      "sessionID": "voice_cleanup_r2_47",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_47.txt",
+      "chunks": [
+        "hoian_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hoian-place-cargo-club"
+      ],
+      "targetEntryCount": 1,
+      "errorCount": 3,
+      "warningCount": 2
+    },
+    {
+      "sessionID": "voice_cleanup_r2_48",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_48.txt",
+      "chunks": [
+        "hoian_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hoian-place-cham-islands",
+        "city-hoian-place-cham-islands-snorkel-boat",
+        "city-hoian-place-che-bap-cam-nam",
+        "city-hoian-place-chuc-thanh-pagoda",
+        "city-hoian-place-cocobox"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 6,
+      "warningCount": 0
+    },
+    {
+      "sessionID": "voice_cleanup_r2_49",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_49.txt",
+      "chunks": [
+        "hoian_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hoian-place-cooking-class",
+        "city-hoian-place-countryside-bicycle-loop",
+        "city-hoian-place-cua-dai-beach",
+        "city-hoian-place-cua-dai-estuary",
+        "city-hoian-place-cua-dai-pier"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 7,
+      "warningCount": 0
+    },
+    {
+      "sessionID": "voice_cleanup_r2_50",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_50.txt",
+      "chunks": [
+        "hoian_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hoian-place-espresso-station",
+        "city-hoian-place-folk-culture-museum",
+        "city-hoian-place-from-danang-railway-station",
+        "city-hoian-place-fujian-assembly-hall",
+        "city-hoian-place-hainan-assembly-hall"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 7,
+      "warningCount": 0
+    },
+    {
+      "sessionID": "voice_cleanup_r2_51",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_51.txt",
+      "chunks": [
+        "hoian_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hoian-place-history-culture-museum",
+        "city-hoian-place-kim-bong-carpentry-village"
+      ],
+      "targetEntryCount": 2,
+      "errorCount": 2,
+      "warningCount": 0
+    },
+    {
+      "sessionID": "voice_cleanup_r2_52",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_52.txt",
+      "chunks": [
+        "hoian_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hoian-place-lantern-making-class",
+        "city-hoian-place-mai-fish",
+        "city-hoian-place-market",
+        "city-hoian-place-memories-land",
+        "city-hoian-place-mi-quang"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 2,
+      "warningCount": 13
+    },
+    {
+      "sessionID": "voice_cleanup_r2_53",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_53.txt",
+      "chunks": [
+        "hoian_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hoian-place-minh-an-ward",
+        "city-hoian-place-mot-herbal-drink",
+        "city-hoian-place-museum",
+        "city-hoian-place-my-son-sanctuary",
+        "city-hoian-place-nguyen-hoang-night-market"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 0,
+      "warningCount": 14
+    },
+    {
+      "sessionID": "voice_cleanup_r2_54",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_54.txt",
+      "chunks": [
+        "hoian_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hoian-place-nguyen-phuc-chu-street",
+        "city-hoian-place-nguyen-thai-hoc-street",
+        "city-hoian-place-night-market",
+        "city-hoian-place-nu-eatery",
+        "city-hoian-place-phin-coffee"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 2,
+      "warningCount": 11
+    },
+    {
+      "sessionID": "voice_cleanup_r2_55",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_55.txt",
+      "chunks": [
+        "hoian_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hoian-place-phung-hung-old-house",
+        "city-hoian-place-pottery-workshop",
+        "city-hoian-place-precious-heritage-museum",
+        "city-hoian-place-quan-cong-temple",
+        "city-hoian-place-quan-thang-old-house"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 4,
+      "warningCount": 16
+    },
+    {
+      "sessionID": "voice_cleanup_r2_56",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_56.txt",
+      "chunks": [
+        "hoian_076_100_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hoian-place-reaching-out-arts-crafts",
+        "city-hoian-place-roastery",
+        "city-hoian-place-sa-huynh-culture-museum",
+        "city-hoian-place-thanh-ha",
+        "city-hoian-place-the-field"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 0,
+      "warningCount": 12
+    },
+    {
+      "sessionID": "voice_cleanup_r2_57",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_57.txt",
+      "chunks": [
+        "hoian_076_100_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hoian-place-trade-ceramics-museum",
+        "city-hoian-place-traditional-art-performance-house",
+        "city-hoian-place-vys-market",
+        "city-hoian-place-yaly-couture"
+      ],
+      "targetEntryCount": 4,
+      "errorCount": 1,
+      "warningCount": 9
+    },
+    {
+      "sessionID": "voice_cleanup_r2_58",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_58.txt",
+      "chunks": [
+        "hue_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hue-place-an-dinh-palace",
+        "city-hue-place-an-hien-garden-house",
+        "city-hue-place-ancient-hue-gallery-cuisine",
+        "city-hue-place-ancient-hue-restaurant",
+        "city-hue-place-ancient-space-restaurant"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 6,
+      "warningCount": 1
+    },
+    {
+      "sessionID": "voice_cleanup_r2_59",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_59.txt",
+      "chunks": [
+        "hue_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hue-place-banh-khoai",
+        "city-hue-place-banh-nam",
+        "city-hue-place-bao-vinh-ancient-town",
+        "city-hue-place-ben-ngu-market",
+        "city-hue-place-bun-bo-city"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 6,
+      "warningCount": 1
+    },
+    {
+      "sessionID": "voice_cleanup_r2_60",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_60.txt",
+      "chunks": [
+        "hue_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hue-place-bun-hen",
+        "city-hue-place-chu-van-an-street",
+        "city-hue-place-com-am-phu",
+        "city-hue-place-com-hen",
+        "city-hue-place-cyclo-citadel-loop"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 9,
+      "warningCount": 1
+    },
+    {
+      "sessionID": "voice_cleanup_r2_61",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_61.txt",
+      "chunks": [
+        "hue_001_025_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hue-place-dai-nam-restaurant"
+      ],
+      "targetEntryCount": 1,
+      "errorCount": 1,
+      "warningCount": 1
+    },
+    {
+      "sessionID": "voice_cleanup_r2_62",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_62.txt",
+      "chunks": [
+        "hue_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hue-place-de-po-cafe",
+        "city-hue-place-diem-phung-thi-art-center",
+        "city-hue-place-dong-ba",
+        "city-hue-place-duyet-thi-duong-theater",
+        "city-hue-place-hen-island"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 6,
+      "warningCount": 3
+    },
+    {
+      "sessionID": "voice_cleanup_r2_63",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_63.txt",
+      "chunks": [
+        "hue_026_050_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hue-place-hon-chen-temple",
+        "city-hue-place-kim-long",
+        "city-hue-place-lagoon-seafood-boat",
+        "city-hue-place-le-ba-dang-art-center"
+      ],
+      "targetEntryCount": 4,
+      "errorCount": 4,
+      "warningCount": 2
+    },
+    {
+      "sessionID": "voice_cleanup_r2_64",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_64.txt",
+      "chunks": [
+        "hue_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hue-place-le-ba-dang-memory-space",
+        "city-hue-place-les-jardins",
+        "city-hue-place-lien-hoa-vegetarian",
+        "city-hue-place-long-an-palace",
+        "city-hue-place-mandarin-coffee-restaurant"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 2,
+      "warningCount": 12
+    },
+    {
+      "sessionID": "voice_cleanup_r2_65",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_65.txt",
+      "chunks": [
+        "hue_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hue-place-minh-mang-tomb",
+        "city-hue-place-museum-commissioned-porcelains",
+        "city-hue-place-nam-giao-esplanade",
+        "city-hue-place-ngo-mon-gate",
+        "city-hue-place-ngu-binh-mountain"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 3,
+      "warningCount": 10
+    },
+    {
+      "sessionID": "voice_cleanup_r2_66",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_66.txt",
+      "chunks": [
+        "hue_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hue-place-nguyen-dinh-chieu-street",
+        "city-hue-place-nha-nhac-royal-court-music",
+        "city-hue-place-night-market",
+        "city-hue-place-nine-dynastic-urns",
+        "city-hue-place-northern-bus-station"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 4,
+      "warningCount": 11
+    },
+    {
+      "sessionID": "voice_cleanup_r2_67",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_67.txt",
+      "chunks": [
+        "hue_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hue-place-perfume-river-dragon-boat",
+        "city-hue-place-pham-ngu-lao-street",
+        "city-hue-place-phu-bai-airport",
+        "city-hue-place-phu-cam-church",
+        "city-hue-place-phu-hau-market"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 1,
+      "warningCount": 9
+    },
+    {
+      "sessionID": "voice_cleanup_r2_68",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_68.txt",
+      "chunks": [
+        "hue_051_075_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hue-place-royal-antiquities-museum"
+      ],
+      "targetEntryCount": 1,
+      "errorCount": 0,
+      "warningCount": 5
+    },
+    {
+      "sessionID": "voice_cleanup_r2_69",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_69.txt",
+      "chunks": [
+        "hue_076_100_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hue-place-royal-court-music-show",
+        "city-hue-place-ru-cha-mangrove",
+        "city-hue-place-song-huong-floating-restaurant",
+        "city-hue-place-songlab",
+        "city-hue-place-tay-loc-market"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 4,
+      "warningCount": 7
+    },
+    {
+      "sessionID": "voice_cleanup_r2_70",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_70.txt",
+      "chunks": [
+        "hue_076_100_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hue-place-thanh-toan-bridge",
+        "city-hue-place-thieu-tri-tomb",
+        "city-hue-place-thuy-bieu-village",
+        "city-hue-place-tinh-gia-vien",
+        "city-hue-place-toa-kham-boat-station"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 6,
+      "warningCount": 6
+    },
+    {
+      "sessionID": "voice_cleanup_r2_71",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_71.txt",
+      "chunks": [
+        "hue_076_100_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hue-place-truong-tien",
+        "city-hue-place-truong-tien-plaza",
+        "city-hue-place-vong-canh-hill",
+        "city-hue-place-vy-da",
+        "city-hue-place-walking-street"
+      ],
+      "targetEntryCount": 5,
+      "errorCount": 5,
+      "warningCount": 8
+    },
+    {
+      "sessionID": "voice_cleanup_r2_72",
+      "promptPath": "prompts/voice-cleanup/voice_cleanup_r2_72.txt",
+      "chunks": [
+        "hue_076_100_humanized.json"
+      ],
+      "targetPageIDs": [
+        "city-hue-place-y-thao-garden"
+      ],
+      "targetEntryCount": 1,
+      "errorCount": 1,
+      "warningCount": 5
+    }
+  ]
+}

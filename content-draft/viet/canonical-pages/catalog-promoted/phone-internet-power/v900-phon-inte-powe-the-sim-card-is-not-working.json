@@ -7,7 +7,7 @@
   "title": "Thẻ SIM không hoạt động",
   "englishTitle": "The SIM card is not working",
   "pronunciation": "The SIM khong hoat dong",
-  "summary": "The SIM card is not working",
+  "summary": "For showing a shop or hotel desk that your SIM has stopped working.",
   "iconName": "wifi",
   "tintName": "blue",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Thẻ SIM không hoạt động is a practical phone, internet, or power phrase for keeping one travel detail clear. Use it when SIM card is not working is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Keep the phone open to the error, signal bars, or mobile-data screen."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Thẻ SIM không hoạt động. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say the phrase, then let them look at the screen before adding more detail.",
       "phrases": [
         {
           "id": "v900-phon-inte-powe-the-sim-card-is-not-working",
@@ -42,22 +42,22 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Thẻ SIM means SIM card; không hoạt động means is not working.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Thẻ SIM",
           "english": "SIM card",
-          "audioKey": null
+          "keepTogetherReason": "SIM-card noun"
         },
         {
           "id": "chunk-2",
           "vietnamese": "không hoạt động",
           "english": "is not working",
-          "audioKey": null
+          "keepTogetherReason": "not-working phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Thẻ SIM không hoạt động",
           "english": "The SIM card is not working",
           "audioKey": "v900-phon-inte-powe-the-sim-card-is-not-working"
@@ -67,7 +67,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from The SIM card is not working to another phone, internet, or power need.",
+      "body": "Wi-Fi password and SIM-card pages help if you need another connection path.",
       "phrases": [
         {
           "id": "phone-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real phone, internet, or power exchange when sIM card is not working is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at SIM shops, airport counters, hotel desks, cafes, and phone-repair stalls."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Phone and Wi-Fi answers can be technical. Let the screen stay visible so the other person can point, type, or check the setting."
+      "body": "A staff member may check data settings, registration, balance, or the physical card. Keep the phone unlocked."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Thẻ SIM không hoạt động.",
+      "body": "Battery, charger, charging, data top-up, and eSIM cards cover nearby phone problems.",
       "phrases": [
         {
           "id": "phone-3",

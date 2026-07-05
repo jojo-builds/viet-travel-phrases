@@ -20,57 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể",
+      "english": "can I",
+      "keepTogetherReason": "can-I phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "để lại hành lý của mình",
+      "english": "leave my luggage",
+      "keepTogetherReason": "leave-luggage phrase"
     },
     {
-      "vietnamese": "để lại",
-      "english": "leave",
-      "keepTogetherReason": "compound leave-behind verb"
+      "id": "chunk-3",
+      "vietnamese": "cho đến khi nhận phòng",
+      "english": "until check-in",
+      "keepTogetherReason": "until-check-in phrase"
     },
     {
-      "id": "chunk-5",
-      "vietnamese": "hành lý",
-      "english": "baggage / luggage",
-      "keepTogetherReason": "compound noun"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "của mình",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "đến",
-      "english": "to / arrive at"
-    },
-    {
-      "id": "chunk-9",
-      "vietnamese": "khi",
-      "english": "when"
-    },
-    {
-      "id": "chunk-10",
-      "vietnamese": "nhận phòng",
-      "english": "check in",
-      "keepTogetherReason": "compound hotel phrase"
-    },
-    {
-      "id": "chunk-11",
+      "id": "chunk-4",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

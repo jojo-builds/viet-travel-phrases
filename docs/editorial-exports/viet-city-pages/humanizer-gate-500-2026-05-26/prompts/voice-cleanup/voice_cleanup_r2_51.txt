@@ -1,0 +1,151 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 2
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_51",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 2,
+    "returnedReplacementCount": 2,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_51",
+  "chunks": [
+    {
+      "chunkFile": "hoian_026_050_humanized.json",
+      "cityID": "hoian",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-hoian-place-history-culture-museum",
+          "message": "banned visible fragment: gives hoi an a"
+        },
+        {
+          "id": "city-hoian-place-kim-bong-carpentry-village",
+          "message": "banned visible fragment: gives hoi an a"
+        }
+      ],
+      "warnings": [],
+      "targetEntries": [
+        {
+          "pageID": "city-hoian-place-history-culture-museum",
+          "summary": "Museum of History and Culture gives Hoi An a compact indoor route through ceramics, trade memory, old displays, and the larger story behind the streets.",
+          "context": "This is a history-museum stop: gallery rooms, ceramics, routes, local memory, and a quieter way to frame Hoi An.",
+          "tip": "Bảo tàng Lịch sử - Văn hóa Hội An is long, but the clue is history and culture rather than folk life.",
+          "rationale": "The museum helps the old town feel less like scenery by adding trade, memory, and objects.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Short Route Through Context",
+              "body": "Museum of History and Culture gives Hoi An an indoor way to connect old streets with older trade, ceramics, routes, and memory."
+            },
+            {
+              "id": "place-brief",
+              "title": "Ceramics And Older Cases",
+              "body": "The gallery is small, with route material, ceramics, warm light, and older display cases. The visit is better as a short, focused loop."
+            },
+            {
+              "id": "quick-say",
+              "title": "History, Not Folk Life",
+              "body": "Bảo tàng Lịch sử - Văn hóa Hội An means Museum of History and Culture. The phrase separates this from the folk culture museum."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Rain Or Heritage Pairing",
+              "body": "It fits during heat, rain, or a heritage-heavy morning when outdoor stops start to blur. One compact museum can give the day a firmer frame."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Three-Object Mindset",
+              "body": "A small museum is easier with a light rule: pick a few objects, then leave before every label starts to feel the same."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Modest Scope",
+              "body": "This is not a major national museum. The strength is local context in compact rooms, not a long chronological deep dive."
+            }
+          ]
+        },
+        {
+          "pageID": "city-hoian-place-kim-bong-carpentry-village",
+          "summary": "Kim Bong Carpentry Village moves Hoi An across the water toward craft, tools, carved panels, and village rhythm instead of another old-town interior in daylight.",
+          "context": "This is a craft-village stop: woodworking, tools, carved panels, village lanes, and the route away from the old town.",
+          "tip": "Làng mộc Kim Bồng ties the place to woodcraft. Làng is village; mộc points toward carpentry and wood.",
+          "rationale": "The village gives Hoi An's craft story a working village edge, not just a shop or heritage-house interior.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Woodcraft Across The Water",
+              "body": "Kim Bong Carpentry Village gives Hoi An a craft story outside the old-town lanes. Woodworking, tools, carved panels, and village rhythm make the place feel practical rather than decorative."
+            },
+            {
+              "id": "place-brief",
+              "title": "Wood Becomes Shape",
+              "body": "The workshop image is woodworking, carved panels, and tools. The scene is strongest when the craft process, not only finished souvenirs, stays in view."
+            },
+            {
+              "id": "quick-say",
+              "title": "Village And Wood In The Phrase",
+              "body": "Làng mộc Kim Bồng means Kim Bong Carpentry Village. Làng means village; mộc points to wood or carpentry."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Craft And Route Pairing",
+              "body": "It fits with a river crossing, bike route, or craft-focused morning. The stop is easier when the route is part of the appeal."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Process Mindset",
+              "body": "The first thing to notice is how wood becomes shape: tools, hands, panels, and the quiet rhythm of work."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Workshop Rhythm Comes First",
+              "body": "Some days show active carving; others feel more like a quiet village stop. Let the tools, hands, and route set the expectation."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```

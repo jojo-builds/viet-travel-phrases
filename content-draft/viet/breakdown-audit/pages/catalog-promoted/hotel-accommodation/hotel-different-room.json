@@ -20,29 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi đã đặt",
+      "english": "I booked",
+      "keepTogetherReason": "I-booked phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "đã đặt",
-      "english": "booked / reserved",
-      "keepTogetherReason": "compound verb phrase"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "phòng",
-      "english": "room"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "khác.",
-      "english": "different / another"
+      "vietnamese": "một phòng khác.",
+      "english": "a different room.",
+      "keepTogetherReason": "different-room phrase"
     },
     {
       "id": "full",

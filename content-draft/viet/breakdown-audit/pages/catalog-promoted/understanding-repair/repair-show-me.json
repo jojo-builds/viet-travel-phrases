@@ -20,24 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Chỉ",
-      "english": "show / point"
+      "vietnamese": "Chỉ cho tôi",
+      "english": "show me",
+      "keepTogetherReason": "show-me request"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cho",
-      "english": "to / for"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "tôi",
-      "english": "me"
-    },
-    {
-      "id": "chunk-4",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

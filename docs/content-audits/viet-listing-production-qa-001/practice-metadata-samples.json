@@ -9,45 +9,24 @@
     "scenarioStepGroups": [
       {
         "stepID": "quick-say",
-        "title": "Say it locally",
+        "title": "Useful Phrases",
         "sourceSectionID": "quick-say",
         "primaryPhraseIDs": [
-          "city-danang-place-dragon-bridge"
-        ],
-        "supportPhraseIDs": []
-      },
-      {
-        "stepID": "use-it-with",
-        "title": "Worth it if",
-        "sourceSectionID": "use-it-with",
-        "primaryPhraseIDs": [
-          "repair-5"
+          "directions-1"
         ],
         "supportPhraseIDs": [
-          "ves-is-this-address-correct",
-          "ves-take-photo-for-me",
-          "transport-stop-here-clearer"
+          "sight-3",
+          "sight-4"
         ]
-      },
-      {
-        "stepID": "when-to-use",
-        "title": "Before you go",
-        "sourceSectionID": "when-to-use",
-        "primaryPhraseIDs": [
-          "ves-call-taxi-for-me"
-        ],
-        "supportPhraseIDs": []
       }
     ],
     "primaryPracticePhraseIDs": [
       "city-danang-place-dragon-bridge",
-      "repair-5",
-      "ves-call-taxi-for-me"
+      "directions-1"
     ],
     "secondaryPracticePhraseIDs": [
-      "ves-is-this-address-correct",
-      "ves-take-photo-for-me",
-      "transport-stop-here-clearer"
+      "sight-3",
+      "sight-4"
     ],
     "practiceSourcePageID": "viet-family-city-danang-place-dragon-bridge"
   },
@@ -61,34 +40,15 @@
     "scenarioStepGroups": [
       {
         "stepID": "quick-say",
-        "title": "Say it locally",
+        "title": "Useful Phrases",
         "sourceSectionID": "quick-say",
         "primaryPhraseIDs": [
-          "city-danang-place-ba-na-hills"
-        ],
-        "supportPhraseIDs": []
-      },
-      {
-        "stepID": "use-it-with",
-        "title": "Worth it if",
-        "sourceSectionID": "use-it-with",
-        "primaryPhraseIDs": [
-          "repair-5"
+          "sight-1"
         ],
         "supportPhraseIDs": [
-          "ves-is-this-address-correct",
-          "ves-take-photo-for-me",
-          "transport-stop-here-clearer"
+          "sight-3",
+          "sight-4"
         ]
-      },
-      {
-        "stepID": "when-to-use",
-        "title": "Before you go",
-        "sourceSectionID": "when-to-use",
-        "primaryPhraseIDs": [
-          "ves-call-taxi-for-me"
-        ],
-        "supportPhraseIDs": []
       },
       {
         "stepID": "getting-there",
@@ -97,7 +57,11 @@
         "primaryPhraseIDs": [
           "taxi-1"
         ],
-        "supportPhraseIDs": []
+        "supportPhraseIDs": [
+          "repair-5",
+          "transport-stop-here-clearer",
+          "ves-is-this-address-correct"
+        ]
       },
       {
         "stepID": "tickets",
@@ -119,20 +83,41 @@
           "ves-where-cable-car"
         ],
         "supportPhraseIDs": []
+      },
+      {
+        "stepID": "photos",
+        "title": "Photos",
+        "sourceSectionID": "photos",
+        "primaryPhraseIDs": [
+          "ves-take-photo-for-me"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
+        "stepID": "getting-back",
+        "title": "Getting back",
+        "sourceSectionID": "getting-back",
+        "primaryPhraseIDs": [
+          "ves-call-taxi-for-me"
+        ],
+        "supportPhraseIDs": []
       }
     ],
     "primaryPracticePhraseIDs": [
       "city-danang-place-ba-na-hills",
-      "repair-5",
-      "ves-call-taxi-for-me",
+      "sight-1",
       "taxi-1",
       "v500-time-date-book-two-tickets-please",
-      "ves-where-cable-car"
+      "ves-where-cable-car",
+      "ves-take-photo-for-me",
+      "ves-call-taxi-for-me"
     ],
     "secondaryPracticePhraseIDs": [
-      "ves-is-this-address-correct",
-      "ves-take-photo-for-me",
+      "sight-3",
+      "sight-4",
+      "repair-5",
       "transport-stop-here-clearer",
+      "ves-is-this-address-correct",
       "v500-time-date-book-one-ticket-please",
       "v500-sigh-acti-where-can-i-buy-tickets"
     ],
@@ -148,33 +133,24 @@
     "scenarioStepGroups": [
       {
         "stepID": "quick-say",
-        "title": "Say it locally",
+        "title": "Useful Phrases",
         "sourceSectionID": "quick-say",
         "primaryPhraseIDs": [
-          "city-danang-place-nguyen-van-linh-street"
-        ],
-        "supportPhraseIDs": []
-      },
-      {
-        "stepID": "place-brief",
-        "title": "What you'll get",
-        "sourceSectionID": "place-brief",
-        "primaryPhraseIDs": [
-          "city-danang-go-nguyen-van-linh-street"
+          "directions-1"
         ],
         "supportPhraseIDs": [
-          "city-danang-stop-nguyen-van-linh-street",
-          "city-danang-where-nguyen-van-linh-street"
+          "sight-3",
+          "v500-dire-navi-can-i-walk-there"
         ]
       }
     ],
     "primaryPracticePhraseIDs": [
       "city-danang-place-nguyen-van-linh-street",
-      "city-danang-go-nguyen-van-linh-street"
+      "directions-1"
     ],
     "secondaryPracticePhraseIDs": [
-      "city-danang-stop-nguyen-van-linh-street",
-      "city-danang-where-nguyen-van-linh-street"
+      "sight-3",
+      "v500-dire-navi-can-i-walk-there"
     ],
     "practiceSourcePageID": "viet-family-city-danang-place-nguyen-van-linh-street"
   },
@@ -188,52 +164,24 @@
     "scenarioStepGroups": [
       {
         "stepID": "quick-say",
-        "title": "Say it locally",
+        "title": "Useful Phrases",
         "sourceSectionID": "quick-say",
         "primaryPhraseIDs": [
-          "city-hcmc-place-anan-saigon"
-        ],
-        "supportPhraseIDs": []
-      },
-      {
-        "stepID": "place-brief",
-        "title": "What you'll get",
-        "sourceSectionID": "place-brief",
-        "primaryPhraseIDs": [
-          "city-hcmc-go-anan-saigon"
+          "v900-food-drin-is-there-a-wait-for-a-table"
         ],
         "supportPhraseIDs": [
-          "city-hcmc-stop-anan-saigon",
-          "city-hcmc-where-anan",
-          "city-hcmc-where-anan-saigon"
-        ]
-      },
-      {
-        "stepID": "when-to-use",
-        "title": "Before you go",
-        "sourceSectionID": "when-to-use",
-        "primaryPhraseIDs": [
-          "coffee-7"
-        ],
-        "supportPhraseIDs": [
-          "store-6",
-          "taxi-7",
-          "store-7"
+          "v900-food-drin-what-do-you-recommend",
+          "v900-food-drin-can-i-pay-the-bill-by-card"
         ]
       }
     ],
     "primaryPracticePhraseIDs": [
       "city-hcmc-place-anan-saigon",
-      "city-hcmc-go-anan-saigon",
-      "coffee-7"
+      "v900-food-drin-is-there-a-wait-for-a-table"
     ],
     "secondaryPracticePhraseIDs": [
-      "city-hcmc-stop-anan-saigon",
-      "city-hcmc-where-anan",
-      "city-hcmc-where-anan-saigon",
-      "store-6",
-      "taxi-7",
-      "store-7"
+      "v900-food-drin-what-do-you-recommend",
+      "v900-food-drin-can-i-pay-the-bill-by-card"
     ],
     "practiceSourcePageID": "viet-family-city-hcmc-place-anan-saigon"
   },
@@ -246,8 +194,17 @@
     "scenarioSeedID": "scenario-seed-hotel-2",
     "scenarioStepGroups": [
       {
+        "stepID": "standard-way",
+        "title": "The standard way",
+        "sourceSectionID": "standard-way",
+        "primaryPhraseIDs": [
+          "hotel-2"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
         "stepID": "natural-variations",
-        "title": "Other ways",
+        "title": "Natural variations",
         "sourceSectionID": "natural-variations",
         "primaryPhraseIDs": [
           "hotel-check-in-polite"
@@ -256,7 +213,7 @@
       },
       {
         "stepID": "traveler-insight",
-        "title": "Common follow-ups",
+        "title": "Traveler insight",
         "sourceSectionID": "traveler-insight",
         "primaryPhraseIDs": [
           "hotel-1"
@@ -267,16 +224,25 @@
         ]
       },
       {
-        "stepID": "explore-next",
-        "title": "Next phrases",
-        "sourceSectionID": "explore-next",
+        "stepID": "when-to-use",
+        "title": "When to use it",
+        "sourceSectionID": "when-to-use",
         "primaryPhraseIDs": [
           "hotel-4"
         ],
         "supportPhraseIDs": [
           "hotel-5",
-          "hotel-6",
-          "hotel-7",
+          "hotel-6"
+        ]
+      },
+      {
+        "stepID": "local-tip",
+        "title": "Local tip",
+        "sourceSectionID": "local-tip",
+        "primaryPhraseIDs": [
+          "hotel-7"
+        ],
+        "supportPhraseIDs": [
           "v500-hote-acco-the-door-does-not-lock"
         ]
       }
@@ -285,14 +251,14 @@
       "hotel-2",
       "hotel-check-in-polite",
       "hotel-1",
-      "hotel-4"
+      "hotel-4",
+      "hotel-7"
     ],
     "secondaryPracticePhraseIDs": [
       "hotel-3",
       "hotel-checkout",
       "hotel-5",
       "hotel-6",
-      "hotel-7",
       "v500-hote-acco-the-door-does-not-lock"
     ],
     "practiceSourcePageID": "viet-family-hotel-check-in"
@@ -306,8 +272,17 @@
     "scenarioSeedID": "scenario-seed-problems-2",
     "scenarioStepGroups": [
       {
+        "stepID": "standard-way",
+        "title": "The standard way",
+        "sourceSectionID": "standard-way",
+        "primaryPhraseIDs": [
+          "problems-2"
+        ],
+        "supportPhraseIDs": []
+      },
+      {
         "stepID": "traveler-insight",
-        "title": "Common follow-ups",
+        "title": "Traveler insight",
         "sourceSectionID": "traveler-insight",
         "primaryPhraseIDs": [
           "problems-3"
@@ -318,16 +293,15 @@
         ]
       },
       {
-        "stepID": "explore-next",
-        "title": "Next phrases",
-        "sourceSectionID": "explore-next",
+        "stepID": "when-to-use",
+        "title": "When to use it",
+        "sourceSectionID": "when-to-use",
         "primaryPhraseIDs": [
           "repair-3"
         ],
         "supportPhraseIDs": [
           "repair-6",
-          "repair-english-help",
-          "v500-unde-repa-please-say-it-slowly"
+          "repair-english-help"
         ]
       }
     ],
@@ -340,8 +314,7 @@
       "repair-1",
       "repair-2",
       "repair-6",
-      "repair-english-help",
-      "v500-unde-repa-please-say-it-slowly"
+      "repair-english-help"
     ],
     "practiceSourcePageID": "viet-family-repair-understand"
   }

@@ -33,7 +33,27 @@ git -C <lane-path> commit -m "Checkpoint <lane> work"
 
 Never stage build junk, unrelated user files, signing files, or broad generated outputs unless they are part of the lane's intentional work.
 
-## 3. Finish Each Safe Non-Paywall Lane
+## 3. Pre-Merge Review Gate
+
+Before calling the merge helper for any non-trivial `ahead-ready` or `dirty-done` lane, review the source lane against current `main`.
+
+Treat the review, merge, and post-merge validation as separate gates. The pre-merge review must produce:
+
+1. What changed.
+2. User-facing behavior changes.
+3. Possible regressions.
+4. Risky files, generated resources, or state/navigation logic.
+5. Missing tests or missing proof.
+6. Manual QA checklist for this lane after merge.
+7. Recommendation: `merge`, `fix first`, or `needs human decision`.
+
+If the recommendation is `fix first`, fix the blocker inside the feature lane, rerun its focused validation, and update the review before merging. If the recommendation is `needs human decision`, stop and ask Jojo.
+
+Trivial exceptions are allowed only for lanes that are already `same-as-main`, clean sync-only lanes, or docs/metadata-only changes with no runtime, operational, or product behavior effect. Say why the formal review was skipped.
+
+For high-risk UI, navigation, performance, generated-resource, content-quality, or payment/subscription work, add at least one read-only review agent before merge. Add a second reviewer when there is a meaningful independent surface such as performance, copy, or data generation.
+
+## 4. Finish Each Safe Non-Paywall Lane
 
 Use the helper from the repo root:
 
@@ -44,7 +64,7 @@ cd /Users/jojolim/Developer/products/speaklocal/app-family
 
 If conflicts happen, resolve them inside the feature lane first. Preserve both feature intents.
 
-## 4. Validate Combined Main
+## 5. Validate Combined Main
 
 Minimum checks after app-code merges:
 
@@ -64,7 +84,17 @@ xcodebuild -project SpeakLocalNative.xcodeproj -scheme SpeakLocalNative -destina
 
 Run focused XCTest suites when relevant.
 
-## 5. Prove Paywall Exclusion
+Post-merge validation must explicitly check:
+
+1. The app builds, when app code changed.
+2. Existing key flows touched by the merge still work.
+3. The new feature still works after merge.
+4. No unrelated files changed unexpectedly.
+5. No visual, admin, navigation, content, or generated-resource regression appears in the touched surface.
+
+If anything fails, stop and report the issue before attempting broad refactors.
+
+## 6. Prove Paywall Exclusion
 
 If paywall exists and was skipped:
 
@@ -75,7 +105,7 @@ git cherry -v main feature/paywall
 
 The exact output can vary. The point is to confirm paywall commits were not merged into `main`.
 
-## 6. Sync Non-Paywall Lanes
+## 7. Sync Non-Paywall Lanes
 
 After `main` is final:
 
@@ -86,7 +116,7 @@ cd /Users/jojolim/Developer/products/speaklocal/app-family
 
 If a lane is dirty, do not overwrite it. Report it.
 
-## 7. Build Main On Phone
+## 8. Build Main On Phone
 
 ```sh
 cd /Users/jojolim/Developer/products/speaklocal/app-family/orchestrator

@@ -132,6 +132,7 @@ struct PhraseHeroCopyStack: View {
     var morphNamespace: Namespace.ID? = nil
     var isMorphActive = false
     var isMorphSource = false
+    var allowsTextSelection = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -172,6 +173,7 @@ struct PhraseHeroCopyStack: View {
             isSource: isMorphSource,
             anchor: .topLeading
         )
+        .phraseHeroTextSelection(allowsTextSelection)
     }
 
     private var morphID: String {
@@ -179,6 +181,17 @@ struct PhraseHeroCopyStack: View {
             return ""
         }
         return HomePhraseHeroMorphID.copyStack(morphPageID)
+    }
+}
+
+private extension View {
+    @ViewBuilder
+    func phraseHeroTextSelection(_ isEnabled: Bool) -> some View {
+        if isEnabled {
+            textSelection(.enabled)
+        } else {
+            textSelection(.disabled)
+        }
     }
 }
 
@@ -276,28 +289,223 @@ enum AppChromeLayout {
     static let topAdminHitTestLayerZIndex: Double = 390
     static let topAdminControlLayerZIndex: Double = 410
     static let bottomAdminHitTestLayerZIndex: Double = 430
-    static let topAdminHorizontalPadding: CGFloat = 24
+    static let topAdminHorizontalPadding: CGFloat = 18
     static let topAdminTopPadding: CGFloat = 10
     static let topAdminControlSize: CGFloat = 47
     static let topAdminControlCornerRadius: CGFloat = topAdminControlSize / 2
+    static let topAdminRowSpacing: CGFloat = 8
+    static let topAdminSpeedChipWidth: CGFloat = 58
     static let menuSectionChromeHeight: CGFloat = 38
-    static let menuSectionChromeRowSpacing: CGFloat = 8
-    static let menuSectionBackdropTopOffset: CGFloat = topAdminTopPadding + topAdminControlSize + menuSectionChromeRowSpacing
-    static let menuSectionBackdropHeight: CGFloat = 92
-    static let menuSectionJumpClearance: CGFloat = topAdminTopPadding + topAdminControlSize + menuSectionChromeRowSpacing + menuSectionChromeHeight + 44
+    static let menuSectionChromeRowSpacing: CGFloat = 0
+    static let menuSectionBackdropTopOffset: CGFloat = topAdminTopPadding
+    static let menuSectionBackdropHeight: CGFloat = topAdminControlSize
+    static let menuSectionJumpClearance: CGFloat = topAdminTopPadding + topAdminControlSize + 44
     static let menuSectionJumpViewportAnchorY: CGFloat = 0.19
     static let pinnedAudioSpeedRevealY: CGFloat = 96
     static let pinnedAudioSpeedScrollClearance: CGFloat = 0
     static let topAdminHitTestEnvelopeHeight: CGFloat = 132
+    static let topReadableShieldHeight: CGFloat = max(topSeparationHeight, topAdminHitTestEnvelopeHeight)
     static let pinnedAudioSpeedBackdropHeight: CGFloat = topSeparationHeight
-    static let bottomAdminHitTestEnvelopeHeight: CGFloat = PhrasePageStyle.bottomChromeContentClearance
+    static let bottomAdminHitTestEnvelopeHeight: CGFloat = 92
 
     static func topChromeBackdropHeight(showsMenuSectionChrome: Bool) -> CGFloat {
-        if showsMenuSectionChrome {
-            return max(topSeparationHeight, menuSectionBackdropTopOffset + menuSectionBackdropHeight)
+        return topReadableShieldHeight
+    }
+}
+
+enum AppBottomContentClearance {
+    struct ValidationSurface {
+        let id: String
+        let actualClearance: CGFloat
+        let requiredClearance: CGFloat
+    }
+
+    static let standard: CGFloat = PhrasePageStyle.bottomChromeContentClearance
+    static let minimumReadable: CGFloat = AppChromeLayout.bottomAdminHitTestEnvelopeHeight + 24
+    static let photoBackdropOverlayCompensation: CGFloat = AppChromeLayout.bottomAdminHitTestEnvelopeHeight
+    static let photoBackdropRoot: CGFloat = photoBackdropClearance(PhrasePhotoBackdropLayout.bottomReadingClearance)
+
+    static func rootSurface(usesPhotoBackdrop: Bool, standard standardClearance: CGFloat = standard) -> CGFloat {
+        usesPhotoBackdrop ? photoBackdropRoot : standardClearance
+    }
+
+    static func photoBackdropClearance(_ baseClearance: CGFloat) -> CGFloat {
+        baseClearance + photoBackdropOverlayCompensation
+    }
+
+    static func requiredRootSurfaceClearance(usesPhotoBackdrop: Bool) -> CGFloat {
+        usesPhotoBackdrop ? photoBackdropRoot : minimumReadable
+    }
+
+    static func detailValidationSurface(pageID: String, heroImageName: String?) -> ValidationSurface {
+        ValidationSurface(
+            id: "detail.\(pageID)",
+            actualClearance: PhraseArticleTemplateLayout.bottomContentClearance(
+                pageID: pageID,
+                heroImageName: heroImageName
+            ),
+            requiredClearance: detailRequiredClearance(pageID: pageID, heroImageName: heroImageName)
+        )
+    }
+
+    static func validationRouteSurfaces() -> [ValidationSurface] {
+        let rootSurfaces = [
+            ValidationSurface(
+                id: "home.photoBackdrop",
+                actualClearance: HomeLayout.bottomContentClearance(usesPhotoBackdrop: true),
+                requiredClearance: requiredRootSurfaceClearance(usesPhotoBackdrop: true)
+            ),
+            ValidationSurface(
+                id: "browse.photoBackdrop",
+                actualClearance: BrowsePageLayout.bottomContentClearance(usesPhotoBackdrop: true),
+                requiredClearance: requiredRootSurfaceClearance(usesPhotoBackdrop: true)
+            ),
+            ValidationSurface(
+                id: "search.photoBackdrop",
+                actualClearance: SearchPageLayout.resultsBottomClearance(usesPhotoBackdrop: true),
+                requiredClearance: requiredRootSurfaceClearance(usesPhotoBackdrop: true)
+            ),
+            ValidationSurface(
+                id: "saved.photoBackdrop",
+                actualClearance: SavedTripLayout.bottomContentClearance(usesPhotoBackdrop: true),
+                requiredClearance: requiredRootSurfaceClearance(usesPhotoBackdrop: true)
+            ),
+            ValidationSurface(
+                id: "practice.photoBackdrop",
+                actualClearance: PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: true),
+                requiredClearance: requiredRootSurfaceClearance(usesPhotoBackdrop: true)
+            ),
+            ValidationSurface(
+                id: "home.standard",
+                actualClearance: HomeLayout.bottomContentClearance(usesPhotoBackdrop: false),
+                requiredClearance: minimumReadable
+            ),
+            ValidationSurface(
+                id: "browse.standard",
+                actualClearance: BrowsePageLayout.bottomContentClearance(usesPhotoBackdrop: false),
+                requiredClearance: minimumReadable
+            ),
+            ValidationSurface(
+                id: "search.standard",
+                actualClearance: SearchPageLayout.resultsBottomClearance(usesPhotoBackdrop: false),
+                requiredClearance: minimumReadable
+            ),
+            ValidationSurface(
+                id: "saved.standard",
+                actualClearance: SavedTripLayout.bottomContentClearance(usesPhotoBackdrop: false),
+                requiredClearance: minimumReadable
+            ),
+            ValidationSurface(
+                id: "practice.standard",
+                actualClearance: PracticeMatchHubLayout.bottomContentClearance(usesPhotoBackdrop: false),
+                requiredClearance: minimumReadable
+            ),
+        ]
+
+        let collectionSurfaces = BrowseSearchDestinations.visibleCategoryCollectionRoutes.compactMap { route -> ValidationSurface? in
+            if let kind = VietnameseMenuCatalog.kind(for: route) {
+                let usesPhotoBackdrop = kind.photoBackdropImageName != nil
+                return ValidationSurface(
+                    id: "collection.\(route.id)",
+                    actualClearance: VietnameseMenuLayout.bottomContentClearance(usesPhotoBackdrop: usesPhotoBackdrop),
+                    requiredClearance: requiredRootSurfaceClearance(usesPhotoBackdrop: usesPhotoBackdrop)
+                )
+            }
+
+            guard let descriptor = BrowseSearchDestinations.collectionDescriptor(for: route) else {
+                return nil
+            }
+
+            let usesPhotoBackdrop = descriptor.cityHub != nil || descriptor.mastheadImageName.hasPrefix("HeroCategory")
+            return ValidationSurface(
+                id: "collection.\(route.id)",
+                actualClearance: BrowseCollectionLayout.bottomContentClearance(usesPhotoBackdrop: usesPhotoBackdrop),
+                requiredClearance: requiredRootSurfaceClearance(usesPhotoBackdrop: usesPhotoBackdrop)
+            )
         }
 
-        return topSeparationHeight
+        return rootSurfaces + collectionSurfaces
+    }
+
+    private static func detailRequiredClearance(pageID: String, heroImageName: String?) -> CGFloat {
+        if PhrasePhotoBackdropLayout.supportsListingPage(pageID: pageID, heroImageName: heroImageName) {
+            return photoBackdropClearance(
+                PhrasePhotoBackdropLayout.bottomReadingClearance(pageID: pageID, heroImageName: heroImageName)
+            )
+        }
+
+        return minimumReadable
+    }
+}
+
+struct AppBottomSentinel: View {
+    let id: String
+
+    var body: some View {
+        Rectangle()
+            .fill(Color.black.opacity(0.001))
+            .frame(height: 4)
+            .frame(maxWidth: .infinity)
+            .id(id)
+            .accessibilityElement()
+            .accessibilityIdentifier(id)
+            .accessibilityLabel(id)
+    }
+}
+
+struct AppBottomClearanceScrollTarget: View {
+    let sentinelID: String
+    let height: CGFloat
+
+    var body: some View {
+        Color.clear
+            .frame(height: max(height, 0))
+            .frame(maxWidth: .infinity)
+            .id(AppBottomInsetValidation.scrollTargetID(for: sentinelID))
+            .accessibilityHidden(true)
+    }
+}
+
+enum AppBottomInsetValidation {
+    static let scrollToBottomLaunchArgument = "--validate-bottom-inset-scroll-to-bottom"
+
+    static var shouldScrollToBottom: Bool {
+        ProcessInfo.processInfo.arguments.contains(scrollToBottomLaunchArgument)
+    }
+
+    static func scrollTargetID(for sentinelID: String) -> String {
+        "\(sentinelID).ScrollTarget"
+    }
+
+    @MainActor
+    static func scrollToBottom(_ scrollProxy: ScrollViewProxy, sentinelID: String) async {
+        guard shouldScrollToBottom else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: 650_000_000)
+        guard !Task.isCancelled else {
+            return
+        }
+
+        scrollWithoutAnimation(scrollProxy, sentinelID: sentinelID)
+
+        try? await Task.sleep(nanoseconds: 250_000_000)
+        guard !Task.isCancelled else {
+            return
+        }
+
+        scrollWithoutAnimation(scrollProxy, sentinelID: sentinelID)
+    }
+
+    @MainActor
+    private static func scrollWithoutAnimation(_ scrollProxy: ScrollViewProxy, sentinelID: String) {
+        var transaction = Transaction()
+        transaction.disablesAnimations = true
+        withTransaction(transaction) {
+            scrollProxy.scrollTo(sentinelID, anchor: .bottom)
+            scrollProxy.scrollTo(scrollTargetID(for: sentinelID), anchor: .bottom)
+        }
     }
 }
 
@@ -314,6 +522,7 @@ struct ChromeSeparationGradient: View {
     let edge: ChromeSeparationEdge
     var extendsBehindMenuSectionChrome = false
     var style: ChromeSeparationGradientStyle = .light
+    var opacityScale: Double = 1
 
     var body: some View {
         LinearGradient(
@@ -329,9 +538,9 @@ struct ChromeSeparationGradient: View {
     private var gradientStops: [Gradient.Stop] {
         if style == .darkPhoto {
             return [
-                .init(color: Color.black.opacity(0.68), location: 0),
-                .init(color: Color.black.opacity(0.48), location: 0.34),
-                .init(color: Color.black.opacity(0.18), location: 0.72),
+                .init(color: Color.black.opacity(scaledOpacity(0.72)), location: 0),
+                .init(color: Color.black.opacity(scaledOpacity(0.54)), location: 0.34),
+                .init(color: Color.black.opacity(scaledOpacity(0.24)), location: 0.72),
                 .init(color: Color.black.opacity(0), location: 1),
             ]
         }
@@ -352,6 +561,10 @@ struct ChromeSeparationGradient: View {
             .init(color: PhrasePageStyle.pageBackground.opacity(0.30), location: 0.78),
             .init(color: PhrasePageStyle.pageBackground.opacity(0), location: 1),
         ]
+    }
+
+    private func scaledOpacity(_ opacity: Double) -> Double {
+        opacity * min(max(opacityScale, 0), 1)
     }
 }
 
@@ -375,6 +588,13 @@ enum SearchPageLayout {
     static let resultGroupTopPadding: CGFloat = 10
     static let resultsBottomClearance: CGFloat = PhrasePageStyle.bottomChromeContentClearance
     static let resultsZIndex: Double = 0
+
+    static func resultsBottomClearance(usesPhotoBackdrop: Bool) -> CGFloat {
+        AppBottomContentClearance.rootSurface(
+            usesPhotoBackdrop: usesPhotoBackdrop,
+            standard: resultsBottomClearance
+        )
+    }
 
     static func headerMode(query: String, isFieldFocused _: Bool) -> SearchPageHeaderMode {
         query.isEmpty ? .full : .compactResults

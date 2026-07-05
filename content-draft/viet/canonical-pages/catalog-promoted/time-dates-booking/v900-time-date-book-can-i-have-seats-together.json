@@ -4,10 +4,10 @@
   "phraseID": "v900-time-date-book-can-i-have-seats-together",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Tôi có thể ngồi chung được không?",
-  "englishTitle": "Can I have seats together?",
-  "pronunciation": "Toi co the ngoi chung duoc khong",
-  "summary": "Can I have seats together?",
+  "title": "Chúng tôi có thể ngồi cùng nhau được không?",
+  "englishTitle": "Can we sit together?",
+  "pronunciation": "Chung toi co the ngoi cung nhau duoc khong",
+  "summary": "For asking to keep your group seated together before tickets or spots are assigned.",
   "iconName": "calendar",
   "tintName": "teal",
   "categoryIDs": [
@@ -15,57 +15,63 @@
     "v900-time-date-book-can-i-have-seats-together",
     "premium"
   ],
-  "audioKey": "v900-time-date-book-can-i-have-seats-together",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể ngồi chung được không? is for asking permission before you act. It is useful when have seats together depends on local rules, staff approval, or the right way to use a space or service."
+      "body": "Seats together matter on trains, buses, tours, shows, ferries, and waiting-room bookings."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi có thể ngồi chung được không? once, then make the task visible with your booking screen, ticket, calendar, time, line, or confirmation message. The phrase is doing one job: getting a clear answer about have seats together.",
+      "body": "Ask before payment or assignment. Show how many people are in the group.",
       "phrases": [
         {
           "id": "v900-time-date-book-can-i-have-seats-together",
-          "vietnamese": "Tôi có thể ngồi chung được không?",
-          "english": "Can I have seats together?",
-          "pronunciation": "Toi co the ngoi chung duoc khong",
-          "symbolName": "speaker.wave.2.fill",
+          "vietnamese": "Chúng tôi có thể ngồi cùng nhau được không?",
+          "english": "Can we sit together?",
+          "pronunciation": "Chung toi co the ngoi cung nhau duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "teal",
           "detailPageID": null,
-          "audioKey": "v900-time-date-book-can-i-have-seats-together"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Chúng tôi means we; ngồi cùng nhau means sit together; được không asks if it is possible.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Tôi có",
-          "english": "I have",
+          "vietnamese": "Chúng tôi",
+          "english": "we",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thể ngồi chung",
-          "english": "call",
+          "vietnamese": "có thể",
+          "english": "can / able to",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "được không",
-          "english": "is it possible?",
+          "vietnamese": "ngồi cùng nhau",
+          "english": "sit together",
           "audioKey": null
         },
         {
           "id": "chunk-4",
-          "vietnamese": "Tôi có thể ngồi chung được không?",
-          "english": "Can I have seats together",
+          "vietnamese": "được không?",
+          "english": "is that possible?",
+          "audioKey": null
+        },
+        {
+          "id": "chunk-5",
+          "vietnamese": "Chúng tôi có thể ngồi cùng nhau được không?",
+          "english": "Can we sit together?",
           "audioKey": null
         }
       ]
@@ -73,7 +79,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can I have seats together? to another time, date, or booking need.",
+      "body": "Booking, time, confirmation, and seat-choice follow-ups stay close if the answer changes the reservation.",
       "phrases": [
         {
           "id": "time-1",
@@ -110,17 +116,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real time, date, or booking exchange when have seats together is the detail you need resolved. The likely reply is yes/no, permission, or the correct way to do it, so keep the phrase short and ready for one follow-up."
+      "body": "Good at ticket counters, tour desks, transit desks, cinemas, boats, and message threads before the final booking is made."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "If seats together are not possible, ask whether nearby seats or a different time are available."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể ngồi chung được không?.",
+      "body": "Use seat choice, confirmation, booking, date-change, or waitlist follow-ups for the next detail.",
       "phrases": [
         {
           "id": "time-4",
@@ -178,13 +184,13 @@
   "examples": [
     {
       "id": "v900-time-date-book-can-i-have-seats-together",
-      "vietnamese": "Tôi có thể ngồi chung được không?",
-      "english": "Can I have seats together?",
-      "pronunciation": "Toi co the ngoi chung duoc khong",
-      "symbolName": "speaker.wave.2.fill",
+      "vietnamese": "Chúng tôi có thể ngồi cùng nhau được không?",
+      "english": "Can we sit together?",
+      "pronunciation": "Chung toi co the ngoi cung nhau duoc khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "teal",
       "detailPageID": null,
-      "audioKey": "v900-time-date-book-can-i-have-seats-together"
+      "audioKey": null
     }
   ]
 }

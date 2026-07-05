@@ -21,29 +21,20 @@
     {
       "id": "chunk-1",
       "vietnamese": "Lối vào",
-      "english": "entrance",
-      "keepTogetherReason": "compound noun"
+      "english": "the entrance",
+      "keepTogetherReason": "entrance phrase"
     },
     {
       "id": "chunk-2",
       "vietnamese": "nằm ở",
       "english": "is located at",
-      "keepTogetherReason": "fixed place phrase"
+      "keepTogetherReason": "location phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "phía",
-      "english": "side / direction"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "bên",
-      "english": "side"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "kia",
-      "english": "over there"
+      "vietnamese": "phía bên kia",
+      "english": "the other side",
+      "keepTogetherReason": "other-side phrase"
     },
     {
       "id": "full",

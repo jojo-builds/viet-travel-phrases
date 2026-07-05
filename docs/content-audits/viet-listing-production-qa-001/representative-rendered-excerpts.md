@@ -9,28 +9,41 @@ This is a static approximation of rendered listing content after renderer-level 
 - Hero: Tôi không hiểu / I don’t understand
 - Practice CTA: Practice this phrase
 
-### Meaning
-A simple recovery phrase for when Vietnamese is too fast or unclear.
+### At a glance
+Reach for it when someone is speaking too quickly or using unfamiliar words.
+
+### The standard way
+Say Tôi không hiểu in one connected line before adding details. If it is still unclear, show, write, or point to the exact word.
+- Tôi không hiểu — I don’t understand
 
 ### Break it down
+Hear Tôi không + hiểu as the reference point, then compare it with the full phrase.
 - Tôi = I / me
 - không = no / not
 - hiểu = understand
 - Tôi không hiểu = I don’t understand
 
-### Common follow-ups
+### Why it matters
+These phrases keep the interaction cooperative when repeating the same words is not helping. Keep the word, screen, address, or written note ready so the other person can act on the same detail.
+
+### Traveler insight
+Watch for a slower repeat, a pointed explanation, or switch to writing. If it is still unclear, show, write, or point to the exact word.
 - Nói chậm chút được không? — Can you speak a little slower?
 - Làm ơn nói lại — Please say that again
 - Viết xuống giúp tôi — Please write it down
 
-### Good to know
-Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.
-
-### Next phrases
+### When to use it
+Reach for it when someone is speaking too quickly or using unfamiliar words. Watch for a slower repeat, a pointed explanation, or switch to writing.
 - Cái đó nghĩa là gì? — What does that mean?
 - Làm ơn nói lại số đó — Please say the number again
 - Anh/chị nói tiếng Anh không? — Do you speak English?
+
+### Local tip
+If speaking does not work, move quickly to writing, pointing, or showing the exact word on your phone.
 - Hãy nói từ từ nhé — Please say it slowly
+
+### Good to know
+Keep your tone curious. A sharp tone can make a clarification question sound like a challenge.
 
 ## Hotel check-in
 
@@ -39,29 +52,46 @@ Keep your tone curious. A sharp tone can make a clarification question sound lik
 - Hero: Cho tôi nhận phòng / I’d like to check in
 - Practice CTA: Practice this situation
 
+### At a glance
+Reach for it when you are ready to begin check-in.
+
+### The standard way
+Say Cho tôi nhận phòng clearly; show the booking, room number, address, or key card only if the reply needs detail.
+- Cho tôi nhận phòng — I’d like to check in
+
 ### Break it down
+Hear Cho tôi + nhận phòng as the reference point, then compare it with the full phrase.
 - cho = to / for
 - tôi = I / me
 - nhận phòng = check in
 - Cho tôi nhận phòng = I’d like to check in
 
-### Other ways
+### Natural variations
+Keep I’d like to check in, please nearby for the same moment in a slightly different tone.
 - Cho tôi nhận phòng nhé — I’d like to check in, please
 
-### Common follow-ups
+### Why it matters
+Check-in language works best with the booking name or passport ready. The phrase opens the hotel process.
+
+### Traveler insight
+Expect a passport request, booking check, deposit, room time, or key handoff.
 - Tôi có đặt phòng — I have a reservation
 - Mấy giờ trả phòng? — What time is check-out?
 - Cho tôi trả phòng — I’d like to check out
 
-### Good to know
-Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.
-
-### Next phrases
+### When to use it
+Use it at hotels, homestays, apartments, and guesthouses when you are ready to start the stay.
 - Phòng này nóng quá — This room is too hot
 - Máy lạnh không chạy — The air conditioner isn’t working
 - Cho tôi thêm khăn — More towels please
+
+### Local tip
+Pair the phrase with a booking screen, key card, room number, or photo of the problem.
 - Giữ hành lý giúp tôi — Please hold my luggage
 - Cửa không khóa — The door does not lock
+
+### Good to know
+Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.
 
 ## Bà Nà Hills
 
@@ -70,29 +100,28 @@ Stay calm and specific. A direct phrase plus the room number is usually more eff
 - Hero: Bà Nà Hills / Ba Na Hills
 - Practice CTA: Practice this trip
 
-### About
-Ba Na Hills is worth knowing because it gives Da Nang a specific landmark scene: views, local pride, history, and city light, alongside Da Nang's seafood-and-mountain day.
+### More Park Than Viewpoint
+A mountain theme park above Da Nang: cable cars, cooler air, the Golden Bridge, gardens, replica streets, crowds, and weather risk.
 
-### Say it locally
-Say Bà Nà Hills for Ba Na Hills. The local name is easier to remember once it sits beside local pride, history, city light, and landmark memory, alongside Da Nang's seafood-and-mountain day.
-- Bà Nà Hills — Ba Na Hills
+### Useful Phrases
+- Vé bao nhiêu? — How much is the ticket?
+- Tôi chụp hình ở đây được không? — Can I take photos here?
+- Mấy giờ đóng cửa? — What time does it close?
 
-### What you'll get
-At Ba Na Hills, you get architecture, views, local pride, and history in visual form: misty hill station approach with cable cars and forested ridges light, with history, city light, landmark memory, and architecture, alongside Da Nang's seafood-and-mountain day.
+### Early, With Weather Checked
+Morning is the least painful crowd strategy. Fog or rain can turn the famous view into an expensive cloud walk, so the forecast matters before the ride west.
 
-### Worth it if
-Worth it if Ba Na Hills gives your itinerary a clearer image: architecture, views, local pride, and history, alongside Da Nang's seafood-and-mountain day.
-- Chỉ trên bản đồ giúp tôi được không? — Can you show me on the map?
-- Địa chỉ này đúng không? — Is this address correct?
-- Bạn chụp giúp tôi được không? — Can you take a photo for me?
-- Cho tôi xuống ngay đây — Please stop right here
+### Cable Car Arrival
+The climb turns city heat into a mountain day: forest below, mist on the glass, cooler air at the upper level. Clear sky makes the scale feel cinematic.
 
-### Before you go
-Ba Na Hills works best when the name is tied to the reason for going, not memorized as an abstract label. Picture misty hill station approach with cable cars and forested ridges light with city light, landmark memory, architecture, and views, alongside Da Nang's seafood-and-mountain day.
-- Gọi giúp tôi taxi được không? — Can you call me a taxi?
+### Bridge Before Wandering
+If the Golden Bridge is the main reason, do it first. After that, decide how much of the wider park the group actually wants.
 
 ### Getting there
 - Cho tôi tới đây — Take me here
+- Chỉ trên bản đồ giúp tôi được không? — Can you show me on the map?
+- Cho tôi xuống ngay đây — Please stop right here
+- Địa chỉ này đúng không? — Is this address correct?
 
 ### Tickets
 - Xin cho hai vé — Two tickets, please
@@ -106,12 +135,10 @@ Ba Na Hills works best when the name is tied to the reason for going, not memori
 - Bạn chụp giúp tôi được không? — Can you take a photo for me?
 
 ### Getting back
-- Chỉ trên bản đồ giúp tôi được không? — Can you show me on the map?
-- Địa chỉ này đúng không? — Is this address correct?
 - Gọi giúp tôi taxi được không? — Can you call me a taxi?
 
-### Good to know
-Bà Nà Hills points back to Misty hill station approach with cable cars and forested ridges light, where Ba Na Hills feels specific rather than abstract.
+### Give It Room
+Travel time, tickets, cable cars, walking, and crowd flow all take space. A lighter city day leaves room for the mountain weather and the long ride back.
 
 ### Food & cash
 - Cho tôi chai nước — A bottle of water please
@@ -124,29 +151,22 @@ Bà Nà Hills points back to Misty hill station approach with cable cars and for
 - Hero: Cầu Rồng / Dragon Bridge
 - Practice CTA: Practice this place
 
-### Why go
-Dragon Bridge is worth knowing because it gives Da Nang one of its clearest visual signatures: a dragon-shaped bridge stretching across the Han River between the city center and the beach side.
+### Dry View Or Close Crowd
+Dragon Bridge is the landmark most visitors notice first: a dragon-shaped span over the Han River, bright at night, and useful for understanding how Da Nang's center connects toward the beach.
 
-### Say it locally
-Say Cầu Rồng for Dragon Bridge. Cầu means bridge, and Rồng means dragon, so the local name matches exactly what you are looking at.
-- Cầu Rồng — Dragon Bridge
+### Useful Phrases
+- Cho hỏi, đi tới đó thế nào? — Excuse me, how do I get there?
+- Tôi chụp hình ở đây được không? — Can I take photos here?
+- Mấy giờ đóng cửa? — What time does it close?
 
-### What you'll get
-At Dragon Bridge, expect river light, traffic moving through the dragon body, skyline views, and a place that makes Da Nang feel like a city built around bridges rather than only beaches.
+### The Riverbank Shows The Dragon
+The bridge itself is movement: scooters, lanes, walkers, and phones at the rail. The riverbank gives enough distance to see the dragon.
 
-### Worth it if
-Worth it if you want a central evening walk, a riverfront meeting point, or a simple landmark that helps the city layout make sense.
-- Chỉ trên bản đồ giúp tôi được không? — Can you show me on the map?
-- Địa chỉ này đúng không? — Is this address correct?
-- Bạn chụp giúp tôi được không? — Can you take a photo for me?
-- Cho tôi xuống ngay đây — Please stop right here
+### Close Has A Different Energy
+Near the bridge, spray and crowd noise hit first. Farther back, the river gives the dragon, lights, and skyline more room in the photo.
 
-### Before you go
-Before you go, connect Dragon Bridge with the Han River and the beach road. It is a useful name for walking plans, ride routes, and recognizing the center of Da Nang.
-- Gọi giúp tôi taxi được không? — Can you call me a taxi?
-
-### Good to know
-Good to know: Cầu Rồng is literal and visual. If the dragon shape is the reason for the stop, the Vietnamese name reinforces it instead of feeling like a label to memorize.
+### A Short Riverfront Loop
+Pair the bridge with a Hàn River walk, Love Bridge, the Dragon Carp Statue, or a nearby night-market stop. It is a sharp riverfront moment.
 
 ## Đường Nguyễn Văn Linh
 
@@ -155,27 +175,25 @@ Good to know: Cầu Rồng is literal and visual. If the dragon shape is the rea
 - Hero: Đường Nguyễn Văn Linh / Nguyen Van Linh Street
 - Practice CTA: Practice this street
 
-### Why go
-Nguyen Van Linh Street is worth recognizing because streets shape how Da Nang feels on the ground: crossings, cafe edges, neighborhood movement, and street signs, alongside coastal Da Nang.
+### Avenue As Orientation
+Nguyen Van Linh Street makes Da Nang navigable before the map becomes real: a broad avenue, planted median, traffic flow, and cafe edges between airport, river, and beach plans.
 
-### What you'll get
-At Nguyen Van Linh Street, you get a named street scene of trees, shopfronts, crossings, cafes, and neighborhood movement: broad city avenue with motorbikes and planted median, motion blur, with shopfronts, scooters, crossings, and cafe edges, alongside coastal Da Nang.
-- Đi Đường Nguyễn Văn Linh — Go to Nguyen Van Linh Street
-- Dừng ở Đường Nguyễn Văn Linh — Stop at Nguyen Van Linh Street
-- Đường Nguyễn Văn Linh ở đâu? — Where is Nguyen Van Linh Street?
+### Useful Phrases
+- Cho hỏi, đi tới đó thế nào? — Excuse me, how do I get there?
+- Tôi chụp hình ở đây được không? — Can I take photos here?
+- Tôi có thể đi bộ tới đó được không? — Can I walk there?
 
-### Say it locally
-Say Đường Nguyễn Văn Linh for Nguyen Van Linh Street. The local name is easier to remember once it sits beside cafe edges, neighborhood movement, street signs, and shopfronts, alongside coastal Da Nang.
-- Đường Nguyễn Văn Linh — Nguyen Van Linh Street
+### Crossings Set The Pace
+Wide streets can look simple until the motorbike flow starts. Pick visible crossings when you have them, move predictably, and do not follow a ride-app pin into a rushed decision.
 
-### Worth it if
-Worth it if the street helps you understand the neighborhood before you are there: scooters, crossings, cafe edges, and neighborhood movement, alongside coastal Da Nang.
+### Pickup And Drop-Off Point
+The street name helps with pickup, drop-off, and cafe-side meeting points. A named road is often clearer than pointing at a nearby building that your driver may not know.
 
-### Before you go
-Nguyen Van Linh Street works best when the name is tied to the reason for going, not memorized as an abstract label. Picture broad city avenue with motorbikes and planted median, motion blur with street signs, shopfronts, scooters, and crossings, alongside coastal Da Nang.
+### Cross-Town Ride
+This name matters most when the day moves between airport, river, and beach. It gives a broad city avenue a handle before the streets start blending together.
 
-### Good to know
-Đường Nguyễn Văn Linh belongs in the same image as shopfronts, scooters, crossings, and cafe edges, alongside coastal Da Nang, with Nguyen Van Linh Street rooted in Da Nang.
+### One Block Can Orient You
+You do not need to turn the street into a long walk. One clear sign, cafe edge, or safer crossing can make the area less abstract.
 
 ## Anăn Sài Gòn
 
@@ -184,32 +202,25 @@ Nguyen Van Linh Street works best when the name is tied to the reason for going,
 - Hero: Anăn Sài Gòn / Anan Saigon
 - Practice CTA: Practice ordering here
 
-### Why go
-Anan Saigon is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with evening meal energy, tables, house dishes, and menu details, alongside Ben Thanh market energy.
+### Modern Vietnamese Inside Market Streets
+Anan Saigon is a Michelin-recognized modern Vietnamese restaurant in the old Tôn Thất Đạm market area. Step in from market streets to composed Vietnamese dishes, drinks, and guided pacing.
 
-### What you'll get
-At Anan Saigon, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: contemporary Vietnamese restaurant table with herbs and small plates, with evening meal energy, tables, house dishes, and menu details, alongside Ben Thanh market energy.
-- Cho tôi đến nhà hàng Anăn Sài Gòn. — Please take me to Anăn Sài Gòn restaurant.
-- Cho tôi xuống gần nhà hàng Anăn Sài Gòn. — Let me off near Anăn Sài Gòn restaurant.
-- Nhà hàng Anăn Sài Gòn ở đâu? — Where is Anan Saigon restaurant?
-- Anăn Sài Gòn ở đâu? — Where is Anan Saigon?
+### Useful Phrases
+- Có phải đợi bàn không? — Is there a wait for a table?
+- Bạn đề xuất món gì? — What do you recommend?
+- Tôi có thể thanh toán hóa đơn bằng thẻ không? — Can I pay the bill by card?
 
-### Say it locally
-Say Anăn Sài Gòn for Anan Saigon. The local name is easier to remember once it sits beside tables, house dishes, menu details, and staff rhythm, alongside Ben Thanh market energy.
-- Anăn Sài Gòn — Anan Saigon
+### Market Streets Shape The Dinner
+Chef Peter Cuong Franklin built Anan around modern Vietnamese cooking and street-food references. The Tôn Thất Đạm market block outside keeps the dinner tied to Saigon.
 
-### Worth it if
-Worth it if the meal itself should be one of the day's memories: drinks, evening meal energy, tables, and house dishes, alongside Ben Thanh market energy.
+### Market Outside, Polish Inside
+The doorway does real work: vendors, alleys, and market movement outside; composed plates, drinks, and guided pacing inside. One dinner carries both street memory and restaurant polish.
 
-### Before you go
-Anan Saigon works best when the name is tied to the reason for going, not memorized as an abstract label. Picture contemporary Vietnamese restaurant table with herbs and small plates with tables, house dishes, menu details, and staff rhythm, alongside Ben Thanh market energy.
-- Tính tiền giúp tôi — Please let me pay
-- Tôi quẹt thẻ được không? — Can I pay by card?
-- Tôi trả bằng tiền mặt — I’ll pay cash
-- Cho tôi hóa đơn — Please give me the receipt
+### Before Dinner Settles In
+Spice, allergies, and the menu rhythm are easier to settle early. The first exchange sets the table's limits for a tasting-style dinner.
 
-### Good to know
-Anăn Sài Gòn feels less abstract when it sits beside house dishes, menu details, staff rhythm, and drinks, alongside Ben Thanh market energy and the scene of Anan Saigon.
+### Keep Everyday Food Around It
+A market walk or casual bánh mì lunch earlier in the day keeps the dinner connected to everyday Saigon food before the room turns more polished.
 
 ## Bún chả Hương Liên
 
@@ -218,31 +229,25 @@ Anăn Sài Gòn feels less abstract when it sits beside house dishes, menu detai
 - Hero: Bún chả Hương Liên / Bun Cha Huong Lien
 - Practice CTA: Practice ordering here
 
-### Why go
-Bun Cha Huong Lien is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with drinks, evening meal energy, tables, and house dishes, alongside Hanoi's steam-and-herb food streets.
+### The Famous Bún Chả Lunch
+Bún chả is Hanoi grilled pork served with rice noodles, herbs, and warm dipping broth. Hương Liên is the famous room many American visitors know from the Obama and Anthony Bourdain meal.
 
-### What you'll get
-At Bun Cha Huong Lien, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: Hanoi bun cha shop table with grilled pork, noodles, herbs, with tables, house dishes, menu details, and staff rhythm, alongside Hanoi's steam-and-herb food streets.
-- Cho tôi đến nhà hàng Bún chả Hương Liên. — Please take me to Bún chả Hương Liên restaurant.
-- Cho tôi xuống gần nhà hàng Bún chả Hương Liên. — Let me off near Bún chả Hương Liên restaurant.
-- Bún chả Hương Liên ở đâu? — Where is Bun Cha Huong Lien?
+### Useful Phrases
+- Cho tôi xem thực đơn được không? — Can I see the menu?
+- Cho tôi bàn cho hai người nhé — A table for two, please
+- Bạn đề xuất món gì? — What do you recommend?
 
-### Say it locally
-Say Bún chả Hương Liên for Bun Cha Huong Lien. The local name is easier to remember once it sits beside staff rhythm, drinks, evening meal energy, and tables, alongside Hanoi's steam-and-herb food streets.
-- Bún chả Hương Liên — Bun Cha Huong Lien
+### Build The Bite Slowly
+Bún chả is assembled bite by bite. Dip noodles, add herbs, take pork from the broth, and let smoky, sweet, sharp, and cool pieces meet slowly.
 
-### Worth it if
-Worth it if the meal itself should be one of the day's memories: house dishes, menu details, staff rhythm, and drinks, alongside Hanoi's steam-and-herb food streets.
+### Obama Table, Grill Smoke
+The Obama-Bourdain story explains why the place is known. It should not replace the real reason to go: a clear Hanoi lunch with pork, broth, herbs, and noodles.
 
-### Before you go
-Bun Cha Huong Lien works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Hanoi bun cha shop table with grilled pork, noodles, herbs with staff rhythm, drinks, evening meal energy, and tables, alongside Hanoi's steam-and-herb food streets.
-- Tính tiền giúp tôi — Please let me pay
-- Tôi quẹt thẻ được không? — Can I pay by card?
-- Tôi trả bằng tiền mặt — I’ll pay cash
-- Cho tôi hóa đơn — Please give me the receipt
+### Lunch With One Job
+Bún chả is the reason to sit down here. Order the dish, settle the table, and learn the rhythm before adding anything extra.
 
-### Good to know
-The scene around Bun Cha Huong Lien stays vivid when Bún chả Hương Liên sits beside menu details, staff rhythm, drinks, and evening meal energy, alongside Hanoi's steam-and-herb food streets.
+### Eat While It Is Warm
+The pork and broth should still be warm when you start eating. Take the photo if you want, then let the meal stay practical.
 
 ## Phở Bát Đàn
 
@@ -251,31 +256,25 @@ The scene around Bun Cha Huong Lien stays vivid when Bún chả Hương Liên si
 - Hero: Phở Bát Đàn / Pho Bat Dan
 - Practice CTA: Practice ordering here
 
-### Why go
-Pho Bat Dan is worth considering when a meal should feel like part of the itinerary: dining culture, house dishes, table rhythm, and the choice of where a meal happens, with drinks, evening meal energy, tables, and house dishes, alongside Hanoi's steam-and-herb food streets.
+### An Old Quarter Phở Bowl
+Phở is Vietnamese noodle soup; phở bò is the beef version. Phở Bát Đàn is an Old Quarter bowl built around broth steam, rice noodles, sliced beef, herbs, and a quick meal rhythm.
 
-### What you'll get
-At Pho Bat Dan, you get dining culture, house dishes, table rhythm, and the choice of where a meal happens: steaming bowl of Hanoi beef pho on simple metal table, Old Quarter shop backdrop, with tables, house dishes, menu details, and staff rhythm, alongside Hanoi's steam-and-herb food streets.
-- Cho tôi đến nhà hàng Phở Bát Đàn. — Please take me to Phở Bát Đàn restaurant.
-- Cho tôi xuống gần nhà hàng Phở Bát Đàn. — Let me off near Phở Bát Đàn restaurant.
-- Phở Bát Đàn ở đâu? — Where is Pho Bat Dan?
+### Useful Phrases
+- Cho tôi xem thực đơn được không? — Can I see the menu?
+- Cho tôi bàn cho hai người nhé — A table for two, please
+- Bạn đề xuất món gì? — What do you recommend?
 
-### Say it locally
-Say Phở Bát Đàn for Pho Bat Dan. The local name is easier to remember once it sits beside house dishes, menu details, staff rhythm, and drinks, alongside Hanoi's steam-and-herb food streets.
-- Phở Bát Đàn — Pho Bat Dan
+### Know The Bowl First
+Start with the basic decision: beef phở, herbs, broth, and how much heat or lime you want. The meal gets easier once that is clear.
 
-### Worth it if
-Worth it if the meal itself should be one of the day's memories: evening meal energy, tables, house dishes, and menu details, alongside Hanoi's steam-and-herb food streets.
+### Broth First
+Add herbs, lime, or chili slowly. The first spoonful tells you how much the bowl actually needs.
 
-### Before you go
-Pho Bat Dan works best when the name is tied to the reason for going, not memorized as an abstract label. Picture steaming bowl of Hanoi beef pho on simple metal table, Old Quarter shop backdrop with house dishes, menu details, staff rhythm, and drinks, alongside Hanoi's steam-and-herb food streets.
-- Tính tiền giúp tôi — Please let me pay
-- Tôi quẹt thẻ được không? — Can I pay by card?
-- Tôi trả bằng tiền mặt — I’ll pay cash
-- Cho tôi hóa đơn — Please give me the receipt
+### Short Meal
+Steam, broth, and the street outside are the memory. A quick bowl can still feel complete when the broth is the point.
 
-### Good to know
-Phở Bát Đàn belongs with Steaming bowl of Hanoi beef pho on simple metal table, Old Quarter shop backdrop, giving Pho Bat Dan a specific travel scene before the trip begins.
+### Compare It With Gia Truyền
+Phở Gia Truyền is the clearer first baseline for many visitors. Bát Đàn is the plainer Old Quarter counter-feeling bowl to compare against it.
 
 ## Bún bò Huế
 
@@ -284,26 +283,26 @@ Phở Bát Đàn belongs with Steaming bowl of Hanoi beef pho on simple metal ta
 - Hero: Bún bò Huế / Bun bo Hue
 - Practice CTA: Practice ordering this
 
-### Why go
-Bun bo Hue is worth trying because it turns Hue into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with small meal rituals, flavor, herbs, and sauce, alongside Hue river-city memory.
+### Hue's Famous Spicy Noodle Soup
+Bún bò Huế is the city bowl most visitors hear about before arriving: spicy, lemongrass-heavy, filling, and tied closely to the old capital.
 
-### What you'll get
-At Bun bo Hue, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: bowl of bún bò Huế with lemongrass broth, herbs, lime, and Hue tabletop, with steam, texture, small meal rituals, and flavor, alongside Hue river-city memory.
-- Dạ, cho tôi một tô bún bò Huế. — One bowl of bun bo Hue, please.
+### Useful Phrases
+- Cho tôi xem thực đơn được không? — Can I see the menu?
 - Cho tôi một phần — One portion please
+- Không cay nhé — Not spicy please
 
-### Say it locally
-Say Bún bò Huế for Bun bo Hue. The local name is easier to remember once it sits beside texture, small meal rituals, flavor, and herbs, alongside Hue river-city memory.
-- Bún bò Huế — Bun bo Hue
+### Aromatic And Deep
+Expect more heat and lemongrass than a gentle noodle soup. The broth is deep, aromatic, and built for herbs, lime, and chili.
+- Dạ, cho tôi một tô bún bò Huế. — One bowl of bun bo Hue, please.
 
-### Worth it if
-Worth it if you want a food memory rather than only a label: texture, small meal rituals, flavor, and herbs, alongside Hue river-city memory.
+### Famous Beyond Hue
+Many places outside Hue serve it, but the bowl is easier to understand in its home city, where the name and flavor belong together.
 
-### Before you go
-Bun bo Hue works best when the name is tied to the reason for going, not memorized as an abstract label. Picture bowl of bún bò Huế with lemongrass broth, herbs, lime, and Hue tabletop with texture, small meal rituals, flavor, and herbs, alongside Hue river-city memory.
+### A Bowl Before A Long Day
+It makes sense before a tomb route, Citadel visit, or long walking day when a light snack will not hold.
 
-### Good to know
-Bún bò Huế feels like something heard in Hue, with Bowl of bún bò Huế with lemongrass broth, herbs, lime, and Hue tabletop around it.
+### Chili After The Opening Sip
+Taste the broth before adding more chili. Ask first if pork, shrimp paste, or blood curd matters to you.
 
 ## Cao lầu
 
@@ -312,26 +311,27 @@ Bún bò Huế feels like something heard in Hue, with Bowl of bún bò Huế wi
 - Hero: Cao lầu ở Hội An / Cao lau in Hoi An
 - Practice CTA: Practice ordering this
 
-### Why go
-Cao lau in Hoi An is worth trying because it turns Hoi An into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with small meal rituals, flavor, herbs, and sauce, alongside lantern-street Hoi An.
+### Hội An In One Bowl
+Cao lầu is the Hội An noodle bowl to know: thick chewy noodles, pork, greens, herbs, crisp crackers, and a shallow coat of sauce.
 
-### What you'll get
-At Cao lau in Hoi An, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: Cao lầu bowl with thick noodles, pork, greens, and crackers, natural table light, with herbs, sauce, steam, and texture, alongside lantern-street Hoi An.
+### Useful Phrases
+- Cho tôi tô này — I’ll take this bowl
+- Cho thêm rau — More herbs please
+- Không cay nhé — Not spicy please
+
+### Chewy, Dry, Herb-Heavy
+The bowl is compact: chewy noodles, fresh herbs, savory pork, crunchy pieces, and sauce that clings.
 - Dạ, cho tôi một phần cao lầu. — One portion of cao lau, please.
 - Cho tôi một phần — One portion please
 
-### Say it locally
-Say Cao lầu ở Hội An for Cao lau in Hoi An. The local name is easier to remember once it sits beside sauce, steam, texture, and small meal rituals, alongside lantern-street Hoi An.
-- Cao lầu ở Hội An — Cao lau in Hoi An
+### Cao Lầu On Menus
+Menus may spell it with tone marks as Cao lầu. Recognizing the words keeps the dish easier to spot when restaurant names shift.
 
-### Worth it if
-Worth it if you want a food memory rather than only a label: flavor, herbs, sauce, and steam, alongside lantern-street Hoi An.
+### Lunch Between Walks
+Cao lầu sits well between old-town walks because it fills the table without becoming a long meal. It is quick for lunch, while chewy noodles and crisp pieces give the bowl a few extra minutes at the table.
 
-### Before you go
-Cao lau in Hoi An works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Cao lầu bowl with thick noodles, pork, greens, and crackers, natural table light with flavor, herbs, sauce, and steam, alongside lantern-street Hoi An.
-
-### Good to know
-Cao lầu ở Hội An feels like something heard in Hoi An, with Cao lầu bowl with thick noodles, pork, greens, and crackers, natural table light around it.
+### Mostly Dry, Not Soup
+Cao lầu usually has very little broth. New visitors may notice the dry-sauced chew before anything else.
 
 ## Bưu điện Thành phố
 
@@ -340,29 +340,25 @@ Cao lầu ở Hội An feels like something heard in Hoi An, with Cao lầu bowl
 - Hero: Bưu điện Thành phố / Saigon Central Post Office
 - Practice CTA: Practice this place
 
-### Why go
-Saigon Central Post Office is worth knowing because it gives Saigon a specific landmark scene: architecture, views, local pride, and history, alongside Saigon street energy.
+### Yellow Facade, Arched Hall
+Saigon Central Post Office is the yellow French-era landmark beside Notre-Dame Cathedral, with an arched hall, old wall maps, postcard counters, and postal desks still in use.
 
-### What you'll get
-At Saigon Central Post Office, you get architecture, views, local pride, and history in visual form: yellow Saigon Central Post Office facade with pedestrians and scooters, with city light, landmark memory, architecture, and views, alongside Saigon street energy.
+### Useful Phrases
+- Cho hỏi, đi tới đó thế nào? — Excuse me, how do I get there?
+- Lối vào ở đâu? — Where is the entrance?
+- Tôi chụp hình ở đây được không? — Can I take photos here?
 
-### Say it locally
-Say Bưu điện Thành phố for Saigon Central Post Office. The local name is easier to remember once it sits beside views, local pride, history, and city light, alongside Saigon street energy.
-- Bưu điện Thành phố — Saigon Central Post Office
+### Facade, Hall, Street
+The outside gives you the yellow facade and scooter pressure; inside, the arched hall, wall maps, counters, and postal desks slow the visit down.
 
-### Worth it if
-Worth it if Saigon Central Post Office gives your itinerary a clearer image: landmark memory, architecture, views, and local pride, alongside Saigon street energy.
-- Chỉ trên bản đồ giúp tôi được không? — Can you show me on the map?
-- Địa chỉ này đúng không? — Is this address correct?
-- Bạn chụp giúp tôi được không? — Can you take a photo for me?
-- Cho tôi xuống ngay đây — Please stop right here
+### Close By, Short Visit
+It pairs easily with Notre-Dame Cathedral and nearby District 1 landmarks. One short visit can carry the facade, hall, and old postal-room detail.
 
-### Before you go
-Saigon Central Post Office works best when the name is tied to the reason for going, not memorized as an abstract label. Picture yellow Saigon Central Post Office facade with pedestrians and scooters with landmark memory, architecture, views, and local pride, alongside Saigon street energy.
-- Gọi giúp tôi taxi được không? — Can you call me a taxi?
+### Old Maps And Postcard Counters
+Inside, the wall maps and postcard counters make the visit more than a facade photo. After that, the District 1 streets are right outside again.
 
-### Good to know
-Bưu điện Thành phố keeps its setting close: Yellow Saigon Central Post Office facade with pedestrians and scooters, surrounded by local pride, history, city light, and landmark memory, alongside Saigon street energy.
+### Arches Before Photos
+The hall can fill quickly. The arches and old maps are worth noticing even when a perfectly empty photo is not possible.
 
 ## Hotel check-in
 
@@ -371,29 +367,46 @@ Bưu điện Thành phố keeps its setting close: Yellow Saigon Central Post Of
 - Hero: Cho tôi nhận phòng / I’d like to check in
 - Practice CTA: Practice this situation
 
+### At a glance
+Reach for it when you are ready to begin check-in.
+
+### The standard way
+Say Cho tôi nhận phòng clearly; show the booking, room number, address, or key card only if the reply needs detail.
+- Cho tôi nhận phòng — I’d like to check in
+
 ### Break it down
+Hear Cho tôi + nhận phòng as the reference point, then compare it with the full phrase.
 - cho = to / for
 - tôi = I / me
 - nhận phòng = check in
 - Cho tôi nhận phòng = I’d like to check in
 
-### Other ways
+### Natural variations
+Keep I’d like to check in, please nearby for the same moment in a slightly different tone.
 - Cho tôi nhận phòng nhé — I’d like to check in, please
 
-### Common follow-ups
+### Why it matters
+Check-in language works best with the booking name or passport ready. The phrase opens the hotel process.
+
+### Traveler insight
+Expect a passport request, booking check, deposit, room time, or key handoff.
 - Tôi có đặt phòng — I have a reservation
 - Mấy giờ trả phòng? — What time is check-out?
 - Cho tôi trả phòng — I’d like to check out
 
-### Good to know
-Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.
-
-### Next phrases
+### When to use it
+Use it at hotels, homestays, apartments, and guesthouses when you are ready to start the stay.
 - Phòng này nóng quá — This room is too hot
 - Máy lạnh không chạy — The air conditioner isn’t working
 - Cho tôi thêm khăn — More towels please
+
+### Local tip
+Pair the phrase with a booking screen, key card, room number, or photo of the problem.
 - Giữ hành lý giúp tôi — Please hold my luggage
 - Cửa không khóa — The door does not lock
+
+### Good to know
+Stay calm and specific. A direct phrase plus the room number is usually more effective than extra explanation.
 
 ## Airport arrival
 
@@ -402,24 +415,40 @@ Stay calm and specific. A direct phrase plus the room number is usually more eff
 - Hero: Nhập cảnh ở đâu? / Where is immigration?
 - Practice CTA: Practice this situation
 
+### At a glance
+Lead with Nhập cảnh ở đâu?; add the detail after the first reply.
+
+### The standard way
+Show the passport, baggage tag, flight detail, or pickup screen first, ask once, and leave room for the answer.
+- Nhập cảnh ở đâu? — Where is immigration?
+
 ### Break it down
+This pattern asks where a place or service is. Swap the first part to ask about another nearby stop.
 - Nhập cảnh = immigration / enter the country
 - ở đâu? = where
 - Nhập cảnh ở đâu? = Where is immigration?
 
-### Common follow-ups
+### Why it matters
+Airport phrases help staff route you to the next counter or service without a long explanation. Keep the passport, baggage tag, pickup screen, or flight detail visible.
+
+### Traveler insight
+Watch for a point, short direction, nearby option, or counter name. Say Nhập cảnh ở đâu?
 - Lấy hành lý ở đâu? — Where is baggage claim?
 - Mua SIM ở đâu? — Where can I buy a SIM card?
 - Khu đón ở đâu? — Where is the pickup area?
 
-### Good to know
-Airport staff may answer by pointing. Follow the gesture first, then ask again if the next step is still unclear.
-
-### Next phrases
+### When to use it
+Use this right after landing when you need the first official line. Watch for a point, short direction, nearby option, or counter name.
 - Hành lý của tôi chưa tới — My bag did not arrive
 - Đây là thị thực của tôi — Here is my visa
 - ATM ở đâu? — Where is the ATM?
+
+### Local tip
+Keep your passport, baggage tag, or booking screen visible while you ask.
 - Đây là hộ chiếu của tôi — Here is my passport
+
+### Good to know
+Airport staff may answer by pointing. Follow the gesture first, then ask again if the next step is still unclear.
 
 ## Taxi/Grab pickup
 
@@ -428,27 +457,47 @@ Airport staff may answer by pointing. Follow the gesture first, then ask again i
 - Hero: Khu đón ở đâu? / Where is the pickup area?
 - Practice CTA: Practice this situation
 
+### At a glance
+Khu đón ở đâu? keeps the direction question short. Use this for rideshare, shuttle, or private pickup handoffs. This keeps the first transport handoff from going messy.
+
+### The standard way
+Ask while the passport, baggage tag, flight detail, or pickup screen is still visible, then pause before adding more words.
+- Khu đón ở đâu? — Where is the pickup area?
+
 ### Break it down
+This pattern asks where a place or service is. Swap the first part to ask about another nearby stop.
 - Khu đón = pickup area
 - ở đâu? = where
 - Khu đón ở đâu? = Where is the pickup area?
 
-### Other ways
+### Natural variations
+Choose where do I meet the driver? when that wording fits the person or setting better.
 - Tôi gặp tài xế ở đâu? — Where do I meet the driver?
 
-### Common follow-ups
+### Why it matters
+Airport phrases help staff route you to the next counter or service without a long explanation. Keep the passport, baggage tag, pickup screen, or flight detail visible.
+
+### Traveler insight
+Watch for a point, short direction, nearby option, or counter name. Say Khu đón ở đâu?
 - Nhập cảnh ở đâu? — Where is immigration?
 - Lấy hành lý ở đâu? — Where is baggage claim?
 - Mua SIM ở đâu? — Where can I buy a SIM card?
 
-### Good to know
-Airport staff may answer by pointing. Follow the gesture first, then ask again if the next step is still unclear.
-
-### Next phrases
+### When to use it
+Use this for rideshare, shuttle, or private pickup handoffs. Watch for a point, short direction, nearby option, or counter name.
 - Hành lý của tôi chưa tới — My bag did not arrive
 - Đây là thị thực của tôi — Here is my visa
 - ATM ở đâu? — Where is the ATM?
+
+### Local tip
+Keep your passport, baggage tag, or booking screen visible while you ask.
 - Đây là hộ chiếu của tôi — Here is my passport
+
+### You May Hear
+A local may answer with: Outside gate 10.
+
+### Good to know
+Airport staff may answer by pointing. Follow the gesture first, then ask again if the next step is still unclear.
 
 ## Shopping
 

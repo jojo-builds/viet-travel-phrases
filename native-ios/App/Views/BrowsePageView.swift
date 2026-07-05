@@ -55,8 +55,10 @@ struct BrowsePageView: View {
 
             compactSearchHeader
                 .padding(.horizontal, BrowsePageLayout.horizontalPadding)
+
+            AppBottomSentinel(id: "Browse.BottomSentinel")
         }
-        .padding(.bottom, BrowsePageLayout.bottomChromeContentClearance)
+        .padding(.bottom, BrowsePageLayout.bottomContentClearance(usesPhotoBackdrop: usesPhotoBackdrop))
     }
 
     private var header: some View {
@@ -227,6 +229,13 @@ enum BrowsePageLayout {
 
     static func situationCardTitleContentWidth(cardWidth: CGFloat) -> CGFloat {
         max(0, cardWidth - (14 * 2))
+    }
+
+    static func bottomContentClearance(usesPhotoBackdrop: Bool) -> CGFloat {
+        AppBottomContentClearance.rootSurface(
+            usesPhotoBackdrop: usesPhotoBackdrop,
+            standard: bottomChromeContentClearance
+        )
     }
 
     static func cityHeroCardWidth(containerWidth: CGFloat) -> CGFloat {

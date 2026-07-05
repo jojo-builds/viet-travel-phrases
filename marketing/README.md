@@ -21,9 +21,9 @@ Marketing should make the current product easier to understand and want, not tur
 
 Current core positioning:
 
-> SpeakLocal helps first-time Vietnam travelers find, hear, and practice useful Vietnamese phrases for real travel moments.
+> SpeakLocal helps excited Vietnam travelers discover what to eat, where to go, and what to say, with curated phrases, local context, and playable Vietnamese audio before and during the trip.
 
-Do not position it as a full translator or fluency app unless the product actually ships that capability later.
+Do not position it as a full translator, arbitrary AI chat/translation box, or fluency app unless the product actually ships that capability later.
 
 ## Starting Points
 

@@ -7,7 +7,7 @@
   "title": "Hành lý của tôi ở trong cốp xe.",
   "englishTitle": "My luggage is in the trunk.",
   "pronunciation": "Hanh ly cua toi o trong cop xe",
-  "summary": "My luggage is in the trunk.",
+  "summary": "For telling a driver or staff member that your luggage is still in the trunk.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hành lý của tôi ở trong cốp xe. names the problem so staff or a helpful local can act on it. Use it when My luggage is in the trunk is the clearest way to explain what changed, went missing, or needs attention."
+      "body": "The car has not left yet, or the driver is about to move on."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Hành lý của tôi ở trong cốp xe. calmly and show the proof if you have it: map, destination, ride screen, ticket, vehicle, or pickup point. After that, let the other person ask one follow-up or point you to the right next step.",
+      "body": "Point to the vehicle or trunk while you say it. Keep the ride screen visible if you need the driver identified.",
       "phrases": [
         {
           "id": "transport-premium-luggage-trunk",
@@ -42,129 +42,129 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hành lý của tôi means my luggage; ở trong cốp xe means is in the trunk.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hành lý của",
-          "english": "luggage",
-          "audioKey": null
+          "vietnamese": "Hành lý của tôi",
+          "english": "my luggage",
+          "keepTogetherReason": "my-luggage phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "tôi ở trong cốp xe",
-          "english": "in the trunk",
-          "audioKey": null
+          "vietnamese": "ở trong cốp xe.",
+          "english": "is in the trunk.",
+          "keepTogetherReason": "in-the-trunk phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Hành lý của tôi ở trong cốp xe.",
-          "english": "My luggage is in the trunk",
-          "audioKey": null
+          "english": "My luggage is in the trunk.",
+          "audioKey": "transport-premium-luggage-trunk"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from My luggage is in the trunk. to another transport need.",
+      "body": "Open the trunk, put my bag here, and left something in the car phrases cover nearby luggage moments.",
       "phrases": [
         {
-          "id": "taxi-1",
-          "vietnamese": "Cho tôi tới đây",
-          "english": "Take me here",
-          "pronunciation": "cho toy toy day",
+          "id": "v500-tran-please-open-the-trunk",
+          "vietnamese": "Vui lòng mở cốp xe",
+          "english": "Please open the trunk",
+          "pronunciation": "Vui long mo cop xe",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-taxi-1",
-          "audioKey": "taxi-1"
+          "detailPageID": "viet-phrase-v500-tran-please-open-the-trunk",
+          "audioKey": "v500-tran-please-open-the-trunk"
         },
         {
-          "id": "taxi-2",
-          "vietnamese": "Đi quận 1",
-          "english": "Go to District 1",
-          "pronunciation": "dee gwan mot",
+          "id": "v500-tran-can-i-put-my-bag-here",
+          "vietnamese": "Tôi có thể đặt túi của tôi ở đây được không?",
+          "english": "Can I put my bag here?",
+          "pronunciation": "Toi co the dat tui cua toi o day duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-taxi-2",
-          "audioKey": "taxi-2"
+          "detailPageID": "viet-phrase-v500-tran-can-i-put-my-bag-here",
+          "audioKey": "v500-tran-can-i-put-my-bag-here"
         },
         {
-          "id": "taxi-3",
-          "vietnamese": "Dừng ở đây được rồi",
-          "english": "You can stop here",
-          "pronunciation": "zoong uh day dook roy",
+          "id": "v500-tran-i-left-something-in-the-car",
+          "vietnamese": "Tôi để quên thứ gì đó trong xe",
+          "english": "I left something in the car",
+          "pronunciation": "Toi de quen thu gi do trong xe",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-taxi-3",
-          "audioKey": "taxi-3"
+          "detailPageID": "viet-phrase-v500-tran-i-left-something-in-the-car",
+          "audioKey": "v500-tran-i-left-something-in-the-car"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this as soon as the problem is clear enough to name. It is especially useful at a counter or desk where someone can look at the photo, receipt, bag, booking, or phone screen with you."
+      "body": "Good after taxis, Grab rides, hotel transfers, buses, airport pickups, and any ride where bags were loaded for you."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Keep the explanation simple and show the evidence if you can. A short phrase plus a photo, receipt, or booking usually works better than adding more English."
+      "body": "Act quickly but calmly. The car, plate, driver, or company is the detail that helps most."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hành lý của tôi ở trong cốp xe..",
+      "body": "Call the driver, contact the company, driver left, different car number, and stop near the entrance phrases cover recovery.",
       "phrases": [
         {
-          "id": "transport-stop-here-clearer",
-          "vietnamese": "Cho tôi xuống ngay đây",
-          "english": "Please stop right here",
-          "pronunciation": "cho toy zoong ngay day",
+          "id": "v500-tran-please-call-the-driver",
+          "vietnamese": "Vui lòng gọi tài xế",
+          "english": "Please call the driver",
+          "pronunciation": "Vui long goi tai xe",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-transport-stop-here-clearer",
-          "audioKey": "transport-stop-here-clearer"
+          "detailPageID": "viet-phrase-v500-tran-please-call-the-driver",
+          "audioKey": "v500-tran-please-call-the-driver"
         },
         {
-          "id": "taxi-4",
-          "vietnamese": "Đi đường này đi",
-          "english": "Go this way",
-          "pronunciation": "dee doong nai dee",
+          "id": "v900-tran-can-you-help-me-contact-the-company",
+          "vietnamese": "Bạn có thể giúp tôi liên hệ với công ty được không?",
+          "english": "Can you help me contact the company?",
+          "pronunciation": "Ban co the giup toi lien he voi cong ty duoc khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-taxi-4",
-          "audioKey": "taxi-4"
+          "detailPageID": "viet-phrase-v900-tran-can-you-help-me-contact-the-company",
+          "audioKey": "v900-tran-can-you-help-me-contact-the-company"
         },
         {
-          "id": "taxi-5",
-          "vietnamese": "Mở máy lạnh giúp tôi",
-          "english": "Please turn on the air conditioning",
-          "pronunciation": "muh mai lanh zoop toy",
+          "id": "v900-tran-the-driver-left-without-me",
+          "vietnamese": "Người lái xe rời đi mà không có tôi",
+          "english": "The driver left without me",
+          "pronunciation": "Nguoi lai xe roi di ma khong co toi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-taxi-5",
-          "audioKey": "taxi-5"
+          "detailPageID": "viet-phrase-v900-tran-the-driver-left-without-me",
+          "audioKey": "v900-tran-the-driver-left-without-me"
         },
         {
-          "id": "taxi-6",
-          "vietnamese": "Chờ tôi năm phút",
-          "english": "Wait for me five minutes",
-          "pronunciation": "cho toy nam foot",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-tran-the-car-number-is-different",
+          "vietnamese": "Biển số xe không giống",
+          "english": "The license plate is different",
+          "pronunciation": "Bien so xe khong giong",
+          "symbolName": "text.bubble.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-taxi-6",
-          "audioKey": "taxi-6"
+          "detailPageID": "viet-phrase-v900-tran-the-car-number-is-different",
+          "audioKey": null
         },
         {
-          "id": "taxi-7",
-          "vietnamese": "Tôi trả bằng tiền mặt",
-          "english": "I’ll pay cash",
-          "pronunciation": "toy tra bang tyen mat",
+          "id": "v900-tran-please-stop-near-the-entrance",
+          "vietnamese": "Vui lòng dừng gần lối vào",
+          "english": "Please stop near the entrance",
+          "pronunciation": "Vui long dung gan loi vao",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-taxi-7",
-          "audioKey": "taxi-7"
+          "detailPageID": "viet-phrase-v900-tran-please-stop-near-the-entrance",
+          "audioKey": "v900-tran-please-stop-near-the-entrance"
         }
       ]
     }

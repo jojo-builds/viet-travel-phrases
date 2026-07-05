@@ -1,0 +1,311 @@
+You are in the ChatGPT Project "SpeakLocal City Pages v2.2 Copy". Use the project source pack and v2.2 as the source of truth.
+
+Task: repair only the targeted SpeakLocal city-page entries below. Return replacement entry objects that Codex will merge back into the chunk files.
+
+Expected replacement count: 5
+
+Hard rules:
+- Preserve every replacement entry's exact top-level field names, pageID, section IDs, section order, sourceMode, and phraseIDs arrays.
+- Do not add phraseIDs. Do not remove phraseIDs.
+- If quick-say has phraseIDs, title stays "Useful Phrases" and body stays empty.
+- If quick-say has no phraseIDs, do not use "Useful Phrases" and do not default to generic name cards like "Name To Recognize", "Local Name", "Venue Name", "Street Name", "Dish Name", or "Route Name".
+- Remove command headings starting with Use/Keep/Choose/Ask/Confirm/Leave/Start/Let/Check.
+- Remove visible QA/status language such as current details, fresh check, details can shift, needs checking, can change, can vary, verification, review, source, schema, database, entry, page, or production-ready.
+- Do not use replacement crutches: works best, best when, best as, useful because, should feel, should be, gives [city] a, worth knowing, worth saving, matters when, fits when, safe frame, stable role, source detail, or verified.
+- Keep summary/context/tip/rationale and every non-empty section body under 45 words.
+- Keep summary at least 130 characters.
+- Keep the place-specific substance. Cleaner prose cannot be achieved by deleting the actual place.
+- Write like a well-traveled friend quietly pointing out how this place fits into the day. Short, observed, adult, calm. No article voice.
+- Return every targeted replacement entry. Do not skip entries that look "already okay"; if an entry is in the payload, return a complete replacement for it.
+
+Output format:
+Return one fenced json block only. It must be valid JSON:
+{
+  "sessionID": "voice_cleanup_r2_05",
+  "chunkReplacements": [
+    {
+      "chunkFile": "...",
+      "cityID": "...",
+      "range": "...",
+      "replacements": [
+        { "pageID": "...", "entry": { ...complete replacement entry object... } }
+      ]
+    }
+  ],
+  "selfGate": {
+    "status": "pass" or "revise",
+    "expectedReplacementCount": 5,
+    "returnedReplacementCount": 5,
+    "notes": "...",
+    "remainingRisks": []
+  }
+}
+
+Set selfGate.status to "pass" only if you returned every targeted replacement entry, kept the place-specific substance, removed every listed validator issue, kept the copy natural on an iPhone, and see no remaining risks. If any targeted item still feels thin, mechanical, over-trimmed, or uncertain, set status to "revise" and explain it in remainingRisks.
+
+Do not return prose outside the fenced json block.
+
+Target payload:
+```json
+{
+  "sessionID": "voice_cleanup_r2_05",
+  "chunks": [
+    {
+      "chunkFile": "danang_026_050_humanized.json",
+      "cityID": "danang",
+      "range": "026-050",
+      "errors": [
+        {
+          "id": "city-danang-place-fine-arts-museum",
+          "message": "banned visible fragment: fits when"
+        },
+        {
+          "id": "city-danang-place-fine-arts-museum",
+          "message": "banned visible fragment: gives da nang a"
+        }
+      ],
+      "warnings": [
+        {
+          "id": "city-danang-place-golden-bridge",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-golden-bridge",
+          "message": "freshness/process-like heading: Clouds Can Change The Trip"
+        },
+        {
+          "id": "city-danang-place-hai-chau-district",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-hai-san",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "city-danang-place-hai-van-pass",
+          "message": "generic non-playable quick-say title: Name To Recognize"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated exact heading 17x: name to recognize"
+        },
+        {
+          "id": "026-050",
+          "message": "repeated formula heading 18x: generic name-card heading"
+        },
+        {
+          "id": "026-050",
+          "message": "non-playable quick-say name-card pattern appears 17x"
+        },
+        {
+          "id": "026-050",
+          "message": "freshness/process headings appear 3x"
+        }
+      ],
+      "targetEntries": [
+        {
+          "pageID": "city-danang-place-fine-arts-museum",
+          "summary": "Da Nang Fine Arts Museum is a compact downtown culture stop where modern Vietnamese art, folk craft, masks, textiles, wood, and ceramics are easier with one floor choice.",
+          "context": "The museum is easier when the visit starts with a narrow lens, not every label in every room.",
+          "tip": "Choose modern works or folk objects first, then pick three pieces to actually notice.",
+          "rationale": "The museum gives Da Nang a quieter art-and-craft layer away from beach, bridge, and river-show imagery.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "One Floor Before Every Label",
+              "body": "Da Nang Fine Arts Museum is a compact downtown art stop, which is exactly why it is easier with a narrow plan. Pick one floor lens first."
+            },
+            {
+              "id": "place-brief",
+              "title": "Modern Works, Folk Objects After",
+              "body": "The useful split is modern art versus folk craft and regional objects: lacquer, oil, silk, sculpture, masks, textiles, wood, and ceramics."
+            },
+            {
+              "id": "quick-say",
+              "title": "Useful Phrases",
+              "body": "",
+              "phraseIDs": [
+                "v500-sigh-acti-where-is-the-entrance",
+                "v500-sigh-acti-where-can-i-buy-tickets",
+                "sight-3",
+                "sight-4"
+              ]
+            },
+            {
+              "id": "use-it-with",
+              "title": "Quiet Downtown Texture",
+              "body": "The Lê Duẩn setting gives this stop a calmer city register than the riverfront. It fits when heat or rain weakens another outdoor plan."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Compact, Then Back Outside",
+              "body": "Keep the visit short if art is not the day's main thread. Hàn Market, coffee, or the river can follow without making the museum feel rushed."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-golden-bridge",
+          "summary": "Golden Bridge is the Ba Na Hills photo moment: a gold walkway held by giant stone hands above Da Nang, best understood as one stop inside a larger mountain outing.",
+          "context": "The bridge belongs inside Ba Na Hills and the cable-car day. It is not a city bridge or a standalone downtown landmark.",
+          "tip": "If the bridge matters most, put it early in the Ba Na plan before weather, crowds, or the wider park pull attention elsewhere.",
+          "rationale": "The iconic image lands better with clear expectations: bridge first, park second, weather always part of the tradeoff.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Bridge First, Park Second",
+              "body": "Golden Bridge is the famous Ba Na Hills photo moment: a gold walkway held by giant stone hands high above Da Nang."
+            },
+            {
+              "id": "place-brief",
+              "title": "The Hands Are The Photograph",
+              "body": "The walkway is short; the image is the reason people remember it. Walk slowly once, take the angle you came for, then choose the next park piece."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Cầu Vàng means Golden Bridge. The short Vietnamese name points to the exact photo stop inside the larger Ba Na plan."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Clouds Can Change The Trip",
+              "body": "Clear weather gives the open mountain view. Fog can turn the bridge into a stranger garden scene, still memorable if you expected the tradeoff."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Inside A Larger Outing",
+              "body": "The cable car, gardens, French Village-style streets, and other park pieces sit around the bridge. Treat Cầu Vàng as the priority inside a bigger day."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Weather And Tickets Matter",
+              "body": "Check cable-car operation, ticketing, and weather before you commit the day. Fog, crowds, or access changes can reshape the visit."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-hai-chau-district",
+          "summary": "Hải Châu District is central Da Nang made legible: hotel edges, shops, cafes, offices, river walks, and practical blocks that connect the day.",
+          "context": "The district works as a base and orientation cue, not a sightseeing quest to complete.",
+          "tip": "Pick one cafe, market edge, or river point, then walk the nearby blocks instead of trying to read the whole district at once.",
+          "rationale": "Hải Châu turns a broad administrative name into a useful central-grid cue for hotels, errands, coffee, river walks, and nearby blocks.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "A Central Base With Real Streets",
+              "body": "Hải Châu is the side of Da Nang where hotel edges, shopfronts, cafes, offices, and river walks start to connect."
+            },
+            {
+              "id": "place-brief",
+              "title": "One Street, Then The River",
+              "body": "Pick one cafe, market edge, or riverside point, then walk the nearby blocks. The district is easier in pieces than as a vague central area."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Quận Hải Châu is the district name to recognize around central Da Nang. Hotels, cafes, shops, and river walks start to sit on the same mental map."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Hotels, Shops, Everyday Edges",
+              "body": "Expect practical city texture: small shops, trees where you find them, traffic, offices, and the Hàn River close enough to pull the walk east or west."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Better As A Base Than A Quest",
+              "body": "Stay or pass through when you want dinner, errands, coffee, or an evening walk without crossing the city. The reward is orientation."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Boundaries Need Care",
+              "body": "Administrative naming, business turnover, and walking comfort vary by block. Let the district help with orientation, then judge each street as you walk."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-hai-san",
+          "summary": "Seafood in Da Nang is a table moment: ice trays, grilled smoke, dipping salts, shells, shared plates, and price or portion clarity before dinner grows.",
+          "context": "This seafood stop is for the first ordering decision, not one restaurant or one fixed dining experience.",
+          "tip": "Ask about weight, price, and spice before the table fills, especially for crab, shrimp, fish, clams, snails, or anything pulled from ice.",
+          "rationale": "Seafood matters because Da Nang's coast becomes concrete through the ordering ritual: point clearly, confirm enough, then share plates.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "Order By Weight, Then By Mood",
+              "body": "Seafood in Da Nang is less about one famous dish than the table moment: ice trays, grilled smoke, lime-salt dips, and a coastal room deciding dinner."
+            },
+            {
+              "id": "place-brief",
+              "title": "Fresh Tray, Clear Price",
+              "body": "Pointing can work well, but weight pricing can surprise visitors. Ask before agreeing, especially for crab, shrimp, fish, clams, snails, or anything on ice."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Hải sản ở Đà Nẵng simply means seafood in Da Nang. It belongs with the ordering moment, not one guaranteed restaurant scene."
+            },
+            {
+              "id": "use-it-with",
+              "title": "One Plate Before The Feast",
+              "body": "Start with one clear plate or one shared pot, then add more only after you see portion size, sauce, spice, and the table's appetite."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Sauce, Herbs, Shells",
+              "body": "The flavor often comes from dipping salts, lime, chili, herbs, garlic, lemongrass, and sweet shellfish juices. It is hands-on food."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Price Before The Table Fills",
+              "body": "Seafood pricing, weight rules, and menu availability vary by venue and date. Confirm the price and portion before the table gets busy."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        },
+        {
+          "pageID": "city-danang-place-hai-van-pass",
+          "summary": "Hải Vân Pass is the old mountain road between Da Nang and Hue, where sea bends, low clouds, green slopes, and short pull-offs turn transfer into memory.",
+          "context": "The pass makes sense when the route itself matters. The key decision is scenic old road versus faster movement.",
+          "tip": "Check weather and road conditions before committing, and leave room for one calm stop rather than chasing every viewpoint.",
+          "rationale": "The pass belongs in Da Nang because it turns a northbound travel day into a mountain-and-sea crossing instead of only transport.",
+          "sections": [
+            {
+              "id": "at-glance",
+              "title": "The Scenic Way Out Of Da Nang",
+              "body": "Hải Vân Pass is the old mountain road between Da Nang and Hue: bends above the sea, low cloud on the ridge, and green slopes."
+            },
+            {
+              "id": "place-brief",
+              "title": "Route First, Viewpoint Second",
+              "body": "The pass is not one single stop. It makes sense when your car, motorbike, or transfer takes the old road over the mountain."
+            },
+            {
+              "id": "quick-say",
+              "title": "Name To Recognize",
+              "body": "Đèo Hải Vân names the pass itself. The name separates the scenic mountain road from the faster tunnel route."
+            },
+            {
+              "id": "use-it-with",
+              "title": "Cloud Can Be The Point",
+              "body": "Clear weather gives sea and lagoon views. Mist changes the mood: guardrails, wet road, pale sky, and the feeling of Vietnam shifting terrain."
+            },
+            {
+              "id": "when-to-use",
+              "title": "Build In One Stop",
+              "body": "A short pause is enough if the day is mostly Da Nang to Hue. If the ride matters, leave room for photos and a slower descent."
+            },
+            {
+              "id": "good-to-know",
+              "title": "Road Conditions Matter",
+              "body": "Weather, road works, stopping points, and vehicle restrictions can change. Check the route before choosing the scenic road."
+            }
+          ],
+          "sourceMode": "expanded-detail"
+        }
+      ]
+    }
+  ]
+}
+```

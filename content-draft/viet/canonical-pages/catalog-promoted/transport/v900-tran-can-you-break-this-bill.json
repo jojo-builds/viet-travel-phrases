@@ -4,10 +4,10 @@
   "phraseID": "v900-tran-can-you-break-this-bill",
   "tierRole": "catalog-promoted",
   "depth": "deep",
-  "title": "Bạn có thể phá vỡ hóa đơn này?",
+  "title": "Bạn có thể đổi tờ này thành tiền lẻ không?",
   "englishTitle": "Can you break this bill?",
-  "pronunciation": "Ban co the pha vo hoa don nay",
-  "summary": "Can you break this bill?",
+  "pronunciation": "Ban co the doi to nay thanh tien le khong",
+  "summary": "For asking someone to change a large bill into smaller cash before a fare, tip, or counter payment gets awkward.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -15,34 +15,34 @@
     "v900-tran-can-you-break-this-bill",
     "premium"
   ],
-  "audioKey": "v900-tran-can-you-break-this-bill",
+  "audioKey": null,
   "sections": [
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Bạn có thể phá vỡ hóa đơn này? asks someone to do one helpful action for you. Use it for break this bill when pointing, showing your phone, or giving a document will make the request easy to understand."
+      "body": "Use it when the amount is clear but the bill in your hand is too large for the next payment."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Bạn có thể phá vỡ hóa đơn này? once, then make the task visible with your map, destination, ride screen, ticket, vehicle, or pickup point. The phrase is doing one job: getting a clear answer about break this bill.",
+      "body": "Show the note first; this sentence asks for change, not a broken receipt.",
       "phrases": [
         {
           "id": "v900-tran-can-you-break-this-bill",
-          "vietnamese": "Bạn có thể phá vỡ hóa đơn này?",
+          "vietnamese": "Bạn có thể đổi tờ này thành tiền lẻ không?",
           "english": "Can you break this bill?",
-          "pronunciation": "Ban co the pha vo hoa don nay",
-          "symbolName": "speaker.wave.2.fill",
+          "pronunciation": "Ban co the doi to nay thanh tien le khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "orange",
           "detailPageID": null,
-          "audioKey": "v900-tran-can-you-break-this-bill"
+          "audioKey": null
         }
       ]
     },
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Build the question from đổi tờ này and tiền lẻ so the cash-change meaning stays clear.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -52,20 +52,20 @@
         },
         {
           "id": "chunk-2",
-          "vietnamese": "phá vỡ hóa",
-          "english": "break this bill",
+          "vietnamese": "đổi tờ này",
+          "english": "change this note",
           "audioKey": null
         },
         {
           "id": "chunk-3",
-          "vietnamese": "đơn này",
-          "english": "this one / this",
+          "vietnamese": "thành tiền lẻ không?",
+          "english": "into small change?",
           "audioKey": null
         },
         {
-          "id": "chunk-4",
-          "vietnamese": "Bạn có thể phá vỡ hóa đơn này?",
-          "english": "Can you break this bill",
+          "id": "full",
+          "vietnamese": "Bạn có thể đổi tờ này thành tiền lẻ không?",
+          "english": "Can you break this bill?",
           "audioKey": null
         }
       ]
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Can you break this bill? to another transport need.",
+      "body": "Keep close by: Take me here, Go to District 1, and You can stop here.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when break this bill is the detail you need resolved. The likely reply is yes/no, a helpful action, or a short instruction, so keep the phrase short and ready for one follow-up."
+      "body": "Use it at a taxi, station counter, cafe, or shop when the fare is settled but you need smaller notes."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "This phrase can sound warm when the request is small and your tone is calm. A visible phone screen, receipt, or booking helps the other person answer without a long explanation."
+      "body": "Keep the large note visible and wait for a yes before handing it over."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Bạn có thể phá vỡ hóa đơn này?.",
+      "body": "Keep the next turn practical: Please stop right here, Go this way, and Please turn on the air conditioning.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",
@@ -178,13 +178,13 @@
   "examples": [
     {
       "id": "v900-tran-can-you-break-this-bill",
-      "vietnamese": "Bạn có thể phá vỡ hóa đơn này?",
+      "vietnamese": "Bạn có thể đổi tờ này thành tiền lẻ không?",
       "english": "Can you break this bill?",
-      "pronunciation": "Ban co the pha vo hoa don nay",
-      "symbolName": "speaker.wave.2.fill",
+      "pronunciation": "Ban co the doi to nay thanh tien le khong",
+      "symbolName": "text.bubble.fill",
       "tintName": "orange",
       "detailPageID": null,
-      "audioKey": "v900-tran-can-you-break-this-bill"
+      "audioKey": null
     }
   ]
 }

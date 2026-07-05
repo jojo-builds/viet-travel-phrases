@@ -7,7 +7,7 @@
   "title": "Tôi cần nói chuyện với người quản lý",
   "englishTitle": "I need to speak with the manager",
   "pronunciation": "Toi can noi chuyen voi nguoi quan ly",
-  "summary": "I need to speak with the manager",
+  "summary": "For asking for the manager when a counter, hotel, ride, shop, or service problem needs escalation.",
   "iconName": "exclamationmark.triangle.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,13 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi cần nói chuyện với người quản lý is the short line for naming what you need next. It works best when speak with the manager is visible on your phone, ticket, note, shelf, or in the situation around you."
+      "body": "Use it after the first staffer cannot resolve the problem, not as the first move for every small issue.",
+      "phrases": []
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Say Tôi cần nói chuyện với người quản lý with the object, screen, or note visible. Beginners should keep the main travel detail visible and say the short sentence once.",
+      "body": "Say the line once, then show the receipt, room number, ride detail, photo, or message that explains why.",
       "phrases": [
         {
           "id": "v500-prob-help-i-need-to-speak-with-the-manager",
@@ -42,38 +43,39 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi cần means I need; nói chuyện với means speak with; người quản lý means the manager.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi cần",
           "english": "I need",
-          "audioKey": null
+          "keepTogetherReason": "I-need phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "nói chuyện với",
           "english": "speak with",
-          "audioKey": null
+          "keepTogetherReason": "speak-with phrase"
         },
         {
           "id": "chunk-3",
           "vietnamese": "người quản lý",
-          "english": "manager",
-          "audioKey": null
+          "english": "the manager",
+          "keepTogetherReason": "manager phrase"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Tôi cần nói chuyện với người quản lý",
           "english": "I need to speak with the manager",
-          "audioKey": null
+          "audioKey": "v500-prob-help-i-need-to-speak-with-the-manager"
         }
-      ]
+      ],
+      "phrases": []
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I need to speak with the manager to another problem-solving need.",
+      "body": "Lost and left-something-behind cards cover lower-pressure help before escalation.",
       "phrases": [
         {
           "id": "problems-1",
@@ -94,33 +96,25 @@
           "tintName": "orange",
           "detailPageID": "viet-phrase-problems-4",
           "audioKey": "problems-4"
-        },
-        {
-          "id": "help-need-help-direct",
-          "vietnamese": "Giúp tôi với",
-          "english": "I need help",
-          "pronunciation": "zoop toy voy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-family-help-need-help",
-          "audioKey": "help-need-help-direct"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real problem-solving exchange when speak with the manager is the detail you need resolved. The likely reply is a point, option, yes/no answer, or next step, so keep the phrase short and ready for one follow-up."
+      "body": "Good for double charges, broken room issues, missing items, service disputes, or safety concerns that need someone with authority.",
+      "phrases": []
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Name one problem at a time. If the answer is fast, switch to a repeat or write-it-down phrase."
+      "body": "Keep the tone calm. The phrase asks for the right person, not a fight.",
+      "phrases": []
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi cần nói chuyện với người quản lý.",
+      "body": "Need-help, call-hotel, manager, double-charge, and report cards cover the practical help path.",
       "phrases": [
         {
           "id": "help-need-help-direct",

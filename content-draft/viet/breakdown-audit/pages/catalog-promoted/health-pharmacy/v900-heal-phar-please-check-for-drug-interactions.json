@@ -22,18 +22,19 @@
       "id": "chunk-1",
       "vietnamese": "Vui lòng",
       "english": "please",
-      "keepTogetherReason": "fixed polite phrase"
+      "keepTogetherReason": "polite opener"
     },
     {
       "id": "chunk-2",
       "vietnamese": "kiểm tra",
       "english": "check",
-      "keepTogetherReason": "compound verb"
+      "keepTogetherReason": "check verb"
     },
     {
+      "id": "chunk-3",
       "vietnamese": "tương tác thuốc",
       "english": "drug interactions",
-      "keepTogetherReason": "compound medical term"
+      "keepTogetherReason": "medical noun phrase"
     },
     {
       "id": "full",

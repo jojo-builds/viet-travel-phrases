@@ -7,7 +7,7 @@
   "title": "Tôi đã bỏ lỡ điểm dừng của mình",
   "englishTitle": "I missed my stop",
   "pronunciation": "Toi da bo lo diem dung cua minh",
-  "summary": "I missed my stop",
+  "summary": "Tell a driver or station staff you went past the stop and need help getting back on track.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi đã bỏ lỡ điểm dừng của mình is a practical transport phrase for keeping one travel detail clear. Use it when I missed my stop is the next detail to solve and a short answer would move the exchange forward."
+      "body": "This is for the moment after the stop has passed, before the route turns into guesswork."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi đã bỏ lỡ điểm dừng của mình. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say it with the map open so the driver can decide whether to turn around, stop, or reroute.",
       "phrases": [
         {
           "id": "v500-tran-i-missed-my-stop",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Bỏ lỡ điểm dừng is the missed-stop core; the full line makes it about your stop.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I missed my stop to another transport need.",
+      "body": "Destination and stop-here cards help if the fix is a new drop-off instead of a long explanation.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when i missed my stop is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Best in a taxi, bus, shuttle, or motorbike ride as soon as you realize the stop is behind you."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "A visible map keeps this from sounding like blame. Point to where you meant to get off."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi đã bỏ lỡ điểm dừng của mình.",
+      "body": "Stop-here, this-way, and air-con cards stay useful if the ride continues after the route is fixed.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

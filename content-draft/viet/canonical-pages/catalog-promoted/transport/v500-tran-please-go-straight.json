@@ -7,7 +7,7 @@
   "title": "Hãy đi thẳng",
   "englishTitle": "Please go straight",
   "pronunciation": "Hay di thang",
-  "summary": "Please go straight",
+  "summary": "For giving a driver a simple straight-ahead route cue.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Hãy đi thẳng is a practical transport phrase for keeping one travel detail clear. Use it when go straight is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it while the car or bike is moving and the next instruction needs to be short."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Hãy đi thẳng. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, action, or short follow-up.",
+      "body": "Say it before the turn decision arrives. Show the map if traffic or lanes make the route unclear.",
       "phrases": [
         {
           "id": "v500-tran-please-go-straight",
@@ -42,32 +42,34 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hãy is a soft prompt; đi thẳng means go straight.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Hãy đi",
-          "english": "go / move",
+          "vietnamese": "Hãy",
+          "english": "please / go ahead",
+          "keepTogetherReason": "soft instruction opener",
           "audioKey": null
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thẳng",
-          "english": "straight",
+          "vietnamese": "đi thẳng",
+          "english": "go straight",
+          "keepTogetherReason": "straight-ahead phrase",
           "audioKey": null
         },
         {
           "id": "chunk-3",
           "vietnamese": "Hãy đi thẳng",
           "english": "Please go straight",
-          "audioKey": null
+          "audioKey": "v500-tran-please-go-straight"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Please go straight to another transport need.",
+      "body": "If the route changes, move to turn-right, turn-left, stop-here, correct-address, or follow-the-map follow-ups.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +106,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when go straight is the detail you need resolved. The likely reply is a yes/no answer, action, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good in taxis, motorbike taxis, private cars, hotel-arranged rides, and station pickups."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "Short route cues work better before the intersection. A late instruction can sound like a correction."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Hãy đi thẳng.",
+      "body": "Use stop-here, turn-right, turn-left, follow-map, aircon, or cash cards if the ride needs another phrase.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

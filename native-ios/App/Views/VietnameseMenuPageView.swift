@@ -1,5 +1,30 @@
 import SwiftUI
 
+enum VietnameseMenuPhotoBackdropPolicy {
+    static func imageName(
+        photoBackdropImageName: String?,
+        fallbackHeroImageName: String
+    ) -> String {
+        photoBackdropImageName ?? fallbackHeroImageName
+    }
+
+    static func preheatImageNames(
+        photoBackdropImageName: String?,
+        fallbackHeroImageName: String
+    ) -> [String] {
+        guard let photoBackdropImageName else {
+            return []
+        }
+
+        return [
+            imageName(
+                photoBackdropImageName: photoBackdropImageName,
+                fallbackHeroImageName: fallbackHeroImageName
+            ),
+        ]
+    }
+}
+
 struct VietnameseMenuPageView: View {
     let kind: VietnameseMenuKind
     let scrollToTopTrigger: Int
@@ -10,13 +35,20 @@ struct VietnameseMenuPageView: View {
     var onOpenDetail: (String) -> Void
     var isActive: Bool = true
 
-    @State private var currentSectionID: String?
-    @State private var isSectionRailPinned = false
+    @State private var sectionTracker = VietnameseMenuSectionTrackingCoordinator(initialSectionID: "popular")
     @State private var pendingSectionJumpID = 0
     @State private var pendingSectionJumpSectionID: String?
+    @State private var isResolvingSectionJump = false
+    @State private var pendingScrollSectionUpdate: VietnameseMenuPendingSectionUpdate?
+    @State private var sectionJumpSettleID = 0
+    @State private var isSettlingProgrammaticSectionJump = false
     @State private var didApplyPhotoBackdropInitialPosition = false
     @State private var isPhotoBackdropImmersive = false
-    @State private var photoBackdropScrollOffset: CGFloat = 0
+    @State private var photoBackdropScrollCoordinator = VietnameseMenuPhotoBackdropScrollCoordinator()
+
+    private var bottomSentinelID: String {
+        "VietnameseMenu.BottomSentinel.\(kind.routeID)"
+    }
 
     private var route: BrowseCollectionRoute {
         .category(kind.routeID)
@@ -26,28 +58,15 @@ struct VietnameseMenuPageView: View {
         VietnameseMenuCatalog.sections(for: kind)
     }
 
-    private var resolvedCurrentSectionID: String {
-        currentSectionID ?? sections.first?.id ?? "popular"
-    }
-
-    private var sectionChromeState: VietnameseMenuSectionChromeState? {
-        guard !sections.isEmpty else {
-            return nil
+    private var sectionChromeItems: [VietnameseMenuSectionChromeItem] {
+        sections.map { section in
+            VietnameseMenuSectionChromeItem(
+                id: section.id,
+                title: section.title,
+                symbolName: section.symbolName,
+                tintName: section.tintName
+            )
         }
-
-        return VietnameseMenuSectionChromeState(
-            route: route,
-            currentSectionID: resolvedCurrentSectionID,
-            isPinned: isSectionRailPinned,
-            sections: sections.map { section in
-                VietnameseMenuSectionChromeItem(
-                    id: section.id,
-                    title: section.title,
-                    symbolName: section.symbolName,
-                    tintName: section.tintName
-                )
-            }
-        )
     }
 
     @ViewBuilder
@@ -60,17 +79,20 @@ struct VietnameseMenuPageView: View {
             }
         }
         .onChange(of: kind) { _, _ in
-            currentSectionID = nil
-            isSectionRailPinned = false
+            sectionTracker.reset(to: sections.first?.id ?? "popular")
             pendingSectionJumpSectionID = nil
             didApplyPhotoBackdropInitialPosition = false
             isPhotoBackdropImmersive = false
-            photoBackdropScrollOffset = 0
+            photoBackdropScrollCoordinator.reset()
         }
-        .preference(
-            key: VietnameseMenuSectionChromePreferenceKey.self,
-            value: isActive ? sectionChromeState.map { [$0] } ?? [] : []
-        )
+        .background {
+            VietnameseMenuSectionChromePreferenceEmitter(
+                route: route,
+                isActive: isActive,
+                sectionTracker: sectionTracker,
+                sections: sectionChromeItems
+            )
+        }
         .preference(
             key: PhrasePhotoBackdropImmersiveChromePreferenceKey.self,
             value: isActive && usesPhotoBackdropLayout && isPhotoBackdropImmersive
@@ -79,6 +101,20 @@ struct VietnameseMenuPageView: View {
             key: PhrasePhotoBackdropTabBarBackgroundPreferenceKey.self,
             value: isActive && usesPhotoBackdropLayout && !isPhotoBackdropImmersive
         )
+        .task(id: "\(isActive)-\(pendingScrollSectionUpdate.map { "\($0.sectionID)-\($0.revision)" } ?? "none")") {
+            guard VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive) else {
+                return
+            }
+
+            await commitPendingScrollSectionUpdateIfNeeded()
+        }
+        .task(id: "\(isActive)-\(sectionJumpSettleID)") {
+            guard VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive) else {
+                return
+            }
+
+            await clearProgrammaticSectionJumpSettleIfNeeded()
+        }
         .accessibilityIdentifier("VietnameseMenu.\(kind.routeID)")
     }
 
@@ -97,14 +133,23 @@ struct VietnameseMenuPageView: View {
 
                         sectionedMenu
                             .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
+
+                        AppBottomSentinel(id: bottomSentinelID)
+                        AppBottomClearanceScrollTarget(
+                            sentinelID: bottomSentinelID,
+                            height: VietnameseMenuLayout.bottomContentClearance(usesPhotoBackdrop: false)
+                        )
                     }
-                    .padding(.bottom, VietnameseMenuLayout.bottomChromeContentClearance)
                 }
                 .onPreferenceChange(VietnameseMenuSectionFramePreferenceKey.self) { frames in
                     updateCurrentSection(from: frames)
                 }
                 .onPreferenceChange(VietnameseMenuRailFramePreferenceKey.self) { frame in
-                    isSectionRailPinned = (frame?.maxY ?? .greatestFiniteMagnitude) <= VietnameseMenuLayout.glassRailRevealY
+                    guard VietnameseMenuTaskPolicy.shouldApplySectionPreferenceTracking(isActive: isActive) else {
+                        return
+                    }
+
+                    sectionTracker.applyRailFrame(frame, revealY: VietnameseMenuLayout.glassRailRevealY)
                 }
                 .onChange(of: scrollToTopTrigger) { _, _ in
                     guard scrollToTopRoute == nil || scrollToTopRoute == route else {
@@ -120,7 +165,16 @@ struct VietnameseMenuPageView: View {
 
                     jumpToSection(sectionJumpRequest.sectionID)
                 }
-                .task(id: pendingSectionJumpID) {
+                .task(id: "\(isActive)-\(pendingSectionJumpID)") {
+                    guard VietnameseMenuTaskPolicy.shouldRunStandardScrollTask(isActive: isActive) else {
+                        return
+                    }
+
+                    if AppBottomInsetValidation.shouldScrollToBottom {
+                        await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
+                        return
+                    }
+
                     await performPendingSectionJump(scrollProxy)
                 }
             }
@@ -179,7 +233,13 @@ struct VietnameseMenuPageView: View {
             ZStack(alignment: .top) {
                 photoBackdropImage(geometry: geometry)
 
-                photoBackdropBottomChromeBackdrop(geometry: geometry, metrics: metrics)
+                VietnameseMenuPhotoBackdropBottomChromeBackdrop(
+                    scrollCoordinator: photoBackdropScrollCoordinator,
+                    viewportHeight: geometry.size.height,
+                    safeAreaBottom: geometry.safeAreaInsets.bottom,
+                    collapsedContentTop: metrics.collapsedContentTop,
+                    isPhotoBackdropImmersive: isPhotoBackdropImmersive
+                )
 
                 ScrollViewReader { scrollProxy in
                     ScrollView(.vertical, showsIndicators: false) {
@@ -207,11 +267,13 @@ struct VietnameseMenuPageView: View {
                             metrics: metrics
                         )
                     }) { _, scrollState in
-                        if photoBackdropScrollOffset != scrollState.displayOffset {
-                            photoBackdropScrollOffset = scrollState.displayOffset
+                        guard VietnameseMenuTaskPolicy.shouldApplyPhotoBackdropScrollGeometry(isActive: isActive) else {
+                            return
                         }
 
-                        if isPhotoBackdropImmersive, scrollState.hasPassedRevealThreshold {
+                        let hasPassedRevealThreshold = photoBackdropScrollCoordinator.apply(scrollState)
+
+                        if isPhotoBackdropImmersive, hasPassedRevealThreshold {
                             withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
                                 isPhotoBackdropImmersive = false
                             }
@@ -221,7 +283,11 @@ struct VietnameseMenuPageView: View {
                         updateCurrentSection(from: frames)
                     }
                     .onPreferenceChange(VietnameseMenuRailFramePreferenceKey.self) { frame in
-                        isSectionRailPinned = (frame?.maxY ?? .greatestFiniteMagnitude) <= VietnameseMenuLayout.glassRailRevealY
+                        guard VietnameseMenuTaskPolicy.shouldApplySectionPreferenceTracking(isActive: isActive) else {
+                            return
+                        }
+
+                        sectionTracker.applyRailFrame(frame, revealY: VietnameseMenuLayout.glassRailRevealY)
                     }
                     .onChange(of: scrollToTopTrigger) { _, _ in
                         guard scrollToTopRoute == nil || scrollToTopRoute == route else {
@@ -248,6 +314,8 @@ struct VietnameseMenuPageView: View {
                         } else {
                             await performPendingSectionJump(scrollProxy)
                         }
+
+                        await AppBottomInsetValidation.scrollToBottom(scrollProxy, sentinelID: bottomSentinelID)
                     }
                 }
                 .ignoresSafeArea(edges: .top)
@@ -263,7 +331,7 @@ struct VietnameseMenuPageView: View {
                 value: isActive && usesPhotoBackdropLayout && isPhotoBackdropImmersive
                     ? PhrasePhotoBackdropImmersiveImageContext(
                         pageID: route.id,
-                        imageName: photoBackdropImageName ?? kind.heroImageName,
+                        imageName: activePhotoBackdropImageName,
                         viewportSize: geometry.size,
                         safeAreaTop: geometry.safeAreaInsets.top,
                         safeAreaBottom: geometry.safeAreaInsets.bottom,
@@ -285,6 +353,18 @@ struct VietnameseMenuPageView: View {
         .ignoresSafeArea(edges: .bottom)
         .statusBarHidden(isActive && isPhotoBackdropImmersive)
         .persistentSystemOverlays(isActive && isPhotoBackdropImmersive ? .hidden : .automatic)
+        .task(id: isActive ? activePhotoBackdropImageName : "") {
+            guard isActive else {
+                return
+            }
+
+            AdminBackdropImagePreheater.preheatFocused(
+                VietnameseMenuPhotoBackdropPolicy.preheatImageNames(
+                    photoBackdropImageName: photoBackdropImageName,
+                    fallbackHeroImageName: kind.heroImageName
+                )
+            )
+        }
     }
 
     private func photoBackdropContentSheet(scrollProxy: ScrollViewProxy) -> some View {
@@ -306,7 +386,14 @@ struct VietnameseMenuPageView: View {
 
             sectionedMenu
                 .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
-                .padding(.bottom, PhrasePhotoBackdropLayout.bottomReadingClearance)
+
+            AppBottomSentinel(id: bottomSentinelID)
+                .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
+            AppBottomClearanceScrollTarget(
+                sentinelID: bottomSentinelID,
+                height: VietnameseMenuLayout.bottomContentClearance(usesPhotoBackdrop: true)
+            )
+                .padding(.horizontal, VietnameseMenuLayout.horizontalPadding)
         }
         .background {
             UnevenRoundedRectangle(
@@ -329,8 +416,7 @@ struct VietnameseMenuPageView: View {
     }
 
     private func photoBackdropImage(geometry: GeometryProxy) -> some View {
-        Image(photoBackdropImageName ?? kind.heroImageName)
-            .resizable()
+        AdminBackdropPreparedImage(name: activePhotoBackdropImageName)
             .scaledToFill()
             .frame(
                 width: geometry.size.width,
@@ -347,79 +433,12 @@ struct VietnameseMenuPageView: View {
             .accessibilityHidden(true)
     }
 
-    private func photoBackdropBottomChromeBackdrop(
-        geometry: GeometryProxy,
-        metrics: PhrasePhotoBackdropLayout.Metrics
-    ) -> some View {
-        let safeAreaBottom = geometry.safeAreaInsets.bottom
-        let sheetTop = max(metrics.collapsedContentTop - photoBackdropScrollOffset, 0)
-        let backdropHeight = max(geometry.size.height + safeAreaBottom - sheetTop, 0)
-        let topCornerRadius: CGFloat = sheetTop > 1 ? 34 : 0
-
-        return VStack(spacing: 0) {
-            Color.clear
-                .frame(height: sheetTop)
-                .accessibilityHidden(true)
-
-            PhotoBackdropBottomChromeBacking(
-                height: backdropHeight,
-                topCornerRadius: topCornerRadius
-            )
-        }
-        .frame(
-            height: geometry.size.height + safeAreaBottom,
-            alignment: .top
-        )
-        .ignoresSafeArea(edges: .bottom)
-        .opacity(isPhotoBackdropImmersive ? 0 : 1)
-        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
-        .allowsHitTesting(false)
-        .accessibilityHidden(true)
-    }
-
     private func sectionRail(scrollProxy: ScrollViewProxy) -> some View {
-        GeometryReader { proxy in
-            let cardWidth = VietnameseMenuLayout.sectionCardWidth(containerWidth: proxy.size.width)
-
-            ScrollViewReader { railProxy in
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack(spacing: VietnameseMenuLayout.sectionCardSpacing) {
-                        ForEach(sections) { section in
-                            VietnameseMenuSectionImageCard(
-                                accessibilityID: section.id,
-                                title: section.title,
-                                imageName: section.featuredImageName,
-                                tintName: section.tintName,
-                                isSelected: resolvedCurrentSectionID == section.id,
-                                action: { jumpToSection(section.id) }
-                            )
-                            .frame(width: cardWidth)
-                            .id(Self.railScrollID(for: section.id))
-                        }
-                    }
-                    .padding(.leading, VietnameseMenuLayout.horizontalPadding)
-                    .padding(.trailing, VietnameseMenuLayout.horizontalPadding)
-                    .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
-                    .scrollTargetLayout()
-                }
-                .scrollTargetBehavior(.viewAligned)
-                .scrollClipDisabled()
-                .onChange(of: resolvedCurrentSectionID) { _, sectionID in
-                    withAnimation(.snappy(duration: 0.24)) {
-                        railProxy.scrollTo(Self.railScrollID(for: sectionID), anchor: .leading)
-                    }
-                }
-            }
-        }
-        .frame(height: VietnameseMenuLayout.sectionCardHeight + PhrasePageStyle.cardShadowBleedPadding)
-        .background {
-            GeometryReader { proxy in
-                Color.clear.preference(
-                    key: VietnameseMenuRailFramePreferenceKey.self,
-                    value: proxy.frame(in: .global)
-                )
-            }
-        }
+        VietnameseMenuSectionRail(
+            sections: sections,
+            sectionTracker: sectionTracker,
+            onJump: jumpToSection
+        )
     }
 
     private var sectionedMenu: some View {
@@ -461,32 +480,76 @@ struct VietnameseMenuPageView: View {
             return
         }
 
-        currentSectionID = sectionID
+        sectionTracker.setCurrentSection(sectionID)
+        pendingScrollSectionUpdate = nil
+        isSettlingProgrammaticSectionJump = true
+        sectionJumpSettleID += 1
         pendingSectionJumpSectionID = sectionID
         pendingSectionJumpID += 1
     }
 
     @MainActor
     private func performPendingSectionJump(_ scrollProxy: ScrollViewProxy) async {
-        guard pendingSectionJumpID > 0, let pendingSectionJumpSectionID else {
+        let requestID = pendingSectionJumpID
+        guard requestID > 0, let pendingSectionJumpSectionID else {
             return
         }
 
-        try? await Task.sleep(nanoseconds: VietnameseMenuLayout.sectionJumpDelayNanoseconds)
-        guard !Task.isCancelled else {
+        isResolvingSectionJump = true
+
+        if VietnameseMenuSectionJumpPolicy.delayNanoseconds > 0 {
+            try? await Task.sleep(nanoseconds: VietnameseMenuSectionJumpPolicy.delayNanoseconds)
+            guard !Task.isCancelled else {
+                isResolvingSectionJump = false
+                return
+            }
+        }
+
+        for _ in 0..<VietnameseMenuSectionJumpPolicy.layoutCorrectionPasses {
+            scrollToSection(pendingSectionJumpSectionID, scrollProxy: scrollProxy)
+            await Task.yield()
+
+            guard
+                !Task.isCancelled,
+                pendingSectionJumpID == requestID,
+                self.pendingSectionJumpSectionID == pendingSectionJumpSectionID
+            else {
+                isResolvingSectionJump = false
+                return
+            }
+        }
+
+        sectionTracker.setCurrentSection(pendingSectionJumpSectionID)
+        self.pendingSectionJumpSectionID = nil
+        isResolvingSectionJump = false
+    }
+
+    private func scrollToSection(_ sectionID: String, scrollProxy: ScrollViewProxy) {
+        let viewportAnchor = UnitPoint(x: 0.5, y: VietnameseMenuLayout.sectionJumpViewportAnchorY)
+
+        if VietnameseMenuSectionJumpPolicy.usesAnimatedScroll {
+            withAnimation(.snappy(duration: 0.32)) {
+                scrollProxy.scrollTo(Self.sectionAnchorID(for: sectionID), anchor: viewportAnchor)
+            }
             return
         }
 
-        withAnimation(.snappy(duration: 0.32)) {
-            scrollProxy.scrollTo(
-                Self.sectionAnchorID(for: pendingSectionJumpSectionID),
-                anchor: UnitPoint(x: 0.5, y: VietnameseMenuLayout.sectionJumpViewportAnchorY)
-            )
+        var transaction = Transaction()
+        transaction.animation = nil
+        withTransaction(transaction) {
+            scrollProxy.scrollTo(Self.sectionAnchorID(for: sectionID), anchor: viewportAnchor)
         }
     }
 
     private var photoBackdropImageName: String? {
         kind.photoBackdropImageName
+    }
+
+    private var activePhotoBackdropImageName: String {
+        VietnameseMenuPhotoBackdropPolicy.imageName(
+            photoBackdropImageName: photoBackdropImageName,
+            fallbackHeroImageName: kind.heroImageName
+        )
     }
 
     private var usesPhotoBackdropLayout: Bool {
@@ -519,7 +582,7 @@ struct VietnameseMenuPageView: View {
 
         guard PhrasePhotoBackdropLayout.isImageTap(
             location,
-            scrollOffset: photoBackdropScrollOffset,
+            scrollOffset: photoBackdropScrollCoordinator.displayOffset,
             metrics: metrics
         ) else {
             return
@@ -530,17 +593,327 @@ struct VietnameseMenuPageView: View {
         }
     }
 
-    private static func railScrollID(for sectionID: String) -> String {
+    static func railScrollID(for sectionID: String) -> String {
         "rail-\(sectionID)"
     }
 
-    private static func sectionAnchorID(for sectionID: String) -> String {
+    static func sectionAnchorID(for sectionID: String) -> String {
         "section-anchor-\(sectionID)"
     }
 
     private func updateCurrentSection(from frames: [VietnameseMenuSectionFrame]) {
-        guard !frames.isEmpty else {
+        guard VietnameseMenuTaskPolicy.shouldApplySectionPreferenceTracking(isActive: isActive),
+              !isResolvingSectionJump,
+              !isSettlingProgrammaticSectionJump else {
             return
+        }
+
+        let nextPendingScrollSectionUpdate = sectionTracker.applySectionFrames(
+            frames,
+            activationY: VietnameseMenuLayout.sectionActivationY,
+            defersPinnedUpdates: true
+        )
+        if pendingScrollSectionUpdate != nextPendingScrollSectionUpdate {
+            pendingScrollSectionUpdate = nextPendingScrollSectionUpdate
+        }
+    }
+
+    @MainActor
+    private func clearProgrammaticSectionJumpSettleIfNeeded() async {
+        guard VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive),
+              sectionJumpSettleID > 0,
+              isSettlingProgrammaticSectionJump else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: VietnameseMenuSectionJumpPolicy.settleNanoseconds)
+        guard !Task.isCancelled,
+              VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive) else {
+            return
+        }
+
+        isSettlingProgrammaticSectionJump = false
+    }
+
+    @MainActor
+    private func commitPendingScrollSectionUpdateIfNeeded() async {
+        guard VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive),
+              let pendingScrollSectionUpdate else {
+            return
+        }
+
+        try? await Task.sleep(nanoseconds: VietnameseMenuSectionTrackingPolicy.pinnedScrollUpdateDelayNanoseconds)
+        guard !Task.isCancelled,
+              VietnameseMenuTaskPolicy.shouldRunDeferredSectionTask(isActive: isActive),
+              !isResolvingSectionJump else {
+            return
+        }
+
+        sectionTracker.commitPendingSectionUpdate(pendingScrollSectionUpdate)
+
+        if self.pendingScrollSectionUpdate == pendingScrollSectionUpdate {
+            self.pendingScrollSectionUpdate = nil
+        }
+    }
+
+    private func menuThumbnailImageName(for item: VietnameseMenuItem) -> String {
+        item.menuImageName
+    }
+}
+
+final class VietnameseMenuPhotoBackdropScrollCoordinator: ObservableObject {
+    @Published private(set) var displayOffset: CGFloat = 0
+
+    func apply(_ scrollState: PhrasePhotoBackdropLayout.ScrollState) -> Bool {
+        if displayOffset != scrollState.displayOffset {
+            displayOffset = scrollState.displayOffset
+        }
+
+        return scrollState.hasPassedRevealThreshold
+    }
+
+    func reset() {
+        if displayOffset != 0 {
+            displayOffset = 0
+        }
+    }
+}
+
+private struct VietnameseMenuPhotoBackdropBottomChromeBackdrop: View {
+    @ObservedObject var scrollCoordinator: VietnameseMenuPhotoBackdropScrollCoordinator
+    let viewportHeight: CGFloat
+    let safeAreaBottom: CGFloat
+    let collapsedContentTop: CGFloat
+    let isPhotoBackdropImmersive: Bool
+
+    var body: some View {
+        let sheetTop = max(collapsedContentTop - scrollCoordinator.displayOffset, 0)
+        let backingFrameHeight = PhrasePhotoBackdropLayout.bottomChromeBackingFrameHeight(
+            viewportHeight: viewportHeight,
+            safeAreaBottom: safeAreaBottom
+        )
+        let backdropHeight = PhrasePhotoBackdropLayout.bottomChromeBackingHeight(
+            viewportHeight: viewportHeight,
+            safeAreaBottom: safeAreaBottom,
+            sheetTop: sheetTop
+        )
+        let topCornerRadius = PhrasePhotoBackdropLayout.bottomChromeBackingTopCornerRadius(sheetTop: sheetTop)
+
+        VStack(spacing: 0) {
+            Color.clear
+                .frame(height: sheetTop)
+                .accessibilityHidden(true)
+
+            PhotoBackdropBottomChromeBacking(
+                height: backdropHeight,
+                topCornerRadius: topCornerRadius
+            )
+        }
+        .frame(
+            height: backingFrameHeight,
+            alignment: .top
+        )
+        .ignoresSafeArea(edges: .bottom)
+        .opacity(isPhotoBackdropImmersive ? 0 : 1)
+        .animation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation, value: isPhotoBackdropImmersive)
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+    }
+}
+
+private struct VietnameseMenuSectionRail: View {
+    let sections: [VietnameseMenuSection]
+    @ObservedObject var sectionTracker: VietnameseMenuSectionTrackingCoordinator
+    let onJump: (String) -> Void
+
+    var body: some View {
+        GeometryReader { proxy in
+            let cardWidth = VietnameseMenuLayout.sectionCardWidth(containerWidth: proxy.size.width)
+
+            ScrollViewReader { railProxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: VietnameseMenuLayout.sectionCardSpacing) {
+                        ForEach(sections) { section in
+                            VietnameseMenuSectionImageCard(
+                                accessibilityID: section.id,
+                                title: section.title,
+                                imageName: section.featuredImageName,
+                                tintName: section.tintName,
+                                isSelected: sectionTracker.currentSectionID == section.id,
+                                action: { onJump(section.id) }
+                            )
+                            .frame(width: cardWidth)
+                            .id(VietnameseMenuPageView.railScrollID(for: section.id))
+                        }
+                    }
+                    .padding(.leading, VietnameseMenuLayout.horizontalPadding)
+                    .padding(.trailing, VietnameseMenuLayout.horizontalPadding)
+                    .padding(.bottom, PhrasePageStyle.cardShadowBleedPadding)
+                    .scrollTargetLayout()
+                }
+                .scrollTargetBehavior(.viewAligned)
+                .scrollClipDisabled()
+                .onChange(of: sectionTracker.currentSectionID) { _, sectionID in
+                    guard !sectionTracker.isSectionRailPinned else {
+                        return
+                    }
+
+                    scrollRailDirectly(to: sectionID, railProxy: railProxy)
+                }
+                .onChange(of: sectionTracker.isSectionRailPinned) { _, isPinned in
+                    guard !isPinned else {
+                        return
+                    }
+
+                    scrollRailDirectly(to: sectionTracker.currentSectionID, railProxy: railProxy)
+                }
+            }
+        }
+        .frame(height: VietnameseMenuLayout.sectionCardHeight + PhrasePageStyle.cardShadowBleedPadding)
+        .background {
+            GeometryReader { proxy in
+                Color.clear.preference(
+                    key: VietnameseMenuRailFramePreferenceKey.self,
+                    value: proxy.frame(in: .global)
+                )
+            }
+        }
+    }
+
+    private func scrollRailDirectly(to sectionID: String, railProxy: ScrollViewProxy) {
+        var transaction = Transaction()
+        transaction.animation = nil
+        withTransaction(transaction) {
+            railProxy.scrollTo(VietnameseMenuPageView.railScrollID(for: sectionID), anchor: .leading)
+        }
+    }
+}
+
+private struct VietnameseMenuSectionChromePreferenceEmitter: View {
+    let route: BrowseCollectionRoute
+    let isActive: Bool
+    @ObservedObject var sectionTracker: VietnameseMenuSectionTrackingCoordinator
+    let sections: [VietnameseMenuSectionChromeItem]
+
+    var body: some View {
+        Color.clear
+            .preference(
+                key: VietnameseMenuSectionChromePreferenceKey.self,
+                value: preferenceValue
+            )
+            .accessibilityHidden(true)
+    }
+
+    private var preferenceValue: [VietnameseMenuSectionChromeState] {
+        guard isActive, !sections.isEmpty else {
+            return []
+        }
+
+        return [
+            VietnameseMenuSectionChromeState(
+                route: route,
+                currentSectionID: sectionTracker.currentSectionID,
+                isPinned: sectionTracker.isSectionRailPinned,
+                sections: sections
+            ),
+        ]
+    }
+}
+
+final class VietnameseMenuSectionTrackingCoordinator: ObservableObject {
+    @Published private(set) var currentSectionID: String
+    @Published private(set) var isSectionRailPinned = false
+    private var pendingSectionID: String?
+    private var pendingSectionRevision = 0
+
+    init(initialSectionID: String) {
+        currentSectionID = initialSectionID
+    }
+
+    func reset(to sectionID: String) {
+        clearPendingSectionUpdate()
+        setCurrentSection(sectionID)
+        setSectionRailPinned(false)
+    }
+
+    func setCurrentSection(_ sectionID: String) {
+        clearPendingSectionUpdate()
+        guard currentSectionID != sectionID else {
+            return
+        }
+
+        currentSectionID = sectionID
+    }
+
+    @discardableResult
+    func applySectionFrames(
+        _ frames: [VietnameseMenuSectionFrame],
+        activationY: CGFloat,
+        defersPinnedUpdates: Bool = false
+    ) -> VietnameseMenuPendingSectionUpdate? {
+        guard let selectedSectionID = Self.selectedSectionID(from: frames, activationY: activationY) else {
+            return nil
+        }
+
+        if defersPinnedUpdates, isSectionRailPinned {
+            return preparePendingSectionUpdate(selectedSectionID)
+        }
+
+        setCurrentSection(selectedSectionID)
+        return nil
+    }
+
+    func applyRailFrame(_ frame: CGRect?, revealY: CGFloat) {
+        let isPinned = (frame?.maxY ?? .greatestFiniteMagnitude) <= revealY
+        if !isPinned {
+            clearPendingSectionUpdate()
+        }
+        setSectionRailPinned(isPinned)
+    }
+
+    func commitPendingSectionUpdate(_ update: VietnameseMenuPendingSectionUpdate) {
+        guard pendingSectionID == update.sectionID, pendingSectionRevision == update.revision else {
+            return
+        }
+
+        setCurrentSection(update.sectionID)
+    }
+
+    private func setSectionRailPinned(_ isPinned: Bool) {
+        guard isSectionRailPinned != isPinned else {
+            return
+        }
+
+        isSectionRailPinned = isPinned
+    }
+
+    private func preparePendingSectionUpdate(_ sectionID: String) -> VietnameseMenuPendingSectionUpdate? {
+        guard currentSectionID != sectionID else {
+            clearPendingSectionUpdate()
+            return nil
+        }
+
+        if pendingSectionID != sectionID {
+            pendingSectionID = sectionID
+            pendingSectionRevision += 1
+        }
+
+        return VietnameseMenuPendingSectionUpdate(
+            sectionID: sectionID,
+            revision: pendingSectionRevision
+        )
+    }
+
+    private func clearPendingSectionUpdate() {
+        pendingSectionID = nil
+    }
+
+    private static func selectedSectionID(
+        from frames: [VietnameseMenuSectionFrame],
+        activationY: CGFloat
+    ) -> String? {
+        guard !frames.isEmpty else {
+            return nil
         }
 
         let sortedFrames = frames.sorted { lhs, rhs in
@@ -550,20 +923,48 @@ struct VietnameseMenuPageView: View {
 
             return lhs.order < rhs.order
         }
-        let activeFrames = sortedFrames.filter { $0.minY <= VietnameseMenuLayout.sectionActivationY }
+        let activeFrames = sortedFrames.filter { $0.minY <= activationY }
         let selectedFrame = activeFrames.max { $0.minY < $1.minY } ?? sortedFrames.first
 
-        if currentSectionID != selectedFrame?.id {
-            currentSectionID = selectedFrame?.id
-        }
-    }
-
-    private func menuThumbnailImageName(for item: VietnameseMenuItem) -> String {
-        item.menuImageName
+        return selectedFrame?.id
     }
 }
 
-private enum VietnameseMenuLayout {
+struct VietnameseMenuPendingSectionUpdate: Equatable {
+    let sectionID: String
+    let revision: Int
+}
+
+enum VietnameseMenuSectionJumpPolicy {
+    static let delayNanoseconds: UInt64 = 0
+    static let usesAnimatedScroll = false
+    static let layoutCorrectionPasses = 3
+    static let settleNanoseconds: UInt64 = 900_000_000
+}
+
+enum VietnameseMenuSectionTrackingPolicy {
+    static let pinnedScrollUpdateDelayNanoseconds: UInt64 = 120_000_000
+}
+
+enum VietnameseMenuTaskPolicy {
+    static func shouldRunDeferredSectionTask(isActive: Bool) -> Bool {
+        isActive
+    }
+
+    static func shouldRunStandardScrollTask(isActive: Bool) -> Bool {
+        isActive
+    }
+
+    static func shouldApplyPhotoBackdropScrollGeometry(isActive: Bool) -> Bool {
+        isActive
+    }
+
+    static func shouldApplySectionPreferenceTracking(isActive: Bool) -> Bool {
+        isActive
+    }
+}
+
+enum VietnameseMenuLayout {
     static let horizontalPadding: CGFloat = 20
     static let sectionSpacing: CGFloat = 20
     static let sectionTitleToRowsSpacing: CGFloat = 26
@@ -574,8 +975,14 @@ private enum VietnameseMenuLayout {
     static let sectionImageHeight: CGFloat = 108
     static let sectionActivationY: CGFloat = AppChromeLayout.menuSectionJumpClearance + 32
     static let sectionJumpViewportAnchorY: CGFloat = AppChromeLayout.menuSectionJumpViewportAnchorY
-    static let sectionJumpDelayNanoseconds: UInt64 = 80_000_000
     static let glassRailRevealY: CGFloat = 72
+
+    static func bottomContentClearance(usesPhotoBackdrop: Bool) -> CGFloat {
+        AppBottomContentClearance.rootSurface(
+            usesPhotoBackdrop: usesPhotoBackdrop,
+            standard: bottomChromeContentClearance
+        )
+    }
 
     static func sectionCardWidth(containerWidth: CGFloat) -> CGFloat {
         max(154, (containerWidth - horizontalPadding * 2 - sectionCardSpacing) / 2)
@@ -651,7 +1058,7 @@ private struct VietnameseMenuSectionBlock: View {
                 }
             }
 
-            VStack(spacing: 0) {
+            LazyVStack(spacing: 0) {
                 ForEach(section.items) { item in
                     VietnameseMenuItemRow(
                         item: item,
@@ -716,7 +1123,7 @@ private struct VietnameseMenuItemRow: View {
             .contentShape(Rectangle())
             .accessibilityIdentifier("VietnameseMenu.Row.\(item.itemID)")
 
-            if let audioKey = AudioAssetManifest.main?.audioKey(forExactText: item.vietnameseItem) {
+            if let audioKey = item.playbackAudioKey {
                 AudioSpeakerButton(
                     tint: item.kind?.tintName ?? .orange,
                     size: 44,
@@ -782,7 +1189,24 @@ struct VietnameseMenuSectionChromePreferenceKey: PreferenceKey {
     }
 }
 
-private struct VietnameseMenuSectionFrame: Equatable {
+final class VietnameseMenuSectionChromeCoordinator: ObservableObject {
+    @Published private(set) var currentState: VietnameseMenuSectionChromeState?
+
+    @discardableResult
+    func apply(_ states: [VietnameseMenuSectionChromeState]) -> Bool {
+        let nextState = states.last
+        let didPinnedStateChange = (currentState?.isPinned == true) != (nextState?.isPinned == true)
+
+        guard currentState != nextState else {
+            return false
+        }
+
+        currentState = nextState
+        return didPinnedStateChange
+    }
+}
+
+struct VietnameseMenuSectionFrame: Equatable {
     let id: String
     let order: Int
     let minY: CGFloat

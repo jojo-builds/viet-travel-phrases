@@ -20,39 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi nghĩ",
+      "english": "I think",
+      "keepTogetherReason": "I-think phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "nghĩ",
-      "english": "think"
+      "vietnamese": "tôi đã đến nhầm",
+      "english": "I went to the wrong place",
+      "keepTogetherReason": "went-to-wrong-place phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "tôi",
-      "english": "I (second subject)"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "đã",
-      "english": "already / did"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đến",
-      "english": "to / arrive at"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "nhầm",
-      "english": "mistaken / wrong"
-    },
-    {
-      "id": "chunk-7",
       "vietnamese": "nhà ga",
-      "english": "terminal / station",
-      "keepTogetherReason": "compound noun"
+      "english": "terminal",
+      "keepTogetherReason": "terminal phrase"
     },
     {
       "id": "full",

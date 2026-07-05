@@ -7,7 +7,7 @@
   "title": "Cho tôi tô này",
   "englishTitle": "I’ll take this bowl",
   "pronunciation": "cho toy toh nai",
-  "summary": "Cho tôi tô này means “I’ll take this bowl”.",
+  "summary": "Pointing plus this phrase works well at busy stalls.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -18,45 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Cho tôi tô này when you need \"I'll take this bowl\". Use this while pointing at the bowl or plate you want. Pointing plus this phrase works well at busy stalls. Listen for a clear reply, a pointed detail, or a simple follow-up; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "breakdown",
-      "title": "Break it down",
-      "body": "Listen to each piece, then the whole phrase, so the rhythm feels connected instead of memorized word by word.",
-      "breakdown": [
-        {
-          "id": "food-2-piece-1",
-          "vietnamese": "Cho tôi",
-          "english": "can I have",
-          "audioKey": "breakdown-authored-cho-toi-18c6fe1018"
-        },
-        {
-          "id": "food-2-piece-2",
-          "vietnamese": "tô",
-          "english": "bowl",
-          "audioKey": "breakdown-v500-food-drin-id-like-a-bowl-of-ph-please-piece-6"
-        },
-        {
-          "id": "food-2-piece-3",
-          "vietnamese": "này",
-          "english": "this",
-          "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2"
-        },
-        {
-          "id": "food-2-full",
-          "vietnamese": "Cho tôi tô này",
-          "english": "I’ll take this bowl",
-          "audioKey": "food-2"
-        }
-      ],
-      "presentation": "breakdown-strip"
+      "body": "Use this while pointing at the bowl or plate you want.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Cho tôi tô này as your first sentence for \"I'll take this bowl\". Use this while pointing at the bowl or plate you want. Pause after the phrase and listen for a clear reply, a pointed detail, or a simple follow-up. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Say Cho tôi tô này in one connected line before adding details. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "food-2",
@@ -69,138 +39,60 @@
           "audioKey": "food-2"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Practice Cho tôi + tô first; the full line keeps the request from sounding chopped up.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "cho",
+          "english": "to / for",
+          "audioKey": "breakdown-taxi-1-first"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "tôi",
+          "english": "I / me",
+          "audioKey": "breakdown-v500-heal-phar-i-feel-dizzy-first"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "tô",
+          "english": "bowl",
+          "audioKey": "breakdown-v500-food-drin-id-like-a-bowl-of-ph-please-piece-6"
+        },
+        {
+          "id": "chunk-4",
+          "vietnamese": "này",
+          "english": "this",
+          "audioKey": "breakdown-v900-food-drin-is-this-cooked-piece-2"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Cho tôi tô này",
+          "english": "I’ll take this bowl",
+          "audioKey": "food-2"
+        }
+      ],
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. For \"I'll take this bowl\", Cho tôi tô này makes the next step easier to answer. Use the related phrases below if the exchange moves one step further.",
-      "presentation": "plain-text"
+      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. Point to the item, menu line, receipt, size, or photo.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Food & Drink, the reply often comes as a clear reply, a pointed detail, or a simple follow-up. Say Cho tôi tô này once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
-      "phrases": [
-        {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-coffee-milk",
-          "audioKey": "coffee-1"
-        },
-        {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-coffee-black",
-          "audioKey": "coffee-2"
-        },
-        {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-coffee-bac-xiu",
-          "audioKey": "coffee-3"
-        }
-      ],
-      "presentation": "phrase-list"
-    },
-    {
-      "id": "when-to-use",
-      "title": "When to use it",
-      "body": "Use this while pointing at the bowl or plate you want. It fits ordering, adjusting dishes, and checking ingredients, especially when the next step is a clear reply, a pointed detail, or a simple follow-up. Use the related phrases below if the exchange moves one step further.",
-      "phrases": [
-        {
-          "id": "coffee-4",
-          "vietnamese": "Ít đá thôi",
-          "english": "Just a little ice",
-          "pronunciation": "eet dah toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-less-ice",
-          "audioKey": "coffee-4"
-        },
-        {
-          "id": "coffee-5",
-          "vietnamese": "Không đường nhé",
-          "english": "No sugar please",
-          "pronunciation": "khong doong nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-no-sugar",
-          "audioKey": "coffee-5"
-        },
-        {
-          "id": "coffee-6",
-          "vietnamese": "Mang đi",
-          "english": "To go",
-          "pronunciation": "mang dee",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-to-go",
-          "audioKey": "coffee-6"
-        }
-      ],
-      "presentation": "phrase-list"
-    },
-    {
-      "id": "good-to-know",
-      "title": "Good to know",
-      "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "tip-callout"
-    },
-    {
-      "id": "local-tip",
-      "title": "Local tip",
-      "body": "Point to the dish or ingredient while speaking. It helps when tone marks or dish names are hard to pronounce.",
-      "phrases": [
-        {
-          "id": "coffee-7",
-          "vietnamese": "Tính tiền giúp tôi",
-          "english": "Please let me pay",
-          "pronunciation": "ting tyen zoop toy",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-pay-now",
-          "audioKey": "coffee-7"
-        },
-        {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-need-table",
-          "audioKey": "food-need-table"
-        },
-        {
-          "id": "food-menu",
-          "vietnamese": "Cho tôi xem thực đơn được không?",
-          "english": "Can I see the menu?",
-          "pronunciation": "cho toy sem thook dun dook khong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-menu",
-          "audioKey": "food-menu"
-        }
-      ],
-      "presentation": "phrase-list"
-    },
-    {
-      "id": "nearby-phrases",
-      "title": "Useful nearby phrases",
-      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
+      "body": "Watch for a clear reply, a pointed detail, or simple follow-up. Point to the actual item, menu line, size, or photo while you say it.",
       "phrases": [
         {
           "id": "food-1",
@@ -213,16 +105,6 @@
           "audioKey": "food-1"
         },
         {
-          "id": "food-3",
-          "vietnamese": "Không cay nhé",
-          "english": "Not spicy please",
-          "pronunciation": "khong kai nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-not-spicy",
-          "audioKey": "food-3"
-        },
-        {
           "id": "food-4",
           "vietnamese": "Cho thêm rau",
           "english": "More herbs please",
@@ -232,24 +114,6 @@
           "detailPageID": "viet-family-food-more-herbs",
           "audioKey": "food-4"
         },
-        {
-          "id": "food-5",
-          "vietnamese": "Có nước suối không?",
-          "english": "Do you have bottled water?",
-          "pronunciation": "koh nook soy khong",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-bottled-water",
-          "audioKey": "food-5"
-        }
-      ],
-      "presentation": "horizontal-phrase-cards"
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
-      "phrases": [
         {
           "id": "food-6",
           "vietnamese": "Cho tôi muỗng với đũa",
@@ -261,37 +125,133 @@
           "audioKey": "food-6"
         },
         {
-          "id": "food-7",
-          "vietnamese": "Gói mang về",
-          "english": "Pack it to go",
-          "pronunciation": "goy mang veh",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-food-drin-can-i-have-rice-with-this",
+          "vietnamese": "Cho tôi cơm ăn kèm được không?",
+          "english": "Can I have rice with this?",
+          "pronunciation": "Cho toi com an kem duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-pack-to-go",
-          "audioKey": "food-7"
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-have-rice-with-this",
+          "audioKey": "audio-authored-cho-toi-com-an-kem-duoc-khong-4addb6b86e"
         },
         {
-          "id": "food-vegetarian",
-          "vietnamese": "Tôi ăn chay",
-          "english": "I am vegetarian",
-          "pronunciation": "toy an chai",
-          "symbolName": "speaker.wave.2.fill",
+          "id": "v900-food-drin-can-i-have-soup-on-the-side",
+          "vietnamese": "Cho tôi xin chén súp riêng được không?",
+          "english": "Can I have soup on the side?",
+          "pronunciation": "Cho toi xin chen sup rieng duoc khong",
+          "symbolName": "text.bubble.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-vegetarian",
-          "audioKey": "food-vegetarian"
-        },
-        {
-          "id": "food-peanut-allergy",
-          "vietnamese": "Tôi bị dị ứng đậu phộng",
-          "english": "I am allergic to peanuts",
-          "pronunciation": "toy bee zee oong dow fohng",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-peanut-allergy",
-          "audioKey": "food-peanut-allergy"
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-have-soup-on-the-side",
+          "audioKey": "audio-authored-cho-toi-xin-chen-sup-rieng-duoc-khong-aa044927f5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "when-to-use",
+      "title": "When to use it",
+      "body": "Use this while pointing at the bowl or plate you want. Watch for a clear reply, a pointed detail, or simple follow-up.",
+      "phrases": [
+        {
+          "id": "v900-food-drin-sauce-on-the-side-please",
+          "vietnamese": "Xin vui lòng cho nước sốt vào bên cạnh",
+          "english": "Sauce on the side, please",
+          "pronunciation": "Xin vui long cho nuoc sot vao ben canh",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-sauce-on-the-side-please",
+          "audioKey": "v900-food-drin-sauce-on-the-side-please"
+        },
+        {
+          "id": "v900-food-drin-can-i-have-lime",
+          "vietnamese": "Cho tôi xin chanh được không?",
+          "english": "Can I have lime?",
+          "pronunciation": "Cho toi xin chanh duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-have-lime",
+          "audioKey": "audio-authored-cho-toi-xin-chanh-duoc-khong-e7c062e03a"
+        }
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Point to the exact bowl, tray, or menu photo. Cái này works because the object is visible.",
+      "phrases": [
+        {
+          "id": "v900-food-drin-can-i-have-chili-sauce",
+          "vietnamese": "Tôi có thể dùng tương ớt được không?",
+          "english": "Can I have chili sauce?",
+          "pronunciation": "Toi co the dung tuong ot duoc khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-have-chili-sauce",
+          "audioKey": "v900-food-drin-can-i-have-chili-sauce"
+        }
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "This phrase is strongest at the counter or table. Without pointing, staff may not know which bowl you mean.",
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Keep the conversation close to can I have napkins?; can I order half a portion?; two of these, please.",
+      "phrases": [
+        {
+          "id": "v900-food-drin-can-i-have-napkins",
+          "vietnamese": "Cho tôi xin khăn giấy được không?",
+          "english": "Can I have napkins?",
+          "pronunciation": "Cho toi xin khan giay duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-have-napkins",
+          "audioKey": "audio-authored-cho-toi-xin-khan-giay-duoc-khong-7718394956"
+        },
+        {
+          "id": "v900-food-drin-can-i-order-half-a-portion",
+          "vietnamese": "Tôi có thể gọi một nửa phần được không?",
+          "english": "Can I order half a portion?",
+          "pronunciation": "Toi co the goi mot nua phan duoc khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-order-half-a-portion",
+          "audioKey": "v900-food-drin-can-i-order-half-a-portion"
+        },
+        {
+          "id": "v900-food-drin-two-of-these-please",
+          "vietnamese": "Xin vui lòng cho hai trong số này",
+          "english": "Two of these, please",
+          "pronunciation": "Xin vui long cho hai trong so nay",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-two-of-these-please",
+          "audioKey": "v900-food-drin-two-of-these-please"
+        },
+        {
+          "id": "v900-food-drin-one-more-please",
+          "vietnamese": "Xin thêm một cái nữa",
+          "english": "One more, please",
+          "pronunciation": "Xin them mot cai nua",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-one-more-please",
+          "audioKey": "v900-food-drin-one-more-please"
+        }
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

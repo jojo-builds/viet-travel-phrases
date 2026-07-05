@@ -20,28 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "do I need / I need",
+      "keepTogetherReason": "need-question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
+      "vietnamese": "đặt trước",
+      "english": "book in advance",
+      "keepTogetherReason": "advance-booking phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "đặt",
-      "english": "book / reserve / order"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "trước",
-      "english": "before / front"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

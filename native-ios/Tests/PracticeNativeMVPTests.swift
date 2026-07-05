@@ -330,24 +330,66 @@ final class PracticeNativeMVPTests: XCTestCase {
         let firstRound = session.round
 
         session.matchedPairIDs = Set(firstRound.pairs.map(\.id))
+        session.selectedPromptID = firstRound.prompts.first?.id
+        session.selectedAnswerID = firstRound.answers.first?.id
+        session.incorrectPromptID = firstRound.prompts.last?.id
+        session.incorrectAnswerID = firstRound.answers.last?.id
+        session.hintedPairID = firstRound.pairs.first?.id
 
         XCTAssertTrue(session.advanceToNextRound(rng: &nextGenerator))
         XCTAssertEqual(session.roundIndex, 1)
         XCTAssertNotEqual(session.round.id, firstRound.id)
         XCTAssertTrue(session.matchedPairIDs.isEmpty)
+        XCTAssertNil(session.selectedPromptID)
+        XCTAssertNil(session.selectedAnswerID)
+        XCTAssertNil(session.incorrectPromptID)
+        XCTAssertNil(session.incorrectAnswerID)
+        XCTAssertNil(session.hintedPairID)
         XCTAssertTrue(session.canReturnToPreviousRound)
         XCTAssertTrue(Set(session.round.pairs.map(\.id)).isDisjoint(with: Set(firstRound.pairs.map(\.id))))
+
+        session.selectedPromptID = session.round.prompts.first?.id
+        session.selectedAnswerID = session.round.answers.first?.id
+        session.incorrectPromptID = session.round.prompts.last?.id
+        session.incorrectAnswerID = session.round.answers.last?.id
+        session.hintedPairID = session.round.pairs.first?.id
 
         XCTAssertTrue(session.returnToPreviousRound())
         XCTAssertEqual(session.roundIndex, 0)
         XCTAssertEqual(session.round, firstRound)
         XCTAssertTrue(session.matchedPairIDs.isEmpty)
+        XCTAssertNil(session.selectedPromptID)
+        XCTAssertNil(session.selectedAnswerID)
+        XCTAssertNil(session.incorrectPromptID)
+        XCTAssertNil(session.incorrectAnswerID)
+        XCTAssertNil(session.hintedPairID)
     }
 
-    func testPracticeMatchPresentationUsesOnePullUpCardContract() {
-        XCTAssertTrue(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .route))
-        XCTAssertTrue(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .pullUpOverlay))
-        XCTAssertTrue(
+    func testEveryLoadedMatchSourceCanAdvancePastFirstCompletedRound() throws {
+        let snapshot = try PracticeMatchSnapshot.load(practicePageIDs: [], savedPageIDs: [])
+
+        for source in snapshot.sources where source.canStart {
+            var generator = SeededPracticeRandomNumberGenerator(seed: 41)
+            var session = try XCTUnwrap(PracticeMatchActiveSession(source: source, rng: &generator), source.id)
+            session.matchedPairIDs = Set(session.round.pairs.map(\.id))
+
+            XCTAssertTrue(
+                session.advanceToNextRound(rng: &generator),
+                "\(source.id) should advance to a second match round."
+            )
+            XCTAssertFalse(session.isRoundComplete, "\(source.id) should reset matched state for the next round.")
+            XCTAssertEqual(session.roundIndex, 1, "\(source.id) should move to round index 1.")
+        }
+    }
+
+    func testPracticeMatchPresentationUsesNativeSheetContract() {
+        XCTAssertFalse(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .route))
+        XCTAssertTrue(PracticeMatchPresentationPolicy.usesNativeSystemSheet(for: .route))
+        XCTAssertFalse(PracticeMatchPresentationPolicy.usesPullUpRoundCard(for: .pullUpOverlay))
+        XCTAssertTrue(PracticeMatchPresentationPolicy.usesNativeSystemSheet(for: .pullUpOverlay))
+        XCTAssertTrue(PracticeMatchPresentationPolicy.presentsRequestedStartInNativeSheet(for: .pullUpOverlay))
+        XCTAssertFalse(PracticeMatchPresentationPolicy.presentsRequestedStartInNativeSheet(for: .route))
+        XCTAssertFalse(
             PracticeMatchPresentationPolicy.showsDirectStartCard(
                 style: .pullUpOverlay,
                 hasRequestedStart: true,
@@ -368,6 +410,65 @@ final class PracticeNativeMVPTests: XCTestCase {
                 hasActiveSession: false
             )
         )
+        XCTAssertFalse(
+            PracticeMatchPresentationPolicy.showsHubLayer(
+                style: .pullUpOverlay,
+                hasActiveSession: false,
+                hasRequestedStart: true
+            )
+        )
+        XCTAssertFalse(
+            PracticeMatchPresentationPolicy.showsHubLayer(
+                style: .pullUpOverlay,
+                hasActiveSession: true,
+                hasRequestedStart: true
+            )
+        )
+        XCTAssertFalse(
+            PracticeMatchPresentationPolicy.showsHubLayer(
+                style: .pullUpOverlay,
+                hasActiveSession: false,
+                hasRequestedStart: false
+            )
+        )
+        XCTAssertTrue(
+            PracticeMatchPresentationPolicy.showsHubLayer(
+                style: .route,
+                hasActiveSession: true,
+                hasRequestedStart: false
+            )
+        )
+    }
+
+    func testPracticeMatchPullUpDismissalRequiresACommittedDrag() {
+        XCTAssertFalse(
+            PracticeMatchPullUpDismissalPolicy.shouldDismiss(
+                translation: 230,
+                predictedTranslation: 280,
+                cardHeight: 620
+            )
+        )
+        XCTAssertFalse(
+            PracticeMatchPullUpDismissalPolicy.shouldDismiss(
+                translation: 44,
+                predictedTranslation: 71,
+                cardHeight: 620
+            )
+        )
+        XCTAssertTrue(
+            PracticeMatchPullUpDismissalPolicy.shouldDismiss(
+                translation: 448,
+                predictedTranslation: 470,
+                cardHeight: 620
+            )
+        )
+        XCTAssertTrue(
+            PracticeMatchPullUpDismissalPolicy.shouldDismiss(
+                translation: 140,
+                predictedTranslation: 490,
+                cardHeight: 620
+            )
+        )
     }
 
     func testPracticeMatchSnapshotLoadPolicySkipsInactiveRoutes() {
@@ -378,9 +479,61 @@ final class PracticeNativeMVPTests: XCTestCase {
     }
 
     func testPracticePullUpBackdropDimsAndSheetBleedsToScreenEdges() {
-        XCTAssertGreaterThanOrEqual(PracticeMatchPullUpMetrics.backdropOpacity, 0.30)
-        XCTAssertLessThanOrEqual(PracticeMatchPullUpMetrics.backdropOpacity, 0.42)
+        XCTAssertGreaterThanOrEqual(PracticeMatchPullUpMetrics.backdropOpacity, 0.42)
+        XCTAssertLessThanOrEqual(PracticeMatchPullUpMetrics.backdropOpacity, 0.52)
         XCTAssertEqual(PracticeMatchPullUpMetrics.sheetHorizontalBackgroundPadding, 0)
+        XCTAssertEqual(
+            PracticeMatchPullUpMetrics.backdropOpacity(
+                dragTranslation: 0,
+                cardHeight: 620
+            ),
+            PracticeMatchPullUpMetrics.backdropOpacity,
+            accuracy: 0.001
+        )
+        XCTAssertLessThan(
+            PracticeMatchPullUpMetrics.backdropOpacity(
+                dragTranslation: 240,
+                cardHeight: 620
+            ),
+            PracticeMatchPullUpMetrics.backdropOpacity
+        )
+        XCTAssertEqual(
+            PracticeMatchPullUpMetrics.backdropOpacity(
+                dragTranslation: 620,
+                cardHeight: 620
+            ),
+            0,
+            accuracy: 0.001
+        )
+    }
+
+    func testPracticePhotoBackdropHubIgnoresTopChromeClearanceInsideSheet() {
+        XCTAssertEqual(
+            PracticeMatchHubLayout.topPadding(
+                usesPhotoBackdrop: true,
+                topContentClearance: 132
+            ),
+            0,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            PracticeMatchHubLayout.sectionSpacing(usesPhotoBackdrop: true),
+            10,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            PracticeMatchHubLayout.topPadding(
+                usesPhotoBackdrop: false,
+                topContentClearance: 132
+            ),
+            154,
+            accuracy: 0.001
+        )
+        XCTAssertEqual(
+            PracticeMatchHubLayout.sectionSpacing(usesPhotoBackdrop: false),
+            22,
+            accuracy: 0.001
+        )
     }
 
     func testMissedPromptsReappearInMissedReview() throws {

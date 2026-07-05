@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-tran-the-app-shows-a-different-route",
-  "phraseText": "Ứng dụng hiển thị một tuyến đường khác",
+  "phraseText": "Ứng dụng đang chỉ đường khác",
   "englishTitle": "The app shows a different route",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -21,40 +21,26 @@
     {
       "id": "chunk-1",
       "vietnamese": "Ứng dụng",
-      "english": "app",
-      "keepTogetherReason": "compound noun"
+      "english": "the app",
+      "keepTogetherReason": "app phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "hiển thị",
-      "english": "show / display",
-      "keepTogetherReason": "compound verb"
+      "vietnamese": "đang chỉ",
+      "english": "is showing / directing",
+      "keepTogetherReason": "showing-route phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "tuyến",
-      "english": "line / route"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "đường",
-      "english": "street"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "khác",
-      "english": "different / another"
+      "vietnamese": "đường khác",
+      "english": "a different route",
+      "keepTogetherReason": "different-route phrase"
     },
     {
       "id": "full",
-      "vietnamese": "Ứng dụng hiển thị một tuyến đường khác",
+      "vietnamese": "Ứng dụng đang chỉ đường khác",
       "english": "The app shows a different route",
-      "audioKey": "v900-tran-the-app-shows-a-different-route"
+      "audioKey": null
     }
   ]
 }

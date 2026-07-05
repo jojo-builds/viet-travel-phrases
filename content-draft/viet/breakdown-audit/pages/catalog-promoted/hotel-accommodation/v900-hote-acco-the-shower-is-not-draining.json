@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-hote-acco-the-shower-is-not-draining",
-  "phraseText": "Vòi sen không chảy nước",
+  "phraseText": "Cống thoát nước chỗ vòi sen bị nghẹt",
   "englishTitle": "The shower is not draining",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -19,30 +19,27 @@
   ],
   "tokens": [
     {
-      "vietnamese": "Vòi sen",
-      "english": "shower",
+      "vietnamese": "Cống thoát nước",
+      "english": "drain",
       "keepTogetherReason": "compound bathroom fixture"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "không",
-      "english": "no / not"
+      "vietnamese": "chỗ vòi sen",
+      "english": "in the shower area",
+      "keepTogetherReason": "location phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "chảy",
-      "english": "flow / diarrhea"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "nước",
-      "english": "water"
+      "vietnamese": "bị nghẹt",
+      "english": "is clogged",
+      "keepTogetherReason": "fixed clogged-drain phrase"
     },
     {
       "id": "full",
-      "vietnamese": "Vòi sen không chảy nước",
+      "vietnamese": "Cống thoát nước chỗ vòi sen bị nghẹt",
       "english": "The shower is not draining",
-      "audioKey": "v900-hote-acco-the-shower-is-not-draining"
+      "audioKey": "audio-authored-cong-thoat-nuoc-cho-voi-sen-bi-nghet-0e1c657268"
     }
   ]
 }

@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi có thể mua vé ở đâu? is useful when the map, sign, or building layout is not giving you the final answer. It names buy tickets in a compact way, so a local can point, give a landmark, or send you to the right counter."
+      "body": "Tôi có thể mua vé ở đâu?"
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Keep it short: Tôi có thể mua vé ở đâu?. Show your ticket, map, attraction name, booking screen, or meeting point sign, then listen for the first useful clue: a point, floor, street, counter, or landmark.",
+      "body": "A short question is enough here; use the ticket, booking, meeting point, map location, or attraction name for the follow-up.",
       "phrases": [
         {
           "id": "v500-sigh-acti-where-can-i-buy-tickets",
@@ -42,7 +42,7 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Hear the place or item first; ở đâu? turns it into the where question.",
       "breakdown": [
         {
           "id": "chunk-1",
@@ -73,7 +73,7 @@
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Where can I buy tickets? to another sightseeing or activities need.",
+      "body": "Good next-step cards: How much is the ticket, Where do we start, and Can I take photos here.",
       "phrases": [
         {
           "id": "sight-1",
@@ -110,17 +110,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this when you are already in the general area but need the final direction. It fits museum, tour desk, attraction entrance, ticket counter, or meeting point, especially when buy tickets can be pointed to on a map, sign, booking, or nearby landmark."
+      "body": "Use this near an attraction when the ticket process is not obvious. Show the attraction or booking screen so staff can point to the counter, QR code, or entrance gate."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Directions in Vietnam are often answered with pointing plus a few words. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated."
+      "body": "Some attractions separate the ticket counter from the actual entrance. If someone points away from the gate, follow the counter first, then come back with the ticket or QR code ready."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi có thể mua vé ở đâu?.",
+      "body": "Nearby follow-ups: What time does it close, Where is the meeting point, and Do I need to book in advance.",
       "phrases": [
         {
           "id": "sight-4",

@@ -20,25 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi cần",
+      "english": "I need",
+      "keepTogetherReason": "I-need phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "cần",
-      "english": "need"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "cảnh sát",
-      "english": "police",
-      "keepTogetherReason": "compound public-safety term"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "du lịch.",
-      "english": "tourism / travel",
-      "keepTogetherReason": "compound noun"
+      "vietnamese": "cảnh sát du lịch.",
+      "english": "the tourist police.",
+      "keepTogetherReason": "tourist-police phrase"
     },
     {
       "id": "full",

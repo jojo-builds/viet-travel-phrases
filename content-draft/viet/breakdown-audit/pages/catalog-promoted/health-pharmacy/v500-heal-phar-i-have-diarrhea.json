@@ -20,19 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi bị",
+      "english": "I have / I am affected by",
+      "keepTogetherReason": "condition phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "bị",
-      "english": "got / passive marker"
-    },
-    {
-      "id": "chunk-3",
       "vietnamese": "tiêu chảy",
       "english": "diarrhea",
-      "keepTogetherReason": "compound symptom term"
+      "keepTogetherReason": "symptom phrase"
     },
     {
       "id": "full",

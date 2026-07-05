@@ -7,7 +7,7 @@
   "title": "Có nước suối không?",
   "englishTitle": "Do you have bottled water?",
   "pronunciation": "koh nook soy khong",
-  "summary": "Có nước suối không? means “Do you have bottled water?”",
+  "summary": "For asking for sealed bottled water at a table, stall, hotel, or counter.",
   "iconName": "fork.knife",
   "tintName": "green",
   "categoryIDs": [
@@ -18,45 +18,15 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Say Có nước suối không? when you need \"Do you have bottled water\". This is for when you want bottled water with your meal. Listen for a yes/no answer, a gesture toward the item, or a short alternative; use the next rows if the exchange moves on.",
-      "presentation": "plain-text"
-    },
-    {
-      "id": "breakdown",
-      "title": "Break it down",
-      "body": "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.",
-      "breakdown": [
-        {
-          "id": "food-5-piece-1",
-          "vietnamese": "Có",
-          "english": "have / yes",
-          "audioKey": "breakdown-food-5-first"
-        },
-        {
-          "id": "food-5-piece-2",
-          "vietnamese": "nước suối",
-          "english": "bottled water",
-          "audioKey": "breakdown-authored-nuoc-suoi-69c78e2722"
-        },
-        {
-          "id": "food-5-piece-3",
-          "vietnamese": "không?",
-          "english": "asks yes or no",
-          "audioKey": "breakdown-bath-6-piece-6"
-        },
-        {
-          "id": "food-5-full",
-          "vietnamese": "Có nước suối không?",
-          "english": "Do you have bottled water?",
-          "audioKey": "food-5"
-        }
-      ],
-      "presentation": "breakdown-strip"
+      "body": "Ask before the meal moves on, especially when cups, ice, or tap water are already on the table.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "standard-way",
       "title": "The standard way",
-      "body": "Use Có nước suối không? as your first sentence for \"Do you have bottled water\". This is for when you want bottled water with your meal. Pause after the phrase and listen for a yes/no answer, a gesture toward the item, or a short alternative. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "Point to the fridge, menu, or bottle size if there are choices. A short yes or no is enough.",
       "phrases": [
         {
           "id": "food-5",
@@ -69,57 +39,127 @@
           "audioKey": "food-5"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "breakdown",
+      "title": "Break it down",
+      "body": "Có asks whether they have it; nước suối means bottled water.",
+      "breakdown": [
+        {
+          "id": "chunk-1",
+          "vietnamese": "Có",
+          "english": "do you have",
+          "audioKey": "breakdown-food-5-first",
+          "keepTogetherReason": "yes-no request opener"
+        },
+        {
+          "id": "chunk-2",
+          "vietnamese": "nước suối",
+          "english": "bottled water",
+          "audioKey": "breakdown-authored-nuoc-suoi-69c78e2722",
+          "keepTogetherReason": "bottled-water phrase"
+        },
+        {
+          "id": "chunk-3",
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "audioKey": "breakdown-bath-6-piece-6",
+          "keepTogetherReason": "yes-no ending"
+        },
+        {
+          "id": "full",
+          "vietnamese": "Có nước suối không?",
+          "english": "Do you have bottled water?",
+          "audioKey": "food-5"
+        }
+      ],
+      "presentation": "breakdown-strip",
+      "phrases": []
     },
     {
       "id": "why-it-matters",
       "title": "Why it matters",
-      "body": "Vietnamese food interactions move fast, so pointing and short phrases protect the order. For \"Do you have bottled water\", Có nước suối không? makes the next step easier to answer. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
-      "presentation": "plain-text"
+      "body": "Bottled water is often the safest simple drink request. It also opens the door to ice, straw, and payment follow-ups.",
+      "presentation": "plain-text",
+      "phrases": [],
+      "breakdown": []
     },
     {
       "id": "traveler-insight",
       "title": "Traveler insight",
-      "body": "In Food & Drink, the reply often comes as a yes/no answer, a gesture toward the item, or a short alternative. Say Có nước suối không? once, pause, and watch for the reply. Point to the actual item, menu line, size, or photo while you say it.",
+      "body": "If they point to a cooler, choose the size before asking for ice or another drink.",
       "phrases": [
         {
-          "id": "coffee-1",
-          "vietnamese": "Cho tôi một cà phê sữa đá",
-          "english": "One iced milk coffee please",
-          "pronunciation": "cho toy mot ka feh sue-ah dah",
+          "id": "v900-food-drin-one-iced-tea-please",
+          "vietnamese": "Làm ơn cho một ly trà đá",
+          "english": "One iced tea, please",
+          "pronunciation": "Lam on cho mot ly tra da",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-coffee-milk",
-          "audioKey": "coffee-1"
+          "detailPageID": "viet-phrase-v900-food-drin-one-iced-tea-please",
+          "audioKey": "v900-food-drin-one-iced-tea-please"
         },
         {
-          "id": "coffee-2",
-          "vietnamese": "Cho tôi cà phê đen đá",
-          "english": "I’d like an iced black coffee",
-          "pronunciation": "cho toy ka feh den dah",
+          "id": "v900-food-drin-one-fresh-coconut-please",
+          "vietnamese": "Làm ơn cho một quả dừa tươi",
+          "english": "One fresh coconut, please",
+          "pronunciation": "Lam on cho mot qua dua tuoi",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-coffee-black",
-          "audioKey": "coffee-2"
+          "detailPageID": "viet-phrase-v900-food-drin-one-fresh-coconut-please",
+          "audioKey": "v900-food-drin-one-fresh-coconut-please"
         },
         {
-          "id": "coffee-3",
-          "vietnamese": "Cho tôi bạc xỉu đá",
-          "english": "I’d like an iced bạc xỉu",
-          "pronunciation": "cho toy bahk see-u dah",
+          "id": "v900-food-drin-one-sugarcane-juice-please",
+          "vietnamese": "Xin cho một ly nước mía",
+          "english": "One sugarcane juice, please",
+          "pronunciation": "Xin cho mot ly nuoc mia",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-coffee-bac-xiu",
-          "audioKey": "coffee-3"
+          "detailPageID": "viet-phrase-v900-food-drin-one-sugarcane-juice-please",
+          "audioKey": "v900-food-drin-one-sugarcane-juice-please"
+        },
+        {
+          "id": "v900-food-drin-do-you-have-beer",
+          "vietnamese": "Bạn có bia không?",
+          "english": "Do you have beer?",
+          "pronunciation": "Ban co bia khong",
+          "symbolName": "speaker.wave.2.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-do-you-have-beer",
+          "audioKey": "v900-food-drin-do-you-have-beer"
+        },
+        {
+          "id": "v900-food-drin-no-straw-please",
+          "vietnamese": "Không cần ống hút nhé",
+          "english": "No straw, please",
+          "pronunciation": "Khong can ong hut nhe",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-no-straw-please",
+          "audioKey": "audio-authored-khong-can-ong-hut-nhe-c1f7415658"
         }
       ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "This is for when you want bottled water with your meal. It fits ordering, adjusting dishes, and checking ingredients, especially when the next step is a yes/no answer, a gesture toward the item, or a short alternative. If they point somewhere else, follow the gesture first and ask again only if the next step is unclear.",
+      "body": "Good at street stalls, cafes, hotels, small shops, tour stops, and hot walks between sights.",
       "phrases": [
+        {
+          "id": "v900-food-drin-can-i-have-a-cup-of-ice",
+          "vietnamese": "Cho tôi xin một ly đá được không?",
+          "english": "Can I have a cup of ice?",
+          "pronunciation": "Cho toi xin mot ly da duoc khong",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-can-i-have-a-cup-of-ice",
+          "audioKey": "audio-authored-cho-toi-xin-mot-ly-da-duoc-khong-685e65df0b"
+        },
         {
           "id": "coffee-4",
           "vietnamese": "Ít đá thôi",
@@ -129,7 +169,16 @@
           "tintName": "green",
           "detailPageID": "viet-family-food-less-ice",
           "audioKey": "coffee-4"
-        },
+        }
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "local-tip",
+      "title": "Local tip",
+      "body": "Nước suối is the useful phrase to recognize on bottles and menus.",
+      "phrases": [
         {
           "id": "coffee-5",
           "vietnamese": "Không đường nhé",
@@ -139,7 +188,24 @@
           "tintName": "green",
           "detailPageID": "viet-family-food-no-sugar",
           "audioKey": "coffee-5"
-        },
+        }
+      ],
+      "presentation": "phrase-list",
+      "breakdown": []
+    },
+    {
+      "id": "good-to-know",
+      "title": "Good to know",
+      "body": "If they offer ice, decide whether you want the bottle sealed first.",
+      "presentation": "tip-callout",
+      "phrases": [],
+      "breakdown": []
+    },
+    {
+      "id": "explore-next",
+      "title": "Explore next",
+      "body": "Takeaway, payment, receipt, split-bill, and that-is-all phrases cover the table after the drink is settled.",
+      "phrases": [
         {
           "id": "coffee-6",
           "vietnamese": "Mang đi",
@@ -149,21 +215,7 @@
           "tintName": "green",
           "detailPageID": "viet-family-food-to-go",
           "audioKey": "coffee-6"
-        }
-      ],
-      "presentation": "phrase-list"
-    },
-    {
-      "id": "good-to-know",
-      "title": "Good to know",
-      "body": "For allergies and dietary limits, use the clearest version and confirm visually if possible.",
-      "presentation": "tip-callout"
-    },
-    {
-      "id": "local-tip",
-      "title": "Local tip",
-      "body": "Point to the dish or ingredient while speaking. It helps when tone marks or dish names are hard to pronounce.",
-      "phrases": [
+        },
         {
           "id": "coffee-7",
           "vietnamese": "Tính tiền giúp tôi",
@@ -175,123 +227,38 @@
           "audioKey": "coffee-7"
         },
         {
-          "id": "food-need-table",
-          "vietnamese": "Cho tôi bàn cho hai người nhé",
-          "english": "A table for two, please",
-          "pronunciation": "cho toy ban cho hai ngwee nhe",
+          "id": "store-7",
+          "vietnamese": "Cho tôi hóa đơn",
+          "english": "Please give me the receipt",
+          "pronunciation": "cho toy hwa dun",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-need-table",
-          "audioKey": "food-need-table"
+          "detailPageID": "viet-family-service-receipt",
+          "audioKey": "store-7"
         },
         {
-          "id": "food-menu",
-          "vietnamese": "Cho tôi xem thực đơn được không?",
-          "english": "Can I see the menu?",
-          "pronunciation": "cho toy sem thook dun dook khong",
+          "id": "food-17",
+          "vietnamese": "Trả riêng được không?",
+          "english": "Can we pay separately?",
+          "pronunciation": "tra ryeng dook khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "green",
-          "detailPageID": "viet-family-food-menu",
-          "audioKey": "food-menu"
+          "detailPageID": "viet-phrase-food-17",
+          "audioKey": "food-17"
+        },
+        {
+          "id": "v900-food-drin-thats-all-thank-you",
+          "vietnamese": "Vậy thôi, cảm ơn",
+          "english": "That's all, thank you.",
+          "pronunciation": "Vay thoi cam on",
+          "symbolName": "text.bubble.fill",
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-food-drin-thats-all-thank-you",
+          "audioKey": "audio-authored-vay-thoi-cam-on-efab00a56b"
         }
       ],
-      "presentation": "phrase-list"
-    },
-    {
-      "id": "nearby-phrases",
-      "title": "Useful nearby phrases",
-      "body": "These are the next phrases a traveler is likely to need when this moment keeps moving.",
-      "phrases": [
-        {
-          "id": "food-1",
-          "vietnamese": "Cho tôi một phần",
-          "english": "One portion please",
-          "pronunciation": "cho toy mot fun",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-one-portion",
-          "audioKey": "food-1"
-        },
-        {
-          "id": "food-2",
-          "vietnamese": "Cho tôi tô này",
-          "english": "I’ll take this bowl",
-          "pronunciation": "cho toy toh nai",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-this-bowl",
-          "audioKey": "food-2"
-        },
-        {
-          "id": "food-3",
-          "vietnamese": "Không cay nhé",
-          "english": "Not spicy please",
-          "pronunciation": "khong kai nhe",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-not-spicy",
-          "audioKey": "food-3"
-        },
-        {
-          "id": "food-4",
-          "vietnamese": "Cho thêm rau",
-          "english": "More herbs please",
-          "pronunciation": "cho them zow",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-more-herbs",
-          "audioKey": "food-4"
-        }
-      ],
-      "presentation": "horizontal-phrase-cards"
-    },
-    {
-      "id": "explore-next",
-      "title": "Explore next",
-      "body": "Use these next when the conversation moves one step forward.",
-      "phrases": [
-        {
-          "id": "food-6",
-          "vietnamese": "Cho tôi muỗng với đũa",
-          "english": "A spoon and chopsticks please",
-          "pronunciation": "cho toy moong voy doo-ah",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-utensils",
-          "audioKey": "food-6"
-        },
-        {
-          "id": "food-7",
-          "vietnamese": "Gói mang về",
-          "english": "Pack it to go",
-          "pronunciation": "goy mang veh",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-pack-to-go",
-          "audioKey": "food-7"
-        },
-        {
-          "id": "food-vegetarian",
-          "vietnamese": "Tôi ăn chay",
-          "english": "I am vegetarian",
-          "pronunciation": "toy an chai",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-vegetarian",
-          "audioKey": "food-vegetarian"
-        },
-        {
-          "id": "food-peanut-allergy",
-          "vietnamese": "Tôi bị dị ứng đậu phộng",
-          "english": "I am allergic to peanuts",
-          "pronunciation": "toy bee zee oong dow fohng",
-          "symbolName": "speaker.wave.2.fill",
-          "tintName": "green",
-          "detailPageID": "viet-family-food-peanut-allergy",
-          "audioKey": "food-peanut-allergy"
-        }
-      ],
-      "presentation": "phrase-list"
+      "presentation": "phrase-list",
+      "breakdown": []
     }
   ],
   "examples": [

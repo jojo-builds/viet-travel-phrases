@@ -22,22 +22,19 @@
       "id": "chunk-1",
       "vietnamese": "Hôm nay",
       "english": "today",
-      "keepTogetherReason": "fixed time phrase"
+      "keepTogetherReason": "today phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có",
-      "english": "have / there is"
+      "vietnamese": "có mở cửa",
+      "english": "is open",
+      "keepTogetherReason": "open-status phrase"
     },
     {
-      "vietnamese": "mở cửa",
-      "english": "open / opening",
-      "keepTogetherReason": "compound business-hours verb"
-    },
-    {
-      "id": "chunk-5",
+      "id": "chunk-3",
       "vietnamese": "không?",
-      "english": "yes/no?"
+      "english": "yes/no?",
+      "keepTogetherReason": "yes-no ending"
     },
     {
       "id": "full",

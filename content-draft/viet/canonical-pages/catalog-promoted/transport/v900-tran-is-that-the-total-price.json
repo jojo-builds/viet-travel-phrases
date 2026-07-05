@@ -7,7 +7,7 @@
   "title": "Đó có phải là tổng giá không?",
   "englishTitle": "Is that the total price?",
   "pronunciation": "Do co phai la tong gia khong",
-  "summary": "Is that the total price?",
+  "summary": "For confirming the full fare before you pay or agree to a ride.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Đó có phải là tổng giá không? is the quick money check before you agree to a ride, ticket, item, or service. It keeps the exchange focused on Is that the total price, so the answer can be a number, calculator screen, or typed price."
+      "body": "Ask when tolls, luggage, waiting time, airport fees, or app prices might be separate."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Ask Đó có phải là tổng giá không? before you hand over money. Keep the item, ticket, ride screen, or calculator visible so the price can be shown instead of explained quickly.",
+      "body": "Point to the fare screen, calculator, or written number so the answer is about the total.",
       "phrases": [
         {
           "id": "v900-tran-is-that-the-total-price",
@@ -42,135 +42,135 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Đó có phải là asks is that; tổng giá means total price; không? makes it yes/no.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Đó có phải",
+          "vietnamese": "Đó có phải là",
           "english": "is that",
-          "audioKey": null
+          "keepTogetherReason": "is-that question frame"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "là tổng giá",
-          "english": "price / money",
-          "audioKey": null
+          "vietnamese": "tổng giá",
+          "english": "the total price",
+          "keepTogetherReason": "total-price phrase"
         },
         {
           "id": "chunk-3",
-          "vietnamese": "không",
-          "english": "no / not",
-          "audioKey": null
+          "vietnamese": "không?",
+          "english": "yes/no?",
+          "keepTogetherReason": "yes-no ending"
         },
         {
-          "id": "chunk-4",
+          "id": "full",
           "vietnamese": "Đó có phải là tổng giá không?",
-          "english": "Is that the total price",
-          "audioKey": null
+          "english": "Is that the total price?",
+          "audioKey": "v900-tran-is-that-the-total-price"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Is that the total price? to another transport need.",
+      "body": "Altogether, tax included, and service charge phrases help when the total is still unclear.",
       "phrases": [
         {
-          "id": "taxi-1",
-          "vietnamese": "Cho tôi tới đây",
-          "english": "Take me here",
-          "pronunciation": "cho toy toy day",
+          "id": "price-8",
+          "vietnamese": "Tổng cộng bao nhiêu?",
+          "english": "How much altogether?",
+          "pronunciation": "tong kong bao nyew",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-taxi-1",
-          "audioKey": "taxi-1"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-price-8",
+          "audioKey": "price-8"
         },
         {
-          "id": "taxi-2",
-          "vietnamese": "Đi quận 1",
-          "english": "Go to District 1",
-          "pronunciation": "dee gwan mot",
+          "id": "v500-mone-numb-pric-is-tax-included",
+          "vietnamese": "Có bao gồm thuế không?",
+          "english": "Is tax included?",
+          "pronunciation": "Co bao gom thue khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-taxi-2",
-          "audioKey": "taxi-2"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v500-mone-numb-pric-is-tax-included",
+          "audioKey": "v500-mone-numb-pric-is-tax-included"
         },
         {
-          "id": "taxi-3",
-          "vietnamese": "Dừng ở đây được rồi",
-          "english": "You can stop here",
-          "pronunciation": "zoong uh day dook roy",
+          "id": "v900-mone-numb-pric-is-the-service-charge-included",
+          "vietnamese": "Có bao gồm phí dịch vụ không?",
+          "english": "Is the service charge included?",
+          "pronunciation": "Co bao gom phi dich vu khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-taxi-3",
-          "audioKey": "taxi-3"
+          "tintName": "green",
+          "detailPageID": "viet-phrase-v900-mone-numb-pric-is-the-service-charge-included",
+          "audioKey": "v900-mone-numb-pric-is-the-service-charge-included"
         }
       ]
     },
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this before you agree, pay, ride, buy, or enter. It is strongest when the item, destination, service, or ticket is visible and you want the number confirmed clearly."
+      "body": "Good before cash changes hands, before a taxi starts moving, or when a driver names several small charges."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Numbers are easier to trust when they are visible. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast."
+      "body": "If the answer is not a clear yes, ask them to write the total before paying."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Đó có phải là tổng giá không?.",
+      "body": "Write the price, total amount, toll, receipt, and final price phrases cover the next money check.",
       "phrases": [
         {
-          "id": "transport-stop-here-clearer",
-          "vietnamese": "Cho tôi xuống ngay đây",
-          "english": "Please stop right here",
-          "pronunciation": "cho toy zoong ngay day",
+          "id": "v500-unde-repa-can-you-write-the-price",
+          "vietnamese": "Bạn có thể viết giá được không?",
+          "english": "Can you write the price?",
+          "pronunciation": "Ban co the viet gia duoc khong",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-transport-stop-here-clearer",
-          "audioKey": "transport-stop-here-clearer"
+          "tintName": "blue",
+          "detailPageID": "viet-phrase-v500-unde-repa-can-you-write-the-price",
+          "audioKey": "v500-unde-repa-can-you-write-the-price"
         },
         {
-          "id": "taxi-4",
-          "vietnamese": "Đi đường này đi",
-          "english": "Go this way",
-          "pronunciation": "dee doong nai dee",
+          "id": "v900-hote-acco-is-this-the-total-amount",
+          "vietnamese": "Đây có phải là tổng số tiền?",
+          "english": "Is this the total amount?",
+          "pronunciation": "Day co phai la tong so tien",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-taxi-4",
-          "audioKey": "taxi-4"
+          "tintName": "purple",
+          "detailPageID": "viet-phrase-v900-hote-acco-is-this-the-total-amount",
+          "audioKey": "v900-hote-acco-is-this-the-total-amount"
         },
         {
-          "id": "taxi-5",
-          "vietnamese": "Mở máy lạnh giúp tôi",
-          "english": "Please turn on the air conditioning",
-          "pronunciation": "muh mai lanh zoop toy",
+          "id": "v900-tran-does-that-include-tolls",
+          "vietnamese": "Điều đó có bao gồm phí cầu đường không?",
+          "english": "Does that include tolls?",
+          "pronunciation": "Dieu do co bao gom phi cau duong khong",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-taxi-5",
-          "audioKey": "taxi-5"
+          "detailPageID": "viet-phrase-v900-tran-does-that-include-tolls",
+          "audioKey": "v900-tran-does-that-include-tolls"
         },
         {
-          "id": "taxi-6",
-          "vietnamese": "Chờ tôi năm phút",
-          "english": "Wait for me five minutes",
-          "pronunciation": "cho toy nam foot",
+          "id": "v900-tran-please-give-me-a-receipt",
+          "vietnamese": "Vui lòng đưa cho tôi biên nhận",
+          "english": "Please give me a receipt",
+          "pronunciation": "Vui long dua cho toi bien nhan",
           "symbolName": "speaker.wave.2.fill",
           "tintName": "orange",
-          "detailPageID": "viet-phrase-taxi-6",
-          "audioKey": "taxi-6"
+          "detailPageID": "viet-phrase-v900-tran-please-give-me-a-receipt",
+          "audioKey": "v900-tran-please-give-me-a-receipt"
         },
         {
-          "id": "taxi-7",
-          "vietnamese": "Tôi trả bằng tiền mặt",
-          "english": "I’ll pay cash",
-          "pronunciation": "toy tra bang tyen mat",
+          "id": "price-5",
+          "vietnamese": "Giá cuối bao nhiêu?",
+          "english": "What’s your final price?",
+          "pronunciation": "za gooy bao nyew",
           "symbolName": "speaker.wave.2.fill",
-          "tintName": "orange",
-          "detailPageID": "viet-phrase-taxi-7",
-          "audioKey": "taxi-7"
+          "tintName": "green",
+          "detailPageID": "viet-family-money-final-price",
+          "audioKey": "price-5"
         }
       ]
     }

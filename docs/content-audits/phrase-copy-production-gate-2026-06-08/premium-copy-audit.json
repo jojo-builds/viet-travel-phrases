@@ -1,0 +1,4212 @@
+{
+  "generatedAt": "2026-06-10T22:32:41.662Z",
+  "pageCount": 1793,
+  "counts": {
+    "HARD_REVIEW": 0,
+    "WEAK_REVIEW": 0,
+    "WATCH": 148,
+    "PASS": 1645
+  },
+  "topRows": [
+    {
+      "pageID": "viet-family-city-danang-atm-airport",
+      "title": "Có ATM gần Sân bay Đà Nẵng không?",
+      "englishTitle": "Is there an ATM near Da Nang Airport?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-airport|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 156,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-atm-bach-dang-street",
+      "title": "Có ATM gần Đường Bạch Đằng không?",
+      "englishTitle": "Is there an ATM near Bach Dang Street?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 146,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-atm-con-market",
+      "title": "Có ATM gần Chợ Cồn không?",
+      "englishTitle": "Is there an ATM near Con Market?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 128,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-atm-han-market",
+      "title": "Có ATM gần Chợ Hàn không?",
+      "englishTitle": "Is there an ATM near Han Market?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 128,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-atm-helio-night-market",
+      "title": "Có ATM gần Chợ đêm Helio không?",
+      "englishTitle": "Is there an ATM near Helio Night Market?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 146,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-go-airport",
+      "title": "Đi Sân bay Đà Nẵng",
+      "englishTitle": "Go to Da Nang Airport",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-airport|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 147,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-go-con-market",
+      "title": "Đi Chợ Cồn",
+      "englishTitle": "Go to Con Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 119,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-go-han-market",
+      "title": "Đi Chợ Hàn",
+      "englishTitle": "Go to Han Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 120,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-go-helio-night-market",
+      "title": "Đi Chợ đêm Helio",
+      "englishTitle": "Go to Helio Night Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 137,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-go-nguyen-van-linh-street",
+      "title": "Đi Đường Nguyễn Văn Linh",
+      "englishTitle": "Go to Nguyen Van Linh Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 3,
+      "visibleWords": 138,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-go-railway-station",
+      "title": "Đi Ga Đà Nẵng",
+      "englishTitle": "Go to Da Nang Railway Station",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-station|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 2,
+      "breakdownCards": 3,
+      "visibleWords": 106,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-go-son-tra-night-market",
+      "title": "Đi Chợ đêm Sơn Trà",
+      "englishTitle": "Go to Son Tra Night Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 126,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-go-tien-sa-port",
+      "title": "Đi Cảng Tiên Sa",
+      "englishTitle": "Go to Tien Sa Port",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-port|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 3,
+      "visibleWords": 124,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-go-vo-nguyen-giap-street",
+      "title": "Đi Đường Võ Nguyên Giáp",
+      "englishTitle": "Go to Vo Nguyen Giap Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 126,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-near-bach-dang-street",
+      "title": "Đường Bạch Đằng gần đây không?",
+      "englishTitle": "Is Bach Dang Street near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 143,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-near-con-market",
+      "title": "Chợ Cồn gần đây không?",
+      "englishTitle": "Is Con Market near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|shopping-markets|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 132,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-near-han-market",
+      "title": "Chợ Hàn gần đây không?",
+      "englishTitle": "Is Han Market near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|shopping-markets|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 133,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-near-helio-night-market",
+      "title": "Chợ đêm Helio gần đây không?",
+      "englishTitle": "Is Helio Night Market near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|shopping-markets|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 150,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-near-nguyen-van-linh-street",
+      "title": "Đường Nguyễn Văn Linh gần đây không?",
+      "englishTitle": "Is Nguyen Van Linh Street near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 4,
+      "visibleWords": 145,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-near-son-tra-night-market",
+      "title": "Chợ đêm Sơn Trà gần đây không?",
+      "englishTitle": "Is Son Tra Night Market near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|shopping-markets|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 4,
+      "visibleWords": 139,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-near-vo-nguyen-giap-street",
+      "title": "Đường Võ Nguyên Giáp gần đây không?",
+      "englishTitle": "Is Vo Nguyen Giap Street near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 4,
+      "visibleWords": 132,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-stop-airport",
+      "title": "Dừng ở Sân bay Đà Nẵng",
+      "englishTitle": "Stop at Da Nang Airport",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-airport|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 142,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-stop-bach-dang-street",
+      "title": "Dừng ở Đường Bạch Đằng",
+      "englishTitle": "Stop at Bach Dang Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 132,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-stop-con-market",
+      "title": "Dừng ở Chợ Cồn",
+      "englishTitle": "Stop at Con Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 114,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-stop-helio-night-market",
+      "title": "Dừng ở Chợ đêm Helio",
+      "englishTitle": "Stop at Helio Night Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 132,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-stop-nguyen-van-linh-street",
+      "title": "Dừng ở Đường Nguyễn Văn Linh",
+      "englishTitle": "Stop at Nguyen Van Linh Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 3,
+      "visibleWords": 133,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-stop-railway-station",
+      "title": "Dừng ở Ga Đà Nẵng",
+      "englishTitle": "Stop at Da Nang Railway Station",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-station|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 2,
+      "breakdownCards": 3,
+      "visibleWords": 101,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-atm-bun-cha-huong-lien",
+      "title": "Có ATM gần Bún chả Hương Liên không?",
+      "englishTitle": "Is there an ATM near Bun Cha Huong Lien?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 169,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-atm-cha-ca-thang-long",
+      "title": "Có ATM gần Chả cá Thăng Long không?",
+      "englishTitle": "Is there an ATM near Cha Ca Thang Long?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 169,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-atm-dong-xuan-market",
+      "title": "Có ATM gần Chợ Đồng Xuân không?",
+      "englishTitle": "Is there an ATM near Dong Xuan Market?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 149,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-atm-giang-cafe",
+      "title": "Có ATM gần Cà phê Giảng không?",
+      "englishTitle": "Is there an ATM near Giang Cafe?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-cafe|content-role-cafe|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 142,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-atm-hang-bac-street",
+      "title": "Có ATM gần Phố Hàng Bạc không?",
+      "englishTitle": "Is there an ATM near Hang Bac Street?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 146,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-atm-hang-gai-street",
+      "title": "Có ATM gần Phố Hàng Gai không?",
+      "englishTitle": "Is there an ATM near Hang Gai Street?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 151,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-atm-long-bien-market",
+      "title": "Có ATM gần Chợ Long Biên không?",
+      "englishTitle": "Is there an ATM near Long Bien Market?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 149,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-dong-xuan-market",
+      "title": "Đi Chợ Đồng Xuân",
+      "englishTitle": "Go to Dong Xuan Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 137,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-giang-cafe",
+      "title": "Đi Cà phê Giảng",
+      "englishTitle": "Go to Giang Cafe",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-cafe|content-role-cafe|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 133,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-hang-bac-street",
+      "title": "Đi Phố Hàng Bạc",
+      "englishTitle": "Go to Hang Bac Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 137,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-hang-gai-street",
+      "title": "Đi Phố Hàng Gai",
+      "englishTitle": "Go to Hang Gai Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 142,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-long-bien-market",
+      "title": "Đi Chợ Long Biên",
+      "englishTitle": "Go to Long Bien Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 137,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-noi-bai-airport",
+      "title": "Đi Sân bay Nội Bài",
+      "englishTitle": "Go to Noi Bai Airport",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-airport|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 118,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-old-quarter",
+      "title": "Đi Phố cổ Hà Nội",
+      "englishTitle": "Go to Hanoi Old Quarter",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 145,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-phan-dinh-phung-street",
+      "title": "Đi Phố Phan Đình Phùng",
+      "englishTitle": "Go to Phan Dinh Phung Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 124,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-tay-ho",
+      "title": "Đi Tây Hồ",
+      "englishTitle": "Go to Tay Ho",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 96,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-train-street",
+      "title": "Đi Phố đường tàu Hà Nội",
+      "englishTitle": "Go to Hanoi Train Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 124,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-near-dong-xuan-market",
+      "title": "Chợ Đồng Xuân gần đây không?",
+      "englishTitle": "Is Dong Xuan Market near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|shopping-markets|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 150,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-near-hang-bac-street",
+      "title": "Phố Hàng Bạc gần đây không?",
+      "englishTitle": "Is Hang Bac Street near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 143,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-near-hang-gai-street",
+      "title": "Phố Hàng Gai gần đây không?",
+      "englishTitle": "Is Hang Gai Street near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 148,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-near-long-bien-market",
+      "title": "Chợ Long Biên gần đây không?",
+      "englishTitle": "Is Long Bien Market near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|shopping-markets|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 150,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-dong-xuan-market",
+      "title": "Dừng ở Chợ Đồng Xuân",
+      "englishTitle": "Stop at Dong Xuan Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 132,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-giang-cafe",
+      "title": "Dừng ở Cà phê Giảng",
+      "englishTitle": "Stop at Giang Cafe",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-cafe|content-role-cafe|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 125,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-hang-bac-street",
+      "title": "Dừng ở Phố Hàng Bạc",
+      "englishTitle": "Stop at Hang Bac Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 132,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-hang-gai-street",
+      "title": "Dừng ở Phố Hàng Gai",
+      "englishTitle": "Stop at Hang Gai Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 137,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-long-bien-market",
+      "title": "Dừng ở Chợ Long Biên",
+      "englishTitle": "Stop at Long Bien Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 132,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-noi-bai-airport",
+      "title": "Dừng ở Sân bay Nội Bài",
+      "englishTitle": "Stop at Noi Bai Airport",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-airport|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 113,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-phan-dinh-phung-street",
+      "title": "Dừng ở Phố Phan Đình Phùng",
+      "englishTitle": "Stop at Phan Dinh Phung Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 119,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-ta-hien-street",
+      "title": "Dừng ở Phố Tạ Hiện",
+      "englishTitle": "Stop at Ta Hien Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 105,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-tay-ho",
+      "title": "Dừng ở Tây Hồ",
+      "englishTitle": "Stop at Tay Ho",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 91,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-train-street",
+      "title": "Dừng ở Phố đường tàu Hà Nội",
+      "englishTitle": "Stop at Hanoi Train Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 119,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-atm-anan-saigon",
+      "title": "Có ATM gần Anăn Sài Gòn không?",
+      "englishTitle": "Is there an ATM near Anan Saigon?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 152,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-atm-ben-thanh-market",
+      "title": "Có ATM gần Chợ Bến Thành không?",
+      "englishTitle": "Is there an ATM near Ben Thanh Market?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 149,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-atm-binh-tay-market",
+      "title": "Có ATM gần Chợ Bình Tây không?",
+      "englishTitle": "Is there an ATM near Binh Tay Market?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 149,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-atm-bui-vien-street",
+      "title": "Có ATM gần Phố Bùi Viện không?",
+      "englishTitle": "Is there an ATM near Bui Vien Street?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 144,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-atm-cho-lon",
+      "title": "Có ATM gần Chợ Lớn không?",
+      "englishTitle": "Is there an ATM near Cho Lon?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 126,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-atm-district-1",
+      "title": "Có ATM gần Quận 1 không?",
+      "englishTitle": "Is there an ATM near District 1?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 131,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-atm-dong-khoi-street",
+      "title": "Có ATM gần Đường Đồng Khởi không?",
+      "englishTitle": "Is there an ATM near Dong Khoi Street?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 147,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-atm-ho-thi-ky-flower-market",
+      "title": "Có ATM gần Chợ hoa Hồ Thị Kỷ không?",
+      "englishTitle": "Is there an ATM near Ho Thi Ky Flower Market?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 185,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-go-binh-tay-market",
+      "title": "Đi Chợ Bình Tây",
+      "englishTitle": "Go to Binh Tay Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 135,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-go-cho-lon",
+      "title": "Đi Chợ Lớn",
+      "englishTitle": "Go to Cho Lon",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 117,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-go-dong-khoi-street",
+      "title": "Đi Đường Đồng Khởi",
+      "englishTitle": "Go to Dong Khoi Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 138,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-go-ho-thi-ky-flower-market",
+      "title": "Đi Chợ hoa Hồ Thị Kỷ",
+      "englishTitle": "Go to Ho Thi Ky Flower Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 173,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-go-le-thanh-ton-street",
+      "title": "Đi Đường Lê Thánh Tôn",
+      "englishTitle": "Go to Le Thanh Ton Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 2,
+      "breakdownCards": 3,
+      "visibleWords": 112,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-go-nguyen-hue-walking-street",
+      "title": "Đi Phố đi bộ Nguyễn Huệ",
+      "englishTitle": "Go to Nguyen Hue Walking Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 3,
+      "visibleWords": 151,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-go-nguyen-trai-street",
+      "title": "Đi Đường Nguyễn Trãi",
+      "englishTitle": "Go to Nguyen Trai Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 2,
+      "breakdownCards": 3,
+      "visibleWords": 100,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-go-pasteur-street",
+      "title": "Đi Đường Pasteur",
+      "englishTitle": "Go to Pasteur Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 2,
+      "breakdownCards": 3,
+      "visibleWords": 88,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-go-pham-ngu-lao-street",
+      "title": "Đi Phố Phạm Ngũ Lão",
+      "englishTitle": "Go to Pham Ngu Lao Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 2,
+      "breakdownCards": 3,
+      "visibleWords": 112,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-go-tan-son-nhat-airport",
+      "title": "Đi Sân bay Tân Sơn Nhất",
+      "englishTitle": "Go to Tan Son Nhat Airport",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-airport|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 2,
+      "breakdownCards": 3,
+      "visibleWords": 119,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-go-thao-dien",
+      "title": "Đi Thảo Điền",
+      "englishTitle": "Go to Thao Dien",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 3,
+      "visibleWords": 114,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-near-anan-saigon",
+      "title": "Anăn Sài Gòn gần đây không?",
+      "englishTitle": "Is Anan Saigon near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|landmarks-attractions|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 143,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-near-ben-thanh-market",
+      "title": "Chợ Bến Thành gần đây không?",
+      "englishTitle": "Is Ben Thanh Market near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|shopping-markets|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 150,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-near-binh-tay-market",
+      "title": "Chợ Bình Tây gần đây không?",
+      "englishTitle": "Is Binh Tay Market near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|shopping-markets|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 150,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-near-ho-thi-ky-flower-market",
+      "title": "Chợ hoa Hồ Thị Kỷ gần đây không?",
+      "englishTitle": "Is Ho Thi Ky Flower Market near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|shopping-markets|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 176,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-stop-ben-thanh-market",
+      "title": "Dừng ở Chợ Bến Thành",
+      "englishTitle": "Stop at Ben Thanh Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 132,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-stop-binh-tay-market",
+      "title": "Dừng ở Chợ Bình Tây",
+      "englishTitle": "Stop at Binh Tay Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 130,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-stop-bui-vien-street",
+      "title": "Dừng ở Phố Bùi Viện",
+      "englishTitle": "Stop at Bui Vien Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 130,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-stop-cho-lon",
+      "title": "Dừng ở Chợ Lớn",
+      "englishTitle": "Stop at Cho Lon",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 112,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-stop-district-1",
+      "title": "Dừng ở Quận 1",
+      "englishTitle": "Stop at District 1",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 113,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-stop-dong-khoi-street",
+      "title": "Dừng ở Đường Đồng Khởi",
+      "englishTitle": "Stop at Dong Khoi Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 133,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-stop-ho-thi-ky-flower-market",
+      "title": "Dừng ở Chợ hoa Hồ Thị Kỷ",
+      "englishTitle": "Stop at Ho Thi Ky Flower Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 168,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-stop-le-thanh-ton-street",
+      "title": "Dừng ở Đường Lê Thánh Tôn",
+      "englishTitle": "Stop at Le Thanh Ton Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 2,
+      "breakdownCards": 3,
+      "visibleWords": 107,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-stop-nguyen-trai-street",
+      "title": "Dừng ở Đường Nguyễn Trãi",
+      "englishTitle": "Stop at Nguyen Trai Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 2,
+      "breakdownCards": 3,
+      "visibleWords": 95,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-stop-pasteur-street",
+      "title": "Dừng ở Đường Pasteur",
+      "englishTitle": "Stop at Pasteur Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 2,
+      "breakdownCards": 3,
+      "visibleWords": 83,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-stop-pham-ngu-lao-street",
+      "title": "Dừng ở Phố Phạm Ngũ Lão",
+      "englishTitle": "Stop at Pham Ngu Lao Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 2,
+      "breakdownCards": 3,
+      "visibleWords": 107,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-atm-an-hoi-island",
+      "title": "Có ATM gần Đảo An Hội không?",
+      "englishTitle": "Is there an ATM near An Hoi Island?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 146,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-atm-ancient-town",
+      "title": "Có ATM gần Phố cổ Hội An không?",
+      "englishTitle": "Is there an ATM near Hoi An Ancient Town?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 164,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-atm-banh-mi-phuong",
+      "title": "Có ATM gần Bánh mì Phượng không?",
+      "englishTitle": "Is there an ATM near Banh Mi Phuong?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-restaurant|content-role-everyday|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 155,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-atm-cam-chau",
+      "title": "Có ATM gần Cẩm Châu không?",
+      "englishTitle": "Is there an ATM near Cam Chau?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 6,
+      "visibleWords": 118,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-atm-cam-nam",
+      "title": "Có ATM gần Cẩm Nam không?",
+      "englishTitle": "Is there an ATM near Cam Nam?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 6,
+      "visibleWords": 118,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-atm-faifo-coffee",
+      "title": "Có ATM gần Faifo Coffee không?",
+      "englishTitle": "Is there an ATM near Faifo Coffee?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-cafe|content-role-cafe|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 134,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-go-an-hoi-island",
+      "title": "Đi Đảo An Hội",
+      "englishTitle": "Go to An Hoi Island",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 137,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-go-cam-chau",
+      "title": "Đi Cẩm Châu",
+      "englishTitle": "Go to Cam Chau",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 3,
+      "visibleWords": 109,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-go-cam-nam",
+      "title": "Đi Cẩm Nam",
+      "englishTitle": "Go to Cam Nam",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 3,
+      "visibleWords": 109,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-go-faifo-coffee",
+      "title": "Đi Faifo Coffee",
+      "englishTitle": "Go to Faifo Coffee",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-cafe|content-role-cafe|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 125,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-go-market",
+      "title": "Đi Chợ Hội An",
+      "englishTitle": "Go to Hoi An Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 137,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-go-nguyen-hoang-night-market",
+      "title": "Đi Chợ đêm Nguyễn Hoàng",
+      "englishTitle": "Go to Nguyen Hoang Night Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 155,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-go-reach-out-tea-house",
+      "title": "Đi Reaching Out Tea House",
+      "englishTitle": "Go to Reaching Out Tea House",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-cafe|content-role-cafe|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 144,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-go-tran-phu-street",
+      "title": "Đi Phố Trần Phú",
+      "englishTitle": "Go to Tran Phu Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 2,
+      "breakdownCards": 3,
+      "visibleWords": 100,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-near-an-hoi-island",
+      "title": "Đảo An Hội gần đây không?",
+      "englishTitle": "Is An Hoi Island near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 143,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-near-ancient-town",
+      "title": "Phố cổ Hội An gần đây không?",
+      "englishTitle": "Is Hoi An Ancient Town near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 158,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-near-market",
+      "title": "Chợ Hội An gần đây không?",
+      "englishTitle": "Is Hoi An Market near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|shopping-markets|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 150,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-near-nguyen-hoang-night-market",
+      "title": "Chợ đêm Nguyễn Hoàng gần đây không?",
+      "englishTitle": "Is Nguyen Hoang Night Market near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|shopping-markets|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 168,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-near-night-market",
+      "title": "Chợ đêm Hội An gần đây không?",
+      "englishTitle": "Is Hoi An Night Market near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|shopping-markets|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 4,
+      "visibleWords": 151,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-stop-an-hoi-island",
+      "title": "Dừng ở Đảo An Hội",
+      "englishTitle": "Stop at An Hoi Island",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 132,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-stop-ancient-town",
+      "title": "Dừng ở Phố cổ Hội An",
+      "englishTitle": "Stop at Hoi An Ancient Town",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 147,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-stop-cam-chau",
+      "title": "Dừng ở Cẩm Châu",
+      "englishTitle": "Stop at Cam Chau",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 3,
+      "visibleWords": 104,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-stop-cam-nam",
+      "title": "Dừng ở Cẩm Nam",
+      "englishTitle": "Stop at Cam Nam",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 3,
+      "visibleWords": 104,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-stop-faifo-coffee",
+      "title": "Dừng ở Faifo Coffee",
+      "englishTitle": "Stop at Faifo Coffee",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-cafe|content-role-cafe|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 116,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-stop-market",
+      "title": "Dừng ở Chợ Hội An",
+      "englishTitle": "Stop at Hoi An Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 132,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-stop-nguyen-hoang-night-market",
+      "title": "Dừng ở Chợ đêm Nguyễn Hoàng",
+      "englishTitle": "Stop at Nguyen Hoang Night Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 150,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-stop-night-market",
+      "title": "Dừng ở Chợ đêm Hội An",
+      "englishTitle": "Stop at Hoi An Night Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 3,
+      "visibleWords": 133,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hoian-stop-reach-out-tea-house",
+      "title": "Dừng ở Reaching Out Tea House",
+      "englishTitle": "Stop at Reaching Out Tea House",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hoian|arrivals-routes|beginner|city-page-kind-phrase|place-kind-cafe|content-role-cafe|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 143,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-atm-an-cuu-market",
+      "title": "Có ATM gần Chợ An Cựu không?",
+      "englishTitle": "Is there an ATM near An Cuu Market?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 149,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-atm-bao-vinh-ancient-town",
+      "title": "Có ATM gần Phố cổ Bao Vinh không?",
+      "englishTitle": "Is there an ATM near Bao Vinh Ancient Town?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 164,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-atm-dong-ba-market",
+      "title": "Có ATM gần Chợ Đông Ba không?",
+      "englishTitle": "Is there an ATM near Dong Ba Market?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 153,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-atm-hen-island",
+      "title": "Có ATM gần Cồn Hến không?",
+      "englishTitle": "Is there an ATM near Hen Island?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 128,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-atm-le-loi-street",
+      "title": "Có ATM gần Đường Lê Lợi không?",
+      "englishTitle": "Is there an ATM near Le Loi Street?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 146,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-atm-les-jardins",
+      "title": "Có ATM gần Les Jardins de la Carambole không?",
+      "englishTitle": "Is there an ATM near Les Jardins de la Carambole?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|practical-help-near-places|intermediate|city-page-kind-phrase|place-kind-restaurant|content-role-everyday|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 191,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 32 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 32 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-go-an-cuu-market",
+      "title": "Đi Chợ An Cựu",
+      "englishTitle": "Go to An Cuu Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 137,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-go-bao-vinh-ancient-town",
+      "title": "Đi Phố cổ Bao Vinh",
+      "englishTitle": "Go to Bao Vinh Ancient Town",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 155,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-go-hen-island",
+      "title": "Đi Cồn Hến",
+      "englishTitle": "Go to Hen Island",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 119,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-go-nguyen-dinh-chieu-street",
+      "title": "Đi Phố đi bộ Nguyễn Đình Chiểu",
+      "englishTitle": "Go to Nguyen Dinh Chieu Walking Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 3,
+      "visibleWords": 162,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-go-night-market",
+      "title": "Đi Chợ đêm Huế",
+      "englishTitle": "Go to Hue Night Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 3,
+      "visibleWords": 122,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-go-phu-bai-airport",
+      "title": "Đi Sân bay Phú Bài",
+      "englishTitle": "Go to Phu Bai Airport",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-airport|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 117,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-go-railway-station",
+      "title": "Đi Ga Huế",
+      "englishTitle": "Go to Hue Railway Station",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-station|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 103,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-near-an-cuu-market",
+      "title": "Chợ An Cựu gần đây không?",
+      "englishTitle": "Is An Cuu Market near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|shopping-markets|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 150,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-near-bao-vinh-ancient-town",
+      "title": "Phố cổ Bao Vinh gần đây không?",
+      "englishTitle": "Is Bao Vinh Ancient Town near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 161,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-near-hen-island",
+      "title": "Cồn Hến gần đây không?",
+      "englishTitle": "Is Hen Island near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 125,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-near-le-loi-street",
+      "title": "Đường Lê Lợi gần đây không?",
+      "englishTitle": "Is Le Loi Street near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 143,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-near-nguyen-dinh-chieu-street",
+      "title": "Phố đi bộ Nguyễn Đình Chiểu gần đây không?",
+      "englishTitle": "Is Nguyen Dinh Chieu Walking Street near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 4,
+      "visibleWords": 168,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-near-night-market",
+      "title": "Chợ đêm Huế gần đây không?",
+      "englishTitle": "Is Hue Night Market near here?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|shopping-markets|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 4,
+      "visibleWords": 135,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 26 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 26 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-stop-an-cuu-market",
+      "title": "Dừng ở Chợ An Cựu",
+      "englishTitle": "Stop at An Cuu Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 132,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-stop-bao-vinh-ancient-town",
+      "title": "Dừng ở Phố cổ Bao Vinh",
+      "englishTitle": "Stop at Bao Vinh Ancient Town",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 150,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-stop-dong-ba-market",
+      "title": "Dừng ở Chợ Đông Ba",
+      "englishTitle": "Stop at Dong Ba Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 134,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-stop-hen-island",
+      "title": "Dừng ở Cồn Hến",
+      "englishTitle": "Stop at Hen Island",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 114,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-stop-le-loi-street",
+      "title": "Dừng ở Đường Lê Lợi",
+      "englishTitle": "Stop at Le Loi Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 132,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-stop-nguyen-dinh-chieu-street",
+      "title": "Dừng ở Phố đi bộ Nguyễn Đình Chiểu",
+      "englishTitle": "Stop at Nguyen Dinh Chieu Walking Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 3,
+      "visibleWords": 157,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-stop-night-market",
+      "title": "Dừng ở Chợ đêm Huế",
+      "englishTitle": "Stop at Hue Night Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 4,
+      "breakdownCards": 3,
+      "visibleWords": 117,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-stop-phu-bai-airport",
+      "title": "Dừng ở Sân bay Phú Bài",
+      "englishTitle": "Stop at Phu Bai Airport",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-airport|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 112,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-family-city-hue-stop-railway-station",
+      "title": "Dừng ở Ga Huế",
+      "englishTitle": "Stop at Hue Railway Station",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hue|arrivals-routes|beginner|city-page-kind-phrase|place-kind-station|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 7,
+      "severity": "WATCH",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 98,
+      "issues": [
+        {
+          "code": "body_repeated_20_plus",
+          "weight": 7,
+          "detail": "good-to-know: repeated 45 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 45 times"
+    },
+    {
+      "pageID": "viet-acknowledge-co",
+      "title": "Có",
+      "englishTitle": "Yes / there is",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-co.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 1,
+      "visibleWords": 208,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 11 times"
+    },
+    {
+      "pageID": "viet-acknowledge-da",
+      "title": "Dạ",
+      "englishTitle": "Yes / polite acknowledgment",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 1,
+      "visibleWords": 215,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-acknowledge-dung",
+      "title": "Đúng",
+      "englishTitle": "Yes / correct",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-dung.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 1,
+      "visibleWords": 191,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-acknowledge-duoc",
+      "title": "Được",
+      "englishTitle": "Okay / that works",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-duoc.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 1,
+      "visibleWords": 199,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 8 times"
+    },
+    {
+      "pageID": "viet-acknowledge-khong",
+      "title": "Không",
+      "englishTitle": "No",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-khong.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 1,
+      "visibleWords": 182,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 8 times"
+    },
+    {
+      "pageID": "viet-da-chao-ba",
+      "title": "Dạ, chào bà",
+      "englishTitle": "Respectful hello to an elderly woman",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da-chao-ba.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 4,
+      "visibleWords": 240,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 11 times"
+    },
+    {
+      "pageID": "viet-da-chao-chi",
+      "title": "Dạ, chào chị",
+      "englishTitle": "Respectful hello to an older woman",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da-chao-chi.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 4,
+      "visibleWords": 233,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 8 times"
+    },
+    {
+      "pageID": "viet-da-chao-chu",
+      "title": "Dạ, chào chú",
+      "englishTitle": "Respectful hello to an uncle-age man",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da-chao-chu.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 7,
+      "breakdownCards": 4,
+      "visibleWords": 243,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 8 times"
+    },
+    {
+      "pageID": "viet-da-chao-ong",
+      "title": "Dạ, chào ông",
+      "englishTitle": "Respectful hello to an elderly man",
+      "tierRole": "catalog-promoted",
+      "categoryIDs": "greetings|polite-basics",
+      "sourcePath": "content-draft/viet/canonical-pages/catalog-promoted/polite-basics/acknowledge-da-chao-ong.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 4,
+      "visibleWords": 222,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "when-to-use: repeated 8 times"
+        }
+      ],
+      "worstSnippet": "when-to-use: repeated 8 times"
+    },
+    {
+      "pageID": "viet-family-airport-baggage",
+      "title": "Lấy hành lý ở đâu?",
+      "englishTitle": "Where is baggage claim?",
+      "tierRole": "tier1",
+      "categoryIDs": "airport-border-arrival",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-baggage.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 4,
+      "visibleWords": 296,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-airport-immigration",
+      "title": "Nhập cảnh ở đâu?",
+      "englishTitle": "Where is immigration?",
+      "tierRole": "tier1",
+      "categoryIDs": "airport-border-arrival",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-immigration.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 3,
+      "visibleWords": 280,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-airport-pickup",
+      "title": "Khu đón ở đâu?",
+      "englishTitle": "Where is the pickup area?",
+      "tierRole": "tier1",
+      "categoryIDs": "airport-border-arrival",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-pickup.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 9,
+      "breakdownCards": 3,
+      "visibleWords": 333,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-airport-sim",
+      "title": "Mua SIM ở đâu?",
+      "englishTitle": "Where can I buy a SIM card?",
+      "tierRole": "tier1",
+      "categoryIDs": "airport-border-arrival",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/airport-border-arrival/airport-sim.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 8,
+      "breakdownCards": 4,
+      "visibleWords": 314,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-bathroom-where",
+      "title": "Nhà vệ sinh ở đâu?",
+      "englishTitle": "Where is the bathroom?",
+      "tierRole": "tier1",
+      "categoryIDs": "bathroom-personal-needs",
+      "sourcePath": "content-draft/viet/canonical-pages/tier-one/bathroom-personal-needs/bathroom-where.json",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 6,
+      "breakdownCards": 3,
+      "visibleWords": 282,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "breakdown: repeated 16 times"
+        }
+      ],
+      "worstSnippet": "breakdown: repeated 16 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-eat-near-bach-dang-street",
+      "title": "Ăn gần Đường Bạch Đằng",
+      "englishTitle": "Eat near Bach Dang Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|food-coffee|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 133,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 19 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 19 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-eat-near-con-market",
+      "title": "Ăn gần Chợ Cồn",
+      "englishTitle": "Eat near Con Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|food-coffee|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 110,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 19 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 19 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-eat-near-han-market",
+      "title": "Ăn gần Chợ Hàn",
+      "englishTitle": "Eat near Han Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|food-coffee|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 110,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 19 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 19 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-go-nen",
+      "title": "Cho tôi đến nhà hàng Nén Đà Nẵng.",
+      "englishTitle": "Please take me to Nén Đà Nẵng restaurant.",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 164,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-stop-nen",
+      "title": "Cho tôi xuống gần nhà hàng Nén Đà Nẵng.",
+      "englishTitle": "Let me off near Nén Đà Nẵng restaurant.",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|arrivals-routes|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 7,
+      "visibleWords": 171,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-family-city-danang-where-nen",
+      "title": "Nhà hàng Nén Đà Nẵng ở đâu?",
+      "englishTitle": "Where is Nén Đà Nẵng?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|danang|food-coffee|intermediate|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 155,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-eat-near-bun-cha-huong-lien",
+      "title": "Ăn gần Bún chả Hương Liên",
+      "englishTitle": "Eat near Bun Cha Huong Lien",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|food-coffee|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 156,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 19 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 19 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-eat-near-cha-ca-thang-long",
+      "title": "Ăn gần Chả cá Thăng Long",
+      "englishTitle": "Eat near Cha Ca Thang Long",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|food-coffee|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 156,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 19 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 19 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-eat-near-dong-xuan-market",
+      "title": "Ăn gần Chợ Đồng Xuân",
+      "englishTitle": "Eat near Dong Xuan Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|food-coffee|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 131,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 19 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 19 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-entrance-dong-xuan-market",
+      "title": "Lối vào Chợ Đồng Xuân ở đâu?",
+      "englishTitle": "Where is the entrance to Dong Xuan Market?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|shopping-markets|intermediate|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 149,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-entrance-long-bien-market",
+      "title": "Lối vào Chợ Long Biên ở đâu?",
+      "englishTitle": "Where is the entrance to Long Bien Market?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|shopping-markets|intermediate|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 149,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-bun-cha-huong-lien",
+      "title": "Cho tôi đến nhà hàng Bún chả Hương Liên.",
+      "englishTitle": "Please take me to Bún chả Hương Liên restaurant.",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 175,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-cha-ca-thang-long",
+      "title": "Cho tôi đến nhà hàng Chả cá Thăng Long.",
+      "englishTitle": "Please take me to Chả cá Thăng Long restaurant.",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 175,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-pho-bat-dan",
+      "title": "Cho tôi đến nhà hàng Phở Bát Đàn.",
+      "englishTitle": "Please take me to Phở Bát Đàn restaurant.",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-everyday|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 154,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-go-tam-vi",
+      "title": "Cho tôi đến nhà hàng Tầm Vị.",
+      "englishTitle": "Please take me to Tầm Vị restaurant.",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 6,
+      "visibleWords": 148,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 11 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 11 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-bun-cha-huong-lien",
+      "title": "Cho tôi xuống gần nhà hàng Bún chả Hương Liên.",
+      "englishTitle": "Let me off near Bún chả Hương Liên restaurant.",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 7,
+      "visibleWords": 184,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-cha-ca-thang-long",
+      "title": "Cho tôi xuống gần nhà hàng Chả cá Thăng Long.",
+      "englishTitle": "Let me off near Chả cá Thăng Long restaurant.",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 7,
+      "visibleWords": 184,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-pho-bat-dan",
+      "title": "Cho tôi xuống gần nhà hàng Phở Bát Đàn.",
+      "englishTitle": "Let me off near Phở Bát Đàn restaurant.",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-everyday|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 7,
+      "visibleWords": 165,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-stop-tam-vi",
+      "title": "Cho tôi xuống gần nhà hàng Tầm Vị.",
+      "englishTitle": "Let me off near Tầm Vị restaurant.",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 7,
+      "visibleWords": 153,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 9 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 9 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-where-bun-cha-huong-lien",
+      "title": "Bún chả Hương Liên ở đâu?",
+      "englishTitle": "Where is Bun Cha Huong Lien?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|food-coffee|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 165,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-where-cha-ca-thang-long",
+      "title": "Chả cá Thăng Long ở đâu?",
+      "englishTitle": "Where is Cha Ca Thang Long?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|food-coffee|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 165,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-where-hang-gai-street",
+      "title": "Phố Hàng Gai ở đâu?",
+      "englishTitle": "Where is Hang Gai Street?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 141,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-where-long-bien-market",
+      "title": "Chợ Long Biên ở đâu?",
+      "englishTitle": "Where is Long Bien Market?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|shopping-markets|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 142,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-where-noi-bai-airport",
+      "title": "Sân bay Nội Bài ở đâu?",
+      "englishTitle": "Where is Noi Bai Airport?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|arrivals-routes|beginner|city-page-kind-phrase|place-kind-airport|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 118,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-where-old-quarter",
+      "title": "Phố cổ Hà Nội ở đâu?",
+      "englishTitle": "Where is Hanoi Old Quarter?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 143,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-where-phan-dinh-phung-street",
+      "title": "Phố Phan Đình Phùng ở đâu?",
+      "englishTitle": "Where is Phan Dinh Phung Street?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 122,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-where-pho-bat-dan",
+      "title": "Phở Bát Đàn ở đâu?",
+      "englishTitle": "Where is Pho Bat Dan?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|food-coffee|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-everyday|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 144,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-where-ta-hien-street",
+      "title": "Phố Tạ Hiện ở đâu?",
+      "englishTitle": "Where is Ta Hien Street?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 108,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-where-tam-vi",
+      "title": "Tầm Vị ở đâu?",
+      "englishTitle": "Where is Tam Vi?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|food-coffee|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 3,
+      "visibleWords": 138,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-where-tay-ho",
+      "title": "Tây Hồ ở đâu?",
+      "englishTitle": "Where is Tay Ho?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 94,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-family-city-hanoi-where-train-street",
+      "title": "Phố đường tàu Hà Nội ở đâu?",
+      "englishTitle": "Where is Hanoi Train Street?",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hanoi|neighborhoods-streets|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 3,
+      "breakdownCards": 3,
+      "visibleWords": 122,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 12 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 12 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-eat-near-anan-saigon",
+      "title": "Ăn gần Anăn Sài Gòn",
+      "englishTitle": "Eat near Anan Saigon",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|food-coffee|beginner|city-page-kind-phrase|place-kind-restaurant|content-role-fine-dining|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 134,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 19 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 19 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-eat-near-ben-thanh-market",
+      "title": "Ăn gần Chợ Bến Thành",
+      "englishTitle": "Eat near Ben Thanh Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|food-coffee|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 131,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 19 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 19 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-eat-near-binh-tay-market",
+      "title": "Ăn gần Chợ Bình Tây",
+      "englishTitle": "Eat near Binh Tay Market",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|food-coffee|beginner|city-page-kind-phrase|place-kind-market|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 131,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 19 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 19 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-eat-near-bui-vien-street",
+      "title": "Ăn gần Phố Bùi Viện",
+      "englishTitle": "Eat near Bui Vien Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|food-coffee|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 131,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 19 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 19 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-eat-near-cho-lon",
+      "title": "Ăn gần Chợ Lớn",
+      "englishTitle": "Eat near Cho Lon",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|food-coffee|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 113,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 19 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 19 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-eat-near-district-1",
+      "title": "Ăn gần Quận 1",
+      "englishTitle": "Eat near District 1",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|food-coffee|beginner|city-page-kind-phrase|place-kind-neighborhood|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 113,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 19 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 19 times"
+    },
+    {
+      "pageID": "viet-family-city-hcmc-eat-near-dong-khoi-street",
+      "title": "Ăn gần Đường Đồng Khởi",
+      "englishTitle": "Eat near Dong Khoi Street",
+      "tierRole": "city-v1",
+      "categoryIDs": "city-guides|hcmc|food-coffee|beginner|city-page-kind-phrase|place-kind-street|city-phrases|derived-place-phrases",
+      "sourcePath": "",
+      "score": 4,
+      "severity": "PASS",
+      "phraseCards": 5,
+      "breakdownCards": 4,
+      "visibleWords": 134,
+      "issues": [
+        {
+          "code": "body_repeated_8_plus",
+          "weight": 4,
+          "detail": "good-to-know: repeated 19 times"
+        }
+      ],
+      "worstSnippet": "good-to-know: repeated 19 times"
+    }
+  ]
+}

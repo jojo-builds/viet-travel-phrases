@@ -1,7 +1,7 @@
 {
   "pageID": "viet-phrase-v900-tran-the-car-number-is-different",
-  "phraseText": "Số xe khác hẳn",
-  "englishTitle": "The car number is different",
+  "phraseText": "Biển số xe không giống",
+  "englishTitle": "The license plate is different",
   "reviewStatus": "reviewed",
   "visualReview": {
     "status": "reviewed",
@@ -20,29 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Số",
-      "english": "number"
+      "vietnamese": "Biển số xe",
+      "english": "license plate",
+      "keepTogetherReason": "license-plate phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "xe",
-      "english": "vehicle"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "khác",
-      "english": "different / another"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "hẳn",
-      "english": "completely / noticeably"
+      "vietnamese": "không giống",
+      "english": "does not match / is different",
+      "keepTogetherReason": "not-matching phrase"
     },
     {
       "id": "full",
-      "vietnamese": "Số xe khác hẳn",
-      "english": "The car number is different",
-      "audioKey": "v900-tran-the-car-number-is-different"
+      "vietnamese": "Biển số xe không giống",
+      "english": "The license plate is different",
+      "audioKey": null
     }
   ]
 }

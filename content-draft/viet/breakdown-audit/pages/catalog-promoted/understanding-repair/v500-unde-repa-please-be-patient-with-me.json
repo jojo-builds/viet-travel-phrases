@@ -20,29 +20,21 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Xin",
-      "english": "please / request"
+      "vietnamese": "Xin hãy",
+      "english": "please",
+      "keepTogetherReason": "polite request frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "hãy",
-      "english": "please do"
+      "vietnamese": "kiên nhẫn",
+      "english": "be patient",
+      "keepTogetherReason": "be-patient phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "kiên nhẫn",
-      "english": "patient",
-      "keepTogetherReason": "compound adjective"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "với",
-      "english": "with / to"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "tôi",
-      "english": "I / me"
+      "vietnamese": "với tôi",
+      "english": "with me",
+      "keepTogetherReason": "with-me phrase"
     },
     {
       "id": "full",

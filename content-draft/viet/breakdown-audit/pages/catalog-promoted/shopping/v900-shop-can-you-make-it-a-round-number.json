@@ -20,45 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
+      "keepTogetherReason": "can-you phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "biến nó thành",
+      "english": "make it into",
+      "keepTogetherReason": "make-it-into phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "biến",
-      "english": "turn into"
+      "vietnamese": "một số tròn",
+      "english": "a round number",
+      "keepTogetherReason": "round-number phrase"
     },
     {
       "id": "chunk-4",
-      "vietnamese": "nó",
-      "english": "it"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "thành",
-      "english": "become / city"
-    },
-    {
-      "id": "chunk-6",
-      "vietnamese": "một",
-      "english": "one / a"
-    },
-    {
-      "vietnamese": "số tròn",
-      "english": "round number",
-      "keepTogetherReason": "compound number term"
-    },
-    {
-      "id": "chunk-9",
       "vietnamese": "được không?",
-      "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "english": "is it possible?",
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

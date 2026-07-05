@@ -1,0 +1,1117 @@
+Batch ID: hoian_026_050_humanizer_500_2026_05_26
+
+# ChatGPT Bulk Humanizer Prompt
+
+Use inside the ChatGPT Project `SpeakLocal City Pages v2.2 Copy`.
+
+You are repairing existing SpeakLocal Viet city-library source copy into humanized v2.2 production-candidate copy. You are not creating a new schema, not writing a travel article, and not adding new one-off phrase cards.
+
+Read the project source pack first. V2.2 repo docs remain the source of truth.
+
+## Your Job
+
+Rewrite the provided JSON chunk while preserving the exact object shape:
+
+- same `cityID`
+- same `range`
+- same number of `entries`
+- same page order
+- same `pageID` values
+- same top-level entry field names
+- same section IDs
+- preserve all source sections, including `when-to-use` if present
+- preserve exact `phraseIDs` arrays when they already exist
+- do not add new phrase IDs
+
+The output must be valid JSON for the chunk file. Also include a compact self-gate report after the JSON.
+
+## Voice
+
+Shorter. Sharper. More observed. Adult. Calm. Useful.
+
+The page should feel like a well-traveled friend quietly pointing out how this place fits into the day.
+
+Before rewriting each page, silently choose the one traveler moment it owns: a pause, crossing, pickup, bowl, upstairs choice, market browse, indoor reset, station move, rain plan, ticket moment, route pairing, or similar concrete situation.
+
+Let that moment shape the copy. Then map it back into the existing fields.
+
+## Remove Known Drift
+
+Do not use these visible patterns:
+
+- `best for`, `best as`, `best when`, `works best`, `reads best`
+- `Worth it if`
+- `What you'll get`
+- `Before you go`
+- `Why go`
+- `Say it locally`
+- `useful because`
+- `useful moment`
+- `the page`
+- `the entry`
+- `this listing`
+- `city library`
+- `visible copy`
+- `freshness check`
+- `source evidence`
+- `copy should`
+- `copy stays`
+- `check_catalog`
+- `render`
+- `not_run`
+- `production-ready`
+- `database`
+- `schema`
+
+Avoid headings that start with command verbs such as `Use`, `Keep`, `Choose`, `Ask`, `Confirm`, `Leave`, `Start`, or `Let`.
+
+Avoid visible sentences beginning with `Use ...`.
+
+## Phrase Cards
+
+If the source `quick-say` section has `phraseIDs`:
+
+- keep the exact IDs in the same order
+- title must stay `Useful Phrases`
+- body must stay empty
+
+If the source `quick-say` section has no `phraseIDs`:
+
+- do not use the title `Useful Phrases`
+- do not add phrase IDs
+- write a natural title and a short body that helps pronunciation, naming, ordering, route, or recognition
+
+## Substance Preservation
+
+Do not delete the actual place to sound cleaner.
+
+Preserve stable specifics from the source: neighborhood, building role, market role, food/drink role, river/beach/station/airport/bridge context, old building details, craft village context, or stable route pairing.
+
+If source evidence is thin, narrow the claim. Do not pad with generic props like signs, benches, awnings, bags, shopfronts, or `local texture` unless the source specifically supports them.
+
+Do not invent hours, prices, current menus, ticket rules, access rules, closures, schedules, rankings, awards, or live operations.
+
+## Mobile Limits
+
+- Keep `summary`, `context`, `tip`, `rationale`, and every non-empty section body under 45 words.
+- Keep `summary` at least 130 characters so it survives the importer floor.
+- Keep every section doing a different job.
+- No duplicate body lines.
+
+## Output
+
+First output the complete JSON chunk in one fenced `json` block.
+
+Then output:
+
+```markdown
+## Writer self-gate
+
+- `chunk_file: ...`
+- `entries: ...`
+- `self_gate_status: pass/revise`
+- `heading_cadence_risks: ...`
+- `phrase_card_risks: ...`
+- `thin_source_pages: ...`
+- `pages_requiring_codex_integrity_review: ...`
+- `notes_for_codex: ...`
+```
+
+If you cannot safely finish the whole chunk, output `BLOCKED_STUB` and explain why. Do not return a partial chunk as if it is final.
+
+## City-Specific Brief
+
+Hoi An-specific repair brief: remove legacy formula copy such as "worth picturing because," "gives your itinerary a clearer image," "works best," "abstract label," and repeated "alongside" scaffolding. Keep yellow-wall/river/lantern language only when it truly belongs to the page. Make bridges, beaches, museums, villages, restaurants, markets, and streets distinct from each other.
+
+## Chunk To Repair
+
+```json
+{
+  "cityID": "hoian",
+  "range": "026-050",
+  "entries": [
+    {
+      "pageID": "city-hoian-place-cham-islands",
+      "summary": "Cham Islands is worth knowing in Hoi An because it brings the city opening beyond buildings and traffic into the trip. Expect turquoise island bay with fishing boats and green hills, clear daylight.",
+      "context": "For Cham Islands, Hoi An's nature stop story comes through water, weather, quieter space beyond traffic, and green edges, alongside lantern-street Hoi An.",
+      "tip": "Cham Islands carries water, weather, quieter space beyond traffic, and green edges, alongside lantern-street Hoi An into the travel plan.",
+      "rationale": "Cham Islands brings Hoi An into focus through paths, shade, water, and weather, alongside lantern-street Hoi An.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Cham Islands is worth knowing because it gives Hoi An a specific nature stop scene: quieter space beyond traffic, green edges, paths, and shade, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Cham Islands, you get the city opening beyond buildings and traffic: turquoise island bay with fishing boats and green hills, clear daylight, with quieter space beyond traffic, green edges, paths, and shade, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Cù Lao Chàm for Cham Islands. The local name is easier to remember once it sits beside shade, water, weather, and quieter space beyond traffic, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want the trip to open beyond dense streets into water, shade, weather, or green edges: shade, water, weather, and quieter space beyond traffic, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Cham Islands works best when the name is tied to the reason for going, not memorized as an abstract label. Picture turquoise island bay with fishing boats and green hills, clear daylight with green edges, paths, shade, and water, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cù Lao Chàm belongs to the scene, with quieter space beyond traffic, green edges, paths, and shade, alongside lantern-street Hoi An around it and Hoi An in view."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-cham-islands-snorkel-boat",
+      "summary": "Cham Islands snorkel boat is worth knowing in Hoi An because it brings water travel as part of the place rather than only transport into the trip. Expect small tour boat heading to green islands over clear water.",
+      "context": "For Cham Islands snorkel boat, Hoi An's boat experience story comes through water light, riverbanks, bridges, and boarding points, alongside Cam Thanh coconut-waterway life.",
+      "tip": "Hoi An feels more specific when Cham Islands snorkel boat is tied to a slower path across the day, boats, water light, and riverbanks, alongside Cam Thanh coconut-waterway life.",
+      "rationale": "Cham Islands snorkel boat brings Hoi An into focus through water light, riverbanks, bridges, and boarding points, alongside Cam Thanh coconut-waterway life.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Cham Islands snorkel boat is worth knowing because it gives Hoi An a specific boat experience scene: a slower path across the day, boats, water light, and riverbanks, alongside Cam Thanh coconut-waterway life."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Cham Islands snorkel boat, you get water travel as part of the place rather than only transport: small tour boat heading to green islands over clear water, with water light, riverbanks, bridges, and boarding points, alongside Cam Thanh coconut-waterway life."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Tàu đi Cù Lao Chàm for Cham Islands snorkel boat. The local name is easier to remember once it sits beside riverbanks, bridges, boarding points, and a slower path across the day, alongside Cam Thanh coconut-waterway life."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Cham Islands snorkel boat gives your itinerary a clearer image: boats, water light, riverbanks, and bridges, alongside Cam Thanh coconut-waterway life."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Cham Islands snorkel boat works best when the name is tied to the reason for going, not memorized as an abstract label. Picture small tour boat heading to green islands over clear water with boarding points, a slower path across the day, boats, and water light, alongside Cam Thanh coconut-waterway life."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Tàu đi Cù Lao Chàm belongs in the same image as a slower path across the day, boats, water light, and riverbanks, alongside Cam Thanh coconut-waterway life, with Cham Islands snorkel boat rooted in Hoi An."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-che-bap-cam-nam",
+      "summary": "Cam Nam corn sweet soup is worth trying in Hoi An for sweetness, texture, color, and a small break between bigger plans. Expect bowl of corn sweet soup with coconut milk on simple table, riverside daylight.",
+      "context": "For Cam Nam corn sweet soup, Hoi An's sweet story comes through evening snack counters, dessert cups, coconut milk, and jelly, alongside Hoi An old-town texture.",
+      "tip": "Chè bắp Cẩm Nam ở Hội An points back to Cam Nam corn sweet soup through evening snack counters, dessert cups, coconut milk, and jelly, alongside Hoi An old-town texture.",
+      "rationale": "Cam Nam corn sweet soup brings Hoi An into focus through coconut milk, jelly, shaved ice, and fruit, alongside Hoi An old-town texture.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Cam Nam corn sweet soup is worth trying for the sweet side of Hoi An: the sweet side of the city through cups, ice, fruit, jelly, coconut milk, and evening snack counters, with coconut milk, jelly, shaved ice, and fruit, alongside Hoi An old-town texture."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Cam Nam corn sweet soup, you get the sweet side of the city through cups, ice, fruit, jelly, coconut milk, and evening snack counters: bowl of corn sweet soup with coconut milk on simple table, riverside daylight, with fruit, color, evening snack counters, and dessert cups, alongside Hoi An old-town texture."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chè bắp Cẩm Nam ở Hội An for Cam Nam corn sweet soup. The local name is easier to remember once it sits beside dessert cups, coconut milk, jelly, and shaved ice, alongside Hoi An old-town texture."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want the sweet, textural side of the city: dessert cups, coconut milk, jelly, and shaved ice, alongside Hoi An old-town texture."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Cam Nam corn sweet soup works best when the name is tied to the reason for going, not memorized as an abstract label. Picture bowl of corn sweet soup with coconut milk on simple table, riverside daylight with color, evening snack counters, dessert cups, and coconut milk, alongside Hoi An old-town texture."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chè bắp Cẩm Nam ở Hội An belongs to the real scene around Cam Nam corn sweet soup: coconut milk, jelly, shaved ice, and fruit, alongside Hoi An old-town texture."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-chuc-thanh-pagoda",
+      "summary": "Chuc Thanh Pagoda is worth approaching slowly because worship, architecture, incense, and local memory shape the visit. Expect old pagoda courtyard with mossy roof tiles and frangipani trees.",
+      "context": "For Chuc Thanh Pagoda, Hoi An's sacred place story comes through temple gates, shade, respectful pauses, and incense, alongside Hoi An old-town texture.",
+      "tip": "Respectful pauses, incense, courtyards, and tiled roofs, alongside Hoi An old-town texture give Chuc Thanh Pagoda a setting before the trip begins.",
+      "rationale": "Chuc Thanh Pagoda brings Hoi An into focus through courtyards, tiled roofs, temple gates, and shade, alongside Hoi An old-town texture.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Chuc Thanh Pagoda is worth approaching slowly because worship, architecture, incense, and local memory all shape the visit: respectful pauses, incense, courtyards, and tiled roofs, alongside Hoi An old-town texture."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Chuc Thanh Pagoda, you get worship, architecture, local memory, and the quieter rhythm of a spiritual stop: old pagoda courtyard with mossy roof tiles and frangipani trees, with courtyards, tiled roofs, temple gates, and shade, alongside Hoi An old-town texture."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chùa Chúc Thánh for Chuc Thanh Pagoda. The local name is easier to remember once it sits beside shade, respectful pauses, incense, and courtyards, alongside Hoi An old-town texture."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if temples, incense, worship, and quiet architecture help the place feel deeper: tiled roofs, temple gates, shade, and respectful pauses, alongside Hoi An old-town texture."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Chuc Thanh Pagoda works best when the name is tied to the reason for going, not memorized as an abstract label. Picture old pagoda courtyard with mossy roof tiles and frangipani trees with shade, respectful pauses, incense, and courtyards, alongside Hoi An old-town texture."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The image of Chuc Thanh Pagoda feels more present when Chùa Chúc Thánh has respectful pauses, incense, courtyards, and tiled roofs, alongside Hoi An old-town texture around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-cocobox",
+      "summary": "Cocobox is worth saving for Hoi An's cafe rhythm: coffee, ice, sweetness, design, and a slower pause in the day. Expect tropical juice and coffee counter with fruit, yellow wall.",
+      "context": "For Cocobox, Hoi An's cafe story comes through street stools, design details, soft pauses, and cafe views, alongside lantern-street Hoi An.",
+      "tip": "Cocobox sits inside the scene around Cocobox: soft pauses, cafe views, coffee counters, and iced glasses, alongside lantern-street Hoi An.",
+      "rationale": "Cocobox brings Hoi An into focus through soft pauses, cafe views, coffee counters, and iced glasses, alongside lantern-street Hoi An.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Cocobox is worth saving when you want Hoi An's cafe culture, not just caffeine: street stools, design details, soft pauses, and cafe views, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Cocobox, you get Vietnam's cafe culture and the slower rhythm between meals and sightseeing: tropical juice and coffee counter with fruit, yellow wall, with street stools, design details, soft pauses, and cafe views, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Cocobox usually stays as the venue name. Say it slowly and connect it to the scene around it: design details, soft pauses, cafe views, and coffee counters, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the trip needs a slower pause between walks, markets, meals, or heat: iced glasses, street stools, design details, and soft pauses, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Cocobox works best when the name is tied to the reason for going, not memorized as an abstract label. Picture tropical juice and coffee counter with fruit, yellow wall with cafe views, coffee counters, iced glasses, and street stools, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cocobox carries the visual details around it: coffee counters, iced glasses, street stools, and design details, alongside lantern-street Hoi An, plus the local setting of Tropical juice and coffee counter with fruit, yellow wall."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-com-ga",
+      "summary": "Hoi An chicken rice is worth trying in Hoi An because it gives the trip a flavor to imagine before arrival. Expect yellow chicken rice with shredded chicken, herbs, and dipping sauce, overhead daylight.",
+      "context": "For Hoi An chicken rice, Hoi An's food story comes through herbs, sauce, steam, and texture, alongside yellow-wall old town.",
+      "tip": "Hoi An chicken rice carries steam, texture, small meal rituals, and flavor, alongside yellow-wall old town into the travel plan.",
+      "rationale": "Hoi An chicken rice brings Hoi An into focus through small meal rituals, flavor, herbs, and sauce, alongside yellow-wall old town.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Hoi An chicken rice is worth trying because it turns Hoi An into flavor: local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember, with small meal rituals, flavor, herbs, and sauce, alongside yellow-wall old town."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Hoi An chicken rice, you get local flavor, texture, herbs, sauce, steam, and the small meal rituals visitors remember: yellow chicken rice with shredded chicken, herbs, and dipping sauce, overhead daylight, with small meal rituals, flavor, herbs, and sauce, alongside yellow-wall old town."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Cơm gà Hội An for Hoi An chicken rice. The local name is easier to remember once it sits beside sauce, steam, texture, and small meal rituals, alongside yellow-wall old town."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a food memory rather than only a label: flavor, herbs, sauce, and steam, alongside yellow-wall old town."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Hoi An chicken rice works best when the name is tied to the reason for going, not memorized as an abstract label. Picture yellow chicken rice with shredded chicken, herbs, and dipping sauce, overhead daylight with texture, small meal rituals, flavor, and herbs, alongside yellow-wall old town."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cơm gà Hội An carries Yellow chicken rice with shredded chicken, herbs, and dipping sauce, overhead daylight forward when the visitor sees or hears the place later."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-cooking-class",
+      "summary": "Hoi An cooking class is worth knowing in Hoi An because it brings participating in local craft, cooking, or making rather than only watching into the trip. Expect open-air cooking table with herbs, rice paper, and bowls.",
+      "context": "For Hoi An cooking class, Hoi An's workshop story comes through hands, a finished thing to remember, workshop tables, and ingredients, alongside yellow-wall old town.",
+      "tip": "Hoi An cooking class becomes more specific beside hands, a finished thing to remember, workshop tables, and ingredients, alongside yellow-wall old town.",
+      "rationale": "Hoi An cooking class brings Hoi An into focus through hands, a finished thing to remember, workshop tables, and ingredients, alongside yellow-wall old town.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Hoi An cooking class is worth knowing because it gives Hoi An a specific workshop scene: workshop tables, ingredients, tools, and instruction, alongside yellow-wall old town."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Hoi An cooking class, you get participating in local craft, cooking, or making rather than only watching: open-air cooking table with herbs, rice paper, and bowls, with tools, instruction, hands, and a finished thing to remember, alongside yellow-wall old town."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Lớp học nấu ăn Hội An for Hoi An cooking class. The local name is easier to remember once it sits beside a finished thing to remember, workshop tables, ingredients, and tools, alongside yellow-wall old town."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Hoi An cooking class gives your itinerary a clearer image: instruction, hands, a finished thing to remember, and workshop tables, alongside yellow-wall old town."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Hoi An cooking class works best when the name is tied to the reason for going, not memorized as an abstract label. Picture open-air cooking table with herbs, rice paper, and bowls with a finished thing to remember, workshop tables, ingredients, and tools, alongside yellow-wall old town."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Lớp học nấu ăn Hội An points back to Open-air cooking table with herbs, rice paper, and bowls, where Hoi An cooking class feels specific rather than abstract."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-countryside-bicycle-loop",
+      "summary": "Hoi An countryside bicycle loop is worth knowing in Hoi An because it brings movement across the city as part of the discovery into the trip. Expect bicycle path through rice fields and vegetable gardens, morning.",
+      "context": "For Hoi An countryside bicycle loop, Hoi An's route story comes through local movement, the route between named places, street corners, and food stops, alongside Thu Bon river light.",
+      "tip": "Local movement, the route between named places, street corners, and food stops, alongside Thu Bon river light give Hoi An countryside bicycle loop a setting before the trip begins.",
+      "rationale": "Hoi An countryside bicycle loop brings Hoi An into focus through cafe pauses, local movement, the route between named places, and street corners, alongside Thu Bon river light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Hoi An countryside bicycle loop is worth knowing because it gives Hoi An a specific route scene: food stops, cafe pauses, local movement, and the route between named places, alongside Thu Bon river light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Hoi An countryside bicycle loop, you get movement across the city as part of the discovery: bicycle path through rice fields and vegetable gardens, morning, with food stops, cafe pauses, local movement, and the route between named places, alongside Thu Bon river light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Đạp xe vùng quê Hội An for Hoi An countryside bicycle loop. The local name is easier to remember once it sits beside food stops, cafe pauses, local movement, and the route between named places, alongside Thu Bon river light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Hoi An countryside bicycle loop gives your itinerary a clearer image: local movement, the route between named places, street corners, and food stops, alongside Thu Bon river light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Hoi An countryside bicycle loop works best when the name is tied to the reason for going, not memorized as an abstract label. Picture bicycle path through rice fields and vegetable gardens, morning with cafe pauses, local movement, the route between named places, and street corners, alongside Thu Bon river light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Đạp xe vùng quê Hội An lands better when the visitor already imagines the route between named places, street corners, food stops, and cafe pauses, alongside Thu Bon river light around Hoi An countryside bicycle loop."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-cua-dai-beach",
+      "summary": "Cua Dai Beach is worth picturing because it changes the trip into coastal Vietnam: sea air, sand, seafood, and open light. Expect quieter coastal beach with boats and low waves, overcast soft light.",
+      "context": "For Cua Dai Beach, Hoi An's beach story comes through river boats, markets, beaches, and tailor stops.",
+      "tip": "Hoi An feels more specific when Cua Dai Beach is tied to village routes, lantern streets, yellow walls, and old houses.",
+      "rationale": "Cua Dai Beach brings Hoi An into focus through river boats, markets, beaches, and tailor stops.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Cua Dai Beach is worth picturing because it changes the trip into coastal Vietnam: yellow walls, old houses, river boats, and markets."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Cua Dai Beach, you get coastal Vietnam changing the pace of the trip: quieter coastal beach with boats and low waves, overcast soft light, with river boats, markets, beaches, and tailor stops."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Biển Cửa Đại for Cua Dai Beach. The local name is easier to remember once it sits beside old houses, river boats, markets, and beaches."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the Vietnam image in your head includes sea air, sand, seafood, and coastal mornings: markets, beaches, tailor stops, and village routes."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Cua Dai Beach works best when the name is tied to the reason for going, not memorized as an abstract label. Picture quieter coastal beach with boats and low waves, overcast soft light with lantern streets, yellow walls, old houses, and river boats."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Biển Cửa Đại belongs to the scene, with yellow walls, old houses, river boats, and markets around it and Hoi An in view."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-cua-dai-estuary",
+      "summary": "Cua Dai Estuary is worth knowing in Hoi An because it brings the city opening beyond buildings and traffic into the trip. Expect river meeting the sea with fishing boats and sandbars, hazy morning.",
+      "context": "For Cua Dai Estuary, Hoi An's nature stop story comes through paths, shade, water, and weather, alongside Hoi An old-town texture.",
+      "tip": "Quieter space beyond traffic, green edges, paths, and shade, alongside Hoi An old-town texture give Cua Dai Estuary a setting before the trip begins.",
+      "rationale": "Cua Dai Estuary brings Hoi An into focus through quieter space beyond traffic, green edges, paths, and shade, alongside Hoi An old-town texture.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Cua Dai Estuary is worth knowing because it gives Hoi An a specific nature stop scene: water, weather, quieter space beyond traffic, and green edges, alongside Hoi An old-town texture."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Cua Dai Estuary, you get the city opening beyond buildings and traffic: river meeting the sea with fishing boats and sandbars, hazy morning, with quieter space beyond traffic, green edges, paths, and shade, alongside Hoi An old-town texture."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Cửa Đại for Cua Dai Estuary. The local name is easier to remember once it sits beside shade, water, weather, and quieter space beyond traffic, alongside Hoi An old-town texture."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want the trip to open beyond dense streets into water, shade, weather, or green edges: green edges, paths, shade, and water, alongside Hoi An old-town texture."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Cua Dai Estuary works best when the name is tied to the reason for going, not memorized as an abstract label. Picture river meeting the sea with fishing boats and sandbars, hazy morning with green edges, paths, shade, and water, alongside Hoi An old-town texture."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Cửa Đại belongs in the same image as quieter space beyond traffic, green edges, paths, and shade, alongside Hoi An old-town texture, with Cua Dai Estuary rooted in Hoi An."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-cua-dai-pier",
+      "summary": "Cua Dai Pier is worth recognizing because it opens Hoi An toward water, crossings, islands, or the next route. Expect ferry edges, station windows, boat sounds, and the open-water side of the trip.",
+      "context": "For Cua Dai Pier, Hoi An's port story comes through lantern streets, yellow walls, old houses, and river boats.",
+      "tip": "Markets, beaches, tailor stops, and village routes make Bến tàu Cửa Đại feel connected to a real stop.",
+      "rationale": "Cua Dai Pier brings Hoi An into focus through lantern streets, yellow walls, old houses, and river boats.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Cua Dai Pier is worth recognizing because it opens Hoi An toward water, crossings, and the next stretch of the trip: markets, beaches, tailor stops, and village routes."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Cua Dai Pier, you get the trip turning toward islands, boats, ferries, and coastal travel: ferry edges, station windows, boat sounds, and the open-water side of the trip, with tailor stops, village routes, lantern streets, and yellow walls."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bến tàu Cửa Đại for Cua Dai Pier. The local name is easier to remember once it sits beside village routes, lantern streets, yellow walls, and old houses."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Cua Dai Pier gives your itinerary a clearer image: yellow walls, old houses, river boats, and markets."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Cua Dai Pier works best when the name is tied to the reason for going, not memorized as an abstract label. Picture ferry edges, station windows, boat sounds, and the open-water side of the trip with beaches, tailor stops, village routes, and lantern streets."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bến tàu Cửa Đại sits beside markets, beaches, tailor stops, and village routes, so Cua Dai Pier feels connected to a real place."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-duc-an-old-house",
+      "summary": "Duc An Old House is worth visiting because it makes history physical through architecture, gates, courtyards, and memory. Expect antique wooden house interior with old shelves and warm window light.",
+      "context": "For Duc An Old House, Hoi An's heritage landmark story comes through courtyards, stone paths, tiled roofs, and ceremonial space, alongside lantern-street Hoi An.",
+      "tip": "Nhà cổ Đức An belongs beside old walls, gates, courtyards, and stone paths, alongside lantern-street Hoi An around Duc An Old House.",
+      "rationale": "Duc An Old House brings Hoi An into focus through tiled roofs, ceremonial space, old walls, and gates, alongside lantern-street Hoi An.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Duc An Old House is worth visiting because it makes history physical: old walls, gates, courtyards, and stone paths, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Duc An Old House, you get history made physical in architecture, ceremony, and place memory: antique wooden house interior with old shelves and warm window light, with tiled roofs, ceremonial space, old walls, and gates, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Nhà cổ Đức An for Duc An Old House. The local name is easier to remember once it sits beside ceremonial space, old walls, gates, and courtyards, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if old walls, gates, courtyards, and public memory are part of the trip you want: ceremonial space, old walls, gates, and courtyards, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Duc An Old House works best when the name is tied to the reason for going, not memorized as an abstract label. Picture antique wooden house interior with old shelves and warm window light with ceremonial space, old walls, gates, and courtyards, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Nhà cổ Đức An carries Duc An Old House's surrounding details: old walls, gates, courtyards, and stone paths, alongside lantern-street Hoi An, with Antique wooden house interior with old shelves and warm window light behind it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-espresso-station",
+      "summary": "The Espresso Station is worth saving for Hoi An's cafe rhythm: coffee, ice, sweetness, design, and a slower pause in the day. Expect small espresso bar in a narrow Hoi An lane, coffee machine.",
+      "context": "For The Espresso Station, Hoi An's cafe story comes through soft pauses, cafe views, coffee counters, and iced glasses, alongside Thu Bon river light.",
+      "tip": "The Espresso Station becomes more specific beside soft pauses, cafe views, coffee counters, and iced glasses, alongside Thu Bon river light.",
+      "rationale": "The Espresso Station brings Hoi An into focus through coffee counters, iced glasses, street stools, and design details, alongside Thu Bon river light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "The Espresso Station is worth saving when you want Hoi An's cafe culture, not just caffeine: soft pauses, cafe views, coffee counters, and iced glasses, alongside Thu Bon river light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At The Espresso Station, you get Vietnam's cafe culture and the slower rhythm between meals and sightseeing: small espresso bar in a narrow Hoi An lane, coffee machine, with street stools, design details, soft pauses, and cafe views, alongside Thu Bon river light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "The Espresso Station usually stays as the venue name. Say it slowly and connect it to the scene around it: design details, soft pauses, cafe views, and coffee counters, alongside Thu Bon river light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if the trip needs a slower pause between walks, markets, meals, or heat: iced glasses, street stools, design details, and soft pauses, alongside Thu Bon river light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "The Espresso Station works best when the name is tied to the reason for going, not memorized as an abstract label. Picture small espresso bar in a narrow Hoi An lane, coffee machine with cafe views, coffee counters, iced glasses, and street stools, alongside Thu Bon river light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The Espresso Station carries Small espresso bar in a narrow Hoi An lane, coffee machine forward when the visitor sees or hears the place later."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-faifo-coffee",
+      "summary": "Faifo Coffee is a Hoi An old-town cafe known for its rooftop view over yellow roofs and lantern streets. Save it when the point of the coffee stop is the view as much as the drink.",
+      "context": "Faifo Coffee works because Hoi An has few high viewpoints inside the old town: the rooftop gives you tile roofs, warm walls, and street life from above.",
+      "tip": "Faifo Coffee usually stays as the venue name, but the useful detail is rooftop view over the old town, not just another cafe counter.",
+      "rationale": "Faifo Coffee belongs in Hoi An because it turns a coffee break into a quick way to see the old town's roofs and yellow-wall texture from above.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Faifo Coffee is worth saving because the rooftop view is the reason people remember it: Hoi An's yellow walls, tiled roofs, lantern streets, and old-town movement seen from above."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Faifo Coffee, expect a narrow old-town cafe, stairs upward, a drink in hand, and a rooftop moment looking across weathered roofs rather than a long sit-down meal."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Faifo Coffee usually stays as the venue name. If you need to explain the plan, connect it to cà phê and ngắm phố cổ, coffee and looking over the old town."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want a quick Hoi An view without leaving the Ancient Town: coffee, photos, rooftops, and a short pause above the walking streets."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Before you go, think of Faifo as a rooftop-view stop. It is strongest when the day needs a visual pause over the old town, not when you need a quiet workspace."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Good to know: the view is the hook. If the rooftop is crowded, the name still helps you find the cafe, but the visit may be shorter than a normal coffee break."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-folk-culture-museum",
+      "summary": "Museum of Folk Culture is worth a stop if you want Hoi An to feel more layered than the streets outside. Expect folk-culture exhibit with lanterns, textiles, and wood beams.",
+      "context": "For Museum of Folk Culture, Hoi An's cultural stop story comes through memory, local history, display cases, and gallery rooms, alongside Thu Bon river light.",
+      "tip": "Museum of Folk Culture carries memory, local history, display cases, and gallery rooms, alongside Thu Bon river light into the travel plan.",
+      "rationale": "Museum of Folk Culture brings Hoi An into focus through display cases, gallery rooms, artifacts, and quiet light, alongside Thu Bon river light.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Museum of Folk Culture is worth a stop when you want more than scenery: rooms, objects, art, and memory inside the city's story, with artifacts, quiet light, memory, and local history, alongside Thu Bon river light."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Museum of Folk Culture, you get rooms, objects, art, and memory inside the city's story: folk-culture exhibit with lanterns, textiles, and wood beams, with artifacts, quiet light, memory, and local history, alongside Thu Bon river light."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bảo tàng Văn hóa Dân gian for Museum of Folk Culture. The local name is easier to remember once it sits beside quiet light, memory, local history, and display cases, alongside Thu Bon river light."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want context, quiet rooms, objects, and history instead of another outdoor stop: gallery rooms, artifacts, quiet light, and memory, alongside Thu Bon river light."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Museum of Folk Culture works best when the name is tied to the reason for going, not memorized as an abstract label. Picture folk-culture exhibit with lanterns, textiles, and wood beams with gallery rooms, artifacts, quiet light, and memory, alongside Thu Bon river light."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The name stays tied to artifacts, quiet light, memory, and local history, alongside Thu Bon river light, giving Museum of Folk Culture a concrete setting in Hoi An."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-from-danang-airport",
+      "summary": "Da Nang Airport for Hoi An is worth knowing in Hoi An because it brings the trip shifting from flight or train into the first real route toward the destination into the trip. Expect Da Nang airport doors giving way to roads, river bridges, fields, bags, and the first approach toward Hoi An.",
+      "context": "For Da Nang Airport for Hoi An, Hoi An's arrival route story comes through the first approach to town, airport doors, coastal roads, and river bridges.",
+      "tip": "Da Nang Airport for Hoi An carries coastal roads, river bridges, bags, and the first approach to town into the travel plan.",
+      "rationale": "Da Nang Airport for Hoi An brings Hoi An into focus through airport doors, coastal roads, river bridges, and bags.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Da Nang Airport for Hoi An is worth knowing because it gives Hoi An a specific arrival route scene: coastal roads, river bridges, bags, and the first approach to town."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Da Nang Airport for Hoi An, you get the trip shifting from flight or train into the first real route toward the destination: Da Nang airport doors giving way to roads, river bridges, fields, bags, and the first approach toward Hoi An, with river bridges, bags, the first approach to town, and airport doors."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Sân bay Đà Nẵng đi Hội An for Da Nang Airport for Hoi An. The local name is easier to remember once it sits beside airport doors, coastal roads, river bridges, and bags."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Da Nang Airport for Hoi An gives your itinerary a clearer image: river bridges, bags, the first approach to town, and airport doors."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Da Nang Airport for Hoi An works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Da Nang airport doors giving way to roads, river bridges, fields, bags, and the first approach toward Hoi An with the first approach to town, airport doors, coastal roads, and river bridges."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "For Da Nang Airport for Hoi An, the name stays close to the first approach to town, airport doors, coastal roads, and river bridges, which makes the stop feel rooted in Hoi An."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-from-danang-railway-station",
+      "summary": "Da Nang Railway Station for Hoi An is worth knowing in Hoi An because it brings the trip shifting from flight or train into the first real route toward the destination into the trip. Expect station doors giving way to roads, river bridges, fields, bags, and the first approach toward Hoi An.",
+      "context": "For Da Nang Railway Station for Hoi An, Hoi An's arrival route story comes through station doors, coastal roads, river bridges, and bags.",
+      "tip": "Ga Đà Nẵng đi Hội An sits inside the scene around Da Nang Railway Station for Hoi An: coastal roads, river bridges, bags, and the first approach to town.",
+      "rationale": "Da Nang Railway Station for Hoi An brings Hoi An into focus through river bridges, bags, the first approach to town, and station doors.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Da Nang Railway Station for Hoi An is worth knowing because it gives Hoi An a specific arrival route scene: station doors, coastal roads, river bridges, and bags."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Da Nang Railway Station for Hoi An, you get the trip shifting from flight or train into the first real route toward the destination: station doors giving way to roads, river bridges, fields, bags, and the first approach toward Hoi An, with the first approach to town, station doors, coastal roads, and river bridges."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Ga Đà Nẵng đi Hội An for Da Nang Railway Station for Hoi An. The local name is easier to remember once it sits beside coastal roads, river bridges, bags, and the first approach to town."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Da Nang Railway Station for Hoi An gives your itinerary a clearer image: bags, the first approach to town, station doors, and coastal roads."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Da Nang Railway Station for Hoi An works best when the name is tied to the reason for going, not memorized as an abstract label. Picture station doors giving way to roads, river bridges, fields, bags, and the first approach toward Hoi An with station doors, coastal roads, river bridges, and bags."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Ga Đà Nẵng đi Hội An carries the visual details around it: coastal roads, river bridges, bags, and the first approach to town, plus the local setting of Station doors giving way to roads, river bridges, fields, bags, and the first approach toward Hoi An."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-fujian-assembly-hall",
+      "summary": "Fujian Assembly Hall is worth visiting because it makes history physical through architecture, gates, courtyards, and memory. Expect ornate red-and-gold assembly hall courtyard, incense smoke.",
+      "context": "For Fujian Assembly Hall, Hoi An's heritage landmark story comes through ceremonial space, old walls, gates, and courtyards, alongside yellow-wall old town.",
+      "tip": "Fujian Assembly Hall carries stone paths, tiled roofs, ceremonial space, and old walls, alongside yellow-wall old town into the travel plan.",
+      "rationale": "Fujian Assembly Hall brings Hoi An into focus through gates, courtyards, stone paths, and tiled roofs, alongside yellow-wall old town.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Fujian Assembly Hall is worth visiting because it makes history physical: gates, courtyards, stone paths, and tiled roofs, alongside yellow-wall old town."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Fujian Assembly Hall, you get history made physical in architecture, ceremony, and place memory: ornate red-and-gold assembly hall courtyard, incense smoke, with ceremonial space, old walls, gates, and courtyards, alongside yellow-wall old town."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Hội quán Phúc Kiến for Fujian Assembly Hall. The local name is easier to remember once it sits beside courtyards, stone paths, tiled roofs, and ceremonial space, alongside yellow-wall old town."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if old walls, gates, courtyards, and public memory are part of the trip you want: old walls, gates, courtyards, and stone paths, alongside yellow-wall old town."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Fujian Assembly Hall works best when the name is tied to the reason for going, not memorized as an abstract label. Picture ornate red-and-gold assembly hall courtyard, incense smoke with old walls, gates, courtyards, and stone paths, alongside yellow-wall old town."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Hội quán Phúc Kiến belongs to the scene, with ceremonial space, old walls, gates, and courtyards, alongside yellow-wall old town around it and Hoi An in view."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-hainan-assembly-hall",
+      "summary": "Hainan Assembly Hall is worth visiting because it makes history physical through architecture, gates, courtyards, and memory. Expect quiet assembly hall courtyard with incense coils and yellow-red facade.",
+      "context": "For Hainan Assembly Hall, Hoi An's heritage landmark story comes through stone paths, tiled roofs, ceremonial space, and old walls, alongside yellow-wall old town.",
+      "tip": "Ceremonial space, old walls, gates, and courtyards, alongside yellow-wall old town give Hainan Assembly Hall a setting before the trip begins.",
+      "rationale": "Hainan Assembly Hall brings Hoi An into focus through ceremonial space, old walls, gates, and courtyards, alongside yellow-wall old town.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Hainan Assembly Hall is worth visiting because it makes history physical: stone paths, tiled roofs, ceremonial space, and old walls, alongside yellow-wall old town."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Hainan Assembly Hall, you get history made physical in architecture, ceremony, and place memory: quiet assembly hall courtyard with incense coils and yellow-red facade, with ceremonial space, old walls, gates, and courtyards, alongside yellow-wall old town."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Hội quán Hải Nam for Hainan Assembly Hall. The local name is easier to remember once it sits beside old walls, gates, courtyards, and stone paths, alongside yellow-wall old town."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if old walls, gates, courtyards, and public memory are part of the trip you want: tiled roofs, ceremonial space, old walls, and gates, alongside yellow-wall old town."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Hainan Assembly Hall works best when the name is tied to the reason for going, not memorized as an abstract label. Picture quiet assembly hall courtyard with incense coils and yellow-red facade with tiled roofs, ceremonial space, old walls, and gates, alongside yellow-wall old town."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Hội quán Hải Nam belongs to the real scene around Hainan Assembly Hall: gates, courtyards, stone paths, and tiled roofs, alongside yellow-wall old town."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-handicraft-workshop",
+      "summary": "Hoi An Handicraft Workshop is worth knowing in Hoi An because it brings participating in local craft, cooking, or making rather than only watching into the trip. Expect lantern and textile workshop table with tools and warm light.",
+      "context": "For Hoi An Handicraft Workshop, Hoi An's workshop story comes through ingredients, tools, instruction, and hands, alongside lantern-street Hoi An.",
+      "tip": "Hoi An Handicraft Workshop carries instruction, hands, a finished thing to remember, and workshop tables, alongside lantern-street Hoi An into the travel plan.",
+      "rationale": "Hoi An Handicraft Workshop brings Hoi An into focus through ingredients, tools, instruction, and hands, alongside lantern-street Hoi An.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Hoi An Handicraft Workshop is worth knowing because it gives Hoi An a specific workshop scene: instruction, hands, a finished thing to remember, and workshop tables, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Hoi An Handicraft Workshop, you get participating in local craft, cooking, or making rather than only watching: lantern and textile workshop table with tools and warm light, with ingredients, tools, instruction, and hands, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Xưởng thủ công mỹ nghệ Hội An for Hoi An Handicraft Workshop. The local name is easier to remember once it sits beside tools, instruction, hands, and a finished thing to remember, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Hoi An Handicraft Workshop gives your itinerary a clearer image: tools, instruction, hands, and a finished thing to remember, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Hoi An Handicraft Workshop works best when the name is tied to the reason for going, not memorized as an abstract label. Picture lantern and textile workshop table with tools and warm light with tools, instruction, hands, and a finished thing to remember, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Xưởng thủ công mỹ nghệ Hội An belongs with Lantern and textile workshop table with tools and warm light, giving Hoi An Handicraft Workshop a specific travel scene before the trip begins."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-history-culture-museum",
+      "summary": "Museum of History and Culture is worth a stop if you want Hoi An to feel more layered than the streets outside. Expect small museum gallery with routes and ceramics in warm light, curated displays.",
+      "context": "For Museum of History and Culture, Hoi An's cultural stop story comes through memory, local history, display cases, and gallery rooms, alongside lantern-street Hoi An.",
+      "tip": "Display cases, gallery rooms, artifacts, and quiet light, alongside lantern-street Hoi An give Museum of History and Culture a setting before the trip begins.",
+      "rationale": "Museum of History and Culture brings Hoi An into focus through display cases, gallery rooms, artifacts, and quiet light, alongside lantern-street Hoi An.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Museum of History and Culture is worth a stop when you want more than scenery: rooms, objects, art, and memory inside the city's story, with display cases, gallery rooms, artifacts, and quiet light, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Museum of History and Culture, you get rooms, objects, art, and memory inside the city's story: small museum gallery with routes and ceramics in warm light, curated displays, with artifacts, quiet light, memory, and local history, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Bảo tàng Lịch sử - Văn hóa Hội An for Museum of History and Culture. The local name is easier to remember once it sits beside local history, display cases, gallery rooms, and artifacts, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if you want context, quiet rooms, objects, and history instead of another outdoor stop: quiet light, memory, local history, and display cases, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Museum of History and Culture works best when the name is tied to the reason for going, not memorized as an abstract label. Picture small museum gallery with routes and ceramics in warm light, curated displays with local history, display cases, gallery rooms, and artifacts, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Bảo tàng Lịch sử - Văn hóa Hội An feels less abstract when it sits beside memory, local history, display cases, and gallery rooms, alongside lantern-street Hoi An and the scene of Museum of History and Culture."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-hoai-river",
+      "summary": "Hoai River is worth knowing because water helps organize Hoi An: bridges, reflections, banks, boats, and evening light. Expect lantern boats on calm river by yellow old-town buildings, evening river light.",
+      "context": "For Hoai River, Hoi An's river story comes through bridges, reflections, river walks, and waterline views, alongside yellow-wall old town.",
+      "tip": "Evening light, boats, bridges, and reflections, alongside yellow-wall old town give Hoai River a setting before the trip begins.",
+      "rationale": "Hoai River brings Hoi An into focus through evening light, boats, bridges, and reflections, alongside yellow-wall old town.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Hoai River is worth knowing because the water helps organize the city: river walks, waterline views, evening light, and boats, alongside yellow-wall old town."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Hoai River, you get geography, history, and everyday movement meeting: lantern boats on calm river by yellow old-town buildings, evening river light, with river walks, waterline views, evening light, and boats, alongside yellow-wall old town."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Sông Hoài for Hoai River. The local name is easier to remember once it sits beside boats, bridges, reflections, and river walks, alongside yellow-wall old town."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Hoai River gives your itinerary a clearer image: waterline views, evening light, boats, and bridges, alongside yellow-wall old town."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Hoai River works best when the name is tied to the reason for going, not memorized as an abstract label. Picture lantern boats on calm river by yellow old-town buildings, evening river light with boats, bridges, reflections, and river walks, alongside yellow-wall old town."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "The image of Hoai River feels more present when Sông Hoài has river walks, waterline views, evening light, and boats, alongside yellow-wall old town around it."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-japanese-bridge",
+      "summary": "Japanese Covered Bridge is worth approaching slowly because worship, architecture, incense, and local memory shape the visit. Expect Covered bridge over narrow waterway with lantern reflections, golden hour.",
+      "context": "For Japanese Covered Bridge, Hoi An's sacred place story comes through tiled roofs, temple gates, shade, and respectful pauses, alongside lantern-street Hoi An.",
+      "tip": "Japanese Covered Bridge becomes more specific beside shade, respectful pauses, incense, and courtyards, alongside lantern-street Hoi An.",
+      "rationale": "Japanese Covered Bridge brings Hoi An into focus through shade, respectful pauses, incense, and courtyards, alongside lantern-street Hoi An.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Japanese Covered Bridge is worth approaching slowly because worship, architecture, incense, and local memory all shape the visit: tiled roofs, temple gates, shade, and respectful pauses, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Japanese Covered Bridge, you get worship, architecture, local memory, and the quieter rhythm of a spiritual stop: Covered bridge over narrow waterway with lantern reflections, golden hour, with tiled roofs, temple gates, shade, and respectful pauses, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Chùa Cầu for Japanese Covered Bridge. The local name is easier to remember once it sits beside respectful pauses, incense, courtyards, and tiled roofs, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if temples, incense, worship, and quiet architecture help the place feel deeper: temple gates, shade, respectful pauses, and incense, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Japanese Covered Bridge works best when the name is tied to the reason for going, not memorized as an abstract label. Picture Covered bridge over narrow waterway with lantern reflections, golden hour with courtyards, tiled roofs, temple gates, and shade, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Chùa Cầu keeps its setting close: Covered bridge over narrow waterway with lantern reflections, golden hour, surrounded by tiled roofs, temple gates, shade, and respectful pauses, alongside lantern-street Hoi An."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-kim-bong-carpentry-village",
+      "summary": "Kim Bong Carpentry Village is worth knowing in Hoi An because it brings local craft, village rhythm, and slower daily life into the trip. Expect woodworking village workshop with carved panels and tools.",
+      "context": "For Kim Bong Carpentry Village, Hoi An's village story comes through village routes, lantern streets, yellow walls, and old houses.",
+      "tip": "Làng mộc Kim Bồng feels tied to Kim Bong Carpentry Village through river boats, markets, beaches, and tailor stops.",
+      "rationale": "Kim Bong Carpentry Village brings Hoi An into focus through village routes, lantern streets, yellow walls, and old houses.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Kim Bong Carpentry Village is worth knowing because it gives Hoi An a specific village scene: beaches, tailor stops, village routes, and lantern streets."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Kim Bong Carpentry Village, you get local craft, village rhythm, and slower daily life: woodworking village workshop with carved panels and tools, with village routes, lantern streets, yellow walls, and old houses."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Làng mộc Kim Bồng for Kim Bong Carpentry Village. The local name is easier to remember once it sits beside tailor stops, village routes, lantern streets, and yellow walls."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Kim Bong Carpentry Village gives your itinerary a clearer image: lantern streets, yellow walls, old houses, and river boats."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Kim Bong Carpentry Village works best when the name is tied to the reason for going, not memorized as an abstract label. Picture woodworking village workshop with carved panels and tools with markets, beaches, tailor stops, and village routes."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "Làng mộc Kim Bồng sits beside beaches, tailor stops, village routes, and lantern streets, so Kim Bong Carpentry Village feels connected to a real place."
+        }
+      ]
+    },
+    {
+      "pageID": "city-hoian-place-lantern-boat",
+      "summary": "Lantern boat ride is worth knowing in Hoi An because it brings water travel as part of the place rather than only transport into the trip. Expect small wooden boat with paper lanterns on Hoai River at night, people moving through the scene.",
+      "context": "For Lantern boat ride, Hoi An's boat experience story comes through boats, water light, riverbanks, and bridges, alongside lantern-street Hoi An.",
+      "tip": "Thuyền hoa đăng Hội An sits inside the scene around Lantern boat ride: boarding points, a slower path across the day, boats, and water light, alongside lantern-street Hoi An.",
+      "rationale": "Lantern boat ride brings Hoi An into focus through boarding points, a slower path across the day, boats, and water light, alongside lantern-street Hoi An.",
+      "sections": [
+        {
+          "id": "at-glance",
+          "title": "Why go",
+          "body": "Lantern boat ride is worth knowing because it gives Hoi An a specific boat experience scene: boats, water light, riverbanks, and bridges, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "place-brief",
+          "title": "What you'll get",
+          "body": "At Lantern boat ride, you get water travel as part of the place rather than only transport: small wooden boat with paper lanterns on Hoai River at night, people moving through the scene, with riverbanks, bridges, boarding points, and a slower path across the day, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "quick-say",
+          "title": "Say it locally",
+          "body": "Say Thuyền hoa đăng Hội An for Lantern boat ride. The local name is easier to remember once it sits beside bridges, boarding points, a slower path across the day, and boats, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "use-it-with",
+          "title": "Worth it if",
+          "body": "Worth it if Lantern boat ride gives your itinerary a clearer image: water light, riverbanks, bridges, and boarding points, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "when-to-use",
+          "title": "Before you go",
+          "body": "Lantern boat ride works best when the name is tied to the reason for going, not memorized as an abstract label. Picture small wooden boat with paper lanterns on Hoai River at night, people moving through the scene with a slower path across the day, boats, water light, and riverbanks, alongside lantern-street Hoi An."
+        },
+        {
+          "id": "good-to-know",
+          "title": "Good to know",
+          "body": "For Lantern boat ride, the name stays close to riverbanks, bridges, boarding points, and a slower path across the day, alongside lantern-street Hoi An, which makes the stop feel rooted in Hoi An."
+        }
+      ]
+    }
+  ],
+  "decisions": {
+    "status": "needs_humanizer_repair",
+    "source": "current handwritten-copy source",
+    "notes": "Initial failing chunk for ChatGPT/Codex humanizer repair."
+  }
+}
+```
+
+Return only the complete repaired chunk JSON block first, then the Writer self-gate block. Do not summarize before the JSON.

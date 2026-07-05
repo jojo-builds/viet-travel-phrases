@@ -7,7 +7,7 @@
   "title": "Tôi đã đặt qua ứng dụng",
   "englishTitle": "I booked through the app",
   "pronunciation": "Toi da dat qua ung dung",
-  "summary": "I booked through the app",
+  "summary": "For showing a ride, ticket, or pickup was already booked in an app.",
   "iconName": "car.fill",
   "tintName": "orange",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Tôi đã đặt qua ứng dụng is a practical transport phrase for keeping one travel detail clear. Use it when I booked through the app is the next detail to solve and a short answer would move the exchange forward."
+      "body": "The booking already exists. Keep the app screen open so the driver or counter staff can see the name, route, or fare."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Tôi đã đặt qua ứng dụng. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say the line, then show the booking screen. The pickup point, destination, plate number, or payment note can stay on the phone.",
       "phrases": [
         {
           "id": "v900-tran-i-booked-through-the-app",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Tôi đã đặt means I booked; qua ứng dụng means through the app.",
       "breakdown": [
         {
           "id": "chunk-1",
           "vietnamese": "Tôi đã đặt",
-          "english": "book / reserve",
-          "audioKey": null
+          "english": "I booked",
+          "keepTogetherReason": "I-booked phrase"
         },
         {
           "id": "chunk-2",
           "vietnamese": "qua ứng dụng",
-          "english": "app",
-          "audioKey": null
+          "english": "through the app",
+          "keepTogetherReason": "through-the-app phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Tôi đã đặt qua ứng dụng",
           "english": "I booked through the app",
-          "audioKey": null
+          "audioKey": "v900-tran-i-booked-through-the-app"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from I booked through the app to another transport need.",
+      "body": "Take-me-here, District 1, and stop-here cards cover the route if the app booking still needs a spoken backup.",
       "phrases": [
         {
           "id": "taxi-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real transport exchange when i booked through the app is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good at ride-app pickups, bus counters, hotel taxi desks, and any moment where staff need to know you already booked."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Transport phrases work best with a visible destination. Let the driver or staff point, confirm, or type a number."
+      "body": "If the other person looks unsure, show the booking name and destination before repeating the sentence."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Tôi đã đặt qua ứng dụng.",
+      "body": "Stop-here, route, air-conditioning, waiting, and cash phrases cover the ride after the booking is recognized.",
       "phrases": [
         {
           "id": "transport-stop-here-clearer",

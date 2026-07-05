@@ -30,28 +30,24 @@
       "keepTogetherReason": "fixed modal phrase"
     },
     {
+      "id": "chunk-3",
       "vietnamese": "giải thích",
       "english": "explain",
       "keepTogetherReason": "compound explanation verb"
     },
     {
-      "id": "chunk-5",
+      "id": "chunk-4",
       "vietnamese": "nó",
       "english": "it"
     },
     {
+      "id": "chunk-5",
+      "vietnamese": "bằng tiếng Anh",
+      "english": "in English",
+      "keepTogetherReason": "language phrase"
+    },
+    {
       "id": "chunk-6",
-      "vietnamese": "bằng",
-      "english": "by / with"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "tiếng Anh",
-      "english": "English language",
-      "keepTogetherReason": "compound language name"
-    },
-    {
-      "id": "chunk-8",
       "vietnamese": "không?",
       "english": "yes/no?"
     },

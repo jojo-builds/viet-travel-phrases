@@ -7,17 +7,17 @@ This folder is the marketing-agency lane for SpeakLocal Vietnam. Use it for posi
 - The shipping app is the native iOS app under `native-ios/`.
 - Treat `main` as the current product truth unless Jojo explicitly says a feature branch is the test target.
 - Do not use Expo, React Native, Metro, or old web app surfaces as marketing truth.
-- Do not invent app features, screens, audio, AI behavior, subscriptions, claims, or language coverage that are not present in the native app or clearly marked as future-facing.
-- SpeakLocal is not Google Translate. The product promise is curated travel phrases, playable audio, browse/search discovery, Messages-style guided conversations, and beginner-friendly Vietnam travel support.
+- Do not invent app features, screens, audio, AI behavior, subscription terms, claims, or language coverage that are not present in the native app or clearly marked as future-facing.
+- SpeakLocal is not Google Translate, a general AI translation box, or a school-style language course. The product promise is a curated Vietnam travel companion: food and menu discovery, places and things to do, culture-aware phrase pages, playable audio, browse/search discovery, Messages-style guided conversations, and beginner-friendly Vietnam trip support.
 - Runtime app copy and screenshots should not imply arbitrary AI translation unless Jojo explicitly changes the product direction.
 
 ## Audience Lens
 
 Primary audience:
 
-- English-speaking first-time or anxious travelers going to Vietnam.
-- People who want practical survival phrases quickly, not a formal language course.
-- Users who may be in a real travel moment and need calm, useful phrasing with audio.
+- English-speaking travelers who are excited to go to Vietnam and want the country to feel more vivid and less intimidating before they arrive.
+- First-time or early-stage Vietnam travelers who want curated food, menu, place, culture, and phrase guidance instead of having to invent every search or prompt themselves.
+- People who want to see useful Vietnam travel situations, hear the Vietnamese, save/practice what matters, and use the app during the trip without trying to become fluent.
 
 Marketing should make the app feel:
 
@@ -25,7 +25,8 @@ Marketing should make the app feel:
 - premium and native to iOS;
 - friendly but adult;
 - useful before and during the trip;
-- safer than a generic phrase dump because it is curated around real traveler moments.
+- positive, curious, and discovery-led;
+- more curated and sensory than a generic phrase dump because it connects traveler moments to places, food, culture, images where available, and playable audio.
 
 ## Work Areas
 
@@ -81,6 +82,7 @@ Do not leave a marketing idea as vibes only. Make it executable.
 
 - Keep copy specific to travel moments, not generic language-learning claims.
 - Prefer simple hooks like "Land in Vietnam with the phrases you need first" over vague claims like "Learn Vietnamese fast."
+- Keep the emotional center positive: discovery, preparation, food, places, culture, and confidence. Avoid worry-led, fear-led, or crisis-first framing.
 - Do not overpromise fluency, translation completeness, or emergency/legal/medical reliability.
 - Vietnamese phrase claims should match actual app content and playable audio when possible.
 - If a claim depends on an unreleased feature, mark it `FUTURE / DO NOT PUBLISH`.

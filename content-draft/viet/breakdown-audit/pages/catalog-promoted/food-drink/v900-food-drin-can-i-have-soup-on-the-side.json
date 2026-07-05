@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-food-drin-can-i-have-soup-on-the-side",
-  "phraseText": "Tôi có thể ăn súp bên cạnh được không?",
+  "phraseText": "Cho tôi xin chén súp riêng được không?",
   "englishTitle": "Can I have soup on the side?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -15,47 +15,36 @@
     ]
   },
   "notes": [
-    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources."
+    "Full-corpus Codex breakdown audit ledger entry; review-only fields are stripped from generated runtime resources.",
+    "Phrase-copy semantic repair; reviewed tokens updated and audio marked for regeneration."
   ],
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Cho tôi xin",
+      "english": "may I have / please give me",
+      "keepTogetherReason": "polite request opener"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
+      "vietnamese": "chén súp riêng",
+      "english": "a separate bowl of soup",
+      "keepTogetherReason": "separate-soup noun phrase"
     },
     {
       "id": "chunk-3",
-      "vietnamese": "ăn",
-      "english": "eat"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "súp",
-      "english": "soup"
-    },
-    {
-      "id": "chunk-5",
-      "vietnamese": "bên cạnh",
-      "english": "next to",
-      "keepTogetherReason": "fixed place phrase"
-    },
-    {
-      "id": "chunk-6",
       "vietnamese": "được không?",
-      "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "english": "is that okay?",
+      "keepTogetherReason": "question ending"
     },
     {
       "id": "full",
-      "vietnamese": "Tôi có thể ăn súp bên cạnh được không?",
+      "vietnamese": "Cho tôi xin chén súp riêng được không?",
       "english": "Can I have soup on the side?",
-      "audioKey": "v900-food-drin-can-i-have-soup-on-the-side"
+      "audioKey": null
     }
-  ]
+  ],
+  "title": "Cho tôi xin chén súp riêng được không?",
+  "summary": "Can I have soup on the side",
+  "pronunciation": "Cho toi xin chen sup rieng duoc khong"
 }

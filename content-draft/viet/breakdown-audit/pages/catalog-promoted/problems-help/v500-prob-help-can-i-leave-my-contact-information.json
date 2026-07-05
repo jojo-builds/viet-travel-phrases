@@ -20,47 +20,27 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Tôi",
-      "english": "I / me"
+      "vietnamese": "Tôi có thể",
+      "english": "can I",
+      "keepTogetherReason": "can-I question frame"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
-      "keepTogetherReason": "fixed modal phrase"
-    },
-    {
       "vietnamese": "để lại",
-      "english": "leave",
-      "keepTogetherReason": "compound leave-behind verb"
+      "english": "leave behind",
+      "keepTogetherReason": "leave-contact action"
     },
     {
-      "id": "chunk-5",
-      "vietnamese": "thông tin",
-      "english": "information",
-      "keepTogetherReason": "compound noun"
+      "id": "chunk-3",
+      "vietnamese": "thông tin liên lạc của mình",
+      "english": "my contact information",
+      "keepTogetherReason": "contact-information phrase"
     },
     {
-      "id": "chunk-6",
-      "vietnamese": "liên",
-      "english": "contact / link"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "lạc",
-      "english": "lost / peanut"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "của mình",
-      "english": "my / mine",
-      "keepTogetherReason": "possessive phrase"
-    },
-    {
-      "id": "chunk-9",
+      "id": "chunk-4",
       "vietnamese": "được không?",
       "english": "is that possible?",
-      "keepTogetherReason": "fixed yes-no question ending"
+      "keepTogetherReason": "polite yes-no ending"
     },
     {
       "id": "full",

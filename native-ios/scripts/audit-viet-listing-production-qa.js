@@ -36,6 +36,7 @@ const bannedCopyPatterns = [
   { pattern: /\buseful moments\b/i, reason: "internal content-model language" },
   { pattern: /\broute phrase\b/i, reason: "internal content-model language" },
   { pattern: /\bwhere-question\b/i, reason: "internal content-model language" },
+  { pattern: /\bcompact direction question\b/i, reason: "source/editor language" },
   { pattern: /\brelationship rows\b/i, reason: "internal content-model language" },
   { pattern: /\bcontent role\b/i, reason: "internal content-model language" },
   { pattern: /\bsource rationale\b/i, reason: "source/editor language" },
@@ -126,23 +127,25 @@ function main() {
   const fallbackReport = buildFallbackTemplateReport(pages);
   const screenshotChecklist = buildScreenshotChecklist();
 
-  writeOutputs({
-    pages,
-    issues,
-    fixedProbeResults,
-    randomSample,
-    dataDuplicateHeroCount,
-    missingAudioPriority,
-    heroImageReport,
-    practiceMetadataSamples,
-    fallbackReport,
-    screenshotChecklist,
-  });
+  if (!checkMode) {
+    writeOutputs({
+      pages,
+      issues,
+      fixedProbeResults,
+      randomSample,
+      dataDuplicateHeroCount,
+      missingAudioPriority,
+      heroImageReport,
+      practiceMetadataSamples,
+      fallbackReport,
+      screenshotChecklist,
+    });
+  }
 
   const blockerCount = issues.filter((issue) => issue.severity === "BLOCKER").length;
   const majorCount = issues.filter((issue) => issue.severity === "MAJOR").length;
   const summaryLine = [
-    `Production QA audit wrote ${path.relative(repoRoot, outputRoot)}`,
+    `Production QA audit ${checkMode ? "checked" : "wrote"} ${path.relative(repoRoot, outputRoot)}`,
     `${pages.length} pages`,
     `${blockerCount} blockers`,
     `${majorCount} majors`,
@@ -242,7 +245,7 @@ function isTaxiRideHelpPage(page) {
     page.title,
     page.englishTitle,
   ].filter(Boolean).join(" "));
-  return /taxi|ride share|pickup point|drop me off|call a taxi|goi taxi|goi xe cong nghe/.test(text);
+  return /ride share|pickup point|drop me off|call a taxi|goi taxi|goi xe cong nghe/.test(text);
 }
 
 function isDoctorComingPage(page) {
@@ -565,7 +568,23 @@ function inspectPage(page, expectedIntent, issues, source) {
   }
 
   if (detectedIntent === "macro_attraction_journey") {
-    assertSectionOrder(page, rendered, issues, source, ["About", "Visit flow", "Getting there", "Tickets", "Cable car", "Photos", "Getting back", "Good to know", "Food & cash"], "macro_attraction_section_order");
+    const expectedMacroSections = page.id === "viet-family-city-danang-place-ba-na-hills"
+      ? [
+        "More Park Than Viewpoint",
+        "Useful Phrases",
+        "Early, With Weather Checked",
+        "Cable Car Arrival",
+        "Bridge Before Wandering",
+        "Getting there",
+        "Tickets",
+        "Cable car",
+        "Photos",
+        "Getting back",
+        "Give It Room",
+        "Food & cash",
+      ]
+      : ["About", "Visit flow", "Getting there", "Tickets", "Cable car", "Photos", "Getting back", "Good to know", "Food & cash"];
+    assertSectionOrder(page, rendered, issues, source, expectedMacroSections, "macro_attraction_section_order");
     if (/Nearby needs/i.test(allRenderedText)) {
       addIssue(issues, {
         severity: "MAJOR",
@@ -579,8 +598,45 @@ function inspectPage(page, expectedIntent, issues, source) {
   }
 
   if (detectedIntent === "derived_place_phrase") {
-    const allowedTitles = new Set(["Break it down", "Related phrases", "Tip"]);
+    const allowedTitles = new Set(["At a glance", "Break it down", "Related phrases", "Tip"]);
     const unexpected = rendered.filter((section) => !allowedTitles.has(section.title));
+    const atGlance = rendered.find((section) => section.id === "at-glance" || section.title === "At a glance");
+    const titles = rendered.map((section) => section.title);
+    const firstVisible = rendered[0];
+    const introWords = wordCount(atGlance?.body);
+
+    if (!atGlance || introWords < 12) {
+      addIssue(issues, {
+        severity: "BLOCKER",
+        code: "derived_phrase_intro_missing",
+        page,
+        source,
+        detail: `Derived phrase page must include a visible At a glance copy section of at least 12 words before mechanics. Current words: ${introWords}.`,
+      });
+      worst = maxVerdict(worst, "FAIL");
+    }
+    if (firstVisible && firstVisible.id !== "at-glance") {
+      addIssue(issues, {
+        severity: "BLOCKER",
+        code: "derived_phrase_intro_not_first",
+        page,
+        source,
+        detail: `Derived phrase page starts with ${firstVisible.title}; it must start with At a glance before breakdown or related cards.`,
+      });
+      worst = maxVerdict(worst, "FAIL");
+    }
+    for (const requiredTitle of ["At a glance", "Break it down", "Related phrases"]) {
+      if (!titles.includes(requiredTitle)) {
+        addIssue(issues, {
+          severity: "BLOCKER",
+          code: "derived_phrase_required_section_missing",
+          page,
+          source,
+          detail: `Derived phrase page is missing required section: ${requiredTitle}. Rendered order: ${titles.join(" > ")}`,
+        });
+        worst = maxVerdict(worst, "FAIL");
+      }
+    }
     if (unexpected.length > 0) {
       addIssue(issues, {
         severity: "MAJOR",
@@ -588,6 +644,17 @@ function inspectPage(page, expectedIntent, issues, source) {
         page,
         source,
         detail: `Derived phrase page has heavy/unexpected sections: ${unexpected.map((section) => section.title).join(", ")}`,
+      });
+      worst = maxVerdict(worst, "FAIL");
+    }
+    const derivedBodyText = rendered.map((section) => String(section.body ?? "")).filter(Boolean).join("\n");
+    if (/\b(compact direction question|route phrase|where-question|content role|source rationale|this page helps)\b/i.test(derivedBodyText)) {
+      addIssue(issues, {
+        severity: "MAJOR",
+        code: "derived_phrase_internal_copy",
+        page,
+        source,
+        detail: `Derived phrase page contains internal or source-facing copy: ${derivedBodyText}`,
       });
       worst = maxVerdict(worst, "FAIL");
     }

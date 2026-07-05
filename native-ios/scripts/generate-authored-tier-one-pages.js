@@ -50,6 +50,7 @@ const designedFamilyPageIDs = {
   "v500-poli-basi-excuse-me": "viet-excuse-sorry",
   "polite-goodbye": "viet-goodbye",
   "social-how-are-you": "viet-how-are-you",
+  "v900-tran-where-can-i-buy-a-ticket": "viet-phrase-v500-sigh-acti-where-can-i-buy-tickets",
 };
 
 const manuallyAuthoredPageIDs = new Set();
@@ -105,6 +106,45 @@ for (const [phraseID, override] of Object.entries(phraseOverrides)) {
 }
 
 const familyCopyOverrides = {
+  "repair-slower": {
+    summary: "Ask someone to slow down without making the exchange feel tense.",
+    atGlance: "Use Nói chậm chút được không? when Vietnamese is coming too quickly and repeating the same speed will not help. It keeps the exchange cooperative while asking for a slower second pass.",
+    standard: "Say Nói chậm chút được không? once, then pause. Watch for a slower repeat, a gesture toward the object, or a move to writing on paper or a phone.",
+    when: "Use this at counters, rides, hotel desks, markets, or anywhere the answer matters but the speed is too fast. Ask early, while the moment still feels friendly.",
+    why: "A slower repeat is often more useful than another full-speed answer. This phrase gives the other person a clear repair path: slow down, point, write, or show the detail.",
+    watch: "Tone matters here. Curious and calm sounds like a request; sharp or repeated too many times can sound like a challenge.",
+    tip: "If the slower repeat still misses, point, write, or show the exact word. The goal is clarity, not winning the spoken exchange.",
+    travelerInsight: "The reply may come as slower Vietnamese, one important word, a pointed explanation, or writing. If speech still does not land, move quickly to showing the word or number on your phone.",
+    variation: "These versions change the pressure of the request. Pick the softer one for service counters and the shorter one when the person already understands what you need.",
+    exploreNext: "Use these when slower speech is still not enough and you need writing, meaning, repetition, or English help.",
+  },
+  "money-how-much": {
+    summary: "Use this at markets, seafood trays, taxis, and any cash moment where the price needs to be visible before you commit.",
+    atGlance: "Cái này bao nhiêu? is the pointing phrase for one visible thing: a mango, shirt, coffee, seafood tray, menu photo, or ride add-on. The phrase is small, but it protects the moment before money gets awkward.",
+    standard: "Point first, say Cái này bao nhiêu?, then wait for the number to be spoken, typed, or shown on a calculator. Keep the item visible until the price is clear.",
+    when: "Markets, snack stalls, small shops, beach seafood, laundry counters, and informal rides are where this earns its place. For several items, move to a total-price phrase before paying.",
+    why: "The useful part is timing. Ask before the bag is packed, the plate is weighed, or the ride has started, then repeat or show the number back so both sides see the same price.",
+    watch: "Confirm the final price before handing over cash or card, especially when several items, bags, or add-ons are involved.",
+    tip: "If the answer comes too fast, hand over your phone calculator or point to theirs. Numbers are easier to trust when both people can see them.",
+    travelerInsight: "The answer may be spoken fast, typed into a phone, shown on a calculator, or answered with a gesture. If the number matters, ask them to type it.",
+    variation: "Use these when the price question needs a softer tone, a total, or a clearer object. The pointing still does most of the work.",
+    youMayHear: "A vendor may answer with a fast number, a typed amount, or a short cash-only note. Pause until the amount is visible before you pay.",
+    exploreNext: "These are the next phrases when the price turns into a total, a bargain, a cash/card question, or a number you need repeated.",
+  },
+  "transport-cash": {
+    summary: "Use this near the end of a ride when the amount is already clear and the driver needs to know you are paying in cash.",
+    atGlance: "Say Tôi trả bằng tiền mặt when the ride is turning into a payment moment. It belongs with fare, meter, change, card, and receipt questions, after the route is settled.",
+    standard: "Use Tôi trả bằng tiền mặt after the fare is visible or agreed. Say it once, keep the cash or ride screen visible, then wait for a nod, a number, or a payment instruction.",
+    when: "Use it when the ride is ending, the fare is settled, or the driver asks how you are paying. If the price is not clear yet, ask the fare first.",
+    why: "Cash can be the cleanest way to finish a ride, but only after the amount is understood. This line sets the payment method before money changes hands.",
+    watch: "Do not lead with a large bill unless the amount is clear. Let the fare be visible first, then hand over cash.",
+    tip: "If the reply is fast, point to the meter, app price, calculator, or bill. A visible number is easier than repeating the phrase louder.",
+    travelerInsight: "The next exchange is usually about amount, meter, card, receipt, or change. Keep the payment question narrow so the driver does not think you are changing the route.",
+    exploreNext: "After the cash line lands, the next detail is usually fare, meter, card, receipt, or change.",
+    teachingPhraseFamilyIDs: ["transport-fare", "transport-meter", "service-card"],
+    nearbyPhraseFamilyIDs: ["transport-fare", "transport-meter", "service-card", "service-receipt"],
+    explorePhraseFamilyIDs: ["transport-fare", "transport-meter", "service-card", "service-receipt", "money-small-bills"],
+  },
   "repair-write-down": {
     summary: "Written text often rescues numbers, names, room numbers, and addresses faster than more speech.",
     atGlance: "Written text often rescues numbers, names, room numbers, and addresses faster than more speech. Use this when you need the other person to give you something you can read, save, or show again.",
@@ -129,6 +169,62 @@ const familyCopyOverrides = {
     when: "Use it at airports, convenience stores, phone shops, hotel desks, or tourist counters when you need mobile data before moving on.",
     watch: "Ask to see the data amount and expiration date before paying. A SIM plan can sound clear in speech but still be different on the printed package.",
     tip: "Show your phone and say SIM. Staff usually understand the goal quickly once they see the screen or SIM tray.",
+  },
+  "food-bottled-water": {
+    summary: "For asking for sealed bottled water at a table, stall, hotel, or counter.",
+    atGlance: "Ask before the meal moves on, especially when cups, ice, or tap water are already on the table.",
+    standard: "Point to the fridge, menu, or bottle size if there are choices. A short yes or no is enough.",
+    when: "Good at street stalls, cafes, hotels, small shops, tour stops, and hot walks between sights.",
+    why: "Bottled water is often the safest simple drink request. It also opens the door to ice, straw, and payment follow-ups.",
+    travelerInsight: "If they point to a cooler, choose the size before asking for ice or another drink.",
+    watch: "If they offer ice, decide whether you want the bottle sealed first.",
+    tip: "Nước suối is the useful phrase to recognize on bottles and menus.",
+    exploreNext: "Takeaway, payment, receipt, split-bill, and that-is-all phrases cover the table after the drink is settled.",
+    sectionBodies: {
+      breakdown: "Có asks whether they have it; nước suối means bottled water.",
+    },
+  },
+  "food-menu": {
+    summary: "For getting the menu into view before choosing, pointing, or asking about a dish.",
+    atGlance: "Ask before ordering when the counter is moving fast, the wall menu is hard to read, or the QR code is not obvious.",
+    standard: "Keep the table, phone, or dish photo ready. Once the menu appears, pointing can do most of the work.",
+    why: "Menus in Vietnam can be a wall board, QR code, laminated sheet, or what the server remembers. Getting the list visible lowers the pressure before you choose.",
+    travelerInsight: "If they gesture to a board or QR code, follow the point first. Then use recommendation, not-spicy, or allergy cards if the choice still needs narrowing.",
+    when: "Good at street stalls, cafes, restaurants, hotel breakfasts, and counters where you cannot yet see what is available.",
+    watch: "For allergies or dietary limits, move from the menu request to the specific food-safety phrase before ordering.",
+    tip: "Pointing at a dish name or photo is normal. It saves everyone from guessing through unfamiliar menu names.",
+    exploreNext: "Iced-tea, have-that, two-of-these, and one-more cards are natural once the menu choice is made.",
+    sectionBodies: {
+      breakdown: "The first chunk asks to see; the middle names the menu; the ending keeps it polite.",
+    },
+  },
+  "service-bag": {
+    summary: "For asking for a bag before the counter, market stall, or takeaway handoff is finished.",
+    atGlance: "Ask while the item is still visible and before the receipt or food handoff closes the exchange.",
+    standard: "Point to what you bought, say the line once, and wait for the bag, price, or quick no.",
+    why: "Bag requests are tiny but time-sensitive. Asking early keeps the checkout or takeaway moment from turning into a second trip back to the counter.",
+    travelerInsight: "The reply may be a bag offered, a small extra charge, or a head shake if bags are not available.",
+    when: "Good at convenience stores, markets, bakeries, pharmacies, street-food stalls, and hotel desks when your hands are already full.",
+    watch: "Some places charge a little extra or use reusable bags. Keep cash or the item visible until the answer is clear.",
+    tip: "Point to the item rather than repeating the phrase louder. The bag need is usually obvious once the purchase is in view.",
+    exploreNext: "Water, tissues, sunscreen, receipt, and card-payment cards cover the same small-errand lane.",
+    sectionBodies: {
+      breakdown: "Có asks whether they have it; túi is the bag; không? makes it a yes-or-no question.",
+    },
+  },
+  "service-card": {
+    summary: "For checking card payment before the cashier, driver, or counter staff expects cash.",
+    atGlance: "Ask before the total is final if no card reader, QR stand, or payment sticker is obvious.",
+    standard: "Keep the bill, item, or ride screen visible. The question is about payment method, not the price itself.",
+    why: "Cash is still common in small shops, rides, markets, and guesthouses. This phrase checks the payment lane before the moment gets awkward.",
+    travelerInsight: "The reply may be a nod, a card machine, a QR code, a cash-only answer, or a request to wait.",
+    when: "Good at shops, clinics, laundry counters, hotels, ticket desks, and cafes before you commit to paying.",
+    watch: "If they say cash only, move to ATM, small-bill, or total-price cards instead of asking the same question again.",
+    tip: "Show the card or phone wallet only after the answer is positive. It keeps the question calm and practical.",
+    exploreNext: "Receipt, total-price, ATM, cash, and small-bill cards sit close by once payment starts.",
+    sectionBodies: {
+      breakdown: "Tôi marks your payment; quẹt thẻ means swipe or pay by card; được không? asks if it is possible.",
+    },
   },
   "v500-shop-can-you-lower-the-price": {
     summary: "Use this when bargaining is normal and you want to ask for a small discount.",
@@ -288,6 +384,468 @@ const scenarioGuidance = {
     watch: "If the item is not available, ask for a nearby alternative instead of repeating the same phrase.",
   },
 };
+
+Object.assign(familyCopyOverrides, {
+  "emergency-hospital": {
+    summary: "For finding the nearest hospital when the situation needs real medical help, not a long explanation.",
+    why: "Hospital questions need a fast direction more than polished Vietnamese. Put the place first and keep the phone map, injury, or helper contact visible.",
+    travelerInsight: "Expect a point, a clinic name, a short ride suggestion, or someone reaching for a phone.",
+    when: "Use this when pain, injury, fever, breathing, or medication trouble makes a pharmacy or hotel desk feel too small.",
+    sectionBodies: {
+      breakdown: "Bệnh viện is hospital; gần nhất means nearest; ở đâu? asks where it is.",
+    },
+  },
+  "emergency-ambulance": {
+    why: "Ambulance language should be unmistakable. This phrase makes the needed action clear before symptoms or location details get added.",
+    travelerInsight: "The next move may be a call, a question about location, or someone asking what happened.",
+    when: "Use it when someone cannot safely walk, breathe, stand, or wait for normal clinic help.",
+  },
+  "emergency-emergency": {
+    why: "A short emergency word can cut through noise when you cannot explain the full problem yet.",
+    travelerInsight: "People may ask what happened, where, or who needs help. Show the person, location, or phone screen quickly.",
+    when: "Use it first when the situation is urgent and the exact Vietnamese for the problem is not ready.",
+  },
+  "emergency-not-safe": {
+    why: "Safety phrases should not sound like bargaining. This line says the feeling clearly so the next step can move toward help or distance.",
+    travelerInsight: "The reply may be a staff member stepping in, a direction to move, or a question about who is involved.",
+    when: "Use it when a ride, person, street, room, or situation feels wrong enough that you need help now.",
+  },
+  "emergency-passport": {
+    why: "Passport trouble often turns into paperwork, police reports, embassy calls, or hotel help. Name the document first so the right process starts.",
+    travelerInsight: "Expect a question about copies, location, police report, or embassy contact.",
+    when: "Use it when your passport is missing, held somewhere, damaged, or needed for a report.",
+  },
+  "emergency-police": {
+    why: "Police requests need a clear first action. This phrase keeps the ask direct before details, photos, or names make the exchange longer.",
+    travelerInsight: "The next answer may be a phone call, a nearby station, or a request to explain what happened.",
+    when: "Use it when theft, harassment, threats, scams, or an accident need official help.",
+  },
+  "v500-emer-safe-do-not-touch-me": {
+    why: "Boundary phrases need to be short and firm. This one names the behavior without giving a long reason.",
+    travelerInsight: "Move toward staff, light, or a public counter after saying it. The phrase is stronger when your body language matches it.",
+    when: "Use it when someone is touching, crowding, or grabbing you and politeness is no longer the main goal.",
+  },
+  "v500-emer-safe-i-am-injured": {
+    why: "Injury language should put the body problem first so help does not wait for a perfect story.",
+    travelerInsight: "Expect a question about where it hurts, whether you can move, or whether you need a clinic.",
+    when: "Use it after a fall, crash, cut, burn, or sudden pain when someone nearby can help.",
+  },
+  "v500-emer-safe-i-cannot-move": {
+    why: "This line makes the limit clear before anyone asks you to stand, walk, or follow them.",
+    travelerInsight: "The next useful answer is usually help coming to you, a call, or a safer place to wait.",
+    when: "Use it when standing, walking, or moving would make the situation worse.",
+  },
+  "transport-destination": {
+    summary: "For showing a driver the exact place you want to go before the ride starts moving.",
+    why: "Vietnamese addresses, alleys, and entrances can be easy to mishear. The phrase works best with the map already on screen.",
+    travelerInsight: "Expect a nod, fare question, route question, or a closer entrance suggestion.",
+    when: "Use this before getting in, before the driver pulls away, or when the destination needs to be reset.",
+  },
+  "transport-main-destination": {
+    why: "District names can be faster than a full address when the city area is the main point.",
+    travelerInsight: "The reply may be about route, fare, traffic, or which part of the district you mean.",
+    when: "Use it for broad city moves when the exact street can come next on your map.",
+  },
+  "transport-route": {
+    why: "Route guidance should stay calm and visual. This phrase works when the map or road choice is already in front of both people.",
+    travelerInsight: "The driver may nod, ask which turn, or point to a reason the route changed.",
+    when: "Use it when you need the driver to follow the map, turn toward a landmark, or avoid a wrong road.",
+  },
+  "transport-wait": {
+    why: "Waiting requests need a time limit. Five minutes makes the ask concrete enough for a driver or helper to answer.",
+    travelerInsight: "Expect a yes, a price adjustment, or a request to meet at a specific pickup point.",
+    when: "Use it during quick stops, luggage pickups, bathroom breaks, or ticket-counter errands.",
+  },
+  "transport-aircon": {
+    why: "Comfort requests land better when they stay specific. This asks for air conditioning, not a complaint about the whole ride.",
+    travelerInsight: "The driver may adjust the fan, open a window, or explain that the system is not working.",
+    when: "Use it in taxis, vans, buses, or tour cars when heat is making the ride hard.",
+  },
+  "transport-fare": {
+    why: "Fare questions prevent confusion before cash, cards, meters, or app prices start competing.",
+    travelerInsight: "Expect a number, meter point, app screen, or calculator. Wait until the amount is visible.",
+    when: "Use it before a ride starts, before paying, or when the price changes from what you expected.",
+  },
+  "transport-lost": {
+    why: "Lost-driver moments need a simple reset. This phrase says the route is not making sense before anxiety takes over.",
+    travelerInsight: "The next answer may be a map check, a turn, a stop, or a call to the destination.",
+    when: "Use it when the road, landmark, or app route no longer matches where you meant to go.",
+  },
+  "transport-meter": {
+    why: "Meter questions belong at the start of a taxi ride, before the fare becomes a disagreement.",
+    travelerInsight: "Watch for the meter being turned on, a fixed-price offer, or a cash-only answer.",
+    when: "Use it when the ride is a taxi and no app fare is already locked in.",
+  },
+  "transport-stop-here": {
+    why: "Stopping phrases must be direct and easy to act on. This line tells the driver the location matters now.",
+    travelerInsight: "Expect a pull-over, a question about safety, or a request to stop at the next legal spot.",
+    when: "Use it when the entrance, curb, landmark, or safety feeling says the ride should end here.",
+  },
+  "health-motion-sickness": {
+    summary: "For asking a pharmacy or helper for motion-sickness medicine before a ride, boat, or mountain road.",
+    why: "Motion sickness is easier to handle before the vehicle moves. Ask early, while the pharmacy shelf or trip plan is still visible.",
+    travelerInsight: "Expect questions about adult or child dose, drowsiness, timing, and how many pills to take.",
+    when: "Use it before buses, boats, mountain roads, long taxis, and tours where nausea would ruin the day.",
+    sectionBodies: {
+      breakdown: "Có asks whether they have it; thuốc say xe means motion-sickness medicine; không? makes it a question.",
+    },
+  },
+  "health-pharmacy": {
+    why: "Pharmacy questions work best when the symptom or medicine box is visible. The phrase gets you to the right counter first.",
+    travelerInsight: "Expect a point, product suggestion, dosage question, or a request to describe symptoms.",
+    when: "Use it when you need medicine, first aid, sunscreen, stomach help, or advice before a clinic.",
+  },
+  "health-stomach": {
+    why: "Stomach symptoms can be sensitive, so a short clear phrase is kinder than miming the whole problem.",
+    travelerInsight: "The next answer may be medicine, hydration advice, dosage, or a clinic suggestion.",
+    when: "Use it at a pharmacy, hotel desk, clinic, or with a guide when your stomach is the main issue.",
+  },
+  "food-coffee-bac-xiu": {
+    why: "Bạc xỉu is a specific coffee order, so the page should feel like ordering a drink, not translating a noun.",
+    travelerInsight: "Expect a size, ice, sugar, or takeaway question. Point to the menu if pronunciation feels risky.",
+    when: "Use it at cafes, drink stalls, breakfast counters, and anywhere Vietnamese coffee is on the board.",
+  },
+  "food-coffee-black": {
+    why: "Black coffee requests are clearer when milk and sugar are kept out of the first line.",
+    travelerInsight: "The follow-up is usually hot or iced, sugar or no sugar, and takeaway or table service.",
+    when: "Use it at cafes, hotel breakfasts, drink carts, and counters with coffee photos.",
+  },
+  "food-coffee-milk": {
+    why: "Milk coffee is common enough to ask for directly, but the ice and sweetness choices still matter.",
+    travelerInsight: "Expect a hot/iced question, sugar preference, size, or a point toward the coffee menu.",
+    when: "Use it for cafe orders, breakfast counters, drink stalls, and takeaway windows.",
+  },
+  "food-more-herbs": {
+    why: "Herbs are part of many Vietnamese meals, and asking for more can be normal when the plate arrives short.",
+    travelerInsight: "Expect a small plate, a point to the garnish tray, or a quick no if they are out.",
+    when: "Use it with phở, bún, bánh xèo, rolls, grilled dishes, or any table where herbs are already part of the meal.",
+  },
+  "food-need-table": {
+    why: "A table request is about seating, not the whole order. Keep it short so staff can point, count, or tell you to wait.",
+    travelerInsight: "The answer may be a table number, waiting time, inside/outside choice, or a hand signal to follow.",
+    when: "Use it at busy restaurants, cafes, food courts, and casual places where seating is not obvious.",
+  },
+  "food-one-portion": {
+    why: "Portion language helps before the dish is made, especially when menus have sizes or shared plates.",
+    travelerInsight: "Expect a size question, price, nod, or point to a menu line.",
+    when: "Use it when ordering one serving for yourself, confirming a portion, or avoiding a shared-size dish.",
+  },
+  "food-pay-now": {
+    why: "Payment timing varies between stalls, cafes, and restaurants. This phrase keeps the question about when to pay.",
+    travelerInsight: "Expect a point to the cashier, a bill, a QR code, or a signal to pay after eating.",
+    when: "Use it when the meal is ending, the counter is busy, or you are unsure whether to pay first.",
+  },
+  "food-peanut-allergy": {
+    why: "Allergy pages need to slow the order down before the kitchen commits to the dish.",
+    travelerInsight: "Expect ingredient checking, a safer dish suggestion, or a clear no. Do not treat a vague nod as enough.",
+    when: "Use it before ordering if peanuts, eggs, sauces, or shared prep could affect safety.",
+    sectionBodies: {
+      breakdown: "Món này asks about this dish; có asks whether it has something; trứng hay đậu phộng names egg or peanuts.",
+    },
+  },
+  "hotel-aircon-broken": {
+    why: "Room problems are easier to fix when the object is clear. This phrase points staff to the air conditioner first.",
+    travelerInsight: "Expect a room visit, remote-control check, repair wait, or room-change offer.",
+    when: "Use it when the unit will not cool, turn on, respond to the remote, or stop leaking.",
+  },
+  "hotel-check-in": {
+    why: "Check-in language works best with the booking name or passport ready. The phrase opens the hotel process.",
+    travelerInsight: "Expect a passport request, booking check, deposit, room time, or key handoff.",
+    when: "Use it at hotels, homestays, apartments, and guesthouses when you are ready to start the stay.",
+  },
+  "hotel-checkout": {
+    why: "Checkout is usually a sequence: room, bill, key, luggage, and receipt. This phrase starts that sequence cleanly.",
+    travelerInsight: "Expect a bill check, minibar question, key return, luggage offer, or receipt.",
+    when: "Use it when leaving the hotel, asking about the bill, or closing a stay before transport.",
+  },
+  "hotel-checkout-time": {
+    why: "Checkout time affects breakfast, luggage, rides, and tours. Ask while the booking or room key is visible.",
+    travelerInsight: "Expect a time, late-checkout offer, luggage-storage option, or fee.",
+    when: "Use it on arrival, the night before leaving, or before booking a pickup.",
+  },
+  "hotel-luggage": {
+    why: "Luggage storage needs a clear handoff. This phrase tells staff the bag is staying while you move around.",
+    travelerInsight: "Expect a tag, room number, pickup time, or where to leave the bags.",
+    when: "Use it before check-in, after checkout, or between a tour and a later ride.",
+  },
+  "hotel-more-supplies": {
+    why: "Supply requests are simple if the item is named clearly. Keep the room number or missing item visible.",
+    travelerInsight: "Expect a handoff, housekeeping visit, wait time, or question about how many you need.",
+    when: "Use it for towels, toilet paper, water, soap, or room basics that should be easy to replace.",
+    sectionBodies: {
+      breakdown: "Cho tôi asks to give me; thêm means more; the final words name the specific supply.",
+    },
+  },
+  "hotel-room-hot": {
+    why: "A hot room can mean air conditioning, fan, window, or room-change help. Start with the condition, then let staff choose the fix.",
+    travelerInsight: "Expect a remote check, fan, maintenance visit, or another room if the problem persists.",
+    when: "Use it when the room stays hot after you have tried the obvious controls.",
+  },
+  "v500-hote-acco-the-door-does-not-lock": {
+    why: "Door-lock problems are safety problems, not comfort complaints. This phrase should move staff toward checking the room immediately.",
+    travelerInsight: "Expect a staff visit, new key card, repair, or room change.",
+    when: "Use it as soon as the door, balcony, or room lock fails to secure.",
+  },
+  "phone-charge-here": {
+    why: "Charging questions are about permission and outlet location. Show the cable or low battery so the request is obvious.",
+    travelerInsight: "Expect a point to an outlet, a no, or a safer spot behind the counter.",
+    when: "Use it in cafes, hotel lobbies, airports, buses, and shops when battery level is becoming a problem.",
+    sectionBodies: {
+      breakdown: "Sạc means charge; điện thoại is phone; ở đây asks about doing it here.",
+    },
+  },
+  "phone-charger": {
+    why: "A charger request works best with the phone or cable visible so staff know which kind you mean.",
+    travelerInsight: "Expect a loaner cable, a shop direction, a price, or a no.",
+    when: "Use it when your battery is low and buying, borrowing, or finding a charger is the next step.",
+    sectionBodies: {
+      breakdown: "Có asks whether they have it; sạc điện thoại means phone charger; không? makes it a question.",
+    },
+  },
+  "phone-sim": {
+    why: "SIM questions should happen before you leave the counter, while passport, phone, and plan details are still visible.",
+    travelerInsight: "Expect a data amount, price, registration step, or activation check.",
+    when: "Use it at airports, phone shops, convenience stores, or hotel desks when mobile data is the problem.",
+    sectionBodies: {
+      breakdown: "SIM is the phone card; có asks whether they have one; không? makes it a yes-or-no question.",
+    },
+  },
+  "repair-english-help": {
+    why: "English-help requests should sound like cooperation, not frustration. This phrase asks for a language bridge before details get lost.",
+    travelerInsight: "The reply may be simple English, another staff member, a translation app, or written help.",
+    when: "Use it when the topic matters and gestures or repeated Vietnamese are not enough.",
+    sectionBodies: {
+      breakdown: "Bạn có thể asks can you; nói tiếng Anh means speak English; không? makes it a question.",
+    },
+  },
+});
+
+for (const [familyID, copy] of Object.entries({
+  "emergency-ambulance": {
+    when: "Best when someone cannot safely walk, breathe, stand, or wait for normal clinic help.",
+    tip: "Say the line, then show the location or point to the person who needs help.",
+    watch: "If people ask follow-up questions, keep returning to ambulance, location, and the injured person.",
+  },
+  "emergency-not-safe": {
+    when: "Best when a ride, person, street, room, or situation feels wrong enough that help needs to move now.",
+    tip: "Move toward staff, light, or a public counter while keeping the phrase short.",
+    watch: "Do not soften this one too much. The point is to be understood quickly.",
+  },
+  "emergency-passport": {
+    when: "Best when the passport is missing, held somewhere, damaged, or needed for a report.",
+    tip: "Show a passport photo, hotel copy, or document number if you have one.",
+    watch: "This often turns into police or embassy paperwork, so written details matter.",
+  },
+  "emergency-police": {
+    when: "Best when theft, harassment, threats, scams, or an accident need official help.",
+    tip: "Keep the photo, receipt, location, or witness detail ready for the next question.",
+    watch: "If the situation is still active, move to safety first and explain after help is coming.",
+  },
+  "v500-emer-safe-do-not-touch-me": {
+    when: "Best when someone is touching, crowding, or grabbing you and politeness is no longer the main goal.",
+    tip: "Step back if you can, raise your voice enough to be heard, and look toward staff or bystanders.",
+    watch: "This is a boundary phrase. It should stay short, firm, and repeated only as needed.",
+  },
+  "v500-emer-safe-i-cannot-move": {
+    when: "Best when standing, walking, or moving would make the situation worse.",
+    tip: "Point to the injured area or stay seated so the words and body language match.",
+    watch: "Let someone come to you. Moving too soon can confuse the help you actually need.",
+  },
+  "food-one-portion": {
+    when: "Best when ordering one serving for yourself, confirming a portion, or avoiding a shared-size dish.",
+    tip: "Point to the menu line or display tray so one portion connects to the right dish.",
+    watch: "If the place sells small, large, or family sizes, confirm the size before paying.",
+  },
+  "food-pay-now": {
+    when: "Best when the meal is ending, the counter is busy, or you are unsure whether payment happens first.",
+    tip: "Hold the bill, table number, or wallet lightly visible so the cashier knows what you mean.",
+    watch: "Some stalls collect before eating and some cafes after. Follow the point or hand signal.",
+  },
+  "health-pharmacy": {
+    when: "Best when you need medicine, first aid, sunscreen, stomach help, or advice before a clinic.",
+    tip: "Show the symptom, medicine box, or photo so the pharmacist can narrow the shelf quickly.",
+    watch: "Ask about dose and timing before leaving; pharmacy answers can be fast.",
+    sectionBodies: {
+      breakdown: "Nhà thuốc means pharmacy; gần nhất means nearest; ở đâu? asks where it is.",
+    },
+  },
+  "hotel-aircon-broken": {
+    when: "Best when the unit will not cool, turn on, respond to the remote, or stop leaking.",
+    tip: "Show the remote, room number, or the unit itself if staff comes upstairs.",
+    watch: "A room change may be easier than a repair if it is late or the heat is bad.",
+  },
+  "hotel-checkout": {
+    when: "Best when leaving the hotel, asking about the bill, or closing a stay before transport.",
+    tip: "Keep the key card, room number, and any luggage question ready at the same time.",
+    watch: "Minibar, laundry, and deposit questions can appear here; wait for the final bill before paying.",
+  },
+  "hotel-room-hot": {
+    when: "Best when the room stays hot after you have tried the obvious controls.",
+    tip: "Show the thermostat, remote, or warm room before adding a long explanation.",
+    watch: "If the room still does not cool, move to air-conditioner-broken or room-change language.",
+  },
+  "transport-lost": {
+    when: "Best when the road, landmark, or app route no longer matches where you meant to go.",
+    tip: "Show the map first so the driver can see the mismatch instead of hearing only worry.",
+    watch: "If the feeling shifts from confused to unsafe, stop-here language matters more than route repair.",
+  },
+  "transport-meter": {
+    when: "Best when the ride is a taxi and no app fare is already locked in.",
+    tip: "Ask before the ride gets moving; it is harder to reset the fare after a few blocks.",
+    watch: "If they offer a fixed price instead, confirm the amount before deciding.",
+  },
+  "transport-route": {
+    when: "Best when the driver needs to follow the map, turn toward a landmark, or avoid a wrong road.",
+    tip: "Point to the route line on your phone; the screen makes the request feel practical.",
+    watch: "Do not over-direct every turn unless it matters. Save the phrase for a real route mismatch.",
+  },
+  "transport-stop-here": {
+    when: "Best when the entrance, curb, landmark, or safety feeling says the ride should end here.",
+    tip: "Point ahead or toward the curb so the driver has a safe place to pull over.",
+    watch: "If stopping immediately is unsafe, expect the driver to move to the next legal spot.",
+  },
+})) {
+  familyCopyOverrides[familyID] = {
+    ...(familyCopyOverrides[familyID] || {}),
+    ...copy,
+    sectionBodies: {
+      ...((familyCopyOverrides[familyID] || {}).sectionBodies || {}),
+      ...(copy.sectionBodies || {}),
+    },
+  };
+}
+
+Object.assign(familyCopyOverrides, {
+  "food-coffee-bac-xiu": {
+    sectionBodies: {
+      "local-tip": "Bạc xỉu is already sweet and milk-heavy. Point to the board first, then adjust ice or takeaway after the drink name lands.",
+      "good-to-know": "If the cafe is crowded, the short drink name plus a menu point is enough. Do not over-explain the coffee style.",
+    },
+  },
+  "food-coffee-black": {
+    sectionBodies: {
+      "local-tip": "Black coffee can arrive strong and slow-dripped. Confirm ice, sugar, or condensed milk before the cup is started.",
+      "good-to-know": "If you want no milk, keep the order plain. Add no-sugar only when sweetness is the real issue.",
+    },
+  },
+  "food-coffee-milk": {
+    sectionBodies: {
+      "local-tip": "Cà phê sữa đá is familiar, but sweetness can still vary. Point to the drink list if the cafe has sizes or versions.",
+      "good-to-know": "Milk coffee is often sweet by default. Use the no-sugar or less-ice card only if the default cup will not work.",
+    },
+  },
+  "food-less-ice": {
+    sectionBodies: {
+      "local-tip": "Say this before the drink is made. Once the cup is full, the easier fix may be a fresh cup, not extra explanation.",
+      "good-to-know": "Ice can be part of the price and portion. Keep the request small and clear instead of debating the cup.",
+    },
+  },
+  "food-more-herbs": {
+    sectionBodies: {
+      "local-tip": "Herbs often sit at the side of the table or counter. A point to the empty plate can make the request obvious.",
+      "good-to-know": "This is a table request, not a complaint. Ask once, then let staff bring what is available.",
+    },
+  },
+  "food-need-table": {
+    sectionBodies: {
+      "local-tip": "Hold up two fingers or show the group size while you say it. Seating answers are often gestures, not sentences.",
+      "good-to-know": "At busy places, the useful answer may be a wait time, a table number, or a wave toward open seats.",
+    },
+  },
+  "food-no-sugar": {
+    sectionBodies: {
+      "local-tip": "Say it before coffee, juice, or tea is mixed. Sugar is easier to avoid than to undo.",
+      "good-to-know": "Some drinks are premixed. If staff hesitate, point to another drink or accept a less-sweet option.",
+    },
+  },
+  "food-not-spicy": {
+    sectionBodies: {
+      "local-tip": "Say it before ordering, then point to chili, sauce, or the dish photo if heat is the issue.",
+      "good-to-know": "Some broths and marinades are already spicy. A clear no-chili request is safer than assuming the kitchen can remove everything.",
+    },
+  },
+  "food-pack-to-go": {
+    sectionBodies: {
+      "local-tip": "Use the phrase while pointing to the dish or leftovers. Staff may answer with a box, bag, or small fee.",
+      "good-to-know": "Takeaway can mean packing leftovers or making a fresh order to carry. Pointing keeps the meaning clear.",
+    },
+  },
+  "food-peanut-allergy": {
+    sectionBodies: {
+      "local-tip": "Keep the allergy phrase visible and wait for a real check, not just a polite nod.",
+      "good-to-know": "Peanuts can appear in sauces, toppings, and shared prep. Choose another dish if the answer feels uncertain.",
+    },
+  },
+  "food-this-bowl": {
+    sectionBodies: {
+      "local-tip": "Point to the exact bowl, tray, or menu photo. Cái này works because the object is visible.",
+      "good-to-know": "This phrase is strongest at the counter or table. Without pointing, staff may not know which bowl you mean.",
+    },
+  },
+  "food-to-go": {
+    sectionBodies: {
+      "local-tip": "Say mang đi before the order is finished. It changes packaging, timing, and sometimes the way the dish is assembled.",
+      "good-to-know": "For soups or saucy dishes, expect separate containers. Check the bag before leaving if the order has several parts.",
+    },
+  },
+  "food-utensils": {
+    sectionBodies: {
+      "local-tip": "Point to the table or bag if utensils are missing. The answer may be a drawer, basket, or quick handoff.",
+      "good-to-know": "At casual counters, utensils may be self-serve. Look for a basket before turning it into a longer request.",
+    },
+  },
+  "food-vegetarian": {
+    sectionBodies: {
+      "local-tip": "Say it before ordering and confirm sauces or broth if the dish usually carries meat stock or fish sauce.",
+      "good-to-know": "Vegetarian can mean different things by kitchen. Point to safer dishes if the answer is vague.",
+    },
+  },
+  "repair-number": {
+    travelerInsight: "The answer may be a room number, gate, fare, or time. Ask for the number again while the ticket, bill, or screen is still visible.",
+    sectionBodies: {
+      "good-to-know": "Move to writing or a phone calculator if the number matters. Repeating a fast number rarely makes it safer.",
+      "local-tip": "Hold the bill, ticket, or booking open. The object tells the other person which number you missed.",
+    },
+  },
+  "repair-repeat": {
+    travelerInsight: "The second pass may come slower, shorter, or with a pointing gesture. Watch the object or screen as much as the words.",
+    sectionBodies: {
+      "good-to-know": "Ask once, then pause. If the repeat still misses, switch to writing, pointing, or showing the detail.",
+      "local-tip": "Keep the repair friendly. The phrase works best as a quick reset, not a debate about pronunciation.",
+    },
+  },
+  "v500-unde-repa-please-say-it-slowly": {
+    travelerInsight: "Listen for one useful word at a time: price, gate, street, room, or time. Slower speech should narrow the detail.",
+    sectionBodies: {
+      "good-to-know": "A softer tone matters here. The goal is a slower second pass, not making the other person feel corrected.",
+      "local-tip": "If the slower answer still runs together, show the word or number and ask for that piece only.",
+    },
+  },
+  "transport-cash": {
+    why: "Cash payment is a ride-ending detail, not a route request. Say it after the fare is understood so the driver knows how you plan to settle.",
+    travelerInsight: "Expect a nod, a request for smaller bills, a card/QR correction, or a fare check. Keep the visible amount close until payment is done.",
+    tip: "Show the fare, meter, or app price first. Cash is clearer when the amount is already shared.",
+    watch: "Large bills can make the handoff harder. Confirm the fare before offering cash or asking for change.",
+    sectionBodies: {
+      "when-to-use": "Best near the end of a ride, after the fare is visible or the driver asks how you are paying.",
+      "nearby-phrases": "The next payment detail is usually fare, meter, card, receipt, or change.",
+      "explore-next": "After cash is clear, move to change, receipt, card, fare, or small-bill phrases if the payment still needs work.",
+    },
+  },
+  "phone-charger": {
+    when: "Best when the phone is low and the immediate need is buying, borrowing, or finding a compatible charger.",
+    sectionBodies: {
+      "good-to-know": "Keep control of your phone while showing the port, cable, or battery warning.",
+    },
+  },
+  "repair-english-help": {
+    when: "Best when the topic matters and gestures, repeated Vietnamese, or pointing are still not enough.",
+    sectionBodies: {
+      "good-to-know": "A mot chut answer means a little English. Keep the next sentence short and show the screen.",
+      "local-tip": "Ask for English once, then make the next move easier with a word, address, number, or photo.",
+    },
+  },
+});
 
 const glossary = new Map(Object.entries({
   "xin": "polite marker",
@@ -548,6 +1106,17 @@ function speakerSymbolName(text, audioKey) {
   return hasExactAudio(text, audioKey) ? "speaker.wave.2.fill" : "text.bubble.fill";
 }
 
+const plannedCardAudioKeySuppressions = new Set([
+  "food-premium-without-this-ingredient",
+]);
+
+function cardAudioKeyForPhrase(phrase) {
+  if (plannedCardAudioKeySuppressions.has(phrase.id)) {
+    return null;
+  }
+  return authoredPhraseAudioKey(phrase.targetText, phrase.audioKey);
+}
+
 function slug(value) {
   return value
     .normalize("NFD")
@@ -576,7 +1145,7 @@ function canonicalDetailPageID(pageID) {
 }
 
 function phraseOption(phrase, detailPageID = null, tintName = null) {
-  const audioKey = authoredPhraseAudioKey(phrase.targetText, phrase.audioKey);
+  const audioKey = cardAudioKeyForPhrase(phrase);
   return {
     id: phrase.id,
     vietnamese: phrase.targetText,
@@ -642,7 +1211,7 @@ function cleanFinalPunctuation(text) {
 }
 
 function weakSummary(summary) {
-  return /when you need|need to explain that|use this when you need/i.test(summary ?? "");
+  return /^(use this|ask this)\s+when\b|when you need|need to (?:say|explain)|use this when you need/i.test(summary ?? "");
 }
 
 function travelerFacingSummary(phrase) {
@@ -671,13 +1240,13 @@ function contextAsSituation(text, fallback) {
   if (!source) return "";
 
   return sentence(source
-    .replace(/^Use this when\s+/i, "This is for when ")
+    .replace(/^Use this when\s+/i, "Reach for it when ")
     .replace(/^Use this at\s+/i, "This is for ")
     .replace(/^Use this in\s+/i, "This is for ")
     .replace(/^Use this before\s+/i, "This comes before ")
     .replace(/^Use this if\s+/i, "This helps if ")
     .replace(/^Use this to\s+/i, "This helps you ")
-    .replace(/^Ask this when\s+/i, "This is for when "));
+    .replace(/^Ask this when\s+/i, "Ask when "));
 }
 
 function intentTeaching(primaryPhrase) {
@@ -853,25 +1422,84 @@ function intentTeaching(primaryPhrase) {
   };
 }
 
+function intentFragmentForCue(intent) {
+  return String(intent ?? "")
+    .replace(/^["“]|["”]$/g, "")
+    .replace(/[.?!]+$/g, "")
+    .trim()
+    .toLowerCase();
+}
+
+function phraseMomentLead(vietnamese, intent) {
+  const title = cleanFinalPunctuation(vietnamese || "");
+  const fragment = intentFragmentForCue(intent);
+  if (!title) return "";
+
+  if (/^(where|which)\b/.test(fragment)) {
+    return `${title} keeps the direction question short.`;
+  }
+  if (/^(how much|what price|what time|when)\b/.test(fragment)) {
+    return `${title} puts the practical detail first.`;
+  }
+  if (/^(can|could|do|does|is|are|may|should)\b/.test(fragment)) {
+    return `${title} keeps the question easy to answer.`;
+  }
+  if (/^(please|help|call|write|show|take|bring|give|open|stop|wait|turn)\b/.test(fragment)) {
+    return `${title} makes the request direct without adding extra explanation.`;
+  }
+  if (/^(i need|i have|i am|i'm|my|this|here is|there is|i lost|i left|i cannot|i can't)\b/.test(fragment)) {
+    return `${title} names the need before the details start piling up.`;
+  }
+  if (/^(thank|sorry|excuse|hello|goodbye|yes|no)\b/.test(fragment)) {
+    return `${title} keeps the social move simple and polite.`;
+  }
+  return `${title} keeps the first line simple.`;
+}
+
+function fullPhraseCue(vietnamese, fallbackCue) {
+  const title = cleanFinalPunctuation(vietnamese || "");
+  if (!title) return fallbackCue;
+  if (/[?!]$/.test(title)) return "Keep the question intact and pause for the reply.";
+  return `Say ${title} in one connected line before adding details.`;
+}
+
+function responseSentence(response) {
+  let clean = String(response ?? "").trim();
+  if (!clean) return "";
+  clean = clean.replace(/^a short reply,\s*/i, "");
+  if (/confirmation, a handoff, a price, or follow-up question/i.test(clean)) return "";
+  if (/confirmation, a handoff, a price, or a follow-up question/i.test(clean)) return "";
+  if (/clear reply, a pointed detail, or a simple follow-up/i.test(clean)) return "";
+  if (/^a short reply$/i.test(clean)) return "";
+  return `Watch for ${clean}.`;
+}
+
+function withoutDuplicateParts(parts) {
+  const seen = new Set();
+  return parts.filter((part) => {
+    const text = String(part ?? "").trim();
+    if (!text) return false;
+    const key = text.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 function atGlanceText(family, primaryPhrase) {
   const copy = scenarioCopy(family.scenarioID);
   const override = familyOverride(family);
   if (override.atGlance) return override.atGlance;
 
-  const teaching = intentTeaching(primaryPhrase);
   const intent = cleanEnglishIntent(primaryPhrase.englishText);
   const situation = contextAsSituation(primaryPhrase.context, family.summary);
   const summaryCandidate = override.summary ?? (weakSummary(family.summary) ? "" : sentence(family.summary));
   const usefulSummary = primaryPhrase.context && instructionLikeSentence(summaryCandidate) ? "" : summaryCandidate;
-  const variantCue = (family.phraseIDs ?? []).length > 1
-    ? "Use the rows below to pick the warmer, safer, or more direct version."
-    : `Listen for ${teaching.response}; use the next rows if the exchange moves on.`;
 
   return [
-    `Say ${primaryPhrase.targetText} when you need "${intent}".`,
+    phraseMomentLead(primaryPhrase.targetText, intent),
     situation,
     usefulSummary,
-    variantCue,
   ].filter(Boolean).join(" ");
 }
 
@@ -904,7 +1532,7 @@ function contextCueText(family) {
     case "social-small-talk":
       return "Use it after a greeting or shared moment, then leave space for a short friendly reply.";
     case "understanding-repair":
-      return "If speech still does not land, move to writing, pointing, or showing the exact word on your phone.";
+      return "If it is still unclear, show, write, or point to the exact word.";
     default:
       return "Keep the relevant place, object, or screen visible while you speak.";
   }
@@ -914,15 +1542,10 @@ function standardText(family, primaryPhrase) {
   const override = familyOverride(family);
   if (override.standard) return override.standard;
 
-  const teaching = intentTeaching(primaryPhrase);
-  const intent = cleanEnglishIntent(primaryPhrase.englishText);
-  const situation = contextAsSituation(primaryPhrase.context, family.summary);
   return [
-    `Use ${primaryPhrase.targetText} as your first sentence for "${intent}".`,
-    situation || `It keeps the focus on ${teaching.moment}.`,
-    `Pause after the phrase and listen for ${teaching.response}.`,
+    fullPhraseCue(primaryPhrase.targetText, contextCueText(family)),
     contextCueText(family),
-  ].join(" ");
+  ].filter(Boolean).join(" ");
 }
 
 function usageText(family, primaryPhrase) {
@@ -939,7 +1562,7 @@ function usageText(family, primaryPhrase) {
   return [
     situation,
     momentSentence,
-    teaching.followUp,
+    teaching.followUp.replace(/^Pause after the phrase so\b/i, "Pause so"),
   ].filter(Boolean).join(" ");
 }
 
@@ -970,17 +1593,20 @@ function whyItMattersText(family, primaryPhrase) {
   return [
     scenarioCopy(family.scenarioID).why,
     `For "${cleanEnglishIntent(primaryPhrase.englishText)}", ${primaryPhrase.targetText} makes the next step easier to answer.`,
-    teaching.followUp,
+    teaching.followUp.replace(/^Pause after the phrase so\b/i, "Pause so"),
   ].join(" ");
 }
 
 function travelerInsightText(family, primaryPhrase) {
+  const override = familyOverride(family);
+  if (override.travelerInsight) return override.travelerInsight;
+
   const teaching = intentTeaching(primaryPhrase);
   const scenario = scenarioByID.get(family.scenarioID);
   const categoryName = scenario?.title ?? "this situation";
   return [
-    `In ${categoryName}, the reply often comes as ${teaching.response}.`,
-    `Say ${primaryPhrase.targetText} once, pause, and watch for the reply.`,
+    `Expect ${teaching.response} in ${categoryName}.`,
+    `Say ${primaryPhrase.targetText} once, then watch for the reply.`,
     contextCueText(family),
   ].join(" ");
 }
@@ -1310,7 +1936,7 @@ const exactRawBreakdownMeanings = new Map(Object.entries({
   "tỏi": "garlic",
   "bơ": "butter",
   "bỏ": "leave out / remove",
-  "không?": "question marker",
+  "không?": "not? / yes-no ending",
   "chưa": "not yet",
   "chùa": "pagoda",
   "vé": "ticket",
@@ -1507,7 +2133,7 @@ function breakdownLeadIn(phrase) {
     return "Use this when you need to identify what something is. The phrase points to the item first, then names it clearly.";
   }
 
-  if (targetText.includes("không")) {
+  if (/\bkhông[?？]?$/.test(targetText.trim())) {
     return "This pattern asks for a yes-or-no answer. Keep the main need together so the question feels natural.";
   }
 
@@ -1557,6 +2183,11 @@ function teachingPhraseOptions(family, sections, currentPageID, primaryPhrase, l
     exclusions.add(currentPageID);
   }
 
+  const overrideOptions = overrideFamilyOptions(family, "teachingPhraseFamilyIDs", limit, exclusions);
+  if (overrideOptions.length > 0) {
+    return overrideOptions;
+  }
+
   const relatedOptions = exploreOptions(family, limit, exclusions);
   if (relatedOptions.length > 0) {
     return relatedOptions;
@@ -1566,7 +2197,17 @@ function teachingPhraseOptions(family, sections, currentPageID, primaryPhrase, l
 }
 
 function exploreNextPhraseOptions(family, sections, currentPageID, primaryPhrase, limit = 8) {
-  const excludedOptions = exploreOptions(family, limit, linkedPageIDs(sections));
+  const exclusions = linkedPageIDs(sections);
+  if (currentPageID) {
+    exclusions.add(currentPageID);
+  }
+
+  const overrideOptions = overrideFamilyOptions(family, "explorePhraseFamilyIDs", limit, exclusions);
+  if (overrideOptions.length > 0) {
+    return overrideOptions;
+  }
+
+  const excludedOptions = exploreOptions(family, limit, exclusions);
   if (excludedOptions.length > 0) {
     return excludedOptions;
   }
@@ -1612,6 +2253,36 @@ function exploreOptions(family, limit = 8, excludingPageIDs = new Set()) {
   });
 }
 
+function explicitFamilyOptions(familyIDs, limit = 8, excludingPageIDs = new Set()) {
+  if (!Array.isArray(familyIDs) || familyIDs.length === 0) return [];
+
+  const options = [];
+  for (const familyID of familyIDs) {
+    const candidate = familyByID.get(familyID);
+    if (!candidate) {
+      throw new Error(`Missing explicit family option ${familyID}`);
+    }
+    const pageID = canonicalPageID(candidate);
+    if (excludingPageIDs.has(pageID)) continue;
+    const phrase = phraseByID.get(candidate.primaryPhraseID);
+    if (!phrase) {
+      throw new Error(`Missing primary phrase ${candidate.primaryPhraseID} for explicit family option ${familyID}`);
+    }
+    options.push(phraseOption(phrase, pageID, tintForScenario(candidate.scenarioID)));
+    if (options.length >= limit) break;
+  }
+  return options;
+}
+
+function overrideFamilyOptions(family, key, limit = 8, excludingPageIDs = new Set()) {
+  const override = familyOverride(family);
+  const currentPageID = canonicalPageID(family);
+  // Family overrides are handwritten card choices. Preserve repeated cards across
+  // sections when the page deliberately carries the same follow-up through a flow.
+  void excludingPageIDs;
+  return explicitFamilyOptions(override[key], limit, new Set([currentPageID]));
+}
+
 function xinChaoFlagshipPage(family, primaryPhrase) {
   const pageID = canonicalPageID(family);
 
@@ -1624,7 +2295,7 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
     title: "Xin chào",
     englishTitle: "Hello",
     pronunciation: "sin chow",
-    summary: "Hello (universal greeting)",
+    summary: "A safe first hello for shops, hotels, tours, and any moment where the relationship word is not obvious yet.",
     iconName: "star.fill",
     tintName: "red",
     categoryIDs: categoryIDsForPage(pageID, family),
@@ -1632,13 +2303,13 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
     sections: withSectionPresentations([
       {
         id: "at-glance",
-        title: "At a glance",
-        body: "Use Xin chào as the safe first hello in shops, hotels, tours, and simple requests. It lets you start warmly without guessing a relationship word.",
+        title: "Start Safe, Then Warm Up",
+        body: "Xin chào is the clean first hello when you walk into a shop, hotel, tour desk, or small request. It buys you a polite opening before you decide whether anh, chị, cô, chú, or a simpler chào fits better.",
       },
       {
         id: "quick-say",
-        title: "Quick say",
-        body: "Use Xin chào when you want one safe greeting. Use Chào in relaxed moments, especially with someone you already know or when you add a relationship word.",
+        title: "The First Hello",
+        body: "Start with Xin chào when the relationship is unclear. Drop to Chào when the moment is relaxed, or add the right relationship word when the person in front of you is obvious.",
         phrases: [
           phraseOption(primaryPhrase, null, "red"),
           manualPhraseOption("xin-chao-casual-chao", "Chào", "Hi / hello (casual)", "chow", "orange"),
@@ -1647,7 +2318,7 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
       {
         id: "breakdown",
         title: "Break it down",
-        body: "Xin gives the greeting a polite shape, chào carries the hello, and the full phrase is the safest default when you do not know the relationship word yet.",
+        body: "Xin gives the greeting its polite shape. Chào carries the hello. Together they keep the opening respectful without forcing you to guess age, role, or closeness too early.",
         breakdown: [
           { id: "xin", vietnamese: "Xin", english: "polite opening", audioKey: authoredBreakdownAudioKey("Xin") },
           { id: "chao", vietnamese: "chào", english: "greet / hello", audioKey: authoredBreakdownAudioKey("chào") },
@@ -1656,14 +2327,14 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
       },
       {
         id: "when-to-use",
-        title: "Where it helps",
-        body: "Use Xin chào for first contact: a shop, front desk, guide, or polite request. In warmer moments, Chào plus the right relationship word sounds more local.",
+        title: "Where It Helps",
+        body: "Use it at first contact: front desk, shop counter, guide pickup, cafe order, or polite question. If the exchange becomes warmer, the next phrase can carry the relationship word.",
         presentation: "plain-text",
       },
       {
         id: "situational-greetings",
-        title: "Situational greetings",
-        body: "Use these when the setting is more specific: a friend, a respectful adult, a phone call, or a time-of-day greeting.",
+        title: "When The Room Gives You More",
+        body: "These greetings fit once the setting is clearer: a familiar person, a respectful older adult, a phone call, or a time-of-day exchange.",
         presentation: "horizontal-phrase-cards",
         phrases: [
           manualPhraseOption("xin-chao-friend", "Chào bạn", "Hi, friend", "chow ban", "orange"),
@@ -1675,8 +2346,8 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
       },
       {
         id: "local-greetings",
-        title: "How locals actually greet",
-        body: "Pick the relationship word when the person's role is clear; stay with Xin chào when unsure. These words show age, respect, and social distance.",
+        title: "Relationship Words Matter",
+        body: "Vietnamese greetings often show age, respect, and social distance. Stay with Xin chào when unsure; choose anh, chị, em, cô, chú, ông, or bà only when the role feels clear enough.",
         phrases: [
           manualPhraseOption("xin-chao-anh", "Chào anh", "Hello, older brother / slightly older man", "chow anh", "blue"),
           manualPhraseOption("xin-chao-chi", "Chào chị", "Hello, older sister / slightly older woman", "chow chee", "red"),
@@ -1689,8 +2360,8 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
       },
       {
         id: "common-follow-ups",
-        title: "Common follow-ups",
-        body: "After hello, small talk often checks health, movement, or the social moment. Use these when the exchange has room to continue.",
+        title: "If The Hello Continues",
+        body: "After hello, the next beat is usually practical or social: checking in, asking where to go, or moving into the actual request.",
         phrases: [
           catalogPhraseOption("smalltalk-7", "viet-how-are-you", "red"),
           manualPhraseOption("xin-chao-where-going", "Đi đâu đấy?", "Where are you going?", "dee dow day", "red"),
@@ -1699,20 +2370,20 @@ function xinChaoFlagshipPage(family, primaryPhrase) {
       },
       {
         id: "cultural-note",
-        title: "Cultural note",
-        body: "You do not need to guess perfectly. A calm Xin chào works almost everywhere; adding anh, chị, em, cô, chú, ông, or bà can sound warmer.",
+        title: "You Do Not Need The Perfect Word",
+        body: "A calm Xin chào is better than freezing while you calculate the perfect relationship term. Smile, keep the greeting simple, then let the next phrase do the work.",
         presentation: "tip-callout",
       },
       {
         id: "good-to-know",
-        title: "Good to know",
-        body: "If you are unsure, do not freeze. Start with Xin chào, smile, and let the rest of the sentence carry the practical need.",
+        title: "Good To Know",
+        body: "If someone answers with a warmer chào plus a relationship word, you can mirror the energy without copying every word exactly.",
         presentation: "tip-callout",
       },
       {
         id: "explore-next",
-        title: "Explore next",
-        body: "Use these next when the conversation moves one step forward.",
+        title: "Keep The Exchange Moving",
+        body: "Use these when the hello has opened the door and you need the next small move.",
         phrases: [
           catalogPhraseOption("polite-2", "viet-thank-you", "green"),
           catalogPhraseOption("polite-5", "viet-excuse-sorry", "blue"),
@@ -1871,6 +2542,10 @@ function pageForFamily(family, childPageIDsByPhraseID) {
 
   const variationsSection = naturalVariationSection(family, variantOptions);
   if (variationsSection) {
+    const override = familyOverride(family);
+    if (override.variation) {
+      variationsSection.body = override.variation;
+    }
     sections.push(variationsSection);
   }
 
@@ -1893,9 +2568,9 @@ function pageForFamily(family, childPageIDsByPhraseID) {
       title: "Relationship forms",
       body: "Swap bạn when the relationship is clear. These versions sound warmer with older or younger people because Vietnamese treats the relationship word as part of the sentence.",
       phrases: [
-        manualPhraseOption("how-are-you-anh", "Anh khỏe không?", "How are you, older man?", "anh khweh khom", "blue"),
-        manualPhraseOption("how-are-you-chi", "Chị khỏe không?", "How are you, older woman?", "chee khweh khom", "red"),
-        manualPhraseOption("how-are-you-em", "Em khỏe không?", "How are you, younger person?", "em khweh khom", "green"),
+        manualPhraseOption("how-are-you-anh", "Anh khỏe không?", "How are you? (to an older man)", "anh khweh khom", "blue"),
+        manualPhraseOption("how-are-you-chi", "Chị khỏe không?", "How are you? (to an older woman)", "chee khweh khom", "red"),
+        manualPhraseOption("how-are-you-em", "Em khỏe không?", "How are you? (to someone younger)", "em khweh khom", "green"),
       ],
     });
   }
@@ -1921,26 +2596,42 @@ function pageForFamily(family, childPageIDsByPhraseID) {
   });
 
   if (depth === "deep" && variantOptions.length === 0) {
-    const nearbySection = nearbyPhraseSection(family, linkedPageIDs(sections));
+    const overrideNearbyOptions = overrideFamilyOptions(family, "nearbyPhraseFamilyIDs", 4, linkedPageIDs(sections));
+    const nearbySection = overrideNearbyOptions.length > 0
+      ? {
+          id: "nearby-phrases",
+          title: "Useful nearby phrases",
+          body: familyOverride(family).exploreNext ?? "These are the next phrases a traveler is likely to need when this moment keeps moving.",
+          phrases: overrideNearbyOptions,
+        }
+      : nearbyPhraseSection(family, linkedPageIDs(sections));
     if (nearbySection) {
       sections.push(nearbySection);
     }
   }
 
   if (primaryPhrase.youMayHear) {
+    const override = familyOverride(family);
     sections.push({
       id: "you-may-hear",
-      title: "You may hear",
-      body: `A local may answer with: ${primaryPhrase.youMayHear}`,
+      title: "You May Hear",
+      body: override.youMayHear ?? `A local may answer with: ${primaryPhrase.youMayHear}`,
     });
   }
 
+  const override = familyOverride(family);
   sections.push({
     id: "explore-next",
-    title: "Explore next",
-    body: "Use these next when the conversation moves one step forward.",
+    title: override.exploreNextTitle ?? "Explore next",
+    body: override.exploreNext ?? "Use these next when the conversation moves one step forward.",
     phrases: exploreNextPhraseOptions(family, sections, pageID, primaryPhrase, 8),
   });
+
+  for (const section of sections) {
+    if (override.sectionBodies?.[section.id]) {
+      section.body = override.sectionBodies[section.id];
+    }
+  }
 
   return {
     id: pageID,
@@ -1951,7 +2642,7 @@ function pageForFamily(family, childPageIDsByPhraseID) {
     title: primaryPhrase.targetText,
     englishTitle: primaryPhrase.englishText,
     pronunciation: primaryPhrase.pronunciation,
-    summary: travelerFacingSummary(primaryPhrase),
+    summary: familyOverride(family).summary ?? sentence(family.summary) ?? travelerFacingSummary(primaryPhrase),
     iconName: scenario?.symbolName ?? "text.bubble.fill",
     tintName: tintForScenario(family.scenarioID),
     categoryIDs: categoryIDsForPage(pageID, family),
@@ -2007,6 +2698,32 @@ function loadCatalogPromotedPhraseIDs() {
     const page = JSON.parse(fs.readFileSync(filePath, "utf8"));
     return page.phraseID;
   }).filter(Boolean));
+}
+
+function normalizeAuthoredPhrasePage(page) {
+  return {
+    ...page,
+    sections: withSectionPresentations((page.sections ?? []).map((section) => ({
+      ...section,
+      phrases: (section.phrases ?? []).map((phrase) => ({
+        ...phrase,
+        symbolName: speakerSymbolName(phrase.vietnamese, phrase.audioKey),
+        detailPageID: canonicalDetailPageID(phrase.detailPageID),
+      })),
+    }))),
+    examples: (page.examples ?? []).map((phrase) => ({
+      ...phrase,
+      symbolName: speakerSymbolName(phrase.vietnamese, phrase.audioKey),
+      detailPageID: canonicalDetailPageID(phrase.detailPageID),
+    })),
+  };
+}
+
+function loadExistingChildPagesByPhraseID() {
+  return new Map(walkJSONFiles(sourceRoot)
+    .map((filePath) => normalizeAuthoredPhrasePage(JSON.parse(fs.readFileSync(filePath, "utf8"))))
+    .filter((page) => page.tierRole === "child" && page.phraseID)
+    .map((page) => [page.phraseID, page]));
 }
 
 function loadCityLibrary() {
@@ -2103,6 +2820,12 @@ function phraseOptionByID(phraseID, tintName = "teal") {
   if (!phrase) return null;
   const family = familyByID.get(phrase.familyID);
   return phraseOption(phrase, family ? canonicalPageID(family) : null, tintName);
+}
+
+function phraseSpecificOptionByID(phraseID, tintName = "teal") {
+  const phrase = phraseByID.get(phraseID);
+  if (!phrase) return null;
+  return phraseOption(phrase, `viet-phrase-${phraseID}`, tintName);
 }
 
 function compactPhraseOptions(options, limit) {
@@ -2343,9 +3066,22 @@ function cityBreakdownTokens(pageRecord, pageKind = null, placeKind = null, opti
   });
 }
 
-function derivedPlacePhraseTip(placeKind) {
+function derivedPlacePhraseTip(pageRecord, placeKind) {
+  const authoredTip = cleanTravelerBody(pageRecord.tip);
+  if (authoredTip) return authoredTip;
+
+  const authoredContext = cleanTravelerBody(pageRecord.context);
+  if (authoredContext) {
+    return authoredContext
+      .replace(/^Use this short route phrase when\b/i, "Best when")
+      .replace(/^Use this clipped phrase when\b/i, "Best when")
+      .replace(/^Use this when\b/i, "Best when")
+      .replace(/^Use this at\b/i, "Best at")
+      .replace(/^Use this as\b/i, "Best as")
+      .replace(/^Ask this when\b/i, "Ask when");
+  }
   if (placeKind === "restaurant" || placeKind === "cafe") {
-    return "If the name is hard to say, show the map pin and play the full sentence.";
+    return "If the name is hard to say, show the map location and play the full sentence.";
   }
   if (placeKind === "street") {
     return "If pronunciation is hard, show the address and play the full sentence.";
@@ -2353,7 +3089,7 @@ function derivedPlacePhraseTip(placeKind) {
   if (["airport", "station", "port"].includes(placeKind)) {
     return "Keep the ticket, booking, or pickup screen visible if staff ask a follow-up.";
   }
-  return "Keep the map pin, ticket, or meeting point visible if the answer comes fast.";
+  return "Keep the map location, ticket, or meeting point visible if the answer comes fast.";
 }
 
 function derivedPlacePhraseRecordScore(record, pageRecord, placeKind) {
@@ -2563,28 +3299,39 @@ function applyCityEditorialImport(sections, pageRecord) {
     return sections;
   }
 
+  const usesSourceMode = ["expanded-detail", "mobile-first"].includes(editorialImport.sourceMode);
   const nextSections = editorialImport.replaceGeneratedSections === true
     ? []
     : sections.map((section) => ({ ...section }));
   const generatedSectionByID = new Map(sections.map((section) => [section.id, section]));
   const shouldReplaceGeneratedSections = editorialImport.replaceGeneratedSections === true;
+  const shouldUseEditorialOnlySections = shouldReplaceGeneratedSections && usesSourceMode;
   const insertBeforeIndex = () => {
     const goodToKnowIndex = nextSections.findIndex((section) => section.id === "good-to-know");
     return goodToKnowIndex === -1 ? nextSections.length : goodToKnowIndex;
   };
 
   for (const editorialSection of editorialImport.sections) {
-    const generatedSection = shouldReplaceGeneratedSections
-      ? generatedSectionByID.get(editorialSection.id)
-      : null;
-    const next = {
-      ...(generatedSection ? { ...generatedSection } : {}),
-      id: editorialSection.id,
-      title: editorialSection.title,
-      body: editorialSection.body,
-    };
+    const generatedSection = generatedSectionByID.get(editorialSection.id);
+    const hasPhraseIDs = Array.isArray(editorialSection.phraseIDs);
+    const next = shouldUseEditorialOnlySections
+      ? {
+        id: editorialSection.id,
+        title: editorialSection.title,
+        body: editorialSection.body,
+        phrases: [],
+        breakdown: [],
+        presentation: editorialSection.presentation ?? (hasPhraseIDs ? "phrase-list" : "plain-text"),
+      }
+      : {
+        ...(generatedSection ? { ...generatedSection } : {}),
+        id: editorialSection.id,
+        title: editorialSection.title,
+        body: editorialSection.body,
+      };
     if (Array.isArray(editorialSection.phraseIDs)) {
       next.phrases = editorialSection.phraseIDs.map((phraseID) => editorialCityPhraseOption(phraseID, pageRecord.id));
+      next.presentation = editorialSection.presentation ?? "phrase-list";
     }
     if (editorialSection.id === "breakdown") {
       next.breakdown = editorialCityBreakdownTokens(editorialSection.breakdownTokens);
@@ -2607,6 +3354,11 @@ function applyCityEditorialImport(sections, pageRecord) {
 }
 
 function compactDerivedPlacePhraseSections(authoredSections, generatedSections) {
+  const generatedAtGlance = generatedSections.find((section) => section.id === "at-glance");
+  const authoredAtGlance = authoredSections.find((section) => (
+    section.id === "at-glance"
+    && wordCount(section.body) >= 12
+  ));
   const generatedRelated = generatedSections.find((section) => section.id === "related-phrases");
   const authoredRelated = authoredSections.find((section) => (
     section.id === "related-phrases"
@@ -2616,11 +3368,12 @@ function compactDerivedPlacePhraseSections(authoredSections, generatedSections) 
 
   const breakdown = generatedSections.find((section) => section.id === "breakdown")
     ?? authoredSections.find((section) => section.id === "breakdown");
+  const atGlance = authoredAtGlance ?? generatedAtGlance;
   const related = authoredRelated ?? generatedRelated;
   const tip = generatedSections.find((section) => section.id === "good-to-know")
     ?? authoredSections.find((section) => section.id === "good-to-know");
 
-  return [breakdown, related, tip].filter(Boolean);
+  return [atGlance, breakdown, related, tip].filter(Boolean);
 }
 
 function findRelatedCityRecords(pageRecord, pageRecords, placePageByPlaceID) {
@@ -2795,7 +3548,7 @@ function cityPhraseAtGlanceBody(pageRecord, city, place) {
     case "food-coffee":
       return `Use this when the meal, drink, cafe, or food stop is near ${visiblePlace}. Point to the map, menu, or dish so the answer stays practical.`;
     case "shopping-markets":
-      return `Use this when a market, shop, entrance, price area, or souvenir errand is near ${visiblePlace}. A visible map pin or item keeps the exchange short.`;
+      return `Use this when a market, shop, entrance, price area, or souvenir errand is near ${visiblePlace}. A visible map location or item keeps the exchange short.`;
     case "practical-help-near-places":
       return `Use this when you need cash, a bathroom, help, or another practical stop near ${visiblePlace}.`;
     default:
@@ -2898,6 +3651,11 @@ function cityPageForRecord(pageRecord, context) {
   const sections = derivedPlacePhrase
     ? [
       {
+        id: "at-glance",
+        title: "At a glance",
+        body: cityPhraseAtGlanceBody(pageRecord, city, place),
+      },
+      {
         id: "breakdown",
         title: "Break it down",
         body: "",
@@ -2912,7 +3670,7 @@ function cityPageForRecord(pageRecord, context) {
       {
         id: "good-to-know",
         title: "Tip",
-        body: derivedPlacePhraseTip(placeKind),
+        body: derivedPlacePhraseTip(pageRecord, placeKind),
       },
     ]
     : [
@@ -3124,6 +3882,8 @@ function cityPageForRecord(pageRecord, context) {
       rationale: cleanTravelerBody(pageRecord.rationale),
       editorialImportPatchID: pageRecord.editorialImport?.patchID ?? null,
       editorialReviewStatus: pageRecord.editorialImport?.reviewStatus ?? null,
+      editorialSourceMode: pageRecord.editorialImport?.sourceMode ?? null,
+      editorialRuntimeOverrideKind: pageRecord.editorialImport?.runtimeOverride?.kind ?? null,
       targetHeroImageName: pageRecord.editorialImport?.targetHeroImageName ?? pageRecord.productionIntake?.targetHeroImageName ?? null,
     },
     sections: withSectionPresentations(authoredSections),
@@ -3218,11 +3978,15 @@ function editorialSupportBreakdownTokens(record) {
   }));
 }
 
-function editorialSupportOptions(phraseIDs, count = 4) {
-  return (phraseIDs ?? [])
-    .map((phraseID) => editorialSupportPhraseOption(phraseID, `viet-family-${phraseID}`))
-    .filter(Boolean)
-    .slice(0, count);
+function editorialSupportOptions(phraseIDs, count = 4, excludingPageIDs = new Set()) {
+  const options = [];
+  for (const phraseID of phraseIDs ?? []) {
+    const option = editorialSupportPhraseOption(phraseID, `viet-family-${phraseID}`);
+    if (option.detailPageID && excludingPageIDs.has(option.detailPageID)) continue;
+    options.push(option);
+    if (options.length >= count) break;
+  }
+  return options;
 }
 
 function editorialSupportPageForRecord(record) {
@@ -3231,10 +3995,12 @@ function editorialSupportPageForRecord(record) {
     throw new Error(`Cannot build editorial support page ${record.phraseID}; missing catalog phrase`);
   }
 
+  const pageID = editorialSupportPageID(record);
+  const supportFamily = familyByID.get(record.familyID);
   const selfOption = editorialSupportPhraseOption(record.phraseID, null, record.tintName);
-  const relatedOptions = editorialSupportOptions(record.relatedPhraseIDs, 4);
-  const exploreOptions = editorialSupportOptions(record.explorePhraseIDs ?? record.relatedPhraseIDs, 6);
-  const contrastOptions = editorialSupportOptions(record.contrastPhraseIDs ?? record.relatedPhraseIDs, 3);
+  const pageExclusions = new Set([pageID]);
+  const relatedOptions = editorialSupportOptions(record.relatedPhraseIDs, 4, pageExclusions);
+  const contrastOptions = editorialSupportOptions(record.contrastPhraseIDs ?? record.relatedPhraseIDs, 3, pageExclusions);
   const sections = [
     {
       id: "at-glance",
@@ -3259,27 +4025,44 @@ function editorialSupportPageForRecord(record) {
       body: record.useItWith,
       phrases: contrastOptions.length ? contrastOptions : relatedOptions,
     },
+  ];
+
+  const whenExclusions = linkedPageIDs(sections);
+  whenExclusions.add(pageID);
+  const whenOptions = editorialSupportOptions(record.relatedPhraseIDs, 4, whenExclusions);
+
+  sections.push(
     {
       id: "when-to-use",
       title: "When to use it",
       body: record.whenToUse,
-      phrases: relatedOptions,
+      phrases: whenOptions.length ? whenOptions : relatedOptions,
     },
     {
       id: "good-to-know",
       title: "Good to know",
       body: record.goodToKnow,
-    },
+    }
+  );
+
+  const exploreExclusions = linkedPageIDs(sections);
+  exploreExclusions.add(pageID);
+  let exploreSupportOptions = editorialSupportOptions(record.explorePhraseIDs ?? record.relatedPhraseIDs, 6, exploreExclusions);
+  if (exploreSupportOptions.length === 0 && supportFamily) {
+    exploreSupportOptions = exploreOptions(supportFamily, 6, exploreExclusions);
+  }
+
+  sections.push(
     {
       id: "explore-next",
       title: "Explore next",
       body: record.exploreNextBody,
-      phrases: exploreOptions.length ? exploreOptions : relatedOptions,
-    },
-  ];
+      phrases: exploreSupportOptions.length ? exploreSupportOptions : relatedOptions,
+    }
+  );
 
   return {
-    id: editorialSupportPageID(record),
+    id: pageID,
     familyID: record.familyID,
     phraseID: record.phraseID,
     tierRole: "editorial-model-support",
@@ -3359,6 +4142,11 @@ function collectAudioAudit(pages) {
   return { required, missing };
 }
 
+function wordCount(value) {
+  const text = String(value ?? "").trim();
+  return text ? text.split(/\s+/).length : 0;
+}
+
 function cleanTravelerBody(body) {
   let text = String(body ?? "");
   const exactBodies = new Map([
@@ -3393,7 +4181,26 @@ function cleanTravelerBody(body) {
   ]);
   if (exactBodies.has(text.trim())) return exactBodies.get(text.trim());
 
+  text = text.replace(/^Use\s+(.+?)\s+for\s+["“]([^"”]+)["”]\.\s+.+$/i, (_match, vietnamese, _english) => {
+    return cleanFinalPunctuation(`Start with ${cleanFinalPunctuation(vietnamese)}, then let the visible detail carry the follow-up.`);
+  });
+  text = text.replace(/^Say\s+(.+?)\s+for\s+["“]([^"”]+)["”]\.?\s*(.*)$/i, (_match, vietnamese, _english, rest) => {
+    const cleanedRest = cleanFinalPunctuation(String(rest ?? "")
+      .replace(/^Say\s+.+$/i, "")
+      .replace(/\s+/g, " ")
+      .trim());
+    return cleanFinalPunctuation([
+      `Start with ${cleanFinalPunctuation(vietnamese)}, then pause for the reply.`,
+      cleanedRest,
+    ].filter(Boolean).join(" "));
+  });
+
   text = text
+    .replace(/\bmap pin\b/gi, "map location")
+    .replace(/\bBest in a hotel desk, street help moment, or police counter\b/g, "Best at a hotel desk, during a street help moment, or at a police counter")
+    .replace(/\bin a hotel desk, street help moment, or police counter\b/g, "at a hotel desk, during a street help moment, or at a police counter")
+    .replace(/\bBest in a map, street corner, or ticket counter\b/g, "Best with a map, at a street corner, or at a ticket counter")
+    .replace(/\bin a map, street corner, or ticket counter\b/g, "with a map, at a street corner, or at a ticket counter")
     .replace(/\bPoint to the menu item, ingredient, or dish while you say it so staff can connect the words to the order\. Pause for the answer\./g, "Point to the dish or menu item, then pause.")
     .replace(/\bIf the answer is a number, ask them to type it or show it on a calculator before you pay\. Pause for the answer\./g, "Ask them to type or show the number before you pay.")
     .replace(/\bHold or point to the exact item while you say the phrase so the answer stays about one thing\. Pause for the answer\./g, "Point to the exact item, then pause.")
@@ -3403,7 +4210,7 @@ function cleanTravelerBody(body) {
     .replace(/\bAdd your room number, key card, or booking screen after the phrase if staff need to act on it\. Pause for the answer\./g, "Keep the room number, key card, or booking visible.")
     .replace(/\bShow the object, address, or screen connected to the errand so the other person knows what to solve\. Pause for the answer\./g, "Show the object, address, or screen connected to the errand.")
     .replace(/\bUse the attraction name, ticket, or meeting-point screen as the starting point for the conversation\. Pause for the answer\./g, "Keep the attraction, ticket, or meeting-point screen visible.")
-    .replace(/\bPair the phrase with a map pin or address so the answer can be a gesture, street name, or short route cue\. Pause for the answer\./g, "Keep the map pin or address visible.")
+    .replace(/\bPair the phrase with a map pin or address so the answer can be a gesture, street name, or short route cue\. Pause for the answer\./g, "Keep the address or map location visible.")
     .replace(/\bAirport staff often answer by pointing or naming a counter, so keep your passport, baggage tag, or pickup screen visible\. Pause for the answer\./g, "Keep your passport, baggage tag, or pickup screen visible.")
     .replace(/\bA calm tone matters as much as the words\. Short polite phrases keep the exchange warm without forcing a long conversation\./g, "A calm tone keeps short polite phrases warm.")
     .replace(/\bNumbers are easier to confirm visually\. Hold up the item or calculator and let the other person show the price\./g, "Let the price appear on a calculator, phone, or receipt.")
@@ -3418,7 +4225,7 @@ function cleanTravelerBody(body) {
     .replace(/\bname recognition for the attraction\b/g, "attraction name")
     .replace(/\bDừng ở keeps the request polite and clear\. Show the pin if the place has more than one entrance or side street\./g, "Show the pin if the place has more than one entrance or side street.")
     .replace(/\bTransport phrases work best with a visible destination\. Let the driver or staff point, confirm, or type a number\./g, "Keep the destination visible so the driver can confirm it.")
-    .replace(/\bTreat the full name as one travel phrase\. If pronunciation feels hard, say it once and point to the map pin right away\./g, "Hear the full name, then keep the map pin visible.")
+    .replace(/\bTreat the full name as one travel phrase\. If pronunciation feels hard, say it once and point to the map pin right away\./g, "Hear the full name, then keep the map location visible.")
     .replace(/\bAdd your room number, key card, or booking screen after the phrase if staff need to act on it\. Point clearly, then leave room for a short answer\./g, "Keep the room number, key card, or booking screen visible.")
     .replace(/\bDirections in Vietnam are often answered with pointing plus a few words\. That is useful: watch the gesture first, then ask a follow-up if you need the street, floor, or entrance repeated\./g, "Watch the gesture first; ask again if you need the street, floor, or entrance repeated.")
     .replace(/\bShow the object, address, or screen connected to the errand so the other person knows what to solve\. Point clearly, then leave room for a short answer\./g, "Show the object, address, or screen connected to the errand.")
@@ -3426,7 +4233,7 @@ function cleanTravelerBody(body) {
     .replace(/\bUse the attraction name, ticket, or meeting-point screen as the starting point for the conversation\. Point clearly, then leave room for a short answer\./g, "Keep the attraction, ticket, or meeting-point screen visible.")
     .replace(/\bPractice nearby phrases for nearby pages that change part of the reply or the next step while keeping the travel moment familiar\. This keeps practice tied to the real moment\./g, "Try nearby replies that move the exchange one step forward.")
     .replace(/\bPractice nearby phrases for nearby pages that change [^.]+ or the next step while keeping the travel moment familiar\. This keeps practice tied to the real moment\./g, "Try nearby phrases that move the exchange one step forward.")
-    .replace(/\bPair the phrase with a map pin or address so the answer can be a gesture, street name, or short route cue\. Point clearly, then leave room for a short answer\./g, "Keep the map pin or address visible for a gesture or route cue.")
+    .replace(/\bPair the phrase with a map pin or address so the answer can be a gesture, street name, or short route cue\. Point clearly, then leave room for a short answer\./g, "Keep the address or map location visible for a gesture or route cue.")
     .replace(/\bFor health and pharmacy phrases, short wording plus a visible note is kinder to both sides\. Let the staff ask one follow-up at a time\./g, "Keep symptoms short and let staff ask one follow-up at a time.")
     .replace(/\bAirport staff often answer by pointing or naming a counter, so keep your passport, baggage tag, or pickup screen visible\. Point clearly, then leave room for a short answer\./g, "Keep your passport, baggage tag, or pickup screen visible.")
     .replace(/\bNumbers are easier to trust when they are visible\. Ask the short phrase first, then invite a typed number, calculator screen, ticket, or written time if the answer comes too fast\./g, "Ask once, then let the number appear on a phone, calculator, ticket, or note.")
@@ -3487,7 +4294,7 @@ function cleanTravelerBody(body) {
     .replace(/\banchoring\b/g, "tying")
     .replace(/\banchors\b/g, "reference points")
     .replace(/\banchor\b/g, "reference point")
-    .replace(/\bthe place name\b/g, "the map pin")
+    .replace(/\bthe place name\b/g, "the map location")
     .replace(/\bplace name\b/g, "name")
     .replace(/\bGo next to phrases that help you\b/g, "Try these next to")
     .replace(/\bPractice it beside these related pages to hear\b/g, "Practice nearby phrases for")
@@ -3531,6 +4338,26 @@ function isNameBasedProfile(profile) {
 function preservesHandwrittenCityEditorial(page) {
   return page.tierRole === "city-v1"
     && page.cityMetadata?.editorialReviewStatus === "handwritten-reviewed";
+}
+
+function preservesHandwrittenPhraseEditorial(page) {
+  return [
+    "tier1",
+    "child",
+    "catalog-promoted",
+    "editorial-model-support",
+  ].includes(page.tierRole);
+}
+
+const xinChaoFlagshipRuntimeSectionIDs = new Set([
+  "at-glance",
+  "breakdown",
+  "good-to-know",
+  "explore-next",
+]);
+
+function usesXinChaoFlagshipRuntimeContract(page) {
+  return page?.familyID === "polite-hello" || page?.id === "viet-polite-hello";
 }
 
 function authoredCitySectionBody(page, sectionID) {
@@ -3625,7 +4452,7 @@ function adultNameGoodToKnow(page, profile) {
     return "Full sentences are usually easier for drivers than spelling the street name.";
   }
   if (profile === "restaurant") {
-    return "Details can change. Keep the map pin or booking screen handy.";
+    return "Details can change. Keep the map location or booking screen handy.";
   }
   if (profile === "dish") {
     return "Ask about ingredients before ordering if you avoid pork, beef, seafood, peanuts, or spice.";
@@ -3699,6 +4526,7 @@ function cleanTravelerSectionTitle(title, page) {
   const profile = authoredPageProfile(page);
   if (profile === "derived-place-phrase") {
     const byID = {
+      "at-glance": "At a glance",
       breakdown: "Break it down",
       "related-phrases": "Related phrases",
       "good-to-know": "Tip",
@@ -3784,8 +4612,14 @@ function withoutGenericNearbyOptions(options) {
 function curatedNameSectionPhrases(page, section, profile) {
   const existing = section.phrases || [];
   if (section.id === "quick-say") {
+    if (normalizeAudioText(section.title || "") === "useful phrases" && existing.length > 0) {
+      return compactPhraseOptions(existing, 6);
+    }
     const self = selfPhraseOptionForPage(page);
     return self ? [self] : existing.slice(0, 1);
+  }
+  if (profile === "restaurant" && preservesHandwrittenCityEditorial(page)) {
+    return compactPhraseOptions(existing, 6);
   }
   if (/bà nà hills/i.test(`${page.title || ""} ${page.englishTitle || ""}`) && section.id === "journey-flow") {
     return [];
@@ -3882,11 +4716,23 @@ function curatedSectionPhrases(page, section, profile, phraseRole = "traveler_sa
     }
     return withoutUnrelatedMayHearOptions(section.phrases || []);
   }
+  if (
+    page.id === "viet-phrase-v900-food-drin-does-this-contain-fish-sauce"
+    && (section.id === "when-to-use" || section.id === "explore-next" || section.id === "natural-variants")
+  ) {
+    return section.phrases || [];
+  }
   if (profile === "phrase" && isIngredientQuestionPage(page)) {
     if (section.id === "practice-pairs" || section.id === "nearby-phrases" || section.id === "explore-next") {
       const options = ingredientQuestionOptions(section.id === "practice-pairs" ? 4 : 8)
         .filter((option) => normalizeAudioText(option.vietnamese) !== normalizeAudioText(page.title || ""));
       return compactPhraseOptions(options, section.id === "practice-pairs" ? 3 : 6);
+    }
+  }
+  if (profile === "phrase" && (page.categoryIDs || []).includes("food-drink")) {
+    if (usesFoodSupportCards(section)) {
+      const options = foodPromotedSupportOptions(page, section);
+      if (options.length > 0) return options;
     }
   }
   if (profile === "phrase" && isTaxiRideHelpPage(page)) {
@@ -3997,11 +4843,22 @@ function mayHearLaneSupportOptions(page, sectionID) {
 }
 
 function selfPhraseOptionForPage(page) {
+  const title = normalizeAudioText(page?.title || "");
+  const english = normalizeAudioText(page?.englishTitle || page?.summary || "");
+  for (const section of page?.sections || []) {
+    for (const option of section.phrases || []) {
+      if (
+        Object.prototype.hasOwnProperty.call(option, "audioKey")
+        && option.audioKey === null
+        && (optionMatchesPageName(option, page) || normalizeAudioText(option.vietnamese) === title || normalizeAudioText(option.english) === english)
+      ) {
+        return { ...option, detailPageID: null };
+      }
+    }
+  }
   if (page?.phraseID && phraseByID.has(page.phraseID)) {
     return catalogPhraseOption(page.phraseID, null, page.cityMetadata?.placeKind === "street" ? "blue" : null);
   }
-  const title = normalizeAudioText(page?.title || "");
-  const english = normalizeAudioText(page?.englishTitle || page?.summary || "");
   for (const section of page?.sections || []) {
     for (const option of section.phrases || []) {
       if (optionMatchesPageName(option, page) || normalizeAudioText(option.vietnamese) === title || normalizeAudioText(option.english) === english) {
@@ -4025,6 +4882,9 @@ function phraseContextSentence(page) {
     && summary.length <= 130
     && !/notes below|likely replies|next steps|the user|without turning/i.test(summary)
     && !/^(yes|no|thank you|hello|goodbye)$/i.test(summary)
+    && !weakSummary(summary)
+    && !phraseFormulaResidue(summary)
+    && !phrasePremiumWeakResidue(summary)
   ) {
     return summary;
   }
@@ -4042,6 +4902,258 @@ function isIngredientQuestionPage(page) {
   return /does (this|it) (have|contain)\b/i.test(english) || id.includes("food-has");
 }
 
+function usesFoodSupportCards(section) {
+  return [
+    "traveler-insight",
+    "what-happens-next",
+    "you-may-hear",
+    "when-to-use",
+    "practice-pairs",
+    "nearby-phrases",
+    "local-tip",
+    "explore-next",
+    "natural-variants",
+  ].includes(section.id);
+}
+
+function foodPromotedSupportPhraseIDs(page) {
+  const text = normalizeAudioText([
+    page.id,
+    page.phraseID,
+    page.familyID,
+    page.title,
+    page.englishTitle,
+  ].filter(Boolean).join(" "));
+
+  if (/allerg|peanut|shrimp|shellfish|fish sauce|gluten|dairy|meat|pork|beef|seafood|vegetarian|ingredient|safe|\bmsg\b|bot ngot/.test(text)) {
+    return [
+      "food-peanut-allergy",
+      "food-vegetarian",
+      "food-premium-no-meat",
+      "food-premium-without-this-ingredient",
+      "food-premium-which-dish-safe",
+      "v900-food-drin-is-this-pork-beef-or-chicken",
+      "v500-food-drin-does-this-contain-shrimp",
+      "v900-food-drin-does-this-contain-fish-sauce",
+      "v900-food-drin-can-i-order-this-without-meat",
+      "v500-food-drin-i-am-allergic-to-fish-sauce",
+      "v500-food-drin-i-am-allergic-to-shellfish",
+      "v500-food-drin-i-cannot-eat-this-because-of-an-allergy",
+      "v500-food-drin-i-ordered-this-without-peanuts",
+      "v500-food-drin-please-make-it-without-peanuts",
+      "food-premium-has-peanuts",
+      "food-premium-has-meat-in-it",
+      "v900-food-drin-i-do-not-eat-pork",
+      "v900-food-drin-i-do-not-eat-beef",
+      "v900-food-drin-i-do-not-eat-seafood",
+      "v900-food-drin-i-cannot-eat-dairy",
+      "v900-food-drin-i-cannot-eat-gluten",
+      "v900-food-drin-no-msg-please",
+    ];
+  }
+
+  if (/to go|takeaway|take away|pack|mang di|mang ve/.test(text)) {
+    return [
+      "coffee-6",
+      "food-7",
+      "v900-food-drin-id-like-it-to-go-please",
+      "v900-food-drin-please-pack-it-to-go",
+      "v900-food-drin-thats-all-thank-you",
+      "coffee-7",
+      "store-7",
+      "store-6",
+      "food-17",
+      "v900-food-drin-can-i-pay-the-bill-by-card",
+      "v900-food-drin-i-think-there-is-a-mistake-on-the-bill",
+      "v900-food-drin-one-more-please",
+      "v900-food-drin-two-of-these-please",
+    ];
+  }
+
+  if (/bill|pay|card|receipt|mistake|remove|separately|total|charged/.test(text)) {
+    return [
+      "coffee-7",
+      "store-6",
+      "store-7",
+      "food-17",
+      "v900-food-drin-can-i-pay-the-bill-by-card",
+      "v900-food-drin-can-you-remove-this-from-the-bill",
+      "v900-food-drin-i-think-there-is-a-mistake-on-the-bill",
+      "v900-food-drin-thats-all-thank-you",
+      "v500-mone-numb-pric-can-you-give-me-change",
+      "v500-mone-numb-pric-i-need-smaller-bills",
+      "v500-mone-numb-pric-do-i-need-exact-change",
+      "v900-tran-can-you-break-this-bill",
+    ];
+  }
+
+  if (/that.?s all|that all|thats all|vay thoi|last item|okay now|thank you|cam on/.test(text)) {
+    return [
+      "coffee-7",
+      "store-7",
+      "v900-food-drin-can-i-pay-the-bill-by-card",
+      "food-17",
+      "food-7",
+      "coffee-6",
+    ];
+  }
+
+  if (/table|sit|seat|fan|inside|outside|wait|clean/.test(text)) {
+    return [
+      "food-need-table",
+      "food-menu",
+      "v900-food-drin-a-table-for-one-please",
+      "v900-food-drin-a-table-for-four-please",
+      "v900-food-drin-is-there-a-wait-for-a-table",
+      "v900-food-drin-can-we-sit-inside",
+      "v900-food-drin-can-we-sit-outside",
+      "v900-food-drin-can-we-sit-by-the-fan",
+      "v900-food-drin-can-you-clean-this-table",
+      "v900-food-drin-do-we-order-here-or-at-the-counter",
+      "v900-food-drin-i-have-been-waiting-a-long-time",
+      "v900-food-drin-what-do-you-recommend",
+      "v900-food-drin-thats-all-thank-you",
+      "coffee-7",
+      "store-7",
+    ];
+  }
+
+  if (/coffee|ca phe|bac xiu/.test(text)) {
+    return [
+      "coffee-1",
+      "coffee-2",
+      "coffee-3",
+      "coffee-4",
+      "coffee-5",
+      "v900-food-drin-one-iced-tea-please",
+      "v900-food-drin-one-fresh-coconut-please",
+      "v900-food-drin-one-sugarcane-juice-please",
+      "v900-food-drin-do-you-have-beer",
+      "v900-food-drin-no-straw-please",
+      "v900-food-drin-can-i-have-a-cup-of-ice",
+    ];
+  }
+
+  if (/menu|recommend|not too spicy|what is not/.test(text)) {
+    return [
+      "food-menu",
+      "v900-food-drin-what-do-you-recommend",
+      "v900-food-drin-what-is-not-too-spicy",
+      "food-1",
+      "food-2",
+      "food-3",
+      "food-vegetarian",
+      "food-peanut-allergy",
+      "v900-food-drin-do-you-have-beer",
+      "v900-food-drin-one-iced-tea-please",
+      "v900-food-drin-ill-have-what-they-are-having",
+      "v900-food-drin-two-of-these-please",
+      "v900-food-drin-one-more-please",
+    ];
+  }
+
+  if (/drink|tea|coconut|sugarcane|beer|straw|\bice\b|sugar|water|cup/.test(text)) {
+    return [
+      "food-5",
+      "v900-food-drin-one-iced-tea-please",
+      "v900-food-drin-one-fresh-coconut-please",
+      "v900-food-drin-one-sugarcane-juice-please",
+      "v900-food-drin-do-you-have-beer",
+      "v900-food-drin-no-straw-please",
+      "v900-food-drin-can-i-have-a-cup-of-ice",
+      "coffee-4",
+      "coffee-5",
+      "coffee-6",
+      "coffee-7",
+      "store-7",
+      "food-17",
+      "v900-food-drin-thats-all-thank-you",
+      "store-6",
+    ];
+  }
+
+  if (/soup|side|rice|lime|chili|sauce|napkin|utensil|chopstick|herb|portion|bowl|more|two of these|one more|banh|b nh|bánh|pho|phở|ph |bowl of|order/.test(text)) {
+    return [
+      "food-1",
+      "food-2",
+      "food-4",
+      "food-6",
+      "v900-food-drin-can-i-have-rice-with-this",
+      "v900-food-drin-can-i-have-soup-on-the-side",
+      "v900-food-drin-sauce-on-the-side-please",
+      "v900-food-drin-can-i-have-lime",
+      "v900-food-drin-can-i-have-chili-sauce",
+      "v900-food-drin-can-i-have-napkins",
+      "v900-food-drin-can-i-order-half-a-portion",
+      "v900-food-drin-two-of-these-please",
+      "v900-food-drin-one-more-please",
+    ];
+  }
+
+  if (/wrong|change|cold|cooked|undercooked|spoiled|something in my food|too spicy/.test(text)) {
+    return [
+      "food-16",
+      "v900-food-drin-can-you-change-this",
+      "v900-food-drin-this-is-undercooked",
+      "v500-food-drin-this-is-cold",
+      "v500-food-drin-this-tastes-spoiled",
+      "v500-food-drin-there-is-something-in-my-food",
+      "v900-food-drin-i-asked-for-this-not-spicy",
+      "food-premium-too-spicy-now",
+    ];
+  }
+
+  return [
+    "food-menu",
+    "food-1",
+    "food-2",
+    "food-3",
+    "food-6",
+    "food-7",
+    "coffee-7",
+    "food-vegetarian",
+    "food-peanut-allergy",
+    "v900-food-drin-what-do-you-recommend",
+    "v900-food-drin-what-is-not-too-spicy",
+    "v900-food-drin-please-make-it-less-spicy",
+    "food-premium-too-spicy-now",
+  ];
+}
+
+function foodPromotedSupportOptions(page, section) {
+  const currentPageID = page.id || "";
+  const currentPhraseID = page.phraseID || "";
+  const target = normalizeAudioText(page.title || "");
+  const english = normalizeAudioText(page.englishTitle || page.summary || "");
+  const currentCount = (section.phrases || []).length;
+  const limit = Math.max(section.id === "natural-variants" ? 3 : 5, currentCount);
+  const offsetBySection = {
+    "traveler-insight": 0,
+    "what-happens-next": 0,
+    "you-may-hear": 0,
+    "when-to-use": 2,
+    "practice-pairs": 0,
+    "nearby-phrases": 1,
+    "local-tip": 3,
+    "explore-next": 8,
+    "natural-variants": 2,
+  };
+  const options = foodPromotedSupportPhraseIDs(page)
+    .map((phraseID) => phraseOptionByID(phraseID, "green"))
+    .filter((option) => option?.id !== currentPhraseID)
+    .filter((option) => option?.detailPageID !== currentPageID)
+    .filter((option) => normalizeAudioText(option?.vietnamese || "") !== target)
+    .filter((option) => normalizeAudioText(option?.english || "") !== english);
+  const offset = offsetBySection[section.id] || 0;
+  const rotated = options.length > 0
+    ? options.slice(offset % options.length).concat(options.slice(0, offset % options.length))
+    : options;
+  return compactPhraseOptions(
+    rotated,
+    limit
+  );
+}
+
 function isTaxiRideHelpPage(page) {
   const text = normalizeAudioText([
     page.phraseID,
@@ -4050,7 +5162,7 @@ function isTaxiRideHelpPage(page) {
     page.title,
     page.englishTitle,
   ].filter(Boolean).join(" "));
-  return /(goi taxi|call a taxi|goi xe cong nghe|ride share|pickup point|diem don|drop me off|taxi)/i.test(text);
+  return /(goi taxi|call a taxi|goi xe cong nghe|ride share|pickup point|diem don|drop me off)/i.test(text);
 }
 
 function isDoctorComingPage(page) {
@@ -4086,7 +5198,7 @@ function ingredientQuestionOptions(limit = 8) {
     phraseOptionByID("food-premium-has-peanuts", "green"),
     phraseOptionByID("v500-food-drin-does-this-contain-shrimp", "green"),
     phraseOptionByID("v900-food-drin-does-this-contain-fish-sauce", "green"),
-    phraseOptionByID("food-15", "green"),
+    phraseSpecificOptionByID("food-15", "green"),
     phraseOptionByID("food-vegetarian", "green"),
     phraseOptionByID("food-peanut-allergy", "red"),
   ], limit);
@@ -4210,10 +5322,18 @@ function phraseSectionBody(page, section, phraseRole = "traveler_says") {
   }
 }
 
+function derivedPlacePhraseSectionBody(section) {
+  if (section.id === "at-glance" || section.id === "good-to-know") {
+    return cleanTravelerBody(section.body);
+  }
+  return "";
+}
+
 function shouldKeepSectionForProfile(section, profile, page = null, phraseRole = "traveler_says") {
   const hasRows = (section.phrases || []).length > 0;
   const hasBreakdown = (section.breakdown || []).length > 0;
   if (profile === "derived-place-phrase") {
+    if (section.id === "at-glance") return String(section.body ?? "").trim().length > 0;
     if (section.id === "breakdown") return hasBreakdown;
     if (section.id === "related-phrases") return hasRows;
     if (section.id === "good-to-know") return String(section.body ?? "").trim().length > 0;
@@ -4227,6 +5347,14 @@ function shouldKeepSectionForProfile(section, profile, page = null, phraseRole =
       dish: new Set(["at-glance", "quick-say", "place-brief", "use-it-with", "when-to-use", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"]),
     };
     return (keepByProfile[profile] || keepByProfile.place).has(section.id);
+  }
+
+  if (profile === "phrase" && phraseRole === "traveler_says" && preservesHandwrittenPhraseEditorial(page)) {
+    if (usesXinChaoFlagshipRuntimeContract(page) && !xinChaoFlagshipRuntimeSectionIDs.has(section.id)) {
+      return false;
+    }
+    if (section.id === "breakdown") return hasBreakdown;
+    return sectionHasTravelerContent(section);
   }
 
   if (profile === "phrase" && phraseRole === "traveler_says" && isHeroRepeatSectionForGeneratedPage(section, page)) {
@@ -4276,10 +5404,10 @@ function shouldKeepSectionForProfile(section, profile, page = null, phraseRole =
 const sectionOrderByProfile = {
   place: ["at-glance", "quick-say", "journey-flow", "key-phrases", "place-brief", "use-it-with", "when-to-use", "getting-there", "tickets", "cable-car", "photos", "getting-back", "food-cash", "at-the-bridge", "pickup-nearby", "breakdown", "good-to-know", "explore-next"],
   street: ["at-glance", "quick-say", "show-driver", "place-brief", "confirm", "use-it-with", "wrong-place", "when-to-use", "breakdown", "good-to-know", "explore-next"],
-  restaurant: ["at-glance", "quick-say", "place-brief", "table-menu", "before-you-go", "menu-dietary", "when-to-use", "inside-the-place", "breakdown", "good-to-know"],
+  restaurant: ["at-glance", "quick-say", "place-brief", "use-it-with", "when-to-use", "inside-the-place", "good-to-know", "table-menu", "before-you-go", "menu-dietary", "breakdown"],
   dish: ["at-glance", "quick-say", "place-brief", "how-to-order", "ingredients-diet", "breakdown", "good-to-know"],
-  "derived-place-phrase": ["breakdown", "related-phrases", "good-to-know"],
-  phrase: ["at-glance", "quick-say", "standard-way", "breakdown", "natural-variations", "traveler-insight", "what-happens-next", "you-may-hear", "practice-pairs", "good-to-know", "nearby-phrases", "explore-next"],
+  "derived-place-phrase": ["at-glance", "breakdown", "related-phrases", "good-to-know"],
+  phrase: ["at-glance", "quick-say", "standard-way", "breakdown", "natural-variations", "why-it-matters", "traveler-insight", "when-to-use", "nearby-phrases", "local-tip", "what-happens-next", "you-may-hear", "practice-pairs", "good-to-know", "explore-next"],
 };
 
 function phraseDedupKey(option) {
@@ -4366,6 +5494,7 @@ function baNaJourneySection(existingByID, id, title, phraseIDs, tintName = "teal
 
 function rewriteBaNaHillsJourneySections(page, sections) {
   if (!isBaNaHillsPage(page)) return sections;
+  if (page.cityMetadata?.editorialRuntimeOverrideKind !== "ba-na-hills-journey") return sections;
 
   const existingByID = new Map(sections.map((section) => [section.id, section]));
   const about = existingByID.get("at-glance");
@@ -4378,8 +5507,13 @@ function rewriteBaNaHillsJourneySections(page, sections) {
   const goodToKnow = existingByID.get("good-to-know");
 
   return [
-    about ? { ...about, id: "at-glance", title: "About" } : null,
-    hearName ? { ...hearName, id: "quick-say", title: "Say it locally" } : null,
+    about ? { ...about, id: "at-glance", title: about.title || "About" } : null,
+    hearName ? baNaJourneySection(existingByID, "quick-say", "Useful Phrases", [
+      "sight-1",
+      "sight-3",
+      "sight-4",
+      "sight-5",
+    ], "teal") : null,
     placeBrief ?? null,
     useItWith ?? null,
     whenToUse ?? null,
@@ -4406,7 +5540,7 @@ function rewriteBaNaHillsJourneySections(page, sections) {
       "ves-is-this-address-correct",
       "ves-call-taxi-for-me",
     ], "orange"),
-    goodToKnow ? { ...goodToKnow, id: "good-to-know", title: "Good to know" } : null,
+    goodToKnow ? { ...goodToKnow, id: "good-to-know", title: goodToKnow.title || "Good to know" } : null,
     baNaJourneySection(existingByID, "food-cash", "Food & cash", [
       "store-1",
       "airport-4",
@@ -4431,15 +5565,21 @@ function sectionPhraseFilter(page, section, profile, phrase) {
 
 function normalizeTravelerSections(page, sections, profile) {
   const seenPhraseKeys = new Set();
+  const preserveRepeatedPhraseCards = profile === "phrase" && preservesHandwrittenPhraseEditorial(page);
   const deduped = sections.map((section) => {
     const phrases = [];
+    const sectionSeenPhraseKeys = new Set();
     for (const phrase of (section.phrases || []).filter((item) => sectionPhraseFilter(page, section, profile, item))) {
       const key = phraseDedupKey(phrase);
-      if (!key || seenPhraseKeys.has(key)) continue;
-      seenPhraseKeys.add(key);
+      if (!key || sectionSeenPhraseKeys.has(key)) continue;
+      sectionSeenPhraseKeys.add(key);
+      if (!preserveRepeatedPhraseCards) {
+        if (seenPhraseKeys.has(key)) continue;
+        seenPhraseKeys.add(key);
+      }
       phrases.push(phrase);
     }
-    const presentation = section.presentation === "phrase-list" && phrases.length === 0 && String(section.body || "").trim()
+    const presentation = ["phrase-list", "horizontal-phrase-cards"].includes(section.presentation) && phrases.length === 0 && String(section.body || "").trim()
       ? "plain-text"
       : section.presentation;
     return {
@@ -4450,6 +5590,7 @@ function normalizeTravelerSections(page, sections, profile) {
     };
   }).filter((section) => {
     if (!sectionHasTravelerContent(section)) return false;
+    if (section.id === "nearby-phrases" && (section.phrases || []).length === 0) return false;
     if (section.id === "explore-next" && (section.phrases || []).length === 0) return false;
     if (section.id === "journey-flow" && !String(section.body || "").trim() && (section.phrases || []).length === 0) return false;
     return true;
@@ -4462,7 +5603,29 @@ function normalizeTravelerSections(page, sections, profile) {
     if (leftIndex !== rightIndex) return leftIndex - rightIndex;
     return 0;
   });
-  return mergeDuplicateVisibleSections(sorted);
+  return dedupeRepeatedPagePhraseCards(mergeDuplicateVisibleSections(sorted));
+}
+
+function dedupeRepeatedPagePhraseCards(sections) {
+  const seenPhraseKeys = new Set();
+  return sections.map((section) => {
+    const phrases = [];
+    for (const phrase of section.phrases || []) {
+      const key = phraseDedupKey(phrase);
+      if (key && seenPhraseKeys.has(key)) continue;
+      if (key) seenPhraseKeys.add(key);
+      phrases.push(phrase);
+    }
+    const presentation = ["phrase-list", "horizontal-phrase-cards"].includes(section.presentation) && phrases.length === 0 && String(section.body || "").trim()
+      ? "plain-text"
+      : section.presentation;
+    return { ...section, phrases, presentation };
+  }).filter((section) => {
+    if (!sectionHasTravelerContent(section)) return false;
+    if (section.id === "nearby-phrases" && (section.phrases || []).length === 0) return false;
+    if (section.id === "explore-next" && (section.phrases || []).length === 0) return false;
+    return true;
+  });
 }
 
 function shortenBodyForMobile(body) {
@@ -4472,6 +5635,713 @@ function shortenBodyForMobile(body) {
   const sentence = text.match(/^[^.!?]+[.!?]/)?.[0]?.trim();
   if (sentence && sentence.split(/\s+/).filter(Boolean).length <= 28) return sentence;
   return `${words.slice(0, 26).join(" ")}.`;
+}
+
+function bodyWordCount(body) {
+  return String(body ?? "").split(/\s+/).filter(Boolean).length;
+}
+
+function splitSentences(body) {
+  const text = cleanFinalPunctuation(body);
+  if (!text) return [];
+  return text.match(/[^.!?]+[.!?]+(?:["”])?/g)?.map((sentenceText) => cleanFinalPunctuation(sentenceText)) ?? [text];
+}
+
+function pageCopyCue(page) {
+  const categoryIDs = new Set(page.categoryIDs || []);
+  if (categoryIDs.has("transport") || categoryIDs.has("directions-navigation")) {
+    return "Keep the map, address, or destination visible.";
+  }
+  if (categoryIDs.has("hotel-accommodation") || categoryIDs.has("time-dates-booking")) {
+    return "Keep the booking, room number, date, or address visible.";
+  }
+  if (categoryIDs.has("airport-border-arrival")) {
+    return "Keep the passport, baggage tag, pickup screen, or flight detail visible.";
+  }
+  if (categoryIDs.has("food-drink") || categoryIDs.has("shopping") || categoryIDs.has("local-services-everyday-tasks")) {
+    return "Point to the item, menu line, receipt, size, or photo.";
+  }
+  if (categoryIDs.has("money-numbers-prices")) {
+    return "Keep the item, price tag, calculator, or receipt visible.";
+  }
+  if (categoryIDs.has("sightseeing-activities")) {
+    return "Keep the ticket, meeting point, map location, or booking visible.";
+  }
+  if (categoryIDs.has("problems-help")) {
+    return "Keep the receipt, room number, last location, or contact visible.";
+  }
+  if (categoryIDs.has("health-pharmacy") || categoryIDs.has("emergency-safety")) {
+    return "Show the symptom, medicine, location, or helper contact if you can.";
+  }
+  if (categoryIDs.has("phone-internet-power")) {
+    return "Keep the phone screen or error message visible.";
+  }
+  if (
+    categoryIDs.has("polite-basics")
+    || categoryIDs.has("social-small-talk")
+    || categoryIDs.has("gratitude")
+    || categoryIDs.has("goodbyes")
+    || categoryIDs.has("greetings")
+    || categoryIDs.has("small-talk")
+  ) {
+    return "Keep the tone warm and leave room for a short reply.";
+  }
+  if (categoryIDs.has("understanding-repair") || categoryIDs.has("repair")) {
+    return "If it is still unclear, show, write, or point to the exact word.";
+  }
+  return "Keep the object, place, note, or screen close by.";
+}
+
+function phrasePremiumWeakResidue(body) {
+  const text = String(body ?? "");
+  if (/Keep\s+/i.test(text) && hasVietnameseLetters(text)) return true;
+  if (/\bmeans\s+[“"][^”"]+[”"]\.?$/i.test(text.trim())) return true;
+  const sentences = splitSentences(text);
+  if (sentences.length === 2 && sentences[0].toLowerCase() === sentences[1].toLowerCase()) return true;
+  if (extraWeakPhraseResidue(text)) return true;
+  return /(A direct line for|Play each piece, then the full phrase|then play the full line at real conversation speed|Keep these cards ready for|They cover the next turn after the first line lands|are the nearby cards for the likely next step|Use these nearby phrases if the conversation shifts toward another|Read the cards left to right|Use these next when the conversation moves one step forward|Use these if the answer changes the next step|Use it when the next move is|keeps the travel moment short and clear|keeps the question easy to answer|keeps the first line simple|works best as a short first line|makes the request direct without adding extra explanation|keeps the social move simple and polite|names the need before the details start piling up|gives the exchange one clear starting point|one clear opening line|needs to land quickly|needs a quick first line|fits when one short phrase can open the next step|clear enough for the first reply|is enough to start the next practical step|before the explanation gets long|These follow-ups cover|If the answer moves on, move to|Use these when the exchange shifts toward|exchange gets crowded with details|Keep the question intact|Use the full question and pause|Say it as one question|Use this card when the same idea needs|Nearby follow-ups:|Useful if the exchange continues:|Good next-step (?:cards|phrases):|Keep close by:|Keep these close|The next turn may need:|Use these when the cash line turns into|This row keeps|Move here when|These cards stay|next exchange close|reply points toward|likely follow-up|After the first answer|several lines, gates, counters, sizes, or routes look similar|note under the phrase|puts the main need in one short line|puts the .*? upfront before extra explanation|Keep one visible clue close|real-world detail close|phone, receipt, or booking|\bmap pin\b|map pin, counter item, booking, or phone screen|map pin, counter item, booking detail, or phone screen|map, item, booking, or screen|not chemical lime|traveler need is already visible|ready if the reply stalls|can solve the second turn|Let the first reply tell you whether to show|Hold [^.]+ nearby, but lead with the question itself|Use it when the [a-z -]+ is already visible and you need one short first sentence|Use it when\s+["“]|\b(?:Use|Say)\s+[^.]+?\s+for\s+["“][^"”]+["”]|\b(?:Use this|Ask this)\s+when\b|need to (?:say|explain)|\?\s*,|Next cards:|This pattern asks for a yes-or-no answer|visible detail carry the rest|Keep the relevant place, item, or screen visible|Use the full phrase before adding details|as one clean sentence before the visible detail carries the rest|Ask the whole question first|Keep [^.]+ together as one sentence before adding details|The reply may be|This form changes the tone or setting|is the clearest way to explain what changed|is the short line for naming what you need next|works best when [^.]+ is visible on your phone|asks someone to do one helpful action|Use it for [^.]+ when pointing|Beginners should keep|\.\s*,\s*(and\s+)?[a-z]|,\s*(and\s+)?[a-z][^.?!]*$)/i.test(text);
+}
+
+function extraWeakPhraseResidue(text) {
+  return /(Hear the main request first|Keep the tone warm and leave room for a short reply|A calm tone keeps short polite phrases warm|Say this when|Point to the item, menu line, receipt, size, or photo|Menus and photos do a lot of work|can carry the exact detail|may become the next detail|before adding .* as supporting detail|Watch for a clear reply, a pointed detail, or simple follow-up|Watch for a yes\/no answer, a gesture toward the item, or short alternative|when the first phrase leads to another request|ready for the next turn|can carry the next detail|If the answer changes what you need|keeps .* clear before details spread out|works before the exchange needs a longer explanation|before the exchange turns into a longer explanation)/i.test(String(text ?? ""));
+}
+
+function cleanPhraseCardLabel(text) {
+  return cleanFinalPunctuation(text).replace(/[.!]+$/g, "");
+}
+
+function phraseCardEnglishLabels(section) {
+  return (section.phrases || [])
+    .map((phrase) => cleanPhraseCardLabel(phrase.english || phrase.englishText || phrase.title || ""))
+    .filter(Boolean)
+    .filter((label, index, labels) => labels.findIndex((candidate) => candidate.toLowerCase() === label.toLowerCase()) === index);
+}
+
+function humanList(items) {
+  const clean = items.map((item) => cleanFinalPunctuation(item)).filter(Boolean);
+  if (clean.length === 0) return "";
+  if (clean.length === 1) return clean[0];
+  if (clean.some((item) => /\?/.test(item))) return clean.join("; ");
+  if (clean.length === 2) return `${clean[0]} and ${clean[1]}`;
+  return `${clean.slice(0, -1).join(", ")}, and ${clean[clean.length - 1]}`;
+}
+
+function lowerPlain(text) {
+  const value = cleanFinalPunctuation(text || "");
+  if (!value) return "";
+  if (/^I\b/.test(value) || /^[A-Z]{2,}\b/.test(value)) return value;
+  return value.charAt(0).toLowerCase() + value.slice(1);
+}
+
+function stableIndex(seed, size) {
+  if (!size) return 0;
+  let hash = 0;
+  for (const char of String(seed ?? "")) {
+    hash = (hash * 31 + char.charCodeAt(0)) >>> 0;
+  }
+  return hash % size;
+}
+
+function hasVietnameseLetters(text) {
+  return /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i.test(String(text ?? ""));
+}
+
+function phrasePageDomain(page) {
+  const categoryIDs = new Set(page.categoryIDs || []);
+  const english = String(page.englishTitle || page.summary || "").toLowerCase();
+  if (categoryIDs.has("transport")) {
+    return {
+      need: "ride or fare need",
+      setting: "a taxi, motorbike pickup, or station counter",
+      visible: "destination, fare, or ride screen",
+      answer: "a fare, route, pickup point, or yes/no answer",
+      next: "price, route, pickup, or payment",
+    };
+  }
+  if (categoryIDs.has("directions-navigation")) {
+    return {
+      need: "direction question",
+      setting: "a map, street corner, or ticket counter",
+      visible: "map location, address, station name, or sign",
+      answer: "pointing, a route word, or a time estimate",
+      next: "distance, direction, or transit choice",
+    };
+  }
+  if (categoryIDs.has("food-drink")) {
+    if (/(allerg|peanut|shrimp|shellfish|fish sauce|gluten|dairy|meat|pork|beef|seafood|vegetarian|ingredient|safe|msg)/i.test(english)) {
+      return {
+        need: "ingredient or dietary limit",
+        setting: "a stall, cafe, or restaurant counter",
+        visible: "menu item, dish photo, or allergy note",
+        answer: "a yes/no answer, safer dish, or ingredient check",
+        next: "ingredient check, safer dish, or replacement order",
+      };
+    }
+    if (/(bill|pay|card|receipt|separately|total|charged)/i.test(english)) {
+      return {
+        need: "bill or payment request",
+        setting: "a cafe counter, table, or cashier stand",
+        visible: "bill, receipt, card, cash, or calculator total",
+        answer: "a total, receipt, card answer, or payment handoff",
+        next: "total, receipt, card, change, or separate bill",
+      };
+    }
+    if (/(table|sit|seat|fan|inside|outside|wait)/i.test(english)) {
+      return {
+        need: "seating request",
+        setting: "a host stand, cafe doorway, or busy restaurant",
+        visible: "group size, table, seat, or waiting area",
+        answer: "a table, wait time, point, or seating option",
+        next: "table, menu, wait, inside seat, or outside seat",
+      };
+    }
+    if (/(coffee|tea|coconut|beer|juice|water|ice|sugar|straw|drink)/i.test(english)) {
+      return {
+        need: "drink request",
+        setting: "a cafe, stall, or restaurant counter",
+        visible: "drink name, menu line, cup size, ice, or sugar choice",
+        answer: "a price, point, nod, or drink follow-up",
+        next: "drink choice, ice, sugar, straw, takeaway, or payment",
+      };
+    }
+    if (/(to go|takeaway|take away|pack)/i.test(english)) {
+      return {
+        need: "takeaway request",
+        setting: "a stall, cafe, or casual restaurant",
+        visible: "dish, container, bag, bill, or counter order",
+        answer: "a nod, packing step, price, or pickup point",
+        next: "packing, paying, receipt, or final order check",
+      };
+    }
+    return {
+      need: "food or drink request",
+      setting: "a stall, cafe, or busy counter",
+      visible: "menu line, dish photo, table item, or bill",
+      answer: "a price, point, nod, or short confirmation",
+      next: "dish choice, side request, payment, or takeaway detail",
+    };
+  }
+  if (categoryIDs.has("shopping")) {
+    return {
+      need: "shopping question",
+      setting: "a market stall or small shop",
+      visible: "item, size, receipt, price tag, or photo",
+      answer: "a price, size, discount, or yes/no answer",
+      next: "price, size, stock, or payment",
+    };
+  }
+  if (categoryIDs.has("money-numbers-prices")) {
+    return {
+      need: "price or payment question",
+      setting: "a market stall, ticket counter, ATM, or small shop",
+      visible: "item, price tag, calculator, receipt, or ATM screen",
+      answer: "a typed number, price, fee, location, or yes/no answer",
+      next: "price, payment, ATM, change, or receipt",
+    };
+  }
+  if (categoryIDs.has("local-services-everyday-tasks")) {
+    return {
+      need: "everyday errand",
+      setting: "a shop, laundry counter, pharmacy shelf, or hotel desk",
+      visible: "item, document, bag, receipt, photo, or address",
+      answer: "a price, handoff, shelf direction, or wait time",
+      next: "buying, printing, laundry, payment, or repair",
+    };
+  }
+  if (categoryIDs.has("hotel-accommodation")) {
+    return {
+      need: "hotel request",
+      setting: "a front desk or guesthouse counter",
+      visible: "booking, room number, address, or key card",
+      answer: "a room detail, handoff, time, or yes/no answer",
+      next: "check-in, room help, timing, or payment",
+    };
+  }
+  if (categoryIDs.has("time-dates-booking")) {
+    return {
+      need: "booking detail",
+      setting: "a booking desk, tour counter, or message thread",
+      visible: "date, time, ticket, booking, or address",
+      answer: "a time, date, availability check, or next instruction",
+      next: "time, date, ticket, or pickup detail",
+    };
+  }
+  if (categoryIDs.has("airport-border-arrival")) {
+    if (/(bag|baggage|luggage|suitcase)/i.test(english)) {
+      return {
+        need: "baggage problem",
+        setting: "the baggage desk or airport counter",
+        visible: "baggage tag, passport, flight detail, or bag photo",
+        answer: "a report step, counter name, wait time, or tracking question",
+        next: "baggage report, pickup, documents, or tracking",
+      };
+    }
+    return {
+      need: "arrival or airport detail",
+      setting: "an airport counter, baggage area, or pickup point",
+      visible: "passport, baggage tag, flight detail, or pickup screen",
+      answer: "a counter name, document check, direction, or wait time",
+      next: "documents, baggage, pickup, SIM, or transport",
+    };
+  }
+  if (categoryIDs.has("phone-internet-power")) {
+    return {
+      need: "phone or connection problem",
+      setting: "a SIM shop, hotel desk, or cafe counter",
+      visible: "phone screen, error message, charger, or map app",
+      answer: "a setting check, password, repair step, or yes/no answer",
+      next: "Wi-Fi, SIM, charging, map, or repair help",
+    };
+  }
+  if (categoryIDs.has("sightseeing-activities")) {
+    return {
+      need: "sightseeing or ticket question",
+      setting: "a ticket desk, tour counter, entrance, or meeting point",
+      visible: "ticket, booking, meeting point, map location, or attraction name",
+      answer: "a price, time, entrance, rule, or pointing gesture",
+      next: "ticket, timing, meeting point, entrance, or photo rule",
+    };
+  }
+  if (categoryIDs.has("health-pharmacy")) {
+    return {
+      need: "health or pharmacy need",
+      setting: "a pharmacy, clinic, or hotel desk",
+      visible: "symptom, medicine, affected area, or translated note",
+      answer: "a medicine option, dosage note, direction, or urgent handoff",
+      next: "symptoms, medicine, clinic help, or dosage",
+    };
+  }
+  if (categoryIDs.has("emergency-safety")) {
+    return {
+      need: "safety problem",
+      setting: "a hotel desk, street help moment, or police counter",
+      visible: "location, passport copy, photo, injury, or helper contact",
+      answer: "a direction, helper handoff, report step, or urgent question",
+      next: "location, documents, help, or reporting",
+    };
+  }
+  if (categoryIDs.has("understanding-repair") || categoryIDs.has("repair")) {
+    return {
+      need: "repair move",
+      setting: "any moment where speech is not landing",
+      visible: "word, screen, address, or written note",
+      answer: "slower speech, a written word, pointing, or a repeat",
+      next: "slower speech, writing, pointing, or confirmation",
+    };
+  }
+  if (
+    categoryIDs.has("polite-basics")
+    || categoryIDs.has("social-small-talk")
+    || categoryIDs.has("gratitude")
+    || categoryIDs.has("goodbyes")
+    || categoryIDs.has("greetings")
+    || categoryIDs.has("small-talk")
+  ) {
+    return {
+      need: "social move",
+      setting: "a greeting, thanks, apology, or short chat",
+      visible: "tone, eye contact, and the next small request",
+      answer: "a smile, nod, greeting, or brief reply",
+      next: "thanks, apology, greeting, or small follow-up",
+    };
+  }
+  if (categoryIDs.has("bathroom-personal-needs")) {
+    return {
+      need: "personal-need question",
+      setting: "a cafe, station, hotel, or shop",
+      visible: "sign, product, bathroom direction, or payment detail",
+      answer: "pointing, a fee, a yes/no answer, or a nearby option",
+      next: "directions, fees, supplies, or hygiene help",
+    };
+  }
+  if (categoryIDs.has("problems-help")) {
+    return {
+      need: "problem report",
+      setting: "a desk, counter, or help moment",
+      visible: "receipt, room number, ride detail, photo, or last location",
+      answer: "a trace step, handoff, question, or practical fix",
+      next: "location, receipt, contact, or handoff detail",
+    };
+  }
+  return {
+    need: "traveler need",
+    setting: "the live exchange",
+    visible: "object, place, note, or screen",
+    answer: "a short answer, point, price, or next instruction",
+    next: "the next practical detail",
+  };
+}
+
+function settingPhrase(setting) {
+  const value = String(setting || "").trim();
+  if (!value) return "in the live exchange";
+  if (value === "a hotel desk, street help moment, or police counter") {
+    return "at a hotel desk, during a street help moment, or at a police counter";
+  }
+  if (value === "a taxi, motorbike pickup, or station counter") {
+    return "during a taxi ride, motorbike pickup, or station-counter exchange";
+  }
+  if (value === "a map, street corner, or ticket counter") {
+    return "with a map, at a street corner, or at a ticket counter";
+  }
+  if (value === "a greeting, thanks, apology, or short chat") {
+    return "during a greeting, thanks, apology, or short chat";
+  }
+  if (value === "any moment where speech is not landing") {
+    return "during any moment where speech is not landing";
+  }
+  if (value === "a desk, counter, or help moment") {
+    return "at a desk or counter, or during a help moment";
+  }
+  if (/^(a|an|the)\b/i.test(value)) return `at ${value}`;
+  return `in ${value}`;
+}
+
+function sentenceLead(text) {
+  const value = String(text || "");
+  return value ? `${value.charAt(0).toUpperCase()}${value.slice(1)}` : value;
+}
+
+function premiumBreakdownBody(page, section) {
+  const title = cleanFinalPunctuation(page.title || "");
+  const pieces = (section.breakdown || [])
+    .filter((piece) => piece?.vietnamese && !/\bfull\b/i.test(piece.id || ""))
+    .map((piece) => cleanFinalPunctuation(piece.vietnamese))
+    .filter(Boolean);
+  if (title.includes("ở đâu")) {
+    const anchor = pieces[0] || title.replace(/\s*ở đâu\??$/i, "").trim() || "the place";
+    const variants = [
+      `Hear ${anchor} first; ở đâu? turns it into the where question.`,
+      `Keep ${anchor} together, then let ở đâu? ask where it is.`,
+      `The first part names ${anchor}; ở đâu? asks for the place or direction.`,
+      `Say ${anchor} clearly before the ở đâu? ending, then wait for a point or direction.`,
+      `Let ${anchor} land as the object, then use ở đâu? to ask where.`,
+    ];
+    return variants[stableIndex(page.id || page.title || anchor, variants.length)];
+  }
+  if (title.includes("không") && /[?]$/.test(title)) {
+    const domain = phrasePageDomain(page);
+    const anchor = pieces[0] || title;
+    const variants = [
+      `Keep ${anchor} together; không? turns the line into a yes-or-no question.`,
+      `Listen for ${anchor} first, then let không? carry the question ending.`,
+      `The first words name the ${domain.need}; không? asks whether it is possible or true.`,
+      `Say the main request in one piece, then pause after không? for the yes-or-no answer.`,
+      `Let ${anchor} stay connected so the final không? sounds like one clear question.`,
+    ];
+    return variants[stableIndex(page.id || page.title || anchor, variants.length)];
+  }
+  if (pieces.length >= 2) {
+    const variants = [
+      `Build the line around ${pieces[0]} + ${pieces[1]}, then replay the full phrase until the rhythm feels natural.`,
+      `Start with ${pieces[0]} + ${pieces[1]}; the full audio shows how the words connect in one breath.`,
+      `${pieces[0]} + ${pieces[1]} carries the core meaning. Use the full line to hear the travel-speed rhythm.`,
+      `Hear ${pieces[0]} + ${pieces[1]} as the anchor, then compare it with the full phrase.`,
+      `Practice ${pieces[0]} + ${pieces[1]} first; the full line keeps the request from sounding chopped up.`,
+    ];
+    return variants[stableIndex(page.id || page.title || pieces.join("|"), variants.length)];
+  }
+  if (pieces.length === 1) {
+    const variants = [
+      `Hear ${pieces[0]} as one clean unit, then repeat the full line at conversation speed.`,
+      `Start with ${pieces[0]}; the full audio gives the short phrase its natural pace.`,
+      `Practice ${pieces[0]} first, then use the full line to check the rhythm.`,
+    ];
+    return variants[stableIndex(page.id || page.title || pieces[0], variants.length)];
+  }
+  const fallback = [
+    "Play the full line once, then repeat it at the pace you would use in person.",
+    "Use the full audio as the model, then say the line in one unbroken pass.",
+    "Repeat the full line after the audio so the phrase stays connected.",
+  ];
+  return fallback[stableIndex(page.id || page.title, fallback.length)];
+}
+
+function premiumStandardBody(page, body) {
+  const title = cleanFinalPunctuation(page.title || "");
+  const domain = phrasePageDomain(page);
+  const situation = phrasePremiumWeakResidue(body) ? "" : usefulSituationSentence(body);
+  const variants = /[?!]$/.test(title)
+    ? [
+      `Ask with the ${domain.visible} visible, then wait for yes, no, or a correction.`,
+      `Show the ${domain.visible} first, ask once, and leave room for the answer.`,
+      `Keep the ${domain.visible} visible so the reply can be a point, number, or short correction.`,
+      `Ask while the ${domain.visible} is still visible, then pause before adding more words.`,
+    ]
+    : [
+      title
+        ? `Say ${title} clearly; show the ${domain.visible} only if the reply needs detail.`
+        : `Use the whole line first; show the ${domain.visible} only if the reply needs detail.`,
+      title
+        ? `Start with ${title}; keep the ${domain.visible} ready if the reply needs proof.`
+        : `Keep the line short and the ${domain.visible} ready.`,
+      title
+        ? `Say ${title} first; let the ${domain.visible} support the reply.`
+        : `Start with the phrase; let the ${domain.visible} support the reply.`,
+    ];
+  return withoutDuplicateParts([
+    variants[stableIndex(`${page.id || page.title}:standard`, variants.length)],
+    situation,
+  ]).join(" ");
+}
+
+function premiumAtGlanceBody(page, body) {
+  const title = cleanFinalPunctuation(page.title || "");
+  const domain = phrasePageDomain(page);
+  const situation = usefulSituationSentence(body);
+  const usefulSituation = situation && situation !== title ? situation : "";
+  if (usefulSituation) return usefulSituation;
+  const variants = title
+    ? [
+      `${title} works before the exchange turns into a longer explanation.`,
+      `${title} belongs ${settingPhrase(domain.setting)}, with the ${domain.visible} close by.`,
+      `${title} belongs ${settingPhrase(domain.setting)} when the ${domain.visible} is already part of the exchange.`,
+      `${title} is the quiet opener ${settingPhrase(domain.setting)}.`,
+      `Lead with ${title}; add the detail after the first reply.`,
+      `${title} works best as a short opener ${settingPhrase(domain.setting)}.`,
+    ]
+    : [
+      `This phrase works before the exchange turns into a longer explanation.`,
+      `This belongs ${settingPhrase(domain.setting)}, with the ${domain.visible} close by.`,
+      `This belongs ${settingPhrase(domain.setting)} when the ${domain.visible} is already part of the exchange.`,
+      `This is the quiet opener ${settingPhrase(domain.setting)}.`,
+      `Lead with the phrase; add the detail after the first reply.`,
+      `This works best as a short opener ${settingPhrase(domain.setting)}.`,
+    ];
+  return withoutDuplicateParts([
+    variants[stableIndex(`${page.id || page.title}:at-glance`, variants.length)],
+    usefulSituation,
+  ]).join(" ");
+}
+
+function premiumWhyBody(page, body) {
+  const domain = phrasePageDomain(page);
+  const situation = usefulSituationSentence(body);
+  return withoutDuplicateParts([
+    situation || `${sentenceLead(settingPhrase(domain.setting))}, a short direct line works better than a long explanation.`,
+    `Keep the ${domain.visible} ready so the other person can act on the same detail.`,
+  ]).join(" ");
+}
+
+function premiumResponseBody(page, body) {
+  const domain = phrasePageDomain(page);
+  const response = responseCueFromFormula(body);
+  const situation = usefulSituationSentence(body);
+  return withoutDuplicateParts([
+    response ? `Watch for ${response}.` : `The answer usually comes as ${domain.answer}.`,
+    situation || `Move to the follow-up card that matches ${domain.next}.`,
+  ]).join(" ");
+}
+
+function premiumWhenBody(page) {
+  const domain = phrasePageDomain(page);
+  const variants = [
+    `${sentenceLead(settingPhrase(domain.setting))}, keep the ${domain.visible} visible while the first answer comes back.`,
+    `Reach for it ${settingPhrase(domain.setting)} when the other person needs one clear ${domain.need}.`,
+    `It helps ${settingPhrase(domain.setting)} when the ${domain.visible} can keep the exchange concrete.`,
+    `${sentenceLead(settingPhrase(domain.setting))}, let the ${domain.visible} do the explaining after the first line lands.`,
+  ];
+  return variants[stableIndex(`${page.id || page.title}:when`, variants.length)];
+}
+
+function premiumCardBody(page, section, body) {
+  const labels = phraseCardEnglishLabels(section).slice(0, 3);
+  if (labels.length) {
+    const domain = phrasePageDomain(page);
+    const topic = humanList(labels.map(lowerPlain).filter(Boolean));
+    const variants = [
+      `These nearby cards cover ${topic}.`,
+      `${sentenceLead(settingPhrase(domain.setting))}, the next useful language is usually ${topic}.`,
+      `Keep the conversation close to ${topic}.`,
+      `Use these for ${topic} if the moment moves past the first line.`,
+      `The nearby path usually runs through ${topic}.`,
+    ];
+    return variants[stableIndex(`${page.id || page.title}:${section.id}`, variants.length)];
+  }
+  const situation = usefulSituationSentence(body);
+  return situation || "These follow-ups keep the exchange concrete.";
+}
+
+function premiumVariationBody(page, section, body) {
+  const labels = phraseCardEnglishLabels(section).slice(0, 2);
+  const situation = usefulSituationSentence(body);
+  if (labels.length === 1) {
+    const label = lowerPlain(labels[0]);
+    const variants = [
+      `Choose ${label} when that wording fits the person or setting better.`,
+      `Keep ${label} nearby for the same moment in a slightly different tone.`,
+      `${label} covers the nearby version of this exchange.`,
+    ];
+    return withoutDuplicateParts([
+      variants[stableIndex(`${page.id || page.title}:variation:${label}`, variants.length)],
+      situation,
+    ]).join(" ");
+  }
+  if (labels.length > 1) {
+    return withoutDuplicateParts([
+      `Use these cards when the same idea needs ${humanList(labels.map(lowerPlain))} instead of the main line.`,
+      situation,
+    ]).join(" ");
+  }
+  return situation || "Use this card when the same idea needs a softer tone, a clearer person, or a more exact situation.";
+}
+
+function phraseFormulaResidue(body) {
+  return extraWeakPhraseResidue(body) || /(A direct line for|as your first sentence|Pause after the phrase|Pause naturally after the phrase|If speech still does not land|reply often comes as|^Expect .+ in [^.]+\. Say .+ once|Listen for |Keep your voice calm and let the short phrase|visible while you speak so|visible when the exact detail matters|Use the rows below|use the next rows if|keeping one travel detail clear|move the exchange forward|real [a-z -]+ exchange|detail you need resolved|likely reply is|Use the complete line|Go next to phrases|makes the next step easier to answer|It fits .*especially when the next step is|The phrase is doing one job|make the task visible with|is useful when the map, sign, or building layout|is for asking permission before you act|confirmation phrase for moments when you want to avoid guessing|friendly way to ask for help with|helps you decide whether the next move is worth the time|It names .+ in a compact way|keeps the first line simple|works best as a short first line|needs a quick first line|fits when one short phrase can open the next step|clear enough for the first reply|Next cards:|Watch for unclear|These are the next phrases a traveler is likely to need when this moment keeps moving|These phrases cover the turn after|Move here if the reply shifts|Keep this row for the next practical turn|This is the nearby language for the moment after|The cards below keep|\bordering, paying, packing, or fixing the dish\b|\bUse the full phrase before adding details\.\s+Use the full phrase before adding details\b|\bKeep\s+[^.]+?\s+together as one sentence before adding details\.\s+Keep\b|\bis the line for\b|\bStart with\s+[^.]+,\s+then pause\b|\bThis is for when\b|\bThe reply may be a short reply\b|\bSay\s+[^.]+?\s+once, then watch for the reply\b|\bSay it once, then watch for the reply before adding more words\b|\bExpect a confirmation, a handoff, a price, or follow-up question\b|\bSay\s+[^.]+?\s+when you need\s+["“][^"”]+["”]|\bSay\s+[^.]+?\s+for\s+["“][^"”]+["”]\.\s+Say\b|\b(?:Use|Say)\s+[^.]+?\s+for\s+["“][^"”]+["”]|\b(?:Use this|Ask this)\s+when\b|need to (?:say|explain)|Use it when\s+["“]|Use it when\s+["“][^"”]+["”]\s+is the next thing you need to say|traveler need is already visible|\bmap pin\b|map pin, counter item, booking detail, or phone screen|ready if the reply stalls|can solve the second turn|Let the first reply tell you whether to show|Hold [^.]+ nearby, but lead with the question itself|Use it when the [a-z -]+ is already visible and you need one short first sentence|\?\s*,|Try these next to confirm, answer, or continue after|quick money check|keeps the exchange focused|answer can be a number|pilot row|canonical title)/i.test(body);
+}
+
+function formulaSentenceResidue(sentenceText) {
+  return extraWeakPhraseResidue(sentenceText) || /(A direct line for|as your first sentence|Pause after the phrase|Pause naturally after the phrase|If speech still does not land|reply often comes as|^Expect .+ in [^.]+|Listen for |Keep your voice calm and let the short phrase|visible while you speak so|visible when the exact detail matters|Use the rows below|use the next rows if|keeping one travel detail clear|move the exchange forward|real [a-z -]+ exchange|detail you need resolved|likely reply is|Use the complete line|Go next to phrases|makes the next step easier to answer|It fits .*especially when the next step is|The phrase is doing one job|make the task visible with|is useful when the map, sign, or building layout|is for asking permission before you act|confirmation phrase for moments when you want to avoid guessing|friendly way to ask for help with|helps you decide whether the next move is worth the time|It names .+ in a compact way|keeps the first line simple|works best as a short first line|needs a quick first line|fits when one short phrase can open the next step|clear enough for the first reply|Next cards:|Watch for unclear|These are the next phrases a traveler is likely to need when this moment keeps moving|These phrases cover the turn after|Move here if the reply shifts|Keep this row for the next practical turn|This is the nearby language for the moment after|The cards below keep|\bordering, paying, packing, or fixing the dish\b|\bUse the full phrase before adding details\b|\bKeep\s+[^.]+?\s+together as one sentence before adding details\b|\bis the line for\b|\bStart with\s+[^.]+,\s+then pause\b|\bThis is for when\b|\bThe reply may be a short reply\b|\bSay\s+[^.]+?\s+once, then watch for the reply\b|\bSay it once, then watch for the reply before adding more words\b|\bExpect a confirmation, a handoff, a price, or follow-up question\b|\bSay\s+[^.]+?\s+when you need\s+["“][^"”]+["”]|\bSay\s+[^.]+?\s+for\s+["“][^"”]+["”]\.\s+Say\b|\b(?:Use|Say)\s+[^.]+?\s+for\s+["“][^"”]+["”]|\b(?:Use this|Ask this)\s+when\b|need to (?:say|explain)|Use it when\s+["“]|Use it when\s+["“][^"”]+["”]\s+is the next thing you need to say|traveler need is already visible|\bmap pin\b|map pin, counter item, booking detail, or phone screen|ready if the reply stalls|can solve the second turn|Let the first reply tell you whether to show|Hold [^.]+ nearby, but lead with the question itself|Use it when the [a-z -]+ is already visible and you need one short first sentence|\?\s*,|Try these next to confirm, answer, or continue after|quick money check|keeps the exchange focused|answer can be a number|pilot row|canonical title)/i.test(sentenceText);
+}
+
+function phraseIntentFragment(intent) {
+  return String(intent ?? "")
+    .replace(/^["“]|["”]$/g, "")
+    .replace(/[.?!]+$/g, "")
+    .trim();
+}
+
+function lowerFirstWord(text) {
+  const value = phraseIntentFragment(text);
+  if (!value) return "";
+  if (/^[A-Z]{2,}\b/.test(value)) return value;
+  return value.charAt(0).toLowerCase() + value.slice(1);
+}
+
+function usefulSituationSentence(body) {
+  for (const sentenceText of splitSentences(body)) {
+    if (!sentenceText) continue;
+    if (formulaSentenceResidue(sentenceText)) continue;
+    if (phrasePremiumWeakResidue(sentenceText)) continue;
+    if (/^Keep\s+/i.test(sentenceText) && hasVietnameseLetters(sentenceText)) continue;
+    if (/^Expect\b/i.test(sentenceText)) continue;
+    if (bodyWordCount(sentenceText) > 22) continue;
+    return sentenceText;
+  }
+  return "";
+}
+
+function responseCueFromFormula(body) {
+  const text = String(body ?? "");
+  const patterns = [
+    /^Expect (.+?)(?: in [^.]+)?\./i,
+    /The reply may be ([^.]+)\./i,
+    /listen for ([^.]+)\./i,
+    /reply often comes as ([^.]+)\./i,
+    /likely reply is ([^.]+?)(?:, so|\.)/i,
+    /next step is ([^.]+)\./i,
+  ];
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (!match?.[1]) continue;
+    const response = match[1]
+      .replace(/\bor a\b/g, "or")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (response) return response;
+  }
+  return "";
+}
+
+function compactPhraseReplacement(page, section, body) {
+  const title = cleanFinalPunctuation(page.title || "");
+  const intent = cleanEnglishIntent(page.englishTitle || page.summary || "");
+  const intentFragment = lowerFirstWord(intent);
+  const cue = pageCopyCue(page);
+  const situation = usefulSituationSentence(body);
+  const response = responseCueFromFormula(body);
+  const atGlanceLine = title
+    ? phraseMomentLead(title, intentFragment)
+    : "";
+  const sayLine = title
+    ? fullPhraseCue(title, cue)
+    : "";
+  const responseLine = responseSentence(response);
+
+  switch (section.id) {
+    case "at-glance":
+      return phrasePremiumWeakResidue(body)
+        ? premiumAtGlanceBody(page, body)
+        : [atGlanceLine, situation && !/^Use\b/i.test(situation) ? situation : cue].filter(Boolean).join(" ");
+    case "breakdown":
+      return premiumBreakdownBody(page, section);
+    case "quick-say":
+    case "standard-way":
+      return phrasePremiumWeakResidue(body)
+        ? premiumStandardBody(page, body)
+        : withoutDuplicateParts([sayLine, situation || cue]).join(" ");
+    case "why-it-matters":
+      return phrasePremiumWeakResidue(body)
+        ? premiumWhyBody(page, body)
+        : [
+          situation || "The phrase keeps the request clear before extra details get in the way.",
+          responseLine || cue,
+        ].filter(Boolean).join(" ");
+    case "traveler-insight":
+    case "what-happens-next":
+    case "you-may-hear":
+      return phrasePremiumWeakResidue(body)
+        ? premiumResponseBody(page, body)
+        : [
+          responseLine,
+          situation || cue,
+        ].filter(Boolean).join(" ");
+    case "when-to-use":
+      return phrasePremiumWeakResidue(body)
+        ? premiumWhenBody(page)
+        : withoutDuplicateParts([
+          situation || (intentFragment ? `Reach for it when the next move is ${intentFragment}.` : ""),
+          responseLine || cue,
+        ]).join(" ");
+    case "natural-variations":
+      return premiumVariationBody(page, section, body);
+    case "natural-variants":
+      return premiumCardBody(page, section, body);
+    case "nearby-phrases":
+    case "practice-pairs":
+    case "explore-next":
+      return premiumCardBody(page, section, body);
+    default:
+      return [situation, cue].filter(Boolean).join(" ") || body;
+  }
+}
+
+function cleanPreservedPhraseSectionBody(page, section, profile, phraseRole) {
+  const body = cleanFinalPunctuation(cleanTravelerBody(section.body || ""));
+  if (!body) return "";
+  const isPhrasePage = profile === "phrase"
+    || phraseRole === "traveler_says"
+    || /^viet-(phrase|family)-/.test(page.id || "");
+  if (!isPhrasePage || (phraseRole && phraseRole !== "traveler_says")) return body;
+  if (!phraseFormulaResidue(body) && !phrasePremiumWeakResidue(body)) return body;
+
+  const replacementSection = (
+    profile === "phrase"
+    && (page.categoryIDs || []).includes("food-drink")
+    && usesFoodSupportCards(section)
+  )
+    ? { ...section, phrases: foodPromotedSupportOptions(page, section) }
+    : section;
+  const replacement = cleanFinalPunctuation(compactPhraseReplacement(page, replacementSection, body));
+  if (!replacement) return body;
+  if (!phraseFormulaResidue(replacement) && !phrasePremiumWeakResidue(replacement) && bodyWordCount(replacement) <= 44) return replacement;
+  return shortenBodyForMobile(replacement);
+}
+
+function cleanPreservedPhraseSummary(page, profile, phraseRole) {
+  const summary = cleanFinalPunctuation(cleanTravelerBody(page.summary || ""));
+  if (!summary) return "";
+  const isPhrasePage = profile === "phrase"
+    || phraseRole === "traveler_says"
+    || /^viet-(phrase|family)-/.test(page.id || "");
+  if (!isPhrasePage || (phraseRole && phraseRole !== "traveler_says")) return summary;
+  const englishTitle = cleanFinalPunctuation(page.englishTitle || "");
+  const repeatsEnglishTitle = englishTitle
+    && normalizeAudioText(summary) === normalizeAudioText(englishTitle);
+  if (!repeatsEnglishTitle && !weakSummary(summary) && !phraseFormulaResidue(summary) && !phrasePremiumWeakResidue(summary)) return summary;
+
+  const domain = phrasePageDomain(page);
+  return cleanFinalPunctuation(`For making the ${domain.need} clear ${settingPhrase(domain.setting)} while the ${domain.visible} stays visible.`);
 }
 
 function practicePageType(page, profile) {
@@ -4627,13 +6497,17 @@ function sanitizeAuthoredPage(page) {
   const phraseRole = phraseRoleForPage(page, profile);
   const sections = (page.sections || []).filter((section) => shouldKeepSectionForProfile(section, profile, page, phraseRole));
   const preserveCityEditorial = preservesHandwrittenCityEditorial(page);
+  const preservePhraseEditorial = preservesHandwrittenPhraseEditorial(page);
   const sanitizedSections = rewriteBaNaHillsJourneySections(page, normalizeTravelerSections(page, sections.map((section) => ({
     ...section,
-    title: preserveCityEditorial
+    title: preserveCityEditorial || preservePhraseEditorial
       ? cleanFinalPunctuation(section.title || "")
       : cleanTravelerSectionTitle(section.title, { ...page, __currentSectionID: section.id, __phraseRole: phraseRole }),
     body: preserveCityEditorial
       ? cleanFinalPunctuation(section.body || "")
+      : preservePhraseEditorial
+      ? cleanPreservedPhraseSectionBody(page, section, profile, phraseRole)
+      : profile === "derived-place-phrase" ? shortenBodyForMobile(derivedPlacePhraseSectionBody(section))
       : isNameBasedProfile(profile) ? shortenBodyForMobile(adultNameSectionBody(page, section, profile)) : shortenBodyForMobile(phraseSectionBody(page, section, phraseRole)),
     phrases: curatedSectionPhrases(page, section, profile, phraseRole).map((phrase) => ({
       ...phrase,
@@ -4661,8 +6535,10 @@ function sanitizeAuthoredPage(page) {
 
   return {
     ...page,
-    summary: preserveCityEditorial
-      ? cleanFinalPunctuation(page.summary || "")
+    summary: preserveCityEditorial || preservePhraseEditorial
+      ? (preserveCityEditorial
+        ? cleanFinalPunctuation(page.summary || "")
+        : cleanPreservedPhraseSummary(page, profile, phraseRole))
       : profile === "derived-place-phrase"
       ? cleanFinalPunctuation(page.englishTitle || page.summary || "")
       : isNameBasedProfile(profile)
@@ -4677,6 +6553,41 @@ function sanitizeAuthoredPage(page) {
 
 function sanitizeAuthoredPages(pages) {
   return pages.map(sanitizeAuthoredPage);
+}
+
+function canonicalSourcePageForWrite(page) {
+  const profile = authoredPageProfile(page);
+  const phraseRole = phraseRoleForPage(page, profile);
+  if ((page.categoryIDs || []).includes("food-drink")) {
+    const sanitized = sanitizeAuthoredPage(page);
+    return {
+      ...page,
+      summary: cleanFinalPunctuation(sanitized.summary || page.summary || ""),
+      sections: sanitized.sections.map((section) => ({
+        ...section,
+        body: cleanFinalPunctuation(String(section.body || "")
+          .replace(/\bWatch for unclear\./gi, "Point to the item, menu line, receipt, size, or photo.")
+          .replace(/\bWatch for unclear\b/gi, "Point to the item, menu line, receipt, size, or photo")),
+      })),
+    };
+  }
+  return {
+    ...page,
+    summary: cleanFinalPunctuation(page.summary || ""),
+    sections: (page.sections || []).map((section) => ({
+      ...section,
+      title: cleanFinalPunctuation(section.title || ""),
+      body: cleanPreservedPhraseSectionBody(page, section, profile, phraseRole),
+      phrases: (section.phrases || []).map((phrase) => ({
+        ...phrase,
+        english: cleanTravelerBody(phrase.english),
+      })),
+      breakdown: (section.breakdown || []).map((token) => ({
+        ...token,
+        english: cleanTravelerBreakdownGloss(token.english, page, token.vietnamese),
+      })),
+    })),
+  };
 }
 
 function sourceReasonToGoCityPagesByRuntimeID() {
@@ -4755,6 +6666,7 @@ function validateBreakdownAuditForGeneration(pages) {
 }
 
 function main() {
+  const existingChildPagesByPhraseID = loadExistingChildPagesByPhraseID();
   removeGeneratedSources();
 
   const catalogPromotedPages = loadCatalogPromotedPages();
@@ -4804,7 +6716,7 @@ function main() {
 
     const scenarioDir = path.join(sourceRoot, family.scenarioID);
     fs.mkdirSync(scenarioDir, { recursive: true });
-    fs.writeFileSync(path.join(scenarioDir, `${family.id}.json`), `${JSON.stringify(page, null, 2)}\n`);
+    fs.writeFileSync(path.join(scenarioDir, `${family.id}.json`), `${JSON.stringify(canonicalSourcePageForWrite(page), null, 2)}\n`);
 
     if (!manuallyAuthoredPageIDs.has(page.id) && !catalogPromotedPhraseIDs.has(family.primaryPhraseID)) {
       pages.push(page);
@@ -4814,9 +6726,9 @@ function main() {
       const phrase = phraseByID.get(phraseID);
       if (!phrase || phrase.variantRole === "say-first") continue;
       if (catalogPromotedPhraseIDs.has(phrase.id)) continue;
-      const childPage = childPageForVariant(family, phrase, primaryPhrase);
+      const childPage = existingChildPagesByPhraseID.get(phrase.id) ?? childPageForVariant(family, phrase, primaryPhrase);
       childPages.push(childPage);
-      fs.writeFileSync(path.join(scenarioDir, `${family.id}--${phrase.id}.json`), `${JSON.stringify(childPage, null, 2)}\n`);
+      fs.writeFileSync(path.join(scenarioDir, `${family.id}--${phrase.id}.json`), `${JSON.stringify(canonicalSourcePageForWrite(childPage), null, 2)}\n`);
     }
   }
 

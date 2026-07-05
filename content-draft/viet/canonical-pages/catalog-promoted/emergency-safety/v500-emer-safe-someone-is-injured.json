@@ -7,7 +7,7 @@
   "title": "Có người bị thương",
   "englishTitle": "Someone is injured",
   "pronunciation": "Co nguoi bi thuong",
-  "summary": "Someone is injured",
+  "summary": "For telling nearby staff, a driver, or a hotel desk that someone needs urgent help.",
   "iconName": "cross.circle.fill",
   "tintName": "red",
   "categoryIDs": [
@@ -20,12 +20,12 @@
     {
       "id": "at-glance",
       "title": "At a glance",
-      "body": "Có người bị thương is a practical safety or urgent-help phrase for keeping one travel detail clear. Use it when Someone is injured is the next detail to solve and a short answer would move the exchange forward."
+      "body": "Use it when the injury is the first fact people need to understand."
     },
     {
       "id": "quick-say",
       "title": "Quick say",
-      "body": "Use the complete line: Có người bị thương. Keep the situation visible, pause after the phrase, and let the other person answer with a yes/no answer, point, number, or short follow-up.",
+      "body": "Say the line, then point to the person or location. Keep the next request short.",
       "phrases": [
         {
           "id": "v500-emer-safe-someone-is-injured",
@@ -42,32 +42,32 @@
     {
       "id": "breakdown",
       "title": "Break it down",
-      "body": "Read the cards left to right: first catch the request shape, then the place, item, action, or time detail, and finally the complete phrase.",
+      "body": "Có người means there is someone; bị thương means injured.",
       "breakdown": [
         {
           "id": "chunk-1",
-          "vietnamese": "Có người bị",
-          "english": "is there / does it have",
-          "audioKey": null
+          "vietnamese": "Có người",
+          "english": "there is someone",
+          "keepTogetherReason": "someone phrase"
         },
         {
           "id": "chunk-2",
-          "vietnamese": "thương",
-          "english": "injury / medical help",
-          "audioKey": null
+          "vietnamese": "bị thương",
+          "english": "injured",
+          "keepTogetherReason": "injury phrase"
         },
         {
-          "id": "chunk-3",
+          "id": "full",
           "vietnamese": "Có người bị thương",
           "english": "Someone is injured",
-          "audioKey": null
+          "audioKey": "v500-emer-safe-someone-is-injured"
         }
       ]
     },
     {
       "id": "natural-variants",
       "title": "Useful nearby phrases",
-      "body": "Use these nearby pages when the conversation shifts from Someone is injured to another safety or urgent-help need.",
+      "body": "If help is needed now, move to ambulance, hospital, police, stay-with-me, or emergency-services follow-ups.",
       "phrases": [
         {
           "id": "emergency-1",
@@ -104,17 +104,17 @@
     {
       "id": "when-to-use",
       "title": "When to use it",
-      "body": "Use this in a real safety or urgent-help exchange when someone is injured is the detail you need resolved. The likely reply is a yes/no answer, point, number, or short follow-up, so keep the phrase short and ready for one follow-up."
+      "body": "Good after a fall, traffic incident, cut, fainting, tour accident, or any moment where staff need to react quickly."
     },
     {
       "id": "good-to-know",
       "title": "Good to know",
-      "body": "Use a steady voice and keep the request short. The goal is to help the other person understand the next safe step."
+      "body": "This line states the problem. Follow it with ambulance, hospital, or please help if action is needed."
     },
     {
       "id": "explore-next",
       "title": "Explore next",
-      "body": "Go next to phrases that help you confirm, answer, or continue after Có người bị thương.",
+      "body": "Use ambulance, hospital, emergency-services, stay-with-me, or police cards if the injury needs immediate help.",
       "phrases": [
         {
           "id": "emergency-4",

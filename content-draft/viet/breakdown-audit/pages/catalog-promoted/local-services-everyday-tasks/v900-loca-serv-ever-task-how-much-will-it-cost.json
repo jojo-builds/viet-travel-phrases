@@ -20,29 +20,15 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Nó",
-      "english": "it"
+      "vietnamese": "Nó sẽ có giá",
+      "english": "it will cost",
+      "keepTogetherReason": "it-will-cost phrase"
     },
     {
       "id": "chunk-2",
-      "vietnamese": "sẽ",
-      "english": "will"
-    },
-    {
-      "id": "chunk-3",
-      "vietnamese": "có",
-      "english": "have / there is"
-    },
-    {
-      "id": "chunk-4",
-      "vietnamese": "giá",
-      "english": "price"
-    },
-    {
-      "id": "chunk-5",
       "vietnamese": "bao nhiêu?",
-      "english": "how much / how many",
-      "keepTogetherReason": "fixed amount question"
+      "english": "how much?",
+      "keepTogetherReason": "how-much ending"
     },
     {
       "id": "full",

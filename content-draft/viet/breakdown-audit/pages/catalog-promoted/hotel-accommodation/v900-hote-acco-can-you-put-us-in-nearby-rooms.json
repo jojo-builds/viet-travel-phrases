@@ -1,6 +1,6 @@
 {
   "pageID": "viet-phrase-v900-hote-acco-can-you-put-us-in-nearby-rooms",
-  "phraseText": "Bạn có thể đưa chúng tôi vào phòng gần đó được không?",
+  "phraseText": "Bạn có thể xếp phòng gần nhau cho chúng tôi không?",
   "englishTitle": "Can you put us in nearby rooms?",
   "reviewStatus": "reviewed",
   "visualReview": {
@@ -20,56 +20,38 @@
   "tokens": [
     {
       "id": "chunk-1",
-      "vietnamese": "Bạn",
-      "english": "you"
-    },
-    {
-      "id": "chunk-2",
-      "vietnamese": "có thể",
-      "english": "can / able to",
+      "vietnamese": "Bạn có thể",
+      "english": "can you",
       "keepTogetherReason": "fixed modal phrase"
     },
     {
-      "id": "chunk-3",
-      "vietnamese": "đưa",
-      "english": "give / take"
+      "id": "chunk-2",
+      "vietnamese": "xếp phòng",
+      "english": "arrange rooms",
+      "keepTogetherReason": "hotel desk action phrase"
     },
     {
-      "vietnamese": "chúng tôi",
-      "english": "we / us",
+      "id": "chunk-3",
+      "vietnamese": "gần nhau",
+      "english": "near each other",
+      "keepTogetherReason": "proximity phrase"
+    },
+    {
+      "vietnamese": "cho chúng tôi",
+      "english": "for us",
       "keepTogetherReason": "pronoun phrase"
     },
     {
       "id": "chunk-6",
-      "vietnamese": "vào",
-      "english": "into / enter"
-    },
-    {
-      "id": "chunk-7",
-      "vietnamese": "phòng",
-      "english": "room"
-    },
-    {
-      "id": "chunk-8",
-      "vietnamese": "gần",
-      "english": "near"
-    },
-    {
-      "id": "chunk-9",
-      "vietnamese": "đó",
-      "english": "that"
-    },
-    {
-      "id": "chunk-10",
-      "vietnamese": "được không?",
-      "english": "is that possible?",
+      "vietnamese": "không?",
+      "english": "can you?",
       "keepTogetherReason": "fixed yes-no question ending"
     },
     {
       "id": "full",
-      "vietnamese": "Bạn có thể đưa chúng tôi vào phòng gần đó được không?",
+      "vietnamese": "Bạn có thể xếp phòng gần nhau cho chúng tôi không?",
       "english": "Can you put us in nearby rooms?",
-      "audioKey": "v900-hote-acco-can-you-put-us-in-nearby-rooms"
+      "audioKey": "audio-authored-ban-co-the-xep-phong-gan-nhau-cho-chung-toi-khong-5ab359fa02"
     }
   ]
 }
