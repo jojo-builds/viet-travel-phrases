@@ -131,6 +131,7 @@ protocol AudioPlayable: AnyObject {
     var enableRate: Bool { get set }
     var rate: Float { get set }
     var currentTime: TimeInterval { get set }
+    var isPlaying: Bool { get }
 
     func stop()
 
@@ -264,6 +265,10 @@ final class AudioPlaybackService {
             lastPlaybackRequest.rate == rate
         else {
             return false
+        }
+
+        if player?.isPlaying == true {
+            return true
         }
 
         return requestTime - lastPlaybackRequest.time < minimumReplayInterval
