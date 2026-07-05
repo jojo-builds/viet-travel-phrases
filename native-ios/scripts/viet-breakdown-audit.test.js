@@ -103,12 +103,15 @@ test("loads reviewed ledger entries and applies only app-facing breakdown fields
       ["gửi", "send"],
       ["email", "email"],
       ["cho", "to / for"],
-      ["tôi", "me"],
+      ["tôi", "I / me"],
       ["được không?", "is that possible?"],
       ["Bạn có thể gửi email cho tôi được không?", "Can you email it to me?"],
     ],
   );
-  assert.ok(overridden.every((token) => !Object.prototype.hasOwnProperty.call(token, "keepTogetherReason")));
+  assert.strictEqual(overridden[1].keepTogetherReason, "fixed modal phrase");
+  assert.strictEqual(overridden[6].keepTogetherReason, "fixed yes-no question ending");
+  assert.ok(overridden.every((token) => !Object.prototype.hasOwnProperty.call(token, "reviewStatus")));
+  assert.ok(overridden.every((token) => !Object.prototype.hasOwnProperty.call(token, "visualReview")));
   assert.strictEqual(overridden[0].audioKey, "audio:Bạn");
   assert.strictEqual(overridden.at(-1).audioKey, "audio:Bạn có thể gửi email cho tôi được không?");
 });

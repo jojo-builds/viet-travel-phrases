@@ -118,3 +118,10 @@ Visual/semantic smell follow-up on 2026-07-06:
 - The visible-language audit now blocks the exact retired visual symbol `checkmark.message.fill` and the exact stale phrase `thread drift` while leaving legitimate traveler copy such as text messages, pickup messages, and real cafe note/messages content alone.
 - Fresh validation passed: visible-language audit, audit unit test, Swift parse of the changed Swift files, JS syntax checks for the audit script and test, exact `rg` scan showing only guardrail/test references, and `git diff --check`.
 - After the source-of-truth guidance update, the latest `main` reran `ProductLanguageUITests/testRepresentativeRoutesDoNotExposeRetiredPracticeVocabularyWhileScrolling` successfully: `1` test, `0` failures, `280.515` seconds. Temporary xcodebuild derived data was deleted afterward; the disposable `SpeakLocal Traveler` simulator was erased to recover local disk space for continued QA.
+
+Final eight-hour closeout proof on 2026-07-06:
+- The final closeout did not rely on top-screen smoke tests. It reran broad shell `xcodebuild` slices over Browse/Search, admin chrome, Practice, audio reliability, back/forward navigation, bottom-inset geometry, and the product-language route scroller.
+- Final executed UI-test count across the closeout slices: `129` executed tests, `1` intentional skip, `0` failures.
+- The route-scrolling product-language guardrail again crawled Home, Browse, Local Greetings, Eating Out, Airport, Hotel, Hoi An, Da Nang, Search, Saved, and Practice, failing on the retired mid-page/user-facing labels that caused the original miss.
+- Result bundles: `/tmp/speaklocal-eight-hour-browse-search.xcresult`, `/tmp/speaklocal-eight-hour-admin-chrome.xcresult`, `/tmp/speaklocal-eight-hour-practice.xcresult`, and `/tmp/speaklocal-eight-hour-regression-cluster.xcresult`.
+- XcodeBuildMCP test transport closed during the late proof phase, so the final proof used repo-runbook shell `xcodebuild` commands with isolated `/tmp` DerivedData/result bundles.
