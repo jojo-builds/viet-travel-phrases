@@ -73,3 +73,9 @@ Additional data-backed copy follow-up on 2026-07-06:
 - The Browse `Hello basics` subtitle now reads `Simple ways to start speaking.` instead of leaning on the old conversation framing.
 - The audit now scans source-backed retired phrases as well as direct SwiftUI labels, while keeping legitimate phrase-teaching copy such as `respectful hello` allowed.
 - Fresh validation passed: `node native-ios/scripts/audit-visible-product-language.js`, `node --test native-ios/scripts/audit-visible-product-language.test.js`, exact stale-term `rg` scan, `git diff --check`, and `AppChromeTests/testBrowseTopLevelGreetingCardsHaveDistinctJobs`.
+
+Additional test-harness cleanup on 2026-07-06:
+- Non-visible accessibility identifiers still used old `Practice.Messages.*` and `BrowseCollection.Messages.*` naming, which could bias future UI tests toward the parked feature vocabulary.
+- The identifiers now use `Practice.Scenarios.*` and `BrowseCollection.PracticeMoments.*`; the user-facing labels did not change.
+- Validation: `node native-ios/scripts/audit-visible-product-language.js`, `node --test native-ios/scripts/audit-visible-product-language.test.js`, exact old-identifier `rg` scan, `git diff --check`, and a Swift parse pass over the modified Swift files passed.
+- A focused native Xcode rerun was attempted but blocked by local disk pressure with an asset-catalog `Failed to write to CAR` build-cache error, not by a test assertion.

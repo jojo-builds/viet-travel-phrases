@@ -15,7 +15,7 @@ enum BrowseCollectionRoute: Hashable, Equatable, Identifiable {
 }
 
 struct BrowseCollectionFocusRequest: Equatable {
-    static let messageSectionScrollTargetID = "BrowseCollection.MessageSection"
+    static let practiceMomentsScrollTargetID = "BrowseCollection.PracticeMomentsSection"
     static let practiceEntryScrollTargetID = "BrowseCollection.PracticeEntry"
 
     let id: Int
@@ -29,7 +29,7 @@ struct BrowseCollectionFocusRequest: Equatable {
         var scrollTargetID: String {
             switch self {
             case .messageScenario:
-                return BrowseCollectionFocusRequest.messageSectionScrollTargetID
+                return BrowseCollectionFocusRequest.practiceMomentsScrollTargetID
             case .practiceEntry:
                 return BrowseCollectionFocusRequest.practiceEntryScrollTargetID
             }

@@ -1317,7 +1317,7 @@ private struct PracticeMessagesHeader: View {
             .foregroundStyle(.primary)
             .frame(maxWidth: .infinity)
             .frame(height: 54)
-        .accessibilityIdentifier("Practice.Messages.Header")
+        .accessibilityIdentifier("Practice.Scenarios.Header")
     }
 }
 
@@ -1388,7 +1388,7 @@ private struct PracticeMessageContactGrid: View {
                     Text(section.title)
                         .font(.system(size: 26, weight: .bold))
                         .foregroundStyle(.primary)
-                        .accessibilityIdentifier("Practice.Messages.Section.\(section.id)")
+                        .accessibilityIdentifier("Practice.Scenarios.Section.\(section.id)")
 
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(alignment: .top, spacing: PracticeMessageHubLayout.itemSpacing) {
@@ -1406,12 +1406,12 @@ private struct PracticeMessageContactGrid: View {
                     }
                     .padding(.horizontal, -PracticeMessageHubLayout.rowViewportHorizontalBleed)
                     .scrollClipDisabled()
-                    .accessibilityIdentifier("Practice.Messages.SectionRow.\(section.id)")
+                    .accessibilityIdentifier("Practice.Scenarios.SectionRow.\(section.id)")
                 }
             }
         }
         .padding(.top, 8)
-        .accessibilityIdentifier("Practice.Messages.Contacts")
+        .accessibilityIdentifier("Practice.Scenarios.Contacts")
     }
 
     private func scenarioSortRank(_ scenario: PracticeScenario) -> Int {
@@ -1447,7 +1447,7 @@ private struct PracticeMessageContactButton: View {
                             }
                             .offset(PracticeMessageHubLayout.unreadDotOffset)
                             .accessibilityLabel("Ready to practice")
-                            .accessibilityIdentifier("Practice.Message.Contact.UnreadDot.\(scenario.id.rawValue)")
+                            .accessibilityIdentifier("Practice.Scenario.Contact.ReadyDot.\(scenario.id.rawValue)")
                     }
                 }
 
@@ -1469,7 +1469,7 @@ private struct PracticeMessageContactButton: View {
             }
         }
         .accessibilityLabel(scenario.id.messageContactName)
-        .accessibilityIdentifier("Practice.Message.Contact.\(scenario.id.rawValue)")
+        .accessibilityIdentifier("Practice.Scenario.Contact.\(scenario.id.rawValue)")
     }
 }
 

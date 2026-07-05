@@ -98,7 +98,7 @@ struct PracticeMessagesThreadHost: View {
             .frame(width: 1, height: 1)
             .opacity(0.001)
             .allowsHitTesting(false)
-            .accessibilityIdentifier("Practice.Messages.Thread")
+            .accessibilityIdentifier("Practice.Scenarios.Thread")
             .accessibilityLabel("Practice scenario")
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
@@ -226,7 +226,7 @@ private struct PracticeMessagesThreadBackButton: View {
         .onTapGesture(perform: action)
         .accessibilityElement()
         .accessibilityLabel("Back to Practice")
-        .accessibilityIdentifier("Practice.Messages.Back")
+        .accessibilityIdentifier("Practice.Scenarios.Back")
         .accessibilityAddTraits(.isButton)
     }
 }

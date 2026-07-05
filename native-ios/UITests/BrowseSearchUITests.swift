@@ -129,7 +129,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.hanoi"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.staticTexts["Browse by"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.hanoi.browse.landmarks"].waitForExistence(timeout: 2))
-        XCTAssertFalse(app.buttons["BrowseCollection.MessagesEntry.city.hanoi"].exists)
+        XCTAssertFalse(app.buttons["BrowseCollection.PracticeEntry.city.hanoi"].exists)
     }
 
     func testBrowsePracticeBackReturnsToCollectionPracticeFocus() {
@@ -227,7 +227,7 @@ final class BrowseSearchUITests: XCTestCase {
 
     func testFoodCollectionUsesPracticeMomentsAfterNounRows() {
         let app = launchApp(arguments: ["--browse-category", "food"])
-        let messageSection = app.descendants(matching: .any)["BrowseCollection.Messages.category.food"]
+        let messageSection = app.descendants(matching: .any)["BrowseCollection.PracticeMoments.category.food"]
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.food"].waitForExistence(timeout: 4))
         scrollUntilExists(messageSection, app: app)

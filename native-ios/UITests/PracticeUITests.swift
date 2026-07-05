@@ -15,8 +15,8 @@ final class PracticeUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["My practice phrases"].exists)
         scrollUntilStaticTextExists("Practice by topic", in: app)
         XCTAssertFalse(app.staticTexts["Messages"].exists)
-        XCTAssertFalse(app.descendants(matching: .any)["Practice.Messages.Contacts"].exists)
-        XCTAssertFalse(app.descendants(matching: .any)["Practice.Messages.Thread"].exists)
+        XCTAssertFalse(app.descendants(matching: .any)["Practice.Scenarios.Contacts"].exists)
+        XCTAssertFalse(app.descendants(matching: .any)["Practice.Scenarios.Thread"].exists)
     }
 
     func testPracticeSavedOpensSingleFourPairMatchRound() {
@@ -266,7 +266,7 @@ final class PracticeUITests: XCTestCase {
         let app = launchPracticeApp(extraArguments: ["--practice-scenario", "danangFirstDay"])
 
         XCTAssertTrue(app.staticTexts["Match the pairs"].waitForExistence(timeout: 4))
-        XCTAssertFalse(app.descendants(matching: .any)["Practice.Messages.Thread"].exists)
+        XCTAssertFalse(app.descendants(matching: .any)["Practice.Scenarios.Thread"].exists)
         completeCurrentMatchRound(in: app)
         assertPracticeCompletionVisible(in: app)
         capturePracticeProof(app: app, name: "legacy-scenario-fallback-complete.png")

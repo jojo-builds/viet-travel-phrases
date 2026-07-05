@@ -357,7 +357,7 @@ struct BrowseCollectionPageView: View {
                         onPractice(.practiceScenario(scenarioID))
                     }
                 )
-                .id(BrowseCollectionFocusRequest.messageSectionScrollTargetID)
+                .id(BrowseCollectionFocusRequest.practiceMomentsScrollTargetID)
                 .padding(.horizontal, BrowseCollectionLayout.horizontalPadding)
             }
 
@@ -1888,9 +1888,9 @@ private struct BrowseCollectionMessageSection: View {
                 .frame(height: BrowseCollectionMessageLayout.rowHeight)
                 .padding(.horizontal, -BrowseCollectionMessageLayout.rowViewportHorizontalBleed)
                 .scrollClipDisabled()
-                .accessibilityIdentifier("BrowseCollection.Messages.SectionRow.\(descriptor.route.id)")
+                .accessibilityIdentifier("BrowseCollection.PracticeMoments.SectionRow.\(descriptor.route.id)")
             }
-            .accessibilityIdentifier("BrowseCollection.Messages.\(descriptor.route.id)")
+            .accessibilityIdentifier("BrowseCollection.PracticeMoments.\(descriptor.route.id)")
         }
     }
 }
@@ -1921,7 +1921,7 @@ private struct BrowseCollectionMessageContactButton: View {
         }
         .buttonStyle(.plain)
         .accessibilityLabel(scenarioID.messageContactName)
-        .accessibilityIdentifier("BrowseCollection.Message.Contact.\(scenarioID.rawValue)")
+        .accessibilityIdentifier("BrowseCollection.PracticeMoment.Contact.\(scenarioID.rawValue)")
     }
 }
 
