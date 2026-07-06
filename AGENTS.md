@@ -103,7 +103,7 @@ Rules:
   - `Taxi & getting around` -> `.category("getting-around")`
   - `Hotel basics` -> `.category("hotel")`
   - `Money & shopping` -> `.category("shopping")`
-  - `Tiny conversations` -> Messages/Practice surface, not a normal Browse category page
+  - `Tiny practice` / Practice prompt shelves -> Practice surface, not a normal Browse category page
   Friendly homepage labels may differ from the underlying route name, but do not invent new route IDs unless the existing route cannot carry the intended traveler job.
 - For listing/content reviews, do not overblock safe improvements. Review the live rendered page and current diff, then classify issues as `HARD_BLOCK`, `SAFE_FIX_NOW`, `FOLLOW_UP`, or `ACCEPTED_TEMPORARY_RISK`. A missing adjacent visual/audio improvement is a follow-up unless the task explicitly makes it a shipping gate. Import or commit the largest safe traveler-facing improvement instead of leaving weaker live copy in place.
 - Ask Jojo only for true product, brand, legal/licensing, or language-correctness decisions that cannot be resolved by repo evidence, stable sources, or focused agent review. Do not push raw CSV/Sheet review back to Jojo when the intended review surface is the app itself.

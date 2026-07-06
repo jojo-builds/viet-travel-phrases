@@ -1312,12 +1312,12 @@ private struct PracticeMessagesHubSurface: View {
 
 private struct PracticeMessagesHeader: View {
     var body: some View {
-        Text("Messages")
+        Text("Scenario practice")
             .font(.system(size: 32, weight: .bold))
             .foregroundStyle(.primary)
             .frame(maxWidth: .infinity)
             .frame(height: 54)
-        .accessibilityIdentifier("Practice.Messages.Header")
+        .accessibilityIdentifier("Practice.Scenarios.Header")
     }
 }
 
@@ -1388,7 +1388,7 @@ private struct PracticeMessageContactGrid: View {
                     Text(section.title)
                         .font(.system(size: 26, weight: .bold))
                         .foregroundStyle(.primary)
-                        .accessibilityIdentifier("Practice.Messages.Section.\(section.id)")
+                        .accessibilityIdentifier("Practice.Scenarios.Section.\(section.id)")
 
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(alignment: .top, spacing: PracticeMessageHubLayout.itemSpacing) {
@@ -1406,12 +1406,12 @@ private struct PracticeMessageContactGrid: View {
                     }
                     .padding(.horizontal, -PracticeMessageHubLayout.rowViewportHorizontalBleed)
                     .scrollClipDisabled()
-                    .accessibilityIdentifier("Practice.Messages.SectionRow.\(section.id)")
+                    .accessibilityIdentifier("Practice.Scenarios.SectionRow.\(section.id)")
                 }
             }
         }
         .padding(.top, 8)
-        .accessibilityIdentifier("Practice.Messages.Contacts")
+        .accessibilityIdentifier("Practice.Scenarios.Contacts")
     }
 
     private func scenarioSortRank(_ scenario: PracticeScenario) -> Int {
@@ -1446,8 +1446,8 @@ private struct PracticeMessageContactButton: View {
                                     .stroke(.white, lineWidth: 2)
                             }
                             .offset(PracticeMessageHubLayout.unreadDotOffset)
-                            .accessibilityLabel("Unread")
-                            .accessibilityIdentifier("Practice.Message.Contact.UnreadDot.\(scenario.id.rawValue)")
+                            .accessibilityLabel("Ready to practice")
+                            .accessibilityIdentifier("Practice.Scenario.Contact.ReadyDot.\(scenario.id.rawValue)")
                     }
                 }
 
@@ -1465,11 +1465,11 @@ private struct PracticeMessageContactButton: View {
         .buttonStyle(.plain)
         .contextMenu {
             Button(action: onMarkUnread) {
-                Label("Mark Unread", systemImage: "circle.fill")
+                Label("Mark for practice", systemImage: "checkmark.circle.fill")
             }
         }
         .accessibilityLabel(scenario.id.messageContactName)
-        .accessibilityIdentifier("Practice.Message.Contact.\(scenario.id.rawValue)")
+        .accessibilityIdentifier("Practice.Scenario.Contact.\(scenario.id.rawValue)")
     }
 }
 
@@ -2445,7 +2445,7 @@ private struct PracticeScenarioPrimaryCard: View {
             PracticeScenarioBeatRow(beats: scenario.id.flowBeats, tint: scenario.id.tint)
 
             Button(action: onStart) {
-                Label("Open thread", systemImage: "text.bubble.fill")
+                Label("Start practice", systemImage: "play.fill")
                     .font(.headline.weight(.bold))
                     .frame(maxWidth: .infinity)
                     .frame(height: 52)
@@ -2507,7 +2507,7 @@ private struct PracticeScenarioModeList: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Messages")
+            Text("Scenario practice")
                 .font(.subheadline.weight(.bold))
                 .foregroundStyle(.secondary)
 
@@ -4222,8 +4222,8 @@ struct PracticeMatchSnapshot {
             quickSource: PracticeMatchSource(
                 id: "quick",
                 kind: .quick,
-                title: "Quick practice",
-                subtitle: "Four easy phrases to match.",
+                title: "Quick match",
+                subtitle: "Four useful pairs.",
                 symbolName: "bolt.fill",
                 tint: .red,
                 items: quickItems
@@ -4231,9 +4231,9 @@ struct PracticeMatchSnapshot {
             practiceSource: PracticeMatchSource(
                 id: "practice",
                 kind: .practice,
-                title: "My practice phrases",
+                title: "Practice pool",
                 subtitle: practiceItems.count < PracticeMatchRound.pairCount
-                    ? "Add at least 4 phrases to start your own round."
+                    ? "Add at least 4 phrases to start a practice round."
                     : "Match phrases you added to practice.",
                 symbolName: "bookmark.fill",
                 tint: .red,
@@ -5420,9 +5420,13 @@ private struct PracticeMatchSourceCard: View {
                 Text(actionTitle)
                     .font(.caption.weight(.black))
                     .foregroundStyle(.white)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.86)
+                    .fixedSize(horizontal: true, vertical: false)
                     .padding(.horizontal, 14)
-                    .frame(height: 34)
+                    .frame(minWidth: 58, minHeight: 34)
                     .background(Color.red, in: Capsule(style: .continuous))
+                    .layoutPriority(2)
             }
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)

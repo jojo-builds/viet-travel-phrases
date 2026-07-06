@@ -472,7 +472,7 @@ final class ListingHubRandomLoopProofUITests: XCTestCase {
         ("hotel-topic", ["--browse-category", "hotel"], "Hotel", ["Check-in phrases", "Can you store my luggage after", "Room Help", "Bags & Taxi"]),
         ("food-topic", ["--browse-category", "food"], "Eating Out", ["Order drinks phrases", "Black coffee", "Order dishes", "Food Allergies", "Restaurant Table", "Beach Snacks"]),
         ("getting-around-topic", ["--browse-category", "getting-around"], "Getting Around", ["Streets", "Bach Dang Street", "Grab Pickup", "Taxi Route"]),
-        ("local-greetings-topic", ["--browse-category", "local-greetings"], "Local Greetings", ["Greetings phrases", "Hello on the phone", "Hotel Hello", "Respectful Hello"]),
+        ("local-greetings-topic", ["--browse-category", "local-greetings"], "Local Greetings", ["Greetings phrases", "Hello on the phone", "Hotel greeting", "Respectful greeting"]),
     ]
 
     private let detailPages: [(label: String, pageID: String, title: String, requiredTexts: [String])] = [

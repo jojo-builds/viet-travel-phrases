@@ -71,8 +71,8 @@ private struct PracticeStorySceneLine: View {
         Color.clear
             .frame(maxWidth: .infinity)
             .frame(height: 12)
-        .accessibilityLabel(turn.text ?? "Conversation break")
-        .accessibilityIdentifier("Practice.Story.Scene.\(turn.stepID)")
+            .accessibilityLabel(turn.text ?? "Practice beat")
+            .accessibilityIdentifier("Practice.Story.Scene.\(turn.stepID)")
     }
 }
 

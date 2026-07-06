@@ -15,7 +15,7 @@ enum BrowseCollectionRoute: Hashable, Equatable, Identifiable {
 }
 
 struct BrowseCollectionFocusRequest: Equatable {
-    static let messageSectionScrollTargetID = "BrowseCollection.MessageSection"
+    static let practiceMomentsScrollTargetID = "BrowseCollection.PracticeMomentsSection"
     static let practiceEntryScrollTargetID = "BrowseCollection.PracticeEntry"
 
     let id: Int
@@ -29,7 +29,7 @@ struct BrowseCollectionFocusRequest: Equatable {
         var scrollTargetID: String {
             switch self {
             case .messageScenario:
-                return BrowseCollectionFocusRequest.messageSectionScrollTargetID
+                return BrowseCollectionFocusRequest.practiceMomentsScrollTargetID
             case .practiceEntry:
                 return BrowseCollectionFocusRequest.practiceEntryScrollTargetID
             }
@@ -278,7 +278,7 @@ struct BrowseCollectionShelf: Identifiable, Equatable {
 }
 
 struct BrowseCollectionDescriptor: Identifiable, Equatable {
-    static let messageSectionDisplayTitle = "Quick conversations"
+    static let messageSectionDisplayTitle = "Practice moments"
 
     let route: BrowseCollectionRoute
     let title: String
@@ -627,8 +627,8 @@ enum BrowseSearchDestinations {
         ),
         BrowseDestination(
             id: "local-greetings",
-            title: "Respectful hellos",
-            subtitle: "Choose the right hello for who you are speaking to",
+            title: "Respectful greetings",
+            subtitle: "Choose the right greeting for who you are speaking to",
             categoryIDs: ["local-greetings", "greetings", "polite-basics"],
             symbolName: "bubble.left.and.bubble.right.fill",
             tintName: .green,
@@ -685,7 +685,7 @@ enum BrowseSearchDestinations {
         BrowseDestination(
             id: "greetings",
             title: "Hello basics",
-            subtitle: "Simple ways to start conversations.",
+            subtitle: "Simple ways to start speaking.",
             categoryIDs: ["greetings", "local-greetings"],
             symbolName: "text.bubble.fill",
             tintName: .green,
@@ -2787,7 +2787,7 @@ enum BrowseSearchDestinations {
         case "hue":
             return "Hue day"
         default:
-            return "\(title) messages"
+            return "\(title) practice"
         }
     }
 

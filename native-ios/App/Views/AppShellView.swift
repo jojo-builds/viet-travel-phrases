@@ -144,6 +144,54 @@ enum AppShellPracticeOverlayChromePolicy {
     }
 }
 
+enum AppShellPhotoBackdropImmersivePolicy {
+    static func acceptsHiddenChrome(_ isHidden: Bool, on route: AppRoute) -> Bool {
+        isHidden && routeSupportsImmersiveChrome(route)
+    }
+
+    static func acceptedContext(
+        _ context: PhrasePhotoBackdropImmersiveImageContext?,
+        on route: AppRoute
+    ) -> PhrasePhotoBackdropImmersiveImageContext? {
+        guard let context, self.context(context, matches: route) else {
+            return nil
+        }
+
+        return context
+    }
+
+    static func context(_ context: PhrasePhotoBackdropImmersiveImageContext, matches route: AppRoute) -> Bool {
+        switch route {
+        case .home:
+            return context.pageID == "home"
+        case .phrasePage:
+            return context.pageID == PhrasePage.xinChao.id
+        case .detailPage(let pageID):
+            if context.pageID == pageID {
+                return true
+            }
+            let canonicalPageID = PhraseCatalog.canonicalPageID(forOpenablePageID: pageID) ?? pageID
+            return context.pageID == canonicalPageID
+        case .browse, .saved, .practice, .search:
+            guard let surface = AdminRootPhotoBackdropSurface.surface(for: route) else {
+                return false
+            }
+            return context.pageID == surface.pageID
+        case .browseCollection:
+            return false
+        }
+    }
+
+    private static func routeSupportsImmersiveChrome(_ route: AppRoute) -> Bool {
+        switch route {
+        case .home, .phrasePage, .detailPage, .browse, .saved, .practice, .search:
+            return true
+        case .browseCollection:
+            return false
+        }
+    }
+}
+
 struct AppShellBrowseDetailHeroOverrideCache: Equatable {
     private static let cacheLimit = 96
     private var overridesByPageID: [String: String] = [:]
@@ -686,9 +734,13 @@ struct AppShellView: View {
                 refreshMenuSectionChromePinnedState()
             }
             .onPreferenceChange(PhrasePhotoBackdropImmersiveChromePreferenceKey.self) { isHidden in
-                if hidesPhotoBackdropChrome != isHidden {
+                let acceptsHiddenChrome = AppShellPhotoBackdropImmersivePolicy.acceptsHiddenChrome(
+                    isHidden,
+                    on: navigation.currentRoute
+                )
+                if hidesPhotoBackdropChrome != acceptsHiddenChrome {
                     withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
-                        hidesPhotoBackdropChrome = isHidden
+                        hidesPhotoBackdropChrome = acceptsHiddenChrome
                     }
                 }
             }
@@ -707,8 +759,17 @@ struct AppShellView: View {
                 }
             }
             .onPreferenceChange(PhrasePhotoBackdropImmersiveImagePreferenceKey.self) { context in
-                if photoBackdropImmersiveImageContext != context {
-                    photoBackdropImmersiveImageContext = context
+                let acceptedContext = AppShellPhotoBackdropImmersivePolicy.acceptedContext(
+                    context,
+                    on: navigation.currentRoute
+                )
+                if photoBackdropImmersiveImageContext != acceptedContext {
+                    photoBackdropImmersiveImageContext = acceptedContext
+                }
+                if context != nil, acceptedContext == nil, hidesPhotoBackdropChrome {
+                    withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                        hidesPhotoBackdropChrome = false
+                    }
                 }
             }
             .onPreferenceChange(SavedTripSectionChromePreferenceKey.self) { states in
@@ -723,6 +784,29 @@ struct AppShellView: View {
                 if !isPresented {
                     cancelSearchFocus()
                 }
+            }
+            .onChange(of: navigation.currentRoute) { _, _ in
+                reconcilePhotoBackdropImmersiveStateForCurrentRoute()
+            }
+        }
+    }
+
+    private func reconcilePhotoBackdropImmersiveStateForCurrentRoute() {
+        let acceptedContext = AppShellPhotoBackdropImmersivePolicy.acceptedContext(
+            photoBackdropImmersiveImageContext,
+            on: navigation.currentRoute
+        )
+        if photoBackdropImmersiveImageContext != acceptedContext {
+            photoBackdropImmersiveImageContext = acceptedContext
+        }
+
+        let acceptsHiddenChrome = AppShellPhotoBackdropImmersivePolicy.acceptsHiddenChrome(
+            hidesPhotoBackdropChrome,
+            on: navigation.currentRoute
+        )
+        if hidesPhotoBackdropChrome && !acceptsHiddenChrome {
+            withAnimation(PhrasePhotoBackdropLayout.immersiveDissolveAnimation) {
+                hidesPhotoBackdropChrome = false
             }
         }
     }

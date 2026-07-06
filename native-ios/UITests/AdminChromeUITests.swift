@@ -85,10 +85,10 @@ final class AdminChromeUITests: XCTestCase {
         openDock("Saved", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["SavedPagesView"].waitForExistence(timeout: 3))
 
-        openDock("Messages", in: app)
+        openDock("Practice", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
         openSearch(in: app, iteration: 4)
-        openDock("Messages", in: app)
+        openDock("Practice", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
     }
 
@@ -98,7 +98,7 @@ final class AdminChromeUITests: XCTestCase {
 
         assertHomeVisible(in: app)
 
-        openDock("Messages", in: app)
+        openDock("Practice", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
 
         openDock("Browse", in: app)
@@ -111,9 +111,9 @@ final class AdminChromeUITests: XCTestCase {
 
         assertHomeVisible(in: app)
 
-        openDock("Messages", in: app)
+        openDock("Practice", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
-        captureProofIfRequested(app: app, name: "system-tab-home-to-messages-settled.png")
+        captureProofIfRequested(app: app, name: "system-tab-home-to-practice-settled.png")
     }
 
     func testDetailSearchOriginRoundTripKeepsChromeResponsive() {
@@ -741,7 +741,7 @@ final class AdminChromeUITests: XCTestCase {
             normalizedX = 0.31
         case "Saved":
             normalizedX = 0.49
-        case "Messages", "Practice":
+        case "Practice":
             normalizedX = 0.66
         case "Search":
             normalizedX = 0.82

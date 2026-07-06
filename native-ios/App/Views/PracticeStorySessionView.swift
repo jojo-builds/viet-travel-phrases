@@ -93,13 +93,13 @@ struct PracticeMessagesThreadHost: View {
     }
 
     private var threadAccessibilityMarker: some View {
-        Text("Messages thread")
+        Text("Practice scenario")
             .font(.caption2)
             .frame(width: 1, height: 1)
             .opacity(0.001)
             .allowsHitTesting(false)
-            .accessibilityIdentifier("Practice.Messages.Thread")
-            .accessibilityLabel("Messages thread")
+            .accessibilityIdentifier("Practice.Scenarios.Thread")
+            .accessibilityLabel("Practice scenario")
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
 
@@ -225,8 +225,8 @@ private struct PracticeMessagesThreadBackButton: View {
         .contentShape(RoundedRectangle(cornerRadius: AppChromeLayout.topAdminControlCornerRadius, style: .continuous))
         .onTapGesture(perform: action)
         .accessibilityElement()
-        .accessibilityLabel("Back to Messages")
-        .accessibilityIdentifier("Practice.Messages.Back")
+        .accessibilityLabel("Back to Practice")
+        .accessibilityIdentifier("Practice.Scenarios.Back")
         .accessibilityAddTraits(.isButton)
     }
 }
@@ -571,7 +571,7 @@ private struct PracticeStoryHeader: View {
                 }
 
             VStack(alignment: .leading, spacing: 4) {
-                Text("MESSAGES")
+                Text("PRACTICE")
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
 
@@ -602,18 +602,18 @@ struct PracticeStoryCompletionSurface: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
             VStack(alignment: .leading, spacing: 10) {
-                Image(systemName: "checkmark.message.fill")
+                Image(systemName: "checkmark.seal.fill")
                     .font(.system(size: 34, weight: .bold))
                     .foregroundStyle(.green)
                     .frame(width: 64, height: 64)
                     .background(PhrasePageStyle.elevatedCardFill, in: Circle())
 
-                Text("Conversation complete")
+                Text("Practice complete")
                     .font(.system(size: 34, weight: .black, design: .rounded))
                     .foregroundStyle(.primary)
                     .accessibilityIdentifier("Practice.Story.Complete")
 
-                Text("You sent \(summary.practicedCount) useful replies in this thread.")
+                Text("You sent \(summary.practicedCount) useful replies in this practice run.")
                     .font(.body.weight(.semibold))
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -628,7 +628,7 @@ struct PracticeStoryCompletionSurface: View {
 
             VStack(spacing: 10) {
                 Button(action: onPracticeAnother) {
-                    Label("Restart conversation", systemImage: "arrow.clockwise")
+                    Label("Restart practice", systemImage: "arrow.clockwise")
                         .font(.headline.weight(.bold))
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 15)
@@ -638,7 +638,7 @@ struct PracticeStoryCompletionSurface: View {
                 .background(summary.scenario.id.tint.color, in: Capsule())
 
                 Button(action: onBackToPractice) {
-                    Label("Back to Messages", systemImage: "text.bubble.fill")
+                    Label("Back to Practice", systemImage: "rectangle.grid.2x2.fill")
                         .font(.subheadline.weight(.bold))
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 13)

@@ -102,11 +102,11 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         case .emergencyCallHelp:
             return "Call for help"
         case .localGreetingMarket:
-            return "Market hello"
+            return "Market greeting"
         case .localGreetingHotel:
-            return "Hotel hello"
+            return "Hotel greeting"
         case .localGreetingRespect:
-            return "Respectful hello"
+            return "Respectful greeting"
         case .localThanksSorry:
             return "Thanks and sorry"
         case .localSmallTalk:
@@ -421,7 +421,7 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         case .localGreetingHotel:
             return ["Polite hello", "Wait", "Sorry", "Thanks"]
         case .localGreetingRespect:
-            return ["Respectful hello", "Look around", "Permission", "Thanks"]
+            return ["Respectful greeting", "Look around", "Permission", "Thanks"]
         case .localThanksSorry:
             return ["Thank you", "Sorry", "Repeat", "No thanks"]
         case .localSmallTalk:
@@ -492,11 +492,11 @@ enum PracticeScenarioID: String, CaseIterable, Codable, Equatable, Identifiable 
         case .emergencyCallHelp:
             return "Call for Help"
         case .localGreetingMarket:
-            return "Market Hello"
+            return "Market greeting"
         case .localGreetingHotel:
-            return "Hotel Hello"
+            return "Hotel greeting"
         case .localGreetingRespect:
-            return "Respectful Hello"
+            return "Respectful greeting"
         case .localThanksSorry:
             return "Thanks & Sorry"
         case .localSmallTalk:
@@ -848,7 +848,7 @@ enum PracticeScenarioQueueSource: String, CaseIterable, Codable, Equatable, Hash
         case .savedRecent:
             return "Recently opened phrases."
         case .tripFallback:
-            return "Practical travel conversations to start with."
+            return "Practical travel moments to practice first."
         }
     }
 

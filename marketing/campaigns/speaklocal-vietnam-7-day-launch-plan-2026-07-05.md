@@ -4,6 +4,14 @@ Date: 2026-07-05
 Status: execution-ready marketing plan, pending final screenshots and StoreKit proof
 Primary audience: English-speaking Vietnam travelers planning before arrival
 
+Current expanded launch project:
+
+- `marketing/projects/vietnam-launch-readiness-2026-07-05/two-week-launch-channel-plan.md`
+- `marketing/projects/vietnam-launch-readiness-2026-07-05/app-store-metadata.md`
+- `marketing/projects/vietnam-launch-readiness-2026-07-05/screenshot-storyboard.md`
+- `marketing/projects/vietnam-launch-readiness-2026-07-05/app-preview-30s-shot-list.md`
+- `marketing/projects/vietnam-launch-readiness-2026-07-05/claim-risk-checklist.md`
+
 ## Positioning
 
 SpeakLocal Vietnam helps excited travelers know what to eat, where to go, and what to say, with native iOS browsing, search, saved trip phrases, Practice, and playable Vietnamese audio.

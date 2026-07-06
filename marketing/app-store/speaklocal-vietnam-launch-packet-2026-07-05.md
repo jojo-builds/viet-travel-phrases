@@ -1,9 +1,17 @@
 # SpeakLocal Vietnam Launch Packet
 
 Date: 2026-07-05
-Status: launch-ready draft, pending final App Store screenshots and StoreKit proof
+Status: superseded working draft; current launch pack lives at `marketing/projects/vietnam-launch-readiness-2026-07-05/`
 Audience: English-speaking travelers planning or seriously considering Vietnam
 Product truth checked against: native iOS `main`, repo docs, current operations evidence
+
+Current project pack:
+
+- `marketing/projects/vietnam-launch-readiness-2026-07-05/app-store-metadata.md`
+- `marketing/projects/vietnam-launch-readiness-2026-07-05/screenshot-storyboard.md`
+- `marketing/projects/vietnam-launch-readiness-2026-07-05/app-preview-30s-shot-list.md`
+- `marketing/projects/vietnam-launch-readiness-2026-07-05/two-week-launch-channel-plan.md`
+- `marketing/projects/vietnam-launch-readiness-2026-07-05/claim-risk-checklist.md`
 
 ## Product Guardrails
 
@@ -215,7 +223,7 @@ Safe claims:
 
 - Native iOS app for SpeakLocal Vietnam.
 - Food, places, useful phrases, search, Browse, Saved, Practice, and playable bundled audio are current app truths.
-- Current live Viet pack has 19 runtime scenarios, 177 starter visible intent families, 1605 premium visible intent families, 1782 visible clusters, 1800 source phrase rows, 1793 canonical phrase pages, 11728 relation rows, and 4318 bundled audio assets in the cited product docs.
+- Internal numeric claims should be pulled from the freshest operations docs before use. As of the 2026-07-05 operations snapshot, current `main` validation records `1782` clusters, `1800` source phrases, `1793` canonical pages, `5353` audio assets, and `0` release-blocking missing-audio rows. Do not turn these counts into customer-facing copy unless Jojo explicitly wants that proof style.
 - Non-paywall native app has fresh simulator and physical iPhone proof in operations docs.
 
 Use carefully:

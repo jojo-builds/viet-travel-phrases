@@ -1,6 +1,6 @@
 # Current Blockers
 
-Last updated: 2026-07-05 (Asia/Manila local)
+Last updated: 2026-07-06 (Asia/Manila local)
 Authority lane: live app operational truth
 
 Use this doc for blocker state only. Use `TESTING_RUNBOOK.md` for native validation commands.
@@ -13,11 +13,12 @@ Use this doc for blocker state only. Use `TESTING_RUNBOOK.md` for native validat
    - Required proof before shipping paywall: real purchase, restore, relaunch persistence, locked/unlocked entitlement behavior, and clear App Store Connect product state.
    - If Jojo ships the current non-paywall native app payload, this is not a blocker for that non-paywall release.
 
-2. Exact-current physical iPhone proof is pending for `main` head `470016d3e`.
-   - The 2026-07-05 merged `main` passed focused simulator/data validation after the non-paywall checkpoint and real-traveler Browse-back fix.
-   - The physical-device helper could not build/install/launch because no paired iPhone was available to device tooling.
-   - Repo signing files stayed clean after the blocked attempt.
-   - Rerun `speaklocal-ios-device-build` once Jojo's active iPhone is available/unlocked.
+2. Exact-current physical iPhone launch proof is pending for the latest `main` checkout.
+   - Latest app-code payload is now `521cdf883` after the eight-hour front-end/product-language follow-up.
+   - Current app-code payload `521cdf883` built and installed successfully on Jojo's active physical iPhone.
+   - Launch was blocked only because the phone was locked; latest simulator route-scrolling product-language validation succeeded for the same app-code payload.
+   - Repo signing files stayed clean after the physical build/install attempt.
+   - Unlock Jojo's active iPhone and tap SpeakLocal, or rerun the launch step from current `main`, to close exact-current physical launch proof.
 
 3. Mixed historical docs may still mention Expo/EAS as archive context.
    - Active implementation authority now says native iOS only.
@@ -25,7 +26,14 @@ Use this doc for blocker state only. Use `TESTING_RUNBOOK.md` for native validat
 
 4. Audio continuity remains an honest quality watch item.
    - The 2026-07-04/05 ElevenLabs remediation and deep visual QA pass cleared the missing/planned audio queue in the launch-readiness working tree: `5353` manifest entries validated, authored audio audit reports `0` missing, and the regenerated SQLite report shows `0` missing-audio audit rows.
+   - The 2026-07-05 static audio release audit found no launch-blocking audio defect, no broken manifest references, no zero-duration bundled audio, and confirmed `Không cay` coverage.
    - This is no longer a known missing-audio blocker, but do not claim perfect pronunciation or same-speaker uniformity until a fresh native audio-quality/listen pass proves it.
+
+5. Unique city/place hero image completion is still open if Jojo requires page-specific owned photos for every approved city/place page before launch.
+   - Current runtime is not known to render blank hero areas for the 20 affected pages; they use bundled shared city fallback heroes on `main`.
+   - Normal active hero validation and the full V2.2 render proof pass for current `main`.
+   - The stricter completion gate `node native-ios/scripts/validate-viet-hero-image-assets.js --require-unique-city-place-assets` still fails because 20 target page-specific imagesets are missing and are not present in the current generation manifest.
+   - Treat this as a media-completion decision, not something to patch with cheap placeholder imagery. Current report: `docs/task-results/frontend-qa-2026-07-05/eight-hour-audit/hero-image-strict-gate-followup.md`.
 
 ## Resolved Current Gates
 
@@ -60,6 +68,6 @@ Use this doc for blocker state only. Use `TESTING_RUNBOOK.md` for native validat
 
 - Expo/EAS packaging drift is no longer an active app-development blocker because the app product surface is now native SwiftUI/Xcode.
 - React Native/Metro preview issues are no longer product blockers because that app shell is no longer active.
-- Physical iPhone setup/provisioning was proven on Jojo's replacement/new active phone at `07a2db5d8`; exact-current `main` phone proof is tracked above because the latest device attempt found no available paired iPhone.
+- Physical iPhone setup/provisioning was proven on Jojo's replacement/new active phone at `07a2db5d8`; exact-current `main` phone proof is tracked above because the latest device attempt built and installed but could not launch while the phone was locked.
 - Non-paywall frontend QA has a fresh full-UI simulator pass and phone proof; remaining paywall/StoreKit work is intentionally outside this payload.
-- Hero image asset validation passed in the 2026-05-18 merge sweep with the strict unique city-place asset gate.
+- Normal hero image asset validation passes for the current runtime-referenced hero names. The stricter unique city/place image completion gate is tracked above because it now exposes 20 still-shared city fallback heroes.

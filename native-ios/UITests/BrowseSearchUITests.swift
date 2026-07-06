@@ -82,7 +82,7 @@ final class BrowseSearchUITests: XCTestCase {
         app = launchApp(arguments: ["--browse-category", "hotel"])
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.hotel"].waitForExistence(timeout: 4))
 
-        openDock("Messages", in: app)
+        openDock("Practice", in: app)
         XCTAssertTrue(app.descendants(matching: .any)["PracticeView"].waitForExistence(timeout: 3))
 
         tapWhenVisible(app.buttons["TopAdmin.BackButton"], app: app)
@@ -129,7 +129,7 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.city.hanoi"].waitForExistence(timeout: 4))
         XCTAssertTrue(app.staticTexts["Browse by"].waitForExistence(timeout: 2))
         XCTAssertTrue(app.buttons["BrowseCollection.CityFilter.hanoi.browse.landmarks"].waitForExistence(timeout: 2))
-        XCTAssertFalse(app.buttons["BrowseCollection.MessagesEntry.city.hanoi"].exists)
+        XCTAssertFalse(app.buttons["BrowseCollection.PracticeEntry.city.hanoi"].exists)
     }
 
     func testBrowsePracticeBackReturnsToCollectionPracticeFocus() {
@@ -225,15 +225,15 @@ final class BrowseSearchUITests: XCTestCase {
         XCTAssertTrue(waitForSavedRoot(in: app, timeout: 4))
     }
 
-    func testFoodCollectionUsesMessageSectionAfterNounRows() {
+    func testFoodCollectionUsesPracticeMomentsAfterNounRows() {
         let app = launchApp(arguments: ["--browse-category", "food"])
-        let messageSection = app.descendants(matching: .any)["BrowseCollection.Messages.category.food"]
+        let messageSection = app.descendants(matching: .any)["BrowseCollection.PracticeMoments.category.food"]
 
         XCTAssertTrue(app.staticTexts["BrowseCollection.Title.category.food"].waitForExistence(timeout: 4))
         scrollUntilExists(messageSection, app: app)
 
         XCTAssertTrue(messageSection.waitForExistence(timeout: 2))
-        XCTAssertTrue(app.staticTexts["Quick conversations"].exists)
+        XCTAssertTrue(app.staticTexts["Practice moments"].exists)
         XCTAssertFalse(app.buttons["BrowseCollection.PracticeEntry.category.food"].exists)
     }
 
@@ -1070,7 +1070,7 @@ final class BrowseSearchUITests: XCTestCase {
     func testCaptureRepresentativeHeroImagesForProductionReview() {
         let pages: [(label: String, arguments: [String], title: String, requiredText: String)] = [
             ("saigon-city", ["--browse-city", "hcmc"], "Saigon", "Browse by"),
-            ("greetings-category", ["--browse-category", "greetings"], "Greetings", "Simple ways to start conversations."),
+            ("greetings-category", ["--browse-category", "greetings"], "Greetings", "Simple ways to start speaking."),
             ("ben-thanh-market", ["--detail-page", "viet-family-city-hcmc-place-ben-thanh-market"], "Chợ Bến Thành", "The First Market Name To Know"),
             ("anan-saigon", ["--detail-page", "viet-family-city-hcmc-place-anan-saigon"], "Anăn Sài Gòn", "Modern Vietnamese Inside Market Streets"),
         ]
@@ -1526,7 +1526,7 @@ final class BrowseSearchUITests: XCTestCase {
             normalizedX = 0.31
         case "Saved":
             normalizedX = 0.49
-        case "Messages":
+        case "Practice":
             normalizedX = 0.66
         case "Search":
             normalizedX = 0.82

@@ -1,6 +1,6 @@
 # App Status
 
-Last updated: 2026-07-05 (Asia/Manila local)
+Last updated: 2026-07-06 (Asia/Manila local)
 Authority lane: live app operational truth
 
 ## Live App Status
@@ -33,8 +33,8 @@ Do not use `/Users/jojolim/Documents/New project` or a resurrected `app/` folder
 - Local validation should use the native commands in `docs/operations/TESTING_RUNBOOK.md`.
 - Physical iPhone installs should normally come from `main` using `speaklocal-ios-device-build`.
 - Feature branches should use dedicated simulator instances unless Jojo explicitly asks to install that branch on his phone.
-- Latest completed phone proof used `main` at commit `07a2db5d8` on Jojo's replacement/new active iPhone.
-- Current exact `main` head `470016d3e` has fresh simulator/data validation after the 2026-07-05 launch-readiness checkpoint and real-traveler Browse-back merge; physical iPhone build/install/launch proof is pending because no paired iPhone was available to device tooling during the latest attempt.
+- Latest exact-current physical-phone proof for app-code payload `521cdf883`: build and install succeeded on Jojo's active physical iPhone; launch was blocked because the phone was locked. Repo signing files stayed clean.
+- Current app-code payload is the 2026-07-05 non-paywall launch-readiness checkpoint plus route/back, rapid audio tap, active-playback hardening, frontend QA proof receipts, Practice-era copy cleanup, full V2.2 render proof receipts, semantic product-language follow-up, Practice scenario test-identifier cleanup, hidden Practice fallback cleanup, Practice visual-symbol cleanup, and product-language route-scrolling proof through `521cdf883`.
 - The 2026-06-16 post-merge validation passed native guards, Viet content/resource validators, focused simulator unit tests, targeted UI tests, and physical iPhone build/install/launch.
 - Jojo's previous test iPhone is now away for Apple service. The new active iPhone was visible to device tooling on 2026-07-04, Developer Mode is enabled, and Xcode sees it as a valid iOS destination.
 - After Xcode account sign-in, Apple Program License Agreement acceptance, and automatic provisioning refresh, the 2026-07-04 current-`main` debug build, install, and launch all passed on the new phone.
@@ -42,7 +42,9 @@ Do not use `/Users/jojolim/Documents/New project` or a resurrected `app/` folder
 - The same 2026-07-04 launch-readiness working tree restored the original Home lifted/glass panel styling while moving scroll-driven photo-backdrop/chrome updates out of the full Home content tree; focused Home tests and the full `BrowseSearchUITests` suite (`60` tests, `0` failures) passed afterward.
 - The 2026-07-04/05 audio remediation and deep visual QA pass cleared the known bundled-audio coverage queue in the launch-readiness working tree: `5353` audio manifest entries validated and the regenerated SQLite report shows `0` missing-audio rows. A fresh physical-phone build, install, and launch passed for that regenerated payload; human listen spot-checks are still recommended.
 - The 2026-07-04/05 frontend QA bug hunt completed a full final `SpeakLocalNativeUITests` sweep with `132` tests executed, `1` intentional skip, and `0` failures, plus `259` retained screenshot/proof files. It covered Home, Browse, Search, Saved, Practice, navigation, audio controls, city/menu/listing surfaces, top/bottom chrome, and production listing proof paths. A follow-up Practice saved-match header clearance issue from physical-phone review is tracked as `FQA-019` and has targeted red/green, full Practice, screenshot proof, and physical iPhone build/install/launch proof.
-- Paywall remains intentionally excluded from `main` until Jojo explicitly approves that lane and StoreKit proof passes; `feature/paywall` has been synced forward to current `main` for continued testing.
+- The 2026-07-05 parallel launch-readiness push added current-main App Store screenshot proof, a static audio release audit, focused post-fix Browse/Search/Practice/audio UI validation, and exact-current phone build/install proof.
+- The 2026-07-05/06 eight-hour front-end/product-language follow-up fixed stale Practice-era labels, tightened the visible/source-backed product-language audit, proved broad Browse/Search/Practice/back-forward/admin/audio/listing/city surfaces, added a route-scrolling UI guardrail for retired Practice/Messages vocabulary, reran final shell `xcodebuild` slices with `129` executed UI tests, `1` intentional skip, and `0` failures, and left paywall isolated.
+- Paywall remains intentionally excluded from `main` until Jojo explicitly approves that lane and real purchase/restore/relaunch proof passes. `feature/paywall` has green hosted StoreKit/XCTest readiness at commit `453d6f55a`, but it is not merged.
 
 ## Evidence Boundary
 

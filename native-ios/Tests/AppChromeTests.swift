@@ -454,6 +454,28 @@ final class AppChromeTests: XCTestCase {
         )
     }
 
+    func testPhotoBackdropImmersiveStateDoesNotSurviveBackToBrowseCollection() {
+        let detailContext = PhrasePhotoBackdropImmersiveImageContext(
+            pageID: "viet-family-food-coffee-black",
+            imageName: "BackdropPhraseCoffeeCounter",
+            viewportSize: CGSize(width: 393, height: 852),
+            safeAreaTop: 59,
+            safeAreaBottom: 34,
+            imageFrameHeight: 1046,
+            verticalFocusOffset: 0
+        )
+
+        XCTAssertTrue(
+            AppShellPhotoBackdropImmersivePolicy.context(detailContext, matches: .detailPage("viet-family-food-coffee-black"))
+        )
+        XCTAssertNil(
+            AppShellPhotoBackdropImmersivePolicy.acceptedContext(detailContext, on: .browseCollection(.category("food")))
+        )
+        XCTAssertFalse(
+            AppShellPhotoBackdropImmersivePolicy.acceptsHiddenChrome(true, on: .browseCollection(.category("food")))
+        )
+    }
+
     func testPhotoBackdropContentFoundationStartsAtVisibleSheetTop() {
         let metrics = PhrasePhotoBackdropLayout.metrics(for: CGSize(width: 393, height: 852))
         let visibleSheetTop = max(metrics.collapsedContentTop - metrics.initialAnchorOffset, 0)
@@ -1898,6 +1920,58 @@ final class AppChromeTests: XCTestCase {
             SharedBackdropImagePool.storageKey(for: $0.poolSurface)
         })
         XCTAssertEqual(adminRootPoolKeys.count, 1)
+    }
+
+    func testAdminRootBackdropImmersivePolicyAcceptsRootSurfaceContexts() {
+        let rootSurfaces: [(route: AppRoute, surface: AdminRootPhotoBackdropSurface)] = [
+            (.browse, .browse),
+            (.saved, .saved),
+            (.practice, .practice),
+            (.search, .search),
+        ]
+
+        for rootSurface in rootSurfaces {
+            let context = PhrasePhotoBackdropImmersiveImageContext(
+                pageID: rootSurface.surface.pageID,
+                imageName: SharedBackdropImagePool.fallbackImageName,
+                viewportSize: CGSize(width: 393, height: 852),
+                safeAreaTop: 59,
+                safeAreaBottom: 34,
+                imageFrameHeight: 420,
+                verticalFocusOffset: 0
+            )
+
+            XCTAssertEqual(
+                AppShellPhotoBackdropImmersivePolicy.acceptedContext(context, on: rootSurface.route),
+                context
+            )
+            XCTAssertTrue(
+                AppShellPhotoBackdropImmersivePolicy.acceptsHiddenChrome(true, on: rootSurface.route)
+            )
+        }
+
+        let browseRootContext = PhrasePhotoBackdropImmersiveImageContext(
+            pageID: AdminRootPhotoBackdropSurface.browse.pageID,
+            imageName: SharedBackdropImagePool.fallbackImageName,
+            viewportSize: CGSize(width: 393, height: 852),
+            safeAreaTop: 59,
+            safeAreaBottom: 34,
+            imageFrameHeight: 420,
+            verticalFocusOffset: 0
+        )
+
+        XCTAssertNil(
+            AppShellPhotoBackdropImmersivePolicy.acceptedContext(
+                browseRootContext,
+                on: .browseCollection(.category("airport"))
+            )
+        )
+        XCTAssertFalse(
+            AppShellPhotoBackdropImmersivePolicy.acceptsHiddenChrome(
+                true,
+                on: .browseCollection(.category("airport"))
+            )
+        )
     }
 
     func testAdminRootBackdropAdvancesOnlyWhenEnteringDifferentRootSurface() {
@@ -3563,10 +3637,10 @@ final class AppChromeTests: XCTestCase {
         let localHellos = try! XCTUnwrap(BrowseSearchDestinations.situations.first { $0.id == "local-greetings" })
         let helloBasics = try! XCTUnwrap(BrowseSearchDestinations.phraseFamilies.first { $0.id == "greetings" })
 
-        XCTAssertEqual(localHellos.title, "Respectful hellos")
-        XCTAssertEqual(localHellos.subtitle, "Choose the right hello for who you are speaking to")
+        XCTAssertEqual(localHellos.title, "Respectful greetings")
+        XCTAssertEqual(localHellos.subtitle, "Choose the right greeting for who you are speaking to")
         XCTAssertEqual(helloBasics.title, "Hello basics")
-        XCTAssertEqual(helloBasics.subtitle, "Simple ways to start conversations.")
+        XCTAssertEqual(helloBasics.subtitle, "Simple ways to start speaking.")
     }
 
     func testBrowseSearchDestinationsUseCanonicalCityIDs() {
@@ -3598,12 +3672,12 @@ final class AppChromeTests: XCTestCase {
         XCTAssertFalse(hotel.subcategories.isEmpty)
         XCTAssertFalse(hotel.starterItems.isEmpty)
         XCTAssertEqual(hotel.messageSectionTitle, "Hotel")
-        XCTAssertEqual(hotel.browseMessageSectionTitle, "Quick conversations")
+        XCTAssertEqual(hotel.browseMessageSectionTitle, "Practice moments")
         XCTAssertEqual(hotel.messageScenarioIDs, [.hotelCheckInHelp, .hotelRoomHelp, .hotelBagsTaxi, .hotelWifiCheckout, .hotelRoomSupplies])
         XCTAssertEqual(hotel.mastheadImageName, "HeroCategoryHotel")
 
         XCTAssertEqual(shopping.messageSectionTitle, "Shopping")
-        XCTAssertEqual(shopping.browseMessageSectionTitle, "Quick conversations")
+        XCTAssertEqual(shopping.browseMessageSectionTitle, "Practice moments")
         XCTAssertEqual(shopping.messageScenarioIDs, [.shoppingMarketPrice, .shoppingSizeGift, .shoppingReceiptHelp, .shoppingPayCard, .shoppingMarketProduce])
 
         XCTAssertEqual(hanoi.route, .city("hanoi"))
@@ -4930,13 +5004,33 @@ final class AppChromeTests: XCTestCase {
     func testVietnameseMenuBackdropImageUsesStablePortraitFrame() {
         let size = CGSize(width: 393, height: 852)
         let safeAreaInsets = EdgeInsets(top: 59, leading: 0, bottom: 34, trailing: 0)
+        let phoBoFocusOffset = PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+            for: size,
+            pageID: "viet-menu-food-pho-bo",
+            heroImageName: "BackdropMenuFoodPhoBo"
+        )
         let menuFocusOffset = PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
             for: size,
             pageID: "viet-menu-food-pho-dac-biet",
             heroImageName: "BackdropMenuFoodPhoDacBiet"
         )
 
+        XCTAssertGreaterThanOrEqual(
+            phoBoFocusOffset,
+            180,
+            "Phở bò's tall portrait backdrop should lift the bowl into the visible resting crop"
+        )
         XCTAssertEqual(menuFocusOffset, 0)
+        XCTAssertEqual(
+            PhrasePhotoBackdropLayout.backdropFrameHeight(
+                for: size,
+                safeAreaInsets: safeAreaInsets,
+                pageID: "viet-menu-food-pho-bo",
+                heroImageName: "BackdropMenuFoodPhoBo"
+            ),
+            size.height + safeAreaInsets.bottom + phoBoFocusOffset,
+            accuracy: 0.001
+        )
         XCTAssertEqual(
             PhrasePhotoBackdropLayout.backdropFrameHeight(
                 for: size,

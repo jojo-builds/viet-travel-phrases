@@ -4250,7 +4250,7 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
         PracticeScenarioTemplate(
             id: .driverProblemHelp,
             sceneTitle: "Driver help",
-            sceneSetup: "Handle wrong-car, driver-contact, safety, and lost-ride moments without letting the thread drift.",
+            sceneSetup: "Handle wrong-car, driver-contact, safety, and lost-ride moments without losing the plan.",
             steps: [
                 messageScenarioStep(
                     id: "driver-problem-opening",
@@ -5432,7 +5432,7 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
         ),
         PracticeScenarioTemplate(
             id: .localGreetingMarket,
-            sceneTitle: "Market hello",
+            sceneTitle: "Market greeting",
             sceneSetup: "Warm hellos, light browsing, thank-you, and goodbye at a local market stall.",
             steps: [
                 messageScenarioStep(
@@ -5653,7 +5653,7 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
         ),
         PracticeScenarioTemplate(
             id: .localGreetingHotel,
-            sceneTitle: "Hotel hello",
+            sceneTitle: "Hotel greeting",
             sceneSetup: "Use polite lobby greetings, wait language, sorry, thank-you, and goodbye with hotel staff.",
             steps: [
                 messageScenarioStep(
@@ -5827,7 +5827,7 @@ private func additionalMessageScenarioTemplates() -> [PracticeScenarioTemplate] 
         ),
         PracticeScenarioTemplate(
             id: .localGreetingRespect,
-            sceneTitle: "Respectful hello",
+            sceneTitle: "Respectful greeting",
             sceneSetup: "Keep one respectful neighborhood-shop exchange going from hello to help, thanks, and goodbye.",
             steps: [
                 messageScenarioStep(

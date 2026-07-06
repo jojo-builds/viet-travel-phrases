@@ -586,14 +586,14 @@ function main() {
     ["Tier 1 inventory", tierOneIndex.inventory.length],
     ["Tier 1 xin-chao-like pages", tierOneRows.filter((row) => row.buildoutBand === "xin-chao-like").length],
     ["Homepage candidates emitted", homepageRows.length],
-    ["Message candidates emitted", messageRows.length],
+    ["Practice moment candidates emitted", messageRows.length],
     ["Entity-first gaps emitted", entityFirstGaps.length],
     ["Covered essentials", essentialRows.filter((row) => row.status === "covered").length],
   ];
 
   writeCSV(path.join(outputDir, "tier1-listings.csv"), tierOneRows);
   writeCSV(path.join(outputDir, "homepage-quick-phrase-candidates.csv"), homepageRows);
-  writeCSV(path.join(outputDir, "message-conversation-candidates.csv"), messageRows);
+  writeCSV(path.join(outputDir, "practice-moment-candidates.csv"), messageRows);
   writeCSV(path.join(outputDir, "audio-coverage-by-scenario.csv"), audioRows);
   writeCSV(path.join(outputDir, "city-entity-vs-derived-phrases.csv"), cityGapRows);
   writeCSV(path.join(outputDir, "entity-first-browse-gaps.csv"), entityFirstGaps);
@@ -615,7 +615,7 @@ This audit maps the shipped Viet phrase catalog into concrete surfaces:
 
 - Tier 1 listing pages that are already fully built out.
 - Quick, friendly homepage phrase candidates.
-- Messages conversation seeds that reuse existing phrase IDs first.
+- Practice moment seeds that reuse existing phrase IDs first.
 - Audio coverage by scenario.
 - Entity-first Browse gaps where nouns/entities should surface before long-tail phrases.
 - Easy beginner essentials coverage.
@@ -640,11 +640,11 @@ Top candidates:
 | --- | --- | --- | --- | --- |
 ${topHomepage.map((row) => `| ${row.rank} | ${row.vietnamese} | ${row.english} | \`${row.pageID}\` | ${row.band} |`).join("\n")}
 
-## Messages Reuse Recommendation
+## Practice Moment Reuse Recommendation
 
-Use \`message-conversation-candidates.csv\` as the first pass for Messages. Each row includes a short conversation name, source page, entry pattern, and existing phrase IDs. The rule is: build the chat around those IDs before creating any new phrase.
+Use \`practice-moment-candidates.csv\` as the first pass for Browse-launched Practice moments. Each row includes a short scenario name, source page, entry pattern, and existing phrase IDs. The rule is: build the practice moment around those IDs before creating any new phrase.
 
-Top message seeds:
+Top Practice moment seeds:
 
 | Rank | Name | Source | Entry | Existing phrase IDs |
 | --- | --- | --- | --- | --- |
@@ -679,7 +679,7 @@ See \`easy-beginner-essential-coverage.csv\` for phrase IDs by intent.
 
 - \`tier1-listings.csv\`
 - \`homepage-quick-phrase-candidates.csv\`
-- \`message-conversation-candidates.csv\`
+- \`practice-moment-candidates.csv\`
 - \`audio-coverage-by-scenario.csv\`
 - \`city-entity-vs-derived-phrases.csv\`
 - \`entity-first-browse-gaps.csv\`
@@ -688,7 +688,7 @@ See \`easy-beginner-essential-coverage.csv\` for phrase IDs by intent.
 ## Next Product Moves
 
 1. Homepage can expand "Use now" from the first 24-48 rows in \`homepage-quick-phrase-candidates.csv\`.
-2. Messages can start with the \`ready-thread\` and \`ready-short-thread\` rows from \`message-conversation-candidates.csv\`.
+2. Practice moments can start with the \`ready-thread\` and \`ready-short-thread\` rows from \`practice-moment-candidates.csv\`.
 3. Browse/category work should use \`entity-first-browse-gaps.csv\` to avoid resurfacing long-tail phrase rows where an entity page should come first.
 4. Audio planning should focus on \`planned\` rows in city and premium phrase coverage, not on the already audio-backed starter rows.
 `;

@@ -1656,9 +1656,9 @@ final class PracticeScenarioModeTests: XCTestCase {
         XCTAssertEqual(namesByID[.emergencyLostBag], "Lost Bag")
         XCTAssertEqual(namesByID[.emergencyDoctorHelp], "Doctor Help")
         XCTAssertEqual(namesByID[.emergencyCallHelp], "Call for Help")
-        XCTAssertEqual(namesByID[.localGreetingMarket], "Market Hello")
-        XCTAssertEqual(namesByID[.localGreetingHotel], "Hotel Hello")
-        XCTAssertEqual(namesByID[.localGreetingRespect], "Respectful Hello")
+        XCTAssertEqual(namesByID[.localGreetingMarket], "Market greeting")
+        XCTAssertEqual(namesByID[.localGreetingHotel], "Hotel greeting")
+        XCTAssertEqual(namesByID[.localGreetingRespect], "Respectful greeting")
         XCTAssertEqual(namesByID[.localThanksSorry], "Thanks & Sorry")
         XCTAssertEqual(namesByID[.localSmallTalk], "Small Talk")
 

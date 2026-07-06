@@ -1934,7 +1934,7 @@ enum LocationMenuPicksCatalog {
             id: "terminal-mentioned-sim",
             title: "SIM card",
             subtitle: "Get connected before leaving the terminal.",
-            proof: "Useful before pickup and hotel messages.",
+            proof: "Useful before pickup and hotel check-in details.",
             imageName: "HeroCategoryAirport",
             detailPageID: "viet-family-airport-sim",
             after: "place-brief"

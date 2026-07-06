@@ -416,19 +416,27 @@ struct VietnameseMenuPageView: View {
     }
 
     private func photoBackdropImage(geometry: GeometryProxy) -> some View {
-        AdminBackdropPreparedImage(name: activePhotoBackdropImageName)
+        let frameHeight = PhrasePhotoBackdropLayout.backdropFrameHeight(
+            for: geometry.size,
+            safeAreaInsets: geometry.safeAreaInsets,
+            pageID: route.id,
+            heroImageName: photoBackdropImageName
+        )
+        let verticalFocusOffset = PhrasePhotoBackdropLayout.backdropVerticalFocusOffset(
+            for: geometry.size,
+            pageID: route.id,
+            heroImageName: photoBackdropImageName
+        )
+
+        return AdminBackdropPreparedImage(name: activePhotoBackdropImageName)
             .scaledToFill()
             .frame(
                 width: geometry.size.width,
-                height: PhrasePhotoBackdropLayout.backdropFrameHeight(
-                    for: geometry.size,
-                    safeAreaInsets: geometry.safeAreaInsets,
-                    pageID: route.id,
-                    heroImageName: photoBackdropImageName
-                ),
+                height: frameHeight,
                 alignment: .top
             )
             .clipped()
+            .offset(y: -verticalFocusOffset)
             .ignoresSafeArea()
             .accessibilityHidden(true)
     }

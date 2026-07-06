@@ -1,6 +1,6 @@
 # Testing Runbook
 
-Last updated: 2026-05-13
+Last updated: 2026-07-05
 Authority lane: live native iOS build and validation truth
 
 ## Use This Doc For
@@ -54,6 +54,7 @@ node native-ios/scripts/generate-viet-catalog.js
 node native-ios/scripts/generate-authored-tier-one-pages.js
 node native-ios/scripts/sync-viet-audio.js
 node native-ios/scripts/validate-viet-sqlite-fixture.js
+node native-ios/scripts/audit-visible-product-language.js
 node native-ios/scripts/guard-native-chrome.js
 node scripts/guard-native-only.js
 git diff --check
@@ -67,6 +68,7 @@ For focused app changes, also run the relevant Xcode test target or UI smoke tes
 - Native generation commands rebuild and validate the bundled resources used by the SwiftUI app.
 - Native Xcode build/test output is the gate for app behavior.
 - Visible UI changes need native simulator screenshots or physical iPhone proof, not web previews.
+- `node native-ios/scripts/audit-visible-product-language.js` blocks retired visible product labels and exact visual symbols from the old Messages/conversation direction on active Practice-era surfaces, including direct SwiftUI labels, selected model/source-backed strings, case variants such as `MESSAGES`, nested completion labels such as `Conversation complete`, one-line accessibility fallbacks such as `Conversation break`, and exact stale symbols such as `checkmark.message.fill`.
 - `node native-ios/scripts/guard-native-chrome.js` must pass after native chrome changes; it blocks the recurring opaque top-white shield regression.
 - `node scripts/guard-native-only.js` must pass after workflow or repo-structure changes.
 

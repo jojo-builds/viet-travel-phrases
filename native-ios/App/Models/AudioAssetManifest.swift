@@ -131,6 +131,7 @@ protocol AudioPlayable: AnyObject {
     var enableRate: Bool { get set }
     var rate: Float { get set }
     var currentTime: TimeInterval { get set }
+    var isPlaying: Bool { get }
 
     func stop()
 
@@ -149,9 +150,12 @@ final class AudioPlaybackService {
     private let manifest: AudioAssetManifest?
     private let configureAudioSession: () throws -> Void
     private let makePlayer: (URL) throws -> AudioPlayable
+    private let minimumReplayInterval: TimeInterval
+    private let currentTime: () -> TimeInterval
     private var player: AudioPlayable?
     private var playerURL: URL?
     private var playerRate: Float?
+    private var lastPlaybackRequest: PlaybackRequest?
     private var hasConfiguredAudioSession = false
 
     init(
@@ -163,11 +167,17 @@ final class AudioPlaybackService {
         },
         makePlayer: @escaping (URL) throws -> AudioPlayable = { url in
             try AVAudioPlayer(contentsOf: url)
+        },
+        minimumReplayInterval: TimeInterval = 0.18,
+        currentTime: @escaping () -> TimeInterval = {
+            ProcessInfo.processInfo.systemUptime
         }
     ) {
         self.manifest = manifest
         self.configureAudioSession = configureAudioSession
         self.makePlayer = makePlayer
+        self.minimumReplayInterval = minimumReplayInterval
+        self.currentTime = currentTime
     }
 
     @discardableResult
@@ -182,11 +192,18 @@ final class AudioPlaybackService {
         do {
             try configureAudioSessionIfNeeded()
             let requestedRate = Float(rate)
+            let requestTime = currentTime()
+
+            if shouldCoalesceRapidReplay(url: url, rate: requestedRate, at: requestTime) {
+                return true
+            }
 
             if let player, playerURL == url, playerRate == requestedRate {
                 let didStart = replay(player, rate: requestedRate)
                 if !didStart {
                     clearCachedPlayer()
+                } else {
+                    recordPlaybackRequest(url: url, rate: requestedRate, at: requestTime)
                 }
                 return didStart
             }
@@ -205,6 +222,7 @@ final class AudioPlaybackService {
             self.player = player
             playerURL = url
             playerRate = requestedRate
+            recordPlaybackRequest(url: url, rate: requestedRate, at: requestTime)
             return didStart
         } catch {
             assertionFailure("Unable to play audio \(url.lastPathComponent): \(error)")
@@ -236,5 +254,33 @@ final class AudioPlaybackService {
         player = nil
         playerURL = nil
         playerRate = nil
+        lastPlaybackRequest = nil
+    }
+
+    private func shouldCoalesceRapidReplay(url: URL, rate: Float, at requestTime: TimeInterval) -> Bool {
+        guard
+            minimumReplayInterval > 0,
+            let lastPlaybackRequest,
+            lastPlaybackRequest.url == url,
+            lastPlaybackRequest.rate == rate
+        else {
+            return false
+        }
+
+        if player?.isPlaying == true {
+            return true
+        }
+
+        return requestTime - lastPlaybackRequest.time < minimumReplayInterval
+    }
+
+    private func recordPlaybackRequest(url: URL, rate: Float, at requestTime: TimeInterval) {
+        lastPlaybackRequest = PlaybackRequest(url: url, rate: rate, time: requestTime)
+    }
+
+    private struct PlaybackRequest {
+        let url: URL
+        let rate: Float
+        let time: TimeInterval
     }
 }
