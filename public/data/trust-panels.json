@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "generatedFor": "site-trust-layer",
+  "panels": [
+    {
+      "panelId": "website-trust-foundation",
+      "eyebrow": "Why this feels trustworthy",
+      "title": "Useful first. Honest about what the website is and is not proving.",
+      "summary": "SpeakLocal keeps the website phone-forward and app-aligned: selected starter preview modules on the site, site audio only where the export says it is ready, and the deeper do-not-get-stuck backup in the app.",
+      "facts": [
+        {
+          "label": "Selected from",
+          "body": "Selected starter preview modules from the live Viet pack, not a full public phrase directory."
+        },
+        {
+          "label": "Audio rule",
+          "body": "Site audio appears only where the module export marks clips ready for that block."
+        },
+        {
+          "label": "Freshness rule",
+          "body": "Module cards carry the export date so \"updated\" means the export changed, not vague recency copy."
+        },
+        {
+          "label": "App boundary",
+          "body": "Deeper search, saved phrases, offline use, and wider phrase coverage stay in the app on purpose."
+        }
+      ],
+      "actions": [
+        {
+          "label": "How SpeakLocal builds packs",
+          "url": "/about/"
+        },
+        {
+          "label": "Report a phrase or audio gap",
+          "url": "/feedback/"
+        }
+      ]
+    }
+  ]
+}
