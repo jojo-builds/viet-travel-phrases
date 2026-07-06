@@ -12,17 +12,21 @@ Do not use this file as the execution checklist. `APP_STATUS.md`, `CURRENT_BLOCK
 
 ## Branch-Local Paywall Lane Evidence
 
-Fresh evidence from the 2026-07-05 `feature/paywall` StoreKit-readiness worker:
+Fresh evidence from the 2026-07-06 `feature/paywall` local hardening pass:
 
 - paywall remains branch-local and is not merged into `main`
-- local StoreKit config still defines `app.speaklocal.vietnam.subscription.monthly` as a monthly subscription with a one-week introductory offer and `4.99` display price
-- cached entitlement state is now expiration-aware, so expired cached subscriptions should not continue unlocking premium access
-- placeholder paywall copy was removed from the native paywall surface
-- `--disable-subscription-ui-test-bypass` was added for subscription gate UI coverage
-- the hosted unit-test harness blocker was fixed by detecting the real simulator test-host signal, `XCTestBundlePath=PlugIns/SpeakLocalNativeTests.xctest`, and skipping the app-level subscription gate only for hosted unit-test launches
-- `git diff --check`, native-only guard, StoreKit config sanity, focused subscription unit tests, focused subscription UI tests, and forced-paywall launch/screenshot proof passed in the worker lane
-- current worker report: `docs/task-results/parallel-goals-2026-07-05/three-hour-push/paywall-storekit-report.md`
-- remaining status is `READY_FOR_JOJO_TEST` for simulator/paywall-branch review and App Store Connect/TestFlight setup; real purchase, restore, relaunch entitlement persistence, and granular starter/free-vs-premium in-app route gates still need external proof or product decisions
+- current local `main` was merged into `feature/paywall` in branch-local commit `8982a38b6`
+- local StoreKit config defines `app.speaklocal.vietnam.subscription.monthly` as a monthly subscription with a free one-week introductory offer and `4.99` display price
+- subscription bypass policy now ignores `--subscription-bypass` outside debug builds
+- paywall copy now uses value-first subscription framing without stale inventory counts and defers exact trial eligibility/price details to the App Store purchase surface
+- paywall legal links use SpeakLocal-owned support, terms, and privacy URLs, but public URL liveness still needs proof because the three `speaklocal.app` checks timed out from this machine
+- screenshot review caught and fixed Dynamic Island overlap, clipped legal footer links, and lower-page copy peeking under the footer; current forced-paywall screenshot proof is `docs/task-results/paywall-readiness-2026-07-06/paywall-forced-simulator-2026-07-06.png`
+- final `SubscriptionAccessStateTests` passed `20` tests with `0` failures after the unavailable-product fallback and App Store-owned offer wording: `/tmp/speaklocal-paywall-final-derived/Logs/Test/Test-SpeakLocalNative-2026.07.06_11-12-31-+0800.xcresult`
+- final `SubscriptionGateUITests` passed `4` tests with `0` failures after adding renewal/legal surface and hittable legal action assertions: `/tmp/speaklocal-paywall-final-derived/Logs/Test/Test-SpeakLocalNative-2026.07.06_11-12-49-+0800.xcresult`
+- Release simulator build passed with `BUILD SUCCEEDED`: `/tmp/speaklocal-paywall-final-derived`
+- StoreKit config sanity, native-only guard, native chrome guard, visible product-language audit, and `git diff --check` passed
+- current branch-local report: `docs/task-results/paywall-readiness-2026-07-06/paywall-local-hardening-report.md`
+- remaining status is `FIX_APPLE_SIDE_BEFORE_MERGE`; real purchase, restore, relaunch entitlement persistence, cancellation/expiration behavior, App Store Connect product state, live public legal/support URL proof, and whole-app-vs-starter/free gating decisions still need external proof or Jojo decisions
 
 No physical iPhone build was installed from this branch in this pass.
 

@@ -9,8 +9,8 @@ Use this doc for blocker state only. Use `TESTING_RUNBOOK.md` for native validat
 
 1. Native paywall / StoreKit proof is not complete if this release must include paywall.
    - The paywall feature lane exists separately and should not merge to `main` until Jojo explicitly approves it.
-   - Local simulator proof exists for onboarding, paywall rendering, subscription gating decisions, and the dev bypass path.
-   - Required proof before shipping paywall: real purchase, restore, relaunch persistence, locked/unlocked entitlement behavior, and clear App Store Connect product state.
+   - Local simulator proof now exists for onboarding, paywall rendering, subscription gating decisions, debug-only bypass behavior, StoreKit-owned offer wording, unavailable-product messaging, hittable legal actions, safe-area screenshot proof, and Release simulator buildability.
+   - Required proof before shipping paywall: App Store Connect product state, real sandbox/TestFlight purchase, restore, relaunch persistence, cancellation/expiration behavior, locked/unlocked entitlement behavior, and live public support/privacy/terms URL proof.
    - If Jojo ships the current non-paywall native app payload, this is not a blocker for that non-paywall release.
 
 2. Exact-current physical iPhone launch proof is pending for the latest `main` checkout.

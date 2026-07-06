@@ -145,4 +145,65 @@ final class SubscriptionAccessStateTests: XCTestCase {
 
         XCTAssertTrue(SubscriptionTestEnvironment.isRunningUITests(environment))
     }
+
+    func testSubscriptionBypassLaunchArgumentIsIgnoredOutsideDebugPolicy() {
+        let isEnabled = SubscriptionDebugBypassPolicy.isEnabled(
+            launchArguments: ["--subscription-bypass"],
+            launchEnvironment: [:],
+            isDebugBuild: false
+        )
+
+        XCTAssertFalse(isEnabled)
+    }
+
+    func testSubscriptionBypassLaunchArgumentIsAllowedForDebugPolicy() {
+        let isEnabled = SubscriptionDebugBypassPolicy.isEnabled(
+            launchArguments: ["--subscription-bypass"],
+            launchEnvironment: [:],
+            isDebugBuild: true
+        )
+
+        XCTAssertTrue(isEnabled)
+    }
+
+    func testSubscriptionLegalLinksUseSpeakLocalOwnedUrls() {
+        XCTAssertEqual(SubscriptionLegalLinks.terms.absoluteString, "https://speaklocal.app/terms/")
+        XCTAssertEqual(SubscriptionLegalLinks.privacy.absoluteString, "https://speaklocal.app/privacy/")
+        XCTAssertEqual(SubscriptionLegalLinks.support.absoluteString, "https://speaklocal.app/feedback/")
+    }
+
+    func testSubscriptionOfferCopyDefersTrialAndPriceDetailsToAppStore() {
+        XCTAssertEqual(
+            SubscriptionOfferCopy.detailsLine,
+            "Subscription options, trial eligibility, and billing details are shown by the App Store before purchase. Manage or cancel in App Store subscriptions."
+        )
+    }
+
+    func testSubscriptionPaywallAvailabilityCopyWaitsWhileLoading() {
+        XCTAssertNil(
+            SubscriptionPaywallAvailabilityCopy.unavailableMessage(
+                productsAreEmpty: true,
+                entitlementStatus: .loading
+            )
+        )
+    }
+
+    func testSubscriptionPaywallAvailabilityCopyShowsWhenProductsAreUnavailable() {
+        XCTAssertEqual(
+            SubscriptionPaywallAvailabilityCopy.unavailableMessage(
+                productsAreEmpty: true,
+                entitlementStatus: .inactive
+            ),
+            "Subscription options are unavailable right now. Check your App Store connection and try again, or contact support."
+        )
+    }
+
+    func testSubscriptionPaywallAvailabilityCopyStaysHiddenWhenProductsExist() {
+        XCTAssertNil(
+            SubscriptionPaywallAvailabilityCopy.unavailableMessage(
+                productsAreEmpty: false,
+                entitlementStatus: .inactive
+            )
+        )
+    }
 }

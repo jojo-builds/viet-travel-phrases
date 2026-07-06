@@ -60,28 +60,15 @@ struct AccessGateView: View {
     }
 
     private var isDebugBypassEnabled: Bool {
-        if hasLaunchArgument("--subscription-bypass") {
-            return true
-        }
-
-        if hasLaunchArgument("--disable-subscription-ui-test-bypass") {
-            return false
-        }
-
-        #if DEBUG
-        return SubscriptionTestEnvironment.isRunningUITests(launchEnvironment) && !hasAnyForcedSubscriptionState
-        #else
-        return false
-        #endif
+        SubscriptionDebugBypassPolicy.isEnabled(
+            launchArguments: launchArguments,
+            launchEnvironment: launchEnvironment,
+            isDebugBuild: SubscriptionDebugBypassPolicy.currentBuildAllowsBypass
+        )
     }
 
     private var isHostedUnitTestHost: Bool {
         SubscriptionTestEnvironment.isRunningHostedUnitTests(launchEnvironment)
-    }
-
-    private var hasAnyForcedSubscriptionState: Bool {
-        hasLaunchArgument("--force-subscription-onboarding") ||
-            hasLaunchArgument("--force-subscription-paywall")
     }
 
     private func applyLaunchResetsIfNeeded() {
@@ -96,6 +83,40 @@ struct AccessGateView: View {
 
     private func hasLaunchArgument(_ argument: String) -> Bool {
         launchArguments.contains(argument)
+    }
+}
+
+enum SubscriptionDebugBypassPolicy {
+    #if DEBUG
+    static let currentBuildAllowsBypass = true
+    #else
+    static let currentBuildAllowsBypass = false
+    #endif
+
+    static func isEnabled(
+        launchArguments: [String],
+        launchEnvironment: [String: String],
+        isDebugBuild: Bool
+    ) -> Bool {
+        guard isDebugBuild else {
+            return false
+        }
+
+        if launchArguments.contains("--subscription-bypass") {
+            return true
+        }
+
+        if launchArguments.contains("--disable-subscription-ui-test-bypass") {
+            return false
+        }
+
+        return SubscriptionTestEnvironment.isRunningUITests(launchEnvironment) &&
+            !hasAnyForcedSubscriptionState(launchArguments)
+    }
+
+    private static func hasAnyForcedSubscriptionState(_ launchArguments: [String]) -> Bool {
+        launchArguments.contains("--force-subscription-onboarding") ||
+            launchArguments.contains("--force-subscription-paywall")
     }
 }
 
