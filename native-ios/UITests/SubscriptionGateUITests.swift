@@ -33,6 +33,11 @@ final class SubscriptionGateUITests: XCTestCase {
         XCTAssertTrue(app.descendants(matching: .any)["Support"].isHittable)
         XCTAssertTrue(app.descendants(matching: .any)["Terms"].isHittable)
         XCTAssertTrue(app.descendants(matching: .any)["Privacy"].isHittable)
+
+        app.swipeUp()
+        XCTAssertTrue(app.staticTexts["Preview real trip moments"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Cho toi ca phe sua da"].exists)
+        XCTAssertTrue(app.staticTexts["Could you speak slowly for me?"].exists)
     }
 
     func testCaptureSubscriptionPaywallProofScreenshots() {
@@ -42,7 +47,7 @@ final class SubscriptionGateUITests: XCTestCase {
         attachScreenshot(named: "paywall-trip-companion-forced-2026-07-07")
 
         app.swipeUp()
-        XCTAssertTrue(app.staticTexts["Phrase pages with playable audio"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Preview real trip moments"].waitForExistence(timeout: 5))
         attachScreenshot(named: "paywall-trip-companion-scrolled-2026-07-07")
     }
 

@@ -29,9 +29,16 @@ Current value line:
 
 Current proof/value rows:
 
+- `Preview real trip moments`
 - `Trip-first food and place guidance`
 - `Phrase pages with playable audio`
 - `Search, Browse, Saved, and Practice`
+
+Current preview examples:
+
+- `Coffee order` / `Cho toi ca phe sua da`
+- `Hoi An place help` / `Pho co Hoi An o dau?`
+- `When you get stuck` / `Noi cham giup toi duoc khong?`
 
 Current disclosure:
 
@@ -84,7 +91,7 @@ Repo evidence:
 - `docs/V2_BASELINE.md` and `docs/V2_CONTENT_MODEL.md` describe current native content and app-value truth.
 - `docs/operations/CURRENT_BLOCKERS.md` keeps App Store/TestFlight proof as a remaining paywall blocker.
 - Visual proof: `/Users/jojolim/Developer/products/speaklocal/app-family/marketing/projects/paywall-production-2026-07-07/assets/paywall-trip-companion-forced-2026-07-07.png`
-- Scrolled proof: `/Users/jojolim/Developer/products/speaklocal/app-family/marketing/projects/paywall-production-2026-07-07/assets/paywall-trip-companion-scrolled-2026-07-07.png`
+- Scrolled proof with preview examples: `/Users/jojolim/Developer/products/speaklocal/app-family/marketing/projects/paywall-production-2026-07-07/assets/paywall-trip-companion-scrolled-2026-07-07.png`
 
 External sources refreshed on 2026-07-07:
 

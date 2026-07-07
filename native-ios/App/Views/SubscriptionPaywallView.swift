@@ -17,10 +17,41 @@ struct SubscriptionPaywallBenefit: Equatable {
     let symbolName: String
 }
 
+struct SubscriptionPaywallPreviewExample: Equatable {
+    let title: String
+    let vietnamese: String
+    let english: String
+    let context: String
+    let symbolName: String
+}
+
 enum SubscriptionPaywallNarrative {
     static let eyebrow = "SpeakLocal Vietnam Full Access"
     static let headline = "Try the full Vietnam companion free for 7 days"
     static let subtitle = "Food, coffee, city and place guides, phrase pages, supported playable audio, Search, Saved, and Practice for one Vietnam trip."
+    static let previewExamples = [
+        SubscriptionPaywallPreviewExample(
+            title: "Coffee order",
+            vietnamese: "Cho toi ca phe sua da",
+            english: "I would like iced milk coffee.",
+            context: "Cafe and street-stall phrases for first-day ordering.",
+            symbolName: "cup.and.saucer.fill"
+        ),
+        SubscriptionPaywallPreviewExample(
+            title: "Hoi An place help",
+            vietnamese: "Pho co Hoi An o dau?",
+            english: "Where is Hoi An Ancient Town?",
+            context: "Place-aware prompts for markets, landmarks, hotels, and city days.",
+            symbolName: "mappin.and.ellipse"
+        ),
+        SubscriptionPaywallPreviewExample(
+            title: "When you get stuck",
+            vietnamese: "Noi cham giup toi duoc khong?",
+            english: "Could you speak slowly for me?",
+            context: "Repair phrases for moments when the conversation moves too fast.",
+            symbolName: "ear.fill"
+        ),
+    ]
     static let benefits = [
         SubscriptionPaywallBenefit(
             title: "Trip-first food and place guidance",
@@ -80,6 +111,9 @@ struct SubscriptionPaywallView: View {
                         storeKitSection
                             .padding(.horizontal, 24)
 
+                        previewSection
+                            .padding(.horizontal, 24)
+
                         benefitsSection
                             .padding(.horizontal, 24)
                     }
@@ -127,6 +161,26 @@ struct SubscriptionPaywallView: View {
                 SubscriptionPaywallBenefitRow(benefit: benefit)
             }
         }
+    }
+
+    private var previewSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Preview real trip moments")
+                    .font(.headline.weight(.semibold))
+                    .foregroundStyle(.primary)
+                Text("A few examples of the kind of offline help the full companion unlocks.")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            ForEach(SubscriptionPaywallNarrative.previewExamples, id: \.title) { example in
+                SubscriptionPaywallPreviewRow(example: example)
+            }
+        }
+        .padding(14)
+        .nativeGlass(cornerRadius: 22, tint: Color(red: 0.12, green: 0.52, blue: 0.39).opacity(0.10))
     }
 
     private var storeKitSection: some View {
@@ -201,6 +255,42 @@ struct SubscriptionPaywallView: View {
                 await store.restore()
             }
         }
+    }
+}
+
+private struct SubscriptionPaywallPreviewRow: View {
+    let example: SubscriptionPaywallPreviewExample
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 12) {
+            Image(systemName: example.symbolName)
+                .font(.system(size: 14, weight: .bold))
+                .foregroundStyle(Color(red: 0.12, green: 0.52, blue: 0.39))
+                .frame(width: 28, height: 28)
+                .background(Color(red: 0.12, green: 0.52, blue: 0.39).opacity(0.14), in: Circle())
+                .accessibilityHidden(true)
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text(example.title)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.primary)
+                Text(example.vietnamese)
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(.primary)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text(example.english)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text(example.context)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(.tertiarySystemBackground).opacity(0.72), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
     }
 }
 

@@ -198,6 +198,19 @@ final class SubscriptionAccessStateTests: XCTestCase {
         )
     }
 
+    func testSubscriptionPaywallNarrativeShowsConcretePreviewExamples() {
+        XCTAssertEqual(
+            SubscriptionPaywallNarrative.previewExamples.map(\.title),
+            [
+                "Coffee order",
+                "Hoi An place help",
+                "When you get stuck",
+            ]
+        )
+        XCTAssertEqual(SubscriptionPaywallNarrative.previewExamples.first?.vietnamese, "Cho toi ca phe sua da")
+        XCTAssertEqual(SubscriptionPaywallNarrative.previewExamples.last?.english, "Could you speak slowly for me?")
+    }
+
     func testSubscriptionPaywallAvailabilityCopyWaitsWhileLoading() {
         XCTAssertNil(
             SubscriptionPaywallAvailabilityCopy.unavailableMessage(
