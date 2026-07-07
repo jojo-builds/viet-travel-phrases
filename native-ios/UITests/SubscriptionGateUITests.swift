@@ -19,19 +19,31 @@ final class SubscriptionGateUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Try SpeakLocal Vietnam"].exists)
     }
 
-    func testForceSubscriptionPaywallShowsAppleNativePlaceholder() {
+    func testForceSubscriptionPaywallShowsTripCompanionGate() {
         let app = launch(arguments: ["--force-subscription-paywall", "--reset-subscription-onboarding"])
 
         XCTAssertTrue(app.descendants(matching: .any)["SubscriptionPaywallView"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.staticTexts["Keep the full Vietnam companion for your trip"].exists)
-        XCTAssertTrue(app.staticTexts["View subscription options"].exists)
-        XCTAssertTrue(app.staticTexts["Search, Browse, Save, and Practice"].exists)
-        XCTAssertTrue(staticText("Subscription options, trial eligibility, and billing details are shown by the App Store before purchase. Manage or cancel in App Store subscriptions.", in: app).exists)
+        XCTAssertTrue(app.staticTexts["Try the full Vietnam companion free for 7 days"].exists)
+        XCTAssertTrue(app.staticTexts["Start your 7-day trial"].isHittable)
+        XCTAssertTrue(app.staticTexts["Trip-first food and place guidance"].exists)
+        XCTAssertTrue(app.staticTexts["Search, Browse, Saved, and Practice"].exists)
+        XCTAssertTrue(staticText("Try 7 days free, then $4.99/month in the U.S. The App Store confirms eligibility, local pricing, renewal date, and cancellation before purchase.", in: app).exists)
         XCTAssertFalse(staticText("complete curated food, city, place, phrase, audio, search, saved, and Practice library.", in: app).exists)
         XCTAssertTrue(app.buttons["Restore"].exists)
         XCTAssertTrue(app.descendants(matching: .any)["Support"].isHittable)
         XCTAssertTrue(app.descendants(matching: .any)["Terms"].isHittable)
         XCTAssertTrue(app.descendants(matching: .any)["Privacy"].isHittable)
+    }
+
+    func testCaptureSubscriptionPaywallProofScreenshots() {
+        let app = launch(arguments: ["--force-subscription-paywall", "--reset-subscription-onboarding"])
+
+        XCTAssertTrue(app.descendants(matching: .any)["SubscriptionPaywallView"].waitForExistence(timeout: 5))
+        attachScreenshot(named: "paywall-trip-companion-forced-2026-07-07")
+
+        app.swipeUp()
+        XCTAssertTrue(app.staticTexts["Phrase pages with playable audio"].waitForExistence(timeout: 5))
+        attachScreenshot(named: "paywall-trip-companion-scrolled-2026-07-07")
     }
 
     func testCompletedOnboardingRelaunchesToPaywallWithoutDebugBypass() {
@@ -66,5 +78,12 @@ final class SubscriptionGateUITests: XCTestCase {
         app.staticTexts
             .matching(NSPredicate(format: "label == %@", label))
             .firstMatch
+    }
+
+    private func attachScreenshot(named name: String) {
+        let attachment = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        attachment.name = name
+        attachment.lifetime = .keepAlways
+        add(attachment)
     }
 }

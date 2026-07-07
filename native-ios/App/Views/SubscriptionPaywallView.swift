@@ -8,7 +8,36 @@ enum SubscriptionLegalLinks {
 }
 
 enum SubscriptionOfferCopy {
-    static let detailsLine = "Subscription options, trial eligibility, and billing details are shown by the App Store before purchase. Manage or cancel in App Store subscriptions."
+    static let detailsLine = "Try 7 days free, then $4.99/month in the U.S. The App Store confirms eligibility, local pricing, renewal date, and cancellation before purchase."
+}
+
+struct SubscriptionPaywallBenefit: Equatable {
+    let title: String
+    let subtitle: String
+    let symbolName: String
+}
+
+enum SubscriptionPaywallNarrative {
+    static let eyebrow = "SpeakLocal Vietnam Full Access"
+    static let headline = "Try the full Vietnam companion free for 7 days"
+    static let subtitle = "Food, coffee, city and place guides, phrase pages, supported playable audio, Search, Saved, and Practice for one Vietnam trip."
+    static let benefits = [
+        SubscriptionPaywallBenefit(
+            title: "Trip-first food and place guidance",
+            subtitle: "Use curated menus, coffee, city, market, landmark, and hotel moments.",
+            symbolName: "map.fill"
+        ),
+        SubscriptionPaywallBenefit(
+            title: "Phrase pages with playable audio",
+            subtitle: "Hear supported Vietnamese before you speak and save the lines you will actually use.",
+            symbolName: "speaker.wave.2.fill"
+        ),
+        SubscriptionPaywallBenefit(
+            title: "Search, Browse, Saved, and Practice",
+            subtitle: "Build a small trip phrase set instead of drilling a classroom course.",
+            symbolName: "magnifyingglass.circle.fill"
+        ),
+    ]
 }
 
 enum SubscriptionPaywallAvailabilityCopy {
@@ -33,31 +62,33 @@ struct SubscriptionPaywallView: View {
     @ObservedObject var store: SubscriptionStore
 
     var body: some View {
-        VStack(spacing: 0) {
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 18) {
-                    header
-                        .padding(.horizontal, 24)
-                        .padding(.top, 0)
+        ZStack {
+            SubscriptionPaywallBackground()
 
-                    if let unavailableMessage {
-                        SubscriptionPaywallNotice(message: unavailableMessage)
+            VStack(spacing: 0) {
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .leading, spacing: 18) {
+                        header
+                            .padding(.horizontal, 24)
+                            .padding(.top, 4)
+
+                        if let unavailableMessage {
+                            SubscriptionPaywallNotice(message: unavailableMessage)
+                                .padding(.horizontal, 24)
+                        }
+
+                        storeKitSection
+                            .padding(.horizontal, 24)
+
+                        benefitsSection
                             .padding(.horizontal, 24)
                     }
-
-                    SubscriptionStoreView(productIDs: [SubscriptionProduct.monthlyProductID])
-                        .subscriptionStoreButtonLabel(.multiline)
-                        .storeButton(.visible, for: .restorePurchases)
-                        .onInAppPurchaseCompletion { _, _ in
-                            await store.refresh()
-                        }
-                        .frame(maxWidth: .infinity, minHeight: 180)
+                    .padding(.bottom, 20)
                 }
-                .padding(.bottom, 20)
-            }
 
-            footer
-                .background(.bar)
+                footer
+                    .background(.ultraThinMaterial)
+            }
         }
         .accessibilityIdentifier("SubscriptionPaywallView")
     }
@@ -70,27 +101,50 @@ struct SubscriptionPaywallView: View {
     }
 
     private var header: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text("Keep the full Vietnam companion for your trip")
+        VStack(alignment: .leading, spacing: 18) {
+            Text(SubscriptionPaywallNarrative.eyebrow)
+                .font(.caption.weight(.bold))
+                .foregroundStyle(Color(red: 0.74, green: 0.08, blue: 0.09))
+                .textCase(.uppercase)
+
+            Text(SubscriptionPaywallNarrative.headline)
                 .font(.largeTitle.bold())
                 .foregroundStyle(.primary)
                 .fixedSize(horizontal: false, vertical: true)
 
-            Text("Explore food, places, useful phrases, saved trip moments, Practice, and playable Vietnamese audio for planning and traveling in Vietnam.")
+            Text(SubscriptionPaywallNarrative.subtitle)
                 .font(.headline)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
 
-            VStack(alignment: .leading, spacing: 10) {
-                SubscriptionPaywallBenefitRow(title: "Food, coffee, places, and phrase pages", subtitle: "Curated for common Vietnam travel moments, not classroom drills.")
-                SubscriptionPaywallBenefitRow(title: "Playable Vietnamese audio", subtitle: "Hear supported phrases before you speak.")
-                SubscriptionPaywallBenefitRow(title: "Search, Browse, Save, and Practice", subtitle: "Keep the moments you will actually use close at hand.")
-            }
+            SubscriptionPaywallOfferCard()
+        }
+    }
 
-            Text("View subscription options")
+    private var benefitsSection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            ForEach(SubscriptionPaywallNarrative.benefits, id: \.title) { benefit in
+                SubscriptionPaywallBenefitRow(benefit: benefit)
+            }
+        }
+    }
+
+    private var storeKitSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Start your 7-day trial")
                 .font(.headline.weight(.semibold))
                 .foregroundStyle(.primary)
+
+            SubscriptionStoreView(productIDs: [SubscriptionProduct.monthlyProductID])
+                .subscriptionStoreButtonLabel(.multiline)
+                .storeButton(.visible, for: .restorePurchases)
+                .onInAppPurchaseCompletion { _, _ in
+                    await store.refresh()
+                }
+                .frame(maxWidth: .infinity, minHeight: 180)
         }
+        .padding(14)
+        .nativeGlass(cornerRadius: 26, tint: Color(red: 0.93, green: 0.12, blue: 0.15).opacity(0.12))
     }
 
     private var footer: some View {
@@ -109,43 +163,116 @@ struct SubscriptionPaywallView: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
 
-            HStack(spacing: 18) {
-                Button("Restore") {
-                    Task {
-                        await store.restore()
-                    }
-                }
-
-                Link("Support", destination: SubscriptionLegalLinks.support)
-                Link("Terms", destination: SubscriptionLegalLinks.terms)
-                Link("Privacy", destination: SubscriptionLegalLinks.privacy)
-            }
-            .font(.footnote.weight(.semibold))
+            footerLinks
+                .font(.footnote.weight(.semibold))
         }
         .padding(.horizontal, 24)
         .padding(.top, 14)
         .padding(.bottom, 26)
         .frame(maxWidth: .infinity)
     }
+
+    @ViewBuilder
+    private var footerLinks: some View {
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 18) {
+                restoreButton
+                Link("Support", destination: SubscriptionLegalLinks.support)
+                Link("Terms", destination: SubscriptionLegalLinks.terms)
+                Link("Privacy", destination: SubscriptionLegalLinks.privacy)
+            }
+
+            VStack(spacing: 10) {
+                HStack(spacing: 18) {
+                    restoreButton
+                    Link("Support", destination: SubscriptionLegalLinks.support)
+                }
+                HStack(spacing: 18) {
+                    Link("Terms", destination: SubscriptionLegalLinks.terms)
+                    Link("Privacy", destination: SubscriptionLegalLinks.privacy)
+                }
+            }
+        }
+    }
+
+    private var restoreButton: some View {
+        Button("Restore") {
+            Task {
+                await store.restore()
+            }
+        }
+    }
 }
 
 private struct SubscriptionPaywallBenefitRow: View {
-    let title: String
-    let subtitle: String
+    let benefit: SubscriptionPaywallBenefit
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 3) {
-            Text(title)
-                .font(.headline)
-                .foregroundStyle(.primary)
-            Text(subtitle)
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
-                .fixedSize(horizontal: false, vertical: true)
+        HStack(alignment: .top, spacing: 12) {
+            Image(systemName: benefit.symbolName)
+                .font(.system(size: 16, weight: .bold))
+                .foregroundStyle(.white)
+                .frame(width: 34, height: 34)
+                .background(Color(red: 0.80, green: 0.09, blue: 0.10), in: Circle())
+                .accessibilityHidden(true)
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(benefit.title)
+                    .font(.headline)
+                    .foregroundStyle(.primary)
+                Text(benefit.subtitle)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
         }
         .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(.secondarySystemBackground), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+        .nativeGlass(cornerRadius: 18, tint: Color(red: 0.93, green: 0.12, blue: 0.15).opacity(0.10))
+    }
+}
+
+private struct SubscriptionPaywallOfferCard: View {
+    var body: some View {
+        HStack(alignment: .center, spacing: 14) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Launch offer")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(.secondary)
+                    .textCase(.uppercase)
+                Text("7 days free")
+                    .font(.title3.weight(.bold))
+                    .foregroundStyle(.primary)
+                Text("then $4.99/month")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.secondary)
+            }
+
+            Spacer(minLength: 8)
+
+            Image(systemName: "checkmark.seal.fill")
+                .font(.system(size: 26, weight: .semibold))
+                .foregroundStyle(Color(red: 0.12, green: 0.52, blue: 0.39))
+                .accessibilityHidden(true)
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .nativeGlass(cornerRadius: 22, tint: Color(red: 0.12, green: 0.52, blue: 0.39).opacity(0.12))
+    }
+}
+
+private struct SubscriptionPaywallBackground: View {
+    var body: some View {
+        LinearGradient(
+            colors: [
+                Color(red: 0.98, green: 0.93, blue: 0.88),
+                Color(.systemBackground),
+                Color(.secondarySystemBackground),
+            ],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+        .ignoresSafeArea()
     }
 }
 

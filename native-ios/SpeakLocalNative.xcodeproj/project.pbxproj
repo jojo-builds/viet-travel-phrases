@@ -22,6 +22,7 @@
 		3BFF3367E8D5757A56619253 /* AppShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65875EEA097A552AA1510358 /* AppShellView.swift */; };
 		3CC4718D118F88AD295C606F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 488922DC4C5D2727CADBDAC6 /* libsqlite3.tbd */; };
 		45F9BF780789F2CF0C53C509 /* SubscriptionGateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A2F15E7869DE97D4A22E43 /* SubscriptionGateUITests.swift */; };
+		48B07D2FDD1BBBB7EB601B46 /* SubscriptionStoreKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21607CD4C27078011173D9DC /* SubscriptionStoreKitTests.swift */; };
 		4EF7F1AA978616DA9360391A /* VietSearchOnlyPhraseSurfacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BD3836F12C699B84C773D /* VietSearchOnlyPhraseSurfacing.swift */; };
 		532BCB4B9782A913495FC8DE /* AudioAssetManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979AC3E5883BE84E13AA531 /* AudioAssetManifest.swift */; };
 		56BE39BA0B7382244604A4B0 /* AdminPhotoBackdropSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3A680DA00D6F1528D04188 /* AdminPhotoBackdropSurfaceView.swift */; };
@@ -92,6 +93,7 @@
 		18ABDE2FD3A5A1E1C7458759 /* PracticeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeModels.swift; sourceTree = "<group>"; };
 		18EA78216F5959BDB34B09C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1E92E39F9AC9626410FF3CDC /* AppChrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChrome.swift; sourceTree = "<group>"; };
+		21607CD4C27078011173D9DC /* SubscriptionStoreKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStoreKitTests.swift; sourceTree = "<group>"; };
 		25DF6F83A005C0FDCE113FDF /* BottomInsetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomInsetUITests.swift; sourceTree = "<group>"; };
 		2BCB2F4DB10E999397FA92A6 /* SpeakLocalNative.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SpeakLocalNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CEA81625C08A15571CE19A9 /* BaNaHillsJourneyProofUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaNaHillsJourneyProofUITests.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				6162BD8536877D352B522211 /* PracticeScenarioModeTests.swift */,
 				5709EBB1BDDA5B8EC0A94FE7 /* SQLiteLanguagePackRepositoryTests.swift */,
 				68918C13B3C5BEBCCF817122 /* SubscriptionAccessStateTests.swift */,
+				21607CD4C27078011173D9DC /* SubscriptionStoreKitTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				22EC11796C0EB30CCA4073B1 /* PracticeScenarioModeTests.swift in Sources */,
 				05A3D62E76230B9F525029A2 /* SQLiteLanguagePackRepositoryTests.swift in Sources */,
 				EAB4ADBCB828FAE1D5125BCC /* SubscriptionAccessStateTests.swift in Sources */,
+				48B07D2FDD1BBBB7EB601B46 /* SubscriptionStoreKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

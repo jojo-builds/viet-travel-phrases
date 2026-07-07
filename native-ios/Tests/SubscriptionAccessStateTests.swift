@@ -172,10 +172,29 @@ final class SubscriptionAccessStateTests: XCTestCase {
         XCTAssertEqual(SubscriptionLegalLinks.support.absoluteString, "https://speaklocal.app/feedback/")
     }
 
-    func testSubscriptionOfferCopyDefersTrialAndPriceDetailsToAppStore() {
+    func testSubscriptionOfferCopyStatesLaunchTrialAndAppStoreConfirmation() {
         XCTAssertEqual(
             SubscriptionOfferCopy.detailsLine,
-            "Subscription options, trial eligibility, and billing details are shown by the App Store before purchase. Manage or cancel in App Store subscriptions."
+            "Try 7 days free, then $4.99/month in the U.S. The App Store confirms eligibility, local pricing, renewal date, and cancellation before purchase."
+        )
+    }
+
+    func testSubscriptionPaywallNarrativeUsesTripCompanionGate() {
+        XCTAssertEqual(
+            SubscriptionPaywallNarrative.headline,
+            "Try the full Vietnam companion free for 7 days"
+        )
+        XCTAssertEqual(
+            SubscriptionPaywallNarrative.subtitle,
+            "Food, coffee, city and place guides, phrase pages, supported playable audio, Search, Saved, and Practice for one Vietnam trip."
+        )
+        XCTAssertEqual(
+            SubscriptionPaywallNarrative.benefits.map(\.title),
+            [
+                "Trip-first food and place guidance",
+                "Phrase pages with playable audio",
+                "Search, Browse, Saved, and Practice",
+            ]
         )
     }
 
