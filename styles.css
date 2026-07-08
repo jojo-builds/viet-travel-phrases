@@ -41,6 +41,13 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid rgba(255, 48, 57, 0.46);
+  outline-offset: 4px;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -720,6 +727,172 @@ a {
   font-weight: 750;
 }
 
+.support-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(120deg, rgba(255, 48, 57, 0.06), rgba(255, 255, 255, 0.92) 38%, rgba(31, 143, 112, 0.08)),
+    #fff;
+}
+
+.support-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.62fr);
+  gap: clamp(28px, 6vw, 86px);
+  align-items: center;
+  min-height: min(720px, calc(100vh - 72px));
+  padding: clamp(58px, 9vw, 112px) clamp(18px, 5vw, 72px);
+}
+
+.support-copy h1 {
+  margin: 0;
+  max-width: 820px;
+  font-family: var(--serif);
+  font-size: clamp(54px, 7vw, 108px);
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.support-copy p {
+  max-width: 680px;
+  margin: 24px 0 0;
+  color: #60656e;
+  font-size: clamp(19px, 2vw, 28px);
+  line-height: 1.25;
+  font-weight: 690;
+}
+
+.support-panel,
+.support-band article {
+  border: 1px solid rgba(8, 8, 8, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.support-panel {
+  padding: clamp(22px, 3vw, 34px);
+}
+
+.support-panel h2 {
+  margin: 12px 0 0;
+  font-family: var(--serif);
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 0.96;
+}
+
+.support-list,
+.support-card-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.support-list {
+  margin-top: 22px;
+}
+
+.support-list > div {
+  padding: 18px;
+  border: 1px solid rgba(8, 8, 8, 0.1);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.support-list strong {
+  display: block;
+  font-size: 17px;
+}
+
+.support-list span {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.support-band,
+.policy-section {
+  padding: clamp(58px, 8vw, 104px) clamp(18px, 5vw, 72px);
+  border-top: 1px solid rgba(8, 8, 8, 0.08);
+  background: #fff;
+}
+
+.support-band {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.58fr) minmax(320px, 0.72fr);
+  gap: clamp(28px, 5vw, 68px);
+  align-items: start;
+}
+
+.support-band h2,
+.policy-section h2 {
+  margin: 0;
+  max-width: 760px;
+  font-family: var(--serif);
+  font-size: clamp(40px, 4.8vw, 74px);
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+.support-band p,
+.policy-copy p {
+  max-width: 720px;
+  color: #666b73;
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.48;
+  font-weight: 620;
+}
+
+.support-band a,
+.policy-copy a {
+  color: var(--red-deep);
+  font-weight: 850;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+.support-card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.support-band article {
+  min-height: 100%;
+  padding: 22px;
+}
+
+.support-band h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.support-band article p {
+  margin: 12px 0 0;
+  font-size: 16px;
+}
+
+.policy-hero,
+.not-found-hero {
+  min-height: auto;
+}
+
+.policy-section {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.36fr) minmax(320px, 0.64fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+.policy-copy {
+  display: grid;
+  gap: 18px;
+}
+
+.policy-copy p {
+  margin: 0;
+}
+
 .editorial-phone {
   justify-self: center;
   width: min(360px, 42vw);
@@ -1189,7 +1362,11 @@ a {
   .guide-strip,
   .contact-compare,
   .mobile-review-grid,
-  .source-mobile-grid {
+  .source-mobile-grid,
+  .support-hero,
+  .support-band,
+  .policy-section,
+  .support-card-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1394,6 +1571,30 @@ a {
 
   .contact-intro p {
     font-size: 17px;
+  }
+
+  .support-hero,
+  .support-band,
+  .policy-section {
+    padding: 54px 16px;
+  }
+
+  .support-copy h1 {
+    font-size: clamp(42px, 12vw, 64px);
+    line-height: 0.94;
+  }
+
+  .support-copy p {
+    font-size: 17px;
+  }
+
+  .support-band h2,
+  .policy-section h2 {
+    font-size: clamp(36px, 11vw, 54px);
+  }
+
+  .support-card-grid {
+    gap: 12px;
   }
 
   .mini-row {
