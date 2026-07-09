@@ -681,24 +681,35 @@ a {
 
 .trial-placeholder {
   display: grid;
-  place-items: center;
+  align-content: center;
+  justify-items: start;
+  gap: 12px;
   min-height: 180px;
   padding: 28px;
-  border: 1px dashed rgba(8, 8, 8, 0.28);
+  border: 1px solid rgba(8, 8, 8, 0.12);
   border-radius: 8px;
-  background: rgba(250, 250, 250, 0.86);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--soft-shadow);
   color: #50545c;
-  text-align: center;
+  text-align: left;
 }
 
 .trial-placeholder strong {
   color: var(--ink);
-  font-size: 18px;
+  font-family: var(--serif);
+  font-size: 34px;
+  line-height: 0.96;
 }
 
 .trial-placeholder span {
-  margin-top: 10px;
   color: var(--muted);
+}
+
+.trial-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
 }
 
 .site-footer {
