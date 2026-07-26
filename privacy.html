@@ -37,19 +37,19 @@
       <section class="support-hero policy-hero" aria-labelledby="privacy-title">
         <div class="support-copy">
           <p class="recommended-kicker">Privacy</p>
-          <h1 id="privacy-title">A practical travel app should not need a heavy account layer.</h1>
+          <h1 id="privacy-title">Private by design. Analytics kept minimal.</h1>
           <p>
-            SpeakLocal is built for quick trip support. The policy below keeps
-            the current website and Vietnam app behavior explicit without
-            promising future measurement, accounts, or purchase behavior.
+            SpeakLocal works without an account. Most trip content and personal
+            app state stay on your device, and any configured product analytics
+            is deliberately limited.
           </p>
         </div>
         <div class="support-panel">
           <span class="chapter-label">At a glance</span>
           <div class="support-list">
-            <div><strong>No account required</strong><span>Browse phrase content, hear bundled audio, and save local favorites without creating an account.</span></div>
-            <div><strong>Optional contact</strong><span>Email feedback is used to respond and improve support.</span></div>
-            <div><strong>Future changes</strong><span>Any added analytics, waitlists, or email capture should be disclosed here before release.</span></div>
+            <div><strong>No account required</strong><span>Browse phrases, hear bundled audio, save content, and practice without creating an account.</span></div>
+            <div><strong>Minimal app analytics</strong><span>Only approved broad product interactions are sent from a configured build. No phrase text, searches, location, or advertising identifiers.</span></div>
+            <div><strong>Your choice</strong><span>Turn Analytics off in the app, or use the anonymous installation reference to request deletion.</span></div>
           </div>
         </div>
       </section>
@@ -57,10 +57,55 @@
       <section class="policy-section" aria-labelledby="privacy-policy-title">
         <h2 id="privacy-policy-title">Privacy policy</h2>
         <div class="policy-copy">
-          <p>Viet Travel Phrasebook does not require account creation to browse phrases, play bundled audio, or save local favorites on-device.</p>
-          <p>If you contact support or send feedback, the message contents and the email address you provide may be used to respond, investigate issues, and improve SpeakLocal.</p>
-          <p>The website may receive ordinary hosting logs from the services that deliver the site. Do not send sensitive personal, medical, legal, or payment information through feedback email.</p>
-          <p>Any future measurement, waitlist, account, purchase, or email-capture additions should be disclosed here before release.</p>
+          <p><strong>Last updated:</strong> July 24, 2026</p>
+
+          <h3>When analytics is active</h3>
+          <p>SpeakLocal enables the product analytics described below only in an app build that contains an approved PostHog Cloud US project configuration. A build without that configuration sends no PostHog product events. Product analytics is on by default in a configured build, subject to the privacy controls described below.</p>
+          <p>The SpeakLocal website does not currently run PostHog, advertising trackers, or cross-site analytics. Website hosting infrastructure may process ordinary request logs such as IP address, timestamp, requested path, and browser information for delivery, reliability, and security. SpeakLocal does not combine those logs with app analytics or use them for advertising or cross-site tracking.</p>
+
+          <h3>Information that stays on your device</h3>
+          <p>You do not need an account to browse phrases, play bundled audio, save content, or practice. Saved items, practice progress, preferences, and other personal app state are stored locally unless a feature clearly says otherwise.</p>
+          <p>SpeakLocal does not send your Vietnamese or English phrase text, pronunciation text, searches, typed input, location, microphone or camera content, saved-item identifiers, or practice answers to product analytics.</p>
+
+          <h3>Minimal product analytics</h3>
+          <p>In an analytics-enabled build, SpeakLocal may record a small set of product interactions: opening the app, opening a broad collection or content type, starting audio playback, starting Practice, viewing the paywall, and receiving a verified trial or paid purchase outcome.</p>
+          <p>These events may include controlled context such as the app version and build, development or production channel, app variant, broad source surface, collection or content kind, Practice mode, paywall context, and the generic monthly subscription product. They do not include raw phrase, place, menu, audio, search, or route identifiers.</p>
+
+          <h3>Anonymous installation identifier</h3>
+          <p>PostHog creates a random identifier for this app installation so SpeakLocal can understand a sequence such as app open, feature use, and later return. It is not your name, email address, Apple account, advertising identifier (IDFA), Identifier for Vendor (IDFV), hardware serial number, or Apple transaction identifier.</p>
+          <p>SpeakLocal does not call PostHog's identify feature, create user profiles, or combine this identifier with account information or data from other companies. It is used only for first-party product analytics.</p>
+
+          <h3>Offline delivery and network information</h3>
+          <p>Analytics events may wait temporarily in the app's private sandbox queue when the device is offline and upload after connectivity returns only while Analytics remains enabled. Turning Analytics off stops capture, closes the SDK, and removes the project-scoped local analytics queue. Re-enabling first repeats that purge and creates a fresh anonymous installation identifier, so an older queued event or retired identifier cannot resume after relaunch or reconnection. If the queue cannot be removed or a retired identifier is reused, analytics remains off.</p>
+          <p>Network requests necessarily expose an IP address to the receiving service while the request is delivered. The PostHog US project is configured to discard raw IP addresses, and SpeakLocal instructs PostHog not to use the request IP for location enrichment on each product event. SpeakLocal does not retain analytics location derived from the IP address.</p>
+
+          <h3>Purchases</h3>
+          <p>Apple processes App Store purchases and remains the authority for transactions, trials, renewals, refunds, subscription status, and revenue. SpeakLocal may send PostHog only a verified trial-start or paid-purchase outcome and the generic monthly product class. It does not send Apple transaction IDs, receipts, payment details, or renewal and refund records to product analytics.</p>
+
+          <h3>How this information is used</h3>
+          <p>SpeakLocal uses product analytics to understand where travelers find value, where they leave a flow, and which broad app areas deserve improvement. It is not used for advertising, cross-company tracking, data brokerage, credit decisions, or personalized pricing.</p>
+          <p>SpeakLocal does not sell or rent analytics information. Automatic screen capture, session replay, surveys, feature flags, crash collection, logs, and advertising attribution are not part of this analytics configuration.</p>
+
+          <h3>Processors and storage region</h3>
+          <p>Product events are processed by <a href="https://posthog.com/privacy">PostHog</a> in its Cloud US region in Virginia, United States. SpeakLocal's release configuration requires events to be kept for no longer than 12 months and may delete them sooner when they are no longer needed. The live organization is on PostHog's Free plan, whose current published terms specify one-year retention.</p>
+          <p>Apple separately handles App Store commerce and provides SpeakLocal with official subscription and revenue reporting under Apple's terms and privacy practices.</p>
+
+          <h3>Your choices and deletion requests</h3>
+          <p>An analytics-enabled build provides an in-app Analytics control. Turning it off stops new capture through app-owned gating and clears the project-scoped queued data. Uninstalling the app stops future collection and removes events still waiting only on the device, but it does not delete events already delivered.</p>
+          <p>Before requesting deletion of previously delivered events, copy the Analytics Installation ID shown in the app, turn Analytics off, and leave it off until SpeakLocal confirms deletion is complete. While deletion is pending, the app preserves the disabled state across relaunches and allows no new capture or queued upload. Then email <a href="mailto:feedback@jayopsai.com?subject=SpeakLocal%20privacy%20request">feedback@jayopsai.com</a> with the subject “SpeakLocal privacy request” and include that Installation ID. Because SpeakLocal does not connect analytics to an account or email address, an email address alone cannot locate anonymous events. PostHog processes event deletion asynchronously, and SpeakLocal will confirm when the request has been submitted and completed.</p>
+          <p>After deletion is complete, collection may resume only if you turn Analytics back on and the app first creates and uses a newly rotated anonymous installation identifier. The deleted identifier must never be reused; attempted reuse leaves analytics disabled.</p>
+
+          <h3>Support messages</h3>
+          <p>If you contact support or send feedback, SpeakLocal receives the email address and message contents you choose to provide. That information is used to respond, investigate the request, and improve the product. Support messages are retained only as long as reasonably needed for those purposes or legal obligations, and you may ask for deletion by using the same address.</p>
+
+          <h3>Data not collected for analytics</h3>
+          <p>SpeakLocal product analytics does not collect account credentials, contacts, email addresses, exact or coarse location, advertising identifiers, IDFV, photos, voice recordings, message contents, phrase or search text, Apple transaction IDs, or error contents. SpeakLocal does not use product analytics for third-party advertising or tracking across other companies' apps or websites.</p>
+
+          <h3>Security and policy changes</h3>
+          <p>SpeakLocal limits analytics access and uses reasonable technical and organizational safeguards, but no method of storage or network delivery can be guaranteed completely secure. Material changes to collection, purpose, processors, or user choices will be reflected on this public policy page before the changed practice is enabled in a public build.</p>
+
+          <h3>Contact</h3>
+          <p>For privacy questions, access or deletion requests, or concerns about this policy, email <a href="mailto:feedback@jayopsai.com?subject=SpeakLocal%20privacy%20request">feedback@jayopsai.com</a>.</p>
         </div>
       </section>
     </main>
