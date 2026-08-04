@@ -57,7 +57,7 @@
       <section class="policy-section" aria-labelledby="privacy-policy-title">
         <h2 id="privacy-policy-title">Privacy policy</h2>
         <div class="policy-copy">
-          <p><strong>Last updated:</strong> July 24, 2026</p>
+          <p><strong>Last updated:</strong> August 4, 2026</p>
 
           <h3>When analytics is active</h3>
           <p>SpeakLocal enables the product analytics described below only in an app build that contains an approved PostHog Cloud US project configuration. A build without that configuration sends no PostHog product events. Product analytics is on by default in a configured build, subject to the privacy controls described below.</p>
@@ -72,11 +72,11 @@
           <p>These events may include controlled context such as the app version and build, development or production channel, app variant, broad source surface, collection or content kind, Practice mode, paywall context, and the generic monthly subscription product. They do not include raw phrase, place, menu, audio, search, or route identifiers.</p>
 
           <h3>Anonymous installation identifier</h3>
-          <p>PostHog creates a random identifier for this app installation so SpeakLocal can understand a sequence such as app open, feature use, and later return. It is not your name, email address, Apple account, advertising identifier (IDFA), Identifier for Vendor (IDFV), hardware serial number, or Apple transaction identifier.</p>
+          <p>SpeakLocal creates a random identifier for this app installation so it can understand a sequence such as app open, feature use, and later return. It is not your name, email address, Apple account, advertising identifier (IDFA), Identifier for Vendor (IDFV), hardware serial number, or Apple transaction identifier.</p>
           <p>SpeakLocal does not call PostHog's identify feature, create user profiles, or combine this identifier with account information or data from other companies. It is used only for first-party product analytics.</p>
 
           <h3>Offline delivery and network information</h3>
-          <p>Analytics events may wait temporarily in the app's private sandbox queue when the device is offline and upload after connectivity returns only while Analytics remains enabled. Turning Analytics off stops capture, closes the SDK, and removes the project-scoped local analytics queue. Re-enabling first repeats that purge and creates a fresh anonymous installation identifier, so an older queued event or retired identifier cannot resume after relaunch or reconnection. If the queue cannot be removed or a retired identifier is reused, analytics remains off.</p>
+          <p>Analytics events may wait temporarily in the app's private sandbox queue when the device is offline and upload after connectivity returns only while Analytics remains enabled. Turning Analytics off stops capture, cancels the app-owned delivery transport, and removes the project-scoped local analytics queue. Re-enabling first repeats that purge and creates a fresh anonymous installation identifier, so an older queued event or retired identifier cannot resume after relaunch or reconnection. If the queue cannot be removed or a retired identifier is reused, analytics remains off.</p>
           <p>Network requests necessarily expose an IP address to the receiving service while the request is delivered. The PostHog US project is configured to discard raw IP addresses, and SpeakLocal instructs PostHog not to use the request IP for location enrichment on each product event. SpeakLocal does not retain analytics location derived from the IP address.</p>
 
           <h3>Purchases</h3>
@@ -92,7 +92,7 @@
 
           <h3>Your choices and deletion requests</h3>
           <p>An analytics-enabled build provides an in-app Analytics control. Turning it off stops new capture through app-owned gating and clears the project-scoped queued data. Uninstalling the app stops future collection and removes events still waiting only on the device, but it does not delete events already delivered.</p>
-          <p>Before requesting deletion of previously delivered events, copy the Analytics Installation ID shown in the app, turn Analytics off, and leave it off until SpeakLocal confirms deletion is complete. While deletion is pending, the app preserves the disabled state across relaunches and allows no new capture or queued upload. Then email <a href="mailto:feedback@jayopsai.com?subject=SpeakLocal%20privacy%20request">feedback@jayopsai.com</a> with the subject “SpeakLocal privacy request” and include that Installation ID. Because SpeakLocal does not connect analytics to an account or email address, an email address alone cannot locate anonymous events. PostHog processes event deletion asynchronously, and SpeakLocal will confirm when the request has been submitted and completed.</p>
+          <p>Before requesting deletion of previously delivered events, copy the Analytics Installation ID shown in the app, turn Analytics off, and leave it off until SpeakLocal confirms deletion is complete. While deletion is pending, the app preserves the disabled state across relaunches and allows no new capture or queued upload. Then email <a href="mailto:feedback@speaklocal.app?subject=SpeakLocal%20privacy%20request">feedback@speaklocal.app</a> with the subject “SpeakLocal privacy request” and include that Installation ID. Because SpeakLocal does not connect analytics to an account or email address, an email address alone cannot locate anonymous events. PostHog processes event deletion asynchronously, and SpeakLocal will confirm when the request has been submitted and completed.</p>
           <p>After deletion is complete, collection may resume only if you turn Analytics back on and the app first creates and uses a newly rotated anonymous installation identifier. The deleted identifier must never be reused; attempted reuse leaves analytics disabled.</p>
 
           <h3>Support messages</h3>
@@ -105,7 +105,7 @@
           <p>SpeakLocal limits analytics access and uses reasonable technical and organizational safeguards, but no method of storage or network delivery can be guaranteed completely secure. Material changes to collection, purpose, processors, or user choices will be reflected on this public policy page before the changed practice is enabled in a public build.</p>
 
           <h3>Contact</h3>
-          <p>For privacy questions, access or deletion requests, or concerns about this policy, email <a href="mailto:feedback@jayopsai.com?subject=SpeakLocal%20privacy%20request">feedback@jayopsai.com</a>.</p>
+          <p>For privacy questions, access or deletion requests, or concerns about this policy, email <a href="mailto:feedback@speaklocal.app?subject=SpeakLocal%20privacy%20request">feedback@speaklocal.app</a>.</p>
         </div>
       </section>
     </main>
